@@ -1,4 +1,4 @@
---- chrome/browser/first_run/first_run.h.orig	2026-03-13 06:02:14 UTC
+--- chrome/browser/first_run/first_run.h.orig	2026-08-20 14:42:05 UTC
 +++ chrome/browser/first_run/first_run.h
 @@ -73,7 +73,7 @@ struct MasterPrefs {
  #if BUILDFLAG(IS_MAC)
@@ -6,7 +6,7 @@
  #endif
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   bool eula_required = false;
+   bool eula_required = true;
  #endif
  };
 @@ -145,7 +145,7 @@ ProcessInitialPreferencesResult ProcessInitialPreferen

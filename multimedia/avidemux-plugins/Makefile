@@ -1,6 +1,6 @@
 PORTNAME=	avidemux
 PORTVERSION=	${AVIDEMUX_VERSION}
-PORTREVISION=	10
+PORTREVISION=	12
 CATEGORIES=	multimedia
 PKGNAMESUFFIX=	-plugins
 
@@ -8,13 +8,15 @@ PATCH_SITES=	https://github.com/mean00/avidemux2/commit/
 # Fix build with x265 4.1
 PATCHFILES+=	c16d32a67cdb012db093472ad3776713939a30d1.patch:-p1
 
-MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Simple GUI based video editor (Plugins)
 
 LIB_DEPENDS=	libADM6avutil.so.56:multimedia/avidemux
 
 MASTERDIR=	${.CURDIR}/../avidemux
 PLIST=		${.CURDIR}/pkg-plist
+
+# Fails to build after multimedia/vapoursynth update (R66 => R73, a5e4dc2)
+OPTIONS_EXCLUDE=	VAPOURSYNTH
 
 .include "${MASTERDIR}/Makefile.common"
 

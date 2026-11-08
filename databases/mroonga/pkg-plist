@@ -2,6 +2,7 @@ lib/mysql/plugin/ha_mroonga.so
 share/man/man1/mroonga.1.gz
 %%DATADIR%%/AUTHORS
 %%DATADIR%%/COPYING
+%%DATADIR%%/install_mroonga_command.sql
 %%DATADIR%%/install.sql
 %%DATADIR%%/uninstall.sql
 %%DATADIR%%/update.sql

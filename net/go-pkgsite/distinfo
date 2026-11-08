@@ -1,5 +1,5 @@
-TIMESTAMP = 1783942247
-SHA256 (go/net_go-pkgsite/go-pkgsite-v0.3.0/v0.3.0.mod) = 22b21bb56228d51e8f917c39a19e76fbca063ebff9fe89e282f70fe1f01e3ad5
-SIZE (go/net_go-pkgsite/go-pkgsite-v0.3.0/v0.3.0.mod) = 4577
-SHA256 (go/net_go-pkgsite/go-pkgsite-v0.3.0/v0.3.0.zip) = b556d21c7809a497c91dba629a7cb91bee8ff24156b5dcec1b4a1b961218c12f
-SIZE (go/net_go-pkgsite/go-pkgsite-v0.3.0/v0.3.0.zip) = 22929926
+TIMESTAMP = 1786712729
+SHA256 (go/net_go-pkgsite/go-pkgsite-v0.4.0/v0.4.0.mod) = 62f5a49ce05679b56619685bebfbb362db0ac564688af36dfc0fba0c29b2ca6b
+SIZE (go/net_go-pkgsite/go-pkgsite-v0.4.0/v0.4.0.mod) = 4565
+SHA256 (go/net_go-pkgsite/go-pkgsite-v0.4.0/v0.4.0.zip) = 79d8c1c980d4ae671866490b83b005c3369b79578d8a97dac24f2f8311a5d693
+SIZE (go/net_go-pkgsite/go-pkgsite-v0.4.0/v0.4.0.zip) = 23783553

@@ -4793,7 +4793,7 @@
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Secunia reports:</p>
-	<blockquote cite="http://.com/advisories/29792">
+	<blockquote cite="http://secunia.com/advisories/29792">
 	  <p>Tavis Ormandy has reported a vulnerability in libpng, which can be
 	    exploited by malicious people to cause a Denial of Service, disclose
 	    potentially sensitive information, or potentially compromise an
@@ -5346,17 +5346,17 @@
 	  privilege of the user running the program.</p>
 	<blockquote cite="http://www.mozilla.org/projects/security/known-vulnerabilities.html">
 	  <ul>
-	    <li><a href="/security/announce/2008/mfsa2008-19.html">MFSA 2008-19</a>
+	    <li><a href="http://www.mozilla.org/security/announce/2008/mfsa2008-19.html">MFSA 2008-19</a>
 	      XUL popup spoofing variant (cross-tab popups)</li>
-	    <li><a href="/security/announce/2008/mfsa2008-18.html">MFSA 2008-18</a>
+	    <li><a href="http://www.mozilla.org/security/announce/2008/mfsa2008-18.html">MFSA 2008-18</a>
 	      Java socket connection to any local port via LiveConnect</li>
-	    <li><a href="/security/announce/2008/mfsa2008-17.html">MFSA 2008-17</a>
+	    <li><a href="http://www.mozilla.org/security/announce/2008/mfsa2008-17.html">MFSA 2008-17</a>
 	      Privacy issue with SSL Client Authentication</li>
-	    <li><a href="/security/announce/2008/mfsa2008-16.html">MFSA 2008-16</a>
+	    <li><a href="http://www.mozilla.org/security/announce/2008/mfsa2008-16.html">MFSA 2008-16</a>
 	      HTTP Referrer spoofing with malformed URLs</li>
-	    <li><a href="/security/announce/2008/mfsa2008-15.html">MFSA 2008-15</a>
+	    <li><a href="http://www.mozilla.org/security/announce/2008/mfsa2008-15.html">MFSA 2008-15</a>
 	      Crashes with evidence of memory corruption (rv:1.8.1.13)</li>
-	    <li><a href="/security/announce/2008/mfsa2008-14.html">MFSA 2008-14</a>
+	    <li><a href="http://www.mozilla.org/security/announce/2008/mfsa2008-14.html">MFSA 2008-14</a>
 	      JavaScript privilege escalation and arbitrary code execution</li>
 	  </ul>
 	</blockquote>

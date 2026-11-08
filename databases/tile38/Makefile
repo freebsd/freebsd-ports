@@ -1,6 +1,6 @@
 PORTNAME=	tile38
 DISTVERSION=	1.12.0
-PORTREVISION=	40
+PORTREVISION=	45
 CATEGORIES=	databases
 
 MAINTAINER=	a.andersson.thn@gmail.com

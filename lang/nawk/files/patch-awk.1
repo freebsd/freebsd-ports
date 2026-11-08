@@ -1,0 +1,92 @@
+--- awk.1.orig	2026-04-26 19:42:14 UTC
++++ awk.1
+@@ -11,12 +11,12 @@
+ .IP "" "\w'\fB\\$1\ \ \fP'u"
+ .PD 0
+ ..
+-.TH AWK 1
++.TH NAWK 1
+ .CT 1 files prog_other
+ .SH NAME
+-awk \- pattern-directed scanning and processing language
++nawk \- pattern-directed scanning and processing language
+ .SH SYNOPSIS
+-.B awk
++.B nawk
+ [
+ .BI \-F
+ .I fs
+@@ -37,7 +37,7 @@ awk \- pattern-directed scanning and processing langua
+ .I file ...
+ ]
+ .SH DESCRIPTION
+-.I Awk
++.I Nawk
+ scans each input
+ .I file
+ for lines that match any of a set of patterns specified literally in
+@@ -81,7 +81,7 @@ option causes
+ The
+ .B \-\^\-csv
+ option causes
+-.I awk
++.I nawk
+ to process records using (more or less) standard comma-separated values
+ (CSV) format.
+ .PP
+@@ -437,7 +437,7 @@ in the order they are read by
+ do not combine with other patterns.
+ They may appear multiple times in a program and execute
+ in the order they are read by
+-.IR awk .
++.IR nawk .
+ .PP
+ Variable names with special meanings:
+ .TF FILENAME
+@@ -518,7 +518,7 @@ is set in the environment, then
+ If
+ .B POSIXLY_CORRECT
+ is set in the environment, then
+-.I awk
++.I nawk
+ follows the POSIX rules for
+ .B sub
+ and
+@@ -587,16 +587,16 @@ However, in eight-bit locales,
+ Input is expected to be UTF-8 encoded. Other multibyte
+ character sets are not handled.
+ However, in eight-bit locales,
+-.I awk
++.I nawk
+ treats each input byte as a separate character.
+ .SH UNUSUAL FLOATING-POINT VALUES
+-.I Awk
++.I Nawk
+ was designed before IEEE 754 arithmetic defined Not-A-Number (NaN)
+ and Infinity values, which are supported by all modern floating-point
+ hardware.
+ .PP
+ Because
+-.I awk
++.I nawk
+ uses
+ .IR strtod (3)
+ and
+@@ -611,7 +611,7 @@ with something like this:
+ .PP
+ .EX
+ .nf
+-echo nancy | awk '{ print $1 + 0 }'
++echo nancy | nawk '{ print $1 + 0 }'
+ .fi
+ .EE
+ .PP
+@@ -619,7 +619,7 @@ instead of zero.
+ .B nan
+ instead of zero.
+ .PP
+-.I Awk
++.I Nawk
+ now follows GNU AWK, and prefilters string values before attempting
+ to convert them to numbers, as follows:
+ .TP

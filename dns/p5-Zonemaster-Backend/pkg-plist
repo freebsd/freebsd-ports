@@ -19,6 +19,7 @@ etc/rc.d/zm_testagent
 %%SITE_PERL%%/Zonemaster/Backend/Log.pm
 %%SITE_PERL%%/Zonemaster/Backend/Metrics.pm
 %%SITE_PERL%%/Zonemaster/Backend/RPCAPI.pm
+%%SITE_PERL%%/Zonemaster/Backend/TLD_URL.pm
 %%SITE_PERL%%/Zonemaster/Backend/TestAgent.pm
 %%SITE_PERL%%/Zonemaster/Backend/Translator.pm
 %%SITE_PERL%%/Zonemaster/Backend/Validator.pm
@@ -36,6 +37,7 @@ etc/rc.d/zm_testagent
 %%SITE_PERL%%/auto/share/dist/Zonemaster-Backend/locale/sl/LC_MESSAGES/Zonemaster-Backend.mo
 %%SITE_PERL%%/auto/share/dist/Zonemaster-Backend/locale/sv/LC_MESSAGES/Zonemaster-Backend.mo
 %%SITE_PERL%%/auto/share/dist/Zonemaster-Backend/patch/README.txt
+%%SITE_PERL%%/auto/share/dist/Zonemaster-Backend/patch/patch_db_schema_version_1.pl
 %%SITE_PERL%%/auto/share/dist/Zonemaster-Backend/patch/patch_db_zonemaster_backend_ver_11.1.0.pl
 %%SITE_PERL%%/auto/share/dist/Zonemaster-Backend/patch/patch_db_zonemaster_backend_ver_11.2.0.pl
 %%SITE_PERL%%/auto/share/dist/Zonemaster-Backend/patch/patch_db_zonemaster_backend_ver_9.0.0.pl
@@ -63,4 +65,5 @@ etc/rc.d/zm_testagent
 %%PERL5_MAN3%%/Zonemaster::Backend::DB::MySQL.3.gz
 %%PERL5_MAN3%%/Zonemaster::Backend::DB::PostgreSQL.3.gz
 %%PERL5_MAN3%%/Zonemaster::Backend::DB::SQLite.3.gz
+%%PERL5_MAN3%%/Zonemaster::Backend::TLD_URL.3.gz
 %%PERL5_MAN3%%/Zonemaster::Backend::Validator.3.gz

@@ -1,0 +1,112 @@
+--- /dev/null
++++ bazel/rules_rust/freebsd_host_triple.patch
+@@ -0,0 +1,109 @@
++diff --git rust/platform/triple.bzl rust/platform/triple.bzl
++index 5f69bdb..dfb802c 100644
++--- rust/platform/triple.bzl
+++++ rust/platform/triple.bzl
++@@ -132,6 +132,7 @@ def get_host_triple(repository_ctx, abi = {}):
++     supported_architectures = {
++         "linux": ["aarch64", "x86_64", "s390x", "powerpc64le"],
++         "macos": ["aarch64", "x86_64"],
+++        "freebsd": ["aarch64", "x86_64"],
++         "windows": ["aarch64", "x86_64"],
++     }
++ 
++@@ -155,6 +156,10 @@ def get_host_triple(repository_ctx, abi = {}):
++         _validate_cpu_architecture(arch, supported_architectures["macos"])
++         return triple("{}-apple-darwin".format(arch))
++ 
+++    if "freebsd" in repository_ctx.os.name:
+++        _validate_cpu_architecture(arch, supported_architectures["freebsd"])
+++        return triple("{}-unknown-freebsd".format(arch))
+++
++     if "win" in repository_ctx.os.name:
++         _validate_cpu_architecture(arch, supported_architectures["windows"])
++         prefix = "{}-pc-windows".format(arch)
++diff --git crate_universe/private/urls.bzl crate_universe/private/urls.bzl
++index cdc5a70..0b3c7b4 100644
++--- crate_universe/private/urls.bzl
+++++ crate_universe/private/urls.bzl
++@@ -13,36 +13,3 @@ the binaries produced for it.
++-CARGO_BAZEL_URLS = {
++-  "aarch64-apple-darwin": "https://github.com/bazelbuild/rules_rust/releases/download/0.69.0/cargo-bazel-aarch64-apple-darwin",
++-  "aarch64-pc-windows-msvc": "https://github.com/bazelbuild/rules_rust/releases/download/0.69.0/cargo-bazel-aarch64-pc-windows-msvc.exe",
++-  "aarch64-unknown-linux-gnu": "https://github.com/bazelbuild/rules_rust/releases/download/0.69.0/cargo-bazel-aarch64-unknown-linux-gnu",
++-  "aarch64-unknown-linux-musl": "https://github.com/bazelbuild/rules_rust/releases/download/0.69.0/cargo-bazel-aarch64-unknown-linux-musl",
++-  "powerpc64le-unknown-linux-gnu": "https://mdb-build-public.s3.us-east-1.amazonaws.com/rust-toolchain/rules_rust_0.69.0/cargo-bazel-ppc64le",
++-  "s390x-unknown-linux-gnu": "https://github.com/bazelbuild/rules_rust/releases/download/0.69.0/cargo-bazel-s390x-unknown-linux-gnu",
++-  "x86_64-apple-darwin": "https://github.com/bazelbuild/rules_rust/releases/download/0.69.0/cargo-bazel-x86_64-apple-darwin",
++-  "x86_64-pc-windows-gnu": "https://github.com/bazelbuild/rules_rust/releases/download/0.69.0/cargo-bazel-x86_64-pc-windows-gnu.exe",
++-  "x86_64-pc-windows-msvc": "https://github.com/bazelbuild/rules_rust/releases/download/0.69.0/cargo-bazel-x86_64-pc-windows-msvc.exe",
++-  "x86_64-unknown-linux-gnu": "https://github.com/bazelbuild/rules_rust/releases/download/0.69.0/cargo-bazel-x86_64-unknown-linux-gnu",
++-  "x86_64-unknown-linux-musl": "https://github.com/bazelbuild/rules_rust/releases/download/0.69.0/cargo-bazel-x86_64-unknown-linux-musl"
++-}
++-
++-# Example:
++-# {
++-#     "x86_64-unknown-linux-gnu": "1d687fcc860dc8a1aa6198e531f0aee0637ed506d6a412fe2b9884ff5b2b17c0",
++-#     "x86_64-apple-darwin": "0363e450125002f581d29cf632cc876225d738cfa433afa85ca557afb671eafa",
++-#     "x86_64-pc-windows-msvc": "f5647261d989f63dafb2c3cb8e131b225338a790386c06cf7112e43dd9805882",
++-# }
++-CARGO_BAZEL_SHA256S = {
++-  "aarch64-apple-darwin": "9b41cac2040b3f4a1fdad34cb1e9a31afccaa56c60d156c163ded56eb23c0579",
++-  "aarch64-pc-windows-msvc": "f2de01d1f9f0532122eff62918fbd4b6cf8b827759edc6c52f9b5b4b745de80f",
++-  "aarch64-unknown-linux-gnu": "2a293b1fbffff0e56780f9cabbc32cb6b2519d036ead614d3251e4c79135df7e",
++-  "aarch64-unknown-linux-musl": "14cf89e3e92d227352c7d174599f649029a4dd686aa00d017ecd486431832882",
++-  "s390x-unknown-linux-gnu": "89f4aea3ce5e8086d9845af07b5925228110b00a748ad0ef465f0eca3463237a",
++-  "x86_64-apple-darwin": "56b2f7306e2c5c3c3dca5579cb0a97e360fe0c6731f1698dc9a41864a3dc1842",
++-  "x86_64-pc-windows-gnu": "be646c8a9d2ae4205659773a797b1650386bf39eb0917a2644322b1afe3f70d4",
++-  "x86_64-pc-windows-msvc": "1695baf5ac5d9f4c5328455e1e7e70c17745466e5f7b4ecdea7510d82d525865",
++-  "x86_64-unknown-linux-gnu": "2727d6a1be44b6bf4935f09bc54ba3fd04ed602e012c51aafd1ba036580b229e",
++-  "x86_64-unknown-linux-musl": "a705d760e6da6c2d76300312d21d65ec59adf0eb5d220224befd76df68339ebe"
++-}
++-
++-# Example:
++-# Label("//crate_universe:cargo_bazel_bin")
++-CARGO_BAZEL_LABEL = Label("//crate_universe:cargo_bazel_bin")
+++CARGO_BAZEL_URLS = {}
+++CARGO_BAZEL_SHA256S = {}
+++CARGO_BAZEL_LABEL = Label("@cargo_bazel_bootstrap//:binary")
++diff --git rust/platform/triple_mappings.bzl rust/platform/triple_mappings.bzl
++--- rust/platform/triple_mappings.bzl
+++++ rust/platform/triple_mappings.bzl
++@@ -76,6 +76,7 @@
++ }
++ 
++ _T3_PLATFORM_TRIPLES = {
+++    "aarch64-unknown-freebsd": _support(std = True, host_tools = True),
++     "aarch64-unknown-nto-qnx710": _support(std = True, host_tools = False),
++     "wasm64-unknown-unknown": _support(std = False, host_tools = False),
++ }
++diff --git rust/repositories.bzl rust/repositories.bzl
++--- rust/repositories.bzl
+++++ rust/repositories.bzl
++@@ -44,6 +44,7 @@
++ DEFAULT_TOOLCHAIN_TRIPLES = {
++     "aarch64-apple-darwin": "rust_macos_aarch64",
++     "aarch64-pc-windows-msvc": "rust_windows_aarch64",
+++    "aarch64-unknown-freebsd": "rust_freebsd_aarch64",
++     "aarch64-unknown-linux-gnu": "rust_linux_aarch64",
++     "powerpc64le-unknown-linux-gnu": "rust_linux_powerpc64le",
++     "s390x-unknown-linux-gnu": "rust_linux_s390x",
++diff --git crate_universe/src/metadata/cargo_tree_resolver.rs crate_universe/src/metadata/cargo_tree_resolver.rs
++--- crate_universe/src/metadata/cargo_tree_resolver.rs
+++++ crate_universe/src/metadata/cargo_tree_resolver.rs
++@@ -23,7 +23,7 @@
++ ///
++ /// [Tier 1](https://doc.rust-lang.org/nightly/rustc/platform-support.html#tier-1-with-host-tools)
++ /// [Tier 2](https://doc.rust-lang.org/nightly/rustc/platform-support.html#tier-2-with-host-tools)
++-const RUSTC_TRIPLES_WITH_HOST_TOOLS: [&str; 26] = [
+++const RUSTC_TRIPLES_WITH_HOST_TOOLS: [&str; 27] = [
++     // Tier 1
++     "aarch64-apple-darwin",
++     "aarch64-unknown-linux-gnu",
++@@ -35,6 +35,7 @@
++     "x86_64-pc-windows-msvc",
++     "x86_64-unknown-linux-gnu",
++     // Tier 2
+++    "aarch64-unknown-freebsd",
++     "aarch64-pc-windows-msvc",
++     "aarch64-unknown-linux-musl",
++     "arm-unknown-linux-gnueabi",

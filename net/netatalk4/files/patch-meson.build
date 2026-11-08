@@ -1,14 +1,6 @@
---- meson.build.orig	2026-05-30 12:42:34 UTC
+--- meson.build.orig	2026-09-19 15:10:20 UTC
 +++ meson.build
-@@ -57,6 +57,7 @@ libdir = prefix / get_option('libdir')
- datadir = prefix / get_option('datadir')
- includedir = prefix / get_option('includedir')
- libdir = prefix / get_option('libdir')
-+libexecdir = prefix / get_option('libexecdir')
- mandir = prefix / get_option('mandir')
- sbindir = prefix / get_option('sbindir')
- sysconfdir = prefix / get_option('sysconfdir')
-@@ -306,7 +307,7 @@ statedir = '-D_PATH_STATEDIR="' + localstatedir + '/ne
+@@ -366,7 +366,7 @@ statedir = '-D_PATH_STATEDIR="' + localstatedir + '/ne
  messagedir = '-DSERVERTEXT="' + localstatedir + '/netatalk/msg/"'
  naddir = '-D_PATH_NAD="' + bindir + '/nad"'
  statedir = '-D_PATH_STATEDIR="' + localstatedir + '/netatalk/"'
@@ -17,15 +9,15 @@
  
  ############
  # Includes #
-@@ -629,6 +630,7 @@ if 'dbd' in get_option('with-cnid-backends')
+@@ -699,6 +699,7 @@ if enable_dbd_backend
      endif
  
      bdb_subdirs = [
-+        'db18',
++        '%%DB_NAME%%',
          'db62',
          'db6.2',
          'db61',
-@@ -1203,12 +1205,12 @@ dns_sd_libs = []
+@@ -1274,12 +1275,12 @@ dns_sd_libs = []
  
  dns_sd_libs = []
  
@@ -40,7 +32,7 @@
  if dns_sd.found()
      dns_sd_libs += system
  endif
-@@ -1222,6 +1224,8 @@ have_dns = (
+@@ -1293,6 +1294,8 @@ have_dns = (
      )
  )
  
@@ -49,7 +41,7 @@
  if enable_zeroconf
      if host_os == 'darwin'
          # On Darwin/macOS, prefer mDNS over Avahi
-@@ -1231,6 +1235,7 @@ if enable_zeroconf
+@@ -1302,6 +1305,7 @@ if enable_zeroconf
              cdata.set('HAVE_MDNS', 1)
              cdata.set('freebsd_zeroconf', 'mdnsd')
              zeroconf_provider += 'mDNS'
@@ -57,7 +49,7 @@
          elif avahi.found()
              have_zeroconf = true
              cdata.set('USE_ZEROCONF', 1)
-@@ -1252,6 +1257,7 @@ if enable_zeroconf
+@@ -1323,6 +1327,7 @@ if enable_zeroconf
              cdata.set('HAVE_MDNS', 1)
              cdata.set('freebsd_zeroconf', 'mdnsd')
              zeroconf_provider += 'mDNS'
@@ -65,7 +57,7 @@
          endif
      endif
  endif
-@@ -1929,6 +1935,7 @@ if not enable_pam
+@@ -1990,6 +1995,7 @@ if not enable_pam
  
  if not enable_pam
      have_pam = false

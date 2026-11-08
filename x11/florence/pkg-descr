@@ -1,8 +1,8 @@
-Florence is an extensible scalable virtual keyboard for GNOME. You need it if
-you can't use a real keyboard either because of a handicap, disease,
-broken keyboard or tablet PC but you can use a pointing device. If you can't
-use a pointing device, there is gok: http://www.gok.ca/
-Florence stays out of your way when you don't need it.
-It appears on the screen only when you need it.
-There is an auto-click functionality To help people having difficulties to use
-the click button.
+Florence is an extensible scalable virtual keyboard for X11. You need it if
+you cannot use a real keyboard (for example because of a handicap, a broken
+keyboard, or a tablet PC) but can use a pointing device.
+
+This port tracks the FrauBSD continuation of Florence after the SourceForge
+project stalled at 0.6.3 (2014). It includes sticky modifiers, a safer Resize
+scale path (stock magnifier +/− could crash), Framework-style Fn row layout,
+session placement, and a unified greeter mode.

@@ -1,11 +1,10 @@
 PORTNAME=	gef
-DISTVERSION=	2022.01
-PORTREVISION=	1
+DISTVERSION=	2026.01
 CATEGORIES=	security python
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	GDB Enhanced Features for exploit devs & reversers
-WWW=		https://gef.rtfd.io
+WWW=		https://hugsy.github.io/gef/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -1,4 +1,4 @@
---- ui/base/x/x11_drag_context.cc.orig	2026-05-07 17:02:56 UTC
+--- ui/base/x/x11_drag_context.cc.orig	2026-08-31 10:59:09 UTC
 +++ ui/base/x/x11_drag_context.cc
 @@ -15,7 +15,7 @@
  #include "ui/gfx/x/connection.h"
@@ -18,7 +18,7 @@
        // If the source provided a portal key, retrieve the files now.
        if (target == x11::GetAtom(kMimeTypePortalFileTransfer) ||
            target == x11::GetAtom(kMimeTypePortalFiles)) {
-@@ -193,7 +193,7 @@ void XDragContext::RequestNextTargetOrComplete() {
+@@ -196,7 +196,7 @@ void XDragContext::RequestNextTargetOrComplete() {
    }
  }
  

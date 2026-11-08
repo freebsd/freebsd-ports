@@ -23,5 +23,6 @@ do-install:
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/include/${PORTNAME}/COPYRIGHT
 	${RM} ${STAGEDIR}${PREFIX}/include/${PORTNAME}/NOTES
+	${RM} ${STAGEDIR}${PREFIX}/include/${PORTNAME}/bin/clang-linux
 
 .include <bsd.port.mk>

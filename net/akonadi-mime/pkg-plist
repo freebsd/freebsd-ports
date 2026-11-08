@@ -54,7 +54,7 @@ lib/cmake/KPim6AkonadiMime/KPim6AkonadiMimeTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KPim6AkonadiMime/KPim6AkonadiMimeTargets.cmake
 lib/libKPim6AkonadiMime.so
 lib/libKPim6AkonadiMime.so.6
-lib/libKPim6AkonadiMime.so.%%KDE_APPLICATIONS_SHLIB_VER%%
+lib/libKPim6AkonadiMime.so.%%KDE_PIM_SHLIB_VER%%
 %%QT_PLUGINDIR%%/akonadi_serializer_mail.so
 %%QT_QMLDIR%%/org/kde/akonadi/mime/akonadi_mime_quick_plugin.qmltypes
 %%QT_QMLDIR%%/org/kde/akonadi/mime/kde-qmlmodule.version

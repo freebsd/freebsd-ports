@@ -1,6 +1,6 @@
---- plugins/obs-nvenc/CMakeLists.txt.orig	2025-09-27 00:04:14.000000000 +0300
-+++ plugins/obs-nvenc/CMakeLists.txt	2025-12-23 07:49:06.708408000 +0300
-@@ -14,7 +14,7 @@
+--- plugins/obs-nvenc/CMakeLists.txt.orig	2026-10-29 21:06:35 UTC
++++ plugins/obs-nvenc/CMakeLists.txt
+@@ -13,7 +13,7 @@ endif()
    add_subdirectory("${CMAKE_SOURCE_DIR}/shared/opts-parser" "${CMAKE_BINARY_DIR}/shared/opts-parser")
  endif()
  
@@ -9,7 +9,7 @@
    add_subdirectory("${CMAKE_SOURCE_DIR}/deps/glad" "${CMAKE_BINARY_DIR}/deps/glad")
  endif()
  
-@@ -28,7 +28,7 @@
+@@ -27,7 +27,7 @@ target_sources(
  target_sources(
    obs-nvenc
    PRIVATE
@@ -18,7 +18,7 @@
      $<$<PLATFORM_ID:Windows>:nvenc-d3d11.c>
      cuda-helpers.c
      cuda-helpers.h
-@@ -46,7 +46,7 @@
+@@ -45,7 +45,7 @@ target_link_libraries(
  
  target_link_libraries(
    obs-nvenc

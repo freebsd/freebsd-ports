@@ -1,6 +1,7 @@
 PORTNAME=	syncthingtray
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.3
+DISTVERSION=	2.1.9
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	dsh@bamus.cz
@@ -13,16 +14,16 @@ LICENSE_FILE=	${WRKDIR}/syncthingtray/LICENSE
 BUILD_DEPENDS=	p5-YAML-LibYAML>0:textproc/p5-YAML-LibYAML
 LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs
 
-USES=		cmake:insource gl iconv perl5 qt:6 xorg
+USES=		cmake:insource compiler:c++20-lang gl iconv perl5 qt:6 xorg
 
 USE_GITHUB=	nodefault
 GH_ACCOUNT=	Martchus
 GH_TUPLE:=	${GH_ACCOUNT}:${PORTNAME}:${DISTVERSIONPREFIX}${DISTVERSION}:${PORTNAME}/../${PORTNAME} \
-		${GH_ACCOUNT}:cpp-utilities:v5.34.2:cpputilities/../c++utilities \
-		${GH_ACCOUNT}:qtutilities:v6.21.3:qtutilities/../qtutilities \
+		${GH_ACCOUNT}:cpp-utilities:v5.37.0:cpputilities/../c++utilities \
+		${GH_ACCOUNT}:qtutilities:v6.23.0:qtutilities/../qtutilities \
 		${GH_ACCOUNT}:qtforkawesome:v0.3.4:qtforkawesome/../qtforkawesome \
 		ForkAwesome:Fork-Awesome:4fef70f:ForkAwesome/../forkawesome \
-		${GH_ACCOUNT}:subdirs:5f47515:subdirs/../subdirs
+		${GH_ACCOUNT}:subdirs:62ab51a:subdirs/../subdirs
 
 USE_GL=		opengl
 USE_PERL5=	build
@@ -46,7 +47,12 @@ PATCH_WRKSRC=		${WRKDIR}
 PLIST_SUB=	LIBVERSION=${DISTVERSION}
 
 OPTIONS_DEFINE=		PLASMA WEBENGINE
-OPTIONS_DEFAULT=	PLASMA WEBENGINE
+OPTIONS_DEFAULT=	PLASMA
+OPTIONS_DEFAULT_aarch64=	WEBENGINE
+OPTIONS_DEFAULT_amd64=		WEBENGINE
+OPTIONS_DEFAULT_armv7=		WEBENGINE
+OPTIONS_DEFAULT_i386=		WEBENGINE
+OPTIONS_DEFAULT_powerpc64le=	WEBENGINE
 OPTIONS_SUB=		yes
 
 PLASMA_DESC=		Plasma integration (KF dependency)

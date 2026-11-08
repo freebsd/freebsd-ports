@@ -1,0 +1,21 @@
+--- src/torchcodec/_core/CMakeLists.txt.orig	2026-08-13 07:10:38 UTC
++++ src/torchcodec/_core/CMakeLists.txt
+@@ -3,6 +3,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+ set(CMAKE_CXX_STANDARD 20)
+ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+ 
++list(APPEND CMAKE_MODULE_PATH %%WRKSRC%%/torchcodec-0.16.0/cmake)
++message(STATUS "YURI: Current module path: ${CMAKE_MODULE_PATH}")
+ # Guard against accidentally building a distributable wheel that dynamically
+ # links against a GPL build of FFmpeg (e.g. from conda/system), which would be a
+ # license violation. Wheels are expected to link against our pre-built non-GPL
+@@ -123,7 +125,9 @@ function(discover_image_codecs)
+                 set(WebP_ROOT "$ENV{CONDA_PREFIX}")
+             endif()
+         endif()
++	message(STATUS "YURI >>> WebP_FOUND=${WebP_FOUND} WebP_ROOT=${WebP_ROOT}")
+         find_package(WebP)  # Provides the WebP::webp and WebP::webpdemux targets.
++	message(STATUS "YURI <<< WebP_FOUND=${WebP_FOUND} WebP_ROOT=${WebP_ROOT}")
+         if(WebP_FOUND)
+             message(STATUS "libwebp found: building torchcodec with WebP image decoding support.")
+         else()

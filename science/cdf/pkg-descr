@@ -1,12 +1,15 @@
-Common Data Format (CDF) is a conceptual data abstraction for storing
-multi-dimensional data sets. The basic component of CDF is a software
-programming interface that is a device independent view of the CDF data
-model. The application developer is insulated from the actual physical
-file format for reasons of conceptual simplicity, device independence,
-and future expandability. CDF files created on any given platform can
-be transported to any other platform on to which CDF is ported and used
-with any CDF tools or layered applications. A more detailed introduction
-to CDF can be found in the CDF User's Guide.
+The Common Data Format (CDF) is a conceptual data abstraction for storing,
+manipulating, and accessing multidimensional datasets. The basic component of
+CDF is a software programming interface that is a device- independent view of
+the CDF data model. The application developer is insulated from the actual
+physical file format for reasons of conceptual simplicity, device independence,
+and future expandability. CDF files created on any given platform can be
+transported to any other platform onto which CDF is ported and used with any
+CDF tools or layered applications.
+
+The CDF software, documentation, and user support services are provided by NASA
+and available to the public free of charge. There are no license agreements or
+costs involved in obtaining or using CDF.
 
 A comparison between CDF, netCDF, HDF and HDF5 is available at
-<http://cdf.gsfc.nasa.gov/html/FAQ.html>.
+https://cdf.gsfc.nasa.gov/html/FAQ.html

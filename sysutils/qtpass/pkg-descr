@@ -1,1 +1,10 @@
-GUI for pass, the standard UNIX password manager.
+QtPass is a multi-platform GUI for pass, the standard Unix password manager.
+Each password lives in its own GnuPG-encrypted file in ~/.password-store, so
+QtPass shares the store with the pass command line and with every other pass
+client, and keeps history and synchronisation in git.
+
+QtPass can drive the pass script or talk to gpg and git directly, supports
+multi-key and multi-recipient encryption with per-folder recipients, OpenPGP
+smartcards and other external tokens, generates passwords with pwgen or its
+own generator, shows QR codes for entries, and generates TOTP one-time codes
+from otpauth:// entries without extra tools.

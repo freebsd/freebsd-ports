@@ -155,6 +155,7 @@ lib/nvc/nvc/NVC.VERILOG
 lib/nvc/nvc/NVC.VERILOG-body
 lib/nvc/nvc/_NVC_LIB
 lib/nvc/nvc/_index
+lib/nvc/plugins/siginit.so
 lib/nvc/std.08/STD.ENV
 lib/nvc/std.08/STD.ENV-body
 lib/nvc/std.08/STD.STANDARD

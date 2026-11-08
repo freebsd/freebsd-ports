@@ -1,6 +1,6 @@
---- containers.h.orig	2025-09-03 14:11:13 UTC
+--- containers.h.orig	2026-08-12 22:24:49 UTC
 +++ containers.h
-@@ -34,6 +34,10 @@ struct timespec64 {
+@@ -32,6 +32,10 @@ struct timespec64 {
  	int64_t tv_nsec;
  };
  
@@ -11,7 +11,7 @@
  struct wgallowedip {
  	uint16_t family;
  	union {
-@@ -41,6 +45,7 @@ struct wgallowedip {
+@@ -39,6 +43,7 @@ struct wgallowedip {
  		struct in6_addr ip6;
  	};
  	uint8_t cidr;

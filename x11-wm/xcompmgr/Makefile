@@ -1,6 +1,5 @@
 PORTNAME=	xcompmgr
-PORTVERSION=	1.1.8
-PORTREVISION=	1
+DISTVERSION=	1.1.10
 CATEGORIES=	x11-wm
 
 MAINTAINER=	x11@FreeBSD.org
@@ -11,9 +10,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		xorg xorg-cat:app
-USE_XORG=	x11 xcomposite xext xfixes xdamage xrender
-
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+USE_XORG=	x11 xcomposite xdamage xext xfixes xorgproto xrender
 
 PLIST_FILES=	bin/${PORTNAME} share/man/man1/${PORTNAME}.1.gz
 

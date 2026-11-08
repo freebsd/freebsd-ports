@@ -21,7 +21,7 @@ ONLY_FOR_ARCHS_REASON=	KMS is required and currently only available on x86/arm64
 LIB_DEPENDS=	libdrm_amdgpu.so:graphics/libdrm \
 		libudev.so:devel/libudev-devd
 
-USES=		gl pkgconfig tar:xz xorg-cat:driver,meson
+USES=		gl pkgconfig xorg-cat:driver,meson
 
 USE_GL=		gbm
 

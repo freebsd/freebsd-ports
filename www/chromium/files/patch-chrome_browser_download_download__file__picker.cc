@@ -1,6 +1,6 @@
---- chrome/browser/download/download_file_picker.cc.orig	2026-06-04 10:12:25 UTC
+--- chrome/browser/download/download_file_picker.cc.orig	2026-10-18 13:29:39 UTC
 +++ chrome/browser/download/download_file_picker.cc
-@@ -18,7 +18,7 @@
+@@ -19,7 +19,7 @@
  #include "content/public/browser/web_contents.h"
  #include "ui/shell_dialogs/selected_file_info.h"
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/ui/browser_window.h"
  #include "chrome/browser/ui/browser_window/public/browser_window_interface_iterator.h"
  #include "ui/aura/window.h"
-@@ -83,7 +83,7 @@ DownloadFilePicker::DownloadFilePicker(download::Downl
+@@ -84,7 +84,7 @@ DownloadFilePicker::DownloadFilePicker(download::Downl
    // dialog in Linux (See SelectFileImpl() in select_file_dialog_linux_gtk.cc).
    // and windows.Here we make owning_window host to browser current active
    // window if it is null. https://crbug.com/40825014

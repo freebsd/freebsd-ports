@@ -1,3 +1,5 @@
+-- upstreamed: https://github.com/drawpile/Drawpile/pull/1609
+
 --- src/drawdance/libimpex/dpimpex/save.c.orig	2025-11-18 11:26:42 UTC
 +++ src/drawdance/libimpex/dpimpex/save.c
 @@ -1123,7 +1123,7 @@ DP_SaveResult DP_save(DP_CanvasState *cs, DP_DrawConte

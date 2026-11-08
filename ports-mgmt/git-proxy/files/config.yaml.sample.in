@@ -1,0 +1,46 @@
+# git-proxy configuration.
+#
+# This is a short starting point. Every setting is described in
+# %%EXAMPLESDIR%%/config.example.yaml
+
+# Address and port to listen on.
+listen: ":8080"
+
+# The URL clients use to reach this proxy. Shown on the dashboard and
+# used when other ecosystems need their metadata rewritten.
+base_url: "http://localhost:8080"
+
+# Keep repository catalogues (data.pkg, meta.conf, packagesite.pkg) so
+# that pkg update keeps working while the upstream is unreachable.
+cache_metadata: true
+
+# Cached packages. Set max_size (e.g. "50GB") to evict the least
+# recently used ones.
+storage:
+  url: "file://%%GIT_PROXY_DBDIR%%/artifacts"
+  max_size: ""
+
+database:
+  driver: "sqlite"
+  path: "%%GIT_PROXY_DBDIR%%/proxy.db"
+
+log:
+  level: "info"
+  format: "text"
+
+upstream:
+  # FreeBSD pkg repositories, one name each, served at /freebsd/{name}/.
+  # Names are arbitrary labels: "trusted" is only this file's choice
+  # for pkg.freebsd.org. A client URL of
+  #   http://<proxy>/freebsd/trusted/${ABI}/quarterly
+  # is fetched from
+  #   https://pkg.freebsd.org/${ABI}/quarterly
+  # and a client URL of
+  #   http://<proxy>/freebsd/poudriere/150amd64-default
+  # is fetched from
+  #   https://pkg.example.com/packages/150amd64-default
+  # Listing any repository here replaces the built-in default entry,
+  # so pkg.freebsd.org must be listed explicitly.
+  freebsd:
+    trusted: "https://pkg.freebsd.org"
+  #  poudriere: "https://pkg.example.com/packages"

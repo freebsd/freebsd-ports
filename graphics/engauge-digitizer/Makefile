@@ -35,6 +35,20 @@ OPTIONS_SUB=	yes
 
 #DOCS_USE=	QT=help,linguist:build
 
+post-patch: # workaround for https://github.com/akhuettel/engauge-digitizer/issues/14
+	@for f in `${GREP} -rl LOG4CPP_INFO_S ${WRKSRC} | ${GREP} "\.cpp"`; do \
+		${REINPLACE_CMD} -i '' -e 's|LOG4CPP_INFO_S ((\*mainCat))|mainCat->infoStream()|' $$f; \
+	done
+	@for f in `${GREP} -rl LOG4CPP_DEBUG_S ${WRKSRC} | ${GREP} "\.cpp"`; do \
+		${REINPLACE_CMD} -i '' -e 's|LOG4CPP_DEBUG_S ((\*mainCat))|mainCat->infoStream()|' $$f; \
+	done
+	@for f in `${GREP} -rl LOG4CPP_ERROR_S ${WRKSRC} | ${GREP} "\.cpp"`; do \
+		${REINPLACE_CMD} -i '' -e 's|LOG4CPP_ERROR_S ((\*mainCat))|mainCat->infoStream()|' $$f; \
+	done
+	@for f in `${GREP} -rl LOG4CPP_WARN_S ${WRKSRC} | ${GREP} "\.cpp"`; do \
+		${REINPLACE_CMD} -i '' -e 's|LOG4CPP_WARN_S ((\*mainCat))|mainCat->infoStream()|' $$f; \
+	done
+
 do-patch-NLS-on:
 	@${REINPLACE_CMD} -e 's|QCoreApplication::applicationDirPath () + "/translations",|"${DATADIR}/translations",|' ${WRKSRC}/src/Translator/TranslatorContainer.cpp
 

@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/components/media_router/common/media_source.cc.orig	2025-09-06 10:01:20 UTC
+--- src/3rdparty/chromium/components/media_router/common/media_source.cc.orig	2026-08-11 12:42:19 UTC
 +++ src/3rdparty/chromium/components/media_router/common/media_source.cc
-@@ -62,7 +62,7 @@ bool IsSystemAudioCaptureSupported() {
+@@ -68,7 +68,7 @@ bool IsSystemAudioCaptureSupported() {
  #if BUILDFLAG(IS_MAC)
    return media::IsMacSckSystemLoopbackCaptureSupported() ||
           base::FeatureList::IsEnabled(media::kMacCatapLoopbackAudioForCast);

@@ -1,6 +1,6 @@
---- src/session.c.orig	2021-04-12 04:52:50 UTC
+--- src/session.c.orig	2026-08-06 19:53:11 UTC
 +++ src/session.c
-@@ -981,7 +981,17 @@ session_init (Session *session)
+@@ -1002,7 +1002,17 @@ session_init (Session *session)
  {
      SessionPrivate *priv = session_get_instance_private (session);
  

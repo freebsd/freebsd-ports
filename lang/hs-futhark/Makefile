@@ -1,11 +1,12 @@
 PORTNAME=	futhark
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.26.2
+DISTVERSION=	0.28.2
 CATEGORIES=	lang haskell
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Data-parallel functional programming language
 WWW=		https://futhark-lang.org/ \
+		https://futhark.readthedocs.io/en/latest/ \
 		https://github.com/diku-dk/futhark
 
 LICENSE=	GPLv3
@@ -21,8 +22,8 @@ USE_CABAL=	Diff-1.0.2 \
 		SHA-1.6.4.4 \
 		StateVar-1.2.2 \
 		adjunctions-4.4.4 \
-		aeson-2.2.5.0 \
-		aeson-pretty-0.8.10 \
+		aeson-2.2.5.1 \
+		aeson-pretty-0.8.11 \
 		alex-3.5.4.2 \
 		ansi-terminal-1.1.5 \
 		ansi-terminal-types-1.1.3 \
@@ -52,7 +53,7 @@ USE_CABAL=	Diff-1.0.2 \
 		clock-0.8.4 \
 		cmark-gfm-0.2.6_1 \
 		cmdargs-0.10.22 \
-		co-log-core-0.3.2.6 \
+		co-log-core-0.3.2.7 \
 		code-page-0.2.1 \
 		colour-2.3.7 \
 		comonad-5.0.10 \
@@ -60,8 +61,8 @@ USE_CABAL=	Diff-1.0.2 \
 		conduit-parse-0.2.1.1_1 \
 		constraints-0.14.4 \
 		contravariant-1.5.6 \
-		criterion-1.6.5.0 \
-		criterion-measurement-0.2.4.0 \
+		criterion-1.6.5.0_1 \
+		criterion-measurement-0.2.5.0 \
 		cryptohash-md5-0.11.101.0_6 \
 		data-default-0.8.0.2 \
 		data-default-class-0.2.0.0 \
@@ -76,25 +77,25 @@ USE_CABAL=	Diff-1.0.2 \
 		exception-transformers-0.4.0.12_1 \
 		extra-1.8.1 \
 		fail-4.9.0.0 \
-		fgl-5.8.3.0_2 \
+		fgl-5.8.3.1 \
 		fgl-visualize-0.1.0.1 \
 		file-embed-0.0.16.0 \
-		fmlist-0.9.4 \
+		fmlist-0.9.5 \
 		free-5.2_8 \
 		futhark-data-1.1.4.0 \
-		futhark-manifest-1.8.0.0 \
-		futhark-server-1.4.1.0 \
+		futhark-manifest-1.11.0.0 \
+		futhark-server-1.5.0.0 \
 		generic-arbitrary-1.0.1.2 \
 		generic-deriving-1.14.7 \
 		generic-lens-2.3.0.0 \
 		generic-lens-core-2.3.0.0 \
 		githash-0.1.7.0 \
-		half-0.3.3_2 \
+		half-0.3.3_3 \
 		happy-2.2 \
 		happy-lib-2.2 \
 		hashable-1.5.1.0 \
-		haskell-src-exts-1.23.1 \
-		haskell-src-meta-0.8.15_1 \
+		haskell-src-exts-1.24.0 \
+		haskell-src-meta-0.8.16 \
 		hsc2hs-0.68.10_5 \
 		indexed-profunctors-0.1.1.1 \
 		indexed-traversable-0.1.5 \
@@ -106,23 +107,23 @@ USE_CABAL=	Diff-1.0.2 \
 		kan-extensions-5.2.8 \
 		language-c-quote-0.13.0.2 \
 		lens-5.3.6 \
-		lens-aeson-1.2.3_2 \
+		lens-aeson-1.2.3_3 \
 		lsp-2.8.0.0 \
 		lsp-test-0.18.0.0 \
 		lsp-types-2.4.0.0 \
 		mainland-pretty-0.7.1.1 \
 		math-functions-0.3.4.4 \
-		megaparsec-9.7.0_1 \
-		microstache-1.0.3.1 \
-		mod-0.2.1.0 \
+		megaparsec-9.8.3 \
+		microstache-1.0.3.1_1 \
+		mod-0.2.2.0 \
 		mono-traversable-1.0.21.0 \
 		mwc-random-0.15.3.0 \
 		neat-interpolation-0.5.1.4 \
-		network-3.2.8.0 \
+		network-3.2.9.0 \
 		network-uri-2.6.4.2_1 \
 		old-locale-1.0.0.7_2 \
 		old-time-1.1.1.0 \
-		optparse-applicative-0.19.0.0 \
+		optparse-applicative-0.19.0.0_1 \
 		parallel-3.3.0.0_1 \
 		parser-combinators-1.3.1 \
 		parsers-0.12.12_1 \
@@ -137,31 +138,31 @@ USE_CABAL=	Diff-1.0.2 \
 		regex-1.1.0.2 \
 		regex-base-0.94.0.3 \
 		regex-pcre-builtin-0.95.2.3.8.44_7 \
-		regex-tdfa-1.3.2.5 \
+		regex-tdfa-1.3.2.6 \
 		resourcet-1.3.0 \
 		row-types-1.0.1.2_1 \
 		safe-0.3.21_1 \
 		safe-exceptions-0.1.7.4_1 \
-		scientific-0.3.8.1 \
+		scientific-0.3.9.0 \
 		semialign-1.4 \
 		semigroupoids-6.0.2_1 \
 		semirings-0.7 \
 		some-1.0.6_3 \
 		sorted-list-0.3.1.0 \
-		split-0.2.5 \
+		split-0.2.5.1 \
 		splitmix-0.1.3.2 \
 		srcloc-0.6.0.1 \
-		statistics-0.16.5.0 \
+		statistics-0.16.5.0_1 \
 		streaming-commons-0.2.3.1 \
 		strict-0.5.1_1 \
 		syb-0.7.4 \
-		tagged-0.8.10_1 \
-		tasty-1.5.4 \
+		tagged-0.8.11 \
+		tasty-1.5.4_1 \
 		tasty-hunit-0.10.2 \
-		tasty-quickcheck-0.11.1_5 \
+		tasty-quickcheck-0.11.1_7 \
 		temporary-1.3 \
 		terminal-size-0.3.4_1 \
-		text-iso8601-0.1.1.1 \
+		text-iso8601-0.1.1.2 \
 		text-rope-0.3 \
 		text-short-0.1.6.1 \
 		th-abstraction-0.7.2.0 \
@@ -180,19 +181,24 @@ USE_CABAL=	Diff-1.0.2 \
 		unordered-containers-0.2.21_2 \
 		utf8-string-1.0.2 \
 		uuid-types-1.0.6.1 \
-		vector-0.13.2.0_2 \
+		vector-0.13.2.0_5 \
 		vector-algorithms-0.9.1.0_1 \
 		vector-binary-instances-0.2.5.2_5 \
 		vector-stream-0.1.0.1_4 \
 		vector-th-unbox-0.2.2_9 \
-		versions-6.0.8 \
+		versions-6.0.9 \
 		websockets-0.13.0.0_6 \
 		witherable-0.5_2 \
-		zlib-0.7.1.1
+		zlib-0.7.1.1_1
 
 CABAL_PROJECT=	remove
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	diku-dk
+
+do-test:
+	@${STAGEDIR}${PREFIX}/bin/futhark test ${WRKSRC}/test*
+
+# tests as of : 2900 passed 69 failed, see https://github.com/diku-dk/futhark/issues/2594
 
 .include <bsd.port.mk>

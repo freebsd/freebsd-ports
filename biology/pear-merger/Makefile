@@ -8,7 +8,7 @@ MASTER_SITES=	https://depot.galaxyproject.org/software/pear/
 PKGNAMESUFFIX=	-merger
 DISTNAME=	${PORTNAME}_${PORTVERSION}_src_all
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Memory-efficient and highly accurate paired-end read merger
 WWW=		https://sco.h-its.org/exelixis/web/software/pear/
 

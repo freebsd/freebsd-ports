@@ -1,0 +1,3 @@
+universal-pathlib extends the standard pathlib API to work with fsspec
+filesystem backends, allowing pathlib-style operations on cloud and remote
+storage paths.

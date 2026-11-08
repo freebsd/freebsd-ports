@@ -195,6 +195,7 @@ include/asterisk/enum.h
 include/asterisk/event.h
 include/asterisk/event_defs.h
 include/asterisk/extconf.h
+include/asterisk/extension_state.h
 include/asterisk/features.h
 include/asterisk/features_config.h
 include/asterisk/file.h

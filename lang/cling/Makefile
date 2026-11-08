@@ -1,6 +1,7 @@
 PORTNAME=		cling
 DISTVERSIONPREFIX=	v
 DISTVERSION=		1.3
+PORTREVISION=		1
 CATEGORIES=		lang devel
 
 MAINTAINER=		arrowd@FreeBSD.org
@@ -25,7 +26,8 @@ CMAKE_ARGS=	-DLLVM_EXTERNAL_PROJECTS=cling \
 		-DLLVM_TARGETS_TO_BUILD="host;NVPTX"
 
 ALL_TARGET=	cling
-INSTALL_TARGET=	install-clang-resource-headers
+INSTALL_TARGET=	install-clang-resource-headers \
+		install-cling-cmake-exports-stripped
 
 .include <bsd.port.pre.mk>
 
@@ -50,5 +52,15 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/cling
 	cd ${WRKSRC}/include/cling && \
 		${COPYTREE_SHARE} Interpreter ${STAGEDIR}${PREFIX}/include/cling
+	cd ${WRKSRC}/include/cling && \
+		${COPYTREE_SHARE} MetaProcessor ${STAGEDIR}${PREFIX}/include/cling
+	cd ${WRKSRC}/include/cling && \
+		${COPYTREE_SHARE} UserInterface ${STAGEDIR}${PREFIX}/include/cling
+	cd ${WRKSRC}/include/cling && \
+		${COPYTREE_SHARE} Utils ${STAGEDIR}${PREFIX}/include/cling
+	${INSTALL_DATA} ${BUILD_WRKSRC}/lib/libclingInterpreter.a ${STAGEDIR}${PREFIX}/lib/
+	${INSTALL_DATA} ${BUILD_WRKSRC}/lib/libclingMetaProcessor.a ${STAGEDIR}${PREFIX}/lib/
+	${INSTALL_DATA} ${BUILD_WRKSRC}/lib/libclingUserInterface.a ${STAGEDIR}${PREFIX}/lib/
+	${INSTALL_DATA} ${BUILD_WRKSRC}/lib/libclingUtils.a ${STAGEDIR}${PREFIX}/lib/
 
 .include <bsd.port.post.mk>

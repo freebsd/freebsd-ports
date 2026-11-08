@@ -1,6 +1,6 @@
 PORTNAME=	nosqlbench
 PORTVERSION=	0.0.${DATE}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	benchmarks databases
 MASTER_SITES=	LOCAL/vg
 
@@ -10,6 +10,9 @@ WWW=		https://github.com/tarantool/nosqlbench
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	Unmaintained, does not build with CMake 4
+EXPIRATION_DATE=2026-11-30
 
 LIB_DEPENDS=	libleveldb.so:databases/leveldb
 

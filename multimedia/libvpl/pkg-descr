@@ -1,0 +1,16 @@
+Intel Video Processing Library (Intel VPL) provides access to hardware
+accelerated video decode, encode, and processing capabilities on Intel GPUs
+to support AI visual inference, media delivery, cloud gaming, and virtual
+desktop infrastructure use cases.
+
+This repository contains the following components:
+
+- Copies of the Intel VPL API header files.
+  The version of the API is listed in the mfxdefs.h file.
+- Intel VPL Dispatcher
+- Examples demonstrating API usage
+
+*** IMPORTANT ***
+
+Intel VPL Tools are no longer in this repository. They have all been
+moved to libvpl-tools.

@@ -181,6 +181,7 @@ bin/rt-run-scheduled-processes
 %%SITE_PERL%%/RT/Lifecycle/Ticket.pm
 %%SITE_PERL%%/RT/Link.pm
 %%SITE_PERL%%/RT/Links.pm
+%%SITE_PERL%%/RT/MFA/TOTP.pm
 %%SITE_PERL%%/RT/Migrate.pm
 %%SITE_PERL%%/RT/Migrate/Importer.pm
 %%SITE_PERL%%/RT/Migrate/Importer/File.pm
@@ -258,6 +259,7 @@ bin/rt-run-scheduled-processes
 %%SITE_PERL%%/RT/REST2/Resource/Record/Readable.pm
 %%SITE_PERL%%/RT/REST2/Resource/Record/WithETag.pm
 %%SITE_PERL%%/RT/REST2/Resource/Record/Writable.pm
+%%SITE_PERL%%/RT/REST2/Resource/RecordLifecycle.pm
 %%SITE_PERL%%/RT/REST2/Resource/Rights.pm
 %%SITE_PERL%%/RT/REST2/Resource/Role/RequestBodyIsJSON.pm
 %%SITE_PERL%%/RT/REST2/Resource/Role/Rights.pm
@@ -376,6 +378,8 @@ bin/rt-run-scheduled-processes
 %%SITE_PERL%%/RT/URI/group.pm
 %%SITE_PERL%%/RT/URI/savedsearch.pm
 %%SITE_PERL%%/RT/URI/t.pm
+%%SITE_PERL%%/RT/URI/transaction.pm
+%%SITE_PERL%%/RT/URI/txn.pm
 %%SITE_PERL%%/RT/URI/user.pm
 %%SITE_PERL%%/RT/User.pm
 %%SITE_PERL%%/RT/Users.pm
@@ -412,6 +416,7 @@ sbin/rt-validator
 sbin/standalone_httpd
 @group wheel
 %%PORTDOCS%%%%DOCSDIR%%/GDPR.pod
+%%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADING-2.0
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADING-3.0
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADING-3.2
@@ -486,6 +491,8 @@ sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/images/general-owner-chart.png
 %%PORTDOCS%%%%DOCSDIR%%/images/general-owner-lastupdated-chart.png
 %%PORTDOCS%%%%DOCSDIR%%/images/general-status-chart.png
+%%PORTDOCS%%%%DOCSDIR%%/images/getting-started-homepage.png
+%%PORTDOCS%%%%DOCSDIR%%/images/getting-started-new-ticket.png
 %%PORTDOCS%%%%DOCSDIR%%/images/global-lifecycle-group-rights.png
 %%PORTDOCS%%%%DOCSDIR%%/images/lifecycle-choices.png
 %%PORTDOCS%%%%DOCSDIR%%/images/lifecycle-ui-actions.png
@@ -774,6 +781,10 @@ sbin/standalone_httpd
 %%DOCSDIR%%/upgrade/4.5.7/schema.SQLite
 %%DOCSDIR%%/upgrade/4.5.7/schema.mysql
 %%DOCSDIR%%/upgrade/4.5.8/content
+%%DOCSDIR%%/upgrade/5.0.11/content
+%%DOCSDIR%%/upgrade/5.0.11/schema.Oracle
+%%DOCSDIR%%/upgrade/5.0.11/schema.Pg
+%%DOCSDIR%%/upgrade/5.0.11/schema.mysql
 %%DOCSDIR%%/upgrade/5.0.2/content
 %%DOCSDIR%%/upgrade/5.0.3/indexes
 %%DOCSDIR%%/upgrade/5.0.3/schema.Pg
@@ -822,6 +833,8 @@ sbin/standalone_httpd
 %%DOCSDIR%%/upgrade/6.0.3/schema.Oracle
 %%DOCSDIR%%/upgrade/6.0.3/schema.Pg
 %%DOCSDIR%%/upgrade/6.0.3/schema.mysql
+%%DOCSDIR%%/upgrade/6.0.4/content
+%%DOCSDIR%%/upgrade/6.0.4/indexes
 %%DOCSDIR%%/upgrade/generate-rtaddressregexp
 %%DOCSDIR%%/upgrade/reset-sequences
 %%DOCSDIR%%/upgrade/sanity-check-stylesheets
@@ -836,6 +849,7 @@ sbin/standalone_httpd
 %%DOCSDIR%%/upgrade/upgrade-mysql-schema.pl
 %%DOCSDIR%%/upgrade/upgrade-sla
 %%DOCSDIR%%/upgrade/vulnerable-passwords
+%%PORTDOCS%%%%DOCSDIR%%/user/getting_started.pod
 %%PORTDOCS%%%%DOCSDIR%%/web_deployment.pod
 %%PORTDOCS%%%%DOCSDIR%%/working_with_rt.pod
 %%PORTDOCS%%%%DOCSDIR%%/writing_extensions.pod
@@ -953,10 +967,12 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Admin/Global/index.html
 %%DATADIR%%/html/Admin/Groups/GroupRights.html
 %%DATADIR%%/html/Admin/Groups/History.html
+%%DATADIR%%/html/Admin/Groups/MFAPolicy.html
 %%DATADIR%%/html/Admin/Groups/Members.html
 %%DATADIR%%/html/Admin/Groups/Memberships.html
 %%DATADIR%%/html/Admin/Groups/Modify.html
 %%DATADIR%%/html/Admin/Groups/ModifyLinks.html
+%%DATADIR%%/html/Admin/Groups/PasswordPolicy.html
 %%DATADIR%%/html/Admin/Groups/UserRights.html
 %%DATADIR%%/html/Admin/Groups/autohandler
 %%DATADIR%%/html/Admin/Groups/index.html
@@ -1104,6 +1120,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Asset/Elements/ShowBasics
 %%DATADIR%%/html/Asset/Elements/ShowCatalog
 %%DATADIR%%/html/Asset/Elements/ShowDates
+%%DATADIR%%/html/Asset/Elements/ShowLifecycle
 %%DATADIR%%/html/Asset/Elements/ShowLinks
 %%DATADIR%%/html/Asset/Elements/ShowPeople
 %%DATADIR%%/html/Asset/Elements/ShowRoleMembers
@@ -1123,6 +1140,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Asset/Widgets/Display/CustomFieldCustomGroupings
 %%DATADIR%%/html/Asset/Widgets/Display/Dates
 %%DATADIR%%/html/Asset/Widgets/Display/History
+%%DATADIR%%/html/Asset/Widgets/Display/Lifecycle
 %%DATADIR%%/html/Asset/Widgets/Display/Links
 %%DATADIR%%/html/Asset/Widgets/Display/People
 %%DATADIR%%/html/Asset/Widgets/autohandler
@@ -1149,6 +1167,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Dashboards/index.html
 %%DATADIR%%/html/Download/CustomFieldValue/dhandler
 %%DATADIR%%/html/Elements/AddLinks
+%%DATADIR%%/html/Elements/AddLinksRow
 %%DATADIR%%/html/Elements/AttachmentWarning
 %%DATADIR%%/html/Elements/AuthToken/Create
 %%DATADIR%%/html/Elements/AuthToken/Edit
@@ -1168,6 +1187,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Elements/CollectionList
 %%DATADIR%%/html/Elements/CollectionListPaging
 %%DATADIR%%/html/Elements/ColumnMap
+%%DATADIR%%/html/Elements/CreateLinkedTicket
 %%DATADIR%%/html/Elements/CreateTicket
 %%DATADIR%%/html/Elements/Crypt/KeyIssues
 %%DATADIR%%/html/Elements/Crypt/SelectKeyForEncryption
@@ -1175,6 +1195,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Elements/Crypt/SignEncryptWidget
 %%DATADIR%%/html/Elements/CryptStatus
 %%DATADIR%%/html/Elements/Dashboards
+%%DATADIR%%/html/Elements/DeleteCheckBox
 %%DATADIR%%/html/Elements/DoAuth
 %%DATADIR%%/html/Elements/DropdownMenu
 %%DATADIR%%/html/Elements/EditCustomDateRanges
@@ -1219,6 +1240,11 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Elements/Label
 %%DATADIR%%/html/Elements/LabeledValue
 %%DATADIR%%/html/Elements/Lifecycle/Graph
+%%DATADIR%%/html/Elements/Lifecycle/Viewer
+%%DATADIR%%/html/Elements/LinkTreeGuide
+%%DATADIR%%/html/Elements/LinksFilter
+%%DATADIR%%/html/Elements/LinksInfoIcon
+%%DATADIR%%/html/Elements/LinksInfoModal
 %%DATADIR%%/html/Elements/ListActions
 %%DATADIR%%/html/Elements/ListMenu
 %%DATADIR%%/html/Elements/Login
@@ -1324,9 +1350,13 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Elements/ShowHistory
 %%DATADIR%%/html/Elements/ShowHistoryHeader
 %%DATADIR%%/html/Elements/ShowHistoryPage
+%%DATADIR%%/html/Elements/ShowLifecycleWidget
 %%DATADIR%%/html/Elements/ShowLink
 %%DATADIR%%/html/Elements/ShowLinks
 %%DATADIR%%/html/Elements/ShowLinksOfType
+%%DATADIR%%/html/Elements/ShowLinksSection
+%%DATADIR%%/html/Elements/ShowLinksTableOfType
+%%DATADIR%%/html/Elements/ShowLinksTree
 %%DATADIR%%/html/Elements/ShowMemberships
 %%DATADIR%%/html/Elements/ShowMessageHeaders
 %%DATADIR%%/html/Elements/ShowMessageStanza
@@ -1392,6 +1422,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Helpers/CalendarEventInfo
 %%DATADIR%%/html/Helpers/CollectionListRow
 %%DATADIR%%/html/Helpers/EditTicketDescription
+%%DATADIR%%/html/Helpers/MergeTicket
 %%DATADIR%%/html/Helpers/Permalink
 %%DATADIR%%/html/Helpers/PreviewScrips
 %%DATADIR%%/html/Helpers/QuickCreate
@@ -1399,11 +1430,11 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Helpers/RightsInspector/Search
 %%DATADIR%%/html/Helpers/SavedSearchOptions
 %%DATADIR%%/html/Helpers/SelectOwnerDropdown
+%%DATADIR%%/html/Helpers/SetLifecycleConfirmPref
 %%DATADIR%%/html/Helpers/ShortcutHelp
 %%DATADIR%%/html/Helpers/ShowSimplifiedRecipients
 %%DATADIR%%/html/Helpers/SpawnLinkedTicket
 %%DATADIR%%/html/Helpers/TextDiff
-%%DATADIR%%/html/Helpers/TicketAttachments
 %%DATADIR%%/html/Helpers/TicketHistory
 %%DATADIR%%/html/Helpers/TicketHistoryPage
 %%DATADIR%%/html/Helpers/TicketTimer
@@ -1426,9 +1457,17 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Install/Sendmail.html
 %%DATADIR%%/html/Install/autohandler
 %%DATADIR%%/html/Install/index.html
+%%DATADIR%%/html/NoAuth/Elements/Error
 %%DATADIR%%/html/NoAuth/Helpers/CustomLogo/dhandler
 %%DATADIR%%/html/NoAuth/Login.html
 %%DATADIR%%/html/NoAuth/Logout.html
+%%DATADIR%%/html/NoAuth/MFA/Elements/CodeInput
+%%DATADIR%%/html/NoAuth/MFA/Enroll.html
+%%DATADIR%%/html/NoAuth/MFA/Reset/Request.html
+%%DATADIR%%/html/NoAuth/MFA/Reset/dhandler
+%%DATADIR%%/html/NoAuth/MFA/Verify.html
+%%DATADIR%%/html/NoAuth/ResetPassword/Request.html
+%%DATADIR%%/html/NoAuth/ResetPassword/Reset/dhandler
 %%DATADIR%%/html/NoAuth/RichText/autohandler
 %%DATADIR%%/html/NoAuth/css/autohandler
 %%DATADIR%%/html/NoAuth/css/dhandler
@@ -1447,7 +1486,9 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Prefs/DashboardsInMenu.html
 %%DATADIR%%/html/Prefs/Elements/EditAboutMe
 %%DATADIR%%/html/Prefs/Elements/EditUserPrefSections
+%%DATADIR%%/html/Prefs/Elements/MFAControls
 %%DATADIR%%/html/Prefs/Elements/ShowAboutMe
+%%DATADIR%%/html/Prefs/ExistingPasswordChange.html
 %%DATADIR%%/html/Prefs/MyRT.html
 %%DATADIR%%/html/Prefs/Other.html
 %%DATADIR%%/html/Prefs/QueueList.html
@@ -1550,6 +1591,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/SelfService/Asset/Widgets/Display/People
 %%DATADIR%%/html/SelfService/Asset/Widgets/autohandler
 %%DATADIR%%/html/SelfService/Asset/index.html
+%%DATADIR%%/html/SelfService/Attachment/Bulk
 %%DATADIR%%/html/SelfService/Attachment/dhandler
 %%DATADIR%%/html/SelfService/Closed.html
 %%DATADIR%%/html/SelfService/Create.html
@@ -1562,6 +1604,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/SelfService/Elements/MyRequests
 %%DATADIR%%/html/SelfService/Elements/RequestUpdate
 %%DATADIR%%/html/SelfService/Elements/SearchArticle
+%%DATADIR%%/html/SelfService/ExistingPasswordChange.html
 %%DATADIR%%/html/SelfService/Helpers/AssetHistoryPage
 %%DATADIR%%/html/SelfService/Helpers/Autocomplete/Articles
 %%DATADIR%%/html/SelfService/Helpers/Autocomplete/CustomFieldValues
@@ -1594,6 +1637,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/SelfService/Views/Component/dhandler
 %%DATADIR%%/html/SelfService/Views/Ticket/dhandler
 %%DATADIR%%/html/SelfService/index.html
+%%DATADIR%%/html/Ticket/Attachment/Bulk
 %%DATADIR%%/html/Ticket/Attachment/WithHeaders/dhandler
 %%DATADIR%%/html/Ticket/Attachment/dhandler
 %%DATADIR%%/html/Ticket/Create.html
@@ -1629,6 +1673,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Ticket/Elements/ShowDependencyStatus
 %%DATADIR%%/html/Ticket/Elements/ShowDescription
 %%DATADIR%%/html/Ticket/Elements/ShowGroupMembers
+%%DATADIR%%/html/Ticket/Elements/ShowLifecycle
 %%DATADIR%%/html/Ticket/Elements/ShowLinkedQueues
 %%DATADIR%%/html/Ticket/Elements/ShowPeople
 %%DATADIR%%/html/Ticket/Elements/ShowPriority
@@ -1672,6 +1717,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Ticket/Widgets/Display/Dates
 %%DATADIR%%/html/Ticket/Widgets/Display/Description
 %%DATADIR%%/html/Ticket/Widgets/Display/History
+%%DATADIR%%/html/Ticket/Widgets/Display/Lifecycle
 %%DATADIR%%/html/Ticket/Widgets/Display/LinkedQueues
 %%DATADIR%%/html/Ticket/Widgets/Display/Links
 %%DATADIR%%/html/Ticket/Widgets/Display/People
@@ -1936,7 +1982,6 @@ sbin/standalone_httpd
 %%DATADIR%%/static/images/close.png
 %%DATADIR%%/static/images/css/rolldown-arrow.gif
 %%DATADIR%%/static/images/css/rollup-arrow.gif
-%%DATADIR%%/static/images/eyedropper.png
 %%DATADIR%%/static/images/favicon.png
 %%DATADIR%%/static/images/funnel-fill.svg
 %%DATADIR%%/static/images/funnel.svg
@@ -1953,7 +1998,8 @@ sbin/standalone_httpd
 %%DATADIR%%/static/js/cascaded.js
 %%DATADIR%%/static/js/chart.min.js
 %%DATADIR%%/static/js/chartjs-plugin-colorschemes.min.js
-%%DATADIR%%/static/js/d3.min.js
+%%DATADIR%%/static/js/cytoscape-popper.min.js
+%%DATADIR%%/static/js/cytoscape.min.js
 %%DATADIR%%/static/js/dropzone.min.js
 %%DATADIR%%/static/js/event-registration.js
 %%DATADIR%%/static/js/forms.js
@@ -1967,6 +2013,8 @@ sbin/standalone_httpd
 %%DATADIR%%/static/js/jquery_noconflict.js
 %%DATADIR%%/static/js/keyboard-shortcuts.js
 %%DATADIR%%/static/js/lifecycleui-editor.js
+%%DATADIR%%/static/js/lifecycleui-viewer.js
+%%DATADIR%%/static/js/lifecycleui.js
 %%DATADIR%%/static/js/mousetrap.min.js
 %%DATADIR%%/static/js/pagelayout.js
 %%DATADIR%%/static/js/popper.min.js
@@ -1975,7 +2023,6 @@ sbin/standalone_httpd
 %%DATADIR%%/static/js/tempus-dominus.min.js
 %%DATADIR%%/static/js/tom-select.complete.min.js
 %%DATADIR%%/static/js/util.js
-@dir %%DATADIR%%/fonts
 @dir %%DATADIR%%/local/etc
 @dir %%DATADIR%%/local/html
 @dir %%DATADIR%%/local/lib

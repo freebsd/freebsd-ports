@@ -1,7 +1,5 @@
 PORTNAME=	pyfda
-PORTVERSION=	0.1
-PORTREVISION=	17
-DISTVERSIONSUFFIX=	rc6
+DISTVERSION=	0.9.5
 CATEGORIES=	cad python devel
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,37 +9,22 @@ COMMENT=	GUI tool for designing and analysing discrete time filters
 WWW=		https://github.com/chipmuenk/pyFDA
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docutils>0:textproc/py-docutils@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}amaranth>0:cad/py-amaranth@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}docutils>0:textproc/py-docutils@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}markdown>0:textproc/py-markdown@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}matplotlib>=3.3:math/py-matplotlib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mplcursors>0:math/py-mplcursors@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}numexpr>=2.8.8:math/py-numexpr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}scipy>=1.2.0:science/py-scipy@${PY_FLAVOR} \
+		yosys:cad/yosys
 
-USES=		python pyqt:5
+USES=		python pyqt:6
 USE_PYTHON=	distutils autoplist
-USE_PYQT=	pyqt5:run
+USE_PYQT=	pyqt6:run
+
 NO_ARCH=	yes
-
-post-extract:
-	@${MV} ${WRKSRC}/pyfda/pyfda_log.conf ${WRKSRC}/pyfda/pyfda_log.conf.sample
-	@${MV} ${WRKSRC}/pyfda/pyfda_log_debug.conf ${WRKSRC}/pyfda/pyfda_log_debug.conf.sample
-
-post-patch:
-	@${REINPLACE_CMD} -e " \
-		s|package_data={'pyfda': \['pyfda_log.conf', 'pyfda_log_debug.conf',|package_data={'pyfda': [|; \
-		s|data_files = \[|data_files = [('${PREFIX}/etc', ['pyfda/pyfda_log.conf.sample', 'pyfda/pyfda_log_debug.conf.sample'])|" \
-		${WRKSRC}/setup.py
-	@${REINPLACE_CMD} -e " \
-		s|logging.config.fileConfig(os.path.join(base_dir, rc.log_config_file))|logging.config.fileConfig(os.path.join('${PREFIX}/etc', rc.log_config_file))|" \
-		${WRKSRC}/pyfda/pyfdax.py
-	@${REINPLACE_CMD} -e " \
-		s|'pyfda.log'|'/tmp/pyfda.log'|" \
-		${WRKSRC}/pyfda/*.conf.sample
-
-post-stage:
-	@${REINPLACE_CMD} -E " \
-		s|(.*\.sample)$$|@sample \1|" \
-		${WRKDIR}/.PLIST.pymodtmp
 
 .include <bsd.port.mk>

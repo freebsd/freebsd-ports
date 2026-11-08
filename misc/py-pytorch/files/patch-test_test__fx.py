@@ -1,6 +1,6 @@
---- test/test_fx.py.orig	2026-07-08 17:44:28 UTC
+--- test/test_fx.py.orig	2026-10-28 18:13:31 UTC
 +++ test/test_fx.py
-@@ -255,9 +255,12 @@ class TestFX(JitTestCase):
+@@ -285,9 +285,12 @@ class TestFX(JitTestCase):
          )
          torch.fx.proxy.TracerBase.check_mutable_operations = True
  
@@ -14,7 +14,7 @@
  
      def tearDown(self):
          super().tearDown()
-@@ -876,7 +879,7 @@ class TestFX(JitTestCase):
+@@ -1000,7 +1003,7 @@ class TestFX(JitTestCase):
          self.checkGraphModule(m, (a, b))
  
      def test_native_callable(self):
@@ -23,7 +23,7 @@
              raise unittest.SkipTest("non-portable load_library call used in test")
          # This test exercises the case where we use FX to translate from Python
          # code to some native callable object
-@@ -3071,7 +3074,7 @@ class TestFX(JitTestCase):
+@@ -3324,7 +3327,7 @@ def forward(self, x : _torch_Tensor_) -> _torch_Tensor
              node.__update_args_kwargs((), {})
  
      def test_torchbind_class_attribute_in_fx(self):
@@ -32,7 +32,7 @@
              self.skipTest(
                  "torch.classes._TorchScriptTesting._StackString is registered, skipping"
              )
-@@ -3088,7 +3091,7 @@ class TestFX(JitTestCase):
+@@ -3341,7 +3344,7 @@ def forward(self, x : _torch_Tensor_) -> _torch_Tensor
          self.checkGraphModule(m, ())
  
      def test_torchbind_class_attribute_in_fx_tensor_arg(self):

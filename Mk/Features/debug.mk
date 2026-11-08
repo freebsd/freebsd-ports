@@ -18,6 +18,7 @@ STRIP_CMD=	${TRUE}
 .  endif
 DEBUG_FLAGS?=	-g
 CFLAGS:=		${CFLAGS:N-O*:N-fno-strict*} ${DEBUG_FLAGS}
+FFLAGS+=		${DEBUG_FLAGS}
 .  if defined(INSTALL_TARGET)
 INSTALL_TARGET:=	${INSTALL_TARGET:S/^install-strip$/install/g}
 .  endif

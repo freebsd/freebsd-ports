@@ -1,0 +1,8 @@
+--- DevIL/CMakeLists.txt.orig	2017-01-01 23:37:37 UTC
++++ DevIL/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.6)
++cmake_minimum_required(VERSION 3.31.12)
+ 
+ project(ImageLib)
+ 

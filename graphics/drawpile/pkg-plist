@@ -2,6 +2,7 @@ bin/drawpile
 share/applications/net.drawpile.drawpile.desktop
 share/drawpile/drawpile/blueapatite.colors
 share/drawpile/drawpile/brushes/0001-2_3_0.zpresets
+share/drawpile/drawpile/brushes/0002-2_3_1.zpresets
 share/drawpile/drawpile/gamutmasks/atmospherewithaccent.svg
 share/drawpile/drawpile/gamutmasks/atmospherictriad.svg
 share/drawpile/drawpile/gamutmasks/complementary.svg
@@ -38,6 +39,7 @@ share/drawpile/drawpile/initialbrushpresets.db
 share/drawpile/drawpile/kritabright.colors
 share/drawpile/drawpile/kritadark.colors
 share/drawpile/drawpile/kritadarker.colors
+share/drawpile/drawpile/logo1.png
 share/drawpile/drawpile/nightmode.colors
 share/drawpile/drawpile/oceandeep.colors
 share/drawpile/drawpile/palettes/Breeze.gpl
@@ -66,8 +68,11 @@ share/drawpile/drawpile/theme/dark/application-exit.svg
 share/drawpile/drawpile/theme/dark/application-menu.svg
 share/drawpile/drawpile/theme/dark/arrow-down-double.svg
 share/drawpile/drawpile/theme/dark/arrow-down.svg
+share/drawpile/drawpile/theme/dark/arrow-left.svg
+share/drawpile/drawpile/theme/dark/arrow-right.svg
 share/drawpile/drawpile/theme/dark/arrow-up.svg
 share/drawpile/drawpile/theme/dark/audio-volume-high.svg
+share/drawpile/drawpile/theme/dark/backup.svg
 share/drawpile/drawpile/theme/dark/cards-block.svg
 share/drawpile/drawpile/theme/dark/checkbox.svg
 share/drawpile/drawpile/theme/dark/color-picker.svg
@@ -79,6 +84,7 @@ share/drawpile/drawpile/theme/dark/document-edit.svg
 share/drawpile/drawpile/theme/dark/document-export.svg
 share/drawpile/drawpile/theme/dark/document-import.svg
 share/drawpile/drawpile/theme/dark/document-new.svg
+share/drawpile/drawpile/theme/dark/document-open-folder.svg
 share/drawpile/drawpile/theme/dark/document-open-recent.svg
 share/drawpile/drawpile/theme/dark/document-open.svg
 share/drawpile/drawpile/theme/dark/document-save-all.svg
@@ -90,6 +96,7 @@ share/drawpile/drawpile/theme/dark/draw-brush.svg
 share/drawpile/drawpile/theme/dark/draw-ellipse.svg
 share/drawpile/drawpile/theme/dark/draw-eraser.svg
 share/drawpile/drawpile/theme/dark/draw-freehand.svg
+share/drawpile/drawpile/theme/dark/draw-highlight.svg
 share/drawpile/drawpile/theme/dark/draw-line.svg
 share/drawpile/drawpile/theme/dark/draw-rectangle.svg
 share/drawpile/drawpile/theme/dark/draw-text.svg
@@ -99,7 +106,10 @@ share/drawpile/drawpile/theme/dark/drawpile_alpha_off.svg
 share/drawpile/drawpile/theme/dark/drawpile_alpha_on.svg
 share/drawpile/drawpile/theme/dark/drawpile_alpha_unlocked.svg
 share/drawpile/drawpile/theme/dark/drawpile_antioverflow.svg
+share/drawpile/drawpile/theme/dark/drawpile_backup_off.svg
 share/drawpile/drawpile/theme/dark/drawpile_ban.svg
+share/drawpile/drawpile/theme/dark/drawpile_bottomleft.svg
+share/drawpile/drawpile/theme/dark/drawpile_bottomright.svg
 share/drawpile/drawpile/theme/dark/drawpile_brusherase.svg
 share/drawpile/drawpile/theme/dark/drawpile_brushlock.svg
 share/drawpile/drawpile/theme/dark/drawpile_center.svg
@@ -116,6 +126,7 @@ share/drawpile/drawpile/theme/dark/drawpile_expanddown.svg
 share/drawpile/drawpile/theme/dark/drawpile_expandleft.svg
 share/drawpile/drawpile/theme/dark/drawpile_expandright.svg
 share/drawpile/drawpile/theme/dark/drawpile_expandup.svg
+share/drawpile/drawpile/theme/dark/drawpile_exposure.svg
 share/drawpile/drawpile/theme/dark/drawpile_flip.svg
 share/drawpile/drawpile/theme/dark/drawpile_folder_alpha_off.svg
 share/drawpile/drawpile/theme/dark/drawpile_folder_alpha_on.svg
@@ -127,6 +138,9 @@ share/drawpile/drawpile/theme/dark/drawpile_gradientfgtoalpha.svg
 share/drawpile/drawpile/theme/dark/drawpile_gradientfgtobg.svg
 share/drawpile/drawpile/theme/dark/drawpile_incremental_mode.svg
 share/drawpile/drawpile/theme/dark/drawpile_indirect_mode.svg
+share/drawpile/drawpile/theme/dark/drawpile_keyframe_movelocked.svg
+share/drawpile/drawpile/theme/dark/drawpile_keyframe_moveunlocked.svg
+share/drawpile/drawpile/theme/dark/drawpile_keyframe_unlink.svg
 share/drawpile/drawpile/theme/dark/drawpile_lassofill.svg
 share/drawpile/drawpile/theme/dark/drawpile_layer_alpha_off.svg
 share/drawpile/drawpile/theme/dark/drawpile_layer_alpha_on.svg
@@ -137,6 +151,9 @@ share/drawpile/drawpile/theme/dark/drawpile_mypaint.svg
 share/drawpile/drawpile/theme/dark/drawpile_pixelperfect.svg
 share/drawpile/drawpile/theme/dark/drawpile_pixelround.svg
 share/drawpile/drawpile/theme/dark/drawpile_presetchanged.svg
+share/drawpile/drawpile/theme/dark/drawpile_presetdeleted.svg
+share/drawpile/drawpile/theme/dark/drawpile_presetunsaved.svg
+share/drawpile/drawpile/theme/dark/drawpile_rotate.svg
 share/drawpile/drawpile/theme/dark/drawpile_rotate_left.svg
 share/drawpile/drawpile/theme/dark/drawpile_rotate_right.svg
 share/drawpile/drawpile/theme/dark/drawpile_round.svg
@@ -147,8 +164,15 @@ share/drawpile/drawpile/theme/dark/drawpile_selection_replace.svg
 share/drawpile/drawpile/theme/dark/drawpile_selection_unite.svg
 share/drawpile/drawpile/theme/dark/drawpile_soft_mode.svg
 share/drawpile/drawpile/theme/dark/drawpile_square.svg
+share/drawpile/drawpile/theme/dark/drawpile_topleft.svg
+share/drawpile/drawpile/theme/dark/drawpile_topright.svg
 share/drawpile/drawpile/theme/dark/drawpile_transform.svg
 share/drawpile/drawpile/theme/dark/drawpile_wash_mode.svg
+share/drawpile/drawpile/theme/dark/drawpile_zoom_in.svg
+share/drawpile/drawpile/theme/dark/drawpile_zoom_original.svg
+share/drawpile/drawpile/theme/dark/drawpile_zoom_out.svg
+share/drawpile/drawpile/theme/dark/edit-clear-history.svg
+share/drawpile/drawpile/theme/dark/edit-clone-unlink.svg
 share/drawpile/drawpile/theme/dark/edit-comment.svg
 share/drawpile/drawpile/theme/dark/edit-copy.svg
 share/drawpile/drawpile/theme/dark/edit-cut.svg
@@ -189,6 +213,7 @@ share/drawpile/drawpile/theme/dark/format-text-underline.svg
 share/drawpile/drawpile/theme/dark/globe.svg
 share/drawpile/drawpile/theme/dark/go-first.svg
 share/drawpile/drawpile/theme/dark/go-jump.svg
+share/drawpile/drawpile/theme/dark/go-last.svg
 share/drawpile/drawpile/theme/dark/go-next-skip.svg
 share/drawpile/drawpile/theme/dark/go-next.svg
 share/drawpile/drawpile/theme/dark/go-previous-skip.svg
@@ -245,6 +270,7 @@ share/drawpile/drawpile/theme/dark/security-medium.svg
 share/drawpile/drawpile/theme/dark/select-rectangular.svg
 share/drawpile/drawpile/theme/dark/sidebar-collapse-left.svg
 share/drawpile/drawpile/theme/dark/sidebar-expand-left.svg
+share/drawpile/drawpile/theme/dark/special_paste.svg
 share/drawpile/drawpile/theme/dark/state-error.svg
 share/drawpile/drawpile/theme/dark/state-offline.svg
 share/drawpile/drawpile/theme/dark/state-ok.svg
@@ -279,8 +305,11 @@ share/drawpile/drawpile/theme/light/application-exit.svg
 share/drawpile/drawpile/theme/light/application-menu.svg
 share/drawpile/drawpile/theme/light/arrow-down-double.svg
 share/drawpile/drawpile/theme/light/arrow-down.svg
+share/drawpile/drawpile/theme/light/arrow-left.svg
+share/drawpile/drawpile/theme/light/arrow-right.svg
 share/drawpile/drawpile/theme/light/arrow-up.svg
 share/drawpile/drawpile/theme/light/audio-volume-high.svg
+share/drawpile/drawpile/theme/light/backup.svg
 share/drawpile/drawpile/theme/light/cards-block.svg
 share/drawpile/drawpile/theme/light/checkbox.svg
 share/drawpile/drawpile/theme/light/color-picker.svg
@@ -292,6 +321,7 @@ share/drawpile/drawpile/theme/light/document-edit.svg
 share/drawpile/drawpile/theme/light/document-export.svg
 share/drawpile/drawpile/theme/light/document-import.svg
 share/drawpile/drawpile/theme/light/document-new.svg
+share/drawpile/drawpile/theme/light/document-open-folder.svg
 share/drawpile/drawpile/theme/light/document-open-recent.svg
 share/drawpile/drawpile/theme/light/document-open.svg
 share/drawpile/drawpile/theme/light/document-save-all.svg
@@ -303,6 +333,7 @@ share/drawpile/drawpile/theme/light/draw-brush.svg
 share/drawpile/drawpile/theme/light/draw-ellipse.svg
 share/drawpile/drawpile/theme/light/draw-eraser.svg
 share/drawpile/drawpile/theme/light/draw-freehand.svg
+share/drawpile/drawpile/theme/light/draw-highlight.svg
 share/drawpile/drawpile/theme/light/draw-line.svg
 share/drawpile/drawpile/theme/light/draw-rectangle.svg
 share/drawpile/drawpile/theme/light/draw-text.svg
@@ -312,7 +343,10 @@ share/drawpile/drawpile/theme/light/drawpile_alpha_off.svg
 share/drawpile/drawpile/theme/light/drawpile_alpha_on.svg
 share/drawpile/drawpile/theme/light/drawpile_alpha_unlocked.svg
 share/drawpile/drawpile/theme/light/drawpile_antioverflow.svg
+share/drawpile/drawpile/theme/light/drawpile_backup_off.svg
 share/drawpile/drawpile/theme/light/drawpile_ban.svg
+share/drawpile/drawpile/theme/light/drawpile_bottomleft.svg
+share/drawpile/drawpile/theme/light/drawpile_bottomright.svg
 share/drawpile/drawpile/theme/light/drawpile_brusherase.svg
 share/drawpile/drawpile/theme/light/drawpile_brushlock.svg
 share/drawpile/drawpile/theme/light/drawpile_center.svg
@@ -329,6 +363,7 @@ share/drawpile/drawpile/theme/light/drawpile_expanddown.svg
 share/drawpile/drawpile/theme/light/drawpile_expandleft.svg
 share/drawpile/drawpile/theme/light/drawpile_expandright.svg
 share/drawpile/drawpile/theme/light/drawpile_expandup.svg
+share/drawpile/drawpile/theme/light/drawpile_exposure.svg
 share/drawpile/drawpile/theme/light/drawpile_flip.svg
 share/drawpile/drawpile/theme/light/drawpile_folder_alpha_off.svg
 share/drawpile/drawpile/theme/light/drawpile_folder_alpha_on
@@ -341,6 +376,9 @@ share/drawpile/drawpile/theme/light/drawpile_gradientfgtoalpha.svg
 share/drawpile/drawpile/theme/light/drawpile_gradientfgtobg.svg
 share/drawpile/drawpile/theme/light/drawpile_incremental_mode.svg
 share/drawpile/drawpile/theme/light/drawpile_indirect_mode.svg
+share/drawpile/drawpile/theme/light/drawpile_keyframe_movelocked.svg
+share/drawpile/drawpile/theme/light/drawpile_keyframe_moveunlocked.svg
+share/drawpile/drawpile/theme/light/drawpile_keyframe_unlink.svg
 share/drawpile/drawpile/theme/light/drawpile_lassofill.svg
 share/drawpile/drawpile/theme/light/drawpile_layer_alpha_off.svg
 share/drawpile/drawpile/theme/light/drawpile_layer_alpha_on.svg
@@ -350,6 +388,9 @@ share/drawpile/drawpile/theme/light/drawpile_mypaint.svg
 share/drawpile/drawpile/theme/light/drawpile_pixelperfect.svg
 share/drawpile/drawpile/theme/light/drawpile_pixelround.svg
 share/drawpile/drawpile/theme/light/drawpile_presetchanged.svg
+share/drawpile/drawpile/theme/light/drawpile_presetdeleted.svg
+share/drawpile/drawpile/theme/light/drawpile_presetunsaved.svg
+share/drawpile/drawpile/theme/light/drawpile_rotate.svg
 share/drawpile/drawpile/theme/light/drawpile_rotate_left.svg
 share/drawpile/drawpile/theme/light/drawpile_rotate_right.svg
 share/drawpile/drawpile/theme/light/drawpile_round.svg
@@ -360,8 +401,15 @@ share/drawpile/drawpile/theme/light/drawpile_selection_replace.svg
 share/drawpile/drawpile/theme/light/drawpile_selection_unite.svg
 share/drawpile/drawpile/theme/light/drawpile_soft_mode.svg
 share/drawpile/drawpile/theme/light/drawpile_square.svg
+share/drawpile/drawpile/theme/light/drawpile_topleft.svg
+share/drawpile/drawpile/theme/light/drawpile_topright.svg
 share/drawpile/drawpile/theme/light/drawpile_transform.svg
 share/drawpile/drawpile/theme/light/drawpile_wash_mode.svg
+share/drawpile/drawpile/theme/light/drawpile_zoom_in.svg
+share/drawpile/drawpile/theme/light/drawpile_zoom_original.svg
+share/drawpile/drawpile/theme/light/drawpile_zoom_out.svg
+share/drawpile/drawpile/theme/light/edit-clear-history.svg
+share/drawpile/drawpile/theme/light/edit-clone-unlink.svg
 share/drawpile/drawpile/theme/light/edit-comment.svg
 share/drawpile/drawpile/theme/light/edit-copy.svg
 share/drawpile/drawpile/theme/light/edit-cut.svg
@@ -402,6 +450,7 @@ share/drawpile/drawpile/theme/light/format-text-underline.svg
 share/drawpile/drawpile/theme/light/globe.svg
 share/drawpile/drawpile/theme/light/go-first.svg
 share/drawpile/drawpile/theme/light/go-jump.svg
+share/drawpile/drawpile/theme/light/go-last.svg
 share/drawpile/drawpile/theme/light/go-next-skip.svg
 share/drawpile/drawpile/theme/light/go-next.svg
 share/drawpile/drawpile/theme/light/go-previous-skip.svg
@@ -458,6 +507,7 @@ share/drawpile/drawpile/theme/light/security-medium.svg
 share/drawpile/drawpile/theme/light/select-rectangular.svg
 share/drawpile/drawpile/theme/light/sidebar-collapse-left.svg
 share/drawpile/drawpile/theme/light/sidebar-expand-left.svg
+share/drawpile/drawpile/theme/light/special_paste.svg
 share/drawpile/drawpile/theme/light/state-error.svg
 share/drawpile/drawpile/theme/light/state-offline.svg
 share/drawpile/drawpile/theme/light/state-ok.svg
@@ -496,5 +546,6 @@ share/icons/hicolor/scalable/mimetypes/application-vnd.drawpile.recording.svg
 share/icons/hicolor/scalable/mimetypes/text-vnd.drawpile.recording.svg
 share/metainfo/net.drawpile.drawpile.appdata.xml
 share/mime/application/vnd.drawpile.canvas.xml
+share/mime/application/vnd.drawpile.project.xml
 share/mime/application/vnd.drawpile.recording.xml
 share/mime/text/vnd.drawpile.recording.xml

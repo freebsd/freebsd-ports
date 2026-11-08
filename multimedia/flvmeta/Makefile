@@ -1,6 +1,5 @@
 PORTNAME=	flvmeta
-DISTVERSION=	1.2.2.20210819
-PORTREVISION=	1
+DISTVERSION=	1.2.2.20260821
 CATEGORIES=	multimedia
 
 MAINTAINER=	earl@eeg3.net
@@ -15,7 +14,7 @@ LIB_DEPENDS=	libyaml.so:textproc/libyaml
 USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	noirotm
-GH_TAGNAME=	62e30a7
+GH_TAGNAME=	f412a33
 
 PLIST_FILES=	bin/flvmeta \
 		share/man/man1/flvmeta.1.gz

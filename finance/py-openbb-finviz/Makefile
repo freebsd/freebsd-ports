@@ -7,7 +7,7 @@ DISTNAME=	${PORTNAME:S/-/_/g}-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	OpenBB: Finviz extension for OpenBB
-WWW=		https://github.com/OpenBB-finance/OpenBB
+WWW=		https://github.com/openbq-org/OpenBB
 
 LICENSE=	AGPLv3
 

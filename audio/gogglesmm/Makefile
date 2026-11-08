@@ -1,7 +1,8 @@
 PORTNAME=	gogglesmm
-PORTVERSION=	1.2.5
-PORTREVISION=	7
+DISTVERSION=	1.3.1
 CATEGORIES=	audio
+MASTER_SITES=	https://github.com/gogglesmm/gogglesmm/releases/download/${DISTVERSION}/
+DISTNAME=	${PORTNAME}-full-${DISTVERSION}
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Music collection manager and player
@@ -10,28 +11,24 @@ WWW=		https://gogglesmm.github.io/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_powerpc64=	fails to compile: ap_mad.cpp:358:2: \#error fixme
-
 LIB_DEPENDS=	libtag.so:audio/taglib \
 		libexpat.so:textproc/expat2 \
 		libFOX-1.7.so:x11-toolkits/fox17
 
 USES=		cmake compiler:c++11-lib desktop-file-utils gnome \
-		localbase:ldflags pkgconfig sqlite xorg
-USE_GITHUB=	yes
-USE_XORG=	ice sm x11
+		pkgconfig sqlite xorg
+USE_XORG=	ice sm x11 xext
 
-CMAKE_OFF=	WITH_CFOX
+CMAKE_ON=	FOX_USE_EXTERNAL \
+		WITH_ZLIB
 
 PORTDOCS=	AUTHORS ChangeLog README
 
 OPTIONS_DEFINE=		A52 ALSA DBUS DCA DOCS FAAD FLAC MAD NLS \
-			OGG OPENGL OPUS PULSEAUDIO SNDIO ZLIB
-OPTIONS_RADIO=		SSL VORBISDEC
-OPTIONS_RADIO_SSL=	GCRYPT GNUTLS OPENSSL
-VORBISDEC_DESC=		Vorbis decoder library
-OPTIONS_RADIO_VORBISDEC=	TREMOR VORBIS
-OPTIONS_DEFAULT=	DBUS FAAD FLAC MAD OGG OPENGL OPENSSL OPUS VORBIS ZLIB
+			OGG OPENGL OPUS PULSEAUDIO SNDIO VORBIS
+OPTIONS_SINGLE=		SSL
+OPTIONS_SINGLE_SSL=	GNUTLS OPENSSL
+OPTIONS_DEFAULT=	DBUS FAAD FLAC MAD OGG OPENGL OPENSSL OPUS VORBIS
 OPTIONS_SUB=		yes
 
 A52_LIB_DEPENDS=	liba52.so:audio/liba52
@@ -52,10 +49,6 @@ FAAD_CMAKE_BOOL=	WITH_FAAD
 FLAC_LIB_DEPENDS=	libFLAC.so:audio/flac
 FLAC_CMAKE_BOOL=	WITH_FLAC
 FLAC_IMPLIES=		OGG
-
-GCRYPT_DESC=		MD5 calculation via libgcrypt (no https)
-GCRYPT_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
-GCRYPT_CMAKE_BOOL=	WITH_GCRYPT
 
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GNUTLS_CMAKE_BOOL=	WITH_GNUTLS
@@ -87,21 +80,11 @@ PULSEAUDIO_CMAKE_BOOL=	WITH_PULSE
 SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
 SNDIO_CMAKE_BOOL=	WITH_SNDIO
 
-TREMOR_LIB_DEPENDS=	libvorbisidec.so:audio/libtremor
-TREMOR_CMAKE_BOOL=	WITH_TREMOR
-TREMOR_IMPLIES=		OGG
-
 VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis
 VORBIS_CMAKE_BOOL=	WITH_VORBIS
 VORBIS_IMPLIES=		OGG
 
-ZLIB_CMAKE_BOOL=	WITH_ZLIB
-
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MOGG} && !${PORT_OPTIONS:MTREMOR} && !${PORT_OPTIONS:MVORBIS}
-IGNORE=	you have selected an option that requires a Vorbis decoder. Run 'make config' and select one
-.endif
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

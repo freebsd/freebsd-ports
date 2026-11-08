@@ -1,0 +1,27 @@
+-- Adjust pyproject.toml to build with the setuptools version available in the
+-- FreeBSD ports tree: lower the build-system requirement, use the legacy
+-- PEP 621 license syntax, and remove the unsupported license-files key.
+
+--- pyproject.toml.orig	2026-09-09 09:04:02 UTC
++++ pyproject.toml
+@@ -2,7 +2,7 @@
+ requires = [
+     "cython",
+     "numpy>=1.25.0",
+-    "setuptools>=77.0.0",
++    "setuptools>=63.1",
+ ]
+ build-backend = "setuptools.build_meta"
+
+@@ -19,10 +19,7 @@
+ ]
+ description = "Tools for manipulating biological data, particularly multiple sequence alignments"
+ readme = "README.md"
+-license = "MIT"
+-license-files = [
+-    "LICENSE",
+-]
++license = {text = "MIT"}
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",
+     "Intended Audience :: Developers",

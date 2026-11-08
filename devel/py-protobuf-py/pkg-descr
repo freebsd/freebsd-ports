@@ -1,0 +1,6 @@
+protobuf-py is an ergonomic and modern Protobuf library for Python.
+
+Well-typed, generated code you can read. High-performance encoder/decoder
+written in Rust. 100% conformance.
+
+Zero third-party dependencies or tooling required.

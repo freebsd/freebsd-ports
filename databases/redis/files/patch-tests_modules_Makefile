@@ -1,9 +1,9 @@
---- tests/modules/Makefile.orig	2025-12-02 10:24:24 UTC
+--- tests/modules/Makefile.orig	2026-07-29 17:14:07 UTC
 +++ tests/modules/Makefile
 @@ -34,6 +34,11 @@ endif
  endif
  endif
-
+ 
 +ifeq ($(uname_S),FreeBSD)
 +	LD = cc
 +	CC = cc

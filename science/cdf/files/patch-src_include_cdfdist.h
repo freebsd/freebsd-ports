@@ -1,4 +1,4 @@
---- src/include/cdfdist.h.orig	2024-05-06 16:47:21 UTC
+--- src/include/cdfdist.h.orig	2025-09-11 12:24:45 UTC
 +++ src/include/cdfdist.h
 @@ -137,7 +137,7 @@
  #  define unix
@@ -9,7 +9,7 @@
      (defined(__ARM_ARCH) && __ARM_ARCH > 0)
  /* linux(gcc)-based or clang-based */
  #  define ARM
-@@ -588,7 +588,7 @@ typedef sChar sByte;
+@@ -594,7 +594,7 @@ typedef sChar sByte;
  #      if defined(__DARWIN_64_BIT_INO_T)
  #         define STAT     stat
  #      else

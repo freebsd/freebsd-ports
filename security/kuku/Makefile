@@ -1,6 +1,6 @@
 PORTNAME=	kuku
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.0
+DISTVERSION=	4.0.0
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +10,9 @@ WWW=		https://github.com/microsoft/Kuku
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake compiler:c++14-lang
+TEST_DEPENDS=	googletest>0:devel/googletest
+
+USES=		cmake compiler:c++17-lang
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
@@ -25,8 +27,8 @@ do-test:
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
 		./bin/kukutest
 
-# tests as of 3.0.0:
-# [==========] 23 tests from 3 test suites ran. (16 ms total)
-# [  PASSED  ] 23 tests.
+# tests as of 4.0.0:
+# [==========] 26 tests from 3 test suites ran. (17 ms total)
+# [  PASSED  ] 26 tests.
 
 .include <bsd.port.mk>

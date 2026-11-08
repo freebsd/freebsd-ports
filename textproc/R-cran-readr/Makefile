@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Read Rectangular Text Data
-WWW=		https://cran.r-project.org/web/packages/readr/
+WWW=		https://cran.r-project.org/package=readr
 
 LICENSE=	MIT
 

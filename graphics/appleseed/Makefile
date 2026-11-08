@@ -1,6 +1,6 @@
 PORTNAME=	appleseed
 DISTVERSION=	2.1.0-beta
-PORTREVISION=	22
+PORTREVISION=	24
 CATEGORIES=	graphics
 
 PATCH_SITES=	http://vault.101011010.xyz/distfiles/ LOCAL/danfe
@@ -111,6 +111,8 @@ post-patch:
 		${WRKSRC}/src/appleseed/renderer/kernel/shading/oslshadingsystem.cpp
 	@${REINPLACE_CMD} -e 's/filesystem::path/bf::path/' \
 		${WRKSRC}/src/appleseed/renderer/modeling/project/projectfilewriter.cpp
+	@${REINPLACE_CMD} -e '/: m_threads_init/s,Eval_Threads,_Is,' \
+		${WRKSRC}/src/appleseed.python/gillocks.cpp
 
 .include <bsd.port.mk>
 

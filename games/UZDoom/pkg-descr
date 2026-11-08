@@ -1,0 +1,14 @@
+UZDoom is a modern, feature-rich source port for Doom-engine games, and a
+continuation of ZDoom and GZDoom.  It adds an advanced renderer and powerful
+scripting capabilities to the original engine:
+
+* High-resolution graphics
+* Dynamic lighting
+* 3D floors
+* Extensive modding support through ZScript
+* OpenGL, OpenGL ES, Vulkan and software renderers
+
+Supported games include Doom, Doom II, Final Doom, Heretic, Hexen, Strife,
+Chex Quest and the many commercial and free games built on their engines.
+
+An IWAD from one of the supported games is required to play.

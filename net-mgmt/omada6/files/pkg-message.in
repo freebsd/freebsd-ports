@@ -15,23 +15,6 @@ db.mongo.uri=mongodb://user:password@IP_ADDRESS:PORT/omada
 Adjust username, password, IP_ADDRESS, PORT and database name
 according to your needs.
 
-This port of the Omada Software Controller uses a modified omada-common
-jar file to alter an OS check to accept "FreeBSD" as a Linux system.
-This requires decompiling the jar file with a tool such as Recaf to change
-the string matched for the os.name check. The path to the class as
-decompiled in Recaf is com/tplink/smb/omada/common/util/S
-
-The function you want to modify looks like this:
-
-    public static boolean c() {
-        boolean isLinuxOS = false;
-        String osName = System.getProperty("os.name");
-        if (osName.toLowerCase(Locale.ROOT).indexOf("linux") > -1) {
-            isLinuxOS = true;
-        }
-        return isLinuxOS;
-    }
-
 There are some other features that may be nonfunctional due to missing
 native library support. Examples:
 

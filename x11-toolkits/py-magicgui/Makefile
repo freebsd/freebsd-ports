@@ -1,6 +1,5 @@
 PORTNAME=	magicgui
-DISTVERSION=	0.10.0
-PORTREVISION=	4
+DISTVERSION=	0.10.2
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,9 +16,9 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-vcs>0:devel/py-hatch-vcs@${PY_FLAVOR
 		${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docstring_parser>=0.7:textproc/py-docstring_parser@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}psygnal>=0.6.1:devel/py-psygnal@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}QtPy>=1.7.0:devel/py-QtPy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}superqt>=0.6.1:x11-toolkits/py-superqt@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}psygnal>=0.8.0:devel/py-psygnal@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}QtPy>=2.4.0:devel/py-QtPy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}superqt>=0.7.2:x11-toolkits/py-superqt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.6:devel/py-typing-extensions@${PY_FLAVOR}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}ipywidgets>=8.0.0:devel/py-ipywidgets@${PY_FLAVOR} \
 		${PY_PILLOW} \
@@ -43,7 +42,6 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}annotated-types>0:devel/py-annotated-types@
 		${PYTHON_PKGNAMEPREFIX}tqdm>=4.30.0:misc/py-tqdm@${PY_FLAVOR}
 TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pyconify>0:devel/py-pyconify@${PY_FLAVOR}
 
-
 USES=		python
 USE_PYTHON=	pep517 autoplist pytest
 
@@ -56,6 +54,6 @@ do-test: # default do-test causes python interpreter to crash
 	@cd ${TEST_WRKSRC} && \
 		${SETENV} ${TEST_ENV} pytest .
 
-# tests as of 0.10.0: 380 passed, 24 skipped, 1 xfailed in 20.29s
+# tests as of 0.10.2: 380 passed, 24 skipped, 1 xfailed in 20.29s
 
 .include <bsd.port.mk>

@@ -1,5 +1,6 @@
 PORTNAME=	VVVVVV
 DISTVERSION=	2.4.4
+PORTREVISION=	1
 CATEGORIES=	games
 .if ${FLAVOR:U} == makeandplay
 # The data file may only be distributed if the MAKEANDPLAY define is set.
@@ -28,7 +29,7 @@ IGNORE=		license requires that the license be shipped
 .endif
 
 BUILD_DEPENDS=	${LOCALBASE}/include/stb/stb_vorbis.c:devel/stb
-LIB_DEPENDS=	libFAudio.so:audio/faudio@sdl2 \
+LIB_DEPENDS=	libFAudio.so:audio/faudio \
 		libtinyxml2.so:textproc/tinyxml2 \
 		libphysfs.so:devel/physfs
 

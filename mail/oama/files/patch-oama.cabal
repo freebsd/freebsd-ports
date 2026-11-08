@@ -1,0 +1,10 @@
+--- oama.cabal.orig	2025-06-02 15:32:48 UTC
++++ oama.cabal
+@@ -1,6 +1,6 @@ name:               oama
+ cabal-version:      3.12
+ name:               oama
+-version:            0.20.2
++version:            0.21.0
+ license:            BSD-3-Clause
+ license-file:       LICENSE
+ author:             Peter Dobsan

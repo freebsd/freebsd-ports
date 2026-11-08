@@ -1,5 +1,6 @@
 PORTNAME=	webtrees
 DISTVERSION=	2.1.27
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/fisharebest/${PORTNAME}/releases/download/${PORTVERSION}/
 PKGNAMESUFFIX=	21${PHP_PKGNAMESUFFIX}
@@ -10,6 +11,9 @@ WWW=		https://webtrees.net/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/${PORTNAME}/LICENSE.md
+
+DEPRECATED=	Use webtrees22 as this version uses upstream EOLed php82 which will retire soon
+EXPIRATION_DATE=	2026-12-31
 
 USES=		cpe php:flavors shebangfix zip
 # php pcre extension is required but it's statically linked in default php

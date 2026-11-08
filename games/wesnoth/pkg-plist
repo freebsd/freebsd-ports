@@ -18,6 +18,7 @@ share/icons/HighContrast/scalable/apps/wesnoth-icon.svg
 %%NLS%%%%SERVER%%share/man/en_GB/man6/wesnothd.6.gz
 %%NLS%%%%SERVER%%share/man/es/man6/wesnothd.6.gz
 %%NLS%%%%SERVER%%share/man/fr/man6/wesnothd.6.gz
+%%NLS%%%%SERVER%%share/man/he/man6/wesnothd.6.gz
 %%NLS%%%%SERVER%%share/man/it/man6/wesnothd.6.gz
 %%NLS%%%%SERVER%%share/man/ja/man6/wesnothd.6.gz
 %%NLS%%%%SERVER%%share/man/pt_BR/man6/wesnothd.6.gz
@@ -35,6 +36,7 @@ share/icons/HighContrast/scalable/apps/wesnoth-icon.svg
 %%NLS%%share/man/en_GB/man6/wesnoth.6.gz
 %%NLS%%share/man/es/man6/wesnoth.6.gz
 %%NLS%%share/man/fr/man6/wesnoth.6.gz
+%%NLS%%share/man/he/man6/wesnoth.6.gz
 %%NLS%%share/man/it/man6/wesnoth.6.gz
 %%NLS%%share/man/ja/man6/wesnoth.6.gz
 %%NLS%%share/man/pt_BR/man6/wesnoth.6.gz

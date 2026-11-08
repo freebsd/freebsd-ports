@@ -1,12 +1,12 @@
 PORTNAME=	noto
-PORTVERSION=	2.006
+PORTVERSION=	2.007
 CATEGORIES=	x11-fonts
 #MASTER_SITES=	https://github.com/notofonts/notofonts.github.io/raw/NotoSansDevanagari-v${PORTVERSION}/fonts/ \
 #		https://github.com/notofonts/notofonts.github.io/raw/NotoSansDevanagari-v${PORTVERSION}/fonts/NotoSansDevanagari/hinted/ttf/:fonts
 #MASTER_SITES=	https://github.com/notofonts/notofonts.github.io/raw/noto-monthly-release-23.4.1/fonts/ \
 #		https://github.com/notofonts/notofonts.github.io/raw/noto-monthly-release-23.4.1/fonts/NotoSansDevanagari/hinted/ttf/:fonts
-MASTER_SITES=	https://github.com/notofonts/notofonts.github.io/raw/4107892fb07b01fbccc96e43638028f6bf127a4a/fonts/ \
-		https://github.com/notofonts/notofonts.github.io/raw/4107892fb07b01fbccc96e43638028f6bf127a4a/fonts/NotoSansDevanagari/hinted/ttf/:fonts
+MASTER_SITES=	https://github.com/notofonts/notofonts.github.io/raw/92d2ea744479d3379927f1fb5f8b0945dd0349b7/fonts/ \
+		https://github.com/notofonts/notofonts.github.io/raw/92d2ea744479d3379927f1fb5f8b0945dd0349b7/fonts/NotoSansDevanagari/hinted/ttf/:fonts
 PKGNAMESUFFIX=	-sans-devanagari
 DISTFILES=	LICENSE \
 		${FONTS:S|$|:fonts|}

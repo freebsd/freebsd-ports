@@ -1,5 +1,5 @@
 PORTNAME=	tslib
-DISTVERSION=	1.23
+DISTVERSION=	1.24
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/libts/${PORTNAME}/releases/download/${DISTVERSION}/
 

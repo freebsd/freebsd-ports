@@ -1,6 +1,6 @@
 PORTNAME=	openshot
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.5.1
+DISTVERSION=	4.0.0
 CATEGORIES=	multimedia
 
 MAINTAINER=	tatsuki_makino@hotmail.com
@@ -10,22 +10,25 @@ WWW=		https://www.openshot.org/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libopenshot>=0.7.0:multimedia/libopenshot@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libopenshot>=1.0.0:multimedia/libopenshot@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sentry-sdk>=0:devel/py-sentry-sdk@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyzmq>=0:net/py-pyzmq@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}distro>=0:sysutils/py-distro@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR}
 
-USES=		desktop-file-utils pyqt:5 python shared-mime-info shebangfix
+USES=		desktop-file-utils pyqt:6 python shared-mime-info shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenShot
 GH_PROJECT=	${PORTNAME}-qt
-USE_PYQT=	pyqt5 webengine
-USE_PYTHON=	distutils optsuffix
+USE_PYQT=	pyqt6
+USE_PYTHON=	optsuffix pep517
 SHEBANG_FILES=	src/language/generate_translations.py\
 		src/language/show_translations.py\
 		src/language/test_translations.py
+EXTRACT_AFTER_ARGS=	--no-same-owner --no-same-permissions\
+		--exclude '${GH_PROJECT_DEFAULT}-${GH_TAGNAME_EXTRACT}/installer/'
 NO_ARCH=	yes
 PLIST_SUB=	VERSION=${DISTVERSION:C/-.+//}
 

@@ -1,5 +1,5 @@
 PORTNAME=	gcc
-PORTVERSION=	14.3.1.s20260618
+PORTVERSION=	14.4.1.s20261001
 PORTEPOCH=	1
 CATEGORIES=	lang
 MASTER_SITES=	GCC/snapshots/${DIST_VERSION}
@@ -77,10 +77,7 @@ GRAPHITE_CONFIGURE_WITH+=      isl
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == amd64
-CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:tl}${OSREL}
-
-.elif ${ARCH} == powerpc64
+.if ${ARCH} == powerpc64
 CONFIGURE_ARGS+=	--with-abi=elfv2
 .endif
 

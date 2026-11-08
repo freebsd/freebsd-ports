@@ -1,0 +1,11 @@
+--- Cargo.toml.orig
++++ Cargo.toml
+@@ -130,7 +130,7 @@
+ # is a static/container build, where secret-service is unreachable anyway, so
+ # those binaries use the file-backed credential store (see ADR-0008 and the
+ # matching `cfg(not(target_env = "musl"))` gates in src/auth/keyring_store.rs).
+-keyring = { version = "3", features = ["apple-native", "windows-native", "sync-secret-service", "vendored"] }
++keyring = { version = "3", features = ["apple-native", "windows-native", "sync-secret-service"] }
+ 
+ [package.metadata.dist]
+ dist = true

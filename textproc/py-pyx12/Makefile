@@ -1,10 +1,10 @@
 PORTNAME=	pyx12
-DISTVERSION=	4.0.0
+DISTVERSION=	4.0.1
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Validate and convert HIPAA X12 documents
 WWW=		https://github.com/azoner/pyx12
 

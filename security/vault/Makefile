@@ -1,7 +1,6 @@
 PORTNAME=	vault
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.3
-PORTREVISION=	1
+DISTVERSION=	2.2.1
 CATEGORIES=	security
 MASTER_SITES=	https://raw.githubusercontent.com/hashicorp/vault/${DISTVERSIONFULL}/ \
 		LOCAL/bofh/security/${PORTNAME}/:web_ui
@@ -10,24 +9,28 @@ DISTFILES=	go.mod \
 		api/auth/approle/go.mod \
 		api/auth/kubernetes/go.mod \
 		api/auth/userpass/go.mod \
+		command/base/go.mod \
+		command/client/go.mod \
+		internalshared/go.mod \
 		sdk/go.mod \
+		version/go.mod \
 		${PORTNAME}-web_ui-${DISTVERSION}${EXTRACT_SUFX}:web_ui
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Tool for securely accessing secrets
 WWW=		https://vaultproject.io/
 
-NOT_FOR_ARCHS=	armv7 i386
-NOT_FOR_ARCHS_REASON=	fatal error: out of memory
-
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+NOT_FOR_ARCHS=	armv7 i386
+NOT_FOR_ARCHS_REASON=	fatal error: out of memory
+
 .if defined(MAINTAINER_MODE)
-EXTRACT_DEPENDS=npm-node20>0:www/npm-node20
+EXTRACT_DEPENDS=npm-node24>0:www/npm-node24
 .endif
 
-USES=		cpe go:1.26+,modules
+USES=		cpe go:modules
 CPE_VENDOR=	hashicorp
 USE_GITHUB=	yes
 GH_ACCOUNT=	hashicorp
@@ -39,6 +42,8 @@ GO_BUILDFLAGS=	-ldflags="-s \
 		-X github.com/hashicorp/vault/version.BuildDate=${SOURCE_DATE_EPOCH:U${SOURCE_DATE_EPOCH_CMD:sh}} \
 		" -tags "vault ui"
 
+MAKE_ENV=	GOWORK=off
+
 SUB_FILES=	pkg-message
 
 USERS=		vault
@@ -46,7 +51,7 @@ GROUPS=		vault
 
 PLIST_FILES=	bin/${PORTNAME}
 
-GITID=	a71d5add7ef4111ec4015e9a81b06388f652e2ac
+GITID=	2891bfd23893ebd302307050edaf03d871ea8351
 
 .include <bsd.port.pre.mk>
 
@@ -60,8 +65,10 @@ post-patch:
 
 .if defined(MAINTAINER_MODE)
 _make-web_ui: clean extract
+	cd ${WRKSRC}/ui && ${LOCALBASE}/bin/jq 'del(.devEngines)' package.json > package.json.new \
+				&& ${MV} package.json.new package.json
 	cd ${WRKSRC}/ui && ${SETENV} ${MAKE_ENV} npm install -g pnpm@latest-10
-	cd ${WRKSRC}/ui && ${SETENV} ${MAKE_ENV} pnpm i
+	cd ${WRKSRC}/ui && ${SETENV} ${MAKE_ENV} pnpm i --no-frozen-lockfile
 	cd ${WRKSRC}/ui && ${SETENV} ${MAKE_ENV} npm rebuild node-sass
 	cd ${WRKSRC}/ui && ${SETENV} ${MAKE_ENV} pnpm run build
 	cd ${WRKDIR} && ${TAR} -czf \

@@ -1,6 +1,7 @@
 PORTNAME=	wf-shell
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.0
+DISTVERSION=	0.11.0
+PORTREVISION=	1
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	ports@FreeBSD.org
@@ -13,38 +14,49 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols \
 		wf-config>=0.7.0:devel/wf-config \
 		wayfire>0:x11-wm/wayfire
-LIB_DEPENDS=	libdbusmenu-gtk3.so:devel/libdbusmenu \
+LIB_DEPENDS=	libdbusmenu-glib.so:devel/libdbusmenu \
 		libinotify.so:devel/libinotify \
 		libwf-config.so:devel/wf-config \
+		libgtk4-layer-shell.so:x11-toolkits/gtk4-layer-shell \
 		libwayland-client.so:graphics/wayland \
-		libgtk-layer-shell.so:x11-toolkits/gtk-layer-shell
+		libepoxy.so:graphics/libepoxy \
+		libxkbregistry.so:x11/libxkbcommon \
+		libyyjson.so:devel/yyjson \
+		libdrm.so:graphics/libdrm
 RUN_DEPENDS=	wayland-logout:x11/wayland-logout
 
-FLAVORS=	default nopulse
-default_CONFLICTS_INSTALL=	${PORTNAME}-nopulse
-nopulse_CONFLICTS_INSTALL=	${PORTNAME}
-nopulse_PKGNAMESUFFIX=		-nopulse
+FLAVORS=	default nopipewire nopulse lite
+FLAVOR?=	${FLAVORS:[1]}
+${FLAVOR}_PKGNAMESUFFIX=	${FLAVOR:N${FLAVORS:[1]}:C|(.+)|-\1|}
 
-USES=		compiler:c++17-lang gnome meson pkgconfig
+USES=		compiler:c++17-lang gl gnome meson pkgconfig ssl
 USE_GITHUB=	yes
-USE_GNOME=	gtkmm30
 GH_ACCOUNT=	WayfireWM
-GH_TUPLE=	GNOME:libgnome-volume-control:468022b:gvc/subprojects/gvc
-MESON_ARGS=	-Dgvc:alsa=false -Dwayland-logout=false
-DATADIR=	${PREFIX}/share/wayfire
+GH_TUPLE=	GNOME:libgnome-volume-control:5f9768a:gvc/subprojects/gvc \
+		WayfireWM:wf-json:70039e1:wf_json/subprojects/wf-json
+USE_GL=		gbm
+USE_GNOME=	gtkmm40
+MESON_ARGS=	-Dddcutil=disabled -Dgvc:alsa=false -Dwayland-logout=false
+LDFLAGS+=	-lpam -lpthread
 
-OPTIONS_DEFINE=	PULSEAUDIO
-OPTIONS_DEFAULT=PULSEAUDIO
-.if ${FLAVOR:U} == nopulse
-OPTIONS_EXCLUDE=PULSEAUDIO
+CONFLICTS_INSTALL=	${PORTNAME}*
+
+OPTIONS_DEFINE=		PIPEWIRE PULSEAUDIO
+OPTIONS_DEFAULT=	PIPEWIRE PULSEAUDIO
+.if ${FLAVOR:U} == nopipewire || ${FLAVOR:U} == lite
+OPTIONS_EXCLUDE+=	PIPEWIRE
+.endif
+.if ${FLAVOR:U} == nopulse || ${FLAVOR:U} == lite
+OPTIONS_EXCLUDE+=	PULSEAUDIO
 .endif
 
+PIPEWIRE_LIB_DEPENDS=	libwireplumber-0.5.so:multimedia/wireplumber
+PIPEWIRE_MESON_ENABLED=	wp-mixer-widget
+
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
-PULSEAUDIO_MESON_ENABLED=	pulse
+PULSEAUDIO_MESON_ENABLED=	volume-widget
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},' \
-		${WRKSRC}/src/dock/toplevel-icon.cpp \
-		${WRKSRC}/src/panel/widgets/window-list/toplevel.cpp
+	${REINPLACE_CMD} 's|/etc/|${LOCALBASE}/etc/|' ${WRKSRC}/data/meson.build
 
 .include <bsd.port.mk>

@@ -1,1 +1,3 @@
-This package contains showfont, a font dumper for the X font server.
+Showfont displays data about a font from an X font server.
+The information shown includes font information, font properties,
+character metrics, and character bitmaps.

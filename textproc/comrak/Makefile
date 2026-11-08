@@ -1,7 +1,6 @@
 PORTNAME=	comrak
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.54.0
-PORTREVISION=	1
+DISTVERSION=	0.59.0
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,9 +20,9 @@ GH_ACCOUNT=	kivikakk
 
 CARGO_CRATES=	adler2-2.0.1 \
 		aho-corasick-1.1.4 \
-		anstream-0.6.21 \
-		anstyle-1.0.13 \
-		anstyle-parse-0.2.7 \
+		anstream-1.0.0 \
+		anstyle-1.0.14 \
+		anstyle-parse-1.0.0 \
 		anstyle-query-1.1.5 \
 		anstyle-wincon-3.0.11 \
 		anyhow-1.0.100 \
@@ -35,16 +34,16 @@ CARGO_CRATES=	adler2-2.0.1 \
 		bit-set-0.8.0 \
 		bit-vec-0.8.0 \
 		bitflags-2.10.0 \
-		bon-3.9.0 \
-		bon-macros-3.9.0 \
+		bon-3.9.3 \
+		bon-macros-3.9.3 \
 		bumpalo-3.19.1 \
 		caseless-0.2.2 \
 		cc-1.2.53 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.2.1 \
-		clap-4.5.60 \
-		clap_builder-4.5.60 \
-		clap_derive-4.5.55 \
+		clap-4.6.3 \
+		clap_builder-4.6.2 \
+		clap_derive-4.6.3 \
 		clap_lex-1.0.0 \
 		codspeed-4.2.1 \
 		codspeed-divan-compat-4.2.1 \
@@ -57,18 +56,20 @@ CARGO_CRATES=	adler2-2.0.1 \
 		darling-0.21.3 \
 		darling_core-0.21.3 \
 		darling_macro-0.21.3 \
-		deranged-0.5.5 \
+		deranged-0.5.9 \
 		derive_arbitrary-1.4.2 \
 		deunicode-1.6.2 \
 		diff-0.1.13 \
 		divan-macros-0.1.17 \
 		either-1.15.0 \
-		emojis-0.8.0 \
+		emojis-0.9.0 \
 		entities-1.0.1 \
 		equivalent-1.0.2 \
 		errno-0.3.14 \
 		fancy-regex-0.16.2 \
 		fastrand-2.3.0 \
+		fearless_simd-1.0.0 \
+		fearless_simd_macros-0.1.0 \
 		find-msvc-tools-0.1.8 \
 		finl_unicode-1.4.0 \
 		flate2-1.1.8 \
@@ -83,18 +84,18 @@ CARGO_CRATES=	adler2-2.0.1 \
 		is_terminal_polyfill-1.70.2 \
 		itertools-0.14.0 \
 		itoa-1.0.17 \
-		jetscii-0.5.3 \
 		lazy_static-1.5.0 \
 		libc-0.2.180 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.11.0 \
 		memchr-2.7.6 \
+		memchr-n-0.1.7 \
 		miniz_oxide-0.8.9 \
 		nix-0.30.1 \
 		ntest-0.9.5 \
 		ntest_test_cases-0.9.5 \
 		ntest_timeout-0.9.5 \
-		num-conv-0.1.0 \
+		num-conv-0.2.2 \
 		num-traits-0.2.19 \
 		once_cell-1.21.3 \
 		once_cell_polyfill-1.70.2 \
@@ -102,23 +103,25 @@ CARGO_CRATES=	adler2-2.0.1 \
 		onig_sys-69.9.1 \
 		percent-encoding-rfc3986-0.1.3 \
 		phf-0.13.1 \
-		phf_codegen-0.13.1 \
-		phf_generator-0.13.1 \
+		phf-0.14.0 \
+		phf_codegen-0.14.0 \
+		phf_generator-0.14.0 \
 		phf_shared-0.13.1 \
+		phf_shared-0.14.0 \
 		pkg-config-0.3.32 \
 		plist-1.8.0 \
 		powerfmt-0.2.0 \
 		pretty_assertions-1.4.1 \
 		prettyplease-0.2.37 \
 		proc-macro-crate-3.4.0 \
-		proc-macro2-1.0.105 \
+		proc-macro2-1.0.107 \
 		quick-xml-0.38.4 \
-		quote-1.0.43 \
+		quote-1.0.47 \
 		regex-1.12.2 \
 		regex-automata-0.4.13 \
 		regex-lite-0.1.8 \
 		regex-syntax-0.8.8 \
-		rustc-hash-2.1.2 \
+		rustc-hash-2.1.3 \
 		rustix-1.1.3 \
 		rustversion-1.0.22 \
 		same-file-1.0.6 \
@@ -132,28 +135,29 @@ CARGO_CRATES=	adler2-2.0.1 \
 		simd-adler32-0.3.8 \
 		siphasher-1.0.1 \
 		slug-0.1.6 \
-		smallvec-1.15.1 \
+		smallvec-1.15.2 \
 		statrs-0.18.0 \
 		strsim-0.11.1 \
 		strum-0.28.0 \
 		strum_macros-0.28.0 \
 		syn-1.0.109 \
-		syn-2.0.114 \
+		syn-2.0.119 \
+		syn-3.0.6 \
 		syntect-5.3.0 \
-		terminal_size-0.4.3 \
+		terminal_size-0.4.4 \
 		thiserror-2.0.17 \
 		thiserror-impl-2.0.17 \
-		time-0.3.45 \
-		time-core-0.1.7 \
-		time-macros-0.2.25 \
+		time-0.3.55 \
+		time-core-0.1.9 \
+		time-macros-0.2.32 \
 		tinyvec-1.10.0 \
 		tinyvec_macros-0.1.1 \
-		toml-1.1.2+spec-1.1.0 \
+		toml-1.1.3+spec-1.1.0 \
 		toml_datetime-0.7.5+spec-1.1.0 \
 		toml_datetime-1.1.1+spec-1.1.0 \
 		toml_edit-0.23.10+spec-1.0.0 \
 		toml_parser-1.1.2+spec-1.1.0 \
-		toml_writer-1.1.1+spec-1.1.0 \
+		toml_writer-1.1.3+spec-1.1.0 \
 		typed-arena-2.0.2 \
 		unicode-ident-1.0.22 \
 		unicode-normalization-0.1.25 \
@@ -167,26 +171,16 @@ CARGO_CRATES=	adler2-2.0.1 \
 		winapi-util-0.1.11 \
 		windows-link-0.2.1 \
 		windows-sys-0.59.0 \
-		windows-sys-0.60.2 \
 		windows-sys-0.61.2 \
 		windows-targets-0.52.6 \
-		windows-targets-0.53.5 \
 		windows_aarch64_gnullvm-0.52.6 \
-		windows_aarch64_gnullvm-0.53.1 \
 		windows_aarch64_msvc-0.52.6 \
-		windows_aarch64_msvc-0.53.1 \
 		windows_i686_gnu-0.52.6 \
-		windows_i686_gnu-0.53.1 \
 		windows_i686_gnullvm-0.52.6 \
-		windows_i686_gnullvm-0.53.1 \
 		windows_i686_msvc-0.52.6 \
-		windows_i686_msvc-0.53.1 \
 		windows_x86_64_gnu-0.52.6 \
-		windows_x86_64_gnu-0.53.1 \
 		windows_x86_64_gnullvm-0.52.6 \
-		windows_x86_64_gnullvm-0.53.1 \
 		windows_x86_64_msvc-0.52.6 \
-		windows_x86_64_msvc-0.53.1 \
 		winnow-0.7.14 \
 		winnow-1.0.3 \
 		xdg-3.0.0 \

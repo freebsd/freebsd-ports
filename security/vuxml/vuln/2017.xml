@@ -657,11 +657,8 @@
       <url>https://bugzilla.gnome.org/show_bug.cgi?id=775200</url>
       <url>http://www.openwall.com/lists/oss-security/2017/05/15/1</url>
       <url>http://www.securityfocus.com/bid/98599</url>
-      <url>http://www.openwall.com/lists/oss-security/2017/05/15/1</url>
       <url>http://www.securityfocus.com/bid/98556</url>
-      <url>http://www.openwall.com/lists/oss-security/2017/05/15/1</url>
       <url>http://www.securityfocus.com/bid/98601</url>
-      <url>http://www.openwall.com/lists/oss-security/2017/05/15/1</url>
       <url>http://www.securityfocus.com/bid/98568</url>
       <cvename>CVE-2017-8872</cvename>
       <cvename>CVE-2017-9047</cvename>
@@ -2725,7 +2722,7 @@
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>cacti developers report:</p>
-	<blockquote cite=" https://github.com/Cacti/cacti/commit/93f661d8adcfa6618b11522cdab30e97bada33fd">
+	<blockquote cite="https://github.com/Cacti/cacti/commit/93f661d8adcfa6618b11522cdab30e97bada33fd">
 	  <p>The file include/global_session.php in Cacti 1.1.25 has XSS related to (1) the URI or (2) the refresh page.</p>
 	</blockquote>
       </body>
@@ -2949,7 +2946,6 @@
       <url>https://cgit.freedesktop.org/xorg/xserver/commit/?id=8caed4df36b1f802b4992edcfd282cbeeec35d9d</url>
       <url>https://cgit.freedesktop.org/xorg/xserver/commit/?id=ba336b24052122b136486961c82deac76bbde455</url>
       <url>http://www.securityfocus.com/bid/99543</url>
-      <url>https://bugzilla.suse.com/show_bug.cgi?id=1035283</url>
       <url>https://cgit.freedesktop.org/xorg/xserver/commit/?id=05442de962d3dc624f79fc1a00eca3ffc5489ced</url>
       <cvename>CVE-2017-10971</cvename>
       <cvename>CVE-2017-10972</cvename>
@@ -3050,9 +3046,6 @@
       </body>
     </description>
     <references>
-      <url>http://www.securityfocus.com/bid/100290</url>
-      <url>https://security.gentoo.org/glsa/201709-18</url>
-      <url>https://www.mercurial-scm.org/wiki/WhatsNew#Mercurial_4.3_.2F_4.3.1_.282017-08-10.29</url>
       <url>http://www.securityfocus.com/bid/100290</url>
       <url>https://security.gentoo.org/glsa/201709-18</url>
       <url>https://www.mercurial-scm.org/wiki/WhatsNew#Mercurial_4.3_.2F_4.3.1_.282017-08-10.29</url>
@@ -4127,9 +4120,7 @@
     <references>
       <url>https://blog.ripstech.com/2017/sugarcrm-security-diet-multiple-vulnerabilities/</url>
       <url>https://support.sugarcrm.com/Resources/Security/sugarcrm-sa-2017-006/</url>
-      <url>https://blog.ripstech.com/2017/sugarcrm-security-diet-multiple-vulnerabilities/</url>
       <url>https://support.sugarcrm.com/Resources/Security/sugarcrm-sa-2017-007/</url>
-      <url>https://blog.ripstech.com/2017/sugarcrm-security-diet-multiple-vulnerabilities/</url>
       <url>https://support.sugarcrm.com/Resources/Security/sugarcrm-sa-2017-008/</url>
       <cvename>CVE-2017-14508</cvename>
       <cvename>CVE-2017-14509</cvename>
@@ -6799,7 +6790,6 @@
       <cvename>CVE-2017-9226</cvename>
       <cvename>CVE-2017-9227</cvename>
       <cvename>CVE-2017-9228</cvename>
-      <cvename>CVE-2017-9228</cvename>
     </references>
     <dates>
       <discovery>2017-07-06</discovery>
@@ -7644,7 +7634,7 @@ maliciously crafted GET request to the Horde server.</p>
       </body>
     </description>
     <references>
-      <url>CVE-2017-6594</url>
+      <cvename>CVE-2017-6594</cvename>
       <freebsdpr>ports/219657</freebsdpr>
     </references>
     <dates>
@@ -8932,7 +8922,6 @@ maliciously crafted GET request to the Horde server.</p>
       <url>https://github.com/erikd/libsndfile/commit/60b234301adf</url>
       <url>https://github.com/erikd/libsndfile/commit/708e996c87c5</url>
       <url>https://github.com/erikd/libsndfile/commit/f457b7b5ecfe</url>
-      <url>https://github.com/erikd/libsndfile/commit/60b234301adf</url>
     </references>
     <dates>
       <discovery>2017-04-07</discovery>
@@ -10850,8 +10839,6 @@ maliciously crafted GET request to the Horde server.</p>
       <url>https://www.ffmpeg.org/security.html</url>
       <url>https://chromereleases.googleblog.com/2017/01/stable-channel-update-for-desktop.html</url>
       <cvename>CVE-2017-5025</cvename>
-      <url>https://www.ffmpeg.org/security.html</url>
-      <url>https://chromereleases.googleblog.com/2017/01/stable-channel-update-for-desktop.html</url>
     </references>
     <dates>
       <discovery>2017-01-25</discovery>

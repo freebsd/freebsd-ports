@@ -1,0 +1,2 @@
+Python HTTP user agent parser. It extracts operating system, browser and
+other information from an HTTP user agent string.

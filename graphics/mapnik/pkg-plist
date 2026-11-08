@@ -546,8 +546,8 @@ lib/cmake/mapnik/mapnikUtilityTargets_shapeindex.cmake
 lib/cmake/mapnik/mapnikUtilityTargets_svg2png-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/mapnik/mapnikUtilityTargets_svg2png.cmake
 lib/libmapnik.so
-lib/libmapnik.so.4.2
-lib/libmapnik.so.4.2.2
+lib/libmapnik.so.4.3
+lib/libmapnik.so.4.3.2
 lib/libmapnikjson.a
 lib/libmapnikwkt.a
 lib/mapnik/input/csv.input
@@ -571,6 +571,7 @@ libdata/pkgconfig/libmapnikwkt.pc
 %%PORTDOCS%%%%DOCSDIR%%/docs/cmake-usage.md
 %%PORTDOCS%%%%DOCSDIR%%/docs/contributing.md
 %%PORTDOCS%%%%DOCSDIR%%/docs/design.md
+%%PORTDOCS%%%%DOCSDIR%%/docs/line-dashoffset.md
 %%PORTDOCS%%%%DOCSDIR%%/docs/textrendering.gv
 %%PORTDOCS%%%%DOCSDIR%%/docs/textrendering.png
 %%PORTDOCS%%%%DOCSDIR%%/docs/textrendering.svg

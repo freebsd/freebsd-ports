@@ -1,11 +1,11 @@
---- pyproject.toml.orig	2025-11-01 14:52:19 UTC
+--- pyproject.toml.orig	2026-07-08 05:34:13 UTC
 +++ pyproject.toml
 @@ -11,7 +11,7 @@ license = {text = "Apache License 2.0"}
  readme = "README.md"
- requires-python = ">=3.10"
+ requires-python = ">=3.11"
  license = {text = "Apache License 2.0"}
 -dynamic = ["version"]
-+version = "3.14.0"
++version = "3.15.1"
  classifiers = [
      "Development Status :: 4 - Beta",
      "Programming Language :: Python :: 3",

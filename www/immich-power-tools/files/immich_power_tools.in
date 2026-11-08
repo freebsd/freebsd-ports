@@ -1,0 +1,75 @@
+#!/bin/sh
+
+# PROVIDE: immich_power_tools
+# REQUIRE: LOGIN postgresql
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# immich_power_tools_enable (bool):	Set to NO by default.
+#					Set it to YES to enable the tools.
+# immich_power_tools_host (str):	Listen address. Default: 127.0.0.1
+# immich_power_tools_port (int):	Listen port. Default: 3002
+# immich_power_tools_db (str):		Settings database.
+#					Default: %%DBDIR%%/app.db
+# immich_power_tools_env_file (str):	Environment file with IMMICH_URL,
+#					IMMICH_API_KEY and the DB_* settings
+#					of the Immich database, read as shell.
+#					Default: %%PREFIX%%/etc/immich-power-tools.env
+
+. /etc/rc.subr
+
+name=immich_power_tools
+rcvar=immich_power_tools_enable
+desc="Immich Power Tools"
+
+load_rc_config $name
+
+: ${immich_power_tools_enable:=NO}
+: ${immich_power_tools_user:=immich}
+: ${immich_power_tools_group:=immich}
+: ${immich_power_tools_host:=127.0.0.1}
+: ${immich_power_tools_port:=3002}
+: ${immich_power_tools_db:=%%DBDIR%%/app.db}
+: ${immich_power_tools_env_file:=%%PREFIX%%/etc/immich-power-tools.env}
+: ${immich_power_tools_env:="HOSTNAME=${immich_power_tools_host} \
+	PORT=${immich_power_tools_port} \
+	APP_DB_PATH=${immich_power_tools_db}"}
+
+pidfile=/var/run/immich/${name}.pid
+childpidfile=/var/run/immich/${name}_child.pid
+required_files="${immich_power_tools_env_file}"
+
+start_precmd=immich_power_tools_precmd
+stop_cmd=immich_power_tools_stop
+command=/usr/sbin/daemon
+command_args="-f -H -t ${name} -P ${pidfile} -p ${childpidfile} \
+	-o /var/log/immich/${name}.log \
+	%%PREFIX%%/bin/immich-power-tools"
+
+immich_power_tools_stop()
+{
+	local pid
+	pid=$(check_pidfile ${pidfile} ${command})
+	if [ -z "$pid" ]; then
+		echo "${name} not running? (check ${pidfile})."
+		return 1
+	fi
+	echo "Stopping ${name}."
+	kill -TERM -- -${pid} 2>/dev/null || kill -TERM ${pid}
+	wait_for_pids ${pid}
+	rm -f ${pidfile} ${childpidfile}
+}
+
+immich_power_tools_precmd()
+{
+	# Keep what the service creates itself out of other users' reach
+	umask 027
+
+	install -d -m 750 -o ${immich_power_tools_user} \
+		-g ${immich_power_tools_group} \
+		/var/run/immich /var/log/immich %%DBDIR%%
+}
+
+run_rc_command "$1"

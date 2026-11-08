@@ -1,0 +1,4 @@
+bosd flashes transient, click-through feedback over the desktop: a
+PNG glyph, countdown digits, large or small outlined text, or a
+gauge bar. A warm daemon per channel repaints in place so rapid
+key repeats never flash.

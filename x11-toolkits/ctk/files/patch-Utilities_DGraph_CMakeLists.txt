@@ -1,0 +1,17 @@
+-- Update the minimum required CMake version for the DGraph utility to 3.5.
+-- CMake 4.0 removed support for cmake_minimum_required() versions below 3.5,
+-- and DGraph is built as a separate try_compile() project, so the top-level
+-- CMAKE_POLICY_VERSION_MINIMUM workaround does not apply to it.
+-- This fixes the configure failure with CMake 4.
+--
+--- Utilities/DGraph/CMakeLists.txt.orig	2026-09-28 08:27:43 UTC
++++ Utilities/DGraph/CMakeLists.txt
+@@ -18,7 +18,7 @@
+ #
+ ###########################################################################
+
+-cmake_minimum_required(VERSION 3.0)
++cmake_minimum_required(VERSION 3.5)
+ 
+ foreach(policy CMP0003)
+   if(POLICY ${policy})

@@ -1,6 +1,6 @@
---- Makefile.orig	2020-03-22 21:26:18 UTC
+--- Makefile.orig	2022-10-24 11:12:05 UTC
 +++ Makefile
-@@ -30,6 +30,13 @@ BUNDLEDIR  = $(BUILDDIR)/bundle/$(BUNDLENAME)
+@@ -30,6 +30,13 @@ BUNDLETESTD= $(BUILDDIR)/bundle/test
  BUNDLE     = $(BUILDDIR)/$(BUNDLENAME).tgz
  BUNDLETESTD= $(BUILDDIR)/bundle/test
  
@@ -14,7 +14,7 @@
  ifeq ($(OS),Windows_NT)
  EXE           = .exe
  COMPRESS_CORE = no
-@@ -86,7 +93,7 @@ $(QLDIR)/local-projects/cl-csv:
+@@ -88,7 +95,7 @@ $(QLDIR)/setup.lisp:
  
  $(QLDIR)/setup.lisp:
  	mkdir -p $(BUILDDIR)
@@ -23,7 +23,7 @@
  	$(CL) $(CL_OPTS) --load $(BUILDDIR)/quicklisp.lisp                        \
               --load src/getenv.lisp                                               \
               --eval '(quicklisp-quickstart:install :path "$(BUILDDIR)/quicklisp" :proxy (getenv "http_proxy"))' \
-@@ -126,7 +133,9 @@ $(BUILDAPP_CCL): $(QLDIR)/setup.lisp
+@@ -128,7 +135,9 @@ $(BUILDAPP_SBCL): $(QLDIR)/setup.lisp
  
  $(BUILDAPP_SBCL): $(QLDIR)/setup.lisp
  	mkdir -p $(BUILDDIR)/bin
@@ -34,7 +34,7 @@
               --eval '(ql:quickload "buildapp")'                   \
               --eval '(buildapp:build-buildapp "$@")'              \
               --eval '(quit)'
-@@ -199,7 +208,7 @@ $(BUNDLE): $(BUNDLEDIR) $(BUNDLEDIR)/version.sexp
+@@ -201,7 +210,7 @@ $(BUNDLE): $(BUNDLEDIR) $(BUNDLEDIR)/version.sexp
  	sed -e s/%VERSION%/$(VERSION)/ < bundle/Makefile > $(BUNDLEDIR)/Makefile
  	git archive --format=tar --prefix=pgloader-$(VERSION)/ master \
  	     | tar -C $(BUNDLEDIR)/local-projects/ -xf -

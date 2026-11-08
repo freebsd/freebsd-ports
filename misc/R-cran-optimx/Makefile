@@ -12,7 +12,6 @@ LICENSE=	GPLv2
 CRAN_DEPENDS=	R-cran-nloptr>0:math/R-cran-nloptr \
 		R-cran-numDeriv>0:math/R-cran-numDeriv \
 		R-cran-pracma>0:math/R-cran-pracma
-BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 TEST_DEPENDS=	R-cran-minqa>0:math/R-cran-minqa \
 		R-cran-R.rsp>0:textproc/R-cran-R.rsp \

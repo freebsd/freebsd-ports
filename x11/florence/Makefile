@@ -1,45 +1,47 @@
 PORTNAME=	florence
-PORTVERSION=	0.6.3
-PORTREVISION=	7
+DISTVERSION=	0.7.2
 CATEGORIES=	x11
-MASTER_SITES=	SF/florence/florence/${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dteske@FreeBSD.org
 COMMENT=	Extensible scalable virtual keyboard
-WWW=		https://florence.sourceforge.net/
+WWW=		https://github.com/FrauBSD/florence
 
-LICENSE=	GPLv2+ GFDL
+LICENSE=	GFDL GPLv2+
 LICENSE_COMB=	multi
+LICENSE_FILE_GFDL=	${WRKSRC}/COPYING-DOCS
+LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libnotify.so:devel/libnotify
+LIB_DEPENDS=	libdbus-1.so:devel/dbus \
+		libnotify.so:devel/libnotify
 
-USES=		gmake gnome gstreamer iconv libtool pathfix pkgconfig tar:bzip2 xorg
-USE_GNOME=	gtk30 cairo intlhack librsvg2
+USES=		gmake gnome gstreamer iconv libtool localbase pathfix pkgconfig \
+		xorg
+USE_GITHUB=	yes
+GH_ACCOUNT=	FrauBSD
+USE_GNOME=	cairo gtk30 intlhack librsvg2 libxml2
+GLIB_SCHEMAS=	org.florence.gschema.xml
+USE_GSTREAMER=	good ogg vorbis
 USE_LDCONFIG=	yes
-USE_XORG=	xtst xext
+USE_XORG=	x11 xext xrandr xtst
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-static --without-docs
-
-GLIB_SCHEMAS=	org.florence.gschema.xml
-
-INSTALL_TARGET=	install-strip
+CONFIGURE_ARGS=	--disable-static \
+		--without-docs
 
 MAKE_JOBS_UNSAFE=	yes
 
-PORTDOCS=	AUTHORS ChangeLog NEWS README
+INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=	DOCS NLS
-OPTIONS_SUB=	yes
+PORTDOCS=	AUTHORS ChangeLog NEWS README.md
 
+OPTIONS_DEFINE=			DOCS FREEBSD_ORB NLS
+OPTIONS_DEFAULT=		DOCS FREEBSD_ORB NLS
+OPTIONS_SUB=			yes
+FREEBSD_ORB_DESC=		FreeBSD orb glyph for the Super key
+FREEBSD_ORB_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-freebsd-orb-super
+
+NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
-NLS_USES=	gettext
-
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD
-CFLAGS+=	-Wno-error=incompatible-function-pointer-types
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^Categories=.*|Categories=Application;Accessibility;System;|' \

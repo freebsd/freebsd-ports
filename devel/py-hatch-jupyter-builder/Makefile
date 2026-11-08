@@ -1,7 +1,8 @@
 PORTNAME=	hatch-jupyter-builder
-PORTVERSION=	0.9.1
+PORTVERSION=	0.10.0
 CATEGORIES=	devel python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/jupyterlab/hatch-jupyter-builder/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	hatch_jupyter_builder-${PORTVERSION}
 

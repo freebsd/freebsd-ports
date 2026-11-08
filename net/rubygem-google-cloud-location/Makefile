@@ -1,11 +1,11 @@
 PORTNAME=	google-cloud-location
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby Client for the Locations API
-WWW=		https://cloud.google.com/ruby/docs/reference/google-cloud-location/latest/ \
+WWW=		https://docs.cloud.google.com/ruby/docs/reference/google-cloud-location/latest \
 		https://github.com/googleapis/google-cloud-ruby/tree/main/google-cloud-location \
 		https://github.com/googleapis/google-cloud-ruby
 

@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=		1.3.1
 CATEGORIES=		biology
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ultrafast, memory-efficient short read aligner
 WWW=		https://bowtie-bio.sourceforge.net/index.shtml
 

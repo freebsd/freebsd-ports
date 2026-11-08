@@ -1,6 +1,19 @@
+-- Bump minimum required CMake version from 3.3 to 3.5 for CMake 4.x compatibility.
+-- CMake 4.x removed support for policies older than 3.5; pcmsolver uses only 3.5-compatible features.
+-- See https://github.com/PCMSolver/pcmsolver/issues/209
+
 --- CMakeLists.txt.orig	2020-11-30 20:21:39 UTC
 +++ CMakeLists.txt
-@@ -75,4 +75,6 @@ include(${PROJECT_SOURCE_DIR}/cmake/custom/eigen.cmake
+@@ -2,7 +2,7 @@
+ # Copyright (c) 2015-2020 by Radovan Bast, Roberto Di Remigio, Jonas Juselius, and contributors.
+ 
+ # set minimum cmake version
+-cmake_minimum_required(VERSION 3.3 FATAL_ERROR)
++cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
+ 
+ # project name
+ project(PCMSolver LANGUAGES CXX C Fortran)
+@@ -75,4 +75,6 @@ include(${PROJECT_SOURCE_DIR}/cmake/downloaded/autocma
  include(${PROJECT_SOURCE_DIR}/cmake/custom/libtaylor.cmake)
  include(${PROJECT_SOURCE_DIR}/cmake/custom/zlib.cmake)
  include(${PROJECT_SOURCE_DIR}/cmake/downloaded/autocmake_src.cmake)

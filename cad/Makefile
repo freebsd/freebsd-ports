@@ -11,8 +11,6 @@
     SUBDIR += apio
     SUBDIR += appcsxcad
     SUBDIR += archimedes
-    SUBDIR += astk-client
-    SUBDIR += astk-serveur
     SUBDIR += atlc
     SUBDIR += brlcad
     SUBDIR += calculix
@@ -24,7 +22,6 @@
     SUBDIR += cascade-compiler
     SUBDIR += chipvault
     SUBDIR += csxcad
-    SUBDIR += cura
     SUBDIR += cura-engine
     SUBDIR += digital
     SUBDIR += dinotrace
@@ -78,6 +75,7 @@
     SUBDIR += lepton-eda
     SUBDIR += lib3mf
     SUBDIR += libbgcode
+    SUBDIR += libfive
     SUBDIR += libgdsii
     SUBDIR += libopencad
     SUBDIR += librecad
@@ -124,6 +122,7 @@
     SUBDIR += py-verilog-parser
     SUBDIR += py-vunit-hdl
     SUBDIR += python-gdsii
+    SUBDIR += pythonocc-core
     SUBDIR += qcad
     SUBDIR += qcadjsapi
     SUBDIR += qcsxcad
@@ -140,6 +139,7 @@
     SUBDIR += rubygem-gdsii
     SUBDIR += sch-rnd
     SUBDIR += scotch
+    SUBDIR += scotch-edf
     SUBDIR += silice
     SUBDIR += solvespace
     SUBDIR += sp2sp
@@ -165,7 +165,6 @@
     SUBDIR += xyce
     SUBDIR += yosys
     SUBDIR += yosys-ghdl-plugin
-    SUBDIR += yosys-systemverilog
     SUBDIR += z88
     SUBDIR += zcad
 

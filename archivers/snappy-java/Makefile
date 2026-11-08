@@ -35,7 +35,7 @@ GH_TUPLE=	google:snappy:${DISTVERSION:R}:google \
 		kiyo-masui:bitshuffle:${BITSHUFFLE_V}:masui
 
 USE_LDCONFIG=	yes
-MAKE_ARGS+=	CXX="${CXX}"
+MAKE_ARGS+=	CXX="${CXX}" SNAPPY_CMAKE_OPTS="-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
 TEST_TARGET=	test
 BITSHUFFLE_V=	0.3.4
 

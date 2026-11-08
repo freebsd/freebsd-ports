@@ -1,4 +1,4 @@
---- base/server/scripts/operations.orig	2026-07-14 06:22:12 UTC
+--- base/server/scripts/operations.orig	2026-08-19 11:25:59 UTC
 +++ base/server/scripts/operations
 @@ -1,4 +1,4 @@
 -#!/usr/local/bin/bash -X

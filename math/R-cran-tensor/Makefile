@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	atanubiswas484@gmail.com
 COMMENT=	Tensor product of arrays
-WWW=		https://CRAN.R-project.org/package=tensor
+WWW=		https://cran.r-project.org/package=tensor
 
 LICENSE=	GPLv2+
 

@@ -1,3 +1,4 @@
+include/dionysus/boundary-matrix.h
 include/dionysus/chain.h
 include/dionysus/chain.hpp
 include/dionysus/clearing-reduction.h
@@ -12,8 +13,10 @@ include/dionysus/fields/q.h
 include/dionysus/fields/z2.h
 include/dionysus/fields/zp.h
 include/dionysus/filtration.h
+include/dionysus/freudenthal.h
 include/dionysus/linked-multi-filtration.h
 include/dionysus/matrix-filtration.h
+include/dionysus/multi-filtration-common.h
 include/dionysus/multi-filtration.h
 include/dionysus/omni-field-persistence.h
 include/dionysus/omni-field-persistence.hpp
@@ -34,5 +37,8 @@ include/dionysus/sparse-row-matrix.hpp
 include/dionysus/standard-reduction.h
 include/dionysus/standard-reduction.hpp
 include/dionysus/trails-chains.h
+include/dionysus/vineyard-linear-homotopy.h
+include/dionysus/vineyard.h
+include/dionysus/zigzag-cone.h
 include/dionysus/zigzag-persistence.h
 include/dionysus/zigzag-persistence.hpp

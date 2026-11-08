@@ -1,6 +1,15 @@
 --- CMakeLists.txt.orig	2016-03-22 03:34:54 UTC
 +++ CMakeLists.txt
-@@ -140,7 +140,7 @@ message( "Build Adobe profiles creator :
+@@ -36,7 +36,7 @@
+ #
+ ################################################################################
+ 
+-CMAKE_MINIMUM_REQUIRED( VERSION 2.8 )
++CMAKE_MINIMUM_REQUIRED( VERSION 2.8...9.9 )
+ 
+ PROJECT( photivo )
+ 
+@@ -140,7 +140,7 @@ message( "Build Adobe profiles creator : ${WITH_ADOBE_
  
  set( CMAKE_CXX_FLAGS "" )
  set( CMAKE_C_FLAGS "" )
@@ -9,12 +18,12 @@
  set( CMAKE_CXX_FLAGS_RELWITHDEBINFO "${CMAKE_CXX_FLAGS_RELWITHDEBINFO} -std=gnu++0x" )
  set( CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -std=gnu++0x" )
  
-@@ -488,8 +488,6 @@ else( NOT ${CMAKE_SYSTEM_PROCESSOR} OR $
+@@ -487,8 +487,6 @@ else( NOT ${CMAKE_SYSTEM_PROCESSOR} OR ${CMAKE_SYSTEM_
+   set_target_properties( photivo PROPERTIES COMPILE_FLAGS
                           "-march=i686 -ffast-math -DAPPVERSION='${APPVERSION}' -DPREFIX=${CMAKE_INSTALL_PREFIX}" )
  endif( NOT ${CMAKE_SYSTEM_PROCESSOR} OR ${CMAKE_SYSTEM_PROCESSOR} STREQUAL "x86_64" )
- 
--set_target_properties( photivo PROPERTIES LINK_FLAGS "-lgomp" )
 -
+-set_target_properties( photivo PROPERTIES LINK_FLAGS "-lgomp" )
+ 
  target_link_libraries( photivo
                         ${GLIB2_LIBRARIES}
-                        ${QT_LIBRARIES}

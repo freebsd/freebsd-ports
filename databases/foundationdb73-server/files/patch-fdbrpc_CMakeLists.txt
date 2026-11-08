@@ -1,0 +1,9 @@
+--- fdbrpc/CMakeLists.txt.orig	2025-07-02 21:14:39 UTC
++++ fdbrpc/CMakeLists.txt
+@@ -85,5 +85,3 @@ endif()
+   add_dependencies(fdbrpc_sampling_actors fdbrpc_actors)
+   add_dependencies(tokensign_actors fdbrpc_actors)
+ endif()
+-
+-add_subdirectory(tests)
+\ No newline at end of file

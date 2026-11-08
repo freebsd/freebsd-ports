@@ -1,0 +1,18 @@
+--- source3/wscript_build.orig	2026-01-20 15:42:54 UTC
++++ source3/wscript_build
+@@ -746,6 +746,7 @@
+                         samba3core
+                         param_service
+                         AVAHI
++                        dns_sd
+                         PROFILE
+                         LOCKING
+                         LIBADS_SERVER
+@@ -1163,6 +1164,7 @@
+                       msrpc3
+                       RPC_NDR_SRVSVC
+                       cli_smb_common
++                      dns_sd
+                       archive
+                       ''')
+ 

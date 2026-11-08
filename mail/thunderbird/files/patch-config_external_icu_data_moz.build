@@ -1,0 +1,14 @@
+--- config/external/icu/data/moz.build.orig	2026-10-26 19:16:26 UTC
++++ config/external/icu/data/moz.build
+@@ -32,8 +32,10 @@
+ GeneratedFile(
+     "icu_data_hashed.S",
+     script="icu_data_hash.py",
++    # The big endian data is generated from the little endian data in the misc
++    # tier, so hash the latter, which is available during pre-compile.
+     inputs=[
+-        "!" + data_file["big"] if endianness == "big" else data_file["little"],
++        data_file["little"],
+         "icu_data.S",
+     ],
+ )

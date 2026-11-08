@@ -1,7 +1,9 @@
 Relax version requirements of py-setuptools and enable build for older versions
 of it.
 
---- pyproject.toml.orig	2025-11-08 12:01:13 UTC
+Also relax lower bound of py-gitpython.
+
+--- pyproject.toml.orig	2026-11-02 14:51:55 UTC
 +++ pyproject.toml
 @@ -1,14 +1,12 @@ build-backend = "setuptools.build_meta"
  [build-system]
@@ -16,16 +18,21 @@ of it.
  readme = "README.md"
 -license = "MIT"
 -license-files = ["LICENSE"]
- requires-python = ">=3.10"
+ requires-python = ">=3.11"
  authors = [{ name = "Julien Moura", email = "dev@ingeoveritas.com" }]
  maintainers = [{ name = "Julien Moura", email = "dev@ingeoveritas.com" }]
-@@ -44,6 +42,9 @@ dependencies = [
+@@ -40,10 +38,13 @@ dependencies = [
+ 
+ dependencies = [
+     "CacheControl[filecache]>=0.14.3,<1",
+-    "GitPython>=3.2.1,<3.3",
++    "GitPython>=3.1.62,<3.3",
      "requests>=2.32.5,<3",
-     "tzdata==2024.* ; sys_platform == 'win32'",
+     "tzdata>=2024,<2027 ; sys_platform == 'win32'",
  ]
 +
 +[project.license]
 +text = "MIT"
  
  [project.optional-dependencies]
- dev = [
+ dev = ["ruff>=0.17.2", "pre-commit>=4.6,<5"]

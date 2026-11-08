@@ -1,10 +1,10 @@
 PORTNAME=	TkTopNetFlows
 PORTVERSION=	0.4
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://vfom.narod.ru/download/
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI tool for NetFlow data visualisation
 WWW=		https://vfom.narod.ru/TkTopNetFlows/
 

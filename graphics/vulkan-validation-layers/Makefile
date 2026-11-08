@@ -1,6 +1,6 @@
 PORTNAME=	vulkan-validation-layers
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.357
+DISTVERSION=	1.4.367
 CATEGORIES=	graphics
 
 MAINTAINER=	olivier@FreeBSD.org
@@ -11,7 +11,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	robin-hood-hashing>0:devel/robin-hood-hashing \
-		spirv-tools>0:graphics/spirv-tools \
+		spirv-tools>=2026.4.r2:graphics/spirv-tools \
 		vulkan-headers>0:graphics/vulkan-headers \
 		vulkan-utility-libraries>0:graphics/vulkan-utility-libraries
 
@@ -19,7 +19,7 @@ USES=		cmake compiler:c++11-lib localbase pkgconfig python:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	KhronosGroup
 GH_PROJECT=	Vulkan-ValidationLayers
-GH_TUPLE=	KhronosGroup:SPIRV-Headers:29981f65241605e08b0ede4cfeb999fe3b723c6a:headers/SPIRV-Headers
+GH_TUPLE=	KhronosGroup:SPIRV-Headers:fef168c54ed2e37c314eb251806aaf9877f38465:headers/SPIRV-Headers
 CMAKE_OFF=	BUILD_TESTS UPDATE_DEPS
 
 PLIST_FILES=	lib/libVkLayer_khronos_validation.so \

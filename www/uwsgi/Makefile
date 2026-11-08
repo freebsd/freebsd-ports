@@ -17,6 +17,8 @@ USE_PYTHON=	distutils concurrent
 USE_RC_SUBR=	uwsgi
 CPE_VENDOR=	unbit
 
+PORTSCOUT=	skipv:no_server_mode
+
 MAKE_ENV+=	CPUCOUNT=${MAKE_JOBS_NUMBER} UWSGI_EMBED_PLUGINS=cgi
 
 PYSETUP=			uwsgiconfig.py

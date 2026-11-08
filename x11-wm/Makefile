@@ -5,6 +5,7 @@
     SUBDIR += amiwm
     SUBDIR += aphelia
     SUBDIR += awesome
+    SUBDIR += awesome-devel
     SUBDIR += awesome-vicious
     SUBDIR += bbkeys
     SUBDIR += bbpager
@@ -12,6 +13,7 @@
     SUBDIR += blackbox
     SUBDIR += bspwm
     SUBDIR += bspwm-devel
+    SUBDIR += bvwm
     SUBDIR += cage
     SUBDIR += cagebreak
     SUBDIR += chamfer
@@ -26,6 +28,7 @@
     SUBDIR += deforaos-panel
     SUBDIR += devilspie
     SUBDIR += devilspie2
+    SUBDIR += devilspie2-devel
     SUBDIR += durden
     SUBDIR += dwl
     SUBDIR += dwm
@@ -46,6 +49,7 @@
     SUBDIR += fvwm2
     SUBDIR += fvwm3
     SUBDIR += gamescope
+    SUBDIR += halley
     SUBDIR += herbstluftwm
     SUBDIR += hikari
     SUBDIR += hs-xmonad
@@ -56,6 +60,7 @@
     SUBDIR += jwm
     SUBDIR += kickshaw
     SUBDIR += korgwm
+    SUBDIR += kwin-zones
     SUBDIR += labwc
     SUBDIR += leftwm
     SUBDIR += libcompizconfig
@@ -89,7 +94,9 @@
     SUBDIR += piewm
     SUBDIR += plasma6-kdecoration
     SUBDIR += plasma6-kwin
-    SUBDIR += plasma6-kwin-x11
+    SUBDIR += plasma6lts-kdecoration
+    SUBDIR += plasma6lts-kwin
+    SUBDIR += plasma6lts-kwin-x11
     SUBDIR += pwm
     SUBDIR += qtile
     SUBDIR += ratpoison

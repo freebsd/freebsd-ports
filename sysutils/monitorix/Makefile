@@ -1,5 +1,6 @@
 PORTNAME=	monitorix
 PORTVERSION=	3.15.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.monitorix.org/ \
 		http://www.monitorix.org/old_versions/ \

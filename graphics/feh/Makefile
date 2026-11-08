@@ -1,5 +1,5 @@
 PORTNAME=	feh
-PORTVERSION=	3.12.2
+PORTVERSION=	3.13.1
 CATEGORIES=	graphics
 MASTER_SITES=	https://feh.finalrewind.org/
 
@@ -7,8 +7,10 @@ MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Image viewer that utilizes Imlib2
 WWW=		https://feh.finalrewind.org/
 
-LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	MIT OFL11
+LICENSE_COMB=	multi
+LICENSE_FILE_MIT=	${WRKSRC}/COPYING
+LICENSE_FILE_OFL11=	${WRKSRC}/share/fonts/OFL.txt
 
 LIB_DEPENDS=	libImlib2.so:graphics/imlib2 \
 		libpng16.so:graphics/png
@@ -33,6 +35,7 @@ CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 CURL_MAKE_ENV=		curl=1
 CURL_MAKE_ENV_OFF=	curl=0
 DCRAW_RUN_DEPENDS=	dcraw:graphics/dcraw
+EXAMPLES_MAKE_ARGS=	example_dir=${STAGEDIR}${EXAMPLESDIR}
 EXIF_LIB_DEPENDS=	libexif.so:graphics/libexif
 EXIF_MAKE_ENV=		exif=1
 EXIF_MAKE_ENV_OFF=	exif=0
@@ -40,12 +43,12 @@ XINERAMA_MAKE_ENV=	xinerama=1
 XINERAMA_MAKE_ENV_OFF=	xinerama=0
 
 post-patch-DOCS-off:
-	@${REINPLACE_CMD} -e 's|install-doc||' \
-		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e '/^INSTALL_TARGETS = /s| doc||' \
+		${WRKSRC}/config.mk
 
 post-patch-EXAMPLES-off:
-	@${REINPLACE_CMD} -e 's|install-examples||' \
-		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e '/^INSTALL_TARGETS = /s| examples||' \
+		${WRKSRC}/config.mk
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/feh

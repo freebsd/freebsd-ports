@@ -1,12 +1,13 @@
 PORTNAME=	cocotb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.1
+DISTVERSION=	2.1.0
 CATEGORIES=	cad python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Coroutine based cosimulation library for writing VHDL and Verilog
-WWW=		https://www.cocotb.org/
+WWW=		https://www.cocotb.org/ \
+		https://github.com/cocotb/cocotb
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -14,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}find-libpython>0:devel/py-find-libpython@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest>=6:devel/py-pytest@${PY_FLAVOR} \
 		gtkwave:cad/gtkwave
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-cov>0:devel/py-pytest-cov@${PY_FLAVOR} \
@@ -30,6 +32,8 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} \
 		LD_LIBRARY_PATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/cocotb/libs \
 		SIM=icarus
 
+BINARY_ALIAS=	python=${PYTHON_CMD} # for tests
+
 OPTIONS_DEFINE=		IVERILOG VERILATOR # GHDL - TODO
 OPTIONS_DEFAULT=	IVERILOG VERILATOR
 
@@ -41,6 +45,10 @@ VERILATOR_RUN_DEPENDS=	verilator:cad/verilator
 
 .include <bsd.port.pre.mk>
 
+.if ${PYTHON_REL} < 31100
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}exceptiongroup>0:devel/py-exceptiongroup@${PY_FLAVOR}
+.endif
+
 .if ${OSVERSION} < 1500000
 BROKEN_i386=	error: "don't know how to determine endian-ness on this machine!"
 .endif
@@ -48,10 +56,9 @@ BROKEN_i386=	error: "don't know how to determine endian-ness on this machine!"
 post-install:
 	@${STRIP_CMD} \
 		${STAGEDIR}${PYTHON_SITELIBDIR}/cocotb/simulator${PYTHON_TAG}.so \
-		${STAGEDIR}${PYTHON_SITELIBDIR}/cocotb/libs/lib*.so \
-		${STAGEDIR}${PYTHON_SITELIBDIR}/cocotb/libs/libcocotbvpi_icarus.vpl
+		${STAGEDIR}${PYTHON_SITELIBDIR}/cocotb/libs/lib*.so
 
-do-test: # some tests fail, see https://github.com/cocotb/cocotb/issues/3236, https://github.com/cocotb/cocotb/issues/3435
+do-test: # almost all or all tests pass, they don't print summary in the end
 	@cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${GMAKE} test
 
 .include <bsd.port.post.mk>

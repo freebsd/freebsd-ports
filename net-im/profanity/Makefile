@@ -1,5 +1,5 @@
 PORTNAME=	profanity
-DISTVERSION=	0.18.2
+DISTVERSION=	0.19.0
 CATEGORIES=	net-im
 
 MAINTAINER=	ashish@FreeBSD.org

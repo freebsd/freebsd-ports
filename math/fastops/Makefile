@@ -15,6 +15,7 @@ ONLY_FOR_ARCHS_REASON=	uses AVX and AVX2 instructions
 USES=		cmake compiler:c++17-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	yandex
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM:STRING=3.5
 
 do-test:
 	${TEST_WRKSRC}/${PORTNAME}/ut/${PORTNAME}_test

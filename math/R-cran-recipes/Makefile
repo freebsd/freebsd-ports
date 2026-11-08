@@ -1,11 +1,11 @@
 PORTNAME=	recipes
-PORTVERSION=	1.3.3
+PORTVERSION=	1.4.0
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Preprocessing Tools to Create Design Matrices
-WWW=		https://cran.r-project.org/web/packages/recipes/
+WWW=		https://cran.r-project.org/package=recipes
 
 LICENSE=	MIT
 

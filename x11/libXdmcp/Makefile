@@ -8,7 +8,7 @@ WWW=		https://www.freedesktop.org/Software/xlibs
 
 LICENSE=	MIT
 
-USES=		cpe tar:xz xorg xorg-cat:lib
+USES=		cpe xorg xorg-cat:lib
 USE_XORG=	xorgproto:both
 
 CPE_VENDOR=	x.org

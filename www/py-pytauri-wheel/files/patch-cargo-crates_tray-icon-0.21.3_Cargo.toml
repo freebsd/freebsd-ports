@@ -1,0 +1,26 @@
+-- Enable FreeBSD to use the GTK tray icon dependencies.
+-- tray-icon only declared its Linux dependencies for target_os="linux".
+-- FreeBSD uses the same GTK/libappindicator stack as Linux.
+--- cargo-crates/tray-icon-0.21.3/Cargo.toml.orig	1970-01-01 00:00:01 UTC
++++ cargo-crates/tray-icon-0.21.3/Cargo.toml
+@@ -83,16 +83,16 @@ version = "0.30"
+ [dev-dependencies.winit]
+ version = "0.30"
+ 
+-[target.'cfg(any(target_os = "linux", target_os = "macos"))'.dependencies.png]
++[target.'cfg(any(target_os = "linux", target_os = "macos", target_os = "freebsd"))'.dependencies.png]
+ version = "0.17"
+ 
+-[target.'cfg(target_os = "linux")'.dependencies.dirs]
++[target.'cfg(any(target_os = "linux", target_os = "freebsd"))'.dependencies.dirs]
+ version = "6"
+ 
+-[target.'cfg(target_os = "linux")'.dependencies.libappindicator]
++[target.'cfg(any(target_os = "linux", target_os = "freebsd"))'.dependencies.libappindicator]
+ version = "0.9"
+ 
+-[target.'cfg(target_os = "linux")'.dev-dependencies.gtk]
++[target.'cfg(any(target_os = "linux", target_os = "freebsd"))'.dev-dependencies.gtk]
+ version = "0.18"
+ 
+ [target.'cfg(target_os = "macos")'.dependencies.objc2]

@@ -1,14 +1,12 @@
 
 # STANDARD_PACKAGES from cmake/CMakeLists.txt
 
-# Some items were removed from the list either because they are handled seperately through the port options,
+# Some items were removed from the list either because they are handled separately through the port options,
 # or because they are ignored (not ported) for now for various reasons.
 
 LAMMPS_STANDARD_PACKAGES= \
   AMOEBA \
   ASPHERE \
-  ATC \
-  AWPMD \
   BOCS \
   BODY \
   BPM \
@@ -37,6 +35,8 @@ LAMMPS_STANDARD_PACKAGES= \
   EXTRA-PAIR \
   FEP \
   GRANULAR \
+  GRANSURF \
+  GRAPHICS \
   H5MD \
   INTERLAYER \
   KIM \
@@ -52,7 +52,6 @@ LAMMPS_STANDARD_PACKAGES= \
   MISC \
   ML-IAP \
   ML-POD \
-  ML-RANN \
   ML-SNAP \
   ML-UF3 \
   MOFFF \
@@ -63,7 +62,6 @@ LAMMPS_STANDARD_PACKAGES= \
   PHONON \
   PLUGIN \
   PLUMED \
-  POEMS \
   PTM \
   PYTHON \
   QEQ \

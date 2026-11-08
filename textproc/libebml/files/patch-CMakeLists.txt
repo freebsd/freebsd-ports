@@ -1,0 +1,46 @@
+--- CMakeLists.txt.orig	2026-09-15 23:40:06 UTC
++++ CMakeLists.txt
+@@ -50,16 +50,20 @@ if(NOT utf8cpp_FOUND)
+ 
+ find_package(utf8cpp)
+ if(NOT utf8cpp_FOUND)
+-  include(FetchContent REQUIRED)
+-  FetchContent_Declare(
+-        utf8cpp
+-        GIT_REPOSITORY https://github.com/nemtrif/utfcpp.git
+-        GIT_TAG v3.2.5
+-        GIT_PROGRESS TRUE
+-        DOWNLOAD_EXTRACT_TIMESTAMP ON
+-        OVERRIDE_FIND_PACKAGE
+-    )
+-    FetchContent_MakeAvailable(utf8cpp)
++  # utf8cpp's supported installation is headers only & ships no CMake package
++  find_path(UTF8CPP_INCLUDE_DIR utf8/checked.h PATH_SUFFIXES utf8cpp)
++  if(NOT UTF8CPP_INCLUDE_DIR)
++    include(FetchContent REQUIRED)
++    FetchContent_Declare(
++          utf8cpp
++          GIT_REPOSITORY https://github.com/nemtrif/utfcpp.git
++          GIT_TAG v3.2.5
++          GIT_PROGRESS TRUE
++          DOWNLOAD_EXTRACT_TIMESTAMP ON
++          OVERRIDE_FIND_PACKAGE
++      )
++      FetchContent_MakeAvailable(utf8cpp)
++  endif()
+ endif()
+ if(TARGET utf8cpp::utf8cpp)
+   set(libebml_utf8cpp_link_libraries utf8cpp::utf8cpp)
+@@ -162,7 +166,11 @@ endif()
+   target_compile_definitions(ebml PRIVATE _CRT_SECURE_NO_WARNINGS)
+ endif()
+ 
+-target_link_libraries(ebml PRIVATE ${libebml_utf8cpp_link_libraries})
++if(UTF8CPP_INCLUDE_DIR)
++  target_include_directories(ebml PRIVATE ${UTF8CPP_INCLUDE_DIR})
++else()
++  target_link_libraries(ebml PRIVATE ${libebml_utf8cpp_link_libraries})
++endif()
+ 
+ include(GenerateExportHeader)
+ generate_export_header(ebml EXPORT_MACRO_NAME EBML_DLL_API)

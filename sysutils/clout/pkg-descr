@@ -1,0 +1,3 @@
+clout is a small Unix utility that colorizes command standard error
+output. It executes a command, captures its standard error, and
+writes it to the terminal using a selected ANSI color.

@@ -44,7 +44,6 @@
     SUBDIR += coverm
     SUBDIR += cufflinks
     SUBDIR += cytoscape
-    SUBDIR += ddocent
     SUBDIR += diamond
     SUBDIR += dsr-pdb
     SUBDIR += edlib
@@ -78,7 +77,6 @@
     SUBDIR += gffread
     SUBDIR += gkl
     SUBDIR += gmap
-    SUBDIR += gperiodic
     SUBDIR += graphlan
     SUBDIR += groopm
     SUBDIR += haplohseq
@@ -183,7 +181,6 @@
     SUBDIR += py-libnuml
     SUBDIR += py-libsedml
     SUBDIR += py-loompy
-    SUBDIR += py-macs2
     SUBDIR += py-macs3
     SUBDIR += py-mrcfile
     SUBDIR += py-multiqc

@@ -1,5 +1,5 @@
 PORTNAME=	arro3-core
-DISTVERSION=	0.8.1
+DISTVERSION=	0.9.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -51,11 +51,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		brotli-8.0.2 \
 		brotli-decompressor-5.0.0 \
 		bumpalo-3.20.2 \
-		bytecount-0.6.9 \
 		bytes-1.11.1 \
-		camino-1.2.2 \
-		cargo-platform-0.1.9 \
-		cargo_metadata-0.14.2 \
 		cc-1.2.56 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.2.1 \
@@ -76,9 +72,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		displaydoc-0.2.5 \
 		either-1.15.0 \
 		equivalent-1.0.2 \
-		errno-0.3.14 \
-		error-chain-0.12.4 \
-		fastrand-2.3.0 \
 		find-msvc-tools-0.1.9 \
 		flatbuffers-25.12.19 \
 		flate2-1.1.9 \
@@ -98,7 +91,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		getrandom-0.2.17 \
 		getrandom-0.3.4 \
 		getrandom-0.4.1 \
-		glob-0.3.3 \
 		h2-0.4.13 \
 		half-2.7.1 \
 		hashbrown-0.15.5 \
@@ -141,7 +133,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		lexical-write-integer-1.0.6 \
 		libc-0.2.182 \
 		libm-0.2.16 \
-		linux-raw-sys-0.12.1 \
 		litemap-0.8.1 \
 		lock_api-0.4.14 \
 		log-0.4.29 \
@@ -157,7 +148,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		num-complex-0.4.6 \
 		num-integer-0.1.46 \
 		num-traits-0.2.19 \
-		numpy-0.28.0 \
+		numpy-0.29.0 \
 		object_store-0.13.2 \
 		once_cell-1.21.3 \
 		openssl-probe-0.2.1 \
@@ -177,14 +168,14 @@ CARGO_CRATES=	adler2-2.0.1 \
 		ppv-lite86-0.2.21 \
 		prettyplease-0.2.37 \
 		proc-macro2-1.0.106 \
-		pulldown-cmark-0.9.6 \
-		pyo3-0.28.2 \
-		pyo3-async-runtimes-0.28.0 \
-		pyo3-build-config-0.28.2 \
-		pyo3-ffi-0.28.2 \
-		pyo3-macros-0.28.2 \
-		pyo3-macros-backend-0.28.2 \
-		pyo3-object_store-0.9.0 \
+		pyo3-0.29.0 \
+		pyo3-async-runtimes-0.29.0 \
+		pyo3-build-config-0.29.0 \
+		pyo3-bytes-0.7.1 \
+		pyo3-ffi-0.29.0 \
+		pyo3-macros-0.29.0 \
+		pyo3-macros-backend-0.29.0 \
+		pyo3-object_store-0.11.0 \
 		quick-xml-0.39.4 \
 		quinn-0.11.9 \
 		quinn-proto-0.11.13 \
@@ -205,7 +196,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		ring-0.17.14 \
 		rustc-hash-2.1.1 \
 		rustc_version-0.4.1 \
-		rustix-1.1.4 \
 		rustls-0.23.37 \
 		rustls-native-certs-0.8.3 \
 		rustls-pki-types-1.14.0 \
@@ -228,7 +218,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		simd-adler32-0.3.8 \
 		simdutf8-0.1.5 \
 		siphasher-1.0.2 \
-		skeptic-0.13.7 \
 		slab-0.4.12 \
 		smallvec-1.15.1 \
 		snap-1.1.1 \
@@ -239,7 +228,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		sync_wrapper-1.0.2 \
 		synstructure-0.13.2 \
 		target-lexicon-0.13.5 \
-		tempfile-3.26.0 \
 		thiserror-1.0.69 \
 		thiserror-2.0.18 \
 		thiserror-impl-1.0.69 \
@@ -262,7 +250,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		try-lock-0.2.5 \
 		twox-hash-2.1.2 \
 		typenum-1.19.0 \
-		unicase-2.9.0 \
 		unicode-ident-1.0.24 \
 		unicode-segmentation-1.12.0 \
 		unicode-width-0.2.2 \
@@ -337,6 +324,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		zstd-0.13.3 \
 		zstd-safe-7.2.4 \
 		zstd-sys-2.0.16+zstd.1.5.7 \
-		pyo3-file@git+https://github.com/kylebarron/pyo3-file?rev=f724ceaa7e06e7d227bf40b1d60adbb842963a44\#f724ceaa7e06e7d227bf40b1d60adbb842963a44
+		pyo3-file@git+https://github.com/kylebarron/pyo3-file?rev=e88695f375ea3db95d96efc53707f4e8eb1def00\#e88695f375ea3db95d96efc53707f4e8eb1def00
 
 .include <bsd.port.mk>

@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Export tables to LaTeX or HTML
-WWW=		https://cran.r-project.org/web/packages/xtable/
+WWW=		https://cran.r-project.org/package=xtable
 
 LICENSE=	GPLv2+
 

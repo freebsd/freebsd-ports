@@ -1,9 +1,10 @@
 PORTNAME=	pty
 DISTVERSION=	1.26
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pty (pseudo-terminal) bindings for Lua 5+
 WWW=		https://gitlab.com/ports1/lua-pty/
 

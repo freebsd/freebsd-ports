@@ -1,0 +1,24 @@
+--- pyproject.toml.orig	2025-08-23 16:25:04 UTC
++++ pyproject.toml
+@@ -1,9 +1,9 @@
+ [build-system]
+-requires = ["setuptools>=64", "setuptools_scm>=8"]
++requires = ["setuptools>=61", "setuptools_scm>=8"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+-name = "pyRFC3339"
++name = "pyrfc3339"
+ dynamic = ["version"]
+ requires-python = ">= 3.9"
+ authors = [
+@@ -12,8 +12,7 @@ keywords = ["rfc-3339", "timestamp", "iso-8601", "date
+ description = "Generate and parse RFC 3339 timestamps"
+ readme = { file = "README.rst", content-type = "text/x-rst" }
+ keywords = ["rfc-3339", "timestamp", "iso-8601", "datetime"]
+-license = "MIT"
+-license-files = ["LICENSE.txt"]
++license = { text = "MIT" }
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",
+     "Intended Audience :: Developers",

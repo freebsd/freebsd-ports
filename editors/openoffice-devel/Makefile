@@ -1,6 +1,6 @@
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION1}.${AOOVERSION2}.${TIMESTAMP}
-PORTREVISION=	4
+PORTREVISION=	2
 PORTEPOCH=	4
 CATEGORIES=	editors java
 MASTER_SITES=	https://dist.apache.org/repos/dist/dev/openoffice/${AOOVERSION}-${AOORC}-${TIMESTAMP}/source/ \
@@ -15,7 +15,7 @@ PKGNAMESUFFIX=		-${LANG_SUFFIX}
 .endif
 PKGNAMESUFFIX=		-devel
 DISTFILES=	${AOOSRC}${AOODISTTAG} ${EXTSRC}:extsrc \
-		${GCC_EXTRA_DISTFILES:C/.*/&:sf/g}
+		${EXTRA_DISTFILES:C/.*/&:sf/g}
 DIST_SUBDIR=	openoffice
 EXTRACT_ONLY=	${AOOSRC}
 
@@ -49,10 +49,7 @@ LICENSE_PERMS_ICU=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_TWAIN=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_W3C=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-DEPRECATED=	Depends on expired textproc/libtextcat
-EXPIRATION_DATE=2026-10-31
-
-ONLY_FOR_ARCHS=	amd64 i386 powerpc64
+ONLY_FOR_ARCHS=	amd64 i386 powerpc64 powerpc64le
 
 BUILD_DEPENDS=								\
 		p5-Archive-Zip>=0:archivers/p5-Archive-Zip		\
@@ -70,7 +67,6 @@ BUILD_DEPENDS=								\
 		${JAVALIBDIR}/junit.jar:java/junit			\
 		${JAVALIBDIR}/bsh.jar:lang/bsh				\
 		bash:shells/bash					\
-		${JAVALIBDIR}/lucene-core-3.6.2.jar:textproc/lucene	\
 		p5-XML-Parser>=0:textproc/p5-XML-Parser			\
 		p5-libwww>=0:www/p5-libwww				\
 		p5-LWP-Protocol-https>0:www/p5-LWP-Protocol-https
@@ -97,7 +93,6 @@ LIB_DEPENDS=								\
 		libexpat.so:textproc/expat2				\
 		libhunspell-1.7.so:textproc/hunspell			\
 		libhyphen.so:textproc/hyphen				\
-		libtextcat.so:textproc/libtextcat			\
 		libmythes-1.2.so:textproc/mythes			\
 		librdf.so:textproc/redland				\
 		libfontconfig.so:x11-fonts/fontconfig
@@ -118,25 +113,25 @@ USES=		autoreconf bison compiler:c++11-lib cpe desktop-file-utils \
 USE_GL=		gl glu
 USE_GNOME=	gdkpixbuf gdkpixbuf2xlib gtk20 libxslt glib20
 JAVA_VENDOR=	openjdk
-JAVA_VERSION=	8
+JAVA_VERSION=	21
 USE_PERL5=	build
 USE_XORG=	ice sm x11 xau xaw xcomposite xcursor xdamage xext xfixes xi \
 		xinerama xrandr xrender xt
 
-# ftp/curl uses OpenSSL by default. However, curl 8.18.0 drops OpenSSL 1.x support
-# which is used in FreeBSD 13 base system. Therefore, we change the curl defaults to
-# wolfSSL instead.
+NO_SHLIB_REQUIRES_GLOB=	libjawt.so
+
 CONFLICTS_INSTALL=	apache-openoffice-4*
 
-AOOVERSION1=	4
-AOOVERSION2=	2
+AOOVERSION1=	5
+AOOVERSION2=	1
 AOOVERSION3=	0
 # From solenv/inc/minor.mk SOURCEREVISION LAST_MINOR BUILD
-AOOTAG=		AOO420m6\(Build:9825\)
-GITREVISION=	a4e34e8bd2
-TIMESTAMP=	1768900765
+AOOTAG=		AOO510m1\(Build:99000\)
+GITREVISION=	0bdb2dee20
+TIMESTAMP=	1793513194
 #AOORC=rc3
-EXTSRC=		ApacheOpenOffice.ext_sources.${AOOVERSION1}.x.x.20150707.tar.gz
+#EXTSRC=		ApacheOpenOffice.ext_sources.${AOOVERSION1}.x.x.20150707.tar.gz
+EXTSRC=		ApacheOpenOffice.ext_sources.4.x.x.20150707.tar.gz
 
 AOOVERSION=	${AOOVERSION1}.${AOOVERSION2}.${AOOVERSION3}
 AOOXXX=		${AOOVERSION1}${AOOVERSION2}${AOOVERSION3}
@@ -146,7 +141,7 @@ AOOSRC=		apache-openoffice-${AOOVERSION}-${GITREVISION}-src${EXTRACT_SUFX}
 AOODISTTAG=
 TARTYPE=	bzip2
 .else
-AOOSRC=		apache-openoffice-${TIMESTAMP}-${GITREVISION}-src${EXTRACT_SUFX}
+AOOSRC=		apache-openoffice-${AOOVERSION}-${TIMESTAMP}-${GITREVISION}-src${EXTRACT_SUFX}
 AOODISTTAG=	:snap
 TARTYPE=	xz
 .endif
@@ -212,14 +207,6 @@ REPORT_BUILDER_BUILD_DEPENDS=	${REPORT_BUILDER_JAR_DEPENDS}
 REPORT_BUILDER_RUN_DEPENDS=	${REPORT_BUILDER_JAR_DEPENDS}
 
 WIKI_PUBLISHER_CONFIGURE_ENABLE=	wiki-publisher
-WIKI_PUBLISHER_CONFIGURE_WITH=						\
-	commons-codec-jar=${JAVALIBDIR}/commons-codec.jar		\
-	commons-httpclient-jar=${JAVALIBDIR}/commons-httpclient.jar
-WIKI_PUBLISHER_JAR_DEPENDS=						\
-	${JAVALIBDIR}/commons-codec.jar:java/apache-commons-codec	\
-	${JAVALIBDIR}/commons-httpclient.jar:java/apache-commons-httpclient
-WIKI_PUBLISHER_BUILD_DEPENDS=	${WIKI_PUBLISHER_JAR_DEPENDS}
-WIKI_PUBLISHER_RUN_DEPENDS=	${WIKI_PUBLISHER_JAR_DEPENDS}
 
 # Don't run gnome-post-icons until after post-install generates the plist
 TARGET_ORDER_OVERRIDE=	710:gnome-post-icons
@@ -253,8 +240,11 @@ CONFIGURE_ARGS+=	--without-commons-logging
 
 .include <${FILESDIR}/Makefile.localized>
 
-GCC_EXTRA_DISTFILES=	d6eef4b4cacb2183f2bf265a5a03a354-boost_1_55_0.tar.bz2 \
+EXTRA_DISTFILES=	9dcd632441e4da04a461082ebbafd337-boost_1_84_0.tar.bz2 \
+			8344c82677a7ba961b74ea193a178e1b-SampleICC-1.6.11.zip \
 			e3738abd0d3ce1870dc1fd1f22bba5b1-icu4c-4_2_1-src.tgz \
+			128cfc86ed5953e57fe0f5ae98b62c2e-libtextcat-2.2.tar.gz \
+			17960f35b2239654ba608cf1f3e256b3-lucene-2.9.4-src.tar.gz \
 			d62650a6f908e85643e557a236ea989c-vigra1.6.0.tar.gz
 
 .if ${CHOSEN_COMPILER_TYPE} == clang
@@ -270,6 +260,9 @@ PACKAGE_MIDDLE=		${PORTVERSION}_${OPSYS}_x86
 .elif ${ARCH} == powerpc64
 FREEBSD_ENV_SET=	FreeBSDPPC64Env.Set.sh
 PACKAGE_MIDDLE=		${PORTVERSION}_${OPSYS}_ppc64
+.elif ${ARCH} == powerpc64le
+FREEBSD_ENV_SET=	FreeBSDPPC64Env.Set.sh
+PACKAGE_MIDDLE=		${PORTVERSION}_${OPSYS}_ppc64le
 .endif
 PACKAGE_PREFIX=		Apache_OpenOffice
 
@@ -314,14 +307,10 @@ CONFIGURE_ARGS+=							\
 			--with-jdk-home=${JAVA_HOME}			\
 			--with-system-jpeg				\
 			--with-junit=${JAVALIBDIR}/junit.jar		\
-			--with-system-libtextcat			\
 			--disable-kde					\
 			--disable-kde4					\
 			--with-system-libxml				\
 			--with-system-libxslt				\
-			--with-system-lucene				\
-			--with-lucene-core-jar=${JAVALIBDIR}/lucene-core-3.6.2.jar \
-			--with-lucene-analyzers-jar=${JAVALIBDIR}/lucene-analyzers-3.6.2.jar \
 			--with-system-mythes				\
 			--with-external-thes-dir=${LOCALBASE}/share/mythes \
 			--with-system-nss				\
@@ -365,13 +354,13 @@ do-extract-SDK-on:
 
 post-extract:
 	${TAR} -C ${WRKSUBDIR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${EXTSRC}
-.for f in ${GCC_EXTRA_DISTFILES}
+.for f in ${EXTRA_DISTFILES}
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/${f} ${WRKSUBDIR}/ext_sources/${f}
 .endfor
 	${CP} ${FILESDIR}/freebsd-aoo-intro-developer.png \
-		${WRKSRC}/default_images/introabout/intro.png
+		${WRKSRC}/default_images/introabout/intro5.png
 	${CP} ${FILESDIR}/freebsd-aoo-about-developer.png \
-		${WRKSRC}/default_images/introabout/about.png
+		${WRKSRC}/default_images/introabout/about5.png
 	${RM} -r ${WRKSRC}/l10n
 	${LN} -sf ${UNZIP_CMD} ${WRKSRC}/solenv/bin/unzip
 	${SED}  -e '\|^For main/vcl/unx/generic/fontmanager/parseAFM|,/^__/p' \
@@ -412,14 +401,6 @@ post-patch:
 	${REINPLACE_CMD} -e "s|%%JAVA_HOME%%|${JAVA_HOME}|" \
 		${WRKSRC}/desktop/scripts/soffice.sh
 	${REINPLACE_CMD} -e '/^mkdir -p/,$$d' ${CREATE_TREE}
-
-# Verify that lucene was built with the CONTRIB option instead of
-# failing mysteriously during the build
-pre-configure:
-	@if [ ! -f ${JAVALIBDIR}/lucene-analyzers-3.6.2.jar ]; then \
-		${ECHO} "error: textproc/lucene must be built with the CONTRIB option enabled"; \
-		exit 1; \
-	fi
 
 do-build:
 	${PRINTF} "[repositories]\nmain=active\nextras=active\n" > ${WRKSUBDIR}/source_config

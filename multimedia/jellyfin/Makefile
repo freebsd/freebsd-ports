@@ -1,5 +1,6 @@
 PORTNAME=	jellyfin
 DISTVERSION=	10.11.11
+PORTREVISION=	1
 CATEGORIES=	multimedia
 EXTRACT_ONLY+=	${PORTNAME}-${PORTNAME}-${GH_TAGNAME}_GH0.tar.gz \
 		${PORTNAME}-${PORTNAME}-web-${GH_TAGNAME}_GH0.tar.gz
@@ -14,8 +15,10 @@ LICENSE_COMB=	multi
 FETCH_DEPENDS=	npm:www/npm${NODEJS_SUFFIX}
 BUILD_DEPENDS=	npm:www/npm${NODEJS_SUFFIX} \
 		dotnet:lang/dotnet
-LIB_DEPENDS=	libSkiaSharp.so:graphics/libskiasharp
+LIB_DEPENDS=	libSkiaSharp.so:graphics/libskiasharp \
+		libharfbuzz.so:print/harfbuzz
 RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss \
+		dejavu>0:x11-fonts/dejavu \
 		ffmpeg>0:multimedia/ffmpeg \
 		icu>0:devel/icu \
 		krb5>0:security/krb5 \
@@ -129,5 +132,7 @@ do-install:
 post-install:
 	@${ECHO_CMD} "libe_sqlite3.so libsqlite3.so" \
 		>${STAGEDIR}${PREFIX}/etc/libmap.d/jellyfin.conf
+	${LN} -sf ${LOCALBASE}/lib/libharfbuzz.so \
+		${STAGEDIR}${LOCALBASE}/jellyfin/libHarfBuzzSharp.so
 
 .include <bsd.port.post.mk>

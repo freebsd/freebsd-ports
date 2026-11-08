@@ -1,5 +1,5 @@
 PORTNAME=	symmetrica
-DISTVERSION=	3.0.1
+DISTVERSION=	3.1.0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,10 +9,9 @@ WWW=		https://gitlab.com/sagemath/symmetrica
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		autoreconf gmake libtool
+USES=		autoreconf gmake libtool pkgconfig
 USE_GITLAB=	yes
 GL_ACCOUNT=	sagemath
-GL_TAGNAME=	e29c85915f368d6fb2f89d703b6695ff29ab9eae
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
@@ -25,7 +24,8 @@ PLIST_FILES=	include/symmetrica.h \
 		include/${PORTNAME}/def.h \
 		include/${PORTNAME}/macro.h \
 		lib/libsymmetrica.so \
-		lib/libsymmetrica.so.2 \
-		lib/libsymmetrica.so.2.0.0
+		lib/libsymmetrica.so.3 \
+		lib/libsymmetrica.so.3.0.0 \
+		libdata/pkgconfig/symmetrica.pc
 
 .include <bsd.port.mk>

@@ -35,10 +35,6 @@ OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
-.endif
-
 .if ${ARCH}=="i386"
 # relocation against symbol in readonly segment
 LLD_UNSAFE=	yes

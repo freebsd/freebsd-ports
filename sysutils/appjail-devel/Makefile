@@ -1,5 +1,5 @@
 PORTNAME=	appjail
-DISTVERSION=	5.1.0.20260713
+DISTVERSION=	5.9.2.20261106
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-devel
@@ -11,37 +11,43 @@ WWW=		https://github.com/DtxdF/AppJail
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-CONFLICTS=	appjail
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	DtxdF
 GH_PROJECT=	AppJail
-GH_TAGNAME=	1188c11233c1987141d17b1989a528b2da087d45
+GH_TAGNAME=	e4b09b93b4c0df5c5108481efd0b9452f0220c24
 
 MAKE_ARGS=	APPJAIL_VERSION=${DISTVERSION}+${GH_TAGNAME}
 ALL_TARGET=	utils-strip
 
+CONFLICTS=	appjail
+
 SUB_FILES=	pkg-message
 
 PORTDOCS=	README.md
+PORTEXAMPLES=	*
 
-OPTIONS_DEFINE=		DEBOOTSTRAP DOAS DOCS GIT OCI PKGBASE X11
+OPTIONS_DEFINE=		DEBOOTSTRAP DOAS DOCS EXAMPLES GIT OCI PKGBASE X11
 OPTIONS_DEFAULT=	OCI PKGBASE
+OPTIONS_RADIO=		SECRETS
+OPTIONS_RADIO_SECRETS=	AGE RAGE
 
+AGE_DESC=		Use security/age as secrets backend
 DEBOOTSTRAP_DESC=	Support for Debian and Ubuntu jails
 DOAS_DESC=		Add support for unprivileged users
 OCI_DESC=		Add support for OCI
 PKGBASE_DESC=		Add support for pkgbase
+RAGE_DESC=		Use security/rage as secrets backend
 X11_DESC=		Add support for x11
 
+AGE_RUN_DEPENDS=		age:security/age
 DEBOOTSTRAP_RUN_DEPENDS=	debootstrap>0:sysutils/debootstrap
 DOAS_RUN_DEPENDS=		doas>0:security/doas
 GIT_RUN_DEPENDS=		git>0:devel/git
 OCI_RUN_DEPENDS=		buildah>0:sysutils/buildah \
 				jq>0:textproc/jq
 PKGBASE_RUN_DEPENDS=		${LOCALBASE}/sbin/pkg:${PKG_ORIGIN}
-X11_RUN_DEPENDS=		su-exec:security/su-exec \
-				xauth:x11/xauth \
+RAGE_RUN_DEPENDS=		rage:security/rage-encryption
+X11_RUN_DEPENDS=		xauth:x11/xauth \
 				xdotool:x11/xdotool \
 				Xephyr:x11-servers/xorg-server@xephyr \
 				xev:x11/xev \
@@ -54,5 +60,10 @@ post-install:
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}/${DOCSDIR}
+
+post-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@cd ${WRKSRC}/share/examples/appjail && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
+	@cd ${WRKSRC}/share/examples/appjail && ${CHMOD} +x hooks/pre.d/*.sh
 
 .include <bsd.port.mk>

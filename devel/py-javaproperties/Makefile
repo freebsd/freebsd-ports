@@ -1,4 +1,6 @@
 PORTNAME=	javaproperties
+# The only consumer, sysutils/py-azure-cli, currently has its upper bound set
+# to <0.6 for this port.
 DISTVERSION=	0.5.2
 PORTREVISION=	1
 CATEGORIES=	devel python

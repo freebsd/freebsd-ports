@@ -1,5 +1,5 @@
 PORTNAME=	labwc
-DISTVERSION=	0.20.1
+DISTVERSION=	0.20.3
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -51,7 +51,8 @@ MANPAGES_PLIST_FILES=	share/man/man1/${PORTNAME}.1.gz \
 			share/man/man5/${PORTNAME}-actions.5.gz \
 			share/man/man5/${PORTNAME}-config.5.gz \
 			share/man/man5/${PORTNAME}-menu.5.gz \
-			share/man/man5/${PORTNAME}-theme.5.gz
+			share/man/man5/${PORTNAME}-theme.5.gz \
+			share/man/man7/${PORTNAME}-philosophy.7.gz
 
 NLS_USES=		gettext
 NLS_MESON_ENABLED=	nls
@@ -89,6 +90,7 @@ NLS_PLIST_FILES=	share/locale/ar/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/sk/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/sr_Latn/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/sv/LC_MESSAGES/${PORTNAME}.mo \
+			share/locale/te/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/tr/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/uk/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/vi/LC_MESSAGES/${PORTNAME}.mo \

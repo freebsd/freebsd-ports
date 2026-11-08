@@ -1,0 +1,46 @@
+#!/bin/sh
+
+# PROVIDE: coxswain_index
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Coxswain's search helper for one user, from boot: it keeps the file name index and the
+# search store current while no Coxswain app is open. Add to /etc/rc.conf:
+#
+# coxswain_index_enable (bool):	Set to "YES" to start it.	Default: "NO"
+# coxswain_index_user (str):	The user whose files it indexes, and who runs it. Required.
+#
+#   sysrc coxswain_index_enable=YES coxswain_index_user=alice
+#   service coxswain_index start
+
+. /etc/rc.subr
+
+name=coxswain_index
+rcvar=coxswain_index_enable
+
+load_rc_config $name
+
+: ${coxswain_index_enable:="NO"}
+: ${coxswain_index_user:=""}
+
+# rc.subr runs the command as coxswain_index_user; daemon(8) starts the helper again five
+# seconds after it ends, and sends what it says to syslog.
+pidfile="/var/run/${name}/${name}.pid"
+command="/usr/sbin/daemon"
+command_args="-r -R 5 -S -T ${name} -P ${pidfile} %%PREFIX%%/bin/coxswain --index-helper --stay"
+start_precmd="${name}_prestart"
+
+coxswain_index_prestart()
+{
+	if [ -z "${coxswain_index_user}" ]; then
+		err 1 "Set coxswain_index_user in /etc/rc.conf to the user whose files are indexed."
+	fi
+	# The helper keeps its index in the user's home, as when the user starts it.
+	HOME=$(getent passwd "${coxswain_index_user}" | cut -d: -f6)
+	export HOME
+	[ -n "${HOME}" ] || err 1 "No such user: ${coxswain_index_user}"
+	unset XDG_CONFIG_HOME XDG_CACHE_HOME XDG_DATA_HOME
+	install -d -o "${coxswain_index_user}" -m 755 "/var/run/${name}"
+}
+
+run_rc_command "$1"

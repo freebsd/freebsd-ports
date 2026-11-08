@@ -19,7 +19,8 @@ USE_LDCONFIG=	yes
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.gnome.org/World
 GL_ACCOUNT=	OpenPaperwork
-GL_TAGNAME=	254018aad15710af6e9bdc5eb61aaa7dbac6f747
+
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://gitlab.gnome.org/World/OpenPaperwork/libpillowfight/-/work_items/27
 
 PLIST_FILES=	include/pillowfight/pillowfight.h \
 		include/pillowfight/util.h \

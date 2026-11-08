@@ -1,0 +1,87 @@
+--- gluegen/make/build.xml.orig	2025-08-30 23:30:24 UTC
++++ gluegen/make/build.xml
+@@ -428,6 +428,13 @@
+       <property name="c.src.dir.os"                         value="unix" />
+     </target>
+ 
++    <target name="declare.freebsd.arm64" if="isFreeBSDARM64">
++      <echo message="FreeBSDARM64" />
++      <property name="compiler.cfg.id"                      value="compiler.cfg.freebsd" />
++      <property name="linker.cfg.id"                        value="linker.cfg.freebsd.arm64" />
++      <property name="c.src.dir.os"                         value="unix" />
++    </target>
++
+     <target name="declare.freebsd.x86" if="isFreeBSDX86">
+       <echo message="FreeBSDX86" />
+       <property name="compiler.cfg.id"                      value="compiler.cfg.freebsd" />
+@@ -435,10 +442,24 @@
+       <property name="c.src.dir.os"                         value="unix" />
+     </target>
+ 
+-    <target name="declare.freebsd" depends="declare.freebsd.x86,declare.freebsd.amd64" if="isFreeBSD" >
++    <target name="declare.freebsd.ppc64" if="isFreeBSDPpc64">
++      <echo message="FreeBSDPpc64" />
++      <property name="compiler.cfg.id"                      value="compiler.cfg.freebsd" />
++      <property name="linker.cfg.id"                        value="linker.cfg.freebsd.ppc64" />
+       <property name="c.src.dir.os"                         value="unix" />
+     </target>
+ 
++    <target name="declare.freebsd.ppc64le" if="isFreeBSDPpc64le">
++      <echo message="FreeBSDPpc64le" />
++      <property name="compiler.cfg.id"                      value="compiler.cfg.freebsd" />
++      <property name="linker.cfg.id"                        value="linker.cfg.freebsd.ppc64le" />
++      <property name="c.src.dir.os"                         value="unix" />
++    </target>
++
++    <target name="declare.freebsd" depends="declare.freebsd.x86,declare.freebsd.amd64,declare.freebsd.arm64,declare.freebsd.ppc64,declare.freebsd.ppc64le" if="isFreeBSD" >
++      <property name="c.src.dir.os"                         value="unix" />
++    </target>
++
+     <target name="declare.hpux" if="isHPUX">
+       <echo message="HP-UX" />
+       <property name="compiler.cfg.id"                      value="compiler.cfg.hpux" />
+@@ -457,7 +478,7 @@
+       <property name="c.compiler.src.files.common" value="src/native/common/*.c" />
+       <property name="c.compiler.src.files.os" value="src/native/${c.src.dir.os}/*.c" />
+ 
+-      <property name="output.lib.name" value="gluegen_rt" /> <!-- dash replaced by underscore to allow static linkage via JEP 178 -->
++      <property name="output.lib.name" value="gluegen2_rt" /> <!-- dash replaced by underscore to allow static linkage via JEP 178 -->
+       <property name="output.lib.name.os" value="${native.library.prefix}${output.lib.name}.${native.library.suffix}" />
+ 
+       <uptodate property="gluegen.build.skip.native">
+@@ -680,7 +701,7 @@
+         <srcfiles dir= "${src.jcpp}"  includes="**"/>
+         <srcfiles dir= "${c.grammar}" includes="*.g"/>
+         <srcfiles dir= "${j.grammar}" includes="*.g"/>
+-        <mapper type="merge" to="${build}/gluegen.jar"/>
++        <mapper type="merge" to="${build}/gluegen2.jar"/>
+       </uptodate>
+       <uptodate property="gluegen.build.skip.java2">
+         <srcfiles dir= "."            includes="*.xml"/>
+@@ -688,7 +709,7 @@
+         <srcfiles dir= "${src.jcpp}"  includes="**"/>
+         <srcfiles dir= "${c.grammar}" includes="*.g"/>
+         <srcfiles dir= "${j.grammar}" includes="*.g"/>
+-        <mapper type="merge" to="${build}/gluegen-rt.jar"/>
++        <mapper type="merge" to="${build}/gluegen2-rt.jar"/>
+       </uptodate>
+       <condition property="gluegen.build.skip.java" value="true">
+         <or>
+@@ -868,7 +889,7 @@
+     </copy>
+ 
+     <!-- Build gluegen.jar. -->
+-    <jar destfile="${build}/gluegen.jar" manifest="${build}/Manifest.temp" filesonly="true">
++    <jar destfile="${build}/gluegen2.jar" manifest="${build}/Manifest.temp" filesonly="true">
+       <service type="javax.annotation.processing.Processor">
+         <provider classname="com.jogamp.gluegen.structgen.CStructAnnotationProcessor"/>
+       </service>
+@@ -921,7 +942,7 @@
+     </copy>
+ 
+     <!-- Build gluegen-rt.jar. -->
+-    <jar destfile="${build}/gluegen-rt.jar" manifest="${build}/Manifest-rt.temp" filesonly="true">
++    <jar destfile="${build}/gluegen2-rt.jar" manifest="${build}/Manifest-rt.temp" filesonly="true">
+       <fileset dir="${classes}">
+         <include name="com/jogamp/gluegen/runtime/*.class" />
+         <include name="com/jogamp/common/**" />

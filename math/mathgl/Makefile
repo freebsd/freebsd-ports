@@ -34,6 +34,7 @@ CMAKE_ARGS+=	-Denable-${v}=ON
 .for v in doc-info doc-html lgpl mgltex
 CMAKE_ARGS+=	-Denable-${v}=OFF
 .endfor
+CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility
 
 CXXFLAGS+=	--std=c++14
 

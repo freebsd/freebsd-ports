@@ -1,0 +1,7 @@
+The fancyindex module generates directory listings like the built-in
+autoindex module, but the page is built from a template: header and footer
+can be supplied as files, the columns can be sorted, and the listing can be
+styled with a sheet of its own.
+
+This port only installs the module sources.  The module itself is built by
+the nginx ports when their HTTP_FANCYINDEX option is enabled.

@@ -1,10 +1,17 @@
 --- CMakeLists.txt.orig	2019-10-28 09:56:51 UTC
 +++ CMakeLists.txt
-@@ -26,7 +26,5 @@ set(CMAKE_CXX_STANDARD 11)
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 3.1)
++cmake_minimum_required(VERSION 3.5)
+ 
+ project(BRUNSLI C CXX)
+ 
+@@ -25,8 +25,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED YES)
+ set(CMAKE_CXX_STANDARD 11)
  set(CMAKE_CXX_EXTENSIONS OFF)
  set(CMAKE_CXX_STANDARD_REQUIRED YES)
- 
--add_subdirectory(third_party)
 -
+-add_subdirectory(third_party)
+ 
  # The Brunsli library definition.
  include(brunsli.cmake)

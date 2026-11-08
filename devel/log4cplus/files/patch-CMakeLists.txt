@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2026-07-09 04:40:46 UTC
+--- CMakeLists.txt.orig	2026-10-07 07:39:22 UTC
 +++ CMakeLists.txt
-@@ -168,9 +168,12 @@ configure_file(${DEFINES_HXX_CMAKE} ${DEFINES_HXX} @ON
+@@ -180,9 +180,12 @@ configure_file(${DEFINES_HXX_CMAKE} ${DEFINES_HXX} @ON
  
  configure_file(${DEFINES_HXX_CMAKE} ${DEFINES_HXX} @ONLY)
  
@@ -14,3 +14,12 @@
                       ${log4cplus_BINARY_DIR}/include
                      )
  
+@@ -243,7 +246,7 @@ else ()
+ if (IS_ABSOLUTE "${CMAKE_INSTALL_LIBDIR}")
+   set(log4cplus_pc_install_dir "${CMAKE_INSTALL_PREFIX}/libdata/pkgconfig")
+ else ()
+-  set(log4cplus_pc_install_dir "\${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_PREFIX}/libdata/pkgconfig")
++  set(log4cplus_pc_install_dir "\${CMAKE_INSTALL_PREFIX}/libdata/pkgconfig")
+ endif ()
+ install(CODE "configure_file(\"${log4cplus_pc}\"
+   \"\$ENV{DESTDIR}${log4cplus_pc_install_dir}/log4cplus.pc\" COPYONLY)")

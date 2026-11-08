@@ -1,0 +1,35 @@
+-- Fix pyproject.toml for FreeBSD ports:
+-- 1. Lower setuptools requirement to match port version (63.1.0)
+-- 2. Fix PEP 639 license format (requires setuptools >= 77)
+-- 3. Remove setuptools-git-versioning (fails with GitHub archives)
+-- 4. Use static version string
+--- pyproject.toml.orig	2026-09-11 10:19:37.146879000 -0700
++++ pyproject.toml	2026-09-11 10:19:37.200787000 -0700
+@@ -1,15 +1,12 @@
+ [build-system]
+-requires = ["setuptools>=77,<84", "wheel", "setuptools-git-versioning>=3.0,<4"]
++requires = ["setuptools>=63", "wheel"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+ name = "cocotb"
+ description = "Python-based chip (RTL) verification"
+ readme = "README.md"
+-license = "BSD-3-Clause"
+-license-files = [
+-    "LICENSE"
+-]
++license = { text = "BSD-3-Clause" }
+ authors = [
+     {name = "Chris Higgs"},
+     {name = "Stuart Hodgson"},
+@@ -40,7 +37,8 @@
+     "Topic :: Scientific/Engineering :: Electronic Design Automation (EDA)",
+     "Framework :: cocotb",
+ ]
+-dynamic = ["version"]
++version = "2.1.0"
++dynamic = []
+ 
+ [project.scripts]
+ cocotb-config = "cocotb_tools.config:main"

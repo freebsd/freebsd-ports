@@ -8,6 +8,5 @@ bin/xray
 @sample %%ETCDIR%%/06_outbounds.json.sample
 @sample %%ETCDIR%%/07_transport.json.sample
 @sample %%ETCDIR%%/08_stats.json.sample
-@sample %%ETCDIR%%/09_reverse.json.sample
 %%DATADIR%%/geoip.dat
 %%DATADIR%%/geosite.dat

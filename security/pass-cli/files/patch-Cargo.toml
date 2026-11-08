@@ -1,0 +1,11 @@
+--- Cargo.toml.orig	2026-10-21 02:29:55 UTC
++++ Cargo.toml
+@@ -8,8 +8,6 @@ default-members = [
+     "pass-fs",
+     "pass",
+     "pass-derive",
+-    # maturin runs its `uniffi-bindgen` bin (in the default members) to generate the Python bindings
+-    "pass-uniffi-bindgen"
+ ]
+ resolver = "2"
+ 

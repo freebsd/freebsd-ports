@@ -6,7 +6,7 @@ CATEGORIES=	print linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Font rendering engine (Rocky Linux ${LINUX_DIST_VER})
-WWW=		https://www.freetype.org/
+WWW=		https://freetype.org/
 
 USES=		cpe linux:rl9
 USE_LDCONFIG=	yes

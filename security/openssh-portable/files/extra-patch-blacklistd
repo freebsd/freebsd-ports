@@ -157,7 +157,7 @@
 +blacklist_init(void)
 +{
 +
-+	if (options.use_blocklist)
++	if (options.use_blacklist)
 +		blstate = bl_create(false, NULL, im_log);
 +}
 +
@@ -274,11 +274,22 @@
  	auth_attempted = 0;
 --- servconf.c.orig	2026-07-06 00:57:12.000000000 -0700
 +++ servconf.c	2026-07-06 12:44:00.554064000 -0700
+@@ -2553,6 +2553,10 @@
+ 		intptr = &options->refuse_connection;
+ 		multistate_ptr = multistate_flag;
+ 		goto parse_multistate;
++
++	case sUseBlacklist:
++		intptr = &options->use_blacklist;
++		goto parse_flag;
+ 
+ 	case sDeprecated:
+ 	case sIgnore:
 @@ -4237,6 +4237,7 @@ dump_config(ServerOptions *o)
  	dump_cfg_fmtint(sCompression, o->compression);
  	dump_cfg_fmtint(sGatewayPorts, o->fwd_opts.gateway_ports);
  	dump_cfg_fmtint(sUseDNS, o->use_dns);
-+	dump_cfg_fmtint(sUseBlocklist, o->use_blocklist);
++	dump_cfg_fmtint(sUseBlacklist, o->use_blacklist);
  	dump_cfg_fmtint(sAllowTcpForwarding, o->allow_tcp_forwarding);
  	dump_cfg_fmtint(sAllowAgentForwarding, o->allow_agent_forwarding);
  	dump_cfg_fmtint(sDisableForwarding, o->disable_forwarding);
@@ -288,7 +299,7 @@
  SSHCONF_INT(max_sessions, MaxSessions, SSHCFG_ALL, NULL, DEFAULT_SESSIONS_MAX, SSHCFG_COPY_MATCH) \
  SSHCONF_STRING(banner, Banner, SSHCFG_ALL, SSHCFG_COPY_MATCH) \
  SSHCONF_INTFLAG(use_dns, UseDNS, SSHCFG_GLOBAL, 0, SSHCFG_COPY_NONE) \
-+SSHCONF_INTFLAG(use_blocklist, UseBlocklist, SSHCFG_GLOBAL, 0, SSHCFG_COPY_NONE) \
++SSHCONF_INTFLAG(use_blacklist, UseBlacklist, SSHCFG_GLOBAL, 0, SSHCFG_COPY_NONE) \
  SSHCONF_INT(client_alive_interval, ClientAliveInterval, SSHCFG_ALL, NULL, 0, SSHCFG_COPY_MATCH) \
  SSHCONF_INT(client_alive_count_max, ClientAliveCountMax, SSHCFG_ALL, NULL, 3, SSHCFG_COPY_MATCH) \
  SSHCONF_STRARRAY(authorized_keys_files, num_authkeys_files, AuthorizedKeysFile, SSHCFG_ALL, SSHCFG_COPY_MATCH) \
@@ -296,7 +307,7 @@
  SSHCONF_ALIAS(DSAAuthentication, PubkeyAuthentication, SSHCFG_GLOBAL) \
  SSHCONF_ALIAS(ChallengeResponseAuthentication, KbdInteractiveAuthentication, SSHCFG_ALL) \
  SSHCONF_ALIAS(SKeyAuthentication, KbdInteractiveAuthentication, SSHCFG_ALL) \
-+SSHCONF_ALIAS(UseBlacklist, UseBlocklist, SSHCFG_GLOBAL) \
++SSHCONF_ALIAS(UseBlocklist, UseBlacklist, SSHCFG_GLOBAL) \
  SSHCONF_ALIAS(KeepAlive, TCPKeepAlive, SSHCFG_GLOBAL)
  
  #define SSHD_CONFIG_ENTRIES_BASE \
@@ -338,17 +349,17 @@
  is to never expire connections for having no open channels.
  This option may be useful in conjunction with
  .Cm ChannelTimeout .
-+.It Cm UseBlocklist
++.It Cm UseBlacklist
 +Specifies whether
 +.Xr sshd 8
 +attempts to send authentication success and failure messages
 +to the
-+.Xr blocklistd 8
++.Xr blacklistd 8
 +daemon.
 +The default is
 +.Cm no .
 +For forward compatibility with an upcoming
-+.Xr blocklistd
++.Xr blacklistd
 +rename, the
 +.Cm UseBlocklist
 +alias can be used instead.
@@ -361,7 +372,7 @@
  #MaxStartups 10:30:100
  #PermitTunnel no
  #ChrootDirectory none
-+#UseBlocklist no
++#UseBlacklist no
  #VersionAddendum none
  
  # no default banner path

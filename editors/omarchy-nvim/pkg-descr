@@ -1,0 +1,7 @@
+omarchy-nvim is the Neovim configuration shipped with Omarchy: the LazyVim
+starter configuration plus Omarchy customizations (live theme reloading,
+transparency, a remote-session clipboard provider and a few defaults).
+
+The configuration is installed read-only under share/omarchy-nvim/config
+for users or tooling to copy into ~/.config/nvim. On first start
+lazy.nvim downloads the plugins with git.

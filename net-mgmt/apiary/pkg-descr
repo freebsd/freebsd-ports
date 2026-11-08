@@ -1,0 +1,21 @@
+Apiary is a distributed virtualisation control plane for FreeBSD.
+
+It manages a colony of "Combs" - FreeBSD hosts - and on each of them
+runs the bhyve virtual machines, jails, ZFS datasets, HAST-replicated
+disks and firewall rules that make up the colony's workload. The
+control plane is split across four daemons plus two operator tools:
+
+  raftd       the Raft consensus voter; one per Comb, a quorum of them
+              decides every cluster-wide state change
+  managerd    the colony's API server; owns the desired state and
+              reconciles it onto each Comb
+  frontend    the web UI and the session-based login surface
+  restshimd   a REST translation of managerd's RPC API, for external
+              tooling
+  apiaryctl   the operator command line
+  apiaryinstall  host preparation: packages, kernel modules and the
+              network configuration a Comb needs before it can join
+
+An MCP connector (apiary-mcp) is installed alongside them, providing a
+read-only Model Context Protocol view of a Comb for external AI
+clients. It is disabled by default.

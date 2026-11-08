@@ -1,6 +1,6 @@
 --- Makefile.orig	2016-10-03 20:11:34 UTC
 +++ Makefile
-@@ -83,11 +83,11 @@ quick:
+@@ -83,11 +83,10 @@ quick:
  
  unix-gcc:
  	$(MAKE) -j target=UNIX \
@@ -10,9 +10,8 @@
 -		-mpopcnt -fprofile-correction -pthread' \
 -		LDFLAGS='$(LDFLAGS) -fprofile-use -pthread -lstdc++' \
 +		CC=$(CC) \
-+		opt='$(opt) -DSYZYGY -DTEST -DCPUS=4' \
-+		CFLAGS='$(CFLAGS) -Wall -Wno-array-bounds -pipe -O3 \
-+		-mpopcnt -pthread' \
++		opt='$(opt) -DSYZYGY -DTEST' \
++		CFLAGS='$(CFLAGS) -Wall -Wno-array-bounds -pipe -O3 -pthread' \
 +		LDFLAGS='$(LDFLAGS) -pthread -lstdc++' \
  		crafty-make
  

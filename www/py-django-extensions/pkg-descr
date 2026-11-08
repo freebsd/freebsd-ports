@@ -1,1 +1,6 @@
 Global custom management extensions for the Django Framework.
+
+Django Extensions is a collection of custom extensions for Django.  It
+adds management commands such as shell_plus, runserver_plus,
+graph_models, show_urls, reset_db and sqldiff, as well as additional
+model fields, model base classes, admin extensions and template tags.

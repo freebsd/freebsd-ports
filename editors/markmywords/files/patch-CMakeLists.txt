@@ -1,9 +1,12 @@
 --- CMakeLists.txt.orig	2020-07-22 18:10:30 UTC
 +++ CMakeLists.txt
-@@ -2,26 +2,6 @@ project(MarkMyWords)
+@@ -1,27 +1,7 @@
++cmake_minimum_required(VERSION 2.6...9.9)
++
+ project(MarkMyWords)
  
- cmake_minimum_required(VERSION 2.6)
- 
+-cmake_minimum_required(VERSION 2.6)
+-
 -# build the markdown lib
 -include(ExternalProject)
 -set(DISCOUNT_DEP_PATH ${CMAKE_SOURCE_DIR}/deps/discount)

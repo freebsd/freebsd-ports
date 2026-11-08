@@ -42,6 +42,7 @@ bin/gnunet-search
 bin/gnunet-statistics
 bin/gnunet-testbed
 bin/gnunet-testing-netjail-launcher
+bin/gnunet-transport
 bin/gnunet-transport-certificate-creation
 bin/gnunet-unindex
 bin/gnunet-uri
@@ -246,8 +247,8 @@ lib/gnunet/libgnunet_plugin_datastore_postgres.so
 lib/gnunet/libgnunet_plugin_namecache_postgres.so
 lib/gnunet/libgnunet_plugin_namestore_postgres.so
 lib/libgnunetpq.so
-lib/libgnunetpq.so.5
-lib/libgnunetpq.so.5.4.0
+lib/libgnunetpq.so.10
+lib/libgnunetpq.so.10.0.1
 lib/libgnunetabd.so
 lib/libgnunetabd.so.0
 lib/libgnunetabd.so.0.0.0
@@ -273,7 +274,7 @@ lib/libgnunetcoreunderlaydummy.so
 lib/libgnunetcoreunderlaydummy.so.0.0.0
 lib/libgnunetcurl.so
 lib/libgnunetcurl.so.0
-lib/libgnunetcurl.so.0.0.0
+lib/libgnunetcurl.so.0.1.0
 lib/libgnunetdatacache.so
 lib/libgnunetdatacache.so.0
 lib/libgnunetdatacache.so.0.0.1
@@ -296,8 +297,8 @@ lib/libgnunetgns.so
 lib/libgnunetgns.so.0
 lib/libgnunetgns.so.0.0.0
 lib/libgnunetgnsrecord.so
-lib/libgnunetgnsrecord.so.0
-lib/libgnunetgnsrecord.so.0.0.0
+lib/libgnunetgnsrecord.so.1
+lib/libgnunetgnsrecord.so.1.0.0
 lib/libgnunetgnsrecordjson.so
 lib/libgnunetgnsrecordjson.so.0
 lib/libgnunetgnsrecordjson.so.0.0.0
@@ -312,7 +313,7 @@ lib/libgnunetjson.so.3
 lib/libgnunetjson.so.3.1.0
 lib/libgnunetmessenger.so
 lib/libgnunetmessenger.so.0
-lib/libgnunetmessenger.so.0.0.7
+lib/libgnunetmessenger.so.0.0.8
 lib/libgnunetmhd.so
 lib/libgnunetmhd.so.0
 lib/libgnunetmhd.so.0.0.1
@@ -410,8 +411,8 @@ lib/libgnunettransportmonitor.so
 lib/libgnunettransportmonitor.so.0
 lib/libgnunettransportmonitor.so.0.0.0
 lib/libgnunetutil.so
-lib/libgnunetutil.so.22
-lib/libgnunetutil.so.22.0.0
+lib/libgnunetutil.so.23
+lib/libgnunetutil.so.23.2.0
 lib/libgnunetvpn.so
 lib/libgnunetvpn.so.0
 lib/libgnunetvpn.so.0.0.0
@@ -427,6 +428,7 @@ libdata/pkgconfig/gnunetblock.pc
 libdata/pkgconfig/gnunetcadet.pc
 libdata/pkgconfig/gnunetconsensus.pc
 libdata/pkgconfig/gnunetcore.pc
+libdata/pkgconfig/gnunetcurl.pc
 libdata/pkgconfig/gnunetdatacache.pc
 libdata/pkgconfig/gnunetdatastore.pc
 libdata/pkgconfig/gnunetdht.pc
@@ -447,6 +449,7 @@ libdata/pkgconfig/gnunetnatauto.pc
 libdata/pkgconfig/gnunetnse.pc
 libdata/pkgconfig/gnunetpeerstore.pc
 libdata/pkgconfig/gnunetpils.pc
+libdata/pkgconfig/gnunetpq.pc
 libdata/pkgconfig/gnunetreclaim.pc
 libdata/pkgconfig/gnunetregex.pc
 libdata/pkgconfig/gnunetrest.pc

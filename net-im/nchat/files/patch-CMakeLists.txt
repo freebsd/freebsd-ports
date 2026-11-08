@@ -1,9 +1,9 @@
---- CMakeLists.txt.orig	2026-05-03 12:07:01 UTC
+--- CMakeLists.txt.orig	2026-09-20 06:54:19 UTC
 +++ CMakeLists.txt
-@@ -419,6 +419,44 @@ install(PROGRAMS ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_I
- configure_file(src/compose ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_INSTALL_LIBEXECDIR}/nchat/compose COPYONLY)
- install(PROGRAMS ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_INSTALL_LIBEXECDIR}/nchat/compose DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}/nchat)
-
+@@ -649,6 +649,44 @@ install(FILES src/nchat.1 DESTINATION "${CMAKE_INSTALL
+ # Manual
+ install(FILES src/nchat.1 DESTINATION "${CMAKE_INSTALL_MANDIR}/man1")
+ 
 +# Themes
 +macro(add_theme themedir)
 +  configure_file(themes/${themedir}/color.conf ${CMAKE_CURRENT_BINARY_DIR}/share/nchat/themes/${themedir}/color.conf COPYONLY)

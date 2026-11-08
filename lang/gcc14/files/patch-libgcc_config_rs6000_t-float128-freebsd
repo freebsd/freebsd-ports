@@ -1,0 +1,25 @@
+--- /dev/null
++++ libgcc/config/rs6000/t-float128-freebsd
+@@ -0,0 +1,22 @@
++# On FreeBSD there is no float128 IFUNC (rs6000/t-float128-hw needs the Linux
++# AT_PLATFORM auxv entry, absent on FreeBSD), so the software __float128/KFmode
++# helpers built by rs6000/t-float128 would only land in the static libgcc.a
++# (hidden) via LIB2ADD_ST.  Put them in the shared libgcc_s.so and export them
++# (see libgcc-freebsd-float128.ver) so gcc-built DSOs -- notably libstdc++.so,
++# which references e.g. __eqkf2 for IEEE-128 long double -- resolve them.
++#
++# Exclude __mulkc3/__divkc3: under -mabi=ieeelongdouble libgcc2.c's __multc3/
++# __divtc3 are already mangled to those names in libgcc_s.so, so adding rs6000's
++# own copies to the shared library would multiply-define them.  They stay
++# static-only; the .ver exports the libgcc2.c-provided ones.
++fp128_shared_src := $(filter-out %/_mulkc3.c %/_divkc3.c,$(fp128_src))
++LIB2ADD_ST := $(filter-out $(fp128_shared_src),$(LIB2ADD_ST))
++LIB2ADD += $(fp128_shared_src)
++SHLIB_MAPFILES += $(srcdir)/config/rs6000/libgcc-freebsd-float128.ver
++
++# clang emits the complex IEEE-128 helpers as __multc3/__divtc3 (TCmode) where
++# gcc names them __mulkc3/__divkc3 (KCmode).  Provide real TCmode forwarders
++# (freebsd-tc-alias.c) so clang-built DSOs that link gcc's libgcc_s -- e.g.
++# USES=fortran ports mixing clang C with gfortran -- resolve them.  Real symbols
++# survive mkmap-symver's map generation where a --defsym link alias would not.
++LIB2ADD += $(srcdir)/config/rs6000/freebsd-tc-alias.c

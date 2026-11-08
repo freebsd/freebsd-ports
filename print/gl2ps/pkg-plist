@@ -1,5 +1,4 @@
 include/gl2ps.h
-lib/libgl2ps.a
 lib/libgl2ps.so
 lib/libgl2ps.so.1
 lib/libgl2ps.so.%%SHLIB_VER%%

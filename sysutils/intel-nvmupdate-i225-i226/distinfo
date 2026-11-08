@@ -1,0 +1,7 @@
+TIMESTAMP = 1788507821
+SHA256 (E610_NVMUpdatePackage_v1_61_FreeBSD.tar.gz) = b88cbbd093611f35bbb892b3cdb8cfcdf0df92fa0783b8bdeae24f659275fd70
+SIZE (E610_NVMUpdatePackage_v1_61_FreeBSD.tar.gz) = 14886287
+SHA256 (I225_NVMUpdatePackage_v1_00_Linux.tar.gz) = 5f633957e87a0b7c5c903a180a22c0585f6c9e65015f5635cedcb063cdaa099d
+SIZE (I225_NVMUpdatePackage_v1_00_Linux.tar.gz) = 2534860
+SHA256 (BillyCurtis-Intel-I226-V-NVM-Firmware-20260904-5fb02f3128f894fdeb47bea6450af872fb85ff45_GH0.tar.gz) = 4f5f88793f9faed2ad64c8271cad359ffe31c7fc520011ea05bf43e5c8c64fea
+SIZE (BillyCurtis-Intel-I226-V-NVM-Firmware-20260904-5fb02f3128f894fdeb47bea6450af872fb85ff45_GH0.tar.gz) = 4856862

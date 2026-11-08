@@ -9,7 +9,7 @@ WWW=		https://gitlab.freedesktop.org/xorg/app/xvidtune
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:xz xorg xorg-cat:app
+USES=		xorg xorg-cat:app
 USE_XORG=	x11 xaw xmu xorgproto xt xxf86vm
 
 .include <bsd.port.mk>

@@ -4,6 +4,7 @@ bin/fossmixer
 share/detroit/fonts/KEEPME
 share/detroit/fonts/NotoSans-Italic.ttf
 share/detroit/fonts/NotoSans-Regular.ttf
+share/detroit/widgets/KEEPME
 share/detroit/widgets/button_1_1.widget
 share/detroit/widgets/button_2_1.widget
 share/detroit/widgets/button_3_1.widget
@@ -24,3 +25,10 @@ share/detroit/widgets/slide_2_2.widget
 share/detroit/widgets/slide_3_1.widget
 share/detroit/widgets/slide_3_2.widget
 share/fossmixer/fossmixer_bg.tga
+share/fossmixer/icon_app.tga
+share/fossmixer/icon_bit.tga
+share/fossmixer/icon_mix.tga
+share/fossmixer/icon_rec.tga
+share/fossmixer/icon_session_bye.tga
+share/fossmixer/icon_session.tga
+share/fossmixer/icon_vol.tga

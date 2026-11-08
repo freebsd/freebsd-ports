@@ -553,7 +553,7 @@ lib/cmake/LIEF/LIEFExport-shared-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/LIEF/LIEFExport-shared.cmake
 lib/libLIEF.so
 lib/libLIEF.so.0
-lib/libLIEF.so.0.17.6
+lib/libLIEF.so.%%PORTVERSION%%
 libdata/pkgconfig/LIEF.pc
 share/LIEF/examples/c/elf_reader.c
 share/LIEF/examples/c/macho_reader.c

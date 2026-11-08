@@ -1,5 +1,5 @@
 PORTNAME=	free42
-DISTVERSION=	3.3.12
+DISTVERSION=	3.4.1
 CATEGORIES=	misc
 MASTER_SITES=	http://thomasokken.com/free42/upstream/
 DISTNAME=	${PORTNAME}-nologo-${DISTVERSION}

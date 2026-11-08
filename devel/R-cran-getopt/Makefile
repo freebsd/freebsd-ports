@@ -1,11 +1,11 @@
 PORTNAME=	getopt
-DISTVERSION=	1.20.4
+DISTVERSION=	1.21.1
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	longros@FreeBSD.org
 COMMENT=	Accept short and long flags in Rscript
-WWW=		https://cran.r-project.org/web/packages/getopt/
+WWW=		https://cran.r-project.org/package=getopt
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

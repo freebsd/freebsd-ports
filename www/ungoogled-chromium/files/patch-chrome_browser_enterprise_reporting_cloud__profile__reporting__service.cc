@@ -1,20 +1,20 @@
---- chrome/browser/enterprise/reporting/cloud_profile_reporting_service.cc.orig	2026-04-15 11:25:12 UTC
+--- chrome/browser/enterprise/reporting/cloud_profile_reporting_service.cc.orig	2026-10-31 12:09:36 UTC
 +++ chrome/browser/enterprise/reporting/cloud_profile_reporting_service.cc
-@@ -41,7 +41,7 @@
+@@ -39,7 +39,7 @@
  #include "chrome/browser/enterprise/reporting/reporting_delegate_factory_desktop.h"
  #endif
  
 -#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
- #include "chrome/browser/enterprise/reporting/saas_usage/saas_usage_reporting_delegate_factory_desktop.h"
- #include "components/enterprise/browser/reporting/reporting_features.h"
- #include "components/enterprise/browser/reporting/saas_usage/saas_usage_report_scheduler.h"
-@@ -122,7 +122,7 @@ void CloudProfileReportingService::CreateReportSchedul
- #endif
-   report_scheduler_ = std::make_unique<ReportScheduler>(std::move(params));
+ #include "chrome/browser/enterprise/reporting/browser_launch/browser_launch_event_controller_factory_desktop.h"
+ #endif  // BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
+ 
+@@ -126,7 +126,7 @@ void CloudProfileReportingService::CreateReportSchedul
+         "profile", saas_usage_reporting_delegate_factory.get());
+   }
  
 -#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   if (base::FeatureList::IsEnabled(kSaasUsageReporting)) {
-     auto saas_usage_reporting_delegate_factory =
-         SaasUsageReportingDelegateFactoryDesktop::CreateForProfile(profile_);
+   if (base::FeatureList::IsEnabled(kBrowserLaunchMetadataReporting)) {
+     browser_launch_controller_ =
+         BrowserLaunchEventControllerFactoryDesktop::CreateForProfile(profile_);

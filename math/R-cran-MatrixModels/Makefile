@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Modelling with Sparse And Dense Matrices
-WWW=		https://cran.r-project.org/web/packages/MatrixModels/
+WWW=		https://cran.r-project.org/package=MatrixModels
 
 LICENSE=	GPLv2+
 

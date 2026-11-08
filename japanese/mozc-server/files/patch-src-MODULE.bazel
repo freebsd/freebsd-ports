@@ -1,0 +1,67 @@
+--- src/MODULE.bazel.orig	2026-10-16 12:33:33 UTC
++++ src/MODULE.bazel
+@@ -219,7 +219,7 @@ pkg_config_repository(
+ # iBus
+ pkg_config_repository(
+     name = "ibus",
+-    exec_os = ["linux"],
++    exec_os = ["linux", "freebsd"],
+     packages = [
+         "glib-2.0",
+         "gobject-2.0",
+@@ -230,11 +230,12 @@ pkg_config_repository(
+ # Qt for Linux
+ pkg_config_repository(
+     name = "qt_linux",
+-    exec_os = ["linux"],
++    exec_os = ["linux", "freebsd"],
+     packages = [
+         "Qt6Core",
+         "Qt6Gui",
+         "Qt6Widgets",
++	"gl",
+     ],
+ )
+ 
+@@ -366,32 +367,22 @@ http_archive(
+     ],
+ )
+ 
+-# Japanese Usage Dictionary (2025-01-25)
+-JA_USAGE_DICT_TAG = "2025-01-25"
+-
+-http_archive(
++# Japanese Usage Dictionary fetched and extracted by FreeBSD ports.
++new_local_repository(
+     name = "ja_usage_dict",
+-    sha256 = "140f24f71f7d78d5eb5b93a9c079f44f23728dca5ab16bf857fe8a3fa1bf20ed",
+-    strip_prefix = "japanese-usage-dictionary-%s" % JA_USAGE_DICT_TAG,
+-    url = "https://github.com/hiroyuki-komatsu/japanese-usage-dictionary/archive/refs/tags/%s.zip" % JA_USAGE_DICT_TAG,
++    build_file = "@//bazel:BUILD.ja_usage_dict.bazel",
++    path = "japanese_usage_dictionary",
+ )
+ 
+-# Zip code (2026-04-03, 621d059fbcbfae17bfca15b439692bae934268c3)
+-# https://github.com/hiroyuki-komatsu/japanpost_zipcode/ contains snapshots of the zip code data
+-# with version control.
+-# The data files are mirror of the following files.
+-# * https://www.post.japanpost.jp/zipcode/dl/jigyosyo/zip/jigyosyo.zip
+-# * https://www.post.japanpost.jp/zipcode/dl/kogaki/zip/ken_all.zip
+-http_archive(
++# Japan Post zip code data fetched and extracted by FreeBSD ports.
++new_local_repository(
+     name = "zip_code_jigyosyo",
+     build_file_content = "exports_files([\"JIGYOSYO.CSV\"])",
+-    sha256 = "14be1030f607c5f819f2f45a485e89511907bdd1d62e7fb1931b6e48a3431c3a",
+-    url = "https://github.com/hiroyuki-komatsu/japanpost_zipcode/raw/621d059fbcbfae17bfca15b439692bae934268c3/jigyosyo.zip",
++    path = "japanpost_zipcode",
+ )
+ 
+-http_archive(
++new_local_repository(
+     name = "zip_code_ken_all",
+     build_file_content = "exports_files([\"KEN_ALL.CSV\"])",
+-    sha256 = "3adc97d8e19e1168a6cdcb2fce759d0e9e613a9a3b630cc180aecfd56ae81eaf",
+-    url = "https://github.com/hiroyuki-komatsu/japanpost_zipcode/raw/621d059fbcbfae17bfca15b439692bae934268c3/ken_all.zip",
++    path = "japanpost_zipcode",
+ )

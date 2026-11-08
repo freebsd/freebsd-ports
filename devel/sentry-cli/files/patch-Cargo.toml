@@ -1,7 +1,7 @@
 Do not statically link with Curl and OpenSSL.  This also removes
 the openssl-src dependency.
 
---- Cargo.toml.orig	2026-06-26 14:16:26 UTC
+--- Cargo.toml.orig	2026-10-21 11:29:56 UTC
 +++ Cargo.toml
 @@ -137,7 +137,7 @@ windows-sys = { version = "0.59.0", features = ["Win32
  # Use static curl/SSL on non-macOS platforms
@@ -11,4 +11,4 @@ the openssl-src dependency.
 +[target."cfg(not(any(target_os = \"macos\", target_os = \"freebsd\")))".dependencies]
  curl = { version = "0.4.46", features = ["static-curl", "static-ssl"] }
  
- # We optimize the release build for size.
+ # On macOS, curl links the system libcurl, but `openssl-sys` still needs OpenSSL

@@ -1,0 +1,13 @@
+--- src/brave/build/node_bin.gni.orig	2026-06-01 00:00:00 UTC
++++ src/brave/build/node_bin.gni
+@@ -14,6 +14,10 @@
+   }
+ } else if (host_os == "linux") {
+   node_bin = "//third_party/node/linux/node-linux-x64/bin/node"
++} else if (host_os == "freebsd") {
++  # Same path third_party/node/node.py uses on FreeBSD, which the port points
++  # at the node binary from ports.
++  node_bin = "//third_party/node/freebsd/node-freebsd/bin/node"
+ } else {
+   assert(false, "Unsupported host_os: $host_os")
+ }

@@ -17,7 +17,4 @@ USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS
 
-# Override shared library version
-KDE_APPLICATIONS_SHLIB_VER=	"${KDE_APPLICATIONS_VERSION}"
-
 .include <bsd.port.mk>

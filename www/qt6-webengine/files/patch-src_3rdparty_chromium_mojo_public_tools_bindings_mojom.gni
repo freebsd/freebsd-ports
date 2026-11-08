@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/mojo/public/tools/bindings/mojom.gni.orig	2025-09-06 10:01:20 UTC
+--- src/3rdparty/chromium/mojo/public/tools/bindings/mojom.gni.orig	2026-08-11 12:42:19 UTC
 +++ src/3rdparty/chromium/mojo/public/tools/bindings/mojom.gni
-@@ -762,6 +762,16 @@ template("mojom") {
+@@ -767,6 +767,16 @@ template("mojom") {
        enabled_features += [ "is_apple" ]
      }
  

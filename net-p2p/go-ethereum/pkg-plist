@@ -1,6 +1,5 @@
 %%DEVTOOLS%%bin/abigen
 %%DEVTOOLS%%bin/blsync
-%%DEVTOOLS%%bin/clef
 %%DEVTOOLS%%bin/era
 %%DEVTOOLS%%bin/ethkey
 %%DEVTOOLS%%bin/evm

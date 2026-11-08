@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2025-10-16 00:00:00 UTC
++++ pyproject.toml
+@@ -7,7 +7,7 @@
+ version = "0.6.0"
+ authors = [{name = "Leland McInnes", email = "leland.mcinnes@gmail.com"}]
+ maintainers = [{name = "Leland McInnes", email = "leland.mcinnes@gmail.com"}]
+-license = "BSD-2-Clause"
++license = {text = "BSD-2-Clause"}
+ description = "Nearest Neighbor Descent"
+ keywords = ["nearest", "neighbor", "knn", "ANN"]
+ readme = "README.rst"

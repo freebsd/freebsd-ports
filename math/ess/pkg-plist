@@ -37,7 +37,6 @@
 %%EMACS_SITE_LISPDIR%%/ess/ess-gretl.el
 %%EMACS_SITE_LISPDIR%%/ess/ess-help.el
 %%EMACS_SITE_LISPDIR%%/ess/ess-inf.el
-%%EMACS_SITE_LISPDIR%%/ess/ess-jags-d.el
 %%EMACS_SITE_LISPDIR%%/ess/ess-julia.el
 %%EMACS_SITE_LISPDIR%%/ess/ess-mode.el
 %%EMACS_SITE_LISPDIR%%/ess/ess-r-completion.el

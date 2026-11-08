@@ -1,0 +1,9 @@
+Ruby client library and CLI tool for the OPNsense REST API
+
+It is meant as a replacement for net-mgmt/py-opn-cli. It provides:
+- An HTTP client with SSL, redirect handling, and API key authentication
+- UUID/name resolution for ModelRelationField and CertificateField references
+- Service reconfigure orchestration with configtest support
+- OPNsense selection-hash normalization
+- A CLI tool for interactive API access
+- A resource registry that abstracts away inconsistent endpoint naming

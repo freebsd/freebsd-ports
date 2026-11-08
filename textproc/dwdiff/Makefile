@@ -1,11 +1,11 @@
 PORTNAME=	dwdiff
 PORTVERSION=	2.1.4
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	textproc
 MASTER_SITES=	https://os.ghalkes.nl/dist/ \
 		http://fossies.org/unix/privat/
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Delimited word diff program
 WWW=		https://os.ghalkes.nl/dwdiff.html
 

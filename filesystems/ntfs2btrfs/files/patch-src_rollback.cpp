@@ -1,11 +1,12 @@
---- src/rollback.cpp.orig	2023-05-01 20:59:36 UTC
+--- src/rollback.cpp.orig	2026-08-10 17:55:01 UTC
 +++ src/rollback.cpp
-@@ -309,7 +309,7 @@ void btrfs::read_chunks() {
+@@ -324,7 +324,8 @@ void btrfs::read_chunks() {
  
-         auto& ci = *(CHUNK_ITEM*)(ptr + sizeof(key));
+         auto& ci = *(btrfs_chunk*)(ptr + sizeof(key));
  
--        basic_string_view<uint8_t> chunk_item{ptr + sizeof(key), sizeof(ci) + (ci.num_stripes * sizeof(CHUNK_ITEM_STRIPE))};
-+        basic_string_view<char8_t> chunk_item{reinterpret_cast<const char8_t*>(ptr) + sizeof(key), sizeof(ci) + (ci.num_stripes * sizeof(CHUNK_ITEM_STRIPE))};
+-        basic_string_view<uint8_t> chunk_item{ptr + sizeof(key), offsetof(btrfs_chunk, stripe) + (ci.num_stripes * sizeof(btrfs_stripe))};
++        basic_string_view<char8_t> chunk_item{reinterpret_cast<const char8_t*>(ptr) + sizeof(key),
++            offsetof(btrfs_chunk, stripe) + ci.num_stripes * sizeof(btrfs_stripe)};
  
-         chunks.emplace(key.offset, buffer_t{chunk_item.data(), chunk_item.data() + chunk_item.size()});
+         chunks.emplace(+key.offset, buffer_t{chunk_item.data(), chunk_item.data() + chunk_item.size()});
  

@@ -1,6 +1,5 @@
 PORTNAME=	dwave-hybrid
 DISTVERSION=	0.6.16
-
 CATEGORIES=	science python # quantum-computing
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -31,8 +30,12 @@ USE_PYTHON=	distutils autoplist unittest # several tests fail, see https://githu
 USE_GITHUB=	yes
 GH_ACCOUNT=	dwavesystems
 
-TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_ENV=	${MAKE_ENV} \
+		LD_LIBRARY_PATH=/usr/lib:/lib:${LOCALBASE}/lib/gcc14 \
+		PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 NO_ARCH=	yes
+
+# tests as of 0.6.16: 341 tests, OK in 123.191s
 
 .include <bsd.port.mk>

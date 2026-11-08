@@ -1,4 +1,4 @@
---- Makefile.in.orig	2023-12-19 22:55:53 UTC
+--- Makefile.in.orig	2026-10-28 21:44:58 UTC
 +++ Makefile.in
 @@ -667,7 +667,12 @@ AUTOMAKE_OPTIONS = foreign subdir-objects
  top_builddir = @top_builddir@
@@ -11,7 +11,7 @@
 +endif
 +SUBDIRS = . po $(MANUALSUBDIR)
 +
- DIST_SUBDIRS = ${SUBDIRS} examples myspell lib5
+ DIST_SUBDIRS = ${SUBDIRS} examples lib5
  filterdir = ${pkglibdir}
  optdir = ${pkgdatadir}
 @@ -768,7 +773,7 @@ aspell_SOURCES = prog/aspell.cpp prog/check_funs.cpp p

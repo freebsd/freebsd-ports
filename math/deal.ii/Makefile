@@ -1,5 +1,6 @@
 PORTNAME=	deal.II
-DISTVERSION=	9.7.1
+DISTVERSION=	9.8.0
+PORTREVISION=	5
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/dealii/dealii/releases/download/v${DISTVERSION}/
 DISTNAME=	dealii-${DISTVERSION}
@@ -20,14 +21,23 @@ BROKEN_i386=		compilation fails: Kokkos assumes 64-bit build; i.e., 8-byte point
 
 BUILD_DEPENDS=	cgal>0:math/cgal \
 		taskflow>0:devel/taskflow
-LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs \
+LIB_DEPENDS=	libarb.so:math/arb \
+		libblis.so:math/blis \
+		libboost_serialization.so:devel/boost-libs \
+		libecm.so:math/gmp-ecm \
+		libflint.so:math/flint2 \
 		libgmp.so:math/gmp \
+		libmpc.so:math/mpc \
 		libmpfr.so:math/mpfr \
 		libhdf5.so:science/hdf5 \
+		liblapack.so:math/lapack \
 		libmetis.so:math/metis \
+		libsymengine.so:math/symengine \
 		libtbb.so:devel/onetbb \
 		libvtkCommonCore-${VTK_VER}.so:math/vtk${VTK_VER:R} \
 		libkokkoscore.so:devel/kokkos # TMP commented out for bundled kokkos, tests fail for non-bundled kokkos, see https://github.com/dealii/dealii/issues/15692
+RUN_DEPENDS=	cgal>0:math/cgal \
+		taskflow>0:devel/taskflow
 
 USES=		blaslapack:openblas cmake:testing compiler:c++23-lang localbase:ldflags xorg
 
@@ -36,8 +46,10 @@ USE_LDCONFIG=	yes
 CMAKE_OFF=	DEAL_II_ALLOW_BUNDLED DEAL_II_COMPONENT_EXAMPLES \
 		DEAL_II_WITH_P4EST DEAL_II_WITH_TRILINOS DEAL_II_WITH_UMFPACK \
 		DEAL_II_WITH_MUPARSER DEAL_II_WITH_ASSIMP
+CMAKE_OFF+=	DEAL_II_WITH_MUMPS # when math/mumps is installed deal fails because it expects a newer mumps (FIXME)
 #CMAKE_ON=	FORCE_BUNDLED_KOKKOS # TMP turn on bundled kokkos
 CMAKE_TESTING_ON=	FREEBSD_ENABLE_TESTS
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/dealii/dealii/issues/20250
 
 USE_CXXSTD=	c++23
 LDFLAGS+=	-lomp
@@ -112,7 +124,7 @@ pre-configure: # unbundle boost
 post-stage:
 	@${RM} ${STAGEDIR}${PREFIX}/*.log
 
-# the testsuite is excluded from the tarball: https://github.com/dealii/dealii/issues/17951
+# tests as of 9.8.0: 100% tests passed, 0 tests failed out of 17
 
 .include <../../math/vtk9/Makefile.version>
 .include <bsd.port.mk>

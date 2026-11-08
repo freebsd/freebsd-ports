@@ -1,3 +1,5 @@
-TIMESTAMP = 1778228771
+TIMESTAMP = 1787424841
 SHA256 (OpenBoard-org-OpenBoard-v1.7.7_GH0.tar.gz) = 2ea0989b8c304f64a124c09eb5e3cc71808c395f0942a26d5a3f79d4125df969
 SIZE (OpenBoard-org-OpenBoard-v1.7.7_GH0.tar.gz) = 63282234
+SHA256 (41ba5bdcb2d6d10106eccec579e0e2db93c5e9e5.patch) = b4a327c0ae7c5a997901a390270bb4cd06d96e5c7b6511ddfdbeec982a1d9a3c
+SIZE (41ba5bdcb2d6d10106eccec579e0e2db93c5e9e5.patch) = 1616

@@ -1,3 +1,3 @@
-TIMESTAMP = 1585173611
-SHA256 (apache2/jzdziarski-mod_evasive-1.10.1-ad6e89f6c7d835945a7d329cc0f04adaefc3d114_GH0.tar.gz) = cb6a574dabbda7043048bda90250b3f367af48225b83afc5eccd1fa31e4715ee
-SIZE (apache2/jzdziarski-mod_evasive-1.10.1-ad6e89f6c7d835945a7d329cc0f04adaefc3d114_GH0.tar.gz) = 20303
+TIMESTAMP = 1761709250
+SHA256 (apache24/jvdmr-mod_evasive-2.4.0-7385d78146a5e23f953e6566c8e29d8ae36e00ad_GH0.tar.gz) = 50e22df08e52241ee52c4ff8439db7904abec0f556c4f9af420129a98f59641b
+SIZE (apache24/jvdmr-mod_evasive-2.4.0-7385d78146a5e23f953e6566c8e29d8ae36e00ad_GH0.tar.gz) = 101796

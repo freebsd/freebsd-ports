@@ -1,0 +1,19 @@
+--- pyproject.toml.orig	2025-07-01 05:26:56 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools >= 77.0.3"]
++requires = ["setuptools >= 61"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -9,8 +9,7 @@ maintainers = [{ name = "Georgios Verigakis", email = 
+ readme = "README.rst"
+ authors = [{ name = "Georgios Verigakis", email = "verigak@gmail.com" }]
+ maintainers = [{ name = "Georgios Verigakis", email = "verigak@gmail.com" }]
+-license = "ISC"
+-license-files = ["LICENSE"]
++license = { text = "ISC" }
+ requires-python = ">=3.6"
+ 
+ keywords = ["progress", "bar"]

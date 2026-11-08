@@ -1,7 +1,7 @@
 PORTNAME=	witr
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.3
-PORTREVISION=	1
+PORTREVISION=	6
 CATEGORIES=	sysutils
 
 MAINTAINER=	gaod@hychen.org
@@ -11,7 +11,7 @@ WWW=		https://github.com/pranshuparmar/witr
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.25+,modules
+USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	pranshuparmar
 GH_PROJECT=	witr

@@ -125,6 +125,10 @@ share/locale/sa/LC_MESSAGES/skanlite.mo
 share/locale/sk/LC_MESSAGES/skanlite.mo
 share/locale/sl/LC_MESSAGES/skanlite.mo
 share/locale/sq/LC_MESSAGES/skanlite.mo
+share/locale/sr/LC_MESSAGES/skanlite.mo
+share/locale/sr@ijekavian/LC_MESSAGES/skanlite.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/skanlite.mo
+share/locale/sr@latin/LC_MESSAGES/skanlite.mo
 share/locale/sv/LC_MESSAGES/skanlite.mo
 share/locale/tr/LC_MESSAGES/skanlite.mo
 share/locale/ug/LC_MESSAGES/skanlite.mo

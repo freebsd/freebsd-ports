@@ -5,7 +5,7 @@ CATEGORIES=	german tk
 MASTER_SITES=	ftp://ftp.tu-chemnitz.de/pub/Local/urz/ding/ \
 		LOCAL/ehaupt
 
-MAINTAINER=	beat@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	German-English dictionary program for X windows/Unix
 WWW=		https://www-user.tu-chemnitz.de/~fri/ding/
 

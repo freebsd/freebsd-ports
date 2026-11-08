@@ -1,6 +1,7 @@
 PORTNAME=	cliproxyapi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.2.83
+DISTVERSION=	7.3.20
+PORTREVISION=	2
 CATEGORIES=	net
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -10,10 +11,11 @@ WWW=		https://github.com/router-for-me/CLIProxyAPI
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.26,modules
+USES=		go:modules
 
 GO_MODULE=	github.com/router-for-me/CLIProxyAPI/v7
 GO_TARGET=	./cmd/server:cliproxyapi
+GO_LDFLAGS=	-X main.Version=${DISTVERSION}
 
 PLIST_FILES=	bin/cliproxyapi
 

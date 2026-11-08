@@ -1,6 +1,5 @@
 PORTNAME=	simutrans
-DISTVERSION=	124.3.1
-PORTREVISION=	1
+DISTVERSION=	124.5
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -15,6 +14,7 @@ LICENSE_FILE_MIT=	${WRKSRC}/simutrans/license_squirrel.txt
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libfreetype.so:print/freetype2 \
+		libfontconfig.so:x11-fonts/fontconfig \
 		libzstd.so:archivers/zstd
 
 USES=		cmake compiler:c++14-lang pkgconfig sdl

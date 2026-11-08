@@ -1,6 +1,6 @@
 PORTNAME=	bacon
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.24.0
+DISTVERSION=	3.26.0
 PORTREVISION=	1
 CATEGORIES=	devel
 
@@ -19,59 +19,60 @@ USES=		cargo pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	Canop
 
-CARGO_CRATES=	adler2-2.0.1 \
-		aho-corasick-1.1.4 \
+CARGO_CRATES=	aho-corasick-1.1.5 \
 		allocator-api2-0.2.21 \
 		alsa-0.9.1 \
 		alsa-sys-0.3.1 \
-		android_system_properties-0.1.5 \
+		android_system_properties-0.1.6 \
 		anstream-1.0.0 \
 		anstyle-1.0.14 \
 		anstyle-parse-1.0.0 \
 		anstyle-query-1.1.5 \
 		anstyle-wincon-3.0.11 \
-		anyhow-1.0.103 \
+		anyhow-1.0.104 \
 		arboard-3.6.1 \
 		arc-swap-1.9.2 \
 		arrayvec-0.7.8 \
 		autocfg-1.5.1 \
+		bisync-0.3.0 \
+		bisync_macros-0.2.3 \
 		bitflags-1.3.2 \
-		bitflags-2.13.0 \
+		bitflags-2.13.1 \
 		block-buffer-0.10.4 \
 		block2-0.6.2 \
-		bstr-1.12.3 \
+		bstr-1.13.1 \
 		bumpalo-3.20.3 \
-		bytemuck-1.25.1 \
+		bytemuck-1.25.2 \
 		byteorder-1.5.0 \
 		bytes-1.12.1 \
-		camino-1.2.4 \
-		cargo-platform-0.1.8 \
-		cargo_metadata-0.19.0 \
-		cc-1.2.67 \
+		camino-1.2.5 \
+		cargo-platform-0.1.9 \
+		cargo_metadata-0.19.2 \
+		cc-1.4.4 \
 		cesu8-1.1.0 \
 		cfg-if-1.0.4 \
-		cfg_aliases-0.2.1 \
+		cfg_aliases-0.2.2 \
 		chrono-0.4.45 \
-		clap-4.6.1 \
+		clap-4.6.6 \
 		clap-help-1.6.0 \
-		clap_builder-4.6.0 \
-		clap_complete-4.6.7 \
-		clap_derive-4.6.1 \
-		clap_lex-1.0.1 \
-		cli-log-2.1.0 \
+		clap_builder-4.6.6 \
+		clap_complete-4.6.9 \
+		clap_derive-4.6.4 \
+		clap_lex-1.1.0 \
+		cli-log-2.1.1 \
 		clipboard-win-5.4.1 \
 		clru-0.6.3 \
 		colorchoice-1.0.5 \
 		combine-4.6.7 \
-		convert_case-0.7.1 \
+		convert_case-0.10.0 \
 		coolor-1.1.0 \
 		core-foundation-sys-0.8.7 \
 		coreaudio-rs-0.13.0 \
 		cpal-0.16.0 \
 		cpufeatures-0.2.17 \
-		crc32fast-1.5.0 \
-		crokey-1.4.0 \
-		crokey-proc_macros-1.4.0 \
+		crc32fast-1.5.1 \
+		crokey-1.5.0 \
+		crokey-proc_macros-1.5.0 \
 		crossbeam-0.8.4 \
 		crossbeam-channel-0.5.16 \
 		crossbeam-deque-0.8.7 \
@@ -86,144 +87,134 @@ CARGO_CRATES=	adler2-2.0.1 \
 		defmt-1.1.1 \
 		defmt-macros-1.1.1 \
 		defmt-parser-1.0.0 \
-		derive_more-2.0.1 \
-		derive_more-impl-2.0.1 \
+		derive_more-2.1.1 \
+		derive_more-impl-2.1.1 \
 		diff-0.1.13 \
 		digest-0.10.7 \
 		directories-next-2.0.0 \
 		dirs-sys-next-0.1.2 \
 		dispatch2-0.3.1 \
-		displaydoc-0.2.6 \
 		document-features-0.2.12 \
 		dunce-1.0.5 \
 		dyn-clone-1.0.20 \
 		encoding_rs-0.8.35 \
 		equivalent-1.0.2 \
 		errno-0.3.14 \
-		error-code-3.3.2 \
+		error-code-3.4.0 \
+		extended-0.1.0 \
 		faster-hex-0.10.0 \
-		fastrand-2.4.1 \
+		fastrand-2.5.0 \
 		file-size-1.0.3 \
 		filetime-0.2.29 \
-		find-msvc-tools-0.1.9 \
-		flate2-1.1.9 \
+		find-msvc-tools-0.1.11 \
 		fnv-1.0.7 \
-		foldhash-0.1.5 \
 		foldhash-0.2.0 \
-		form_urlencoded-1.2.2 \
 		fsevent-sys-4.1.0 \
-		futures-core-0.3.32 \
-		futures-task-0.3.32 \
-		futures-util-0.3.32 \
+		futures-core-0.3.34 \
+		futures-task-0.3.34 \
+		futures-util-0.3.34 \
 		generic-array-0.14.7 \
 		gethostname-1.1.0 \
 		getrandom-0.2.17 \
-		getrandom-0.3.4 \
-		gix-0.73.0 \
-		gix-actor-0.35.4 \
-		gix-bitmap-0.2.14 \
-		gix-chunk-0.4.11 \
-		gix-command-0.6.2 \
-		gix-commitgraph-0.29.0 \
-		gix-config-0.46.0 \
-		gix-config-value-0.15.1 \
-		gix-date-0.10.5 \
-		gix-diff-0.53.0 \
-		gix-discover-0.41.0 \
-		gix-features-0.43.1 \
-		gix-fs-0.16.1 \
-		gix-glob-0.21.0 \
-		gix-hash-0.19.0 \
-		gix-hashtable-0.9.0 \
-		gix-ignore-0.16.0 \
-		gix-index-0.41.0 \
-		gix-lock-18.0.0 \
-		gix-object-0.50.2 \
-		gix-odb-0.70.0 \
-		gix-pack-0.60.0 \
-		gix-packetline-0.19.1 \
-		gix-path-0.10.20 \
-		gix-protocol-0.51.0 \
-		gix-quote-0.6.0 \
-		gix-ref-0.53.1 \
-		gix-refspec-0.31.0 \
-		gix-revision-0.35.0 \
-		gix-revwalk-0.21.0 \
-		gix-sec-0.12.0 \
-		gix-shallow-0.5.0 \
-		gix-tempfile-18.0.0 \
-		gix-trace-0.1.13 \
-		gix-transport-0.48.0 \
-		gix-traverse-0.47.0 \
-		gix-url-0.32.0 \
-		gix-utils-0.3.0 \
-		gix-validate-0.10.0 \
-		gix-worktree-0.42.0 \
-		glob-0.3.3 \
+		getrandom-0.4.3 \
+		gix-0.87.0 \
+		gix-actor-0.42.0 \
+		gix-attributes-0.35.0 \
+		gix-bitmap-0.4.0 \
+		gix-chunk-0.8.0 \
+		gix-command-0.10.0 \
+		gix-commitgraph-0.39.0 \
+		gix-config-0.60.0 \
+		gix-config-value-0.19.1 \
+		gix-date-0.16.0 \
+		gix-diff-0.67.0 \
+		gix-discover-0.55.0 \
+		gix-error-0.3.1 \
+		gix-features-0.49.1 \
+		gix-filter-0.34.0 \
+		gix-fs-0.22.1 \
+		gix-glob-0.27.1 \
+		gix-hash-0.26.2 \
+		gix-hashtable-0.16.0 \
+		gix-ignore-0.22.1 \
+		gix-index-0.55.0 \
+		gix-lock-24.0.0 \
+		gix-note-0.1.0 \
+		gix-object-0.64.1 \
+		gix-odb-0.84.0 \
+		gix-pack-0.74.1 \
+		gix-packetline-0.22.1 \
+		gix-path-0.12.5 \
+		gix-pathspec-0.20.0 \
+		gix-protocol-0.65.0 \
+		gix-quote-0.8.0 \
+		gix-ref-0.67.1 \
+		gix-refspec-0.45.0 \
+		gix-revision-0.49.0 \
+		gix-revwalk-0.35.0 \
+		gix-sec-0.14.2 \
+		gix-shallow-0.13.0 \
+		gix-tempfile-24.0.0 \
+		gix-trace-0.1.21 \
+		gix-transport-0.59.0 \
+		gix-traverse-0.61.0 \
+		gix-url-0.38.0 \
+		gix-utils-0.3.6 \
+		gix-validate-0.11.4 \
+		gix-worktree-0.56.0 \
+		gix-worktree-stream-0.36.0 \
+		gix-zlib-0.1.0 \
+		glob-0.3.4 \
 		hash32-0.3.1 \
-		hashbrown-0.15.5 \
 		hashbrown-0.16.1 \
+		hashbrown-0.17.1 \
 		heapless-0.8.0 \
 		heck-0.5.0 \
-		home-0.5.9 \
 		iana-time-zone-0.1.65 \
 		iana-time-zone-haiku-0.1.2 \
-		icu_collections-1.5.0 \
-		icu_locid-1.5.0 \
-		icu_locid_transform-1.5.0 \
-		icu_locid_transform_data-1.5.1 \
-		icu_normalizer-1.5.0 \
-		icu_normalizer_data-1.5.1 \
-		icu_properties-1.5.1 \
-		icu_properties_data-1.5.1 \
-		icu_provider-1.5.0 \
-		icu_provider_macros-1.5.0 \
-		idna-1.1.0 \
-		idna_adapter-1.2.0 \
-		indexmap-2.11.4 \
-		inotify-0.11.4 \
+		indexmap-2.14.0 \
+		inotify-0.11.5 \
 		inotify-sys-0.1.8 \
-		iq-0.4.0 \
+		iq-0.5.1 \
 		is_executable-1.0.6 \
 		is_terminal_polyfill-1.70.2 \
 		itoa-1.0.18 \
-		jiff-0.2.32 \
-		jiff-static-0.2.32 \
+		jiff-0.2.35 \
+		jiff-core-0.1.0 \
+		jiff-static-0.2.35 \
 		jiff-tzdb-0.1.8 \
 		jiff-tzdb-platform-0.1.3 \
 		jni-0.21.1 \
 		jni-sys-0.3.1 \
 		jni-sys-0.4.1 \
 		jni-sys-macros-0.4.1 \
-		js-sys-0.3.103 \
-		kqueue-1.2.0 \
+		js-sys-0.3.104 \
+		kqueue-1.2.1 \
 		kqueue-sys-1.1.2 \
-		lazy-regex-3.6.0 \
-		lazy-regex-proc_macros-3.6.0 \
+		lazy-regex-3.6.1 \
+		lazy-regex-proc_macros-3.6.1 \
 		lazy_static-1.5.0 \
-		libc-0.2.186 \
-		libredox-0.1.18 \
+		libc-0.2.189 \
+		libredox-0.1.20 \
 		linux-raw-sys-0.12.1 \
-		litemap-0.7.4 \
 		litrs-1.0.0 \
 		lock_api-0.4.14 \
-		log-0.4.33 \
+		log-0.4.34 \
 		mach2-0.4.3 \
-		maybe-async-0.2.11 \
 		memchr-2.8.3 \
 		memmap2-0.9.11 \
 		minimad-0.16.0 \
-		miniz_oxide-0.8.9 \
 		mio-1.2.2 \
 		ndk-0.9.0 \
 		ndk-context-0.1.1 \
 		ndk-sys-0.6.0+11769913 \
 		nix-0.31.3 \
+		nonempty-0.12.0 \
 		notify-8.2.0 \
-		notify-types-2.0.0 \
+		notify-types-2.1.0 \
 		num-bigint-0.4.8 \
 		num-derive-0.4.2 \
-		num-integer-0.1.46 \
+		num-integer-0.1.47 \
 		num-rational-0.4.2 \
 		num-traits-0.2.19 \
 		num_enum-0.7.6 \
@@ -245,38 +236,39 @@ CARGO_CRATES=	adler2-2.0.1 \
 		paste-1.0.15 \
 		percent-encoding-2.3.2 \
 		pin-project-lite-0.2.17 \
-		pkg-config-0.3.33 \
-		portable-atomic-1.13.1 \
+		pkg-config-0.3.34 \
+		portable-atomic-1.15.0 \
 		portable-atomic-util-0.2.7 \
 		pretty_assertions-1.4.1 \
-		proc-macro-crate-3.4.0 \
-		proc-macro2-1.0.106 \
-		proc-status-0.1.1 \
-		prodash-30.0.1 \
-		quote-1.0.46 \
-		r-efi-5.3.0 \
+		proc-macro-crate-3.5.0 \
+		proc-macro2-1.0.107 \
+		proc-status-0.2.0 \
+		prodash-31.0.0 \
+		quote-1.0.47 \
+		r-efi-6.0.0 \
 		redox_syscall-0.5.18 \
 		redox_users-0.4.6 \
-		ref-cast-1.0.25 \
-		ref-cast-impl-1.0.25 \
-		regex-1.13.0 \
-		regex-automata-0.4.15 \
+		ref-cast-1.0.27 \
+		ref-cast-impl-1.0.27 \
+		regex-1.13.1 \
+		regex-automata-0.4.18 \
 		regex-syntax-0.8.11 \
 		rodio-0.21.1 \
 		rustc-hash-2.1.3 \
+		rustc_version-0.4.1 \
 		rustix-1.1.4 \
 		rustversion-1.0.23 \
 		same-file-1.0.6 \
-		schemars-1.2.1 \
-		schemars_derive-1.2.1 \
+		schemars-1.2.2 \
+		schemars_derive-1.2.2 \
 		scopeguard-1.2.0 \
 		semver-1.0.28 \
-		serde-1.0.228 \
-		serde_core-1.0.228 \
-		serde_derive-1.0.228 \
-		serde_derive_internals-0.29.1 \
-		serde_json-1.0.150 \
-		serde_spanned-1.0.4 \
+		serde-1.0.229 \
+		serde_core-1.0.229 \
+		serde_derive-1.0.229 \
+		serde_derive_internals-0.30.0 \
+		serde_json-1.0.151 \
+		serde_spanned-1.1.1 \
 		sha1-0.10.7 \
 		sha1-checked-0.10.0 \
 		shell-words-1.1.1 \
@@ -284,33 +276,37 @@ CARGO_CRATES=	adler2-2.0.1 \
 		signal-hook-0.3.18 \
 		signal-hook-mio-0.2.5 \
 		signal-hook-registry-1.4.8 \
-		simd-adler32-0.3.9 \
 		slab-0.4.12 \
 		smallvec-1.15.2 \
 		stable_deref_trait-1.2.1 \
 		strict-0.2.0 \
 		strsim-0.11.1 \
 		symphonia-0.5.5 \
+		symphonia-bundle-flac-0.5.5 \
 		symphonia-bundle-mp3-0.5.5 \
+		symphonia-codec-pcm-0.5.5 \
+		symphonia-codec-vorbis-0.5.5 \
 		symphonia-core-0.5.5 \
+		symphonia-format-ogg-0.5.5 \
+		symphonia-format-riff-0.5.5 \
 		symphonia-metadata-0.5.5 \
-		syn-2.0.118 \
-		synstructure-0.13.2 \
+		symphonia-utils-xiph-0.5.5 \
+		syn-2.0.119 \
+		syn-3.0.3 \
 		tempfile-3.27.0 \
-		termimad-0.35.1 \
-		terminal-light-1.9.0 \
+		termimad-0.35.5 \
+		terminal-light-1.9.1 \
 		thiserror-1.0.69 \
-		thiserror-2.0.18 \
+		thiserror-2.0.20 \
 		thiserror-impl-1.0.69 \
-		thiserror-impl-2.0.18 \
-		tinystr-0.7.6 \
+		thiserror-impl-2.0.20 \
 		tinyvec-1.12.0 \
 		tinyvec_macros-0.1.1 \
-		toml-0.9.12+spec-1.1.0 \
-		toml_datetime-0.7.5+spec-1.1.0 \
-		toml_edit-0.23.10+spec-1.0.0 \
-		toml_parser-1.0.10+spec-1.1.0 \
-		toml_writer-1.0.7+spec-1.1.0 \
+		toml-1.1.4+spec-1.1.0 \
+		toml_datetime-1.1.1+spec-1.1.0 \
+		toml_edit-0.25.13+spec-1.1.0 \
+		toml_parser-1.1.3+spec-1.1.0 \
+		toml_writer-1.1.2+spec-1.1.0 \
 		tracing-0.1.44 \
 		tracing-attributes-0.1.31 \
 		tracing-core-0.1.36 \
@@ -318,40 +314,34 @@ CARGO_CRATES=	adler2-2.0.1 \
 		unicode-bom-2.0.3 \
 		unicode-ident-1.0.24 \
 		unicode-normalization-0.1.25 \
-		unicode-segmentation-1.12.0 \
+		unicode-segmentation-1.13.3 \
 		unicode-width-0.1.14 \
 		unicode-width-0.2.2 \
-		url-2.5.8 \
-		utf16_iter-1.0.5 \
-		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
 		version_check-0.9.5 \
 		vte-0.15.0 \
 		walkdir-2.5.0 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
-		wasip2-1.0.4+wasi-0.2.12 \
-		wasm-bindgen-0.2.126 \
-		wasm-bindgen-futures-0.4.76 \
-		wasm-bindgen-macro-0.2.126 \
-		wasm-bindgen-macro-support-0.2.126 \
-		wasm-bindgen-shared-0.2.126 \
-		web-sys-0.3.103 \
+		wasm-bindgen-0.2.127 \
+		wasm-bindgen-futures-0.4.77 \
+		wasm-bindgen-macro-0.2.127 \
+		wasm-bindgen-macro-support-0.2.127 \
+		wasm-bindgen-shared-0.2.127 \
+		web-sys-0.3.104 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.11 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-0.54.0 \
 		windows-core-0.54.0 \
-		windows-core-0.61.2 \
+		windows-core-0.62.2 \
 		windows-implement-0.60.2 \
 		windows-interface-0.59.3 \
-		windows-link-0.1.3 \
 		windows-link-0.2.1 \
 		windows-result-0.1.2 \
-		windows-result-0.3.4 \
-		windows-strings-0.4.2 \
+		windows-result-0.4.1 \
+		windows-strings-0.5.1 \
 		windows-sys-0.45.0 \
-		windows-sys-0.52.0 \
 		windows-sys-0.59.0 \
 		windows-sys-0.60.2 \
 		windows-sys-0.61.2 \
@@ -381,22 +371,12 @@ CARGO_CRATES=	adler2-2.0.1 \
 		windows_x86_64_msvc-0.42.2 \
 		windows_x86_64_msvc-0.52.6 \
 		windows_x86_64_msvc-0.53.1 \
-		winnow-0.7.15 \
 		winnow-1.0.4 \
-		wit-bindgen-0.57.1 \
-		write16-1.0.0 \
-		writeable-0.5.5 \
 		x11rb-0.13.2 \
 		x11rb-protocol-0.13.2 \
-		xterm-query-0.6.0 \
+		xterm-query-0.6.1 \
 		yansi-1.0.1 \
-		yoke-0.7.5 \
-		yoke-derive-0.7.5 \
-		zerofrom-0.1.8 \
-		zerofrom-derive-0.1.7 \
-		zerovec-0.10.4 \
-		zerovec-derive-0.10.3 \
-		zlib-rs-0.6.6 \
+		zlib-rs-0.6.7 \
 		zmij-1.0.23
 
 PLIST_FILES=	bin/${PORTNAME}

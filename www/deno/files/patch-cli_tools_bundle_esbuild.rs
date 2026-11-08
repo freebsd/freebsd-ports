@@ -1,7 +1,7 @@
 Index: cli/tools/bundle/esbuild.rs
---- cli/tools/bundle/esbuild.rs.orig	2026-07-01 13:28:43 UTC
+--- cli/tools/bundle/esbuild.rs.orig	2026-09-16 15:45:55 UTC
 +++ cli/tools/bundle/esbuild.rs
-@@ -22,10 +22,14 @@ fn esbuild_platform() -> &'static str {
+@@ -25,10 +25,14 @@ fn esbuild_platform() -> &'static str {
  
  fn esbuild_platform() -> &'static str {
    match (std::env::consts::ARCH, std::env::consts::OS) {

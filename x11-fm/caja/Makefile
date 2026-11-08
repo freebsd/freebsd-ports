@@ -1,6 +1,6 @@
 PORTNAME=	caja
 DISTVERSION=	1.28.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-fm mate
 MASTER_SITES=	https://github.com/mate-desktop/${PORTNAME}/releases/download/v${DISTVERSION}/
 DIST_SUBDIR=	mate

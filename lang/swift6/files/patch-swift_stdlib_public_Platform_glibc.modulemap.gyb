@@ -1,0 +1,22 @@
+--- swift/stdlib/public/Platform/glibc.modulemap.gyb.orig	2026-09-13 22:35:30 UTC
++++ swift/stdlib/public/Platform/glibc.modulemap.gyb
+@@ -18,7 +18,7 @@
+ ///
+ /// It's not named just Glibc so that it doesn't conflict in the event of a
+ /// future official glibc modulemap.
+-module SwiftGlibc [system] {
++module SwiftGlibc [system] [no_undeclared_includes] {
+ % if CMAKE_SDK in ["LINUX", "FREEBSD", "OPENBSD"]:
+       link "m"
+ % end
+@@ -42,6 +42,10 @@ module SwiftGlibc [system] {
+ % end
+ 
+   header "SwiftGlibc.h"
++
++% if CMAKE_SDK == "FREEBSD":
++  use signal_h
++% end
+ 
+   // <assert.h>'s use of NDEBUG requires textual inclusion. 
+   textual header "assert.h"

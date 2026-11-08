@@ -1,10 +1,10 @@
 PORTNAME=	fsrs
-PORTVERSION=	6.3.1
+DISTVERSION=	6.3.2
 CATEGORIES=	devel python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	chris.longros@gmail.com
+MAINTAINER=	longros@FreeBSD.org
 COMMENT=	Free Spaced Repetition Scheduler
 WWW=		https://github.com/open-spaced-repetition/py-fsrs
 

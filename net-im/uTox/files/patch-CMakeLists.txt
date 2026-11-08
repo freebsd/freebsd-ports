@@ -1,6 +1,12 @@
---- CMakeLists.txt.orig	2019-09-21 02:09:21 UTC
+--- CMakeLists.txt.orig	2021-01-23 17:27:42 UTC
 +++ CMakeLists.txt
-@@ -178,8 +178,7 @@ add_cflag("-fPIC")
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 3.2)
++cmake_minimum_required(VERSION 3.5)
+ project(uTox LANGUAGES C)
+ 
+ #####################
+@@ -180,8 +180,7 @@ if(CMAKE_C_COMPILER_ID MATCHES "GNU")
  # Fix GNU stack
  if(CMAKE_C_COMPILER_ID MATCHES "GNU")
      # Have ld strip the symbols from Release and MinSizeRel build types.
@@ -10,7 +16,7 @@
  
      if(LINUX)
          # enable Link Time Optimization on gcc (linux only currently)
-@@ -214,8 +213,7 @@ elseif(CMAKE_C_COMPILER_ID MATCHES "Clang")
+@@ -216,8 +215,7 @@ elseif(CMAKE_C_COMPILER_ID MATCHES "Clang")
      endif()
  
      # Have ld strip the symbols from Release and MinSizeRel build types. (-Oz is clang specific)

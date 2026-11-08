@@ -1,5 +1,5 @@
 PORTNAME=	arcconf
-DISTVERSION=	5.09.00.${BUILD}
+DISTVERSION=	5.12.00.${BUILD}
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://www.microchip.com/en-us/adaptec/
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libstdc++.so.6:lang/gcc${GCC_DEFAULT}
 
 USES=		zip
 USE_GCC=	yes
-BUILD=		28391
+BUILD=		28542
 
 NO_BUILD=	yes
 

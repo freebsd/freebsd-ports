@@ -1,5 +1,5 @@
 PORTNAME=	zim
-DISTVERSION=	0.77.0
+DISTVERSION=	0.77.2
 CATEGORIES=	deskutils python
 MASTER_SITES=	https://www.zim-wiki.org/downloads/
 

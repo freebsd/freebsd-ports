@@ -20,6 +20,11 @@ GH_TAGNAME=	c61d27b
 PLIST_FILES=	${KMODDIR}/if_atlantic.ko
 
 .include <bsd.port.options.mk>
+.if (${OSVERSION} >= 1501502 && ${OSVERSION} < 1600000) || \
+    ${OSVERSION} >= 1600008
+IGNORE=		is included in the base system in FreeBSD 15.2 and later
+.endif
+
 # This patch is compliant with FreeBSD 14, but mandatory starting 15
 .if ${OPSYS} == FreeBSD && (${OSVERSION} >= 1500027)
 EXTRA_PATCHES+= ${FILESDIR}/extra-patch-aq__media.c

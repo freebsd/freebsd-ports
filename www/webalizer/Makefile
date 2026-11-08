@@ -13,7 +13,7 @@ MAINTAINER?=	dinoex@FreeBSD.org
 COMMENT=	Web server log file analysis program
 WWW=		https://webalizer.net/
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 
 LIB_DEPENDS+=	libpng.so:graphics/png
 

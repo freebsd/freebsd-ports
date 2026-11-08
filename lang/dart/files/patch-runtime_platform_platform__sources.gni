@@ -1,0 +1,14 @@
+List platform/largefile.h (series 0006), which maps the Linux *64
+large-file interfaces (stat64, pread64, ...) to FreeBSD's always 64-bit
+ones. The port copies the header itself from files/largefile.h.
+FreeBSD-specific, not submitted upstream yet.
+--- runtime/platform/platform_sources.gni.orig	2026-09-29 08:00:52 UTC
++++ runtime/platform/platform_sources.gni
+@@ -16,6 +16,7 @@ platform_sources = [
+   "floating_point_win.cc",
+   "floating_point_win.h",
+   "globals.h",
++  "largefile.h",
+   "growable_array.h",
+   "hashmap.cc",
+   "hashmap.h",

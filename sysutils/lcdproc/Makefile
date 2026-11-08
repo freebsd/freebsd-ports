@@ -4,6 +4,9 @@ DISTVERSION=	0.5.9
 PORTREVISION=	1
 CATEGORIES=	sysutils
 
+PATCH_SITES=	https://github.com/lcdproc/lcdproc/commit/
+PATCHFILES=	695aa0f76173.patch:-p1
+
 MAINTAINER=	daniel@shafer.cc
 COMMENT=	Client/server suite for LCD devices
 WWW=		https://www.lcdproc.org/
@@ -93,10 +96,6 @@ LCDPROC_DRIVERS+=	sdeclcd \
 PLIST_SUB+=	X86=""
 .else
 PLIST_SUB+=	X86="@comment "
-.endif
-
-.if ${ARCH:Mpowerpc*}
-USE_GCC=	yes
 .endif
 
 .if ${PORT_OPTIONS:MUSB}

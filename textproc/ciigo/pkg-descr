@@ -1,0 +1,3 @@
+ciigo is a program (as in command line interface, CLI) and a library (as in Go
+package) to write static web server with embedded files using AsciiDoc and
+Markdown markup format.

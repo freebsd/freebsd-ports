@@ -1,4 +1,4 @@
---- Makefile.orig	2026-06-30 15:26:32 UTC
+--- Makefile.orig	2026-08-06 17:11:09 UTC
 +++ Makefile
 @@ -23,7 +23,7 @@ OPT = -O2 -g
  W	= -W -Wall -Wno-unused-parameter -Wbad-function-cast -Wuninitialized

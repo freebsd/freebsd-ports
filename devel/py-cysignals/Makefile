@@ -18,13 +18,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}colorlog>0:devel/py-colorlog@${PY_FLAVOR}
 #USE_GITHUB=	yes
 #GH_ACCOUNT=	sagemath
 
-USES=		compiler:c++11-lang pkgconfig pytest python shebangfix
+USES=		compiler:c++11-lang pkgconfig python shebangfix
 SHEBANG_FILES=	src/scripts/cysignals-CSI
-USE_PYTHON=	cython pep517
+USE_PYTHON=	autoplist cython pep517 pytest
 BINARY_ALIAS=	python3=${PYTHON_CMD}	\
 		cython=cython-${PYTHON_VER}
-
-TEST_TARGET=	check
 
 PLIST_SUB=	VER=${PORTVERSION}
 

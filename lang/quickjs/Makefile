@@ -4,7 +4,7 @@ CATEGORIES=	lang devel
 MASTER_SITES=	https://bellard.org/${PORTNAME}/
 DISTNAME=	${PORTNAME}-${DISTVERSION:S/./-/g}
 
-MAINTAINER=	yuri@FreeBSD.org
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Embeddable Javascript interpreter in C
 WWW=		https://bellard.org/quickjs/
 

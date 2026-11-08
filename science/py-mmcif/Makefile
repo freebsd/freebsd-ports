@@ -1,5 +1,5 @@
 PORTNAME=	mmcif
-DISTVERSION=	1.1.1
+DISTVERSION=	1.2.0
 CATEGORIES=	science biology python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,6 +26,6 @@ do-test:
 		cd ${WRKDIR}/.test-run && \
 		${SETENV} ${TEST_ENV} ${PYTHON_CMD} -c "from mmcif.io.IoAdapterCore import IoAdapterCore as IoAdapter"
 
-# tests as of 1.1.1: upstream sdist contains no Python test suite; smoke import from mmcif.io.IoAdapterCore passed.
+# tests as of 1.2.0: upstream sdist contains no Python test suite; smoke import from mmcif.io.IoAdapterCore passed.
 
 .include <bsd.port.mk>

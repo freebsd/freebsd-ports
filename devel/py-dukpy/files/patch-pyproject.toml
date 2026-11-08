@@ -1,0 +1,19 @@
+--- pyproject.toml.orig	2026-07-22 20:37:01 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=77"]
++requires = ["setuptools>=61"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -9,8 +9,7 @@ keywords = ["javascript", "compiler", "jsx", "typescri
+ readme = { file = "README.rst", content-type = "text/x-rst" }
+ requires-python = ">=3.9"
+ keywords = ["javascript", "compiler", "jsx", "typescript"]
+-license = "MIT"
+-license-files = ["LICENSE"]
++license = { text = "MIT" }
+ authors = [{ name = "Alessandro Molina", email = "alessandro@molina.fyi" }]
+ classifiers = [
+   "Development Status :: 3 - Alpha",

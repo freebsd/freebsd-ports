@@ -1,0 +1,3 @@
+hatch-cython provides Cython build hooks for Hatch, enabling Hatch-based
+Python projects to build extension modules with Cython as part of their
+packaging workflow.

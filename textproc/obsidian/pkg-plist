@@ -76,7 +76,6 @@ share/metainfo/md.obsidian.obsidian.appdata.xml
 %%DATADIR%%/resources/app.asar.unpacked/node_modules/btime/index.js
 %%DATADIR%%/resources/app.asar.unpacked/node_modules/btime/package.json
 %%DATADIR%%/resources/app.asar.unpacked/node_modules/get-fonts/binding.node
-%%DATADIR%%/resources/app.asar.unpacked/node_modules/get-fonts/fontsMac.mm
 %%DATADIR%%/resources/app.asar.unpacked/node_modules/get-fonts/index.js
 %%DATADIR%%/resources/app.asar.unpacked/node_modules/get-fonts/package.json
 %%DATADIR%%/resources/icon.png

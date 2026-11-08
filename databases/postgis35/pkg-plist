@@ -232,6 +232,7 @@ share/man/man1/shp2pgsql.1.gz
 %%ADDRSTD%%share/postgresql/extension/address_standardizer--%%VER%%.3--ANY.sql
 %%ADDRSTD%%share/postgresql/extension/address_standardizer--%%VER%%.4--ANY.sql
 %%ADDRSTD%%share/postgresql/extension/address_standardizer--%%VER%%.5--ANY.sql
+%%ADDRSTD%%share/postgresql/extension/address_standardizer--%%VER%%.6--ANY.sql
 %%ADDRSTD%%share/postgresql/extension/address_standardizer--TEMPLATED--TO--ANY.sql
 %%ADDRSTD%%share/postgresql/extension/address_standardizer--%%PORTVERSION%%.sql
 %%ADDRSTD%%share/postgresql/extension/address_standardizer--1.0--%%PORTVERSION%%.sql
@@ -357,6 +358,7 @@ share/man/man1/shp2pgsql.1.gz
 %%ADDRSTD%%share/postgresql/extension/address_standardizer_data_us--%%VER%%.3--ANY.sql
 %%ADDRSTD%%share/postgresql/extension/address_standardizer_data_us--%%VER%%.4--ANY.sql
 %%ADDRSTD%%share/postgresql/extension/address_standardizer_data_us--%%VER%%.5--ANY.sql
+%%ADDRSTD%%share/postgresql/extension/address_standardizer_data_us--%%VER%%.6--ANY.sql
 %%ADDRSTD%%share/postgresql/extension/address_standardizer_data_us--TEMPLATED--TO--ANY.sql
 %%ADDRSTD%%share/postgresql/extension/address_standardizer_data_us--%%PORTVERSION%%.sql
 %%ADDRSTD%%share/postgresql/extension/address_standardizer_data_us--%%PORTVERSION%%next--%%PORTVERSION%%.sql
@@ -495,6 +497,7 @@ share/man/man1/shp2pgsql.1.gz
 %%RASTER%%share/postgresql/extension/postgis_raster--%%VER%%.3--ANY.sql
 %%RASTER%%share/postgresql/extension/postgis_raster--%%VER%%.4--ANY.sql
 %%RASTER%%share/postgresql/extension/postgis_raster--%%VER%%.5--ANY.sql
+%%RASTER%%share/postgresql/extension/postgis_raster--%%VER%%.6--ANY.sql
 %%RASTER%%share/postgresql/extension/postgis_raster--TEMPLATED--TO--ANY.sql
 %%RASTER%%share/postgresql/extension/postgis_raster--%%PORTVERSION%%.sql
 %%RASTER%%share/postgresql/extension/postgis_raster--ANY--%%PORTVERSION%%.sql
@@ -625,6 +628,7 @@ share/man/man1/shp2pgsql.1.gz
 %%SFCGAL%%share/postgresql/extension/postgis_sfcgal--%%VER%%.3--ANY.sql
 %%SFCGAL%%share/postgresql/extension/postgis_sfcgal--%%VER%%.4--ANY.sql
 %%SFCGAL%%share/postgresql/extension/postgis_sfcgal--%%VER%%.5--ANY.sql
+%%SFCGAL%%share/postgresql/extension/postgis_sfcgal--%%VER%%.6--ANY.sql
 %%SFCGAL%%share/postgresql/extension/postgis_sfcgal--TEMPLATED--TO--ANY.sql
 %%SFCGAL%%share/postgresql/extension/postgis_sfcgal--%%PORTVERSION%%.sql
 %%SFCGAL%%share/postgresql/extension/postgis_sfcgal--ANY--%%PORTVERSION%%.sql
@@ -755,6 +759,7 @@ share/man/man1/shp2pgsql.1.gz
 %%TOPOLOGY%%share/postgresql/extension/postgis_topology--%%VER%%.3--ANY.sql
 %%TOPOLOGY%%share/postgresql/extension/postgis_topology--%%VER%%.4--ANY.sql
 %%TOPOLOGY%%share/postgresql/extension/postgis_topology--%%VER%%.5--ANY.sql
+%%TOPOLOGY%%share/postgresql/extension/postgis_topology--%%VER%%.6--ANY.sql
 %%TOPOLOGY%%share/postgresql/extension/postgis_topology--TEMPLATED--TO--ANY.sql
 %%TOPOLOGY%%share/postgresql/extension/postgis_topology--%%PORTVERSION%%.sql
 %%TOPOLOGY%%share/postgresql/extension/postgis_topology--ANY--%%PORTVERSION%%.sql
@@ -894,6 +899,7 @@ share/postgresql/extension/postgis--%%VER%%.2--ANY.sql
 share/postgresql/extension/postgis--%%VER%%.3--ANY.sql
 share/postgresql/extension/postgis--%%VER%%.4--ANY.sql
 share/postgresql/extension/postgis--%%VER%%.5--ANY.sql
+share/postgresql/extension/postgis--%%VER%%.6--ANY.sql
 share/postgresql/extension/postgis--TEMPLATED--TO--ANY.sql
 share/postgresql/extension/postgis--%%PORTVERSION%%.sql
 share/postgresql/extension/postgis--ANY--%%PORTVERSION%%.sql
@@ -1020,6 +1026,7 @@ share/postgresql/extension/postgis_tiger_geocoder--%%VER%%.2--ANY.sql
 share/postgresql/extension/postgis_tiger_geocoder--%%VER%%.3--ANY.sql
 share/postgresql/extension/postgis_tiger_geocoder--%%VER%%.4--ANY.sql
 share/postgresql/extension/postgis_tiger_geocoder--%%VER%%.5--ANY.sql
+share/postgresql/extension/postgis_tiger_geocoder--%%VER%%.6--ANY.sql
 share/postgresql/extension/postgis_tiger_geocoder--TEMPLATED--TO--ANY.sql
 share/postgresql/extension/postgis_tiger_geocoder--%%PORTVERSION%%.sql
 share/postgresql/extension/postgis_tiger_geocoder--ANY--%%PORTVERSION%%.sql

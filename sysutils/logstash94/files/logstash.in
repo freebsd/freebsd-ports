@@ -30,13 +30,13 @@
 # logstash_java_home (string):
 #   Default value: "%%JAVA_HOME%%"
 #   Root directory of the desired Java SDK.
-#   The JAVA_HOME environment variable is set with the contents of this
+#   The LS_JAVA_HOME environment variable is set with the contents of this
 #   variable.
 #
 # logstash_java_opts (string):
 #   Default value: ""
 #   Options to pass to the Java Virtual Machine.
-#   The JAVA_OPTS environment variable is set with the contents of this
+#   The LS_JAVA_OPTS environment variable is set with the contents of this
 #   variable.
 #
 # logstash_opts (string):
@@ -82,10 +82,10 @@ fi
 
 logstash_args="--path.settings ${logstash_config} ${logstash_log_options} ${logstash_opts}"
 
-JAVA_OPTS="${logstash_java_opts}"
-JAVA_HOME="${logstash_java_home}"
-export JAVA_OPTS
-export JAVA_HOME
+LS_JAVA_OPTS="${logstash_java_opts}"
+LS_JAVA_HOME="${logstash_java_home}"
+export LS_JAVA_OPTS
+export LS_JAVA_HOME
 
 command="/usr/sbin/daemon"
 command_args="-f -p ${pidfile} ${logstash_cmd} ${logstash_args}"

@@ -20,7 +20,7 @@ USE_QT=		5compat base declarative positioning webchannel
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == i386
+.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == i386 || ${ARCH} == powerpc64le
 USE_QT+=	webengine
 .endif
 

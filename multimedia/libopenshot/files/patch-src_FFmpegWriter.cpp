@@ -1,4 +1,4 @@
---- src/FFmpegWriter.cpp.orig	2026-04-02 23:34:37 UTC
+--- src/FFmpegWriter.cpp.orig	2026-07-22 19:42:15 UTC
 +++ src/FFmpegWriter.cpp
 @@ -168,7 +168,7 @@ void FFmpegWriter::SetVideoOptions(bool has_video, std
  		const AVCodec *new_codec;
@@ -35,7 +35,7 @@
  				}
  #endif  // FFmpeg 4.0+
  		} else {
-@@ -1429,21 +1432,25 @@ void FFmpegWriter::open_video(AVFormatContext *oc, AVS
+@@ -1533,21 +1536,25 @@ void FFmpegWriter::open_video(AVFormatContext *oc, AVS
  		adapter_num = openshot::Settings::Instance()->HW_EN_DEVICE_SET;
  		std::clog << "Encoding Device Nr: " << adapter_num << "\n";
  		if (adapter_num < 3 && adapter_num >=0) {

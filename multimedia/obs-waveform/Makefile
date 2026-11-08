@@ -1,6 +1,6 @@
 PORTNAME=	obs-waveform
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8.1
+DISTVERSION=	1.9.1
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,8 +10,6 @@ WWW=		https://obsproject.com/forum/resources/waveform.1423/ \
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN=		incompatible with obs-studio-32.0.1, see https://github.com/phandasm/waveform/issues/82
 
 BUILD_DEPENDS=	cpu_features>0:devel/cpu_features \
 		simde>0:devel/simde
@@ -27,13 +25,17 @@ GH_PROJECT=	waveform
 
 CMAKE_ON=	PACKAGED_INSTALL
 
-LDFLAGS+=	-lcpu_features
-
 PLIST_FILES=	lib/obs-plugins/waveform.so \
 		share/obs/obs-plugins/waveform/gradient.effect \
 		share/obs/obs-plugins/waveform/locale/en-US.ini \
 		share/obs/obs-plugins/waveform/locale/it-IT.ini \
 		share/obs/obs-plugins/waveform/locale/zh-CN.ini \
 		share/obs/obs-plugins/waveform/locale/zh-TW.ini
+
+.include <bsd.port.options.mk>
+
+.if empty(ARCH:Mamd64) && empty(ARCH:Mi386)
+CMAKE_OFF+=	ENABLE_X86_SIMD
+.endif
 
 .include <bsd.port.mk>

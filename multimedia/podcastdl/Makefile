@@ -1,8 +1,7 @@
 PORTNAME=	podcastdl
-PORTVERSION=	0.3.3
+PORTVERSION=	0.4.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	multimedia
-MASTER_SITES=	http://rodrigo.osorio.free.fr/freebsd/distfiles/ \
-		http://files.bebik.net/podcastdl/
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Simple command line podcast client written in plain C
@@ -13,6 +12,9 @@ LICENSE=	ISCL
 LIB_DEPENDS=	libmrss.so:textproc/libmrss
 
 USES=		cmake
+USE_GITHUB=	yes
+GH_ACCOUNT=	rosorio
+GH_PROJECT=	podcast-dl
 
 PLIST_FILES=	bin/podcastdl
 

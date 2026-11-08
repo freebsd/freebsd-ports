@@ -1,0 +1,32 @@
+--- sqlite-vec/Makefile.orig	2026-09-07 08:19:10 UTC
++++ sqlite-vec/Makefile
+@@ -90,7 +90,6 @@ $(TARGET_LOADABLE): sqlite-vec.c sqlite-vec.h $(prefix
+ 		-fPIC -shared \
+ 		-Wall -Wextra \
+ 		-Ivendor/ \
+-		-O3 \
+ 		$(CFLAGS) \
+ 		$< -o $@
+ 
+@@ -141,14 +140,18 @@ $(TARGET_CLI): sqlite-vec.h $(LIBS_DIR)/sqlite-vec.a $
+ 	-ldl -lm \
+ 	examples/sqlite3-cli/core_init.c $(LIBS_DIR)/shell.a $(LIBS_DIR)/sqlite3.a $(LIBS_DIR)/sqlite-vec.a -o $@
+ 
++VERSION := $(shell cat VERSION)
++VERSION_MAJOR := $(word 1, $(subst ., ,$(VERSION)))
++VERSION_MINOR := $(word 2, $(subst ., ,$(VERSION)))
++VERSION_PATCH := $(firstword $(subst -, ,$(word 3, $(subst ., ,$(VERSION)))))
+ 
+ sqlite-vec.h: sqlite-vec.h.tmpl VERSION
+ 	VERSION=$(shell cat VERSION) \
+ 	DATE=$(shell date -r VERSION +'%FT%TZ%z') \
+ 	SOURCE=$(shell git log -n 1 --pretty=format:%H -- VERSION) \
+-	VERSION_MAJOR=$$(echo $$VERSION | cut -d. -f1) \
+-	VERSION_MINOR=$$(echo $$VERSION | cut -d. -f2) \
+-	VERSION_PATCH=$$(echo $$VERSION | cut -d. -f3 | cut -d- -f1) \
++	VERSION_MAJOR=$(VERSION_MAJOR) \
++	VERSION_MINOR=$(VERSION_MINOR) \
++	VERSION_PATCH=$(VERSION_PATCH) \
+ 	envsubst < $< > $@
+ 
+ clean:

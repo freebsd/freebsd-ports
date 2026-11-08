@@ -1,5 +1,5 @@
 PORTNAME=	android-tools
-PORTVERSION=	35.0.2
+PORTVERSION=	37.0.0
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/nmeum/android-tools/releases/download/${PORTVERSION}/
 
@@ -11,7 +11,8 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	googletest>0:devel/googletest
-LIB_DEPENDS=	libbrotlicommon.so:archivers/brotli \
+LIB_DEPENDS=	libabsl_base.so:devel/abseil \
+		libbrotlicommon.so:archivers/brotli \
 		libfmt.so:devel/libfmt \
 		liblz4.so:archivers/liblz4 \
 		libpcre2-8.so:devel/pcre2 \

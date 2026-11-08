@@ -11,7 +11,9 @@ WWW=		https://openocd.sf.net
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake libtool makeinfo pkgconfig tar:bzip2
+USES=		cpe gmake libtool makeinfo pkgconfig tar:bzip2
+CPE_VENDOR=	openocd
+CPE_PRODUCT=	open_on-chip_debugger
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 

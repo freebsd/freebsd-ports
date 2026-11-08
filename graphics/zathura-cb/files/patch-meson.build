@@ -1,17 +1,17 @@
---- meson.build.orig	2026-05-10 12:15:17 UTC
+--- meson.build.orig	2026-07-26 20:16:52 UTC
 +++ meson.build
-@@ -18,9 +18,8 @@ cairo = dependency('cairo')
+@@ -17,9 +17,8 @@ cairo = dependency('cairo')
  girara = dependency('girara')
- glib = dependency('glib-2.0')
+ gtk4 = dependency('gtk4')
  cairo = dependency('cairo')
 -libarchive = dependency('libarchive', version: '>=3')
  
--build_dependencies = [zathura, girara, glib, cairo, libarchive]
-+build_dependencies = [zathura, girara, glib, cairo]
+-build_dependencies = [zathura, girara, gtk4, cairo, libarchive]
++build_dependencies = [zathura, girara, gtk4, cairo]
  
  if get_option('plugindir') == ''
    plugindir = zathura.get_variable(pkgconfig: 'plugindir')
-@@ -58,6 +57,7 @@ cb = shared_module('cb',
+@@ -55,6 +54,7 @@ cb = shared_module('cb',
    sources,
    dependencies: build_dependencies,
    c_args: defines + flags,

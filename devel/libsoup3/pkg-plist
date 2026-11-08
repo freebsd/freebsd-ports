@@ -4,6 +4,7 @@ include/libsoup-3.0/libsoup/soup-auth-domain.h
 include/libsoup-3.0/libsoup/soup-auth-manager.h
 include/libsoup-3.0/libsoup/soup-auth.h
 include/libsoup-3.0/libsoup/soup-cache.h
+include/libsoup-3.0/libsoup/soup-compression-dictionary-request.h
 include/libsoup-3.0/libsoup/soup-content-decoder.h
 include/libsoup-3.0/libsoup/soup-content-sniffer.h
 include/libsoup-3.0/libsoup/soup-cookie-jar-db.h

@@ -30,6 +30,7 @@ rcvar=mysql_enable
 load_rc_config $name
 
 : ${mysql_enable="NO"}
+: ${mysql_svcj_options="net_basic"}
 : ${mysql_dbdir="%%MY_DBDIR%%"}
 : ${mysql_confdir="%%ETCDIR%%"}
 if [ -f "${mysql_confdir}/my.cnf" ]; then

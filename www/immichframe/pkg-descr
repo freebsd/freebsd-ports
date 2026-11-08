@@ -1,0 +1,7 @@
+ImmichFrame displays the pictures of an Immich library as a digital photo
+frame. It runs as a web application that a browser, a tablet or a dedicated
+frame opens full screen, and it keeps its own settings, which are made in
+an admin interface rather than in a configuration file.
+
+Albums, people and favourites decide what is shown, and weather and
+calendar overlays can be added.

@@ -1,4 +1,4 @@
---- components/embedder_support/user_agent_utils.cc.orig	2026-06-10 12:51:34 UTC
+--- components/embedder_support/user_agent_utils.cc.orig	2026-08-13 16:48:13 UTC
 +++ components/embedder_support/user_agent_utils.cc
 @@ -285,7 +285,7 @@ std::string GetUserAgentPlatform() {
    return "";
@@ -18,16 +18,16 @@
    return "X11; Linux x86_64";
  #elif BUILDFLAG(IS_IOS)
    if (ui::GetDeviceFormFactor() == ui::DEVICE_FORM_FACTOR_TABLET) {
-@@ -585,7 +585,7 @@ bool GetMobileBitForUAMetadata() {
- }
+@@ -594,7 +594,7 @@ std::string GetPlatformVersion() {
  
- std::string GetPlatformVersion() {
--#if BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD) 
-   // TODO(crbug.com/40245146): Remove this Blink feature
-   if (base::FeatureList::IsEnabled(
-           blink::features::kReduceUserAgentDataLinuxPlatformVersion)) {
-@@ -639,6 +639,9 @@ std::string GetPlatformForUAMetadata() {
+ #if BUILDFLAG(IS_WIN)
+   return GetWindowsPlatformVersion();
+-#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_FUCHSIA)
++#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
+   return std::string();
+ #else
+ 
+@@ -631,6 +631,9 @@ std::string GetPlatformForUAMetadata() {
  #else
    return "Chromium OS";
  #endif
@@ -37,7 +37,7 @@
  #else
    return std::string(version_info::GetOSType());
  #endif
-@@ -823,6 +826,16 @@ std::string BuildOSCpuInfoFromOSVersionAndCpuType(cons
+@@ -815,6 +818,16 @@ std::string BuildOSCpuInfoFromOSVersionAndCpuType(cons
                        "Android %s", os_version.c_str()
  #elif BUILDFLAG(IS_FUCHSIA)
                        "Fuchsia"

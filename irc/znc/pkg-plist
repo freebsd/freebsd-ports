@@ -126,8 +126,8 @@ share/man/man1/znc.1.gz
 %%DATADIR%%/webskins/_default_/pub/External.png
 %%DATADIR%%/webskins/_default_/pub/favicon.ico
 %%DATADIR%%/webskins/_default_/pub/global.css
-%%DATADIR%%/webskins/_default_/pub/jquery-1.11.2.js
-%%DATADIR%%/webskins/_default_/pub/jquery-1.11.2.min.js
+%%DATADIR%%/webskins/_default_/pub/jquery-3.5.1.js
+%%DATADIR%%/webskins/_default_/pub/jquery-3.5.1.min.js
 %%DATADIR%%/webskins/_default_/pub/jquery-ui-sortable.1.11.4.css
 %%DATADIR%%/webskins/_default_/pub/jquery-ui-sortable.1.11.4.js
 %%DATADIR%%/webskins/_default_/pub/jquery-ui-sortable.1.11.4.min.css

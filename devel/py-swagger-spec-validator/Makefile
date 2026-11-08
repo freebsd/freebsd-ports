@@ -1,7 +1,6 @@
 PORTNAME=	swagger-spec-validator
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.7.4
-PORTREVISION=	2
+DISTVERSION=	3.0.4
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,24 +11,24 @@ WWW=		https://github.com/Yelp/swagger_spec_validator
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>0:devel/py-jsonschema@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}importlib-resources>=1.3:devel/py-importlib-resources@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jsonschema>0:devel/py-jsonschema@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=0:devel/py-pyyaml@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}typing-extensions>0:devel/py-typing-extensions@${PY_FLAVOR}
 
 USES=		python
 USE_GITHUB=	yes
 GH_ACCOUNT=	Yelp
 GH_PROJECT=	swagger_spec_validator
-USE_PYTHON=	distutils autoplist
-
-NO_ARCH=	yes
-
+USE_PYTHON=	autoplist pep517 pytest
 # Skip test "test_raise_SwaggerValidationError_on_urlopen_error" as it tries
 # to open network connections to non-existent URLs.
-do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -v -rs \
-		-k 'not test_raise_SwaggerValidationError_on_urlopen_error'
+PYTEST_IGNORED_TESTS= test_raise_SwaggerValidationError_on_urlopen_error
+
+TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

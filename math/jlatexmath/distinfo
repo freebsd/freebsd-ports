@@ -1,5 +1,9 @@
-TIMESTAMP = 1566401432
+TIMESTAMP = 1751811696
 SHA256 (jlatexmath-1.0.7.jar) = 6d04c3843fc98d2eea9ba4cff0be7b80540ca75c5a4e0b3463fd1219c48cc65d
 SIZE (jlatexmath-1.0.7.jar) = 669575
 SHA256 (jlatexmath-fop-1.0.7.jar) = cd3302fd0d7f17d44b82555f87689846e0bb70814f0639aae3b976dfac145496
 SIZE (jlatexmath-fop-1.0.7.jar) = 26141
+SHA256 (jlatexmath-font-cyrillic-1.0.7.jar) = 1a0150e4be64db88c250dff41f593349f55f0c9cfdb8e39433f15ba73ecd21b8
+SIZE (jlatexmath-font-cyrillic-1.0.7.jar) = 185652
+SHA256 (jlatexmath-font-greek-1.0.7.jar) = cddc7e7e6f3e7ff0434c8a4805eadc3e9dc80457d582d19c3699e6aaee8f6af2
+SIZE (jlatexmath-font-greek-1.0.7.jar) = 188924

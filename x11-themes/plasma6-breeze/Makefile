@@ -1,6 +1,7 @@
 PORTNAME=	breeze
 DISTVERSION=	${KDE_PLASMA_VERSION}
 CATEGORIES=	x11-themes kde kde-plasma
+PKGNAMESUFFIX=	-${FLAVOR}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Artwork, styles and assets for the Breeze visual style for the Plasma Desktop
@@ -39,18 +40,14 @@ qt5_CMAKE_ON=	BUILD_QT5
 qt5_CMAKE_OFF=	BUILD_QT6
 
 .if ${FLAVOR:Mqt5}
-KDE_PLASMA_VERSION=	${KDE_PLASMA6_VERSION}
-PKGNAMEPREFIX=	plasma6-
-PKGNAMESUFFIX=	-qt5
 COMMENT=	Plasma Breeze visual style for Qt5
-DESCR=		${.CURDIR:H:H}/x11/plasma6-plasma/pkg-descr
 PLIST=		# none
 PLIST_FILES=	${QT_PLUGINDIR}/styles/breeze5.so
 
 post-patch:
 # Avoid clash with Qt6 flavor
 	${REINPLACE_CMD} '/^build_colors_and_cursors/d' ${WRKSRC}/CMakeLists.txt
-	${REINPLACE_CMD}  '/^install(FILES breeze.themerc/d' ${WRKSRC}/kstyle/CMakeLists.txt
+	${REINPLACE_CMD} '/^install(FILES breeze./d' ${WRKSRC}/kstyle/CMakeLists.txt
 .endif
 
 .include <bsd.port.mk>

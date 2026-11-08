@@ -20,7 +20,6 @@ CRAN_DEPENDS=	R-cran-cli>0:devel/R-cran-cli \
 		R-cran-vctrs>=0.5.0:devel/R-cran-vctrs \
 		R-cran-withr>=2.5.0:devel/R-cran-withr \
 		R-cran-S7>=0:devel/R-cran-S7
-BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
 USES=		cran:auto-plist

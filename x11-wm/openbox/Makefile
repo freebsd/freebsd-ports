@@ -14,7 +14,6 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 USES=		gmake gnome libtool pathfix python:run pkgconfig shebangfix xorg
 USE_GNOME=	cairo glib20 libxml2 pango
 USE_XORG=	ice sm x11 xcursor xext xft xinerama xrandr \
@@ -29,18 +28,18 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lXext
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 
-OPTIONS_DEFINE=	NLS IMLIB SVG NOTIFY PATCHES
-OPTIONS_DEFAULT=	IMLIB NOTIFY SVG
+OPTIONS_DEFINE=	IMLIB2 NLS NOTIFY PATCHES SVG
+OPTIONS_DEFAULT=	IMLIB2 NOTIFY SVG
 OPTIONS_SUB=	yes
+
+IMLIB2_CONFIGURE_ENABLE=	imlib2
+IMLIB2_LIB_DEPENDS=	libImlib2.so:graphics/imlib2
 
 NLS_USES=		gettext
 NLS_CONFIGURE_OFF=	--disable-nls
 
 NOTIFY_LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification
 NOTIFY_CONFIGURE_OFF=	--disable-startup-notification
-
-IMLIB_CONFIGURE_ENABLE=	imlib2
-IMLIB_LIB_DEPENDS=	libImlib2.so:graphics/imlib2
 
 SVG_USE=	GNOME=librsvg2
 SVG_CONFIGURE_ENABLE=	librsvg

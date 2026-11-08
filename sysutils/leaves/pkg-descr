@@ -1,0 +1,11 @@
+Leaves is a disk usage analyzer inspired by WinDirStat and QDirStat.
+
+It shows files and directories in a hierarchy of nested
+rectangles. The area of a rectangle is proportional to its size. A 200
+MB file will have twice the size as a sibling with 100 MB. The parent
+directory will have about 3 times the area of the smaller file.
+
+However, due to the limited resolution of working at a character
+level, this is a fairly coarse approximation compared to a graphical
+tool. On the other hand, this will work over remote shell connections
+when graphical desktop environments are not available or impractical.

@@ -1,5 +1,5 @@
-TIMESTAMP = 1734791945
-SHA256 (go/net_yggdrasil/yggdrasil-v0.5.12/v0.5.12.mod) = 483c840d00fe050d758cf9bcc9150321808f6355794170a14ccbf670acc5eb0c
-SIZE (go/net_yggdrasil/yggdrasil-v0.5.12/v0.5.12.mod) = 1747
-SHA256 (go/net_yggdrasil/yggdrasil-v0.5.12/v0.5.12.zip) = a2cb967dd99ac93ee929be5609ec657fef694cd29d89e3597797ef6f9bb410fd
-SIZE (go/net_yggdrasil/yggdrasil-v0.5.12/v0.5.12.zip) = 164627
+TIMESTAMP = 1792937201
+SHA256 (go/net_yggdrasil/yggdrasil-v0.5.15/v0.5.15.mod) = c9c75e079caa350404e0d5cf9d44af01f6d4ee6108e1517aa5a14ab420c2531f
+SIZE (go/net_yggdrasil/yggdrasil-v0.5.15/v0.5.15.mod) = 1709
+SHA256 (go/net_yggdrasil/yggdrasil-v0.5.15/v0.5.15.zip) = 778ac1c85e1b659e359fb745cde193c75b0ce120658b4dfd2af69ede7f66234d
+SIZE (go/net_yggdrasil/yggdrasil-v0.5.15/v0.5.15.zip) = 175677

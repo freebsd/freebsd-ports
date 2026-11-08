@@ -1,0 +1,14 @@
+-- Use the system Catch2 v2 headers from devel/catch instead of the
+-- bundled (empty) external/eigen directory. Tests include "catch.hpp".
+
+--- test/CMakeLists.txt.orig	2024-12-02 12:07:03 UTC
++++ test/CMakeLists.txt
+@@ -204,7 +204,7 @@ add_executable(unit_tests
+     # ${TEST_UTILS_SRC}
+ )
+ 
+-target_include_directories(unit_tests PRIVATE "${EXTERNAL_SRC_DIR}/eigen")
++target_include_directories(unit_tests PRIVATE /usr/local/include/catch2)
+ target_link_libraries(unit_tests acados)
+ 
+ # if(ACADOS_WITH_OOQP)

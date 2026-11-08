@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Kalman filter and smoothers for exponential family state space models
-WWW=		https://cran.r-project.org/web/packages/KFAS/
+WWW=		https://cran.r-project.org/package=KFAS
 
 LICENSE=	GPLv2+
 

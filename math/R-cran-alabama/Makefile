@@ -1,17 +1,15 @@
 PORTNAME=	alabama
-DISTVERSION=	2015.3-1
-PORTREVISION=	2
+DISTVERSION=	2025.1.0
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	dteske@FreeBSD.org
 COMMENT=	Constrained Nonlinear Optimization
-WWW=		https://cran.r-project.org/web/packages/alabama/
+WWW=		https://cran.r-project.org/package=alabama
 
 LICENSE=	GPLv2+
 
 CRAN_DEPENDS=	R-cran-numDeriv>0:math/R-cran-numDeriv
-BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
 USES=		cran:auto-plist

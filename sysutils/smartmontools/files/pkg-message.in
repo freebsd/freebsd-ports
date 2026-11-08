@@ -19,8 +19,9 @@ A sample configuration file has been installed as
 %%PREFIX%%/etc/smartd.conf.sample
 Copy this file to %%PREFIX%%/etc/smartd.conf and edit appropriately
 
-To have smartd start at boot
-	echo 'smartd_enable="YES"' >> /etc/rc.conf
+To enable smartd at boot and start it now:
+	sysrc smartd_enable=YES
+	service smartd start
 
 To enable verification of the drivedb updates, install the "security/gnupg"
 package.

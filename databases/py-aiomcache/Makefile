@@ -1,6 +1,5 @@
 PORTNAME=	aiomcache
-DISTVERSION=	0.7.0
-PORTREVISION=	3
+DISTVERSION=	0.8.2
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,8 +16,5 @@ CPE_VENDOR=	${PORTNAME}_project
 USE_PYTHON=	autoplist distutils cython
 
 NO_ARCH=	yes
-
-post-extract:
-	@${MV} ${WRKSRC}/tests ${WRKSRC}/aiomcache/
 
 .include <bsd.port.mk>

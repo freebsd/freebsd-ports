@@ -6,7 +6,8 @@ PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	LV2 plugins for various sound effects
-WWW=		https://ssj71.github.io/infamousPlugins
+WWW=		https://ssj71.github.io/infamousPlugins \
+		https://github.com/ssj71/infamousPlugins
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -22,5 +23,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	ssj71
 GH_PROJECT=	infamousPlugins
 USE_GNOME=	cairo
+
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/ssj71/infamousPlugins/issues/58
 
 .include <bsd.port.mk>

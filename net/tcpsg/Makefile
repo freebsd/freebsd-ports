@@ -1,9 +1,10 @@
 PORTNAME=	tcpsg
 PORTVERSION=	0.0.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	portmaster@bsdforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple TCP port forwarder
 WWW=		https://tcpsg.sourceforge.net/
 

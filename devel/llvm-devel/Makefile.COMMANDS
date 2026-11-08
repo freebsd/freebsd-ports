@@ -8,6 +8,8 @@ LLVM_COMMANDS=	\
 		llvm-as \
 		llvm-bcanalyzer \
 		llvm-bitcode-strip \
+		llvm-c-test \
+		llvm-calc-occupancy \
 		llvm-cas \
 		llvm-cat \
 		llvm-cfi-verify \
@@ -60,7 +62,6 @@ LLVM_COMMANDS=	\
 		llvm-reduce \
 		llvm-remarkutil \
 		llvm-rtdyld \
-		llvm-sim \
 		llvm-size \
 		llvm-split \
 		llvm-stress \
@@ -84,6 +85,7 @@ CLANG_COMMANDS=	\
 		clang++ \
 		clang-check \
 		clang-cpp \
+		clang-dxc \
 		clang-extdef-mapping \
 		clang-format \
 		clang-linker-wrapper \
@@ -94,6 +96,7 @@ CLANG_COMMANDS=	\
 		clang-ssaf-analyzer \
 		clang-ssaf-format \
 		clang-ssaf-linker \
+		clang-ssaf-src-edit-merge \
 		clang-tblgen \
 		diagtool \
 		hmaptool \

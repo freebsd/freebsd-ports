@@ -1,0 +1,14 @@
+[
+{ type: install
+  message: <<EOM
+PhotoCraft renders through Vulkan (or OpenGL via EGL as a fallback), so a
+Vulkan driver for your GPU is needed: graphics/mesa-dri provides the Mesa
+ones (radv, anv, lavapipe).
+
+Open/Save dialogs go through the XDG desktop portal. Install
+sysutils/xdg-desktop-portal together with a backend for your desktop
+(for example sysutils/xdg-desktop-portal-gtk) and make sure a D-Bus
+session bus is running.
+EOM
+}
+]

@@ -10,6 +10,7 @@
 %%PERL5_MAN3%%/Zonemaster::Engine::Nameserver::Cache.3.gz
 %%PERL5_MAN3%%/Zonemaster::Engine::Nameserver::Cache::LocalCache.3.gz
 %%PERL5_MAN3%%/Zonemaster::Engine::Nameserver::Cache::RedisCache.3.gz
+%%PERL5_MAN3%%/Zonemaster::Engine::NameserverSet.3.gz
 %%PERL5_MAN3%%/Zonemaster::Engine::Normalization.3.gz
 %%PERL5_MAN3%%/Zonemaster::Engine::Normalization::Error.3.gz
 %%PERL5_MAN3%%/Zonemaster::Engine::Overview.3.gz
@@ -58,6 +59,7 @@
 %%SITE_PERL%%/Zonemaster/Engine/Nameserver/Cache.pm
 %%SITE_PERL%%/Zonemaster/Engine/Nameserver/Cache/LocalCache.pm
 %%SITE_PERL%%/Zonemaster/Engine/Nameserver/Cache/RedisCache.pm
+%%SITE_PERL%%/Zonemaster/Engine/NameserverSet.pm
 %%SITE_PERL%%/Zonemaster/Engine/Normalization.pm
 %%SITE_PERL%%/Zonemaster/Engine/Normalization/Error.pm
 %%SITE_PERL%%/Zonemaster/Engine/Overview.pod

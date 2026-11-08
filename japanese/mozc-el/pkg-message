@@ -1,12 +1,29 @@
 [
 { type: install
   message: <<EOM
-To activate mozc, you will need to add the following lines to
-your Emacs configuration:
+Restart Emacs after installation.
 
-(set-language-environment "Japanese")
+To use Mozc as your default input method, add the following line
+to your Emacs initialization file, such as ~/.emacs or
+~/.emacs.d/init.el:
+
 (setq default-input-method "japanese-mozc")
+
+Press C-\ to toggle Japanese input.
+
+To select Mozc without changing your initialization file, use:
+
+M-x set-input-method RET japanese-mozc RET
+
+The helper program's path is configured by this port.
+The Mozc server starts automatically when needed.
+No IBus or Fcitx configuration is required for use within Emacs.
+
+If you prefer C-o for toggling input, you can optionally add:
+
 (global-set-key (kbd "C-o") 'toggle-input-method)
+
+This replaces the standard C-o binding for open-line.
 EOM
 }
 ]

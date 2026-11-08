@@ -3,7 +3,7 @@ PORTVERSION=	0.2.2
 PORTREVISION=	1
 CATEGORIES=	security
 
-MAINTAINER=	melanhit@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CLI password generator
 WWW=		https://github.com/melanhit/rndpassw
 

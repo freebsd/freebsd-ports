@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	atanubiswas484@gmail.com
 COMMENT=	Convenient tool to install and update Bioconductor packages
-WWW=		https://cran.r-project.org/web/packages/BiocManager/
+WWW=		https://cran.r-project.org/package=BiocManager
 
 LICENSE=	ART20
 

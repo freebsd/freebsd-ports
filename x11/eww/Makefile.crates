@@ -168,7 +168,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		lalrpop-util-0.20.0 \
 		lasso-0.6.0 \
 		lazy_static-1.4.0 \
-		libc-0.2.153 \
+		libc-0.2.186 \
 		libm-0.2.8 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.3.8 \

@@ -1,6 +1,6 @@
---- chrome/browser/ui/startup/infobar_utils.cc.orig	2026-07-01 06:24:19 UTC
+--- chrome/browser/ui/startup/infobar_utils.cc.orig	2026-09-25 15:26:43 UTC
 +++ chrome/browser/ui/startup/infobar_utils.cc
-@@ -46,7 +46,7 @@
+@@ -56,7 +56,7 @@
  #include "chrome/browser/ui/startup/default_browser_prompt/pin_infobar/pin_infobar_controller.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/ui/views/session_restore_infobar/session_restore_infobar_controller.h"
  #include "chrome/browser/ui/views/session_restore_infobar/session_restore_infobar_model.h"
  #endif
-@@ -222,7 +222,7 @@ void AddInfoBarsIfNecessary(BrowserWindowInterface* br
+@@ -310,7 +310,7 @@ void AddInfoBarsIfNecessary(BrowserWindowInterface* br
      return;
    }
  

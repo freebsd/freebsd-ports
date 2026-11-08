@@ -1,18 +1,18 @@
 deno's upgrade feature cannot work on FreeBSD, directly disable it
 
 Index: cli/Cargo.toml
---- cli/Cargo.toml.orig	2026-07-01 13:28:43 UTC
+--- cli/Cargo.toml.orig	2026-09-16 15:45:55 UTC
 +++ cli/Cargo.toml
-@@ -24,7 +24,7 @@ harness = false
- harness = false
- 
- [features]
--default = ["upgrade", "__vendored_zlib_ng"]
-+default = ["__vendored_zlib_ng"]
+@@ -29,7 +29,7 @@ quickjs = ["__runtime_defaults", "deno_core/quickjs", 
+ # crate name so the engine integration does not require source-level churn.
+ v8 = ["__runtime_defaults", "deno_core/v8", "v8/v8"]
+ quickjs = ["__runtime_defaults", "deno_core/quickjs", "v8/quickjs"]
+-__runtime_defaults = ["upgrade", "__vendored_zlib_ng"]
++__runtime_defaults = ["__vendored_zlib_ng"]
  # A feature that enables heap profiling with dhat on Linux.
  # 1. Compile with `cargo build --profile=release-with-debug --features=dhat-heap`
  # 2. Run the executable. It will output a dhat-heap.json file.
-@@ -134,7 +134,7 @@ jsonc-parser = { workspace = true, features = ["cst", 
+@@ -142,7 +142,7 @@ jsonc-parser = { workspace = true, features = ["cst", 
  import_map.workspace = true
  indexmap.workspace = true
  jsonc-parser = { workspace = true, features = ["cst", "serde"] }

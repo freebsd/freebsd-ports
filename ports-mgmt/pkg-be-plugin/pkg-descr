@@ -1,0 +1,8 @@
+pkg-be-plugin is a pkg(8) plugin that automatically creates a ZFS
+boot environment before each install, upgrade, or deinstall
+transaction. If a transaction leaves the system in a broken state,
+the pre-transaction BE provides a clean rollback point.
+
+The plugin uses libbe(3) directly with no subprocess invocations of
+bectl(8) or zfs(8). Boot environments are pruned automatically based
+on a configurable keep count and minimum age.

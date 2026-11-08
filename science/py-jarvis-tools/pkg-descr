@@ -1,0 +1,4 @@
+JARVIS-Tools is an open-source software package for data-driven materials
+design. It provides tools for atomistic simulations with DFT, classical force
+fields, tight-binding and machine learning, including structure handling,
+workflow automation and database access for the JARVIS-DFT database.

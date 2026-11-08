@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2026-06-18 16:22:52 UTC
++++ CMakeLists.txt
+@@ -1937,7 +1937,7 @@ install (DIRECTORY
+   #COMPONENT runtime
+   )
+ 
+-if (APPLE)
++if (APPLE OR CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
+   set (WSJT_SOUND_DESTINATION ${CMAKE_INSTALL_DATAROOTDIR})
+ else ()
+   set (WSJT_SOUND_DESTINATION ${CMAKE_INSTALL_BINDIR})

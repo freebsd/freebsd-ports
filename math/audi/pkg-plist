@@ -16,7 +16,6 @@ include/audi/taylor_model_functions.hpp
 include/audi/taylor_model_utilities.hpp
 include/audi/type_traits.hpp
 include/audi/vectorized.hpp
-lib/cmake/audi/FindEigen3.cmake
 lib/cmake/audi/audi-config-version.cmake
 lib/cmake/audi/audi-config.cmake
 lib/cmake/audi/audi_export.cmake

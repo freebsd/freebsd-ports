@@ -5,7 +5,7 @@ CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	pat@patmaddox.com
+MAINTAINER=	patmaddox@FreeBSD.org
 COMMENT=	DuckDB adapter plugin for dbt (data build tool)
 WWW=		https://github.com/jwills/dbt-duckdb
 

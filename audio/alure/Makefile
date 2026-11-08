@@ -11,6 +11,9 @@ WWW=		https://kcat.strangesoft.net/alure.html
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Unfetchable
+DEPRECATED=	Outdated and unsupported upstream
+
 USES=		cmake compiler:c++11-lang openal:soft pkgconfig
 USE_CXXSTD=	c++14
 USE_LDCONFIG=	yes

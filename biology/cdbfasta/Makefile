@@ -2,7 +2,7 @@ PORTNAME=	cdbfasta
 PORTVERSION=	2023.07.10
 CATEGORIES=	biology
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast indexing and retrieval of FASTA records from flat file databases
 WWW=		https://github.com/gpertea/cdbfasta
 

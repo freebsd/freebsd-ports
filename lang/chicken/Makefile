@@ -1,5 +1,5 @@
 PORTNAME=	chicken
-DISTVERSION=	5.4.0
+DISTVERSION=	6.0.0
 PORTEPOCH=	1
 CATEGORIES=	lang scheme
 MASTER_SITES=	https://code.call-cc.org/releases/${DISTVERSION}/
@@ -17,6 +17,7 @@ CPE_VENDOR=	call-cc
 USE_LDCONFIG=	yes
 
 MAKEFILE=	GNUmakefile
+HAS_CONFIGURE=	yes
 MAKE_ARGS=	C_COMPILER="${CC}" \
 		C_COMPILER_OPTIMIZATION_OPTIONS="${CFLAGS}" \
 		CXX_COMPILER="${CXX}" \
@@ -37,15 +38,10 @@ DOCSDIR=	${PREFIX}/share/doc/chicken
 
 PLIST_SUB=	BINARYVERSION=${_CHICKEN_BINARYVERSION}
 
-OPTIONS_DEFINE=	DOCS FEATHERS
+OPTIONS_DEFINE=	DOCS
 OPTIONS_SUB=	yes
 
-# XXX: This should be a subpackage and on by default
-FEATHERS_DESC=	Install the Feathers debugger (requires Tcl/Tk)
-
-FEATHERS_USES=	tk:wrapper,run
-
-_CHICKEN_BINARYVERSION=	11
+_CHICKEN_BINARYVERSION=	12
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/c* \

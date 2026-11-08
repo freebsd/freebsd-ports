@@ -1,6 +1,10 @@
 PORTNAME=	cde
 PORTVERSION=	${COMMIT_DATE}
 CATEGORIES=	x11
+PORTREVISION=	1
+CPPFLAGS+=	-I${LOCALBASE}/lmdb0/include
+LDFLAGS+=	-L${LOCALBASE}/lmdb0/lib
+CONFIGURE_ENV+=	PKG_CONFIG_PATH=${LOCALBASE}/lmdb0/libdata/pkgconfig
 .if !defined(MASTERDIR)
 PKGNAMESUFFIX=	-devel
 .endif
@@ -12,8 +16,8 @@ WWW=		https://sourceforge.net/p/cdesktopenv/wiki/Home/
 USE_GITHUB=	yes
 GH_ACCOUNT=	cschuber
 GH_PROJECT=	cdesktopenv-code
-GH_TAGNAME=	d8cd65f3a
-COMMIT_DATE=	2026.07.06
+GH_TAGNAME=	ea25e781a
+COMMIT_DATE=	2026.10.24
 
 LICENSE=	LGPL21
 
@@ -28,17 +32,19 @@ BUILD_DEPENDS=	ksh93:shells/ksh			\
 		${LOCALBASE}/libdata/pkgconfig/freetype2.pc:print/freetype2 \
 		onsgmls:textproc/opensp \
 		xrdb:x11/xrdb \
-		sessreg:x11/sessreg
+		sessreg:x11/sessreg \
+		autoconf>=2.71:devel/autoconf \
+		autoconf-archive>=0:devel/autoconf-archive
 RUN_DEPENDS=	ksh93:shells/ksh			\
 		${LOCALBASE}/bin/fc-cache:x11-fonts/fontconfig \
 		${LOCALBASE}/libdata/pkgconfig/freetype2.pc:print/freetype2 \
 		xrdb:x11/xrdb \
 		xset:x11/xset \
 		sessreg:x11/sessreg
-LIB_DEPENDS=	liblmdb.so:databases/lmdb0
+LIB_DEPENDS=	liblmdb0.so:databases/lmdb0
 
 USES=		autoreconf:build iconv gmake jpeg libtool motif perl5 \
-		shebangfix tcl:86 xorg
+		pkgconfig shebangfix tcl:86 xorg
 SHEBANG_LANG=	pl
 SHEBANG_FILES=	programs/dtinfo/tools/bin/ccdate \
 		programs/dtdocbook/tcl/docbook.tcl
@@ -60,10 +66,14 @@ CONFIGURE_ARGS=	--with-tcl=${LOCALBASE}/lib/tcl8.6 MAKE="gmake" \
 		--enable-japanese
 MAKE_ARGS+=	PERL=${PERL} "LOCAL_LDFLAGS=${LDFLAGS}"
 MAKE_JOBS_UNSAFE=yes
-MAKE_ENV=	MALLOC_CONF=junk:false
+MAKE_ENV=	MALLOC_CONF=junk:false \
+		IFFEFLAGS=-d1
+#	IFFEFLAGS=-d1 is default for Linux builds. We do it here too.
 SUB_FILES=	pkg-message
 CFLAGS+=	-O -Wno-register -Wno-incompatible-function-pointer-types \
-		-Wno-implicit-function-declaration
+		-Wno-implicit-function-declaration \
+		-DSHOPT_DYNAMIC=1
+#		SHOPT_DYNAMIC=1 fixes a symbol not found problem.
 LDFLAGS+=	-z muldefs #--allow-multiple-definition
 
 CFFILES=	Xaccess Xconfig Xfailsafe Xreset Xservers Xsetup Xstartup \
@@ -78,6 +88,10 @@ post-patch:
 	    ${WRKSRC}/programs/dtmail/libDtMail/Common/Session.C \
 	    ${WRKSRC}/programs/dtmail/libDtMail/RFC/RFCBodyPart.C; \
 	fi
+#	The below is to resolve an issue introduced by upstream that
+#	causes it to search ${LOCALBASE}/include for headers in
+#	precidence over those provided by the tarball.
+	@${FIND} ${WRKSRC}/programs/dtksh/ksh93/src -type f -name Mamfile | ${XARGS} ${REINPLACE_CMD} -E 's/(exec - \$$\{CC\}) \$$\{mam_cc_FLAGS\} \$$\{CCFLAGS\}(.*) -c (.+)$$/\1\2 \$${mam_cc_FLAGS} \$${CCFLAGS} -c \3/'
 
 # From shells/ksh93
 	@${REINPLACE_CMD} -e 's|SF_FLAGS|SFIO_FLAGS|g' \

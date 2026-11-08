@@ -1,0 +1,6 @@
+The dav_ext module adds the WebDAV methods that nginx's built-in dav module
+leaves out: PROPFIND and OPTIONS, with the directory listing returned as a
+multistatus document, and LOCK and UNLOCK backed by a shared memory zone.
+
+This port only installs the module sources.  The module itself is built by the
+nginx ports when their HTTP_DAV_EXT option is enabled.

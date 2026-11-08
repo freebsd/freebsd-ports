@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/ui/base/x/x11_shm_image_pool.cc.orig	2025-01-15 09:18:26 UTC
+--- src/3rdparty/chromium/ui/base/x/x11_shm_image_pool.cc.orig	2026-10-21 00:29:58 UTC
 +++ src/3rdparty/chromium/ui/base/x/x11_shm_image_pool.cc
 @@ -16,6 +16,7 @@
  #include "base/functional/callback.h"
@@ -8,7 +8,7 @@
  #include "build/build_config.h"
  #include "net/base/url_util.h"
  #include "ui/events/platform/platform_event_dispatcher.h"
-@@ -44,10 +45,14 @@ constexpr float kShmResizeShrinkThreshold =
+@@ -44,10 +45,14 @@ std::size_t MaxShmSegmentSizeImpl() {
      1.0f / (kShmResizeThreshold * kShmResizeThreshold);
  
  std::size_t MaxShmSegmentSizeImpl() {
@@ -51,7 +51,7 @@
  }
  #endif  // !BUILDFLAG(IS_CHROMEOS)
  
-@@ -182,7 +193,7 @@ bool XShmImagePool::Resize(const gfx::Size& pixel_size
+@@ -191,7 +202,7 @@ bool XShmImagePool::Resize(const gfx::Size& pixel_size
          shmctl(state.shmid, IPC_RMID, nullptr);
          return false;
        }
@@ -60,7 +60,7 @@
        // On Linux, a shmid can still be attached after IPC_RMID if otherwise
        // kept alive.  Detach before XShmAttach to prevent a memory leak in case
        // the process dies.
-@@ -201,7 +212,7 @@ bool XShmImagePool::Resize(const gfx::Size& pixel_size
+@@ -210,7 +221,7 @@ bool XShmImagePool::Resize(const gfx::Size& pixel_size
          return false;
        state.shmseg = shmseg;
        state.shmem_attached_to_server = true;

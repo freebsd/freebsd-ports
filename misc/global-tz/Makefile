@@ -1,5 +1,5 @@
 PORTNAME=	global-tz
-DISTVERSION=	2026bgtz
+DISTVERSION=	2026cgtz
 CATEGORIES=	misc
 MASTER_SITES=	https://github.com/JodaOrg/${PORTNAME}/releases/download/${DISTVERSION}/:tzdata \
 		https://raw.githubusercontent.com/JodaOrg/${PORTNAME}/${DISTVERSION}/:tab

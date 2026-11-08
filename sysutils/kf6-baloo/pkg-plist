@@ -44,6 +44,7 @@ lib/libexec/kf6/baloo_file_extractor
 %%QT_QMLDIR%%/org/kde/baloo/qmldir
 @comment lib/systemd/user/kde-baloo.service
 libdata/pkgconfig/KF6Baloo.pc
+share/config.kcfg/baloosettings.kcfg
 share/dbus-1/interfaces/org.kde.BalooWatcherApplication.xml
 share/dbus-1/interfaces/org.kde.baloo.file.indexer.xml
 share/dbus-1/interfaces/org.kde.baloo.fileindexer.xml
@@ -267,6 +268,8 @@ share/locale/hi/LC_MESSAGES/balooshow6.mo
 share/locale/hi/LC_MESSAGES/kio6_baloosearch.mo
 share/locale/hi/LC_MESSAGES/kio6_tags.mo
 share/locale/hi/LC_MESSAGES/kio6_timeline.mo
+share/locale/hr/LC_MESSAGES/kio6_baloosearch.mo
+share/locale/hr/LC_MESSAGES/kio6_timeline.mo
 share/locale/hu/LC_MESSAGES/baloo_file6.mo
 share/locale/hu/LC_MESSAGES/baloo_file_extractor6.mo
 share/locale/hu/LC_MESSAGES/balooctl6.mo

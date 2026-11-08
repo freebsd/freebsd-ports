@@ -288,6 +288,7 @@ lib/wheels/cmake/PySide6/PySide6Targets.cmake
 libdata/pkgconfig/pyside6.pc
 share/PySide6/doc/qtcanvaspainter.rst
 share/PySide6/doc/qtcore.rst
+share/PySide6/doc/qtgui.rst
 share/PySide6/doc/qtqml.rst
 share/PySide6/doc/qtquicktest.rst
 share/PySide6/doc/qtuitools.rst

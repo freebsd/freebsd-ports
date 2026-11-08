@@ -1,9 +1,9 @@
---- deaggregate.c.orig	2021-06-06 18:56:02 UTC
+--- deaggregate.c.orig	2026-10-04 09:20:17 UTC
 +++ deaggregate.c
-@@ -23,6 +23,7 @@
- #include <arpa/inet.h>
+@@ -24,6 +24,7 @@
  #include <netdb.h>
  #include <ctype.h>
+ #include <assert.h>
 +#include <sys/socket.h>
  
  #include "ipcalc.h"

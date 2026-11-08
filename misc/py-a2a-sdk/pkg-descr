@@ -1,0 +1,7 @@
+The A2A Python SDK is the official Python implementation of the Agent2Agent
+(A2A) protocol, an open standard that enables communication and
+interoperability between AI agents built on different frameworks.
+
+It provides client and server components for building A2A agents, including
+JSON-RPC, REST and gRPC transports, task and event management, and agent card
+handling.

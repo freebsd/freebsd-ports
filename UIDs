@@ -264,7 +264,7 @@ lavinmq:*:315:315::0:0:LavinMQ user:/nonexistent:/usr/sbin/nologin
 nut:*:316:316::0:0:Network UPS Tools user:/nonexistent:/usr/sbin/nologin
 hedgedoc:*:317:317::0:0:HedgeDoc user:/nonexistent:/usr/sbin/nologin
 icingadirector:*:318:183::0:0:icingadirector user:/nonexistent:/usr/sbin/nologin
-rustdesk:*:319:319::0:0:rustdesk-server user:/nonexistent:/usr/sbin/nologin
+rustdesk:*:319:319::0:0:rustdesk-server user:/var/db/rustdesk-server:/usr/sbin/nologin
 teleirc:*:320:320::0:0:Telegram and IRC bridge:/nonexistent:/usr/sbin/nologin
 caldera:*:321:321::0:0:Caldera Mitre user:/nonexistent:/usr/sbin/nologin
 tlsc:*:322:322::0:0:TLS connect daemon:/nonexistent:/usr/sbin/nologin
@@ -338,19 +338,19 @@ autopulse:*:388:388::0:0:Autopulse Daemon:/nonexistent:/usr/sbin/nologin
 ldap:*:389:389::0:0:OpenLDAP Server:/nonexistent:/usr/sbin/nologin
 bunkerweb:*:390:390::0:0:Bunkerweb Service:/nonexistent:/usr/sbin/nologin
 dirsrv:*:391:391::0:0:389 Directory Server:/usr/local/share/dirsrv:/usr/sbin/nologin
-# free: 392
-# free: 393
-# free: 394
-# free: 395
-# free: 396
+_turnserver:*:392:392::0:0:Coturn Turnserver Daemon:/nonexistent:/usr/sbin/nologin
+immich:*:393:393::0:0:Immich Daemon:/nonexistent:/usr/sbin/nologin
+mysqlrouter:*:394:394::0:0:MySQL Router Daemon:/nonexistent:/usr/sbin/nologin
+comentario:*:395:395::0:0:Comentario Daemon:/var/db/comentario:/usr/sbin/nologin
+littlefedi:*:396:396::0:0:littleFedi Daemon:/var/db/littlefedi:/usr/sbin/nologin
 rtorrent:*:397:397::0:0:rtorrent Daemon User:/nonexistent:/usr/sbin/nologin
 tiarra:*:398:398::0:0:Tiarra IRC Proxy:/nonexistent:/usr/sbin/nologin
-# free: 399
+linkwarden:*:399:399::0:0:Linkwarden Daemon:/var/db/linkwarden:/usr/sbin/nologin
 evcc:*:400:400::0:0:evcc Daemon:/nonexistent:/usr/sbin/nologin
 spectrumknx:*:401:401::0:0:SpectrumKNX Daemon:/var/db/spectrumknx:/usr/sbin/nologin
 # free: 402
 # free: 403
-# free: 404
+svn:*:404:404::0:0:Subversion daemon:/var/db/svn:/usr/sbin/nologin
 # free: 405
 # free: 406
 # free: 407
@@ -368,7 +368,7 @@ uhub:*:411:411::0:0:uHub ADC Daemon:/nonexistent:/usr/sbin/nologin
 # free: 419
 oxidized:*:420:420::0:0:Oxidized Owner:/var/db/oxidized:/usr/sbin/nologin
 # free: 421
-# free: 422
+igmpproxy:*:422:422::0:0:igmpproxy daemon:/nonexistent:/usr/sbin/nologin
 # free: 423
 # free: 424
 # free: 425
@@ -431,7 +431,7 @@ promxy:*:481:481::0:0:Promxy Daemon:/nonexistent:/usr/sbin/nologin
 openbao:*:482:482:daemon:0:0:OpenBao Daemon:/nonexistent:/usr/sbin/nologin
 garage:*:483:483::0:0:Garage Daemon:/var/db/garage:/usr/sbin/nologin
 stalwart:*:484:484::0:0:stalwart Mail Server Daemon:/nonexistent:/usr/sbin/nologin
-# free: 485
+stalwart-proxy:*:485:485::0:0:Stalwart Proxy Daemon:/nonexistent:/usr/sbin/nologin
 # free: 486
 # free: 487
 # free: 488
@@ -449,7 +449,7 @@ microbin:*:499:499::0:0:Tiny, self-contained, configurable paste bin and URL sho
 qw:*:500:500::0:0:QuakeWorld Server:/nonexistent:/usr/sbin/nologin
 qwfwd:*:501:501::0:0:QuakeWorld Proxy:/nonexistent:/usr/sbin/nologin
 # free: 502
-# free: 503
+gerrit:*:503:503::0:0:Gerrit Code Review:/var/db/gerrit:/usr/sbin/nologin
 # free: 504
 _bbstored:*:505:505::0:0:Box Backup Store Daemon:/nonexistent:/usr/sbin/nologin
 radmind:*:506:506::0:0:radmind User:/var/radmind:/usr/sbin/nologin
@@ -470,7 +470,7 @@ libvirtdbus:*:520:520::0:0:Libvirt D-Bus bridge:/nonexistent:/usr/sbin/nologin
 davmail:*:521:521::0:0:Davmail Exchange Gateway:/nonexistent:/usr/sbin/nologin
 nullmail:*:522:522::0:0:Nullmailer Mail System:/var/spool/nullmailer:/bin/sh
 freevo:*:523:523::0:0:Freevo User:/var/db/freevo:/bin/sh
-# free: 524
+semaphore:*:524:524::0:0:Semaphore Daemon:/var/db/semaphore:/usr/sbin/nologin
 dkimproxy:*:525:525::0:0:DKIM Proxy Owner:/nonexistent:/usr/sbin/nologin
 # free: 526
 # free: 527
@@ -545,7 +545,7 @@ avahi-autoipd:*:588:588::0:0:Avahi Autoipd Daemon user:/nonexistent:/usr/sbin/no
 # free: 595
 # free: 596
 # free: 597
-# free: 598
+ipaapi:*:598:598::0:0:IPA Framework User:/nonexistent:/usr/sbin/nologin
 pkiuser:*:599:599::0:0:Dogtag PKI user:/nonexistent:/usr/sbin/nologin
 _xsi:*:600:600::0:0:XMLSysInfo User:/nonexistent:/usr/sbin/nologin
 _tss:*:601:601:daemon:0:0:TCG Software Stack user:/var/empty:/usr/sbin/nologin
@@ -553,7 +553,7 @@ _pkcs11:*:602:602:daemon:0:0:opencryptoki user:/var/empty:/usr/sbin/nologin
 _acme:*:603:603::0:0:ACME client user:/var/empty:/usr/sbin/nologin
 _lego:*:604:604::0:0:lego client user:/nonexistent:/usr/sbin/nologin
 _hockeypuck:*:605:605::0:0:hockeypuck pgp keyserver user:/var/empty:/usr/sbin/nologin
-# free: 606
+kdcproxy:*:606:606::0:0:IPA KDC Proxy User:/nonexistent:/usr/sbin/nologin
 # free: 607
 # free: 608
 # free: 609
@@ -667,7 +667,7 @@ _sndio:*:702:702::0:0:sndio privsep:/var/empty:/usr/sbin/nologin
 bopm:*:717:717::0:0:Blitzed Open Proxy Monitor:/nonexistent:/bin/sh
 _dnscrypt-wrapper:*:718:65534::0:0:dnscrypt-wrapper user:/var/empty:/usr/sbin/nologin
 # free: 719
-# free: 720
+pgdog:*:720:720::0:0:PgDog PostgreSQL pooler:/nonexistent:/usr/sbin/nologin
 # free: 721
 # free: 722
 # free: 723
@@ -778,9 +778,9 @@ _tuptime:*:827:827::0:0:Tuptime:/var/lib/tuptime:/usr/sbin/nologin
 cirrus:*:828:828::0:0:Cirrus CI:/usr/local/cirrus:/bin/sh
 # free: 829
 # free: 830
-# free: 831
+telemt:*:831:831::0:0:Telemt daemon:/var/db/telemt:/usr/sbin/nologin
 beehive:*:832:832::0:0:beehive user:/nonexistent:/usr/sbin/nologin
-# free: 833
+bhyvemgrd:*:833:833::0:0:bhyvemgrd daemon user:/nonexistent:/usr/sbin/nologin
 pocket-id:*:834:834::0:0:OIDC provider that allows users to authenticate with their passkeys:/var/db/pocket-id:/usr/sbin/nologin
 filebrowser:*:835:835::0:0:Web File Browser:/var/db/filebrowser:/usr/sbin/nologin
 tinyauth:*:836:836::0:0:Simplest way to protect your apps with a login screen:/var/db/tinyauth:/usr/sbin/nologin
@@ -792,7 +792,7 @@ tcpcryptd:*:841:841::0:0:tcpcrypt daemon:/nonexistent:/usr/sbin/nologin
 munin:*:842:842::0:0:Munin:/var/munin:/usr/sbin/nologin
 # free: 843
 subsonic:*:844:844::0:0:Subsonic standalone-server:/nonexistent:/usr/sbin/nologin
-# free: 845
+rauthy:*:845:845::0:0:Rauthy IdP Daemon:/var/db/rauthy:/usr/sbin/nologin
 sogod:*:846:846::0:0:SOGo groupware:/nonexistent:/usr/sbin/nologin
 domoticz:*:847:847::0:0:domoticz user:/nonexistent:/usr/sbin/nologin
 graylog:*:848:848::0:0:Graylog user:/nonexistent:/usr/sbin/nologin

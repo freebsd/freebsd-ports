@@ -2,6 +2,12 @@ bin/indexlr
 bin/mi_bf_generate
 bin/randseq
 include/btllib/aahash.hpp
+include/btllib/bihash.hpp
+include/btllib/bihash_hashing_internals.hpp
+include/btllib/bihash_kmer.hpp
+include/btllib/bihash_kmer_base.hpp
+include/btllib/bihash_kmer_bi.hpp
+include/btllib/bihash_kmer_directional.hpp
 include/btllib/bloom_filter.hpp
 include/btllib/counting_bloom_filter-inl.hpp
 include/btllib/counting_bloom_filter.hpp
@@ -30,3 +36,6 @@ include/btllib/seq_writer.hpp
 include/btllib/status.hpp
 include/btllib/util.hpp
 lib/libbtllib.so
+%%PYTHON_SITELIBDIR%%/btllib/__init__.py
+%%PYTHON_SITELIBDIR%%/btllib/_btllib.so
+%%PYTHON_SITELIBDIR%%/setup.py

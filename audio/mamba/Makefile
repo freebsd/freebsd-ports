@@ -1,7 +1,9 @@
 PORTNAME=	mamba
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.5
+DISTVERSION=	2.6
 CATEGORIES=	audio
+MASTER_SITES=	https://github.com/brummer10/Mamba/releases/download/v${DISTVERSION}/
+DISTFILES=	Mamba_${DISTVERSION}.tar.gz
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Virtual MIDI keyboard
@@ -21,14 +23,21 @@ USES=		compiler:c++11-lang desktop-file-utils gmake gnome pkgconfig xorg
 USE_GNOME=	cairo glib20 libsigc++20
 USE_XORG=	x11
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	brummer10
-GH_PROJECT=	Mamba
-GH_TUPLE=	brummer10:libxputty:62ec1cf:libxputty/libxputty
+WRKSRC=		${WRKDIR}/Mamba_${DISTVERSION}
+
+# libxputty does not recognize FreeBSD via uname -s
+MAKE_ARGS=	TARGET=Linux
 
 PLIST_FILES=	bin/mamba \
 		share/applications/Mamba.desktop \
 		share/pixmaps/Mamba.svg
+
+post-patch:
+	# libxputty selects its X11 code path via __linux__; avoid defining that macro
+	@${FIND} ${WRKSRC}/libxputty/xputty -name '*.[ch]' | ${XARGS} ${REINPLACE_CMD} -e 's/__linux__/__FreeBSD__/g'
+
+pre-build:
+	${DO_MAKE_BUILD} -C ${WRKSRC}/libxputty
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/mamba

@@ -55,6 +55,17 @@
 #	modules archive must be copied into PKGJSONSDIR with directory hierarchy
 #	preserved.
 #
+# NPM_PREFETCH_ARCHS: The prepared node modules archive may vary depending on
+#		the architecture, especially if the archive includes
+#		architecture-specific node modules. This variable can be used to
+#		indicate which architectures the node module archives are
+#		prepared for.
+#
+#	NOTE: A node package manager does not typically support the creation of
+#	a node modules archive which works across multiple architectures.
+#	Therefore, please note that node module archives must be created
+#	separately for each architecture.
+#
 # NPM_EXTRACT:	Installs the prefetched node modules into the port's working
 #		source directory.
 #
@@ -67,6 +78,8 @@ _INCLUDE_USES_NPM_MK=	yes
 .include "${USESDIR}/nodejs.mk"
 _NODEJS_PKGNAME=node${NODEJS_VERSION}
 _NODEJS_PORT=	www/node${NODEJS_VERSION}
+_NPM_NODEJS_ARCH_CONV_STR=	S/aarch64/arm64/:S/amd64/x64/:S/i386/ia32/
+NPM_NODEJS_ARCH=		${ARCH:${_NPM_NODEJS_ARCH_CONV_STR}}
 
 _VALID_NPM_NAMES=npm yarn1 yarn2 yarn4 pnpm
 
@@ -94,7 +107,7 @@ _NPM_TEST_DEP=	yes
 _NPM_ARGS:=	${_NPM_ARGS:Ntest}
 .  endif
 # If no dependencies are specified, assume build and test are required
-.  if !defined(_NPM_FETCH_DEP) && !defied(_NPM_EXTRACT_DEP) && \
+.  if !defined(_NPM_FETCH_DEP) && !defined(_NPM_EXTRACT_DEP) && \
 	!defined(_NPM_BUILD_DEP) && !defined(_NPM_RUN_DEP) && \
 	!defined(_NPM_TEST_DEP)
 _NPM_BUILD_DEP=	yes
@@ -216,17 +229,18 @@ NPM_MODULE_CACHE?=	pnpm-store
 NPM_CMDNAME?=		pnpm
 NPM_CACHE_SETUP_CMD?=	${DO_NADA}
 NPM_FETCH_CMD?=		${NPM_CMDNAME} fetch
-NPM_FETCH_FLAGS+=	--frozen-lockfile --ignore-scripts --loglevel=error \
+NPM_FETCH_FLAGS+=	--ignore-scripts --loglevel=error \
 			--store-dir ${WRKDIR}/node-modules-cache/${NPM_MODULE_CACHE}
 NPM_EXTRACT_CMD?=	${NPM_CMDNAME} install
-NPM_EXTRACT_FLAGS+=	${NPM_FETCH_FLAGS} --offline
+NPM_EXTRACT_FLAGS+=	${NPM_FETCH_FLAGS} --frozen-lockfile --offline
 NPM_EXEC_CMD?=		${NPM_CMDNAME} exec
 NPM_REBUILD_CMD?=	${NPM_CMDNAME} rebuild
 .  endif
 
 # Use utility targets?
-NPM_PREFETCH?=	${_NPM_EXISTS_PKGFILE}
-NPM_EXTRACT?=	${NPM_PREFETCH}
+NPM_PREFETCH?=		${_NPM_EXISTS_PKGFILE}
+NPM_PREFETCH_ARCHS?=
+NPM_EXTRACT?=		${NPM_PREFETCH}
 
 # Bootstrap node package manager for yarn >2 or pnpm
 .  if ${_NPM_NAME} == yarn2 || ${_NPM_NAME} == yarn4 || ${_NPM_NAME} == pnpm
@@ -234,6 +248,10 @@ _USES_fetch+=	490:npm-fetch-node-package-manager
 
 DISTFILES+=	${NPM_CMDNAME}-${NPM_VER}.tgz:prefetch
 FETCH_DEPENDS+=	${_NODEJS_PKGNAME}>0:${_NODEJS_PORT}
+
+.    if ${_NPM_NAME} == pnpm && ${NPM_VER_MAJOR} >= 12
+DISTFILES+=	${NPM_CMDNAME}-exe.freebsd-${NPM_NODEJS_ARCH}-${NPM_VER}.tgz:prefetch
+.    endif
 
 npm-fetch-node-package-manager:
 	@${ECHO_MSG} "===>  Fetching and setting up ${NPM_CMDNAME} version ${NPM_VER}"
@@ -249,7 +267,21 @@ npm-fetch-node-package-manager:
 		${TAR} -cz --options 'gzip:!timestamp' \
 			-f ${DISTDIR}/${DIST_SUBDIR}/${NPM_CMDNAME}-${NPM_VER}.tgz @${NPM_CMDNAME}.mtree; \
 	fi
+.    if ${_NPM_NAME} == pnpm && ${NPM_VER_MAJOR} >= 12
+	@if [ ! -f ${DISTDIR}/${DIST_SUBDIR}/${NPM_CMDNAME}-exe.freebsd-${NPM_NODEJS_ARCH}-${NPM_VER}.tgz ]; then \
+		${SETENV} ${FETCH_ENV} ${FETCH_CMD} ${FETCH_BEFORE_ARGS} \
+			https://registry.npmjs.org/@pnpm/exe.freebsd-${NPM_NODEJS_ARCH}/-/exe.freebsd-${NPM_NODEJS_ARCH}-${NPM_VER}.tgz \
+			-o ${DISTDIR}/${DIST_SUBDIR}/${NPM_CMDNAME}-exe.freebsd-${NPM_NODEJS_ARCH}-${NPM_VER}.tgz; \
+	fi
+.    endif
 	@${SETENV} ${MAKE_ENV} corepack install -g ${DISTDIR}/${DIST_SUBDIR}/${NPM_CMDNAME}-${NPM_VER}.tgz
+.    if ${_NPM_NAME} == pnpm && ${NPM_VER_MAJOR} >= 12
+	@${TAR} -xf ${DISTDIR}/${DIST_SUBDIR}/${NPM_CMDNAME}-exe.freebsd-${NPM_NODEJS_ARCH}-${NPM_VER}.tgz \
+		-C ${WRKDIR}/.cache/node/corepack/v1/${_NPM_NAME}/${NPM_VER} \
+		--strip-components 1 \
+		--include package/pnpm \
+		-s /pnpm$$/pnpm-native/
+.    endif
 .  endif
 
 .  if ${NPM_PREFETCH:tl} == yes
@@ -260,8 +292,19 @@ IGNORE=	does not store ${NPM_PKGFILE} in ${PKGJSONSDIR} for prefetching node mod
 _USES_fetch+=	491:npm-fetch-node-modules \
 		492:npm-archive-node-modules
 
+.    if empty(NPM_PREFETCH_ARCHS)
 _DISTFILE_prefetch=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-${DISTVERSION}-node-modules${EXTRACT_SUFX}
 DISTFILES+=		${_DISTFILE_prefetch}:prefetch
+.    else
+_DISTFILE_prefetch=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-${DISTVERSION}-node-modules-${NPM_NODEJS_ARCH}${EXTRACT_SUFX}
+.      if !make(makesum)
+DISTFILES+=		${_DISTFILE_prefetch}:prefetch
+.      else
+.        for arch in ${NPM_PREFETCH_ARCHS}
+DISTFILES+=		${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-${DISTVERSION}-node-modules-${arch:${_NPM_NODEJS_ARCH_CONV_STR}}${EXTRACT_SUFX}:prefetch
+.        endfor
+.      endif
+.    endif
 
 .    if ${_NPM_NAME} == npm || ${_NPM_NAME} == yarn1
 FETCH_DEPENDS+= ${_NPM_PKGNAME}>0:${_NPM_PORTDIR}
@@ -300,9 +343,8 @@ npm-archive-node-modules:
 		${TAR} -cz --options 'gzip:!timestamp' \
 			-f ${DISTDIR}/${DIST_SUBDIR}/${_DISTFILE_prefetch} \
 			-C ${WRKDIR} @node-modules-cache.mtree; \
-		if [ "${TMPDIR}" != "${WRKDIR}" ]; then \
-			${RM} -r ${WRKDIR}; \
-		fi; \
+		${RM} -r ${WRKDIR}/node-modules-cache \
+			${WRKDIR}/node-modules-cache.mtree; \
 	fi
 .    elif ${_NPM_NAME:Myarn*} || ${_NPM_NAME} == pnpm
 .      if ${_NPM_NAME} == pnpm
@@ -383,14 +425,14 @@ npm-archive-node-modules:
 		while [ $${i} -le $${total_files} ]; do \
 			real_key=`${CAT} $${tmpdir}/$${i}.key`; \
 			{ \
-				${PRINTF} "INSERT INTO package_index (key, data) VALUES ('%s', x'" "$${real_key}"; \
+				${PRINTF} "INSERT INTO package_index (key, data) VALUES ('%s', X'" "$${real_key}"; \
 				hexdump -v -e '/1 "%02x"' $${tmpdir}/$${i}.normalized.msgpack; \
 				${PRINTF} "');\n"; \
 			} | sqlite3 $${output_db}; \
 			i=$$((i + 1)); \
 		done; \
 		sqlite3 $${output_db} "REINDEX; VACUUM;"; \
-		sqlite3 $${output_db} ".dump" > $${output_db_dump}; \
+		sqlite3 $${output_db} ".dump" | ${SED} -e "s/x'/X'/" > $${output_db_dump}; \
 		${RM} -r $${input_db} $${storedir}/tmp; \
 	fi
 .        else
@@ -416,9 +458,8 @@ npm-archive-node-modules:
 			node-modules-cache.mtree && \
 		${TAR} -cz --options 'gzip:!timestamp' \
 			-f ${DISTDIR}/${DIST_SUBDIR}/${_DISTFILE_prefetch} @node-modules-cache.mtree; \
-		if [ "${TMPDIR}" != "${WRKDIR}" ]; then \
-			${RM} -r ${WRKDIR}; \
-		fi; \
+		${RM} -r ${WRKDIR}/node-modules-cache \
+			${WRKDIR}/node-modules-cache.mtree; \
 	fi
 .    endif
 .  endif
@@ -447,6 +488,13 @@ npm-extract-node-package-manager:
 	@${MKDIR}  ${WRKDIR}/.bin
 	@${SETENV} ${MAKE_ENV} corepack enable --install-directory ${WRKDIR}/.bin
 	@${SETENV} ${MAKE_ENV} corepack install -g ${DISTDIR}/${DIST_SUBDIR}/${NPM_CMDNAME}-${NPM_VER}.tgz
+.      if ${_NPM_NAME} == pnpm && ${NPM_VER_MAJOR} >= 12
+	@${TAR} -xf ${DISTDIR}/${DIST_SUBDIR}/${NPM_CMDNAME}-exe.freebsd-${NPM_NODEJS_ARCH}-${NPM_VER}.tgz \
+		-C ${WRKDIR}/.cache/node/corepack/v1/${_NPM_NAME}/${NPM_VER} \
+		--strip-components 1 \
+		--include package/pnpm \
+		-s /pnpm$$/pnpm-native/
+.      endif
 .    else
 	@${DO_NADA}
 .    endif

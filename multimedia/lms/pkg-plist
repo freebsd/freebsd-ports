@@ -34,11 +34,12 @@ etc/pam.d/lms
 %%DATADIR%%/approot/misc.xml
 %%DATADIR%%/approot/notifications.xml
 %%DATADIR%%/approot/playqueue.xml
-%%DATADIR%%/approot/%%CMAKE_BUILD_TYPE%%.xml
-%%DATADIR%%/approot/%%CMAKE_BUILD_TYPE%%s.xml
+%%DATADIR%%/approot/release.xml
+%%DATADIR%%/approot/releases.xml
 %%DATADIR%%/approot/settings-audio.xml
+%%DATADIR%%/approot/settings-lastfm.xml
+%%DATADIR%%/approot/settings-listenbrainz.xml
 %%DATADIR%%/approot/settings-password.xml
-%%DATADIR%%/approot/settings-services.xml
 %%DATADIR%%/approot/settings-subsonic.xml
 %%DATADIR%%/approot/settings-ui.xml
 %%DATADIR%%/approot/tracklist.xml
@@ -51,6 +52,7 @@ etc/pam.d/lms
 %%DATADIR%%/docroot/js/mediaplayer.js
 %%DATADIR%%/lms
 %%DATADIR%%/lms.conf
+%%DATADIR%%/models/MSD_musicnn_embedding.onnx
 @owner %%USER%%
 @group %%GROUP%%
 @dir /var/db/lms

@@ -1,0 +1,9 @@
+This port uses Intel's FreeBSD NVMUpdate executable with Lenovo's current
+E810 AnyOS firmware payload.  Lenovo publishes the four adapters as one AnyOS
+bundle, but does not include an nvmupdate.cfg in that bundle.  The FreeBSD
+configuration combines the four device entries and complete ETrack histories
+from Lenovo's corresponding first-party per-adapter NVMUpdate packages.
+
+The .pldm files inside Lenovo's AnyOS payload are byte-for-byte identical to
+the NVM .bin files in those per-adapter packages.  They are renamed at install
+time only so the combined configuration uses Lenovo's original NVM filenames.

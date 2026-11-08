@@ -6,7 +6,8 @@ MASTER_SITES=	http://www.bennyp.org/research/simint/download/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Obara-Saika (OS) method of calculating electron repulsion integrals
-WWW=		https://www.bennyp.org/research/simint/
+WWW=		https://www.bennyp.org/research/simint/ \
+		https://github.com/simint-chem/simint-generator
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -37,6 +38,7 @@ MICAVX512_CMAKE_ON=	-DSIMINT_VECTOR:STRING=micavx512
 CMAKE_ON=	BUILD_SHARED_LIBS \
 		SIMINT_STANDALONE
 CMAKE_OFF=	ENABLE_TESTS
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/simint-chem/simint-generator/issues/19
 
 .for opt in ${OPTIONS_SINGLE_VECTOR}
 ${opt}_VARS=    SIMINT_VECTOR=${opt}

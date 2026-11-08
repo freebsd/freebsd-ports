@@ -1,7 +1,6 @@
 PORTNAME=	pyscf
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.12.1
-PORTREVISION=	2
+DISTVERSION=	2.14.0
 CATEGORIES=	science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -10,30 +9,38 @@ COMMENT=	Python module for quantum chemistry
 WWW=		https://pyscf.org/ \
 		https://github.com/pyscf/pyscf
 
-LICENSE=	BSD2CLAUSE
+LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}h5py>=2.7:science/py-h5py@${PY_FLAVOR}
-BUILD_DEPENDS=	${PY_DEPENDS} \
-		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR} \
-		cmake:devel/cmake-core \
-		gmake:devel/gmake
+BUILD_DEPENDS=	cmake:devel/cmake-core \
+		${PYTHON_PKGNAMEPREFIX}h5py>=2.7:science/py-h5py@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.13:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scipy>=1.6.0:science/py-scipy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools>=61.0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 LIB_DEPENDS=	libcint.so:science/libcint \
 		libxc.so:science/libxc \
 		libxcfun.so:science/xcfun
-RUN_DEPENDS=	${PY_DEPENDS}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}h5py>=2.7:science/py-h5py@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.13:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scipy>=1.6.0:science/py-scipy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR}
 
-USES=		fortran blaslapack:openblas compiler:c++11-lang python
+USES=		fortran blaslapack:openblas compiler:c++11-lang gmake python
 USE_PYTHON=	distutils autoplist pytest
 USE_GITHUB=	yes
 
 POST_PLIST=	fix-plist
 
-TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_ENV=	${MAKE_ENV} \
+		LD_LIBRARY_PATH= \
+		PYTHONPATH=${FILESDIR}:${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_WRKSRC=	${WRKSRC}/pyscf
-TEST_ARGS=	-c ${WRKSRC}/setup.cfg
+TEST_ARGS=	--disable-plugin-autoload \
+		--ignore=lib/vhf/test/test_nr_direct.py \
+		--ignore=mcpdft/test/test_otfnal.py \
+		--ignore=mcpdft/test/test_otpd.py \
+		-c ${WRKSRC}/pytest.ini
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/pyscf/lib/lib*.so
@@ -45,6 +52,6 @@ post-test:
 	@${ECHO} "==> simple test ..."
 	@${SETENV} ${TEST_ENV} ${PYTHON_CMD} ${FILESDIR}/test.py
 
-# tests fail to run: https://github.com/pyscf/pyscf/issues/2601
+# tests currently fail under the local aarch64 harness: pytest exits 255 with repeated "Too many args to microtask: 17!" during adc tests
 
 .include <bsd.port.mk>

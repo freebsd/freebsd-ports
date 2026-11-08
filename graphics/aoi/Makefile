@@ -1,6 +1,6 @@
 PORTNAME=	aoi
 PORTVERSION=	3.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics java
 MASTER_SITES=	SF/${PORTNAME}/ArtOfIllusion/${PORTVERSION} \
 		SF/${PORTNAME}/ArtOfIllusion-manual/${PORTVERSION}:docs
@@ -13,6 +13,9 @@ WWW=		https://aoi.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	version from 2013, 13 years behind on upstream, no users in the ports tree, not actively maintained, please email the maintainer if you use this
+EXPIRATION_DATE=	2027-01-17
 
 LIB_DEPENDS=	libjogl.so:graphics/jogl
 

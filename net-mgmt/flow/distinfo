@@ -1,5 +1,5 @@
-TIMESTAMP = 1784189938
-SHA256 (go/net-mgmt_flow/flow-v0.2.0/v0.2.0.mod) = 69c6ee3a57d84323052991e27f4dd1b82b3bcbbdeb74bc8afd08102bd8a7fd7c
-SIZE (go/net-mgmt_flow/flow-v0.2.0/v0.2.0.mod) = 1768
-SHA256 (go/net-mgmt_flow/flow-v0.2.0/v0.2.0.zip) = 4ffc219079fd344b5535be77aa49c573e420dcaf3804cc26a1b5a9918e916902
-SIZE (go/net-mgmt_flow/flow-v0.2.0/v0.2.0.zip) = 1990109
+TIMESTAMP = 1792654381
+SHA256 (go/net-mgmt_flow/flow-v0.3.5/v0.3.5.mod) = 69c6ee3a57d84323052991e27f4dd1b82b3bcbbdeb74bc8afd08102bd8a7fd7c
+SIZE (go/net-mgmt_flow/flow-v0.3.5/v0.3.5.mod) = 1768
+SHA256 (go/net-mgmt_flow/flow-v0.3.5/v0.3.5.zip) = 9f01384db41f3db14ae9124e4fa373456162d580ee4c0cc91fa7e16146c62c73
+SIZE (go/net-mgmt_flow/flow-v0.3.5/v0.3.5.zip) = 535414

@@ -1,5 +1,5 @@
 PORTNAME=	Email-Sender
-DISTVERSION=	2.601
+DISTVERSION=	2.603
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RJBS
@@ -24,7 +24,9 @@ RUN_DEPENDS=	p5-Email-Abstract>=3.006:mail/p5-Email-Abstract \
 		p5-Sub-Exporter>=0:devel/p5-Sub-Exporter \
 		p5-Throwable>=0.200003:devel/p5-Throwable \
 		p5-Try-Tiny>=0:lang/p5-Try-Tiny
-TEST_DEPENDS=	p5-Capture-Tiny>=0.08:devel/p5-Capture-Tiny
+TEST_DEPENDS=	p5-Capture-Tiny>=0.08:devel/p5-Capture-Tiny \
+		p5-Sub-Override>=0:devel/p5-Sub-Override \
+		p5-Test-MockObject>=0:devel/p5-Test-MockObject
 
 USES=		perl5
 USE_PERL5=	configure

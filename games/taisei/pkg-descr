@@ -1,6 +1,6 @@
-Taisei (lit. Occident) is a fan-made Open Source clone of the Touhou
-series, written in C using SDL/OpenGL.
+Taisei Project is a free and open-source fan game set in the world of
+the Touhou Project series. It is a top-down vertical-scrolling curtain
+fire shooting game (STG), also known as "bullet hell" or "danmaku".
 
-Basically, it is a shoot'em up game with lots of bullets (the genre
-is literally called bullet hell). The game is mostly done and very
-playable, so feel free to give it a try!
+It is not a clone of Touhou: it tells an original story with its own
+music, art, gameplay mechanics and codebase.

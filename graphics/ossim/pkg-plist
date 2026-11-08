@@ -42,6 +42,8 @@
 %%TEST%%bin/ossim-loadtile-test
 %%TEST%%bin/ossim-lsr-space-test
 %%TEST%%bin/ossim-mask-filter-test
+%%TEST%%bin/ossim-nitf-comnta-tag-test
+%%TEST%%bin/ossim-nitf-generic-tag-test
 %%TEST%%bin/ossim-nitf-rsm-model-test
 %%TEST%%bin/ossim-notify-test
 %%TEST%%bin/ossim-obj-allocate
@@ -70,8 +72,10 @@
 %%TEST%%bin/ossim-threaded-logfile-test
 %%TEST%%bin/ossim-threaded-polyarea2d-test
 %%TEST%%bin/ossim-tiff-info-test
+%%TEST%%bin/ossim-tiff-photo-interp-lut-test
 %%TEST%%bin/ossim-tiled-elevation-test
 %%TEST%%bin/ossim-tools-test
+%%TEST%%bin/ossim-uuid-test
 %%TEST%%bin/ossim-viewshed-test
 %%TEST%%bin/ossim-visitor-test
 %%TEST%%bin/ossim-wavelength-test
@@ -167,6 +171,7 @@ include/ossim/base/ossimEbcdicToAscii.h
 include/ossim/base/ossimEcefPoint.h
 include/ossim/base/ossimEcefRay.h
 include/ossim/base/ossimEcefVector.h
+include/ossim/base/ossimEciPoint.h
 include/ossim/base/ossimElevationManagerEvent.h
 include/ossim/base/ossimElevationManagerEventListener.h
 include/ossim/base/ossimEllipsoid.h
@@ -311,6 +316,7 @@ include/ossim/base/ossimSevenParamDatum.h
 include/ossim/base/ossimSource.h
 include/ossim/base/ossimStateChangedEvent.h
 include/ossim/base/ossimStdOutProgress.h
+include/ossim/base/ossimStopwatch.h
 include/ossim/base/ossimStreamBase.h
 include/ossim/base/ossimStreamFactory.h
 include/ossim/base/ossimStreamFactoryBase.h
@@ -328,6 +334,7 @@ include/ossim/base/ossimTieGpt.h
 include/ossim/base/ossimTieGptSet.h
 include/ossim/base/ossimTieMeasurementGeneratorInterface.h
 include/ossim/base/ossimTiffConstants.h
+include/ossim/base/ossimTiffPhotoInterpLut.h
 include/ossim/base/ossimTileHash.h
 include/ossim/base/ossimTiledImageHash.h
 include/ossim/base/ossimTimer.h
@@ -659,6 +666,8 @@ include/ossim/imaging/ossimWorldFileWriter.h
 include/ossim/imaging/ossimWriter.h
 include/ossim/init/JsonConfig.h
 include/ossim/init/ossimInit.h
+include/ossim/json/json-forwards.h
+include/ossim/json/json.h
 include/ossim/matrix/controlw.h
 include/ossim/matrix/include.h
 include/ossim/matrix/myexcept.h
@@ -878,16 +887,28 @@ include/ossim/support_data/ossimLasPointRecord4.h
 include/ossim/support_data/ossimLasPointRecordInterface.h
 include/ossim/support_data/ossimNitfAcftbTag.h
 include/ossim/support_data/ossimNitfAimidbTag.h
+include/ossim/support_data/ossimNitfBandsbTag.h
+include/ossim/support_data/ossimNitfBchipaTag.h
 include/ossim/support_data/ossimNitfBlockaTag.h
 include/ossim/support_data/ossimNitfBndplbTag.h
 include/ossim/support_data/ossimNitfCamsdaTag.h
+include/ossim/support_data/ossimNitfCephbDes.h
 include/ossim/support_data/ossimNitfCommon.h
+include/ossim/support_data/ossimNitfCommonFieldNames.h
+include/ossim/support_data/ossimNitfComntaTag.h
 include/ossim/support_data/ossimNitfCompressionHeader.h
+include/ossim/support_data/ossimNitfCsattbDes.h
 include/ossim/support_data/ossimNitfCsccgaTag.h
 include/ossim/support_data/ossimNitfCscrnaTag.h
+include/ossim/support_data/ossimNitfCscsdbDes.h
 include/ossim/support_data/ossimNitfCsdidaTag.h
+include/ossim/support_data/ossimNitfCsephbDes.h
 include/ossim/support_data/ossimNitfCsexraTag.h
+include/ossim/support_data/ossimNitfCsexrbTag.h
 include/ossim/support_data/ossimNitfCsproaTag.h
+include/ossim/support_data/ossimNitfCsrlsbTag.h
+include/ossim/support_data/ossimNitfCssfabDes.h
+include/ossim/support_data/ossimNitfCswrpbTag.h
 include/ossim/support_data/ossimNitfDataExtensionSegment.h
 include/ossim/support_data/ossimNitfDataExtensionSegmentV2_0.h
 include/ossim/support_data/ossimNitfDataExtensionSegmentV2_1.h
@@ -902,6 +923,8 @@ include/ossim/support_data/ossimNitfFileHeader.h
 include/ossim/support_data/ossimNitfFileHeaderV2_0.h
 include/ossim/support_data/ossimNitfFileHeaderV2_1.h
 include/ossim/support_data/ossimNitfFileHeaderV2_X.h
+include/ossim/support_data/ossimNitfGenericDes.h
+include/ossim/support_data/ossimNitfGenericTag.h
 include/ossim/support_data/ossimNitfGeoPositioningTag.h
 include/ossim/support_data/ossimNitfGeolobTag.h
 include/ossim/support_data/ossimNitfHistoaTag.h
@@ -922,6 +945,7 @@ include/ossim/support_data/ossimNitfJ2klraTag.h
 include/ossim/support_data/ossimNitfLabelHeader.h
 include/ossim/support_data/ossimNitfLabelHeaderV2_0.h
 include/ossim/support_data/ossimNitfLocalCartographicTag.h
+include/ossim/support_data/ossimNitfMatesaTag.h
 include/ossim/support_data/ossimNitfMicidaTag.h
 include/ossim/support_data/ossimNitfMimcsaTag.h
 include/ossim/support_data/ossimNitfMstgtaTag.h
@@ -929,6 +953,7 @@ include/ossim/support_data/ossimNitfMtimfaTag.h
 include/ossim/support_data/ossimNitfMtimsaTag.h
 include/ossim/support_data/ossimNitfNameConversionTables.h
 include/ossim/support_data/ossimNitfPiaimcTag.h
+include/ossim/support_data/ossimNitfPixqlaTag.h
 include/ossim/support_data/ossimNitfProjectionParameterTag.h
 include/ossim/support_data/ossimNitfRegisteredDes.h
 include/ossim/support_data/ossimNitfRegisteredDesFactory.h
@@ -943,6 +968,7 @@ include/ossim/support_data/ossimNitfRsmecbTag.h
 include/ossim/support_data/ossimNitfRsmidaTag.h
 include/ossim/support_data/ossimNitfRsmpcaTag.h
 include/ossim/support_data/ossimNitfRsmpiaTag.h
+include/ossim/support_data/ossimNitfSegmentSecurityMetadataV2_1.h
 include/ossim/support_data/ossimNitfSensraTag.h
 include/ossim/support_data/ossimNitfSicdXmlDataContentDes.h
 include/ossim/support_data/ossimNitfStdidcTag.h
@@ -959,11 +985,13 @@ include/ossim/support_data/ossimNitfTmintaTag.h
 include/ossim/support_data/ossimNitfUnknownTag.h
 include/ossim/support_data/ossimNitfUse00aTag.h
 include/ossim/support_data/ossimNitfVqCompressionHeader.h
+include/ossim/support_data/ossimNitfXmlTag.h
 include/ossim/support_data/ossimNmeaMessage.h
 include/ossim/support_data/ossimNmeaMessageSequencer.h
 include/ossim/support_data/ossimPleiadesMetaData.h
 include/ossim/support_data/ossimPpjFrameSensorFile.h
 include/ossim/support_data/ossimQuickbirdMetaData.h
+include/ossim/support_data/ossimQuickbirdMetaDataInfo.h
 include/ossim/support_data/ossimQuickbirdRpcHeader.h
 include/ossim/support_data/ossimQuickbirdTile.h
 include/ossim/support_data/ossimRpfAttributeOffsetRecord.h
@@ -1039,6 +1067,7 @@ include/ossim/util/ossimTool.h
 include/ossim/util/ossimToolFactory.h
 include/ossim/util/ossimToolFactoryBase.h
 include/ossim/util/ossimToolRegistry.h
+include/ossim/util/ossimUtilInterface.h
 include/ossim/util/ossimVerticesFinderTool.h
 include/ossim/util/ossimViewshedTool.h
 include/ossim/vec/ossimVpfBoundingRecordTable.h
@@ -1083,7 +1112,7 @@ include/ossim/vpfutil/vpfview.h
 include/ossim/vpfutil/xmemory.h
 lib/libossim.so
 lib/libossim.so.2
-lib/libossim.so.2.12.0
+lib/libossim.so.2.12.1
 %%DATADIR%%/fonts/arial.ttf
 %%DATADIR%%/fonts/times.ttf
 %%DATADIR%%/projection/ossim_epsg_projections-v7_4.csv

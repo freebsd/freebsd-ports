@@ -5,7 +5,7 @@
 +.include "../Makefile.inc"
 +.PATH:	../ld
 +
-+CFLAGS		+=-Wall -m32
++CFLAGS		+=-Wall
  LDFLAGS		=
  
 -OBJS		=as.o assemble.o error.o express.o \

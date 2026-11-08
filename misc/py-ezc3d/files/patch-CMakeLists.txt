@@ -1,0 +1,32 @@
+-- Allow the Python wrapper to disable installation of C++ headers, because
+-- misc/ezc3d already provides them and the duplicate files conflict.
+
+--- CMakeLists.txt.orig	2020-02-01 16:00:00 UTC
++++ CMakeLists.txt
+@@ -96,6 +96,7 @@
+
+ # Install target
+ include(GNUInstallDirs)
++option(EZC3D_INSTALL_HEADERS "Install C++ headers" ON)
+ install(TARGETS ${PROJECT_NAME} EXPORT ezc3dTargets
+     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+     ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+@@ -103,10 +104,12 @@
+     INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR} ${CMAKE_INSTALL_INCLUDEDIR}/ezc3d
+ )
+-install(DIRECTORY include/ezc3d DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+-    # Exclude ezc3dConfig.h.in.
+-    PATTERN "*.h.in" EXCLUDE
+-)
+-install(FILES "${EZC3D_BINARY_DIR}/include/ezc3d/ezc3dConfig.h"
+-    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/ezc3d
+-)
++if(EZC3D_INSTALL_HEADERS)
++    install(DIRECTORY include/ezc3d DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
++        # Exclude ezc3dConfig.h.in.
++        PATTERN "*.h.in" EXCLUDE
++    )
++    install(FILES "${EZC3D_BINARY_DIR}/include/ezc3d/ezc3dConfig.h"
++        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/ezc3d
++    )
++endif()

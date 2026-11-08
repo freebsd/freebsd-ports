@@ -1,6 +1,6 @@
---- bindings/python/CMakeLists.txt.orig	2026-03-20 19:34:28 UTC
+--- bindings/python/CMakeLists.txt.orig	2026-07-22 19:42:15 UTC
 +++ bindings/python/CMakeLists.txt
-@@ -117,7 +117,7 @@ if (NOT DEFINED PYTHON_MODULE_PATH)
+@@ -123,7 +123,7 @@ if (NOT DEFINED PYTHON_MODULE_PATH)
      if (NOT EXISTS "${CMAKE_INSTALL_PREFIX}/${PYTHON_MODULE_PATH}")
        ### Calculate the python module path (prefer sysconfig, fallback to distutils for compatibility)
        execute_process(

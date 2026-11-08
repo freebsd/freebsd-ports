@@ -1,0 +1,12 @@
+--- ui/webui/webui_features.gni.orig	2026-07-01 06:24:19 UTC
++++ ui/webui/webui_features.gni
+@@ -44,7 +44,8 @@ if (enable_cast_receiver || is_cast_android || is_cast
+     # Enable the WebUI version of the New Tab Page.
+     enable_webui_ntp =
+         target_os == "win" || target_os == "mac" || target_os == "linux" ||
+-        target_os == "chromeos" || is_desktop_android
++        target_os == "chromeos" || is_desktop_android || target_os == "openbsd" ||
++        target_os == "freebsd"
+   }
+   declare_args() {
+     # Enable WebUI Contextual Tasks Composebox.

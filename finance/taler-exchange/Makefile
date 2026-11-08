@@ -10,6 +10,8 @@ WWW=		https://www.taler.net/en/index.html
 LICENSE=	GPLv3
 LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING
 
+BROKEN=		error: use of undeclared identifier 'GNUNET_CRYPTO_QUALITY_STRONG'
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
 		jq>0:textproc/jq
 RUN_DEPENDS=	jq>0:textproc/jq

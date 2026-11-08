@@ -1,7 +1,7 @@
 PORTNAME=	tsduck
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.44
-DISTVERSIONSUFFIX=	-4676
+DISTVERSION=	3.45
+DISTVERSIONSUFFIX=	-4798
 CATEGORIES=	multimedia
 
 MAINTAINER=	thierry@lelegard.fr
@@ -9,6 +9,7 @@ COMMENT=	Reference framework for MPEG transport streams
 WWW=		https://tsduck.io
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	bash:shells/bash \
 		coreutils>0:sysutils/coreutils \
@@ -19,7 +20,6 @@ BUILD_DEPENDS=	bash:shells/bash \
 		rubygem-asciidoctor>0:textproc/rubygem-asciidoctor \
 		rubygem-rouge>0:textproc/rubygem-rouge \
 		str>0:devel/str
-
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpcsclite.so:devel/pcsc-lite \
 		librist.so:multimedia/librist \

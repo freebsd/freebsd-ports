@@ -11,7 +11,7 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	desktop-file-validate:devel/desktop-file-utils \
 		blueprint-compiler:devel/blueprint-compiler
 LIB_DEPENDS=	libgio-2.0.so:devel/glib20
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Wand>0:graphics/py-wand@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wand>0:graphics/py-wand@${PY_FLAVOR}
 
 USES=		desktop-file-utils gettext-tools:build gnome meson pkgconfig python shebangfix
 USE_GNOME=	glib20 gtk40 libadwaita pygobject3

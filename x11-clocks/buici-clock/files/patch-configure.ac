@@ -1,0 +1,10 @@
+--- configure.ac.orig	2026-09-02 15:44:14.000000000 +0000
++++ configure.ac	2026-09-04 14:48:41.166531000 +0000
+@@ -57,6 +57,7 @@
+ AC_SUBST(XO_PATH)
+ AC_SUBST(CFLAGS_W)
+ AC_CONFIG_FILES([Makefile])
++AC_CONFIG_SUBDIRS([xo])
+ AC_OUTPUT
+ 
+ dnl -- Prevent accidental edits.  

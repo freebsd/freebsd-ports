@@ -3,6 +3,7 @@
 %%SITE_ARCH%%/PDL/Fit/LM.pm
 %%SITE_ARCH%%/PDL/Fit/Linfit.pm
 %%SITE_ARCH%%/PDL/Fit/Polynomial.pm
+%%SITE_ARCH%%/PDL/Pdldoc/PDL-Fit.db
 %%SITE_ARCH%%/auto/PDL/Fit/Gaussian/Gaussian.so
 %%PERL5_MAN3%%/PDL::Fit.3.gz
 %%PERL5_MAN3%%/PDL::Fit::Gaussian.3.gz

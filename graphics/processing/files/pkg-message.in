@@ -1,0 +1,18 @@
+[
+{ type: install
+  message: <<EOM
+Processing runs as a Linux binary via FreeBSD's Linux emulation layer.
+
+Make sure the Linuxulator is enabled (the linux(4) and linux64(4)
+kernel modules are loaded automatically on demand) and that linprocfs
+and linsysfs are mounted, which the linux_base-rl9 package sets up:
+
+	# service linux start
+
+On systems without NVIDIA graphics, OpenGL sketches render through
+the Mesa software rasterizer of the Linux userland, which is slower
+than native OpenGL.  The serial library expects Linux device names
+such as /dev/ttyUSB0; symlink your FreeBSD serial devices if needed.
+EOM
+}
+]

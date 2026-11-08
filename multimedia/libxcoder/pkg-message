@@ -1,0 +1,22 @@
+[
+{ type: install
+  message: <<EOM
+The Quadra card is an NVMe controller (e.g. /dev/nvme1 and /dev/nvme1n1).
+libxcoder opens both nodes, which are root-only by default. To let the
+members of a group (here "video") use the card, add to /etc/devfs.rules:
+
+  [localrules=10]
+  add path 'nvme1' mode 0660 group video
+  add path 'nvme1n1' mode 0660 group video
+
+then set devfs_system_ruleset="localrules" in /etc/rc.conf and run
+"service devfs restart". Use the unit numbers of your Quadra card:
+ni_rsrc_list shows them. Do not give access to your system disks.
+
+libxcoder keeps its lock and shared memory files in /tmp (NI_LCK_*).
+
+quadra_fw_upgrade (with nvmefw) flashes the card's firmware. Run it with
+-n first (dry run).
+EOM
+}
+]

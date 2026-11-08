@@ -1,0 +1,7 @@
+mod_auth_gssapi is an Apache HTTP Server module that authenticates users
+with GSSAPI/Kerberos (SPNEGO) and related mechanisms.
+
+This is an independent build of mod_auth_gssapi wired to the MIT Kerberos
+from security/krb5, so it matches the FreeIPA server stack (net/freeipa-server,
+security/gssproxy).  It installs the same module and therefore conflicts with
+www/mod_auth_gssapi.

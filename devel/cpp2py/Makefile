@@ -31,6 +31,7 @@ GH_ACCOUNT=	TRIQS
 SHEBANG_FILES=	bin/c*
 
 CMAKE_ARGS=	-DPYTHON_INTERPRETER:STRING=${PYTHON_CMD}
+CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/TRIQS/cpp2py/issues/59
 
 PORTSCOUT=	limit:^[0-9\.]*$$
 

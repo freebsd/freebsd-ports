@@ -9,7 +9,7 @@
 # odoo_enable:		run odoo server (default=NO)
 # odoo_database:	define odoo database name (default=odoodb)
 # odoo_datadir:		directory where odoo store data (default=/var/lib/odoo)
-# odoo_flags:		additional flags for odoo server (default=--without-demo=all)
+# odoo_flags:		additional flags for odoo server (default=--without-demo=True)
 #
 
 . /etc/rc.subr
@@ -22,7 +22,7 @@ load_rc_config ${name}
 : ${odoo_enable:=NO}
 : ${odoo_database:="odoodb"}
 : ${odoo_datadir:="/var/lib/${name}"}
-: ${odoo_flags="--without-demo=all"}
+: ${odoo_flags="--without-demo=True"}
 
 odoo_user="odoo"
 pidfile=/var/run/odoo.pid

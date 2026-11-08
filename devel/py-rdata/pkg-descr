@@ -1,0 +1,3 @@
+Read R datasets from Python.
+
+It parses R .rda and .rds files into pandas-compatible data structures.

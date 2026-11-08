@@ -79,7 +79,15 @@ do
         1)
             # If the exit code is 1 then PORTREVISION wasn't found, so we need to add one with value of 1
             printc "INFO: $1 PORTREVISION not found, adding PORTREVISION= 1" "green"
-            rm -f $tempfile && awk '/^(PORT|DIST)VERSION\??=\t/{ print; print "PORTREVISION=\t1"; next } { print }' "$1/Makefile" > $tempfile \
+            rm -f $tempfile && awk '
+                /^(PORT|DIST)VERSION(PREFIX|SUFFIX)?\??=\t/ { last=NR }
+                { lines[NR]=$0 }
+                END {
+                    for (i=1; i<=NR; i++) {
+                        print lines[i]
+                        if (i==last) print "PORTREVISION=\t1"
+                    }
+                }' "$1/Makefile" > $tempfile \
             && cat $tempfile > "$1/Makefile"
             # If there is not PORTREVISION line, maybe it is a slave port, try
             # to add it before a CATEGORIES, PKGNAMESUFFIX or PKGNAMEPREFIX line:

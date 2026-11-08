@@ -1,0 +1,53 @@
+# Port smoke test: one program that touches every host library the port
+# links (libcrypto, libsqlite3, libsodium, libzstd, libbz2). smoke-test.sh
+# runs it through all three backends and expects identical output.
+:>inc "std/compress/compress.pfn"
+:>inc "std/crypto/crypto.pfn"
+:>inc "std/crypto/ed25519.pfn"
+:>inc "std/db/db.pfn"
+:>inc "std/encoding/base.pfn"
+
+BEGIN {
+    print "sha256 " std.crypto.crypto.sha256("puffin")
+
+    h = std.db.db.open(":memory:", "rwc")
+    std.db.db.exec(h, "CREATE TABLE t (n INTEGER)")
+    std.db.db.exec(h, "INSERT INTO t VALUES (?)", 41)
+    std.db.db.exec(h, "INSERT INTO t VALUES (?)", 1)
+    rows = std.db.db.query(h, "SELECT sum(n) AS s FROM t")
+    print "sqlite sum " get_path(rows, 0, "s")
+    std.db.db.close_db(h)
+
+    case std.crypto.ed25519.keypair("0123456789abcdef0123456789abcdef") {
+        Ok(k): {
+            case std.crypto.ed25519.sign(k, "message") {
+                Ok(s): {
+                    print "ed25519 valid " std.crypto.ed25519.is_valid(k, "message", s)
+                    print "ed25519 tampered " std.crypto.ed25519.is_valid(k, "messagE", s)
+                }
+                Err(e): print "ed25519 sign error " e.message
+            }
+        }
+        Err(e): print "ed25519 keypair error " e.message
+    }
+
+    # both blobs are "puffin\n"
+    case std.encoding.base.hex_decode("28b52ffd045839000070756666696e0ab9c27fd8") {
+        Ok(d): {
+            case std.compress.zstd_decompress(d) {
+                Ok(v): printf "zstd %s", v
+                Err(e): print "zstd error " e.message
+            }
+        }
+        Err(e): print "hex error " e.message
+    }
+    case std.encoding.base.hex_decode("425a683931415926535992ad57b0000002c180001001214200200021800c02682ddc5dc914e142424ab55ec0") {
+        Ok(d): {
+            case std.compress.bzip2_decompress(d) {
+                Ok(v): printf "bzip2 %s", v
+                Err(e): print "bzip2 error " e.message
+            }
+        }
+        Err(e): print "hex error " e.message
+    }
+}

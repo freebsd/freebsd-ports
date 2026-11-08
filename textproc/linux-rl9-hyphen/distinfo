@@ -1,0 +1,9 @@
+TIMESTAMP = 1790178217
+SHA256 (rocky/h/hyphen-2.8.8-17.el9.aarch64.rpm) = 024f9c55f4d56f4e483894c4382e0b01f221dddfb04ec15a65aa36fb6b6a1340
+SIZE (rocky/h/hyphen-2.8.8-17.el9.aarch64.rpm) = 29178
+SHA256 (rocky/h/hyphen-2.8.8-17.el9.i686.rpm) = 3b5cdc851a6e1e758c0e58635fd029174f6d8af79becbdad05e61dbfaa5ef274
+SIZE (rocky/h/hyphen-2.8.8-17.el9.i686.rpm) = 29740
+SHA256 (rocky/h/hyphen-2.8.8-17.el9.x86_64.rpm) = 6cb90d376202fd7320adda6e032ea9d8f900ef65433dffa9d980f9f294d27994
+SIZE (rocky/h/hyphen-2.8.8-17.el9.x86_64.rpm) = 29581
+SHA256 (rocky/h/hyphen-2.8.8-17.el9.src.rpm) = 0def4f454d11308cfd3c333b54705026d312f67e93aef9b8e31433c69c3b58f6
+SIZE (rocky/h/hyphen-2.8.8-17.el9.src.rpm) = 648239

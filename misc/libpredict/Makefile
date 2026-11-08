@@ -17,6 +17,7 @@ GH_ACCOUNT=	la1k
 USE_LDCONFIG=	yes
 
 CMAKE_OFF=	BUILD_TESTING
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/la1k/libpredict/issues/116
 
 PLIST_FILES=	include/predict/predict.h \
 		lib/libpredict.so \

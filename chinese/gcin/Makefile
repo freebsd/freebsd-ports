@@ -1,6 +1,6 @@
 PORTNAME=	gcin
-PORTVERSION=	2.9.0
-PORTREVISION=	4
+PORTVERSION=	2.9.4
+PORTREVISION=	0
 CATEGORIES=	chinese textproc gnome
 MASTER_SITES=	http://hyperrate.com/gcin-source/
 EXTRACT_ONLY=	gcin-${PORTVERSION}.tar.xz
@@ -10,8 +10,6 @@ COMMENT=	Traditional Chinese input utility in X
 WWW=		https://hyperrate.com/dir.php?eid=67
 
 LICENSE=	LGPL21
-
-BROKEN_powerpc64=	fails to build: gmake[3]: *** [Makefile:30: en-american] Error 255
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 

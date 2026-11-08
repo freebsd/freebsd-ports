@@ -1,0 +1,11 @@
+--- src/CMakeLists.txt.orig	2026-09-05 15:51:17 UTC
++++ src/CMakeLists.txt
+@@ -14,7 +14,7 @@
+ # limitations under the License.
+ # ########################################################################
+ 
+-cmake_minimum_required(VERSION 2.8)
++cmake_minimum_required(VERSION 3.10)
+ 
+ #User toggle-able options that can be changed on the command line with -D
+ option( BUILD_RUNTIME "Build the BLAS runtime library" ON )

@@ -9,8 +9,6 @@ WWW=		https://gitlab.freedesktop.org/xorg/font/arabic-misc
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:xz xorg-cat:font
-
-NO_ARCH=	yes
+USES=		xorg-cat:font
 
 .include <bsd.port.mk>

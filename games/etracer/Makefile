@@ -11,7 +11,7 @@ WWW=		https://sourceforge.net/projects/extremetuxracer/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libsfml-system.so:devel/sfml
+LIB_DEPENDS=	libsfml-system.so:multimedia/sfml2
 
 USES=		compiler:c++11-lang gl pkgconfig tar:xz xorg
 USE_GL=		gl glu

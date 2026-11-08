@@ -1,4 +1,4 @@
---- sqlite/CMakeLists.txt.orig	2025-05-09 16:44:31 UTC
+--- sqlite/CMakeLists.txt.orig	2026-10-08 21:02:52 UTC
 +++ sqlite/CMakeLists.txt
 @@ -23,7 +23,7 @@ set(SQLITE_SOURCE
  
@@ -9,3 +9,13 @@
  target_include_directories(tdsqlite PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>)
  target_include_directories(tdsqlite SYSTEM PRIVATE ${OPENSSL_INCLUDE_DIR})
  target_link_libraries(tdsqlite PRIVATE ${OPENSSL_CRYPTO_LIBRARY} ${CMAKE_DL_LIBS} ${ZLIB_LIBRARIES})
+@@ -80,3 +80,9 @@ endif()
+     ARCHIVE DESTINATION "${CMAKE_INSTALL_LIBDIR}"
+   )
+ endif()
++
++# Add SOVERSION to shared libraries
++set_target_properties(tdsqlite PROPERTIES 
++        VERSION ${PROJECT_VERSION}
++        SOVERSION ${PROJECT_VERSION_MAJOR}
++        EXPORT_NAME tdsqlite )

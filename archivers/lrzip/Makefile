@@ -1,31 +1,29 @@
 PORTNAME=	lrzip
-DISTVERSIONPREFIX=	v
-DISTVERSION=	0.660
+DISTVERSION=	0.7.3
+PORTEPOCH=	1
 CATEGORIES=	archivers
+MASTER_SITES=	https://github.com/ckolivas/${PORTNAME}/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Long Range ZIP or Lzma RZIP
+WWW=		https://github.com/ckolivas/lrzip
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf cpe libtool perl5 shebangfix
-USE_GITHUB=	yes
-GH_ACCOUNT=	ckolivas
-GH_PROJECT=	lrzip
+NOT_FOR_ARCHS=	armv6 armv7 i386 powerpc powerpcspe
+NOT_FOR_ARCHS_REASON=	Only 64-bit platforms are supported
 
-BUILD_DEPENDS=	nasm>=0:devel/nasm
 LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 		liblzo2.so:archivers/lzo2
 
-CFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ENV+=	ac_cv_prog_ASM_PROG='no '
-GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-LDFLAGS+=	-L${LOCALBASE}/lib
-SHEBANG_FILES=	${WRKSRC}/lrztar
-USE_PERL5=	build
+USES=		cpe libtool localbase:ldflags perl5 shebangfix tar:xz
 CPE_VENDOR=	long_range_zip_project
 CPE_PRODUCT=	long_range_zip
+USE_PERL5=	build
+SHEBANG_FILES=	${WRKSRC}/lrztar
+
+GNU_CONFIGURE=	yes
 
 CONFLICTS_INSTALL=	lrzsz # bin/lrz share/man/man1/lrz.1.gz
 

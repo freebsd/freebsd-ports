@@ -52,7 +52,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		lazy_static-1.4.0 \
 		libadwaita-0.3.1 \
 		libadwaita-sys-0.3.0 \
-		libc-0.2.123 \
+		libc-0.2.186 \
 		locale_config-0.3.0 \
 		log-0.4.16 \
 		malloc_buf-0.0.6 \

@@ -1,9 +1,9 @@
 PORTNAME=	ngbuddy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0
+DISTVERSION=	1.1
 CATEGORIES=	sysutils
 
-MAINTAINER=	daniel@belltech.it
+MAINTAINER=	bellhyve@zelta.space
 COMMENT=	rc.d script for management of netgraph networks
 WWW=		https://github.com/bellhyve/ngbuddy
 

@@ -1,5 +1,5 @@
 PORTNAME=	gegl
-DISTVERSION=	0.4.70
+DISTVERSION=	0.4.72
 CATEGORIES=	graphics
 MASTER_SITES=	GIMP
 
@@ -25,22 +25,24 @@ USE_LDCONFIG=	yes
 
 SHEBANG_FILES=	tools/xml_insert.sh
 
-MESON_ARGS=	-Ddocs=false \
-		-Dgi-docgen=disabled \
-		-Dworkshop=false \
-		-Dintrospection=true \
-		-Dlensfun=disabled \
-		-Dmaxflow=disabled \
-		-Dmrg=disabled \
-		-Dpygobject=disabled \
-		-Dlua=disabled
+MESON_DISABLED=	gi-docgen \
+		maxflow \
+		mrg \
+		lensfun \
+		lua \
+		pygobject \
+		sdl3
+MESON_FALSE=	docs \
+		workshop
+MESON_TRUE=	introspection
+
 # relocatable does not mean ELF relocation
 MESON_ARGS+=	-Drelocatable-bundle=no
 .if !exists(/usr/include/omp.h)
 MESON_ARGS+=	-Dopenmp=disabled
 .endif
 
-GEGL_SHLIB=	0.469.1
+GEGL_SHLIB=	0.471.1
 GEGL_VER=	0.4
 PLIST_SUB+=	GEGL_SHLIB=${GEGL_SHLIB} GEGL_VER=${GEGL_VER}
 

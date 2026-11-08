@@ -1,0 +1,19 @@
+-- Link unittest against duckdb_static on FreeBSD.
+-- DuckDB's unittest target normally links against the shared libduckdb on
+-- non-Windows platforms.  On FreeBSD the C++ exception type_info symbols are
+-- not exported in a way that lets Catch2's REQUIRE_THROWS_AS catch derived
+-- exceptions thrown from the shared library, causing ~50 C++ API tests to
+-- fail.  Linking the test binary statically against duckdb_static keeps all
+-- exception RTTI in the same module and lets the tests pass.
+--- test/CMakeLists.txt.orig
++++ test/CMakeLists.txt
+@@ -105,7 +105,7 @@
+ if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+   target_compile_options(unittest PRIVATE -Wno-error=maybe-uninitialized)
+ endif()
+
+-if(TARGET duckdb AND NOT WIN32)
++if(TARGET duckdb AND NOT WIN32 AND NOT CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
+   # Some tests reference internal third-party symbols (e.g. re2/mbedtls) that
+   # are linked into duckdb but not exported from the shared library.
+   target_link_libraries(

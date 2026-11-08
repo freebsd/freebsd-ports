@@ -1,11 +1,11 @@
 PORTNAME=	Hmisc
-DISTVERSION=	5.2-3
+DISTVERSION=	5.2-6
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Harrell Miscellaneous functions useful for data analysis
-WWW=		https://cran.r-project.org/web/packages/Hmisc/
+WWW=		https://cran.r-project.org/package=Hmisc
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
@@ -18,7 +18,6 @@ CRAN_DEPENDS=	R-cran-latticeExtra>0:graphics/R-cran-latticeExtra \
 		R-cran-htmlTable>0:textproc/R-cran-htmlTable \
 		R-cran-Formula>0:math/R-cran-Formula \
 		R-cran-colorspace>0:graphics/R-cran-colorspace
-BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
 USES=		cran:auto-plist,compiles

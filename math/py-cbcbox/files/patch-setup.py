@@ -1,0 +1,1127 @@
+-- Replace the upstream setup.py with a minimal setuptools configuration.
+-- Upstream setup.py rebuilds OpenBLAS, SuiteSparse AMD and the full COIN-OR
+-- stack from git sources and bundles the resulting binaries into a wheel.
+-- FreeBSD already provides math/cbc, so this port installs only the Python
+-- wrapper and points it at the system CBC binary.
+
+--- setup.py.orig	2026-09-08 23:28:23 UTC
++++ setup.py
+@@ -1,1109 +1,15 @@
+-import glob as _glob
+-import multiprocessing
+ import os
+-import platform
+-import re
+-import shlex
+-import shutil
+-import subprocess
+-import sys
+-
+ from setuptools import setup
+-from wheel.bdist_wheel import bdist_wheel as _bdist_wheel
+ 
++THIS_DIR = os.path.abspath(os.path.dirname(__file__))
+ 
+-# ── Wheel customisation ───────────────────────────────────────────────────────
++with open(os.path.join(THIS_DIR, "README.md"), "r", encoding="utf-8") as f:
++    long_description = f.read()
+ 
+-class genericpy_bdist_wheel(_bdist_wheel):
+-    def finalize_options(self):
+-        _bdist_wheel.finalize_options(self)
+-        self.root_is_pure = False
+-
+-    def get_tag(self):
+-        python, abi, plat = _bdist_wheel.get_tag(self)
+-        python, abi = "py3", "none"
+-        if os.environ.get("CIBUILDWHEEL", "0") == "1":
+-            if plat == "linux_x86_64":
+-                plat = "manylinux2014_x86_64"
+-            elif plat == "linux_aarch64":
+-                plat = "manylinux2014_aarch64"
+-        return python, abi, plat
+-
+-
+-cmdclass = {"bdist_wheel": genericpy_bdist_wheel}
+-
+-
+-# ── Constants ─────────────────────────────────────────────────────────────────
+-
+-THIS_DIR       = os.path.abspath(os.path.dirname(__file__))
+-DIST_DIR       = os.path.join(THIS_DIR, "cbc_dist")
+-DIST_DIR_AVX2  = os.path.join(THIS_DIR, "cbc_dist_avx2")
+-DIST_DIR_DEBUG     = os.path.join(THIS_DIR, "cbc_dist_debug")
+-DIST_DIR_DEBUG_AVX2 = os.path.join(THIS_DIR, "cbc_dist_debug_avx2")
+-LIB_DIR        = os.path.join(DIST_DIR, "lib")
+-NPROC    = str(max(1, multiprocessing.cpu_count()))
+-
+-SUITESPARSE_TAG = "v7.12.2"
+-OPENBLAS_TAG    = "v0.3.31"
+-
+-# Development of the COIN-OR stack has moved to the "next" branch of each
+-# repository (the "master" branch is now the last stable release line).
+-COIN_OR_BRANCH  = "next"
+-
+-# -ffp-contract=off disables the compiler's automatic fusion of separate
+-# multiply/add operations into a single FMA instruction. FMA computes the
+-# product with full (unrounded) intermediate precision before the final
+-# rounding, so results can differ slightly (in the last bit) from the
+-# strictly-IEEE separate multiply + add. This tiny discrepancy is enough to
+-# make CBC's numerical routines (which rely on exact reproducibility across
+-# the stack) occasionally behave inconsistently, so this flag is applied to
+-# the COIN-OR stack (CoinUtils, Osi, Clp, Cgl, Cbc) only — third-party
+-# dependencies built from source (OpenBLAS, SuiteSparse AMD) keep their
+-# default FMA-contraction behaviour.
+-FP_CONTRACT_OFF = "-ffp-contract=off"
+-
+-# Build order matters: each project depends on the ones before it.
+-COIN_REPOS = [
+-    ("CoinUtils", "https://github.com/coin-or/CoinUtils.git"),
+-    ("Osi",       "https://github.com/coin-or/Osi.git"),
+-    ("Clp",       "https://github.com/coin-or/Clp.git"),
+-    ("Cgl",       "https://github.com/coin-or/Cgl.git"),
+-    ("Cbc",       "https://github.com/coin-or/Cbc.git"),
+-]
+-
+-# Shared libraries allowed by the manylinux2014 policy (PEP 599).
+-# Anything NOT matching this pattern must be either linked statically
+-# or bundled inside the wheel.
+-_MANYLINUX_ALLOWED = re.compile(
+-    r"^lib(gcc_s|stdc\+\+|m|dl|rt|pthread|c|nsl|util|z|gomp|crypt|resolv)\."
+-    r"|^(linux-vdso|linux-gate|ld-linux)"
++setup(
++    long_description=long_description,
++    long_description_content_type="text/markdown",
++    packages=["cbcbox"],
++    package_dir={"cbcbox": "src"},
++    zip_safe=False,
+ )
+-
+-# ── Windows / MSYS2-MinGW64 constants ────────────────────────────────────────
+-
+-# MSYS2 is pre-installed on windows-latest GitHub Actions runners.
+-_MSYS2_BASH = r"C:\msys64\usr\bin\bash.exe"
+-
+-# DLLs that ship with Windows itself and must NOT be bundled.
+-_WIN_SYS_DLL = re.compile(
+-    r"^(kernel32|user32|ntdll|msvcrt|api-ms-win|ext-ms-win|advapi32|"
+-    r"shell32|ole32|oleaut32|ws2_32|mswsock|bcrypt|crypt32|secur32|"
+-    r"ucrtbase|vcruntime|hid|setupapi|cfgmgr32|imm32|version|winmm|"
+-    r"shlwapi|rpcrt4|comctl32|comdlg32|gdi32|netapi32|psapi|dbghelp)"
+-    r"\.dll$",
+-    re.IGNORECASE,
+-)
+-
+-
+-def _win_to_msys2(s: str) -> str:
+-    """Convert Windows absolute path references within *s* to MSYS2 format.
+-
+-    'C:\\foo\\bar'          →  '/c/foo/bar'
+-    '--prefix=C:/foo/bar'   →  '--prefix=/c/foo/bar'
+-    '-LC:/foo/bar'          →  '-L/c/foo/bar'  (even when preceded by a flag letter)
+-    'https://example.com'   →  unchanged
+-    Strings without drive letters pass through unchanged.
+-    """
+-    s = str(s)
+-    # Protect URL schemes (e.g. "https://") so they aren't misidentified as
+-    # Windows drive letters.  Use a lambda so Python doesn't interpret \x in
+-    # the replacement string (re.sub string replacement doesn't allow \x).
+-    placeholder = "\x00\x00"
+-    s = re.sub(r'([A-Za-z]+)://', lambda m: m.group(1) + placeholder, s)
+-    # Convert Windows drive letters to MSYS2 /x/ format.
+-    s = re.sub(r'([A-Za-z]):[/\\]', lambda m: f"/{m.group(1).lower()}/", s)
+-    # Restore URL schemes and normalise remaining back-slashes.
+-    return s.replace('\x00\x00', '://').replace('\\', '/')
+-
+-
+-# ── Generic helpers ───────────────────────────────────────────────────────────
+-
+-def run(*cmd, cwd=None, env=None):
+-    print(f">>> {' '.join(str(c) for c in cmd)}", flush=True)
+-    if platform.system() == "Windows":
+-        # Route every build command through MSYS2/MinGW64 so that autotools,
+-        # make, pkg-config, gfortran etc. are all available.
+-        parts = ["export PATH=/mingw64/bin:/usr/bin:$PATH"]
+-        if cwd:
+-            parts.append(f"cd {shlex.quote(_win_to_msys2(str(cwd)))}")
+-        parts.append(" ".join(shlex.quote(_win_to_msys2(str(c))) for c in cmd))
+-        subprocess.run([_MSYS2_BASH, "-lc", " && ".join(parts)],
+-                       check=True, env=env)
+-    else:
+-        subprocess.run(list(cmd), check=True, cwd=cwd, env=env)
+-
+-
+-def _is_x86_64() -> bool:
+-    return platform.machine().lower() in ("x86_64", "amd64")
+-
+-
+-def clone_if_missing(name, url, branch="master"):
+-    dest = os.path.join(THIS_DIR, name)
+-    if not os.path.exists(dest):
+-        # Use native git directly — avoids routing through MSYS2 where git
+-        # may not be on PATH, and avoids any path-conversion of the URL.
+-        print(f">>> git clone --depth 1 --branch {branch} {url} {dest}", flush=True)
+-        subprocess.run(
+-            ["git", "clone", "--depth", "1", "--branch", branch, url, dest],
+-            check=True,
+-        )
+-    else:
+-        # Pull the latest commits so that a stale shallow clone never causes
+-        # API-mismatch build failures (e.g. a new method added to Clp that
+-        # Cbc already calls, but the local clone predates the push).
+-        print(f">>> git -C {dest} pull --ff-only", flush=True)
+-        subprocess.run(
+-            ["git", "-C", dest, "pull", "--ff-only"],
+-            check=True,
+-        )
+-    return dest
+-
+-
+-
+-# ── Build OpenBLAS (static, with Fortran/LAPACK) ─────────────────────────────
+-
+-def build_openblas(dest_dir, *, dynamic_arch=False, target=None, extra_cflags="",
+-                   dynamic_list=None):
+-    src = clone_if_missing(
+-        "OpenBLAS",
+-        "https://github.com/xianyi/OpenBLAS.git",
+-        OPENBLAS_TAG,
+-    )
+-    # OpenBLAS builds in-tree; always clean before each build so that a
+-    # second (AVX2) pass doesn't inherit object files from the first.
+-    run("make", "clean", cwd=src)
+-
+-    make_vars = []
+-    if platform.system() == "Windows":
+-        make_vars.append("BINARY=64")
+-    if target:
+-        # Explicit CPU target (e.g. TARGET=HASWELL for AVX2 build).
+-        make_vars.append(f"TARGET={target}")
+-    elif dynamic_arch:
+-        # DYNAMIC_ARCH=1 compiles multiple kernels and dispatches at runtime.
+-        # NO_AVX512=1: AVX-512 kernels use very large stack frames (ZMM spills)
+-        # that overflow the 512 KB default pthread stack on macOS, causing
+-        # SIGSEGV inside dgetrf_single on CI runners with Ice Lake Xeons.
+-        # Our wheel targets Haswell (AVX2) as the high-water mark, so AVX-512
+-        # is never needed.
+-        # This must ALSO be applied on Windows: without DYNAMIC_ARCH/NO_AVX512,
+-        # OpenBLAS falls back to build-time CPUID auto-detection of the CI
+-        # runner's host CPU, and some GitHub-hosted Windows runners land on
+-        # AVX-512-capable hosts, which then intermittently fail to compile
+-        # OpenBLAS's SkylakeX kernel under MinGW GCC 16.2 ("inlining failed
+-        # in call to always_inline ...: target specific option mismatch").
+-        # That is the root cause of the flaky "Compile Windows *" job failures
+-        # seen across many CI runs — it depends on which physical host the
+-        # runner happens to land on, not on any code change.
+-        make_vars.append("DYNAMIC_ARCH=1")
+-        make_vars.append("NO_AVX512=1")
+-        # Limit the set of compiled kernels to modern CPUs; pre-2010
+-        # architectures (BARCELONA, CORE2, …) are dropped.  CPUs not in the
+-        # list fall back to the generic kernel — correctness is unaffected.
+-        if dynamic_list:
+-            make_vars.append(f"DYNAMIC_LIST={dynamic_list}")
+-
+-    # Never build the CBLAS C interface — COIN-OR uses Fortran-style BLAS
+-    # (dgemm_, dtrsm_, …) so the cblas_* wrappers are dead weight.
+-    make_vars.append("NO_CBLAS=1")
+-
+-    if extra_cflags:
+-        make_vars.append(f"CFLAGS={extra_cflags}")
+-        make_vars.append(f"FFLAGS={extra_cflags}")
+-
+-    # Build static + shared libs (libs target skips test suite).
+-    # Building shared is required on all platforms so configure scripts
+-    # (CoinUtils LAPACK test) can link against the shared library — static
+-    # requires explicit Fortran runtime flags which is fragile.
+-    run("make", f"-j{NPROC}", "libs", "shared", *make_vars, cwd=src)
+-    run("make", *make_vars, f"PREFIX={dest_dir}", "install", cwd=src)
+-
+-
+-# ── Build SuiteSparse AMD (static only, direct compilation) ──────────────────
+-
+-def build_amd(extra_cflags=""):
+-    src = clone_if_missing(
+-        "SuiteSparse",
+-        "https://github.com/DrTimothyAldenDavis/SuiteSparse.git",
+-        SUITESPARSE_TAG,
+-    )
+-    ss_dir  = os.path.join(src, "SuiteSparse_config")
+-    amd_src = os.path.join(src, "AMD", "Source")
+-    amd_inc = os.path.join(src, "AMD", "Include")
+-
+-    os.makedirs(LIB_DIR, exist_ok=True)
+-    inc_out = os.path.join(DIST_DIR, "include", "suitesparse")
+-    os.makedirs(inc_out, exist_ok=True)
+-
+-    # AMD is a pure combinatorial/integer library — it doesn't use BLAS or
+-    # LAPACK at all.  Compiling directly from C source avoids the SuiteSparse
+-    # cmake build system which unconditionally runs FindBLAS (and fails when
+-    # only a static OpenBLAS is present because the link test needs the
+-    # Fortran runtime libraries).
+-    cc = os.environ.get("CC", "gcc")
+-    cflags = ["-O2", "-fPIC", f"-I{ss_dir}", f"-I{amd_inc}"]
+-    if extra_cflags:
+-        cflags.extend(extra_cflags.split())
+-
+-    # SuiteSparse_config.c → libsuitesparseconfig.a
+-    ss_obj = os.path.join(THIS_DIR, "_ss_config.o")
+-    run(cc, *cflags, "-c",
+-        os.path.join(ss_dir, "SuiteSparse_config.c"), "-o", ss_obj)
+-    run("ar", "rcs", os.path.join(LIB_DIR, "libsuitesparseconfig.a"), ss_obj)
+-
+-    # AMD/Source/*.c → libamd.a
+-    amd_objs = []
+-    for c_file in sorted(_glob.glob(os.path.join(amd_src, "*.c"))):
+-        obj = c_file[:-2] + ".o"
+-        run(cc, *cflags, "-c", c_file, "-o", obj)
+-        amd_objs.append(obj)
+-    run("ar", "rcs", os.path.join(LIB_DIR, "libamd.a"), *amd_objs)
+-
+-    # Install headers
+-    for h in _glob.glob(os.path.join(amd_inc, "*.h")):
+-        shutil.copy2(h, inc_out)
+-    shutil.copy2(os.path.join(ss_dir, "SuiteSparse_config.h"), inc_out)
+-
+-
+-# ── Build COIN-OR projects ────────────────────────────────────────────────────
+-
+-def build_coin_or(dest_dir=None, extra_cxxflags="", extra_ldflags="", is_debug=False):
+-    """Build the full COIN-OR stack and install into *dest_dir*.
+-
+-    *extra_cxxflags* is appended to CXXFLAGS and can be used to enable
+-    architecture-specific optimisations (e.g. "-O3 -march=haswell -DCOIN_AVX2=4"
+-    for the Haswell-optimised build) or debug flags.
+-
+-    *extra_ldflags* is appended to LDFLAGS for all configure calls.  On macOS,
+-    the Clp project already gets "-L{lib_dir} -lopenblas"; extra_ldflags is
+-    merged into that rather than passed separately.
+-
+-    *is_debug* controls whether C assert()s are compiled in.  COIN-OR's own
+-    AC_COIN_PROG_CXX/AC_COIN_PROG_CC autoconf macros normally default
+-    CXXFLAGS/CFLAGS to "-O2 -DNDEBUG" (release) or "-g" (--enable-debug), but
+-    only via ": ${CXXFLAGS:=...}" -- a shell default that never fires because
+-    we always pass CXXFLAGS/CFLAGS explicitly on the configure command line
+-    (to control -march, -ffp-contract, etc.). That silently opted every
+-    release build (generic and AVX2, on every platform) out of -DNDEBUG,
+-    leaving internal consistency assert()s compiled into the SHIPPED wheels:
+-    an assert failing in the field aborts (SIGABRT/access violation) the
+-    caller's process instead of leaving debugging to an explicit debug build.
+-    So: pass is_debug=True for the debug/debug_avx2 variants (which
+-    deliberately want assertions active, see scripts/build_mip_debug_cuts.sh)
+-    and leave it False (the default) for the generic/avx2 release variants,
+-    which now get -DNDEBUG explicitly.
+-    """
+-    if dest_dir is None:
+-        dest_dir = DIST_DIR
+-    lib_dir = os.path.join(dest_dir, "lib")
+-
+-    # AMD is a pure combinatorial/integer library that does not benefit from
+-    # AVX2 and is only built once (into the base cbc_dist/). Both COIN-OR
+-    # variants can safely link against the same static archive.
+-    amd_inc   = os.path.join(DIST_DIR, "include", "suitesparse")
+-
+-    env = os.environ.copy()
+-    pkg_config_dir = os.path.join(lib_dir, "pkgconfig")
+-    # MSYS2 bash uses ':' as separator and MSYS2-format paths.
+-    if platform.system() == "Windows":
+-        env["PKG_CONFIG_PATH"] = (
+-            _win_to_msys2(pkg_config_dir) + ":" + env.get("PKG_CONFIG_PATH", "")
+-        )
+-    else:
+-        env["PKG_CONFIG_PATH"] = (
+-            pkg_config_dir + os.pathsep + env.get("PKG_CONFIG_PATH", "")
+-        )
+-
+-    # Flags common to every project.
+-    # zlib is intentionally kept enabled (it is manylinux2014-allowed and
+-    # lets CBC read compressed MPS/LP files).
+-    common = [
+-        f"--prefix={dest_dir}",
+-        f"--libdir={lib_dir}",
+-        "--enable-static" if platform.system() != "Windows" else "--disable-static",
+-        "--enable-shared",      # produce .so/.dylib/.dll for cffi use
+-        "--disable-readline",   # libreadline not manylinux-allowed
+-        "--disable-bzlib",      # libbz2 not manylinux-allowed
+-        "--without-cholmod",    # use AMD instead
+-        "--without-glpk",       # not needed
+-        "--without-asl",        # AMPL solver library not needed
+-    ]
+-    if platform.system() == "Windows":
+-        # Declare both build and host as MinGW64 so that autoconf sets
+-        # cross_compiling=no (build==host) and uses the plain gcc/g++ from
+-        # /mingw64/bin rather than looking for x86_64-w64-mingw32-prefixed
+-        # cross-compiler tools.  With host_os=mingw32, libtool names DLLs as
+-        # lib*.dll (MinGW convention) rather than cyg*.dll (Cygwin convention).
+-        common += ["--build=x86_64-w64-mingw32", "--host=x86_64-w64-mingw32"]
+-
+-    # Use a distinct build sub-directory per variant so that generic,
+-    # AVX2, and debug builds can coexist in the same cloned source tree.
+-    if dest_dir == DIST_DIR:
+-        bld_suffix = "_build"
+-    elif dest_dir == DIST_DIR_AVX2:
+-        bld_suffix = "_build_avx2"
+-    elif dest_dir == DIST_DIR_DEBUG_AVX2:
+-        bld_suffix = "_build_debug_avx2"
+-    else:
+-        bld_suffix = "_build_debug"
+-
+-    for name, url in COIN_REPOS:
+-        src = clone_if_missing(name, url, COIN_OR_BRANCH)
+-        bld = os.path.join(src, bld_suffix)
+-        os.makedirs(bld, exist_ok=True)
+-
+-        extra = []
+-        ldflags_in_extra = False
+-        if name == "CoinUtils":
+-            # OpenBLAS provides both BLAS and LAPACK in one archive.
+-            # AMD provides fill-reducing ordering for sparse systems.
+-            #
+-            # On macOS, COINUTILS_HAS_LAPACK causes CoinDenseFactorization to
+-            # call OpenBLAS's dgetrf_single, which uses aligned AVX2 loads
+-            # (vmovdqa).  CoinDenseFactorization's elements_ buffer is allocated
+-            # with plain new[] (8/16-byte aligned), causing SIGSEGV on the
+-            # unaligned 32-byte AVX2 access.  Disabling LAPACK for CoinUtils
+-            # makes it fall back to the built-in pure-C pivot factorization,
+-            # which is correct and fast enough for the small dense bases
+-            # encountered in practice (e.g. 36-row LP).  Clp still gets LAPACK
+-            # via its own --with-lapack-lflags.
+-            if platform.system() == "Darwin":
+-                extra += ["--without-lapack"]
+-            else:
+-                extra += [f"--with-lapack-lflags=-L{lib_dir} -lopenblas"]
+-            extra += [
+-                f"--with-amd-cflags=-I{amd_inc}",
+-                f"--with-amd-lflags=-L{LIB_DIR} -lamd -lsuitesparseconfig",
+-            ]
+-        elif name == "Clp":
+-            # Do NOT pass --with-amd-cflags here: Clp wraps #include <amd.h>
+-            # inside extern "C" {} in ClpCholeskyUfl.cpp, and SuiteSparse v7's
+-            # amd.h transitively includes C++ headers (<complex> etc.) which
+-            # clang rejects inside extern "C".  AMD ordering is still available
+-            # to CBC through CoinUtils which doesn't have this wrapping issue.
+-            # --without-amd is required (not just omitting the flag): Clp's
+-            # configure auto-probes default system paths (e.g.
+-            # /usr/include/suitesparse) for AMD and, if found, compiles
+-            # ClpCholeskyUfl.cpp against it — but without --with-amd-lflags
+-            # the resulting libClp fails to link with undefined references to
+-            # SuiteSparse_malloc/SuiteSparse_free on any host that happens to
+-            # have a system SuiteSparse package installed.
+-            extra += [
+-                "--without-amd",
+-                f"--with-lapack-lflags=-L{lib_dir} -lopenblas",
+-            ]
+-            if platform.system() == "Darwin":
+-                # ClpMain.cpp calls openblas_set_num_threads() when CLP_USE_OPENBLAS=1.
+-                # On macOS two-level namespace, the clp executable must link -lopenblas
+-                # explicitly — transitive propagation via libClp.dylib is not enough.
+-                # --with-lapack-lflags covers shared library dependencies but the
+-                # executable link step needs LDFLAGS for direct symbol resolution.
+-                darwin_ldflags = f"-L{lib_dir} -lopenblas"
+-                if extra_ldflags:
+-                    darwin_ldflags += f" {extra_ldflags}"
+-                extra += [f"LDFLAGS={darwin_ldflags}"]
+-                ldflags_in_extra = True
+-            elif platform.system() == "Linux":
+-                # ClpRacingSolver.cpp resolves openblas_set_num_threads() via
+-                # dlsym(RTLD_DEFAULT, ...) when CLP_USE_OPENBLAS is defined
+-                # (which it always is here). glibc < 2.34 (e.g. manylinux2014,
+-                # manylinux_2_28) keeps dlopen/dlsym in libdl rather than libc,
+-                # and it is not linked automatically, causing "undefined
+-                # reference to `dlsym'" when linking libClp.so. Newer glibc
+-                # (>= 2.34) folds libdl into libc, so -ldl is a harmless no-op
+-                # there.
+-                linux_ldflags = "-ldl"
+-                if extra_ldflags:
+-                    linux_ldflags += f" {extra_ldflags}"
+-                extra += [f"LDFLAGS={linux_ldflags}"]
+-                ldflags_in_extra = True
+-        elif name == "Cbc":
+-            extra += [
+-                "--without-nauty",     # symmetry detection via nauty disabled
+-                "--without-lapack",
+-                # Enable multi-threaded MIP search (parallel branch-and-bound).
+-                # Requires pthreads — available on all supported platforms.
+-                "--enable-cbc-parallel",
+-            ]
+-            if platform.system() == "Linux":
+-                # Same dlsym/libdl requirement as Clp above: CbcModel.cpp and
+-                # Cbc_C_Interface.cpp also resolve openblas_set_num_threads()
+-                # and omp_set_num_threads() via dlsym(RTLD_DEFAULT, ...).
+-                linux_ldflags = "-ldl"
+-                if extra_ldflags:
+-                    linux_ldflags += f" {extra_ldflags}"
+-                extra += [f"LDFLAGS={linux_ldflags}"]
+-                ldflags_in_extra = True
+-        else:  # Osi, Cgl — do not use LAPACK directly
+-            extra += ["--without-lapack"]
+-
+-        configure = os.path.join(src, "configure")
+-        # clang (macOS) requires C++17 mode to accept aggregate assignment from
+-        # braced initializer lists (e.g. CoinDynamicConflictGraph.cpp).
+-        # -std=c++17 is harmless on GCC as well.
+-        # Note: -no-undefined is NOT passed here via LDFLAGS because it is a
+-        # libtool-specific flag, not a raw linker flag.  Passing it via LDFLAGS
+-        # causes configure's own link tests ("C compiler cannot create
+-        # executables") to fail with exit code 77 on MinGW.  COIN-OR's
+-        # AC_COIN_PROG_LIBTOOL macro already appends -no-undefined to
+-        # LT_LDFLAGS internally (aclocal.m4), which is the correct path —
+-        # it reaches libtool only when building shared libraries.
+-        # Clp and Cbc both check CLP_USE_OPENBLAS to conditionally compile
+-        # the OpenBLAS thread-count management (openblas_set_num_threads).
+-        # This enables CbcModel to cap BLAS threads to 1 during parallel B&B,
+-        # preventing stack overflow crashes on macOS whose secondary threads
+-        # have a 512 KB default stack (vs 8 MB on Linux).
+-        openblas_flag = "-DCLP_USE_OPENBLAS=1" if name in ("Clp", "Cbc") else ""
+-        # -DNDEBUG strips assert()s for release builds (never added by
+-        # autoconf's own defaults here -- see the is_debug docstring above);
+-        # debug builds must NOT get it so assertions stay active for gdb/ASan.
+-        ndebug_flag = "" if is_debug else "-DNDEBUG"
+-        cxxflags_parts = ["-std=c++17", FP_CONTRACT_OFF]
+-        if ndebug_flag:
+-            cxxflags_parts.append(ndebug_flag)
+-        if extra_cxxflags:
+-            cxxflags_parts.append(extra_cxxflags)
+-        if openblas_flag:
+-            cxxflags_parts.append(openblas_flag)
+-        cxxflags = " ".join(cxxflags_parts)
+-        # Also set CFLAGS: the COIN-OR stack is pure C++ (no .c sources as of
+-        # this writing), so this is mostly a defensive no-op, but configure's
+-        # own link/feature-detection tests invoke $CC directly and future .c
+-        # files would silently pick up FMA contraction otherwise.
+-        cflags_parts = [FP_CONTRACT_OFF]
+-        if ndebug_flag:
+-            cflags_parts.append(ndebug_flag)
+-        configure_args = [
+-            configure, *common, *extra,
+-            f"CXXFLAGS={cxxflags}", f"CFLAGS={' '.join(cflags_parts)}",
+-        ]
+-        if extra_ldflags and not ldflags_in_extra:
+-            configure_args.append(f"LDFLAGS={extra_ldflags}")
+-        run(*configure_args, cwd=bld, env=env)
+-        run("make", "-j", NPROC, cwd=bld)
+-        run("make", "install", cwd=bld)
+-
+-
+-# ── Bundle dynamic dependencies ───────────────────────────────────────────────
+-
+-def _is_system_lib(path: str) -> bool:
+-    """Return True for libs that should NOT be bundled into the wheel."""
+-    name = os.path.basename(path)
+-    if platform.system() == "Linux":
+-        return bool(_MANYLINUX_ALLOWED.match(name))
+-    # macOS: only the standard system library trees are truly "system".
+-    # A loader-relative (@rpath/@loader_path/@executable_path) install name
+-    # does NOT necessarily mean the lib has already been bundled: modern
+-    # Homebrew GCC reports its own runtime libs (libgcc_s, libstdc++, ...)
+-    # with an @rpath install name from the start, before cbcbox's own
+-    # bundling pass ever touches them. Those still need to be resolved to
+-    # a real file on disk and copied in; see _resolve_macos_dep().
+-    return path.startswith("/usr/lib/") or path.startswith("/System/")
+-
+-
+-def _resolve_macos_dep(binary: str, dep: str) -> str:
+-    """Resolve a loader-relative (@rpath/@loader_path/@executable_path)
+-    dependency reference *dep* found in *binary* to an absolute file path.
+-
+-    Returns "" if it cannot be resolved.
+-    """
+-    if not dep.startswith("@"):
+-        return dep
+-    name = os.path.basename(dep)
+-    base_dir = os.path.dirname(os.path.realpath(binary))
+-
+-    # 0) @loader_path/@executable_path are directly relative to the
+-    #    binary's own directory -- no need to consult LC_RPATH.
+-    if dep.startswith("@loader_path/") or dep.startswith("@executable_path/"):
+-        candidate = os.path.join(base_dir, name)
+-        if os.path.exists(candidate):
+-            return candidate
+-
+-    # 1) Look at the binary's own LC_RPATH entries (this is how the
+-    #    dynamic linker would actually resolve an @rpath/ reference).
+-    if dep.startswith("@rpath/"):
+-        out = subprocess.run(
+-            ["otool", "-l", binary], capture_output=True, text=True
+-        ).stdout
+-        lines = out.splitlines()
+-        rpaths = []
+-        for i, line in enumerate(lines):
+-            if line.strip() == "cmd LC_RPATH":
+-                for j in range(i, min(i + 4, len(lines))):
+-                    m = re.search(r"path (.+) \(offset", lines[j])
+-                    if m:
+-                        rpaths.append(m.group(1).strip())
+-                        break
+-        for rp in rpaths:
+-            rp = rp.replace("@loader_path", base_dir).replace(
+-                "@executable_path", base_dir
+-            )
+-            candidate = os.path.join(rp, name)
+-            if os.path.exists(candidate):
+-                return candidate
+-
+-    # 2) Fall back to the compiler toolchain -- this covers GCC runtime
+-    #    libs (libgcc_s, libstdc++, libquadmath, libgfortran) that Homebrew
+-    #    GCC reports with an @rpath install name but which live in the
+-    #    toolchain's own lib directory, not next to *binary*.
+-    for cc in ("gfortran", "gcc", "g++"):
+-        try:
+-            r = subprocess.run(
+-                [cc, "-print-file-name=" + name],
+-                capture_output=True, text=True,
+-            )
+-        except FileNotFoundError:
+-            continue
+-        candidate = r.stdout.strip()
+-        if candidate and candidate != name and os.path.exists(candidate):
+-            return candidate
+-
+-    return ""
+-
+-
+-def _soname_linux(lib_path: str) -> str:
+-    """Return the ELF SONAME of *lib_path*, falling back to its basename."""
+-    try:
+-        r = subprocess.run(
+-            ["patchelf", "--print-soname", lib_path],
+-            capture_output=True, text=True,
+-        )
+-        soname = r.stdout.strip()
+-        if soname:
+-            return soname
+-    except Exception:
+-        pass
+-    return os.path.basename(lib_path)
+-
+-
+-def _dynamic_deps_linux(path: str) -> dict:
+-    """Return {soname: resolved_path} for non-system deps on Linux."""
+-    out = subprocess.run(["ldd", path], capture_output=True, text=True).stdout
+-    deps = {}
+-    for line in out.splitlines():
+-        m = re.search(r"\s=>\s(/\S+)", line)
+-        if m and not _is_system_lib(m.group(1)):
+-            resolved = m.group(1)
+-            # Use the ELF soname as the destination filename so the dynamic
+-            # linker finds it even when ldd reports the versioned real file.
+-            deps[_soname_linux(resolved)] = resolved
+-    return deps
+-
+-
+-def _dynamic_deps_macos(path: str) -> list:
+-    """Return [install_name, ...] for non-system deps on macOS."""
+-    out = subprocess.run(
+-        ["otool", "-L", path], capture_output=True, text=True
+-    ).stdout
+-    deps = []
+-    for line in out.splitlines()[1:]:
+-        parts = line.strip().split()
+-        if parts and not _is_system_lib(parts[0]):
+-            deps.append(parts[0])
+-    return deps
+-
+-
+-def _dynamic_deps_windows(path: str) -> dict:
+-    """Return {dll_name: source_path} for non-system MinGW DLLs needed by *path*.
+-
+-    Uses objdump (from MinGW64) to list DLL imports, then resolves each name
+-    against C:\\msys64\\mingw64\\bin\\ and DIST_DIR\\bin\\ (for DLLs installed
+-    by our own build, such as libopenblas.dll).
+-    """
+-    search_dirs = [r"C:\msys64\mingw64\bin", os.path.join(DIST_DIR, "bin")]
+-    r = subprocess.run(
+-        [_MSYS2_BASH, "-lc",
+-         "export PATH=/mingw64/bin:/usr/bin:$PATH && "
+-         f"objdump -p {shlex.quote(_win_to_msys2(path))} | grep 'DLL Name:'"],
+-        capture_output=True, text=True,
+-    )
+-    deps = {}
+-    for line in r.stdout.splitlines():
+-        m = re.search(r"DLL Name:\s+(\S+\.dll)", line, re.IGNORECASE)
+-        if m:
+-            name = m.group(1)
+-            if not _WIN_SYS_DLL.match(name):
+-                for search_dir in search_dirs:
+-                    candidate = os.path.join(search_dir, name)
+-                    if os.path.exists(candidate):
+-                        deps[name] = candidate
+-                        break
+-    return deps
+-
+-
+-def bundle_dynamic_deps(binary: str, lib_dir: str, _visited: set = None):
+-    """
+-    Inspect *binary* for non-system dynamic dependencies and handle them so
+-    the wheel is self-contained:
+-
+-    Linux  — copies each .so to *lib_dir* and uses patchelf to set an
+-             $ORIGIN-relative RPATH on both the binary and every copied lib.
+-    macOS  — copies each .dylib to *lib_dir*, rewrites the install-name
+-             reference inside *binary* to @rpath/name, sets the copied
+-             lib's own id to @rpath/name, and adds an @loader_path rpath
+-             to the binary.
+-    Windows — copies each non-system MinGW DLL next to the binary (in its
+-              own directory); no rpath patching needed since Windows searches
+-              the executable's directory first.
+-
+-    Recurses into copied libraries so transitive deps are also covered.
+-    If everything was statically linked this function is a no-op.
+-    """
+-    if _visited is None:
+-        _visited = set()
+-    os.makedirs(lib_dir, exist_ok=True)
+-
+-    in_lib_dir = (
+-        os.path.dirname(os.path.realpath(binary)) == os.path.realpath(lib_dir)
+-    )
+-
+-    if platform.system() == "Linux":
+-        rpath = "$ORIGIN" if in_lib_dir else "$ORIGIN/../lib"
+-        subprocess.run(["patchelf", "--set-rpath", rpath, binary], check=True)
+-
+-        for name, src_path in _dynamic_deps_linux(binary).items():
+-            if name in _visited:
+-                continue
+-            _visited.add(name)
+-            dst = os.path.join(lib_dir, name)
+-            if not os.path.exists(dst):
+-                shutil.copy2(src_path, dst)
+-                os.chmod(dst, 0o755)
+-            bundle_dynamic_deps(dst, lib_dir, _visited)
+-
+-    elif platform.system() == "Darwin":
+-        rpath = "@loader_path" if in_lib_dir else "@loader_path/../lib"
+-        # Silently ignore "already exists" errors from install_name_tool.
+-        subprocess.run(
+-            ["install_name_tool", "-add_rpath", rpath, binary],
+-            capture_output=True,
+-        )
+-
+-        for install_name in _dynamic_deps_macos(binary):
+-            name = os.path.basename(install_name)
+-
+-            # Always resolve a real on-disk source for this dependency (needed
+-            # to copy it into lib_dir even when `binary`'s reference is
+-            # already @rpath/name and needs no rewrite -- e.g. Homebrew GCC's
+-            # own libgcc_s reported natively via @rpath).
+-            src_path = install_name
+-            if install_name.startswith("@"):
+-                resolved = _resolve_macos_dep(binary, install_name)
+-                if not resolved:
+-                    print(
+-                        f"warning: could not resolve {install_name} "
+-                        f"referenced by {binary}; not bundled, may "
+-                        f"fail to load at runtime",
+-                        file=sys.stderr,
+-                    )
+-                src_path = resolved or None
+-
+-            # Always fix up *this* binary's own reference, regardless of
+-            # whether the target dependency file has already been bundled
+-            # ("visited") via some other referencing binary. The previous
+-            # code skipped this whenever `name in _visited`, which meant
+-            # only the *first* binary reaching a given dependency (in DFS
+-            # traversal order) got its reference rewritten to @rpath --
+-            # every other binary kept the absolute build-machine path.
+-            if install_name != f"@rpath/{name}":
+-                subprocess.run(
+-                    ["install_name_tool", "-change", install_name, f"@rpath/{name}", binary],
+-                    check=True,
+-                )
+-
+-            if name in _visited:
+-                continue
+-            _visited.add(name)
+-
+-            dst = os.path.join(lib_dir, name)
+-            if not os.path.exists(dst) and src_path:
+-                shutil.copy2(src_path, dst)
+-                os.chmod(dst, 0o755)
+-            if os.path.exists(dst):
+-                # Normalize the lib's own id to @rpath/name. This also
+-                # covers libraries that were already sitting in lib_dir
+-                # from the start (e.g. sibling COIN-OR libs built straight
+-                # there) and never went through the "freshly copied" path
+-                # above, which previously left their LC_ID_DYLIB as an
+-                # absolute build-machine path.
+-                subprocess.run(
+-                    ["install_name_tool", "-id", f"@rpath/{name}", dst],
+-                    capture_output=True,
+-                )
+-                bundle_dynamic_deps(dst, lib_dir, _visited)
+-
+-    elif platform.system() == "Windows":
+-        # On Windows the loader finds DLLs in the same directory as the
+-        # executable. Copy all non-system MinGW DLLs there and recurse for
+-        # transitive dependencies (libgfortran → libquadmath, etc.).
+-        bin_dir = os.path.dirname(os.path.realpath(binary))
+-        for name, src_path in _dynamic_deps_windows(binary).items():
+-            if name in _visited:
+-                continue
+-            _visited.add(name)
+-            dst = os.path.join(bin_dir, name)
+-            if not os.path.exists(dst):
+-                shutil.copy2(src_path, dst)
+-                os.chmod(dst, 0o755)
+-            bundle_dynamic_deps(dst, lib_dir, _visited)
+-
+-
+-# ── Windows: mirror DLLs into lib/ ───────────────────────────────────────────
+-
+-def copy_win_dlls_to_lib(dist_dir=None):
+-    """Copy every DLL from bin/ into lib/ as well.
+-
+-    On Windows, libtool installs DLLs to bindir (bin/) and import libs
+-    (.dll.a) to libdir (lib/).  python-mip and other ctypes/cffi consumers
+-    locate libraries via cbcbox.cbc_lib_dir() which points to lib/, so all
+-    DLLs must also be present there — both the COIN-OR ones (libCbc.dll, …)
+-    and the bundled MinGW runtime DLLs they depend on.
+-    """
+-    if dist_dir is None:
+-        dist_dir = DIST_DIR
+-    bin_dir = os.path.join(dist_dir, "bin")
+-    lib_dir = os.path.join(dist_dir, "lib")
+-    os.makedirs(lib_dir, exist_ok=True)
+-    for dll in _glob.glob(os.path.join(bin_dir, "*.dll")):
+-        dst = os.path.join(lib_dir, os.path.basename(dll))
+-        if not os.path.exists(dst):
+-            shutil.copy2(dll, dst)
+-
+-
+-
+-_cbc_exe = "cbc.exe" if platform.system() == "Windows" else "cbc"
+-
+-# CBCBOX_BUILD_VARIANT controls which variants are compiled (used by CI to run
+-# builds in parallel jobs):
+-#   unset / "all"  — build generic, AVX2 (x86_64), and debug:
+-#                      x86_64:     generic + avx2 + debug_avx2
+-#                      other arch: generic + debug
+-#   "generic"      — build only the generic variant (no debug)
+-#   "avx2"         — build only the AVX2 variant (x86_64 only, no debug)
+-#   "debug"        — build only the non-AVX2 debug variant (all platforms)
+-#                    COIN-OR flags: -O1 -g -fno-omit-frame-pointer
+-#                    AddressSanitizer automatically enabled on Linux and macOS.
+-#   "debug_avx2"   — build only the debug+AVX2 variant (x86_64 only)
+-#                    COIN-OR flags: -O1 -g -march=haswell -fno-omit-frame-pointer
+-#                    AddressSanitizer automatically enabled on Linux and macOS.
+-#                    Use this to debug AVX2-specific issues or to run a debuggable
+-#                    binary that exercises the same AVX2 code paths as the release.
+-#   "release_symbols" — build only the generic *release* variant (same CXXFLAGS,
+-#                    same optimisation level, same -DNDEBUG) with -g added on
+-#                    top, so the resulting binary is bit-for-bit behaviourally
+-#                    identical to what actually ships, just with debug symbols.
+-#                    Use this (under gdb) to get a real backtrace for bugs that
+-#                    only reproduce with release codegen/optimisation and do
+-#                    NOT reproduce in the "debug" (-O1) variant.
+-# In "avx2" mode AMD is still compiled (as a link-time static dep for the
+-# COIN-OR AVX2 build) but with Haswell-optimised flags.
+-# OpenBLAS and AMD are always built without debug flags; only the COIN-OR stack
+-# (CoinUtils, Osi, Clp, Cgl, Cbc) carries debug symbols in debug builds.
+-#
+-# CBCBOX_BUILD_ONLY=1 — skip the wheel-packaging stage (used by CI compile
+-# jobs that only need the binaries, not the final .whl).
+-_build_variant    = os.environ.get("CBCBOX_BUILD_VARIANT", "")
+-_build_release_symbols = _build_variant == "release_symbols"
+-_build_generic    = _build_variant not in ("avx2", "debug", "debug_avx2", "release_symbols")
+-_build_avx2       = _is_x86_64() and _build_variant not in ("generic", "debug", "debug_avx2", "release_symbols")
+-# Debug (non-AVX2): built by default on non-x86_64; on x86_64 only when
+-# explicitly requested so we avoid a redundant generic-debug wheel alongside
+-# the haswell-debug one.
+-_build_debug      = _build_variant == "debug" or (_build_variant == "" and not _is_x86_64())
+-# Debug+AVX2: built by default on x86_64 (the only debug variant for that arch).
+-_build_debug_avx2 = _is_x86_64() and (_build_variant == "debug_avx2" or _build_variant == "")
+-
+-if _build_variant == "debug_avx2" and not _is_x86_64():
+-    print(
+-        f"[cbcbox] WARNING: CBCBOX_BUILD_VARIANT=debug_avx2 is only supported on x86_64 "
+-        f"(current arch: {platform.machine()}). No build will be performed.",
+-        flush=True,
+-    )
+-
+-# Flags applied to all C/C++ code in the AVX2 variant, including the static
+-# AMD library that is ultimately linked into COIN-OR .so/.dylib.
+-_AVX2_CFLAGS = "-O3 -march=haswell"
+-
+-# OpenBLAS DYNAMIC_ARCH kernel lists for x86_64 (reduces library size by
+-# dropping pre-2010 architectures that are unlikely to be encountered).
+-# CPUs not covered by the list fall back to the generic kernel automatically.
+-#   Generic: SSE4.2 baseline (Nehalem 2008+) through current Zen.
+-#   AVX2:    only AVX2-capable targets (Haswell 2013+).
+-# ZEN2, ZEN3, SKYLAKE are excluded: OpenBLAS 0.3.31 compiles their generic C
+-# dot/nrm2 kernels with AVX2+FMA intrinsics but omits -mfma from the compiler
+-# invocation, causing an "always_inline target mismatch" build error.
+-# ZEN2/ZEN3 users fall back to the ZEN kernel (still AVX2); SKYLAKE falls back
+-# to HASWELL — both negligible in practice.
+-_OPENBLAS_DYNLIST_X86_GENERIC = "NEHALEM SANDYBRIDGE HASWELL SKYLAKEX ZEN"
+-_OPENBLAS_DYNLIST_X86_AVX2    = "HASWELL SKYLAKEX"
+-
+-# AddressSanitizer is automatically enabled for debug builds on Linux and macOS.
+-# Windows/MinGW does not support ASan, so it is skipped there.
+-# OpenBLAS is always built without ASan to avoid false positives from its
+-# hand-optimised BLAS kernels; only the COIN-OR stack is instrumented.
+-# Debug build flags: -O1 -g (no ASan — ASan proved too fragile across
+-# the different CI container toolchains; debug info alone is sufficient
+-# for stack traces and debugger use).
+-_DEBUG_CFLAGS      = "-O1 -g -fno-omit-frame-pointer"
+-_DEBUG_LDFLAGS     = ""
+-_DEBUG_AVX2_CFLAGS  = "-O1 -g -march=haswell -fno-omit-frame-pointer"
+-_DEBUG_AVX2_LDFLAGS = ""
+-
+-if _build_generic and not os.path.exists(os.path.join(DIST_DIR, "bin", _cbc_exe)):
+-    build_openblas(DIST_DIR, dynamic_arch=True,
+-                   dynamic_list=_OPENBLAS_DYNLIST_X86_GENERIC if _is_x86_64() else None)
+-    build_amd()
+-    build_coin_or(DIST_DIR)
+-
+-# Release-with-symbols build: identical CXXFLAGS/optimisation/-DNDEBUG to the
+-# generic release build above, with only "-g -fno-omit-frame-pointer" added.
+-# Used to get real backtraces (via gdb) for bugs that reproduce only with
+-# release codegen and do NOT reproduce in the (differently-optimised) "debug"
+-# variant. Built into DIST_DIR itself (mutually exclusive with _build_generic)
+-# since it's meant to stand in for the release binary, not ship alongside it.
+-if _build_release_symbols and not os.path.exists(os.path.join(DIST_DIR, "bin", _cbc_exe)):
+-    build_openblas(DIST_DIR, dynamic_arch=True,
+-                   dynamic_list=_OPENBLAS_DYNLIST_X86_GENERIC if _is_x86_64() else None)
+-    build_amd()
+-    build_coin_or(DIST_DIR, extra_cxxflags="-g -fno-omit-frame-pointer")
+-
+-# AVX2-optimised build: all x86_64 platforms (Linux, macOS, Windows).
+-# In avx2-only mode AMD is still needed as a link-time static dep for the
+-# COIN-OR AVX2 build; compile it with Haswell flags so it is fully
+-# optimised and ends up embedded in the AVX2 COIN-OR shared libraries.
+-if (not _build_generic and not _build_debug and not _build_debug_avx2
+-        and not _build_release_symbols
+-        and not os.path.exists(os.path.join(LIB_DIR, "libamd.a"))):
+-    build_amd(extra_cflags=_AVX2_CFLAGS)
+-
+-if _build_avx2 and not os.path.exists(os.path.join(DIST_DIR_AVX2, "bin", _cbc_exe)):
+-    # Use DYNAMIC_ARCH=1 rather than TARGET=HASWELL for OpenBLAS: TARGET=HASWELL
+-    # mandates aligned AVX2 loads in dgetrf_single; CoinDenseFactorization may
+-    # pass unaligned data which causes SIGSEGV on macOS Intel.  DYNAMIC_ARCH
+-    # dispatches to the best available kernel at runtime without that assumption.
+-    # The Haswell advantage comes from -march=haswell on the COIN-OR stack.
+-    build_openblas(DIST_DIR_AVX2, dynamic_arch=True,
+-                   dynamic_list=_OPENBLAS_DYNLIST_X86_AVX2)
+-    build_coin_or(DIST_DIR_AVX2, extra_cxxflags=f"{_AVX2_CFLAGS} -DCOIN_AVX2=4")
+-
+-# Debug build: OpenBLAS is built WITHOUT debug flags (no debug info for
+-# third-party code); only the COIN-OR stack gets full debug flags + optional
+-# ASan.  AMD is a static link-time dep shared with the base dist.
+-if _build_debug and not os.path.exists(os.path.join(DIST_DIR_DEBUG, "bin", _cbc_exe)):
+-    build_openblas(DIST_DIR_DEBUG, dynamic_arch=True,
+-                   dynamic_list=_OPENBLAS_DYNLIST_X86_GENERIC if _is_x86_64() else None)
+-    if not os.path.exists(os.path.join(LIB_DIR, "libamd.a")):
+-        build_amd()
+-    build_coin_or(DIST_DIR_DEBUG,
+-                  extra_cxxflags=_DEBUG_CFLAGS,
+-                  extra_ldflags=_DEBUG_LDFLAGS,
+-                  is_debug=True)
+-
+-# Debug+AVX2 build (x86_64 only): like the debug build but with -march=haswell
+-# and -DCOIN_AVX2=4 so the binary exercises the same AVX2 code paths as the
+-# release.  OpenBLAS is built WITHOUT debug flags (no debug info for third-party
+-# code); only the COIN-OR stack gets debug+AVX2 flags.
+-# AMD is shared with the base dist (a pure integer lib, no SIMD).
+-if _build_debug_avx2 and not os.path.exists(os.path.join(DIST_DIR_DEBUG_AVX2, "bin", _cbc_exe)):
+-    build_openblas(DIST_DIR_DEBUG_AVX2, dynamic_arch=True,
+-                   dynamic_list=_OPENBLAS_DYNLIST_X86_AVX2)
+-    if not os.path.exists(os.path.join(LIB_DIR, "libamd.a")):
+-        build_amd()
+-    build_coin_or(DIST_DIR_DEBUG_AVX2,
+-                  extra_cxxflags=f"{_DEBUG_AVX2_CFLAGS} -DCOIN_AVX2=4",
+-                  extra_ldflags=_DEBUG_AVX2_LDFLAGS,
+-                  is_debug=True)
+-
+-
+-def _bundle_dist(dist_dir):
+-    """Patch rpaths / bundle DLLs for all binaries and shared libs in *dist_dir*."""
+-    lib_dir    = os.path.join(dist_dir, "lib")
+-    bundle_dir = os.path.join(dist_dir, "bin") if platform.system() == "Windows" else lib_dir
+-
+-    # Share one _visited set across every top-level call below so a
+-    # dependency file bundled/recursed-into while processing one binary is
+-    # recognized as already-copied when reached again from a different
+-    # top-level binary -- while each binary's own load-command references
+-    # are still always fixed up regardless (see bundle_dynamic_deps).
+-    _visited = set()
+-
+-    for bin_name in [_cbc_exe, "clp.exe" if platform.system() == "Windows" else "clp"]:
+-        bin_path = os.path.join(dist_dir, "bin", bin_name)
+-        if os.path.exists(bin_path):
+-            bundle_dynamic_deps(bin_path, bundle_dir, _visited)
+-
+-    if platform.system() == "Windows":
+-        shared_pattern = os.path.join(dist_dir, "bin", "*.dll")
+-    elif platform.system() == "Darwin":
+-        shared_pattern = os.path.join(lib_dir, "*.dylib")
+-    else:
+-        shared_pattern = os.path.join(lib_dir, "*.so*")
+-
+-    for lib_path in _glob.glob(shared_pattern):
+-        if not os.path.islink(lib_path):
+-            bundle_dynamic_deps(lib_path, bundle_dir, _visited)
+-            if platform.system() == "Darwin":
+-                # Unconditionally normalize this dylib's own LC_ID_DYLIB to
+-                # @rpath/name. bundle_dynamic_deps only does this when the
+-                # file is reached as some *other* binary's dependency; libs
+-                # that happen to never appear in anyone's dependency list
+-                # (or are reached only here, first) would otherwise keep
+-                # their absolute build-machine install name forever.
+-                subprocess.run(
+-                    ["install_name_tool", "-id", f"@rpath/{os.path.basename(lib_path)}", lib_path],
+-                    capture_output=True,
+-                )
+-
+-    if platform.system() == "Windows":
+-        copy_win_dlls_to_lib(dist_dir)
+-
+-
+-_bundle_dist(DIST_DIR)
+-if _build_avx2 and os.path.isdir(DIST_DIR_AVX2):
+-    _bundle_dist(DIST_DIR_AVX2)
+-if _build_debug and os.path.isdir(DIST_DIR_DEBUG):
+-    _bundle_dist(DIST_DIR_DEBUG)
+-if _build_debug_avx2 and os.path.isdir(DIST_DIR_DEBUG_AVX2):
+-    _bundle_dist(DIST_DIR_DEBUG_AVX2)
+-
+-
+-def _remove_static_libs(dist_dir: str) -> None:
+-    """Remove static (.a) and libtool (.la) files — not needed at runtime."""
+-    lib_dir = os.path.join(dist_dir, "lib")
+-    removed = []
+-    for pattern in ("*.a", "*.la"):
+-        for path in _glob.glob(os.path.join(lib_dir, pattern)):
+-            os.remove(path)
+-            removed.append(os.path.basename(path))
+-    if removed:
+-        print(f"[cbcbox] removed static libs from {lib_dir}: {', '.join(sorted(removed))}")
+-
+-
+-def _strip_binaries(dist_dir: str) -> None:
+-    """Strip debug/unneeded symbols from shared libraries and executables.
+-
+-    Linux: ``strip --strip-unneeded`` removes unreferenced symbols while
+-           keeping all exported symbols needed for dynamic linking.
+-    macOS: ``strip -x`` removes local/private symbols, preserving exports.
+-    Windows: skipped — strip on MinGW DLLs is unreliable.
+-    Callers must NOT invoke this on debug builds (symbols are intentional).
+-    """
+-    system = platform.system()
+-    if system == "Windows":
+-        return
+-
+-    if system == "Darwin":
+-        strip_args = ["strip", "-x"]
+-        lib_glob   = os.path.join(dist_dir, "lib", "*.dylib")
+-    else:
+-        strip_args = ["strip", "--strip-unneeded"]
+-        lib_glob   = os.path.join(dist_dir, "lib", "*.so*")
+-
+-    targets = [
+-        p for p in
+-        _glob.glob(lib_glob) + _glob.glob(os.path.join(dist_dir, "bin", "*"))
+-        if os.path.isfile(p) and not os.path.islink(p)
+-    ]
+-
+-    stripped, skipped = [], []
+-    for path in targets:
+-        r = subprocess.run([*strip_args, path], capture_output=True)
+-        (stripped if r.returncode == 0 else skipped).append(os.path.basename(path))
+-
+-    if stripped:
+-        print(f"[cbcbox] stripped symbols: {', '.join(sorted(stripped))}", flush=True)
+-    if skipped:
+-        print(f"[cbcbox] strip skipped (already stripped?): {', '.join(sorted(skipped))}", flush=True)
+-
+-
+-# On Windows, libCbc.dll.a is the MinGW import library needed to link
+-# against the Cbc DLL (e.g. by scripts/build_mip_debug_cuts.sh, which runs
+-# as a separate CI step *after* build_ext / CBCBOX_BUILD_ONLY=1 completes).
+-# Keep static libs around for the debug variants in that case so the
+-# mip-debug-cuts diagnostic tool can still be linked; they're stripped from
+-# the final wheel by the "Package ..." jobs' own build (CBCBOX_BUILD_ONLY
+-# unset), which is a separate setup.py invocation.
+-_keep_debug_static_libs = (
+-    platform.system() == "Windows" and os.environ.get("CBCBOX_BUILD_ONLY")
+-)
+-
+-_remove_static_libs(DIST_DIR)
+-# Skip stripping for release_symbols builds: stripping would defeat the
+-# entire point (removing the -g symbols we just added for gdb backtraces).
+-if not _build_release_symbols:
+-    _strip_binaries(DIST_DIR)
+-if _build_avx2 and os.path.isdir(DIST_DIR_AVX2):
+-    _remove_static_libs(DIST_DIR_AVX2)
+-    _strip_binaries(DIST_DIR_AVX2)
+-if _build_debug and os.path.isdir(DIST_DIR_DEBUG) and not _keep_debug_static_libs:
+-    _remove_static_libs(DIST_DIR_DEBUG)
+-if _build_debug_avx2 and os.path.isdir(DIST_DIR_DEBUG_AVX2) and not _keep_debug_static_libs:
+-    _remove_static_libs(DIST_DIR_DEBUG_AVX2)
+-
+-
+-# ── Package ───────────────────────────────────────────────────────────────────
+-# Skip the wheel-packaging stage when CBCBOX_BUILD_ONLY=1 (CI compile jobs
+-# that only need the pre-built binaries, not the final .whl).
+-if not os.environ.get("CBCBOX_BUILD_ONLY"):
+-    long_description = """\
+-**cbcbox** ships pre-built binaries of the
+-[CBC](https://github.com/coin-or/Cbc) MILP solver (COIN-OR Branch and Cut),
+-built from the latest next branch of the COIN-OR repositories.
+-
+-Built with:
+-- OpenBLAS for optimised BLAS/LAPACK routines
+-- AMD reordering (SuiteSparse) for improved numerical performance
+-- zlib for reading compressed MPS/LP files
+-"""
+-
+-    # setuptools requires package_dir values to be relative paths (not absolute).
+-    # Use a staging dir inside THIS_DIR so we can pass a simple relative name.
+-    _PKG_STAGING = "_cbcbox_pkg"
+-    _pkg_dir = os.path.join(THIS_DIR, _PKG_STAGING)
+-    if os.path.exists(_pkg_dir):
+-        shutil.rmtree(_pkg_dir)
+-    os.makedirs(_pkg_dir)
+-
+-    try:
+-        dist_name = "cbc_dist"
+-        shutil.copytree(DIST_DIR, os.path.join(_pkg_dir, dist_name), dirs_exist_ok=True)
+-
+-        package_data_patterns = [f"{dist_name}/**"]
+-
+-        # Include the AVX2-optimised build when present (x86_64 Linux/macOS/Windows).
+-        dist_name_avx2 = "cbc_dist_avx2"
+-        if os.path.isdir(DIST_DIR_AVX2):
+-            shutil.copytree(DIST_DIR_AVX2, os.path.join(_pkg_dir, dist_name_avx2),
+-                            dirs_exist_ok=True)
+-            package_data_patterns.append(f"{dist_name_avx2}/**")
+-
+-        # Include the debug build when present (non-x86_64: generic debug;
+-        # x86_64: debug+AVX2 only, shipped as cbc_dist_debug_avx2).
+-        dist_name_debug = "cbc_dist_debug"
+-        if os.path.isdir(DIST_DIR_DEBUG):
+-            shutil.copytree(DIST_DIR_DEBUG, os.path.join(_pkg_dir, dist_name_debug),
+-                            dirs_exist_ok=True)
+-            package_data_patterns.append(f"{dist_name_debug}/**")
+-
+-        dist_name_debug_avx2 = "cbc_dist_debug_avx2"
+-        if os.path.isdir(DIST_DIR_DEBUG_AVX2):
+-            shutil.copytree(DIST_DIR_DEBUG_AVX2, os.path.join(_pkg_dir, dist_name_debug_avx2),
+-                            dirs_exist_ok=True)
+-            package_data_patterns.append(f"{dist_name_debug_avx2}/**")
+-
+-        for fname in ["__init__.py", "__main__.py"]:
+-            shutil.copy2(os.path.join(THIS_DIR, "src", fname), os.path.join(_pkg_dir, fname))
+-
+-        setup(
+-            cmdclass=cmdclass,
+-            long_description=long_description,
+-            long_description_content_type="text/markdown",
+-            packages=["cbcbox"],
+-            zip_safe=False,
+-            package_dir={"cbcbox": _PKG_STAGING},
+-            package_data={
+-                "cbcbox": package_data_patterns,
+-            },
+-        )
+-    finally:
+-        shutil.rmtree(_pkg_dir, ignore_errors=True)

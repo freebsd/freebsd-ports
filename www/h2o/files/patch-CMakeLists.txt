@@ -1,14 +1,14 @@
---- CMakeLists.txt.orig	2026-03-13 10:31:00 UTC
+--- CMakeLists.txt.orig	2026-10-06 07:34:35 UTC
 +++ CMakeLists.txt
-@@ -177,7 +177,6 @@ INCLUDE_DIRECTORIES(
+@@ -181,7 +181,6 @@ INCLUDE_DIRECTORIES(
+     include
      deps/cloexec
-     deps/brotli/c/include
      deps/golombset
 -    deps/hiredis
      deps/libgkc
      deps/libyrmcds
      deps/klib
-@@ -189,7 +188,6 @@ INCLUDE_DIRECTORIES(
+@@ -193,7 +192,6 @@ INCLUDE_DIRECTORIES(
      deps/picotls/deps/micro-ecc
      deps/picotls/include
      deps/quicly/include
@@ -16,7 +16,7 @@
      deps/yoml
      ${CMAKE_CURRENT_BINARY_DIR})
  
-@@ -260,6 +258,22 @@ ENDIF (PKG_CONFIG_FOUND)
+@@ -293,6 +291,22 @@ ENDIF (PKG_CONFIG_FOUND)
      ENDIF (LIBCAP_FOUND)
  ENDIF (PKG_CONFIG_FOUND)
  
@@ -39,7 +39,7 @@
  SET(CC_WARNING_FLAGS "-Wall -Wno-unused-value -Wno-unused-function -Wno-nullability-completeness -Wno-expansion-to-defined -Werror=implicit-function-declaration -Werror=incompatible-pointer-types")
  
  IF ("${CMAKE_C_COMPILER_ID}" STREQUAL "GNU")
-@@ -272,7 +286,7 @@ ENDIF ()
+@@ -305,7 +319,7 @@ ENDIF ()
  ENDIF ()
  
  # setup compile flags
@@ -48,7 +48,7 @@
  IF (WITH_DTRACE)
      SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DPICOTLS_USE_DTRACE=1 -DQUICLY_USE_DTRACE=1 -DH2O_USE_DTRACE=1")
  ENDIF ()
-@@ -342,12 +356,6 @@ SET(LIB_SOURCE_FILES
+@@ -350,12 +364,6 @@ SET(LIB_SOURCE_FILES
  
  SET(LIB_SOURCE_FILES
      deps/cloexec/cloexec.c
@@ -61,15 +61,15 @@
      deps/libgkc/gkc.c
      deps/libyrmcds/close.c
      deps/libyrmcds/connect.c
-@@ -501,7 +509,6 @@ SET(UNIT_TEST_SOURCE_FILES
+@@ -517,7 +525,6 @@ SET(UNIT_TEST_SOURCE_FILES
  
  SET(UNIT_TEST_SOURCE_FILES
      ${LIB_SOURCE_FILES}
 -    ${LIBYAML_SOURCE_FILES}
-     ${BROTLI_SOURCE_FILES}
      deps/picotest/picotest.c
      t/00unit/test.c
-@@ -714,6 +721,10 @@ TARGET_LINK_LIBRARIES(h2o-httpclient libh2o-evloop ${E
+     t/00unit/lib/common/balancer/least_conn.c
+@@ -723,6 +730,10 @@ TARGET_LINK_LIBRARIES(h2o-httpclient libh2o-evloop ${E
      COMPILE_FLAGS "-DH2O_USE_LIBUV=0")
  TARGET_LINK_LIBRARIES(h2o-httpclient libh2o-evloop ${EXTRA_LIBS})
  
@@ -80,7 +80,7 @@
  SET_TARGET_PROPERTIES(examples-socket-client-evloop PROPERTIES
      COMPILE_FLAGS "-DH2O_USE_LIBUV=0"
      EXCLUDE_FROM_ALL 1)
-@@ -797,6 +808,16 @@ TARGET_LINK_LIBRARIES(h2o ${OPENSSL_LIBRARIES} ${CMAKE
+@@ -805,6 +816,16 @@ TARGET_LINK_LIBRARIES(h2o ${OPENSSL_LIBRARIES} ${CMAKE
  SET_TARGET_PROPERTIES(h2o PROPERTIES COMPILE_FLAGS "${STANDALONE_COMPILE_FLAGS}")
  TARGET_INCLUDE_DIRECTORIES(h2o PUBLIC ${OPENSSL_INCLUDE_DIR})
  TARGET_LINK_LIBRARIES(h2o ${OPENSSL_LIBRARIES} ${CMAKE_DL_LIBS})
@@ -90,7 +90,7 @@
 +ENDIF (HIREDIS_FOUND)
 +
 +IF (LIBYAML_FOUND)
-+   TARGET_INCLUDE_DIRECTORIES(h2o PUBLIC ${LIBYXML_INCLUDE_DIRS})
++   TARGET_INCLUDE_DIRECTORIES(h2o PUBLIC ${LIBYAML_INCLUDE_DIRS})
 +   TARGET_LINK_LIBRARIES(h2o ${LIBYAML_LIBRARIES})
 +ENDIF (LIBYAML_FOUND)
 +

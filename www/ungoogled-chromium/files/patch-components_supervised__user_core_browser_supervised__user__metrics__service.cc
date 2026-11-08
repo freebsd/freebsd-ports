@@ -1,8 +1,8 @@
---- components/supervised_user/core/browser/supervised_user_metrics_service.cc.orig	2026-03-15 18:32:51 UTC
+--- components/supervised_user/core/browser/supervised_user_metrics_service.cc.orig	2026-10-31 12:09:36 UTC
 +++ components/supervised_user/core/browser/supervised_user_metrics_service.cc
-@@ -104,7 +104,7 @@ SupervisedUserMetricsService::SupervisedUserMetricsSer
-     supervised_user_service_observation_.Observe(&supervised_user_service);
-   }
+@@ -116,7 +116,7 @@ SupervisedUserMetricsService::SupervisedUserMetricsSer
+   DCHECK(pref_service_);
+   url_filtering_service_observation_.Observe(&url_filtering_service);
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)

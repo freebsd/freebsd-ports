@@ -1,6 +1,6 @@
---- sapi/apache2handler/config.m4.orig	2024-08-27 14:33:48 UTC
+--- sapi/apache2handler/config.m4.orig	2026-10-19 14:38:59 UTC
 +++ sapi/apache2handler/config.m4
-@@ -61,7 +61,7 @@ if test "$PHP_APXS2" != "no"; then
+@@ -69,7 +69,7 @@ if test "$PHP_APXS2" != "no"; then
      [AC_MSG_ERROR([Please note that Apache version >= 2.4 is required])])
  
    APXS_LIBEXECDIR='$(INSTALL_ROOT)'$($APXS -q LIBEXECDIR)

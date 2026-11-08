@@ -1,5 +1,5 @@
 PORTNAME=	xdg-desktop-portal
-DISTVERSION=	1.20.3
+DISTVERSION=	1.22.1
 CATEGORIES=	deskutils
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -21,6 +21,9 @@ USES=		cpe gettext-tools gmake gnome gstreamer meson pkgconfig \
 USE_GITHUB=	yes
 GH_ACCOUNT=	flatpak
 USE_GNOME=	gdkpixbuf glib20
+USE_GITLAB=	nodefault
+GL_TUPLE=	https://gitlab.gnome.org:arrowd:libglnx:c210033e145361b5f5125d79dff4f901c01aa3f7:libglnx/subprojects/libglnx \
+		https://gitlab.gnome.org:GNOME:gvdb:c6f2359cc1d00f16e0a0e2527fa0bc1882b8b5ab:gvdb/subprojects/gvdb
 
 SHEBANG_FILES=	src/generate-method-info.py
 
@@ -39,7 +42,18 @@ MANPAGES_MESON_ENABLED=	man-pages
 
 CPE_VENDOR=	flatpak
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1500000 && ${OSVERSION} < 1501000
+BUILD_DEPENDS+=		${LOCALBASE}/include/linuxapi/string.h:devel/linuxapi
+CFLAGS+=		-I${WRKDIR}/linuxapi
+
+pre-build:
+	@${MKDIR} ${WRKDIR}/linuxapi
+	${CP} ${LOCALBASE}/include/linuxapi/string.h ${WRKDIR}/linuxapi
+.endif
+
 post-install:
 	@${RM} -r ${STAGEDIR}${PREFIX}/lib/systemd
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

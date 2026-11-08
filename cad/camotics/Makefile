@@ -60,7 +60,7 @@ PORTEXAMPLES=	*
 
 MAKE_ARGS+=	cc="${CC}"	\
 		cxx="${CXX}"	\
-		cxxstd="c++17"	\
+		cxxstd="c++20"	\
 		ccflags="${CCFLAGS}"	\
 		cxxflags="${CXXFLAGS} ${QT5_INC}"	\
 		linkflags="${LDFLAGS} ${QT5_LIBS}"	\
@@ -71,7 +71,8 @@ MAKE_ARGS+=	cc="${CC}"	\
 		compiler="${CHOSEN_COMPILER_TYPE:C/gcc/gnu/}"	\
 		disable_local="zlib bzip2 lz4 sqlite3 expat libevent re2 libyaml"
 MAKE_ENV+=	QT5DIR="${LOCALBASE}"	\
-		CBANG_HOME="${WRKDIR}/cbang"
+		CBANG_HOME="${WRKDIR}/cbang"	\
+		V8_INCLUDE="${LOCALBASE}/include"
 .if defined(WITH_DEBUG)
 MAKE_ARGS+=	debug=1 strict=0
 .endif

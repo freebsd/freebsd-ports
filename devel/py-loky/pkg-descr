@@ -1,0 +1,2 @@
+Loky provides a robust implementation of concurrent.futures.ProcessPoolExecutor.
+It is designed for reusable, fault-tolerant Python process pools.

@@ -1,6 +1,6 @@
 PORTNAME=	nerdctl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.5
+DISTVERSION=	2.4.2
 CATEGORIES=	sysutils
 DISTFILES+=	go.mod
 
@@ -11,7 +11,7 @@ WWW=		https://github.com/containerd/nerdctl
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.26+,modules
+USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	containerd
 
@@ -20,16 +20,16 @@ GO_TARGET=	./cmd/${PORTNAME}
 GO_BUILDFLAGS=	-ldflags "-s -w -X ${GO_MODULE}/pkg/version.Version=${DISTVERSIONFULL}"
 GO_TESTTARGET=	./pkg/...
 
-PLIST_FILES=	bin/containerd-rootless-setuptool.sh \
-		bin/containerd-rootless.sh \
-		bin/nerdctl \
+PLIST_FILES=	bin/nerdctl \
 		etc/bash_completion.d/${PORTNAME} \
 		share/fish/vendor_completions.d/${PORTNAME}.fish \
+		share/licenses/${PKGNAME}/NOTICE \
 		share/zsh/site-functions/_${PORTNAME}
 
 PORTDOCS=	*
+PORTEXAMPLES=	*
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 pre-fetch:
 	@${MKDIR} ${DISTDIR}/${DIST_SUBDIR}
@@ -40,11 +40,12 @@ pre-fetch:
 		${REINPLACE_CMD} '/tigron/d' ${DISTDIR}/${DIST_SUBDIR}/go.mod)
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/extras/rootless/* ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d \
 		  ${STAGEDIR}${PREFIX}/share/fish/vendor_completions.d \
 		  ${STAGEDIR}${PREFIX}/share/zsh/site-functions \
+		  ${STAGEDIR}${_LICENSE_DIR} \
 		  ${WRKDIR}/tmp
+	${INSTALL_DATA} ${WRKSRC}/NOTICE ${STAGEDIR}${_LICENSE_DIR}
 	${STAGEDIR}${PREFIX}/bin/${PORTNAME} --data-root=${WRKDIR}/tmp completion bash \
 		> ${STAGEDIR}${PREFIX}/etc/bash_completion.d/${PORTNAME}
 	${STAGEDIR}${PREFIX}/bin/${PORTNAME} --data-root=${WRKDIR}/tmp completion fish \
@@ -54,5 +55,8 @@ post-install:
 
 post-install-DOCS-on:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} "README.md docs" ${STAGEDIR}${DOCSDIR})
+
+post-install-EXAMPLES-on:
+	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>

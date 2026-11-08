@@ -1,5 +1,5 @@
 PORTNAME=	peft
-DISTVERSION=	0.19.1
+DISTVERSION=	0.21.2
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -35,7 +35,8 @@ USES=		python
 USE_PYTHON=	distutils autoplist pytest
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
-TEST_ARGS=	-p no:relaxed
+TEST_ARGS=	--disable-plugin-autoload \
+		-p no:relaxed
 
 post-patch:
 	@${TOUCH} ${WRKSRC}/tests/__init__.py

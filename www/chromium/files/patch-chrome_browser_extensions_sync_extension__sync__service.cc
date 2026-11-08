@@ -1,6 +1,6 @@
---- chrome/browser/extensions/sync/extension_sync_service.cc.orig	2026-06-04 10:12:25 UTC
+--- chrome/browser/extensions/sync/extension_sync_service.cc.orig	2026-09-25 15:26:43 UTC
 +++ chrome/browser/extensions/sync/extension_sync_service.cc
-@@ -637,7 +637,7 @@ void ExtensionSyncService::ApplySyncData(
+@@ -638,7 +638,7 @@ void ExtensionSyncService::ApplySyncData(
      AccountExtensionTracker::Get(profile_)->OnExtensionSyncDataReceived(id);
    }
  

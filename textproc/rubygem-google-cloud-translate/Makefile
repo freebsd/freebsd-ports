@@ -1,11 +1,11 @@
 PORTNAME=	google-cloud-translate
-PORTVERSION=	3.9.0
+PORTVERSION=	3.9.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby Client for the Cloud Translation API
-WWW=		https://cloud.google.com/ruby/docs/reference/google-cloud-translate/latest/ \
+WWW=		https://docs.cloud.google.com/ruby/docs/reference/google-cloud-translate/latest \
 		https://googleapis.github.io/google-cloud-ruby/docs/ \
 		https://github.com/googleapis/google-cloud-ruby/tree/main/google-cloud-translate \
 		https://github.com/googleapis/google-cloud-ruby

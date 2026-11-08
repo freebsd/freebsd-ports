@@ -1,6 +1,6 @@
 PORTNAME=	Gtk2-Ex-Utils
-PORTVERSION=	0.09
-PORTREVISION=	10
+DISTVERSION=	0.09
+PORTREVISION=	11
 CATEGORIES=	x11-toolkits perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,6 +10,9 @@ COMMENT=	Extra Gtk2 utilities for Gtk2 in perl
 WWW=		https://metacpan.org/release/Gtk2-Ex-Utils
 
 LICENSE=	LGPL21
+
+DEPRECATED=	Unmaintained upstream
+EXPIRATION_DATE=	2026-12-06
 
 BUILD_DEPENDS=	p5-Glib>=1.00:devel/p5-Glib \
 		p5-ExtUtils-Depends>=0.3:devel/p5-ExtUtils-Depends \

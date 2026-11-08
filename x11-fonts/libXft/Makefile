@@ -1,5 +1,5 @@
 PORTNAME=	libXft
-DISTVERSION=	2.3.8
+DISTVERSION=	2.3.9
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	x11@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig
 
-USES=		tar:xz xorg xorg-cat:lib
+USES=		xorg xorg-cat:lib
 USE_XORG=	x11 xorgproto xrender
 
 INSTALL_TARGET=	install-strip

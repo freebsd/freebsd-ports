@@ -1,8 +1,7 @@
 PORTNAME=	pyderasn
-PORTVERSION=	9.3
-PORTREVISION=	2
+PORTVERSION=	9.5
 CATEGORIES=	devel python
-MASTER_SITES=	http://www.pyderasn.cypherpunks.su/download/ \
+MASTER_SITES=	http://www.pyderasn.stargrave.org/download/ \
 		http://www.grosbein.net/freebsd/distfiles/ \
 		LOCAL/eugen
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,7 +9,7 @@ EXTRACT_SUFX=	.tar.zst
 
 MAINTAINER=	eugen@FreeBSD.org
 COMMENT=	Strict and fast ASN.1 DER/CER/BER library for Python
-WWW=		http://www.pyderasn.cypherpunks.su/
+WWW=		http://www.pyderasn.stargrave.org/
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER

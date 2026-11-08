@@ -1,5 +1,5 @@
 PORTNAME=	jackson-databind
-DISTVERSION=	2.14.2
+DISTVERSION=	2.22.4
 CATEGORIES=	devel java
 MASTER_SITES=	https://repo1.maven.org/maven2/com/fasterxml/jackson/core/${PORTNAME}/${DISTVERSION}/
 EXTRACT_SUFX=	.jar
@@ -14,7 +14,8 @@ LICENSE=	APACHE20
 RUN_DEPENDS=	${JAVAJARDIR}/jackson-annotations.jar:devel/jackson-annotations \
 		${JAVAJARDIR}/jackson-core.jar:devel/jackson-core
 
-USES=		java:run
+USES=		cpe java:run
+CPE_VENDOR=	fasterxml
 JAVA_VERSION=	8+
 
 NO_ARCH=	yes

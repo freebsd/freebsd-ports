@@ -1,0 +1,22 @@
+-- Make the NEO / complex-orbital executables optional via an
+-- ERKALE_BUILD_NEO option.  When disabled the port does not need to fetch
+-- OpenOrbitalOptimizer, Eigen3 and OpenTrustRegion from the network, which
+-- is not allowed in poudriere.
+--- src/contrib/CMakeLists.txt.orig	2026-09-30 18:59:18 UTC
++++ src/contrib/CMakeLists.txt
+@@ -7,6 +7,9 @@ endforeach()
+   target_link_libraries(erkale_${prog} liberkale_cmp liberkale_emd liberkale)
+ endforeach()
+ 
++option(ERKALE_BUILD_NEO "Build NEO / complex-orbital executables" ON)
++
++if(ERKALE_BUILD_NEO)
+ # --- NEO / complex-orbital drivers ---
+ # These depend on the header-only, Eigen-based OpenOrbitalOptimizer
+ # (https://github.com/susilehtola/OpenOrbitalOptimizer). The drivers use
+@@ -108,3 +111,5 @@ target_link_libraries(erkale_complex_orbs erkale_neo_d
+ add_executable(erkale_complex_orbs complex_orbs.cpp)
+ set_target_properties(erkale_complex_orbs PROPERTIES OUTPUT_NAME "erkale_complex_orbs${SUFFIX}")
+ target_link_libraries(erkale_complex_orbs erkale_neo_deps)
++
++endif()

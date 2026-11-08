@@ -44,6 +44,7 @@ LIBCLANG_RT_LIBS_aarch64= \
 	ubsan_standalone_cxx.a \
 	ubsan_standalone_cxx.a.syms \
 	xray-basic.a \
+	xray-dso.a \
 	xray-fdr.a \
 	xray-profiling.a \
 	xray.a

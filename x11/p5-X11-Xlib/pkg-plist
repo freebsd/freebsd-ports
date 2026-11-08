@@ -1,6 +1,7 @@
 %%PERL5_MAN3%%/X11::Xlib.3.gz
 %%PERL5_MAN3%%/X11::Xlib::Colormap.3.gz
 %%PERL5_MAN3%%/X11::Xlib::Display.3.gz
+%%PERL5_MAN3%%/X11::Xlib::GC.3.gz
 %%PERL5_MAN3%%/X11::Xlib::Keymap.3.gz
 %%PERL5_MAN3%%/X11::Xlib::Opaque.3.gz
 %%PERL5_MAN3%%/X11::Xlib::Pixmap.3.gz
@@ -10,6 +11,7 @@
 %%PERL5_MAN3%%/X11::Xlib::Window.3.gz
 %%PERL5_MAN3%%/X11::Xlib::XEvent.3.gz
 %%PERL5_MAN3%%/X11::Xlib::XID.3.gz
+%%PERL5_MAN3%%/X11::Xlib::XKeyboardState.3.gz
 %%PERL5_MAN3%%/X11::Xlib::XRectangle.3.gz
 %%PERL5_MAN3%%/X11::Xlib::XRenderPictFormat.3.gz
 %%PERL5_MAN3%%/X11::Xlib::XSetWindowAttributes.3.gz
@@ -21,6 +23,7 @@
 %%SITE_ARCH%%/X11/Xlib.pm
 %%SITE_ARCH%%/X11/Xlib/Colormap.pm
 %%SITE_ARCH%%/X11/Xlib/Display.pm
+%%SITE_ARCH%%/X11/Xlib/GC.pm
 %%SITE_ARCH%%/X11/Xlib/Install/Files.pm
 %%SITE_ARCH%%/X11/Xlib/Install/PerlXlib.h
 %%SITE_ARCH%%/X11/Xlib/Install/typemap
@@ -33,6 +36,7 @@
 %%SITE_ARCH%%/X11/Xlib/Window.pm
 %%SITE_ARCH%%/X11/Xlib/XEvent.pm
 %%SITE_ARCH%%/X11/Xlib/XID.pm
+%%SITE_ARCH%%/X11/Xlib/XKeyboardState.pm
 %%SITE_ARCH%%/X11/Xlib/XRectangle.pm
 %%SITE_ARCH%%/X11/Xlib/XRenderPictFormat.pm
 %%SITE_ARCH%%/X11/Xlib/XSetWindowAttributes.pm

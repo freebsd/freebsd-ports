@@ -1,6 +1,7 @@
 PORTNAME=	quackle
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.4
+DISTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -14,9 +15,10 @@ LICENSE_NAME=	GPLv3 with Quackle dictionary exception
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
-USES=		cmake qt:5
+USES=		cmake gl qt:6
 USE_GITHUB=	yes
-USE_QT=		core qmake:build buildtools:build gui widgets
+USE_GL=		gl opengl
+USE_QT=		base
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/quacker
 DESKTOP_ENTRIES=	"Quackle" "Crossword game artificial intelligence and analysis tool" \

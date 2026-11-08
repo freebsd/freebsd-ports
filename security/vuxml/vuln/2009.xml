@@ -4250,7 +4250,7 @@
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Secunia reports:</p>
-	<blockquote cite=" http://secunia.com/advisories/34746/">
+	<blockquote cite="http://secunia.com/advisories/34746/">
 	  <p>Some vulnerabilities have been reported in Poppler which can be
 	    exploited by malicious people to potentially compromise an
 	    application using the library.</p>

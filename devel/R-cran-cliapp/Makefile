@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Create Rich Command Line Applications
-WWW=		https://cran.r-project.org/web/packages/cliapp/
+WWW=		https://cran.r-project.org/package=cliapp
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

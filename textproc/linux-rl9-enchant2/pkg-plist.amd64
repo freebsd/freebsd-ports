@@ -1,0 +1,15 @@
+usr/bin/enchant-2
+usr/bin/enchant-lsmod-2
+usr/lib/enchant-2/enchant_hunspell.so
+usr/lib/libenchant-2.so.2
+usr/lib/libenchant-2.so.2.2.15
+usr/lib64/enchant-2/enchant_hunspell.so
+usr/lib64/libenchant-2.so.2
+usr/lib64/libenchant-2.so.2.2.15
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+usr/share/enchant-2/enchant.ordering
+usr/share/licenses/enchant2/COPYING.LIB
+usr/share/man/man1/enchant-2.1.gz
+usr/share/man/man1/enchant-lsmod-2.1.gz

@@ -55,7 +55,7 @@ include/prte/src/mca/state/state_types.h
 include/prte_version.h
 lib/libprrte.so
 lib/libprrte.so.3
-lib/libprrte.so.3.0.13
+lib/libprrte.so.3.0.14
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/html/.buildinfo
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/configuration.rst.txt

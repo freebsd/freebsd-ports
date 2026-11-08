@@ -20,7 +20,7 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		ecm:build
 # pim components
 USE_KDE+=	calendarcore contacts
-USE_QT=		base webengine
+USE_QT=		base
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS

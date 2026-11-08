@@ -1,0 +1,21 @@
+[
+{ type: install
+  message: <<EOM
+Configuration:
+
+1. Copy %%ETCDIR%%/config.yaml.sample to %%ETCDIR%%/config.yaml and
+   enter immich_url and immich_api_key.
+
+2. To keep the key and the kiosk password out of that file, name
+   KIOSK_IMMICH_API_KEY_FILE and KIOSK_PASSWORD_FILE in
+   immich_kiosk_env instead.
+
+3. sysrc immich_kiosk_enable=YES && service immich_kiosk start
+
+Upstream listens on port 3000, which www/immich-public-proxy already
+uses; this port starts on 3001 instead, set with immich_kiosk_port.
+It answers on every address and has no authentication unless a password
+is set, so keep it off untrusted networks.
+EOM
+}
+]

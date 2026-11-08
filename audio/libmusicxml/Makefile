@@ -17,6 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	grame-cncm
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/build
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4 compatibility, see https://github.com/grame-cncm/libmusicxml/issues/67
 
 OPTIONS_DEFINE=	DOCS
 PORTDOCS=	*

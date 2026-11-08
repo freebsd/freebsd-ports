@@ -1,0 +1,10 @@
+--- CMakeLists.txt.orig	2025-09-17 08:53:35 UTC
++++ CMakeLists.txt
+@@ -1,6 +1,6 @@ project(fdm-materials NONE)
+ project(fdm-materials NONE)
+ 
+-cmake_minimum_required(VERSION 2.8.12)
++cmake_minimum_required(VERSION 3.5)
+ 
+ include(CMakePackageConfigHelpers)
+ 

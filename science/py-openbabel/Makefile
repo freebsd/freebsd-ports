@@ -1,5 +1,5 @@
 PORTNAME=	openbabel
-DISTVERSION=	3.2.0
+DISTVERSION=	3.2.1
 CATEGORIES=	science # chemistry
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -31,5 +31,7 @@ TEST_WRKSRC=	${WRKSRC}/test
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/openbabel/_openbabel.so
+
+# tests as of 3.2.1: 207 passed
 
 .include <bsd.port.mk>

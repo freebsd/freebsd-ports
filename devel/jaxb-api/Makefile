@@ -20,6 +20,10 @@ JAVA_VERSION=	8+
 NO_ARCH=	yes
 NO_BUILD=	yes
 
+# 3.x and 4.x move the API from the javax.xml.bind to the jakarta.xml.bind
+# namespace, which security/dogtag-pki cannot consume.  Stay on 2.3.x.
+PORTSCOUT=	limit:^2\.3\.
+
 PLIST_FILES=	${JAVAJARDIR}/jaxb-api.jar
 
 do-install:

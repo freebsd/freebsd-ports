@@ -1,6 +1,6 @@
 PORTNAME=	rustconn
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.19.8
+DISTVERSION=	0.24.8
 PORTREVISION=	0
 CATEGORIES=	net
 
@@ -18,13 +18,16 @@ LICENSE_TEXT_UNICODE=	See https://www.unicode.org/copyright.html
 LICENSE_PERMS_CDLA20=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_UNICODE=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+BROKEN_i386=	does not compile
+
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libgraphene-1.0.so:graphics/graphene \
-		libzstd.so:archivers/zstd \
-		libwebkitgtk-6.0.so:www/webkit2-gtk@60
+		libwebkitgtk-6.0.so:www/webkit2-gtk@60 \
+		libzstd.so:archivers/zstd
 
-USES=		cargo desktop-file-utils gettext-tools gnome pkgconfig shebangfix ssl
+USES=		cargo desktop-file-utils gettext-tools gnome pkgconfig \
+		shebangfix ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	totoshko88
 GH_PROJECT=	RustConn
@@ -76,5 +79,10 @@ post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/assets/icons/hicolor/scalable/apps/io.github.totoshko88.RustConn.svg \
 		${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/mime/packages
+.for mimetype in rdp vv
+	${INSTALL_DATA} ${WRKSRC}/rustconn/assets/io.github.totoshko88.RustConn-${mimetype}.xml \
+		${STAGEDIR}${PREFIX}/share/mime/packages
+.endfor
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
 PORTNAME=	mailparse
-DISTVERSION=	3.1.9
+DISTVERSION=	3.2.0
 CATEGORIES=	mail www
 
 MAINTAINER=	dbaio@FreeBSD.org
@@ -10,6 +10,5 @@ LICENSE=	PHP301
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		php:pecl
-USE_PHP=	mbstring:build
 
 .include <bsd.port.mk>

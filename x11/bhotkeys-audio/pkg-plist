@@ -1,0 +1,12 @@
+bin/audio-output-devices
+bin/audio-output-osd
+bin/audio-output-toggle
+bin/volume-osd
+share/bhotkeys/plugins.d/fn-audio-out
+share/bhotkeys/plugins.d/fn-mute
+share/bhotkeys/plugins.d/fn-vol-down
+share/bhotkeys/plugins.d/fn-vol-up
+share/man/man1/audio-output-devices.1.gz
+share/man/man1/audio-output-osd.1.gz
+share/man/man1/audio-output-toggle.1.gz
+share/man/man1/volume-osd.1.gz

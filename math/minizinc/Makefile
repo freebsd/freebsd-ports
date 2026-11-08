@@ -1,6 +1,5 @@
 PORTNAME=	minizinc
-DISTVERSION=	2.8.7
-PORTREVISION=	1
+DISTVERSION=	2.10.1
 CATEGORIES=	math lang
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,12 +10,12 @@ WWW=		https://www.minizinc.org/ \
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-CONFLICTS_BUILD=	CoinMP
-
 LIB_DEPENDS=	libCbc.so:math/cbc \
 		libCgl.so:math/cgl \
+		libchuffed_fzn.so:math/chuffed \
 		libCoinUtils.so:math/coinutils \
 		libgecodekernel.so:math/gecode \
+		libmpfr.so:math/mpfr \
 		libOsi.so:math/osi \
 		libOsiClp.so:math/clp
 
@@ -33,13 +32,6 @@ CXXFLAGS+=	-DFREEBSD_MZN_STDLIB_DIR="\\\"${DATADIR}\\\""
 CXXFLAGS+=	-I${LOCALBASE}/include/highs # workaround for https://github.com/MiniZinc/libminizinc/issues/744
 LDFLAGS+=	-L${LOCALBASE}/lib # workaround for https://github.com/MiniZinc/libminizinc/issues/744
 
-OPTIONS_DEFINE=		WITH_SCIP
-
-WITH_SCIP_DESC=		Build with the SCIP optimizer
-WITH_SCIP_CMAKE_BOOL=	USE_SCIP
-WITH_SCIP_LIB_DEPENDS=	libscip.so:math/SCIP/
-
-post-patch:
-	${REINPLACE_CMD} -e 's|string std_lib_dir;|string std_lib_dir = "${DATADIR}";|' ${WRKSRC}/mzn2doc.cpp
+CONFLICTS_BUILD=	CoinMP
 
 .include <bsd.port.mk>

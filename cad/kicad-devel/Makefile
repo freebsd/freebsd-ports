@@ -1,7 +1,6 @@
 PORTNAME=	kicad
 DISTVERSION=	r${GIT_SRC_DATE}
-PORTREVISION=	5
-#PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	cad
 PKGNAMESUFFIX=	-devel
 DIST_SUBDIR=		${PORTNAME}
@@ -17,7 +16,9 @@ BROKEN_i386=    doesn't buld on pkg builder
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/git:devel/git \
 		${LOCALBASE}/include/glm/glm.hpp:math/glm \
-		${LOCALBASE}/bin/swig:devel/swig
+		glslang>0:graphics/glslang \
+		${LOCALBASE}/bin/swig:devel/swig \
+		vulkan-headers>0:graphics/vulkan-headers
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig \
@@ -30,10 +31,12 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libprotobuf.so:devel/protobuf \
 		libcurl.so:ftp/curl \
 		libGLEW-wayland.so:graphics/glew-wayland \
-		libnng.so:net/nng \
+		libnng.so:net/nng1 \
 		libpoppler-glib.so:graphics/poppler-glib \
 		libspnav.so:misc/libspnav \
-		libodbc.so:databases/unixODBC
+		libodbc.so:databases/unixODBC \
+		libshaderc_shared.so:graphics/shaderc \
+		libvulkan.so:graphics/vulkan-loader
 
 CONFLICTS_INSTALL=	kicad # bin/_cvpcb.kiface
 
@@ -44,7 +47,7 @@ PLIST_SUB=	OPSYS=${OPSYS}	\
 
 USES=		cmake:noninja compiler:c++20-lang cpe desktop-file-utils gl \
 		gettext gnome pkgconfig python shared-mime-info shebangfix ssl \
-		tar:bzip2 xorg 
+		tar:bzip2 xorg
 CPE_VENDOR=	kicad
 CPE_PRODUCT=	eda
 USE_GITLAB=	yes
@@ -61,13 +64,14 @@ EXTRAS2RM=	linux-non_unicode linux wings3d LINUX.README	\
 		contrib_makefiles.txt running_kicad_under_W98.txt
 SHEBANG_FILES=	pcbnew/python/wizards/qfp/qfp.py
 #CXXFLAGS+=	--std=c++14 -I${WRKSRC} -I${WRKSRC}/include -I${LOCALBASE}/include
-CXXFLAGS+=	-g -DBOOST_STACKTRACE_GNU_SOURCE_NOT_REQUIRED # error: "Boost.Stacktrace requires `_Unwind_Backtrace` function. Define `_GNU_SOURCE` macro or `BOOST_STACKTRACE_GNU_SOURCE_NOT_REQUIRED` if _Unwind_Backtrace is available without `_GNU_SOURCE`."
+CXXFLAGS+=	-g -D_LIBCPP_ENABLE_EXPERIMENTAL -DBOOST_STACKTRACE_GNU_SOURCE_NOT_REQUIRED # error: "Boost.Stacktrace requires `_Unwind_Backtrace` function. Define `_GNU_SOURCE` macro or `BOOST_STACKTRACE_GNU_SOURCE_NOT_REQUIRED` if _Unwind_Backtrace is available without `_GNU_SOURCE`."
 # -undefined dynamic_lookup
 CXXFLAGS_powerpc=	-O0
 CMAKE_ARGS=	-DLOCALBASE="${LOCALBASE}" \
 		-DCMAKE_BUILD_TYPE="Debug" \
 		-DKICAD_BUILD_I18N=ON \
 		-DKICAD_TESTING_VERSION=ON \
+		-DKICAD_BUILD_QA_TESTS=OFF \
 		-DKICAD_VERSION=${DISTVERSION} \
 		-DCMAKE_INCLUDE_PATH="${WRKSRC}/include ${LOCALBASE}/include" \
 		-DwxWidgets_CONFIG_EXECUTABLE="${WX_CONFIG}" \

@@ -45,6 +45,7 @@
     SUBDIR += dtv-scan-tables
     SUBDIR += dv2sub
     SUBDIR += dvb-apps
+    SUBDIR += dvbcut
     SUBDIR += dvbsnoop
     SUBDIR += dvd-slideshow
     SUBDIR += dvdauthor
@@ -55,9 +56,9 @@
     SUBDIR += ffaudioconverter
     SUBDIR += ffdec
     SUBDIR += ffmpeg
+    SUBDIR += ffmpeg-netint
     SUBDIR += ffmpeg3
     SUBDIR += ffmpeg4
-    SUBDIR += ffmpeg6
     SUBDIR += ffmpegthumbnailer
     SUBDIR += ffms2
     SUBDIR += ffnvcodec-headers
@@ -73,10 +74,12 @@
     SUBDIR += go2tv
     SUBDIR += gpac
     SUBDIR += gpodder
+    SUBDIR += graft
     SUBDIR += gst123
     SUBDIR += gstreamer1
     SUBDIR += gstreamer1-editing-services
     SUBDIR += gstreamer1-libav
+    SUBDIR += gstreamer1-plugin-netint
     SUBDIR += gstreamer1-plugins
     SUBDIR += gstreamer1-plugins-all
     SUBDIR += gstreamer1-plugins-aom
@@ -124,7 +127,8 @@
     SUBDIR += iso2mkv
     SUBDIR += jellyfin
     SUBDIR += jellyfin-desktop
-    SUBDIR += jmref
+    SUBDIR += jellyfin-ffmpeg
+    SUBDIR += jellyfin-ffmpeg7
     SUBDIR += kaffeine
     SUBDIR += kamoso
     SUBDIR += kasts
@@ -193,9 +197,12 @@
     SUBDIR += libvdpau
     SUBDIR += libvdpau-va-gl
     SUBDIR += libvlcpp
+    SUBDIR += libvpl
+    SUBDIR += libvpl-tools
     SUBDIR += libvpx
     SUBDIR += libwebm
     SUBDIR += libx264
+    SUBDIR += libxcoder
     SUBDIR += libxine
     SUBDIR += libxspf
     SUBDIR += libzen
@@ -265,7 +272,7 @@
     SUBDIR += oggvideotools
     SUBDIR += ogmtools
     SUBDIR += olive
-    SUBDIR += onevpl
+    SUBDIR += omacut
     SUBDIR += openh264
     SUBDIR += openshot
     SUBDIR += opentimelineio
@@ -308,7 +315,6 @@
     SUBDIR += py-mido
     SUBDIR += py-moviepy
     SUBDIR += py-opentimelineio
-    SUBDIR += py-periscope
     SUBDIR += py-pretty_midi
     SUBDIR += py-pymediainfo
     SUBDIR += py-pysubs2
@@ -342,6 +348,8 @@
     SUBDIR += rubygem-gstreamer
     SUBDIR += rubygem-streamio-ffmpeg
     SUBDIR += scte35dump
+    SUBDIR += sfml2
+    SUBDIR += sfml3
     SUBDIR += shaka-packager
     SUBDIR += shotcut
     SUBDIR += shotcut-qt6
@@ -399,7 +407,6 @@
     SUBDIR += wf-recorder
     SUBDIR += winff
     SUBDIR += wireplumber
-    SUBDIR += wl-screenrec
     SUBDIR += wlrobs
     SUBDIR += x264
     SUBDIR += x265

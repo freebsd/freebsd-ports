@@ -1,4 +1,4 @@
---- libbeat/scripts/Makefile.orig	2026-02-23 21:59:26 UTC
+--- libbeat/scripts/Makefile.orig	2026-09-09 20:15:21 UTC
 +++ libbeat/scripts/Makefile
 @@ -47,7 +47,7 @@ GOPACKAGES_STRESSTESTS=$(shell find . -type d \( -name
  GOFILES_NOVENDOR = $(shell find . -type f -name '*.go' -not -path "*/vendor/*" 2>/dev/null)
@@ -9,8 +9,8 @@
  ES_HOST?=elasticsearch
  ES_PORT?=9200
  ES_USER?=beats
-@@ -336,12 +336,12 @@ update: python-env fields collect config ## @build Upd
- update: python-env fields collect config ## @build Update expects the most recent version of libbeat in the GOPATH
+@@ -336,12 +336,12 @@ update: fields collect config ## @build Update expects
+ update: fields collect config ## @build Update expects the most recent version of libbeat in the GOPATH
  	@echo "Updating generated files for ${BEAT_NAME}"
  
 -ifneq ($(shell [[ $(BEAT_NAME) == libbeat || $(BEAT_NAME) == metricbeat ]] && echo true ),true)
@@ -23,4 +23,4 @@
 +ifneq ($(shell [[ $(BEAT_NAME) = libbeat || $(BEAT_NAME) = metricbeat ]] && echo true ),true)
  	@# Update docs
  	@mkdir -p docs
- 	@${PYTHON_ENV_EXE} ${ES_BEATS}/libbeat/scripts/generate_fields_docs.py $(PWD)/fields.yml ${BEAT_NAME} ${ES_BEATS} --output_path $(ES_BEATS)/docs/reference/${BEAT_NAME}
+ 	@mage fieldDocs

@@ -1,5 +1,5 @@
 PORTNAME=	openbb-cboe
-DISTVERSION=	1.6.1
+DISTVERSION=	2.0.0
 CATEGORIES=	finance python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -7,15 +7,14 @@ DISTNAME=	${PORTNAME:S/-/_/g}-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	OpenBB: CBOE extension for OpenBB
-WWW=		https://github.com/OpenBB-finance/OpenBB
+WWW=		https://github.com/openbq-org/OpenBB
 
 LICENSE=	AGPLv3
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=1.0.0:devel/py-poetry-core@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp-client-cache>=0.11.0:www/py-aiohttp-client-cache@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}aiosqlite>0:databases/py-aiosqlite@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}openbb-core>=1.6.10:finance/py-openbb-core@${PY_FLAVOR}
-
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiosqlite>=0.20:databases/py-aiosqlite@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}openbb-core>=2.0.0:finance/py-openbb-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}aiohttp-client-cache>=0.11:www/py-aiohttp-client-cache@${PY_FLAVOR}
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 

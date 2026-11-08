@@ -1,0 +1,13 @@
+vm-tui is a terminal UI and scripting front-end for vm-bhyve, the bhyve
+guest manager. It shows the guests, the virtual switches with the bridges
+behind them, the datastores, the ISOs and cloud images, the templates and
+the rc.conf settings on one screen each.
+
+A guest opens as its configuration keys grouped by subject, with each disk
+and interface carrying what vm info and ifconfig know about it. Keys are
+edited through a list of the allowed values with their meaning, and every
+action shows the exact vm, sysrc, qemu-img and zfs commands it will run
+before running them, with pre-flight notes on what will be refused.
+
+Non-interactive flags print guests, switches and configuration keys, with
+optional JSON output, for use in scripts.

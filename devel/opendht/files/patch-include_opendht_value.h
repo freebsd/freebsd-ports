@@ -1,6 +1,6 @@
---- include/opendht/value.h.orig	2022-09-02 21:01:23 UTC
+--- include/opendht/value.h.orig	2026-09-04 20:46:41 UTC
 +++ include/opendht/value.h
-@@ -26,6 +26,11 @@
+@@ -9,6 +9,11 @@
  
  #include <msgpack.hpp>
  

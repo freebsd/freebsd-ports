@@ -1,0 +1,6 @@
+Soil-Structure Interactions (ISS) and Sol-Fluid-Structure (ISFS) involved in
+buildings dynamics or in arch dams, can be resolved with frequency coupling in
+Code_Aster.
+
+MISS3D (called via the Code_Aster command CALC_MISS) is a code with integral
+equations (Green functions) and sub-structuring from ECP / LMSSMat.

@@ -4,6 +4,7 @@ lib/libtlsrpt.a
 lib/libtlsrpt.so
 lib/libtlsrpt.so.0
 lib/libtlsrpt.so.0.0.0
+libdata/pkgconfig/libtlsrpt.pc
 share/man/man3/tlsrpt_add_delivery_request_failure.3.gz
 share/man/man3/tlsrpt_add_mx_host_pattern.3.gz
 share/man/man3/tlsrpt_add_policy_string.3.gz
@@ -21,3 +22,5 @@ share/man/man3/tlsrpt_set_blocking.3.gz
 share/man/man3/tlsrpt_set_malloc_and_free.3.gz
 share/man/man3/tlsrpt_set_nonblocking.3.gz
 share/man/man3/tlsrpt_strerror.3.gz
+share/man/man3/tlsrpt_version.3.gz
+share/man/man3/tlsrpt_version_check.3.gz

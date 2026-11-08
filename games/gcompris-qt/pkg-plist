@@ -265,6 +265,7 @@ share/applications/org.kde.gcompris.desktop
 %%DATADIR%%/translations/gcompris_teachers_qt_id.qm
 %%DATADIR%%/translations/gcompris_teachers_qt_it.qm
 %%DATADIR%%/translations/gcompris_teachers_qt_ka.qm
+%%DATADIR%%/translations/gcompris_teachers_qt_lt.qm
 %%DATADIR%%/translations/gcompris_teachers_qt_lv.qm
 %%DATADIR%%/translations/gcompris_teachers_qt_nl.qm
 %%DATADIR%%/translations/gcompris_teachers_qt_pl.qm

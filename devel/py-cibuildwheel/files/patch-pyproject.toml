@@ -1,0 +1,16 @@
+-- Restrict tests to the unit_test directory and remove the pytest-rerunfailures
+-- required_plugins check, which conflicts with --disable-plugin-autoload used
+-- in the ports test runner.  The integration tests in test/ require Linux/macOS/
+-- Windows CI infrastructure and cannot run on FreeBSD.
+
+--- pyproject.toml.orig	2026-09-14 15:11:41 UTC
++++ pyproject.toml
+@@ -105,7 +105,7 @@ markers = [
+     "android: tests that run on Android",
+     "pyodide: tests that run on Pyodide",
+ ]
+-required_plugins = ["pytest-rerunfailures"]
++testpaths = ["unit_test"]
+
+ [tool.mypy]
+ python_version = "3.11"

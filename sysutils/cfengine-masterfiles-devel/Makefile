@@ -3,8 +3,8 @@ PORTVERSION=	3.28.${CFENGINE_COMMIT_DATE}
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-devel
-HASH=		ebbd0492
-CFENGINE_COMMIT_DATE=	20260727
+HASH=		87776efb
+CFENGINE_COMMIT_DATE=	20261027
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	cfengine sample policies for installations and upgrades
@@ -23,8 +23,6 @@ CONFLICTS=	cfengine-masterfiles3[0-9]-* cfengine-masterfiles31[02-9]-* \
 		cfengine-masterfiles-3.*
 
 RUN_DEPENDS=	cf-agent:sysutils/cfengine${PKGNAMESUFFIX}
-
-FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}
 
 MAKE_JOBS_UNSAFE=	yes
 USES=		autoreconf:build cpe gmake python:build

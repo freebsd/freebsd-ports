@@ -1,5 +1,5 @@
-TIMESTAMP = 1769542256
-SHA256 (flatnotes-v5.5.4.frontend.tar.gz) = 02fe16911c6c6a0829ad03a8fb9c2a32e9a8e22ad643ec964d28d456ce013b0a
-SIZE (flatnotes-v5.5.4.frontend.tar.gz) = 1030943
-SHA256 (dullage-flatnotes-v5.5.4_GH0.tar.gz) = c7f89a1f040b12db0b65e7f8e461ad7a63823a3b1d0492a8e8db434f755ea43f
-SIZE (dullage-flatnotes-v5.5.4_GH0.tar.gz) = 445076
+TIMESTAMP = 1788639559
+SHA256 (flatnotes-v5.5.5.frontend.tar.gz) = 3ddd46bb671f8af651bb5d9b8aa75d57c851617912f2ba968f0d5b1f3cb21eb0
+SIZE (flatnotes-v5.5.5.frontend.tar.gz) = 1003352
+SHA256 (dullage-flatnotes-v5.5.5_GH0.tar.gz) = f8973e42576d29b82d0b580d31af154670b3069debca658d9a73f2ff528ab160
+SIZE (dullage-flatnotes-v5.5.5_GH0.tar.gz) = 441518

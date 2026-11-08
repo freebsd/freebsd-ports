@@ -1,4 +1,4 @@
-TIMESTAMP = 1775961780
+TIMESTAMP = 1788626416
 SHA256 (rust/crates/async-channel-2.5.0.crate) = 924ed96dd52d1b75e9c1a3e6275715fd320f5f9439fb5a4a11fa51f4221158d2
 SIZE (rust/crates/async-channel-2.5.0.crate) = 18624
 SHA256 (rust/crates/autocfg-1.5.0.crate) = c08606f8c3cbf4ce6ec8e28fb0014a2c086708fe954eaa885384a6165172e7e8
@@ -187,5 +187,5 @@ SHA256 (rust/crates/windows-threading-0.2.1.crate) = 3949bd5b99cafdf1c7ca86b43ca
 SIZE (rust/crates/windows-threading-0.2.1.crate) = 9686
 SHA256 (rust/crates/winnow-0.7.14.crate) = 5a5364e9d77fcdeeaa6062ced926ee3381faa2ee02d3eb83a5c27a8825540829
 SIZE (rust/crates/winnow-0.7.14.crate) = 184718
-SHA256 (guillaumegomez-process-viewer-g20260130-b69bb53_GH0.tar.gz) = 82a76b480c6517f4aea7a2050c3e5b8ec9808d29e13a69522c590bb56260c4db
-SIZE (guillaumegomez-process-viewer-g20260130-b69bb53_GH0.tar.gz) = 90118
+SHA256 (guillaumegomez-process-viewer-0.5.11-b69bb53_GH0.tar.gz) = 82a76b480c6517f4aea7a2050c3e5b8ec9808d29e13a69522c590bb56260c4db
+SIZE (guillaumegomez-process-viewer-0.5.11-b69bb53_GH0.tar.gz) = 90118

@@ -1,9 +1,13 @@
+@comment bin/portal-test-gtk3
 include/libportal-gtk3/portal-gtk3.h
 lib/girepository-1.0/XdpGtk3-1.0.typelib
 lib/libportal-gtk3.so
 lib/libportal-gtk3.so.1
 lib/libportal-gtk3.so.1.0.0
 libdata/pkgconfig/libportal-gtk3.pc
+@comment share/applications/org.gnome.PortalTest.Gtk3.desktop
+@comment share/dbus-1/services/org.gnome.PortalTest.Gtk3.service
 share/gir-1.0/XdpGtk3-1.0.gir
+@comment share/org.gnome.PortalTest.Gtk3/test.txt
 %%VAPI%%share/vala/vapi/libportal-gtk3.deps
 %%VAPI%%share/vala/vapi/libportal-gtk3.vapi

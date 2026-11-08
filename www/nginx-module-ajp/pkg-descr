@@ -1,0 +1,6 @@
+The ajp module lets nginx speak AJP, the binary protocol that Apache's
+mod_proxy_ajp uses, so that a Tomcat or a JBoss behind it can be reached
+over its AJP connector instead of over HTTP.
+
+This port only installs the module sources.  The module itself is built
+by the nginx ports when their AJP option is enabled.

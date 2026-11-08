@@ -24,6 +24,12 @@ alias(
     visibility = ["//visibility:public"],
 )
 
+alias(
+    name = "zlib-ng",
+    actual = ":z",
+    visibility = ["//visibility:public"],
+)
+
 filegroup(
     name = "all",
     srcs = [

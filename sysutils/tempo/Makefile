@@ -1,7 +1,7 @@
 PORTNAME=	tempo
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.10.5
-PORTREVISION=	2
+PORTREVISION=	7
 CATEGORIES=	sysutils
 MASTER_SITES+=	https://raw.githubusercontent.com/${GH_ACCOUNT}/${PORTNAME}/${DISTVERSIONFULL}/
 PKGNAMEPREFIX=	grafana-
@@ -14,7 +14,7 @@ WWW=		https://github.com/grafana/tempo
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.26,modules
+USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	grafana
 GH_PROJECT=	tempo

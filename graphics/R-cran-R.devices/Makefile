@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Unified Handling of Graphics Devices
-WWW=		https://cran.r-project.org/package=R.devices
 
 LICENSE=	LGPL21 LGPL3
 LICENSE_COMB=	multi

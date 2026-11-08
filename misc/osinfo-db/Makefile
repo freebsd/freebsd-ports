@@ -1,7 +1,7 @@
 PORTNAME=	osinfo-db
-PORTVERSION=	20251212
+PORTVERSION=	20260812
 CATEGORIES=	misc
-MASTER_SITES=	https://releases.pagure.org/libosinfo/
+MASTER_SITES=	https://gitlab.com/libosinfo/osinfo-db/-/releases/v${PORTVERSION}/downloads/
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Osinfo database files

@@ -1,0 +1,4 @@
+ytop is a minimal interactive process monitor for FreeBSD.
+
+Keyboard and mouse controls support row selection, scrolling, and switching
+between process and thread lists.

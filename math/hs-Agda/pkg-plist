@@ -1,20 +1,20 @@
-%%DATADIR%%/emacs-mode/agda-input.el
-%%DATADIR%%/emacs-mode/agda-input.elc
-%%DATADIR%%/emacs-mode/agda2-abbrevs.el
-%%DATADIR%%/emacs-mode/agda2-abbrevs.elc
-%%DATADIR%%/emacs-mode/agda2-highlight.el
-%%DATADIR%%/emacs-mode/agda2-highlight.elc
-%%DATADIR%%/emacs-mode/agda2-mode-pkg.el
-%%DATADIR%%/emacs-mode/agda2-mode.el
-%%DATADIR%%/emacs-mode/agda2-mode.elc
-%%DATADIR%%/emacs-mode/agda2-queue.el
-%%DATADIR%%/emacs-mode/agda2-queue.elc
-%%DATADIR%%/emacs-mode/agda2.el
-%%DATADIR%%/emacs-mode/agda2.elc
-%%DATADIR%%/emacs-mode/annotation.el
-%%DATADIR%%/emacs-mode/annotation.elc
-%%DATADIR%%/emacs-mode/eri.el
-%%DATADIR%%/emacs-mode/eri.elc
+@comment %%DATADIR%%/emacs-mode/agda-input.el
+@comment %%DATADIR%%/emacs-mode/agda-input.elc
+@comment %%DATADIR%%/emacs-mode/agda2-abbrevs.el
+@comment %%DATADIR%%/emacs-mode/agda2-abbrevs.elc
+@comment %%DATADIR%%/emacs-mode/agda2-highlight.el
+@comment %%DATADIR%%/emacs-mode/agda2-highlight.elc
+@comment %%DATADIR%%/emacs-mode/agda2-mode-pkg.el
+@comment %%DATADIR%%/emacs-mode/agda2-mode.el
+@comment %%DATADIR%%/emacs-mode/agda2-mode.elc
+@comment %%DATADIR%%/emacs-mode/agda2-queue.el
+@comment %%DATADIR%%/emacs-mode/agda2-queue.elc
+@comment %%DATADIR%%/emacs-mode/agda2.el
+@comment %%DATADIR%%/emacs-mode/agda2.elc
+@comment %%DATADIR%%/emacs-mode/annotation.el
+@comment %%DATADIR%%/emacs-mode/annotation.elc
+@comment %%DATADIR%%/emacs-mode/eri.el
+@comment %%DATADIR%%/emacs-mode/eri.elc
 %%DATADIR%%/lib/prim/Agda/Builtin/Bool.agda
 %%DATADIR%%/lib/prim/Agda/Builtin/Char.agda
 %%DATADIR%%/lib/prim/Agda/Builtin/Char/Properties.agda

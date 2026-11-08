@@ -17,7 +17,7 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xcb-util.pc:x11/xcb-util \
 		${LOCALBASE}/libdata/pkgconfig/xcb-renderutil.pc:x11/xcb-util-renderutil \
 		${LOCALBASE}/libdata/pkgconfig/xcb-image.pc:x11/xcb-util-image
 
-USES=		gmake gperf tar:xz xorg xorg-cat:lib
+USES=		gmake gperf xorg xorg-cat:lib
 USE_XORG=	xcb
 INSTALL_TARGET=	install-strip
 

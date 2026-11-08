@@ -455,8 +455,6 @@ lib/libmpqc.so.7.1.0
 %%DOXYGEN%%%%DOCSDIR%%/avlmap_8h_source.html
 %%DOXYGEN%%%%DOCSDIR%%/avlset_8h_source.html
 %%DOXYGEN%%%%DOCSDIR%%/basis_8h_source.html
-%%DOXYGEN%%%%DOCSDIR%%/bc_s.png
-%%DOXYGEN%%%%DOCSDIR%%/bdwn.png
 %%DOXYGEN%%%%DOCSDIR%%/bem_8h_source.html
 %%DOXYGEN%%%%DOCSDIR%%/bin_2molrender_2LIBS_8h_source.html
 %%DOXYGEN%%%%DOCSDIR%%/bin_2mpqc_2LIBS_8h_source.html
@@ -2684,9 +2682,6 @@ lib/libmpqc.so.7.1.0
 %%DOXYGEN%%%%DOCSDIR%%/classsc_1_1Pool.html
 %%DOXYGEN%%%%DOCSDIR%%/classsc_1_1PoolData-members.html
 %%DOXYGEN%%%%DOCSDIR%%/classsc_1_1PoolData.html
-%%DOXYGEN%%%%DOCSDIR%%/classsc_1_1PoolData__coll__graph.map
-%%DOXYGEN%%%%DOCSDIR%%/classsc_1_1PoolData__coll__graph.md5
-%%DOXYGEN%%%%DOCSDIR%%/classsc_1_1PoolData__coll__graph.png
 %%DOXYGEN%%%%DOCSDIR%%/classsc_1_1Pool__coll__graph.map
 %%DOXYGEN%%%%DOCSDIR%%/classsc_1_1Pool__coll__graph.md5
 %%DOXYGEN%%%%DOCSDIR%%/classsc_1_1Pool__coll__graph.png
@@ -4758,7 +4753,6 @@ lib/libmpqc.so.7.1.0
 %%DOXYGEN%%%%DOCSDIR%%/clhftmpl_8h_source.html
 %%DOXYGEN%%%%DOCSDIR%%/clks_8h_source.html
 %%DOXYGEN%%%%DOCSDIR%%/clkstmpl_8h_source.html
-%%DOXYGEN%%%%DOCSDIR%%/closed.png
 %%DOXYGEN%%%%DOCSDIR%%/clscf_8h_source.html
 %%DOXYGEN%%%%DOCSDIR%%/cmatrix_8h_source.html
 %%DOXYGEN%%%%DOCSDIR%%/color_8h_source.html
@@ -4820,10 +4814,8 @@ lib/libmpqc.so.7.1.0
 %%DOXYGEN%%%%DOCSDIR%%/dist_8h_source.html
 %%DOXYGEN%%%%DOCSDIR%%/disthql_8h_source.html
 %%DOXYGEN%%%%DOCSDIR%%/distshpair_8h_source.html
-%%DOXYGEN%%%%DOCSDIR%%/doc.png
 %%DOXYGEN%%%%DOCSDIR%%/download.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen.css
-%%DOXYGEN%%%%DOCSDIR%%/dynsections.js
 %%DOXYGEN%%%%DOCSDIR%%/eavlmmap_8h_source.html
 %%DOXYGEN%%%%DOCSDIR%%/edge_8h_source.html
 %%DOXYGEN%%%%DOCSDIR%%/efc_8h_source.html
@@ -4842,8 +4834,6 @@ lib/libmpqc.so.7.1.0
 %%DOXYGEN%%%%DOCSDIR%%/files_8h_source.html
 %%DOXYGEN%%%%DOCSDIR%%/find_8h_source.html
 %%DOXYGEN%%%%DOCSDIR%%/flags_8h_source.html
-%%DOXYGEN%%%%DOCSDIR%%/folderclosed.png
-%%DOXYGEN%%%%DOCSDIR%%/folderopen.png
 %%DOXYGEN%%%%DOCSDIR%%/form_0.png
 %%DOXYGEN%%%%DOCSDIR%%/form_1.png
 %%DOXYGEN%%%%DOCSDIR%%/form_10.png
@@ -5255,9 +5245,6 @@ lib/libmpqc.so.7.1.0
 %%DOXYGEN%%%%DOCSDIR%%/inherit_graph_176.map
 %%DOXYGEN%%%%DOCSDIR%%/inherit_graph_176.md5
 %%DOXYGEN%%%%DOCSDIR%%/inherit_graph_176.png
-%%DOXYGEN%%%%DOCSDIR%%/inherit_graph_177.map
-%%DOXYGEN%%%%DOCSDIR%%/inherit_graph_177.md5
-%%DOXYGEN%%%%DOCSDIR%%/inherit_graph_177.png
 %%DOXYGEN%%%%DOCSDIR%%/inherit_graph_18.map
 %%DOXYGEN%%%%DOCSDIR%%/inherit_graph_18.md5
 %%DOXYGEN%%%%DOCSDIR%%/inherit_graph_18.png
@@ -5547,7 +5534,6 @@ lib/libmpqc.so.7.1.0
 %%DOXYGEN%%%%DOCSDIR%%/ipv2__parse_8h_source.html
 %%DOXYGEN%%%%DOCSDIR%%/ipv2__scan_8h_source.html
 %%DOXYGEN%%%%DOCSDIR%%/isosurf_8h_source.html
-%%DOXYGEN%%%%DOCSDIR%%/jquery.js
 %%DOXYGEN%%%%DOCSDIR%%/keyval.html
 %%DOXYGEN%%%%DOCSDIR%%/keyval_8h_source.html
 %%DOXYGEN%%%%DOCSDIR%%/keyvalval_8h_source.html
@@ -5637,9 +5623,6 @@ lib/libmpqc.so.7.1.0
 %%DOXYGEN%%%%DOCSDIR%%/mpqcval.html
 %%DOXYGEN%%%%DOCSDIR%%/mpqcwar.html
 %%DOXYGEN%%%%DOCSDIR%%/mstate_8h_source.html
-%%DOXYGEN%%%%DOCSDIR%%/nav_f.png
-%%DOXYGEN%%%%DOCSDIR%%/nav_g.png
-%%DOXYGEN%%%%DOCSDIR%%/nav_h.png
 %%DOXYGEN%%%%DOCSDIR%%/newstring_8h_source.html
 %%DOXYGEN%%%%DOCSDIR%%/newton_8h_source.html
 %%DOXYGEN%%%%DOCSDIR%%/obint_8h_source.html
@@ -5650,7 +5633,6 @@ lib/libmpqc.so.7.1.0
 %%DOXYGEN%%%%DOCSDIR%%/obwfn_8h_source.html
 %%DOXYGEN%%%%DOCSDIR%%/offset_8h_source.html
 %%DOXYGEN%%%%DOCSDIR%%/oogl_8h_source.html
-%%DOXYGEN%%%%DOCSDIR%%/open.png
 %%DOXYGEN%%%%DOCSDIR%%/opt_8h_source.html
 %%DOXYGEN%%%%DOCSDIR%%/orbital_8h_source.html
 %%DOXYGEN%%%%DOCSDIR%%/orthog_8h_source.html
@@ -5716,7 +5698,6 @@ lib/libmpqc.so.7.1.0
 %%DOXYGEN%%%%DOCSDIR%%/sointegral_8h_source.html
 %%DOXYGEN%%%%DOCSDIR%%/solvent_8h_source.html
 %%DOXYGEN%%%%DOCSDIR%%/sphere_8h_source.html
-%%DOXYGEN%%%%DOCSDIR%%/splitbar.png
 %%DOXYGEN%%%%DOCSDIR%%/srctree.html
 %%DOXYGEN%%%%DOCSDIR%%/stack_8h_source.html
 %%DOXYGEN%%%%DOCSDIR%%/state.html
@@ -5822,12 +5803,6 @@ lib/libmpqc.so.7.1.0
 %%DOXYGEN%%%%DOCSDIR%%/svd_8h_source.html
 %%DOXYGEN%%%%DOCSDIR%%/symmetry.html
 %%DOXYGEN%%%%DOCSDIR%%/symmint_8h_source.html
-%%DOXYGEN%%%%DOCSDIR%%/sync_off.png
-%%DOXYGEN%%%%DOCSDIR%%/sync_on.png
-%%DOXYGEN%%%%DOCSDIR%%/tab_a.png
-%%DOXYGEN%%%%DOCSDIR%%/tab_b.png
-%%DOXYGEN%%%%DOCSDIR%%/tab_h.png
-%%DOXYGEN%%%%DOCSDIR%%/tab_s.png
 %%DOXYGEN%%%%DOCSDIR%%/tabs.css
 %%DOXYGEN%%%%DOCSDIR%%/taylor_8h_source.html
 %%DOXYGEN%%%%DOCSDIR%%/tbgrad_8h_source.html
@@ -6225,6 +6200,7 @@ lib/libmpqc.so.7.1.0
 %%DOXYGEN%%share/man/man3/sc_PointOutputData.3.gz
 %%DOXYGEN%%share/man/man3/sc_Pool.3.gz
 %%DOXYGEN%%share/man/man3/sc_PoolData.3.gz
+%%DOXYGEN%%share/man/man3/sc_PoolData_[union].__unnamed0__.3.gz
 %%DOXYGEN%%share/man/man3/sc_PowellUpdate.3.gz
 %%DOXYGEN%%share/man/man3/sc_PrefixKeyVal.3.gz
 %%DOXYGEN%%share/man/man3/sc_PrimPairsCints.3.gz

@@ -31,4 +31,6 @@ GH_TUPLE=	aseprite:simpleini:c94997d:simpleini/third_party/simpleini \
 		aseprite:clip:94693e2:clip/src/clip \
 		aseprite:undo:f39b188:undo/src/undo
 
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/LibreSprite/LibreSprite/issues/672
+
 .include <bsd.port.mk>

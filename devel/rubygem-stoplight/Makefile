@@ -1,5 +1,5 @@
 PORTNAME=	stoplight
-PORTVERSION=	4.1.1
+PORTVERSION=	5.8.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,8 @@ WWW=		https://github.com/bolshakov/stoplight
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-redlock1>=1.0<2:devel/rubygem-redlock1
+RUN_DEPENDS=	rubygem-concurrent-ruby>=0:devel/rubygem-concurrent-ruby \
+		rubygem-zeitwerk>=0:devel/rubygem-zeitwerk
 
 USES=		gem
 

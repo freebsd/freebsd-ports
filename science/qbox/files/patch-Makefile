@@ -1,0 +1,23 @@
+-- Add PlaneConstraint.o to testSampleReader and testEnergyFunctional link lists.
+-- PlaneConstraint was added in 1.79.0 but its object file was omitted from the
+-- link lines of these test targets, causing undefined vtable errors.
+-- See https://github.com/qboxcode/qbox-public/issues/13 (reported)
+
+--- Makefile.orig	2026-09-06 07:29:39 UTC
++++ Makefile
+@@ -112,6 +112,7 @@ -include $(DEPS)
+         sinft.o spline.o UnitCell.o \
+         Base64Transcoder.o Constraint.o ConstraintSet.o DistanceConstraint.o \
+         AngleConstraint.o TorsionConstraint.o PositionConstraint.o \
++        PlaneConstraint.o \
+         ExtForceSet.o ExtForce.o PairExtForce.o AtomicExtForce.o \
+         GlobalExtForce.o sampling.o \
+         SampleReader.o StructuredDocumentHandler.o \
+@@ -136,6 +137,7 @@ -include $(DEPS)
+         GlobalExtForce.o \
+         ConstraintSet.o Constraint.o DistanceConstraint.o \
+         AngleConstraint.o TorsionConstraint.o PositionConstraint.o \
++        PlaneConstraint.o \
+         NonLocalPotential.o sampling.o Base64Transcoder.o \
+         ChargeDensity.o sinft.o spline.o \
+         XCOperator.o ExchangeOperator.o Bisection.o \

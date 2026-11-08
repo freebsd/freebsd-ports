@@ -1,6 +1,7 @@
 PORTNAME=	victoria-logs
-PORTVERSION=	1.52.0
+PORTVERSION=	1.53.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	samm@FreeBSD.org
@@ -10,7 +11,7 @@ WWW=		https://victoriametrics.com/products/victorialogs/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake go:1.26+,modules,no_targets
+USES=		gmake go:1.27+,modules,no_targets
 
 # we have to use github, as goproxy tags are wrong
 # see https://github.com/VictoriaMetrics/VictoriaLogs/issues/1071
@@ -27,7 +28,7 @@ MAKE_ENV=	BUILDINFO_TAG=tags-v${PORTVERSION}-victorialogs \
 		GOFLAGS=-buildvcs=false \
 		GOOS=${OPSYS:tl} \
 		PKG_TAG=v${PORTVERSION}
-ALL_TARGET=	${PORTNAME}-pure vlogscli-pure vmalert-pure
+ALL_TARGET=	${PORTNAME}-pure vlagent-pure vlogscli-pure vmalert-pure
 
 SUB_LIST+=	VICTORIA_DATA=${VICTORIA_DATA} \
 		VICTORIA_GROUP=${GROUPS} \
@@ -53,6 +54,8 @@ OPTIONS_DEFINE=	DOCS
 do-install:
 	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/bin/${PORTNAME}-pure \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/bin/vlagent-pure \
+		${STAGEDIR}${PREFIX}/bin/vlagent
 	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/bin/vlogscli-pure \
 		${STAGEDIR}${PREFIX}/bin/vlogscli
 	@${MKDIR} ${STAGEDIR}${VICTORIA_DATA} ${STAGEDIR}${VICTORIA_LOGS} \

@@ -1,5 +1,5 @@
 PORTNAME=	Gzip-Faster
-PORTVERSION=	0.22
+PORTVERSION=	0.23
 CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:BKB
@@ -17,5 +17,8 @@ TEST_DEPENDS=	p5-Digest-CRC>=0:security/p5-Digest-CRC \
 
 USES=		perl5
 USE_PERL5=	configure
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Gzip/Faster/Faster.so
 
 .include <bsd.port.mk>

@@ -1,0 +1,4 @@
+Python module to control and monitor Tuya WiFi smart devices over the
+local network or through the Tuya IoT cloud API.
+
+https://github.com/jasonacox/tinytuya

@@ -1,5 +1,5 @@
 PORTNAME=	cvxpy
-DISTVERSION=	1.9.2
+DISTVERSION=	1.9.3
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,7 +24,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}clarabel>=0.5.0:math/py-clarabel@${PY_FLAVOR
 		${PYTHON_PKGNAMEPREFIX}qdldl>=0.1.7.post0:math/py-qdldl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.13.0:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scs>=3.2.4.post1:math/py-scs@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sparsediffpy>=0.3.0:math/py-sparsediffpy@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}sparsediffpy>=0.6.0:math/py-sparsediffpy@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cvxopt>0:math/py-cvxopt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}diffcp>0:math/py-diffcp@${PY_FLAVOR}
 
@@ -32,6 +32,7 @@ USES=		python
 USE_PYTHON=	pep517 autoplist pytest
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_ARGS=	--disable-plugin-autoload
 
 # TestOpRelConeQuad requires MOSEK/COPT/CVXOPT; on FreeBSD only CVXOPT is
 # available and it does not achieve the 3-place accuracy these tests expect.
@@ -41,6 +42,6 @@ post-install:
 		@${STRIP_CMD} \
 			${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_cvxcore${PYTHON_TAG}.so
 
-# tests as of 1.9.2: 2482 passed, 776 skipped (test environment lacks optional solvers), 6 deselected (TestOpRelConeQuad)
+# tests as of 1.9.3: 21 failed, 2607 passed, 753 skipped, 6 deselected, 640 warnings, 91 subtests passed in 56.68s (all failures are due to a mistake in format stmt in tests)
 
 .include <bsd.port.mk>

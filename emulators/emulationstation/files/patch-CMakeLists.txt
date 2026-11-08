@@ -1,6 +1,12 @@
---- CMakeLists.txt.orig	2020-11-01 21:39:18 UTC
+--- CMakeLists.txt.orig	2023-04-13 14:23:07 UTC
 +++ CMakeLists.txt
-@@ -16,6 +16,10 @@ endif()
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8)
++cmake_minimum_required(VERSION 3.5)
+ 
+ option(GLES "Set to ON if targeting Embedded OpenGL" ${GLES})
+ option(GL "Set to ON if targeting Desktop OpenGL" ${GL})
+@@ -22,6 +22,10 @@ project(emulationstation-all)
  
  project(emulationstation-all)
  
@@ -11,7 +17,7 @@
  #-------------------------------------------------------------------------------
  #add local find scripts to CMAKE path
  LIST(APPEND CMAKE_MODULE_PATH
-@@ -244,6 +248,9 @@ set(dir ${CMAKE_CURRENT_SOURCE_DIR})
+@@ -263,6 +267,9 @@ set(LIBRARY_OUTPUT_PATH ${dir} CACHE PATH "Build direc
  set(EXECUTABLE_OUTPUT_PATH ${dir} CACHE PATH "Build directory" FORCE)
  set(LIBRARY_OUTPUT_PATH ${dir} CACHE PATH "Build directory" FORCE)
  

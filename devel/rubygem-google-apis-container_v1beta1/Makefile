@@ -1,5 +1,5 @@
 PORTNAME=	google-apis-container_v1beta1
-PORTVERSION=	0.91.0
+PORTVERSION=	0.107.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

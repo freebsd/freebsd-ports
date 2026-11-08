@@ -49,20 +49,3 @@
  
  /* Define to 1 if you have the <sys/mman.h> header file. */
  #define HAVE_SYS_MMAN_H 1
-@@ -522,13 +522,13 @@
- /* #undef HAVE__STATI64 */
- 
- /* Define to 1 if you have the `__bswap_16' intrinsic function. */
--#define HAVE___BSWAP_16 1
-+/* #undef HAVE___BSWAP_16 */
- 
- /* Define to 1 if you have the `__bswap_32' intrinsic function. */
--#define HAVE___BSWAP_32 1
-+/* #undef HAVE___BSWAP_32 */
- 
- /* Define to 1 if you have the `__bswap_64' intrinsic function. */
--#define HAVE___BSWAP_64 1
-+/* #undef HAVE___BSWAP_64 */
- 
- /* Define to 1 if you have the `__builtin_bswap16' intrinsic function. */
- #define HAVE___BUILTIN_BSWAP16 1

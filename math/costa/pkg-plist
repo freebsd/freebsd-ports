@@ -27,6 +27,7 @@ include/costa/scalapack.hpp
 lib/cmake/costa/FindCRAY_LIBSCI.cmake
 lib/cmake/costa/FindMKL.cmake
 lib/cmake/costa/FindSCALAPACK.cmake
+lib/cmake/costa/Findnvpl.cmake
 lib/cmake/costa/costaConfig.cmake
 lib/cmake/costa/costaConfigVersion.cmake
 lib/cmake/costa/costaTargets-%%CMAKE_BUILD_TYPE%%.cmake

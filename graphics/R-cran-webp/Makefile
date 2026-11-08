@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Reads and writes webp images
-WWW=		https://cran.r-project.org/package=webp
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

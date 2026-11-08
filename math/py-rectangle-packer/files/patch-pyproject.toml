@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2026-06-23 16:33:51 UTC
+--- pyproject.toml.orig	2026-10-13 20:06:26 UTC
 +++ pyproject.toml
 @@ -1,6 +1,6 @@ requires = [
  [build-system]
@@ -6,5 +6,5 @@
 -  "setuptools>=69",
 +  "setuptools",
    "wheel",
-   "Cython>=3.0",
- ]
+   "Cython>=3.0; python_version < '3.15'",
+   "Cython>=3.3; python_version >= '3.15'",

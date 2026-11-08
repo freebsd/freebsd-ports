@@ -10,7 +10,7 @@ WWW=		https://github.com/nathanvda/cocoon
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cpe gem
+USES=		gem
 
 NO_ARCH=	yes
 

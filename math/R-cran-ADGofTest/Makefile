@@ -6,7 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	dteske@FreeBSD.org
 COMMENT=	Anderson-Darling GoF test
-WWW=		https://cran.r-project.org/web/packages/ADGofTest/
+WWW=		https://cran.r-project.org/package=ADGofTest
 
 LICENSE=	GPLv2
 

@@ -1,0 +1,20 @@
+--- pyproject.toml.orig	2026-08-07 12:59:05 UTC
++++ pyproject.toml
+@@ -24,7 +24,7 @@ keywords = ["avro", "serialization", "rpc"]
+ requires-python = ">=3.10"
+ authors = [{name = "Apache Avro", email = "dev@avro.apache.org"}]
+ keywords = ["avro", "serialization", "rpc"]
+-license-files = ["LICENSE.txt"]
++license = { file = "LICENSE.txt" }
+ readme = "README.md"
+ classifiers = [
+     "License :: OSI Approved :: Apache Software License",
+@@ -43,7 +43,7 @@ Issues = "https://github.com/apache/avro/issues"
+ Issues = "https://github.com/apache/avro/issues"
+ 
+ [build-system]
+-requires = ["setuptools>=78.1.0", "wheel"]
++requires = ["setuptools>=61", "wheel"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project.scripts]

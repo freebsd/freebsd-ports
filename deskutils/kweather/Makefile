@@ -13,7 +13,7 @@ LIB_DEPENDS=	libKWeatherCore.so:deskutils/kweathercore
 
 USES=		cmake gettext kde:6 qt:6 tar:xz
 USE_KDE=	config coreaddons crash i18n kirigami-addons libplasma \
-		notifications \
+		notifications runner \
 		ecm:build
 USE_QT=		base charts declarative
 USE_GL=		gl opengl

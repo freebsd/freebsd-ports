@@ -1,5 +1,5 @@
 PORTNAME=	docling-parse
-DISTVERSION=	7.8.1
+DISTVERSION=	7.24.2
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,17 +20,20 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pybind11>=2.13.6:devel/py-pybind11@${PY_FL
 		nlohmann-json>=3.12.0:devel/nlohmann-json \
 		utf8cpp>=4.1.1:devel/utf8cpp
 LIB_DEPENDS=	libblend2d.so:graphics/blend2d \
-			libfreetype.so:print/freetype2 \
+		libfreetype.so:print/freetype2 \
 		libjpeg.so:graphics/jpeg-turbo \
 		liblcms2.so:graphics/lcms2 \
 		libopenjp2.so:graphics/openjpeg \
 		libqpdf.so:print/qpdf
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docling-core>=2.85.0:textproc/py-docling-core@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docling-core>=2.99.0:textproc/py-docling-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pillow>=10.0.0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.0.0:devel/py-pydantic2@${PY_FLAVOR}
 
 USES=		cmake:indirect python localbase pkgconfig
-USE_PYTHON=	autoplist concurrent pep517
+USE_PYTHON=	autoplist concurrent pep517 pytest
+
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_ARGS=	--disable-plugin-autoload
 
 MAKE_ENV=	USE_SYSTEM_DEPS=ON
 

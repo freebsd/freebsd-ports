@@ -1,6 +1,6 @@
 PORTNAME=	aws-c-sdkutils
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.8
+DISTVERSION=	1.0.1
 CATEGORIES=	devel
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libaws-c-common.so:devel/aws-c-common
 
-USES=		cmake:testing
+USES=		cmake:testing localbase
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	awslabs
@@ -21,5 +21,8 @@ USE_LDCONFIG=	yes
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	BUILD_TESTING
+
+PLIST_SUB=	SOVERSION=${DISTVERSION} \
+		SOVERSION_R=${DISTVERSION:R}
 
 .include <bsd.port.mk>

@@ -48,6 +48,7 @@
 %%SITE_ARCH%%/Crypt/Digest/BLAKE2s_160.pm
 %%SITE_ARCH%%/Crypt/Digest/BLAKE2s_224.pm
 %%SITE_ARCH%%/Crypt/Digest/BLAKE2s_256.pm
+%%SITE_ARCH%%/Crypt/Digest/BLAKE3.pm
 %%SITE_ARCH%%/Crypt/Digest/CHAES.pm
 %%SITE_ARCH%%/Crypt/Digest/KangarooTwelve.pm
 %%SITE_ARCH%%/Crypt/Digest/Keccak224.pm
@@ -96,6 +97,7 @@
 %%SITE_ARCH%%/Crypt/Mode/CTR.pm
 %%SITE_ARCH%%/Crypt/Mode/ECB.pm
 %%SITE_ARCH%%/Crypt/Mode/OFB.pm
+%%SITE_ARCH%%/Crypt/Mode/XTS.pm
 %%SITE_ARCH%%/Crypt/PK.pm
 %%SITE_ARCH%%/Crypt/PK/DH.pm
 %%SITE_ARCH%%/Crypt/PK/DSA.pm
@@ -172,6 +174,7 @@
 %%PERL5_MAN3%%/Crypt::Digest::BLAKE2s_160.3.gz
 %%PERL5_MAN3%%/Crypt::Digest::BLAKE2s_224.3.gz
 %%PERL5_MAN3%%/Crypt::Digest::BLAKE2s_256.3.gz
+%%PERL5_MAN3%%/Crypt::Digest::BLAKE3.3.gz
 %%PERL5_MAN3%%/Crypt::Digest::CHAES.3.gz
 %%PERL5_MAN3%%/Crypt::Digest::KangarooTwelve.3.gz
 %%PERL5_MAN3%%/Crypt::Digest::Keccak224.3.gz
@@ -220,6 +223,7 @@
 %%PERL5_MAN3%%/Crypt::Mode::CTR.3.gz
 %%PERL5_MAN3%%/Crypt::Mode::ECB.3.gz
 %%PERL5_MAN3%%/Crypt::Mode::OFB.3.gz
+%%PERL5_MAN3%%/Crypt::Mode::XTS.3.gz
 %%PERL5_MAN3%%/Crypt::PK.3.gz
 %%PERL5_MAN3%%/Crypt::PK::DH.3.gz
 %%PERL5_MAN3%%/Crypt::PK::DSA.3.gz

@@ -1,5 +1,5 @@
 PORTNAME=	node-sqlcipher
-DISTVERSION=	3.3.9
+DISTVERSION=	4.1.0
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/signalapp/node-sqlcipher/archive/refs/tags/v${DISTVERSION}/:sqlcipher \
 		LOCAL/mikael/signal-desktop/:npm
@@ -32,7 +32,7 @@ post-patch:
 do-build:
 	${ECHO_CMD} offline=true > ${WRKSRC}/.npmrc
 	cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} npm install --nodedir=${PREFIX}
+		${SETENV} ${MAKE_ENV} npm_config_nodedir=${LOCALBASE} npm install
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/build/Release/obj.target/node_sqlcipher.node ${STAGEDIR}${PREFIX}/lib/

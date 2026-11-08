@@ -1,10 +1,10 @@
 PORTNAME=	ashell
-DISTVERSION=	0.9.0
+DISTVERSION=	0.11.0
 PORTREVISION=	1
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	tagattie@FreeBSD.org
-COMMENT=	Ready to go Wayland status bar for Hyprland and Niri
+COMMENT=	Ready to go status bar for Wayland compositors
 WWW=		https://malpenzibo.github.io/ashell/
 
 LICENSE=	GPLv3+

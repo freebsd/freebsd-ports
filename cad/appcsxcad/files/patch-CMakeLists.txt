@@ -1,0 +1,13 @@
+--- CMakeLists.txt.orig	2023-10-22 14:27:59 UTC
++++ CMakeLists.txt
+@@ -14,10 +14,6 @@ endif()
+     set (CMAKE_CXX_FLAGS -fPIC )
+ endif()
+ 
+-if(POLICY CMP0020)
+-  cmake_policy(SET CMP0020 OLD)
+-endif()
+-
+ IF(EXISTS ${PROJECT_SOURCE_DIR}/localConfig.cmake)
+    include(${PROJECT_SOURCE_DIR}/localConfig.cmake)
+ ENDIF()

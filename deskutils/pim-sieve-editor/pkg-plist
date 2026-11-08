@@ -1,6 +1,6 @@
 bin/sieveeditor
 lib/libsieveeditor.so.6
-lib/libsieveeditor.so.%%KDE_APPLICATIONS_SHLIB_VER%%
+lib/libsieveeditor.so.%%KDE_PIM_SHLIB_VER%%
 share/applications/org.kde.sieveeditor.desktop
 share/config.kcfg/sieveeditorglobalconfig.kcfg
 share/icons/hicolor/16x16/apps/sieveeditor.png
@@ -55,6 +55,7 @@ share/locale/sr@ijekavianlatin/LC_MESSAGES/sieveeditor.mo
 share/locale/sr@latin/LC_MESSAGES/sieveeditor.mo
 share/locale/sv/LC_MESSAGES/sieveeditor.mo
 share/locale/tr/LC_MESSAGES/sieveeditor.mo
+share/locale/ug/LC_MESSAGES/sieveeditor.mo
 share/locale/uk/LC_MESSAGES/sieveeditor.mo
 share/locale/zh_CN/LC_MESSAGES/sieveeditor.mo
 share/locale/zh_TW/LC_MESSAGES/sieveeditor.mo

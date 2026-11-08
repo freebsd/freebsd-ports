@@ -4,17 +4,7 @@
  #-------------------------------------------------------------------------------------------
  # Dependencies
  #-------------------------------------------------------------------------------------------
-+if (FALSE)
++set(FETCHCONTENT_SOURCE_DIR_EABASE ${CMAKE_CURRENT_SOURCE_DIR}/EABase)
  FetchContent_Declare(
    EABase
    GIT_REPOSITORY https://github.com/electronicarts/EABase.git
-@@ -78,6 +79,9 @@ FetchContent_MakeAvailable(EABase)
- )
- 
- FetchContent_MakeAvailable(EABase)
-+else()
-+	add_subdirectory(EABase)
-+endif()
- 
- target_link_libraries(EASTL EABase)
- 

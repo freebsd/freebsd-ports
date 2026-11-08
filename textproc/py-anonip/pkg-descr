@@ -1,0 +1,10 @@
+Anonip is a tool to anonymize IP addresses in log files.
+
+It masks the last bits of IPv4 and IPv6 addresses. That way most of the relevant
+information is preserved, while the IP-address does not match a particular
+individuum anymore.
+
+Depending on your webserver software, the log entries may directly get piped to
+Anonip. The unmasked IP addresses will never be written to any file.
+
+Using shell redirects, it's also possible to rewrite existing log files.

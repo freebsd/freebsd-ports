@@ -1,5 +1,5 @@
 PORTNAME=	fnt
-DISTVERSION=	1.9.1
+DISTVERSION=	1.9.2
 CATEGORIES=	x11-fonts sysutils
 
 MAINTAINER=	nxjoseph@FreeBSD.org
@@ -11,6 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	bash:shells/bash \
 		chafa:graphics/chafa \
+		curl:ftp/curl \
 		gsed:textproc/gsed \
 		lynx:www/lynx \
 		otfinfo:print/typetools
@@ -40,7 +41,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 \
 		${STAGEDIR}${PREFIX}/share/man/man1
 
-do-install-ZSH-on:
+post-install-ZSH-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions/
 	${INSTALL_DATA} ${WRKSRC}/completions/_fnt \
 		${STAGEDIR}${PREFIX}/share/zsh/site-functions/

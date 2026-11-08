@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-instrumentation-all
-PORTVERSION=	0.94.0
+PORTVERSION=	0.96.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-opentelemetry-instrumentation-active_model_serializers>=0.25.0<0.26:devel/rubygem-opentelemetry-instrumentation-active_model_serializers \
 		rubygem-opentelemetry-instrumentation-anthropic>=0.5.0<0.6:devel/rubygem-opentelemetry-instrumentation-anthropic \
 		rubygem-opentelemetry-instrumentation-aws_lambda>=0.7.0<0.8:devel/rubygem-opentelemetry-instrumentation-aws_lambda \
-		rubygem-opentelemetry-instrumentation-aws_sdk>=0.12.0<0.13:devel/rubygem-opentelemetry-instrumentation-aws_sdk \
+		rubygem-opentelemetry-instrumentation-aws_sdk>=0.13.0<0.14:devel/rubygem-opentelemetry-instrumentation-aws_sdk \
 		rubygem-opentelemetry-instrumentation-bunny>=0.25.0<0.26:devel/rubygem-opentelemetry-instrumentation-bunny \
 		rubygem-opentelemetry-instrumentation-concurrent_ruby>=0.25.0<0.26:devel/rubygem-opentelemetry-instrumentation-concurrent_ruby \
 		rubygem-opentelemetry-instrumentation-dalli>=0.30.0<0.31:devel/rubygem-opentelemetry-instrumentation-dalli \
@@ -35,7 +35,7 @@ RUN_DEPENDS=	rubygem-opentelemetry-instrumentation-active_model_serializers>=0.2
 		rubygem-opentelemetry-instrumentation-mongo>=0.26.0<0.27:devel/rubygem-opentelemetry-instrumentation-mongo \
 		rubygem-opentelemetry-instrumentation-mysql2>=0.34.0<0.35:devel/rubygem-opentelemetry-instrumentation-mysql2 \
 		rubygem-opentelemetry-instrumentation-net_http>=0.29.0<0.30:devel/rubygem-opentelemetry-instrumentation-net_http \
-		rubygem-opentelemetry-instrumentation-pg>=0.36.0<0.37:devel/rubygem-opentelemetry-instrumentation-pg \
+		rubygem-opentelemetry-instrumentation-pg>=0.37.0<0.38:devel/rubygem-opentelemetry-instrumentation-pg \
 		rubygem-opentelemetry-instrumentation-que>=0.13.0<0.14:devel/rubygem-opentelemetry-instrumentation-que \
 		rubygem-opentelemetry-instrumentation-racecar>=0.7.0<0.8:devel/rubygem-opentelemetry-instrumentation-racecar \
 		rubygem-opentelemetry-instrumentation-rack>=0.31.0<0.32:devel/rubygem-opentelemetry-instrumentation-rack \

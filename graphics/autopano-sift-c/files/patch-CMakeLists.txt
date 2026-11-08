@@ -1,0 +1,20 @@
+--- CMakeLists.txt.orig	2009-10-06 20:51:08 UTC
++++ CMakeLists.txt
+@@ -7,7 +7,7 @@
+ ###
+ 
+ # minimum version set to suppress project developer warning
+-cmake_minimum_required(VERSION 2.4)
++cmake_minimum_required(VERSION 3.5)
+ 
+ project(autopano-sift-C)
+ 
+@@ -121,7 +121,7 @@ ADD_LIBRARY(libsift STATIC ${LIBSIFT_SOURCES})
+ 
+ ADD_LIBRARY(libsift STATIC ${LIBSIFT_SOURCES})
+ 
+-set(all_libs libsift ${JPEG_LIBRARIES} ${TIFF_LIBRARIES}
++set(all_libs libsift ${JPEG_LIBRARIES} ${TIFF_LIBRARIES} m
+     ${PNG_LIBRARIES} ${ZLIB_LIBRARIES} ${PANO13_LIBRARIES} ${LIBXML2_LIBRARIES}) 
+ 
+ add_executable(generatekeys GenerateKeys.c)

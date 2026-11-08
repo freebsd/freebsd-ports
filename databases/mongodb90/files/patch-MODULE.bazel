@@ -1,0 +1,62 @@
+--- MODULE.bazel.orig
++++ MODULE.bazel
+@@ -78,11 +78,9 @@ single_version_override(
+ )
+ 
+ bazel_dep(name = "rules_poetry", version = "")
+-git_override(
++local_path_override(
+     module_name = "rules_poetry",
+-    commit = "092d43107d13e711ac4ac92050d8b570bcc8ef43",
+-    patches = ["//bazel/rules_poetry:rules_poetry.patch"],
+-    remote = "https://github.com/mongodb-forks/rules_poetry",
++    path = "../rules_poetry-092d43107d13e711ac4ac92050d8b570bcc8ef43",
+ )
+ 
+ #
+@@ -164,5 +164,8 @@ use_repo(
+     setup_mongo_python_toolchains,
+     "py_host",
++    "py_freebsd_arm64",
++    "py_freebsd_ppc64le",
++    "py_freebsd_x86_64",
+     "py_linux_arm64",
+     "py_linux_ppc64le",
+     "py_linux_s390x",
+@@ -176,6 +179,9 @@ use_repo(
+ )
+ 
+ register_toolchains(
++    "@py_freebsd_arm64//:python_toolchain",
++    "@py_freebsd_ppc64le//:python_toolchain",
++    "@py_freebsd_x86_64//:python_toolchain",
+     "@py_linux_arm64//:python_toolchain",
+     "@py_linux_ppc64le//:python_toolchain",
+     "@py_linux_s390x//:python_toolchain",
+@@ -348,6 +354,8 @@ single_version_override(
+         "//bazel/rules_rust:ppc64le_crates.patch",
+         "//bazel/rules_rust:ppc64le_cargo_bazel_url.patch",
+         "//bazel/rules_rust:cargo_build_script_pwd_flags.patch",
++        "//bazel/rules_rust:freebsd_host_triple.patch",
++        "//bazel/rules_rust:freebsd_local_toolchain.patch",
+     ],
+     version = "0.69.0",
+ )
+@@ -506,6 +514,8 @@ crate.from_specs(
+         "aarch64-unknown-linux-gnu",
+         "x86_64-apple-darwin",
+         "x86_64-unknown-linux-gnu",
++        "aarch64-unknown-freebsd",
++        "x86_64-unknown-freebsd",
+         "x86_64-pc-windows-msvc",
+         "powerpc64le-unknown-linux-gnu",
+         "s390x-unknown-linux-gnu",
+@@ -532,6 +542,8 @@ cargo_bindeps.from_specs(
+         "aarch64-unknown-linux-gnu",
+         "x86_64-apple-darwin",
+         "x86_64-unknown-linux-gnu",
++        "aarch64-unknown-freebsd",
++        "x86_64-unknown-freebsd",
+         "x86_64-pc-windows-msvc",
+         "powerpc64le-unknown-linux-gnu",
+         "s390x-unknown-linux-gnu",

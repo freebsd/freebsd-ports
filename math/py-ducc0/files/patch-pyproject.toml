@@ -1,0 +1,18 @@
+-- Remove overly restrictive upper limits on nanobind and scikit-build-core.
+-- The upstream CI issue only affects Python 3.14t/3.15t free-threaded builds,
+-- not Python 3.12 on FreeBSD. FreeBSD ports ship newer versions of these packages.
+--- pyproject.toml.orig	2026-10-22 08:25:08 UTC
++++ pyproject.toml
+@@ -33,9 +33,9 @@ requires = [
+ [build-system]
+ requires = [
+     # FIXME: scikit-build-core limited to <1.1 for the moment, because otherwise CI breaks for Python 3.14t and 3.15t
+-    "scikit-build-core>=1.0,<1.1",
+-    "nanobind>=2.5.0,<2.10.0; python_version == '3.8'",
+-    "nanobind>=2.12.0,<3; python_version >= '3.9'",
++    "scikit-build-core>=1.0",
++    "nanobind>=2.5.0; python_version == '3.8'",
++    "nanobind>=2.12.0; python_version >= '3.9'",
+     "pybind11>=2.13.6",
+     "numpy>=1.17.0",
+ ]

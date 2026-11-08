@@ -1,15 +1,24 @@
---- src/dmhelpmanager.pas.orig	2021-10-17 08:37:18 UTC
+--- src/dmhelpmanager.pas.orig	2026-07-20 08:31:44 UTC
 +++ src/dmhelpmanager.pas
-@@ -106,7 +106,7 @@ begin
-     gHelpLang:= 'en'
-   else begin
-     gHelpLang:= ExtractDelimited(2, gPOFileName, ['.']);
--    if not mbDirectoryExists(gpExePath + 'doc' + PathDelim + gHelpLang) then
-+    if not mbDirectoryExists(gpDocsDir + 'doc' + PathDelim + gHelpLang) then
-     begin
-       ATranslations:= TStringListEx.Create;
+@@ -104,7 +104,7 @@ var
+ 
+   function CheckHelp(const HelpLang: String): Boolean;
+   begin
+-    Result:= mbDirectoryExists(gpExePath + 'doc' + PathDelim + HelpLang);
++    Result:= mbDirectoryExists(gpDocsDir + 'doc' + PathDelim + HelpLang);
+     if not Result then Result:= ATranslations.IndexOf(HelpLang) >= 0;
+   end;
+ 
+@@ -116,7 +116,7 @@ begin
+     try
+       gHelpLang:= ExtractDelimited(2, gPOFileName, ['.']);
        try
-@@ -119,8 +119,8 @@ begin
+-        ATranslations.LoadFromFile(gpExePath + 'doublecmd.help');
++        ATranslations.LoadFromFile(gpDocsDir + 'doublecmd.help');
+       except
+         // Ignore
+       end;
+@@ -134,8 +134,8 @@ begin
      end;
    end;
  

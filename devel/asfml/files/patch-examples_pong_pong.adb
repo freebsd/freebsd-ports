@@ -1,20 +1,20 @@
---- examples/pong/pong.adb.orig	2023-10-21 00:38:34 UTC
+--- examples/pong/pong.adb.orig	2026-08-26 00:15:15 UTC
 +++ examples/pong/pong.adb
-@@ -42,7 +42,7 @@ begin
-    Reset (Gen);
-    Win := RenderWindow.Create(mode => (GameWidth, GameHeight, 32), title => "Ada SFML Pong");
+@@ -44,7 +44,7 @@ begin
+       (mode => (size => (GameWidth, GameHeight), bitsPerPixel => 32),
+        title => "Ada SFML Pong");
     RenderWindow.SetVerticalSyncEnabled(Win, sfTrue);
 -   BallSoundBuffer := SoundBuffer.CreateFromFile("ping_pong_8bit_beeep.ogg");
-+   BallSoundBuffer := SoundBuffer.CreateFromFile("%%DATA_AUDIO%%ping_pong_8bit_beeep.ogg");
-    BallSound := Sound.Create;
-    Sound.SetBuffer(BallSound, BallSoundBuffer);
++   BallSoundBuffer := SoundBuffer.CreateFromFile("%%DATADIR_AUDIO%%/ping_pong_8bit_beeep.ogg");
+    BallSound := Sound.Create (BallSoundBuffer);
     LeftPaddle := RectangleShape.Create;
-@@ -65,7 +65,7 @@ begin
+ 
+@@ -66,7 +66,7 @@ begin
     CircleShape.setOutlineColor (Ball, Color.sfBlack);
     CircleShape.setFillColor (Ball, Color.sfWhite);
     CircleShape.setOrigin (Ball, (0.5 * BallRadius, 0.5 * BallRadius));
 -   GameFont := Font.CreateFromFile("../renderwindow/aerial.ttf");
-+   GameFont := Font.CreateFromFile("%%DATA_FONTS%%aerial.ttf");
++   GameFont := Font.CreateFromFile("%%FONTSDIR%%/aerial.ttf");
     GameMessage := Text.Create;
     Text.setFont (GameMessage, GameFont);
     Text.setCharacterSize (GameMessage, 30);

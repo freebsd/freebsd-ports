@@ -113,6 +113,7 @@ share/man/man1/suricatasc.1.gz
 %%DATADIR%%/rules/pop3-events.rules
 %%DATADIR%%/rules/quic-events.rules
 %%DATADIR%%/rules/rfb-events.rules
+%%DATADIR%%/rules/sip-events.rules
 %%DATADIR%%/rules/smb-events.rules
 %%DATADIR%%/rules/smtp-events.rules
 %%DATADIR%%/rules/snmp-events.rules

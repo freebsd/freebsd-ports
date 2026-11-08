@@ -1,5 +1,5 @@
 PORTNAME=	sparsediffpy
-DISTVERSION=	0.6.1
+DISTVERSION=	0.7.0
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	ninja:devel/ninja \
 		${PYTHON_PKGNAMEPREFIX}numpy>=2.0.0:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scikit-build-core>=0.10:devel/py-scikit-build-core@${PY_FLAVOR}
-LIB_DEPENDS=	libopenblas.so:math/openblas
+LIB_DEPENDS=	libcblas.so:math/cblas \
+		libopenblas.so:math/openblas
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=2.0.0:math/py-numpy@${PY_FLAVOR}
 
 USES=		cmake:indirect python

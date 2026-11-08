@@ -1,0 +1,14 @@
+[
+{
+  type: install
+  message: <<EOM
+Quake assets should be placed in the shared quake base directory:
+	/usr/local/share/quake
+
+Soundtracks will be used if found in music subdirectories:
+	/usr/local/share/quake/id1/music
+
+Assets from the 2021 remaster require 'QuakeEX.kpf' in the base directory.
+EOM
+}
+]

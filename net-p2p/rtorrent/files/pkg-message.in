@@ -7,4 +7,27 @@ how to tweak rtorrent configuration.
 EOM
 	type: install
 }
+{
+	message: <<EOM
+rtorrent 0.16 renamed several configuration commands. A configuration
+file written for an earlier version may fail at startup with an error
+such as:
+
+  Error in option file: ~/.config/rtorrent/rtorrent.rc:29:
+  Command "network.port_range.set" does not exist.
+
+For example:
+
+  network.port_range.set   -> network.listen.port.range.set
+  network.port_random.set  -> network.listen.port.random.set
+
+Compare your configuration against the updated example in
+%%ETCDIR%%/rtorrent.conf.sample and adjust any commands
+that rtorrent reports as missing.
+
+See also https://github.com/rakshasa/rtorrent/issues/1935
+EOM
+	type: upgrade
+	maximum_version: "0.16.20"
+}
 ]

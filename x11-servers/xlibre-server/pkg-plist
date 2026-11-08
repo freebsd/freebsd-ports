@@ -152,8 +152,6 @@ libdata/pkgconfig/xlibre-server.pc
 libdata/pkgconfig/xorg-server.pc
 %%SUID%%libexec/Xorg
 %%SUID%%@(,,4555) libexec/Xorg.wrap
-share/X11/xorg.conf.d/10-nvidia-modules.conf
-share/X11/xorg.conf.d/10-nvidia.conf
 %%UDEV%%share/X11/xorg.conf.d/10-quirks.conf
 share/X11/xorg.conf.d/20-evdev-kbd.conf
 share/aclocal/xorg-server.m4

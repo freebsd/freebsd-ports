@@ -1,7 +1,7 @@
 PORTNAME=	openems
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.0.36
-PORTREVISION=	8
+PORTREVISION=	11
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -30,6 +30,7 @@ GH_PROJECT=	openEMS
 
 CMAKE_ARGS=	-DVTK_DIR=${LOCALBASE}/lib/cmake/vtk-${VTK_VER} \
 		-DLOCALBASE=${LOCALBASE}
+CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/thliebig/openEMS/issues/232
 
 CXXFLAGS+=	-I${LOCALBASE}/include/fparser # fparser.pc probably returns a wrong value
 
@@ -39,4 +40,5 @@ post-install:
 	@${REINPLACE_CMD} -i '' -e 's|#!/bin/bash|#!/bin/sh|' ${STAGEDIR}${PREFIX}/bin/openEMS.sh
 
 .include <../../math/vtk9/Makefile.version>
+
 .include <bsd.port.mk>

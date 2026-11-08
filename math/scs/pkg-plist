@@ -1,4 +1,5 @@
 include/scs/aa.h
+include/scs/aa_stats.h
 include/scs/cones.h
 include/scs/ctrlc.h
 include/scs/glbopts.h
@@ -14,5 +15,7 @@ include/scs/util.h
 include/scs/util_spectral_cones.h
 lib/libscsdir.a
 lib/libscsdir.so
+lib/libscsdir.so.3.3
 lib/libscsindir.a
 lib/libscsindir.so
+lib/libscsindir.so.3.3

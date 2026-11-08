@@ -1,4 +1,4 @@
-PORTVERSION=	2.5.4
+PORTVERSION=	2.6.2
 PORTREVISION?=	0 # Leave this zero. Set in Makefile instead.
 CATEGORIES=	devel
 MASTER_SITES=	GNU/libtool

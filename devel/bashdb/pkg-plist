@@ -1,5 +1,4 @@
 bin/bashdb
-share/man/man1/bashdb.1.gz
 %%DATADIR%%/bashdb-main.inc
 %%DATADIR%%/bashdb-part2.sh
 %%DATADIR%%/bashdb-trace
@@ -64,6 +63,7 @@ share/man/man1/bashdb.1.gz
 %%DATADIR%%/command/set_sub/different.sh
 %%DATADIR%%/command/set_sub/dollar0.sh
 %%DATADIR%%/command/set_sub/editing.sh
+%%DATADIR%%/command/set_sub/filename-display.sh
 %%DATADIR%%/command/set_sub/highlight.sh
 %%DATADIR%%/command/set_sub/history.sh
 %%DATADIR%%/command/set_sub/linetrace.sh
@@ -88,6 +88,7 @@ share/man/man1/bashdb.1.gz
 %%DATADIR%%/command/show_sub/different.sh
 %%DATADIR%%/command/show_sub/directories.sh
 %%DATADIR%%/command/show_sub/editing.sh
+%%DATADIR%%/command/show_sub/filename-display.sh
 %%DATADIR%%/command/show_sub/highlight.sh
 %%DATADIR%%/command/show_sub/history.sh
 %%DATADIR%%/command/show_sub/listsize.sh
@@ -149,3 +150,4 @@ share/man/man1/bashdb.1.gz
 %%DATADIR%%/lib/unescape.sh
 %%DATADIR%%/lib/validate.sh
 %%DATADIR%%/set-d-vars.sh
+share/man/man1/bashdb.1.gz

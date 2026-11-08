@@ -14,6 +14,7 @@ include/libheif/heif_decoding.h
 include/libheif/heif_encoding.h
 include/libheif/heif_entity_groups.h
 include/libheif/heif_error.h
+include/libheif/heif_export.h
 include/libheif/heif_image.h
 include/libheif/heif_image_handle.h
 include/libheif/heif_items.h

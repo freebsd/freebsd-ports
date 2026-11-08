@@ -1,6 +1,5 @@
 PORTNAME=	gatk
-DISTVERSION=	4.6.2.0
-PORTREVISION=	2
+DISTVERSION=	4.7.0.0
 CATEGORIES=	biology java
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -84,11 +83,21 @@ do-fetch:
 # fetch the deps distfile
 .  if (${DEV_UPDATE_MODE} == "no")
 	@if [ "${FORCE_FETCH_ALL}" = "true" ] || ! [ -f "${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-${DISTVERSION}-deps${EXTRACT_SUFX}" ]; then \
+		${MKDIR} ${WRKDIR}; \
+		${RM} ${_MASTER_SITES_FILE} ${_DISTFILES_FILE}; \
+		for site in ${_MASTER_SITES_ENV}; do \
+			printf '%s\n' "$${site}" | sed -e 's/ /\\ /g' >> ${_MASTER_SITES_FILE}; \
+		done; \
+		for file in ${DISTFILES:M*\:deps}; do \
+			printf '%s\n' "$${file}" >> ${_DISTFILES_FILE}; \
+		done; \
 		${ECHO} "==> Fetching the deps distfile for ${PORTNAME}" && \
 		${SETENV} \
-			${_DO_FETCH_ENV} ${_MASTER_SITES_ENV} \
+			${_DO_FETCH_ENV} \
+			dp_SITES_FILE=${_MASTER_SITES_FILE} \
+			dp_FILES_FILE=${_DISTFILES_FILE} \
 			dp_SITE_FLAVOR=MASTER \
-			${SH} ${SCRIPTSDIR}/do-fetch.sh ${DISTFILES:M*\:deps}; \
+			${SH} ${SCRIPTSDIR}/do-fetch.sh; \
 	fi
 .  endif
 .endif
@@ -121,6 +130,7 @@ do-test: # tests require WITH_LARGE_FILES=ON, and they use a lot of disk space
 
 # tests as of 4.6.1.0: 288552 tests, 301 failures, 37 ignored, 1h55m5.63s duration, 99% successful, see https://github.com/broadinstitute/gatk/issues/8940
 # tests as of 4.6.2.0: 288719 tests completed, 300 failed, 37 skipped
-# see https://github.com/broadinstitute/gatk/issues/8939: Tests fail to find libgkl libraries in /usr/local/lib
+# tests as of 4.7.0.0: 288832 tests, 288495 successes, 300 failures, 37 skipped
+# see https://github.com/broadinstitute/gatk/issues/8939: Tests fail to find libgkl libraries in /usr/local/lib (~300 tests fail like this, the upstream is not responsive)
 
 .include <bsd.port.mk>

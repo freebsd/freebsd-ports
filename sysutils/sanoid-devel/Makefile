@@ -1,5 +1,5 @@
 PORTNAME=	sanoid
-DISTVERSION=	2.1.0-20230428
+DISTVERSION=	2.3.0-20260605
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-devel
 
@@ -12,34 +12,28 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	lzop:archivers/lzop \
 		mbuffer:misc/mbuffer \
-		pv:sysutils/pv \
 		p5-Capture-Tiny>=0:devel/p5-Capture-Tiny \
-		p5-Config-IniFiles>=0:devel/p5-Config-IniFiles
+		p5-Config-IniFiles>=0:devel/p5-Config-IniFiles \
+		pv:sysutils/pv
 
-USES=		shebangfix perl5
+USES=		perl5 shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jimsalterjrs
-GH_TAGNAME=	55c5e0e
+GH_TAGNAME=	d39b51a
 
 USE_PERL5=	run
 SHEBANG_FILES=	findoid sanoid sleepymutex syncoid
 
 CONFLICTS_INSTALL=	sanoid # bin/findoid
 
-NO_BUILD=	yes
 NO_ARCH=	yes
+NO_BUILD=	yes
 
 # line 19:  my %args = ("configdir" => "/etc/sanoid");
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|/etc/sanoid|${PREFIX}/etc/sanoid|' \
 		${WRKSRC}/sanoid
-	@${REINPLACE_CMD} -i '' \
-		-e 's|/usr/bin/lzop|${LOCALBASE}/bin/lzop|' \
-		-e 's|/usr/bin/mbuffer|${LOCALBASE}/bin/mbuffer|' \
-		-e 's|/usr/bin/pv|${LOCALBASE}/bin/pv|' \
-		-e 's|/usr/bin/sudo|${LOCALBASE}/bin/sudo|' \
-		${WRKSRC}/syncoid
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/findoid ${STAGEDIR}${PREFIX}/bin

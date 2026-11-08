@@ -12,16 +12,6 @@
  ifdef ARCH
    # if does not have leading -march, -mcpu, -mtune, or similar.
    ifeq ($(filter -march% -mcpu% -mtune% -m%, $(strip $(ARCH))),)
-@@ -1260,8 +1262,7 @@ ifdef CDMUS
- endif
- 
- # LIBZIP
--# For now, Linux only.
--ifeq ($(OS), LINUX)
-+ifneq ($(filter LINUX FREEBSD,$(OS)),)
-   ifdef HAVE_DLOPEN
-     LIBS+=-ldl
-     OPTS+=-DHAVE_DLOPEN
 @@ -1317,11 +1318,11 @@ ifdef DEBUG
  else
  # build a normal optimized version

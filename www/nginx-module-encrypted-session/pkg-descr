@@ -1,0 +1,7 @@
+The encrypted_session module encrypts and decrypts nginx variables with
+AES-256 in MAC mode, with an expiry stamp inside the ciphertext.  It is
+meant for values that travel through the client, such as cookies, which the
+server must be able to read back but the client must not forge.
+
+This port only installs the module sources.  The module itself is built by
+the nginx ports when their ENCRYPTSESSION option is enabled.

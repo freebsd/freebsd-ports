@@ -13,6 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENCE
 USES=		cmake cpe perl5
 CPE_VENDOR=	halibut_project
 
+CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility
+
 CFLAGS+=	-fcommon # ld: error: duplicate symbol: all_fonts
 
 INFO=		halibut*

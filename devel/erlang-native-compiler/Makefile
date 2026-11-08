@@ -1,5 +1,5 @@
 PORTNAME=	erlang-native-compiler
-PORTVERSION=	g20211004
+PORTVERSION=	g20251024
 CATEGORIES=	devel
 
 MAINTAINER=	erlang@FreeBSD.org
@@ -14,7 +14,7 @@ BUILD_DEPENDS=	erlang>22:lang/erlang
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	davisp
-GH_TAGNAME=	2c92afb
+GH_TAGNAME=	ba13cfb
 
 MAKE_ENV=	PATH=${LOCALBASE}/lib/erlang/bin:${PATH}
 NO_ARCH=	yes

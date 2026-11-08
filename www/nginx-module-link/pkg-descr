@@ -1,0 +1,6 @@
+The link_func module lets nginx hand a request to a function in a C library
+loaded at run time, so a location can be served straight from compiled code
+without writing a full nginx module.
+
+This port only installs the module sources.  The module itself is built by the
+nginx ports when their LINK option is enabled.

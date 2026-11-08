@@ -2,13 +2,14 @@ PORTNAME=	FreeWnn
 PORTVERSION=	1.1.1.a021
 PORTREVISION=	15
 CATEGORIES?=	japanese
-MASTER_SITES=	OSDN/freewnn
+MASTER_SITES=	https://mirror.math.princeton.edu/pub/gentoo/distfiles/ \
+		http://mirror.linux.ro/gentoo/distfiles/
 PKGNAMESUFFIX=	-lib
 DISTNAME=	${PORTNAME}-1.1.1-a021
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT?=	Japanese/Chinese/Korean input method (Japanese client libraries)
-WWW=		http://freewnn.osdn.jp/
+WWW=		https://www.tomo.gr.jp/FreeWnn/
 
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB

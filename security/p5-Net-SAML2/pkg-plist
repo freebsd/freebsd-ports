@@ -14,6 +14,7 @@
 %%SITE_PERL%%/Net/SAML2/RequestedAttribute.pm
 %%SITE_PERL%%/Net/SAML2/Role/ProtocolMessage.pm
 %%SITE_PERL%%/Net/SAML2/Role/VerifyXML.pm
+%%SITE_PERL%%/Net/SAML2/Role/XMLCertificate.pm
 %%SITE_PERL%%/Net/SAML2/Role/XMLLang.pm
 %%SITE_PERL%%/Net/SAML2/SP.pm
 %%SITE_PERL%%/Net/SAML2/Types.pm
@@ -36,6 +37,7 @@
 %%PERL5_MAN3%%/Net::SAML2::RequestedAttribute.3.gz
 %%PERL5_MAN3%%/Net::SAML2::Role::ProtocolMessage.3.gz
 %%PERL5_MAN3%%/Net::SAML2::Role::VerifyXML.3.gz
+%%PERL5_MAN3%%/Net::SAML2::Role::XMLCertificate.3.gz
 %%PERL5_MAN3%%/Net::SAML2::Role::XMLLang.3.gz
 %%PERL5_MAN3%%/Net::SAML2::SP.3.gz
 %%PERL5_MAN3%%/Net::SAML2::Types.3.gz

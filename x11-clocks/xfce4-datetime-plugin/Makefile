@@ -1,6 +1,6 @@
 PORTNAME=	xfce4-datetime-plugin
 PORTVERSION=	0.8.3
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	x11-clocks xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
@@ -10,6 +10,8 @@ COMMENT=	Datetime panel plugin for the Xfce desktop
 WWW=		https://goodies.xfce.org/projects/panel-plugins/xfce4-datetime-plugin
 
 LICENSE=	GPLv2
+
+DEPRECATED=	EOLed upstream, use clock plugin included with xfce4-panel
 
 LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 

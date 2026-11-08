@@ -21,4 +21,6 @@ PLIST_FILES=	include/termcolor/termcolor.hpp \
 		lib/cmake/termcolor/termcolor-config.cmake \
 		lib/cmake/termcolor/termcolor-targets.cmake
 
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4 compatibility, see https://github.com/ikalnytskyi/termcolor/issues/78
+
 .include <bsd.port.mk>

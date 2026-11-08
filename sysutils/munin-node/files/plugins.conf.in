@@ -29,11 +29,11 @@ env.PATH %%LOCALBASE%%/sbin:%%LOCALBASE%%/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
 [amavis]
 env.amavislog /var/log/maillog
-env.logtail %%LOCALBASE%%/bin/logtail
+env.logtail %%LOCALBASE%%/sbin/logtail
 
 [courier_*]
 env.logfile /var/log/maillog
-env.logtail %%LOCALBASE%%/bin/logtail
+env.logtail %%LOCALBASE%%/sbin/logtail
 
 [dhcp3]
 env.configfile %%LOCALBASE%%/etc/dhcpd.conf

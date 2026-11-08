@@ -1,12 +1,13 @@
 PORTNAME=	avldrums
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.4
+DISTVERSION=	0.7.6
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Dedicated AVLDrumkits LV2 Plugin
-WWW=		https://x42-plugins.com/x42/x42-avldrums
+WWW=		https://x42-plugins.com/x42/x42-avldrums \
+		https://github.com/x42/avldrums.lv2
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

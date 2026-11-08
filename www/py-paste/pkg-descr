@@ -6,3 +6,8 @@ These provide several pieces of "middleware" (or filters) that can be
 nested to build web applications. Each piece of middleware uses the
 WSGI (PEP 333) interface, and should be compatible with other
 middleware based on those interfaces.
+
+Paste is in maintenance mode. New projects should not use Paste.
+Existing projects should migrate away. Consider the frameworks
+provided by the Pallets Project ( https://palletsprojects.com ) or
+Beaker ( https://beaker.readthedocs.io/ ).

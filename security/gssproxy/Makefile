@@ -1,5 +1,5 @@
 PORTNAME=	gssproxy
-DISTVERSION=	0.9.2
+DISTVERSION=	0.9.3
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/gssapi/gssproxy/releases/download/v${DISTVERSION}/
 
@@ -20,8 +20,9 @@ LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 		libpopt.so:devel/popt \
 		libverto.so.0:security/krb5
 
-USES=		autoreconf gettext-runtime gmake gssapi:mit libtool localbase \
+USES=		autoreconf cpe gettext-runtime gmake gssapi:mit libtool localbase \
 		pkgconfig
+CPE_VENDOR=	gssproxy_project
 
 USE_RC_SUBR=	gssproxy
 

@@ -1,0 +1,15 @@
+-- Remove -lc++abi from the Catch test library link options.
+-- FreeBSD's libc++ includes the C++ ABI runtime, so linking against
+-- libc++abi separately is unnecessary and can cause link errors.
+
+--- test/CMakeLists.txt.orig	2026-09-29 05:38:57 UTC
++++ test/CMakeLists.txt
+@@ -12,7 +12,7 @@ if(NANODBC_FORCE_LIBCXX)
+ 
+ if(NANODBC_FORCE_LIBCXX)
+   target_compile_options(Catch PUBLIC -stdlib=libc++)
+-  target_link_options(Catch PUBLIC -stdlib=libc++ -lc++abi)
++  target_link_options(Catch PUBLIC -stdlib=libc++)
+ endif()
+ 
+ add_custom_target(tests)

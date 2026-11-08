@@ -1,5 +1,5 @@
 PORTNAME=	unicorn
-PORTVERSION=	2.0.1p1
+PORTVERSION=	2.1.4
 CATEGORIES=	emulators
 
 MAINTAINER=	antoine@FreeBSD.org
@@ -11,7 +11,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	unicorn-engine
-GH_TAGNAME=	2.0.1.post1
 
 USES=		cmake:testing pkgconfig
 USE_LDCONFIG=	yes

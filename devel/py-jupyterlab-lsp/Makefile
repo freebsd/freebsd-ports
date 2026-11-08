@@ -1,9 +1,9 @@
 PORTNAME=	jupyterlab-lsp
-PORTVERSION=	5.1.0
-PORTREVISION=	3
+PORTVERSION=	5.3.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	jupyterlab_lsp-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Coding assistance for JupyterLab with Language Server Protocol

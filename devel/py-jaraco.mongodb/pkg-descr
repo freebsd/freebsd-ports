@@ -1,0 +1,4 @@
+jaraco.mongodb.migration implements the Migration Manager as featured at the
+MongoWorld 2016 presentation From the Polls to the Trolls. Use it to load
+documents of various schema versions into a target version that your application
+expects.

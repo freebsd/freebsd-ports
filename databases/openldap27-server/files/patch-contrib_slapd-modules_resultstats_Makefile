@@ -1,0 +1,11 @@
+--- contrib/slapd-modules/resultstats/Makefile.orig	2026-08-09 01:00:29 UTC
++++ contrib/slapd-modules/resultstats/Makefile
+@@ -35,7 +35,7 @@ PROGRAMS = resultstats.la
+ LD_FLAGS = $(LDFLAGS) $($(PLAT)_LDFLAGS) -rpath $(moduledir) -module
+ 
+ PROGRAMS = resultstats.la
+-MANPAGES = slapo_resultstats.5
++MANPAGES = slapo-resultstats.5
+ LTVER = 0:0:0
+ CLEAN = *.o *.lo *.la .libs
+ prefix=/usr/local

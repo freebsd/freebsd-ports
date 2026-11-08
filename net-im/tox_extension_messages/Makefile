@@ -23,5 +23,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	toxext
 
 CMAKE_ON=	BUILD_SHARED_LIBS
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/toxext/tox_extension_messages/issues/8
 
 .include <bsd.port.mk>

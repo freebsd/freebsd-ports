@@ -1,0 +1,5 @@
+TIMESTAMP = 1788626014
+SHA256 (go/sysutils_cni-dnsname/cni-dnsname-v1.3.1/v1.3.1.mod) = 3aaae02131f6f6967e665ba2f0c56a051c6e62b28d29c6779593b3e0d4eaf201
+SIZE (go/sysutils_cni-dnsname/cni-dnsname-v1.3.1/v1.3.1.mod) = 407
+SHA256 (go/sysutils_cni-dnsname/cni-dnsname-v1.3.1/v1.3.1.zip) = 7a9ba4ed651dc2a9516614c24df148cfef64f11c7628ea91321c651a01261441
+SIZE (go/sysutils_cni-dnsname/cni-dnsname-v1.3.1/v1.3.1.zip) = 32026

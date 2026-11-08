@@ -12,7 +12,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_i386=	format specifies type 'unsigned long' but the argument has type 'uint64_t' (aka 'unsigned long long')
 
-ONLY_FOR_ARCHS=     amd64
+BROKEN_FreeBSD_16=	Fails to build
+
+ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
 
 USES=		kmod ssl uidfix
 USE_GITHUB=	yes

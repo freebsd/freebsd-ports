@@ -1,6 +1,5 @@
 PORTNAME=	glib-networking
-PORTVERSION=	2.80.1
-PORTREVISION=	1
+PORTVERSION=	2.90.0
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -17,20 +16,20 @@ RUN_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c11 gettext gnome localbase meson pkgconfig \
-		python:build tar:xz
+		python:build ssl tar:xz
 USE_GNOME=	glib20
 
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
 
-OPTIONS_DEFINE=	OPENSSL PROXY
+MESON_ENABLED=	openssl
+
+OPTIONS_DEFINE=	GNUTLS PROXY
 PROXY_DESC=	Proxy configuration support via libproxy
 OPTIONS_SUB=	yes
 OPTIONS_DEFAULT=	PROXY
 
-OPENSSL_LIB_DEPENDS_OFF=	libgnutls.so:security/gnutls
-OPENSSL_USES=			ssl
-OPENSSL_MESON_ENABLED=		openssl
-OPENSSL_MESON_DISABLED=		gnutls
+GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
+GNUTLS_MESON_ENABLED=		gnutls
 
 PROXY_LIB_DEPENDS=	libproxy.so:net/libproxy
 PROXY_MESON_ENABLED=	libproxy

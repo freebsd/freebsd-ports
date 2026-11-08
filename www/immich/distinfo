@@ -1,0 +1,5 @@
+TIMESTAMP = 1793953846
+SHA256 (immich-freebsd-buildkit-3.3.6.tar.gz) = 7f7f8872bd5a74bffb585e22375aaf71edfd4564aacede77d520c40a0ec4aea2
+SIZE (immich-freebsd-buildkit-3.3.6.tar.gz) = 350127730
+SHA256 (immich-app-immich-v3.3.6_GH0.tar.gz) = bd54ef39930eb953e201d61f0a9d9d3c7d4bfbf9f6067f74be3e8756792460af
+SIZE (immich-app-immich-v3.3.6_GH0.tar.gz) = 74061372

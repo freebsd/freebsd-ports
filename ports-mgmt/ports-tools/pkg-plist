@@ -1,7 +1,6 @@
 bin/mkpatch
 bin/pcheck
 bin/pclean
-bin/pcommit
 bin/pfind
 bin/plist-sort
 bin/plist-update

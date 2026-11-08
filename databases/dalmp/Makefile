@@ -1,5 +1,6 @@
 PORTNAME=	dalmp
 PORTVERSION=	3.1.0
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	nbari@tequila.io

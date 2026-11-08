@@ -1,0 +1,27 @@
+[
+{ type: install
+  message: <<EOM
+To allow unprivileged users to run AppJails, add the following rule to
+your doas.conf(5):
+
+  permit nopass USER cmd %%PREFIX%%/libexec/x11appjail/map-exec
+
+Replace USER with the user you want to allow to run AppJails. You can
+also use a group for this, so that you do not have to edit your
+doas.conf(5) file every time.
+
+*VERY IMPORTANT*:
+
+1. Do not set keepenv. Environment variables can affect the execution of
+   the mentioned utility or the utilities it depends on. You do not need
+   it, and you should not configure it.
+2. In doas.conf(5), the last rules take precedence; therefore, add the
+   previous rule on the last line.
+
+   You can run the following command and confirm that the environment is
+   not inherited:
+
+     doas %%PREFIX%%/libexec/x11appjail/map-exec env
+EOM
+}
+]

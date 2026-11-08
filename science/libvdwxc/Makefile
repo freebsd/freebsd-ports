@@ -1,10 +1,11 @@
 PORTNAME=	libvdwxc
-DISTVERSION=	0.4.6.20190510
+DISTVERSION=	0.5.0
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Van der Waals density functional (DFT) library
-WWW=		https://libvdwxc.org/
+WWW=		https://libvdwxc.org/ \
+		https://gitlab.com/libvdwxc/libvdwxc
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -12,11 +13,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libfftw3.so:math/fftw3
 
 USES=		autoreconf gmake libtool localbase
-GNU_CONFIGURE=	yes
-USE_GITLAB=	yes
-GL_TAGNAME=	b1e0dd854310410012d05daf4c6661b49f31b2ab
-CONFIGURE_ARGS=	--disable-static
 USE_LDCONFIG=	yes
+USE_GITLAB=	yes
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-static
+CONFIGURE_ARGS=	--without-mpi # --with-mpi needs math/fftw3 to be configured with OPENMPI=ON
 
 post-stage:
 	@cd ${STAGEDIR}${PREFIX} && ${STRIP_CMD} lib/libvdwxc.so.0.0.0 lib/libvdwxcfort.so.0.0.0

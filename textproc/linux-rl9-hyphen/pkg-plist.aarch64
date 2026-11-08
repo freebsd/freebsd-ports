@@ -1,0 +1,9 @@
+usr/lib64/libhyphen.so.0
+usr/lib64/libhyphen.so.0.3.0
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.hyphen
+%%PORTDOCS%%%%DOCSDIR%%/README.nonstandard
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+@dir usr/share/hyphen

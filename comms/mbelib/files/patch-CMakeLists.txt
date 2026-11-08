@@ -1,0 +1,9 @@
+--- CMakeLists.txt.orig	2016-01-08 17:31:41 UTC
++++ CMakeLists.txt
+@@ -1,5 +1,5 @@ project(mbe)
+ project(mbe)
+-cmake_minimum_required(VERSION 2.6)
++cmake_minimum_required(VERSION 3.10)
+ 
+ FILE(GLOB SRCS *.c)
+ 

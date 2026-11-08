@@ -1,27 +1,32 @@
 PORTNAME=	gpxsee
-DISTVERSION=	16.11
+DISTVERSION=	16.18
 CATEGORIES=	graphics geography
 
 MAINTAINER=	mce@FreeBSD.org
 COMMENT=	GPS log file viewer and analyzer
 WWW=		https://www.gpxsee.org/
 
-LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/licence.txt
+LICENSE=	GPLv3 UNLICENSE
+LICENSE_COMB=	multi
+LICENSE_FILE_GPLv3=	${WRKSRC}/licence.txt
+LICENSE_FILE_UNLICENSE=	${WRKSRC}/GPXSee-maps/LICENSE
 
 USES=		compiler:c++11-lang desktop-file-utils gl qmake:outsource qt:6 \
 		shared-mime-info
 USE_GITHUB=	yes
 GH_ACCOUNT=	tumic0
 GH_PROJECT=	GPXSee
+GH_TUPLE=	tumic0:GPXSee-maps:8ddbf3d:GPXSee/GPXSee-maps
 USE_GL=		opengl
 USE_QT=		base multimedia positioning serialport svg tools:build
 
-OPTIONS_DEFINE=	NLS TIFF
-OPTIONS_DEFAULT=	TIFF
-OPTIONS_SUB=	yes
-TIFF_DESC=	Support for GeoTIFF images
-TIFF_USE=	QT=imageformats:run
+PORTDATA=	*
+
+OPTIONS_DEFINE=		MAPS NLS TIFF
+OPTIONS_DEFAULT=	MAPS TIFF
+MAPS_DESC=		Install online maps catalogue
+TIFF_DESC=		Support for GeoTIFF images
+TIFF_USE=		QT=imageformats:run
 
 pre-build-NLS-on:
 	( cd ${BUILD_WRKSRC} && ${LRELEASE} ${WRKSRC}/${PORTNAME}.pro )
@@ -29,5 +34,10 @@ pre-build-NLS-on:
 do-install-NLS-on:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/translations
 	${INSTALL_DATA} ${WRKSRC}/lang/*.qm ${STAGEDIR}${DATADIR}/translations
+
+do-install-MAPS-on:
+	@${MKDIR} ${STAGEDIR}${DATADIR}/maps
+	( cd ${WRKSRC}/GPXSee-maps && ${COPYTREE_SHARE} World \
+		${STAGEDIR}${DATADIR}/maps "-name *.xml" )
 
 .include <bsd.port.mk>

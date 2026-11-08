@@ -11,6 +11,8 @@
 #				Set it to YES to enable turnserver.
 # turnserver_config (path):	Set to %%PREFIX%%/etc/turnserver.conf
 #				by default.
+# turnserver_user (str):	Set to %%USER%% by default.
+# turnserver_group (str):	Set to %%GROUP%% by default.
 
 . /etc/rc.subr
 
@@ -19,8 +21,10 @@ rcvar=turnserver_enable
 
 load_rc_config $name
 
-: ${turnserver_enable:=no}
-: ${turnserver_config=%%PREFIX%%/etc/turnserver.conf}
+: ${turnserver_enable:="NO"}
+: ${turnserver_config="%%PREFIX%%/etc/turnserver.conf"}
+: ${turnserver_user:="%%USER%%"}
+: ${turnserver_group:="%%GROUP%%"}
 
 command="%%PREFIX%%/bin/${name}"
 command_args="--daemon -c ${turnserver_config}"

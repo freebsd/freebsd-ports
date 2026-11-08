@@ -1,0 +1,116 @@
+#!/bin/sh
+
+# PROVIDE: linkwarden_web
+# REQUIRE: LOGIN postgresql
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# linkwarden_web_enable (bool):		Set to NO by default.
+#					Set it to YES to enable the frontend.
+# linkwarden_storage (str):		Data directory, holds the archives.
+#					Default: /var/db/linkwarden
+# linkwarden_web_host (str):		Listen address. Default: 0.0.0.0
+# linkwarden_web_port (int):		Listen port. Default: 3000
+# linkwarden_web_env_file (str):	Environment file with DATABASE_URL,
+#					NEXTAUTH_SECRET and the other settings.
+#					Default: %%PREFIX%%/etc/linkwarden.env
+# linkwarden_web_automigrate (bool):	Run "prisma migrate deploy" on start.
+#					Default: YES
+#
+# The database schema can also be brought up to date on its own with
+# "service linkwarden_web migrate".
+
+. /etc/rc.subr
+
+name=linkwarden_web
+rcvar=linkwarden_web_enable
+
+load_rc_config $name
+
+: ${linkwarden_web_enable:=NO}
+: ${linkwarden_web_user:=linkwarden}
+: ${linkwarden_web_group:=linkwarden}
+: ${linkwarden_storage:=/var/db/linkwarden}
+: ${linkwarden_web_host:=0.0.0.0}
+: ${linkwarden_web_port:=3000}
+: ${linkwarden_web_env_file:=%%PREFIX%%/etc/linkwarden.env}
+: ${linkwarden_web_automigrate:=YES}
+
+pidfile=/var/run/linkwarden/${name}.pid
+childpidfile=/var/run/linkwarden/${name}_child.pid
+required_dirs="%%WWWDIR%%/apps/web/.next"
+
+linkwarden_web_chdir="%%WWWDIR%%/apps/web/"
+start_precmd=linkwarden_web_precmd
+stop_cmd=linkwarden_web_stop
+extra_commands="migrate"
+migrate_cmd=linkwarden_web_migrate
+
+command=/usr/sbin/daemon
+command_args="-f -S -H -P ${pidfile} -p ${childpidfile} \
+	-o /var/log/linkwarden/${name}.log \
+	%%NODE%% %%WWWDIR%%/node_modules/next/dist/bin/next start \
+	%%WWWDIR%%/apps/web"
+
+linkwarden_environment()
+{
+	if [ -r "${linkwarden_web_env_file}" ]; then
+		set -a
+		. "${linkwarden_web_env_file}"
+		set +a
+	fi
+
+	# monolith and the browser are called by name, so they have to be in PATH
+	export PATH=%%PREFIX%%/sbin:%%PREFIX%%/bin:/usr/sbin:/usr/bin:/sbin:/bin
+	export NODE_ENV=production
+	export HOSTNAME=${linkwarden_web_host}
+	export PORT=${linkwarden_web_port}
+	export STORAGE_FOLDER=${STORAGE_FOLDER:-${linkwarden_storage}/data}
+	export PRISMA_HIDE_UPDATE_MESSAGE=1
+	export PRISMA_CLI_QUERY_ENGINE_TYPE=binary
+	export PRISMA_QUERY_ENGINE_BINARY=%%PREFIX%%/libexec/prisma-engines/query-engine
+	export PRISMA_SCHEMA_ENGINE_BINARY=%%PREFIX%%/libexec/prisma-engines/schema-engine
+	export PRISMA_FMT_BINARY=%%PREFIX%%/libexec/prisma-engines/prisma-fmt
+	export PRISMA_QUERY_ENGINE_LIBRARY=%%WWWDIR%%/libquery_engine.node
+	# playwright refuses to load without this one
+	export PLAYWRIGHT_BROWSERS_PATH=${linkwarden_storage}/ms-playwright
+}
+
+linkwarden_web_migrate()
+{
+	linkwarden_environment
+	echo "Applying database migrations for ${name}."
+	su -m ${linkwarden_web_user} -c "cd ${linkwarden_storage} && \
+		%%NODE%% %%WWWDIR%%/node_modules/prisma/build/index.js \
+		migrate deploy --schema %%WWWDIR%%/packages/prisma/schema.prisma"
+}
+
+linkwarden_web_stop()
+{
+	local pid
+	pid=$(check_pidfile ${pidfile} ${command})
+	if [ -z "$pid" ]; then
+		echo "${name} not running? (check ${pidfile})."
+		return 1
+	fi
+	echo "Stopping ${name}."
+	kill -TERM -- -${pid} 2>/dev/null || kill -TERM ${pid}
+	wait_for_pids ${pid}
+	rm -f ${pidfile} ${childpidfile}
+}
+
+linkwarden_web_precmd()
+{
+	umask 027
+	install -d -m 750 -o ${linkwarden_web_user} -g ${linkwarden_web_group} \
+		/var/run/linkwarden /var/log/linkwarden \
+		${linkwarden_storage} ${linkwarden_storage}/data
+	linkwarden_environment
+	if checkyesno linkwarden_web_automigrate; then
+		linkwarden_web_migrate || return 1
+	fi
+}
+
+run_rc_command "$1"

@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Polygons with Holes for the Grammar of Graphics
-WWW=		https://cran.r-project.org/package=ggpolypath
 
 LICENSE=	GPLv3
 

@@ -1,0 +1,8 @@
+--- CMakeLists.txt.orig	2020-02-17 20:14:03 UTC
++++ CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required (VERSION 3.0)
++cmake_minimum_required (VERSION 3.5)
+ project (digiham VERSION 0.3.0)
+ 
+ SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${PROJECT_SOURCE_DIR}/cmake/")

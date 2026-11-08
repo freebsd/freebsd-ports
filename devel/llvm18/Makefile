@@ -1,6 +1,6 @@
 PORTNAME=	llvm
 DISTVERSION=	18.1.8
-PORTREVISION=	5
+PORTREVISION=	7
 CATEGORIES=	devel lang
 MASTER_SITES=	https://github.com/llvm/llvm-project/releases/download/llvmorg-${DISTVERSION:S/rc/-rc/}/
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
@@ -89,28 +89,19 @@ OPTIONS_SUB=	yes
 .if ${FLAVOR:Mlite}
 OPTIONS_DEFAULT+=	BE_FREEBSD
 .else
-OPTIONS_DEFINE+=	EXTRAS FLANG LIT LLDB MLIR OPENMP PYCLANG POLLY
-OPTIONS_DEFINE_amd64=	GOLD
-OPTIONS_DEFINE_powerpc=	GOLD
-OPTIONS_DEFINE_powerpc64=	GOLD
-OPTIONS_DEFINE_powerpc64le=	GOLD
+OPTIONS_DEFINE+=	EXTRAS FLANG LIT MLIR OPENMP PYCLANG POLLY
 
-OPTIONS_DEFAULT+=	BE_STANDARD COMPILER_RT EXTRAS LIT LLDB MLIR OPENMP \
+OPTIONS_DEFAULT+=	BE_STANDARD COMPILER_RT EXTRAS LIT MLIR OPENMP \
 			PYCLANG POLLY STATIC_LIBS
-OPTIONS_DEFAULT_amd64=	GOLD
-OPTIONS_DEFAULT_powerpc=	GOLD
-OPTIONS_DEFAULT_powerpc64=	GOLD
-OPTIONS_DEFAULT_powerpc64le=	GOLD
 
 OPTIONS_EXCLUDE_armv6+=	FLANG OPENMP
 OPTIONS_EXCLUDE_armv7+=	FLANG OPENMP
 OPTIONS_EXCLUDE_i386=	FLANG OPENMP
 OPTIONS_EXCLUDE_powerpc=	FLANG OPENMP
-OPTIONS_EXCLUDE_riscv64=	LLDB
 .endif
 
 # All non-backend options
-_ALL_OPTIONS=	CLANG COMPILER_RT DOCS EXTRAS FLANG GOLD LIT LLD LLDB MLIR \
+_ALL_OPTIONS=	CLANG COMPILER_RT DOCS EXTRAS FLANG LIT LLD MLIR \
 		OPENMP POLLY PYCLANG STATIC_LIBS
 
 BE_AMDGPU_DESC=		AMD GPU backend (required by mesa)
@@ -162,29 +153,9 @@ FLANG_DESC=		Flang FORTRAN compiler
 FLANG_IMPLIES=		MLIR
 FLANG_PORTDOCS=		flang
 FLANG_PLIST_DIRS=	${LLVM_DIR}/include/flang/Config
-GOLD_DESC=		Build the LLVM Gold plugin for LTO
-GOLD_BUILD_DEPENDS=	${LOCALBASE}/bin/ld.gold:devel/binutils
-GOLD_CMAKE_ON=		-DLLVM_BINUTILS_INCDIR=${LOCALBASE}/include
-GOLD_EXTRA_PATCHES_OFF=	${PATCHDIR}/gold-off-llvm_tools_CMakeLists.txt
-GOLD_PLIST_FILES=	${LLVM_DIR}/lib/LLVMgold.so
 LIT_DESC=		Install lit and FileCheck test tools
 LIT_VARS=		_USES_PYTHON=python
 LLD_DESC=		Install lld, the LLVM linker
-LLDB_BUILD_DEPENDS=	swig:devel/swig
-LLDB_CMAKE_ON= \
-	-DLUA_INCLUDE_DIR=${LOCALBASE}/include/lua${LUA_VER_STR} \
-	-DLUA_LIBRARY=${LOCALBASE}/lib/liblua-${LUA_VER}.so \
-	-DCURSES_INCLUDE_PATH=/usr/include \
-	-DCURSES_CURSES_LIBRARY=/usr/lib/libcurses.so \
-	-DCURSES_FORM_LIBRARY=/usr/lib/libform.so \
-	-DCURSES_NCURSES_LIBRARY=/usr/lib/libncurses.so \
-	-DLLDB_ENABLE_LIBXML2=OFF \
-	-DPANEL_LIBRARIES=/usr/lib/libpanel.so
-LLDB_DESC=		Install lldb, the LLVM debugger
-LLDB_IMPLIES=		CLANG
-LLDB_PLIST_SUB=		PYTHON_ABIVER=${PYTHON_ABIVER}
-LLDB_USES=		lua:53 libedit
-LLDB_VARS=		_USES_PYTHON=python
 MLIR_DESC=		Multi-Level Intermediate Representation
 OPENMP_DESC=		Install libomp, the LLVM OpenMP runtime library
 OPENMP_CMAKE_ON= \
@@ -222,6 +193,10 @@ STRIP_LIBS=	BugpointPasses.so \
 		${LIBNAME}.0 \
 		libLTO.so
 
+CLANG_PATTERN=	(amdgpu-arch|c-index-test|clang|diagtool|hmaptool|intercept-|libear|libscanbuild|nvptx-arch|analyze-|scan-|Reporter.py|ScanView.py|scanview.css|sorttable.js|startfile.py|c..-analyzer|AnalyzerPlugin.so)
+
+COMPILER_RT_PATTERN=	(sanitizer|include.xray|include\/(fuzzer|orc)|profile\/InstrProfData.inc|profile\/instr_prof_interface.h)
+
 EXTRAS_LIBS=	\
 		libclangApplyReplacements \
 		libclangChangeNamespace \
@@ -249,6 +224,11 @@ FLANG_PATTERN=	${FLANG_COMMANDS:S/^/bin./:tW:C/  */|/g}|flang|libFIR|libFortran|
 
 MLIR_PATTERN=	${MLIR_COMMANDS:S/^/bin./:tW:C/  */|/g}|mlir|libMLIR|obj.MLIRCAP
 
+OPENMP_PATTERN=	${OPENMP_COMMANDS:tW:C/  */|/g}|cmake\/openmp|libarcher|lib[ig]*omp|omp.h|ompt.h|ompt-multiplex.h|ompx.h|omp-tools.h
+
+POLLY_PATTERN=	include\/polly|cmake\/polly|LLVMPolly.so|libPolly
+
+PYCLANG_PATTERN=	(clang\/(__init__|cindex|enumerations).py)$$
 .include <bsd.port.options.mk>
 
 # keep in sync with /usr/src/lib/clang/clang.build.mk
@@ -271,13 +251,11 @@ CONFIGURE_TARGET:=${ARCH:C/amd64/x86_64/:C/arm64/aarch64/}-portbld-${OPSYS:tl}${
 LLVM_ENABLE_PROJECTS+=	clang
 COMMANDS+=	${CLANG_COMMANDS}
 MAN1SRCS+=	${CLANG_MAN1SRCS}
-CLANG_PATTERN=	(amdgpu-arch|c-index-test|clang|diagtool|hmaptool|intercept-|libear|libscanbuild|nvptx-arch|analyze-|scan-|Reporter.py|ScanView.py|scanview.css|sorttable.js|startfile.py|c..-analyzer|AnalyzerPlugin.so)
 USES+=		gnome
 .endif
 
 .if ${PORT_OPTIONS:MCOMPILER_RT}
 LLVM_ENABLE_PROJECTS+=	compiler-rt
-COMPILER_RT_PATTERN=	(sanitizer|include.xray|include\/(fuzzer|orc)|profile\/InstrProfData.inc|profile\/instr_prof_interface.h)
 .endif
 
 .if ${PORT_OPTIONS:MEXTRAS}
@@ -290,6 +268,11 @@ PORTDOCS+=	clang-tools
 .if ${PORT_OPTIONS:MFLANG}
 LLVM_ENABLE_PROJECTS+=	flang
 COMMANDS+=	${FLANG_COMMANDS}
+.if ${OSVERSION} > 1600017 || \
+    (${OSVERSION} < 1600000 && ${OSVERSION} > 1501501) || \
+    (${OSVERSION} < 1500000 && ${OSVERSION} > 1404501)
+EXTRA_PATCHES+=	${PATCHDIR}/libc++21-flang_runtime_io-api.cpp
+.endif
 .endif
 
 .if ${PORT_OPTIONS:MLIT}
@@ -300,12 +283,6 @@ MAN1SRCS+=	${LIT_MAN1SRCS}
 LLVM_ENABLE_PROJECTS+=	lld
 COMMANDS+=	${LLD_COMMANDS}
 PORTDOCS+=	lld
-.endif
-
-.if ${PORT_OPTIONS:MLLDB}
-LLVM_ENABLE_PROJECTS+=	lldb
-MAN1SRCS+=	${LLDB_MAN1SRCS}
-COMMANDS+=	${LLDB_COMMANDS}
 .endif
 
 .if ${PORT_OPTIONS:MMLIR}
@@ -319,16 +296,10 @@ LLVM_ENABLE_PROJECTS+=	openmp
 MAN1SRCS+=	${OPENMP_MAN1SRCS}
 COMMANDS+=	${OPENMP_COMMANDS}
 .endif
-OPENMP_PATTERN=	${OPENMP_COMMANDS:tW:C/  */|/g}|cmake\/openmp|libarcher|lib[ig]*omp|omp.h|ompt.h|ompt-multiplex.h|ompx.h|omp-tools.h
 
 .if ${PORT_OPTIONS:MPOLLY}
 LLVM_ENABLE_PROJECTS+=	polly
 MAN1SRCS+=	${POLLY_MAN1SRCS}
-.endif
-POLLY_PATTERN=	include\/polly|cmake\/polly|LLVMPolly.so|libPolly
-
-.if ${PORT_OPTIONS:MPYCLANG}
-PYCLANG_PATTERN=	(clang\/(__init__|cindex|enumerations).py)$$
 .endif
 
 .if defined(LLVM_ENABLE_PROJECTS)
@@ -512,15 +483,19 @@ post-install-DOCS-on:
 	${MV} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/${_man} \
 	    ${STAGEDIR}${PREFIX}/share/man/man1/${_man:R}${LLVM_SUFFIX}.1
 .endfor
+.if ${PORT_OPTIONS:MFLANG}
+	${RMDIR} ${STAGEDIR}${DOCSDIR}/flang/html/_sources
+.endif
 .if ! ${PORT_OPTIONS:MLIT}
 	${RM} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/lit.1
 	${RM} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/FileCheck.1
 .endif
-.if ! ${PORT_OPTIONS:MLLDB}
 	${RM} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/lldb-tblgen.1
-.endif
 .if ! ${PORT_OPTIONS:MMLIR}
 	${RM} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/mlir-tblgen.1
+.endif
+.if ${PORT_OPTIONS:MOPENMP}
+	${RMDIR} ${STAGEDIR}${DOCSDIR}/openmp/html/_sources
 .endif
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/man/
@@ -633,7 +608,6 @@ build-plist:
 	    if ($$0 ~ /(${EXTRAS_PATTERN})/) {printf "%%%%EXTRAS%%%%"} \
 	    if ($$0 ~ /(${FLANG_PATTERN})/ && $$0 !~ /${BE_PATTERN}$$/) {printf "%%%%FLANG%%%%"} \
 	    if ($$0 ~ /(bin\/(ld|lld|wasm-ld))|liblld[^b]|\/lld\// && $$0 !~ /(lldb)/) {printf "%%%%LLD%%%%"} \
-	    if ($$0 ~ /(argdumper|lldb|six.py)/) {printf "%%%%LLDB%%%%"} \
 	    if ($$0 ~ /(${MLIR_PATTERN})/) {printf "%%%%MLIR%%%%"} \
 	    if ($$0 ~ /(${OPENMP_PATTERN})/) {printf "%%%%OPENMP%%%%"} \
 	    if ($$0 ~ /(${POLLY_PATTERN})/) {printf "%%%%POLLY%%%%"} \

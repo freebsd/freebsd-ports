@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# PROVIDE: syncplay
+# REQUIRE: DAEMON NETWORKING
+
+# Configuration settings for syncplay in /etc/rc.conf
+# syncplay_enable (bool):	Enable syncplay-server. (Default=NO)
+# syncplay_args (string):	Extra arguments passed to syncplay-server. (Default="")
+
+. /etc/rc.subr
+
+name=syncplay
+rcvar=${name}_enable
+
+load_rc_config $name
+
+: ${syncplay_enable:="NO"}
+: ${syncplay_args:=""}
+: ${syncplay_svcj_options:="net_basic"}
+
+procname="%%PREFIX%%/bin/syncplay-server"
+logfile="/var/log/${name}.log"
+pidfile=/var/run/${name}.pid
+command="/usr/sbin/daemon"
+command_interpreter="%%PYTHON_CMD%%"
+command_args="-H -o ${logfile} -p ${pidfile} ${procname} ${syncplay_args}"
+
+run_rc_command "$1"

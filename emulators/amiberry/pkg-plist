@@ -1,6 +1,7 @@
 bin/amiberry
 lib/amiberry/libcapsimage.so
 lib/amiberry/libfloppybridge.so
+%%QEMU_PPC%%lib/amiberry/qemu-uae.so
 %%DATADIR%%/controllers/gamecontrollerdb.txt
 %%DATADIR%%/controllers/gamecontrollerdb_user.txt
 %%DATADIR%%/data/abr/brainfile.xml
@@ -19,7 +20,7 @@ lib/amiberry/libfloppybridge.so
 %%DATADIR%%/whdboot/JST
 %%DATADIR%%/whdboot/WHDLoad
 %%DATADIR%%/whdboot/boot-data.zip
-%%DATADIR%%/whdboot/game-data/whdload_db.xml
+%%DATADIR%%/whdboot/game-data/whdload_db.json
 %%DATADIR%%/whdboot/save-data/Autoboots/foo.txt
 %%DATADIR%%/whdboot/save-data/Debugs/foo.txt
 %%DATADIR%%/whdboot/save-data/Kickstarts/foo.txt

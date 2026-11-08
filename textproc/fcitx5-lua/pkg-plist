@@ -10,6 +10,7 @@ share/locale/fr/LC_MESSAGES/fcitx5-lua.mo
 share/locale/ja/LC_MESSAGES/fcitx5-lua.mo
 share/locale/ko/LC_MESSAGES/fcitx5-lua.mo
 share/locale/ru/LC_MESSAGES/fcitx5-lua.mo
+share/locale/sv/LC_MESSAGES/fcitx5-lua.mo
 share/locale/zh_CN/LC_MESSAGES/fcitx5-lua.mo
 share/locale/zh_TW/LC_MESSAGES/fcitx5-lua.mo
 share/metainfo/org.fcitx.Fcitx5.Addon.Lua.metainfo.xml

@@ -27,7 +27,7 @@ USE_KDE=	archive colorscheme coreaddons crash dbusaddons \
 		solid statusnotifieritem texteditor textwidgets \
 		threadweaver windowsystem \
 		ecm:build doctools:build
-USE_QT=		base declarative svg tools webengine
+USE_QT=		base declarative svg tools
 USE_XORG=	ice sm x11 xext
 USE_LDCONFIG=	yes
 
@@ -35,8 +35,13 @@ CPE_VENDOR=	kde
 
 CMAKE_ARGS=	-DCMAKE_DISABLE_FIND_PACKAGE_Googlemock=True
 
-OPTIONS_DEFINE=		EMBEDDED IPOD LASTFM
+OPTIONS_DEFINE=		EMBEDDED IPOD LASTFM WEBENGINE
 OPTIONS_DEFAULT=	IPOD
+OPTIONS_DEFAULT_aarch64=	WEBENGINE
+OPTIONS_DEFAULT_amd64=		WEBENGINE
+OPTIONS_DEFAULT_armv7=		WEBENGINE
+OPTIONS_DEFAULT_i386=		WEBENGINE
+OPTIONS_DEFAULT_powerpc64le=	WEBENGINE
 OPTIONS_SUB=		yes
 
 EMBEDDED_DESC=		Use a dedicated MySQL instance (requires MariaDB)
@@ -63,6 +68,10 @@ LASTFM_BROKEN=		fails to build with liblastfm-qt6
 LASTFM_LIB_DEPENDS=	liblastfm6.so:audio/liblastfm
 LASTFM_USE=		KDE=kwallet
 LASTFM_CMAKE_BOOL=	WITH_LASTFM
+
+WEBENGINE_DESC=		Wikipedia context applet (requires QtWebEngine)
+WEBENGINE_USE=		QT=webengine
+WEBENGINE_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_Qt6WebEngineWidgets
 
 .include <bsd.port.pre.mk>
 

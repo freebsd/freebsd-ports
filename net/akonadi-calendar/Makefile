@@ -22,6 +22,8 @@ USE_QT=		base
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 
+CMAKE_OFF=	BUILD_PYTHON_BINDINGS
+
 DESCR=		${.CURDIR:H:H}/deskutils/kdepim/pkg-descr
 
 OPTIONS_DEFINE=	DOCS

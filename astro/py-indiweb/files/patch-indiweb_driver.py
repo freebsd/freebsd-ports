@@ -1,7 +1,7 @@
---- indiweb/driver.py.orig	2021-02-24 15:36:36 UTC
+--- indiweb/driver.py.orig	2020-02-02 00:00:00 UTC
 +++ indiweb/driver.py
-@@ -5,7 +5,7 @@ import xml.etree.ElementTree as ET
- import xml.etree.ElementTree as ET
+@@ -5,7 +5,7 @@ import xml.etree.ElementTree as ET  # noqa: N817
+ import xml.etree.ElementTree as ET  # noqa: N817
  
  # Default INDI data directory
 -INDI_DATA_DIR = os.environ.get('INDI_DATA_DIR', "/usr/share/indi/")

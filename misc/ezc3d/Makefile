@@ -1,6 +1,6 @@
 PORTNAME=	ezc3d
 DISTVERSIONPREFIX=	Release_
-DISTVERSION=	1.6.3
+DISTVERSION=	1.7.2
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,7 +23,6 @@ CMAKE_TESTING_TARGET=	gtest
 post-test:
 	@cd ${TEST_WRKSRC}/test && ./ezc3d_test
 
-# tests as of 1.6.3: [  PASSED  ] 56 tests.
-
+# tests as of 1.7.2: [  PASSED  ] 58 tests.
 
 .include <bsd.port.mk>

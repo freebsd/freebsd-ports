@@ -1,8 +1,8 @@
---- build/linux/strip_binary.gni.orig	2025-11-18 17:44:48 UTC
+--- build/linux/strip_binary.gni.orig	2026-10-18 13:29:39 UTC
 +++ build/linux/strip_binary.gni
-@@ -21,8 +21,8 @@ template("strip_binary") {
-                            "testonly",
+@@ -22,8 +22,8 @@ template("strip_binary") {
                           ])
+ 
    action("${target_name}") {
 -    llvm_strip_binary = "${clang_base_path}/bin/llvm-strip"
 -    llvm_objcopy_binary = "${clang_base_path}/bin/llvm-objcopy"

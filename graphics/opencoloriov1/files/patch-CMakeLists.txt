@@ -1,5 +1,14 @@
 --- CMakeLists.txt.orig	2019-03-28 05:12:57 UTC
 +++ CMakeLists.txt
+@@ -3,7 +3,7 @@ set(OCIO_VERSION_MAJOR 1)
+ set(OCIO_VERSION_MINOR 1)
+ set(OCIO_VERSION_PATCH 1)
+ 
+-cmake_minimum_required(VERSION 2.8)
++cmake_minimum_required(VERSION 2.8...9.9)
+ set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/share/cmake)
+ if(NOT DEFINED CMAKE_FIRST_RUN)
+     SET(CMAKE_FIRST_RUN 1 CACHE INTERNAL "")
 @@ -271,7 +271,7 @@ if(USE_EXTERNAL_YAML)
      mark_as_advanced(YAML_CPP_INCLUDE_DIR YAML_CPP_LIBRARY YAML-CPP_FOUND)
  

@@ -1,4 +1,4 @@
---- content/shell/browser/shell_browser_main_parts.cc.orig	2025-04-04 08:52:13 UTC
+--- content/shell/browser/shell_browser_main_parts.cc.orig	2026-10-18 13:29:39 UTC
 +++ content/shell/browser/shell_browser_main_parts.cc
 @@ -50,7 +50,7 @@
  #include "net/base/network_change_notifier.h"
@@ -36,7 +36,7 @@
    ui::LinuxUi::SetInstance(ui::GetDefaultLinuxUi());
  #endif
  }
-@@ -203,7 +203,7 @@ void ShellBrowserMainParts::PostMainMessageLoopRun() {
+@@ -204,7 +204,7 @@ void ShellBrowserMainParts::PostMainMessageLoopRun() {
    ShellDevToolsManagerDelegate::StopHttpHandler();
    browser_context_.reset();
    off_the_record_browser_context_.reset();

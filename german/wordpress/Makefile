@@ -1,12 +1,12 @@
 CATEGORIES=	german
 MASTER_SITES=	https://de.wordpress.org/
 
-CONFLICTS_INSTALL=	wordpress fr-wordpress ja-wordpress ru-wordpress
+CONFLICTS_INSTALL=	fr-wordpress ja-wordpress ru-wordpress wordpress
 
-WORDPRESS_LANG=	de_DE
+MASTERDIR=	${.CURDIR}/../../www/wordpress
 
 DISTINFO_FILE=	${.CURDIR}/distinfo
 
-MASTERDIR=      ${.CURDIR}/../../www/wordpress
+WORDPRESS_LANG=	de_DE
 
 .include "${MASTERDIR}/Makefile"

@@ -1,3 +1,5 @@
-TIMESTAMP = 1627745757
-SHA256 (detroit-0.2.3.tar.xz) = b56f1f4b32eb3c39b428d944a05b65cd17a4328e1b6bb577bd5de1d9f0d55618
-SIZE (detroit-0.2.3.tar.xz) = 22256400
+TIMESTAMP = 1764675897
+SHA256 (detroit-0.2.9.tar.xz) = 31894998782bdffc565251dcbc57cdfae0b706f365fb0aa1dc58457572b69484
+SIZE (detroit-0.2.9.tar.xz) = 801720
+SHA256 (detroit-data-0.1.tar.gz) = dfa04c8347d1ed8788cad839a4e499a05000e42e3a3dd08766271574fc801e75
+SIZE (detroit-data-0.1.tar.gz) = 22275630

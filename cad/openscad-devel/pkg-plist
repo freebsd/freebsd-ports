@@ -13,6 +13,8 @@ share/mime/packages/openscad.xml
 %%DATADIR%%/color-schemes/editor/high-contrast-light.json
 %%DATADIR%%/color-schemes/editor/light-background.json
 %%DATADIR%%/color-schemes/editor/monokai.json
+%%DATADIR%%/color-schemes/editor/nord-dark.json
+%%DATADIR%%/color-schemes/editor/nord-light.json
 %%DATADIR%%/color-schemes/editor/solarized-dark.json
 %%DATADIR%%/color-schemes/editor/solarized-light.json
 %%DATADIR%%/color-schemes/editor/tomorrow-night.json
@@ -28,6 +30,8 @@ share/mime/packages/openscad.xml
 %%DATADIR%%/color-schemes/render/monotone.json
 %%DATADIR%%/color-schemes/render/nature.json
 %%DATADIR%%/color-schemes/render/nocturnal-gem.json
+%%DATADIR%%/color-schemes/render/nord-dark.json
+%%DATADIR%%/color-schemes/render/nord-light.json
 %%DATADIR%%/color-schemes/render/solarized.json
 %%DATADIR%%/color-schemes/render/starnight.json
 %%DATADIR%%/color-schemes/render/sunset.json
@@ -173,12 +177,15 @@ share/mime/packages/openscad.xml
 %%DATADIR%%/locale/de/LC_MESSAGES/openscad.mo
 %%DATADIR%%/locale/es/LC_MESSAGES/openscad.mo
 %%DATADIR%%/locale/fr/LC_MESSAGES/openscad.mo
+%%DATADIR%%/locale/gl/LC_MESSAGES/openscad.mo
 %%DATADIR%%/locale/hy/LC_MESSAGES/openscad.mo
 %%DATADIR%%/locale/it/LC_MESSAGES/openscad.mo
 %%DATADIR%%/locale/ka/LC_MESSAGES/openscad.mo
+%%DATADIR%%/locale/lo/LC_MESSAGES/openscad.mo
 %%DATADIR%%/locale/pl/LC_MESSAGES/openscad.mo
 %%DATADIR%%/locale/pt_BR/LC_MESSAGES/openscad.mo
 %%DATADIR%%/locale/ru/LC_MESSAGES/openscad.mo
+%%DATADIR%%/locale/sv/LC_MESSAGES/openscad.mo
 %%DATADIR%%/locale/tr/LC_MESSAGES/openscad.mo
 %%DATADIR%%/locale/uk/LC_MESSAGES/openscad.mo
 %%DATADIR%%/locale/zh_CN/LC_MESSAGES/openscad.mo

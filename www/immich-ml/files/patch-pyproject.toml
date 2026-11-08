@@ -1,0 +1,19 @@
+--- pyproject.toml.orig	2026-09-18 15:31:15 UTC
++++ pyproject.toml
+@@ -12,7 +12,6 @@ dependencies = [
+     "huggingface-hub>=1.0,<2.0",
+     "numpy>=2.4.0,<3.0",
+     "onnx>=1.22.0",
+-    "opencv-python-headless>=4.7.0.72,<5.0",
+     "orjson>=3.9.5",
+     "pillow>=12.2,<13",
+     "pydantic>=2.0.0,<3",
+@@ -20,7 +19,7 @@ dependencies = [
+     "python-multipart>=0.0.6,<1.0",
+     "rich>=13.4.2",
+     "tokenizers>=0.15.0,<1.0",
+-    "uvicorn[standard]>=0.22.0,<1.0",
++    "uvicorn>=0.22.0,<1.0",
+     "rapidocr>=3.1.0",
+ ]
+ 

@@ -1,0 +1,27 @@
+#!/bin/sh
+
+SYSCTL=kern.ipc.shm_allow_removed
+if [ "`/sbin/sysctl -n $SYSCTL`" = 0 ] ; then
+	cat << EOMSG
+For correct operation, shared memory support has to be enabled
+by performing the following command as root :
+
+sysctl $SYSCTL=1
+
+To preserve this setting across reboots, append the following
+to /etc/sysctl.conf :
+
+$SYSCTL=1
+EOMSG
+	exit 1
+fi
+ulimit -c 0
+
+# The shim from www/foreign-cdm reads the path of the Widevine module and the
+# path of its own helper binaries, fcdm-jail and fcdm-worker, out of the
+# environment; without them nothing plays.  www/chromium sources the same file.
+if [ -r %%LOCALBASE%%/share/foreign-cdm/fcdm-setup-env ] ; then
+	. %%LOCALBASE%%/share/foreign-cdm/fcdm-setup-env
+fi
+
+exec %%DATADIR%%/brave ${1+"$@"}

@@ -1,7 +1,6 @@
 PORTNAME=	dpp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	10.1.5
-PORTREVISION=	1
+DISTVERSION=	10.1.6
 CATEGORIES=	www devel
 #MASTER_SITES=	https://github.com/brainboxdotcc/DPP/releases/download/v${DISTVERSION}/
 PKGNAMESUFFIX=	-discord
@@ -38,6 +37,6 @@ MAKE_ENV=	TEST_DATA_DIR=${WRKSRC}/testdata/ # only for tests
 post-extract:
 	@${RM} -r ${WRKSRC}/include/dpp/nlohmann
 
-# tests as of 10.1.4: 100% tests passed, 0 tests failed out of 1
+# tests as of 10.1.6: 100% tests passed, 0 tests failed out of 1
 
 .include <bsd.port.mk>

@@ -1,0 +1,18 @@
+--- src/common/core/modsecurity/confs/server-http/modsecurity-rules-global-crs.conf.modsec.orig	2026-09-21 08:05:39 UTC
++++ src/common/core/modsecurity/confs/server-http/modsecurity-rules-global-crs.conf.modsec
+@@ -80,11 +80,11 @@
+   {% endif %}
+ 
+ # custom rules after loading the CRS
+-  {% if is_custom_conf("/etc/bunkerweb/configs/modsec") %}
+-include /etc/bunkerweb/configs/modsec/*.conf
++  {% if is_custom_conf("/usr/local/etc/bunkerweb/configs/modsec") %}
++include /usr/local/etc/bunkerweb/configs/modsec/*.conf
+   {% endif %}
+-  {% if MULTISITE == "yes" and is_custom_conf("/etc/bunkerweb/configs/modsec/" + service_id) %}
+-include /etc/bunkerweb/configs/modsec/{{ service_id }}/*.conf
++  {% if MULTISITE == "yes" and is_custom_conf("/usr/local/etc/bunkerweb/configs/modsec/" + service_id) %}
++include /usr/local/etc/bunkerweb/configs/modsec/{{ service_id }}/*.conf
+   {% endif %}
+   {% if is_custom_conf("/etc/nginx/modsec") %}
+ include /etc/nginx/modsec/*.conf

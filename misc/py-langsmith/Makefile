@@ -1,5 +1,5 @@
 PORTNAME=	langsmith
-DISTVERSION=	0.10.14
+DISTVERSION=	0.14.17
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,23 +11,28 @@ WWW=		https://smith.langchain.com/ \
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-fancy-pypi-readme>0:devel/py-hatch-fancy-pypi-readme@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anyio>=3.5.0:devel/py-anyio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}distro>=1.7.0:sysutils/py-distro@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}httpx>=0.23.0:www/py-httpx@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}httpx2>=2:www/py-httpx2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}orjson>=3.9.14:devel/py-orjson@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=23.2:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.0.0:devel/py-pydantic2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests-toolbelt>=1.0.0:www/py-requests-toolbelt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.0.0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sniffio>=1.1:devel/py-sniffio@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.0.0:devel/py-typing-extensions@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.14:devel/py-typing-extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}uuid-utils>=0.12.0:misc/py-uuid-utils@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}websockets>=15.0:devel/py-websockets@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xxhash>=3.0.0:devel/py-xxhash@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zstandard>=0.23.0:archivers/py-zstandard@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dataclasses-json>=0.6.4:devel/py-dataclasses-json@${PY_FLAVOR} \
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cachetools>=5.0.0:devel/py-cachetools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dataclasses-json>=0.6.4:devel/py-dataclasses-json@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dirty-equals>=0.6.0:devel/py-dirty-equals@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}multipart>=1.0.0:devel/py-multipart@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}openai>=2.6.0:misc/py-openai@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}opentelemetry-api>=1.30.0:devel/py-opentelemetry-api@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}opentelemetry-exporter-otlp-proto-http>=1.30.0:devel/py-opentelemetry-exporter-otlp-proto-http@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}opentelemetry-sdk>=1.30.0:devel/py-opentelemetry-sdk@${PY_FLAVOR} \
@@ -40,6 +45,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dataclasses-json>=0.6.4:devel/py-dataclasse
 		${PYTHON_PKGNAMEPREFIX}pytest-subtests>=0.11.0:devel/py-pytest-subtests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-timeout>=2.3.1:devel/py-pytest-timeout@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-xdist>=3.5.0:devel/py-pytest-xdist@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}respx>0:www/py-respx@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}rich>=13.7.1:textproc/py-rich@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}vcrpy>=7.0.0:devel/py-vcrpy@${PY_FLAVOR}
 
 USES=		python
@@ -52,6 +59,8 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 # Disable the flaky plugin (conflicts with pytest-rerunfailures/pytest-retry
 # which both use the @pytest.mark.flaky marker with different kwargs).
 # Ignore integration/evaluation/external tests (require API keys/network).
+# tests/test_client.py, test_query_streaming*.py and test_session_writes.py mock httpx while
+# the library uses httpx2; test_background_thread.py needs the bench module.
 # Ignore google_adk and strands_agents wrapper tests (packages not available as FreeBSD ports).
 TEST_ARGS=	-p no:flaky \
 		-p no:aiomisc \
@@ -61,16 +70,28 @@ TEST_ARGS=	-p no:flaky \
 		--ignore=tests/integration_tests \
 		--ignore=tests/unit_tests/evaluation/test_runner.py \
 		--ignore=tests/unit_tests/sandbox \
+		--ignore=tests/test_client.py \
+		--ignore=tests/test_query_streaming.py \
+		--ignore=tests/test_query_streaming_order.py \
+		--ignore=tests/unit_tests/test_background_thread.py \
 		--ignore=tests/unit_tests/test_client.py \
 		--ignore=tests/unit_tests/test_run_helpers.py \
 		--ignore=tests/unit_tests/test_run_trees.py \
+		--ignore=tests/unit_tests/test_session_writes.py \
 		--ignore=tests/unit_tests/wrappers/test_google_adk.py \
 		--ignore=tests/unit_tests/wrappers/test_strands_agents.py \
-		--ignore=tests/unit_tests/wrappers/test_voice_helpers.py
+		--ignore=tests/unit_tests/wrappers/test_voice_helpers.py \
+		--ignore=bench
 
 # Skip flaky performance test that depends on timing/background thread throughput
-PYTEST_IGNORED_TESTS=	test_client_gc_after_autoscale
+# and tests that use @pytest.mark.flaky kwargs incompatible with pytest-rerunfailures.
+PYTEST_IGNORED_TESTS=	test_client_gc_after_autoscale \
+			test_traceable_input_attachments \
+			test_async_create_feedback_retries_on_not_found \
+			test_create_feedback_retries_on_not_found \
+			test_arequest_with_retries_retries_on_502 \
+			test_langchain_tool_attributes_reach_otel_spans
 
-# tests as of 0.10.14: 748 passed, 3 skipped, 97 warnings in 30.41s
+# tests as of 0.14.17: 1817 passed, 2239 skipped, 4 deselected, 1 xfailed, 105 warnings, 6 subtests passed
 
 .include <bsd.port.mk>

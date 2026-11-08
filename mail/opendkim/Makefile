@@ -1,6 +1,6 @@
 PORTNAME=	opendkim
 PORTVERSION=	2.10.3
-PORTREVISION=	23
+PORTREVISION=	24
 CATEGORIES=	mail security
 MASTER_SITES=	SF/${PORTNAME} \
 		SF/${PORTNAME}/Previous%20Releases \
@@ -69,7 +69,10 @@ LDNS_LIB_DEPENDS=	libldns.so:dns/ldns
 
 LMDB_DESC=		Use Lightning Memory-Mapped DB key-value store
 LMDB_CONFIGURE_WITH=	lmdb
-LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb0
+LMDB_CPPFLAGS=		-I${LOCALBASE}/lmdb0/include
+LMDB_LDFLAGS=		-L${LOCALBASE}/lmdb0/lib
+LMDB_CONFIGURE_ENV=	PKG_CONFIG_PATH=${LOCALBASE}/lmdb0/libdata/pkgconfig
+LMDB_LIB_DEPENDS=	liblmdb0.so:databases/lmdb0
 
 LUA_DESC=		Describe filter policy with lua
 LUA_CONFIGURE_WITH=	lua

@@ -10,6 +10,8 @@ bin/blueprint-compiler
 %%PYTHON_SITELIBDIR%%/blueprintcompiler/__pycache__/completions%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/blueprintcompiler/__pycache__/completions_utils%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/blueprintcompiler/__pycache__/completions_utils%%PYTHON_TAG%%.pyc
+%%PYTHON_SITELIBDIR%%/blueprintcompiler/__pycache__/config%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/blueprintcompiler/__pycache__/config%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/blueprintcompiler/__pycache__/decompiler%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/blueprintcompiler/__pycache__/decompiler%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/blueprintcompiler/__pycache__/errors%%PYTHON_TAG%%.opt-1.pyc
@@ -44,6 +46,7 @@ bin/blueprint-compiler
 %%PYTHON_SITELIBDIR%%/blueprintcompiler/ast_utils.py
 %%PYTHON_SITELIBDIR%%/blueprintcompiler/completions.py
 %%PYTHON_SITELIBDIR%%/blueprintcompiler/completions_utils.py
+%%PYTHON_SITELIBDIR%%/blueprintcompiler/config.py
 %%PYTHON_SITELIBDIR%%/blueprintcompiler/data/__pycache__/collect_stats%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/blueprintcompiler/data/__pycache__/collect_stats%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/blueprintcompiler/data/collect_stats.py

@@ -1,0 +1,14 @@
+[
+{ type: install
+  message: <<EOM
+This package contains the sources of the modsecurity3 module only.  It does not
+install a loadable module.
+
+The module itself is built by the nginx ports.  To use modsecurity3, build
+www/nginx, www/nginx-devel or www/freenginx with the MODSECURITY3 option
+enabled.  Those ports pick the sources up from
+%%PREFIX%%/share/nginx/modules/nginx-module-modsecurity3 and produce
+ngx_http_modsecurity_module.so.
+EOM
+}
+]

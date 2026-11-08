@@ -1,0 +1,2 @@
+Xfce chords for bhotkeys.  The plugins call xfconf-query and need
+an Xfce session at run time.

@@ -1,5 +1,5 @@
 PORTNAME=	rubocop-minitest
-PORTVERSION=	0.39.1
+PORTVERSION=	0.40.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

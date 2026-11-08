@@ -1,0 +1,14 @@
+[
+{
+  type: install
+  message: <<EOM
+This port assumes you are familiar with Dovecot 2.4 and have it installed
+and running on the system you have installed this plugin on.
+
+Further information on configuration can be found at:
+https://codeberg.org/errror/wormhole
+https://codeberg.org/errror/wormhole/src/branch/main/doc/upgrading.md
+
+EOM
+}
+]

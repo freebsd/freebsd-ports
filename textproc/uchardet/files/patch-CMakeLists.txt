@@ -1,0 +1,9 @@
+--- CMakeLists.txt.orig	2022-12-08 20:52:25 UTC
++++ CMakeLists.txt
+@@ -1,5 +1,5 @@
+ ######## Project settings
+-cmake_minimum_required(VERSION 3.1)
++cmake_minimum_required(VERSION 3.5)
+ include(CheckCCompilerFlag)
+ set (PACKAGE_NAME uchardet)
+ project (${PACKAGE_NAME} CXX C)

@@ -1,7 +1,8 @@
 PORTNAME=	cdo
-PORTVERSION=	2.6.3
+PORTVERSION=	2.6.4
+PORTREVISION=	1
 CATEGORIES=	science
-MASTER_SITES=	https://code.mpimet.mpg.de/attachments/download/30224/ \
+MASTER_SITES=	https://code.mpimet.mpg.de/attachments/download/30242/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org

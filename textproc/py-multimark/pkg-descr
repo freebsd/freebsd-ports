@@ -1,0 +1,3 @@
+multimark provides Python bindings to cmark-gfm, a widely-used implementation
+of the CommonMark specification with GitHub-Flavored Markdown extensions. It
+supports parsing and rendering Markdown to HTML, LaTeX, man, and XML formats.

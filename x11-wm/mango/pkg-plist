@@ -1,6 +1,9 @@
 bin/mango
+bin/mangonag
 bin/mmsg
 %%ETCDIR%%/config.conf.sample
+%%ETCDIR%%/config.toml.sample
+lib/systemd/user/mango-session.target
 %%PORTDOCS%%%%DOCSDIR%%/bindings/index.mdx
 %%PORTDOCS%%%%DOCSDIR%%/bindings/keys.md
 %%PORTDOCS%%%%DOCSDIR%%/bindings/meta.json
@@ -11,6 +14,7 @@ bin/mmsg
 %%PORTDOCS%%%%DOCSDIR%%/configuration/meta.json
 %%PORTDOCS%%%%DOCSDIR%%/configuration/miscellaneous.md
 %%PORTDOCS%%%%DOCSDIR%%/configuration/monitors.md
+%%PORTDOCS%%%%DOCSDIR%%/configuration/toml.md
 %%PORTDOCS%%%%DOCSDIR%%/configuration/xdg-portals.md
 %%PORTDOCS%%%%DOCSDIR%%/faq.md
 %%PORTDOCS%%%%DOCSDIR%%/index.md
@@ -18,6 +22,7 @@ bin/mmsg
 %%PORTDOCS%%%%DOCSDIR%%/ipc.md
 %%PORTDOCS%%%%DOCSDIR%%/meta.json
 %%PORTDOCS%%%%DOCSDIR%%/nix-options.md
+%%PORTDOCS%%%%DOCSDIR%%/patches/v0.15.0/configuration/monitors.md
 %%PORTDOCS%%%%DOCSDIR%%/quick-start.md
 %%PORTDOCS%%%%DOCSDIR%%/screenshot.md
 %%PORTDOCS%%%%DOCSDIR%%/visuals/animations.md
@@ -32,6 +37,8 @@ bin/mmsg
 %%PORTDOCS%%%%DOCSDIR%%/window-management/overview.md
 %%PORTDOCS%%%%DOCSDIR%%/window-management/rules.md
 %%PORTDOCS%%%%DOCSDIR%%/window-management/scratchpad.md
+share/icons/hicolor/512x512/apps/mango.svg
+share/man/man1/mangonag.1.gz
 share/man/man1/mmsg.1.gz
 share/wayland-sessions/mango.desktop
 share/xdg-desktop-portal/mango-portals.conf

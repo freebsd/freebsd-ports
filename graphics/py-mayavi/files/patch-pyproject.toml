@@ -1,0 +1,19 @@
+-- Use the PEP 621 license table instead of the PEP 639 license expression
+-- and remove license-files, which the old setuptools port does not validate.
+-- This allows building without upgrading devel/py-setuptools.
+--- pyproject.toml.orig	2026-09-21 18:18:49 UTC
++++ pyproject.toml
+@@ -15,12 +15,7 @@ requires-python = ">=3.10"
+ description = "3D scientific data visualization library and application"
+ readme = "README.rst"
+ requires-python = ">=3.10"
+-license = "BSD-3-Clause"
+-license-files = [
+-    "LICENSE.txt",
+-    "LICENSE_COLORBREWER.txt",
+-    "LICENSE_YORICK.txt",
+-]
++license = {text = "BSD-3-Clause"}
+ authors = [
+     {name = "Prabhu Ramachandran, et al.", email = "prabhu@aero.iitb.ac.in"},
+ ]

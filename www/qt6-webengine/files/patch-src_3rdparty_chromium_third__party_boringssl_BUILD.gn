@@ -1,0 +1,18 @@
+--- src/3rdparty/chromium/third_party/boringssl/BUILD.gn.orig	2026-05-08 07:54:08 UTC
++++ src/3rdparty/chromium/third_party/boringssl/BUILD.gn
+@@ -122,6 +122,15 @@ if (is_msan || (is_msvc && current_cpu == "arm64" && !
+     visibility = [ ":*" ]
+     sources = rebase_path(test_support_sources_nasm, ".", "src")
+   }
++} else if (current_cpu == "ppc64") {
++  source_set("boringssl_asm") {
++    visibility = [ ":*" ]  # Only targets in this file can depend on this.
++    public_configs = [ ":no_asm_config" ]
++  }
++  source_set("test_support_asm") {
++    visibility = [ ":*" ]
++    testonly = true
++  }
+ } else {
+   # All other targets use GAS-compatible assembler. BoringSSL's assembly files
+   # are all wrapped in processor checks for the corresponding target, so there

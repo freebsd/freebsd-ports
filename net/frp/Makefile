@@ -1,6 +1,6 @@
 PORTNAME=	frp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.70.1
+DISTVERSION=	0.72.0
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,11 +10,14 @@ WWW=		https://github.com/fatedier/frp
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.24+,modules
+USES=		go:modules
 
 GO_MODULE=	github.com/fatedier/frp
 GO_TARGET=	./cmd/frpc ./cmd/frps
 GO_BUILDFLAGS+=	-tags=noweb
+GO_TESTFLAGS+=	-tags=noweb
+# e2e tests need web assets not included with -tags=noweb
+GO_TESTTARGET=	./client/... ./cmd/... ./pkg/... ./server/...
 
 SUB_LIST=	DAEMON_USER=${DAEMON_USER}
 USE_RC_SUBR=	${PORTNAME}s
@@ -35,5 +38,7 @@ post-install:
 .for f in frpc.toml frps.toml
 	${INSTALL_DATA} ${WRKSRC}/conf/${f} ${STAGEDIR}${PREFIX}/etc/${f}.sample
 .endfor
+
+# as of 0.71.0: all tests pass
 
 .include <bsd.port.mk>

@@ -1,11 +1,20 @@
---- pyproject.toml.orig	2025-05-29 19:52:15 UTC
+--- pyproject.toml.orig	2026-09-12 20:44:11 UTC
 +++ pyproject.toml
-@@ -9,7 +9,7 @@ exclude = ['rencode/*.c']
- exclude = ['rencode/*.c']
+@@ -3,7 +3,7 @@ readme = "README.md"
+ version = "1.0.9"
+ description = "rencode is an object serialization library similar to bencode from the Bittorrent project."
+ readme = "README.md"
+-license = "GPL-3.0-only"
++license = {text = "GPL-3.0-only"}
+ requires-python = ">=3.9"
+ authors = [
+     {name = "Andrew Resch", email = "andrewresch@gmail.com"},
+@@ -47,7 +47,7 @@ dev = [
+ ]
  
- [tool.poetry.build]
--script = "build.py"
-+script = "_build.py"
+ [build-system]
+-requires = ["setuptools>=64.0.0", "cython>=3.0.0"]
++requires = ["setuptools>=61.0.0", "cython>=3.0.0"]
+ build-backend = "setuptools.build_meta"
  
- [tool.poetry.dependencies]
- python = "^3.9"
+ [tool.setuptools.packages.find]

@@ -11,8 +11,6 @@ LICENSE_NAME=	unknown
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		tar:xz xorg-cat:font
-
-NO_ARCH=	yes
+USES=		xorg-cat:font
 
 .include <bsd.port.mk>

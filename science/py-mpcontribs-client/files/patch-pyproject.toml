@@ -1,0 +1,22 @@
+-- Adjust pyproject.toml to build with the setuptools version available in the
+-- FreeBSD ports tree: lower the build-system requirement and use the legacy
+-- PEP 621 license syntax supported by that version.
+
+--- pyproject.toml.orig	2026-09-09 09:05:05 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=80.0.0","setuptools-scm>=8"]
++requires = ["setuptools>=63.1","setuptools-scm>=8"]
+ build-backend = "setuptools.build_meta"
+
+ [tool.setuptools_scm]
+@@ -19,7 +19,7 @@
+ dynamic = ["version"]
+ requires-python = ">=3.11"
+ description="Client library for MPContribs API"
+-license = "BSD-3-Clause-LBNL"
++license = {text = "BSD-3-Clause-LBNL"}
+ authors = [
+     {name = "Patrick Huck", email = "phuck@lbl.gov"},
+     {name = "The Materials Project", email="feedback@materialsproject.org"},

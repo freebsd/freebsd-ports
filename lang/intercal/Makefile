@@ -1,5 +1,5 @@
 PORTNAME=	intercal
-PORTVERSION=	0.34
+PORTVERSION=	0.35
 CATEGORIES=	lang
 MASTER_SITES=	http://www.catb.org/~esr/intercal/
 

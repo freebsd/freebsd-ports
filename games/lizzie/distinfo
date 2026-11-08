@@ -1,5 +1,5 @@
-TIMESTAMP = 1560123307
-SHA256 (lizzie-0.6-105-deps.tar.gz) = d9461feeb8ffccb74f2667c2669f9ccc4a364a2f15f8c2101254c901ea99405e
-SIZE (lizzie-0.6-105-deps.tar.gz) = 30231127
-SHA256 (featurecat-lizzie-0.6-105-gd0e7040_GH0.tar.gz) = 3768c0f778b43fe8fd961eeede1e4a06b1be2db39848e31b5efea30e3ad34db1
-SIZE (featurecat-lizzie-0.6-105-gd0e7040_GH0.tar.gz) = 6638762
+TIMESTAMP = 1792341945
+SHA256 (lizzie-0.7.4-deps.tar.gz) = 75e9997be46e4b1009e4a0daccadbed80e01edfa65d82217e731541f34b7489d
+SIZE (lizzie-0.7.4-deps.tar.gz) = 32406622
+SHA256 (featurecat-lizzie-0.7.4_GH0.tar.gz) = 9c984ebe6c44f5b4798c3396dabd337f335a91c5eca890bd03f6abef974e4c91
+SIZE (featurecat-lizzie-0.7.4_GH0.tar.gz) = 3262756

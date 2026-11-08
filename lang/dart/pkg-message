@@ -1,0 +1,19 @@
+[
+{ type: install
+  message: <<EOM
+UDP datagram size
+
+FreeBSD limits UDP datagrams to 9216 bytes by default, while Linux allows
+up to about 64 KB. Dart programs that send larger datagrams through
+RawDatagramSocket fail with "Message too long" unless the limits are
+raised:
+
+  # sysctl net.inet.udp.maxdgram=65535
+  # sysctl net.inet.udp.recvspace=262144
+
+The first setting allows sending large datagrams; the second lets a
+socket receive them. Add both to /etc/sysctl.conf to keep them across
+reboots.
+EOM
+}
+]

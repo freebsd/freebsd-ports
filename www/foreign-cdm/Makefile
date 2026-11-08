@@ -1,6 +1,5 @@
 PORTNAME=	foreign-cdm
-DISTVERSION=	20250224
-PORTREVISION=	1
+DISTVERSION=	20260906
 CATEGORIES=	www multimedia linux
 MASTER_SITES=	https://arrowd.name/:cdm
 DISTFILES=	cdm-${CDM_INT_HASH}.tar.gz:cdm

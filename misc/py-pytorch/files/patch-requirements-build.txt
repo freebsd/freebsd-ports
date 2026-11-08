@@ -1,11 +1,14 @@
---- requirements-build.txt.orig	2026-07-08 17:44:27 UTC
+--- requirements-build.txt.orig	2026-09-02 17:43:46 UTC
 +++ requirements-build.txt
-@@ -1,7 +1,5 @@
- # Build System requirements
+@@ -2,10 +2,8 @@ scikit-build-core>=1.0
+ # 1.0 is required for [[tool.dynamic-metadata]] and the env table; see
+ # pyproject.toml for the rationale on this lower bound.
+ scikit-build-core>=1.0
 -setuptools>=77.0.0,<82  # 77.0 is the first release with PEP 639 license-files support
++setuptools # 77.0 is the first release with PEP 639 license-files support
+ spin
 -cmake>=3.27
 -ninja
-+setuptools  # 77.0 is the first release with PEP 639 license-files support
  numpy
  packaging>=24.2  # required by setuptools>=77 to validate PEP 639 license expressions
  pyyaml

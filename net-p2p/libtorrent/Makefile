@@ -1,5 +1,5 @@
 PORTNAME=	libtorrent
-DISTVERSION=	0.16.19
+DISTVERSION=	0.16.25
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/rakshasa/rtorrent/releases/download/v${DISTVERSION}/
 
@@ -32,5 +32,7 @@ INSTALL_TARGET=	install-strip
 
 TEST_ARGS=	CPPUNIT_LIBS="-L${LOCALBASE}/lib -lcppunit"
 TEST_TARGET=	check
+
+CONFLICTS_INSTALL=	libtorrent-devel
 
 .include <bsd.port.mk>

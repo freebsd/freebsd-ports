@@ -1,3 +1,3 @@
-TIMESTAMP = 1761755191
-SHA256 (google_cloud_pubsub-2.32.0.tar.gz) = 3c6db8593ea772ca065fb22ee4fadee438652eb5b4cf4c78b3fdbc021f452836
-SIZE (google_cloud_pubsub-2.32.0.tar.gz) = 392550
+TIMESTAMP = 1787834306
+SHA256 (google_cloud_pubsub-2.39.2.tar.gz) = 934a3ab7496a6da09cd97d866bef3e47092e904688a66f60750895a7484bd585
+SIZE (google_cloud_pubsub-2.39.2.tar.gz) = 403181

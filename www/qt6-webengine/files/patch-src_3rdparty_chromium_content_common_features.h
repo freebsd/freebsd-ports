@@ -1,9 +1,9 @@
---- src/3rdparty/chromium/content/common/features.h.orig	2025-09-06 10:01:20 UTC
+--- src/3rdparty/chromium/content/common/features.h.orig	2026-08-11 12:42:19 UTC
 +++ src/3rdparty/chromium/content/common/features.h
-@@ -60,7 +60,7 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE(kCommittedOriginEn
- CONTENT_EXPORT BASE_DECLARE_FEATURE(kCommittedOriginTracking);
- CONTENT_EXPORT BASE_DECLARE_FEATURE(kCriticalClientHint);
+@@ -63,7 +63,7 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE(kDumpOnUnexpectedO
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kDocumentPolicyNegotiation);
+ CONTENT_EXPORT BASE_DECLARE_FEATURE(kDumpOnOriginHeaderMismatch);
+ CONTENT_EXPORT BASE_DECLARE_FEATURE(kDumpOnUnexpectedOriginHeader);
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kEnableDevToolsJsErrorReporting);

@@ -116,7 +116,7 @@ do_cmd() {
 	ret=0
 	dmn=$1
 	if [ -n "${dmn}" ] && [ "${dmn}" != "all" ]; then
-		command=%%PREFIX%%/sbin/${dmn}
+		command=%%PREFIX%%/lib/frr/${dmn}
 		pidfile=/var/run/frr/${dmn}.pid
 		eval flags=\$\{${dmn}_flags:-\"\"\}
 		flags="${flags} ${frr_flags}"

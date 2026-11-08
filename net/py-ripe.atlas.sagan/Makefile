@@ -1,10 +1,12 @@
 PORTNAME=	ripe.atlas.sagan
-DISTVERSION=	1.3.1
+DISTVERSION=	2.0.1
+DISTNAME=	ripe_atlas_sagan-${DISTVERSION}
+
 CATEGORIES=	net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	eduardo@FreeBSD.org
+MAINTAINER=	zarychtam@plan-b.pwste.edu.pl
 COMMENT=	Parsing library for RIPE Atlas measurement results
 WWW=		https://github.com/RIPE-NCC/ripe.atlas.sagan
 

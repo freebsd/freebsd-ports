@@ -1,5 +1,5 @@
 PORTNAME=	sqlite-jdbc
-DISTVERSION=	3.53.1.0
+DISTVERSION=	3.54.1.0
 CATEGORIES=	databases java
 MASTER_SITES+=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/releases/download/${DISTVERSION}/:jar
 DISTFILES+=	${DISTJAR}:jar
@@ -13,9 +13,8 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${JAVAJARDIR}/slf4j-api.jar:devel/slf4j
-LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 
-USES=		gmake java:build
+USES=		gmake java:build sqlite
 USE_GITHUB=	yes
 GH_ACCOUNT=	xerial
 

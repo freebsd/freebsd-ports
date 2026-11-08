@@ -1,10 +1,10 @@
 PORTNAME=	beacon
 PORTVERSION=	1.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net perl5 mbone
 MASTER_SITES=	SF/multicastbeacon/multicastbeacon/beacon%20v${PORTVERSION}
 
-MAINTAINER=	portmaster@bsdforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Beacon active measurement tool to monitor multicast
 WWW=		https://sourceforge.net/projects/multicastbeacon/
 

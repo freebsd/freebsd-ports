@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2026-08-26 17:24:49 UTC
++++ pyproject.toml
+@@ -33,7 +33,7 @@ dependencies = [
+ ]
+ dependencies = [
+     "beautifulsoup4>=4.11.1",
+-    "curl_cffi>=0.15",
++    "curl_cffi>=0.14",
+     "lxml>=4.9.0",
+     "multitasking>=0.0.7",
+     "numpy>=1.16.5",

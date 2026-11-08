@@ -1,0 +1,10 @@
+--- daemons/ipa-slapi-plugins/ipa-lockout/Makefile.am.orig	2025-01-15 09:52:47 UTC
++++ daemons/ipa-slapi-plugins/ipa-lockout/Makefile.am
+@@ -38,3 +38,7 @@ EXTRA_DIST =			\
+ EXTRA_DIST =			\
+ 	$(app_DATA)		\
+ 	$(NULL)
++
++# FreeBSD: resolve 389-ds SLAPI symbols from libslapd.
++libipa_lockout_la_LIBADD += -L$(libdir)/dirsrv -lslapd $(LIBICONV)
++libipa_lockout_la_LDFLAGS += -Wl,-rpath,$(libdir)/dirsrv

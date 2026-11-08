@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Functions for Handling Dates
-WWW=		https://CRAN.R-project.org/package=date
 
 LICENSE=	GPLv2
 

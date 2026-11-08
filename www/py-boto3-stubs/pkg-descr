@@ -1,0 +1,4 @@
+boto3-stubs provides type annotations and code completion support for
+boto3, the Amazon Web Services (AWS) Software Development Kit (SDK) for
+Python. These stubs help static type checkers and IDEs provide accurate
+autocompletion and type checking for boto3 clients and resources.

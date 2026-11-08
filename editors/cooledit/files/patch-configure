@@ -1,11 +1,19 @@
---- configure.orig	2022-10-09 14:17:59 UTC
+Do not install grotty:
+
+Command 'which grotty' returned error. Aborting.
+
+You need to install grotty for the man page feature to work
+If you don't care about this then delete the exit command below
+in the configure script
+
+--- configure.orig	2026-10-14 21:58:00 UTC
 +++ configure
-@@ -13197,7 +13197,7 @@ else
+@@ -14061,7 +14061,7 @@ else
      echo "If you don't care about this then delete the exit command below" ;
      echo "in the configure script" ;
      echo "" ;
 -    exit 1 ;
 +#    exit 1 ;
  fi
- TST_MAN_CMD='for i in `man -a -w ls` ; do man -Tutf8 -Z $i | grotty ; echo ; echo --- ; echo ; done' ;
- THE_MAN_CMD='for i in `man -a -w %m` ; do man -Tutf8 -Z $i | grotty ; echo ; echo --- ; echo ; done' ;
+ if test "x`uname`" = xFreeBSD ; then
+   TST_MAN_CMD='for i in `man -a -w ls` ; do man $i ; echo ; echo --- ; echo ; done' ;

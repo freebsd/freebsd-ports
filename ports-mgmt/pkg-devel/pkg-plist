@@ -8,6 +8,7 @@ etc/periodic/security/470.pkg-dependencies
 etc/periodic/weekly/400.status-pkg
 @sample etc/pkg.conf.sample
 include/pkg.h
+include/pkg/sb.h
 include/pkg/vec.h
 include/pkg/audit.h
 include/pkg/checksum.h

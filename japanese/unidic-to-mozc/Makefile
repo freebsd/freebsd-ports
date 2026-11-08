@@ -1,11 +1,12 @@
 PORTNAME=	unidic-to-mozc
-DISTVERSION=	1.0.0
+DISTVERSION=	1.1.0
 CATEGORIES=	japanese
 MASTER_SITES=	https://github.com/jassdack/UniDic-to-Mozc/releases/download/v${DISTVERSION}/
-DISTNAME=	mozc_unidic_merged_v${DISTVERSION}
+DISTFILES=	mozc_unidic_merged_v${DISTVERSION}.zip \
+		mozc_unidic_names_v${DISTVERSION}.zip
 
 MAINTAINER=	mce@FreeBSD.org
-COMMENT=	Mozc user dictionary integration
+COMMENT=	Auxiliary dictionary containing the words Mozc cannot convert
 WWW=		https://github.com/jassdack/UniDic-to-Mozc
 
 LICENSE=	BSD3CLAUSE
@@ -22,11 +23,10 @@ NO_WRKSUBDIR=	yes
 PORTDATA=	*
 
 do-install:
-.for i in 1 2 3 4
-	@${MV} ${WRKSRC}/mozc_unidic_merged_$i.tsv \
-		${WRKSRC}/mozc_unidic_merged_$i.txt
-.endfor
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/mozc_unidic_merged_*.txt ${STAGEDIR}${DATADIR}
+.for i in merged names
+	${INSTALL_DATA} ${WRKSRC}/mozc_unidic_$i_1.tsv \
+		${STAGEDIR}${DATADIR}/mozc_unidic_$i_1.txt
+.endfor
 
 .include <bsd.port.mk>

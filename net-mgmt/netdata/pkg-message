@@ -10,4 +10,22 @@ Quick start for local-only use:
    https://learn.netdata.cloud/docs/netdata-cloud/connect-agent-to-cloud#connect-an-existing-agent
 EOM
 }
+{ message: <<EOM
+Since 2.9.0 the bundled dashboard renders at most five nodes and reports
+"Local dashboard is limited to 5 nodes." beyond that.  This is a limit of
+the web interface only, the API and streaming via stream.conf are not
+affected.
+EOM
+}
+{ type: upgrade
+  maximum_version: "2.9.0"
+  message: <<EOM
+netdata 2.11 no longer reads [global] history and [web] disconnect idle
+clients after seconds.  Both are migrated internally and then ignored, so
+review the retention settings under [db] in netdata.conf.
+
+The OPENTELEMETRY option is gone, upstream now builds that plugin from
+Rust sources that cannot be fetched during a sandboxed build.
+EOM
+}
 ]

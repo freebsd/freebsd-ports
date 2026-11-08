@@ -1,5 +1,5 @@
 PORTNAME=	loaders-update
-DISTVERSION=	1.4.0
+DISTVERSION=	1.5.1
 CATEGORIES=	sysutils
 MASTER_SITES=	GH
 
@@ -9,7 +9,7 @@ WWW=		https://github.com/emrion/uploaders/
 
 LICENSE=	BSD2CLAUSE
 
-ONLY_FOR_ARCHS=	amd64 arm64
+ONLY_FOR_ARCHS=	aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	Upstream has not tested on other architectures
 
 USE_GITHUB=	yes

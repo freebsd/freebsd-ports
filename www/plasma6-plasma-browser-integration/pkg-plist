@@ -97,6 +97,14 @@ share/locale/sk/LC_MESSAGES/plasma-browser-integration-host.mo
 share/locale/sk/LC_MESSAGES/plasma-browser-integration-reminder.mo
 share/locale/sl/LC_MESSAGES/plasma-browser-integration-host.mo
 share/locale/sl/LC_MESSAGES/plasma-browser-integration-reminder.mo
+share/locale/sr/LC_MESSAGES/plasma-browser-integration-host.mo
+share/locale/sr/LC_MESSAGES/plasma-browser-integration-reminder.mo
+share/locale/sr@ijekavian/LC_MESSAGES/plasma-browser-integration-host.mo
+share/locale/sr@ijekavian/LC_MESSAGES/plasma-browser-integration-reminder.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/plasma-browser-integration-host.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/plasma-browser-integration-reminder.mo
+share/locale/sr@latin/LC_MESSAGES/plasma-browser-integration-host.mo
+share/locale/sr@latin/LC_MESSAGES/plasma-browser-integration-reminder.mo
 share/locale/sv/LC_MESSAGES/plasma-browser-integration-host.mo
 share/locale/sv/LC_MESSAGES/plasma-browser-integration-reminder.mo
 share/locale/ta/LC_MESSAGES/plasma-browser-integration-host.mo
@@ -104,6 +112,8 @@ share/locale/ta/LC_MESSAGES/plasma-browser-integration-reminder.mo
 share/locale/tg/LC_MESSAGES/plasma-browser-integration-reminder.mo
 share/locale/tr/LC_MESSAGES/plasma-browser-integration-host.mo
 share/locale/tr/LC_MESSAGES/plasma-browser-integration-reminder.mo
+share/locale/ug/LC_MESSAGES/plasma-browser-integration-host.mo
+share/locale/ug/LC_MESSAGES/plasma-browser-integration-reminder.mo
 share/locale/uk/LC_MESSAGES/plasma-browser-integration-host.mo
 share/locale/uk/LC_MESSAGES/plasma-browser-integration-reminder.mo
 share/locale/zh_CN/LC_MESSAGES/plasma-browser-integration-host.mo

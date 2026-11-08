@@ -1,5 +1,5 @@
 PORTNAME=	openhantek
-DISTVERSION=	3.4.0-2026-10-16
+DISTVERSION=	3.4.1-rc2
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,7 +18,6 @@ USE_GL=		gl glu
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenHantek
 GH_PROJECT=	OpenHantek6022 # there's also the openhantek project which OpenHantek6022 is a fork of
-GH_TAGNAME=	bb36066 # has Qt6 compatibility fixes
 
 OPTIONS_DEFINE=		HANTEK_AC
 

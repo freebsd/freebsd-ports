@@ -1,0 +1,19 @@
+--- pyproject.toml.orig	2026-08-12 22:52:40 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["hatchling>1.24","setuptools>=65.0","hatch-requirements-txt>=0.4.1"]
++requires = ["hatchling>1.24","setuptools>=63.1.0","hatch-requirements-txt>=0.4.1"]
+ build-backend = "hatchling.build"
+ 
+ [project]
+@@ -7,8 +7,7 @@ readme = "README.md"
+ dynamic = ["version", "dependencies", "optional-dependencies"]
+ description = "PyMongo - the Official MongoDB Python driver"
+ readme = "README.md"
+-license = "Apache-2.0"
+-license-files = ["LICENSE"]
++license = { text = "Apache-2.0" }
+ requires-python = ">=3.9"
+ authors = [
+     { name = "The MongoDB Python Team" },

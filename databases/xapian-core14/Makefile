@@ -1,5 +1,5 @@
 PORTNAME=	xapian-core
-PORTVERSION=	1.4.31
+PORTVERSION=	1.4.32
 CATEGORIES=	databases
 MASTER_SITES=	https://oligarchy.co.uk/xapian/${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -7,7 +7,9 @@ PKGNAMESUFFIX=	14
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Probabilistic text search database engine
-WWW=		https://xapian.org/
+WWW=		https://xapian.org/ \
+		https://github.com/xapian/xapian/tree/RELEASE/1.4/xapian-core \
+		https://github.com/xapian/xapian
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

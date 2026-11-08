@@ -1,0 +1,42 @@
+--- bin/install_env.orig	2026-10-12 13:59:17 UTC
++++ bin/install_env
+@@ -385,20 +385,20 @@ class InternetCfg(RepoCfg):
+         return self.proto + self.path + 'codeaster-' + self._param.base
+ 
+ 
+-class ConfigModifier(CP.SafeConfigParser):
++class ConfigModifier(CP.RawConfigParser):
+ 
+-    """Subclass of SafeConfigParser to change a configuration."""
++    """Subclass of RawConfigParser to change a configuration."""
+ 
+     def __init__(self, *args, **kwargs):
+         """Additional attributes"""
+         self.reset_all = kwargs.pop('reset', False)
+         self.changed = False
+-        CP.SafeConfigParser.__init__(self, *args, **kwargs)
++        CP.RawConfigParser.__init__(self, *args, **kwargs)
+ 
+     def add_section(self, section):
+         """Wrapper around 'ConfigParser.add_section'."""
+         if not self.has_section(section):
+-            CP.SafeConfigParser.add_section(self, section)
++            CP.RawConfigParser.add_section(self, section)
+             self.changed = True
+ 
+     def set(self, section, option, value, override=False):
+@@ -411,12 +411,12 @@ class ConfigModifier(CP.SafeConfigParser):
+         if override or not self.has_option(section, key):
+             if key != option:
+                 self.remove_option(section, key)
+-            CP.SafeConfigParser.set(self, section, option, value)
++            CP.RawConfigParser.set(self, section, option, value)
+             self.changed = True
+ 
+     def remove_option(self, section, option, section_if_empty=False):
+         """Remove an option and the section if it is empty."""
+-        CP.SafeConfigParser.remove_option(self, section, option)
++        CP.RawConfigParser.remove_option(self, section, option)
+         if section_if_empty and len(self.options(section)) == 0:
+             self.remove_section(section)
+ 

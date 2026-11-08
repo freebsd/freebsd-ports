@@ -45,6 +45,7 @@ start_precmd()
   [Nn][Oo][Nn][Ee])
     ;;
   esac
+  rm -f "$exim_notifier_socket"
 }
 
 stop_postcmd()
@@ -56,5 +57,6 @@ stop_postcmd()
 load_rc_config $name
 : ${exim_enable="NO"}
 : ${exim_flags="-bd -q30m"}
+: ${exim_notifier_socket="/var/spool/exim/exim_daemon_notify"}
 
 run_rc_command "$1"

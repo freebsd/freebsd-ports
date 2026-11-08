@@ -1,5 +1,3 @@
-LICENSE.router
-README.router
 bin/ibd2sdi
 bin/innochecksum
 bin/myisam_ftdump
@@ -22,6 +20,7 @@ bin/mysqlrouter_plugin_info
 bin/mysqlxtest
 bin/mysqltest_safe_process
 etc/logrotate.d/mysqlrouter
+@sample etc/mysqlrouter/mysqlrouter.conf.sample
 %%ETCDIR%%/my.cnf.sample
 lib/mysql/mysqlrouter/rest_host_cache.so
 lib/mysql/plugin/component_group_replication_elect_prefers_most_updated.so
@@ -98,6 +97,7 @@ lib/mysql/mysqlrouter/routing.so
 lib/mysql/plugin/adt_null.so
 lib/mysql/plugin/auth.so
 lib/mysql/plugin/auth_test_plugin.so
+lib/mysql/plugin/authentication_webauthn.so
 lib/mysql/plugin/component_audit_api_message_emit.so
 lib/mysql/plugin/component_connection_control.so
 lib/mysql/plugin/component_example_component1.so
@@ -225,11 +225,14 @@ lib/mysql/plugin/test_services_command_services.so
 lib/mysql/plugin/test_services_host_application_signal.so
 lib/mysql/plugin/test_services_plugin_registry.so
 lib/mysql/plugin/test_udf_services.so
+lib/mysql/plugin/thread_pool.so
 lib/mysql/plugin/udf_example.so
 lib/mysql/plugin/validate_password.so
 lib/mysql/private/libprotobuf-lite.so.24.4.0
 lib/mysql/private/libprotobuf.so.24.4.0
 libexec/mysqld
+%%DOCSDIR%%/LICENSE.router
+%%DOCSDIR%%/README.router
 @comment share/man/man1/comp_err.1.gz
 share/man/man1/ibd2sdi.1.gz
 share/man/man1/innochecksum.1.gz

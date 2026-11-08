@@ -1,5 +1,5 @@
 PORTNAME=	janet-lsp
-PORTVERSION=	0.0.12
+PORTVERSION=	0.0.13
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -16,17 +16,17 @@ RUN_DEPENDS=	janet>=1.38.0:lang/janet
 USE_GITHUB=	yes
 GH_ACCOUNT=	CFiggers
 
-# These are a little more recent than latest releases. But there is no lockfile
-# so by default jpm(1) would use HEAD. There is also a conflict for cmd and the
-# CFiggers version is more recent (and required by janet-lsp).
+# 0.0.13 now has a lockfile.jdn and we use that to match versions.
+#
 # Alphabetical order by project works but is coincidental and only because the
 # sole depenedency is 'judge' on 'cmd'.
 #
 # This ordering is respected in do-build.
 GH_TUPLE=	CFiggers:cmd:b0a34d6:cmd \
 		CFiggers:jayson:4f54041:jayson \
-		ianthehenry:judge:3b92185:judge \
-		janet-lang:spork:3bdcf58:spork
+		CFiggers:judge:1d329cb:judge \
+		janet-lang:jpm:907daf1:jpm \
+		janet-lang:spork:dbfc90d:spork
 
 NO_ARCH=	yes
 SUB_FILES=	janet-lsp

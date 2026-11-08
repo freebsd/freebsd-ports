@@ -1,5 +1,5 @@
 PORTNAME=	bitcoin
-PORTVERSION=	31.1
+PORTVERSION=	32.1
 CATEGORIES=	net-p2p finance
 MASTER_SITES=	https://bitcoincore.org/bin/bitcoin-core-${PORTVERSION}/ \
 		LOCAL/swills:icon
@@ -16,8 +16,7 @@ LICENSE=	MIT
 
 BUILD_DEPENDS=	boost-libs>=1.74:devel/boost-libs
 
-LIB_DEPENDS=	libcapnp.so:devel/capnproto \
-		libevent.so:devel/libevent
+LIB_DEPENDS=	libcapnp.so:devel/capnproto
 
 SLAVE_PORT?=	no
 

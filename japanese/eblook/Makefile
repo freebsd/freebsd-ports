@@ -1,11 +1,11 @@
 PORTNAME=	eblook
-PORTVERSION=	1.6.1
-PORTREVISION=	10
+DISTVERSION=	1.6.1
+PORTREVISION=	11
 CATEGORIES=	japanese textproc
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/eblook/dist/
 DIST_SUBDIR=	eb
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mce@FreeBSD.org
 COMMENT=	Command to lookup words in EB format dictionaries
 WWW=		http://openlab.ring.gr.jp/edict/eblook/index.html.ja
 
@@ -14,26 +14,18 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libeb.so:japanese/eb
 
-USES=		iconv
+USES=		gettext-runtime iconv
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-eb-conf=${PREFIX}/etc/eb.conf
-CPPFLAGS+=	-I${ICONV_PREFIX}/include
-LIBS+=		-L${ICONV_PREFIX}/lib ${ICONV_LIB}
 
 INFO=		eblook
 PLIST_FILES=	bin/eblook
-PORTDOCS=	AUTHORS COPYING ChangeLog NEWS README
+PORTDOCS=	AUTHORS ChangeLog NEWS README
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.pre.mk>
-
-.if !empty(ICONV_LIB)
-CONFIGURE_ARGS+=ac_cv_func_iconv=yes
-.endif
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

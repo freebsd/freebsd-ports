@@ -1,11 +1,11 @@
---- policy/policyloader.go.orig	2025-11-15 20:20:44 UTC
+--- policy/policyloader.go.orig	2026-09-25 23:41:01 UTC
 +++ policy/policyloader.go
-@@ -29,7 +29,7 @@ import (
+@@ -27,7 +27,7 @@ import (
+ )
  
  // SystemDefaultPolicyPath is the default filepath where opkssh policy is
- // defined
--var SystemDefaultPolicyPath = filepath.FromSlash("/etc/opk/auth_id")
-+var SystemDefaultPolicyPath = filepath.FromSlash("%%PREFIX%%/etc/opk/auth_id")
+-// defined. On Unix: /etc/opk/auth_id, On Windows: %ProgramData%\opk\auth_id
++// defined. On Unix: %%PREFIX%%/etc/opk/auth_id, On Windows: %ProgramData%\opk\auth_id
+ var SystemDefaultPolicyPath = filepath.Join(GetSystemConfigBasePath(), "auth_id")
  
- // UserLookup defines the minimal interface to lookup users on the current
- // system
+ // SystemDefaultProvidersPath is the default filepath where opkssh provider

@@ -1,0 +1,154 @@
+Build FreeBSD as a Linux variant in GN (series 0003): use the base
+system clang (freebsd_clang_dir, default /usr/bin) instead of the
+prebuilt Linux toolchain from CIPD, skip the CIPD toolchain and sysroot
+stamps, and keep current_os "freebsd" in secondary toolchains.
+FreeBSD-specific, not submitted upstream yet.
+--- build/toolchain/linux/BUILD.gn.orig	2026-09-29 08:00:52 UTC
++++ build/toolchain/linux/BUILD.gn
+@@ -15,6 +15,11 @@ declare_args() {
+   arm64_toolchain_prefix = ""
+   riscv32_toolchain_prefix = ""
+   riscv64_toolchain_prefix = ""
++
++  # Directory holding clang and the llvm-* tools when building on FreeBSD.
++  # The base system provides them in /usr/bin; a newer toolchain from ports
++  # can be selected with e.g. "/usr/local/llvm21/bin".
++  freebsd_clang_dir = "/usr/bin"
+ }
+ 
+ if (use_rbe) {
+@@ -44,8 +49,10 @@ if (use_rbe) {
+   gcc_compiler_prefix = compiler_prefix
+ }
+ 
+-# Google's clang does not work for alpine, use alpine's system clang
+-if (dart_sysroot == "alpine") {
++# Google's clang does not work for alpine or FreeBSD, use the system clang
++if (host_os == "freebsd") {
++  rebased_clang_dir = freebsd_clang_dir
++} else if (dart_sysroot == "alpine") {
+   rebased_clang_dir = "/usr/bin"
+ } else if (host_cpu == "arm64") {
+   rebased_clang_dir =
+@@ -55,6 +62,14 @@ if (dart_sysroot == "alpine") {
+       rebase_path("//buildtools/linux-x64/clang/bin", root_build_dir)
+ }
+ 
++# The toolchains in this file also build for FreeBSD, which is a Linux variant
++# (see //build/config/BUILDCONFIG.gn).
++if (target_os == "freebsd") {
++  linux_toolchain_os = "freebsd"
++} else {
++  linux_toolchain_os = "linux"
++}
++
+ template("gcc_toolchain_suite") {
+   toolchain_suite(target_name) {
+     toolchain_template = "gcc_toolchain"
+@@ -79,7 +94,7 @@ gcc_toolchain_suite("arm") {
+   strip = "${prefix}strip"
+ 
+   toolchain_cpu = "arm"
+-  toolchain_os = "linux"
++  toolchain_os = linux_toolchain_os
+   is_clang = false
+ }
+ 
+@@ -95,7 +110,7 @@ gcc_toolchain_suite("clang_arm") {
+   llvm_objcopy = "${prefix}/llvm-objcopy"
+ 
+   toolchain_cpu = "arm"
+-  toolchain_os = "linux"
++  toolchain_os = linux_toolchain_os
+   is_clang = true
+ }
+ 
+@@ -116,7 +131,7 @@ gcc_toolchain_suite("arm64") {
+   strip = "${prefix}strip"
+ 
+   toolchain_cpu = "arm64"
+-  toolchain_os = "linux"
++  toolchain_os = linux_toolchain_os
+   is_clang = false
+ }
+ 
+@@ -132,7 +147,7 @@ gcc_toolchain_suite("clang_arm64") {
+   llvm_objcopy = "${prefix}/llvm-objcopy"
+ 
+   toolchain_cpu = "arm64"
+-  toolchain_os = "linux"
++  toolchain_os = linux_toolchain_os
+   is_clang = true
+ }
+ 
+@@ -148,7 +163,7 @@ gcc_toolchain_suite("clang_x86") {
+   llvm_objcopy = "${prefix}/llvm-objcopy"
+ 
+   toolchain_cpu = "x86"
+-  toolchain_os = "linux"
++  toolchain_os = linux_toolchain_os
+   is_clang = true
+ }
+ 
+@@ -168,7 +183,7 @@ gcc_toolchain_suite("x86") {
+   strip = "${prefix}strip"
+ 
+   toolchain_cpu = "x86"
+-  toolchain_os = "linux"
++  toolchain_os = linux_toolchain_os
+   is_clang = false
+ }
+ 
+@@ -184,7 +199,7 @@ gcc_toolchain_suite("clang_x64") {
+   llvm_objcopy = "${prefix}/llvm-objcopy"
+ 
+   toolchain_cpu = "x64"
+-  toolchain_os = "linux"
++  toolchain_os = linux_toolchain_os
+   is_clang = true
+ }
+ 
+@@ -204,7 +219,7 @@ gcc_toolchain_suite("x64") {
+   strip = "${prefix}strip"
+ 
+   toolchain_cpu = "x64"
+-  toolchain_os = "linux"
++  toolchain_os = linux_toolchain_os
+   is_clang = false
+ }
+ 
+@@ -225,7 +240,7 @@ gcc_toolchain_suite("riscv32") {
+   strip = "${prefix}strip"
+ 
+   toolchain_cpu = "riscv32"
+-  toolchain_os = "linux"
++  toolchain_os = linux_toolchain_os
+   is_clang = false
+ }
+ 
+@@ -241,7 +256,7 @@ gcc_toolchain_suite("clang_riscv32") {
+   llvm_objcopy = "${prefix}/llvm-objcopy"
+ 
+   toolchain_cpu = "riscv32"
+-  toolchain_os = "linux"
++  toolchain_os = linux_toolchain_os
+   is_clang = true
+ }
+ 
+@@ -262,7 +277,7 @@ gcc_toolchain_suite("riscv64") {
+   strip = "${prefix}strip"
+ 
+   toolchain_cpu = "riscv64"
+-  toolchain_os = "linux"
++  toolchain_os = linux_toolchain_os
+   is_clang = false
+ }
+ 
+@@ -278,6 +293,6 @@ gcc_toolchain_suite("clang_riscv64") {
+   llvm_objcopy = "${prefix}/llvm-objcopy"
+ 
+   toolchain_cpu = "riscv64"
+-  toolchain_os = "linux"
++  toolchain_os = linux_toolchain_os
+   is_clang = true
+ }

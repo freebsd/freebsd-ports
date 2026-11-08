@@ -83,8 +83,8 @@ lib/budgie-desktop/libgvc.so
 %%RAVEN_PLUGINSDIR%%/org.buddiesofbudgie.budgie-desktop.raven.widget.SoundOutput/liborg.buddiesofbudgie.budgie-desktop.raven.widget.SoundOutput.so
 %%RAVEN_PLUGINSDIR%%/org.buddiesofbudgie.budgie-desktop.raven.widget.UsageMonitor/UsageMonitor.plugin
 %%RAVEN_PLUGINSDIR%%/org.buddiesofbudgie.budgie-desktop.raven.widget.UsageMonitor/liborg.buddiesofbudgie.budgie-desktop.raven.widget.UsageMonitor.so
-lib/girepository-1.0/Budgie-1.0.typelib
-lib/girepository-1.0/BudgieRaven-1.0.typelib
+lib/girepository-1.0/Budgie-2.0.typelib
+lib/girepository-1.0/BudgieRaven-2.0.typelib
 lib/libbudgie-appindexer.so
 lib/libbudgie-appindexer.so.0
 lib/libbudgie-appindexer.so.0.0.0
@@ -103,8 +103,8 @@ lib/libbudgietheme.so.0.0.0
 lib/libraven.so
 lib/libraven.so.0
 lib/libraven.so.0.0.0
-libdata/pkgconfig/budgie-1.0.pc
-libdata/pkgconfig/budgie-raven-plugin-1.0.pc
+libdata/pkgconfig/budgie-2.0.pc
+libdata/pkgconfig/budgie-raven-plugin-2.0.pc
 libdata/pkgconfig/budgie-settings-daemon.pc
 libdata/pkgconfig/budgie-theme-1.0.pc
 libexec/bsd-media-keys
@@ -119,8 +119,8 @@ share/applications/org.buddiesofbudgie.BudgieScreenshot.desktop
 share/applications/org.buddiesofbudgie.BudgieWm.desktop
 share/backgrounds/budgie/default.jpg
 share/budgie/budgie-version.xml
-share/gir-1.0/Budgie-1.0.gir
-share/gir-1.0/BudgieRaven-1.0.gir
+share/gir-1.0/Budgie-2.0.gir
+share/gir-1.0/BudgieRaven-2.0.gir
 share/gnome-session/sessions/org.buddiesofbudgie.BudgieDesktop.session
 share/icons/hicolor/scalable/actions/budgie-menu-symbolic.svg
 share/icons/hicolor/scalable/actions/notification-alert-symbolic.svg
@@ -232,9 +232,9 @@ share/man/man1/budgie-run-dialog.1.gz
 share/man/man1/budgie-wm.1.gz
 share/man/man1/org.buddiesofbudgie.BudgieScreenshot.1.gz
 share/man/man1/org.buddiesofbudgie.sendto.1.gz
-share/vala/vapi/budgie-1.0.deps
-share/vala/vapi/budgie-1.0.vapi
-share/vala/vapi/budgie-raven-plugin-1.0.deps
-share/vala/vapi/budgie-raven-plugin-1.0.vapi
+share/vala/vapi/budgie-2.0.deps
+share/vala/vapi/budgie-2.0.vapi
+share/vala/vapi/budgie-raven-plugin-2.0.deps
+share/vala/vapi/budgie-raven-plugin-2.0.vapi
 share/xdg-desktop-portal/budgie-portals.conf
 share/xsessions/budgie-desktop.desktop

@@ -1,0 +1,9 @@
+bin/desktop-screenshot
+bin/greeter-screenshot
+bin/window-screenshot
+share/bhotkeys/plugins.d/shot-desktop
+share/bhotkeys/plugins.d/shot-greeter
+share/bhotkeys/plugins.d/shot-window
+share/man/man1/desktop-screenshot.1.gz
+share/man/man1/greeter-screenshot.1.gz
+share/man/man1/window-screenshot.1.gz

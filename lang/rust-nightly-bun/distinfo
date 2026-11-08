@@ -1,0 +1,15 @@
+TIMESTAMP = 1792390611
+SHA256 (rust-nightly-bun/rustc-nightly-x86_64-unknown-freebsd.tar.xz) = e81de4429ecde016b6d52b300577558af88860b24c2b9f1675145f9ba26c5072
+SIZE (rust-nightly-bun/rustc-nightly-x86_64-unknown-freebsd.tar.xz) = 105812108
+SHA256 (rust-nightly-bun/cargo-nightly-x86_64-unknown-freebsd.tar.xz) = 02ae6770e65810708d499f972d67ffc071bcc5e613cc86c535bbf34c68aa231e
+SIZE (rust-nightly-bun/cargo-nightly-x86_64-unknown-freebsd.tar.xz) = 12124516
+SHA256 (rust-nightly-bun/rust-std-nightly-x86_64-unknown-freebsd.tar.xz) = 5c329f391ab01961b2914090e4713030938c266e9b26ca6dee964f2be9ddddd1
+SIZE (rust-nightly-bun/rust-std-nightly-x86_64-unknown-freebsd.tar.xz) = 31275056
+SHA256 (rust-nightly-bun/rustc-nightly-aarch64-unknown-freebsd.tar.xz) = df37cf776a36d5489959150de9c7659842f6d993218a8b1db040a5466461e942
+SIZE (rust-nightly-bun/rustc-nightly-aarch64-unknown-freebsd.tar.xz) = 97012560
+SHA256 (rust-nightly-bun/cargo-nightly-aarch64-unknown-freebsd.tar.xz) = e2fbbf7913604a5fe9ce838d5e96932f9bebed28df60e3794bbc80b157187364
+SIZE (rust-nightly-bun/cargo-nightly-aarch64-unknown-freebsd.tar.xz) = 10704248
+SHA256 (rust-nightly-bun/rust-std-nightly-aarch64-unknown-freebsd.tar.xz) = 673243df3d58417cd3b77d9b2bbe98bf45539f722faa8cb2921c6f8d92ad55d2
+SIZE (rust-nightly-bun/rust-std-nightly-aarch64-unknown-freebsd.tar.xz) = 29844584
+SHA256 (rust-nightly-bun/rust-src-nightly.tar.xz) = b6c9712598410cf282e23d862d39786e859d87040e1ede90d09262e7e689d7cf
+SIZE (rust-nightly-bun/rust-src-nightly.tar.xz) = 5936544

@@ -1,6 +1,6 @@
---- components/feed/core/v2/proto_util.cc.orig	2025-10-02 04:28:32 UTC
+--- components/feed/core/v2/proto_util.cc.orig	2026-08-12 09:02:10 UTC
 +++ components/feed/core/v2/proto_util.cc
-@@ -92,8 +92,8 @@ feedwire::Version GetPlatformVersionMessage() {
+@@ -91,8 +91,8 @@ feedwire::Version GetPlatformVersionMessage() {
  
    int32_t major, minor, revision;
    base::SysInfo::OperatingSystemVersionNumbers(&major, &minor, &revision);
@@ -11,7 +11,7 @@
    result.set_revision(revision);
  #if BUILDFLAG(IS_ANDROID)
    result.set_api_version(base::android::android_info::sdk_int());
-@@ -108,8 +108,8 @@ feedwire::Version GetAppVersionMessage(const ChromeInf
+@@ -107,8 +107,8 @@ feedwire::Version GetAppVersionMessage(const ChromeInf
    // Chrome's version is in the format: MAJOR,MINOR,BUILD,PATCH.
    const std::vector<uint32_t>& numbers = chrome_info.version.components();
    if (numbers.size() > 3) {

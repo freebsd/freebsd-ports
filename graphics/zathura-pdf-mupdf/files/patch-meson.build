@@ -1,18 +1,10 @@
---- meson.build.orig	2025-11-02 14:41:12 UTC
+--- meson.build.orig	2026-08-01 05:52:22 UTC
 +++ meson.build
-@@ -23,7 +23,7 @@ cairo = dependency('cairo')
- girara = dependency('girara-gtk3')
- glib = dependency('glib-2.0')
- cairo = dependency('cairo')
+@@ -30,27 +30,8 @@ mupdf_required_version_minor = 26
+ 
+ mupdf_required_version_major = 1
+ mupdf_required_version_minor = 26
 -mupdf = dependency('mupdf', required: false, version: '>=@0@.@1@'.format(mupdf_required_version_major, mupdf_required_version_minor))
-+mupdf = cc.find_library('mupdf')
- 
- build_dependencies = [
-   zathura,
-@@ -32,26 +32,7 @@ build_dependencies = [
-   cairo,
- ]
- 
 -if not mupdf.found()
 -  # normal build of mupdf
 -  mupdf = cc.find_library('mupdf', has_headers: ['mupdf/fitz/version.h', 'mupdf/fitz.h', 'mupdf/pdf.h'], required: true)
@@ -33,6 +25,7 @@
 -  # build from Debian's libmupdf-dev
 -  build_dependencies += [mupdf]
 -endif
++mupdf = cc.find_library('mupdf')
 +build_dependencies += [mupdf]
  
  if get_option('plugindir') == ''

@@ -228,7 +228,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		jpeg-decoder-0.3.1 \
 		js-sys-0.3.76 \
 		lazy_static-1.5.0 \
-		libc-0.2.169 \
+		libc-0.2.186 \
 		libdbus-sys-0.2.5 \
 		libloading-0.8.6 \
 		libm-0.2.11 \
@@ -285,7 +285,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		oorandom-11.1.4 \
 		opaque-debug-0.3.1 \
 		opener-0.7.2 \
-		openssl-sys-0.9.104 \
 		option-ext-0.2.0 \
 		ordered-stream-0.2.0 \
 		os_pipe-1.2.1 \

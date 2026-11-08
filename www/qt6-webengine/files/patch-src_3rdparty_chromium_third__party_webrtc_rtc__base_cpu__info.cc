@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/webrtc/rtc_base/cpu_info.cc.orig	2025-09-06 10:01:20 UTC
+--- src/3rdparty/chromium/third_party/webrtc/rtc_base/cpu_info.cc.orig	2026-08-11 12:42:19 UTC
 +++ src/3rdparty/chromium/third_party/webrtc/rtc_base/cpu_info.cc
 @@ -37,7 +37,9 @@
  #include <intrin.h>
@@ -9,7 +9,7 @@
 +#endif
  #include <sys/auxv.h>
  #endif
-
+ 
 @@ -178,7 +180,11 @@ bool Supports(ISA instruction_set_architecture) {
      return 0 != (android_getCpuFeatures() & ANDROID_CPU_ARM_FEATURE_NEON);
  #elif defined(WEBRTC_LINUX)

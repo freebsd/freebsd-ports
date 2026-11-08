@@ -1,24 +1,26 @@
---- pkg/simpcomp/configure.orig	2016-11-12 14:25:17 UTC
+-- remove g++ from the list of compilers to check for
+
+--- pkg/simpcomp/configure.orig	2026-09-16 15:32:17 UTC
 +++ pkg/simpcomp/configure
-@@ -2235,7 +2235,7 @@ if test -z "$CXX"; then
+@@ -2784,7 +2784,7 @@ if test -z "$CXX"; then
      CXX=$CCC
    else
      if test -n "$ac_tool_prefix"; then
--  for ac_prog in g++ c++ gpp aCC CC cxx cc++ cl.exe FCC KCC RCC xlC_r xlC
-+  for ac_prog in c++ g++ gpp aCC CC cxx cc++ cl.exe FCC KCC RCC xlC_r xlC
+-  for ac_prog in g++ c++ gpp aCC CC cxx cc++ cl.exe FCC KCC RCC xlC_r xlC clang++
++  for ac_prog in c++ gpp aCC CC cxx cc++ cl.exe FCC KCC RCC xlC_r xlC clang++
    do
      # Extract the first word of "$ac_tool_prefix$ac_prog", so it can be a program name with args.
  set dummy $ac_tool_prefix$ac_prog; ac_word=$2
-@@ -2279,7 +2279,7 @@ fi
+@@ -2833,7 +2833,7 @@ if test -z "$CXX"; then
  fi
  if test -z "$CXX"; then
    ac_ct_CXX=$CXX
--  for ac_prog in g++ c++ gpp aCC CC cxx cc++ cl.exe FCC KCC RCC xlC_r xlC
-+  for ac_prog in c++ g++ gpp aCC CC cxx cc++ cl.exe FCC KCC RCC xlC_r xlC
+-  for ac_prog in g++ c++ gpp aCC CC cxx cc++ cl.exe FCC KCC RCC xlC_r xlC clang++
++  for ac_prog in c++ gpp aCC CC cxx cc++ cl.exe FCC KCC RCC xlC_r xlC clang++
  do
    # Extract the first word of "$ac_prog", so it can be a program name with args.
  set dummy $ac_prog; ac_word=$2
-@@ -2322,7 +2322,7 @@ fi
+@@ -2881,7 +2881,7 @@ done
  done
  
    if test "x$ac_ct_CXX" = x; then

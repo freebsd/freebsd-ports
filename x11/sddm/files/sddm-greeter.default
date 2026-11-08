@@ -11,3 +11,4 @@ password	required pam_deny.so
 
 # Setup session
 session		required pam_permit.so
+session		required pam_xdg.so

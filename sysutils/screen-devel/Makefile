@@ -8,19 +8,22 @@ MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Multi-screen window manager
 WWW=		https://www.gnu.org/software/screen/
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	cschuber
+GH_PROJECT=	screen
+GH_TAGNAME=	bf51977
+SCREEN_COMMIT_DATE=	20260924
+
 CONFLICTS=	screen-[0-9]*
 
-GIT_TAGNAME=	e9206ef
-SCREEN_COMMIT_DATE=	20260711
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${GIT_TAGNAME}/src
+WRKSRC_SUBDIR=	src
 
 LICENSE=	GPLv3
 
 OPTIONS_DEFINE=		INFO NETHACK XTERM_256 SYSTEM_SCREENRC MULTIUSER \
-			NOSOCKETDIR
+			NOSOCKETDIR UTMPX
 OPTIONS_DEFAULT=	INFO NETHACK XTERM_256 SOCKETS SYSTEM_SCREENRC \
-			NCURSES_DEFAULT MULTIUSER
+			NCURSES_DEFAULT
 OPTIONS_SINGLE=		IPC NCURSES
 OPTIONS_SINGLE_IPC=	SOCKETS NAMED_PIPES
 OPTIONS_SINGLE_NCURSES=	NCURSES_DEFAULT NCURSES_BASE NCURSES_PORT
@@ -32,6 +35,8 @@ SYSTEM_SCREENRC_DESC=	Install system screenrc with helpful status line
 MULTIUSER_DESC=		Install setuid-root screen to support multiuser
 MULTIUSER_PLIST_SUB=	MULTISUID="@(,,4555) "
 MULTIUSER_PLIST_SUB_OFF=MULTISUID="@(,,0555) "
+UTMPX_DESC=		Log to utmpx (implies MULTIUSER for setuid-root)
+UTMPX_IMPLIES=		MULTIUSER
 NCURSES_DEFAULT_DESC=	Depend on ncurses (ports if installed, otherwise base)
 NCURSES_BASE_DESC=	Depend on ncurses in base
 NCURSES_PORT_DESC=	Depend on devel/ncurses in ports
@@ -62,6 +67,10 @@ MAKE_ARGS+=	WITH_INFO=1
 USES+=		makeinfo
 .endif
 
+.if ${PORT_OPTIONS:MUTMPX}
+CONFIGURE_ARGS+=--enable-utmp
+.endif
+
 # Enables support for 256 colour xterm.  Note that you may need to
 # set up a custom termcap entry or .screenrc which modifies termcap
 # to contain the following: Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm
@@ -81,13 +90,6 @@ CONFIGURE_ARGS+=	--disable-socket-dir
 .if defined(SCREEN_SOCKET_DIR)
 CONFIGURE_ARGS+=	--with-socket-dir=${SCREEN_SOCKET_DIR}
 .endif
-
-do-fetch:
-	@cd ${DISTDIR} && \
-	if [ ! -f ${DISTNAME}${EXTRACT_SUFX} ]; then \
-		fetch -o ${DISTNAME}${EXTRACT_SUFX} \
-		    "https://git.savannah.gnu.org/gitweb/?p=screen.git;a=snapshot;h=${GIT_TAGNAME};sf=tgz"; \
-	fi    
 
 post-patch:
 	@${RM} ${WRKSRC}/doc/screen.info*

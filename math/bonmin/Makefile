@@ -7,7 +7,8 @@ PKGNAMEPREFIX=	coin-or-
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Basic Open-source Nonlinear Mixed INteger programming
-WWW=		https://coin-or.github.io/Bonmin/
+WWW=		https://coin-or.github.io/Bonmin/ \
+		https://github.com/coin-or/bonmin
 
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/Bonmin/LICENSE

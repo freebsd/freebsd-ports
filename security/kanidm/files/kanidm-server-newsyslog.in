@@ -1,0 +1,7 @@
+# kanidm-server configuration file for newsyslog.conf
+# commented out by default
+#
+# see newsyslog.conf(5) for details
+#
+# logfilename       [owner:group]       mode count size  when  flags [/pid_file] [sig_num]
+#/var/log/kanidmd   %%USER%%:%%GROUP%%  640  7     1000  @T00  JC    /var/run/kanidmd.supervisor.pid

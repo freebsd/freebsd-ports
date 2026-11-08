@@ -5,8 +5,10 @@
 %%PGSQL%%# REQUIRE: postgresql
 %%MYSQL%%# REQUIRE: mysql
 %%MYSQLDV%%# REQUIRE: mysql
-%%MDB5%%# REQUIRE: mysql
-%%MDB6%%# REQUIRE: mysql
+%%MDB1011%%# REQUIRE: mysql
+%%MDB114%%# REQUIRE: mysql
+%%MDB118%%# REQUIRE: mysql
+%%MDB123%%# REQUIRE: mysql
 # KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf to

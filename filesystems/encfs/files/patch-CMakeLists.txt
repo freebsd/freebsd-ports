@@ -1,5 +1,14 @@
---- CMakeLists.txt.orig	2024-02-25 17:41:27 UTC
+--- CMakeLists.txt.orig	2018-04-27 08:52:22 UTC
 +++ CMakeLists.txt
+@@ -1,7 +1,7 @@ set(CMAKE_LEGACY_CYGWIN_WIN32 0)
+ set(CMAKE_LEGACY_CYGWIN_WIN32 0)
+ 
+ # 3.0.2 preferred, but we can often get by with 2.8.
+-cmake_minimum_required(VERSION 2.8)
++cmake_minimum_required(VERSION 3.5)
+ if (${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION}.${CMAKE_PATCH_VERSION} LESS 3.0.2)
+   message(WARNING "You should use cmake 3.0.2 or newer for configuration to run correctly.")
+ endif()
 @@ -346,9 +346,6 @@ if (POD2MAN)
  
  if (POD2MAN)

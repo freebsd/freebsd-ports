@@ -1,0 +1,13 @@
+-- workaround for the issue known upstream: https://github.com/woelper/oculante/issues/399
+
+--- res/oculante.desktop.orig	2025-12-09 10:03:48 UTC
++++ res/oculante.desktop
+@@ -3,7 +3,7 @@ Keywords=image viewer;graphics;
+ Comment=A no-nonsense hardware-accelerated image viewer
+ GenericName=Image Viewer
+ Keywords=image viewer;graphics;
+-Exec=oculante %U
++Exec=oculante %F
+ Icon=oculante
+ Terminal=false
+ Categories=Graphics;

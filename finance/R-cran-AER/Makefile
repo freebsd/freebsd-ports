@@ -1,12 +1,12 @@
 PORTNAME=	AER
-DISTVERSION=	1.2-16
+DISTVERSION=	1.2-17
 
 CATEGORIES=	finance
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Applied Econometrics with R
-WWW=		https://cran.r-project.org/web/packages/AER/
+WWW=		https://cran.r-project.org/package=AER
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

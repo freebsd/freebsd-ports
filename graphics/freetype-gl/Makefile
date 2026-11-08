@@ -22,6 +22,7 @@ GH_ACCOUNT=	rougier
 CMAKE_ON=	freetype-gl_BUILD_SHARED
 CMAKE_OFF=	freetype-gl_BUILD_APIDOC freetype-gl_BUILD_TESTS \
 		FIND_LIBRARY_USE_LIB64_PATHS
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, https://github.com/rougier/freetype-gl/issues/294
 
 LDFLAGS+=	-L${LOCALBASE}/lib -lGLEW -lfreetype # https://github.com/rougier/freetype-gl/issues/236
 

@@ -1,0 +1,18 @@
+--- pyproject.toml.orig	2026-08-19 12:11:00 UTC
++++ pyproject.toml
+@@ -3,7 +3,7 @@ build-backend = "setuptools.build_meta"
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+-name = "SimpleParse"
++name = "simpleparse"
+ dynamic = ["version"]
+ description = "A Parser Generator for Python (w/mxTextTools derivative)"
+ authors = [
+@@ -54,4 +54,4 @@ version = {attr = "simpleparse.__version__"}
+ version = {attr = "simpleparse.__version__"}
+ 
+ [tool.setuptools.package-data]
+-simpleparse = ["*.txt", "**/*.txt", "**/*.ebnf", "**/*.html", "**/*.pyx", "**/*.h", "**/*.def"]
+\ No newline at end of file
++simpleparse = ["*.txt", "**/*.txt", "**/*.ebnf", "**/*.html", "**/*.pyx", "**/*.h", "**/*.def"]

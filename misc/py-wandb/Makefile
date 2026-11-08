@@ -1,6 +1,7 @@
 PORTNAME=	wandb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.28.1
+DISTVERSION=	0.31.0
+PORTREVISION=	1
 CATEGORIES=	misc # machine-learning
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,15 +20,17 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>0:devel/py-typing-extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=8.2.0:devel/py-click@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}gitpython>=1.0.0:devel/py-gitpython@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}opentelemetry-api>=1.43.0:devel/py-opentelemetry-api@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}opentelemetry-exporter-otlp-proto-http>=1.43.0:devel/py-opentelemetry-exporter-otlp-proto-http@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}opentelemetry-sdk>=1.43.0:devel/py-opentelemetry-sdk@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}platformdirs>0:devel/py-platformdirs@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}protobuf>4.21.0:devel/py-protobuf@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}protobuf>=5:devel/py-protobuf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.6:devel/py-pydantic2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>0:devel/py-pyyaml@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests>=2.0.0,<3:www/py-requests@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sentry-sdk>=1.0.0:devel/py-sentry-sdk@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.8:devel/py-typing-extensions@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}requests>=2.0.0:www/py-requests@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.8:devel/py-typing-extensions@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}xxhash>=3.0.0:devel/py-xxhash@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bokeh>0:www/py-bokeh@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hypothesis>0:devel/py-hypothesis@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httpx>0:www/py-httpx@${PY_FLAVOR} \
@@ -47,7 +50,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bokeh>0:www/py-bokeh@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyte>0:devel/py-pyte@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}responses>0:devel/py-responses@${PY_FLAVOR}
 
-USES=		cargo go:1.26+,no_targets python shebangfix
+USES=		cargo go:1.27+,no_targets python shebangfix
 USE_PYTHON=	pep517 concurrent autoplist pytest
 USE_GITHUB=	yes
 
@@ -55,8 +58,8 @@ CARGO_BUILD=		no
 CARGO_INSTALL=		no
 CARGO_TEST=		no
 CARGO_CONFIGURE=	no
-CARGO_CARGOTOML=	${WRKSRC}/xpu/Cargo.toml
-CARGO_CARGOLOCK=	${WRKSRC}/xpu/Cargo.lock
+CARGO_CARGOTOML=	${WRKSRC}/symon/Cargo.toml
+CARGO_CARGOLOCK=	${WRKSRC}/symon/Cargo.lock
 CARGO_VENDOR_DIR=	${WRKSRC}/cargo-crates
 
 MAKE_ENV+=	CARGO_HOME=${WRKDIR}/cargo-home \
@@ -71,14 +74,25 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 # test_azure.py, test_acr.py: require azure SDK
 # test_gcp.py, test_gcp_artifact_registry.py: require google.api_core
 # test_launch/test_runner: requires kubernetes_asyncio
+# test_saved_model.py, test_torch.py: require torch
 # test_sentry.py: requires sentry-sdk>=2.0 (installed version lacks get_current_scope)
+# test_sweep_scheduler.py: requires the optional sweeps package, which is not a FreeBSD port
 # test_references_s3.py: requires moto
 # test_ratelimit.py, test_run_messages.py: require looptime
 # test_sandbox: requires cwsandbox
 # test_util.py: requires plotly
-TEST_ARGS=	--ignore=tests/system_tests \
+TEST_ARGS=	--disable-plugin-autoload \
+		-p pyfakefs.pytest_plugin \
+		-p pytest_asyncio.plugin \
+		-p pytest_cov \
+		-p pytest_mock \
+		-p pytest_timeout \
+		-p xdist.plugin \
+		-n0 \
+		--ignore=tests/system_tests \
 		--ignore=tests/unit_tests/test_analytics/test_sentry.py \
 		--ignore=tests/unit_tests/test_artifacts/test_references_s3.py \
+		--ignore=tests/unit_tests/test_artifacts/test_saved_model.py \
 		--ignore=tests/unit_tests/test_data_types.py \
 		--ignore=tests/unit_tests/test_kfp.py \
 		--ignore=tests/unit_tests/test_launch/test_builder/test_kaniko.py \
@@ -90,6 +104,8 @@ TEST_ARGS=	--ignore=tests/system_tests \
 		--ignore=tests/unit_tests/test_lib/test_ratelimit.py \
 		--ignore=tests/unit_tests/test_lib/test_run_messages.py \
 		--ignore=tests/unit_tests/test_media/test_media_logging.py \
+		--ignore=tests/unit_tests/test_sweep_scheduler.py \
+		--ignore=tests/unit_tests/test_torch.py \
 		--ignore=tests/unit_tests/test_sandbox \
 		--ignore=tests/unit_tests/test_util.py \
 		--deselect=tests/unit_tests/test_data_types_box3d.py::test_box3d_always_box
@@ -107,7 +123,8 @@ PYTEST_BROKEN_TESTS=	TestProgressCallback \
 			test_get_entrypoint \
 			test_convert_plots \
 			test_launch_browser \
-			test_box3d_always_box
+			test_box3d_always_box \
+			test_agent_subprocess_with_import_readline
 
 SHEBANG_GLOB=	*.py
 
@@ -131,6 +148,6 @@ post-install:
 		${MV} ${STAGEDIR}${PREFIX}/bin/wb-${PYTHON_VER} ${STAGEDIR}${PREFIX}/bin/wb; \
 	fi
 
-# tests as of 0.28.1: 2748 passed, 185 skipped, 10 deselected, 4 xfailed, 2 xpassed, 2 warnings
+# tests as of 0.31.0: 3393 passed, 241 skipped, 15 deselected, 4 xfailed, 2 xpassed in 98.05s (0:01:38)
 
 .include <bsd.port.mk>

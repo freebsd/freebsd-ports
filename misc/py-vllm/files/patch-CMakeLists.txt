@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2026-09-17 16:20:12 UTC
++++ CMakeLists.txt
+@@ -13,7 +13,7 @@ project(vllm_extensions LANGUAGES CXX)
+ # cmake --install . --component _C
+ project(vllm_extensions LANGUAGES CXX)
+ 
+-set(CMAKE_CXX_STANDARD 17)
++set(CMAKE_CXX_STANDARD 20)
+ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+ 
+ 

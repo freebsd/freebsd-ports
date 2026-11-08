@@ -1,11 +1,25 @@
---- pyproject.toml.orig	2025-09-27 18:57:44 UTC
+-- Fix PEP 639 license metadata that is not supported by the version of
+-- setuptools available in the FreeBSD ports tree (devel/py-setuptools).
+-- Use legacy license text declaration instead.
+
+--- pyproject.toml.orig	2026-09-07 15:23:22 UTC
 +++ pyproject.toml
-@@ -3,7 +3,7 @@ requires = [
-     "setuptools>=46.4.0",       # PEP-420 support, PEP-517/518 support
-     "wheel>=0.30.0",            # limited python api support
-     "cython~=3.0",
--    "numpy~=2.0",
-+    "numpy",
+@@ -1,6 +1,7 @@ requires = [
+ [build-system]
+ requires = [
+-    "setuptools>=77.0.3",   # PEP 639
++    "setuptools>=46.4.0",
++    "wheel>=0.30.0",
  ]
  build-backend = "setuptools.build_meta"
  
+@@ -13,8 +14,7 @@ readme = {file = "README.rst", content-type = "text/x-
+     {name = "D-Wave", email = "tools@dwavesys.com"},
+ ]
+ readme = {file = "README.rst", content-type = "text/x-rst"}
+-license = "Apache-2.0"
+-license-files = ["LICEN[CS]E*"]
++license = {text = "Apache-2.0"}
+ classifiers = [
+     "Operating System :: OS Independent",
+     "Programming Language :: Python :: 3 :: Only",

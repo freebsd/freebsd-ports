@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/hung_renderer_view.cc.orig	2025-05-05 10:57:53 UTC
+--- chrome/browser/ui/views/hung_renderer_view.cc.orig	2026-10-18 13:29:39 UTC
 +++ chrome/browser/ui/views/hung_renderer_view.cc
 @@ -452,7 +452,7 @@ void HungRendererDialogView::ForceCrashHungRenderer() 
    content::RenderProcessHost* rph =
@@ -8,4 +8,4 @@
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
      // A generic |CrashDumpHungChildProcess()| is not implemented for Linux.
      // Instead we send an explicit IPC to crash on the renderer's IO thread.
-     rph->ForceCrash();
+     rph->CrashHungProcess();

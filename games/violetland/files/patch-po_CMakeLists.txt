@@ -1,0 +1,9 @@
+--- po/CMakeLists.txt.orig	2016-01-04 20:15:21 UTC
++++ po/CMakeLists.txt
+@@ -1,5 +1,5 @@ PROJECT(po)
+ PROJECT(po)
+-CMAKE_MINIMUM_REQUIRED(VERSION 2.6.0 FATAL_ERROR) 
++CMAKE_MINIMUM_REQUIRED(VERSION 3.31.12)
+ 
+ set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../lib/CMake-Gettext")
+ set(GettextTranslate_ALL true)

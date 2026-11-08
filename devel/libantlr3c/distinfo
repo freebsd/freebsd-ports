@@ -1,2 +1,3 @@
-SHA256 (libantlr3c-3.4.tar.gz) = ca914a97f1a2d2f2c8e1fca12d3df65310ff0286d35c48b7ae5f11dcc8b2eb52
-SIZE (libantlr3c-3.4.tar.gz) = 546039
+TIMESTAMP = 1791737945
+SHA256 (antlr-3.5.tar.gz) = 6be17690f782c899cda68be812df5c40911aed057bf0192b0c37d2711cba8fc8
+SIZE (antlr-3.5.tar.gz) = 6791279

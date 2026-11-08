@@ -1,5 +1,5 @@
 PORTNAME=	minorminer
-DISTVERSION=	0.2.19
+DISTVERSION=	0.2.23
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,6 +16,7 @@ GH_ACCOUNT=	dwavesystems
 
 CMAKE_TESTING_ON=	MINORMINER_BUILD_TESTS
 CMAKE_TESTING_TARGET=	${ALL_TARGET}
+CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/dwavesystems/minorminer/issues/298
 
 NO_ARCH=	yes
 
@@ -26,6 +27,6 @@ do-install: # workaround for https://github.com/dwavesystems/minorminer/issues/2
 post-test:
 	@cd ${BUILD_WRKSRC}/tests && ./run_tests
 
-# tests as of 0.2.19: 34 tests from 4 test suites ran. (5 ms total)
+# tests as of 0.2.22: 34 tests from 4 test suites ran. (1 ms total)
 
 .include <bsd.port.mk>

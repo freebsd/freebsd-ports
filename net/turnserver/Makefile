@@ -1,5 +1,5 @@
 PORTNAME=	turnserver
-DISTVERSION=	4.14.0
+DISTVERSION=	4.16.0
 CATEGORIES=	net
 MASTER_SITES=	https://coturn.net/turnserver/extradocs/:xdocs
 DISTFILES=	turn.extra.docs-2.0.0.1.tar.gz:xdocs
@@ -22,75 +22,89 @@ USE_RC_SUBR=	turnserver
 SHEBANG_FILES=	examples/scripts/restapi/shared_secret_maintainer.pl
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ENV+=	PTHREAD_LIBS=-pthread TURN_DISABLE_RPATH=1
+CONFIGURE_ENV+=	PTHREAD_LIBS=-pthread \
+		TURN_DISABLE_RPATH=1
 # MongoDB support is disabled until devel/mongo-c-driver is updated
 CONFIGURE_ENV+=	TURN_NO_MONGO=1
 
 TEST_TARGET=	test
 
 SUB_FILES=	pkg-message
+SUB_LIST=	GROUP=${GROUPS} \
+		USER=${USERS}
+
+USERS=		_turnserver
+GROUPS=		_turnserver
 
 MANPAGES=	turnserver.1 turnadmin.1 turnutils.1 turnutils_peer.1 \
 		turnutils_stunclient.1 turnutils_uclient.1 coturn.1 \
 		turnutils_oauth.1 turnutils_natdiscovery.1
 
-DOCS=	html TurnNetworks.pdf
-PORTREADMEDOCS=	LICENSE README.turnserver README.turnadmin README.turnutils INSTALL
-PORTDOCS=	${DOCS} ${PORTREADMEDOCS} postinstall.txt schema.sql schema.mongo.sh \
-		schema.userdb.redis schema.stats.redis
+DOCS=		html TurnNetworks.pdf
+PORTREADMEDOCS=	LICENSE README.turnserver README.turnadmin README.turnutils \
+		INSTALL
+PORTDOCS=	${DOCS} ${PORTREADMEDOCS} postinstall.txt schema.mongo.sh \
+		schema.sql schema.stats.redis schema.userdb.redis
 
 _BIN_UTILS=	peer stunclient uclient oauth natdiscovery
 
-_ETC_EXAMPLES=	turnserver.conf turn_client_cert.pem \
-		turn_client_pkey.pem turn_server_cert.pem turn_server_pkey.pem
-_SCRIPT_EXAMPLES=	peer.sh	\
-	basic/relay.sh basic/dos_attack.sh \
-	basic/tcp_client_c2c_tcp_relay.sh basic/udp_c2c_client.sh \
-	basic/udp_client.sh basic/tcp_client.sh \
-	loadbalance/master_relay.sh loadbalance/slave_relay_1.sh loadbalance/slave_relay_2.sh \
-	loadbalance/udp_c2c.sh loadbalance/tcp_c2c_tcp_relay.sh \
-	longtermsecure/secure_dtls_client.sh longtermsecure/secure_relay.sh \
-	longtermsecure/secure_tls_client_cert.sh longtermsecure/secure_dtls_client_cert.sh \
-	longtermsecure/secure_relay_cert.sh \
-	longtermsecure/secure_tcp_client_c2c_tcp_relay.sh longtermsecure/secure_tcp_client.sh \
-	longtermsecure/secure_tls_client_c2c_tcp_relay.sh longtermsecure/secure_tls_client.sh \
-	longtermsecure/secure_udp_c2c.sh longtermsecure/secure_udp_client.sh \
-	longtermsecure/secure_sctp_client.sh \
-	longtermsecure/secure_dos_attack.sh \
-	longtermsecuredb/secure_relay_with_db_psql.sh \
-	longtermsecuredb/secure_relay_with_db_mysql.sh \
-	longtermsecuredb/secure_relay_with_db_mysql_ssl.sh \
-	longtermsecuredb/secure_relay_with_db_mongo.sh \
-	longtermsecuredb/secure_relay_with_db_redis.sh \
-	longtermsecuredb/secure_relay_with_db_sqlite.sh \
-	restapi/secure_relay_secret.sh \
-	restapi/secure_relay_secret_with_db_mysql.sh \
-	restapi/secure_relay_secret_with_db_psql.sh \
-	restapi/secure_relay_secret_with_db_redis.sh \
-	restapi/secure_relay_secret_with_db_mongo.sh \
-	restapi/secure_relay_secret_with_db_sqlite.sh \
-	restapi/secure_udp_client_with_secret.sh \
-	restapi/secure_relay_secret_with_db_psql.sh \
-	restapi/shared_secret_maintainer.pl \
-	selfloadbalance/secure_dos_attack.sh \
-	selfloadbalance/secure_relay.sh
+_ETC_EXAMPLES=		turnserver.conf turn_client_cert.pem \
+			turn_client_pkey.pem turn_server_cert.pem \
+			turn_server_pkey.pem
+_SCRIPT_EXAMPLES=	peer.sh basic/relay.sh basic/dos_attack.sh \
+			basic/tcp_client_c2c_tcp_relay.sh \
+			basic/udp_c2c_client.sh basic/udp_client.sh \
+			basic/tcp_client.sh loadbalance/master_relay.sh \
+			loadbalance/slave_relay_1.sh \
+			loadbalance/slave_relay_2.sh loadbalance/udp_c2c.sh \
+			loadbalance/tcp_c2c_tcp_relay.sh \
+			longtermsecure/secure_dtls_client.sh \
+			longtermsecure/secure_relay.sh \
+			longtermsecure/secure_tls_client_cert.sh \
+			longtermsecure/secure_dtls_client_cert.sh \
+			longtermsecure/secure_relay_cert.sh \
+			longtermsecure/secure_tcp_client_c2c_tcp_relay.sh \
+			longtermsecure/secure_tcp_client.sh \
+			longtermsecure/secure_tls_client_c2c_tcp_relay.sh \
+			longtermsecure/secure_tls_client.sh \
+			longtermsecure/secure_udp_c2c.sh \
+			longtermsecure/secure_udp_client.sh \
+			longtermsecure/secure_sctp_client.sh \
+			longtermsecure/secure_dos_attack.sh \
+			longtermsecuredb/secure_relay_with_db_psql.sh \
+			longtermsecuredb/secure_relay_with_db_mysql.sh \
+			longtermsecuredb/secure_relay_with_db_mysql_ssl.sh \
+			longtermsecuredb/secure_relay_with_db_mongo.sh \
+			longtermsecuredb/secure_relay_with_db_redis.sh \
+			longtermsecuredb/secure_relay_with_db_sqlite.sh \
+			restapi/secure_relay_secret.sh \
+			restapi/secure_relay_secret_with_db_mysql.sh \
+			restapi/secure_relay_secret_with_db_psql.sh \
+			restapi/secure_relay_secret_with_db_redis.sh \
+			restapi/secure_relay_secret_with_db_mongo.sh \
+			restapi/secure_relay_secret_with_db_sqlite.sh \
+			restapi/secure_udp_client_with_secret.sh \
+			restapi/secure_relay_secret_with_db_psql.sh \
+			restapi/shared_secret_maintainer.pl \
+			selfloadbalance/secure_dos_attack.sh \
+			selfloadbalance/secure_relay.sh
 
-OPTIONS_DEFINE=	DOCS EXAMPLES MYSQL PGSQL REDIS SQLITE
+OPTIONS_DEFINE=		DOCS EXAMPLES MYSQL PGSQL REDIS SQLITE
 OPTIONS_DEFAULT=	MYSQL PGSQL REDIS SQLITE
-OPTIONS_SUB=	yes
+OPTIONS_SUB=		yes
 
 REDIS_DESC=	Redis support for user database and for status and statistics reporting
 
-MYSQL_USES=	mysql
+MYSQL_USES=			mysql
 MYSQL_CONFIGURE_ENV_OFF=	TURN_NO_MYSQL=1
 
-PGSQL_USES=	pgsql
+PGSQL_USES=			pgsql
 PGSQL_CONFIGURE_ENV_OFF=	TURN_NO_PQ=1
 
-REDIS_LIB_DEPENDS=	libhiredis.so:databases/hiredis
+REDIS_LIB_DEPENDS=		libhiredis.so:databases/hiredis
 REDIS_CONFIGURE_ENV_OFF=	TURN_NO_HIREDIS=1
 
-SQLITE_USES=	sqlite
+SQLITE_USES=			sqlite
 SQLITE_CONFIGURE_ENV_OFF=	TURN_NO_SQLITE=1
 
 do-install:

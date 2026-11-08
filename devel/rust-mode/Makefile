@@ -4,7 +4,7 @@ PORTREVISION=	1
 DISTVERSIONSUFFIX=	-g9c26dc1
 CATEGORIES=	devel
 
-MAINTAINER=	pat@patmaddox.com
+MAINTAINER=	patmaddox@FreeBSD.org
 COMMENT=	Emacs major-mode for editing Rust source code
 WWW=		https://github.com/rust-lang/
 

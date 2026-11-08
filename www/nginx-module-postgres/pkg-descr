@@ -1,0 +1,8 @@
+The postgres module queries PostgreSQL from nginx itself, with no
+application in between: a location names an upstream and a query, and the
+rows come back as text, as JSON, or as nothing but a status code.  Values
+from the request go into the query escaped, and the status code can be
+chosen by how many rows came back.
+
+This port only installs the module sources.  The module itself is built by
+the nginx ports when their POSTGRES option is enabled.

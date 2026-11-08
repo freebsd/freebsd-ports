@@ -12,7 +12,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Enhanced version of VNC
 WWW=		https://www.tightvnc.com/
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENCE.TXT
 
 RUN_DEPENDS=	showrgb:x11/rgb \

@@ -1,6 +1,6 @@
 PORTNAME=	ipget
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.13.1
+DISTVERSION=	0.13.2
 PORTREVISION=	3
 CATEGORIES=	sysutils
 
@@ -11,7 +11,7 @@ WWW=		https://github.com/ipfs/ipget
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.26+,modules
+USES=		go:1.26,modules
 
 GO_MODULE=	github.com/ipfs/ipget
 

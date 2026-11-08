@@ -1,5 +1,5 @@
 PORTNAME=	commonmarker
-PORTVERSION=	2.8.3
+PORTVERSION=	2.10.0
 PORTREVISION=	1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
@@ -19,6 +19,7 @@ USES=		cargo gem gmake llvm
 
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
+CARGO_TEST=	no
 GEM_ENV=	MAKE=gmake
 GEMFILES=	${DISTNAME}.gem
 GEMS_SKIP_SUBDIR=	yes

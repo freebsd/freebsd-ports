@@ -1,5 +1,5 @@
-TIMESTAMP = 1645366225
-SHA256 (vaporup-ssh-tools-v1.7_GH0.tar.gz) = c96dd7d4630dff0afdce597e0d254abc2a5ae87d3c3ba6e83af952713db6c961
-SIZE (vaporup-ssh-tools-v1.7_GH0.tar.gz) = 29213
-SHA256 (0bf5771fe3fafcb60ebf4541b8d382eb0ec9f7bc.patch) = ac46e1f37073ec52ca58655437343821bf846f7583b1965cb982fd7ed047fc87
-SIZE (0bf5771fe3fafcb60ebf4541b8d382eb0ec9f7bc.patch) = 757
+TIMESTAMP = 1789743188
+SHA256 (ssh-tools/v1.9.tar.gz) = 0549464f557e5d0d9eac4b88c2a039d81fae0ef786a1cdfb1f08b8929b8b6199
+SIZE (ssh-tools/v1.9.tar.gz) = 812027
+SHA256 (ssh-tools/24.diff) = cf13691c8e10e23be16b66a3f12b8493095c571968f4ae85693c93f7c626159f
+SIZE (ssh-tools/24.diff) = 1604

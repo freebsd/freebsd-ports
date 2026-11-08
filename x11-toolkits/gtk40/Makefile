@@ -1,5 +1,6 @@
 PORTNAME=	gtk
 PORTVERSION=	4.20.4
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	4
@@ -68,7 +69,8 @@ X11_DESC=		GDK X11 backend
 ACCESSKIT_LIB_DEPENDS=	libaccesskit-c-0.17.so:accessibility/accesskit-c
 ACCESSKIT_MESON_ENABLED=	accesskit
 
-BASH_BUILD_DEPENDS=	bash-completion>0:shells/bash-completion
+BASH_BUILD_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash \
+			bash-completion>0:shells/bash-completion
 
 BROADWAY_MESON_TRUE=	broadway-backend
 

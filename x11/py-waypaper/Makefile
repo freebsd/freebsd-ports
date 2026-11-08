@@ -1,5 +1,5 @@
 PORTNAME=	waypaper
-DISTVERSION=	2.8
+DISTVERSION=	2.9
 PORTREVISION=	0
 CATEGORIES=	x11 python
 MASTER_SITES=	PYPI
@@ -26,5 +26,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}imageio-ffmpeg>=0.5.1:graphics/py-imageio-ff
 USES=		gnome python
 USE_GNOME=	pygobject3:run
 USE_PYTHON=	autoplist pep517
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

@@ -1,0 +1,2 @@
+db-dtypes provides Pandas extension data types for data from SQL systems such as
+BigQuery.

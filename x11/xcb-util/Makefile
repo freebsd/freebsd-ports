@@ -11,7 +11,7 @@ WWW=		https://xcb.freedesktop.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake tar:xz xorg xorg-cat:lib
+USES=		gmake xorg xorg-cat:lib
 USE_XORG=	xau xcb xdmcp
 INSTALL_TARGET=	install-strip
 

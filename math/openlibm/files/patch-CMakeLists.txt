@@ -1,14 +1,24 @@
---- CMakeLists.txt.orig	2025-06-03 19:56:14 UTC
+--- CMakeLists.txt.orig	2026-09-02 08:18:40 UTC
 +++ CMakeLists.txt
-@@ -11,6 +11,7 @@ add_library("${PROJECT_NAME}")
+@@ -3,14 +3,16 @@ string(REGEX MATCH "VERSION = ([0-9\.]+)" _ ${MAKE_FIL
+ # Get version string from Make.inc
+ file(READ "${CMAKE_CURRENT_LIST_DIR}/Make.inc" MAKE_FILE)
+ string(REGEX MATCH "VERSION = ([0-9\.]+)" _ ${MAKE_FILE})
++set(OPENLIBM_VERSION "${CMAKE_MATCH_1}" CACHE STRING "OpenLibm version")
+ 
+ project(openlibm
+-        VERSION ${CMAKE_MATCH_1}
++        VERSION ${OPENLIBM_VERSION}
+         LANGUAGES C ASM)
+ 
  option(BUILD_SHARED_LIBS "Build using shared libraries" ON)
  
  add_library("${PROJECT_NAME}")
-+set_target_properties(${PROJECT_NAME} PROPERTIES VERSION 0.8.6 SOVERSION 0)
++set_target_properties(${PROJECT_NAME} PROPERTIES VERSION ${PROJECT_VERSION} SOVERSION 0)
  
  # Find the relevant folder depending on the architecture
  set(OPENLIBM_ARCH_FOLDER ${CMAKE_SYSTEM_PROCESSOR})
-@@ -22,9 +23,9 @@ elseif(${OPENLIBM_ARCH_FOLDER} STREQUAL "armv7-a")
+@@ -22,9 +24,9 @@ elseif(${OPENLIBM_ARCH_FOLDER} STREQUAL "armv7-a")
      set(OPENLIBM_ARCH_FOLDER "aarch64")
  elseif(${OPENLIBM_ARCH_FOLDER} STREQUAL "armv7-a")
      set(OPENLIBM_ARCH_FOLDER "arm")
@@ -20,7 +30,7 @@
      set(OPENLIBM_ARCH_FOLDER "powerpc")
  elseif(${OPENLIBM_ARCH_FOLDER} STREQUAL "riscv64")
      set(OPENLIBM_ARCH_FOLDER "riscv64")
-@@ -37,7 +38,7 @@ list(APPEND C_ASM_COMPILE_FLAGS "-Wall" "-Wno-implicit
+@@ -37,7 +39,7 @@ list(APPEND C_ASM_COMPILE_FLAGS "-Wall" "-Wno-implicit
  list(APPEND C_ASM_COMPILE_FLAGS "-ffp-contract=off" "-fno-fast-math" "-fno-rounding-math" "-fno-math-errno")
  list(APPEND C_ASM_COMPILE_FLAGS "-fPIC" "-std=c99" "-fno-builtin")
  list(APPEND C_ASM_COMPILE_FLAGS "-Wall" "-Wno-implicit-function-declaration")
@@ -29,7 +39,7 @@
  
  # Compiler-specific compile flags
  if("${CMAKE_C_COMPILER_ID}" MATCHES "Clang")
-@@ -50,9 +51,9 @@ if(${OPENLIBM_ARCH_FOLDER} STREQUAL "i387")
+@@ -50,9 +52,9 @@ if(${OPENLIBM_ARCH_FOLDER} STREQUAL "i387")
  
  # Architecture-specific compile flags - take advantage of sse on x86
  if(${OPENLIBM_ARCH_FOLDER} STREQUAL "i387")
@@ -42,7 +52,7 @@
  endif()
  
  # Suppress warnings if requested
-@@ -560,7 +561,7 @@ set_target_properties("${PROJECT_NAME}" PROPERTIES PUB
+@@ -560,7 +562,7 @@ set_target_properties("${PROJECT_NAME}" PROPERTIES PUB
  
  file(GLOB PUBLIC_HEADERS "*.h" "include/*.h" "${OPENLIBM_ARCH_FOLDER}/*.h" "src/*.h")
  set_target_properties("${PROJECT_NAME}" PROPERTIES PUBLIC_HEADER "${PUBLIC_HEADERS}")
@@ -51,9 +61,9 @@
  
  # Can't use configure_file because openlibm.pc.in uses $var instead of CMake configure @var's
  # Would rather string replace variables here instead of editing .pc.in, because editing .pc.in
-@@ -568,9 +569,9 @@ string(PREPEND PC_FILE "prefix=${CMAKE_INSTALL_PREFIX}
+@@ -568,9 +570,9 @@ string(PREPEND PC_FILE "prefix=${CMAKE_INSTALL_PREFIX}
  file(READ "${PROJECT_SRC}/openlibm.pc.in" PC_FILE)
- string(REPLACE "\${version}" ${CMAKE_PROJECT_VERSION} PC_FILE ${PC_FILE})
+ string(REPLACE "\${version}" "${CMAKE_PROJECT_VERSION}" PC_FILE ${PC_FILE})
  string(PREPEND PC_FILE "prefix=${CMAKE_INSTALL_PREFIX}
 -includedir=\${prefix}/${CMAKE_INSTALL_INCLUDEDIR}
 -libdir=\${prefix}/${CMAKE_INSTALL_LIBDIR}\n

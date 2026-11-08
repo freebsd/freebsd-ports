@@ -4,8 +4,8 @@
  ]
  
  extras_require = {
--    'crt': ['awscrt==0.32.2'],
-+    'crt': ['awscrt>=0.32.2'],
+-    'crt': ['awscrt==0.36.0'],
++    'crt': ['awscrt>=0.36.0'],
  }
  
  setup(

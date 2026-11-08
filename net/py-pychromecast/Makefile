@@ -1,9 +1,8 @@
 PORTNAME=	pychromecast
-PORTVERSION=	14.0.5
+PORTVERSION=	14.0.10
 CATEGORIES=	net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	PyChromecast-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python module to talk to Google Chromecast

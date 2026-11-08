@@ -1,5 +1,6 @@
 PORTNAME=	train-core
 PORTVERSION=	3.16.5
+PORTREVISION=	1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-addressable>=2.5<3:www/rubygem-addressable \
 		rubygem-ffi>=1.16.0<1.18:devel/rubygem-ffi \
-		rubygem-json>=2.19.2<3.0:devel/rubygem-json \
+		rubygem-json2>=2.19.2<3.0:devel/rubygem-json2 \
 		rubygem-mixlib-shellout>=2.0<4.0:devel/rubygem-mixlib-shellout \
 		rubygem-net-scp>=1.2<5.0:security/rubygem-net-scp \
 		rubygem-net-ssh6>=2.9<8.0:security/rubygem-net-ssh6

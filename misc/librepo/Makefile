@@ -1,5 +1,5 @@
 PORTNAME=	librepo
-DISTVERSION=	1.20.0
+DISTVERSION=	1.22.0
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -51,5 +51,7 @@ ZCHUNK_LIB_DEPENDS=	libzck.so:archivers/zchunk
 post-patch:
 	@${RLN} ${FILESDIR}/xattr.c ${WRKSRC}/librepo/xattr.c
 	@${RLN} ${FILESDIR}/xattr.h ${WRKSRC}/librepo/xattr.h
+
+# test fails, see https://github.com/rpm-software-management/librepo/issues/389
 
 .include <bsd.port.mk>

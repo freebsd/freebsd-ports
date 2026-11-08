@@ -131,14 +131,7 @@
  
  ifeq ($(PLATFORM),win)		
  	cd $(DOCUMENTSERVER)/npm && \
-@@ -445,13 +468,13 @@
- endif		
- 	rm -r \
- 		$(DOCUMENTSERVER)/npm/node_modules \
--		$(DOCUMENTSERVER)/npm/package-lock.json
-+		$(DOCUMENTSERVER)/npm/npm-shrinkwrap.json
- 
- 	echo "Done" > $@
+@@ -451,7 +474,7 @@
  
  documentserver-example:
  	mkdir -p $(DOCUMENTSERVER_EXAMPLE)

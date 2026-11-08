@@ -1,8 +1,8 @@
 sbin/zabbix_java/shutdown.sh
 sbin/zabbix_java/lib/dnsjava-3.6.4.jar
 sbin/zabbix_java/lib/logback-console.xml
-sbin/zabbix_java/lib/logback-classic-1.5.16.jar
-sbin/zabbix_java/lib/logback-core-1.5.16.jar
+sbin/zabbix_java/lib/logback-classic-1.5.25.jar
+sbin/zabbix_java/lib/logback-core-1.5.25.jar
 sbin/zabbix_java/lib/logback.xml
 sbin/zabbix_java/lib/slf4j-api-2.0.16.jar
 sbin/zabbix_java/lib/android-json-4.3_r3.1.jar

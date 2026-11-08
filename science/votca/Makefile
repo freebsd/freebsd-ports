@@ -1,7 +1,7 @@
-PORTNAME=	votca
+PORTNAME=	votca # this port has bogus build_fs_violation's which are due to the yet unfixed issue in Poudriere, see https://github.com/freebsd/poudriere/issues/843
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2026
-PORTREVISION=	3
+PORTREVISION=	6
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org

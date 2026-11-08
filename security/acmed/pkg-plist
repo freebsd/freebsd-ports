@@ -1,9 +1,11 @@
 bin/acmed
 bin/tacd
-%%ETCDIR%%/acmed.toml.sample
-%%ETCDIR%%/default_hooks.toml.sample
+@sample %%ETCDIR%%/acmed.toml.sample
+@sample %%ETCDIR%%/default_hooks.toml.sample
+@sample %%ETCDIR%%/letsencrypt.toml.sample
 share/man/man5/acmed.toml.5.gz
 share/man/man8/acmed.8.gz
 share/man/man8/tacd.8.gz
-@dir %%ETCDIR%%/accounts
-@dir %%ETCDIR%%/certs
+@dir(root,wheel,0755) /var/db/acmed
+@dir(root,wheel,0755) /var/db/acmed/certs
+@dir(root,wheel,0700) /var/db/acmed/accounts

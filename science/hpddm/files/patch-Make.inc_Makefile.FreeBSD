@@ -1,0 +1,34 @@
+--- Make.inc/Makefile.FreeBSD.orig	2026-03-23 19:41:10 UTC
++++ Make.inc/Makefile.FreeBSD
+@@ -6,20 +6,19 @@ MPIRUN ?= mpirun -np
+ MPIF90 ?= mpif90
+ MPIRUN ?= mpirun -np
+ 
+-override CXXFLAGS += -std=c++11 -O3 -fPIC
+-override CFLAGS += -std=c99 -O3
+-
+ HPDDMFLAGS ?= -DHPDDM_NUMBERING=\'C\'
+ 
+ INCS = 
+-LIBS = 
++LIBS = ${MPI_LIBS}
+ 
+-MUMPS_INCS = -I/usr/include
+-PYTHON_INCS = -I/usr/include/python2.7/
++MUMPS_INCS = -I${LOCALBASE}/include
++PYTHON_INCS = -I${PYTHON_INCLUDEDIR}
+ 
+-BLAS_LIBS = -L/usr/lib -lblas -llapack
+-ARPACK_LIBS = -L/usr/lib -larpack
+-SCALAPACK_LIBS = -L/usr/lib -lscalapack-openmpi
+-MUMPS_LIBS = -L/usr/lib -lsmumps -ldmumps -lcmumps -lzmumps -lmumps_common -lpord -lmpi_f77
+-HYPRE_LIBS = -L/usr/lib -lHYPRE_IJ_mv -lHYPRE_krylov -lHYPRE_parcsr_ls
+-PYTHON_LIBS = -L/usr/lib -lpython2.7
++BLAS_LIBS = -L${LOCALBASE}/lib ${BLASLIB}
++ARPACK_LIBS = -L${LOCALBASE}/lib -larpack
++SCALAPACK_LIBS = -L${LOCALBASE}/lib -lscalapack
++MUMPS_LIBS = -L${LOCALBASE}/lib -lsmumps -ldmumps -lcmumps -lzmumps -lmumps_common -lpord
++SUITESPARSE_INCS = -I${LOCALBASE}/include/suitesparse
++SUITESPARSE_LIBS = -L${LOCALBASE}/lib -lcholmod -lumfpack -lamd -lcolamd -lsuitesparseconfig
++HYPRE_LIBS = -L${LOCALBASE}/lib -lHYPRE
++PYTHON_LIBS = -L${PYTHON_LIBDIR} -lpython${PYTHON_VER}

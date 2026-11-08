@@ -1,198 +1,167 @@
 PORTNAME=	mozc
-PORTVERSION=	2.23.2815.102.01
-DISTVERSIONPREFIX=	v
-PORTREVISION?=	33
+PORTVERSION=	3.35.6354.101
+PORTREVISION=	1
 CATEGORIES=	japanese
+DIST_SUBDIR=	${PORTNAME}
+EXTRACT_ONLY=	${DISTFILE_DEFAULT}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT?=	Mozc Japanese Input Method, Server
 WWW=		https://github.com/google/mozc
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gyp>=20200512:devel/py-gyp@${PY_FLAVOR}
-EXTRACT_DEPENDS=${PYTHON_CMD}:${PYTHON_PORTSDIR}
-LIB_DEPENDS=	libprotobuf.so:devel/protobuf \
-		libzinnia.so:japanese/zinnia
-RUN_DEPENDS=	xdg-open:devel/xdg-utils
-
-BROKEN_powerpc=		fails to compile: segfault
-
 USE_GITHUB=	yes
-GH_ACCOUNT=	hrs-allbsd
-GH_TUPLE=	hiroyuki-komatsu:japanese-usage-dictionary:e5b3425:udic
+GH_TUPLE=	google:mozc:0136c35
 
-USES=		compiler:c++17-lang gmake ninja:build pkgconfig \
-		python:build shebangfix tar:bzip2
-SHEBANG_FILES=	src/build_mozc.py
+BUILD_MOZC_LIST?=mozc_server
+.if ${BUILD_MOZC_LIST:Mmozc_el} != "mozc_el" || make(makesum)
+GH_TUPLE+=	bazelbuild:bazel-central-registry:9d03419:bcr \
+		hiroyuki-komatsu:japanese-usage-dictionary:38d3462:udic/src/japanese_usage_dictionary \
+		hiroyuki-komatsu:japanpost_zipcode:d630d72:zipcode/src/japanpost_zipcode
+EXTRACT_ONLY+=	${DISTFILE_bcr} \
+		${DISTFILE_udic} \
+		${DISTFILE_zipcode}
+.endif
+
 BUILD_WRKSRC=	${WRKSRC}/src
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}
+CONFLICTS_INSTALL=	${PKGNAMEPREFIX}${PORTNAME}3${PKGNAMESUFFIX}
+.for P in ja-fcitx-mozc ja-ibus-mozc ja-mozc-tool ja-uim-mozc ja-mozc-el
+CONFLICTS_INSTALL+=	${P}-2.*
+.endfor
 
-LDFLAGS+=	-labsl_spinlock_wait
-USE_CXXSTD=	c++17
-
-BUILD_MOZC_LIST?=	mozc_server
+.if ${BUILD_MOZC_LIST:Mmozc_el} != "mozc_el"
+BUILD_DEPENDS=	bazel9>=9.0.0:devel/bazel9 \
+		bash:shells/bash
+USES=		compiler:c++20-lang pkgconfig java:build python:3.12+,build
+USE_CXXSTD=	c++20
+JAVA_VERSION=	21
+MAKE_ENV+=	JAVA_HOME=${JAVA_HOME:Q}
+.endif
 
 .if ${BUILD_MOZC_LIST:Mmozc_server} == "mozc_server"
 PKGNAMEPREFIX=	ja-
 PKGNAMESUFFIX=	-server
-
-LICENSE=		BSD3CLAUSE NAISTL
-LICENSE_COMB=		multi
-LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/LICENSE
-LICENSE_DISTFILES_BSD3CLAUSE=	${DISTNAME}${EXTRACT_SUFX}
-LICENSE_NAME_NAISTL=	Nara Institute of Science and Technology License
-LICENSE_PERMS_NAISTL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
-LICENSE_FILE_NAISTL=	${WRKSRC}/src/data/dictionary_oss/README.txt
-LICENSE_DISTFILES_NAISTL=${DISTNAME}${EXTRACT_SUFX}
 .elif ${BUILD_MOZC_LIST:Mmozc_tool} == "mozc_tool"
-USES+=		qt:5 gnome
-USE_GNOME=	glib20 gtk20
-USE_QT=		buildtools core gui widgets
+USES+=		gl qt:6
+USE_GL=		gl
+USE_QT=		base
 .elif ${BUILD_MOZC_LIST:Mibus_mozc} == "ibus_mozc"
-USES+=		gettext-runtime gnome xorg
-USE_XORG=	xcb
-USE_GNOME=	cairo gdkpixbuf glib20 gtk20
-LIB_DEPENDS+=	libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2
+USES+=		gettext-runtime gnome gl qt:6
+USE_GNOME+=	glib20
+USE_GL=		gl
+USE_QT=		base
 .elif ${BUILD_MOZC_LIST:Mmozc_el} == "mozc_el"
+CATEGORIES+=	elisp
 USES+=		emacs
-.elif ${BUILD_MOZC_LIST:Mfcitx_mozc}
+.elif ${BUILD_MOZC_LIST:Muim_mozc} == "uim_mozc"
+USES+=		gettext-runtime
+.elif ${BUILD_MOZC_LIST:Mfcitx5_mozc} == "fcitx5_mozc"
 USES+=		gettext-tools
 .endif
 
-# Use GCC only when the stock clang does not have libc++.so.
-.if exists(/usr/bin/clang) && exists(/usr/lib/libc++.so)
-_CCTYPE=	clang
-.else
-USE_GCC=	yes
-_CCTYPE=	gcc
-.endif
-
 .include <bsd.port.pre.mk>
-
-GYP_DEFINES=	use_libprotobuf=1 \
-		channel_dev=0 \
-		enable_unittest=0 \
-		compiler_host='${_CCTYPE}' \
-		compiler_target='${_CCTYPE}' \
-		use_libzinnia=1 \
-		zinnia_model_file='${LOCALBASE}/share/tegaki/models/zinnia/handwriting-ja.model' \
-		ibus_mozc_icon_path='${LOCALBASE}/share/ibus-mozc/icons/product_icon.png' \
-		ibus_mozc_path='${PREFIX}/libexec/ibus-engine-mozc'
-BUILD_MODE=	Release
-BUILD_CMD=	${SETENV} ${MAKE_ENV} PATH=/bin:/usr/bin:${PATH} ${MAKE_CMD}
-BUILD_MOZC_CMD=	cd ${BUILD_WRKSRC} && \
-		${SETENV} BUILD_COMMAND="${BUILD_WRKSRC}/mozcmake" \
-		    PATH="${PATH}" \
-		    GYP_DEFINES="${GYP_DEFINES}" \
-		    PYTHONPATH=${PYTHON_SITELIBDIR}/gyp \
-		    CC_host="${CC}" \
-		    CC_target="${CC}" \
-		    CXX_host="${CXX}" \
-		    CXX_target="${CXX}" \
-		    LD_host="${CXX}" \
-		    AR_host="${AR}" \
-		    ${MAKE_ENV} \
-		    ${PYTHON_CMD} build_mozc.py
-BUILD_MOZC_CMD_BUILD=	${BUILD_MOZC_CMD} build -c ${BUILD_MODE} ${_MAKE_JOBS}
-BUILD_GYP_CMD=	${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/gyp
-
-post-extract:	# XXX: do not activate fcitx5
-	${RM} -r ${WRKSRC}/src/unix/fcitx5
-post-patch:
-	${FIND} ${BUILD_WRKSRC} \( -name '*.gyp' -o -name '*.gypi' \) -exec \
-	    ${REINPLACE_CMD} "s,'python','${PYTHON_CMD}',g" {} \;
-.if ${BUILD_MOZC_LIST:Mfcitx_mozc} == "fcitx_mozc"
-	${REINPLACE_CMD} 's,/po/mo},%po}mo,g' \
-	    ${BUILD_WRKSRC}/unix/fcitx/gen_fcitx_mozc_i18n.sh
-	${REINPLACE_CMD} \
-	    "s,IconName=.*,IconName=${LOCALBASE:Q}/share/fcitx/mozc/icon/mozc.png," \
-	    ${BUILD_WRKSRC}/unix/fcitx/mozc.conf
+.if ${BUILD_MOZC_LIST:Mmozc_el} != "mozc_el"
+. include "${FILESDIR}/Makefile.bazel"
 .endif
+.if ${BUILD_MOZC_LIST:Mmozc_el} != "mozc_el" || make(makesum)
+. include "${FILESDIR}/Makefile.distfiles"
+.endif
+. include "${FILESDIR}/Makefile.licenses"
 
-.if !${BUILD_MOZC_LIST:Mmozc_el}
-${BUILD_WRKSRC}/mozcmake:
-	${PRINTF} "%s\n\n%s\n" "#!/bin/sh" 'exec ${BUILD_CMD} "$$@"' \
-	    > ${BUILD_WRKSRC}/mozcmake
-	${CHMOD} +x ${BUILD_WRKSRC}/mozcmake
+EMACS_SITE_LISPDIR?=	share/emacs/site-lisp
+EXTRA_SUB_LIST=	PREFIX LOCALBASE DOCSDIR EMACS_SITE_LISPDIR
+EXTRA_SUB_FILES= \
+	config.bzl \
+	bazel/pkg_config_repository.bzl
+post-patch-apply-extra-slist:
+	${REINPLACE_CMD} \
+	    ${EXTRA_SUB_LIST:@v@-e 's|%%$v%%|${$v}|g'@} \
+	    ${EXTRA_SUB_FILES:@v@${BUILD_WRKSRC}/$v@}
+post-patch: post-patch-apply-extra-slist
 
-post-configure: ${BUILD_WRKSRC}/mozcmake
-	${BUILD_MOZC_CMD} gyp \
-	    --gypdir=${LOCALBASE}/bin \
-	    --server_dir="${PREFIX}/bin" \
-	    --tool_dir="${PREFIX}/libexec" \
-	    --renderer_dir="${PREFIX}/libexec" \
-	    --localbase="${LOCALBASE}" \
-	    --ldflags="${LDFLAGS} -fstack-protector -L${LOCALBASE}/lib" \
-	    --cflags="${CFLAGS:Q}" \
-	    --cflags_cc="${CXXFLAGS:Q}" \
-	    --include_dirs="${LOCALBASE}/include" \
-	    ${GYP_OPTIONS}
+.if ${BUILD_MOZC_LIST:Mmozc_el} != "mozc_el"
+post-extract-zipcode:
+	cd ${BUILD_WRKSRC} && ${UNZIP_NATIVE_CMD} -q \
+	    japanpost_zipcode/ken_all.zip -d japanpost_zipcode
+	cd ${BUILD_WRKSRC} && ${UNZIP_NATIVE_CMD} -q \
+	    japanpost_zipcode/jigyosyo.zip -d japanpost_zipcode
+post-extract: post-extract-zipcode
 .endif
 
 # mozc_server
 .if ${BUILD_MOZC_LIST:Mmozc_server} == "mozc_server" || make(makesum)
-GYP_OPTIONS+=	--noqt
-GYP_DEFINES+=	use_libibus=0 \
-		enable_gtk_renderer=0
-
-MASTER_SITES+=	LOCAL/hrs:zipcode
-DISTFILES+= \
-	ken_all-20221228.zip:zipcode \
-	jigyosyo-20221228.zip:zipcode
 
 PLIST_FILES+=	bin/mozc \
-		bin/mozc_server \
-		libexec/mozc_emacs_helper
+		bin/mozc_emacs_helper \
+		libexec/mozc_server \
+		libexec/mozc_emacs_helper \
+		%%DATADIR%%/icons/mozc.png \
+		%%DATADIR%%/icons/mozc.svg \
+		%%DATADIR%%/icons/alpha_full.png \
+		%%DATADIR%%/icons/alpha_full.svg \
+		%%DATADIR%%/icons/alpha_half.png \
+		%%DATADIR%%/icons/alpha_half.svg \
+		%%DATADIR%%/icons/direct.png \
+		%%DATADIR%%/icons/direct.svg \
+		%%DATADIR%%/icons/hiragana.png \
+		%%DATADIR%%/icons/hiragana.svg \
+		%%DATADIR%%/icons/katakana_full.png \
+		%%DATADIR%%/icons/katakana_full.svg \
+		%%DATADIR%%/icons/katakana_half.png \
+		%%DATADIR%%/icons/katakana_half.svg \
+		%%DATADIR%%/icons/dictionary.png \
+		%%DATADIR%%/icons/dictionary.svg \
+		%%DATADIR%%/icons/properties.png \
+		%%DATADIR%%/icons/properties.svg \
+		%%DATADIR%%/icons/tool.png \
+		%%DATADIR%%/icons/tool.svg \
+		%%DATADIR%%/icons/white/dictionary.svg \
+		%%DATADIR%%/icons/white/properties.svg \
+		%%DATADIR%%/icons/white/tool.svg \
+		%%DATADIR%%/icons/outlined/dictionary.svg \
+		%%DATADIR%%/icons/outlined/properties.svg \
+		%%DATADIR%%/icons/outlined/tool.svg
 SUB_FILES+=	mozc
 
-post-patch-mozc_server:
-	@for F in ${DISTFILES:M*\:zipcode:C/\:zipcode//}; do \
-		${UNZIP_NATIVE_CMD} -L -d ${BUILD_WRKSRC}/data/dictionary_oss \
-		    ${DISTDIR}/$$F; \
-	done
-	cd ${BUILD_WRKSRC}/data/dictionary_oss && \
-	    ${SETENV} PYTHONPATH=${BUILD_WRKSRC} \
-		${PYTHON_CMD} ${BUILD_WRKSRC}/dictionary/gen_zip_code_seed.py \
-		--zip_code=ken_all.csv --jigyosyo=jigyosyo.csv \
-	    >> dictionary09.txt
-	${MV} ${WRKSRC_udic}/usage_dict.txt \
-	    ${BUILD_WRKSRC}/third_party/japanese_usage_dictionary
-
-post-patch: post-patch-mozc_server
-
 do-build-mozc_server:
-	${BUILD_MOZC_CMD_BUILD} server/server.gyp:mozc_server
-	${BUILD_MOZC_CMD_BUILD} unix/emacs/emacs.gyp:mozc_emacs_helper
+	${BUILD_MOZC_CMD} \
+	    //server:mozc_server \
+	    //unix/emacs:mozc_emacs_helper \
+	    //unix:icons
 
 do-install-mozc_server:
-	${INSTALL_PROGRAM} \
-	    ${BUILD_WRKSRC}/out_linux/${BUILD_MODE}/mozc_server \
-	    ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} \
-	    ${BUILD_WRKSRC}/out_linux/${BUILD_MODE}/mozc_emacs_helper \
+	cd ${BUILD_WRKSRC} && ${INSTALL_PROGRAM} \
+	    bazel-bin/server/mozc_server \
+	    bazel-bin/unix/emacs/mozc_emacs_helper \
 	    ${STAGEDIR}${PREFIX}/libexec
+	${RLN} ${STAGEDIR}${PREFIX}/libexec/mozc_emacs_helper \
+	    ${STAGEDIR}${PREFIX}/bin/mozc_emacs_helper
 	${INSTALL_SCRIPT} \
 	    ${WRKDIR}/mozc ${STAGEDIR}/${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}/icons
+	${UNZIP_NATIVE_CMD} -q \
+	    ${BUILD_WRKSRC}/bazel-bin/unix/icons.zip \
+	    -d ${STAGEDIR}${DATADIR}/icons
 .endif
 
 # mozc_tool
 .if ${BUILD_MOZC_LIST:Mmozc_tool} == "mozc_tool"
-GYP_DEFINES+=	use_libibus=0 \
-		enable_gtk_renderer=1
-
-RUN_DEPENDS+=	${LOCALBASE}/share/tegaki/models/zinnia/handwriting-ja.model:japanese/tegaki-zinnia-japanese
+RUN_DEPENDS+=	${LOCALBASE}/libexec/mozc_server:japanese/mozc-server \
+		xdg-open:devel/xdg-utils
 
 PLIST_FILES+=	libexec/mozc_tool \
 		bin/mozc_tool \
 		%%DATADIR%%/icons/product_logo.png \
-		%%DATADIR%%/icons/update_uptodate.png
+		%%DATADIR%%/icons/update_uptodate.png \
+		%%DOCSDIR%%/credits_en.html
 SUB_FILES+=	mozc_tool
 
 do-build-mozc_tool:
-	${BUILD_MOZC_CMD_BUILD} gui/gui.gyp:mozc_tool
+	${BUILD_MOZC_CMD} //gui/tool:mozc_tool
 
 do-install-mozc_tool:
 	${INSTALL_PROGRAM} \
-	    ${BUILD_WRKSRC}/out_linux/${BUILD_MODE}/mozc_tool \
+	    ${BUILD_WRKSRC}/bazel-bin/gui/tool/mozc_tool \
 	    ${STAGEDIR}${PREFIX}/libexec
 	${INSTALL_SCRIPT} ${WRKDIR}/mozc_tool ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DATADIR}/icons
@@ -202,189 +171,197 @@ do-install-mozc_tool:
 	${INSTALL_DATA} \
 	    ${BUILD_WRKSRC}/data/images/unix/ime_product_icon_opensource-32.png \
 	    ${STAGEDIR}${DATADIR}/icons/update_uptodate.png
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} \
+	    ${BUILD_WRKSRC}/data/installer/credits_en.html \
+	    ${STAGEDIR}${DOCSDIR}
 .endif
 
 # ibus_mozc
 .if ${BUILD_MOZC_LIST:Mibus_mozc} == "ibus_mozc"
-GYP_OPTIONS+=	--noqt
-GYP_DEFINES+=	use_libibus=1 \
-		enable_gtk_renderer=1
 
 LIB_DEPENDS+=	libibus-1.0.so:textproc/ibus
-RUN_DEPENDS+=	mozc_server:japanese/mozc-server \
+RUN_DEPENDS+=	${LOCALBASE}/libexec/mozc_server:japanese/mozc-server \
 		mozc_tool:japanese/mozc-tool
 
 PLIST_FILES+=	libexec/mozc_renderer \
 		libexec/ibus-engine-mozc \
-		%%DATADIR%%/icons/alpha_full.png \
-		%%DATADIR%%/icons/alpha_half.png \
-		%%DATADIR%%/icons/dictionary.png \
-		%%DATADIR%%/icons/direct.png \
-		%%DATADIR%%/icons/hiragana.png \
-		%%DATADIR%%/icons/katakana_full.png \
-		%%DATADIR%%/icons/katakana_half.png \
-		%%DATADIR%%/icons/product_icon.png \
-		%%DATADIR%%/icons/properties.png \
-		%%DATADIR%%/icons/tool.png \
 		share/ibus/component/mozc.xml
-PLIST_DIRS+=	%%DATADIR%%/icons ${DATADIR_REL}
 
 do-build-ibus_mozc:
-	${BUILD_MOZC_CMD_BUILD} \
-	    unix/ibus/ibus.gyp:ibus_mozc \
-	    renderer/renderer.gyp:mozc_renderer
+	${BUILD_MOZC_CMD} \
+	    //unix/ibus:ibus_mozc \
+	    //unix/ibus:gen_mozc_xml \
+	    //renderer/qt:mozc_renderer
 
 do-install-ibus_mozc:
 	${INSTALL_PROGRAM} \
-	    ${BUILD_WRKSRC}/out_linux/${BUILD_MODE}/mozc_renderer \
+	    ${BUILD_WRKSRC}/bazel-bin/renderer/qt/mozc_renderer \
 	    ${STAGEDIR}${PREFIX}/libexec/mozc_renderer
 	${INSTALL_PROGRAM} \
-	    ${BUILD_WRKSRC}/out_linux/${BUILD_MODE}/ibus_mozc \
+	    ${BUILD_WRKSRC}/bazel-bin/unix/ibus/ibus_mozc \
 	    ${STAGEDIR}${PREFIX}/libexec/ibus-engine-mozc
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/ibus/component
 	${INSTALL_DATA} \
-	    ${BUILD_WRKSRC}/out_linux/${BUILD_MODE}/gen/unix/ibus/mozc.xml \
+	    ${BUILD_WRKSRC}/bazel-bin/unix/ibus/mozc.xml \
 	    ${STAGEDIR}${PREFIX}/share/ibus/component/mozc.xml
-	@${MKDIR} ${STAGEDIR}${DATADIR}/icons
-.for F in ui-alpha_full ui-alpha_half ui-dictionary ui-direct \
-	ui-hiragana ui-katakana_full ui-katakana_half ui-properties ui-tool
-	${INSTALL_DATA} \
-	    ${BUILD_WRKSRC}/data/images/unix/${F}.png \
-	    ${STAGEDIR}${DATADIR}/icons/${F:S/^ui-//}.png
-.endfor
-	${INSTALL_DATA} \
-	    ${BUILD_WRKSRC}/data/images/unix/ime_product_icon_opensource-32.png \
-	    ${STAGEDIR}${DATADIR}/icons/product_icon.png
 .endif
 
 # uim_mozc
 .if ${BUILD_MOZC_LIST:Muim_mozc} == "uim_mozc" || make(makesum)
-GH_TUPLE+=	e-kato:macuim:v0.6.16.2.1:MU
+GH_TUPLE+=	e-kato:macuim:7beac7b:MU
+EXTRACT_ONLY+=	${DISTFILE_MU}
 
 LIB_DEPENDS+=	libuim.so:textproc/uim
-RUN_DEPENDS+=	mozc_server:japanese/mozc-server \
+RUN_DEPENDS+=	${LOCALBASE}/libexec/mozc_server:japanese/mozc-server \
 		mozc_tool:japanese/mozc-tool
 
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src-unix-uim-mozc.cc \
-		${PATCHDIR}/extra-patch-src-unix-uim-uim.gyp \
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src-MODULE-uim.bazel \
+		${PATCHDIR}/extra-patch-src-unix-uim-mozc.cc \
 		${PATCHDIR}/extra-patch-src-unix-uim-key_translator.h \
-		${PATCHDIR}/extra-patch-src-unix-uim-key_translator.cc
+		${PATCHDIR}/extra-patch-src-unix-uim-key_translator.cc \
+		${PATCHDIR}/extra-patch-src-unix-uim-scm-mozc-custom.scm \
+		${PATCHDIR}/extra-patch-src-unix-uim-scm-mozc.scm
 PLIST_FILES+=	lib/uim/plugin/libuim-mozc.so \
 		%%DATADIR%%/mozc.scm \
 		%%DATADIR%%/mozc-custom.scm \
 		%%DATADIR%%/mozc-key-custom.scm \
 		%%DATADIR%%/pixmaps/mozc.png \
-		"@postexec ${SETENV} MOZC_NOLOG=true ${LOCALBASE}/bin/uim-module-manager --register mozc" \
+		%%DATADIR%%/pixmaps/mozc_tool_selector.png \
+		%%DATADIR%%/pixmaps/mozc_tool_config_dialog.png \
+		%%DATADIR%%/pixmaps/mozc_tool_dictionary_tool.png \
+		%%DATADIR%%/pixmaps/mozc_tool_word_register_dialog.png \
+		%%DATADIR%%/pixmaps/mozc_tool_about_dialog.png \
+		"@postexec ${LOCALBASE}/bin/uim-module-manager --register mozc" \
 		"@preunexec ${LOCALBASE}/bin/uim-module-manager --unregister mozc"
-
-GYP_OPTIONS+=	--noqt
-GYP_DEFINES+=	use_libibus=0 \
-		enable_gtk_renderer=0
 
 post-extract-uim_mozc:
 	${MV} ${WRKSRC_MU}/Mozc/uim ${BUILD_WRKSRC}/unix
-	${REINPLACE_CMD} -e "s,/usr/lib/mozc,${LOCALBASE}/libexec," \
-	    ${WRKSRC_MU}/Mozc/scm/mozc-custom.scm
+	${MV} ${WRKSRC_MU}/Mozc/scm ${BUILD_WRKSRC}/unix/uim/scm
+	${INSTALL_DATA} ${PATCHDIR}/extra-src-unix-uim-BUILD.bazel \
+	    ${BUILD_WRKSRC}/unix/uim/BUILD.bazel
 
 post-extract: post-extract-uim_mozc
 
+post-patch-uim_mozc:
+	${REINPLACE_CMD} -e "s,/usr/lib/mozc,${LOCALBASE}/libexec," \
+	    ${BUILD_WRKSRC}/unix/uim/scm/mozc-custom.scm
+
+post-patch: post-patch-uim_mozc
+
 do-build-uim_mozc:
-	${BUILD_MOZC_CMD_BUILD} \
-	    unix/uim/uim.gyp:uim-mozc
+	${BUILD_MOZC_CMD} //unix/uim:uim-mozc
 
 do-install-uim_mozc:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/uim/plugin
 	${INSTALL_PROGRAM} \
-	    ${BUILD_WRKSRC}/out_linux/${BUILD_MODE}/libuim-mozc.so \
+	    ${BUILD_WRKSRC}/bazel-bin/unix/uim/libuim-mozc.so \
 	    ${STAGEDIR}${PREFIX}/lib/uim/plugin
 	${MKDIR} ${STAGEDIR}${DATADIR}
-	cd ${WRKSRC_MU}/Mozc/scm && \
+	cd ${BUILD_WRKSRC}/unix/uim/scm && \
 	    ${INSTALL_DATA} mozc.scm mozc-custom.scm mozc-key-custom.scm \
 	    ${STAGEDIR}${DATADIR}
 	${MKDIR} ${STAGEDIR}${DATADIR}/pixmaps
 	${INSTALL_DATA} \
 	    ${BUILD_WRKSRC}/data/images/product_icon_32bpp-128.png \
 	    ${STAGEDIR}${DATADIR}/pixmaps/mozc.png
+.for name icon in \
+	selector tool \
+	config_dialog properties \
+	dictionary_tool dictionary \
+	word_register_dialog dictionary \
+	about_dialog mozc
+	${LN} -sf ${LOCALBASE}/share/mozc/icons/${icon}.png \
+	    ${STAGEDIR}${DATADIR}/pixmaps/mozc_tool_${name}.png
+.endfor
 .endif
 
-# fcitx_mozc
-.if ${BUILD_MOZC_LIST:Mfcitx_mozc} == "fcitx_mozc"
-GYP_OPTIONS+=	--noqt
-GYP_DEFINES+=	use_libibus=0 \
-		enable_gtk_renderer=0 \
-		use_fcitx="YES"
+# fcitx5_mozc
+.if ${BUILD_MOZC_LIST:Mfcitx5_mozc} == "fcitx5_mozc" || make(makesum)
+GH_TUPLE+=	fcitx:mozc:13ef96d:fcitx
+EXTRACT_ONLY+=	${DISTFILE_fcitx}
 
-LIB_DEPENDS+=	libfcitx-core.so:chinese/fcitx
-RUN_DEPENDS+=	mozc_server:japanese/mozc-server \
+MASTER_SITES+=	https://creativecommons.org/publicdomain/zero/1.0/:cc0
+DISTFILES+=	legalcode.txt:cc0
+.endif
+
+.if ${BUILD_MOZC_LIST:Mfcitx5_mozc} == "fcitx5_mozc"
+LIB_DEPENDS+=	libFcitx5Core.so:textproc/fcitx5
+RUN_DEPENDS+=	${LOCALBASE}/libexec/mozc_server:japanese/mozc-server \
+		xdg-open:devel/xdg-utils \
 		mozc_tool:japanese/mozc-tool
 
-PLIST_FILES+=	lib/fcitx/fcitx-mozc.so \
-		share/fcitx/addon/fcitx-mozc.conf \
-		share/fcitx/inputmethod/mozc.conf \
-		%%DATADIR%%/icon/mozc.png \
-		%%DATADIR%%/icon/mozc-alpha_full.png \
-		%%DATADIR%%/icon/mozc-alpha_half.png \
-		%%DATADIR%%/icon/mozc-direct.png \
-		%%DATADIR%%/icon/mozc-hiragana.png \
-		%%DATADIR%%/icon/mozc-katakana_full.png \
-		%%DATADIR%%/icon/mozc-katakana_half.png \
-		%%DATADIR%%/icon/mozc-dictionary.png \
-		%%DATADIR%%/icon/mozc-properties.png \
-		%%DATADIR%%/icon/mozc-tool.png \
-		share/locale/ja/LC_MESSAGES/fcitx-mozc.mo \
-		share/locale/zh_CN/LC_MESSAGES/fcitx-mozc.mo \
-		share/locale/zh_TW/LC_MESSAGES/fcitx-mozc.mo
-PLIST_DIRS+=	%%DATADIR%%/icon ${DATADIR_REL}
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-src-MODULE-fcitx5.bazel
 
-do-build-fcitx_mozc:
-	${BUILD_MOZC_CMD_BUILD} unix/fcitx/fcitx.gyp:fcitx-mozc
+PLIST_FILES+=	lib/fcitx5/fcitx5-mozc.so \
+		share/fcitx5/addon/mozc.conf \
+		share/fcitx5/inputmethod/mozc.conf \
+		${FCITX5_MOZC_LOCALES:@l@share/locale/$l/LC_MESSAGES/fcitx5-mozc.mo@} \
+		share/icons/hicolor/scalable/apps/fcitx_mozc.svg \
+		${FCITX5_MOZC_ICONS:@i@share/icons/hicolor/scalable/apps/fcitx_mozc_$i.svg@} \
+		share/metainfo/org.fcitx.Fcitx5.Addon.Mozc.metainfo.xml
+FCITX5_MOZC_LOCALES=	ca da de fr he ja ka ko ru sv tr vi zh_CN zh_TW
+FCITX5_MOZC_ICONS=	alpha_full alpha_half direct hiragana \
+			katakana_full katakana_half dictionary properties tool
 
-do-install-fcitx_mozc:
-	@${MKDIR} \
-	    ${STAGEDIR}${PREFIX}/lib/fcitx \
-	    ${STAGEDIR}${PREFIX}/share/fcitx/addon \
-	    ${STAGEDIR}${PREFIX}/share/fcitx/inputmethod
+post-extract-fcitx5_mozc:
+	${MV} ${WRKSRC_fcitx}/src/unix/fcitx5 ${BUILD_WRKSRC}/unix
+	${MV} ${WRKSRC_fcitx}/src/unix/fcitx/gen_fcitx_mozc_i18n.sh \
+	    ${BUILD_WRKSRC}/unix/fcitx5/
+
+do-build-fcitx5_mozc:
+	${BUILD_MOZC_CMD} //unix/fcitx5:fcitx5-mozc.so
+	cd ${BUILD_WRKSRC}/unix/fcitx5 && \
+	    ${LOCALBASE}/bin/msgfmt --xml -d po \
+		--template org.fcitx.Fcitx5.Addon.Mozc.metainfo.xml.in \
+		-o org.fcitx.Fcitx5.Addon.Mozc.metainfo.xml
+	cd ${BUILD_WRKSRC}/unix/fcitx5 && \
+	    ${SETENV} ${MAKE_ENV} ${SH} gen_fcitx_mozc_i18n.sh ./po
+
+post-extract: post-extract-fcitx5_mozc
+
+do-install-fcitx5_mozc:
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/fcitx5 \
+	    ${STAGEDIR}${PREFIX}/share/fcitx5/addon \
+	    ${STAGEDIR}${PREFIX}/share/fcitx5/inputmethod
 	${INSTALL_LIB} \
-	    ${BUILD_WRKSRC}/out_linux/${BUILD_MODE}/fcitx-mozc.so \
-	    ${STAGEDIR}${PREFIX}/lib/fcitx/fcitx-mozc.so
+	    ${BUILD_WRKSRC}/bazel-bin/unix/fcitx5/fcitx5-mozc.so \
+	    ${STAGEDIR}${PREFIX}/lib/fcitx5/
 	${INSTALL_DATA} \
-	    ${BUILD_WRKSRC}/unix/fcitx/fcitx-mozc.conf \
-	    ${STAGEDIR}${PREFIX}/share/fcitx/addon/fcitx-mozc.conf
+	    ${BUILD_WRKSRC}/unix/fcitx5/mozc-addon.conf \
+	    ${STAGEDIR}${PREFIX}/share/fcitx5/addon/mozc.conf
 	${INSTALL_DATA} \
-	    ${BUILD_WRKSRC}/unix/fcitx/mozc.conf \
-	    ${STAGEDIR}${PREFIX}/share/fcitx/inputmethod/mozc.conf
-	@${MKDIR} ${STAGEDIR}${DATADIR}/icon
-.for F in ui-alpha_full ui-alpha_half ui-dictionary ui-direct \
-	ui-hiragana ui-katakana_full ui-katakana_half ui-properties ui-tool
+	    ${BUILD_WRKSRC}/unix/fcitx5/mozc.conf \
+	    ${STAGEDIR}${PREFIX}/share/fcitx5/inputmethod/mozc.conf
+.for lang in ${FCITX5_MOZC_LOCALES}
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/locale/${lang}/LC_MESSAGES
 	${INSTALL_DATA} \
-	    ${BUILD_WRKSRC}/data/images/unix/${F}.png \
-	    ${STAGEDIR}${DATADIR}/icon/${F:S,^ui-,mozc-,}.png
+	    ${BUILD_WRKSRC}/unix/fcitx5/po/${lang}.mo \
+	    ${STAGEDIR}${PREFIX}/share/locale/${lang}/LC_MESSAGES/fcitx5-mozc.mo
 .endfor
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/metainfo
 	${INSTALL_DATA} \
-	    ${BUILD_WRKSRC}/data/images/product_icon_32bpp-128.png \
-	    ${STAGEDIR}${DATADIR}/icon/mozc.png
-.for L in ja zh_CN zh_TW
-	${INSTALL_DATA} \
-	    ${BUILD_WRKSRC}/out_linux/${BUILD_MODE}/gen/unix/fcitx/po/${L}.mo \
-	    ${STAGEDIR}${PREFIX}/share/locale/${L}/LC_MESSAGES/fcitx-mozc.mo
+	    ${BUILD_WRKSRC}/unix/fcitx5/org.fcitx.Fcitx5.Addon.Mozc.metainfo.xml \
+	    ${STAGEDIR}${PREFIX}/share/metainfo/
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
+	${LN} -sf ${LOCALBASE}/share/mozc/icons/mozc.svg \
+	    ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/fcitx_mozc.svg
+.for icon in ${FCITX5_MOZC_ICONS}
+	${LN} -sf ${LOCALBASE}/share/mozc/icons/${icon}.svg \
+	    ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/fcitx_mozc_${icon}.svg
 .endfor
 .endif
 
 # mozc_el
 .if ${BUILD_MOZC_LIST:Mmozc_el} == "mozc_el"
-CATEGORIES+=	elisp
-RUN_DEPENDS+=	mozc_server:japanese/mozc-server
+RUN_DEPENDS+=	${LOCALBASE}/libexec/mozc_server:japanese/mozc-server
 
 NO_ARCH=	yes
 PLIST_FILES+=	${EMACS_SITE_LISPDIR}/mozc/mozc.el.gz \
 		${EMACS_SITE_LISPDIR}/mozc/leim-list.el
 PLIST_DIRS+=	${EMACS_SITE_LISPDIR}/mozc
 
-post-patch-mozc_el:
-	${REINPLACE_CMD} "s,%%PREFIX%%,${PREFIX}," \
-	    ${BUILD_WRKSRC}/unix/emacs/mozc.el
-
-post-patch: post-patch-mozc_el
+EXTRA_SUB_FILES+= unix/emacs/mozc.el
 
 do-build-mozc_el:
 	cd ${BUILD_WRKSRC}/unix/emacs && ${GZIP_CMD} mozc.el

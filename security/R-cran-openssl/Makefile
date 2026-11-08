@@ -1,5 +1,5 @@
 PORTNAME=	openssl
-DISTVERSION=	2.4.2
+DISTVERSION=	2.5.0
 CATEGORIES=	security
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -9,10 +9,8 @@ WWW=		https://cran.r-project.org/package=openssl
 
 LICENSE=	MIT
 
-CRAN_DEPENDS=	R-cran-askpass>0:security/R-cran-askpass
-BUILD_DEPENDS=	bash:shells/bash \
-		${CRAN_DEPENDS}
-RUN_DEPENDS=	${CRAN_DEPENDS}
+BUILD_DEPENDS=	bash:shells/bash
+RUN_DEPENDS=	R-cran-askpass>0:security/R-cran-askpass
 TEST_DEPENDS=	R-cran-curl>0:ftp/R-cran-curl \
 		R-cran-jose>0:www/R-cran-jose \
 		R-cran-knitr>0:print/R-cran-knitr \

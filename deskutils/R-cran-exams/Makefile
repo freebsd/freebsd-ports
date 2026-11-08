@@ -1,11 +1,10 @@
 PORTNAME=	exams
-DISTVERSION=	2.4-4
+DISTVERSION=	2.4-5
 CATEGORIES=	deskutils education
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Automatic generation of exams in R
-WWW=		https://cran.r-project.org/web/packages/exams/
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	multi

@@ -22,6 +22,11 @@ CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}*${PORTNAME}
 
 NO_ARCH=		yes
 
+# The 2.9.0 release was yanked and the 3.x release contains breaking changes.
+# Its only consumer, net-mgmt/netbox, won't be compatible with newer versions
+# until the upcoming 4.7.x release.
+PORTSCOUT=	limit:2\.8\.
+
 OPTIONS_DEFINE=		TABLIB
 
 TABLIB_DESC=		Enable support for exporting table datasets

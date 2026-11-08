@@ -5,7 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby Client for the Cloud Firestore V1 API
-WWW=		https://cloud.google.com/ruby/docs/reference/google-cloud-firestore-v1/latest/ \
+WWW=		https://docs.cloud.google.com/ruby/docs/reference/google-cloud-firestore-v1/latest \
 		https://github.com/googleapis/google-cloud-ruby/tree/main/google-cloud-firestore-v1 \
 		https://github.com/googleapis/google-cloud-ruby
 

@@ -1,11 +1,14 @@
 PORTNAME=	ljdeps
 PORTVERSION=	1.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	www perl5
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Meta-port to install all the perl modules used by LiveJournal
 WWW=		http://www.livejournal.com/code/
+
+DEPRECATED=	No consumers with nothing to install and no upstream
+EXPIRATION_DATE=	2026-12-13
 
 RUN_DEPENDS=	p5-Net-Telnet>=0:net/p5-Net-Telnet \
 		p5-Image-Size>=0:graphics/p5-Image-Size \

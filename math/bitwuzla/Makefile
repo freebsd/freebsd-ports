@@ -47,10 +47,7 @@ do-test: # 1 test hangs, see https://github.com/bitwuzla/bitwuzla/issues/117
 # Timeout:            0
 
 # tests as of 0.9.1:
-# Summary of Failures:
-#   77/4260 unit+fp - bitwuzla:fp_fp_from                                                            FAIL             1.23s   exit status 1
-# 
-#   Ok:                4259
-#   Fail:              1   
+# Ok:                4260
+# Fail:              0
 
 .include <bsd.port.mk>

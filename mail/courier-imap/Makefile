@@ -1,5 +1,5 @@
 PORTNAME=	courier-imap
-PORTVERSION=	6.0.5
+DISTVERSION=	6.0.7
 PORTEPOCH=	2
 CATEGORIES=	mail
 MASTER_SITES=	SF/courier/imap/${PORTVERSION}
@@ -103,7 +103,7 @@ CONFIGURE_ARGS+=	--with-db=db \
 .endif
 .endif
 
-.if ${PORT_OPTIONS:MINOTIFY} && ${OSVERSION} < 1500500
+.if ${PORT_OPTIONS:MINOTIFY} && (${OSVERSION} < 1405000 || (${OSVERSION} > 1500000 && ${OSVERSION} < 1500500))
 LIB_DEPENDS+=	libinotify.so:devel/libinotify
 .endif
 
@@ -115,7 +115,7 @@ post-patch:
 		${WRKSRC}/Makefile.in
 
 post-patch-INOTIFY-on:
-.if ${OSVERSION} < 1500500
+.if ${OSVERSION} < 1405000 || (${OSVERSION} > 1500000 && ${OSVERSION} < 1500500)
 	@${REINPLACE_CMD} -e 's|LIBS = @LIBS@|& -L${LOCALBASE}/lib -linotify -lpthread|' \
 		${WRKSRC}/libs/maildir/Makefile.in \
 		${WRKSRC}/libs/imap/Makefile.in

@@ -1,0 +1,14 @@
+[
+{ type: install
+  message: <<EOM
+This package contains the sources of the auth_digest module only.  It does not
+install a loadable module.
+
+The module itself is built by the nginx ports.  To use auth_digest, build
+www/nginx, www/nginx-devel or www/freenginx with the HTTP_AUTH_DIGEST option
+enabled.  Those ports pick the sources up from
+%%PREFIX%%/share/nginx/modules/nginx-module-auth-digest and produce
+ngx_http_auth_digest_module.so.
+EOM
+}
+]

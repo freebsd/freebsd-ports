@@ -1,5 +1,6 @@
 PORTNAME=	libcapn
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	gasol.wu@gmail.com
@@ -8,6 +9,9 @@ WWW=		https://github.com/adobkin/libcapn
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	Archived upstream, does not build with CMake 4
+EXPIRATION_DATE=2026-11-30
 
 LIB_DEPENDS=	libjansson.so:devel/jansson
 

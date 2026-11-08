@@ -1,7 +1,7 @@
 PORTNAME=	serf
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.4
-PORTREVISION=	1
+DISTVERSION=	0.11.0
+PORTREVISION=	2
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	hashicorp-
 
@@ -11,7 +11,7 @@ WWW=		https://www.serf.io/
 
 LICENSE=	MPL20
 
-USES=		go:1.25+,modules
+USES=		go:modules
 USE_RC_SUBR=	serf
 
 GO_MODULE=	github.com/hashicorp/serf

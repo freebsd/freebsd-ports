@@ -1,0 +1,7 @@
+Deduper looks for duplicate and near duplicate photos in an Immich library. It
+reads the library over the Immich API and its database, computes an embedding
+for every picture with a local model and keeps the vectors in Qdrant, which
+lets it group pictures that differ only in resolution, crop or compression.
+
+The findings are presented in a web interface, where the copies to keep and
+the ones to delete are picked by hand or by rules.

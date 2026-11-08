@@ -1,6 +1,6 @@
 PORTNAME=	openxpki-clca
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.22
+DISTVERSION=	1.23
 CATEGORIES=	security perl5
 PKGNAMEPREFIX=	p5-
 
@@ -10,13 +10,11 @@ COMMENT=	Toolkit for basic PKI operations in small CA like root CA
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-MY_DEPENDS=	bash:shells/bash \
-		p5-Class-Std>=0:devel/p5-Class-Std \
-		p5-Regexp-Common>=0:textproc/p5-Regexp-Common \
-		p5-Template-Toolkit>=0:www/p5-Template-Toolkit \
-		p5-YAML>=0:textproc/p5-YAML
-BUILD_DEPENDS=	${MY_DEPENDS}
-RUN_DEPENDS=	${MY_DEPENDS}
+BUILD_RUN_DEPENDS=	bash:shells/bash \
+			p5-Class-Std>=0:devel/p5-Class-Std \
+			p5-Regexp-Common>=0:textproc/p5-Regexp-Common \
+			p5-Template-Toolkit>=0:www/p5-Template-Toolkit \
+			p5-YAML>=0:textproc/p5-YAML
 
 USES=		perl5 shebangfix ssl
 USE_GITHUB=	yes
@@ -36,8 +34,6 @@ pre-configure:
 	@${ECHO} "Patching dir names...";
 # shebangfix does not help in the middle of files:
 	${REINPLACE_CMD} -e "s|/usr/bin/perl|${PERL}|g" ${WRKSRC}/bin/clca
-	${REINPLACE_CMD} -e "s|/bin/bash|${LOCALBASE}/bin/bash|g" \
-		${WRKSRC}/README.keyceremony-shared-interactive.md
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/clca ${WRKSRC}/bin/change-quorum.sh \

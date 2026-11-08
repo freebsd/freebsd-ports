@@ -1,6 +1,15 @@
---- CMakeLists.txt.orig	2013-12-01 18:28:12.000000000 +0100
-+++ CMakeLists.txt	2014-03-11 21:56:26.000000000 +0100
-@@ -102,9 +102,9 @@
+--- CMakeLists.txt.orig	2016-02-09 19:18:58 UTC
++++ CMakeLists.txt
+@@ -14,7 +14,7 @@
+ # and provide build configuration options.
+ ######################################################################
+ 
+-cmake_minimum_required(VERSION 2.6.2)
++cmake_minimum_required(VERSION 3.5)
+ set(CMAKE_ALLOW_LOOSE_LOOP_CONSTRUCTS TRUE)
+ cmake_policy(SET CMP0003 NEW)
+ 
+@@ -100,9 +100,9 @@ if (CMAKE_COMPILER_IS_GNUCXX OR CMAKE_COMPILER_IS_CLAN
      set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -msse")
    endif ()
    # This is a set of sensible warnings that provide meaningful output
@@ -12,7 +21,7 @@
    endif ()
    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OGRE_WARNING_FLAGS}")
  endif ()
-@@ -435,6 +435,7 @@
+@@ -427,6 +427,7 @@ set(OGRE_LIB_DIRECTORY "lib${LIB_SUFFIX}" CACHE STRING
  option(OGRE_PROFILING "Enable internal profiling support." FALSE)
  cmake_dependent_option(OGRE_CONFIG_STATIC_LINK_CRT "Statically link the MS CRT dlls (msvcrt)" FALSE "MSVC" FALSE)
  set(OGRE_LIB_DIRECTORY "lib${LIB_SUFFIX}" CACHE STRING "Install path for libraries, e.g. 'lib64' on some 64-bit Linux distros.")
@@ -20,7 +29,7 @@
  if (WIN32)
  	option(OGRE_INSTALL_VSPROPS "Install Visual Studio Property Page." FALSE)
  	if (OGRE_INSTALL_VSPROPS)
-@@ -477,6 +478,7 @@
+@@ -468,6 +469,7 @@ mark_as_advanced(
    OGRE_PROFILING
    OGRE_CONFIG_STATIC_LINK_CRT
    OGRE_LIB_DIRECTORY

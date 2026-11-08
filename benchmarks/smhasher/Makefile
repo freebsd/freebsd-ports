@@ -1,7 +1,7 @@
 PORTNAME=	smhasher
 PORTVERSION=	1.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	benchmarks
 
 PATCH_SITES=	https://github.com/gvnn3/${PORTNAME}/commit/
@@ -11,6 +11,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hash Algorithm Benchmarking
 
 LICENSE=	MIT
+
+DEPRECATED=	Upstream is gone, does not build with CMake 4
+EXPIRATION_DATE=2026-11-30
 
 USES=		cmake:insource
 USE_CXXSTD=	c++14

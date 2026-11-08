@@ -31,9 +31,7 @@
 %%SITE_PERL%%/Finance/Quote/GoogleWeb.pm
 %%SITE_PERL%%/Finance/Quote/IndiaMutual.pm
 %%SITE_PERL%%/Finance/Quote/MarketWatch.pm
-%%SITE_PERL%%/Finance/Quote/MorningstarCH.pm
 %%SITE_PERL%%/Finance/Quote/MorningstarJP.pm
-%%SITE_PERL%%/Finance/Quote/MorningstarUK.pm
 %%SITE_PERL%%/Finance/Quote/NSEIndia.pm
 %%SITE_PERL%%/Finance/Quote/NZX.pm
 %%SITE_PERL%%/Finance/Quote/OnVista.pm
@@ -88,9 +86,7 @@
 %%PERL5_MAN3%%/Finance::Quote::GoogleWeb.3.gz
 %%PERL5_MAN3%%/Finance::Quote::IndiaMutual.3.gz
 %%PERL5_MAN3%%/Finance::Quote::MarketWatch.3.gz
-%%PERL5_MAN3%%/Finance::Quote::MorningstarCH.3.gz
 %%PERL5_MAN3%%/Finance::Quote::MorningstarJP.3.gz
-%%PERL5_MAN3%%/Finance::Quote::MorningstarUK.3.gz
 %%PERL5_MAN3%%/Finance::Quote::NSEIndia.3.gz
 %%PERL5_MAN3%%/Finance::Quote::NZX.3.gz
 %%PERL5_MAN3%%/Finance::Quote::OnVista.3.gz

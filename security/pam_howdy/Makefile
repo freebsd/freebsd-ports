@@ -1,6 +1,6 @@
 PORTNAME=	pam_howdy
 PORTVERSION=	3.0.0.b.20230306
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -9,6 +9,9 @@ WWW=		https://github.com/boltgolt/howdy
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../../../LICENSE
+
+DEPRECATED=	Upstream is comatose, no consumers in Ports
+EXPIRATION_DATE=2026-11-30
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto
 LIB_DEPENDS=	libevdev.so:devel/libevdev \

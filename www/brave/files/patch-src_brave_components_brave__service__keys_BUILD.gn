@@ -1,0 +1,12 @@
+--- src/brave/components/brave_service_keys/BUILD.gn.orig	2026-06-01 00:00:00 UTC
++++ src/brave/components/brave_service_keys/BUILD.gn
+@@ -18,7 +18,8 @@
+   _platform = "android"
+ } else if (target_os == "ios") {
+   _platform = "ios"
+-} else if (target_os == "linux") {
++} else if (target_os == "linux" || target_os == "freebsd") {
++  # FreeBSD uses the Linux service keys.
+   _platform = "linux"
+ } else if (target_os == "mac") {
+   _platform = "macos"

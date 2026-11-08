@@ -1,13 +1,15 @@
 PORTNAME=	poetry-plugin-bundle
-PORTVERSION=	1.7.0
+PORTVERSION=	1.8.0
 CATEGORIES=	devel python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/python-poetry/poetry-plugin-bundle/releases/download/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	poetry_plugin_bundle-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Poetry plugin to bundle projects into various formats
-WWW=		https://github.com/python-poetry/poetry-plugin-bundle
+WWW=		https://python-poetry.org/ \
+		https://github.com/python-poetry/poetry-plugin-bundle
 
 LICENSE=	MIT
 

@@ -1,5 +1,12 @@
 --- CMakeLists.txt.orig	2014-02-20 19:54:58 UTC
 +++ CMakeLists.txt
+@@ -1,5 +1,5 @@ project(gladtex)
+ project(gladtex)
+-cmake_minimum_required(VERSION 2.8.5)
++cmake_minimum_required(VERSION 3.5)
+ 
+ find_package(ZLIB REQUIRED)
+ find_package(PNG REQUIRED)
 @@ -34,7 +34,7 @@ if(POD2MAN)
  if(POD2MAN)
      message(STATUS "found pod2man for generation of documentation: ${POD2MAN}")

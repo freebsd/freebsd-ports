@@ -6,6 +6,7 @@ bin/electron%%ELECTRON_VER_MAJOR%%
 %%DRIVER%%%%DATADIR%%/chromedriver
 %%DATADIR%%/electron
 %%DATADIR%%/gen/electron/buildflags/buildflags.h
+%%DATADIR%%/gen/electron/tsc/typings/electron.d.ts
 %%DATADIR%%/gen/v8/embedded.S
 %%DATADIR%%/libEGL.so
 %%DATADIR%%/libGLESv2.so

@@ -17,6 +17,9 @@ WWW=		https://pypi.org/project/setuptools/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Uses expired lang/python27
+EXPIRATION_DATE=	2026-11-01
+
 USES=		cpe python:2.7 zip
 USE_PYTHON=	allflavors autoplist concurrent distutils
 

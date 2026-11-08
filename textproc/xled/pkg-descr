@@ -1,0 +1,8 @@
+xled is sed and awk for tabular data: the field model of awk, the s///
+substitution of sed, and the live in-memory buffer of ed, applied to
+Excel-style ranges over CSV and DSV files.
+
+Cells are addressed by column letter, by bracketed name, or by range, and
+values stay stringly-typed with explicit casts, so leading zeros and long
+identifiers survive intact.  It never reshapes the table, and every edit can
+be previewed before it is committed.

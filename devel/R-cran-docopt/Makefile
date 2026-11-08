@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Command-Line Interface Specification Language
-WWW=		https://cran.r-project.org/package=docopt
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -1,0 +1,17 @@
+--- ui/zenomodel/CMakeLists.txt.orig	2024-09-30 13:46:54 UTC
++++ ui/zenomodel/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-find_package(Qt5 REQUIRED COMPONENTS Widgets Svg OpenGL)
++find_package(Qt6 REQUIRED COMPONENTS Widgets Svg OpenGL)
+ 
+ file(GLOB_RECURSE source CONFIGURE_DEPENDS *.h *.cpp)
+ 
+@@ -12,6 +12,6 @@ if (ZENO_DEBUG_MSVC)
+     zeno_dbg_msvc(zenomodel)
+ endif()
+ 
+-target_link_libraries(zenomodel PUBLIC Qt5::Widgets)
++target_link_libraries(zenomodel PUBLIC Qt6::Widgets)
+ target_link_libraries(zenomodel PUBLIC zeno)
+ target_include_directories(zenomodel PRIVATE . .. ../include include)
+\ No newline at end of file

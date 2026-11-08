@@ -10,10 +10,9 @@ COMMENT=	Lightweight database abstraction layer
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libPerformance.so:devel/performance \
-		libsqlite3.so:databases/sqlite3
+LIB_DEPENDS=	libPerformance.so:devel/performance
 
-USES=		gnustep mysql pgsql
+USES=		gnustep mysql pgsql sqlite
 USE_GNUSTEP=	base build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	${GNUSTEP_LOCAL_LIBRARIES}

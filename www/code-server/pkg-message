@@ -20,4 +20,20 @@ See:
   ${PREFIX}/share/doc/code-server/README.md
 EOM
 }
+{ message: <<EOM
+Some extensions bundle or download native Linux binaries (language
+servers, debuggers) that do not run on FreeBSD.  Install the native
+tool from ports and point the extension at it, for example:
+
+  pkg install rust-analyzer
+  "rust-analyzer.server.path": "/usr/local/bin/rust-analyzer"
+
+Known extensions and recipes:
+https://github.com/joneum/FreeBSD-CodeServer/blob/main/EXTENSIONS.md
+
+A copy of this document is installed in:
+
+  ${PREFIX}/share/doc/code-server/EXTENSIONS.md
+EOM
+}
 ]

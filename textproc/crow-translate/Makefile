@@ -1,5 +1,5 @@
 PORTNAME=	crow-translate
-DISTVERSION=	4.0.2
+DISTVERSION=	4.1.0
 CATEGORIES=	textproc
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}
 
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libleptonica.so:graphics/leptonica \
 
 USES=		cmake desktop-file-utils gl kde:6 qt:6 xorg
 USE_GL=		opengl
-USE_KDE=	wayland \
+USE_KDE=	iconthemes wayland \
 		ecm:build
 USE_QT=		base multimedia scxml speech \
 		tools:build svg:run

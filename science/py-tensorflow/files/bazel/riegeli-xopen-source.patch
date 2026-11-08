@@ -1,3 +1,9 @@
+-- Fix snappy::Compress() call for snappy >= 1.2 which introduced a
+-- CompressionOptions struct with a constructor instead of an aggregate.
+-- Without this, the brace-initialiser is no longer valid and the build
+-- fails with "cannot convert initializer list argument to 'CompressionOptions'".
+-- See the snappy 1.2.0 API change: https://github.com/google/snappy/compare/1.1.10...1.2.0
+
 --- a/riegeli/bytes/cfile_handle.cc
 +++ b/riegeli/bytes/cfile_handle.cc
 @@ -13,10 +13,12 @@
@@ -158,3 +164,14 @@
  // Make `off_t` 64-bit even on 32-bit systems.
  #undef _FILE_OFFSET_BITS
 
+--- a/riegeli/snappy/snappy_writer.cc
++++ b/riegeli/snappy/snappy_writer.cc
+@@ -267,7 +267,7 @@
+   }
+   ReaderSnappySource source(&src, *size);
+   WriterSnappySink sink(&dest);
+-  snappy::Compress(&source, &sink, {/*level=*/options.compression_level()});
++  snappy::Compress(&source, &sink, snappy::CompressionOptions{options.compression_level()});
+   if (ABSL_PREDICT_FALSE(!dest.ok())) return dest.status();
+   if (ABSL_PREDICT_FALSE(!src.ok())) return src.status();
+   return absl::OkStatus();

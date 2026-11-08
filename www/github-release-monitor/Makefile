@@ -1,6 +1,7 @@
 PORTNAME=	github-release-monitor
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.1
+PORTREVISION=	1
 CATEGORIES=	www
 # For instructions on how to create assets:
 #   https://github.com/DtxdF/port-assets-makejails/tree/main/github-release-monitor
@@ -11,6 +12,9 @@ COMMENT=	Self-hostable application to monitor GitHub repository releases
 WWW=		https://github.com/iamspido/github-release-monitor
 
 LICENSE=	AGPLv3
+
+DEPRECATED=		Cannot upgrade due to linuxisms
+EXPIRATION_DATE=	2026-11-10
 
 USES=		nodejs:current,run
 

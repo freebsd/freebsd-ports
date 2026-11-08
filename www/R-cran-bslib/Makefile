@@ -1,11 +1,11 @@
 PORTNAME=	bslib
-PORTVERSION=	0.11.0
+PORTVERSION=	0.12.0
 CATEGORIES=	www
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Custom 'Bootstrap' 'Sass' Themes for 'shiny' and 'rmarkdown'
-WWW=		https://cran.r-project.org/web/packages/bslib/
+WWW=		https://cran.r-project.org/package=bslib
 
 LICENSE=	MIT
 

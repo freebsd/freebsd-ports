@@ -44,7 +44,7 @@ USE_KDE=	archive bookmarks colorscheme completion config configwidgets \
 		phonon service solid sonnet textwidgets widgetsaddons \
 		windowsystem xmlgui \
 		doctools:build ecm:build
-USE_QT=		base declarative positioning svg webchannel webengine \
+USE_QT=		base declarative positioning svg webchannel \
 		tools:build
 USE_XORG=	ice sm x11 xext
 
@@ -58,5 +58,17 @@ CMAKE_ARGS+=	-DCMAKE_CXX_FLAGS="-DKDE_NO_DEBUG_OUTPUT"
 
 # SHLIB_VER=${KDE_APPLICATIONS_VERSION:R:R} + 15
 PLIST_SUB=	SHLIB_VER=41
+
+OPTIONS_DEFINE=		WEBENGINE
+OPTIONS_DEFAULT_aarch64=	WEBENGINE
+OPTIONS_DEFAULT_amd64=		WEBENGINE
+OPTIONS_DEFAULT_armv7=		WEBENGINE
+OPTIONS_DEFAULT_i386=		WEBENGINE
+OPTIONS_DEFAULT_powerpc64le=	WEBENGINE
+OPTIONS_SUB=		yes
+
+WEBENGINE_DESC=		Web shape plugin (requires QtWebEngine)
+WEBENGINE_USE=		QT=webengine
+WEBENGINE_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_Qt6WebEngineWidgets
 
 .include <bsd.port.mk>

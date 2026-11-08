@@ -17,11 +17,9 @@ USES=		autoreconf:build libtool gmake ncurses
 
 SFSUBDIR=	snapshot_2024-08-12
 
-TARGET_SDIR=	${ARCH:S/amd64/x86_64/}-unknown-${OPSYS:tl}${OSREL}
 CPPFLAGS+=	-I${NCURSESINC}
 
-# Avoid GNU_CONFIGURE as it breaks staging
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 ALL_TARGET=
 
 MAKE_JOBS_UNSAFE=	yes
@@ -30,9 +28,13 @@ PLIST=		${.CURDIR}/pkg-plist.${ARCH}
 
 CONFIGURE_ARGS=	--with-psl
 
-REDUCE_BINS=	${WRKSRC}/pslbuild/${TARGET_SDIR}
+REDUCE_BINS=	${WRKSRC}/pslbuild/${CONFIGURE_TARGET}
 
 OPTIONS_DEFINE=	DOCS
+
+post-patch:
+	@${REINPLACE_CMD} 's,`.*/config.guess`,${CONFIGURE_TARGET},' \
+		${WRKSRC}/scripts/make.sh
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}

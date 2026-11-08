@@ -1,6 +1,5 @@
 PORTNAME=	gsd
-DISTVERSION=	3.4.1
-PORTREVISION=	3
+DISTVERSION=	5.0.1
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,20 +11,17 @@ WWW=		https://bitbucket.org/glotzer/gsd/wiki/Home
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=2.0:math/py-numpy@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.0:math/py-numpy@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils cython autoplist pytest
+USE_PYTHON=	pep517 cython autoplist pytest
 
 TEST_WRKSRC=	${WRKSRC}/gsd/test
-#TEST_ARGS=	--pyargs gsd -p gsd.pytest_plugin_validate --validate # enable this line to run longer tests, see https://gsd.readthedocs.io/en/v2.6.0/installation.html#run-tests
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
-post-extract: # force cythonization because pre-cythonized fl.c fails to complile
-	@${RM} ${WRKSRC}/gsd/fl.c
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/gsd/fl*.so
+# tests as of 5.0.1: 151 passed, 1 warning in 13.30s
 
 .include <bsd.port.mk>

@@ -1,6 +1,5 @@
 PORTNAME=	sorl-thumbnail
-DISTVERSION=	13.0.0
-PORTREVISION=	1
+DISTVERSION=	13.4.0
 CATEGORIES=	graphics python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=8:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django52>=4.2:www/py-django52@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django52>=5.2:www/py-django52@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517
@@ -33,7 +32,7 @@ OPTIONS_GROUP=		CACHING
 
 # An PGMAGICK option would still be possible as well, but the ports tree does
 # not yet have a py-pgmagick port.
-OPTIONS_SINGLE_IMAGELIB=	GRAPHICSMAGICK IMAGEMAGICK PILLOW WAND
+OPTIONS_SINGLE_IMAGELIB=	GRAPHICSMAGICK IMAGEMAGICK PILLOW VIPS WAND
 OPTIONS_GROUP_CACHING=		REDIS
 
 DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR}
@@ -42,12 +41,14 @@ GRAPHICSMAGICK_RUN_DEPENDS=	${LOCALBASE}/bin/gm:graphics/GraphicsMagick
 IMAGEMAGICK_USES=		magick:6,run
 PILLOW_RUN_DEPENDS=		${PY_PILLOW}
 REDIS_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}redis>0:databases/py-redis@${PY_FLAVOR}
-WAND_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}Wand>0:graphics/py-wand@${PY_FLAVOR}
+VIPS_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}pyvips>0:graphics/py-pyvips@${PY_FLAVOR}
+WAND_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}wand>0:graphics/py-wand@${PY_FLAVOR}
 
 GRAPHICSMAGICK_DESC=	Use GraphicsMagick for image processing (faster)
 IMAGEMAGICK_DESC=	Use ImageMagick for image processing
 PILLOW_DESC=		Use internal image processing
 REDIS_DESC=		Use REDIS as Key Value Store
+VIPS_DESC=		Use libvips for image processing
 WAND_DESC=		Use Wand with ImageMagick
 
 post-build-DOCS-on:
@@ -58,6 +59,6 @@ post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/build/sphinx/html && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} \
-			"! -name .buildinfo -and ! -name objects.inv")
+			"! -name .buildinfo -and ! -name objects.inv -and ! -name _images")
 
 .include <bsd.port.mk>

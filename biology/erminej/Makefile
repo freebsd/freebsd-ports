@@ -5,7 +5,7 @@ CATEGORIES=	biology java
 MASTER_SITES=	http://home.pavlab.msl.ubc.ca/ermineJ/distributions/
 DISTNAME=	ermineJ-${DISTVERSION}-generic-bundle
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Analyses of gene sets such as gene expression profiling studies
 WWW=		https://erminej.msl.ubc.ca/
 

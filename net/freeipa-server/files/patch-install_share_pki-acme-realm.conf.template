@@ -1,0 +1,10 @@
+--- install/share/pki-acme-realm.conf.template.orig	2026-07-16 09:36:59 UTC
++++ install/share/pki-acme-realm.conf.template
+@@ -4,6 +4,6 @@ url=ldaps://$FQDN:636
+ groupsDN=ou=groups,o=ipaca
+ usersDN=ou=people,o=ipaca
+ url=ldaps://$FQDN:636
+-configFile=/etc/pki/pki-tomcat/ca/CS.cfg
++configFile=/var/db/pki/pki-tomcat/conf/ca/CS.cfg
+ username=$USER
+ password=$PASSWORD

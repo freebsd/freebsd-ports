@@ -17,6 +17,7 @@ GH_TAGNAME=	f8c5354
 USE_LDCONFIG=	yes
 
 CMAKE_OFF=	FXDIV_BUILD_TESTS FXDIV_BUILD_BENCHMARKS
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4 compatibility, see https://github.com/Maratyszcza/FXdiv/issues/7
 
 NO_BUILD=	yes
 NO_ARCH=	yes

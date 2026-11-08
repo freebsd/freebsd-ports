@@ -1,11 +1,18 @@
 PORTNAME=	brlcad
 PORTVERSION=	7.32.6
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	https://github.com/BRL-CAD/brlcad/releases/download/rel-${PORTVERSION:S/./-/g}/
 
 MAINTAINER=	ports@freebsd.org
 COMMENT=	CSG modelling system from the US Ballistic Research Laboratory
 WWW=		https://brlcad.org/
+
+DEPRECATED=	Unmaintained port depends on ancient compiler (llvm14) and doesn't build with ssp
+EXPIRATION_DATE=	2027-01-31
+
+BROKEN_FreeBSD_15=	Attempts to redeclare ssp string functions (strlcat, strlcpy)
+BROKEN_FreeBSD_16=	Attempts to redeclare ssp string functions (strlcat, strlcpy)
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -27,7 +34,6 @@ USE_XORG=	ice sm x11 xau xcb xdamage xdmcp xext xfixes xft xi \
 
 CMAKE_OFF=	BRLCAD_ENABLE_STRICT
 CMAKE_INSTALL_PREFIX=	${PREFIX}/${PORTNAME}
-CXXFLAGS_powerpc64=	-mvsx
 
 TEST_TARGET=	check
 

@@ -1,4 +1,4 @@
---- tddb/CMakeLists.txt.orig	2025-05-09 16:50:17 UTC
+--- tddb/CMakeLists.txt.orig	2026-10-08 21:02:52 UTC
 +++ tddb/CMakeLists.txt
 @@ -48,7 +48,7 @@ set(TDDB_SOURCE
    td/db/detail/RawSqliteDb.h
@@ -9,3 +9,13 @@
  target_include_directories(tddb PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>)
  target_link_libraries(tddb PUBLIC tdactor tdutils PRIVATE tdsqlite)
  
+@@ -63,3 +63,9 @@ endif()
+     ARCHIVE DESTINATION "${CMAKE_INSTALL_LIBDIR}"
+   )
+ endif()
++
++# Add SOVERSION to shared libraries
++set_target_properties(tddb PROPERTIES 
++        VERSION ${PROJECT_VERSION}
++        SOVERSION ${PROJECT_VERSION_MAJOR}
++        EXPORT_NAME tddb )

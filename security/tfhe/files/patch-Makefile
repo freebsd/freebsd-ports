@@ -1,6 +1,16 @@
---- Makefile.orig	2019-10-11 03:02:18 UTC
+--- Makefile.orig	2020-04-14 09:12:31 UTC
 +++ Makefile
-@@ -17,13 +17,13 @@ clean: build
+@@ -1,7 +1,8 @@ CMAKE_TESTS_OPTS=-DENABLE_TESTS=on -DENABLE_FFTW=on \
+ CMAKE_COMPILER_OPTS=
+ CMAKE_TESTS_OPTS=-DENABLE_TESTS=on -DENABLE_FFTW=on \
+ 		 -DENABLE_NAYUKI_PORTABLE=on -DENABLE_NAYUKI_AVX=on \
+-		 -DENABLE_SPQLIOS_AVX=on -DENABLE_SPQLIOS_FMA=on
++		 -DENABLE_SPQLIOS_AVX=on -DENABLE_SPQLIOS_FMA=on \
++		 -DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility
+ CMAKE_DTESTS_OPTS=${CMAKE_COMPILER_OPTS} -DCMAKE_BUILD_TYPE=debug ${CMAKE_TESTS_OPTS}
+ CMAKE_OTESTS_OPTS=${CMAKE_COMPILER_OPTS} -DCMAKE_BUILD_TYPE=optim ${CMAKE_TESTS_OPTS}
+ 
+@@ -17,14 +18,14 @@ distclean:
  distclean:
  	rm -rf build builddtests buildotests; true
  
@@ -12,7 +22,9 @@
  	make -j $(nproc) -C buildotests test VERBOSE=1
  
 -build: src/test/googletest/CMakeLists.txt
+-	mkdir build; cd build; cmake ../src; cd ..
 +build: #src/test/googletest/CMakeLists.txt
- 	mkdir build; cd build; cmake ../src; cd ..
++	mkdir build; cd build; cmake -DCMAKE_POLICY_VERSION_MINIMUM=3.5 ../src; cd ..
  
  builddtests:
+ 	rm -rf $@; true; mkdir $@; 

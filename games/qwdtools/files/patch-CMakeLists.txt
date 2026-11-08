@@ -1,5 +1,11 @@
---- CMakeLists.txt.orig	2024-12-27 17:43:52 UTC
+--- CMakeLists.txt.orig	2022-09-05 22:01:16 UTC
 +++ CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 3.4.0)
++cmake_minimum_required(VERSION 3.5.0)
+ 
+ set(CMAKE_VERBOSE_MAKEFILE ON)
+ 
 @@ -71,7 +71,7 @@ if(IS_BIG_ENDIAN)
  include (TestBigEndian)
  TEST_BIG_ENDIAN(IS_BIG_ENDIAN)

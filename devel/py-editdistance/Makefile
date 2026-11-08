@@ -1,6 +1,5 @@
 PORTNAME=	editdistance
-PORTVERSION=	0.6.2
-PORTREVISION=	1
+PORTVERSION=	0.8.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,17 +11,18 @@ WWW=		https://github.com/roy-ht/editdistance
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pdm-backend>=0:devel/py-pdm-backend@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent cython pep517
 
-post-patch:
-# https://github.com/roy-ht/editdistance/blob/master/editdistance/bycython.pyx
-	@${CP} ${FILESDIR}/bycython.pyx ${WRKSRC}/editdistance/bycython.pyx
-
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} >= 31200
+BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}setuptools>=40.8.0:devel/py-setuptools@${PY_FLAVOR}
+.endif
+
+.include <bsd.port.post.mk>

@@ -1,0 +1,9 @@
+TIMESTAMP = 1790193278
+SHA256 (rocky/w/webkit2gtk3-2.54.0-1.el9_8.aarch64.rpm) = 2a96a105688aa7e46ba03837338ef3efd2dcdada0be3d726d78e84d18b984e95
+SIZE (rocky/w/webkit2gtk3-2.54.0-1.el9_8.aarch64.rpm) = 30313311
+SHA256 (rocky/w/webkit2gtk3-2.54.0-1.el9_8.i686.rpm) = b168d514b79af43525e6efa3cf079e8eaf5daefd0ef1a1faf9d1f77afd1169ee
+SIZE (rocky/w/webkit2gtk3-2.54.0-1.el9_8.i686.rpm) = 30865196
+SHA256 (rocky/w/webkit2gtk3-2.54.0-1.el9_8.x86_64.rpm) = 9fcc905ee21d4bd5dd76b63b3f38fbd53f4b1408745b33fdbfc8bff924e4f523
+SIZE (rocky/w/webkit2gtk3-2.54.0-1.el9_8.x86_64.rpm) = 31810718
+SHA256 (rocky/w/webkit2gtk3-2.54.0-1.el9_8.src.rpm) = 49210fb826ce20617fb1406de1fae9ffe2038c16b1e02b5ff754b42ab2cecd4c
+SIZE (rocky/w/webkit2gtk3-2.54.0-1.el9_8.src.rpm) = 49797224

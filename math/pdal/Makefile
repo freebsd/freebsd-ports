@@ -1,16 +1,12 @@
 PORTNAME=	pdal
-DISTVERSION=	2.8.4
-PORTREVISION=	8
+DISTVERSION=	2.9.0
 CATEGORIES=	math databases graphics
 MASTER_SITES=	https://github.com/PDAL/PDAL/releases/download/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
-PATCH_SITES=	https://github.com/PDAL/PDAL/commit/
-PATCHFILES=	eb7220a2447c5b3d208d7ef0a76c61a17a5b21da.patch:-p1
-
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Library for translating and manipulating point cloud data
-WWW=		https://www.pdal.io
+WWW=		https://www.pdal.org
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
@@ -71,8 +67,6 @@ MBIO_CMAKE_BOOL=	BUILD_PLUGIN_MBIO
 
 PGPOINTCLOUD_CMAKE_BOOL=	BUILD_PLUGIN_PGPOINTCLOUD
 PGPOINTCLOUD_USES=	pgsql
-
-CXXFLAGS_powerpc64=	-mvsx
 
 pre-install-BASH-on:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/bash-completion/completions

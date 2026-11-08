@@ -1,0 +1,17 @@
+--- src/locker/meson.build.orig	2026-08-02 19:12:39 UTC
++++ src/locker/meson.build
+@@ -18,10 +18,13 @@ deps = [
+   wfconfig,
+   xkbregistry,
+   json,
+-  pam,
+   openssl,
+   epoxy,
+ ]
++
++if build_machine.system() != 'freebsd'
++  deps += [pam]
++endif
+ 
+ if libpulse.found()
+   widget_sources += 'plugin/volume.cpp'

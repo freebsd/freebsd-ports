@@ -1,8 +1,8 @@
 PORTNAME=	redis
-DISTVERSION=	8.8.1
+DISTVERSION=	8.8.4
 CATEGORIES=	databases
 MASTER_SITES=	https://download.redis.io/releases/
-PKGNAMESUFFIX=	86
+PKGNAMESUFFIX=	88
 
 MAINTAINER=	bofh@freebsd.org
 COMMENT=	Persistent key-value database with built-in net interface(8.8.X)

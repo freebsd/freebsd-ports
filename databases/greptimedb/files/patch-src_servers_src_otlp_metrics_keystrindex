@@ -1,0 +1,60 @@
+-- Add the key_strindex field required by opentelemetry-proto 0.32.0
+-- to KeyValue struct literals in the OTLP metrics code.
+--- src/servers/src/otlp/metrics.rs.orig	2026-10-28 04:04:51.000000000 -0700
++++ src/servers/src/otlp/metrics.rs
+@@ -392,6 +392,7 @@
+ fn string_key_value(key: &str, value: String) -> KeyValue {
+     KeyValue {
+         key: key.to_string(),
++        key_strindex: 0,
+         value: Some(AnyValue {
+             value: Some(any_value::Value::StringValue(value)),
+         }),
+@@ -438,18 +439,21 @@
+         let mut attrs = s.attributes.clone();
+         attrs.push(KeyValue {
+             key: OTEL_SCOPE_NAME.to_string(),
++            key_strindex: 0,
+             value: Some(AnyValue {
+                 value: Some(any_value::Value::StringValue(s.name.clone())),
+             }),
+         });
+         attrs.push(KeyValue {
+             key: OTEL_SCOPE_VERSION.to_string(),
++            key_strindex: 0,
+             value: Some(AnyValue {
+                 value: Some(any_value::Value::StringValue(s.version.clone())),
+             }),
+         });
+         attrs.push(KeyValue {
+             key: OTEL_SCOPE_SCHEMA_URL.to_string(),
++            key_strindex: 0,
+             value: Some(AnyValue {
+                 value: Some(any_value::Value::StringValue(scope.schema_url.clone())),
+             }),
+@@ -1566,6 +1570,7 @@
+     fn keyvalue(key: &str, value: &str) -> KeyValue {
+         KeyValue {
+             key: key.into(),
++            key_strindex: 0,
+             value: Some(AnyValue {
+                 value: Some(Val::StringValue(value.into())),
+             }),
+@@ -1575,6 +1580,7 @@
+     fn bool_keyvalue(key: &str, value: bool) -> KeyValue {
+         KeyValue {
+             key: key.into(),
++            key_strindex: 0,
+             value: Some(AnyValue {
+                 value: Some(Val::BoolValue(value)),
+             }),
+--- src/servers/src/otlp/metrics/resource_info.rs.orig	2026-10-28 04:04:51.000000000 -0700
++++ src/servers/src/otlp/metrics/resource_info.rs
+@@ -237,6 +237,7 @@
+     fn kv(key: &str, value: &str) -> KeyValue {
+         KeyValue {
+             key: key.into(),
++            key_strindex: 0,
+             value: Some(AnyValue {
+                 value: Some(any_value::Value::StringValue(value.into())),
+             }),

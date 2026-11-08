@@ -1,4 +1,4 @@
---- chrome/browser/extensions/api/api_browser_context_keyed_service_factories.cc.orig	2026-06-04 10:12:25 UTC
+--- chrome/browser/extensions/api/api_browser_context_keyed_service_factories.cc.orig	2026-08-31 10:59:09 UTC
 +++ chrome/browser/extensions/api/api_browser_context_keyed_service_factories.cc
 @@ -55,7 +55,7 @@
  

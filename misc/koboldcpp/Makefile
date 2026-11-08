@@ -1,6 +1,6 @@
 PORTNAME=	koboldcpp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.115.2
+DISTVERSION=	1.123.1
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,6 +12,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 #BROKEN_armv7=	compilation fails, see https://github.com/LostRuins/koboldcpp/issues/1129
 #BROKEN_i386=	compilation fails, see https://github.com/LostRuins/koboldcpp/issues/1129
+
+ONLY_FOR_ARCHS=	amd64 powerpc64le
+ONLY_FOR_ARCHS_REASON=	ggml only reads little-endian GGUF files
 
 FLAVORS=	default portable
 FLAVOR?=	${FLAVORS:[1]}
@@ -31,23 +34,33 @@ GH_ACCOUNT=	LostRuins
 SHEBANG_FILES=	koboldcpp.py
 
 .if ${FLAVOR} == default
-LIBS=	koboldcpp_default.so koboldcpp_vulkan.so
+LIBS=	koboldcpp_default.so
 MAKE_ARGS=	PRESET_CFLAGS="${CFLAGS}" PRESET_CXXFLAGS="${CXXFLAGS}"
 .endif
 .if ${FLAVOR} == portable
 MAKE_ARGS=	LLAMA_PORTABLE=1
-LIBS=	koboldcpp_default.so koboldcpp_failsafe.so koboldcpp_noavx2.so \
-	koboldcpp_vulkan.so koboldcpp_vulkan_noavx2.so
+LIBS=	koboldcpp_default.so koboldcpp_failsafe.so koboldcpp_noavx2.so
 .endif
 
-MAKE_ARGS+=	LLAMA_OPENBLAS=1 LLAMA_VULKAN=1 LDFLAGS="${LDFLAGS}"
+MAKE_ARGS+=	LLAMA_OPENBLAS=1 LDFLAGS="${LDFLAGS}"
 
 ALL_TARGET=
 
 PLIST_FILES=	${LIBS:S/^/%%DATADIR%%\//}
 
+OPTIONS_DEFINE=		VULKAN
+VULKAN_DESC=		Build with Vulkan support
+VULKAN_MAKE_ARGS=	LLAMA_VULKAN=1
+VULKAN_BROKEN=		shaderc doesn't support latest features of glslc, see https://github.com/google/shaderc/issues/1590
+
 .if defined(WITH_DEBUG)
 MAKE_ARGS+=	KCPP_DEBUG=1
+.endif
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MVULKAN}
+PLIST_FILES+=	%%DATADIR%%/koboldcpp_vulkan.so
 .endif
 
 post-patch:
@@ -74,9 +87,12 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/embd_res/${embd} ${STAGEDIR}${DATADIR}/embd_res/${embd}
 .endfor
 
+do-install-VULKAN-on:
+	${INSTALL_LIB} ${WRKSRC}/koboldcpp_vulkan.so ${STAGEDIR}${DATADIR}
+
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != amd64
+.if ${FLAVOR} == portable && ${ARCH} != amd64
 IGNORE=	portable flavor isn't defined on ${ARCH} because it is based on AVX2, etc. (?)
 .endif
 

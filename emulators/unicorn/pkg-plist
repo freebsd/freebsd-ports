@@ -13,4 +13,5 @@ include/unicorn/x86.h
 lib/libunicorn.a
 lib/libunicorn.so
 lib/libunicorn.so.2
+lib/unicorn.o
 libdata/pkgconfig/unicorn.pc

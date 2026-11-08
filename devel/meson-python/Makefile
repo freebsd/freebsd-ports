@@ -1,5 +1,5 @@
 PORTNAME=	meson-python
-DISTVERSION=	0.18.0
+DISTVERSION=	0.22.1
 PORTEPOCH=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
@@ -26,8 +26,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}build>0:devel/py-build@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-cov>0:devel/py-pytest-cov@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-mock>0:devel/py-pytest-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR} \
-		${PY_TYPING_EXTENSIONS} \
 		git:devel/git
+#		${PYTHON_PKGNAMEPREFIX}pip>=24.1.b1:devel/py-pip@${PY_FLAVOR} \
 
 USES=		python
 USE_PYTHON=	autoplist concurrent cython_test pep517 pytest

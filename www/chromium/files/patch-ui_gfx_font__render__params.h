@@ -1,15 +1,21 @@
---- ui/gfx/font_render_params.h.orig	2025-01-15 09:18:26 UTC
+--- ui/gfx/font_render_params.h.orig	2026-08-12 09:02:10 UTC
 +++ ui/gfx/font_render_params.h
-@@ -115,7 +115,7 @@ COMPONENT_EXPORT(GFX)
+@@ -115,12 +115,12 @@ COMPONENT_EXPORT(GFX)
  FontRenderParams GetFontRenderParams(const FontRenderParamsQuery& query,
                                       std::string* family_out);
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
- // Clears GetFontRenderParams()'s cache. Intended to be called by tests that are
- // changing Fontconfig's configuration.
- COMPONENT_EXPORT(GFX) void ClearFontRenderParamsCacheForTest();
-@@ -125,7 +125,7 @@ COMPONENT_EXPORT(GFX) void ClearFontRenderParamsCacheF
+ // Clears GetFontRenderParams()'s cache.
+ COMPONENT_EXPORT(GFX) void ClearFontRenderParamsCache();
+ #endif
+ 
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+ // TODO(crbug.com/517630459) Return this to `ForTesting()` after per display
+ // subpixel rendering is implemented.
+ COMPONENT_EXPORT(GFX) bool GetFontRenderParamsSubpixelRenderingEnabled();
+@@ -130,7 +130,7 @@ COMPONENT_EXPORT(GFX) bool GetFontRenderParamsSubpixel
  COMPONENT_EXPORT(GFX) float GetFontRenderParamsDeviceScaleFactor();
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \

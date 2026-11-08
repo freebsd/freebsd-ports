@@ -24,7 +24,6 @@ CRAN_DEPENDS=	R-cran-bit64>0:devel/R-cran-bit64 \
 		R-cran-tzdb>=0.1.1:devel/R-cran-tzdb \
 		R-cran-vctrs>=0.2.0:devel/R-cran-vctrs \
 		R-cran-withr>0:devel/R-cran-withr
-BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 TEST_DEPENDS=	R-cran-dplyr>0:math/R-cran-dplyr \
 		R-cran-forcats>0:math/R-cran-forcats \

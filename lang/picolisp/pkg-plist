@@ -62,6 +62,7 @@ lib/picolisp/img/no.png
 lib/picolisp/lib.css
 lib/picolisp/lib.l
 lib/picolisp/lib/adm.l
+lib/picolisp/lib/ai.l
 lib/picolisp/lib/app.l
 lib/picolisp/lib/bash_completion
 lib/picolisp/lib/btree.l
@@ -102,6 +103,7 @@ lib/picolisp/lib/too.l
 lib/picolisp/lib/ulimit.l
 lib/picolisp/lib/user.l
 lib/picolisp/lib/vip.l
+lib/picolisp/lib/vip/ai.rc.l
 lib/picolisp/lib/vip/cal.rc.l
 lib/picolisp/lib/vip/draw.l
 lib/picolisp/lib/vip/html.l

@@ -29,6 +29,7 @@ stop_cmd=":"
 
 firstboot_pkg_upgrade_run()
 {
+	export IGNORE_OSVERSION=YES
 	repo_args=""
 
 	for repo in ${firstboot_pkg_upgrade_repos}; do

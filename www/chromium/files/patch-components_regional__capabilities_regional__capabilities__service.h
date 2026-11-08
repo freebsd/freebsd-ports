@@ -1,6 +1,6 @@
---- components/regional_capabilities/regional_capabilities_service.h.orig	2026-07-01 06:24:19 UTC
+--- components/regional_capabilities/regional_capabilities_service.h.orig	2026-09-25 15:26:43 UTC
 +++ components/regional_capabilities/regional_capabilities_service.h
-@@ -123,7 +123,7 @@ class RegionalCapabilitiesService : public KeyedServic
+@@ -132,7 +132,7 @@ class RegionalCapabilitiesService : public KeyedServic
    static bool IsInAnySearchEngineChoiceScreenRegion(
        const country_codes::CountryId& tested_country_id);
  

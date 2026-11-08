@@ -1,8 +1,8 @@
  FreeBSD supports pthread affinity: pthread_affinity_np(3).
 
---- src/osd/sdl/sdlprefix.h.orig	2022-04-29 05:37:26 UTC
+--- src/osd/sdl/sdlprefix.h.orig	2026-07-29 15:13:25 UTC
 +++ src/osd/sdl/sdlprefix.h
-@@ -45,9 +45,9 @@
+@@ -29,9 +29,9 @@
  
  #elif defined(__FreeBSD__)
  #define SDLMAME_FREEBSD 1

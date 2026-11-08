@@ -1,0 +1,8 @@
+The accept_language module picks a language for the request out of the
+client's Accept-Language header and puts it into a variable, chosen from a
+list the server can serve.  The weights decide: a client asking for English
+and settling for German gets English, a language it refuses outright is
+never chosen, and where it expressed no preference the server's list does.
+
+This port only installs the module sources.  The module itself is built by
+the nginx ports when their HTTP_ACCEPT_LANGUAGE option is enabled.

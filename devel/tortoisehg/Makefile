@@ -1,5 +1,5 @@
 PORTNAME=	tortoisehg
-DISTVERSION=	7.0.1
+DISTVERSION=	7.2.2
 CATEGORIES=	devel
 MASTER_SITES=	https://www.mercurial-scm.org/release/tortoisehg/targz/
 
@@ -10,14 +10,15 @@ WWW=		https://tortoisehg.bitbucket.io/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-BUILD_DEPENDS=	${PY_MERCURIAL}
+BUILD_DEPENDS=	${PY_MERCURIAL} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PY_MERCURIAL} \
 		${PYTHON_PKGNAMEPREFIX}iniparse>=0.4:devel/py-iniparse@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pygments>=0:textproc/py-pygments@${PY_FLAVOR}
 
 USES=		pyqt:6 python
 USE_PYQT=	qscintilla2 pyqt6
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist pep517
 
 OPTIONS_DEFINE=	NAUTILUS NLS
 NAUTILUS_DESC=	Install TortoiseHG Nautilus extension
@@ -27,6 +28,9 @@ NLS_USES=	gettext
 
 NO_ARCH=	yes
 SUB_FILES=	pkg-message
+
+PLIST_FILES=	share/applications/thg.desktop \
+		${DATADIR}/mergetools.rc
 
 # Do not conflict with devel/mercurial, which also installs hgext3rd/__init__.py
 EXTRACT_AFTER_ARGS=    --exclude ${PORTNAME}-${DISTVERSION}/hgext3rd/__init__.py

@@ -1,0 +1,32 @@
+--- pyproject.toml.orig	2026-06-17 11:16:15 UTC
++++ pyproject.toml
+@@ -1,15 +1,14 @@
+ [build-system]
+-requires = ["setuptools>=77"]
++requires = ["setuptools>=61"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+-name = "SpeechRecognition"
++name = "speechrecognition"
+ dynamic = ["version"]
+ description = "Library for performing speech recognition, with support for several engines and APIs, online and offline."
+ readme = { file = "README.rst", content-type = "text/x-rst" }
+ requires-python = ">=3.9"
+-license = "BSD-3-Clause"
+-license-files = ["LICENSE.txt", "LICENSE-FLAC.txt"]
++license = { text = "BSD-3-Clause" }
+ authors = [
+   { name = "Anthony Zhang (Uberi)", email = "azhang9@gmail.com" },
+ ]
+@@ -94,10 +93,6 @@ speech_recognition = [
+ [tool.setuptools.package-data]
+ speech_recognition = [
+   "version.txt",
+-  "flac-linux-x86",
+-  "flac-linux-x86_64",
+-  "flac-mac",
+-  "flac-win32.exe",
+   "pocketsphinx-data/**/*",
+ ]
+ 

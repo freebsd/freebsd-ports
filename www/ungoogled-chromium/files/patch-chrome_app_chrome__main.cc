@@ -1,6 +1,6 @@
---- chrome/app/chrome_main.cc.orig	2026-06-05 13:45:06 UTC
+--- chrome/app/chrome_main.cc.orig	2026-10-31 12:09:36 UTC
 +++ chrome/app/chrome_main.cc
-@@ -29,11 +29,11 @@
+@@ -36,11 +36,11 @@
  #include "chrome/common/mac/detect_inappropriate_exit.h"
  #endif
  
@@ -14,7 +14,7 @@
  #include "chrome/app/chrome_main_linux.h"
  #endif
  
-@@ -86,7 +86,7 @@ int ChromeMain(int argc, const char** argv) {
+@@ -110,7 +110,7 @@ int ChromeMain(int argc, const char** argv) {
  #error Unknown platform.
  #endif
  
@@ -23,7 +23,7 @@
    PossiblyDetermineFallbackChromeChannel(argv[0]);
  #endif
  
-@@ -153,7 +153,7 @@ int ChromeMain(int argc, const char** argv) {
+@@ -183,7 +183,7 @@ int ChromeMain(int argc, const char** argv) {
    SetUpBundleOverrides();
  #endif
  

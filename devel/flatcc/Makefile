@@ -1,6 +1,6 @@
 PORTNAME=	flatcc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.3
+DISTVERSION=	0.6.4
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -28,6 +28,6 @@ do-test:
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
 
-# tests as of 0.6.3: 100% tests passed, 0 tests failed out of 23
+# tests as of 0.6.4: 100% tests passed, 0 tests failed out of 23
 
 .include <bsd.port.mk>

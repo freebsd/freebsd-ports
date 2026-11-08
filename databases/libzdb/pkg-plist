@@ -10,6 +10,6 @@ include/zdb/zdb.h
 include/zdb/zdbpp.h
 lib/libzdb.a
 lib/libzdb.so
-lib/libzdb.so.18
-lib/libzdb.so.18.0.0
+lib/libzdb.so.19
+lib/libzdb.so.19.0.0
 libdata/pkgconfig/zdb.pc

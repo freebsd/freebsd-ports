@@ -10,6 +10,9 @@ WWW=		https://github.com/sagemath/cypari2
 
 LICENSE=	GPLv2
 
+# See https://github.com/sagemath/cypari2/pull/233 and https://github.com/sagemath/cypari2/pull/234
+BROKEN=		broken with PARI 2.19
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}	\
 		${PYTHON_PKGNAMEPREFIX}cysignals>0:devel/py-cysignals@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR}

@@ -1,5 +1,5 @@
 PORTNAME=	translate-toolkit
-PORTVERSION=	3.19.13
+PORTVERSION=	3.20.0
 CATEGORIES=	textproc
 MASTER_SITES=	PYPI \
 		https://github.com/translate/translate/releases/download/${PORTVERSION}/
@@ -10,7 +10,7 @@ COMMENT=	Tools and API for translation and localization engineering
 WWW=		https://toolkit.translatehouse.org/ \
 		https://github.com/translate/translate
 
-LICENSE=	GPLv2
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FLAVOR} \
@@ -20,7 +20,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		msghack:devel/gettext-msghack \
 		${PYTHON_PKGNAMEPREFIX}lxml>=6.1.0<7.0:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}unicode-segmentation-rs>=0.2.0<0.3:textproc/py-unicode-segmentation-rs@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}unicode-segmentation-rs>=0.2.0<0.4:textproc/py-unicode-segmentation-rs@${PY_FLAVOR}
 
 USES=		gettext python:3.11+ shebangfix
 USE_PYTHON=	autoplist noflavors pep517
@@ -45,6 +45,7 @@ MANPAGES=	android2po \
 		mdx2po \
 		moz2po \
 		mozlang2po \
+		odf2po \
 		odf2xliff \
 		oo2po \
 		oo2xliff \
@@ -120,14 +121,14 @@ ICAL_VARS=		MANPAGES+="ical2po po2ical"
 INI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}iniparse>=0.5:devel/py-iniparse@${PY_FLAVOR}
 INI_VARS=		MANPAGES+="ini2po po2ini"
 LEVENSHTEIN_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}rapidfuzz>=3.14.0:devel/py-rapidfuzz@${PY_FLAVOR}
-MARKDOWN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mistletoe>=1.4.0<1.6.0:textproc/py-mistletoe@${PY_FLAVOR}
+MARKDOWN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mistletoe>=1.4.0<1.7.0:textproc/py-mistletoe@${PY_FLAVOR}
 MARKDOWN_VARS=		MANPAGES+="md2po po2md"
 PHP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}phply>=1.2.6<1.3:devel/py-phply@${PY_FLAVOR}
 PHP_VARS=		MANPAGES+="php2po po2php"
 RC_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}pyparsing>=3.2.0<3.4:devel/py-pyparsing@${PY_FLAVOR}
 RC_VARS=		MANPAGES+="po2rc rc2po"
 SPELLCHECK_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}enchant>=3.3.0:textproc/py-enchant@${PY_FLAVOR}
-SUBTITLES_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aeidon>=1.15<1.17:textproc/py-aeidon@${PY_FLAVOR}
+SUBTITLES_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aeidon>=1.15<2.1:textproc/py-aeidon@${PY_FLAVOR}
 TOML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tomlkit>=0.13.0<0.16.0:textproc/py-tomlkit@${PY_FLAVOR}
 TOML_VARS=		MANPAGES+="toml2po po2toml"
 YAML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ruamel.yaml>=0.19.1<0.20.0:devel/py-ruamel.yaml@${PY_FLAVOR}

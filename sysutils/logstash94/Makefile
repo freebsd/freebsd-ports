@@ -1,5 +1,5 @@
 PORTNAME=	logstash
-DISTVERSION=	9.4.1
+DISTVERSION=	9.4.9
 DISTVERSIONSUFFIX=	-darwin-x86_64
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://artifacts.elastic.co/downloads/logstash/ \
@@ -12,13 +12,13 @@ WWW=		https://www.elastic.co/products/logstash
 
 LICENSE=	APACHE20
 
-ONLY_FOR_ARCHS=	aarch64 amd64
+ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le
 
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		cpe java:run shebangfix
 CPE_VENDOR=	elastic
-JAVA_VERSION=	25 21 17
+JAVA_VERSION=	21
 USE_RC_SUBR=	${PORTNAME}
 
 SHEBANG_FILES=	bin/*
@@ -27,6 +27,10 @@ CONFLICTS=	${PORTNAME}*
 
 EXTRACT_AFTER_ARGS=	--exclude jdk.app \
 			--exclude *.bat \
+			--exclude vendor/jruby/lib/ruby/stdlib/libfixposix/binary/*-darwin \
+			--exclude vendor/jruby/lib/ruby/stdlib/libfixposix/binary/*-linux \
+			--exclude vendor/jruby/lib/ruby/stdlib/libfixposix/binary/x86-freebsd \
+			--exclude vendor/jruby/lib/ruby/stdlib/libfixposix/binary/${ARCH:Namd64:C|.+|x86_64|}-freebsd \
 			--no-same-owner --no-same-permissions
 
 NO_BUILD=	yes
@@ -35,7 +39,8 @@ SUB_FILES=	pkg-message
 SUB_LIST=	JAVA_HOME=${JAVA_HOME} \
 		LOGSTASH_HOME=${LOGSTASH_HOME} \
 		LOGUSER=${LOGUSER} \
-		LOGGROUP=${LOGGROUP}
+		LOGGROUP=${LOGGROUP} \
+		VERSION=${DISTVERSION:R}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 

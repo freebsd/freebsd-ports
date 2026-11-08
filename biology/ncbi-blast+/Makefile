@@ -1,12 +1,15 @@
 PORTNAME=	ncbi-blast+
 DISTVERSION=	2.17.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	biology perl5 python
+CPPFLAGS+=	-I${LOCALBASE}/lmdb0/include
+LDFLAGS+=	-L${LOCALBASE}/lmdb0/lib
+CONFIGURE_ENV+=	PKG_CONFIG_PATH=${LOCALBASE}/lmdb0/libdata/pkgconfig
 MASTER_SITES=	https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ \
 		https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/${PORTVERSION}/
 DISTNAME=	ncbi-blast-${PORTVERSION}+-src
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NCBI implementation of Basic Local Alignment Search Tool
 WWW=		https://blast.ncbi.nlm.nih.gov/
 
@@ -19,17 +22,17 @@ ONLY_FOR_ARCHS_REASON= deflate.c:149:2: error: "Only 64-bit Intel and ARM archit
 
 BUILD_DEPENDS=	grpc>0:devel/grpc
 LIB_DEPENDS=	libdw.so:devel/elfutils \
-		liblmdb.so:databases/lmdb0 \
+		liblmdb0.so:databases/lmdb0 \
 		liblzo2.so:archivers/lzo2 \
 		libnghttp2.so:www/libnghttp2 \
 		libpcre2-8.so:devel/pcre2 \
-		libsqlite3.so:databases/sqlite3 \
 		libuv.so:devel/libuv \
 		libzstd.so:archivers/zstd
 RUN_DEPENDS=	p5-List-MoreUtils>=0:lang/p5-List-MoreUtils \
 		p5-JSON>=0:converters/p5-JSON
 
-USES=		compiler:c++14-lang gmake localbase:ldflags perl5 python shebangfix
+USES=		compiler:c++14-lang gmake localbase:ldflags perl5 python \
+		shebangfix sqlite
 USE_LDCONFIG=	${PREFIX}/lib/ncbi-tools++
 
 SHEBANG_FILES=	src/app/blast/cleanup-blastdb-volumes.py \

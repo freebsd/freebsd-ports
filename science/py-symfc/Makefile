@@ -1,5 +1,5 @@
 PORTNAME=	symfc
-DISTVERSION=	1.7.3
+DISTVERSION=	1.8.0
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,10 +23,11 @@ USES=		python
 USE_PYTHON=	pep517 cython autoplist pytest
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_ARGS=	--disable-plugin-autoload
 TEST_WRKSRC=	${WRKSRC}/tests
 
 NO_ARCH=	yes
 
-# tests as of 1.7.3: 128 passed in 37.33s
+# tests as of 1.8.0: 131 passed in 15.74s
 
 .include <bsd.port.mk>

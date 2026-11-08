@@ -1,9 +1,9 @@
 -- On FreeBSD, backtrace() and backtrace_symbols() are in libexecinfo (not libc).
 -- Add -lexecinfo to all linker flags so targets linking against libcommon (which
 -- calls backtrace in enforce.cc) resolve these symbols at link time.
---- CMakeLists.txt.orig	2026-06-19 19:12:26 UTC
+--- CMakeLists.txt.orig	2026-09-09 02:40:49 UTC
 +++ CMakeLists.txt
-@@ -278,6 +278,12 @@ else()
+@@ -286,6 +286,12 @@ else()
    set(CMAKE_CXX_FLAGS
        "${CMAKE_CXX_FLAGS} -Wno-error=deprecated-declarations -Wno-deprecated-declarations"
    )

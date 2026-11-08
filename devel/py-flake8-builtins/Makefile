@@ -5,7 +5,7 @@ MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	flake8_builtins-${PORTVERSION}
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Check for python builtins being used as variables or parameters
 WWW=		https://pypi.org/project/flake8-builtins/ \
 		https://github.com/gforcada/flake8-builtins

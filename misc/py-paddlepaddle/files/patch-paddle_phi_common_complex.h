@@ -3,9 +3,9 @@
 -- specializations of these standard library type traits as an error. Wrap them
 -- in pragma diagnostic push/pop to preserve the intended behavior while
 -- suppressing the diagnostic.
---- paddle/phi/common/complex.h.orig	2026-06-19 17:50:07 UTC
+--- paddle/phi/common/complex.h.orig	2026-09-09 02:40:49 UTC
 +++ paddle/phi/common/complex.h
-@@ -686,6 +686,14 @@ namespace std {
+@@ -685,6 +685,14 @@ namespace std {
  
  namespace std {
  
@@ -20,7 +20,7 @@
  template <typename T>
  struct is_pod<phi::dtype::complex<T>> {
    static const bool value = true;
-@@ -704,6 +712,10 @@ struct is_unsigned<phi::dtype::complex<T>> {
+@@ -703,6 +711,10 @@ struct is_unsigned<phi::dtype::complex<T>> {
  struct is_unsigned<phi::dtype::complex<T>> {
    static const bool value = false;
  };

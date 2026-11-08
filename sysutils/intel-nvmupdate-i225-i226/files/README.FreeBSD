@@ -1,0 +1,87 @@
+Intel I225/I226 NVM Update Port for FreeBSD
+============================================
+
+This is an unofficial combination assembled by the FreeBSD port.  Intel did
+not publish or support it as an Intel NVM Update Package.
+
+Sources
+-------
+
+* The FreeBSD nvmupdate64e 1.43.37.1a executable and Intel license files are
+  fetched unmodified from Intel's E610 v1.61 FreeBSD NVM Update Package.
+  Although that archive also contains E610 firmware, this port does not install
+  any of it.
+* The I225 device 15F2 NVM 1.94 images and required EEPROM map are fetched
+  unmodified from Intel's I225 v1.00 Linux NVM Update Package.  Intel publishes
+  that package inside its complete driver pack rather than as a standalone
+  download, so an unchanged copy of the nested archive is hosted in the
+  maintainer's FreeBSD distfile directory for use by the ports framework.
+* The I225-V device 15F3 NVM 1.89 images and I226-V, I226-LM, and I226-IT NVM
+  2.32 images are fetched unmodified from
+  BillyCurtis/Intel-I226-V-NVM-Firmware at commit
+  5fb02f3128f894fdeb47bea6450af872fb85ff45.  This is an unofficial,
+  unsupported GitHub mirror.  Intel's corresponding I226 NVM package is
+  access-controlled in RDC.  FreeBSD does not vouch for the mirror's provenance
+  or assert that it is authorized by Intel.
+* This port installs only the current images named in source_manifest.txt; the
+  GitHub snapshot also contains historical images that are not installed.
+* The configuration files, README.FreeBSD, source_manifest.txt, and version.txt
+  are generated and maintained by the FreeBSD port.  They were not supplied or
+  approved by Intel or the GitHub mirror maintainer.
+
+Configuration matching
+----------------------
+
+EEPID identifies and verifies the target image.  REPLACES is optional.  Per
+Intel's NVMUpdate documentation, a device block without REPLACES wildcard-
+matches its exact vendor, device, subvendor, and subdevice IDs.
+
+The Intel-supplied I225 device 15F2 entries and the mirrored I225-V and I226-V
+entries in nvmupdate.cfg list known ETrack lineages.  For I225-V and I226-V,
+those lineages also distinguish their 1MB and 2MB variants.  The I226-LM and
+I226-IT entries omit REPLACES so they can update any NVM version with the
+matching four-part PCI ID.  Four single-image configuration files let the
+operator select the intended LM/IT flash size explicitly.
+
+Security model
+--------------
+
+Intel documents a secure NVM flow for I225/I226 in which secured OROM, PHY, and
+firmware modules are signed by Intel and authenticated by the controller.  This
+does not establish the provenance of the complete .bin container, its filename,
+the GitHub archive, or nvmupdate.cfg as a unit.  The NVMUpdate tool also verifies
+images by default; keep that verification enabled and never pass its -sv option.
+
+Scope and safety
+----------------
+
+The generated entries intentionally match only the Intel reference subsystem
+IDs listed in nvmupdate.cfg.  The Intel package adds I225 device 15F2 subsystem
+8086:0001 (retail I225-T1, 2MB) and 8086:0002 (I225-LM, 1MB).  The entries do
+not match arbitrary OEM subsystem IDs or I225-IT device 0D9F.
+
+The combined nvmupdate.cfg contains both flash-size candidates for I226-LM and
+I226-IT, whose PCI IDs do not reveal flash size.  Do not use the combined file
+to update those devices.  Select exactly one of these files with -c after
+determining the correct flash size from authoritative platform information:
+
+    nvmupdate-i226-lm-1mb.cfg
+    nvmupdate-i226-lm-2mb.cfg
+    nvmupdate-i226-it-1mb.cfg
+    nvmupdate-i226-it-2mb.cfg
+
+A 2MB backup does not prove that the device has 2MB flash.  Reports in the
+OPNsense thread show that NVMUpdate backups can be 2MB for a 1MB device.
+
+Run inventory mode first and save its output:
+
+    nvmupdate-i225-i226 -i -l inventory.log -o inventory.xml
+
+For example, inventory an I226-LM against only the selected 2MB image with:
+
+    nvmupdate-i225-i226 -i -c nvmupdate-i226-lm-2mb.cfg \
+        -l inventory.log -o inventory.xml
+
+An update can interrupt networking and requires a complete power cycle.  Make
+a backup, use an out-of-band management path, and follow Intel's NVM Update Tool
+documentation before choosing to update any device.

@@ -1,0 +1,6 @@
+The headers_more module adds directives to set, add and clear request and
+response headers with more control than the built-in ones, including on
+responses that nginx generates itself such as errors.
+
+This port only installs the module sources.  The module itself is built
+by the nginx ports when their HEADERS_MORE option is enabled.

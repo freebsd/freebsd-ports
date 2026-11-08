@@ -1,6 +1,5 @@
 PORTNAME=	mpcontribs-client
-DISTVERSION=	5.10.1
-PORTREVISION=	4
+DISTVERSION=	5.10.5
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,8 +12,8 @@ WWW=		https://github.com/materialsproject/MPContribs/tree/master/mpcontribs-clie
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-scm>0:devel/py-setuptools-scm@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-scm>0:devel/py-setuptools-scm@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boltons>0:devel/py-boltons@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}bravado>0:www/py-bravado@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cachetools>0:devel/py-cachetools@${PY_FLAVOR} \
@@ -36,10 +35,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boltons>0:devel/py-boltons@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ujson>0:devel/py-ujson@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils autoplist pytest # tests fail due to a missing package mpcontribs.api, see https://github.com/materialsproject/MPContribs/issues/1590
+USE_PYTHON=	pep517 autoplist pytest
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 NO_ARCH=	yes
+
+# tests as of 5.10.5: 3 passed, 1 skipped in 3.89s
 
 .include <bsd.port.mk>

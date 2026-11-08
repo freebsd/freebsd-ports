@@ -1,5 +1,5 @@
 PORTNAME=	xtl
-DISTVERSION=	0.8.1
+DISTVERSION=	0.8.2
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-quant-stack
 
@@ -29,9 +29,9 @@ do-test:
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} xtest
 
-# tests as of 0.8.1:
-# doctest] test cases:  224 |  224 passed | 0 failed | 0 skipped
-# [doctest] assertions: 1214 | 1214 passed | 0 failed |
+# tests as of 0.8.2:
+# [doctest] test cases:  222 |  222 passed | 0 failed | 0 skipped
+# [doctest] assertions: 1216 | 1216 passed | 0 failed |
 # [doctest] Status: SUCCESS!
 
 .include <bsd.port.mk>

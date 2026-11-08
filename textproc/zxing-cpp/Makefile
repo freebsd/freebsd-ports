@@ -1,5 +1,5 @@
 PORTNAME=	zxing-cpp
-DISTVERSION=	3.0.2
+DISTVERSION=	3.1.1
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 

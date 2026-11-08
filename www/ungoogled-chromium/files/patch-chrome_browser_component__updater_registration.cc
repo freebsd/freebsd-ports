@@ -1,6 +1,6 @@
---- chrome/browser/component_updater/registration.cc.orig	2026-06-05 13:45:06 UTC
+--- chrome/browser/component_updater/registration.cc.orig	2026-10-31 12:09:36 UTC
 +++ chrome/browser/component_updater/registration.cc
-@@ -82,7 +82,7 @@
+@@ -90,7 +90,7 @@
  #endif  // BUILDFLAG(ENABLE_WIDEVINE_CDM_COMPONENT)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -9,7 +9,7 @@
  #include "components/component_updater/installer_policies/amount_extraction_heuristic_regexes_component_installer.h"
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||
          // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID)
-@@ -91,7 +91,7 @@
+@@ -99,7 +99,7 @@
  #include "ui/aura/env.h"
  #endif
  
@@ -18,7 +18,7 @@
  #include "chrome/browser/component_updater/wasm_tts_engine_component_installer.h"
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
-@@ -214,12 +214,12 @@ void RegisterComponentsForUpdate() {
+@@ -220,12 +220,12 @@ void RegisterComponentsForUpdate() {
  #endif  // BUILDFLAG(ENABLE_ON_DEVICE_TRANSLATION)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

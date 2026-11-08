@@ -1,5 +1,5 @@
 PORTNAME=	skk-jawiki
-DISTVERSION=	2026.08.01.150202
+DISTVERSION=	2026.10.01.191227
 CATEGORIES=	japanese
 MASTER_SITES=	https://github.com/tokuhirom/jawiki-kana-kanji-dict/releases/download/v${DISTVERSION}/
 DISTFILES=	SKK-JISYO.jawiki

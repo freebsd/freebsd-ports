@@ -1,0 +1,23 @@
+--- data/styles/default/symbols.xml.in.in.orig
++++ data/styles/default/symbols.xml.in.in
+@@ -25,17 +25,9 @@
+   </symbol>
+   <symbol>
+     <name>Super_[LR]</name>
+-    <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" width="64" height="64" viewBox="0 -10 64 64">
+-      <rect width="64" height="44" x="0" y="0" class="symbol-outline"/>
+-      <rect width="9" height="8" x="8" y="6" class="symbol-fill"/>
+-      <rect width="9" height="8" x="21" y="6" class="symbol-fill"/>
+-      <rect width="9" height="8" x="34" y="6" class="symbol-fill"/>
+-      <rect width="9" height="8" x="47" y="6" class="symbol-fill"/>
+-      <rect width="9" height="8" x="8" y="18" class="symbol-fill"/>
+-      <rect width="9" height="8" x="21" y="18" class="symbol-fill"/>
+-      <rect width="9" height="8" x="34" y="18" class="symbol-fill"/>
+-      <rect width="9" height="8" x="47" y="18" class="symbol-fill"/>
+-      <rect width="48" height="8" x="8" y="30" class="symbol-fill"/>
++    <!-- FreeBSD orb from /usr/local/share/pixmaps/freebsd_orb.xpm — solid white to match key labels. -->
++    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64" height="64" viewBox="0 0 64 64" version="1.1">
++      <image x="12" y="12" width="40" height="40" preserveAspectRatio="xMidYMid meet" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALEAAACvCAYAAACy9T8uAAADY0lEQVR42u3dS47bQAxAQd//0sx+gMCSrO7mpx6gZRBYXcNQDsb+RMTH5Up0xd0/8/Qv+Zub/9KBDL5Hjy09RfutSQf4RtPQvupp9eF0OqQT+UG/cD92Hxawc+7jttd/6gCh7Xkvj7zmSf9kRiO42UAffa2ZDnX1E300xnsKdYrXl3EqWRXc00eIPw1vvvrfzxKI764a+h10FLufHwBU/gcRYpWHDLFMYikD4oBYHSaxZCeW7MQSxJoI2E4sk1jKhhhklV4nIFZJwBCrJWKQBbGUATHIKgMYYpUHHBs/AUh6C3FArFaAIVb5VSIufCqmVBqxlB6wSawRiEFW2gc6iNViCsfN7+yQ0gG+g1gqjxhkmcTSCsB3JzHMgliCWBBDLIilZIAhFsTSy3CtE4IYYmVYHyBWG8QR/ttZxSEvmcTSLshLJjHESjuNAVb5aQyxyk9jiDUCsZR6pYBY5acxwKowjSFW+WkMsXpPY4hV/gEPYFV6wAuI1fJdCohVfi8GWOX3YohVfqWAWOVXCogFsXR6L4ZX5fdiU1gQS6f3YogFsXT64Q5gtZvEUrmHO4gFsQSxBLGmP9xBLIgliCWIBTHEgliCWIJYEEOsiogDYkEsWSekRYhBlkksnUQsmcQSxNI1xH7bWX0AQ6zyq0R4i00QSxBLEGvmg12ErztQl3cmIFb5VQJiQSxZJ6QfAYcvKFf1VQJimcTSAcQBsVpN4W+IQVb6fRhijZjEICv1FIZYEEuLEV9aKS7tHO6nsk5hiDUKMchKCRhiQSwtBBwr1gmQlW4KQ6zygJ8gBlkQS28CfooYZK1AHBBr5BT+BTHIensKf04gBlkrJvJ2xCDrKGCIBTHE6rATw6yjUxhilQf8NmKQtR3wCsQgaytgiAVx/P9zsqQtgFdNYoi1DfBKxDBrC+AdiEFWrDa2AzHIglgAZ0AMMsAtEIMMcAvEIAPcAjHMALdBDDLALRCDDHALxCDDC7HmAs6EGGSAWyAGGuBWiEEGGGL1x1sBMdAQQ6zX4EIMtKkLMcgAN0QM8+D1oRtimN+BG5XPvwtimAesDVMQwzwIb3fEMA/AOwUx0APOdhLgSZgnDadRk7j7dB57jtMRV0btvCAuifrqygSx6yhu9xfi1Oi/Tc0wXSHO+G6Ia/H1D9fS9y4y+jTHAAAAAElFTkSuQmCC"/>
+     </svg>
+   </symbol>
+   <symbol>

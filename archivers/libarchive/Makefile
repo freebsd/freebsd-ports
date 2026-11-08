@@ -1,9 +1,8 @@
 PORTNAME=	libarchive
-DISTVERSION=	3.8.8
+DISTVERSION=	3.8.11
 PORTEPOCH=	1
 CATEGORIES=	archivers
-MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/ \
-		https://libarchive.org/downloads/
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Library to create and read several streaming archive formats
@@ -12,9 +11,8 @@ WWW=		https://libarchive.org/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libexpat.so:textproc/expat2
-
-USES=		cpe iconv:wchar_t libtool localbase:ldflags pathfix pkgconfig tar:xz
+USES=		cpe gnome iconv:wchar_t libtool localbase:ldflags pathfix pkgconfig tar:xz
+USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
@@ -24,7 +22,8 @@ TEST_TARGET=	check
 
 CONFIGURE_ARGS=	--disable-static \
 		--without-libb2 \
-		--without-xml2
+		--without-bsdxml \
+		--without-expat
 
 OPTIONS_DEFINE=	LZ4 LZO ZSTD
 OPTIONS_DEFAULT=LZ4 ZSTD OPENSSL
@@ -57,6 +56,11 @@ OPENSSL_CONFIGURE_OFF=	--without-openssl
 CONFIGURE_ENV+=	ac_cv_header_localcharset_h=no \
 		ac_cv_func_locale_charset=no \
 		ac_cv_lib_charset_locale_charset=no
+.endif
+
+.if ${UID} == 0
+do-test:
+	@${ECHO_MSG} "Test suite cannot run and will fail when executed as root, skipping."
 .endif
 
 .include <bsd.port.post.mk>

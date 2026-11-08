@@ -1,0 +1,6 @@
+The drizzle module lets nginx talk to MySQL and Drizzle database servers
+over libdrizzle, issuing a query from a location and streaming the result
+as resty-dbd-stream for the rds_json or rds_csv filters.
+
+This port only installs the module sources.  The module itself is built
+by the nginx ports when their DRIZZLE option is enabled.

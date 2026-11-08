@@ -1,4 +1,4 @@
---- base/trace_event/process_memory_dump.cc.orig	2026-02-11 09:05:39 UTC
+--- base/trace_event/process_memory_dump.cc.orig	2026-09-25 15:26:43 UTC
 +++ base/trace_event/process_memory_dump.cc
 @@ -43,7 +43,7 @@
  #include <Psapi.h>
@@ -9,18 +9,18 @@
  #include <tuple>
  
  #include "base/notreached.h"
-@@ -112,7 +112,7 @@ std::optional<size_t> ProcessMemoryDump::CountResident
+@@ -119,7 +119,7 @@ std::optional<size_t> ProcessMemoryDump::CountResident
  #if BUILDFLAG(IS_WIN)
-   auto vec =
-       base::HeapArray<PSAPI_WORKING_SET_EX_INFORMATION>::WithSize(max_vec_size);
+   auto vec = base::HeapArray<PSAPI_WORKING_SET_EX_INFORMATION>::WithSize(
+       max_page_count);
 -#elif BUILDFLAG(IS_APPLE)
 +#elif BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_BSD)
-   auto vec = base::HeapArray<char>::WithSize(max_vec_size);
+   auto vec = base::HeapArray<char>::WithSize(max_page_count);
  #elif BUILDFLAG(IS_POSIX) || BUILDFLAG(IS_FUCHSIA)
-   auto vec = base::HeapArray<unsigned char>::WithSize(max_vec_size);
-@@ -136,7 +136,7 @@ std::optional<size_t> ProcessMemoryDump::CountResident
+   auto vec = base::HeapArray<unsigned char>::WithSize(max_page_count);
+@@ -161,7 +161,7 @@ std::optional<size_t> ProcessMemoryDump::CountResident
      for (size_t i = 0; i < page_count; i++) {
-       resident_page_count += vec[i].VirtualAttributes.Valid;
+       accumulate_page_if_resident(i, vec[i].VirtualAttributes.Valid);
      }
 -#elif BUILDFLAG(IS_FUCHSIA)
 +#elif BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)

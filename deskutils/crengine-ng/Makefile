@@ -19,21 +19,22 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libutf8proc.so:textproc/utf8proc \
 		libzstd.so:archivers/zstd
 
-USES=		cmake pkgconfig desktop-file-utils jpeg
+USES=		cmake desktop-file-utils gettext-runtime jpeg pkgconfig
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	coolreader-ng
 
-CMAKE_ARGS=	-D CRE_BUILD_STATIC=OFF \
-		-D DOC_DATA_COMPRESSION_LEVEL=3
+CMAKE_ARGS=	-DCRE_BUILD_STATIC=OFF \
+		-DDOC_DATA_COMPRESSION_LEVEL=3
 
 .if defined(WITH_LTO)
-CMAKE_ARGS+= -D ENABLE_LTO=ON
+CMAKE_ARGS+=	-DENABLE_LTO=ON
 .endif
 
 OPTIONS_DEFINE=		WEBP
 OPTIONS_DEFAULT=	WEBP
 
 WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
+WEBP_CMAKE_BOOL=	WITH_WEBP
 
 .include <bsd.port.mk>

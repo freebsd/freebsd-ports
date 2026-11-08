@@ -1,5 +1,5 @@
---- pfe/def-regth.h.orig	2015-03-31 14:23:33.000000000 +0200
-+++ pfe/def-regth.h	2015-03-31 14:23:30.000000000 +0200
+--- pfe/def-regth.h.orig	2009-10-04 13:06:45 UTC
++++ pfe/def-regth.h
 @@ -40,11 +40,7 @@ struct p4_Session;
  # endif
  

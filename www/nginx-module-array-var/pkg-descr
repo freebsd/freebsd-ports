@@ -1,0 +1,5 @@
+The array_var module adds support for manipulating array-typed
+variables in the nginx configuration, using the ngx_devel_kit.
+
+This port only installs the module sources.  The module itself is built
+by the nginx ports when their ARRAYVAR option is enabled.

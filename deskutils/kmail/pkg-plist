@@ -8,9 +8,9 @@ bin/kmail
 bin/kmail-refresh-settings
 bin/ktnef
 lib/libkmailprivate.so.6
-lib/libkmailprivate.so.%%KDE_APPLICATIONS_SHLIB_VER%%
+lib/libkmailprivate.so.%%KDE_PIM_SHLIB_VER%%
 lib/libmailfilteragentprivate.so.6
-lib/libmailfilteragentprivate.so.%%KDE_APPLICATIONS_SHLIB_VER%%
+lib/libmailfilteragentprivate.so.%%KDE_PIM_SHLIB_VER%%
 %%QT_PLUGINDIR%%/kmailpart.so
 %%QT_PLUGINDIR%%/pim6/akonadi/config/archivemailagentconfig.so
 %%QT_PLUGINDIR%%/pim6/akonadi/config/followupreminderagentconfig.so
@@ -87,6 +87,7 @@ share/knotifications6/akonadi_mailfilter_agent.notifyrc
 share/knotifications6/akonadi_mailmerge_agent.notifyrc
 share/knotifications6/akonadi_sendlater_agent.notifyrc
 share/knotifications6/kmail2.notifyrc
+share/knotifications6/kontact.notifyrc
 share/locale/af/LC_MESSAGES/kmail.mo
 share/locale/ar/LC_MESSAGES/akonadi_archivemail_agent.mo
 share/locale/ar/LC_MESSAGES/akonadi_followupreminder_agent.mo
@@ -536,8 +537,12 @@ share/locale/tr/LC_MESSAGES/kmail-refresh-settings.mo
 share/locale/tr/LC_MESSAGES/kmail.mo
 share/locale/tr/LC_MESSAGES/ktnef.mo
 share/locale/ug/LC_MESSAGES/akonadi_archivemail_agent.mo
+share/locale/ug/LC_MESSAGES/akonadi_followupreminder_agent.mo
 share/locale/ug/LC_MESSAGES/akonadi_mailfilter_agent.mo
+share/locale/ug/LC_MESSAGES/akonadi_mailmerge_agent.mo
 share/locale/ug/LC_MESSAGES/akonadi_sendlater_agent.mo
+share/locale/ug/LC_MESSAGES/akonadi_unifiedmailbox_agent.mo
+share/locale/ug/LC_MESSAGES/kmail-refresh-settings.mo
 share/locale/ug/LC_MESSAGES/kmail.mo
 share/locale/ug/LC_MESSAGES/ktnef.mo
 share/locale/uk/LC_MESSAGES/akonadi_archivemail_agent.mo

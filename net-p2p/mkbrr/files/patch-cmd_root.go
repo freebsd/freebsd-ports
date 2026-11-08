@@ -1,9 +1,9 @@
---- cmd/root.go.orig	2025-04-16 21:16:09 UTC
+--- cmd/root.go.orig	2026-08-19 18:38:38 UTC
 +++ cmd/root.go
-@@ -23,7 +23,6 @@ func init() {
- 	rootCmd.AddCommand(checkCmd)
+@@ -24,7 +24,6 @@ func init() {
  	rootCmd.AddCommand(inspectCmd)
  	rootCmd.AddCommand(modifyCmd)
+ 	rootCmd.AddCommand(updateTorrentCmd)
 -	rootCmd.AddCommand(updateCmd)
  	rootCmd.AddCommand(versionCmd)
  }

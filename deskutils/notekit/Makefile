@@ -18,6 +18,7 @@ USES=		cmake compiler:c++17-lang gnome pkgconfig
 USE_GNOME=	gdkpixbuf gtkmm30 gtksourceviewmm3
 USE_GITHUB=	yes
 GH_ACCOUNT=	blackhole89
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM:STRING=3.5
 
 PORTSCOUT=	skipv:latest,latest-deb
 

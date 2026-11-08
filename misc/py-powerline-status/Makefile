@@ -1,23 +1,28 @@
 PORTNAME=	powerline-status
 DISTVERSION=	2.8.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	bofh@FreeBSD.org
+PATCH_SITES+=	https://github.com/powerline/powerline/commit/
+PATCHFILES+=	11808cbe5c16e4621edcaefa916b5add81eab799.patch:-p1
+
+MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Statusline plugin for vim, zsh, bash, and more
 WWW=		https://github.com/powerline/powerline
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/docs/source/license-and-credits.rst
 
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>=3.2.0:sysutils/py-psutil@${PY_FLAVOR}
 
 USES=		python shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	powerline
 GH_PROJECT=	powerline
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist pep517
 
 SHEBANG_FILES=	powerline/bindings/awesome/powerline-awesome.py \
 		powerline/bindings/bar/powerline-bar.py \

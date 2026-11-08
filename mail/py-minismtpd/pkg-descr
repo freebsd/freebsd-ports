@@ -1,0 +1,6 @@
+minismtpd is a library based on now-discontinued smtpd module from
+the Python 3.11 standard library. The original module and its tests
+are licensed under Python Software Foundation License Version 2.
+
+The modifications and new code is licensed under the BSD-3-Clause
+license.

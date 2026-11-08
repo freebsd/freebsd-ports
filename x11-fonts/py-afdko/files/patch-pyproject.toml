@@ -1,12 +1,45 @@
---- pyproject.toml.orig	2023-02-02 20:42:42 UTC
+--- pyproject.toml.orig	2022-11-09 12:37:21 UTC
 +++ pyproject.toml
-@@ -3,9 +3,6 @@ requires = [
- 	"setuptools",
- 	"wheel",
- 	"setuptools_scm",
--	"scikit-build",
--	"cmake",
--	"ninja"
+@@ -1,10 +1,10 @@ requires = [
+ [build-system]
+ requires = [
+-    "scikit-build-core",
++    "setuptools",
+     "setuptools-scm",
+     "cython",
  ]
- build-backend = "setuptools.build_meta"
+-build-backend = "scikit_build_core.build"
++build-backend = "setuptools.build_meta"
  
+ [project]
+ dynamic = ["version"]
+@@ -12,7 +12,7 @@ requires-python = ">=3.10"
+ description = "Adobe Font Development Kit for OpenType"
+ readme = "README.md"
+ requires-python = ">=3.10"
+-license = "Apache-2.0"
++license = {text = "Apache License, Version 2.0"}
+ keywords = ["font", "development", "tools"]
+ authors = [
+     {email = "afdko@adobe.com"},
+@@ -35,8 +35,8 @@ dependencies = [
+     "typing_extensions >= 4.0; python_version < '3.11'",
+     "lxml >= 6.0.0",
+     "booleanOperations >= 0.9.0",
+-    "defcon[lxml,pens] >= 0.10.3",
+-    "fontMath >= 0.9.4",
++    "defcon[lxml,pens] >= 0.10.2",
++    "fontMath >= 0.9.3",
+     "fontTools[unicode,woff,lxml,ufo] >= 4.59.0",  # 4.59.0+ removes fs/pkg_resources dependency
+     "tqdm >= 4.66.1",
+     "ufonormalizer >= 0.6.2",
+@@ -109,3 +109,9 @@ filterwarnings = [
+     "ignore:fromstring:DeprecationWarning",
+     "ignore:The py23 module:DeprecationWarning",
+ ]
++
++[tool.setuptools]
++package-dir = {"" = "python"}
++
++[tool.setuptools.packages.find]
++where = ["python"]

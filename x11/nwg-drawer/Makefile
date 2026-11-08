@@ -1,7 +1,7 @@
 PORTNAME=	nwg-drawer
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.5
-PORTREVISION=	4
+PORTREVISION=	9
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -16,7 +16,7 @@ LICENSE_FILE_MPL20=	${WRKSRC}/LICENSE-gotk4
 LIB_DEPENDS=	libgtk-layer-shell.so:x11-toolkits/gtk-layer-shell
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
-USES=		gnome go:1.25+,modules pkgconfig
+USES=		gnome go:modules pkgconfig
 
 USE_GNOME=	cairo gdkpixbuf gtk30
 

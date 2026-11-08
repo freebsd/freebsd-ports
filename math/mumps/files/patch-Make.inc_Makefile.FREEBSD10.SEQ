@@ -1,4 +1,4 @@
---- Make.inc/Makefile.FREEBSD10.SEQ.orig	2020-10-23 09:16:48 UTC
+--- Make.inc/Makefile.FREEBSD10.SEQ.orig	2026-07-20 09:00:43 UTC
 +++ Make.inc/Makefile.FREEBSD10.SEQ
 @@ -20,7 +20,7 @@
  #
@@ -9,28 +9,27 @@
  #
  # You have to choose one among the following two lines depending on
  # the type of analysis you want to perform. If you want to perform only
-@@ -28,16 +28,16 @@
+@@ -28,7 +28,7 @@
  # variable below); for both parallel and sequential analysis choose the second 
  # line (remember to add -Dptscotch in the ORDERINGSF variable below)
  
 -#LSCOTCH    = -L$(SCOTCHDIR)/lib -lesmumps -lscotch -lscotcherr
--#LSCOTCH    = -L$(SCOTCHDIR)/lib -lptesmumps -lptscotch -lptscotcherr
-+#LSCOTCH    = -L$(SCOTCHDIR)/lib -lesmumps -lscotch -lscotcherr -lz
-+#LSCOTCH    = -L$(SCOTCHDIR)/lib -lptesmumps -lptscotch -lptscotcherr -lz
++LSCOTCH    = -L@LOCALBASE@/lib -lesmumps -lscotch -lscotcherr
+ #LSCOTCH    = -L$(SCOTCHDIR)/lib -lptesmumps -lptscotch -lptscotcherr
  
  
- LPORDDIR = $(topdir)/PORD/lib/
+@@ -36,8 +36,8 @@ LPORD    = -L$(LPORDDIR) -lpord$(PLAT)
  IPORD    = -I$(topdir)/PORD/include/
- LPORD    = -L$(LPORDDIR) -lpord
+ LPORD    = -L$(LPORDDIR) -lpord$(PLAT)
  
 -#LMETISDIR = /opt/metis-5.1.0/build/Linux-x86_64/libmetis
 -#IMETIS    = /opt/metis-5.1.0/include
 +LMETISDIR = @LOCALBASE@/lib
-+IMETIS    = @LOCALBASE@/include
++IMETIS    = -I@LOCALBASE@/include
  
  # You have to choose one among the following two lines depending on
  # the type of analysis you want to perform. If you want to perform only
-@@ -45,7 +45,7 @@ LPORD    = -L$(LPORDDIR) -lpord
+@@ -45,7 +45,7 @@ LPORD    = -L$(LPORDDIR) -lpord$(PLAT)
  # variable below); for both parallel and sequential analysis choose the second 
  # line (remember to add -Dparmetis in the ORDERINGSF variable below)
  
@@ -39,10 +38,19 @@
  #LMETIS    = -L$(LMETISDIR) -lparmetis -lmetis
  
  # The following variables will be used in the compilation process.
-@@ -66,14 +66,14 @@ IORDERINGSC = $(IMETIS) $(IPORD) $(ISCOTCH)
+@@ -53,7 +53,7 @@ LPORD    = -L$(LPORDDIR) -lpord$(PLAT)
+ # If you want to use Metis 4.X or an older version, you should use -Dmetis4 instead of -Dmetis
+ # or in addition with -Dparmetis (if you are using parmetis 3.X or older).
+ #ORDERINGSF = -Dscotch -Dmetis -Dpord -Dptscotch -Dparmetis
+-ORDERINGSF  = -Dpord
++ORDERINGSF  = -Dscotch -Dmetis -Dpord
+ ORDERINGSC  = $(ORDERINGSF)
  
- PLAT    =
- LIBEXT  = .a
+ LORDERINGS = $(LMETIS) $(LPORD) $(LSCOTCH)
+@@ -73,31 +73,31 @@ FPIC_OPT = -fPIC
+ # Adapt/uncomment RPATH_OPT to avoid modifying
+ # LD_LIBRARY_PATH in case of shared libraries
+ # RPATH_OPT = -Wl,-rpath,/path/to/MUMPS_x.y.z/lib/
 -OUTC    = -o ""
 -OUTF    = -o ""
 +OUTC    = -o 
@@ -58,14 +66,16 @@
 -AR      = ar -vr "" 
 +AR      = ar -vr 
  RANLIB  = ranlib
- LAPACK  = -llapack
+-LAPACK  = -llapack
++LAPACK  = @LAPACKLIB@
  
-@@ -81,16 +81,16 @@ LAPACK  = -llapack
+ 
  INCSEQ  = -I$(topdir)/libseq
- LIBSEQ  = $(LAPACK) -L$(topdir)/libseq -lmpiseq
- LIBBLAS = -lblas
+ LIBSEQ  = $(LAPACK) -L$(topdir)/libseq -lmpiseq$(PLAT)
+-LIBBLAS = -lblas
 -LIBOTHERS = -lpthread
-+LIBOTHERS = -lpthread @GCCLIBDIR@ @FORTRANLIBS@
++LIBBLAS = @BLASLIB@
++LIBOTHERS = @GCCLIBDIR@ @FORTRANLIBS@ -lz -pthread 
  
  #Preprocessor defs for calling Fortran from C (-DAdd_ or -DAdd__ or -DUPPER)
 -CDEFS   = -DAdd_
@@ -74,10 +84,11 @@
  #Begin Optimized options
  # uncomment -fopenmp in lines below to benefit from OpenMP
 -OPTF    = -O #-fopenmp
-+OPTF    = @FCFLAGS@ #-fopenmp
- OPTL    = -O #-fopenmp
+-OPTL    = -O #-fopenmp
 -OPTC    = -O -I. #-fopenmp
-+OPTC    = @CFLAGS@ -I. #-fopenmp
++OPTF    = @FCFLAGS@ -fopenmp
++OPTL    = -O -fopenmp
++OPTC    = @CFLAGS@ -I. -fopenmp
  #End Optimized options
   
  

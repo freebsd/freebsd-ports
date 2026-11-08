@@ -1,6 +1,6 @@
 PORTNAME=	vavoom
 PORTVERSION=	1.33
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Vavoom-source/${PORTVERSION}
 
@@ -9,6 +9,9 @@ COMMENT=	Doom, Doom II, Heretic, Hexen, and Strife source port
 WWW=		https://www.vavoom-engine.com/
 
 LICENSE=	GPLv2
+
+DEPRECATED=	Last release 15 years ago, does not build with CMake 4
+EXPIRATION_DATE=2026-11-30
 
 LIB_DEPENDS=	libpng.so:graphics/png
 

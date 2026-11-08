@@ -1,0 +1,12 @@
+--- test/cp-atest.orig	2026-08-31 13:56:00 UTC
++++ test/cp-atest
+@@ -5,6 +5,9 @@ umask 022
+ export PATH
+ umask 022
+ 
++# XXX 'stat -c' unsupported on FreeBSD, skip test
++exit 77
++
+ if test ! -d $TMP; then
+   mkdir $TMP
+ fi

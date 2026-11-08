@@ -1,6 +1,6 @@
 PORTNAME=	spiceypy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	8.2.0
+DISTVERSION=	8.3.0
 CATEGORIES=	astro python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -41,6 +41,6 @@ post-patch: # pin the version and remove scikit-build-core dynamic-metadata that
 # Tests as of 8.2.0: tests requiring SPICE kernels downloaded at runtime are ignored.
 # The remaining tests run against the installed package so the compiled cyice extension is found.
 # See https://github.com/AndrewAnnex/SpiceyPy for details
-# tests as of 8.2.0: 42 passed, 1074 deselected
+# tests as of 8.3.0: 42 passed, 1132 deselected
 
 .include <bsd.port.mk>

@@ -1,6 +1,5 @@
 PORTNAME=	neo4j
-DISTVERSION=	4.4.44
-PORTREVISION=	3
+DISTVERSION=	4.4.48
 CATEGORIES=	databases java
 MASTER_SITES=	http://dist.neo4j.org/
 DISTNAME=	${PORTNAME}-community-${DISTVERSION}-unix
@@ -20,7 +19,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSES.txt
 LICENSE_PERMS_GPLv2wCE=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		cpe java shebangfix
-JAVA_VERSION=	11
+JAVA_VERSION=	21+
 USE_RC_SUBR=	${PORTNAME}
 
 SHEBANG_FILES=	bin/cypher-shell bin/neo4j-admin

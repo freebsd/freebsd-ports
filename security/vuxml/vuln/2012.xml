@@ -2232,7 +2232,7 @@ executed in your Internet Explorer while displaying the email.</p>
       </body>
     </description>
     <references>
-      <url/>
+      <url>https://kb.isc.org/article/AA-00788</url>
     </references>
     <dates>
       <discovery>2012-09-12</discovery>
@@ -5885,7 +5885,7 @@ executed in your Internet Explorer while displaying the email.</p>
     </description>
     <references>
       <cvename>CVE-2012-0219</cvename>
-      <url>www.dest-unreach.org/socat/contrib/socat-secadv3.html</url>
+      <url>http://www.dest-unreach.org/socat/contrib/socat-secadv3.html</url>
     </references>
     <dates>
       <discovery>2012-05-14</discovery>
@@ -7748,7 +7748,7 @@ executed in your Internet Explorer while displaying the email.</p>
       </body>
     </description>
     <references>
-	    <url>"http://piwik.org/blog/2012/02/7775/"</url>
+	    <url>http://piwik.org/blog/2012/02/7775/</url>
     </references>
     <dates>
       <discovery>2012-02-16</discovery>

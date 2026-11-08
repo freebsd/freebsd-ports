@@ -1,6 +1,6 @@
---- libr/util/sys.c.orig	2026-06-27 13:05:18 UTC
+--- libr/util/sys.c.orig	2026-06-23 11:48:36 UTC
 +++ libr/util/sys.c
-@@ -88,9 +88,6 @@ int proc_pidpath(int pid, void * buffer, ut32 buffersi
+@@ -83,9 +83,6 @@ int proc_pidpath(int pid, void * buffer, ut32 buffersi
  # include <sys/wait.h>
  #endif
  # include <signal.h>
@@ -10,7 +10,7 @@
  
  #ifdef __HAIKU__
  # define Sleep sleep
-@@ -448,12 +445,16 @@ R_API bool r_sys_clearenv(void) {
+@@ -443,12 +440,16 @@ R_API bool r_sys_clearenv(void) {
  		}
  	}
  #else
@@ -33,7 +33,7 @@
  #endif
  	return true;
  #else
-@@ -1414,8 +1415,6 @@ R_API char **r_sys_get_environ(void) {
+@@ -1409,8 +1410,6 @@ R_API char **r_sys_get_environ(void) {
  	}
  #if __APPLE__ && !HAVE_ENVIRON
  	Genv = *_NSGetEnviron();

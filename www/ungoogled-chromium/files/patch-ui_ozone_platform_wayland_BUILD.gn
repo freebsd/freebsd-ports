@@ -1,6 +1,6 @@
---- ui/ozone/platform/wayland/BUILD.gn.orig	2025-12-06 13:30:52 UTC
+--- ui/ozone/platform/wayland/BUILD.gn.orig	2026-10-31 12:09:36 UTC
 +++ ui/ozone/platform/wayland/BUILD.gn
-@@ -246,7 +246,6 @@ source_set("wayland") {
+@@ -250,7 +250,6 @@ source_set("wayland") {
      "//mojo/public/cpp/system",
      "//skia",
      "//third_party/angle:includes",

@@ -14,3 +14,6 @@ which are NOT supplied with the xmail sources.    X-Face headers
 are compressed bitmap images, typically of the face of the person
 owning such a header.  The compressed header contains only printable
 characters, which allows it to be included in a mail message.
+
+This package is Xorg xmail application, not to be confused with
+the xmail server software found on Ubuntu systems.

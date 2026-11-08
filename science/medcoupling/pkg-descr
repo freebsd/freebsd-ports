@@ -1,0 +1,7 @@
+MEDCoupling is a robust and versatile C++/Python library for advanced mesh
+and field manipulation. It is part of the SALOME platform and of Code_Aster, and
+co-developed by CEA and EDF.
+
+Whether you're performing mesh intersections, transferring fields between
+meshes, or analyzing simulation results, MEDCoupling offers the building blocks
+you need for scientific computing workflows.

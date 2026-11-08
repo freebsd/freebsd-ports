@@ -1,0 +1,9 @@
+--- dependencies/CMakeLists.txt.orig	2026-09-12 06:53:51 UTC
++++ dependencies/CMakeLists.txt
+@@ -69,6 +69,4 @@ add_subdirectory(fmt)
+ 
+ add_subdirectory(catch2)
+ add_subdirectory(fmt)
+-add_subdirectory(nlohmann_json)
+ add_subdirectory(whereami)
+-add_subdirectory(tl_expected)

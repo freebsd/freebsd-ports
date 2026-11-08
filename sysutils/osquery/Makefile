@@ -1,5 +1,6 @@
 PORTNAME=	osquery
 DISTVERSION=	5.23.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES+=	https://github.com/ocochard/osquery/commit/:patches
 DISTFILES+=	0c61e05a6.patch:patches

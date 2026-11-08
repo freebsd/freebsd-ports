@@ -1,0 +1,4 @@
+jextract is a tool which mechanically generates Java bindings from
+native library headers.  This tools leverages the clang C API in order
+to parse the headers associated with a given native library, and the
+generated Java bindings build upon the Foreign Function & Memory API.

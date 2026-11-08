@@ -1,0 +1,5 @@
+ReactiveX for Python (RxPY) is a library for composing asynchronous and
+event-based programs using observable sequences and pipable query operators in
+Python. Using Rx, developers represent asynchronous data streams with
+Observables, query asynchronous data streams using operators, and parameterize
+concurrency in data/event streams using Schedulers.

@@ -1,11 +1,10 @@
 PORTNAME=	rio
-DISTVERSION=	1.3.0
+DISTVERSION=	1.3.1
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Swiss-Army knife for data I/O
-WWW=		https://github.com/leeper/rio
 
 LICENSE=	GPLv2
 
@@ -14,6 +13,7 @@ RUN_DEPENDS=	R-cran-clipr>0:devel/R-cran-clipr \
 		R-cran-data.table>=1.11.2:devel/R-cran-data.table \
 		R-cran-haven>=1.1.2:math/R-cran-haven \
 		R-cran-jsonlite>0:converters/R-cran-jsonlite \
+		R-cran-lifecycle>0:devel/R-cran-lifecycle \
 		R-cran-R.utils>=2.13.0:devel/R-cran-R.utils \
 		R-cran-readr>0:textproc/R-cran-readr \
 		R-cran-readxl>=0.1.1:textproc/R-cran-readxl \
@@ -27,8 +27,11 @@ TEST_DEPENDS=	R-cran-bit64>0:devel/R-cran-bit64 \
 		R-cran-rmarkdown>0:textproc/R-cran-rmarkdown \
 		R-cran-stringi>0:textproc/R-cran-stringi \
 		R-cran-testthat>0:devel/R-cran-testthat \
-		R-cran-withr>0:devel/R-cran-withr
+		R-cran-withr>0:devel/R-cran-withr \
+		zip>0:archivers/zip
 
 USES=		cran:auto-plist
+
+MAKE_ENV=	R_ZIPCMD=${LOCALBASE}/bin/zip
 
 .include <bsd.port.mk>

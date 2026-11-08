@@ -1,6 +1,7 @@
 PORTNAME=	znapzend
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.23.4
+DISTVERSION=	0.23.6
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -11,13 +12,9 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	mbuffer>=0:misc/mbuffer \
-		p5-IO-Pipely>=0:devel/p5-IO-Pipely \
-		p5-Mojo-IOLoop-ForkCall>=0.21:www/p5-Mojo-IOLoop-ForkCall \
 		p5-Mojolicious>=7.15:www/p5-Mojolicious \
 		p5-Scalar-List-Utils>=1.45:lang/p5-Scalar-List-Utils
 RUN_DEPENDS=	mbuffer>=0:misc/mbuffer \
-		p5-IO-Pipely>=0:devel/p5-IO-Pipely \
-		p5-Mojo-IOLoop-ForkCall>=0.21:www/p5-Mojo-IOLoop-ForkCall \
 		p5-Mojo-Log-Clearable>=0:devel/p5-Mojo-Log-Clearable \
 		p5-Mojolicious>=7.15:www/p5-Mojolicious \
 		p5-Role-Tiny>=2:devel/p5-Role-Tiny \

@@ -1,7 +1,7 @@
-TIMESTAMP = 1782270778
-SHA256 (AdaCore-gprbuild-v26.0.0_GH0.tar.gz) = 4699443c1a97a1527de44e6c3d3505fd95c3904a6533e67cd34c674c408f7d4f
-SIZE (AdaCore-gprbuild-v26.0.0_GH0.tar.gz) = 922278
-SHA256 (AdaCore-gprconfig_kb-v26.0.0_GH0.tar.gz) = d6edeb941ab9df6b6a186180f17d9a89c57d25be1e0acd8a9237c38164d944de
-SIZE (AdaCore-gprconfig_kb-v26.0.0_GH0.tar.gz) = 49684
-SHA256 (AdaCore-xmlada-v26.0.0_GH0.tar.gz) = 26494e57233e8eff9f8339b1520b6dc8188b259a9fccfc808fb19ffe767813aa
-SIZE (AdaCore-xmlada-v26.0.0_GH0.tar.gz) = 1083101
+TIMESTAMP = 1793362613
+SHA256 (AdaCore-gprbuild-27.1-2781289e9e2bdc31350962211b7ef792d7d31c6f_GH0.tar.gz) = a581cb67250876f35a6da3f02578421b555be71d1933bc59577e91d342025792
+SIZE (AdaCore-gprbuild-27.1-2781289e9e2bdc31350962211b7ef792d7d31c6f_GH0.tar.gz) = 923952
+SHA256 (AdaCore-gprconfig_kb-ba383a7fa2a1ce8d27d44b00b8052acc0d49493c_GH0.tar.gz) = b3c0da2fb910a49598cdf2a1709ec42b64d8b4c12d5e6235663728a90e7cbce6
+SIZE (AdaCore-gprconfig_kb-ba383a7fa2a1ce8d27d44b00b8052acc0d49493c_GH0.tar.gz) = 50664
+SHA256 (AdaCore-xmlada-9823ffb294187897a08b14bbce00743ff647cae1_GH0.tar.gz) = cf4dc82aaf6dad6f0297c6ab70d7f3f931c93c16d2f36f052de474351dcb9112
+SIZE (AdaCore-xmlada-9823ffb294187897a08b14bbce00743ff647cae1_GH0.tar.gz) = 1090876

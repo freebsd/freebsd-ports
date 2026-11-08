@@ -12,6 +12,7 @@
 %%R_MOD_DIR%%/R/RUnit
 %%R_MOD_DIR%%/R/RUnit.rdb
 %%R_MOD_DIR%%/R/RUnit.rdx
+%%R_MOD_DIR%%/README.md
 %%R_MOD_DIR%%/doc/RUnit.R
 %%R_MOD_DIR%%/doc/RUnit.Rnw
 %%R_MOD_DIR%%/doc/RUnit.pdf

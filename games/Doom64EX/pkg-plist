@@ -1,0 +1,11 @@
+bin/doom64ex
+bin/doom64ex-wadgen
+%%DATADIR%%/Content/ANIMDEFS.TXT
+%%DATADIR%%/Content/BUTTONS.PNG
+%%DATADIR%%/Content/CONFONT.PNG
+%%DATADIR%%/Content/CRSHAIRS.PNG
+%%DATADIR%%/Content/CURSOR.PNG
+%%DATADIR%%/Content/FANCRED.PNG
+%%DATADIR%%/Content/MAPINFO.TXT
+%%DATADIR%%/Content/PALPLAY3.ACT
+%%DATADIR%%/Content/SKYDEFS.TXT

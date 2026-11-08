@@ -13,6 +13,7 @@ sbin/cracklib-check
 sbin/cracklib-format
 sbin/cracklib-packer
 sbin/cracklib-unpacker
+sbin/cracklib-update
 sbin/create-cracklib-dict
 %%DATADIR%%/cracklib-small
 %%DATADIR%%/cracklib.magic
@@ -28,6 +29,7 @@ sbin/create-cracklib-dict
 %%NLS%%share/locale/eu/LC_MESSAGES/cracklib.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/cracklib.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/cracklib.mo
+%%NLS%%share/locale/fur/LC_MESSAGES/cracklib.mo
 %%NLS%%share/locale/gu/LC_MESSAGES/cracklib.mo
 %%NLS%%share/locale/he/LC_MESSAGES/cracklib.mo
 %%NLS%%share/locale/hi/LC_MESSAGES/cracklib.mo
@@ -35,6 +37,7 @@ sbin/create-cracklib-dict
 %%NLS%%share/locale/id/LC_MESSAGES/cracklib.mo
 %%NLS%%share/locale/it/LC_MESSAGES/cracklib.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/cracklib.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/cracklib.mo
 %%NLS%%share/locale/kk/LC_MESSAGES/cracklib.mo
 %%NLS%%share/locale/kn/LC_MESSAGES/cracklib.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/cracklib.mo
@@ -48,7 +51,9 @@ sbin/create-cracklib-dict
 %%NLS%%share/locale/pl/LC_MESSAGES/cracklib.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/cracklib.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/cracklib.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/cracklib.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/cracklib.mo
+%%NLS%%share/locale/si/LC_MESSAGES/cracklib.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/cracklib.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/cracklib.mo
 %%NLS%%share/locale/sq/LC_MESSAGES/cracklib.mo
@@ -59,3 +64,7 @@ sbin/create-cracklib-dict
 %%NLS%%share/locale/uk/LC_MESSAGES/cracklib.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/cracklib.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/cracklib.mo
+share/man/man8/cracklib-check.8.gz
+share/man/man8/cracklib-format.8.gz
+share/man/man8/cracklib-update.8.gz
+share/man/man8/create-cracklib-dict.8.gz

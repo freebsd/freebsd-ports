@@ -1,0 +1,23 @@
+--- libs/apto/CMakeLists.txt.orig	2012-09-29 03:33:38 UTC
++++ libs/apto/CMakeLists.txt
+@@ -1,6 +1,6 @@ PROJECT(APTO CXX)
+ PROJECT(APTO CXX)
+ 
+-CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
++CMAKE_MINIMUM_REQUIRED(VERSION 3.10)
+ 
+ # Default location for installed software/configs/ docs is the build directory.
+ SET(CMAKE_INSTALL_PREFIX
+@@ -32,10 +32,10 @@ IF(UNIX)
+     "-Os -DNDEBUG"
+     CACHE STRING "Flags used by the compiler during release minsize builds." FORCE)
+   SET(CMAKE_CXX_FLAGS_RELWITHDEBINFO
+-    "-O3 -g -DDEBUG"
++    " -g -DDEBUG"
+     CACHE STRING "Flags used by the compiler during release builds." FORCE)
+   SET(CMAKE_CXX_FLAGS_RELEASE
+-    "-O3 -DNDEBUG"
++    " -DNDEBUG"
+     CACHE STRING "Flags used by the compiler during release builds." FORCE)
+ ENDIF(UNIX)
+ 

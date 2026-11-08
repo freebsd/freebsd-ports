@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	archivers devel
 
 MAINTAINER=	iblis.dif01@nctu.edu.tw
-COMMENT=	Blocking, shuffling and loss-less compression library
+COMMENT=	Blocking, shuffling, and lossless compression library
 WWW=		https://blosc.org/
 
 LICENSE=	BSD3CLAUSE
@@ -52,5 +52,9 @@ ZLIB_CMAKE_BOOL_OFF=	DEACTIVATE_ZLIB
 ZSTD_CMAKE_ON=		-DPREFER_EXTERNAL_ZSTD=ON
 ZSTD_CMAKE_BOOL_OFF=	DEACTIVATE_ZSTD
 ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
+
+post-patch:
+	@${REINPLACE_CMD} -e '/cmake_minimum_required(VERSION/ \
+		s,2[.0-9]*,&...9.9.99,' ${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>

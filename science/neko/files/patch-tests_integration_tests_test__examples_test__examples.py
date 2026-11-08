@@ -1,8 +1,11 @@
 -- Filter examples to only those present in the distribution and use gmake
--- This patch is needed to ensure tests pass on FreeBSD
--- Filter examples to only those present in the distribution and use gmake
--- This patch is needed to ensure tests pass on FreeBSD
---- tests/integration/tests/test_examples/test_examples.py.orig	2026-05-08 17:08:44 UTC
+-- Run the 2d_cylinder smoke test with a single MPI rank because it diverges
+-- with 2 ranks on FreeBSD (the cylinder example used upstream is missing from
+-- the release tarball).
+
+-- Reprted upstream: https://github.com/ExtremeFLOW/neko/issues/2805
+
+--- tests/integration/tests/test_examples/test_examples.py.orig	2026-09-14 19:48:10 UTC
 +++ tests/integration/tests/test_examples/test_examples.py
 @@ -20,7 +20,7 @@ examples_dir = join(neko_dir, "examples")
  
@@ -30,7 +33,17 @@
  #@pytest.mark.parametrize("example", examples.keys())
  def test_example_smoke(example, launcher_script, request, log_file, tmp_path):
      """Run a smoke test for the specified Neko example.
-@@ -222,7 +223,7 @@ def test_example_poisson(log_file):
+@@ -161,7 +162,8 @@ def test_example_smoke(example, launcher_script, reque
+ 
+     """
+     # Max number of ranks to launch on
+-    max_nprocs = 2
++    # Note: 2d_cylinder diverges with 2 ranks on FreeBSD, so run it serially
++    max_nprocs = 1 if example == "2d_cylinder" else 2
+     nprocs = configure_nprocs(max_nprocs)
+ 
+     test_name = request.node.name
+@@ -222,7 +224,7 @@ def test_example_poisson(log_file):
      """
  
      result = subprocess.run(

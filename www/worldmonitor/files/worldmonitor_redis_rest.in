@@ -1,0 +1,57 @@
+#!/bin/sh
+
+# PROVIDE: worldmonitor_redis_rest
+# REQUIRE: LOGIN NETWORKING redis
+# BEFORE: worldmonitor
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable worldmonitor_redis_rest:
+#
+# worldmonitor_redis_rest_enable (bool):	Set to NO by default.
+# worldmonitor_redis_rest_user (str):		Set to www by default.
+# worldmonitor_redis_rest_env_file (str):	Set to %%PREFIX%%/etc/worldmonitor.env by default.
+# worldmonitor_redis_rest_log (str):		Set to /var/log/worldmonitor_redis_rest.log by default.
+# worldmonitor_redis_rest_port (int):		Set to 8079 by default.
+# worldmonitor_redis_rest_redis_url (str):	Set to redis://127.0.0.1:6379 by default.
+
+. /etc/rc.subr
+
+name=worldmonitor_redis_rest
+rcvar=worldmonitor_redis_rest_enable
+
+load_rc_config $name
+
+: ${worldmonitor_redis_rest_enable:=NO}
+: ${worldmonitor_redis_rest_user:=www}
+: ${worldmonitor_redis_rest_env_file:=%%PREFIX%%/etc/worldmonitor.env}
+: ${worldmonitor_redis_rest_log:=/var/log/worldmonitor_redis_rest.log}
+: ${worldmonitor_redis_rest_port:=8079}
+: ${worldmonitor_redis_rest_redis_url:=redis://127.0.0.1:6379}
+
+pidfile=/var/run/worldmonitor_redis_rest.pid
+procname=%%LOCALBASE%%/bin/node
+command=/usr/sbin/daemon
+command_args="-H -P ${pidfile%.pid}_daemon.pid -p ${pidfile} -o ${worldmonitor_redis_rest_log} -- ${procname} %%WWWDIR%%/redis-rest/redis-rest-proxy.mjs"
+start_precmd=worldmonitor_redis_rest_prestart
+
+worldmonitor_redis_rest_prestart()
+{
+	if [ ! -r "${worldmonitor_redis_rest_env_file}" ]; then
+		err 1 "${worldmonitor_redis_rest_env_file} is not readable"
+	fi
+	[ -e "${worldmonitor_redis_rest_log}" ] || install -m 0640 -o ${worldmonitor_redis_rest_user} /dev/null "${worldmonitor_redis_rest_log}"
+	touch "${pidfile}" "${pidfile%.pid}_daemon.pid"
+	chown ${worldmonitor_redis_rest_user} "${pidfile}" "${pidfile%.pid}_daemon.pid"
+	set -a
+	. "${worldmonitor_redis_rest_env_file}"
+	set +a
+	export SRH_BIND_HOST="${SRH_BIND_HOST:-127.0.0.1}"
+	case "${UPSTASH_REDIS_REST_TOKEN}" in
+	""|change-me*) err 1 "UPSTASH_REDIS_REST_TOKEN in ${worldmonitor_redis_rest_env_file} is empty or still has its example value" ;;
+	esac
+	export SRH_TOKEN="${UPSTASH_REDIS_REST_TOKEN}"
+	export REDIS_URL="${worldmonitor_redis_rest_redis_url}"
+	export PORT="${worldmonitor_redis_rest_port}"
+}
+
+run_rc_command "$1"

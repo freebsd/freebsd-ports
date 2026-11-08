@@ -77,13 +77,19 @@ ELF_FEATURES+=	+wxneeded:dist/bin/${MOZILLA} +wxneeded:dist/bin/${MOZILLA}-bin
 BUNDLE_LIBS=	yes
 
 BUILD_DEPENDS+=	rust-cbindgen>=0.29.4:devel/rust-cbindgen \
-				${RUST_DEFAULT}>=1.97.0:lang/${RUST_DEFAULT}
+				${RUST_DEFAULT}>=1.99.0:lang/${RUST_DEFAULT}
 LIB_DEPENDS+=	libdrm.so:graphics/libdrm
 RUN_DEPENDS+=	${LOCALBASE}/lib/libpci.so:devel/libpci
 LIB_DEPENDS+=	libepoll-shim.so:devel/libepoll-shim
 MOZ_EXPORT+=	${CONFIGURE_ENV} \
 				PYTHON3="${PYTHON_CMD}" \
-				RUSTFLAGS="${RUSTFLAGS}"
+				RUSTFLAGS="${RUSTFLAGS}" \
+				BINDGEN_CFLAGS="-I${LOCALBASE}/include"
+.    if ${ARCH} == powerpc64le && (${OSVERSION} < 1405000 || \
+	(${OSVERSION} >= 1500000 && ${OSVERSION} < 1501501) || \
+	(${OSVERSION} >= 1600000 && ${OSVERSION} < 1600019))
+MAKE_ENV+=	RUST_LIB_BACKTRACE=0
+.    endif
 MOZ_OPTIONS+=	--prefix="${PREFIX}"
 MOZ_MK_OPTIONS+=MOZ_OBJDIR="${BUILD_WRKSRC}"
 

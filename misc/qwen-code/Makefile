@@ -1,5 +1,5 @@
 PORTNAME=	qwen-code
-DISTVERSION=	0.19.6
+DISTVERSION=	0.26.9
 CATEGORIES=	misc
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
@@ -18,6 +18,8 @@ USES=		nodejs:run
 
 NO_BUILD=	yes
 NO_ARCH=	yes
+
+PLIST_FILES=	bin/qwen
 
 PACKAGE_NAME=	@qwen-code/qwen-code
 
@@ -39,12 +41,21 @@ do-install:
 	# cli.js falls back to system rg when the builtin path is absent
 	@${RM} -r ${STAGEDIR}${PREFIX}/lib/node_modules/${PACKAGE_NAME}/vendor/ripgrep
 	@${RM} ${STAGEDIR}${PREFIX}/lib/node_modules/${PACKAGE_NAME}/sandbox-macos-*.sb
+	# Linux-only Landlock sandbox runner; landlockRunnerPath() throws off linux
+	@${RM} -r ${STAGEDIR}${PREFIX}/lib/node_modules/${PACKAGE_NAME}/vendor/landlock-run
+	# OpenTUI native libs exist for linux/darwin only; freebsd falls back to Ink
+	@${RM} -r ${STAGEDIR}${PREFIX}/lib/node_modules/${PACKAGE_NAME}/opentui-assets/@opentui/core-darwin-* \
+		${STAGEDIR}${PREFIX}/lib/node_modules/${PACKAGE_NAME}/opentui-assets/@opentui/core-linux-*
+	# audio-capture ships linux/darwin/win32 prebuilds only; its platform
+	# check throws on freebsd before loading one, so drop the dead binaries.
+	# It is an optional dep that npm may skip entirely, hence -f
+	@${RM} -rf ${STAGEDIR}${PREFIX}/lib/node_modules/${PACKAGE_NAME}/node_modules/@qwen-code/audio-capture/prebuilds
 	${REINPLACE_CMD} -i '' \
 		-e "s|#!/usr/bin/env node|#!${PREFIX}/bin/node|" \
 		${STAGEDIR}${PREFIX}/lib/node_modules/${PACKAGE_NAME}/cli-entry.js
 	@${FIND} ${STAGEDIR}${PREFIX}/lib/node_modules/${PACKAGE_NAME}/chunks \
 		-name '*.js' -exec ${REINPLACE_CMD} -i '' \
-		-e 's|settings.merged.general?.enableAutoUpdate !== false|false|g' \
+		-e 's|enableAutoUpdate!==false|&\&\&false|g' \
 		{} +
 	@${CHMOD} +x ${STAGEDIR}${PREFIX}/lib/node_modules/${PACKAGE_NAME}/cli-entry.js
 	# create wrapper script
@@ -52,5 +63,11 @@ do-install:
 	@${ECHO_CMD} '#!/bin/sh' > ${STAGEDIR}${PREFIX}/bin/qwen
 	@${ECHO_CMD} 'exec ${PREFIX}/lib/node_modules/${PACKAGE_NAME}/cli-entry.js "$$@"' >> ${STAGEDIR}${PREFIX}/bin/qwen
 	@${CHMOD} +x ${STAGEDIR}${PREFIX}/bin/qwen
+
+# The bundled node_modules tree contains hundreds of hash-named files that
+# churn every release; generate the plist for it instead of hand-listing.
+post-install:
+	@cd ${STAGEDIR}${PREFIX} && \
+		${FIND} lib/node_modules \( -type f -o -type l \) | ${SORT} >> ${TMPPLIST}
 
 .include <bsd.port.mk>

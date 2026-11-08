@@ -10,10 +10,13 @@ WWW=		https://www.html-tidy.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/README/LICENSE.md
 
+CPE_VENDOR=	htacg
+CPE_PRODUCT=	tidy
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	htacg
 
-USES=		cmake gnome
+USES=		cmake cpe gnome
 USE_GNOME=	libxslt
 USE_LDCONFIG=	yes
 

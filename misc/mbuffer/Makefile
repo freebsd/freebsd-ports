@@ -1,5 +1,5 @@
 PORTNAME=	mbuffer
-DISTVERSION=	20260511
+DISTVERSION=	20261015
 CATEGORIES=	misc
 MASTER_SITES=	https://www.maier-komor.de/software/mbuffer/
 
@@ -30,6 +30,8 @@ RHASH_DESC=	Use rhash for hash generation
 GCRYPT_RUN_DEPENDS=	libgcrypt>=1.8.4_1:security/libgcrypt
 MHASH_RUN_DEPENDS=	mhash>=0.9.9.9_5:security/mhash
 RHASH_RUN_DEPENDS=	rhash>=1.3.5:security/rhash
+
+FORTIFY_UNSAFE=	yes
 
 post-patch:
 	${REINPLACE_CMD} -e 's@bash@sh@' \

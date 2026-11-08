@@ -126,7 +126,6 @@ share/color/icc/ghostscript/srgb.icc
 %%DATADIR%%/Resource/IdiomSet/Pscript5Idiom
 %%DATADIR%%/Resource/IdiomSet/PPI_CUtils
 %%DATADIR%%/Resource/Init/FAPIcidfmap
-%%DATADIR%%/Resource/Init/FAPIconfig
 %%DATADIR%%/Resource/Init/FAPIfontmap
 %%DATADIR%%/Resource/Init/FCOfontmap-PCLPS2
 %%DATADIR%%/Resource/Init/Fontmap
@@ -144,7 +143,6 @@ share/color/icc/ghostscript/srgb.icc
 %%DATADIR%%/Resource/Init/gs_cmap.ps
 %%DATADIR%%/Resource/Init/gs_cspace.ps
 %%DATADIR%%/Resource/Init/gs_dbt_e.ps
-%%DATADIR%%/Resource/Init/gs_diskn.ps
 %%DATADIR%%/Resource/Init/gs_dps1.ps
 %%DATADIR%%/Resource/Init/gs_dps2.ps
 %%DATADIR%%/Resource/Init/gs_dscp.ps

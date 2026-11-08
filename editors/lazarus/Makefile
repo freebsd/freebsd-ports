@@ -71,7 +71,7 @@ post-extract:
 	@${RM} ${WRKSRC}/.git*
 
 post-patch:
-.if ${ARCH} == "aarch64"
+.if ${ARCH} == "aarch64" || ${ARCH:Mpowerpc64*}
 	@${REINPLACE_CMD} -e 's|Scale(Pen.Width)|Self.Scale(Pen.Width)|g' ${WRKSRC}/components/tachart/tadrawercanvas.pas
 .endif
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' -e 's|%%DATADIR%%|${DATADIR}|g' ${WRKSRC}/${MAKEFILE}

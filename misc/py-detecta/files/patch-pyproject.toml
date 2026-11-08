@@ -1,0 +1,22 @@
+-- Remove SPDX license fields and downgrade setuptools requirement.
+-- FreeBSD ports ship setuptools 63.x which does not support the modern
+-- SPDX string form of 'license'/'license-files', nor meets the
+-- upstream's >=77 requirement. Both issues must be patched.
+--- pyproject.toml.orig	2026-10-22 08:31:10 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=77"]
++requires = ["setuptools>=61.0"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -7,8 +7,6 @@ readme = "README.md"
+ dynamic = ["version"]
+ description = "Detect events in data"
+ readme = "README.md"
+-license = "MIT"
+-license-files = ["LICENSE"]
+ authors = [{ name = "Marcos Duarte", email = "duartexyz@gmail.com" }]
+ requires-python = ">=3.9"
+ dependencies = ["numpy"]

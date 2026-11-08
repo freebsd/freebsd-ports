@@ -1,14 +1,16 @@
 PORTNAME=	font-screen-cyrillic
-PORTVERSION=	1.0.4
-PORTREVISION=	4
+DISTVERSION=	1.0.5
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org Screen Cyrillic font
-WWW=		https://www.x.org/
+WWW=		https://gitlab.freedesktop.org/xorg/font/screen-cyrillic
+
+LICENSE=	Cronyx
+LICENSE_NAME=	Cronyx License
+LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		xorg-cat:font
-
-NO_ARCH=	yes
 
 .include <bsd.port.mk>

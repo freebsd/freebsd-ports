@@ -1,11 +1,10 @@
 PORTNAME=	diffobj
-DISTVERSION=	0.3.8
+DISTVERSION=	0.3.9
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Diffs for R Objects
-WWW=		https://cran.r-project.org/package=diffobj
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

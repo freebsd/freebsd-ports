@@ -1,5 +1,5 @@
 PORTNAME=	h2o
-DISTVERSION=	20260609
+DISTVERSION=	20261006
 CATEGORIES=	www
 
 MAINTAINER=	dch@FreeBSD.org
@@ -12,19 +12,20 @@ LICENSE_COMB=	multi
 BROKEN_armv6=	fails to compile: asm_arm.inc:139:36: '.syntax divided' arm assembly not supported
 BROKEN_armv7=	fails to compile: asm_arm.inc:139:36: '.syntax divided' arm assembly not supported
 
-LIB_DEPENDS=	libhiredis.so:databases/hiredis \
+LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
+		libhiredis.so:databases/hiredis \
 		libyaml.so:textproc/libyaml
 
 USES=		cmake compiler:c11 cpe pathfix perl5 pkgconfig shebangfix ssl
 CPE_VENDOR=	dena
 USE_GITHUB=	yes
-GH_TAGNAME=	ed7899d
+GH_TAGNAME=	5da5054
 USE_LDCONFIG=	YES
 USE_RC_SUBR=	${PORTNAME}
 
 SHEBANG_FILES=	share/h2o/start_server
 
-CMAKE_ON=	BUILD_SHARED_LIBS
+CMAKE_ON=	BUILD_SHARED_LIBS WITH_BROTLI
 
 EXTRACT_AFTER_ARGS=	--exclude deps/hiredis --exclude deps/yaml/include
 

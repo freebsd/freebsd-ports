@@ -5,7 +5,8 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Lingeling SAT Solver
-WWW=		http://fmv.jku.at/lingeling/
+WWW=		https://fmv.jku.at/lingeling/ \
+		https://github.com/arminbiere/lingeling
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

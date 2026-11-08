@@ -1,8 +1,9 @@
 PORTNAME=	opentype-sanitizer
-PORTVERSION=	9.1.0
+PORTVERSION=	9.2.0
 CATEGORIES=	x11-fonts python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	opentype_sanitizer-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python wrapper for the OpenType Sanitizer

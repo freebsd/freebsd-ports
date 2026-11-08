@@ -1,7 +1,6 @@
 PORTNAME=	argus
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.0.2
-PORTREVISION=	1
+DISTVERSION=	5.0.4
 CATEGORIES=	net-mgmt security
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -28,7 +27,6 @@ SASL_VAR=		PKGNAMESUFFIX=-sasl
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#/usr/lib/sasl2#${LOCALBASE}/lib/sasl2#' ${WRKSRC}/argus/ArgusOutput.c
-	@${REINPLACE_CMD} -e 's#tts->tv_nsec >#tts->tv_nsec >=#' ${WRKSRC}/argus/ArgusSource.c
 
 pre-install:
 	@${REINPLACE_CMD} -e 's#/usr/bin/perl#${LOCALBASE}/bin/perl#' ${WRKSRC}/bin/argus-lsof

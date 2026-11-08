@@ -1,5 +1,6 @@
 PORTNAME=	opt_parse_validator
 PORTVERSION=	1.9.5
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-activesupport60>=5.2<6.2.0:devel/rubygem-activesupport60 \
-	        rubygem-addressable>=2.5<2.9:www/rubygem-addressable
+	        rubygem-addressable28>=2.5<2.9:www/rubygem-addressable28
 
 USES=		gem
 

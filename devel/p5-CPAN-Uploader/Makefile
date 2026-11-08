@@ -1,8 +1,8 @@
 PORTNAME=	CPAN-Uploader
-PORTVERSION=	0.103013
-PORTREVISION=	1
+PORTVERSION=	0.103019
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:RJBS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	geraud@gcu.info
@@ -21,10 +21,11 @@ RUN_DEPENDS=	p5-File-HomeDir>=0:devel/p5-File-HomeDir \
 		p5-Term-ReadKey>=0:devel/p5-Term-ReadKey \
 		p5-libwww>=0:www/p5-libwww
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
 CONFLICTS_INSTALL=	cpan-upload
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

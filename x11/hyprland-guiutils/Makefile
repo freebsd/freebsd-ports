@@ -1,6 +1,7 @@
 PORTNAME=	hyprland-guiutils
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.2
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -10,6 +11,7 @@ WWW=		https://github.com/hyprwm/hyprland-guiutils
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols
 LIB_DEPENDS=	libhyprlang.so:devel/hyprlang \
 		libhyprutils.so:devel/hyprutils \
 		libdrm.so:graphics/libdrm \

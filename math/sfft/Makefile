@@ -1,6 +1,6 @@
 PORTNAME=	sfft
 DISTVERSION=	0.1.0
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	math
 MASTER_SITES=	http://spiral.net/software/sfft/ LOCAL/bf
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 ONLY_FOR_ARCHS=		aarch64 amd64 armv7 i386
 ONLY_FOR_ARCHS_REASON=	requires SSE instructions, which are x86-specific
 
-BROKEN_armv7=	/usr/local/bin/ld: error: unsupported option: -z relro
+#BROKEN_armv7=	/usr/local/bin/ld: error: unsupported option: -z relro
 
 BUILD_DEPENDS_aarch64=	${LOCALBASE}/include/sse2neon.h:devel/sse2neon
 BUILD_DEPENDS_armv7=	${BUILD_DEPENDS_aarch64}
@@ -76,7 +76,7 @@ MAKE_ENV+=	WITHOUT_PROFILE=yes
 .endif
 
 post-extract:
-	@${PRINTF} "LIBDIR=\t${PREFIX}/lib\n.include <bsd.lib.mk>\n" > \
+	@${PRINTF} "LIBDIR=\t${PREFIX}/lib\nSTRIP=\t${STRIP}\n.include <bsd.lib.mk>\n" > \
 		${BUILD_WRKSRC}/Makefile
 
 CORELIMIT?=	/usr/bin/limits -Sc 0

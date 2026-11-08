@@ -1,6 +1,6 @@
 include/isa-l_crypto.h
-include/isa-l_crypto/aes_cbc.h
-include/isa-l_crypto/aes_gcm.h
+%%AES%%include/isa-l_crypto/aes_cbc.h
+%%AES%%include/isa-l_crypto/aes_gcm.h
 include/isa-l_crypto/aes_keyexp.h
 include/isa-l_crypto/aes_xts.h
 include/isa-l_crypto/isal_crypto_api.h

@@ -1,8 +1,8 @@
 PORTNAME=	ghidra
-DISTVERSION=	12.0.4
+DISTVERSION=	12.2
 CATEGORIES=	devel security java
 MASTER_SITES=	https://github.com/NationalSecurityAgency/${PORTNAME}/releases/download/Ghidra_${DISTVERSION}_build/
-DISTNAME=	${PORTNAME}_${DISTVERSION}_PUBLIC_20260303
+DISTNAME=	${PORTNAME}_${DISTVERSION}_PUBLIC_20261016
 
 MAINTAINER=	tiga@FreeBSD.org
 COMMENT=	Software reverse engineering (SRE) framework
@@ -23,27 +23,21 @@ JAVA_VERSION=	21+
 
 SHEBANG_FILES=	docker/build-docker-image.sh \
 		docker/entrypoint.sh \
+		Ghidra/Debug/Debugger-agent-dbgeng/data/debugger-launchers/*.sh \
 		Ghidra/Debug/Debugger-agent-drgn/data/debugger-launchers/*.sh \
 		Ghidra/Debug/Debugger-agent-gdb/data/debugger-launchers/*.sh \
 		Ghidra/Debug/Debugger-agent-gdb/data/support/gdbsetuputils.sh \
 		Ghidra/Debug/Debugger-agent-lldb/data/debugger-launchers/*.sh \
 		Ghidra/Debug/Debugger-agent-lldb/data/support/*.sh \
 		Ghidra/Debug/Debugger-agent-lldb/data/support/lldbsetuputils.sh \
+		Ghidra/Debug/Debugger-agent-x64dbg/data/debugger-launchers/*.sh \
 		Ghidra/Debug/Debugger-isf/support/runISFServer \
 		Ghidra/Debug/Debugger-rmi-trace/data/debugger-launchers/raw-python3.sh \
 		Ghidra/Debug/Debugger-rmi-trace/data/support/setuputils.sh \
 		Ghidra/Features/BSim/support/make-postgres.sh \
-		Ghidra/Features/Jython/data/jython-2.7.4/Lib/*.py \
-		Ghidra/Features/Jython/data/jython-2.7.4/Lib/distutils/command/build_scripts.py \
-		Ghidra/Features/Jython/data/jython-2.7.4/Lib/distutils/tests/*.py \
-		Ghidra/Features/Jython/data/jython-2.7.4/Lib/encodings/rot_13.py \
-		Ghidra/Features/Jython/data/jython-2.7.4/Lib/ensurepip/__init__.py \
-		Ghidra/Features/Jython/data/jython-2.7.4/Lib/lib2to3/fixes/fix_metaclass.py \
-		Ghidra/Features/Jython/data/jython-2.7.4/Lib/lib2to3/pgen2/token.py \
-		Ghidra/Features/Jython/data/jython-2.7.4/Lib/lib2to3/tests/data/different_encoding.py \
-		Ghidra/Features/Jython/data/jython-2.7.4/Lib/lib2to3/tests/pytree_idempotency.py \
 		Ghidra/Features/PyGhidra/pypkg/setup.py \
 		ghidraRun \
+		server/certTool \
 		server/ghidraSvr \
 		server/jaas_external_program.example.sh \
 		server/svrAdmin \
@@ -54,15 +48,14 @@ SHEBANG_FILES=	docker/build-docker-image.sh \
 		support/bsim_ctl \
 		support/buildGhidraJar \
 		support/convertStorage \
-		support/gdbGADPServerRun \
 		support/ghidraClean \
 		support/ghidraDebug \
 		support/GhidraGo/ghidraGo \
 		support/jshellRun \
-		support/jythonRun \
 		support/launch.sh \
 		support/pyghidraRun \
-		support/sleigh
+		support/sleigh \
+		support/updateServerAllowList
 
 SUB_FILES=	ghidra.desktop
 

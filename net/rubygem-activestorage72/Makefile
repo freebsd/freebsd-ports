@@ -1,5 +1,5 @@
 PORTNAME=	activestorage
-PORTVERSION=	7.2.3.1
+PORTVERSION=	7.2.4
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	72
@@ -16,7 +16,7 @@ RUN_DEPENDS=	rubygem-actionpack72>=${PORTVERSION}<${PORTVERSION}_99:www/rubygem-
 		rubygem-activejob72>=${PORTVERSION}<${PORTVERSION}_99:devel/rubygem-activejob72 \
 		rubygem-activerecord72>=${PORTVERSION}<${PORTVERSION}_99:databases/rubygem-activerecord72 \
 		rubygem-activesupport72>=${PORTVERSION}<${PORTVERSION}_99:devel/rubygem-activesupport72 \
-		rubygem-marcel>=1.0<2:devel/rubygem-marcel
+		rubygem-marcel>=2.0<3:devel/rubygem-marcel
 
 USES=		gem
 

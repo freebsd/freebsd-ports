@@ -1,3 +1,5 @@
+This test looks for its data in a wrong dir for some reason
+
 --- cabal-benchmarks/bench/CabalBenchmarks.hs.orig	2025-12-05 21:21:24 UTC
 +++ cabal-benchmarks/bench/CabalBenchmarks.hs
 @@ -17,9 +17,9 @@ main = defaultMain

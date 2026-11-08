@@ -11,6 +11,7 @@ include/conduit/conduit.h
 include/conduit/conduit.hpp
 include/conduit/conduit.mod
 include/conduit/conduit_annotations.hpp
+include/conduit/conduit_benchmark.hpp
 include/conduit/conduit_bitwidth_style_types.h
 include/conduit/conduit_blueprint.h
 include/conduit/conduit_blueprint.hpp
@@ -37,6 +38,7 @@ include/conduit/conduit_blueprint_mesh_examples_venn.hpp
 include/conduit/conduit_blueprint_mesh_flatten.hpp
 include/conduit/conduit_blueprint_mesh_kdtree.hpp
 include/conduit/conduit_blueprint_mesh_matset_accessor.hpp
+include/conduit/conduit_blueprint_mesh_partition.hpp
 include/conduit/conduit_blueprint_mesh_topology_metadata.hpp
 include/conduit/conduit_blueprint_mesh_utils.hpp
 include/conduit/conduit_blueprint_mesh_utils_iterate_elements.hpp

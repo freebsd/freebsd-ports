@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Extension of the 'testthat' package
-WWW=		https://cran.r-project.org/package=patrick
 
 LICENSE=	APACHE20
 

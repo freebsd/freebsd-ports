@@ -10,5 +10,5 @@ lib/cmake/KDSingleApplication-qt6/KDSingleApplicationTargets-%%CMAKE_BUILD_TYPE%
 lib/cmake/KDSingleApplication-qt6/KDSingleApplicationTargets.cmake
 lib/libkdsingleapplication-qt6.so
 lib/libkdsingleapplication-qt6.so.1.2
-lib/libkdsingleapplication-qt6.so.1.2.0
+lib/libkdsingleapplication-qt6.so.1.2.1
 %%QT_MKSPECDIR%%/modules/qt_KDSingleApplication.pri

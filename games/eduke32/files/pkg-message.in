@@ -7,6 +7,11 @@ DUKE3D.GRP and DUKE.RTS from the original Duke Nukem 3D distribution to
 
 To use the XXX Pack, you need to first include the HRP,
 i.e. eduke32 -g %%DATADIR%%/duke3d_hrp.zip -g %%DATADIR%%/duke-erp-210701.zip
+
+VoidSW looks for the Shadow Warrior game data (SW.GRP) in
+%%PREFIX%%/share/voidsw, %%PREFIX%%/share/jfsw or ~/.config/voidsw.
+
+Ion Fury looks for fury.grp in %%PREFIX%%/share/fury or ~/.config/fury.
 EOM
 }
 ]

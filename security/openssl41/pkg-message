@@ -1,0 +1,7 @@
+[
+{ type: upgrade
+  message: <<EOM
+This OpenSSL version is a non-LTS release.
+EOM
+}
+]

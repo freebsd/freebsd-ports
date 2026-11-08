@@ -1,5 +1,6 @@
 PORTNAME=	pycrdt-store
 PORTVERSION=	0.1.5
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anyio>=3.6.2<5:devel/py-anyio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pycrdt>=0.14.0<0.15.0:devel/py-pycrdt@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sqlite-anyio>=0.2.3<0.3.0:databases/py-sqlite-anyio@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}sqlite-anyio>=0.2.3<0.4.0:databases/py-sqlite-anyio@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517

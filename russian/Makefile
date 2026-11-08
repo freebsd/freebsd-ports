@@ -4,7 +4,7 @@
     SUBDIR += aspell
     SUBDIR += d1489
     SUBDIR += emkatic
-    SUBDIR += eric6
+    SUBDIR += freebsd-man
     SUBDIR += gd
     SUBDIR += hunspell
     SUBDIR += hyphen

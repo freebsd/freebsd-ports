@@ -16,6 +16,8 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	muellergroup
 GL_TAGNAME=	7ad807da6753b4677927ad8efd485bee13d6f761
 
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://gitlab.com/muellergroup/kplib/-/work_items/8
+
 PLIST_FILES=	include/kPointLattice.h \
 		include/kPointLatticeGenerator.h \
 		include/msmath.h \

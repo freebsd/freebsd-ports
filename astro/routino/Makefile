@@ -1,5 +1,5 @@
 PORTNAME=	routino
-DISTVERSION=	3.4.3
+DISTVERSION=	3.4.4
 CATEGORIES=	astro
 MASTER_SITES=	http://www.routino.org/download/
 

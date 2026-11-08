@@ -4,7 +4,6 @@ include/pqxx/blob
 include/pqxx/blob.hxx
 include/pqxx/composite
 include/pqxx/composite.hxx
-include/pqxx/config-compiler.h
 include/pqxx/connection
 include/pqxx/connection.hxx
 include/pqxx/cursor
@@ -21,6 +20,7 @@ include/pqxx/field
 include/pqxx/field.hxx
 include/pqxx/internal/array-composite.hxx
 include/pqxx/internal/callgate.hxx
+include/pqxx/internal/config.h
 include/pqxx/internal/connection-string.hxx
 include/pqxx/internal/conversions.hxx
 include/pqxx/internal/encodings.hxx

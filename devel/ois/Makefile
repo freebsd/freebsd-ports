@@ -1,9 +1,9 @@
 PORTNAME=	ois
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.1
+DISTVERSION=	1.6.0
 CATEGORIES=	devel
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	rottlogg@proton.me
 COMMENT=	Object Oriented Input System
 WWW=		https://wgois.github.io/OIS/ \
 		https://github.com/wgois/OIS

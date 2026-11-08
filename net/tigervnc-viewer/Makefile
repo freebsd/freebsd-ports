@@ -1,4 +1,5 @@
 PKGNAMESUFFIX=	-viewer
+PORTREVISION=	1
 CATEGORIES=	net
 
 COMMENT=	TigerVNC Viewer
@@ -29,10 +30,11 @@ DESKTOP_ENTRIES=	"TigerVNC viewer" "Connect to VNC server and display remote des
 DESCR=		${.CURDIR}/pkg-descr
 
 post-patch:
-	# do not build server components and tests
+# Do not build server components and tests; relax FLTK version check
 	@${REINPLACE_CMD} \
 		-e 's|add_subdirectory(unix)||' \
 		-e 's|add_subdirectory(tests)||' \
+		-e '/FL_MINOR_VERSION/s,!= 3,< 3,' \
 		${WRKSRC}/CMakeLists.txt
 
 MASTERDIR=	${.CURDIR}/../tigervnc-server

@@ -1,0 +1,21 @@
+--- pyproject.toml.orig	2026-11-04 14:32:34 UTC
++++ pyproject.toml
+@@ -2,7 +2,7 @@
+ # Cython is intentionally NOT listed here: a normal install (pip install python-box from an sdist) builds the
+ # pure Python version. To build the compiled version, install Cython in the build environment and build with
+ # `--no-isolation` (see CONTRIBUTING.rst).
+-requires = ["setuptools>=77"]
++requires = ["setuptools"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -10,8 +10,7 @@ readme = { file = "README.rst", content-type = "text/x
+ dynamic = ["version"]
+ description = "Advanced Python dictionaries with dot notation access"
+ readme = { file = "README.rst", content-type = "text/x-rst" }
+-license = "MIT"
+-license-files = ["LICENSE"]
++license = { text = "MIT" }
+ authors = [{ name = "Chris Griffith", email = "chris@cdgriffith.com" }]
+ requires-python = ">=3.11"
+ dependencies = []

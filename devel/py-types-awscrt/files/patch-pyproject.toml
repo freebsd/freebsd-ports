@@ -1,0 +1,14 @@
+-- Fix license format for compatibility with setuptools < 78.
+
+--- pyproject.toml.orig	2025-01-01 00:00:00 UTC
++++ pyproject.toml
+@@ -4,8 +4,7 @@ version = "0.36.2"
+ requires-python = ">= 3.10"
+ description = "Type annotations and code completion for awscrt"
+ authors = [{ name = "Vlad Emelianov", email = "vlad.emelianov.nz@gmail.com" }]
+-license = "MIT"
+-license-files = ["LICENSE"]
++license = {text = "MIT"}
+ readme = "README.md"
+ keywords = ["awscrt", "type-annotations", "pyright", "mypy", "boto3", "ty"]
+ classifiers = [

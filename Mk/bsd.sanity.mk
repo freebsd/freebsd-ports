@@ -57,141 +57,141 @@ ERROR+=	"${a} is unsupported, please use ${${a}_ALT}"
 # Warnings only when DEVELOPER=yes
 .if defined(DEVELOPER)
 
-.if exists(${.CURDIR}/../../Mk/bsd.port.mk) || ${OVERLAYS:tA:M${.CURDIR:H:H}} == ${.CURDIR:H:H}
-.  if ${.CURDIR:H:T} != ${PKGCATEGORY}
+.  if exists(${.CURDIR}/../../Mk/bsd.port.mk) || ${OVERLAYS:tA:M${.CURDIR:H:H}} == ${.CURDIR:H:H}
+.    if ${.CURDIR:H:T} != ${PKGCATEGORY}
 DEV_ERROR+=	"The first entry in CATEGORIES should be the directory where the port lives"
-.  endif
-.else
+.    endif
+.  else
 DEV_WARNING+=	"Not validating first entry in CATEGORIES due to being outside of PORTSDIR. Please ensure this is proper when committing."
-.endif
+.  endif
 
-.if defined(USE_PERL5) && ${USE_PERL5} == yes
+.  if defined(USE_PERL5) && ${USE_PERL5} == yes
 DEV_ERROR+=	"USE_PERL5=yes is unsupported, please use USES=perl5 instead"
-.endif
+.  endif
 
-.if !empty(LIB_DEPENDS:M*/../*)
+.  if !empty(LIB_DEPENDS:M*/../*)
 DEV_ERROR+=	"LIB_DEPENDS contains unsupported relative path to dependency"
-.endif
+.  endif
 
-.if !empty(RUN_DEPENDS:M*/../*)
+.  if !empty(RUN_DEPENDS:M*/../*)
 DEV_ERROR+=	"RUN_DEPENDS contains unsupported relative path to dependency"
-.endif
+.  endif
 
-.if defined(USE_GNOME) && ${USE_GNOME:Mpkgconfig}
+.  if defined(USE_GNOME) && ${USE_GNOME:Mpkgconfig}
 DEV_ERROR+=	"USE_GNOME=pkgconfig is unsupported, please use USES=pkgconfig"
-.endif
+.  endif
 
-.if defined(USE_ZOPE) && ${USE_ZOPE} == yes
+.  if defined(USE_ZOPE) && ${USE_ZOPE} == yes
 DEV_ERROR+=	"USE_ZOPE=yes is unsupported, please use USES=zope instead"
-.endif
+.  endif
 
-.if defined(USE_SDL) && ${USE_SDL} == yes
+.  if defined(USE_SDL) && ${USE_SDL} == yes
 DEV_ERROR+=	"USE_SDL=yes is unsupported, please use USE_SDL=sdl instead"
-.endif
+.  endif
 
-.if defined(USE_GITHUB) && defined(GH_COMMIT)
+.  if defined(USE_GITHUB) && defined(GH_COMMIT)
 DEV_ERROR+=	"GH_COMMIT is unsupported, please convert GHL-\>GH in MASTER_SITES and set GH_TAGNAME to tag or commit hash and remove GH_COMMIT"
-.endif
+.  endif
 
-.if defined(USE_GNOME) && ${USE_GNOME:Mgnomehack}
+.  if defined(USE_GNOME) && ${USE_GNOME:Mgnomehack}
 DEV_WARNING+=	"USE_GNOME=gnomehack is deprecated, please use USES=pathfix"
-.endif
+.  endif
 
-.if defined(USE_GNOME) && ${USE_GNOME:Mdesktopfileutils}
+.  if defined(USE_GNOME) && ${USE_GNOME:Mdesktopfileutils}
 DEV_WARNING+=	"USE_GNOME=desktopfileutils is deprecated, please use USES=desktop-file-utils"
-.endif
+.  endif
 
-.if defined(LIB_DEPENDS) && ${LIB_DEPENDS:Nlib*}
+.  if defined(LIB_DEPENDS) && ${LIB_DEPENDS:Nlib*}
 DEV_ERROR+=	"All LIB_DEPENDS should use the new format and start out with lib.  \(libfoo.so vs foo.so\)"
-.endif
+.  endif
 
-.if defined(LICENSE)
-.  if ${LICENSE:MBSD}
+.  if defined(LICENSE)
+.    if ${LICENSE:MBSD}
 DEV_WARNING+=	"LICENSE must not contain BSD, instead use BSD[234]CLAUSE"
-.  endif
-.elif !defined(DISABLE_LICENSES)
-.  if empty(USES:Mmetaport)
+.    endif
+.  elif !defined(DISABLE_LICENSES)
+.    if empty(USES:Mmetaport)
 DEV_WARNING+=	"Please set LICENSE for this port"
+.    endif
 .  endif
-.endif
 
-.for _a in ${ONLY_FOR_ARCHS}
-.  if defined(ONLY_FOR_ARCHS_REASON_${_a})
+.  for _a in ${ONLY_FOR_ARCHS}
+.    if defined(ONLY_FOR_ARCHS_REASON_${_a})
 DEV_WARNING+=	"ONLY_FOR_ARCHS_${_a} is defined and ${_a} is in ONLY_FOR_ARCHS, the message will never be used."
-.  endif
-.endfor
+.    endif
+.  endfor
 
-.if defined(USE_PYDISTUTILS) && ${USE_PYDISTUTILS} == "easy_install"
+.  if defined(USE_PYDISTUTILS) && ${USE_PYDISTUTILS} == "easy_install"
 DEV_ERROR+=	"USE_PYDISTUTILS=easy_install is no longer supported, please use USE_PYDISTUTILS=yes"
-.endif
+.  endif
 
-.if defined(USE_PYTHON) && (${USE_PYTHON} == "yes" || ${USE_PYTHON:C/[-0-9.+]*//} == "")
+.  if defined(USE_PYTHON) && (${USE_PYTHON} == "yes" || ${USE_PYTHON:C/[-0-9.+]*//} == "")
 _PYTHON_VAL := ${USE_PYTHON}
-.  if ${_PYTHON_VAL} != "yes"
+.    if ${_PYTHON_VAL} != "yes"
 DEV_ERROR+=	"USE_PYTHON=${_PYTHON_VAL} is no longer supported, please use USES=python:${_PYTHON_VAL}"
-.  else
+.    else
 DEV_ERROR+=	"USE_PYTHON=yes is no longer supported, please use USES=python"
+.    endif
 .  endif
-.endif
-.if defined(USE_PYTHON_RUN)
-.  if ${USE_PYTHON_RUN} != "yes"
+.  if defined(USE_PYTHON_RUN)
+.    if ${USE_PYTHON_RUN} != "yes"
 DEV_ERROR+=	"USE_PYTHON_RUN is no longer supported, please use USES=python:${USE_PYTHON_RUN},run"
-.  else
+.    else
 DEV_ERROR+=	"USE_PYTHON_RUN is no longer supported, please use USES=python:run"
+.    endif
 .  endif
-.endif
-.if defined(USE_PYTHON_BUILD)
-.  if ${USE_PYTHON_BUILD} != "yes"
+.  if defined(USE_PYTHON_BUILD)
+.    if ${USE_PYTHON_BUILD} != "yes"
 DEV_ERROR+=	"USE_PYTHON_BUILD is no longer supported, please use USES=python:${USE_PYTHON_BUILD},build"
-.  else
+.    else
 DEV_ERROR+=	"USE_PYTHON_BUILD is no longer supported, please use USES=python:build"
+.    endif
 .  endif
-.endif
 
-.if defined(USE_RC_SUBR) && ${USE_RC_SUBR:tu} == YES
+.  if defined(USE_RC_SUBR) && ${USE_RC_SUBR:tu} == YES
 DEV_ERROR+=	"USE_RC_SUBR=yes has not been supported for a long time, remove it."
-.endif
+.  endif
 
-.if defined(USE_TCL) || defined(USE_TCL_BUILD) || defined(USE_TCL_RUN) || defined(USE_TCL_WRAPPER) || \
+.  if defined(USE_TCL) || defined(USE_TCL_BUILD) || defined(USE_TCL_RUN) || defined(USE_TCL_WRAPPER) || \
    defined(USE_TK)  || defined(USE_TK_BUILD)  || defined(USE_TK_RUN)  || defined(USE_TK_WRAPPER)
 DEV_ERROR+=	"USE_TCL and USE_TK are no longer supported, please use USES=tcl or USES=tk"
-.endif
-
-.if defined(USE_FPC) && ${USE_FPC:tl} == "yes"
-DEV_ERROR+=	"USE_FPC=yes is no longer supported, please use USES=fpc"
-.endif
-
-.if ! empty(USES:Mruby) && ! empty(USES:Mgem)
-DEV_ERROR=	"'USES=gem' implies 'USES=ruby'. You should not specify both of them"
-.endif
-
-.for _type in EXAMPLES DOCS
-.  if defined(PORT${_type}) && empty(_REALLY_ALL_POSSIBLE_OPTIONS:M${_type})
-DEV_ERROR+=	"PORT${_type} does not do anything unless the ${_type} option is present."
 .  endif
-.endfor
 
-.if empty(PORTEPOCH) || !empty(PORTEPOCH:C/[0-9]+//)
+.  if defined(USE_FPC) && ${USE_FPC:tl} == "yes"
+DEV_ERROR+=	"USE_FPC=yes is no longer supported, please use USES=fpc"
+.  endif
+
+.  if ! empty(USES:Mruby) && ! empty(USES:Mgem)
+DEV_ERROR=	"'USES=gem' implies 'USES=ruby'. You should not specify both of them"
+.  endif
+
+.  for _type in EXAMPLES DOCS
+.    if defined(PORT${_type}) && empty(_REALLY_ALL_POSSIBLE_OPTIONS:M${_type})
+DEV_ERROR+=	"PORT${_type} does not do anything unless the ${_type} option is present."
+.    endif
+.  endfor
+
+.  if empty(PORTEPOCH) || !empty(PORTEPOCH:C/[0-9]+//)
 DEV_ERROR+=	"PORTEPOCH needs to be an integer \>= 0"
-.endif
+.  endif
 
-.if empty(PORTREVISION) || !empty(PORTREVISION:C/[0-9]+//)
+.  if empty(PORTREVISION) || !empty(PORTREVISION:C/[0-9]+//)
 DEV_ERROR+=	"PORTREVISION needs to be an integer \>= 0"
-.endif
+.  endif
 
 # Whitelist of options helper lookalikes that should not be reported on:
 _OPTIONS_HELPERS_SEEN+=	OPENSSL_LDFLAGS
 _BROKEN_OPTIONS_HELPERS=
-.for opt in ${_REALLY_ALL_POSSIBLE_OPTIONS}
-.  for helper in ${_ALL_OPTIONS_HELPERS}
-.    if defined(${opt}_${helper}) && empty(_OPTIONS_HELPERS_SEEN:M${opt}_${helper})
+.  for opt in ${_REALLY_ALL_POSSIBLE_OPTIONS}
+.    for helper in ${_ALL_OPTIONS_HELPERS}
+.      if defined(${opt}_${helper}) && empty(_OPTIONS_HELPERS_SEEN:M${opt}_${helper})
 _BROKEN_OPTIONS_HELPERS+=	${opt}_${helper}
-.    endif
+.      endif
+.    endfor
 .  endfor
-.endfor
-.if !empty(_BROKEN_OPTIONS_HELPERS)
+.  if !empty(_BROKEN_OPTIONS_HELPERS)
 DEV_ERROR+=	"The following options helpers are incorrectly set after bsd.port.options.mk and are ineffective: ${_BROKEN_OPTIONS_HELPERS}"
-.endif
+.  endif
 
 SANITY_UNSUPPORTED=	USE_OPENAL USE_FAM USE_MAKESELF USE_ZIP USE_LHA USE_CMAKE \
 		USE_READLINE USE_ICONV PERL_CONFIGURE PERL_MODBUILD \
@@ -221,10 +221,10 @@ SANITY_DEPRECATED=	MLINKS \
 SANITY_NOTNEEDED=	CMAKE_NINJA WX_UNICODE USE_KDEBASE_VER \
 			USE_KDELIBS_VER USE_QT_VER
 
-.for a in 1 2 3 4 5 6 7 8 9 L N
+.  for a in 1 2 3 4 5 6 7 8 9 L N
 SANITY_DEPRECATED+=	MAN${a}
 MAN${a}_ALT=		pkg-plist to list manpages
-.endfor
+.  endfor
 
 USE_AUTOTOOLS_ALT=	USES=autoreconf and GNU_CONFIGURE=yes
 USE_OPENAL_ALT=		USES=openal
@@ -328,22 +328,22 @@ JAVA_EXTRACT_ALT=	USES=java:extract
 JAVA_BUILD_ALT=		USES=java:build
 JAVA_RUN_ALT=		USES=java:run
 
-.for a in ${SANITY_DEPRECATED}
-.  if defined(${a})
+.  for a in ${SANITY_DEPRECATED}
+.    if defined(${a})
 DEV_WARNING+=	"${a} is deprecated, please use ${${a}_ALT}"
-.  endif
-.endfor
+.    endif
+.  endfor
 
-.for a in ${SANITY_NOTNEEDED}
-.  if defined(${a})
+.  for a in ${SANITY_NOTNEEDED}
+.    if defined(${a})
 DEV_WARNING+=	"${a} is not needed: ${${a}_REASON}"
-.  endif
-.endfor
+.    endif
+.  endfor
 
-.for a in ${SANITY_UNSUPPORTED}
-.  if defined(${a})
+.  for a in ${SANITY_UNSUPPORTED}
+.    if defined(${a})
 DEV_ERROR+=	"${a} is unsupported, please use ${${a}_ALT}"
-.  endif
-.endfor
+.    endif
+.  endfor
 
 .endif # defined(DEVELOPER)

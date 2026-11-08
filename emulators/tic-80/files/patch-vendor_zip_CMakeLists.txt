@@ -1,0 +1,8 @@
+--- vendor/zip/CMakeLists.txt.orig	2026-09-12 08:05:45 UTC
++++ vendor/zip/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 3.4)
++cmake_minimum_required(VERSION 3.5)
+ 
+ project(zip
+   LANGUAGES C

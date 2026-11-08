@@ -19,6 +19,7 @@ GH_TAGNAME=	2f4fc2a
 CMAKE_SOURCE_PATH=	${WRKSRC}/cmake
 
 CMAKE_ON=	BUILD_SHARED_LIBS
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility
 
 PLIST_FILES=	include/MidiShareLight.h \
 		include/midifile.h \

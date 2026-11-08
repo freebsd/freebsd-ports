@@ -1,6 +1,7 @@
 PORTNAME=	heyoka
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.11.0
+DISTVERSION=	7.13.0
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,21 +18,20 @@ LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs \
 		libmp++.so:math/mppp \
 		libmpc.so:math/mpc \
 		libmpfr.so:math/mpfr \
-		libsqlite3.so:databases/sqlite3 \
 		libtbb.so:devel/onetbb \
 		libsleef.so:math/sleef \
 		libspdlog.so:devel/spdlog
 TEST_DEPENDS=	xtensor>0:math/xtensor \
 		xtensor-blas>0:math/xtensor-blas
 
-USES=		cmake:testing compiler:c++20-lang llvm:min=18,build,run ssl
+USES=		cmake:testing compiler:c++20-lang llvm:min=18,build,run sqlite ssl
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	bluescarni
 
 CMAKE_ON=		HEYOKA_WITH_MPPP HEYOKA_WITH_SLEEF
-CMAKE_TESTING_ON=	HEYOKA_BUILD_TESTS
+CMAKE_OFF=		BUILD_TESTING
 
 .include <bsd.port.pre.mk>
 
@@ -46,6 +46,6 @@ LLVM_VERSION_MINOR=	0
 
 CMAKE_ARGS+=		-DFREEBSD_LLVM_VERSION=${LLVM_VERSION}.${LLVM_VERSION_MINOR}
 
-# tests as of 7.11.0: 100% tests passed, 0 tests failed out of 162
+# tests disabled: upstream C++ test suite takes excessive time and CPU, see https://github.com/bluescarni/heyoka/issues/554
 
 .include <bsd.port.post.mk>

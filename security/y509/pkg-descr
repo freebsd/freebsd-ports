@@ -1,0 +1,13 @@
+y509 is a terminal user interface for inspecting and validating X.509
+certificate chains.
+
+Features:
+- Interactive TUI for browsing certificate details, extensions and the
+  chain hierarchy
+- Chain validation against the system trust store, flagging missing
+  intermediates, wrong ordering and expired certificates
+- Live server inspection over TLS, including STARTTLS for SMTP, IMAP
+  and PostgreSQL
+- Export certificates to PEM/DER files or copy them to the clipboard
+- JSON output for scripting and CI/CD pipelines
+- Reads certificates from PEM/DER files, remote servers or stdin

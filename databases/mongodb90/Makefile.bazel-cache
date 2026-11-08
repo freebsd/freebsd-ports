@@ -1,0 +1,61 @@
+# Helper for regenerating BAZEL_DISTFILES and BAZEL_NPM_DISTFILES in the port
+# Makefile after an update.
+#
+# Usage:
+#   make -f Makefile.bazel-cache
+#
+# This configures the port without the Bazel distfiles, lets Bazel analyse
+# ${ALL_TARGET} with an empty repository cache and downloads enabled and prints
+# the archives Bazel downloaded as BAZEL_DISTFILES and BAZEL_NPM_DISTFILES
+# (also saved in ${BAZEL_DISTFILES_MK}). Replace them in the Makefile and run
+# "make makesum". Run "make make-crates" first when the Cargo.lock files
+# changed, crates are not part of these lists.
+#
+# WRKDIRPREFIX and DISTDIR are intentionally not set here.  The sub-make that
+# reads the real port Makefile will pick them up from /etc/make.conf or from the
+# command line, the same as any other port build.
+
+PORTDIR?=	${.CURDIR}
+BATCH?=		yes
+
+PORT_MAKE=	${MAKE} -C ${PORTDIR} \
+		BATCH=${BATCH}
+
+.for var in ALL_TARGET BAZEL BAZEL_ARGS BAZEL_DISTFILES BAZEL_ENV \
+	BAZEL_NPM_DISTFILES BAZEL_REGISTRY_WRKSRC BAZEL_STARTUP_ARGS \
+	DISTINFO_FILE FILESDIR MKDIR PYTHON_CMD RM SETENV WRKDIR WRKSRC
+${var}!=	${PORT_MAKE} -V ${var}
+.endfor
+
+BAZEL_DISTFILES_ROOT=	${WRKDIR}/bazel-distfiles
+BAZEL_DISTFILES_CACHE=	${BAZEL_DISTFILES_ROOT}/repository-cache
+BAZEL_DISTFILES_OUTPUT=	${BAZEL_DISTFILES_ROOT}/output
+BAZEL_DISTFILES_MK=	${BAZEL_DISTFILES_ROOT}/bazel-distfiles.mk
+BAZEL_DISTFILES_STARTUP_ARGS=	${BAZEL_STARTUP_ARGS:N--output_user_root=*} \
+				--output_user_root=${BAZEL_DISTFILES_OUTPUT}
+# Without the canonical ids Bazel stores no id- files, which bazel-distfiles.py
+# uses to recognise download URLs.
+BAZEL_DISTFILES_ARGS=	${BAZEL_ARGS:N--repository_disable_download:N--repository_cache=*:N--repo_env=BAZEL_HTTP_RULES_URLS_AS_DEFAULT_CANONICAL_ID=*} \
+			--repository_cache=${BAZEL_DISTFILES_CACHE}
+
+.PHONY: all bazel-distfiles print-bazel-distfiles clean-bazel-distfiles
+
+all: bazel-distfiles
+
+bazel-distfiles:
+	${PORT_MAKE} BAZEL_DISTFILES= BAZEL_NPM_DISTFILES= configure
+	${RM} -r ${BAZEL_DISTFILES_ROOT}
+	${MKDIR} ${BAZEL_DISTFILES_CACHE}
+	cd ${WRKSRC} && ${SETENV} ${BAZEL_ENV} ${BAZEL} ${BAZEL_DISTFILES_STARTUP_ARGS} \
+		build --nobuild ${BAZEL_DISTFILES_ARGS} ${ALL_TARGET}
+	${MAKE} -f ${.CURDIR}/Makefile.bazel-cache print-bazel-distfiles
+
+print-bazel-distfiles:
+	${PYTHON_CMD} ${FILESDIR}/bazel-distfiles.py ${BAZEL_DISTFILES_CACHE} \
+		${BAZEL_REGISTRY_WRKSRC} ${DISTINFO_FILE} \
+		${WRKSRC} ${BAZEL_DISTFILES_OUTPUT} \
+		-- "${BAZEL_DISTFILES}" "${BAZEL_NPM_DISTFILES}" > ${BAZEL_DISTFILES_MK}
+	@cat ${BAZEL_DISTFILES_MK}
+
+clean-bazel-distfiles:
+	${RM} -r ${BAZEL_DISTFILES_ROOT}

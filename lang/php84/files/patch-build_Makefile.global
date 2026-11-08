@@ -1,6 +1,6 @@
---- build/Makefile.global.orig	2024-07-02 13:43:13 UTC
+--- build/Makefile.global.orig	2026-10-19 14:38:59 UTC
 +++ build/Makefile.global
-@@ -91,14 +91,14 @@ test: all
+@@ -95,14 +95,14 @@ test: all
  	@if test ! -z "$(PHP_EXECUTABLE)" && test -x "$(PHP_EXECUTABLE)"; then \
  		INI_FILE=`$(PHP_EXECUTABLE) -d 'display_errors=stderr' -r 'echo php_ini_loaded_file();' 2> /dev/null`; \
  		if test "$$INI_FILE"; then \

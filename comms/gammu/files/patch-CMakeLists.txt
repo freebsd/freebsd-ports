@@ -1,6 +1,15 @@
---- CMakeLists.txt.orig	2016-04-13 11:37:33 UTC
+--- CMakeLists.txt.orig	2020-10-03 08:02:55 UTC
 +++ CMakeLists.txt
-@@ -117,7 +117,7 @@ check_symbol_exists (getpwnam "pwd.h" HA
+@@ -2,7 +2,7 @@
+ # Copyright (c) 2007 - 2018 Michal Cihar
+ # vim: expandtab sw=4 ts=4 sts=4:
+ 
+-cmake_minimum_required (VERSION 3.0)
++cmake_minimum_required (VERSION 3.5)
+ INCLUDE (CMakeForceCompiler)
+ 
+ project (Gammu C)
+@@ -123,7 +123,7 @@ check_symbol_exists (getuid "unistd.h" HAVE_GETUID)
  check_symbol_exists (getgrnam "grp.h" HAVE_GETGRNAM)
  check_symbol_exists (getpwuid "pwd.h" HAVE_GETPWUID)
  check_symbol_exists (getuid "unistd.h" HAVE_GETUID)
@@ -9,7 +18,7 @@
  check_symbol_exists (setuid "unistd.h" HAVE_SETUID)
  check_symbol_exists (setgid "unistd.h" HAVE_SETGID)
  check_symbol_exists (SIGHUP "signal.h" HAVE_SIGHUP)
-@@ -415,7 +415,6 @@ if(CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMP
+@@ -446,7 +446,6 @@ if(CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_MINGW 
      #
      # Warnings related flags
      #
@@ -17,11 +26,11 @@
      MACRO_TUNE_COMPILER("-Wall")
      MACRO_TUNE_COMPILER("-Werror-implicit-function-declaration")
      MACRO_TUNE_COMPILER("-Wno-deprecated-declarations")
-@@ -547,7 +546,6 @@ endif (BUILD_SHARED_LIBS)
+@@ -568,7 +567,6 @@ set (DOCS
  set (DOCS
      README.rst
      ChangeLog
 -    COPYING
      )
  
- # OpenCellID API key
+ if (CMAKE_USE_PTHREADS_INIT)

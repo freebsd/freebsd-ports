@@ -11,6 +11,7 @@ share/metainfo/net.sourceforge.VMPK.metainfo.xml
 %%DATADIR%%/Serbian-cyr.xml
 %%DATADIR%%/Serbian-lat.xml
 %%DATADIR%%/azerty.xml
+%%DATADIR%%/azerty-FR.xml
 %%DATADIR%%/german.xml
 %%DATADIR%%/gmgsxg.ins
 %%DATADIR%%/help.html

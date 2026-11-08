@@ -1,5 +1,5 @@
 PORTNAME=	grpc
-PORTVERSION=	1.82.1
+PORTVERSION=	1.84.0
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	2
 CATEGORIES=	devel
@@ -51,14 +51,12 @@ USE_LDCONFIG=	yes
 PLIST_SUB=	PORTVERSION=${PORTVERSION} \
 		SHLIB_VER=${PORTVERSION:R}
 
-CONFLICTS_INSTALL=	grpc[0-9][0-9][0-9]
+CONFLICTS_INSTALL=	grpc[0-9][0-9][0-9] gprbuild-*
 
 USE_GITHUB=	yes
-GH_TUPLE=	envoyproxy:data-plane-api:84e8436:envoyproxy_data_plane_api/third_party/envoy-api \
-		googleapis:googleapis:1134d26:googleapis_googleapis/third_party/googleapis \
-		census-instrumentation:opencensus-proto:1664cc9:census_instrumentation_opencensus_proto/third_party/opencensus-proto \
-		bufbuild:protoc-gen-validate:414042a:bufbuild_protoc_gen_validate/third_party/protoc-gen-validate \
-		cncf:xds:dba9d58:cncf_xds/third_party/xds
+GH_TUPLE=	envoyproxy:data-plane-api:102e9b1:envoyproxy_data_plane_api/third_party/envoy-api \
+		googleapis:googleapis:0fad501:googleapis_googleapis/third_party/googleapis \
+		grpc:grpc-proto:dd549fc:grpc_grpc_proto/third_party/grpc-proto
 
 OPTIONS_DEFINE=	OPENTELEMETRY
 OPTIONS_SUB=	yes

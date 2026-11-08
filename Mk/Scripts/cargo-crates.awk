@@ -2,28 +2,32 @@
 
 BEGIN {
 	crates_len = 0
+	in_package = 0
 	crate_name = "<unknown>"
 	crate_version = "<unknown>"
 	crate_source = "<unknown>"
 }
 
-/^name = ".*"/ {
+in_package && /^name = ".*"/ {
 	crate_name = $3
 	gsub(/"/, "", crate_name)
 }
 
-/^version = ".*"/ {
+in_package && /^version = ".*"/ {
 	crate_version = $3
 	gsub(/"/, "", crate_version)
 }
 
-/^source = ".*"/ {
+in_package && /^source = ".*"/ {
 	crate_source = $3
 	gsub(/"/, "", crate_source)
 }
 
-/^\[\[package\]\]$/ {
+# Any [[...]] table ends the previous one, but only [[package]] tables are
+# crates: Cargo.lock can end with [[patch.unused]] tables after them
+/^\[\[.*\]\]$/ {
 	add_crate()
+	in_package = ($0 == "[[package]]")
 }
 
 function add_crate() {

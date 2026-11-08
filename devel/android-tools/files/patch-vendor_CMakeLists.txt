@@ -1,6 +1,6 @@
---- vendor/CMakeLists.txt	2024-08-29 19:46:57.000000000 +0200
-+++ vendor/CMakeLists.txt	2026-03-21 14:09:16.768573000 +0100
-@@ -41,6 +41,15 @@
+--- vendor/CMakeLists.txt.orig	2026-08-01 05:20:11 UTC
++++ vendor/CMakeLists.txt
+@@ -41,6 +41,15 @@ add_compile_definitions(_FILE_OFFSET_BITS=64 _LARGEFIL
  # 32-bit glibc platforms this is not the case by default.
  add_compile_definitions(_FILE_OFFSET_BITS=64 _LARGEFILE64_SOURCE)
  

@@ -6,6 +6,10 @@ include/pffft/pffastconv.h
 include/pffft/pffft.h
 include/pffft/pffft.hpp
 include/pffft/pffft_double.h
+lib/cmake/pffft/pffft-config-version.cmake
+lib/cmake/pffft/pffft-config.cmake
+lib/cmake/pffft/pffft-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/pffft/pffft-targets.cmake
 lib/libpfdsp.so
 lib/libpffastconv.so
 lib/libpffft.so

@@ -1,12 +1,13 @@
 PORTNAME=	jdftx
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.7.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Software for joint density functional theory in chemistry
-WWW=		https://jdftx.org/
+WWW=		https://jdftx.org/ \
+		https://github.com/shankar1729/jdftx
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -21,18 +22,23 @@ RUN_DEPENDS=	bash:shells/bash
 TEST_DEPENDS=	bash:shells/bash
 
 USES=		compiler:c++11-lang cmake fortran localbase:ldflags shebangfix
+USE_LDCONFIG=	yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	shankar1729
+
 SHEBANG_GLOB=	*.sh
 SHEBANG_FILES=	scripts/*
 SHEBANG_LANG=	octave
-USE_GITHUB=	yes
-GH_ACCOUNT=	shankar1729
-USE_LDCONFIG=	yes
+
+LDFLAGS+=	-lexecinfo
 
 TEST_TARGET=	test
 
 WRKSRC_SUBDIR=	${PORTNAME}
 
 CMAKE_ARGS=	-DLAPACK_LIBRARIES:STRING="-llapack -lblas"
+CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/shankar1729/jdftx/issues/454
 
 OPTIONS_DEFINE=		MPI LIBXC HDF5 SCALAPACK OCTAVE
 OPTIONS_DEFAULT=	MPI LIBXC

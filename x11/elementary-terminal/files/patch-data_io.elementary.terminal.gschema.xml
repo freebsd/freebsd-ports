@@ -1,6 +1,6 @@
---- data/io.elementary.terminal.gschema.xml.orig	2023-04-04 17:39:57 UTC
+--- data/io.elementary.terminal.gschema.xml.orig	2026-08-03 19:07:29 UTC
 +++ data/io.elementary.terminal.gschema.xml
-@@ -164,7 +164,7 @@
+@@ -163,7 +163,7 @@
        <description>DEPRECATED: This key is deprecated and ignored.</description>
      </key>
      <key name="font" type="s">

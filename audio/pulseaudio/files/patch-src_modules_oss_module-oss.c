@@ -10,7 +10,7 @@
      int nfrags, frag_size, orig_frag_size;
  
      bool shutdown;
-@@ -819,75 +816,145 @@ static int source_set_state_in_io_thread_cb(pa_source 
+@@ -819,75 +816,157 @@ static int source_set_state_in_io_thread_cb(pa_source 
      return 0;
  }
  
@@ -99,14 +99,19 @@
  
 -    if (u->mixer_devmask & SOUND_MASK_VOLUME)
 -        (void) pa_oss_set_volume(u->mixer_fd, SOUND_MIXER_WRITE_VOLUME, &s->sample_spec, &s->real_volume);
-+    if (mixer_devmask & SOUND_MASK_VOLUME)
++    if (mixer_devmask & SOUND_MASK_VOLUME) {
 +        (void) pa_oss_set_volume(mixer_fd, SOUND_MIXER_WRITE_VOLUME, &s->sample_spec, &s->real_volume);
++        goto done;
++    }
  
 -    if (u->mixer_devmask & SOUND_MASK_PCM)
 -        (void) pa_oss_set_volume(u->mixer_fd, SOUND_MIXER_WRITE_PCM, &s->sample_spec, &s->real_volume);
-+    if (mixer_devmask & SOUND_MASK_PCM)
++    if (mixer_devmask & SOUND_MASK_PCM) {
 +        (void) pa_oss_set_volume(mixer_fd, SOUND_MIXER_WRITE_PCM, &s->sample_spec, &s->real_volume);
++        goto done;
++    }
 +
++done:
 +    pa_close(mixer_fd);
  }
  
@@ -146,6 +151,10 @@
 +        if (pa_oss_get_volume(mixer_fd, SOUND_MIXER_READ_MIC, &s->sample_spec, &s->real_volume) >= 0)
 +                goto done;
  
++    if (mixer_devmask & SOUND_MASK_MONITOR)
++        if (pa_oss_get_volume(mixer_fd, SOUND_MIXER_READ_MONITOR, &s->sample_spec, &s->real_volume) >= 0)
++                goto done;
++
 +    oss_get_dummy_volume(&s->sample_spec, &s->real_volume);
 +
      pa_log_info("Device doesn't support reading mixer settings: %s", pa_cstrerror(errno));
@@ -181,11 +190,14 @@
 +    if (mixer_devmask & SOUND_MASK_MIC)
 +        (void) pa_oss_set_volume(mixer_fd, SOUND_MIXER_WRITE_MIC, &s->sample_spec, &s->real_volume);
 +
++    if (mixer_devmask & SOUND_MASK_MONITOR)
++        (void) pa_oss_set_volume(mixer_fd, SOUND_MIXER_WRITE_MONITOR, &s->sample_spec, &s->real_volume);
++
 +    pa_close(mixer_fd);
  }
  
  static void thread_func(void *userdata) {
-@@ -1158,16 +1225,6 @@ static void thread_func(void *userdata) {
+@@ -1158,16 +1237,6 @@ static void thread_func(void *userdata) {
              revents = pollfd->revents;
          } else
              revents = 0;
@@ -202,7 +214,7 @@
      }
  
  fail:
-@@ -1245,6 +1302,8 @@ int pa__init(pa_module*m) {
+@@ -1245,6 +1314,8 @@ int pa__init(pa_module*m) {
      }
  
  #ifndef __FreeBSD__
@@ -211,7 +223,7 @@
      if (use_mmap && mode == O_WRONLY) {
          pa_log_info("Device opened for playback only, cannot do memory mapping, falling back to UNIX write() mode.");
          use_mmap = false;
-@@ -1277,8 +1336,6 @@ int pa__init(pa_module*m) {
+@@ -1277,8 +1348,6 @@ int pa__init(pa_module*m) {
      u->module = m;
      m->userdata = u;
      u->fd = fd;
@@ -220,7 +232,7 @@
      u->use_getospace = u->use_getispace = true;
      u->use_getodelay = true;
      u->mode = mode;
-@@ -1449,36 +1506,19 @@ int pa__init(pa_module*m) {
+@@ -1449,36 +1518,19 @@ int pa__init(pa_module*m) {
              u->out_mmap_memblocks = pa_xnew0(pa_memblock*, u->out_nfrags);
      }
  
@@ -268,7 +280,7 @@
  go_on:
  
      pa_assert(u->source || u->sink);
-@@ -1594,9 +1634,6 @@ void pa__done(pa_module*m) {
+@@ -1594,9 +1646,6 @@ void pa__done(pa_module*m) {
  
      if (u->fd >= 0)
          pa_close(u->fd);

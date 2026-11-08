@@ -1,0 +1,2 @@
+The Pydantic Logfire Python SDK provides observability and logging for Python
+applications, built on OpenTelemetry.

@@ -1,5 +1,5 @@
-TIMESTAMP = 1783285703
-SHA256 (go/net-p2p_mkbrr/mkbrr-v1.24.0/v1.24.0.mod) = b79991ef162aa823cb995bbab95b5f7094146d143f546a92a66dbcdf9f5e9c64
-SIZE (go/net-p2p_mkbrr/mkbrr-v1.24.0/v1.24.0.mod) = 2393
-SHA256 (go/net-p2p_mkbrr/mkbrr-v1.24.0/v1.24.0.zip) = 93df28dc7393d55c7029e86ff51c75cbe00a85f1c24d5c7dbfb5467b3479e8d0
-SIZE (go/net-p2p_mkbrr/mkbrr-v1.24.0/v1.24.0.zip) = 492804
+TIMESTAMP = 1792234954
+SHA256 (go/net-p2p_mkbrr/mkbrr-v1.27.0/v1.27.0.mod) = 532a531cc95ecd16c6a93e4221607f214ccbb6cbcc84649a7faf33908e0aab11
+SIZE (go/net-p2p_mkbrr/mkbrr-v1.27.0/v1.27.0.mod) = 1809
+SHA256 (go/net-p2p_mkbrr/mkbrr-v1.27.0/v1.27.0.zip) = bd4ff8e6e78d344c0f3794b72b8fad7e1bdf889a55823dab1383db17771dc7ca
+SIZE (go/net-p2p_mkbrr/mkbrr-v1.27.0/v1.27.0.zip) = 1207580

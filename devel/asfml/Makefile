@@ -1,119 +1,137 @@
 PORTNAME=	asfml
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.5.5
-PORTREVISION=	2
+DISTVERSION=	3.0.0
 CATEGORIES=	devel games graphics multimedia
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ada@FreeBSD.org
 COMMENT=	Ada bindings to the Simple and Fast Multimedia Library (SFML)
 WWW=		https://mgrojo.github.io/ASFML/
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-BROKEN_i386=	segfault: raised STORAGE_ERROR : s-intman.adb:136 explicit raise
-
 BUILD_DEPENDS=	gprbuild>0:devel/gprbuild
-LIB_DEPENDS=	libcsfml-system.so:devel/csfml
+LIB_DEPENDS=	libcsfml-audio.so:devel/csfml \
+		libcsfml-graphics.so:devel/csfml \
+		libcsfml-network.so:devel/csfml \
+		libcsfml-system.so:devel/csfml \
+		libcsfml-window.so:devel/csfml
 
-USES=		ada:12,run
-USE_GCC=	yes:build
+USES=		ada:run
 USE_GITHUB=	yes
 GH_ACCOUNT=	mgrojo
 GH_PROJECT=	${PORTNAME:tu}
 
-EXTRACT_AFTER_ARGS=	--exclude include/generated
+MAKE_CMD=	gprbuild
 
-SUB_FILES=	${PORTNAME}.gpr
+EXTRACT_AFTER_ARGS=	${_DIST_EXCLUDES:S,^,--exclude ,}
 
-OPTIONS_DEFINE=	DEBUG DOCS EXAMPLES
-OPTIONS_SUB=	yes
+PORTEXAMPLES=	*
 
-DOCS_DESC=	Install API reference documentation
-EXAMPLES_DESC=	Build and install Ada SFML examples
+OPTIONS_DEFINE=			DOCS EXAMPLES
+OPTIONS_DEFAULT=		CONTRACTS OPTIMIZE RUNTIME STATIC STYLE
+OPTIONS_GROUP=			TOOLCHAINCONFIG
+OPTIONS_GROUP_TOOLCHAINCONFIG=	CONTRACTS RUNTIME STATIC STYLE
+OPTIONS_SUB=			yes
 
-EXAMPLES_RUN_DEPENDS+=	dejavu>0:x11-fonts/dejavu \
-			webfonts>0:x11-fonts/webfonts
+CONTRACTS_DESC=		Disable/Enable Pragma asserations and Contracts
+EXAMPLES_DESC=		Build and install Ada SFML examples
+RUNTIME_DESC=		Disable/Enable runtime checks
+STATIC_DESC=		Warn on compile time assertations failing
+STYLE_DESC=		Check for style violations during compilation
+TOOLCHAINCONFIG_DESC=	Enable/Disable tool-chain static/runtime checking
 
-EXAMPLES_USES=	fonts:fc gl gmake
-EXAMPLES_USE=	GL=glu,opengl
+CONTRACTS_VARS_OFF=	_GPR_PROJECT_ARGS+=-XASFML_CONTRACTS=disabled
+EXAMPLES_USES=		fonts:fc gl
+EXAMPLES_USE=		GL=glu,opengl
+RUNTIME_VARS_OFF=	_GPR_PROJECT_ARGS+=-XASFML_RUNTIME_CHECKS=disabled
+STATIC_VARS_OFF=	_GPR_PROJECT_ARGS+=-XASFML_COMPILE_CHECKS=disabled
+STYLE_VARS_OFF=		_GPR_PROJECT_ARGS+=-XASFML_STYLE_CHECKS=disabled
 
-_GPR_ARGS=	-j${MAKE_JOBS_NUMBER} -p
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDEBUG}
-_GPR_ARGS+=	-XASFML_BUILD_MODE=debug
-.endif
+_ASFML_EXAMPLES=	clock example ftp graphics music opengl pong \
+			renderwindow sound sound_spatial soundstream \
+			vertexbuffer vulkan window
+_DATADIR_AUDIO=		${DATADIR}/audio
+_DATADIR_IMAGES=	${DATADIR}/images
+_DIST_EXCLUDES=		include/generated tests/thread
+_GPRBUILD_ARGS=		${_GPR_PROJECT_ARGS} -j${MAKE_JOBS_NUMBER} -p -vh -vP2
+_GPRINSTALL_ARGS=	${_GPR_PROJECT_ARGS} --no-manifest \
+			--prefix='${STAGEDIR}${PREFIX}' -p -v
+_GPR_PROJECT_ARGS=	-XASFML_BUILD_MODE+=${WITH_DEBUG:Uoptimize:Ddebug}
 
 post-extract:
 	${MV} ${WRKSRC}/tests \
 		${WRKSRC}/examples
 
 post-patch:
-	${REINPLACE_CMD} -e 's|%%DATA_AUDIO%%|${DATADIR}/audio/|' \
-		-e 's|%%DATA_FONTS%%|${DATADIR}/fonts/|' \
-		-e 's|%%DATA_GRAPHICS%%|${DATADIR}/graphics/|' \
-		-e 's|%%PREFIX_FONTDIR%%|${FONTSDIR:C/${PORTNAME}//g}|' \
+	${REINPLACE_CMD} -e 's|%%DATADIR_AUDIO%%|${_DATADIR_AUDIO}|' \
+		-e 's|%%DATADIR_IMAGES%%|${_DATADIR_IMAGES}|' \
+		-e 's|%%FONTSDIR%%|${FONTSDIR}|' \
 		${WRKSRC}/examples/example/main.adb \
 		${WRKSRC}/examples/pong/pong.adb \
 		${WRKSRC}/examples/renderwindow/main.adb \
-		${WRKSRC}/examples/renderwindow/unicode.adb
+		${WRKSRC}/examples/renderwindow/unicode.adb \
+		${WRKSRC}/examples/sound_spatial/main.adb
 
 do-build:
 	(cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} gprbuild ${_GPR_ARGS} -P asfml)
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${_GPRBUILD_ARGS} -P \
+		${PORTNAME})
 
 do-build-EXAMPLES-on:
+. for _example in ${_ASFML_EXAMPLES}
+.  if ${_example} == pong
 	(cd ${WRKSRC}/examples && \
-		${SETENV} ${MAKE_ENV} ${MAKE_CMD})
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${_GPRBUILD_ARGS} -P \
+		${_example}/pong)
+.  else
+	(cd ${WRKSRC}/examples && \
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${_GPRBUILD_ARGS} -P \
+		${_example}/main)
+.  endif
+. endfor
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/gpr
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.gpr \
-		${STAGEDIR}${PREFIX}/share/gpr/
-	${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/include/*.ad[bs] \
-		${STAGEDIR}${PREFIX}/include/${PORTNAME}
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/lib/*.ali \
-		${STAGEDIR}${PREFIX}/lib/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/lib/*.a \
-		${STAGEDIR}${PREFIX}/lib/
+	(cd ${WRKSRC}/ && \
+		${SETENV} ${MAKE_ENV} gprinstall ${_GPRINSTALL_ARGS} --ali-subdir=libdata/${PORTNAME} \
+		--lib-subdir=lib/${PORTNAME} --sources-subdir=include/${PORTNAME} \
+		-P ${PORTNAME})
 
 do-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 do-install-EXAMPLES-on:
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-.for DEMO in clock example graphics music opengl renderwindow thread window
-	${INSTALL_DATA} ${WRKSRC}/examples/${DEMO}/main.adb \
-		${STAGEDIR}${EXAMPLESDIR}/${DEMO}.adb
-	${INSTALL_PROGRAM} ${WRKSRC}/examples/${DEMO}/main \
-		${STAGEDIR}${PREFIX}/bin/${PORTNAME}-example-${DEMO}
-.if ${DEMO} == renderwindow || ${DEMO} == window
-	${INSTALL_DATA} ${WRKSRC}/examples/${DEMO}/unicode.adb \
-		${STAGEDIR}${EXAMPLESDIR}/${DEMO}-unicode.adb
-	${INSTALL_PROGRAM} ${WRKSRC}/examples/${DEMO}/unicode \
-		${STAGEDIR}${PREFIX}/bin/${PORTNAME}-example-${DEMO}-unicode
-.endif
-.endfor
-	${INSTALL_DATA} ${WRKSRC}/examples/pong/pong.adb \
-		${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/thread/thread_func.* \
-		${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/examples/pong/pong \
-		${STAGEDIR}${PREFIX}/bin/${PORTNAME}-example-pong
-	${MKDIR} ${STAGEDIR}${DATADIR}/audio
-	${INSTALL_DATA} ${WRKSRC}/examples/pong/*.ogg \
-		${STAGEDIR}${DATADIR}/audio
-	${MKDIR} ${STAGEDIR}${DATADIR}/graphics
-	${INSTALL_DATA} ${WRKSRC}/examples/renderwindow/*.png \
-		${STAGEDIR}${DATADIR}/graphics
-	${MKDIR} ${STAGEDIR}${DATADIR}/fonts
-	${INSTALL_DATA} ${WRKSRC}/examples/renderwindow/aerial.ttf \
-		${STAGEDIR}${DATADIR}/fonts
+. for _example in ${_ASFML_EXAMPLES}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/${_example}
+	${INSTALL_DATA} ${WRKSRC}/examples/${_example}/*.ad[bs] \
+		${STAGEDIR}${EXAMPLESDIR}/${_example}
+.  if ${_example} == pong
+	${INSTALL_PROGRAM} ${WRKSRC}/examples/${_example}/pong \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}-example-${_example}
+.  elif ${_example} == renderwindow
+	${INSTALL_PROGRAM} ${WRKSRC}/examples/${_example}/main \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}-example-${_example}
+	${INSTALL_PROGRAM} ${WRKSRC}/examples/${_example}/unicode \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}-example-${_example}-unicode
+.  elif ${_example} == window
+	${INSTALL_PROGRAM} ${WRKSRC}/examples/${_example}/main \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}-example-${_example}
+	${INSTALL_PROGRAM} ${WRKSRC}/examples/${_example}/unicode \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}-example-${_example}-unicode
+.  else
+	${INSTALL_PROGRAM} ${WRKSRC}/examples/${_example}/main \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}-example-${_example}
+.  endif
+. endfor
+	${MKDIR} ${STAGEDIR}${_DATADIR_AUDIO}
+	${FIND} ${WRKSRC}/examples/ -type f -name *.ogg -exec ${INSTALL_DATA} \
+		{} ${STAGEDIR}${_DATADIR_AUDIO} \;
+	${MKDIR} ${STAGEDIR}${_DATADIR_IMAGES}
+	${FIND} ${WRKSRC}/ -type f -name *.png -exec ${INSTALL_DATA} {} ${STAGEDIR}${_DATADIR_IMAGES} \
+		\;
+	${MKDIR} ${STAGEDIR}${FONTSDIR}
+	${FIND} ${WRKSRC}/examples/ -type f -name *.ttf -exec ${INSTALL_DATA} \
+		{} ${STAGEDIR}${FONTSDIR} \;
 
 .include <bsd.port.mk>

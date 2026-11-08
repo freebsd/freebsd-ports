@@ -1,0 +1,3 @@
+bigmemory provides the ability to create, store, access, and manipulate
+massive matrices in R. Matrices are allocated to shared memory and may
+use memory-mapped files.

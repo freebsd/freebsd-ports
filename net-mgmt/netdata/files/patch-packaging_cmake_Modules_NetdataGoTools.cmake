@@ -1,6 +1,6 @@
---- packaging/cmake/Modules/NetdataGoTools.cmake.orig	2025-05-28 22:57:38 UTC
+--- packaging/cmake/Modules/NetdataGoTools.cmake.orig	2026-08-13 15:34:19 UTC
 +++ packaging/cmake/Modules/NetdataGoTools.cmake
-@@ -30,7 +30,7 @@ macro(add_go_target target output build_src build_dir)
+@@ -41,7 +41,7 @@ macro(add_go_target target output build_src build_dir)
  
      add_custom_command(
          OUTPUT ${output}

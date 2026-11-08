@@ -1,9 +1,9 @@
 PORTNAME=	azure-mgmt-servicebus
-DISTVERSION=	10.0.0b2
+PORTVERSION=	10.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	azure_mgmt_servicebus-${DISTVERSION}
+DISTNAME=	azure_mgmt_servicebus-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Microsoft Azure Servicebus Management Client Library for Python

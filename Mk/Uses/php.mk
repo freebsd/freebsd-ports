@@ -183,7 +183,7 @@ PHP_VER=	${FLAVOR:S/^php//}
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
 .    if ${PHP_VER} == 86
-PHP_EXT_DIR=   20250926
+PHP_EXT_DIR=   20260924
 PHP_EXT_INC=    hash json opcache openssl pcre random spl
 .    elif ${PHP_VER} == 85
 PHP_EXT_DIR=   20250925
@@ -199,8 +199,8 @@ PHP_EXT_DIR=   20220829
 PHP_EXT_INC=    hash json openssl pcre random spl
 .    else
 # (rene) default to DEFAULT_VERSIONS
-PHP_EXT_DIR=   20240924
-PHP_EXT_INC=    hash json openssl pcre random spl
+PHP_EXT_DIR=   20250925
+PHP_EXT_INC=    hash json opcache openssl pcre random spl
 .    endif
 
 # Try to figure out what the PHP_EXT_DIR should be WRT the
@@ -449,7 +449,7 @@ pspell_DEPENDS=	textproc/php-pspell@${PHP_FLAVOR}
 .    endif
 radius_DEPENDS=	net/pecl-radius@${PHP_FLAVOR}
 readline_DEPENDS=	devel/php${PHP_VER}-readline
-redis_DEPENDS=	databases/pecl-redis@${PHP_FLAVOR}
+redis_DEPENDS=	databases/php-redis@${PHP_FLAVOR}
 session_DEPENDS=www/php${PHP_VER}-session
 shmop_DEPENDS=	devel/php${PHP_VER}-shmop
 simplexml_DEPENDS=	textproc/php${PHP_VER}-simplexml

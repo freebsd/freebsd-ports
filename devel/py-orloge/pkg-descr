@@ -1,0 +1,2 @@
+orloge is an OR log extractor: a Python library for parsing solver logs
+into structured Python objects for further analysis.

@@ -6,5 +6,5 @@ lib/cmake/libfort/libfort-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/libfort/libfort-targets.cmake
 lib/libfort.so
 lib/libfort.so.0.5
-lib/libfort.so.0.5.0
+lib/libfort.so.0.5.1
 libdata/pkgconfig/libfort.pc

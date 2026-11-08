@@ -6,12 +6,11 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Foreach looping construct for R
-WWW=		https://cran.r-project.org/web/packages/foreach/
+WWW=		https://cran.r-project.org/package=foreach
 
 LICENSE=	APACHE20
 
 CRAN_DEPENDS=	R-cran-iterators>0:devel/R-cran-iterators
-BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
 USES=	cran:auto-plist

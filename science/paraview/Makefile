@@ -1,6 +1,6 @@
 PORTNAME=	paraview
-DISTVERSION=	${PARAVIEW_VER}.1
-PORTREVISION=	8
+DISTVERSION=	${PARAVIEW_VER}.0
+PORTREVISION=	5
 CATEGORIES=	science graphics
 MASTER_SITES=	http://www.paraview.org/files/v${PARAVIEW_VER}/
 DISTNAME=	ParaView-v${PORTVERSION}
@@ -11,8 +11,6 @@ WWW=		https://www.paraview.org/
 
 # See https://www.paraview.org/license/
 LICENSE=	BSD3CLAUSE
-
-#BROKEN_i386=	no matching member function for call to 'getArrayType'
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}	\
 		cli11>0:devel/cli11	\
@@ -31,30 +29,37 @@ LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 		liborc-0.4.so:devel/orc \
 		libpcre.so:devel/pcre \
 		libicuuc.so:devel/icu \
+		libscn.so:devel/scnlib \
 		libffi.so:devel/libffi \
 		libtbb.so:devel/onetbb \
 		libogg.so:audio/libogg \
+		libpdalcpp.so:math/pdal \
 		libgl2ps.so:print/gl2ps \
 		libOT.so:math/openturns \
 		libgdal.so:graphics/gdal \
 		libgeos.so:graphics/geos \
 		libhpdf.so:print/libharu \
 		libproj.so:graphics/proj \
-		libpdalcpp.so:math/pdal \
 		libdrm.so:graphics/libdrm \
+		libanari.so:science/anari \
 		libcgns.so:science/cgnslib \
+		libImath-3_2.so:math/Imath \
 		liblz4.so:archivers/liblz4 \
 		libverdict.so:math/verdict \
 		libnetcdf.so:science/netcdf \
 		libjsoncpp.so:devel/jsoncpp \
+		libTKernel.so:cad/opencascade \
 		libprotobuf.so:devel/protobuf \
+		libAlembic.so:graphics/alembic \
 		libpugixml.so:textproc/pugixml \
 		libavutil.so:multimedia/ffmpeg \
 		libcgraph.so:graphics/graphviz \
+		libQtNodes.so:devel/nodeeditor \
 		libxkbcommon.so:x11/libxkbcommon \
 		libtheora.so:multimedia/libtheora \
 		libgeotiff.so:graphics/libgeotiff \
 		libboost_thread.so:devel/boost-libs \
+		libxcb-cursor.so:x11/xcb-util-cursor \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libdouble-conversion.so:devel/double-conversion
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}	\
@@ -66,7 +71,7 @@ USES=		cmake compiler:c++17-lang desktop-file-utils eigen:3 fortran gl gnome	\
 		jpeg localbase pkgconfig python qt:6 shebangfix sqlite tar:xz xorg
 USE_GL=		glew opengl
 USE_GNOME=	libxml2
-USE_QT=		5compat base svg tools webengine
+USE_QT=		5compat base svg tools
 #buildtools:build core gui help network opengl qmake:build sql svg	\
 #		webengine widgets x11extras glew xmlpatterns
 USE_XORG=	ice sm x11 xau xcb xcursor xdamage xdmcp xext xfixes xorgproto xrender	\
@@ -75,32 +80,36 @@ USE_LDCONFIG=	yes
 
 CFLAGS+=	-Wno-missing-template-arg-list-after-template-kw	\
 		-I${WRKSRC}/Clients/ParaView/Documentation
-CMAKE_ARGS+=	-DPARAVIEW_BUILD_SHARED_LIBS=ON \
-		-DPARAVIEW_BUILD_WITH_EXTERNAL=ON \
-		-DCMAKE_CXX_STANDARD=17 \
-		-DPARAVIEW_USE_PYTHON:BOOL=ON \
-		-DPARAVIEW_ENABLE_FFMPEG:BOOL=ON \
-		-DPARAVIEW_ENABLE_LAS:BOOL=OFF \
-		-DPARAVIEW_ENABLE_WEB:BOOL=ON \
-		-DPARAVIEW_ENABLE_GDAL:BOOL=ON \
-		-DPARAVIEW_ENABLE_PDAL:BOOL=ON \
-		-DPARAVIEW_ENABLE_OPENTURNS:BOOL=ON \
-		-DPARAVIEW_ENABLE_MOTIONFX:BOOL=ON \
-		-DPARAVIEW_ENABLE_XDMF2:BOOL=ON \
-		-DPARAVIEW_ENABLE_XDMF3:BOOL=ON \
-		-DPARAVIEW_USE_QT:BOOL=ON \
-		-DPARAVIEW_BUILD_DEVELOPER_DOCUMENTATION:BOOL=OFF \
-		-DPARAVIEW_ENABLE_EMBEDDED_DOCUMENTATION:BOOL=OFF \
-		-DVTK_FORBID_DOWNLOADS:BOOL=OFF \
-		-DVTK_OPENGL_HAS_OSMESA:BOOL=OFF \
+CMAKE_ON=	PARAVIEW_BUILD_SHARED_LIBS		\
+		PARAVIEW_BUILD_WITH_EXTERNAL		\
+		PARAVIEW_ENABLE_ALEMBIC			\
+		PARAVIEW_ENABLE_ANARI			\
+		PARAVIEW_ENABLE_FFMPEG			\
+		PARAVIEW_ENABLE_GDAL			\
+		PARAVIEW_ENABLE_MOTIONFX		\
+		PARAVIEW_ENABLE_OCCT			\
+		PARAVIEW_ENABLE_OPENTURNS		\
+		PARAVIEW_ENABLE_PDAL			\
+		PARAVIEW_ENABLE_XDMF2			\
+		PARAVIEW_ENABLE_XDMF3			\
+		PARAVIEW_ENABLE_WEB			\
+		PARAVIEW_USE_PYTHON			\
+		PARAVIEW_USE_QT				\
+		VTK_FORBID_DOWNLOADS
+CMAKE_OFF=	PARAVIEW_BUILD_DEVELOPER_DOCUMENTATION	\
+		PARAVIEW_ENABLE_EMBEDDED_DOCUMENTATION	\
+		PARAVIEW_ENABLE_LAS			\
+		VTK_MODULE_USE_EXTERNAL_VTK_fmt		\
+		VTK_MODULE_USE_EXTERNAL_VTK_ioss	\
+		VTK_MODULE_USE_EXTERNAL_VTK_pegtl	\
+		VTK_MODULE_USE_EXTERNAL_VTK_token
+CMAKE_ARGS+=	-DCMAKE_CXX_STANDARD=17 \
 		-DVTK_HAVE_GETSOCKNAME_WITH_SOCKLEN_T=1 \
-		-DVTK_MODULE_USE_EXTERNAL_VTK_fmt:BOOL=OFF \
-		-DVTK_MODULE_USE_EXTERNAL_VTK_ioss:BOOL=OFF \
-		-DVTK_MODULE_USE_EXTERNAL_VTK_pegtl:BOOL=OFF \
-		-DVTK_MODULE_USE_EXTERNAL_VTK_token:BOOL=OFF \
 		-DVTK_USE_X:BOOL=ON \
 		-DExternalData_OBJECT_STORES="${WRKDIR}/VTK/ExternalData/MD5" \
 		-DFREETYPE_INCLUDE_DIRS="${LOCALBASE}/include/freetype2"
+CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM:STRING=3.5	# CMake 4.5 compatibility
+CONFIGURE_ENV=	ANARI_LIBRARY=helide
 # TODO: port Viskores - https://viskores.org/
 CMAKE_ARGS+=	-DPARAVIEW_USE_VISKORES:BOOL=OFF
 # To enable external VTK, it should be configured with several modules
@@ -117,21 +126,20 @@ SHEBANG_FILES=	VTK/Examples/SearchScript.sh	\
 		VTK/Utilities/Maintenance/*.sh	\
 		Clients/CommandLineExecutables/paraview-config.in
 
-OPTIONS_DEFINE=	DOCS EXAMPLES OMPI TEST
+OPTIONS_DEFINE=	DOCS EXAMPLES MPICH
 OPTIONS_SUB=	yes
-OMPI_DESC=	OpenMPI (Message Passing Interface) support
 
 # mpi4py and other programs must be compiled against the same MPI provider
-OMPI_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mpi4py>=0:net/py-mpi4py@${PY_FLAVOR}
-OMPI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mpi4py>=0:net/py-mpi4py@${PY_FLAVOR}
-OMPI_USES=		mpi:openmpi
-OMPI_CMAKE_ON=		-DPARAVIEW_USE_MPI:BOOL=ON
-OMPI_CMAKE_OFF=		-DPARAVIEW_USE_MPI:BOOL=OFF
+MPICH_BUILD_RUN_DEPENDS=${MPI4PI}
+MPICH_USES=		mpi:mpich
+MPICH_CMAKE_ON=		-DPARAVIEW_USE_MPI:BOOL=ON
+MPICH_CMAKE_OFF=	-DPARAVIEW_USE_MPI:BOOL=OFF
 
 EXAMPLES_CMAKE_BOOL=	PARAVIEW_ENABLE_EXAMPLES
 PORTEXAMPLES=		*
 
-TEST_CMAKE_ON=		-DPARAVIEW_BUILD_TESTING=WANT
+# TEST disabled, download too much data files
+#TEST_CMAKE_ON=		-DPARAVIEW_BUILD_TESTING=WANT
 # PARAVIEW_BUILD_VTK_TESTING requires SCN https://pypi.org/project/scn/
 #			-DPARAVIEW_BUILD_VTK_TESTING=WANT
 
@@ -147,6 +155,9 @@ TEST_CMAKE_ON=		-DPARAVIEW_BUILD_TESTING=WANT
 # No package for graphics/ospray
 #LIB_DEPENDS+=	libospray.so:graphics/ospray
 #CMAKE_ARGS+=	-DPARAVIEW_ENABLE_RAYTRACING
+# openvdb does not provide OpenVDBConfig.cmake nor openvdb-config.cmake
+#CMAKE_ARGS+=	-DPARAVIEW_ENABLE_OPENVDB:BOOL=ON \
+#LIB_DEPENDS+=	libopenvdb.so:misc/openvdb
 
 PLIST_SUB+=	VERMAJORMINOR=${PARAVIEW_VER}
 

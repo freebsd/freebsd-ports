@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto
 LIB_DEPENDS=	libinput.so:x11/libinput
 
-USES=		pathfix tar:xz xorg-cat:driver
+USES=		pathfix xorg-cat:driver
 
 TEST_TARGET=	check
 

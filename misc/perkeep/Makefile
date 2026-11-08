@@ -1,7 +1,7 @@
 PORTNAME=	perkeep
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.12
-PORTREVISION=	3
+PORTREVISION=	8
 CATEGORIES=	misc
 MASTER_SITES=	https://raw.githubusercontent.com/${GH_ACCOUNT}/${GH_PROJECT}/${DISTVERSIONFULL}/:gomod
 DISTFILES=	go.mod:gomod
@@ -14,7 +14,7 @@ WWW=		https://perkeep.org/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		go:modules
+USES=		go:1.26,modules
 USE_GITHUB=	yes
 GO_MODULE=	perkeep.org
 

@@ -1,5 +1,5 @@
 PORTNAME=	curtail
-DISTVERSION=	1.16.2
+DISTVERSION=	1.17.0
 CATEGORIES=	graphics print
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -36,5 +36,13 @@ BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 post-install: # adjust python path in the executable
 	@${REINPLACE_CMD} -i '' -e 's|^#!.*|#!${PYTHON_CMD}|' ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+# tests as of 1.17.0:
+# 1/3 curtail:Validate desktop file         OK              0.01s
+# 2/3 curtail:Validate schema file          OK              0.01s
+# 3/3 curtail:Validate metainfo file        OK              0.01s
+#
+# Ok:                3
+# Fail:              0
 
 .include <bsd.port.mk>

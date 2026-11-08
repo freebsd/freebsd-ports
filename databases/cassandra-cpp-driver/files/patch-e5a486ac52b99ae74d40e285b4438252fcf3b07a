@@ -1,0 +1,505 @@
+From e5a486ac52b99ae74d40e285b4438252fcf3b07a Mon Sep 17 00:00:00 2001
+From: Sigmanificient <edhyjox@gmail.com>
+Date: Wed, 31 Dec 2025 14:20:25 +0100
+Subject: [PATCH] Bump minimum required version for cmake4 compatibility
+
+patch by Sigmanificient; reviewed by Bret McGuire and Yifan Cai
+reference: https://github.com/apache/cassandra-cpp-driver/pull/580
+---
+ CMakeLists.txt                                | 2 +-
+ appveyor.ps1                                  | 8 ++++----
+ cmake/ClangFormat.cmake                       | 2 +-
+ cmake/ExternalProject-OpenSSL.cmake           | 2 +-
+ cmake/ExternalProject-libssh2.cmake           | 2 +-
+ cmake/ExternalProject-libuv.cmake             | 2 +-
+ cmake/ExternalProject-zlib.cmake              | 2 +-
+ examples/async/CMakeLists.txt                 | 2 +-
+ examples/auth/CMakeLists.txt                  | 2 +-
+ examples/basic/CMakeLists.txt                 | 2 +-
+ examples/batch/CMakeLists.txt                 | 2 +-
+ examples/bind_by_name/CMakeLists.txt          | 2 +-
+ examples/callbacks/CMakeLists.txt             | 2 +-
+ examples/cloud/CMakeLists.txt                 | 2 +-
+ examples/collections/CMakeLists.txt           | 2 +-
+ examples/concurrent_executions/CMakeLists.txt | 2 +-
+ examples/date_time/CMakeLists.txt             | 2 +-
+ examples/dse/date_range/CMakeLists.txt        | 2 +-
+ examples/dse/geotypes/CMakeLists.txt          | 2 +-
+ examples/dse/gssapi/CMakeLists.txt            | 2 +-
+ examples/dse/plaintext/CMakeLists.txt         | 2 +-
+ examples/dse/proxy_execution/CMakeLists.txt   | 2 +-
+ examples/duration/CMakeLists.txt              | 2 +-
+ examples/execution_profiles/CMakeLists.txt    | 2 +-
+ examples/host_listener/CMakeLists.txt         | 2 +-
+ examples/logging/CMakeLists.txt               | 2 +-
+ examples/maps/CMakeLists.txt                  | 2 +-
+ examples/named_parameters/CMakeLists.txt      | 2 +-
+ examples/paging/CMakeLists.txt                | 2 +-
+ examples/perf/CMakeLists.txt                  | 2 +-
+ examples/prepared/CMakeLists.txt              | 2 +-
+ examples/schema_meta/CMakeLists.txt           | 2 +-
+ examples/simple/CMakeLists.txt                | 2 +-
+ examples/ssl/CMakeLists.txt                   | 2 +-
+ examples/tracing/CMakeLists.txt               | 2 +-
+ examples/tuple/CMakeLists.txt                 | 2 +-
+ examples/udt/CMakeLists.txt                   | 2 +-
+ examples/uuids/CMakeLists.txt                 | 2 +-
+ src/third_party/sparsehash/CMakeLists.txt     | 2 +-
+ topics/building/README.md                     | 4 ++--
+ 40 files changed, 44 insertions(+), 44 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index f9bf6d34e..3281751bd 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8.12)
++cmake_minimum_required(VERSION 3.10)
+ project(cassandra C CXX)
+ 
+ set(CASS_ROOT_DIR ${CMAKE_CURRENT_SOURCE_DIR})
+diff --git a/appveyor.ps1 b/appveyor.ps1
+index e160d322f..2dede8554 100644
+--- a/appveyor.ps1
++++ b/appveyor.ps1
+@@ -331,7 +331,7 @@ Function Install-Driver-Environment {
+     Push-Location -Path "$($dependencies_build_location_prefix)/libuv"
+ 
+     $cmakelists_contents = @"
+-cmake_minimum_required(VERSION 2.8.12 FATAL_ERROR)
++cmake_minimum_required(VERSION 3.10 FATAL_ERROR)
+ project(libuv)
+ set(PROJECT_DISPLAY_NAME "AppVeyor CI Build for libuv")
+ set(PROJECT_MODULE_DIR $cmake_modules_dir)
+@@ -380,7 +380,7 @@ add_dependencies(`${PROJECT_NAME} `${LIBUV_LIBRARY_NAME})
+       Push-Location -Path "$($dependencies_build_location_prefix)/openssl/$_"
+ 
+       $cmakelists_contents = @"
+-cmake_minimum_required(VERSION 2.8.12 FATAL_ERROR)
++cmake_minimum_required(VERSION 3.10 FATAL_ERROR)
+ project(OpenSSL)
+ set(PROJECT_DISPLAY_NAME "AppVeyor CI Build for OpenSSL")
+ set(PROJECT_MODULE_DIR $cmake_modules_dir)
+@@ -432,7 +432,7 @@ add_dependencies(`${PROJECT_NAME} `${OPENSSL_LIBRARY_NAME})
+     Push-Location -Path "$($dependencies_build_location_prefix)/zlib"
+ 
+     $cmakelists_contents = @"
+-cmake_minimum_required(VERSION 2.8.12 FATAL_ERROR)
++cmake_minimum_required(VERSION 3.10 FATAL_ERROR)
+ project(zlib)
+ set(PROJECT_DISPLAY_NAME "AppVeyor CI Build for zlib")
+ set(PROJECT_MODULE_DIR $cmake_modules_dir)
+@@ -508,7 +508,7 @@ add_dependencies(`${PROJECT_NAME} `${ZLIB_LIBRARY_NAME})
+     Push-Location -Path "$($dependencies_build_location_prefix)/libssh2"
+ 
+     $cmakelists_contents = @"
+-cmake_minimum_required(VERSION 2.8.12 FATAL_ERROR)
++cmake_minimum_required(VERSION 3.10 FATAL_ERROR)
+ project(libssh2)
+ set(PROJECT_DISPLAY_NAME "AppVeyor CI Build for libssh2")
+ set(PROJECT_MODULE_DIR $cmake_modules_dir)
+diff --git a/cmake/ClangFormat.cmake b/cmake/ClangFormat.cmake
+index d15da8f70..5e36e313a 100644
+--- a/cmake/ClangFormat.cmake
++++ b/cmake/ClangFormat.cmake
+@@ -1,7 +1,7 @@
+ #
+ # Format and verify formatting using clang-format
+ #
+-cmake_minimum_required(VERSION 2.8.12)
++cmake_minimum_required(VERSION 3.10)
+ 
+ include(FindPackageHandleStandardArgs)
+ 
+diff --git a/cmake/ExternalProject-OpenSSL.cmake b/cmake/ExternalProject-OpenSSL.cmake
+index dff9f0f94..4437d2515 100644
+--- a/cmake/ExternalProject-OpenSSL.cmake
++++ b/cmake/ExternalProject-OpenSSL.cmake
+@@ -11,7 +11,7 @@
+ # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ # See the License for the specific language governing permissions and
+ # limitations under the License.
+-cmake_minimum_required(VERSION 2.8.12 FATAL_ERROR)
++cmake_minimum_required(VERSION 3.10 FATAL_ERROR)
+ include(ExternalProject)
+ include(Windows-Environment)
+ if(NOT MSVC_ENVIRONMENT_SCRIPT)
+diff --git a/cmake/ExternalProject-libssh2.cmake b/cmake/ExternalProject-libssh2.cmake
+index ae4fa638a..6d3296f19 100644
+--- a/cmake/ExternalProject-libssh2.cmake
++++ b/cmake/ExternalProject-libssh2.cmake
+@@ -11,7 +11,7 @@
+ # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ # See the License for the specific language governing permissions and
+ # limitations under the License.
+-cmake_minimum_required(VERSION 2.8.12 FATAL_ERROR)
++cmake_minimum_required(VERSION 3.10 FATAL_ERROR)
+ include(ExternalProject)
+ include(Windows-Environment)
+ 
+diff --git a/cmake/ExternalProject-libuv.cmake b/cmake/ExternalProject-libuv.cmake
+index d008138e4..6048fbd5c 100644
+--- a/cmake/ExternalProject-libuv.cmake
++++ b/cmake/ExternalProject-libuv.cmake
+@@ -11,7 +11,7 @@
+ # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ # See the License for the specific language governing permissions and
+ # limitations under the License.
+-cmake_minimum_required(VERSION 2.8.12 FATAL_ERROR)
++cmake_minimum_required(VERSION 3.10 FATAL_ERROR)
+ include(ExternalProject)
+ include(Windows-Environment)
+ 
+diff --git a/cmake/ExternalProject-zlib.cmake b/cmake/ExternalProject-zlib.cmake
+index 4dbdcddb3..60e2d4975 100644
+--- a/cmake/ExternalProject-zlib.cmake
++++ b/cmake/ExternalProject-zlib.cmake
+@@ -11,7 +11,7 @@
+ # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ # See the License for the specific language governing permissions and
+ # limitations under the License.
+-cmake_minimum_required(VERSION 2.8.12 FATAL_ERROR)
++cmake_minimum_required(VERSION 3.10 FATAL_ERROR)
+ include(ExternalProject)
+ include(Windows-Environment)
+ 
+diff --git a/examples/async/CMakeLists.txt b/examples/async/CMakeLists.txt
+index 7316450d3..8954332d8 100644
+--- a/examples/async/CMakeLists.txt
++++ b/examples/async/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8.12)
++cmake_minimum_required(VERSION 3.10)
+ 
+ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ".")
+ set(PROJECT_EXAMPLE_NAME async)
+diff --git a/examples/auth/CMakeLists.txt b/examples/auth/CMakeLists.txt
+index 2bbf1cbcf..f4e73c11c 100644
+--- a/examples/auth/CMakeLists.txt
++++ b/examples/auth/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8.12)
++cmake_minimum_required(VERSION 3.10)
+ 
+ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ".")
+ set(PROJECT_EXAMPLE_NAME auth)
+diff --git a/examples/basic/CMakeLists.txt b/examples/basic/CMakeLists.txt
+index 8d7e8e0e0..77ae50fd8 100644
+--- a/examples/basic/CMakeLists.txt
++++ b/examples/basic/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8.12)
++cmake_minimum_required(VERSION 3.10)
+ 
+ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ".")
+ set(PROJECT_EXAMPLE_NAME basic)
+diff --git a/examples/batch/CMakeLists.txt b/examples/batch/CMakeLists.txt
+index dc2a932ae..0346ed9a5 100644
+--- a/examples/batch/CMakeLists.txt
++++ b/examples/batch/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8.12)
++cmake_minimum_required(VERSION 3.10)
+ 
+ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ".")
+ set(PROJECT_EXAMPLE_NAME batch)
+diff --git a/examples/bind_by_name/CMakeLists.txt b/examples/bind_by_name/CMakeLists.txt
+index 23a40904a..b44a0ef61 100644
+--- a/examples/bind_by_name/CMakeLists.txt
++++ b/examples/bind_by_name/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8.12)
++cmake_minimum_required(VERSION 3.10)
+ 
+ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ".")
+ set(PROJECT_EXAMPLE_NAME bind_by_name)
+diff --git a/examples/callbacks/CMakeLists.txt b/examples/callbacks/CMakeLists.txt
+index 330588044..baca68dad 100644
+--- a/examples/callbacks/CMakeLists.txt
++++ b/examples/callbacks/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8.12)
++cmake_minimum_required(VERSION 3.10)
+ 
+ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ".")
+ set(PROJECT_EXAMPLE_NAME callbacks)
+diff --git a/examples/cloud/CMakeLists.txt b/examples/cloud/CMakeLists.txt
+index 65df654a3..76b0247c4 100644
+--- a/examples/cloud/CMakeLists.txt
++++ b/examples/cloud/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8.12)
++cmake_minimum_required(VERSION 3.10)
+ 
+ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ".")
+ set(PROJECT_EXAMPLE_NAME cloud)
+diff --git a/examples/collections/CMakeLists.txt b/examples/collections/CMakeLists.txt
+index 85b72c6c5..24231468b 100644
+--- a/examples/collections/CMakeLists.txt
++++ b/examples/collections/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8.12)
++cmake_minimum_required(VERSION 3.10)
+ 
+ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ".")
+ set(PROJECT_EXAMPLE_NAME collections)
+diff --git a/examples/concurrent_executions/CMakeLists.txt b/examples/concurrent_executions/CMakeLists.txt
+index 49243dda0..703a61895 100644
+--- a/examples/concurrent_executions/CMakeLists.txt
++++ b/examples/concurrent_executions/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8.12)
++cmake_minimum_required(VERSION 3.10)
+ 
+ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ".")
+ set(PROJECT_EXAMPLE_NAME concurrent_executions)
+diff --git a/examples/date_time/CMakeLists.txt b/examples/date_time/CMakeLists.txt
+index 342081a8e..e4d085ba8 100644
+--- a/examples/date_time/CMakeLists.txt
++++ b/examples/date_time/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8.12)
++cmake_minimum_required(VERSION 3.10)
+ 
+ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ".")
+ set(PROJECT_EXAMPLE_NAME date_time)
+diff --git a/examples/dse/date_range/CMakeLists.txt b/examples/dse/date_range/CMakeLists.txt
+index cf9895a54..1b58ba444 100644
+--- a/examples/dse/date_range/CMakeLists.txt
++++ b/examples/dse/date_range/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8.12)
++cmake_minimum_required(VERSION 3.10)
+ 
+ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ".")
+ set(PROJECT_EXAMPLE_NAME date_range)
+diff --git a/examples/dse/geotypes/CMakeLists.txt b/examples/dse/geotypes/CMakeLists.txt
+index 168c51c37..e12668901 100644
+--- a/examples/dse/geotypes/CMakeLists.txt
++++ b/examples/dse/geotypes/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8.12)
++cmake_minimum_required(VERSION 3.10)
+ 
+ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ".")
+ set(PROJECT_EXAMPLE_NAME geotypes)
+diff --git a/examples/dse/gssapi/CMakeLists.txt b/examples/dse/gssapi/CMakeLists.txt
+index 0d6d83564..4a834db01 100644
+--- a/examples/dse/gssapi/CMakeLists.txt
++++ b/examples/dse/gssapi/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8.12)
++cmake_minimum_required(VERSION 3.10)
+ 
+ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ".")
+ 
+diff --git a/examples/dse/plaintext/CMakeLists.txt b/examples/dse/plaintext/CMakeLists.txt
+index 37cd5a7ce..6b6ae3a76 100644
+--- a/examples/dse/plaintext/CMakeLists.txt
++++ b/examples/dse/plaintext/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8.12)
++cmake_minimum_required(VERSION 3.10)
+ 
+ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ".")
+ 
+diff --git a/examples/dse/proxy_execution/CMakeLists.txt b/examples/dse/proxy_execution/CMakeLists.txt
+index 3a23b3d00..b321d601f 100644
+--- a/examples/dse/proxy_execution/CMakeLists.txt
++++ b/examples/dse/proxy_execution/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8.12)
++cmake_minimum_required(VERSION 3.10)
+ 
+ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ".")
+ set(PROJECT_EXAMPLE_NAME proxy_execution)
+diff --git a/examples/duration/CMakeLists.txt b/examples/duration/CMakeLists.txt
+index e764bd557..620c0fb94 100644
+--- a/examples/duration/CMakeLists.txt
++++ b/examples/duration/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8.12)
++cmake_minimum_required(VERSION 3.10)
+ 
+ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ".")
+ set(PROJECT_EXAMPLE_NAME duration)
+diff --git a/examples/execution_profiles/CMakeLists.txt b/examples/execution_profiles/CMakeLists.txt
+index fb3de2fb8..55b8bb1c5 100644
+--- a/examples/execution_profiles/CMakeLists.txt
++++ b/examples/execution_profiles/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8.12)
++cmake_minimum_required(VERSION 3.10)
+ 
+ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ".")
+ set(PROJECT_EXAMPLE_NAME execution_profiles)
+diff --git a/examples/host_listener/CMakeLists.txt b/examples/host_listener/CMakeLists.txt
+index 86436a875..61e75264b 100644
+--- a/examples/host_listener/CMakeLists.txt
++++ b/examples/host_listener/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8.12)
++cmake_minimum_required(VERSION 3.10)
+ 
+ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ".")
+ set(PROJECT_EXAMPLE_NAME host_listener)
+diff --git a/examples/logging/CMakeLists.txt b/examples/logging/CMakeLists.txt
+index c665af695..b21a33a54 100644
+--- a/examples/logging/CMakeLists.txt
++++ b/examples/logging/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8.12)
++cmake_minimum_required(VERSION 3.10)
+ 
+ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ".")
+ set(PROJECT_EXAMPLE_NAME logging)
+diff --git a/examples/maps/CMakeLists.txt b/examples/maps/CMakeLists.txt
+index 741bd79f8..d80bb7be6 100644
+--- a/examples/maps/CMakeLists.txt
++++ b/examples/maps/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8.12)
++cmake_minimum_required(VERSION 3.10)
+ 
+ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ".")
+ set(PROJECT_EXAMPLE_NAME maps)
+diff --git a/examples/named_parameters/CMakeLists.txt b/examples/named_parameters/CMakeLists.txt
+index 9651d3b14..25fdd3f38 100644
+--- a/examples/named_parameters/CMakeLists.txt
++++ b/examples/named_parameters/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8.12)
++cmake_minimum_required(VERSION 3.10)
+ 
+ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ".")
+ set(PROJECT_EXAMPLE_NAME named_parameters)
+diff --git a/examples/paging/CMakeLists.txt b/examples/paging/CMakeLists.txt
+index e4aeeaa58..73003ac7d 100644
+--- a/examples/paging/CMakeLists.txt
++++ b/examples/paging/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8.12)
++cmake_minimum_required(VERSION 3.10)
+ 
+ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ".")
+ set(PROJECT_EXAMPLE_NAME paging)
+diff --git a/examples/perf/CMakeLists.txt b/examples/perf/CMakeLists.txt
+index 8825c2949..0b56481c6 100644
+--- a/examples/perf/CMakeLists.txt
++++ b/examples/perf/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8.12)
++cmake_minimum_required(VERSION 3.10)
+ 
+ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ".")
+ set(PROJECT_EXAMPLE_NAME perf)
+diff --git a/examples/prepared/CMakeLists.txt b/examples/prepared/CMakeLists.txt
+index bad5e2d87..190f69d98 100644
+--- a/examples/prepared/CMakeLists.txt
++++ b/examples/prepared/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8.12)
++cmake_minimum_required(VERSION 3.10)
+ 
+ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ".")
+ set(PROJECT_EXAMPLE_NAME prepared)
+diff --git a/examples/schema_meta/CMakeLists.txt b/examples/schema_meta/CMakeLists.txt
+index 30548a8ac..1acaefb64 100644
+--- a/examples/schema_meta/CMakeLists.txt
++++ b/examples/schema_meta/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8.12)
++cmake_minimum_required(VERSION 3.10)
+ 
+ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ".")
+ set(PROJECT_EXAMPLE_NAME schema_meta)
+diff --git a/examples/simple/CMakeLists.txt b/examples/simple/CMakeLists.txt
+index 722f53f1f..393d2ded8 100644
+--- a/examples/simple/CMakeLists.txt
++++ b/examples/simple/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8.12)
++cmake_minimum_required(VERSION 3.10)
+ 
+ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ".")
+ set(PROJECT_EXAMPLE_NAME simple)
+diff --git a/examples/ssl/CMakeLists.txt b/examples/ssl/CMakeLists.txt
+index 23896cba8..ea078c15c 100644
+--- a/examples/ssl/CMakeLists.txt
++++ b/examples/ssl/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8.12)
++cmake_minimum_required(VERSION 3.10)
+ 
+ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ".")
+ set(PROJECT_EXAMPLE_NAME ssl)
+diff --git a/examples/tracing/CMakeLists.txt b/examples/tracing/CMakeLists.txt
+index 0f2492555..db811b90a 100644
+--- a/examples/tracing/CMakeLists.txt
++++ b/examples/tracing/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8.12)
++cmake_minimum_required(VERSION 3.10)
+ 
+ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ".")
+ set(PROJECT_EXAMPLE_NAME tracing)
+diff --git a/examples/tuple/CMakeLists.txt b/examples/tuple/CMakeLists.txt
+index c16d58f25..8bb054bb7 100644
+--- a/examples/tuple/CMakeLists.txt
++++ b/examples/tuple/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8.12)
++cmake_minimum_required(VERSION 3.10)
+ 
+ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ".")
+ set(PROJECT_EXAMPLE_NAME tuple)
+diff --git a/examples/udt/CMakeLists.txt b/examples/udt/CMakeLists.txt
+index bc7bdbd3b..b2a664fa7 100644
+--- a/examples/udt/CMakeLists.txt
++++ b/examples/udt/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8.12)
++cmake_minimum_required(VERSION 3.10)
+ 
+ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ".")
+ set(PROJECT_EXAMPLE_NAME udt)
+diff --git a/examples/uuids/CMakeLists.txt b/examples/uuids/CMakeLists.txt
+index 2c21081ce..2f02feec7 100644
+--- a/examples/uuids/CMakeLists.txt
++++ b/examples/uuids/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8.12)
++cmake_minimum_required(VERSION 3.10)
+ 
+ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ".")
+ set(PROJECT_EXAMPLE_NAME uuids)
+diff --git a/src/third_party/sparsehash/CMakeLists.txt b/src/third_party/sparsehash/CMakeLists.txt
+index 29bbe7bc6..6e1adef74 100644
+--- a/src/third_party/sparsehash/CMakeLists.txt
++++ b/src/third_party/sparsehash/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8.12)
++cmake_minimum_required(VERSION 3.10)
+ 
+ include(CheckCXXSourceCompiles)
+ include(CheckFunctionExists)
+diff --git a/topics/building/README.md b/topics/building/README.md
+index fd45b2237..36eec31f3 100644
+--- a/topics/building/README.md
++++ b/topics/building/README.md
+@@ -24,7 +24,7 @@ __NOTE__: The build procedures only need to be performed for driver development
+ 
+ The C/C++ driver depends on the following software:
+ 
+-* [CMake] v2.8.12+
++* [CMake] v3.10+
+ * [libuv] 1.x
+ * Kerberos v5 ([Heimdal] or [MIT]) \*
+ * [OpenSSL] v1.0.x, v1.1.x or v3.x \*\*
+@@ -342,4 +342,4 @@ cmake -G "Visual Studio 16 2019" -A x64 -DCASS_BUILD_UNIT_TESTS=On ..
+ [MIT]: https://web.mit.edu/kerberos
+ [OpenSSL]: https://www.openssl.org
+ [zlib]: https://www.zlib.net
+-[migration guide]: https://www.openssl.org/docs/man3.0/man7/migration_guide.html
+\ No newline at end of file
++[migration guide]: https://www.openssl.org/docs/man3.0/man7/migration_guide.html

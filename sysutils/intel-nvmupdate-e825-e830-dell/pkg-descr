@@ -1,0 +1,4 @@
+This package combines Dell's Intel E825 and E830 firmware bundle with Intel's
+FreeBSD NVMUpdate utility.  It retains all nine device entries shipped in Dell
+package 69TRD: one E830-XXV-8 OCP adapter and eight E825-C SFP or QSFP entries
+covering both Dell and Intel subsystem IDs.

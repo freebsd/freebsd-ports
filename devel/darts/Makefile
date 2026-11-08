@@ -1,10 +1,10 @@
 PORTNAME=	darts
-PORTVERSION=	0.32
+DISTVERSION=	0.32
 PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.chasen.org/~taku/software/darts/src/
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ template library that implements Double-Array
 WWW=		http://www.chasen.org/~taku/software/darts/
 

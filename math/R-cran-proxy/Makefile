@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Distance and Similarity Measures
-WWW=		https://cran.r-project.org/web/packages/proxy/
+WWW=		https://cran.r-project.org/package=proxy
 
 LICENSE=	GPLv2+
 

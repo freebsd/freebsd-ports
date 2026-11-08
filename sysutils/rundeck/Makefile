@@ -1,8 +1,8 @@
 PORTNAME=	rundeck
-DISTVERSION=	5.20.1
-DISTVERSIONSUFFIX=	-20260518
+DISTVERSION=	6.2.1
+DISTVERSIONSUFFIX=	-20260909
 CATEGORIES=	sysutils java
-MASTER_SITES=	https://packagecloud.io/pagerduty/rundeck/packages/java/org.rundeck/${DISTNAME}.war/artifacts/${DISTNAME}.war/download?/
+MASTER_SITES=	https://packages.rundeck.com/pagerduty/rundeck/packages/java/org.rundeck/${DISTNAME}.war/artifacts/${DISTNAME}.war/download?/
 EXTRACT_SUFX=	.war
 EXTRACT_ONLY=	#
 
@@ -14,7 +14,7 @@ LICENSE=	APACHE20
 
 USES=		cpe java
 CPE_VENDOR=	pagerduty
-JAVA_VERSION=	11 17
+JAVA_VERSION=	17+
 USE_RC_SUBR=	${PORTNAME}
 
 NO_ARCH=	yes
@@ -33,7 +33,7 @@ RUNDECK_HOME=		${PREFIX}/${PORTNAME}
 RUNDECK_USER?=		${PORTNAME}
 RUNDECK_GROUP?=		${PORTNAME}
 RUNDECK_LOGDIR?=	/var/log/${PORTNAME}
-RUNDECK_LOG_FILE?=	${RUNDECK_LOGDIR}/${PORTNAME}.log
+RUNDECK_LOG_FILE?=	${RUNDECK_LOGDIR}/service.log
 RUNDECK_LOG4J=		log4j2.properties
 RUNDECK_CONFIG_DIR=	${RUNDECK_HOME}/server/config
 

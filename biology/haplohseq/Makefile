@@ -1,10 +1,10 @@
 PORTNAME=	haplohseq
 DISTVERSION=	0.1.2-3
-PORTREVISION=	2
+PORTREVISION=	4
 DISTVERSIONSUFFIX=	-gfeb9267
 CATEGORIES=	biology
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Identify regions of allelic imbalance
 WWW=		https://github.com/outpaddling/haplohseq \
 		https://sites.google.com/site/integrativecancergenomics/software/haplohseq

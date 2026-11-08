@@ -1,5 +1,5 @@
 PORTNAME=	imagecodecs
-PORTVERSION=	2026.6.6
+PORTVERSION=	2026.8.16
 CATEGORIES=	graphics python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,10 +20,12 @@ LIB_DEPENDS=	libaec.so:science/libaec \
 		libblosc2.so:archivers/c-blosc2 \
 		libbrotlicommon.so:archivers/brotli \
 		libbrunslidec-c.so:graphics/brunsli \
+		libcfitsio.so:astro/cfitsio \
 		libcharls.so:graphics/charls \
 		libdeflate.so:archivers/libdeflate \
 		libgif.so:graphics/giflib \
 		libheif.so:graphics/libheif \
+		libisal.so:devel/isa-l \
 		libjbig.so:graphics/jbigkit\
 		libjpegxr.so:graphics/libjxr \
 		libjxl.so:graphics/libjxl \
@@ -31,12 +33,16 @@ LIB_DEPENDS=	libaec.so:science/libaec \
 		libLerc.so:graphics/lerc \
 		liblz4.so:archivers/liblz4 \
 		liblzfse.so:archivers/lzfse \
+		libOpenEXRCore-3_4.so:graphics/openexr \
 		libopenjp2.so:graphics/openjpeg \
+		libopenjph.so:graphics/openjph \
+		libopenzl.so:archivers/openzl \
 		libpng16.so:graphics/png \
 		libsnappy.so:archivers/snappy \
 		libSZ3c.so:science/sz3 \
 		libtiff.so:graphics/tiff \
 		libuhdr.so:graphics/libultrahdr \
+		libwavpack.so:audio/wavpack \
 		libwebp.so:graphics/webp \
 		libz-ng.so:archivers/zlib-ng \
 		libzfp.so:devel/zfp \
@@ -44,7 +50,7 @@ LIB_DEPENDS=	libaec.so:science/libaec \
 		libzstd.so:archivers/zstd
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=2.1,1:math/py-numpy@${PY_FLAVOR}
 
-USES=		jpeg localbase python:3.12+
+USES=		dos2unix jpeg localbase python:3.12+
 USE_PYTHON=	autoplist concurrent cython pep517
 
 CPPFLAGS+=	-I${LOCALBASE}/include/jxrlib \

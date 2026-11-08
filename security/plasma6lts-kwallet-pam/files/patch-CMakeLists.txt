@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2024-12-30 18:57:04 UTC
++++ CMakeLists.txt
+@@ -93,7 +93,7 @@ kde_configure_git_pre_commit_hook(CHECKS CLANG_FORMAT)
+ 
+ kde_configure_git_pre_commit_hook(CHECKS CLANG_FORMAT)
+ 
+-install(TARGETS ${library_name} DESTINATION ${KDE_INSTALL_LIBDIR}/security)
++install(TARGETS ${library_name} DESTINATION ${KDE_INSTALL_LIBDIR})
+ 
+ configure_file(pam_kwallet_init.desktop.cmake ${CMAKE_BINARY_DIR}/pam_kwallet_init.desktop)
+ 

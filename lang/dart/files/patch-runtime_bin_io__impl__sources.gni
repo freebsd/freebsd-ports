@@ -1,0 +1,13 @@
+List bin/process_signal_map.h (series 0016). The port copies the header
+itself from files/process_signal_map.h.
+FreeBSD-specific, not submitted upstream yet.
+--- runtime/bin/io_impl_sources.gni.orig	2026-09-29 08:00:52 UTC
++++ runtime/bin/io_impl_sources.gni
+@@ -51,6 +51,7 @@ io_impl_sources = [
+   "process_fuchsia.cc",
+   "process_linux.cc",
+   "process_macos.cc",
++  "process_signal_map.h",
+   "process_win.cc",
+   "reference_counting.h",
+   "root_certificates_unsupported.cc",

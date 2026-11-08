@@ -1,6 +1,6 @@
 PORTNAME=	treefmt
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.5.0
+DISTVERSION=	2.6.0
 PORTREVISION=	2
 CATEGORIES=	devel
 
@@ -12,7 +12,7 @@ WWW=		https://treefmt.com/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.26,modules
+USES=		go:modules
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	numtide

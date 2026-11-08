@@ -1,30 +1,21 @@
---- Makefile.orig	2020-07-24 20:07:54 UTC
+--- Makefile.orig	2026-08-31 12:27:34 UTC
 +++ Makefile
-@@ -23,9 +23,11 @@
+@@ -23,9 +23,11 @@ GCC_SUFFIX =
  INC =
  GCC_PREFIX = $(shell dirname `which gcc`)
  GCC_SUFFIX =
 -CC = $(GCC_PREFIX)/gcc$(GCC_SUFFIX)
 -CPP = $(GCC_PREFIX)/g++$(GCC_SUFFIX)
 -CXX = $(CPP)
-+CC	?= $(GCC_PREFIX)/gcc$(GCC_SUFFIX)
-+CPP	?= $(GCC_PREFIX)/g++$(GCC_SUFFIX)
-+CXX	?= $(CPP)
-+INSTALL	?= install
++CC ?= $(GCC_PREFIX)/gcc$(GCC_SUFFIX)
++CPP ?= $(GCC_PREFIX)/g++$(GCC_SUFFIX)
++CXX ?= $(CPP)
++INSTALL ?= install
 +
  HEADERS = $(wildcard *.h)
  BOWTIE_MM = 1
  BOWTIE_SHARED_MEM = 0
-@@ -55,7 +57,7 @@ ifneq (,$(findstring Darwin,$(shell uname)))
- 	MACOS = 1
- endif
- 
--EXTRA_FLAGS += -DPOPCNT_CAPABILITY -std=c++11
-+EXTRA_FLAGS += -std=c++11
- INC += -I. -I third_party 
- 
- MM_DEF = 
-@@ -152,31 +154,9 @@ HISAT2_REPEAT_CPPS_MAIN = $(REPEAT_CPPS) $(BUILD_CPPS)
+@@ -171,40 +173,9 @@ VERSION = $(shell cat VERSION)
  SEARCH_FRAGMENTS = $(wildcard search_*_phase*.c)
  VERSION = $(shell cat VERSION)
  
@@ -32,6 +23,11 @@
 -BITS=32
 -ifeq (x86_64,$(shell uname -m))
 -BITS=64
+-endif
+-# ARM is 64-bit (aarch64/arm64) and does not take x86 -m32/-m64 flags; the ABI
+-# is fixed by the toolchain target, so leave BITS_FLAG empty below.
+-ifeq (1,$(ARM))
+-BITS=arm
 -endif
 -# msys will always be 32 bit so look at the cpu arch instead.
 -ifneq (,$(findstring AMD64,$(PROCESSOR_ARCHITEW6432)))
@@ -48,7 +44,11 @@
 -ifeq (64,$(BITS))
 -	BITS_FLAG = -m64
 -endif
--SSE_FLAG=-msse2
+-ifeq (1,$(ARM))
+-	SSE_FLAG =
+-else
+-	SSE_FLAG = -msse2
+-endif
 -
  DEBUG_FLAGS    = -O0 -g3 $(BITS_FLAG) $(SSE_FLAG)
  DEBUG_DEFS     = -DCOMPILER_OPTIONS="\"$(DEBUG_FLAGS) $(EXTRA_FLAGS)\""
@@ -57,7 +57,7 @@
  RELEASE_DEFS   = -DCOMPILER_OPTIONS="\"$(RELEASE_FLAGS) $(EXTRA_FLAGS)\""
  NOASSERT_FLAGS = -DNDEBUG
  FILE_FLAGS     = -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_GNU_SOURCE
-@@ -553,6 +533,20 @@ doc/manual.inc.html: MANUAL.markdown
+@@ -581,6 +552,20 @@ MANUAL: MANUAL.markdown
  
  MANUAL: MANUAL.markdown
  	perl doc/strip_markdown.pl < $^ > $@

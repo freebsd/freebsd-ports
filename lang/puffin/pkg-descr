@@ -1,0 +1,7 @@
+Puffin is an AWK-derived language with three execution backends, a
+tree-walking interpreter, Nim ahead-of-time compilation and emitted C,
+that give byte-identical output. The package ships the awktua compiler,
+the puffin driver, the pawk and pcawk awk(1) commands, the puffincc
+native compiler driver, the puffsh and pnsh shell front ends, the
+puffin-fmt, puffin-lint and puffin-lsp developer tools, the standard
+library and the manual pages.

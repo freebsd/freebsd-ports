@@ -81,6 +81,7 @@ bin/sq
 %%MANPAGES%%share/man/man1/sq-pki-vouch.1.gz
 %%MANPAGES%%share/man/man1/sq-pki.1.gz
 %%MANPAGES%%share/man/man1/sq-sign.1.gz
+%%MANPAGES%%share/man/man1/sq-toc.1.gz
 %%MANPAGES%%share/man/man1/sq-verify.1.gz
 %%MANPAGES%%share/man/man1/sq-version.1.gz
 %%MANPAGES%%share/man/man1/sq.1.gz

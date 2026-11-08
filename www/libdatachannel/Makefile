@@ -1,6 +1,6 @@
 PORTNAME=	libdatachannel
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.24.5
+DISTVERSION=	0.24.6
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -26,8 +26,8 @@ CMAKE_ON=	USE_SYSTEM_SRTP NO_EXAMPLES NO_TESTS
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD
-CFLAGS+=       -Wno-error=unused-but-set-variable \
-			   -Wno-error=strict-prototypes
+CFLAGS+=	-Wno-error=unused-but-set-variable \
+		-Wno-error=strict-prototypes
 .endif
 
 do-test: # tests require dual stack to be enabled with 'sysctl net.inet6.ip6.v6only=0', at least one test is known to fail
@@ -39,6 +39,6 @@ do-test: # tests require dual stack to be enabled with 'sysctl net.inet6.ip6.v6o
 
 # installs lib/libjuice.a and lib/libusrsctp.a that would conflict with separately installed packages juice and usrsctp, see https://github.com/paullouisageneau/libdatachannel/issues/1277
 
-# tests as of 0.24.3: Finished 12 tests in 37s (37027 ms). Succeeded: 12. Failed: 0.
+# tests as of 0.24.6: Finished 13 tests in 44s (44628 ms). Succeeded: 13. Failed: 0.
 
 .include <bsd.port.post.mk>

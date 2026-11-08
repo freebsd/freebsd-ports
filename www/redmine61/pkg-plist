@@ -90,6 +90,7 @@
 %%WWWDIR%%/app/assets/images/folder_open_add.png
 %%WWWDIR%%/app/assets/images/folder_open_orange.png
 %%WWWDIR%%/app/assets/images/group.png
+%%WWWDIR%%/app/assets/images/group.svg
 %%WWWDIR%%/app/assets/images/help.png
 %%WWWDIR%%/app/assets/images/history.png
 %%WWWDIR%%/app/assets/images/hourglass-empty.svg
@@ -2090,6 +2091,7 @@
 %%WWWDIR%%/test/unit/jobs/destroy_projects_job_test.rb
 %%WWWDIR%%/test/unit/journal_observer_test.rb
 %%WWWDIR%%/test/unit/journal_test.rb
+%%WWWDIR%%/test/unit/lib/parameter_filtering_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/access_control_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/acts/mentionable_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/acts/positioned_with_scope_test.rb
@@ -2146,7 +2148,7 @@
 %%WWWDIR%%/test/unit/lib/redmine/themes_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/thumbnail_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/unified_diff_test.rb
-%%WWWDIR%%/test/unit/lib/redmine/utils/date_calculation.rb
+%%WWWDIR%%/test/unit/lib/redmine/utils/date_calculation_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/views/builders/json_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/views/builders/xml_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/views/labelled_form_builder_test.rb

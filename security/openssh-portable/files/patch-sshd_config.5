@@ -1,6 +1,6 @@
---- sshd_config.5.orig	2026-04-25 16:05:26.905238000 -0700
-+++ sshd_config.5	2026-04-25 16:16:59.050604000 -0700
-@@ -789,7 +789,9 @@ This was formerly named HostbasedAcceptedKeyTypes.
+--- sshd_config.5.orig	2026-10-10 10:05:08.883799000 -0700
++++ sshd_config.5	2026-10-10 10:08:51.181289000 -0700
+@@ -844,7 +844,9 @@ This was formerly named HostbasedAcceptedKeyTypes.
  .Qq ssh -Q HostbasedAcceptedAlgorithms .
  This was formerly named HostbasedAcceptedKeyTypes.
  .It Cm HostbasedAuthentication
@@ -11,7 +11,7 @@
  with successful public key client host authentication is allowed
  (host-based authentication).
  The default is
-@@ -1489,7 +1491,7 @@ The default is
+@@ -1551,7 +1553,7 @@ The default is
  or
  .Cm no .
  The default is
@@ -20,7 +20,7 @@
  .Pp
  If this option is set to
  .Cm prohibit-password
-@@ -1535,6 +1537,15 @@ The default is
+@@ -1597,6 +1599,15 @@ The default is
  .Cm ethernet .
  The default is
  .Cm no .
@@ -36,7 +36,7 @@
  .Pp
  Independent of this setting, the permissions of the selected
  .Xr tun 4
-@@ -2062,12 +2073,19 @@ The default is
+@@ -2156,12 +2167,19 @@ The default is
  .Xr sshd 8
  as a non-root user.
  The default is
@@ -54,6 +54,6 @@
 +The value
 +.Cm none
 +may be used to disable this.
- .It Cm X11DisplayOffset
- Specifies the first display number available for
- .Xr sshd 8 Ns 's
+ .It Cm WarnWeakCrypto
+ Controls whether warnings are logged when the cryptographic algorithms
+ negotiated for the connection are weak or otherwise recommended against.

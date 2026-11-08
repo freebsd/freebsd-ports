@@ -1,2 +1,3 @@
 %%SITE_PERL%%/PDL/IO/Dicom.pm
+%%SITE_PERL%%/PDL/Pdldoc/PDL-IO-Dicom.db
 %%PERL5_MAN3%%/PDL::IO::Dicom.3.gz

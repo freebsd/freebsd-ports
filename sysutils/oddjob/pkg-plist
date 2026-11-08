@@ -1,0 +1,19 @@
+bin/oddjob_request
+etc/dbus-1/system.d/oddjob-mkhomedir.conf
+etc/dbus-1/system.d/oddjob.conf
+etc/oddjobd.conf
+etc/oddjobd.conf.d/oddjobd-introspection.conf
+etc/oddjobd.conf.d/oddjobd-mkhomedir.conf
+lib/security/pam_oddjob_mkhomedir.so
+libexec/oddjob/mkhomedir
+libexec/oddjob/sanity.sh
+sbin/oddjobd
+share/man/man1/oddjob_request.1.gz
+share/man/man5/oddjob-mkhomedir.conf.5.gz
+share/man/man5/oddjob.conf.5.gz
+share/man/man5/oddjobd-introspection.conf.5.gz
+share/man/man5/oddjobd-mkhomedir.conf.5.gz
+share/man/man5/oddjobd.conf.5.gz
+share/man/man8/oddjobd.8.gz
+share/man/man8/pam_oddjob_mkhomedir.8.gz
+@dir %%ETCDIR%%

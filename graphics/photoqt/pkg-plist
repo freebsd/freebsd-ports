@@ -1,8 +1,11 @@
 bin/photoqt
 share/applications/org.photoqt.PhotoQt.desktop
+share/icons/hicolor/1024x1024/apps/org.photoqt.PhotoQt.png
 share/icons/hicolor/128x128/apps/org.photoqt.PhotoQt.png
 share/icons/hicolor/16x16/apps/org.photoqt.PhotoQt.png
+share/icons/hicolor/256x256/apps/org.photoqt.PhotoQt.png
 share/icons/hicolor/32x32/apps/org.photoqt.PhotoQt.png
 share/icons/hicolor/48x48/apps/org.photoqt.PhotoQt.png
+share/icons/hicolor/512x512/apps/org.photoqt.PhotoQt.png
 share/icons/hicolor/64x64/apps/org.photoqt.PhotoQt.png
 share/metainfo/org.photoqt.PhotoQt.metainfo.xml

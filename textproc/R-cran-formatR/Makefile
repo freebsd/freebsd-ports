@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Format R Code Automatically
-WWW=		https://cran.r-project.org/web/packages/formatR/
+WWW=		https://cran.r-project.org/package=formatR
 
 LICENSE=	GPLv2+
 

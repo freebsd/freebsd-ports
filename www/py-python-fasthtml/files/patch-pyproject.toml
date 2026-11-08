@@ -1,10 +1,19 @@
 -- Remove version constraint on setuptools to be compatible with the port.
---- pyproject.toml.orig	2026-05-04 01:27:44 UTC
+--- pyproject.toml.orig	2026-10-31 16:25:57 UTC
 +++ pyproject.toml
 @@ -1,5 +1,5 @@
  [build-system]
--requires = ["setuptools>=64"]
+-requires = ["setuptools>=77"]
 +requires = ["setuptools"]
  build-backend = "setuptools.build_meta"
  
  [project]
+@@ -8,7 +8,7 @@ requires-python = ">=3.10"
+ description = "The fastest way to create an HTML app"
+ readme = "README.md"
+ requires-python = ">=3.10"
+-license = "Apache-2.0"
++license = {text = "Apache-2.0"}
+ authors = [{name = "Jeremy Howard and contributors", email = "github@jhoward.fastmail.fm"}]
+ keywords = ['nbdev', 'jupyter', 'notebook', 'python']
+ classifiers = ["Natural Language :: English", "Intended Audience :: Developers", "Development Status :: 3 - Alpha", "Programming Language :: Python :: 3", "Programming Language :: Python :: 3 :: Only"]

@@ -1,7 +1,6 @@
 PORTNAME=	cmus
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.12.0
-PORTREVISION=	3
+DISTVERSION=	2.13.0
 CATEGORIES=	audio
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -14,9 +13,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		compiler:c11 cpe gmake iconv ncurses pkgconfig
 USE_GITHUB=	yes
 
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	prefix=${PREFIX} mandir=${PREFIX}/share/man \
-		exampledir=${EXAMPLESDIR}
+HAS_CONFIGURE=		yes
+CONFIGURE_ARGS=		exampledir=${EXAMPLESDIR} \
+			mandir=${PREFIX}/share/man \
+			prefix=${PREFIX}
 # So the build does not use gcc for compiling ttman
 CONFIGURE_ARGS+=	HOSTCC=${CC}
 
@@ -30,10 +30,10 @@ MAKE_ARGS=	ICONV_CFLAGS="-I${ICONV_INCLUDE_PATH}" \
 # follow shell value semantics i.e. later assignments overwrite
 # previous assignments.  The options here appear in the same order as
 # ${WRKSRC}/configure --help.  Please keep it that way.
-_CMUS_CONFIGURE_OPTS=	AAC ALSA AO ARTS CDDB CDIO COREAUDIO CUE DISCID	\
-	FFMPEG FLAC JACK MAD MIKMOD BASS MODPLUG MP4 MPC MPRIS OPUS OSS	\
-	PULSE ROAR SAMPLERATE SNDIO SUN TREMOR VORBIS VTX WAVEOUT	\
-	WAVPACK WAV
+_CMUS_CONFIGURE_OPTS=	AAC ALSA AO ARTS CDDB CDIO COREAUDIO CUE DISCID FFMPEG \
+			FLAC JACK MAD MIKMOD BASS MODPLUG MP4 MPC MPRIS OPUS \
+			OSS PULSE ROAR SAMPLERATE SNDIO SUN TREMOR VORBIS VTX \
+			WAVEOUT WAVPACK WAV
 .for opt in ${_CMUS_CONFIGURE_OPTS}
 CONFIGURE_ARGS+=	CONFIG_${opt}=n
 .endfor
@@ -44,13 +44,12 @@ CONFIGURE_ARGS+=	CONFIG_${opt}=n
 
 OPTIONS_DEFINE=		BASU EXAMPLES
 OPTIONS_DEFAULT=	BASU FFMPEG MODPLUG OSS SNDIO
-OPTIONS_SUB=	yes
+OPTIONS_SUB=		yes
 
-OPTIONS_GROUP=	OUT IN
+OPTIONS_GROUP=		IN OUT
 OPTIONS_GROUP_OUT=	AO JACK OSS PULSEAUDIO SNDIO
-OPTIONS_GROUP_IN=	AAC CDIO CUE DISCID FFMPEG FLAC MAD MIKMOD	\
-			MODPLUG MP4 OPUS SAMPLERATE TREMOR	\
-			VORBIS WAV WAVPACK
+OPTIONS_GROUP_IN=	AAC CDIO CUE DISCID FFMPEG FLAC MAD MIKMOD MODPLUG MP4 \
+			OPUS SAMPLERATE VORBIS WAV WAVPACK
 
 BASU_DESC=	MPRIS protocol support via basu
 DISCID_DESC=	libdiscid CDDA identification support
@@ -61,14 +60,14 @@ AAC_CONFIGURE_ON=	CONFIG_AAC=y
 AAC_LIB_DEPENDS=	libfaad.so:audio/faad
 
 AO_CONFIGURE_ON=	CONFIG_AO=y
-AO_LIB_DEPENDS=	libao.so:audio/libao
+AO_LIB_DEPENDS=		libao.so:audio/libao
 
 BASU_CONFIGURE_ON=	CONFIG_MPRIS=y
 BASU_LIB_DEPENDS=	libbasu.so:devel/basu
 
 CDIO_CONFIGURE_ON=	CONFIG_CDIO=y
-CDIO_LIB_DEPENDS=	libcdio_cdda.so:sysutils/libcdio-paranoia \
-			libcdio.so:sysutils/libcdio
+CDIO_LIB_DEPENDS=	libcdio.so:sysutils/libcdio \
+			libcdio_cdda.so:sysutils/libcdio-paranoia
 
 CUE_CONFIGURE_ON=	CONFIG_CUE=y
 CUE_LIB_DEPENDS=	libcue.so:textproc/libcue
@@ -104,22 +103,18 @@ OPUS_LIB_DEPENDS=	libopusfile.so:audio/opusfile
 OSS_CONFIGURE_ON=	CONFIG_OSS=y
 
 PULSEAUDIO_CONFIGURE_ON=	CONFIG_PULSE=y
-PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
+PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
 
 # Requires a port of RoarAudio
 #ROAR_CONFIGURE_ON=	CONFIG_ROAR=y
 #ROAR_LIB_DEPENDS=	????:????
 
-SAMPLERATE_IMPLIES=	JACK
+SAMPLERATE_IMPLIES=		JACK
 SAMPLERATE_CONFIGURE_ON=	CONFIG_SAMPLERATE=y
-SAMPLERATE_LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate
+SAMPLERATE_LIB_DEPENDS=		libsamplerate.so:audio/libsamplerate
 
 SNDIO_CONFIGURE_ON=	CONFIG_SNDIO=y
 SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
-
-TREMOR_IMPLIES=	VORBIS
-TREMOR_CONFIGURE_ON=	CONFIG_TREMOR=y
-TREMOR_LIB_DEPENDS=	libvorbisidec.so:audio/libtremor
 
 VORBIS_CONFIGURE_ON=	CONFIG_VORBIS=y
 VORBIS_LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis
@@ -142,9 +137,8 @@ post-patch:
 		${WRKSRC}/Doc/cmus.txt
 
 post-configure:
-# Prevent passing wrong flags from devel/ncurses' pkg-config file to the build
-	@${REINPLACE_CMD} -e 's|-D_POSIX_C_SOURCE=200112L||g; s|-D_XOPEN_SOURCE=600||g' \
-		${WRKSRC}/config.mk
+# -D_XOPEN_SOURCE=600 hides strndup(3) on FreeBSD (POSIX.1-2008)
+	@${REINPLACE_CMD} -e 's|-D_XOPEN_SOURCE=600||' ${WRKSRC}/config.mk
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/cmus*

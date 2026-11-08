@@ -15,6 +15,9 @@ sys.path.insert(0, "%%HERMES_LIBDIR%%")
 # the paths directly, before any Hermes code imports hermes_constants.
 os.environ.setdefault("HERMES_BUNDLED_SKILLS", "%%DATADIR%%/skills")
 os.environ.setdefault("HERMES_OPTIONAL_SKILLS", "%%DATADIR%%/optional-skills")
+# misc/hermes-tui: the TUI otherwise asks upstream's pm for a private node it
+# may not install (lazy installs are off); use the system node, as Nix does.
+os.environ.setdefault("HERMES_NODE", "%%LOCALBASE%%/bin/node")
 
 from %%ENTRY_MODULE%% import %%ENTRY_FUNC%% as _entry
 

@@ -1,5 +1,6 @@
 PORTNAME=	cucumber
 PORTVERSION=	11.1.1
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -20,7 +21,7 @@ RUN_DEPENDS=	rubygem-base64>=0.2<1:converters/rubygem-base64 \
 		rubygem-diff-lcs>=1.5<2:textproc/rubygem-diff-lcs \
 		rubygem-logger>=1.6<2:devel/rubygem-logger \
 		rubygem-mini_mime>=1.1<2:mail/rubygem-mini_mime \
-		rubygem-multi_test>=1.1<2:devel/rubygem-multi_test \
+		rubygem-multi_test1>=1.1<2:devel/rubygem-multi_test1 \
 		rubygem-sys-uname>=1.5<2:sysutils/rubygem-sys-uname
 
 USES=		gem

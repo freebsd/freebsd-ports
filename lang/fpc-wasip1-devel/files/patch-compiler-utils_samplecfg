@@ -1,0 +1,13 @@
+--- compiler/utils/samplecfg.orig	2015-08-06 19:47:53 UTC
++++ compiler/utils/samplecfg
+@@ -38,8 +38,8 @@ sysfpdir=$sysfpdirbase2/text
+ # Detect if we have write permission in sysdir.
+ if [ -w "$sysdir" ] ; then
+   echo Write permission in $sysdir.
+-  fpccfgfile="$sysdir"/fpc.cfg
+-  fppkgfile="$sysdir"/fppkg.cfg
++  fpccfgfile="$sysdir"/fpc.cfg.sample
++  fppkgfile="$sysdir"/fppkg.cfg.sample
+   defaultfile="$sysdir"/fppkg/default
+   compilerconfigdir="-d CompilerConfigDir=$sysdir/fppkg"
+ else

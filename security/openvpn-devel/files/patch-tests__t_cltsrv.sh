@@ -1,4 +1,4 @@
---- tests/t_cltsrv.sh.orig	2016-08-23 13:10:22 UTC
+--- tests/t_cltsrv.sh.orig	2026-09-07 12:22:41 UTC
 +++ tests/t_cltsrv.sh
 @@ -1,7 +1,7 @@
  #! /bin/sh
@@ -9,7 +9,7 @@
  #
  # This program is free software; you can redistribute it and/or
  # modify it under the terms of the GNU General Public License
-@@ -22,8 +22,9 @@ set -e
+@@ -21,8 +21,9 @@ openvpn="${openvpn:-${top_builddir}/src/openvpn/openvp
  top_srcdir="${top_srcdir:-..}"
  top_builddir="${top_builddir:-..}"
  openvpn="${openvpn:-${top_builddir}/src/openvpn/openvpn}"
@@ -19,14 +19,17 @@
 +trap "rm -f ${root}/sample-config-files/loopback-*.test log.$$ log.$$.signal ; trap 0 ; exit 77" 1 2 15
 +trap "a=\$? ; rm -f ${root}/sample-config-files/loopback-*.test log.$$ log.$$.signal ; test \$a = 0 && exit 1 || exit \$a" 0 3
  addopts=
- case `uname -s` in
+ case $(uname -s) in
      FreeBSD)
-@@ -45,18 +46,38 @@ esac
+@@ -44,7 +45,6 @@ downscript="../tests/t_cltsrv-down.sh"
  # make sure that the --down script is executable -- fail (rather than
  # skip) test if it isn't.
  downscript="../tests/t_cltsrv-down.sh"
 -root="${top_srcdir}/sample"
- test -x "${root}/${downscript}" || chmod +x "${root}/${downscript}" || { echo >&2 "${root}/${downscript} is not executable, failing." ; exit 1 ; }
+ test -x "${root}/${downscript}" || chmod +x "${root}/${downscript}" || {
+     echo >&2 "${root}/${downscript} is not executable, failing."
+     exit 1
+@@ -52,13 +52,34 @@ echo "If the addresses are in use, this test will retr
  echo "The following test will take about two minutes." >&2
  echo "If the addresses are in use, this test will retry up to two times." >&2
  
@@ -47,19 +50,19 @@
 +
  # go
  success=0
- for i in 1 2 3 ; do
-   set +e
-   (
--  "${openvpn}" --script-security 2 --cd "${root}" ${addopts} --setenv role srv --down "${downscript}" --tls-exit --ping-exit 180 --config "sample-config-files/loopback-server" &
--  "${openvpn}" --script-security 2 --cd "${top_srcdir}/sample" ${addopts} --setenv role clt --down "${downscript}" --tls-exit --ping-exit 180 --config "sample-config-files/loopback-client"
-+  "${openvpn}" --script-security 2 \
-+      --cd "${root}" ${addopts} --setenv role srv \
-+      --down "${downscript}" --tls-exit --ping-exit 180 \
-+      --config "sample-config-files/loopback-server.test" &
-+  "${openvpn}" --script-security 2 \
-+      --cd "${top_srcdir}/sample" ${addopts} --setenv role clt \
-+      --down "${downscript}" --tls-exit --ping-exit 180 \
-+      --config "sample-config-files/loopback-client.test"
-   ) 3>log.$$.signal >log.$$ 2>&1
-   e1=$?
-   wait $!
+ for i in 1 2 3; do
+     set +e
+     (
+-        "${openvpn}" --script-security 2 --cd "${root}" ${addopts} --setenv role srv --down "${downscript}" --tls-exit --ping-exit 180 --config "sample-config-files/loopback-server" &
+-        "${openvpn}" --script-security 2 --cd "${top_srcdir}/sample" ${addopts} --setenv role clt --down "${downscript}" --tls-exit --ping-exit 180 --config "sample-config-files/loopback-client"
++        "${openvpn}" --script-security 2 \
++            --cd "${root}" ${addopts} --setenv role srv \
++            --down "${downscript}" --tls-exit --ping-exit 180 \
++            --config "sample-config-files/loopback-server.test" &
++        "${openvpn}" --script-security 2 \
++            --cd "${top_srcdir}/sample" ${addopts} --setenv role clt \
++            --down "${downscript}" --tls-exit --ping-exit 180 \
++            --config "sample-config-files/loopback-client.test"
+     ) 3>log.$$.signal >log.$$ 2>&1
+     e1=$?
+     wait $!

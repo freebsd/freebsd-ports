@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2024-09-08 02:28:28 UTC
+--- CMakeLists.txt.orig	2025-09-08 09:28:19 UTC
 +++ CMakeLists.txt
-@@ -290,9 +290,10 @@ else()
+@@ -289,9 +289,10 @@ endif()
    endif()
  endif()
  
@@ -13,7 +13,7 @@
  set(eCAL_VERSION_MAJOR  ${GIT_REVISION_MAJOR})
  set(eCAL_VERSION_MINOR  ${GIT_REVISION_MINOR})
  set(eCAL_VERSION_PATCH  ${GIT_REVISION_PATCH})
-@@ -360,6 +361,20 @@ add_subdirectory(app/app_pb)
+@@ -359,6 +360,20 @@ add_subdirectory(ecal)
  # ecal core
  # --------------------------------------------------------
  add_subdirectory(ecal)

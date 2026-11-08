@@ -1,5 +1,5 @@
 PORTNAME=	dolibarr
-DISTVERSION=	23.0.3
+DISTVERSION=	23.0.4
 CATEGORIES=	www finance
 
 MAINTAINER=	acm@FreeBSD.org

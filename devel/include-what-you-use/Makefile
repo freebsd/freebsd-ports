@@ -1,5 +1,5 @@
 PORTNAME=	include-what-you-use
-DISTVERSION=	0.26
+DISTVERSION=	0.27
 CATEGORIES=	devel
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -18,6 +18,6 @@ SHEBANG_FILES=	fix_includes.py \
 CMAKE_ARGS+=	-DLLVM_DIR=${LOCALBASE}/llvm${LLVM_VER}/lib/cmake/llvm \
 		-DClang_DIR=${LOCALBASE}/llvm${LLVM_VER}/lib/cmake/clang
 
-LLVM_VER=	22
+LLVM_VER=	23
 
 .include <bsd.port.mk>

@@ -1,10 +1,11 @@
 PORTNAME=	khard
 DISTVERSION=	0.21.0
+PORTREVISION=	1
 CATEGORIES=	deskutils python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	herbert@gojira.at
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Console carddav client
 WWW=		https://github.com/lucc/khard/
 

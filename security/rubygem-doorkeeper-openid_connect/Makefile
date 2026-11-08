@@ -1,5 +1,5 @@
 PORTNAME=	doorkeeper-openid_connect
-PORTVERSION=	1.9.0
+PORTVERSION=	1.10.5
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 

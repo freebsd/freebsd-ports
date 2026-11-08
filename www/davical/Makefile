@@ -9,7 +9,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Simple CalDAV server using a postgres backend
 WWW=		https://www.davical.org/
 
-LICENSE=	GPLv2 LGPL21
+LICENSE=	GPLv2 GPLv2+ GPLv3+ LGPL21 LGPL3+ BSD3CLAUSE
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
 

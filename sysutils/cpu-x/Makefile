@@ -1,7 +1,6 @@
 PORTNAME=	cpu-x
-PORTVERSION=	4.5.3
+PORTVERSION=	5.4.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -18,7 +17,7 @@ USES=		cmake pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	TheTumultuousUnicornOfDarkness
 GH_PROJECT=	${PORTNAME:tu}
-CMAKE_OFF=	WITH_LIBGLFW WITH_VULKAN WITH_OPENCL
+CMAKE_OFF=	WITH_VULKAN WITH_OPENCL
 
 PORTDOCS=	ChangeLog.md README.md
 
@@ -30,18 +29,19 @@ NLS_CMAKE_OFF=	-DWITH_GETTEXT:BOOL=OFF
 
 FLAVORS=	gtk3 ncurses
 
-CONFLICTS_INSTALL=	${FLAVORS:N${FLAVOR}:S/^/${PORTNAME}-/}
-
 .if ${FLAVOR:U} == ncurses
 PKGNAMESUFFIX=	-tuionly
 USES+=		ncurses
-CMAKE_ARGS+=	-DWITH_GTK:BOOL=OFF
+CMAKE_OFF+=	WITH_GTK WITH_LIBEGL
 PLIST_SUB+=	X11="@comment "
+CONFLICTS_INSTALL=	${PORTNAME}
 .else
-USES+=		gnome
-USE_GNOME=	gtk30
-GLIB_SCHEMAS=	org.cpu-x.gschema.xml
+USES+=		gnome gl
+USE_GL=		egl
+USE_GNOME=	gtkmm30
+GLIB_SCHEMAS=	io.github.thetumultuousunicornofdarkness.cpu-x.gschema.xml
 PLIST_SUB+=	X11=""
+CONFLICTS_INSTALL=	${PORTNAME}-tuionly
 .endif
 
 .include <bsd.port.pre.mk>

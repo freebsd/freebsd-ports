@@ -1,6 +1,6 @@
 PORTNAME=	kyotocabinet
 PORTVERSION=	1.2.80
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	https://dbmx.net/kyotocabinet/pkg/ \
 		LOCAL/sunpoet

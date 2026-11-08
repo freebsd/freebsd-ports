@@ -1,0 +1,4 @@
+cdist is a mature configuration management system that adheres to
+the KISS principle. It has been used in small up to enterprise grade
+environment for years and effectively is an alternative to other
+configuration management system such as Ansible, Chef or Puppet.

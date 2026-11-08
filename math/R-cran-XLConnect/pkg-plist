@@ -12,6 +12,7 @@
 %%R_MOD_DIR%%/Meta/vignette.rds
 %%R_MOD_DIR%%/NAMESPACE
 %%R_MOD_DIR%%/NEWS
+%%R_MOD_DIR%%/README.md
 %%R_MOD_DIR%%/R/XLConnect
 %%R_MOD_DIR%%/R/XLConnect.rdb
 %%R_MOD_DIR%%/R/XLConnect.rdx

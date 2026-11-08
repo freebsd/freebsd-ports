@@ -1,0 +1,52 @@
+#!/bin/sh
+
+# PROVIDE: stalwart_proxy
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable stalwart_proxy:
+#
+# stalwart_proxy_enable (bool):	Set to "YES" to enable.
+#				Default: "NO"
+# stalwart_proxy_config (path):	Path to the configuration file.
+#				Default: "%%ETCDIR%%/config.toml"
+# stalwart_proxy_user (str):	User to run the proxy as.
+#				Default: "%%USERS%%"
+# stalwart_proxy_log (path):	Log file for stdout/stderr.
+#				Default: "/var/log/stalwart-proxy.log"
+# stalwart_proxy_env (str):	Extra environment, e.g.
+#				"RUST_LOG=debug PROXY_ADMIN_TOKEN=..."
+
+. /etc/rc.subr
+
+name="stalwart_proxy"
+rcvar="stalwart_proxy_enable"
+
+load_rc_config $name
+
+: ${stalwart_proxy_enable:="NO"}
+: ${stalwart_proxy_config="%%ETCDIR%%/config.toml"}
+: ${stalwart_proxy_user="%%USERS%%"}
+: ${stalwart_proxy_log="/var/log/stalwart-proxy.log"}
+
+# daemon(8) drops privileges itself, so rc.subr must not su(1) to the user
+_stalwart_proxy_user="${stalwart_proxy_user}"
+unset stalwart_proxy_user
+
+pidfile="/var/run/${name}.pid"
+procname="%%PREFIX%%/bin/stalwart-proxy"
+command="/usr/sbin/daemon"
+command_args="-p ${pidfile} -o ${stalwart_proxy_log} \
+    -u ${_stalwart_proxy_user} ${procname} ${stalwart_proxy_config}"
+required_files="${stalwart_proxy_config}"
+start_precmd="stalwart_proxy_prestart"
+
+stalwart_proxy_prestart()
+{
+	if [ ! -f "${stalwart_proxy_log}" ]; then
+		install -o ${_stalwart_proxy_user} -g %%GROUPS%% \
+		    -m 0640 /dev/null ${stalwart_proxy_log}
+	fi
+}
+
+run_rc_command "$1"

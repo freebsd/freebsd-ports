@@ -1,11 +1,20 @@
---- pyproject.toml.orig	2025-09-28 08:11:20 UTC
+--- pyproject.toml.orig	2026-10-07 13:33:06 UTC
 +++ pyproject.toml
-@@ -57,7 +57,7 @@ dependencies = [
- dependencies = [
-   "certifi",
-   "isodate",
--  "lxml >=4.6.4,<6",
-+  "lxml >=4.6.4,<7",
-   "pycountry",
-   "pycryptodome >=3.4.3,<4",
-   "PySocks >=1.5.6,!=1.5.7",
+@@ -1,6 +1,6 @@ requires = [
+ [build-system]
+ requires = [
+-  "setuptools >=77",
++  "setuptools >=63",
+   # The versioningit build-requirement gets removed from the source distribution,
+   # as the version string is already built into it (see the onbuild versioningit hook):
+   # "versioningit >=2.0.0,<4",
+@@ -19,8 +19,7 @@ readme = "README.md"
+ Streamlink is a command-line utility that extracts streams from various services and pipes them into a video player of choice.\
+ """
+ readme = "README.md"
+-license = "BSD-2-Clause"
+-license-files = ["LICENSE"]
++license = {text = "BSD-2-Clause"}
+ authors = [
+   { name = "Streamlink" },
+   { email = "streamlink@protonmail.com" }

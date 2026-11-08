@@ -1,6 +1,6 @@
 PORTNAME=	datafusion
-PORTVERSION=	53.1.0
-PORTREVISION=	3
+PORTVERSION=	55.1.0
+PORTREVISION=	1
 CATEGORIES=	databases
 PKGNAMESUFFIX=	-cli
 
@@ -16,6 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 BROKEN_i386=	rustc-LLVM ERROR: out of memory
 
 BUILD_DEPENDS=	protoc:devel/protobuf
+LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 USES=		cargo llvm
 

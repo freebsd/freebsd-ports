@@ -1,0 +1,6 @@
+s.el is the long lost Emacs string manipulation library.  It provides a
+consistent set of functions, all prefixed with s-, for trimming and
+padding whitespace, truncating and repeating strings, splitting and
+joining lists of strings, testing predicates such as prefixes, suffixes
+and matches, and converting between word casings such as snake_case,
+camelCase and dashed-words.

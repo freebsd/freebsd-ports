@@ -1,4 +1,4 @@
---- packaging/cmake/Modules/NetdataBacktrace.cmake.orig	2025-05-28 22:57:38 UTC
+--- packaging/cmake/Modules/NetdataBacktrace.cmake.orig	2026-08-13 15:34:19 UTC
 +++ packaging/cmake/Modules/NetdataBacktrace.cmake
 @@ -10,43 +10,23 @@ function(netdata_bundle_libbacktrace)
  function(netdata_bundle_libbacktrace)

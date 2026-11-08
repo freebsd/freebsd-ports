@@ -1,15 +1,15 @@
---- meson.build	2025-04-06 20:26:44.000000000 -0700
-+++ meson.build	2025-04-23 21:21:05.417597000 -0700
-@@ -111,7 +111,7 @@
-    yaml = dependency('yaml-0.1', required: true, version: '>=0.2.5', fallback: ['libyaml', 'yaml_dep'], static: get_option('steamruntime'))
+--- meson.build.orig	2026-06-20 11:22:47 UTC
++++ meson.build
+@@ -52,7 +52,7 @@ if host_machine.system() == 'linux'
  
-    # TODO replace nfd with SDL3 native functions when possible
--   nfd = dependency('nfd', required: false, static: true)
-+   nfd = dependency('nfd', required: true, static: false)
-    if not nfd.found()
-       nfd = dependency('nativefiledialog-extended', required: true, fallback: ['nativefiledialog-extended'], static: true)
-    endif
-@@ -293,7 +293,7 @@
+ if host_machine.system() == 'linux'
+    c_args += ['-D_XOPEN_SOURCE=700']
+-elif host_machine.system() == 'windows'
++elif host_machine.system() == 'windows' or host_machine.system() == 'freebsd'
+    # We need SDL_DISABLE_ALLOCA because of
+    # https://github.com/libsdl-org/SDL/issues/13358
+    c_args += ['-D_USE_MATH_DEFINES', '-DSDL_DISABLE_ALLOCA']
+@@ -293,7 +293,7 @@ if buildExec.disabled() == false
     config_data.set10('HAVE_CBLAS_HYPHEN_OPENBLAS_H', cc.links('#include <cblas-openblas.h>' + cblas_test, dependencies: blas))
     config_data.set10('HAVE_OPENBLAS_CBLAS_H', cc.links('#include <openblas/cblas.h>' + cblas_test, dependencies: blas))
     config_data.set10('HAVE_F77BLAS_H', cc.has_header('f77blas.h', dependencies: blas))
@@ -18,3 +18,21 @@
  
     ### Generated sources
  
+@@ -458,7 +458,7 @@ naevcrs = rust.bindgen(
+    # https://github.com/flatpak/flatpak-builder-tools/tree/master/cargo
+    meson.add_dist_script( cargo_lock, cargo_toml.full_path() )
+    buildrs = configure_file( input: 'build.rs.in', output: 'build.rs', configuration: cargo_data )
+-   cargo_env = [ 'CARGO_HOME=' + meson.project_build_root() / 'cargo-home' ]
++   cargo_env = [ 'CARGO_HOME=%%WRKDIR%%/cargo-home' ]
+    cargo_options = [ '--manifest-path', cargo_toml ]
+    cargo_options += [ '--profile', rust_target ]
+    cargo_options += [ '--target-dir', meson.project_build_root() / 'src' ]
+@@ -472,7 +472,7 @@ naevcrs = rust.bindgen(
+       depend_files: source_rust + cargo_toml + buildrs,
+       output: 'src',
+       console: true,
+-      command: [ 'env', cargo_env, cargo, 'build', cargo_options, ] )
++      command: [ 'env', cargo_env, cargo, 'build', '--offline', cargo_options,] )
+    # Now we can copy the compile rlib to a location where meson can understand it
+    # TODO When the following gets merged we can simplify this https://github.com/rust-lang/cargo/issues/6790
+    naev_rlib = custom_target( 'naev_rlib',

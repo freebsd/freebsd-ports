@@ -2,7 +2,7 @@ bin/leapctl
 bin/leaprun
 bin/privleapd
 etc/pam.d/privleapd
-%%ETCDIR%%/conf.d/privleap.conf
+%%ETCDIR%%/conf.d/README.txt
 %%PYTHON_SITELIBDIR%%/privleap/__init__.py
 %%PYTHON_SITELIBDIR%%/privleap/__pycache__/__init__%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_SITELIBDIR%%/privleap/__pycache__/leapctl%%PYTHON_TAG%%.opt-2.pyc

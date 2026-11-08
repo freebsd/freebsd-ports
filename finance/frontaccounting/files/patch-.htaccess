@@ -1,0 +1,9 @@
+--- .htaccess.orig	2026-04-28 11:25:37 UTC
++++ .htaccess
+@@ -1,5 +1,5 @@
+ # Protect sensitive files.
+-<FilesMatch "\.(inc|po|sh|.*sql|log)$">
++<FilesMatch "\.(inc|po|sh|.*sql|log|bak|orig|rej)$">
+ 	Order allow,deny
+ 	Deny from All
+ 	Satisfy All

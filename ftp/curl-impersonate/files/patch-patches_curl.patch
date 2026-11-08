@@ -1,6 +1,6 @@
---- patches/curl.patch.orig	2026-08-01 23:27:43 UTC
+--- patches/curl.patch.orig	2026-09-16 15:58:32 UTC
 +++ patches/curl.patch
-@@ -11817,3 +11817,28 @@ +  NV1(CURLOPT_TLS_STATUS_REQUEST, 1),
+@@ -12428,3 +12428,28 @@ +  NV1(CURLOPT_TLS_STATUS_REQUEST, 1),
     NV1(CURLOPT_TCP_NODELAY, 1),
     NV1(CURLOPT_PROXY_SSL_VERIFYPEER, 1),
     NV1(CURLOPT_PROXY_SSL_VERIFYHOST, 1),

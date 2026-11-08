@@ -4,7 +4,7 @@ DISTVERSION=	0.98.5
 PORTREVISION=	3
 CATEGORIES=	biology
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Genome-wide Efficient Mixed Model Association
 WWW=		https://xiangzhou.github.io/software/ \
 		https://github.com/genetics-statistics/GEMMA/

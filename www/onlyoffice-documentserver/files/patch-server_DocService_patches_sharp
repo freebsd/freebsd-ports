@@ -1,18 +1,30 @@
 --- server/DocService/patches/sharp+0.32.6.patch.orig	2026-03-12 00:43:48 UTC
 +++ server/DocService/patches/sharp+0.32.6.patch
-@@ -0,0 +1,29 @@
+@@ -0,0 +1,41 @@
++diff --git a/node_modules/sharp/binding.gyp b/node_modules/sharp/binding.gyp
++index 436ead9..b9023f1 100644
++--- a/node_modules/sharp/binding.gyp
+++++ b/node_modules/sharp/binding.gyp
++@@ -105,7 +105,7 @@
++     'conditions': [
++       ['use_global_libvips == "true"', {
++         # Use pkg-config for include and lib
++-        'include_dirs': ['<!@(PKG_CONFIG_PATH="<(pkg_config_path)" pkg-config --cflags-only-I vips-cpp vips glib-2.0 | sed s\/-I//g)'],
+++        'include_dirs': ['<!@(PKG_CONFIG_PATH="<(pkg_config_path)" pkg-config --cflags-only-I vips-cpp vips glib-2.0 | sed s#-I##g)'],
++         'conditions': [
++           ['runtime_link == "static"', {
++             'libraries': ['<!@(PKG_CONFIG_PATH="<(pkg_config_path)" pkg-config --libs --static vips-cpp)']
 +diff --git a/node_modules/sharp/lib/sharp.js b/node_modules/sharp/lib/sharp.js
-+index a41e83d..80226dc 100644
++index a41e83d..12f89e4 100644
 +--- a/node_modules/sharp/lib/sharp.js
 ++++ b/node_modules/sharp/lib/sharp.js
-+@@ -2,12 +2,22 @@
-+ // SPDX-License-Identifier: Apache-2.0
-+ 
++@@ -3,11 +3,22 @@
++
 + 'use strict';
-+-
++
 ++const path = require('path');
 + const platformAndArch = require('./platform')();
-+ 
++
 + /* istanbul ignore next */
 + try {
 +-  module.exports = require(`../build/Release/sharp-${platformAndArch}.node`);

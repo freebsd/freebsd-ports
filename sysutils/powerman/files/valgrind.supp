@@ -1,0 +1,24 @@
+{
+   <list_node_create>
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:malloc
+   fun:list_node_create
+   ...
+   fun:yyparse
+   fun:parse_config_file
+   fun:conf_init
+   fun:main
+}
+{
+   <list_create>
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:malloc
+   fun:list_create
+   fun:makeDevice
+   fun:yyparse
+   fun:parse_config_file
+   fun:conf_init
+   fun:main
+}

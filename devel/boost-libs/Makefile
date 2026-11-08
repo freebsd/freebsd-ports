@@ -1,5 +1,5 @@
 PORTNAME=	boost-libs
-PORTREVISION?=	3
+PORTREVISION?=	0
 
 COMMENT=	Free portable C++ libraries (without Boost.Python)
 WWW=		https://www.boost.org/
@@ -26,14 +26,34 @@ BUILD_DEPENDS+=	bjam:devel/boost-jam
 # -RELEASE built with WITH_LLVM_ASSERTIONS set, then he can't build
 # this port successfully on such system. So provide LLVM_FROM_PORTS
 # option as a last resort for him.
-OPTIONS_DEFINE=		DEBUG GIL_EXT LLVM_FROM_PORTS OPTIMIZED_CFLAGS ZSTD
+OPTIONS_DEFINE=		COBALT DEBUG GIL_EXT LLVM_FROM_PORTS OPTIMIZED_CFLAGS ZSTD SBT
 OPTIONS_MULTI=		LOCALE
 OPTIONS_MULTI_LOCALE=	ICONV ICU
 OPTIONS_DEFAULT=	ICONV ICU ZSTD
+# boost.stacktrace.from_exceptions is ready only for amd64 yet
+OPTIONS_DEFINE_amd64=	SFE
+OPTIONS_DEFAULT_amd64=	SFE
+#OPTIONS_SUB=		yes
+
 GIL_EXT_DESC=		Extra file-formats for Generic Image Library component
 ICONV_DESC=		Boost.Locale with iconv encoding support
 ICU_DESC=		Boost.Regex/Locale with ICU unicode support
 LLVM_FROM_PORTS_DESC=	Use LLVM from ports to build
+
+# TODO: port it to libexecinfo from base
+# Stacktrace options
+SBT_DESC=		Support stacktrace.backtrace via devel/libbacktrace
+SBT_LIB_DEPENDS+=	libbacktrace.so:devel/libbacktrace
+SBT_MAKE_ARGS_OFF=	boost.stacktrace.backtrace=off
+SFE_DESC=		Support stacktrace.from_exception (amd64 only)
+SFE_MAKE_ARGS_OFF=	boost.stacktrace.from_exception=off
+
+COBALT_DESC=		Build Boost.Cobalt, force C++20 usage
+COBALT_MAKE_ARGS_OFF=	--without-cobalt
+COBALT_USES=		compiler:c++20-lang
+COBALT_USES_OFF=	compiler:c++17-lang
+COBALT_USE=		CXXSTD=gnu++20
+COBALT_USE_OFF=		CXXSTD=gnu++17
 
 GIL_EXT_LIB_DEPENDS=	libpng.so:graphics/png \
 			libraw.so:graphics/libraw \
@@ -68,30 +88,25 @@ MAKE_ARGS+=	-sZSTD_PATH=${LOCALBASE}
 MAKE_ARGS+=	-sZSTD_LIBRARY_PATH=${LOCALBASE}/lib
 MAKE_ARGS+=	-sZSTD_INCLUDE=${LOCALBASE}/include
 
-# prevent hook up broken and outdated libbacktrace.so from devel/libbacktrace 
-# which caused build errors with ZSTD or GIL enabled
-# TODO: port it to libexecinfo from base
-MAKE_ARGS+=	boost.stacktrace.backtrace=off
-
 .include <bsd.port.options.mk>
 
+.if ${PORT_OPTIONS:MCOBALT}
+PLIST_SUB+=	COBALT=""
+.else
+PLIST_SUB+=	COBALT="@comment "
+.endif
+
 # boost.stacktrace.from_exceptions is ready only for amd64 yet
-.if ${ARCH:Mamd64}
+.if ${PORT_OPTIONS:MSFE}
 PLIST_SUB+=	SFE=""
 .else
-MAKE_ARGS+=	boost.stacktrace.from_exception=off
 PLIST_SUB+=	SFE="@comment "
 .endif
 
-.if ${ARCH:Marmv?}
-pre-configure:
-	${REINPLACE_CMD} -e 's,@progbits,%progbits,' \
-		${WRKSRC}/boost/interprocess/interprocess_printers.hpp \
-		${WRKSRC}/boost/json/detail/gdb_printers.hpp \
-		${WRKSRC}/boost/outcome/experimental/status-code/status_code.hpp \
-		${WRKSRC}/boost/outcome/outcome_gdb.h \
-		${WRKSRC}/boost/unordered/unordered_printers.hpp \
-		${WRKSRC}/libs/json/pretty_printers/generate-gdb-header.py
+.if ${PORT_OPTIONS:MSBT}
+PLIST_SUB+=	SBT=""
+.else
+PLIST_SUB+=	SBT="@comment "
 .endif
 
 do-install:

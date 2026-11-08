@@ -1,6 +1,6 @@
 PORTNAME=	heimdal
 PORTVERSION=	7.8.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/heimdal/heimdal/releases/download/${DISTNAME}/
 
@@ -74,7 +74,9 @@ BDB_CONFIGURE_OFF=	--enable-ndbm-db
 
 LMDB_DESC=		Enable LMDB KDC backend support
 LMDB_CONFIGURE_ENABLE=	mdb_db
-LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb0
+LMDB_CPPFLAGS=		-I${LOCALBASE}/lmdb0/include
+LMDB_LDFLAGS=		-L${LOCALBASE}/lmdb0/lib
+LMDB_LIB_DEPENDS=	liblmdb0.so:databases/lmdb0
 
 SQLITE_DESC=		Enable SQLite KDC backend support
 SQLITE_USES=		sqlite

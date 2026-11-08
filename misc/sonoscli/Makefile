@@ -1,6 +1,6 @@
 PORTNAME=	sonoscli
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.4
+DISTVERSION=	0.3.5
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://github.com/steipete/sonoscli
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.26+,modules
+USES=		go:modules
 
 GO_MODULE=	github.com/steipete/sonoscli
 GO_TARGET=	./cmd/sonos

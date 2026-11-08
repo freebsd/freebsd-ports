@@ -1,0 +1,18 @@
+--- scew/error.c.orig	2018-09-16 06:57:01 UTC
++++ scew/error.c
+@@ -88,7 +88,7 @@ scew_error_expat_line (scew_parser *parser)
+ {
+   assert (parser != NULL);
+ 
+-  return XML_GetCurrentLineNumber (scew_parser_expat (parser));
++  return XML_GetCurrentLineNumber64 (scew_parser_expat (parser));
+ }
+ 
+ int
+@@ -96,5 +96,5 @@ scew_error_expat_column (scew_parser *parser)
+ {
+   assert (parser != NULL);
+ 
+-  return XML_GetCurrentColumnNumber (scew_parser_expat (parser));
++  return XML_GetCurrentColumnNumber64 (scew_parser_expat (parser));
+ }

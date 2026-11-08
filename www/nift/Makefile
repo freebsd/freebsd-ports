@@ -1,7 +1,6 @@
 PORTNAME=	nift
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.3
-PORTREVISION=	2
+DISTVERSION=	4.12.0
 CATEGORIES=	www
 
 MAINTAINER=	info@babaei.net
@@ -11,28 +10,32 @@ WWW=		https://www.nift.dev
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		compiler:c++11-lang gmake
+BUILD_DEPENDS=	bash:shells/bash
+TEST_DEPENDS=	git>0:devel/git
+
+USES=		compiler:c++17-lang gmake python:build shebangfix
 USE_GITHUB=	yes
-GH_ACCOUNT=	nifty-site-manager
-GH_PROJECT=	nsm
+GH_ACCOUNT=	nift-dev
+GH_PROJECT=	nift
 
-MAKE_ARGS=	BUNDLED=0
+SHEBANG_FILES=	scripts/build_vendored_libffi.sh
 
-PLIST_FILES=	bin/nift \
-		bin/nsm
+MAKE_ARGS=	CC="${CC}" \
+		CFLAGS="${CFLAGS}" \
+		CPPFLAGS="${CPPFLAGS}" \
+		CXX="${CXX}" \
+		CXXFLAGS="${CXXFLAGS} -std=c++17 -pthread" \
+		LDFLAGS="${LDFLAGS}"
+TEST_TARGET=	test
 
-OPTIONS_DEFAULT=	LUAJIT
-OPTIONS_SINGLE=		LUAIMPL
-OPTIONS_SINGLE_LUAIMPL=	LUAJIT LUA
-LUAIMPL_DESC=		Lua implementation
-LUAJIT_DESC=		Use the Just-In-Time compiler for lua
-LUAJIT_USES=		luajit
-LUAJIT_MAKE_ARGS=	LUAJIT_VERSION=${LUAJIT_LUAVER}
-LUA_USES=		lua
-LUA_MAKE_ARGS=		LUA_VERSION=${LUA_VER}
+CPPFLAGS+=	-Isrc -Iinclude -Iminifypp/include -Iminifypp/src \
+		-Imarkuppp/include -Imarkuppp/vendor/cmark
+
+BINARY_ALIAS=	python3=${PYTHON_CMD}
+
+PLIST_FILES=	bin/nift
 
 post-install:
-	${STRIP_CMD}	${STAGEDIR}${PREFIX}/bin/nift \
-			${STAGEDIR}${PREFIX}/bin/nsm
+	${STRIP_CMD}	${STAGEDIR}${PREFIX}/bin/nift
 
 .include <bsd.port.mk>

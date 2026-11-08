@@ -1,43 +1,22 @@
 PORTNAME=	mmv
-PORTVERSION=	1.01b.19
-PORTREVISION=	2
+DISTVERSION=	2.10
+PORTREVISION=	1
 CATEGORIES=	misc
-MASTER_SITES=	DEBIAN_POOL
-DISTNAME=	${PORTNAME}_1.01b.orig
-DISTFILES=	${PORTNAME}_1.01b.orig${EXTRACT_SUFX} \
-		${_debfile}
-
-PATCH_DIST_STRIP=	-p1
+MASTER_SITES=	https://github.com/rrthomas/mmv/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Move/Copy/Append/Link multiple files
-WWW=		https://packages.debian.org/unstable/utils/mmv
+WWW=		https://github.com/rrthomas/mmv
 
-LICENSE=	Freeware
-LICENSE_NAME=	MMV
-LICENSE_FILE=	${PATCHDIR}/LICENSE
-LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-CFLAGS+=	-DHAS_DIRENT
-WRKSRC=		${WRKDIR}/${PORTNAME}-1.01b.orig
+BUILD_DEPENDS=	help2man:misc/help2man
 
-_debfile=	${PORTNAME}_1.01b-19.debian.tar.xz
+USES=		gmake
 
-pre-patch:
-	${TAR} -C ${WRKDIR} -xvJf ${DISTDIR}/${_debfile} debian/patches
-	cd ${WRKSRC} && while read p ; do \
-		${PATCH} <${WRKDIR}/debian/patches/$$p ; \
-	done <${WRKDIR}/debian/patches/series
+GNU_CONFIGURE=	yes
 
-do-build:
-	cd ${WRKSRC} && ${CC} ${CFLAGS} -o ${PORTNAME} ${PORTNAME}.c
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/mmv ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/mmv.1 ${STAGEDIR}${PREFIX}/share/man/man1/
-.for i in mcp mad mln
-	${LN} -sf ${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${i}
-	${LN} -sf ${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1/${i}.1
-.endfor
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>

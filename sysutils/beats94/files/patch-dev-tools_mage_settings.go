@@ -1,6 +1,6 @@
---- dev-tools/mage/settings.go.orig	2026-02-23 21:59:26 UTC
+--- dev-tools/mage/settings.go.orig	2026-09-09 20:15:21 UTC
 +++ dev-tools/mage/settings.go
-@@ -31,7 +31,6 @@ import (
+@@ -32,7 +32,6 @@ import (
  	"sync"
  	"time"
  
@@ -8,7 +8,7 @@
  	"golang.org/x/text/cases"
  	"golang.org/x/text/language"
  	"gopkg.in/yaml.v3"
-@@ -282,7 +281,8 @@ func CommitHash() (string, error) {
+@@ -280,7 +279,8 @@ func CommitHash() (string, error) {
  func CommitHash() (string, error) {
  	var err error
  	commitHashOnce.Do(func() {

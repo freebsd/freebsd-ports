@@ -1,9 +1,9 @@
 PORTNAME=	os-client-config
-PORTVERSION=	2.1.0
-PORTREVISION=	1
+PORTVERSION=	2.3.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	os_client_config-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	OpenStack client configuration library

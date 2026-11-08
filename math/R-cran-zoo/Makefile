@@ -1,11 +1,11 @@
 PORTNAME=	zoo
-DISTVERSION=	1.8-15
+DISTVERSION=	1.9-1
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	S3 Infrastructure for Regular and Irregular Time Series
-WWW=		https://cran.r-project.org/web/packages/zoo/
+WWW=		https://cran.r-project.org/package=zoo
 
 LICENSE=	GPLv2+
 

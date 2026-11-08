@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Color schemes for dichromats
-WWW=		https://cran.r-project.org/web/packages/dichromat/
+WWW=		https://cran.r-project.org/package=dichromat
 
 LICENSE=	GPLv2
 

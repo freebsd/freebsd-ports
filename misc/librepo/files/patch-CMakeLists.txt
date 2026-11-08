@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2024-03-26 13:28:08 UTC
+--- CMakeLists.txt.orig	2026-09-09 07:53:37 UTC
 +++ CMakeLists.txt
-@@ -32,7 +32,7 @@ PKG_CHECK_MODULES(GLIB2 glib-2.0>=2.66 gio-2.0 REQUIRE
+@@ -36,7 +36,7 @@ PKG_CHECK_MODULES(GLIB2 glib-2.0>=2.66 gio-2.0 REQUIRE
  
  FIND_PACKAGE(PkgConfig)
  PKG_CHECK_MODULES(GLIB2 glib-2.0>=2.66 gio-2.0 REQUIRED)
@@ -9,7 +9,7 @@
  PKG_CHECK_MODULES(LIBXML2 libxml-2.0 REQUIRED)
  FIND_PACKAGE(CURL 7.52.0 REQUIRED)
  
-@@ -115,8 +115,8 @@ IF (ENABLE_PYTHON)
+@@ -130,8 +130,8 @@ IF (ENABLE_PYTHON)
  # Python stuff
  
  IF (ENABLE_PYTHON)

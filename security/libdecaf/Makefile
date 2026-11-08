@@ -1,5 +1,5 @@
 PORTNAME=	libdecaf
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.5
 CATEGORIES=	security
 MASTER_SITES=	SF/ed448goldilocks/
 

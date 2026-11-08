@@ -1,0 +1,55 @@
+#!/bin/sh
+
+# PROVIDE: immichframe
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# immichframe_enable (bool):	Set to NO by default.
+#				Set it to YES to enable the frame.
+# immichframe_urls (str):	Addresses to listen on.
+#				Default: http://127.0.0.1:8080
+# immichframe_config (str):	Directory holding immichframe.db.
+#				Default: %%DBDIR%%
+# immichframe_env_file (str):	Environment file with
+#				IMMICHFRAME_ADMIN_PASSWORD, read as shell.
+#				Default: %%PREFIX%%/etc/immichframe.env
+
+. /etc/rc.subr
+
+name=immichframe
+rcvar=immichframe_enable
+desc="Immich digital photo frame"
+
+load_rc_config $name
+
+: ${immichframe_enable:=NO}
+: ${immichframe_user:=immich}
+: ${immichframe_group:=immich}
+: ${immichframe_urls:=http://127.0.0.1:8080}
+: ${immichframe_config:=%%DBDIR%%}
+: ${immichframe_env_file:=%%PREFIX%%/etc/immichframe.env}
+: ${immichframe_env:="ASPNETCORE_URLS=${immichframe_urls} \
+	IMMICHFRAME_CONFIG_PATH=${immichframe_config}"}
+
+pidfile=/var/run/immich/${name}.pid
+childpidfile=/var/run/immich/${name}_child.pid
+
+start_precmd=immichframe_precmd
+command=/usr/sbin/daemon
+command_args="-f -H -t ${name} -P ${pidfile} -p ${childpidfile} \
+	-o /var/log/immich/${name}.log \
+	%%PREFIX%%/bin/immichframe"
+
+immichframe_precmd()
+{
+	# Keep what the service creates itself out of other users' reach
+	umask 027
+
+	install -d -m 750 -o ${immichframe_user} -g ${immichframe_group} \
+		/var/run/immich /var/log/immich ${immichframe_config}
+}
+
+run_rc_command "$1"

@@ -3,7 +3,7 @@ DISTVERSION=	8.0.1
 CATEGORIES=	deskutils
 PKGNAMEPREFIX=	elementary-
 
-MAINTAINER=	nc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Desktop calendar app designed for elementary OS
 WWW=		https://github.com/elementary/calendar
 

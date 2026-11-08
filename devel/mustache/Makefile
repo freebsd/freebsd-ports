@@ -21,6 +21,8 @@ NO_BUILD=	yes
 PLIST_FILES=	include/kainjow/catch.hpp \
 		include/kainjow/mustache.hpp
 
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/kainjow/Mustache/issues/72
+
 do-install: # https://github.com/kainjow/Mustache/issues/39
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/${GH_ACCOUNT}
 	${INSTALL_DATA} ${WRKSRC}/*.hpp ${STAGEDIR}${PREFIX}/include/${GH_ACCOUNT}

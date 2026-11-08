@@ -10,7 +10,7 @@ bin/cf-secret
 bin/cf-serverd
 bin/cf-support
 bin/cf-upgrade
-bin/cf-watchd
+bin/cf-reactor
 bin/rpmvercmp
 libexec/cfengine/libpromises.so
 libexec/cfengine/libpromises.so.3

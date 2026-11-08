@@ -1,0 +1,11 @@
+--- _build_hook/backend.py.orig	2026-08-15 06:34:17 UTC
++++ _build_hook/backend.py
+@@ -6,7 +6,7 @@ USE_CYTHON = os.getenv("CHARSET_NORMALIZER_USE_CYTHON"
+ from setuptools import build_meta as _orig  # type: ignore[import-untyped]
+ 
+ USE_CYTHON = os.getenv("CHARSET_NORMALIZER_USE_CYTHON", "0") == "1"
+-CYTHON_SPEC = "Cython>=3.2,<3.3"
++CYTHON_SPEC = "Cython>=3.2"
+ 
+ # Expose all the PEP 517 hooks from setuptools
+ get_requires_for_build_sdist = _orig.get_requires_for_build_sdist

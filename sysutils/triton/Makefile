@@ -1,7 +1,7 @@
 PORTNAME=	triton
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9-597
-PORTREVISION=	3
+PORTREVISION=	5
 DISTVERSIONSUFFIX=	-gafb28564
 CATEGORIES=	sysutils
 
@@ -12,9 +12,7 @@ WWW=		https://triton.quarkslab.com/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BROKEN_armv7=	src/libtriton/includes/triton/tritonToZ3.hpp:43:17: error: no type named '__uint' in namespace 'triton', see https://github.com/JonathanSalwan/Triton/issues/1214
 BROKEN_i386=	compilation fails: conflict of 'namespace i386' and macro '#define i386 1'
-BROKEN_riscv64=	src/libtriton/includes/triton/tritonToZ3.hpp:43:17: error: no type named '__uint' in namespace 'triton', see https://github.com/JonathanSalwan/Triton/issues/1214
 
 BUILD_DEPENDS=	boost-libs>0:devel/boost-libs
 LIB_DEPENDS=	libcapstone.so:devel/capstone4 \

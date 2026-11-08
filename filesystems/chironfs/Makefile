@@ -1,11 +1,11 @@
 PORTNAME=	chironfs
 PORTVERSION=	1.1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	filesystems
 MASTER_SITES=	https://BSDforge.com/projects/source/sysutils/chironfs/
 PKGNAMEPREFIX=	fusefs-
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FUSE based filesystem with replication at the filesystem level
 WWW=		https://BSDforge.com/projects/sysutils/fusefs-chironfs/
 

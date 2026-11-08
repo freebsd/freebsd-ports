@@ -1,7 +1,7 @@
 PORTNAME=	kops
-PORTVERSION=	1.35.0
+PORTVERSION=	1.36.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	sysutils
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -14,7 +14,7 @@ BROKEN_i386=	linking fails: mapping output file failed: cannot allocate memory
 
 BUILD_DEPENDS=	go-bindata:devel/go-bindata
 
-USES=		go:1.25+,modules
+USES=		go:modules
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	kubernetes

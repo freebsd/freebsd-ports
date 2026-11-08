@@ -1,6 +1,6 @@
 PORTNAME=	rmsd
 DISTVERSIONPREFIX=	${PORTNAME}-
-DISTVERSION=	1.6.5
+DISTVERSION=	1.7.0
 CATEGORIES=	science
 #MASTER_SITES=	PYPI # missing test files, see https://github.com/charnley/rmsd/issues/123
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,6 +22,6 @@ USE_PYTHON=	pep517 autoplist concurrent pytest
 USE_GITHUB=	yes
 GH_ACCOUNT=	charnley
 
-# tests as of 1.6.5: 52 passed, 1 skipped in 0.84s
+# tests as of 1.7.0: 102 passed, 1 skipped in 22.77s
 
 .include <bsd.port.mk>

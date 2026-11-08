@@ -269,6 +269,7 @@ lib/prosody/util/termcolours.lua
 lib/prosody/util/throttle.lua
 lib/prosody/util/time.so
 lib/prosody/util/timer.lua
+lib/prosody/util/tlsref.lua
 lib/prosody/util/uuid.lua
 lib/prosody/util/watchdog.lua
 lib/prosody/util/x509.lua

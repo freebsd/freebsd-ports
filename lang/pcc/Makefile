@@ -23,7 +23,6 @@ RUN_DEPENDS=	pcc-libs>=${PORTVERSION}:devel/pcc-libs
 
 USES=		gmake tar:tgz
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ENV=	YACC=${YACC}
 
 PLIST_FILES=	bin/pcc bin/pcpp \
@@ -45,8 +44,6 @@ post-patch:
 	@${REINPLACE_CMD} -e '/mkdir -p.*PCC.*DIR/d' \
 		${WRKSRC}/cc/cc/Makefile.in
 .if ${OPSYS} == FreeBSD
-	@${REINPLACE_CMD} -e '/targmach=amd64/s/x86_64/amd64/' \
-		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's,\" MKS(TARGOSVER),${OSREL:R}\",' \
 		${WRKSRC}/os/freebsd/ccconfig.h
 .endif

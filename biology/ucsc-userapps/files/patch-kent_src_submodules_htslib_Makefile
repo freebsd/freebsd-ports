@@ -1,0 +1,33 @@
+--- kent/src/submodules/htslib/Makefile.orig	2026-08-30 18:17:35 UTC
++++ kent/src/submodules/htslib/Makefile
+@@ -22,9 +22,9 @@
+ # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+ # DEALINGS IN THE SOFTWARE.
+ 
+-CC     = gcc
+-AR     = ar
+-RANLIB = ranlib
++CC     ?= gcc
++AR     ?= ar
++RANLIB ?= ranlib
+ 
+ # Default libraries to link if configure is not used
+ htslib_default_libs = -lz -lm -lbz2 -llzma -lcurl
+@@ -35,14 +35,14 @@ CPPFLAGS =
+ # TODO: probably update cram code to make it compile cleanly with -Wc++-compat
+ # For testing strict C99 support add -std=c99 -D_XOPEN_SOURCE=600
+ #CFLAGS   = -g -Wall -O2 -pedantic -std=c99 -D_XOPEN_SOURCE=600
+-CFLAGS   = -g -Wall -O2 -fvisibility=hidden
++CFLAGS   ?= -g -Wall -O2 -fvisibility=hidden
+ EXTRA_CFLAGS_PIC = -fpic
+ TARGET_CFLAGS =
+-LDFLAGS  = -fvisibility=hidden
++LDFLAGS  ?= -fvisibility=hidden
+ VERSION_SCRIPT_LDFLAGS = -Wl,-version-script,$(srcprefix)htslib.map
+ LIBS     = $(htslib_default_libs)
+ 
+-prefix      = /usr/local
++prefix      = ${PREFIX}
+ exec_prefix = $(prefix)
+ bindir      = $(exec_prefix)/bin
+ includedir  = $(prefix)/include

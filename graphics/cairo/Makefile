@@ -1,11 +1,9 @@
 PORTNAME=	cairo
-DISTVERSION=	1.18.2
+DISTVERSION=	1.18.6
 PORTEPOCH=	3
 CATEGORIES=	graphics
-MASTER_SITES=	https://cairographics.org/releases/
-
-PATCH_SITES=	https://gitlab.freedesktop.org/${PORTNAME}/${PORTNAME}/commit/
-PATCHFILES=	f19e2fe080ddcfce93c8234a919fd882f3d63362.patch:-p1
+MASTER_SITES=	https://cairographics.org/releases/ \
+		NETBSD
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Vector graphics library with cross-device output support
@@ -39,7 +37,7 @@ MESON_ARGS=	-Dspectre=disabled \
 DOCSDIR=	${PREFIX}/share/gtk-doc/html
 PORTSCOUT=	skipv:5c-1.1,5c-1.2,5c-1.5
 
-PLIST_SUB=	LIBVER=2.11802.2
+PLIST_SUB=	LIBVER=2.11806.6
 
 OPTIONS_DEFINE=	DOCS GLIB X11
 OPTIONS_DEFAULT=DOCS GLIB X11

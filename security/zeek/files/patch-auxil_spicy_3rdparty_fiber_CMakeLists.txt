@@ -1,0 +1,15 @@
+Enable the fiber ppc64 ELFv2 assembly on big-endian hosts as well (the
+registers it saves are endian-neutral). Upstream simonfxr/fiber dc084920bc81,
+not yet in the spicy snapshot bundled by zeek.
+
+--- auxil/spicy/3rdparty/fiber/CMakeLists.txt.orig	2026-10-18 17:10:38 UTC
++++ auxil/spicy/3rdparty/fiber/CMakeLists.txt
+@@ -82,7 +82,7 @@
+   endif()
+ elseif(CMU_OS_POSIX AND CMU_ARCH_RISCV)
+   set(asm_sources src/fiber_asm_riscv_elf.S)
+-elseif(CMU_OS_POSIX AND CMU_ARCH_PPC AND FIBER_BITS_64 AND CMU_LITTLE_ENDIAN)
++elseif(CMU_OS_POSIX AND CMU_ARCH_PPC AND FIBER_BITS_64)
+   set(asm_sources src/fiber_asm_ppc64le_elf2.S)
+ endif()
+ 

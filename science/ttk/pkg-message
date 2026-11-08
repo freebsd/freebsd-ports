@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+You installed ttk: Topology Visualization Toolkit.
+
+In order to run it you need to:
+1. Have paraview installed (this package has already installed it)
+2. $ . /usr/ports/science/ttk/files/envs.sh
+3. Run paraview
+4. Make sure that TopologyToolkit plugins are loaded in
+   Tools => Manage Plugins, find TopologyToolKit and click Load Selected
+
+EOM
+}
+]

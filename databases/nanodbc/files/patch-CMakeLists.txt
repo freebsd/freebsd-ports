@@ -1,0 +1,15 @@
+-- Remove -lc++abi from libc++ link options.
+-- FreeBSD's libc++ includes the C++ ABI runtime, so linking against
+-- libc++abi separately is unnecessary and can cause link errors.
+
+--- CMakeLists.txt.orig	2026-09-29 05:36:22 UTC
++++ CMakeLists.txt
+@@ -120,7 +120,7 @@ if( NANODBC_FORCE_LIBCXX )
+ message( STATUS "nanodbc build: Force linking libc++ - ${NANODBC_FORCE_LIBCXX}" )
+ if( NANODBC_FORCE_LIBCXX )
+   target_compile_options( nanodbc PUBLIC -stdlib=libc++ )
+-  target_link_options( nanodbc PUBLIC -stdlib=libc++ -lc++abi )
++  target_link_options( nanodbc PUBLIC -stdlib=libc++ )
+ endif()
+ 
+ set_target_properties( nanodbc PROPERTIES

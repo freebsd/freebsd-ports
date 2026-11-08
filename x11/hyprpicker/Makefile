@@ -1,7 +1,6 @@
 PORTNAME=	hyprpicker
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.7
-PORTREVISION=	1
+DISTVERSION=	0.4.8
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -12,7 +11,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	hyprwayland-scanner>=0.4.0:devel/hyprwayland-scanner \
-		wayland-protocols>0:graphics/wayland-protocols
+		wayland-protocols>=1.37:graphics/wayland-protocols
 LIB_DEPENDS=	libhyprutils.so:devel/hyprutils \
 		libwayland-client.so:graphics/wayland \
 		libxkbcommon.so:x11/libxkbcommon

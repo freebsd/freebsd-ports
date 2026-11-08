@@ -8,7 +8,7 @@ MASTER_SITES=	https://sourceforge.net/projects/readseq/files/latest/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.jar
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Read and reformat biosequences, Java command-line version
 WWW=		https://sourceforge.net/projects/readseq
 

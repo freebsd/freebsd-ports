@@ -15,7 +15,6 @@ CRAN_DEPENDS=	R-cran-askpass>0:security/R-cran-askpass \
 		R-cran-jsonlite>0:converters/R-cran-jsonlite \
 		R-cran-openssl>=1.3:security/R-cran-openssl \
 		R-cran-sys>=2.1:devel/R-cran-sys
-BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
 USES=		cran:auto-plist

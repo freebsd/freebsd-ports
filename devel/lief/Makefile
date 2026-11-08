@@ -15,7 +15,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/tcb/span.hpp:devel/span \
 		nanobind>=0:devel/nanobind \
 		nlohmann-json>=0:devel/nlohmann-json \
 		tl-expected>=0:devel/tl-expected \
-		utf8cpp>=0:devel/utf8cpp
+		utf8cpp>=4.2.0:devel/utf8cpp
 LIB_DEPENDS=	libfmt.so:devel/libfmt \
 		libmbedtls.so:security/mbedtls3 \
 		libspdlog.so:devel/spdlog
@@ -71,6 +71,8 @@ CMAKE_ON=	BUILD_SHARED_LIBS \
 		LIEF_VDEX
 CMAKE_TESTING_ON=	\
 		LIEF_TESTS
+
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	lief-project

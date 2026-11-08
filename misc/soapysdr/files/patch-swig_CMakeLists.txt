@@ -1,0 +1,9 @@
+--- swig/CMakeLists.txt.orig	2026-10-25 03:56:48 UTC
++++ swig/CMakeLists.txt
+@@ -11,4 +11,4 @@ add_subdirectory(csharp)
+ ########################################################################
+ # Python support (optional)
+ ########################################################################
+-add_subdirectory(python)
+\ No newline at end of file
++#add_subdirectory(python)

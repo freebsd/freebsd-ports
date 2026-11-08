@@ -1,0 +1,5 @@
+TIMESTAMP = 1790154217
+SHA256 (linkwarden-freebsd-buildkit-2.16.3.tar.gz) = 3865c4f06d251d706499de29d2838bc96385248cc26c5130c540491cd8e7e49b
+SIZE (linkwarden-freebsd-buildkit-2.16.3.tar.gz) = 226736331
+SHA256 (linkwarden-linkwarden-v2.16.3_GH0.tar.gz) = 88fd2010ee225724756f6f9da7841788622676e82717a9a2e0cb5625f915696a
+SIZE (linkwarden-linkwarden-v2.16.3_GH0.tar.gz) = 7182381

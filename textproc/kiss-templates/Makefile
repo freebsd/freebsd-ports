@@ -1,6 +1,6 @@
 PORTNAME=		kiss-templates
 PORTVERSION=		0.19
-PORTREVISION=		13
+PORTREVISION=		14
 CATEGORIES=		textproc
 
 MAINTAINER=		ports@FreeBSD.org
@@ -9,6 +9,9 @@ WWW=		https://github.com/rbock/kiss-templates
 
 LICENSE=		BSD2CLAUSE
 LICENSE_FILE=		${WRKSRC}/LICENSE
+
+DEPRECATED=		Abandoned upstream, has no uses in tree, does not build with CMake 4
+EXPIRATION_DATE=	2026-11-30
 
 USES=			cmake compiler:c++11-lang
 USE_GITHUB=		yes

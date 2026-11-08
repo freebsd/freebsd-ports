@@ -1,0 +1,9 @@
+--- meson.build.orig	2026-10-16 05:54:16 UTC
++++ meson.build
+@@ -1,5 +1,5 @@ project('pkgconf', 'c',
+ project('pkgconf', 'c',
+-  version : '3.0.8',
++  version : '3.0.9',
+   license : 'ISC',
+   default_options : [
+     'c_std=c99',

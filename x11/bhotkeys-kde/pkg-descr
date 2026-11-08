@@ -1,0 +1,2 @@
+Plasma chords for bhotkeys.  The plugins call qdbus6 and need a
+Plasma session at run time.

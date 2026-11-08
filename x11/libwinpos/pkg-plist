@@ -1,0 +1,10 @@
+include/Winpos/Manager.h
+include/Winpos/WindowPositioner.h
+include/Winpos/Zone.h
+include/Winpos/ZoneItem.h
+include/Winpos/winposqt_export.h
+lib/cmake/WinposQt/WinposQtConfig.cmake
+lib/cmake/WinposQt/WinposQtConfigVersion.cmake
+lib/cmake/WinposQt/WinposQtTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/WinposQt/WinposQtTargets.cmake
+lib/libwinpos-qt.a

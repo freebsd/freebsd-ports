@@ -49,7 +49,7 @@ fi
 
 . ${globalconf}
 . ${mdtools}
-. ${subrdir}/nc.subr
+. ${subrdir}/nc-lite.subr
 
 . ${localcbsdconf}
 

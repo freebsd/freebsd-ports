@@ -1,0 +1,26 @@
+-- Lowercase the project name so the wheel and package names are lowercase,
+-- relax the setuptools requirement, and use the table form of project.license:
+-- devel/py-setuptools is 63.1.0, which does not accept the PEP 639 SPDX
+-- license string and fails to validate pyproject.toml.
+-- Upstream still uses the string form; no upstream issue.
+
+--- pyproject.toml.orig	2026-10-25 04:25:38 UTC
++++ pyproject.toml
+@@ -1,14 +1,14 @@
+ [build-system]
+-requires = ["setuptools>=64", "setuptools_scm>=8"]
++requires = ["setuptools>=63.1.0", "setuptools_scm>=8"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+-name = "MolSym"
++name = "molsym"
+ dynamic = ["version"]
+ description = "A program for molecular symmetry detection and SALC construction"
+ readme = "README.md"
+ requires-python = ">=3.10"
+-license = "MIT"
++license = {text = "MIT"}
+ authors = [
+     { name = "Stephen Goodlett", email = "stephen.goodlett@org.chemie.uni-giessen.de" },
+     { name = "Nate Kitzmiller", email = "nate.kitzmiller@indwes.edu" },

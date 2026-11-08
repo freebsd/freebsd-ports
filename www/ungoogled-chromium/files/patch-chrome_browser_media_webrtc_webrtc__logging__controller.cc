@@ -1,4 +1,4 @@
---- chrome/browser/media/webrtc/webrtc_logging_controller.cc.orig	2026-06-05 13:45:06 UTC
+--- chrome/browser/media/webrtc/webrtc_logging_controller.cc.orig	2026-10-31 12:09:36 UTC
 +++ chrome/browser/media/webrtc/webrtc_logging_controller.cc
 @@ -30,7 +30,7 @@
  #include "net/base/schemeful_site.h"
@@ -9,7 +9,7 @@
  #include "content/public/browser/child_process_security_policy.h"
  #include "storage/browser/file_system/isolated_context.h"
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) ||
-@@ -330,7 +330,7 @@ WebRtcLoggingController::GetLogMessageCallback() {
+@@ -366,7 +366,7 @@ WebRtcLoggingController::GetLogMessageCallback() {
    return text_log_handler_->GetLogMessageCallback();
  }
  

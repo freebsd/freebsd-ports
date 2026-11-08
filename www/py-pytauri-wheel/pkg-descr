@@ -1,0 +1,3 @@
+pytauri-wheel provides a precompiled Rust extension for PyTauri,
+including the Tauri runtime and native WebView libraries bundled as a
+Python extension module.

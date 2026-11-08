@@ -8,9 +8,9 @@ r226103 | des | 2011-10-07 08:10:16 -0500 (Fri, 07 Oct 2011) | 5 lines
 Add a -x option that causes ssh-agent(1) to exit when all clients have
 disconnected.
 
---- ssh-agent.c.orig	2026-07-06 00:57:12.000000000 -0700
-+++ ssh-agent.c	2026-07-06 13:49:39.833660000 -0700
-@@ -196,11 +196,28 @@ static char *websafe_allowlist;
+--- ssh-agent.c.orig	2026-10-06 01:45:31.000000000 -0700
++++ ssh-agent.c	2026-10-10 10:04:29.143375000 -0700
+@@ -198,11 +198,28 @@ static char *websafe_allowlist;
  static int restrict_websafe = 1;
  static char *websafe_allowlist;
  
@@ -39,7 +39,7 @@ disconnected.
  	close(e->fd);
  	sshbuf_free(e->input);
  	sshbuf_free(e->output);
-@@ -213,6 +230,8 @@ close_socket(SocketEntry *e)
+@@ -215,6 +232,8 @@ close_socket(SocketEntry *e)
  	memset(e, '\0', sizeof(*e));
  	e->fd = -1;
  	e->type = AUTH_UNUSED;
@@ -48,7 +48,7 @@ disconnected.
  }
  
  static void
-@@ -1932,6 +1951,10 @@ new_socket(sock_type type, int fd)
+@@ -1947,6 +1966,10 @@ new_socket(sock_type type, int fd)
  
  	debug_f("type = %s", type == AUTH_CONNECTION ? "CONNECTION" :
  	    (type == AUTH_SOCKET ? "SOCKET" : "UNKNOWN"));
@@ -59,16 +59,16 @@ disconnected.
  	set_nonblock(fd);
  
  	if (fd > max_fd)
-@@ -2225,7 +2248,7 @@ usage(void)
+@@ -2240,7 +2263,7 @@ usage(void)
  usage(void)
  {
  	fprintf(stderr,
--	    "usage: ssh-agent [-c | -s] [-DdTU] [-a bind_address] [-E fingerprint_hash]\n"
-+	    "usage: ssh-agent [-c | -s] [-DdTUx] [-a bind_address] [-E fingerprint_hash]\n"
- 	    "                 [-O option] [-P allowed_providers] [-t life]\n"
- 	    "       ssh-agent [-TU] [-a bind_address] [-E fingerprint_hash] [-O option]\n"
- 	    "                 [-P allowed_providers] [-t life] command [arg ...]\n"
-@@ -2267,6 +2290,7 @@ main(int ac, char **av)
+-	    "usage: ssh-agent [-c | -s] [-DdU] [-T | -A directory | -a bind_address]\n"
++	    "usage: ssh-agent [-c | -s] [-DdUx] [-T | -A directory | -a bind_address]\n"
+ 	    "                 [-E fingerprint_hash] [-O option]\n"
+ 	    "                 [-P allowed_providers] [-t life]\n"
+ 	    "       ssh-agent [-U] [-T | -A directory | -a bind_address]\n"
+@@ -2285,6 +2308,7 @@ main(int ac, char **av)
  	/* drop */
  	(void)setegid(getgid());
  	(void)setgid(getgid());
@@ -76,16 +76,16 @@ disconnected.
  
  	platform_disable_tracing(0);	/* strict=no */
  
-@@ -2278,7 +2302,7 @@ main(int ac, char **av)
+@@ -2300,7 +2324,7 @@ main(int ac, char **av)
  	__progname = ssh_get_progname(av[0]);
  	seed_rng();
  
--	while ((ch = getopt(ac, av, "cDdksTuUVE:a:O:P:t:")) != -1) {
-+	while ((ch = getopt(ac, av, "cDdksTuUVE:a:O:P:t:x")) != -1) {
+-	while ((ch = getopt(ac, av, "cDdksTuUVA:E:a:O:P:t:")) != -1) {
++	while ((ch = getopt(ac, av, "cDdksTuUVA:E:a:O:P:t:x")) != -1) {
  		switch (ch) {
  		case 'E':
  			fingerprint_hash = ssh_digest_alg_by_name(optarg);
-@@ -2335,6 +2359,9 @@ main(int ac, char **av)
+@@ -2360,6 +2384,9 @@ main(int ac, char **av)
  				usage();
  			}
  			break;

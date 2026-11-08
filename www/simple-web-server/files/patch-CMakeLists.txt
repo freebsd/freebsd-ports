@@ -1,5 +1,31 @@
+-- Patch CMakeLists.txt for CMake 4.x compatibility.
+--   * Bump cmake_minimum_required to 3.10 to satisfy CMake 4.x warnings.
+--   * Switch from the removed FindBoost module to Boost CONFIG targets and drop
+--     the obsolete "system" component.
+
 --- CMakeLists.txt.orig	2019-08-05 07:18:27 UTC
 +++ CMakeLists.txt
+@@ -1,3 +1,3 @@
+-cmake_minimum_required (VERSION 3.0)
++cmake_minimum_required (VERSION 3.10)
+
+ project (Simple-Web-Server)
+@@ -35,11 +35,9 @@ else()
+ else()
+-    find_package(Boost 1.53.0 COMPONENTS system thread REQUIRED)
+-    target_link_libraries(simple-web-server INTERFACE ${Boost_LIBRARIES})
+-    target_include_directories(simple-web-server INTERFACE ${Boost_INCLUDE_DIR})
++    find_package(Boost CONFIG REQUIRED COMPONENTS thread)
++    target_link_libraries(simple-web-server INTERFACE Boost::thread)
+     if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU" AND CMAKE_CXX_COMPILER_VERSION VERSION_LESS 4.9)
+         target_compile_definitions(simple-web-server INTERFACE USE_BOOST_REGEX)
+-        find_package(Boost 1.53.0 COMPONENTS regex REQUIRED)
+-        target_link_libraries(simple-web-server INTERFACE ${Boost_LIBRARIES})
+-        target_include_directories(simple-web-server INTERFACE ${Boost_INCLUDE_DIR})
++        find_package(Boost CONFIG REQUIRED COMPONENTS regex)
++        target_link_libraries(simple-web-server INTERFACE Boost::regex)
+     endif()
+ endif()
 @@ -61,20 +61,20 @@ endif()
  
  # If Simple-Web-Server is not a sub-project:

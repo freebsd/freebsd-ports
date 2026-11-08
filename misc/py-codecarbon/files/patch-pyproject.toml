@@ -1,4 +1,8 @@
---- pyproject.toml.orig	2026-07-29 05:16:50 UTC
+-- Remove version constraint on setuptools (FreeBSD provides 63.x, not >=77) and
+-- remove license/license-files fields which use PEP 639 syntax not supported by
+-- the older setuptools version available in FreeBSD ports.
+
+--- pyproject.toml.orig	2026-10-25 07:19:44 UTC
 +++ pyproject.toml
 @@ -1,5 +1,5 @@
  [build-system]
@@ -7,12 +11,12 @@
  build-backend = "setuptools.build_meta"
  
  [project]
-@@ -7,8 +7,6 @@ requires-python = ">=3.10"
- dynamic = ["version"]
+@@ -8,8 +8,6 @@ requires-python = ">=3.10"
+ description = "Track and reduce the CO2 emissions of your computing"
  readme = "README.md"
  requires-python = ">=3.10"
 -license = "MIT"
 -license-files = ["LICENSE"]
- authors = [
-     { name = "Mila" },
-     { name = "DataForGood" },
+ keywords = [
+     "carbon",
+     "co2",

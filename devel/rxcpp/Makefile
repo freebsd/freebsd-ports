@@ -17,6 +17,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	ReactiveX
 GH_PROJECT=	RxCpp
 
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>

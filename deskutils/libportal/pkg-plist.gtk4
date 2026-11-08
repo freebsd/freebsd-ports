@@ -1,9 +1,15 @@
+@comment bin/org.gnome.PortalTest.Gtk4
 include/libportal-gtk4/portal-gtk4.h
 lib/girepository-1.0/XdpGtk4-1.0.typelib
 lib/libportal-gtk4.so
 lib/libportal-gtk4.so.1
 lib/libportal-gtk4.so.1.0.0
 libdata/pkgconfig/libportal-gtk4.pc
+@comment share/applications/org.gnome.PortalTest.Gtk4.desktop
+@comment share/dbus-1/services/org.gnome.PortalTest.Gtk4.service
 share/gir-1.0/XdpGtk4-1.0.gir
+@comment share/org.gnome.PortalTest.Gtk4/test.txt
+@comment share/portal-test-gtk4/org.gnome.PortalTest.Gtk4.data.gresource
+@comment share/portal-test-gtk4/org.gnome.PortalTest.Gtk4.src.gresource
 %%VAPI%%share/vala/vapi/libportal-gtk4.deps
 %%VAPI%%share/vala/vapi/libportal-gtk4.vapi

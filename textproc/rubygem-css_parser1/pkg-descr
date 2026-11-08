@@ -1,0 +1,2 @@
+rubygem-css_parser is a CSS Parser which loads, parses and cascades CSS rule
+sets in Ruby.

@@ -1,7 +1,7 @@
 PORTNAME=	gorss
 PORTVERSION=	0.5
 DISTVERSIONPREFIX=	v
-PORTREVISION=	6
+PORTREVISION=	11
 CATEGORIES=	net www
 
 MAINTAINER=	ports@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://github.com/Lallassu/gorss
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.25+,modules
+USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	Lallassu
 

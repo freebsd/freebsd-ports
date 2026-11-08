@@ -1,4 +1,4 @@
---- rp.orig	2023-08-29 21:48:48 UTC
+--- rp.orig	2026-08-03 12:38:47 UTC
 +++ rp
 @@ -1,4 +1,4 @@
 -#!/usr/bin/env bash
@@ -15,7 +15,7 @@
      set -e"
  }
  
-@@ -223,7 +223,7 @@ exchange() {
+@@ -223,14 +223,14 @@ exchange() {
          ip link set dev $(enquote "${dev}") up"
        ;;
  
@@ -23,7 +23,16 @@
 +    freebsd*|FreeBSD*)
        frag "
          # load the WireGuard kernel module
-         kldload -n if_wg || fatal 'Cannot load if_wg kernel module'"
+-        kldload -n if_wg || fatal 'Cannot load if_wg kernel module'"
++        kldload -n if_wg || dbg 'WARNING: Cannot load if_wg kernel module, trying to proceed anyway'"
+ 
+       frag "
+         # Create the WireGuard interface
+-        ifconfig wg create name $(enquote "${dev}") || true"
++        ifconfig wg create name $(enquote "${dev}") || fatal 'Cannot create wg interface'"
+ 
+       cleanup "
+         ifconfig $(enquote "${dev}") destroy || true"
 @@ -351,10 +351,6 @@ main() {
    project_name="rosenpass"
    verbose=0

@@ -1,5 +1,5 @@
-TIMESTAMP = 1778059474
-SHA256 (go/sysutils_docker-compose/docker-compose-v5.1.3/v5.1.3.mod) = e769198139e826d170f2acc4959681dd462cab1d58f78e609d6f6ee0fda8aa85
-SIZE (go/sysutils_docker-compose/docker-compose-v5.1.3/v5.1.3.mod) = 7511
-SHA256 (go/sysutils_docker-compose/docker-compose-v5.1.3/v5.1.3.zip) = e6261e4e783f9a30fb405d440340a60ca188e5394c5181d8647a2bab5d492b38
-SIZE (go/sysutils_docker-compose/docker-compose-v5.1.3/v5.1.3.zip) = 820448
+TIMESTAMP = 1787732516
+SHA256 (go/sysutils_docker-compose/docker-compose-v5.5.0/v5.5.0.mod) = 0462a505f73bcc52e5a28258e1b124e4cec7b9c08c3b4f4ab40ce5a37896b35c
+SIZE (go/sysutils_docker-compose/docker-compose-v5.5.0/v5.5.0.mod) = 11214
+SHA256 (go/sysutils_docker-compose/docker-compose-v5.5.0/v5.5.0.zip) = c2c2a49b7d68cdb334e5fc788451df0f4a75c493fea3554cf48df92ce339618d
+SIZE (go/sysutils_docker-compose/docker-compose-v5.5.0/v5.5.0.zip) = 977283

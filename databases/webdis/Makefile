@@ -1,6 +1,5 @@
 PORTNAME=	webdis
-DISTVERSION=	0.1.20
-PORTREVISION=	1
+DISTVERSION=	0.1.25
 CATEGORIES=	databases
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -21,6 +20,15 @@ GROUPS=		webdis
 
 PLIST_FILES=	bin/webdis \
 		"@sample etc/webdis.conf.sample"
+
+OPTIONS_DEFINE=		MSGPACK
+OPTIONS_DEFAULT=	MSGPACK
+
+MSGPACK_DESC=		MessagePack output format support
+MSGPACK_LIB_DEPENDS=	libmsgpack-c.so:devel/msgpack-c
+MSGPACK_USES=		pkgconfig
+MSGPACK_MAKE_ARGS=	MSGPACK=1
+MSGPACK_MAKE_ARGS_OFF=	MSGPACK=0
 
 post-patch:
 	${REINPLACE_CMD} -e "s@%%LOCALBASE%%@${LOCALBASE}@g" ${WRKSRC}/Makefile

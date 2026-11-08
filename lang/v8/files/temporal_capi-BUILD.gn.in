@@ -1,0 +1,38 @@
+# Replaces //third_party/rust/temporal_capi/BUILD.gn from Chromium, which
+# builds the crate with GN and needs the Chromium Rust toolchain.  The crate
+# is built with cargo in pre-build instead; use its headers and link the
+# resulting static library.
+
+config("temporal_capi_versioning_defines") {
+  defines = [ "TEMPORAL_CAPI_VERSION_0_2" ]
+}
+
+config("temporal_capi_include_dirs") {
+  include_dirs = [ "%%TEMPORAL_CAPI_DIR%%/bindings/cpp" ]
+}
+
+# The system libraries are what "rustc --print native-static-libs" reports
+# for a static library that links std.
+config("temporal_capi_lib") {
+  libs = [
+    "%%TEMPORAL_CAPI_LIB%%",
+    "devstat",
+    "execinfo",
+    "gcc_s",
+    "kvm",
+    "m",
+    "memstat",
+    "procstat",
+    "pthread",
+    "rt",
+    "util",
+  ]
+}
+
+group("temporal_capi") {
+  public_configs = [
+    ":temporal_capi_include_dirs",
+    ":temporal_capi_lib",
+    ":temporal_capi_versioning_defines",
+  ]
+}

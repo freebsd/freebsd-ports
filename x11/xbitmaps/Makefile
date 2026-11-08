@@ -9,8 +9,6 @@ WWW=		https://gitlab.freedesktop.org/xorg/data/bitmaps
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:xz xorg-cat:data
-
-NO_ARCH=	yes
+USES=		xorg-cat:data
 
 .include <bsd.port.mk>

@@ -1,10 +1,10 @@
 PORTNAME=	sabctools
-PORTVERSION=	9.4.0
+PORTVERSION=	9.6.3
 CATEGORIES=	news python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	sunpoet@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python yEnc package optimized for use within SABnzbd
 WWW=		https://github.com/sabnzbd/sabctools
 

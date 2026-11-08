@@ -1,6 +1,6 @@
---- if_wg.c.orig	2025-12-10 17:55:03 UTC
+--- if_wg.c.orig	2026-09-19 23:25:43 UTC
 +++ if_wg.c
-@@ -305,21 +305,21 @@ static volatile unsigned long peer_counter = 0;
+@@ -436,21 +436,21 @@ static volatile unsigned long peer_counter = 0;
  static int clone_count;
  static uma_zone_t wg_packet_zone;
  static volatile unsigned long peer_counter = 0;
@@ -27,8 +27,8 @@
  #define	WG_CAPS		IFCAP_LINKSTATE
  
  struct wg_timespec64 {
-@@ -418,10 +418,10 @@ static int wg_ioctl(if_t, u_long, caddr_t);
- static void wg_reassign(if_t, struct vnet *, char *unused);
+@@ -566,10 +566,10 @@ static int wg_ioctl(if_t, u_long, caddr_t);
+ #endif
  static void wg_init(void *);
  static int wg_ioctl(if_t, u_long, caddr_t);
 -static void vnet_wg_init(const void *);
@@ -42,7 +42,7 @@
  
  /* TODO Peer */
  static struct wg_peer *
-@@ -448,7 +448,7 @@ wg_peer_create(struct wg_softc *sc, const uint8_t pub_
+@@ -596,7 +596,7 @@ wg_peer_create(struct wg_softc *sc, const uint8_t pub_
  
  	cookie_maker_init(&peer->p_cookie, pub_key);
  
@@ -51,7 +51,7 @@
  
  	wg_queue_init(&peer->p_stage_queue, "stageq");
  	wg_queue_init(&peer->p_encrypt_serial, "txq");
-@@ -468,9 +468,9 @@ wg_peer_create(struct wg_softc *sc, const uint8_t pub_
+@@ -619,9 +619,9 @@ wg_peer_create(struct wg_softc *sc, const uint8_t pub_
  	peer->p_handshake_retries = 0;
  
  	GROUPTASK_INIT(&peer->p_send, 0, (gtask_fn_t *)wg_deliver_out, peer);
@@ -63,7 +63,7 @@
  
  	LIST_INIT(&peer->p_aips);
  	peer->p_aips_num = 0;
-@@ -3720,26 +3720,26 @@ static void
+@@ -4460,26 +4460,26 @@ static void
  }
  
  static void
@@ -99,7 +99,7 @@
  
  static int
  wg_prison_remove(void *obj, void *data __unused)
-@@ -3786,14 +3786,14 @@ static int
+@@ -4527,14 +4527,14 @@ static int
  #endif
  
  static int
@@ -116,7 +116,7 @@
  		 NULL, NULL, NULL, NULL, 0, 0);
  
  	ret = crypto_init();
-@@ -3812,15 +3812,15 @@ static void
+@@ -4553,15 +4553,15 @@ static void
  }
  
  static void
@@ -135,7 +135,7 @@
  		}
  	}
  	VNET_LIST_RUNLOCK();
-@@ -3835,13 +3835,13 @@ static int
+@@ -4576,13 +4576,13 @@ static int
  }
  
  static int
@@ -152,7 +152,7 @@
  			break;
  		default:
  			return (EOPNOTSUPP);
-@@ -3849,12 +3849,12 @@ wg_module_event_handler(module_t mod, int what, void *
+@@ -4590,12 +4590,12 @@ wg_module_event_handler(module_t mod, int what, void *
  	return (0);
  }
  

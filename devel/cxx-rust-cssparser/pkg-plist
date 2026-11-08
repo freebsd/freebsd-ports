@@ -1,0 +1,13 @@
+bin/cxx-rust-cssparser-parse
+include/cxx-rust-cssparser/Color.h
+include/cxx-rust-cssparser/CssParser.h
+include/cxx-rust-cssparser/Selector.h
+include/cxx-rust-cssparser/Value.h
+include/cxx-rust-cssparser/cssparser_export.h
+lib/cmake/cxx-rust-cssparser/cxx-rust-cssparserConfig.cmake
+lib/cmake/cxx-rust-cssparser/cxx-rust-cssparserConfigVersion.cmake
+lib/cmake/cxx-rust-cssparser/cxx-rust-cssparserTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/cxx-rust-cssparser/cxx-rust-cssparserTargets.cmake
+lib/libcxx-rust-cssparser.so
+lib/libcxx-rust-cssparser.so.1
+lib/libcxx-rust-cssparser.so.%%SHLIB_VER%%

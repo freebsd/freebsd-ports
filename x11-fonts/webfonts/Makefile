@@ -1,6 +1,6 @@
 PORTNAME=	webfonts
 PORTVERSION=	0.30
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF/corefonts/the%20fonts/final:group1 \
 		ftp://ftp.botik.ru/rented/znamensk/distributions/ftp.vsu.ru/pub/tex/font-packs/mscore/:group1 \
@@ -10,9 +10,12 @@ DISTFILES=	andale32.exe:group1 arialb32.exe:group1 comic32.exe:group1 \
 		courie32.exe:group1 georgi32.exe:group1 impact32.exe:group1 \
 		verdan32.exe:group1 webdin32.exe:group1 EUupdate.EXE:group3
 DIST_SUBDIR=	${PORTNAME}
+# Do not extract CLEARTYPE distfile
+EXTRACT_ONLY=	${_DISTFILES:M*32*} ${_DISTFILES:M*CAB*} ${_DISTFILES:M*EXE*}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	TrueType core fonts for the Web
+WWW=		https://corefonts.sourceforge.net/
 
 # Restrictive license - cannot sell for profit or distribute in modified form
 LICENSE=	EULA
@@ -20,52 +23,58 @@ LICENSE_NAME=	End User License Agreement
 LICENSE_FILE=	${WRKSRC}/licen.txt
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
-EXTRACT_DEPENDS=cabextract:archivers/cabextract
-
 USES=		fonts
+
+EXTRACT_AFTER_ARGS=	--include '*.[tT][tT][fF]' \
+			--no-same-owner --no-same-permissions
+
+NO_ARCH=	yes
 NO_BUILD=	yes
-
-EXTRACT_CMD=		${LOCALBASE}/bin/cabextract
-EXTRACT_BEFORE_ARGS=	-qLF '[a-uw-z]*.ttf' -d ${WRKSRC}
-EXTRACT_AFTER_ARGS=
-
-OPTIONS_DEFINE=	EXTRAFONTS CLEARTYPE NEWVERDANA DOCS COMIC
-OPTIONS_DEFAULT=	COMIC
-OPTIONS_SUB=	yes
-
-EXTRAFONTS_DESC=	Fonts licensed under MS Windows license
-EXTRAFONTS_DISTFILES=	IELPKTH.CAB:group2
-
-CLEARTYPE_DESC=	Install ClearType fonts
-CLEARTYPE_DISTFILES=	PowerPointViewer.exe:group3
-
-NEWVERDANA_DESC=	Install y2006 version of Verdana (broken bold N, W)
-COMIC_DESC=		Install Comic Sans
 
 SUB_FILES=	pkg-message
 
-NO_ARCH=	yes
+NO_WRKSUBDIR=	yes
+
+OPTIONS_DEFINE=	EXTRAFONTS CLEARTYPE NEWVERDANA DOCS COMIC
+OPTIONS_DEFAULT=COMIC
+OPTIONS_SUB=	yes
+
+CLEARTYPE_DESC=		Install ClearType fonts
+COMIC_DESC=		Install Comic Sans
+EXTRAFONTS_DESC=	Fonts licensed under MS Windows license
+NEWVERDANA_DESC=	Install y2006 version of Verdana (broken bold N, W)
+
+CLEARTYPE_DISTFILES=	PowerPointViewer.exe:group3
+EXTRAFONTS_DISTFILES=	IELPKTH.CAB:group2
 
 .include <bsd.port.options.mk>
 
+# ppviewer.cab is unpacked to a file rather than piped into a second bsdtar:
+# libarchive 3.8.9 cannot skip entries of an LZX cabinet read from a stream
+# (https://github.com/libarchive/libarchive/issues/3542), while the seekable
+# path works on every version.
+pre-extract-CLEARTYPE-on:
+	${MKDIR} ${EXTRACT_WRKDIR}
+	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${_DISTFILES:MPowerPointViewer*} -C ${EXTRACT_WRKDIR} --no-same-owner --no-same-permissions --include eula.txt --include ppviewer.cab
+	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${EXTRACT_WRKDIR}/ppviewer.cab -C ${EXTRACT_WRKDIR} ${EXTRACT_AFTER_ARGS}
+	${RM} ${EXTRACT_WRKDIR}/ppviewer.cab
+
 post-extract:
-	${EXTRACT_CMD} -qLF '*.txt' -d ${WRKSRC} ${_DISTDIR}/webdin32.exe
-
-post-extract-CLEARTYPE-on:
-	${EXTRACT_CMD} -qLF '*.cab' -d ${WRKSRC} \
-		${_DISTDIR}/PowerPointViewer.exe
-	${EXTRACT_CMD} -qLF '*.txt' -d ${WRKSRC} \
-		${_DISTDIR}/PowerPointViewer.exe
-	${EXTRACT_CMD} -qLF '*.ttf' -d ${WRKSRC} ${WRKSRC}/ppviewer.cab
-
-post-extract-NEWVERDANA-off:
-	${EXTRACT_CMD} -qLF '*.ttf' -d ${WRKSRC} ${_DISTDIR}/verdan32.exe
-
-post-extract-NEWVERDANA-on:
-	${EXTRACT_CMD} -qLF 'v*.ttf' -d ${WRKSRC} ${_DISTDIR}/EUupdate.EXE
+	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${_DISTFILES:Mwebdin32*} --include *.TXT -C ${EXTRACT_WRKDIR} --no-same-owner --no-same-permissions
+.if ${PORT_OPTIONS:MNEWVERDANA}
+	${RM} ${WRKSRC}/Verdan*.TTF
+.else
+	${RM} ${WRKSRC}/Verdan*.ttf
+.endif
+	@cd ${WRKSRC} && for f in *; do \
+	    ${MV} "$$f" `${ECHO_CMD} "$$f" | ${TR} '[:upper:]' '[:lower:]'`; \
+	done
 
 post-extract-COMIC-off:
 	${RM} ${WRKSRC}/comic.ttf ${WRKSRC}/comicbd.ttf
+
+post-extract-EXTRAFONTS-off:
+	${RM} ${WRKSRC}/tahoma.ttf ${WRKSRC}/tahomabd.ttf
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${FONTSDIR}

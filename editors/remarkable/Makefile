@@ -1,5 +1,6 @@
 PORTNAME=	${GH_PROJECT:tl}
 PORTVERSION=	1.95
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors python
 
@@ -11,7 +12,7 @@ WWW=		https://github.com/jamiemcg/Remarkable \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=0:www/py-beautifulsoup@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup4>=0:www/py-beautifulsoup4@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}markdown>=0:textproc/py-markdown@${PY_FLAVOR} \
 		webkit2-gtk_40>=0:www/webkit2-gtk@40
 # Note to `www/webkit2-gtk' maintainers: feel free to change flavor as needed

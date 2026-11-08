@@ -1,22 +1,19 @@
 PORTNAME=	chgrep
-PORTVERSION=	1.2.4
-PORTREVISION=	1
+DISTVERSION=	1.2.5
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.bmk-it.com/projects/chgrep/files/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	se@FreeBSD.org
 COMMENT=	Fast string substitution across multiple files
-WWW=		http://www.bmk-it.com/projects/chgrep/
+WWW=		https://github.com/jose1711/chgrep
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		gmake autoreconf
+USE_GITHUB=	yes
+GH_ACCOUNT=	jose1711
 GNU_CONFIGURE=	yes
-USES=		gmake tar:tgz
 
 PLIST_FILES=	bin/chgrep share/man/man1/${PORTNAME}.1.gz
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/chgrep \
-		${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/man/chgrep.1 \
-		${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

@@ -1,0 +1,19 @@
+pgterm is "htop for all your Postgres databases": an interactive terminal
+UI that monitors every PostgreSQL database you care about in one place.
+Each tab is one database. pgterm checks them all in the background and
+flags the tab that needs attention, without stealing focus from the one
+you are looking at.
+
+Features:
+- Health overview per database: connections, cache, locks, queries,
+  indexes, vacuum and replication, with an overall score
+- Inspect, Queries, Indexes, Tables and Why views for each database
+- Command bar with a closed set of verbs, including natural-language
+  questions handed to pgbot's optional AI layer
+- Configuration stores environment variable names only; connection
+  strings never touch disk, logs or the screen
+- Strictly read-only: every diagnostic runs through pgbot, and there is
+  no SQL console or shell
+
+pgterm drives pgbot (databases/pgbot) as a child process and renders its
+JSON output.

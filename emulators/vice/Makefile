@@ -7,7 +7,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Emulator for Commodore C64, C128, VIC20, PET, and CBM-II
 WWW=		https://vice-emu.sourceforge.io/
 
-LICENSE=	GPLv2 ROM
+LICENSE=	GPLv2+ ROM
 LICENSE_COMB=	multi
 LICENSE_NAME_ROM=	Commodore ROMs
 LICENSE_TEXT_ROM=	ROMs are copyrighted by Commodore Business Machines

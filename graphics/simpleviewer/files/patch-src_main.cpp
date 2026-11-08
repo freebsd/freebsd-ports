@@ -70,7 +70,7 @@
 +        fclose(fp);
 +    }
 +
-     void setup(GLFWwindow* window)
+     void setContext(GLFWwindow* window)
      {
          glfwMakeContextCurrent(window);
 @@ -173,6 +232,18 @@ namespace

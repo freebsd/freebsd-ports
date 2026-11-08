@@ -11,6 +11,8 @@ WWW=		https://web.archive.org/web/20170521213338/http://home.gna.org/blackshades
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Fails to build, error: reference to 'max' is ambiguous
+
 LIB_DEPENDS=	libvorbis.so:audio/libvorbis
 
 USES=		compiler:c++11-lang gl gmake openal:al,alut sdl tar:bzip2

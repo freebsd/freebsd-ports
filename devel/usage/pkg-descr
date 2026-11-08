@@ -1,0 +1,5 @@
+Usage is a specification for defining the arguments, flags, and
+subcommands of command-line tools in KDL. The usage CLI reads such specs
+to generate shell completions for bash, zsh, fish, and PowerShell, as well
+as manpages, Markdown documentation, and SDKs, and can run scripts that
+embed their own usage spec. It is used by tools such as mise.

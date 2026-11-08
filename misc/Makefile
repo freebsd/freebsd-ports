@@ -8,6 +8,7 @@
     SUBDIR += actiona
     SUBDIR += adiak
     SUBDIR += adios2
+    SUBDIR += agtop
     SUBDIR += aichat
     SUBDIR += alpaca
     SUBDIR += amanda-client
@@ -178,7 +179,6 @@
     SUBDIR += ggml
     SUBDIR += gimp-help-en
     SUBDIR += github-copilot-cli
-    SUBDIR += github-copilot-cli-legacy
     SUBDIR += github-copilot-language-server
     SUBDIR += gitlogue
     SUBDIR += gkrellm-gamma
@@ -212,6 +212,7 @@
     SUBDIR += hello
     SUBDIR += help2man
     SUBDIR += hermes-agent
+    SUBDIR += hermes-tui
     SUBDIR += heyu2
     SUBDIR += hicolor-icon-theme
     SUBDIR += histring
@@ -237,9 +238,6 @@
     SUBDIR += json-tui
     SUBDIR += kbdscan
     SUBDIR += kcd
-    SUBDIR += kde-thumbnailer-chm
-    SUBDIR += kde-thumbnailer-epub
-    SUBDIR += kde-thumbnailer-fb2
     SUBDIR += kdeedu
     SUBDIR += kdeedu-data
     SUBDIR += kdeutils
@@ -247,6 +245,7 @@
     SUBDIR += kf5-purpose
     SUBDIR += kf6-purpose
     SUBDIR += kgeography
+    SUBDIR += kimi-code
     SUBDIR += klettres
     SUBDIR += koboldcpp
     SUBDIR += kookbook
@@ -302,6 +301,7 @@
     SUBDIR += mate-user-guide
     SUBDIR += mbuffer
     SUBDIR += mc
+    SUBDIR += mc6
     SUBDIR += mcp-inspector
     SUBDIR += mcp-probe
     SUBDIR += mdp
@@ -337,6 +337,7 @@
     SUBDIR += onnxruntime
     SUBDIR += ooo
     SUBDIR += openclaw
+    SUBDIR += opencode
     SUBDIR += opencyc
     SUBDIR += openhab
     SUBDIR += openhab-addons
@@ -452,6 +453,7 @@
     SUBDIR += py-SQSnobFit
     SUBDIR += py-SimpleSoapy
     SUBDIR += py-SoapySDR
+    SUBDIR += py-a2a-sdk
     SUBDIR += py-accelerate
     SUBDIR += py-ag2
     SUBDIR += py-aistudio-sdk
@@ -467,6 +469,7 @@
     SUBDIR += py-bitsandbytes
     SUBDIR += py-boost-histogram
     SUBDIR += py-censys
+    SUBDIR += py-claude-agent-sdk
     SUBDIR += py-cmap
     SUBDIR += py-codecarbon
     SUBDIR += py-cohere
@@ -482,6 +485,7 @@
     SUBDIR += py-comfyui-workflow-templates-json
     SUBDIR += py-comfyui-workflow-templates-media-api
     SUBDIR += py-comfyui-workflow-templates-media-assets-01
+    SUBDIR += py-comfyui-workflow-templates-media-assets-02
     SUBDIR += py-comfyui-workflow-templates-media-image
     SUBDIR += py-comfyui-workflow-templates-media-other
     SUBDIR += py-comfyui-workflow-templates-media-video
@@ -495,6 +499,7 @@
     SUBDIR += py-csvw
     SUBDIR += py-cvat-sdk
     SUBDIR += py-datasets
+    SUBDIR += py-deepspeed
     SUBDIR += py-detecta
     SUBDIR += py-diffusers
     SUBDIR += py-eemeter
@@ -534,10 +539,12 @@
     SUBDIR += py-ibm-cos-sdk-s3transfer
     SUBDIR += py-ibm-watsonx-ai
     SUBDIR += py-icoextract
+    SUBDIR += py-immich-model
+    SUBDIR += py-insightface
     SUBDIR += py-instructor
     SUBDIR += py-ipyfastscape
     SUBDIR += py-jiwer
-    SUBDIR += py-kartograph
+    SUBDIR += py-kenlm
     SUBDIR += py-kokoro
     SUBDIR += py-langchain
     SUBDIR += py-langchain-anthropic
@@ -559,6 +566,8 @@
     SUBDIR += py-langchain-text-splitters
     SUBDIR += py-langgraph
     SUBDIR += py-langgraph-checkpoint
+    SUBDIR += py-langgraph-checkpoint-conformance
+    SUBDIR += py-langgraph-checkpoint-sqlite
     SUBDIR += py-langgraph-prebuilt
     SUBDIR += py-langgraph-sdk
     SUBDIR += py-langsmith
@@ -580,6 +589,7 @@
     SUBDIR += py-lm-format-enforcer
     SUBDIR += py-log_symbols
     SUBDIR += py-mcp
+    SUBDIR += py-mcp-types
     SUBDIR += py-mda-xdrlib
     SUBDIR += py-mem0ai
     SUBDIR += py-mffpy
@@ -604,9 +614,11 @@
     SUBDIR += py-numcodecs
     SUBDIR += py-ollama
     SUBDIR += py-onnx
+    SUBDIR += py-onnx-ir
     SUBDIR += py-onnx-tf
     SUBDIR += py-onnxconverter-common
     SUBDIR += py-onnxruntime
+    SUBDIR += py-onnxscript
     SUBDIR += py-openai
     SUBDIR += py-openai-harmony
     SUBDIR += py-openai-whisper
@@ -639,6 +651,7 @@
     SUBDIR += py-pyEDFlib
     SUBDIR += py-pyct
     SUBDIR += py-pyfiglet
+    SUBDIR += py-pygtrie
     SUBDIR += py-pykml
     SUBDIR += py-pymatreader
     SUBDIR += py-pyowm
@@ -647,7 +660,6 @@
     SUBDIR += py-pyqir
     SUBDIR += py-python-crc
     SUBDIR += py-python-geohash
-    SUBDIR += py-python-pygtrie
     SUBDIR += py-python-utils
     SUBDIR += py-pytorch
     SUBDIR += py-pytorch-lightning
@@ -693,7 +705,6 @@
     SUBDIR += py-timm
     SUBDIR += py-timm-vis
     SUBDIR += py-toil
-    SUBDIR += py-torch-geometric
     SUBDIR += py-torchao
     SUBDIR += py-torchdata
     SUBDIR += py-torchmetrics
@@ -819,6 +830,7 @@
     SUBDIR += toilet
     SUBDIR += translate
     SUBDIR += trurl
+    SUBDIR += ttfx
     SUBDIR += ttyrec
     SUBDIR += tudu
     SUBDIR += tvbrowser

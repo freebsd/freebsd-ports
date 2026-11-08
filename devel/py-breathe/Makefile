@@ -1,6 +1,6 @@
 PORTNAME=	breathe
 PORTVERSION=	4.36.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -31,6 +31,8 @@ BINARY_ALIAS=	sphinx-build=sphinx-build-${PYTHON_VER}
 
 OPTIONS_DEFINE=		DOCS EXAMPLES PDFDOCS
 OPTIONS_SUB=		yes
+DOCS_CONFIGURE_ENV=	SPHINXOPTS="-v -E --keep-going"
+DOCS_MAKE_ENV=		SPHINXOPTS="-v -E --keep-going"
 PDFDOCS_DESC=		Build PDF documentation (implies DOCS)
 PDFDOCS_IMPLIES=	DOCS
 PDFDOCS_BUILD_DEPENDS=	pdflatex:print/tex-formats dvips:print/tex-dvipsk

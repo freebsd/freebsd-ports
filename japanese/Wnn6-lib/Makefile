@@ -1,6 +1,6 @@
 PORTNAME=	Wnn6-lib
 PORTVERSION=	2000.9.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.omronsoft.co.jp/pub/Wnn6/sdk_source/
 DISTNAME=	Wnn6-SDK
@@ -8,6 +8,9 @@ DISTNAME=	Wnn6-SDK
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Wnn6 client library
 WWW=		https://www.omronsoft.co.jp/
+
+DEPRECATED=	Abandoned, MASTER_SITES is not available
+EXPIRATION_DATE=2026-11-30
 
 OPTIONS_DEFINE=	DOCS
 

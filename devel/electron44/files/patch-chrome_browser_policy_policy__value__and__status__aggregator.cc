@@ -1,0 +1,11 @@
+--- chrome/browser/policy/policy_value_and_status_aggregator.cc.orig	2026-06-23 23:37:18 UTC
++++ chrome/browser/policy/policy_value_and_status_aggregator.cc
+@@ -54,7 +54,7 @@
+ #include "chrome/browser/policy/value_provider/extension_policies_value_provider.h"
+ #endif  // BUILDFLAG(ENABLE_EXTENSIONS_CORE)
+ 
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ #include "components/policy/core/common/cloud/profile_cloud_policy_manager.h"
+ #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
+ 

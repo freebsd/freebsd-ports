@@ -1,0 +1,10 @@
+productName = "mock-app"
+version = "0.1.0"
+identifier = "com.mock.app"
+
+[build]
+frontendDist = "./frontend"
+
+[bundle]
+active = true
+

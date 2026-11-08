@@ -1,0 +1,23 @@
+[
+{ type: install
+  message: <<EOM
+Requirements:
+
+  The tools read an Immich server over its API and the database of that
+  same server directly.
+
+Configuration:
+
+1. Copy %%PREFIX%%/etc/immich-power-tools.env.sample to
+   %%PREFIX%%/etc/immich-power-tools.env and fill it in. The DB_*
+   settings are the ones www/immich keeps in %%PREFIX%%/etc/immich.env.
+   The file is read as shell, so quote values holding spaces or any of
+   $ ` " \ #.
+
+2. sysrc immich_power_tools_enable=YES && service immich_power_tools start
+
+Upstream listens on port 3000, which www/immich-public-proxy already
+uses; this port starts on 127.0.0.1:3002 instead.
+EOM
+}
+]

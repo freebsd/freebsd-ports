@@ -397,6 +397,7 @@
 %%WWWDIR%%/lng/nl.lng.php
 %%WWWDIR%%/lng/pt.lng.php
 %%WWWDIR%%/lng/se.lng.php
+%%WWWDIR%%/lng/sk.lng.php
 %%WWWDIR%%/lng/zh_CN.lng.php
 %%WWWDIR%%/logfiles_viewer.php
 %%WWWDIR%%/logs/index.html
@@ -442,7 +443,7 @@
 %%WWWDIR%%/templates/Froxlor/assets/scss/components/index.html
 %%WWWDIR%%/templates/Froxlor/assets/scss/index.html
 %%WWWDIR%%/templates/Froxlor/base.html.twig
-%%WWWDIR%%/templates/Froxlor/build/assets/app-BGO7Hs_d.js
+%%WWWDIR%%/templates/Froxlor/build/assets/app-BZTALoQf.js
 %%WWWDIR%%/templates/Froxlor/build/assets/app-DgN1KmJf.css
 %%WWWDIR%%/templates/Froxlor/build/assets/fa-brands-400-D1LuMI3I.ttf
 %%WWWDIR%%/templates/Froxlor/build/assets/fa-brands-400-D_cYUPeE.woff2
@@ -457,6 +458,7 @@
 %%WWWDIR%%/templates/Froxlor/build/manifest.json
 %%WWWDIR%%/templates/Froxlor/config.json
 %%WWWDIR%%/templates/Froxlor/footer.html.twig
+%%WWWDIR%%/templates/Froxlor/form/askuserpasswd.html.twig
 %%WWWDIR%%/templates/Froxlor/form/form.html.twig
 %%WWWDIR%%/templates/Froxlor/form/formfields.html.twig
 %%WWWDIR%%/templates/Froxlor/form/index.html
@@ -535,6 +537,9 @@
 %%WWWDIR%%/tests/Backup/DataDumpTest.php
 %%WWWDIR%%/tests/Bulk/DomainBulkTest.php
 %%WWWDIR%%/tests/Certificates/CertificatesTest.php
+%%WWWDIR%%/tests/Cron/Http/ApacheAdminDocumentrootTest.php
+%%WWWDIR%%/tests/Cron/Http/ApacheGetWebrootTest.php
+%%WWWDIR%%/tests/Cron/Http/NginxGetWebrootTest.php
 %%WWWDIR%%/tests/Cron/TaskIdTest.php
 %%WWWDIR%%/tests/Cronjobs/CronjobsTest.php
 %%WWWDIR%%/tests/Customers/CustomersTest.php
@@ -544,19 +549,23 @@
 %%WWWDIR%%/tests/Emails/EmailsTest.php
 %%WWWDIR%%/tests/Extras/DirOptionsTest.php
 %%WWWDIR%%/tests/Extras/DirProtectionsTest.php
+%%WWWDIR%%/tests/Froxlor/FileDirTest.php
 %%WWWDIR%%/tests/Froxlor/FroxlorTest.php
 %%WWWDIR%%/tests/Froxlor/IPToolsTest.php
 %%WWWDIR%%/tests/Froxlor/SettingsTest.php
 %%WWWDIR%%/tests/Froxlor/StoreTest.php
 %%WWWDIR%%/tests/Froxlor/ValidateTest.php
 %%WWWDIR%%/tests/Ftps/FtpsTest.php
+%%WWWDIR%%/tests/Ftps/SshKeysTest.php
 %%WWWDIR%%/tests/Global/ApiParameterTest.php
 %%WWWDIR%%/tests/Global/FroxlorRpcTest.php
+%%WWWDIR%%/tests/Global/TwoFactorRememberTokenTest.php
 %%WWWDIR%%/tests/IpsAndPorts/IpsAndPortsTest.php
 %%WWWDIR%%/tests/Mysqls/MysqlServerTest.php
 %%WWWDIR%%/tests/Mysqls/MysqlsTest.php
 %%WWWDIR%%/tests/PhpAndFpm/FpmDaemonsTest.php
 %%WWWDIR%%/tests/PhpAndFpm/PhpSettingsTest.php
+%%WWWDIR%%/tests/PhpHelper/CnameResolutionTest.php
 %%WWWDIR%%/tests/SubDomains/SubDomainsTest.php
 %%WWWDIR%%/tests/Traffic/TrafficTest.php
 %%WWWDIR%%/tests/bootstrap.php
@@ -791,6 +800,8 @@
 %%WWWDIR%%/vendor/league/commonmark/src/Extension/Mention/Mention.php
 %%WWWDIR%%/vendor/league/commonmark/src/Extension/Mention/MentionExtension.php
 %%WWWDIR%%/vendor/league/commonmark/src/Extension/Mention/MentionParser.php
+%%WWWDIR%%/vendor/league/commonmark/src/Extension/NormalizeHeadings/NormalizeHeadingsExtension.php
+%%WWWDIR%%/vendor/league/commonmark/src/Extension/NormalizeHeadings/NormalizeHeadingsProcessor.php
 %%WWWDIR%%/vendor/league/commonmark/src/Extension/SmartPunct/DashParser.php
 %%WWWDIR%%/vendor/league/commonmark/src/Extension/SmartPunct/EllipsesParser.php
 %%WWWDIR%%/vendor/league/commonmark/src/Extension/SmartPunct/Quote.php
@@ -1897,6 +1908,7 @@
 %%WWWDIR%%/vendor/symfony/polyfill-intl-grapheme/README.md
 %%WWWDIR%%/vendor/symfony/polyfill-intl-grapheme/bootstrap.php
 %%WWWDIR%%/vendor/symfony/polyfill-intl-grapheme/bootstrap80.php
+%%WWWDIR%%/vendor/symfony/polyfill-intl-grapheme/bootstrap85.php
 %%WWWDIR%%/vendor/symfony/polyfill-intl-grapheme/composer.json
 %%WWWDIR%%/vendor/symfony/polyfill-intl-normalizer/LICENSE
 %%WWWDIR%%/vendor/symfony/polyfill-intl-normalizer/Normalizer.php
@@ -1906,6 +1918,8 @@
 %%WWWDIR%%/vendor/symfony/polyfill-intl-normalizer/Resources/unidata/canonicalDecomposition.php
 %%WWWDIR%%/vendor/symfony/polyfill-intl-normalizer/Resources/unidata/combiningClass.php
 %%WWWDIR%%/vendor/symfony/polyfill-intl-normalizer/Resources/unidata/compatibilityDecomposition.php
+%%WWWDIR%%/vendor/symfony/polyfill-intl-normalizer/Resources/unidata/rawCanonicalDecomposition.php
+%%WWWDIR%%/vendor/symfony/polyfill-intl-normalizer/Resources/unidata/rawCompatibilityDecomposition.php
 %%WWWDIR%%/vendor/symfony/polyfill-intl-normalizer/bootstrap.php
 %%WWWDIR%%/vendor/symfony/polyfill-intl-normalizer/bootstrap80.php
 %%WWWDIR%%/vendor/symfony/polyfill-intl-normalizer/composer.json
@@ -1917,6 +1931,7 @@
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/Resources/unidata/titleCaseRegexp.php
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/Resources/unidata/upperCase.php
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/bootstrap.php
+%%WWWDIR%%/vendor/symfony/polyfill-mbstring/bootstrap72.php
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/bootstrap80.php
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/composer.json
 %%WWWDIR%%/vendor/symfony/polyfill-php73/LICENSE
@@ -2176,6 +2191,8 @@
 %%WWWDIR%%/vendor/voku/anti-xss/LICENSE
 %%WWWDIR%%/vendor/voku/anti-xss/README.md
 %%WWWDIR%%/vendor/voku/anti-xss/composer.json
+%%WWWDIR%%/vendor/voku/anti-xss/infection.json5.dist
+%%WWWDIR%%/vendor/voku/anti-xss/phpunit9.xml
 %%WWWDIR%%/vendor/voku/anti-xss/src/voku/helper/AntiXSS.php
 %%WWWDIR%%/vendor/voku/anti-xss/src/voku/helper/data/entities_fallback.php
 %%WWWDIR%%/vendor/voku/portable-ascii/.deepsource.toml

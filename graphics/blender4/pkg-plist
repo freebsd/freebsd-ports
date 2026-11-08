@@ -1,7 +1,6 @@
 bin/blender-%%VERS_TAG%%
 bin/blender-bin-%%VERS_TAG%%
 %%THUMBNAILER%%bin/blender-thumbnailer-%%VERS_TAG%%
-%%DRACO%%%%PYTHON_SITELIBDIR%%/libextern_draco.so
 share/applications/blender4.desktop
 %%DATADIR%%/datafiles/assets/LICENSE
 %%DATADIR%%/datafiles/assets/blender_assets.cats.txt
@@ -847,6 +846,7 @@ share/applications/blender4.desktop
 %%DATADIR%%/scripts/addons_core/io_scene_gltf2/io/imp/gltf2_io_binary.py
 %%DATADIR%%/scripts/addons_core/io_scene_gltf2/io/imp/gltf2_io_gltf.py
 %%DATADIR%%/scripts/addons_core/io_scene_gltf2/io/imp/user_extensions.py
+%%DRACO%%%%DATADIR%%/scripts/addons_core/io_scene_gltf2/libextern_draco.so
 %%DATADIR%%/scripts/addons_core/node_wrangler/README.md
 %%DATADIR%%/scripts/addons_core/node_wrangler/__init__.py
 %%DATADIR%%/scripts/addons_core/node_wrangler/interface.py

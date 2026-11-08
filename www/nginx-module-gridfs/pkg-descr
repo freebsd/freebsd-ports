@@ -1,0 +1,8 @@
+The gridfs module serves files out of MongoDB's GridFS, where a file is a
+record and a row of chunks.  A location maps the request to a file by name
+or by object id, answers a byte range out of the chunks it needs instead of
+reading the whole file, and takes the content type, the ETag and the
+Last-Modified from the file's own record.
+
+This port only installs the module sources.  The module itself is built by
+the nginx ports when their GRIDFS option is enabled.

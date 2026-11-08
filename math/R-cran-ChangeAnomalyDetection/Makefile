@@ -6,7 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Change Anomaly Detection
-WWW=		https://cran.r-project.org/web/packages/ChangeAnomalyDetection/
+WWW=		https://cran.r-project.org/package=ChangeAnomalyDetection
 
 LICENSE=	BSDunclear
 LICENSE_NAME=	Unclear BSD License

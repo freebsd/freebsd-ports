@@ -1,4 +1,4 @@
---- content/browser/gpu/gpu_process_host.cc.orig	2026-07-01 06:24:19 UTC
+--- content/browser/gpu/gpu_process_host.cc.orig	2026-09-25 15:26:43 UTC
 +++ content/browser/gpu/gpu_process_host.cc
 @@ -297,6 +297,7 @@ static const char* const kSwitchNames[] = {
      switches::kDisableSkiaGraphite,

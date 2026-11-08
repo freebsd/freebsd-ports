@@ -9,18 +9,21 @@ WWW=		https://arc.sourceforge.net/
 
 LICENSE=	GPLv2
 
+USES=		cpe
+CPE_VENDOR=	arc_project
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	ani6al
 GH_PROJECT=	arc
 
-CONFLICTS_INSTALL= arcanist-php[0-9][0-9]
+CONFLICTS_INSTALL=	arcanist-php[0-9][0-9] phorgeit-arcanist-php[0-9][0-9]
+
+PLIST_FILES=	bin/arc \
+		bin/marc \
+		share/man/man1/arc.1.gz
+PORTDOCS=	Arc521.doc
 
 OPTIONS_DEFINE=	DOCS
-
-USES=		cpe
-CPE_VENDOR=	arc_project
-PLIST_FILES=	bin/arc bin/marc share/man/man1/arc.1.gz
-PORTDOCS=	Arc521.doc
 
 post-patch:
 .for f in arc.1 marc.1

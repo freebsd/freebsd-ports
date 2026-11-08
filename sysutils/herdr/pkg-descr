@@ -1,0 +1,6 @@
+Herdr is a terminal workspace manager for AI coding agents. It runs
+agents such as Claude Code, Codex, and others in panes of a persistent
+server session that clients attach to and detach from, detects which agent
+is running in each pane and whether it is working, waiting, or done, and
+notifies you when an agent needs attention. Terminal emulation is provided
+by the vendored libghostty-vt library.

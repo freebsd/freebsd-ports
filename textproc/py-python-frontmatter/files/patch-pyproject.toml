@@ -1,0 +1,14 @@
+-- Remove the upper bound on the uv_build build backend version so the port
+-- builds with the uv_build version available in the FreeBSD ports tree.
+
+--- pyproject.toml.orig	2026-09-09 08:58:07 UTC
++++ pyproject.toml
+@@ -42,7 +42,7 @@ dev = [
+ 
+ 
+ [build-system]
+-requires = ["uv_build>=0.11.15,<0.12"]
++requires = ["uv_build>=0.11.15"]
+ build-backend = "uv_build"
+ 
+ [tool.uv.build-backend]

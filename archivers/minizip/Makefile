@@ -1,5 +1,6 @@
 PORTNAME=	minizip
-DISTVERSION=	1.3.1
+DISTVERSION=	1.3.2
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	https://github.com/madler/zlib/releases/download/v${DISTVERSION}/
 DISTNAME=	zlib-${DISTVERSION}

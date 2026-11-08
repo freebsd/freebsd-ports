@@ -11,7 +11,7 @@ MAINTAINER=	antonfb@hesiod.org
 COMMENT=	Perforce API (static libraries and header files)
 WWW=		https://www.perforce.com/products/helix-core
 
-LICENSE=	BSD2CLAUSE
+LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${JAM}:devel/jam

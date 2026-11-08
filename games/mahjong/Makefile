@@ -1,5 +1,6 @@
 PORTNAME=	mahjong
 PORTVERSION=	1.17.2
+PORTREVISION=	1
 CATEGORIES=	games net
 MASTER_SITES=	http://mahjong.julianbradfield.org/Source/%SUBDIR%/
 DISTNAME=	mj-${PORTVERSION}-src
@@ -9,6 +10,8 @@ COMMENT=	Networked Mah Jong program, together with a computer player
 WWW=		https://mahjong.julianbradfield.org/
 
 LICENSE=	GPLv2+
+
+RUN_DEPENDS=	gdk-pixbuf-extra>0:graphics/gdk-pixbuf-extra
 
 USES=		compiler:c++11-lang gmake gnome perl5 pkgconfig
 USE_GNOME=	gtk20

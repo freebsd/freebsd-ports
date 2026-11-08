@@ -1,6 +1,6 @@
 PORTNAME=	vikunja
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.0
+DISTVERSION=	2.8.0
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/decke:ui
 DISTFILES=	vikunja-frontend-${DISTVERSION}.tar.gz:ui
@@ -12,7 +12,7 @@ WWW=		https://vikunja.io
 LICENSE=	AGPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.26,modules
+USES=		cpe go:1.27,modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	go-vikunja
 

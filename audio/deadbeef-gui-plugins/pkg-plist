@@ -1,0 +1,18 @@
+@comment include/deadbeef/gtkui_api.h
+lib/deadbeef/converter.so
+lib/deadbeef/converter_gtk%%GTK_VER%%.so
+lib/deadbeef/convpresets/AAC_(Nero_FAAC).txt
+lib/deadbeef/convpresets/ALAC.txt
+lib/deadbeef/convpresets/FLAC_(compression_level_5).txt
+lib/deadbeef/convpresets/MP3_CBR_320_Kbps_(Lame).txt
+lib/deadbeef/convpresets/MP3_VBR_192Kbps_(Lame).txt
+lib/deadbeef/convpresets/MS_RIFF_WAV.txt
+lib/deadbeef/convpresets/MusePack.txt
+lib/deadbeef/convpresets/Ogg_FLAC.txt
+lib/deadbeef/convpresets/Ogg_Vorbis_(-q_5).txt
+lib/deadbeef/convpresets/Opus.txt
+lib/deadbeef/convpresets/TTA.txt
+lib/deadbeef/convpresets/WavPack.txt
+lib/deadbeef/ddb_gui_GTK%%GTK_VER%%.so
+lib/deadbeef/pltbrowser_gtk%%GTK_VER%%.so
+lib/deadbeef/shellexecui_gtk%%GTK_VER%%.so

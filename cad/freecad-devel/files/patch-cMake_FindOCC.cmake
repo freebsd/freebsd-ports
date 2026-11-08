@@ -1,6 +1,6 @@
---- cMake/FindOCC.cmake.orig	2025-07-21 02:26:03 UTC
+--- cMake/FindOCC.cmake.orig	2026-08-18 05:35:46 UTC
 +++ cMake/FindOCC.cmake
-@@ -109,6 +109,7 @@ if (OCC_FOUND)
+@@ -118,6 +118,7 @@ if (OCC_FOUND)
              TKPrim
              TKHLR
              TKFeat

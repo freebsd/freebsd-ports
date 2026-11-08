@@ -1,4 +1,8 @@
---- pyproject.toml.orig	2026-04-01 18:51:28 UTC
+-- Relax the setuptools/wheel version requirements to what is available in
+-- the ports tree and use the legacy license table form that is accepted by
+-- the setuptools version in the ports tree.
+
+--- pyproject.toml.orig	2026-06-19 04:43:36 UTC
 +++ pyproject.toml
 @@ -1,8 +1,8 @@ requires = [
  [build-system]
@@ -11,3 +15,12 @@
  ]
  build-backend = "setuptools.build_meta"
  
+@@ -14,7 +14,7 @@ authors = [
+     {name = "Thomas Nicholas", email = "thomas.nicholas@york.ac.uk"},
+     {name = "John Omotani"},
+ ]
+-license = "Apache-2.0"
++license = {text = "Apache-2.0"}
+ dynamic = ["version"]
+ keywords = ["gyrokinetics", "analysis", "plasma", "research"]
+ classifiers = [

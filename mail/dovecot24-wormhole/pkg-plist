@@ -1,0 +1,16 @@
+lib/dovecot/doveadm/lib20_doveadm_repl_plugin.a
+lib/dovecot/doveadm/lib20_doveadm_repl_plugin.so
+lib/dovecot/doveadm/lib20_doveadm_replicator_plugin.a
+lib/dovecot/doveadm/lib20_doveadm_replicator_plugin.so
+lib/dovecot/lib20_replication_plugin.a
+lib/dovecot/lib20_replication_plugin.so
+lib/dovecot/settings/libaggregator_settings.a
+lib/dovecot/settings/libaggregator_settings.so
+lib/dovecot/settings/libdoveadm_repl_settings.a
+lib/dovecot/settings/libdoveadm_repl_settings.so
+lib/dovecot/settings/libreplication_settings.a
+lib/dovecot/settings/libreplication_settings.so
+lib/dovecot/settings/libreplicator_settings.a
+lib/dovecot/settings/libreplicator_settings.so
+libexec/dovecot/aggregator
+libexec/dovecot/replicator

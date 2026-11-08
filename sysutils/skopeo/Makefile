@@ -1,12 +1,12 @@
 PORTNAME=	skopeo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.22.2
-PORTREVISION=	3
+DISTVERSION=	1.22.3
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	dfr@FreeBSD.org
 COMMENT=	Inspect container images and repositories on registries
-WWW=		https://github.com/containers/skopeo
+WWW=		https://github.com/podman-container-tools/skopeo
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -17,9 +17,9 @@ BUILD_DEPENDS=	bash:shells/bash \
 LIB_DEPENDS=	libgpgme.so:security/gpgme
 RUN_DEPENDS=	${LOCALBASE}/etc/containers/containers.conf.sample:sysutils/containers-common
 
-USES=		gmake go:1.24+,modules,no_targets pkgconfig
+USES=		gmake go:modules,no_targets pkgconfig
 USE_GITHUB=	yes
-GH_ACCOUNT=	containers
+GH_ACCOUNT=	podman-container-tools
 
 do-install:
 	${SETENV} ${MAKE_ENV} ${GO_ENV} ${GMAKE} -C ${WRKSRC} \

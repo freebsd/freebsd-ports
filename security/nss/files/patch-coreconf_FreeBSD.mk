@@ -1,4 +1,6 @@
---- coreconf/FreeBSD.mk.orig	2018-08-31 12:55:53 UTC
+diff --git coreconf/FreeBSD.mk coreconf/FreeBSD.mk
+index fcbf23f6a..280d3a140 100644
+--- coreconf/FreeBSD.mk
 +++ coreconf/FreeBSD.mk
 @@ -5,9 +5,9 @@
  
@@ -13,7 +15,7 @@
  RANLIB			= ranlib
  
  CPU_ARCH		= $(OS_TEST)
-@@ -20,7 +20,17 @@ endif
+@@ -20,6 +20,16 @@ endif
  ifeq ($(CPU_ARCH),amd64)
  CPU_ARCH		= x86_64
  endif
@@ -23,28 +25,23 @@
 +ifneq (,$(filter powerpc%, $(CPU_ARCH)))
 +CPU_ARCH		= ppc
 +endif
- 
-+ifneq (,$(findstring 64,$(OS_TEST)))
-+USE_64			= 1
-+endif
 +
++ifneq (,$(findstring 64,$(OS_TEST)))
++USE_64		= 1
++endif
+ 
  OS_CFLAGS		= $(DSO_CFLAGS) -Wall -Wno-switch -DFREEBSD -DHAVE_STRERROR -DHAVE_BSD_FLOCK
  
- DSO_CFLAGS		= -fPIC
-@@ -46,7 +56,11 @@ else
+@@ -46,7 +56,7 @@ else
  DLL_SUFFIX		= so.1.0
  endif
  
 -MKSHLIB			= $(CC) $(DSO_LDOPTS)
-+ifneq (,$(filter alpha ia64,$(OS_TEST)))
-+MKSHLIB			= $(CC) -Wl,-Bsymbolic -lc $(DSO_LDOPTS)
-+else
 +MKSHLIB			= $(CC) -Wl,-Bsymbolic $(DSO_LDOPTS)
-+endif
  ifdef MAPFILE
  	MKSHLIB += -Wl,--version-script,$(MAPFILE)
  endif
-@@ -55,4 +69,5 @@ PROCESS_MAP_FILE = grep -v ';-' $< | \
+@@ -55,4 +65,5 @@ PROCESS_MAP_FILE = grep -v ';-' $< | \
  
  G++INCLUDES		= -I/usr/include/g++
  

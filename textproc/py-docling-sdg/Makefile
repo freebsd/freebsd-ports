@@ -12,6 +12,8 @@ WWW=		https://github.com/docling-project/docling-sdg
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		incompatible with the docling-core in the tree, requires Python < 3.13, see https://github.com/docling-project/docling-sdg/issues/47
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docling>=2.26.0:textproc/py-docling@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}docling-core>=2.23.0:textproc/py-docling-core@${PY_FLAVOR} \

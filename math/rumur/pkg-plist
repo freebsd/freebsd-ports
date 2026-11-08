@@ -57,3 +57,7 @@ share/man/man1/rumur.1.gz
 %%DATADIR%%/lib/v2025.08.31/_set
 %%DATADIR%%/lib/v2026.03.11/_list
 %%DATADIR%%/lib/v2026.03.11/_set
+%%DATADIR%%/lib/v2026.08.30/_list
+%%DATADIR%%/lib/v2026.08.30/_set
+%%DATADIR%%/lib/v2026.09.13/_list
+%%DATADIR%%/lib/v2026.09.13/_set

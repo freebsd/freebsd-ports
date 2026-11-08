@@ -1,0 +1,11 @@
+--- src/Makefile.am.orig	2026-08-18 16:56:21 UTC
++++ src/Makefile.am
+@@ -23,7 +23,7 @@ scan_test_plugin_la_LDFLAGS = -module -avoid-version -
+ scan_test_plugin_la_SOURCES = test_plugin.cpp
+ scan_test_plugin_la_LDFLAGS = -module -avoid-version -rpath $(abs_builddir)/.libs
+ 
+-bulk_extractor_LDADD = libbe20.a @RE2_LIBS@
++bulk_extractor_LDADD = libbe20.a @RE2_LIBS@ -lfmt
+ test_be_LDADD = libbe20.a @RE2_LIBS@
+ test_be_CPPFLAGS = $(AM_CPPFLAGS) -DTEST_PLUGIN_DIR=\"$(abs_builddir)/.libs\" -DTEST_RAR_UNPACK -DTEST_TOP_SRCDIR=\"$(abs_top_srcdir)\"
+ test_be20_api_LDADD = libbe20.a @RE2_LIBS@

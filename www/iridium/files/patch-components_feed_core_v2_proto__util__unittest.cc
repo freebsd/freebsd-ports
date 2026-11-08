@@ -1,6 +1,6 @@
---- components/feed/core/v2/proto_util_unittest.cc.orig	2025-12-10 15:04:57 UTC
+--- components/feed/core/v2/proto_util_unittest.cc.orig	2026-08-13 16:48:13 UTC
 +++ components/feed/core/v2/proto_util_unittest.cc
-@@ -42,8 +42,8 @@ TEST(ProtoUtilTest, CreateClientInfo) {
+@@ -46,8 +46,8 @@ TEST(ProtoUtilTest, CreateClientInfo) {
    feedwire::ClientInfo result = CreateClientInfo(request_metadata);
    EXPECT_EQ(feedwire::ClientInfo::CHROME_ANDROID, result.app_type());
    EXPECT_EQ(feedwire::Version::RELEASE, result.app_version().build_type());

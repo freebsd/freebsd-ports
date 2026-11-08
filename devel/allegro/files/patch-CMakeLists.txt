@@ -1,6 +1,15 @@
---- CMakeLists.txt.orig	2019-02-02 19:28:46 UTC
+--- CMakeLists.txt.orig	2019-03-04 01:30:11 UTC
 +++ CMakeLists.txt
-@@ -66,7 +66,7 @@ if(WIN32)
+@@ -22,7 +22,7 @@
+ # CMake setup
+ #
+ 
+-cmake_minimum_required(VERSION 2.6 FATAL_ERROR)
++cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
+ if(COMMAND cmake_policy)
+     cmake_policy(SET CMP0003 NEW)
+ endif(COMMAND cmake_policy)
+@@ -66,7 +66,7 @@ set(ALLEGRO_VERSION 4.4.3)
  endif(WIN32)
  
  set(ALLEGRO_VERSION 4.4.3)
@@ -9,7 +18,7 @@
  
  # Mac OS X -compatibility_version.
  # XXX doesn't seem to work
-@@ -403,6 +403,7 @@ option(WANT_OSS "Build OSS support" on)
+@@ -403,6 +403,7 @@ option(WANT_SGIAUDIO "Build SGI audio support" on)
  option(WANT_ALSA "Build ALSA support" on)
  option(WANT_JACK "Build JACK support" on)
  option(WANT_SGIAUDIO "Build SGI audio support" on)
@@ -35,7 +44,7 @@
      # aRts is obsolete
      # esd is obsolete
  endif(ALLEGRO_UNIX)
-@@ -744,7 +756,7 @@ endif(BEOS)
+@@ -744,7 +756,7 @@ if(CMAKE_BUILD_TYPE STREQUAL Debug)
  
  # On Unix/Mac we don't ever use a -static postfix.
  if(CMAKE_BUILD_TYPE STREQUAL Debug)

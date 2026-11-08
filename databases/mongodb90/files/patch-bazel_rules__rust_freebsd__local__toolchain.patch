@@ -1,0 +1,102 @@
+--- /dev/null
++++ bazel/rules_rust/freebsd_local_toolchain.patch
+@@ -0,0 +1,99 @@
++diff --git crate_universe/private/generate_utils.bzl crate_universe/private/generate_utils.bzl
++--- crate_universe/private/generate_utils.bzl
+++++ crate_universe/private/generate_utils.bzl
++@@ -388,6 +388,11 @@
++             else:
++                 return True
++ 
+++    # The digest of the lockfile includes the cargo and rustc versions. Allow
+++    # using the lockfile as is with a different (e.g. local) toolchain.
+++    if repository_ctx.os.environ.get("CARGO_BAZEL_SKIP_DIGEST_CHECK", "0") == "1":
+++        return not lockfile_path
+++
++     # If a deterministic lockfile was not added then always repin
++     if not lockfile_path:
++         return True
++diff --git rust/private/repository_utils.bzl rust/private/repository_utils.bzl
++--- rust/private/repository_utils.bzl
+++++ rust/private/repository_utils.bzl
++@@ -872,6 +872,68 @@
++ 
++     return archive_path, ""
++ 
+++# Files of a locally installed Rust (e.g. ${LOCALBASE} with lang/rust on
+++# FreeBSD), per tool archive, which has the same layout.
+++_LOCAL_TOOL_FILES = {
+++    "cargo": ["bin/cargo"],
+++    "clippy": ["bin/cargo-clippy", "bin/clippy-driver"],
+++    "llvm-tools": [],
+++    "rust-std": ["lib/rustlib/{triple}/lib"],
+++    "rustc": [
+++        "bin/rustc",
+++        "bin/rustdoc",
+++        "lib/librustc_driver-*",
+++        "lib/rustlib/{triple}/bin",
+++        "lib/rustlib/{triple}/codegen-backends",
+++    ],
+++    "rustc-dev": [],
+++    "rustfmt": ["bin/cargo-fmt", "bin/rustfmt"],
+++}
+++
+++def _link_local_tool(ctx, prefix, tool_name, target_triple):
+++    """Symlinks the files of a tool from a local Rust installation.
+++
+++    Args:
+++        ctx (repository_ctx): A repository_ctx.
+++        prefix (str): The prefix of the local Rust installation.
+++        tool_name (str): The name of the tool per the archive naming.
+++        target_triple (struct): The rust-style target triple of the tool.
+++    """
+++    if tool_name not in _LOCAL_TOOL_FILES:
+++        fail("Tool {} is not supported with RULES_RUST_LOCAL_TOOLCHAIN".format(tool_name))
+++    if not ctx.path("{}/lib/rustlib/{}".format(prefix, target_triple.str)).exists:
+++        fail("Target {} is not installed in {}".format(target_triple.str, prefix))
+++
+++    todo = []
+++    for pattern in _LOCAL_TOOL_FILES[tool_name]:
+++        rel = pattern.format(triple = target_triple.str)
+++        if rel.endswith("*"):
+++            directory, _, file_prefix = rel[:-1].rpartition("/")
+++            for child in ctx.path("{}/{}".format(prefix, directory)).readdir():
+++                if child.basename.startswith(file_prefix):
+++                    todo.append((child, "{}/{}".format(directory, child.basename)))
+++        elif ctx.path("{}/{}".format(prefix, rel)).exists:
+++            todo.append((ctx.path("{}/{}".format(prefix, rel)), rel))
+++
+++    # Starlark has no recursion or while loops.
+++    for _ in range(100000):
+++        if not todo:
+++            break
+++        src, dest = todo.pop()
+++        if src.is_dir:
+++            for child in src.readdir():
+++                todo.append((child, "{}/{}".format(dest, child.basename)))
+++        else:
+++            ctx.symlink(src, dest)
+++
+++    # The llvm-tools component is not part of a regular Rust installation.
+++    if tool_name == "llvm-tools":
+++        binary_ext = system_to_binary_ext(target_triple.system)
+++        for tool in ["llvm-cov", "llvm-profdata"]:
+++            path = "lib/rustlib/{}/bin/{}{}".format(target_triple.str, tool, binary_ext)
+++            if not ctx.path(path).exists:
+++                ctx.file(path, "#!/bin/sh\necho \"{} is not available\" >&2\nexit 1\n".format(tool), executable = True)
+++
++ def load_arbitrary_tool(
++         ctx,
++         tool_name,
++@@ -911,6 +973,11 @@
++         Dict[str, str]: A mapping of the tool name to it's sha256 value if the requested tool does not have
++             enough information in the repository_ctx to be reproducible.
++     """
+++    local_prefix = ctx.os.environ.get("RULES_RUST_LOCAL_TOOLCHAIN", "")
+++    if local_prefix:
+++        _link_local_tool(ctx, local_prefix, tool_name, target_triple)
+++        return {}
+++
++     check_version_valid(version, iso_date, param_prefix = tool_name + "_")
++ 
++     # View the indices mentioned in the docstring to find the tool_suburl for a given

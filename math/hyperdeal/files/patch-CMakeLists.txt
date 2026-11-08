@@ -1,6 +1,18 @@
 --- CMakeLists.txt.orig	2023-07-06 19:59:29 UTC
 +++ CMakeLists.txt
-@@ -91,7 +91,7 @@ ADD_SUBDIRECTORY(source)
+@@ -71,9 +71,8 @@ MESSAGE("--")
+ MESSAGE("-- deal.II-hash:      " ${DEAL_II_GIT_REVISION})
+ MESSAGE("--")
+ 
+-cmake_policy(SET CMP0053 OLD)
+-SET(HYPER_DEAL_GIT_BRANCH "@HYPER_DEAL_GIT_BRANCH@")
+-SET(HYPER_DEAL_GIT_REVISION "@HYPER_DEAL_GIT_REVISION@")
++SET(HYPER_DEAL_GIT_BRANCH "${HYPER_DEAL_GIT_BRANCH}")
++SET(HYPER_DEAL_GIT_REVISION "${HYPER_DEAL_GIT_REVISION}")
+ 
+ CONFIGURE_FILE(
+   ${CMAKE_CURRENT_SOURCE_DIR}/include/hyper.deal/base/revision.h.in
+@@ -91,7 +90,7 @@ TARGET_LINK_LIBRARIES(hyperdeal obj_base obj_grid)
  # target the source files
  TARGET_LINK_LIBRARIES(hyperdeal obj_base obj_grid)
  
@@ -9,7 +21,7 @@
  
  
  IF(EXISTS ${CMAKE_SOURCE_DIR}/tests/CMakeLists.txt)
-@@ -99,13 +99,13 @@ IF(EXISTS ${CMAKE_SOURCE_DIR}/tests/CMakeLists.txt)
+@@ -99,13 +98,13 @@ ENDIF()
  ENDIF()
  
  # documentation

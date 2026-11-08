@@ -1,5 +1,5 @@
 PORTNAME=	waybar
-DISTVERSION=	0.15.0
+DISTVERSION=	0.16.0
 PORTREVISION=	0
 CATEGORIES=	x11 wayland
 PKGNAMESUFFIX=	${FLAVOR:N${FLAVORS:[1]}:C/.+/-${FLAVOR}/}
@@ -31,19 +31,23 @@ GH_ACCOUNT=	Alexays
 GH_PROJECT=	Waybar
 USE_GNOME=	gtkmm30
 
-MESON_ARGS=	${libnl systemd tests:L:C/.*/-D&=disabled/}
-
-CONFLICTS_INSTALL=	${PORTNAME}*
-
 # XXX Add pkg-config support to devel/date
 .if exists(${.CURDIR}/files/date.pc.in)
 CONFIGURE_ENV+=	PKG_CONFIG_PATH="${WRKDIR}"
 SUB_FILES+=	date.pc
 .endif
 
+MESON_ARGS=	${libnl systemd tests:L:C/.*/-D&=disabled/}
+# disable module wwan because it requires libmm-glib
+# (https://www.freedesktop.org/software/ModemManager/libmm-glib/libmm-glib/)
+MESON_ARGS+=	-Dwwan=disabled
+
+CONFLICTS_INSTALL=	${PORTNAME}*
+
 PLIST_FILES=	bin/${PORTNAME} \
 		etc/xdg/${PORTNAME}/config.jsonc \
-		etc/xdg/${PORTNAME}/style.css
+		etc/xdg/${PORTNAME}/style.css \
+		lib/waybar/waybar-gps.so
 
 OPTIONS_DEFINE=		CAVA DBUS EVDEV ICONSFONT JACK MANPAGES MPD MPRIS \
 			PIPEWIRE PULSEAUDIO SNDIO UDEV UPOWER WIREPLUMBER
@@ -102,6 +106,11 @@ MANPAGES_PLIST_FILES=	share/man/man5/${PORTNAME}-battery.5.gz \
 			share/man/man5/${PORTNAME}-idle-inhibitor.5.gz \
 			share/man/man5/${PORTNAME}-image.5.gz \
 			share/man/man5/${PORTNAME}-inhibitor.5.gz \
+			share/man/man5/${PORTNAME}-mango-keymode.5.gz \
+			share/man/man5/${PORTNAME}-mango-language.5.gz \
+			share/man/man5/${PORTNAME}-mango-layout.5.gz \
+			share/man/man5/${PORTNAME}-mango-window.5.gz \
+			share/man/man5/${PORTNAME}-mango-workspaces.5.gz \
 			share/man/man5/${PORTNAME}-memory.5.gz \
 			share/man/man5/${PORTNAME}-menu.5.gz \
 			share/man/man5/${PORTNAME}-niri-language.5.gz \
@@ -119,6 +128,12 @@ MANPAGES_PLIST_FILES=	share/man/man5/${PORTNAME}-battery.5.gz \
 			share/man/man5/${PORTNAME}-sway-window.5.gz \
 			share/man/man5/${PORTNAME}-sway-workspaces.5.gz \
 			share/man/man5/${PORTNAME}-temperature.5.gz \
+			share/man/man5/${PORTNAME}-umbriel-layout.5.gz \
+			share/man/man5/${PORTNAME}-umbriel-window.5.gz \
+			share/man/man5/${PORTNAME}-umbriel-workspaces.5.gz \
+			share/man/man5/${PORTNAME}-user.5.gz \
+			share/man/man5/${PORTNAME}-wayfire-window.5.gz \
+			share/man/man5/${PORTNAME}-wayfire-workspaces.5.gz \
 			share/man/man5/${PORTNAME}-wlr-taskbar.5.gz \
 			share/man/man5/${PORTNAME}.5.gz
 

@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2026-10-10 05:06:59 UTC
++++ pyproject.toml
+@@ -3,7 +3,7 @@
+ # breaking changes for minor-version bumps, so pinning to the current minor
+ # prevents unexpected breakage. Raise the bound when the new minor is
+ # validated. See: https://docs.astral.sh/uv/concepts/build-backend/
+-requires = ["uv_build>=0.11.17,<0.13"]
++requires = ["uv_build>=0.11.17"]
+ build-backend = "uv_build"
+ 
+ [project]

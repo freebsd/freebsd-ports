@@ -1,6 +1,24 @@
---- src/CMakeLists.txt.orig	2024-02-17 20:48:29 UTC
+--- src/CMakeLists.txt.orig	2026-08-01 01:25:05 UTC
 +++ src/CMakeLists.txt
-@@ -165,7 +165,7 @@ cmake_dependent_option(
+@@ -155,7 +155,7 @@ find_package(Threads REQUIRED)
+ endif()
+ 
+ find_package(Threads REQUIRED)
+-find_package(JsonCpp)
++find_package(jsoncpp REQUIRED)
+ 
+ ### All options defined here
+ option(BUILD_LOADER "Build loader" ON)
+@@ -201,7 +201,7 @@ cmake_dependent_option(
+     BUILD_WITH_SYSTEM_JSONCPP
+     "Use system jsoncpp instead of vendored source"
+     ON
+-    "JSONCPP_FOUND"
++    "jsoncpp_FOUND"
+     OFF
+ )
+ cmake_dependent_option(
+@@ -216,7 +216,7 @@ if(WIN32)
  if(WIN32)
      add_definitions(-DXR_OS_WINDOWS)
      add_definitions(-DNOMINMAX)

@@ -1,5 +1,5 @@
 PORTNAME=	igor2
-DISTVERSION=	0.5.13
+DISTVERSION=	0.5.14
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,5 +20,7 @@ USES=		python
 USE_PYTHON=	pep517 concurrent autoplist pytest
 
 NO_ARCH=	yes
+
+# tests as of 0.5.14: 18 passed in ~1s
 
 .include <bsd.port.mk>

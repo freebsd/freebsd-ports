@@ -1,5 +1,5 @@
-TIMESTAMP = 1731138358
-SHA256 (mosra-magnum-v2020.06-3075-gf91638c46_GH0.tar.gz) = ee5b44672bf020dfa32fe17e7e1f3bf77ceddb9e444240d68d93ae7a8ff22961
-SIZE (mosra-magnum-v2020.06-3075-gf91638c46_GH0.tar.gz) = 5923708
-SHA256 (mosra-toolchains-2243706_GH0.tar.gz) = 4103ccdf4cdebb35acf8671e40aeb49e204456523acfaf8510473d3c200dc12b
-SIZE (mosra-toolchains-2243706_GH0.tar.gz) = 12312
+TIMESTAMP = 1790502376
+SHA256 (mosra-magnum-v2020.06-3685-gf239823e_GH0.tar.gz) = cdaba691ad88c7848de9d84e7502f2b0abae79a0424d9caa058c800b06248894
+SIZE (mosra-magnum-v2020.06-3685-gf239823e_GH0.tar.gz) = 6209379
+SHA256 (mosra-toolchains-fa282e8_GH0.tar.gz) = 2b396cf07f0b9fac4c672b3cb92da9ad644f51a1a80f7055292127d44d3e3809
+SIZE (mosra-toolchains-fa282e8_GH0.tar.gz) = 12499

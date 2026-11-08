@@ -57,12 +57,6 @@ post-patch:
 	@${REINPLACE_CMD} -e '/LOCAL_INCLUDE_DIR/ d ' \
 		${WRKSRC}//gcc/Makefile.in
 
-.if ${ARCH} == "amd64"
-CONFIGURE_TARGET=	x86_64-unknown-${OPSYS:tl}${OSREL}
-.else
-CONFIGURE_TARGET=	${ARCH}-unknown-${OPSYS:tl}${OSREL}
-.endif
-
 # The following is required for clang to bootstrap gcc.
 .if ${COMPILER_TYPE} == clang
 MAKE_ARGS+=	CXXFLAGS=-fbracket-depth=512

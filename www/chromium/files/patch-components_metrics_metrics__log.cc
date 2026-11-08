@@ -1,4 +1,4 @@
---- components/metrics/metrics_log.cc.orig	2026-07-01 06:24:19 UTC
+--- components/metrics/metrics_log.cc.orig	2026-10-18 13:29:39 UTC
 +++ components/metrics/metrics_log.cc
 @@ -61,7 +61,7 @@
  #include "base/win/current_module.h"
@@ -28,7 +28,7 @@
    // consistent.
    os->set_kernel_version(base::SysInfo::OperatingSystemVersion());
 @@ -465,7 +465,7 @@ void MetricsLog::RecordCoreSystemProfile(
-   os->set_build_number(base::SysInfo::GetIOSBuildNumber());
+   os->set_build_number(base::SysInfo::OperatingSystemBuildVersion());
  #endif
  
 -#if BUILDFLAG(IS_LINUX)

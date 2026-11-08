@@ -18,13 +18,10 @@ LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 		libxcb-util.so:x11/xcb-util \
 		libxkbcommon.so:x11/libxkbcommon \
 		libQCoro6Core.so:devel/qcoro
-RUN_DEPENDS=	kio-extras>=24.12.3:devel/kio-extras \
+RUN_DEPENDS=	accountsservice>0:sysutils/accountsservice \
+		kio-extras>=24.12.3:devel/kio-extras \
 		kio-fuse>=5.1.0_1:filesystems/kio-fuse \
-		mkfontscale:x11-fonts/mkfontscale \
 		oxygen-icons>=0:x11-themes/oxygen-icons \
-		xmessage:x11/xmessage \
-		xrdb:x11/xrdb \
-		xset:x11/xset
 
 USES=		cmake desktop-file-utils gettext gl kde:6 pkgconfig python \
 		qt:6 shebangfix tar:xz xorg
@@ -39,10 +36,9 @@ USE_KDE=	activities activities-stats archive attica auth baloo \
 		newstuff notifications package parts \
 		prison runner service solid sonnet \
 		statusnotifieritem svg syntaxhighlighting texteditor \
-		textwidgets userfeedback wallet wayland \
+		textwidgets union userfeedback wallet wayland \
 		widgetsaddons windowsystem xmlgui \
-		ecm:build plasma-wayland-protocols:build \
-		kwin-x11:run
+		ecm:build plasma-wayland-protocols:build
 USE_QT=		5compat base declarative location svg wayland
 USE_XORG=	ice sm x11 xau xcb xcursor xext xfixes xft xi xrender xtst
 SHEBANG_FILES=	components/calendar/kconf_update/migrate-calendar-to-plugin-id.py.in
@@ -53,6 +49,17 @@ OPTIONS_DEFINE=	GTK
 
 GTK_DESC=		Global menu bar support for GTK applications
 GTK_RUN_DEPENDS=	appmenu-gtk-module>0:x11/gtk-app-menu
+
+.include <bsd.port.options.mk>
+# https://reviews.freebsd.org/D59635
+.if ${OSVERSION} < 1501503
+PLIST_SUB+=	RTLD="@comment "
+
+post-install:
+	${RM} ${STAGEDIR}${QT_PLUGINDIR}/plasma/applets/org.kde.plasma.cameraindicator.so
+.else
+PLIST_SUB+=	RTLD=""
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \

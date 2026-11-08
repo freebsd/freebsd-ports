@@ -1,5 +1,5 @@
 PORTNAME=	libyang
-PORTVERSION=	2.1.128
+PORTVERSION=	2.1.148
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 PKGNAMESUFFIX=	2
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 TEST_DEPENDS=	cmocka>0:sysutils/cmocka
 
-USES=	cmake compiler:c++11-lang pkgconfig
+USES=	cmake compiler:c++11-lang localbase:ldflags pkgconfig
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes

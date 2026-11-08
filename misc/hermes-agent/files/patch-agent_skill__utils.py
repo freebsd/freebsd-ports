@@ -1,12 +1,12 @@
---- agent/skill_utils.py.orig	2026-07-08 03:11:08 UTC
+--- agent/skill_utils.py.orig	2026-11-06 16:56:46 UTC
 +++ agent/skill_utils.py
-@@ -192,6 +192,9 @@ def skill_matches_platform(frontmatter: Dict[str, Any]
+@@ -101,7 +101,8 @@ def skill_matches_platform_list(platforms: Any) -> boo
+     for platform in platforms:
+         normalized = str(platform).lower().strip()
          mapped = PLATFORM_MAP.get(normalized, normalized)
-         if current.startswith(mapped):
+-        if current.startswith(mapped):
++        # FreeBSD is POSIX-compatible: accept linux-tagged skills too.
++        if current.startswith(mapped) or (sys.platform.startswith("freebsd") and mapped == "linux"):
              return True
-+        # FreeBSD is POSIX-compatible; accept linux-tagged skills.
-+        if current.startswith("freebsd") and mapped == "linux":
-+            return True
-         # Termux runs a Linux userland on Android. Accept linux-tagged
-         # skills regardless of whether sys.platform is "linux" (pre-3.13
-         # Termux) or "android" (Python 3.13+ Termux, and any other
+     return False
+ 

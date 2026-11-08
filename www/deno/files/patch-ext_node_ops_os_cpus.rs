@@ -1,55 +1,89 @@
---- ext/node/ops/os/cpus.rs.orig	2026-07-01 13:28:43 UTC
+Implement os.cpus() on FreeBSD with sysctl(3) (hw.model, hw.clockrate,
+kern.cp_times), matching libuv.
+
+--- ext/node/ops/os/cpus.rs.orig	2026-09-16 15:45:55 UTC
 +++ ext/node/ops/os/cpus.rs
-@@ -364,6 +364,54 @@ pub fn cpu_info() -> Option<Vec<CpuInfo>> {
+@@ -364,6 +364,85 @@ pub fn cpu_info() -> Option<Vec<CpuInfo>> {
    }
  }
  
 +#[cfg(target_os = "freebsd")]
 +pub fn cpu_info() -> Option<Vec<CpuInfo>> {
-+  // Stub implementation for FreeBSD that returns an array of the correct size
-+  // but with dummy values.
-+  // Rust's FreeBSD libc bindings don't contain all the symbols needed for a
-+  // full implementation, and including them is not planned.
-+  let mut mib = [libc::CTL_HW, libc::HW_NCPU];
++  use std::ffi::CStr;
++  use std::mem::size_of;
 +
-+  // SAFETY: Assumes correct behavior of platform-specific
-+  // sysctls and data structures. Relies on specific sysctl
-+  // names and parameter existence.
-+  unsafe {
-+    let mut ncpu: libc::c_uint = 0;
-+    let mut size = std::mem::size_of_val(&ncpu) as libc::size_t;
-+
-+    // Get number of CPUs online
-+    let res = libc::sysctl(
-+      mib.as_mut_ptr(),
-+      mib.len() as _,
-+      &mut ncpu as *mut _ as *mut _,
-+      &mut size,
-+      std::ptr::null_mut(),
-+      0,
-+    );
-+    // If res == 0, the sysctl call was succesful and
-+    // ncpuonline contains the number of online CPUs.
-+    if res != 0 {
-+      return None;
-+    } else {
-+      let mut cpus = vec![CpuInfo::new(); ncpu as usize];
-+
-+      for (_, cpu) in cpus.iter_mut().enumerate() {
-+        cpu.model = "Undisclosed CPU".to_string();
-+        // Return 1 as a dummy value so the tests won't
-+        // fail.
-+        cpu.speed = 1;
-+        cpu.times.user = 1;
-+        cpu.times.nice = 1;
-+        cpu.times.sys = 1;
-+        cpu.times.idle = 1;
-+        cpu.times.irq = 1;
-+      }
-+
-+      return Some(cpus);
-+    }
++  // Reads a sysctl into `buf`, returning the number of bytes written.
++  fn sysctl_read<T>(name: &CStr, buf: &mut [T]) -> Option<usize> {
++    let mut size = std::mem::size_of_val(buf) as libc::size_t;
++    // SAFETY: `name` is NUL-terminated and `buf` is valid for `size` bytes.
++    let res = unsafe {
++      libc::sysctlbyname(
++        name.as_ptr(),
++        buf.as_mut_ptr() as *mut libc::c_void,
++        &mut size,
++        std::ptr::null_mut(),
++        0,
++      )
++    };
++    (res == 0).then_some(size)
 +  }
++
++  let mut ncpu = [0 as libc::c_int];
++  sysctl_read(c"hw.ncpu", &mut ncpu)?;
++  let ncpu = usize::try_from(ncpu[0]).ok()?;
++
++  let mut model = [0u8; 512];
++  let model_len = sysctl_read(c"hw.model", &mut model)?;
++  let model = CStr::from_bytes_until_nul(&model[..model_len])
++    .ok()?
++    .to_string_lossy()
++    .into_owned();
++
++  // Not every platform provides these; report 0 as libuv does when unknown.
++  let mut speed = [0 as libc::c_int];
++  if sysctl_read(c"hw.clockrate", &mut speed).is_none() {
++    let _ = sysctl_read(c"dev.cpu.0.freq", &mut speed);
++  }
++  let speed = u64::try_from(speed[0]).unwrap_or(0);
++
++  // kern.cp_times is sized for every possible CPU id, which may exceed
++  // hw.ncpu, so size the buffer for kern.smp.maxcpus.
++  let mut maxcpus = [0 as libc::c_int];
++  let maxcpus = match sysctl_read(c"kern.smp.maxcpus", &mut maxcpus) {
++    Some(_) => usize::try_from(maxcpus[0]).ok()?.max(ncpu),
++    None => ncpu,
++  };
++  let cpustates = libc::CPUSTATES as usize;
++  let mut cp_times = vec![0 as libc::c_long; maxcpus * cpustates];
++  let len = sysctl_read(c"kern.cp_times", &mut cp_times)?;
++  let ncpu = ncpu.min(len / (cpustates * size_of::<libc::c_long>()));
++
++  // SAFETY: sysconf is always safe to call for _SC_CLK_TCK.
++  let ticks = u64::try_from(unsafe { libc::sysconf(libc::_SC_CLK_TCK) })
++    .ok()
++    .filter(|t| *t > 0)?;
++  // Convert clock ticks to milliseconds
++  let to_ms = |state: libc::c_int, times: &[libc::c_long]| {
++    (times[state as usize] as u64).saturating_mul(1000) / ticks
++  };
++
++  let cpus = cp_times
++    .chunks_exact(cpustates)
++    .take(ncpu)
++    .map(|times| CpuInfo {
++      model: model.clone(),
++      speed,
++      times: CpuTimes {
++        user: to_ms(libc::CP_USER, times),
++        nice: to_ms(libc::CP_NICE, times),
++        sys: to_ms(libc::CP_SYS, times),
++        idle: to_ms(libc::CP_IDLE, times),
++        irq: to_ms(libc::CP_INTR, times),
++      },
++    })
++    .collect();
++
++  Some(cpus)
 +}
 +
  #[cfg(test)]

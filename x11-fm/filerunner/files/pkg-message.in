@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+System wide config file migrate from %%PREFIX%%/share/config/filerunnerrc
+to %%PREFIX%%/etc/filerunnerrc.
+(See %%PREFIX%%/share/filerunner/config)
+EOM
+}
+]

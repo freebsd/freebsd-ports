@@ -1,5 +1,5 @@
 PORTNAME=	nghttp2
-PORTVERSION=	1.69.0
+PORTVERSION=	1.70.0
 CATEGORIES=	www net
 MASTER_SITES=	https://github.com/nghttp2/nghttp2/releases/download/v${PORTVERSION}/
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	libnghttp2>=${PORTVERSION}:www/libnghttp2
 LIB_DEPENDS=	libnghttp2.so:www/libnghttp2
 
-USES=		cmake compiler:c++20-lang cpe localbase:ldflags pkgconfig python:env ssl tar:xz
+USES=		cmake compiler:c++23-lang cpe localbase:ldflags pkgconfig python:env ssl tar:xz
 
 CMAKE_ARGS=	-DCMAKE_INSTALL_MANDIR=share/man
 CMAKE_OFF=	BUILD_SHARED_LIBS \
@@ -32,7 +32,7 @@ CMAKE_OFF=	BUILD_SHARED_LIBS \
 		WITH_NEVERBLEED \
 		WITH_WOLFSSL
 CMAKE_ON=	ENABLE_THREADS
-USE_CXXSTD=	c++20
+USE_CXXSTD=	c++23
 USE_RC_SUBR=	nghttpx
 
 OPTIONS_DEFINE=	APP DOCS EXAMPLES HPACK

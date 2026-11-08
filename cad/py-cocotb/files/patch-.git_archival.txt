@@ -1,0 +1,13 @@
+-- Fix describe-name format for setuptools-git-versioning 3.x.
+-- GitHub archives use %D format (ref-names like "tag: v2.1.0") instead of
+-- the git-describe format (v2.1.0) that setuptools-git-versioning expects.
+
+--- .git_archival.txt.orig
++++ .git_archival.txt
+@@ -1,4 +1,4 @@
+ node: e85fae957d5c93894740b164ea9cc6567015b954
+ node-date: 2026-08-30T22:23:52+02:00
+-describe-name: tag: v2.1.0
+-ref-names: tag: v2.1.0
++describe-name: v2.1.0
++ref-names: tag: v2.1.0

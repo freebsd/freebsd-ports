@@ -1,6 +1,6 @@
 PORTNAME=	cpp-httplib
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.52.0
+DISTVERSION=	0.65.0
 CATEGORIES=	www devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	gmake:devel/gmake
 
-USES=		cmake localbase:ldflags python:test # localbase only for tests
+USES=		cmake localbase:ldflags python:build,test # localbase only for tests, python:build only for BINARY_ALIAS
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yhirose
@@ -45,9 +45,8 @@ SSL_CMAKE_BOOL=		HTTPLIB_REQUIRE_OPENSSL HTTPLIB_USE_OPENSSL_IF_AVAILABLE
 do-test:
 	@cd ${WRKSRC}/test && ${SETENV} ${MAKE_ENV} ${GMAKE} CXXFLAGS="${CXXFLAGS} -I${WRKSRC}/test" LDFLAGS="${LDFLAGS}"
 
-# [==========] 713 tests from 150 test suites ran. (257976 ms total)
-# [  PASSED  ] 712 tests.
-# [  FAILED  ] 1 test, listed below:
-# [  FAILED  ] YahooRedirectTest3.NewResultInterface_Online
+# tests as of 0.65.0:
+# [==========] 1126 tests from 222 test suites ran. (200487 ms total)
+# [  PASSED  ] 1126 tests.
 
 .include <bsd.port.mk>

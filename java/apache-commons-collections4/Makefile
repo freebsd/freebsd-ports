@@ -1,8 +1,7 @@
 PORTNAME=	commons-collections4
-DISTVERSION=	4.5.0-M3
-PORTREVISION=	2
+DISTVERSION=	4.6.0
 CATEGORIES=	java devel
-MASTER_SITES=	APACHE_COMMONS_BINARIES
+MASTER_SITES=	https://dlcdn.apache.org//commons/collections/binaries/
 MASTER_SITE_SUBDIR=	collections
 PKGNAMEPREFIX=	apache-
 DISTNAME=	${PORTNAME}-${DISTVERSION}-bin
@@ -14,7 +13,7 @@ WWW=		https://commons.apache.org/proper/commons-collections/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		java
+USES=		java:run
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 NO_BUILD=	yes

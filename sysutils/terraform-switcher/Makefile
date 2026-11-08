@@ -1,7 +1,7 @@
 PORTNAME=	terraform-switcher
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.19.0
-PORTREVISION=	1
+PORTREVISION=	6
 CATEGORIES=	sysutils
 
 MAINTAINER=	dutra@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://tfswitch.warrensbox.com/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.24+,modules
+USES=		go:modules
 
 GO_MODULE=	github.com/warrensbox/${PORTNAME}
 GO_BUILDFLAGS=	-ldflags "\

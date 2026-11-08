@@ -12,6 +12,9 @@ WWW=		https://www.heuer.org/mod_auth_mysql/
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Abandoned upstream, use mod_authn_dbd/mod_authz_dbd instead
+EXPIRATION_DATE=	2026-12-31
+
 USES=		apache mysql tar:tgz
 WRKSRC=		${WRKDIR}/${PORTNAME}
 AP_FAST_BUILD=	yes

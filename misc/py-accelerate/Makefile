@@ -1,5 +1,5 @@
 PORTNAME=	accelerate
-DISTVERSION=	1.14.0
+DISTVERSION=	1.15.0
 CATEGORIES=	misc # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,6 +26,10 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bitsandbytes>=0:misc/py-bitsandbytes@${PY_F
 		${PYTHON_PKGNAMEPREFIX}diffusers>=0:misc/py-diffusers@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}evaluate>=0:misc/py-evaluate@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}parameterized>0:devel/py-parameterized@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}peft>=0:misc/py-peft@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-order>=0:devel/py-pytest-order@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-subtests>=0:devel/py-pytest-subtests@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-xdist>=0:devel/py-pytest-xdist@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scikit-learn>=0:science/py-scikit-learn@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=0:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}timm>=0:misc/py-timm@${PY_FLAVOR} \
@@ -35,8 +39,20 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bitsandbytes>=0:misc/py-bitsandbytes@${PY_F
 		${PYTHON_PKGNAMEPREFIX}transformers>=0:misc/py-transformers@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	pep517 autoplist pytest # tests fail because they depend on the module 'transformers' that depends on 'accelerate' and isn't yet ported
+USE_PYTHON=	pep517 autoplist pytest
 
 NO_ARCH=	yes
+TEST_ENV=	${MAKE_ENV} MLFLOW_ALLOW_FILE_STORE=true MPLBACKEND=Agg
+TEST_ARGS=	--disable-plugin-autoload -p pytest_order \
+		--deselect tests/test_utils.py::UtilsTester::test_patch_environment_key_exists \
+		--ignore src/accelerate/test_utils/scripts \
+		--ignore tests/test_cli.py \
+		--ignore tests/test_cpu.py \
+		--ignore tests/test_examples.py \
+		--ignore tests/test_grad_sync.py \
+		--ignore tests/test_scheduler.py \
+		--ignore src/accelerate/test_utils/scripts/external_deps
+
+# tests as of 1.15.0: 277 passed, 144 skipped, 1 deselected, 335 warnings, 4 subtests passed in 85.94s
 
 .include <bsd.port.mk>

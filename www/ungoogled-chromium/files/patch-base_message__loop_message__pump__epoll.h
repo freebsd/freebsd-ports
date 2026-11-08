@@ -1,9 +1,9 @@
---- base/message_loop/message_pump_epoll.h.orig	2024-10-27 06:40:35 UTC
+--- base/message_loop/message_pump_epoll.h.orig	2026-10-31 12:09:36 UTC
 +++ base/message_loop/message_pump_epoll.h
-@@ -51,7 +51,11 @@ namespace base {
+@@ -49,7 +49,11 @@ namespace base {
+ // Caveat: Since both we and the kernel need to walk the list of all fds at
  // every call, don't do it when we have too many FDs.
  BASE_FEATURE(kUsePollForMessagePumpEpoll,
-              "UsePollForMessagePumpEpoll",
 +#if BUILDFLAG(IS_BSD)
 +             base::FEATURE_ENABLED_BY_DEFAULT);
 +#else

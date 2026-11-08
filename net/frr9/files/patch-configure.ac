@@ -1,6 +1,19 @@
---- configure.ac.orig	2024-12-27 21:06:42 UTC
+--- configure.ac.orig
 +++ configure.ac
-@@ -1921,7 +1921,7 @@ if test "$enable_snmp" != "" -a "$enable_snmp" != "no"
+@@ -1912,16 +1912,19 @@ if test "$enable_snmp" != "" -a "$enable_snmp" != "no"
+ dnl check Net-SNMP library
+ dnl ------------------
+ if test "$enable_snmp" != "" -a "$enable_snmp" != "no"; then
++   PKG_CHECK_MODULES([SNMP], [netsnmp-agent], [
++     dnl all set, nothing to do
++   ], [
+    AC_PATH_TOOL([NETSNMP_CONFIG], [net-snmp-config], [no])
+    if test "$NETSNMP_CONFIG" = "no"; then
+-      AC_MSG_ERROR([--enable-snmp given but unable to find net-snmp-config])
++      AC_MSG_ERROR([--enable-snmp given but unable to find netsnmp-agent pkgconfig or net-snmp-config])
+    fi
+    SNMP_LIBS="`${NETSNMP_CONFIG} --agent-libs`"
+    SNMP_CFLAGS="`${NETSNMP_CONFIG} --base-cflags`"
     # net-snmp lists all of its own dependencies.  we absolutely do not want that
     # among other things we avoid a GPL vs. OpenSSL license conflict here
     for removelib in crypto ssl sensors pci wrap; do
@@ -9,3 +22,13 @@
     done
     AC_MSG_CHECKING([whether we can link to Net-SNMP])
     AC_LINK_IFELSE_FLAGS([$SNMP_CFLAGS], [$SNMP_LIBS], [AC_LANG_PROGRAM([
+@@ -1933,7 +1936,8 @@ int main(void);
+ }
+ ])], [
+      AC_MSG_RESULT([no])
+-     AC_MSG_ERROR([--enable-snmp given but not usable])])
++     AC_MSG_ERROR([SNMP libraries found but failed to link])])
++   ])
+    case "${enable_snmp}" in
+      yes)
+       SNMP_METHOD=agentx

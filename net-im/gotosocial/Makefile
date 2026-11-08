@@ -1,11 +1,12 @@
 PORTNAME=	gotosocial
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.22.1
+DISTVERSION=	0.22.3
+PORTREVISION=	6
 CATEGORIES=	net-im
 MASTER_SITES=	https://codeberg.org/superseriousbusiness/${PORTNAME}/releases/download/v${DISTVERSION}/
 DISTFILES=	${PORTNAME}-${DISTVERSION}-source-code.tar.gz ${PORTNAME}_${DISTVERSION}_web-assets.tar.gz
 
-MAINTAINER=	tilde@ultros.pro
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Golang fediverse server
 WWW=		https://docs.gotosocial.org/en/latest/
 
@@ -20,7 +21,7 @@ LICENSE_FILE_OFL11=		${WRKSRC}/OFL11
 ONLY_FOR_ARCHS=	aarch64 amd64 armv7 i386
 ONLY_FOR_ARCHS_REASON=	https://gitlab.com/cznic/libc/-/issues/15
 
-USES=		go:modules
+USES=		go:1.26,modules
 USE_RC_SUBR=	${PORTNAME}
 
 GO_TARGET=	./cmd/gotosocial

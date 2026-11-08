@@ -1,10 +1,12 @@
 PORTNAME=	mysql
-PORTREVISION=	1
 PKGNAMESUFFIX=	97-client
 
 COMMENT=	Multithreaded SQL database (client)
 
 LICENSE+=	LGPL21
+
+# Slave port of databases/mysql97-server; see the note there on repology
+# reporting this series as outdated.
 
 # MySQL8.2+ supports only 64-bit platforms
 # Review list after 13.x EoL

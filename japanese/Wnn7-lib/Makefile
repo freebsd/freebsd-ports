@@ -1,14 +1,19 @@
 PORTNAME=	Wnn7
 PORTVERSION=	2001.10.17
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	japanese
-MASTER_SITES=	http://www.omronsoft.co.jp/SP/pcunix/sdk/wnn/
+MASTER_SITES=	https://ftp.yz.yamagata-u.ac.jp/pub/linux/momonga/4/SOURCES/
 PKGNAMESUFFIX=	-lib
 DISTNAME=	Wnn7SDK
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Wnn7 client library
-WWW=		https://www.omronsoft.co.jp/
+WWW=		https://www.omron.com/digital/product_text/
+
+LICENSE=	Wnn7_Client_Library
+LICENSE_NAME=	Wnn7 Client Library
+LICENSE_FILE=	${WRKSRC}/README
+LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 USES=		imake tar:tgz
 USE_LDCONFIG=	yes
@@ -39,5 +44,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/Wnn/include/*.h ${STAGEDIR}${PREFIX}/include/wnn7/wnn
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libwnn7.so.1
 
 .include <bsd.port.mk>

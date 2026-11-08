@@ -1,6 +1,6 @@
 PORTNAME=	dra
-DISTVERSION=	0.10.2
-PORTREVISION=	2
+DISTVERSION=	0.10.3
+PORTREVISION=	3
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,39 +17,38 @@ GH_ACCOUNT=	devmatteini
 
 CARGO_CRATES=	adler2-2.0.0 \
 		aho-corasick-0.7.19 \
-		anstream-0.6.11 \
-		anstyle-1.0.8 \
-		anstyle-parse-0.2.0 \
+		anstream-1.0.0 \
+		anstyle-1.0.14 \
+		anstyle-parse-1.0.0 \
 		anstyle-query-1.0.0 \
-		anstyle-wincon-3.0.1 \
-		arbitrary-1.4.1 \
-		assert_cmd-2.1.1 \
+		anstyle-wincon-3.0.11 \
+		anyhow-1.0.102 \
+		assert_cmd-2.2.2 \
 		autocfg-1.1.0 \
 		base64-0.22.1 \
 		bitflags-1.3.2 \
 		bitflags-2.10.0 \
 		block2-0.6.2 \
 		bstr-1.6.0 \
-		bumpalo-3.16.0 \
+		bumpalo-3.20.3 \
 		bytes-1.10.1 \
 		bzip2-0.6.1 \
 		bzip2-sys-0.1.13+1.0.8 \
 		cc-1.2.16 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.2.1 \
-		clap-4.5.53 \
-		clap_builder-4.5.53 \
-		clap_complete-4.5.64 \
-		clap_derive-4.5.49 \
-		clap_lex-0.7.4 \
+		clap-4.6.1 \
+		clap_builder-4.6.0 \
+		clap_complete-4.6.5 \
+		clap_derive-4.6.1 \
+		clap_lex-1.1.0 \
 		colorchoice-1.0.0 \
 		console-0.16.0 \
 		cookie-0.18.1 \
 		cookie_store-0.22.0 \
-		crc32fast-1.4.2 \
+		crc32fast-1.5.0 \
 		ctrlc-3.5.1 \
 		deranged-0.4.1 \
-		derive_arbitrary-1.4.1 \
 		dialoguer-0.12.0 \
 		difflib-0.4.0 \
 		dispatch2-0.3.0 \
@@ -61,13 +60,15 @@ CARGO_CRATES=	adler2-2.0.0 \
 		errno-0.3.9 \
 		fastrand-1.9.0 \
 		filetime-0.2.17 \
-		flate2-1.1.5 \
+		flate2-1.1.9 \
 		float-cmp-0.10.0 \
 		fnv-1.0.7 \
+		foldhash-0.1.5 \
 		form_urlencoded-1.2.2 \
 		getrandom-0.2.15 \
-		getrandom-0.3.1 \
+		getrandom-0.4.2 \
 		hashbrown-0.15.2 \
+		hashbrown-0.17.1 \
 		heck-0.5.0 \
 		http-1.3.1 \
 		httparse-1.10.1 \
@@ -81,24 +82,25 @@ CARGO_CRATES=	adler2-2.0.0 \
 		icu_properties_data-1.5.0 \
 		icu_provider-1.5.0 \
 		icu_provider_macros-1.5.0 \
+		id-arena-2.3.0 \
 		idna-1.1.0 \
 		idna_adapter-1.2.0 \
-		indexmap-2.6.0 \
-		indicatif-0.18.3 \
+		indexmap-2.14.0 \
+		indicatif-0.18.4 \
 		instant-0.1.12 \
 		io-lifetimes-1.0.2 \
+		is_terminal_polyfill-1.70.2 \
 		itertools-0.14.0 \
 		itoa-1.0.6 \
 		js-sys-0.3.83 \
+		leb128fmt-0.1.0 \
 		libbz2-rs-sys-0.2.1 \
-		libc-0.2.172 \
-		libz-rs-sys-0.5.2 \
+		libc-0.2.186 \
 		linux-raw-sys-0.1.3 \
 		linux-raw-sys-0.4.14 \
 		litemap-0.7.4 \
 		litrs-0.4.1 \
-		lockfree-object-pool-0.1.6 \
-		log-0.4.27 \
+		log-0.4.31 \
 		lzma-sys-0.1.19 \
 		memchr-2.7.4 \
 		miniz_oxide-0.8.5 \
@@ -109,17 +111,20 @@ CARGO_CRATES=	adler2-2.0.0 \
 		objc2-0.6.3 \
 		objc2-encode-4.1.0 \
 		once_cell-1.19.0 \
+		once_cell_polyfill-1.70.2 \
 		percent-encoding-2.3.2 \
 		pkg-config-0.3.25 \
-		portable-atomic-1.3.3 \
+		portable-atomic-1.13.1 \
 		powerfmt-0.2.0 \
-		predicates-3.1.3 \
+		predicates-3.1.4 \
 		predicates-core-1.0.6 \
 		predicates-tree-1.0.5 \
+		prettyplease-0.2.37 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.92 \
-		quote-1.0.35 \
+		proc-macro2-1.0.106 \
+		quote-1.0.45 \
+		r-efi-6.0.0 \
 		redox_syscall-0.2.10 \
 		regex-1.5.6 \
 		regex-automata-0.3.4 \
@@ -133,6 +138,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		rustversion-1.0.22 \
 		ryu-1.0.6 \
 		same-file-1.0.6 \
+		semver-1.0.28 \
 		serde-1.0.228 \
 		serde_core-1.0.228 \
 		serde_derive-1.0.228 \
@@ -142,12 +148,12 @@ CARGO_CRATES=	adler2-2.0.0 \
 		simd-adler32-0.3.7 \
 		smallvec-1.13.2 \
 		stable_deref_trait-1.2.0 \
-		strsim-0.11.0 \
+		strsim-0.11.1 \
 		subtle-2.6.1 \
 		syn-1.0.104 \
-		syn-2.0.90 \
+		syn-2.0.117 \
 		synstructure-0.13.1 \
-		tar-0.4.44 \
+		tar-0.4.46 \
 		tempfile-3.4.0 \
 		termtree-0.2.4 \
 		test-case-3.3.1 \
@@ -157,28 +163,34 @@ CARGO_CRATES=	adler2-2.0.0 \
 		time-core-0.1.4 \
 		time-macros-0.2.22 \
 		tinystr-0.7.6 \
+		typed-path-0.12.3 \
 		unicode-ident-1.0.5 \
 		unicode-width-0.2.0 \
+		unicode-xid-0.2.6 \
 		unit-prefix-0.5.1 \
 		untrusted-0.9.0 \
-		ureq-3.1.4 \
-		ureq-proto-0.5.3 \
-		url-2.5.7 \
+		ureq-3.3.0 \
+		ureq-proto-0.6.0 \
+		url-2.5.8 \
 		urlencoding-2.1.3 \
-		utf-8-0.7.6 \
 		utf16_iter-1.0.5 \
+		utf8-zero-0.8.1 \
 		utf8_iter-1.0.4 \
-		utf8parse-0.2.1 \
-		uuid-1.19.0 \
+		utf8parse-0.2.2 \
+		uuid-1.23.2 \
 		version_check-0.9.5 \
 		wait-timeout-0.2.0 \
 		walkdir-2.5.0 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasi-0.13.3+wasi-0.2.2 \
+		wasip2-1.0.3+wasi-0.2.9 \
+		wasip3-0.4.0+wasi-0.3.0-rc-2026-01-06 \
 		wasm-bindgen-0.2.106 \
 		wasm-bindgen-macro-0.2.106 \
 		wasm-bindgen-macro-support-0.2.106 \
 		wasm-bindgen-shared-0.2.106 \
+		wasm-encoder-0.244.0 \
+		wasm-metadata-0.244.0 \
+		wasmparser-0.244.0 \
 		web-time-1.1.0 \
 		webpki-roots-1.0.4 \
 		wildmatch-2.6.1 \
@@ -233,7 +245,13 @@ CARGO_CRATES=	adler2-2.0.0 \
 		windows_x86_64_msvc-0.48.0 \
 		windows_x86_64_msvc-0.52.6 \
 		windows_x86_64_msvc-0.53.0 \
-		wit-bindgen-rt-0.33.0 \
+		wit-bindgen-0.51.0 \
+		wit-bindgen-0.57.1 \
+		wit-bindgen-core-0.51.0 \
+		wit-bindgen-rust-0.51.0 \
+		wit-bindgen-rust-macro-0.51.0 \
+		wit-component-0.244.0 \
+		wit-parser-0.244.0 \
 		write16-1.0.0 \
 		writeable-0.5.5 \
 		xattr-1.3.1 \
@@ -245,9 +263,9 @@ CARGO_CRATES=	adler2-2.0.0 \
 		zeroize-1.8.1 \
 		zerovec-0.10.4 \
 		zerovec-derive-0.10.3 \
-		zip-6.0.0 \
-		zlib-rs-0.5.2 \
-		zopfli-0.8.1
+		zip-8.6.0 \
+		zlib-rs-0.6.3 \
+		zopfli-0.8.3
 
 PLIST_FILES=	bin/${PORTNAME}
 

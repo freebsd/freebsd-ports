@@ -1,5 +1,5 @@
 PORTNAME=	PDL-LinearAlgebra
-PORTVERSION=	0.436
+PORTVERSION=	0.437
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ETJ
@@ -12,11 +12,11 @@ WWW=		https://metacpan.org/dist/PDL-LinearAlgebra
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/Artistic_2
 
-BUILD_DEPENDS=	p5-Devel-CheckLib>=0:devel/p5-Devel-CheckLib \
+BUILD_DEPENDS=	p5-Devel-CheckLib>=1.16:devel/p5-Devel-CheckLib \
 		p5-ExtUtils-F77>=1.26:lang/p5-ExtUtils-F77 \
 		p5-PkgConfig>=0:devel/p5-PkgConfig \
 		${RUN_DEPENDS}
-RUN_DEPENDS=	p5-PDL>=2.104:math/p5-PDL
+RUN_DEPENDS=	p5-PDL>=2.105:math/p5-PDL
 
 USES=		blaslapack perl5
 USE_PERL5=	configure

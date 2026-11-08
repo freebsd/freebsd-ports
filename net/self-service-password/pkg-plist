@@ -1,5 +1,6 @@
 @owner %%SSP_OWN%%
 @group %%SSP_GRP%%
+%%WWWDIR%%/conf/config.inc.local.php
 @sample %%WWWDIR%%/conf/config.inc.php.sample
 %%WWWDIR%%/htdocs/change.php
 %%WWWDIR%%/htdocs/changecustompwdfield.php
@@ -25,7 +26,6 @@
 %%WWWDIR%%/htdocs/sendtoken.php
 %%WWWDIR%%/htdocs/setattributes.php
 %%WWWDIR%%/htdocs/setquestions.php
-%%WWWDIR%%/htdocs/vendor/.gitignore
 %%WWWDIR%%/htdocs/vendor/bootstrap/css/bootstrap-grid.css
 %%WWWDIR%%/htdocs/vendor/bootstrap/css/bootstrap-grid.css.map
 %%WWWDIR%%/htdocs/vendor/bootstrap/css/bootstrap-grid.min.css
@@ -264,7 +264,6 @@
 %%WWWDIR%%/vendor/defuse/php-encryption/src/KeyOrPassword.php
 %%WWWDIR%%/vendor/defuse/php-encryption/src/KeyProtectedByPassword.php
 %%WWWDIR%%/vendor/defuse/php-encryption/src/RuntimeTests.php
-%%WWWDIR%%/vendor/gregwar/captcha/.gitignore
 %%WWWDIR%%/vendor/gregwar/captcha/.travis.yml
 %%WWWDIR%%/vendor/gregwar/captcha/composer.json
 %%WWWDIR%%/vendor/gregwar/captcha/demo/demo.php
@@ -293,7 +292,6 @@
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/CHANGELOG.md
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/composer.json
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/LICENSE
-%%WWWDIR%%/vendor/guzzlehttp/guzzle/package-lock.json
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/README.md
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/BodySummarizer.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/BodySummarizerInterface.php
@@ -321,15 +319,20 @@
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Handler/CurlHandler.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Handler/CurlMultiHandler.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Handler/CurlShareHandleState.php
+%%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Handler/CurlVersion.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Handler/EasyHandle.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Handler/HeaderProcessor.php
+%%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Handler/HostValidator.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Handler/MockHandler.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Handler/Proxy.php
+%%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Handler/ProxyEnvironment.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Handler/StreamHandler.php
+%%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Handler/TlsVersion.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/HandlerStack.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/MessageFormatter.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/MessageFormatterInterface.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Middleware.php
+%%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Multiplexing.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Pool.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/PrepareBodyMiddleware.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/RedirectMiddleware.php
@@ -399,13 +402,13 @@
 %%WWWDIR%%/vendor/guzzlehttp/psr7/UPGRADING.md
 %%WWWDIR%%/vendor/ltb-project/ltb-common/.github/workflows/php.yml
 %%WWWDIR%%/vendor/ltb-project/ltb-common/.github/workflows/unittests.yml
-%%WWWDIR%%/vendor/ltb-project/ltb-common/.gitignore
 %%WWWDIR%%/vendor/ltb-project/ltb-common/composer.json
 %%WWWDIR%%/vendor/ltb-project/ltb-common/LICENSE
 %%WWWDIR%%/vendor/ltb-project/ltb-common/phpunit.xml
 %%WWWDIR%%/vendor/ltb-project/ltb-common/README.md
 %%WWWDIR%%/vendor/ltb-project/ltb-common/run/ENVVAR.example
 %%WWWDIR%%/vendor/ltb-project/ltb-common/runIntegrationTests.sh
+%%WWWDIR%%/vendor/ltb-project/ltb-common/src/Ltb/Attributes.php
 %%WWWDIR%%/vendor/ltb-project/ltb-common/src/Ltb/AttributeValue.php
 %%WWWDIR%%/vendor/ltb-project/ltb-common/src/Ltb/Cache/Cache.php
 %%WWWDIR%%/vendor/ltb-project/ltb-common/src/Ltb/Cache/FileCache.php
@@ -424,6 +427,7 @@
 %%WWWDIR%%/vendor/ltb-project/ltb-common/src/ppolicy/html/policy.tpl
 %%WWWDIR%%/vendor/ltb-project/ltb-common/src/ppolicy/js/ppolicy.js
 %%WWWDIR%%/vendor/ltb-project/ltb-common/tests/IntegrationTests/IntegrationTest.php
+%%WWWDIR%%/vendor/ltb-project/ltb-common/tests/Ltb/AttributesTest.php
 %%WWWDIR%%/vendor/ltb-project/ltb-common/tests/Ltb/AttributeValueTest.php
 %%WWWDIR%%/vendor/ltb-project/ltb-common/tests/Ltb/CacheTest.php
 %%WWWDIR%%/vendor/ltb-project/ltb-common/tests/Ltb/DirectoryTest.php
@@ -434,7 +438,6 @@
 %%WWWDIR%%/vendor/ltb-project/ltb-common/tests/Ltb/PasswordTest.php
 %%WWWDIR%%/vendor/ltb-project/ltb-common/tests/Ltb/PpolicyTest.php
 %%WWWDIR%%/vendor/ltb-project/ltb-common/tests/Ltb/RedisCacheTest.php
-%%WWWDIR%%/vendor/mxrxdxn/pwned-passwords/.gitignore
 %%WWWDIR%%/vendor/mxrxdxn/pwned-passwords/.travis.yml
 %%WWWDIR%%/vendor/mxrxdxn/pwned-passwords/composer.json
 %%WWWDIR%%/vendor/mxrxdxn/pwned-passwords/composer.lock
@@ -1090,7 +1093,6 @@
 %%WWWDIR%%/vendor/psr/cache/src/CacheItemInterface.php
 %%WWWDIR%%/vendor/psr/cache/src/CacheItemPoolInterface.php
 %%WWWDIR%%/vendor/psr/cache/src/InvalidArgumentException.php
-%%WWWDIR%%/vendor/psr/container/.gitignore
 %%WWWDIR%%/vendor/psr/container/composer.json
 %%WWWDIR%%/vendor/psr/container/LICENSE
 %%WWWDIR%%/vendor/psr/container/README.md
@@ -1302,7 +1304,6 @@
 %%WWWDIR%%/vendor/symfony/var-exporter/LICENSE
 %%WWWDIR%%/vendor/symfony/var-exporter/README.md
 %%WWWDIR%%/vendor/symfony/var-exporter/VarExporter.php
-@dir %%WWWDIR%%/lib/vendor/bin
 @dir %%WWWDIR%%/vendor/components
 @dir %%WWWDIR%%/vendor/fortawesome
 @dir %%WWWDIR%%/vendor/twbs

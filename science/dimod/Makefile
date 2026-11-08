@@ -1,5 +1,5 @@
 PORTNAME=	dimod
-DISTVERSION=	0.12.22
+DISTVERSION=	0.12.23
 CATEGORIES=	science python
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,7 +9,7 @@ WWW=		https://github.com/dwavesystems/dimod
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	catch>0:devel/catch
+TEST_DEPENDS=	meson>0:devel/meson
 
 USES=		compiler:c++11-lang pkgconfig
 
@@ -25,9 +25,15 @@ do-install:
 	cd ${WRKSRC}/dimod/include && \
 		${COPYTREE_SHARE} dimod ${STAGEDIR}${PREFIX}/include
 
-do-test:
-	@cd ${WRKSRC}/testscpp && ${SETENV} ${MAKE_ENV} ${MAKE}
+pre-test:
+	@if [ ! -d ${WRKSRC}/builddir ]; then \
+		cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} meson setup builddir -Dbuild-tests=enabled -Dbuild-python=false; \
+	fi
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} meson compile -C builddir
 
-# tests as of 0.12.22: All tests passed (104295 assertions in 35 test cases)
+do-test:
+	@cd ${WRKSRC} && ${SETENV} ${TEST_ENV} meson test -C builddir --verbose
+
+# tests as of 0.12.23: All tests passed (104295 assertions in 35 test cases)
 
 .include <bsd.port.mk>

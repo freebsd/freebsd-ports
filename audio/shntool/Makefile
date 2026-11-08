@@ -1,6 +1,6 @@
 PORTNAME=	shntool
 DISTVERSION=	3.0.10
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	http://shnutils.freeshell.org/shntool/dist/src/
 
@@ -10,6 +10,8 @@ WWW=		http://www.etree.org/shnutils/shntool/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	Obsolete and abandonware, please use ffmpeg, sox or audio format's native application suite
 
 EXTRA_PATCHES=	${FILESDIR}/cfd06e4ed.patch:-p1
 

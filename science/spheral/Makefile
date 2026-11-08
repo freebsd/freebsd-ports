@@ -1,7 +1,7 @@
 PORTNAME=	spheral
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2025.12.0
-PORTREVISION=	1
+DISTVERSION=	2026.06.0
+PORTREVISION=	6
 CATEGORIES=	science # physics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -71,6 +71,7 @@ CMAKE_ON=	SPHERAL_ENABLE_SHARED \
 CMAKE_TESTING_ON=	SPHERAL_ENABLE_TESTS # tests fail to build, see https://github.com/LLNL/spheral/issues/230
 
 CXXFLAGS+=	-I${LOCALBASE}/include/eigen3
+LDFLAGS+=	-Wl,--allow-multiple-definition # workaround for the duplicate symbols problem in axom, https://github.com/LLNL/axom/issues/1983
 
 BINARY_ALIAS=	git=false python=${PYTHON_CMD} python3=${PYTHON_CMD}
 

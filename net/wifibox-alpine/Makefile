@@ -1,5 +1,5 @@
 PORTNAME=	wifibox-alpine
-PORTVERSION=	20260329
+PORTVERSION=	20260927
 CATEGORIES=	net
 
 MAINTAINER=	pali.gabor@gmail.com
@@ -13,6 +13,7 @@ ONLY_FOR_ARCHS=	amd64
 EXTRACT_ONLY=	${_DISTFILES:M*_GH0.tar.gz}
 
 BUILD_DEPENDS=	gtar>0:archivers/gtar \
+		mtools>0:filesystems/mtools \
 		patchelf>0:sysutils/patchelf \
 		squashfs-tools-ng>0:filesystems/squashfs-tools-ng
 
@@ -50,7 +51,7 @@ XX_FORWARDING_DESC=		User-space forwarding
 XX_TCPDUMP_DESC=		Packet analysis with tcpdump
 
 KERN_LTS_DESC=			Linux LTS (6.18.x)
-KERN_EDGE_DESC=			Linux edge (6.19.x)
+KERN_EDGE_DESC=			Linux edge (7.2.x)
 
 UDS_PASSTHRU_RUN_DEPENDS=	socat>0:net/socat
 
@@ -93,14 +94,14 @@ _GITHUB_SITE=	https://pgj.github.io/freebsd-wifibox/alpine
 USE_GITHUB=	nodefault
 GH_ACCOUNT=	pgj
 GH_PROJECT=	freebsd-wifibox-alpine:scripts
-GH_TAGNAME=	5f8a89561b4442a7be3ae1e1644c1eb89c515de5:scripts
+GH_TAGNAME=	baba4973d2f9000f17329a1c3e847ad530049603:scripts
 
-ALPINE_VERSION=		3.23.3
-LINUX_LTS_VERSION=	6.18.20-r0
-LINUX_EDGE_VERSION=	6.19.10-r0
+ALPINE_VERSION=		3.24.2
+LINUX_LTS_VERSION=	6.18.54-r0
+LINUX_EDGE_VERSION=	7.2.8-r0
 
 _LINUXFW_SITE=	https://cdn.kernel.org/pub/linux/kernel/firmware/
-_LINUXFW_TAG=	20260309
+_LINUXFW_TAG=	20260916
 _LINUXFW=	linux-firmware-${_LINUXFW_TAG}
 
 _WBA_BRANCH=	main
@@ -113,21 +114,21 @@ MASTER_SITES+=	${_GITHUB_SITE}/${_WBA_BRANCH}/upstream/:upstream \
 		https://github.com/openwrt/mt76/archive/:mt76
 
 _MINIROOTFS=	alpine-minirootfs-${ALPINE_VERSION}-x86_64.tar.gz
-_PACKAGES=	baselayout-3.7.1-r0:wifibox \
-		busybox-1.37.0-r4:wifibox \
-		ifupdown-ng-0.12.1-r6:wifibox \
-		iptables-1.8.11-r2:wifibox \
+_PACKAGES=	baselayout-3.7.2-r0:wifibox \
+		busybox-1.37.0-r5:wifibox \
+		ifupdown-ng-0.13.0-r0:wifibox \
+		iptables-1.8.13-r0:wifibox \
 		iw-6.17-r0 \
-		libcap2-2.77-r0 \
-		libcrypto3-3.5.5-r0 \
+		libcap2-2.78-r0 \
+		libcrypto3-3.5.8-r0 \
 		libmnl-1.0.5-r2 \
-		libnftnl-1.3.0-r0 \
+		libnftnl-1.3.1-r0 \
 		libnl3-3.11.0-r0 \
-		libssl3-3.5.5-r0 \
-		musl-1.2.5-r21 \
-		openrc-0.63-r0:wifibox \
-		skalibs-libs-2.14.4.0-r0 \
-		utmps-libs-0.1.3.1-r0
+		libssl3-3.5.8-r0 \
+		musl-1.2.6-r2 \
+		openrc-0.63.2-r0:wifibox \
+		skalibs-libs-2.15.0.0-r0 \
+		utmps-libs-0.1.3.3-r0
 
 _BOOT_SERVICES=		bootmisc defaults modules hostname hwclock networking sysctl \
 			syslog urandom
@@ -141,7 +142,7 @@ _IPW2100_FIRMWARE=	ipw/ipw2100-1.3 \
 			ipw/ipw2100-1.3-i
 _IPW2200_FIRMWARE=	iwi/ipw2200-bss \
 			iwi/ipw2200-ibss
-_MT76_FIRMWARE=		018f60316d4dd6b4e741874eda40e2dfaa29df3b
+_MT76_FIRMWARE=		be5ce7910521492d4a2e4ce7ee3843680a46c047
 
 _LINUX64_KMOD!=		(kldstat -qn linux64 && echo "found") || echo ""
 _LINUX_EMUL_PATH!=	(sysctl -qn compat.linux.emul_path) || echo ""
@@ -192,24 +193,24 @@ _BOOT_SERVICES+=	ip6tables radvd
 
 .if (${PORT_OPTIONS:MUDS_PASSTHRU} && empty(PORT_OPTIONS:MXX_FORWARDING)) \
 	|| make(makesum) || make(fetch-url-list-int)
-_PACKAGES+=		socat-1.8.0.3-r1:wifibox
+_PACKAGES+=		socat-1.8.1.3-r0:wifibox
 .endif
 
 .if ${PORT_OPTIONS:MXX_FORWARDING} || make(makesum) || make(fetch-url-list-int)
-_PACKAGES+=		socat-with-udp-1.8.0.3-r1:wifibox
+_PACKAGES+=		socat-with-udp-1.8.1.3-r0:wifibox
 .endif
 
 .if ${PORT_OPTIONS:MUDS_PASSTHRU} || make(makesum) || make(fetch-url-list-int)
-_PACKAGES+=		uds_passthru-0.1.1-r7:wifibox
+_PACKAGES+=		uds_passthru-0.1.1-r8:wifibox
 .endif
 
 .if ${PORT_OPTIONS:MIPV6} || make(makesum) || make(fetch-url-list-int)
-_PACKAGES+=		radvd-2.20-r1:wifibox
+_PACKAGES+=		radvd-2.21-r0:wifibox
 .endif
 
 .if ${PORT_OPTIONS:MIPV6} && ${PORT_OPTIONS:MAPP_SUPPLICANT} \
 	|| make(makesum) || make(fetch-url-list-int)
-_PACKAGES+=		dhcpcd-10.3.0-r0:wifibox
+_PACKAGES+=		dhcpcd-10.5.2-r0:wifibox
 .endif
 
 .if ${PORT_OPTIONS:MAPP_SUPPLICANT}
@@ -222,8 +223,8 @@ _ETC_SRCS+=		etc/optional/ipv6/wpa_supplicant
 .endif
 
 .if ${PORT_OPTIONS:MAPP_SUPPLICANT} || make(makesum) || make(fetch-url-list-int)
-_PACKAGES+=		pcsc-lite-libs-2.4.0-r1 \
-			wpa_supplicant-2.11-r1:wifibox
+_PACKAGES+=		pcsc-lite-libs-2.4.0-r4 \
+			wpa_supplicant-2.11-r2:wifibox
 .endif
 
 .if ${PORT_OPTIONS:MAPP_ACCESS_POINT}
@@ -236,7 +237,7 @@ _ETC_SRCS+=		etc/optional/ipv6/hostapd
 .endif
 
 .if ${PORT_OPTIONS:MAPP_ACCESS_POINT} || make(makesum) || make(fetch-url-list-int)
-_PACKAGES+=		hostapd-2.11-r2:wifibox
+_PACKAGES+=		hostapd-2.11-r3:wifibox
 .endif
 
 .if ${PORT_OPTIONS:MXX_MDNS}
@@ -246,7 +247,7 @@ _ETC_SRCS+=		etc/optional/mdns
 
 .if ${PORT_OPTIONS:MXX_MDNS} || make(makesum) || make(fetch-url-list-int)
 _PACKAGES+=		mbedtls2-2.28.10-r0 \
-			mDNSResponder-2881.0.25-r0:wifibox
+			mDNSResponder-2881.120.11-r0:wifibox
 .endif
 
 .if ${PORT_OPTIONS:MXX_FORWARDING}
@@ -255,12 +256,12 @@ _ETC_SRCS+=		etc/optional/forwarding
 .endif
 
 .if ${PORT_OPTIONS:MXX_FORWARDING} || make(makesum) || make(fetch-url-list-int)
-_PACKAGES+=		forwarding-0.1.0-r7:wifibox
+_PACKAGES+=		forwarding-0.1.0-r8:wifibox
 .endif
 
 .if ${PORT_OPTIONS:MXX_TCPDUMP} || make(makesum) || make(fetch-url-list-int)
-_PACKAGES+=		libpcap-1.10.5-r1 \
-			tcpdump-4.99.5-r1
+_PACKAGES+=		libpcap-1.10.7-r0 \
+			tcpdump-4.99.6-r1
 .endif
 
 .if ${PORT_OPTIONS:MKERN_LTS} || make(makesum) || make(fetch-url-list-int)
@@ -305,9 +306,9 @@ LINUX_FIRMWARE+=	${L${fw_opt}_FILES}
 .endif
 .endfor
 
-RTL8821CE_VERSION=	20251013
-RTW88_VERSION=		20260312
-RTW89_VERSION=		20260320
+RTL8821CE_VERSION=	20260825
+RTW88_VERSION=		20260521
+RTW89_VERSION=		20260909
 BROADCOM_WL_VERSION=	6.30.223.271
 
 _LINUX_LTS_MAJOR=	${LINUX_LTS_VERSION:C/^([0-9]*)\..*/\1/}

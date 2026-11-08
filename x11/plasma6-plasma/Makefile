@@ -1,7 +1,6 @@
 PORTNAME=	plasma
 DISTVERSION=	${KDE_PLASMA_VERSION}
-CATEGORIES=	x11 kde
-PKGNAMEPREFIX=	plasma6-
+CATEGORIES=	x11 kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Plasma desktop environment (meta port)

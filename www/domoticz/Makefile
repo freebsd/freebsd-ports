@@ -1,5 +1,6 @@
 PORTNAME=	domoticz
-DISTVERSION=	2025.2
+DISTVERSION=	2026.4
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	kiwi@FreeBSD.org
@@ -16,8 +17,10 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libjsoncpp.so:devel/jsoncpp \
 		libmosquitto.so:net/mosquitto
 
-USES=		cmake compiler:c++11-lang cpe minizip pkgconfig ssl lua:53 sqlite
+USES=		cmake compiler:c++11-lang cpe minizip pkgconfig ssl lua sqlite ssl
 USE_GITHUB=	yes
+GH_SUBDIR=      extern/libwebem:libwebem
+GH_TUPLE=       domoticz:libwebem:dde28f2:libwebem
 USE_RC_SUBR=	domoticz
 
 CMAKE_OFF+=	GIT_SUBMODULE \
@@ -36,6 +39,8 @@ CMAKE_INSTALL_PREFIX=	${PREFIX}/domoticz
 CONFLICTS_INSTALL=	domoticz-devel-[234]*
 
 EXTRACT_AFTER_ARGS=	--exclude ${PORTNAME}-${PORTVERSION}/hardware/plugins/Include \
+			--exclude ${PORTNAME}-${PORTVERSION}/scripts/build_server \
+			--exclude ${PORTNAME}-${PORTVERSION}/scripts/support \
 			--no-same-owner --no-same-permissions
 
 USERS=		domoticz
@@ -52,6 +57,18 @@ PRECOMP_CMAKE_BOOL=	USE_PRECOMPILED_HEADER
 
 PYTHON_USES=		python
 PYTHON_CMAKE_BOOL=	USE_PYTHON
+
+DOMOTICZ_REL=	0
+DOMOTICZ_TAG=	78ec238
+DOMOTICZ_TS=	0
+
+post-patch:
+	@${REINPLACE_CMD} -e "s,\/opt,${PREFIX},g" ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e "s,XXXPREFIXXXX,${PREFIX}/domoticz,g" ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e "/^ADD_PRECOMPILED_HEADER/ d" ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e "s/\(#define APPVERSION\)\(.*\)/\1 ${DOMOTICZ_REL}/" ${WRKSRC}/appversion.h
+	@${REINPLACE_CMD} -e "s/\(#define APPHASH\)\(.*\)/\1 \"${DOMOTICZ_TAG}\"/" ${WRKSRC}/appversion.h
+	@${REINPLACE_CMD} -e "s/\(#define APPDATE\)\(.*\)/\1 ${DOMOTICZ_TS}/" ${WRKSRC}/appversion.h
 
 post-install:
 	${MKDIR} ${STAGEDIR}/var/db/domoticz ${STAGEDIR}/var/run/domoticz

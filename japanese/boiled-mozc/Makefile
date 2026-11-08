@@ -1,7 +1,7 @@
 PORTNAME=	boiled-mozc
 PORTVERSION=	0.7
 DISTVERSIONPREFIX=v
-PORTREVISION=	26
+PORTREVISION=	27
 CATEGORIES=	japanese editors elisp
 
 MAINTAINER=	ume@FreeBSD.org
@@ -9,9 +9,6 @@ COMMENT=	Wrapper to mozc.el that offers modeless ("boil"ed) input style
 WWW=		https://github.com/tadanagao/boiled-mozc
 
 LICENSE=	BSD2CLAUSE
-
-BUILD_DEPENDS=	ja-mozc-el>0:japanese/mozc-el
-RUN_DEPENDS=	ja-mozc-el>0:japanese/mozc-el
 
 USES=		emacs
 USE_GITHUB=	yes

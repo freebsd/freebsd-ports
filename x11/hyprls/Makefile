@@ -1,7 +1,7 @@
 PORTNAME=	hyprls
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.14.0
-PORTREVISION=	2
+PORTREVISION=	7
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://gwen.works/hyprls
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.26+,modules
+USES=		go:modules
 
 USE_GITHUB=	nodefault
 GH_TUPLE=	hyprwm:hyprland-wiki:33bcb8ab99356eabe4d41e480674a965ce68a72c:hyprland_wiki/hyprland-wiki

@@ -3,6 +3,9 @@
   message: <<EOM
 Install the following software to enable extra features:
 
+contourpy
+    Necessary for the contour() glyph method of bokeh.plotting figures.
+
 Jupyter
     Bokeh can display content in classic Jupyter notebooks as well as in
     JupyterLab. Depending on your setup, there may be additional packages or

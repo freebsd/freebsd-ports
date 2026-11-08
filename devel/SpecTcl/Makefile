@@ -1,11 +1,12 @@
 PORTNAME=	SpecTcl
 PORTVERSION=	1.2.2a
+PORTREVISION=	1
 CATEGORIES=	devel tk
 MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}/${PORTVERSION}
 DISTNAME=	${PORTNAME}
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free drag-and-drop GUI builder for Tk and Java from Sun
 WWW=		https://spectcl.sourceforge.net/
 

@@ -1,6 +1,6 @@
 PORTNAME=	morewaita-icon-theme
 DISTVERSIONPREFIX=	v
-DISTVERSION=	49
+DISTVERSION=	50.1
 CATEGORIES=	x11-themes
 
 MAINTAINER=	tagattie@FreeBSD.org

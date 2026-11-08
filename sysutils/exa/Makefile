@@ -1,7 +1,7 @@
 PORTNAME=	exa
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.10.1
-PORTREVISION=	54
+PORTREVISION=	56
 CATEGORIES=	sysutils
 
 MAINTAINER=	ports@FreeBSD.org
@@ -10,6 +10,9 @@ WWW=		https://the.exa.website/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE
+
+DEPRECATED=	Abandoned upstream, use sysutils/eza instead
+EXPIRATION_DATE=2026-11-30
 
 LIB_DEPENDS=	libgit2.so:devel/libgit2
 

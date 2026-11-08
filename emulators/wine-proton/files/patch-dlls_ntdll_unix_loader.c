@@ -1,24 +1,24 @@
---- dlls/ntdll/unix/loader.c.orig	2025-11-06 09:54:15 UTC
+Disable for now mallopt feature on FreeBSD
+
+--- dlls/ntdll/unix/loader.c.orig	2026-08-03 08:08:29 UTC
 +++ dlls/ntdll/unix/loader.c
-@@ -557,6 +557,21 @@ char *get_alternate_wineloader( WORD machine )
+@@ -2451,7 +2451,9 @@ static void start_main_thread(void)
+     set_thread_teb( teb );
+ #endif
  
-     if (machine == current_machine) return NULL;
++#if !defined(__FreeBSD__)
+     mallopt( M_PERTURB, 0xff );
++#endif
+     init_startup_info();
+     *(ULONG_PTR *)&peb->CloudFileFlags = get_image_address();
+     set_load_order_app_name( main_wargv[0] );
+@@ -2460,7 +2462,9 @@ static void start_main_thread(void)
+     load_ntdll();
+     load_wow64_ntdll( main_image_info.Machine );
+     load_apiset_dll();
++#if !defined(__FreeBSD__)
+     mallopt( M_PERTURB, 0 );
++#endif
+     server_init_process_done();
+ }
  
-+    char* wineserver_path = getenv("WINESERVER");
-+    if (wineserver_path != NULL && wineserver_path[0] == '/') {
-+        char* s = remove_tail(wineserver_path, "server");
-+        if (s != NULL) {
-+            if (machine == IMAGE_FILE_MACHINE_AMD64) {
-+                ret = malloc(strlen(s) + 3);
-+                strcpy(ret, s);
-+                strcat(ret, "64");
-+            } else {
-+                ret = s;
-+            }
-+            return ret;
-+        }
-+    }
-+
-     /* try the 64-bit loader */
-     if (current_machine == IMAGE_FILE_MACHINE_I386 && machine == IMAGE_FILE_MACHINE_AMD64)
-     {

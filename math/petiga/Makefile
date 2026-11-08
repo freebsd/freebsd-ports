@@ -1,6 +1,5 @@
 PORTNAME=	petiga
-DISTVERSION=	g20221208
-PORTREVISION=	8
+DISTVERSION=	g20250403
 CATEGORIES=	math python
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,7 +10,9 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
 LIB_DEPENDS=	libblas.so:math/blas \
+		libblis.so:math/blis \
 		liblapack.so:math/lapack \
+		libmetis.so:math/metis \
 		libmpich.so:net/mpich \
 		libpetsc.so:science/PETSc
 
@@ -27,7 +28,7 @@ MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 USE_GITHUB=	yes
 GH_ACCOUNT=	dalcinl
 GH_PROJECT=	PetIGA
-GH_TAGNAME=	218fdfa
+GH_TAGNAME=	cc362e1
 
 TEST_TARGET=	check
 

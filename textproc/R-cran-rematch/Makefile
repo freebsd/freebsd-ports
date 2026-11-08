@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Match Regular Expressions with a Nicer 'API'
-WWW=		https://cran.r-project.org/web/packages/rematch/
+WWW=		https://cran.r-project.org/package=rematch
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

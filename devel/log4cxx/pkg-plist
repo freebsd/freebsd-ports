@@ -148,9 +148,11 @@ include/log4cxx/private/aprserversocket.h
 include/log4cxx/private/aprsocket.h
 include/log4cxx/private/atexitregistry.h
 include/log4cxx/private/boost-std-configuration.h
+include/log4cxx/private/consolewriter_priv.h
 include/log4cxx/private/datagramsocket_priv.h
 include/log4cxx/private/fileappender_priv.h
 include/log4cxx/private/filter_priv.h
+include/log4cxx/private/layout_priv.h
 include/log4cxx/private/log4cxx_private.h
 include/log4cxx/private/nteventlogappender_priv.h
 include/log4cxx/private/odbcappender_priv.h
@@ -206,5 +208,5 @@ lib/cmake/log4cxx/log4cxxTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/log4cxx/log4cxxTargets.cmake
 lib/liblog4cxx.so
 lib/liblog4cxx.so.15
-lib/liblog4cxx.so.15.7.0
+lib/liblog4cxx.so.15.8.0
 libdata/pkgconfig/liblog4cxx.pc

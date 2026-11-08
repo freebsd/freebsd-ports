@@ -2,7 +2,7 @@ PORTNAME=	MMseqs2
 DISTVERSION=	17-b804f
 CATEGORIES=	biology
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ultra fast and sensitive sequence search and clustering suite
 WWW=		https://github.com/soedinglab/MMseqs2/
 
@@ -20,7 +20,8 @@ USE_PERL5=	build
 
 SHEBANG_GLOB=	*.sh
 
-CMAKE_ARGS+=	-DVERSION_OVERRIDE=${DISTVERSION}
+CMAKE_ARGS+=	-DVERSION_OVERRIDE=${DISTVERSION} \
+		-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 CMAKE_ON=	DISABLE_IPS4O USE_SYSTEM_ZSTD
 
 LDFLAGS+=	-lpthread

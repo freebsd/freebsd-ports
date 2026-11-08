@@ -20,10 +20,4 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	VALIDATION
-OPTIONS_DEFAULT=VALIDATION
-VALIDATION_DESC=Validation support
-
-VALIDATION_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cerberus>=0:devel/py-cerberus@${PY_FLAVOR}
-
 .include <bsd.port.mk>

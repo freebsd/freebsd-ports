@@ -30,6 +30,7 @@ share/locale/es_CL/LC_MESSAGES/org.pwmt.zathura.mo
 share/locale/et/LC_MESSAGES/org.pwmt.zathura.mo
 share/locale/fr/LC_MESSAGES/org.pwmt.zathura.mo
 share/locale/he/LC_MESSAGES/org.pwmt.zathura.mo
+share/locale/hu/LC_MESSAGES/org.pwmt.zathura.mo
 share/locale/id/LC_MESSAGES/org.pwmt.zathura.mo
 share/locale/it/LC_MESSAGES/org.pwmt.zathura.mo
 share/locale/ka/LC_MESSAGES/org.pwmt.zathura.mo
@@ -37,11 +38,13 @@ share/locale/lt/LC_MESSAGES/org.pwmt.zathura.mo
 share/locale/nl/LC_MESSAGES/org.pwmt.zathura.mo
 share/locale/no/LC_MESSAGES/org.pwmt.zathura.mo
 share/locale/pl/LC_MESSAGES/org.pwmt.zathura.mo
+share/locale/pt/LC_MESSAGES/org.pwmt.zathura.mo
 share/locale/pt_BR/LC_MESSAGES/org.pwmt.zathura.mo
 share/locale/ru/LC_MESSAGES/org.pwmt.zathura.mo
 share/locale/sv/LC_MESSAGES/org.pwmt.zathura.mo
 share/locale/ta_IN/LC_MESSAGES/org.pwmt.zathura.mo
 share/locale/tr/LC_MESSAGES/org.pwmt.zathura.mo
 share/locale/uk/LC_MESSAGES/org.pwmt.zathura.mo
+share/locale/zh_CN/LC_MESSAGES/org.pwmt.zathura.mo
 share/metainfo/org.pwmt.zathura.metainfo.xml
 share/zsh/site-functions/_zathura

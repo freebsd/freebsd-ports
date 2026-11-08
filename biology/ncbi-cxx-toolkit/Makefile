@@ -1,8 +1,10 @@
 PORTNAME=	ncbi-cxx-toolkit
 DISTVERSIONPREFIX=	release/
-DISTVERSION=	30.4.0
-PORTREVISION=	1
+DISTVERSION=	30.9.0
 CATEGORIES=	biology science devel
+CPPFLAGS+=	-I${LOCALBASE}/lmdb0/include
+LDFLAGS+=	-L${LOCALBASE}/lmdb0/lib
+CONFIGURE_ENV+=	PKG_CONFIG_PATH=${LOCALBASE}/lmdb0/libdata/pkgconfig
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	NCBI C++ Toolkit
@@ -17,7 +19,7 @@ ONLY_FOR_ARCHS=	aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	deflate.c:149:2: error: "Only 64-bit Intel and ARM architectures are supported"
 
 LIB_DEPENDS=	libcdd.so:math/cddlib \
-		liblmdb.so:databases/lmdb0 \
+		liblmdb0.so:databases/lmdb0 \
 		libpcre.so:devel/pcre \
 		libunwind.so:devel/libunwind \
 		libzstd.so:archivers/zstd

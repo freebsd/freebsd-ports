@@ -18,8 +18,10 @@ lib/libmerkuro_contact.so.6
 %%QT_QMLDIR%%/org/kde/merkuro/components/NativeEditMenu.qml
 %%QT_QMLDIR%%/org/kde/merkuro/components/NativeFileMenu.qml
 %%QT_QMLDIR%%/org/kde/merkuro/components/NativeHelpMenu.qml
+%%QT_QMLDIR%%/org/kde/merkuro/components/NativeSettingsMenu.qml
 %%QT_QMLDIR%%/org/kde/merkuro/components/NativeWindowMenu.qml
 %%QT_QMLDIR%%/org/kde/merkuro/components/SettingsMenu.qml
+%%QT_QMLDIR%%/org/kde/merkuro/components/SystemAccountsForm.qml
 %%QT_QMLDIR%%/org/kde/merkuro/components/WindowMenu.qml
 %%QT_QMLDIR%%/org/kde/merkuro/components/kde-qmlmodule.version
 %%QT_QMLDIR%%/org/kde/merkuro/components/libMerkuroComponentsplugin.so
@@ -185,6 +187,9 @@ share/locale/ta/LC_MESSAGES/plasma_applet_org.kde.merkuro.contact.mo
 share/locale/tr/LC_MESSAGES/merkuro.mo
 share/locale/tr/LC_MESSAGES/merkurolauncher.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_org.kde.merkuro.contact.mo
+share/locale/ug/LC_MESSAGES/merkuro.mo
+share/locale/ug/LC_MESSAGES/merkurolauncher.mo
+share/locale/ug/LC_MESSAGES/plasma_applet_org.kde.merkuro.contact.mo
 share/locale/uk/LC_MESSAGES/merkuro.mo
 share/locale/uk/LC_MESSAGES/merkurolauncher.mo
 share/locale/uk/LC_MESSAGES/plasma_applet_org.kde.merkuro.contact.mo

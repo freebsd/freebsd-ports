@@ -1,0 +1,8 @@
+--- CMakeLists.txt.orig	2018-10-22 20:28:28 UTC
++++ CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 3.1.0)
++cmake_minimum_required(VERSION 3.5.0)
+ project(cpptoml)
+ 
+ set(cpptoml_VERSION 0.4.0)

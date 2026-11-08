@@ -1,3 +1,12 @@
 #!/bin/sh
 
-cd %%PREFIX%%/libexec/processing && ./start-processing
+# Run the upstream Linux build of Processing under the Linuxulator.
+
+PROCESSING_DIR=%%PREFIX%%/libexec/processing
+
+# The bundled Linux JRE needs a writable sketchbook/settings location.
+if [ -z "${XDG_DATA_HOME}" ] && [ -d "${HOME}/.local/share" ]; then
+	export XDG_DATA_HOME="${HOME}/.local/share"
+fi
+
+exec "${PROCESSING_DIR}/bin/Processing" "$@"

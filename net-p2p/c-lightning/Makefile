@@ -1,9 +1,8 @@
 PORTNAME=	c-lightning
-# To build from an arbitrary git commit comment PORTVERSION and PORTREVISION (if present)
-PORTVERSION=	26.06.6
+# To build from an arbitrary git commit set PORTVERSION=0, comment PORTREVISION (if present)
+# and set PKGNAMESUFFIX.
+PORTVERSION=	26.06.10
 DISTVERSIONPREFIX=	v
-# and uncomment the following two lines (use for example -git-HEAD or -git-f8d8348c)
-#PORTVERSION=	0
 #PKGNAMESUFFIX=	-git-f8d8348c
 CATEGORIES=	net-p2p finance
 
@@ -30,6 +29,7 @@ USES=		autoreconf:build \
 		libtool \
 		python:build \
 		shebangfix
+
 CPE_VENDOR=	elementsproject
 BINARY_ALIAS=	python3=${PYTHON_CMD} sed=${LOCALBASE}/bin/gsed
 ALL_TARGET=	default
@@ -77,8 +77,8 @@ GIT_COMMIT=	${PKGNAMESUFFIX:C/-git-//}
 GIT_COMMIT=	${DISTVERSIONPREFIX}${PORTVERSION}
 .endif
 GH_TUPLE=	ElementsProject:lightning:${GIT_COMMIT} \
-		ElementsProject:libwally-core:12f5ac4ccf0e2:ext1/external/libwally-core \
-		BlockstreamResearch:secp256k1-zkp:615262261:ext2/external/libwally-core/src/secp256k1 \
+		ElementsProject:libwally-core:0c41f38fb1c20:ext1/external/libwally-core \
+		ElementsProject:secp256k1-zkp:45f6f0f158c5a:ext2/external/libwally-core/src/secp256k1 \
 		ianlancetaylor:libbacktrace:793921876c981ce:ext3/external/libbacktrace \
 		zserge:jsmn:18e9fe42cbfe21d65076f5c77ae2be3:ext4/external/jsmn \
 		valyala:gheap:67fc83bc953324f4759e52951921d:ext5/external/gheap

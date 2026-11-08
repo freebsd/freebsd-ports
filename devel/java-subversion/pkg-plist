@@ -1,0 +1,5 @@
+lib/libsvnjavahl-1.so
+lib/libsvnjavahl-1.so.0
+lib/libsvnjavahl-1.so.0.0.0
+%%JAVAJARDIR%%/svn-javahl.jar
+

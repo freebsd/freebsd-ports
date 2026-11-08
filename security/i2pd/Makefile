@@ -1,5 +1,5 @@
 PORTNAME=	i2pd
-DISTVERSION=	2.61.0
+DISTVERSION=	3.0.0
 CATEGORIES=	security net-p2p
 
 MAINTAINER=	driesm@FreeBSD.org

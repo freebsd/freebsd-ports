@@ -1,0 +1,2 @@
+OpenTelemetry aiohttp client Integration allows tracing HTTP requests made by
+the aiohttp client library.

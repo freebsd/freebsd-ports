@@ -1,6 +1,5 @@
 PORTNAME=	gprbuild
-DISTVERSIONPREFIX=	v
-DISTVERSION=	26.0.0 # Sync updating with textproc/xmlada.
+DISTVERSION=	27.1 # Sync updating with textproc/xmlada.
 PORTEPOCH=	1
 CATEGORIES=	devel
 
@@ -21,17 +20,21 @@ BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx@${PY_FLAVOR}
 USES=		ada:run python:build
 USE_BINUTILS=	yes
 
+CONFLICTS_INSTALL=	grpc-1.*	# libgpr.so
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	AdaCore
 GH_PROJECT=	gprconfig_kb:kb xmlada:xa
-
-CONFIGURE_TARGET=	${_CONFIGURE_ARCH}-portbld-${_CONFIGURE_PLATFORM}
+GH_TAGNAME=	2781289e9e2bdc31350962211b7ef792d7d31c6f \
+		9823ffb294187897a08b14bbce00743ff647cae1:xa \
+		ba383a7fa2a1ce8d27d44b00b8052acc0d49493c:kb
 
 MAKE_CMD=	gprbuild
 
 NO_SHLIB_REQUIRES_GLOB=	libgnarl-${_ada_version}.so libgnat-${_ada_version}.so
 
-PLIST_SUB=	SO_VERSION=${DISTVERSION}
+PLIST_SUB=	SO_VERSION=${_SO_VERSION} \
+		SO_VERSION_MAJOR=${_SO_VERSION_MAJOR}
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
@@ -60,6 +63,7 @@ PROFILE_VARS=		_GPRBUILD_GPR_PROJECT_ARGS=-XGPRBUILD_BUILD=profiling \
 			_LIBGPR_GPR_PROJECT_ARGS=-XGPR_BUILD=profiling \
 			_XMLADA_GPR_PROJECT_ARGS=-XXMLADA_BUILD_MODE=profile
 
+_BOOTSTRAP_KB_WRKSRC=			${WRKSRC_kb}
 _BOOTSTRAP_GNATMAKE_FLAGS=		GNATMAKEFLAGS="-D ${_BOOTSTRAP_WRKDIR} -j${MAKE_JOBS_NUMBER} -vh"
 _BOOTSTRAP_GPR_PREFIX=			${_BOOTSTRAP_PREFIX}/share/gpr
 _BOOTSTRAP_PATH=			${_BOOTSTRAP_PREFIX}/bin
@@ -71,9 +75,7 @@ _BOOTSTRAP_XMLADA_GPRINSTALL_ARGS=	${_XMLADA_GPR_PROJECT_ARGS} \
 					--no-manifest \
 					--prefix='${_BOOTSTRAP_PREFIX}' -p -v
 _BOOTSTRAP_XMLADA_LIBRARY_TYPES=	static-pic
-_BOOTSTRAP_XMLADA_WRKSRC=		${WRKDIR}/xmlada-${DISTVERSION}
-_CONFIGURE_ARCH=			${ARCH:S/amd64/x86_64/}
-_CONFIGURE_PLATFORM=			${OPSYS:tl}${OSREL}
+_BOOTSTRAP_XMLADA_WRKSRC=		${WRKSRC_xa}
 _DIST_BUILD_DATE=			20251007
 _DIST_BUILD_TYPE=			FSF
 _DOCS_INSTALL_EXCLUDES=			"-not -name .buildinfo -not -regex ^./_sources.*"
@@ -96,6 +98,8 @@ _GPRINSTALL_ARGS=			--no-manifest \
 					--prefix='${STAGEDIR}${PREFIX}' -p -v
 _LIBGPR_LIBRARY_TYPES=			relocatable static-pic
 _LIBGPR_GPR_PROJECT_ARGS=		-XGPR_BUILD=${WITH_DEBUG:Uproduction:Ddebug}
+_SO_VERSION=				${DISTVERSION}
+_SO_VERSION_MAJOR=			${DISTVERSION:R}
 _XMLADA_GPR_PROJECT_ARGS=		-XXMLADA_BUILD_MODE=${WITH_DEBUG:UProduction:DDebug}
 
 .include <bsd.port.options.mk>
@@ -114,7 +118,7 @@ post-patch:
 		${WRKSRC}/gpr/src/gpr-env.adb \
 		${WRKSRC}/gpr/src/gpr-conf.adb \
 		${WRKSRC}/doc/gprbuild_ug/gnat_project_manager.rst
-	${REINPLACE_CMD} -e 's|%%SO_VERSION%%|${DISTVERSION}|' \
+	${REINPLACE_CMD} -e 's|%%SO_VERSION%%|${_SO_VERSION}|' \
 		${WRKSRC}/gpr/gpr.gpr
 	${REINPLACE_CMD} -e 's|%%DISTVERSION%%|${DISTVERSION}|' \
 		-e 's|%%DIST_BUILD_DATE%%|${_DIST_BUILD_DATE}|' \
@@ -134,13 +138,13 @@ pre-build:
 	(cd ${WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} ${MAKE_ENV} ${_BOOTSTRAP_GNATMAKE_FLAGS} \
 		./bootstrap.sh --build --prefix=${_BOOTSTRAP_PREFIX} \
-		--with-kb=${WRKDIR}/gprconfig_kb-${DISTVERSION} --with-xmlada=${_BOOTSTRAP_XMLADA_WRKSRC})
+		--with-kb=${_BOOTSTRAP_KB_WRKSRC} --with-xmlada=${_BOOTSTRAP_XMLADA_WRKSRC})
 	@${ECHO_MSG} "*** pre-build target (2):"
 	@${ECHO_MSG} "*** Install bootstrapped GPR tools into ${_BOOTSTRAP_PREFIX}."
 	(cd ${WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} ${MAKE_ENV} ${_BOOTSTRAP_GNATMAKE_FLAGS:C|-j[[:digit:]]||} \
 		./bootstrap.sh --install --prefix=${_BOOTSTRAP_PREFIX} \
-		--with-kb=${WRKDIR}/gprconfig_kb-${DISTVERSION} --with-xmlada=${_BOOTSTRAP_XMLADA_WRKSRC})
+		--with-kb=${_BOOTSTRAP_KB_WRKSRC} --with-xmlada=${_BOOTSTRAP_XMLADA_WRKSRC})
 	@${ECHO_MSG} "*** pre-build target (3):"
 	@${ECHO_MSG} "*** Configure GPRBuild (gprconfig) with the used GNAT-${_ada_version} tool-chain."
 	(cd ${WRKSRC} && \

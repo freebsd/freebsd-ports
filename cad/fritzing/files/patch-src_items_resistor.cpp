@@ -1,6 +1,6 @@
---- src/items/resistor.cpp.orig	2025-04-02 10:33:24 UTC
+--- src/items/resistor.cpp.orig	2026-07-28 07:36:38 UTC
 +++ src/items/resistor.cpp
-@@ -260,7 +260,7 @@ bool Resistor::collectExtraInfo(QWidget * parent, cons
+@@ -258,7 +258,7 @@ bool Resistor::collectExtraInfo(QWidget * parent, cons
  		validator->setSymbol(OhmSymbol);
  		validator->setConverter(TextUtils::convertFromPowerPrefix);
  		validator->setBounds(MIN_RESISTANCE, MAX_RESISTANCE);

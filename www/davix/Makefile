@@ -1,7 +1,6 @@
 PORTNAME=	davix
 DISTVERSIONPREFIX=	R_
-DISTVERSION=	0_8_10
-PORTREVISION=	2
+DISTVERSION=	0_9_0
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,11 +11,12 @@ WWW=		https://dmc-docs.web.cern.ch/dmc-docs/davix.html \
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	nlohmann-json>0:devel/nlohmann-json
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libuuid.so:misc/libuuid
 TEST_DEPENDS=	googletest>0:devel/googletest
 
-USES=		cmake:testing compiler:c++11-lang gnome localbase:ldflags python:build shebangfix ssl
+USES=		cmake:testing compiler:c++17-lang gnome localbase:ldflags python:build shebangfix ssl
 SHEBANG_GLOB=	*.py
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
@@ -37,5 +37,6 @@ post-install:
 	@${RM} -r ${STAGEDIR}${DOCSDIR}
 
 # tests as of 0.8.8: tests freeze, see https://github.com/cern-fts/davix/issues/133
+# tests as of 0.9.0: same freeze, upstream doesn't seem to care
 
 .include <bsd.port.mk>

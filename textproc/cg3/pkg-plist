@@ -6,6 +6,7 @@ bin/cg-mwesplit
 bin/cg-proc
 bin/cg-relabel
 bin/cg-sort
+bin/cg-stabilize-relations
 bin/cg-strictify
 bin/cg-untrace
 bin/cg3-autobin.pl

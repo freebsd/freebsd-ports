@@ -1,2 +1,3 @@
-SHA256 (postfix-logwatch-1.40.03.tgz) = c9aae87471554bb93c9d91bd2df3999ce3fae19f75ffd43fdee3f8552232c748
-SIZE (postfix-logwatch-1.40.03.tgz) = 107065
+TIMESTAMP = 1789266005
+SHA256 (postfix-logwatch-1.40.07.tar.xz) = 923a664af034e4ad74ae086fa8e272476b855b6521107c3b4be9f278d2e121f5
+SIZE (postfix-logwatch-1.40.07.tar.xz) = 79396

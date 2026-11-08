@@ -1,9 +1,9 @@
 PORTNAME=	cached-property
-PORTVERSION=	1.5.2
-PORTREVISION=	1
+PORTVERSION=	2.0.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	cached_property-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Decorator for caching properties in classes

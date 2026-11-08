@@ -1,0 +1,2 @@
+OpenTelemetry Propagator for AWS X-Ray Service provides the propagator necessary
+to inject or extract a tracing context across AWS services.

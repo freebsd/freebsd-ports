@@ -1,32 +1,41 @@
 PORTNAME=	suil
-PORTVERSION=	0.10.12
-PORTREVISION=	3
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.10.26
 CATEGORIES=	audio
-MASTER_SITES=	http://download.drobilla.net/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	vishwin@FreeBSD.org
 COMMENT=	C library for loading and wrapping LV2 plugin UIs
-WWW=		http://drobilla.net/software/suil/
+WWW=		https://gitlab.com/lv2/suil
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	lv2>=1.14.0:audio/lv2
-LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2
-RUN_DEPENDS=	lv2>=1.14.0:audio/lv2
+BUILD_RUN_DEPENDS=	lv2>=1.14.0:audio/lv2
 
-USES=		compiler:c++11-lang gnome pkgconfig python:build qt:5 \
-		tar:bzip2 waf xorg
-USE_GNOME=	atk cairo gdkpixbuf glib20 gtk20 gtk30 pango
-USE_QT=		core gui widgets x11extras
-USE_XORG=	x11
+USES=		compiler:c++17-lang gnome meson pkgconfig qt:6 xorg
+USE_GITLAB=	yes
+GL_ACCOUNT=	lv2
 USE_LDCONFIG=	yes
+PLIST_SUB=	SUILVERSION=${DISTVERSION}
 
-PLIST_SUB=	SUILVERSION=${PORTVERSION}
+MESON_ARGS=	-Ddocs=disabled \
+		-Dqt5=disabled \
+		-Dtests=enabled \
+		-Dx11=enabled
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsuil-0.so.${PORTVERSION}
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/suil-0/*.so
+USE_XORG=	x11
+
+OPTIONS_DEFINE=	GTK2 GTK3 QT6
+OPTIONS_DEFAULT=	GTK3 QT6
+OPTIONS_SUB=	yes
+
+GTK2_USE=	gnome=gtk20
+GTK2_MESON_ENABLED=	gtk2
+
+GTK3_USE=	gnome=gtk30
+GTK3_MESON_ENABLED=	gtk3
+
+QT6_USE=	qt=base
+QT6_MESON_ENABLED=	qt6
 
 .include <bsd.port.mk>

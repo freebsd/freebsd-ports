@@ -1,7 +1,5 @@
 bin/inotifywait
 bin/inotifywatch
-%%STATIC%%bin/inotifywait.static
-%%STATIC%%bin/inotifywatch.static
 include/inotifytools/fanotify-dfid-name.h
 include/inotifytools/fanotify.h
 include/inotifytools/inotify-nosys.h

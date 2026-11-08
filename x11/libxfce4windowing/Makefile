@@ -1,6 +1,5 @@
 PORTNAME=	libxfce4windowing
-DISTVERSION=	4.20.6
-PORTREVISION=	1
+DISTVERSION=	4.20.7
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE
 DIST_SUBDIR=	xfce4
@@ -13,8 +12,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libdisplay-info.so:sysutils/libdisplay-info
 
-USES=		gettext-tools gnome meson pkgconfig python:build shebangfix \
-		tar:bz2 xfce xorg
+USES=		gettext-tools gnome localbase:ldflags meson pkgconfig \
+		python:build shebangfix tar:bz2 xfce xorg
 USE_GNOME=	glib20 gtk30 libwnck3
 USE_LDCONFIG=	yes
 USE_XFCE=	xdt

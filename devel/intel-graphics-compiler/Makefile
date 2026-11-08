@@ -11,9 +11,13 @@ WWW=		https://01.org/compute-runtime
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
+DEPRECATED=	Unmaintained port that nothing depends on
+EXPIRATION_DATE=	2026-12-25
+
 ONLY_FOR_ARCHS=	aarch64 amd64 i386
 ONLY_FOR_ARCHS_REASON=	only Intel GPUs on x86 are supported
-BROKEN_FreeBSD_14_i386=	lld crashes during build
+#BROKEN_FreeBSD_14_i386=	lld crashes during build
+BROKEN=		Fails to build, error: a template argument list is expected after a name prefixed by the template keyword
 
 BUILD_DEPENDS=	vc-intrinsics-${FLAVOR}>=0.4.0:devel/vc-intrinsics@${FLAVOR}
 LIB_DEPENDS=	libLLVM-${FLAVOR:S/llvm//}.so:devel/${FLAVOR} \

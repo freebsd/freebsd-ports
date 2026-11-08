@@ -10,7 +10,7 @@ WWW=		https://gitlab.freedesktop.org/xorg/lib/libxt
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe tar:xz xorg xorg-cat:lib
+USES=		cpe xorg xorg-cat:lib
 USE_XORG=	x11 sm ice xorgproto
 CPE_VENDOR=	x
 CPE_PRODUCT=	libxt

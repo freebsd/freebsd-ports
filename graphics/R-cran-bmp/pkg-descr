@@ -1,0 +1,3 @@
+bmp provides the ability to read Windows BMP format images in R.
+Currently limited to 8 bit greyscale images and 24,32 bit (A)RGB
+images. Pure R implementation without external dependencies.

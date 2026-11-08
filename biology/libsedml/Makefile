@@ -1,7 +1,6 @@
 PORTNAME=	libsedml
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.33
-PORTREVISION=	1
+DISTVERSION=	2.0.34
 CATEGORIES=	biology devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -35,6 +34,6 @@ post-install:
 
 # the project builds static libs with -fPIC, see https://github.com/fbergmann/libSEDML/issues/155
 
-# tests as of 2.0.33: All tests passed (351 assertions in 33 test cases)
+# tests as of 2.0.34: 100% tests passed, 0 tests failed out of 1
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/profiles/avatar_toolbar_button_state_manager.h.orig	2026-06-10 12:51:34 UTC
+--- chrome/browser/ui/views/profiles/avatar_toolbar_button_state_manager.h.orig	2026-08-13 16:48:13 UTC
 +++ chrome/browser/ui/views/profiles/avatar_toolbar_button_state_manager.h
-@@ -240,7 +240,7 @@ class AvatarToolbarButtonStateManager
+@@ -272,7 +272,7 @@ class AvatarToolbarButtonStateManager
  
    // Shared IPH methods.
    void MaybeShowProfileSwitchIPH();

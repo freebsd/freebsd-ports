@@ -16,6 +16,8 @@ GH_ACCOUNT=	kthohr
 
 NO_ARCH=	yes
 
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4 compatibility, see https://github.com/kthohr/gcem/issues/64
+
 do-test:
 	@cd ${BUILD_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DGCEM_BUILD_TESTS:BOOL=ON ${CMAKE_SOURCE_PATH} && \

@@ -1,9 +1,12 @@
 PORTNAME=	pygsl
-PORTVERSION=	2.6.4
-PORTREVISION=	3
+PORTVERSION=	2.6.5
 CATEGORIES=	math python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/pygsl/pygsl/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+PATCH_SITES=	https://github.com/pygsl/pygsl/commit/
+PATCHFILES=	52d5f5dc8494f0cd1259dfd897dc1128a0de464d.patch:-p1
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python interface to GNU Scientific Library

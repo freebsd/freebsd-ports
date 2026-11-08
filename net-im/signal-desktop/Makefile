@@ -1,6 +1,6 @@
 PORTNAME=	signal-desktop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	8.18.0
+DISTVERSION=	8.33.0
 PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	LOCAL/mikael/signal-desktop/:npm
@@ -60,10 +60,6 @@ USE_GL=		gbm gl
 USE_GNOME=	atk cairo gdkpixbuf glib20 gtk30 libxml2 libxslt pango
 USE_XORG=	x11 xcb xcomposite xdamage xext xfixes xi xrandr xrender xtst
 
-PACKAGE_ENV=	SIGNAL_ENV=production \
-		npm_config_runtime=electron \
-		npm_config_target=${ELECTRON_VER_MAJOR} \
-		npm_config_nodedir=${LOCALBASE}/share/electron${ELECTRON_VER_MAJOR}/node_headers
 MAKE_ENV+=	ELECTRON_OVERRIDE_DIST_PATH=${LOCALBASE}/share/electron${ELECTRON_VER_MAJOR} \
 		HOME=${WRKDIR} \
 		USE_SYSTEM_APP_BUILDER=true \
@@ -80,26 +76,14 @@ MAKE_ENV+=	PYTHONDONTWRITEBYTECODE=1
 
 _BUILD_DATE=	$$(date +'%s')
 
-ELECTRON_VER_MAJOR=	42
-PNPM_VERS=		10.18.1
-
-NODE_ARCH=	${ARCH:S/aarch64/arm64/:S/amd64/x64/}
-APP_OUT_DIR=	linux-${ARCH:S/aarch64/arm64-/:S/amd64//}unpacked
-
-PLIST_SUB=	NODE_ARCH=${NODE_ARCH} \
-		SHARP_ARCH=${ARCH:S/aarch64/arm64v8/:S/amd64/x64/}
+ELECTRON_VER_MAJOR=	44
+PNPM_VERS=		12.16.1
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == aarch64
-PLIST_SUB+=	NOT_AARCH64="@comment "
-.elif ${ARCH} == amd64
-PLIST_SUB+=	NOT_AARCH64=""
-.endif
-
 do-build:
-# electron-builder is stupid and tries to open ${LOCALBASE}/share/electron42/electron with WRITE priv
-# copy ${LOCALBASE}/share/electron42 in WRKDIR
+# electron-builder is stupid and tries to open ${LOCALBASE}/share/electron44/electron with WRITE priv
+# copy ${LOCALBASE}/share/electron44 in WRKDIR
 # it's needed for the do-install phase, it's here because of this issue
 # https://github.com/MikaelUrankar/signal-desktop/issues/6 (I don't know why it fails though)
 	@${RM} -r ${WRKDIR}/electron${ELECTRON_VER_MAJOR}
@@ -122,25 +106,25 @@ do-build:
 		${SETENV} ${MAKE_ENV} npm_config_nodedir=${LOCALBASE}/share/electron${ELECTRON_VER_MAJOR}/node_headers pnpm install --ignore-scripts || ${TRUE}
 
 	# Install libsignal_node.so, libringrtc.so and node_sqlcipher.node binaries in node_modules
-	${MKDIR} ${WRKSRC}/node_modules/@signalapp/libsignal-client/prebuilds/freebsd-${NODE_ARCH} \
+	${MKDIR} ${WRKSRC}/node_modules/@signalapp/libsignal-client/prebuilds/freebsd-x64 \
 		 ${WRKSRC}/node_modules/@signalapp/ringrtc/build/freebsd \
-		 ${WRKSRC}/node_modules/@signalapp/sqlcipher/prebuilds/freebsd-${NODE_ARCH}
+		 ${WRKSRC}/node_modules/@signalapp/sqlcipher/prebuilds/freebsd-x64
 
 	${CP} ${LOCALBASE}/lib/libsignal_node.so \
-		${WRKSRC}/node_modules/@signalapp/libsignal-client/prebuilds/freebsd-${NODE_ARCH}/@signalapp+libsignal-client.node
+		${WRKSRC}/node_modules/@signalapp/libsignal-client/prebuilds/freebsd-x64/@signalapp+libsignal-client.node
 	${CP} ${LOCALBASE}/lib/libringrtc.so \
-		${WRKSRC}/node_modules/@signalapp/ringrtc/build/freebsd/libringrtc-${NODE_ARCH}.node
+		${WRKSRC}/node_modules/@signalapp/ringrtc/build/freebsd/libringrtc-x64.node
 	${CP} ${LOCALBASE}/lib/node_sqlcipher.node \
-		${WRKSRC}/node_modules/@signalapp/sqlcipher/prebuilds/freebsd-${NODE_ARCH}
+		${WRKSRC}/node_modules/@signalapp/sqlcipher/prebuilds/freebsd-x64
 
 	cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} npm_config_nodedir=${LOCALBASE}/share/electron${ELECTRON_VER_MAJOR}/node_headers pnpm install
-	cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} pnpm run clean-transpile
+	cd ${WRKSRC}/packages/types && \
+		${SETENV} ${MAKE_ENV} pnpm run prepare
 
 	# found in reproducible-builds/docker-entrypoint.sh
 	cd ${WRKSRC}/sticker-creator && \
-		${SETENV} ${MAKE_ENV} pnpm install --frozen-lock
+		${SETENV} ${MAKE_ENV} pnpm install
 	cd ${WRKSRC}/sticker-creator && \
 		${SETENV} ${MAKE_ENV} pnpm run build
 
@@ -148,16 +132,23 @@ do-build:
 		${SETENV} ${MAKE_ENV} pnpm run generate
 
 do-install:
-# taken from https://github.com/tagattie/FreeBSD-Electron/blob/master/Mk/Uses/electron.mk#L387
-# and editors/vscode
+# taken from Mk/Uses/electron.mk:405
 	cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} ${PACKAGE_ENV} npm run build:electron -- \
-			--linux --dir --config.npmRebuild=false \
-			--config.electronDist=${WRKDIR}/electron${ELECTRON_VER_MAJOR}
+		${SETENV} ${MAKE_ENV} SIGNAL_ENV=production pnpm electron-builder \
+		--linux \
+		--dir \
+		--publish never \
+		--config.npmRebuild=false \
+		--config.electronVersion=44 \
+		--config.electronDist=${WRKDIR}/electron${ELECTRON_VER_MAJOR}
 
 	${MKDIR} ${STAGEDIR}${DATADIR}
-	cd ${BUILD_WRKSRC}/dist/${APP_OUT_DIR} && \
+	cd ${WRKSRC}/dist/linux-unpacked && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
+
+	# install polkit policies so that backup works
+	cd ${WRKSRC}/build/policy-templates  && \
+		${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share/polkit-1/actions
 
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/images/signal-logo-desktop-linux.png \
@@ -165,7 +156,7 @@ do-install:
 	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.desktop \
 		${STAGEDIR}${PREFIX}/share/applications
 
-.for f in chromedriver mksnapshot v8_context_snapshot_generator
+.for f in chromedriver mksnapshot v8_context_snapshot_generator version resources/*.policy
 	${RM} ${STAGEDIR}${DATADIR}/${f}
 .endfor
 	${RM} -r ${STAGEDIR}${DATADIR}/gen

@@ -1,0 +1,32 @@
+revert https://github.com/pytest-dev/pytest/commit/67738403d7e14e0284f6c9f737e68de823760c33
+remove after devel/py-setuptools is updated to at least 77.0.0
+
+--- pyproject.toml.orig	2026-06-19 10:38:22 UTC
++++ pyproject.toml
+@@ -1,7 +1,7 @@ requires = [
+ [build-system]
+ build-backend = "setuptools.build_meta"
+ requires = [
+-    "setuptools>=77",
++    "setuptools>=61",
+     "setuptools-scm[toml]>=6.2.3",
+ ]
+ 
+@@ -13,8 +13,7 @@ keywords = [
+     "test",
+     "unittest",
+ ]
+-license = "MIT"
+-license-files = [ "LICENSE" ]
++license = { text = "MIT" }
+ authors = [
+     { name = "Brianna Laugher" },
+     { name = "Bruno Oliveira" },
+@@ -28,6 +27,7 @@ classifiers = [
+ classifiers = [
+     "Development Status :: 6 - Mature",
+     "Intended Audience :: Developers",
++    "License :: OSI Approved :: MIT License",
+     "Operating System :: MacOS",
+     "Operating System :: Microsoft :: Windows",
+     "Operating System :: POSIX",

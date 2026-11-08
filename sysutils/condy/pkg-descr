@@ -1,0 +1,4 @@
+Daemon that starts conky and rotates the desktop wallpaper. Detects
+fvwm, bvwm, GNOME, and KDE so the matching conky rc can be used, and
+sets wallpaper with hsetroot(1). Sample conky rcs, wallpapers, and a
+configuration overlay are included.

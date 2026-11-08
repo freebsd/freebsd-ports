@@ -8,6 +8,7 @@
 %%DATADIR%%/arraymap.scm
 %%DATADIR%%/batch.scm
 %%DATADIR%%/bigloo.init
+%%DATADIR%%/binsearch.scm
 %%DATADIR%%/break.scm
 %%DATADIR%%/byte.scm
 %%DATADIR%%/bytenumb.scm
@@ -60,12 +61,14 @@
 %%DATADIR%%/grapheps.ps
 %%DATADIR%%/grapheps.scm
 %%DATADIR%%/guile-2.init
+%%DATADIR%%/guile-3.init
 %%DATADIR%%/guile.init
 %%DATADIR%%/hash.scm
 %%DATADIR%%/hashtab.scm
 %%DATADIR%%/html4each.scm
 %%DATADIR%%/htmlform.scm
 %%DATADIR%%/http-cgi.scm
+%%DATADIR%%/i18n.scm
 %%DATADIR%%/iso8601.scm
 %%DATADIR%%/jscheme.init
 %%DATADIR%%/kawa.init

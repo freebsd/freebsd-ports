@@ -1,0 +1,59 @@
+#!/bin/sh
+#
+# PROVIDE: go_away
+# REQUIRE: NETWORKING mountall quota
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# go_away_enable (bool):	Set to "NO" by default.
+#				Set it to "YES" to enable go-away.
+# go_away_user   (user):	Set user to run go_away.
+#				Default is "%%DEFAULT_USER%%".
+# go_away_flags  (str):		Mandatory site-specific arguments.
+#
+# Flags are documented at:
+# https://git.gammaspectra.live/git/go-away/wiki/Installation#command-line-usage
+#
+
+. /etc/rc.subr
+
+name="go_away"
+rcvar="go_away_enable"
+desc="Proxy implementing countermeasures for unwanted LLM training"
+
+load_rc_config $name
+
+: ${go_away_enable="NO"}
+: ${go_away_command:="%%PREFIX%%/bin/go-away"}
+: ${go_away_user="%%DEFAULT_USER%%"}
+: ${go_away_flags=""}
+
+pidfile="/var/run/${name}.pid"
+
+start_cmd="${name}_start"
+stop_cmd="${name}_stop"
+restart_cmd="${name}_restart"
+
+go_away_start() {
+    echo "Starting ${name}."
+    /usr/sbin/daemon -p ${pidfile} -c -u ${go_away_user} -S -T ${name} -f ${go_away_command} ${go_away_flags}
+}
+
+go_away_stop() {
+    echo "Stopping ${name}."
+    if [ -e "${pidfile}" ]; then
+        kill -s TERM `cat ${pidfile}`
+        rm -f ${pidfile}
+    else
+        echo "${name} is not running."
+    fi
+}
+
+go_away_restart() {
+    ${name}_stop
+    sleep 2
+    ${name}_start
+}
+
+run_rc_command "$1"

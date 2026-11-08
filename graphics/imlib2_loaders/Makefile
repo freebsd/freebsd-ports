@@ -1,5 +1,5 @@
 PORTNAME=	imlib2_loaders
-DISTVERSION=	1.12.6
+DISTVERSION=	1.12.7
 PORTEPOCH=	2
 CATEGORIES=	graphics enlightenment
 MASTER_SITES=	SF/enlightenment/imlib2-src/${DISTVERSION}
@@ -20,23 +20,11 @@ USES=		libtool localbase pathfix pkgconfig tar:xz xorg
 USE_XORG=	x11 xext
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-static
+CONFIGURE_ARGS=	--disable-static \
+		--enable-xcf
 
 INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFAULT=	XCF
-OPTIONS_MULTI=		LOADERS
-OPTIONS_MULTI_LOADERS=	EET XCF
-
-OPTIONS_SUB=	yes
-
-EET_DESC=	Enable eet loader
-XCF_DESC=	Enable XCF loader
-
-EET_BROKEN=		eet loader broken since v1.7.2
-EET_LIB_DEPENDS=	libefl.so:devel/efl
-EET_CONFIGURE_ENABLE=	eet
-
-XCF_CONFIGURE_ENABLE=	xcf
+PLIST_FILES=	lib/imlib2/loaders/xcf.so
 
 .include <bsd.port.mk>

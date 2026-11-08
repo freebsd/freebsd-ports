@@ -1,6 +1,6 @@
 PORTNAME=	sftpgo
-PORTVERSION=	2.7.4
-PORTREVISION=	1
+PORTVERSION=	2.7.6
+PORTREVISION=	2
 CATEGORIES=	ftp www
 MASTER_SITES=	https://github.com/drakkan/${PORTNAME}/releases/download/v${DISTVERSION}/
 DISTNAME=	${PORTNAME}_v${PORTVERSION}_src_with_deps
@@ -12,7 +12,7 @@ WWW=		https://github.com/drakkan/sftpgo
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.26+,modules tar:xz
+USES=		go:modules tar:xz
 USE_RC_SUBR=	${PORTNAME}
 
 NO_WRKSUBDIR=	yes

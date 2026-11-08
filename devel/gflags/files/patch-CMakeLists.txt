@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2026-07-22 17:20:47 UTC
++++ CMakeLists.txt
+@@ -91,7 +91,7 @@ set (PACKAGE_NAME        "gflags")
+ # ----------------------------------------------------------------------------
+ # package information
+ set (PACKAGE_NAME        "gflags")
+-set (PACKAGE_VERSION     "2.3.0")
++set (PACKAGE_VERSION     "%%PORTVERSION%%")
+ set (PACKAGE_STRING      "${PACKAGE_NAME} ${PACKAGE_VERSION}")
+ set (PACKAGE_TARNAME     "${PACKAGE_NAME}-${PACKAGE_VERSION}")
+ set (PACKAGE_BUGREPORT   "https://github.com/gflags/gflags/issues")

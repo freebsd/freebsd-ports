@@ -4,11 +4,11 @@ include/audiocdplugins/audiocdplugins_version.h
 lib/libaudiocdplugins.so
 lib/libaudiocdplugins.so.5
 lib/libaudiocdplugins.so.%%SHLIB_VER_LONG%%
+%%QT_PLUGINDIR%%/audiocd/libaudiocd_encoder_flac.so
+%%QT_PLUGINDIR%%/audiocd/libaudiocd_encoder_lame.so
+%%QT_PLUGINDIR%%/audiocd/libaudiocd_encoder_opus.so
+%%QT_PLUGINDIR%%/audiocd/libaudiocd_encoder_wav.so
 %%QT_PLUGINDIR%%/kf6/kio/audiocd.so
-%%QT_PLUGINDIR%%/libaudiocd_encoder_flac.so
-%%QT_PLUGINDIR%%/libaudiocd_encoder_lame.so
-%%QT_PLUGINDIR%%/libaudiocd_encoder_opus.so
-%%QT_PLUGINDIR%%/libaudiocd_encoder_wav.so
 %%QT_PLUGINDIR%%/plasma/kcms/systemsettings_qwidgets/kcm_audiocd.so
 share/applications/kcm_audiocd.desktop
 share/config.kcfg/audiocd_flac_encoder.kcfg
@@ -381,7 +381,9 @@ share/locale/tr/LC_MESSAGES/audiocd_encoder_opus.mo
 share/locale/tr/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/tr/LC_MESSAGES/kcmaudiocd.mo
 share/locale/tr/LC_MESSAGES/kio_audiocd.mo
+share/locale/ug/LC_MESSAGES/audiocd_encoder_flac.mo
 share/locale/ug/LC_MESSAGES/audiocd_encoder_lame.mo
+share/locale/ug/LC_MESSAGES/audiocd_encoder_opus.mo
 share/locale/ug/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/ug/LC_MESSAGES/kcmaudiocd.mo
 share/locale/ug/LC_MESSAGES/kio_audiocd.mo

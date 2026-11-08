@@ -1,6 +1,5 @@
 PORTNAME?=		mysql
-PORTVERSION=		8.4.10
-PORTREVISION=		1
+PORTVERSION=		8.4.13
 CATEGORIES=		databases
 MASTER_SITES=		MYSQL/MySQL-8.4
 PKGNAMESUFFIX?=		84-server
@@ -107,12 +106,12 @@ CONFLICTS_INSTALL=	mysql*-server \
 			mariadb*-server \
 			percona*-server
 
-USE_RC_SUBR=	mysql-server
+USE_RC_SUBR=	mysql-server mysqlrouter
 
-SUB_FILES=	my.cnf.sample pkg-message
+SUB_FILES=	my.cnf.sample mysqlrouter.conf.sample pkg-message
 
-USERS=		mysql
-GROUPS=		mysql
+USERS=		mysql mysqlrouter
+GROUPS=		mysql mysqlrouter
 
 USE_LDCONFIG+=	${PREFIX}/lib/mysql/plugin
 
@@ -167,9 +166,14 @@ post-extract:
 post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKDIR}/my.cnf.sample ${STAGEDIR}${ETCDIR}/my.cnf.sample
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/mysqlrouter
+	${INSTALL_DATA} ${WRKDIR}/mysqlrouter.conf.sample \
+		${STAGEDIR}${PREFIX}/etc/mysqlrouter/mysqlrouter.conf.sample
 	${MKDIR} ${STAGEDIR}${ETCDIR}/keyring
 	${MKDIR} ${STAGEDIR}${MY_SECDIR}
 	${MKDIR} ${STAGEDIR}${MY_TMPDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${MV} ${STAGEDIR}${PREFIX}/LICENSE.router ${STAGEDIR}${PREFIX}/README.router ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>

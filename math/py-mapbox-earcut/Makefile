@@ -1,7 +1,6 @@
 PORTNAME=	mapbox-earcut
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.0
-PORTREVISION=	1
+DISTVERSION=	2.1.0
 CATEGORIES=	math
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,6 +26,9 @@ GH_PROJECT=	mapbox_earcut_python
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_WRKSRC=	${WRKSRC}/tests
 
-# tests as of 2.0.0: 13 passed, 12 skipped in 2.79s
+# tests as of 2.1.0:
+# Results (0.34s):
+#       13 passed
+#       12 skipped
 
 .include <bsd.port.mk>

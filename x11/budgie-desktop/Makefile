@@ -1,15 +1,12 @@
 PORTNAME=	budgie-desktop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	10.9.3
-PORTREVISION=	2
+DISTVERSION=	10.9.4
 CATEGORIES=	x11 budgie
 MASTER_SITES=	BUDGIE
 
 MAINTAINER=	duchateau.olivier@gmail.com
 COMMENT=	Modern and familiar desktop environment
 WWW=		https://github.com/BuddiesOfBudgie/budgie-desktop
-
-BROKEN=		Fails to build, vapigen command fails
 
 LICENSE=		GPLv2 LGPL21
 LICENSE_COMB=		multi
@@ -21,7 +18,7 @@ BUILD_DEPENDS=	gnome-settings-daemon>0:sysutils/gnome-settings-daemon \
 		sassc:textproc/sassc \
 		zenity:x11/zenity
 LIB_DEPENDS=	libpolkit-gobject-1.so:sysutils/polkit \
-		libpeas-1.0.so:devel/libpeas1 \
+		libpeas-2.so:devel/libpeas \
 		libuuid.so:misc/libuuid \
 		libnotify.so:devel/libnotify \
 		libaccountsservice.so:sysutils/accountsservice \
@@ -46,7 +43,7 @@ USES=		budgie gettext-tools gnome gstreamer meson pkgconfig \
 		tar:xz vala:build xfce xorg
 USE_BUDGIE=	libmagpie screensaver:build
 USE_GNOME=	cairo gdkpixbuf glib20 gnomedesktop3 gnomemenus3 \
-		gtk30 intltool:build introspection libwnck3
+		gtk30 intltool:build introspection:build libwnck3
 USE_GSTREAMER=	libgstreamer
 USE_XFCE=	windowing
 USE_XORG=	x11 xext xfixes xi xorgproto

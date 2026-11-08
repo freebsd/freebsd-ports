@@ -1,6 +1,7 @@
 PORTNAME=	blocky
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.34.0
+DISTVERSION=	0.35.0
+PORTREVISION=	2
 CATEGORIES=	dns
 
 MAINTAINER=	diizzy@FreeBSD.org
@@ -10,7 +11,7 @@ WWW=		https://0xerr0r.github.io/blocky/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.26+,modules
+USES=		go:modules
 
 USE_RC_SUBR=	blocky
 

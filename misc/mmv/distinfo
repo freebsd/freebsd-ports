@@ -1,5 +1,3 @@
-TIMESTAMP = 1577192605
-SHA256 (mmv_1.01b.orig.tar.gz) = 0399c027ea1e51fd607266c1e33573866d4db89f64a74be8b4a1d2d1ff1fdeef
-SIZE (mmv_1.01b.orig.tar.gz) = 25656
-SHA256 (mmv_1.01b-19.debian.tar.xz) = 79e0d8d31f76f6121dc563fa626dfaf9e2d4d9cec840121dd42e6b8cfc638b3e
-SIZE (mmv_1.01b-19.debian.tar.xz) = 12436
+TIMESTAMP = 1787690941
+SHA256 (mmv-2.10.tar.gz) = 2bbba14c099b512b4a7e9effacec53caa06998069d108a5669ff424ffc879d03
+SIZE (mmv-2.10.tar.gz) = 939108

@@ -1,7 +1,7 @@
---- config/database.yml.sample.orig	2026-02-25 04:33:47 UTC
+--- config/database.yml.sample.orig	2026-08-26 02:08:29 UTC
 +++ config/database.yml.sample
 @@ -1,7 +1,12 @@
- # Default setup is given for MySQL 5.7.7 or later.
+ # Default setup is given for MySQL 8.0 or later.
  # Examples for PostgreSQL, SQLite3 and SQL Server can be found at the end.
  # Line indentation must be 2 spaces (no tabs).
 +# Delete/comment all non-installed adapter entries
@@ -13,7 +13,7 @@
  production:
    adapter: mysql2
    # You can also use "trilogy", an adapter for MySQL-compatible servers.
-@@ -47,12 +52,15 @@ test:
+@@ -43,12 +48,15 @@ test:
      transaction_isolation: "READ-COMMITTED"
  
  # PostgreSQL configuration example
@@ -29,7 +29,7 @@
  
  # SQLite3 configuration example
  #production:
-@@ -60,6 +68,7 @@ test:
+@@ -56,6 +64,7 @@ test:
  #  database: db/redmine.sqlite3
  
  # SQL Server configuration example

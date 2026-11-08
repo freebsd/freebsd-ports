@@ -1,8 +1,8 @@
 PORTNAME=	SoapyUHD
 DISTVERSIONPREFIX=	soapy-uhd-
-DISTVERSION=	0.4.1-18
+DISTVERSION=	0.4.1-27
+DISTVERSIONSUFFIX=	-g4ac9dc6
 PORTREVISION=	2
-DISTVERSIONSUFFIX=	-g6b52139
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,7 +20,7 @@ USES=		cmake compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	pothosware
 
-PLIST_FILES=	lib/SoapySDR/modules0.8/libuhdSupport.so \
+PLIST_FILES=	lib/SoapySDR/modules0.9/libuhdSupport.so \
 		lib/uhd/modules/libsoapySupport.so
 
 .include <bsd.port.mk>

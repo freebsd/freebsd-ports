@@ -1,11 +1,13 @@
---- configure.orig	Wed Aug 22 22:03:08 2007
-+++ configure	Wed Aug 22 22:03:20 2007
-@@ -3455,7 +3455,7 @@
+--- configure.orig	2007-02-06 02:59:32 UTC
++++ configure
+@@ -3455,8 +3455,8 @@ fi
      taglib_LIBS=`$TAGLIB_CONFIG --libs`
  fi
  
 -CPPFLAGS="$CPPFLAGS -Wall -O2 -D_FILE_OFFSET_BITS=64 -DFUSE_USE_VERSION=25 $FUSE_CPPFLAGS $libgpod_CFLAGS $taglib_CFLAGS"
+-LIBS="$FUSE_LIBS $libgpod_LIBS $taglib_LIBS"
 +CPPFLAGS="$CPPFLAGS -Wall -O2 -D_FILE_OFFSET_BITS=64 -DFUSE_USE_VERSION=25 $FUSE_CFLAGS $libgpod_CFLAGS $taglib_CFLAGS"
- LIBS="$FUSE_LIBS $libgpod_LIBS $taglib_LIBS"
++LIBS="$FUSE_LIBS $libgpod_LIBS -lglib-2.0 $taglib_LIBS"
  
  ac_config_files="$ac_config_files Makefile src/Makefile man/Makefile"
+ 

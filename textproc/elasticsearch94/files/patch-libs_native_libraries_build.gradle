@@ -1,0 +1,60 @@
+--- libs/native/libraries/build.gradle.orig	2026-10-28 20:24:18 UTC
++++ libs/native/libraries/build.gradle
+@@ -66,11 +66,13 @@ dependencies {
+     transformSpec.getFrom().attribute(ArtifactTypeDefinition.ARTIFACT_TYPE_ATTRIBUTE, ArtifactTypeDefinition.ZIP_TYPE);
+     transformSpec.getTo().attribute(ArtifactTypeDefinition.ARTIFACT_TYPE_ATTRIBUTE, ArtifactTypeDefinition.DIRECTORY_TYPE);
+   });
+-  libs "org.elasticsearch:zstd:${zstdVersion}:darwin-aarch64"
+-  libs "org.elasticsearch:zstd:${zstdVersion}:darwin-x86-64"
+-  libs "org.elasticsearch:zstd:${zstdVersion}:linux-aarch64"
+-  libs "org.elasticsearch:zstd:${zstdVersion}:linux-x86-64"
+-  libs "org.elasticsearch:zstd:${zstdVersion}:windows-x86-64"
++  if (System.getenv("LOCAL_ZSTD_BINARY") == null) {
++    libs "org.elasticsearch:zstd:${zstdVersion}:darwin-aarch64"
++    libs "org.elasticsearch:zstd:${zstdVersion}:darwin-x86-64"
++    libs "org.elasticsearch:zstd:${zstdVersion}:linux-aarch64"
++    libs "org.elasticsearch:zstd:${zstdVersion}:linux-x86-64"
++    libs "org.elasticsearch:zstd:${zstdVersion}:windows-x86-64"
++  }
+   // if testing locally, its assumed that the custom compiled binaries are copied to the correct directory
+   // See `simdvec/native/build.gradle` for details on how to compile locally
+   if (System.getenv("LOCAL_VEC_BINARY_OS") == null){
+@@ -78,6 +80,11 @@ dependencies {
+   }
+ }
+ 
++def buildLibVec = tasks.register('buildLibVec', Exec) {
++  workingDir = file('../../simdvec/native')
++  commandLine 'gmake', 'install'
++}
++
+ def extractLibs = tasks.register('extractLibs', Copy) {
+   into layout.buildDirectory.dir('platform')
+   from configurations.libs
+@@ -87,6 +94,26 @@ def extractLibs = tasks.register('extractLibs', Copy) 
+   }
+   filesMatching("win32*/*") {
+     it.path = it.path.replace("win32", "windows")
++  }
++  if (System.getProperty("os.name", "").startsWith("FreeBSD")) {
++    if (Boolean.parseBoolean(System.getProperty("freebsd.build.fromPorts", "false")) == true) {
++      from('%%LOCALBASE%%/lib') {
++        include 'libzstd.so'
++        into 'freebsd-x64'
++      }
++    } else {
++      from('/usr/local/lib') {
++        include 'libzstd.so'
++        into 'freebsd-x64'
++      }
++    }
++    if (Boolean.parseBoolean(System.getProperty("freebsd.build.libvec", "false")) == true) {
++      dependsOn buildLibVec
++      from(file("../../simdvec/native/build/libs/vec/freebsd/amd64/")) {
++        include 'libvec.so'
++        into 'freebsd-x64'
++      }
++    }
+   }
+   includeEmptyDirs = false
+   filePermissions {

@@ -1,5 +1,6 @@
 PORTNAME=	atunes
 DISTVERSION=	3.2.0
+PORTREVISION=	1
 CATEGORIES=	audio java
 MASTER_SITES=	SF/${PORTNAME}/latest-builds \
 		SF/${PORTNAME}/${PORTNAME}/aTunes%20${DISTVERSION}
@@ -11,6 +12,9 @@ WWW=		https://sourceforge.net/projects/atunes/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license.txt
+
+DEPRECATED=	last upstream version is from 2014, does not work with jdk11+
+EXPIRATION_DATE=	2027-01-17
 
 USES=		java
 JAVA_VERSION=	8

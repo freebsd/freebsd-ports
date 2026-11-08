@@ -1,5 +1,5 @@
-TIMESTAMP = 1777852333
-SHA256 (owasp-modsecurity-ModSecurity-v2.9.13_GH0.tar.gz) = 11fedc512f43dac25146f8ed88cae6fd5335cb14f3743c9ead71927c176eca0d
-SIZE (owasp-modsecurity-ModSecurity-v2.9.13_GH0.tar.gz) = 3805170
+TIMESTAMP = 1791099874
+SHA256 (owasp-modsecurity-ModSecurity-v2.9.15_GH0.tar.gz) = ae2d0e74c534e3c554a118d037d92b28c94caa033c1420ab00a4f110337c623a
+SIZE (owasp-modsecurity-ModSecurity-v2.9.15_GH0.tar.gz) = 3817377
 SHA256 (libinjection-libinjection-2117822_GH0.tar.gz) = 9769f3e9dcfc13f63159b7598c5f9e645c9ab08536f431e99e183773604877bf
 SIZE (libinjection-libinjection-2117822_GH0.tar.gz) = 2237303

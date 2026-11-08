@@ -1,3 +1,5 @@
-TIMESTAMP = 1765776654
-SHA256 (domoticz-domoticz-2025.2.16997-cb3b96b72_GH0.tar.gz) = 079ea25b02cb4c9b6137b9e5e794302e0fbb43d0c9de81c18ba5057f701b6944
-SIZE (domoticz-domoticz-2025.2.16997-cb3b96b72_GH0.tar.gz) = 13486291
+TIMESTAMP = 1792636954
+SHA256 (domoticz-domoticz-2026.4.18490-623d51af5_GH0.tar.gz) = 875464cc4d253e4867f24797c4d7c992b838f6b2b3636ca44cdaef7f4f1da3e7
+SIZE (domoticz-domoticz-2026.4.18490-623d51af5_GH0.tar.gz) = 13761501
+SHA256 (domoticz-libwebem-b7fd46e_GH0.tar.gz) = 67475e75ea1cd99ff3bdfc0ef4a74bf14d463138666bd858f99a66ea914d1672
+SIZE (domoticz-libwebem-b7fd46e_GH0.tar.gz) = 255306

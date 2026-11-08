@@ -1,0 +1,4 @@
+`cosmic-bg` is a layer shell protocol implementation to
+handle wallpapers for the COSMIC desktop environment. It supports
+common image formats, using gradients or solid colors, per-display
+backgrounds, and slideshows.

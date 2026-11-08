@@ -1,0 +1,37 @@
+#!/bin/sh
+#
+# Immich ships bin/immich-admin as a two-line stub that calls start.sh from
+# PATH and needs bash.  Both assumptions hold inside its container image only,
+# so run the server's admin entry point directly instead.
+
+MAIN=%%WWWDIR%%/server/dist/main.js
+ENV_FILE=%%PREFIX%%/etc/immich.env
+
+if [ ! -f "${MAIN}" ]; then
+	echo "${MAIN} not found, is www/immich installed?" >&2
+	exit 1
+fi
+
+if [ ! -r "${ENV_FILE}" ]; then
+	echo "cannot read ${ENV_FILE}" >&2
+	exit 1
+fi
+
+set -a
+. "${ENV_FILE}"
+set +a
+
+: ${IMMICH_MEDIA_LOCATION:=/var/db/immich}
+export IMMICH_MEDIA_LOCATION
+export IMMICH_BUILD_DATA=%%WWWDIR%%/build-data
+export NODE_ENV=production
+
+if [ "$(id -u)" = "0" ]; then
+	# chroot(8) drops privileges without a shell in between, so the
+	# arguments reach execve(2) untouched no matter what the caller's
+	# login shell is.
+	exec chroot -u immich -g immich / %%LOCALBASE%%/bin/node --no-warnings \
+		"${MAIN}" immich-admin "$@"
+fi
+
+exec %%LOCALBASE%%/bin/node --no-warnings "${MAIN}" immich-admin "$@"

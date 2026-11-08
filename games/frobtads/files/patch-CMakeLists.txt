@@ -1,0 +1,8 @@
+--- CMakeLists.txt.orig	2026-09-04 19:59:48 UTC
++++ CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 3.1)
++cmake_minimum_required(VERSION 3.10)
+ project(FrobTADS)
+ 
+ option (

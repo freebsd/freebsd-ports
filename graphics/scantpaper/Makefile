@@ -1,6 +1,6 @@
 PORTNAME=	scantpaper
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.14
+DISTVERSION=	4.0.3
 CATEGORIES=	graphics python
 
 MAINTAINER=	cmt@FreeBSD.org
@@ -16,11 +16,15 @@ LIB_DEPENDS=	libtiff.so:graphics/tiff \
 		libpoppler.so:graphics/poppler \
 		libgoocanvas-2.0.so:graphics/goocanvas2
 RUN_DEPENDS=	unpaper:graphics/unpaper \
+		jbig2:graphics/jbig2enc \
 		${PYTHON_PKGNAMEPREFIX}img2pdf>0:graphics/py-img2pdf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tesserocr>0:graphics/py-tesserocr@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ocrmypdf>=15.4.3:textproc/py-ocrmypdf@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ocrmypdf>=16.10.0:textproc/py-ocrmypdf@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pikepdf>0:textproc/py-pikepdf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-iso639>0:textproc/py-python-iso639@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sane>0:graphics/py-sane@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}typing-extensions>0:devel/py-typing-extensions@${PY_FLAVOR} \
 		${PY_PILLOW}
 
 USES=		compiler:c++17-lang gettext gnome magick:build,run python
@@ -33,11 +37,11 @@ NO_ARCH=	yes
 PLIST_SUB=	DISTVERSION=${DISTVERSION}
 
 post-build:
-	(cd ${WRKSRC} ; python3.12 dev/compile_mo.py --src po --out locale --domain scantpaper)
+	(cd ${WRKSRC} ; ${PYTHON_CMD} dev/compile_mo.py --src po --out locale --domain scantpaper)
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/16x16/apps ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
 	(cd ${WRKSRC} ; for mo in locale/*/LC_MESSAGES/scantpaper.mo ; do ${MKDIR} "${STAGEDIR}${PREFIX}/share/$$(dirname $${mo})" ; ${INSTALL_DATA} "$${mo}" "${STAGEDIR}${PREFIX}/share/$$(dirname $${mo})/" ; done)
-	(cd ${WRKSRC} ; for ico in icons/hicolor/*/apps/* ; do ${INSTALL_DATA} "$${ico}" "${STAGEDIR}${PREFIX}/share/$${ico}" ; done)
+	(cd ${WRKSRC}/src/scantpaper ; for ico in icons/hicolor/*/apps/* ; do ${INSTALL_DATA} "$${ico}" "${STAGEDIR}${PREFIX}/share/$${ico}" ; done)
 
 .include <bsd.port.mk>

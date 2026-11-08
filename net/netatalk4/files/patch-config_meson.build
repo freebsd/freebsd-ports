@@ -1,10 +1,10 @@
---- config/meson.build.orig	2026-05-30 12:42:34 UTC
+--- config/meson.build.orig	2026-09-15 04:49:45 UTC
 +++ config/meson.build
-@@ -4,65 +4,21 @@ afp_conf = configure_file(
+@@ -4,62 +4,21 @@ afp_conf = configure_file(
      configuration: cdata,
  )
  
--if (fs.exists(pkgconfdir / 'afp.conf') and not get_option('with-overwrite'))
+-if fs.exists(pkgconfdir / 'afp.conf') and not overwrite_config
 -    message('will not replace existing', pkgconfdir / 'afp.conf')
 -else
 -    install_data(afp_conf, install_dir: pkgconfdir, install_tag: 'config')
@@ -21,10 +21,7 @@
          configuration: cdata,
      )
  
--    if (
--        fs.exists(pkgconfdir / 'dbus-session.conf')
--        and not get_option('with-overwrite')
--    )
+-    if (fs.exists(pkgconfdir / 'dbus-session.conf') and not overwrite_config)
 -        message('will not replace existing', pkgconfdir / 'dbus-session.conf')
 -    else
 -        install_data(dbus_session_conf, install_dir: pkgconfdir, install_tag: 'config')
@@ -34,7 +31,7 @@
  
 -static_conf_files = ['extmap.conf']
 -
--if have_appletalk
+-if enable_appletalk
 -    static_conf_files += ['atalkd.conf', 'macipgw.conf', 'papd.conf']
 -endif
 -
@@ -48,7 +45,7 @@
 -    cups_libdir = '/usr/lib'
 -endif
 -
--if have_appletalk and have_cups and get_option('with-cups-pap-backend')
+-if enable_appletalk and have_cups and install_cups_pap_backend
 -    configure_file(
 -        input: 'pap.in',
 -        output: 'pap',
@@ -60,7 +57,7 @@
 -endif
 -
 -foreach file : static_conf_files
--    if (fs.exists(pkgconfdir / file) and not get_option('with-overwrite'))
+-    if fs.exists(pkgconfdir / file) and not overwrite_config
 -        message('will not replace existing', pkgconfdir / file)
 -    else
 -        install_data(file, install_dir: pkgconfdir, install_tag: 'config')
@@ -68,5 +65,5 @@
 -endforeach
 +install_data('extmap.conf', rename: 'extmap.conf.sample', install_dir: pkgconfdir)
  
- if (fs.exists('/etc/ld.so.conf.d') and get_option('with-ldsoconf'))
+ if fs.exists('/etc/ld.so.conf.d') and enable_ldsoconf
      configure_file(

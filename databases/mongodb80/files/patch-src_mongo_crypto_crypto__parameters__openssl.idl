@@ -1,0 +1,17 @@
+--- src/mongo/crypto/crypto_parameters_openssl.idl.orig	2026-09-29 00:00:00 UTC
++++ src/mongo/crypto/crypto_parameters_openssl.idl
+@@ -38,7 +38,7 @@ server_parameters:
+         default: 256 # Matches OpenSSL default
+         redact: false
+         condition:
+-            preprocessor: "defined(__linux__)"
++            preprocessor: "defined(__linux__) || defined(__FreeBSD__)"
+ 
+     opensslPrimaryDRBGReseedMaxTime:
+         description: Max amount of time that can pass before the primary DRBG must reseed
+@@ -49,4 +49,4 @@ server_parameters:
+         default: 3600 # 1 hour, matches OpenSSL default
+         redact: false
+         condition:
+-            preprocessor: "defined(__linux__)"
++            preprocessor: "defined(__linux__) || defined(__FreeBSD__)"

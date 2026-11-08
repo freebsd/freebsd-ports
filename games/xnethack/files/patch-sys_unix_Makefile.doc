@@ -1,0 +1,33 @@
+--- sys/unix/Makefile.doc.orig	2026-09-27 12:22:28 UTC
++++ sys/unix/Makefile.doc
+@@ -88,13 +88,13 @@ $(MAKEDEFS)	: ../util/makedefs.c ../include/config.h .
+ # (note: 'make makedefs', not 'make $(MAKEDEFS)')
+ $(MAKEDEFS)	: ../util/makedefs.c ../include/config.h ../src/mdlib.c \
+ 		  ../util/mdgrep.h
+-	( cd .. ; make makedefs )
++	( cd .. ; $(MAKE) makedefs )
+ 
+ ../util/stripbs: ../util/stripbs.c
+ 	( cd .. ; $(MAKE) stripbs )
+ 
+ GAME	= xnethack
+-MANDIR	?= /usr/man/man6
++MANDIR	?= $(PREFIX)/share/man/man6
+ MANEXT	= 6
+ MANDIRPREP ?=  true
+ 
+@@ -112,10 +112,10 @@ manpages: $(PREMANPAGES)
+ 
+ manpages: $(PREMANPAGES)
+ 	-$(MANDIRPREP)
+-	-$(GAMEMANCREATE) $(MANDIR)/$(GAME).$(MANEXT)
+-	-$(RCVRMANCREATE) $(MANDIR)/recover.$(MANEXT)
+-	-$(DLBMANCREATE) $(MANDIR)/dlb.$(MANEXT)
+-	-$(MDMANCREATE) $(MANDIR)/makedefs.$(MANEXT)
++	-$(GAMEMANCREATE) ${DESTDIR}$(MANDIR)/$(GAME).$(MANEXT)
++	-$(RCVRMANCREATE) ${DESTDIR}$(MANDIR)/recover.$(MANEXT)
++	-$(DLBMANCREATE) ${DESTDIR}$(MANDIR)/dlb.$(MANEXT)
++	-$(MDMANCREATE) ${DESTDIR}$(MANDIR)/makedefs.$(MANEXT)
+ 
+ # manual creation for distribution
+ DISTRIB = Guidebook.txt xnethack.txt recover.txt \

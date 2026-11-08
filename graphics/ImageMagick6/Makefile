@@ -1,13 +1,12 @@
 PORTNAME=	ImageMagick
-DISTVERSION=	6.9.13-50
-PORTREVISION=	1
+DISTVERSION=	6.9.13-59
 PORTEPOCH=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	https://ftp.acc.umu.se/mirror/imagemagick.org/ftp/releases/ \
 		https://mirror.dogado.de/imagemagick/releases/ \
 		https://mirror.checkdomain.de/imagemagick/releases/ \
 		https://ftp.icm.edu.pl/pub/unix/graphics/ImageMagick/releases/ \
-		https://imagemagick.org/archive/releases/
+		https://download.imagemagick.org/archive/releases/
 PKGNAMESUFFIX=	6
 
 MAINTAINER=	desktop@FreeBSD.org
@@ -36,7 +35,7 @@ USES=		compiler:c++11-lang cpe gettext-runtime gmake gnome \
 		shebangfix tar:xz
 CPE_PRODUCT=	imagemagick
 CPE_VENDOR=	imagemagick
-SHEBANG_FILES=	www/source/examples.pl
+SHEBANG_FILES=	www/source/examples.perl
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ENV=	MAKE=${MAKE_CMD}

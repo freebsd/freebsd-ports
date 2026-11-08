@@ -1,5 +1,5 @@
 PORTNAME=	fakeroot
-PORTVERSION=	2.0
+PORTVERSION=	2.1.4
 CATEGORIES=	security
 MASTER_SITES=	DEBIAN
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
@@ -10,12 +10,11 @@ WWW=		https://tracker.debian.org/pkg/fakeroot
 
 LICENSE=	GPLv3
 
-USES=	libtool
+BUILD_DEPENDS=	po4a:textproc/po4a
 
-GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-CONFIGURE_ARGS=		--with-ipc=tcp
-INSTALL_TARGET=	install-strip
+USES=	libtool meson tar:xz
+
+MESON_ARGS=		-Dipc=tcp
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

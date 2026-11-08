@@ -1,7 +1,7 @@
 PORTNAME=	vigra
 DISTVERSIONPREFIX=	Version-
 DISTVERSION=	1-12-4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -43,10 +43,8 @@ OPENEXR_LIB_DEPENDS=	libOpenEXR.so:graphics/openexr
 NUMPY_DESC=		NumPy mathematical computing (USE Fortran/GCC47+)
 NUMPY_CMAKE_BOOL=	WITH_VIGRANUMPY
 NUMPY_USES=		compiler:gcc-c++11-lib python:build
-NUMPY_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
-NUMPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
+NUMPY_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
+NUMPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 NUMPY_LIB_DEPENDS=	${PY_BOOST}
 # On FreeBSD < 11 libc++ lacks support for sized delete operators.
 # GCC dropped the builtin version of these operators in 6+ by

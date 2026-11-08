@@ -1,0 +1,5 @@
+lazydocker is a simple terminal user interface for managing Docker and
+docker-compose. It shows containers, images, volumes and services in one
+window, streams their logs and stats, and lets you restart, stop, remove
+or attach to them with single keystrokes instead of remembering long
+docker command lines.

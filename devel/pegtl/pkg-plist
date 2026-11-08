@@ -229,7 +229,6 @@ include/tao/pegtl/internal/read_file_stdio.hpp
 include/tao/pegtl/internal/read_input.hpp
 include/tao/pegtl/internal/rematch.hpp
 include/tao/pegtl/internal/rematch_input.hpp
-include/tao/pegtl/internal/rematch_position.hpp
 include/tao/pegtl/internal/rep.hpp
 include/tao/pegtl/internal/rep_min_max.hpp
 include/tao/pegtl/internal/rep_opt.hpp

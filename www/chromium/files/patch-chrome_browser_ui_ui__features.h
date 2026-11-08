@@ -1,29 +1,20 @@
---- chrome/browser/ui/ui_features.h.orig	2026-07-29 11:06:49 UTC
+--- chrome/browser/ui/ui_features.h.orig	2026-10-18 13:29:39 UTC
 +++ chrome/browser/ui/ui_features.h
-@@ -28,7 +28,7 @@ BASE_DECLARE_FEATURE(kCreateNewTabGroupAppMenuTopLevel
+@@ -26,7 +26,7 @@ BASE_DECLARE_FEATURE(kAllowEyeDropperWGCScreenCapture)
  
  BASE_DECLARE_FEATURE(kCtrlTabMru);
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  BASE_DECLARE_FEATURE(kDseIntegrity);
+ BASE_DECLARE_FEATURE(kFeedbackDisabledDialog);
  BASE_DECLARE_FEATURE(kFewerUpdateConfirmations);
- #endif
-@@ -78,7 +78,7 @@ BASE_DECLARE_FEATURE_PARAM(int,
+@@ -90,7 +90,7 @@ BASE_DECLARE_FEATURE_PARAM(int,
  BASE_DECLARE_FEATURE_PARAM(int, kSeparateDefaultAndPinPromptMessageVersion);
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC)
  
 -#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
- // When enabled, user may see the session restore UI flow.
- BASE_DECLARE_FEATURE(kSessionRestoreInfobar);
- 
-@@ -264,7 +264,7 @@ BASE_DECLARE_FEATURE(kManagedProfileRequiredInterstiti
- BASE_DECLARE_FEATURE(kViewsJSAppModalDialog);
- #endif
- 
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
- BASE_DECLARE_FEATURE(kUsePortalAccentColor);
- #endif
- 
+ // When enabled, SessionService respects the should_trigger_session_restore
+ // flag on BrowserInitState when deciding whether to restore a session for a
+ // newly opened browser window.

@@ -1,6 +1,7 @@
 PORTNAME=	air
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.67.3
+DISTVERSION=	1.67.4
+PORTREVISION=	5
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-go
 
@@ -11,7 +12,7 @@ WWW=		https://github.com/air-verse/air
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.25+,modules
+USES=		go:modules
 GO_MODULE=	github.com/air-verse/air
 
 CONFLICTS_INSTALL=	air

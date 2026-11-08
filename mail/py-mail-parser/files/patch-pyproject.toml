@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2020-02-02 00:00:00 UTC
++++ pyproject.toml
+@@ -51,7 +51,7 @@ test = [
+ [build-system]
+ # hatchling >=1.32 emits core metadata 2.5, which older twine/packaging
+ # in the publishing toolchain cannot parse. Cap until PyPI tooling catches up.
+-requires = ["hatchling>=1.27,<1.32"]
++requires = ["hatchling>=1.27"]
+ build-backend = "hatchling.build"
+ 
+ [tool.uv]

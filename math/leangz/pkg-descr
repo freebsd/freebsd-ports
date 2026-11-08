@@ -1,1 +1,5 @@
 Lean 4 .olean file (de)compressor.
+
+It is used in tests of math/lean4.
+leantar is developed by the community, not by the Lean4
+project iotself.

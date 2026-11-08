@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Class for vectors of 1-bit booleans
-WWW=		https://cran.r-project.org/web/packages/bit/
+WWW=		https://cran.r-project.org/package=bit
 
 LICENSE=	GPLv2+
 

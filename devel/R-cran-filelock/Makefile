@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Portable File Locking
-WWW=		https://cran.r-project.org/web/packages/filelock/
+WWW=		https://cran.r-project.org/package=filelock
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

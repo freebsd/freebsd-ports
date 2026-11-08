@@ -1,15 +1,15 @@
---- src/cpu.cpp.orig	2021-07-08 06:23:59 UTC
+--- src/cpu.cpp.orig	2023-04-13 17:40:23 UTC
 +++ src/cpu.cpp
-@@ -227,6 +227,7 @@ bool CPUStats::UpdateCPUData()
+@@ -225,6 +225,7 @@ bool CPUStats::UpdateCPUData()
  
  bool CPUStats::UpdateCoreMhz() {
      m_coreMhz.clear();
 +#if defined(__linux__)
-     std::ifstream cpuInfo(PROCCPUINFOFILE);
-     std::string row;
-     size_t i = 0;
-@@ -238,6 +239,13 @@ bool CPUStats::UpdateCoreMhz() {
-             i++;
+     FILE *fp;
+     for (auto& cpu : m_cpuData)
+     {
+@@ -237,6 +238,13 @@ bool CPUStats::UpdateCoreMhz() {
+             fclose(fp);
          }
      }
 +#elif defined(__FreeBSD__)
@@ -19,21 +19,21 @@
 +        m_cpuData[i].mhz = read_sysctl<int>(sysctl_name);
 +    }
 +#endif
+ 
      m_cpuDataTotal.cpu_mhz = 0;
      for (auto data : m_cpuData)
-         m_cpuDataTotal.cpu_mhz += data.mhz;
-@@ -246,6 +254,7 @@ bool CPUStats::UpdateCoreMhz() {
+@@ -259,6 +267,7 @@ bool CPUStats::ReadcpuTempFile(int& temp) {
  }
  
  bool CPUStats::UpdateCpuTemp() {
 +#if defined(__linux__)
-     if (!m_cpuTempFile)
-         return false;
+ 	if (cpu_type == "APU"){
+         m_cpuDataTotal.temp = gpu_info.apu_cpu_temp;
+         return true;
+@@ -269,6 +278,23 @@ bool CPUStats::UpdateCpuTemp() {
  
-@@ -256,6 +265,23 @@ bool CPUStats::UpdateCpuTemp() {
-     m_cpuDataTotal.temp = temp / 1000;
- 
-     return ret;
+         return ret;
+     }
 +#elif defined(__FreeBSD__)
 +    char sysctl_name[32];
 +    int dK, i, temp;
@@ -53,8 +53,8 @@
 +#endif
  }
  
- static bool get_cpu_power_k10temp(CPUPowerData* cpuPowerData, int& power) {
-@@ -407,6 +433,7 @@ static bool find_fallback_temp_input(const std::string
+ static bool get_cpu_power_k10temp(CPUPowerData* cpuPowerData, float& power) {
+@@ -426,6 +452,7 @@ static bool find_fallback_input(const std::string& pat
      return false;
  }
  
@@ -62,11 +62,11 @@
  bool CPUStats::GetCpuFile() {
      if (m_cpuTempFile)
          return true;
-@@ -447,6 +474,7 @@ bool CPUStats::GetCpuFile() {
+@@ -466,6 +493,7 @@ bool CPUStats::GetCpuFile() {
      }
      return true;
  }
 +#endif
  
- static bool find_input(const std::string& path, const char* input_prefix, std::string& input, const std::string& name)
- {
+ static CPUPowerData_k10temp* init_cpu_power_data_k10temp(const std::string path) {
+     auto powerData = std::make_unique<CPUPowerData_k10temp>();

@@ -1,0 +1,26 @@
+-- Add FreeBSD config_setting_groups used by the wheel rules. Not supported upstream.
+--- jaxlib/tools/BUILD.bazel.orig	2026-10-20 13:31:57 UTC
++++ jaxlib/tools/BUILD.bazel
+@@ -126,6 +126,22 @@ selects.config_setting_group(
+     ],
+ )
+ 
++selects.config_setting_group(
++    name = "freebsd_x86_64",
++    match_all = [
++        "@platforms//cpu:x86_64",
++        "@platforms//os:freebsd",
++    ],
++)
++
++selects.config_setting_group(
++    name = "freebsd_aarch64",
++    match_all = [
++        ":arm64",
++        "@platforms//os:freebsd",
++    ],
++)
++
+ # Flags for the new wheel build rules.
+ 
+ string_flag(

@@ -1,4 +1,4 @@
---- packaging/cmake/Modules/NetdataVersion.cmake.orig	2025-05-28 22:57:38 UTC
+--- packaging/cmake/Modules/NetdataVersion.cmake.orig	2026-08-13 15:34:19 UTC
 +++ packaging/cmake/Modules/NetdataVersion.cmake
 @@ -5,22 +5,23 @@ function(netdata_version)
  # packaging/version. This version field are used for cmake's project,

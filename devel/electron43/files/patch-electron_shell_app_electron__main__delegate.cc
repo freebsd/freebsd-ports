@@ -1,4 +1,4 @@
---- electron/shell/app/electron_main_delegate.cc.orig	2026-06-29 20:35:15 UTC
+--- electron/shell/app/electron_main_delegate.cc.orig	2026-10-06 22:48:58 UTC
 +++ electron/shell/app/electron_main_delegate.cc
 @@ -67,7 +67,7 @@
  #include "chrome/child/v8_crashpad_support_win.h"
@@ -54,7 +54,7 @@
      ui::SetOzonePlatformForLinuxIfNeeded(*command_line);
  #endif
      ui::OzonePlatform::PreSandboxStartup();
-@@ -352,7 +352,7 @@ std::optional<int> ElectronMainDelegate::PreBrowserMai
+@@ -355,7 +355,7 @@ std::optional<int> ElectronMainDelegate::PreBrowserMai
  #if BUILDFLAG(IS_MAC)
    RegisterAtomCrApp();
  #endif

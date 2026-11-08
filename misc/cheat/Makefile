@@ -1,6 +1,6 @@
 PORTNAME=	cheat
 DISTVERSION=	5.1.0
-PORTREVISION=	3
+PORTREVISION=	8
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://github.com/cheat/cheat
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		go:1.26,modules
+USES=		go:modules
 USE_GITHUB=	yes
 GH_TUPLE=	\
 		Microsoft:go-winio:v0.6.2:microsoft_go_winio/vendor/github.com/Microsoft/go-winio \

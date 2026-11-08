@@ -1,0 +1,13 @@
+nsc-tui is an interactive front-end to nsc(1), the tool that manages NATS
+operators, accounts and users. It shows the local nsc store as a tree,
+opens dialog editors for the JWT claims of each entity, and covers the
+parts of nsc that are tedious to type: JetStream limits and replication
+tiers, scoped signing keys, exports, imports and activations, subject
+mappings, revocations, authorization callout, creds files and the
+operator push and pull cycle.
+
+Nothing is written except through nsc itself. Every change is first
+diffed into a plan of the exact nsc commands it needs, shown with the
+same quoting a shell would need, and only then run, stopping at the
+first failure. The one exception is deleting an operator, which nsc
+cannot do; the local files it removes are listed as plain rm lines.

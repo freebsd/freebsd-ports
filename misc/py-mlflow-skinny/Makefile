@@ -1,5 +1,5 @@
 PORTNAME=	mlflow-skinny
-PORTVERSION=	3.14.0
+PORTVERSION=	3.17.1
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}pip>0:devel/py-pip@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cachetools>=5.0.0:devel/py-cachetools@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anyio>=3.6.2:devel/py-anyio@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}cachetools>=5.0.0:devel/py-cachetools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click>=7.0:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cloudpickle>0:devel/py-cloudpickle@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}databricks-sdk>=0.20.0:devel/py-databricks-sdk@${PY_FLAVOR} \
@@ -42,8 +43,17 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cachetools>=5.0.0:devel/py-cachetools@${PY_F
 USES=		python shebangfix
 USE_PYTHON=	pep517 autoplist concurrent
 
-SHEBANG_FILES=	mlflow/assistant/skills/agent-evaluation/scripts/validate_agent_tracing.py \
-		mlflow/assistant/skills/querying-mlflow-metrics/scripts/fetch_metrics.py
+SHEBANG_FILES=	mlflow/assistant/skills/agent-evaluation/scripts/validate_tracing_runtime.py \
+		mlflow/assistant/skills/hooks/mlflow-suggest-hook.py \
+		mlflow/assistant/skills/querying-mlflow-metrics/scripts/fetch_metrics.py \
+		mlflow/assistant/skills/sagemaker-mlflow/scripts/discover_arns.py \
+		mlflow/assistant/skills/sagemaker-mlflow/scripts/verify_connection.py \
+		mlflow/assistant/skills/tests/run_judges.py \
+		mlflow/assistant/skills/tests/scripts/setup_agent_debug_trace_first.py \
+		mlflow/assistant/skills/tests/scripts/setup_agent_eval.py \
+		mlflow/assistant/skills/tests/scripts/setup_langgraph_autolog_guidance.py \
+		mlflow/assistant/skills/tests/scripts/setup_tracing_test.py \
+		mlflow/assistant/skills/tests/test_skill.py
 
 NO_ARCH=	yes
 

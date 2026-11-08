@@ -5542,7 +5542,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/symboltable/ru.json
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/symboltable/zh-TW.json
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/watermark/wm-text.json
-%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/mobile/css/526.dfa9fb21284eb383a313.css
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/mobile/css/526.6819d76e66345bd94815.css
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/mobile/css/app.9c160f9d9d045320aaa4.css
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/mobile/css/framework7-rtl.css
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/mobile/css/framework7.css
@@ -8495,7 +8495,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/img/v2/iconssmall@2x.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/symboltable/ru.json
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/symboltable/zh-TW.json
-%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/mobile/css/923.37d51add171f0180b4e7.css
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/mobile/css/923.03703c0aaaf383d983b3.css
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/mobile/css/app.9c160f9d9d045320aaa4.css
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/mobile/css/framework7-rtl.css
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/mobile/css/framework7.css
@@ -21251,7 +21251,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/img/v2/iconssmall@2x.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/symboltable/ru.json
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/symboltable/zh-TW.json
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/mobile/css/611.3c6090d7986e77474e44.css
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/mobile/css/611.f7bd7125a45f99df274b.css
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/mobile/css/app.9c160f9d9d045320aaa4.css
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/mobile/css/framework7-rtl.css
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/mobile/css/framework7.css
@@ -21787,7 +21787,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/visioeditor/main/resources/img/v2/iconssmall@1.75x.png
 %%WWWDIR%%/documentserver/web-apps/apps/visioeditor/main/resources/img/v2/iconssmall@2.5x.svg
 %%WWWDIR%%/documentserver/web-apps/apps/visioeditor/main/resources/img/v2/iconssmall@2x.png
-%%WWWDIR%%/documentserver/web-apps/apps/visioeditor/mobile/css/935.3968c982c06132675d03.css
+%%WWWDIR%%/documentserver/web-apps/apps/visioeditor/mobile/css/935.b6d9806a551c3b23d80a.css
 %%WWWDIR%%/documentserver/web-apps/apps/visioeditor/mobile/css/app.9c160f9d9d045320aaa4.css
 %%WWWDIR%%/documentserver/web-apps/apps/visioeditor/mobile/css/framework7-rtl.css
 %%WWWDIR%%/documentserver/web-apps/apps/visioeditor/mobile/css/framework7.css

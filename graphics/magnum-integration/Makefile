@@ -1,11 +1,8 @@
 PORTNAME=	magnum-integration
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2020.06-264
-DISTVERSIONSUFFIX=	-g50ac4db
-PORTREVISION=	7
+DISTVERSION=	2020.06-435
+DISTVERSIONSUFFIX=	-g915a1af0
 CATEGORIES=	graphics
-
-BROKEN=		work/magnum-integration-2020.06-264-g50ac4db/src/Magnum/ImGuiIntegration/Context.cpp:322:23: error: no member named 'TextureId' in 'ImDrawCmd', "pcmd->TextureId"
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Magnum Graphics: Integration libraries
@@ -34,7 +31,7 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mosra
-GH_TUPLE=	mosra:toolchains:2243706:t/toolchains
+GH_TUPLE=	mosra:toolchains:fa282e8:t/toolchains
 
 CMAKE_ARGS=	-DLIB_SUFFIX:STRING=""
 

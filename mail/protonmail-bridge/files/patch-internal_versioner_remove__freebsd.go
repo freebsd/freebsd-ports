@@ -1,0 +1,54 @@
+--- internal/versioner/remove_freebsd.go.orig	2026-07-26 08:20:51 UTC
++++ internal/versioner/remove_freebsd.go
+@@ -0,0 +1,51 @@
++// Copyright (c) 2026 Proton AG
++//
++// This file is part of Proton Mail Bridge.
++//
++// Proton Mail Bridge is free software: you can redistribute it and/or modify
++// it under the terms of the GNU General Public License as published by
++// the Free Software Foundation, either version 3 of the License, or
++// (at your option) any later version.
++//
++// Proton Mail Bridge is distributed in the hope that it will be useful,
++// but WITHOUT ANY WARRANTY; without even the implied warranty of
++// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++// GNU General Public License for more details.
++//
++// You should have received a copy of the GNU General Public License
++// along with Proton Mail Bridge. If not, see <https://www.gnu.org/licenses/>.
++
++//go:build freebsd
++
++package versioner
++
++import (
++	"os"
++	"path/filepath"
++	"strings"
++)
++
++func (v *Versioner) RemoveCurrentVersion() error {
++	// get current executable
++	exec, err := os.Executable()
++	if err != nil {
++		return err
++	}
++
++	// Check that current executtable is update package so we won't
++	// delete base version (that is controlled by package manager).
++	// Get absolute paths to ensure there is no crazy stuff there.
++	absExec, err := filepath.Abs(exec)
++	if err != nil {
++		return err
++	}
++	absRoot, err := filepath.Abs(v.root)
++	if err != nil {
++		return err
++	}
++	if !strings.HasPrefix(absExec, absRoot) {
++		return ErrNoRemoveBase
++	}
++
++	return os.RemoveAll(filepath.Dir(absExec))
++}

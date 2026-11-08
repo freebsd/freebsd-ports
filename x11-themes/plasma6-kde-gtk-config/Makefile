@@ -11,9 +11,8 @@ LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 RUN_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \
 		xsettingsd:x11/xsettingsd
 
-USES=		cmake gl gnome kde:6 pkgconfig qt:6 tar:xz xorg
+USES=		cmake gl gnome kde:6 pkgconfig qt:6 tar:xz
 USE_GL=		gl opengl
-USE_XORG=	x11
 USE_GNOME=	cairo gdkpixbuf glib20 gtk20 gtk30
 USE_KDE=	colorscheme config configwidgets coreaddons dbusaddons \
 		decoration guiaddons widgetsaddons windowsystem \

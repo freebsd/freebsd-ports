@@ -1,5 +1,5 @@
 PORTNAME=	classifier
-PORTVERSION=	2.6.0
+PORTVERSION=	2.7.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -17,6 +17,7 @@ RUN_DEPENDS=	rubygem-fast-stemmer>=1.0<2:devel/rubygem-fast-stemmer \
 
 USES=		gem
 
-PLIST_FILES=	bin/classifier
+PLIST_FILES=	bin/classifier \
+		bin/keywords
 
 .include <bsd.port.mk>

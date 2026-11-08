@@ -10,10 +10,8 @@ WWW=		https://www.x.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		pathfix xorg xorg-cat:driver
+USES=		pathfix tar:bz2 xorg xorg-cat:driver
 USE_XORG=	x11 xtst
-
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 OPTIONS_DEFINE=	EVDEV
 OPTIONS_DEFAULT_FreeBSD=	EVDEV

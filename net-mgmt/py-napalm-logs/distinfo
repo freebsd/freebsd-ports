@@ -1,3 +1,5 @@
-TIMESTAMP = 1585471862
-SHA256 (napalm-automation-napalm-logs-0.9.0_GH0.tar.gz) = d3946e2defe5acd7354023b3cd05ff7d149f95ca398ba088559fb1d11525dd99
-SIZE (napalm-automation-napalm-logs-0.9.0_GH0.tar.gz) = 845405
+TIMESTAMP = 1793611903
+SHA256 (napalm-automation-napalm-logs-0.11.0_GH0.tar.gz) = a9ce9193702d2dbed33ecb65b32a63a7f335518c973005b00fccc7fe2f13ec7a
+SIZE (napalm-automation-napalm-logs-0.11.0_GH0.tar.gz) = 788955
+SHA256 (3b73aedc2549c95f1ed72688cc46f32db534e47c.patch) = 9b9d0f98f5c74f74a889f492daf6bd41ab9e8fd6994a10317d19b90cedc83d28
+SIZE (3b73aedc2549c95f1ed72688cc46f32db534e47c.patch) = 1452

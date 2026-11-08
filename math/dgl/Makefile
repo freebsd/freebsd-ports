@@ -5,10 +5,13 @@ CATEGORIES=	math # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Deep Graph Library
-WWW=		https://www.dgl.ai/
+WWW=		https://www.dgl.ai/ \
+		https://github.com/dmlc/dgl/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN=		not compatible with pytorch-2.14.0, see https://github.com/dmlc/dgl/issues/7934
 
 BUILD_DEPENDS=	${BACKEND_DEPENDS} \
 		bash:shells/bash \

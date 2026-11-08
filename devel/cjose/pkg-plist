@@ -7,8 +7,12 @@ include/cjose/jwk.h
 include/cjose/jws.h
 include/cjose/util.h
 include/cjose/version.h
-lib/libcjose.a
+lib/cmake/cjose/FindJansson.cmake
+lib/cmake/cjose/cjoseConfig.cmake
+lib/cmake/cjose/cjoseConfigVersion.cmake
+lib/cmake/cjose/cjoseSharedTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/cjose/cjoseSharedTargets.cmake
 lib/libcjose.so
 lib/libcjose.so.0
-lib/libcjose.so.0.0.0
+lib/libcjose.so.0.8.0
 libdata/pkgconfig/cjose.pc

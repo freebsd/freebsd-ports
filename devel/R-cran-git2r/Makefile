@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	jpbeconne@free.fr
 COMMENT=	Provides Access to Git Repositories
-WWW=		https://CRAN.R-project.org/package=git2r
+WWW=		https://cran.r-project.org/package=git2r
 
 LICENSE=	GPLv2
 

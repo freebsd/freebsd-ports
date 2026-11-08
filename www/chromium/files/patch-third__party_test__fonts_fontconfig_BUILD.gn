@@ -1,4 +1,4 @@
---- third_party/test_fonts/fontconfig/BUILD.gn.orig	2025-10-30 15:44:36 UTC
+--- third_party/test_fonts/fontconfig/BUILD.gn.orig	2026-10-18 13:29:39 UTC
 +++ third_party/test_fonts/fontconfig/BUILD.gn
 @@ -26,7 +26,11 @@ if (is_linux || is_chromeos) {
  
@@ -13,7 +13,7 @@
    }
  
    if (current_toolchain == host_toolchain) {
-@@ -47,7 +51,11 @@ if (is_linux || is_chromeos) {
+@@ -50,7 +54,11 @@ if (is_linux || is_chromeos) {
          "//third_party/test_fonts",
        ]
        args = []
@@ -24,5 +24,5 @@
 +        inputs = [ "$root_out_dir/etc/fonts/fonts.conf" ]
 +      }
        outputs = [
-         "$root_out_dir/fontconfig_caches/fb5c91b2895aa445d23aebf7f9e2189c-le64.cache-11",
+         "$root_out_dir/fontconfig_caches/fb5c91b2895aa445d23aebf7f9e2189c-le64.cache-12",
          "$root_out_dir/fontconfig_caches/CACHEDIR.TAG",

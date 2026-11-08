@@ -8,6 +8,8 @@ bin/minisatip
 %%DATADIR%%/html/dvbs2x.png
 %%DATADIR%%/html/dvbt.png
 %%DATADIR%%/html/dvbt2.png
+%%DATADIR%%/html/favicon.ico
+%%DATADIR%%/html/favicon.png
 %%DATADIR%%/html/jquery-3.2.1.min.js
 %%DATADIR%%/html/jquery.dataTables.min.css
 %%DATADIR%%/html/jquery.dataTables.min.js

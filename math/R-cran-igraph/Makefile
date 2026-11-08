@@ -1,11 +1,11 @@
 PORTNAME=	igraph
-DISTVERSION=	2.3.3
+DISTVERSION=	2.3.4
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Network Analysis and Visualization
-WWW=		https://cran.r-project.org/web/packages/igraph/
+WWW=		https://cran.r-project.org/package=igraph
 
 LICENSE=	GPLv2+
 

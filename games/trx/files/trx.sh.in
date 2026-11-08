@@ -1,6 +1,8 @@
 #!/bin/sh
 : ${TRX_BASE:="${HOME}/.local/share/%%PORTNAME%%"}
 
+export TRX_DIR="%%DATADIR%%"
+
 export TRX_CONFIG_DIR="${TRX_BASE}/cfg"
 export TRX_CACHE_DIR="${TRX_BASE}/cache"
 export TRX_GAMES_DIR="${TRX_BASE}/games"

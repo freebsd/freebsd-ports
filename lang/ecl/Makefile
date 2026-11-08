@@ -1,5 +1,5 @@
 PORTNAME=	ecl
-PORTVERSION=	24.5.10
+PORTVERSION=	26.5.5
 CATEGORIES=	lang lisp
 MASTER_SITES=	https://common-lisp.net/project/ecl/static/files/release/
 
@@ -28,7 +28,9 @@ MAKE_JOBS_UNSAFE=	yes
 
 AUTORECONF_WRKSRC=	${WRKSRC}/src
 INFO=			ecl
-PLIST_SUB=		VERSION="${PORTVERSION}"
+PLIST_SUB=		VERSION="${PORTVERSION}" \
+			VERSION_MAJOR="${PORTVERSION:R:R}" \
+			VERSION_SHORT="${PORTVERSION:R}"
 
 OPTIONS_DEFINE=		ASDF CXX DFFI SAGE SOCKETS THREADS X11
 OPTIONS_DEFAULT=	ASDF DFFI SAGE SOCKETS THREADS
@@ -48,7 +50,7 @@ DFFI_LIB_DEPENDS=	libffi.so:devel/libffi
 DFFI_CONFIGURE_ON=	--with-dffi=system
 DFFI_CONFIGURE_OFF=	--with-dffi=no
 SAGE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_aclocal.m4 \
-			${PATCHDIR}/extra-patch-src_c_file.d \
+			${PATCHDIR}/extra-patch-src_c_streams_strm_os.d \
 			${PATCHDIR}/extra-patch-src_compile.lsp.in \
 			${PATCHDIR}/extra-patch-src_configure.ac \
 			${PATCHDIR}/extra-patch-src_Makefile.in

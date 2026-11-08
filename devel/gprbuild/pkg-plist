@@ -125,9 +125,11 @@ include/gprbuild/gprname.adb
 include/gprbuild/gprname.ads
 lib/gprbuild/gpr/relocatable/libgpr.so
 lib/gprbuild/gpr/relocatable/libgpr.so.%%SO_VERSION%%
+lib/gprbuild/gpr/relocatable/libgpr.so.%%SO_VERSION_MAJOR%%
 lib/gprbuild/gpr/static-pic/libgpr.a
 lib/libgpr.so
 lib/libgpr.so.%%SO_VERSION%%
+lib/libgpr.so.%%SO_VERSION_MAJOR%%
 libdata/gprbuild/gpr/relocatable/gpr-ali.ali
 libdata/gprbuild/gpr/relocatable/gpr-attr-pm.ali
 libdata/gprbuild/gpr/relocatable/gpr-attr.ali
@@ -268,6 +270,7 @@ share/gprconfig/ppc-vx7.xml
 share/gprconfig/ppc-vx7r2.xml
 share/gprconfig/ppc64-vx7.xml
 share/gprconfig/ppc64-vx7r2.xml
+share/gprconfig/rust.xml
 share/gprconfig/shortcuts.ent
 share/gprconfig/targetset.xml
 share/gprconfig/tricore-compilers.xml

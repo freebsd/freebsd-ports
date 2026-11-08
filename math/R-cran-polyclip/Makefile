@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Polygon Clipping
-WWW=		https://cran.r-project.org/package=${PORTNAME}
 
 LICENSE=	BSL
 

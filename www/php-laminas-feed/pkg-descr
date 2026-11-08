@@ -1,0 +1,8 @@
+laminas-feed reads and writes RSS and Atom feeds. Laminas\Feed\Reader
+consumes feeds of any common version through one interface.
+Laminas\Feed\Writer builds RSS 2.0 and Atom 1.0 feeds from a single feed
+object, with correct escaping and dates.
+
+Classes are installed under the PHP include path in
+share/pear/Laminas/Feed, laid out by namespace, so any PSR-4 autoloader
+can find them.

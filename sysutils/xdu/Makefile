@@ -1,6 +1,5 @@
 PORTNAME=	xdu
-PORTVERSION=	3.0
-PORTREVISION=	6
+PORTVERSION=	3.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	cy@FreeBSD.org
@@ -9,7 +8,6 @@ WWW=		https://sd.wareonearth.com/~phil/xdu/
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	msvticket
-GH_TAGNAME=	c15d80e
 
 USES=		imake xorg
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt

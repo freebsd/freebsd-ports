@@ -1,0 +1,20 @@
+What the entropy piano tuner is:
+
+	It is an experimental open-source software for piano tuning.
+
+	It is free of charge for everyone (GPL3 license).
+
+	It offers a modular platform for writing and testing new tuning
+	algorithms.
+
+	It is designed for experienced piano technicians, software experts,
+	and scientists.
+
+And what it isn't:
+
+	The EPT does not intend to compete with commercial high-end
+	tuning devices.
+
+	It is not suitable for laymen to tune their piano by themselves.
+
+	It does not save time.

@@ -1,6 +1,6 @@
---- src/gp_mgmt.c.orig	2026-07-21 10:43:49 UTC
+--- src/gp_mgmt.c.orig	2024-03-11 21:18:04 UTC
 +++ src/gp_mgmt.c
-@@ -270,9 +270,8 @@ done:
+@@ -273,9 +273,8 @@ done:
  
  done:
      if (ret) {

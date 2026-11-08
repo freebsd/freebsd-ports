@@ -1,0 +1,30 @@
+--- configure.ac.orig	2022-09-12 02:16:14 UTC
++++ configure.ac
+@@ -160,7 +160,11 @@ if test "${PYTHONFRAMEWORKDIR}" = "no-framework" -o \
+ 
+ if test "${PYTHONFRAMEWORKDIR}" = "no-framework" -o \
+         "${ENABLE_FRAMEWORK}" != "yes"; then
+-    if test "${PYTHONLIBDIR}" != "${APXS_LIBDIR}" ; then
++    # Make sure mod_wsgi.so is dynamically linked against
++    # the python 2.7 runtime - otherwise it will fail
++    # to load (missing some libc symbols, for example openpty)
++    # due to linking and symbol visibility rules.
++    if test "${PYTHONLIBDIR}" != "${APXS_LIBDIR}" || test -n "${PYTHONLIBDIR}" ; then
+         LDFLAGS1="-L${PYTHONLIBDIR}"
+     fi
+     if test "${PYTHONCFGDIR}" != "${APXS_LIBDIR}" ; then
+@@ -180,12 +184,8 @@ if test "${PYTHONFRAMEWORKDIR}" = "no-framework" -o \
+         LDLIBS1="-lpython${PYTHON_VERSION}"
+     fi
+ 
+-    LDLIBS2=`${PYTHON} -c 'from sys import stdout; \
+-        import sysconfig; \
+-        stdout.write(sysconfig.get_config_var("LIBS"))'`
+-    LDLIBS3=`${PYTHON} -c 'from sys import stdout; \
+-        import sysconfig; \
+-        stdout.write(sysconfig.get_config_var("SYSLIBS"))'`
++    LDLIBS2=""
++    LDLIBS3=""
+ else
+     LDFLAGS1="-Wl,-F${PYTHONFRAMEWORKPREFIX} -framework ${PYTHONFRAMEWORK}"
+ 

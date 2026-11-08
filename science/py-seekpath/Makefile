@@ -1,6 +1,5 @@
 PORTNAME=	seekpath
-DISTVERSION=	2.2.1
-PORTREVISION=	2
+DISTVERSION=	2.2.2
 CATEGORIES=	science # chemistry
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,10 +16,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.0:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}spglib>=1.14.1:science/py-spglib@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	pep517 autoplist pytest
+USE_PYTHON=	pep517 autoplist
 
 NO_ARCH=	yes
-
-# tests as of 2.2.0: 1 failed, 15 passed, 4 warnings, 19 errors in 2.00s
 
 .include <bsd.port.mk>

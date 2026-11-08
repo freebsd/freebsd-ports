@@ -3,12 +3,15 @@ PORTVERSION=	3.0.0.b.20230306
 PORTREVISION=	5
 CATEGORIES=	security
 
-MAINTAINER=	arrowd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Windows Hello(TM) style authentication provider
 WWW=		https://github.com/boltgolt/howdy
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	Upstream is comatose, no consumers in Ports
+EXPIRATION_DATE=2026-11-30
 
 RUN_DEPENDS=	opencv>0:graphics/opencv \
 		${PYTHON_PKGNAMEPREFIX}python-pam>0:security/py-python-pam@${PY_FLAVOR} \

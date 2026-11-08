@@ -1,6 +1,6 @@
 PORTNAME=	snort
 PORTVERSION=	2.9.20
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	security
 MASTER_SITES=	https://snort.org/downloads/snort/ \
 		https://snort.org/downloads/archive/snort/
@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	daq>=2.2.2_3:net/daq
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libdnet.so:net/libdnet \
-		libpcap.so:net/libpcap
+		libpcap.so.1:net/libpcap
 RUN_DEPENDS=	daq>=2.2.2_3:net/daq
 
 USES=			bison cpe libtool pathfix shebangfix ssl
@@ -41,10 +41,10 @@ OPTIONS_DEFINE=		IPV6 GRE HA NORMALIZER DOCS APPID \
 			FILEINSPECT
 
 OPTIONS_GROUP=		ADDONS DEV
-OPTIONS_GROUP_ADDONS=	BARNYARD PULLEDPORK
+OPTIONS_GROUP_ADDONS=	PULLEDPORK
 OPTIONS_GROUP_DEV=	DBGSNORT COREDUMPS
 OPTIONS_SUB=		yes
-OPTIONS_DEFAULT=	GRE NORMALIZER BARNYARD \
+OPTIONS_DEFAULT=	GRE NORMALIZER \
 			PERFPROFILE SOURCEFIRE PULLEDPORK
 
 GRE_DESC=		GRE support
@@ -58,7 +58,6 @@ APPID_DESC=		Build with application id support (EXPERIMENTAL)
 HA_DESC=		Enable high-availability state sharing (EXPERIMENTAL)
 FILEINSPECT_DESC=	Build with extended file inspection features (EXPERIMENTAL)
 ADDONS_DESC=		Depend on 3rd party addons
-BARNYARD_DESC=		Depend on barnyard2 (supports also snortsam)
 PULLEDPORK_DESC=	Depend on pulledpork
 DEV_DESC=		Developer options
 DBGSNORT_DESC=		Enable debugging symbols
@@ -77,7 +76,6 @@ APPID_CONFIGURE_ENABLE=		open-appid
 HA_CONFIGURE_ENABLE=		ha
 FILEINSPECT_CONFIGURE_ENABLE=	file-inspect
 
-BARNYARD_RUN_DEPENDS=	barnyard2:security/barnyard2
 PULLEDPORK_RUN_DEPENDS=	pulledpork.pl:security/pulledpork
 APPID_USES=		luajit
 APPID_CONFIGURE_ENV+=	luajit_CFLAGS="-I${LUAJIT_INCDIR}" \

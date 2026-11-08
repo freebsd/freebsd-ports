@@ -1,5 +1,5 @@
 PORTNAME=	rack-mini-profiler
-PORTVERSION=	4.0.1
+PORTVERSION=	5.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

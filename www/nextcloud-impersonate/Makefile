@@ -1,5 +1,5 @@
 PORTNAME=	impersonate
-PORTVERSION=	5.0.0
+PORTVERSION=	6.0.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www security
 
@@ -9,7 +9,7 @@ WWW=		https://apps.nextcloud.com/apps/${PORTNAME}
 
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-NEXTCLOUD_RUN_DEPENDS=	34
+NEXTCLOUD_RUN_DEPENDS=	35
 
 USES=		nextcloud php:flavors
 

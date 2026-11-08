@@ -36,7 +36,7 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 
 USES=		compiler:c++11-lang gnome tar:xz cmake:noninja desktop-file-utils \
 		gettext-tools:build,run gettext-runtime iconv:wchar_t \
-		kde:5 pkgconfig shared-mime-info compiler:c++14-lang xorg
+		kde pkgconfig shared-mime-info compiler:c++14-lang xorg
 USE_GNOME=	intltool introspection libxml2 pango
 USE_KDE=	ecm:build
 USE_LDCONFIG=	yes

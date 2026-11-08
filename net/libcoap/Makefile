@@ -14,7 +14,7 @@ BUILD_DEPENDS=	a2x:textproc/asciidoc \
 		gsed:textproc/gsed
 LIB_DEPENDS=	libgnutls.so:security/gnutls
 
-USES=		autoreconf gmake libtool pkgconfig
+USES=		autoreconf cpe gmake libtool pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	obgm
 

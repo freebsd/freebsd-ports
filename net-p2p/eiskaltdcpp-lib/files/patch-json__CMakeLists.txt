@@ -1,6 +1,13 @@
---- json/CMakeLists.txt.orig	2015-04-19 21:57:16.000000000 +0000
-+++ json/CMakeLists.txt	2016-10-04 14:36:02.121665000 +0000
-@@ -12,7 +12,7 @@
+--- json/CMakeLists.txt.orig	2015-04-19 21:57:16 UTC
++++ json/CMakeLists.txt
+@@ -1,5 +1,5 @@ project(jsonrpcpp)
+ project(jsonrpcpp)
+-cmake_minimum_required(VERSION 2.6)
++cmake_minimum_required(VERSION 3.5)
+ # ######### General setup ##########
+ include_directories(${PROJECT_SOURCE_DIR})
+ 
+@@ -12,7 +12,7 @@ if (LOCAL_JSONCPP)
                                  ${PROJECT_SOURCE_DIR}/jsonrpc-cpp/networking.cpp)
  set_source_files_properties(${PROJECT_SOURCE_DIR}/jsonrpc-cpp/mongoose.c PROPERTIES COMPILE_FLAGS "-DNDEBUG -DNO_CGI -DNO_SSL")
  if (LOCAL_JSONCPP)

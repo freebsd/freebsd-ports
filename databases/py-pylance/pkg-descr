@@ -1,0 +1,5 @@
+Python wrapper for Lance columnar format.
+
+Lance is a columnar data format for machine learning and data science,
+designed for efficient random access, vector search, and interoperability
+with Apache Arrow.

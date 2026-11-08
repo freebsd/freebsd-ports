@@ -1,4 +1,4 @@
---- src/rrd_open.c.orig	2026-05-19 19:35:26 UTC
+--- src/rrd_open.c.orig	2026-08-07 13:49:31 UTC
 +++ src/rrd_open.c
 @@ -33,6 +33,16 @@
  #include "rrd_rados.h"
@@ -55,7 +55,7 @@
          struct flock lock;
          int op = lock_mode == RRD_LOCK_TRY ? F_SETLK : F_SETLKW;
 
---- doc/rrdtool.pod.orig	2026-05-19 19:34:20 UTC
+--- doc/rrdtool.pod.orig	2026-08-07 13:48:29 UTC
 +++ doc/rrdtool.pod
 @@ -356,6 +356,21 @@ stress on your disks.
  L<rrdcached>, a caching daemon for RRDtool which may help you lessen the

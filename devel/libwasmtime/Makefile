@@ -1,10 +1,9 @@
 PORTNAME=	lib${GH_PROJECT}
-PORTVERSION=	47.0.2
+PORTVERSION=	50.0.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	0
 CATEGORIES=	devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	longros@FreeBSD.org
 COMMENT=	Library for fast and secure runtime for WebAssembly
 WWW=		https://wasmtime.dev/
 
@@ -20,19 +19,17 @@ USES=		cargo cmake:indirect cpe
 CPE_VENDOR=	bytecodealliance
 CPE_PRODUCT=	wasmtime
 
-USE_LDCONFIG=	yes
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	bytecodealliance
 GH_PROJECT=	wasmtime
+GH_TUPLE=	WebAssembly:component-model:5b724da:component_model/tests/component-model \
+		WebAssembly:testsuite:b464a4c:testsuite/tests/spec_testsuite \
+		WebAssembly:wasi-testsuite:6345da2:wasi_testsuite/tests/wasi-testsuite
+USE_LDCONFIG=	yes
 
-CARGO_BUILD_ARGS=	-p wasmtime-c-api
 CMAKE_SOURCE_PATH=	${WRKSRC}/crates/c-api
 
-GH_TUPLE=	WebAssembly:component-model:dac7805:component_model/tests/component-model \
-		WebAssembly:testsuite:3453673:testsuite/tests/spec_testsuite \
-		WebAssembly:wasi-testsuite:26ea2ff:wasi_testsuite/tests/wasi_testsuite/wasi-common \
-		WebAssembly:wasi-threads:e1893c0:wasi_threads/tests/wasi_testsuite/wasi-threads
+CARGO_BUILD_ARGS=	-p wasmtime-c-api
 
 post-configure:
 	@cd ${CMAKE_SOURCE_PATH} && ${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS}

@@ -14,28 +14,25 @@ LICENSE=	GPLv2+
 LIB_DEPENDS=	libidn.so:dns/libidn \
 		libqca-qt5.so:devel/qca@qt5
 
-USES=		cmake compiler:c++11-lang desktop-file-utils minizip pkgconfig \
-		qt:5 tar:xz xorg
+USES=		cmake compiler:c++11-lang desktop-file-utils minizip \
+		pkgconfig qt:5 tar:xz xorg
 USE_QT=		concurrent core dbus gui multimedia network svg widgets \
 		x11extras xml buildtools:build qmake:build imageformats:run
 USE_XORG=	ice sm x11 xcb xext xscrnsaver
 
 CMAKE_ARGS=	-DIDN_LIBRARY:FILEPATH="${LOCALBASE}/lib/libidn.so" \
-		-DIDN_INCLUDE_DIR:PATH="${LOCALBASE}/include"
+		-DIDN_INCLUDE_DIR:PATH="${LOCALBASE}/include" \
+		-DCMAKE_POLICY_VERSION_MINIMUM:STRING=3.5
+CMAKE_OFF=	ENABLE_WEBKIT
 
 USE_GITHUB=	nodefault
 GH_TUPLE=	TartanLlama:optional:v1.1.0:tlo/tlo
 
-OPTIONS_DEFINE=	WEBENGINE
 OPTIONS_RADIO=	SPELLCHECK
 OPTIONS_RADIO_SPELLCHECK=	HUNSPELL ENCHANT
 SPELLCHECK_DESC=	Spell checker backend
 OPTIONS_DEFAULT=	HUNSPELL
 OPTIONS_SUB=	yes
-
-WEBENGINE_DESC=		Use QtWebEngine for chatlogs
-WEBENGINE_USE=		QT=declarative,location,printsupport,webchannel,webengine
-WEBENGINE_CMAKE_BOOL=	ENABLE_WEBKIT
 
 HUNSPELL_LIB_DEPENDS=	libhunspell-1.7.so:textproc/hunspell
 HUNSPELL_CMAKE_BOOL=	USE_HUNSPELL

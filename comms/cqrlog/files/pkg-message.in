@@ -1,0 +1,30 @@
+[
+{ type: install
+  message: <<EOM
+cqrlog was installed
+
+1) cqrlog settings are located at ~/.config/cqrlog directory
+
+2) Log messages are stored to user folder database (~/.config/cqrlog/database),
+   local MySQL/MariaDB server or external server.
+
+3) If you want to use local or external MySQL/MariaDB server, don't forget add
+   cqrlog user grants.
+
+   CREATE USER IF NOT EXISTS 'cqrlog_user'@'localhost' IDENTIFIED BY 'cqrlog_pass';
+   GRANT ALL PRIVILEGES ON *.* TO 'cqrlog_user'@'localhost';
+   FLUSH PRIVILEGES;
+
+   Change localhost by your server IP/hostname if it is a external networked
+   SQL server
+
+4) If you are running cqrlog with MySQL user folder database, disable MySQL X
+   protocol uncomment a line from ~/.config/cqrlog/mysql.cnf file
+
+   # MySQL X protocol
+   mysqlx=OFF
+
+   This change will take effect when cqrlog is restarted
+EOM
+}
+]

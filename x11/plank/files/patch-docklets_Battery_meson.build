@@ -1,8 +1,8 @@
---- docklets/Battery/meson.build.orig	2025-02-28 03:58:18 UTC
+--- docklets/Battery/meson.build.orig	2026-08-04 01:49:12 UTC
 +++ docklets/Battery/meson.build
 @@ -1,5 +1,4 @@ docklet_battery_sources = [
  docklet_battery_sources = [
 -  'BatteryDockItem.vala',
    'BatteryDocklet.vala',
    'BatteryUPowerDockItem.vala',
- ]
+   'BatteryPreferences.vala',

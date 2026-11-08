@@ -10,7 +10,7 @@ WWW=		https://github.com/BrunoLevy/geogram # was: https://github.com/alicevision
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/doc/devkit/license.dox
 
-ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS=	amd64 i386 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	use of inline assembly for these architectures only, at least in src/lib/geogram/basic/atomics.h
 
 LIB_DEPENDS=	libglfw.so:graphics/glfw

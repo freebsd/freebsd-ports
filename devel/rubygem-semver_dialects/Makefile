@@ -1,5 +1,5 @@
 PORTNAME=	semver_dialects
-PORTVERSION=	3.7.0
+PORTVERSION=	4.1.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

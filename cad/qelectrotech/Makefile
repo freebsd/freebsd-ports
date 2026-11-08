@@ -1,8 +1,13 @@
 PORTNAME=	qelectrotech
 DISTVERSION=	0.100
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}-source-mirror/releases/download/${DISTVERSION}/
+DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
+
+PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}-source-mirror/commit/
+PATCHFILES=	d0cea474a6cc45b28114ba158061d42c0cfed484.patch:-p1
 
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	Application to design electric diagrams
@@ -11,30 +16,30 @@ WWW=		https://qelectrotech.org/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libpugixml.so:textproc/pugixml
+BUILD_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers
 
-USES=		desktop-file-utils gl kde:5 pkgconfig qmake qt:5 \
-		shared-mime-info sqlite
+USES=		cmake desktop-file-utils gl pkgconfig qt:6 \
+		shared-mime-info
 USE_GL=		gl
-USE_KDE=	coreaddons widgetsaddons
-USE_QT=		concurrent core gui network printsupport qmake sql sql-sqlite3 \
-		svg widgets xml buildtools:build
+USE_QT=		base svg tools
 
-ALL_TARGET=	${BUILD_TYPE}-all
+USE_GITHUB=	nodefault
+GH_TUPLE=	catchorg:Catch2:v2.13.10:catch2/_deps/catch2-src \
+		google:googletest:v1.17.0:gtest/_deps/gtest-src \
+		zeux:pugixml:v1.11.4:pugixml/_deps/pugixml-src \
+		itay-grudev:SingleApplication:v3.2.0:SA/_deps/singleapplication-src
 
-OPTIONS_DEFINE=	DEBUG
-
-DEBUG_VARS=	BUILD_TYPE=debug
-DEBUG_VARS_OFF=	BUILD_TYPE=release
+CMAKE_OFF=	BUILD_WITH_KF5
 
 pre-configure:
-	${REINPLACE_CMD} -e 's,/usr/local/,${PREFIX}/,g' \
-		${WRKSRC}/${PORTNAME}.pro
-	${REINPLACE_CMD} -e 's,doc/,share/doc/,g' \
-		${WRKSRC}/${PORTNAME}.pro
-	${REINPLACE_CMD} -e '/QET_MAN_PATH/s,man/,share/man/,g' \
-		${WRKSRC}/${PORTNAME}.pro
-	${REINPLACE_CMD} -e 's,../share,share,g' \
-		${WRKSRC}/${PORTNAME}.pro
+	@${MKDIR} ${BUILD_WRKSRC}
+	${MV} ${WRKSRC}/_deps ${BUILD_WRKSRC}
+
+post-install:
+	${RM} -r ${STAGEDIR}${PREFIX}/include/gmock \
+		${STAGEDIR}${PREFIX}/include/gtest \
+		${STAGEDIR}${PREFIX}/lib/cmake/GTest \
+		${STAGEDIR}${PREFIX}/lib/cmake/pugixml
+	${RMDIR} ${STAGEDIR}${PREFIX}/lib/cmake
 
 .include <bsd.port.mk>

@@ -44,6 +44,7 @@ include/QXmppQt6/QXmppE2eeMetadata.h
 include/QXmppQt6/QXmppElement.h
 include/QXmppQt6/QXmppEncryptedFileSharingProvider.h
 include/QXmppQt6/QXmppEncryptedFileSource.h
+include/QXmppQt6/QXmppEntityCapsStorage.h
 include/QXmppQt6/QXmppEntityTimeIq.h
 include/QXmppQt6/QXmppEntityTimeManager.h
 include/QXmppQt6/QXmppError.h
@@ -79,6 +80,7 @@ include/QXmppQt6/QXmppMessage.h
 include/QXmppQt6/QXmppMessageHandler.h
 include/QXmppQt6/QXmppMessageReaction.h
 include/QXmppQt6/QXmppMessageReceiptManager.h
+include/QXmppQt6/QXmppMessageRetraction.h
 include/QXmppQt6/QXmppMixConfigItem.h
 include/QXmppQt6/QXmppMixInfoItem.h
 include/QXmppQt6/QXmppMixInvitation.h
@@ -92,6 +94,8 @@ include/QXmppQt6/QXmppMucForms.h
 include/QXmppQt6/QXmppMucIq.h
 include/QXmppQt6/QXmppMucManager.h
 include/QXmppQt6/QXmppMucManagerV2.h
+include/QXmppQt6/QXmppNamespaces.h
+include/QXmppQt6/QXmppNetworkMonitor.h
 include/QXmppQt6/QXmppNonSASLAuth.h
 include/QXmppQt6/QXmppNonza.h
 include/QXmppQt6/QXmppOutOfBandUrl.h
@@ -135,7 +139,9 @@ include/QXmppQt6/QXmppServerExtension.h
 include/QXmppQt6/QXmppServerPlugin.h
 include/QXmppQt6/QXmppSessionIq.h
 include/QXmppQt6/QXmppSocks.h
+include/QXmppQt6/QXmppSpamReport.h
 include/QXmppQt6/QXmppStanza.h
+include/QXmppQt6/QXmppStanzaId.h
 include/QXmppQt6/QXmppStartTlsPacket.h
 include/QXmppQt6/QXmppStreamError.h
 include/QXmppQt6/QXmppStreamFeatures.h

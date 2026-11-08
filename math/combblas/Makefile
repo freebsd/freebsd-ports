@@ -2,8 +2,8 @@ PORTNAME=	CombBLAS
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.0
 PORTREVISION=	3
-MASTER_SITES=	https://portal.nersc.gov/project/m1982/CombBLAS/:test_data
 CATEGORIES=	math
+MASTER_SITES=	https://portal.nersc.gov/project/m1982/CombBLAS/:test_data
 DISTFILES=	testdata_combblas1.6.1.tgz:test_data
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -26,6 +26,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	PASSIONLab
 
 CMAKE_ON=	BUILD_SHARED_LIBS
+CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility
 
 # many tests fail, see https://github.com/PASSIONLab/CombBLAS/issues/15
 

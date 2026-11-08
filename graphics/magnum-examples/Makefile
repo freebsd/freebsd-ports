@@ -1,8 +1,7 @@
 PORTNAME=	magnum-examples
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2020.06-265
-DISTVERSIONSUFFIX=	-gb843f07a
-PORTREVISION=	9
+DISTVERSION=	2020.06-357
+DISTVERSIONSUFFIX=	-g358ca329
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -27,7 +26,6 @@ LIB_DEPENDS=	libCorradeUtility.so:devel/corrade \
 		libfcl.so:math/fcl \
 		libfmt.so:devel/libfmt \
 		libglfw.so:graphics/glfw \
-		libimgui.so:x11-toolkits/imgui \
 		liboctomap.so:math/octomap \
 		libtinyxml2.so:textproc/tinyxml2 \
 		liburdfdom_model.so:devel/ros-urdfdom \
@@ -39,7 +37,7 @@ USE_SDL=	sdl2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mosra
-GH_TUPLE=	mosra:toolchains:2243706:t/toolchains
+GH_TUPLE=	mosra:toolchains:fa282e8:t/toolchains
 
 CMAKE_ON=	\
 		MAGNUM_WITH_ARCBALL_EXAMPLE \
@@ -49,9 +47,6 @@ CMAKE_ON=	\
 		MAGNUM_WITH_BULLET_EXAMPLE \
 		MAGNUM_WITH_CUBEMAP_EXAMPLE \
 		MAGNUM_WITH_DART_EXAMPLE \
-		MAGNUM_WITH_FLUIDSIMULATION2D_EXAMPLE \
-		MAGNUM_WITH_FLUIDSIMULATION3D_EXAMPLE \
-		MAGNUM_WITH_IMGUI_EXAMPLE \
 		MAGNUM_WITH_MOUSEINTERACTION_EXAMPLE \
 		MAGNUM_WITH_MOTIONBLUR_EXAMPLE \
 		MAGNUM_WITH_OCTREE_EXAMPLE \
@@ -66,6 +61,12 @@ CMAKE_ON=	\
  		MAGNUM_WITH_TRIANGLE_PLAIN_GLFW_EXAMPLE \
 		MAGNUM_WITH_TRIANGLE_VULKAN_EXAMPLE \
 		MAGNUM_WITH_VIEWER_EXAMPLE
+# ImGui-based examples are disabled because the imgui port is built with the
+# SDL3 backend by default, while Magnum uses SDL2. Mixing SDL2 and SDL3 in
+# the same executable causes an INTERFACE_SDL_VERSION CMake error.
+#CMAKE_ON+=	MAGNUM_WITH_FLUIDSIMULATION2D_EXAMPLE
+#CMAKE_ON+=	MAGNUM_WITH_FLUIDSIMULATION3D_EXAMPLE
+#CMAKE_ON+=	MAGNUM_WITH_IMGUI_EXAMPLE
 #CMAKE_ON+=	MAGNUM_WITH_OVR_EXAMPLE # unclear if this is for Linux/BSD
 #CMAKE_ON+=	MAGNUM_WITH_LEAPMOTION_EXAMPLE # needs the Leap library
 #CMAKE_ON+=	MAGNUM_WITH_TRIANGLE_SOKOL_EXAMPLE # broken, see https://github.com/mosra/magnum-examples/issues/111

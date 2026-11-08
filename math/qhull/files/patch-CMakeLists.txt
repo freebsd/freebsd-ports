@@ -2,6 +2,15 @@ Install docs into share/doc/ rather than include/
 
 --- CMakeLists.txt.orig	2020-09-04 01:23:31 UTC
 +++ CMakeLists.txt
+@@ -68,7 +68,7 @@ project(qhull)
+ # $DateTime: 2020/09/03 21:26:22 $$Author: bbarber $
+ 
+ project(qhull)
+-cmake_minimum_required(VERSION 3.0)
++cmake_minimum_required(VERSION 3.5)
+ 
+ # Define qhull_VERSION in README.txt, Announce.txt, qh-get.htm, CMakeLists.txt
+ #   qhull-zip.sh (twice), qhull-wiki.md, qhull-news.htm, File_id.diz, index.htm
 @@ -737,7 +737,7 @@ foreach(pkgconfig IN ITEMS "${qhull_SHAREDR};Qhull ree
      if(LIBRARY_NAME STREQUAL "libqhull")
          set(LIBRARY_NAME "qhull")

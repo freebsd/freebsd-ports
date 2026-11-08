@@ -2246,7 +2246,6 @@
       <cvename>CVE-2011-2993</cvename>
       <cvename>CVE-2011-2988</cvename>
       <cvename>CVE-2011-2987</cvename>
-      <cvename>CVE-2011-0084</cvename>
       <cvename>CVE-2011-2990</cvename>
       <cvename>CVE-2011-2986</cvename>
     </references>
@@ -3665,7 +3664,7 @@
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Release notes for Exim 4.76 says:</p>
-	<blockquote cite="ftp://ftp.exim.org/pub/exim/ChangeLogs/ChangeLog-4.76">
+	<blockquote cite="https://ftp.exim.org/pub/exim/ChangeLogs/ChangeLog-4.76">
 	  <p>Bugzilla 1106: CVE-2011-1764 - DKIM log line was subject to
 	    a format-string attack -- SECURITY: remote arbitrary code
 	    execution.</p>
@@ -5202,7 +5201,7 @@
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>exim.org reports:</p>
-	<blockquote cite="ftp://ftp.exim.org/pub/exim/ChangeLogs/ChangeLog-4.74">
+	<blockquote cite="https://ftp.exim.org/pub/exim/ChangeLogs/ChangeLog-4.74">
 	  <p>CVE-2011-0017 - check return value of setuid/setgid. This is a
 	    privilege escalation vulnerability whereby the Exim run-time user
 	    can cause root to append content of the attacker's choosing to
@@ -5213,7 +5212,7 @@
     </description>
     <references>
       <cvename>CVE-2011-0017</cvename>
-      <url>ftp://ftp.exim.org/pub/exim/ChangeLogs/ChangeLog-4.74</url>
+      <url>https://ftp.exim.org/pub/exim/ChangeLogs/ChangeLog-4.74</url>
     </references>
     <dates>
       <discovery>2011-01-31</discovery>

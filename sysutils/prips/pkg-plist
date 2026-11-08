@@ -9,4 +9,5 @@ share/man/man1/prips.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/examples/tests/05-except.t
 %%PORTDOCS%%%%DOCSDIR%%/examples/tests/06-cidrize.t
 %%PORTDOCS%%%%DOCSDIR%%/examples/tests/07-features.t
+%%PORTDOCS%%%%DOCSDIR%%/examples/tests/tap-functions.sh
 %%PORTDOCS%%%%DOCSDIR%%/index.md

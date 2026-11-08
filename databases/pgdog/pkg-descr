@@ -1,0 +1,8 @@
+PgDog is a connection pooler, load balancer and database sharder for
+PostgreSQL. Written in Rust, PgDog is fast, reliable and scales Postgres
+databases without requiring changes to your application.
+
+It's a single binary, deployed between your application and the database, that
+speaks both the protocol applications use to talk to Postgres and the
+replication protocol Postgres uses internally. This lets PgDog do its job
+transparently, without changes to Postgres or the applications that query it.

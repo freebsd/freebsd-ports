@@ -1,6 +1,5 @@
 PORTNAME=	tin
-DISTVERSION=	2.6.5
-PORTREVISION=	1
+DISTVERSION=	2.6.6
 CATEGORIES=	news
 MASTER_SITES=	https://ftp.icm.edu.pl/pub/unix/news/tin/v${DISTVERSION:R}/ \
 		ftp://ftp.tin.org/pub/news/clients/tin/v${DISTVERSION:R}/
@@ -11,8 +10,11 @@ WWW=		http://www.tin.org/
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libicuuc.so:devel/icu \
+LIB_DEPENDS=	libexttextcat-2.0.so:textproc/libexttextcat \
+		libicuuc.so:devel/icu \
+		libidn2.so:dns/libidn2 \
 		libpcre2-8.so:devel/pcre2 \
+		liburiparser.so:net/uriparser \
 		libuu.so:converters/uulib
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:misc/mime-support
 
@@ -37,8 +39,10 @@ CONFIGURE_ARGS=		--with-editor=${TIN_EDITOR} \
 			--with-pcre2-config=${PREFIX}/bin/pcre2-config \
 			--with-nntp-default-server=news \
 			--enable-break-long-lines \
+			--enable-language-guessing \
 			--with-mime-default-charset=US-ASCII \
 			--with-defaults-dir=${PREFIX}/etc \
+			--with-url-normalization=uriparser \
 			--enable-ipv6 \
 			${ICONV_CONFIGURE_ARG}
 

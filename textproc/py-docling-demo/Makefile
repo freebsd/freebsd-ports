@@ -1,5 +1,6 @@
 PORTNAME=	docling-demo
 DISTVERSION=	0.1.1
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +15,6 @@ LICENSE=	MIT
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}azure-identity>=0:devel/py-azure-identity@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}azure-search>0:devel/py-azure-search@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-search-documents>0:devel/py-azure-search-documents@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}build>=1.3.0:devel/py-build@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}docling>=2.64.0:textproc/py-docling@${PY_FLAVOR} \

@@ -34,7 +34,8 @@ pre-build:
 
 do-build:
 	cd ${WRKSRC}; \
-		${SETENV} mvn -P windows,linux,osx,wintab ${MAVEN_REPO} ${MAVEN_ARGS} --offline package
+		${SETENV} MAVEN_HOME=${LOCALBASE}/share/java/apache-maven-3.8 \
+			mvn -P windows,linux,osx,wintab ${MAVEN_REPO} ${MAVEN_ARGS} --offline package
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}

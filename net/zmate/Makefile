@@ -1,7 +1,7 @@
 PORTNAME=	zmate
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.1
-PORTREVISION=	15
+DISTVERSION=	0.3.2
+PORTREVISION=	2
 CATEGORIES=	net
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	zellij:sysutils/zellij
 
-USES=		go:1.24+,modules
+USES=		go:modules
 
 GO_MODULE=	github.com/ziinaio/zmate
 

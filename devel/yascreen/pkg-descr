@@ -1,0 +1,4 @@
+yascreen is a small curses replacement library for daemons and embedded
+applications.  It has no external dependencies, supports both internal
+and external event loops, can work on stdin/stdout or over a socket
+(including basic telnet sequences), and handles Unicode input and output.

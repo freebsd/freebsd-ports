@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2026-04-02 23:34:37 UTC
+--- CMakeLists.txt.orig	2026-07-22 19:42:15 UTC
 +++ CMakeLists.txt
-@@ -131,7 +131,9 @@ add_subdirectory(src)
+@@ -132,7 +132,9 @@ add_subdirectory(src)
  ### Process subdirectories
  ###
  add_subdirectory(src)
@@ -10,7 +10,7 @@
  add_subdirectory(bindings)
  
  ###
-@@ -189,6 +191,8 @@ if (ENABLE_LIB_DOCS AND CMAKE_VERSION VERSION_GREATER 
+@@ -190,6 +192,8 @@ if (ENABLE_LIB_DOCS AND CMAKE_VERSION VERSION_GREATER 
      set(DOXYGEN_INTERACTIVE_SVG YES)
      set(DOXYGEN_DOT_TRANSPARENT YES)
  
@@ -19,7 +19,7 @@
      doxygen_add_docs(${PROJECT_NAME}-doc
        ${PROJECT_SOURCE_DIR}/src
        ${PROJECT_SOURCE_DIR}/doc
-@@ -209,7 +213,7 @@ if (TARGET ${PROJECT_NAME}-doc)
+@@ -210,7 +214,7 @@ if (TARGET ${PROJECT_NAME}-doc)
      OPTIONAL )    # No error if the docs aren't found
  
    if(NOT TARGET doc)

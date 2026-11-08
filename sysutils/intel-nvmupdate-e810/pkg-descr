@@ -1,0 +1,3 @@
+This package contains all the required files to update the NVM on Intel(R)
+Ethernet E810 adapters. It contains the NVMUpdate utility, configuration file,
+updated NVM binaries, and required driver files.

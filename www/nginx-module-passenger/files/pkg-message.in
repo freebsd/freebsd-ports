@@ -1,0 +1,20 @@
+[
+{ type: install
+  message: <<EOM
+This package contains the sources of the passenger module only.  It does
+not install a loadable module.
+
+The module itself is built by the nginx ports.  To use passenger, build
+www/nginx, www/nginx-devel or www/freenginx with the PASSENGER option
+enabled.
+
+The module is only the connection to nginx.  The Passenger agent, which
+runs the applications, comes from www/rubygem-passenger built with the
+nginx flavor, and nginx has to be told where it lives:
+
+    passenger_root %%PREFIX%%/lib/ruby/gems/<version>/gems/passenger-<version>;
+
+The command "passenger-config --root" prints the path to use.
+EOM
+}
+]

@@ -1,10 +1,9 @@
 PORTNAME=	tdlib
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8.48
-PORTREVISION=	4
+DISTVERSION=	1.8.69
 CATEGORIES=	net-im devel
 
-MAINTAINER=	yuri@FreeBSD.org
+MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Library for building Telegram clients
 WWW=		https://github.com/tdlib/td
 
@@ -16,17 +15,17 @@ CONFLICTS_INSTALL=	tde2e
 
 USE_GITHUB=	yes
 GH_PROJECT=	td
-GH_TAGNAME=	b8b08b0 # hash corresponding to 1.8.48
+GH_TAGNAME=	9d92b49 # 1.8.69 + IPv[46] reserved range fixes
 
 CMAKE_ON=	TD_INSTALL_SHARED_LIBRARIES TD_INSTALL_STATIC_LIBRARIES \
 		BUILD_SHARED_LIBS
 CMAKE_OFF+=	TD_E2E_ONLY # supposed to install tde2e but it fails to install headers
 CMAKE_OFF+=	BUILD_TESTING FREEBSD_BUILD_BENCHMARKS
 
-PLIST_SUB+=	LIBVERSION=${PORTVERSION}
+PLIST_SUB+=	LIBVERSION=${PORTVERSION} ABIVERSION=${PORTVERSION:R:R}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%COMMIT%%|${GH_TAGNAME}|g' \
+	@${REINPLACE_CMD} -e '/hashvar/ s|GITDIR-NOTFOUND|${GH_TAGNAME}|g' \
 		${WRKSRC}/CMake/GetGitRevisionDescription.cmake
 
 post-install: # see https://github.com/tdlib/td/issues/3328

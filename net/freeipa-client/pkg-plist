@@ -322,6 +322,10 @@ etc/ipa/epn/expire_msg.template
 %%PYTHON_SITELIBDIR%%/ipaplatform/fedora_container/services.py
 %%PYTHON_SITELIBDIR%%/ipaplatform/fedora_container/tasks.py
 %%PYTHON_SITELIBDIR%%/ipaplatform/freebsd/__init__.py
+%%PYTHON_SITELIBDIR%%/ipaplatform/freebsd/constants.py
+%%PYTHON_SITELIBDIR%%/ipaplatform/freebsd/paths.py
+%%PYTHON_SITELIBDIR%%/ipaplatform/freebsd/services.py
+%%PYTHON_SITELIBDIR%%/ipaplatform/freebsd/tasks.py
 %%PYTHON_SITELIBDIR%%/ipaplatform/install_files.txt
 %%PYTHON_SITELIBDIR%%/ipaplatform/nixos/__init__.py
 %%PYTHON_SITELIBDIR%%/ipaplatform/nixos/constants.py
@@ -460,7 +464,11 @@ share/locale/tr/LC_MESSAGES/ipa.mo
 share/locale/uk/LC_MESSAGES/ipa.mo
 share/locale/zh_CN/LC_MESSAGES/ipa.mo
 @dir etc/ipa/nssdb
+@dir etc/krb5.conf.d
 @dir share/selinux/packages/targeted
+@dir /var/db/ipa-client
+@dir /var/db/ipa-client/pki
+@dir /var/db/ipa-client/sysrestore
 @dir /var/lib/ipa-client/pki
 @dir /var/lib/ipa-client/sysrestore
 @dir /var/lib/ipa-client

@@ -1,13 +1,13 @@
 PORTNAME=	figtree
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.4-14
-PORTREVISION=	2
-DISTVERSIONSUFFIX=	-gf9085b6
+DISTVERSION=	1.4.5pre-6
+DISTVERSIONSUFFIX=	-g24c51ad
 CATEGORIES=	biology education java
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Graphical viewer of phylogenetic trees
-WWW=		http://tree.bio.ed.ac.uk/software/figtree/
+WWW=		http://tree.bio.ed.ac.uk/software/figtree/ \
+		https://github.com/rambaut/figtree
 
 LICENSE=	GPLv2
 
@@ -26,7 +26,7 @@ PLIST_FILES=	bin/${PORTNAME} \
 		${JAVAJARDIR}/${PORTNAME}-pdf.jar \
 		${JAVAJARDIR}/${PORTNAME}.jar \
 		${JAVAJARDIR}/figtreepanel.jar \
-		share/pixmaps/${PORTNAME}.png \
+		share/pixmaps/${PORTNAME}.png
 
 do-install:
 	@(echo "#!/bin/sh"; \

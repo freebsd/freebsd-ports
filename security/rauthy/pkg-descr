@@ -1,0 +1,21 @@
+Rauthy is a lightweight and easy to use Identity Provider supporting OpenID
+Connect, OAuth 2, and PAM. It aims to be simple to both set up and operate,
+with very secure defaults and lots of config options. It puts heavy emphasis
+on Passkeys and strong security in general.
+
+Features include:
+- Fully working OIDC / OAuth 2 provider
+- PAM logins via custom PAM + NSS modules
+- Embedded Hiqlite database (or optional Postgres)
+- High-Availability via Raft Consensus
+- True passwordless accounts with E-Mail + Magic Link + Passkey
+- Dedicated Admin UI and user account dashboard
+- OpenID Connect Dynamic Client Registration
+- OAuth 2 Device Authorization Grant flow
+- Upstream Authentication Providers
+- DPoP tokens for decentralized login flows
+- SCIM v2 for downstream clients
+- Brute-Force and Credential Stuffing detection
+- Geolocation-based access restriction
+- Prometheus /metrics endpoint
+- Hot-Reload TLS certificates

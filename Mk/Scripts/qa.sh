@@ -116,6 +116,15 @@ baselibs() {
 	local rc
 	local found_openssl
 	local file
+
+	# list_stagedir_elfs() enters ${STAGEDIR}, but only inside the subshell
+	# that runs find.  In the pipeline below that feeds the while loop, the
+	# paths find prints are relative, so file(1) and readelf must be in
+	# ${STAGEDIR} too, hence the cd ${STAGEDIR} before the whole pipeline.
+	#
+	# readelf prints "File:" headers only when given two or more operands,
+	# hence the trailing ld-elf.so.1.
+
 	[ "${PKGBASE}" = "pkg" -o "${PKGBASE}" = "pkg-devel" ] && return
 
 	while read -r f; do
@@ -136,7 +145,12 @@ baselibs() {
 			;;
 		esac
 	done <<-EOF
-	$(list_stagedir_elfs -exec readelf -d {} + 2>/dev/null)
+	$(cd ${STAGEDIR} && list_stagedir_elfs | \
+		file -F $'\1' -f - | \
+		grep -a 'ELF.*FreeBSD.*dynamically linked' | \
+		cut -f 1 -d $'\1' | \
+		{ tr '\n' '\000'; printf '%s\000' /libexec/ld-elf.so.1; } | \
+		xargs -0 readelf -d)
 	EOF
 
 	if ! list_stagedir_elfs | egrep -q 'lib(crypto|ssl).so*'; then
@@ -623,7 +637,7 @@ proxydeps_suggest_uses() {
 	# When updating this, please also update the versions list in
 	# bsd.default-versions.mk and ssl.mk!
 	elif [ ${pkg} = "security/openssl" \
-	  -o ${pkg} = "security/openssl34" -o ${pkg} = "security/openssl35" \
+	  -o ${pkg} = "security/openssl35" \
 	  -o ${pkg} = "security/openssl36" \
 	  -o ${pkg} = "security/libressl" -o ${pkg} = "security/libressl-devel" \
 	  ]; then
@@ -653,7 +667,8 @@ proxydeps_suggest_uses() {
 }
 
 proxydeps() {
-	local file dep_file dep_file_pkg already rc dep_lib_file dep_lib_files
+	local file dep_file dep_file_pkg already rc dep_lib_file dep_lib_files \
+		_checklib _soname
 
 	rc=0
 
@@ -720,7 +735,14 @@ proxydeps() {
 
 	# Check whether all files in LIB_DEPENDS are actually linked against
 	for _library in ${WANTED_LIBRARIES} ; do
-		if ! listcontains ${_library%%.so*}.so "${dep_lib_files}" ; then
+		# Resolve the LIB_DEPENDS library to its actual SONAME
+		_checklib=${_library}
+		if [ -f "${LOCALBASE}/lib/${_library}" ]; then
+			_soname=$(readelf -d "${LOCALBASE}/lib/${_library}" 2>/dev/null | \
+				awk '/SONAME/ {gsub(/[\[\]]/, "", $NF); print $NF}')
+			[ -n "${_soname}" ] && _checklib=${_soname}
+		fi
+		if ! listcontains ${_checklib%%.so*}.so "${dep_lib_files}" ; then
 			warn "you might not need LIB_DEPENDS on ${_library}"
 		fi
 	done

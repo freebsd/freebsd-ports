@@ -1,0 +1,5 @@
+jbpy is a library for reading and writing Joint BIIF Profile files. Including:
+- National Imagery Transmission Format (NITF)
+- North Atlantic Treaty Organisation (NATO) Secondary Imagery Format (NSIF)
+
+The Joint BIIF Profile is available from the NSG Standards Registry.

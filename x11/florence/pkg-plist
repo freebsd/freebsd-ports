@@ -1,4 +1,5 @@
 bin/florence
+share/man/man1/florence.1.gz
 include/florence-1.0/florence.h
 lib/libflorence-1.0.so
 lib/libflorence-1.0.so.1

@@ -1,6 +1,6 @@
 PORTNAME=	airspyhf
 DISTVERSION=	1.6.8-7
-DISTVERSIONSUFFIX=	-gb93dedd
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	ports@FreeBSD.org
@@ -8,12 +8,13 @@ COMMENT=	User mode driver for Airspy HF+ SDR
 WWW=		https://github.com/airspy/airspyhf
 
 LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.BSD
 
 USES=		cmake compiler:c11 pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	airspy
+GH_TAGNAME=	24fe8ffc
 
 CMAKE_ARGS=	-DLIBUSB_LIBRARIES="/usr/lib/libusb.so"
 CMAKE_OFF=	INSTALL_UDEV_RULES

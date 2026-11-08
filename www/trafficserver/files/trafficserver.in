@@ -9,10 +9,10 @@
 rcvar=trafficserver_enable
 name="trafficserver"
 trafficserver_enable=${trafficserver_enable:-"NO"}
-pidfile="/var/run/trafficserver/traffic_manager.lock"
+pidfile="/var/run/trafficserver/traffic_server.pid"
 command=/usr/sbin/daemon
-command_args="-p ${pidfile} %%PREFIX%%/bin/traffic_manager"
-procname="%%PREFIX%%/bin/traffic_manager"
+command_args="-f -p ${pidfile} %%PREFIX%%/bin/traffic_server"
+procname="%%PREFIX%%/bin/traffic_server"
 
 load_rc_config "$name"
 run_rc_command "$1"

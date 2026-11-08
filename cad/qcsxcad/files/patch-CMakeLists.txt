@@ -1,0 +1,20 @@
+-- Enable C language so that VTK's MPI::MPI_C target can be resolved.
+
+--- CMakeLists.txt.orig	2026-10-05 16:17:19 UTC
++++ CMakeLists.txt
+@@ -6,14 +6,9 @@ ENDIF()
+   SET( CMAKE_BUILD_TYPE Release CACHE STRING "Set to either \"Release\" or \"Debug\"" )
+ ENDIF()
+ 
+-PROJECT( QCSXCAD CXX)
++PROJECT( QCSXCAD C CXX)
+ 
+ cmake_minimum_required(VERSION 2.8)
+-
+-# https://cmake.org/cmake/help/v3.0/policy/CMP0020.html
+-if(POLICY CMP0020)
+-  cmake_policy(SET CMP0020 OLD)
+-endif()
+ 
+ IF(EXISTS ${PROJECT_SOURCE_DIR}/localConfig.cmake)
+    include(${PROJECT_SOURCE_DIR}/localConfig.cmake)

@@ -18,9 +18,9 @@ include/MBCN_protos.h
 include/MBEntityType.h
 %%MPI%%include/MBParallelConventions.h
 include/MBTagConventions.hpp
-include/iBase.h
-include/iBase_f.h
 include/imoab.mod
+include/mbcoupler/Coupler.hpp
+include/mbcoupler/ElemUtil.hpp
 include/moab/AdaptiveKDTree.hpp
 include/moab/BSPTree.hpp
 include/moab/BSPTreePoly.hpp
@@ -52,6 +52,7 @@ include/moab/HigherOrderFactory.hpp
 include/moab/HomXform.hpp
 include/moab/Interface.hpp
 include/moab/IntxMesh/Intx2Mesh.hpp
+include/moab/IntxMesh/Intx2MeshEdges.hpp
 include/moab/IntxMesh/Intx2MeshInPlane.hpp
 include/moab/IntxMesh/Intx2MeshOnSphere.hpp
 include/moab/IntxMesh/IntxRllCssphere.hpp
@@ -119,12 +120,14 @@ include/moab_export.h
 %%MPI%%include/moab_mpi.h
 %%MPI%%include/moab_mpi_config.h
 lib/cmake/MOAB/MOABConfig.cmake
+lib/cmake/MOAB/MOABConfigVersion.cmake
 lib/cmake/MOAB/MOABTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/MOAB/MOABTargets.cmake
 lib/cmake/MOAB/ResolveCompilerPaths.cmake
 lib/libMOAB.so
 lib/libMOAB.so.5
-lib/libMOAB.so.5.5.1
+lib/libMOAB.so.5.6.0
+lib/libmbcoupler.so
 lib/moab.make
 libdata/pkgconfig/MOAB.pc
 share/man/man1/mbconvert.1.gz

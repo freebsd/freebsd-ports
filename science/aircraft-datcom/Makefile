@@ -1,6 +1,6 @@
 PORTNAME=	aircraft-datcom
 DISTVERSION=	0.0.20120723
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	science
 
 MAINTAINER=	ports@FreeBSD.org
@@ -8,6 +8,9 @@ COMMENT=	Modified USAF Aircraft Stability and Control Data Compendium
 WWW=		https://www.pdas.com/datcom.html
 
 LICENSE=	GPLv3
+
+DEPRECATED=	Ancient software, does not build with CMake 4
+EXPIRATION_DATE=2026-11-30
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	arktools

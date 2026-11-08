@@ -3,7 +3,7 @@ DISTVERSION=	0.3.12
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	chris.longros@gmail.com
+MAINTAINER=	longros@FreeBSD.org
 COMMENT=	High performance container data types
 WWW=		https://cran.r-project.org/package=collections
 

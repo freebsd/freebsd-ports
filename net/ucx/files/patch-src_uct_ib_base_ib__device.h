@@ -1,6 +1,6 @@
---- src/uct/ib/base/ib_device.h.orig	2026-02-05 12:41:56 UTC
+--- src/uct/ib/base/ib_device.h.orig	2026-09-09 16:00:25 UTC
 +++ src/uct/ib/base/ib_device.h
-@@ -20,8 +20,13 @@
+@@ -21,8 +21,13 @@
  #include <ucs/sys/sock.h>
  
  #include <endian.h>

@@ -1,15 +1,15 @@
---- build.xml.orig	2022-07-13 08:03:06 UTC
+--- build.xml.orig	2023-09-22 06:22:54 UTC
 +++ build.xml
-@@ -512,7 +512,6 @@ -->
+@@ -530,7 +530,6 @@
        <zipfileset src="build/Help.jar"/>
        <fileset dir="lib">
          <include name="*.jar"/>
 -        <include name="macosx/*.jar"/>
          <include name="java3d-1.6/*.jar"/>
+         <include name="java3d-1.6/i586/gluegen-rt.jar"/>
          <exclude name="java3d-1.6/jogl-all.jar"/>
-       </fileset>
-@@ -520,15 +519,8 @@ -->
-         <include name="java3d-1.6/jogl-java3d.jar"/>
+@@ -540,15 +539,8 @@
+         <include name="java3d-1.6/i586/jogl-java3d.jar"/>
        </fileset>
        <fileset dir="lib">
 -        <include name="windows/**/*.dll"/>

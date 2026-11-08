@@ -1,6 +1,5 @@
 PORTNAME=	alembic
-PORTVERSION=	1.8.7
-PORTREVISION=	1
+PORTVERSION=	1.8.12
 CATEGORIES=	graphics
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -11,10 +10,12 @@ LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libImath.so:math/Imath
 
-USES=		cmake compiler:c++11-lang
-USE_CXXSTD=	c++11
+USES=		cmake:testing compiler:c++14-lang
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
+
+CMAKE_OFF=	USE_TESTS
+CMAKE_TESTING_ON=	USE_TESTS
 
 OPTIONS_DEFINE=	HDF5
 OPTIONS_DEFAULT=	HDF5
@@ -25,8 +26,5 @@ HDF5_CMAKE_ON=	-DUSE_HDF5:BOOL=ON
 
 PLIST_FILES=	lib/libAlembic.so.${PORTVERSION} \
 		lib/libAlembic.so.${PORTVERSION:R}
-
-do-test:
-	@cd ${TEST_WRKSRC} && ctest -C ${CMAKE_BUILD_TYPE} ${_MAKE_JOBS}
 
 .include <bsd.port.mk>

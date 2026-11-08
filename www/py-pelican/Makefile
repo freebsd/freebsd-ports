@@ -1,5 +1,6 @@
 PORTNAME=	pelican
 DISTVERSION=	4.12.0
+PORTREVISION=	1
 CATEGORIES=	www textproc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -24,7 +25,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}blinker>=1.7:devel/py-blinker@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.4:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}unidecode>=1.3.7:converters/py-unidecode@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}watchfiles>=0.21.0:devel/py-watchfiles@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.9:www/py-beautifulsoup@${PY_FLAVOR} \
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup4>=4.9:www/py-beautifulsoup4@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flake8-import-order>=0.18:devel/py-flake8-import-order@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flake8>:devel/py-flake8@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flake8>=3.8:devel/py-flake8@${PY_FLAVOR} \

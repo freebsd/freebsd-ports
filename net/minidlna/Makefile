@@ -10,8 +10,7 @@ WWW=		https://minidlna.sourceforge.net
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libsqlite3.so:databases/sqlite3	\
-		libexif.so:graphics/libexif	\
+LIB_DEPENDS=	libexif.so:graphics/libexif	\
 		libid3tag.so:audio/libid3tag	\
 		libogg.so:audio/libogg		\
 		libvorbis.so:audio/libvorbis	\
@@ -21,7 +20,7 @@ LIB_DEPENDS=	libsqlite3.so:databases/sqlite3	\
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-db-path=/var/db/minidlna \
 		--with-os-url="http://www.FreeBSD.org"
-USES=		autoreconf cpe gettext-tools iconv jpeg localbase
+USES=		autoreconf cpe gettext-tools iconv jpeg localbase sqlite
 
 CPE_VENDOR=	minidlna_project
 

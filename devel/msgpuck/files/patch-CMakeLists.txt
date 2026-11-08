@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2017-02-07 12:14:17 UTC
+--- CMakeLists.txt.orig	2023-08-28 10:32:04 UTC
 +++ CMakeLists.txt
-@@ -12,9 +12,12 @@ endif()
+@@ -14,9 +14,12 @@ check_c_compiler_flag("-mno-unaligned-access" CC_HAS_M
  include(CheckCCompilerFlag)
  check_c_compiler_flag("-mno-unaligned-access" CC_HAS_MNO_UNALIGNED_ACCESS)
  
@@ -16,7 +16,7 @@
  
  if (NOT ${PROJECT_SOURCE_DIR} STREQUAL ${CMAKE_SOURCE_DIR})
      # Embedded mode, skip tests, documentation and the install targets
-@@ -32,7 +35,11 @@ endif()
+@@ -34,7 +37,11 @@ include(GNUInstallDirs)
  add_subdirectory(test)
  
  include(GNUInstallDirs)

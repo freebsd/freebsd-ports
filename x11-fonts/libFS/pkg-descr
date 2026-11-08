@@ -1,1 +1,5 @@
-This package contains libFS, the X Font Service client library.
+This package contains the library and header files for the X Font
+Server Interface Library.
+
+This library is used by clients of X Font Servers (xfs), such as
+xfsinfo, fslsfonts, and the X servers themselves.

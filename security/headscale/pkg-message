@@ -20,4 +20,20 @@ https://github.com/juanfont/headscale/releases/tag/v0.26.0
 for details.
 EOM
 }
+{
+  type: upgrade
+  maximum_version: "0.28.0"
+  message: <<EOM
+Headscale has breaking changes introcuded in release 0.28.0.
+Check: https://github.com/juanfont/headscale/releases/tag/v0.28.0
+EOM
+}
+{
+  type: upgrade
+  maximum_version: "0.29.0"
+  message: <<EOM
+Headscale has breaking changes introcuded in release 0.29.0.
+Check: https://github.com/juanfont/headscale/releases/tag/v0.29.0
+EOM
+}
 ]

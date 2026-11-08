@@ -127,7 +127,7 @@ OPUS_LIB_DEPENDS=	libopus.so:audio/opus
 OPUS_CONFIGURE_OFF=	--disable-libopus
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_OFF=	--disable-pulse
-PYTHON_USES=		python:3.10-3.11
+PYTHON_USES=		python:3.11
 PYTHON_USES_OFF=	python:build
 PYTHON_USE=		PYTHON=distutils,noegginfo,noflavors
 PYTHON_CONFIGURE_OFF=	--disable-python
@@ -140,7 +140,7 @@ QT5_CONFIGURE_ON=	--enable-qt5
 QT5_CONFIGURE_OFF=	--disable-qt
 R0LOGGING_IMPLIES=	DEBUG
 UDPTUNNEL_CONFIGURE_OFF=	--disable-udptunnel
-VBOXIMG_LIB_DEPENDS=	libfuse.so.2:filesystems/fusefs-libs
+VBOXIMG_LIB_DEPENDS=	libfuse.so:filesystems/fusefs-libs
 VDE_RUN_DEPENDS=	vde_switch:net/vde2
 VDE_CONFIGURE_ON=	--enable-vde
 VNC_LIB_DEPENDS=	libvncserver.so:net/libvncserver

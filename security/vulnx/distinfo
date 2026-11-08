@@ -1,0 +1,5 @@
+TIMESTAMP = 1788798696
+SHA256 (go/security_vulnx/vulnx-v2.0.2/v2.0.2.mod) = 31f013550c9bfaaf1d40d3e75f5d3d282091959b26cdd63713095ec4350b5a28
+SIZE (go/security_vulnx/vulnx-v2.0.2/v2.0.2.mod) = 6277
+SHA256 (go/security_vulnx/vulnx-v2.0.2/v2.0.2.zip) = 783e3a83588929359dabd4900d1c88cb92637bb4604e7fb4a2c9e6be89671a25
+SIZE (go/security_vulnx/vulnx-v2.0.2/v2.0.2.zip) = 18880600

@@ -1,5 +1,5 @@
 PORTNAME=	clasp
-PORTVERSION=	3.3.9
+PORTVERSION=	3.4.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	math devel
 
@@ -14,7 +14,7 @@ USES=	compiler:c++11-lang cmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	potassco
-GH_TUPLE=	potassco:libpotassco:fa39da4:other/libpotassco
+GH_TUPLE=	potassco:libpotassco:a10b3ac:other/libpotassco
 
 PLIST_FILES=	bin/${PORTNAME}
 

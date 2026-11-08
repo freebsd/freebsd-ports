@@ -1,5 +1,6 @@
 PORTNAME=	ibus-hangul
 PORTVERSION=	1.5.5
+PORTREVISION=	1
 CATEGORIES=	korean
 
 MAINTAINER=	jkim@FreeBSD.org
@@ -11,7 +12,8 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libhangul.so:korean/libhangul \
 		libibus-1.0.so:textproc/ibus
 
-USES=		autoreconf gmake gnome libtool pkgconfig python
+USES=		autoreconf desktop-file-utils gmake gnome libtool \
+		pkgconfig python
 USE_GNOME=	gtk30 intlhack pygobject3
 USE_PYTHON=	py3kplist
 

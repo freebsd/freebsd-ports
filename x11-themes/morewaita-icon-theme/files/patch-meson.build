@@ -1,7 +1,7 @@
---- meson.build.orig	2025-08-02 14:16:58 UTC
+--- meson.build.orig	2026-10-02 07:16:43 UTC
 +++ meson.build
-@@ -6,5 +6,3 @@ install_data('index.theme', install_dir: iconsdir)
- subdir('symbolic')
+@@ -7,5 +7,3 @@ install_data('index.theme', install_dir: iconsdir)
+ subdir('16x16')
  
  install_data('index.theme', install_dir: iconsdir)
 -install_data('AUTHORS', install_dir: iconsdir)

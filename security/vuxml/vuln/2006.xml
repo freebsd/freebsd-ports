@@ -1743,7 +1743,7 @@
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<blockquote cite="ftp://ftp.tin.org/pub/news/clients/tin/stable/CHANGES">
+	<blockquote cite="https://bzr.tin.org/doc/CHANGES">
 	  <p>Urs Janssen and Aleksey Salow report possible buffer
 	    overflows in tin versions 1.8.0 and 1.8.1.</p>
 	</blockquote>
@@ -1755,7 +1755,7 @@
       </body>
     </description>
     <references>
-      <url>ftp://ftp.tin.org/pub/news/clients/tin/stable/CHANGES</url>
+      <url>https://bzr.tin.org/doc/CHANGES</url>
       <url>http://www.openpkg.org/security/advisories/OpenPKG-SA-2006.005-tin.html</url>
     </references>
     <dates>
@@ -6586,7 +6586,7 @@
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Nathan Dors of the Pubcookie Project reports:</p>
-	<blockquote cite="">
+	<blockquote>
 	  <p> Multiple non-persistent XSS vulnerabilities were found
 	    in the Pubcookie login server's compiled binary "index.cgi"
 	    CGI program. The CGI program mishandles untrusted data when

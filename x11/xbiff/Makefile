@@ -9,7 +9,7 @@ WWW=		https://gitlab.freedesktop.org/xorg/app/xbiff
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:xz xorg xorg-cat:app
+USES=		xorg xorg-cat:app
 USE_XORG=	x11 xaw xbitmaps xext xmu xorgproto xt
 PLIST_FILES=	bin/xbiff share/man/man1/xbiff.1.gz
 

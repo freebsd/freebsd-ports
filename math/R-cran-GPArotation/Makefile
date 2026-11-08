@@ -1,11 +1,10 @@
 PORTNAME=	GPArotation
-DISTVERSION=	2026.7-1
+DISTVERSION=	2026.8-2
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Gradient Projection Algorithms for Factor Rotation
-WWW=		https://cran.r-project.org/package=GPArotation
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

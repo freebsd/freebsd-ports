@@ -1,5 +1,5 @@
---- Makefile.in.orig	2020-07-14 20:59:31 UTC
-+++ Makefile.in	
+--- Makefile.in.orig	2026-10-29 23:39:45 UTC
++++ Makefile.in
 @@ -59,7 +59,7 @@ CONFIG_FILE		=	$(CONFIG_FILE_PATH)/RT_Config.pm
  
  CONFIG_FILE_PATH	=	@CONFIG_FILE_PATH_R@
@@ -9,7 +9,7 @@
  
  
  RT_VERSION_MAJOR	=	@RT_VERSION_MAJOR@
-@@ -279,16 +279,13 @@ fixdeps:
+@@ -278,16 +278,13 @@ fixdeps:
  depends: fixdeps
  
  fixdeps:
@@ -27,7 +27,7 @@
  
  
  	chmod $(RT_READABLE_DIR_MODE) $(DESTDIR)$(RT_BIN_PATH)
-@@ -310,12 +307,6 @@ fixperms:
+@@ -309,12 +306,6 @@ fixperms:
  	# Make the system binaries executable also
  	cd $(DESTDIR)$(RT_SBIN_PATH) && ( chmod 0755 $(SYSTEM_BINARIES) ; chown $(BIN_OWNER) $(SYSTEM_BINARIES);  chgrp $(RTGROUP) $(SYSTEM_BINARIES))
  
@@ -40,14 +40,14 @@
  	# Make the web ui readable by all. 
  	chmod -R  u+rwX,go-w,go+rX 	$(DESTDIR)$(MASON_HTML_PATH) \
  					$(DESTDIR)$(MASON_LOCAL_HTML_PATH) \
-@@ -367,14 +358,14 @@ clean-mason-cache:
+@@ -365,14 +356,14 @@ clean-mason-cache:
  	rm -rf $(DESTDIR)$(MASON_DATA_PATH)/etc/*
  	rm -rf $(DESTDIR)$(MASON_DATA_PATH)/obj/*
  
 -install: testdeps config-install dirs files-install fixperms instruct
 +install: config-install dirs files-install
  
- files-install: libs-install etc-install config-install bin-install sbin-install html-install doc-install font-install po-install static-install
+ files-install: libs-install etc-install config-install bin-install sbin-install html-install doc-install po-install static-install
  
  config-install:
 -@COMMENT_INPLACE_LAYOUT@	$(INSTALL) -m 0755 -o $(BIN_OWNER) -g $(RTGROUP) -d $(DESTDIR)$(CONFIG_FILE_PATH)
@@ -59,7 +59,7 @@
  @COMMENT_INPLACE_LAYOUT@	@echo "Installed configuration. About to install RT in  $(RT_PATH)"
  
  test: 
-@@ -466,13 +457,6 @@ etc-install:
+@@ -457,13 +448,6 @@ etc-install:
  @COMMENT_INPLACE_LAYOUT@	for file in $(ETC_FILES) ; do \
  @COMMENT_INPLACE_LAYOUT@	    $(INSTALL) -m 0644 "etc/$$file" "$(DESTDIR)$(RT_ETC_PATH)/" ; \
  @COMMENT_INPLACE_LAYOUT@	done
@@ -73,7 +73,7 @@
  @COMMENT_INPLACE_LAYOUT@	[ -d $(DESTDIR)$(RT_ETC_PATH)/ai ] || $(INSTALL) -m 0755 -d $(DESTDIR)$(RT_ETC_PATH)/ai
  @COMMENT_INPLACE_LAYOUT@	-( cd etc/ai && find . -type d -print ) | while read dir ; do \
  @COMMENT_INPLACE_LAYOUT@	    $(INSTALL) -m 0755 -d "$(DESTDIR)$(RT_ETC_PATH)/ai/$$dir" ; \
-@@ -485,7 +469,7 @@ sbin-install:
+@@ -476,7 +460,7 @@ sbin-install:
  sbin-install:
  @COMMENT_INPLACE_LAYOUT@	$(INSTALL) -m 0755 -d $(DESTDIR)$(RT_SBIN_PATH)
  @COMMENT_INPLACE_LAYOUT@	for file in $(SYSTEM_BINARIES) ; do \
@@ -82,7 +82,7 @@
  @COMMENT_INPLACE_LAYOUT@	done
  
  
-@@ -493,7 +477,7 @@ bin-install:
+@@ -484,7 +468,7 @@ bin-install:
  bin-install:
  @COMMENT_INPLACE_LAYOUT@	$(INSTALL) -m 0755 -d $(DESTDIR)$(RT_BIN_PATH)
  @COMMENT_INPLACE_LAYOUT@	for file in $(BINARIES) ; do \

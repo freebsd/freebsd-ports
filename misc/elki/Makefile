@@ -1,8 +1,6 @@
 PORTNAME=	elki
 DISTVERSIONPREFIX=	release
-DISTVERSION=	0.7.1-1166
-PORTREVISION=	3
-DISTVERSIONSUFFIX=	-gfb1fffdf3
+DISTVERSION=	0.8.0
 CATEGORIES=	misc java
 MASTER_SITES=	LOCAL/yuri/:deps
 DISTFILES=	${PORTNAME}-${DISTVERSION}-deps${EXTRACT_SUFX}:deps
@@ -10,12 +8,13 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Data mining toolkit
-WWW=		https://elki-project.github.io/
+WWW=		https://elki-project.github.io/ \
+		https://github.com/elki-project/elki
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-BUILD_DEPENDS=	gradle5:devel/gradle5
+BUILD_DEPENDS=	gradle761:devel/gradle761
 
 USES=		java
 JAVA_VERSION=	17 # Java 8 fails on aarch64: Java VM: OpenJDK 64-Bit Server VM (25.342-b07 mixed mode bsd-aarch64 compressed oops) Core dump written.
@@ -43,12 +42,14 @@ post-extract:
 	@cd ${DEPS_CACHE_DIR} && ${TAR} xzf ${DISTDIR}/${PORTNAME}-${DISTVERSION}-deps${EXTRACT_SUFX}
 
 do-build:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} gradle5 \
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} gradle761 \
 		--gradle-user-home ${DEPS_CACHE_DIR}/gradle-${PORTNAME} --project-cache-dir ${DEPS_CACHE_DIR}/gradle-${PORTNAME} \
-		--offline --build-cache shadowJar
+		--offline --no-daemon --build-cache shadowJar
+
+MAKE_ENV+=	JAVA_HOME=${JAVA_HOME}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-bundle-0.7.2-SNAPSHOT.jar ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}-${PORTVERSION}.jar
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-bundle-${PORTVERSION}.jar ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}-${PORTVERSION}.jar
 
 .include <bsd.port.mk>

@@ -1,0 +1,63 @@
+--- CMakeLists.txt.orig	2026-06-25 05:33:03 UTC
++++ CMakeLists.txt
+@@ -22,15 +22,16 @@ set(PYTHONOCC_VERSION_MINOR 0)
+ # set pythonOCC version
+ set(PYTHONOCC_VERSION_MAJOR 8)
+ set(PYTHONOCC_VERSION_MINOR 0)
+-set(PYTHONOCC_VERSION_PATCH 0)
++set(PYTHONOCC_VERSION_PATCH 1)
+ 
+ #  Empty for official releases, set to -dev, -rc1, etc for development releases
+-set(PYTHONOCC_VERSION_DEVEL )
++set(PYTHONOCC_VERSION_DEVEL alpha)
+ 
+ # set OCCT version
++
+ set(OCCT_VERSION_MAJOR 8)
+ set(OCCT_VERSION_MINOR 0)
+-set(OCCT_VERSION_PATCH 0)
++set(OCCT_VERSION_PATCH 1)
+ 
+ set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake ${CMAKE_MODULE_PATH})
+ 
+@@ -73,6 +74,12 @@ include_directories(${OPENGL_INCLUDE_DIR})
+ find_package(OpenGL)
+ include_directories(${OPENGL_INCLUDE_DIR})
+ 
++##############################
++# rapidjson
++#############################
++find_package(RapidJSON REQUIRED)
++set(RapidJSON_INCLUDE_DIR /usr/local/include CACHE PATH "path to the rapidjson include directory")
++
+ #################
+ # Build options #
+ #################
+@@ -88,7 +95,7 @@ option_with_default(OCCT_HIDE_DEPRECATED "Check this o
+ option_with_default(PYTHONOCC_WRAP_OCAF "Compile OCCT Application Framework wrapper" ON)
+ option_with_default(SWIG_HIDE_WARNINGS "Check this option if you want a less verbose swig output." ON)
+ option_with_default(OCCT_HIDE_DEPRECATED "Check this option to disable deprecation warnings for OCCT." ON)
+-option_with_default(PYTHONOCC_MESHDS_NUMPY "Enable using numpy to speed up mesh data source arrays (requires numpy dev libraries and headers)." OFF)
++option_with_default(PYTHONOCC_MESHDS_NUMPY "Enable using numpy to speed up mesh data source arrays (requires numpy dev libraries and headers)." ON)
+ 
+ ############
+ # Python 3 #
+@@ -100,8 +107,6 @@ if(PYTHONOCC_MESHDS_NUMPY)
+     include_directories(${Python3_NumPy_INCLUDE_DIRS})
+     message(STATUS "Numpy include directory: ${Python3_NumPy_INCLUDE_DIRS}")
+     set(CMAKE_SWIG_FLAGS ${CMAKE_SWIG_FLAGS} -DBUILD_MESHDS_NUMPY)
+-else(PYTHONOCC_MESHDS_NUMPY)
+-    find_package(Python3 COMPONENTS Interpreter Development REQUIRED)
+ endif(PYTHONOCC_MESHDS_NUMPY)
+ message(STATUS "Python3 interpreter:" ${Python3_EXECUTABLE})
+ message(STATUS "Python include directory: ${Python3_INCLUDE_DIRS}")
+@@ -110,7 +115,8 @@ message(STATUS "Python library release: ${Python3_LIBR
+ ########
+ # SWIG #
+ ########
+-find_package(SWIG 4.2.1...4.4.1 REQUIRED)
++#find_package(SWIG 4.2.1...4.4.1 REQUIRED)
++find_package(SWIG 4.2.1)
+ message(STATUS "SWIG version found: ${SWIG_VERSION}")
+ include(${SWIG_USE_FILE})
+ set(SWIG_FILES_PATH src/SWIG_files/wrapper)

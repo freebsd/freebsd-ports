@@ -4,12 +4,11 @@ bin/prima-cfgmaint
 bin/prima-class
 bin/prima-fmview
 bin/prima-gencls
+bin/prima-pod2pdf
 bin/prima-tmlink
 %%SITE_ARCH%%/Prima.pm
 %%SITE_ARCH%%/Prima/Application.pm
 %%SITE_ARCH%%/Prima/Buttons.pm
-%%SITE_ARCH%%/Prima/CORE/Drawable_private.h
-%%SITE_ARCH%%/Prima/CORE/Image_private.h
 %%SITE_ARCH%%/Prima/CORE/apricot.h
 %%SITE_ARCH%%/Prima/CORE/generic/AbstractMenu.h
 %%SITE_ARCH%%/Prima/CORE/generic/AccelTable.h
@@ -35,6 +34,9 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/CORE/guts.h
 %%SITE_ARCH%%/Prima/CORE/img.h
 %%SITE_ARCH%%/Prima/CORE/img_conv.h
+%%SITE_ARCH%%/Prima/CORE/private/Drawable.h
+%%SITE_ARCH%%/Prima/CORE/private/Image.h
+%%SITE_ARCH%%/Prima/CORE/private/Widget.h
 %%SITE_ARCH%%/Prima/CORE/unix/guts.h
 %%SITE_ARCH%%/Prima/CORE/unix/queue.h
 %%SITE_ARCH%%/Prima/Calendar.pm
@@ -42,6 +44,7 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/Clipboard.pod
 %%SITE_ARCH%%/Prima/ComboBox.pm
 %%SITE_ARCH%%/Prima/Config.pm
+%%SITE_ARCH%%/Prima/Config.pm.bak
 %%SITE_ARCH%%/Prima/Const.pm
 %%SITE_ARCH%%/Prima/DetailedList.pm
 %%SITE_ARCH%%/Prima/DetailedOutline.pm
@@ -68,8 +71,10 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/Drawable/Markup.pm
 %%SITE_ARCH%%/Prima/Drawable/Metafile.pm
 %%SITE_ARCH%%/Prima/Drawable/Path.pm
+%%SITE_ARCH%%/Prima/Drawable/Pod.pm
 %%SITE_ARCH%%/Prima/Drawable/Subcanvas.pm
 %%SITE_ARCH%%/Prima/Drawable/TextBlock.pm
+%%SITE_ARCH%%/Prima/Drawable/Wave.pm
 %%SITE_ARCH%%/Prima/Edit.pm
 %%SITE_ARCH%%/Prima/EventHook.pm
 %%SITE_ARCH%%/Prima/ExtLists.pm
@@ -80,16 +85,21 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/HelpViewer.pm
 %%SITE_ARCH%%/Prima/Image.pod
 %%SITE_ARCH%%/Prima/Image/Animate.pm
+%%SITE_ARCH%%/Prima/Image/Exif.pm
+%%SITE_ARCH%%/Prima/Image/Loader.pm
 %%SITE_ARCH%%/Prima/Image/TransparencyControl.pm
 %%SITE_ARCH%%/Prima/Image/base64.pm
 %%SITE_ARCH%%/Prima/Image/gif.pm
 %%SITE_ARCH%%/Prima/Image/heif.fm
 %%SITE_ARCH%%/Prima/Image/heif.pm
 %%SITE_ARCH%%/Prima/Image/jpeg.pm
+%%SITE_ARCH%%/Prima/Image/jxl.fm
+%%SITE_ARCH%%/Prima/Image/jxl.pm
 %%SITE_ARCH%%/Prima/Image/png.pm
 %%SITE_ARCH%%/Prima/Image/tiff.fm
 %%SITE_ARCH%%/Prima/Image/tiff.pm
 %%SITE_ARCH%%/Prima/Image/transparency.gif
+%%SITE_ARCH%%/Prima/Image/webp.fm
 %%SITE_ARCH%%/Prima/Image/webp.pm
 %%SITE_ARCH%%/Prima/ImageViewer.pm
 %%SITE_ARCH%%/Prima/IniFile.pm
@@ -145,6 +155,7 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/Widget/BidiInput.pm
 %%SITE_ARCH%%/Prima/Widget/Date.pm
 %%SITE_ARCH%%/Prima/Widget/EventRectangles.pm
+%%SITE_ARCH%%/Prima/Widget/Fader.pm
 %%SITE_ARCH%%/Prima/Widget/GroupScroller.pm
 %%SITE_ARCH%%/Prima/Widget/Header.pm
 %%SITE_ARCH%%/Prima/Widget/IntIndents.pm
@@ -158,6 +169,7 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/Widget/Time.pm
 %%SITE_ARCH%%/Prima/Widget/UndoActions.pm
 %%SITE_ARCH%%/Prima/Widget/date.gif
+%%SITE_ARCH%%/Prima/Widget/grid.pod
 %%SITE_ARCH%%/Prima/Widget/link.gif
 %%SITE_ARCH%%/Prima/Widget/pack.pod
 %%SITE_ARCH%%/Prima/Widget/place.pod
@@ -165,6 +177,7 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/Window.pod
 %%SITE_ARCH%%/Prima/X11.pod
 %%SITE_ARCH%%/Prima/aa.gif
+%%SITE_ARCH%%/Prima/aa2.gif
 %%SITE_ARCH%%/Prima/altspinbutton.gif
 %%SITE_ARCH%%/Prima/buttons.gif
 %%SITE_ARCH%%/Prima/calendar.gif
@@ -176,7 +189,9 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/detailedlist.gif
 %%SITE_ARCH%%/Prima/detailedoutline.gif
 %%SITE_ARCH%%/Prima/detailedoutline2.gif
+%%SITE_ARCH%%/Prima/drawtab.gif
 %%SITE_ARCH%%/Prima/edit.gif
+%%SITE_ARCH%%/Prima/examples/3d.pl
 %%SITE_ARCH%%/Prima/examples/Hand.gif
 %%SITE_ARCH%%/Prima/examples/animate.pl
 %%SITE_ARCH%%/Prima/examples/antialias.pl
@@ -195,6 +210,8 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/examples/drivecombo.pl
 %%SITE_ARCH%%/Prima/examples/edit.pl
 %%SITE_ARCH%%/Prima/examples/editor.pl
+%%SITE_ARCH%%/Prima/examples/emoji.pl
+%%SITE_ARCH%%/Prima/examples/exif.pl
 %%SITE_ARCH%%/Prima/examples/extlist.pl
 %%SITE_ARCH%%/Prima/examples/eyes.pl
 %%SITE_ARCH%%/Prima/examples/f_fill.pl
@@ -204,6 +221,7 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/examples/gradient.pl
 %%SITE_ARCH%%/Prima/examples/grid.pl
 %%SITE_ARCH%%/Prima/examples/grip.pl
+%%SITE_ARCH%%/Prima/examples/gt_grid.pl
 %%SITE_ARCH%%/Prima/examples/helloworld.pl
 %%SITE_ARCH%%/Prima/examples/iv.pl
 %%SITE_ARCH%%/Prima/examples/keys.pl
@@ -226,7 +244,6 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/examples/palette.pl
 %%SITE_ARCH%%/Prima/examples/pbrush.pl
 %%SITE_ARCH%%/Prima/examples/periodic.pl
-%%SITE_ARCH%%/Prima/examples/pitch.pl
 %%SITE_ARCH%%/Prima/examples/pointers.pl
 %%SITE_ARCH%%/Prima/examples/print.pl
 %%SITE_ARCH%%/Prima/examples/progressbar.pl
@@ -240,8 +257,11 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/examples/socket.pl
 %%SITE_ARCH%%/Prima/examples/socket_anyevent1.pl
 %%SITE_ARCH%%/Prima/examples/socket_anyevent2.pl
+%%SITE_ARCH%%/Prima/examples/sorting-quiz.pl
 %%SITE_ARCH%%/Prima/examples/spinner.pl
 %%SITE_ARCH%%/Prima/examples/spline.pl
+%%SITE_ARCH%%/Prima/examples/star_and_ring.pl
+%%SITE_ARCH%%/Prima/examples/text-render.pl
 %%SITE_ARCH%%/Prima/examples/theme.pl
 %%SITE_ARCH%%/Prima/examples/tiger.eps
 %%SITE_ARCH%%/Prima/examples/tiger.pl
@@ -286,6 +306,7 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/path.gif
 %%SITE_ARCH%%/Prima/podview.gif
 %%SITE_ARCH%%/Prima/progressbar.png
+%%SITE_ARCH%%/Prima/puppies.gif
 %%SITE_ARCH%%/Prima/rop1.gif
 %%SITE_ARCH%%/Prima/rop2.gif
 %%SITE_ARCH%%/Prima/rop3.png
@@ -307,6 +328,7 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/sysimage.gif
 %%SITE_ARCH%%/Prima/textview.gif
 %%SITE_ARCH%%/Prima/themes/color.pm
+%%SITE_ARCH%%/Prima/themes/flat.pm
 %%SITE_ARCH%%/Prima/themes/round3d.pm
 %%SITE_ARCH%%/Prima/themes/sysimage.pm
 %%SITE_ARCH%%/Prima/themes/tabset.pm
@@ -321,9 +343,9 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/tutorial/menu2.gif
 %%SITE_ARCH%%/Prima/tutorial/menu3.gif
 %%SITE_ARCH%%/Prima/types.pod
+%%SITE_ARCH%%/Prima/wave.gif
 %%SITE_ARCH%%/Prima/windings.gif
 %%SITE_ARCH%%/auto/Prima/Prima.so
-%%SITE_ARCH%%/auto/Prima/SlibPrima.a
 %%SITE_ARCH%%/prima-gencls.pod
 %%SITE_ARCH%%/vb-large.png
 %%PERL5_MAN1%%/VB.1.gz
@@ -332,6 +354,7 @@ bin/prima-tmlink
 %%PERL5_MAN1%%/prima-class.1.gz
 %%PERL5_MAN1%%/prima-fmview.1.gz
 %%PERL5_MAN1%%/prima-gencls.1.gz
+%%PERL5_MAN1%%/prima-pod2pdf.1.gz
 %%PERL5_MAN1%%/prima-tmlink.1.gz
 %%PERL5_MAN3%%/Prima.3.gz
 %%PERL5_MAN3%%/Prima::Application.3.gz
@@ -359,8 +382,10 @@ bin/prima-tmlink
 %%PERL5_MAN3%%/Prima::Drawable::Markup.3.gz
 %%PERL5_MAN3%%/Prima::Drawable::Metafile.3.gz
 %%PERL5_MAN3%%/Prima::Drawable::Path.3.gz
+%%PERL5_MAN3%%/Prima::Drawable::Pod.3.gz
 %%PERL5_MAN3%%/Prima::Drawable::Subcanvas.3.gz
 %%PERL5_MAN3%%/Prima::Drawable::TextBlock.3.gz
+%%PERL5_MAN3%%/Prima::Drawable::Wave.3.gz
 %%PERL5_MAN3%%/Prima::Edit.3.gz
 %%PERL5_MAN3%%/Prima::EventHook.3.gz
 %%PERL5_MAN3%%/Prima::ExtLists.3.gz
@@ -368,11 +393,14 @@ bin/prima-tmlink
 %%PERL5_MAN3%%/Prima::Grids.3.gz
 %%PERL5_MAN3%%/Prima::HelpViewer.3.gz
 %%PERL5_MAN3%%/Prima::Image::Animate.3.gz
+%%PERL5_MAN3%%/Prima::Image::Exif.3.gz
+%%PERL5_MAN3%%/Prima::Image::Loader.3.gz
 %%PERL5_MAN3%%/Prima::Image::TransparencyControl.3.gz
 %%PERL5_MAN3%%/Prima::Image::base64.3.gz
 %%PERL5_MAN3%%/Prima::Image::gif.3.gz
 %%PERL5_MAN3%%/Prima::Image::heif.3.gz
 %%PERL5_MAN3%%/Prima::Image::jpeg.3.gz
+%%PERL5_MAN3%%/Prima::Image::jxl.3.gz
 %%PERL5_MAN3%%/Prima::Image::png.3.gz
 %%PERL5_MAN3%%/Prima::Image::tiff.3.gz
 %%PERL5_MAN3%%/Prima::Image::webp.3.gz
@@ -418,6 +446,7 @@ bin/prima-tmlink
 %%PERL5_MAN3%%/Prima::Widget::BidiInput.3.gz
 %%PERL5_MAN3%%/Prima::Widget::Date.3.gz
 %%PERL5_MAN3%%/Prima::Widget::EventRectangles.3.gz
+%%PERL5_MAN3%%/Prima::Widget::Fader.3.gz
 %%PERL5_MAN3%%/Prima::Widget::GroupScroller.3.gz
 %%PERL5_MAN3%%/Prima::Widget::Header.3.gz
 %%PERL5_MAN3%%/Prima::Widget::IntIndents.3.gz
@@ -442,6 +471,7 @@ bin/prima-tmlink
 %%PERL5_MAN3%%/Prima::sys::win32.3.gz
 %%PERL5_MAN3%%/Prima::sys::win32::FileDialog.3.gz
 %%PERL5_MAN3%%/Prima::themes::color.3.gz
+%%PERL5_MAN3%%/Prima::themes::flat.3.gz
 %%PERL5_MAN3%%/Prima::themes::round3d.3.gz
 %%PERL5_MAN3%%/Prima::themes::sysimage.3.gz
 %%PERL5_MAN3%%/Prima::themes::tabset.3.gz
@@ -455,6 +485,7 @@ bin/prima-tmlink
 %%PERL5_MAN3%%/pod::Prima::Region.3.gz
 %%PERL5_MAN3%%/pod::Prima::Timer.3.gz
 %%PERL5_MAN3%%/pod::Prima::Widget.3.gz
+%%PERL5_MAN3%%/pod::Prima::Widget::grid.3.gz
 %%PERL5_MAN3%%/pod::Prima::Widget::pack.3.gz
 %%PERL5_MAN3%%/pod::Prima::Widget::place.3.gz
 %%PERL5_MAN3%%/pod::Prima::Window.3.gz

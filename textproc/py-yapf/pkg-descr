@@ -1,1 +1,8 @@
 A formatter for Python code.
+
+YAPF (Yet Another Python Formatter) is based on the algorithm of
+clang-format: it reformats code to the layout that best conforms to the
+configured style, rather than only fixing style-guide violations.
+Predefined styles include pep8, google, facebook and yapf, and options can
+be set in setup.cfg, pyproject.toml or a .style.yapf file.  It can be used
+as a command-line tool or as a library.

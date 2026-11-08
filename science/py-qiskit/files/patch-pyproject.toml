@@ -1,0 +1,23 @@
+--- pyproject.toml.orig	2026-07-04 14:22:18 UTC
++++ pyproject.toml
+@@ -2,7 +2,7 @@ requires = [
+ # This is duplicated as `dependency-groups.build` for convenience.
+ requires = [
+     # Minimum is for PEP 639 / SPDX licence metadata.
+-    "setuptools>=77.0",
++    "setuptools>=63.0",
+     # Minimum is for `Extension(generated_files=...)`.
+     "setuptools-rust>=1.13.0",
+ ]
+@@ -12,10 +12,7 @@ requires-python = ">=3.10"
+ name = "qiskit"
+ description = "An open-source SDK for working with quantum computers at the level of extended quantum circuits, operators, and primitives."
+ requires-python = ">=3.10"
+-license = "Apache-2.0"
+-license-files = [
+-    "LICENSE.txt",
+-]
++license = { text = "Apache-2.0" }
+ authors = [
+     { name = "Qiskit Development Team", email = "qiskit@us.ibm.com" },
+ ]

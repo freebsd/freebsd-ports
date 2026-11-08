@@ -1,0 +1,23 @@
+-- Use the setuptools version available in FreeBSD ports and the legacy
+-- license form supported by older setuptools.
+
+--- pyproject.toml.orig	2026-08-05 07:17:12 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@ requires = [
+ [build-system]
+ requires = [
+-    "setuptools>=77.0.3", # Ensuring license field is correctly parsed
++    "setuptools",
+     "wheel",
+ ]
+ build-backend = "setuptools.build_meta"
+@@ -15,8 +15,7 @@ readme = "README.md"
+ ]
+ description = "Unified Form Language"
+ readme = "README.md"
+-license = "LGPL-3.0-or-later"
+-license-files = ["COPYING*"]
++license = {text = "LGPL-3.0-or-later"}
+ requires-python = ">=3.11"
+ dependencies = ["numpy"]
+ 

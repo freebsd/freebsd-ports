@@ -1,0 +1,8 @@
+The json_status module serves the counters of the stub status module as a
+JSON document instead of the plain text layout: active connections, the
+accepted, handled and requested totals, and the reading, writing and waiting
+figures.  Its single directive, json_status, is placed in the location that
+is to answer with them.
+
+This port only installs the module sources.  The module itself is built by
+the nginx ports when their HTTP_JSON_STATUS option is enabled.

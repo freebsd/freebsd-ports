@@ -1,7 +1,7 @@
 PORTNAME=	SoapyBladeRF
 DISTVERSIONPREFIX=	soapy-bladerf-
-DISTVERSION=	0.4.1
-PORTREVISION=	3
+DISTVERSION=	0.4.2
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,6 +18,8 @@ USES=		cmake compiler:c++11-lang pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	pothosware
 
-PLIST_FILES=	lib/SoapySDR/modules0.8/libbladeRFSupport.so
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/pothosware/SoapyBladeRF/issues/71
+
+PLIST_FILES=	lib/SoapySDR/modules0.9/libbladeRFSupport.so
 
 .include <bsd.port.mk>

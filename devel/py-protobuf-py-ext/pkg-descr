@@ -1,0 +1,2 @@
+The native Python extension for accelerating heavyweight operations on Protobuf
+messages, written in Rust. See protobuf-py for more details.

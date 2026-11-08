@@ -6,7 +6,7 @@ MASTER_SITES=	https://github.com/EduMIPS64/${PORTNAME}/releases/download/v${DIST
 EXTRACT_SUFX=	.jar
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	0mp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free, cross-platform, educational, visual MIPS64 CPU simulator
 WWW=		https://www.edumips.org/ \
 		https://github.com/EduMIPS64/edumips64/

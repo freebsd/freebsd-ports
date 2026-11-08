@@ -1,7 +1,7 @@
 PORTNAME=	sq
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.48.11
-PORTREVISION=	7
+DISTVERSION=	0.55.0
+PORTREVISION=	2
 CATEGORIES=	databases
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -11,12 +11,16 @@ WWW=		https://sq.io/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+LIB_DEPENDS=	libduckdb.so:databases/duckdb
+
 USES=		go:modules
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	neilotoole
 
 GO_MODULE=	github.com/neilotoole/sq
+GO_LDFLAGS=	-X ${GO_MODULE}/cli/buildinfo.Version=${DISTVERSIONFULL}
+GO_BUILDFLAGS+=	-tags duckdb_use_lib
 
 PLIST_FILES=	bin/sq
 

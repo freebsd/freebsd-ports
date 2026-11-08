@@ -88,6 +88,10 @@
 %%SITE_PERL%%/Test2/Harness/Runner/State.pm
 %%SITE_PERL%%/Test2/Harness/Settings.pm
 %%SITE_PERL%%/Test2/Harness/Settings/Prefix.pm
+%%SITE_PERL%%/Test2/Harness/Stall/Capture.pm
+%%SITE_PERL%%/Test2/Harness/Stall/Detector.pm
+%%SITE_PERL%%/Test2/Harness/Stall/Report.pm
+%%SITE_PERL%%/Test2/Harness/Stall/Trace.pm
 %%SITE_PERL%%/Test2/Harness/TestFile.pm
 %%SITE_PERL%%/Test2/Harness/Util.pm
 %%SITE_PERL%%/Test2/Harness/Util/File.pm
@@ -192,6 +196,10 @@
 %%PERL5_MAN3%%/Test2::Harness::Runner::State.3.gz
 %%PERL5_MAN3%%/Test2::Harness::Settings.3.gz
 %%PERL5_MAN3%%/Test2::Harness::Settings::Prefix.3.gz
+%%PERL5_MAN3%%/Test2::Harness::Stall::Capture.3.gz
+%%PERL5_MAN3%%/Test2::Harness::Stall::Detector.3.gz
+%%PERL5_MAN3%%/Test2::Harness::Stall::Report.3.gz
+%%PERL5_MAN3%%/Test2::Harness::Stall::Trace.3.gz
 %%PERL5_MAN3%%/Test2::Harness::TestFile.3.gz
 %%PERL5_MAN3%%/Test2::Harness::Util.3.gz
 %%PERL5_MAN3%%/Test2::Harness::Util::File.3.gz

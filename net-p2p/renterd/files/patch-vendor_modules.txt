@@ -1,6 +1,6 @@
---- vendor/modules.txt.orig	2025-11-17 12:22:34 UTC
+--- vendor/modules.txt.orig	2026-06-04 10:36:50 UTC
 +++ vendor/modules.txt
-@@ -0,0 +1,277 @@
+@@ -0,0 +1,254 @@
 +# filippo.io/edwards25519 v1.1.0
 +## explicit; go 1.20
 +filippo.io/edwards25519
@@ -58,7 +58,10 @@
 +github.com/aws/aws-sdk-go/service/ssooidc
 +github.com/aws/aws-sdk-go/service/sts
 +github.com/aws/aws-sdk-go/service/sts/stsiface
-+# github.com/gabriel-vasile/mimetype v1.4.11
++# github.com/dunglas/httpsfv v1.1.0
++## explicit; go 1.14
++github.com/dunglas/httpsfv
++# github.com/gabriel-vasile/mimetype v1.4.13
 +## explicit; go 1.21
 +github.com/gabriel-vasile/mimetype
 +github.com/gabriel-vasile/mimetype/internal/charset
@@ -87,39 +90,43 @@
 +# github.com/julienschmidt/httprouter v1.3.0
 +## explicit; go 1.7
 +github.com/julienschmidt/httprouter
-+# github.com/klauspost/cpuid/v2 v2.2.10
++# github.com/klauspost/cpuid/v2 v2.3.0
 +## explicit; go 1.22
 +github.com/klauspost/cpuid/v2
-+# github.com/klauspost/reedsolomon v1.12.5
-+## explicit; go 1.22
++# github.com/klauspost/reedsolomon v1.13.3
++## explicit; go 1.24
 +github.com/klauspost/reedsolomon
-+# github.com/mattn/go-sqlite3 v1.14.32
-+## explicit; go 1.19
++# github.com/mattn/go-sqlite3 v1.14.42
++## explicit; go 1.21
 +github.com/mattn/go-sqlite3
-+# github.com/montanaflynn/stats v0.7.1
++# github.com/montanaflynn/stats v0.9.0
 +## explicit; go 1.13
 +github.com/montanaflynn/stats
-+# github.com/quic-go/qpack v0.5.1
-+## explicit; go 1.22
++# github.com/quic-go/qpack v0.6.0
++## explicit; go 1.24
 +github.com/quic-go/qpack
-+# github.com/quic-go/quic-go v0.54.0
-+## explicit; go 1.23
++# github.com/quic-go/quic-go v0.59.0
++## explicit; go 1.24
 +github.com/quic-go/quic-go
 +github.com/quic-go/quic-go/http3
++github.com/quic-go/quic-go/http3/qlog
 +github.com/quic-go/quic-go/internal/ackhandler
 +github.com/quic-go/quic-go/internal/congestion
 +github.com/quic-go/quic-go/internal/flowcontrol
 +github.com/quic-go/quic-go/internal/handshake
++github.com/quic-go/quic-go/internal/monotime
 +github.com/quic-go/quic-go/internal/protocol
 +github.com/quic-go/quic-go/internal/qerr
 +github.com/quic-go/quic-go/internal/utils
 +github.com/quic-go/quic-go/internal/utils/linkedlist
 +github.com/quic-go/quic-go/internal/utils/ringbuffer
 +github.com/quic-go/quic-go/internal/wire
-+github.com/quic-go/quic-go/logging
++github.com/quic-go/quic-go/qlog
++github.com/quic-go/quic-go/qlogwriter
++github.com/quic-go/quic-go/qlogwriter/jsontext
 +github.com/quic-go/quic-go/quicvarint
-+# github.com/quic-go/webtransport-go v0.9.0
-+## explicit; go 1.23
++# github.com/quic-go/webtransport-go v0.10.0
++## explicit; go 1.24
 +github.com/quic-go/webtransport-go
 +# github.com/ryszard/goskiplist v0.0.0-20150312221310-2dfbae5fcf46
 +## explicit
@@ -136,16 +143,16 @@
 +go.etcd.io/bbolt/errors
 +go.etcd.io/bbolt/internal/common
 +go.etcd.io/bbolt/internal/freelist
-+# go.sia.tech/core v0.18.0
-+## explicit; go 1.24.0
++# go.sia.tech/core v0.19.2-0.20260421131916-3a5d3f254fd9
++## explicit; go 1.26.0
 +go.sia.tech/core/blake2b
 +go.sia.tech/core/consensus
 +go.sia.tech/core/gateway
 +go.sia.tech/core/rhp/v2
 +go.sia.tech/core/rhp/v4
 +go.sia.tech/core/types
-+# go.sia.tech/coreutils v0.18.6
-+## explicit; go 1.24.0
++# go.sia.tech/coreutils v0.21.3-0.20260421140827-cfc04c84419e
++## explicit; go 1.26.0
 +go.sia.tech/coreutils
 +go.sia.tech/coreutils/chain
 +go.sia.tech/coreutils/rhp/v4
@@ -153,6 +160,7 @@
 +go.sia.tech/coreutils/rhp/v4/siamux
 +go.sia.tech/coreutils/syncer
 +go.sia.tech/coreutils/testutil
++go.sia.tech/coreutils/testutil/certs
 +go.sia.tech/coreutils/threadgroup
 +go.sia.tech/coreutils/wallet
 +# go.sia.tech/gofakes3 v0.0.5
@@ -163,25 +171,20 @@
 +# go.sia.tech/jape v0.14.1
 +## explicit; go 1.24.0
 +go.sia.tech/jape
-+# go.sia.tech/mux v1.4.0
-+## explicit; go 1.23
++# go.sia.tech/mux v1.5.0
++## explicit; go 1.26.0
 +go.sia.tech/mux
-+go.sia.tech/mux/v1
-+go.sia.tech/mux/v2
++go.sia.tech/mux/v3
 +# go.sia.tech/web v0.0.0-20240610131903-5611d44a533e
 +## explicit
 +go.sia.tech/web/internal/nextjs
-+# go.sia.tech/web/renterd v0.85.2
++# go.sia.tech/web/renterd v0.88.2
 +## explicit; go 1.24.3
 +go.sia.tech/web/renterd
-+# go.uber.org/mock v0.5.2
-+## explicit; go 1.23
-+go.uber.org/mock/mockgen
-+go.uber.org/mock/mockgen/model
 +# go.uber.org/multierr v1.11.0
 +## explicit; go 1.19
 +go.uber.org/multierr
-+# go.uber.org/zap v1.27.0
++# go.uber.org/zap v1.27.1
 +## explicit; go 1.19
 +go.uber.org/zap
 +go.uber.org/zap/buffer
@@ -193,8 +196,8 @@
 +go.uber.org/zap/internal/stacktrace
 +go.uber.org/zap/zapcore
 +go.uber.org/zap/zaptest/observer
-+# golang.org/x/crypto v0.43.0
-+## explicit; go 1.24.0
++# golang.org/x/crypto v0.50.0
++## explicit; go 1.25.0
 +golang.org/x/crypto/blake2b
 +golang.org/x/crypto/chacha20
 +golang.org/x/crypto/chacha20poly1305
@@ -203,16 +206,9 @@
 +golang.org/x/crypto/internal/alias
 +golang.org/x/crypto/internal/poly1305
 +golang.org/x/crypto/poly1305
-+# golang.org/x/mod v0.28.0
-+## explicit; go 1.24.0
-+golang.org/x/mod/internal/lazyregexp
-+golang.org/x/mod/modfile
-+golang.org/x/mod/module
-+golang.org/x/mod/semver
-+# golang.org/x/net v0.45.0
-+## explicit; go 1.24.0
++# golang.org/x/net v0.53.0
++## explicit; go 1.25.0
 +golang.org/x/net/bpf
-+golang.org/x/net/context
 +golang.org/x/net/http/httpguts
 +golang.org/x/net/http2/hpack
 +golang.org/x/net/idna
@@ -220,29 +216,26 @@
 +golang.org/x/net/internal/socket
 +golang.org/x/net/ipv4
 +golang.org/x/net/ipv6
-+# golang.org/x/sync v0.17.0
-+## explicit; go 1.24.0
-+golang.org/x/sync/errgroup
-+# golang.org/x/sys v0.37.0
-+## explicit; go 1.24.0
++# golang.org/x/sys v0.43.0
++## explicit; go 1.25.0
 +golang.org/x/sys/cpu
 +golang.org/x/sys/plan9
 +golang.org/x/sys/unix
 +golang.org/x/sys/windows
-+# golang.org/x/term v0.36.0
-+## explicit; go 1.24.0
++# golang.org/x/term v0.42.0
++## explicit; go 1.25.0
 +golang.org/x/term
-+# golang.org/x/text v0.30.0
-+## explicit; go 1.24.0
++# golang.org/x/text v0.36.0
++## explicit; go 1.25.0
 +golang.org/x/text/secure/bidirule
 +golang.org/x/text/transform
 +golang.org/x/text/unicode/bidi
 +golang.org/x/text/unicode/norm
-+# golang.org/x/time v0.14.0
-+## explicit; go 1.24.0
++# golang.org/x/time v0.15.0
++## explicit; go 1.25.0
 +golang.org/x/time/rate
-+# golang.org/x/tools v0.37.0
-+## explicit; go 1.24.0
++# golang.org/x/tools v0.44.0
++## explicit; go 1.25.0
 +golang.org/x/tools/cover
 +golang.org/x/tools/go/analysis
 +golang.org/x/tools/go/analysis/passes/ctrlflow
@@ -251,23 +244,7 @@
 +golang.org/x/tools/go/ast/edge
 +golang.org/x/tools/go/ast/inspector
 +golang.org/x/tools/go/cfg
-+golang.org/x/tools/go/gcexportdata
-+golang.org/x/tools/go/packages
-+golang.org/x/tools/go/types/objectpath
 +golang.org/x/tools/go/types/typeutil
-+golang.org/x/tools/imports
-+golang.org/x/tools/internal/aliases
-+golang.org/x/tools/internal/event
-+golang.org/x/tools/internal/event/core
-+golang.org/x/tools/internal/event/keys
-+golang.org/x/tools/internal/event/label
-+golang.org/x/tools/internal/gcimporter
-+golang.org/x/tools/internal/gocommand
-+golang.org/x/tools/internal/gopathwalk
-+golang.org/x/tools/internal/imports
-+golang.org/x/tools/internal/modindex
-+golang.org/x/tools/internal/packagesinternal
-+golang.org/x/tools/internal/pkgbits
 +golang.org/x/tools/internal/stdlib
 +golang.org/x/tools/internal/typeparams
 +golang.org/x/tools/internal/typesinternal

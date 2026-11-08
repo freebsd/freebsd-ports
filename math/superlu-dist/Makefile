@@ -1,12 +1,12 @@
 PORTNAME=	superlu-dist
 DISTVERSIONPREFIX=	v
-DISTVERSION=	9.1.0
-PORTREVISION=	2
+DISTVERSION=	9.3.2
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Distributed memory, MPI based SuperLU
-WWW=		https://portal.nersc.gov/project/sparse/superlu/
+WWW=		https://portal.nersc.gov/project/sparse/superlu/ \
+		https://github.com/xiaoyeli/superlu_dist
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/License.txt
@@ -19,8 +19,9 @@ GH_ACCOUNT=	xiaoyeli
 GH_PROJECT=	superlu_dist
 
 CMAKE_ON=	USE_XSDK_DEFAULTS BUILD_SHARED_LIBS
+CFLAGS+=	-I${WRKSRC}/SRC/include
 CMAKE_OFF=	enable_tests enable_examples TPL_ENABLE_PARMETISLIB
-CMAKE_TESTING_ON=	enable_tests # many tests fail, see https://github.com/xiaoyeli/superlu_dist/issues/113
+CMAKE_TESTING_ON=	enable_tests
 
 OPTIONS_DEFINE=		DOCS FORTRAN
 OPTIONS_SINGLE=		BLAS MPI
@@ -51,7 +52,7 @@ post-install-FORTRAN-on:
 	# workaround for https://github.com/xiaoyeli/superlu_dist/issues/112
 	@${RM} -r ${STAGEDIR}${PREFIX}/include/FORTRAN/CMakeFiles
 	# move .mod files to a proper location
-	@cd ${STAGEDIR}${PREFIX}/include && \
+	#@cd ${STAGEDIR}${PREFIX}/include && \
 		${MV} FORTRAN/* . && \
 		${RMDIR} FORTRAN
 

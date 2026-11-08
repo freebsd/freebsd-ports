@@ -1,0 +1,10 @@
+--- adapters/fcitx5/CMakeLists.txt.orig	2026-09-25 18:43:42 UTC
++++ adapters/fcitx5/CMakeLists.txt
+@@ -9,6 +9,7 @@ target_link_libraries(chichi77-keykey PRIVATE
+ target_link_libraries(chichi77-keykey PRIVATE
+     Fcitx5::Core
+     PkgConfig::CANBERRA
++    Iconv::Iconv
+     keykey_linux_engine
+ )
+ target_compile_definitions(chichi77-keykey PRIVATE

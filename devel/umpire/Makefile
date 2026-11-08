@@ -1,6 +1,6 @@
 PORTNAME=	umpire
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2025.12.0
+DISTVERSION=	2026.07.2
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,7 +23,8 @@ GH_PROJECT=	Umpire
 GH_TUPLE=	LLNL:blt:e346c77:blt/blt
 
 CMAKE_ARGS=	-DUMPIRE_FMT_TARGET=fmt
-CMAKE_ON=	BUILD_SHARED_LIBS
+CMAKE_ON=	BUILD_SHARED_LIBS \
+		UMPIRE_ENABLE_IPC_SHARED_MEMORY
 CMAKE_OFF=	UMPIRE_ENABLE_EXAMPLES \
 		ENABLE_TESTS
 CMAKE_TESTING_ON=	ENABLE_TESTS
@@ -32,6 +33,6 @@ CXXFLAGS+=	-Dftruncate64=ftruncate \
 		-DMAP_NORESERVE=0
 LDFLAGS+=	-lexecinfo
 
-# tests as of 2025.09.0: 100% tests passed, 0 tests failed out of 38
+# tests as of 2026.07.2: 100% tests passed, 0 tests failed out of 47
 
 .include <bsd.port.mk>

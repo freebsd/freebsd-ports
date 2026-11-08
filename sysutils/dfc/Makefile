@@ -1,20 +1,26 @@
 PORTNAME=	dfc
-DISTVERSION=	3.1.1
-PORTREVISION=	1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	3.1.1.20251014
 CATEGORIES=	sysutils
-MASTER_SITES=	https://projects.gw-computing.net/attachments/download/615/
 
 MAINTAINER=	mcy@lm7.fr
 COMMENT=	Display file system space usage using graph and colors
-WWW=		https://projects.gw-computing.net/projects/dfc
+WWW=		https://github.com/rolinh/dfc
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cmake
-CMAKE_ARGS+=	-DMAN_PATH=${PREFIX}/share/man -DDFC_DOC_PATH=${DOCSDIR}
 
-OPTIONS_DEFINE=	NLS DOCS
+USE_GITHUB=	yes
+GH_ACCOUNT=	rolinh
+# This commit fixes build with CMake 4
+GH_TAGNAME=	b14e3162963d5edefe9ab293f97fd21fba08c496
+
+CMAKE_ARGS+=	-DDFC_DOC_PATH=${DOCSDIR} \
+		-DMAN_PATH=${PREFIX}/share/man
+
+OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 
 NLS_USES=	gettext

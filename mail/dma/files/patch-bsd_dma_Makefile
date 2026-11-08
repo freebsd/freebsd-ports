@@ -1,15 +1,15 @@
---- bsd/dma/Makefile.orig	2016-02-07 12:41:49 UTC
+--- bsd/dma/Makefile.orig	2026-08-30 20:07:40 UTC
 +++ bsd/dma/Makefile
-@@ -11,6 +11,8 @@ CFLAGS+= -DCONF_PATH='"${CONFDIR}"'
+@@ -13,6 +13,8 @@ LDADD=  -lssl -lcrypto
  DPADD=  ${LIBSSL} ${LIBCRYPTO}
  LDADD=  -lssl -lcrypto
  
 +YFLAGS+=	-i
 +
  PROG=	dma
- .PATH: ${.CURDIR}/../..
+ .PATH: ${DMA_SRCTOP}
  SRCS=	aliases_parse.y aliases_scan.l base64.c conf.c crypto.c
-@@ -21,9 +23,10 @@ PREFIX?=	/usr/local
+@@ -23,9 +25,10 @@ CONFDIR?=	${PREFIX}/etc/dma
  LIBEXEC?=	${PREFIX}/libexec
  CONFDIR?=	${PREFIX}/etc/dma
  

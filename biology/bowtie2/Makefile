@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=		2.5.5
 CATEGORIES=		biology perl5 python
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ultrafast, memory-efficient short read aligner
 WWW=		https://github.com/BenLangmead/bowtie2
 

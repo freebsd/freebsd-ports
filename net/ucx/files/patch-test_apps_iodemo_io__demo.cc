@@ -1,6 +1,6 @@
---- test/apps/iodemo/io_demo.cc.orig	2026-02-04 09:52:46 UTC
+--- test/apps/iodemo/io_demo.cc.orig	2026-09-09 16:04:04 UTC
 +++ test/apps/iodemo/io_demo.cc
-@@ -18,6 +18,7 @@
+@@ -20,6 +20,7 @@
  #include <ctime>
  #include <csignal>
  #include <cerrno>
@@ -8,7 +8,7 @@
  #include <vector>
  #include <map>
  #include <queue>
-@@ -2999,8 +3000,10 @@ static int do_client(options_t& test_opts)
+@@ -3032,8 +3033,10 @@ static int do_client(options_t& test_opts)
      LOG << "random seed: " << test_opts.random_seed;
  
      // randomize servers to optimize startup

@@ -1,0 +1,8 @@
+libwinpos implements the xx-zones-v1 Wayland protocol to let applications
+request where their windows should be placed within a compositor-provided
+zone. On X11 and other platforms it falls back to Qt's native positioning
+APIs, so the same code works on every platform, Windows, macOS, X11 and
+Wayland, as long as the compositor supports the protocol.
+
+Currently, only specialized compositors support the xx-zones protocol.
+To add support for KDE's KWin install the x11-wm/kwin-zones port.

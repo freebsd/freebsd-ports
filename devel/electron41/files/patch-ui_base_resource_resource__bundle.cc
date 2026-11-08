@@ -1,6 +1,6 @@
---- ui/base/resource/resource_bundle.cc.orig	2026-01-07 00:52:53 UTC
+--- ui/base/resource/resource_bundle.cc.orig	2026-08-14 04:05:02 UTC
 +++ ui/base/resource/resource_bundle.cc
-@@ -996,7 +996,7 @@ ResourceScaleFactor ResourceBundle::GetMaxResourceScal
+@@ -999,7 +999,7 @@ ResourceScaleFactor ResourceBundle::GetMaxResourceScal
  }
  
  ResourceScaleFactor ResourceBundle::GetMaxResourceScaleFactor() const {

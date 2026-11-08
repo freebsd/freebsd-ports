@@ -1,4 +1,7 @@
-GPS log file viewer and analyzer.
+GPXSee is a GPS log file viewer and analyzer that supports all common
+GPS log file formats.
 
-GPXSee is a Qt-based GPS log file viewer and analyzer that supports
-all common GPS log file formats.
+GPXSee is designed as a small (no dependencies except of Qt), fast and
+uncomplicated GPS data/map viewer, not a full featured GIS software.
+However, the spectrum of supported data files/map sources is relatively
+rich.

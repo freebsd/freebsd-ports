@@ -1,0 +1,4 @@
+pytest-check allows multiple failures per test by suppressing the
+first failure until the end of the test. It provides a context manager
+and helper functions to record failures without immediately stopping
+the test run.

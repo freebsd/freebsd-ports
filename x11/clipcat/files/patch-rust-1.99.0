@@ -1,0 +1,13 @@
+error: lint `no_mangle_generic_items` has been removed: converted into hard error, generic items must always be mangled
+
+
+--- Cargo.toml.orig	2026-10-12 15:58:25 UTC
++++ Cargo.toml
+@@ -209,7 +209,6 @@ named_arguments_used_positionally       = "deny"
+ map_unit_fn                             = "deny"
+ mixed_script_confusables                = "deny"
+ named_arguments_used_positionally       = "deny"
+-no_mangle_generic_items                 = "deny"
+ non_camel_case_types                    = "deny"
+ non_fmt_panics                          = "deny"
+ non_shorthand_field_patterns            = "deny"

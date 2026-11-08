@@ -1,0 +1,6 @@
+Halley is a spatial Wayland compositor built for multi-monitor desktops. Each
+display has an independent infinite Field: a camera over freely overlapping
+windows, collapsed node landmarks, and clusters assembled around the work you
+actually want to keep together. Windows can decay when they leave your active
+area, return through history-aware navigation, or remain pinned as durable
+landmarks.

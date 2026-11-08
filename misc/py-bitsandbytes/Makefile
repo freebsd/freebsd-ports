@@ -1,5 +1,5 @@
 PORTNAME=	bitsandbytes
-DISTVERSION=	0.50.0
+DISTVERSION=	0.50.2
 CATEGORIES=	misc # machine-learning
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -33,5 +33,8 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/bitsandbytes/libbitsandbytes_cpu.so
+
+# tests as of 0.50.2: 2341 passed, 1136 skipped, 30 xfailed, 99 warnings, 27 errors in 905.70s (0:15:05)
+# failures are all "fixture 'device' not found", see https://github.com/bitsandbytes-foundation/bitsandbytes/issues/2084
 
 .include <bsd.port.mk>

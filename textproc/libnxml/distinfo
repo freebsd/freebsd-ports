@@ -1,2 +1,3 @@
-SHA256 (libnxml-0.18.3.tar.gz) = 0f9460e3ba16b347001caf6843f0050f5482e36ebcb307f709259fd6575aa547
-SIZE (libnxml-0.18.3.tar.gz) = 361977
+TIMESTAMP = 1793366093
+SHA256 (bakulf-libnxml-0.18.6_GH0.tar.gz) = c6de3c486f37c064eeae7d94e74f8dd25328e23effd8409a26a1170c19203ab4
+SIZE (bakulf-libnxml-0.18.6_GH0.tar.gz) = 37420

@@ -15,6 +15,10 @@ WWW=		https://www.slf4j.org/
 
 LICENSE=	MIT
 
+# Kept on the 1.7 series: slf4j 2.x requires every logging binding to migrate
+# to the ServiceLoader mechanism, which affects all consumers in the tree at
+# once.  Debian and Fedora, rawhide included, still ship 1.7.x as well.
+
 USES=		cpe java
 CPE_VENDOR=	qos
 

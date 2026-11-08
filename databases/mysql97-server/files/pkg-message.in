@@ -7,12 +7,46 @@ Keep in mind to reset it to a secure password.
 MySQL 9.7 has a default %%ETCDIR%%/my.cnf,
 remember to replace it with your own
 or set `mysql_optfile="$YOUR_CNF_FILE"` in rc.conf.
+
+MySQL Router is part of this package.  It is disabled by default.  To use it:
+
+	cp %%PREFIX%%/etc/mysqlrouter/mysqlrouter.conf.sample \
+		%%PREFIX%%/etc/mysqlrouter/mysqlrouter.conf
+	sysrc mysqlrouter_enable=YES
+	service mysqlrouter start
+
+The router runs as the user "mysqlrouter" and logs to
+/var/log/mysqlrouter/mysqlrouter.log.  Do not add a "pid_file" or a "user"
+entry to mysqlrouter.conf, the rc script takes care of both.
+
+When creating a configuration for an InnoDB cluster, run
+mysqlrouter_bootstrap --user=mysqlrouter, so that the generated
+files below /var/db/mysqlrouter belong to that account.
+
+If the router has to serve many connections, raise "openfiles" for its login
+class in /etc/login.conf and point mysqlrouter_login_class in rc.conf at it,
+upstream uses 10000.
 EOM
 }
 { type: upgrade
   message: <<EOM
 The MySQL server performs all upgrade tasks itself at startup.
 The mysql_upgrade utility does not exist anymore in MySQL 9.x.
+
+This version adds an rc script, a configuration sample and the system user
+"mysqlrouter" for MySQL Router.  Nothing is enabled automatically.
+
+If you already run MySQL Router yourself, note:
+
+- An own %%PREFIX%%/etc/rc.d/mysqlrouter was renamed to mysqlrouter.pkgsave
+  by pkg and is not used anymore.
+- An existing /var/log/mysqlrouter, /var/run/mysqlrouter or
+  /var/db/mysqlrouter is left untouched, ownership and permissions are not
+  changed.  The rc script only creates the directories when they are
+  missing.  If your router runs under a different account, set
+  mysqlrouter_user and mysqlrouter_group in rc.conf.
+- %%PREFIX%%/etc/logrotate.d/mysqlrouter works from now on, its
+  "create 600 mysqlrouter mysqlrouter" no longer points at a missing user.
 EOM
 }
 ]

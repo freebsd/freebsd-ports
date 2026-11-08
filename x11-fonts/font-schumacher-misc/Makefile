@@ -1,15 +1,17 @@
 PORTNAME=	font-schumacher-misc
-PORTVERSION=	1.1.2
-PORTREVISION=	4
+DISTVERSION=	1.1.3
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org miscellaneous Schumacher fonts
-WWW=		https://www.x.org/
+WWW=		https://gitlab.freedesktop.org/xorg/font/schumacher-misc
+
+LICENSE=	UNKNOWN
+LICENSE_NAME=	unknown
+LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		xorg xorg-cat:font
 USE_XORG=	fontutil
-
-NO_ARCH=	yes
 
 .include <bsd.port.mk>

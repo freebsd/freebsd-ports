@@ -1,0 +1,2 @@
+Server-sent events (SSE) Python client library based on requests.
+It provides a simple interface to consume SSE streams from HTTP servers.

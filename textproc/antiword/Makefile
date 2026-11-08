@@ -1,6 +1,6 @@
 PORTNAME=	antiword
 PORTVERSION=	0.37
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	textproc
 MASTER_SITES=	https://web.archive.org/web/20221207132720/http://www.winfield.demon.nl/linux/
 
@@ -10,6 +10,9 @@ WWW=		https://web.archive.org/web/20221207132720/http://www.winfield.demon.nl
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/Docs/COPYING
+
+DEPRECATED=	Abandoned upstream since 2005, unfixed CVE-2026-111677 and CVE-2026-111678
+EXPIRATION_DATE=2026-11-30
 
 BUILD_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/n022003l.afm:print/gsfonts
 RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/n022003l.afm:print/gsfonts

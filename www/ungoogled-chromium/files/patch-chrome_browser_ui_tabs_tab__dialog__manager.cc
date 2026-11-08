@@ -1,6 +1,6 @@
---- chrome/browser/ui/tabs/tab_dialog_manager.cc.orig	2025-12-06 13:30:52 UTC
+--- chrome/browser/ui/tabs/tab_dialog_manager.cc.orig	2026-10-31 12:09:36 UTC
 +++ chrome/browser/ui/tabs/tab_dialog_manager.cc
-@@ -90,7 +90,7 @@ bool SupportsGlobalScreenCoordinates() {
+@@ -89,7 +89,7 @@ bool SupportsGlobalScreenCoordinates() {
  }
  
  bool PlatformClipsChildrenToViewport() {

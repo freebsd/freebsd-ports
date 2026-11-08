@@ -1,0 +1,23 @@
+-- Force librocksdb-sys to build the bundled anza-xyz rocksdb fork on FreeBSD
+-- instead of linking against the system databases/rocksdb package, which lacks
+-- the fork-specific C API functions required by agave.
+--- build.rs.orig	2026-09-27 17:07:45.919120000 -0700
++++ build.rs	2026-09-27 17:07:54.408421000 -0700
+@@ -405,17 +405,7 @@ fn main() {
+     if !try_to_find_and_link_lib("ROCKSDB") {
+         // rocksdb only works with the prebuilt rocksdb system lib on freebsd.
+         // we don't need to rebuild rocksdb
+-        if target.contains("freebsd") {
+-            println!("cargo:rustc-link-search=native=/usr/local/lib");
+-            let mode = match env::var_os("ROCKSDB_STATIC") {
+-                Some(_) => "static",
+-                None => "dylib",
+-            };
+-            println!("cargo:rustc-link-lib={mode}=rocksdb");
+
+-            return;
+-        }
+-
+         println!("cargo:rerun-if-changed=rocksdb/");
+         fail_on_empty_directory("rocksdb");
+         build_rocksdb();

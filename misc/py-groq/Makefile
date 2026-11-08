@@ -1,5 +1,5 @@
 PORTNAME=	groq
-DISTVERSION=	1.5.0
+DISTVERSION=	1.7.0
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -36,7 +36,6 @@ NO_ARCH=	yes
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_ARGS=	tests/test_client.py tests/test_models.py
 
-# tests as of 1.5.0: 203 passed, 2 skipped in 8.28s
-# (api_resources tests fail with the respx/httpx versions in ports)
+# tests as of 1.7.0: 203 passed, 2 skipped in 7.75s
 
 .include <bsd.port.mk>

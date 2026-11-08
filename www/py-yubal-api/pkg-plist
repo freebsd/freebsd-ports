@@ -1,6 +1,6 @@
-%%PYTHON_SITELIBDIR%%/yubal_api-0.9.1.dist-info/METADATA
-%%PYTHON_SITELIBDIR%%/yubal_api-0.9.1.dist-info/RECORD
-%%PYTHON_SITELIBDIR%%/yubal_api-0.9.1.dist-info/WHEEL
+%%PYTHON_SITELIBDIR%%/yubal_api-0.10.0.dist-info/METADATA
+%%PYTHON_SITELIBDIR%%/yubal_api-0.10.0.dist-info/RECORD
+%%PYTHON_SITELIBDIR%%/yubal_api-0.10.0.dist-info/WHEEL
 %%PYTHON_SITELIBDIR%%/yubal_api/__init__.py
 %%PYTHON_SITELIBDIR%%/yubal_api/__main__.py
 %%PYTHON_SITELIBDIR%%/yubal_api/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
@@ -143,16 +143,16 @@
 %%PYTHON_SITELIBDIR%%/yubal_api/services/subscription_service.py
 %%PYTHON_SITELIBDIR%%/yubal_api/services/sync_service.py
 %%PYTHON_SITELIBDIR%%/yubal_api/settings.py
-%%WWWDIR%%/web/dist/assets/index-CB2szv8f.css
-%%WWWDIR%%/web/dist/assets/index-BadfZoMY.js
-%%WWWDIR%%/web/dist/assets/index-BadfZoMY.js.map
-%%WWWDIR%%/web/dist/assets/rolldown-runtime-Cyuzqnbw.js
-%%WWWDIR%%/web/dist/assets/vendor-heroui-CDEHibTy.js
-%%WWWDIR%%/web/dist/assets/vendor-heroui-CDEHibTy.js.map
-%%WWWDIR%%/web/dist/assets/vendor-icons-i1raa0kC.js
-%%WWWDIR%%/web/dist/assets/vendor-icons-i1raa0kC.js.map
-%%WWWDIR%%/web/dist/assets/vendor-react-cO5FtseH.js
-%%WWWDIR%%/web/dist/assets/vendor-react-cO5FtseH.js.map
+%%WWWDIR%%/web/dist/assets/index-BIxIHhCu.css
+%%WWWDIR%%/web/dist/assets/index-DIUz5c5c.js
+%%WWWDIR%%/web/dist/assets/index-DIUz5c5c.js.map
+%%WWWDIR%%/web/dist/assets/rolldown-runtime-B0Z9INg1.js
+%%WWWDIR%%/web/dist/assets/vendor-heroui-CxdHcGSI.js
+%%WWWDIR%%/web/dist/assets/vendor-heroui-CxdHcGSI.js.map
+%%WWWDIR%%/web/dist/assets/vendor-icons-D_LVQ9tY.js
+%%WWWDIR%%/web/dist/assets/vendor-icons-D_LVQ9tY.js.map
+%%WWWDIR%%/web/dist/assets/vendor-react-DjcmS8Ch.js
+%%WWWDIR%%/web/dist/assets/vendor-react-DjcmS8Ch.js.map
 %%WWWDIR%%/web/dist/favicon.svg
 %%WWWDIR%%/web/dist/index.html
 @dir(%%USER%%,%%GROUP%%,775) %%HOMEDIR%%

@@ -36,6 +36,7 @@ CMAKE_ON=	BUILD_SHARED_LIBS \
 CMAKE_OFF=	TESTING
 CMAKE_TESTING_ON=	TESTING # 1 test hangs, see https://github.com/Boolector/boolector/issues/227
 CMAKE_ARGS=	-DCaDiCaL_INCLUDE_DIR=${LOCALBASE}/include
+CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 BINARY_ALIAS=	python=${PYTHON_CMD} python3=${PYTHON_CMD} # only for tests
 

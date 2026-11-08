@@ -1,0 +1,6 @@
+--- packages/app-desktop/node_modules/sqlite-vec-freebsd-x64/package.json.orig	2026-09-07 08:08:00 UTC
++++ packages/app-desktop/node_modules/sqlite-vec-freebsd-x64/package.json
+@@ -1 +1 @@
+-{"name":"sqlite-vec-linux-x64","version":"0.1.9","author":"Alex Garcia","license":"MIT OR Apache","description":"A vector search SQLite extension.","repository":{"type":"git","url":"https://github.com/asg017/sqlite-vec","directory":null},"exports":{"./vec0.so":{"default":"./vec0.so"}},"files":[],"keywords":[],"os":["linux"],"cpu":["x64"]}
+\ No newline at end of file
++{"name":"sqlite-vec-freebsd-x64","version":"0.1.9","author":"Alex Garcia","license":"MIT OR Apache","description":"A vector search SQLite extension.","repository":{"type":"git","url":"https://github.com/asg017/sqlite-vec","directory":null},"exports":{"./vec0.so":{"default":"./vec0.so"}},"files":[],"keywords":[],"os":["freebsd"],"cpu":["x64"]}

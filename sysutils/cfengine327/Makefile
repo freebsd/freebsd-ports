@@ -1,6 +1,6 @@
 PORTNAME=	cfengine
 DISTVERSION=	3.27.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	https://s3.amazonaws.com/cfengine-package-repos/tarballs/
 DISTNAME=	${PORTNAME}-community-${DISTVERSION}
@@ -19,8 +19,6 @@ CONFLICTS=	cfengine cfengine3[0-9] cfengine3[0-9][0-9]
 .if !defined(MASTERDIR)
 PKGNAMESUFFIX=	327
 .endif
-
-FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}
 
 USE_RC_SUBR=	cf-execd cf-serverd cf-monitord
 
@@ -42,13 +40,13 @@ CONFIGURE_ARGS=	--docdir=${DOCSDIR} \
 		--mandir=${PREFIX}/man \
 		--with-workdir=/var/cfengine \
 		--with-pcre2=${LOCALBASE} \
-		--with-lmdb=${LOCALBASE} \
+		--with-lmdb=${LOCALBASE}/lmdb0 \
 		--enable-fhs
 INSTALL_TARGET=	install-strip
 
 LIB_DEPENDS+=	libpcre.so:devel/pcre \
 		libpcre2-posix.so:devel/pcre2 \
-		liblmdb.so:databases/lmdb0 \
+		liblmdb0.so:databases/lmdb0 \
 		libyaml.so:textproc/libyaml \
 		libcurl.so:ftp/curl \
 		librsync.so:net/librsync

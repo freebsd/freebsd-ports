@@ -1,0 +1,10 @@
+--- pkg/systemmetrics/metric/cpu/metrics_freebsd.go.orig	2026-03-16 23:39:28 UTC
++++ pkg/systemmetrics/metric/cpu/metrics_freebsd.go
+@@ -56,3 +56,7 @@ func parseCPULine(line string) (CPU, error) {
+ 
+ 	return cpuData, errors.Join(errs...)
+ }
++
++func scanCPUInfoFile(scanner *bufio.Scanner) ([]CPUInfo, error) {
++	return cpuinfoScanner(scanner)
++}

@@ -1,6 +1,6 @@
 PORTNAME=	bunkerweb
-DISTVERSION=	1.6.11
-PORTREVISION=	1
+DISTVERSION=	1.6.17
+PORTREVISION=	0
 CATEGORIES=	www security
 
 MAINTAINER=	joneum@FreeBSD.org
@@ -17,27 +17,34 @@ GH_PROJECT=	bunkerweb
 GH_TAGNAME=	v${DISTVERSION}
 
 RUN_DEPENDS=	openresty:www/openresty \
+		sudo:security/sudo \
+		${PYTHON_PKGNAMEPREFIX}brotli>0:archivers/py-brotli@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic-settings>0:devel/py-pydantic-settings@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}schedule>0:devel/py-schedule@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}user_agents>0:devel/py-user_agents@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}alembic>0:databases/py-alembic@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlalchemy20>0:databases/py-sqlalchemy20@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pymysql>0:databases/py-pymysql@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}maxminddb>0:net/py-maxminddb@${PY_FLAVOR} \
 		${LUA_MODLIBDIR}/cjson.so:devel/lua-cjson@${LUA_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}bcrypt>0:security/py-bcrypt@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}biscuit-auth>0:security/py-biscuit-auth \
+		${PYTHON_PKGNAMEPREFIX}certbot>0:security/py-certbot@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}biscuit-python>0:security/py-biscuit-python@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}passlib>0:security/py-passlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}docker>0:sysutils/py-docker@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}kubernetes>0:sysutils/py-kubernetes@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}defusedcsv>=3.0.0:devel/py-defusedcsv@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openpyxl>0:textproc/py-openpyxl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}qrcode>0:textproc/py-qrcode@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}regex>0:textproc/py-regex@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cachelib>0:www/py-cachelib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fastapi>0:www/py-fastapi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flask>0:www/py-flask@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Flask-Compress>0:www/py-flask-compress@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Flask-Login>0:www/py-flask-login@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flask-session>0:www/py-flask-session@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flask_wtf>0:www/py-flask-wtf@${PY_FLAVOR} \
@@ -46,7 +53,7 @@ RUN_DEPENDS=	openresty:www/openresty \
 		${PYTHON_PKGNAMEPREFIX}slowapi>0:www/py-slowapi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}uvicorn>0:www/py-uvicorn@${PY_FLAVOR}
 
-LIB_DEPENDS=    libmaxminddb.so:net/libmaxminddb
+LIB_DEPENDS=	libmaxminddb.so:net/libmaxminddb
 
 USE_RC_SUBR=	bunkerweb \
 		bunkerweb_api \
@@ -62,6 +69,17 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 
 DATADIR=	${PREFIX}/share/${PORTNAME}
+
+post-patch:
+	${FIND} ${WRKSRC} -name "*.orig" -delete
+	${REINPLACE_CMD} -e 's|python3 ${DATADIR}/common/utils/|${PYTHON_CMD} ${DATADIR}/common/utils/|' \
+		${WRKSRC}/src/bw/lua/bunkerweb/api.lua
+	${REINPLACE_CMD} \
+		-e 's|join(sep, "usr", "share", "bunkerweb", "deps", "python", "bin", "certbot")|"${LOCALBASE}/bin/certbot"|' \
+		-e 's|join(sep, "usr", "share", "bunkerweb", "deps", "python")|"${DATADIR}/deps/python"|' \
+		-e 's|Path(sep, "usr", "share", "bunkerweb", "core", "letsencrypt")|Path("${DATADIR}/common/core/letsencrypt")|' \
+		${WRKSRC}/src/common/core/letsencrypt/jobs/letsencrypt_utils.py \
+		${WRKSRC}/src/common/core/letsencrypt/ui/blueprints/letsencrypt.py
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
@@ -80,5 +98,16 @@ post-install:
 	${FIND} ${STAGEDIR}${DATADIR} -type f -name '*.sh' -exec ${CHMOD} 0755 {} \;
 	${CHMOD} 0755 ${STAGEDIR}${DATADIR}/common/gen/main.py
 	${CHMOD} 0755 ${STAGEDIR}${DATADIR}/common/gen/save_config.py
+	${CHMOD} 0755 ${STAGEDIR}${DATADIR}/common/core/letsencrypt/jobs/certbot-auth.py \
+		${STAGEDIR}${DATADIR}/common/core/letsencrypt/jobs/certbot-cleanup.py \
+		${STAGEDIR}${DATADIR}/common/core/letsencrypt/jobs/certbot-deploy.py
+
+	${INSTALL_SCRIPT} ${FILESDIR}/freebsd-migrate.py \
+		${STAGEDIR}${DATADIR}/common/db/
+
+	${INSTALL_DATA} ${FILESDIR}/api.yml.sample ${STAGEDIR}${ETCDIR}/
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/sudoers.d
+	${INSTALL_DATA} -m 0440 ${FILESDIR}/bunkerweb.sudoers \
+		${STAGEDIR}${PREFIX}/etc/sudoers.d/bunkerweb
 
 .include <bsd.port.mk>

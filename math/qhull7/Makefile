@@ -15,7 +15,8 @@ LICENSE_NAME=	Qhull License
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-DEPRECATED=	Conflicts with qhull
+DEPRECATED=	Conflicts with qhull, and will not with cmake version 4
+EXPIRATION_DATE=	2026-12-01
 
 USES=		cmake
 USE_GITHUB=	yes

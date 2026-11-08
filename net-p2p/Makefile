@@ -44,7 +44,7 @@
     SUBDIR += ktorrent
     SUBDIR += libktorrent
     SUBDIR += libtorrent
-    SUBDIR += libtorrent-rasterbar
+    SUBDIR += libtorrent-devel
     SUBDIR += libtorrent-rasterbar2
     SUBDIR += libutp
     SUBDIR += lidarr
@@ -91,6 +91,7 @@
     SUBDIR += retroshare
     SUBDIR += rslsync
     SUBDIR += rtorrent
+    SUBDIR += rtorrent-devel
     SUBDIR += sonarr
     SUBDIR += torrent-file-editor
     SUBDIR += torrentcheck
@@ -102,6 +103,7 @@
     SUBDIR += twitch-tui
     SUBDIR += udpt
     SUBDIR += uhub
+    SUBDIR += wallet-engine
     SUBDIR += walletd
     SUBDIR += warpinator
     SUBDIR += xbt

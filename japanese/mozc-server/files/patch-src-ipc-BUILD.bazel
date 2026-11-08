@@ -1,0 +1,25 @@
+--- src/ipc/BUILD.bazel.orig	2026-10-18 06:47:04 UTC
++++ src/ipc/BUILD.bazel
+@@ -41,6 +41,11 @@ package(default_visibility = ["//visibility:private"])
+ 
+ package(default_visibility = ["//visibility:private"])
+ 
++config_setting(
++    name = "freebsd",
++    constraint_values = ["@platforms//os:freebsd"],
++)
++
+ mozc_cc_library(
+     name = "ipc",
+     srcs = [
+@@ -126,6 +131,10 @@ mozc_cc_library(
+             "@com_microsoft_wil//:wil",
+         ],
+     ),
++    linkopts = select({
++        ":freebsd": ["-lprocstat"],
++        "//conditions:default": [],
++    }),
+ )
+ 
+ mozc_cc_test(

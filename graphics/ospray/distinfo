@@ -1,3 +1,7 @@
-TIMESTAMP = 1656128912
-SHA256 (ospray-ospray-v2.10.0_GH0.tar.gz) = bd478284f48d2cb775fc41a2855a9d9f5ea16c861abda0f8dc94e02ea7189cb8
-SIZE (ospray-ospray-v2.10.0_GH0.tar.gz) = 1818588
+TIMESTAMP = 1790307880
+SHA256 (ospray-ospray-v3.2.0_GH0.tar.gz) = 2c8108df2950bc5d1bc2a62f74629233dbe4f36e3f6a8ea032907d4a3fdc6750
+SIZE (ospray-ospray-v3.2.0_GH0.tar.gz) = 1067824
+SHA256 (ocornut-imgui-cb16be3a3fc1f9cd146ae24d52b615f8a05fa93d_GH0.tar.gz) = e866d1ae59a4c0941e08c5a14f2ec3957777fb61b768c75b003160926d268cf0
+SIZE (ocornut-imgui-cb16be3a3fc1f9cd146ae24d52b615f8a05fa93d_GH0.tar.gz) = 1693718
+SHA256 (nothings-stb-013ac3beddff3dbffafd5177e7972067cd2b5083_GH0.tar.gz) = b01aa93e1a968aed55f43e072c98ee401d2f20e897aabdb1a166c7166886ed11
+SIZE (nothings-stb-013ac3beddff3dbffafd5177e7972067cd2b5083_GH0.tar.gz) = 1510118

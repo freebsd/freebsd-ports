@@ -1,0 +1,7 @@
+senpai is a terminal IRC client that works best with bouncers implementing
+certain extensions:
+
+- history is fetched from the server via CHATHISTORY, no logs are kept locally
+- messages can be searched in logs via SEARCH
+- networks are fetched from the server via soju.im/bouncer-networks
+- files can be uploaded via soju.im/FILEHOST (with drag & drop!)

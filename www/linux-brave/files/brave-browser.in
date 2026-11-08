@@ -2,19 +2,123 @@
 
 get_pa_sock_path()
 {
-	PA_SOCK_PATH=$(sockstat | awk -v me=$(whoami) -F'[ \t]+' '
+	PA_SOCK_PATH=$(sockstat -uw | awk -v me="$(whoami)" -F'[ \t]+' '
 		$1 == me && $2 == "pulseaudio" && $6 ~ /native/ {
-			print $6;
+			print $6
 			exit 0
 		}'
 	)
 }
 
+#
+# Hardware GL needs a DRM render node the user can open and the
+# Linux-side Mesa DRI drivers (graphics/linux-rl9-dri) so the Linux
+# GL stack can drive it
+#
+brave_gpu_detect()
+{
+	local emul node found=
+
+	for node in /dev/dri/renderD*; do
+		[ -w "$node" ] || continue
+		found=1
+		break
+	done
+	[ "$found" ] || return 1
+	emul=$( sysctl -n compat.linux.emul_path 2> /dev/null ) ||
+		return 1
+	set -- "$emul"/usr/lib64/dri/*_dri.so
+	[ -e "$1" ]
+}
+
+#
+# ANGLE-on-Vulkan needs the Linux-side Vulkan loader
+# (x11-toolkits/linux-rl9-vulkan) and a hardware driver ICD (anv,
+# radv, ...); lavapipe is software rendering and does not count
+#
+brave_vulkan_detect()
+{
+	local emul icd found=
+
+	emul=$( sysctl -n compat.linux.emul_path 2> /dev/null ) ||
+		return 1
+	[ -e "$emul"/usr/lib64/libvulkan.so.1 ] || return 1
+	for icd in "$emul"/usr/share/vulkan/icd.d/*.json; do
+		[ -e "$icd" ] || continue
+		case "${icd##*/}" in
+		lvp_icd*) continue ;;
+		esac
+		found=1
+		break
+	done
+	[ "$found" ]
+}
+
+# Re-exec under a session bus when none is present (many WMs have
+# none).  dbus-run-session exports DBUS_SESSION_BUS_ADDRESS to the
+# child, so the re-exec cannot loop, and tears the bus down when the
+# browser exits, where a dbus-launch daemon would outlive it and
+# stack up across launches.
+if [ ! "${DBUS_SESSION_BUS_ADDRESS-}" ] &&
+   command -v dbus-run-session > /dev/null 2>&1
+then
+	exec dbus-run-session -- "$0" "$@"
+fi
+
 get_pa_sock_path
-[ -S "$PA_SOCK_PATH" ] && export PULSE_SERVER=unix:$PA_SOCK_PATH && export PULSE_COOKIE="~/.config/pulse/cookie"
+[ -S "$PA_SOCK_PATH" ] && export PULSE_SERVER=unix:$PA_SOCK_PATH &&
+    export PULSE_COOKIE="$HOME/.config/pulse/cookie"
 
 export BRAVE_PATH="%%DATADIR%%/brave"
 export BRAVE_WRAPPER="$(readlink -f "$0")"
 export LIBGL_DRI3_DISABLE=1
 
-exec "$BRAVE_PATH" --no-sandbox --no-zygote --test-type --v=0 "$@"
+# Never inherit a FreeBSD-side LD_PRELOAD into the Linuxulator binary.
+unset LD_PRELOAD
+
+# When built with WIDEVINE we have a helper that seeds brave.widevine_opted_in
+# and the Widevine component hint once so DRM works from the very first launch.
+if [ -x "%%PREFIX%%/bin/brave-widevine-seed" ]; then
+	"%%PREFIX%%/bin/brave-widevine-seed" "$@" || : errors ignored
+fi
+
+#
+# GPU: use hardware GL when the system can support it, software
+# rendering otherwise.  BRAVE_GPU=1 forces hardware GL, BRAVE_GPU=0
+# forces software rendering; unset selects by detection.
+#
+set -- --no-sandbox --no-zygote --v=0 "$@"
+gpu=
+case "${BRAVE_GPU:-auto}" in
+1|yes|YES|true|TRUE)
+	gpu=1
+	;;
+auto)
+	brave_gpu_detect && gpu=1
+	;;
+esac
+if [ ! "$gpu" ]; then
+	set -- --disable-gpu --disable-gpu-compositing "$@"
+	export LIBGL_ALWAYS_SOFTWARE=1
+else
+	#
+	# Prefer ANGLE-on-Vulkan when a hardware Vulkan driver is
+	# present: GL command streams from the Linux Mesa drivers have
+	# proven prone to GPU hangs on some kernel driver pairings,
+	# while the Vulkan path drives the same hardware reliably.
+	# BRAVE_VULKAN=1 forces it, BRAVE_VULKAN=0 stays on GL; unset
+	# selects by detection.
+	#
+	case "${BRAVE_VULKAN:-auto}" in
+	1|yes|YES|true|TRUE)
+		set -- --use-angle=vulkan "$@"
+		;;
+	auto)
+		brave_vulkan_detect &&
+			set -- --use-angle=vulkan "$@"
+		;;
+	esac
+fi
+
+# Do not pass --test-type: it ImmediateCrashes under Linuxulator.
+exec "$BRAVE_PATH" "$@"

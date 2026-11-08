@@ -1,6 +1,5 @@
 PORTNAME=	fastbencode
-DISTVERSION=	0.2
-PORTREVISION=	1
+DISTVERSION=	0.3.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,11 +11,8 @@ WWW=		https://github.com/breezy-team/fastbencode
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEPRECATED=	Depends on expired lang/cython0
-EXPIRATION_DATE=2026-09-15
-
 USES=		python
-USE_PYTHON=	autoplist cython0 distutils
+USE_PYTHON=	autoplist cython distutils
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/fastbencode/*.so

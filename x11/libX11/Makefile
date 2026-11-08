@@ -1,6 +1,5 @@
 PORTNAME=	libX11
-DISTVERSION=	1.8.13
-PORTREVISION=	1
+DISTVERSION=	1.8.14
 PORTEPOCH=	1
 CATEGORIES=	x11
 
@@ -11,7 +10,7 @@ WWW=		https://gitlab.freedesktop.org/xorg/lib/libx11
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe tar:xz xorg xorg-cat:lib
+USES=		cpe xorg xorg-cat:lib
 USE_XORG=	xcb xtrans xorgproto
 CPE_VENDOR=	x
 

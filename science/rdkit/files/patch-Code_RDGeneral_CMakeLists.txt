@@ -1,3 +1,5 @@
+-- prevent fetch of aantron:better-enums, use GH_TUPLE instead
+
 --- Code/RDGeneral/CMakeLists.txt.orig	2025-04-15 16:44:12 UTC
 +++ Code/RDGeneral/CMakeLists.txt
 @@ -5,11 +5,6 @@ CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/RDConfig.h.

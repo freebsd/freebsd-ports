@@ -17,8 +17,7 @@ BUILD_DEPENDS=	git>=0:devel/git \
 USES=		go:modules
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org/cluster-integration
-# this branch removes the replace line in go.mod which breaks the way FreeBSD ports build go packages
-GO_MOD_DIST=	https://gitlab.com/mfechner/gitlab-agent/-/raw/19-2-stable/
+GO_MOD_DIST=	gitlab
 GO_MODULE=	gitlab.com/gitlab-org/cluster-integration/gitlab-agent/v19
 
 _BUILD_DATE=	$$(date -u "+%Y-%m-%d-%H%M UTC")
@@ -30,6 +29,24 @@ GO_BUILDFLAGS= -tags="tracer_static,tracer_static_jaeger" \
 		-X 'gitlab.com/gitlab-org/cluster-integration/gitlab-agent/v19/cmd.BuildTime=${_BUILD_DATE}'"
 
 PLIST_FILES=	bin/kas
+
+# The go.mod has a local path replace (pkg/autoflow, pkg/tunnel). The framework's
+# go-post-fetch hook runs "go mod download all" from the distdir, where only
+# the bare go.mod has been fetched, and resolves that local path relative to
+# it. Extract the subtree from the main tarball first (this runs before
+# go-post-fetch).
+post-fetch:
+	if [ ! -d "${DISTDIR}/${DIST_SUBDIR}/pkg" ]; then \
+		${MKDIR} ${DISTDIR}/${DIST_SUBDIR} && \
+		cd ${DISTDIR}/${DIST_SUBDIR} && \
+			${TAR} -xf "${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}.tar.bz2" \
+			--strip-components 1 --no-same-owner --no-same-permissions \
+			"${DISTNAME}/pkg/autoflow/go.mod" "${DISTNAME}/pkg/autoflow/go.sum" && \
+		cd ${DISTDIR}/${DIST_SUBDIR} && \
+			${TAR} -xf ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}.tar.bz2 \
+			--strip-components 1 --no-same-owner --no-same-permissions \
+			"${DISTNAME}/pkg/tunnel/go.mod" "${DISTNAME}/pkg/tunnel/go.sum"; \
+	fi
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/bin/kas ${STAGEDIR}${PREFIX}/bin/kas

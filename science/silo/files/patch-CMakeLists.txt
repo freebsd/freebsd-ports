@@ -1,13 +1,22 @@
-- workaround for https://github.com/LLNL/Silo/issues/501
+-- Fix path to symlink to have STAGEDIR/DESTDIR.
+-- Upstreamed: https://github.com/llnl/Silo/pull/581
 
---- CMakeLists.txt.orig	2025-11-23 19:03:43 UTC
+--- CMakeLists.txt.orig	2026-07-28 07:31:59 UTC
 +++ CMakeLists.txt
-@@ -700,7 +700,7 @@ install(FILES ${silo_public_headers} DESTINATION ${CMA
-                     WORLD_READ)
+@@ -725,8 +725,14 @@ if(SILO_ENABLE_FORTRAN AND CMAKE_Fortran_COMPILER)
  
  # Symlink old style silo_f77.inc
--if(SILO_ENABLE_FORTRAN AND CMAKE_Fortran_COMPILER)
-+if(FALSE AND SILO_ENABLE_FORTRAN AND CMAKE_Fortran_COMPILER)
-     install(CODE "execute_process(COMMAND ${CMAKE_COMMAND} -E create_symlink silo.inc silo_f77.inc
-         WORKING_DIRECTORY ${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_INCLUDEDIR})")
+ if(SILO_ENABLE_FORTRAN AND CMAKE_Fortran_COMPILER)
+-    install(CODE "execute_process(COMMAND ${CMAKE_COMMAND} -E create_symlink silo.inc silo_f77.inc
+-        WORKING_DIRECTORY ${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_INCLUDEDIR})")
++    install(CODE "
++        set(FINAL_DIR \"\${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_INCLUDEDIR}\")
++        if(NOT \"\$ENV{DESTDIR}\" STREQUAL \"\")
++            set(FINAL_DIR \"\$ENV{DESTDIR}\${FINAL_DIR}\")
++        endif()
++        execute_process(COMMAND \${CMAKE_COMMAND} -E create_symlink silo.inc silo_f77.inc
++            WORKING_DIRECTORY \"\${FINAL_DIR}\")
++    ")
  endif()
+ 
+ if(SILO_ENABLE_HDF5 AND HDF5_FOUND)

@@ -1,5 +1,5 @@
 PORTNAME=	pyixapi
-DISTVERSION=	0.3.0
+DISTVERSION=	0.3.1
 CATEGORIES=	net-mgmt python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,6 +22,6 @@ USE_PYTHON=	autoplist pep517
 NO_ARCH=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|,<0.10.0||' ${WRKSRC}/pyproject.toml
+	@${REINPLACE_CMD} -e 's|,<0.13.0||' ${WRKSRC}/pyproject.toml
 
 .include <bsd.port.mk>

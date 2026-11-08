@@ -1,9 +1,11 @@
 PORTNAME=	cups
-DISTVERSION=	2.4.19
-PORTREVISION=	1
+DISTVERSION=	2.4.20
 CATEGORIES=	print
 MASTER_SITES=	https://github.com/OpenPrinting/${PORTNAME}/releases/download/v${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-source
+
+PATCH_SITES=	https://github.com/OpenPrinting/cups/commit/
+PATCHFILES=	23a183b63a4c94ae7cd0f36c63ee7eb905be60fd.patch:-p1
 
 MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	Common UNIX Printing System

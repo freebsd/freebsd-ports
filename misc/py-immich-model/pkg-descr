@@ -1,0 +1,7 @@
+This is the model runtime that the Immich machine learning service loads at
+inference time.  It holds the ONNX graph lowerings for Immich's CLIP and face
+recognition models, the per-execution-provider variants of them, and the
+model catalogue that maps a model name to its files.
+
+The exporter and benchmarking tools that live in the same source tree are not
+installed; they pull in PyTorch and are only needed to regenerate the models.

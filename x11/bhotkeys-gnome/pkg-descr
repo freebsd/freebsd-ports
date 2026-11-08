@@ -1,0 +1,2 @@
+GNOME Shell chords for bhotkeys.  The plugins call gsettings and
+need a GNOME session at run time.

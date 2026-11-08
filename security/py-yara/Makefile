@@ -23,8 +23,7 @@ GH_ACCOUNT=	VirusTotal
 USES=		cpe localbase python
 CPE_VENDOR=	virustotal
 USE_PYTHON=	pep517 autoplist
-# XXX could not figure out how to pass --dynamic-linking as setup.py build args
-#PEP517_BUILD_CONFIG_SETTING=	--dynamic-linking
+PEP517_BUILD_CONFIG_SETTING=	-C=--global-option=build -C=--global-option=--dynamic-linking
 
 DO_MAKE_TEST=	${SETENV} ${TEST_ENV} ${PYTHON_CMD} tests.py
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}

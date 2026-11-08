@@ -1,0 +1,12 @@
+--- build/toolchain/toolchain.gni.orig	2026-09-30 02:11:56 UTC
++++ build/toolchain/toolchain.gni
+@@ -64,7 +64,8 @@ if (host_os == "mac") {
+   host_shlib_extension = ".dylib"
+ } else if (host_os == "win") {
+   host_shlib_extension = ".dll"
+-} else if (host_os == "linux" || host_os == "aix" || host_os == "zos") {
++} else if (host_os == "linux" || host_os == "aix" || host_os == "zos" ||
++           host_os == "freebsd") {
+   host_shlib_extension = ".so"
+ } else {
+   assert(false, "Host platform not supported")

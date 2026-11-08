@@ -1,3 +1,3 @@
-TIMESTAMP = 1712580496
-SHA256 (backports.tarfile-1.0.0.tar.gz) = 2688f159c21afd56a07b75f01306f9f52c79aebcc5f4a117fb8fbb4445352c75
-SIZE (backports.tarfile-1.0.0.tar.gz) = 32952
+TIMESTAMP = 1784005130
+SHA256 (backports_tarfile-1.2.0.tar.gz) = d75e02c268746e1b8144c278978b6e98e85de6ad16f8e4b0844a154557eca991
+SIZE (backports_tarfile-1.2.0.tar.gz) = 86406

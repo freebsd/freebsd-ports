@@ -1,21 +1,22 @@
 PORTNAME=	sddm-freebsd-black-theme
-DISTVERSION=	1.3
+DISTVERSION=	1.4
 CATEGORIES=	x11-themes
-MASTER_SITES=	https://bitbucket.org/rigoletto-freebsd/sddm-freebsd-black-theme/get/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mxd@mxdyeah.com
 COMMENT=	Simple SDDM theme inspired on the FBSD SLiM theme
-WWW=		https://bitbucket.org/rigoletto-freebsd/sddm-freebsd-black-theme
+WWW=		https://github.com/mxdabc/sddm-freebsd-black-theme
 
 LICENSE=	CC-BY-SA-4.0
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	montserrat>=0:x11-fonts/montserrat
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	mxdabc
+
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-WRKSRC=		${WRKDIR}/rigoletto-freebsd-${PORTNAME}-f874b7e976e4
 PORTDOCS=	AUTHORS CHANGELOG TRADEMARKS
 PLIST_SUB=	THEMEDIR=${THEMEDIR_REL}
 SUB_FILES=	pkg-message

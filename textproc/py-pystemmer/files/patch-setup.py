@@ -1,11 +1,11 @@
---- setup.py.orig	2020-07-15 11:49:38 UTC
+--- setup.py.orig	2025-05-08 03:04:00 UTC
 +++ setup.py
-@@ -187,7 +187,7 @@ setup(name='PyStemmer',
-           "Topic :: Text Processing :: Indexing",
-           "Topic :: Text Processing :: Linguistic",
-       ],
--      setup_requires=['Cython>=0.28.5,<1.0', 'setuptools>=18.0'],
-+      setup_requires=['Cython>=0.28.5', 'setuptools>=18.0'],
-       ext_modules=[
-         Extension(
-             'Stemmer',
+@@ -150,7 +150,7 @@ class BootstrapCommand(Command):
+             self.libstemmer_url, self.libstemmer_sha256)
+ 
+ 
+-setup(name='PyStemmer',
++setup(name='pystemmer',
+       version=version_str,
+       author='Richard Boulton',
+       author_email='richard@tartarus.org',

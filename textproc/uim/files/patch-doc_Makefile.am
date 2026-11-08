@@ -1,0 +1,17 @@
+--- doc/Makefile.am.orig	2026-10-10 13:19:33 UTC
++++ doc/Makefile.am
+@@ -13,10 +13,12 @@ EXTRA_DIST = \
+ 	UIM-SCM \
+ 	UIM-SH \
+ 	UNIT-TEST \
+-	skk-utf8-migration-guide-ja.md \
+ 	skk-utf8-migration-guide.md \
+-	tutcode-utf8-migration-guide-ja.md \
+ 	tutcode-utf8-migration-guide.md \
+ 	uim-custom-cli.md \
+ 	uim-im-switcher-cli.md \
+ 	uim-wayland.md
++
++EXTRA_DIST_JA = \
++	skk-utf8-migration-guide-ja.md \
++	tutcode-utf8-migration-guide-ja.md

@@ -1,3 +1,5 @@
-TIMESTAMP = 1748495687
-SHA256 (HowardHinnant-date-v3.0.4_GH0.tar.gz) = 56e05531ee8994124eeb498d0e6a5e1c3b9d4fccbecdf555fe266631368fb55f
-SIZE (HowardHinnant-date-v3.0.4_GH0.tar.gz) = 830670
+TIMESTAMP = 1787587664
+SHA256 (HowardHinnant-date-v3.0.5_GH0.tar.gz) = ef786edc203daec76475825640b3af247bd08e31fc52217e5ce8f76107b4bb05
+SIZE (HowardHinnant-date-v3.0.5_GH0.tar.gz) = 830280
+SHA256 (c05cd34119d62f96deed28c803d2fd0b59548d8f.patch) = fcc07fb72eb57d594b6620884c3e122c1d0b5261e1dd4ad6383ba7c60c695579
+SIZE (c05cd34119d62f96deed28c803d2fd0b59548d8f.patch) = 647

@@ -1,6 +1,6 @@
 PORTNAME=	snappymail
 DISTVERSION=	2.38.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	mail www
 MASTER_SITES=	https://github.com/the-djmaze/snappymail/releases/download/v${DISTVERSION}/
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}

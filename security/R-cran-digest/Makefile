@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Create cryptographic hash digests of R objects
-WWW=		https://cran.r-project.org/package=digest
 
 LICENSE=	GPLv2+
 

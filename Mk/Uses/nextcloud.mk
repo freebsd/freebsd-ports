@@ -47,7 +47,7 @@ add-pkg-message:
 	@${ECHO_CMD} "Run \`occ upgrade\` to create the Nextcloud ${PORTNAME} app database structure" >> ${NEXTCLOUD_APP_PKGMESSAGE}
 	@${ECHO_CMD} "EOD" >> ${NEXTCLOUD_APP_PKGMESSAGE}
 	@${ECHO_CMD} "}," >> ${NEXTCLOUD_APP_PKGMESSAGE}
-	@${ECHO_CMD} "{ type: upgrade:" >> ${NEXTCLOUD_APP_PKGMESSAGE}
+	@${ECHO_CMD} "{ type: upgrade" >> ${NEXTCLOUD_APP_PKGMESSAGE}
 	@${ECHO_CMD} "  message: <<EOD" >> ${NEXTCLOUD_APP_PKGMESSAGE}
 	@${ECHO_CMD} "Run \`occ upgrade\` to update the Nextcloud ${PORTNAME} app database structure" >> ${NEXTCLOUD_APP_PKGMESSAGE}
 	@${ECHO_CMD} "EOD" >> ${NEXTCLOUD_APP_PKGMESSAGE}

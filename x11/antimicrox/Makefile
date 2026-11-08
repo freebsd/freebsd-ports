@@ -1,5 +1,6 @@
 PORTNAME=	antimicrox
 PORTVERSION=	3.6.1
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	rodrigo@FreeBSD.org
@@ -12,13 +13,13 @@ BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
 		itstool:textproc/itstool \
 		msgfmt:devel/gettext-tools
 
-USES=		cmake desktop-file-utils kde:5 pkgconfig qt:5 sdl \
+USES=		cmake desktop-file-utils kde:6 pkgconfig qt:6 sdl \
 		shared-mime-info xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	AntimicroX
 USE_KDE=	ecm
-USE_QT=		concurrent core gui linguist widgets buildtools:build \
-		qmake:build
+USE_QT=		base tools
+
 USE_SDL=	sdl2
 USE_XORG=	x11 xi xtst
 

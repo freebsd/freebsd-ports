@@ -13,6 +13,9 @@ WWW=		https://www.elastic.co/products/kibana
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Support for ${DISTVERSION:R}.x has ended 03 Feb 2026 - use ${PORTNAME}94 or ${PORTNAME}95 instead
+EXPIRATION_DATE=	2026-12-31
+
 BUILD_DEPENDS=	npm-node${NODEJS_VERSION}>=11.10.0:www/npm-node${NODEJS_VERSION}
 LIB_DEPENDS=	libre2.so:devel/re2 \
 		libuv.so:devel/libuv

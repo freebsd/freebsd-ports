@@ -1,0 +1,11 @@
+Coherent deps (dependencies) provides insights into the dependencies used by a
+code base, resolving imports to the dependencies that supply those imports. The
+Coherent OSS community presents this library to make the functionality available
+for a variety of uses.
+
+The Coherent System implements automatic dependency inference using
+coherent.deps, allowing Python projects to avoid the need to declare
+dependencies and to instead focus on the implementation.
+
+pip-run leverages this library to enable on-demand installation of dependencies
+required by scripts, as implied by their imports.

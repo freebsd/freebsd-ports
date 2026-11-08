@@ -1,5 +1,5 @@
 PORTNAME=	oxyde-core
-DISTVERSION=	0.6.2
+DISTVERSION=	0.7.1
 PORTREVISION=	2
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
@@ -7,7 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME:S/-/_/}-${DISTVERSION}
 DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	meka@tilda.center
+MAINTAINER=	meka@sys.it.com
 COMMENT=	Rust core for Oxyde ORM
 WWW=		https://github.com/mr-fatalyst/oxyde
 

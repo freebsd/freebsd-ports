@@ -1,5 +1,6 @@
 PORTNAME=	flare
-DISTVERSION=	0.22.1
+DISTVERSION=	0.22.2
+PORTREVISION=	2
 CATEGORIES=	net-im
 
 MAINTAINER=	nxjoseph@FreeBSD.org
@@ -27,6 +28,8 @@ CARGO_BUILD=	no
 CARGO_INSTALL=	no
 CARGO_TEST=	no
 
+PORTSCOUT=	limit:^0\.
+
 OPTIONS_DEFINE=		FEEDBACK SPELLCHECK
 FEEDBACK_DESC=		for vibrating notifications
 SPELLCHECK_DESC=	for spell-checking support
@@ -39,7 +42,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "/cargo_options =/s/ '--/&verbose', &verbose', &/" \
 		-e "/cp/s,'target',& / '${CARGO_BUILD_TARGET}'," \
 		${WRKSRC}/src/meson.build
-	${REINPLACE_CMD} -e 's|bundled-sqlcipher-vendored-openssl|sqlcipher|g' \
+	${REINPLACE_CMD} -e 's|bundled-sqlcipher|sqlcipher|g' \
 		${WRKDIR}/presage-*/presage-store-sqlite/Cargo.toml
 
 do-install:

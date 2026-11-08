@@ -1,11 +1,11 @@
---- chrome/browser/ui/views/task_manager_search_bar_view.cc.orig	2026-02-16 10:45:29 UTC
+--- chrome/browser/ui/views/task_manager_search_bar_view.cc.orig	2026-08-13 16:48:13 UTC
 +++ chrome/browser/ui/views/task_manager_search_bar_view.cc
-@@ -29,7 +29,7 @@ TaskManagerSearchBarView::TaskManagerSearchBarView(
-     const gfx::Insets& margins,
-     Delegate& delegate)
-     : delegate_(delegate)
+@@ -28,7 +28,7 @@ namespace task_manager {
+ namespace {
+ 
+ ui::ColorId GetTextfieldPlaceholderTextColor() {
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-       ,
-       textfield_placeholder_color_id_(kColorTaskManagerSearchBarPlaceholderText)
- #endif
+   return kColorTaskManagerSearchBarPlaceholderText;
+ #else
+   return ui::kColorTextfieldForegroundPlaceholder;

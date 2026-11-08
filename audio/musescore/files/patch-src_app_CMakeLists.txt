@@ -1,0 +1,11 @@
+--- src/app/CMakeLists.txt.orig	2026-10-14 13:22:32 UTC
++++ src/app/CMakeLists.txt
+@@ -370,8 +370,6 @@ elseif(OS_IS_FBSD)
+ ###########################################
+ elseif(OS_IS_FBSD)
+     # Install mscore executable (package maintainers may add "MuseScore" and/or "musescore" aliases that symlink to mscore)
+-    install(CODE "message(STATUS \"Creating symlink ${CMAKE_INSTALL_PREFIX}/bin/musescore${MUSE_APP_INSTALL_SUFFIX} -> ${CMAKE_INSTALL_PREFIX}/bin/mscore${MUSE_APP_INSTALL_SUFFIX}\")
+-                  execute_process(COMMAND ${CMAKE_COMMAND} -E create_symlink \"${CMAKE_INSTALL_PREFIX}/bin/mscore${MUSE_APP_INSTALL_SUFFIX}\" \"${CMAKE_INSTALL_PREFIX}/bin/musescore${MUSE_APP_INSTALL_SUFFIX}\")")
+ 
+ ###########################################
+ # macOS

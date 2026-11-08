@@ -1,5 +1,5 @@
 PORTNAME=	scikit-build
-DISTVERSION=	0.19.0
+DISTVERSION=	0.19.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -30,17 +30,19 @@ TEST_DEPENDS=	cmake:devel/cmake-core \
 		${PYTHON_PKGNAMEPREFIX}path.py>=11.5.0:devel/py-path.py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-mock>=1.10.4:devel/py-pytest-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}virtualenv>0:devel/py-virtualenv@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}virtualenv>0:devel/py-virtualenv@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pip>0:devel/py-pip@${PY_FLAVOR} \
+		git:devel/git
 
 USES=		python
 USE_PYTHON=	autoplist cython_test pep517 pytest
 
 NO_ARCH=	yes
 
-# tests as of 0.19.0: all failuresfrom tests writing into Python's installadin dir which is odd for why are they doing this
-# Results (166.59s):
-#          4 failed
-#        384 passed
-#         25 skipped
+# tests as of 0.19.1:
+# Results (280.33s):
+#         1  failed
+#         59 passed
+#         1 skipped
 
 .include <bsd.port.mk>

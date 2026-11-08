@@ -1,0 +1,14 @@
+[
+{ type: install
+  message: <<EOM
+This package contains the sources of the rds_json module only.  It does not
+install a loadable module.
+
+The module itself is built by the nginx ports.  To use rds_json, build
+www/nginx, www/nginx-devel or www/freenginx with the RDS_JSON option enabled.
+Those ports pick the sources up from
+%%PREFIX%%/share/nginx/modules/nginx-module-rds-json and produce
+ngx_http_rds_json_filter_module.so.
+EOM
+}
+]

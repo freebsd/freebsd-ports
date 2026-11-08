@@ -1,15 +1,15 @@
---- chrome/browser/apps/platform_apps/platform_app_launch.cc.orig	2026-06-05 13:45:06 UTC
+--- chrome/browser/apps/platform_apps/platform_app_launch.cc.orig	2026-10-31 12:09:36 UTC
 +++ chrome/browser/apps/platform_apps/platform_app_launch.cc
-@@ -19,7 +19,7 @@
- #include "extensions/common/constants.h"
- #include "extensions/common/extension.h"
+@@ -21,7 +21,7 @@
+ #include "ui/base/page_transition_types.h"
+ #include "ui/base/window_open_disposition.h"
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
- #include "chrome/browser/ui/browser.h"
- #include "chrome/browser/ui/browser_window.h"
- #include "chrome/browser/ui/navigator/browser_navigator.h"
-@@ -86,7 +86,7 @@ bool OpenExtensionApplicationWindow(Profile* profile,
+ #include "chrome/browser/extensions/chrome_app_deprecation.h"
+ #include "chrome/browser/extensions/extension_util.h"
+ #include "chrome/browser/ui/browser_window/public/browser_window_interface.h"
+@@ -92,7 +92,7 @@ bool OpenExtensionApplicationWindow(Profile* profile,
    if (launch_container == LaunchContainer::kLaunchContainerTab)
      return false;
  
@@ -18,7 +18,7 @@
    if (OpenDeprecatedApplicationPrompt(profile, app_id)) {
      return false;
    }
-@@ -118,7 +118,7 @@ content::WebContents* OpenExtensionApplicationTab(Prof
+@@ -124,7 +124,7 @@ content::WebContents* OpenExtensionApplicationTab(Prof
    if (launch_container != apps::LaunchContainer::kLaunchContainerTab)
      return nullptr;
  
@@ -27,7 +27,7 @@
    if (OpenDeprecatedApplicationPrompt(profile, app_id)) {
      return nullptr;
    }
-@@ -134,7 +134,7 @@ content::WebContents* OpenExtensionApplicationTab(Prof
+@@ -140,7 +140,7 @@ content::WebContents* OpenExtensionApplicationTab(Prof
    return app_tab;
  }
  
@@ -36,7 +36,7 @@
  bool OpenDeprecatedApplicationPrompt(Profile* profile,
                                       const std::string& app_id) {
    if (!extensions::IsExtensionUnsupportedDeprecatedApp(profile, app_id))
-@@ -170,7 +170,7 @@ bool OpenExtensionApplicationWithReenablePrompt(
+@@ -177,7 +177,7 @@ bool OpenExtensionApplicationWithReenablePrompt(
    if (!GetPlatformApp(profile, app_id))
      return false;
  
@@ -45,7 +45,7 @@
    if (OpenDeprecatedApplicationPrompt(profile, app_id)) {
      return false;
    }
-@@ -192,7 +192,7 @@ content::WebContents* OpenExtensionAppShortcutWindow(P
+@@ -199,7 +199,7 @@ content::WebContents* OpenExtensionAppShortcutWindow(P
                                           ->enabled_extensions()
                                           .GetAppByURL(url);
    if (app) {
@@ -54,7 +54,7 @@
      if (OpenDeprecatedApplicationPrompt(profile, app->id())) {
        return nullptr;
      }
-@@ -215,7 +215,7 @@ void RecordExtensionAppLaunchOnTabRestored(Profile* pr
+@@ -222,7 +222,7 @@ void RecordExtensionAppLaunchOnTabRestored(Profile* pr
    if (!extension)
      return;
  

@@ -51,6 +51,7 @@ share/man/man7/coredns-rewrite.7.gz
 share/man/man7/coredns-root.7.gz
 share/man/man7/coredns-route53.7.gz
 share/man/man7/coredns-secondary.7.gz
+share/man/man7/coredns-shed.7.gz
 share/man/man7/coredns-sign.7.gz
 share/man/man7/coredns-template.7.gz
 share/man/man7/coredns-timeouts.7.gz

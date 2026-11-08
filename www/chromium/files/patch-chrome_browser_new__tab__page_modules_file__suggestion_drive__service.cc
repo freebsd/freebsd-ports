@@ -1,7 +1,7 @@
---- chrome/browser/new_tab_page/modules/file_suggestion/drive_service.cc.orig	2026-01-14 08:33:23 UTC
+--- chrome/browser/new_tab_page/modules/file_suggestion/drive_service.cc.orig	2026-10-18 13:29:39 UTC
 +++ chrome/browser/new_tab_page/modules/file_suggestion/drive_service.cc
-@@ -37,7 +37,7 @@
- #include "services/network/public/cpp/resource_request.h"
+@@ -39,7 +39,7 @@
+ #include "services/network/public/cpp/shared_url_loader_factory.h"
  
  namespace {
 -#if BUILDFLAG(IS_LINUX)

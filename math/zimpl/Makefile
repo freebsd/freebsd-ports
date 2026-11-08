@@ -1,6 +1,6 @@
 PORTNAME=	zimpl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.7.1
+DISTVERSION=	3.8.0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,9 +10,6 @@ WWW=		https://zimpl.zib.de \
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-ONLY_FOR_ARCHS=	amd64 i386
-ONLY_FOR_ARCHS_REASON=	missing make/make.linux.$${arch}.gnu.opt for other architectures
 
 BUILD_DEPENDS=	bison:devel/bison
 LIB_DEPENDS=	libgmp.so:math/gmp

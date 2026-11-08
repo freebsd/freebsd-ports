@@ -1,0 +1,2 @@
+OpenTelemetry Botocore Tracing allows tracing requests made by the botocore and
+aiobotocore libraries.

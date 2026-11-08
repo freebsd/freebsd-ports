@@ -149,6 +149,7 @@ include/fox-%%MAJORVER%%/FXGLViewer.h
 include/fox-%%MAJORVER%%/FXGLVisual.h
 include/fox-%%MAJORVER%%/FXGZFileStream.h
 include/fox-%%MAJORVER%%/FXGauge.h
+include/fox-%%MAJORVER%%/FXGlobVisitor.h
 include/fox-%%MAJORVER%%/FXGradientBar.h
 include/fox-%%MAJORVER%%/FXGroupBox.h
 include/fox-%%MAJORVER%%/FXHash.h
@@ -330,6 +331,7 @@ include/fox-%%MAJORVER%%/FXUTF16Codec.h
 include/fox-%%MAJORVER%%/FXUTF32Codec.h
 include/fox-%%MAJORVER%%/FXUTF8Codec.h
 include/fox-%%MAJORVER%%/FXUndoList.h
+include/fox-%%MAJORVER%%/FXUnits.h
 include/fox-%%MAJORVER%%/FXVariant.h
 include/fox-%%MAJORVER%%/FXVariantArray.h
 include/fox-%%MAJORVER%%/FXVariantMap.h

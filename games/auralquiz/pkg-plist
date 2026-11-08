@@ -1,4 +1,5 @@
 bin/auralquiz
-share/applications/auralquiz.desktop
+share/applications/org.nongnu.auralquiz.desktop
 share/icons/hicolor/64x64/apps/auralquiz.png
 share/man/man6/auralquiz.6.gz
+share/metainfo/org.nongnu.auralquiz.appdata.xml

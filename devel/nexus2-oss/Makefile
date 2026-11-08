@@ -1,7 +1,7 @@
 PORTNAME=	nexus2
-PORTVERSION=	2.15.1
-PORTREVISION=	3
-DISTVERSIONSUFFIX=	02
+PORTVERSION=	2.15.2
+DISTVERSIONSUFFIX=	03
+PORTREVISION=	1
 CATEGORIES=	devel www java
 MASTER_SITES=	https://download.sonatype.com/nexus/oss/
 PKGNAMESUFFIX=	-oss
@@ -12,6 +12,8 @@ COMMENT=	Maven (and others) artifacts repository manager
 WWW=		https://www.sonatype.com/products/repository-oss
 
 LICENSE=	EPL
+
+PORTSCOUT=	limit:^2\.
 
 PATCH_DEPENDS=	zip:archivers/zip
 RUN_DEPENDS=	javaservicewrapper:sysutils/javaservicewrapper
@@ -38,10 +40,9 @@ GROUPS=		${NEXUS_GROUP}
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 WRKSRC=		${WRKDIR}/nexus-${RELEASEVERSION}
 
-WRAPPER_DIR=	${PREFIX}/lib/javaservicewrapper
-WRAPPER_CMD=	${WRAPPER_DIR}/bin/wrapper
-WRAPPER_LIBDIR=	${WRAPPER_DIR}/lib
-WRAPPER_JAR=	${WRAPPER_LIBDIR}/wrapper.jar
+WRAPPER_CMD=	${PREFIX}/bin/wrapper
+WRAPPER_LIBDIR=	${PREFIX}/lib
+WRAPPER_JAR=	${JAVAJARDIR}/wrapper.jar
 
 NEXUS_RUNDIR=	/var/run/${PORTNAME}
 NEXUS_LOGDIR=	/var/log/${PORTNAME}

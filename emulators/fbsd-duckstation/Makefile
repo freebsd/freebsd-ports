@@ -29,7 +29,7 @@ LIB_DEPENDS=	libzstd.so:archivers/zstd \
 # XXX Necessary for Qt6/FindWrapVulkanHeaders.cmake
 #BUILD_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers
 
-USES=		cmake compiler:c++20-lang gl jpeg kde:5 pkgconfig qt:6 sdl xorg
+USES=		cmake compiler:c++20-lang gl jpeg kde pkgconfig qt:6 sdl xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	stenzek

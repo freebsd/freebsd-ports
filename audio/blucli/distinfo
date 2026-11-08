@@ -1,5 +1,5 @@
-TIMESTAMP = 1770676097
-SHA256 (go/audio_blucli/blucli-v0.1.3/v0.1.3.mod) = 788060d240f3dcf393490f95ef5c44358469245375a642c4a7eceed9c426d69b
-SIZE (go/audio_blucli/blucli-v0.1.3/v0.1.3.mod) = 462
-SHA256 (go/audio_blucli/blucli-v0.1.3/v0.1.3.zip) = d5fdbd93e05f6bff304aa2448575158b9bc1a9fe390e330d530792b95de63177
-SIZE (go/audio_blucli/blucli-v0.1.3/v0.1.3.zip) = 104480
+TIMESTAMP = 1793122633
+SHA256 (go/audio_blucli/blucli-v0.1.9/v0.1.9.mod) = 21b7ecab40284f1576f39f11042262fa14848f568a281b6facfc84a2443f8905
+SIZE (go/audio_blucli/blucli-v0.1.9/v0.1.9.mod) = 302
+SHA256 (go/audio_blucli/blucli-v0.1.9/v0.1.9.zip) = 35c3ecbb2f664e2e640142504f90c9708df1bcf65e5bd76580da6a8cd9a3d7b2
+SIZE (go/audio_blucli/blucli-v0.1.9/v0.1.9.zip) = 118468

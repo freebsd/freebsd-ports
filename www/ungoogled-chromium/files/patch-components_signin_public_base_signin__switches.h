@@ -1,16 +1,16 @@
---- components/signin/public/base/signin_switches.h.orig	2026-06-05 13:45:06 UTC
+--- components/signin/public/base/signin_switches.h.orig	2026-10-31 12:09:36 UTC
 +++ components/signin/public/base/signin_switches.h
-@@ -55,7 +55,7 @@ bool IsAvatarSyncPromoFeatureEnabled();
+@@ -58,7 +58,7 @@ BASE_DECLARE_FEATURE(kAccountRetrievalWaitsForRestorat
  COMPONENT_EXPORT(SIGNIN_SWITCHES)
- base::TimeDelta GetAvatarSyncPromoFeatureMinimumCookeAgeParam();
+ BASE_DECLARE_FEATURE(kAvoidAutoTriggerListAccountsOnStale);
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  // A HaTS survey flag for the survey to gather user feedback before any changes
  // to the FRE as part of Chrome Desktop FRE Refresh project.
  //
-@@ -124,7 +124,7 @@ BASE_DECLARE_FEATURE_PARAM(
-     kChromeAndroidIdentitySurveyBookmarkPromoProbability);
+@@ -126,7 +126,7 @@ COMPONENT_EXPORT(SIGNIN_SWITCHES)
+ BASE_DECLARE_FEATURE_PARAM(double, kChromeAndroidIdentitySurveyWebProbability);
  #endif  // BUILDFLAG(IS_ANDROID)
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
@@ -18,7 +18,7 @@
  // Enables surveys to measure the effectiveness of the identity model.
  // These surveys would be displayed after interactions such as signin, profile
  // switching, etc. Please keep sorted alphabetically.
-@@ -201,7 +201,7 @@ BASE_DECLARE_FEATURE_PARAM(
+@@ -203,7 +203,7 @@ BASE_DECLARE_FEATURE_PARAM(
  // LINT.ThenChange(//chrome/browser/signin/signin_hats_util.cc)
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
@@ -27,26 +27,53 @@
  // Controls the duration for which the launch of an identity survey is delayed.
  COMPONENT_EXPORT(SIGNIN_SWITCHES)
  BASE_DECLARE_FEATURE(kChromeIdentitySurveyLaunchWithDelay);
-@@ -219,7 +219,7 @@ COMPONENT_EXPORT(SIGNIN_SWITCHES)
- extern const base::FeatureParam<std::string> kCrossDeviceSigninUrl;
- #endif  // BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_IOS)
+@@ -235,7 +235,7 @@ COMPONENT_EXPORT(SIGNIN_SWITCHES)
+ BASE_DECLARE_FEATURE(kCrossDeviceSigninDismissModals);
+ #endif  // BUILDFLAG(IS_IOS)
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
- // If enabled, disables feedback for U18 users on desktop platforms.
- // The iOS version is kDisableU18FeedbackIos flag.
+ // Feature flag to enable cross-device sign-in promo.
  COMPONENT_EXPORT(SIGNIN_SWITCHES)
-@@ -349,7 +349,7 @@ extern const base::FeatureParam<base::TimeDelta>
+ BASE_DECLARE_FEATURE(kCrossDeviceSigninFromDesktop);
+@@ -261,7 +261,7 @@ COMPONENT_EXPORT(SIGNIN_SWITCHES)
+ BASE_DECLARE_FEATURE(kDiceLinkedAccounts);
+ #endif  // BUILDFLAG(ENABLE_DICE_SUPPORT)
+ 
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ // Controls whether the First Run animations are disabled or not. If the feature
+ // is enabled, animations in the First Run are disabled, otherwise they're
+ // enabled. It should be only used for the testing purposes (e.g. pixel tests)
+@@ -484,7 +484,7 @@ extern const base::FeatureParam<base::TimeDelta>
      kPolicyDisclaimerRegistrationRetryDelay;
  #endif
+ 
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ // This feature controls showing the visually refreshed enterprise signin
+ // dialogs, i.e. all the screens served by `ManagedUserProfileNoticeUI`
+ // (enterprise profile welcome/creation, OIDC and the device signals
+@@ -521,7 +521,7 @@ BASE_DECLARE_FEATURE(kExtensionWebAuthFlowInitiatorOri
+ COMPONENT_EXPORT(SIGNIN_SWITCHES)
+ BASE_DECLARE_FEATURE(kFetchAccountCapabilitiesOnRestart);
+ 
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ // This feature controls running visually refreshed first run and profile
+ // creation flows, including the choice screen, for users in search engine
+ // choice screen regions. This feature is no-op if `kFirstRunDesktopRefresh` is
+@@ -534,7 +534,7 @@ COMPONENT_EXPORT(SIGNIN_SWITCHES)
+ BASE_DECLARE_FEATURE(kFirstRunDesktopChoiceScreenRefresh);
+ #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  // This feature controls running visually refreshed first run and profile
  // creation flows for users outside of the search engine choice regions. To
  // enable the refresh in search engine choice screen regions,
-@@ -403,7 +403,7 @@ extern const base::FeatureParam<FirstRunDesktopSignInP
-     kFirstRunDesktopSignInPromoVariation;
+@@ -552,7 +552,7 @@ COMPONENT_EXPORT(SIGNIN_SWITCHES)
+ bool IsFirstRunDesktopRefreshEnabled(bool is_in_search_engine_choice_region);
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
@@ -54,7 +81,7 @@
  // A HaTS survey flag for the survey to gather user feedback after the changes
  // introduced with `kFirstRunDesktopRefresh`.
  //
-@@ -413,7 +413,7 @@ COMPONENT_EXPORT(SIGNIN_SWITCHES)
+@@ -562,7 +562,7 @@ COMPONENT_EXPORT(SIGNIN_SWITCHES)
  BASE_DECLARE_FEATURE(kFirstRunDesktopRefreshSurvey);
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
@@ -63,25 +90,78 @@
  // It enables the first run revamp (introduce new UIs and additional effects).
  // This feature is no-op if `kFirstRunDesktopRefresh` is disabled.
  //
-@@ -501,7 +501,7 @@ BASE_DECLARE_FEATURE(kNoAccountWebSignin);
- COMPONENT_EXPORT(SIGNIN_SWITCHES)
- BASE_DECLARE_FEATURE(kNonDefaultGaiaOriginCheck);
+@@ -578,7 +578,7 @@ COMPONENT_EXPORT(SIGNIN_SWITCHES)
+ bool IsFirstRunDesktopRevampEnabled(bool is_in_search_engine_choice_region);
+ #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
- // Add new entry points for uploading passwords to account storage and update
- // existing ones.
+ // A HaTS survey flag for the survey to gather user feedback after the changes
+ // introduced with `kFirstRunDesktopRevamp` for users who are not eligible for
+ // the Feature Showcase.
+@@ -589,14 +589,14 @@ COMPONENT_EXPORT(SIGNIN_SWITCHES)
+ BASE_DECLARE_FEATURE(kFirstRunDesktopRevampNoFeatureShowcaseSurvey);
+ #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
+ 
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ // Killswitch for the sound experience in the first run desktop revamp.
+ // This feature is no-op if `kFirstRunDesktopRevamp` is disabled.
  COMPONENT_EXPORT(SIGNIN_SWITCHES)
-@@ -520,7 +520,7 @@ COMPONENT_EXPORT(SIGNIN_SWITCHES)
- BASE_DECLARE_FEATURE(kProfileDiscOnAllPages);
+ BASE_DECLARE_FEATURE(kFirstRunDesktopRevampSound);
+ #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
+ 
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ // A HaTS survey flag for the survey to gather user feedback after the changes
+ // introduced with `kFirstRunDesktopRevamp` for users who are eligible for the
+ // Feature Showcase.
+@@ -607,7 +607,7 @@ COMPONENT_EXPORT(SIGNIN_SWITCHES)
+ BASE_DECLARE_FEATURE(kFirstRunDesktopRevampSurvey);
+ #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
+ 
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ // This feature controls whether Gemini step can be shown in the feature
+ // showcase. This feature is no-op if IsFirstRunDesktopRevamp() equals false.
+ //
+@@ -723,7 +723,7 @@ COMPONENT_EXPORT(SIGNIN_SWITCHES)
+ BASE_DECLARE_FEATURE(kOpenSystemAccountSettingsDirectly);
  #endif  // BUILDFLAG(IS_ANDROID)
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
- // Enables variations of the profile picker text.
+ // It enables the pre first run desktop refresh (changes to the onboarding flow
+ // prior to the core first run).
+ //
+@@ -742,7 +742,7 @@ COMPONENT_EXPORT(SIGNIN_SWITCHES)
+ bool IsPreFirstRunDesktopRefreshEnabled();
+ #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
+ 
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ // A HaTS survey flag for the survey to gather user feedback after the changes
+ // introduced with `kPreFirstRunDesktopRefresh` for users who are not eligible
+ // for the Feature Showcase.
+@@ -753,7 +753,7 @@ COMPONENT_EXPORT(SIGNIN_SWITCHES)
+ BASE_DECLARE_FEATURE(kPreFirstRunDesktopRefreshNoFeatureShowcaseSurvey);
+ #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
+ 
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ // A HaTS survey flag for the survey to gather user feedback after the changes
+ // introduced with `kPreFirstRunDesktopRefresh` for users who are eligible for
+ // the Feature Showcase.
+@@ -764,7 +764,7 @@ COMPONENT_EXPORT(SIGNIN_SWITCHES)
+ BASE_DECLARE_FEATURE(kPreFirstRunDesktopRefreshSurvey);
+ #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
+ 
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ // Experimenting with changing the secondary CTA for FRE and new profile
+ // creation.
  COMPONENT_EXPORT(SIGNIN_SWITCHES)
- BASE_DECLARE_FEATURE(kProfilePickerTextVariations);
-@@ -580,7 +580,7 @@ extern const base::FeatureParam<int> kContextualSignin
+@@ -836,7 +836,7 @@ extern const base::FeatureParam<int> kContextualSignin
  COMPONENT_EXPORT(SIGNIN_SWITCHES)
  extern const base::FeatureParam<int> kContextualSigninPromoDismissedThreshold;
  
@@ -90,7 +170,7 @@
  // Uses the Material Next theme for the signin promo.
  COMPONENT_EXPORT(SIGNIN_SWITCHES)
  BASE_DECLARE_FEATURE(kSignInPromoMaterialNextUI);
-@@ -635,7 +635,7 @@ COMPONENT_EXPORT(SIGNIN_SWITCHES)
+@@ -891,7 +891,7 @@ COMPONENT_EXPORT(SIGNIN_SWITCHES)
  BASE_DECLARE_FEATURE(kSupportAddSessionEmailPrefill);
  #endif
  

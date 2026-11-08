@@ -1,0 +1,5 @@
+URL Highlight is a PHP library to find URLs in text and turn them into
+clickable links. It works with plain text, HTML, and HTML entity encoded
+input; matches URLs without a scheme by top-level domain, as well as
+emails, IP hosts, and Unicode; drops trailing punctuation that belongs
+to the surrounding text; and leaves existing links untouched.

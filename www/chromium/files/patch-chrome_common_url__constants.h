@@ -1,7 +1,7 @@
---- chrome/common/url_constants.h.orig	2026-07-01 06:24:19 UTC
+--- chrome/common/url_constants.h.orig	2026-10-18 13:29:39 UTC
 +++ chrome/common/url_constants.h
-@@ -732,7 +732,7 @@ inline constexpr char kOutdatedPluginLearnMoreURL[] =
-     "https://support.google.com/chrome?p=ib_outdated_plugin";
+@@ -725,7 +725,7 @@ inline constexpr char kProcessIsolationLearnMoreUrl[] 
+     "https://support.google.com/chrome?p=process_isolation";
  #endif
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)

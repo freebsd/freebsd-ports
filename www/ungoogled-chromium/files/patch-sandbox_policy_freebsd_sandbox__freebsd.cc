@@ -1,4 +1,4 @@
---- sandbox/policy/freebsd/sandbox_freebsd.cc.orig	2025-12-12 07:44:27 UTC
+--- sandbox/policy/freebsd/sandbox_freebsd.cc.orig	2026-08-13 07:41:05 UTC
 +++ sandbox/policy/freebsd/sandbox_freebsd.cc
 @@ -0,0 +1,210 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
@@ -102,7 +102,7 @@
 +  const std::string process_type =
 +      command_line->GetSwitchValueASCII(switches::kProcessType);
 +
-+  base::SysInfo::AmountOfPhysicalMemory();
++  base::SysInfo::AmountOfTotalPhysicalMemory();
 +  base::SysInfo::NumberOfProcessors();
 +  base::SysInfo::CPUModelName();
 +

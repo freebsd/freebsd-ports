@@ -1,6 +1,6 @@
---- chrome/browser/ui/webui/about/about_ui.cc.orig	2026-05-09 18:09:27 UTC
+--- chrome/browser/ui/webui/about/about_ui.cc.orig	2026-10-31 12:09:36 UTC
 +++ chrome/browser/ui/webui/about/about_ui.cc
-@@ -423,7 +423,7 @@ using about_ui::AppendHeader;
+@@ -406,7 +406,7 @@ using about_ui::AppendHeader;
  
  namespace {
  
@@ -9,7 +9,7 @@
  std::string AboutLinuxProxyConfig() {
    std::string data;
    AppendHeader(&data,
-@@ -453,7 +453,7 @@ TermsUIConfig::TermsUIConfig()
+@@ -436,7 +436,7 @@ TermsUIConfig::TermsUIConfig()
      : AboutUIConfigBase(chrome::kChromeUITermsHost) {}
  #endif
  
@@ -18,7 +18,7 @@
  LinuxProxyConfigUI::LinuxProxyConfigUI()
      : AboutUIConfigBase(chrome::kChromeUILinuxProxyConfigHost) {}
  #endif
-@@ -502,7 +502,7 @@ void AboutUIHTMLSource::StartDataRequest(
+@@ -482,7 +482,7 @@ void AboutUIHTMLSource::StartDataRequest(
        response =
            ui::ResourceBundle::GetSharedInstance().LoadDataResourceString(idr);
      }

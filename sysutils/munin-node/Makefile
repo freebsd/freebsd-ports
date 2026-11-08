@@ -1,6 +1,5 @@
 PORTNAME=	munin
 PORTVERSION=	${MUNIN_VERSION}
-PORTREVISION=	2
 CATEGORIES=	sysutils perl5
 PKGNAMESUFFIX=	-node
 
@@ -10,23 +9,20 @@ WWW=		https://munin-monitoring.org/
 
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	bash:shells/bash \
-		munin-common>=${MUNIN_VERSION}:sysutils/munin-common \
-		p5-DateTime-HiRes>=0:devel/p5-DateTime-HiRes \
-		p5-Log-Log4perl>=0:devel/p5-Log-Log4perl \
-		p5-Module-Build>=0:devel/p5-Module-Build \
-		p5-Net-Server>=0:net/p5-Net-Server
-RUN_DEPENDS=	bash:shells/bash \
-		munin-common>=${MUNIN_VERSION}:sysutils/munin-common \
+BUILD_DEPENDS=	${ALL_DEPENDS} \
+		p5-Module-Build>=0:devel/p5-Module-Build
+RUN_DEPENDS=	${ALL_DEPENDS} \
 		p5-Cache-Cache>=0:devel/p5-Cache-Cache \
-		p5-DateTime-HiRes>=0:devel/p5-DateTime-HiRes \
 		p5-libwww>=0:www/p5-libwww \
 		p5-List-MoreUtils>0:lang/p5-List-MoreUtils \
-		p5-Log-Log4perl>=0:devel/p5-Log-Log4perl \
-		p5-Net-CIDR>=0:net-mgmt/p5-Net-CIDR \
-		p5-Net-Server>=0:net/p5-Net-Server
+		p5-Net-CIDR>=0:net-mgmt/p5-Net-CIDR
 
 USES=		cpe gmake perl5 shebangfix
+ALL_DEPENDS=	bash:shells/bash \
+		munin-common>=${MUNIN_VERSION}:sysutils/munin-common \
+		p5-DateTime-HiRes>=0:devel/p5-DateTime-HiRes \
+		p5-Log-Log4perl>=0:devel/p5-Log-Log4perl \
+		p5-Net-Server>=0:net/p5-Net-Server
 USE_GITHUB=	yes
 GH_ACCOUNT=	munin-monitoring
 USE_RC_SUBR=	munin-asyncd munin-node
@@ -84,6 +80,9 @@ post-patch:
 		-e 's|^\(PYTHON[[:space:]]*:=\).*|\1 ${python_CMD}|' \
 		-e 's|^\(RUBY[[:space:]]*:=\).*|\1 ${ruby_CMD}|' \
 		${WRKSRC}/Makefile.config
+	@${REINPLACE_CMD} -e 's|IO::Socket::INET|IO::Socket::IP|'\
+		-e 's|use IO::Socket;|use IO::Socket::IP;|'\
+		${WRKSRC}/node/_bin/munin-asyncd.in
 	@${FIND} ${WRKSRC}/node/sbin -type f -name "*.orig" -delete
 
 post-install:

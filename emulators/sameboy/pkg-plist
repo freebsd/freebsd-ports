@@ -49,6 +49,7 @@ share/mime/packages/sameboy.xml
 %%DATADIR%%/Shaders/NearestNeighbor.fsh
 %%DATADIR%%/Shaders/OmniScale.fsh
 %%DATADIR%%/Shaders/OmniScaleLegacy.fsh
+%%DATADIR%%/Shaders/Pixelated.fsh
 %%DATADIR%%/Shaders/Scale2x.fsh
 %%DATADIR%%/Shaders/Scale4x.fsh
 %%DATADIR%%/Shaders/SmoothBilinear.fsh

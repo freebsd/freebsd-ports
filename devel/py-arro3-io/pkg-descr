@@ -1,0 +1,4 @@
+arro3-io provides streaming-capable readers and writers for Apache Arrow
+in Python, including support for Parquet, Arrow IPC, JSON, and CSV formats.
+It is part of the arro3 namespace package ecosystem built on Rust Arrow
+via PyO3.

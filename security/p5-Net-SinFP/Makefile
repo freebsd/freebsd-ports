@@ -1,7 +1,8 @@
 PORTNAME=	Net-SinFP
-PORTVERSION=	2.10
+DISTVERSION=	2.10
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:GOMOR
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sbz@FreeBSD.org
@@ -11,8 +12,7 @@ WWW=		https://metacpan.org/release/GOMOR/Net-SinFP-2.10
 LICENSE=	ART10
 LICENSE_FILE=	${WRKSRC}/LICENSE.Artistic
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Class-Gomor>=1.00:devel/p5-Class-Gomor \
+BUILD_RUN_DEPENDS=	p5-Class-Gomor>=1.00:devel/p5-Class-Gomor \
 		p5-DBIx-SQLite-Simple>=0.33:databases/p5-DBIx-SQLite-Simple \
 		p5-Net-Packet-Target>=1.00:net/p5-Net-Packet-Target \
 		p5-Net-Packet>=3.20:net/p5-Net-Packet

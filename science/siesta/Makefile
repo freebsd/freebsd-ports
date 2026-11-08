@@ -12,8 +12,6 @@ WWW=		https://siesta-project.org/siesta/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_aarch64=	lack of IEEE754 support in gcc causes "Cannot find an intrinsic module named 'ieee_arithmetic'", see bug#255890
-
 LIB_DEPENDS=	libopenblas.so:math/openblas \
 		libreadline.so:devel/readline
 

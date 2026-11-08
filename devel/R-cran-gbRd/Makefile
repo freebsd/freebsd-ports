@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Utilities for processing Rd objects and files
-WWW=		https://cran.r-project.org/web/packages/gbRd/
+WWW=		https://cran.r-project.org/package=gbRd
 
 LICENSE=	GPLv2+
 

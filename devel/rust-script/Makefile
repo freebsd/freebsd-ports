@@ -1,9 +1,9 @@
 PORTNAME=	rust-script
 DISTVERSION=	0.36.0
-PORTREVISION=	7
+PORTREVISION=	10
 CATEGORIES=	devel
 
-MAINTAINER=	pat@patmaddox.com
+MAINTAINER=	patmaddox@FreeBSD.org
 COMMENT=	Run Rust files and expressions as scripts without setup or compilation
 WWW=		https://github.com/fornwall/rust-script
 

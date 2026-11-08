@@ -1,11 +1,11 @@
 PORTNAME=	magic
-DISTVERSION=	8.3.664
+DISTVERSION=	8.3.684
 CATEGORIES=	cad
-MASTER_SITES=	http://opencircuitdesign.com/magic/archive/
+MASTER_SITES=	https://opencircuitdesign.com/magic/archive/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Interactive editor for VLSI layouts
-WWW=		http://opencircuitdesign.com/magic/
+WWW=		https://opencircuitdesign.com/magic/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -34,8 +34,6 @@ DESKTOP_ENTRIES="Magic" "" "" "${PORTNAME}" "" ""
 
 PORTSCOUT=	limit:^8\.
 
-CONFIGURE_WRKSRC=	${WRKSRC}/scripts
-
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD
@@ -51,7 +49,7 @@ post-patch:
 		 s|wish$${TK_VERSION}|${WISH:T}|g ; \
 		 s|tclsh$${TK_VERSION}|${TCLSH:T}|g ; \
 		 s|-l/usr/X11R6/include|-I${LOCALBASE}/include|g' \
-	    ${CONFIGURE_WRKSRC}/configure
+	    ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
 		's|^#!.*|#!${TCLSH}|' ${WRKSRC}/tcltk/strip_reflibs.tcl
 	@${REINPLACE_CMD} -e \

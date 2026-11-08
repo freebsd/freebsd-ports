@@ -5,4 +5,5 @@ bin/ssh-force-password
 bin/ssh-hostkeys
 bin/ssh-keyinfo
 bin/ssh-ping
+bin/ssh-pwd
 bin/ssh-version

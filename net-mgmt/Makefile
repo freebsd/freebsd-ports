@@ -9,6 +9,7 @@
     SUBDIR += alertmanager
     SUBDIR += andwatch
     SUBDIR += ap-utils
+    SUBDIR += apiary
     SUBDIR += argus
     SUBDIR += argus-clients
     SUBDIR += arpscan
@@ -86,6 +87,7 @@
     SUBDIR += grok_exporter
     SUBDIR += gsnmp
     SUBDIR += guifi-snpservices
+    SUBDIR += harica
     SUBDIR += icinga-ipl-i18n
     SUBDIR += icinga-php-library
     SUBDIR += icinga-php-thirdparty
@@ -326,8 +328,10 @@
     SUBDIR += py-aggregate6
     SUBDIR += py-arouteserver
     SUBDIR += py-ciscoconfparse
+    SUBDIR += py-ciscoconfparse2
     SUBDIR += py-dnsdiag
     SUBDIR += py-gstat_exporter
+    SUBDIR += py-hier-config
     SUBDIR += py-ipcalc
     SUBDIR += py-ipy
     SUBDIR += py-junos-eznc
@@ -371,6 +375,7 @@
     SUBDIR += rtrlib
     SUBDIR += rubygem-blimpy
     SUBDIR += rubygem-checkson
+    SUBDIR += rubygem-opn_api
     SUBDIR += rubygem-oxidized
     SUBDIR += rubygem-oxidized-script
     SUBDIR += rubygem-oxidized-web
@@ -385,7 +390,6 @@
     SUBDIR += sdig
     SUBDIR += seafile-client
     SUBDIR += seafile-gui
-    SUBDIR += seafile-server
     SUBDIR += semaphore
     SUBDIR += sendip
     SUBDIR += simplomon
@@ -438,5 +442,10 @@
     SUBDIR += zabbix74-java
     SUBDIR += zabbix74-proxy
     SUBDIR += zabbix74-server
+    SUBDIR += zabbix8-agent
+    SUBDIR += zabbix8-frontend
+    SUBDIR += zabbix8-java
+    SUBDIR += zabbix8-proxy
+    SUBDIR += zabbix8-server
 
 .include <bsd.port.subdir.mk>

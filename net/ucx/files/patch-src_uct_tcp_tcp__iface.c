@@ -1,4 +1,4 @@
---- src/uct/tcp/tcp_iface.c.orig	2026-07-24 21:46:07 UTC
+--- src/uct/tcp/tcp_iface.c.orig	2026-09-09 16:04:04 UTC
 +++ src/uct/tcp/tcp_iface.c
 @@ -20,6 +20,10 @@
  #include <netinet/tcp.h>
@@ -11,7 +11,7 @@
  
  #define UCT_TCP_IFACE_NETDEV_DIR "/sys/class/net"
  
-@@ -195,6 +199,41 @@ uct_tcp_iface_get_address(uct_iface_h tl_iface, uct_if
+@@ -197,6 +201,41 @@ uct_tcp_iface_get_address(uct_iface_h tl_iface, uct_if
      return UCS_OK;
  }
  
@@ -53,7 +53,7 @@
  static int
  uct_tcp_iface_is_reachable_v2(const uct_iface_h tl_iface,
                                const uct_iface_is_reachable_params_t *params)
-@@ -207,6 +246,9 @@ uct_tcp_iface_is_reachable_v2(const uct_iface_h tl_ifa
+@@ -209,6 +248,9 @@ uct_tcp_iface_is_reachable_v2(const uct_iface_h tl_ifa
      char remote_addr_str[UCS_SOCKADDR_STRING_LEN];
      unsigned ndev_index;
      ucs_status_t status;
@@ -63,7 +63,7 @@
  
      if (!uct_iface_is_reachable_params_valid(
                  params, UCT_IFACE_IS_REACHABLE_FIELD_DEVICE_ADDR)) {
-@@ -264,8 +306,13 @@ uct_tcp_iface_is_reachable_v2(const uct_iface_h tl_ifa
+@@ -266,8 +308,13 @@ uct_tcp_iface_is_reachable_v2(const uct_iface_h tl_ifa
          return 0;
      }
  
@@ -79,7 +79,7 @@
          uct_iface_fill_info_str_buf(
                      params, "no route to %s",
                      ucs_sockaddr_str((const struct sockaddr *)&remote_addr,
-@@ -284,6 +331,11 @@ uct_tcp_iface_get_sysfs_path(const char *dev_name, cha
+@@ -286,6 +333,11 @@ uct_tcp_iface_get_sysfs_path(const char *dev_name, cha
  static const char *
  uct_tcp_iface_get_sysfs_path(const char *dev_name, char *path_buffer)
  {
@@ -91,7 +91,7 @@
      const char *sysfs_path = NULL;
      ucs_status_t status;
      char *lowest_path_buf;
-@@ -310,6 +362,7 @@ out:
+@@ -312,6 +364,7 @@ out:
      ucs_free(lowest_path_buf);
  out:
      return sysfs_path;
@@ -99,7 +99,7 @@
  }
  
  static ucs_status_t uct_tcp_iface_query(uct_iface_h tl_iface,
-@@ -422,7 +475,16 @@ static void uct_tcp_iface_handle_events(void *callback
+@@ -424,7 +477,16 @@ static void uct_tcp_iface_handle_events(void *callback
      unsigned *count  = (unsigned*)arg;
      uct_tcp_ep_t *ep = (uct_tcp_ep_t*)callback_data;
  
@@ -116,7 +116,7 @@
  
      if (events & UCS_EVENT_SET_EVREAD) {
          *count += uct_tcp_ep_cm_state[ep->conn_state].rx_progress(ep);
-@@ -943,6 +1005,10 @@ static int uct_tcp_is_bridge(const char *if_name)
+@@ -950,6 +1012,10 @@ static int uct_tcp_is_bridge(const char *if_name)
  
  static int uct_tcp_is_bridge(const char *if_name)
  {
@@ -127,7 +127,7 @@
      char *path;
      int ret;
      struct stat st;
-@@ -962,6 +1028,7 @@ out:
+@@ -969,6 +1035,7 @@ out:
      ucs_free(path);
  out:
      return ret;
@@ -135,7 +135,7 @@
  }
  
  ucs_status_t uct_tcp_query_devices(uct_md_h md,
-@@ -971,7 +1038,11 @@ ucs_status_t uct_tcp_query_devices(uct_md_h md,
+@@ -978,7 +1045,11 @@ ucs_status_t uct_tcp_query_devices(uct_md_h md,
      uct_tcp_md_t *tcp_md               = ucs_derived_of(md, uct_tcp_md_t);
      const unsigned sys_device_priority = 10;
      uct_tl_device_resource_t *devices, *tmp;
@@ -148,7 +148,7 @@
      unsigned num_devices;
      int is_active, i, n;
      ucs_status_t status;
-@@ -979,21 +1050,77 @@ ucs_status_t uct_tcp_query_devices(uct_md_h md,
+@@ -986,21 +1057,77 @@ ucs_status_t uct_tcp_query_devices(uct_md_h md,
      char *path_buffer;
      ucs_sys_device_t sys_dev;
  
@@ -227,7 +227,7 @@
      ucs_carray_for_each(entry, entries, n) {
          /* According to the sysfs(5) manual page, all of entries
           * has to be a symbolic link representing one of the real
-@@ -1045,18 +1172,28 @@ ucs_status_t uct_tcp_query_devices(uct_md_h md,
+@@ -1052,18 +1179,28 @@ ucs_status_t uct_tcp_query_devices(uct_md_h md,
          devices[num_devices].sys_device = sys_dev;
          ++num_devices;
      }

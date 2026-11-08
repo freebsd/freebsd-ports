@@ -2522,7 +2522,7 @@ TCP Server functionality disabled by default, leaving them unaffected.</p>
     </description>
     <references>
       <url>https://github.com/go-gitea/gitea/issues/4357</url>
-      <url>ttps://github.com/go-gitea/gitea/pull/4840</url>
+      <url>https://github.com/go-gitea/gitea/pull/4840</url>
     </references>
     <dates>
       <discovery>2018-10-01</discovery>
@@ -5890,7 +5890,7 @@ ed by aCaB.</li>
       <cvename>CVE-2018-7725</cvename>
       <cvename>CVE-2018-7726</cvename>
       <cvename>CVE-2018-7727</cvename>
-      <url>https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;results_type=overview&amp;query=zziplib&amp;search_type=all&amp;pub_start_date=01%2F01%2F2017&amp;pub_end_date=07%2F06%2F2018"</url>
+      <url>https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;results_type=overview&amp;query=zziplib&amp;search_type=all&amp;pub_start_date=01%2F01%2F2017&amp;pub_end_date=07%2F06%2F2018</url>
     </references>
     <dates>
       <discovery>2017-03-01</discovery>
@@ -8639,7 +8639,6 @@ ed by aCaB.</li>
       <cvename>CVE-2017-7090</cvename>
       <cvename>CVE-2017-7091</cvename>
       <cvename>CVE-2017-7092</cvename>
-      <cvename>CVE-2017-7092</cvename>
       <cvename>CVE-2017-7093</cvename>
       <cvename>CVE-2017-7095</cvename>
       <cvename>CVE-2017-7096</cvename>
@@ -9634,8 +9633,6 @@ ed by aCaB.</li>
    <cvename>CVE-2017-11225</cvename>
    <cvename>CVE-2018-6060</cvename>
    <cvename>CVE-2018-6061</cvename>
-   <cvename>CVE-2018-6060</cvename>
-   <cvename>CVE-2018-6061</cvename>
    <cvename>CVE-2018-6062</cvename>
    <cvename>CVE-2018-6057</cvename>
    <cvename>CVE-2018-6063</cvename>
@@ -9910,12 +9907,10 @@ ed by aCaB.</li>
       <cvename>CVE-2017-8363</cvename>
       <url>https://blogs.gentoo.org/ago/2017/04/29/libsndfile-heap-based-buffer-overflow-in-flac_buffer_copy-flac-c/</url>
       <url>https://github.com/erikd/libsndfile/issues/233</url>
-      <url>https://github.com/erikd/libsndfile/commit/fd0484aba8e51d16af1e3a880f9b8b857b385eb3</url>
       <url>https://github.com/erikd/libsndfile/commit/cd7da8dbf6ee4310d21d9e44b385d6797160d9e8</url>
       <cvename>CVE-2017-8365</cvename>
       <url>https://blogs.gentoo.org/ago/2017/04/29/libsndfile-global-buffer-overflow-in-i2les_array-pcm-c/</url>
       <url>https://github.com/erikd/libsndfile/issues/230</url>
-      <url>https://github.com/erikd/libsndfile/commit/fd0484aba8e51d16af1e3a880f9b8b857b385eb3</url>
       <cvename>CVE-2017-12562</cvename>
       <url>https://github.com/erikd/libsndfile/issues/292/</url>
       <url>https://github.com/erikd/libsndfile/commit/cf7a8182c2642c50f1cf90dddea9ce96a8bad2e8</url>

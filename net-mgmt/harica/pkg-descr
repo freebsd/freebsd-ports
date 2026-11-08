@@ -1,0 +1,3 @@
+harica is a Go package for interacting with the HARICA API. It provides an
+unofficial CLI interface to most API commands. The project was started at
+Munich University of Applied Sciences.

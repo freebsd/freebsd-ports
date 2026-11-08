@@ -1,11 +1,34 @@
---- Makefile.orig	2020-04-29 18:43:05 UTC
+--- Makefile.orig	2024-04-18 09:56:24 UTC
 +++ Makefile
 @@ -1,7 +1,7 @@
  # We assume X64 unless HH_POWER, HH_ARM, or HH_AARCH64 are defined.
- 
+
  override CPPFLAGS += -I.
 -override CXXFLAGS += -std=c++11 -Wall -O3 -fPIC -pthread
 +override CXXFLAGS += -std=c++11 -Wall -fPIC -pthread
  override LDFLAGS += -pthread
- 
+
  PREFIX ?= /usr/local
+@@ -39,8 +39,10 @@ HH_AARCH64 = 1
+ else
+ ifdef HH_POWER
+ HH_X64 =
++ifdef HH_VSX
+ HIGHWAYHASH_OBJS += obj/hh_vsx.o
+ HIGHWAYHASH_TEST_OBJS += obj/highwayhash_test_vsx.o
++endif
+ else
+ HH_X64 = 1
+ HIGHWAYHASH_OBJS += obj/hh_avx2.o obj/hh_sse41.o
+@@ -95,9 +97,11 @@ obj/benchmark.o: CXXFLAGS+=-mavx2
+ endif
+
+ ifdef HH_POWER
++ifdef HH_VSX
+ obj/highwayhash_test_vsx.o: CXXFLAGS+=-mvsx
+ obj/hh_vsx.o: CXXFLAGS+=-mvsx
+ obj/benchmark.o: CXXFLAGS+=-mvsx
++endif
+ # Skip file - vector library/test not supported on PPC
+ obj/vector_test_target.o: CXXFLAGS+=-DHH_DISABLE_TARGET_SPECIFIC
+ obj/vector_test.o: CXXFLAGS+=-DHH_DISABLE_TARGET_SPECIFIC

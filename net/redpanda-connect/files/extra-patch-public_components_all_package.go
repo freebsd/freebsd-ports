@@ -1,6 +1,6 @@
 --- public/components/all/package.go.orig
 +++ public/components/all/package.go
-@@ -15,22 +15,4 @@
+@@ -15,23 +15,4 @@
  import (
  	// Import all community components.
  	_ "github.com/redpanda-data/connect/v4/public/components/community"
@@ -18,6 +18,7 @@
 -	_ "github.com/redpanda-data/connect/v4/public/components/oracledb"
 -	_ "github.com/redpanda-data/connect/v4/public/components/postgresql"
 -	_ "github.com/redpanda-data/connect/v4/public/components/salesforce"
+-	_ "github.com/redpanda-data/connect/v4/public/components/saphana"
 -	_ "github.com/redpanda-data/connect/v4/public/components/slack"
 -	_ "github.com/redpanda-data/connect/v4/public/components/snowflake"
 -	_ "github.com/redpanda-data/connect/v4/public/components/splunk"

@@ -1,5 +1,5 @@
 PORTNAME=	fuzzel
-DISTVERSION=	1.13.1
+DISTVERSION=	1.15.0
 CATEGORIES=	x11 wayland
 MASTER_SITES=	https://codeberg.org/dnkl/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -30,8 +30,10 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/fish/vendor_completions.d/${PORTNAME}.fish \
 		share/zsh/site-functions/_${PORTNAME}
 
-OPTIONS_DEFINE=	CAIRO LIBRSVG2 PNG
+OPTIONS_DEFINE=	CAIRO PNG
 OPTIONS_DEFAULT=CAIRO LIBRSVG2 PNG
+OPTIONS_RADIO=	SVG
+OPTIONS_RADIO_SVG=	LIBRSVG2 RESVG
 
 CAIRO_USES=		gnome
 CAIRO_USE=		GNOME=cairo
@@ -40,12 +42,16 @@ CAIRO_MESON_ENABLED=	enable-cairo
 LIBRSVG2_USES=		gnome
 LIBRSVG2_USE=		GNOME=librsvg2
 LIBRSVG2_MESON_ON=	-Dsvg-backend=librsvg
-LIBRSVG2_MESON_OFF=	-Dsvg-backend=nanosvg
 LIBRSVG2_IMPLIES=	CAIRO
 
 PNG_LIB_DEPENDS=	libpng.so:graphics/png
 PNG_MESON_ON=		-Dpng-backend=libpng
 PNG_MESON_OFF=		-Dpng-backend=none
+
+RESVG_DESC=		${LIBRSVG2_DESC:S/librsvg2/resvg/}
+RESVG_LIB_DEPENDS=	libresvg.so:graphics/resvg-capi
+RESVG_USES=		localbase:ldflags
+RESVG_MESON_ON=		-Dsvg-backend=resvg
 
 post-patch:
 # Respect PREFIX for icons

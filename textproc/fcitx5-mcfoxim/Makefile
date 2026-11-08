@@ -1,5 +1,6 @@
 PORTNAME=	fcitx5-mcfoxim
 DISTVERSION=	0.1.2
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	lwhsu@FreeBSD.org
@@ -13,7 +14,9 @@ BUILD_DEPENDS=	nlohmann-json>0:devel/nlohmann-json
 
 LIB_DEPENDS=	libFcitx5Core.so:textproc/fcitx5
 
-USES=		cmake pkgconfig
+USES=		cmake gettext-tools:build kde pkgconfig
+
+USE_KDE=	ecm:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	openvanilla

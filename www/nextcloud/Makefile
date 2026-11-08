@@ -1,5 +1,5 @@
 PORTNAME=	nextcloud
-PORTVERSION=	34.0.2
+PORTVERSION=	35.0.2
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/nextcloud-releases/server/releases/download/v${PORTVERSION}/ \
 		https://download.nextcloud.com/server/releases/
@@ -58,7 +58,7 @@ MYSQL_USE=	PHP=pdo_mysql
 OPCACHE_USE=	PHP=opcache
 PCNTL_USE=	PHP=pcntl
 PGSQL_USE=	PHP=pdo_pgsql,pgsql
-REDIS_RUN_DEPENDS=	${PECL_PKGNAMEPREFIX}redis>=2.2.6:databases/pecl-redis@${PHP_FLAVOR}
+REDIS_RUN_DEPENDS=	${PHP_PKGNAMEPREFIX}redis>=2.2.6:databases/php-redis@${PHP_FLAVOR}
 SMB_RUN_DEPENDS=	${PECL_PKGNAMEPREFIX}smbclient>=0.9.0:net/pecl-smbclient@${PHP_FLAVOR}
 SQLITE_USE=	PHP=pdo_sqlite,sqlite3
 SYSVSEM_USE=	PHP=sysvsem
@@ -75,6 +75,7 @@ post-patch:
 	@${RM} ${WRKSRC}/config/config.documented.php.* \
 		 ${WRKSRC}/updater/updater.phar
 	@${MV} ${WRKSRC}/apps ${WRKSRC}/apps-pkg
+	@${FIND} ${WRKSRC} -name '*.orig' -delete
 
 do-install:
 	@${MKDIR} -m 0755 ${STAGEDIR}${WWWDIR}

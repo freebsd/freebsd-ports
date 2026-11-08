@@ -1,22 +1,23 @@
 PORTNAME=	pyclipper
-PORTVERSION=	1.3.0p5
-PORTREVISION=	1
+PORTVERSION=	1.4.0
 CATEGORIES=	math python
 MASTER_SITES=	PYPI/source/p/pyclipper
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/p/.post/}
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	lantw44@gmail.com
 COMMENT=	Cython wrapper for the C++ translation of Clipper library
-WWW=		https://github.com/greginvm/pyclipper
+WWW=		https://github.com/fonttools/pyclipper
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-scm>=1.11.1:devel/py-setuptools-scm@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=1.11.1:devel/py-setuptools-scm@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils cython autoplist pytest
+USE_PYTHON=	pep517 cython autoplist pytest
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 

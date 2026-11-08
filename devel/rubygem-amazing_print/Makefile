@@ -1,5 +1,5 @@
 PORTNAME=	amazing_print
-PORTVERSION=	2.0.0
+PORTVERSION=	3.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

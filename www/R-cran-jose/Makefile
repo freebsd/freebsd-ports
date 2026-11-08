@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Read and write JSON Web Keys
-WWW=		https://cran.r-project.org/package=jose
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

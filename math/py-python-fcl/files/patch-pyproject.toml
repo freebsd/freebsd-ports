@@ -1,0 +1,14 @@
+-- Lower the setuptools build-system requirement to the version provided by
+-- the FreeBSD ports tree (devel/py-setuptools), which is currently 63.1.0.
+-- Upstream requires >=70.0.0, but that version is not available in ports.
+
+--- pyproject.toml.orig	2026-09-15 21:53:37 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@ requires = [
+ [build-system]
+ requires = [
+-	"setuptools>=70.0.0",
++	"setuptools>=63.1.0",
+ 	"Cython>=3.0",
+ 	"numpy; python_version<'3.12'",
+ 	"numpy>=1.26.0b1; python_version>='3.12'"]

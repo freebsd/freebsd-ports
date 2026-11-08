@@ -6,6 +6,7 @@ usr/bin/accelerate-merge-weights
 usr/bin/diffusers-cli
 usr/bin/f2py
 usr/bin/fonttools
+usr/bin/hf
 usr/bin/huggingface-cli
 usr/bin/isympy
 usr/bin/normalizer
@@ -14,9 +15,11 @@ usr/bin/proton
 usr/bin/proton-viewer
 usr/bin/pyftmerge
 usr/bin/pyftsubset
+usr/bin/tiny-agents
 usr/bin/torchfrtrace
 usr/bin/torchrun
 usr/bin/tqdm
+usr/bin/transformers
 usr/bin/transformers-cli
 usr/bin/ttx
 %%DATADIR%%/dummy-uvm.so

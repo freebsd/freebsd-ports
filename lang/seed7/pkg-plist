@@ -13,10 +13,12 @@ lib/seed7/lib/archive_base.s7i
 lib/seed7/lib/archive.s7i
 lib/seed7/lib/array.s7i
 lib/seed7/lib/asn1.s7i
+lib/seed7/lib/asn1oid.s7i
 lib/seed7/lib/basearray.s7i
 lib/seed7/lib/bigfile.s7i
 lib/seed7/lib/bigint.s7i
 lib/seed7/lib/bigrat.s7i
+lib/seed7/lib/bin16.s7i
 lib/seed7/lib/bin32.s7i
 lib/seed7/lib/bin64.s7i
 lib/seed7/lib/bitdata.s7i
@@ -144,7 +146,9 @@ lib/seed7/lib/hmac.s7i
 lib/seed7/lib/html_ent.s7i
 lib/seed7/lib/html.s7i
 lib/seed7/lib/htmldom.s7i
-lib/seed7/lib/http_response.s7i
+lib/seed7/lib/http_request.s7i
+lib/seed7/lib/http_srv_resp.s7i
+lib/seed7/lib/https_request.s7i
 lib/seed7/lib/httpserv.s7i
 lib/seed7/lib/huffman.s7i
 lib/seed7/lib/ico.s7i
@@ -180,6 +184,7 @@ lib/seed7/lib/multiscr.s7i
 lib/seed7/lib/null_file.s7i
 lib/seed7/lib/osfiles.s7i
 lib/seed7/lib/pbm.s7i
+lib/seed7/lib/pcx.s7i
 lib/seed7/lib/pem.s7i
 lib/seed7/lib/pgm.s7i
 lib/seed7/lib/pic_util.s7i
@@ -209,6 +214,7 @@ lib/seed7/lib/seed7_05.s7i
 lib/seed7/lib/set.s7i
 lib/seed7/lib/shell.s7i
 lib/seed7/lib/showtls.s7i
+lib/seed7/lib/signature.s7i
 lib/seed7/lib/smtp.s7i
 lib/seed7/lib/sockbase.s7i
 lib/seed7/lib/socket.s7i

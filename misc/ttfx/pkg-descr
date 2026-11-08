@@ -1,0 +1,3 @@
+ttfx renders terminal text effects (decrypt, beams, matrix, and many more)
+from text piped on standard input. It is a Rust port of TerminalTextEffects
+(TTE) shipped as a single binary with no runtime dependencies.

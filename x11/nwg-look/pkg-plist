@@ -4,6 +4,7 @@ share/applications/nwg-look.desktop
 %%DATADIR%%/langs/en_US.json
 %%DATADIR%%/langs/es_ES.json
 %%DATADIR%%/langs/ja_JP.json
+%%DATADIR%%/langs/ko_KR.json
 %%DATADIR%%/langs/pl_PL.json
 %%DATADIR%%/langs/pt_BR.json
 %%DATADIR%%/langs/ru_RU.json

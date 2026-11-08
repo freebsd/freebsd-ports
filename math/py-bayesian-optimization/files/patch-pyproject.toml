@@ -1,0 +1,16 @@
+--- pyproject.toml.orig	1970-01-01 00:00:00 UTC
++++ pyproject.toml
+@@ -47,8 +47,11 @@ dev = [
+ ]
+ 
+ [build-system]
+-requires = ["uv_build>=0.7.21,<0.8.0"]
+-build-backend = "uv_build"
++requires = ["flit-core >= 3.12"]
++build-backend = "flit_core.buildapi"
++
++[tool.flit]
++module.name = "bayes_opt"
+ 
+ [tool.uv.build-backend]
+ module-name = "bayes_opt"

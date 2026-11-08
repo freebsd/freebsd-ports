@@ -9,7 +9,7 @@ WWW=		https://gitlab.freedesktop.org/xorg/driver/xf86-video-vesa
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:xz xorg-cat:driver
+USES=		xorg-cat:driver
 
 PLIST_FILES=	lib/xorg/modules/drivers/vesa_drv.so \
 		share/man/man4/vesa.4x.gz

@@ -1,6 +1,5 @@
 PORTNAME=	plotly
-PORTVERSION=	5.24.1
-PORTREVISION=	1
+DISTVERSION=	7.1.0
 CATEGORIES=	graphics python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,11 +11,16 @@ WWW=		https://plotly.com/python/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tenacity>=6.2.0:devel/py-tenacity@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=1.26:devel/py-hatchling@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}narwhals>=1.15.1:math/py-narwhals@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}packaging>=0:devel/py-packaging@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist pep517
 
 NO_ARCH=	yes
+
+USES+=		shebangfix
+SHEBANG_FILES=	${WRKSRC}/_plotly_utils/png.py
 
 .include <bsd.port.mk>

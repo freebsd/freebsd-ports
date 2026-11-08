@@ -1,3 +1,3 @@
-TIMESTAMP = 1779153066
-SHA256 (xorg/lib/libXi-1.8.3.tar.xz) = 7ad60056f01af4f786cfe93b3a7707447711626fc8da2637bec71a90409babe5
-SIZE (xorg/lib/libXi-1.8.3.tar.xz) = 411684
+TIMESTAMP = 1792180582
+SHA256 (xorg/lib/libXi-1.8.4.tar.xz) = ddd6057b89a91903bc2f884d55c8467440906945e482c36547260dff28661afc
+SIZE (xorg/lib/libXi-1.8.4.tar.xz) = 422212

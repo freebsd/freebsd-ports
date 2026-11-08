@@ -1,155 +1,184 @@
-CARGO_CRATES=	Inflector-0.11.4 \
-		ahash-0.8.11 \
-		aho-corasick-1.1.3 \
-		allocator-api2-0.2.18 \
-		anyhow-1.0.89 \
+CARGO_CRATES=	ahash-0.8.12 \
+		aho-corasick-1.1.4 \
+		allocator-api2-0.2.21 \
+		anyhow-1.0.102 \
+		ar_archive_writer-0.5.1 \
 		arrayvec-0.7.6 \
-		ast_node-0.10.0 \
-		autocfg-1.3.0 \
+		ascii-1.1.0 \
+		ast_node-5.0.0 \
+		autocfg-1.5.0 \
 		base-encode-0.3.1 \
-		base64-0.21.7 \
-		base64-simd-0.7.0 \
-		better_scoped_tls-0.1.1 \
-		bitflags-2.6.0 \
+		base64-0.22.1 \
+		base64-simd-0.8.0 \
+		better_scoped_tls-1.0.1 \
+		bitflags-2.11.1 \
 		bitvec-1.0.1 \
-		bumpalo-3.16.0 \
-		cc-1.1.21 \
-		cfg-if-1.0.0 \
-		convert_case-0.6.0 \
-		ctor-0.2.8 \
-		cty-0.2.2 \
+		bstr-1.12.1 \
+		bumpalo-3.20.2 \
+		bytes-1.11.1 \
+		bytes-str-0.2.7 \
+		castaway-0.2.4 \
+		cc-1.2.61 \
+		cfg-if-1.0.4 \
+		cmake-0.1.58 \
+		compact_str-0.7.1 \
+		console_error_panic_hook-0.1.7 \
+		convert_case-0.11.0 \
+		ctor-0.11.1 \
 		dashmap-5.5.3 \
-		data-encoding-2.6.0 \
+		data-encoding-2.11.0 \
 		debugid-0.8.0 \
-		either-1.13.0 \
-		equivalent-1.0.1 \
-		fixedbitset-0.4.2 \
-		form_urlencoded-1.2.1 \
-		from_variant-0.1.9 \
+		displaydoc-0.2.5 \
+		dragonbox_ecma-0.1.12 \
+		either-1.15.0 \
+		equivalent-1.0.2 \
+		find-msvc-tools-0.1.9 \
+		fixedbitset-0.5.7 \
+		foldhash-0.2.0 \
+		form_urlencoded-1.2.2 \
+		from_variant-3.0.0 \
 		funty-2.0.0 \
-		getrandom-0.2.15 \
+		futures-0.3.32 \
+		futures-channel-0.3.32 \
+		futures-core-0.3.32 \
+		futures-executor-0.3.32 \
+		futures-io-0.3.32 \
+		futures-macro-0.3.32 \
+		futures-sink-0.3.32 \
+		futures-task-0.3.32 \
+		futures-util-0.3.32 \
+		globset-0.4.18 \
 		hashbrown-0.14.5 \
-		hermit-abi-0.3.9 \
-		hstr-0.2.12 \
-		idna-0.5.0 \
-		if_chain-1.0.2 \
-		indexmap-2.5.0 \
-		is-macro-0.3.6 \
-		itoa-1.0.11 \
-		js-sys-0.3.70 \
-		libc-0.2.158 \
-		libloading-0.8.5 \
-		lock_api-0.4.12 \
-		log-0.4.22 \
-		memchr-2.7.4 \
-		mimalloc-rust-0.2.1 \
-		mimalloc-rust-sys-1.7.9-source \
-		napi-2.16.11 \
-		napi-build-2.1.3 \
-		napi-derive-2.16.12 \
-		napi-derive-backend-1.0.74 \
-		napi-sys-2.4.0 \
+		hashbrown-0.16.1 \
+		hashbrown-0.17.0 \
+		heck-0.5.0 \
+		hermit-abi-0.5.2 \
+		hstr-3.0.4 \
+		icu_collections-2.2.0 \
+		icu_locale_core-2.2.0 \
+		icu_normalizer-2.2.0 \
+		icu_normalizer_data-2.2.0 \
+		icu_properties-2.2.0 \
+		icu_properties_data-2.2.0 \
+		icu_provider-2.2.0 \
+		idna-1.1.0 \
+		idna_adapter-1.2.2 \
+		if_chain-1.0.3 \
+		indexmap-2.14.0 \
+		is-macro-0.3.7 \
+		itoa-1.0.18 \
+		js-sys-0.3.98 \
+		libc-0.2.186 \
+		libloading-0.9.0 \
+		libmimalloc-sys2-0.1.54 \
+		litemap-0.8.2 \
+		lock_api-0.4.14 \
+		memchr-2.8.0 \
+		mimalloc-safe-0.1.58 \
+		napi-3.8.6 \
+		napi-build-2.3.1 \
+		napi-derive-3.5.5 \
+		napi-derive-backend-5.0.4 \
+		napi-sys-3.2.1 \
 		new_debug_unreachable-1.0.6 \
+		nohash-hasher-0.2.0 \
 		num-bigint-0.4.6 \
 		num-integer-0.1.46 \
 		num-traits-0.2.19 \
-		num_cpus-1.16.0 \
-		once_cell-1.19.0 \
-		outref-0.1.0 \
-		parking_lot-0.12.3 \
-		parking_lot_core-0.9.10 \
-		pathdiff-0.2.1 \
-		percent-encoding-2.3.1 \
-		petgraph-0.6.5 \
-		phf-0.11.2 \
-		phf_generator-0.11.2 \
-		phf_macros-0.11.2 \
-		phf_shared-0.11.2 \
-		pin-project-lite-0.2.14 \
-		proc-macro2-1.0.86 \
-		psm-0.1.23 \
-		ptr_meta-0.1.4 \
-		ptr_meta_derive-0.1.4 \
-		quote-1.0.37 \
+		num_cpus-1.17.0 \
+		object-0.37.3 \
+		once_cell-1.21.4 \
+		outref-0.5.2 \
+		par-core-2.0.0 \
+		par-iter-2.0.0 \
+		parking_lot-0.12.5 \
+		parking_lot_core-0.9.12 \
+		pathdiff-0.2.3 \
+		percent-encoding-2.3.2 \
+		petgraph-0.7.1 \
+		phf-0.11.3 \
+		phf_generator-0.11.3 \
+		phf_macros-0.11.3 \
+		phf_shared-0.11.3 \
+		pin-project-lite-0.2.17 \
+		potential_utf-0.1.5 \
+		proc-macro2-1.0.106 \
+		psm-0.1.31 \
+		quote-1.0.45 \
 		radium-0.7.0 \
 		radix_fmt-1.0.0 \
-		rand-0.8.5 \
+		rand-0.8.6 \
 		rand_core-0.6.4 \
-		redox_syscall-0.5.4 \
-		regex-1.10.6 \
-		regex-automata-0.4.7 \
-		regex-syntax-0.8.4 \
-		rustc-hash-1.1.0 \
-		rustc_version-0.2.3 \
-		ryu-1.0.18 \
-		ryu-js-1.0.1 \
+		redox_syscall-0.5.18 \
+		regex-1.12.3 \
+		regex-automata-0.4.14 \
+		regex-syntax-0.8.10 \
+		regress-0.10.5 \
+		rustc-hash-2.1.2 \
+		rustversion-1.0.22 \
+		ryu-1.0.23 \
+		ryu-js-1.0.2 \
 		scoped-tls-1.0.1 \
 		scopeguard-1.2.0 \
-		semver-0.9.0 \
-		semver-1.0.23 \
-		semver-parser-0.7.0 \
-		serde-1.0.210 \
-		serde_derive-1.0.210 \
-		serde_json-1.0.128 \
+		semver-1.0.28 \
+		seq-macro-0.3.6 \
+		serde-1.0.228 \
+		serde_core-1.0.228 \
+		serde_derive-1.0.228 \
+		serde_json-1.0.149 \
 		shlex-1.3.0 \
-		simd-abstraction-0.7.1 \
 		siphasher-0.3.11 \
-		smallvec-1.13.2 \
+		siphasher-1.0.3 \
+		slab-0.4.12 \
+		smallvec-1.15.1 \
 		smartstring-1.0.1 \
-		sourcemap-9.0.0 \
-		stable_deref_trait-1.2.0 \
-		stacker-0.1.17 \
+		stable_deref_trait-1.2.1 \
+		stacker-0.1.23 \
 		static_assertions-1.1.0 \
-		string_enum-0.4.4 \
-		swc_allocator-0.1.8 \
-		swc_atoms-0.7.0 \
-		swc_cached-0.3.20 \
-		swc_common-0.39.0 \
-		swc_compiler_base-0.22.0 \
-		swc_config-0.1.15 \
-		swc_config_macro-0.1.4 \
-		swc_ecma_ast-0.120.0 \
-		swc_ecma_codegen-0.157.0 \
-		swc_ecma_codegen_macros-0.7.7 \
-		swc_ecma_minifier-0.207.0 \
-		swc_ecma_parser-0.151.0 \
-		swc_ecma_transforms_base-0.148.0 \
-		swc_ecma_transforms_macros-0.5.5 \
-		swc_ecma_transforms_optimization-0.211.0 \
-		swc_ecma_usage_analyzer-0.32.0 \
-		swc_ecma_utils-0.136.0 \
-		swc_ecma_visit-0.106.0 \
-		swc_eq_ignore_macros-0.1.4 \
-		swc_fast_graph-0.27.0 \
-		swc_macros_common-0.3.13 \
-		swc_timer-0.27.0 \
-		swc_visit-0.6.2 \
-		syn-1.0.109 \
-		syn-2.0.77 \
+		string_enum-1.0.2 \
+		swc_allocator-4.0.1 \
+		swc_atoms-9.0.0 \
+		swc_common-21.0.1 \
+		swc_compiler_base-55.0.0 \
+		swc_config-4.0.1 \
+		swc_config_macro-1.0.1 \
+		swc_ecma_ast-23.0.0 \
+		swc_ecma_codegen-26.0.1 \
+		swc_ecma_codegen_macros-2.0.2 \
+		swc_ecma_hooks-0.7.0 \
+		swc_ecma_minifier-52.0.4 \
+		swc_ecma_parser-39.0.2 \
+		swc_ecma_transforms_base-42.0.0 \
+		swc_ecma_transforms_optimization-44.0.0 \
+		swc_ecma_utils-29.1.0 \
+		swc_ecma_visit-23.0.0 \
+		swc_eq_ignore_macros-1.0.1 \
+		swc_macros_common-1.0.1 \
+		swc_sourcemap-10.0.2 \
+		swc_timer-1.0.0 \
+		swc_visit-2.0.1 \
+		syn-2.0.117 \
+		synstructure-0.13.2 \
 		tap-1.0.1 \
-		tinyvec-1.8.0 \
-		tinyvec_macros-0.1.1 \
-		tracing-0.1.40 \
-		tracing-attributes-0.1.27 \
-		tracing-core-0.1.32 \
-		triomphe-0.1.13 \
-		typed-arena-2.0.2 \
-		unicode-bidi-0.3.15 \
-		unicode-id-0.3.5 \
-		unicode-id-start-1.3.0 \
-		unicode-ident-1.0.13 \
-		unicode-normalization-0.1.24 \
-		unicode-segmentation-1.12.0 \
-		unicode-width-0.1.14 \
-		url-2.5.2 \
-		uuid-1.10.0 \
+		tinystr-0.8.3 \
+		tracing-0.1.44 \
+		tracing-attributes-0.1.31 \
+		tracing-core-0.1.36 \
+		triomphe-0.1.15 \
+		unicode-id-start-1.4.0 \
+		unicode-ident-1.0.24 \
+		unicode-segmentation-1.13.2 \
+		unicode-width-0.2.2 \
+		url-2.5.8 \
+		utf8_iter-1.0.4 \
+		uuid-1.23.1 \
 		version_check-0.9.5 \
-		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.93 \
-		wasm-bindgen-backend-0.2.93 \
-		wasm-bindgen-macro-0.2.93 \
-		wasm-bindgen-macro-support-0.2.93 \
-		wasm-bindgen-shared-0.2.93 \
+		vsimd-0.8.0 \
+		wasm-bindgen-0.2.121 \
+		wasm-bindgen-macro-0.2.121 \
+		wasm-bindgen-macro-support-0.2.121 \
+		wasm-bindgen-shared-0.2.121 \
+		windows-link-0.2.1 \
 		windows-sys-0.59.0 \
 		windows-targets-0.52.6 \
 		windows_aarch64_gnullvm-0.52.6 \
@@ -160,7 +189,16 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		windows_x86_64_gnu-0.52.6 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.52.6 \
+		writeable-0.6.3 \
 		wyz-0.5.1 \
-		xxhash-rust-0.8.12 \
-		zerocopy-0.7.35 \
-		zerocopy-derive-0.7.35
+		xxhash-rust-0.8.15 \
+		yoke-0.8.2 \
+		yoke-derive-0.8.2 \
+		zerocopy-0.8.48 \
+		zerocopy-derive-0.8.48 \
+		zerofrom-0.1.7 \
+		zerofrom-derive-0.1.7 \
+		zerotrie-0.2.4 \
+		zerovec-0.11.6 \
+		zerovec-derive-0.11.3 \
+		zmij-1.0.21

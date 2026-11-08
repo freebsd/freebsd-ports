@@ -5,7 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Official library for Google Cloud Spanner API
-WWW=		https://cloud.google.com/ruby/docs/reference/google-cloud-spanner/latest/ \
+WWW=		https://docs.cloud.google.com/ruby/docs/reference/google-cloud-spanner/latest \
 		https://googleapis.github.io/google-cloud-ruby/docs/ \
 		https://github.com/googleapis/ruby-spanner
 

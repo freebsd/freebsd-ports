@@ -1,4 +1,4 @@
---- components/device_signals/core/common/linux/platform_utils_linux.cc.orig	2025-10-02 04:28:32 UTC
+--- components/device_signals/core/common/linux/platform_utils_linux.cc.orig	2026-09-25 15:26:43 UTC
 +++ components/device_signals/core/common/linux/platform_utils_linux.cc
 @@ -4,12 +4,23 @@
  
@@ -24,20 +24,21 @@
  #include <algorithm>
  #include <optional>
  #include <string>
-@@ -105,6 +116,7 @@ SettingValue GetScreenlockSecured() {
- // Implements the logic from the native host installation script. First find the
- // root device identifier, then locate its parent and get its type.
- SettingValue GetDiskEncrypted() {
+@@ -129,6 +140,7 @@ SettingValue GetDiskEncrypted() {
+   // ChromeOS user partitions are always encrypted via cryptohome.
+   return SettingValue::ENABLED;
+ #else
 +#if !BUILDFLAG(IS_BSD)
    struct stat info;
    // First figure out the device identifier. Fail fast if this fails.
    if (stat("/", &info) != 0) {
-@@ -127,11 +139,35 @@ SettingValue GetDiskEncrypted() {
+@@ -151,12 +163,36 @@ SettingValue GetDiskEncrypted() {
      }
      return SettingValue::UNKNOWN;
    }
 +#endif
    return SettingValue::DISABLED;
+ #endif
  }
  
  std::vector<std::string> internal::GetMacAddressesImpl() {
@@ -68,7 +69,7 @@
    base::DirReaderPosix reader("/sys/class/net");
    if (!reader.IsValid()) {
      return result;
-@@ -156,6 +192,7 @@ std::vector<std::string> internal::GetMacAddressesImpl
+@@ -181,6 +217,7 @@ std::vector<std::string> internal::GetMacAddressesImpl
                                &address);
      result.push_back(address);
    }

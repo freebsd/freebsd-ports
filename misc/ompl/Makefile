@@ -1,5 +1,6 @@
 PORTNAME=	ompl
-DISTVERSION=	2.0.1
+DISTVERSION=	2.0.2
+PORTREVISION=	1
 CATEGORIES=	misc comms
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -46,6 +47,6 @@ post-patch-${o}-off:
 post-patch-DEMOS-on:
 	@${REINPLACE_CMD} 's|#add_subdirectory(demos)|add_subdirectory(demos)|' ${WRKSRC}/CMakeLists.txt
 
-# tests as of 2.0.1: 100% tests passed, 0 tests failed out of 23
+# tests as of 2.0.2: 100% tests passed, 0 tests failed out of 23
 
 .include <bsd.port.mk>

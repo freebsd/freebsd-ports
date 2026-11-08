@@ -53,10 +53,11 @@ lib/cmake/KF6TextTemplate/KF6TextTemplateMacros.cmake
 lib/cmake/KF6TextTemplate/KF6TextTemplateTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF6TextTemplate/KF6TextTemplateTargets.cmake
 lib/libKF6TextTemplate.so
-lib/libKF6TextTemplate.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF6TextTemplate.so.6
+lib/libKF6TextTemplate.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_PLUGINDIR%%/kf6/ktexttemplate/ktexttemplate_defaultfilters.so
 %%QT_PLUGINDIR%%/kf6/ktexttemplate/ktexttemplate_defaulttags.so
 %%QT_PLUGINDIR%%/kf6/ktexttemplate/ktexttemplate_i18ntags.so
 %%QT_PLUGINDIR%%/kf6/ktexttemplate/ktexttemplate_loadertags.so
+%%QT_PLUGINDIR%%/kf6/ktexttemplate/ktexttemplate_scriptabletags.so
 share/qlogging-categories6/ktexttemplate.categories

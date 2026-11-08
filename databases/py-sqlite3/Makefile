@@ -15,9 +15,8 @@ LICENSE_FILE=	${WRKDIR}/Python-${DISTVERSION}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 
-USES=		compiler:c11 python tar:xz
+USES=		compiler:c11 python sqlite tar:xz
 USE_PYTHON=	allflavors autoplist pep517
 
 DISTINFO_FILE=	${PORTSDIR}/lang/python${PYTHON_BASESUFFIX}/distinfo

@@ -1,0 +1,39 @@
+From: Jeremy Stretch <jstretch@netboxlabs.com>
+Date: Tue, 27 Oct 2026 10:01:05 -0400
+Subject: [PATCH] Closes #23508: Upgrade to Django REST Framework 3.18.3 and
+ remove the get_unique_validators() monkey-patch (#23509)
+
+DRF 3.18.2 includes an upstream fix for the uniqueness validation issue
+the monkey-patch worked around (Bug 19302), so it is no longer needed.
+
+Obtained and adapted from:
+
+https://github.com/netbox-community/netbox/commit/58b22d993158391a7d27e6c94bfdaaeac8eb1daf
+
+--- netbox/netbox/settings.py.orig	2026-09-01 19:07:36 UTC
++++ netbox/netbox/settings.py
+@@ -23,8 +23,6 @@ from utilities.string import trailing_slash
+ from utilities.security import validate_peppers
+ from utilities.string import trailing_slash
+ 
+-from .monkey import get_unique_validators
+-
+ #
+ # Environment setup
+ #
+@@ -1024,15 +1022,10 @@ for plugin_name in PLUGINS:
+ # Monkey-patching
+ #
+ 
+-from rest_framework.utils import field_mapping  # noqa: E402
+ from strawberry_django import pagination  # noqa: E402
+ from strawberry_django.fields.field import StrawberryDjangoField  # noqa: E402
+ 
+ from netbox.graphql.pagination import OffsetPaginationInput, apply_pagination  # noqa: E402
+-
+-# TODO: Remove this once #20547 has been implemented
+-# Override DRF's get_unique_validators() function with our own (see bug #19302)
+-field_mapping.get_unique_validators = get_unique_validators
+ 
+ # Override strawberry-django's OffsetPaginationInput class to add the `start` parameter
+ pagination.OffsetPaginationInput = OffsetPaginationInput

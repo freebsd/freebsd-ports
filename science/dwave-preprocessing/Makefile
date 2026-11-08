@@ -9,7 +9,7 @@ WWW=		https://github.com/dwavesystems/dwave-preprocessing
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	dimod>0:science/dimod
+RUN_DEPENDS=	dimod>=0.12.21:science/dimod
 TEST_DEPENDS=	catch>0:devel/catch \
 		spdlog>0:devel/spdlog
 
@@ -38,7 +38,9 @@ do-install:
 	cd ${WRKSRC}/dwave/preprocessing/include && \
 		${COPYTREE_SHARE} dwave-preprocessing ${STAGEDIR}${PREFIX}/include
 
-do-test: # tests fail to link, see https://github.com/dwavesystems/dwave-preprocessing/issues/119
-	@cd ${WRKSRC}/testscpp && ${SETENV} ${MAKE_ENV} ${MAKE} DIMOD="-I${LOCALBASE}/include"
+do-test:
+	@cd ${WRKSRC}/testscpp && ${SETENV} ${MAKE_ENV} ${MAKE} CATCH2="${LOCALBASE}/include" CXXFLAGS="${CXXFLAGS} ${LDFLAGS}" DIMOD="${LOCALBASE}/include" SPDLOG="${LOCALBASE}/include"
+
+# tests as of 0.6.11: All tests passed (439 assertions in 20 test cases)
 
 .include <bsd.port.mk>

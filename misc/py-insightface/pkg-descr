@@ -1,0 +1,9 @@
+InsightFace is an open source 2D and 3D face analysis library for
+Python. It provides face detection, face recognition (embedding),
+facial landmark localization and gender/age estimation based on
+ONNX models executed with onnxruntime.
+
+The pretrained models provided by upstream are available for
+non-commercial research purposes only and are downloaded at
+runtime on first use. InsightFace is used by the Immich
+machine-learning service for facial recognition.

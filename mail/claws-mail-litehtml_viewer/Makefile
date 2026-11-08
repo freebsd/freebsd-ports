@@ -1,4 +1,5 @@
 PORTNAME=	litehtml_viewer
+PORTREVISION=	1
 
 COMMENT=	Viewer plugin for HTML emails, using the litehtml library
 WWW=		https://www.claws-mail.org/plugins.php

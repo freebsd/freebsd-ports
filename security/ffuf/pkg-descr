@@ -1,1 +1,10 @@
-Fast web fuzzer written in Go
+ffuf (Fuzz Faster U Fool) is a fast web fuzzer written in Go. It is designed
+for discovering hidden resources and testing web applications by fuzzing URLs,
+HTTP headers, parameters, and POST data.
+
+ffuf supports directory and file discovery, virtual host discovery, parameter
+fuzzing, recursive scanning, multiple wordlists, response matching and
+filtering, configurable request rates, and several output formats.
+
+It can be used for web application security testing, penetration testing, and
+content discovery on authorized targets.

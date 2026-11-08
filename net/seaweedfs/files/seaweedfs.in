@@ -15,7 +15,7 @@
 #						Default is "seaweedfs".
 # seaweedfs_dir (directory):			Set directory to store database files.
 #						Default is "/var/db/seaweedfs".
-# seaweedfs_options (string):			Set default parameters.
+# seaweedfs_options (str):			Set default parameters.
 #						Default is "server -dir=/var/db/seaweedfs".
 # seaweedfs_syslog_output_enable (bool):	Set to enable syslog output.
 #						Default is "NO". See daemon(8).

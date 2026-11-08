@@ -1,6 +1,6 @@
 PORTNAME=	glaze
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.9.1
+DISTVERSION=	9.0.0
 CATEGORIES=	devel textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,8 +9,6 @@ WWW=		https://github.com/stephenberry/glaze
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-#BROKEN_FreeBSD_15=	clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=276265
 
 BUILD_DEPENDS=	${LOCALBASE}/include/asio.hpp:net/asio
 #TEST_DEPENDS=	ut>0:devel/ut # the old version 0.3.0 is used
@@ -32,6 +30,6 @@ LDFLAGS+=	-pthread
 
 NO_ARCH=	yes
 
-# tests as of 7.9.1: 100% tests passed, 0 tests failed out of 106
+# tests as of 9.0.0: 99% tests passed, 1 tests failed out of 145, see https://github.com/stephenberry/glaze/issues/3028
 
 .include <bsd.port.mk>

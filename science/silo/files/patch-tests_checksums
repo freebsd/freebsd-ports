@@ -1,0 +1,18 @@
+-- Force decimal interpretation of $minoffset before passing it to head -c.
+-- Needed because FreeBSD's head(1) parses its byte count with strtol(3)
+-- using base 0, so a value with a leading zero (as produced by `od -A d`,
+-- which zero-pads the decimal offset) is misread as octal and rejected
+-- with "illegal byte count" whenever it contains an 8 or 9 digit. This
+-- caused the checksums test to fail on FreeBSD.
+
+--- tests/checksums.orig	2026-07-28 07:31:59 UTC
++++ tests/checksums
+@@ -133,7 +133,7 @@ rm -f multi_ucd3d_corrupt.h5
+ # and the last part of the file (minus the part we've zeroed)
+ #
+ rm -f multi_ucd3d_corrupt.h5
+-head -c $minoffset h5_check_files/multi_ucd3d.h5 > multi_ucd3d_corrupt.h5
++head -c $(awk -v n="$minoffset" 'BEGIN{printf "%d", n}') h5_check_files/multi_ucd3d.h5 > multi_ucd3d_corrupt.h5
+ dd if=/dev/zero bs=16 count=1 >> multi_ucd3d_corrupt.h5 2>/dev/null
+ leftover=$(expr $size - $minoffset - 16)
+ tail -c $leftover h5_check_files/multi_ucd3d.h5 >> multi_ucd3d_corrupt.h5

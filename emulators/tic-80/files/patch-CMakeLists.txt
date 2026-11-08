@@ -1,6 +1,12 @@
 --- CMakeLists.txt.orig	2023-10-22 11:51:43 UTC
 +++ CMakeLists.txt
-@@ -14,7 +14,6 @@ if(CMAKE_BUILD_TYPE)
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 3.3)
++cmake_minimum_required(VERSION 3.5)
+ 
+ set(VERSION_MAJOR 1)
+ set(VERSION_MINOR 1)
+@@ -14,7 +14,6 @@ endif()
      string(TOUPPER ${CMAKE_BUILD_TYPE} BUILD_TYPE_UC)
  endif()
  
@@ -8,7 +14,7 @@
  if(Git_FOUND)
      execute_process(
          COMMAND ${GIT_EXECUTABLE} status
-@@ -160,72 +159,18 @@ set(THIRDPARTY_DIR ${CMAKE_SOURCE_DIR}/vendor)
+@@ -160,72 +159,18 @@ include(ExternalProject)
  
  include(ExternalProject)
  
@@ -146,7 +152,7 @@
  # pocketpy (Python)
  ################################
  
-@@ -417,27 +306,8 @@ if(EMSCRIPTEN)
+@@ -417,27 +306,8 @@ endif()
      set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fexceptions")
  endif()
  
@@ -175,7 +181,7 @@
  ################################
  # Blipbuf
  ################################
-@@ -446,36 +316,6 @@ add_library(blipbuf STATIC ${THIRDPARTY_DIR}/blip-buf/
+@@ -446,36 +316,6 @@ target_include_directories(blipbuf INTERFACE ${THIRDPA
  target_include_directories(blipbuf INTERFACE ${THIRDPARTY_DIR}/blip-buf)
  
  ################################
@@ -263,7 +269,7 @@
      endif()
  
      if(LINUX)
-@@ -641,6 +481,8 @@ endif()
+@@ -641,6 +481,8 @@ if(BUILD_SDL AND NOT EMSCRIPTEN AND NOT RPI)
  ################################
  if(BUILD_SDL AND NOT EMSCRIPTEN AND NOT RPI)
  
@@ -328,7 +334,7 @@
  ################################
  # ZIP
  ################################
-@@ -856,6 +668,12 @@ set(CMAKE_DISABLE_TESTING ON CACHE BOOL "" FORCE)
+@@ -856,6 +668,12 @@ add_subdirectory(${THIRDPARTY_DIR}/zip)
  add_subdirectory(${THIRDPARTY_DIR}/zip)
  
  ################################
@@ -359,7 +365,7 @@
          find_package(CURL REQUIRED)
          target_include_directories(naett PRIVATE ${CURL_INCLUDE_DIRS})
          target_link_libraries(naett ${CURL_LIBRARIES})
-@@ -990,40 +808,6 @@ if(USE_NAETT)
+@@ -990,40 +808,6 @@ endif()
  endif()
  
  ################################
@@ -400,7 +406,7 @@
  # TIC-80 studio
  ################################
  
-@@ -1067,9 +851,9 @@ if(WIN32)
+@@ -1067,9 +851,9 @@ endif()
      target_include_directories(tic80studio PRIVATE ${THIRDPARTY_DIR}/dirent/include)
  endif()
  
@@ -412,7 +418,7 @@
  
  if(USE_NAETT)
      target_compile_definitions(tic80studio PRIVATE USE_NAETT)
-@@ -1087,80 +871,6 @@ endif()
+@@ -1087,80 +871,6 @@ target_compile_definitions(tic80studio PUBLIC BUILD_ED
  target_compile_definitions(tic80studio PUBLIC BUILD_EDITORS)
  
  ################################

@@ -1,4 +1,5 @@
 bin/wxmaxima
+bin/wxmxdiff
 %%DESKTOPDIR%%/io.github.wxmaxima_developers.wxMaxima.desktop
 share/bash-completion/completions/wxmaxima
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS.md
@@ -27,8 +28,10 @@ share/bash-completion/completions/wxmaxima
 %%PORTDOCS%%%%DOCSDIR%%/wxmaxima.css
 %%PORTDOCS%%%%DOCSDIR%%/wxmaxima.de.html
 %%PORTDOCS%%%%DOCSDIR%%/wxmaxima.es.html
+%%PORTDOCS%%%%DOCSDIR%%/wxmaxima.fr.html
 %%PORTDOCS%%%%DOCSDIR%%/wxmaxima.html
 %%PORTDOCS%%%%DOCSDIR%%/wxmaxima.it.html
+%%PORTDOCS%%%%DOCSDIR%%/wxmaxima.ru.html
 %%PORTDOCS%%%%DOCSDIR%%/wxmaxima.svg
 %%PORTDOCS%%%%DOCSDIR%%/wxmaxima.tr.html
 %%PORTDOCS%%%%DOCSDIR%%/wxmaxima.uk.html
@@ -77,7 +80,9 @@ share/icons/hicolor/scalable/apps/io.github.wxmaxima_developers.wxMaxima.svg
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/wxMaxima.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/wxMaxima.mo
 share/man/de/man1/wxmaxima.1.gz
+share/man/de/man1/wxmxdiff.1.gz
 share/man/man1/wxmaxima.1.gz
+share/man/man1/wxmxdiff.1.gz
 share/metainfo/io.github.wxmaxima_developers.wxMaxima.appdata.xml
 share/mime/packages/x-wxmathml.xml
 share/mime/packages/x-wxmaxima-batch.xml

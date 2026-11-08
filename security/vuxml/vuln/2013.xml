@@ -4747,7 +4747,6 @@ affected..</p>
       <url>https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2013-05-02</url>
       <cvename>CVE-2013-2034</cvename>
       <cvename>CVE-2013-2033</cvename>
-      <cvename>CVE-2013-2034</cvename>
       <cvename>CVE-2013-1808</cvename>
     </references>
     <dates>
@@ -5143,7 +5142,6 @@ affected..</p>
     </description>
     <references>
 	<cvename>CVE-2013-1854</cvename>
-	<cvename>CVE-2013-1856</cvename>
 	<cvename>CVE-2013-1856</cvename>
 	<cvename>CVE-2013-1857</cvename>
 	<url>http://weblog.rubyonrails.org/2013/3/18/SEC-ANN-Rails-3-2-13-3-1-12-and-2-3-18-have-been-released/</url>
@@ -7219,7 +7217,6 @@ affected..</p>
       <cvename>CVE-2012-5615</cvename>
       <cvename>CVE-2012-5627</cvename>
       <url>https://mariadb.atlassian.net/browse/MDEV-4029</url>
-      <url>https://mariadb.atlassian.net/browse/MDEV-MDEV-729</url>
       <url>https://mariadb.atlassian.net/browse/MDEV-MDEV-729</url>
       <url>http://www.mysqlperformanceblog.com/2013/01/23/announcing-percona-server-5-5-29-29-4/</url>
     </references>

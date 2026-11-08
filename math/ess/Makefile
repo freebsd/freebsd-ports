@@ -1,6 +1,5 @@
 PORTNAME=	ess
-DISTVERSION=	26.01.0
-PORTREVISION=	1
+DISTVERSION=	26.05.0
 CATEGORIES=	math
 MASTER_SITES=	https://ess.r-project.org/ \
 		https://stat.ethz.ch/ESS/downloads/ess/ \
@@ -15,15 +14,16 @@ MAINTAINER=	rhurlin@FreeBSD.org
 COMMENT=	R support for Emacsen
 WWW=		https://ess.r-project.org/
 
-LICENSE=	GPLv2+
+LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	R:math/R
+TEST_DEPENDS=	R:math/R
 
 USES=		emacs:build gmake makeinfo perl5 tar:tgz
 USE_PERL5=	build
 
-CONFLICTS_INSTALL=	ess-emacs_*
+TEST_TARGET=	test
 
 NO_ARCH=	yes
 
@@ -68,5 +68,22 @@ post-install:
 		${STAGEDIR}${PREFIX}/${EMACS_LIBDIR}/etc/ess/
 	${CP} -R ${WRKSRC}/etc/icons \
 		${STAGEDIR}${PREFIX}/${EMACS_LIBDIR}/etc/ess/
+
+do-test:
+	# 1. By recompiling, bypass the warning that the Lisp
+	#    .elc files are older than the .el files
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} lisp
+	# 2. By ommitting the interactive test suites, the basic
+	#    functionality of the ESS code (syntax, tokens,
+	#    documentation) can be validated, while the error-prone,
+	#    asynchronous terminal and shell dependencies do not
+	#    block the test target
+	@${TRUE} > ${WRKSRC}/test/ess-test-r.el
+	@${TRUE} > ${WRKSRC}/test/ess-test-r-eval.el
+	@${TRUE} > ${WRKSRC}/test/ess-test-r-package.el
+	@${TRUE} > ${WRKSRC}/test/ess-test-r-edit.el
+	# 3. Run tests
+	@cd ${WRKSRC} && ${SETENV} ${TEST_ENV} \
+		emacs --script test/run-tests --ess --org --r-core --r-indent --r-pkg
 
 .include <bsd.port.mk>

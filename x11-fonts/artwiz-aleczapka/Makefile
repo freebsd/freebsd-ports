@@ -4,7 +4,7 @@ PORTREVISION=	4
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF/artwizaleczapka/iso-8859-1/${PORTVERSION}
 
-MAINTAINER=	garga@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of (improved) artwiz fonts
 WWW=		https://artwizaleczapka.sourceforge.net/
 

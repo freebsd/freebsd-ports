@@ -1,15 +1,15 @@
---- doc/oidentd_masq.conf.5.orig	2020-04-16 13:34:16 UTC
-+++ doc/oidentd_masq.conf.5
-@@ -31,7 +31,7 @@ oidentd_masq.conf \- oidentd NAT configuration file
+--- doc/oidentd_masq.conf.5.bak	2026-05-30 13:20:59.712187000 +0000
++++ doc/oidentd_masq.conf.5	2026-05-30 13:24:24.588801000 +0000
+@@ -31,7 +31,7 @@
  .SH "DESCRIPTION"
  .sp
  If NAT support is enabled with the \fB\-\-masquerade\fP option, \fBoidentd\fP reads the
--\fB/usr/local/etc/oidentd_masq.conf\fP file to determine ident responses to queries
-+\fB%%PREFIX%%/etc/oidentd_masq.conf\fP file to determine ident responses to queries
- intended for other machines.  It is also possible to forward queries to ident
+-\fB/usr/local/etc/oidentd_masq.conf\fP file to determine Ident responses to queries
++\fB%%PREFIX%%/etc/oidentd_masq.conf\fP file to determine Ident responses to queries
+ intended for other machines.  It is also possible to forward queries to Ident
  servers on the hosts connecting through the machine \fBoidentd\fP runs on.  For more
  information on forwarding, please see the \fB\-\-forward\fP option in \fBoidentd\fP(8).
-@@ -94,4 +94,4 @@ Please report any bugs to \c
+@@ -98,4 +98,4 @@
  .SH "SEE ALSO"
  .sp
  \fBoidentd\fP(8)

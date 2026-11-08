@@ -1,5 +1,6 @@
 PORTNAME=	ibus-array
-PORTVERSION=	0.3.2
+DISTVERSIONPREFIX=	release-
+DISTVERSION=	0.3.3
 CATEGORIES=	chinese
 
 MAINTAINER=	jiashiun@gmail.com
@@ -17,8 +18,7 @@ RUN_DEPENDS=	ibus-daemon:textproc/ibus \
 USES=		gettext-tools gnome meson ninja pkgconfig python sqlite
 USE_GITHUB=	yes
 GH_ACCOUNT=	lexical
-GH_TAGNAME=	release-${PORTVERSION}
-USE_GNOME+=	glib20
+USE_GNOME=	glib20
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 

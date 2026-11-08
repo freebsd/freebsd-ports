@@ -1,0 +1,91 @@
+[
+{ type: install
+  message: <<EOM
+World Monitor is installed in %%WWWDIR%%.
+
+1. The file %%PREFIX%%/etc/worldmonitor.env was created from the sample during
+   installation and contains only example values.  Generate a secret for
+   each of LOCAL_API_TOKEN, WM_SESSION_SECRET,
+   UPSTASH_REDIS_REST_TOKEN and RELAY_SHARED_SECRET, for example with
+   "openssl rand -hex 32", and put them into that file.
+   Use the same value for WORLDMONITOR_RELAY_KEY as for RELAY_SHARED_SECRET.
+   The services refuse to start while a value is empty or still an example
+   value (change-me...).
+
+2. Enable and start Redis, the Redis REST proxy, the relay, the local API
+   server and the seed service:
+
+     sysrc redis_enable=YES worldmonitor_redis_rest_enable=YES worldmonitor_relay_enable=YES worldmonitor_enable=YES worldmonitor_seed_enable=YES
+     service redis start
+     service worldmonitor_redis_rest start
+     service worldmonitor_relay start
+     service worldmonitor start
+     service worldmonitor_seed start
+
+3. Serve the frontend with a web server, nginx is not installed as a
+   dependency.  Install it, for example with "pkg install nginx", and copy
+   %%EXAMPLESDIR%%/nginx-server.conf to
+   %%PREFIX%%/etc/nginx/worldmonitor.conf.  The file is a server block for
+   port 8080.  Replace change-me-token in it with the value of
+   LOCAL_API_TOKEN and make sure only root and nginx can read it.  Then
+   add the line
+
+     include worldmonitor.conf;
+
+   inside the http block of %%PREFIX%%/etc/nginx/nginx.conf, enable nginx
+   with "sysrc nginx_enable=YES" and start or reload it.  The dashboard is
+   then at http://<host>:8080/.
+
+4. The dashboard shows only what is stored in Redis, and that data expires
+   after minutes to hours.  The seed service refills it in the background.
+   The first run takes a while, follow it in
+   /var/log/worldmonitor_seed.log.  Panels that need an API key stay empty
+   until you add the key to %%PREFIX%%/etc/worldmonitor.env, the keys are
+   listed there.  Most of them are free.  Restart worldmonitor (the local
+   API server), worldmonitor_relay and worldmonitor_seed afterwards.
+
+   At least 4 GB of memory are recommended.  On a smaller machine set
+   worldmonitor_seed_parallel in /etc/rc.conf to a lower value, for example 2.
+
+   The military bases panel is built by the seed service from OpenStreetMap,
+   MIRTA and a curated list.  The first build downloads the data from the
+   Overpass API, it is repeated once a month.
+
+5. Redis listens on 127.0.0.1 without a password and without a memory limit,
+   so every local user can read it.  All services run as user www.
+
+6. A Pro subscriber unlocks the Pro panels with a desktop key.  The key is
+   created at worldmonitor.app under Settings, API Keys, and entered in the
+   Settings of the dashboard.  The installation then forwards the Pro
+   requests of that browser to World Monitor.  To switch this off set
+   WORLDMONITOR_SELFHOST_RELAY=off in %%PREFIX%%/etc/worldmonitor.env.
+   See https://www.worldmonitor.app/docs/self-hosting for the details.
+EOM
+},
+{ type: upgrade
+  message: <<EOM
+After an upgrade compare %%PREFIX%%/etc/worldmonitor.env with
+%%PREFIX%%/etc/worldmonitor.env.sample, new variables may have been
+added, and restart the services:
+
+  service worldmonitor_redis_rest restart
+  service worldmonitor_relay restart
+  service worldmonitor restart
+  service worldmonitor_seed restart
+EOM
+},
+{ type: remove
+  message: <<EOM
+World Monitor was removed.  These files were left on purpose, delete them
+if you do not need them any more:
+
+  %%PREFIX%%/etc/worldmonitor.env      your configuration and secrets
+  /var/db/worldmonitor                 generated data, for example the military bases
+  /var/log/worldmonitor*.log*          log files
+
+Also remove the worldmonitor_*_enable lines from /etc/rc.conf.  Redis, the
+Node.js runtime and curl stay installed, "pkg autoremove" removes them if
+nothing else needs them.
+EOM
+}
+]

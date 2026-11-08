@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Linphone
+GenericName=SIP Phone
+Comment=Qt 6 SIP client for voice and video calls
+Type=Application
+Exec=linphone %u
+Icon=linphone
+Terminal=false
+Categories=Network;Telephony;
+MimeType=x-scheme-handler/sip-linphone;x-scheme-handler/linphone-sip;x-scheme-handler/sip;x-scheme-handler/sips-linphone;x-scheme-handler/linphone-sips;x-scheme-handler/sips;x-scheme-handler/tel;x-scheme-handler/callto;x-scheme-handler/linphone-config;
+StartupWMClass=Linphone

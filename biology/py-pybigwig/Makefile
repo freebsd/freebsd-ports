@@ -5,7 +5,7 @@ CATEGORIES=	biology python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python access to bigWig files using libBigWig
 WWW=		https://github.com/deeptools/pyBigWig/
 

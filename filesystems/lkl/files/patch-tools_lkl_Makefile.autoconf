@@ -1,0 +1,24 @@
+--- tools/lkl/Makefile.autoconf.orig	2018-06-28 05:58:16 UTC
++++ tools/lkl/Makefile.autoconf
+@@ -1,4 +1,4 @@
+-POSIX_HOSTS=elf64-x86-64 elf32-i386 elf64-x86-64-freebsd elf32-littlearm elf64-littleaarch64
++POSIX_HOSTS=elf64-x86-64 elf32-i386 elf64-x86-64-freebsd elf32-littlearm elf64-littleaarch64 elf64-powerpc-freebsd elf64-powerpcle-freebsd
+ NT_HOSTS=pe-i386 pe-x86-64
+ 
+ define set_autoconf_var
+@@ -51,13 +51,13 @@ define posix_host
+   CFLAGS += -fPIC -pthread
+   SOSUF := .so
+   $(if $(call is_defined,__ANDROID__),$(call android_host),LDLIBS += -lrt -lpthread)
+-  $(if $(filter $(1),elf64-x86-64-freebsd),$(call bsd_host))
++  $(if $(filter $(1),elf64-x86-64-freebsd elf64-powerpc-freebsd elf64-powerpcle-freebsd),$(call bsd_host))
+   $(if $(filter yes,$(dpdk)),$(call virtio_net_dpdk))
+   $(if $(filter yes,$(vde)),$(call virtio_net_vde))
+   $(if $(strip $(call find_include,fuse.h)),$(call set_autoconf_var,FUSE,y))
+   $(if $(strip $(call find_include,archive.h)),$(call set_autoconf_var,ARCHIVE,y))
+   $(if $(strip $(call find_include,linux/if_tun.h)),$(call set_autoconf_var,VIRTIO_NET_MACVTAP,y))
+-  $(if $(filter $(1),elf64-x86-64-freebsd),$(call set_autoconf_var,NEEDS_LARGP,y))
++  $(if $(filter $(1),elf64-x86-64-freebsd elf64-powerpc-freebsd elf64-powerpcle-freebsd),$(call set_autoconf_var,NEEDS_LARGP,y))
+ endef
+ 
+ define nt64_host

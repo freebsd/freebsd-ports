@@ -1,0 +1,7 @@
+The geoip2 modules look an address up in a MaxMind DB file and put the
+result into nginx variables -- country, city, subdivision, whatever the
+database carries.  One module serves the http subsystem, the other the
+stream subsystem.
+
+This port only installs the module sources.  The module itself is built by
+the nginx ports when their HTTP_GEOIP2 option is enabled.

@@ -28,14 +28,19 @@ USE_KDE=	archive attica auth bookmarks codecs colorscheme completion config \
 		itemviews jobwidgets kcmutils kio newstuff notifications \
 		notifyconfig service solid widgetsaddons windowsystem xmlgui \
 		ecm:build
-USE_QT=		base webengine
+USE_QT=		base
 USE_XORG=	x11
 
 # The ffmpeg-plugin needs patching
 CMAKE_ARGS=	-DK3B_BUILD_FFMPEG_DECODER_PLUGIN:BOOL=FALSE
 
-OPTIONS_DEFINE=		CDRDAO CDRSKIN DVDPLUSRW VCDIMAGER DOCS
-OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
+OPTIONS_DEFINE=		CDRDAO CDRSKIN DVDPLUSRW VCDIMAGER WEBENGINE DOCS
+OPTIONS_DEFAULT=	CDRDAO CDRSKIN DVDPLUSRW VCDIMAGER DOCS
+OPTIONS_DEFAULT_aarch64=	WEBENGINE
+OPTIONS_DEFAULT_amd64=		WEBENGINE
+OPTIONS_DEFAULT_armv7=		WEBENGINE
+OPTIONS_DEFAULT_i386=		WEBENGINE
+OPTIONS_DEFAULT_powerpc64le=	WEBENGINE
 
 CDRDAO_DESC=		Burning: cdrdao
 CDRDAO_RUN_DEPENDS=	cdrdao:sysutils/cdrdao
@@ -48,5 +53,9 @@ VCDIMAGER_RUN_DEPENDS=	vcdxrip:multimedia/vcdimager
 
 CDRSKIN_DESC=		Burning: cdrskin (improved performance)
 CDRSKIN_RUN_DEPENDS=	cdrskin:devel/libburn
+
+WEBENGINE_DESC=		Prettier disk info view (requires QtWebEngine)
+WEBENGINE_USE=		QT=webengine
+WEBENGINE_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_Qt6WebEngineWidgets
 
 .include <bsd.port.mk>

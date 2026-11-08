@@ -1,5 +1,5 @@
 PORTNAME=	gemini-cli
-DISTVERSION=	0.49.0
+DISTVERSION=	0.62.0
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -54,10 +54,12 @@ do-fetch:
 	); fi
 
 do-build:
-	# Build native modules for node-pty
 	@cd ${WRKSRC}/lib/node_modules/${PACKAGE_NAME}/node_modules/node-pty && \
 		${SETENV} HOME=${WRKDIR} CFLAGS="-I${LOCALBASE}/include" CXXFLAGS="-I${LOCALBASE}/include" \
-		PYTHON=${PYTHON_CMD} npm rebuild --nodedir=${LOCALBASE}
+		PYTHON=${PYTHON_CMD} npx node-gyp rebuild --nodedir=${LOCALBASE}
+	@${RM} -r \
+		${WRKSRC}/lib/node_modules/${PACKAGE_NAME}/node_modules/node-pty/build/Release/.deps \
+		${WRKSRC}/lib/node_modules/${PACKAGE_NAME}/node_modules/node-pty/build/Release/obj.target
 
 do-install:
 	# install files

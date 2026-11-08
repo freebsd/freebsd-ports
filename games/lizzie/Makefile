@@ -1,7 +1,5 @@
 PORTNAME=	lizzie
-DISTVERSION=	0.6-105
-PORTREVISION=	6
-DISTVERSIONSUFFIX=	-gd0e7040
+DISTVERSION=	0.7.4
 CATEGORIES=	games java
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,13 +9,13 @@ WWW=		https://github.com/featurecat/lizzie
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	maven38>0:devel/maven38
+BUILD_DEPENDS=	maven>0:devel/maven
 RUN_DEPENDS=	leelaz:games/leela-zero
 
 USES=		java
 USE_GITHUB=	yes
 GH_ACCOUNT=	featurecat
-JAVA_VERSION=	8 # because of Bug 292662 - games/lizzie: does not build with jdk11+
+JAVA_VERSION=	17
 
 MAKE_ENV+=	JAVA_HOME=${JAVA_HOME}
 
@@ -32,11 +30,7 @@ NO_ARCH=	yes
 
 DEV_UPDATE_MODE=	no
 
-.if (${DEV_UPDATE_MODE} == "yes")
-post-build:
-	@cd ${WRKDIR} && ${TAR} czf ${DISTDIR}/${PORTNAME}-${DISTVERSION}-deps${EXTRACT_SUFX} .m2
-	@${ECHO} "(!!!) Please upload the maven deps archive: ${DISTDIR}/${PORTNAME}-${DISTVERSION}-deps${EXTRACT_SUFX}"
-.else
+.if (${DEV_UPDATE_MODE} != "yes")
 MASTER_SITES+=	LOCAL/yuri/:maven
 DISTFILES+=	${PORTNAME}-${DISTVERSION}-deps${EXTRACT_SUFX}:maven
 MVN_ARGS=	--offline
@@ -45,7 +39,7 @@ MVN_ARGS=	--offline
 DESKTOP_ENTRIES=	"SGF Editor (Go)" "A GUI for Leela-Zero" "" "${PORTNAME}" "Game;" ""
 
 PLIST_FILES=	bin/${PORTNAME} \
-		${JAVAJARDIR}/lizzie-${PORTVERSION:R}-shaded.jar
+		${JAVAJARDIR}/lizzie-${PORTVERSION}-shaded.jar
 
 do-build:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
@@ -54,12 +48,19 @@ do-build:
 		-Dmaven.test.skip=true \
 		-Duser.home=${WRKDIR} \
 		package
+
+.if (${DEV_UPDATE_MODE} == "yes")
+post-build:
+	@cd ${WRKDIR} && ${TAR} czf ${DISTDIR}/${PORTNAME}-${DISTVERSION}-deps${EXTRACT_SUFX} .m2
+	@${ECHO} "(!!!) Please upload the maven deps archive: ${DISTDIR}/${PORTNAME}-${DISTVERSION}-deps${EXTRACT_SUFX}"
+.endif
+
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/target/${PORTNAME}-${PORTVERSION:R}-shaded.jar ${STAGEDIR}${JAVAJARDIR}
+	${INSTALL_DATA} ${WRKSRC}/target/${PORTNAME}-${PORTVERSION}-shaded.jar ${STAGEDIR}${JAVAJARDIR}
 	@(echo "#!/bin/sh"; \
 	  echo ""; \
 	  echo "mkdir -p ~/.local/share/lizzie &&"; \
-	  echo "cd ~/.local/share/lizzie && ${JAVA} -jar ${JAVAJARDIR}/${PORTNAME}-${PORTVERSION:R}-shaded.jar \""$$"@\"" \
+	  echo "cd ~/.local/share/lizzie && ${JAVA} -jar ${JAVAJARDIR}/${PORTNAME}-${PORTVERSION}-shaded.jar \""$$"@\"" \
 	) > ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	@${CHMOD} +x ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 

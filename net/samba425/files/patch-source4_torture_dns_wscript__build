@@ -1,0 +1,11 @@
+--- source4/torture/dns/wscript_build.orig	2026-01-20 15:42:56 UTC
++++ source4/torture/dns/wscript_build
+@@ -5,7 +5,7 @@ if bld.AD_DC_BUILD_IS_ENABLED():
+ 		source='dlz_bind9.c',
+ 		subsystem='smbtorture',
+ 		init_function='torture_bind_dns_init',
+-		cflags='-DBIND_VERSION_9_16',
++		cflags='-DBIND_VERSION=920',
+ 		deps='torture talloc torturemain dlz_bind9_for_torture',
+ 		internal_module=True
+ 		)

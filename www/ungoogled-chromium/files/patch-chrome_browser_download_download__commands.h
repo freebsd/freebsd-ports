@@ -1,4 +1,4 @@
---- chrome/browser/download/download_commands.h.orig	2024-06-22 08:49:42 UTC
+--- chrome/browser/download/download_commands.h.orig	2026-10-31 12:09:36 UTC
 +++ chrome/browser/download/download_commands.h
 @@ -66,7 +66,7 @@ class DownloadCommands {
    void ExecuteCommand(Command command);
@@ -8,4 +8,4 @@
 +    BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
    bool IsDownloadPdf() const;
    bool CanOpenPdfInSystemViewer() const;
-   Browser* GetBrowser() const;
+   BrowserWindowInterface* GetBrowser() const;

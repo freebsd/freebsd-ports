@@ -1,6 +1,5 @@
 PORTNAME=	moderngl
-DISTVERSION=	5.12.0
-PORTREVISION=	2
+DISTVERSION=	5.13.0
 CATEGORIES=	graphics
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -31,6 +30,6 @@ TEST_WRKSRC=	${WRKSRC}/tests
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/moderngl/mgl${PYTHON_TAG}.so
 
-# tests as of 5.12.0: 1 failed, 322 passed, 37 skipped in 24.63s, see https://github.com/moderngl/moderngl/issues/722
+# tests as of 5.13.0: 1 failed, 514 passed, 1 warning in 15.63s, see https://github.com/moderngl/moderngl/issues/722
 
 .include <bsd.port.mk>

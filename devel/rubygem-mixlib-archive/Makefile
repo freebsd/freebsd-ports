@@ -1,5 +1,5 @@
 PORTNAME=	mixlib-archive
-PORTVERSION=	1.3.3
+PORTVERSION=	1.3.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

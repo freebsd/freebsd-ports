@@ -1,0 +1,3 @@
+The endf package provides a Python interface to ENDF-6 formatted nuclear
+data files. It can read files in ENDF-6 format and extract data for any
+material, file, and section.

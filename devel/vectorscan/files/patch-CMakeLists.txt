@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2026-05-02 04:09:59 UTC
+--- CMakeLists.txt.orig	2026-08-23 19:40:45 UTC
 +++ CMakeLists.txt
-@@ -170,11 +170,6 @@ endif()
+@@ -169,11 +169,6 @@ endif()
      endif()
  endif()
  
@@ -12,3 +12,21 @@
  
  message(STATUS "ARCH_C_FLAGS   : ${ARCH_C_FLAGS}")
  message(STATUS "ARCH_CXX_FLAGS : ${ARCH_CXX_FLAGS}")
+@@ -977,7 +972,7 @@ else ()
+ 
+ 	    if (NOT NO_SIMDE_IN_FAT)
+                 message(STATUS "Building SIMDE backend in static fat runtime..")
+-                include_directories(${PROJECT_SOURCE_DIR}/simde)
++
+                 add_fat_component("simde" "hs_exec_simde" "${SIMDE_FLAGS} -march=x86-64 -msse2" "${hs_exec_SRCS}" FALSE)
+                 list(APPEND RUNTIME_LIBS $<TARGET_OBJECTS:hs_exec_simde>)
+             endif()
+@@ -1027,7 +1022,7 @@ else ()
+ 
+             if (NOT NO_SIMDE_IN_FAT)
+                 message(STATUS "Building SIMDE backend in shared fat runtime..")
+-                include_directories(${PROJECT_SOURCE_DIR}/simde)
++
+                 add_fat_component("simde" "hs_exec_shared_simde" "${SIMDE_FLAGS} -march=x86-64 -msse2" "${hs_exec_SRCS}" TRUE)
+ 		list(APPEND RUNTIME_SHLIBS $<TARGET_OBJECTS:hs_exec_shared_simde>)
+             endif()

@@ -1,4 +1,4 @@
---- extensions/common/api/_permission_features.json.orig	2026-06-10 12:51:34 UTC
+--- extensions/common/api/_permission_features.json.orig	2026-08-13 16:48:13 UTC
 +++ extensions/common/api/_permission_features.json
 @@ -61,7 +61,7 @@
      "channel": "stable",
@@ -128,12 +128,3 @@
    },
    "system.display": {
      "channel": "stable",
-@@ -747,7 +747,7 @@
-     "channel": "stable",
-     "extension_types": ["platform_app"],
-     // "desktop_android" is not supported.
--    "platforms": ["chromeos", "linux", "mac", "win"]
-+    "platforms": ["chromeos", "linux", "mac", "win", "openbsd", "freebsd"]
-   },
-   "webRequest": [
-     {

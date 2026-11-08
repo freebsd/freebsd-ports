@@ -1,0 +1,48 @@
+[
+{ type: install
+  message: <<EOM
+The I225 device 15F2 images come from Intel's I225 v1.00 package.  The I225-V
+device 15F3 and I226 images come from an unofficial, unsupported GitHub mirror.
+Intel supplies the FreeBSD updater, but did not supply or approve the mirror or
+this port's combined configuration.
+
+Intel documents that secured modules within I225/I226 NVM images are signed by
+Intel and authenticated by the controller, and NVMUpdate verifies images by
+default.  These checks do not authenticate the GitHub archive or the generated
+configuration as a unit.  Never disable image verification with the -sv option.
+
+The entries match only these Intel reference devices:
+
+- I225-T1 device 15F2, subsystem 8086:0001
+- I225-LM device 15F2, subsystem 8086:0002
+- I225-V device 15F3, subsystem 8086:0000
+- I226-V device 125C, subsystem 8086:0000
+- I226-LM device 125B, subsystem 8086:0000
+- I226-IT device 125D, subsystem 8086:0000
+
+They do not support arbitrary OEM devices or I225-IT device 0D9F.  The
+I226-LM/IT entries omit the optional REPLACES field and therefore match any NVM
+version with the exact four-part PCI ID.  Obtain an update package from the
+system or motherboard vendor for an OEM design.
+
+Both 1MB and 2MB I226-LM/IT entries are present in nvmupdate.cfg, but their PCI
+IDs do not identify flash size.  Do not update an LM/IT device with that
+combined file.  Select exactly one of the dedicated
+nvmupdate-i226-*-1mb.cfg or nvmupdate-i226-*-2mb.cfg files with -c after
+determining the correct flash size.
+
+Inventory is read-only and should always be run first:
+
+# nvmupdate-i225-i226 -i -l inventory.log -o inventory.xml
+
+Before any update, read the FreeBSD-specific instructions and provenance notes:
+
+%%PREFIX%%/%%NVMUPDATE_DIR%%/README.FreeBSD
+
+Save a backup, use an out-of-band management path, ensure stable power, and
+read Intel's NVMUpdate documentation.  An interrupted or mismatched update can
+make the controller unusable.  A complete power cycle is required after an
+update.  Use the latest igc driver available for the installed FreeBSD release.
+EOM
+}
+]

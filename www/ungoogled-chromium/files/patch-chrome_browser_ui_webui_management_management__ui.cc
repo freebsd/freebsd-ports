@@ -1,6 +1,6 @@
---- chrome/browser/ui/webui/management/management_ui.cc.orig	2026-05-09 18:09:27 UTC
+--- chrome/browser/ui/webui/management/management_ui.cc.orig	2026-10-31 12:09:36 UTC
 +++ chrome/browser/ui/webui/management/management_ui.cc
-@@ -193,11 +193,11 @@ void ManagementUI::GetLocalizedStrings(
+@@ -199,11 +199,11 @@ void ManagementUI::GetLocalizedStrings(
         IDS_MANAGEMENT_FILE_TRANSFER_VISIBLE_DATA},
        {kManagementReportFileEvents, IDS_MANAGEMENT_REPORT_FILE_EVENTS},
  #endif  // BUILDFLAG(IS_CHROMEOS)

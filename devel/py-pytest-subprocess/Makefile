@@ -1,5 +1,5 @@
 PORTNAME=	pytest-subprocess
-DISTVERSION=	1.5.4
+DISTVERSION=	1.6.0
 CATEGORIES=	devel python
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,12 +27,17 @@ USE_PYTHON=	pep517 autoplist pytest
 USE_GITHUB=	yes
 GH_ACCOUNT=	aklajnert
 
-PYTEST_BROKEN_TESTS=	test_documentation[README.rst] # README examples assume a `python` binary; see https://github.com/aklajnert/pytest-subprocess/issues/123
-
-TEST_ARGS=	-p no:flaky
+PYTEST_BROKEN_TESTS=	test_documentation[README.rst] \
+			test_documentation[docs/index.rst] # README/docs examples assume a `python` binary; see https://github.com/aklajnert/pytest-subprocess/issues/123
+TEST_ARGS=	--disable-plugin-autoload \
+		-p pytest_asyncio.plugin \
+		-p pytest_subprocess.fixtures \
+		-p pytest_rerunfailures \
+		-p pytest_timeout \
+		-p no:flaky
 
 NO_ARCH=	yes
 
-# tests as of 1.5.4: 150 passed, 4 skipped, 1 deselected in 11.08s
+# tests as of 1.6.0: 159 passed, 4 skipped, 2 deselected in 10.06s
 
 .include <bsd.port.mk>

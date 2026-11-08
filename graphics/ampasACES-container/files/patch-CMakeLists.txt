@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2026-09-05 17:56:47 UTC
++++ CMakeLists.txt
+@@ -44,7 +44,7 @@
+ # IMPLEMENTATION, OR APPLICATIONS THEREOF, HELD BY PARTIES OTHER THAN 
+ # A.M.P.A.S., WHETHER DISCLOSED OR UNDISCLOSED.
+ 
+-cmake_minimum_required (VERSION 2.6)
++cmake_minimum_required (VERSION 3.10)
+ project (AcesContainer)
+ 
+ include (GenerateExportHeader)

@@ -1,6 +1,6 @@
---- electron/lib/browser/api/menu-item-roles.ts.orig	2026-06-29 04:13:24 UTC
+--- electron/lib/browser/api/menu-item-roles.ts.orig	2026-09-30 08:48:04 UTC
 +++ electron/lib/browser/api/menu-item-roles.ts
-@@ -2,7 +2,7 @@ const isWindows = process.platform === 'win32';
+@@ -3,7 +3,7 @@ const isWindows = process.platform === 'win32';
  
  const isMac = process.platform === 'darwin';
  const isWindows = process.platform === 'win32';

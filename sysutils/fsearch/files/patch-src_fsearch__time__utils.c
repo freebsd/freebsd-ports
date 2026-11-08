@@ -1,8 +1,6 @@
---- src/fsearch_time_utils.c.orig	2022-08-22 10:06:20 UTC
+--- src/fsearch_time_utils.c.orig	2026-09-20 17:11:52 UTC
 +++ src/fsearch_time_utils.c
-@@ -1,11 +1,11 @@
- #define _GNU_SOURCE
- 
+@@ -1,9 +1,9 @@
 -#include "fsearch_time_utils.h"
 -
  #include <glib.h>
@@ -14,7 +12,7 @@
  typedef enum FsearchDateTimeType {
      FSEARCH_DATE_TIME_TYPE_SECOND,
      FSEARCH_DATE_TIME_TYPE_MINUTE,
-@@ -377,7 +377,7 @@ parse_implicit_date_time_constants(const char *str, st
+@@ -376,7 +376,7 @@ parse_implicit_date_time_constants(const char *str, st
  }
  
  static bool
@@ -23,7 +21,7 @@
      struct tm tm_start = {};
      struct tm tm_end = {};
  
-@@ -469,7 +469,7 @@ round_down_tm_to_reference_with_date_time_accuracy(str
+@@ -468,7 +468,7 @@ round_down_tm_to_reference_with_date_time_accuracy(str
  }
  
  bool

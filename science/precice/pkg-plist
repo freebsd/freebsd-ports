@@ -1,5 +1,9 @@
+bin/precice-config-doc
+bin/precice-config-validate
 bin/precice-profiling
 bin/precice-tools
+bin/precice-version
+include/precice/Exceptions.hpp
 include/precice/Participant.hpp
 include/precice/Tooling.hpp
 include/precice/Types.hpp
@@ -15,7 +19,10 @@ lib/cmake/precice/preciceTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/precice/preciceTargets.cmake
 lib/libprecice.so
 lib/libprecice.so.3
-lib/libprecice.so.3.1.2
+lib/libprecice.so.3.4.1
 libdata/pkgconfig/libprecice.pc
 share/lintian/overrides/libprecice3
+share/man/man1/precice-config-doc.1.gz
+share/man/man1/precice-config-validate.1.gz
 share/man/man1/precice-tools.1.gz
+share/man/man1/precice-version.1.gz

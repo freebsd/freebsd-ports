@@ -1,0 +1,10 @@
+--- daemons/ipa-slapi-plugins/ipa-winsync/Makefile.am.orig	2025-01-15 09:52:47 UTC
++++ daemons/ipa-slapi-plugins/ipa-winsync/Makefile.am
+@@ -41,3 +41,7 @@ EXTRA_DIST =			\
+ 	README			\
+ 	$(app_DATA)		\
+ 	$(NULL)
++
++# FreeBSD: resolve 389-ds SLAPI symbols from libslapd.
++libipa_winsync_la_LIBADD = -L$(libdir)/dirsrv -lslapd $(LIBICONV)
++libipa_winsync_la_LDFLAGS += -Wl,-rpath,$(libdir)/dirsrv

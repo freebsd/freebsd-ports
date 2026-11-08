@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2010-02-18 11:08:33 UTC
++++ CMakeLists.txt
+@@ -2,7 +2,7 @@
+ # GENERAL OPTIONS
+ ##########################
+ # We need 2.6 because cmake has freetype2 support from then onwards.
+-CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
++CMAKE_MINIMUM_REQUIRED(VERSION 3.31.12)
+ PROJECT(JVGS)
+ 
+ ##########################

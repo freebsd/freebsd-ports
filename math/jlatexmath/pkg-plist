@@ -1,4 +1,8 @@
 %%JAVAJARDIR%%/jlatexmath-%%PORTVERSION%%.jar
+%%JAVAJARDIR%%/jlatexmath-font-cyrillic-%%PORTVERSION%%.jar
+%%JAVAJARDIR%%/jlatexmath-font-cyrillic.jar
+%%JAVAJARDIR%%/jlatexmath-font-greek-%%PORTVERSION%%.jar
+%%JAVAJARDIR%%/jlatexmath-font-greek.jar
 %%JAVAJARDIR%%/jlatexmath-fop-%%PORTVERSION%%.jar
 %%JAVAJARDIR%%/jlatexmath-fop.jar
 %%JAVAJARDIR%%/jlatexmath.jar

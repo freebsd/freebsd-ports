@@ -1,4 +1,4 @@
---- base/process/process_posix.cc.orig	2026-03-13 06:02:14 UTC
+--- base/process/process_posix.cc.orig	2026-10-18 13:29:39 UTC
 +++ base/process/process_posix.cc
 @@ -25,10 +25,15 @@
  #include "base/trace_event/trace_event.h"
@@ -26,7 +26,7 @@
  // Using kqueue on Mac so that we can wait on non-child processes.
  // We can't use kqueues on child processes because we need to reap
  // our own children using wait.
-@@ -370,7 +375,7 @@ bool Process::WaitForExitWithTimeoutImpl(base::Process
+@@ -369,7 +374,7 @@ bool Process::WaitForExitWithTimeoutImpl(base::Process
    const bool exited = (parent_pid < 0);
  
    if (!exited && parent_pid != our_pid) {
@@ -35,7 +35,7 @@
      // On Mac we can wait on non child processes.
      return WaitForSingleNonChildProcess(handle, timeout);
  #else
-@@ -403,7 +408,56 @@ void Process::Exited(int exit_code) const {}
+@@ -400,7 +405,56 @@ bool Process::WaitForExitWithTimeoutImpl(base::Process
  
  int Process::GetOSPriority() const {
    DCHECK(IsValid());

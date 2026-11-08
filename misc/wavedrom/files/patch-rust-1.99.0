@@ -1,0 +1,28 @@
+error: invalid definition of the runtime `free` symbol used by the standard library
+  --> wavedrom-wasm/src/lib.rs:21:1
+   |
+21 | pub unsafe extern "C" fn free(ptr: *mut u8, size: usize) {
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+   = note: expected `unsafe extern "C" fn(*mut c_void)` (for the current target)
+           found    `unsafe extern "C" fn(*mut u8, usize)`
+   = help: either fix the signature or remove any attributes like `#[unsafe(no_mangle)]`, `#[unsafe(export_name = "free")]`, or `#[link_name = "free"]`
+   = note: `#[deny(invalid_runtime_symbol_definitions)]` on by default
+
+
+--- wavedrom-wasm/src/lib.rs.orig	2026-10-12 16:14:03 UTC
++++ wavedrom-wasm/src/lib.rs
+@@ -15,13 +15,6 @@ pub unsafe extern "C" fn malloc(size: usize) -> *const
+     Vec::with_capacity(size).leak().as_ptr() as *const u8
+ }
+ 
+-/// # Safety
+-/// Only call on malloced chunks
+-#[no_mangle]
+-pub unsafe extern "C" fn free(ptr: *mut u8, size: usize) {
+-    unsafe { Vec::from_raw_parts(ptr, 0, size) };
+-}
+-
+ #[repr(u8)]
+ enum RenderError {
+     JsonDeserializeError = 1,

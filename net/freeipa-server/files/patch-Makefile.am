@@ -1,0 +1,29 @@
+--- Makefile.am.orig	2026-07-01 19:36:23 UTC
++++ Makefile.am
+@@ -11,11 +11,16 @@ endif
+     IPATESTS_SUBDIRS = ipatests
+ endif
+ 
++if ENABLE_CLIENT
++    CLIENT_SUBDIRS = client
++    CLIENT_PYTHON_SCRIPT_SUBDIRS = $(top_builddir)/client
++endif
++
+ IPACLIENT_SUBDIRS = ipaclient ipalib ipaplatform ipapython
+ PYTHON_SUBDIRS = $(IPACLIENT_SUBDIRS) $(IPATESTS_SUBDIRS) $(IPASERVER_SUBDIRS)
+ PYTHON_SCRIPT_SUBDIRS = \
+         $(top_builddir) \
+-        $(top_builddir)/client \
++        $(CLIENT_PYTHON_SCRIPT_SUBDIRS) \
+         $(top_builddir)/daemons/dnssec \
+         $(top_builddir)/install/certmonger \
+         $(top_builddir)/install/oddjob \
+@@ -31,7 +36,7 @@ SUBDIRS = \
+ SUBDIRS = \
+         asn1 \
+         util \
+-        client \
++        $(CLIENT_SUBDIRS) \
+         contrib \
+         po \
+         pypi \

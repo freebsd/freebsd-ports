@@ -1,0 +1,5 @@
+TIMESTAMP = 1793627720
+SHA256 (go/ports-mgmt_git-proxy/git-pkgs-proxy-v0.11.0_GH0/go.mod) = 2ece558c9bb4fedcb26e15ae79a870c7e18cc882122df5421678a15ea33e8b21
+SIZE (go/ports-mgmt_git-proxy/git-pkgs-proxy-v0.11.0_GH0/go.mod) = 6286
+SHA256 (go/ports-mgmt_git-proxy/git-pkgs-proxy-v0.11.0_GH0/git-pkgs-proxy-v0.11.0_GH0.tar.gz) = 9a66aacec64f02f850cf2f3106787045750f8556bdfac32442f44ff8ac781780
+SIZE (go/ports-mgmt_git-proxy/git-pkgs-proxy-v0.11.0_GH0/git-pkgs-proxy-v0.11.0_GH0.tar.gz) = 1689656

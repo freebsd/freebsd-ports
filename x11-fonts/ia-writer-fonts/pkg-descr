@@ -1,0 +1,10 @@
+The iA Writer typefaces are the fonts of the iA Writer text editor, derived
+from IBM Plex and released under the SIL Open Font License:
+
+- iA Writer Mono: monospaced, every glyph the same width
+- iA Writer Duo: duospaced, a few wide letters (m, w, M, W) get 150% width
+- iA Writer Quattro: quattrospaced proportional face for prose
+- iA Writer Duospace: the original duospaced face, kept from the last
+  upstream revision that shipped it
+
+This port installs the static TrueType variants of each family.

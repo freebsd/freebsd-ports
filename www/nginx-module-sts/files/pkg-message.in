@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+This package contains the sources of the sts modules only.  It does not
+install loadable modules.
+
+The modules themselves are built by the nginx ports.  To use sts, build
+www/nginx, www/nginx-devel or www/freenginx with the STS option enabled.
+Those ports pick the sources up from
+%%PREFIX%%/share/nginx/modules/nginx-module-sts and produce
+ngx_stream_server_traffic_status_module.so, which counts, and
+ngx_http_stream_server_traffic_status_module.so, which answers.
+EOM
+}
+]

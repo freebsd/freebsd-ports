@@ -1,0 +1,21 @@
+Allow the Altivec/VMX implementation on little-endian PowerPC. Together
+with the vec_sld fix in easel/esl_vmx.h the vector code works on
+powerpc64le too (same fix as biology/hmmer).
+
+--- configure.orig	2023-09-06 14:14:14 UTC
++++ configure
+@@ -7815,13 +7815,7 @@ printf "%s\n" "#define WORDS_BIGENDIAN 1" >>confdefs.h
+   ;; #(
+    no)
+
+-  if test "$enable_vmx" = "yes"; then
+-    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: ::::::::::--- no vector instruction set ---::::::::::" >&5
+-printf "%s\n" "$as_me: ::::::::::--- no vector instruction set ---::::::::::" >&6;}
+-    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: Infernal Altivec/VMX only supports big-endian platforms: e.g. ppc64 not ppc64le" >&5
+-printf "%s\n" "$as_me: Infernal Altivec/VMX only supports big-endian platforms: e.g. ppc64 not ppc64le" >&6;}
+-    as_fn_error $? "No supported vectorization found for your machine." "$LINENO" 5
+-  elif test "$enable_neon" = "yes"; then
++  if test "$enable_neon" = "yes"; then
+     as_CACHEVAR=`printf "%s\n" "ax_cv_check_cflags_$NEON_CFLAGS_-mlittle-endian" | $as_tr_sh`
+ { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether C compiler accepts -mlittle-endian" >&5
+ printf %s "checking whether C compiler accepts -mlittle-endian... " >&6; }

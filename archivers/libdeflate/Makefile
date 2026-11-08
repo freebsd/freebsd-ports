@@ -1,5 +1,5 @@
 PORTNAME=	libdeflate
-DISTVERSION=	1.25
+PORTVERSION=	1.26
 CATEGORIES=	archivers
 MASTER_SITES=	https://github.com/ebiggers/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/ebiggers/libdeflate
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake:testing pathfix
+USES=		cmake:testing
 USE_LDCONFIG=	yes
 
 CMAKE_ON=	LIBDEFLATE_USE_SHARED_LIB

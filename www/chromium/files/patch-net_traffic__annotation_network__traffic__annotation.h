@@ -1,6 +1,6 @@
---- net/traffic_annotation/network_traffic_annotation.h.orig	2026-06-04 10:12:25 UTC
+--- net/traffic_annotation/network_traffic_annotation.h.orig	2026-10-18 13:29:39 UTC
 +++ net/traffic_annotation/network_traffic_annotation.h
-@@ -370,7 +370,7 @@ struct MutablePartialNetworkTrafficAnnotationTag {
+@@ -372,7 +372,7 @@ struct MutablePartialNetworkTrafficAnnotationTag {
  }  // namespace net
  
  // Placeholder for unannotated usages.
@@ -9,7 +9,7 @@
  #define TRAFFIC_ANNOTATION_WITHOUT_PROTO(ANNOTATION_ID) \
    net::DefineNetworkTrafficAnnotation(ANNOTATION_ID, "No proto yet.")
  #endif
-@@ -381,7 +381,7 @@ struct MutablePartialNetworkTrafficAnnotationTag {
+@@ -383,7 +383,7 @@ struct MutablePartialNetworkTrafficAnnotationTag {
  //
  // On Linux and Windows, use MISSING_TRAFFIC_ANNOTATION or
  // TRAFFIC_ANNOTATION_FOR_TESTS.

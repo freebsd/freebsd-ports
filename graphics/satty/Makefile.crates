@@ -5,28 +5,28 @@ CARGO_CRATES=	adler2-2.0.1 \
 		anstyle-parse-1.0.0 \
 		anstyle-query-1.1.5 \
 		anstyle-wincon-3.0.11 \
-		anyhow-1.0.102 \
+		anyhow-1.0.104 \
 		arraydeque-0.5.1 \
-		arrayvec-0.7.6 \
+		arrayvec-0.7.8 \
 		autocfg-1.5.1 \
 		bitflags-1.3.2 \
-		bitflags-2.12.1 \
+		bitflags-2.13.1 \
 		bumpalo-3.20.3 \
-		bytemuck-1.25.0 \
-		bytemuck_derive-1.10.2 \
+		bytemuck-1.25.2 \
+		bytemuck_derive-1.11.0 \
 		byteorder-lite-0.1.0 \
 		cairo-rs-0.21.5 \
 		cairo-sys-rs-0.21.5 \
-		cc-1.2.63 \
+		cc-1.3.0 \
 		cfg-expr-0.20.8 \
 		cfg-if-1.0.4 \
 		chrono-0.4.45 \
-		clap-4.6.1 \
-		clap_builder-4.6.0 \
-		clap_complete-4.6.5 \
+		clap-4.6.4 \
+		clap_builder-4.6.2 \
+		clap_complete-4.6.8 \
 		clap_complete_fig-4.5.2 \
-		clap_complete_nushell-4.6.0 \
-		clap_derive-4.6.1 \
+		clap_complete_nushell-4.6.1 \
+		clap_derive-4.6.4 \
 		clap_lex-1.1.0 \
 		clap_mangen-0.3.0 \
 		colorchoice-1.0.5 \
@@ -38,37 +38,39 @@ CARGO_CRATES=	adler2-2.0.1 \
 		endi-1.1.1 \
 		epoxy-0.1.0 \
 		equivalent-1.0.2 \
-		fastrand-2.4.1 \
-		femtovg-0.25.0 \
+		errno-0.3.14 \
+		fastrand-2.5.0 \
+		fdeflate-0.3.7 \
+		femtovg-0.26.0 \
 		field-offset-0.3.6 \
 		find-msvc-tools-0.1.9 \
 		flate2-1.1.9 \
 		flume-0.12.0 \
 		fnv-1.0.7 \
-		fontconfig-0.10.2 \
+		fontconfig-0.11.0 \
 		fragile-2.1.0 \
-		futures-0.3.32 \
-		futures-channel-0.3.32 \
-		futures-core-0.3.32 \
-		futures-executor-0.3.32 \
-		futures-io-0.3.32 \
-		futures-macro-0.3.32 \
-		futures-sink-0.3.32 \
-		futures-task-0.3.32 \
-		futures-util-0.3.32 \
+		futures-0.3.33 \
+		futures-channel-0.3.33 \
+		futures-core-0.3.33 \
+		futures-executor-0.3.33 \
+		futures-io-0.3.33 \
+		futures-macro-0.3.33 \
+		futures-sink-0.3.33 \
+		futures-task-0.3.33 \
+		futures-util-0.3.33 \
 		gdk-pixbuf-0.21.5 \
 		gdk-pixbuf-sys-0.21.5 \
 		gdk4-0.10.3 \
 		gdk4-sys-0.10.3 \
 		getrandom-0.2.17 \
-		getrandom-0.3.4 \
+		getrandom-0.4.3 \
 		gio-0.21.5 \
 		gio-sys-0.21.5 \
 		gl_generator-0.9.0 \
 		glib-0.21.5 \
 		glib-macros-0.21.5 \
 		glib-sys-0.21.5 \
-		glow-0.17.0 \
+		glow-0.18.0 \
 		gobject-sys-0.21.5 \
 		graphene-rs-0.21.5 \
 		graphene-sys-0.21.5 \
@@ -84,12 +86,12 @@ CARGO_CRATES=	adler2-2.0.1 \
 		iana-time-zone-0.1.65 \
 		iana-time-zone-haiku-0.1.2 \
 		image-0.25.10 \
-		imgref-1.12.1 \
+		imgref-1.12.2 \
 		indexmap-2.14.0 \
 		is_terminal_polyfill-1.70.2 \
-		itertools-0.14.0 \
+		itertools-0.15.0 \
 		itoa-1.0.18 \
-		js-sys-0.3.99 \
+		js-sys-0.3.103 \
 		keycode-1.0.0 \
 		keycode_macro-1.0.0 \
 		khronos_api-2.2.0 \
@@ -100,10 +102,11 @@ CARGO_CRATES=	adler2-2.0.1 \
 		libloading-0.8.9 \
 		libloading-0.9.0 \
 		libm-0.2.16 \
+		linux-raw-sys-0.12.1 \
 		lock_api-0.4.14 \
-		log-0.4.32 \
-		lru-0.18.0 \
-		memchr-2.8.1 \
+		log-0.4.33 \
+		lru-0.18.1 \
+		memchr-2.8.3 \
 		memoffset-0.9.1 \
 		miniz_oxide-0.8.9 \
 		moxcms-0.8.1 \
@@ -114,14 +117,15 @@ CARGO_CRATES=	adler2-2.0.1 \
 		pango-sys-0.21.5 \
 		pin-project-lite-0.2.17 \
 		pkg-config-0.3.33 \
+		png-0.18.1 \
 		ppv-lite86-0.2.21 \
 		proc-macro-crate-3.5.0 \
-		proc-macro2-1.0.106 \
-		pxfm-0.1.29 \
+		proc-macro2-1.0.107 \
+		pxfm-0.1.30 \
 		quick-xml-0.39.4 \
-		quote-1.0.45 \
-		r-efi-5.3.0 \
-		rand-0.8.6 \
+		quote-1.0.47 \
+		r-efi-6.0.0 \
+		rand-0.8.7 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
 		relm4-0.10.1 \
@@ -134,35 +138,38 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rgb-0.8.53 \
 		roff-1.1.1 \
 		rustc_version-0.4.1 \
-		rustversion-1.0.22 \
+		rustix-1.1.4 \
+		rustversion-1.0.23 \
 		rustybuzz-0.20.1 \
 		same-file-1.0.6 \
 		scopeguard-1.2.0 \
 		semver-1.0.28 \
-		serde-1.0.228 \
-		serde_core-1.0.228 \
-		serde_derive-1.0.228 \
-		serde_json-1.0.150 \
+		serde-1.0.229 \
+		serde_core-1.0.229 \
+		serde_derive-1.0.229 \
+		serde_json-1.0.151 \
 		serde_spanned-1.1.1 \
 		shared_library-0.1.9 \
 		shlex-2.0.1 \
-		simd-adler32-0.3.9 \
+		simd-adler32-0.3.10 \
 		slab-0.4.12 \
 		slotmap-1.1.1 \
-		smallvec-1.15.1 \
-		spin-0.9.8 \
+		smallvec-1.15.2 \
+		spin-0.9.9 \
 		strsim-0.11.1 \
-		syn-2.0.117 \
+		syn-2.0.119 \
+		syn-3.0.2 \
 		system-deps-7.0.8 \
 		target-lexicon-0.13.5 \
-		thiserror-2.0.18 \
-		thiserror-impl-2.0.18 \
-		tokio-1.52.3 \
-		toml-1.1.2+spec-1.1.0 \
+		tempfile-3.27.0 \
+		thiserror-2.0.19 \
+		thiserror-impl-2.0.19 \
+		tokio-1.53.1 \
+		toml-1.1.3+spec-1.1.0 \
 		toml_datetime-1.1.1+spec-1.1.0 \
-		toml_edit-0.25.12+spec-1.1.0 \
+		toml_edit-0.25.13+spec-1.1.0 \
 		toml_parser-1.1.2+spec-1.1.0 \
-		toml_writer-1.1.1+spec-1.1.0 \
+		toml_writer-1.1.2+spec-1.1.0 \
 		tracing-0.1.44 \
 		tracing-attributes-0.1.31 \
 		tracing-core-0.1.36 \
@@ -179,12 +186,11 @@ CARGO_CRATES=	adler2-2.0.1 \
 		version_check-0.9.5 \
 		walkdir-2.5.0 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
-		wasip2-1.0.3+wasi-0.2.9 \
-		wasm-bindgen-0.2.122 \
-		wasm-bindgen-macro-0.2.122 \
-		wasm-bindgen-macro-support-0.2.122 \
-		wasm-bindgen-shared-0.2.122 \
-		web-sys-0.3.99 \
+		wasm-bindgen-0.2.126 \
+		wasm-bindgen-macro-0.2.126 \
+		wasm-bindgen-macro-support-0.2.126 \
+		wasm-bindgen-shared-0.2.126 \
+		web-sys-0.3.103 \
 		winapi-util-0.1.11 \
 		windows-core-0.62.2 \
 		windows-implement-0.60.2 \
@@ -193,14 +199,13 @@ CARGO_CRATES=	adler2-2.0.1 \
 		windows-result-0.4.1 \
 		windows-strings-0.5.1 \
 		windows-sys-0.61.2 \
-		winnow-1.0.3 \
-		wit-bindgen-0.57.1 \
+		winnow-1.0.4 \
 		xdg-3.0.0 \
 		xml-rs-0.7.0 \
 		yeslogic-fontconfig-sys-6.0.1 \
-		zerocopy-0.8.50 \
-		zerocopy-derive-0.8.50 \
-		zmij-1.0.21 \
-		zvariant-5.12.0 \
-		zvariant_derive-5.12.0 \
-		zvariant_utils-3.4.0
+		zerocopy-0.8.54 \
+		zerocopy-derive-0.8.54 \
+		zmij-1.0.23 \
+		zvariant-5.13.1 \
+		zvariant_derive-5.13.1 \
+		zvariant_utils-3.5.0

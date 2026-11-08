@@ -1,6 +1,6 @@
---- ../boring-signal-v5.0.2/boring-sys/build/main.rs.orig	2024-04-27 16:40:34 UTC
-+++ ../boring-signal-v5.0.2/boring-sys/build/main.rs
-@@ -478,9 +478,9 @@ fn ensure_patches_applied(config: &Config) -> io::Resu
+--- ../boring-signal-v5.2.0/boring-sys/build/main.rs.orig	2026-09-10 13:23:33.640782000 -0400
++++ ../boring-signal-v5.2.0/boring-sys/build/main.rs	2026-09-10 13:25:13.915284000 -0400
+@@ -487,9 +487,9 @@
      lock_file.lock()?;
  
      // NOTE: init git in the copied files, so we can apply patches
@@ -11,9 +11,9 @@
 +//        run_command(Command::new("git").arg("init").current_dir(src_path))?;
 +//    }
  
-     if config.features.pq_experimental {
-         println!("cargo:warning=applying experimental post quantum crypto patch to boringssl");
-@@ -520,8 +520,8 @@ fn apply_patch(config: &Config, patch_name: &str) -> i
+     if config.features.allow_crl_extensions_bad_version {
+         println!(
+@@ -540,8 +540,8 @@
      }
  
      run_command(

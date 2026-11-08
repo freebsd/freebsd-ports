@@ -1,0 +1,23 @@
+-- Adjust pyproject.toml for compatibility with the setuptools version
+-- available in the FreeBSD ports tree (devel/py-setuptools). Lower the
+-- setuptools lower bound, add the wheel build requirement expected by the
+-- FreeBSD Python framework, and rewrite the SPDX license expression into a
+-- license-file reference that older setuptools understands.
+
+--- pyproject.toml.orig	2026-08-07 20:49:00 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=68", "setuptools_scm>=6.2", "cffi>=1.15"]
++requires = ["setuptools>=63.1.0", "wheel", "setuptools_scm>=6.2", "cffi>=1.15"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -8,7 +8,7 @@
+ dynamic = ["version"]
+ description = "Python bindings to cmark: CommonMark parsing and rendering (HTML, LaTeX, man, XML)"
+ readme = "README.md"
+-license = "MIT AND BSD-2-Clause"
++license = {file = "LICENSE"}
+ requires-python = ">=3.9"
+ dependencies = ["cffi>=1.15", "click>=8.0"]

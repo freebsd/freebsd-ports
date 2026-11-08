@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2026-08-05 07:34:07 UTC
++++ pyproject.toml
+@@ -16,7 +16,7 @@ description = "This is yet another library to access D
+     "wrapt>=2.2.1",
+ ]
+ description = "This is yet another library to access Degiro's API."
+-license = "BSD-3-Clause"
++license = {text = "BSD-3-Clause"}
+ readme = "README.md"
+ requires-python = ">=3.10"
+ version = "3.0.36"

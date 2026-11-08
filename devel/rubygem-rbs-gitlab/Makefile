@@ -1,0 +1,24 @@
+PORTNAME=	rbs
+PORTVERSION=	4.2.0
+CATEGORIES=	devel rubygems
+MASTER_SITES=	RG
+PKGNAMESUFFIX=	-gitlab
+
+MAINTAINER=	mfechner@FreeBSD.org
+COMMENT=	Language for type signatures for Ruby and standard library definitions
+WWW=		https://github.com/ruby/rbs
+
+LICENSE=	BSD2CLAUSE RUBY
+LICENSE_COMB=	dual
+LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/BSDL
+LICENSE_FILE_RUBY=	${WRKSRC}/COPYING
+
+RUN_DEPENDS=	rubygem-logger-gitlab>=0:devel/rubygem-logger-gitlab \
+		rubygem-prism>=1.6.0:textproc/rubygem-prism \
+		rubygem-tsort>=0:devel/rubygem-tsort
+
+USES=		gem
+
+PLIST_FILES=	bin/rbs
+
+.include <bsd.port.mk>

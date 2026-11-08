@@ -1,0 +1,11 @@
+[
+{ type: install
+  message: <<EOM
+Errata: some graphical features are missing, because a
+library is not available.
+
+Work continues!
+
+EOM
+}
+]

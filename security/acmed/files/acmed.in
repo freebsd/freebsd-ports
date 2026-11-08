@@ -1,0 +1,39 @@
+#!/bin/sh
+
+# PROVIDE: acmed
+# REQUIRE: LOGIN cleanvar
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable acmed:
+# acmed_enable (bool):        Set it to "YES" to enable ACMEd.
+#                             Default is "NO".
+# acmed_config (string):      Path to ACMEd configuration file.
+#                             Default is "%%PREFIX%%/etc/acmed/acmed.toml".
+# acmed_log_level (string):   Set the log verbosity level.
+#                             Possible values are "error", "warn", "info",
+#                             "debug" and "trace".
+#                             Default is "info".
+# acmed_flags (string):       Additional flags to be passed to acmed.
+#                             Default is "--log-syslog".
+#
+
+. /etc/rc.subr
+
+name="acmed"
+rcvar="${name}_enable"
+
+load_rc_config "$name"
+: ${acmed_enable:="NO"}
+: ${acmed_config:="%%PREFIX%%/etc/acmed/acmed.toml"}
+: ${acmed_log_level:="info"}
+: ${acmed_flags:="--log-syslog"}
+
+pidfile="/var/run/${name}.pid"
+procname="%%PREFIX%%/bin/${name}"
+
+command="/usr/sbin/daemon"
+command_args="-f -p ${pidfile} ${procname} --foreground --no-pid-file --config ${acmed_config} --log-level ${acmed_log_level} ${acmed_flags}"
+required_files="${acmed_config}"
+acmed_flags=""
+
+run_rc_command "$1"

@@ -14,6 +14,7 @@ LICENSE=	BSD2CLAUSE
 
 USES=		tar:tgz
 
+CFLAGS+=	-ansi -Wno-invalid-source-encoding
 MAKE_ARGS=	PREFIX=${PREFIX} STAGEDIR=${STAGEDIR}
 
 PLIST_FILES=	bin/a2kfcnv bin/fromdos bin/todos bin/fromwin bin/towin

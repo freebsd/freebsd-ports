@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2025-10-27 03:02:48 UTC
+--- pyproject.toml.orig	2026-07-05 02:59:22 UTC
 +++ pyproject.toml
 @@ -1,6 +1,6 @@ requires = [
  [build-system]
@@ -9,11 +9,11 @@
  build-backend = "setuptools.build_meta"
  
 @@ -9,8 +9,7 @@ readme = "README.md"
- version = "1.3.2"
+ version = "2.1.0"
  description = "A beautiful reStructuredText renderer for rich"
  readme = "README.md"
 -license = "MIT"
--license-files = ["LICENSE"]
+-license-files = ["LICENSE", "rich_rst/_vendor/LICENSES.txt"]
 +license = {text = "MIT"}
  authors = [
      { name = "Wasi Master", email = "arianmollik323@gmail.com" }

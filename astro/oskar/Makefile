@@ -1,5 +1,5 @@
 PORTNAME=	OSKAR
-DISTVERSION=	2.12.2
+DISTVERSION=	2.13.0
 CATEGORIES=	astro
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,8 +14,9 @@ LIB_DEPENDS=	libcfitsio.so:astro/cfitsio \
 		libhdf5.so:science/hdf5 \
 		libsz.so:science/libaec
 
-USES=		cmake compiler:c++11-lang localbase:ldflags python qt:5
-USE_QT=		core gui network widgets buildtools:build qmake:build
+USES=		cmake compiler:c++11-lang gl localbase:ldflags python qt:6
+USE_QT=		base tools:build
+USE_GL=		gl opengl
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes

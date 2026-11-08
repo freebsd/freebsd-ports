@@ -47,7 +47,7 @@ if [ ! -f ${subr} ]; then
 fi
 
 . ${globalconf}
-. ${subrdir}/nc.subr
+. ${subrdir}/nc-lite.subr
 
 cbsd_statsd_jail_stop()
 {

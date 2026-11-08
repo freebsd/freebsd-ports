@@ -1,6 +1,6 @@
---- base/server/python/pki/server/deployment/pkiparser.py.orig	2026-07-12 14:03:09 UTC
+--- base/server/python/pki/server/deployment/pkiparser.py.orig	2026-07-28 16:37:15 UTC
 +++ base/server/python/pki/server/deployment/pkiparser.py
-@@ -36,6 +36,7 @@ import pki
+@@ -32,6 +32,7 @@ import pki
  
  # PKI Imports
  import pki
@@ -8,7 +8,7 @@
  import pki.upgrade
  import pki.account
  import pki.client
-@@ -818,11 +819,16 @@ class PKIConfigParser:
+@@ -812,11 +813,16 @@ class PKIConfigParser:
      @staticmethod
      def read_existing_deployment_data(instance_name):
          data = {}

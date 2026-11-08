@@ -2,9 +2,9 @@
 -- The package requires setuptools >= 77.0.3 but FreeBSD ports only has 63.1.0
 -- Lowering to 60.0.0 which should be sufficient
 
---- pyproject.toml.orig	2026-04-29 09:58:30.359874000 -0700
-+++ pyproject.toml	2026-04-29 09:58:30.360755000 -0700
-@@ -26,7 +26,7 @@
+--- pyproject.toml.orig	2026-10-11 08:40:59 UTC
++++ pyproject.toml
+@@ -26,7 +26,7 @@ dependencies = [
  ]
  
  [build-system]

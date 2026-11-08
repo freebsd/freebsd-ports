@@ -9,10 +9,9 @@ WWW=		https://github.com/dennypage/andwatch
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libsqlite3.so:databases/sqlite3 \
-		libcurl.so:ftp/curl
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		localbase:ldflags
+USES=		localbase:ldflags sqlite
 USE_GITHUB=	yes
 GH_ACCOUNT=	dennypage
 

@@ -1,0 +1,80 @@
+[
+{ type: install
+  message: <<EOM
+Immich server was installed.
+
+Requirements:
+ * PostgreSQL with the extensions pgvector and vchord, e.g.:
+     pkg install postgresql18-server postgresql18-contrib \
+         postgresql18-pgvector postgresql18-vchord
+ * Redis-compatible cache, e.g.:
+     pkg install valkey && sysrc valkey_enable=YES
+
+Configuration:
+ 1. VectorChord must be preloaded. Add to postgresql.conf:
+      shared_preload_libraries = 'vchord.so'
+    and restart PostgreSQL.
+ 2. Create a database and user for immich, then create the
+    extensions as superuser in that database:
+      CREATE EXTENSION vector;
+      CREATE EXTENSION vchord CASCADE;
+      CREATE EXTENSION cube;
+      CREATE EXTENSION earthdistance;
+      CREATE EXTENSION pg_trgm;
+    The immich role needs superuser during schema migrations,
+    or pre-create the extensions as shown above.
+ 3. Copy %%PREFIX%%/etc/immich.env.sample to
+    %%PREFIX%%/etc/immich.env and put the connection settings in.
+    The file holds the database password, so keep it at mode 0600
+    owned by root; the rc script reads it as root, the service user
+    does not need access to it.  If the file is older than this
+    version, check it once:
+      chown root:wheel %%PREFIX%%/etc/immich.env
+      chmod 600 %%PREFIX%%/etc/immich.env
+ 4. Enable and start the service:
+      sysrc immich_server_enable=YES
+      service immich_server start
+ 5. Optional: install www/immich-ml for smart search, duplicate
+    detection, facial recognition and text search in images.  The rc
+    script points the server at it on 127.0.0.1:3003; a service on
+    another host goes into immich_server_ml_url.
+
+Running it:
+ * The server listens on all addresses, and its worker opens a second
+   port on a random number as well.  Both follow
+     sysrc immich_server_host=127.0.0.1
+   so set that and put a reverse proxy with TLS in front of it.  The
+   same goes for www/immich-public-proxy, which faces the internet.
+ * Back up both the database and the media directory.  The built-in
+   database backup writes to the backups folder below the media
+   location and does not include the media itself.
+   To restore one of those dumps into an empty database:
+     su -l postgres -c "createdb -O immich immich"
+     su -l postgres -c "psql -q -d immich -c 'CREATE EXTENSION vector'"
+     su -l postgres -c "psql -q -d immich -c 'CREATE EXTENSION vchord CASCADE'"
+     gzip -dc <dump>.sql.gz | su -l postgres -c "psql -q -d immich"
+   The extensions have to exist before the dump is loaded.
+ * Sizing: the service itself needs about 1 GB of disk, the machine
+   learning models another 1 GB, and the two node processes sit at
+   roughly 800 MB of memory when idle.  Give the machine 8 GB.
+ * Files are stored under random names unless you set a storage
+   template in the admin interface.  Doing that before the first
+   import keeps the library readable without the database.
+ * Logs are rotated by newsyslog through
+   %%PREFIX%%/etc/newsyslog.conf.d/immich.conf.
+ * Video work runs through multimedia/jellyfin-ffmpeg, which the rc
+   script selects with FFMPEG_PATH and FFPROBE_PATH.  Immich builds its
+   HDR filter chain around tonemapx, a filter multimedia/ffmpeg does not
+   provide, so with plain ffmpeg an HDR video gets no thumbnail at all.
+   To use a different build, set both variables in immich.env.
+ * Schema migrations run automatically on start, so take a backup
+   before a version upgrade; downgrades are not supported.  After a
+   PostgreSQL major upgrade, rebuild pgvector and vchord.  After a
+   Node major upgrade, rebuild this port so the native modules match.
+
+The web interface listens on port 2283 by default. The upload
+location defaults to /var/db/immich and can be changed with
+sysrc immich_server_media_location=/path.
+EOM
+}
+]

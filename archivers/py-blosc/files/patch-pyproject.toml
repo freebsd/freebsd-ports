@@ -1,6 +1,6 @@
---- pyproject.toml.orig	2024-06-24 16:59:37 UTC
+--- pyproject.toml.orig	2026-01-17 20:20:14 UTC
 +++ pyproject.toml
 @@ -1,2 +1,2 @@
  [build-system]
 -requires = ["setuptools", "scikit-build", "cmake", "ninja", "py-cpuinfo"]
-+requires = ["setuptools", "scikit-build", "py-cpuinfo"]
++requires = ["setuptools", "scikit-build", "py-cpuinfo2"]

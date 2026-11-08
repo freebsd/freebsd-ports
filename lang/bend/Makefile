@@ -1,5 +1,6 @@
 PORTNAME=	bend
 DISTVERSION=	0.2.38
+PORTREVISION=	1
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-language
 
@@ -49,7 +50,7 @@ CARGO_CRATES=	TSPL-0.0.13 \
 		is_terminal_polyfill-1.70.0 \
 		itertools-0.11.0 \
 		lazy_static-1.4.0 \
-		libc-0.2.155 \
+		libc-0.2.186 \
 		linked-hash-map-0.5.6 \
 		loaned-0.1.2 \
 		num_cpus-1.16.0 \

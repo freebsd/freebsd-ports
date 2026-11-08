@@ -54,6 +54,7 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/bind/xemacs.bind
 %%DATADIR%%/chkconfig.ltx
 %%DATADIR%%/citeengines/basic.citeengine
+%%DATADIR%%/citeengines/biblatex-chicago.citeengine
 %%DATADIR%%/citeengines/biblatex-natbib.citeengine
 %%DATADIR%%/citeengines/biblatex.citeengine
 %%DATADIR%%/citeengines/jurabib.citeengine
@@ -499,6 +500,7 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/examples/External_Material/sheet1.gnumeric
 %%DATADIR%%/examples/External_Material/sheet2.ods
 %%DATADIR%%/examples/External_Material/sheet3.xls
+%%DATADIR%%/examples/Graphics_and_Insets/Computer_Algebra_Systems.lyx
 %%DATADIR%%/examples/Graphics_and_Insets/Feynman_Diagrams.lyx
 %%DATADIR%%/examples/Graphics_and_Insets/Instant_Preview.lyx
 %%DATADIR%%/examples/Graphics_and_Insets/Itemize_Bullets.lyx
@@ -2064,6 +2066,7 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/images/math/fatbslash.svgz
 %%DATADIR%%/images/math/fatsemi.svgz
 %%DATADIR%%/images/math/fatslash.svgz
+%%DATADIR%%/images/math/fbox.svgz
 %%DATADIR%%/images/math/female.svgz
 %%DATADIR%%/images/math/fint.svgz
 %%DATADIR%%/images/math/fintop.svgz
@@ -2072,6 +2075,7 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/images/math/forall.svgz
 %%DATADIR%%/images/math/frac-square.svgz
 %%DATADIR%%/images/math/frac.svgz
+%%DATADIR%%/images/math/framebox.svgz
 %%DATADIR%%/images/math/frown.svgz
 %%DATADIR%%/images/math/frownie.svgz
 %%DATADIR%%/images/math/fullmoon.svgz
@@ -2130,6 +2134,7 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/images/math/int.svgz
 %%DATADIR%%/images/math/intercal.svgz
 %%DATADIR%%/images/math/interleave.svgz
+%%DATADIR%%/images/math/intertext.svgz
 %%DATADIR%%/images/math/intop.svgz
 %%DATADIR%%/images/math/invdiameter.svgz
 %%DATADIR%%/images/math/inve.svgz
@@ -2245,6 +2250,7 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/images/math/mapstochar.svgz
 %%DATADIR%%/images/math/mapstochar2.svgz
 %%DATADIR%%/images/math/mars.svgz
+%%DATADIR%%/images/math/math-texts.svgz
 %%DATADIR%%/images/math/mathbb.svgz
 %%DATADIR%%/images/math/mathbb_C.svgz
 %%DATADIR%%/images/math/mathbb_H.svgz
@@ -2278,6 +2284,7 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/images/math/mathsf.svgz
 %%DATADIR%%/images/math/mathtt.svgz
 %%DATADIR%%/images/math/matrix.svgz
+%%DATADIR%%/images/math/mbox.svgz
 %%DATADIR%%/images/math/measuredangle.svgz
 %%DATADIR%%/images/math/mercury.svgz
 %%DATADIR%%/images/math/merge.svgz
@@ -2463,6 +2470,7 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/images/math/setminus.svgz
 %%DATADIR%%/images/math/sharp.svgz
 %%DATADIR%%/images/math/shortdownarrow.svgz
+%%DATADIR%%/images/math/shortintertext.svgz
 %%DATADIR%%/images/math/shortleftarrow.svgz
 %%DATADIR%%/images/math/shortmid.svgz
 %%DATADIR%%/images/math/shortparallel.svgz
@@ -2543,7 +2551,9 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/images/math/talloblong.svgz
 %%DATADIR%%/images/math/tau.svgz
 %%DATADIR%%/images/math/taurus.svgz
+%%DATADIR%%/images/math/text.svgz
 %%DATADIR%%/images/math/textdegree.svgz
+%%DATADIR%%/images/math/textnormal.svgz
 %%DATADIR%%/images/math/textrm.svgz
 %%DATADIR%%/images/math/textrm_AA.svgz
 %%DATADIR%%/images/math/textrm_O.svgz
@@ -3002,6 +3012,7 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/kbd/turkish.kmap
 %%DATADIR%%/kbd/ukrainian.kmap
 %%DATADIR%%/languages
+%%DATADIR%%/latexcolors
 %%DATADIR%%/latexfonts
 %%DATADIR%%/layouts/AEA.layout
 %%DATADIR%%/layouts/IEEEtran-CompSoc.layout
@@ -3067,6 +3078,7 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/layouts/docbook-section.layout
 %%DATADIR%%/layouts/doublecol-new.layout
 %%DATADIR%%/layouts/dtk.layout
+%%DATADIR%%/layouts/econsocart.layout
 %%DATADIR%%/layouts/ectaart.layout
 %%DATADIR%%/layouts/egs.layout
 %%DATADIR%%/layouts/elsart.layout
@@ -3095,7 +3107,6 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/layouts/graphicboxes.module
 %%DATADIR%%/layouts/hanging.module
 %%DATADIR%%/layouts/heb-article.layout
-%%DATADIR%%/layouts/heb-letter.layout
 %%DATADIR%%/layouts/hollywood.layout
 %%DATADIR%%/layouts/hpstatement.module
 %%DATADIR%%/layouts/ijmpc.layout
@@ -3364,6 +3375,7 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/lyx2lyx/parser_tools.py
 %%DATADIR%%/lyx2lyx/test_parser_tools.py
 %%DATADIR%%/lyx2lyx/unicode_symbols.py
+%%DATADIR%%/math_conflicts
 %%DATADIR%%/scripts/TeXFiles.py
 %%DATADIR%%/scripts/bash_completion
 %%DATADIR%%/scripts/checkKeys.pl.in
@@ -3428,7 +3440,9 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/templates/Articles/Astronomy_%26_Astrophysics.lyx
 %%DATADIR%%/templates/Articles/Chinese_Article_%28CTeX%29.lyx
 %%DATADIR%%/templates/Articles/Copernicus_Publications_Manuscript_Preparation.lyx
-%%DATADIR%%/templates/Articles/Econometrica.lyx
+%%DATADIR%%/templates/Articles/Econometric_Society_Journals.lyx
+%%DATADIR%%/templates/Articles/Econometric_Society_Journals_figure.pdf
+%%DATADIR%%/templates/Obsolete/Econometrica.lyx
 %%DATADIR%%/templates/Articles/Elsevier.lyx
 %%DATADIR%%/templates/Articles/Figure1.pdf
 %%DATADIR%%/templates/Articles/Hebrew_Article_%28KOMA-Script%29.lyx
@@ -3509,6 +3523,7 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/templates/Theses/PhD_Thesis/thesisExample.bib
 %%DATADIR%%/templates/ar/Presentations/Beamer.lyx
 %%DATADIR%%/templates/ca/Letters/Letter_%28Standard_Class%29.lyx
+%%DATADIR%%/templates/de/Letters/KOMA-Script_Letter_%28V._2%29.lyx
 %%DATADIR%%/templates/de/Presentations/Beamer.lyx
 %%DATADIR%%/templates/es/Letters/Letter_%28Standard_Class%29.lyx
 %%DATADIR%%/templates/es/Presentations/Beamer.lyx
@@ -3528,6 +3543,10 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/tex/lyxchess.sty
 %%DATADIR%%/tex/lyxskak.sty
 %%DATADIR%%/tex/revtex.cls
+%%DATADIR%%/themes/Default.theme
+%%DATADIR%%/themes/Monochrome.theme
+%%DATADIR%%/themes/Solarized.theme
+%%DATADIR%%/unicode_alphanum_variants
 %%DATADIR%%/ui/default.ui
 %%DATADIR%%/ui/stdcontext.inc
 %%DATADIR%%/ui/stdmenus.inc

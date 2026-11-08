@@ -17,6 +17,9 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 USES=		python
 USE_PYTHON=	flavors
 
+USES+=		compiler:c++17-lang
+USE_CXXSTD=	gnu++17
+
 #LDFLAGS+=	-Wl,--as-needed
 
 OPTIONS_DEFINE=	DEBUG OPTIMIZED_CFLAGS

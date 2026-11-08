@@ -1,0 +1,11 @@
+Russian translations of FreeBSD manual pages.
+
+This package installs translated manual pages into share/man/ru.UTF-8
+The translations are tracked per FreeBSD version via separate
+flavors.  Choose the flavor matching your FreeBSD release:
+
+  - current  for FreeBSD main branch (CURRENT)
+  - 15_0     for FreeBSD 15.0
+  - 15_1     for FreeBSD 15.1
+  ...
+  - stable15 for FreeBSD stable/15 branch (STABLE)

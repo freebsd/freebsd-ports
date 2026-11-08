@@ -43,8 +43,10 @@ bin/git-pkgs
 %%MANPAGES%%share/man/man1/git-pkgs-notes-show.1.gz
 %%MANPAGES%%share/man/man1/git-pkgs-notes.1.gz
 %%MANPAGES%%share/man/man1/git-pkgs-outdated.1.gz
+%%MANPAGES%%share/man/man1/git-pkgs-provenance.1.gz
 %%MANPAGES%%share/man/man1/git-pkgs-reindex.1.gz
 %%MANPAGES%%share/man/man1/git-pkgs-remove.1.gz
+%%MANPAGES%%share/man/man1/git-pkgs-replace.1.gz
 %%MANPAGES%%share/man/man1/git-pkgs-resolve.1.gz
 %%MANPAGES%%share/man/man1/git-pkgs-sbom.1.gz
 %%MANPAGES%%share/man/man1/git-pkgs-schema.1.gz

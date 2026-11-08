@@ -1,6 +1,6 @@
 PORTNAME=	stringzilla
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.6.1
+DISTVERSION=	5.3.0
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,7 +12,7 @@ WWW=		https://ashvardanian.com/posts/stringzilla/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	aarch64 amd64
+BROKEN_i386=	fails to stage: non-constant-expression cannot be narrowed from type 'sz_u64_t', see https://github.com/ashvardanian/StringZilla/issues/341
 
 USES=		cmake:testing
 USE_LDCONFIG=	yes
@@ -20,21 +20,19 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	ashvardanian
 GH_PROJECT=	StringZilla
-GH_TUPLE=	ashvardanian:ForkUnion:c613f50:fork_union/fork_union
+GH_TUPLE=	ashvardanian:ForkUnion:7f52520:forkunion/forkunion
 
 CMAKE_ON=	STRINGZILLA_INSTALL
-CMAKE_OFF=	STRINGZILLA_BUILD_TEST
+CMAKE_OFF=	STRINGZILLA_BUILD_TEST \
+		STRINGZILLA_BUILD_BENCHMARK
 CMAKE_TESTING_ON=	STRINGZILLA_BUILD_TEST
 CMAKE_ARGS=	-DSTRINGZILLA_INCLUDE_INSTALL_DIR=include
+
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 CXXFLAGS+=	-g
 LDFLAGS+=	-lpthread
 
-post-install:
-	# workaround for https://github.com/ashvardanian/StringZilla/issues/194
-	@${RM} -r ${STAGEDIR}/usr/src
-
-# some tests fail and hang, see https://github.com/ashvardanian/StringZilla/issues/281, https://github.com/ashvardanian/StringZilla/issues/282
-# https://github.com/ashvardanian/StringZilla/issues/315
+# tests as of 5.3.0: 100% tests passed out of 6
 
 .include <bsd.port.mk>

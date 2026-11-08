@@ -1,5 +1,5 @@
 PORTNAME=	libime
-DISTVERSION=	1.1.13
+DISTVERSION=	1.1.17
 CATEGORIES=	chinese textproc
 MASTER_SITES=	https://download.fcitx-im.org/fcitx5/${PORTNAME}/ \
 		https://download.fcitx-im.org/data/:opengram_lm,opengram_dict,table_dict
@@ -9,30 +9,32 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${TABLE_DICT_TAR}:table_dict
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	khng@FreeBSD.org
+MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Library to support generic input method implementation
 WWW=		https://github.com/fcitx/libime
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
-		libFcitx5Utils.so:textproc/fcitx5
+BUILD_DEPENDS=	boost-libs>0:devel/boost-libs
+LIB_DEPENDS=	libFcitx5Utils.so:textproc/fcitx5 \
+		libzstd.so:archivers/zstd
+RUN_DEPENDS=	boost-libs>0:devel/boost-libs
 
-USES=		cmake compiler:c++17-lang kde:5 pkgconfig tar:zst
+USES=		cmake compiler:c++17-lang kde pkgconfig tar:zst
 
 PLIST_SUB=	VER=${PORTVERSION} \
 		VER_MAJOR=${PORTVERSION:R:R}
 
 USE_LDCONFIG=	yes
 
-USE_KDE=	ecm
+USE_KDE=	ecm:build
 
 CMAKE_OFF=	ENABLE_TEST
 MAKE_ENV=	FCITX5_DOWNLOAD_DISALLOWED=TRUE
 
 # These must follow data/CMakeLists.txt
-OPENGRAM_LM_TAR=	lm_sc.arpa-20250113.tar.zst
-OPENGRAM_DICT_TAR=	dict-20250327.tar.zst
+OPENGRAM_LM_TAR=	lm_sc.arpa-20260629.tar.zst
+OPENGRAM_DICT_TAR=	dict-20260907.tar.zst
 TABLE_DICT_TAR=		table-20240108.tar.zst
 
 .include <bsd.port.pre.mk>

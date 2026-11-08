@@ -119,6 +119,8 @@ STRIP_LIBS=	BugpointPasses.so \
 		${LIBNAME}.0 \
 		libLTO.so
 
+CLANG_PATTERN=	(c-index-test|clang|diagtool|hmaptool|intercept-|libear|libscanbuild|analyze-|scan-|Reporter.py|ScanView.py|scanview.css|sorttable.js|startfile.py|c..-analyzer|AnalyzerPlugin.so)
+
 EXTRAS_LIBS=	libclangApplyReplacements \
 		libclangChangeNamespace \
 		libclangDaemon \
@@ -150,7 +152,6 @@ CONFIGURE_TARGET:=${ARCH:C/amd64/x86_64/:C/armv6hf/armv6/}-portbld-${OPSYS:tl}${
 LLVM_ENABLE_PROJECTS+=	clang
 COMMANDS+=	${CLANG_COMMANDS}
 MAN1SRCS+=	${CLANG_MAN1SRCS}
-CLANG_PATTERN=	(c-index-test|clang|diagtool|hmaptool|intercept-|libear|libscanbuild|analyze-|scan-|Reporter.py|ScanView.py|scanview.css|sorttable.js|startfile.py|c..-analyzer|AnalyzerPlugin.so)
 USES+=		gnome
 .endif
 
@@ -187,10 +188,6 @@ _USES_PYTHON?=	python:build
 USES+=		${_USES_PYTHON}
 
 .include <bsd.port.pre.mk>
-
-.if ${COMPILER_TYPE} == "clang" && ${COMPILER_VERSION} >= 210
-EXTRA_PATCHES+=	${PATCHDIR}/clang21-patch-llvm_tools_sancov_sancov.cpp
-.endif
 
 .if exists(${PATCHDIR}/llvm${LLVM_MAJOR})
 EXTRA_PATCHES+=	${PATCHDIR}/llvm${LLVM_MAJOR}

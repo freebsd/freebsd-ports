@@ -1,0 +1,31 @@
+// SPDX-License-Identifier: Apache-2.0
+
+// Note that this file is auto-generated and auto-synced using `build.rs`. It is
+// included in `version.rs`.
+
+/// The major version of Substrait used to build this crate
+pub const SUBSTRAIT_MAJOR_VERSION: u32 = 0;
+
+/// The minor version of Substrait used to build this crate
+pub const SUBSTRAIT_MINOR_VERSION: u32 = 85;
+
+/// The patch version of Substrait used to build this crate
+pub const SUBSTRAIT_PATCH_VERSION: u32 = 0;
+
+/// The Git SHA (lower hex) of Substrait used to build this crate
+pub const SUBSTRAIT_GIT_SHA: &str = "";
+
+/// The `git describe` output of the Substrait submodule used to build this
+/// crate
+pub const SUBSTRAIT_GIT_DESCRIBE: &str = "";
+
+/// The amount of commits between the latest tag and the version of the
+/// Substrait submodule used to build this crate
+pub const SUBSTRAIT_GIT_DEPTH: u32 = 0;
+
+/// The dirty state of the Substrait submodule used to build this crate
+pub const SUBSTRAIT_GIT_DIRTY: bool = false;
+
+/// A constant with the Substrait version as name, to trigger semver bumps when
+/// the Substrait version changes.
+pub const SUBSTRAIT_0_85_0: () = ();

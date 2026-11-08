@@ -1,10 +1,7 @@
 PORTNAME=	cctz
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4
+DISTVERSION=	2.5
 CATEGORIES=	devel
-
-PATCH_SITES=	https://github.com/google/cctz/commit/
-PATCHFILES=	64d12062183e2fa01f8c0127c4b9f91afaeee46c.patch:-p1
 
 MAINTAINER=	z7dr6ut7gs@snkmail.com
 COMMENT=	C++ library for handling dates, times, and time zones

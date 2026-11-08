@@ -1,0 +1,7 @@
+Package webdavclient3 provides an easy way to work with WebDAV servers.
+It implements a Webdav API (check, free, info, list, mkdir, clean, copy,
+move, download, upload, publish, unpublish) and a higher-level, object-
+oriented Resource API for working with cloud storage resources.
+
+Based on the original webdav-client-python but uses requests instead
+of PyCURL.

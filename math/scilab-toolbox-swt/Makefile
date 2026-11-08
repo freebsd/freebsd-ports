@@ -1,22 +1,21 @@
 PORTNAME=	swt
-PORTVERSION=	0.3.1
-PORTREVISION=	3
+PORTVERSION=	0.3.3
 CATEGORIES=	math
 MASTER_SITES=	http://atoms.scilab.org/toolboxes/swt/${PORTVERSION}/files/
 PKGNAMEPREFIX=	scilab-toolbox-
-DISTNAME=	${PORTNAME}-${PORTVERSION}-3-src
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scilab 1-D and 2-D Wavelet Toolbox
 WWW=		https://atoms.scilab.org/toolboxes/swt
 
-DEPRECATED=	Not actively maintained, version from 2016, did not keep up with upstream. Mail the maintainer if you use this.
-EXPIRATION_DATE=	2026-11-09
+DEPRECATED=	Not actively maintained, no users complained when the port was broken. Mail the maintainer if you use this.
+EXPIRATION_DATE=	2027-01-09
 
 BUILD_DEPENDS=	${SCILAB_CMD}:math/scilab
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		dos2unix zip
+USES=		dos2unix fortran zip
 
 SCILAB_CMD=	${LOCALBASE}/bin/scilab-adv-cli
 SCILAB_ARGS=	-noatomsautoload -nb -nouserstartup
@@ -35,8 +34,6 @@ OPTIONS_SUB=	yes
 
 HELP_DESC=	Build help files (requires scilab with gui support)
 
-WRKSRC=		${WRKDIR}/swt
-
 .include <bsd.port.options.mk>
 
 .if !${PORT_OPTIONS:MHELP}
@@ -50,8 +47,6 @@ post-patch:
 .if !${PORT_OPTIONS:MHELP}
 	${REINPLACE_CMD} -e '/tbx_builder_help/d' ${WRKSRC}/builder.sce
 .endif
-	${REINPLACE_CMD} '/#include "MALLOC.h"/d' \
-		${WRKSRC}/sci_gateway/c/swt_common.h
 	${ECHO_CMD} quit >> ${WRKSRC}/builder.sce
 
 pre-build:

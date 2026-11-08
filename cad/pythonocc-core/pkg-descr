@@ -1,0 +1,18 @@
+pythonocc provides 3D modeling and dataexchange features.
+It is intended to CAD/PDM/PLM/BIM development.
+The module is based on the OpenCascade Technology modeling kernel.
+
+Features
+--------
+pythonocc provides the following features:
+
+*   a full access from Python to almost all af the thousand OpenCascade C++
+    classes. Classes and methods/functions share the same names, and, as
+    possible as it can be, the same signature
+*   3D visualization from the most famous Python Gui (tkinter, pyQt5 and 6,
+    PySide2 and 6, wxPython)
+*   3D visualization in a web browser using threejs or x3dom frameworks
+*   3D visualization and work within a jupyter notebook
+*   data exchange using most famous formats IGES/STEP/STL/PLY/OBJ/GLTF
+*   Utility Python classes/methods for Topology operations, inertia computations
+    and more.

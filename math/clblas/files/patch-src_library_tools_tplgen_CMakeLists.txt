@@ -1,0 +1,11 @@
+--- src/library/tools/tplgen/CMakeLists.txt.orig	2026-09-06 00:04:31 UTC
++++ src/library/tools/tplgen/CMakeLists.txt
+@@ -14,7 +14,7 @@
+ # limitations under the License.
+ # ########################################################################
+ 
+-cmake_minimum_required(VERSION 2.6)
++cmake_minimum_required(VERSION 3.10)
+ project(tplgen C CXX)
+ ADD_DEFINITIONS(/D_CRT_SECURE_NO_WARNINGS)
+ ADD_EXECUTABLE(tplgen tplgen.cpp)

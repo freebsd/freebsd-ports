@@ -1,0 +1,17 @@
+Description: Use the PEP 621 license table instead of the PEP 639 license
+  string for the ports tree's setuptools 63.
+Issue ID: none
+Changeset: none
+TODO: FreeBSD-specific (old setuptools in ports), not for upstream.
+
+--- pyproject.toml.orig	2025-04-08 01:11:50 UTC
++++ pyproject.toml
+@@ -9,7 +9,7 @@ readme = "README.rst"
+ name = "django-extensions"
+ description = "Extensions for Django"
+ readme = "README.rst"
+-license = "MIT"
++license = { text = "MIT" }
+ maintainers = [
+   { name = "Bas van Oostveen", email = "v.oostveen@gmail.com" },
+ ]

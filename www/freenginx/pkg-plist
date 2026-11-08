@@ -14,6 +14,7 @@
 %%DSO%%%%BROTLI%%libexec/freenginx/ngx_http_brotli_filter_module.so
 %%DSO%%%%BROTLI%%libexec/freenginx/ngx_http_brotli_static_module.so
 %%DSO%%%%CACHE_PURGE%%libexec/freenginx/ngx_http_cache_purge_module.so
+%%DSO%%%%CERT_EXPIRY%%libexec/freenginx/ngx_http_cert_expiry_module.so
 %%DSO%%%%CT%%libexec/freenginx/ngx_http_ssl_ct_module.so
 %%DSO%%%%CT%%libexec/freenginx/ngx_ssl_ct_module.so
 %%DSO%%%%DEVEL_KIT%%libexec/freenginx/ndk_http_module.so
@@ -44,7 +45,6 @@
 %%DSO%%%%HTTP_PUSH_STREAM%%libexec/freenginx/ngx_http_push_stream_module.so
 %%DSO%%%%HTTP_PUSH%%libexec/freenginx/ngx_nchan_module.so
 %%DSO%%%%HTTP_REDIS%%libexec/freenginx/ngx_http_redis_module.so
-%%DSO%%%%HTTP_SUBS_FILTER%%libexec/freenginx/ngx_http_subs_filter_module.so
 %%DSO%%%%HTTP_TARANTOOL%%libexec/freenginx/ngx_http_tnt_module.so
 %%DSO%%%%HTTP_UPLOAD_PROGRESS%%libexec/freenginx/ngx_http_uploadprogress_module.so
 %%DSO%%%%HTTP_UPLOAD%%libexec/freenginx/ngx_http_upload_module.so
@@ -56,6 +56,7 @@
 %%DSO%%%%HTTP%%%%HTTP_GEOIP2%%libexec/freenginx/ngx_http_geoip2_module.so
 %%DSO%%%%HTTP%%%%NJS%%libexec/freenginx/ngx_http_js_module.so
 %%DSO%%%%ICONV%%libexec/freenginx/ngx_http_iconv_module.so
+%%DSO%%%%IP_ANON%%libexec/freenginx/ngx_http_ip_anon_module.so
 %%DSO%%%%LET%%libexec/freenginx/ngx_http_let_module.so
 %%DSO%%%%LINK%%libexec/freenginx/ngx_http_link_func_module.so
 %%DSO%%%%LUA%%libexec/freenginx/ngx_http_lua_module.so
@@ -73,6 +74,7 @@
 %%DSO%%%%REDIS2%%libexec/freenginx/ngx_http_redis2_module.so
 %%DSO%%%%RTMP%%libexec/freenginx/ngx_rtmp_module.so
 %%DSO%%%%SET_MISC%%libexec/freenginx/ngx_http_set_misc_module.so
+%%DSO%%%%SFLOW%%libexec/freenginx/ngx_http_sflow_module.so
 %%DSO%%%%SHIBBOLETH%%libexec/freenginx/ngx_http_shibboleth_module.so
 %%DSO%%%%SLOWFS_CACHE%%libexec/freenginx/ngx_http_slowfs_module.so
 %%DSO%%%%SRCACHE%%libexec/freenginx/ngx_http_srcache_filter_module.so
@@ -80,13 +82,16 @@
 %%DSO%%%%STREAM%%%%HTTP_GEOIP2%%libexec/freenginx/ngx_stream_geoip2_module.so
 %%DSO%%%%STREAM%%%%NJS%%libexec/freenginx/ngx_stream_js_module.so
 %%DSO%%%%STREAM%%libexec/freenginx/ngx_stream_module.so
+%%DSO%%%%STREAM_LIMIT_REQ%%libexec/freenginx/ngx_stream_limit_req_module.so
 %%DSO%%%%STS%%libexec/freenginx/ngx_http_stream_server_traffic_status_module.so
+%%DSO%%%%STS%%libexec/freenginx/ngx_stream_server_traffic_status_module.so
+%%DSO%%%%SYSLOG5424%%libexec/freenginx/ngx_http_syslog5424_module.so
 %%DSO%%%%VOD%%libexec/freenginx/ngx_http_vod_module.so
 %%DSO%%%%VTS%%libexec/freenginx/ngx_http_vhost_traffic_status_module.so
 %%DSO%%%%WEBSOCKIFY%%libexec/freenginx/ngx_http_websockify_module.so
 %%DSO%%%%XSS%%libexec/freenginx/ngx_http_xss_filter_module.so
-%%DSO%%%%ZSTD%%libexec/nginx/ngx_http_zstd_filter_module.so
-%%DSO%%%%ZSTD%%libexec/nginx/ngx_http_zstd_static_module.so
+%%DSO%%%%ZSTD%%libexec/freenginx/ngx_http_zstd_filter_module.so
+%%DSO%%%%ZSTD%%libexec/freenginx/ngx_http_zstd_static_module.so
 %%HTTP_PERL%%%%SITE_ARCH%%/auto/freenginx/freenginx.so
 %%HTTP_PERL%%%%SITE_ARCH%%/freenginx.pm
 sbin/nginx

@@ -1,6 +1,6 @@
---- opensubdiv/hbr/mesh.h.orig	2023-09-14 19:19:06 UTC
+--- opensubdiv/hbr/mesh.h.orig	2025-10-24 17:23:59 UTC
 +++ opensubdiv/hbr/mesh.h
-@@ -215,7 +215,7 @@ template <class T> class HbrMesh { (public)
+@@ -198,7 +198,7 @@ template <class T> class HbrMesh { (public)
      void SetFVarPropagateCorners(bool p) { fvarpropagatecorners = p; }
  
      // Register routines for keeping track of memory usage

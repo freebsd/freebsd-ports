@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Gower's Distance
-WWW=		https://cran.r-project.org/web/packages/gower/
+WWW=		https://cran.r-project.org/package=gower
 
 LICENSE=	GPLv3
 

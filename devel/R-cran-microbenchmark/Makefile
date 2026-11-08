@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Infrastructure to measure the execution time of R expressions
-WWW=		https://cran.r-project.org/web/packages/microbenchmark/index.html
+WWW=		https://cran.r-project.org/package=microbenchmark
 
 LICENSE=	BSD3CLAUSE
 

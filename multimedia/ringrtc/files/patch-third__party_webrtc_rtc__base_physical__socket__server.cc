@@ -9,15 +9,6 @@
  #include <asm-generic/socket.h>
  #include <linux/sockios.h>
  #include <sys/epoll.h>
-@@ -78,7 +78,7 @@ typedef void* SockOptArg;
- typedef void* SockOptArg;
- #endif  // WEBRTC_POSIX
- 
--#if defined(WEBRTC_POSIX) && !defined(WEBRTC_MAC)
-+#if defined(WEBRTC_POSIX) && !defined(WEBRTC_MAC) && !defined(WEBRTC_BSD)
- int64_t GetSocketRecvTimestamp(int socket) {
-   struct timeval tv_ioctl;
-   int ret = ioctl(socket, SIOCGSTAMP, &tv_ioctl);
 @@ -334,7 +334,7 @@ int PhysicalSocket::GetOption(Option opt, int* value) 
      return -1;
    }

@@ -1,6 +1,6 @@
 PORTNAME=	charva
 PORTVERSION=	1.1.4
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	devel java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 DISTNAME=	${PORTNAME}
@@ -8,6 +8,9 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Java Windowing Toolkit for Text Terminals
 WWW=		http://www.pitman.co.za/projects/charva/
+
+DEPRECATED=	Latest upstream is from 2006, no users in the ports tree, does not build with jdk11+.
+EXPIRATION_DATE=	2027-01-15
 
 BUILD_DEPENDS=	gmake:devel/gmake
 RUN_DEPENDS=	${JAVALIBDIR}/commons-logging.jar:java/apache-commons-logging

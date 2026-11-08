@@ -1,6 +1,6 @@
 PORTNAME=	postfix
-DISTVERSION=	3.12-20260706
-PORTREVISION?=	0
+DISTVERSION=	3.12-20260925
+PORTREVISION?=	4
 PORTEPOCH=	6
 CATEGORIES=	mail
 MASTER_SITES=	https://postfix-mirror.horus-it.com/postfix-release/ \
@@ -74,33 +74,47 @@ sqlite_CONFLICTS_INSTALL=	postfix-current postfix-current-base \
 				postfix-current-sasl postfix-current-base-sasl
 
 COMMENT_ldap=	(with OpenLDAP support)
+COMMENT_mysql=	(with MySQL support)
+COMMENT_pgsql=	(with PostgreSQL support)
 COMMENT_sasl=	(with Cyrus SASL support)
+COMMENT_sqlite=	(with SQLite support)
 
-USES=		cpe shebangfix ssl
+USES=		cpe pkgconfig shebangfix ssl
 USE_RC_SUBR=	postfix
 USE_SUBMAKE=	yes
 
 SHEBANG_FILES=	auxiliary/qshape/qshape.pl
 
 SCRIPTS_ENV+=	POSTFIX_DEFAULT_MTA="${POSTFIX_DEFAULT_MTA}"
+ALL_TARGET=		default
 
 CONFLICTS_INSTALL=	courier-0.* opensmtpd opensmtpd-devel \
 			postfix postfix-base postfix-ldap-sasl \
-			postfix-sasl postfix35 sendmail \
-			sendmail-devel
+			postfix-sasl sendmail sendmail-devel
+
+PORTSCOUT=	limit:^3\.12\.
 
 USERS=		postfix
 GROUPS=		mail maildrop postfix
 
 OPTIONS_DEFINE=		BDB BLOCKLISTD CDB DOCS EAI INST_BASE LDAP LMDB MONGO \
 			MYSQL NIS PCRE2 PGSQL SASL SQLITE TEST TLS TLSRPT
-OPTIONS_DEFAULT?=	BLOCKLISTD CDB EAI LMDB PCRE2 TLS TLSRPT
-OPTIONS_RADIO=		RG1
+OPTIONS_DEFAULT?=	BLOCKLISTD CDB EAI LMDB LMDB0 PCRE2 TLS TLSRPT
+OPTIONS_RADIO=		LMDBG1 RG1
+OPTIONS_RADIO_LMDBG1=	LMDB0 LMDB1
 OPTIONS_RADIO_RG1=	SASLKMIT SASLKRB5
 .if ${FLAVOR:U} == ldap
 OPTIONS_SLAVE=		LDAP
+.elif ${FLAVOR:U} == mysql
+OPTIONS_SLAVE=		MYSQL
+.elif ${FLAVOR:U} == pgsql
+OPTIONS_SLAVE=		PGSQL
 .elif ${FLAVOR:U} == sasl
 OPTIONS_SLAVE=		SASL
+.elif ${FLAVOR:U} == sqlite
+OPTIONS_SLAVE=		SQLITE
+.elif ${FLAVOR:U} == mongo
+OPTIONS_SLAVE=		MONGO
 .endif
 .if !empty(FLAVOR) && ${FLAVOR:U} != default
 OPTIONS_FILE=	${PORT_DBDIR}/${OPTIONS_NAME}/${FLAVOR}-options
@@ -112,6 +126,9 @@ CDB_DESC=		CDB maps lookups
 EAI_DESC=		Email Address Internationalization (SMTPUTF8) support
 INST_BASE_DESC=		Install into /usr and /etc/postfix
 LDAP_DESC=		LDAP maps (uses WITH_OPENLDAP_VER)
+LMDB0_DESC=		Use LMDB 0.9 library
+LMDB1_DESC=		Use LMDB 1.0 library
+LMDBG1_DESC=		LMDB library to use
 LMDB_DESC=		LMDB maps
 PCRE2_DESC=		Use Perl Compatible Regular Expressions, version 2
 RG1_DESC=		Kerberos network authentication protocol type
@@ -125,9 +142,8 @@ BDB_USES=			bdb
 CDB_LIB_DEPENDS=		libcdb.so:databases/tinycdb
 EAI_LIB_DEPENDS=		libicuuc.so:devel/icu
 LDAP_USES=			ldap
-LMDB_LIB_DEPENDS=		liblmdb.so:databases/lmdb0
-MONGO_LIB_DEPENDS=		libbson-1.0.so:devel/libbson \
-				libmongoc-1.0.so:devel/mongo-c-driver
+MONGO_LIB_DEPENDS=		libbson2.so:devel/libbson \
+				libmongoc2.so:devel/mongo-c-driver
 MYSQL_USES?=			mysql
 PCRE2_LIB_DEPENDS=		libpcre2-8.so:devel/pcre2
 PGSQL_USES=			pgsql
@@ -135,8 +151,6 @@ SASLKMIT_LIB_DEPENDS=		libkrb5.so:security/krb5
 SASL_LIB_DEPENDS=		libsasl2.so:security/cyrus-sasl2
 SQLITE_USES=			sqlite
 TLSRPT_LIB_DEPENDS=		libtlsrpt.so:mail/libtlsrpt
-
-ALL_TARGET=	default
 
 .include <bsd.port.options.mk>
 
@@ -169,8 +183,16 @@ BROKEN=		error: OpenSSL-1.1.1 is the minimum supported version. LibreSSL is not 
 .if ${PORT_OPTIONS:MINST_BASE}
 .if ${FLAVOR:U} == ldap
 PKGNAMESUFFIX=	-current-base-ldap
+.elif ${FLAVOR:U} == mysql
+PKGNAMESUFFIX=	-current-base-mysql
+.elif ${FLAVOR:U} == pgsql
+PKGNAMESUFFIX=	-current-base-pgsql
 .elif ${FLAVOR:U} == sasl
 PKGNAMESUFFIX=	-current-base-sasl
+.elif ${FLAVOR:U} == sqlite
+PKGNAMESUFFIX=	-current-base-sqlite
+.elif ${FLAVOR:U} == mongo
+PKGNAMESUFFIX=	-current-base-mongo
 .else
 PKGNAMESUFFIX=	-current-base
 .endif
@@ -196,7 +218,7 @@ READMEDIR=	${DOCSDIR}
 READMEDIR=	no
 .endif
 
-# dynamic direcory location
+# dynamic directory location
 DAEMONDIR=		${PREFIX}/libexec/postfix
 SHLIB_DIRECTORY=	${PREFIX}/lib/postfix
 # new proposed location is ETCDIR (see README_FILES/INSTALL)
@@ -297,9 +319,8 @@ IGNORE=		blocklistd is only supported on FreeBSD
 
 .if ${PORT_OPTIONS:MMONGO}
 DYN_EXT+=		mongodb
-POSTFIX_CCARGS+=	-DHAS_MONGODB -I${LOCALBASE}/include/libmongoc-1.0 \
-			-I${LOCALBASE}/include/libbson-1.0
-POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_MONGODB=-L${LOCALBASE}/lib -lmongoc-1.0 -lbson-1.0"
+POSTFIX_CCARGS+=	-DHAS_MONGODB `pkg-config --cflags mongoc2`
+POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_MONGODB=`pkg-config --libs mongoc2`"
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
@@ -311,29 +332,29 @@ _REQUIRE+=		mysql
 
 .if ${PORT_OPTIONS:MPGSQL}
 DYN_EXT+=		pgsql
-POSTFIX_CCARGS+=	-DHAS_PGSQL -I${LOCALBASE}/include
-POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_PGSQL=-L${LOCALBASE}/lib -lpq"
+POSTFIX_CCARGS+=	-DHAS_PGSQL `pkg-config --cflags libpq`
+POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_PGSQL=`pkg-config --libs libpq`"
 _REQUIRE+=		postgresql
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE}
 DYN_EXT+=		sqlite
-POSTFIX_CCARGS+=	-DHAS_SQLITE -I${LOCALBASE}/include
-POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_SQLITE=-L${LOCALBASE}/lib -lsqlite3 -lpthread"
+POSTFIX_CCARGS+=	-DHAS_SQLITE `pkg-config --cflags sqlite3`
+POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_SQLITE=`pkg-config --libs sqlite3`"
 .endif
 
 .if ${PORT_OPTIONS:MLDAP}
 DYN_EXT+=		ldap
-POSTFIX_CCARGS+=	-DHAS_LDAP -I${LOCALBASE}/include \
+POSTFIX_CCARGS+=	-DHAS_LDAP `pkg-config --cflags ldap` \
 			-I${LOCALBASE}/include/sasl -DUSE_LDAP_SASL
-POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_LDAP=-L${LOCALBASE}/lib -lldap -llber"
+POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_LDAP=`pkg-config --libs ldap`"
 _REQUIRE+=		slapd
 .endif
 
 .if ${PORT_OPTIONS:MCDB}
 DYN_EXT+=		cdb
-POSTFIX_CCARGS+=	-DHAS_CDB -I${LOCALBASE}/include
-POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_CDB=-L${LOCALBASE}/lib -lcdb"
+POSTFIX_CCARGS+=	-DHAS_CDB `pkg-config --cflags libcdb`
+POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_CDB=`pkg-config --libs libcdb`"
 .endif
 
 .if ${PORT_OPTIONS:MNIS}
@@ -347,9 +368,16 @@ MANTEST=	qmqp-sink.1 qmqp-source.1 smtp-sink.1 smtp-source.1
 .endif
 
 .if ${PORT_OPTIONS:MLMDB}
+.  if ${PORT_OPTIONS:MLMDB1}
+LIB_DEPENDS+=	liblmdb.so:databases/lmdb
+LMDB_PKG=	lmdb
+.  else
+LIB_DEPENDS+=	liblmdb0.so:databases/lmdb0
+LMDB_PKG=	lmdb0
+.  endif
 DYN_EXT+=		lmdb
-POSTFIX_CCARGS+=	-DHAS_LMDB -I${LOCALBASE}/include
-POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_LMDB=-L${LOCALBASE}/lib -llmdb"
+POSTFIX_CCARGS+=	-DHAS_LMDB `pkg-config --cflags ${LMDB_PKG}`
+POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_LMDB=`pkg-config --libs ${LMDB_PKG}`"
 .endif
 
 # sed script for files in ${WRKSRC}/README_FILES ${WRKSRC}/conf ${WRKSRC}/man
@@ -366,7 +394,7 @@ REINPLACE=	s!^PATH=.*!PATH=/bin:/sbin:/usr/bin:/usr/sbin:${PREFIX}/bin:${PREFIX}
 		\!^\#alias_database = dbm:/etc/mail/aliases$$!d;\
 		s!(:|= )/etc/postfix!\1$$config_directory!g;\
 		s!/etc/postfix!${ETCDIR}!g;\
-		s!^(sample_directory =)!\1 ${ETCDIR}!g; \
+		s!^(sample_directory =)!\1 ${ETCDIR}!g;\
 		s!($$config_directory/(access|aliases|canonical|generic|header_checks|relocated|transport|virtual):f:root:-:644:)p1!\1o!;
 
 post-patch:

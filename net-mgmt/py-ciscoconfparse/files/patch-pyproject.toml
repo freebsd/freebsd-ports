@@ -1,8 +1,11 @@
-Just use poetry-core and remove directives that are unknown for it.
+* Use the more lightweight py-poetry-core.
 
-Avoid the installation of the test suite into the top of Python's site-lib.
+* Avoid the installation of the test suite into the top of Python's site-lib.
 
---- pyproject.toml.orig	2023-10-29 15:08:28 UTC
+* Relax some version requirements and set an upper bound for py-hier-config
+  because the 3.x release contains breaking changes.
+
+--- pyproject.toml.orig	2024-11-22 10:15:59 UTC
 +++ pyproject.toml
 @@ -2,9 +2,8 @@
  
@@ -23,3 +26,15 @@ Avoid the installation of the test suite into the top of Python's site-lib.
  ]
  # See -> https://python-poetry.org/docs/pyproject/#include-and-exclude
  include = [
+@@ -80,9 +78,9 @@ dnspython = "^2.4.2"
+ python = ">=3.8,<4.0.0"
+ passlib = "^1.7.4"
+ dnspython = "^2.4.2"
+-loguru = "0.7.2"
++loguru = ">=0.7.2"
+ toml = ">=0.10.2"
+-hier_config = "2.2.3"
++hier_config = ">=2.2.3,<3"
+ deprecated = ">=1.2.14"
+ 
+ [tool.poetry.urls]

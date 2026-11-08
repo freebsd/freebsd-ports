@@ -1,0 +1,17 @@
+-- Do not install tests into site-packages top-level tests/ directory.
+
+--- meson.build.orig	2026-09-10 20:47:51 UTC
++++ meson.build
+@@ -68,12 +68,6 @@ py.install_sources(
+     subdir: 'ewah_bool_utils',
+ )
+ 
+-py.install_sources(
+-    'tests/__init__.py',
+-    'tests/test_ewah_bool_utils.py',
+-    subdir: 'tests',
+-)
+-
+ # include headers as easily locatable data files
+ # to allow yt to link from a wheel
+ install_data(

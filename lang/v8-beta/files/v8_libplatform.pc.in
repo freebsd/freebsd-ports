@@ -5,6 +5,6 @@ includedir=${prefix}/include
 
 Name: v8
 Description: V8 JavaScript Engine - Platform library
-Version: @VERSION@
+Version: %%PORTVERSION%%
 Libs: -L${libdir} -lv8_libplatform -pthread
 Cflags: -I${includedir}

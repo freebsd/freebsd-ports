@@ -1,18 +1,18 @@
 PORTNAME=	nvi
 PORTVERSION=	1.79.20040608
-PORTREVISION=	6
+PORTREVISION=	7
 PORTEPOCH=	1
 CATEGORIES?=	editors
-MASTER_SITES=	LOCAL/nyan \
-		http://people.allbsd.org/~hrs/FreeBSD/
+MASTER_SITES=	http://www.mirrorservice.org/sites/ftp.netbsd.org/pub/pkgsrc/distfiles/
 PKGNAMESUFFIX?=	-m17n
 DISTNAME=	nvi-1.79
 
 PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	nvi-m17n-1.79-20040608.diff.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mce@FreeBSD.org
 COMMENT=	Clone of vi/ex, with multilingual patch, no default settings
+WWW=		http://www.itojun.org/itojun.html
 
 LICENSE=	BSD4CLAUSE
 
@@ -22,7 +22,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/build
 USES=		ncurses perl5
 USE_PERL5=	run
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ENV=	OPTFLAG='-D_PATH_SYSEXRC=\"${PREFIX}/etc/vi.exrc\"' \
 		vi_cv_path_perl=${PERL}
 CONFIGURE_ARGS=	--program-prefix=n

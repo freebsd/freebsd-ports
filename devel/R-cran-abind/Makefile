@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Combine Multidimensional Arrays
-WWW=		https://cran.r-project.org/web/packages/abind/
+WWW=		https://cran.r-project.org/package=abind
 
 LICENSE=	MIT
 

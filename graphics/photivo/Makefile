@@ -20,12 +20,10 @@ LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 		libGraphicsMagick.so:graphics/GraphicsMagick \
 		libfftw3.so:math/fftw3
 
-USES=		cmake compiler:c++11-lib desktop-file-utils dos2unix \
+USES=		cmake compiler:c++11-lib desktop-file-utils \
 		gettext-runtime gnome jpeg pkgconfig qt:5 zip
 USE_GNOME=	glib20
 USE_QT=		qmake:build buildtools:build core gui network widgets
-DOS2UNIX_FILES=	Sources/ptImage.cpp Sources/ptCheck.cpp Sources/filemgmt/ptFileMgrWindow.h \
-		Sources/ptImageHelper.h Sources/ptMainWindow.h Sources/ptImageHelper.cpp
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -45,3 +43,5 @@ post-patch:
 		${WRKSRC}/Sources/ptDcRaw.cpp
 
 .include <bsd.port.mk>
+
+PATCH_ARGS+=	-l

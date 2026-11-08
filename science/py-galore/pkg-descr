@@ -1,0 +1,4 @@
+Galore is a Python tool for broadening and weighting simulated spectra.
+It applies Gaussian and Lorentzian broadening to density of states and
+other spectral data, and can weight them with photoionisation cross-sections
+to simulate XPS and HAXPES spectra.

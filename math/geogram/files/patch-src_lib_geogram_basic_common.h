@@ -26,7 +26,7 @@
 +#endif
 +
 +// The following works on GCC and ICC
-+#if defined(__x86_64)
++#if defined(__x86_64) || defined(__ppc64__) || defined(__arm64__) || defined(__aarch64__) || (defined(__riscv) && __riscv_xlen == 64)
 +#  define GEO_ARCH_64
 +#else
 +#  define GEO_ARCH_32

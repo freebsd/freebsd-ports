@@ -1,6 +1,6 @@
 PORTNAME=	wavetral
 DISTVERSION=	g20210517
-PORTREVISION=	13
+PORTREVISION=	15
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,6 +20,8 @@ USES=		cmake compiler:c++11-lang localbase:ldflags pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	jeanette-c
 GH_TAGNAME=	57290f2
+
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/jeanette-c/wavetral/issues/1
 
 PLIST_FILES=	bin/wavetral \
 		share/man/man1/wavetral.1.gz

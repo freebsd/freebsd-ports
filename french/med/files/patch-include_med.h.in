@@ -1,6 +1,25 @@
---- include/med.h.in.orig	2014-10-09 08:12:57 UTC
+--- include/med.h.in.orig	2025-05-15 15:20:19 UTC
 +++ include/med.h.in
-@@ -27,12 +27,7 @@ extern "C" {
+@@ -24,6 +24,18 @@
+ #include <stdint.h>   // Use the C99 official header
+ #endif
+ 
++/* Include mpi.h to fix the compilation for the consumers */
++/* Avoid conflict between Status in X11/Xlib.h and mpicxx.h with SKIP_MPICXX */
++/* FreeBSD: remove if MED_HAVE_MPI
++#ifndef MPICH_SKIP_MPICXX
++#define MPICH_SKIP_MPICXX
++#endif
++#ifndef OMPI_SKIP_MPICXX
++#define OMPI_SKIP_MPICXX
++#endif
++#include <mpi.h>
++FreeBSD: remove if MED_HAVE_MPI */
++
+ #ifdef __cplusplus
+ extern "C" {
+ #endif
+@@ -37,12 +49,7 @@ extern "C" {
  
  #define HDF5_VERSION (H5_VERS_MAJOR * 10000 + H5_VERS_MINOR * 100  + H5_VERS_RELEASE )
  

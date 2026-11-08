@@ -3,7 +3,7 @@ PORTVERSION=	1.1.5
 PORTREVISION=	3
 CATEGORIES=	net
 
-MAINTAINER=	crest@bultmann.eu
+MAINTAINER=	crest@rlwinm.de
 COMMENT=	Socket library that provides several common communication patterns
 WWW=		https://nanomsg.org/
 

@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Map Filenames to MIME Types
-WWW=		https://cran.r-project.org/web/packages/mime/
+WWW=		https://cran.r-project.org/package=mime
 
 LICENSE=	GPLv2+
 

@@ -1,0 +1,20 @@
+{
+  "name": "@napi-rs/keyring-freebsd-@JSARCH@",
+  "version": "@KEYRING_VERSION@",
+  "cpu": [
+    "@JSARCH@"
+  ],
+  "main": "keyring.freebsd-@JSARCH@.node",
+  "files": [
+    "keyring.freebsd-@JSARCH@.node"
+  ],
+  "description": "https://github.com/hwchen/keyring-rs Node.js binding via https://napi.rs",
+  "license": "MIT",
+  "engines": {
+    "node": ">= 10"
+  },
+  "repository": "https://github.com/Brooooooklyn/keyring-node",
+  "os": [
+    "freebsd"
+  ]
+}

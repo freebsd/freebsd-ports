@@ -1,6 +1,6 @@
-TIMESTAMP = 1775413774
-SHA256 (gnome/video-trimmer-26.03.tar.xz) = 04c1ba223cc2611aa9ebe7b8eb4fb2e0e2e0f81626664d94cda4bfd253ba9d47
-SIZE (gnome/video-trimmer-26.03.tar.xz) = 20365956
+TIMESTAMP = 1787928924
+SHA256 (gnome/video-trimmer-26.03.1.tar.xz) = 3916efbed62c6e2158c181beec300fa2473ceaaf6d462a69b36d3a8c7700fb84
+SIZE (gnome/video-trimmer-26.03.1.tar.xz) = 20368124
 SHA256 (gnome/rust/crates/aho-corasick-1.1.4.crate) = ddd31a130427c27518df266943a5308ed92d4b226cc639f5a8f1002816174301
 SIZE (gnome/rust/crates/aho-corasick-1.1.4.crate) = 184015
 SHA256 (gnome/rust/crates/autocfg-1.5.0.crate) = c08606f8c3cbf4ce6ec8e28fb0014a2c086708fe954eaa885384a6165172e7e8

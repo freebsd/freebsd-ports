@@ -1,0 +1,9 @@
+The cert_expiry module reads every file an ssl_certificate names, when the
+configuration is read and again on a timer, and reports how long the
+certificate still has: at warn level once it is close to its end, at error
+level once it has passed it.  cert_expiry_warn sets the threshold,
+cert_expiry_check the interval, and $ssl_expiry_days carries the days left
+into a log format.
+
+This port only installs the module sources.  The module itself is built by
+the nginx ports when their CERT_EXPIRY option is enabled.

@@ -1,6 +1,6 @@
---- chrome/browser/printing/print_test_utils.cc.orig	2026-02-16 10:45:29 UTC
+--- chrome/browser/printing/print_test_utils.cc.orig	2026-08-13 16:48:13 UTC
 +++ chrome/browser/printing/print_test_utils.cc
-@@ -130,7 +130,7 @@ std::unique_ptr<PrintSettings> MakeUserModifiedPrintSe
+@@ -138,7 +138,7 @@ std::unique_ptr<PrintSettings> MakeUserModifiedPrintSe
      data.Set(kMacSystemPrintDialogDataPrintSettings,
               base::Value::BlobStorage({0xB2}));
  

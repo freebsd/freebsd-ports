@@ -26,8 +26,6 @@ USE_PYTHON=	distutils cython unittest # few tests fail, see https://github.com/d
 USE_GITHUB=	yes
 GH_ACCOUNT=	dwavesystems
 
-TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
-
 NO_ARCH=	yes
 
 post-install:
@@ -35,5 +33,15 @@ post-install:
 	@${RM} -r \
 		${STAGEDIR}${PYTHON_SITELIBDIR}/dwave/__init__.py \
 		${STAGEDIR}${PYTHON_SITELIBDIR}/dwave/__pycache__
+
+TEST_ENV=	${MAKE_ENV} \
+		LD_LIBRARY_PATH=/usr/lib:/lib:${LOCALBASE}/lib/gcc14 \
+		PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+
+do-test:
+	@cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m unittest -v \
+		tests.test_config tests.test_proxies tests.test_utils tests.test_viewers
+
+# tests as of 0.5.5: 50 tests, OK in 1.130s
 
 .include <bsd.port.mk>

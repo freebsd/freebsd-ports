@@ -86,6 +86,7 @@
     SUBDIR += chordpack
     SUBDIR += chromaprint
     SUBDIR += cli-visualizer
+    SUBDIR += cliamp
     SUBDIR += clunk
     SUBDIR += cmt
     SUBDIR += cmus
@@ -100,6 +101,7 @@
     SUBDIR += darkice
     SUBDIR += dcd
     SUBDIR += deadbeef
+    SUBDIR += deadbeef-gui-plugins
     SUBDIR += deadbeef-jack-plugin
     SUBDIR += deadbeef-mpris2-plugin
     SUBDIR += deadbeef-musical-spectrum-plugin
@@ -108,7 +110,6 @@
     SUBDIR += deadbeef-spectrogram-plugin
     SUBDIR += deadbeef-vu-meter-plugin
     SUBDIR += deadbeef-waveform-seekbar-plugin
-    SUBDIR += denemo
     SUBDIR += dexed
     SUBDIR += dgedit
     SUBDIR += din
@@ -125,15 +126,18 @@
     SUBDIR += dtmfdial
     SUBDIR += dumb
     SUBDIR += dumb-allegro
+    SUBDIR += easyeffects
     SUBDIR += easytag
     SUBDIR += eawpats
     SUBDIR += eawplus
     SUBDIR += ebumeter
     SUBDIR += ebur128
     SUBDIR += ecasound
+    SUBDIR += elevenlabs-cli
     SUBDIR += elisa
     SUBDIR += emms
     SUBDIR += enscribe
+    SUBDIR += entropypianotuner
     SUBDIR += eq10q-lv2
     SUBDIR += espeak-ng
     SUBDIR += espressivo-lv2
@@ -360,7 +364,6 @@
     SUBDIR += libinstpatch
     SUBDIR += libkcddb
     SUBDIR += libkeyfinder
-    SUBDIR += liblastfm
     SUBDIR += liblo
     SUBDIR += liblscp
     SUBDIR += libltc
@@ -430,6 +433,7 @@
     SUBDIR += liquidsfz
     SUBDIR += listener
     SUBDIR += littlefly-lv2
+    SUBDIR += lmms
     SUBDIR += lollypop
     SUBDIR += lpcnet
     SUBDIR += lsp-plugins-lv2
@@ -448,6 +452,7 @@
     SUBDIR += malint
     SUBDIR += mamba
     SUBDIR += maolan
+    SUBDIR += maolan-plugins
     SUBDIR += mate-media
     SUBDIR += mclk-lv2
     SUBDIR += mda-lv2
@@ -503,7 +508,6 @@
     SUBDIR += muse-sequencer
     SUBDIR += musepack
     SUBDIR += musescore
-    SUBDIR += musescore3
     SUBDIR += musiccontrol
     SUBDIR += musicpc
     SUBDIR += musicpd
@@ -606,6 +610,9 @@
     SUBDIR += plasma6-ocean-sound-theme
     SUBDIR += plasma6-oxygen-sounds
     SUBDIR += plasma6-plasma-pa
+    SUBDIR += plasma6lts-kpipewire
+    SUBDIR += plasma6lts-ocean-sound-theme
+    SUBDIR += plasma6lts-plasma-pa
     SUBDIR += playgsf
     SUBDIR += playmidi
     SUBDIR += playumidi
@@ -630,6 +637,7 @@
     SUBDIR += py-al
     SUBDIR += py-apetag
     SUBDIR += py-aubio
+    SUBDIR += py-audioop-lts
     SUBDIR += py-audioread
     SUBDIR += py-auditok
     SUBDIR += py-discid
@@ -648,7 +656,6 @@
     SUBDIR += py-mutagen
     SUBDIR += py-opuslib
     SUBDIR += py-playsound
-    SUBDIR += py-pocketsphinx
     SUBDIR += py-pulsectl
     SUBDIR += py-pyacoustid
     SUBDIR += py-pyaudio
@@ -671,6 +678,7 @@
     SUBDIR += py-soxr
     SUBDIR += py-speechrecognition
     SUBDIR += py-spotipy
+    SUBDIR += py-standard-aifc
     SUBDIR += py-supysonic
     SUBDIR += py-tinytag
     SUBDIR += py-torchaudio
@@ -726,6 +734,7 @@
     SUBDIR += screcord-lv2
     SUBDIR += sdl2_mixer
     SUBDIR += sdl2_sound
+    SUBDIR += sdl3_mixer
     SUBDIR += sdl_audiolib
     SUBDIR += sdl_mixer
     SUBDIR += sdl_sound
@@ -778,7 +787,6 @@
     SUBDIR += squeezelite
     SUBDIR += sratom
     SUBDIR += ssr-lv2
-    SUBDIR += stegosaurus-lv2
     SUBDIR += stk
     SUBDIR += stone-phaser-lv2
     SUBDIR += strawberry

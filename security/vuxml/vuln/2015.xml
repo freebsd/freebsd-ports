@@ -12420,7 +12420,7 @@
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Russell Jenkins reports:</p>
-	<blockquote cite="INSERT URL HERE">
+	<blockquote cite="http://lists.preshweb.co.uk/pipermail/dancer-users/2015-June/004621.html">
 	  <p>It was possible to abuse session cookie values so that
 	    file-based session stores such as Dancer::Session::YAML or
 	    Dancer2::Session::YAML would attempt to read/write from

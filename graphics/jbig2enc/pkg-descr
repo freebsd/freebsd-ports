@@ -1,0 +1,8 @@
+JBIG2 encodes bi-level (1 bpp) images using a number of clever tricks
+to get better compression than G4. This encoder can:
+
+- Generate JBIG2 files, or fragments for embedding in PDFs
+- Generic region encoding
+- Perform symbol extraction, classification and text region coding
+- Perform refinement coding and,
+- Compress multipage documents

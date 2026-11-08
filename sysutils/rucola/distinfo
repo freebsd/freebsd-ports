@@ -1,4 +1,4 @@
-TIMESTAMP = 1776702772
+TIMESTAMP = 1785949446
 SHA256 (rust/crates/addr2line-0.25.1.crate) = 1b5d307320b3181d6d7954e663bd7c774a838b8220fe0593c86d9fb09f498b4b
 SIZE (rust/crates/addr2line-0.25.1.crate) = 43134
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
@@ -771,5 +771,5 @@ SHA256 (rust/crates/zerovec-derive-0.11.3.crate) = 625dc425cab0dca6dc3c3319506e6
 SIZE (rust/crates/zerovec-derive-0.11.3.crate) = 22115
 SHA256 (rust/crates/zmij-1.0.21.crate) = b8848ee67ecc8aedbaf3e4122217aff892639231befc6a1b58d29fff4c2cabaa
 SIZE (rust/crates/zmij-1.0.21.crate) = 26665
-SHA256 (Linus-Mussmaecher-rucola-v0.9.0_GH0.tar.gz) = 7a1e857dd0d4cab09d9471779ee3654a855781111b20c8a3064409e3b54898a8
-SIZE (Linus-Mussmaecher-rucola-v0.9.0_GH0.tar.gz) = 244029
+SHA256 (Linus-Mussmaecher-rucola-v0.10.0_GH0.tar.gz) = afe89fbd51832fa69851b3f0a775f470326f3d583224c2b229a2e0ee49accbf8
+SIZE (Linus-Mussmaecher-rucola-v0.10.0_GH0.tar.gz) = 247381

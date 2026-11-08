@@ -401,6 +401,7 @@ include/wine/windows/d3d10.idl
 include/wine/windows/d3d10_1.h
 include/wine/windows/d3d10_1.idl
 include/wine/windows/d3d10_1shader.h
+include/wine/windows/d3d10_1shader.idl
 include/wine/windows/d3d10effect.h
 include/wine/windows/d3d10effect.idl
 include/wine/windows/d3d10misc.h
@@ -676,6 +677,8 @@ include/wine/windows/fileapi.h
 include/wine/windows/filter.h
 include/wine/windows/filter.idl
 include/wine/windows/fltdefs.h
+include/wine/windows/fltuser.h
+include/wine/windows/fltuserstructures.h
 include/wine/windows/fontsub.h
 include/wine/windows/fusion.h
 include/wine/windows/fusion.idl
@@ -940,6 +943,8 @@ include/wine/windows/netlistmgr.h
 include/wine/windows/netlistmgr.idl
 include/wine/windows/newdev.h
 include/wine/windows/nldef.h
+include/wine/windows/notificationactivationcallback.h
+include/wine/windows/notificationactivationcallback.idl
 include/wine/windows/npapi.h
 include/wine/windows/nserror.h
 include/wine/windows/nspapi.h
@@ -1931,7 +1936,15 @@ lib/wine/i386-windows/libd3d12.a
 lib/wine/i386-windows/libd3d8.a
 lib/wine/i386-windows/libd3d9.a
 lib/wine/i386-windows/libd3dcompiler.a
+lib/wine/i386-windows/libd3dcompiler_33.a
+lib/wine/i386-windows/libd3dcompiler_34.a
+lib/wine/i386-windows/libd3dcompiler_35.a
+lib/wine/i386-windows/libd3dcompiler_36.a
+lib/wine/i386-windows/libd3dcompiler_37.a
+lib/wine/i386-windows/libd3dcompiler_38.a
 lib/wine/i386-windows/libd3dcompiler_39.a
+lib/wine/i386-windows/libd3dcompiler_40.a
+lib/wine/i386-windows/libd3dcompiler_41.a
 lib/wine/i386-windows/libd3dcompiler_42.a
 lib/wine/i386-windows/libd3dcompiler_43.a
 lib/wine/i386-windows/libd3dcompiler_46.a
@@ -2091,7 +2104,6 @@ lib/wine/i386-windows/libsxs.a
 lib/wine/i386-windows/libt2embed.a
 lib/wine/i386-windows/libtapi32.a
 lib/wine/i386-windows/libtdh.a
-lib/wine/i386-windows/libtwaindsm.a
 lib/wine/i386-windows/libucrtbase.a
 lib/wine/i386-windows/libuiautomationcore.a
 lib/wine/i386-windows/libunicows.a
@@ -2170,6 +2182,7 @@ lib/wine/i386-windows/mfplat.dll
 lib/wine/i386-windows/mfplay.dll
 lib/wine/i386-windows/mfreadwrite.dll
 lib/wine/i386-windows/mfsrcsnk.dll
+lib/wine/i386-windows/mfwmaaec.dll
 lib/wine/i386-windows/mgmtapi.dll
 lib/wine/i386-windows/midimap.dll
 lib/wine/i386-windows/mlang.dll
@@ -2572,7 +2585,7 @@ lib/wine/i386-windows/wineps16.drv16
 lib/wine/i386-windows/wineusb.sys
 lib/wine/i386-windows/winevdm.exe
 lib/wine/i386-windows/winevulkan.dll
-lib/wine/i386-windows/winewayland.drv
+%%WAYLAND%%lib/wine/i386-windows/winewayland.drv
 lib/wine/i386-windows/winex11.drv
 lib/wine/i386-windows/winexinput.sys
 lib/wine/i386-windows/wing.dll16
@@ -2619,6 +2632,7 @@ lib/wine/i386-windows/wofutil.dll
 lib/wine/i386-windows/wordpad.exe
 lib/wine/i386-windows/wow32.dll
 lib/wine/i386-windows/wpc.dll
+lib/wine/i386-windows/wpnapps.dll
 lib/wine/i386-windows/write.exe
 lib/wine/i386-windows/ws2_32.dll
 lib/wine/i386-windows/wscript.exe
@@ -2721,10 +2735,17 @@ lib/wine/%%WINEARCH%%-unix/libd3d10_1.a
 lib/wine/%%WINEARCH%%-unix/libd3d10core.a
 lib/wine/%%WINEARCH%%-unix/libd3d11.a
 lib/wine/%%WINEARCH%%-unix/libd3d12.a
-lib/wine/%%WINEARCH%%-unix/libd3d8.a
 lib/wine/%%WINEARCH%%-unix/libd3d9.a
 lib/wine/%%WINEARCH%%-unix/libd3dcompiler.a
+lib/wine/%%WINEARCH%%-unix/libd3dcompiler_33.a
+lib/wine/%%WINEARCH%%-unix/libd3dcompiler_34.a
+lib/wine/%%WINEARCH%%-unix/libd3dcompiler_35.a
+lib/wine/%%WINEARCH%%-unix/libd3dcompiler_36.a
+lib/wine/%%WINEARCH%%-unix/libd3dcompiler_37.a
+lib/wine/%%WINEARCH%%-unix/libd3dcompiler_38.a
 lib/wine/%%WINEARCH%%-unix/libd3dcompiler_39.a
+lib/wine/%%WINEARCH%%-unix/libd3dcompiler_40.a
+lib/wine/%%WINEARCH%%-unix/libd3dcompiler_41.a
 lib/wine/%%WINEARCH%%-unix/libd3dcompiler_42.a
 lib/wine/%%WINEARCH%%-unix/libd3dcompiler_43.a
 lib/wine/%%WINEARCH%%-unix/libd3dcompiler_46.a
@@ -2756,7 +2777,6 @@ lib/wine/%%WINEARCH%%-unix/libdinput.a
 lib/wine/%%WINEARCH%%-unix/libdinput8.a
 lib/wine/%%WINEARCH%%-unix/libdmoguids.a
 lib/wine/%%WINEARCH%%-unix/libdnsapi.a
-lib/wine/%%WINEARCH%%-unix/libdplayx.a
 lib/wine/%%WINEARCH%%-unix/libdpnet.a
 lib/wine/%%WINEARCH%%-unix/libdsound.a
 lib/wine/%%WINEARCH%%-unix/libdwmapi.a
@@ -2814,12 +2834,9 @@ lib/wine/%%WINEARCH%%-unix/libmsvcp140.a
 lib/wine/%%WINEARCH%%-unix/libmsvcr100.a
 lib/wine/%%WINEARCH%%-unix/libmsvcr110.a
 lib/wine/%%WINEARCH%%-unix/libmsvcr120.a
-lib/wine/%%WINEARCH%%-unix/libmsvcr70.a
-lib/wine/%%WINEARCH%%-unix/libmsvcr71.a
 lib/wine/%%WINEARCH%%-unix/libmsvcr80.a
 lib/wine/%%WINEARCH%%-unix/libmsvcr90.a
 lib/wine/%%WINEARCH%%-unix/libmsvcrt.a
-lib/wine/%%WINEARCH%%-unix/libmsvcrtd.a
 lib/wine/%%WINEARCH%%-unix/libmsvfw32.a
 lib/wine/%%WINEARCH%%-unix/libmswsock.a
 lib/wine/%%WINEARCH%%-unix/libncrypt.a
@@ -2839,9 +2856,7 @@ lib/wine/%%WINEARCH%%-unix/libodbccp32.a
 lib/wine/%%WINEARCH%%-unix/libole32.a
 lib/wine/%%WINEARCH%%-unix/liboleacc.a
 lib/wine/%%WINEARCH%%-unix/liboleaut32.a
-lib/wine/%%WINEARCH%%-unix/libolecli32.a
 lib/wine/%%WINEARCH%%-unix/liboledlg.a
-lib/wine/%%WINEARCH%%-unix/libolepro32.a
 lib/wine/%%WINEARCH%%-unix/libolesvr32.a
 lib/wine/%%WINEARCH%%-unix/libopengl32.a
 lib/wine/%%WINEARCH%%-unix/libpdh.a
@@ -2883,10 +2898,8 @@ lib/wine/%%WINEARCH%%-unix/libsxs.a
 lib/wine/%%WINEARCH%%-unix/libt2embed.a
 lib/wine/%%WINEARCH%%-unix/libtapi32.a
 lib/wine/%%WINEARCH%%-unix/libtdh.a
-lib/wine/%%WINEARCH%%-unix/libtwaindsm.a
 lib/wine/%%WINEARCH%%-unix/libucrtbase.a
 lib/wine/%%WINEARCH%%-unix/libuiautomationcore.a
-lib/wine/%%WINEARCH%%-unix/libunicows.a
 lib/wine/%%WINEARCH%%-unix/liburl.a
 lib/wine/%%WINEARCH%%-unix/liburlmon.a
 lib/wine/%%WINEARCH%%-unix/libusbd.a
@@ -2896,7 +2909,6 @@ lib/wine/%%WINEARCH%%-unix/libusp10.a
 lib/wine/%%WINEARCH%%-unix/libuuid.a
 lib/wine/%%WINEARCH%%-unix/libuxtheme.a
 lib/wine/%%WINEARCH%%-unix/libvcruntime140.a
-lib/wine/%%WINEARCH%%-unix/libvdmdbg.a
 lib/wine/%%WINEARCH%%-unix/libversion.a
 lib/wine/%%WINEARCH%%-unix/libvulkan-1.a
 lib/wine/%%WINEARCH%%-unix/libwbemuuid.a
@@ -2909,7 +2921,7 @@ lib/wine/%%WINEARCH%%-unix/libwindowscodecsext.a
 lib/wine/%%WINEARCH%%-unix/libwinecrt0.a
 lib/wine/%%WINEARCH%%-unix/libwined3d.a
 lib/wine/%%WINEARCH%%-unix/libwinedmo.a
-%%GSTREAMER%%lib/wine/%%WINEARCH%%-unix/libwinegstreamer.a
+lib/wine/%%WINEARCH%%-unix/libwinegstreamer.a
 lib/wine/%%WINEARCH%%-unix/libwinevulkan.a
 lib/wine/%%WINEARCH%%-unix/libwing32.a
 lib/wine/%%WINEARCH%%-unix/libwinhttp.a
@@ -2951,6 +2963,7 @@ lib/wine/%%WINEARCH%%-unix/wine
 %%ALSA%%lib/wine/%%WINEARCH%%-unix/winealsa.so
 lib/wine/%%WINEARCH%%-unix/winebth.so
 lib/wine/%%WINEARCH%%-unix/winebus.so
+lib/wine/%%WINEARCH%%-unix/wined3d.so
 lib/wine/%%WINEARCH%%-unix/winedmo.so
 %%GSTREAMER%%lib/wine/%%WINEARCH%%-unix/winegstreamer.so
 %%OSS%%lib/wine/%%WINEARCH%%-unix/wineoss.so
@@ -2958,7 +2971,7 @@ lib/wine/%%WINEARCH%%-unix/wineps.so
 %%PULSEAUDIO%%lib/wine/%%WINEARCH%%-unix/winepulse.so
 lib/wine/%%WINEARCH%%-unix/wineusb.so
 lib/wine/%%WINEARCH%%-unix/winevulkan.so
-lib/wine/%%WINEARCH%%-unix/winewayland.so
+%%WAYLAND%%lib/wine/%%WINEARCH%%-unix/winewayland.so
 lib/wine/%%WINEARCH%%-unix/winex11.so
 lib/wine/%%WINEARCH%%-unix/winspool.so
 lib/wine/%%WINEARCH%%-unix/ws2_32.so
@@ -3027,7 +3040,6 @@ lib/wine/%%WINEARCH%%-windows/connect.dll
 lib/wine/%%WINEARCH%%-windows/control.exe
 lib/wine/%%WINEARCH%%-windows/coremessaging.dll
 lib/wine/%%WINEARCH%%-windows/credui.dll
-lib/wine/%%WINEARCH%%-windows/crtdll.dll
 lib/wine/%%WINEARCH%%-windows/crypt32.dll
 lib/wine/%%WINEARCH%%-windows/cryptbase.dll
 lib/wine/%%WINEARCH%%-windows/cryptdlg.dll
@@ -3040,7 +3052,6 @@ lib/wine/%%WINEARCH%%-windows/cryptui.dll
 lib/wine/%%WINEARCH%%-windows/cryptxml.dll
 lib/wine/%%WINEARCH%%-windows/cscript.exe
 lib/wine/%%WINEARCH%%-windows/ctapi32.dll
-lib/wine/%%WINEARCH%%-windows/ctl3d32.dll
 lib/wine/%%WINEARCH%%-windows/d2d1.dll
 lib/wine/%%WINEARCH%%-windows/d3d10.dll
 lib/wine/%%WINEARCH%%-windows/d3d10_1.dll
@@ -3048,7 +3059,6 @@ lib/wine/%%WINEARCH%%-windows/d3d10core.dll
 lib/wine/%%WINEARCH%%-windows/d3d11.dll
 lib/wine/%%WINEARCH%%-windows/d3d12.dll
 lib/wine/%%WINEARCH%%-windows/d3d12core.dll
-lib/wine/%%WINEARCH%%-windows/d3d8.dll
 lib/wine/%%WINEARCH%%-windows/d3d8thk.dll
 lib/wine/%%WINEARCH%%-windows/d3d9.dll
 lib/wine/%%WINEARCH%%-windows/d3dcompiler_33.dll
@@ -3064,8 +3074,6 @@ lib/wine/%%WINEARCH%%-windows/d3dcompiler_42.dll
 lib/wine/%%WINEARCH%%-windows/d3dcompiler_43.dll
 lib/wine/%%WINEARCH%%-windows/d3dcompiler_46.dll
 lib/wine/%%WINEARCH%%-windows/d3dcompiler_47.dll
-lib/wine/%%WINEARCH%%-windows/d3dim.dll
-lib/wine/%%WINEARCH%%-windows/d3dim700.dll
 lib/wine/%%WINEARCH%%-windows/d3drm.dll
 lib/wine/%%WINEARCH%%-windows/d3dx10_33.dll
 lib/wine/%%WINEARCH%%-windows/d3dx10_34.dll
@@ -3122,19 +3130,12 @@ lib/wine/%%WINEARCH%%-windows/directmanipulation.dll
 lib/wine/%%WINEARCH%%-windows/dism.exe
 lib/wine/%%WINEARCH%%-windows/dispex.dll
 lib/wine/%%WINEARCH%%-windows/dllhost.exe
-lib/wine/%%WINEARCH%%-windows/dmband.dll
-lib/wine/%%WINEARCH%%-windows/dmcompos.dll
-lib/wine/%%WINEARCH%%-windows/dmime.dll
 lib/wine/%%WINEARCH%%-windows/dmloader.dll
-lib/wine/%%WINEARCH%%-windows/dmscript.dll
-lib/wine/%%WINEARCH%%-windows/dmstyle.dll
 lib/wine/%%WINEARCH%%-windows/dmsynth.dll
 lib/wine/%%WINEARCH%%-windows/dmusic.dll
 lib/wine/%%WINEARCH%%-windows/dmusic32.dll
 lib/wine/%%WINEARCH%%-windows/dnsapi.dll
-lib/wine/%%WINEARCH%%-windows/dplay.dll
 lib/wine/%%WINEARCH%%-windows/dplaysvr.exe
-lib/wine/%%WINEARCH%%-windows/dplayx.dll
 lib/wine/%%WINEARCH%%-windows/dpnaddr.dll
 lib/wine/%%WINEARCH%%-windows/dpnet.dll
 lib/wine/%%WINEARCH%%-windows/dpnhpast.dll
@@ -3143,7 +3144,6 @@ lib/wine/%%WINEARCH%%-windows/dpnlobby.dll
 lib/wine/%%WINEARCH%%-windows/dpnsvr.exe
 lib/wine/%%WINEARCH%%-windows/dpvoice.dll
 lib/wine/%%WINEARCH%%-windows/dpvsetup.exe
-lib/wine/%%WINEARCH%%-windows/dpwsockx.dll
 lib/wine/%%WINEARCH%%-windows/drmclien.dll
 lib/wine/%%WINEARCH%%-windows/dsdmo.dll
 lib/wine/%%WINEARCH%%-windows/dsound.dll
@@ -3204,7 +3204,6 @@ lib/wine/%%WINEARCH%%-windows/httpapi.dll
 lib/wine/%%WINEARCH%%-windows/hvsimanagementapi.dll
 lib/wine/%%WINEARCH%%-windows/ia2comproxy.dll
 lib/wine/%%WINEARCH%%-windows/icacls.exe
-lib/wine/%%WINEARCH%%-windows/iccvid.dll
 lib/wine/%%WINEARCH%%-windows/icinfo.exe
 lib/wine/%%WINEARCH%%-windows/icmp.dll
 lib/wine/%%WINEARCH%%-windows/icmui.dll
@@ -3227,7 +3226,6 @@ lib/wine/%%WINEARCH%%-windows/inkobj.dll
 lib/wine/%%WINEARCH%%-windows/inseng.dll
 lib/wine/%%WINEARCH%%-windows/ipconfig.exe
 lib/wine/%%WINEARCH%%-windows/iphlpapi.dll
-lib/wine/%%WINEARCH%%-windows/iprop.dll
 lib/wine/%%WINEARCH%%-windows/ir50_32.dll
 lib/wine/%%WINEARCH%%-windows/irprops.cpl
 lib/wine/%%WINEARCH%%-windows/itircl.dll
@@ -3287,10 +3285,17 @@ lib/wine/%%WINEARCH%%-windows/libd3d10_1.a
 lib/wine/%%WINEARCH%%-windows/libd3d10core.a
 lib/wine/%%WINEARCH%%-windows/libd3d11.a
 lib/wine/%%WINEARCH%%-windows/libd3d12.a
-lib/wine/%%WINEARCH%%-windows/libd3d8.a
 lib/wine/%%WINEARCH%%-windows/libd3d9.a
 lib/wine/%%WINEARCH%%-windows/libd3dcompiler.a
+lib/wine/%%WINEARCH%%-windows/libd3dcompiler_33.a
+lib/wine/%%WINEARCH%%-windows/libd3dcompiler_34.a
+lib/wine/%%WINEARCH%%-windows/libd3dcompiler_35.a
+lib/wine/%%WINEARCH%%-windows/libd3dcompiler_36.a
+lib/wine/%%WINEARCH%%-windows/libd3dcompiler_37.a
+lib/wine/%%WINEARCH%%-windows/libd3dcompiler_38.a
 lib/wine/%%WINEARCH%%-windows/libd3dcompiler_39.a
+lib/wine/%%WINEARCH%%-windows/libd3dcompiler_40.a
+lib/wine/%%WINEARCH%%-windows/libd3dcompiler_41.a
 lib/wine/%%WINEARCH%%-windows/libd3dcompiler_42.a
 lib/wine/%%WINEARCH%%-windows/libd3dcompiler_43.a
 lib/wine/%%WINEARCH%%-windows/libd3dcompiler_46.a
@@ -3322,7 +3327,6 @@ lib/wine/%%WINEARCH%%-windows/libdinput.a
 lib/wine/%%WINEARCH%%-windows/libdinput8.a
 lib/wine/%%WINEARCH%%-windows/libdmoguids.a
 lib/wine/%%WINEARCH%%-windows/libdnsapi.a
-lib/wine/%%WINEARCH%%-windows/libdplayx.a
 lib/wine/%%WINEARCH%%-windows/libdpnet.a
 lib/wine/%%WINEARCH%%-windows/libdsound.a
 lib/wine/%%WINEARCH%%-windows/libdwmapi.a
@@ -3380,12 +3384,9 @@ lib/wine/%%WINEARCH%%-windows/libmsvcp140.a
 lib/wine/%%WINEARCH%%-windows/libmsvcr100.a
 lib/wine/%%WINEARCH%%-windows/libmsvcr110.a
 lib/wine/%%WINEARCH%%-windows/libmsvcr120.a
-lib/wine/%%WINEARCH%%-windows/libmsvcr70.a
-lib/wine/%%WINEARCH%%-windows/libmsvcr71.a
 lib/wine/%%WINEARCH%%-windows/libmsvcr80.a
 lib/wine/%%WINEARCH%%-windows/libmsvcr90.a
 lib/wine/%%WINEARCH%%-windows/libmsvcrt.a
-lib/wine/%%WINEARCH%%-windows/libmsvcrtd.a
 lib/wine/%%WINEARCH%%-windows/libmsvfw32.a
 lib/wine/%%WINEARCH%%-windows/libmswsock.a
 lib/wine/%%WINEARCH%%-windows/libncrypt.a
@@ -3405,9 +3406,7 @@ lib/wine/%%WINEARCH%%-windows/libodbccp32.a
 lib/wine/%%WINEARCH%%-windows/libole32.a
 lib/wine/%%WINEARCH%%-windows/liboleacc.a
 lib/wine/%%WINEARCH%%-windows/liboleaut32.a
-lib/wine/%%WINEARCH%%-windows/libolecli32.a
 lib/wine/%%WINEARCH%%-windows/liboledlg.a
-lib/wine/%%WINEARCH%%-windows/libolepro32.a
 lib/wine/%%WINEARCH%%-windows/libolesvr32.a
 lib/wine/%%WINEARCH%%-windows/libopengl32.a
 lib/wine/%%WINEARCH%%-windows/libpdh.a
@@ -3449,10 +3448,8 @@ lib/wine/%%WINEARCH%%-windows/libsxs.a
 lib/wine/%%WINEARCH%%-windows/libt2embed.a
 lib/wine/%%WINEARCH%%-windows/libtapi32.a
 lib/wine/%%WINEARCH%%-windows/libtdh.a
-lib/wine/%%WINEARCH%%-windows/libtwaindsm.a
 lib/wine/%%WINEARCH%%-windows/libucrtbase.a
 lib/wine/%%WINEARCH%%-windows/libuiautomationcore.a
-lib/wine/%%WINEARCH%%-windows/libunicows.a
 lib/wine/%%WINEARCH%%-windows/liburl.a
 lib/wine/%%WINEARCH%%-windows/liburlmon.a
 lib/wine/%%WINEARCH%%-windows/libusbd.a
@@ -3462,7 +3459,6 @@ lib/wine/%%WINEARCH%%-windows/libusp10.a
 lib/wine/%%WINEARCH%%-windows/libuuid.a
 lib/wine/%%WINEARCH%%-windows/libuxtheme.a
 lib/wine/%%WINEARCH%%-windows/libvcruntime140.a
-lib/wine/%%WINEARCH%%-windows/libvdmdbg.a
 lib/wine/%%WINEARCH%%-windows/libversion.a
 lib/wine/%%WINEARCH%%-windows/libvulkan-1.a
 lib/wine/%%WINEARCH%%-windows/libwbemuuid.a
@@ -3506,6 +3502,7 @@ lib/wine/%%WINEARCH%%-windows/loadperf.dll
 lib/wine/%%WINEARCH%%-windows/localspl.dll
 lib/wine/%%WINEARCH%%-windows/localui.dll
 lib/wine/%%WINEARCH%%-windows/lodctr.exe
+lib/wine/%%WINEARCH%%-windows/lsass.exe
 lib/wine/%%WINEARCH%%-windows/lz32.dll
 lib/wine/%%WINEARCH%%-windows/magnification.dll
 lib/wine/%%WINEARCH%%-windows/makecab.exe
@@ -3527,6 +3524,7 @@ lib/wine/%%WINEARCH%%-windows/mfplat.dll
 lib/wine/%%WINEARCH%%-windows/mfplay.dll
 lib/wine/%%WINEARCH%%-windows/mfreadwrite.dll
 lib/wine/%%WINEARCH%%-windows/mfsrcsnk.dll
+lib/wine/%%WINEARCH%%-windows/mfwmaaec.dll
 lib/wine/%%WINEARCH%%-windows/mgmtapi.dll
 lib/wine/%%WINEARCH%%-windows/midimap.dll
 lib/wine/%%WINEARCH%%-windows/mlang.dll
@@ -3578,7 +3576,6 @@ lib/wine/%%WINEARCH%%-windows/msnet32.dll
 lib/wine/%%WINEARCH%%-windows/mspatcha.dll
 lib/wine/%%WINEARCH%%-windows/msports.dll
 lib/wine/%%WINEARCH%%-windows/msrle32.dll
-lib/wine/%%WINEARCH%%-windows/msscript.ocx
 lib/wine/%%WINEARCH%%-windows/mssign32.dll
 lib/wine/%%WINEARCH%%-windows/mssip32.dll
 lib/wine/%%WINEARCH%%-windows/mstask.dll
@@ -3597,8 +3594,6 @@ lib/wine/%%WINEARCH%%-windows/msvcp140_2.dll
 lib/wine/%%WINEARCH%%-windows/msvcp140_atomic_wait.dll
 lib/wine/%%WINEARCH%%-windows/msvcp140_codecvt_ids.dll
 lib/wine/%%WINEARCH%%-windows/msvcp60.dll
-lib/wine/%%WINEARCH%%-windows/msvcp70.dll
-lib/wine/%%WINEARCH%%-windows/msvcp71.dll
 lib/wine/%%WINEARCH%%-windows/msvcp80.dll
 lib/wine/%%WINEARCH%%-windows/msvcp90.dll
 lib/wine/%%WINEARCH%%-windows/msvcp_win.dll
@@ -3606,14 +3601,9 @@ lib/wine/%%WINEARCH%%-windows/msvcr100.dll
 lib/wine/%%WINEARCH%%-windows/msvcr110.dll
 lib/wine/%%WINEARCH%%-windows/msvcr120.dll
 lib/wine/%%WINEARCH%%-windows/msvcr120_app.dll
-lib/wine/%%WINEARCH%%-windows/msvcr70.dll
-lib/wine/%%WINEARCH%%-windows/msvcr71.dll
 lib/wine/%%WINEARCH%%-windows/msvcr80.dll
 lib/wine/%%WINEARCH%%-windows/msvcr90.dll
 lib/wine/%%WINEARCH%%-windows/msvcrt.dll
-lib/wine/%%WINEARCH%%-windows/msvcrt20.dll
-lib/wine/%%WINEARCH%%-windows/msvcrt40.dll
-lib/wine/%%WINEARCH%%-windows/msvcrtd.dll
 lib/wine/%%WINEARCH%%-windows/msvdsp.dll
 lib/wine/%%WINEARCH%%-windows/msvfw32.dll
 lib/wine/%%WINEARCH%%-windows/msvidc32.dll
@@ -3659,12 +3649,9 @@ lib/wine/%%WINEARCH%%-windows/odbccu32.dll
 lib/wine/%%WINEARCH%%-windows/ole32.dll
 lib/wine/%%WINEARCH%%-windows/oleacc.dll
 lib/wine/%%WINEARCH%%-windows/oleaut32.dll
-lib/wine/%%WINEARCH%%-windows/olecli32.dll
 lib/wine/%%WINEARCH%%-windows/oledb32.dll
 lib/wine/%%WINEARCH%%-windows/oledlg.dll
-lib/wine/%%WINEARCH%%-windows/olepro32.dll
 lib/wine/%%WINEARCH%%-windows/olesvr32.dll
-lib/wine/%%WINEARCH%%-windows/olethk32.dll
 lib/wine/%%WINEARCH%%-windows/oleview.exe
 lib/wine/%%WINEARCH%%-windows/opcservices.dll
 lib/wine/%%WINEARCH%%-windows/opengl32.dll
@@ -3797,7 +3784,6 @@ lib/wine/%%WINEARCH%%-windows/ucrtbase.dll
 lib/wine/%%WINEARCH%%-windows/uianimation.dll
 lib/wine/%%WINEARCH%%-windows/uiautomationcore.dll
 lib/wine/%%WINEARCH%%-windows/uiribbon.dll
-lib/wine/%%WINEARCH%%-windows/unicows.dll
 lib/wine/%%WINEARCH%%-windows/uninstaller.exe
 lib/wine/%%WINEARCH%%-windows/unlodctr.exe
 lib/wine/%%WINEARCH%%-windows/updspapi.dll
@@ -3819,7 +3805,6 @@ lib/wine/%%WINEARCH%%-windows/vcomp140.dll
 lib/wine/%%WINEARCH%%-windows/vcomp90.dll
 lib/wine/%%WINEARCH%%-windows/vcruntime140.dll
 lib/wine/%%WINEARCH%%-windows/vcruntime140_1.dll
-lib/wine/%%WINEARCH%%-windows/vdmdbg.dll
 lib/wine/%%WINEARCH%%-windows/version.dll
 lib/wine/%%WINEARCH%%-windows/vga.dll
 lib/wine/%%WINEARCH%%-windows/vidreszr.dll
@@ -3938,6 +3923,7 @@ lib/wine/%%WINEARCH%%-windows/wow64.dll
 lib/wine/%%WINEARCH%%-windows/wow64cpu.dll
 lib/wine/%%WINEARCH%%-windows/wow64win.dll
 lib/wine/%%WINEARCH%%-windows/wpc.dll
+lib/wine/%%WINEARCH%%-windows/wpnapps.dll
 lib/wine/%%WINEARCH%%-windows/write.exe
 lib/wine/%%WINEARCH%%-windows/ws2_32.dll
 lib/wine/%%WINEARCH%%-windows/wscript.exe

@@ -2,27 +2,20 @@
 +++ pyproject.toml
 @@ -2,7 +2,7 @@ keywords = ["driver", "asyncio", "mysql"]
  authors = [{ name = "long2ice", email = "long2ice@gmail.com" }]
- description = "A fast asyncio MySQL driver"
+ description = "The fastest asyncio MySQL/MariaDB driver for Python"
  keywords = ["driver", "asyncio", "mysql"]
 -license = "Apache-2.0"
 +license = { text = "Apache-2.0" }
  name = "asyncmy"
  readme = "README.md"
  requires-python = ">=3.9"
-@@ -15,7 +15,6 @@ repository = "https://github.com/long2ice/asyncmy.git"
- repository = "https://github.com/long2ice/asyncmy.git"
+@@ -16,9 +16,6 @@ include = [
  
  [tool.poetry]
--include = ["CHANGELOG.md", "LICENSE", "README.md"]
- packages = [
-     { include = "asyncmy" },
- ]
-@@ -41,7 +40,7 @@ generate-setup-file = true
- 
- [tool.poetry.build]
- generate-setup-file = true
--script = "build.py"
-+script = "build_cython.py"
- 
- [build-system]
- build-backend = "poetry.core.masonry.api"
+ include = [
+-    "CHANGELOG.md",
+-    "LICENSE",
+-    "README.md",
+     # PEP 561: without these in the wheel the type information does not ship.
+     { path = "asyncmy/py.typed", format = ["sdist", "wheel"] },
+     { path = "asyncmy/*.pyi", format = ["sdist", "wheel"] },

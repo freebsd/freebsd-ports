@@ -1,3 +1,3 @@
-Taskwarrior is an ambitious project to supercharge task (most excellent CLI
-task manager by Paul Beckingham) with an interactive interface, a powerful
-search tool, hotkeys, fast forms data entry and a host of new features.
+Taskwarrior is a free and open source command-line todo list manager
+with support for filtering, tags, recurrence, priorities, custom
+reports, hooks and synchronisation between multiple clients.

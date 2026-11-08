@@ -193,14 +193,10 @@ lib/kritaplugins/kritawaveletdecompose.so
 lib/kritaplugins/kritawebpexport.so
 lib/kritaplugins/kritawebpimport.so
 lib/kritaplugins/kritawgcolorselector.so
-lib/kritaplugins/kritaxcfimport.so
 lib/kritaplugins/kritaxmp.so
 lib/libkritabasicflakes.so
 lib/libkritabasicflakes.so.%%SHLIB_SHVER%%
 lib/libkritabasicflakes.so.%%SHLIB_VER%%
-lib/libkritacolor.so
-lib/libkritacolor.so.%%SHLIB_SHVER%%
-lib/libkritacolor.so.%%SHLIB_VER%%
 lib/libkritacommand.so
 lib/libkritacommand.so.%%SHLIB_SHVER%%
 lib/libkritacommand.so.%%SHLIB_VER%%
@@ -344,7 +340,6 @@ share/applications/krita_svg.desktop
 share/applications/krita_tga.desktop
 share/applications/krita_tiff.desktop
 share/applications/krita_webp.desktop
-share/applications/krita_xcf.desktop
 share/applications/org.kde.krita.desktop
 share/color-schemes/KritaBlender.colors
 share/color-schemes/KritaBright.colors

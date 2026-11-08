@@ -1,5 +1,6 @@
 PORTNAME=	tevent
 DISTVERSION=	0.17.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SAMBA
 PKGNAMESUFFIX=	017
@@ -10,8 +11,8 @@ WWW=		https://tevent.samba.org/
 
 LICENSE=	LGPL3
 
-BUILD_DEPENDS=	talloc243>=2.4.3:devel/talloc243
-RUN_DEPENDS=	talloc243>=2.4.3:devel/talloc243
+BUILD_DEPENDS=	talloc244>=2.4.4:devel/talloc244
+RUN_DEPENDS=	talloc244>=2.4.4:devel/talloc244
 
 USES=		compiler pkgconfig shebangfix waf
 USE_LDCONFIG=	yes

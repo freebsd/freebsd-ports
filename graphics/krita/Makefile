@@ -1,5 +1,6 @@
 PORTNAME=	krita
-DISTVERSION=	6.0.3
+DISTVERSION=	6.0.4.1
+PORTREVISION=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}
 DIST_SUBDIR=	KDE/${PORTNAME}
@@ -18,6 +19,7 @@ BUILD_DEPENDS=	boost-libs>=1.65:devel/boost-libs \
 BUILD_DEPENDS+=	${BUILD_DEPENDS_${ARCH}}
 BUILD_DEPENDS_aarch64=	xsimd>=8.1:devel/xsimd
 BUILD_DEPENDS_amd64=	xsimd>=8.1:devel/xsimd
+BUILD_DEPENDS_powerpc64=	xsimd>=8.1:devel/xsimd
 BUILD_DEPENDS_powerpc64le=	xsimd>=8.1:devel/xsimd
 LIB_DEPENDS=	libOpenColorIO.so:graphics/opencolorio \
 		libexiv2.so:graphics/exiv2 \

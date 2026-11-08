@@ -1,6 +1,7 @@
 PORTNAME=	publisher
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.6.0
+DISTVERSION=	5.8.0
+PORTREVISION=	4
 CATEGORIES=	print
 
 MAINTAINER=	misterd@renderdata.pro
@@ -93,6 +94,8 @@ CONFLICTS_INSTALL=	publisher-devel
 
 EXTRACT_AFTER_ARGS=	--exclude lib \
 			--no-same-owner --no-same-permissions
+
+PORTSCOUT=		limit:^5\.8\.
 
 # Optional Java helper tools (Saxon for XSLT, Jing for RNG validation,
 # Trang for schema conversion). Default ON; turn OFF to manage JARs

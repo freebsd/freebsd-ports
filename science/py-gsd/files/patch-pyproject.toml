@@ -1,0 +1,23 @@
+Fix license field format and lower setuptools requirement
+
+--- pyproject.toml.orig2026-08-07 19:14:13 UTC
++++ pyproject.toml
+@@ -4,8 +4,7 @@ name = "gsd"
+ version = "5.0.1"
+ description = "General simulation data file format."
+ readme = "README.md"
+-license = "BSD-2-Clause"
+-license-files = ["LICENSE"]
++license = {text = "BSD-2-Clause"}
+ authors = [
+     {name = "Joshua A. Anderson", email = "joaander@umich.edu"},
+ ]
+@@ -31,7 +30,7 @@ packages = ["gsd", "gsd.test"]
+ packages = ["gsd", "gsd.test"]
+ 
+ [build-system]
+-requires = ["setuptools>=77.0.0",
++requires = ["setuptools>=63.1.0",
+             "wheel",
+             "Cython>=3.1",
+             "numpy>=2.0.0"]

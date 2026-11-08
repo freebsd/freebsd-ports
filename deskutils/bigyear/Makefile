@@ -1,12 +1,12 @@
 PORTNAME=	bigyear
 PORTVERSION=	20010226
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	https://BSDforge.com/projects/source/deskutils/bigyear/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program to print a large (one month per page) calendar
 
 LICENSE=	BSD0CLAUSE

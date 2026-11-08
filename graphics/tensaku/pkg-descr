@@ -1,0 +1,4 @@
+Tensaku is a screenshot annotation tool for Wayland compositors. It opens a
+captured image in a GTK4 layer-shell editor with arrows, boxes, text,
+highlights, blur, and numbered markers, and copies or saves the result.
+Omarchy uses it as the editor behind its screenshot shortcuts.

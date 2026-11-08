@@ -1,0 +1,39 @@
+--- pyproject.toml.orig	2026-07-09 16:32:23 UTC
++++ pyproject.toml
+@@ -3,10 +3,9 @@ build-backend = "setuptools.build_meta"
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+-name = "fontParts"
++name = "fontparts"
+ description = "An API for interacting with the parts of fonts during the font development process."
+-license = "MIT"
+-license-files = ["LICENSE"]
++license = { text = "MIT" }
+ readme = "README.rst"
+ requires-python = ">=3.10"
+ authors = [
+@@ -36,9 +35,9 @@ dependencies = [
+ ]
+ dependencies = [
+     "FontTools[ufo,lxml,unicode]>=4.60.2",
+-    "fontMath>=0.9.4",
+-    "defcon[pens]>=0.12.2",
+-    "booleanOperations>=0.10.0",
++    "fontMath>=0.9.3",
++    "defcon[pens]>=0.10.2",
++    "booleanOperations>=0.9.0",
+ ]
+ dynamic = ["version"]
+ 
+@@ -94,10 +93,6 @@ local_scheme = "no-local-version-strict"
+ write_to = 'Lib/fontParts/_version.py'
+ write_to_template = '__version__ = "{version}"'
+ local_scheme = "no-local-version-strict"
+-
+-[tool.setuptools_scm.tag]
+-prefix = ""
+-strict = true
+ 
+ [tool.ruff]
+ target-version = "py310"

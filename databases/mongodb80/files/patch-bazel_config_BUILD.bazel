@@ -1,0 +1,105 @@
+--- bazel/config/BUILD.bazel.orig	2026-08-11 19:14:56 UTC
++++ bazel/config/BUILD.bazel
+@@ -234,6 +234,30 @@ config_setting(
+     ],
+ )
+ 
++config_setting(
++    name = "freebsd_aarch64",
++    constraint_values = [
++        "@platforms//os:freebsd",
++        "@platforms//cpu:aarch64",
++    ],
++)
++
++config_setting(
++    name = "freebsd_x86_64",
++    constraint_values = [
++        "@platforms//os:freebsd",
++        "@platforms//cpu:x86_64",
++    ],
++)
++
++config_setting(
++    name = "freebsd_ppc64le",
++    constraint_values = [
++        "@platforms//os:freebsd",
++        "@platforms//cpu:ppc",
++    ],
++)
++
+ config_setting(
+     name = "rhel10",
+     constraint_values = [
+@@ -268,6 +292,7 @@ selects.config_setting_group(
+     match_any = [
+         "@platforms//os:macos",
+         "@platforms//os:linux",
++        "@platforms//os:freebsd",
+     ],
+ )
+ 
+@@ -276,6 +301,7 @@ selects.config_setting_group(
+     match_any = [
+         "@platforms//os:macos",
+         "@platforms//os:windows",
++        "@platforms//os:freebsd",
+     ],
+ )
+ 
+@@ -284,6 +310,7 @@ selects.config_setting_group(
+     match_any = [
+         "@platforms//os:linux",
+         "@platforms//os:windows",
++        "@platforms//os:freebsd",
+     ],
+ )
+ 
+@@ -309,6 +336,7 @@ selects.config_setting_group(
+     match_any = [
+         "@platforms//os:macos",
+         "@platforms//os:linux",
++        "@platforms//os:freebsd",
+     ],
+ )
+ 
+@@ -2177,6 +2205,22 @@ selects.config_setting_group(
+     ],
+ )
+ 
++selects.config_setting_group(
++    name = "ssl_enabled_freebsd",
++    match_all = [
++        "@platforms//os:freebsd",
++        ":ssl_enabled",
++    ],
++)
++
++selects.config_setting_group(
++    name = "ssl_disabled_freebsd",
++    match_all = [
++        "@platforms//os:freebsd",
++        ":ssl_disabled",
++    ],
++)
++
+ selects.config_setting_group(
+     name = "ssl_enabled_build_enterprise_disabled",
+     match_all = [
+@@ -2263,13 +2307,15 @@
+ selects.config_setting_group(
+     name = "mongo_crypto_openssl",
+-    match_all = [
++    match_any = [
+         ":ssl_enabled_linux",
++        ":ssl_enabled_freebsd",
+     ],
+ )
+ 
+ selects.config_setting_group(
+     name = "mongo_crypto_tom",
+     match_any = [
+         ":ssl_disabled_linux",
++        ":ssl_disabled_freebsd",
+     ],
+ )

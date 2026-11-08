@@ -1,7 +1,7 @@
 PORTNAME=	encfs
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.9.5
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	filesystems
 PKGNAMEPREFIX=	fusefs-
 
@@ -12,18 +12,22 @@ WWW=		https://vgough.github.io/encfs/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake compiler:c++11-lib cpe fuse ssl
+LIB_DEPENDS=	libeasyloggingpp.so:devel/easyloggingpp \
+		libtinyxml2.so:textproc/tinyxml2
+
+USES=		cmake compiler:c++11-lib cpe fuse pkgconfig ssl
 CPE_VENDOR=	${PORTNAME}_project
 USE_GITHUB=	yes
 GH_ACCOUNT=	vgough
 
-OPTIONS_DEFINE=	BUNDLED_TINYXML MANPAGES NLS
+CMAKE_OFF=	BUILD_UNIT_TESTS \
+		USE_INTERNAL_EASYLOGGING \
+		USE_INTERNAL_TINYXML
+CMAKE_ARGS=	-DEASYLOGGINGPP_LIBRARY:PATH=${LOCALBASE}/lib/libeasyloggingpp.so
+
+OPTIONS_DEFINE=	MANPAGES NLS
 OPTIONS_DEFAULT=	BUNDLED_TINYXML MANPAGES
 OPTIONS_SUB=	yes
-
-BUNDLED_TINYXML_DESC=	Use bundled TinyXML2 instead of textproc/tinyxml2
-BUNDLED_TINYXML_CMAKE_BOOL=	USE_INTERNAL_TINYXML
-BUNDLED_TINYXML_LIB_DEPENDS_OFF=	libtinyxml2.so:textproc/tinyxml2
 
 MANPAGES_DESC=	Install manpages (requires Perl 5)
 MANPAGES_USES=	perl5

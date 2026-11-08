@@ -1,6 +1,6 @@
---- components/device_signals/core/common/platform_utils.h.orig	2025-10-02 04:28:32 UTC
+--- components/device_signals/core/common/platform_utils.h.orig	2026-09-25 15:26:43 UTC
 +++ components/device_signals/core/common/platform_utils.h
-@@ -54,7 +54,7 @@ SettingValue GetSecureBootEnabled();
+@@ -59,7 +59,7 @@ SettingValue GetSecureBootEnabled();
  std::optional<std::string> GetWindowsMachineDomain();
  #endif  // BUILDFLAG(IS_WIN)
  

@@ -26,6 +26,8 @@ GL_TUPLE=	bingao:gen1int:1e4148ecd676761b3399801acba443925a1fee6b:gen1int/extern
 USE_GITHUB=	nodefault
 GH_TUPLE=	cstein:qfitlib:1acdc9863fdeae2cdbc7f5a599413257a095b8ad:qfitlib/external/qfitlib
 
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM:STRING=3.5 # CMake 4 compatibility
+
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
 post-install:

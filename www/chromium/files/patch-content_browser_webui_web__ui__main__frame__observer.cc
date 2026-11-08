@@ -1,6 +1,6 @@
---- content/browser/webui/web_ui_main_frame_observer.cc.orig	2026-04-09 06:05:42 UTC
+--- content/browser/webui/web_ui_main_frame_observer.cc.orig	2026-09-25 15:26:43 UTC
 +++ content/browser/webui/web_ui_main_frame_observer.cc
-@@ -51,7 +51,7 @@ std::string RedactURL(const GURL& url) {
+@@ -39,7 +39,7 @@ namespace {
  bool IsWebUIJavaScriptErrorReportingSupported() {
  #if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA)
    return false;

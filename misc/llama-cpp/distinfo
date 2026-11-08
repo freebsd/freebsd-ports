@@ -1,5 +1,7 @@
-TIMESTAMP = 1784012194
-SHA256 (llama-cpp-9426/llama-ui-npm-9426.tar.gz) = d472fb606a4c2cfd365ffacba2e3ae49316a512199d09c41c9970aa395ea87f7
-SIZE (llama-cpp-9426/llama-ui-npm-9426.tar.gz) = 68283814
-SHA256 (llama-cpp-9426/ggml-org-llama.cpp-b9426_GH0.tar.gz) = a96658491547aa923980dbffc25179b0f1164ad3dab40126673414ebf947238c
-SIZE (llama-cpp-9426/ggml-org-llama.cpp-b9426_GH0.tar.gz) = 33982934
+TIMESTAMP = 1794016738
+SHA256 (llama-cpp-12181/dist.tar.gz) = 81d35456d45e17b5650fd8cc64d10f920e033e31cbbbc959eceeb0e47b6a3d4b
+SIZE (llama-cpp-12181/dist.tar.gz) = 3136013
+SHA256 (llama-cpp-12181/dist.tar.gz.sha256) = 7e22b6ed91fe0d97c59a1e12d46bf986f909138d335b3caffde871679a06d682
+SIZE (llama-cpp-12181/dist.tar.gz.sha256) = 78
+SHA256 (llama-cpp-12181/ggml-org-llama.cpp-b12181_GH0.tar.gz) = d776f0e93d9a7ee4f2c092e7d5ab4bc0b971a890dc0606c1f6d25f272b4bc25f
+SIZE (llama-cpp-12181/ggml-org-llama.cpp-b12181_GH0.tar.gz) = 39084948

@@ -1,5 +1,5 @@
 PORTNAME=	obs-text-pthread
-DISTVERSION=	2.0.7
+DISTVERSION=	2.1.0
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,6 +25,7 @@ CMAKE_OFF=	LINUX_PORTABLE
 CFLAGS+=	-I${WRKDIR}/src
 
 PLIST_FILES=	lib/obs-plugins/obs-text-pthread.so \
-		share/obs/obs-plugins/obs-text-pthread/textalpha.effect
+		share/obs/obs-plugins/obs-text-pthread/textalpha.effect \
+		share/obs/obs-plugins/obs-text-pthread/locale/en-US.ini
 
 .include <bsd.port.mk>

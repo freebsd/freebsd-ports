@@ -1,4 +1,4 @@
---- sandbox/policy/features.h.orig	2026-06-04 10:12:25 UTC
+--- sandbox/policy/features.h.orig	2026-10-18 13:29:39 UTC
 +++ sandbox/policy/features.h
 @@ -45,7 +45,7 @@ SANDBOX_POLICY_EXPORT BASE_DECLARE_FEATURE(
  SANDBOX_POLICY_EXPORT BASE_DECLARE_FEATURE(kSpectreVariant2Mitigation);

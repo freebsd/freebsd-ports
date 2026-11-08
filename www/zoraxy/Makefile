@@ -1,7 +1,7 @@
 PORTNAME=	zoraxy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.3.3
-PORTREVISION=	1
+DISTVERSION=	3.3.4
+PORTREVISION=	3
 CATEGORIES=	www
 
 MAINTAINER=	joneum@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://github.com/tobychui/zoraxy
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC:H}/LICENSE
 
-USES=		go:1.24+,modules
+USES=		cpe go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	tobychui
 GH_PROJECT=	zoraxy

@@ -1,0 +1,22 @@
+{
+  "name": "@rolldown/binding-freebsd-@JSARCH@",
+  "version": "@ROLLDOWN_VERSION@",
+  "cpu": [
+    "@JSARCH@"
+  ],
+  "main": "rolldown-binding.freebsd-@JSARCH@.node",
+  "files": [
+    "rolldown-binding.freebsd-@JSARCH@.node"
+  ],
+  "description": "Fast JavaScript/TypeScript bundler in Rust with Rollup-compatible API.",
+  "homepage": "https://rolldown.rs/",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rolldown/rolldown.git",
+    "directory": "packages/rolldown"
+  },
+  "os": [
+    "freebsd"
+  ]
+}

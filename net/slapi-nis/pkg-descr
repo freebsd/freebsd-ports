@@ -1,0 +1,3 @@
+slapi-nis provides the Schema Compatibility plugin for 389 Directory
+Server. The plugin presents alternate LDAP views required by FreeIPA
+compatibility features, including support for SSSD ID mapping and ID views.

@@ -1,5 +1,5 @@
 PORTNAME=	xapian-omega
-PORTVERSION=	1.4.31
+PORTVERSION=	1.4.32
 CATEGORIES=	www
 MASTER_SITES=	https://oligarchy.co.uk/xapian/${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -7,7 +7,9 @@ PKGNAMESUFFIX=	14
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	CGI search application built on Xapian
-WWW=		https://xapian.org/
+WWW=		https://xapian.org/ \
+		https://github.com/xapian/xapian/tree/RELEASE/1.4/xapian-applications/omega \
+		https://github.com/xapian/xapian
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

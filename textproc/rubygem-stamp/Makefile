@@ -1,5 +1,5 @@
 PORTNAME=	stamp
-PORTVERSION=	0.6.0
+PORTVERSION=	0.7.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -8,9 +8,10 @@ COMMENT=	Format dates and times
 WWW=		https://github.com/jeremyw/stamp
 
 LICENSE=	MIT
-
-NO_ARCH=	yes
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		gem
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

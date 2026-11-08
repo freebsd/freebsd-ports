@@ -1,6 +1,6 @@
---- swiftpm/Package.swift.orig	2026-04-13 16:18:14 UTC
+--- swiftpm/Package.swift.orig	2026-09-02 15:20:02 UTC
 +++ swiftpm/Package.swift
-@@ -1216,3 +1216,17 @@ if !shouldUseSwiftBuildFramework {
+@@ -1199,3 +1199,17 @@ if !shouldUseSwiftBuildFramework {
          ]
      }
  }

@@ -33,6 +33,7 @@
 %%WWWDIR%%/index.php
 %%WWWDIR%%/js/jquery.blockUI.js
 %%WWWDIR%%/js/jquery.js
+%%WWWDIR%%/js/jquery.migrate.js
 %%WWWDIR%%/js/jquery.scrollTo.js
 %%WWWDIR%%/js/jquery.selectboxes.js
 %%WWWDIR%%/js/jquery.tablesorter.js

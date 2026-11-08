@@ -1,13 +1,13 @@
 PORTNAME=	rich-click
-DISTVERSION=	1.9.7
+DISTVERSION=	1.9.9
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	rich_click-${DISTVERSION}
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Format click help output nicely with rich
-WWW=		https://pypi.python.org/project/rich-click/
+WWW=		https://github.com/ewels/rich-click
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

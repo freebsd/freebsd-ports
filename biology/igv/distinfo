@@ -1,7 +1,7 @@
-TIMESTAMP = 1676844022
-SHA256 (igv-2.16.0/tools.png) = 7a619d7770da008d1bc23a60a07f416625ba3a404a3656b8d1bda0de97415d1c
-SIZE (igv-2.16.0/tools.png) = 5139
-SHA256 (igv-2.16.0/igv-2.16.0-deps.tar.gz) = 0d853bfafd5a2688f467b76a57bef2c40043f4f62f69f1c40acbe101ec98919f
-SIZE (igv-2.16.0/igv-2.16.0-deps.tar.gz) = 29906082
-SHA256 (igv-2.16.0/igvteam-igv-v2.16.0_GH0.tar.gz) = 1f214e539f8efb726246d6e1f8c3dab9d8fcd8fbe36042f03f052ee73afac2cb
-SIZE (igv-2.16.0/igvteam-igv-v2.16.0_GH0.tar.gz) = 53395541
+TIMESTAMP = 1792344963
+SHA256 (igv-2.19.8/tools.png) = d2721646a4bb9ef248da85639e11eb7bbcf2685396f9b6f8a325b77b127fac4e
+SIZE (igv-2.19.8/tools.png) = 17414
+SHA256 (igv-2.19.8/igv-2.19.8-deps.tar.gz) = cc44c8159e866523634af1eea6a5d5a02acbc2a316fbc61cd1a6090f840607f1
+SIZE (igv-2.19.8/igv-2.19.8-deps.tar.gz) = 49531238
+SHA256 (igv-2.19.8/igvteam-igv-v2.19.8_GH0.tar.gz) = 9845c299996ae8196c71688fe3f950ad5953f80aa952fdeb736009d7c71208be
+SIZE (igv-2.19.8/igvteam-igv-v2.19.8_GH0.tar.gz) = 64953570

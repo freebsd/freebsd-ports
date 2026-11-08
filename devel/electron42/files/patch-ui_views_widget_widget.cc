@@ -1,4 +1,4 @@
---- ui/views/widget/widget.cc.orig	2026-05-12 08:53:52 UTC
+--- ui/views/widget/widget.cc.orig	2026-09-30 12:59:54 UTC
 +++ ui/views/widget/widget.cc
 @@ -66,7 +66,7 @@
  #include "ui/views/widget/widget_removals_observer.h"
@@ -9,7 +9,7 @@
  #include "ui/linux/linux_ui.h"
  #endif
  
-@@ -2624,7 +2624,7 @@ const ui::NativeTheme* Widget::GetNativeTheme() const 
+@@ -2632,7 +2632,7 @@ const ui::NativeTheme* Widget::GetNativeTheme() const 
      return parent_->GetNativeTheme();
    }
  

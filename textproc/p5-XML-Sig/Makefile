@@ -1,5 +1,5 @@
 PORTNAME=	XML-Sig
-PORTVERSION=	0.70
+PORTVERSION=	0.73
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TIMLEGGE
@@ -24,6 +24,7 @@ RUN_DEPENDS=	p5-Class-Accessor>=0:devel/p5-Class-Accessor \
 TEST_DEPENDS=	p5-Crypt-OpenSSL-Guess>=0:security/p5-Crypt-OpenSSL-Guess \
 		p5-File-Which>=0:sysutils/p5-File-Which \
 		p5-Import-Into>=0:devel/p5-Import-Into \
+		p5-Path-Tiny>=0:devel/p5-Path-Tiny \
 		p5-Test-Exception>=0:devel/p5-Test-Exception \
 		p5-Test-Lib>=0:devel/p5-Test-Lib
 

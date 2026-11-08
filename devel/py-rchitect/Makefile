@@ -1,5 +1,5 @@
 PORTNAME=	rchitect
-DISTVERSION=	0.4.10
+DISTVERSION=	0.5.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,12 +10,14 @@ WWW=		https://github.com/randy3k/rchitect
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.10.0:devel/py-cffi@${PY_FLAVOR}
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}cffi>=1.10.0:devel/py-cffi@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.10.0:devel/py-cffi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=23.0:devel/py-packaging@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	pep517 autoplist
 
 .include <bsd.port.pre.mk>
 
@@ -24,6 +26,6 @@ CFLAGS+=	-Wno-error=int-conversion -Wno-error=incompatible-function-pointer-type
 .endif
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/rchitect/_cffi.abi3.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/rchitect/_cffi_lib.abi3.so
 
 .include <bsd.port.post.mk>

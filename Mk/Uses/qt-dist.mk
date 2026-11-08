@@ -25,12 +25,13 @@ _COMMON_DISTS=		3d base charts connectivity datavis3d declarative \
 			imageformats location multimedia networkauth quick3d \
 			quicktimeline remoteobjects scxml sensors serialbus \
 			serialport speech svg tools translations virtualkeyboard \
-			wayland webchannel webengine websockets webview
+			wayland webchannel websockets webview
 _QT5_DISTS=		gamepad graphicaleffects quickcontrols quickcontrols2 \
 			script webglplugin x11extras xmlpatterns
 _QT6_DISTS=		5compat canvaspainter coap doc graphs grpc httpserver \
 			languageserver lottie mqtt openapi positioning \
-			quick3dphysics quickeffectmaker shadertools tasktree
+			quick3dphysics quickeffectmaker shadertools tasktree \
+			webengine
 _QT_DISTS=		${_COMMON_DISTS} \
 			${_QT${_QT_VER}_DISTS}
 
@@ -91,11 +92,7 @@ _QT6_MASTER_SITES+=		LOCAL/kde/KDE/Qt/${_QT_VERSION}:maven
 .  endif
 
 # Qt5 specific distnames
-.  if ${_QT_DIST} == webengine
-_QT5_DISTNAME=			${_QT_DIST:S,^,qt,:S,$,-everywhere-opensource-src-${DISTVERSION},}
-.  else
 _QT5_DISTNAME=			${_QT_DIST:S,^,qt,:S,$,-everywhere-src-${DISTVERSION},}
-.  endif
 _QT5_DISTNAME_kde=		${_QT_DIST:S,^,kde-qt,:S,$,-${DISTVERSION},}
 # Qt6 specific distnames
 _QT6_DISTNAME=			${_QT_DIST:S,^,qt,:S,$,-everywhere-src-${DISTVERSION},}
@@ -150,12 +147,6 @@ _KDE_translations=	0
 _KDE_virtualkeyboard=	0
 _KDE_wayland=		55
 _KDE_webchannel=	3
-# We track the 5.15 branch for www/qt5-webengine to make it easier to
-# stay on top of Chromium security patches.
-_KDE_webengine=			0
-_KDE_webengine_BRANCH=		5.15
-_KDE_webengine_ORIGIN_TAG=	v5.15.19-lts
-_KDE_webengine_VERSION=		5.15.19
 _KDE_webglplugin=	0
 _KDE_websockets=	2
 _KDE_webview=		0

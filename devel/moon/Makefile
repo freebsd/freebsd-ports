@@ -1,6 +1,6 @@
 PORTNAME=	moon
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.6
+DISTVERSION=	2.6.5
 CATEGORIES=	devel
 
 MAINTAINER=	olivier@FreeBSD.org
@@ -11,7 +11,11 @@ WWW=		https://moonrepo.dev/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+NOT_FOR_ARCHS=		i386
+NOT_FOR_ARCHS_REASON=	rustc runs out of memory during LTO link
+
 BUILD_DEPENDS=	protoc:devel/protobuf
+LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 USES=		cargo llvm ssl
 USE_GITHUB=	yes
@@ -19,7 +23,9 @@ GH_ACCOUNT=	moonrepo
 
 CARGO_INSTALL_PATH=	crates/cli
 
-MAKE_ENV+=	LIBCLANG_PATH=${LLVM_PREFIX}/lib \
+# cc>=1.6 defeats aws-lc-sys -O0 jitter guard: aws/aws-lc-rs#1252
+MAKE_ENV+=	AWS_LC_SYS_NO_JITTER_ENTROPY=1 \
+		LIBCLANG_PATH=${LLVM_PREFIX}/lib \
 		OPENSSL_NO_VENDOR=1
 
 PLIST_FILES=	bin/moon \

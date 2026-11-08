@@ -1,0 +1,13 @@
+--- php.ini-production.orig	2026-10-23 20:36:54 UTC
++++ php.ini-production
+@@ -1440,7 +1440,9 @@ session.trans_sid_tags = "a=href,area=href,frame=src,f
+ ; Development Value: On
+ ; Production Value: On
+ ; https://php.net/session.upload-progress.enabled
+-;session.upload_progress.enabled = On
++; Temporary mitigation for CVE-2026-115560 / CVE-2026-109619.
++; Remove once the fixed PHP release is in the tree.
++session.upload_progress.enabled = Off
+ 
+ ; Cleanup the progress information as soon as all POST data has been read
+ ; (i.e. upload completed).

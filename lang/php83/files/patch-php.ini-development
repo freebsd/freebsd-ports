@@ -1,0 +1,13 @@
+--- php.ini-development.orig	2026-10-23 20:33:27 UTC
++++ php.ini-development
+@@ -1549,7 +1549,9 @@ session.sid_bits_per_character = 5
+ ; Development Value: On
+ ; Production Value: On
+ ; https://php.net/session.upload-progress.enabled
+-;session.upload_progress.enabled = On
++; Temporary mitigation for CVE-2026-115560 / CVE-2026-109619.
++; Remove once the fixed PHP release is in the tree.
++session.upload_progress.enabled = Off
+ 
+ ; Cleanup the progress information as soon as all POST data has been read
+ ; (i.e. upload completed).

@@ -2,6 +2,8 @@ PORTNAME=	asymptote
 PORTVERSION=	3.12
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
+PATCH_SITES=	https://github.com/vectorgraphics/asymptote/commit/
+PATCHFILES=	904bc6a85f3d5874aca688b30fea1f2ae7ed436a.patch:-p1
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -11,7 +13,7 @@ WWW=		https://asymptote.sourceforge.io/
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	dual
 
-ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS=	amd64 i386 powerpc64 powerpc64le
 
 BUILD_DEPENDS=	glm>0:math/glm \
 		glslang>0:graphics/glslang \

@@ -1,7 +1,7 @@
 PORTNAME=	freedv
 DISTVERSIONPREFIX=v
 DISTVERSION=	1.7.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	hamradio@FreeBSD.org
@@ -9,6 +9,8 @@ COMMENT=	Narrow band digital voice
 WWW=		https://freedv.org/
 
 LICENSE=	LGPL21
+
+BROKEN=		Fails to build, error: use of undeclared identifier 'freedv_set_dpsk'
 
 LIB_DEPENDS=	libcodec2.so:audio/codec2 \
 		libportaudio.so:audio/portaudio \

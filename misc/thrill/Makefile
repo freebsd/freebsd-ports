@@ -23,6 +23,7 @@ GH_TAGNAME=	12c5b59bca66df93b66628b3829027bd0f110dd9
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	THRILL_USE_JEMALLOC
 CMAKE_ARGS=	-DINSTALL_INCLUDE_DIR=${PREFIX}/include # workaround for https://github.com/thrill/thrill/issues/196
+CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/thrill/thrill/issues/218
 
 GH_TUPLE=	USCiLab:cereal:2f9471bc401590cf58b38bbbc33d412dade6d589:USCiLab_cereal/extlib/cereal \
 		google:googletest:5490beb0602eab560fa3969a4410e11d94bf12af:google_googletest/extlib/googletest \

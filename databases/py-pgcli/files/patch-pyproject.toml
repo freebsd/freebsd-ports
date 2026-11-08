@@ -1,5 +1,14 @@
---- pyproject.toml.orig	2026-05-12 00:26:19 UTC
+--- pyproject.toml.orig	2026-08-25 19:12:22 UTC
 +++ pyproject.toml
+@@ -1,7 +1,7 @@ authors = [{ name = "Pgcli Core Team", email = "pgcli-
+ [project]
+ name = "pgcli"
+ authors = [{ name = "Pgcli Core Team", email = "pgcli-dev@googlegroups.com" }]
+-license = "BSD-3-Clause"
++license = { text = "BSD" }
+ description = "CLI for Postgres Database. With auto-completion and syntax highlighting."
+ readme = "README.rst"
+ classifiers = [
 @@ -65,7 +65,7 @@ dev = [
  ]
  
@@ -9,7 +18,7 @@
  build-backend = "setuptools.build_meta"
  
  [tool.setuptools_scm]
-@@ -133,4 +133,4 @@ addopts = "--capture=sys --showlocals -rxs"
+@@ -130,4 +130,4 @@ addopts = "--capture=sys --showlocals -rxs"
  [tool.pytest.ini_options]
  minversion = "6.0"
  addopts = "--capture=sys --showlocals -rxs"

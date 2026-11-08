@@ -1,5 +1,5 @@
 PORTNAME=	libcpucycles
-DISTVERSION=	20260625
+DISTVERSION=	20260901
 CATEGORIES=	benchmarks devel
 MASTER_SITES=	https://cpucycles.cr.yp.to/
 
@@ -18,7 +18,7 @@ ALL_TARGET=	default
 CFLAGS+=	-fPIC -fwrapv -fvisibility=hidden
 
 pre-configure:
-	${ECHO} ${CC} ${CPPFLAGS} ${CFLAGS} ${LDFLAGS} >${WRKSRC}/compilers/default
+	${ECHO_CMD} ${CC} ${CPPFLAGS} ${CFLAGS} ${LDFLAGS} >${WRKSRC}/compilers/default
 
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/man/man1/* ${STAGEDIR}${PREFIX}/share/man/man1/

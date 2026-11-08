@@ -14,6 +14,16 @@ DISTFILES=	chromium-${CHROMIUM_VER}${EXTRACT_SUFX}.0:chromium \
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTFILES:C/:[^:]+$//:C/chromium-${CHROMIUM_VER}${EXTRACT_SUFX}\.[0-9]//}
 
+.if make(makesum)
+MASTER_SITES+=	https://registry.npmjs.org/@esbuild/freebsd-arm64/-/freebsd-arm64-${ESBUILD_VER}.tgz?dummy=/:esbuild_arm64 \
+		https://registry.npmjs.org/@esbuild/freebsd-x64/-/freebsd-x64-${ESBUILD_VER}.tgz?dummy=/:esbuild_x64
+DISTFILES+=	esbuild-freebsd-arm64-${ESBUILD_VER}.tgz:esbuild_arm64 \
+		esbuild-freebsd-x64-${ESBUILD_VER}.tgz:esbuild_x64
+.else
+MASTER_SITES+=	https://registry.npmjs.org/@esbuild/freebsd-${GO_ARCH}/-/freebsd-${GO_ARCH}-${ESBUILD_VER}.tgz?dummy=/:esbuild_${GO_ARCH}
+DISTFILES+=	esbuild-freebsd-${GO_ARCH}-${ESBUILD_VER}.tgz:esbuild_${GO_ARCH}
+.endif
+
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Build cross-platform desktop apps with JavaScript, HTML, and CSS
 WWW=		https://electronjs.org/
@@ -29,8 +39,7 @@ FETCH_DEPENDS=	git:devel/git \
 		npm${NODEJS_SUFFIX}>0:www/npm${NODEJS_SUFFIX}
 PATCH_DEPENDS=	git:devel/git \
 		jq:textproc/jq
-BUILD_DEPENDS=	esbuild:devel/esbuild \
-		gperf:devel/gperf \
+BUILD_DEPENDS=	gperf:devel/gperf \
 		bindgen:devel/rust-bindgen-cli \
 		yasm:devel/yasm \
 		${LOCALBASE}/libdata/pkgconfig/dri.pc:graphics/mesa-libs \
@@ -83,13 +92,13 @@ GH_TUPLE=	electron:electron:${DISTVERSIONFULL}:electron \
 		ReactiveCocoa:ReactiveObjC:${REACTIVEOBJC_VER}:reactiveobjc \
 		Mantle:Mantle:${MANTLE_VER}:mantle \
 		EngFlow:reclient-configs:${ENGFLOW_RECLIENT_CONFIGS_VER}:reclient_configs \
-		rollup:rollup:v${ROLLUP_VER}:rollup \
-		evanw:esbuild:v${ESBUILD_VER}:esbuild
+		rollup:rollup:v${ROLLUP_VER}:rollup
 USE_GL=		gbm gl glesv2
 USE_GNOME=	atk cairo gdkpixbuf gtk30 libxml2 libxslt pango
 USE_XORG=	x11 xcb xcomposite xcursor xdamage xext xfixes xi xrandr \
 		xrender xscrnsaver xtst
 USE_QT=		buildtools:build core:build widgets:build
+NPM_PREFETCH_ARCHS=	aarch64 amd64
 NPM_EXTRACT_WRKSRC=	${WRKDIR}/${PORTNAME}-${ELECTRON_VER}
 
 SHEBANG_FILES=	chrome/tools/build/linux/chrome-wrapper buildtools/linux64/clang-format
@@ -143,7 +152,7 @@ GN_ARGS+=	clang_use_chrome_plugins=false \
 		use_system_libjpeg=true \
 		use_udev=false \
 		chrome_pgo_phase=0 \
-		extra_cflags="${CFLAGS}" \
+		extra_cflags="${CFLAGS} -I${LOCALBASE}/include/libepoll-shim ${PINCLUDES}" \
 		extra_cxxflags="${CXXFLAGS} -I${LOCALBASE}/include/libepoll-shim ${PINCLUDES}" \
 		extra_ldflags="${LDFLAGS}" \
 		ffmpeg_branding="${FFMPEG_BRAND}" \
@@ -157,14 +166,15 @@ GN_BOOTSTRAP_FLAGS=	--no-clean --no-rebuild --skip-generate-buildfiles
 PLIST_SUB=	ELECTRON_VER=${ELECTRON_VER} \
 		ELECTRON_VER_MAJOR=${ELECTRON_VER_MAJOR}
 
-OPTIONS_DEFINE=		CODECS CUPS DEBUG DIST DRIVER KERBEROS LTO PIPEWIRE
-OPTIONS_DEFAULT=	CODECS CUPS DRIVER KERBEROS PIPEWIRE ALSA PULSEAUDIO SNDIO
+OPTIONS_DEFINE=		AVX512 CODECS CUPS DEBUG DIST DRIVER KERBEROS LTO PIPEWIRE
+OPTIONS_DEFAULT=	AVX512 CODECS CUPS DRIVER KERBEROS PIPEWIRE ALSA PULSEAUDIO SNDIO
 OPTIONS_EXCLUDE_aarch64=LTO
 OPTIONS_GROUP=		AUDIO
 OPTIONS_GROUP_AUDIO=	ALSA PULSEAUDIO SNDIO
 OPTIONS_RADIO=		KERBEROS
 OPTIONS_RADIO_KERBEROS=	HEIMDAL HEIMDAL_BASE MIT
 OPTIONS_SUB=		yes
+AVX512_DESC=		Enable AVX512 instructions
 CODECS_DESC=		Compile and enable patented codecs like H.264
 DIST_DESC=		Build distribution zip files
 DRIVER_DESC=		Install chromedriver
@@ -178,6 +188,8 @@ ALSA_RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/al
 			alsa-lib>=1.1.1_1:audio/alsa-lib
 ALSA_VARS=		GN_ARGS+=use_alsa=true
 ALSA_VARS_OFF=		GN_ARGS+=use_alsa=false
+AVX512_VARS=		GN_ARGS+=allow_avx512=true
+AVX512_VARS_OFF=	GN_ARGS+=allow_avx512=false
 CODECS_VARS=		GN_ARGS+=proprietary_codecs=true \
 			FFMPEG_BRAND="Chrome"
 CODECS_VARS_OFF=	GN_ARGS+=proprietary_codecs=false \
@@ -227,7 +239,7 @@ SNDIO_VARS_OFF=		GN_ARGS+=use_sndio=false
 # See ${WRKSRC}/electron/DEPS for CHROMIUM_VER
 CHROMIUM_VER=			148.0.7778.280
 # See ${WRKSRC}/electron/DEPS for NODE_VER
-NODE_VER=			24.18.0
+NODE_VER=			24.19.0
 # See ${WRKSRC}/electron/DEPS for NAN_VER
 NAN_VER=			675cefebca42410733da8a454c8d9391fcebfbc2
 # See ${WRKSRC}/electron/DEPS for SQUIRREL_MAC_VER
@@ -240,8 +252,8 @@ MANTLE_VER=			2a8e2123a3931038179ee06105c9e6ec336b12ea
 ENGFLOW_RECLIENT_CONFIGS_VER=	955335c30a752e9ef7bff375baab5e0819b6c00d
 # See ${WRKSRC}/third_party/devtools-frontend/src/node_modules/rollup/package.json
 ROLLUP_VER=			4.22.4
-# Keep in sync with devel/esbuild
-ESBUILD_VER=			0.28.1
+# See ${WRKSRC}/third_party/devtools-frontend/src/node_modules/esbuild/package.json
+ESBUILD_VER=			0.25.1
 
 .include "Makefile.version"
 .include <bsd.port.pre.mk>
@@ -304,6 +316,8 @@ TEST_ENV+=	${MAKE_ENV} \
 		DISABLE_CRASH_REPORTER_TESTS=1 \
 		SENTRYCLI_SKIP_DOWNLOAD=1
 
+GO_ARCH=	${ARCH:S/aarch64/arm64/:S/amd64/x64/}
+
 pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "To build electron, you should have around 2GB of memory"
@@ -340,13 +354,20 @@ post-extract:
 		${WRKSRC}/third_party/engflow-reclient-configs
 	${MV} ${WRKDIR}/${GH_PROJECT_rollup}-${ROLLUP_VER} \
 		${WRKSRC}/rollup
-	${MV} ${WRKDIR}/${GH_PROJECT_esbuild}-${ESBUILD_VER} \
-		${WRKSRC}/esbuild
+	${MV} ${WRKDIR}/package ${WRKSRC}/esbuild
 
 pre-patch:
 	${SH} ${FILESDIR}/apply-electron-patches.sh ${WRKSRC}
-	# ${FIND} ${WRKSRC} -type f -name '*.orig' -print -delete
-	# ${FIND} ${WRKSRC} -type f -name '*~' -print -delete
+.ifdef MAINTAINER_MODE
+	${FIND} ${WRKSRC} -type f -name '*.orig' -print -delete
+	${FIND} ${WRKSRC} -type f -name '*~' -print -delete
+.endif
+
+.ifndef MAINTAINER_MODE
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/bin/dbus-daemon|${LOCALBASE}/bin/dbus-daemon|' \
+		${WRKSRC}/electron/spec/api-app.spec.ts
+.endif
 
 pre-configure:
 	# We used to remove bundled libraries to be sure that chromium uses
@@ -374,12 +395,6 @@ pre-configure:
 		${WRKSRC}/build/rust/rust_bindgen_generator.gni
 
 do-configure:
-	cd ${WRKSRC}/esbuild && \
-		${LOCALBASE}/bin/node scripts/esbuild.js \
-			${LOCALBASE}/bin/esbuild --neutral && \
-		${RM} -r ${WRKSRC}/third_party/devtools-frontend/src/node_modules/esbuild && \
-		${LN} -sf ${WRKSRC}/esbuild/npm/esbuild \
-			${WRKSRC}/third_party/devtools-frontend/src/node_modules/esbuild \
 	# GN generator bootstrapping and generating ninja files
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} CC=${CC} CXX=${CXX} LD=${CXX} \
 		READELF=${READELF} AR=${AR} NM=${NM} ${PYTHON_CMD} \
@@ -399,7 +414,7 @@ do-configure:
 	${LN} -sf ${LOCALBASE}/bin/rustc ${WRKSRC}/third_party/rust-toolchain/bin/rustc
 
 	# Setup esbuild dependency
-	${LN} -sf ${LOCALBASE}/bin/esbuild ${WRKSRC}/third_party/devtools-frontend/src/third_party/esbuild/esbuild
+	${LN} -sf ${WRKSRC}/esbuild/bin/esbuild ${WRKSRC}/third_party/devtools-frontend/src/third_party/esbuild/esbuild
 
 	# Setup gperf dependency
 	${LN} -sf ${LOCALBASE}/bin/gperf ${WRKSRC}/third_party/gperf/cipd/bin/gperf
@@ -459,6 +474,7 @@ do-install:
 .endfor
 	cd ${WRKSRC}/out/${BUILDTYPE}/gen && ${COPYTREE_SHARE} node_headers ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC}/out/${BUILDTYPE} && ${COPYTREE_SHARE} gen/electron/buildflags ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC}/out/${BUILDTYPE} && ${COPYTREE_SHARE} gen/electron/tsc ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC}/out/${BUILDTYPE} && ${COPYTREE_SHARE} gen/v8/embedded.S ${STAGEDIR}${DATADIR}
 	${RLN} ${STAGEDIR}${DATADIR}/electron ${STAGEDIR}${PREFIX}/bin/electron${PKGNAMESUFFIX}
 

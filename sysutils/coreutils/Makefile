@@ -1,17 +1,20 @@
 PORTNAME=	coreutils
-DISTVERSION=	9.9
+DISTVERSION=	9.12
 CATEGORIES=	sysutils textproc
 MASTER_SITES=	GNU
+
+PATCH_SITES=	https://lists.gnu.org/archive/html/coreutils/2026-09/
+PATCHFILES=	txtcTRZAddIvs.txt:-p1
 
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	Free Software Foundation core utilities
 WWW=		https://www.gnu.org/software/coreutils/ \
 		https://git.savannah.gnu.org/gitweb/?p=coreutils.git
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		charsetfix cpe iconv perl5 ssl tar:xz
+USES=		charsetfix cpe iconv makeinfo perl5 ssl tar:xz
 CPE_VENDOR=	gnu
 USE_LDCONFIG=	yes
 USE_PERL5=	build	# required for tests and man page generation

@@ -1,0 +1,3 @@
+pydantic-handlebars is a Handlebars template engine for composing LLM prompts,
+built on Pydantic. It provides a typed, schema-driven way to compile and render
+Handlebars templates with custom helpers, block helpers, and delimiter support.

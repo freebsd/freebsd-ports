@@ -1,23 +1,45 @@
---- CMakeLists.txt.orig	2025-09-30 06:13:45 UTC
+-- fix arch detection on FreeBSD
+-- fix clang detection, see https://github.com/rdkit/rdkit/issues/9662
+-- prevent fetch of aantron:better-enums, use GH_TUPLE instead
+-- correct docs directory
+
+--- CMakeLists.txt.orig	2026-08-28 02:56:41 UTC
 +++ CMakeLists.txt
-@@ -81,12 +81,12 @@ if(NOT MSVC)
- 
- if(NOT MSVC)
-   if(RDK_OPTIMIZE_POPCNT)
--    if(CMAKE_SYSTEM_PROCESSOR MATCHES "^(aarch64|arm64)")
--      message("RDK_OPTIMIZE_POPCNT is not available on aarch64 or arm64")
--    elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "^(ppc64|powerpc64)")
-+    if(CMAKE_SYSTEM_PROCESSOR MATCHES "^(ppc64|powerpc64)")
-       set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mpopcntd")
--    else()
-+    elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "^(i386|amd64|x86_64)")
-       set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mpopcnt")
-+    else()
-+      message("RDK_OPTIMIZE_POPCNT is not available on your architecture")
-     endif()
+@@ -97,16 +97,29 @@ if(NOT MSVC AND RDK_OPTIMIZE_POPCNT)
+ if(NOT MSVC AND RDK_OPTIMIZE_POPCNT)
+   if(CMAKE_SYSTEM_PROCESSOR MATCHES "^(ppc64|powerpc64)")
+     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mpopcntd")
+-  elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "^(x86_64|i*86)")
++  elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "^(amd64|x86_64|i*86)")
+     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mpopcnt")
+   else()
+     message(STATUS "POPCNT hardware flag not supported or not required for ${CMAKE_SYSTEM_PROCESSOR} architecture")
    endif()
  endif()
-@@ -179,15 +179,7 @@ endif()
+ 
+-# Detect clang, which masquerades as gcc.  CMake 2.6 doesn't know how to
+-# detect it.
+-string(REGEX MATCH "clang" CMAKE_COMPILER_IS_CLANG "${CMAKE_C_COMPILER}")
++# Run the compiler with --version and capture the output
++execute_process(
++    COMMAND ${CMAKE_C_COMPILER} --version
++    OUTPUT_VARIABLE COMPILER_VERSION_OUTPUT
++    ERROR_VARIABLE COMPILER_VERSION_ERROR
++    RESULT_VARIABLE COMPILER_VERSION_RESULT
++)
++
++# Corrected regex condition using MATCHES
++if("${COMPILER_VERSION_OUTPUT}" MATCHES "clang")
++    set(CMAKE_COMPILER_IS_CLANG TRUE)
++else()
++    set(CMAKE_COMPILER_IS_CLANG FALSE)
++endif()
++message(STATUS "YURI CMAKE_COMPILER_IS_CLANG: ${CMAKE_COMPILER_IS_CLANG}")
++
+ # Detect emcc
+ string(REGEX MATCH "Emscripten" CMAKE_COMPILER_IS_EMCC "${CMAKE_SYSTEM_NAME}")
+ 
+@@ -192,15 +205,7 @@ endif()
    FetchContent_MakeAvailable(Catch2)
  endif()
  
@@ -33,7 +55,7 @@
  if(RDK_INSTALL_INTREE)
    set(RDKit_BinDir "${CMAKE_SOURCE_DIR}/bin")
    set(RDKit_LibDir "${CMAKE_SOURCE_DIR}/lib")
-@@ -535,12 +527,14 @@ if(NOT RDK_INSTALL_INTREE)
+@@ -550,12 +555,14 @@ if(NOT RDK_INSTALL_INTREE)
        COMPONENT data
        PATTERN ".svn" EXCLUDE
        )

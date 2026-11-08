@@ -1,5 +1,5 @@
 PORTNAME=	snaky_hash
-PORTVERSION=	2.0.6
+PORTVERSION=	2.0.7
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-gitlab
@@ -12,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	rubygem-hashie-gitlab>=0.1.0<6:devel/rubygem-hashie-gitlab \
-		rubygem-version_gem>=1.1.8<3:devel/rubygem-version_gem
+		rubygem-version_gem-gitlab>=1.1.14<3:devel/rubygem-version_gem-gitlab
 
 USES=		gem
 

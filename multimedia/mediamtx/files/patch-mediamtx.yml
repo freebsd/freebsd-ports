@@ -1,14 +1,14 @@
---- mediamtx.yml.orig	2026-06-28 21:24:55 UTC
+--- mediamtx.yml.orig	2026-08-08 12:05:49 UTC
 +++ mediamtx.yml
-@@ -490,7 +490,6 @@ pathDefaults:
-   # * whep://existing-url -> the stream is pulled from another WebRTC server / camera with HTTP+WHEP
-   # * wheps://existing-url -> the stream is pulled from another WebRTC server / camera with HTTPS+WHEP
+@@ -492,7 +492,6 @@ pathDefaults:
+   # * whep://host:port/path -> the stream is pulled from another WebRTC server / camera with HTTP+WHEP
+   # * wheps://host:port/path -> the stream is pulled from another WebRTC server / camera with HTTPS+WHEP
    # * redirect -> the stream is provided by another path or server
 -  # * rpiCamera -> the stream is provided by a Raspberry Pi Camera
-   # The following variables can be used in the source string:
+   # The following variables can be used:
    # * $MTX_QUERY: query parameters (passed by first reader)
-   # * $G1, $G2, ...: regular expression groups, if path name is
-@@ -624,101 +623,6 @@ pathDefaults:
+   # * $G1, $G2, ...: regular expression groups, if path name is a regular expression.
+@@ -641,101 +640,6 @@ pathDefaults:
    # Path to which clients will be redirected.
    # It can be a relative path (i.e. /otherstream) or an absolute RTSP URL.
    sourceRedirect:

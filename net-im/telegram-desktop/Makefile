@@ -1,5 +1,5 @@
 PORTNAME=	telegram-desktop
-DISTVERSION=	7.0.6
+DISTVERSION=	7.4.0
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
 DISTNAME=	tdesktop-${DISTVERSION}-full
@@ -24,15 +24,18 @@ BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
 		tl-expected>0:devel/tl-expected \
 		toomanycooks>0:devel/toomanycooks \
 		v4l_compat>0:multimedia/v4l_compat \
+		vulkan-headers>0:graphics/vulkan-headers \
 		yasm:devel/yasm \
-		${LOCALBASE}/lib/libtde2e.a:net-im/tde2e \
-		${LOCALBASE}/lib/libtg_owt.a:net-im/tg_owt
+		${LOCALBASE}/lib/libtg_owt.a:net-im/tg_owt \
+		${LOCALBASE}/lib/libtlottie.a:graphics/tlottie \
+		${LOCALBASE}/lib/libwallet_engine.a:net-p2p/wallet-engine
 LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libada.so:devel/libada \
 		libavformat.so:multimedia/ffmpeg \
 		libcrc32c.so:devel/crc32c \
 		libdbus-1.so:devel/dbus \
 		libdispatch.so:devel/libdispatch \
+		libfido2.so:security/libfido2 \
 		libfmt.so:devel/libfmt \
 		libheif.so:graphics/libheif \
 		libhunspell-1.7.so:textproc/hunspell \
@@ -41,10 +44,10 @@ LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libopenh264.so:multimedia/openh264 \
 		libopus.so:audio/opus \
 		libpipewire-0.3.so:multimedia/pipewire \
-		libprotobuf-lite.so:devel/protobuf \
 		libqrcodegencpp.so:graphics/qr-code-generator \
 		librnnoise.so:audio/rnnoise \
 		libsrtp2.so:net/libsrtp2 \
+		libtde2e.so:net-im/tdlib \
 		libxxhash.so:devel/xxhash \
 		libvpx.so:multimedia/libvpx
 
@@ -63,7 +66,7 @@ USE_GNOME=	glib20 glibmm26 introspection
 
 CMAKE_ARGS=	-DTDESKTOP_API_ID=${TELEGRAM_API_ID} -DTDESKTOP_API_HASH=${TELEGRAM_API_HASH} \
 		-DQT_VERSION_MAJOR=6
-# The order of the variables is important here due to complex combination validation 
+# The order of the variables is important here due to complex combination validation
 CMAKE_ON=	DESKTOP_APP_USE_PACKAGED \
 		DESKTOP_APP_DISABLE_CRASH_REPORTS \
 		DESKTOP_APP_DISABLE_QT_PLUGINS
@@ -72,7 +75,7 @@ CMAKE_ON=	DESKTOP_APP_USE_PACKAGED \
 CMAKE_ARGS+=	-DLINUX=true
 
 # libdispatch components
-LDFLAGS+=	-lBlocksRuntime
+#LDFLAGS+=	-lBlocksRuntime
 
 # Telegram uses OpenAL for its audio, but libtgvoip (for voice calls) can use PulseAudio or ALSA.
 # It dynamically loads PulseAudio, and if this fails, it loads ALSA.

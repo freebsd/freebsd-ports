@@ -7,8 +7,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Python interface to the Avahi mDNS system
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gdbm>0:databases/py-gdbm@${PY_FLAVOR} \
-		${PYTHON_SITELIBDIR}/dbus/_dbus.py:devel/py-dbus@${PY_FLAVOR} \
-		${LOCALBASE}/share/automake-1.18/py-compile:devel/automake
+		${PYTHON_SITELIBDIR}/dbus/_dbus.py:devel/py-dbus@${PY_FLAVOR}
 LIB_DEPENDS=	libavahi-client.so:net/avahi-app
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gdbm>0:databases/py-gdbm@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/dbus/_dbus.py:devel/py-dbus@${PY_FLAVOR} \
@@ -23,7 +22,7 @@ PLIST=		${.CURDIR}/pkg-plist
 AVAHI_SLAVE=	python
 
 USE_GNOME=	pygobject3 gtk30
-USES=		python
+USES=		autoreconf python
 USE_PYTHON=	flavors py3kplist
 MANPAGES=	avahi-bookmarks.1
 
@@ -34,13 +33,14 @@ post-extract:
 	${CP} ${FILESDIR}/build-db ${WRKSRC}/service-type-database
 
 do-build:
-	${CP} ${LOCALBASE}/share/automake-1.18/py-compile ${WRKSRC}/
 	@${DO_MAKE_BUILD} -C ${BUILD_WRKSRC}
 	@${DO_MAKE_BUILD} -C ${WRKSRC}/service-type-database
 
 do-install:
-	@(cd ${BUILD_WRKSRC}; ${MAKE_CMD} ${MAKE_ARGS} install-strip)
-	@(cd ${WRKSRC}/service-type-database; ${MAKE_CMD} ${MAKE_ARGS} install)
+	@(cd ${BUILD_WRKSRC} && ${SETENVI} ${WRK_ENV} \
+		${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install-strip)
+	@(cd ${WRKSRC}/service-type-database && ${SETENVI} ${WRK_ENV} \
+		${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install)
 
 post-install:
 	(cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \

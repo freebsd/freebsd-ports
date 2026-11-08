@@ -1,0 +1,17 @@
+[
+{ type: install
+  message: <<EOM
+A one-shot command for cron, not a service:
+
+  immich-auto-album -u -t file /mnt/library \
+      http://localhost:2283/api %%PREFIX%%/etc/immich-auto-album.key
+
+It walks an external library and creates one album per folder. Without
+-u it asks first, which is what a run by hand wants. With -t file the
+key comes from the named file instead of the command line, where the
+process list would show it; create that file at mode 0600.
+
+immich-auto-album --help lists the rest.
+EOM
+}
+]

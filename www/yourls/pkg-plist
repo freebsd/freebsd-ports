@@ -447,7 +447,8 @@
 %%WWWDIR%%/includes/vendor/maxmind/web-service-common/src/WebService/Http/CurlRequest.php
 %%WWWDIR%%/includes/vendor/maxmind/web-service-common/src/WebService/Http/Request.php
 %%WWWDIR%%/includes/vendor/maxmind/web-service-common/src/WebService/Http/RequestFactory.php
-%%WWWDIR%%/includes/vendor/ozh/bookmarkletgen/src/Ozh/Bookmarkletgen/Bookmarkletgen.php
+%%WWWDIR%%/includes/vendor/ozh/bookmarkletgen/README.md
+%%WWWDIR%%/includes/vendor/ozh/bookmarkletgen/src/Bookmarkletgen.php
 %%WWWDIR%%/includes/vendor/pomo/pomo/README.md
 %%WWWDIR%%/includes/vendor/pomo/pomo/src/MO.php
 %%WWWDIR%%/includes/vendor/pomo/pomo/src/PO.php
@@ -569,6 +570,8 @@
 %%WWWDIR%%/includes/vendor/symfony/polyfill-intl-normalizer/Resources/unidata/canonicalDecomposition.php
 %%WWWDIR%%/includes/vendor/symfony/polyfill-intl-normalizer/Resources/unidata/combiningClass.php
 %%WWWDIR%%/includes/vendor/symfony/polyfill-intl-normalizer/Resources/unidata/compatibilityDecomposition.php
+%%WWWDIR%%/includes/vendor/symfony/polyfill-intl-normalizer/Resources/unidata/rawCanonicalDecomposition.php
+%%WWWDIR%%/includes/vendor/symfony/polyfill-intl-normalizer/Resources/unidata/rawCompatibilityDecomposition.php
 %%WWWDIR%%/includes/vendor/symfony/polyfill-intl-normalizer/bootstrap.php
 %%WWWDIR%%/includes/vendor/symfony/polyfill-intl-normalizer/bootstrap80.php
 %%WWWDIR%%/includes/vendor/symfony/polyfill-intl-normalizer/composer.json
@@ -580,6 +583,7 @@
 %%WWWDIR%%/includes/vendor/symfony/polyfill-mbstring/Resources/unidata/titleCaseRegexp.php
 %%WWWDIR%%/includes/vendor/symfony/polyfill-mbstring/Resources/unidata/upperCase.php
 %%WWWDIR%%/includes/vendor/symfony/polyfill-mbstring/bootstrap.php
+%%WWWDIR%%/includes/vendor/symfony/polyfill-mbstring/bootstrap72.php
 %%WWWDIR%%/includes/vendor/symfony/polyfill-mbstring/bootstrap80.php
 %%WWWDIR%%/includes/vendor/symfony/polyfill-mbstring/composer.json
 %%WWWDIR%%/includes/version.php

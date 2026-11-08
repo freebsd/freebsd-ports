@@ -1,7 +1,9 @@
-TIMESTAMP = 1784385171
+TIMESTAMP = 1788706660
 SHA256 (openblas/large.tgz) = f328d88b7fa97722f271d7d0cfea1c220e0f8e5ed5ff01d8ef1eb51d6f4243a1
 SIZE (openblas/large.tgz) = 2595
 SHA256 (openblas/timing.tgz) = 999c65f8ea8bd4eac7f1c7f3463d4946917afd20a997807300fe35d70122f3af
 SIZE (openblas/timing.tgz) = 1059485
 SHA256 (openblas/OpenMathLib-OpenBLAS-v0.3.34_GH0.tar.gz) = cd7e129868320cc2d033afa920e31202dfe0b8066a5b66661900ccc0f197dfed
 SIZE (openblas/OpenMathLib-OpenBLAS-v0.3.34_GH0.tar.gz) = 25326686
+SHA256 (openblas/76e12db33be8c5ae981b36ef924168e1b1248219.patch) = 5c2d3d6b9fc070f0f4416d5f987aae97bf12f4587aacc28d9777ca75d8e674dd
+SIZE (openblas/76e12db33be8c5ae981b36ef924168e1b1248219.patch) = 836

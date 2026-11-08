@@ -1,14 +1,21 @@
 PORTNAME=	wordpress
-DISTVERSION=	7.0.2
+DISTVERSION=	7.1.4
+.ifdef WORDPRESS_LANG
+DISTVERSIONSUFFIX=	-${WORDPRESS_LANG}
+.endif
 PORTREVISION?=	0
 .ifndef WORDPRESS_LANG
 PORTEPOCH=	1
-MASTER_SITES=	https://wordpress.org/
-.else
-DISTVERSIONSUFFIX=	-${WORDPRESS_LANG}
-MASTER_SITES?=	https://${WORDPRESS_LANG}.wordpress.org/
 .endif
 CATEGORIES+=	www
+.ifndef WORDPRESS_LANG
+MASTER_SITES=	https://wordpress.org/
+.else
+MASTER_SITES?=	https://${WORDPRESS_LANG}.wordpress.org/
+.endif
+.ifdef WORDPRESS_LANG
+PKGNAMESUFFIX=	-${WORDPRESS_LANG}
+.endif
 
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	State-of-the-art semantic personal publishing platform
@@ -17,28 +24,31 @@ WWW=		${MASTER_SITES}
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/license.txt
 
+.ifdef WORDPRESS_LANG
+DEPRECATED=	Localized tarballs are re-rolled upstream in place; use www/wordpress and let it download language packs
+EXPIRATION_DATE=	2026-12-31
+.endif
+
 RUN_DEPENDS=	${PECL_PKGNAMEPREFIX}imagick>=2.2.2:graphics/pecl-imagick@${PHP_FLAVOR}
 
 USES=		cpe php:web
-IGNORE_WITH_PHP=	86
 .if ${DISTVERSION:N*.*.*}
 CPE_VERSION=	${DISTVERSION}.0
 .endif
-
 .ifdef WORDPRESS_LANG
-PKGNAMESUFFIX=	-${WORDPRESS_LANG}
 CPE_LANG=	${WORDPRESS_LANG}
 .endif
-
 USE_PHP=	curl exif fileinfo filter ftp gd mysqli tokenizer xml zip zlib
+IGNORE_WITH_PHP=	86
+
 CONFLICTS_INSTALL=	??-wordpress
-NO_ARCH=	yes
-NO_BUILD=	yes
-SUB_FILES=	pkg-message
-WRKSRC=		${WRKDIR}/${PORTNAME}
-PLIST=		${WRKDIR}/pkg-plist
-PORTDOCS=	readme.html
-OPTIONS_DEFINE=	DOCS
+NO_ARCH=		yes
+NO_BUILD=		yes
+SUB_FILES=		pkg-message
+WRKSRC=			${WRKDIR}/${PORTNAME}
+PLIST=			${WRKDIR}/pkg-plist
+PORTDOCS=		readme.html
+OPTIONS_DEFINE=		DOCS
 
 .include <bsd.port.options.mk>
 

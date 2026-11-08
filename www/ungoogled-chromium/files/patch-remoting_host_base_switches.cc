@@ -1,6 +1,6 @@
---- remoting/host/base/switches.cc.orig	2026-05-09 18:09:27 UTC
+--- remoting/host/base/switches.cc.orig	2026-10-31 12:09:36 UTC
 +++ remoting/host/base/switches.cc
-@@ -24,13 +24,13 @@ const char kProcessTypeEvaluateCapability[] = "evaluat
+@@ -25,13 +25,13 @@ const char kProcessTypeEvaluateCapability[] = "evaluat
  const char kProcessTypeFileChooser[] = "file_chooser";
  const char kProcessTypeUrlForwarderConfigurator[] =
      "url_forwarder_configurator";
@@ -14,5 +14,5 @@
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  const char kEnableWtmpdb[] = "enable-wtmpdb";
- #endif
- 
+ const char kCrashpadHandlerSocketFd[] = "crashpad-handler-socket-fd";
+ const char kCrashpadHandlerPid[] = "crashpad-handler-pid";

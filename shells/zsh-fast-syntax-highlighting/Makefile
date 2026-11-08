@@ -1,6 +1,6 @@
 PORTNAME=	zsh-fast-syntax-highlighting
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.55
+DISTVERSION=	1.56
 PORTREVISION=	1
 CATEGORIES=	shells
 
@@ -24,6 +24,8 @@ SUB_FILES=	pkg-message
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR} "! -path \./\.* ! -name *\.bak ! -name *\.orig"
+	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
+	cd ${STAGEDIR}${DATADIR} && \
+	${RM} -r images tests test .github .gitignore .zunit.yml
 
 .include <bsd.port.mk>

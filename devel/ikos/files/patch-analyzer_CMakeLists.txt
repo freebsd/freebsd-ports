@@ -1,0 +1,14 @@
+-- Bump cmake_minimum_required to 3.5 for CMake 4.0 compatibility.
+-- CMake 4.0 removed support for cmake_minimum_required(VERSION < 3.5).
+
+--- analyzer/CMakeLists.txt.orig	2026-08-27 09:02:53 UTC
++++ analyzer/CMakeLists.txt
+@@ -38,7 +38,7 @@
+ #
+ #*****************************************************************************/
+
+-cmake_minimum_required(VERSION 3.4.3 FATAL_ERROR)
++cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
+
+ if (POLICY CMP0074)
+   cmake_policy(SET CMP0074 NEW)

@@ -1,5 +1,6 @@
 PORTNAME=	noti
 DISTVERSION=	3.9.0
+PORTREVISION=	5
 CATEGORIES=	deskutils
 MASTER_SITES=	https://codeberg.org/roble/noti/releases/download/${DISTVERSION}/
 DISTNAME=	${PORTNAME}${DISTVERSION}
@@ -13,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSES/MIT.txt
 
 RUN_DEPENDS=	notify-send:devel/libnotify
 
-USES=		go:1.25+,modules
+USES=		go:modules
 
 GO_TARGET=	./cmd/noti
 GO_LDFLAGS=	-w -X codeberg.org/roble/noti/internal/command.Version=${DISTVERSION}

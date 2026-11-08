@@ -1,6 +1,6 @@
---- packages/app-desktop/ElectronAppWrapper.ts.orig	2026-05-12 09:52:21 UTC
+--- packages/app-desktop/ElectronAppWrapper.ts.orig	2026-09-05 19:41:51 UTC
 +++ packages/app-desktop/ElectronAppWrapper.ts
-@@ -284,7 +284,7 @@ export default class ElectronAppWrapper {
+@@ -282,7 +282,7 @@ export default class ElectronAppWrapper {
  
  		// Linux icon workaround for bug https://github.com/electron-userland/electron-builder/issues/2098
  		// Fix: https://github.com/electron-userland/electron-builder/issues/2269
@@ -9,3 +9,12 @@
  
  		this.win_ = new BrowserWindow(windowOptions);
  
+@@ -902,7 +902,7 @@ export default class ElectronAppWrapper {
+ 		if (this.electronApp().accessibilitySupportEnabled) return;
+ 
+ 		const isOrcaRunning = async () => {
+-			if (!shim.isLinux()) return false;
++			if (!shim.isLinux() && !shim.isFreeBSD()) return false;
+ 			try {
+ 				const matchingProcesses = await execCommand(['ps', '--no-headers', '-C', 'orca'], { quiet: true });
+ 				return matchingProcesses.trim().length > 0;

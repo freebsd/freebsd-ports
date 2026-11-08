@@ -1,5 +1,5 @@
 PORTNAME=	sobjectizer
-PORTVERSION=	5.8.5
+PORTVERSION=	5.8.6.1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/Stiffstream/${PORTNAME}/releases/download/v${PORTVERSION}/
 DISTNAME=	so-${PORTVERSION}

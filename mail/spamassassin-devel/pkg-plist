@@ -163,12 +163,14 @@ lib/libspamc.so.0
 %%SITE_PERL%%/Mail/SpamAssassin/SpamdForkScaling.pm
 %%SITE_PERL%%/Mail/SpamAssassin/SubProcBackChannel.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Timeout.pm
+%%SITE_PERL%%/Mail/SpamAssassin/URI.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Util.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Util/DependencyInfo.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Util/Progress.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Util/ScopedTimer.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Util/TieOneStringHash.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Util/TinyRedis.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Util/Zip.pm
 %%SITE_PERL%%/spamassassin-run.pod
 %%PERL5_MAN1%%/sa-awl.1.gz
 %%PERL5_MAN1%%/sa-check_%%USER%%.1.gz
@@ -287,9 +289,11 @@ lib/libspamc.so.0
 %%PERL5_MAN3%%/Mail::SpamAssassin::SQLBasedAddrList.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::SubProcBackChannel.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Timeout.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::URI.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Util.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Util::DependencyInfo.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Util::Progress.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Util::Zip.3.gz
 %%PERL5_MAN3%%/spamassassin-run.3.gz
 %%DATADIR%%/languages
 %%DATADIR%%/sa-update-pubkey.txt

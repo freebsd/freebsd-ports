@@ -7,5 +7,6 @@ bin/ociocpuinfo
 bin/ociodisplay
 bin/ociolutimage
 bin/ociomakeclf
+bin/ociomergeconfigs
 bin/ocioperf
 bin/ociowrite

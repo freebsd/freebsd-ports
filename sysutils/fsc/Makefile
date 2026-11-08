@@ -1,5 +1,5 @@
 PORTNAME=	fsc
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 PORTREVISION=	1
 CATEGORIES=	sysutils
 
@@ -15,7 +15,7 @@ PLIST_FILES=	bin/fscadm sbin/fscd etc/rc.d/fscd share/man/man5/fscd.conf.5.gz \
 USE_GITHUB=	yes
 GH_ACCOUNT=	bsdtrhodes
 GH_PROJECT=	freebsd-fscd
-GH_TAGNAME=	ef16626
+GH_TAGNAME=	v${PORTVERSION}
 
 .include <bsd.port.options.mk>
 
@@ -25,7 +25,6 @@ CFLAGS+=	-Wno-error=unused-but-set-variable
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|' \
-		${WRKSRC}/fscd/fscd.8 ${WRKSRC}/fscd/fscd.c \
 		${WRKSRC}/fscd/fscd.conf.5 ${WRKSRC}/fscadm/fscadm.c
 
 do-install:

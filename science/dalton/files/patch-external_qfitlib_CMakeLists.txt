@@ -1,0 +1,11 @@
+-- Fix configure with CMake 4 by raising the minimum required CMake version
+-- from 2.8 to 3.5. CMake 4 no longer supports compatibility with CMake versions below 3.5.
+
+--- external/qfitlib/CMakeLists.txt.orig	2026-09-28 07:53:33 UTC
++++ external/qfitlib/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
++cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
+ 
+ project(qfitlib Fortran)
+ option(ENABLE_QFIT_TOOLS "Build standalone QFITLIB tools." OFF)

@@ -1,6 +1,15 @@
---- CMakeLists.txt.orig	2025-10-29 04:19:43 UTC
+--- CMakeLists.txt.orig	2026-08-23 23:44:56 UTC
 +++ CMakeLists.txt
-@@ -138,7 +138,7 @@ endif()
+@@ -5,7 +5,7 @@ set (COLLADA_DOM_VERSION_MINOR 5)
+ # Define here the needed parameters
+ set (COLLADA_DOM_VERSION_MAJOR 2)
+ set (COLLADA_DOM_VERSION_MINOR 5)
+-set (COLLADA_DOM_VERSION_PATCH 4)
++set (COLLADA_DOM_VERSION_PATCH 5)
+ set (COLLADA_DOM_VERSION ${COLLADA_DOM_VERSION_MAJOR}.${COLLADA_DOM_VERSION_MINOR}.${COLLADA_DOM_VERSION_PATCH})
+ set (COLLADA_DOM_SOVERSION ${COLLADA_DOM_VERSION_MAJOR}.${COLLADA_DOM_VERSION_MINOR})
+ 
+@@ -132,7 +132,7 @@ endif()
    add_definitions("-Dftello64=ftello")
  endif()
  
@@ -9,3 +18,16 @@
  
  set(COLLADA_DOM_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/dom/include)
  set(COLLADA_DOM_LINK_DIRS "")
+@@ -190,10 +190,10 @@ set(liburiparser_CFLAGS_OTHERS "-DUSE_URIPARSER")
+ pkg_check_modules(liburiparser REQUIRED liburiparser)
+ set(liburiparser_CFLAGS_OTHERS "-DUSE_URIPARSER")
+ # declare minizip/zlib before libxml2! (for some reason the precompiled libxml2 libraries have zlib.h/zconf.h)
+-include_directories(BEFORE SYSTEM ${MINIZIP_INCLUDE_DIR})
++include_directories(BEFORE SYSTEM ${liburiparser_INCLUDE_DIRS})
+ 
+ set(COLLADA_DOM_LINK_DIRS ${COLLADA_DOM_LINK_DIRS})
+-link_directories(${COLLADA_DOM_LINK_DIRS})
++link_directories(${COLLADA_DOM_LINK_DIRS} ${liburiparser_LIBRARY_DIRS} ${MINIZIP_LIBRARY_DIRS})
+ 
+ if( OPT_COMPILE_TESTS )
+   enable_testing()

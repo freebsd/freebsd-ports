@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	ANSI Control Sequence Aware String Functions
-WWW=		https://cran.r-project.org/package=fansi
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

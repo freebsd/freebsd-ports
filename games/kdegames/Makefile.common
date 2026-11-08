@@ -13,6 +13,7 @@ KDE_GAMES_ALL=	BOMBER \
 		KBOUNCE \
 		KBREAKOUT \
 		KDIAMOND \
+		KDOMINATE \
 		KFOURINLINE \
 		KILLBOTS \
 		KIRIKI \
@@ -53,6 +54,7 @@ KBLOCKS_DESC=		Falling Blocks game
 KBOUNCE_DESC=		Ball Bouncing game
 KBREAKOUT_DESC=		Breakout-like game
 KDIAMOND_DESC=		Three-in-a-row game
+KDOMINATE_DESC=		Board domination game
 KFOURINLINE_DESC=	Four-in-a-row Board game
 KGOLDRUNNER_DESC=	Hunt Gold, Dodge Enemies and Solve Puzzles
 KIGO_DESC=		Go Board game

@@ -1,0 +1,29 @@
+--- src/webp.imageio/CMakeLists.txt.orig	2026-10-12 00:00:00 UTC
++++ src/webp.imageio/CMakeLists.txt
+@@ -2,10 +2,22 @@
+ # SPDX-License-Identifier: Apache-2.0
+ # https://github.com/AcademySoftwareFoundation/OpenImageIO
+ 
+-if (WebP_FOUND)
+-    add_oiio_plugin (webpinput.cpp webpoutput.cpp
+-                     LINK_LIBRARIES WebP::webp WebP::webpdemux WebP::libwebpmux
+-                     DEFINITIONS "USE_WEBP=1")
++if (WebP_FOUND AND TARGET WebP::webp AND TARGET WebP::webpdemux)
++    if (TARGET WebP::libwebpmux)
++        set (_webp_mux_target WebP::libwebpmux)
++    elseif (TARGET WebP::webpmux)
++        set (_webp_mux_target WebP::webpmux)
++    else ()
++        unset (_webp_mux_target)
++    endif ()
++
++    if (_webp_mux_target)
++        add_oiio_plugin (webpinput.cpp webpoutput.cpp
++                         LINK_LIBRARIES WebP::webp WebP::webpdemux ${_webp_mux_target}
++                         DEFINITIONS "USE_WEBP=1")
++    else ()
++        message (STATUS "WebP plugin will not be built (missing mux target)")
++    endif ()
+ else ()
+     message (STATUS "WebP plugin will not be built")
+ endif()

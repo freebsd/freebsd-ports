@@ -1,0 +1,20 @@
+--- setup.py.orig	2026-04-08 18:48:56 UTC
++++ setup.py
+@@ -28,7 +28,7 @@ setup(name='flanker',
+       author_email='admin@mailgunhq.com',
+       url='https://www.mailgun.com/',
+       license='Apache 2',
+-      packages=find_packages(exclude=['tests']),
++      packages=find_packages(exclude=['tests', 'tests.*']),
+       include_package_data=True,
+       zip_safe=True,
+       tests_require=tests_require,
+@@ -40,7 +40,7 @@ setup(name='flanker',
+           'ply>=3.10',
+           'regex>=0.1.20110315',
+           'six',
+-          'standard-imghdr==3.13.0',
++          'standard-imghdr==3.13.0; python_version >= "3.13"',
+           'tld',
+           'WebOb>=0.9.8'],
+       extras_require={

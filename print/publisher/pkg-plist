@@ -100,6 +100,7 @@ share/speedata-publisher/sw/lua/par.lua
 share/speedata-publisher/sw/lua/publisher.lua
 share/speedata-publisher/sw/lua/publisher/attributes.lua
 share/speedata-publisher/sw/lua/publisher/colors.lua
+share/speedata-publisher/sw/lua/publisher/commandattributes.lua
 share/speedata-publisher/sw/lua/publisher/commands.lua
 share/speedata-publisher/sw/lua/publisher/dispatch.lua
 share/speedata-publisher/sw/lua/publisher/drawing.lua

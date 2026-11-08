@@ -1,5 +1,5 @@
 PORTNAME=	river-classic
-DISTVERSION=	0.3.15
+DISTVERSION=	0.3.17
 CATEGORIES=	x11-wm wayland
 MASTER_SITES=	https://codeberg.org/river/river-classic/releases/download/v${DISTVERSIONFULL}/
 DISTFILES=	river-classic-${DISTVERSIONFULL}${EXTRACT_SUFX}
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libevdev.so:devel/libevdev \
 		libinput.so:x11/libinput \
 		libxkbcommon.so:x11/libxkbcommon
 
-USES=		pkgconfig xorg zig:015
+USES=		pkgconfig xorg zig
 USE_XORG=	pixman
 
 OPTIONS_DEFINE=	MANPAGES X11
@@ -34,6 +34,12 @@ X11_CONFIGURE_ON=	-Dxwayland=true
 X11_CONFIGURE_OFF=	-Dxwayland=false
 
 ZIG_ARGS+=	-Dstrip
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} != amd64
+ZIG_ARGS+=	-Dllvm=true
+.endif
 
 do-test:
 	@(cd ${WRKSRC} && ${TEST_ENV} zig build test ${CONFIGURE_ARGS})

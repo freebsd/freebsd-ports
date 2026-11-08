@@ -1,5 +1,6 @@
 PORTNAME=	httpdirfs
 DISTVERSION=	1.3.3
+PORTREVISION=	1
 CATEGORIES=	filesystems
 PKGNAMEPREFIX=	fusefs-
 

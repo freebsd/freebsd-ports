@@ -3,7 +3,7 @@ DISTVERSION=	2.68
 CATEGORIES=	biology perl5 python
 MASTER_SITES=	https://catchenlab.life.illinois.edu/stacks/source/
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Software pipeline for building loci from short-read sequences
 WWW=		https://catchenlab.life.illinois.edu/stacks/
 

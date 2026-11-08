@@ -1,6 +1,6 @@
---- src/webrtc/src/build/config/clang/BUILD.gn.orig	2024-07-30 11:12:21 UTC
+--- src/webrtc/src/build/config/clang/BUILD.gn.orig	2026-06-04 10:12:25 UTC
 +++ src/webrtc/src/build/config/clang/BUILD.gn
-@@ -252,7 +252,12 @@ template("clang_lib") {
+@@ -243,7 +243,12 @@ template("clang_lib") {
  
  # Adds a dependency on the Clang runtime library clang_rt.builtins.
  clang_lib("compiler_builtins") {

@@ -1,9 +1,9 @@
---- pyproject.toml.orig	2025-08-02 04:52:34 UTC
+--- pyproject.toml.orig	2026-08-30 03:38:24 UTC
 +++ pyproject.toml
-@@ -7,8 +7,7 @@ requires-python = ">=3.9"
+@@ -7,8 +7,7 @@ requires-python = ">=3.10"
  description = "Sphinx utility that make it easy to translate and to apply translation."
  readme = "README.rst"
- requires-python = ">=3.9"
+ requires-python = ">=3.10"
 -license = "BSD-2-Clause"
 -license-files = ["LICENSE"]
 +license = {file = "LICENSE"}

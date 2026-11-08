@@ -1,6 +1,6 @@
---- libfwupdplugin/fu-efi-hard-drive-device-path.c.orig	2026-03-12 10:08:33 UTC
+--- libfwupdplugin/fu-efi-hard-drive-device-path.c.orig	2026-07-27 15:39:53 UTC
 +++ libfwupdplugin/fu-efi-hard-drive-device-path.c
-@@ -379,8 +379,10 @@ fu_efi_hard_drive_device_path_new_from_volume(FuVolume
+@@ -380,8 +380,10 @@ fu_efi_hard_drive_device_path_new_from_volume(FuVolume
  				    "partition UUID required");
  		return NULL;
  	}

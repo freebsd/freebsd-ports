@@ -1,20 +1,24 @@
---- cmake/thirdparty/SetupChaiThirdparty.cmake.orig	2025-10-30 17:20:50 UTC
+-- Find the externally installed umpire and raja packages in the standard
+-- FreeBSD prefix, because CHAI otherwise only searches in user-supplied
+-- paths or falls back to bundled submodules.
+
+--- cmake/thirdparty/SetupChaiThirdparty.cmake.orig	2026-09-23 06:32:45 UTC
 +++ cmake/thirdparty/SetupChaiThirdparty.cmake
 @@ -5,6 +5,8 @@
  # SPDX-License-Identifier: BSD-3-Clause
  ##############################################################################
- 
-+find_package(umpire REQUIRED)
+
++find_package(umpire CONFIG REQUIRED)
 +
- if (NOT TARGET umpire)
+ if (NOT TARGET umpire::umpire AND NOT TARGET umpire)
    if (DEFINED umpire_DIR OR DEFINED UMPIRE_DIR)
      message(STATUS "[CHAI] Using external Umpire")
-@@ -27,6 +29,8 @@ endif ()
-     endif ()
-   endif ()
+@@ -37,6 +39,8 @@ if (CHAI_ENABLE_RAJA_PLUGIN)
  endif ()
-+
-+find_package(raja REQUIRED)
  
  if (CHAI_ENABLE_RAJA_PLUGIN)
++  find_package(raja CONFIG REQUIRED)
++
    if (NOT TARGET RAJA)
+     if (DEFINED raja_DIR OR DEFINED RAJA_DIR)
+       message(STATUS "[CHAI] Using external RAJA")

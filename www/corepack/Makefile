@@ -1,5 +1,5 @@
 PORTNAME=	corepack
-PORTVERSION=	0.35.0
+PORTVERSION=	0.36.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/nodejs/corepack/releases/download/v${PORTVERSION}/
@@ -18,6 +18,9 @@ USES=		tar:tgz
 NO_ARCH=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
+
+post-patch:
+	@${FIND} ${WRKSRC}/ \( -name '*.cmd' -o -name '*.ps1' \) -delete
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/node_modules/

@@ -8,12 +8,8 @@ WWW=		https://www.kde.org/
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
-		libcurl.so:ftp/curl \
-		libkolabxml.so:textproc/libkolabxml \
-		libqca-qt6.so:devel/qca@qt6 \
+LIB_DEPENDS=	libqca-qt6.so:devel/qca@qt6 \
 		libsasl2.so:security/cyrus-sasl2 \
-		libxerces-c.so:textproc/xerces-c3 \
 		libqt6keychain.so:security/qtkeychain@qt6
 
 USES=		cmake:noninja compiler:c++11-lib gettext kde:6 qt:6 \
@@ -31,7 +27,7 @@ USE_KDE+=	akonadi akonadicalendar akonadicontacts akonadimime \
 		gapi grantleetheme identitymanagement imap kontactinterface \
 		ldap libkdepim mailtransport mbox mime pimcommon pimtextedit \
 		syndication
-USE_QT=		base networkauth
+USE_QT=		base networkauth webengine
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 

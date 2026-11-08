@@ -4828,7 +4828,6 @@ libexec/gimp-debug-tool-%%ABIVER%%
 %%DATADIR%%/%%APIVER%%/icons/Legacy/12x12/apps/gimp-quick-mask-off.png
 %%DATADIR%%/%%APIVER%%/icons/Legacy/12x12/apps/gimp-quick-mask-on.png
 %%DATADIR%%/%%APIVER%%/icons/Legacy/12x12/apps/gimp-swap-colors.png
-%%DATADIR%%/%%APIVER%%/icons/Legacy/12x12/apps/gimp-visible.png
 %%DATADIR%%/%%APIVER%%/icons/Legacy/12x12/apps/gimp-zoom-follow-window.png
 %%DATADIR%%/%%APIVER%%/icons/Legacy/16x16/apps/dialog-information.png
 %%DATADIR%%/%%APIVER%%/icons/Legacy/16x16/apps/dialog-warning.png
@@ -4885,7 +4884,6 @@ libexec/gimp-debug-tool-%%ABIVER%%
 %%DATADIR%%/%%APIVER%%/icons/Legacy/16x16/apps/gimp-histogram-linear.png
 %%DATADIR%%/%%APIVER%%/icons/Legacy/16x16/apps/gimp-histogram-logarithmic.png
 %%DATADIR%%/%%APIVER%%/icons/Legacy/16x16/apps/gimp-histogram.png
-%%DATADIR%%/%%APIVER%%/icons/Legacy/16x16/apps/gimp-image.png
 %%DATADIR%%/%%APIVER%%/icons/Legacy/16x16/apps/gimp-images.png
 %%DATADIR%%/%%APIVER%%/icons/Legacy/16x16/apps/gimp-input-device.png
 %%DATADIR%%/%%APIVER%%/icons/Legacy/16x16/apps/gimp-invert.png
@@ -4973,7 +4971,6 @@ libexec/gimp-debug-tool-%%ABIVER%%
 %%DATADIR%%/%%APIVER%%/icons/Legacy/18x18/apps/gimp-color-picker-white.png
 %%DATADIR%%/%%APIVER%%/icons/Legacy/192x192/apps/gimp-wilber.png
 %%DATADIR%%/%%APIVER%%/icons/Legacy/20x20/apps/gimp-linked.png
-%%DATADIR%%/%%APIVER%%/icons/Legacy/20x20/apps/gimp-visible.png
 %%DATADIR%%/%%APIVER%%/icons/Legacy/22x22/apps/gimp-char-picker.png
 %%DATADIR%%/%%APIVER%%/icons/Legacy/22x22/apps/gimp-dynamics.png
 %%DATADIR%%/%%APIVER%%/icons/Legacy/22x22/apps/gimp-histogram.png
@@ -5059,7 +5056,6 @@ libexec/gimp-debug-tool-%%ABIVER%%
 %%DATADIR%%/%%APIVER%%/icons/Legacy/24x24/apps/gimp-hchain-broken.png
 %%DATADIR%%/%%APIVER%%/icons/Legacy/24x24/apps/gimp-hchain.png
 %%DATADIR%%/%%APIVER%%/icons/Legacy/24x24/apps/gimp-hfill.png
-%%DATADIR%%/%%APIVER%%/icons/Legacy/24x24/apps/gimp-image.png
 %%DATADIR%%/%%APIVER%%/icons/Legacy/24x24/apps/gimp-images.png
 %%DATADIR%%/%%APIVER%%/icons/Legacy/24x24/apps/gimp-layer-mask.png
 %%DATADIR%%/%%APIVER%%/icons/Legacy/24x24/apps/gimp-layer.png
@@ -5094,7 +5090,6 @@ libexec/gimp-debug-tool-%%ABIVER%%
 %%DATADIR%%/%%APIVER%%/icons/Legacy/32x32/apps/gimp-channel-red.png
 %%DATADIR%%/%%APIVER%%/icons/Legacy/32x32/apps/gimp-channel.png
 %%DATADIR%%/%%APIVER%%/icons/Legacy/32x32/apps/gimp-floating-selection.png
-%%DATADIR%%/%%APIVER%%/icons/Legacy/32x32/apps/gimp-image.png
 %%DATADIR%%/%%APIVER%%/icons/Legacy/32x32/apps/gimp-layer-mask.png
 %%DATADIR%%/%%APIVER%%/icons/Legacy/32x32/apps/gimp-layer.png
 %%DATADIR%%/%%APIVER%%/icons/Legacy/32x32/apps/gimp-text-layer.png
@@ -5161,6 +5156,7 @@ libexec/gimp-debug-tool-%%ABIVER%%
 %%DATADIR%%/%%APIVER%%/icons/Legacy/96x96/apps/gimp-wilber.png
 %%DATADIR%%/%%APIVER%%/icons/Legacy/index.theme
 %%DATADIR%%/%%APIVER%%/icons/Legacy/scalable/apps/gimp-business-card.svg
+%%DATADIR%%/%%APIVER%%/icons/Legacy/scalable/apps/gimp-close-all.svg
 %%DATADIR%%/%%APIVER%%/icons/Legacy/scalable/apps/gimp-color-cmyk.svg
 %%DATADIR%%/%%APIVER%%/icons/Legacy/scalable/apps/gimp-color-space-linear.svg
 %%DATADIR%%/%%APIVER%%/icons/Legacy/scalable/apps/gimp-color-space-non-linear.svg
@@ -5178,6 +5174,9 @@ libexec/gimp-debug-tool-%%ABIVER%%
 %%DATADIR%%/%%APIVER%%/icons/Legacy/scalable/apps/gimp-file-manager.svg
 %%DATADIR%%/%%APIVER%%/icons/Legacy/scalable/apps/gimp-gegl.svg
 %%DATADIR%%/%%APIVER%%/icons/Legacy/scalable/apps/gimp-group-layer.svg
+%%DATADIR%%/%%APIVER%%/icons/Legacy/scalable/apps/gimp-image-open.svg
+%%DATADIR%%/%%APIVER%%/icons/Legacy/scalable/apps/gimp-image-reload.svg
+%%DATADIR%%/%%APIVER%%/icons/Legacy/scalable/apps/gimp-image.svg
 %%DATADIR%%/%%APIVER%%/icons/Legacy/scalable/apps/gimp-lock-alpha-symbolic.svg
 %%DATADIR%%/%%APIVER%%/icons/Legacy/scalable/apps/gimp-lock-alpha.svg
 %%DATADIR%%/%%APIVER%%/icons/Legacy/scalable/apps/gimp-lock-content-symbolic.svg
@@ -5274,6 +5273,7 @@ libexec/gimp-debug-tool-%%ABIVER%%
 %%DATADIR%%/%%APIVER%%/icons/Legacy/scalable/apps/gimp-transform-3d-camera.svg
 %%DATADIR%%/%%APIVER%%/icons/Legacy/scalable/apps/gimp-transform-3d-move.svg
 %%DATADIR%%/%%APIVER%%/icons/Legacy/scalable/apps/gimp-transform-3d-rotate.svg
+%%DATADIR%%/%%APIVER%%/icons/Legacy/scalable/apps/gimp-visible.svg
 %%DATADIR%%/%%APIVER%%/icons/Legacy/scalable/apps/gtk-cancel.svg
 %%DATADIR%%/%%APIVER%%/icons/Legacy/scalable/apps/gtk-no.svg
 %%DATADIR%%/%%APIVER%%/icons/Legacy/scalable/apps/gtk-ok.svg

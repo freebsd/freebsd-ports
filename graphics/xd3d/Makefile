@@ -2,7 +2,7 @@ PORTNAME=	xd3d
 PORTVERSION=	8.3.1
 PORTREVISION=	21
 CATEGORIES=	graphics math
-MASTER_SITES=	https://www.ljll.fr/jouve/xd3d/
+MASTER_SITES=	https://www.ljll.fr/jouve/xd3d/download.php?file=
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Simple scientific visualization tool
@@ -36,8 +36,7 @@ RUN_DEPENDS+=	gifsicle:graphics/gifsicle
 MASTER_SITES_BACKUP=	https://www.pompo.net/ports/
 
 REINPLACE_ARGS=	-i ""
-FETCH_ARGS=
-FETCH_BEFORE_ARGS=	-R -o ${DISTDIR}/${DISTFILES}
+FETCH_ARGS=	-R
 
 USES=		fortran xorg
 USE_XORG=	x11 xpm
@@ -55,13 +54,6 @@ DOCS=		BUGS CHANGELOG FAQ FORMATS INSTALL README Manuals/formats.txt	\
 		Manuals/xd3d_doc.pdf Manuals/xgraphic_doc.pdf
 
 .include <bsd.port.pre.mk>
-
-do-fetch:
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-	${FETCH_CMD} ${FETCH_BEFORE_ARGS}			\
-		${MASTER_SITES}download.php?file=${DISTFILES}	\
-	|| ${FETCH_CMD} ${FETCH_BEFORE_ARGS} ${MASTER_SITES_BACKUP}${DISTFILES}
-.endif
 
 pre-configure:
 	${CP} ${WRKSRC}/RULES.freeBSD ${WRKSRC}/RULES

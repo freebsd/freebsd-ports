@@ -1,6 +1,6 @@
 PORTNAME=	oggvideotools
 PORTVERSION=	0.9.1
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTNAME}
 
@@ -10,6 +10,9 @@ WWW=		http://www.streamnik.de/oggvideotools.html
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	Abandoned upstream, does not build with CMake 4
+EXPIRATION_DATE=2026-11-30
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/circular_buffer.hpp:devel/boost-libs
 LIB_DEPENDS=	libgd.so:graphics/gd \

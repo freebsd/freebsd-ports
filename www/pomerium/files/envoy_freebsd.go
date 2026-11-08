@@ -10,7 +10,8 @@ import (
 )
 
 var sysProcAttr = &syscall.SysProcAttr{
-	Setpgid: true,
+	Setpgid:   true,
+	Pdeathsig: syscall.SIGTERM,
 }
 
 func (srv *Server) runProcessCollector(_ context.Context) {}
@@ -23,11 +24,6 @@ func (srv *Server) prepareRunEnvoyCommand(ctx context.Context, sharedArgs []stri
 
 	args = make([]string, len(sharedArgs))
 	copy(args, sharedArgs)
-
-	// Hot-restart uses abstract AF_UNIX sockets which are Linux-only.
-	// The system envoy binary is built with hot-restart enabled, so we
-	// must disable it at runtime to prevent envoy from aborting on startup.
-	args = append(args, "--disable-hot-restart")
 
 	return srv.envoyPath, args
 }

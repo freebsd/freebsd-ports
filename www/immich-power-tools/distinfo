@@ -1,0 +1,7 @@
+TIMESTAMP = 1794046116
+SHA256 (immich-power-tools-freebsd-buildkit-0.25.0.tar.gz) = 24e3a82c4ee4d9799ea6ad10d061160c4e4598ce098507e33241fd316e484dc6
+SIZE (immich-power-tools-freebsd-buildkit-0.25.0.tar.gz) = 141947388
+SHA256 (immich-power-tools-mk-buildkit.sh) = 0637522c85c59c9451db6df6fa6f8ba5ff801dce185a4d6ee53474f0c965a956
+SIZE (immich-power-tools-mk-buildkit.sh) = 1002
+SHA256 (immich-power-tools-immich-power-tools-v0.25.0_GH0.tar.gz) = 806cc3d8a1f7de7c9f74338e14202f57730a9ee989385fdcbf57fcd60f1a8a59
+SIZE (immich-power-tools-immich-power-tools-v0.25.0_GH0.tar.gz) = 5191778

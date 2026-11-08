@@ -1,5 +1,5 @@
 PORTNAME=	faraday-rack
-PORTVERSION=	2.0.0
+PORTVERSION=	2.1.3
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 

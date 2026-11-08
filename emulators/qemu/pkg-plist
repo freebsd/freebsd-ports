@@ -13,6 +13,7 @@ bin/qemu-storage-daemon
 %%NO_X86_TARGETS%%bin/qemu-system-alpha
 %%NO_X86_TARGETS%%bin/qemu-system-avr
 %%NO_X86_TARGETS%%bin/qemu-system-arm
+%%NO_X86_TARGETS%%bin/qemu-system-hexagon
 %%NO_X86_TARGETS%%bin/qemu-system-hppa
 bin/qemu-system-i386
 %%NO_X86_TARGETS%%bin/qemu-system-loongarch64
@@ -48,6 +49,7 @@ include/qemu-plugin.h
 %%PORTDOCS%%share/man/man7/qemu-qmp-ref.7.gz
 %%PORTDOCS%%share/man/man1/qemu-storage-daemon.1.gz
 %%PORTDOCS%%share/man/man7/qemu-storage-daemon-qmp-ref.7.gz
+%%PORTDOCS%%share/man/man1/qemu-vnc.1.gz
 @sample etc/qemu-ifup.sample
 @sample etc/qemu-ifdown.sample
 %%DATADIR%%/QEMU,tcx.bin

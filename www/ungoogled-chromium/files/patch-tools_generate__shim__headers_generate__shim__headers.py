@@ -1,6 +1,6 @@
---- tools/generate_shim_headers/generate_shim_headers.py.orig	2023-05-05 12:12:41 UTC
+--- tools/generate_shim_headers/generate_shim_headers.py.orig	2026-10-31 12:09:36 UTC
 +++ tools/generate_shim_headers/generate_shim_headers.py
-@@ -18,7 +18,7 @@ import sys
+@@ -17,7 +17,7 @@ import sys
  
  
  SHIM_TEMPLATE = """

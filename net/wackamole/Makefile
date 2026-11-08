@@ -1,11 +1,11 @@
 PORTNAME=	wackamole
 PORTVERSION=	2.1.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	https://BSDforge.com/projects/source/net/wackamole/ \
 		http://mirrors.omniti.com/wackamole/
 
-MAINTAINER=	portmaster@bsdforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Peer-to-peer high availability cluster
 WWW=		https://BSDforge.com/projects/net/wackamole/
 

@@ -1,0 +1,3 @@
+SACREBLEU provides hassle-free computation of shareable, comparable,
+and reproducible BLEU, chrF, and TER scores for machine translation
+evaluation.

@@ -1,0 +1,7 @@
+The footer module appends a piece of text to the body of a response as it is
+sent.  It brings two directives: footer sets the text to append, which may
+contain variables and is evaluated per request, and footer_types adds the
+content types the footer is applied to on top of the default text/html.
+
+This port only installs the module sources.  The module itself is built by
+the nginx ports when their FOOTER option is enabled.

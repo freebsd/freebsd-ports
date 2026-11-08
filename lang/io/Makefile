@@ -1,9 +1,9 @@
 PORTNAME=	io
 PORTVERSION=	2017.09.06
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	lang
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small prototype-based programming language
 WWW=		https://iolanguage.org
 
@@ -11,6 +11,8 @@ LICENSE=	BSD3CLAUSE
 
 BROKEN_armv6=		fails to compile: ucontext.h: expected parameter declarator
 BROKEN_armv7=		fails to compile: Coro.c:392:2: no member named 'arm_r0' in 'mcontext_t'
+DEPRECATED=		Umaintained downstream, does not build with CMake 4
+EXPIRATION_DATE=	2026-11-30
 
 CONFLICTS=	io-devel
 

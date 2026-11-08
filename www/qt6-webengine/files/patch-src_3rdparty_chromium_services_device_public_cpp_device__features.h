@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/services/device/public/cpp/device_features.h.orig	2025-04-04 08:52:13 UTC
+--- src/3rdparty/chromium/services/device/public/cpp/device_features.h.orig	2026-08-11 12:42:19 UTC
 +++ src/3rdparty/chromium/services/device/public/cpp/device_features.h
-@@ -53,7 +53,7 @@ extern const DEVICE_FEATURES_EXPORT
+@@ -62,7 +62,7 @@ DEVICE_FEATURES_EXPORT bool IsOsLevelGeolocationPermis
  
  DEVICE_FEATURES_EXPORT bool IsOsLevelGeolocationPermissionSupportEnabled();
  

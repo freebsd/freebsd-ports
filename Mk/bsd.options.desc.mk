@@ -175,7 +175,6 @@ ID3_DESC?=		ID3 tags support
 ID3TAG_DESC?=		ID3 v1/v2 tags support
 IDN_DESC?=		International Domain Names support
 IMAGEMAGICK_DESC?=	ImageMagick image processing support
-IMLIB_DESC?=		Imlib image library support
 IMLIB2_DESC?=		Imlib 2 image library support
 INFO_DESC?=		Build and/or install GNU info pages
 INI_DESC?=		INI file/format/parser support

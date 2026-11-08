@@ -57,12 +57,14 @@ share/icons/hicolor/48x48/apps/sublime-merge.png
 %%DATADIR%%/Packages/Scala.sublime-package
 %%DATADIR%%/Packages/ShellScript.sublime-package
 %%DATADIR%%/Packages/TCL.sublime-package
+%%DATADIR%%/Packages/TOML.sublime-package
 %%DATADIR%%/Packages/Text.sublime-package
 %%DATADIR%%/Packages/Textile.sublime-package
 %%DATADIR%%/Packages/Theme - Default.sublime-package
 %%DATADIR%%/Packages/Theme - Merge.sublime-package
 %%DATADIR%%/Packages/XML.sublime-package
 %%DATADIR%%/Packages/YAML.sublime-package
+%%DATADIR%%/attribution.txt
 %%DATADIR%%/changelog.txt
 @(,,555) %%DATADIR%%/crash_handler
 @(,,555) %%DATADIR%%/git-credential-sublime

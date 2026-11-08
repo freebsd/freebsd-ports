@@ -1,5 +1,5 @@
 PORTNAME=	chalice
-DISTVERSION=	1.33.0
+DISTVERSION=	1.34.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +11,7 @@ WWW=		https://github.com/aws/chalice
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}botocore>=1.14.0:devel/py-botocore@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}botocore>=1.21.51:devel/py-botocore@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click>=7:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}inquirer>=3.0.0:devel/py-inquirer@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jmespath>=0.9.3:devel/py-jmespath@${PY_FLAVOR} \

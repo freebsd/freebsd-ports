@@ -1,7 +1,7 @@
 PORTNAME=	q-dns
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.19.12
-PORTREVISION=	3
+PORTREVISION=	8
 CATEGORIES=	dns
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://github.com/natesales/q
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.25+,modules
+USES=		go:modules
 
 GO_MODULE=	github.com/natesales/q
 

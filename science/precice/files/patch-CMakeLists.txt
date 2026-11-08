@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2022-06-20 10:08:50 UTC
+--- CMakeLists.txt.orig	2026-04-21 07:09:32 UTC
 +++ CMakeLists.txt
-@@ -461,7 +461,7 @@ endif()
+@@ -789,7 +789,7 @@ install(DIRECTORY examples
  
  # Install examples
  install(DIRECTORY examples

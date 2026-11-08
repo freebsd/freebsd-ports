@@ -1,6 +1,6 @@
 PORTNAME=	Zonemaster-CLI
 DISTVERSIONPREFIX=	v
-DISTVERSION=	8.0.1
+DISTVERSION=	8.0.3
 CATEGORIES=	dns perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ZNMSTR
@@ -21,7 +21,7 @@ RUN_DEPENDS=	p5-JSON-XS>=0:converters/p5-JSON-XS \
 		p5-Net-IP>=0:net-mgmt/p5-Net-IP \
 		p5-Text-Reflow>0:textproc/p5-Text-Reflow \
 		p5-Try-Tiny>0:lang/p5-Try-Tiny \
-		p5-Zonemaster-Engine>0:dns/p5-Zonemaster-Engine
+		p5-Zonemaster-Engine>=9.0.1:dns/p5-Zonemaster-Engine
 
 USES=		gmake localbase perl5
 USE_PERL5=	configure

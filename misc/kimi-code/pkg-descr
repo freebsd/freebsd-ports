@@ -1,0 +1,7 @@
+Kimi Code CLI is Moonshot AI's coding agent for the terminal. It reads
+and edits files in a project, runs shell commands, searches the tree and
+fetches web pages.
+
+The models come from Moonshot, or from any other OpenAI-compatible provider
+named in config.toml. Sessions can be resumed, forked and exported, and the
+kimi web subcommand opens the same agent in a local browser.

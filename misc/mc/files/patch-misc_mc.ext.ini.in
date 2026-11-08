@@ -1,0 +1,15 @@
+--- misc/mc.ext.ini.in.orig	2025-01-15 16:52:17 UTC
++++ misc/mc.ext.ini.in
+@@ -419,6 +419,12 @@ Shell=.deba
+ Open=%cd %p/deba://
+ View=%view{ascii} @EXTHELPERSDIR@/package.sh view deba
+ 
++# FreeBSD packages
++[pkg]
++Shell=.pkg
++Open=%cd %p/utar://
++View=%view{ascii} pkg info -F %f
++
+ [ISO9660]
+ Shell=.iso
+ ShellIgnoreCase=true

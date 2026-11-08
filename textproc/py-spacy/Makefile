@@ -1,6 +1,5 @@
 PORTNAME=	spacy
-PORTVERSION=	3.8.13
-PORTREVISION=	1
+PORTVERSION=	3.8.16
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI \
 		https://github.com/explosion/spaCy/releases/download/release-v${PORTVERSION}/
@@ -22,6 +21,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cymem>=2.0.2<2.1.0:devel/py-cymem@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}thinc8>=8.3.12<8.4.0:devel/py-thinc8@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}catalogue>=2.0.6<2.1.0:devel/py-catalogue@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}click>=8.2.1<9.0.0:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}confection>=1.3.2<2.0.0:devel/py-confection@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cymem>=2.0.2<2.1.0:devel/py-cymem@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR} \

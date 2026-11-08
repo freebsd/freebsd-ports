@@ -1,9 +1,13 @@
 PORTNAME=	dbus
 DISTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	devel gnome python
 MASTER_SITES=	https://dbus.freedesktop.org/releases/dbus-python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	dbus-python-${DISTVERSION}
+
+PATCH_SITES+=	https://gitlab.freedesktop.org/dbus/dbus-python/-/commit/
+PATCHFILES+=	9b862b9fa6953aedc608813bc722f19f536d4fb5.patch:-p1
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Python bindings for the D-BUS messaging system
@@ -14,7 +18,7 @@ LICENSE=	MIT
 LIB_DEPENDS=	libdbus-1.so:devel/dbus
 TEST_DEPENDS=	bash:shells/bash
 
-USES=		gnome meson pkgconfig python shebangfix tar:xz
+USES=		gnome meson pkgconfig python:3.12+ shebangfix tar:xz
 USE_GNOME=	glib20 pygobject3
 USE_PYTHON=	flavors
 SHEBANG_FILES=	test/run-test.sh \

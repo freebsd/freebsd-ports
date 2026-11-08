@@ -1,0 +1,99 @@
+#!/bin/sh
+
+# PROVIDE: bhyvemgrd
+# REQUIRE: NETWORKING
+# KEYWORD: shutdown
+#
+# Configuration settings for bhyvemgrd in /etc/rc.conf:
+#
+# bhyvemgrd_enable:          run bhyvemgrd as service (default=NO)
+#
+
+. /etc/rc.subr
+
+name=bhyvemgrd
+rcvar=bhyvemgrd_enable
+
+load_rc_config ${name}
+
+: ${bhyvemgrd_enable:=NO}
+
+bhyvemgrd_user="bhyvemgrd"
+bhyvemgrd_group="bhyvemgrd"
+bhyvemgrd_logfile="/var/log/bhyvemgrd.log"
+bhyvemgrd_socketdir="/var/run/bhyvemgrd"
+
+pidfile="/var/run/${name}/${name}.pid"
+procname="/usr/local/sbin/bhyvemgrd"
+command="/usr/sbin/daemon"
+command_args="-t ${name} -p ${pidfile} -o ${bhyvemgrd_logfile} ${procname}"
+
+start_precmd=${name}_prestart
+status_cmd=${name}_status
+stop_cmd=${name}_stop
+restart_cmd=${name}_restart
+reload_cmd=${name}_reload
+extra_commands="reload status"
+
+bhyvemgrd_prestart()
+{
+        if [ ! -d "${bhyvemgrd_socketdir}" ]; then
+                mkdir ${bhyvemgrd_socketdir}
+                chmod 770 ${bhyvemgrd_socketdir}
+                chown ${bhyvemgrd_user}:${bhyvemgrd_group} ${bhyvemgrd_socketdir}
+        fi
+	if [ ! -e ${pidfile} ]; then
+		install -o ${bhyvemgrd_user} -g ${bhyvemgrd_group} /dev/null ${pidfile};
+	fi
+	if [ ! -e "${bhyvemgrd_logfile}" ]; then
+		install -o root -g ${bhyvemgrd_group} -m 660  /dev/null ${bhyvemgrd_logfile};
+	fi
+}
+
+bhyvemgrd_status()
+{
+        # If running, show pid
+	if [ -f ${pidfile} ]
+	then
+		echo "${name} is running as pid" `cat ${pidfile}`
+	else
+		echo "${name} is not running."
+	fi
+}
+
+bhyvemgrd_stop()
+{
+        if [ -f ${pidfile} ]
+        then
+                pid_child=$(pgrep -P `cat ${pidfile}`)
+
+                if [ ! -z "${pid_child}" ]; then
+                        echo "Stopping ${name}."
+                        echo "${name} cannot be stopped. There are some vms running:"
+                        pgrep -fl -P `cat ${pidfile}`
+                        return 1
+                else
+                        kill -SIGTERM `cat ${pidfile}`
+                        echo "Stopping ${name}."
+                fi
+        else
+                echo "${name} not running? (check ${pidfile})."
+        fi
+}
+
+bhyvemgrd_reload()
+{
+        echo "Performing reload ${name}"
+        kill -SIGHUP `cat ${pidfile}`
+}
+
+
+bhyvemgrd_restart()
+{
+        echo "Performing restart ${name}"
+        run_rc_command stop || return $?
+        sleep 2
+	run_rc_command start
+}
+
+run_rc_command "$1"

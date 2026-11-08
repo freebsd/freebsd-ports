@@ -5,7 +5,6 @@
     SUBDIR += aquamarine
     SUBDIR += blt
     SUBDIR += bwidget
-    SUBDIR += color-widgets-qt5
     SUBDIR += como
     SUBDIR += copperspice
     SUBDIR += ctk
@@ -33,6 +32,7 @@
     SUBDIR += gtk30
     SUBDIR += gtk4-layer-shell
     SUBDIR += gtk40
+    SUBDIR += gtkada3
     SUBDIR += gtkd
     SUBDIR += gtkdatabox
     SUBDIR += gtkextra
@@ -77,8 +77,8 @@
     SUBDIR += kf6-ktextwidgets
     SUBDIR += kf6-kwidgetsaddons
     SUBDIR += kf6-kxmlgui
-    SUBDIR += kirigami-addons-qt5
     SUBDIR += kirigami-addons-qt6
+    SUBDIR += kirigami-app-components
     SUBDIR += kproperty
     SUBDIR += lesstif
     SUBDIR += libXaw
@@ -111,6 +111,7 @@
     SUBDIR += linux-rl9-qt5-qtdeclarative
     SUBDIR += linux-rl9-qt5-qtquickcontrols
     SUBDIR += linux-rl9-tk86
+    SUBDIR += linux-rl9-vte291
     SUBDIR += movingmotif
     SUBDIR += mowitz
     SUBDIR += mygui
@@ -175,6 +176,7 @@
     SUBDIR += pangomm24
     SUBDIR += pangox-compat
     SUBDIR += plasma6-kdeplasma-addons
+    SUBDIR += plasma6lts-kdeplasma-addons
     SUBDIR += plib
     SUBDIR += py-AnyQt
     SUBDIR += py-Pmw
@@ -182,7 +184,6 @@
     SUBDIR += py-customtkinter
     SUBDIR += py-easygui
     SUBDIR += py-fonticon-fontawesome6
-    SUBDIR += py-guietta
     SUBDIR += py-kivy
     SUBDIR += py-magicgui
     SUBDIR += py-pangocffi
@@ -200,6 +201,7 @@
     SUBDIR += pythonqt
     SUBDIR += qhotkey
     SUBDIR += qml-box2d
+    SUBDIR += qt-color-widgets
     SUBDIR += qt5-charts
     SUBDIR += qt5-datavis3d
     SUBDIR += qt5-declarative
@@ -256,9 +258,9 @@
     SUBDIR += thentenaar-motif
     SUBDIR += thentenaar-motif-devel
     SUBDIR += tix
+    SUBDIR += tk
     SUBDIR += tk-wrapper
     SUBDIR += tk86
-    SUBDIR += tk90
     SUBDIR += tkdnd
     SUBDIR += tkshape
     SUBDIR += tktable

@@ -9,7 +9,7 @@ WWW=		https://gitlab.freedesktop.org/xorg/app/xlsclients
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:xz xorg xorg-cat:app
+USES=		xorg xorg-cat:app
 USE_XORG=	xcb
 
 PLIST_FILES=	bin/xlsclients share/man/man1/xlsclients.1.gz

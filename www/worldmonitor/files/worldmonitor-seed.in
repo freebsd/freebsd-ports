@@ -1,0 +1,49 @@
+#!/bin/sh
+
+# Refill the Redis data of worldmonitor in a loop. The data expires after
+# minutes to hours, so without this the panels stay empty.
+
+: ${WM_SEED_INTERVAL:=900}
+: ${WM_SEED_PARALLEL:=6}
+: ${WM_SEED_TIMEOUT:=600}
+
+SEEDDIR=%%WWWDIR%%/seed/scripts
+export UPSTASH_REDIS_REST_URL="${UPSTASH_REDIS_REST_URL:-http://127.0.0.1:8079}"
+
+out=$(mktemp -t worldmonitor-seed)
+trap 'rm -f "${out}"' EXIT
+trap 'rm -f "${out}"; trap - TERM; kill 0' TERM INT
+
+# The military bases dataset is built from public sources: OpenStreetMap,
+# MIRTA and a curated list.  It is rebuilt at most once a month and tried
+# at most once a day, because the OpenStreetMap query is heavy.
+refresh_military()
+{
+	w=/var/db/worldmonitor/military
+	final=${w}/scripts/data/military-bases-final.json
+	[ -n "$(find "${final}" -mtime -30 2>/dev/null)" ] && return
+	[ -n "$(find "${w}/.tried" -mtime -1 2>/dev/null)" ] && return
+	mkdir -p "${w}/scripts/data" || return
+	touch "${w}/.tried"
+	cp ${SEEDDIR}/fetch-osm-bases.mjs ${SEEDDIR}/build-military-bases-final.mjs "${w}/scripts"
+	ln -sf ${SEEDDIR}/data/mirta-processed.json ${SEEDDIR}/data/curated-bases.json "${w}/scripts/data"
+	(cd "${w}/scripts" && timeout 900 %%LOCALBASE%%/bin/node fetch-osm-bases.mjs &&
+	    timeout 300 %%LOCALBASE%%/bin/node build-military-bases-final.mjs) > /dev/null 2>&1
+}
+
+while :; do
+	refresh_military &
+	(ls ${SEEDDIR}/seed-*.mjs | xargs -n 1 -P "${WM_SEED_PARALLEL}" sh -c '
+		case "$2" in
+		*seed-bundle-*) t=$(($1 * 2)) ;;
+		*) t=$1 ;;
+		esac
+		timeout -k 30 "$t" %%LOCALBASE%%/bin/node "$2" >/dev/null 2>&1
+		echo "$? $(basename "$2")"' _ "${WM_SEED_TIMEOUT}" |
+		awk '{ n++; if ($1 != 0) { bad++; list = list " " $2 } }
+		    END { printf "%d seeders, %d failed%s", n, bad, list }') > "${out}" &
+	wait $!
+	echo "$(date '+%Y-%m-%d %H:%M:%S') $(cat "${out}")"
+	sleep "${WM_SEED_INTERVAL}" &
+	wait $!
+done

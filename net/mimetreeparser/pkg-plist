@@ -40,10 +40,10 @@ lib/cmake/KPim6MimeTreeParserWidgets/KPim6MimeTreeParserWidgetsTargets-%%CMAKE_B
 lib/cmake/KPim6MimeTreeParserWidgets/KPim6MimeTreeParserWidgetsTargets.cmake
 lib/libKPim6MimeTreeParserCore.so
 lib/libKPim6MimeTreeParserCore.so.6
-lib/libKPim6MimeTreeParserCore.so.%%KDE_APPLICATIONS_SHLIB_VER%%
+lib/libKPim6MimeTreeParserCore.so.%%KDE_PIM_SHLIB_VER%%
 lib/libKPim6MimeTreeParserWidgets.so
 lib/libKPim6MimeTreeParserWidgets.so.6
-lib/libKPim6MimeTreeParserWidgets.so.%%KDE_APPLICATIONS_SHLIB_VER%%
+lib/libKPim6MimeTreeParserWidgets.so.%%KDE_PIM_SHLIB_VER%%
 %%QT_MKSPECDIR%%/modules/qt_MimeTreeParserCore.pri
 %%QT_MKSPECDIR%%/modules/qt_MimeTreeParserWidgets.pri
 %%QT_QMLDIR%%/org/kde/pim/mimetreeparser/MailViewer.qml
@@ -126,7 +126,9 @@ share/locale/sa/LC_MESSAGES/mimetreeparser6.mo
 share/locale/sk/LC_MESSAGES/mimetreeparser6.mo
 share/locale/sl/LC_MESSAGES/mimetreeparser6.mo
 share/locale/sv/LC_MESSAGES/mimetreeparser6.mo
+share/locale/ta/LC_MESSAGES/mimetreeparser6.mo
 share/locale/tr/LC_MESSAGES/mimetreeparser6.mo
+share/locale/ug/LC_MESSAGES/mimetreeparser6.mo
 share/locale/uk/LC_MESSAGES/mimetreeparser6.mo
 share/locale/zh_CN/LC_MESSAGES/mimetreeparser6.mo
 share/locale/zh_TW/LC_MESSAGES/mimetreeparser6.mo

@@ -1,2 +1,3 @@
-Doom64EX is a reverse-engineering project aimed to recreate Doom64 as close as
-possible with additional modding features.
+Doom64EX-Classic is a continuation of Doom64EX 2.5, a reverse-engineering
+project aimed to recreate Doom64 as close as possible with additional modding
+features. The bundled WadGen tool generates the IWAD from the original N64 ROM.

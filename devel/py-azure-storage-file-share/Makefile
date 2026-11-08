@@ -1,9 +1,9 @@
 PORTNAME=	azure-storage-file-share
-DISTVERSION=	12.26.0b1
+PORTVERSION=	12.26.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	azure_storage_file_share-${DISTVERSION}
+DISTNAME=	azure_storage_file_share-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Microsoft Azure Azure File Share Storage Client Library for Python

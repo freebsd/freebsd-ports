@@ -1,0 +1,35 @@
+--- a/toolchain/internal/common.bzl
++++ b/toolchain/internal/common.bzl
+@@ -19,6 +19,8 @@
+     ("linux", "riscv64"),
+     ("darwin", "x86_64"),
+     ("darwin", "aarch64"),
++    ("freebsd", "x86_64"),
++    ("freebsd", "aarch64"),
+     ("none", "riscv32"),
+     ("none", "wasm32"),
+     ("none", "wasm64"),
+@@ -135,7 +137,7 @@
+ 
+     name = rctx.attr.exec_os
+     if name:
+-        if name in ("linux", "darwin", "none"):
++        if name in ("linux", "darwin", "freebsd", "none"):
+             return name
+         else:
+             fail("Unsupported value for exec_os: %s" % name)
+@@ -149,11 +151,13 @@
+         return "darwin"
+     elif name.startswith("windows"):
+         return "windows"
++    elif name == "freebsd":
++        return "freebsd"
+     fail("Unsupported OS: " + name)
+ 
+ def os_bzl(os):
+     # Return the OS string as used in bazel platform constraints.
+-    return {"darwin": "osx", "linux": "linux", "none": "none", "wasip1": "wasi"}[os]
++    return {"darwin": "osx", "linux": "linux", "freebsd": "freebsd", "none": "none", "wasip1": "wasi"}[os]
+ 
+ def arch(rctx):
+     arch = rctx.attr.exec_arch

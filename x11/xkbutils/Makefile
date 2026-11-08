@@ -8,7 +8,7 @@ WWW=		https://gitlab.freedesktop.org/xorg/app/xkbutils
 
 LICENSE=	MIT
 
-USES=		tar:xz xorg xorg-cat:app
+USES=		xorg xorg-cat:app
 USE_XORG=	xkbfile x11 xaw xorgproto xt
 
 .include <bsd.port.mk>

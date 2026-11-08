@@ -1,4 +1,4 @@
---- Gemfile.orig	2026-03-17 07:40:04 UTC
+--- Gemfile.orig	2026-08-26 06:52:41 UTC
 +++ Gemfile
 @@ -1,27 +1,27 @@ source 'https://rubygems.org'
  source 'https://rubygems.org'
@@ -6,7 +6,7 @@
 -ruby '>= 3.1.0', '< 3.4.0'
 +ruby '>= 3.1.0', '< 4.0.0'
  
--gem 'rails', '7.2.3'
+-gem 'rails', '7.2.3.2'
 +gem 'rails', '~> 7.2.3'
  gem 'rouge', '~> 4.5'
  gem 'mini_mime', '~> 1.1.0'

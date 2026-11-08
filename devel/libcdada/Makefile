@@ -1,5 +1,5 @@
 PORTNAME=	libcdada
-DISTVERSION=	0.5.2
+DISTVERSION=	0.6.4
 CATEGORIES=	devel
 
 MAINTAINER=	pi@FreeBSD.org
@@ -14,6 +14,6 @@ SHEBANG_FILES=	tools/cdada-gen
 USE_GITHUB=	yes
 GNU_CONFIGURE=	yes
 GH_ACCOUNT=	msune
-GH_TAGNAME=	4eb0b61
+GH_TAGNAME=	81d9bcb
 
 .include <bsd.port.mk>

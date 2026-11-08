@@ -1,10 +1,10 @@
 PORTNAME=	bzip
 DISTVERSION=	0.21
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers
 MASTER_SITES=	SOURCEWARE/bzip2
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Block-sorting file compressor
 WWW=		https://sourceware.org/bzip2/
 

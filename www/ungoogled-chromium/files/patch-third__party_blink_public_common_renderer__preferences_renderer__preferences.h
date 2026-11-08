@@ -1,6 +1,15 @@
---- third_party/blink/public/common/renderer_preferences/renderer_preferences.h.orig	2026-06-05 13:45:06 UTC
+--- third_party/blink/public/common/renderer_preferences/renderer_preferences.h.orig	2026-10-31 12:09:36 UTC
 +++ third_party/blink/public/common/renderer_preferences/renderer_preferences.h
-@@ -66,7 +66,7 @@ struct BLINK_COMMON_EXPORT RendererPreferences {
+@@ -55,7 +55,7 @@ struct BLINK_COMMON_EXPORT RendererPreferences {
+   bool enable_do_not_track{false};
+   bool enable_encrypted_media{true};
+ #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
+-    BUILDFLAG(IS_WIN)
++    BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
+   bool use_overlay_scrollbar{false};
+ #endif
+   blink::mojom::WebRtcIpHandlingPolicy webrtc_ip_handling_policy =
+@@ -68,7 +68,7 @@ struct BLINK_COMMON_EXPORT RendererPreferences {
    UserAgentOverride user_agent_override;
    std::string accept_languages;
    bool send_subresource_notification{false};
@@ -9,7 +18,7 @@
    std::string system_font_family_name;
  #endif
  #if BUILDFLAG(IS_WIN)
-@@ -84,7 +84,7 @@ struct BLINK_COMMON_EXPORT RendererPreferences {
+@@ -86,7 +86,7 @@ struct BLINK_COMMON_EXPORT RendererPreferences {
  #if BUILDFLAG(IS_OZONE)
    bool selection_clipboard_buffer_available{false};
  #endif

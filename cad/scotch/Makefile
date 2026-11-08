@@ -1,6 +1,6 @@
 PORTNAME=	scotch
-DISTVERSION=	6.0.4-aster7
-PORTREVISION=	7
+DISTVERSIONPREFIX=	v
+DISTVERSION=	7.0.16
 CATEGORIES=	cad science
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -12,35 +12,42 @@ LICENSE_NAME=	CeCILL-C
 LICENSE_FILE=	${WRKSRC}/doc/CeCILL-C_V1-en.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		bison:alias gmake localbase
+USES=		bison:alias fortran gmake localbase tar:bz2
 
-CONFLICTS_INSTALL=	gbase gmap # bin/gbase bin/gmap
+CONFLICTS_BUILD=	scotch-edf
+CONFLICTS_INSTALL=	gbase gmap scotch-edf	# bin/gbase bin/gmap
 
+USE_GITLAB=	yes
+GL_SITE=	https://gitlab.inria.fr
+
+BINARY_ALIAS=	f77=${FC}
 MAKE_JOBS_UNSAFE=yes
 
+# TODO: flavorize with MPICH / OMPI / NOMPI
 OPTIONS_DEFINE=	DOCS EXAMPLES MPICH
 OPTIONS_DEFAULT=MPICH
 OPTIONS_SUB=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 BUILD_WRKSRC=	${WRKSRC}/src
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 TEST_WRKSRC=	${BUILD_WRKSRC}
 ALL_TARGET=	esmumps
 TEST_TARGET=	check
-CFLAGS=		-Wno-implicit-function-declaration
+CFLAGS+=	-Wno-implicit-function-declaration
 MAKE_ENV=	prefix=${STAGEDIR}${PREFIX} mandir=${STAGEDIR}${PREFIX}/share/man	\
 		-DSCOTCH_PTHREAD_NUMBER=2
 USE_LDCONFIG=	yes
 
-DOCVER=		${PORTVERSION:R:R}
+DOCVER=		${PORTVERSION:R}
 PORTDOCS=	ptscotch_user${DOCVER}.pdf scotch_user${DOCVER}.pdf scotch_example.f
-LIBS=		esmumps scotch scotcherr scotcherrexit scotchmetis
+LIBRS=		esmumps scotch scotcherr scotcherrexit scotchmetisv3 scotchmetisv5
 
 MPICH_USES=		mpi:mpich
 MPICH_ALL_TARGET=	ptesmumps
+MPICH_MAKE_ENV=		MPICC=${MPICC}
 MPICH_TEST_TARGET=	ptcheck
-MPICH_LIBS+=	ptesmumps ptscotch ptscotcherr ptscotcherrexit ptscotchparmetis
+MPICH_VARS+=		LIBRS+="ptesmumps ptscotch ptscotcherr ptscotcherrexit \
+			ptscotchparmetisv3"
 
 .include <bsd.port.options.mk>
 
@@ -67,7 +74,7 @@ pre-configure:
 
 post-stage:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/* ${STAGEDIR}${PREFIX}/lib/lib*
-.for l in ${LIBS}
+.for l in ${LIBRS}
 	${MV} ${STAGEDIR}${PREFIX}/lib/lib${l}.so ${STAGEDIR}${PREFIX}/lib/lib${l}.so.0
 	${LN} -sf lib${l}.so.0 ${STAGEDIR}${PREFIX}/lib/lib${l}.so
 .endfor
@@ -81,14 +88,4 @@ do-install-EXAMPLES-on:
 	${INSTALL_DATA} ${WRKSRC}/grf/* ${STAGEDIR}${EXAMPLESDIR}/grf
 	${INSTALL_DATA} ${WRKSRC}/tgt/* ${STAGEDIR}${EXAMPLESDIR}/tgt
 
-.if !defined(WITHOUT_MPI)
-pre-test:
-. if !exists(${HOME}/.mpd.conf)
-	@${ECHO_CMD} "MPD_SECRETWORD=change_on_install" > ${HOME}/.mpd.conf
-	${CHMOD} go-r ${HOME}/.mpd.conf
-	@${ECHO_MSG} "${HOME}/.mpd.conf has been generated - please change the secret word!"
-. endif
-.endif
-
-.include "${.CURDIR}/../../french/aster/bsd.aster.mk"
 .include <bsd.port.mk>

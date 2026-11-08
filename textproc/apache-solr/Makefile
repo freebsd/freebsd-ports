@@ -1,6 +1,5 @@
 PORTNAME=	apache-solr
-PORTVERSION=	10.0.0
-PORTREVISION=	1
+PORTVERSION=	10.1.0
 PORTEPOCH=	1
 CATEGORIES=	textproc java
 MASTER_SITES=	https://archive.apache.org/dist/solr/solr/${PORTVERSION}/
@@ -66,6 +65,10 @@ post-install:
 		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
 	@${ECHO_CMD} "@dir solr/server/solr-webapp/webapp/ui/composeResources/com.arkivanov.decompose.extensions_compose.generated.resources" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dir solr/server/solr-webapp/webapp/ui/composeResources/components.resources.library.generated.resources" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dir solr/server/solr-webapp/webapp/ui/composeResources/solr_ui.webapp.generated.resources" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dir solr/server/solr-webapp/webapp/WEB-INF/classes/composeResources/com.arkivanov.decompose.extensions_compose.generated.resources" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dir solr/server/solr-webapp/webapp/WEB-INF/classes/composeResources/components.resources.library.generated.resources" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dir solr/server/solr-webapp/webapp/WEB-INF/classes/composeResources/solr_ui.webapp.generated.resources" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dir(solr,solr) /var/db/solr" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dir(solr,solr) /var/log/solr" >> ${TMPPLIST}
 	@${ECHO_CMD} "@sample etc/solr.in.sh.sample" >> ${TMPPLIST}

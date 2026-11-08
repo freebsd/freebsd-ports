@@ -1,0 +1,19 @@
+--- pyproject.toml.orig	2026-07-22 12:59:45 UTC
++++ pyproject.toml
+@@ -13,8 +13,7 @@ requires-python = ">= 3.10"
+ ]
+ readme = "README.rst"
+ requires-python = ">= 3.10"
+-license = "Apache-2.0"
+-license-files = ["LICENSE"]
++license = {text = "Apache-2.0"}
+ classifiers = [
+     "Intended Audience :: Science/Research",
+     "Programming Language :: Python :: 3",
+@@ -46,4 +45,4 @@ Documentation = "http://pyteomics.readthedocs.io"
+ "Mailing List" = "https://groups.google.com/group/pyteomics"
+ 
+ [tool.setuptools.dynamic]
+-version = {attr = "pyteomics.version.__version__"}
+\ No newline at end of file
++version = {attr = "pyteomics.version.__version__"}

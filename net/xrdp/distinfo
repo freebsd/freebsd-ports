@@ -1,3 +1,5 @@
-TIMESTAMP = 1783408198
+TIMESTAMP = 1789713753
 SHA256 (xrdp/xrdp-0.10.6.1.tar.gz) = 2f7beb5a3b2529c8d72dc0df9b8cdca31ab0e0c14d1e3421210f5e6ec0ab3b75
 SIZE (xrdp/xrdp-0.10.6.1.tar.gz) = 2494511
+SHA256 (xrdp/70cc370.patch) = 19ac99fff5fbf298795b4b5f8f6d0169509e92ab3bcd0c25095768d865cf9b4c
+SIZE (xrdp/70cc370.patch) = 2946

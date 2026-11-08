@@ -1,14 +1,18 @@
---- libs/ymir-core/CMakeLists.txt.orig	2026-06-21 23:49:19 UTC
+--- libs/ymir-core/CMakeLists.txt.orig	2026-10-17 23:37:24 UTC
 +++ libs/ymir-core/CMakeLists.txt
-@@ -313,8 +313,11 @@ target_compile_features(ymir-core PUBLIC cxx_std_20)
- )
- target_compile_features(ymir-core PUBLIC cxx_std_20)
+@@ -532,13 +532,11 @@ elseif (UNIX) # Linux and FreeBSD
+     )
+ elseif (UNIX) # Linux and FreeBSD
+     find_package(Iconv REQUIRED)
++    find_package(Threads REQUIRED)
+     target_link_libraries(ymir-core PUBLIC
+         Iconv::Iconv
++        Threads::Threads
+     )
+-    if (CMAKE_SYSTEM_NAME MATCHES FreeBSD)
+-        # Prevent third-party package libiconv from interfering with iconv from libc.
+-        target_compile_definitions(ymir-core PUBLIC "LIBICONV_PLUG")
+-    endif ()
+ endif ()
  
-+find_package(Threads REQUIRED)
-+
- ## Add dependencies
- target_link_libraries(ymir-core PUBLIC
-+    Threads::Threads
-     fmt::fmt
-     mio
-     concurrentqueue
+ if (Vulkan_FOUND)

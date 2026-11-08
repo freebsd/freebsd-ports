@@ -1,3 +1,5 @@
+-- Relax the setuptools build requirement to match the ports tree version.
+
 --- pyproject.toml.orig	2023-05-04 06:58:21 UTC
 +++ pyproject.toml
 @@ -3,7 +3,7 @@

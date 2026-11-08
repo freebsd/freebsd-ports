@@ -1,5 +1,5 @@
 PORTNAME=	dot1ag-utils
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	net
 MASTER_SITES=	https://git.sr.ht/~bms/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 

@@ -1,14 +1,17 @@
 PORTNAME=	ssh-tools
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7
+DISTVERSION=	1.9
 PORTREVISION=	1
 CATEGORIES=	security
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
-PATCHFILES=	0bf5771fe3fafcb60ebf4541b8d382eb0ec9f7bc.patch:-p1
+MASTER_SITES=	https://codeberg.org/vaporup/ssh-tools/archive/
+DISTNAME=	${DISTVERSIONFULL}
+DIST_SUBDIR=	${PORTNAME}
+PATCH_SITES=	https://codeberg.org/vaporup/ssh-tools/pulls/
+PATCHFILES=	24.diff:-p1
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	CLI tools that make SSH more convenient
-WWW=		https://github.com/vaporup/ssh-tools
+WWW=		https://codeberg.org/vaporup/ssh-tools
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -16,15 +19,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		perl5 shebangfix
-USE_GITHUB=	yes
-GH_ACCOUNT=	vaporup
 USE_PERL5=	run
-SHEBANG_FILES=	ssh-*
+SHEBANG_GLOB=	ssh-*
 
 NO_ARCH=	yes
 NO_BUILD=	yes
 
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/ssh-* ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/cmd/bash/*/ssh-* ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

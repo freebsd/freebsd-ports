@@ -1,6 +1,6 @@
 PORTNAME=	wayfire
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.1
+DISTVERSION=	0.11.0
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	nxjoseph@FreeBSD.org
@@ -14,7 +14,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/xf86drmMode.h:graphics/libdrm \
 		evdev-proto>0:devel/evdev-proto \
 		glm>=0.9.8:math/glm \
 		wayland-protocols>=1.12:graphics/wayland-protocols \
-		wf-config>=0.10.0<0.11.0:devel/wf-config
+		wf-config>=0.11.0:devel/wf-config
 LIB_DEPENDS=	libevdev.so:devel/libevdev \
 		libinotify.so:devel/libinotify \
 		libinput.so:x11/libinput \
@@ -22,20 +22,22 @@ LIB_DEPENDS=	libevdev.so:devel/libevdev \
 		libudev.so:devel/libudev-devd \
 		libwayland-server.so:graphics/wayland \
 		libwf-config.so:devel/wf-config \
-		libwlroots-0.19.so:x11-toolkits/wlroots019 \
+		libwlroots-0.20.so:x11-toolkits/wlroots020 \
 		libxkbcommon.so:x11/libxkbcommon \
 		libyyjson.so:devel/yyjson
 TEST_DEPENDS=	doctest>0:devel/doctest
 
-USES=		cmake:indirect compiler:c++17-lang gl gnome jpeg meson \
-		pkgconfig xorg
+USES=		cmake:indirect compiler:c++17-lang gettext-tools gl gnome jpeg \
+		meson pkgconfig python:env shebangfix xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	WayfireWM
-GH_TUPLE=	WayfireWM:wf-touch:093d894:wftouch/subprojects/wf-touch \
-		WayfireWM:wf-utils:3ef27d1:wfutils/subprojects/wf-utils
+GH_TUPLE=	WayfireWM:wf-json:70039e13:wfjson/subprojects/wf-json \
+		WayfireWM:wf-touch:d7ae5e7f:wftouch/subprojects/wf-touch \
+		WayfireWM:wf-utils:329c3ff0:wfutils/subprojects/wf-utils
 USE_GL=		egl glesv2
 USE_GNOME=	cairo pango
 USE_XORG=	pixman
+SHEBANG_FILES=	scripts/wayfire-plugin.py
 MESON_ARGS=	-Dtests=disabled \
 		-Dwf-touch:tests=disabled \
 		${NULL}
@@ -45,8 +47,10 @@ MESON_ARGS=	-Dtests=disabled \
 MESON_ARGS+=	-Denable_openmp=false
 .endif
 
-OPTIONS_DEFINE=	X11
-OPTIONS_DEFAULT=X11
+LDFLAGS+=	-pthread # required for test
+
+OPTIONS_DEFINE=		X11
+OPTIONS_DEFAULT=	X11
 
 X11_USE=		XORG=xcb
 X11_MESON_ENABLED=	xwayland

@@ -1,0 +1,11 @@
+--- ext/cli/foreground.orig	2026-09-09 08:00:11 UTC
++++ ext/cli/foreground
+@@ -21,7 +21,7 @@ COMMAND="${JAVA_BIN} ${JAVA_ARGS} ${LOG_APPENDER} \
+ COMMAND="${JAVA_BIN} ${JAVA_ARGS} ${LOG_APPENDER} \
+          -cp '${CLASSPATH}' \
+          clojure.main -m puppetlabs.trapperkeeper.main \
+-         --config ${CONFIG} --bootstrap-config ${BOOTSTRAP_CONFIG} \
++         --config ${CONFIG} --bootstrap-config %%ETCDIR%%/services.d \
+          ${TK_ARGS} \
+          ${@}"
+ 

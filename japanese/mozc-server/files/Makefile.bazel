@@ -1,0 +1,128 @@
+BUILD_MOZC_CMD=	\
+	cd ${BUILD_WRKSRC:Q} && \
+	    ${SETENV} ${MAKE_ENV} PATH=/bin:/usr/bin:${PATH} \
+		${BAZEL_CMD} \
+		    build \
+		    ${BAZEL_FLAGS} \
+		    --repository_disable_download
+
+BAZEL_CMD?=	${LOCALBASE}/bin/bazel
+
+BAZEL_FLAGS=	${BAZEL_DISTDIR_FLAGS} \
+		--distdir="${DISTDIR}/${DIST_SUBDIR}" \
+		--registry="file://${WRKSRC_bcr}" \
+		--action_env=PATH="/bin:/usr/bin:${LOCALBASE}/bin" \
+		--jobs=${MAKE_JOBS_NUMBER} \
+		--verbose_failures \
+		--config oss_freebsd
+.if defined(DEVELOPER)
+BAZEL_FLAGS+=	--sandbox_debug
+.endif
+#
+# Standard flags for compilation.  Some of them
+# defined by -c opt will overridden by {C,CXX}FLAGS. 
+#
+BAZEL_FLAGS+=	-c opt \
+		${CPPFLAGS:@f@--copt=${f:Q}@} \
+		${CPPFLAGS:@f@--host_copt=${f:Q}@} \
+		${CFLAGS:@f@--conlyopt=${f:Q}@} \
+		${CFLAGS:@f@--host_conlyopt=${f:Q}@} \
+		${CXXFLAGS:@f@--cxxopt=${f:Q}@} \
+		${CXXFLAGS:@f@--host_cxxopt=${f:Q}@} \
+		${LDFLAGS:@f@--linkopt=${f:Q}@} \
+		${LDFLAGS:@f@--host_linkopt=${f:Q}@}
+#
+# Override modules and extra toolchains
+#
+SUB_FILES+=	bazel.python.BUILD
+SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
+
+.for M in python zlib
+post-configure-$M:
+	${MKDIR} ${BUILD_WRKSRC:Q}/bazel-${M}
+. for T in MODULE BUILD
+	if [ -r ${WRKDIR:Q}/bazel.$M.$T ]; then \
+	    ${INSTALL_DATA} ${WRKDIR:Q}/bazel.$M.$T \
+		${BUILD_WRKSRC:Q}/bazel-$M/$T.bazel; \
+	elif [ -r ${FILESDIR:Q}/bazel.$M.$T ]; then \
+	    ${INSTALL_DATA} ${FILESDIR:Q}/bazel.$M.$T \
+		${BUILD_WRKSRC:Q}/bazel-$M/$T.bazel; \
+	fi
+. endfor
+post-configure: post-configure-$M
+.endfor
+
+.for M in zlib
+BAZEL_FLAGS+=	--override_module=$M=${BUILD_WRKSRC:Q}/bazel-$M
+.endfor
+BAZEL_FLAGS+=	--extra_toolchains=//bazel-python:python_toolchain
+#
+# Generator of files/Makefile.distfiles
+#
+BAZEL_FETCH_LOG=${WRKDIR:Q}/bazel-fetch.log
+BAZEL_FETCH_CACHE?=${WRKDIR}/bazel-fetch-cache
+BAZEL_FETCH_OUTPUT?=${WRKDIR}/bazel-fetch-audit
+BAZEL_TARGETS?=	//server:mozc_server \
+		//unix/emacs:mozc_emacs_helper \
+		//gui/tool:mozc_tool \
+		//unix/ibus:ibus_mozc \
+		//unix/ibus:gen_mozc_xml \
+		//renderer/qt:mozc_renderer
+
+BAZEL_MATRIX_WORK?=	${.CURDIR}/work-bazel-matrix
+BAZEL_BIN_DIR?=	${.CURDIR}/work-bazel-versions
+BAZEL_FETCH_FLAGS?=
+
+update-bazel-versions:
+	${PYTHON_CMD} ${FILESDIR:Q}/bazel-fetch-matrix.py versions \
+	    --ports-root ${PORTSDIR:Q}
+
+update-bazel-fetch-all:
+	${PYTHON_CMD} ${FILESDIR:Q}/bazel-fetch-matrix.py fetch \
+	    --port ${.CURDIR:Q} --bin-dir ${BAZEL_BIN_DIR:Q} \
+	    --work-root ${BAZEL_MATRIX_WORK:Q}
+
+update-bazel-distfiles:
+	${PYTHON_CMD} ${FILESDIR:Q}/bazel-fetch-matrix.py generate \
+	    --work-root ${BAZEL_MATRIX_WORK:Q}
+
+verify-bazel-distfiles:
+	${PYTHON_CMD} ${FILESDIR:Q}/bazel-fetch-matrix.py verify \
+	    --port ${.CURDIR:Q} --bin-dir ${BAZEL_BIN_DIR:Q} \
+	    --work-root ${BAZEL_MATRIX_WORK:Q}
+
+update-bazel-distfiles-single:
+	${PYTHON_CMD} ${FILESDIR:Q}/bazel-fetch-log.py \
+	    --bcr-root ${WRKSRC_bcr:Q} ${BAZEL_FETCH_LOG} \
+	    > ${FILESDIR:Q}/Makefile.distfiles.tmp && \
+	    ${MV} ${FILESDIR:Q}/Makefile.distfiles.tmp \
+		${FILESDIR:Q}/Makefile.distfiles
+
+post-configure-bazel-distdir:
+	@set -eu; \
+	for entry in ${BAZEL_GH_DISTFILES:@f@${f:Q}@}; do \
+		src=${DISTDIR:Q}/${DIST_SUBDIR:Q}/$${entry%%:*}; \
+		dst=${WRKDIR:Q}/bazel-distdir/$${entry#*:}; \
+		if [ ! -f "$$src" ]; then \
+			echo "Missing Bazel distfile: $$src" >&2; \
+			exit 1; \
+		fi; \
+		${MKDIR} "$${dst%/*}"; \
+		${LN} -sf "$$src" "$$dst"; \
+	done
+
+post-configure: post-configure-bazel-distdir
+
+update-bazel-fetch: configure
+	cd ${BUILD_WRKSRC:Q} && \
+	    ${SETENV} ${MAKE_ENV} PATH=/bin:/usr/bin:${PATH} \
+	    ${BAZEL_CMD} \
+	    --output_base=${BAZEL_FETCH_OUTPUT:Q} \
+	    fetch \
+	    --force \
+	    ${BAZEL_FLAGS} \
+	    ${BAZEL_FETCH_FLAGS} \
+	    --repository_cache=${BAZEL_FETCH_CACHE:Q} \
+	    --repo_contents_cache= \
+	    --experimental_workspace_rules_log_file=${BAZEL_FETCH_LOG} \
+	    ${BAZEL_TARGETS}

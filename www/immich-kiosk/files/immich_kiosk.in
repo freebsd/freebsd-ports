@@ -1,0 +1,60 @@
+#!/bin/sh
+
+# PROVIDE: immich_kiosk
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# immich_kiosk_enable (bool):	Set to NO by default.
+#				Set it to YES to enable the kiosk.
+# immich_kiosk_config (str):	Directory holding config.yaml.
+#				Default: %%ETCDIR%%
+# immich_kiosk_port (int):	Listen port. Default: 3001
+# immich_kiosk_chdir (str):	Directory the server writes to.
+#				Default: %%DBDIR%%
+# immich_kiosk_env (str):	Further settings, among them
+#				KIOSK_IMMICH_API_KEY_FILE and
+#				KIOSK_PASSWORD_FILE.
+
+. /etc/rc.subr
+
+name=immich_kiosk
+rcvar=immich_kiosk_enable
+desc="Immich Kiosk slideshow server"
+
+load_rc_config $name
+
+: ${immich_kiosk_enable:=NO}
+: ${immich_kiosk_user:=immich}
+: ${immich_kiosk_group:=immich}
+: ${immich_kiosk_config:=%%ETCDIR%%}
+: ${immich_kiosk_port:=3001}
+: ${immich_kiosk_env:="KIOSK_PORT=${immich_kiosk_port}"}
+: ${immich_kiosk_chdir:=%%DBDIR%%}
+
+pidfile=/var/run/immich/${name}.pid
+childpidfile=/var/run/immich/${name}_child.pid
+required_files="${immich_kiosk_config}/config.yaml"
+
+start_precmd=immich_kiosk_precmd
+command=/usr/sbin/daemon
+command_args="-f -H -t ${name} -P ${pidfile} -p ${childpidfile} \
+	-o /var/log/immich/${name}.log \
+	%%PREFIX%%/bin/immich-kiosk"
+
+immich_kiosk_precmd()
+{
+	# Keep what the service creates itself out of other users' reach
+	umask 027
+
+	install -d -m 750 -o ${immich_kiosk_user} -g ${immich_kiosk_group} \
+		/var/run/immich /var/log/immich ${immich_kiosk_chdir}
+
+	# config.yaml is picked up from the working directory or from a
+	# config subdirectory of it, upstream offers no setting for the path.
+	ln -shf ${immich_kiosk_config} ${immich_kiosk_chdir}/config
+}
+
+run_rc_command "$1"

@@ -1,0 +1,3 @@
+Magika is a tool to determine the content type of a file with deep learning.
+It can be used as a Python module or command-line tool to identify the type
+of files based on their contents.

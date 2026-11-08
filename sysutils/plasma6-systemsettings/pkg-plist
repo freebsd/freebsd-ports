@@ -2,6 +2,7 @@ bin/systemsettings
 %%QT_PLUGINDIR%%/kf6/krunner/krunner_systemsettings.so
 share/applications/kdesystemsettings.desktop
 share/applications/systemsettings.desktop
+share/config.kcfg/systemsettings-config.kcfg
 share/doc/HTML/ca/systemsettings/index.cache.bz2
 share/doc/HTML/ca/systemsettings/index.docbook
 share/doc/HTML/de/systemsettings/index.cache.bz2

@@ -1,0 +1,8 @@
+--- plugins/core/IO/qStepCADImport/CMakeLists.txt.orig	2024-07-06 10:08:06 UTC
++++ plugins/core/IO/qStepCADImport/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required( VERSION 3.0 )
++cmake_minimum_required( VERSION 3.5 )
+ 
+ option( PLUGIN_IO_QSTEP "Check to install the STEP reading file plugin" OFF )
+ 

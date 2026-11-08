@@ -1,9 +1,9 @@
 PORTNAME=	mcmc-jags
-DISTVERSION=	4.3.2
+DISTVERSION=	5.0.0
 CATEGORIES=	math
 MASTER_SITES=	SF/mcmc-jags/JAGS/${S}.x/Source/:1 \
-		SF/mcmc-jags/Examples/${S}.x/:2 \
-		SF/mcmc-jags/Manuals/2.x/:3 \
+		SF/mcmc-jags/Examples/4.x/:2 \
+		SF/mcmc-jags/Manuals/5.x/:3 \
 		SF/mcmc-jags/Manuals/${S}.x/:4
 DISTFILES=	JAGS-${PORTVERSION}${EXTRACT_SUFX}:1
 DIST_SUBDIR=	${PORTNAME}
@@ -18,6 +18,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	cppunit>0:devel/cppunit
 LIB_DEPENDS=	libltdl.so:devel/libltdl
+TEST_DEPENDS+=	${LOCALBASE}/lib/R/library/coda/R/coda.rdb:math/R-cran-coda
 
 USES=		bison compiler:features fortran gmake libtool localbase pathfix pkgconfig
 
@@ -71,10 +72,7 @@ post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKDIR}/classic-bugs; ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}
 
-.if defined(MAINTAINER_MODE)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/R/library/coda/R/coda.rdb:math/R-cran-coda
-
-check test: install
+test: install
 .for i in 1 2
 	@cd ${WRKDIR}/classic-bugs/vol${i}; ${SETENV} ${MAKE_ENV} \
 	${MAKE_CMD} ${MAKE_ARGS} check
@@ -82,5 +80,4 @@ check test: install
 	@${FIND} ${WRKDIR}/classic-bugs -type f -name check.log | ${SORT} | \
 	${XARGS} -tI @  ${CAT} @
 
-.endif
 .include <bsd.port.mk>

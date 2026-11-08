@@ -1,6 +1,13 @@
---- CMakeLists.txt.orig	2015-03-08 13:57:11.000000000 +0300
-+++ CMakeLists.txt	2015-03-09 17:48:28.547228957 +0300
-@@ -126,7 +126,7 @@
+--- CMakeLists.txt.orig	2015-03-09 12:48:31 UTC
++++ CMakeLists.txt
+@@ -1,5 +1,5 @@ Project (freeblocks)
+ Project (freeblocks)
+-cmake_minimum_required (VERSION 2.6)
++cmake_minimum_required (VERSION 3.5)
+ 
+ Set (PACKAGE "FREEBLOCKS")
+ Set (VERSION "0.5")
+@@ -126,7 +126,7 @@ Target_Link_Libraries (freeblocks ${CMAKE_LD_FLAGS} ${
  Target_Link_Libraries (freeblocks ${CMAKE_LD_FLAGS} ${SDL_LIBRARY} ${SDLIMAGE_LIBRARY} ${SDLMIXER_LIBRARY} ${SDLTTF_LIBRARY} ${SDLMAIN_LIBRARY} ${EXTRA_LIBRARIES})
  
  # installing to the proper places

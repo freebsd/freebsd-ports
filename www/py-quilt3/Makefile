@@ -1,13 +1,13 @@
 PORTNAME=	quilt3
-PORTVERSION=	7.3.0
-PORTREVISION=	2
+PORTVERSION=	8.0.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python client for Quilt data hub
-WWW=		https://github.com/quiltdata/quilt
+WWW=		https://www.quilt.bio/open-source \
+		https://github.com/quiltdata/quilt
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

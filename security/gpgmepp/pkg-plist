@@ -49,5 +49,5 @@ lib/cmake/Gpgmepp/GpgmeppTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Gpgmepp/GpgmeppTargets.cmake
 lib/libgpgmepp.so
 lib/libgpgmepp.so.7
-lib/libgpgmepp.so.7.1.0
+lib/libgpgmepp.so.7.2.0
 libdata/pkgconfig/gpgmepp.pc

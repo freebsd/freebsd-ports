@@ -12,10 +12,10 @@ lib/libktcore.so.16.0.0
 %%QT_PLUGINDIR%%/ktorrent_plugins/MediaPlayerPlugin.so
 %%QT_PLUGINDIR%%/ktorrent_plugins/ScanFolderPlugin.so
 %%QT_PLUGINDIR%%/ktorrent_plugins/ScanForLostFilesPlugin.so
-%%QT_PLUGINDIR%%/ktorrent_plugins/SearchPlugin.so
+%%WEBENGINE%%%%QT_PLUGINDIR%%/ktorrent_plugins/SearchPlugin.so
 %%QT_PLUGINDIR%%/ktorrent_plugins/ShutdownPlugin.so
 %%QT_PLUGINDIR%%/ktorrent_plugins/StatsPlugin.so
-%%QT_PLUGINDIR%%/ktorrent_plugins/SyndicationPlugin.so
+%%WEBENGINE%%%%QT_PLUGINDIR%%/ktorrent_plugins/SyndicationPlugin.so
 %%QT_PLUGINDIR%%/ktorrent_plugins/UPnPPlugin.so
 %%QT_PLUGINDIR%%/ktorrent_plugins/ZeroconfPlugin.so
 share/applications/org.kde.ktorrent.desktop
@@ -117,7 +117,7 @@ share/kxmlgui5/ktorrent/ktorrent_downloadorderui.rc
 share/kxmlgui5/ktorrent/ktorrent_magnetgeneratorui.rc
 share/kxmlgui5/ktorrent/ktorrent_mediaplayerui.rc
 %%WEBENGINE%%share/kxmlgui5/ktorrent/ktorrent_searchui.rc
-%%WORKSPACE%%share/kxmlgui5/ktorrent/ktorrent_shutdownui.rc
+share/kxmlgui5/ktorrent/ktorrent_shutdownui.rc
 %%WEBENGINE%%share/kxmlgui5/ktorrent/ktorrent_syndicationui.rc
 share/kxmlgui5/ktorrent/ktorrentui.rc
 share/kxmlgui5/ktorrent/kttorrentactivityui.rc

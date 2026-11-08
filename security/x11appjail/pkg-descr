@@ -1,0 +1,12 @@
+x11appjail is a specialized tool for creating, verifying, installing,
+and running AppJails. An AppJail is a CLI, TUI or X11 application
+that runs inside a FreeBSD jail but is perceived by the end user
+as identical (or at least very similar) to an application running
+directly on the host system.
+
+This tool makes extensive use of appjail(1) as its engine; however,
+unlike the latter, the primary user in x11appjail is neither root
+nor a privileged user, but rather an unprivileged user. The fundamental
+goal of this project is to grant the user limited access to the
+jail, restricted solely to the execution of a CLI, TUI or X11
+application.

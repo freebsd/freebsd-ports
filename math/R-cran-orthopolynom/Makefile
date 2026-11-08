@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Collection of Functions for Orthogonal and Orthonormal Polynomials
-WWW=		https://cran.r-project.org/package=orthopolynom
 
 LICENSE=	GPLv2
 

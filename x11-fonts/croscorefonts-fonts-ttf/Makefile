@@ -2,8 +2,7 @@ PORTNAME=	croscorefonts
 PORTVERSION=	1.31.0
 PORTREVISION=	2
 CATEGORIES=	x11-fonts
-MASTER_SITES=	https://gsdview.appspot.com/chromeos-localmirror/distfiles/ \
-		https://commondatastorage.googleapis.com/chromeos-localmirror/distfiles/ \
+MASTER_SITES=	https://commondatastorage.googleapis.com/chromeos-localmirror/distfiles/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	office@FreeBSD.org

@@ -1,6 +1,5 @@
 PORTNAME=	cramjam
-PORTVERSION=	2.11.0
-PORTREVISION=	12
+PORTVERSION=	2.13.0
 CATEGORIES=	archivers python
 MASTER_SITES=	PYPI \
 		https://github.com/milesgranger/cramjam/releases/download/v${PORTVERSION}/
@@ -23,5 +22,6 @@ USE_PYTHON=	autoplist concurrent pep517
 
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
+CARGO_TEST=	no
 
 .include <bsd.port.mk>

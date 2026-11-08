@@ -56,11 +56,9 @@ cc_toolchain_config(
 toolchain(
     name = "cc-toolchain-freebsd",
     exec_compatible_with = [
-        "@platforms//cpu:x86_64",
         "@platforms//os:freebsd",
     ],
     target_compatible_with = [
-        "@platforms//cpu:x86_64",
         "@platforms//os:freebsd",
     ],
     toolchain = ":cc-compiler-freebsd",

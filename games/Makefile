@@ -26,6 +26,7 @@
     SUBDIR += SRB2
     SUBDIR += SpaceCadetPinball
     SUBDIR += SpaceCadetPinball-devel
+    SUBDIR += UZDoom
     SUBDIR += abbayedesmorts
     SUBDIR += abe
     SUBDIR += abuse_sdl
@@ -301,7 +302,6 @@
     SUBDIR += fretsonfire-data
     SUBDIR += frikqcc
     SUBDIR += frobtads
-    SUBDIR += frogatto
     SUBDIR += frotz
     SUBDIR += frozen-bubble
     SUBDIR += fs2open
@@ -432,6 +432,7 @@
     SUBDIR += kbreakout
     SUBDIR += kdegames
     SUBDIR += kdiamond
+    SUBDIR += kdominate
     SUBDIR += kevedit
     SUBDIR += kfourinline
     SUBDIR += kgoldrunner
@@ -598,6 +599,7 @@
     SUBDIR += lskat
     SUBDIR += ltris
     SUBDIR += luanti
+    SUBDIR += luanti-mineclonia
     SUBDIR += lugaru
     SUBDIR += luola
     SUBDIR += lwjgl
@@ -1059,8 +1061,6 @@
     SUBDIR += worldofpadman
     SUBDIR += wtf
     SUBDIR += wxlauncher
-    SUBDIR += wyrmgus
-    SUBDIR += wyrmsun
     SUBDIR += xasteroids
     SUBDIR += xbat
     SUBDIR += xbill

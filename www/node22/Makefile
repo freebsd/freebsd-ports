@@ -17,7 +17,6 @@ BROKEN_SSL=	libressl libressl-devel
 BROKEN_SSL_REASON=	Node.js ${PORTVERSION:R:R}.x requires OpenSSL or the BUNDLED_SSL option enabled
 ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 powerpc64 powerpc64le
 
-BUILD_DEPENDS=	objdump:devel/binutils
 LIB_DEPENDS=	libada.so:devel/libada \
 		libbrotlidec.so:archivers/brotli \
 		libcares.so:dns/c-ares \
@@ -53,7 +52,6 @@ CONFIGURE_ARGS=	--prefix=${PREFIX:S|^${DESTDIR}||} \
 		--with-intl=system-icu \
 		--without-corepack \
 		--without-npm
-CXXFLAGS_powerpc64=	-mpower8-vector
 HAS_CONFIGURE=	yes
 MAKE_ENV=	CC.host="${CCACHE_BIN} ${CC}" \
 		CFLAGS.host="${CFLAGS}" \
@@ -117,6 +115,11 @@ post-configure:
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/node
+# Fail if two simdutf copies end up in one process (node exports its bundled
+# simdutf; a DSO linking the system libsimdutf.so, e.g. libmerve, then binds
+# to the wrong one and CJS export lexing SIGBUSes). Importing a CommonJS
+# module from ESM runs that lexer; stdin avoids a temp file.
+	${ECHO_CMD} 'exports.ok = 1' | ${STAGEDIR}${PREFIX}/bin/node --input-type=module -e 'import "/dev/stdin"'
 
 post-install-BUNDLED_SSL-on:
 	cd ${STAGEDIR}${PREFIX} && ${FIND} include/node/openssl/ -type f >> ${TMPPLIST}

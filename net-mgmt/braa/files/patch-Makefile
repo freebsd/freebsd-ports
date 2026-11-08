@@ -1,4 +1,4 @@
---- Makefile.orig	2024-09-08 14:03:35 UTC
+--- Makefile.orig	2026-06-23 08:35:28 UTC
 +++ Makefile
 @@ -4,8 +4,8 @@
  ###################################################################
@@ -11,20 +11,18 @@
  
  # Solaris / SPARC
  # CFLAGS = -DSOLARIS_SPARC
-@@ -18,15 +18,14 @@ OBJECTS = ${SOURCES:.c=.o}
- SOURCES= braaasn.c braaoids.c braaprotocol.c queries.c braa.c
- OBJECTS = ${SOURCES:.c=.o}
- 
--
- OUT= braa
- 
+@@ -24,12 +24,12 @@ all: ${OBJECTS}
  LIBS = 
  
  all: ${OBJECTS}
 -	cc $(OBJECTS) -o $(OUT) $(LDFLAGS) $(LIBS)
 -	strip $(OUT)
 +	$(CC) $(OBJECTS) -o $(OUT) $(LDFLAGS) $(LIBS)
-+#	strip $(OUT)
++	#strip $(OUT)
+ 
+ static: ${OBJECTS}
+-	cc $(OBJECTS) -static -o $(OUT).static $(LDFLAGS) $(LIBS)
++	$(CC) $(OBJECTS) -static -o $(OUT).static $(LDFLAGS) $(LIBS)
  
  clean:
  	rm -rf $(OBJECTS) $(OUT)

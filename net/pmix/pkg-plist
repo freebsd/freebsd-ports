@@ -129,7 +129,7 @@ include/pmix_tool.h
 include/pmix_version.h
 lib/libpmix.so
 lib/libpmix.so.2
-lib/libpmix.so.2.13.10
+lib/libpmix.so.2.13.11
 lib/pmix/pmix_mca_pcompress_zlib.so
 %%ZLIBNG%%lib/pmix/pmix_mca_pcompress_zlibng.so
 libdata/pkgconfig/pmix.pc

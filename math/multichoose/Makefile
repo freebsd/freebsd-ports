@@ -4,7 +4,7 @@ DISTVERSION=		1.0.3-2
 DISTVERSIONSUFFIX=	-g3b8d14e
 CATEGORIES=		math
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generate multiset combinations (n multichoose k)
 WWW=		https://github.com/ekg/multichoose
 

@@ -9,7 +9,7 @@ WWW=		https://gitlab.freedesktop.org/xorg/app/xeyes
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:xz xorg xorg-cat:app
+USES=		xorg xorg-cat:app
 USE_XORG=	x11 xcb xext xi xmu xorgproto xrender xt
 
 PLIST_FILES=	bin/xeyes share/man/man1/xeyes.1.gz

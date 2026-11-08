@@ -1,0 +1,2 @@
+The mysql-config-coder utility encrypts .mylogin.cnf files
+non-interactively and it can show passwords from such files.

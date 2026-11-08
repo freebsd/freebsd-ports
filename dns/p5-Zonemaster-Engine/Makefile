@@ -1,6 +1,6 @@
 PORTNAME=	Zonemaster-Engine
 DISTVERSIONPREFIX=	v
-DISTVERSION=	8.1.1
+DISTVERSION=	9.0.1
 CATEGORIES=	dns perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ZNMSTR
@@ -15,7 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Devel-CheckLib>0:devel/p5-Devel-CheckLib \
 		p5-Module-Install>0:devel/p5-Module-Install
-RUN_DEPENDS=	p5-Class-Accessor>=0:devel/p5-Class-Accessor \
+RUN_DEPENDS=	p5-CBOR-XS>=0:devel/p5-CBOR-XS \
+		p5-Class-Accessor>=0:devel/p5-Class-Accessor \
 		p5-Clone>=0:devel/p5-Clone \
 		p5-Devel-CheckLib>=0:devel/p5-Devel-CheckLib \
 		p5-Email-Valid>=0:mail/p5-Email-Valid \
@@ -42,7 +43,7 @@ RUN_DEPENDS=	p5-Class-Accessor>=0:devel/p5-Class-Accessor \
 		p5-Text-Reflow>0:textproc/p5-Text-Reflow \
 		p5-Try-Tiny>0:lang/p5-Try-Tiny \
 		p5-YAML-LibYAML>=0:textproc/p5-YAML-LibYAML \
-		p5-Zonemaster-LDNS>0:dns/p5-Zonemaster-LDNS
+		p5-Zonemaster-LDNS>=5.1.0:dns/p5-Zonemaster-LDNS
 
 USES=		gmake localbase perl5
 USE_PERL5=	configure

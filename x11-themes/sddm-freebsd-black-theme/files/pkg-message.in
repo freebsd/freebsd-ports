@@ -8,7 +8,7 @@
  This theme use the x11-fonts/montserrat font by default. However, it
  can be changed to any desired font editing:
 
- %%PREFIX%%/share/sddm/themes/sddm-freebsd-black-theme/theme.conf
+ %%PREFIX%%/share/sddm/themes/sddm-freebsd-black-theme/theme.conf.user
 EOM
 }
 ]

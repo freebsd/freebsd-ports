@@ -1,0 +1,18 @@
+--- pyproject.toml.orig	2026-06-04 05:59:24 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=69", "wheel"]
++requires = ["setuptools>=63", "wheel"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -8,7 +8,7 @@ requires-python = ">=3.7"
+ description = "Library provides the way to automatically manage drivers for different browsers"
+ readme = "README.md"
+ requires-python = ">=3.7"
+-license = "Apache-2.0"
++license = { file = "LICENSE" }
+ authors = [
+     { name = "Sergey Pirogov", email = "automationremarks@gmail.com" },
+ ]

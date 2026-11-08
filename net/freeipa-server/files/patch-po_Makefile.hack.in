@@ -1,0 +1,20 @@
+--- po/Makefile.hack.in.orig	2025-01-15 09:52:51 UTC
++++ po/Makefile.hack.in
+@@ -14,7 +14,7 @@ strip-pot: $(DOMAIN).pot
+ strip-pot: $(DOMAIN).pot
+ 	grep -v '#: ipaclient/remote_plugins/' $(DOMAIN).pot > $(DOMAIN).pot.tmp
+ 	mv $(DOMAIN).pot.tmp $(DOMAIN).pot
+-	if [ "$(GIT_BRANCH)" != "" ]; then \
++	if [ "$(GIT_BRANCH)" != "" ] && command -v git >/dev/null 2>&1 && git rev-parse --is-inside-work-tree >/dev/null 2>&1; then \
+ 		export GIT_DIFF_IPA_POT=`git diff --numstat $(DOMAIN).pot | cut -f1,2 | tr '\t' ,` || :; \
+ 		if [ "$$GIT_DIFF_IPA_POT" = "2,2" -o "$$GIT_DIFF_IPA_POT" = "1,1" ]; then \
+ 			echo "No changes in $(DOMAIN).pot, restore the original"; \
+@@ -26,7 +26,7 @@ strip-po: stamp-po
+ 	for po_file in $(POFILES); do \
+ 		$(MSGATTRIB) --translated --no-fuzzy --no-location -s $$po_file > $$po_file.tmp || exit 1; \
+ 		mv $$po_file.tmp $$po_file || exit 1; \
+-		if [ "$(GIT_BRANCH)" != "" ]; then \
++		if [ "$(GIT_BRANCH)" != "" ] && command -v git >/dev/null 2>&1 && git rev-parse --is-inside-work-tree >/dev/null 2>&1; then \
+ 			export GIT_DIFF_PO_FILE=`git diff --numstat $$po_file | cut -f1,2 | tr '\t' ,` || :; \
+ 			if [ "$$GIT_DIFF_PO_FILE" = "2,2" -o "$$GIT_DIFF_PO_FILE" = "1,1" ]; then \
+ 				echo "No translation changes in $$po_file, restore the original"; \

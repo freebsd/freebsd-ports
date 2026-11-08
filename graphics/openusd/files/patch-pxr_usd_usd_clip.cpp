@@ -1,7 +1,7 @@
---- pxr/usd/usd/clip.cpp.orig	2025-10-24 16:21:56 UTC
+--- pxr/usd/usd/clip.cpp.orig	2026-04-24 18:55:54 UTC
 +++ pxr/usd/usd/clip.cpp
-@@ -28,6 +28,7 @@
- #include "pxr/base/tf/stringUtils.h"
+@@ -30,6 +30,7 @@
+ #include "pxr/base/vt/arrayEdit.h"
  
  #include <optional>
 +#include <array>

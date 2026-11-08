@@ -1,0 +1,6 @@
+vcs-versioning is a standalone library that provides the core VCS version
+extraction and formatting functionality.
+
+It handles version extraction from Git, Mercurial, and Jujutsu repositories,
+version scheme logic, tag parsing, and version formatting. These are universal
+concepts that work across different build systems and integrations.

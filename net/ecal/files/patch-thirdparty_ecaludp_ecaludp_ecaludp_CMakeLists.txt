@@ -1,6 +1,6 @@
---- thirdparty/ecaludp/ecaludp/ecaludp/CMakeLists.txt.orig	2024-05-14 02:01:15 UTC
+--- thirdparty/ecaludp/ecaludp/ecaludp/CMakeLists.txt.orig	2025-05-14 10:03:12 UTC
 +++ thirdparty/ecaludp/ecaludp/ecaludp/CMakeLists.txt
-@@ -27,7 +27,7 @@ set(CMAKE_CXX_VISIBILITY_PRESET hidden)
+@@ -26,7 +26,7 @@ find_package(asio    REQUIRED)
  set(CMAKE_VISIBILITY_INLINES_HIDDEN 1)
  
  find_package(asio    REQUIRED)

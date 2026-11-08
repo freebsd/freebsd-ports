@@ -7,7 +7,7 @@ DISTNAME=	google_cloud_vision-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Cloud Vision API API client library
-WWW=		https://cloud.google.com/python/docs/reference/vision/latest \
+WWW=		https://docs.cloud.google.com/python/docs/reference/vision/latest \
 		https://github.com/googleapis/google-cloud-python/tree/main/packages/google-cloud-vision \
 		https://github.com/googleapis/google-cloud-python
 

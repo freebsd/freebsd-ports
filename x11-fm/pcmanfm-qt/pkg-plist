@@ -55,6 +55,7 @@ share/man/man1/pcmanfm-qt.1.gz
 %%DATADIR%%/translations/pcmanfm-qt_sl.qm
 %%DATADIR%%/translations/pcmanfm-qt_sv.qm
 %%DATADIR%%/translations/pcmanfm-qt_tr.qm
+%%DATADIR%%/translations/pcmanfm-qt_ug.qm
 %%DATADIR%%/translations/pcmanfm-qt_uk.qm
 %%DATADIR%%/translations/pcmanfm-qt_vi.qm
 %%DATADIR%%/translations/pcmanfm-qt_zh_CN.qm

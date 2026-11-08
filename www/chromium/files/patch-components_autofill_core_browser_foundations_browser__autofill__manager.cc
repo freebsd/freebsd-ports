@@ -1,4 +1,4 @@
---- components/autofill/core/browser/foundations/browser_autofill_manager.cc.orig	2026-06-04 10:12:25 UTC
+--- components/autofill/core/browser/foundations/browser_autofill_manager.cc.orig	2026-10-18 13:29:39 UTC
 +++ components/autofill/core/browser/foundations/browser_autofill_manager.cc
 @@ -862,7 +862,7 @@ BrowserAutofillManager::GetAmountExtractionManager() {
  

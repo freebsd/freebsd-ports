@@ -1,0 +1,25 @@
+--- build/config/BUILD.gn.orig	2026-09-24 10:29:01 UTC
++++ build/config/BUILD.gn
+@@ -208,11 +208,17 @@ config("default_libs") {
+     # linking can have run-time side effects, nothing should be listed here.
+     libs = []
+   } else if (is_linux || is_chromeos) {
+-    libs = [
+-      "dl",
+-      "pthread",
+-      "rt",
+-    ]
++    if (current_os == "freebsd") {
++      libs = [
++        "pthread",
++      ]
++    } else {
++      libs = [
++        "dl",
++        "pthread",
++        "rt",
++      ]
++    }
+   }
+ }
+ 

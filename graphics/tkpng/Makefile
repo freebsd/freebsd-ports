@@ -1,11 +1,11 @@
 PORTNAME=	tkpng
 PORTVERSION=	0.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics tk
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PNG support for Tcl/Tk
 WWW=		https://www.muonics.com/FreeStuff/TkPNG/
 

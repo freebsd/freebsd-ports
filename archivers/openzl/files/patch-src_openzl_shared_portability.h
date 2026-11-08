@@ -1,6 +1,6 @@
---- src/openzl/shared/portability.h.orig	2026-05-17 02:41:49 UTC
+--- src/openzl/shared/portability.h.orig	2026-09-29 04:03:33 UTC
 +++ src/openzl/shared/portability.h
-@@ -330,10 +330,11 @@ typedef __m128i __m128i_u;
+@@ -349,10 +349,11 @@ typedef __m128i __m128i_u;
  // Apple doesn't define __STDC_IEC_559__, but supports IEEE 754.
  // MinGW doesn't define __STDC_IEC_559__, but supports IEEE 754.
  // MSVC on x86/x64 supports IEEE 754.

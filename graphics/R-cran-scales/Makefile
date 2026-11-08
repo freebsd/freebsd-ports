@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Scale functions for graphics
-WWW=		https://cran.r-project.org/web/packages/scales/
+WWW=		https://cran.r-project.org/package=scales
 
 LICENSE=	MIT
 

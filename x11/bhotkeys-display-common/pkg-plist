@@ -1,0 +1,5 @@
+bin/display-laptop-only
+bin/display-session-restore
+libexec/bhotkeys/display-randr-common.subr
+share/man/man1/display-laptop-only.1.gz
+share/man/man1/display-session-restore.1.gz

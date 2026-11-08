@@ -1,3 +1,5 @@
-TIMESTAMP = 1782826994
-SHA256 (KDE/release-service/26.04.3/dolphin-26.04.3.tar.xz) = d18579587f841ca5a571c3614bda0beed6e53bf5ded4d456009e187cbb9d0b44
-SIZE (KDE/release-service/26.04.3/dolphin-26.04.3.tar.xz) = 5896212
+TIMESTAMP = 1793885462
+SHA256 (KDE/release-service/26.08.3/dolphin-26.08.3.tar.xz) = 8d73851ba561f81b9aa27bba53157a59d9eeaa548fd82f0c9c2167b5a7c4a65d
+SIZE (KDE/release-service/26.08.3/dolphin-26.08.3.tar.xz) = 5980072
+SHA256 (KDE/release-service/26.08.3/9685acf1bbc6ba1f591b37b8be4250a604fcc0bf.patch) = afbe29ff7a305b32d44843dc3fafc4a6a9d6fe31120218bb87c211fff92dabd1
+SIZE (KDE/release-service/26.08.3/9685acf1bbc6ba1f591b37b8be4250a604fcc0bf.patch) = 1772

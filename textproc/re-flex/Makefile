@@ -1,5 +1,5 @@
 PORTNAME=	re-flex
-PORTVERSION=	6.3.0
+PORTVERSION=	6.5.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 
@@ -20,11 +20,6 @@ CONFLICTS_INSTALL=	reflex
 USE_GITHUB=	yes
 GH_ACCOUNT=	Genivia
 GH_PROJECT=	RE-flex
-
-post-patch:
-	${REINPLACE_CMD} \
-		's|reflex_static_lib|reflex|; s|reflex_shared_lib|reflex|' \
-		${WRKSRC}/CMakeLists.txt
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/reflex

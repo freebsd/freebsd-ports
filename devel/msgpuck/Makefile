@@ -20,4 +20,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	tarantool
 GH_TAGNAME=	e3af562
 
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

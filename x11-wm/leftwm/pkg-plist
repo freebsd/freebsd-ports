@@ -1,7 +1,8 @@
-bin/leftwm-log
 bin/lefthk-worker
+bin/leftwm
 bin/leftwm-check
 bin/leftwm-command
+bin/leftwm-log
 bin/leftwm-state
 bin/leftwm-worker
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.md

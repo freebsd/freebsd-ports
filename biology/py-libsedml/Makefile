@@ -1,6 +1,6 @@
 PORTNAME=	libsedml
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.33
+DISTVERSION=	2.0.34
 CATEGORIES=	biology devel
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -24,6 +24,7 @@ GH_ACCOUNT=	fbergmann
 GH_PROJECT=	libSEDML
 
 CMAKE_ARGS=	-DCMAKE_INSTALL_LIBDIR=lib
+CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/fbergmann/libSEDML/issues/180
 
 LDFLAGS+=	-lsedml -lsbml -lnuml # otherwise it builds a broken shared object, see https://github.com/NuML/NuML/issues/21
 
@@ -31,5 +32,7 @@ WRKSRC_SUBDIR=	src/bindings/python
 
 do-test: install
 	@${PYTHON_CMD} ${FILESDIR}/quick-test.py
+
+# tests as of 2.0.34: Test passed
 
 .include <bsd.port.mk>

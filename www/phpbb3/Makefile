@@ -1,5 +1,5 @@
 PORTNAME=	phpbb
-DISTVERSION=	3.3.14
+DISTVERSION=	3.3.19
 CATEGORIES=	www
 MASTER_SITES=	https://download.phpbb.com/pub/release/${PORTVERSION:C/([0-9]+\.[0-9]+).*/\1/}/${PORTVERSION}/
 PKGNAMESUFFIX=	3
@@ -16,6 +16,9 @@ USES=		cpe php tar:bzip2
 USE_PHP=	ctype dom filter tokenizer
 
 CONFLICTS=	phpbb-[0-2]*
+
+# download.phpbb.com rejects the libfetch user agent with HTTP 403
+FETCH_BEFORE_ARGS=	--user-agent=curl/8.16.0
 
 OPTIONS_DEFINE=	DOCS
 

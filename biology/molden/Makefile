@@ -1,6 +1,5 @@
 PORTNAME=	molden
-DISTVERSION=	7.1
-PORTREVISION=	1
+DISTVERSION=	7.3
 PORTEPOCH=	1
 CATEGORIES=	biology
 MASTER_SITES=	https://ftp.science.ru.nl/Molden/
@@ -34,6 +33,8 @@ PLIST_FILES=	bin/ambfor \
 		bin/gmolden \
 		bin/molden \
 		bin/surf
+
+BINARY_ALIAS=	gcc=${CC}
 
 PORTSCOUT=	limit:^5\.0\.
 

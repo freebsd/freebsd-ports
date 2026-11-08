@@ -1,0 +1,19 @@
+--- pyproject.toml.orig	2026-08-11 18:31:40 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=77"]
++requires = ["setuptools>=63.1"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -34,8 +34,7 @@ classifiers = [
+   "Programming Language :: Python :: 3.14",
+   "Programming Language :: Python :: 3.15",
+ ]
+-license = "Apache-2.0"
+-license-files = ["LICENSE"]
++license = { text = 'Apache-2.0' }
+ 
+ [project.urls]
+ Homepage = "https://github.com/tcalmant/jsonrpclib/"

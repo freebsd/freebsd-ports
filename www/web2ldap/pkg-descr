@@ -1,1 +1,7 @@
-web2ldap is a full-featured web-based LDAP v2+ client written in Python.
+web2ldap is a full-featured web-based LDAPv3 client written in Python.
+
+It is a generic LDAP client which does not make any assumptions about the
+tree structure or LDAP schema, and can be used to access and manipulate
+LDAP servers without configuring anything.  It includes a schema browser
+that displays references and dependencies within an LDAPv3 schema, and
+can be customized for LDAP administration use cases.

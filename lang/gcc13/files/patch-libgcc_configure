@@ -1,0 +1,19 @@
+--- libgcc/configure.orig
++++ libgcc/configure
+@@ -5217,7 +5217,7 @@
+ # check if we have VSX (ISA 2.06) support to build the software libraries, and
+ # whether the assembler can handle xsaddqp for hardware support.  Also check if
+ # a new glibc is being used so that __builtin_cpu_supports can be used.
+-powerpc*-*-linux*)
++powerpc*-*-linux* | powerpc*-*-freebsd*)
+   saved_CFLAGS="$CFLAGS"
+   CFLAGS="$CFLAGS -mabi=altivec -mvsx -mfloat128"
+   { $as_echo "$as_me:${as_lineno-$LINENO}: checking for PowerPC ISA 2.06 to build __float128 libraries" >&5
+@@ -5228,6 +5228,7 @@
+   cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ vector double dadd (vector double a, vector double b) { return a + b; }
++__ibm128 conftest_ibm128;
+ _ACEOF
+ if ac_fn_c_try_compile "$LINENO"; then :
+   libgcc_cv_powerpc_float128=yes

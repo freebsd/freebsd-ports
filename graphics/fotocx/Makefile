@@ -1,5 +1,5 @@
 PORTNAME=	fotocx
-PORTVERSION=	26.6.1
+PORTVERSION=	26.8.1
 CATEGORIES=	graphics
 MASTER_SITES=	https://kornelix.net/downloads/downloads/ \
 		https://fossies.org/linux/misc/ \
@@ -12,9 +12,7 @@ WWW=		https://kornelix.net/fotocx/fotocx.html
 
 LICENSE=	GPLv3+
 
-LIB_DEPENDS=	libchamplain-gtk-0.12.so:graphics/libchamplain \
-		libclutter-gtk-1.0.so:graphics/clutter-gtk3 \
-		libjxl.so:graphics/libjxl \
+LIB_DEPENDS=	libjxl.so:graphics/libjxl \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 RUN_DEPENDS=	xdg-open:devel/xdg-utils \
@@ -28,10 +26,12 @@ CXXFLAGS+=	-Wno-register -Wno-writable-strings
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS NETMAP
+OPTIONS_DEFAULT=	NETMAP
+NETMAP_DESC=	World map support (requires WebKit)
 
-post-patch:
-	@${REINPLACE_CMD} -e '/Uninstall/d' ${WRKSRC}/f.widgets.cc
+NETMAP_LIB_DEPENDS=	libwebkit2gtk-4.1.so:www/webkit2-gtk@41
+NETMAP_MAKE_ENV=	NETMAP_SUPPORT=1
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}

@@ -16,6 +16,8 @@ LICENSE_FILE_LGPL3=	${WRKSRC}/licenses/LICENSE-LGPLv3
 LICENSE_FILE_MIT=	${WRKSRC}/licenses/LICENSE-MIT-sort
 LICENSE_FILE_MPL20=	${WRKSRC}/licenses/LICENSE-MPL2
 
+BROKEN_i386=		fails to build: Error: Unknown system function monotime
+
 USES=			gmake pkgconfig
 
 USE_GITHUB=		yes

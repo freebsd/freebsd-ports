@@ -11,6 +11,10 @@ WWW=		https://pypi.org/project/pytest-mutagen/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		does not work with current pytest
+DEPRECATED=	broken with current pytest, abandoned upstream, has no consumers in the ports tree
+EXPIRATION_DATE=2027-01-06
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hypothesis>=0:devel/py-hypothesis@${PY_FLAVOR}
 

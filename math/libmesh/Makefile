@@ -1,5 +1,6 @@
 PORTNAME=	libmesh
 DISTVERSION=	1.8.4
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/libMesh/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -10,6 +11,8 @@ WWW=		https://libmesh.github.io \
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+BROKEN_i386=	compilation fails: error: redefinition of 'TablePrefixSum'
 
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libnlopt.so:math/nlopt

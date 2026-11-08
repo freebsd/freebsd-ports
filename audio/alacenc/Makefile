@@ -1,5 +1,5 @@
 PORTNAME=	alacenc
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	audio
 
@@ -14,5 +14,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	flacon
 
 PLIST_FILES=	bin/${PORTNAME}
+
+post-patch:
+	@${FIND} ${WRKSRC} -type f -name CMakeLists.txt -print0 | ${XARGS} \
+		-0 ${REINPLACE_CMD} -e '/cmake_minimum_required(VERSION/ \
+			s,3[.0-9]*,&...9.99,'
 
 .include <bsd.port.mk>

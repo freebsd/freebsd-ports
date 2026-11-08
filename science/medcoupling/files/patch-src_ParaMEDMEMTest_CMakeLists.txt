@@ -1,0 +1,12 @@
+--- src/ParaMEDMEMTest/CMakeLists.txt.orig	2025-10-15 11:21:58 UTC
++++ src/ParaMEDMEMTest/CMakeLists.txt
+@@ -56,8 +56,7 @@ target_link_libraries(
+ add_library(ParaMEDMEMTest ${ParaMEDMEMTest_SOURCES})
+ set_target_properties(ParaMEDMEMTest PROPERTIES COMPILE_FLAGS "")
+ target_link_libraries(
+-  ParaMEDMEMTest paramedmem paramedloader medcouplingremapper
+-  InterpKernelTestUtils ${CPPUNIT_LIBRARIES})
++  ParaMEDMEMTest %%BUILDDIR%%/src/MEDCoupling/libmedcoupling.so %%BUILDDIR%%/src/INTERP_KERNEL/libinterpkernel.so paramedmem paramedloader medcouplingremapper InterpKernelTestUtils ${CPPUNIT_LIBRARIES})
+ install(TARGETS ParaMEDMEMTest DESTINATION ${MEDCOUPLING_INSTALL_LIBS})
+ 
+ set(TESTSParaMEDMEM)

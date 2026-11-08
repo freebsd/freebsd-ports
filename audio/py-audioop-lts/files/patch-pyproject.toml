@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2025-08-05 16:28:51 UTC
++++ pyproject.toml
+@@ -8,7 +8,7 @@ readme = "README.md"
+ requires-python = ">=3.13"
+ version = "0.2.2"
+ readme = "README.md"
+-license = "PSF-2.0"
++license = { text = "PSF-2.0" }
+ maintainers = [{ name = "AbstractUmbra", email = "umbra@abstractumbra.dev" }]
+ classifiers = [
+     "Development Status :: 4 - Beta",

@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2014-03-02 10:46:32 UTC
++++ CMakeLists.txt
+@@ -1,6 +1,5 @@
+-cmake_minimum_required(VERSION 2.8)
+-project(xss-lock C)
+-set(PROJECT_VERSION 0.3.0)
++cmake_minimum_required(VERSION 2.8...9.9)
++project(xss-lock VERSION 0.3.0 LANGUAGES C)
+ 
+ install(FILES NEWS DESTINATION share/doc/${PROJECT_NAME})
+ 

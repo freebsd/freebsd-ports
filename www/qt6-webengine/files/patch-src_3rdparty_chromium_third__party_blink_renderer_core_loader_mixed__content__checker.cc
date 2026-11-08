@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/third_party/blink/renderer/core/loader/mixed_content_checker.cc.orig	2025-07-02 06:08:04 UTC
+--- src/3rdparty/chromium/third_party/blink/renderer/core/loader/mixed_content_checker.cc.orig	2026-08-11 12:42:19 UTC
 +++ src/3rdparty/chromium/third_party/blink/renderer/core/loader/mixed_content_checker.cc
-@@ -510,7 +510,7 @@ bool MixedContentChecker::ShouldBlockFetch(
+@@ -508,7 +508,7 @@ bool MixedContentChecker::ShouldBlockFetch(
    switch (context_type) {
      case mojom::blink::MixedContentContextType::kOptionallyBlockable:
  

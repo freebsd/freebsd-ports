@@ -2054,7 +2054,7 @@
      <description>
        <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Wireshark project reports:</p>
-	<blockquote cite="://www.wireshark.org/docs/relnotes/wireshark-2.2.2.html">
+	<blockquote cite="https://www.wireshark.org/docs/relnotes/wireshark-2.2.2.html">
 	 <p>Wireshark project is releasing Wireshark 2.2.2, which addresses:</p>
 	 <ul>
 	   <li>wnpa-sec-2016-58: Profinet I/O long loop - CVE-2016-9372</li>
@@ -4224,8 +4224,8 @@ and CVE-2013-0155.</p>
       </body>
     </description>
     <references>
-      <url>"http://www.openwall.com/lists/oss-security/2016/09/08/2"</url>
-      <url>"http://www.openwall.com/lists/oss-security/2016/09/08/3"</url>
+      <url>http://www.openwall.com/lists/oss-security/2016/09/08/2</url>
+      <url>http://www.openwall.com/lists/oss-security/2016/09/08/3</url>
       <cvename>CVE-2016-5157</cvename>
       <cvename>CVE-2016-7163</cvename>
     </references>
@@ -4889,7 +4889,7 @@ and CVE-2013-0155.</p>
       </body>
     </description>
     <references>
-      <url>"http://www.openwall.com/lists/oss-security/2016/09/15/2"</url>
+      <url>http://www.openwall.com/lists/oss-security/2016/09/15/2</url>
       <cvename>CVE-2016-7406</cvename>
       <cvename>CVE-2016-7407</cvename>
       <cvename>CVE-2016-7408</cvename>
@@ -7832,7 +7832,7 @@ and CVE-2013-0155.</p>
       </body>
     </description>
     <references>
-      <url>We have identified and fixed several XSS security issues in this release.</url>
+      <url>https://piwik.org/changelog/piwik-2-16-2/</url>
     </references>
     <dates>
       <discovery>2016-08-03</discovery>
@@ -9408,7 +9408,7 @@ and CVE-2013-0155.</p>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Apache Software Foundation reports:</p>
-	<blockquote cite="INSERT URL HERE">
+	<blockquote cite="http://mail-archives.apache.org/mod_mbox/httpd-announce/201607.mbox/CVE-2016-4979-68283">
 	  <p>The Apache HTTPD web server (from 2.4.18-2.4.20) did not validate a X509
 	    client certificate correctly when experimental module for the HTTP/2
 	    protocol is used to access a resource.</p>
@@ -10115,7 +10115,7 @@ and CVE-2013-0155.</p>
     </description>
     <references>
       <url>http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2177</url>
-      <url>ihttps://bugzilla.redhat.com/show_bug.cgi?id=1341705</url>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=1341705</url>
       <url>https://www.openssl.org/blog/blog/2016/06/27/undefined-pointer-arithmetic/</url>
       <cvename>CVE-2016-2177</cvename>
     </references>
@@ -11441,7 +11441,6 @@ and CVE-2013-0155.</p>
       <cvename>CVE-2016-1673</cvename>
       <cvename>CVE-2016-1674</cvename>
       <cvename>CVE-2016-1675</cvename>
-      <cvename>CVE-2016-1672</cvename>
       <cvename>CVE-2016-1677</cvename>
       <cvename>CVE-2016-1678</cvename>
       <cvename>CVE-2016-1679</cvename>

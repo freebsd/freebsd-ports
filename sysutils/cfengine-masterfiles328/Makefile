@@ -1,5 +1,5 @@
 PORTNAME=	cfengine-masterfiles
-DISTVERSION=	3.27.1
+DISTVERSION=	3.28.0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://cfengine-package-repos.s3.amazonaws.com/tarballs/
 
@@ -19,8 +19,6 @@ CONFLICTS+=	cfengine-masterfiles-3.*
 .endif
 
 RUN_DEPENDS=	cf-agent:sysutils/cfengine${PKGNAMESUFFIX}
-
-FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}
 
 MAKE_JOBS_UNSAFE=	yes
 USES=		cpe gmake python:build

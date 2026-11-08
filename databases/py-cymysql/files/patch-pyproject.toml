@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2025-07-11 08:34:20 UTC
++++ pyproject.toml
+@@ -3,7 +3,7 @@ build-backend = "setuptools.build_meta"
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+-name = "CyMySQL"
++name = "cymysql"
+ description = "Python MySQL Driver using Cython"
+ readme = "README.rst"
+ keywords = ["MySQL"]

@@ -4,7 +4,7 @@ CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Build arbitrary contrasts for models defined with formulaic
 WWW=		https://github.com/scverse/formulaic-contrasts
 

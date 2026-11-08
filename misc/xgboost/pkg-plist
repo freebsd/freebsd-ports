@@ -1,4 +1,5 @@
 include/xgboost/base.h
+include/xgboost/byteswap.h
 include/xgboost/c_api.h
 include/xgboost/cache.h
 include/xgboost/collective/poll_utils.h
@@ -9,6 +10,7 @@ include/xgboost/data.h
 include/xgboost/feature_map.h
 include/xgboost/gbm.h
 include/xgboost/global_config.h
+include/xgboost/gradient.h
 include/xgboost/host_device_vector.h
 include/xgboost/intrusive_ptr.h
 include/xgboost/json.h
@@ -30,9 +32,11 @@ include/xgboost/tree_model.h
 include/xgboost/tree_updater.h
 include/xgboost/version_config.h
 include/xgboost/windefs.h
-lib/cmake/xgboost/XGBoostTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/xgboost/XGBoostTargets-release.cmake
 lib/cmake/xgboost/XGBoostTargets.cmake
 lib/cmake/xgboost/xgboost-config-version.cmake
 lib/cmake/xgboost/xgboost-config.cmake
 lib/libxgboost.so
+lib/libxgboost.so.3
+lib/libxgboost.so.3.4.2
 libdata/pkgconfig/xgboost.pc

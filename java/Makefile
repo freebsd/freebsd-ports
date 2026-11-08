@@ -7,8 +7,6 @@
     SUBDIR += apache-commons-collections
     SUBDIR += apache-commons-collections4
     SUBDIR += apache-commons-dbcp
-    SUBDIR += apache-commons-httpclient
-    SUBDIR += apache-commons-lang
     SUBDIR += apache-commons-lang3
     SUBDIR += apache-commons-logging
     SUBDIR += apache-commons-pool
@@ -41,7 +39,6 @@
     SUBDIR += jattach
     SUBDIR += java-cup
     SUBDIR += java-getopt
-    SUBDIR += java-subversion
     SUBDIR += java-zoneinfo
     SUBDIR += java3d
     SUBDIR += javacpp
@@ -54,6 +51,7 @@
     SUBDIR += jd-gui-duo
     SUBDIR += jdk11-doc
     SUBDIR += jdk8-doc
+    SUBDIR += jextract
     SUBDIR += jflex
     SUBDIR += jfreechart
     SUBDIR += jgraph
@@ -84,6 +82,7 @@
     SUBDIR += openjdk21-jre
     SUBDIR += openjdk25
     SUBDIR += openjdk26
+    SUBDIR += openjdk27
     SUBDIR += openjdk8
     SUBDIR += openjdk8-jre
     SUBDIR += openjfx14

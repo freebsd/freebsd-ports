@@ -38,5 +38,10 @@ share/postgresql/extension/vector--0.7.3--0.7.4.sql
 share/postgresql/extension/vector--0.7.4--0.8.0.sql
 share/postgresql/extension/vector--0.8.0--0.8.1.sql
 share/postgresql/extension/vector--0.8.1--0.8.2.sql
-share/postgresql/extension/vector--0.8.2.sql
+share/postgresql/extension/vector--0.8.2--0.8.3.sql
+share/postgresql/extension/vector--0.8.3--0.8.4.sql
+share/postgresql/extension/vector--0.8.4--0.8.5.sql
+share/postgresql/extension/vector--0.8.5--0.8.6.sql
+share/postgresql/extension/vector--0.8.6--0.8.7.sql
+share/postgresql/extension/vector--0.8.7.sql
 share/postgresql/extension/vector.control

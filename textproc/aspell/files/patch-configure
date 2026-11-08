@@ -1,6 +1,6 @@
---- configure.orig	2019-10-12 22:20:32 UTC
+--- configure.orig	2026-10-28 21:22:56 UTC
 +++ configure
-@@ -18309,7 +18309,7 @@ _ACEOF
+@@ -18327,7 +18327,7 @@ if ac_fn_cxx_try_link "$LINENO"; then :
  if ac_fn_cxx_try_link "$LINENO"; then :
    CURSES_LIB=-lncurses
  
@@ -9,14 +9,3 @@
  
  
  $as_echo "#define TERM_HEADER <ncurses/term.h>" >>confdefs.h
-@@ -18421,8 +18421,8 @@ $as_echo "#define TERM_HEADER <term.h>" >>confdefs.h
-      if test "$enable_wide_curses" != "no"
-      then
- 
--       { $as_echo "$as_me:${as_lineno-$LINENO}: checking for wide character support in curses libraray" >&5
--$as_echo_n "checking for wide character support in curses libraray... " >&6; }
-+       { $as_echo "$as_me:${as_lineno-$LINENO}: checking for wide character support in curses library" >&5
-+$as_echo_n "checking for wide character support in curses library... " >&6; }
-        if test -n "$have_mblen"
-        then
-          cat confdefs.h - <<_ACEOF >conftest.$ac_ext

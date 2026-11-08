@@ -3,7 +3,7 @@ bin/sss_ssh_knownhosts
 bin/sss_ssh_knownhostsproxy
 etc/pam.d/sssd-shadowutils
 @comment etc/rc.d/init.d/sssd
-@sample %%ETCDIR%%/sssd.conf.sample
+@sample(,,0600) %%ETCDIR%%/sssd.conf.sample
 @sample etc/newsyslog.conf.d/sssd.conf.sample
 include/ipa_hbac.h
 include/sss_certmap.h

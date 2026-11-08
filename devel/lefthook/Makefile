@@ -1,6 +1,6 @@
 PORTNAME=	lefthook
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.10
+DISTVERSION=	2.2.2
 PORTREVISION=	1
 CATEGORIES=	devel
 
@@ -12,7 +12,7 @@ WWW=		https://evilmartians.github.io/lefthook/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.26+,modules
+USES=		go:modules
 
 GO_MODULE=	github.com/evilmartians/lefthook/v2
 

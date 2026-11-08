@@ -24,6 +24,7 @@ INSTALL_TARGET=	install install-static
 LDFLAGS+=		-lncurses
 
 CONFLICTS=	libslang-1.*.j[0-9]
+CONFLICTS_INSTALL=	linux-slang
 
 DATADIR=	${PREFIX}/share/slsh
 DOCSDIR=	${PREFIX}/share/doc/slang

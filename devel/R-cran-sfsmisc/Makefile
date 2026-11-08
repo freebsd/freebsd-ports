@@ -1,11 +1,11 @@
 PORTNAME=	sfsmisc
-DISTVERSION=	1.1-24
+DISTVERSION=	1.1-26
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Utilities from 'Seminar fuer Statistik' ETH Zurich
-WWW=		https://cran.r-project.org/web/packages/sfsmisc/
+WWW=		https://cran.r-project.org/package=sfsmisc
 
 LICENSE=	GPLv2+
 

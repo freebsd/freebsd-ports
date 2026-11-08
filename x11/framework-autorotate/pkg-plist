@@ -1,0 +1,6 @@
+sbin/framework_autorotate
+libexec/framework_autorotate/map-touchscreen
+libexec/framework_autorotate/xlogin_recenter
+share/man/man8/framework_autorotate.8.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dot.framework_autorotate.bvwm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dot.framework_autorotate.fvwm

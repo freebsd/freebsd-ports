@@ -1,7 +1,7 @@
-TIMESTAMP = 1775984594
-SHA256 (mujs-1.3.9/UnicodeData.txt) = ff58e5823bd095166564a006e47d111130813dcf8bf234ef79fa51a870edb48f
-SIZE (mujs-1.3.9/UnicodeData.txt) = 2175362
-SHA256 (mujs-1.3.9/SpecialCasing.txt) = 8d5de354eef79f2395a54c9c7dcebbaf3d30fc962d0f85611ea97aa973a0c451
-SIZE (mujs-1.3.9/SpecialCasing.txt) = 16809
-SHA256 (mujs-1.3.9/mujs-1.3.9.tar.gz) = 956d5a20dd4efe5aa58673558787b9e2539255f9bf62585e90e1921fa040d89d
-SIZE (mujs-1.3.9/mujs-1.3.9.tar.gz) = 454317
+TIMESTAMP = 1792795517
+SHA256 (mujs-1.3.11/UnicodeData.txt) = ff58e5823bd095166564a006e47d111130813dcf8bf234ef79fa51a870edb48f
+SIZE (mujs-1.3.11/UnicodeData.txt) = 2175362
+SHA256 (mujs-1.3.11/SpecialCasing.txt) = 8d5de354eef79f2395a54c9c7dcebbaf3d30fc962d0f85611ea97aa973a0c451
+SIZE (mujs-1.3.11/SpecialCasing.txt) = 16809
+SHA256 (mujs-1.3.11/mujs-1.3.11.tar.gz) = 456a395769daf110a30f9bf6f793044261e261481d5dca33b63cdc8714774ca4
+SIZE (mujs-1.3.11/mujs-1.3.11.tar.gz) = 455037

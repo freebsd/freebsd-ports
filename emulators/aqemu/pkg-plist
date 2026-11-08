@@ -1,8 +1,8 @@
 bin/aqemu
-share/man/man1/aqemu.1.gz
+share/appdata/aqemu.appdata.xml
 share/applications/aqemu.desktop
 %%DATADIR%%/docs/links.html
-%%DATADIR%%/icons.rcc
+%%DATADIR%%/os_icons/alpine.png
 %%DATADIR%%/os_icons/alt.png
 %%DATADIR%%/os_icons/aptosid.png
 %%DATADIR%%/os_icons/arch.png
@@ -68,11 +68,6 @@ share/applications/aqemu.desktop
 %%DATADIR%%/os_templates/Windows Vista.aqvmt
 %%DATADIR%%/os_templates/Windows XP x64.aqvmt
 %%DATADIR%%/os_templates/Windows XP.aqvmt
-%%DATADIR%%/shared_images.rcc
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS.bz2
-%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.bz2
-%%PORTDOCS%%%%DOCSDIR%%/README.bz2
-%%PORTDOCS%%%%DOCSDIR%%/TODO.bz2
-share/pixmaps/aqemu.png
-share/pixmaps/aqemu_48x48.png
-share/pixmaps/aqemu_64x64.png
+share/icons/hicolor/48x48/apps/aqemu.png
+share/icons/hicolor/64x64/apps/aqemu.png
+share/man/man1/aqemu.1.gz

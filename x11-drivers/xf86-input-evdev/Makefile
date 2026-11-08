@@ -15,8 +15,8 @@ LIB_DEPENDS=	libevdev.so:devel/libevdev \
 		libmtdev.so:devel/libmtdev
 RUN_DEPENDS=	webcamd>=3.1.0.1:multimedia/webcamd
 
-USES=		pathfix xorg-cat:driver
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+USES=		pathfix tar:bz2 xorg-cat:driver
+
 CONFIGURE_ENV=	UDEV_CFLAGS=" " UDEV_LIBS=" "
 
 .include <bsd.port.mk>

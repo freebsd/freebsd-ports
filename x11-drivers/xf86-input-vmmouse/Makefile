@@ -7,9 +7,7 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org vmmouse input driver
 WWW=		https://www.x.org/
 
-USES=		gmake xorg-cat:driver
-
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+USES=		gmake tar:bz2 xorg-cat:driver
 
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	vmmouse protocol is only supported on x86-compatible architectures

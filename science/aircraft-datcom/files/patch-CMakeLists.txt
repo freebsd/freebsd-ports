@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2026-09-05 18:06:43 UTC
++++ CMakeLists.txt
+@@ -1,7 +1,7 @@ project (aircraft-datcom Fortran)
+ project (aircraft-datcom Fortran)
+ 
+ # settings
+-cmake_minimum_required (VERSION 2.8)
++cmake_minimum_required (VERSION 3.10)
+ set(PROJECT_VERSION_MAJOR "0")
+ set(PROJECT_VERSION_MINOR "0")
+ set(PROJECT_VERSION_PATCH "0")

@@ -1,0 +1,11 @@
+--- configure.orig
++++ configure
+@@ -25719,7 +25719,7 @@
+ $as_echo_n "checking for additional flags to link C++ libraries... " >&6; }
+   if test "x$ac_compiler_gnu" = "xyes"; then
+     case "$host" in
+-      *freebsd10*)
++      *freebsd*)
+         { $as_echo "$as_me:${as_lineno-$LINENO}: result: none needed" >&5
+ $as_echo "none needed" >&6; }
+       ;;

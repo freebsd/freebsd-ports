@@ -1,0 +1,6 @@
+xql runs real SQL -- SELECT, UPDATE, INSERT and DELETE -- against SharePoint
+Lists and CSV files from a single command-line tool, so the same query text
+works whether the rows live in a local file or in a remote list.
+
+It ships an interactive prompt as well as one-shot execution, and keeps cell
+values intact rather than coercing them into a guessed type.

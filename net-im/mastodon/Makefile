@@ -1,6 +1,6 @@
 PORTNAME=	mastodon
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.6.3
+DISTVERSION=	4.6.4
 CATEGORIES=	net-im www
 
 MAINTAINER=	saken@codered.rmta.org

@@ -1,4 +1,4 @@
-PORTREVISION=	8
+PORTREVISION=	10
 CATEGORIES=	mail elisp
 PKGNAMESUFFIX=	-emacs
 COMMENT=	Emacs major-mode for the Notmuch email search and tagging application
@@ -46,8 +46,8 @@ do-configure:
 		'%s\n' \
 		BASH_ABSOLUTE=/bin/sh \
 		desktop_dir=${PREFIX}/share/applications \
-		emacsetcdir=${PREFIX}/${EMACS_SITE_LISPDIR} \
-		emacslispdir=${PREFIX}/${EMACS_SITE_LISPDIR} \
+		emacsetcdir=${PREFIX}/${EMACS_SITE_LISPDIR}/notmuch \
+		emacslispdir=${PREFIX}/${EMACS_SITE_LISPDIR}/notmuch \
 		HAVE_BASH=1 \
 		HAVE_EMACS=1 \
 		infodir=${PREFIX}/${INFO_PATH} \
@@ -63,8 +63,7 @@ do-configure:
 		> ${WRKSRC}/sphinx.config
 
 post-install:
-	@${FIND} ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR} -name "*.elc" -delete
-	@${GZIP_CMD} ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}/*.el
+	@${FIND} ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}/notmuch -name "*.elc" -delete
 
 # keep poudriere testport happy
 post-install-DOCS-on:

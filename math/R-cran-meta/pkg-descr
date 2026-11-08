@@ -1,0 +1,11 @@
+User-friendly general package providing standard methods for
+meta-analysis and supporting Schwarzer, Carpenter, and Rucker,
+"Meta-Analysis with R" (2015):
+- common effect and random effects meta-analysis
+- forest, funnel, Galbraith/radial, L'Abbe, Baujat and bubble plots
+- three-level meta-analysis model and generalised linear mixed model
+- Hartung-Knapp and Kenward-Roger methods for random effects models
+- prediction intervals, tests for funnel plot asymmetry and the
+  trim-and-fill method to evaluate bias
+- meta-regression, cumulative and leave-one-out meta-analysis
+- import of data from RevMan 5

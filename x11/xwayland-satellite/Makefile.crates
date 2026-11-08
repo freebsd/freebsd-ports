@@ -44,6 +44,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		hecs-0.10.5 \
 		hecs-macros-0.10.0 \
 		hermit-abi-0.5.2 \
+		hostname-0.4.2 \
 		humantime-2.3.0 \
 		ident_case-1.0.1 \
 		indexmap-2.12.1 \
@@ -93,6 +94,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		strict-num-0.1.1 \
 		strsim-0.11.1 \
 		syn-2.0.111 \
+		syslog-7.0.0 \
 		termcolor-1.4.1 \
 		thiserror-2.0.17 \
 		thiserror-impl-2.0.17 \

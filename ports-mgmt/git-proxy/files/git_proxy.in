@@ -1,0 +1,62 @@
+#!/bin/sh
+
+# PROVIDE: git_proxy
+# REQUIRE: LOGIN NETWORKING
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable git-proxy:
+#
+# git_proxy_enable="YES"
+#
+# Optional settings:
+#
+# git_proxy_config (path):	Configuration file.
+#				Default: %%ETCDIR%%/config.yaml
+# git_proxy_user (user):	User git-proxy runs as. rc.subr runs
+#				daemon(8) as this user.
+#				Default: %%GIT_PROXY_USER%%
+# git_proxy_dbdir (path):	Created at start and owned by git_proxy_user.
+#				Must match storage.url and database.path in
+#				the configuration file.
+#				Default: %%GIT_PROXY_DBDIR%%
+# git_proxy_env (str):		Extra environment variables, e.g.
+#				"PROXY_LOG_LEVEL=debug".
+#
+# Output goes to syslog(3), tagged git-proxy.
+
+. /etc/rc.subr
+
+name=git_proxy
+rcvar=git_proxy_enable
+desc="Caching proxy for package registries"
+
+load_rc_config $name
+
+: ${git_proxy_enable:="NO"}
+: ${git_proxy_config:="%%ETCDIR%%/config.yaml"}
+: ${git_proxy_user:="%%GIT_PROXY_USER%%"}
+: ${git_proxy_dbdir:="%%GIT_PROXY_DBDIR%%"}
+
+pidfile="/var/run/${name}/${name}.pid"
+command="/usr/sbin/daemon"
+command_args="-S -T git-proxy -P ${pidfile} \
+	%%PREFIX%%/bin/git-proxy serve -config ${git_proxy_config}"
+required_dirs="${git_proxy_dbdir}"
+required_files="${git_proxy_config}"
+git_proxy_setup="${name}_mkdirs"
+start_precmd="${name}_prestart"
+
+git_proxy_mkdirs()
+{
+	install -d -o "${git_proxy_user}" -m 0750 "${git_proxy_dbdir}"
+	install -d -o "${git_proxy_user}" -m 0755 "${pidfile%/*}"
+}
+
+git_proxy_prestart()
+{
+	if ! su -m "${git_proxy_user}" -c "test -w '${git_proxy_dbdir}'"; then
+		err 1 "${git_proxy_dbdir} is not writable by ${git_proxy_user}"
+	fi
+}
+
+run_rc_command "$1"

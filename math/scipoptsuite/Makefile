@@ -1,6 +1,6 @@
 PORTNAME=	scipoptsuite
 DISTVERSION=	10.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	https://scipopt.org/download/release/
 
@@ -28,5 +28,11 @@ CMAKE_ON=	BUILD_SHARED_LIBS
 LDFLAGS+=	-lpthread # fix build after it began breaking on 2025-11-03 for unclear reason
 
 INSTALL_CONFLICTS=	SCIP
+
+.if exists(/usr/include/omp.h)
+PLIST_SUB+=	OPENMP=""
+.else
+PLIST_SUB+=	OPENMP="@comment "
+.endif
 
 .include <bsd.port.mk>

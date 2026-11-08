@@ -1,5 +1,5 @@
 PORTNAME=	resteasy
-DISTVERSION=	3.0.26
+DISTVERSION=	3.15.6
 DISTVERSIONSUFFIX=	.Final
 CATEGORIES=	devel java
 MASTER_SITES=	https://repo1.maven.org/maven2/org/jboss/resteasy/resteasy-jaxrs/${DISTVERSIONFULL}/:jaxrs
@@ -26,7 +26,8 @@ RUN_DEPENDS+=	${JAVAJARDIR}/jackson-core.jar:devel/jackson-core
 RUN_DEPENDS+=	${JAVAJARDIR}/jackson-databind.jar:devel/jackson-databind
 RUN_DEPENDS+=	${JAVAJARDIR}/jackson-jaxrs-json-provider.jar:devel/jackson-jaxrs-providers
 
-USES=	java:run
+USES=		cpe java:run
+CPE_VENDOR=	redhat
 JAVA_VERSION=	8+
 
 NO_ARCH=	yes

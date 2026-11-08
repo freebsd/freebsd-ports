@@ -1,5 +1,5 @@
 PORTNAME=	nchat
-PORTVERSION=	5.17.26
+PORTVERSION=	5.19.18
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-im
 EXTRACT_ONLY=	${GH_ACCOUNT}-${PORTNAME}-v${PORTVERSION}_GH0.tar.gz
@@ -17,6 +17,7 @@ USES=		cmake gperf localbase:ldflags ncurses:port \
 USE_GITHUB=	yes
 GH_ACCOUNT=	d99kris
 
+LDFLAGS+=	-pthread
 LDFLAGS+=	-lexecinfo
 CMAKE_ARGS+=	-DCLIP_X11_WITH_PNG=OFF \
 		-DCMAKE_INSTALL_MANDIR=share/man \

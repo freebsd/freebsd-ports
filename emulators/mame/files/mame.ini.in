@@ -94,6 +94,7 @@ flipy                     0
 artwork_crop              0
 fallback_artwork          
 override_artwork          
+artwork_font              default
 
 #
 # CORE SCREEN OPTIONS
@@ -119,8 +120,6 @@ flicker                   0
 samplerate                48000
 samples                   1
 volume                    0
-compressor                1
-speaker_report            0
 
 #
 # CORE INPUT OPTIONS
@@ -134,7 +133,6 @@ multikeyboard             0
 multimouse                0
 steadykey                 0
 ui_active                 0
-offscreen_reload          0
 joystick_map              auto
 joystick_deadzone         0.15
 joystick_saturation       0.85
@@ -179,6 +177,7 @@ comm_framesync            0
 # CORE MISC OPTIONS
 #
 drc                       1
+drc_rwx                   1
 drc_use_c                 0
 drc_log_uml               0
 drc_log_native            0
@@ -192,6 +191,7 @@ confirm_quit              0
 ui_mouse                  1
 language                  
 nvram_save                1
+rtc
 
 #
 # SCRIPTING OPTIONS

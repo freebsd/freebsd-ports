@@ -1,0 +1,6 @@
+%%PYTHON_SITELIBDIR%%/chromium_compact_language_detector-2.0-py%%PYTHON_VER%%.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/chromium_compact_language_detector-2.0-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/chromium_compact_language_detector-2.0-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/chromium_compact_language_detector-2.0-py%%PYTHON_VER%%.egg-info/top_level.txt
+%%PYTHON_SITELIBDIR%%/cld2%%PYTHON_TAG%%.so
+%%PYTHON_SITELIBDIR%%/cld2full%%PYTHON_TAG%%.so

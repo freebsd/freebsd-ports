@@ -1,0 +1,6 @@
+github-act-runner is a self-hosted GitHub Actions runner implemented in Go.
+It speaks the GitHub Actions runner protocol and executes workflow steps
+directly on the host, including shell and JavaScript actions.
+
+A Node.js runtime must be available in PATH to execute JavaScript actions
+such as actions/checkout.

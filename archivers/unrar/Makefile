@@ -1,5 +1,6 @@
 PORTNAME=	unrar
 PORTVERSION=	7.23
+PORTREVISION=	1
 PORTEPOCH=	6
 CATEGORIES=	archivers
 MASTER_SITES=	https://www.rarlab.com/rar/
@@ -16,6 +17,7 @@ LICENSE_PERMS=	auto-accept dist-mirror pkg-mirror
 
 USES=		compiler:c++11-lang cpe
 
+CFLAGS_aarch64+=-march=armv8-a+crc+crypto
 LDFLAGS+=	-lpthread
 MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" LDFLAGS="${LDFLAGS}" STRIP="${STRIP_CMD}"
 MAKEFILE=	makefile

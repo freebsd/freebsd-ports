@@ -1,6 +1,6 @@
---- media/BUILD.gn.orig	2026-03-15 18:32:51 UTC
+--- media/BUILD.gn.orig	2026-10-31 12:09:36 UTC
 +++ media/BUILD.gn
-@@ -103,6 +103,9 @@ config("media_config") {
+@@ -107,6 +107,9 @@ config("media_config") {
        defines += [ "DLOPEN_PULSEAUDIO" ]
      }
    }

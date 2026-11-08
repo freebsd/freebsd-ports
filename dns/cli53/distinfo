@@ -1,5 +1,5 @@
-TIMESTAMP = 1750300259
-SHA256 (go/dns_cli53/cli53-v0.8.25/v0.8.25.mod) = b7880bb9e7bb2dd7e0dd6df97fc908ffeffb8d62c251b323b20a8ed37e77514e
-SIZE (go/dns_cli53/cli53-v0.8.25/v0.8.25.mod) = 1030
-SHA256 (go/dns_cli53/cli53-v0.8.25/v0.8.25.zip) = 9b876d5afe0a86a3a152243cce0734247e7ad7c51b934d8034e86bbc66adcdfb
-SIZE (go/dns_cli53/cli53-v0.8.25/v0.8.25.zip) = 58188
+TIMESTAMP = 1786941325
+SHA256 (go/dns_cli53/cli53-v0.9.0/v0.9.0.mod) = 042e3f5e0ee5573dfd16fd143e14496be65467ccb9b94415058cfa2f8aadd739
+SIZE (go/dns_cli53/cli53-v0.9.0/v0.9.0.mod) = 1797
+SHA256 (go/dns_cli53/cli53-v0.9.0/v0.9.0.zip) = 6fa5d95e9caf8ce3afef52e729720b05c86f9c3fda3aa68e8b74502f994df0ac
+SIZE (go/dns_cli53/cli53-v0.9.0/v0.9.0.zip) = 59327

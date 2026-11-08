@@ -1,0 +1,16 @@
+#!/bin/sh
+#
+# FreeBSD inetd wrapper for ipa-otpd.
+#
+umask 077
+exec 2>>/var/log/ipa-otpd.log
+
+if [ "$#" -ne 1 ]; then
+    echo "Usage: $0 <ldap_uri>" >&2
+    exit 64
+fi
+
+LC_ALL=C.UTF-8
+export LC_ALL
+
+exec %%PREFIX%%/libexec/ipa/ipa-otpd "$1"

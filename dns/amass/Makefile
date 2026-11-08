@@ -1,7 +1,6 @@
 PORTNAME=	amass
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.1.1
-PORTREVISION=	3
+DISTVERSION=	5.1.3
 CATEGORIES=	dns
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,7 +16,7 @@ ONLY_FOR_ARCHS_REASON=	module modernc.org/sqlite only supported on aarch64 and a
 
 LIB_DEPENDS=	libpostal.so:misc/libpostal
 
-USES=		go:1.24+,modules pkgconfig
+USES=		go:modules pkgconfig
 
 GO_MODULE=	github.com/owasp-amass/amass/v5
 GO_TARGET=	./cmd/${PORTNAME}

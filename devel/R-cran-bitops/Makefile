@@ -1,11 +1,11 @@
 PORTNAME=	bitops
-DISTVERSION=	1.0-9
+DISTVERSION=	1.1-0
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Functions for Bitwise operations
-WWW=		https://cran.r-project.org/web/packages/bitops/
+WWW=		https://cran.r-project.org/package=bitops
 
 LICENSE=	GPLv2+
 

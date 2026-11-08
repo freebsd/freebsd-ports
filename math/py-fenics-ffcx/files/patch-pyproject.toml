@@ -1,0 +1,23 @@
+-- Use the setuptools version available in FreeBSD ports and the legacy
+-- license form supported by older setuptools.
+
+--- pyproject.toml.orig	2026-06-08 15:39:21 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@ requires = [
+ [build-system]
+ requires = [
+-    "setuptools>=77.0.3", # Ensuring license field is correctly parsed
++    "setuptools",
+     "wheel"
+ ]
+ build-backend = "setuptools.build_meta"
+@@ -11,8 +11,7 @@ requires-python = ">=3.11"
+ description = "The FEniCSx Form Compiler"
+ readme = "README.md"
+ requires-python = ">=3.11"
+-license = "LGPL-3.0-or-later"
+-license-files = ["LICENSE", "COPYING*", "UNLICENSE"]
++license = {text = "LGPL-3.0-or-later"}
+ authors = [
+     { email = "fenics-steering-council@googlegroups.com" },
+     { name = "FEniCS Steering Council" },

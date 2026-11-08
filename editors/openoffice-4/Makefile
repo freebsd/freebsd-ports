@@ -5,8 +5,7 @@ CATEGORIES=	editors java
 #MASTER_SITES=	https://dist.apache.org/repos/dist/dev/openoffice/${AOOVERSION}${AOORCN:?-RC${AOORCN}:}/source/
 MASTER_SITES=	https://dlcdn.apache.org/openoffice/${PORTVERSION}/source/ \
 		https://archive.apache.org/dist/openoffice/${PORTVERSION}/source
-MASTER_SITES+=	https://dlcdn.apache.org/openoffice/${PORTVERSION}/source/ \
-		http://tools.openoffice.org/unowinreg_prebuild/680/:unoreg \
+MASTER_SITES+=	http://tools.openoffice.org/unowinreg_prebuild/680/:unoreg \
 		LOCAL/truckman/openoffice:extsrc \
 		SF/oooextras.mirror/:sf
 .if defined(LANG_PKGNAME)
@@ -16,7 +15,7 @@ PKGNAMEPREFIX=		${LANG_PKGNAME}-
 PKGNAMESUFFIX=		-${LANG_SUFFIX}
 .endif
 DISTFILES=	${AOOSRC} ${EXTSRC}:extsrc ${PYTHON_DISTFILE}:sf \
-		${GCC_EXTRA_DISTFILES:C/.*/&:sf/g}
+		${EXTRA_DISTFILES:C/.*/&:sf/g}
 DIST_SUBDIR=	openoffice
 EXTRACT_ONLY=	${AOOSRC}
 
@@ -50,10 +49,7 @@ LICENSE_PERMS_ICU=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_TWAIN=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_W3C=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-DEPRECATED=	Depends on expired textproc/libtextcat
-EXPIRATION_DATE=2026-10-31
-
-ONLY_FOR_ARCHS=	amd64 i386 powerpc64
+ONLY_FOR_ARCHS=	amd64 i386 powerpc64 powerpc64le
 
 BUILD_DEPENDS=								\
 		p5-Archive-Zip>=0:archivers/p5-Archive-Zip		\
@@ -66,11 +62,10 @@ BUILD_DEPENDS=								\
 		libunwind>=20211201_1:devel/libunwind			\
 		gpatch:devel/patch					\
 		${LOCALBASE}/include/sane/sane.h:graphics/sane-backends	\
-		${JAVALIBDIR}/commons-lang.jar:java/apache-commons-lang \
+		${JAVALIBDIR}/commons-lang3.jar:java/apache-commons-lang3 \
 		${JAVALIBDIR}/junit.jar:java/junit			\
 		${JAVALIBDIR}/bsh.jar:lang/bsh				\
 		bash:shells/bash					\
-		${JAVALIBDIR}/lucene-core-3.6.2.jar:textproc/lucene	\
 		p5-XML-Parser>=0:textproc/p5-XML-Parser			\
 		p5-libwww>=0:www/p5-libwww				\
 		p5-LWP-Protocol-https>0:www/p5-LWP-Protocol-https
@@ -98,14 +93,13 @@ LIB_DEPENDS=								\
 		libexpat.so:textproc/expat2				\
 		libhunspell-1.7.so:textproc/hunspell			\
 		libhyphen.so:textproc/hyphen				\
-		libtextcat.so:textproc/libtextcat			\
 		libmythes-1.2.so:textproc/mythes			\
 		librdf.so:textproc/redland				\
 		libserf-1.so:www/serf					\
 		libfontconfig.so:x11-fonts/fontconfig
 RUN_DEPENDS=								\
 		${LOCALBASE}/share/icons/hicolor/index.theme:misc/hicolor-icon-theme \
-		${JAVALIBDIR}/commons-lang.jar:java/apache-commons-lang \
+		${JAVALIBDIR}/commons-lang3.jar:java/apache-commons-lang3 \
 		${JAVALIBDIR}/bsh.jar:lang/bsh				\
 		${LOCALBASE}/share/fonts/Caladea/Caladea-Bold.ttf:x11-fonts/crosextrafonts-caladea-ttf \
 		${LOCALBASE}/share/fonts/Carlito/Carlito-Bold.ttf:x11-fonts/crosextrafonts-carlito-ttf \
@@ -125,6 +119,8 @@ USE_PERL5=	build
 USE_XORG=	ice sm x11 xau xaw xcomposite xcursor xdamage xext xfixes xi \
 		xinerama xrandr xrender xt
 
+NO_SHLIB_REQUIRES_GLOB=	libjawt.so
+
 # ftp/curl uses OpenSSL by default. However, curl 8.18.0 drops OpenSSL 1.x support
 # which is used in FreeBSD 13 base system. Therefore, we change the curl defaults to
 # wolfSSL instead.
@@ -132,11 +128,11 @@ CONFLICTS_INSTALL=	apache-openoffice-devel
 
 AOOVERSION1=	4
 AOOVERSION2=	1
-AOOVERSION3=	16
-#AOORCN=		3
+AOOVERSION3=	17
+#AOORCN=		2
 # From solenv/inc/minor.mk SOURCEREVISION LAST_MINOR BUILD
-AOOTAG=		AOO4116m3\(Build:9816\)
-GITREVISION=	277251aa7e
+AOOTAG=		AOO4117m2\(Build:9818\)
+GITREVISION=	49c05bc6fd
 EXTSRC=		ApacheOpenOffice.ext_sources.${AOOVERSION1}.x.x.20150707.tar.gz
 
 AOOVERSION=	${AOOVERSION1}.${AOOVERSION2}.${AOOVERSION3}
@@ -158,7 +154,7 @@ CPE_VENDOR=	apache
 
 OPTIONS_DEFINE=		CRASHDUMP CUPS DBGUTIL DEBUG GNOME \
 			SDK WIKI_PUBLISHER
-OPTIONS_DEFAULT=	CUPS GNOME WIKI_PUBLISHER
+OPTIONS_DEFAULT=	CUPS GNOME
 CRASHDUMP_DESC=		Enable crashdumps, you also need to set WITH_DEBUG_PORTS+=${PKGORIGIN}
 DBGUTIL_DESC=		Enable assertions, object counting. (non-production)
 DEBUG_DESC=		Compile with -O0, you also need to set WITH_DEBUG_PORTS+=${PKGORIGIN}
@@ -182,6 +178,8 @@ GNOME_LIB_DEPENDS=		libdbus-1.so:devel/dbus \
 SDK_CONFIGURE_ENABLE=		odk
 SDK_DISTFILES=			unowinreg.dll:unoreg
 
+# commons-httpclient replacement by Apache HttpComponents requires new java
+WIKI_PUBLISHER_BROKEN=		CVE-2012-6153 MITM
 WIKI_PUBLISHER_CONFIGURE_ENABLE=	wiki-publisher
 WIKI_PUBLISHER_CONFIGURE_WITH=						\
 	commons-codec-jar=${JAVALIBDIR}/commons-codec.jar		\
@@ -220,8 +218,10 @@ CONFIGURE_ARGS+=	--enable-strip-solver
 .include <${FILESDIR}/Makefile.localized>
 
 PYTHON_DISTFILE=	38c84292658ed4456157195f1c9bcbe1-Python-2.7.18.tgz
-GCC_EXTRA_DISTFILES=	d6eef4b4cacb2183f2bf265a5a03a354-boost_1_55_0.tar.bz2 \
+EXTRA_DISTFILES=	d6eef4b4cacb2183f2bf265a5a03a354-boost_1_55_0.tar.bz2 \
 			e3738abd0d3ce1870dc1fd1f22bba5b1-icu4c-4_2_1-src.tgz \
+			128cfc86ed5953e57fe0f5ae98b62c2e-libtextcat-2.2.tar.gz \
+			17960f35b2239654ba608cf1f3e256b3-lucene-2.9.4-src.tar.gz \
 			d62650a6f908e85643e557a236ea989c-vigra1.6.0.tar.gz
 
 .if ${CHOSEN_COMPILER_TYPE} == clang
@@ -240,6 +240,9 @@ PACKAGE_MIDDLE=		${PORTVERSION}_${OPSYS}_x86
 .elif ${ARCH} == powerpc64
 FREEBSD_ENV_SET=	FreeBSDPPC64Env.Set.sh
 PACKAGE_MIDDLE=		${PORTVERSION}_${OPSYS}_ppc64
+.elif ${ARCH} == powerpc64le
+FREEBSD_ENV_SET=	FreeBSDPPC64Env.Set.sh
+PACKAGE_MIDDLE=		${PORTVERSION}_${OPSYS}_ppc64le
 .endif
 PACKAGE_PREFIX=		Apache_OpenOffice
 
@@ -263,7 +266,7 @@ CONFIGURE_ARGS+=							\
 			--with-alloc=system				\
 			--with-ant-home=${LOCALBASE}/share/java/apache-ant \
 			--with-system-apache-commons=yes		\
-			--with-commons-lang-jar=${JAVALIBDIR}/commons-lang.jar \
+			--with-commons-lang-jar=${JAVALIBDIR}/commons-lang3.jar \
 			--with-system-apr				\
 			--with-system-apr-util				\
 			--with-system-beanshell				\
@@ -287,14 +290,10 @@ CONFIGURE_ARGS+=							\
 			--with-jdk-home=${JAVA_HOME}			\
 			--with-system-jpeg				\
 			--with-junit=${JAVALIBDIR}/junit.jar		\
-			--with-system-libtextcat			\
 			--disable-kde					\
 			--disable-kde4					\
 			--with-system-libxml				\
 			--with-system-libxslt				\
-			--with-system-lucene				\
-			--with-lucene-core-jar=${JAVALIBDIR}/lucene-core-3.6.2.jar \
-			--with-lucene-analyzers-jar=${JAVALIBDIR}/lucene-analyzers-3.6.2.jar \
 			--with-system-mythes				\
 			--with-external-thes-dir=${LOCALBASE}/share/mythes \
 			--with-system-nss				\
@@ -344,7 +343,7 @@ do-extract-SDK-on:
 post-extract:
 	${TAR} -C ${WRKSUBDIR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${EXTSRC}
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/${PYTHON_DISTFILE} ${WRKSUBDIR}/ext_sources/${PYTHON_DISTFILE}
-.for f in ${GCC_EXTRA_DISTFILES}
+.for f in ${EXTRA_DISTFILES}
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/${f} ${WRKSUBDIR}/ext_sources/${f}
 .endfor
 	${CP} ${FILESDIR}/freebsd-aoo-intro.png \
@@ -381,7 +380,7 @@ post-extract:
 	${SED}  -e '\|^For main/filter/source/config/tools/merge/pyAltFCFGMerge|,/^__/p'	\
 		-e d  ${WRKSRC}/LICENSE > ${LICENSE_FILE_PSFL}
 	${ECHO} '' >> ${LICENSE_FILE_PSFL}
-	${SED}  -e '\|^For Python|,/^__/p'	\
+	${SED}  -e '\|^For Python|,/^__/p'				\
 		-e d  ${WRKSRC}/LICENSE >> ${LICENSE_FILE_PSFL}
 	${SED}  -e '\|^For main/twain|,/^__/p'				\
 		-e d  ${WRKSRC}/LICENSE > ${LICENSE_FILE_TWAIN}
@@ -394,36 +393,6 @@ post-patch:
 	${REINPLACE_CMD} -e "s|%%JAVA_HOME%%|${JAVA_HOME}|" \
 		${WRKSRC}/desktop/scripts/soffice.sh
 	${REINPLACE_CMD} -e '/^mkdir -p/,$$d' ${CREATE_TREE}
-.if ${CHOSEN_COMPILER_TYPE} == gcc
-	# g++49 -Os sometimes leaves inline class methods undefined,
-	# affects fmgridif.cxx and ColumnControl.cxx
-	# See: <https://gcc.gnu.org/bugzilla/show_bug.cgi?id=65009>
-	if [ ${CXX} = g++49  ]; then \
-		${REINPLACE_CMD} -e "s/ := -Os/ := -Os -fno-devirtualize -fno-devirtualize-speculatively/" ${WRKSRC}/solenv/gbuild/platform/freebsd.mk; \
-		${REINPLACE_CMD} -e "s/=-Os /=-Os -fno-devirtualize -fno-devirtualize-speculatively /" ${WRKSRC}/solenv/inc/unxfbsdi.mk; \
-	fi
-.elif ${ARCH} == i386 && ${CHOSEN_COMPILER_TYPE} == clang
-	# autodoc and uno (bridgetest) core dump when built with with -Os
-	# on i386, affects file.cxx and bridgetest.cxx (at least).
-	# Using -O2 optimiztion works, and -Os is essentially -O2 with out
-	# loop unrolling.
-	# Changing optimization in just unxfbsdi.mk is sufficient to get
-	# a successful build, but change it in both places to avoid the
-	# possibility of obscure runtime problems, which is likely
-	# since this seems to be a generic bug in code generation for
-	# exception handling.
-	# See: <https://llvm.org/bugs/show_bug.cgi?id=24792>
-	${REINPLACE_CMD} -e "s/=-Os /=-O2 -fno-unroll-loops /" ${WRKSRC}/solenv/inc/unxfbsdi.mk
-	${REINPLACE_CMD} -e "s/ := -Os/ := -O2 -fno-unroll-loops/" ${WRKSRC}/solenv/gbuild/platform/freebsd.mk
-.endif
-
-# Verify that lucene was built with the CONTRIB option instead of
-# failing mysteriously during the build
-pre-configure:
-	@if [ ! -f ${JAVALIBDIR}/lucene-analyzers-3.6.2.jar ]; then \
-		${ECHO} "error: textproc/lucene must be built with the CONTRIB option enabled"; \
-		exit 1; \
-	fi
 
 do-build:
 	${PRINTF} "[repositories]\nmain=active\nextras=active\n" > ${WRKSUBDIR}/source_config

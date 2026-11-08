@@ -1,0 +1,3 @@
+Super+E (or Super+X) extends the desktop onto an external output.
+The layout helpers come from bhotkeys-display-common.  bosd names
+the screen that was added.

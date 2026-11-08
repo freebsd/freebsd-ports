@@ -1,0 +1,12 @@
+Fix build with CMake 4: compatibility with cmake_minimum_required()
+versions below 3.5 has been removed.  Bump the minimum to 3.5 and move
+the call before project() as CMake expects.
+
+--- CMakeLists.txt.orig	2017-03-08 22:48:59 UTC
++++ CMakeLists.txt
+@@ -1,5 +1,5 @@
++cmake_minimum_required(VERSION 3.5)
+ project(lzfse C)
+-cmake_minimum_required(VERSION 2.8.6)
+ 
+ include(CheckCCompilerFlag)

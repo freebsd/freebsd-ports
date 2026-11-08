@@ -1,5 +1,6 @@
 PORTNAME=	octave
 PORTVERSION=	${OCTAVE_VERSION}
+PORTREVISION=	2
 CATEGORIES=	math java
 MASTER_SITES=	GNU
 
@@ -19,7 +20,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/makeinfo:print/texinfo \
 		gnuplot:math/gnuplot \
 		gsed:textproc/gsed
 LIB_DEPENDS=	libamd.so:math/suitesparse-amd \
-		libarpack.so:math/arpack-ng@mpich \
+		libarpack.so:math/arpack-ng@nompi \
 		libcamd.so:math/suitesparse-camd \
 		libccolamd.so:math/suitesparse-ccolamd \
 		libcholmod.so:math/suitesparse-cholmod \
@@ -57,8 +58,7 @@ USE_QT=		base 5compat tools sqldriver-sqlite
 USE_XORG=	x11 xcursor xext xfixes xft xinerama xrender
 USE_GL=		gl glu
 
-GNU_HOST=	${ARCH}-portbld-freebsd${OSREL}
-PLIST_SUB=	GNU_HOST=${GNU_HOST} \
+PLIST_SUB=	GNU_HOST=${CONFIGURE_TARGET} \
 		OCTAVE_VERSION=${OCTAVE_VERSION}
 LDFLAGS+=	-L${LOCALBASE}/lib/qt6
 CONFIGURE_ENV=	ac_cv_path_SED=${LOCALBASE}/bin/gsed \
@@ -78,7 +78,6 @@ CONFIGURE_ENV=	ac_cv_path_SED=${LOCALBASE}/bin/gsed \
 CONFIGURE_ARGS=	--disable-jit \
 		--disable-openmp \
 		--enable-shared \
-		--host=${GNU_HOST} \
 		--with-blas="-L${LOCALBASE}/lib ${BLASLIB}" \
 		--with-lapack="${LAPACKLIB}"
 

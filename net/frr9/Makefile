@@ -1,7 +1,7 @@
 PORTNAME=	frr
 PORTVERSION=	9.1.3
 DISTVERSIONPREFIX=	frr-
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 .if defined(PYTHONTOOLS)
 PKGNAMESUFFIX=	9-pythontools
@@ -41,12 +41,14 @@ LIB_DEPENDS=	libcares.so:dns/c-ares \
 		libprotobuf-c.so:devel/protobuf-c \
 		libyang.so.2:net/libyang2
 
-USES=		autoreconf bison compiler:c++11-lang gmake libtool makeinfo \
+USES=		autoreconf bison compiler:c++11-lang cpe gmake libtool makeinfo \
 		pkgconfig python:build readline shebangfix
+
+CPE_PRODUCT=	frrouting
 
 BINARY_ALIAS=	python=${PYTHON_VERSION}
 
-CONFLICTS=	frr8 frr10 openbgpd openospfd quagga zebra
+CONFLICTS=	frr10
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
@@ -99,6 +101,7 @@ CONFIGURE_ARGS=	--enable-user=frr \
 		--enable-vtysh \
 		--disable-doc-html \
 		--sysconfdir=${ETCDIR} \
+		--sbindir=${PREFIX}/lib/frr \
 		--localstatedir=/var/run/frr \
 		--disable-nhrpd \
 		--disable-pathd \
@@ -109,7 +112,7 @@ CONFIGURE_ARGS=	--enable-user=frr \
 
 BACKTRACE_LIB_DEPENDS=		libunwind.so:devel/libunwind
 BACKTRACE_CONFIGURE_ENABLE=	backtrace
-CONFIGROLLBACKS_LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
+CONFIGROLLBACKS_USES=		sqlite
 CONFIGROLLBACKS_CONFIGURE_ENABLE=	config-rollbacks
 DATACENTER_CONFIGURE_ENABLE=	datacenter
 FPM_CONFIGURE_ENABLE=		fpm
@@ -135,7 +138,7 @@ SHEBANG_FILES=	yang/embedmodel.py
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/frr|${ETCDIR}|g' \
-		-e 's|/usr/lib/frr|${PREFIX}/sbin|g' \
+		-e 's|/usr/lib/frr|${PREFIX}/lib/frr|g' \
 		-e 's|frr-pythontools|frr9-pythontools|g' \
 		${WRKSRC}/tools/frr-reload
 

@@ -1,8 +1,7 @@
 PORTNAME=	magnum
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2020.06-3075
-DISTVERSIONSUFFIX=	-gf91638c46
-PORTREVISION=	1
+DISTVERSION=	2020.06-3685
+DISTVERSIONSUFFIX=	-gf239823e
 CATEGORIES=	graphics devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,15 +16,22 @@ BROKEN_FreeBSD_15_armv7=	build broken: Unsupported relocation type 160 in non-PL
 
 LIB_DEPENDS=	libCorradeUtility.so:devel/corrade
 
-USES=		cmake compiler:c++11-lang gl
+USES=		cmake:testing compiler:c++11-lang gl
 USE_GL=		opengl
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mosra
-GH_TUPLE=	mosra:toolchains:2243706:toolchains/toolchains
+GH_TUPLE=	mosra:toolchains:fa282e8:toolchains/toolchains
 
 CMAKE_ARGS=	-DLIB_SUFFIX=""
+CMAKE_OFF=	MAGNUM_BUILD_TESTS
+CMAKE_TESTING_ON=	MAGNUM_BUILD_TESTS
+
+# GL tests are disabled because several fail due to NVIDIA driver quirks
+# (compressed cubemap/texture-array subimage uploads). Run tests serially
+# in case GL tests are re-enabled, since shared GPU contexts segfault in parallel.
+CMAKE_TESTING_JOBS=	1
 
 APP_MODULES_STATIC?=	yes
 .if "${APP_MODULES_STATIC}" == yes
@@ -101,5 +107,7 @@ MAGNUMFONTCONVERTER_CMAKE_BOOL=	MAGNUM_WITH_MAGNUMFONTCONVERTER
 .if !empty(PORT_OPTIONS:MXEGL) || !empty(PORT_OPTIONS:MGLX)
 PLIST_FILES=	include/Magnum/Platform/AbstractXApplication.h
 .endif
+
+# tests as of 2020.06.3685: 100% tests passed, 0 tests failed out of 294
 
 .include <bsd.port.mk>

@@ -1,0 +1,2 @@
+pyvista-validation provides array-like input validation and standardization
+utilities used by PyVista.

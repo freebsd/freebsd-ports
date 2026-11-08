@@ -1,6 +1,6 @@
 PORTNAME=	bomns
 PORTVERSION=	0.99.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
@@ -9,6 +9,9 @@ WWW=		https://github.com/keithfancher/Bomns-for-Linux
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	Ancient software, unmaintained upstream, does not build with CMake 4
+EXPIRATION_DATE=2026-11-30
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2
 

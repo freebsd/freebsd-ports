@@ -1,5 +1,5 @@
 PORTNAME=	pyopencl
-PORTVERSION=	2026.1.2
+PORTVERSION=	2026.1.4
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,6 +26,11 @@ USE_GL=		opengl
 USE_PYTHON=	autoplist pep517 pytest
 
 MAKE_ENV=	PYOPENCL_ENABLE_GL=ON
+
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_WRKSRC=	${WRKSRC}/test
+TEST_ARGS=	--disable-plugin-autoload
+# w/out a hardware OpenCL device these packages should be installed: pkg install ocl-icd lang/pocl
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR}/ -name '*.so' -exec ${STRIP_CMD} {} +

@@ -1,6 +1,6 @@
---- vendor/CMakeLists.fastboot.txt	2024-08-29 19:46:57.000000000 +0200
-+++ vendor/CMakeLists.fastboot.txt	2026-03-21 19:24:26.243327000 +0100
-@@ -119,6 +119,9 @@
+--- vendor/CMakeLists.fastboot.txt.orig	2026-08-01 05:20:11 UTC
++++ vendor/CMakeLists.fastboot.txt
+@@ -121,6 +121,9 @@ if(APPLE)
  if(APPLE)
  	list(APPEND fastboot_SOURCES
  		core/fastboot/usb_osx.cpp)
@@ -10,7 +10,7 @@
  else()
  	list(APPEND fastboot_SOURCES
  		core/fastboot/usb_linux.cpp)
-@@ -142,4 +145,6 @@
+@@ -144,4 +147,6 @@ if(APPLE)
  	target_link_libraries(fastboot
  		"-framework CoreFoundation"
  		"-framework IOKit")

@@ -34,6 +34,8 @@ USE_TEX=	kpathsea
 NO_ARCH=	yes
 NO_BUILD=	yes
 
+PORTSCOUT=	skipv:0.8.8_1
+
 PORTDOCS=		Changes README.pod manual.pdf
 
 OPTIONS_DEFINE=	DOCS

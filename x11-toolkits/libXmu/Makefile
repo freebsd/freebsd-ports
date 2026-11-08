@@ -10,7 +10,7 @@ WWW=		https://gitlab.freedesktop.org/xorg/lib/libxmu
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:xz xorg xorg-cat:lib
+USES=		xorg xorg-cat:lib
 USE_XORG=	xorgproto x11 xt xext
 
 INSTALL_TARGET=	install-strip

@@ -1,5 +1,5 @@
 PORTNAME=	pari
-DISTVERSION=	2.17.4
+DISTVERSION=	2.19.0
 PORTEPOCH=	2
 CATEGORIES=	math
 MASTER_SITES=	https://pari.math.u-bordeaux.fr/pub/pari/unix/
@@ -13,9 +13,17 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgmp.so:math/gmp
 
-USES=		bison perl5 readline
+USES=		bison perl5 readline shebangfix
 USE_LDCONFIG=	yes
 USE_PERL5=	build run
+
+SHEBANG_FILES=	src/desc/gen_proto \
+		src/desc/merge_822 \
+		src/desc/gen_tune \
+		src/desc/doc_make \
+		src/desc/PARI/822.pm \
+		src/graph/plotport.c
+
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=	--mandir=${PREFIX}/share/man/man1 \
@@ -64,6 +72,9 @@ post-patch:
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpari.so.${PORTVERSION}
+	@${REINPLACE_CMD} -i '' -e '1s|#!/usr/bin/perl|#!${LOCALBASE}/bin/perl|' \
+		${STAGEDIR}${PREFIX}/bin/gphelp \
+		${STAGEDIR}${PREFIX}/bin/tex2mail
 
 do-test-PTHREADS-on:
 	@cd ${WRKSRC} && ${MAKE_CMD} test-parallel
@@ -71,8 +82,8 @@ do-test-PTHREADS-on:
 do-test-MPI-on:
 	@cd ${WRKSRC} && ${MAKE_CMD} test-parallel RUNTEST="mpirun -np 3"
 
-# tests as of 2.17.2:
-# +++ Total bench for gp-sta is 39565
-# +++ Total bench for gp-dyn is 47771
+# tests as of 2.19.0:
+# +++ Total bench for gp-sta is 51757
+# +++ Total bench for gp-dyn is 46019
 
 .include <bsd.port.mk>

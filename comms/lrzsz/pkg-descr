@@ -1,6 +1,2 @@
-This program uses error correcting protocols to send/receive
-files over a dial-in serial port from a variety of programs
-running under PC-DOS, CP/M, Unix, and other operating systems.
-
-lrzsz is derived from the last unrestricted version of Chuck Forsberg's
-rzsz package.  lrzsz is covered under the GNU copyleft.
+lrzsz is a XModem/YModem/ZModem package
+built from the public-domain version of Chuck Forsberg's rzsz package.

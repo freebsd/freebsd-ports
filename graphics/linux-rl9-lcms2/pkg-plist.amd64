@@ -1,0 +1,6 @@
+usr/lib/liblcms2.so.2
+usr/lib/liblcms2.so.2.0.12
+usr/lib64/liblcms2.so.2
+usr/lib64/liblcms2.so.2.0.12
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+usr/share/licenses/lcms2/COPYING

@@ -1,6 +1,6 @@
---- chrome/browser/renderer_preferences_util.cc.orig	2026-02-16 10:45:29 UTC
+--- chrome/browser/renderer_preferences_util.cc.orig	2026-08-13 16:48:13 UTC
 +++ chrome/browser/renderer_preferences_util.cc
-@@ -37,12 +37,12 @@
+@@ -36,12 +36,12 @@
  #include "ui/base/ui_base_features.h"
  #include "ui/native_theme/native_theme.h"
  
@@ -15,7 +15,7 @@
  #include "ui/linux/linux_ui.h"
  #endif
  
-@@ -111,7 +111,7 @@ void UpdateFromSystemSettings(blink::RendererPreferenc
+@@ -108,7 +108,7 @@ void UpdateFromSystemSettings(blink::RendererPreferenc
                                Profile* profile) {
    const PrefService* pref_service = profile->GetPrefs();
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || \
@@ -24,7 +24,7 @@
    content::UpdateFontRendererPreferencesFromSystemSettings(prefs);
  #endif
    prefs->focus_ring_color = BUILDFLAG(IS_MAC) ? SkColorSetRGB(0x00, 0x5F, 0xCC)
-@@ -125,7 +125,7 @@ void UpdateFromSystemSettings(blink::RendererPreferenc
+@@ -122,7 +122,7 @@ void UpdateFromSystemSettings(blink::RendererPreferenc
    prefs->inactive_selection_fg_color = SK_ColorBLACK;
  #endif
  
@@ -33,7 +33,7 @@
    if (auto* linux_ui_theme = ui::LinuxUiTheme::GetForProfile(profile)) {
      if (ThemeServiceFactory::GetForProfile(profile)->UsingSystemTheme()) {
        linux_ui_theme->GetFocusRingColor(&prefs->focus_ring_color);
-@@ -142,7 +142,7 @@ void UpdateFromSystemSettings(blink::RendererPreferenc
+@@ -139,7 +139,7 @@ void UpdateFromSystemSettings(blink::RendererPreferenc
  #endif  // BUILDFLAG(IS_LINUX)
  #endif  // BUILDFLAG(USE_AURA)
  

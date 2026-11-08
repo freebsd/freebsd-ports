@@ -1,5 +1,5 @@
 PORTNAME=	evcc
-DISTVERSION=	0.313.1
+DISTVERSION=	0.318.2
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/mfechner/${PORTNAME}/:npmcache
 DISTFILES=	${PORTNAME}-npm-cache-${DISTVERSION}${EXTRACT_SUFX}:npmcache
@@ -13,14 +13,19 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64
-ONLY_FOR_ARCHS_REASON=	Npm cache only for amd64 generated
+ONLY_FOR_ARCHS_REASON=	Npm cache only for amd64 generated (rolldown freebsd-x64 binding)
 
-BUILD_DEPENDS=	npm>0:www/npm
+# evcc 0.317.1 ships a vite-plus based build, but plain vite 8 is used instead
+# (see patch-package.json / patch-vite.config.ts).  vite 8 publishes official
+# FreeBSD x64 native bindings (rolldown/lightningcss) as npm optional
+# packages, so they are pulled in by the npm cache and no devel/vite-plus
+# port is required.
+BUILD_DEPENDS=	npm-node24>0:www/npm-node24
 
-USES=		gmake go:1.26+,modules,no_targets nodejs:lts,build tar:zstd
+USES=		gmake go:1.27+,modules,no_targets nodejs:24,build tar:zstd
 
 # Find here: https://github.com/evcc-io/evcc/releases
-_SHA=		07f3982d1e885a380a260d1e2b7cae849d782b42
+_SHA=		3674c1a5933000f3c646df876951e97391e2c5c1
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	evcc-io
@@ -32,7 +37,10 @@ MAKE_ENV=	npm_config_offline=true TAG_NAME=${DISTVERSION} SHA=${_SHA}
 
 # parallel build failed in my tests, so disable it here
 MAKE_JOBS_UNSAFE=yes
-ALL_TARGET=	default
+# Build the Go binary only; the UI (dist/) is built in pre-build with plain
+# vite.  0.317.0 upstream "default"/"ui" targets require the vite-plus "vp"
+# CLI, so we bypass them.
+ALL_TARGET=	build
 
 USERS=		evcc
 GROUPS=		evcc
@@ -40,18 +48,38 @@ GROUPS=		evcc
 PLIST_FILES=	bin/${PORTNAME}
 
 pre-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} npm ci --legacy-peer-deps
-	#cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} npm run build
+	# install node deps offline from the .npm cache distfile (extracted to
+	# ${WRKDIR}/.npm; the framework sets HOME=${WRKDIR} so it is npm's default
+	# cache).  The lockfile was generated with "npm install --force" (see
+	# make-npm-cache) so a plain "npm ci" resolves without peer warnings.
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} npm ci
+	# build the UI (dist/) with plain vite; "npm run build" -> "vite build"
+	# (vite 8 ships official FreeBSD x64 native bindings via npm).
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} npm run build
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/evcc ${STAGEDIR}${PREFIX}/bin
 
-# (for maintainer) helper target to generate node_modules tarball
+# to update the port
+# update version and _SHA
+# comment DISTFILES
+# make makesum
+# make clean extract do-patch
+# cd work/evcc-*
+# (for maintainer) helper target to generate the .npm cache tarball
 make-npm-cache: patch
 	@cd ${WRKDIR} && ${RM} -r .npm
-	@cd ${WRKSRC} && ${SETENV} HOME=${WRKDIR} npm ci --legacy-peer-deps
+	# --force resolves the (unpinned) storybook/react peer deps into the
+	# lockfile so the offline "npm ci" in pre-build works without peer warnings
+	@cd ${WRKSRC} && ${SETENV} HOME=${WRKDIR} npm install --force
 	@cd ${WRKDIR} \
 		&& ${TAR} -c --zstd -f ${PORTNAME}-npm-cache-${DISTVERSION}${EXTRACT_SUFX} .npm \
+		&& ${ECHO} "Copy locally: cp ${WRKDIR}/${PORTNAME}-npm-cache-${DISTVERSION}${EXTRACT_SUFX} ../../distfiles/go/www_evcc/evcc-io-evcc-${DISTVERSION}_GH0/" \
 		&& ${ECHO} "Please upload the file: scp ${WRKDIR}/${PORTNAME}-npm-cache-${DISTVERSION}${EXTRACT_SUFX} mfechner@freefall.freebsd.org:public_distfiles/${PORTNAME}/"
+# cd ../..
+# make makepatch
+# make make-npm-cache
+# uncomment DISTFILES
+# make makesum
 
 .include <bsd.port.mk>

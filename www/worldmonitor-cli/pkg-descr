@@ -1,0 +1,11 @@
+World Monitor CLI is a command-line client for the World Monitor global
+intelligence API.  It shows a terminal dashboard with country briefs, risk
+scores and conflict, cyber, market, climate and infrastructure feeds, and
+it installs the commands worldmonitor and wm.
+
+Most data commands require a subscription API key of worldmonitor.app in the
+WORLDMONITOR_API_KEY environment variable.
+The terminal dashboard also starts without a key, using public bootstrap
+data.  The client talks to the hosted service at worldmonitor.app, it does
+not connect to a self-hosted installation.  It is independent of the port
+www/worldmonitor, which installs the self-hosted dashboard.

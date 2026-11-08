@@ -1,0 +1,3 @@
+rfc8785 is a pure-Python implementation of RFC 8785, the JSON
+Canonicalization Scheme (JCS). It produces a canonical byte representation
+of JSON values that can be used for stable hashing and signing.

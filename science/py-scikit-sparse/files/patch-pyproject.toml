@@ -1,0 +1,15 @@
+-- Use the setuptools version available in FreeBSD ports and the legacy
+-- license form supported by older setuptools.
+
+--- pyproject.toml.orig	2026-08-05 07:48:05 UTC
++++ pyproject.toml
+@@ -9,8 +9,7 @@ requires-python = ">=3.10"
+ description = "Scikit-sparse is a Python wrapper for the SuiteSparse sparse matrix library."
+ readme = "README.rst"
+ requires-python = ">=3.10"
+-license = "BSD-2-Clause"
+-license-files = ["LICENSE.txt"]
++license = {text = "BSD-2-Clause"}
+ 
+ authors = [
+     { name = "David Cournapeau", email = "cournape@gmail.com" },

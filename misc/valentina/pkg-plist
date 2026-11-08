@@ -114,6 +114,7 @@ share/metainfo/ua.com.smart-pattern.valentina.metainfo.xml
 %%DATADIR%%/svgfonts/ISF/ISFSquareItalic.svg
 %%DATADIR%%/svgfonts/Relief/ReliefSingleLine-Regular.svg
 %%DATADIR%%/translations/valentina_cs_CZ.qm
+%%DATADIR%%/translations/valentina_da_DK.qm
 %%DATADIR%%/translations/valentina_de_DE.qm
 %%DATADIR%%/translations/valentina_el_GR.qm
 %%DATADIR%%/translations/valentina_es_ES.qm

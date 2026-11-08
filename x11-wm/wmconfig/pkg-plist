@@ -19,4 +19,5 @@ etc/wmconfig/Utilities
 share/man/man1/wmconfig.1x.gz
 %%NLS%%share/locale/de/LC_MESSAGES/wmconfig.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/wmconfig.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/wmconfig.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/wmconfig.mo

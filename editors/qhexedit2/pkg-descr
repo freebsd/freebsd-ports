@@ -1,0 +1,3 @@
+QHexEdit is a hex editor widget written in C++ for the Qt6 framework.
+It is a simple editor for binary data, just like QPlainTextEdit is for
+text data.

@@ -18,5 +18,6 @@ USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DBUILD_SHARED_LIBS:BOOL=ON \
 		-DENABLE_XHOST:BOOL=OFF
+CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/psi4/erd/issues/7
 
 .include <bsd.port.mk>

@@ -1,5 +1,6 @@
 PORTNAME=	activesupport
 PORTVERSION=	${RAILS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-gitlab
@@ -17,7 +18,7 @@ RUN_DEPENDS=	rubygem-base64>=0:converters/rubygem-base64 \
 		rubygem-bigdecimal-gitlab>=0:math/rubygem-bigdecimal-gitlab \
 		rubygem-concurrent-ruby>=1.3.1<2:devel/rubygem-concurrent-ruby \
 		rubygem-connection_pool>=2.2.5:net/rubygem-connection_pool \
-		rubygem-drb>=0:devel/rubygem-drb \
+		rubygem-drb-gitlab>=0:devel/rubygem-drb-gitlab \
 		rubygem-i18n>=1.6,2<2,2:devel/rubygem-i18n \
 		rubygem-logger-gitlab>=1.4.2:devel/rubygem-logger-gitlab \
 		rubygem-minitest>=5.1<6:devel/rubygem-minitest \

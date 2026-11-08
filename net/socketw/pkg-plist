@@ -5,4 +5,9 @@ include/sw_inet.h
 include/sw_internal.h
 include/sw_ssl.h
 include/sw_unix.h
+lib/cmake/SocketW/SocketWConfig.cmake
+lib/cmake/SocketW/SocketWConfigVersion.cmake
+lib/cmake/SocketW/SocketWTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/SocketW/SocketWTargets.cmake
 lib/libSocketW.a
+libdata/pkgconfig/SocketW.pc

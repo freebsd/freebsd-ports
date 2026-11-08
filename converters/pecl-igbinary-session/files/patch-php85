@@ -1,0 +1,11 @@
+--- src/php7/php_igbinary.h.orig	2024-08-10 16:55:30 UTC
++++ src/php7/php_igbinary.h
+@@ -32,7 +32,7 @@ ZEND_END_MODULE_GLOBALS(igbinary)
+ #include "TSRM.h"
+ #endif
+ 
+-#include "ext/standard/php_smart_string.h"
++#include "Zend/zend_smart_string.h"
+ 
+ /** Module init function. */
+ PHP_MINIT_FUNCTION(igbinary);

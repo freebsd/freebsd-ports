@@ -1,0 +1,14 @@
+-- Bump cmake_minimum_required to 3.5 for CMake 4.0 compatibility.
+-- CMake 4.0 removed support for cmake_minimum_required(VERSION < 3.5).
+
+--- Templates/mirtk-module/1.0/CMakeLists.txt.orig	2026-08-27 09:05:25 UTC
++++ Templates/mirtk-module/1.0/CMakeLists.txt
+@@ -16,7 +16,7 @@
+ # limitations under the License.
+ # ============================================================================
+
+-cmake_minimum_required(VERSION 2.8.12 FATAL_ERROR)
++cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
+
+ if (NOT COMMAND mirtk_configure_module)
+   find_package(MIRTK REQUIRED COMPONENTS CMake)

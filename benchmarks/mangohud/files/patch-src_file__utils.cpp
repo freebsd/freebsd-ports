@@ -1,4 +1,4 @@
---- src/file_utils.cpp.orig	2021-07-08 06:23:59 UTC
+--- src/file_utils.cpp.orig	2023-04-13 17:40:23 UTC
 +++ src/file_utils.cpp
 @@ -2,6 +2,7 @@
  #include "string_utils.h"
@@ -8,8 +8,16 @@
  #include <unistd.h>
  #include <dirent.h>
  #include <limits.h>
-@@ -107,9 +108,36 @@ std::string read_symlink(const char * link)
-     return std::string(result, (count > 0) ? count : 0);
+@@ -35,7 +36,6 @@ std::string get_basename(const std::string&& path)
+     return path;
+ }
+ 
+-#ifdef __linux__
+ std::vector<std::string> ls(const char* root, const char* prefix, LS_FLAGS flags)
+ {
+     std::vector<std::string> list;
+@@ -109,9 +109,36 @@ std::string read_symlink(const std::string&& link)
+     return read_symlink(link.c_str());
  }
  
 +template <>
@@ -46,7 +54,7 @@
  }
  
  std::string get_wine_exe_name(bool keep_ext)
-@@ -119,14 +147,14 @@ std::string get_wine_exe_name(bool keep_ext)
+@@ -121,14 +148,14 @@ std::string get_wine_exe_name(bool keep_ext)
          return std::string();
      }
  
@@ -63,3 +71,24 @@
      // Iterate over arguments (separated by NUL byte).
      while (std::getline(cmdline, line, '\0')) {
          auto n = std::string::npos;
+@@ -185,16 +212,13 @@ std::string get_config_dir()
+ }
+ 
+ bool lib_loaded(const std::string& lib) {
+-    fs::path path("/proc/self/map_files/");
+-    for (auto& p : fs::directory_iterator(path)) {
+-        auto file = p.path().string();
+-        auto sym = read_symlink(file.c_str());
+-        if (sym.find(lib) != std::string::npos) {
++    std::ifstream proc_maps(PROCDIR "/self/maps");
++    std::string line;
++    while (std::getline(proc_maps, line)) {
++        if (line.find(lib) != std::string::npos) {
+             return true;
+         }
+     }
+     return false;
+ 
+ }
+-
+-#endif // __linux__

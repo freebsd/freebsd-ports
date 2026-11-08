@@ -1,4 +1,4 @@
---- deps/VectorSimilarity/src/VecSim/query_results.h.orig	2026-05-30 19:20:00 UTC
+--- deps/VectorSimilarity/src/VecSim/query_results.h.orig	2022-08-15 17:57:10 UTC
 +++ deps/VectorSimilarity/src/VecSim/query_results.h
 @@ -1,6 +1,7 @@
  #pragma once
@@ -7,4 +7,4 @@
 +#include <stdint.h>
  #include <stdbool.h>
  
- #ifdef __cplusplus
+ #include "vec_sim_common.h"

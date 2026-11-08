@@ -1,0 +1,3 @@
+pytest-vcr is a pytest plugin that simplifies managing VCR.py cassettes. It
+provides a `vcr` fixture and a `pytest.mark.vcr` marker to automatically record
+and replay HTTP interactions during tests.

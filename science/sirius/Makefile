@@ -1,7 +1,7 @@
 PORTNAME=	sirius
 DISTVERSIONPREFIX=	v
 DISTVERSION=	7.11.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 PKGNAMESUFFIX=	-quantum-chemistry # other software also has the name "sirius"
 

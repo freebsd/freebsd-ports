@@ -1,6 +1,6 @@
 PORTNAME=	grizzly
 DISTVERSION=	g20260102
-PORTREVISION=	3
+PORTREVISION=	8
 CATEGORIES=	misc
 PKGNAMESUFFIX=	-bear-notes-cli
 
@@ -8,7 +8,7 @@ MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	CLI for interacting with Bear notes
 WWW=		https://github.com/tylerwince/grizzly
 
-USES=		go:1.21+,modules
+USES=		go:modules
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	tylerwince

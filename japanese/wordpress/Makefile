@@ -1,12 +1,12 @@
 DISTVERSIONSUFFIX=	-${WORDPRESS_LANG}
-CATEGORIES=		japanese
+CATEGORIES=	japanese
 
-CONFLICTS_INSTALL=	wordpress fr-wordpress de-wordpress ru-wordpress
+CONFLICTS_INSTALL=	de-wordpress fr-wordpress ru-wordpress wordpress
 
-WORDPRESS_LANG=		ja
+MASTERDIR=	${.CURDIR}/../../www/wordpress
 
-DISTINFO_FILE=		${.CURDIR}/distinfo
+DISTINFO_FILE=	${.CURDIR}/distinfo
 
-MASTERDIR=		${.CURDIR}/../../www/wordpress
+WORDPRESS_LANG=	ja
 
 .include "${MASTERDIR}/Makefile"

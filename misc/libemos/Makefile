@@ -20,6 +20,7 @@ USES=		cmake:noninja compiler:c11 fortran localbase:ldflags
 
 CMAKE_ON=	BUILD_SHARED_LIBS # not respected: https://jira.ecmwf.int/browse/SUP-2691
 CMAKE_OFF=	HAVE_TESTS
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility
 
 FFLAGS+=	-std=legacy
 LDFLAGS+=	-leccodes

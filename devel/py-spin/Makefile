@@ -14,10 +14,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PY_TOMLI} \
-		${PYTHON_PKGNAMEPREFIX}click>=8,<8.4:devel/py-click@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}click>=8:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}importlib-metadata>=7:devel/py-importlib-metadata@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist pep517
+
+post-patch:
+	${REINPLACE_CMD} '/click/s|>=.*"|"|' ${WRKSRC}/pyproject.toml
 
 .include <bsd.port.mk>

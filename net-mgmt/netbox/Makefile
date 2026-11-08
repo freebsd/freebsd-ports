@@ -1,6 +1,7 @@
 PORTNAME=	netbox
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.6.7
+DISTVERSION=	4.6.10
+PORTREVISION=	1
 CATEGORIES=	net-mgmt python
 
 MAINTAINER=	kai@FreeBSD.org
@@ -23,11 +24,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 # - www/py-dj60-django-tables2
 # - www/py-dj60-djangorestframework
 #
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django60>=6.0.7<6.1:www/py-django60@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django60>=6.0.8<6.1:www/py-django60@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj60-django-cors-headers>=4.9.0<5:www/py-dj60-django-cors-headers@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj60-django-debug-toolbar>=7.0.0<8:www/py-dj60-django-debug-toolbar@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj60-django-debug-toolbar>=7.1.1<9:www/py-dj60-django-debug-toolbar@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj60-django-filter>=26.1<27:www/py-dj60-django-filter@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj60-django-htmx>=1.28.0<2:www/py-dj60-django-htmx@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj60-django-htmx>=1.29.0<2:www/py-dj60-django-htmx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj60-django-mptt>=0.18.0<0.19:www/py-dj60-django-mptt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj60-django-prometheus>=2.4.0<2.6:www/py-dj60-django-prometheus@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj60-django-redis>=7.0.0<8:www/py-dj60-django-redis@${PY_FLAVOR} \
@@ -37,13 +38,13 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django60>=6.0.7<6.1:www/py-django60@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}dj60-django-tables2>=2.8.0<2.9:www/py-dj60-django-tables2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj60-django-taggit>=6.1.0<7:www/py-dj60-django-taggit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj60-django-timezone-field>=7.2.2<8:www/py-dj60-django-timezone-field@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj60-djangorestframework>=3.17.1<3.18.0:www/py-dj60-djangorestframework@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj60-djangorestframework>=3.18.3<3.19.0:www/py-dj60-djangorestframework@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj60-drf-spectacular>=0.30.0<1:www/py-dj60-drf-spectacular@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj60-drf-spectacular-sidecar>=2026.7.1:www/py-dj60-drf-spectacular-sidecar@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj60-drf-spectacular-sidecar>=2026.8.1:www/py-dj60-drf-spectacular-sidecar@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj60-social-auth-app-django>=5.9.0<6:www/py-dj60-social-auth-app-django@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj60-sorl-thumbnail>=13.0.0<14:graphics/py-dj60-sorl-thumbnail@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj60-strawberry-graphql>=0.323.2<1:devel/py-dj60-strawberry-graphql@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj60-strawberry-graphql-django>=0.86.5<1:www/py-dj60-strawberry-graphql-django@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj60-sorl-thumbnail>=13.1.0<14:graphics/py-dj60-sorl-thumbnail@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj60-strawberry-graphql>=0.327.0<1:devel/py-dj60-strawberry-graphql@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj60-strawberry-graphql-django>=0.88.0<1:www/py-dj60-strawberry-graphql-django@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-pglocks>=1.0.4<1.1:www/py-django-pglocks@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}colorama>=0.4.6<1:devel/py-colorama@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}feedparser>=6.0.12<7:textproc/py-feedparser@${PY_FLAVOR} \
@@ -53,23 +54,23 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django60>=6.0.7<6.1:www/py-django60@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}mkdocs>=1.6.1<2:textproc/py-mkdocs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mkdocs-material>=9.7.7<10:textproc/py-mkdocs-material@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mkdocstrings>=1.0.6<2:textproc/py-mkdocstrings@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}mkdocstrings-python>=2.0.5:textproc/py-mkdocstrings-python@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mkdocstrings-python>=2.0.8:textproc/py-mkdocstrings-python@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}netaddr>=1.3.0<2:net/py-netaddr@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}nh3>=0.3.6<1:www/py-nh3@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}nh3>=0.3.7<1:www/py-nh3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pillow>=11.3.0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psycopg>=3.2.13<4:databases/py-psycopg@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psycopg-c>=3.2.13<4:databases/py-psycopg-c@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psycopg-pool>=3.3.0<4:databases/py-psycopg-pool@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}redis>=7.4.0<8:databases/py-redis@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}redis>=7.4.0<9:databases/py-redis@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.34.2<3:www/py-requests@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}rq>=2.10<3:devel/py-rq@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}rq>=2.12<3:devel/py-rq@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}social-auth-core4>=4.8.7<4.9.0:security/py-social-auth-core4@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}svgwrite>=1.4.3<2:graphics/py-svgwrite@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tablib>=3.9.0<4:textproc/py-tablib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tablib>=3.10.0<4:textproc/py-tablib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tzdata>=2026.3:devel/py-tzdata@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=6.0.3<7:devel/py-pyyaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}gunicorn>=26.0.0:www/py-gunicorn@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}zensical>=0.0.52<1:textproc/py-zensical@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}zensical>=0.0.57<1:textproc/py-zensical@${PY_FLAVOR}
 
 USES=		cpe pgsql:14+ python:3.12+
 CPE_VENDOR=	netbox
@@ -94,6 +95,10 @@ GIT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dulwich>0:devel/py-dulwich@${PY_FLAVOR}
 LDAP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dj60-django-auth-ldap>0:www/py-dj60-django-auth-ldap
 S3_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}boto3>0:www/py-boto3@${PY_FLAVOR}
 SENTRY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sentry-sdk>0:devel/py-sentry-sdk@${PY_FLAVOR}
+
+# No longer required since DRF 3.18.2, remove once NetBox gets updated to 4.7.4+
+post-extract:
+	${RM} ${WRKSRC}/netbox/netbox/monkey.py
 
 do-install:
 	cd ${WRKSRC}/netbox ; \

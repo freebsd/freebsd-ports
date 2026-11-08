@@ -1,0 +1,37 @@
+load("//:build_defs.bzl", "mozc_cc_binary", "mozc_cc_library")
+
+mozc_cc_library(
+    name = "key_translator",
+    srcs = ["key_translator.cc"],
+    hdrs = ["key_translator.h"],
+    linkstatic = True,
+    deps = [
+        "//base:vlog",
+        "//protocol:commands_cc_proto",
+        "//protocol:config_cc_proto",
+        "@com_google_absl//absl/log:check",
+        "@uim//:uim",
+    ],
+)
+
+mozc_cc_binary(
+    name = "libuim-mozc.so",
+    srcs = ["mozc.cc"],
+    linkshared = True,
+    linkstatic = True,
+    deps = [
+        ":key_translator",
+        "//base:init_mozc",
+        "//base:port",
+        "//base:util",
+        "//client",
+        "//protocol:commands_cc_proto",
+        "//protocol:config_cc_proto",
+        "@uim//:uim",
+    ],
+)
+
+alias(
+    name = "uim-mozc",
+    actual = ":libuim-mozc.so",
+)

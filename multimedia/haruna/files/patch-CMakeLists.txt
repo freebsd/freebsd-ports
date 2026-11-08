@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2026-05-19 13:01:50 UTC
++++ CMakeLists.txt
+@@ -95,7 +95,7 @@ set_package_properties(MpvQt PROPERTIES TYPE REQUIRED
+ set_package_properties(MpvQt PROPERTIES TYPE REQUIRED
+     URL "https://invent.kde.org/libraries/mpvqt")
+ 
+-find_package(Breeze)
++find_package(KF6BreezeIcons)
+ set_package_properties(Breeze PROPERTIES TYPE RECOMMENDED
+     URL "https://api.kde.org/frameworks/breeze-icons/html/index.html")
+ 

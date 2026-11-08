@@ -1,6 +1,6 @@
 PORTNAME=		praat
 DISTVERSIONPREFIX=	v
-DISTVERSION=		6.4.67
+DISTVERSION=		7.0.02
 CATEGORIES=		audio science
 
 MAINTAINER=	adridg@FreeBSD.org
@@ -27,9 +27,10 @@ PLIST_FILES=	bin/praat \
 		share/applications/${PORTNAME}.desktop \
 		share/icons/hicolor/scalable/apps/${PORTNAME}.svg
 
-WRKSRC=			${WRKDIR}/praat.github.io-${DISTVERSION}
+WRKSRC=		${WRKDIR}/praat.github.io-${DISTVERSION}
 
-MAKE_ARGS+=	RANLIB=${RANLIB}
+MAKE_ARGS+=	RANLIB=${RANLIB} \
+		PRAAT_OS=freebsd
 
 post-patch:
 	${REINPLACE_CMD} -e 's|^CPPFLAGS =|CPPFLAGS +=|' \

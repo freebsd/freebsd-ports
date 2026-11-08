@@ -1,6 +1,6 @@
---- components/supervised_user/core/browser/list_family_members_service.h.orig	2025-02-20 09:59:21 UTC
+--- components/supervised_user/core/browser/list_family_members_service.h.orig	2026-10-31 12:09:36 UTC
 +++ components/supervised_user/core/browser/list_family_members_service.h
-@@ -33,7 +33,7 @@ namespace supervised_user {
+@@ -31,7 +31,7 @@ namespace supervised_user {
  // If true, this fetcher is active for all users with CanFetchFamilyMemberInfo
  // capability. Otherwise, it is only used by supervised users.
  constexpr bool FetchListFamilyMembersWithCapability() {

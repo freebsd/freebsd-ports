@@ -1,5 +1,11 @@
---- CMakeLists.txt.orig	2025-01-25 20:44:54 UTC
+--- CMakeLists.txt.orig	2026-09-06 09:28:51 UTC
 +++ CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 3.5...4.2)
++cmake_minimum_required(VERSION 3.5)
+ set(LIBDIVIDE_VERSION "5.4.0")
+ project(libdivide C CXX)
+ 
 @@ -17,13 +17,13 @@ if (CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
      if (CMAKE_CXX_COMPILER_FRONTEND_VARIANT STREQUAL "MSVC") # clang-cl
          add_compile_options("/W4;/WX;")
@@ -17,7 +23,7 @@
      )
  endif()
  
-@@ -105,11 +105,10 @@ if (LIBDIVIDE_BUILD_TESTS AND NOT CMAKE_CROSSCOMPILING
+@@ -118,11 +118,10 @@ if (LIBDIVIDE_BUILD_TESTS AND NOT CMAKE_CROSSCOMPILING
          CPU_ARM_NEON)
      if (CPU_X86 OR CPU_ARM_NEON)
          cmake_push_check_state()

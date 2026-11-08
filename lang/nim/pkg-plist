@@ -448,7 +448,6 @@ nim/lib/compiler/aliasanalysis.nim
 nim/lib/compiler/aliases.nim
 nim/lib/compiler/ast.nim
 nim/lib/compiler/astalgo.nim
-nim/lib/compiler/astdef.nim
 nim/lib/compiler/astmsgs.nim
 nim/lib/compiler/astyaml.nim
 nim/lib/compiler/bitsets.nim

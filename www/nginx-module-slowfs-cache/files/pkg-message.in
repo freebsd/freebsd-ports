@@ -1,0 +1,14 @@
+[
+{ type: install
+  message: <<EOM
+This package contains the sources of the slowfs_cache module only.  It does
+not install a loadable module.
+
+The module itself is built by the nginx ports.  To use slowfs_cache, build
+www/nginx, www/nginx-devel or www/freenginx with the SLOWFS_CACHE option
+enabled.  Those ports pick the sources up from
+%%PREFIX%%/share/nginx/modules/nginx-module-slowfs-cache and produce
+ngx_http_slowfs_module.so.
+EOM
+}
+]

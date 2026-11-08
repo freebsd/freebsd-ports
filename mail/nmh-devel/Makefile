@@ -1,5 +1,6 @@
 PORTNAME=	nmh
 PORTVERSION=	${NMH_COMMIT_DATE}
+PORTREVISION=	1
 MASTER_SITES=	#
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-devel
@@ -9,15 +10,26 @@ MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Cleaned up MH mailer suite
 WWW=		https://savannah.nongnu.org/projects/nmh/
 
-GIT_TAGNAME=	9ce1475
-NMH_COMMIT_DATE=	2026.01.20
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${GIT_TAGNAME}
+USE_GITHUB=	yes
+GH_ACCOUNT=	cschuber
+GH_PROJECT=	nmh
+GH_TAGNAME=	765d228a
+NMH_COMMIT_DATE=	2026.08.23
 
 LICENSE=	BSD3CLAUSE
 
-USES=		autoreconf:build cpe gmake iconv ncurses readline shebangfix
-SHEBANG_FILES=	docs/contrib/ml docs/contrib/replyfilter docs/contrib/vpick
+USES=		autoreconf:build cpe gmake iconv ncurses python \
+		readline shebangfix
+SHEBANG_FILES=	docs/contrib/ml docs/contrib/replyfilter docs/contrib/vpick \
+		docs/contrib/gmailapis/nmh_addr.py \
+		docs/contrib/gmailapis/nmh_addr_test.py \
+		docs/contrib/gmailapis/ginc.py \
+		docs/contrib/gmailapis/nmh_gmailapi.py \
+		docs/contrib/gmailapis/gpost_test.py \
+		docs/contrib/gmailapis/glogin.py \
+		docs/contrib/gmailapis/RFC5322addr_test.py \
+		docs/contrib/gmailapis/RFC5322addr.py \
+		docs/contrib/gmailapis/gpost.py
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir=${PREFIX}/libexec/nmh \
 		--sysconfdir=${PREFIX}/etc \
@@ -101,13 +113,6 @@ DEBUG_FLAGS+=	-O0 -Wall -Wextra -g
 .endif
 
 CONFLICTS_INSTALL=	ali ja-mh pixie p5-Dist-Joseki nmh-1.*
-
-do-fetch:
-	@cd ${DISTDIR} && \
-	if [ ! -f ${DISTNAME}${EXTRACT_SUFX} ]; then \
-		fetch -6 -o ${DISTNAME}${EXTRACT_SUFX} \
-		    "https://git.savannah.gnu.org/gitweb/?p=nmh.git;a=snapshot;h=${GIT_TAGNAME};sf=tgz"; \
-	fi
 
 pre-configure:
 	cd ${WRKSRC} && ./autogen.sh

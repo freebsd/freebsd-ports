@@ -1,3 +1,3 @@
-TIMESTAMP = 1740766818
-SHA256 (xorg/lib/libXrender-0.9.12.tar.xz) = b832128da48b39c8d608224481743403ad1691bf4e554e4be9c174df171d1b97
-SIZE (xorg/lib/libXrender-0.9.12.tar.xz) = 310432
+TIMESTAMP = 1792235124
+SHA256 (xorg/lib/libXrender-0.9.13.tar.xz) = 3fe88c609df6782e1e7af2e4de36b2563d70cd70ff7dcb1cda561ad64912bb64
+SIZE (xorg/lib/libXrender-0.9.13.tar.xz) = 316404

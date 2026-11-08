@@ -21,6 +21,7 @@ GH_ACCOUNT=	oprecomp
 GH_TAGNAME=	ac67200de13ed9584500832a2d38a29c79331c1c
 
 CMAKE_OFF=	BUILD_TESTS BUILD_EXAMPLES
+CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/oprecomp/flexfloat/issues/18
 
 PLIST_FILES=	include/flexfloat/flexfloat.h \
 		include/flexfloat/flexfloat.hpp \

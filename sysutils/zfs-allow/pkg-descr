@@ -1,0 +1,11 @@
+zfs-allow is a terminal UI and scripting front-end for ZFS delegated
+administration (zfs allow / zfs unallow). It shows the delegations of a
+dataset the way zfs allow prints them, lets you edit them as a checklist in
+which every permission is described, and turns the edits into the exact
+zfs allow / zfs unallow commands, shown for review before they run.
+Pre-flight checks point out what the commands will not achieve: create
+without mount, vfs.usermount=0, a mount point the grantee cannot create
+directories in, what an unprivileged delegator cannot do. It also shows the
+effective permissions of a user on a dataset with their sources, and offers
+all of that non-interactively for scripts (-add, -remove, -effective,
+-where, -dump/-restore, dry run, -check).

@@ -1,15 +1,15 @@
---- Makefile.in.orig	2022-12-22 00:14:09 UTC
+--- Makefile.in.orig	2026-06-16 11:40:38 UTC
 +++ Makefile.in
-@@ -276,7 +276,7 @@ endif
+@@ -299,7 +299,7 @@ endif
  #
  # Bootstrap
  #
--bootstrap: check-if-root compilerplugins
-+bootstrap: compilerplugins
+-bootstrap: check-if-root check-makefile-version compilerplugins
++bootstrap: check-makefile-version compilerplugins
  
  #
  # Build
-@@ -448,7 +448,7 @@ endif
+@@ -471,7 +471,7 @@ endif
  	$(SRCDIR)/bin/merge-app-bundles macosx_x86_64/"$(PRODUCTNAME)".app macosx_aarch64/"$(PRODUCTNAME)".app universal/"$(PRODUCTNAME)".app
  	touch $@
  

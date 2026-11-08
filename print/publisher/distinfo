@@ -1,6 +1,6 @@
-TIMESTAMP = 1783698335
-SHA256 (speedata-publisher-v5.6.0_GH0.tar.gz) = a4ef2deba447d50fcc01df3226c91b7a98c2c2ecc79dbf1d186c76f625fed935
-SIZE (speedata-publisher-v5.6.0_GH0.tar.gz) = 27058143
+TIMESTAMP = 1787057485
+SHA256 (speedata-publisher-v5.8.0_GH0.tar.gz) = 2bf45b49b286c32aa4d74269356112a704aa6e0fca66a99c57ad6c53c8bd46d8
+SIZE (speedata-publisher-v5.8.0_GH0.tar.gz) = 28880049
 SHA256 (Masterminds-semver-v1.5.0_GH0.tar.gz) = c9140eddfb03dc862f826e7761561260b9a840afa7519cc0919e89a43b5be5ba
 SIZE (Masterminds-semver-v1.5.0_GH0.tar.gz) = 21188
 SHA256 (PuerkitoBio-goquery-v1.9.1_GH0.tar.gz) = ad303bf30070c34fa0f05d2701b7bd024642e0183708a96ed0d2b837b21f4d1a

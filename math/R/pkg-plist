@@ -778,6 +778,7 @@ lib/R/library/lattice/doc/grid.pdf
 lib/R/library/lattice/doc/index.html
 lib/R/library/lattice/help/AnIndex
 lib/R/library/lattice/help/aliases.rds
+lib/R/library/lattice/help/figures/logo-saturated.svg
 lib/R/library/lattice/help/figures/logo.svg
 lib/R/library/lattice/help/lattice.rdb
 lib/R/library/lattice/help/lattice.rdx
@@ -996,6 +997,7 @@ lib/R/library/spatial/CITATION
 lib/R/library/spatial/DESCRIPTION
 lib/R/library/spatial/INDEX
 lib/R/library/spatial/Meta/Rd.rds
+lib/R/library/spatial/Meta/data.rds
 lib/R/library/spatial/Meta/features.rds
 lib/R/library/spatial/Meta/hsearch.rds
 lib/R/library/spatial/Meta/links.rds
@@ -1007,6 +1009,9 @@ lib/R/library/spatial/PP.files
 lib/R/library/spatial/R/spatial
 lib/R/library/spatial/R/spatial.rdb
 lib/R/library/spatial/R/spatial.rdx
+lib/R/library/spatial/data/Rdata.rdb
+lib/R/library/spatial/data/Rdata.rds
+lib/R/library/spatial/data/Rdata.rdx
 lib/R/library/spatial/help/AnIndex
 lib/R/library/spatial/help/aliases.rds
 lib/R/library/spatial/help/paths.rds
@@ -1155,6 +1160,8 @@ lib/R/library/survival/doc/matrix.pdf
 lib/R/library/survival/doc/methods.R
 lib/R/library/survival/doc/methods.Rnw
 lib/R/library/survival/doc/methods.pdf
+lib/R/library/survival/doc/modelframe.Rnw
+lib/R/library/survival/doc/modelframe.pdf
 lib/R/library/survival/doc/multi.Rnw
 lib/R/library/survival/doc/multi.pdf
 lib/R/library/survival/doc/other.Rnw
@@ -1174,9 +1181,9 @@ lib/R/library/survival/doc/survival.pdf
 lib/R/library/survival/doc/tiedtimes.R
 lib/R/library/survival/doc/tiedtimes.Rnw
 lib/R/library/survival/doc/tiedtimes.pdf
-lib/R/library/survival/doc/timedep.R
-lib/R/library/survival/doc/timedep.Rnw
-lib/R/library/survival/doc/timedep.pdf
+lib/R/library/survival/doc/timeline.R
+lib/R/library/survival/doc/timeline.Rnw
+lib/R/library/survival/doc/timeline.pdf
 lib/R/library/survival/doc/validate.R
 lib/R/library/survival/doc/validate.Rnw
 lib/R/library/survival/doc/validate.pdf

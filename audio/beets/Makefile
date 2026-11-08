@@ -1,5 +1,6 @@
 PORTNAME=	beets
 DISTVERSION=	2.12.0
+PORTREVISION=	1
 CATEGORIES=	audio python
 MASTER_SITES=	PYPI
 
@@ -27,7 +28,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}confuse>=2.2.0:devel/py-confuse@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}unidecode>=1.3.6:converters/py-unidecode@${PY_FLAVOR}
 
-USES=		python:3.10-3.14
+USES=		python:3.11-3.14
 USE_PYTHON=	autoplist optsuffix pep517
 
 NO_ARCH=	yes
@@ -81,7 +82,7 @@ KODIUPDATE_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY
 LASTFM_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}pylast>=0:audio/py-pylast@${PY_FLAVOR}
 LASTIMPORT_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR}
 LYRICS_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR}
-LYRICS_GOOGLE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4:www/py-beautifulsoup@${PY_FLAVOR}
+LYRICS_GOOGLE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup4>=4:www/py-beautifulsoup4@${PY_FLAVOR}
 METASYNC_DBUS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0:devel/py-dbus@${PY_FLAVOR}
 MPDSTATS_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}python-mpd2>=0.4.2:audio/py-python-mpd2@${PY_FLAVOR}
 PLEXUPDATE_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR}

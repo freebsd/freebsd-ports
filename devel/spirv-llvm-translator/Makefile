@@ -1,15 +1,16 @@
 PORTNAME=	spirv-llvm-translator
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${DISTVERSION_${FLAVOR}}
-DISTVERSION_llvm22=	22.1.5
-DISTVERSION_llvm21=	21.1.10
-DISTVERSION_llvm20=	20.1.16
-DISTVERSION_llvm19=	19.1.21
-DISTVERSION_llvm18=	18.1.26
-DISTVERSION_llvm17=	17.0.26
-DISTVERSION_llvm16=	16.0.27
-DISTVERSION_llvm15=	15.0.26
-DISTVERSION_llvm14=	14.0.26
+DISTVERSION_llvm23=	23.1.3
+DISTVERSION_llvm22=	22.1.8
+DISTVERSION_llvm21=	21.1.13
+DISTVERSION_llvm20=	20.1.19
+DISTVERSION_llvm19=	19.1.24
+DISTVERSION_llvm18=	18.1.29
+DISTVERSION_llvm17=	17.0.29
+DISTVERSION_llvm16=	16.0.30
+DISTVERSION_llvm15=	15.0.29
+DISTVERSION_llvm14=	14.0.29
 DISTVERSION_llvm13=	13.0.5
 DISTVERSION_llvm12=	12.0.1
 CATEGORIES=	devel
@@ -24,7 +25,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
 LIB_DEPENDS=	libLLVM-${FLAVOR:S/llvm//}.so:devel/${FLAVOR}
 
-FLAVORS=	${22 21 20 19 18 17 16 15 14 13 12:L:S/^/llvm/}
+FLAVORS=	${23 22 21 20 19 18 17 16 15 14 13 12:L:S/^/llvm/}
 CONFLICTS_BUILD=${FLAVOR}-lite
 
 USES=		cmake compiler:c++11-lib
@@ -37,7 +38,7 @@ GH_PROJECT=	SPIRV-LLVM-Translator
 .elif ${FLAVOR:U} == llvm13
 GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-411-gaa6cef1:headers/projects/SPIRV-Headers
 .else
-GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-493-g575b651:headers/projects/SPIRV-Headers
+GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-511-gcb42dec:headers/projects/SPIRV-Headers
 .endif
 DISTINFO_FILE=	${.CURDIR}/distinfo.${FLAVOR}
 PATCHDIR=	${.CURDIR}/files.${FLAVOR}

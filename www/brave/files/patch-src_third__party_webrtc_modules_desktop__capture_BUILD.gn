@@ -1,0 +1,11 @@
+--- src/third_party/webrtc/modules/desktop_capture/BUILD.gn.orig	2026-09-25 15:26:43 UTC
++++ src/third_party/webrtc/modules/desktop_capture/BUILD.gn
+@@ -732,6 +732,8 @@ rtc_library("desktop_capture") {
+ 
+       "Xrender",
+       "Xtst",
++      "X11-xcb",
++      "xcb-shm"
+     ]
+   }
+ 

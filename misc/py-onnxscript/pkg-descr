@@ -1,0 +1,6 @@
+ONNX Script lets developers write ONNX functions and models directly in a
+subset of Python.  Decorated functions are traced into ONNX graphs, so
+operators and control flow can be expressed as ordinary Python code and
+checked with ordinary Python tooling.
+
+It is used by the PyTorch ONNX exporter and by the ONNX rewriter passes.

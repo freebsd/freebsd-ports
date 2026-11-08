@@ -1,5 +1,5 @@
 PORTNAME=	sqlitecpp
-DISTVERSION=	3.3.3
+DISTVERSION=	3.4.0
 CATEGORIES=	databases devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,6 +22,6 @@ CMAKE_ON=		BUILD_SHARED_LIBS
 CMAKE_OFF=		SQLITECPP_INTERNAL_SQLITE SQLITECPP_RUN_CPPLINT
 CMAKE_TESTING_ON=	SQLITECPP_BUILD_TESTS
 
-# tests as of 3.3.3: 100% tests passed, 0 tests failed out of 1
+# tests as of 3.4.0: 100% tests passed out of 1
 
 .include <bsd.port.mk>

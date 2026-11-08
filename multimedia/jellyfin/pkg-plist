@@ -2762,6 +2762,7 @@ jellyfin/libhostfxr.so
 jellyfin/libhostpolicy.so
 jellyfin/libmscordaccore.so
 jellyfin/libmscordbi.so
+jellyfin/libHarfBuzzSharp.so
 jellyfin/libse.dll
 jellyfin/mscorlib.dll
 jellyfin/netstandard.dll

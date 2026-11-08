@@ -171,6 +171,7 @@
 %%DATADIR%%/core/tests/test_changelog.py
 %%DATADIR%%/core/tests/test_data_backends.py
 %%DATADIR%%/core/tests/test_filtersets.py
+%%DATADIR%%/core/tests/test_forms.py
 %%DATADIR%%/core/tests/test_jobs.py
 %%DATADIR%%/core/tests/test_management_command_coverage.py
 %%DATADIR%%/core/tests/test_management_commands.py
@@ -660,6 +661,7 @@
 %%DATADIR%%/extras/api/__init__.py
 %%DATADIR%%/extras/api/customfields.py
 %%DATADIR%%/extras/api/mixins.py
+%%DATADIR%%/extras/api/routers.py
 %%DATADIR%%/extras/api/serializers.py
 %%DATADIR%%/extras/api/serializers_/__init__.py
 %%DATADIR%%/extras/api/serializers_/attachments.py
@@ -795,6 +797,7 @@
 %%DATADIR%%/extras/tests/__init__.py
 %%DATADIR%%/extras/tests/query_counts.json
 %%DATADIR%%/extras/tests/test_api.py
+%%DATADIR%%/extras/tests/test_api_routers.py
 %%DATADIR%%/extras/tests/test_conditions.py
 %%DATADIR%%/extras/tests/test_custom_validation.py
 %%DATADIR%%/extras/tests/test_customfields.py
@@ -808,6 +811,7 @@
 %%DATADIR%%/extras/tests/test_management_commands.py
 %%DATADIR%%/extras/tests/test_models.py
 %%DATADIR%%/extras/tests/test_scripts.py
+%%DATADIR%%/extras/tests/test_scripts_deletion.py
 %%DATADIR%%/extras/tests/test_signals.py
 %%DATADIR%%/extras/tests/test_tables.py
 %%DATADIR%%/extras/tests/test_tags.py
@@ -890,6 +894,7 @@
 %%DATADIR%%/ipam/migrations/0091_alter_service_index_and_ordering.py
 %%DATADIR%%/ipam/migrations/0092_iprange_host_indexes.py
 %%DATADIR%%/ipam/migrations/0093_alter_prefix__region_alter_prefix__site_group.py
+%%DATADIR%%/ipam/migrations/0094_ipaddress_host_index.py
 %%DATADIR%%/ipam/migrations/__init__.py
 %%DATADIR%%/ipam/models/__init__.py
 %%DATADIR%%/ipam/models/asns.py
@@ -985,6 +990,7 @@
 %%DATADIR%%/netbox/graphql/filter_lookups.py
 %%DATADIR%%/netbox/graphql/filter_mixins.py
 %%DATADIR%%/netbox/graphql/filters.py
+%%DATADIR%%/netbox/graphql/optimization.py
 %%DATADIR%%/netbox/graphql/pagination.py
 %%DATADIR%%/netbox/graphql/scalars.py
 %%DATADIR%%/netbox/graphql/schema.py
@@ -997,7 +1003,6 @@
 %%DATADIR%%/netbox/models/deletion.py
 %%DATADIR%%/netbox/models/features.py
 %%DATADIR%%/netbox/models/mixins.py
-%%DATADIR%%/netbox/monkey.py
 %%DATADIR%%/netbox/navigation/__init__.py
 %%DATADIR%%/netbox/navigation/menu.py
 %%DATADIR%%/netbox/object_actions.py
@@ -1051,6 +1056,7 @@
 %%DATADIR%%/netbox/tests/test_base_classes.py
 %%DATADIR%%/netbox/tests/test_cli.py
 %%DATADIR%%/netbox/tests/test_config.py
+%%DATADIR%%/netbox/tests/test_context_managers.py
 %%DATADIR%%/netbox/tests/test_forms.py
 %%DATADIR%%/netbox/tests/test_graphql.py
 %%DATADIR%%/netbox/tests/test_import.py
@@ -1967,6 +1973,7 @@
 %%DATADIR%%/utilities/tests/test_filter_modifiers.py
 %%DATADIR%%/utilities/tests/test_filters.py
 %%DATADIR%%/utilities/tests/test_forms.py
+%%DATADIR%%/utilities/tests/test_html.py
 %%DATADIR%%/utilities/tests/test_jsonschema.py
 %%DATADIR%%/utilities/tests/test_management_commands.py
 %%DATADIR%%/utilities/tests/test_managers.py

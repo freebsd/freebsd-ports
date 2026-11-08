@@ -1,0 +1,26 @@
+-- Ensure bundled ONNX and Protobuf headers are searched before system
+-- headers such as /usr/local/include/google/protobuf and /usr/local/include/onnx.
+-- Several find_package targets (nlohmann_json, Eigen3, Python) add
+-- /usr/local/include as a regular include directory. Because it is listed
+-- before the bundled protobuf interface include, the compiler picks up the
+-- older system protobuf 29.x headers and the resulting object files expect an
+-- ABI that the bundled protobuf 33.6 library does not provide, causing link
+-- errors for RepeatedPtrFieldBase methods.
+--- cmake/CMakeLists.txt.orig	2026-09-10 06:09:41 UTC
++++ cmake/CMakeLists.txt
+@@ -1380,6 +1380,15 @@ function(onnxruntime_add_include_to_target dst_target)
+ endfunction()
+ 
+ function(onnxruntime_add_include_to_target dst_target)
++    # Prefer bundled dependency headers over any system copies that other
++    # imported targets may have placed on the include path.
++    if(DEFINED protobuf_SOURCE_DIR)
++      target_include_directories(${dst_target} PRIVATE
++        ${onnx_BINARY_DIR}
++        ${onnx_SOURCE_DIR}
++        ${protobuf_SOURCE_DIR}/src
++        ${protobuf_SOURCE_DIR}/third_party/utf8_range)
++    endif()
+     foreach(src_target ${ARGN})
+       if(TARGET ${src_target})
+         target_include_directories(${dst_target} PRIVATE $<TARGET_PROPERTY:${src_target},INTERFACE_INCLUDE_DIRECTORIES>)

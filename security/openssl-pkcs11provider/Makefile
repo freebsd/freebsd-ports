@@ -1,5 +1,5 @@
 PORTNAME=	pkcs11provider
-PORTVERSION=	1.2.0
+PORTVERSION=	1.3.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 PKGNAMEPREFIX=	openssl-
@@ -23,7 +23,7 @@ MESON_ARGS=	--libdir ${PREFIX} \
 		-Dmodulesdir="${PREFIX}/lib/ossl-modules"
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	latchset
+GH_ACCOUNT=	${PKGNAMEPREFIX}projects
 GH_PROJECT=	pkcs11-provider
 
 SUB_FILES=	pkcs11provider.cnf

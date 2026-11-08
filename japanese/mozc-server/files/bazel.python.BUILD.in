@@ -1,0 +1,22 @@
+load("@rules_python//python:py_runtime.bzl", "py_runtime")
+load("@rules_python//python:py_runtime_pair.bzl", "py_runtime_pair")
+
+package(default_visibility = ["//visibility:public"])
+
+py_runtime(
+    name = "runtime",
+    interpreter_path = "%%PYTHON_CMD%%",
+    python_version = "PY3",
+    stub_shebang = "#!%%PYTHON_CMD%%",
+)
+
+py_runtime_pair(
+    name = "runtime_pair",
+    py3_runtime = ":runtime",
+)
+
+toolchain(
+    name = "python_toolchain",
+    toolchain = ":runtime_pair",
+    toolchain_type = "@rules_python//python:toolchain_type",
+)

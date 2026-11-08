@@ -19,9 +19,9 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>0:devel/py-coverage@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-asyncio>0:devel/py-pytest-asyncio@${PY_FLAVOR}
 
-USES=		pytest python
-USE_PYTHON=	autoplist concurrent pep517
-PYTEST_ARGS=	--assert=plain
+USES=		python
+USE_PYTHON=	autoplist concurrent pep517 pytest
+TEST_ARGS=	--assert=plain
 NO_ARCH=	yes
 
 .include <bsd.port.mk>

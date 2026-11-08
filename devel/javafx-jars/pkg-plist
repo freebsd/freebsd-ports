@@ -1,0 +1,8 @@
+%%JAVAJARDIR%%/javafx-swt.jar
+%%JAVAJARDIR%%/javafx.base.jar
+%%JAVAJARDIR%%/javafx.controls.jar
+%%JAVAJARDIR%%/javafx.fxml.jar
+%%JAVAJARDIR%%/javafx.graphics.jar
+%%JAVAJARDIR%%/javafx.media.jar
+%%JAVAJARDIR%%/javafx.swing.jar
+%%JAVAJARDIR%%/javafx.web.jar

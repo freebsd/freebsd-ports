@@ -1,0 +1,18 @@
+--- CMakeLists.txt.orig	2026-10-05 00:48:37 UTC
++++ CMakeLists.txt
+@@ -2,7 +2,7 @@ project(TermOx VERSION 2.0.0 LANGUAGES CXX)
+ project(TermOx VERSION 2.0.0 LANGUAGES CXX)
+ 
+ # Create Library Target
+-add_library(TermOx STATIC
++add_library(TermOx SHARED
+     src/align.cpp
+     src/application.cpp
+     src/bordered.cpp
+@@ -88,4 +88,4 @@ add_subdirectory(tests)
+ 
+ # Add the tests subdirectory
+ add_subdirectory(tests)
+-add_subdirectory(examples)
+\ No newline at end of file
++add_subdirectory(examples)

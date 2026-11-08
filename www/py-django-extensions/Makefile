@@ -1,9 +1,9 @@
 PORTNAME=	django-extensions
-PORTVERSION=	3.2.3
-PORTREVISION=	3
+PORTVERSION=	4.1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	django_extensions-${PORTVERSION}
 
 MAINTAINER=	ports@caomhin.org
 COMMENT=	Global custom management extensions for the Django Framework
@@ -12,11 +12,20 @@ WWW=		https://github.com/django-extensions/django-extensions
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django52>=3.2:www/py-django52@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django52>=4.2:www/py-django52@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools>=61.2:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django52>=4.2:www/py-django52@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
+
+OPTIONS_DEFINE=		MAILDEBUG
+OPTIONS_DEFAULT=	MAILDEBUG
+MAILDEBUG_DESC=		Debugging SMTP server (mail_debug command)
+
+MAILDEBUG_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiosmtpd>0:mail/py-aiosmtpd@${PY_FLAVOR}
 
 .include <bsd.port.mk>

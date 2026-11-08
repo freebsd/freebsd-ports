@@ -1,0 +1,5 @@
+TIMESTAMP = 1788516807
+SHA256 (firmware-nic-intel-1.37.0-1.1.x86_64.rpm) = 82c9aebfbd933341c54111e9ee7ee87ef8c3080c2c723ff2b0166305860c0cc9
+SIZE (firmware-nic-intel-1.37.0-1.1.x86_64.rpm) = 10410691
+SHA256 (700Series_NVMUpdatePackage_v9_57_FreeBSD.tar.gz) = eb5c8a31aaad7fbe5184890055913373340a12304da49f91b69b6bf883564df5
+SIZE (700Series_NVMUpdatePackage_v9_57_FreeBSD.tar.gz) = 75155912

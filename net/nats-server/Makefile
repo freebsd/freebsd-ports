@@ -1,6 +1,6 @@
 PORTNAME=	nats-server
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.14.3
+DISTVERSION=	2.15.1
 PORTREVISION=	1
 CATEGORIES=	net
 
@@ -16,6 +16,8 @@ USES=		go:modules
 USE_RC_SUBR=	nats.sh
 
 GO_MODULE=	github.com/nats-io/nats-server/v2
+
+PORTSCOUT=	limit:^[0-9\.]*$$ # otherwise it picks up -RC prerelease tags
 
 USERS=		nats
 GROUPS=		nats

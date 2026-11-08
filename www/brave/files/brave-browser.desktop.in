@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Brave
+GenericName=Web Browser
+Comment=%%COMMENT%%
+Icon=brave
+Exec=%%PREFIX%%/bin/brave %U
+TryExec=%%PREFIX%%/bin/brave
+Terminal=false
+Categories=Network;WebBrowser;
+MimeType=text/html;text/xml;application/xhtml+xml;x-scheme-handler/http;x-scheme-handler/https;
+StartupNotify=true
+StartupWMClass=Brave-browser

@@ -47,7 +47,7 @@ share/locale/th/LC_MESSAGES/xournalpp.mo
 share/locale/tr/LC_MESSAGES/xournalpp.mo
 share/locale/uk_UA/LC_MESSAGES/xournalpp.mo
 share/locale/vi/LC_MESSAGES/xournalpp.mo
-share/locale/zh/LC_MESSAGES/xournalpp.mo
+share/locale/zh_CN/LC_MESSAGES/xournalpp.mo
 share/locale/zh_HK/LC_MESSAGES/xournalpp.mo
 share/locale/zh_TW/LC_MESSAGES/xournalpp.mo
 share/man/man1/xournalpp-thumbnailer.1.gz

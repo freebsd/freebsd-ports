@@ -1,5 +1,5 @@
 PORTNAME=	polkit
-DISTVERSION=	127
+DISTVERSION=	128
 CATEGORIES=	sysutils gnome
 
 MAINTAINER=	desktop@FreeBSD.org
@@ -50,8 +50,8 @@ MANPAGES_BUILD_DEPENDS=	docbook-sgml>0:textproc/docbook-sgml \
 MANPAGES_USE=		gnome=libxslt:build
 MANPAGES_MESON_TRUE=	man
 
-.ifdef ALLOW_SYSTEM_AFFECTING_TESTS
-TEST_ENV+=		ALLOW_SYSTEM_AFFECTING_TESTS=1
+.ifdef ALLOW_SYSTEM_DESTRUCTIVE_TESTS
+TEST_ENV+=		ALLOW_SYSTEM_DESTRUCTIVE_TESTS=1
 .endif
 
 .include <bsd.port.pre.mk>
@@ -75,12 +75,12 @@ post-install:
 	${MKDIR} ${STAGEDIR}/var/lib/polkit-1/localauthority/${i}
 .endfor
 
-.if !defined(ALLOW_SYSTEM_AFFECTING_TESTS)
+.if !defined(ALLOW_SYSTEM_DESTRUCTIVE_TESTS)
 post-test:
 	@${ECHO_CMD}
 	@${ECHO_CMD} "===> Polkit tests were skipped, because they create system users and groups"
 	@${ECHO_CMD} "and are only safe to run inside a discardable jail. If that's the case, run"
-	@${ECHO_CMD} "make test ALLOW_SYSTEM_AFFECTING_TESTS=yes"
+	@${ECHO_CMD} "make test ALLOW_SYSTEM_DESTRUCTIVE_TESTS=yes"
 	@${ECHO_CMD}
 .endif
 

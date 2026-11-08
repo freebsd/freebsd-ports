@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Markov chain Monte Carlo Package
-WWW=		https://cran.r-project.org/web/packages/MCMCpack/
+WWW=		https://cran.r-project.org/package=MCMCpack
 
 LICENSE=	GPLv3
 

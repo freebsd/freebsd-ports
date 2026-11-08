@@ -1,30 +1,30 @@
 PORTNAME=	postfix-logwatch
-PORTVERSION=	1.40.03
-PORTREVISION=	2
+PORTVERSION=	1.40.07
 CATEGORIES=	mail
-MASTER_SITES=	SF/logreporters/${PORTNAME}/release/${PORTVERSION}
+MASTER_SITES=	https://michael.orlitzky.com/code/releases/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Postfix MTA log parser
-WWW=		https://logreporters.sourceforge.net/
+WWW=		https://michael.orlitzky.com/code/postfix-logwatch.xhtml
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-PORTDOCS=	Bugs Changes README
-PORTEXAMPLES=	${PORTNAME}.conf ${PORTNAME}.conf-topn
-
-USES=		perl5 shebangfix tar:tgz
+USES=		perl5 shebangfix tar:xz
 USE_PERL5=	run
-NO_BUILD=	yes
 SHEBANG_FILES=	${PORTNAME}
+
+NO_BUILD=	yes
+
+PORTDOCS=	Bugs Changes README.rst
+PORTEXAMPLES=	${PORTNAME}.conf ${PORTNAME}.conf-topn
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
 	@(cd ${WRKSRC} && \
 		${REINPLACE_CMD} -e 's!/usr/local/etc!${ETCDIR}!' \
-		${PORTNAME} ${PORTNAME}.1 README)
+		${PORTNAME} ${PORTNAME}.1 README.rst)
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin

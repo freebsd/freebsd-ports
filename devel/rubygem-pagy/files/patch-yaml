@@ -1,0 +1,32 @@
+Convert yaml to psych
+
+--- lib/pagy/modules/i18n/i18n.rb.orig	2026-09-23 10:53:05 UTC
++++ lib/pagy/modules/i18n/i18n.rb
+@@ -1,6 +1,6 @@
+ # frozen_string_literal: true
+ 
+-require 'yaml'
++require 'psych'
+ require_relative 'p11n'
+ 
+ class Pagy
+@@ -49,7 +49,7 @@ class Pagy
+         return locales[locale] = locales['en'] || load(locale: 'en')
+       end
+ 
+-      dictionary = YAML.load_file(path)[locale]
++      dictionary = Psych.load_file(path)[locale]
+       raise KeyError, "missing 'pagy' key in #{locale.inspect} locale" unless dictionary['pagy']
+ 
+       p11n = dictionary['pagy'].delete('p11n')
+--- pagy.gemspec.orig	2026-09-23 10:53:06 UTC
++++ pagy.gemspec
+@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
+   s.specification_version = 4
+ 
+   s.add_runtime_dependency(%q<json>.freeze, [">= 0".freeze])
++  s.add_runtime_dependency(%q<psych>.freeze, [">= 0".freeze])
+   s.add_runtime_dependency(%q<uri>.freeze, [">= 0".freeze])
+-  s.add_runtime_dependency(%q<yaml>.freeze, [">= 0".freeze])
+ end
+ 

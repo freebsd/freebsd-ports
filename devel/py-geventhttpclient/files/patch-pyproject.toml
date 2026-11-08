@@ -1,9 +1,9 @@
---- pyproject.toml.orig	2025-10-26 09:59:30 UTC
+--- pyproject.toml.orig	2026-09-29 00:00:02 UTC
 +++ pyproject.toml
-@@ -9,7 +9,7 @@ requires-python = ">=3.9"
+@@ -9,7 +9,7 @@ requires-python = ">=3.11"
  description = "HTTP client library for gevent"
  readme = "README.md"
- requires-python = ">=3.9"
+ requires-python = ">=3.11"
 -license = "MIT"
 +license = {file = "LICENSE-MIT"}
  keywords = ["http", "gevent", "client"]

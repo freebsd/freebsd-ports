@@ -21,7 +21,6 @@ etc/bash_completion.d/jj
 %%PORTDOCS%%%%DOCSDIR%%/design/run.md
 %%PORTDOCS%%%%DOCSDIR%%/design/secure-config.md
 %%PORTDOCS%%%%DOCSDIR%%/design/sparse-v2.md
-%%PORTDOCS%%%%DOCSDIR%%/design/tracking-branches.md
 %%PORTDOCS%%%%DOCSDIR%%/design_doc_blueprint.md
 %%PORTDOCS%%%%DOCSDIR%%/design_docs.md
 %%PORTDOCS%%%%DOCSDIR%%/filesets.md
@@ -48,13 +47,13 @@ etc/bash_completion.d/jj
 %%PORTDOCS%%%%DOCSDIR%%/related-work.md
 %%PORTDOCS%%%%DOCSDIR%%/releasing.md
 %%PORTDOCS%%%%DOCSDIR%%/revsets.md
-%%PORTDOCS%%%%DOCSDIR%%/revsets.toml
 %%PORTDOCS%%%%DOCSDIR%%/roadmap.md
 %%PORTDOCS%%%%DOCSDIR%%/sapling-comparison.md
 %%PORTDOCS%%%%DOCSDIR%%/style_guide.md
 %%PORTDOCS%%%%DOCSDIR%%/technical/architecture.md
 %%PORTDOCS%%%%DOCSDIR%%/technical/concurrency.md
 %%PORTDOCS%%%%DOCSDIR%%/technical/conflicts.md
+%%PORTDOCS%%%%DOCSDIR%%/technical/revset-evaluation.md
 %%PORTDOCS%%%%DOCSDIR%%/technical/types.svg
 %%PORTDOCS%%%%DOCSDIR%%/templates.md
 %%PORTDOCS%%%%DOCSDIR%%/testimonials.md
@@ -105,6 +104,7 @@ share/man/man1/jj-config-path.1.gz
 share/man/man1/jj-config-set.1.gz
 share/man/man1/jj-config-unset.1.gz
 share/man/man1/jj-config.1.gz
+share/man/man1/jj-converge.1.gz
 share/man/man1/jj-describe.1.gz
 share/man/man1/jj-diff.1.gz
 share/man/man1/jj-diffedit.1.gz
@@ -113,6 +113,8 @@ share/man/man1/jj-edit.1.gz
 share/man/man1/jj-evolog.1.gz
 share/man/man1/jj-file-annotate.1.gz
 share/man/man1/jj-file-chmod.1.gz
+share/man/man1/jj-file-delete.1.gz
+share/man/man1/jj-file-edit.1.gz
 share/man/man1/jj-file-list.1.gz
 share/man/man1/jj-file-search.1.gz
 share/man/man1/jj-file-show.1.gz
@@ -177,6 +179,8 @@ share/man/man1/jj-status.1.gz
 share/man/man1/jj-tag-delete.1.gz
 share/man/man1/jj-tag-list.1.gz
 share/man/man1/jj-tag-set.1.gz
+share/man/man1/jj-tag-track.1.gz
+share/man/man1/jj-tag-untrack.1.gz
 share/man/man1/jj-tag.1.gz
 share/man/man1/jj-undo.1.gz
 share/man/man1/jj-unsign.1.gz
@@ -184,6 +188,7 @@ share/man/man1/jj-util-backend-name.1.gz
 share/man/man1/jj-util-backend.1.gz
 share/man/man1/jj-util-completion.1.gz
 share/man/man1/jj-util-config-schema.1.gz
+share/man/man1/jj-util-diff.1.gz
 share/man/man1/jj-util-exec.1.gz
 share/man/man1/jj-util-gc.1.gz
 share/man/man1/jj-util-install-man-pages.1.gz
@@ -194,6 +199,7 @@ share/man/man1/jj-version.1.gz
 share/man/man1/jj-workspace-add.1.gz
 share/man/man1/jj-workspace-forget.1.gz
 share/man/man1/jj-workspace-list.1.gz
+share/man/man1/jj-workspace-remove.1.gz
 share/man/man1/jj-workspace-rename.1.gz
 share/man/man1/jj-workspace-root.1.gz
 share/man/man1/jj-workspace-update-stale.1.gz

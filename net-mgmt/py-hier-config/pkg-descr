@@ -1,0 +1,20 @@
+Hierarchical Configuration is a Python library that is able to take a running
+configuration of a network device, compare it to its intended configuration,
+and build the remediation steps necessary bring a device into spec with its
+intended configuration.
+
+Hierarchical Configuration has been used extensively on:
+
+* Cisco IOS
+* Cisco IOSXR
+* Cisco NXOS
+* Arista EOS
+
+However, any NOS that utilizes a CLI syntax that is structured in a similar
+fashion to IOS should work mostly out of the box.
+
+NOS's that utilize a set based CLI syntax has been added as experimental
+functionality. OS's that utilize this syntax are:
+
+* Juniper JunOS
+* VyOS

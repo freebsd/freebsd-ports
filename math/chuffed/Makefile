@@ -1,5 +1,5 @@
 PORTNAME=	chuffed
-DISTVERSION=	0.13.2
+DISTVERSION=	0.14.0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -8,6 +8,8 @@ WWW=		https://github.com/chuffed/chuffed
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN_i386=	fails to compile: error: use of overloaded operator '[]' is ambiguous (with operand types 'vec<int>' and 'int')
 
 USES=		bison cmake compiler:c++11-lang
 USE_GITHUB=	yes

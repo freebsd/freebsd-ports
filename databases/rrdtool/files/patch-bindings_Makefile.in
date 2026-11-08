@@ -1,6 +1,6 @@
---- bindings/Makefile.in.orig	2026-05-19 19:34:45 UTC
+--- bindings/Makefile.in.orig	2026-08-07 13:48:57 UTC
 +++ bindings/Makefile.in
-@@ -728,11 +728,11 @@ install-data-local:
+@@ -729,11 +729,11 @@ install-data-local:
  install-data-local:
  	$(AM_V_GEN)test -f ${builddir}/perl-piped/Makefile \
             && ( cd ${builddir}/perl-piped \
@@ -14,7 +14,7 @@
             || true
  	$(AM_V_GEN)test -f ${builddir}/ruby/Makefile \
             && ( cd ${builddir}/ruby \
-@@ -741,7 +741,7 @@ install-data-local:
+@@ -742,7 +742,7 @@ install-data-local:
  	$(AM_V_GEN)test -f ${builddir}/python/dist/*.whl \
             && ( $(PYTHON) -m pip install --upgrade --no-index --no-deps \
                    --no-cache-dir --disable-pip-version-check \

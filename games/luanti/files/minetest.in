@@ -50,7 +50,7 @@ required_files=${minetest_config}
 start_precmd=minetest_prestart
 
 minetest_prestart () {
-	if ! ${procname} --gameid list | grep -q "."; then
+	if ! ${procname} --gameid list 2>&1 | grep -q "."; then
 		echo "Warning: no games installed (\`${procname} --gameid list\` is empty). You may want to install games/minetest_game or other games from https://content.minetest.net/." 1>&2
 	fi
 	if [ ! -d ${minetest_rundir} ]; then

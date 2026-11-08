@@ -1,6 +1,6 @@
 PORTNAME=	nsxiv
 DISTVERSIONPREFIX=	v
-DISTVERSION=	33
+DISTVERSION=	34
 CATEGORIES=	graphics
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -12,20 +12,22 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libexif.so:graphics/libexif \
 		libfontconfig.so:x11-fonts/fontconfig \
-		libgif.so:graphics/giflib \
 		libImlib2.so:graphics/imlib2 \
-		libinotify.so:devel/libinotify \
-		libwebp.so:graphics/webp \
-		libwebpdemux.so:graphics/webp
-
+		libinotify.so:devel/libinotify
 USES=		desktop-file-utils gmake localbase:ldflags pkgconfig xorg
 USE_GITHUB=	yes
 USE_XORG=	x11 xft
 
-MAKE_ARGS=	MANPREFIX=${PREFIX}/share/man
-MAKE_ENV=	EGPREFIX=${EXAMPLESDIR} LDLIBS=-linotify
+MAKE_ARGS=	CFLAGS="${CFLAGS}" \
+		MANPREFIX=${PREFIX}/share/man \
+		VERSION="${PKGVERSION}"
+MAKE_ENV=	EGPREFIX=${EXAMPLESDIR} \
+		LDLIBS=-linotify
 
 INSTALL_TARGET=	install-all
+
+CFLAGS+=	${WITH_DEBUG:U-DNDEBUG} \
+		${WITH_DEBUG:D-DDEBUG -g3 -fsanitize=address,undefined}
 
 OPTIONS_DEFINE=	EXAMPLES
 

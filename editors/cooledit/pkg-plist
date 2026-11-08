@@ -1,12 +1,9 @@
 bin/cooledit
-bin/cooledit-gdb
 bin/coolman
 bin/coolproject
+bin/coolterm
 bin/remotefs
 bin/smalledit
-lib/libCw.a
-share/man/man1/cooledit.1.gz
-share/man/man1/remotefs.1.gz
 %%DATADIR%%/c_utils.py
 %%DATADIR%%/global.py
 %%DATADIR%%/sh_utils.py
@@ -19,6 +16,7 @@ share/man/man1/remotefs.1.gz
 %%DATADIR%%/syntax/bapc.syntax
 %%DATADIR%%/syntax/c.syntax
 %%DATADIR%%/syntax/cabal.syntax
+%%DATADIR%%/syntax/cdoc.syntax
 %%DATADIR%%/syntax/changelog.syntax
 %%DATADIR%%/syntax/cmake.syntax
 %%DATADIR%%/syntax/cobol.syntax
@@ -115,3 +113,6 @@ share/man/man1/remotefs.1.gz
 %%DATADIR%%/syntax/yaml.syntax
 %%DATADIR%%/syntax/yum-repo.syntax
 %%DATADIR%%/syntax/yxx.syntax
+share/man/man1/cooledit.1.gz
+share/man/man1/coolterm.1.gz
+share/man/man1/remotefs.1.gz

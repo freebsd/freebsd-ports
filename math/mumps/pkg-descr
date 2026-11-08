@@ -11,6 +11,6 @@ available).
 - Various matrix input formats: assembled format; distributed assembled
 format; elemental format.
 - Partial factorization and Schur complement matrix.
-- Several orderings interfaced : AMD, AMF, PORD, METIS
+- Several orderings interfaced : AMD, AMF, PORD
 
-When MPI is disabled, libseq is installed.
+Note: math/mumps is a pre-requisite for Code_Aster.

@@ -22,6 +22,8 @@ USE_GITHUB=	yes
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_TESTING_ON=	BUILD_TESTS
 
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/toxext/toxext/issues/13
+
 CFLAGS+=	-fPIC # see https://github.com/toxext/toxext/issues/7
 
 .include <bsd.port.mk>

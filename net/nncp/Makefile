@@ -1,6 +1,6 @@
 PORTNAME=	nncp
 DISTVERSION=	8.13.0
-PORTREVISION=	12
+PORTREVISION=	17
 CATEGORIES=	net
 MASTER_SITES=	http://www.nncpgo.org/download/
 
@@ -15,7 +15,7 @@ USES=		go:modules,no_targets tar:xz
 
 USE_RC_SUBR=	nncp-caller nncp-daemon nncp-toss
 
-SUB_FILES=	pkg-message pkg-install pkg-deinstall
+SUB_FILES=	pkg-deinstall pkg-install pkg-message
 
 INFO=		nncp
 PORTDOCS=	AUTHORS NEWS NEWS.RU README README.RU THANKS

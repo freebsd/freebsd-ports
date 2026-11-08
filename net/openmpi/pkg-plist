@@ -43,11 +43,11 @@ libdata/pkgconfig/ompi.pc
 %%MPIDIR%%/lib/libmpi.la
 %%MPIDIR%%/lib/libmpi.so
 %%MPIDIR%%/lib/libmpi.so.40
-%%MPIDIR%%/lib/libmpi.so.40.40.7
+%%MPIDIR%%/lib/libmpi.so.40.40.8
 %%MPIDIR%%/lib/libmpi_mpifh.la
 %%MPIDIR%%/lib/libmpi_mpifh.so
 %%MPIDIR%%/lib/libmpi_mpifh.so.40
-%%MPIDIR%%/lib/libmpi_mpifh.so.40.40.1
+%%MPIDIR%%/lib/libmpi_mpifh.so.40.40.2
 %%MPIDIR%%/lib/libmpi_usempi_ignore_tkr.la
 %%MPIDIR%%/lib/libmpi_usempi_ignore_tkr.so
 %%MPIDIR%%/lib/libmpi_usempi_ignore_tkr.so.40
@@ -59,7 +59,7 @@ libdata/pkgconfig/ompi.pc
 %%MPIDIR%%/lib/libopen-pal.la
 %%MPIDIR%%/lib/libopen-pal.so
 %%MPIDIR%%/lib/libopen-pal.so.80
-%%MPIDIR%%/lib/libopen-pal.so.80.0.5
+%%MPIDIR%%/lib/libopen-pal.so.80.0.6
 %%MPIDIR%%/lib/mpi.mod
 %%MPIDIR%%/lib/mpi_ext.mod
 %%MPIDIR%%/lib/mpi_f08.mod

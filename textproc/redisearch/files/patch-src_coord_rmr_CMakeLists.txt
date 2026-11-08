@@ -1,0 +1,9 @@
+--- src/coord/rmr/CMakeLists.txt.orig	2026-08-15 22:56:20 UTC
++++ src/coord/rmr/CMakeLists.txt
+@@ -15,6 +15,3 @@ add_library(rmr OBJECT ${RMR_SRC})
+ endif()
+ 
+ add_library(rmr OBJECT ${RMR_SRC})
+-
+-# Add dependency to ensure libuv is built before rmr
+-add_dependencies(rmr uv_a)

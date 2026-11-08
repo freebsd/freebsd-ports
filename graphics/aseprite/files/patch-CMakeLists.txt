@@ -1,21 +1,29 @@
---- CMakeLists.txt.orig	2018-07-24 19:18:54 UTC
+-- Fall back to system webp when skia was built with skia_use_system_libwebp=true.
+-- This handles the case where the installed aseprite-skia port uses system libraries.
+
+--- CMakeLists.txt.orig	2026-08-25 10:20:49 UTC
 +++ CMakeLists.txt
-@@ -238,8 +238,8 @@ add_definitions(-DPNG_NO_MMX_CODE) # Do 
- # libwebp
- if(WITH_WEBP_SUPPORT)
-   set(WEBP_LIBRARIES webp webpdemux webpmux)
--  set(WEBP_INCLUDE_DIR ${LIBWEBP_DIR}/src)
--  include_directories(${WEBP_INCLUDE_DIR})
-+  #set(WEBP_INCLUDE_DIR ${LIBWEBP_DIR}/src)
-+  #include_directories(${WEBP_INCLUDE_DIR})
- endif()
- 
- # tinyxml
-@@ -391,6 +391,7 @@ if(UNIX AND NOT APPLE AND NOT BEOS)
-   find_package(X11 REQUIRED)
-   include_directories(SYSTEM ${X11_INCLUDE_DIR})
-   list(APPEND PLATFORM_LIBS ${X11_LIBRARIES})
-+  set(X11_LIB_SEARCH_PATH ${FREEBSD_LIB_PATH})
- 
-   if(X11_XShm_FOUND)
-     list(APPEND PLATFORM_LIBS ${X11_Xext_LIB})
+@@ -375,11 +375,21 @@ if(ENABLE_WEBP)
+     find_library(WEBP_LIBRARIES webp
+       NAMES libwebp # required for Windows
+       PATHS "${SKIA_LIBRARY_DIR}" NO_DEFAULT_PATH)
+-    set(WEBP_INCLUDE_DIR "${SKIA_DIR}/third_party/externals/libwebp/src")
+     if(WEBP_LIBRARIES)
++      find_library(WEBPDEMUX_LIBRARY webpdemux)
++      find_library(WEBPMUX_LIBRARY webpmux)
++      set(WEBP_LIBRARIES ${WEBP_LIBRARIES} ${WEBPDEMUX_LIBRARY} ${WEBPMUX_LIBRARY})
++      set(WEBP_INCLUDE_DIR "${SKIA_DIR}/third_party/externals/libwebp/src")
+       set(WEBP_FOUND ON)
+     else()
+-      set(WEBP_FOUND OFF)
++      # Fall back to system webp (when skia was built with skia_use_system_libwebp=true)
++      find_library(WEBP_LIBRARIES NAMES webp)
++      find_path(WEBP_INCLUDE_DIR NAMES webp/decode.h)
++      if(WEBP_LIBRARIES)
++        set(WEBP_FOUND ON)
++      else()
++        set(WEBP_FOUND OFF)
++      endif()
+     endif()
+   else()
+     set(WEBP_FOUND ON)

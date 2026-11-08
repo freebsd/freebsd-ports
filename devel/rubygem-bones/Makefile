@@ -1,5 +1,6 @@
 PORTNAME=	bones
 PORTVERSION=	3.9.0
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +13,7 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-little-plugger>=1.1<2:devel/rubygem-little-plugger \
 		rubygem-loquacious>=1.9<2:devel/rubygem-loquacious \
 		rubygem-rake>=13.0<14:devel/rubygem-rake \
-		rubygem-rdoc>=6.0<7:devel/rubygem-rdoc
+		rubygem-rdoc>=6.0:devel/rubygem-rdoc
 
 USES=		gem
 

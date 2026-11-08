@@ -46,7 +46,7 @@ typedef uint64_t __le64;
 #define	__aligned_u64	__u64 __attribute__((aligned(8)))
 
 /* search.h */
-#if __FreeBSD_version < 1600000
+#if __FreeBSD_version < 1500506
 static inline void
 tdestroy(void *vroot __unused, void (*freefct)(void *) __unused)
 {

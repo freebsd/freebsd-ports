@@ -1,7 +1,7 @@
 [
 { type: install
   message: <<EOM
-  If you're upgrading from a previous release prior to 0.11.1 you
+  If you're upgrading from a previous release prior to 0.16.0 you
   are recommended to reset your configuration by running 'pdfcpu config reset'.
 EOM
 }

@@ -1,5 +1,6 @@
 PORTNAME=	FreeCAD
-DISTVERSION=	1.1.3
+DISTVERSION=	1.1.4
+PORTREVISION=	3
 CATEGORIES=	cad
 
 MAINTAINER=	cmt@FreeBSD.org
@@ -35,7 +36,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libboost_thread.so:devel/boost-libs \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreeimage.so:graphics/freeimage \
-		libavutil.so.60:multimedia/ffmpeg \
+		libavutil.so:multimedia/ffmpeg \
 		libmed.so:french/med \
 		libshiboken6.abi3.so:devel/shiboken6@${PY_FLAVOR} \
 		libhdf5.so:science/hdf5 \
@@ -111,7 +112,7 @@ COLLADA_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycollada>0:graphics/py-pycollada@${
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == i386
+.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == i386 || ${ARCH} == powerpc64le
 PLIST_SUB=	WEBENGINE=""
 USE_QT+=	webengine
 .else

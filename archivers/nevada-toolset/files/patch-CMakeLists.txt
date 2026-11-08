@@ -1,13 +1,19 @@
 --- CMakeLists.txt.orig	2020-08-15 22:06:32 UTC
 +++ CMakeLists.txt
-@@ -15,10 +15,6 @@ option(BUILD_GUI_TOOLS "Build GUI versions of tools wh
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 3.1.0)
++cmake_minimum_required(VERSION 3.1.0...9.9.9)
+ 
+ if (NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
+     message(STATUS "No build type selected, default to Debug")
+@@ -14,10 +14,6 @@ else()
+ endif()
  
  option(BUILD_GUI_TOOLS "Build GUI versions of tools where available (Requires wxWidgets)." OFF)
- 
+-
 -if(USE_ICU)
 -    find_package(ICU REQUIRED data i18n io tu uc)
 -endif()
--
+ 
  if(BUILD_GUI_TOOLS)
      find_package(wxWidgets REQUIRED core base xrc xml adv)
- endif()

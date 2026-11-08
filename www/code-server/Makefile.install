@@ -13,5 +13,10 @@ do-install:
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${FILESDIR}/README.md \
+	${INSTALL_DATA} ${FILESDIR}/README.md ${FILESDIR}/EXTENSIONS.md \
 		${STAGEDIR}${DOCSDIR}
+
+post-stage:
+	@${FIND} ${STAGEDIR}${DATADIR} -name '*.map' -type f -delete
+	@${FIND} ${STAGEDIR}${DATADIR} -type d -empty -delete
+	@${FIND} ${STAGEDIR}${DATADIR} -name '*.node' -type f | while read f; do /usr/bin/file -b "$${f}" | ${GREP} -q 'ELF.*FreeBSD' && ${STRIP_CMD} "$${f}" || ${TRUE}; done

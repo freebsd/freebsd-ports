@@ -5,7 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Internal shared library for the Ruby Stackdriver integration libraries
-WWW=		https://cloud.google.com/ruby/docs/reference/stackdriver-core/latest/ \
+WWW=		https://docs.cloud.google.com/ruby/docs/reference/stackdriver-core/latest \
 		https://googleapis.github.io/google-cloud-ruby/docs/ \
 		https://github.com/googleapis/google-cloud-ruby/tree/main/stackdriver-core \
 		https://github.com/googleapis/google-cloud-ruby

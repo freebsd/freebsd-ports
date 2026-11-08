@@ -1,13 +1,12 @@
 PORTNAME=	highspy
-DISTVERSION=	1.14.0
-PORTREVISION=	1
+DISTVERSION=	1.15.1
 CATEGORIES=	math
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	Python bindings for the extensible C++ library for random forests
-WWW=		https://github.com/automl/random_forest_run
+COMMENT=	Thin set of pybind11 wrappers to HiGHS
+WWW=		https://github.com/ERGO-Code/HiGHS
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
@@ -22,6 +21,11 @@ USE_PYTHON=	pep517 autoplist pytest
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
-# tests as of 1.14.0: 61 passed in 0.25s
+# tests as of 1.15.1: about failures see https://github.com/ERGO-Code/HiGHS/issues/3265
+# Results (1.33s):
+#       74 passed
+#        1 failed
+#          - highspy/tests/test_highspy.py:1312 TestHighsPy.test_user_interrupts
+#        1 error
 
 .include <bsd.port.mk>

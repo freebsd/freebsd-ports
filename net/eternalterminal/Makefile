@@ -1,6 +1,6 @@
 PORTNAME=	eternalterminal
 DISTVERSIONPREFIX=	et-v
-DISTVERSION=	7.0.0
+DISTVERSION=	7.1.1
 CATEGORIES=	net
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -22,7 +22,6 @@ GH_PROJECT=	EternalTerminal
 
 CMAKE_ON=	DISABLE_VCPKG
 CMAKE_OFF=	BUILD_TESTING
-CMAKE_TESTING_ON=	BUILD_TESTING
 
 CONFLICTS_INSTALL=	linux-enemyterritory # bin/et
 
@@ -35,5 +34,7 @@ post-install:
 		${STAGEDIR}${PREFIX}/etc/etserver/et.cfg.sample
 	${INSTALL_SCRIPT} ${WRKSRC}/rc.d/etserver \
 		${STAGEDIR}${PREFIX}/etc/rc.d
+	# et1.cmd is the Windows batch version of the et1 wrapper, installed unconditionally
+	${RM} ${STAGEDIR}${PREFIX}/bin/et1.cmd
 
 .include <bsd.port.mk>

@@ -1,0 +1,46 @@
+[
+{ type: install
+  message: <<EOM
+The ezstream port has been updated to version 1.0.2.
+
+The configuration file is located at:
+    ${PREFIX}/etc/ezstream/ezstream.xml
+
+Several example configuration files are now available in the examples directory:
+    ${PREFIX}/share/examples/ezstream/
+
+To configure ezstream, copy one of the example files to ${PREFIX}/etc/ezstream/ezstream.xml:
+
+    # cp ${PREFIX}/share/examples/ezstream/ezstream-minimal.xml ${PREFIX}/etc/ezstream/ezstream.xml
+
+After copying an example configuration, ensure the file has correct permissions:
+
+    # chmod 0600 ${PREFIX}/etc/ezstream/ezstream.xml
+
+Then edit the file to suit your needs.
+
+Available examples:
+    - ezstream-minimal.xml     (minimal configuration for Ogg streaming)
+    - ezstream-full.xml        (full configuration with all options)
+    - ezstream-metadata.xml    (configuration with metadata updates)
+    - ezstream-stdin.xml       (stream from standard input)
+    - ezstream-video.xml       (video streaming configuration)
+    - ezstream-file_template.xml (file template configuration)
+
+Additionally, a new utility 'ezstream-cfgmigrate' is available to help migrate
+old configuration files to the new format. See ezstream-cfgmigrate(1) for more details.
+
+The rc.d script now runs ezstream in the background by default.
+To enable and start the service:
+
+    sysrc ezstream_enable=YES
+    service ezstream start
+
+For verbose output (foreground mode), add the -v flag to ezstream_flags:
+
+    sysrc ezstream_flags="-v"
+
+See ezstream(1) for more details.
+EOM
+}
+]

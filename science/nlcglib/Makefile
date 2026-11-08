@@ -1,7 +1,6 @@
 PORTNAME=	nlcglib
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.0
-PORTREVISION=	6
+DISTVERSION=	1.4.0
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,7 +11,8 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	nlohmann-json>0:devel/nlohmann-json
-LIB_DEPENDS=	libkokkoscore.so:devel/kokkos \
+LIB_DEPENDS=	libfmt.so:devel/libfmt \
+		libkokkoscore.so:devel/kokkos \
 		libopenblas.so:math/openblas
 TEST_DEPENDS=	googletest>0:devel/googletest
 
@@ -40,5 +40,7 @@ MPICH_USES=		mpi:mpich
 OPENMPI_USES=		mpi:openmpi
 
 OPENMP_CMAKE_BOOL=	USE_OPENMP # binaries are still linked with libomp when USE_OPENMP=OFF, see https://github.com/simonpintarelli/nlcglib/issues/13
+
+# tests as of 1.4.0: fail to compile, see https://github.com/simonpintarelli/nlcglib/issues/35
 
 .include <bsd.port.mk>

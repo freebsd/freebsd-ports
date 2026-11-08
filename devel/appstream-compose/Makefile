@@ -4,7 +4,9 @@ PKGNAMESUFFIX=	Compose
 COMMENT=	AppStream Compose application and library
 
 LIB_DEPENDS=	libappstream.so:devel/appstream \
-		libfyaml.so:textproc/libfyaml
+		libblake3.so:devel/libblake3 \
+		libfyaml.so:textproc/libfyaml \
+		libvips.so:graphics/vips
 RUN_DEPENDS=	optipng:graphics/optipng \
 		ffprobe:multimedia/ffmpeg
 

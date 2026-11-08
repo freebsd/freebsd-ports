@@ -14,6 +14,8 @@
 @sample %%ETCDIR%%/server.properties.sample
 @sample %%ETCDIR%%/tools-log4j2.yaml.sample
 @sample %%ETCDIR%%/trogdor.conf.sample
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/NOTICE
 %%PORTDOCS%%%%DOCSDIR%%/site-docs/_index.md
 %%PORTDOCS%%%%DOCSDIR%%/site-docs/apis/_index.md
 %%PORTDOCS%%%%DOCSDIR%%/site-docs/configuration/_index.md

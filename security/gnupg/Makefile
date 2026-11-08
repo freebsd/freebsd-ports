@@ -1,7 +1,10 @@
 PORTNAME=	gnupg
-DISTVERSION=	2.5.21
+DISTVERSION=	2.5.24
 CATEGORIES=	security
 MASTER_SITES=	GNUPG
+
+PATCH_SITES=	https://github.com/gpg/gnupg/commit/
+PATCHFILES+=	42386bcf8861f04c1bdec5cbb139a03da83d8ef9.patch:-p1
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Complete and free PGP implementation

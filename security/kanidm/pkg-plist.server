@@ -42,6 +42,7 @@ libexec/kanidmd
 %%DATADIR%%/ui/hpkg/img/kani-waving.svg.br
 %%DATADIR%%/ui/hpkg/img/logo.svg.br
 %%DATADIR%%/ui/hpkg/override.css
+@sample etc/newsyslog.conf.d/kanidmd.conf.sample
 @dir %%ETCDIR%%
 @dir /var/lib
 @dir(kanidmd,kanidmd,750) /var/lib/kanidmd

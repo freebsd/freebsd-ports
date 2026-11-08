@@ -1,4 +1,4 @@
---- src/plugins/tls/openssl/qsslsocket_openssl_symbols.cpp.orig	2025-05-14 09:43:58 UTC
+--- src/plugins/tls/openssl/qsslsocket_openssl_symbols.cpp.orig	2026-05-11 20:54:55 UTC
 +++ src/plugins/tls/openssl/qsslsocket_openssl_symbols.cpp
 @@ -114,23 +114,36 @@ DEFINEFUNC(int, EVP_PKEY_up_ref, EVP_PKEY *a, a, retur
  DEFINEFUNC2(int, BN_is_word, BIGNUM *a, a, BN_ULONG w, w, return 0, return)
@@ -49,8 +49,8 @@
              int re, re, ASN1_TIME *rt, rt, ASN1_TIME *t, t, ASN1_TIME *n, n, return nullptr, return)
 @@ -216,7 +231,9 @@ DEFINEFUNC2(int, ASN1_STRING_to_UTF8, unsigned char **
  DEFINEFUNC2(int, ASN1_INTEGER_cmp, const ASN1_INTEGER *a, a, const ASN1_INTEGER *b, b, return 1, return)
- DEFINEFUNC(int, ASN1_STRING_length, ASN1_STRING *a, a, return 0, return)
- DEFINEFUNC2(int, ASN1_STRING_to_UTF8, unsigned char **a, a, ASN1_STRING *b, b, return 0, return)
+ DEFINEFUNC(int, ASN1_STRING_length, const ASN1_STRING *a, a, return 0, return)
+ DEFINEFUNC2(int, ASN1_STRING_to_UTF8, unsigned char **a, a, const ASN1_STRING *b, b, return 0, return)
 +#if !defined(LIBRESSL_VERSION_NUMBER) || (LIBRESSL_VERSION_NUMBER >= 0x3060000fL)
  DEFINEFUNC2(int, ASN1_TIME_to_tm, const ASN1_TIME *s, s, struct tm *tm, tm, return 0, return)
 +#endif
@@ -72,7 +72,7 @@
  DEFINEFUNC(void, SSL_free, SSL *a, a, return, DUMMYARG)
  DEFINEFUNC(STACK_OF(SSL_CIPHER) *, SSL_get_ciphers, const SSL *a, a, return nullptr, return)
  DEFINEFUNC(const SSL_CIPHER *, SSL_get_current_cipher, SSL *a, a, return nullptr, return)
-@@ -765,8 +784,8 @@ static LoadedOpenSsl loadOpenSsl()
+@@ -767,8 +786,8 @@ static LoadedOpenSsl loadOpenSsl()
      libcrypto->setFileNameAndVersion("crypto"_L1, shlibVersion);
  #elif defined(SHLIB_VERSION_NUMBER)
      // first attempt: the canonical name is libssl.so.<SHLIB_VERSION_NUMBER>
@@ -83,7 +83,7 @@
  #endif // OPENSSL_SHLIB_VERSION
  
      if (libcrypto->load() && libssl->load()) {
-@@ -799,8 +818,8 @@ static LoadedOpenSsl loadOpenSsl()
+@@ -801,8 +820,8 @@ static LoadedOpenSsl loadOpenSsl()
      libssl->setFileNameAndVersion("ssl"_L1 + suffix, -1);
      libcrypto->setFileNameAndVersion("crypto"_L1 + suffix, -1);
  # else
@@ -94,7 +94,7 @@
  # endif
      if (libcrypto->load() && libssl->load()) {
          // libssl.so.0 and libcrypto.so.0 found
-@@ -869,21 +888,34 @@ bool q_resolveOpenSslSymbols()
+@@ -871,21 +890,34 @@ bool q_resolveOpenSslSymbols()
          RESOLVEFUNC(EVP_CIPHER_CTX_reset)
          RESOLVEFUNC(AUTHORITY_INFO_ACCESS_free)
          RESOLVEFUNC(EVP_PKEY_up_ref)
@@ -129,7 +129,7 @@
  #ifdef TLS1_3_VERSION
          RESOLVEFUNC(SSL_CTX_set_ciphersuites)
          RESOLVEFUNC(SSL_set_psk_use_session_callback)
-@@ -965,7 +997,9 @@ bool q_resolveOpenSslSymbols()
+@@ -967,7 +999,9 @@ bool q_resolveOpenSslSymbols()
          RESOLVEFUNC(OCSP_check_validity)
          RESOLVEFUNC(OCSP_cert_to_id)
          RESOLVEFUNC(OCSP_id_get0_info)
@@ -140,7 +140,7 @@
          RESOLVEFUNC(OCSP_basic_sign)
          RESOLVEFUNC(OCSP_response_create)
          RESOLVEFUNC(i2d_OCSP_RESPONSE)
-@@ -1060,12 +1094,14 @@ bool q_resolveOpenSslSymbols()
+@@ -1062,12 +1096,14 @@ bool q_resolveOpenSslSymbols()
          RESOLVEFUNC(SSL_CTX_use_PrivateKey)
          RESOLVEFUNC(SSL_CTX_use_PrivateKey_file)
          RESOLVEFUNC(SSL_CTX_get_cert_store);
@@ -155,7 +155,7 @@
          RESOLVEFUNC(SSL_accept)
          RESOLVEFUNC(SSL_clear)
          RESOLVEFUNC(SSL_connect)
-@@ -1125,7 +1161,9 @@ bool q_resolveOpenSslSymbols()
+@@ -1129,7 +1165,9 @@ bool q_resolveOpenSslSymbols()
          RESOLVEFUNC(RSA_free)
  
          RESOLVEFUNC(DH_bits)

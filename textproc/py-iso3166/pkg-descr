@@ -1,1 +1,3 @@
-Self-contained ISO 3166-1 country definitions.
+ISO 3166-1 defines two-letter, three-letter, and three-digit country codes.
+python-iso3166 is a self-contained module that converts between these codes
+and the corresponding country name.

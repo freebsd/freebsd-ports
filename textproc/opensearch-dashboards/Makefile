@@ -1,7 +1,6 @@
 PORTNAME=	opensearch-dashboards
-DISTVERSION=	3.6.0
+DISTVERSION=	3.8.0
 DISTVERSIONSUFFIX=	-linux-${OPENSEARCH_ARCH}
-PORTREVISION=	1
 CATEGORIES=	textproc www
 MASTER_SITES=	https://artifacts.opensearch.org/releases/bundle/${PORTNAME}/${DISTVERSION}/
 
@@ -12,7 +11,7 @@ WWW=		https://opensearch.org
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-ONLY_FOR_ARCHS=	aarch64 amd64
+ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le
 
 BUILD_DEPENDS=	npm-node22>0:www/npm-node22
 
@@ -34,7 +33,7 @@ _DEVDIR=	${WRKDIR}/.devdir
 
 .include <bsd.port.pre.mk>
 
-OPENSEARCH_ARCH=	${ARCH:S|aarch64|arm64|:S|amd64|x64|}
+OPENSEARCH_ARCH=	${ARCH:S|aarch64|arm64|:S|amd64|x64|:S|powerpc64le|x64|:S|powerpc64|x64|}
 
 post-patch:
 	${RM} ${WRKSRC}/bin/*.orig ${WRKSRC}/bin/*.bak

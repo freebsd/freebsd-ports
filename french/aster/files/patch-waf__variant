@@ -1,0 +1,12 @@
+--- waf_variant.orig	2026-10-12 14:20:37 UTC
++++ waf_variant
+@@ -53,7 +53,7 @@ done
+     shift
+ done
+ 
+-# checking for tools updates
+-.devhelper/check_updates.sh
++# checking for tools updates (not in FreeBSD ports)
++#.devhelper/check_updates.sh
+ 
+ ./waf.main "${orig[@]}" --out=${builddir} --jobs=${jobs}

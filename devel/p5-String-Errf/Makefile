@@ -1,7 +1,8 @@
 PORTNAME=	String-Errf
-PORTVERSION=	0.007
+DISTVERSION=	0.007
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:RJBS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	geraud@gcu.info
@@ -21,6 +22,7 @@ RUN_DEPENDS=	p5-Params-Util>=0:devel/p5-Params-Util \
 
 USES=		perl5
 USE_PERL5=	configure
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>

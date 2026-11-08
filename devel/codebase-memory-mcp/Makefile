@@ -1,6 +1,6 @@
 PORTNAME=	codebase-memory-mcp
 DISTVERSIONPREFIX=v
-DISTVERSION=	0.9.0
+DISTVERSION=	0.12.1
 CATEGORIES=	devel
 
 MAINTAINER=	olivier@FreeBSD.org
@@ -14,6 +14,9 @@ USES=		gmake compiler:c11
 USE_GITHUB=	yes
 GH_ACCOUNT=	DeusData
 
+# Assumes a 64-bit size_t; fails to build on 32-bit archs
+ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le
+
 PLIST_FILES=	bin/codebase-memory-mcp
 SUB_FILES=	pkg-message
 
@@ -25,12 +28,19 @@ OPTIONS_DEFINE=	DOCS
 PLIST_FILES+=	${DOCSDIR_REL}/freebsd-src.cbmignore
 .endif
 
+# FreeBSD sysctl OID-tree extractor: two source files added by the port (wired
+# into Makefile.cbm and the pipeline via patches). Not shippable as patches
+# because patch(1) cannot create new files.
+post-extract:
+	${CP} ${FILESDIR}/extract_sysctl.c ${WRKSRC}/internal/cbm/extract_sysctl.c
+	${CP} ${FILESDIR}/pass_sysctl.c ${WRKSRC}/src/pipeline/pass_sysctl.c
+
 do-build:
 	@cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} \
 		${GMAKE} -f Makefile.cbm cbm \
 		CC="${CC}" CXX="${CXX}" \
-		CFLAGS_EXTRA='-DCBM_VERSION=\"${DISTVERSION}\" -DCBM_PACKAGE_MANAGED'
+		CFLAGS_EXTRA='-DCBM_VERSION=\"${DISTVERSION}\" -DCBM_PKG_PREFIX=\"${PREFIX}\"'
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/build/c/codebase-memory-mcp \

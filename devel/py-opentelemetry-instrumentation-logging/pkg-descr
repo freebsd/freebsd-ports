@@ -1,0 +1,3 @@
+The OpenTelemetry logging instrumentation automatically instruments Python
+logging with a handler to convert Python log messages into OpenTelemetry logs
+and export them.

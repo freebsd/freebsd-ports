@@ -2151,7 +2151,7 @@
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The OpenSSL project reports:</p>
-	<blockquote cite="://www.openssl.org/news/secadv/20221011.txt">
+	<blockquote cite="https://www.openssl.org/news/secadv/20221011.txt">
 	  <p>Using a Custom Cipher with NID_undef may lead to NULL encryption (low)</p>
 	</blockquote>
       </body>
@@ -6633,13 +6633,13 @@
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Kazuhiro Ito reports:</p>
-	<blockquote cite="mailto:edict@ring.gr.jp">
+	<blockquote>
 	  <p>Potential buffer overrun vulnerability is found in eb/multiplex.c.</p>
 	</blockquote>
       </body>
     </description>
     <references>
-      <url>mailto:edict@ring.gr.jp</url>
+      <url>https://cgit.freebsd.org/ports/commit/?id=2140f32d4586</url>
     </references>
     <dates>
       <discovery>2022-04-25</discovery>
@@ -6774,7 +6774,6 @@
       <url>https://www.oracle.com/security-alerts/cpuapr2022.html</url>
       <cvename>CVE-2022-0778</cvename>
       <cvename>CVE-2021-22570</cvename>
-      <cvename>CVE-2022-0778</cvename>
       <cvename>CVE-2022-21454</cvename>
       <cvename>CVE-2022-21482</cvename>
       <cvename>CVE-2022-21483</cvename>
@@ -9735,7 +9734,7 @@ every major Linux distribution.</p>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>David Bouman reports:</p>
-	<blockquote cite="INSERT URL HERE">
+	<blockquote cite="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-45417">
 	  <p>AIDE before 0.17.4 allows local users to obtain root privileges
 	     via crafted file metadata (such as XFS extended attributes or
 	     tmpfs ACLs), because of a heap-based buffer overflow.</p>

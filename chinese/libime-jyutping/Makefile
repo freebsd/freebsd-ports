@@ -1,5 +1,5 @@
 PORTNAME=	libime-jyutping
-DISTVERSION=	1.0.16
+DISTVERSION=	1.0.18
 CATEGORIES=	chinese textproc
 MASTER_SITES=	https://download.fcitx-im.org/fcitx5/${PORTNAME}/ \
 		https://download.fcitx-im.org/data/:dict,model
@@ -8,27 +8,28 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${MODEL_TAR}:model
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	khng@FreeBSD.org
+MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Library to support Jyutping through libime
 WWW=		https://github.com/fcitx/libime-jyutping
 
 LICENSE=	GPLv3+ LGPL21+
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/fcitx5/libpunctuation.so:chinese/fcitx5-chinese-addons
-LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs \
-		libFcitx5Core.so:textproc/fcitx5 \
-		libIMECore.so:chinese/libime
+BUILD_DEPENDS=	${LOCALBASE}/lib/fcitx5/libpunctuation.so:chinese/fcitx5-chinese-addons \
+		boost-libs>0:devel/boost-libs
+LIB_DEPENDS=	libFcitx5Core.so:textproc/fcitx5 \
+		libIMECore.so:chinese/libime \
+		libzstd.so:archivers/zstd
 RUN_DEPENDS=	${LOCALBASE}/lib/fcitx5/libpunctuation.so:chinese/fcitx5-chinese-addons
 
-USES=		cmake compiler:c++17-lang gettext-tools kde:5 localbase \
+USES=		cmake compiler:c++17-lang gettext-tools kde localbase \
 		pkgconfig tar:zst
 
 PLIST_SUB=	VER=${PORTVERSION}
 
 USE_LDCONFIG=	yes
 
-USE_KDE=	ecm
+USE_KDE=	ecm:build
 
 CMAKE_ON=	ENABLE_ENGINE
 CMAKE_OFF=	ENABLE_DOC ENABLE_TEST

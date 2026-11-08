@@ -1,5 +1,6 @@
 PORTNAME=	cava
 DISTVERSION=	0.10.6
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/karlstav/${PORTNAME}/releases/download/${DISTVERSION}/
 

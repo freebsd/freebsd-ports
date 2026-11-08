@@ -1,0 +1,13 @@
+TIMESTAMP = 1793972308
+SHA256 (go/www_immich-kiosk/immich-kiosk-v0.47.0/choices.js-11.2.4.tgz) = ce0edabaeeea6559f778056a7e66d1b472170b4b606de314e23450bbe9ff2806
+SIZE (go/www_immich-kiosk/immich-kiosk-v0.47.0/choices.js-11.2.4.tgz) = 417577
+SHA256 (go/www_immich-kiosk/immich-kiosk-v0.47.0/date-fns-4.4.0.tgz) = eb106d1e9276213d6144b221c103e4abb7d92186734f7505f5a3860427b41a06
+SIZE (go/www_immich-kiosk/immich-kiosk-v0.47.0/date-fns-4.4.0.tgz) = 1594616
+SHA256 (go/www_immich-kiosk/immich-kiosk-v0.47.0/htmx-ext-sse-2.2.4.tgz) = 90b46f5ab915ba2f64e6348448c8dba509277a47e15c125ffb65754eb4f6b5dc
+SIZE (go/www_immich-kiosk/immich-kiosk-v0.47.0/htmx-ext-sse-2.2.4.tgz) = 6013
+SHA256 (go/www_immich-kiosk/immich-kiosk-v0.47.0/htmx.org-2.0.11.tgz) = 165a2655073e9e6e55e307a7c74e8ebcdb76afb7701f9c16cfd106a13add408e
+SIZE (go/www_immich-kiosk/immich-kiosk-v0.47.0/htmx.org-2.0.11.tgz) = 217700
+SHA256 (go/www_immich-kiosk/immich-kiosk-v0.47.0/v0.47.0.mod) = dc778ed94aa8c924a6eac8556a3d644b95255357d2e3a10a87d993e919432aad
+SIZE (go/www_immich-kiosk/immich-kiosk-v0.47.0/v0.47.0.mod) = 4789
+SHA256 (go/www_immich-kiosk/immich-kiosk-v0.47.0/v0.47.0.zip) = 3e406c275d093320ecb500b4fc426656ca53d0f842971f73cedfca934d38c63d
+SIZE (go/www_immich-kiosk/immich-kiosk-v0.47.0/v0.47.0.zip) = 8671647

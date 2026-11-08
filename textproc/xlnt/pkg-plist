@@ -8,6 +8,7 @@ include/xlnt/cell/phonetic_run.hpp
 include/xlnt/cell/rich_text.hpp
 include/xlnt/cell/rich_text_run.hpp
 include/xlnt/drawing/spreadsheet_drawing.hpp
+include/xlnt/internal/features.hpp
 include/xlnt/packaging/ext_list.hpp
 include/xlnt/packaging/manifest.hpp
 include/xlnt/packaging/relationship.hpp
@@ -25,6 +26,7 @@ include/xlnt/styles/style.hpp
 include/xlnt/utils/calendar.hpp
 include/xlnt/utils/date.hpp
 include/xlnt/utils/datetime.hpp
+include/xlnt/utils/environment.hpp
 include/xlnt/utils/exceptions.hpp
 include/xlnt/utils/numeric.hpp
 include/xlnt/utils/optional.hpp
@@ -33,6 +35,7 @@ include/xlnt/utils/scoped_enum_hash.hpp
 include/xlnt/utils/time.hpp
 include/xlnt/utils/timedelta.hpp
 include/xlnt/utils/variant.hpp
+include/xlnt/utils/xlnt_cmake_export.h
 include/xlnt/workbook/calculation_properties.hpp
 include/xlnt/workbook/document_security.hpp
 include/xlnt/workbook/external_book.hpp
@@ -71,6 +74,6 @@ lib/cmake/xlnt/XlntConfigVersion.cmake
 lib/cmake/xlnt/XlntTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/xlnt/XlntTargets.cmake
 lib/libxlnt.so
-lib/libxlnt.so.1.5.0
+lib/libxlnt.so.1.6.1
 libdata/pkgconfig/xlnt.pc
 share/man/man3/xlnt.3.gz

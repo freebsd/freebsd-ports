@@ -1,0 +1,27 @@
+--- meson.build.orig	2026-09-16 06:12:24 UTC
++++ meson.build
+@@ -19,6 +19,7 @@ deps = [
+   dependency('fcft'),
+   dependency('pixman-1'),
+   dependency('cairo'),
++  dependency('libcjson'),
+   dependency('pango'),
+   dependency('pangocairo'),
+   dependency('libpulse'),
+@@ -26,7 +27,6 @@ deps = [
+   dependency('libudev'),
+   dependency('gdk-pixbuf-2.0'),
+   cc.find_library('rt'),
+-  cc.find_library('cjson'),
+ ]
+ 
+ scanner = find_program('wayland-scanner')
+@@ -59,7 +59,7 @@ defaults_h = custom_target('defaults-h',
+   output: 'defaults.h',
+   input: ['config.jsonc', 'style.css'],
+   command: [
+-    find_program('python3'),
++    find_program('%%PYTHON_VERSION%%'),
+     files('scripts/gen_defaults.py'),
+     '@INPUT0@',
+     '@INPUT1@',

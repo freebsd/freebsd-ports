@@ -1,0 +1,9 @@
+glab-tui is a terminal user interface for GitLab and GitHub, built on top
+of the glab and gh command line tools.  It detects the hosting service of
+the current repository and translates every action into the matching CLI
+command, so no separate API credentials are needed.
+
+Issues, merge and pull requests, pipelines, runners, releases, todos and
+milestones each get their own tab, with fuzzy search, bulk editing, inline
+code review with syntax highlighted diffs, configurable keybindings and
+themes.

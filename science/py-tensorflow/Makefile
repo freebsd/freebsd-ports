@@ -1,7 +1,7 @@
 PORTNAME=	tensorflow
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.21.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science python # machine-learning
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	${PORTNAME}
@@ -15,7 +15,7 @@ WWW=		https://www.tensorflow.org \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=	amd64 powerpc64le
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}grpcio-tools>=1.22.0:devel/py-grpcio-tools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.22.0:math/py-numpy@${PY_FLAVOR} \
@@ -30,7 +30,6 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}grpcio-tools>=1.22.0:devel/py-grpcio-tools
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libsnappy.so:archivers/snappy \
 		libabsl_base.so:devel/abseil \
-		libsqlite3.so:databases/sqlite3 \
 		libicuio.so:devel/icu \
 		libjsoncpp.so:devel/jsoncpp \
 		libprotobuf.so:devel/protobuf \
@@ -57,7 +56,7 @@ RUN_DEPENDS=	pybind11>=2.6.2:devel/pybind11 \
 		${PYTHON_PKGNAMEPREFIX}ml-dtypes>=0.3.1:math/py-ml-dtypes@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}opt-einsum>=3.3.0:math/py-opt-einsum@${PY_FLAVOR}
 
-USES=		java jpeg perl5 python shebangfix ssl
+USES=		java jpeg perl5 python shebangfix sqlite ssl
 JAVA_VERSION=	21
 JAVA_VENDOR=	openjdk
 USE_CXXSTD=	c++17
@@ -83,12 +82,27 @@ JOBS_ALL_DESC=			Run all jobs
 JOBS_ALL_VARS=			TF_JOBS_NUMBER=${MAKE_JOBS_NUMBER}
 
 CPU_OPTS_DESC=			Enable optimisations using features available on your CPU
-CPU_OPTS_VARS=			CPU_TARGET=native BAZEL_COPT="-c opt --copt=-march=native --copt=-mfpmath=sse"
-CPU_OPTS_VARS_OFF=		CPU_TARGET=x86-64
+CPU_OPTS_VARS=			CPU_TARGET=${CPU_NATIVE} BAZEL_COPT="-c opt --copt=${CPU_FLAG}=${CPU_NATIVE} ${CPU_COPT_EXTRA}"
+CPU_OPTS_VARS_OFF=		CPU_TARGET=${CPU_BASELINE}
 
 XLA_DESC=			Accelerated Linear Algebra
 XLA_VARS=			XLA_OPT="1"
 XLA_VARS_OFF=			XLA_OPT="0"
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64le
+CPU_FLAG=			-mcpu
+CPU_BASELINE=			${CPUTYPE:Upower8}
+CPU_NATIVE=			${CPU_BASELINE}
+BAZEL_ARCH_DEFINES=		--define=xnn_enable_assembly=false \
+				--linkopt=-Wl,-z,undefs
+.else
+CPU_FLAG=			-march
+CPU_BASELINE=			x86-64
+CPU_NATIVE=			native
+CPU_COPT_EXTRA=			--copt=-mfpmath=sse
+.endif
 
 .include "Makefile.MASTER_SITES"
 
@@ -125,6 +139,8 @@ post-patch:
 		${WRKSRC}/third_party/xla/third_party/py/
 	@${CP} ${PATCHDIR}/bazel/fix-environ.patch \
 		${WRKSRC}/third_party/xla/third_party/
+	@${CP} ${PATCHDIR}/bazel/riegeli-xopen-source.patch \
+		${WRKSRC}/third_party/
 	@${CP} ${PATCHDIR}/llvm_freebsd.patch \
 		${WRKSRC}/third_party/xla/third_party/llvm/freebsd.patch
 	@${CP} ${PATCHDIR}/grpc.bazel.BUILD \
@@ -166,6 +182,8 @@ post-patch:
 		${WRKSRC}/third_party/xla/third_party/pthreadpool/freebsd_alloca.patch
 	@${CP} ${PATCHDIR}/xnnpack-freebsd-mmap.patch \
 		${WRKSRC}/third_party/xla/third_party/xnnpack/freebsd_mmap.patch
+	@${CP} ${PATCHDIR}/xnnpack-freebsd-ppc-hwcap.patch \
+		${WRKSRC}/third_party/xla/third_party/xnnpack/freebsd_ppc_hwcap.patch
 	@${CP} ${PATCHDIR}/protobuf-freebsd-upb.patch \
 		${WRKSRC}/third_party/xla/third_party/protobuf/freebsd_upb.patch
 	@${CP} ${PATCHDIR}/cpuinfo-freebsd-alwayslink.patch \
@@ -222,7 +240,7 @@ do-configure:
 		TF_DOWNLOAD_CLANG=0 \
 		TF_NEED_NCCL=0 \
 		TF_IGNORE_MAX_BAZEL_VERSION=1 \
-		CC_OPT_FLAGS="-march=${CPU_TARGET} -I${LOCALBASE}/include" \
+		CC_OPT_FLAGS="${CPU_FLAG}=${CPU_TARGET} -I${LOCALBASE}/include -I${LOCALBASE}/include/jsoncpp" \
 		PREFIX="${LOCALBASE}" \
 		TF_SYSTEM_LIBS="astor_archive astunparse_archive boringssl com_github_googlecloudplatform_google_cloud_cpp \
 				com_googlesource_code_re2 curl cython dill_archive functools32_archive gast_archive \
@@ -269,9 +287,21 @@ do-build:
 		else \
 			${ECHO_MSG} "WARNING: llvm config.bzl not found at $${LLVMCONF}; build may fail"; \
 		fi
+	# Fetch riegeli so we can patch snappy_writer.cc before the build.
 	@cd ${WRKSRC} && \
-		bazel --bazelrc="${WRKDIR}/bazelrc" ${BAZEL_BOOT} build --jobs ${TF_JOBS_NUMBER} ${BAZEL_COPT} --host_copt="-I${LOCALBASE}/include" \
-		--host_linkopt="-L${LOCALBASE}/lib -lexecinfo" ${BAZEL_LINKOPT} --copt="-I${LOCALBASE}/include" \
+		bazel --bazelrc="${WRKDIR}/bazelrc" ${BAZEL_BOOT} fetch @@riegeli//riegeli/snappy:snappy_writer
+	@RIEGELI_OB=$$(cd ${WRKSRC} && bazel --bazelrc="${WRKDIR}/bazelrc" ${BAZEL_BOOT} info output_base 2>/dev/null); \
+		RIEGELI_SW="$${RIEGELI_OB}/external/riegeli/riegeli/snappy/snappy_writer.cc"; \
+		if [ -f "$${RIEGELI_SW}" ]; then \
+			${REINPLACE_CMD} -e 's|snappy::Compress(\&source, \&sink, {/\*level=\*/options.compression_level()});|snappy::Compress(\&source, \&sink, snappy::CompressionOptions{options.compression_level()});|' "$${RIEGELI_SW}"; \
+		else \
+			${ECHO_MSG} "WARNING: riegeli snappy_writer.cc not found at $${RIEGELI_SW}; build may fail"; \
+		fi
+	@cd ${WRKSRC} && \
+		bazel --bazelrc="${WRKDIR}/bazelrc" ${BAZEL_BOOT} build --jobs ${TF_JOBS_NUMBER} ${BAZEL_COPT} ${BAZEL_ARCH_DEFINES} \
+		--host_copt="-I${LOCALBASE}/include" --host_copt="-I${LOCALBASE}/include/jsoncpp" \
+		--host_linkopt="-L${LOCALBASE}/lib -lexecinfo" ${BAZEL_LINKOPT} \
+		--copt="-I${LOCALBASE}/include" --copt="-I${LOCALBASE}/include/jsoncpp" \
 		--verbose_failures -s \
 		--distdir=${WRKDIR}/bazel-dist \
 		//tensorflow/tools/pip_package:wheel
@@ -292,8 +322,10 @@ post-install: # autoplist: thousands of files, all under ${PYTHON_SITELIBDIR}
 do-test:
 	@cd ${WRKSRC} && \
 		bazel --bazelrc="${WRKDIR}/bazelrc" ${BAZEL_BOOT} test \
-		--jobs ${TF_JOBS_NUMBER} ${BAZEL_COPT} --host_copt="-I${LOCALBASE}/include" \
-		--host_linkopt="-L${LOCALBASE}/lib -lexecinfo" ${BAZEL_LINKOPT} --copt="-I${LOCALBASE}/include" \
+		--jobs ${TF_JOBS_NUMBER} ${BAZEL_COPT} \
+		--host_copt="-I${LOCALBASE}/include" --host_copt="-I${LOCALBASE}/include/jsoncpp" \
+		--host_linkopt="-L${LOCALBASE}/lib -lexecinfo" ${BAZEL_LINKOPT} \
+		--copt="-I${LOCALBASE}/include" --copt="-I${LOCALBASE}/include/jsoncpp" \
 		--verbose_failures \
 		--distdir=${WRKDIR}/bazel-dist \
 		--test_output=errors \

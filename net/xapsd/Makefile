@@ -1,6 +1,6 @@
 PORTNAME=	xapsd
 DISTVERSION=	g20241228
-PORTREVISION=	17
+PORTREVISION=	22
 CATEGORIES=	net
 
 MAINTAINER=	PopularMoment@protonmail.com
@@ -10,7 +10,7 @@ WWW=		https://github.com/freswa/dovecot-xaps-daemon
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.24+,modules
+USES=		go:modules
 USE_RC_SUBR=	xapsd
 USE_GITHUB=	yes
 GH_ACCOUNT=	freswa

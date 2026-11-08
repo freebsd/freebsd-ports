@@ -1,6 +1,6 @@
---- vendor/CMakeLists.f2fstools.txt	2024-08-29 19:46:57.000000000 +0200
-+++ vendor/CMakeLists.f2fstools.txt	2026-03-21 18:29:02.406397000 +0100
-@@ -17,8 +17,20 @@
+--- vendor/CMakeLists.f2fstools.txt.orig	2026-08-01 05:20:11 UTC
++++ vendor/CMakeLists.f2fstools.txt
+@@ -17,8 +17,20 @@ target_compile_definitions(libf2fs PUBLIC
  
  target_compile_definitions(libf2fs PUBLIC
  	${f2fs_tools_defaults}
@@ -22,14 +22,14 @@
  target_include_directories(libf2fs PUBLIC
  	core/libsparse/include
  	f2fs-tools/include)
-@@ -59,8 +71,20 @@
+@@ -59,7 +71,19 @@ target_compile_definitions(sload_f2fs PRIVATE
  
  target_compile_definitions(sload_f2fs PRIVATE
  	${f2fs_tools_defaults}
 -	-DWITH_SLOAD)
 +	-DWITH_SLOAD
 +	-DHAVE_SYS_IOCTL_H)
- 
++
 +if(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
 +	target_compile_definitions(sload_f2fs PRIVATE -DHAVE_LIMITS_H)
 +else()
@@ -40,7 +40,6 @@
 +		-DHAVE_LINUX_HDREG_H
 +		-DHAVE_LINUX_LIMITS_H)
 +endif()
-+
+ 
  target_include_directories(sload_f2fs PRIVATE
  	f2fs-tools/include
- 	selinux/libselinux/include

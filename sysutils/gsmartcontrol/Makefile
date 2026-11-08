@@ -1,48 +1,31 @@
 PORTNAME=	gsmartcontrol
-PORTVERSION=	1.1.4
-PORTREVISION=	3
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.0.2
 CATEGORIES=	sysutils
-MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mce@FreeBSD.org
 COMMENT=	Graphical user interface for smartmontools
-WWW=		https://gsmartcontrol.sourceforge.io
+WWW=		https://gsmartcontrol.shaduri.dev/
 
-LICENSE=	BSD3CLAUSE BSL GPLv2 GPLv3 PD ZLIB
+LICENSE=	GPLv3 LGPL3+
 LICENSE_COMB=	multi
-LICENSE_FILE_BSD3CLAUSE=${WRKSRC}/LICENSE_bsd-ac.txt
-LICENSE_FILE_BSL=	${WRKSRC}/LICENSE_boost_1_0.txt
-LICENSE_FILE_GPLv2=	${WRKSRC}/LICENSE_gpl2.txt
-LICENSE_FILE_GPLv3=	${WRKSRC}/LICENSE_gpl3.txt
-LICENSE_FILE_PD=	${WRKSRC}/LICENSE_unlicense.txt
-LICENSE_FILE_ZLIB=	${WRKSRC}/LICENSE_zlib.txt
+LICENSE_FILE_GPLv3=	${WRKSRC}/LICENSE.txt
+LICENSE_FILE_LGPL3+ =	${WRKSRC}/LICENSE.LGPL3.txt
 
-LIB_DEPENDS=	libpcre.so:devel/pcre
+BUILD_DEPENDS=	nlohmann-json>0:devel/nlohmann-json \
+		tl-expected>0:devel/tl-expected
 RUN_DEPENDS=	bash:shells/bash \
 		pkexec:sysutils/polkit \
 		smartctl:sysutils/smartmontools \
 		xterm:x11/xterm
 
-USES=		compiler:c++11-lang gnome libtool pkgconfig tar:bzip2
-USE_CXXSTD=	c++11
-USE_GNOME=	atkmm cairo glibmm gtk30 gtkmm30 libsigc++20 pangomm
+USES=		cmake compiler:c++20-lang gnome pkgconfig shebangfix
+USE_GITHUB=	yes
+GH_ACCOUNT=	ashaduri
+USE_GNOME=	gtkmm30
 
-GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-CONFIGURE_ARGS=	--disable-libglade
+SHEBANG_FILES=	data/gsmartcontrol-root.in.sh
 
 OPTIONS_DEFINE=	DOCS
-
-post-patch:
-# Avoid conflict with C++20 <version> by ignoring <...> under WRKSRC
-	@${REINPLACE_CMD} -i .c++20 '/ADDITIONAL_INCLUDES/s/-I/-iquote/g' \
-		${WRKSRC}/configure
-	@${REINPLACE_CMD} -i .c++20 's/-I/-iquote/g' \
-		${WRKSRC}/src/Makefile.in \
-		${WRKSRC}/src/*/Makefile.in
-	@${REINPLACE_CMD} -i .c++20 '/config\.h/y/<>/""/' \
-		${WRKSRC}/src/global_macros.h
-	@${REINPLACE_CMD} -i '' 's|%%PREFIX%%|${PREFIX}|g' \
-		${WRKSRC}/data/org.gsmartcontrol.policy
 
 .include <bsd.port.mk>

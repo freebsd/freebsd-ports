@@ -1,10 +1,10 @@
 PORTNAME=	frink
 PORTVERSION=	2.2.2p4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	https://BSDforge.COM/projects/source/devel/frink/
 
-MAINTAINER=	portmaster@bsdforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tcl formatter and static tester
 WWW=		https://catless.ncl.ac.uk/Programs/Frink/
 

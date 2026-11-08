@@ -1,0 +1,29 @@
+--- CMakeLists.txt.orig	2025-09-12 05:55:11 UTC
++++ CMakeLists.txt
+@@ -105,7 +105,7 @@ endif()
+ # Add GNUInstallDirs for GNU infrastructure before target)include_directories
+ #
+ 
+-if(CMAKE_SYSTEM_NAME MATCHES "^(Linux|kFreeBSD|GNU)$" AND NOT CMAKE_CROSSCOMPILING)
++if(UNIX AND NOT CMAKE_CROSSCOMPILING)
+     include(GNUInstallDirs)
+ endif()
+ 
+@@ -242,7 +242,7 @@ add_library(kissfft::kissfft-${KISSFFT_DATATYPE} ALIAS
+ # Build with libm (-lm) on Linux and kFreeBSD
+ #
+ 
+-if(CMAKE_SYSTEM_NAME MATCHES "^(Linux|kFreeBSD|GNU)$" AND NOT CMAKE_CROSSCOMPILING)
++if(UNIX AND NOT CMAKE_CROSSCOMPILING)
+     target_link_libraries(kissfft PRIVATE m)
+ endif()
+ 
+@@ -258,7 +258,7 @@ function(add_kissfft_executable NAME)
+     # Build with libm (-lm) on Linux and kFreeBSD
+     #
+ 
+-    if(CMAKE_SYSTEM_NAME MATCHES "^(Linux|kFreeBSD|GNU)$" AND NOT CMAKE_CROSSCOMPILING)
++    if(UNIX AND NOT CMAKE_CROSSCOMPILING)
+         target_link_libraries(${NAME} PRIVATE m)
+     endif()
+ 

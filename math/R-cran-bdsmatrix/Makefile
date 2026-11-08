@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Routines for Block Diagonal Symmetric matrices
-WWW=		https://cran.r-project.org/web/packages/bdsmatrix/
+WWW=		https://cran.r-project.org/package=bdsmatrix
 
 LICENSE=	LGPL20
 

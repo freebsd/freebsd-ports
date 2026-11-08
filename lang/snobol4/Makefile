@@ -46,6 +46,6 @@ SQLITE3_DESC=		SQLite version 3 module
 DOCS_CONFIGURE_WITH=	docs
 
 FFI_LIB_DEPENDS=	libffi.so:devel/libffi
-SQLITE3_LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
+SQLITE3_USES=		sqlite
 
 .include <bsd.port.mk>

@@ -11,7 +11,10 @@ dummy                     0
 gdbstub                   0
 hiscore                   0
 inputmacro                0
+keypress                  0
 layout                    1
+offscreenreload           0
 portname                  0
 timecode                  0
 timer                     0
+vector                    0

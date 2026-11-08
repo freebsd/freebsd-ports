@@ -1,6 +1,6 @@
---- source/posix/clock.c.orig	2019-02-17 20:17:45 UTC
+--- source/posix/clock.c.orig	2026-08-25 23:01:05 UTC
 +++ source/posix/clock.c
-@@ -15,7 +15,7 @@
+@@ -5,7 +5,7 @@
  
  #include <aws/common/clock.h>
  

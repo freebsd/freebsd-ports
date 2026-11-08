@@ -1,0 +1,19 @@
+# configuration file for newsyslog for xymon-server
+#
+# see newsyslog.conf(5) for details
+#
+# logfilename          [owner:group]    mode count size when  flags [/pid_file] [sig_num]
+/var/log/xymon/acknowledge.log	xymon:wheel      644  7     100  *     Z /var/log/xymon/xymond.pid
+/var/log/xymon/alert.log	xymon:wheel      644  7     100  *     Z /var/log/xymon/xymond.pid
+/var/log/xymon/clientdata.log	xymon:wheel      644  7     100  *     Z /var/log/xymon/xymond.pid
+/var/log/xymon/combostatus.log	xymon:wheel      644  7     100  *     Z /var/log/xymon/xymond.pid
+/var/log/xymon/history.log	xymon:wheel      644  7     100  *     Z /var/log/xymon/xymond.pid
+/var/log/xymon/hostdata.log	xymon:wheel      644  7     100  *     Z /var/log/xymon/xymond.pid
+/var/log/xymon/notifications.log	xymon:wheel      644  7     100  *     Z /var/log/xymon/xymond.pid
+/var/log/xymon/rrd-data.log	xymon:wheel      644  7     100  *     Z /var/log/xymon/xymond.pid
+/var/log/xymon/rrd-status.log	xymon:wheel      644  7     100  *     Z /var/log/xymon/xymond.pid
+/var/log/xymon/xymond.log	xymon:wheel      644  7     100  *     Z /var/log/xymon/xymond.pid
+/var/log/xymon/xymongen.log	xymon:wheel      644  7     100  *     Z /var/log/xymon/xymond.pid
+/var/log/xymon/xymonlaunch.log	xymon:wheel      644  7     100  *     Z /var/log/xymon/xymond.pid
+/var/log/xymon/xymonnet.log	xymon:wheel      644  7     100  *     Z /var/log/xymon/xymond.pid
+/var/log/xymon/xymonnetagain.log	xymon:wheel      644  7     100  *     Z /var/log/xymon/xymond.pid

@@ -1,0 +1,5 @@
+This package combines Lenovo's E810 AnyOS firmware bundle with Intel's FreeBSD
+NVMUpdate utility.  Its combined configuration retains all four adapters in
+Lenovo's bundle: E810-DA2 OCP, E810-DA2 PCIe, E810-DA4 PCIe, and E810-DA4 OCP.
+The full Lenovo ETrack replacement histories are included so older supported
+NVM revisions remain eligible for update.

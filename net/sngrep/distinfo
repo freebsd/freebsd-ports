@@ -1,3 +1,5 @@
-TIMESTAMP = 1694165436
-SHA256 (sngrep-1.7.0.tar.gz) = 2e5ba3a4d6486ea00bd73d2cceff383ba162dcd6d0170ae74cfa3b1c206e2cb1
-SIZE (sngrep-1.7.0.tar.gz) = 248947
+TIMESTAMP = 1785680150
+SHA256 (sngrep-1.8.4.tar.gz) = 0f5cc5a356edc1327f1b916fedd9eb0fd1472eda360a04dfe59cabe15a346ee1
+SIZE (sngrep-1.8.4.tar.gz) = 275031
+SHA256 (3553fc8f6afed9d6e985efb34db250ec5b7fa903.patch) = 374d198a77b83bf2d8390dd0f8ee0af79f9d63bede2bc5dadf7d6dbdb423aa2d
+SIZE (3553fc8f6afed9d6e985efb34db250ec5b7fa903.patch) = 978

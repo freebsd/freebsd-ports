@@ -1,5 +1,5 @@
-TIMESTAMP = 1783235430
-SHA256 (go/devel_terraform-ls/terraform-ls-v0.38.8/v0.38.8.mod) = 9b733e24017d561fbb7487e47762ec88e9733f2205fde16ffe5db1f0e647e6a9
-SIZE (go/devel_terraform-ls/terraform-ls-v0.38.8/v0.38.8.mod) = 4904
-SHA256 (go/devel_terraform-ls/terraform-ls-v0.38.8/v0.38.8.zip) = c53fae50014bed772c5722a88fbc3bcc1c7b185714575cc89ed047981dad8b10
-SIZE (go/devel_terraform-ls/terraform-ls-v0.38.8/v0.38.8.zip) = 2763760
+TIMESTAMP = 1788145541
+SHA256 (go/devel_terraform-ls/terraform-ls-v0.39.0/v0.39.0.mod) = 2fa12a5af91fc61ce9dedbb2c45e056c508cb6c554567586ac3ebc6ea1389983
+SIZE (go/devel_terraform-ls/terraform-ls-v0.39.0/v0.39.0.mod) = 4904
+SHA256 (go/devel_terraform-ls/terraform-ls-v0.39.0/v0.39.0.zip) = 7ac775b112c025aa426f4ae107b7632e7553270e76f136a7b09cfeff4108dda5
+SIZE (go/devel_terraform-ls/terraform-ls-v0.39.0/v0.39.0.zip) = 2826098

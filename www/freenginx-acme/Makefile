@@ -1,6 +1,6 @@
 PORTNAME=	acme
 DISTVERSION=	0.4.1
-PORTREVISION=	5
+PORTREVISION=	9
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/nginx/nginx-${PORTNAME}/releases/download/v${PORTVERSION}/:acme \
 		https://freenginx.org/download/:freenginx
@@ -32,8 +32,6 @@ NGX_CONFIGURE_ARGS=	--with-compat \
 			--with-cc-opt="-I ${LOCALBASE}/include" \
 			--with-ld-opt="-L ${LOCALBASE}/lib" \
 			--with-http_ssl_module
-
-.include "${.CURDIR}/Makefile.crates"
 
 PLIST_FILES=	libexec/freenginx/ngx_http_acme_module.so
 

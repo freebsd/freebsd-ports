@@ -1,6 +1,6 @@
 PORTNAME=	osv-scanner
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.0
+DISTVERSION=	2.7.0
 PORTREVISION=	1
 CATEGORIES=	security
 
@@ -11,12 +11,12 @@ WWW=		https://github.com/google/osv-scanner
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.26+,modules,run
+USES=		go:modules,run
 
 NOT_FOR_ARCHS=	armv6 armv7 i386 powerpc powerpcspe
 
 _BUILD_VERSION=	${DISTVERSION}
-_BUILD_COMMIT=	b56b519
+_BUILD_COMMIT=	bfe2f84
 _BUILD_DATE=	$$(date +%Y-%m-%d)
 
 GO_MODULE=	github.com/google/${PORTNAME}/v2

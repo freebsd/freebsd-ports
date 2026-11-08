@@ -1,0 +1,17 @@
+-- The pinned devel/py-setuptools (63.1.0, kept old per project
+-- convention) does not support the PEP 639 string-form license
+-- metadata (license = "MIT" + license-files = [...]), causing a
+-- hard "invalid pyproject.toml config: project.license" error.
+-- Use the old dict form instead, which old setuptools understands.
+--- pyproject.toml.orig	2026-09-30 07:12:56 UTC
++++ pyproject.toml
+@@ -3,8 +3,7 @@ description = "libcurl ffi bindings for Python, with i
+ version = "0.16.3"
+ authors = [{ name = "lexiforest", email = "infinitesheldon@gmail.com" }]
+ description = "libcurl ffi bindings for Python, with impersonation support."
+-license = "MIT"
+-license-files = ["LICENSE"]
++license = {text = "MIT"}
+ dependencies = ["cffi>=2.0.0", "certifi>=2024.2.2"]
+ readme = "README.md"
+ requires-python = ">=3.10"

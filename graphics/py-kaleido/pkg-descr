@@ -1,0 +1,3 @@
+Kaleido is a cross-platform library for generating static images for
+Plotly's visualization library. After installing it, you can use
+fig.write_image("filename.png") to save a plot to a file.

@@ -650,6 +650,7 @@ share/zfs/compatibility.d/zol-0.8
 %%TESTS%%share/zfs/zfs-tests/tests/functional/acl/posix/posix_002_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/acl/posix/posix_003_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/acl/posix/posix_004_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/acl/posix/posix_005_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/acl/posix/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/alloc_class/alloc_class.cfg
 %%TESTS%%share/zfs/zfs-tests/tests/functional/alloc_class/alloc_class.kshlib
@@ -1160,6 +1161,7 @@ share/zfs/compatibility.d/zol-0.8
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_receive/zfs_receive_raw_-d.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_receive/zfs_receive_raw_incremental.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_receive/zfs_receive_to_encrypted.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_receive/zfs_receive-x_props_alternation.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_receive/zstd_test_data.txt
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_rename/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_rename/setup.ksh
@@ -1453,6 +1455,7 @@ share/zfs/compatibility.d/zol-0.8
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_expand/zpool_expand_003_neg.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_expand/zpool_expand_004_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_expand/zpool_expand_005_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_expand/zpool_expand_006_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_export/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_export/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_export/zpool_export.cfg
@@ -1461,6 +1464,7 @@ share/zfs/compatibility.d/zol-0.8
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_export/zpool_export_002_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_export/zpool_export_003_neg.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_export/zpool_export_004_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_export/zpool_export_005_neg.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_export/zpool_export_parallel_admin.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_export/zpool_export_parallel_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_get/cleanup.ksh
@@ -1660,6 +1664,7 @@ share/zfs/compatibility.d/zol-0.8
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_status/zpool_status_006_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_status/zpool_status_007_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_status/zpool_status_008_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_status/zpool_status_009_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_status/zpool_status_features_001_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_sync/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_sync/setup.ksh
@@ -1926,6 +1931,7 @@ share/zfs/compatibility.d/zol-0.8
 %%TESTS%%share/zfs/zfs-tests/tests/functional/delegate/zfs_allow_010_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/delegate/zfs_allow_011_neg.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/delegate/zfs_allow_012_neg.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/delegate/zfs_allow_send.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/delegate/zfs_unallow_001_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/delegate/zfs_unallow_002_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/delegate/zfs_unallow_003_pos.ksh
@@ -1934,6 +1940,13 @@ share/zfs/compatibility.d/zol-0.8
 %%TESTS%%share/zfs/zfs-tests/tests/functional/delegate/zfs_unallow_006_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/delegate/zfs_unallow_007_neg.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/delegate/zfs_unallow_008_neg.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/device_access/cleanup.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/device_access/device_access.kshlib
+%%TESTS%%share/zfs/zfs-tests/tests/functional/device_access/device_access_add.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/device_access/device_access_attach.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/device_access/device_access_create.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/device_access/device_access_import.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/device_access/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/devices/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/devices/devices.cfg
 %%TESTS%%share/zfs/zfs-tests/tests/functional/devices/devices_001_pos.ksh
@@ -2010,6 +2023,7 @@ share/zfs/compatibility.d/zol-0.8
 %%TESTS%%share/zfs/zfs-tests/tests/functional/failmode/failmode_syncalways_wait.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/failmode/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/fallocate/cleanup.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/fallocate/fallocate_extend_timestamps.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/fallocate/fallocate_prealloc.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/fallocate/fallocate_punch-hole.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/fallocate/fallocate_zero-range.ksh
@@ -2233,6 +2247,7 @@ share/zfs/compatibility.d/zol-0.8
 %%TESTS%%share/zfs/zfs-tests/tests/functional/mmp/mmp.kshlib
 %%TESTS%%share/zfs/zfs-tests/tests/functional/mmp/mmp_active_import.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/mmp/mmp_concurrent_import.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/mmp/mmp_degraded_import.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/mmp/mmp_exported_import.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/mmp/mmp_hostid.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/mmp/mmp_inactive_import.ksh
@@ -2245,6 +2260,7 @@ share/zfs/compatibility.d/zol-0.8
 %%TESTS%%share/zfs/zfs-tests/tests/functional/mmp/mmp_write_distribution.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/mmp/mmp_write_slow_disk.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/mmp/mmp_write_uberblocks.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/mmp/mmp_zhack_reclaim.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/mmp/multihost_history.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/mmp/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/mount/cleanup.ksh
@@ -2363,6 +2379,7 @@ share/zfs/compatibility.d/zol-0.8
 %%TESTS%%share/zfs/zfs-tests/tests/functional/projectquota/projectspace_003_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/projectquota/projectspace_004_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/projectquota/projectspace_005_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/projectquota/projectspace_006_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/projectquota/projecttree_001_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/projectquota/projecttree_002_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/projectquota/projecttree_003_neg.ksh
@@ -2626,6 +2643,7 @@ share/zfs/compatibility.d/zol-0.8
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send_realloc_encrypted_files.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send_realloc_files.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send_spill_block.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send_split_large_block.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/scrub_mirror/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/scrub_mirror/default.cfg
@@ -2739,6 +2757,8 @@ share/zfs/compatibility.d/zol-0.8
 %%TESTS%%share/zfs/zfs-tests/tests/functional/user_namespace/user_namespace_003.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/user_namespace/user_namespace_004.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/user_namespace/user_namespace_common.kshlib
+%%TESTS%%share/zfs/zfs-tests/tests/functional/user_namespace/user_namespace_secpolicy_sys_config.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/user_namespace/user_namespace_secpolicy_zinject.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/userquota/13709_reproducer.bz2
 %%TESTS%%share/zfs/zfs-tests/tests/functional/userquota/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/userquota/defaultuserquota_001_pos.ksh
@@ -2758,6 +2778,7 @@ share/zfs/compatibility.d/zol-0.8
 %%TESTS%%share/zfs/zfs-tests/tests/functional/userquota/groupspace_002_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/userquota/groupspace_003_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/userquota/groupspace_004_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/userquota/groupspace_005_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/userquota/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/userquota/userquota.cfg
 %%TESTS%%share/zfs/zfs-tests/tests/functional/userquota/userquota_001_pos.ksh
@@ -2778,6 +2799,7 @@ share/zfs/compatibility.d/zol-0.8
 %%TESTS%%share/zfs/zfs-tests/tests/functional/userquota/userspace_002_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/userquota/userspace_003_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/userquota/userspace_004_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/userquota/userspace_005_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/userquota/userspace_encrypted.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/userquota/userspace_encrypted_13709.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/userquota/userspace_send_encrypted.ksh

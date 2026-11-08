@@ -12,6 +12,8 @@ WWW=		https://users-math.au.dk/jensen/software/gfan/gfan.html
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Fails to build, error: no member named 'vectormultiply' in 'Matrix<typ>'
+
 BUILD_DEPENDS=	${LOCALBASE}/include/cdd/cdd.h:math/cddlib
 LIB_DEPENDS=	libgmp.so:math/gmp
 

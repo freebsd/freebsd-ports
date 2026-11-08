@@ -1,5 +1,5 @@
 PORTNAME=	minizinc-ide
-DISTVERSION=	2.8.7
+DISTVERSION=	2.10.1
 CATEGORIES=	math lang
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,17 +12,16 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	minizinc:math/minizinc
 
-USES=		gl compiler:c++11-lang qmake qt:5
-USE_QT=		core declarative gui network sql testlib websockets widgets \
-		buildtools:build
+USES=		gl compiler:c++11-lang qmake qt:6
+USE_QT=		base websockets tools:build
 USE_GL=		gl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	MiniZinc
 GH_PROJECT=	MiniZincIDE
 
-USE_GITLAB=	nodefault
-GL_TUPLE=	minizinc:cp-profiler-integration:f16b3132df33b3f258971f36dbe5e909983381c9:cp/cp-profiler/src/cpp-integration
+#USE_GITLAB=	nodefault
+#GL_TUPLE=	minizinc:cp-profiler-integration:f16b3132df33b3f258971f36dbe5e909983381c9:cp/cp-profiler/src/cpp-integration
 
 PLIST_FILES=	bin/MiniZincIDE \
 		share/pixmaps/minizinc_icon.png

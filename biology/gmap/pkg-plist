@@ -5,6 +5,7 @@ bin/dbsnp_iit
 bin/ensembl_genes
 bin/fa_coords
 bin/get-genome
+bin/gff3_exons
 bin/gff3_genes
 bin/gff3_introns
 bin/gff3_splicesites
@@ -20,6 +21,7 @@ bin/gsnap
 bin/gsnap.nosimd
 bin/gsnapl
 bin/gsnapl.nosimd
+bin/gtf_exons
 bin/gtf_genes
 bin/gtf_introns
 bin/gtf_splicesites
@@ -33,7 +35,6 @@ bin/md_coords
 bin/psl_genes
 bin/psl_introns
 bin/psl_splicesites
-bin/sam_sort
 bin/snpindex
 bin/trindex
 bin/vcf_iit

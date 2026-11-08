@@ -1,11 +1,90 @@
---- CMakeLists.txt.orig	2024-06-14 13:05:27 UTC
+-- Look for an external CaDiCaL installation before falling back to the bundled git submodule.
+-- Vampire otherwise downloads and builds cadical from the submodule, which is not desired in FreeBSD.
+-- This allows the port to use the math/cadical package when it is installed.
+--- CMakeLists.txt.orig	2026-11-06 17:31:46 UTC
 +++ CMakeLists.txt
-@@ -807,15 +807,8 @@ find_package(
- # normally this is just in /z3/build/, but this can be overridden
+@@ -56,8 +56,14 @@ add_compile_definitions(ABSOLUTE_SOURCE_DIR="${CMAKE_S
+ 
+ add_compile_definitions(ABSOLUTE_SOURCE_DIR="${CMAKE_SOURCE_DIR}")
+ 
+-if(CMAKE_BUILD_TYPE STREQUAL Debug)
++if(BUILD_TESTING)
++  # unit tests access internals guarded by #if VDEBUG
+   add_compile_definitions(VDEBUG=1)
++  # Release builds define NDEBUG, but VDEBUG=1 requires it to be undefined
++  # (subsat debug members and assertions are guarded by #ifndef NDEBUG).
++  add_compile_options(-UNDEBUG)
++elseif(CMAKE_BUILD_TYPE STREQUAL Debug)
++  add_compile_definitions(VDEBUG=1)
+ else()
+   add_compile_definitions(VDEBUG=0)
+ endif()
+@@ -166,22 +172,48 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/mini-g
+ # CaDiCaL
+ ################################################################
+ 
+-# attempt to automatically checkout CaDiCaL
+-if(GIT_FOUND AND EXISTS "${PROJECT_SOURCE_DIR}/.git" AND NOT EXISTS "${PROJECT_SOURCE_DIR}/cadical/README.md")
+-  message(STATUS "CaDiCaL not checked out, running git submodule update")
+-  execute_process(
+-    COMMAND ${GIT_EXECUTABLE} submodule update --init cadical
+-    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+-  )
++# first look for an external CaDiCaL installation
++find_path(CADICAL_INCLUDE_DIR cadical/cadical.hpp
++  PATHS ${CMAKE_INSTALL_PREFIX}/include /usr/local/include
++  NO_DEFAULT_PATH
++)
++find_library(CADICAL_LIBRARY cadical
++  PATHS ${CMAKE_INSTALL_PREFIX}/lib /usr/local/lib
++  NO_DEFAULT_PATH
++)
++
++if(CADICAL_INCLUDE_DIR AND CADICAL_LIBRARY)
++  message(STATUS "found external CaDiCaL: " ${CADICAL_LIBRARY})
++  include_directories(${CADICAL_INCLUDE_DIR}/cadical)
++  link_libraries(${CADICAL_LIBRARY})
++  set(CADICAL_FOUND TRUE)
++else()
++  message(STATUS "external CaDiCaL not found, using submodule")
++  set(CADICAL_FOUND FALSE)
+ endif()
+ 
+-# check for CaDiCaL
+-if(NOT EXISTS "${PROJECT_SOURCE_DIR}/cadical/README.md")
+-  message(FATAL_ERROR "CaDiCaL not found")
++if(NOT CADICAL_FOUND)
++  # attempt to automatically checkout CaDiCaL
++  if(GIT_FOUND AND EXISTS "${PROJECT_SOURCE_DIR}/.git" AND NOT EXISTS "${PROJECT_SOURCE_DIR}/cadical/README.md")
++    message(STATUS "CaDiCaL not checked out, running git submodule update")
++    execute_process(
++      COMMAND ${GIT_EXECUTABLE} submodule update --init cadical
++      WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
++    )
++  endif()
++
++  # check for CaDiCaL
++  if(NOT EXISTS "${PROJECT_SOURCE_DIR}/cadical/README.md")
++    message(FATAL_ERROR "CaDiCaL not found")
++  endif()
++
++  include_directories(${CMAKE_CURRENT_SOURCE_DIR}/cadical/src)
++  add_compile_definitions(NBUILD=1)
+ endif()
+ 
+-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/cadical/src)
+-add_compile_definitions(NBUILD=1)
++if(CADICAL_FOUND)
++  list(FILTER SOURCES EXCLUDE REGEX "^cadical/")
++endif()
+ 
+ # Check if closefrom() exists in unistd.h
+ check_symbol_exists(closefrom "unistd.h" HAVE_CLOSEFROM)
+@@ -198,23 +230,13 @@ find_package(
+ # normally this is just in /z3/build/, but this can be overridden using -DZ3_DIR
  find_package(
    Z3
-+  REQUIRED
-   CONFIG
+-  CONFIG
 -    NO_CMAKE_PATH
 -    NO_CMAKE_ENVIRONMENT_PATH
 -    NO_SYSTEM_ENVIRONMENT_PATH
@@ -13,7 +92,34 @@
 -    NO_CMAKE_SYSTEM_PATH
 -    NO_CMAKE_SYSTEM_PACKAGE_REGISTRY
 -    PATHS
+-      ${Z3_DIR}
 -      ${CMAKE_SOURCE_DIR}/z3/build/
++  REQUIRED
  )
- if (NOT Z3_FOUND)
-   message(STATUS "No Z3 found -- Compiling without SMT support.")
+ 
+ if (Z3_FOUND)
+   message(STATUS "found Z3 " ${Z3_VERSION_STRING})
+   include_directories(${Z3_CXX_INCLUDE_DIRS})
+-  link_directories(${Z3_DIR})
+-  link_libraries(z3)
++  link_libraries(z3::libz3)
+   add_compile_definitions(VZ3=1)
+   set(UNIT_TESTS ${UNIT_TESTS} ${UNIT_TESTS_Z3})
+ else ()
+@@ -237,7 +259,7 @@ install(TARGETS vampire)
+ # UNIT TESTING
+ ################################################################
+ 
+-if(CMAKE_BUILD_TYPE STREQUAL Debug)
++if(BUILD_TESTING)
+   foreach(test_file ${UNIT_TESTS})
+     get_filename_component(test_name ${test_file} NAME_WE)
+     string(REGEX REPLACE "^t" "" test_name ${test_name})
+@@ -260,7 +282,6 @@ if(CMAKE_BUILD_TYPE STREQUAL Debug)
+   # build test executable
+   add_executable(
+     vtest
+-    EXCLUDE_FROM_ALL # only build when explicitly requested
+     ${TESTING_SOURCES}
+     ${UNIT_TESTS}
+     $<TARGET_OBJECTS:common>

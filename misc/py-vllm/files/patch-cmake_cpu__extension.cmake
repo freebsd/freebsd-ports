@@ -1,6 +1,15 @@
---- cmake/cpu_extension.cmake.orig	2026-05-14 23:50:01.854145000 +0200
-+++ cmake/cpu_extension.cmake	2026-05-14 23:50:01.866986000 +0200
-@@ -20,6 +20,11 @@
+--- cmake/cpu_extension.cmake.orig	2026-05-10 07:34:36 UTC
++++ cmake/cpu_extension.cmake
+@@ -1,7 +1,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+ include(FetchContent)
+ 
+ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+-set(CMAKE_CXX_STANDARD 17)
++set(CMAKE_CXX_STANDARD 20)
+ set(CMAKE_CXX_EXTENSIONS ON)
+ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+ 
+@@ -20,6 +20,11 @@ set (ENABLE_NUMA TRUE)
  
  set (ENABLE_NUMA TRUE)
  
@@ -12,7 +21,7 @@
  #
  # Check the compile flags
  #
-@@ -31,16 +36,23 @@
+@@ -31,16 +36,23 @@ else()
          "-fopenmp"
          "-DVLLM_CPU_EXTENSION")
  
@@ -45,7 +54,7 @@
      # Set LD_LIBRARY_PATH to include the shim dir at build time to use the same libgomp as PyTorch
      if (OPEN_MP)
          set(ENV{LD_LIBRARY_PATH} "${VLLM_TORCH_GOMP_SHIM_DIR}:$ENV{LD_LIBRARY_PATH}")
-@@ -48,11 +60,25 @@
+@@ -48,12 +60,26 @@ if (NOT MACOSX_FOUND)
  endif()
  
  if (NOT MACOSX_FOUND)
@@ -61,7 +70,7 @@
 +        set(_cpuinfo_path "/compat/linux/proc/cpuinfo")
 +    else()
 +        set(_cpuinfo_path "")
-+    endif()
+     endif()
 +    if (_cpuinfo_path)
 +        execute_process(COMMAND cat ${_cpuinfo_path}
 +                        RESULT_VARIABLE CPUINFO_RET
@@ -73,21 +82,21 @@
 +        message(STATUS "No cpuinfo available; relying on CMAKE_SYSTEM_PROCESSOR for ISA detection")
 +        set(CPUINFO " ")
 +        set(_USE_SYSPROCESSOR_ISA TRUE)
-     endif()
++    endif()
  endif()
  
-@@ -101,14 +127,22 @@
-     if (ENABLE_ARM_BF16)
+ 
+@@ -102,13 +128,21 @@ else()
          set(ARM_BF16_FOUND ON)
          message(STATUS "ARM BF16 support enabled via VLLM_CPU_ARM_BF16 environment variable")
-+    endif()
+     endif()
 +    # Override ISA based on CMAKE_SYSTEM_PROCESSOR when cpuinfo not available
 +    if(_USE_SYSPROCESSOR_ISA)
 +        if(CMAKE_SYSTEM_PROCESSOR MATCHES "powerpc64le|powerpc64|powerpc")
 +            set(POWER9_FOUND ON)
 +            message(STATUS "Detected ${CMAKE_SYSTEM_PROCESSOR}; enabling POWER9 ISA")
 +        endif()
-     endif()
++    endif()
  endif()
  
  if (CMAKE_SYSTEM_PROCESSOR MATCHES "x86_64|amd64" OR ENABLE_X86_ISA)
@@ -102,7 +111,7 @@
      endif()
      list(APPEND CXX_COMPILE_FLAGS "-mf16c")
      list(APPEND CXX_COMPILE_FLAGS_AVX512 ${CXX_COMPILE_FLAGS})
-@@ -446,9 +486,15 @@
+@@ -446,9 +480,15 @@ if (ENABLE_X86_ISA)
      message(STATUS "CPU extension (AVX512F) source files: ${VLLM_EXT_SRC_AVX512}")
      message(STATUS "CPU extension (AVX2) source files: ${VLLM_EXT_SRC_AVX2}")
  

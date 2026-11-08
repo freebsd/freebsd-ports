@@ -1,10 +1,11 @@
 PORTNAME=	orthanc
 DISTVERSION=	${ORTHANC_VER}	# version.mk
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://orthanc.uclouvain.be/downloads/sources/orthanc/
 DISTNAME=	Orthanc-${PORTVERSION}
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	longros@FreeBSD.org
 COMMENT=	Lightweight DICOM server for healthcare and medical research
 WWW=		https://www.orthanc-server.com/
 

@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+Spell checking is loaded at run time through Enchant. Install
+textproc/enchant2 together with a dictionary for your language to
+enable it.
+EOM
+}
+]

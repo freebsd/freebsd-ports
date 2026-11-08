@@ -1,5 +1,6 @@
 PORTNAME=	openbolt
 PORTVERSION=	5.6.0
+PORTREVISION=	1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -18,7 +19,7 @@ RUN_DEPENDS=	puppet:sysutils/openvox-agent8 \
 		rubygem-concurrent-ruby11>=1.0:devel/rubygem-concurrent-ruby11 \
 		rubygem-ffi>=1.13<2:devel/rubygem-ffi \
 		rubygem-hiera-eyaml>=3:sysutils/rubygem-hiera-eyaml \
-		rubygem-json>=2.12.0:devel/rubygem-json \
+		rubygem-json2>=2.12.0:devel/rubygem-json2 \
 		rubygem-jwt>=2.2:www/rubygem-jwt \
 		rubygem-logging>=2.2:devel/rubygem-logging \
 		rubygem-minitar>=0.6:archivers/rubygem-minitar \

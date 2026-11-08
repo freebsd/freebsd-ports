@@ -1,6 +1,6 @@
 PORTNAME=	godns
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.4.3
+DISTVERSION=	3.4.6
 CATEGORIES=	dns
 MASTER_SITES=	https://raw.githubusercontent.com/TimothyYe/${PORTNAME}/${DISTVERSIONFULL}/:gomod \
 		https://github.com/TimothyYe/${PORTNAME}/releases/download/v${DISTVERSION}/:webui
@@ -15,13 +15,15 @@ WWW=		https://github.com/TimothyYe/godns
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.26+,modules
+USES=		go:modules
 USE_RC_SUBR=	${PORTNAME}
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	TimothyYe
 GO_MODULE=	github.com/TimothyYe/godns
 GO_TARGET=	./cmd/${PORTNAME}
+
+CGO_ENABLED=	0
 
 post-extract:
 	@if [ ! -d ${WRKSRC}/internal/server/out ]; then \

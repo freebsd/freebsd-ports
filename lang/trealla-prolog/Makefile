@@ -1,6 +1,6 @@
 PORTNAME=	trealla-prolog
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.90.9
+DISTVERSION=	3.10.19
 CATEGORIES=	lang
 
 MAINTAINER=	siva@FreeBSD.org
@@ -11,6 +11,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gmake
+MAKEFILE=	GNUmakefile
 
 BUILD_DEPENDS=	xxd:sysutils/xxd
 TEST_DEPENDS=	bash:shells/bash
@@ -20,7 +21,7 @@ PLIST_FILES=	bin/tpl
 TEST_TARGET=	test
 
 OPTIONS_DEFINE=		FFI READLINE SSL THREADS
-OPTIONS_DEFAULT=	FFI READLINE SSL THREADS
+OPTIONS_DEFAULT=	FFI SSL THREADS
 
 FFI_DESC=	FFI support
 READLINE_DESC=	GNU readline support
@@ -31,6 +32,7 @@ FFI_LIB_DEPENDS=	libffi.so:devel/libffi
 FFI_MAKE_ARGS_OFF=	NOFFI=1
 
 READLINE_USES=		readline
+READLINE_MAKE_ARGS=	READLINE=1
 READLINE_MAKE_ARGS_OFF=	ISOCLINE=1
 
 SSL_USES=		ssl
@@ -39,7 +41,10 @@ SSL_MAKE_ARGS_OFF=	NOSSL=1
 THREADS_MAKE_ARGS_OFF=	NOTHREADS=1
 
 USE_GITHUB=	yes
-GH_PROJECT=	trealla
+
+# Upstream tags commits way too often, which spams portscout.
+# Please reach out to MAINTAINER if you need a newer version.
+PORTSCOUT=	ignore:1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tpl ${STAGEDIR}${PREFIX}/bin/

@@ -1,0 +1,22 @@
+[
+{ type: install
+  message: <<EOM
+This port was created for the remainder of the lifespan
+of FreeBSD 14.
+
+OpenSSL 3.0 has known vulnerabilities, all users of the
+3.0 port are encouraged to update to OpenSSL 3.5 from
+security/openssl
+EOM
+},
+{ type: upgrade
+  message: <<EOM
+This port was created for the remainder of the lifespan
+of FreeBSD 14.
+
+OpenSSL 3.0 has known vulnerabilities, all users of the
+3.0 port are encouraged to update to OpenSSL 3.5 from
+security/openssl
+EOM
+},
+]

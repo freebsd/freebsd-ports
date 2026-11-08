@@ -73,6 +73,10 @@
     SUBDIR += firebird40-server
     SUBDIR += fmptools
     SUBDIR += fortytwo-bdb
+    SUBDIR += foundationdb71-client
+    SUBDIR += foundationdb71-server
+    SUBDIR += foundationdb73-client
+    SUBDIR += foundationdb73-server
     SUBDIR += frece
     SUBDIR += freetds
     SUBDIR += freetds-devel
@@ -97,7 +101,6 @@
     SUBDIR += hiredis
     SUBDIR += hsqldb
     SUBDIR += iceberg-rust
-    SUBDIR += immudb
     SUBDIR += imposm3
     SUBDIR += influxdb
     SUBDIR += influxdb2-cli
@@ -114,6 +117,7 @@
     SUBDIR += kdb
     SUBDIR += kexi
     SUBDIR += keydb
+    SUBDIR += kividb
     SUBDIR += kyotocabinet
     SUBDIR += kyototycoon
     SUBDIR += ladybug
@@ -142,6 +146,7 @@
     SUBDIR += libmemcached
     SUBDIR += libmongocrypt
     SUBDIR += libmswstr
+    SUBDIR += libnusqlite3
     SUBDIR += libnvpair
     SUBDIR += libodbc++
     SUBDIR += libpbl
@@ -189,14 +194,19 @@
     SUBDIR += mongodb-tools
     SUBDIR += mongodb70
     SUBDIR += mongodb80
+    SUBDIR += mongodb90
     SUBDIR += mongosh
     SUBDIR += mroonga
     SUBDIR += mtop
     SUBDIR += mydumper
     SUBDIR += mysql++
+    SUBDIR += mysql-config-coder
     SUBDIR += mysql-connector-c++
     SUBDIR += mysql-connector-j
     SUBDIR += mysql-connector-odbc
+    SUBDIR += mysql-shell
+    SUBDIR += mysql2610-client
+    SUBDIR += mysql2610-server
     SUBDIR += mysql2pgsql
     SUBDIR += mysql80-client
     SUBDIR += mysql80-server
@@ -226,8 +236,16 @@
     SUBDIR += ods2sql
     SUBDIR += opendbviewer
     SUBDIR += opendbx
+    SUBDIR += openldap25-client
+    SUBDIR += openldap25-server
+    SUBDIR += openldap26-client
+    SUBDIR += openldap26-server
+    SUBDIR += openldap27-client
+    SUBDIR += openldap27-server
     SUBDIR += openvoxdb-terminus8
+    SUBDIR += openvoxdb-terminus9
     SUBDIR += openvoxdb8
+    SUBDIR += openvoxdb9
     SUBDIR += ora2pg
     SUBDIR += oracle8-client
     SUBDIR += p5-Amazon-SimpleDB
@@ -540,7 +558,6 @@
     SUBDIR += pecl-memcache
     SUBDIR += pecl-memcached
     SUBDIR += pecl-mongodb
-    SUBDIR += pecl-redis
     SUBDIR += pecl-rrd
     SUBDIR += percona-orchestrator
     SUBDIR += percona-toolkit
@@ -555,6 +572,7 @@
     SUBDIR += pg_cron
     SUBDIR += pg_dirtyread
     SUBDIR += pg_ed25519
+    SUBDIR += pg_failover_slots
     SUBDIR += pg_filedump
     SUBDIR += pg_hashids
     SUBDIR += pg_incremental
@@ -575,8 +593,10 @@
     SUBDIR += pgbackrest
     SUBDIR += pgbadger
     SUBDIR += pgbarman
+    SUBDIR += pgbot
     SUBDIR += pgbouncer
     SUBDIR += pgdbf
+    SUBDIR += pgdog
     SUBDIR += pgjwt
     SUBDIR += pgloader3
     SUBDIR += pglogical
@@ -594,10 +614,13 @@
     SUBDIR += pgschema
     SUBDIR += pgsql-http
     SUBDIR += pgtcl
+    SUBDIR += pgterm
     SUBDIR += pgtop
+    SUBDIR += pgtui
     SUBDIR += pguri
     SUBDIR += pgvector
     SUBDIR += php-memvector
+    SUBDIR += php-redis
     SUBDIR += php-tarantool
     SUBDIR += php-xapian
     SUBDIR += php82-dba
@@ -669,10 +692,12 @@
     SUBDIR += plpgsql_check
     SUBDIR += pointcloud
     SUBDIR += postgis-jdbc
+    SUBDIR += postgis-tiger_geocoder
     SUBDIR += postgis33
     SUBDIR += postgis34
     SUBDIR += postgis35
     SUBDIR += postgis36
+    SUBDIR += postgis37
     SUBDIR += postgresql-idn
     SUBDIR += postgresql-jdbc
     SUBDIR += postgresql-libpgeasy
@@ -733,6 +758,14 @@
     SUBDIR += postgresql18-plpython
     SUBDIR += postgresql18-pltcl
     SUBDIR += postgresql18-server
+    SUBDIR += postgresql19-client
+    SUBDIR += postgresql19-contrib
+    SUBDIR += postgresql19-docs
+    SUBDIR += postgresql19-pgtcl
+    SUBDIR += postgresql19-plperl
+    SUBDIR += postgresql19-plpython
+    SUBDIR += postgresql19-pltcl
+    SUBDIR += postgresql19-server
     SUBDIR += powa-archivist
     SUBDIR += powa-web
     SUBDIR += powerarchitect
@@ -749,7 +782,6 @@
     SUBDIR += puredb
     SUBDIR += pxlib
     SUBDIR += pxtools
-    SUBDIR += py-Elixir
     SUBDIR += py-PyGreSQL
     SUBDIR += py-PyHive
     SUBDIR += py-PyPika
@@ -770,7 +802,6 @@
     SUBDIR += py-asyncmy
     SUBDIR += py-asyncpg
     SUBDIR += py-berkeleydb
-    SUBDIR += py-cassandra-driver
     SUBDIR += py-chroma-hnswlib
     SUBDIR += py-chromadb
     SUBDIR += py-couchdb
@@ -778,6 +809,7 @@
     SUBDIR += py-databases
     SUBDIR += py-databricks-sql-connector
     SUBDIR += py-datafusion
+    SUBDIR += py-db-dtypes
     SUBDIR += py-dbf
     SUBDIR += py-dbt-core
     SUBDIR += py-dbt-duckdb
@@ -785,6 +817,7 @@
     SUBDIR += py-dbt-snowflake
     SUBDIR += py-dbutils
     SUBDIR += py-deltalake
+    SUBDIR += py-django-pgware
     SUBDIR += py-duckdb
     SUBDIR += py-duckdb_engine
     SUBDIR += py-fakeredis
@@ -845,6 +878,7 @@
     SUBDIR += py-pyarrow
     SUBDIR += py-pyarrow-stubs
     SUBDIR += py-pyiceberg
+    SUBDIR += py-pylance
     SUBDIR += py-pylibmc
     SUBDIR += py-pymemcache
     SUBDIR += py-pymongo
@@ -875,7 +909,6 @@
     SUBDIR += py-sqlalchemy-json
     SUBDIR += py-sqlalchemy-migrate
     SUBDIR += py-sqlalchemy-utils
-    SUBDIR += py-sqlalchemy10
     SUBDIR += py-sqlalchemy14
     SUBDIR += py-sqlalchemy20
     SUBDIR += py-sqlcipher3
@@ -936,6 +969,7 @@
     SUBDIR += redisbloom
     SUBDIR += redisjson
     SUBDIR += redisjson86
+    SUBDIR += redistimeseries
     SUBDIR += retcl
     SUBDIR += rocksdb
     SUBDIR += rocksdb-jni
@@ -1163,6 +1197,7 @@
     SUBDIR += tdb1
     SUBDIR += tdb1410
     SUBDIR += tdb1413
+    SUBDIR += tdb1415
     SUBDIR += tdbc
     SUBDIR += tile38
     SUBDIR += tiledb
@@ -1195,7 +1230,6 @@
     SUBDIR += xapian-core14
     SUBDIR += xls2txt
     SUBDIR += xrootd
-    SUBDIR += xtrabackup80
     SUBDIR += xtrabackup84
     SUBDIR += zodb
 

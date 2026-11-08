@@ -1,0 +1,17 @@
+share/bhotkeys/plugins.d/mate-lock
+share/bhotkeys/plugins.d/mate-media
+share/bhotkeys/plugins.d/mate-menu
+share/bhotkeys/plugins.d/mate-mic-mute
+share/bhotkeys/plugins.d/mate-minimize
+share/bhotkeys/plugins.d/mate-mute
+share/bhotkeys/plugins.d/mate-next
+share/bhotkeys/plugins.d/mate-pause
+share/bhotkeys/plugins.d/mate-play
+share/bhotkeys/plugins.d/mate-power
+share/bhotkeys/plugins.d/mate-prev
+share/bhotkeys/plugins.d/mate-run
+share/bhotkeys/plugins.d/mate-shot
+share/bhotkeys/plugins.d/mate-shot-window
+share/bhotkeys/plugins.d/mate-stop
+share/bhotkeys/plugins.d/mate-vol-down
+share/bhotkeys/plugins.d/mate-vol-up

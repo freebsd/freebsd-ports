@@ -4,62 +4,78 @@
 # REQUIRE: FILESYSTEMS ldconfig
 # BEFORE: netif
 
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to configure this service:
+#
+# vmware_guest_kmod_enable (bool):	Set to YES by default.
+#					Default for the per-module knobs below.
+# vmware_guest_vmmemctl_enable (bool):	Load vmmemctl.ko.
+#					Defaults to $vmware_guest_kmod_enable.
+# vmware_guest_vmblock_enable (bool):	Load vmblock.ko.
+#					Defaults to $vmware_guest_kmod_enable.
+
 . /etc/rc.subr
 
-# Global
-checkvm_cmd="%%PREFIX%%/bin/vmware-checkvm > /dev/null"
-
-# Functions
-vmware_mod_load()
-{
-	echo -n "Loading $1 kernel module: "
-	if kldstat -qn $1.ko; then
-		echo "already loaded."
-	elif kldload -q $1.ko; then
-		echo "done."
-	else
-		echo "failed."
-		return 1
-	fi
-}
-vmware_mod_status()
-{
-	echo -n "Checking $1 kernel module: "
-	if kldstat -qn $1.ko; then
-		echo "loaded."
-	else
-		echo "not loaded"
-		return 1
-	fi
-}
-
-# VMware kernel module: vmmemctl
-kernel_mod="vmmemctl"
-name="vmware_guest_${kernel_mod}"
-rcvar=vmware_guest_${kernel_mod}_enable
-extra_commands="status"
-status_cmd="vmware_mod_status ${kernel_mod}"
-start_precmd="${checkvm_cmd}"
-start_cmd="vmware_mod_load ${kernel_mod}"
-stop_precmd="${checkvm_cmd}"
-stop_cmd=":"
+name="vmware_guest_kmod"
+rcvar=vmware_guest_kmod_enable
 
 load_rc_config $name
+load_rc_config vmware_guest_vmmemctl
+load_rc_config vmware_guest_vmblock
+
 : ${vmware_guest_kmod_enable:="YES"}
 : ${vmware_guest_vmmemctl_enable:=$vmware_guest_kmod_enable}
-run_rc_command "$1"
+: ${vmware_guest_vmblock_enable:=$vmware_guest_kmod_enable}
 
-# VMware kernel module: vmblock
-kernel_mod="vmblock"
-name="vmware_guest_${kernel_mod}"
-rcvar=vmware_guest_${kernel_mod}_enable
+kernel_mods="vmmemctl vmblock"
+
+# Each module can be enabled on its own, so the service is enabled
+# if and only if at least one of them is.
+vmware_guest_kmod_enable="NO"
+for _mod in ${kernel_mods}; do
+	checkyesno vmware_guest_${_mod}_enable && vmware_guest_kmod_enable="YES"
+done
+
+checkvm_cmd="%%PREFIX%%/bin/vmware-checkvm > /dev/null"
 extra_commands="status"
-status_cmd="vmware_mod_status ${kernel_mod}"
+status_cmd="vmware_mod_status"
 start_precmd="${checkvm_cmd}"
-start_cmd="vmware_mod_load ${kernel_mod}"
+start_cmd="vmware_mod_load"
 stop_precmd="${checkvm_cmd}"
 stop_cmd=":"
 
-load_rc_config $name
-: ${vmware_guest_vmblock_enable:=$vmware_guest_kmod_enable}
+vmware_mod_load()
+{
+	_ret=0
+	for _mod in ${kernel_mods}; do
+		checkyesno vmware_guest_${_mod}_enable || continue
+		echo -n "Loading ${_mod} kernel module: "
+		if kldstat -qn ${_mod}.ko; then
+			echo "already loaded."
+		elif kldload -q ${_mod}.ko; then
+			echo "done."
+		else
+			echo "failed."
+			_ret=1
+		fi
+	done
+	return ${_ret}
+}
+
+vmware_mod_status()
+{
+	_ret=0
+	for _mod in ${kernel_mods}; do
+		checkyesno vmware_guest_${_mod}_enable || continue
+		echo -n "Checking ${_mod} kernel module: "
+		if kldstat -qn ${_mod}.ko; then
+			echo "loaded."
+		else
+			echo "not loaded"
+			_ret=1
+		fi
+	done
+	return ${_ret}
+}
+
 run_rc_command "$1"

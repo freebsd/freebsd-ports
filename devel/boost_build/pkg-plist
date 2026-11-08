@@ -27,6 +27,7 @@ bin/b2
 %%DATADIR%%/src/tools/bison.jam
 %%DATADIR%%/src/tools/boostbook.jam
 %%DATADIR%%/src/tools/borland.jam
+%%DATADIR%%/src/tools/brotli.jam
 %%DATADIR%%/src/tools/builtin.jam
 %%DATADIR%%/src/tools/bzip2.jam
 %%DATADIR%%/src/tools/cast.jam
@@ -65,6 +66,7 @@ bin/b2
 %%DATADIR%%/src/tools/features/cflags-feature.jam
 %%DATADIR%%/src/tools/features/compileflags-feature.jam
 %%DATADIR%%/src/tools/features/conditional-feature.jam
+%%DATADIR%%/src/tools/features/contracts-feature.jam
 %%DATADIR%%/src/tools/features/coverage-feature.jam
 %%DATADIR%%/src/tools/features/cxx-template-depth-feature.jam
 %%DATADIR%%/src/tools/features/cxxabi-feature.jam
@@ -114,6 +116,7 @@ bin/b2
 %%DATADIR%%/src/tools/features/version-feature.jam
 %%DATADIR%%/src/tools/features/visibility-feature.jam
 %%DATADIR%%/src/tools/features/warnings-feature.jam
+%%DATADIR%%/src/tools/filc.jam
 %%DATADIR%%/src/tools/flags.jam
 %%DATADIR%%/src/tools/fop.jam
 %%DATADIR%%/src/tools/fortran.jam
@@ -197,6 +200,7 @@ bin/b2
 %%DATADIR%%/src/tools/types/sass-type.jam
 %%DATADIR%%/src/tools/types/xml.jam
 %%DATADIR%%/src/tools/unix.jam
+%%DATADIR%%/src/tools/vcpkg.jam
 %%DATADIR%%/src/tools/vmsdecc.jam
 %%DATADIR%%/src/tools/whale.jam
 %%DATADIR%%/src/tools/xlf.jam

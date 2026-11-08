@@ -1,9 +1,8 @@
 PORTNAME=	meson
-PORTVERSION=	1.10.2
-PORTREVISION=	1
+DISTVERSION=	1.12.1
 PORTEPOCH=	1
 CATEGORIES=	devel python
-MASTER_SITES=	https://github.com/mesonbuild/${PORTNAME}/releases/download/${PORTVERSION}/
+MASTER_SITES=	https://github.com/mesonbuild/${PORTNAME}/releases/download/${DISTVERSION}/
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	High performance build system
@@ -25,7 +24,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-xdist>0:devel/py-pytest-xdist@${PY_F
 		gcc${GCC_DEFAULT}:lang/gcc${GCC_DEFAULT}
 
 USES=		ninja:run python shebangfix vala:test
-USE_PYTHON=	autoplist cython_test optsuffix pep517 pytest
+USE_PYTHON=	autoplist cython_test pep517 pytest
 SHEBANG_FILES=	mesonbuild/rewriter.py \
 		mesonbuild/scripts/cmake_run_ctgt.py
 NO_ARCH=	yes
@@ -49,6 +48,12 @@ pre-test: create-binary-alias # force if run late
 PYTEST_BROKEN_TESTS=	test_pkgconfig_formatting \
 			test_static_link
 
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_VER} != ${PYTHON_DEFAULT}
+PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/python3|${PYTHON_CMD}|' \
 		-e 's|/usr/bin/meson|${LOCALBASE}/bin/meson|' \
@@ -62,4 +67,4 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|'gcc'|'gcc${GCC_DEFAULT}'|g" \
 		${WRKSRC}/unittests/internaltests.py
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -2,9 +2,9 @@
   the stage directory and that the game can actually find its assets
   at runtime
 
---- makefile.orig	2024-01-01 08:30:47 UTC
+--- makefile.orig	2026-01-01 08:08:40 UTC
 +++ makefile
-@@ -22,7 +22,7 @@ PO_PROG   = po_creator
+@@ -23,7 +23,7 @@ endif
  TILE_PROG = tile_creator
  endif
  
@@ -13,7 +13,16 @@
  BIN_DIR = $(PREFIX)/games/
  DOC_DIR = $(PREFIX)/share/doc/$(PROG)/
  ICON_DIR = $(PREFIX)/share/icons/hicolor/
-@@ -150,39 +150,39 @@ install: all buildpak
+@@ -116,7 +116,7 @@ makefile.dep : src/*/*.h src/*.h
+ makefile.dep : src/*/*.h src/*.h
+ 	mkdir -p $(OBJ)
+ 	for i in src/*.c src/*/*.c; do $(CC) $(CFLAGS) -MM "$${i}"; done > $@
+-	sed -i -E 's/^(.+:)/obj\/\1/g' $@
++	sed -i '' -E 's/^(.+:)/obj\/\1/g' $@
+ 
+ # compiling other source files.
+ $(MAIN_OBJS) $(CORE_OBJS) $(EDIT_OBJS) $(PAK_OBJS) $(PO_OBJS) $(TILE_OBJS):
+@@ -160,39 +160,39 @@ else
  ifeq ($(DEV),1)
  	echo Cannot install if DEV is set to 1!
  else

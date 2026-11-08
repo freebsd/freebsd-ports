@@ -1,9 +1,9 @@
 PORTNAME=	utf8proc
-DISTVERSION=	2.11.3
+DISTVERSION=	2.12.0
 CATEGORIES=	textproc devel
 MASTER_SITES=	https://github.com/JuliaStrings/${PORTNAME}/releases/download/v${DISTVERSION}/ \
-		https://www.unicode.org/Public/17.0.0/ucd/:testfiles1 \
-		https://www.unicode.org/Public/17.0.0/ucd/auxiliary/:testfiles2
+		https://www.unicode.org/Public/18.0.0/ucd/:testfiles1 \
+		https://www.unicode.org/Public/18.0.0/ucd/auxiliary/:testfiles2
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		NormalizationTest.txt:testfiles1 \
 		GraphemeBreakTest.txt:testfiles2

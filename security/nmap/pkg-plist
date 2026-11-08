@@ -20,7 +20,7 @@ share/man/man1/nping.1.gz
 %%NLS%%share/man/zh/man1/nmap.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/HACKING
-%%SSL%%share/ncat/ca-bundle.crt
+%%OPENSSL%%share/ncat/ca-bundle.crt
 %%DATADIR%%/nmap-mac-prefixes
 %%DATADIR%%/nmap-os-db
 %%DATADIR%%/nmap-protocols
@@ -304,7 +304,15 @@ share/man/man1/nping.1.gz
 %%DATADIR%%/scripts/deluge-rpc-brute.nse
 %%DATADIR%%/scripts/dhcp-discover.nse
 %%DATADIR%%/scripts/dicom-brute.nse
+%%DATADIR%%/scripts/dicom-cfind-ls.nse
+%%DATADIR%%/scripts/dicom-cmove.nse
+%%DATADIR%%/scripts/dicom-get.nse
+%%DATADIR%%/scripts/dicom-info.nse
 %%DATADIR%%/scripts/dicom-ping.nse
+%%DATADIR%%/scripts/dicom-slowloris.nse
+%%DATADIR%%/scripts/dicom-store-fuzzer.nse
+%%DATADIR%%/scripts/dicom-store-inject.nse
+%%DATADIR%%/scripts/dicom-web-enum.nse
 %%DATADIR%%/scripts/dict-info.nse
 %%DATADIR%%/scripts/distcc-cve2004-2687.nse
 %%DATADIR%%/scripts/dns-blacklist.nse
@@ -368,7 +376,6 @@ share/man/man1/nping.1.gz
 %%DATADIR%%/scripts/hbase-region-info.nse
 %%DATADIR%%/scripts/hddtemp-info.nse
 %%DATADIR%%/scripts/hnap-info.nse
-%%DATADIR%%/scripts/hostmap-bfk.nse
 %%DATADIR%%/scripts/hostmap-crtsh.nse
 %%DATADIR%%/scripts/hostmap-robtex.nse
 %%DATADIR%%/scripts/http-adobe-coldfusion-apsa1301.nse

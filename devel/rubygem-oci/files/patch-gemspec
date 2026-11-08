@@ -1,0 +1,11 @@
+--- oci.gemspec.orig	2026-09-24 04:27:16 UTC
++++ oci.gemspec
+@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
+ 
+   s.add_runtime_dependency(%q<json>.freeze, [">= 1.4.6".freeze, "< 3.0.0".freeze])
+   s.add_runtime_dependency(%q<inifile>.freeze, ["~> 3.0".freeze, ">= 3.0.0".freeze])
+-  s.add_runtime_dependency(%q<jwt>.freeze, ["= 3.2.0".freeze])
++  s.add_runtime_dependency(%q<jwt>.freeze, ["~> 3.2".freeze])
+   s.add_runtime_dependency(%q<psych>.freeze, ["~> 5.0".freeze, ">= 5.0.1".freeze])
+   s.add_runtime_dependency(%q<event_stream_parser>.freeze, ["~> 1.0.0".freeze])
+   s.add_runtime_dependency(%q<circuitbox>.freeze, ["~> 2.0.0".freeze])

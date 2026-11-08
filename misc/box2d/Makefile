@@ -1,6 +1,7 @@
 PORTNAME=	Box2D
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.1
+DISTVERSION=	3.1.1
+PORTEPOCH=	1
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,6 +11,8 @@ WWW=		https://box2d.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	fails to compile: error: always_inline function '_mm_setr_ps' requires target feature 'sse', but would be inlined into function 'b2SetW' that is compiled without support for 'sse'
+
 USES=		cmake compiler:c++11-lang pkgconfig
 USE_LDCONFIG=	yes
 
@@ -18,7 +21,7 @@ GH_ACCOUNT=	erincatto
 GH_PROJECT=	box2d
 
 CMAKE_ON=	BOX2D_INSTALL BUILD_SHARED_LIBS
-CMAKE_OFF=	BOX2D_BUILD_STATIC BOX2D_BUILD_UNIT_TESTS BOX2D_BUILD_TESTBED BOX2D_BUILD_EXAMPLES
+CMAKE_OFF=	BOX2D_BUILD_STATIC BOX2D_BUILD_UNIT_TESTS BOX2D_BUILD_TESTBED BOX2D_BUILD_EXAMPLES BOX2D_SAMPLES
 
 do-test:
 	@cd ${BUILD_WRKSRC} && \

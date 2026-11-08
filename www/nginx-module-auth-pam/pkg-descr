@@ -1,0 +1,7 @@
+The auth_pam module authenticates HTTP basic credentials against PAM, so
+nginx can use the same account databases as the rest of the system instead
+of a password file of its own.  The PAM service name is named in the
+configuration.
+
+This port only installs the module sources.  The module itself is built by
+the nginx ports when their HTTP_AUTH_PAM option is enabled.

@@ -1,11 +1,11 @@
---- meson.build.orig	2025-03-25 17:33:27 UTC
+--- meson.build.orig	2026-11-04 23:33:41 UTC
 +++ meson.build
-@@ -1791,7 +1791,7 @@ if get_option('cplayer')
-     conf_files = ['etc/mpv.conf', 'etc/input.conf',
+@@ -1866,7 +1866,7 @@ if get_option('cplayer')
+     conf_files = ['etc/mpv.conf', 'etc/encoding-profiles.conf', 'etc/input.conf',
                    'etc/mplayer-input.conf', 'etc/restore-old-bindings.conf',
                    'etc/restore-osc-bindings.conf']
--    install_data(conf_files, install_dir: join_paths(datadir, 'doc', 'mpv'))
-+    install_data(conf_files, install_dir: join_paths(datadir, 'examples', 'mpv'))
+-    install_data(conf_files, install_tag: 'doc', install_dir: join_paths(datadir, 'doc', 'mpv'))
++    install_data(conf_files, install_tag: 'doc', install_dir: join_paths(datadir, 'examples', 'mpv'))
  
      bash_install_dir = join_paths(datadir, 'bash-completion', 'completions')
-     install_data('etc/mpv.bash-completion', install_dir: bash_install_dir, rename: 'mpv')
+     install_data('etc/mpv.bash-completion', install_tag: 'bash', install_dir: bash_install_dir, rename: 'mpv')

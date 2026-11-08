@@ -1,6 +1,6 @@
---- components/password_manager/core/browser/features/password_features.cc.orig	2026-06-05 13:45:06 UTC
+--- components/password_manager/core/browser/features/password_features.cc.orig	2026-10-31 12:09:36 UTC
 +++ components/password_manager/core/browser/features/password_features.cc
-@@ -83,7 +83,7 @@ BASE_FEATURE(kClearUndecryptablePasswords,
+@@ -76,7 +76,7 @@ BASE_FEATURE(kClearUndecryptablePasswords,
  BASE_FEATURE(kClearUndecryptablePasswordsOnSync,
               "ClearUndecryptablePasswordsInSync",
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_IOS) || \
@@ -9,18 +9,9 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -123,7 +123,7 @@ BASE_FEATURE(kFillChangePasswordFormByTyping,
- BASE_FEATURE(kFillOnAccountSelect,
-              "fill-on-account-select",
- // TODO(504600482): Disable the feature again upon fixing the bug.
--#if BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-              base::FEATURE_ENABLED_BY_DEFAULT
- #else
-              base::FEATURE_DISABLED_BY_DEFAULT
-@@ -181,7 +181,7 @@ BASE_FEATURE(kProactivelyDownloadModelForPasswordChang
- 
- BASE_FEATURE(kPasswordCheckupPrototype, base::FEATURE_DISABLED_BY_DEFAULT);
+@@ -188,7 +188,7 @@ BASE_FEATURE(kPreventPasswordManagerOnFederatedLogin,
+ // Remove in or after M155.
+ BASE_FEATURE(kRecordPasswordReadiness, base::FEATURE_ENABLED_BY_DEFAULT);
  
 -#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)

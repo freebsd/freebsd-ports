@@ -25,6 +25,7 @@ GH_TUPLE=	grame-cncm:guidolib:acadbcc:guidolib/modules/guidolib # this uses some
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/build
 CMAKE_ARGS=	-DFREEBSD_EXAMPLESDIR=${EXAMPLESDIR} -DFREEBSD_DOCSDIR=${DOCSDIR}
+CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility
 
 CXXFLAGS+=	-I${LOCALBASE}/include/guido -I${LOCALBASE}/include/guidoar
 CXXFLAGS_powerpc64=	-DOSC_HOST_BIG_ENDIAN

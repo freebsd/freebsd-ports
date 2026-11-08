@@ -170,6 +170,7 @@ lib/cmake/Qt6Qml/QmlPlugins/Qt6PdfQuickpluginTargetsPrecheck.cmake
 %%QT_SBOMDIR%%/qtpdf-%%FULLVER%%.cdx.json
 %%QT_SBOMDIR%%/qtpdf-%%FULLVER%%.spdx
 %%QT_SBOMDIR%%/qtpdf-%%FULLVER%%.spdx.json
+%%QT_SBOMDIR%%/qtwebengine-chromium-pdf-%%FULLVER%%.cdx.json
 %%QT_SBOMDIR%%/qtwebengine-chromium-pdf-%%FULLVER%%.spdx
 %%QT_SBOMDIR%%/qtwebengine-chromium-pdf-%%FULLVER%%.spdx.json
 libdata/pkgconfig/Qt6Pdf.pc

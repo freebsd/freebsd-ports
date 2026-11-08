@@ -1,0 +1,21 @@
+--- pyproject.toml.orig	2026-08-23 16:58:03 UTC
++++ pyproject.toml
+@@ -3,8 +3,7 @@ requires-python = ">=3.10"
+ version = "5.3.0"
+ description = "A ``pytest`` fixture for benchmarking code. It will group the tests into rounds that are calibrated to the chosen timer."
+ requires-python = ">=3.10"
+-license = "BSD-2-Clause"
+-license-files = ["LICENSE"]
++license = { text = "BSD-2-Clause" }
+ authors = [
+     { name = "Ionel Cristian Mărieș", email = "contact@ionelmc.ro" },
+ ]
+@@ -77,7 +76,7 @@ requires = [
+ 
+ [build-system]
+ requires = [
+-    "setuptools>=80",
++    "setuptools>=61",
+ ]
+ build-backend = "setuptools.build_meta"
+ 

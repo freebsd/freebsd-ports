@@ -1,7 +1,6 @@
 PORTNAME=	quantum-espresso
 DISTVERSIONPREFIX=	qe-
-DISTVERSION=	7.5
-PORTREVISION=	2
+DISTVERSION=	7.6
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,9 +12,8 @@ WWW=		https://www.quantum-espresso.org \
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/License
 
-ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 powerpc64le
+ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	requires the intrinsic module 'ieee_arithmetic' which is not available on other architectures
-#BROKEN_aarch64=	compilation fails: cannot find an intrinsic module named 'ieee_arithmetic', see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=278942
 #BROKEN_armv6=	fails to build: gfortran8: error: iotk_base_tmp.f90: No such file or directory
 #BROKEN_armv7=	fails to build: gfortran8: error: iotk_base_tmp.f90: No such file or directory
 
@@ -38,7 +36,7 @@ GH_TUPLE=	anharmonic:d3q:6e5f978:anharmonic_d3q/external/d3q \
 		Reference-LAPACK:lapack:12d825396fcef1e0a1b27be9f119f9e554621e55:Reference_LAPACK_lapack/external/lapack \
 		libmbd:libmbd:89a3cc1:libmbd_libmbd/external/mbd \
 		QMCPACK:pw2qmcpack:f72ab25fa4ea755c1b4b230ae8074b47d5509c70:QMCPACK_pw2qmcpack/external/pw2qmcpack \
-		dceresoli:qe-gipaw:490046d:dceresoli_qe_gipaw/external/qe-gipaw \
+		dceresoli:qe-gipaw:717e55c:dceresoli_qe_gipaw/external/qe-gipaw \
 		wannier-developers:wannier90:1d6b187374a2d50b509e5e79e2cab01a79ff7ce1:wannier_developers_wannier90/external/wannier90
 USE_GITLAB=	nodefault
 GL_TUPLE=	max-centre/components:devicexlib:a6b89ef:devxlib/external/devxlib
@@ -92,6 +90,7 @@ run-examples: build
 .endfor
 
 # tests as of QE 7.5: 243 out of 247 tests passed (5 skipped, 4 unknown)
+# tests as of QE 7.6: tests hang, see https://gitlab.com/QEF/q-e/-/work_items/886
 
 # many pseudopotentials that can be used with QE are listed in https://pseudopotentials.quantum-espresso.org/
 # QE became so popular that many other parties develop and distribute pseudopotentials compatible with QE

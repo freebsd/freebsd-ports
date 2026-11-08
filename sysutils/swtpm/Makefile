@@ -1,9 +1,9 @@
 PORTNAME=	swtpm
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.1
+DISTVERSION=	0.10.2
 CATEGORIES=	sysutils
 
-MAINTAINER=	meka@tilda.center
+MAINTAINER=	meka@sys.it.com
 COMMENT=	Libtpms-based TPM emulator
 WWW=		https://github.com/stefanberger/swtpm
 

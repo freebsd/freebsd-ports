@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Version=1.5
+Name=Processing
+GenericName=Processing IDE
+Comment=Programming environment for images, animation, and interactions
+Exec=processing
+Icon=processing
+Terminal=false
+Categories=Graphics;Development;IDE;
+MimeType=text/x-processing;
+StartupWMClass=processing-app-ProcessingKt

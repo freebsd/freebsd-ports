@@ -1,6 +1,5 @@
 PORTNAME=	neko
-DISTVERSION=	1.0.3
-PORTREVISION=	1
+DISTVERSION=	1.1.2
 CATEGORIES=	science
 MASTER_SITES=	https://github.com/ExtremeFLOW/neko/releases/download/v${DISTVERSION}/
 
@@ -11,6 +10,8 @@ WWW=		https://neko.cfd/ \
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+BROKEN_i386=	fails to compile: Type mismatch in argument 's' at (1); passed INTEGER(8) to INTEGER(4)
 
 LIB_DEPENDS=	libjsonfortran.so:devel/json-fortran \
 		libopenblas.so:math/openblas
@@ -26,6 +27,14 @@ SHEBANG_GLOB=	*.sh
 GNU_CONFIGURE=	yes
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
+
+post-extract:
+	@${MV} ${WRKSRC}/src/math/math.f90 ${WRKSRC}/src/math/math.F90
+	@${MV} ${WRKSRC}/src/math/fdm.f90 ${WRKSRC}/src/math/fdm.F90
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|math/math\.f90|math/math.F90|' \
+		-e 's|math/fdm\.f90|math/fdm.F90|' ${WRKSRC}/src/Makefile.in
 
 do-test:
 	@${MKDIR} ${WRKSRC}/contrib/neko_log_parser
@@ -44,6 +53,6 @@ do-test:
 		--launcher-script=${WRKSRC}/tests/integration/default_cpu_launcher.sh \
 		tests
 
-# tests as of 1..3: 14 passed in 38.37s
+# tests as of 1.1.2: 14 passed in 135.32s
 
 .include <bsd.port.mk>

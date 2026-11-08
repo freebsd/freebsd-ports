@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/media/base/media_switches.h.orig	2025-09-06 10:01:20 UTC
+--- src/3rdparty/chromium/media/base/media_switches.h.orig	2026-08-11 12:42:19 UTC
 +++ src/3rdparty/chromium/media/base/media_switches.h
-@@ -338,13 +338,25 @@ MEDIA_EXPORT BASE_DECLARE_FEATURE(kMediaRecorderHEVCSu
+@@ -342,13 +342,25 @@ MEDIA_EXPORT BASE_DECLARE_FEATURE(kPreloadMetadataSusp
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kPlaybackSpeedButton);
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kPreloadMediaEngagementData);
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kPreloadMetadataSuspend);
@@ -28,7 +28,7 @@
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kReduceHardwareVideoDecoderBuffers);
  #endif  // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX)
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kResumeBackgroundVideo);
-@@ -363,7 +375,7 @@ MEDIA_EXPORT BASE_DECLARE_FEATURE(kUnifiedAutoplay);
+@@ -367,7 +379,7 @@ MEDIA_EXPORT BASE_DECLARE_FEATURE(kMediaStreamAccurate
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kUseAndroidOverlayForSecureOnly);
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kUseFakeDeviceForMediaStream);
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kMediaStreamAccurateDroppedFrameCount);
@@ -37,7 +37,7 @@
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kAcceleratedVideoDecodeLinux);
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kAcceleratedVideoDecodeLinuxGL);
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kAcceleratedVideoEncodeLinux);
-@@ -379,7 +391,7 @@ MEDIA_EXPORT BASE_DECLARE_FEATURE(kVaapiAV1TemporalLay
+@@ -383,7 +395,7 @@ MEDIA_EXPORT BASE_DECLARE_FEATURE(kVSyncMjpegDecoding)
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kVaapiVp9SModeHWEncoding);
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kVSyncMjpegDecoding);
  #endif  // defined(ARCH_CPU_X86_FAMILY) && BUILDFLAG(IS_CHROMEOS)
@@ -46,7 +46,7 @@
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kV4L2H264TemporalLayerHWEncoding);
  #endif  // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX)
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kVideoBlitColorAccuracy);
-@@ -497,7 +509,7 @@ MEDIA_EXPORT BASE_DECLARE_FEATURE(kBackgroundListening
+@@ -501,7 +513,7 @@ MEDIA_EXPORT BASE_DECLARE_FEATURE(kUseOutOfProcessVide
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kUseOutOfProcessVideoDecoding);
  #endif  // BUILDFLAG(ALLOW_OOP_VIDEO_DECODER)
  

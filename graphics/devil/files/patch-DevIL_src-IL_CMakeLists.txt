@@ -1,6 +1,12 @@
 --- DevIL/src-IL/CMakeLists.txt.orig	2017-01-01 23:37:37 UTC
 +++ DevIL/src-IL/CMakeLists.txt
-@@ -58,6 +58,8 @@ source_group("Text Files" FILES ${DevIL_TXT} )
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.6)
++cmake_minimum_required(VERSION 3.31.12)
+ 
+ project(DevIL)
+ 
+@@ -58,6 +58,8 @@ if(BUILD_SHARED_LIBS)
  
  if(BUILD_SHARED_LIBS)
      add_library(IL SHARED ${DevIL_SRCS} ${DevIL_INC} ${DevIL_RSRC} ${DevIL_TXT})

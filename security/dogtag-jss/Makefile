@@ -1,6 +1,7 @@
 PORTNAME=	dogtag-jss
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.7.0
+DISTVERSION=	5.10.1
+PORTREVISION=	1
 CATEGORIES=	security java
 
 MAINTAINER=	joneum@FreeBSD.org
@@ -27,11 +28,13 @@ RUN_DEPENDS=	${JAVAJARDIR}/commons-lang3.jar:java/apache-commons-lang3 \
 		${JAVASHAREDIR}/slf4j/slf4j-jdk14.jar:devel/slf4j \
 		${LOCALBASE}/apache-tomcat-9.0/lib/catalina.jar:www/tomcat9
 
-USES=		cmake compiler:c++11-lang java:build,run pkgconfig shebangfix
+USES=		cmake compiler:c++11-lang cpe java:build,run pkgconfig shebangfix
+CPE_VENDOR=	dogtagpki
+CPE_PRODUCT=	network_security_services_for_java
 USE_GITHUB=	yes
 GH_ACCOUNT=	dogtagpki
 GH_PROJECT=	jss
-JAVA_VERSION=	17
+JAVA_VERSION=	21
 USE_LDCONFIG=	yes
 
 SHEBANG_FILES=	tools/reproducible_jar.sh
@@ -46,7 +49,7 @@ CMAKE_ARGS=	-DJAVA_HOME=${JAVA_HOME} \
 		-DTOMCAT_COYOTE_JAR=${LOCALBASE}/apache-tomcat-9.0/lib/tomcat-coyote.jar \
 		-DTOMCAT_JULI_JAR=${LOCALBASE}/apache-tomcat-9.0/bin/tomcat-juli.jar \
 		-DTOMCAT_UTIL_JAR=${LOCALBASE}/apache-tomcat-9.0/lib/tomcat-util.jar
-CMAKE_OFF=	WITH_JAVADOC WITH_TESTS
+CMAKE_OFF=	WITH_JAVADOC WITH_MLKEM WITH_TESTS
 
 ALL_TARGET=	java symkey_library
 LDFLAGS+=	-L${LOCALBASE}/lib -Wl,--undefined-version

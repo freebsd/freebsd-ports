@@ -1,5 +1,5 @@
 PORTNAME=	grape_logging
-PORTVERSION=	3.0.0
+PORTVERSION=	3.0.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-grape>=2.4.0:devel/rubygem-grape \
-		rubygem-rack>=0,3:www/rubygem-rack
+		rubygem-rack>=0,3:www/rubygem-rack \
+		rubygem-zeitwerk>=0:devel/rubygem-zeitwerk
 
 USES=		gem
 

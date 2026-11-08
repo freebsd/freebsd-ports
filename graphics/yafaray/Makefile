@@ -1,7 +1,7 @@
 PORTNAME=	yafaray
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.5.1
-PORTREVISION=	32
+PORTREVISION=	33
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -34,6 +34,7 @@ USE_LDCONFIG=	yes
 LDFLAGS+=	-pthread # because build on 13 (head) was failing: ld: error: src/yafraycore/libyafaray_v3_core.so: undefined reference to pthread_create
 
 CMAKE_OFF=	WITH_YAF_PY_BINDINGS
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/YafaRay/libYafaRay/issues/17
 
 OPTIONS_DEFINE=	DOCS QT
 OPTIONS_SUB=	yes

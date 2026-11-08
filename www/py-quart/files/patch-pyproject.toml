@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2026-08-29 15:57:27 UTC
++++ pyproject.toml
+@@ -18,7 +18,7 @@ classifiers = [
+     "Topic :: Software Development :: Libraries :: Application Frameworks",
+     "Typing :: Typed",
+ ]
+-requires-python = ">=3.13"
++requires-python = ">=3.12"
+ dependencies = [
+     "aiofiles",
+     "blinker>=1.6",

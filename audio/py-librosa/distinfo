@@ -1,5 +1,5 @@
-TIMESTAMP = 1757051248
-SHA256 (librosa-librosa-0.11.0_GH0.tar.gz) = 6af22600c52e5b844cf73c699b7c0905ed9fe0b9f17b230eec697bce3368dd15
-SIZE (librosa-librosa-0.11.0_GH0.tar.gz) = 2339589
+TIMESTAMP = 1788823490
+SHA256 (librosa-librosa-1.0.0_GH0.tar.gz) = 02b620aaf0a6b020f20f2d1ce635a3b8b8c2563a7b8e4ba3b7e2ca6e6247e680
+SIZE (librosa-librosa-1.0.0_GH0.tar.gz) = 4006911
 SHA256 (librosa-librosa-test-data-72bd79e_GH0.tar.gz) = c8a05a81cf6f071319056818deff82b21736a13230b32c6bea64ab2e1fe23a06
 SIZE (librosa-librosa-test-data-72bd79e_GH0.tar.gz) = 164601052

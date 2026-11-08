@@ -1,5 +1,5 @@
 PORTNAME=	kafo
-PORTVERSION=	7.7.0
+PORTVERSION=	7.8.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	gsed:textproc/gsed \
 		rubygem-ansi>=0:devel/rubygem-ansi \
 		rubygem-clamp>=1.3.1<2:devel/rubygem-clamp \
-		rubygem-highline1>=1.6.21<3.0:devel/rubygem-highline1 \
+		rubygem-highline>=1.6.21<4.0:devel/rubygem-highline \
 		rubygem-kafo_parsers>=0.1.6:devel/rubygem-kafo_parsers \
 		rubygem-kafo_wizards>=0:devel/rubygem-kafo_wizards \
 		rubygem-logging>=0<3.0.0:devel/rubygem-logging \

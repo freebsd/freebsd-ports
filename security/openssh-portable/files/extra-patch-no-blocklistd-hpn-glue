@@ -9,7 +9,7 @@
 + * This is compiled WITHOUT blocklistd support. This is done for patch
 + * glue in ports.
 + */
-+#define BLACKLIST_NOTIFY(...)
++#define BLOCKLIST_NOTIFY(...)
  
  /* XXX stub */
  int
@@ -19,7 +19,7 @@
  	if ((r = kex_exchange_identification(ssh, -1,
 -	    options.version_addendum)) != 0)
 +	    options.version_addendum)) != 0) {
-+		BLACKLIST_NOTIFY(ssh, BLACKLIST_AUTH_FAIL, "Banner exchange");
++		BLOCKLIST_NOTIFY(ssh, BLOCKLIST_AUTH_FAIL, "Banner exchange");
  		sshpkt_fatal(ssh, r, "banner exchange");
 +	}
  	mm_sshkey_setcompat(ssh); /* tell monitor */

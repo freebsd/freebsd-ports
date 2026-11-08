@@ -4,7 +4,7 @@ DISTVERSION=		4.8.1
 PORTREVISION=		3
 CATEGORIES=		biology
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clustering and comparing protein or nucleotide sequences
 WWW=		http://weizhong-lab.ucsd.edu/cd-hit/
 

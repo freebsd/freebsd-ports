@@ -1,6 +1,7 @@
 PORTNAME=	mbelib
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	takefu@airport.fm

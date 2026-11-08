@@ -1,0 +1,6 @@
+The set_misc module adds set_* directives such as set_unescape_uri,
+set_hashed_upstream, set_quote_sql_str and various encode and decode
+helpers, building on the nginx development kit.
+
+This port only installs the module sources.  The module itself is built
+by the nginx ports when their SET_MISC option is enabled.

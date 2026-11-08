@@ -1,0 +1,13 @@
+--- pyproject.toml.orig	2026-08-08 20:04:07 UTC
++++ pyproject.toml
+@@ -7,8 +7,7 @@ maintainers = [{name = "@OzzieIsaacs"}]
+ description = "Web app for browsing, reading and downloading eBooks stored in a Calibre database."
+ authors = [{name = "@OzzieIsaacs", email = "Ozzie.Fernandez.Isaacs@googlemail.com"}]
+ maintainers = [{name = "@OzzieIsaacs"}]
+-license = "GPL-3.0-or-later"
+-license-files = ["LICENSE"]
++license = {text = "GPL-3.0-or-later"}
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",
+     "Programming Language :: Python :: 3",
+

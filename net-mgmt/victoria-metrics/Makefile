@@ -1,7 +1,7 @@
 PORTNAME?=	victoria-metrics
 PORTVERSION=	1.133.0		# don't forget to update BUILDINFO_TAG
 DISTVERSIONPREFIX=	v
-PORTREVISION?=	8
+PORTREVISION?=	13
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://victoriametrics.com/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake go:1.25+,no_targets
+USES=		gmake go:no_targets
 USE_RC_SUBR?=	${PORTNAME}
 MAKE_ENV=	PKG_TAG=v${PORTVERSION} GOOS=${OPSYS:tl} \
 		BUILDINFO_TAG=tags-v${PORTVERSION}-0-ge8160fc \

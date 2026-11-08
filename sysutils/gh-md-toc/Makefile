@@ -1,5 +1,5 @@
 PORTNAME=	gh-md-toc
-DISTVERSION=	0.10.0
+DISTVERSION=	0.11.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	dtxdf@FreeBSD.org
@@ -9,12 +9,19 @@ WWW=		https://github.com/ekalinin/github-markdown-toc
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	curl>0:ftp/curl \
-		jq>0:textproc/jq
+RUN_DEPENDS=	bash:shells/bash \
+		curl:ftp/curl \
+		gawk:lang/gawk \
+		ggrep:textproc/gnugrep \
+		gsed:textproc/gsed \
+		jq:textproc/jq
 
+USES=		shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	ekalinin
 GH_PROJECT=	github-markdown-toc
+
+SHEBANG_FILES=	gh-md-toc
 
 NO_BUILD=	yes
 

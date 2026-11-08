@@ -1,7 +1,7 @@
 PORTNAME=	ping_exporter
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.1
-PORTREVISION=	2
+PORTREVISION=	7
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	ivy@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://github.com/czerwonk/ping_exporter
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		go:1.26,modules
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	czerwonk

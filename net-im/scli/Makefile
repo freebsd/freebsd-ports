@@ -1,9 +1,9 @@
 PORTNAME=	scli
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.1
+DISTVERSION=	0.7.5
 CATEGORIES=	net-im python
 
-MAINTAINER=	0mp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple terminal user interface for the Signal messenger (using signal-cli)
 WWW=		https://github.com/isamert/scli
 
@@ -22,13 +22,10 @@ SHEBANG_FILES=	${PORTNAME}
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-
+SUB_FILES=	scli
 PLIST_FILES=	bin/${PORTNAME} \
 		share/${PORTNAME}/${PORTNAME} \
 		share/${PORTNAME}/VERSION
-
-SUB_FILES=	scli
-
 PORTDOCS=	README.md screenshots/1.png screenshots/2.png screenshots/3.png
 
 OPTIONS_DEFINE=		DOCS LINKING

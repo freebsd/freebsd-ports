@@ -1,6 +1,6 @@
 PORTNAME=	pandas
 PORTVERSION=	2.3.3
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	math devel python
 MASTER_SITES=	PYPI
@@ -56,10 +56,10 @@ ALCHEMY20_DESC=	Support SQL databases via databases/py-sqlalchemy20
 BOTO_DESC=	Support Amazon S3 storage via devel/py-boto
 BTLNCK_DESC=	Accelerate certain NaN evals via math/py-bottleneck
 EXCEL_DESC=	MS Excel I/O Add-ons
-HTML5LIB_DESC=	Parse HTML with www/py-html5lib and www/py-beautifulsoup
+HTML5LIB_DESC=	Parse HTML with www/py-html5lib and www/py-beautifulsoup4
 HTML_DESC=	HTML Parsing/Generation Add-ons
 JINJA2_DESC=	Support conditional HTML formatting with devel/py-Jinja2
-LXML_DESC=	Parse HTML with devel/py-lxml and www/py-beautifulsoup
+LXML_DESC=	Parse HTML with devel/py-lxml and www/py-beautifulsoup4
 MPL_DESC=	Support graphical plotting output via math/py-matplotlib
 NUMEXPR_DESC=	Accelerate certain numerical ops via math/py-numexpr
 OPENPYXL_DESC=	Write MS Excel 2007+ with textproc/py-openpyxl
@@ -76,10 +76,10 @@ ALCHEMY14_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy14>0:databases/py-sqlalc
 ALCHEMY20_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy20>0:databases/py-sqlalchemy20@${PY_FLAVOR}
 BOTO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto3>0:www/py-boto3@${PY_FLAVOR}
 BTLNCK_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bottleneck>=1.2.0:math/py-bottleneck@${PY_FLAVOR}
-HTML5LIB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.2.1:www/py-beautifulsoup@${PY_FLAVOR} \
+HTML5LIB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup4>=4.2.1:www/py-beautifulsoup4@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}html5lib>0:www/py-html5lib@${PY_FLAVOR}
 JINJA2_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR}
-LXML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.2.1:www/py-beautifulsoup@${PY_FLAVOR} \
+LXML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup4>=4.2.1:www/py-beautifulsoup4@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR}
 MPL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=2.0.0:math/py-matplotlib@${PY_FLAVOR}
 NUMEXPR_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numexpr>=2.6.1:math/py-numexpr@${PY_FLAVOR}

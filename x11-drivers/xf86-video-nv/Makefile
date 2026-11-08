@@ -9,6 +9,6 @@ WWW=		https://gitlab.freedesktop.org/xorg/driver/xf86-video-nv
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:xz xorg-cat:driver
+USES=		xorg-cat:driver
 
 .include <bsd.port.mk>

@@ -1,6 +1,5 @@
 PORTNAME=	gnatcoll-core
-DISTVERSIONPREFIX=	v
-DISTVERSION=	26.0.0
+DISTVERSION=	26.2
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-minimal
 
@@ -27,7 +26,8 @@ CONFLICTS=	gnatcoll-core
 
 EXTRACT_AFTER_ARGS=	${_DIST_EXCLUDES:S,^,--exclude ,}
 
-PLIST_SUB=	SO_VERSION=${DISTVERSION}
+PLIST_SUB=	SO_DISTVERSION=${DISTVERSION} \
+		SO_VERSION=${DISTVERSION:R}
 
 _DIST_EXCLUDES=		./gprproject ./projects ./testsuite .als.json .git* \
 			alire.toml CONTRIBUTING.md distrib Makefile
@@ -39,6 +39,7 @@ _GPR_LIBRARY_TYPES=	relocatable static static-pic
 _GPR_PROJECT_ARGS=	-XGNATCOLL_BUILD_MODE=${WITH_DEBUG:UPROD:DDEBUG} \
 			-XGNATCOLL_VERSION=${DISTVERSION}
 _GPR_PROJECT=		${PORTNAME:C/-.*//}${PKGNAMESUFFIX:C/-/_/}
+_GPR_SUBDIR=		${PORTNAME:C,-core,/,}${PKGNAMESUFFIX:C/-//}
 
 do-build:
 . for _library_type in ${_GPR_LIBRARY_TYPES}
@@ -50,9 +51,9 @@ do-build:
 do-install:
 . for _library_type in ${_GPR_LIBRARY_TYPES}
 	(cd ${WRKSRC}/minimal && \
-		${SETENV} ${MAKE_ENV} gprinstall ${_GPRINSTALL_ARGS} --ali-subdir=libdata/${_GPR_PROJECT}/${_library_type} \
+		${SETENV} ${MAKE_ENV} gprinstall ${_GPRINSTALL_ARGS} --ali-subdir=libdata/${_GPR_SUBDIR}/${_library_type} \
 		--build-name=${_library_type} --build-var=${_library_type} \
-		--lib-subdir=lib/${_GPR_PROJECT}/${_library_type} --sources-subdir=include/${_GPR_PROJECT} \
+		--lib-subdir=lib/${_GPR_SUBDIR}/${_library_type} --sources-subdir=include/${_GPR_SUBDIR} \
 		-XLIBRARY_TYPE=${_library_type} -P ${_GPR_PROJECT})
 . endfor
 	${FIND} ${STAGEDIR}${PREFIX}/lib -name *.a -exec ${STRIP_CMD} {} \

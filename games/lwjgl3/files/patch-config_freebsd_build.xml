@@ -1,6 +1,14 @@
---- config/freebsd/build.xml.orig	2026-02-02 10:58:56 UTC
+--- config/freebsd/build.xml.orig	2026-07-13 17:21:04 UTC
 +++ config/freebsd/build.xml
-@@ -156,16 +156,18 @@
+@@ -145,6 +145,7 @@
+                 <arg value="-I${src.main.rel}/libffi"/>
+                 <arg value="-I${src.main.rel}/libffi/aarch64" if:set="build.arch.arm64"/>
+                 <arg value="-I${src.main.rel}/libffi/arm" if:set="build.arch.arm32"/>
++                <arg value="-I${src.main.rel}/libffi/ppc64le" if:set="build.arch.ppc64le"/>
+                 <arg value="-I${src.main.rel}/libffi/x86" if:set="build.arch.x64|x86"/>
+                 <!-- for libffi/x86/ffitarget.h -->
+                 <arg value="-DX86_64" if:set="build.arch.x64"/>
+@@ -156,16 +157,18 @@
                      <include name="${module.lwjgl}/jawt/src/generated/c/*.c" if:true="${binding.jawt}"/>
                  </fileset>
              </source>
@@ -21,7 +29,7 @@
              </link>
          </build>
  
-@@ -383,7 +385,7 @@
+@@ -383,7 +386,7 @@
          </build>
  
          <!-- zstd -->

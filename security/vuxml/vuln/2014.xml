@@ -282,7 +282,7 @@
 	    resolution. The flaw was discovered by Florian Maury of
 	    ANSSI, and applies to any recursive resolver that does not
 	    support a limit on the number of recursions. [<a href="http://cert.ssi.gouv.fr/site/CERTFR-2014-AVI-512/index.html">CERTFR-2014-AVI-512</a>],
-	    [USCERT <a href="www.kb.cert.org/vuls/id/264212">VU#264212</a>]</p>
+	    [USCERT <a href="https://www.kb.cert.org/vuls/id/264212">VU#264212</a>]</p>
 	  <p>A flaw in delegation handling could be exploited to put named
 	    into an infinite loop, in which each lookup of a name server
 	    triggered additional lookups of more name servers.  This has
@@ -3846,7 +3846,7 @@
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>GnuTLS project reports:</p>
-	<blockquote cite="www.gnutls.org/security.html#GNUTLS-SA-2014-3">
+	<blockquote cite="http://www.gnutls.org/security.html#GNUTLS-SA-2014-3">
 	  <p>This vulnerability affects the client side of the gnutls library.
 	    A server that sends a specially crafted ServerHello could corrupt
 	    the memory of a requesting client.</p>
@@ -3874,7 +3874,7 @@
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>GnuTLS project reports:</p>
-	<blockquote cite="www.gnutls.org/security.html#GNUTLS-SA-2014-3">
+	<blockquote cite="http://www.gnutls.org/security.html#GNUTLS-SA-2014-3">
 	  <p>This vulnerability affects the client side of the gnutls library.
 	    A server that sends a specially crafted ServerHello could corrupt
 	    the memory of a requesting client.</p>
@@ -4247,7 +4247,7 @@
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>strongSwan developers report:</p>
-	<blockquote cite="www.strongswan.org/blog/2014/04/14/strongswan-authentication-bypass-vulnerability-(cve-2014-2338).html">
+	<blockquote cite="http://www.strongswan.org/blog/2014/04/14/strongswan-authentication-bypass-vulnerability-%28cve-2014-2338%29.html">
 	  <p>Remote attackers are able to bypass authentication by rekeying an
 	    IKE_SA during (1) initiation or (2) re-authentication, which
 	    triggers the IKE_SA state to be set to established.</p>
@@ -5818,7 +5818,7 @@
       </body>
     </description>
     <references>
-      <url>CVE-2014-0032</url>
+      <cvename>CVE-2014-0032</cvename>
       <url>https://subversion.apache.org/security/CVE-2014-0032-advisory.txt</url>
     </references>
     <dates>

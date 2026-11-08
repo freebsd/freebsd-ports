@@ -1,6 +1,6 @@
---- electron/shell/common/node_bindings_linux.cc.orig	2023-10-20 08:29:17 UTC
+--- electron/shell/common/node_bindings_linux.cc.orig	2026-08-24 01:09:19 UTC
 +++ electron/shell/common/node_bindings_linux.cc
-@@ -4,12 +4,25 @@
+@@ -4,13 +4,26 @@
  
  #include "shell/common/node_bindings_linux.h"
  
@@ -16,17 +16,18 @@
  
  namespace electron {
  
- NodeBindingsLinux::NodeBindingsLinux(BrowserEnvironment browser_env)
+ NodeBindingsLinux::NodeBindingsLinux(BrowserEnvironment browser_env,
+                                      uv_loop_t* loop)
 +#if !defined(OS_BSD)
-     : NodeBindings(browser_env), epoll_(epoll_create(1)) {
+     : NodeBindings(browser_env, loop), epoll_(epoll_create(1)) {
 +#else
-+    : NodeBindings(browser_env) {
++    : NodeBindings(browser_env, loop) {
 +#endif
 +#if !defined(OS_BSD)
    auto* const event_loop = uv_loop();
  
    int backend_fd = uv_backend_fd(event_loop);
-@@ -17,11 +30,13 @@ NodeBindingsLinux::NodeBindingsLinux(BrowserEnvironmen
+@@ -18,11 +31,13 @@ NodeBindingsLinux::NodeBindingsLinux(BrowserEnvironmen
    ev.events = EPOLLIN;
    ev.data.fd = backend_fd;
    epoll_ctl(epoll_, EPOLL_CTL_ADD, backend_fd, &ev);
@@ -40,7 +41,7 @@
    int timeout = uv_backend_timeout(event_loop);
  
    // Wait for new libuv events.
-@@ -30,6 +45,26 @@ void NodeBindingsLinux::PollEvents() {
+@@ -31,6 +46,26 @@ void NodeBindingsLinux::PollEvents() {
      struct epoll_event ev;
      r = epoll_wait(epoll_, &ev, 1, timeout);
    } while (r == -1 && errno == EINTR);

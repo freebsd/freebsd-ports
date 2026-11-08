@@ -10,7 +10,7 @@ WWW=		https://www.cs.utah.edu/~regehr/hourglass/
 
 RUN_DEPENDS=	jgraph:graphics/jgraph
 
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	amd64 i386 powerpc64 powerpc64le
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/busy bin/hourglass

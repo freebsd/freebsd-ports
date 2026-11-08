@@ -1,5 +1,6 @@
 PORTNAME=	redis
 DISTVERSION=	8.0.6
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://download.redis.io/releases/
 PKGNAMESUFFIX=	80
@@ -7,6 +8,9 @@ PKGNAMESUFFIX=	80
 MAINTAINER=	bofh@freebsd.org
 COMMENT=	Persistent key-value database with built-in net interface(8.0.X)
 WWW=		https://redis.io/
+
+DEPRECATED=	Upstream reaches EOL use databases/redis82
+EXPIRATION_DATE=	2026-12-01
 
 LICENSE=	AGPLv3 RSALv2 SSPLv1
 LICENSE_COMB=	dual

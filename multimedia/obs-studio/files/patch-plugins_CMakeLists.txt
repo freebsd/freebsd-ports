@@ -1,20 +1,32 @@
---- plugins/CMakeLists.txt.orig	2025-09-26 21:04:14 UTC
+-- Enable obs-nvenc (NVIDIA Hardware Encoder) plugin on FreeBSD.
+-- The plugin was restricted to Windows and Linux, but works on FreeBSD as well.
+
+--- plugins/CMakeLists.txt.orig	2026-10-29 21:06:35 UTC
 +++ plugins/CMakeLists.txt
-@@ -61,7 +61,7 @@ add_obs_plugin(obs-libfdk)
- add_obs_plugin(obs-ffmpeg)
- add_obs_plugin(obs-filters)
- add_obs_plugin(obs-libfdk)
--add_obs_plugin(obs-nvenc PLATFORMS WINDOWS LINUX ARCHITECTURES x64 x86_64)
-+add_obs_plugin(obs-nvenc PLATFORMS WINDOWS LINUX FREEBSD ARCHITECTURES x64 x86_64)
- add_obs_plugin(obs-outputs)
- add_obs_plugin(
+@@ -22,7 +22,7 @@ macro(check_obs_browser)
+ set_property(GLOBAL APPEND PROPERTY OBS_FEATURES_ENABLED "Core Modules")
+ 
+ macro(check_obs_browser)
+-  if((OS_WINDOWS AND CMAKE_VS_PLATFORM_NAME MATCHES "(ARM64|x64)") OR OS_MACOS OR OS_LINUX)
++  if((OS_WINDOWS AND CMAKE_VS_PLATFORM_NAME MATCHES "(ARM64|x64)") OR OS_MACOS OR OS_LINUX OR OS_FREEBSD)
+     if(NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/obs-browser/CMakeLists.txt")
+       message(FATAL_ERROR "Required submodule 'obs-browser' not available.")
+     else()
+@@ -89,7 +89,7 @@ add_core_module(obs-libfdk)
+ add_core_module(obs-ffmpeg)
+ add_core_module(obs-filters)
+ add_core_module(obs-libfdk)
+-add_core_module(obs-nvenc PLATFORMS WINDOWS LINUX)
++add_core_module(obs-nvenc PLATFORMS WINDOWS LINUX FREEBSD)
+ add_core_module(obs-outputs)
+ add_core_module(
      obs-qsv11
-@@ -72,7 +72,7 @@ add_obs_plugin(
- add_obs_plugin(obs-transitions)
- add_obs_plugin(
+@@ -100,7 +100,7 @@ add_core_module(
+ add_core_module(obs-transitions)
+ add_core_module(
      obs-vst
 -    PLATFORMS WINDOWS MACOS LINUX
 +    PLATFORMS WINDOWS MACOS LINUX FREEBSD
      WITH_MESSAGE
  )
- add_obs_plugin(obs-webrtc)
+ add_core_module(obs-webrtc)

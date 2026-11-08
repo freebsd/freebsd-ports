@@ -9,9 +9,10 @@ set -o pipefail
 
 validate_env dp_DEVELOPER dp_DISABLE_SIZE dp_DISTDIR dp_DISTINFO_FILE \
 	dp_DIST_SUBDIR dp_ECHO_MSG dp_FETCH_AFTER_ARGS dp_FETCH_BEFORE_ARGS \
-	dp_FETCH_CMD dp_FETCH_ENV dp_FORCE_FETCH_ALL dp_FORCE_FETCH_LIST \
-	dp_MASTER_SITE_BACKUP dp_MASTER_SITE_OVERRIDE dp_MASTER_SORT_AWK \
-	dp_NO_CHECKSUM dp_RANDOMIZE_SITES dp_SITE_FLAVOR dp_TARGET
+	dp_FETCH_CMD dp_FETCH_ENV dp_FILES_FILE dp_FORCE_FETCH_ALL \
+	dp_FORCE_FETCH_LIST dp_MASTER_SITE_BACKUP dp_MASTER_SITE_OVERRIDE \
+	dp_MASTER_SORT_AWK dp_NO_CHECKSUM dp_RANDOMIZE_SITES dp_SITE_FLAVOR \
+	dp_SITES_FILE dp_TARGET
 
 [ -n "${DEBUG_MK_SCRIPTS}" -o -n "${DEBUG_MK_SCRIPTS_DO_FETCH}" ] && set -x
 
@@ -26,7 +27,11 @@ case ${dp_TARGET} in
 		;;
 esac
 
-for _file in "${@}"; do
+. $dp_SITES_FILE
+
+# Read the list of files to fetch from stdin, one per line, instead of
+# from the command line to workatound ARG_MAX limits.
+while IFS= read -r _file; do
 	file=${_file%%:*}
 
 	# If this files has groups
@@ -121,26 +126,52 @@ for _file in "${@}"; do
 		sites_remaining=$((sites_remaining + 1))
 	done
 	for site in ${sites}; do
+		# This target only echoes the full URL, handle it first to simplify the rest
+		# of the loop.
+		if [ "${dp_TARGET}" = fetch-url-list-int ]; then
+			echo "${site}${file}"
+			continue
+		fi
+
 		sites_remaining=$((sites_remaining - 1))
 		CKSIZE=$(distinfo_data SIZE "${full_file}")
-		early_args=""
 		case ${file} in
 			*/*)
 				case ${dp_TARGET} in
 					fetch-list)
-						echo "mkdir -p \"${file%/*}\" && "
-						early_args="-o ${file}"
-						;;
-					fetch-url-list-int)
+						echo -n "mkdir -p \"${file%/*}\" && "
 						;;
 					*)
 						mkdir -p "${file%/*}"
-						early_args="-o ${file}"
 						;;
 				esac
 			;;
 		esac
-		args="${early_args:+${early_args} }${site}${file}"
+
+		# When the distname is not the last part of the final url, we append a
+		# `?dummy=/` so that the url ends up looking something like this:
+		# http://foo.bar/baz/1.0?dummy=/baz-1.0.tar.gz
+		#
+		# This tricks fetch into save the file which path really is "baz/1.0" as
+		# "baz-1.0.tar.gz" which is what the framework wants.  This is only "used"
+		# for the fetch-url-list-int which is used by `make fetch-url-list` which
+		# generates a long list of urls.
+		#
+		# When we are actually fetching, we always set `-o $file`, so we can remove
+		# the `?dummy=/`, and we don't need to append the distname.
+		case "${site}" in
+			*\?dummy=/)
+				url="${site%?dummy=/}"
+			;;
+			*\&dummy=/)
+				url="${site%&dummy=/}"
+			;;
+			*)
+				url="${site}${file}"
+			;;
+		esac
+		args="-o ${file} $url"
+
 		_fetch_cmd="${dp_FETCH_CMD} ${dp_FETCH_BEFORE_ARGS}"
 		if [ -z "${dp_DISABLE_SIZE}" -a -n "${CKSIZE}" ]; then
 			_fetch_cmd="${_fetch_cmd} -S ${CKSIZE}"
@@ -148,7 +179,7 @@ for _file in "${@}"; do
 		_fetch_cmd="${_fetch_cmd} ${args} ${dp_FETCH_AFTER_ARGS}"
 		case ${dp_TARGET} in
 			do-fetch|makesum)
-				${dp_ECHO_MSG} "=> Attempting to fetch ${site}${file}"
+				${dp_ECHO_MSG} "=> Attempting to fetch ${url}"
 				if env -S "${dp_FETCH_ENV}" ${_fetch_cmd}; then
 					actual_size=$(stat -f %z "${file}")
 					if [ -n "${dp_DISABLE_SIZE}" ] || [ -z "${CKSIZE}" ] || [ "${actual_size}" -eq "${CKSIZE}" ]; then
@@ -165,9 +196,6 @@ for _file in "${@}"; do
 			fetch-list)
 				echo -n "env $(escape "${_fetch_cmd}") || "
 				;;
-			fetch-url-list-int)
-				echo ${args}
-				;;
 		esac
 	done
 	case ${dp_TARGET} in
@@ -180,5 +208,5 @@ for _file in "${@}"; do
 			echo "echo \"${file}\" not fetched; }"
 			;;
 	esac
-done
+done < $dp_FILES_FILE
 

@@ -1,5 +1,5 @@
 PORTNAME=	cliquer
-DISTVERSION=	1.22
+DISTVERSION=	1.23
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/dimpase/autocliquer/releases/download/v${DISTVERSION}/
 

@@ -9,9 +9,13 @@ include/libcec/ceccloader.h
 include/libcec/cecloader.h
 include/libcec/cectypes.h
 include/libcec/version.h
+lib/cmake/libcec/libcec-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/libcec/libcec-config-version.cmake
+lib/cmake/libcec/libcec-config.cmake
+lib/cmake/libcec/libcec.cmake
 lib/libcec.a
 lib/libcec.so
-lib/libcec.so.7
+lib/libcec.so.8
 lib/libcec.so.%%PORTVERSION%%
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/_pycec.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/cec.py

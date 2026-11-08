@@ -27,7 +27,8 @@ USES=		cmake:noninja compiler:c++14-lang desktop-file-utils gl gnome jpeg openal
 USE_GL=		gl glew glu
 USE_SDL=	sdl2
 USE_XORG=	x11 xpm
-CMAKE_ARGS=	-DAudio_TK:STRING="OpenAL"
+CMAKE_ARGS=	-DAudio_TK:STRING="OpenAL" \
+		-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 LDFLAGS_i386=	-Wl,-znotext
 WRKSRC=		${WRKDIR}/openclonk-release-${PORTVERSION}-src
 

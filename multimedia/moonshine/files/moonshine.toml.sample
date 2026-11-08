@@ -1,7 +1,11 @@
 name = "Moonshine"
-# Bind address. Use "::" for dual-stack (also set
-# net.inet6.ip6.v6only=0), or a specific address.
+# Bind address, or "::" to serve IPv4 and IPv6 clients on one socket set.
+# Every listener clears IPV6_V6ONLY itself, so "::" needs no sysctl change
+# on a stock FreeBSD host (net.inet6.ip6.v6only=1).
 address = "0.0.0.0"
+# Block host suspend while streaming. Needs logind over the system D-Bus,
+# so it is a no-op on FreeBSD (logged as a warning, streaming continues).
+#inhibit_sleep = true
 
 [webserver]
 port = 47989

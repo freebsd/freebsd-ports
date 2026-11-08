@@ -9,7 +9,7 @@ WWW=		https://www.freedesktop.org/Software/xlibs
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe tar:xz xorg xorg-cat:lib
+USES=		cpe xorg xorg-cat:lib
 USE_XORG=	x11 xorgproto
 CPE_PRODUCT=	libxfixes
 CPE_VENDOR=	x

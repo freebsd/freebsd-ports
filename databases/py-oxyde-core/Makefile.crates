@@ -23,6 +23,7 @@ CARGO_CRATES=	ahash-0.7.8 \
 		cfg_aliases-0.2.1 \
 		chrono-0.4.43 \
 		concurrent-queue-2.5.0 \
+		console-0.16.3 \
 		const-oid-0.9.6 \
 		core-foundation-sys-0.8.7 \
 		cpufeatures-0.2.17 \
@@ -39,6 +40,7 @@ CARGO_CRATES=	ahash-0.7.8 \
 		displaydoc-0.2.5 \
 		dotenvy-0.15.7 \
 		either-1.15.0 \
+		encode_unicode-1.0.0 \
 		equivalent-1.0.2 \
 		errno-0.3.14 \
 		etcetera-0.8.0 \
@@ -89,6 +91,7 @@ CARGO_CRATES=	ahash-0.7.8 \
 		indexmap-2.13.0 \
 		indoc-2.0.7 \
 		inherent-1.0.13 \
+		insta-1.47.2 \
 		itoa-1.0.17 \
 		js-sys-0.3.85 \
 		lazy_static-1.5.0 \
@@ -176,6 +179,7 @@ CARGO_CRATES=	ahash-0.7.8 \
 		signal-hook-registry-1.4.8 \
 		signature-2.2.0 \
 		simdutf8-0.1.5 \
+		similar-2.7.0 \
 		slab-0.4.12 \
 		smallvec-1.15.1 \
 		socket2-0.6.2 \

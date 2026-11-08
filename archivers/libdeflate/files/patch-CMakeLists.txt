@@ -1,11 +1,17 @@
---- CMakeLists.txt.orig	2024-12-11 06:30:24 UTC
+--- CMakeLists.txt.orig	2026-08-22 16:05:42 UTC
 +++ CMakeLists.txt
-@@ -61,7 +61,7 @@ endif()
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 3.10)
++cmake_minimum_required(VERSION 3.10...9.99)
+ 
+ # Default to a release build.
+ if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
+@@ -353,7 +353,7 @@ endif()
+ configure_file(libdeflate.pc.in libdeflate.pc @ONLY)
+ if(LIBDEFLATE_INSTALL)
+     install(FILES ${CMAKE_CURRENT_BINARY_DIR}/libdeflate.pc
+-            DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig)
++            DESTINATION ${CMAKE_INSTALL_PREFIX}/libdata/pkgconfig)
  endif()
  
- # Set common C compiler flags for all targets (the library and the programs).
--set(CMAKE_C_FLAGS_RELEASE "-O2 -DNDEBUG")
-+# set(CMAKE_C_FLAGS_RELEASE "-O2 -DNDEBUG")
- set(CMAKE_C_STANDARD 99)
- if(NOT MSVC)
-     check_c_compiler_flag(-Wdeclaration-after-statement HAVE_WDECLARATION_AFTER_STATEMENT)
+ # Generate a "libdeflate-targets.cmake" file in the build tree that can be

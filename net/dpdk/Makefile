@@ -1,8 +1,9 @@
 PORTNAME=	dpdk
-DISTVERSION=	25.11
+DISTVERSION=	25.11.4
 CATEGORIES=	net
 MASTER_SITES=	http://fast.dpdk.org/rel/
-PKGNAMESUFFIX=	25.11
+#DISTNAME=	${PORTNAME}-${PORTVERSION:R}
+PKGNAMESUFFIX=	${PORTVERSION:R}
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	DPDK: Software libraries for packet processing
@@ -33,6 +34,9 @@ BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 CONFLICTS_INSTALL=	dpdk2[024].11
 
+# Limit to LTS releases only
+PORTSCOUT=	limit:^${PORTVERSION:R}
+
 .if defined(CPUTYPE)
 DPDK_CPUTYPE=${CPUTYPE}
 .else
@@ -44,7 +48,7 @@ MESON_ARGS=	-Ddefault_library=shared \
 		-Dc_link_args=-Wl,--undefined-version \
 		-Dmachine=${DPDK_CPUTYPE}
 
-#WRKSRC=		${WRKDIR}/${PORTNAME}-stable-${DISTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-stable-${DISTVERSION}
 
 OPTIONS_DEFINE=		DOCS EXAMPLES TEST TOOLS
 OPTIONS_DEFAULT=	TOOLS

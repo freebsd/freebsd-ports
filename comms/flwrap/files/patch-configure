@@ -1,0 +1,12 @@
+--- configure.orig	2023-01-27 12:08:58 UTC
++++ configure
+@@ -6384,8 +6384,7 @@ printf "%s\n" "$FLTK_CONFIG" >&6; }
+       FLTK_API_VERSION="`$FLTK_CONFIG --api-version`"
+       if test $? -ne 0; then
+           as_fn_error $? "$FLTK_CONFIG failed" "$LINENO" 5
+-      fi
+-      if test "x$FLTK_API_VERSION" = "x1.1" || test "x$FLTK_API_VERSION" = "x1.3"; then
++      else
+           HAVE_FLTK_API_VERSION=yes
+       fi
+       if test "${HAVE_FLTK_API_VERSION}" = "no"; then

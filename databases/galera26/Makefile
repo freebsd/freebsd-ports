@@ -1,10 +1,11 @@
 PORTNAME=	galera
 DISTVERSIONPREFIX=	mariadb-
-DISTVERSION=	26.4.25
+DISTVERSION=	26.4.27
+PORTREVISION=	1
 CATEGORIES=	databases
 PKGNAMESUFFIX=	26
 
-MAINTAINER=	devel@galeracluster.com
+MAINTAINER=	flo@FreeBSD.org
 COMMENT=	Synchronous multi-master replication engine
 WWW=		https://galeracluster.com/
 
@@ -29,7 +30,7 @@ LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs
 USES=		cmake compiler:c++11-lang python:build ssl
 
 USE_GITHUB=	yes
-GH_TUPLE?=	mariadb:galera:${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX} \
+GH_TUPLE?=	mariadb:galera:${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}a \
 		codership:wsrep-API:e8313df29e9329521dced03a4cc558d0cf7d8032:dummy/wsrep/src
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	garb.sh

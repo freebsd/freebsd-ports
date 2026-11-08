@@ -1,0 +1,8 @@
+A web interface for the bulk work on an Immich library that the Immich
+interface itself does not cover: finding assets without a location,
+merging people, building albums from dates or paths, finding empty
+videos and orphaned files, and looking at the library through charts of
+its EXIF data.
+
+It reads the library over the Immich API and the database of that server
+directly, so it needs the credentials of both.

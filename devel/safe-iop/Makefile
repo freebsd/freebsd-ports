@@ -1,8 +1,9 @@
 PORTNAME=	safe-iop
 DISTVERSION=	0.3.2
+PORTREVISION=	1
 CATEGORIES=	devel
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Safe integer operation library for C
 WWW=		https://gitlab.com/ports1/safe-iop/
 

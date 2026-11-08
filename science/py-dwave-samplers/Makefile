@@ -31,11 +31,11 @@ TEST_WRKSRC=	${WRKSRC}/tests
 
 post-install:
 	# strip binaries
-	@${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR}/dwave/samplers -name "*${PYTHON_TAG}.so" | ${XARGS} ${STRIP_CMD}
+	@${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/dwave/samplers -name "*${PYTHON_SOABI}.so" | ${XARGS} ${STRIP_CMD}
 	# remove conflicting __init__.py, see https://github.com/dwavesystems/dwave-system/issues/462
 	@${RM} -r \
-		${STAGEDIR}${PYTHON_SITELIBDIR}/dwave/__init__.py \
-		${STAGEDIR}${PYTHON_SITELIBDIR}/dwave/__pycache__
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/dwave/__init__.py \
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/dwave/__pycache__
 
 post-test:
 	@${SETENV} ${TEST_ENV} ${PYTHON_CMD} ${FILESDIR}/example.py

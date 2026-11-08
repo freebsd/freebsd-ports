@@ -1,8 +1,6 @@
 bin/baloo_filemetadata_temp_extractor
-include/KF6/BalooWidgets/Baloo/FileMetaDataConfigWidget
 include/KF6/BalooWidgets/Baloo/FileMetaDataWidget
 include/KF6/BalooWidgets/Baloo/TagWidget
-include/KF6/BalooWidgets/baloo/filemetadataconfigwidget.h
 include/KF6/BalooWidgets/baloo/filemetadatawidget.h
 include/KF6/BalooWidgets/baloo/tagwidget.h
 include/KF6/BalooWidgets/baloo/widgets_export.h

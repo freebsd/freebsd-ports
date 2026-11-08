@@ -1,3 +1,7 @@
-TIMESTAMP = 1753610488
-SHA256 (flatpak-xdg-desktop-portal-1.20.3_GH0.tar.gz) = 01d2a8ceaab06fa1d0638abe541dbb415a0a19be271d9669a93ec1640f87ea4a
-SIZE (flatpak-xdg-desktop-portal-1.20.3_GH0.tar.gz) = 1337615
+TIMESTAMP = 1789110977
+SHA256 (flatpak-xdg-desktop-portal-1.22.1_GH0.tar.gz) = 5afeda953c3743efaa1160e73d62c5bfcac2ceca60e0e134e9b48ed651783625
+SIZE (flatpak-xdg-desktop-portal-1.22.1_GH0.tar.gz) = 1376338
+SHA256 (arrowd-libglnx-c210033e145361b5f5125d79dff4f901c01aa3f7_GL0.tar.gz) = 4fdc4bf83d63ef80e05f2528f7f17f7eb51580da5910bf72bb0e3475c2c0bb61
+SIZE (arrowd-libglnx-c210033e145361b5f5125d79dff4f901c01aa3f7_GL0.tar.gz) = 92078
+SHA256 (GNOME-gvdb-c6f2359cc1d00f16e0a0e2527fa0bc1882b8b5ab_GL0.tar.gz) = 14f082f122eb4e495e2ac96f235efb01525ae5d4a1f0fd98148b4f7c7f95ccd2
+SIZE (GNOME-gvdb-c6f2359cc1d00f16e0a0e2527fa0bc1882b8b5ab_GL0.tar.gz) = 26318

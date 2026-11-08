@@ -85,6 +85,7 @@ userapps/bin/gmtime
 userapps/bin/headRest
 userapps/bin/htmlCheck
 userapps/bin/htmlPics
+userapps/bin/hubtools
 userapps/bin/jkUniq
 userapps/bin/lineCount
 userapps/bin/linesToRa
@@ -127,6 +128,7 @@ userapps/bin/stringify
 userapps/bin/subChar
 userapps/bin/subColumn
 userapps/bin/subs
+userapps/bin/tabFmt
 userapps/bin/tabToMmHash
 userapps/bin/tableSum
 userapps/bin/tailLines

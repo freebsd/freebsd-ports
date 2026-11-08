@@ -30,7 +30,7 @@ CARGO_CRATES=	anstream-0.6.20 \
 		itoa-1.0.15 \
 		kqueue-1.1.1 \
 		kqueue-sys-1.0.4 \
-		libc-0.2.175 \
+		libc-0.2.186 \
 		linux-raw-sys-0.9.4 \
 		litrs-0.4.2 \
 		lock_api-0.4.13 \

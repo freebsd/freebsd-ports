@@ -6,7 +6,7 @@ PKGNAMESUFFIX=  -devel
 
 MAINTAINER=	mr@FreeBSD.org
 COMMENT=	General purpose 3D CAD modeller
-WWW=		https://www.freecadweb.org/
+WWW=		https://www.freecad.org/
 
 LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -21,6 +21,7 @@ BUILD_DEPENDS=	doxygen:devel/doxygen \
 		${PYTHON_PKGNAMEPREFIX}pivy>0:graphics/py-pivy@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/matplotlib/__init__.py:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lark>0:devel/py-lark@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}defusedxml>0:devel/py-defusedxml@${PY_FLAVOR} \
 		swig:devel/swig
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
@@ -39,7 +40,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libboost_thread.so:devel/boost-libs \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreeimage.so:graphics/freeimage \
-		libavutil.so.60:multimedia/ffmpeg \
+		libavutil.so:multimedia/ffmpeg \
 		libmed.so:french/med \
 		libshiboken6.abi3.so:devel/shiboken6@${PY_FLAVOR} \
 		libhdf5.so:science/hdf5 \
@@ -122,7 +123,7 @@ SPNAV_LIB_DEPENDS=      libspnav.so:misc/libspnav
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == i386
+.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == i386 || ${ARCH} == powerpc64le
 PLIST_SUB=	WEBENGINE=""
 USE_QT+=	webengine
 .else

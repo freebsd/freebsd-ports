@@ -1,27 +1,28 @@
 PORTNAME=	mecab
-PORTVERSION=	0.996
-PORTREVISION=	4
+DISTVERSION=	0.996
+PORTREVISION=	5
 CATEGORIES=	japanese textproc
-MASTER_SITES=	https://drive.google.com/uc?export=download&id=0B4y35FiV1wh7cENtOXlicTFaRUE&dummy=/
+MASTER_SITES=	https://drive.google.com/uc?export=download&id=1SJjk4IylQaO2yGc0vMtx5MHhZcjaeMLZ&dummy=/ \
+		https://github.com/PROoshio/mecab/raw/master/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mce@FreeBSD.org
 COMMENT=	Yet Another Part-of-Speech and Morphological Analyzer
-WWW=		https://code.google.com/p/mecab/
+WWW=		https://taku910.github.io/mecab/
 
 LICENSE=	BSD3CLAUSE GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-USES=		gettext-tools iconv libtool localbase perl5
+USES=		gettext-tools iconv libtool perl5
 USE_CXXSTD=	c++14
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	ac_cv_lib_stdcpp_main=no
 
 INSTALL_TARGET=	install-strip
 
+PORTSCOUT=	skipv:6.000
 PORTDOCS=	AUTHORS README *.html
 
 OPTIONS_DEFINE=	DOCS

@@ -6,7 +6,6 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME:S/-/_/g}-${DISTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-node-modules-${DISTVERSION}${EXTRACT_SUFX}
-DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	JavaScript challenge solver for yt-dlp
@@ -15,10 +14,13 @@ WWW=		https://github.com/yt-dlp/yt-dlp-ejs
 LICENSE=	UNLICENSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-FETCH_DEPENDS=	npm:www/npm \
+ONLY_FOR_ARCHS=		aarch64 amd64 powerpc64 powerpc64le
+ONLY_FOR_ARCHS_REASON=	distinfo was only generated for these architectures # feel free to add more architectures
+
+FETCH_DEPENDS=	npm:www/npm-node${NPM_VER} \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 BUILD_DEPENDS=	deno:www/deno \
-		npm:www/npm \
+		npm:www/npm-node${NPM_VER} \
 		${PYTHON_PKGNAMEPREFIX}hatch-vcs>=0:devel/py-hatch-vcs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	deno:www/deno
@@ -26,11 +28,31 @@ RUN_DEPENDS=	deno:www/deno
 USES=		python
 USE_PYTHON=	pep517 autoplist pytest
 
+NPM_VER=	24 # 26 crashes with *** Signal 10
+
+TEST_ARGS=	--disable-plugin-autoload
+
 SHEBANG_GLOB=	*.py
 
 NO_ARCH=	yes
 
 DD=		${DISTDIR}/${DIST_SUBDIR}
+
+.include <bsd.port.pre.mk>
+
+DIST_SUBDIR=	${PORTNAME}/${ARCH}
+DISTINFO_FILE=	${.CURDIR}/distinfo.${ARCH}
+
+# rollup has no native binding for FreeBSD/powerpc64* (https://github.com/rollup/rollup/pull/6398),
+# fetch its WASM build (a drop-in replacement) there instead via the npm alias rollup -> @rollup/wasm-node.
+# On big-endian powerpc64 the WASM build needs rollup/rollup#6559 (4.64.4), newer than upstream's pin.
+.if ${ARCH} == powerpc64le
+NPM_INSTALL_CMD=	npm install --save-exact --save-dev rollup@npm:@rollup/wasm-node@$$(npm pkg get devDependencies.rollup | ${TR} -d '"')
+.elif ${ARCH} == powerpc64
+NPM_INSTALL_CMD=	npm install --save-exact --save-dev rollup@npm:@rollup/wasm-node@4.64.4
+.else
+NPM_INSTALL_CMD=	npm ci
+.endif
 
 do-fetch: # this target (1) downloads the source tarball, (2) extracts it to a temporary location, (3) runs npm ci to fetch and install node_modules, and (4) packages the node_modules directory into a separate tarball for later extraction during the build phase. This allows us to avoid running npm ci during the build phase which will require network access
 	@if ! [ -f ${DD}/${DISTNAME}${EXTRACT_SUFX} ] || \
@@ -48,7 +70,7 @@ do-fetch: # this target (1) downloads the source tarball, (2) extracts it to a t
 			${ECHO_MSG} "====> Generating package-lock.json (it will be saved to ${FILESDIR})"; \
 		fi && \
 		cd ${WRKDIR}/${DISTNAME} && \
-			${SETENV} NODE_EXTRA_CA_CERTS=${LOCALBASE}/share/certs/ca-root-nss.crt HOME=${WRKDIR} npm ci && \
+			${SETENV} NODE_EXTRA_CA_CERTS=${LOCALBASE}/share/certs/ca-root-nss.crt HOME=${WRKDIR} ${NPM_INSTALL_CMD} && \
 		if ! [ -f ${FILESDIR}/package-lock.json ]; then \
 			${ECHO_MSG} "====> Saving generated package-lock.json to ${FILESDIR}"; \
 			${CP} ${WRKDIR}/${DISTNAME}/package-lock.json ${FILESDIR}/; \
@@ -90,8 +112,6 @@ pre-test:
 	@${CP} ${WRKSRC}/dist/yt.solver.lib.min.js ${WRKSRC}/yt_dlp_ejs/yt/solver/lib.min.js
 
 # tests as of 0.8.0:
-# Results (0.15s):
-#          3 passed
-#          1 warning
+# 1 passed in 0.01s
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

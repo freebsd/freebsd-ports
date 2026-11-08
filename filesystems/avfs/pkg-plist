@@ -4,7 +4,6 @@ bin/davpass
 bin/ftppass
 %%FUSE%%bin/mountavfs
 %%FUSE%%bin/umountavfs
-include/avfs.h
 include/virtual.h
 lib/avfs/extfs/README
 lib/avfs/extfs/a
@@ -46,6 +45,6 @@ lib/avfs/extfs/uzip
 lib/avfs/extfs/uzoo
 lib/libavfs.a
 lib/libavfs.so
-lib/libavfs.so.0
-lib/libavfs.so.0.0.2
+lib/libavfs.so.1
+lib/libavfs.so.1.1.0
 libdata/pkgconfig/avfs.pc

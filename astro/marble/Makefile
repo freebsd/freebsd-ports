@@ -14,8 +14,8 @@ LIB_DEPENDS=	libprotobuf.so:devel/protobuf
 USES=		cmake compiler:c++11-lang desktop-file-utils gettext \
 		kde:6 qt:6 shared-mime-info tar:xz xorg
 USE_KDE=	auth codecs completion config configwidgets coreaddons \
-		crash doctools i18n jobwidgets kio kirigami-addons package \
-		parts plasma-workspace-wallpapers runner service solid \
+		crash doctools i18n jobwidgets kio kirigami-addons \
+		libplasma package parts phonon runner service solid \
 		sonnet textwidgets widgetsaddons windowsystem xmlgui \
 		ecm:build
 USE_LDCONFIG=	yes
@@ -24,13 +24,11 @@ USE_XORG=	x11
 
 CMAKE_OFF=	MOBILE
 
-# Override shared library version
-KDE_APPLICATIONS_SHLIB_VER=	${KDE_APPLICATIONS_SHLIB_G_VER}
-
 OPTIONS_DEFINE=		DOCS GPS WEBENGINE
 OPTIONS_DEFAULT=	GPS
 OPTIONS_DEFAULT_amd64=	WEBENGINE
 OPTIONS_DEFAULT_i386=	WEBENGINE
+OPTIONS_DEFAULT_powerpc64le=	WEBENGINE
 OPTIONS_SUB=		yes
 
 GPS_DESC=		Support for GPS position provider

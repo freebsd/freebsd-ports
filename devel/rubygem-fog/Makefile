@@ -1,5 +1,6 @@
 PORTNAME=	fog
 PORTVERSION=	2.3.0
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -43,7 +44,7 @@ RUN_DEPENDS=	rubygem-fog-aliyun>=0.1.0:net/rubygem-fog-aliyun \
 		rubygem-fog-xenserver>=0:net/rubygem-fog-xenserver \
 		rubygem-fog-xml>=0.1.1<0.2:textproc/rubygem-fog-xml \
 		rubygem-ipaddress>=0.5<1:net/rubygem-ipaddress \
-		rubygem-json>=2.3<3:devel/rubygem-json
+		rubygem-json2>=2.3<3:devel/rubygem-json2
 
 USES=		gem
 

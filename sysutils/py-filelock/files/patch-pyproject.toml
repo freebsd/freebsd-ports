@@ -1,0 +1,13 @@
+--- pyproject.toml.orig	2026-09-06 19:46:24 UTC
++++ pyproject.toml
+@@ -222,10 +222,6 @@ run.plugins = [
+   "covdefaults",
+   "coverage_pragmas",
+ ]
+-run.patch = [
+-  "_exit",
+-  "subprocess",
+-]
+ run.sigterm = true
+ paths.other = [
+   ".",

@@ -1,3 +1,3 @@
-TIMESTAMP = 1674589774
-SHA256 (flake8-black-0.3.6.tar.gz) = 0dfbca3274777792a5bcb2af887a4cad72c72d0e86c94e08e3a3de151bb41c34
-SIZE (flake8-black-0.3.6.tar.gz) = 14565
+TIMESTAMP = 1784005162
+SHA256 (flake8_black-0.4.0.tar.gz) = bf226868f695dee48d55ff6d7747e900709bfd6f605b7a378c70e711e3fc26cb
+SIZE (flake8_black-0.4.0.tar.gz) = 13706

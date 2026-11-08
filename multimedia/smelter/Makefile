@@ -1,7 +1,7 @@
 PORTNAME=	smelter
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.0
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,6 +11,8 @@ WWW=		https://smelter.dev \
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN_i386=	compilation fails: error: static assertion failed due to requirement 'sizeof(struct VkPhysicalDeviceFeatures2) == 240': VkPhysicalDeviceFeatures2 must be 240 bytes (Vulkan 1.1 frozen ABI)
 
 LIB_DEPENDS=	libavutil.so:multimedia/ffmpeg \
 		libopus.so:audio/opus
@@ -76,7 +78,7 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		bit-vec-0.9.1 \
 		bit_field-0.10.2 \
 		bitflags-1.3.2 \
-		bitflags-2.11.0 \
+		bitflags-2.13.2 \
 		bitstream-io-2.6.0 \
 		block-buffer-0.10.4 \
 		block-padding-0.3.3 \
@@ -93,7 +95,7 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		calloop-0.12.4 \
 		calloop-wayland-source-0.2.0 \
 		cbc-0.1.2 \
-		cc-1.2.56 \
+		cc-1.4.6 \
 		ccm-0.5.0 \
 		cesu8-1.1.0 \
 		cexpr-0.6.0 \
@@ -180,11 +182,11 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		fdeflate-0.3.7 \
 		fdk-aac-sys-0.5.0 \
 		ff-0.13.0 \
-		ffmpeg-next-8.1.0 \
-		ffmpeg-sys-next-8.1.0 \
+		ffmpeg-next-9.0.0 \
+		ffmpeg-sys-next-9.0.0 \
 		fiat-crypto-0.2.9 \
 		filetime-0.2.26 \
-		find-msvc-tools-0.1.9 \
+		find-msvc-tools-0.1.12 \
 		flate2-1.1.4 \
 		float-cmp-0.9.0 \
 		float-cmp-0.10.0 \
@@ -495,6 +497,7 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		sharded-slab-0.1.7 \
 		shared_memory-0.12.4 \
 		shlex-1.3.0 \
+		shlex-2.0.1 \
 		signal-hook-0.3.17 \
 		signal-hook-mio-0.2.4 \
 		signal-hook-registry-1.4.2 \
@@ -771,5 +774,7 @@ PLIST_FILES=	bin/${PORTNAME}
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+# tests as of 0.6.0: not run because CARGO_FEATURES=--no-default-features disables the test suite
 
 .include <bsd.port.mk>

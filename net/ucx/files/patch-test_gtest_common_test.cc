@@ -1,6 +1,6 @@
---- test/gtest/common/test.cc.orig	2026-05-07 20:53:46 UTC
+--- test/gtest/common/test.cc.orig	2026-09-09 16:04:04 UTC
 +++ test/gtest/common/test.cc
-@@ -481,14 +481,15 @@ static void clear_dontcopy_regions_vma_cb(ucs_sys_vma_
+@@ -557,14 +557,15 @@ static void clear_dontcopy_regions_vma_cb(ucs_sys_vma_
  
  static void clear_dontcopy_regions_vma_cb(ucs_sys_vma_info_t *info, void *ctx) {
      int ret;

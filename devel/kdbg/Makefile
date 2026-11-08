@@ -1,7 +1,7 @@
 PORTNAME=	kdbg
 DISTVERSIONPREFIX=	${PORTNAME}-
 DISTVERSION=	3.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel kde
 
 MAINTAINER=	thomas.sander@gmx.de
@@ -9,6 +9,9 @@ COMMENT=	Graphical user interface around gdb using KDE
 WWW=		https://www.kdbg.org/
 
 LICENSE=	GPLv2
+
+DEPRECATED=	Unmaintained, does not build with CMake 4
+EXPIRATION_DATE=2026-11-30
 
 USES=		cmake compiler:c++11-lang kde:5 qt:5 xorg
 USE_KDE=	auth codecs config configwidgets coreaddons ecm \

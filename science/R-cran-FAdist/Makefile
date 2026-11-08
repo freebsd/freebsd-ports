@@ -6,7 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Probability distributions that are sometimes useful in hydrology
-WWW=		https://cran.r-project.org/web/packages/FAdist/index.html
+WWW=		https://cran.r-project.org/package=FAdist
 
 LICENSE=	GPLv2
 

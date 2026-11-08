@@ -1,5 +1,6 @@
 PORTNAME=	dialect
 DISTVERSION=	2.6.1
+PORTREVISION=	1
 CATEGORIES=	textproc gnome python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -15,7 +16,7 @@ BUILD_DEPENDS=	appstreamcli:devel/appstream \
 LIB_DEPENDS=	libsoup-3.0.so:devel/libsoup3 \
 		libsecret-1.so:security/libsecret
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gTTS>=2.5.4:audio/py-gtts@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.13.4:www/py-beautifulsoup@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}beautifulsoup4>=4.13.4:www/py-beautifulsoup4@${PY_FLAVOR}
 
 USES=		desktop-file-utils gettext-tools gnome gstreamer meson \
 		pkgconfig python

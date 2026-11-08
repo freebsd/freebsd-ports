@@ -1,6 +1,6 @@
---- components/performance_manager/decorators/process_metrics_decorator.cc.orig	2025-12-06 13:30:52 UTC
+--- components/performance_manager/decorators/process_metrics_decorator.cc.orig	2026-08-13 07:41:05 UTC
 +++ components/performance_manager/decorators/process_metrics_decorator.cc
-@@ -54,7 +54,7 @@ class ProcessMetricsDecorator::NodeMetricsUpdater {
+@@ -53,7 +53,7 @@ class ProcessMetricsDecorator::NodeMetricsUpdater {
      auto* process_node = ProcessNodeImpl::FromNode(context.GetProcessNode());
      process_node->set_private_footprint(memory_summary_->private_footprint);
      process_node->set_resident_set(memory_summary_->resident_set_size);

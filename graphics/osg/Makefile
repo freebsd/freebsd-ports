@@ -1,7 +1,7 @@
 PORTNAME=	osg
 PORTVERSION=	3.6.5
 DISTVERSIONPREFIX=	OpenSceneGraph-
-PORTREVISION=	87
+PORTREVISION=	89
 CATEGORIES=	graphics
 
 MAINTAINER=	fluffy@FreeBSD.org
@@ -148,6 +148,7 @@ post-patch:
 	@${FIND} ${WRKSRC}/CMakeModules -type f -print0 | ${XARGS} -0 \
 		${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g'
 	@${REINPLACE_CMD} -e '/FIND_LIBRARY.*DL_LIBRARY/ d; \
+		/CMAKE_MINIMUM_REQUIRED/s,2.8.0 FATAL_ERROR,3.10,g; \
 		s|-pedantic||' ${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${PATCH_WRKSRC}/CMakeModules/FindFFmpeg.cmake

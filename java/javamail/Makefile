@@ -1,11 +1,8 @@
 PORTNAME=	javamail
 DISTVERSIONPREFIX=	${PORTNAME:tu}-
 DISTVERSION=	1_6_2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	java mail
-MASTER_SITES=	https://github.com/jakartaee/jaf-api/releases/download/1.2.1/:jaf
-DISTFILES=	jakarta.activation.jar:jaf
-EXTRACT_ONLY=	javaee-javamail-JAVAMAIL-1_6_2_GH0.tar.gz
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Reference Implementation of JSR 919
@@ -14,12 +11,10 @@ WWW=		https://javaee.github.io/javamail/
 LICENSE=	GPLv2 CDDL
 LICENSE_COMB=	dual
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
-
 USES=		cpe java:ant
+CPE_VENDOR=	sun
 USE_GITHUB=	yes
 GH_ACCOUNT=	javaee
-CPE_VENDOR=	sun
 
 NO_ARCH=	yes
 
@@ -27,6 +22,8 @@ PLIST_FILES=	%%JAVAJARDIR%%/mail.jar
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .include <bsd.port.options.mk>
 
@@ -37,16 +34,15 @@ ALL_TARGET=	all docs
 .include <bsd.port.pre.mk>
 
 .if ${JAVA_PORT_VERSION} != 8
-PLIST_FILES+=	%%JAVAJARDIR%%/jakarta.activation.jar
-MAKE_ARGS+=	-Dactivation.jar=${DISTDIR}/jakarta.activation.jar
+_JAF_JAR=	${JAVALIBDIR}/activation.jar
+BUILD_DEPENDS+=	${_JAF_JAR}:devel/javax-activation
+RUN_DEPENDS+=	${_JAF_JAR}:devel/javax-activation
+MAKE_ARGS+=	-Dactivation.jar=${_JAF_JAR}
 .endif
 
 do-install:
 	@${ECHO_MSG} -n ">> Install JAR files in ${JAVAJARDIR}..."
 	@${INSTALL_DATA} ${WRKSRC}/target/release/mail.jar ${STAGEDIR}${JAVAJARDIR}/
-.if ${JAVA_PORT_VERSION} != 8
-	@${INSTALL_DATA} ${DISTDIR}/jakarta.activation.jar ${STAGEDIR}${JAVAJARDIR}/
-.endif
 	@${ECHO_MSG} " [ DONE ]"
 .if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."

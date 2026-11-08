@@ -118,6 +118,7 @@
     SUBDIR += p5-Archive-Tar
     SUBDIR += p5-Archive-Tar-Wrapper
     SUBDIR += p5-Archive-Zip
+    SUBDIR += p5-Archive-Zip-SimpleZip
     SUBDIR += p5-Compress-Bzip2
     SUBDIR += p5-Compress-LZ4
     SUBDIR += p5-Compress-LZF
@@ -220,13 +221,13 @@
     SUBDIR += py-python-lhafile
     SUBDIR += py-python-lzo
     SUBDIR += py-python-rpm-packaging
-    SUBDIR += py-python-snappy
     SUBDIR += py-pyunpack
     SUBDIR += py-pyzstd
     SUBDIR += py-rarfile
     SUBDIR += py-rcssmin
     SUBDIR += py-rjsmin
     SUBDIR += py-sozipfile
+    SUBDIR += py-unrardll
     SUBDIR += py-warctools
     SUBDIR += py-xopen
     SUBDIR += py-zipstream-ng
@@ -282,6 +283,7 @@
     SUBDIR += unarr
     SUBDIR += undms
     SUBDIR += unfoo
+    SUBDIR += unhare
     SUBDIR += unlzx
     SUBDIR += unmakeself
     SUBDIR += unmass

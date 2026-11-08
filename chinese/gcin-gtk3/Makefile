@@ -1,6 +1,6 @@
 PORTNAME=	gcin
-PORTVERSION=	2.9.0
-PORTREVISION=	2
+PORTVERSION=	2.9.4
+PORTREVISION=	0
 CATEGORIES=	chinese textproc gnome
 MASTER_SITES=	http://hyperrate.com/gcin-source/
 PKGNAMESUFFIX=	-gtk3

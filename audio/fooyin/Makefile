@@ -1,6 +1,6 @@
 PORTNAME=	fooyin
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.12.1
+DISTVERSION=	0.14.1
 CATEGORIES=	audio multimedia
 
 MAINTAINER=	diizzy@FreeBSD.org
@@ -21,10 +21,11 @@ LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 		libtag.so:audio/taglib
 
 USES=		cmake compiler:c++23-lang desktop-file-utils gl libarchive \
-		pkgconfig qt:6 sdl
+		pkgconfig qt:6 sdl xorg
 USE_GL=		opengl
 USE_QT=		base sqldriver-sqlite svg tools:build
 USE_SDL=	sdl2
+USE_XORG=	x11
 
 USE_GITHUB=	yes
 
@@ -34,11 +35,19 @@ CMAKE_OFF=	BUILD_ALSA \
 		BUILD_CCACHE \
 		CMAKE_CXX_EXTENSIONS
 CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_ALSA \
+		CMAKE_DISABLE_FIND_PACKAGE_Cdio \
 		CMAKE_DISABLE_FIND_PACKAGE_Ebur128 \
+		CMAKE_DISABLE_FIND_PACKAGE_FLAC \
+		CMAKE_DISABLE_FIND_PACKAGE_Jack \
+		CMAKE_DISABLE_FIND_PACKAGE_Mpg123 \
 		CMAKE_DISABLE_FIND_PACKAGE_OpenMpt \
+		CMAKE_DISABLE_FIND_PACKAGE_OpusFile \
 		CMAKE_DISABLE_FIND_PACKAGE_PipeWire \
 		CMAKE_DISABLE_FIND_PACKAGE_projectM4 \
+		CMAKE_DISABLE_FIND_PACKAGE_PulseAudio \
 		CMAKE_DISABLE_FIND_PACKAGE_SndFile \
-		CMAKE_DISABLE_FIND_PACKAGE_SoXR
+		CMAKE_DISABLE_FIND_PACKAGE_SoundTouch \
+		CMAKE_DISABLE_FIND_PACKAGE_SoXR \
+		CMAKE_DISABLE_FIND_PACKAGE_Vorbis
 
 .include <bsd.port.mk>

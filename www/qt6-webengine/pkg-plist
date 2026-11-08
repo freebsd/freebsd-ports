@@ -183,6 +183,7 @@ lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreConfigVersion.cmake
 lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreConfigVersionImpl.cmake
 lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreDependencies.cmake
 lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreDeploySupport.cmake
+lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreExtraProperties.cmake
 lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreMacros.cmake
 lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreTargets.cmake
@@ -305,6 +306,7 @@ lib/cmake/Qt6WebEngineWidgetsPrivate/Qt6WebEngineWidgetsPrivateVersionlessTarget
 %%QT_SBOMDIR%%/qtwebengine-%%FULLVER%%.cdx.json
 %%QT_SBOMDIR%%/qtwebengine-%%FULLVER%%.spdx
 %%QT_SBOMDIR%%/qtwebengine-%%FULLVER%%.spdx.json
+%%QT_SBOMDIR%%/qtwebengine-chromium-webengine-%%FULLVER%%.cdx.json
 %%QT_SBOMDIR%%/qtwebengine-chromium-webengine-%%FULLVER%%.spdx
 %%QT_SBOMDIR%%/qtwebengine-chromium-webengine-%%FULLVER%%.spdx.json
 libdata/pkgconfig/Qt6WebEngineCore.pc

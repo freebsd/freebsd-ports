@@ -1,6 +1,6 @@
---- remoting/host/session_policies_from_dict.cc.orig	2025-05-06 12:23:00 UTC
+--- remoting/host/session_policies_from_dict.cc.orig	2026-10-31 12:09:36 UTC
 +++ remoting/host/session_policies_from_dict.cc
-@@ -75,7 +75,7 @@ std::optional<SessionPolicies> SessionPoliciesFromDict
+@@ -74,7 +74,7 @@ std::optional<SessionPolicies> SessionPoliciesFromDict
    session_policies.curtain_required =
        dict.FindBool(policy::key::kRemoteAccessHostRequireCurtain);
  #endif

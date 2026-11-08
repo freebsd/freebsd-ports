@@ -1,6 +1,6 @@
 PORTNAME=	turso
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.1
+DISTVERSION=	0.7.2
 PORTREVISION=	1
 CATEGORIES=	databases
 
@@ -19,6 +19,8 @@ GH_ACCOUNT=	tursodatabase
 MAKE_ENV+=	PYO3_PYTHON=${PYTHON_CMD}
 
 PLIST_FILES=	bin/tursodb
+
+PORTSCOUT=	limit:^0\.
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/target/release/tursodb \

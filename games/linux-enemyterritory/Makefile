@@ -1,6 +1,6 @@
 PORTNAME=	enemyterritory
 PORTVERSION=	2.60b
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games linux
 MASTER_SITES=	IDSOFTWARE/et/:patch \
 		IDSOFTWARE/et/linux/:full

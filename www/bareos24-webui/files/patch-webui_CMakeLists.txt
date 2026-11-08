@@ -1,0 +1,12 @@
+--- webui/CMakeLists.txt.orig	2026-08-26 20:13:37 UTC
++++ webui/CMakeLists.txt
+@@ -17,6 +17,9 @@ message("Entering ${CMAKE_CURRENT_SOURCE_DIR}")
+ #   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+ #   02110-1301, USA.
+ message("Entering ${CMAKE_CURRENT_SOURCE_DIR}")
++
++cmake_minimum_required(VERSION 3.17)
++
+ project(bareos-webui)
+ 
+ include(GNUInstallDirs)

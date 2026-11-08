@@ -1,6 +1,6 @@
 PORTNAME=	tfel
 PORTVERSION=	5.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	https://github.com/thelfer/tfel/archive/refs/tags/
 PKGNAMESUFFIX=	-mfront

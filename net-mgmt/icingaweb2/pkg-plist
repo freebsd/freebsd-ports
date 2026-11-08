@@ -64,7 +64,6 @@ etc/bash_completion.d/icingacli
 %%WWWDIR%%/application/forms/Config/General/ApplicationConfigForm.php
 %%WWWDIR%%/application/forms/Config/General/DefaultAuthenticationDomainConfigForm.php
 %%WWWDIR%%/application/forms/Config/General/LoggingConfigForm.php
-%%WWWDIR%%/application/forms/Config/General/PasswordPolicyConfigForm.php
 %%WWWDIR%%/application/forms/Config/General/ThemingConfigForm.php
 %%WWWDIR%%/application/forms/Config/GeneralConfigForm.php
 %%WWWDIR%%/application/forms/Config/Resource/DbResourceForm.php
@@ -73,6 +72,7 @@ etc/bash_completion.d/icingacli
 %%WWWDIR%%/application/forms/Config/Resource/SshResourceForm.php
 %%WWWDIR%%/application/forms/Config/ResourceConfigForm.php
 %%WWWDIR%%/application/forms/Config/Security/CspConfigForm.php
+%%WWWDIR%%/application/forms/Config/Security/PasswordPolicyConfigForm.php
 %%WWWDIR%%/application/forms/Config/User/CreateMembershipForm.php
 %%WWWDIR%%/application/forms/Config/User/UserForm.php
 %%WWWDIR%%/application/forms/Config/UserBackend/DbBackendForm.php
@@ -253,7 +253,6 @@ etc/bash_completion.d/icingacli
 %%WWWDIR%%/library/Icinga/Authentication/LoginButtonForm.php
 %%WWWDIR%%/library/Icinga/Authentication/PasswordPolicy.php
 %%WWWDIR%%/library/Icinga/Authentication/PasswordPolicyHelper.php
-%%WWWDIR%%/library/Icinga/Authentication/PasswordPolicyValidator.php
 %%WWWDIR%%/library/Icinga/Authentication/Role.php
 %%WWWDIR%%/library/Icinga/Authentication/RolesConfig.php
 %%WWWDIR%%/library/Icinga/Authentication/TwoFactor.php
@@ -277,8 +276,6 @@ etc/bash_completion.d/icingacli
 %%WWWDIR%%/library/Icinga/Chart/Graph/StackedGraph.php
 %%WWWDIR%%/library/Icinga/Chart/Graph/Tooltip.php
 %%WWWDIR%%/library/Icinga/Chart/GridChart.php
-%%WWWDIR%%/library/Icinga/Chart/Inline/Inline.php
-%%WWWDIR%%/library/Icinga/Chart/Inline/PieChart.php
 %%WWWDIR%%/library/Icinga/Chart/Legend.php
 %%WWWDIR%%/library/Icinga/Chart/Palette.php
 %%WWWDIR%%/library/Icinga/Chart/PieChart.php
@@ -416,6 +413,7 @@ etc/bash_completion.d/icingacli
 %%WWWDIR%%/library/Icinga/Repository/IniRepository.php
 %%WWWDIR%%/library/Icinga/Repository/LdapRepository.php
 %%WWWDIR%%/library/Icinga/Repository/Repository.php
+%%WWWDIR%%/library/Icinga/Repository/RepositoryMode.php
 %%WWWDIR%%/library/Icinga/Repository/RepositoryQuery.php
 %%WWWDIR%%/library/Icinga/Security/Csp/AttributedCsp.php
 %%WWWDIR%%/library/Icinga/Security/Csp/Loader/ArrayCspLoader.php
@@ -488,6 +486,7 @@ etc/bash_completion.d/icingacli
 %%WWWDIR%%/library/Icinga/Web/Form/ErrorLabeller.php
 %%WWWDIR%%/library/Icinga/Web/Form/FormElement.php
 %%WWWDIR%%/library/Icinga/Web/Form/InvalidCSRFTokenException.php
+%%WWWDIR%%/library/Icinga/Web/Form/RepositoryForm.php
 %%WWWDIR%%/library/Icinga/Web/Form/Validator/DateFormatValidator.php
 %%WWWDIR%%/library/Icinga/Web/Form/Validator/DateTimeValidator.php
 %%WWWDIR%%/library/Icinga/Web/Form/Validator/InArray.php
@@ -861,7 +860,6 @@ etc/bash_completion.d/icingacli
 %%WWWDIR%%/public/js/icinga/behavior/application-state.js
 %%WWWDIR%%/public/js/icinga/behavior/collapsible.js
 %%WWWDIR%%/public/js/icinga/behavior/copy-to-clipboard.js
-%%WWWDIR%%/public/js/icinga/behavior/datetime-picker.js
 %%WWWDIR%%/public/js/icinga/behavior/detach.js
 %%WWWDIR%%/public/js/icinga/behavior/dropdown.js
 %%WWWDIR%%/public/js/icinga/behavior/filtereditor.js

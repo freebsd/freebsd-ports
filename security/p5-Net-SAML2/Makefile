@@ -1,5 +1,5 @@
 PORTNAME=	Net-SAML2
-PORTVERSION=	0.85
+PORTVERSION=	0.89
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TIMLEGGE
@@ -37,7 +37,7 @@ RUN_DEPENDS=	p5-Crypt-OpenSSL-Random>=0:security/p5-Crypt-OpenSSL-Random \
 		p5-XML-Enc>=0.13:textproc/p5-XML-Enc \
 		p5-XML-Generator>=1.13:textproc/p5-XML-Generator \
 		p5-XML-LibXML>=0:textproc/p5-XML-LibXML \
-		p5-XML-Sig>=0.67:textproc/p5-XML-Sig \
+		p5-XML-Sig>=0.72:textproc/p5-XML-Sig \
 		p5-libwww>=0:www/p5-libwww \
 		p5-namespace-autoclean>=0:devel/p5-namespace-autoclean
 TEST_DEPENDS=	p5-Import-Into>=0:devel/p5-Import-Into \

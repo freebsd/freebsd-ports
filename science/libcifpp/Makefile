@@ -1,6 +1,7 @@
 PORTNAME=	libcifpp
 DISTVERSIONPREFIX=	v
 DISTVERSION=	10.0.4
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://files.wwpdb.org/pub/pdb/data/monomers/:components
 DISTFILES=	components.cif.gz:components

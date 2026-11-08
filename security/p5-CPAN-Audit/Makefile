@@ -1,7 +1,8 @@
 PORTNAME=	CPAN-Audit
-PORTVERSION=	20250829.001
+DISTVERSION=	20250829.001
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:BRIANDFOY
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jadawin@FreeBSD.org
@@ -11,8 +12,7 @@ WWW=		https://metacpan.org/dist/CPAN-Audit
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-CPAN-DistnameInfo>=0:devel/p5-CPAN-DistnameInfo \
+BUILD_RUN_DEPENDS=	p5-CPAN-DistnameInfo>=0:devel/p5-CPAN-DistnameInfo \
 		p5-CPANSA-DB>=20241121.001:security/p5-CPANSA-DB \
 		p5-IO-Interactive>=0,1:devel/p5-IO-Interactive \
 		p5-JSON>=0:converters/p5-JSON \

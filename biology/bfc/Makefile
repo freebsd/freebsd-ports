@@ -2,7 +2,7 @@ PORTNAME=	bfc
 DISTVERSION=	g20150417
 CATEGORIES=	biology
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Correct sequencing errors from Illumina sequencing data
 WWW=		https://github.com/lh3/bfc
 

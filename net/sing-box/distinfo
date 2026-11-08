@@ -1,5 +1,5 @@
-TIMESTAMP = 1785340557
-SHA256 (go/net_sing-box/sing-box-v1.13.15/v1.13.15.mod) = 8aa0868131e81e730ac8ec7af8c8b63847cef10f01420326a3a0c6faca916c7a
-SIZE (go/net_sing-box/sing-box-v1.13.15/v1.13.15.mod) = 9477
-SHA256 (go/net_sing-box/sing-box-v1.13.15/v1.13.15.zip) = 42a76e47be64496c9aac14b49e4fef01d129551d8ddfa2f15b881f19278d2091
-SIZE (go/net_sing-box/sing-box-v1.13.15/v1.13.15.zip) = 1412789
+TIMESTAMP = 1792909485
+SHA256 (go/net_sing-box/sing-box-v1.14.4/v1.14.4.mod) = e5f23c00072adeee7285fabe8ea8dab9049ed8ae5e86fbf06b7a033b6126d24c
+SIZE (go/net_sing-box/sing-box-v1.14.4/v1.14.4.mod) = 11164
+SHA256 (go/net_sing-box/sing-box-v1.14.4/v1.14.4.zip) = 3950866e3bc7f6466827e264f1e37e5ca778ecf34b6e8d0f89721274afb45381
+SIZE (go/net_sing-box/sing-box-v1.14.4/v1.14.4.zip) = 2738644

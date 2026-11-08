@@ -1,9 +1,8 @@
 PORTNAME=	sentry-cli
-DISTVERSION=	3.6.0
-PORTREVISION=	1
+DISTVERSION=	3.8.2
 CATEGORIES=	devel
 
-MAINTAINER=	lcook@FreeBSD.org
+MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Command line utility to work with Sentry
 WWW=		https://docs.sentry.io/cli/ \
 		https://github.com/getsentry/sentry-cli
@@ -18,6 +17,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libzstd.so:archivers/zstd
 
 USES=		cargo ssl
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	getsentry
 

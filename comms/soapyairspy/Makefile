@@ -1,6 +1,7 @@
 PORTNAME=	SoapyAirspy
 DISTVERSIONPREFIX=	soapy-airspy-
 DISTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,6 +18,8 @@ USES=		cmake compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	pothosware
 
-PLIST_FILES=	lib/SoapySDR/modules0.8/libairspySupport.so
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/pothosware/SoapyAirspy/issues/33
+
+PLIST_FILES=	lib/SoapySDR/modules0.9/libairspySupport.so
 
 .include <bsd.port.mk>

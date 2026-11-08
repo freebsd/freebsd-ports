@@ -1,0 +1,13 @@
+# Builds protoc and protoc-gen-grpc-java for the protobuf code of Spark,
+# both linked statically against a libprotoc of the same protobuf release.
+cmake_minimum_required(VERSION 3.16)
+project(spark-protoc C CXX)
+
+add_subdirectory(${PROTOBUF_SOURCE_DIR} protobuf EXCLUDE_FROM_ALL)
+
+add_executable(protoc-gen-grpc-java
+	${GRPC_JAVA_SOURCE_DIR}/compiler/src/java_plugin/cpp/java_generator.cpp
+	${GRPC_JAVA_SOURCE_DIR}/compiler/src/java_plugin/cpp/java_plugin.cpp)
+target_link_libraries(protoc-gen-grpc-java PRIVATE libprotoc libprotobuf)
+
+add_custom_target(spark-protoc ALL DEPENDS protoc protoc-gen-grpc-java)

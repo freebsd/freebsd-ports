@@ -1,36 +1,45 @@
 PORTNAME=	aribas
-PORTVERSION=	1.64
-PORTREVISION=	1
+PORTVERSION=	1.65b
 CATEGORIES=	math
-MASTER_SITES=	https://www.mathematik.uni-muenchen.de/~forster/sw/UNIX_LINUX/ \
-		http://bsd-geek.de/FreeBSD/distfiles/
+MASTER_SITES=	https://www.mathematik.uni-muenchen.de/~forster/sw/UNIX_LINUX/
+DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mce@FreeBSD.org
 COMMENT=	Interpreter for big integer/multi-precision floating point arithmetic
 WWW=		https://www.mathematik.uni-muenchen.de/~forster/sw/aribas.html
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/gnugpl.txt
+
+USES=		tar:tgz
 
 BUILD_WRKSRC=	${WRKSRC}/src
 
 PLIST_FILES=	bin/aribas \
+		share/emacs/site-lisp/aribas.el \
 		share/man/man1/aribas.1.gz
-PORTDOCS=	README aribas.doc aribas.man aribas.tut
+PORTDOCS=	EL-README README aribas.man aridoc.txt aritut.txt
 PORTEXAMPLES=	README factor.ari pi.ari queens.ari
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-post-patch:
-	@${REINPLACE_CMD} -e '/^CC/d;' \
-	       -e '/^CFLAGS/{s/=/+=/;s/-O -v//;}' \
-		-e 's/CC) -o/CC) $$(CFLAGS) -o/' ${BUILD_WRKSRC}/Makefile
+ELISPDIR=	share/emacs/site-lisp
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/aribas ${STAGEDIR}${PREFIX}/bin/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${ELISPDIR}
+	${INSTALL_DATA} ${WRKSRC}/EL/aribas.el ${STAGEDIR}${PREFIX}/${ELISPDIR}
 	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 \
 		${STAGEDIR}${PREFIX}/share/man/man1/
+
+post-install-DOCS-on:
+	@${CP} ${WRKSRC}/EL/README ${WRKSRC}/doc/EL-README
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${PORTEXAMPLES:S|^|${WRKSRC}/examples/|} \
 		${STAGEDIR}${EXAMPLESDIR}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>

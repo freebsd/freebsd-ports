@@ -1,6 +1,6 @@
---- snappy-internal.h.orig	2024-04-04 19:04:38 UTC
+--- snappy-internal.h.orig	2026-09-18 10:47:46 UTC
 +++ snappy-internal.h
-@@ -104,6 +104,15 @@ inline void V128_StoreU(V128* dst, V128 val) {
+@@ -117,6 +117,15 @@ inline void V128_StoreU(V128* dst, V128 val) {
    vst1q_u8(reinterpret_cast<uint8_t*>(dst), val);
  }
  

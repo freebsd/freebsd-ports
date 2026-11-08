@@ -1,8 +1,6 @@
 PORTNAME=	rmlint
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.10.1-11
-DISTVERSIONSUFFIX=	-ga726d0cb
-PORTREVISION=	1
+DISTVERSION=	2.11.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	jockl@pianojockl.org
@@ -11,24 +9,27 @@ WWW=		https://rmlint.readthedocs.io/en/latest/
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx@${PY_FLAVOR}
+BUILD_DEPENDS=	sphinx-build-${PYTHON_VER}:textproc/py-sphinx@${PY_FLAVOR}
 LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib
 
-USES=		gnome pkgconfig python:build scons
+USES=		gettext-runtime gnome pkgconfig python:build scons
 USE_GITHUB=	yes
 GH_ACCOUNT=	sahib
 USE_GNOME=	glib20
 
-MAKE_ARGS=	--actual-prefix=${PREFIX} \
-		--prefix=${STAGEDIR}${PREFIX} \
+# blkid is only used to map partitions to their whole disk through Linux sysfs,
+# which is of no use on FreeBSD: auto-detection would also add an undeclared
+# runtime dependency on filesystems/libblkid.
+MAKE_ARGS=	--without-blkid \
 		--without-gui
 
-PLIST_FILES=	bin/rmlint \
-		share/man/man1/rmlint.1.gz
+OPTIONS_DEFINE=		NLS
+OPTIONS_SUB=		yes
 
-OPTIONS_DEFINE=	NLS
+NLS_USES=		gettext-tools
+NLS_MAKE_ARGS_OFF=	--without-gettext
 
-NLS_USES=		gettext-runtime
-NLS_CONFIGURE_WITH=	gettext
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/rmlint
 
 .include <bsd.port.mk>

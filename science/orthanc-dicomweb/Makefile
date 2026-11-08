@@ -1,5 +1,6 @@
 PORTNAME=	orthanc-dicomweb
-DISTVERSION=	1.23
+DISTVERSION=	1.24
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://orthanc.uclouvain.be/downloads/sources/orthanc-dicomweb/:dicomweb \
 		https://orthanc.uclouvain.be/downloads/third-party-downloads/:thirdparty \
@@ -18,7 +19,7 @@ DISTFILES+=	${EXTRADISTFILES}
 DIST_SUBDIR=	orthanc
 EXTRACT_ONLY=	OrthancDicomWeb-${PORTVERSION}.tar.gz
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	longros@FreeBSD.org
 COMMENT=	Orthanc DICOMWeb plugin
 WWW=		https://www.orthanc-server.com/static.php?page=dicomweb
 

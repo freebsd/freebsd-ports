@@ -1,6 +1,21 @@
 --- CMakeLists.txt.orig	2017-05-07 19:44:44 UTC
 +++ CMakeLists.txt
-@@ -61,23 +61,17 @@ add_definitions(
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8.11)
++cmake_minimum_required(VERSION 2.8.11...9.9.99)
+ 
+ project(axmldec C CXX)
+ option(ENABLE_APK_LOADING "enable loading from an APK file" ON)
+@@ -52,7 +52,7 @@ find_package(Boost ${BOOST_MIN_VERSION}
+ 
+ set(BOOST_MIN_VERSION "1.53.0")
+ find_package(Boost ${BOOST_MIN_VERSION}
+-    COMPONENTS system iostreams program_options locale REQUIRED)
++    COMPONENTS iostreams program_options locale REQUIRED)
+ include_directories(SYSTEM ${Boost_INCLUDE_DIRS})
+ add_definitions(
+     -DBOOST_MAJOR_VERSION=${Boost_MAJOR_VERSION}
+@@ -61,23 +61,17 @@ if(ENABLE_APK_LOADING)
  target_link_libraries(axmldec ${Boost_LIBRARIES})
  
  if(ENABLE_APK_LOADING)

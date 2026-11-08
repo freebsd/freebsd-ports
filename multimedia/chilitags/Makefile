@@ -6,7 +6,8 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Robust fiducial markers for augmented reality and robotics
-WWW=		https://chili.epfl.ch/software
+WWW=		https://chili.epfl.ch/software \
+		https://github.com/chili-epfl/chilitags
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/gpl.txt
@@ -17,6 +18,8 @@ USES=		cmake compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	chili-epfl
 USE_LDCONFIG=	yes
+
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/chili-epfl/chilitags/issues/100
 
 PLIST_FILES=	bin/chilitags-creator \
 		include/chilitags/chilitags.hpp \

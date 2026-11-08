@@ -1,0 +1,81 @@
+#!/bin/sh
+
+# PROVIDE: gerrit
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Configuration settings for gerrit in /etc/rc.conf:
+#
+# gerrit_enable (bool):
+#   Set to "NO" by default.
+#   Set it to "YES" to enable gerrit.
+#
+# gerrit_args (str):
+#   Extra arguments passed to the daemon command.
+#
+# gerrit_home (str):
+#   Set to "%%GERRIT_HOME%%" by default.
+#   Gerrit site directory.
+#
+# gerrit_java_home (str):
+#   Set to "%%JAVA_HOME%%" by default.
+#   Set the Java virtual machine to run gerrit.
+#
+# gerrit_java_opts (str):
+#   Set to "" by default.
+#   Java VM args to use.
+#
+# gerrit_user (str):
+#   Set to "%%GERRIT_USER%%" by default.
+#   User to run gerrit as.
+#
+# gerrit_group (str):
+#   Set to "%%GERRIT_GROUP%%" by default.
+#   Group for data file ownership.
+#
+# gerrit_log_file (str):
+#   Set to "%%GERRIT_LOG_FILE%%" by default.
+#   Log file location.
+#
+
+. /etc/rc.subr
+
+name=gerrit
+desc="Gerrit Code Review"
+rcvar=gerrit_enable
+
+load_rc_config "${name}"
+
+: ${gerrit_enable:=NO}
+: ${gerrit_home="%%GERRIT_HOME%%"}
+: ${gerrit_java_home="%%JAVA_HOME%%"}
+: ${gerrit_user="%%GERRIT_USER%%"}
+: ${gerrit_group="%%GERRIT_GROUP%%"}
+: ${gerrit_log_file="%%GERRIT_LOG_FILE%%"}
+
+pidfile="${gerrit_home}/logs/gerrit.pid"
+java_cmd="${gerrit_java_home}/bin/java"
+procname="${java_cmd}"
+command="/usr/sbin/daemon"
+command_args="-f -p ${pidfile} ${java_cmd} ${gerrit_java_opts} -jar %%DATADIR%%/gerrit.war daemon -d ${gerrit_home} ${gerrit_args}"
+required_files="${java_cmd} %%DATADIR%%/gerrit.war"
+
+start_precmd=gerrit_prestart
+
+gerrit_prestart()
+{
+	if [ ! -d "${gerrit_home}" ]; then
+		echo "Gerrit site directory ${gerrit_home} does not exist."
+		echo "Run 'java -jar %%DATADIR%%/gerrit.war init -d ${gerrit_home}' to initialize."
+		return 1
+	fi
+	if [ ! -f "${gerrit_log_file}" ]; then
+		install -o "${gerrit_user}" -g "${gerrit_group}" -m 640 /dev/null "${gerrit_log_file}"
+	fi
+	if [ ! -d "${gerrit_home}/logs" ]; then
+		install -d -o "${gerrit_user}" -g "${gerrit_group}" -m 750 "${gerrit_home}/logs"
+	fi
+}
+
+run_rc_command "$1"

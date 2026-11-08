@@ -1,7 +1,7 @@
 PORTNAME=	rosenpass
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.2
-PORTREVISION=	21
+DISTVERSION=	0.2.3
+PORTREVISION=	3
 CATEGORIES=	net net-vpn security
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -14,8 +14,7 @@ LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 
 LIB_DEPENDS=	libsodium.so:security/libsodium
-RUN_DEPENDS=	bash:shells/bash \
-		wireguard-tools>0:net/wireguard-tools
+RUN_DEPENDS=	bash:shells/bash
 
 USES=		cargo llvm:build pkgconfig shebangfix
 USE_GITHUB=	yes

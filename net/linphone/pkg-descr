@@ -1,9 +1,7 @@
-Linphone is an internet phone or Voice Over IP phone (VoIP).
+Linphone 6 is the Qt 6 generation of the Linphone desktop SIP client.  It
+supports voice and video calls, messaging, multiple SIP accounts, contacts,
+and modern Qt Quick user interfaces.
 
-* With linphone you can communicate freely with people over the internet,
-  with voice, video, and text instant messaging
-* Linphone makes use of the SIP protocol, an open standard for internet
-  telephony.  You can use Linphone with any SIP VoIP operator, including
-  the free SIP audio/video service provided by www.linphone.org
-* Linphone is available for desktop computers: Linux, Windows, MacOSX, and
-  for mobile phones: Android, iPhone, Blackberry
+This port builds only the desktop application and links it to the
+Liblinphone and Mediastreamer libraries supplied by the ports collection.
+It does not build or install the embedded Linphone SDK.

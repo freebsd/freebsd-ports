@@ -1,0 +1,12 @@
+The sts modules count what goes through nginx's stream subsystem -- per
+server, per upstream, per filter -- and serve the counters as JSON, as a
+Prometheus exposition or as an HTML page.  They are the stream side of what
+the vts module does for HTTP.
+
+Two modules are needed and both are here: one counts in the stream
+subsystem and owns the shared memory, the other answers the status
+requests out of it in an http server.  One without the other reports
+nothing.
+
+This port only installs the module sources.  The modules themselves are
+built by the nginx ports when their STS option is enabled.

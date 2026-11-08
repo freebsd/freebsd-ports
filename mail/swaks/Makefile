@@ -3,7 +3,7 @@ PORTVERSION=	20240103.0
 CATEGORIES=	mail
 MASTER_SITES=	http://jetmore.org/john/code/swaks/
 
-MAINTAINER=	beat@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Swiss Army Knife SMTP transaction tester
 WWW=		https://jetmore.org/john/code/swaks/
 

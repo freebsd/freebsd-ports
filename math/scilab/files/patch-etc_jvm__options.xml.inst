@@ -1,0 +1,95 @@
+--- etc/jvm_options.xml.inst.orig	2026-08-08 14:07:23 UTC
++++ etc/jvm_options.xml.inst
+@@ -0,0 +1,92 @@
++<?xml version="1.0" encoding="UTF-8" standalone="no"?>
++<!DOCTYPE jvm_options SYSTEM "../modules/jvm/xml/jvm-options.dtd">
++<!-- =================== -->
++<!--
++ Options JVM
++ @author Allan CORNET
++ ===================
++ Don't touch if you do not know what you are doing
++ http://blogs.sun.com/watt/resource/jvm-options-list.html
++ http://java.sun.com/javase/technologies/hotspot/vmoptions.jsp
++ http://java.sun.com/javase/technologies/hotspot/exactoptions.jsp
++ -->
++<!-- =================== -->
++<!--
++$PATH_SEPARATOR : path separator ';' (windows) ':' linux
++$SCILAB : scilab path (SCI in Scilab)
++-->
++<jvm_options>
++    <!-- Needed for FreeBSD because LibraryPath.addPath does not work -->
++    <option value="-Djava.library.path=%%PREFIX%%/bin:%%PREFIX%%/lib/scilab:%%LOCALBASE%%/lib:%%JAVA_HOME%%/lib:%%JAVA_HOME%%/lib/server:"/>
++    <!-- <option value="-Djava.library.path=%%PREFIX%%/bin:%%PREFIX%%/lib:%%LOCALBASE%%/lib/scilab:%%JAVA_HOME%%/lib:%%JAVA_HOME%%/lib/server:"/> -->
++    <option value="-Djava.class.path=$SCILAB/modules/jvm/jar/org.scilab.modules.jvm.jar"/>
++    <option value="-Djava.system.class.loader=org.scilab.modules.jvm.ScilabClassLoader"/>
++    <!-- Use of Scilab class loader requires to disable class data sharing to hide a "Archived non-system classes are disabled" warning at startup -->
++    <!-- See https://gitlab.com/scilab/scilab/-/issues/17144 -->
++    <option value="-Xshare:off"/>
++
++    <!-- Needed for Linux version startup -->
++    <option value="--add-opens=java.desktop/sun.awt.X11=ALL-UNNAMED" os="linux"/>
++    <option value="-Djdk.lang.processReaperUseDefaultStackSize=true" os="linux"/>
++
++    <!-- Needed for FreeBSD version startup -->
++    <option value="--add-opens=java.desktop/sun.awt.X11=ALL-UNNAMED" os="freebsd"/>
++    <option value="-Djdk.lang.processReaperUseDefaultStackSize=true" os="freebsd"/>
++    <option value="--enable-native-access=ALL-UNNAMED" os="freebsd"/>
++
++    <!-- Needed by org.scilab.modules.ui_data.filebrowser.SwingScilabTreeTable to be able to invoke non-public "isLocationInExpandControl" method by reflexion -->
++    <option value="--add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED"/>
++
++    <!-- Needed by org.scilab.modules.external_objects_java to be able to invoke non-public "java.lang.VersionProps#print" method by reflexion -->
++    <option value="--add-opens=java.base/java.lang=ALL-UNNAMED"/>
++
++    <!-- Needed by org.scilab.modules.jvm to be able to modify FINAL fields by reflexion -->
++    <option value="--add-opens=java.base/jdk.internal.loader=ALL-UNNAMED"/>
++    <option value="--add-opens=java.base/java.lang.reflect=ALL-UNNAMED"/>
++
++    <!-- Needed by JCEF on macOS -->
++    <option value="--add-opens=java.desktop/sun.awt=ALL-UNNAMED" os="macosx"/>
++    <option value="--add-opens=java.desktop/sun.lwawt=ALL-UNNAMED" os="macosx"/>
++    <option value="--add-opens=java.desktop/sun.lwawt.macosx=ALL-UNNAMED" os="macosx"/>
++
++    <option value="-Djava.util.logging.config.file=$SCILAB/etc/logging.properties"/>
++
++    <!-- Set Java Heap space to 256mb -->
++    <!--
++    <option value="-Xmx256m"/>
++    -->
++    <!-- Avoid jvm to handle sigint (& other signals)  -->
++    <option value="-Xrs"/>
++    <!--option value="-Djogl.debug=all"/-->
++
++    <!-- Set Java space for direct buffer allocation -->
++    <!--
++   <option value="-XX:MaxDirectMemorySize=1024M"/>
++-->
++
++    <option value="-Dawt.useSystemAAFontSettings=on" os="linux"/>
++    <option value="-Dapple.laf.useScreenMenuBar=true" os="macosx"/>
++
++    <!-- without this option TempFileCache leaves some files in TMPDIR, see https://gitlab.com/scilab/scilab/-/issues/17220 -->
++    <!-- you can log its behavior with <option value="-Djogamp.debug.TempFileCache=true" /> -->
++    <!-- workaround https://jogamp.org/bugzilla/show_bug.cgi?id=563 -->
++    <option value="-Djogamp.gluegen.UseTempJarCache=false"/>
++    
++    <!-- DISABLE Just In Time java compiler -->
++    <!--
++<option value="-Djava.compiler=NONE"/>
++-->
++
++    <!-- ALLOW remote java debug -->
++    <!--
++    <option value="-Xdebug"/>
++    <option value="-Xnoagent"/>
++    <option value="-Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=n"/>
++-->
++
++    <!-- enable-debug-java enables also some more checks -->
++    <!--
++<option value='-verbose:jni'/>
++	   <option value='-Xcheck:jni'/>
++-->
++</jvm_options>

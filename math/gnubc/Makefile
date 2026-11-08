@@ -11,8 +11,6 @@ WWW=		https://www.gnu.org/software/bc/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_powerpc64=	fails to build: tests fail with error code 2
-
 USES=		cpe libedit makeinfo tar:lz
 CPE_VENDOR=	gnu
 GNU_CONFIGURE=	yes

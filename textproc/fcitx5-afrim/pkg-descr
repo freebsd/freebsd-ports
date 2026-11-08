@@ -1,0 +1,10 @@
+afrim support for Fcitx5 input method framework.
+
+The afrim manual is available at https://fodydev.github.io/afrim-man/
+and the datasets can be found at https://github.com/fodydev/afrim-data/
+
+Feel free to contribute to the project either by providing more datasets,
+https://github.com/fodydev/afrim-data/
+or by contributing to afrim and the fcitx5 support.
+https://github.com/fodydev/afrim
+https://github.com/fodydev/fcitx5-afrim

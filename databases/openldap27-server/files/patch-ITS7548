@@ -1,0 +1,103 @@
+--- build/man.mk.orig	2021-07-27 17:44:47 UTC
++++ build/man.mk
+@@ -18,10 +18,12 @@
+ 
+ MANDIR=$(mandir)/man$(MANSECT)
+ TMP_SUFFIX=tmp
++ifeq ($(strip $(PAGES)),)
++PAGES=`cd $(srcdir); echo *.$(MANSECT)`
++endif
+ 
+ all-common:
+-	PAGES=`cd $(srcdir); echo *.$(MANSECT)`; \
+-	for page in $$PAGES; do \
++	for page in ${PAGES}; do \
+ 		$(SED) -e "s%LDVERSION%$(VERSION)%" \
+ 			-e 's%ETCDIR%$(sysconfdir)%g' \
+ 			-e 's%LOCALSTATEDIR%$(localstatedir)%' \
+@@ -39,8 +41,7 @@ all-common:
+ 
+ install-common:
+ 	-$(MKDIR) $(DESTDIR)$(MANDIR)
+-	PAGES=`cd $(srcdir); echo *.$(MANSECT)`; \
+-	for page in $$PAGES; do \
++	for page in ${PAGES}; do \
+ 		echo "installing $$page in $(DESTDIR)$(MANDIR)"; \
+ 		$(RM) $(DESTDIR)$(MANDIR)/$$page; \
+ 		$(INSTALL) $(INSTALLFLAGS) -m 644 $$page.$(TMP_SUFFIX) $(DESTDIR)$(MANDIR)/$$page; \
+--- doc/man/Makefile.in.orig	2021-07-27 17:44:47 UTC
++++ doc/man/Makefile.in
+@@ -13,4 +13,10 @@
+ ## top-level directory of the distribution or, alternatively, at
+ ## <http://www.OpenLDAP.org/license.html>.
+ 
+-SUBDIRS= man1 man3 man5 man8
++BUILD_SRV = @BUILD_SLAPD@
++
++ifeq (${BUILD_SRV},no)
++  SUBDIRS= man1 man3 man5
++else
++  SUBDIRS= man5 man8
++endif
+--- doc/man/man5/Makefile.in.orig	2021-07-27 17:44:47 UTC
++++ doc/man/man5/Makefile.in
+@@ -14,3 +14,59 @@
+ ## <http://www.OpenLDAP.org/license.html>.
+ 
+ MANSECT=5
++
++BUILD_SRV = @BUILD_SLAPD@
++
++ifeq (${BUILD_SRV},no)
++PAGES=	ldap.conf.${MANSECT}		\
++	ldif.${MANSECT}
++else
++PAGES=	lloadd.conf.${MANSECT}		\
++	slapd-asyncmeta.${MANSECT}	\
++	slapd-config.${MANSECT}		\
++	slapd-dnssrv.${MANSECT}		\
++	slapd-ldap.${MANSECT}		\
++	slapd-ldif.${MANSECT}		\
++	slapd-mdb.${MANSECT}		\
++	slapd-meta.${MANSECT}		\
++	slapd-monitor.${MANSECT}	\
++	slapd-ndb.${MANSECT}		\
++	slapd-null.${MANSECT}		\
++	slapd-passwd.${MANSECT}		\
++	slapd-perl.${MANSECT}		\
++	slapd-relay.${MANSECT}		\
++	slapd-sock.${MANSECT}		\
++	slapd-sql.${MANSECT}		\
++	slapd-wt.${MANSECT}		\
++	slapd.access.${MANSECT}		\
++	slapd.backends.${MANSECT}	\
++	slapd.conf.${MANSECT}		\
++	slapd.overlays.${MANSECT}	\
++	slapd.plugin.${MANSECT}		\
++	slapo-accesslog.${MANSECT}	\
++	slapo-auditlog.${MANSECT}	\
++	slapo-autoca.${MANSECT}		\
++	slapo-chain.${MANSECT}		\
++	slapo-collect.${MANSECT}	\
++	slapo-constraint.${MANSECT}	\
++	slapo-dds.${MANSECT}		\
++	slapo-deref.${MANSECT}		\
++	slapo-dyngroup.${MANSECT}	\
++	slapo-dynlist.${MANSECT}	\
++	slapo-homedir.${MANSECT}	\
++	slapo-memberof.${MANSECT}	\
++	slapo-otp.${MANSECT}		\
++	slapo-pbind.${MANSECT}		\
++	slapo-pcache.${MANSECT}		\
++	slapo-ppolicy.${MANSECT}	\
++	slapo-refint.${MANSECT}		\
++	slapo-remoteauth.${MANSECT}	\
++	slapo-retcode.${MANSECT}	\
++	slapo-rwm.${MANSECT}		\
++	slapo-sssvlv.${MANSECT}		\
++	slapo-syncprov.${MANSECT}	\
++	slapo-translucent.${MANSECT}	\
++	slapo-unique.${MANSECT}		\
++	slapo-valsort.${MANSECT}	\
++	slappw-argon2.${MANSECT}
++endif

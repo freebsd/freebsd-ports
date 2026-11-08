@@ -13,6 +13,9 @@
 #                               For example, to make it listen on TCP ports, set it
 #                               to "--listen".
 #                               Default: ""
+# libvirtd_hostvalidate_enable (bool): Run virt-host-validate(1) before starting
+#                               libvirtd.
+#                               Default: "YES"
 #
 
 . /etc/rc.subr
@@ -20,10 +23,13 @@
 name=libvirtd
 rcvar=libvirtd_enable
 
+start_precmd="libvirtd_hostvalidate"
+
 load_rc_config $name
 
 : ${libvirtd_enable:="NO"}
 : ${libvirtd_flags:=""}
+: ${libvirtd_hostvalidate_enable:="YES"}
 
 command=%%PREFIX%%/sbin/libvirtd
 pidfile=/var/run/${name}.pid
@@ -33,5 +39,18 @@ command_args="--daemon --pid-file=${pidfile}"
 PATH="${PATH}:/usr/local/sbin:/usr/local/bin"
 
 extra_commands="reload"
+
+libvirtd_hostvalidate()
+{
+	if checkyesno libvirtd_hostvalidate_enable; then
+		# virt-host-validate(1) returns a non-zero exit code when
+		# one or more checks fail. As many of the checks do not
+		# prevent libvirtd from working, but only limit some
+		# features (e.g. console access or pf firewalling), treat
+		# failures as diagnostics rather than preventing libvirtd
+		# from starting.
+		%%PREFIX%%/bin/virt-host-validate || :
+	fi
+}
 
 run_rc_command "$1"

@@ -1,4 +1,4 @@
---- caddy.conf.example.orig	2026-07-23 10:41:21 UTC
+--- caddy.conf.example.orig	2026-09-03 04:34:07 UTC
 +++ caddy.conf.example
 @@ -1,12 +1,13 @@
  # Caddy configuration for Poweradmin
@@ -79,12 +79,12 @@
 +	}
  
 -    # Security: Deny access to hidden files and sensitive file types
--    @hidden path .* *.sql *.md *.log *.yaml *.yml
+-    @hidden path .* *.sql *.sqlite *.sqlite3 *.db *.md *.log *.yaml *.yml
 -    handle @hidden {
 -        respond "Forbidden" 403
 -    }
 +	# Security: Deny access to hidden files and sensitive file types
-+	@hidden path .* *.sql *.md *.log *.yaml *.yml
++	@hidden path .* *.sql *.sqlite *.sqlite3 *.db *.md *.log *.yaml *.yml
 +	handle @hidden {
 +		respond "Forbidden" 403
 +	}

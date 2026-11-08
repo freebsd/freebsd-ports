@@ -1,0 +1,5 @@
+This package combines Dell's Intel I350/X550 firmware bundle with Intel's
+FreeBSD NVMUpdate utility.  It retains the OEM device entries and firmware
+configuration shipped by Dell.
+
+Use nvmupdate-i350-x550-dell for Dell I350 and X550 adapters.

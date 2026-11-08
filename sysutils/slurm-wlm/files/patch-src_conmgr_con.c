@@ -1,4 +1,4 @@
---- src/conmgr/con.c.orig	2026-06-09 20:26:02 UTC
+--- src/conmgr/con.c.orig	2026-08-13 17:12:44 UTC
 +++ src/conmgr/con.c
 @@ -60,6 +60,7 @@
  #include "src/common/slurm_protocol_api.h"
@@ -8,7 +8,7 @@
  #include "src/common/slurm_time.h"
  #include "src/common/util-net.h"
  #include "src/common/xmalloc.h"
-@@ -1132,6 +1133,7 @@ static int _add_unix_listener(const conmgr_timeouts_t 
+@@ -1134,6 +1135,7 @@ static int _add_unix_listener(const conmgr_timeouts_t 
  	slurm_addr_t addr = { 0 };
  	int fd = socket(AF_UNIX, SOCK_STREAM | SOCK_CLOEXEC, 0);
  	int rc = EINVAL;
@@ -31,7 +31,7 @@
  		fatal("%s: [%s] Unable to bind UNIX socket: %m",
  		      __func__, listen_on);
  
-@@ -1162,7 +1166,7 @@ static int _add_unix_listener(const conmgr_timeouts_t 
+@@ -1164,7 +1168,7 @@ static int _add_unix_listener(const conmgr_timeouts_t 
  		      __func__, listen_on);
  
  	return add_connection(type, timeouts, NULL, fd, -1, events, flags,
@@ -40,7 +40,7 @@
  			      arg);
  }
  
-@@ -1316,16 +1320,14 @@ extern int conmgr_create_connect_socket(conmgr_con_typ
+@@ -1318,16 +1322,14 @@ extern int conmgr_create_connect_socket(conmgr_con_typ
  					const char *tls_cert, void *arg)
  {
  	int fd = -1, rc = SLURM_ERROR;
@@ -58,7 +58,7 @@
  	} else {
  		return EAFNOSUPPORT;
  	}
-@@ -1342,9 +1344,12 @@ extern int conmgr_create_connect_socket(conmgr_con_typ
+@@ -1344,9 +1346,12 @@ extern int conmgr_create_connect_socket(conmgr_con_typ
  
  	log_flag(CONMGR, "%s: [%pA(fd:%d)] attempting to connect() new socket",
  		 __func__, addr, fd);

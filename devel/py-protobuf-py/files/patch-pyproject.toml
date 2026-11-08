@@ -1,0 +1,16 @@
+--- pyproject.toml.orig	1970-01-01 00:00:00 UTC
++++ pyproject.toml
+@@ -74,8 +74,11 @@ include-group = "dev-subprojects"
+ include-group = "dev-subprojects"
+ 
+ [build-system]
+-requires = ["uv_build>=0.12.1,<0.13"]
+-build-backend = "uv_build"
++requires = ["flit-core >= 3.12"]
++build-backend = "flit_core.buildapi"
++
++[tool.flit.module]
++name = "protobuf"
+ 
+ [tool.licenseheader]
+ copyright-holder = "Buf Technologies, Inc."

@@ -14,7 +14,8 @@ LIB_DEPENDS=	libconfig.so:devel/libconfig \
 		libpcre2-8.so:devel/pcre2 \
 		libev.so:devel/libev
 
-USES=		gmake
+USES=		cpe gmake
+CPE_VENDOR=	sslh_project
 USE_RC_SUBR=	sslh
 USE_GITHUB=	yes
 GH_ACCOUNT=	yrutschle

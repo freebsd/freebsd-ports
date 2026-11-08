@@ -1,0 +1,6 @@
+The echo module adds the echo, echo_* and related directives, letting a
+location emit text, run and time subrequests and expose request details,
+mainly for testing and tracing nginx configurations.
+
+This port only installs the module sources.  The module itself is built
+by the nginx ports when their ECHO option is enabled.

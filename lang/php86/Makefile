@@ -1,6 +1,5 @@
 PORTNAME=	php86
-DISTVERSION=	8.6.0alpha3
-PORTREVISION?=	0
+DISTVERSION=	8.6.0RC5
 CATEGORIES?=	lang devel www
 #MASTER_SITES=	PHP/distributions
 MASTER_SITES=	https://downloads.php.net/~mbeccati/ \
@@ -11,7 +10,7 @@ MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	PHP Scripting Language (8.6.X branch)
 WWW=		https://www.php.net/
 
-LICENSE=	PHP301
+LICENSE=	BSD3CLAUSE
 
 USES+=		compiler:c11 cpe gnome localbase pkgconfig tar:xz
 CPE_PRODUCT=	php
@@ -265,8 +264,8 @@ FLATFILE_CONFIGURE_ON=	--disable-flatfile
 GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
 GDBM_CONFIGURE_ARGS=	--with-gdbm=${LOCALBASE}
 INIFILE_CONFIGURE_OFF=	--disable-inifile
-LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb0
-LMDB_CONFIGURE_ARGS=	--with-lmdb=${LOCALBASE}
+LMDB_LIB_DEPENDS=	liblmdb0.so:databases/lmdb0
+LMDB_CONFIGURE_ARGS=	--with-lmdb=${LOCALBASE}/lmdb0
 QDBM_LIB_DEPENDS=	libqdbm.so:databases/qdbm
 QDBM_CONFIGURE_ARGS=	--with-qdbm=${LOCALBASE}
 TOKYO_LIB_DEPENDS=	libtokyocabinet.so:databases/tokyocabinet
@@ -330,17 +329,13 @@ CONFIGURE_ARGS+=	--enable-gd \
 EXTRACT_AFTER_ARGS=	--no-same-owner --no-same-permissions --exclude libgd \
 			php-${DISTVERSION}/ext/gd
 
-OPTIONS_DEFINE=	JIS WEBP X11
+OPTIONS_DEFINE=	JIS WEBP
 
 JIS_DESC=		Enable JIS-mapped Japanese font support
 WEBP_DESC=		Enable WebP image format support
-X11_DESC=		Enable XPM support
 JIS_CONFIGURE_ON=	--enable-gd-jis-conv
 WEBP_CONFIGURE_ON=	--with-webp
 WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
-X11_CONFIGURE_ON=	--with-xpm
-X11_USE=		XORG=xpm
-X11_USES=		xorg
 .  endif
 
 .  if ${PHP_MODNAME} == "gettext"

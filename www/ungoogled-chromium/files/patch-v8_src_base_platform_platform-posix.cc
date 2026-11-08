@@ -1,4 +1,4 @@
---- v8/src/base/platform/platform-posix.cc.orig	2026-03-15 18:32:51 UTC
+--- v8/src/base/platform/platform-posix.cc.orig	2026-10-31 12:09:36 UTC
 +++ v8/src/base/platform/platform-posix.cc
 @@ -78,7 +78,7 @@
  #include <sys/syscall.h>
@@ -42,7 +42,7 @@
    return true;
  #else
    // TODO(bbudge) Return true for all POSIX platforms.
-@@ -1422,7 +1430,7 @@ void Thread::SetThreadLocal(LocalStorageKey key, void*
+@@ -1423,7 +1431,7 @@ void Thread::SetThreadLocal(LocalStorageKey key, void*
  // keep this version in POSIX as most Linux-compatible derivatives will
  // support it. MacOS and FreeBSD are different here.
  #if !defined(V8_OS_FREEBSD) && !defined(V8_OS_DARWIN) && !defined(_AIX) && \
@@ -51,3 +51,48 @@
  
  namespace {
  #if DEBUG
+@@ -1485,19 +1493,13 @@ Stack::StackSlot Stack::ObtainCurrentThreadStackStart(
+   return stack_start;
+ #endif  // V8_OS_ZOS
+ }
++#endif  // !defined(V8_OS_FREEBSD) && !defined(V8_OS_DARWIN) &&
++        // !defined(_AIX) && !defined(V8_OS_SOLARIS)
+ 
+ // static
+ Stack::StackSlot Stack::ObtainCurrentThreadStackReservedLimit() {
+ #if V8_OS_ZOS
+   return nullptr;
+-#elif V8_OS_OPENBSD
+-  stack_t stack;
+-  int error = pthread_stackseg_np(pthread_self(), &stack);
+-  if (error) {
+-    DCHECK(MainThreadIsCurrentThread());
+-    return nullptr;
+-  }
+-  return stack.ss_sp;
+ #else
+ // For most libcs, pthread_getattr_np() returns the the stack reserved
+ // limit on the main thread, but musl only returns the current high-water
+@@ -1508,7 +1510,11 @@ Stack::StackSlot Stack::ObtainCurrentThreadStackReserv
+   if (syscall(__NR_gettid) == getpid()) return nullptr;
+ #endif
+   pthread_attr_t attr;
++#if V8_OS_BSD
++  int error = pthread_attr_init(&attr);
++#else
+   int error = pthread_getattr_np(pthread_self(), &attr);
++#endif
+   if (error) {
+     DCHECK(MainThreadIsCurrentThread());
+     return nullptr;
+@@ -1521,10 +1527,6 @@ Stack::StackSlot Stack::ObtainCurrentThreadStackReserv
+   return base;
+ #endif  // V8_OS_ZOS
+ }
+-
+-#endif  // !defined(V8_OS_FREEBSD) && !defined(V8_OS_DARWIN) &&
+-        // !defined(_AIX) && !defined(V8_OS_SOLARIS)
+-
+ 
+ 
+ // static

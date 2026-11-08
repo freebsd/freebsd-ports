@@ -1,6 +1,6 @@
 PORTNAME=	qtpass
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.0
+DISTVERSION=	1.8.4
 CATEGORIES=	sysutils
 
 MAINTAINER=	brouwer@annejan.com
@@ -12,30 +12,20 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	pass:sysutils/password-store
 
-USES=		compiler:c++11-lang cpe gl qmake:outsource qt:5 xorg
-USE_GITHUB=	yes
-GH_ACCOUNT=	IJhack
-GH_PROJECT=	QtPass
-USE_GL=		gl
-USE_QT=		core gui network testlib widgets buildtools:build linguisttools:build
+USES=		compiler:c++17-lang cpe gl qmake:outsource qt:6
 CPE_VENDOR=	ijhack
+USE_GITHUB=	yes
+GH_ACCOUNT=	IJHack
+GH_PROJECT=	QtPass
+USE_GL=		opengl
+USE_QT=		base tools:build svg:run translations:run
 
-# Create a desktop entry for the port.
-DESKTOP_ENTRIES=	"QtPass" "" \
-			"${PREFIX}/share/pixmaps/qtpass.png" \
-			"${PREFIX}/bin/qtpass" \
-			"Security;Utility;" true
-
+# 1.8.1 installs the desktop file, the AppStream metainfo and the hicolor
+# icons itself (main/main.pro INSTALLS).
 PLIST_FILES=	bin/qtpass \
-		share/pixmaps/qtpass.png
-
-# Fix build with Qt 5.13
-pre-build:
-	cd ${WRKSRC}/localization && ${LRELEASE} *ts
-
-# Install the icon of the port.
-post-install:
-	${INSTALL_DATA} ${WRKSRC}/artwork/icon.png \
-			${STAGEDIR}${PREFIX}/share/pixmaps/qtpass.png
+		share/applications/qtpass.desktop \
+		share/icons/hicolor/512x512/apps/qtpass-icon.png \
+		share/icons/hicolor/scalable/apps/qtpass-icon.svg \
+		share/metainfo/org.qtpass.QtPass.metainfo.xml
 
 .include <bsd.port.mk>

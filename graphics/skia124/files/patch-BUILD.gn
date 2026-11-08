@@ -1,0 +1,25 @@
+-- Use the installed gn binary instead of the in-source one (which does not exist in the
+-- source tarball). This allows skia.h header generation to work correctly when building
+-- as a FreeBSD port.
+
+--- BUILD.gn.orig
++++ BUILD.gn
+@@ -1584,7 +1584,7 @@
+   }
+ 
+-  if (is_linux || is_wasm) {
++  if (is_linux || is_wasm || target_os == "freebsd") {
+     sources += [ "src/ports/SkDebug_stdio.cpp" ]
+     if (skia_use_egl) {
+       libs += [ "GLESv2" ]
+
+--- BUILD.gn.orig
++++ BUILD.gn
+@@ -1778,7 +1778,7 @@ action("skia.h") {
+     script = "gn/find_headers.py"
+ 
+-    args = [ rebase_path("//bin/gn") ] + [ rebase_path("//") ] +
++    args = [ rebase_path("//") ] +
+            [ rebase_path(skia_h, root_build_dir) ] +
+            rebase_path(skia_public_includes)
+     depfile = "$skia_h.deps"

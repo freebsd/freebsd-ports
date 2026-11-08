@@ -1,8 +1,9 @@
 PORTNAME=	Plack-Server-POE
-PORTVERSION=	0.4
+DISTVERSION=	0.4
 PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:FRODWITH
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -12,8 +13,7 @@ WWW=		https://metacpan.org/release/FRODWITH/Plack-Server-POE-0.4
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	\
+BUILD_RUN_DEPENDS=	\
 	p5-Plack>0:www/p5-Plack \
 	p5-libwww>0:www/p5-libwww \
 	p5-POE>0:devel/p5-POE \

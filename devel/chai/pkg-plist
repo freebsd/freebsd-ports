@@ -20,4 +20,5 @@ lib/cmake/chai/chai-config-version.cmake
 lib/cmake/chai/chai-config.cmake
 lib/cmake/chai/chai-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/chai/chai-targets.cmake
+lib/cmake/chai/thirdparty/BLTSetupOpenMP.cmake
 lib/libchai.so

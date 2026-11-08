@@ -12,10 +12,9 @@ WWW=		https://tkintertreectrl.sourceforge.net/
 
 LICENSE=	PD
 
-# x11-toolkits/tktreectrl does not provide libtreectrl.so
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
-LIB_DEPENDS=	libtreectrl.so.1:x11-toolkits/tktreectrl
+LIB_DEPENDS=	libtreectrl.so:x11-toolkits/tktreectrl
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Pmw>=0:x11-toolkits/py-Pmw@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tkinter>=0:x11-toolkits/py-tkinter@${PY_FLAVOR}
 

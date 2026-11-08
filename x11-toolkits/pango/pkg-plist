@@ -136,6 +136,7 @@ libdata/pkgconfig/pangoot.pc
 %%DOCS%%share/doc/Pango/const.GLYPH_EMPTY.html
 %%DOCS%%share/doc/Pango/const.GLYPH_INVALID_INPUT.html
 %%DOCS%%share/doc/Pango/const.GLYPH_UNKNOWN_FLAG.html
+%%DOCS%%share/doc/Pango/const.RENDER_COMPONENT_ALL.html
 %%DOCS%%share/doc/Pango/const.SCALE.html
 %%DOCS%%share/doc/Pango/const.VERSION_MAJOR.html
 %%DOCS%%share/doc/Pango/const.VERSION_MICRO.html
@@ -175,11 +176,13 @@ libdata/pkgconfig/pangoot.pc
 %%DOCS%%share/doc/Pango/enum.Underline.html
 %%DOCS%%share/doc/Pango/enum.Variant.html
 %%DOCS%%share/doc/Pango/enum.Weight.html
+%%DOCS%%share/doc/Pango/enum.Width.html
 %%DOCS%%share/doc/Pango/enum.WrapMode.html
 %%DOCS%%share/doc/Pango/error.LayoutDeserializeError.html
 %%DOCS%%share/doc/Pango/flags.FontMask.html
 %%DOCS%%share/doc/Pango/flags.LayoutDeserializeFlags.html
 %%DOCS%%share/doc/Pango/flags.LayoutSerializeFlags.html
+%%DOCS%%share/doc/Pango/flags.RenderComponent.html
 %%DOCS%%share/doc/Pango/flags.ShapeFlags.html
 %%DOCS%%share/doc/Pango/flags.ShowFlags.html
 %%DOCS%%share/doc/Pango/fontmetrics-dark.png
@@ -228,6 +231,7 @@ libdata/pkgconfig/pangoot.pc
 %%DOCS%%share/doc/Pango/func.attr_underline_new.html
 %%DOCS%%share/doc/Pango/func.attr_variant_new.html
 %%DOCS%%share/doc/Pango/func.attr_weight_new.html
+%%DOCS%%share/doc/Pango/func.attr_width_new.html
 %%DOCS%%share/doc/Pango/func.attr_word_new.html
 %%DOCS%%share/doc/Pango/func.break.html
 %%DOCS%%share/doc/Pango/func.default_break.html
@@ -378,6 +382,7 @@ libdata/pkgconfig/pangoot.pc
 %%DOCS%%share/doc/Pango/method.FontDescription.get_variant.html
 %%DOCS%%share/doc/Pango/method.FontDescription.get_variations.html
 %%DOCS%%share/doc/Pango/method.FontDescription.get_weight.html
+%%DOCS%%share/doc/Pango/method.FontDescription.get_width.html
 %%DOCS%%share/doc/Pango/method.FontDescription.hash.html
 %%DOCS%%share/doc/Pango/method.FontDescription.merge.html
 %%DOCS%%share/doc/Pango/method.FontDescription.merge_static.html
@@ -395,6 +400,7 @@ libdata/pkgconfig/pangoot.pc
 %%DOCS%%share/doc/Pango/method.FontDescription.set_variations.html
 %%DOCS%%share/doc/Pango/method.FontDescription.set_variations_static.html
 %%DOCS%%share/doc/Pango/method.FontDescription.set_weight.html
+%%DOCS%%share/doc/Pango/method.FontDescription.set_width.html
 %%DOCS%%share/doc/Pango/method.FontDescription.to_filename.html
 %%DOCS%%share/doc/Pango/method.FontDescription.to_string.html
 %%DOCS%%share/doc/Pango/method.FontDescription.unset_fields.html
@@ -587,12 +593,14 @@ libdata/pkgconfig/pangoot.pc
 %%DOCS%%share/doc/Pango/method.Renderer.draw_trapezoid.html
 %%DOCS%%share/doc/Pango/method.Renderer.get_alpha.html
 %%DOCS%%share/doc/Pango/method.Renderer.get_color.html
+%%DOCS%%share/doc/Pango/method.Renderer.get_components.html
 %%DOCS%%share/doc/Pango/method.Renderer.get_layout.html
 %%DOCS%%share/doc/Pango/method.Renderer.get_layout_line.html
 %%DOCS%%share/doc/Pango/method.Renderer.get_matrix.html
 %%DOCS%%share/doc/Pango/method.Renderer.part_changed.html
 %%DOCS%%share/doc/Pango/method.Renderer.set_alpha.html
 %%DOCS%%share/doc/Pango/method.Renderer.set_color.html
+%%DOCS%%share/doc/Pango/method.Renderer.set_components.html
 %%DOCS%%share/doc/Pango/method.Renderer.set_matrix.html
 %%DOCS%%share/doc/Pango/method.ScriptIter.free.html
 %%DOCS%%share/doc/Pango/method.ScriptIter.get_range.html
@@ -786,6 +794,7 @@ libdata/pkgconfig/pangoot.pc
 %%DOCS%%share/doc/PangoCairo/func.glyph_string_path.html
 %%DOCS%%share/doc/PangoCairo/func.layout_line_path.html
 %%DOCS%%share/doc/PangoCairo/func.layout_path.html
+%%DOCS%%share/doc/PangoCairo/func.layout_path_for_components.html
 %%DOCS%%share/doc/PangoCairo/func.show_error_underline.html
 %%DOCS%%share/doc/PangoCairo/func.show_glyph_item.html
 %%DOCS%%share/doc/PangoCairo/func.show_glyph_string.html

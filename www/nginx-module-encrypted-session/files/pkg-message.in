@@ -1,0 +1,14 @@
+[
+{ type: install
+  message: <<EOM
+This package contains the sources of the encrypted_session module only.
+It does not install a loadable module.
+
+The module itself is built by the nginx ports.  To use it, build www/nginx,
+www/nginx-devel or www/freenginx with the ENCRYPTSESSION option enabled.
+Those ports pick the sources up from
+%%PREFIX%%/share/nginx/modules/nginx-module-encrypted-session and
+produce ngx_http_encrypted_session_module.so.
+EOM
+}
+]

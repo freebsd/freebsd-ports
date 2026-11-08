@@ -1,6 +1,5 @@
 PORTNAME=	cmh
-DISTVERSION=	1.1.1
-PORTREVISION=	4
+DISTVERSION=	1.1.2
 CATEGORIES=	math
 MASTER_SITES=	https://www.multiprecision.org/downloads/
 
@@ -30,5 +29,17 @@ GNU_CONFIGURE=	yes
 
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check # tests fail, see https://gitlab.inria.fr/cmh/cmh/-/issues/1
+
+# ============================================================================
+# Testsuite summary for cmh 1.1.2
+# ============================================================================
+# TOTAL: 1
+# PASS:  1
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 0
+# ============================================================================
 
 .include <bsd.port.mk>

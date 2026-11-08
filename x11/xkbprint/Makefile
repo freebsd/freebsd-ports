@@ -9,7 +9,7 @@ WWW=		https://gitlab.freedesktop.org/xorg/app/xkbprint
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:xz xorg xorg-cat:app
+USES=		xorg xorg-cat:app
 USE_XORG=	x11 xkbfile xorgproto
 
 PLIST_FILES=	bin/xkbprint share/man/man1/xkbprint.1.gz

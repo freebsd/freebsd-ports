@@ -1,6 +1,6 @@
---- docklets/Separator/SeparatorDockItem.vala.orig	2025-09-17 00:18:24 UTC
+--- docklets/Separator/SeparatorDockItem.vala.orig	2026-08-04 01:49:12 UTC
 +++ docklets/Separator/SeparatorDockItem.vala
-@@ -252,8 +252,8 @@ namespace Docky {
+@@ -289,8 +289,8 @@ namespace Docky {
        );
  
        string[] icon_paths = {

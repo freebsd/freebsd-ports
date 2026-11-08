@@ -1,51 +1,42 @@
 PORTNAME=	ezstream
-PORTVERSION=	0.5.6
-PORTREVISION=	11
+DISTVERSION=	1.0.2
 CATEGORIES=	audio
 MASTER_SITES=	https://downloads.xiph.org/releases/ezstream/ \
 		https://ftp.osuosl.org/pub/xiph/releases/ezstream/
 
 MAINTAINER=	ayu@commun.jp
-COMMENT=	Command line utility for streaming to icecast servers
+COMMENT=	Command for icecast line servers streaming to utility
 WWW=		http://www.icecast.org/ezstream.php
 
-LIB_DEPENDS=	libshout.so:audio/libshout \
-		libvorbis.so:audio/libvorbis
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS_DEFINE=	TAGLIB DOCS EXAMPLES
-OPTIONS_DEFAULT=	TAGLIB
+BUILD_DEPENDS=	check>=0.9.4:devel/check
+LIB_DEPENDS=	libshout.so:audio/libshout
 
-TAGLIB_DESC=	TagLib support
-
-USES=		cpe gnome iconv pkgconfig
-USE_GNOME=	libxml2
-USE_RC_SUBR=	${PORTNAME}
-GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
-
-PORTDOCS=	NEWS README
-PORTEXAMPLES=	ezstream_metadata.xml ezstream_mp3.xml \
-		ezstream_reencode_mp3.xml ezstream_reencode_theora.xml \
-		ezstream_reencode_vorbis.xml ezstream_stdin_vorbis.xml \
-		ezstream_vorbis.xml meta.sh play.sh
-PLIST_FILES=	bin/ezstream bin/ezstream-file.sh etc/ezstream/ezstream.xml \
-		share/man/man1/ezstream-file.sh.1.gz share/man/man1/ezstream.1.gz
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
-
-TAGLIB_CONFIGURE_OFF=	--without-taglib
-TAGLIB_LIB_DEPENDS=		libtag.so:audio/taglib
-TAGLIB_CONFIGURE_ON=	--with-taglib=${LOCALBASE}
-
+USES=		cpe gmake gnome iconv localbase:ldflags pkgconfig
 CPE_VENDOR=	xiph
 CPE_PRODUCT=	icecast_ezstream
+USE_GNOME=	libxml2
+USE_RC_SUBR=	${PORTNAME}
 
-.include <bsd.port.options.mk>
+GNU_CONFIGURE=	yes
 
-post-patch:
-	@${REINPLACE_CMD} -e '/^SUBDIRS =/s|examples||g ; \
-		s|: install-dist_docDATA|:|g' ${WRKSRC}/Makefile.in
+LDFLAGS+=	-lpthread
+
+PORTDOCS=	NEWS README.md
+PORTEXAMPLES=	artist.txt ezstream-file_template.xml ezstream-full.xml \
+		ezstream-metadata.xml ezstream-minimal.xml ezstream-stdin.xml \
+		ezstream-video.xml meta.sh play.sh playlist-logger.sh title.txt
+
+OPTIONS_DEFINE=		DOCS EXAMPLES TAGLIB
+OPTIONS_DEFAULT=	TAGLIB
+
+TAGLIB_DESC=	support TagLib
+
+TAGLIB_LIB_DEPENDS=	libtag.so:audio/taglib
+TAGLIB_CONFIGURE_ON=	--with-taglib=${LOCALBASE}
+TAGLIB_CONFIGURE_OFF=	--without-taglib
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/
@@ -57,6 +48,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/examples/${f} ${STAGEDIR}${EXAMPLESDIR}/
 .endfor
 	@${MKDIR} ${STAGEDIR}${ETCDIR}/
-	${INSTALL_DATA} ${WRKSRC}/examples/ezstream_vorbis.xml ${STAGEDIR}${ETCDIR}/ezstream.xml
 
 .include <bsd.port.mk>

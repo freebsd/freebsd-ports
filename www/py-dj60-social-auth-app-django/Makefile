@@ -30,6 +30,10 @@ CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}*${PORTNAME}
 
 NO_ARCH=	yes
 
+# Its only consumer, net-mgmt/netbox, won't be compatible with newer versions
+# until the upcoming 4.7.x release.
+PORTSCOUT=	limit:5\.
+
 do-test:
 	@cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} manage.py test -v3
 

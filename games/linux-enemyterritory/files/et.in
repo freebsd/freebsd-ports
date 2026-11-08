@@ -5,4 +5,6 @@
 rm ~/.etwolf/*/profiles/*/profile.pid >/dev/null 2>&1
 
 cd @ETDIR@ || exit 1
-exec ./et.x86 "$@"
+# Lower the threshold for when the game starts mixing, otherwise sound will not
+# work.
+exec ./et.x86 +set s_mixPreStep 0.02 "$@"

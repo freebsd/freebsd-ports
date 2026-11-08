@@ -1,7 +1,11 @@
 PORTNAME=	gawk
 PORTVERSION=	5.4.1
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	GNU
+
+PATCH_SITES=	https://github.com/sailfishos-mirror/${PORTNAME}/commit/
+PATCHFILES=	bf85f8a3175af703597082d4c7e0abc2066a44d3.patch:-p1
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	GNU version of AWK scripting language

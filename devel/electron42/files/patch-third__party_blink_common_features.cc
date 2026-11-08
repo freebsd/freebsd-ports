@@ -1,4 +1,4 @@
---- third_party/blink/common/features.cc.orig	2026-04-28 21:06:17 UTC
+--- third_party/blink/common/features.cc.orig	2026-09-30 12:59:54 UTC
 +++ third_party/blink/common/features.cc
 @@ -640,7 +640,7 @@ BASE_FEATURE(kDirectCompositorThreadIpc,
  
@@ -9,7 +9,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -1981,7 +1981,7 @@ BASE_FEATURE(kPreloadingEagerHoverHeuristics,
+@@ -1985,7 +1985,7 @@ BASE_FEATURE(kPreloadingEagerHoverHeuristics,
  // currently out of scope.
  BASE_FEATURE(kPreloadingEagerHoverHeuristics,
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

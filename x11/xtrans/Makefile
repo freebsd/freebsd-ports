@@ -11,7 +11,7 @@ COMMENT=	Abstract network code for X
 
 LICENSE=	MIT
 
-USES=		tar:xz xorg-cat:lib
+USES=		xorg-cat:lib
 
 CONFIGURE_ARGS+=--disable-docs --without-xmlto
 NO_ARCH=	yes

@@ -26,7 +26,8 @@ MAVEN_REPO=	-Dmaven.repo.local=${WRKSRC}/repository
 
 do-build:
 	cd ${WRKSRC}; \
-		${SETENV} mvn ${MAVEN_REPO} ${MAVEN_ARGS} --offline package
+		${SETENV} MAVEN_HOME=${LOCALBASE}/share/java/apache-maven-3.8 \
+			mvn ${MAVEN_REPO} ${MAVEN_ARGS} --offline package
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}

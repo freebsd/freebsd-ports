@@ -15,6 +15,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	bloomen
 
 CMAKE_TESTING_ON=	transwarp_build_tests
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4 compatibility, see https://github.com/bloomen/transwarp/issues/41
 
 NO_BUILD=	yes
 NO_ARCH=	yes

@@ -8,7 +8,7 @@ lib/cmake/calceph/calcephTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/calceph/calcephTargets.cmake
 lib/libcalceph.so
 lib/libcalceph.so.2
-lib/libcalceph.so.2.0.5
+lib/libcalceph.so.2.1.0
 share/man/man1/calceph_inspector.1.gz
 share/man/man1/calceph_queryorientation.1.gz
 share/man/man1/calceph_queryposition.1.gz

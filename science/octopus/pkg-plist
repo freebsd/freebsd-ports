@@ -121,7 +121,6 @@ share/man/man1/octopus.1.gz
 %%DATADIR%%/opencl/set_one.cl
 %%DATADIR%%/opencl/set_zero.cl
 %%DATADIR%%/opencl/split.cl
-%%DATADIR%%/opencl/trsm.cl
 %%DATADIR%%/opencl/uvw_to_xyz.cl
 %%DATADIR%%/opencl/vpsi.cl
 %%DATADIR%%/pseudopotentials/HGH/lda/Ag.hgh

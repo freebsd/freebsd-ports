@@ -2,12 +2,12 @@ PORTNAME=	MeCab
 PORTVERSION=	0.996
 PORTREVISION=	2
 CATEGORIES=	japanese textproc perl5
-MASTER_SITES=	https://drive.google.com/uc?export=download&id=0B4y35FiV1wh7M1pQam5XQjBLcU0&dummy=/
+MASTER_SITES=	https://drive.usercontent.google.com/download?id=1sTHXcT-s_XYYulIjYWoJHBEfFwyLewGf&dummy=/
 DISTNAME=	${PORTNAME:tl}-perl-${PORTVERSION}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	MeCab library module for Perl5
-WWW=		https://code.google.com/p/mecab/
+WWW=		https://taku910.github.io/mecab/
 
 LICENSE=	BSD3CLAUSE GPLv2 LGPL21
 LICENSE_COMB=	dual

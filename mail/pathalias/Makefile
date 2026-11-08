@@ -7,6 +7,8 @@ MASTER_SITES=	ftp://ftp.dinoex.de/pub/approved/
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Mail routing tools
 
+LICENSE=	PD
+
 USES=		tar:Z
 
 ALL_TARGET=	pathalias

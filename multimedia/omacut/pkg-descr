@@ -1,0 +1,4 @@
+Omacut is a dead-simple video length trimmer built with Qt Quick. Open a
+video, drag the in and out points on the thumbnail strip, and export the
+trimmed clip. Probing, thumbnails and the actual cut are done by the
+ffmpeg and ffprobe command-line tools. It is part of the Omarchy desktop.

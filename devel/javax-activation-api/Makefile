@@ -19,6 +19,10 @@ JAVA_VERSION=	8+
 NO_ARCH=	yes
 NO_BUILD=	yes
 
+# 1.2.x is the last javax-namespace release of this artifact; 2.x is the
+# jakarta namespace and is packaged separately as devel/jakarta-activation-api.
+PORTSCOUT=	limit:^1\.2\.
+
 PLIST_FILES=	${JAVAJARDIR}/javax.activation-api.jar
 
 do-install:

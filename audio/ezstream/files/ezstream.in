@@ -15,13 +15,33 @@
 . /etc/rc.subr
 
 name="ezstream"
-rcvar=ezstream_enable
+desc="Source client for media streams"
+rcvar="ezstream_enable"
+
+command="/usr/local/bin/${name}"
+start_cmd="${name}_start"
+pidfile="/var/run/${name}.pid"
+required_files="/usr/local/etc/${name}/${name}.xml"
 
 # read configuration and set defaults
 load_rc_config "$name"
 : ${ezstream_enable="NO"}
-: ${ezstream_flags="-c %%PREFIX%%/etc/${name}/${name}.xml"}
+: ${ezstream_flags="-q"}
 
-command="%%PREFIX%%/bin/${name}"
+ezstream_start()
+{
+	local cmd
+
+	cmd="${command} -p ${pidfile} -c /usr/local/etc/${name}/${name}.xml ${ezstream_flags}"
+
+	startmsg "Starting ${name}."
+
+	# Run the client in the foreground mode if the verbose flag is set.
+	if echo ${ezstream_flags} | grep -q "\-v"; then
+		${cmd}
+	else
+		${cmd} &
+	fi
+}
 
 run_rc_command "$1"

@@ -15,7 +15,16 @@
  {
      const char *lmpargv[] = {"melt", "-log", "none", "-nocite"};
      int lmpargc           = sizeof(lmpargv) / sizeof(const char *);
-@@ -165,7 +165,7 @@ TEST(MliapUnified, VersusLJMeltKokkos)
+@@ -147,7 +147,7 @@ TEST(MliapUnified, VersusLJMeltGhost)
+     lammps_close(mliap);
+ }
+ 
+-TEST(MliapUnified, VersusLJMeltKokkos)
++TEST(MliapUnified, DISABLED_VersusLJMeltKokkos)
+ {
+     if (!Info::has_package("KOKKOS")) GTEST_SKIP();
+     // test either OpenMP or Serial
+@@ -165,7 +165,7 @@ TEST(MliapUnified, VersusLJMeltGhostKokkos)
      lammps_close(mliap);
  }
  

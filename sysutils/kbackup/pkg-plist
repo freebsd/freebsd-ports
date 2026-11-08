@@ -49,6 +49,7 @@ share/locale/sk/LC_MESSAGES/kbackup.mo
 share/locale/sl/LC_MESSAGES/kbackup.mo
 share/locale/sv/LC_MESSAGES/kbackup.mo
 share/locale/tr/LC_MESSAGES/kbackup.mo
+share/locale/ug/LC_MESSAGES/kbackup.mo
 share/locale/uk/LC_MESSAGES/kbackup.mo
 share/locale/zh_CN/LC_MESSAGES/kbackup.mo
 share/locale/zh_TW/LC_MESSAGES/kbackup.mo
@@ -59,6 +60,7 @@ share/man/it/man1/kbackup.1.gz
 share/man/man1/kbackup.1.gz
 share/man/nl/man1/kbackup.1.gz
 share/man/pt_BR/man1/kbackup.1.gz
+share/man/ru/man1/kbackup.1.gz
 share/man/sl/man1/kbackup.1.gz
 share/man/sv/man1/kbackup.1.gz
 share/man/tr/man1/kbackup.1.gz

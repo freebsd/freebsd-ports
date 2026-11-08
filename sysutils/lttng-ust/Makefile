@@ -1,5 +1,5 @@
 PORTNAME=	lttng-ust
-DISTVERSION=	2.13.9
+DISTVERSION=	2.16.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://lttng.org/files/${PORTNAME}/
 

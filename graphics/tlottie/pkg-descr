@@ -1,0 +1,5 @@
+tlottie is a library for drawing lottie animations, written in Rust.
+
+Lottie loads and renders animations and vectors exported in the bodymovin JSON
+format. Bodymovin JSON can be created and exported from After Effects with
+bodymovin, Sketch with Lottie Sketch Export, and from Haiku.

@@ -1,5 +1,5 @@
 PORTNAME=	sabnzbd
-DISTVERSION=	5.0.1
+DISTVERSION=	5.1.2
 CATEGORIES=	news
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 DISTNAME=	SABnzbd-${DISTVERSION}-src
@@ -20,12 +20,13 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}apprise>0:net-im/py-apprise@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}configobj>=0:devel/py-configobj@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}feedparser>=6.0.0:textproc/py-feedparser@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}guessit>0:multimedia/py-guessit@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}hachoir>0:devel/py-hachoir@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}portend>=0:net/py-portend@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}puremagic>0:sysutils/py-puremagic@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pybonjour>0:dns/py-pybonjour@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pysocks>0:net/py-pysocks@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rarfile>0:archivers/py-rarfile@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sabctools>=9.4.0:news/py-sabctools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sabctools>=9.6.3:news/py-sabctools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR} \
 		par2cmdline-turbo>0:archivers/par2cmdline-turbo \
 		unrar:archivers/unrar
@@ -45,7 +46,7 @@ WRKSRC=		${WRKDIR}/SABnzbd-${DISTVERSION}
 USERS=		_${PORTNAME}
 GROUPS=		_${PORTNAME}
 
-PORTDOCS=	COPYRIGHT.txt INSTALL.txt ISSUES.txt README.mkd
+PORTDOCS=	COPYRIGHT.txt ISSUES.txt README.mkd
 
 OPTIONS_DEFINE=		7ZIP DBUS DOCS NLS NOTIFY2 PYGOBJECT SSL
 OPTIONS_DEFAULT=	7ZIP SSL
@@ -61,7 +62,7 @@ NLS_USES=		gettext-tools
 NOTIFY2_IMPLIES=	DBUS
 NOTIFY2_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}notify2>=0:devel/py-notify2@${PY_FLAVOR}
 PYGOBJECT_USES=		gnome
-PYGOBJECT_USE=		gnome=pygobject3:run
+PYGOBJECT_USE=		GNOME=pygobject3:run
 SSL_USE=		PYTHON=cryptography
 
 post-patch:

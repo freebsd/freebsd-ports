@@ -22,8 +22,7 @@ USE_XORG=	x11
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	7ZIP RAR ZIP DOCS
-OPTIONS_DEFAULT=	7ZIP ZIP DOCS
-OPTIONS_DEFAULT_amd64=	RAR
+OPTIONS_DEFAULT=	7ZIP RAR ZIP DOCS
 OPTIONS_SUB=		YES
 
 # The 7ZIP and RAR options only need runtime dependencies;
@@ -40,8 +39,5 @@ RAR_RUN_DEPENDS_i386=	rar:archivers/rar-i386
 ZIP_DESC=	Support for ZIP archives
 ZIP_LIB_DEPENDS=	libzip.so:archivers/libzip
 ZIP_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_LibZip
-
-# Override shared library version
-KDE_APPLICATIONS_SHLIB_VER=	${KDE_APPLICATIONS_VERSION}
 
 .include <bsd.port.mk>

@@ -1,0 +1,11 @@
+--- crates/faro/Cargo.toml.orig	2026-10-24 12:24:52 UTC
++++ crates/faro/Cargo.toml
+@@ -51,7 +51,7 @@ serde_json = { version = "1.0.151", optional = true }
+ # Linux only, off by default; see the `vendored-openssl` feature below. On
+ # macOS SQLCipher uses Apple's CommonCrypto, so the feature does nothing there.
+ [target.'cfg(target_os = "linux")'.dependencies]
+-libsqlite3-sys = { workspace = true, optional = true, features = ["bundled-sqlcipher-vendored-openssl"] }
++libsqlite3-sys = { workspace = true, optional = true, features = ["bundled-sqlcipher"] }
+ 
+ [features]
+ default = ["update-check"]

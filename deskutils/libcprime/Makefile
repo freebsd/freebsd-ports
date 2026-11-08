@@ -1,5 +1,5 @@
 PORTNAME=	libcprime
-DISTVERSION=	5.0.0
+DISTVERSION=	5.0.1
 CATEGORIES=	deskutils
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -16,6 +16,6 @@ USE_LDCONFIG=	yes
 USE_GITLAB=	yes
 
 GL_ACCOUNT=	CuboCore
-GL_TAGNAME=	v5.0.0
+GL_TAGNAME=	v${DISTVERSION}
 
 .include <bsd.port.mk>

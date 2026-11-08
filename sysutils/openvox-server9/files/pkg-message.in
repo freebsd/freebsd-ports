@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+Remember to run:
+
+sysrc puppetserver_enable=yes
+EOM
+}
+]

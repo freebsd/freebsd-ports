@@ -8,7 +8,7 @@ MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Structured Terminal Forms Language/Library
 WWW=		https://www.clifford.at/stfl/
 
-LICENSE=	GPLv3
+LICENSE=	LGPL3
 
 USES=		gmake iconv:wchar_t ncurses
 USE_LDCONFIG=	yes

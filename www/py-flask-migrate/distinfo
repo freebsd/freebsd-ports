@@ -1,3 +1,3 @@
-TIMESTAMP = 1710712548
-SHA256 (Flask-Migrate-4.0.7.tar.gz) = dff7dd25113c210b069af280ea713b883f3840c1e3455274745d7355778c8622
-SIZE (Flask-Migrate-4.0.7.tar.gz) = 21770
+TIMESTAMP = 1784005314
+SHA256 (flask_migrate-4.1.0.tar.gz) = 1a336b06eb2c3ace005f5f2ded8641d534c18798d64061f6ff11f79e1434126d
+SIZE (flask_migrate-4.1.0.tar.gz) = 21965

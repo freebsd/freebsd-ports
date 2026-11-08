@@ -1,5 +1,5 @@
 PORTNAME=	pysubs2
-DISTVERSION=	1.8.1
+DISTVERSION=	1.9.1
 CATEGORIES=	multimedia python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,5 +21,9 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 BINARY_ALIAS=	python=${PYTHON_CMD} # only for tests
 
 NO_ARCH=	yes
+
+TEST_ARGS=	--disable-plugin-autoload
+
+# tests as of 1.9.1: 145 passed, 3 warnings in 0.50s
 
 .include <bsd.port.mk>

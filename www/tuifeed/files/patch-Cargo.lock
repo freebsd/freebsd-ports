@@ -1,0 +1,14 @@
+--- Cargo.lock.orig	2026-09-18 23:23:28 UTC
++++ Cargo.lock
+@@ -764,9 +764,9 @@ name = "libc"
+ 
+ [[package]]
+ name = "libc"
+-version = "0.2.171"
++version = "0.2.186"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "c19937216e9d3aa9956d9bb8dfc0b0c8beb6058fc4f7a4dc4d850edf86a237d6"
++checksum = "68ab91017fe16c622486840e4c83c9a37afeff978bd239b5293d61ece587de66"
+ 
+ [[package]]
+ name = "libredox"

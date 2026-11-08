@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2026-07-16 18:21:40 UTC
+--- CMakeLists.txt.orig	2026-07-28 16:37:15 UTC
 +++ CMakeLists.txt
-@@ -52,6 +52,7 @@ option(WITH_JAVADOC "Build Javadoc package" ON)
+@@ -60,6 +60,7 @@ option(WITH_JAVADOC "Build Javadoc package" ON)
  option(WITH_ACME "Build ACME package" ON)
  option(WITH_EST "Build EST package" ON)
  option(WITH_JAVADOC "Build Javadoc package" ON)

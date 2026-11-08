@@ -1,2 +1,6 @@
-Nift (aka nsm) is a cross-platform open-source framework for managing and
-generating websites. It's lightning-fast, developed from the ground up in C++.
+Nift is a fast, lightweight and flexible website generator written in C++. It
+tracks content, templates and dependencies so it can rebuild only the files that
+need rebuilding, while leaving the rest of your web stack entirely up to you.
+
+Nift can be used for simple websites, documentation, generated text assets, or
+as a build layer alongside JavaScript, TypeScript, React, APIs and other tools.

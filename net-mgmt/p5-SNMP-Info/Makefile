@@ -1,7 +1,8 @@
 PORTNAME=	SNMP-Info
-PORTVERSION=	3.97.0001
+DISTVERSION=	3.97.0001
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:OLIVER
 PKGNAMEPREFIX=	p5-
 DISTNAME=	SNMP-Info-${PORTVERSION:R}${PORTVERSION:E}
 
@@ -12,9 +13,8 @@ WWW=		https://metacpan.org/release/SNMP-Info
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
-RUN_DEPENDS=	p5-Class-ISA>0:devel/p5-Class-ISA \
+BUILD_RUN_DEPENDS=	p5-Class-ISA>0:devel/p5-Class-ISA \
 		p5-Module-Info>0:devel/p5-Module-Info \
 		p5-NetAddr-IP>0:net-mgmt/p5-NetAddr-IP \
 		p5-PPI>0:textproc/p5-PPI \

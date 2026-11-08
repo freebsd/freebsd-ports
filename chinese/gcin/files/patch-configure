@@ -78,6 +78,15 @@
    BUILD_MODULE='Y'
  fi
  
+@@ -378,7 +378,7 @@ fi
+   BUILD_MODULE='Y'
+ fi
+ 
+-OPTFLAGS="-g -O"
++OPTFLAGS="-g -O -fsigned-char"
+ 
+ if [ -z $CC ]; then
+   CC=gcc
 @@ -388,7 +388,7 @@ echo "includedir=\$(DESTDIR)$includedir" >> config.mak
  echo "libdir=\$(DESTDIR)$libdir" >> config.mak
  echo "gcinlibdir=\$(DESTDIR)$gcinlibdir" >> config.mak

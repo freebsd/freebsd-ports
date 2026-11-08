@@ -1,11 +1,14 @@
 PORTNAME=	spectral
 PORTVERSION=	817
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net-im
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Glossy Matrix IM client based on Qt technologies
 WWW=		https://gitlab.com/spectral-im/spectral
+
+DEPRECATED=	No ported to Qt 6, depends on deprecated Qt5 qtkeychain
+EXPIRATION_DATE=	2026-10-31
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

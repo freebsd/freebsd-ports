@@ -1,7 +1,7 @@
 PORTNAME=	nextdns
 PORTVERSION=	1.47.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	5
+PORTREVISION=	10
 CATEGORIES=	dns security
 
 MAINTAINER=	rs@nextdns.io
@@ -11,7 +11,7 @@ WWW=		https://github.com/nextdns/nextdns
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.26+,modules
+USES=		go:modules
 GO_MODULE=	github.com/${PORTNAME}/${PORTNAME}
 GO_TARGET=	.:${PREFIX}/sbin/${PORTNAME}
 

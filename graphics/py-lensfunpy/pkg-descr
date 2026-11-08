@@ -1,0 +1,4 @@
+lensfunpy is a Python wrapper for the lensfun library. It allows to look up
+cameras, lenses and mounts in the lensfun database and to compute lens
+distortion, vignetting and transverse chromatic aberration (TCA) correction
+maps for images.

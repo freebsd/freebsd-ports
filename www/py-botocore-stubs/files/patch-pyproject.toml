@@ -1,10 +1,10 @@
 -- Convert the deprecated string form of project.license to the PEP 621
 -- table form and remove project.license-files, both required by the
 -- setuptools version available in the ports tree.
---- pyproject.toml.orig	2026-07-31 21:08:28.714256000 -0700
+--- pyproject.toml.orig	2026-10-14 22:10:30 UTC
 +++ pyproject.toml
-@@ -4,8 +4,7 @@
- requires-python = ">=3.9"
+@@ -4,8 +4,7 @@ authors = [{ name = "Vlad Emelianov", email = "vlad.em
+ requires-python = ">=3.10"
  description = "Type annotations and code completion for botocore"
  authors = [{ name = "Vlad Emelianov", email = "vlad.emelianov.nz@gmail.com" }]
 -license = "MIT"

@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2026-09-08 23:18:25 UTC
++++ CMakeLists.txt
+@@ -73,7 +73,7 @@ configure_file("${CMAKE_CURRENT_SOURCE_DIR}/roaring.pc
+ 
+ configure_file("${CMAKE_CURRENT_SOURCE_DIR}/roaring.pc.in"
+                "${CMAKE_CURRENT_BINARY_DIR}/roaring.pc" @ONLY)
+-install(FILES "${CMAKE_CURRENT_BINARY_DIR}/roaring.pc" DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig)
++install(FILES "${CMAKE_CURRENT_BINARY_DIR}/roaring.pc" DESTINATION libdata/pkgconfig)
+ 
+ ## C header files get installed to /usr/local/include/roaring typically
+ 

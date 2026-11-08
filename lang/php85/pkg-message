@@ -1,0 +1,61 @@
+[
+{ type: install
+  message: <<EOM
+SECURITY: session upload progress (CVE-2026-115560, informational)
+
+php.ini-production and php.ini-development now ship with
+session.upload_progress.enabled = 0 as a temporary mitigation until the
+next regular PHP bugfix release. It only takes effect if you copy one of
+these templates to /usr/local/etc/php.ini. Without a php.ini, the
+compiled-in default (enabled) applies.
+
+Applications that read $_SESSION["upload_progress_*"] (upload progress
+bars) will stop receiving progress data while this is off.
+EOM
+}
+{ type: upgrade
+  message: <<EOM
+SECURITY: session upload progress (CVE-2026-115560, informational)
+
+Until the next regular PHP bugfix release, session.upload_progress.enabled
+should be 0. The shipped php.ini-production and php.ini-development now
+set it, but existing php.ini files are never modified on upgrade, and
+with no php.ini the compiled-in default (enabled) applies. If you
+already applied this setting for CVE-2026-109619 (GHSA-6wmf-4rv5-p3rp),
+keep it; nothing further is needed.
+
+The issue needs an unusual combination: session.serialize_handler set
+to php_binary or php_serialize in configuration, switched to php at
+runtime with ini_set() before session_start(), with upload progress
+still enabled. Applications that never change the handler at runtime
+can keep the feature enabled.
+
+Check the effective value per SAPI (CLI and FPM/mod_php may load
+different ini files):
+
+    php -r 'var_dump(ini_get("session.upload_progress.enabled"));'
+
+For FPM/mod_php, use phpinfo() from a web request. Ini files are read
+from /usr/local/etc/php.ini and /usr/local/etc/php/*.ini.
+
+Check both halves of the precondition:
+
+    php -r 'var_dump(ini_get("session.serialize_handler"));'
+    grep -rn serialize_handler /usr/local/www /usr/local/etc/php* \
+        /usr/local/etc/apache2*
+
+A match on one half alone is not vulnerable; the combination is. To
+make runtime switching impossible in FPM, set in the pool config:
+
+    php_admin_value[session.serialize_handler] = php
+
+This breaks applications that legitimately need php_serialize at runtime.
+
+After changing any setting, restart the PHP service, e.g.:
+
+    service php_fpm restart
+
+This notice will be removed once the fixed release is in the tree.
+EOM
+}
+]

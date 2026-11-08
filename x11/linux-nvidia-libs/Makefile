@@ -194,7 +194,9 @@ PLIST_RE+=	'\,${LINUXBASE}.*libnvidia-egl-wayland\.so,d'
 
 ## graphics/egl-wayland2 supports
 ## Estimated to be upgraded often.
-.if ${NVVERSION} >= 590.00000
+.if ${NVVERSION} >= 615.00000
+NV_EGL_W2_VERSION=	1.0.2
+.elif ${NVVERSION} >= 590.00000
 NV_EGL_W2_VERSION=	1.0.1
 .else # Fool proof (Poka-yoke)
 NV_EGL_W2_VERSION=	""
@@ -314,7 +316,9 @@ PLIST_RE+=	'\,${LINUXBASE}.*libnvidia-gpucomp\.so,d'
 
 # nvidia-egl-X11 supports (not in x11/nvidia-driver nor separate ports)
 # Estimated to be upgrated often.
-.if ${NVVERSION} >= 595.00000 || \
+.if ${NVVERSION} >= 615.00000
+NV_EGL_X_VERSION=	1.0.6
+.elif ${NVVERSION} >= 595.00000 || \
 ${NVVERSION} >= 580.14200 && ${NVVERSION} < 590.00000	# 580.142 or 595
 NV_EGL_X_VERSION=	1.0.5
 .elif ${NVVERSION} >= 580.10508	# 580.105.08

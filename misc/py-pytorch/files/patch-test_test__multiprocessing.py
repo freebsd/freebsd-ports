@@ -1,6 +1,6 @@
---- test/test_multiprocessing.py.orig	2026-07-08 17:44:28 UTC
+--- test/test_multiprocessing.py.orig	2026-10-28 18:13:31 UTC
 +++ test/test_multiprocessing.py
-@@ -39,7 +39,7 @@ TEST_REPEATS = 30
+@@ -41,7 +41,7 @@ TEST_REPEATS = 30
  load_tests = load_tests  # noqa: PLW0127
  
  TEST_REPEATS = 30
@@ -9,13 +9,3 @@
  MAX_WAITING_TIME_IN_SECONDS = 30
  
  TEST_CUDA_IPC = (
-@@ -679,7 +679,8 @@ class TestMultiprocessing(_MultiprocessingTestMixin, T
-         simple_autograd_function()
-         # Autograd only uses thread when GPUs are involved
-         if (
--            torch.cuda.is_available()
-+            sys.platform.startswith("freebsd")
-+            or torch.cuda.is_available()
-             or torch.backends.mps.is_available()
-             or torch.xpu.is_available()
-         ):

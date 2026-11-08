@@ -9,6 +9,7 @@ LLVM_MAN1SRCS= \
 	llvm-ar.1 \
 	llvm-as.1 \
 	llvm-bcanalyzer.1 \
+	llvm-calc-occupancy.1 \
 	llvm-cgdata.1 \
 	llvm-config.1 \
 	llvm-cov.1 \
@@ -22,6 +23,7 @@ LLVM_MAN1SRCS= \
 	llvm-exegesis.1 \
 	llvm-extract-bundle-entry.1 \
 	llvm-extract.1 \
+	llvm-gsymutil.1 \
 	llvm-ifs.1 \
 	llvm-install-name-tool.1 \
 	llvm-ir2vec.1 \

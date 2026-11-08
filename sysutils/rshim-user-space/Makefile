@@ -1,8 +1,9 @@
 PORTNAME=	rshim-user-space
-DISTVERSIONPREFIX=	rshim-
-DISTVERSION=		2.0.9
-PORTREVISION=	1
-PORTEPOCH=		1
+DISTVERSION=	2.8.5
+PORTEPOCH=	1
+CATEGORIES=	sysutils
+MASTER_SITES=	https://github.com/Mellanox/${PORTNAME}/releases/download/rshim-${DISTVERSION}/
+DISTNAME=	rshim-src-${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Userspace daemon for the Mellanox BlueField SoC
@@ -10,19 +11,21 @@ WWW=		https://github.com/Mellanox/rshim-user-space/
 
 LICENSE=	BSD3CLAUSE
 
-CATEGORIES=	sysutils
-
 LIB_DEPENDS=	libepoll-shim-interpose.so:devel/libepoll-shim \
-		libpci.so:devel/libpci \
-		libpciaccess.so:devel/libpciaccess
+		libpci.so:devel/libpci
+RUN_DEPENDS=	bash:shells/bash
 
-USES=		autoreconf compiler:c11 localbase gmake pkgconfig tar:bzip2
+USES=		autoreconf compiler:c11 pkgconfig python:build,run shebangfix
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	Mellanox
+SHEBANG_FILES=	scripts/bf-pldm-ver \
+		scripts/bfb-install \
+		scripts/bfb-tool \
+		scripts/mlx-mkbfb \
+		third_party/PLDM-unpack/fwpkg_unpack.py
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+
+NO_WRKSUBDIR=	yes
 
 .include <bsd.port.options.mk>
 

@@ -1,7 +1,7 @@
 PORTNAME=	gum
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.17.0
-PORTREVISION=	12
+DISTVERSION=	2.0.0
+PORTREVISION=	3
 CATEGORIES=	devel
 
 MAINTAINER=	dave@bitboss.ca
@@ -12,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
-GO_MODULE=	github.com/charmbracelet/gum
+GO_MODULE=	charm.land/gum/v2
 
 PLIST_FILES=	bin/gum \
 		etc/bash_completion.d/gum.bash \

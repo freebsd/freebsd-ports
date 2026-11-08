@@ -260,5 +260,5 @@ lib/libsurelog.so.%%SOVERSION%%
 %%PYTHON%%lib/surelog-python/python/slformatmsg.py
 %%PYTHON%%lib/surelog-python/python/slwaivers.py
 libdata/pkgconfig/Surelog.pc
-share/doc/libantlr4/README.md
-share/doc/libantlr4/VERSION
+share/doc/SURELOG/README.md
+share/doc/SURELOG/VERSION

@@ -1,11 +1,19 @@
---- CMakeLists.txt.orig	2025-07-07 07:42:12 UTC
+-- Preserve -L${LOCALBASE}/lib and other linker flags already passed via
+-- CMAKE_SHARED_LINKER_FLAGS by appending instead of overwriting.
+
+--- CMakeLists.txt.orig	2026-10-05 16:14:34 UTC
 +++ CMakeLists.txt
-@@ -28,6 +28,8 @@ set(NATIVE_DIR ${PROJECT_SOURCE_DIR}/src/main/native)
+@@ -19,11 +19,10 @@ if(APPLE)
+ 
+ set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+ if(APPLE)
+-  set(CMAKE_SHARED_LINKER_FLAGS "-static-libstdc++")
++  set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -static-libstdc++")
+ elseif(UNIX)
+-  set(CMAKE_SHARED_LINKER_FLAGS "-static-libstdc++ -static-libgcc -Wl,-z,now")
++  set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -static-libstdc++ -static-libgcc -Wl,-z,now")
+ endif()
+-set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS}")
+ 
  # add CMakeLists.txt in subdirectories
  set(NATIVE_DIR ${PROJECT_SOURCE_DIR}/src/main/native)
- 
-+link_directories(${CMAKE_INSTALL_PREFIX}/lib)
-+
- add_subdirectory("${NATIVE_DIR}/compression")
- add_subdirectory("${NATIVE_DIR}/pairhmm")
- add_subdirectory("${NATIVE_DIR}/utils")

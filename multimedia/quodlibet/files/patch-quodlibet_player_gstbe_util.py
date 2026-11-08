@@ -1,6 +1,6 @@
---- quodlibet/player/gstbe/util.py.orig	2020-10-15 13:54:35 UTC
+--- quodlibet/player/gstbe/util.py.orig	2025-05-31 14:50:33 UTC
 +++ quodlibet/player/gstbe/util.py
-@@ -28,14 +28,9 @@ def pulse_is_running():
+@@ -55,14 +55,9 @@ def pulse_is_running():
          element.set_state(Gst.State.NULL)
          return res != Gst.StateChangeReturn.FAILURE
  
@@ -17,4 +17,4 @@
 +    return False
  
  
- def link_many(elements):
+ def jack_is_running() -> bool:

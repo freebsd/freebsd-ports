@@ -1,0 +1,2 @@
+FFmpeg with Jellyfin patches for HDR tone mapping, including the SIMD-optimized
+tonemapx filter (libplacebo-based HDR to SDR conversion).

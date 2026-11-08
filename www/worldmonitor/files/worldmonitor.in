@@ -1,0 +1,55 @@
+#!/bin/sh
+
+# PROVIDE: worldmonitor
+# REQUIRE: LOGIN NETWORKING
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable worldmonitor:
+#
+# worldmonitor_enable (bool):	Set to NO by default.
+# worldmonitor_user (str):	Set to www by default.
+# worldmonitor_env_file (str):	Set to %%PREFIX%%/etc/worldmonitor.env by default.
+# worldmonitor_log (str):	Set to /var/log/worldmonitor.log by default.
+
+. /etc/rc.subr
+
+name=worldmonitor
+rcvar=worldmonitor_enable
+
+load_rc_config $name
+
+: ${worldmonitor_enable:=NO}
+: ${worldmonitor_user:=www}
+: ${worldmonitor_env_file:=%%PREFIX%%/etc/worldmonitor.env}
+: ${worldmonitor_log:=/var/log/worldmonitor.log}
+
+pidfile=/var/run/worldmonitor.pid
+procname=%%LOCALBASE%%/bin/node
+command=/usr/sbin/daemon
+command_args="-H -P ${pidfile%.pid}_daemon.pid -p ${pidfile} -o ${worldmonitor_log} -- ${procname} %%WWWDIR%%/local-api-server.mjs"
+start_precmd=worldmonitor_prestart
+
+worldmonitor_prestart()
+{
+	if [ ! -r "${worldmonitor_env_file}" ]; then
+		err 1 "${worldmonitor_env_file} is not readable"
+	fi
+	[ -e "${worldmonitor_log}" ] || install -m 0640 -o ${worldmonitor_user} /dev/null "${worldmonitor_log}"
+	touch "${pidfile}" "${pidfile%.pid}_daemon.pid"
+	chown ${worldmonitor_user} "${pidfile}" "${pidfile%.pid}_daemon.pid"
+	set -a
+	. "${worldmonitor_env_file}"
+	set +a
+	for _var in LOCAL_API_TOKEN WM_SESSION_SECRET UPSTASH_REDIS_REST_TOKEN RELAY_SHARED_SECRET WORLDMONITOR_RELAY_KEY; do
+		eval "_val=\${${_var}}"
+		case "${_val}" in
+		""|change-me*) err 1 "${_var} in ${worldmonitor_env_file} is empty or still has its example value" ;;
+		esac
+	done
+	%%LOCALBASE%%/bin/node %%WWWDIR%%/validate-session-secret.mjs || err 1 "WM_SESSION_SECRET in ${worldmonitor_env_file} is too short"
+	export LOCAL_API_MODE="${LOCAL_API_MODE:-docker}"
+	export LOCAL_API_RESOURCE_DIR=%%WWWDIR%%
+	export LOCAL_API_DATA_DIR=/var/db/worldmonitor
+}
+
+run_rc_command "$1"

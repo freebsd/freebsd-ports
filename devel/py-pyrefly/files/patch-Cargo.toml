@@ -1,0 +1,14 @@
+-- Reduce peak memory use during the Rust release build by disabling LTO and
+-- increasing codegen units. The upstream profile uses lto=true/codegen-units=1,
+-- which causes the pyrefly crate to be killed by OOM in the poudriere VM.
+
+--- Cargo.toml.orig	2020-02-01 16:00:00 UTC
++++ Cargo.toml
+@@ -4,6 +4,6 @@
+ [profile.release]
+ debug = 1
+-lto = true
+-codegen-units = 1
++lto = false
++codegen-units = 4
+ strip = "debuginfo"

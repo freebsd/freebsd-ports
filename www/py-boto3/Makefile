@@ -1,11 +1,11 @@
 PORTNAME=	boto3
-PORTVERSION=	1.43.46
+PORTVERSION=	1.43.105
 CATEGORIES=	www python devel
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	AWS SDK for Python
+COMMENT=	AWS SDK for Python (Boto3)
 WWW=		https://docs.aws.amazon.com/boto3/latest/ \
 		https://aws.amazon.com/sdk-for-python/ \
 		https://github.com/boto/boto3

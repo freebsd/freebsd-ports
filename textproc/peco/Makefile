@@ -1,7 +1,7 @@
 PORTNAME=	peco
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.0
-PORTREVISION=	5
+PORTREVISION=	10
 CATEGORIES=	textproc
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://github.com/peco/peco
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.25+,modules
+USES=		go:modules
 
 GO_MODULE=	github.com/peco/peco
 GO_TARGET=	./cmd/peco

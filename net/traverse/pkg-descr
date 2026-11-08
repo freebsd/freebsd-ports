@@ -1,0 +1,3 @@
+Traverse is a command-line tool for probing STUN and TURN servers.  It
+reports STUN binding results and TURN relay allocation results in text,
+JSON, or XML, with combined batch reports for automated checks.

@@ -22,5 +22,6 @@ GH_ACCOUNT=	mkeeter
 GH_TAGNAME=	f6a56dd
 
 CMAKE_ARGS=	-DPython_EXECUTABLE=${PYTHON_CMD}
+CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM:STRING=3.5 # CMake 4 compatibility, see https://github.com/mkeeter/antimony/issues/244
 
 .include <bsd.port.mk>

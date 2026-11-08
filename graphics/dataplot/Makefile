@@ -1,5 +1,5 @@
 PORTNAME=	dataplot
-DISTVERSION=	20240806
+DISTVERSION=	20260810
 CATEGORIES=	graphics
 
 MAINTAINER=	pfg@FreeBSD.org
@@ -16,7 +16,7 @@ RUN_DEPENDS=	xclip:x11/xclip
 USES=		gmake gnome fortran readline xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	usnistgov
-GH_TAGNAME=	b779512889cc78757fae29f9546e01b9c6cef95d
+GH_TAGNAME=	d837c4af1282e51667ed75a02433f5e5590f1c6d
 USE_GNOME=	cairo
 USE_XORG=	x11 xft xi
 

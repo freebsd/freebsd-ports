@@ -1,6 +1,6 @@
 PORTNAME=	clickhouse
 DISTVERSIONPREFIX=	v
-DISTVERSION=	26.3.17.56
+DISTVERSION=	26.8.9.10
 DISTVERSIONSUFFIX=-lts
 CATEGORIES=	databases
 DIST_SUBDIR=	${PORTNAME}
@@ -12,8 +12,8 @@ WWW=		https://clickhouse.com/
 
 LICENSE=	APACHE20
 
-ONLY_FOR_ARCHS=	aarch64 amd64
-ONLY_FOR_ARCHS_REASON=	only supported on aarch64 and amd64
+ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64le
+ONLY_FOR_ARCHS_REASON=	only supported on aarch64, amd64 and powerpc64le
 
 BUILD_DEPENDS=	bash:shells/bash \
 	gfind:misc/findutils \
@@ -36,7 +36,6 @@ USE_RC_SUBR=	${PORTNAME}
 
 SHEBANG_FILES=	tests/clickhouse-test \
 		tests/queries/0_stateless/02010_lc_native.python
-#		tests/queries/0_stateless/02203_shebang
 SHEBANG_GLOB=	*.expect *.py *.python *.sh
 SHEBANG_LANG=	clickhouse-local expect
 clickhouse-local_OLD_CMD=	/usr/bin/clickhouse-local
@@ -87,6 +86,10 @@ USES+=	llvm:min=21
 CFLAGS+=-Wno-error=int-conversion
 .endif
 
+.if ${ARCH:Mpowerpc64*} && ${OSVERSION} < 1600028
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-contrib_llvm-project_libunwind_src_DwarfInstructions.hpp
+.endif
+
 .if ${OPSYS} == FreeBSD
 SUB_LIST+=	LEGACY_LIMITS="@comment " \
 		MODERN_LIMITS=""
@@ -106,6 +109,15 @@ post-patch:
 	cd ${WRKSRC}/contrib/openldap-cmake && ${LN} -s freebsd_x86_64 freebsd_aarch64
 	@${REINPLACE_CMD} -e '/clickhouse-docker-init/d; /add_subdirectory \(docker-init\)/d' ${WRKSRC}/programs/CMakeLists.txt
 	@${REINPLACE_CMD} -e '/mainEntryClickHouseDockerInit/d' ${WRKSRC}/programs/main.cpp
+
+.if ${ARCH} == powerpc64le
+# Bundled pre-generated POWER8 asm lacks the little-endian fixups
+pre-configure:
+.  for f in aes/aesp8-ppc modes/ghashp8-ppc modes/aes-gcm-ppc
+	${PERL} ${WRKSRC}/contrib/openssl/crypto/${f:H}/asm/${f:T}.pl linux64le \
+		${WRKSRC}/contrib/openssl-cmake/asm/crypto/${f}.s
+.  endfor
+.endif
 
 post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/bin/config-processor
@@ -129,7 +141,7 @@ do-test-TEST-on:
 	cd ${WRKSRC} && ctest -j4 -V
 
 .if defined(MAINTAINER_MODE)
-_make-touples: extract
+_make-touples:
 	@set -eu; \
 	_REPO=${GH_ACCOUNT}/${GH_PROJECT}; \
 	_API="https://api.github.com/repos/$${_REPO}"; \
@@ -137,17 +149,17 @@ _make-touples: extract
 	_TMPDIR=$$(mktemp -d -t clickhouse-submods); \
 	trap 'rm -rf "$${_TMPDIR}"' EXIT INT TERM; \
 	_OUTFILE="$$(pwd)/Makefile.submodules"; \
-	_CURL_OPTS="-s"; \
+	set -- -sS; \
 	if [ -n "$${GH_TOKEN}" ]; then \
-		_CURL_OPTS="$${_CURL_OPTS} -H Authorization:\ Bearer\ $${GH_TOKEN}"; \
+		set -- "$$@" -H "Authorization: Bearer $${GH_TOKEN}"; \
 	fi; \
 	${ECHO_CMD} "===> Resolving tag $${_TAG}"; \
-	_COMMIT=$$(curl $${_CURL_OPTS} "$${_API}/git/refs/tags/$${_TAG}" \
+	_COMMIT=$$(curl "$$@" "$${_API}/git/refs/tags/$${_TAG}" \
 	  | jq -r 'if type=="array" then .[0].object.sha else .object.sha end'); \
 	${ECHO_CMD} "===> Commit: $${_COMMIT}"; \
 	${ECHO_CMD} "===> Fetching contrib tree"; \
-	curl $${_CURL_OPTS} "$${_API}/git/trees/$${_COMMIT}?recursive=1" \
-	 | jq -r '.tree[] | select(.path|startswith("contrib/")) | select(.type=="commit") | "\(.path) \(.sha)"' \
+	curl "$$@" "$${_API}/git/trees/$${_COMMIT}?recursive=1" \
+	 | jq -er '.tree[] | select(.path|startswith("contrib/")) | select(.type=="commit") | "\(.path) \(.sha)"' \
 	 > "$${_TMPDIR}/tree.txt"; \
 	${ECHO_CMD} "===> Fetching .gitmodules"; \
 	curl -so "$${_TMPDIR}/.gitmodules" \
@@ -170,8 +182,6 @@ _make-touples: extract
 		        org, repo, substr(sha,1,8), org_repl, repo_repl, path); }' \
 		"$${_TMPDIR}/modules.txt" "$${_TMPDIR}/tree.txt" > "$${_OUTFILE}"; \
 	${ECHO_CMD} "===> Writing $${_OUTFILE} completed"
-	${REINPLACE_CMD} -e 's|unum-cloud:usearch|unum-cloud:USearch|' \
-		${.CURDIR}/Makefile.submodules
 	if [ -f ${.CURDIR}/Makefile.submodules.bak ]; then ${RM} ${.CURDIR}/Makefile.submodules.bak; fi
 .endif
 

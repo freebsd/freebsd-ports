@@ -1,7 +1,7 @@
 PORTNAME=	SoapyRedPitaya
 DISTVERSIONPREFIX=	soapy-redpitaya-
 DISTVERSION=	0.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,6 +17,8 @@ USES=		cmake compiler:c++11-lang pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	pothosware
 
-PLIST_FILES=	lib/SoapySDR/modules0.8/libRedPitaya.so
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/pothosware/SoapyRedPitaya/issues/7
+
+PLIST_FILES=	lib/SoapySDR/modules0.9/libRedPitaya.so
 
 .include <bsd.port.mk>

@@ -1,0 +1,3 @@
+Choreographer allows remote control of browsers from Python. It was
+created to support image generation from browser-based charting tools,
+but can be used for other purposes as well.

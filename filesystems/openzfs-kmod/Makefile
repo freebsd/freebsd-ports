@@ -1,10 +1,13 @@
 PORTNAME=	openzfs
-PORTVERSION=	2.4.3
+PORTVERSION=	2.4.4
 PORTEPOCH=	1
 CATEGORIES=	filesystems sysutils
 MASTER_SITES=	https://github.com/openzfs/zfs/releases/download/zfs-${PORTVERSION}/
 PKGNAMESUFFIX?=	-kmod
 DISTNAME=	zfs-${DISTVERSION}
+
+PATCH_SITES=	https://github.com/openzfs/zfs/commit/
+PATCHFILES=	0ee8ea01bc16620bac8563ae5b3ad02098297641.patch:-p1
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	OpenZFS kernel module for FreeBSD
@@ -18,6 +21,12 @@ KMODTARGET?=	openzfs.ko
 
 PLIST_FILES=	${KMODDIR}/${KMODTARGET}
 
+BROKEN_FreeBSD_14=	fails to build
+BROKEN_aarch64=		fails to build
+BROKEN_aarch64=		fails to build
+BROKEN_armv7=		fails to build
+BROKEN_armv7=		fails to build
+
 OPTIONS_DEFINE=	DEBUG INVARIANTS GCOV
 OPTIONS_DEFAULT=	DEBUG INVARIANTS
 OPTIONS_SUB=	yes
@@ -28,6 +37,7 @@ INVARIANTS_DESC=	Build kernel module with INVARIANTS
 INVARIANTS_IMPLIES=	DEBUG
 
 WRKSRC_SUBDIR=	module
+PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
 MAKEFILE=	Makefile.bsd
 
 .include <bsd.port.options.mk>

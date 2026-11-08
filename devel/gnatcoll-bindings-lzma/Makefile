@@ -1,6 +1,5 @@
 PORTNAME=	gnatcoll-bindings
-DISTVERSIONPREFIX=	v
-DISTVERSION=	26.0.0
+DISTVERSION=	26.2
 CATEGORIES=	devel converters lang
 PKGNAMESUFFIX=	-lzma
 
@@ -26,7 +25,8 @@ NO_SHLIB_REQUIRES_GLOB=	libgnarl-${_ada_version}.so libgnat-${_ada_version}.so
 
 EXTRACT_AFTER_ARGS=	${_DIST_EXCLUDES:S,^,--exclude ,}
 
-PLIST_SUB=	SO_VERSION=${DISTVERSION}
+PLIST_SUB=	SO_DISTVERSION=${DISTVERSION} \
+		SO_VERSION=${DISTVERSION:R}
 
 _DOCS_INSTALL_EXCLUDES=	"-not -name .buildinfo -not -regex ^./_sources.*"
 _DIST_DOCS=		doc* version_information
@@ -38,13 +38,13 @@ _DIST_EXCLUDES=		${_DIST_DOCS} ${_DIST_GCB_COMPONENTS} ${_DIST_TESTING} \
 			README.md setup.py setup_support.py
 _GCB_COMPONENT_DIR=	${PKGNAMESUFFIX:S/-//}
 _GCB_COMPONENT_GPR=	${PORTNAME:C/-.*//}_${PKGNAMESUFFIX:S/-//}
-_GCB_COMPONENT_SUBDIR=	${PORTNAME}/${_GCB_COMPONENT_DIR}
 _GPRBUILD_ARGS=		${_GPR_PROJECT_ARGS} -j${MAKE_JOBS_NUMBER} -p -vh -vP2
 _GPRINSTALL_ARGS=	${_GPR_PROJECT_ARGS} --no-manifest \
 			--prefix='${STAGEDIR}${PREFIX}' -p -v
+_GPR_LIBRARY_TYPES=	relocatable static static-pic
 _GPR_PROJECT_ARGS=	-XGNATCOLL_BUILD_MODE=${WITH_DEBUG:UPROD:DDEBUG} \
 			-XGNATCOLL_VERSION=${DISTVERSION}
-_GPR_LIBRARY_TYPES=	relocatable static static-pic
+_GPR_SUBDIR=		${PORTNAME:C,-bindings,/,}${PKGNAMESUFFIX:C/-//}
 
 do-build:
 . for _library_type in ${_GPR_LIBRARY_TYPES}
@@ -56,11 +56,10 @@ do-build:
 do-install:
 . for _library_type in ${_GPR_LIBRARY_TYPES}
 	(cd ${WRKSRC}/${_GCB_COMPONENT_DIR} && \
-		${SETENV} ${MAKE_ENV} gprinstall ${_GPRINSTALL_ARGS} --ali-subdir=libdata/${_GCB_COMPONENT_SUBDIR}/${_library_type} \
+		${SETENV} ${MAKE_ENV} gprinstall ${_GPRINSTALL_ARGS} --ali-subdir=libdata/${_GPR_SUBDIR}/${_library_type} \
 		--build-name=${_library_type} --build-var=${_library_type} \
-		--lib-subdir=lib/${_GCB_COMPONENT_SUBDIR}/${_library_type} \
-		--sources-subdir=include/${_GCB_COMPONENT_SUBDIR} -XLIBRARY_TYPE=${_library_type} \
-		-P ${_GCB_COMPONENT_GPR})
+		--lib-subdir=lib/${_GPR_SUBDIR}/${_library_type} --sources-subdir=include/${_GPR_SUBDIR} \
+		-XLIBRARY_TYPE=${_library_type} -P ${_GCB_COMPONENT_GPR})
 . endfor
 	${FIND} ${STAGEDIR}${PREFIX}/lib -name *.a -exec ${STRIP_CMD} {} \
 		\;

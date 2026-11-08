@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Various R programming tools for data manipulation
-WWW=		https://cran.r-project.org/web/packages/gdata/
+WWW=		https://cran.r-project.org/package=gdata
 
 LICENSE=	GPLv3
 

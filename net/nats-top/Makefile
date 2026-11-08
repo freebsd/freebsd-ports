@@ -1,7 +1,6 @@
 PORTNAME=	nats-top
-PORTVERSION=	0.6.4
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
+DISTVERSION=	0.6.5
 CATEGORIES=	net
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -13,6 +12,7 @@ LICENSE=	MIT
 USES=		go:modules
 
 GO_MODULE=	github.com/nats-io/nats-top
+GO_LDFLAGS=	-X main.version=${DISTVERSION}
 
 PLIST_FILES=	bin/nats-top
 

@@ -1,3 +1,4 @@
+@sample etc/newsyslog.conf.d/xymon-server.conf.sample
 share/man/man1/ackinfo.cgi.1.gz
 share/man/man1/acknowledge.cgi.1.gz
 share/man/man1/appfeed.cgi.1.gz
@@ -30,6 +31,7 @@ share/man/man1/xymongrep.1.gz
 share/man/man1/xymonnet-again.sh.1.gz
 share/man/man1/xymonnet.1.gz
 share/man/man1/xymonpage.cgi.1.gz
+share/man/man1/%%XYMONUSER%%ping.1.gz
 share/man/man5/alerts.cfg.5.gz
 share/man/man5/analysis.cfg.5.gz
 share/man/man5/cgioptions.cfg.5.gz
@@ -167,6 +169,7 @@ share/man/man8/xymonproxy.8.gz
 %%WWWDIR%%/server/bin/xymonping
 %%WWWDIR%%/server/bin/xymonproxy
 %%WWWDIR%%/server/bin/xymonreports.sh
+%%NETSNMP%%%%WWWDIR%%/server/bin/%%XYMONUSER%%-snmpcollect
 %%WWWDIR%%/server/etc/xymon-apache-open.sample
 %%WWWDIR%%/server/etc/xymon-apache-secure.sample
 %%WWWDIR%%/server/etc/xymon-apache.conf.sample
@@ -176,6 +179,7 @@ share/man/man8/xymonproxy.8.gz
 @sample %%WWWDIR%%/server/etc/client-local.cfg.sample
 @sample %%WWWDIR%%/server/etc/columndoc.csv.sample
 @sample %%WWWDIR%%/server/etc/combo.cfg.sample
+@sample %%WWWDIR%%/server/etc/critical.cfg.sample
 @sample %%WWWDIR%%/server/etc/graphs.cfg.sample
 @sample %%WWWDIR%%/server/etc/holidays.cfg.sample
 @sample %%WWWDIR%%/server/etc/hosts.cfg.sample
@@ -373,6 +377,8 @@ share/man/man8/xymonproxy.8.gz
 %%WWWDIR%%/server/www/help/manpages/man1/xymonnet-again.sh.1.html
 %%WWWDIR%%/server/www/help/manpages/man1/xymonnet.1.html
 %%WWWDIR%%/server/www/help/manpages/man1/xymonpage.cgi.1.html
+%%WWWDIR%%/server/www/help/manpages/man1/%%XYMONUSER%%ping.1.html
+%%WWWDIR%%/server/www/help/manpages/man1/%%XYMONUSER%%tools.1.html
 %%WWWDIR%%/server/www/help/manpages/man5/alerts.cfg.5.html
 %%WWWDIR%%/server/www/help/manpages/man5/analysis.cfg.5.html
 %%WWWDIR%%/server/www/help/manpages/man5/client-local.cfg.5.html
@@ -409,6 +415,7 @@ share/man/man8/xymonproxy.8.gz
 %%WWWDIR%%/server/www/help/manpages/man8/xymonfetch.8.html
 %%WWWDIR%%/server/www/help/manpages/man8/xymonlaunch.8.html
 %%WWWDIR%%/server/www/help/manpages/man8/xymonproxy.8.html
+%%WWWDIR%%/server/www/help/manpages/mandoc.css
 %%WWWDIR%%/server/www/help/stdview-detail-acked.jpg
 %%WWWDIR%%/server/www/help/upgrade-to-430.txt
 %%WWWDIR%%/server/www/help/xymon-alerts.html
@@ -439,12 +446,21 @@ share/man/man8/xymonproxy.8.gz
 @dir %%WWWDIR%%/server/download
 @owner
 @dir %%WWWDIR%%/server/etc/tasks.d
+@dir %%WWWDIR%%/server/etc/alerts.d
+@dir %%WWWDIR%%/server/etc/analysis.d
+@dir %%WWWDIR%%/server/etc/client-local.d
+@dir %%WWWDIR%%/server/etc/combo.d
+@dir %%WWWDIR%%/server/etc/graphs.d
+@dir %%WWWDIR%%/server/etc/hosts.d
+@dir %%WWWDIR%%/server/etc/rrddefinitions.d
+@dir %%WWWDIR%%/server/%%ETCDIR%%server.d
 @owner %%XYMONUSER%%
 @dir %%WWWDIR%%/server/tmp
 @dir %%WWWDIR%%/server/www
 @dir %%WWWDIR%%/server/www/html
 @dir %%WWWDIR%%/server/www/notes
-@dir %%WWWDIR%%/server/www/rep
-@dir %%WWWDIR%%/server/www/snap
 @dir %%WWWDIR%%/server/www/wml
+@dir /var/log/%%XYMONUSER%%
 @owner
+@dir(%%XYMONUSER%%,%%WWWGRP%%,775) %%WWWDIR%%/server/www/rep
+@dir(%%XYMONUSER%%,%%WWWGRP%%,775) %%WWWDIR%%/server/www/snap

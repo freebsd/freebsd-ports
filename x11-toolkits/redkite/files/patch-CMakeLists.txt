@@ -1,11 +1,11 @@
---- CMakeLists.txt.orig	2020-08-12 18:05:20 UTC
+--- CMakeLists.txt.orig	2026-09-27 00:45:19 UTC
 +++ CMakeLists.txt
-@@ -12,6 +12,8 @@ elseif(CMAKE_SYSTEM_NAME MATCHES Darwin)
-   message(FATAL_ERROR "Redkite is not implemented yet for Mac OS X")
- elseif (CMAKE_SYSTEM_NAME MATCHES Linux)
-   message(STATUS " Build Redkite for GNU/Linux")
-+elseif (CMAKE_SYSTEM_NAME MATCHES "^(FreeBSD|DragonFly)$")
-+  message(STATUS " Build Redkite for FreeBSD")
- else()
-   message(FATAL_ERROR "Redkite is not implemented yet for ${CMAKE_SYSTEM_NAME}")
+@@ -231,7 +231,7 @@ endif()
+ include_directories(${RK_INCLUDE_PATH}/impl/platforms/xwin)
  endif()
+ 
+-add_library(redkite STATIC
++add_library(redkite
+   ${RK_HEADERS}
+   ${RK_HEADERS_IMPL}
+   ${RK_HEADERS_PLATFORM}

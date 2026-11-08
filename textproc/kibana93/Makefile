@@ -1,5 +1,5 @@
 PORTNAME=	kibana
-DISTVERSION=	9.3.4
+DISTVERSION=	9.3.8
 DISTVERSIONSUFFIX=	-linux-x86_64
 CATEGORIES=	textproc www
 MASTER_SITES=	https://artifacts.elastic.co/downloads/kibana/ \
@@ -12,6 +12,9 @@ COMMENT=	Browser-based analytics and search interface to Elasticsearch (${DISTVE
 WWW=		https://www.elastic.co/products/kibana
 
 LICENSE=	APACHE20
+
+DEPRECATED=	Support for ${DISTVERSION:R}.x has ended 04 Aug 2026 - use ${PORTNAME}94 or ${PORTNAME}95 instead
+EXPIRATION_DATE=	2026-12-31
 
 BUILD_DEPENDS=	npm-node${NODEJS_VERSION}>=11.10.0:www/npm-node${NODEJS_VERSION}
 LIB_DEPENDS=	libre2.so:devel/re2 \
@@ -54,9 +57,9 @@ BINS=	kibana-encryption-keys kibana-health-gateway kibana-keystore \
 
 #######################################################################
 # Set node-nan version here
-_NODE_NAN_VER=	2.27.0
+_NODE_NAN_VER=	2.29.0
 # Set node-re version here
-_NODE_RE2_VER=	1.24.1
+_NODE_RE2_VER=	1.26.1
 #######################################################################
 
 _NODECMD=	${LOCALBASE}/bin/node --version

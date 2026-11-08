@@ -1,6 +1,6 @@
 PORTNAME=	argus-clients
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.0.0
+DISTVERSION=	5.0.4
 CATEGORIES=	net-mgmt security
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -48,7 +48,7 @@ do-install:
 	rapath.1 rapolicy.1 rasort.1 rasplit.1 rastream.1 rastrip.1
 	${INSTALL_MAN} ${WRKSRC}/man/man1/$i ${STAGEDIR}/${PREFIX}/share/man/man1
 .endfor
-.for i in racluster.5 radium.conf.5 ralabel.conf.5 ranonymize.5 rarc.5
+.for i in radium.conf.5 ralabel.conf.5 ranonymize.5 rarc.5
 	${INSTALL_MAN} ${WRKSRC}/man/man5/$i ${STAGEDIR}/${PREFIX}/share/man/man5
 .endfor
 .for i in radium.8

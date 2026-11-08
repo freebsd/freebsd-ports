@@ -1,5 +1,5 @@
 PORTNAME=	ipykernel
-PORTVERSION=	7.3.0
+PORTVERSION=	7.4.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/ipython/ipykernel/releases/download/v${PORTVERSION}/
@@ -24,9 +24,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}comm>=0.1.1:devel/py-comm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib-inline>=0.1:math/py-matplotlib-inline@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nest-asyncio2>=1.7.0:devel/py-nest-asyncio2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=22:devel/py-packaging@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}psutil>=5.7:sysutils/py-psutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyzmq>=25:net/py-pyzmq@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tornado>=6.4.1:www/py-tornado@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tornado>=6.5.7:www/py-tornado@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}traitlets>=5.4.0:devel/py-traitlets@${PY_FLAVOR}
 
 USES=		python

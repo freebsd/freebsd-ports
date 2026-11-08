@@ -1,4 +1,4 @@
---- content/browser/browser_child_process_host_impl_receiver_bindings.cc.orig	2026-06-05 13:45:06 UTC
+--- content/browser/browser_child_process_host_impl_receiver_bindings.cc.orig	2026-08-13 07:41:05 UTC
 +++ content/browser/browser_child_process_host_impl_receiver_bindings.cc
 @@ -38,7 +38,7 @@
  #include "content/public/common/font_cache_win.mojom.h"
@@ -18,7 +18,7 @@
    if (auto r = receiver.As<mojom::ThreadTypeSwitcher>()) {
      child_thread_type_switcher_.Bind(std::move(r));
      return;
-@@ -114,7 +114,7 @@ void BrowserChildProcessHostImpl::BindHostReceiver(
+@@ -120,7 +120,7 @@ void BrowserChildProcessHostImpl::BindHostReceiver(
    }
  #endif
  

@@ -1,0 +1,22 @@
+-- Fix PEP 621 license validation and lower the setuptools lower bound.
+-- The system setuptools rejects the plain-string `license` form and the `>= 80` bound.
+--- pyproject.toml.orig	2025-09-02 12:11:27 UTC
++++ pyproject.toml
+@@ -2,7 +2,7 @@ readme = "README.md"
+ name = "pytauri-wheel"
+ version = "0.8.0" # ❗ when bumping, remember to update workspace dependencies
+ readme = "README.md"
+-license = "Apache-2.0"
++license = { text = "Apache-2.0" }
+ authors = [
+     { name = "Sean Wang", email = "126865849+WSH032@users.noreply.github.com" },
+ ]
+@@ -29,7 +29,7 @@ requires = [
+ 
+ [build-system]
+ requires = [
+-    "setuptools >= 80",
++    "setuptools >= 63",
+     "setuptools-rust >= 1.11, <2",
+     "setuptools-scm >= 8",
+     "packaging >= 25",

@@ -1,11 +1,11 @@
 PORTNAME=	RCurl
-DISTVERSION=	1.98-1.19
+DISTVERSION=	1.98-1.20
 CATEGORIES=	ftp
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	General network client interface for R
-WWW=		https://cran.r-project.org/web/packages/RCurl/
+WWW=		https://cran.r-project.org/package=RCurl
 
 LICENSE=	BSD3CLAUSE
 

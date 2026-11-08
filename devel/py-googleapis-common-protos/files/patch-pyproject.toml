@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2026-09-03 21:58:46 UTC
++++ pyproject.toml
+@@ -20,7 +20,7 @@ authors = [{ name = "Google LLC", email = "googleapis-
+ name = "googleapis-common-protos"
+ version = "1.75.3"
+ authors = [{ name = "Google LLC", email = "googleapis-packages@google.com" }]
+-license = "Apache-2.0"
++license = { text = "Apache 2.0" }
+ requires-python = ">= 3.10"
+ readme = "README.rst"
+ description = "Common protobufs used in Google APIs"

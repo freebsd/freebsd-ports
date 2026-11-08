@@ -1,5 +1,5 @@
 PORTNAME=	ccid
-PORTVERSION=	1.8.2
+PORTVERSION=	1.8.4
 CATEGORIES=	devel
 MASTER_SITES=	https://ccid.apdu.fr/files/
 PKGNAMEPREFIX=	lib
@@ -17,6 +17,7 @@ LIB_DEPENDS=	libpcsclite.so:devel/pcsc-lite
 USES=		meson perl5 pkgconfig tar:xz
 USE_PERL5=	build
 
+MESON_ARGS=	--default-library=both
 MESON_FALSE=	class \
 		composite-as-multislot \
 		embedded \

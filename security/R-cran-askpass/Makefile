@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Safe Password Entry for R, Git, and SSH
-WWW=		https://cran.r-project.org/web/packages/askpass/
+WWW=		https://cran.r-project.org/package=askpass
 
 LICENSE=	MIT
 

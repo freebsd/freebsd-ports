@@ -10,6 +10,9 @@ WWW?=		https://secure.phabricator.com/book/arcanist/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Discontinued, use devel/phorgeit-${PORTNAME}${SLAVE_PKGNAMESUFFIX} instead
+EXPIRATION_DATE=2026-12-31
+
 USES=		php:cli,flavors python:env shebangfix
 IGNORE_WITH_PHP=	85 86
 USE_GITHUB=	yes

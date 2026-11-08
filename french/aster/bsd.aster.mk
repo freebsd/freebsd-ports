@@ -2,18 +2,32 @@
 #
 # Common variables used by ports related to Code_Aster
 
-DISTVERSIONPREFIX=	full-src-
-DISTVERSIONSUFFIX=	.noarch
-MASTER_SITES=	http://www.code-aster.org/FICHIERS/	\
-		LOCAL/thierry
-DISTNAME=	aster-${DISTVERSIONPREFIX}${ASTER_DISTVERSION}${DISTVERSIONSUFFIX}
 DISTINFO_FILE=	${.CURDIR}/../../french/aster/distinfo
 
-ASTER_VER=	14.6.0
-ASTER_DISTVERSION=	${ASTER_VER}-1
-EXTRACT_WRKSRC=	${WRKDIR}/aster-${DISTVERSIONPREFIX}${ASTER_VER}/SRC
+ASTER_VER=	17.5.4
+PRE_REQ_VER=	20251026
+PRE_REQ_TAG=	274083360	# See https://gitlab.com/codeaster-opensource-documentation/opensource-installation-development/-/blob/main/devel/changelog.md
+MASTER_SITES=	https://gitlab.com/codeaster/src/-/archive/${ASTER_VER}/:aster	\
+		https://gitlab.com/codeaster-opensource-documentation/opensource-installation-development/-/package_files/${PRE_REQ_TAG}/download?dummy=/:prereq
+USES+=		tar:bz2
+ASTERTAR=	src-${ASTER_VER}${EXTRACT_SUFX}
 
-.if ${PORTNAME} == metis-edf || ${PORTNAME} == mumps-edf
+PREREQ=		codeaster-prerequisites-${PRE_REQ_VER}-oss
+PREREQTAR=	${PREREQ}.tar.gz
+DISTFILES=	${ASTERTAR}:aster	\
+		${PREREQTAR}:prereq
+DIST_SUBDIR=	Code_Aster
+
+inst_dir=	${PREFIX}/aster	# ASTER_ROOT
+
+.if ${PORTNAME} == aster
+EXTRACT_ONLY=	${ASTERTAR}
+.else
+EXTRACT_ONLY=	${PREREQTAR}
+EXTRACT_WRKSRC=	${WRKDIR}/${PREREQ}/archives
+.endif
+
+.if ${PORTNAME} == metis-edf
 TARNAME=	${PORTNAME:C|-edf||}
 .else
 TARNAME=	${PORTNAME}
@@ -21,6 +35,11 @@ TARNAME=	${PORTNAME}
 
 .if ${PORTNAME} != aster
 post-extract:
-	(cd ${WRKDIR} &&	\
-	${TAR} ${EXTRACT_BEFORE_ARGS} ${EXTRACT_WRKSRC}/${TARNAME}${DVPFX}-${DISTVERSION}${DVSFX}${EXTRACT_SUFX} ${EXTRACT_AFTER_ARGS})
+.  if (${PORTNAME} != medcoupling) && (${PORTNAME} != codeaster-frontend)
+	(cd ${WRKDIR}/ &&	\
+	${TAR} ${EXTRACT_BEFORE_ARGS} ${EXTRACT_WRKSRC}/${TARNAME}${DVPFX}-${DISTVERSION}${DVSFX}.tar.gz ${EXTRACT_AFTER_ARGS})
+.  else
+	(cd ${WRKDIR}/ &&	\
+	${TAR} ${EXTRACT_BEFORE_ARGS} ${EXTRACT_WRKSRC}/${PORTNAME}-${SHTAGNAME}${DVPFX}.tar.gz ${EXTRACT_AFTER_ARGS})
+.  endif
 .endif

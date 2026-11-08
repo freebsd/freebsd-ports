@@ -29,6 +29,18 @@
     SUBDIR += bitstream-vera
     SUBDIR += bitter
     SUBDIR += blackout
+    SUBDIR += bpmf-genryu
+    SUBDIR += bpmf-genseki
+    SUBDIR += bpmf-gensen
+    SUBDIR += bpmf-genwan
+    SUBDIR += bpmf-genyo
+    SUBDIR += bpmf-genyog
+    SUBDIR += bpmf-huninn
+    SUBDIR += bpmf-iansui
+    SUBDIR += bpmf-special
+    SUBDIR += bpmf-zihikai
+    SUBDIR += bpmf-zihisans
+    SUBDIR += bpmf-zihiserif
     SUBDIR += c64bdf
     SUBDIR += cantarell-fonts
     SUBDIR += cascadia-code
@@ -51,6 +63,7 @@
     SUBDIR += cyr-rfx
     SUBDIR += datalegreya
     SUBDIR += dejavu
+    SUBDIR += departure-mono
     SUBDIR += dina
     SUBDIR += doulos
     SUBDIR += doulos-compact
@@ -142,6 +155,7 @@
     SUBDIR += hack-font
     SUBDIR += hanazono-fonts-ttf
     SUBDIR += hermit
+    SUBDIR += ia-writer-fonts
     SUBDIR += iansui
     SUBDIR += ibmfonts
     SUBDIR += inconsolata-lgc-ttf
@@ -268,6 +282,7 @@
     SUBDIR += nerd-fonts-victormono
     SUBDIR += nerd-fonts-zedmono
     SUBDIR += nexfontsel
+    SUBDIR += nordwand-mono-ttf
     SUBDIR += noto
     SUBDIR += noto-basic
     SUBDIR += noto-emoji
@@ -364,12 +379,10 @@
     SUBDIR += py-booleanOperations
     SUBDIR += py-cffsubr
     SUBDIR += py-compreffor
-    SUBDIR += py-cu2qu
     SUBDIR += py-defcon
     SUBDIR += py-fclist-cffi
     SUBDIR += py-fontMath
     SUBDIR += py-fontfeatures
-    SUBDIR += py-fontmake
     SUBDIR += py-gflanguages
     SUBDIR += py-gfmetadata
     SUBDIR += py-gfsubsets
@@ -386,6 +399,8 @@
     SUBDIR += py-vfblib
     SUBDIR += raleway
     SUBDIR += roboto-fonts-ttf
+    SUBDIR += rubik
+    SUBDIR += selawik
     SUBDIR += sgifonts
     SUBDIR += sharefonts
     SUBDIR += showfont

@@ -1,0 +1,24 @@
+--- configure.in.orig	2026-08-29 20:19:48 UTC
++++ configure.in
+@@ -59,7 +59,7 @@ dnl Work around the lack of certain typedefs.
+ AC_PROG_INSTALL
+ 
+ dnl Work around the lack of certain typedefs.
+-AC_TYPE_SOCKLEN_T
++dnl AC_TYPE_SOCKLEN_T
+ 
+ dnl The alpha architecture needs special flags for binary portability
+ case "$target" in
+@@ -218,8 +218,11 @@ have_gtk=no
+ [  --enable-gtk-player     build a GTk sample SMPEG player [default=yes]],
+               , enable_gtk_player=yes)
+ have_gtk=no
++
+ if test x$enable_gtk_player = xyes; then
+-    AM_PATH_GTK_2_0(2.0.0, have_gtk=yes)
++    m4_ifdef([AM_PATH_GTK_2_0], [
++        AM_PATH_GTK_2_0(2.0.0, have_gtk=yes)
++    ])
+     if test x$have_gtk = xyes; then
+         CFLAGS="$CFLAGS $GTK_CFLAGS"
+     fi

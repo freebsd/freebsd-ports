@@ -1,4 +1,4 @@
---- services/resource_coordinator/memory_instrumentation/queued_request_dispatcher.cc.orig	2025-12-05 10:12:50 UTC
+--- services/resource_coordinator/memory_instrumentation/queued_request_dispatcher.cc.orig	2026-09-25 15:26:43 UTC
 +++ services/resource_coordinator/memory_instrumentation/queued_request_dispatcher.cc
 @@ -56,7 +56,7 @@ uint32_t CalculatePrivateFootprintKb(const mojom::RawO
                                       uint32_t shared_resident_kb) {
@@ -36,25 +36,7 @@
    std::vector<base::ProcessId> pids;
    mojom::ClientProcess* browser_client = nullptr;
    base::ProcessId browser_client_pid = base::kNullProcessId;
-@@ -285,7 +285,7 @@ void QueuedRequestDispatcher::SetUpAndDispatchVmRegion
-     const OsCallback& os_callback) {
- // On Linux, OS stats can only be dumped from a privileged process to
- // get around to sandboxing/selinux restrictions (see crbug.com/461788).
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
-   mojom::ClientProcess* browser_client = nullptr;
-   base::ProcessId browser_client_pid = 0;
-   for (const auto& client_info : clients) {
-@@ -335,7 +335,7 @@ QueuedRequestDispatcher::FinalizeVmRegionRequest(
-     // each client process provides 1 OS dump, % the case where the client is
-     // disconnected mid dump.
-     OSMemDumpMap& extra_os_dumps = response.second.os_dumps;
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
-     for (auto& kv : extra_os_dumps) {
-       auto pid = kv.first == base::kNullProcessId ? original_pid : kv.first;
-       DCHECK(results.find(pid) == results.end());
-@@ -396,7 +396,7 @@ void QueuedRequestDispatcher::Finalize(QueuedRequest* 
+@@ -313,7 +313,7 @@ void QueuedRequestDispatcher::Finalize(QueuedRequest* 
      // crash). In the latter case (OS_LINUX) we expect the full map to come
      // from the browser process response.
      OSMemDumpMap& extra_os_dumps = response.second.os_dumps;

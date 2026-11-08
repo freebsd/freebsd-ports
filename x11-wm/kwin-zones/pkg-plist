@@ -1,0 +1,5 @@
+%%QT_PLUGINDIR%%/kwin/plugins/KWinZones.so
+%%QT_QMLDIR%%/org/kde/zones/QtZonesQuick.qmltypes
+%%QT_QMLDIR%%/org/kde/zones/kde-qmlmodule.version
+%%QT_QMLDIR%%/org/kde/zones/libQtZonesQuick.so
+%%QT_QMLDIR%%/org/kde/zones/qmldir

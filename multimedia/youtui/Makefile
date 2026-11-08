@@ -1,7 +1,7 @@
 PORTNAME=	youtui
 DISTVERSIONPREFIX=	youtui/v
-DISTVERSION=	0.0.38
-PORTREVISION=	1
+DISTVERSION=	0.0.39
+PORTREVISION=	2
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -470,7 +470,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		quick-error-2.0.1 \
 		quick-xml-0.39.3 \
 		quinn-0.11.9 \
-		quinn-proto-0.11.14 \
+		quinn-proto-0.11.17 \
 		quinn-udp-0.5.14 \
 		quote-1.0.45 \
 		r-efi-5.3.0 \
@@ -485,6 +485,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		rand_core-0.9.5 \
 		rand_core-0.10.1 \
 		rand_distr-0.6.0 \
+		rand_pcg-0.10.2 \
 		rand_xoshiro-0.7.0 \
 		rat-cursor-2.0.0 \
 		rat-event-2.1.0 \
@@ -836,9 +837,6 @@ PLIST_FILES=	bin/${PORTNAME}
 
 do-install:
 	# binaries (workaround for error: found a virtual manifest at `xx` instead of a package manifest)
-	echo ">> find"
-	find ${WRKDIR}/target
-	echo "<< find"
 	${INSTALL_PROGRAM} \
 		${WRKDIR}/target/release/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/bin

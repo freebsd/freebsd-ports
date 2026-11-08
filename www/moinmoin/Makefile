@@ -5,12 +5,15 @@ CATEGORIES=	www python
 MASTER_SITES=	https://static.moinmo.in/files/
 DISTNAME=	moin-${PORTVERSION}
 
-MAINTAINER=	python@FreeBSD.org
+MAINTAINER=	wiki-admin@FreeBSD.org
 COMMENT=	Easy to use, full-featured and extensible wiki software package
 WWW=		https://moinmo.in/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/docs/licenses/COPYING
+
+DEPRECATED=	Uses expired lang/python27
+EXPIRATION_DATE=	2026-11-01
 
 USES=		cpe python:2.7 shebangfix
 USE_PYTHON=	distutils

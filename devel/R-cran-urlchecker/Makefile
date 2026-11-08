@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	URL checking tools
-WWW=		https://cran.r-project.org/package=urlchecker
 
 LICENSE=	GPLv3
 

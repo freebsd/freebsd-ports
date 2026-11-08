@@ -1,5 +1,6 @@
 PORTNAME=	deluge
 DISTVERSION=	2.2.0
+PORTREVISION=	1
 CATEGORIES=	net-p2p python
 MASTER_SITES=	PYPI
 PKGNAMESUFFIX=	-cli
@@ -11,36 +12,43 @@ WWW=		https://deluge-torrent.org/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	intltool-merge:textproc/intltool \
-		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel \
-		${PYTHON_PKGNAMEPREFIX}rjsmin>0:archivers/py-rjsmin@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyxdg>=0.18:devel/py-pyxdg@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}rjsmin>0:archivers/py-rjsmin@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR} \
+		intltool-merge:textproc/intltool
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}chardet>=1.0.1:textproc/py-chardet@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}distro>0:sysutils/py-distro@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}libtorrent-rasterbar>=0:net-p2p/py-libtorrent-rasterbar@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyopenssl>=0.8:security/py-pyopenssl@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}chardet>=1.0.1:textproc/py-chardet@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mako>=0.2.5:textproc/py-mako@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}service-identity>=0:security/py-service-identity@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyopenssl>=0.8:security/py-pyopenssl@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyxdg>=0.18:devel/py-pyxdg@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rencode>0:converters/py-rencode@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}zope.interface>0:devel/py-zope.interface@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}distro>0:sysutils/py-distro@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}service-identity>=0:security/py-service-identity@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.interface>0:devel/py-zope.interface@${PY_FLAVOR}
 
 USES=		cpe gettext python
-USE_PYTHON=	autoplist distutils
 
 CPE_VENDOR=	deluge-torrent
 
-NO_ARCH=	yes
-
+USE_PYTHON=	autoplist pep517
 USE_RC_SUBR=	deluged deluge_web
+
+NO_ARCH=	yes
 SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
 
-OPTIONS_DEFINE=	DOCS PILLOW
-OPTIONS_DEFAULT=	PILLOW
-PILLOW_DESC=Support for resizing tracker icons (pulls in many graphics libraries which may not be useful in a headless server).
-PILLOW_RUN_DEPENDS=${PY_PILLOW}
-
+PLIST_FILES=	share/man/man1/deluge-console.1.gz \
+		share/man/man1/deluge-gtk.1.gz \
+		share/man/man1/deluge-web.1.gz \
+		share/man/man1/deluge.1.gz \
+		share/man/man1/deluged.1.gz
 PORTDOCS=	CHANGELOG.md README.md
+
+OPTIONS_DEFINE=		DOCS PILLOW
+OPTIONS_DEFAULT=	PILLOW
+PILLOW_DESC=		Support for resizing tracker icons (pulls in many graphics libraries which may not be useful in a headless server).
+PILLOW_RUN_DEPENDS=	${PY_PILLOW}
 
 post-patch:
 	@${REINPLACE_CMD} -e "/'new_release_check':/s|True,|False,|g ; \

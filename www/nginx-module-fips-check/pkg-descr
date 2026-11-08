@@ -1,0 +1,9 @@
+The fips_check module reports whether the OpenSSL that nginx is linked
+against runs in FIPS mode, and stops a worker that finds a different answer
+than the master did at startup.  It has no directives: it writes one line
+when a cycle starts, so whoever has to show that a server runs in FIPS mode
+gets it from the process rather than from the configuration that was meant
+to arrange it.
+
+This port only installs the module sources.  The module itself is built by
+the nginx ports when their FIPS_CHECK option is enabled.

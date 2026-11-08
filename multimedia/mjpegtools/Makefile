@@ -26,7 +26,6 @@ GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--without-dga \
 			--without-libquicktime \
 			--without-x
-CONFIGURE_TARGET=	${ARCH:S/amd64/x86_64/}-portbld-${OPSYS:tl}${OSREL}
 INSTALL_TARGET=		install-strip
 
 CONFLICTS=	mplex

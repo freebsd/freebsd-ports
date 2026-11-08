@@ -1,7 +1,7 @@
 PORTNAME=	cilium
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.18.8
-PORTREVISION=	9
+DISTVERSION=	0.20.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	dutra@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://github.com/cilium/cilium-cli
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.25+,modules
+USES=		go:modules
 
 GO_MODULE=	github.com/cilium/cilium-cli
 GO_BUILDFLAGS=	-ldflags="\

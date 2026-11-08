@@ -1,7 +1,7 @@
 PORTNAME=	elan
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.2.3
-PORTREVISION=	1
+DISTVERSION=	4.2.4
+PORTREVISION=	3
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -26,7 +26,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		aho-corasick-1.1.3 \
 		aligned-0.4.2 \
 		ansi_term-0.12.1 \
-		arbitrary-1.4.1 \
 		as-slice-0.2.1 \
 		atty-0.2.14 \
 		autocfg-1.4.0 \
@@ -38,8 +37,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		bumpalo-3.16.0 \
 		byteorder-1.5.0 \
 		bytes-1.8.0 \
-		bzip2-0.5.2 \
-		bzip2-sys-0.1.13+1.0.8 \
+		bzip2-0.6.1 \
 		cc-1.2.0 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.2.1 \
@@ -49,17 +47,13 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		core-foundation-0.9.4 \
 		core-foundation-sys-0.8.7 \
 		cpufeatures-0.2.15 \
-		crc-3.2.1 \
-		crc-catalog-2.4.0 \
-		crc32fast-1.4.2 \
-		crossbeam-utils-0.8.21 \
+		crc32fast-1.5.0 \
 		crypto-common-0.1.6 \
 		curl-0.4.47 \
 		curl-sys-0.4.78+curl-8.11.0 \
 		cvt-0.1.2 \
-		deflate64-0.1.9 \
+		deflate64-0.1.12 \
 		deranged-0.4.0 \
-		derive_arbitrary-1.4.1 \
 		digest-0.10.7 \
 		dirs-3.0.2 \
 		dirs-next-2.0.0 \
@@ -74,7 +68,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		error-chain-0.12.4 \
 		fastrand-2.2.0 \
 		filetime-0.2.25 \
-		flate2-1.0.34 \
+		flate2-1.1.9 \
 		fnv-1.0.7 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
@@ -127,18 +121,18 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		js-sys-0.3.77 \
 		json-0.12.4 \
 		lazy_static-1.5.0 \
-		libc-0.2.162 \
+		libbz2-rs-sys-0.2.5 \
+		libc-0.2.186 \
 		libredox-0.1.3 \
 		libz-sys-1.1.20 \
 		linux-raw-sys-0.4.14 \
 		litemap-0.7.3 \
 		lockfree-object-pool-0.1.6 \
 		log-0.4.22 \
-		lzma-rs-0.3.0 \
-		lzma-sys-0.1.20 \
+		lzma-rust2-0.15.8 \
 		memchr-2.7.4 \
 		mime-0.3.17 \
-		miniz_oxide-0.8.0 \
+		miniz_oxide-0.8.9 \
 		mio-1.0.2 \
 		native-tls-0.2.12 \
 		nix-0.29.0 \
@@ -158,6 +152,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.31 \
 		powerfmt-0.2.0 \
+		ppmd-rust-1.4.0 \
 		ppv-lite86-0.2.20 \
 		proc-macro2-1.0.89 \
 		pulldown-cmark-0.13.0 \
@@ -191,6 +186,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		serde_json-1.0.132 \
 		serde_urlencoded-0.7.1 \
 		sha1-0.10.6 \
+		sha2-0.10.9 \
 		shlex-1.3.0 \
 		simd-adler32-0.3.7 \
 		slab-0.4.9 \
@@ -221,6 +217,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		tracing-0.1.40 \
 		tracing-core-0.1.32 \
 		try-lock-0.2.5 \
+		typed-path-0.12.3 \
 		typenum-1.17.0 \
 		ucd-trie-0.1.7 \
 		unicase-2.8.1 \
@@ -273,7 +270,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		write16-1.0.0 \
 		writeable-0.5.5 \
 		xattr-1.3.1 \
-		xz2-0.1.7 \
 		yoke-0.7.4 \
 		yoke-derive-0.7.4 \
 		zerocopy-0.7.35 \
@@ -284,7 +280,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		zeroize_derive-1.4.2 \
 		zerovec-0.10.4 \
 		zerovec-derive-0.10.3 \
-		zip-2.6.1 \
+		zip-7.2.0 \
+		zlib-rs-0.6.6 \
 		zopfli-0.8.1 \
 		zstd-0.12.4 \
 		zstd-0.13.3 \

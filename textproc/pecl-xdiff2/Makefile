@@ -1,5 +1,5 @@
 PORTNAME=	xdiff
-PORTVERSION=	2.1.1
+PORTVERSION=	2.2.0
 CATEGORIES=	textproc pear
 
 MAINTAINER=	dbaio@FreeBSD.org

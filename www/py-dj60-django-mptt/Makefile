@@ -23,4 +23,8 @@ CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}*${PORTNAME}
 
 NO_ARCH=		yes
 
+# The only user is net-mgmt/netbox and its upstream recently pinned the
+# version to 0.18.0.
+PORTSCOUT=	limit:0\.18\.
+
 .include <bsd.port.mk>

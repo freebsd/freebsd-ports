@@ -1,0 +1,94 @@
+#!/bin/sh
+
+# PROVIDE: linkwarden_worker
+# REQUIRE: LOGIN postgresql meilisearch
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# linkwarden_worker_enable (bool):	Set to NO by default.
+#					Set it to YES to enable the worker that
+#					preserves the saved pages.
+# linkwarden_worker_data (str):		Data directory, holds the archives.
+#					Default: /var/db/linkwarden
+# linkwarden_worker_env_file (str):	Environment file with DATABASE_URL and
+#					the other settings.
+#					Default: %%PREFIX%%/etc/linkwarden.env
+# linkwarden_worker_browser (str):	Browser used for screenshots and PDFs.
+#					Default: %%PREFIX%%/bin/chrome
+
+. /etc/rc.subr
+
+name=linkwarden_worker
+rcvar=linkwarden_worker_enable
+
+load_rc_config $name
+
+: ${linkwarden_worker_enable:=NO}
+: ${linkwarden_worker_user:=linkwarden}
+: ${linkwarden_worker_group:=linkwarden}
+: ${linkwarden_worker_data:=/var/db/linkwarden}
+: ${linkwarden_worker_env_file:=%%PREFIX%%/etc/linkwarden.env}
+: ${linkwarden_worker_browser:=%%PREFIX%%/bin/chrome}
+
+pidfile=/var/run/linkwarden/${name}.pid
+childpidfile=/var/run/linkwarden/${name}_child.pid
+required_files="%%WWWDIR%%/apps/worker/worker.ts"
+
+linkwarden_worker_chdir=${linkwarden_worker_data}
+start_precmd=linkwarden_worker_precmd
+stop_cmd=linkwarden_worker_stop
+
+command=/usr/sbin/daemon
+command_args="-f -S -H -P ${pidfile} -p ${childpidfile} \
+	-o /var/log/linkwarden/${name}.log \
+	%%NODE%% %%WWWDIR%%/node_modules/tsx/dist/cli.mjs \
+	%%WWWDIR%%/apps/worker/worker.ts"
+
+linkwarden_worker_stop()
+{
+	local pid
+	pid=$(check_pidfile ${pidfile} ${command})
+	if [ -z "$pid" ]; then
+		echo "${name} not running? (check ${pidfile})."
+		return 1
+	fi
+	echo "Stopping ${name}."
+	kill -TERM -- -${pid} 2>/dev/null || kill -TERM ${pid}
+	wait_for_pids ${pid}
+	rm -f ${pidfile} ${childpidfile}
+}
+
+linkwarden_worker_precmd()
+{
+	umask 027
+	install -d -m 750 -o ${linkwarden_worker_user} \
+		-g ${linkwarden_worker_group} \
+		/var/run/linkwarden /var/log/linkwarden \
+		${linkwarden_worker_data} ${linkwarden_worker_data}/data
+
+	if [ -r "${linkwarden_worker_env_file}" ]; then
+		set -a
+		. "${linkwarden_worker_env_file}"
+		set +a
+	fi
+
+	# monolith and the browser are called by name, so they have to be in PATH
+	export PATH=%%PREFIX%%/sbin:%%PREFIX%%/bin:/usr/sbin:/usr/bin:/sbin:/bin
+	export NODE_ENV=production
+	export STORAGE_FOLDER=${STORAGE_FOLDER:-${linkwarden_worker_data}/data}
+	export PRISMA_HIDE_UPDATE_MESSAGE=1
+	export PRISMA_CLI_QUERY_ENGINE_TYPE=binary
+	export PRISMA_QUERY_ENGINE_BINARY=%%PREFIX%%/libexec/prisma-engines/query-engine
+	export PRISMA_SCHEMA_ENGINE_BINARY=%%PREFIX%%/libexec/prisma-engines/schema-engine
+	export PRISMA_FMT_BINARY=%%PREFIX%%/libexec/prisma-engines/prisma-fmt
+	export PRISMA_QUERY_ENGINE_LIBRARY=%%WWWDIR%%/libquery_engine.node
+	# playwright refuses to load without a browser path, and it is told to
+	# use the chromium of the ports tree instead of downloading one
+	export PLAYWRIGHT_BROWSERS_PATH=${linkwarden_worker_data}/ms-playwright
+	export PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1
+	export PLAYWRIGHT_LAUNCH_OPTIONS_EXECUTABLE_PATH=${PLAYWRIGHT_LAUNCH_OPTIONS_EXECUTABLE_PATH:-${linkwarden_worker_browser}}
+}
+
+run_rc_command "$1"

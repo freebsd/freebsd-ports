@@ -3,7 +3,6 @@ LLVM_MAN1SRCS= \
 	clang-tblgen.1 \
 	dsymutil.1 \
 	llc.1 \
-	lldb-tblgen.1 \
 	lli.1 \
 	llvm-addr2line.1 \
 	llvm-ar.1 \

@@ -1,0 +1,6 @@
+%%PYTHON_SITELIBDIR%%/yara%%PYTHON_TAG%%.so
+%%PYTHON_SITELIBDIR%%/yara_python_dex-1.1.0.dist-info/LICENSE
+%%PYTHON_SITELIBDIR%%/yara_python_dex-1.1.0.dist-info/METADATA
+%%PYTHON_SITELIBDIR%%/yara_python_dex-1.1.0.dist-info/RECORD
+%%PYTHON_SITELIBDIR%%/yara_python_dex-1.1.0.dist-info/WHEEL
+%%PYTHON_SITELIBDIR%%/yara_python_dex-1.1.0.dist-info/top_level.txt

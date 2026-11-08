@@ -6,9 +6,9 @@
    isLinuxAppImage: () => boolean;
 +  isFreeBSD: (minVersion?: string) => boolean;
    isMacOS: (minVersion?: string) => boolean;
+   isMAS: () => boolean;
    isWindows: (minVersion?: string) => boolean;
- };
-@@ -32,6 +33,7 @@ export function getOSFunctions(osRelease: string): OST
+@@ -33,6 +34,7 @@ export function getOSFunctions(osRelease: string): OST
    const isMacOS = createIsPlatform('darwin', osRelease);
    const isLinux = createIsPlatform('linux', osRelease);
    const isWindows = createIsPlatform('win32', osRelease);
@@ -16,7 +16,7 @@
  
    const isLinuxAppImage = (): boolean => {
      return process.platform === 'linux' && process.env.APPIMAGE != null;
-@@ -44,6 +46,9 @@ export function getOSFunctions(osRelease: string): OST
+@@ -45,6 +47,9 @@ export function getOSFunctions(osRelease: string): OST
      if (isWindows()) {
        return 'Windows';
      }
@@ -26,19 +26,19 @@
      return 'Linux';
    };
  
-@@ -54,6 +59,9 @@ export function getOSFunctions(osRelease: string): OST
-     if (isWindows()) {
+@@ -56,6 +61,9 @@ export function getOSFunctions(osRelease: string): OST
+       // oxlint-disable-next-line signal-desktop/enforce-class-name-has-styles
        return 'os-windows';
      }
 +    if (isFreeBSD()) {
 +      return 'os-freebsd';
 +    }
+     // oxlint-disable-next-line signal-desktop/enforce-class-name-has-styles
      return 'os-linux';
    };
- 
-@@ -64,5 +72,6 @@ export function getOSFunctions(osRelease: string): OST
-     isLinuxAppImage,
+@@ -68,5 +76,6 @@ export function getOSFunctions(osRelease: string): OST
      isMacOS,
+     isMAS: () => process.mas,
      isWindows,
 +    isFreeBSD,
    };

@@ -1,6 +1,6 @@
 PORTNAME=	dbcsr
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.9.1
+DISTVERSION=	2.10.0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -56,6 +56,11 @@ CMAKE_ARGS+=	-DCMAKE_Fortran_FLAGS="${FFLAGS} -fallow-argument-mismatch" # -fall
 CMAKE_ARGS+=	-DCMAKE_Fortran_FLAGS="${FFLAGS}"
 .  endif
 
-# tests as of 2.9.1: 100% tests passed, 0 tests failed out of 19
+# OpenBLAS on FreeBSD may select broken fallback (Prescott/Barcelona) kernels
+# for modern AMD CPUs when built without AVX/AVX2 support, causing SIGSEGV/SIGBUS
+# in its *gemm kernels. In case this happens, force a safe coretype for the test run:
+#TEST_ENV+=	OPENBLAS_CORETYPE=NEHALEM
+
+# tests as of 2.10.0: 100% tests passed, 0 tests failed out of 19
 
 .include <bsd.port.post.mk>

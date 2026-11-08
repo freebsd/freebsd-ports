@@ -1,7 +1,7 @@
-TIMESTAMP = 1779804071
-SHA256 (go/www_gotty/sorenisanerd-gotty-v1.8.0_GH0/v1.8.0.mod) = a7a15698d2f8f5825d28bca732d04c8f71e6563a95d9de7ba92f36c56a78c1a7
-SIZE (go/www_gotty/sorenisanerd-gotty-v1.8.0_GH0/v1.8.0.mod) = 621
-SHA256 (go/www_gotty/sorenisanerd-gotty-v1.8.0_GH0/v1.8.0.zip) = 75dd0108979a4c603b543b09f23aa0dc1b25c6db0e47562d77e2cffaeaab3c36
-SIZE (go/www_gotty/sorenisanerd-gotty-v1.8.0_GH0/v1.8.0.zip) = 3607849
-SHA256 (go/www_gotty/sorenisanerd-gotty-v1.8.0_GH0/sorenisanerd-gotty-v1.8.0_GH0.tar.gz) = 470de61cd7e114f2875027842d7b7a389338ce80fa11f8182d41215941d6ab22
-SIZE (go/www_gotty/sorenisanerd-gotty-v1.8.0_GH0/sorenisanerd-gotty-v1.8.0_GH0.tar.gz) = 3579514
+TIMESTAMP = 1791646391
+SHA256 (go/www_gotty/sorenisanerd-gotty-v1.10.0_GH0/v1.10.0.mod) = a7a15698d2f8f5825d28bca732d04c8f71e6563a95d9de7ba92f36c56a78c1a7
+SIZE (go/www_gotty/sorenisanerd-gotty-v1.10.0_GH0/v1.10.0.mod) = 621
+SHA256 (go/www_gotty/sorenisanerd-gotty-v1.10.0_GH0/v1.10.0.zip) = d3c91d7a7ac4a3be6af64e4fb33f5c26c0cc882aaac4ee3261189270297c3119
+SIZE (go/www_gotty/sorenisanerd-gotty-v1.10.0_GH0/v1.10.0.zip) = 3750110
+SHA256 (go/www_gotty/sorenisanerd-gotty-v1.10.0_GH0/sorenisanerd-gotty-v1.10.0_GH0.tar.gz) = f9a5a4663ce95f31a24d51ae3bc5c9ace5e0296cc9978c364469130264605599
+SIZE (go/www_gotty/sorenisanerd-gotty-v1.10.0_GH0/sorenisanerd-gotty-v1.10.0_GH0.tar.gz) = 3586242

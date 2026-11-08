@@ -1,7 +1,7 @@
 PORTNAME=	etcd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.6.5
-PORTREVISION=	8
+DISTVERSION=	3.6.15
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	https://raw.githubusercontent.com/etcd-io/${PORTNAME}/${DISTVERSIONFULL}/:gomod
 PKGNAMEPREFIX=	coreos-
@@ -22,9 +22,6 @@ WWW=		https://etcd.io/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-NOT_FOR_ARCHS=	aarch64
-NOT_FOR_ARCHS_REASON=	fails to fetch: v0.0.1-go1.23.8.freebsd-arm64.lock: no locks available
 
 USES=		cpe go:modules
 USE_GITHUB=	yes

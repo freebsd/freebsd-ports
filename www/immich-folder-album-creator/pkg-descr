@@ -1,0 +1,7 @@
+Creates albums in Immich from the folder structure of an external library.
+Every folder becomes an album and assets are added to the album matching
+their path. Which folder level provides the album name is configurable, as
+are separators, replacement patterns and the users an album is shared with.
+
+This is a one shot command, not a service. Repeated runs only add what is
+missing.

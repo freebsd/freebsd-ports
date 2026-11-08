@@ -1,0 +1,2 @@
+#!/bin/sh
+exec %%PYTHON_CMD%% %%DATADIR%%/immich_auto_album.py "$@"

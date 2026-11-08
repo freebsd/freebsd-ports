@@ -1,0 +1,79 @@
+commit 844fb87cdb32cc1999123606b734539e964e4407 (mattraydub/mlock-failure-diagnostic)
+Parent: 090f4b0e6981d458b07a8e95d3eccf5a7c0b9542
+Author:     Matt Watson <matt@swarmbox.com>
+AuthorDate: Tue Aug 18 13:51:29 2026 -0700
+Commit:     Matt Watson <matt@swarmbox.com>
+CommitDate: Thu Aug 20 10:58:02 2026 -0700
+
+    common: explain why mlock() failed instead of a bare abort.
+    
+    mlock_tal_memory() aborts when sodium_mlock() fails, with no output at
+    all.  The operator sees only "lightning_hsmd: FATAL SIGNAL 6" and has no
+    indication of the cause.
+    
+    This is easy to hit.  FreeBSD jails deny mlock(2) unless the jail has
+    allow.mlock set, and containerized Linux deployments hit the same wall
+    against RLIMIT_MEMLOCK.  In both cases the failure is indistinguishable
+    from a crash.
+    
+    Keep the abort -- falling back to unlocked memory would silently leave
+    the secret in swappable pages -- but say what failed and how to grant
+    the privilege.
+    
+    Changelog-Fixed: Report the cause when locking secret memory fails, instead of aborting with no diagnostic.
+
+diff --git a/common/utils.c b/common/utils.c
+index 0bd7a72cb..6c8ad7252 100644
+--- common/utils.c
++++ common/utils.c
+@@ -1,19 +1,21 @@
+ #include "config.h"
+ #include <assert.h>
+ #include <bitcoin/chainparams.h>
++#include <ccan/err/err.h>
+ #include <ccan/list/list.h>
+ #include <ccan/mem/mem.h>
+ #include <ccan/str/hex/hex.h>
+ #include <ccan/tal/path/path.h>
+ #include <ccan/tal/str/str.h>
+ #include <ccan/utf8/utf8.h>
+ #include <common/utils.h>
+ #include <errno.h>
+ #include <locale.h>
+ #include <sodium.h>
++#include <string.h>
+ 
+ const tal_t *wally_tal_ctx = NULL;
+ secp256k1_context *secp256k1_ctx;
+ const tal_t *tmpctx;
+ 
+ const struct chainparams *chainparams;
+@@ -97,14 +99,27 @@ static void destroy_munlock(const tal_t *ptr)
+ {
+ 	sodium_munlock((void *)ptr, tal_bytelen(ptr));
+ }
+ 
+ void mlock_tal_memory(const tal_t *ptr)
+ {
+-	if (sodium_mlock((void *)ptr, tal_bytelen(ptr)) != 0)
++	if (sodium_mlock((void *)ptr, tal_bytelen(ptr)) != 0) {
++		warnx("FATAL: could not lock %zu bytes of sensitive memory"
++		      " into RAM: %s\n"
++		      "Memory locking is required to keep secrets out of"
++		      " swap.\n"
++		      "If you are running in a container or jail, the"
++		      " privilege must be granted:\n"
++		      "  FreeBSD jail: set allow.mlock=1 for the jail\n"
++		      "  Linux: raise RLIMIT_MEMLOCK (ulimit -l), or grant"
++		      " the CAP_IPC_LOCK capability\n"
++		      "  Docker/Podman: --ulimit memlock=-1:-1 or"
++		      " --cap-add=IPC_LOCK",
++		      tal_bytelen(ptr), strerror(errno));
+ 		abort();
++	}
+ 	tal_add_destructor(ptr, destroy_munlock);
+ }
+ 
+ bool tal_arr_eq_(const void *a, const void *b, size_t unused)
+ {
+ 	return memeq(a, tal_bytelen(a), b, tal_bytelen(b));

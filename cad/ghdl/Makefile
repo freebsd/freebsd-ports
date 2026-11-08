@@ -11,8 +11,6 @@ WWW=		http://ghdl.free.fr/ \
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING.md
 
-BROKEN_aarch64=	build breaks, see https://github.com/ghdl/ghdl/issues/2639
-
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyTooling>=2.11.0:devel/py-pyTooling@${PY_FLAVOR} \
 		bash:shells/bash
 

@@ -195,6 +195,7 @@ include/proxygen/lib/http/coro/client/HTTPCoroSessionPool.h
 include/proxygen/lib/http/coro/client/HTTPSessionFactory.h
 include/proxygen/lib/http/coro/client/ProxygenCertVerifier.h
 include/proxygen/lib/http/coro/client/TLS.h
+include/proxygen/lib/http/coro/client/ValidationPolicy.h
 include/proxygen/lib/http/coro/filters/CompressionFilter.h
 include/proxygen/lib/http/coro/filters/CompressionFilterFactory.h
 include/proxygen/lib/http/coro/filters/DecompressionFilter.h
@@ -333,15 +334,18 @@ include/proxygen/lib/transport/H3DatagramAsyncSocket.h
 include/proxygen/lib/transport/PersistentFizzPskCache.h
 include/proxygen/lib/transport/PersistentQuicPskCache.h
 include/proxygen/lib/transport/PersistentQuicTokenCache.h
+include/proxygen/lib/transport/qmux/FollyQmuxTransport.h
 include/proxygen/lib/transport/qmux/QmuxCodec.h
 include/proxygen/lib/transport/qmux/QmuxConnector.h
 include/proxygen/lib/transport/qmux/QmuxFramer.h
 include/proxygen/lib/transport/qmux/QmuxSession.h
+include/proxygen/lib/transport/qmux/QmuxTransport.h
 include/proxygen/lib/utils/AcceptorAddress.h
 include/proxygen/lib/utils/AsyncTimeoutSet.h
 include/proxygen/lib/utils/CobHelper.h
 include/proxygen/lib/utils/CompressionFilterUtils.h
 include/proxygen/lib/utils/ConditionalGate.h
+include/proxygen/lib/utils/ConnectionTelemetryBridge.h
 include/proxygen/lib/utils/ConsistentHash.h
 include/proxygen/lib/utils/CryptUtil.h
 include/proxygen/lib/utils/Exception.h

@@ -1,4 +1,4 @@
---- tdutils/CMakeLists.txt.orig	2025-05-09 16:51:24 UTC
+--- tdutils/CMakeLists.txt.orig	2026-10-08 21:02:52 UTC
 +++ tdutils/CMakeLists.txt
 @@ -351,7 +351,7 @@ set(TDUTILS_TEST_SOURCE
    PARENT_SCOPE
@@ -9,3 +9,13 @@
  
  if (NOT CMAKE_CROSSCOMPILING AND TDUTILS_MIME_TYPE)
    add_dependencies(tdutils tdmime_auto)
+@@ -428,3 +428,9 @@ endif()
+     target_link_libraries(benchmark-hashset PRIVATE tdutils benchmark::benchmark Folly::folly absl::flat_hash_map absl::hash)
+   endif()
+ endif()
++
++# Add SOVERSION to shared libraries
++set_target_properties(tdutils PROPERTIES 
++        VERSION ${PROJECT_VERSION}
++        SOVERSION ${PROJECT_VERSION_MAJOR}
++        EXPORT_NAME tdutils )

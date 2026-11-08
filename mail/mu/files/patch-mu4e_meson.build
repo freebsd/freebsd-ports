@@ -1,6 +1,6 @@
---- mu4e/meson.build.orig	2026-05-31 14:03:29 UTC
+--- mu4e/meson.build.orig	2026-08-09 10:01:09 UTC
 +++ mu4e/meson.build
-@@ -46,6 +46,7 @@ mu4e_srcs=[
+@@ -47,6 +47,7 @@ mu4e_srcs=[
    'mu4e-contacts.el',
    'mu4e-context.el',
    'mu4e-contrib.el',
@@ -8,7 +8,7 @@
    'mu4e-draft.el',
    'mu4e-folders.el',
    'mu4e-headers.el',
-@@ -73,52 +74,6 @@ mu4e_srcs=[
+@@ -74,52 +75,6 @@ mu4e_srcs=[
    'mu4e-window.el',
    'mu4e.el'
  ]
@@ -36,7 +36,7 @@
 -# byte compile the sources that can be byte-compiled. This may exclude mu4e-dbus.el
 -foreach src : mu4e_bc_srcs
 -  target_name= '@BASENAME@.elc'
--  target_path = join_paths(meson.current_build_dir(), target_name)
+-  target_path = meson.current_build_dir() / target_name
 -  target_func = '(setq byte-compile-dest-file-function(lambda(_) "' + target_path + '"))'
 -
 -  custom_target(src.underscorify() + '_el',

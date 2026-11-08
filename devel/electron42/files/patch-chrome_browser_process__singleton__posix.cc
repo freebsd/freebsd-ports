@@ -1,6 +1,6 @@
---- chrome/browser/process_singleton_posix.cc.orig	2026-01-18 20:29:18 UTC
+--- chrome/browser/process_singleton_posix.cc.orig	2026-08-27 05:36:23 UTC
 +++ chrome/browser/process_singleton_posix.cc
-@@ -369,7 +369,7 @@ bool DisplayProfileInUseError(const base::FilePath& lo
+@@ -389,7 +389,7 @@ bool DisplayProfileInUseError(const base::FilePath& lo
    if (g_disable_prompt)
      return g_user_opted_unlock_in_use_profile;
  

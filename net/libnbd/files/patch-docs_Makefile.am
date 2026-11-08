@@ -1,0 +1,14 @@
+Do not require generated API manuals when POD documentation is disabled.
+
+--- docs/Makefile.am.orig	2025-11-18 10:43:55 UTC
++++ docs/Makefile.am
+@@ -27,7 +27,9 @@ sinclude $(srcdir)/Makefile.inc
+ # prior to its 'all-am: Makefile $(MANS)' rule, which gets parsed before
+ # $(MANS) has grown in size, so we have to add a second all-am dependency.
+ sinclude $(srcdir)/Makefile.inc
++if HAVE_POD
+ all-am: $(api_built:%=%.3)
++endif HAVE_POD
+ 
+ generator_built = \
+ 	Makefile.inc \

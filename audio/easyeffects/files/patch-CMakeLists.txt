@@ -1,0 +1,13 @@
+GCC's libstdc++ aparently requires -ltbb for <execution> support.
+We use libc++ there, so presumably we don't need this.
+
+--- CMakeLists.txt.orig	2026-09-29 00:31:17 UTC
++++ CMakeLists.txt
+@@ -74,7 +74,6 @@ find_package(PkgConfig REQUIRED)
+ 
+ find_package(Threads REQUIRED)
+ find_package(PkgConfig REQUIRED)
+-find_package(TBB REQUIRED)
+ find_package(GSL REQUIRED)
+ # find_package(SoundTouch REQUIRED) # As of SoundTouch 2.4.0 its cmake files are bugged
+ 

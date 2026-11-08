@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Prepare Reproducible Example Code via the Clipboard
-WWW=		https://cran.r-project.org/web/packages/reprex/
+WWW=		https://cran.r-project.org/package=reprex
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -21,7 +21,6 @@ CRAN_DEPENDS=	R-cran-callr>=3.6.0:devel/R-cran-callr \
 		R-cran-rmarkdown>0:textproc/R-cran-rmarkdown \
 		R-cran-rstudioapi>0:devel/R-cran-rstudioapi \
 		R-cran-withr>=2.3.0:devel/R-cran-withr
-BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS} \
 		hs-pandoc>=2.0:textproc/hs-pandoc
 TEST_DEPENDS=	R-cran-testthat>=3.0.2:devel/R-cran-testthat

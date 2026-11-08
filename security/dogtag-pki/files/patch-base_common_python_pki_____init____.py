@@ -1,7 +1,7 @@
---- base/common/python/pki/__init__.py.orig	2025-08-05 19:20:05 UTC
+--- base/common/python/pki/__init__.py.orig	2026-07-28 16:37:15 UTC
 +++ base/common/python/pki/__init__.py
-@@ -40,8 +40,8 @@ import requests
- import six
+@@ -37,8 +37,8 @@ import requests
+ import requests
  
  
 -CONF_DIR = '/etc/pki'

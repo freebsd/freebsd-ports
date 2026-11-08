@@ -1,8 +1,7 @@
 PORTNAME=	onnxconverter-common
-DISTVERSION=	1.14.0
-PORTREVISION=	3
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.16.0
 CATEGORIES=	misc # machine-learning
-MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,6 +20,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR} \
 
 USES=		python
 USE_PYTHON=	pep517 autoplist
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	microsoft
 
 NO_ARCH=	yes
 

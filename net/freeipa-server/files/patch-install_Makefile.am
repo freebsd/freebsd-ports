@@ -1,0 +1,38 @@
+--- install/Makefile.am.orig	2025-12-04 10:21:07 UTC
++++ install/Makefile.am
+@@ -21,21 +21,21 @@ install-exec-local:
+ 
+ install-exec-local:
+ 	$(INSTALL) -d -m 700 $(DESTDIR)$(IPA_SYSCONF_DIR)/custodia
+-	$(INSTALL) -d -m 700 $(DESTDIR)$(localstatedir)/lib/ipa/backup
+-	$(INSTALL) -d -m 700 $(DESTDIR)$(localstatedir)/lib/ipa/gssproxy
+-	$(INSTALL) -d -m 700 $(DESTDIR)$(localstatedir)/lib/ipa/sysrestore
+-	$(INSTALL) -d -m 700 $(DESTDIR)$(localstatedir)/lib/ipa/sysupgrade
+-	$(INSTALL) -d -m 755 $(DESTDIR)$(localstatedir)/lib/ipa/pki-ca
+-	$(INSTALL) -d -m 755 $(DESTDIR)$(localstatedir)/lib/ipa/certs
+-	$(INSTALL) -d -m 700 $(DESTDIR)$(localstatedir)/lib/ipa/private
+-	$(INSTALL) -d -m 700 $(DESTDIR)$(localstatedir)/lib/ipa/passwds
++	$(INSTALL) -d -m 700 $(DESTDIR)$(localstatedir)/db/ipa/backup
++	$(INSTALL) -d -m 700 $(DESTDIR)$(localstatedir)/db/ipa/gssproxy
++	$(INSTALL) -d -m 700 $(DESTDIR)$(localstatedir)/db/ipa/sysrestore
++	$(INSTALL) -d -m 700 $(DESTDIR)$(localstatedir)/db/ipa/sysupgrade
++	$(INSTALL) -d -m 755 $(DESTDIR)$(localstatedir)/db/ipa/pki-ca
++	$(INSTALL) -d -m 755 $(DESTDIR)$(localstatedir)/db/ipa/certs
++	$(INSTALL) -d -m 700 $(DESTDIR)$(localstatedir)/db/ipa/private
++	$(INSTALL) -d -m 700 $(DESTDIR)$(localstatedir)/db/ipa/passwds
+ 
+ uninstall-local:
+-	-rmdir $(DESTDIR)$(localstatedir)/lib/ipa/sysrestore
+-	-rmdir $(DESTDIR)$(localstatedir)/lib/ipa/sysupgrade
+-	-rmdir $(DESTDIR)$(localstatedir)/lib/ipa/certs
+-	-rmdir $(DESTDIR)$(localstatedir)/lib/ipa/private
+-	-rmdir $(DESTDIR)$(localstatedir)/lib/ipa/passwds
+-	-rmdir $(DESTDIR)$(localstatedir)/lib/ipa
++	-rmdir $(DESTDIR)$(localstatedir)/db/ipa/sysrestore
++	-rmdir $(DESTDIR)$(localstatedir)/db/ipa/sysupgrade
++	-rmdir $(DESTDIR)$(localstatedir)/db/ipa/certs
++	-rmdir $(DESTDIR)$(localstatedir)/db/ipa/private
++	-rmdir $(DESTDIR)$(localstatedir)/db/ipa/passwds
++	-rmdir $(DESTDIR)$(localstatedir)/db/ipa
+ 
+ EXTRA_DIST = README.schema

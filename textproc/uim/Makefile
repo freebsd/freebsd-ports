@@ -1,5 +1,5 @@
 PORTNAME=	uim
-PORTVERSION=	1.9.6
+PORTVERSION=	1.9.9
 PORTREVISION?=	0
 CATEGORIES?=	textproc
 .if !defined(UIM_SLAVE) && defined(WITHOUT_X11)
@@ -27,7 +27,8 @@ GH_TUPLE=	uim:sigscheme:ccf1f92:sigscheme \
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-CONFIGURE_ARGS+=	--enable-maintainer-mode
+CONFIGURE_ARGS+=	--enable-maintainer-mode \
+			--with-sqlite3 --without-mozc
 
 OPTIONS_DEFINE=	DOCS X11
 OPTIONS_DEFAULT=	X11
@@ -53,7 +54,7 @@ LIB_DEPENDS+=	libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz
 CONFIGURE_ARGS+=	--with-gtk3 --enable-default-toolkit=gtk3
 .endif
-CONFIGURE_ARGS+=	--enable-emacs --with-sj3 --with-canna --with-prime
+CONFIGURE_ARGS+=	--enable-emacs --with-canna
 .endif
 
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -62,9 +63,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 
 .if !defined(UIM_SLAVE)
 DOCSDIR_JA=	${PREFIX}/share/doc/ja/uim
-DOCSDIR_SIGSCHEME=	${PREFIX}/share/doc/uim/sigscheme
-PLIST_SUB+=	DOCSDIR_JA="${DOCSDIR_JA:S,^${PREFIX}/,,}" \
-		DOCSDIR_SIGSCHEME="${DOCSDIR_SIGSCHEME:S,^${PREFIX}/,,}"
+PLIST_SUB+=	DOCSDIR_JA="${DOCSDIR_JA:S,^${PREFIX}/,,}"
 .endif
 
 .if empty(PORT_OPTIONS:MX11)
@@ -79,12 +78,12 @@ PLIST_SUB+=	X11=""
 CONFIGURE_ARGS+=	--enable-storage=fatty
 .endif
 
-.for _x in x xft gtk2 gtk3 qt5 qt6 anthy canna m17nlib prime scim dict
+.for _x in x xft gtk3 gtk4 qt5 qt6 anthy anthy-utf8 canna m17nlib scim dict ibus wayland
 .if ${CONFIGURE_ARGS:M--with-${_x}} == ""
 CONFIGURE_ARGS+=--without-${_x}
 .endif
 .endfor
-.for _x in gnome-applet kde-applet emacs pref
+.for _x in gnome3-applet kde5-applet emacs pref
 .if ${CONFIGURE_ARGS:M--enable-${_x}} == ""
 CONFIGURE_ARGS+=--disable-${_x}
 .endif
@@ -105,7 +104,7 @@ pre-configure:
 
 do-build:
 .if !defined(UIM_SLAVE)
-.for d in replace sigscheme uim scm xim po fep emacs pixmaps tables
+.for d in replace sigscheme uim scm xim po fep emacs pixmaps byeoru-data data
 	cd ${WRKSRC}/${d} && ${MAKE_CMD}
 .endfor
 .if ${PORT_OPTIONS:MX11}
@@ -116,25 +115,28 @@ do-build:
 do-install:
 .if !defined(UIM_SLAVE)
 	cd ${WRKSRC} && ${MAKE_CMD} DESTDIR=${STAGEDIR} install-data-am
-.for d in sigscheme uim scm xim fep emacs pixmaps tables
+.for d in sigscheme uim scm xim fep emacs pixmaps byeoru-data data
 	cd ${WRKSRC}/${d} && ${MAKE_CMD} DESTDIR=${STAGEDIR} install-strip
 .endfor
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DATADIR}/helperdata
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc && for f in `${MAKE} -V EXTRA_DIST` ; do \
+		${INSTALL_DATA} $${f} ${STAGEDIR}${DOCSDIR}/$${f} ; \
+	done
+	${INSTALL_DATA} ${WRKSRC}/fep/README ${STAGEDIR}${DOCSDIR}/README.fep
+	${INSTALL_DATA} ${WRKSRC}/fep/README.key ${STAGEDIR}${DOCSDIR}/README.key
+	${INSTALL_DATA} ${WRKSRC}/xim/README ${STAGEDIR}${DOCSDIR}/README.xim
+	${MKDIR} ${STAGEDIR}${DOCSDIR_JA}
+	cd ${WRKSRC}/doc && for f in `${MAKE} -V EXTRA_DIST_JA` ; do \
+		${INSTALL_DATA} $${f} ${STAGEDIR}${DOCSDIR_JA}/$${f} ; \
+	done
+	${INSTALL_DATA} ${WRKSRC}/fep/README.ja ${STAGEDIR}${DOCSDIR_JA}/README.fep
+.endif
 	cd ${WRKSRC}/po && ${MAKE_CMD} DESTDIR=${STAGEDIR} install
 .if ${PORT_OPTIONS:MX11}
 	cd ${WRKSRC}/gtk3/candwin && ${MAKE_CMD} DESTDIR=${STAGEDIR} install-strip
 .endif
-.endif
-
-.if !defined(UIM_SLAVE)
-post-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}/helperdata
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${MKDIR} ${STAGEDIR}${DOCSDIR_JA}
-	${INSTALL_DATA} ${WRKSRC}/doc/KEY ${STAGEDIR}${DOCSDIR}/KEY
-	${INSTALL_DATA} ${WRKSRC}/fep/README ${STAGEDIR}${DOCSDIR}/README.fep
-	${INSTALL_DATA} ${WRKSRC}/fep/README ${STAGEDIR}${DOCSDIR}/README.key
-	${INSTALL_DATA} ${WRKSRC}/fep/README.ja ${STAGEDIR}${DOCSDIR_JA}/README.fep
-	${INSTALL_DATA} ${WRKSRC}/xim/README ${STAGEDIR}${DOCSDIR}/README.xim
 .endif
 
 .include <bsd.port.post.mk>

@@ -4557,7 +4557,7 @@
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Todd Miller reports:</p>
-	<blockquote cite="">
+	<blockquote cite="http://www.sudo.ws/sudo/alerts/sudoedit_escalate2.html">
 	  <p>Sudo's command matching routine expects actual commands to include
 	    one or more slash ('/') characters.  The flaw is that sudo's path
 	    resolution code did not add a "./" prefix to commands found in the
@@ -5018,7 +5018,7 @@
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Todd Miller reports:</p>
-	<blockquote cite="">
+	<blockquote cite="http://www.sudo.ws/sudo/alerts/sudoedit_escalate.html">
 	  <p>When sudo performs its command matching, there is a special case
 	    for pseudo-commands in the sudoers file (currently, the only
 	    pseudo-command is sudoedit). Unlike a regular command,

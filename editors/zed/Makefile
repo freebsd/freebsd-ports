@@ -1,6 +1,6 @@
 PORTNAME=	zed
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.13.1
+DISTVERSION=	1.27.0
 CATEGORIES=	editors
 PKGNAMESUFFIX=	-editor
 
@@ -14,7 +14,7 @@ LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
 LICENSE_FILE_GPLv3+ =	${WRKSRC}/LICENSE-GPL
 
 ONLY_FOR_ARCHS=	aarch64 amd64
-ONLY_FOR_ARCHS_REASON=	Some of dependent crates only support these architectures
+ONLY_FOR_ARCHS_REASON=	some of dependency crates only support these architectures
 
 BUILD_DEPENDS=	protoc:devel/protobuf
 LIB_DEPENDS=	libzstd.so:archivers/zstd \
@@ -49,6 +49,7 @@ MAKE_ENV=	APP_CLI="zedit" \
 		ZED_UPDATE_EXPLANATION="Please use packages/ports to update zed." \
 		RELEASE_VERSION="${DISTVERSION}"
 
+PORTSCOUT=	limit:^v[0-9]\.	# prevent tags like v2024.16.0
 SUB_FILES=	pkg-message
 SUB_LIST=	DISTVERSION=${DISTVERSION}
 

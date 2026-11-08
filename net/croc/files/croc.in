@@ -30,6 +30,6 @@ load_rc_config $name
 pidfile="/var/run/${name}.pid"
 procname="%%PREFIX%%/bin/croc"
 command="/usr/sbin/daemon"
-command_args="-f -t ${name} -T ${name} -p ${pidfile} /usr/bin/env ${croc_env} ${procname} relay ${croc_host:+--host ${croc_host}} --ports ${croc_ports}"
+command_args="-f -t ${name} -T ${name} -p ${pidfile} ${procname} relay ${croc_host:+--host ${croc_host}} --ports ${croc_ports}"
 
 run_rc_command "$1"

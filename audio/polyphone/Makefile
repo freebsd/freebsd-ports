@@ -1,16 +1,18 @@
 PORTNAME=	polyphone
-DISTVERSION=	2.5.1
+DISTVERSION=	2.6.0
 PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Graphical user interface for editing soundfont (sf2 and sfz) files
-WWW=		https://www.polyphone-soundfonts.com/
+WWW=		https://www.polyphone.io/en \
+		https://github.com/davy7125/polyphone
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/../LICENSE.txt
 
-LIB_DEPENDS=	libFLAC.so:audio/flac \
+LIB_DEPENDS=	libasound.so:audio/alsa-lib \
+		libFLAC.so:audio/flac \
 		libjack.so:audio/jack \
 		libogg.so:audio/libogg \
 		libportaudio.so:audio/portaudio \
@@ -19,11 +21,11 @@ LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libstk.so:audio/stk \
 		libvorbisfile.so:audio/libvorbis
 
-USES=		compiler:c++11-lang desktop-file-utils dos2unix gl gnome pkgconfig qmake:outsource qt:5 shared-mime-info ssl xorg
+USES=		compiler:c++11-lang desktop-file-utils dos2unix gl gnome pkgconfig qmake:outsource qt:6 shared-mime-info ssl xorg
 DOS2UNIX_FILES=	polyphone.pro \
 		editor/tree/treeitemdelegate.cpp
 USE_GL=		gl
-USE_QT=		core concurrent gui network printsupport svg testlib widgets buildtools:build linguisttools:build qmake:build
+USE_QT=		base svg tools:build
 USE_GNOME=	glib20
 USE_CXXSTD=	c++11
 
@@ -32,6 +34,7 @@ GH_ACCOUNT=	davy7125
 
 CXXFLAGS+=	-D__UNIX_JACK__
 LIBS+=		-lssl -lcrypto
+LDFLAGS+=	`pkg-config --libs alsa` # alsa depencency is triggered by ALSA option in rtmidi turned on
 
 WRKSRC_SUBDIR=	sources
 

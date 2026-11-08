@@ -1,0 +1,11 @@
+BpmfGenSenRounded is a Bopomofo IVS build of GenSen Rounded: each Han
+character that has more than one Bopomofo reading carries Ideographic
+Variation Sequences and Private Use Area glyphs that render the character
+together with its reading.
+
+Input methods that implement the Bopomofo IVS specification, such as
+chinese/fcitx5-mcbopomofo in its Bopomofo font annotation mode, use these
+fonts to produce Bopomofo-annotated text for teaching material and
+publishing.
+
+Base font: https://github.com/ButTaiwan/gensen-font

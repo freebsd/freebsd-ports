@@ -1,5 +1,5 @@
 PORTNAME=	spoa
-DISTVERSION=	4.1.5
+DISTVERSION=	4.1.6
 CATEGORIES=	biology
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -51,8 +51,8 @@ do-test:
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
 		${BUILD_WRKSRC}/bin/${PORTNAME}_test
 
-tests as of 4.1.5:
-# [==========] 23 tests from 2 test suites ran. (671 ms total)
+tests as of 4.1.6:
+# [==========] 23 tests from 2 test suites ran. (647 ms total)
 # [  PASSED  ] 23 tests.
 
 .include <bsd.port.mk>

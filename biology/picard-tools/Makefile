@@ -1,21 +1,20 @@
 PORTNAME=	picard
-DISTVERSION=	2.22.9
-PORTREVISION=	2
+DISTVERSION=	3.5.0
 CATEGORIES=	biology java
 MASTER_SITES=	http://github.com/broadinstitute/picard/releases/download/${PORTVERSION}/
 PKGNAMESUFFIX=	-tools
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.jar
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CLI tools for manipulating high-throughput sequencing (HTS) data
-WWW=		https://broadinstitute.github.io/picard/
+WWW=		https://github.com/broadinstitute/picard
 
 LICENSE=	MIT
 
 RUN_DEPENDS=	samtools:biology/samtools
 
-USES=		java
+USES=		java:run
 
 CONFLICTS_INSTALL=	picard # bin/picard
 

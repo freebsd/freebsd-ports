@@ -20,7 +20,6 @@ CONFIGURE_ARGS=	--enable-custom-modes \
 		--enable-osce \
 		--enable-qext \
 		--disable-doc   # requires doxygen
-CONFIGURE_TARGET=${ARCH:S/amd64/x86_64/}-portbld-${OPSYS:tl}${OSREL}
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 

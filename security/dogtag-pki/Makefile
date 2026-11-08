@@ -1,7 +1,7 @@
 PORTNAME=	dogtag-pki
 DISTVERSIONPREFIX=	v
-DISTVERSION=	11.7.0
-PORTREVISION=	4
+DISTVERSION=	11.10.1
+PORTREVISION=	2
 CATEGORIES=	security java python
 
 MAINTAINER=	joneum@FreeBSD.org
@@ -43,7 +43,6 @@ BUILD_DEPENDS=	${_JAVA_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 
 LIB_DEPENDS=	libapr-1.so:devel/apr1 \
-		libldap.so:net/openldap26-client \
 		libnspr4.so:devel/nspr \
 		libnss3.so:security/nss
 
@@ -57,16 +56,22 @@ RUN_DEPENDS=	${_JAVA_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
 		bash:shells/bash
 
-USES=		cmake:indirect java:build,run pkgconfig python shebangfix
+USES=		cmake:indirect cpe java:build,run ldap pkgconfig python shebangfix
+CPE_PRODUCT=	dogtagpki
 USE_GITHUB=	yes
 GH_ACCOUNT=	dogtagpki
 GH_PROJECT=	pki
-JAVA_VERSION=	17
+JAVA_VERSION=	21
 USE_LDCONFIG=	yes
 USE_PYTHON=	autoplist pep517
 
-SHEBANG_FILES=	base/common/upgrade/*/*.py base/server/scripts/operations \
-		base/server/scripts/pkidaemon base/server/upgrade/*/*.py
+SHEBANG_FILES=	base/acme/bin/pki-acme-run base/ca/bin/pki-ca-run \
+		base/common/sbin/pki-upgrade base/common/upgrade/*/*.py \
+		base/server/bin/pki-server-run base/server/sbin/pki-server \
+		base/server/scripts/operations base/server/scripts/pkidaemon \
+		base/server/upgrade/*/*.py base/tools/bin/pki
+SHEBANG_LANG=	sh
+sh_CMD=		/bin/sh
 
 CMAKE_ARGS=	-DAPP_SERVER=tomcat-9.0 \
 		-DCOMMONS_CLI_JAR=${JAVAJARDIR}/commons-cli.jar \
@@ -114,13 +119,14 @@ CMAKE_ARGS=	-DAPP_SERVER=tomcat-9.0 \
 		-DVERSION=${DISTVERSION} \
 		-DWITH_PYTHON_DOCS=OFF
 
-CMAKE_ON=	WITH_CA WITH_JAVA WITH_SERVER
+CMAKE_ON=	WITH_ACME WITH_CA WITH_JAVA WITH_SERVER
 
-CMAKE_OFF=	RUN_TESTS WITH_ACME WITH_CONSOLE WITH_EST WITH_JAVADOC WITH_KRA \
+CMAKE_OFF=	RUN_TESTS WITH_CONSOLE WITH_EST WITH_JAVADOC WITH_KRA \
 		WITH_META WITH_OCSP WITH_TESTS WITH_THEME WITH_TKS WITH_TPS \
 		WITH_WURST
-
 CMAKE_SOURCE_PATH=	${WRKSRC}
+
+CONFIGURE_ENV=	APP_SERVER_CM=tomcat-9.0
 
 DATADIR=	${PREFIX}/share/pki
 
@@ -136,15 +142,17 @@ PORTDATA=	*
 
 _JAVA_BUILD_DIR=	${WRKDIR}/java-build
 
-_JAVA_TARGETS=	tps_library java pki-ca-links pki-lib pki-server-common-lib \
+_JAVA_TARGETS=	pki-acme-links tps_library java pki-ca-links pki-lib pki-server-common-lib \
 		pki-server-lib pki-server-webapp-lib
 
-_DOGTAG_JARS=	pki-ca.jar pki-common.jar pki-server-webapp.jar pki-server.jar \
+_DOGTAG_JARS=	pki-acme.jar pki-ca.jar pki-common.jar pki-server-webapp.jar pki-server.jar \
 		pki-tomcat-9.0.jar pki-tomcat.jar pki-tools.jar
 
 _RLN_PLACEHOLDERS=${JAVAJARDIR}/jss-tomcat.jar \
 ${JAVAJARDIR}/jss-tomcat-9.0.jar \
-${JAVAJARDIR}/resteasy-servlet-initializer.jar
+${JAVAJARDIR}/resteasy-servlet-initializer.jar \
+${JAVAJARDIR}/jaxb-api.jar \
+${JAVAJARDIR}/javax.activation-api.jar
 
 post-build:
 # Configure the Java build tree
@@ -248,7 +256,24 @@ post-install-ca: post-install-server
 		${COPYTREE_SHARE} conf ${STAGEDIR}${DATADIR}/ca \
 		"! -name CMakeLists.txt"
 
-post-install-links: post-install-ca
+post-install-acme: post-install-ca
+	@${MKDIR} ${STAGEDIR}${DATADIR}/acme \
+		${STAGEDIR}${DATADIR}/acme/webapps/acme/WEB-INF
+	cd ${WRKSRC}/base/acme && \
+		${COPYTREE_BIN} bin ${STAGEDIR}${DATADIR}/acme
+.for dir in conf database issuer openshift realm webapps
+	cd ${WRKSRC}/base/acme && \
+		${COPYTREE_SHARE} ${dir} ${STAGEDIR}${DATADIR}/acme \
+		"! -name CMakeLists.txt"
+.endfor
+	cd ${WRKSRC}/base/acme/tomcat-9.0 && \
+		${COPYTREE_SHARE} conf ${STAGEDIR}${DATADIR}/acme \
+		"! -name CMakeLists.txt"
+	cd ${_JAVA_BUILD_DIR}/base/acme/webapp && \
+		${COPYTREE_SHARE} lib \
+		${STAGEDIR}${DATADIR}/acme/webapps/acme/WEB-INF
+
+post-install-links: post-install-acme
 	@${MKDIR} ${STAGEDIR}${DATADIR}/ca/webapps/ca/WEB-INF \
 		${STAGEDIR}${DATADIR}/ca/webapps/ca/admin \
 		${STAGEDIR}${DATADIR}/server/common \
@@ -271,6 +296,14 @@ post-install-links: post-install-ca
 
 	# Replace fragile upstream links with FreeBSD relative symlinks.
 	@${TOUCH} ${_RLN_PLACEHOLDERS:S,^,${STAGEDIR},}
+	@${RM} ${STAGEDIR}${DATADIR}/lib/jaxb-api.jar
+	${RLN} ${STAGEDIR}${JAVAJARDIR}/jaxb-api.jar ${STAGEDIR}${DATADIR}/lib/jaxb-api.jar
+	@${RM} ${STAGEDIR}${DATADIR}/lib/javax.activation-api.jar
+	${RLN} ${STAGEDIR}${JAVAJARDIR}/javax.activation-api.jar ${STAGEDIR}${DATADIR}/lib/javax.activation-api.jar
+	@${RM} ${STAGEDIR}${DATADIR}/server/common/lib/jaxb-api.jar
+	${RLN} ${STAGEDIR}${DATADIR}/lib/jaxb-api.jar ${STAGEDIR}${DATADIR}/server/common/lib/jaxb-api.jar
+	@${RM} ${STAGEDIR}${DATADIR}/server/common/lib/javax.activation-api.jar
+	${RLN} ${STAGEDIR}${DATADIR}/lib/javax.activation-api.jar ${STAGEDIR}${DATADIR}/server/common/lib/javax.activation-api.jar
 	@${RM} ${STAGEDIR}${DATADIR}/server/common/lib/jss-tomcat.jar
 	${RLN} ${STAGEDIR}${JAVAJARDIR}/jss-tomcat.jar ${STAGEDIR}${DATADIR}/server/common/lib/jss-tomcat.jar
 	@${RM} ${STAGEDIR}${DATADIR}/server/common/lib/jss-tomcat-9.0.jar
@@ -295,6 +328,11 @@ post-install-links: post-install-ca
 	${RLN} ${STAGEDIR}${JAVAJARDIR}/resteasy-servlet-initializer.jar ${STAGEDIR}${DATADIR}/server/webapps/pki/WEB-INF/lib/resteasy-servlet-initializer.jar
 	@${RM} ${STAGEDIR}${DATADIR}/ca/webapps/ca/admin/console
 	${RLN} ${STAGEDIR}${DATADIR}/server/webapps/pki/admin/console ${STAGEDIR}${DATADIR}/ca/webapps/ca/admin/console
+
+	@${RM} ${STAGEDIR}${DATADIR}/acme/webapps/acme/WEB-INF/lib/pki-server.jar
+	${RLN} ${STAGEDIR}${JAVAJARDIR}/pki/pki-server.jar ${STAGEDIR}${DATADIR}/acme/webapps/acme/WEB-INF/lib/pki-server.jar
+	@${RM} ${STAGEDIR}${DATADIR}/acme/webapps/acme/WEB-INF/lib/pki-acme.jar
+	${RLN} ${STAGEDIR}${JAVAJARDIR}/pki/pki-acme.jar ${STAGEDIR}${DATADIR}/acme/webapps/acme/WEB-INF/lib/pki-acme.jar
 
 	@${RM} ${_RLN_PLACEHOLDERS:S,^,${STAGEDIR},}
 
@@ -326,5 +364,8 @@ post-install-version: post-install-config
 
 post-install-runtime: post-install-version
 	@${MKDIR} ${STAGEDIR}/var/log/pki
+
+post-stage:
+	@${FIND} ${STAGEDIR}${DATADIR} -name '*.orig' -delete
 
 .include <bsd.port.mk>

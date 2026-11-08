@@ -48,6 +48,18 @@
  # Use CMake profile C++ flags for building Lean libraries, but do not embed in `leanc`
  string(TOUPPER "${CMAKE_BUILD_TYPE}" uppercase_CMAKE_BUILD_TYPE)
  string(APPEND LEANC_OPTS " ${CMAKE_CXX_FLAGS_${uppercase_CMAKE_BUILD_TYPE}}")
+@@ -1036,8 +1052,9 @@ if(NOT CMAKE_SYSTEM_NAME MATCHES "Emscripten")
+     lean4lean
+     PREFIX lean4lean
+     EXCLUDE_FROM_ALL ON
+-    GIT_REPOSITORY https://github.com/Kha/lean4lean
+-    GIT_TAG lean4-bundle-4.35
++    SOURCE_DIR ${LEAN_SOURCE_DIR}/../ext/lean4lean
++    DOWNLOAD_COMMAND ""
++    UPDATE_COMMAND ""
+     PATCH_COMMAND bash ${LEAN_SOURCE_DIR}/../script/lean4lean-minimal-init.sh
+     CONFIGURE_COMMAND ""
+     BUILD_COMMAND lake build lean4lean
 @@ -1037,7 +1053,7 @@ install(
  
  install(

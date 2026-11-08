@@ -1,11 +1,11 @@
---- chrome/browser/ui/views/frame/layout/browser_view_tabbed_layout_impl.cc.orig	2026-07-01 06:24:19 UTC
+--- chrome/browser/ui/views/frame/layout/browser_view_tabbed_layout_impl.cc.orig	2026-10-18 13:29:39 UTC
 +++ chrome/browser/ui/views/frame/layout/browser_view_tabbed_layout_impl.cc
-@@ -250,7 +250,7 @@ int BrowserViewTabbedLayoutImpl::GetHorizontalTabStrip
+@@ -334,7 +334,7 @@ int BrowserViewTabbedLayoutImpl::GetHorizontalTabStrip
  }
  
- bool BrowserViewTabbedLayoutImpl::AvoidCrackingForFractionalDisplay() const {
+ int BrowserViewTabbedLayoutImpl::GetVerticalTabStripContentOverlap() const {
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
-   // This is primarily an issue on Linux and Windows; add other platforms here
-   // as needed.
+   // On fractional display scaling (e.g. 1.25x, 1.5x), overlap the content area
+   // by 1 DIP over the vertical tab strip border to prevent subpixel seams.
    if (auto* const widget = views().browser_view->GetWidget()) {

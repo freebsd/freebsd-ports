@@ -1,6 +1,6 @@
---- MANIFEST.in.orig	2024-12-22 02:37:46 UTC
+--- MANIFEST.in.orig	2026-08-27 04:54:17 UTC
 +++ MANIFEST.in
-@@ -1,12 +1,14 @@
+@@ -1,12 +1,21 @@
 -include AUTHORS
 -include COPYING
 -include README
@@ -14,13 +14,20 @@
 +#recursive-include bin *
 +#recursive-include doc *
 +#recursive-include openshot_qt *
-+graft openshot_qt/*
 +#recursive-include xdg *
  
++graft src
++
  global-exclude *__pycache__*
  global-exclude *pyc
  global-exclude .idea
 -global-exclude .git
 \ No newline at end of file
 +global-exclude .git
++
++prune build
++prune doc
++prune images
++prune installer
++prune xdg
 +global-exclude *.bak *.orig

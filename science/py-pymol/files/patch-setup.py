@@ -1,20 +1,14 @@
---- setup.py.orig	2024-04-09 16:59:46 UTC
+-- Don't install the launcher script by default
+-- The wheel also installs the pymol entry point and both write bin/pymol, which makes the installation fail
+
+--- setup.py.orig	2026-10-18 20:41:44 UTC
 +++ setup.py
-@@ -60,6 +60,8 @@ parser.add_argument('--help-distutils', action="store_
-                     "shared library; no: disable fast MMTF load support")
- parser.add_argument('--help-distutils', action="store_true",
-                     help="show help for distutils options and exit")
-+parser.add_argument('--single-version-externally-managed', action="store_true",
-+                    help="single-version-externally-managed")
- parser.add_argument('--testing', action="store_true",
-                     help="Build C-level tests")
- parser.add_argument('--openvr', dest='openvr', action='store_true')
-@@ -295,7 +297,7 @@ ext_comp_args = [
- libs = ["png", "freetype"]
- lib_dirs = []
- ext_comp_args = [
--    "-Werror=return-type",
-+    #"-Werror=return-type",
-     "-Wunused-variable",
-     "-Wno-switch",
-     "-Wno-narrowing",
+@@ -413,7 +413,7 @@ class install_pymol(install):
+ class install_pymol(install):
+     pymol_path = None
+     bundled_pmw = False
+-    no_launcher = False
++    no_launcher = True
+ 
+     user_options = install.user_options + [
+         ("pymol-path=", None, "PYMOL_PATH"),

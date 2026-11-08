@@ -1,7 +1,6 @@
 PORTNAME=	healpix
-DISTVERSION=	3.50
-DISTVERSIONSUFFIX=	_2018Dec10
-PORTREVISION=	6
+DISTVERSION=	3.83
+DISTVERSIONSUFFIX=	_2024Nov13
 CATEGORIES=	science
 MASTER_SITES=	SF/${PORTNAME}/Healpix_${DISTVERSION}/
 DISTNAME=	Healpix_${DISTVERSIONFULL}
@@ -34,9 +33,28 @@ LDFLAGS+=	-lomp
 .endif
 
 WRKSRC=			${WRKDIR}/Healpix_${DISTVERSION}
-AUTORECONF_WRKSRC=	${WRKSRC}/src/${FLAVOR:S/^c$/C/}/autotools
-CONFIGURE_WRKSRC=	${AUTORECONF_WRKSRC}
-BUILD_WRKSRC=		${AUTORECONF_WRKSRC}
-INSTALL_WRKSRC=		${AUTORECONF_WRKSRC}
+
+.if ${FLAVOR} == cxx
+AUTORECONF_WRKSRC=	${WRKSRC}/src/cxx
+CONFIGURE_WRKSRC=	${WRKSRC}/src/cxx
+BUILD_WRKSRC=		${WRKSRC}/src/cxx
+INSTALL_WRKSRC=		${WRKSRC}/src/cxx
+.else
+AUTORECONF_WRKSRC=	${WRKSRC}/src/C/autotools
+CONFIGURE_WRKSRC=	${WRKSRC}/src/C/autotools
+BUILD_WRKSRC=		${WRKSRC}/src/C/autotools
+INSTALL_WRKSRC=		${WRKSRC}/src/C/autotools
+.endif
+
+pre-configure:
+.if ${FLAVOR} == cxx
+	@${MKDIR} ${WRKSRC}/_libsharp_inst
+	@cd ${WRKSRC}/src/common_libraries/libsharp && \
+		${MAKE_ENV} ./configure --disable-shared --prefix=${WRKSRC}/_libsharp_inst \
+		--disable-dependency-tracking CFLAGS="-fPIC ${CFLAGS}" && \
+		${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} && \
+		${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} install
+CONFIGURE_ENV+=	PKG_CONFIG_PATH=${WRKSRC}/_libsharp_inst/lib/pkgconfig
+.endif
 
 .include <bsd.port.mk>

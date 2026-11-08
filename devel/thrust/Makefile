@@ -13,6 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		cmake
 USE_GITHUB=	yes
 
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility
+
 NO_ARCH=	yes
 
 do-test: # tests freeze: https://github.com/thrust/thrust/issues/981

@@ -9,6 +9,7 @@
     SUBDIR += R-cran-BsMD
     SUBDIR += R-cran-CVST
     SUBDIR += R-cran-ChangeAnomalyDetection
+    SUBDIR += R-cran-CompQuadForm
     SUBDIR += R-cran-DEoptimR
     SUBDIR += R-cran-DRR
     SUBDIR += R-cran-Deriv
@@ -61,6 +62,7 @@
     SUBDIR += R-cran-dplyr
     SUBDIR += R-cran-eRm
     SUBDIR += R-cran-energy
+    SUBDIR += R-cran-epitools
     SUBDIR += R-cran-exactRankTests
     SUBDIR += R-cran-expm
     SUBDIR += R-cran-forcats
@@ -101,6 +103,10 @@
     SUBDIR += R-cran-mclust
     SUBDIR += R-cran-mcmc
     SUBDIR += R-cran-memisc
+    SUBDIR += R-cran-meta
+    SUBDIR += R-cran-metabook
+    SUBDIR += R-cran-metadat
+    SUBDIR += R-cran-metafor
     SUBDIR += R-cran-minqa
     SUBDIR += R-cran-misc3d
     SUBDIR += R-cran-miscTools
@@ -355,6 +361,7 @@
     SUBDIR += flintqs
     SUBDIR += flopc++
     SUBDIR += form
+    SUBDIR += formfactor
     SUBDIR += fparser
     SUBDIR += fplll
     SUBDIR += freefem++
@@ -439,10 +446,10 @@
     SUBDIR += kfr
     SUBDIR += kig
     SUBDIR += kissat
+    SUBDIR += kissfft
     SUBDIR += kktdirect
     SUBDIR += kmplot
     SUBDIR += labplot
-    SUBDIR += lambda
     SUBDIR += lapack
     SUBDIR += lapack++
     SUBDIR += lapack95
@@ -466,7 +473,6 @@
     SUBDIR += libdivsufsort
     SUBDIR += libfixmath
     SUBDIR += libflame
-    SUBDIR += libformfactor
     SUBDIR += libhomfly
     SUBDIR += libmesh
     SUBDIR += libnormaliz
@@ -537,7 +543,7 @@
     SUBDIR += mtrxmath
     SUBDIR += multichoose
     SUBDIR += mumps
-    SUBDIR += mumps4
+    SUBDIR += mumps-edf
     SUBDIR += munkres-cpp
     SUBDIR += muparser
     SUBDIR += muparserx
@@ -582,9 +588,11 @@
     SUBDIR += octave-forge-database
     SUBDIR += octave-forge-dataframe
     SUBDIR += octave-forge-datatypes
+    SUBDIR += octave-forge-devtools
     SUBDIR += octave-forge-dicom
     SUBDIR += octave-forge-divand
     SUBDIR += octave-forge-doctest
+    SUBDIR += octave-forge-drafting
     SUBDIR += octave-forge-dsppack
     SUBDIR += octave-forge-econometrics
     SUBDIR += octave-forge-fda
@@ -659,6 +667,7 @@
     SUBDIR += octave-forge-optiminterp
     SUBDIR += octave-forge-outliers
     SUBDIR += octave-forge-parallel
+    SUBDIR += octave-forge-parts
     SUBDIR += octave-forge-pde1dm
     SUBDIR += octave-forge-piqp
     SUBDIR += octave-forge-pkg-octave-doc
@@ -703,6 +712,7 @@
     SUBDIR += ogdf
     SUBDIR += oink
     SUBDIR += oleo
+    SUBDIR += omacalc
     SUBDIR += onednn
     SUBDIR += onednn252
     SUBDIR += openblas
@@ -962,6 +972,7 @@
     SUBDIR += py-arviz-stats
     SUBDIR += py-arybo
     SUBDIR += py-autograd
+    SUBDIR += py-autograd-gamma
     SUBDIR += py-awkward
     SUBDIR += py-awkward-cpp
     SUBDIR += py-baycomp
@@ -972,6 +983,7 @@
     SUBDIR += py-blis
     SUBDIR += py-bottleneck
     SUBDIR += py-brial
+    SUBDIR += py-cbcbox
     SUBDIR += py-chaospy
     SUBDIR += py-clarabel
     SUBDIR += py-claripy
@@ -981,6 +993,7 @@
     SUBDIR += py-cmaes
     SUBDIR += py-cmyt
     SUBDIR += py-colormath
+    SUBDIR += py-colormath2
     SUBDIR += py-contourpy
     SUBDIR += py-conway-polynomials
     SUBDIR += py-cryptominisat
@@ -989,8 +1002,8 @@
     SUBDIR += py-cyipopt
     SUBDIR += py-cypari2
     SUBDIR += py-daqp
+    SUBDIR += py-dcor
     SUBDIR += py-deap
-    SUBDIR += py-dgl
     SUBDIR += py-diffcp
     SUBDIR += py-dionysus
     SUBDIR += py-disjoint-set
@@ -1004,9 +1017,11 @@
     SUBDIR += py-fairlearn
     SUBDIR += py-faiss
     SUBDIR += py-fastcluster
+    SUBDIR += py-fdasrsf
     SUBDIR += py-fenics-basix
     SUBDIR += py-fenics-ffcx
     SUBDIR += py-fenics-ufl
+    SUBDIR += py-findiff
     SUBDIR += py-flax
     SUBDIR += py-formulaic
     SUBDIR += py-formulaic-contrasts
@@ -1038,6 +1053,7 @@
     SUBDIR += py-isosurfaces
     SUBDIR += py-jacobi
     SUBDIR += py-jax
+    SUBDIR += py-jaxlib
     SUBDIR += py-jij-cimod
     SUBDIR += py-kahip
     SUBDIR += py-keras
@@ -1067,6 +1083,7 @@
     SUBDIR += py-moarchiving
     SUBDIR += py-modin
     SUBDIR += py-moocore
+    SUBDIR += py-mplcursors
     SUBDIR += py-mpmath
     SUBDIR += py-munkres
     SUBDIR += py-narwhals
@@ -1089,6 +1106,7 @@
     SUBDIR += py-osqp
     SUBDIR += py-pandas
     SUBDIR += py-pandas-datareader
+    SUBDIR += py-pandas-gbq
     SUBDIR += py-pandas-stubs
     SUBDIR += py-patsy
     SUBDIR += py-pcodec
@@ -1108,7 +1126,6 @@
     SUBDIR += py-pyclipper
     SUBDIR += py-pycosat
     SUBDIR += py-pygsl
-    SUBDIR += py-pygslodeiv2
     SUBDIR += py-pyhdfe
     SUBDIR += py-pyhull
     SUBDIR += py-pymc3
@@ -1142,8 +1159,12 @@
     SUBDIR += py-resample
     SUBDIR += py-roman
     SUBDIR += py-rpy2
+    SUBDIR += py-rpy2-rinterface
+    SUBDIR += py-rpy2-robjects
     SUBDIR += py-rustworkx
     SUBDIR += py-rvlib
+    SUBDIR += py-scikit-datasets
+    SUBDIR += py-scikit-fda
     SUBDIR += py-scikit-fem
     SUBDIR += py-scikit-umfpack
     SUBDIR += py-scs
@@ -1304,7 +1325,6 @@
     SUBDIR += tlfloat
     SUBDIR += tmv
     SUBDIR += tomsfastmath
-    SUBDIR += topaz
     SUBDIR += topcom
     SUBDIR += topologic
     SUBDIR += triangle
@@ -1332,7 +1352,6 @@
     SUBDIR += xblas
     SUBDIR += xfce4-calculator-plugin
     SUBDIR += xgap
-    SUBDIR += xlapack
     SUBDIR += xldlas
     SUBDIR += xlife++
     SUBDIR += xplot

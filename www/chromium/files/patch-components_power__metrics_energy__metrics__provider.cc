@@ -1,21 +1,20 @@
---- components/power_metrics/energy_metrics_provider.cc.orig	2025-08-07 06:57:29 UTC
+--- components/power_metrics/energy_metrics_provider.cc.orig	2026-09-25 15:26:43 UTC
 +++ components/power_metrics/energy_metrics_provider.cc
-@@ -9,6 +9,8 @@
+@@ -7,7 +7,7 @@
+ #include "build/build_config.h"
+ #if BUILDFLAG(IS_WIN)
  #include "components/power_metrics/energy_metrics_provider_win.h"
- #elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
+-#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  #include "components/power_metrics/energy_metrics_provider_linux.h"
-+#elif BUILDFLAG(IS_BSD)
-+#include "base/notimplemented.h"
  #endif  // BUILDFLAG(IS_WIN)
  
- namespace power_metrics {
-@@ -22,6 +24,9 @@ std::unique_ptr<EnergyMetricsProvider> EnergyMetricsPr
+@@ -20,7 +20,7 @@ EnergyMetricsProvider::~EnergyMetricsProvider() = defa
+ std::unique_ptr<EnergyMetricsProvider> EnergyMetricsProvider::Create() {
+ #if BUILDFLAG(IS_WIN)
    return EnergyMetricsProviderWin::Create();
- #elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
+-#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
    return EnergyMetricsProviderLinux::Create();
-+#elif BUILDFLAG(IS_BSD)
-+  NOTIMPLEMENTED();
-+  return nullptr;
  #else
    return nullptr;
- #endif  // BUILDFLAG(IS_WIN)

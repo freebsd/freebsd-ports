@@ -1,6 +1,6 @@
 PORTNAME=	lms
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.79.0
+DISTVERSION=	3.81.0
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,10 +19,11 @@ LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 		libpulse.so:audio/pulseaudio \
 		libtag.so:audio/taglib \
 		libwthttp.so:www/wt \
-		libxxhash.so:devel/xxhash
+		libxxhash.so:devel/xxhash \
+		libonnxruntime.so:misc/onnxruntime
 RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg
 
-USES=		cmake compiler:c++20-lang cpe libarchive pkgconfig
+USES=		cmake compiler:c++20-lang cpe libarchive pkgconfig ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	epoupon
@@ -53,12 +54,6 @@ post-patch:
 		${WRKSRC}/src/libs/core/include/core/SystemPaths.hpp
 	@${REINPLACE_CMD} -e 's|"/usr/|"${PREFIX}/|; s|"/var/lms/"|"/var/db/lms/"|' \
 		${WRKSRC}/conf/lms.conf
-	@${REINPLACE_CMD} -e '/find_package/s| system||' \
-			  -e '/target_link_libraries/s| Boost::system||' \
-		${WRKSRC}/CMakeLists.txt
-	@${REINPLACE_CMD} -e '/Boost::system/d' \
-		${WRKSRC}/src/libs/core/CMakeLists.txt \
-		${WRKSRC}/src/libs/services/auth/CMakeLists.txt
 
 post-install:
 	# link sample

@@ -1,4 +1,13 @@
-Py-cclib is an open source library, written in Python, for parsing and
-interpreting the results of computational chemistry packages. The current
-version, cclib 0.9, parses output files from ADF, GAMESS (US), GAMESS-UK,
-Gaussian, Jaguar, Molpro, ORCA and PC GAMESS.
+Py-cclib is a Python library for parsing and interpreting the output of
+computational chemistry packages. It extracts data such as geometries,
+energies, molecular orbitals, vibrational frequencies, and basis sets
+into a common, program-independent data structure.
+
+Supported programs include ADF, DALTON, GAMESS (US), GAMESS-UK,
+Gaussian, Jaguar, Molcas, Molpro, MOPAC, NWChem, ORCA, Psi4, Q-Chem,
+Turbomole, and xtb.
+
+It also implements algorithms that work on the parsed data, including
+Mulliken, Lowdin, and C-squared population analyses, charge
+decomposition analysis, Mayer bond orders, and Bader, Hirshfeld, and
+DDEC6 charges, and can write CJSON, CML, Molden, WFX, and XYZ files.

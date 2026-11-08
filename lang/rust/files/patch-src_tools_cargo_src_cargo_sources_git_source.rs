@@ -10,8 +10,8 @@ useful for USES=cargo, the patch-in-config feature also needs to
 be stabilized first.  It will be available in Rust 1.56.
 
 [1] https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=256581
---- src/tools/cargo/src/cargo/sources/git/source.rs.orig	2026-04-11 13:43:17 UTC
-+++ src/tools/cargo/src/cargo/sources/git/source.rs
+--- src/tools/cargo/src/sources/git/source.rs.orig	2026-04-11 13:43:17 UTC
++++ src/tools/cargo/src/sources/git/source.rs
 @@ -254,6 +254,10 @@ impl<'gctx> GitSource<'gctx> {
              return Ok(());
          }

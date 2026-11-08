@@ -4,7 +4,7 @@ CATEGORIES=	biology
 MASTER_SITES=	https://www.microbesonline.org/fasttree/
 EXTRACT_SUFX=	.c
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Approximately-maximum-likelihood phylogenetic trees from alignments
 WWW=		https://www.microbesonline.org/fasttree/
 

@@ -1,6 +1,19 @@
---- phoenix.pro.orig	2025-10-14 05:29:12 UTC
+--- phoenix.pro.orig	2026-07-28 07:36:38 UTC
 +++ phoenix.pro
-@@ -127,7 +127,7 @@ unix {
+@@ -19,11 +19,10 @@ QT_LEAST=6.5.3
+ # ********************************************************************
+ 
+ QT_LEAST=6.5.3
+-QT_MOST=6.10.10
++QT_MOST=6.11.1
+ !versionAtLeast(QT_VERSION, $${QT_LEAST}):error("Use at least Qt version $${QT_LEAST}")
+ !versionAtMost(QT_VERSION, $${QT_MOST}):error("Use at most Qt version $${QT_MOST}")
+ 
+-CONFIG += debug_and_release
+ CONFIG += c++20
+ 
+ unix {
+@@ -130,7 +129,7 @@ unix {
      manpage.files += Fritzing.1
  
      icon.path = $$DATADIR/pixmaps

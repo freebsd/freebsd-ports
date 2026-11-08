@@ -11,7 +11,7 @@ LICENSE_NAME=	unknown
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		tar:xz xorg-cat:driver
+USES=		xorg-cat:driver
 
 PLIST_FILES=	lib/xorg/modules/drivers/dummy_drv.so
 

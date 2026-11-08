@@ -1,6 +1,7 @@
 PORTNAME=	yarr
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.8
+DISTVERSION=	2.9
+PORTREVISION=	2
 CATEGORIES=	www
 
 MAINTAINER=	decke@FreeBSD.org
@@ -15,6 +16,7 @@ USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	nkanaev
 GH_TUPLE=	\
+		expr-lang:expr:v1.17.8:expr_lang_expr/vendor/github.com/expr-lang/expr \
 		fyne-io:systray:v1.12.0:fyne_io_systray/vendor/fyne.io/systray \
 		golang:net:v0.56.0:golang_net/vendor/golang.org/x/net \
 		golang:sys:v0.46.0:golang_sys/vendor/golang.org/x/sys \

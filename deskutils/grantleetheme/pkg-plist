@@ -24,7 +24,7 @@ lib/cmake/KPim6GrantleeTheme/KPim6GrantleeThemeTargets-%%CMAKE_BUILD_TYPE%%.cmak
 lib/cmake/KPim6GrantleeTheme/KPim6GrantleeThemeTargets.cmake
 lib/libKPim6GrantleeTheme.so
 lib/libKPim6GrantleeTheme.so.6
-lib/libKPim6GrantleeTheme.so.%%KDE_APPLICATIONS_SHLIB_VER%%
+lib/libKPim6GrantleeTheme.so.%%KDE_PIM_SHLIB_VER%%
 %%QT_PLUGINDIR%%/kf6/ktexttemplate/kde_grantlee_plugin.so
 share/locale/ar/LC_MESSAGES/libgrantleetheme6.mo
 share/locale/ast/LC_MESSAGES/libgrantleetheme6.mo

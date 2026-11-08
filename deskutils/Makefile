@@ -41,6 +41,7 @@
     SUBDIR += coolreader
     SUBDIR += copyq
     SUBDIR += coregarage
+    SUBDIR += cosmic-screenshot
     SUBDIR += countdown
     SUBDIR += crengine-ng
     SUBDIR += crqt-ng
@@ -94,7 +95,6 @@
     SUBDIR += gnome-shell-extension-simple-weather
     SUBDIR += gnome-shell-extra-extensions
     SUBDIR += gnome-sound-recorder
-    SUBDIR += gnome-todo
     SUBDIR += gnome-tweaks
     SUBDIR += gnome-utils
     SUBDIR += gnome-weather
@@ -134,7 +134,6 @@
     SUBDIR += kalarm
     SUBDIR += kanbanapp
     SUBDIR += kcharselect
-    SUBDIR += kchmviewer
     SUBDIR += kdeconnect-kde
     SUBDIR += kdepim
     SUBDIR += kdepim-addons
@@ -155,7 +154,6 @@
     SUBDIR += ktimetracker
     SUBDIR += kweather
     SUBDIR += kweathercore
-    SUBDIR += latte-dock
     SUBDIR += lazycli
     SUBDIR += libcprime
     SUBDIR += libkdepim
@@ -185,7 +183,6 @@
     SUBDIR += menumaker
     SUBDIR += merkuro
     SUBDIR += meteo
-    SUBDIR += mindforger
     SUBDIR += moregroupware
     SUBDIR += mozo
     SUBDIR += mybee-qt
@@ -201,10 +198,8 @@
     SUBDIR += notification-daemon
     SUBDIR += notify-osd
     SUBDIR += orage
-    SUBDIR += owncloudclient
     SUBDIR += p5-Data-ICal
     SUBDIR += p5-Data-ICal-DateTime
-    SUBDIR += p5-Goo
     SUBDIR += pal
     SUBDIR += parcellite
     SUBDIR += peaclock
@@ -219,6 +214,9 @@
     SUBDIR += plasma6-milou
     SUBDIR += plasma6-sddm-kcm
     SUBDIR += plasma6-xdg-desktop-portal-kde
+    SUBDIR += plasma6lts-milou
+    SUBDIR += plasma6lts-sddm-kcm
+    SUBDIR += plasma6lts-xdg-desktop-portal-kde
     SUBDIR += plopfolio
     SUBDIR += podman-desktop
     SUBDIR += preferences
@@ -258,7 +256,6 @@
     SUBDIR += rubygem-shellplay
     SUBDIR += rubygem-taskjuggler
     SUBDIR += rwpspread
-    SUBDIR += semantik
     SUBDIR += sigi
     SUBDIR += sigye
     SUBDIR += simpleagenda
@@ -326,6 +323,7 @@
     SUBDIR += zanshin
     SUBDIR += zim
     SUBDIR += zk
+    SUBDIR += znotes
     SUBDIR += zorro
 
 .include <bsd.port.subdir.mk>

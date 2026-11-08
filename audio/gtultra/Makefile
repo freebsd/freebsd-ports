@@ -1,7 +1,7 @@
-PORTNAME=		gtultra
+PORTNAME=	gtultra
 DISTVERSIONPREFIX=	v
-DISTVERSION=		1.5.5
-CATEGORIES=		audio
+DISTVERSION=	1.5.8
+CATEGORIES=	audio
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Music tracker for the C64, fork of goattracker
@@ -18,16 +18,15 @@ GH_ACCOUNT=	jpage8580
 GH_PROJECT=	GTUltra
 USE_SDL=	sdl2
 
-MAKEFILE=	makefile
+ALL_TARGET=	linux-build
 
+BINARY_ALIAS=	make=gmake
 DESKTOP_ENTRIES=	"GTUltra" \
 			"${COMMENT}" \
 			"${PREFIX}/share/pixmaps/gtultra.ico" \
 			"gtultra" \
 			"" \
 			false
-
-BUILD_WRKSRC=	${WRKSRC}/src
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

@@ -1,6 +1,6 @@
 PORTNAME=	dwm
 DISTVERSION=	6.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://dl.suckless.org/${PORTNAME}/
 
@@ -30,22 +30,25 @@ PLIST_FILES=	bin/dwm \
 		share/xsessions/dwm.desktop
 PORTDOCS=	README
 
-OPTIONS_DEFINE=	DMENUANDSTERM DOCS SUPERASMODKEY VOLUMECONTROL XINERAMA
-OPTIONS_DEFAULT=DMENUANDSTERM XINERAMA
+OPTIONS_DEFINE=		DMENUANDSTERM DOCS RUNTIMEKEYS SUPERASMODKEY \
+			VOLUMECONTROL XINERAMA
+OPTIONS_DEFAULT=	DMENUANDSTERM XINERAMA
 
 DMENUANDSTERM_DESC=	Install x11/dmenu and x11/sterm as runtime dependencies
-RUGAPS_DESC=		Add resizeable runtime useless gaps
+RUNTIMEKEYS_DESC=	Change key bindings at runtime from _DWM_KEYS
 SUPERASMODKEY_DESC=	Use Super instead of Alt for the dwm mod key
 VOLUMECONTROL_DESC=	Use multimedia keys to raise or lower volume
 
 DMENUANDSTERM_RUN_DEPENDS=	dmenu:x11/dmenu \
 				st:x11/sterm
 
+RUNTIMEKEYS_EXTRA_PATCHES=	${PATCHDIR}/runtimekeys-patch
 SUPERASMODKEY_EXTRA_PATCHES=	${PATCHDIR}/superasmodkey-patch-config.def.h
 VOLUMECONTROL_EXTRA_PATCHES=	${PATCHDIR}/volumecontrol-patch-config.def.h
 
-XINERAMA_USE=	XORG=xinerama
-XINERAMA_MAKE_ARGS_OFF=	XINERAMAFLAGS= XINERAMALIBS=
+XINERAMA_USE=		XORG=xinerama
+XINERAMA_MAKE_ARGS_OFF=	XINERAMAFLAGS= \
+			XINERAMALIBS=
 
 pre-everything::
 	@${ECHO_MSG} "You can build dwm with your own config.h using the DWM_CONF knob:"

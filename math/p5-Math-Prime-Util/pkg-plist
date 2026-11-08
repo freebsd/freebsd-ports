@@ -3,6 +3,7 @@ bin/primes.pl
 %%SITE_ARCH%%/Math/Prime/Util.pm
 %%SITE_ARCH%%/Math/Prime/Util/ChaCha.pm
 %%SITE_ARCH%%/Math/Prime/Util/ECAffinePoint.pm
+%%SITE_ARCH%%/Math/Prime/Util/ECM.pm
 %%SITE_ARCH%%/Math/Prime/Util/ECProjectivePoint.pm
 %%SITE_ARCH%%/Math/Prime/Util/Entropy.pm
 %%SITE_ARCH%%/Math/Prime/Util/MemFree.pm
@@ -18,6 +19,7 @@ bin/primes.pl
 %%PERL5_MAN3%%/Math::Prime::Util.3.gz
 %%PERL5_MAN3%%/Math::Prime::Util::ChaCha.3.gz
 %%PERL5_MAN3%%/Math::Prime::Util::ECAffinePoint.3.gz
+%%PERL5_MAN3%%/Math::Prime::Util::ECM.3.gz
 %%PERL5_MAN3%%/Math::Prime::Util::ECProjectivePoint.3.gz
 %%PERL5_MAN3%%/Math::Prime::Util::Entropy.3.gz
 %%PERL5_MAN3%%/Math::Prime::Util::MemFree.3.gz

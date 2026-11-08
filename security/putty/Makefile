@@ -1,6 +1,6 @@
 PORTNAME=		putty
 # https://tartarus.org/~simon/putty-prerel-snapshots/putty-0.83~pre20250105.1e45199.tar.gz
-DISTVERSION=		0.84
+DISTVERSION=		0.85
 PORTREVISION=		0
 #DISTVERSIONSUFFIX=	.ec158a2
 CATEGORIES=		security
@@ -51,7 +51,7 @@ LDFLAGS+=	-Wl,--as-needed
 # - Putty 0.77 cannot have X11 without the gdk/gdkx.h header i. e. GTK.
 .if ${PORT_OPTIONS:MGTK3} && !defined(WITHOUT_X11)
 USES+=		xorg
-USE_XORG=	x11
+USE_XORG=	x11 xrender
 USES+=		gnome
 USE_GNOME=	cairo gdkpixbuf gtk30
 CMAKE_ARGS+=	-DPUTTY_GTK_VERSION:STRING=3

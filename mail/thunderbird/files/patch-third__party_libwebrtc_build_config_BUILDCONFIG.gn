@@ -1,4 +1,4 @@
-commit e8a3b91abdc00edd7633aabbe5e63bfc0d0825e4
+commit b0f01559cae81a27001ed3eb603ef126dfc99f7e
 Author: Christoph Moench-Tegeder <cmt@FreeBSD.org>
 
     enable pipewire on bsd
@@ -43,10 +43,10 @@ index 4bb38fe31ff2..b10eb19f521a 100644
  is_nacl = current_os == "nacl"
  is_wasm = current_os == "emscripten"
 diff --git third_party/libwebrtc/BUILD.gn third_party/libwebrtc/BUILD.gn
-index ac8569efaa40..5d6c5953491c 100644
+index 8140c795b6b1..1cb88d134b11 100644
 --- third_party/libwebrtc/BUILD.gn
 +++ third_party/libwebrtc/BUILD.gn
-@@ -111,7 +111,7 @@ if (!build_with_chromium && !build_with_mozilla) {
+@@ -124,7 +124,7 @@ if (!build_with_chromium && !build_with_mozilla) {
            "tools_webrtc/perf:webrtc_dashboard_upload",
          ]
        }
@@ -56,20 +56,38 @@ index ac8569efaa40..5d6c5953491c 100644
        }
      }
 diff --git third_party/libwebrtc/modules/desktop_capture/BUILD.gn third_party/libwebrtc/modules/desktop_capture/BUILD.gn
-index 5c843cfc2b6a..0ed9f98a964f 100644
+index 9708a47cbca3..9c8c93856cf3 100644
 --- third_party/libwebrtc/modules/desktop_capture/BUILD.gn
 +++ third_party/libwebrtc/modules/desktop_capture/BUILD.gn
-@@ -76,7 +76,7 @@ if (rtc_include_tests) {
-         "window_finder_unittest.cc",
-       ]
- 
--      if ((is_linux || is_chromeos) && rtc_use_pipewire) {
-+      if ((is_linux || is_chromeos || is_bsd) && rtc_use_pipewire) {
-         configs += [ "../portal:gio" ]
-       }
- 
-@@ -88,7 +88,7 @@ if (rtc_include_tests) {
+@@ -70,7 +70,7 @@ if (rtc_include_tests) {
+     if (is_win) {
+       deps += [ "../../rtc_base/win:windows_version" ]
      }
+-    if ((is_linux || is_chromeos) && rtc_use_pipewire) {
++    if ((is_linux || is_chromeos || is_bsd) && rtc_use_pipewire) {
+       configs += [ "../portal:gio" ]
+     }
+     public_configs = [ ":x11_config" ]
+@@ -97,7 +97,7 @@ if (rtc_include_tests) {
+     if (is_win) {
+       deps += [ "../../rtc_base/win:windows_version" ]
+     }
+-    if ((is_linux || is_chromeos) && rtc_use_pipewire) {
++    if ((is_linux || is_chromeos || is_bsd) && rtc_use_pipewire) {
+       configs += [ "../portal:gio" ]
+     }
+     public_configs = [ ":x11_config" ]
+@@ -124,7 +124,7 @@ if (rtc_include_tests) {
+     if (is_win) {
+       deps += [ "../../rtc_base/win:windows_version" ]
+     }
+-    if ((is_linux || is_chromeos) && rtc_use_pipewire) {
++    if ((is_linux || is_chromeos || is_bsd) && rtc_use_pipewire) {
+       configs += [ "../portal:gio" ]
+     }
+     public_configs = [ ":x11_config" ]
+@@ -138,7 +138,7 @@ if (rtc_include_tests) {
+     ]
    }
  
 -  if ((is_linux || is_chromeos) && rtc_use_pipewire) {
@@ -77,16 +95,70 @@ index 5c843cfc2b6a..0ed9f98a964f 100644
      rtc_test("shared_screencast_stream_test") {
        testonly = true
  
-@@ -148,7 +148,7 @@ if (rtc_include_tests) {
-       "test_utils_unittest.cc",
+@@ -237,7 +237,7 @@ if (rtc_include_tests) {
+       "../../system_wrappers",
+       "../../test:test_support",
      ]
- 
 -    if ((is_linux || is_chromeos) && rtc_use_pipewire) {
 +    if ((is_linux || is_chromeos || is_bsd) && rtc_use_pipewire) {
        configs += [ "../portal:gio" ]
      }
- 
-@@ -215,7 +215,7 @@ if (rtc_include_tests) {
+   }
+@@ -257,7 +257,7 @@ if (rtc_include_tests) {
+       ":primitives",
+       "../../test:test_support",
+     ]
+-    if ((is_linux || is_chromeos) && rtc_use_pipewire) {
++    if ((is_linux || is_chromeos || is_bsd) && rtc_use_pipewire) {
+       configs += [ "../portal:gio" ]
+     }
+   }
+@@ -269,7 +269,7 @@ if (rtc_include_tests) {
+       ":primitives",
+       "../../test:test_support",
+     ]
+-    if ((is_linux || is_chromeos) && rtc_use_pipewire) {
++    if ((is_linux || is_chromeos || is_bsd) && rtc_use_pipewire) {
+       configs += [ "../portal:gio" ]
+     }
+   }
+@@ -281,7 +281,7 @@ if (rtc_include_tests) {
+       ":primitives",
+       "../../test:test_support",
+     ]
+-    if ((is_linux || is_chromeos) && rtc_use_pipewire) {
++    if ((is_linux || is_chromeos || is_bsd) && rtc_use_pipewire) {
+       configs += [ "../portal:gio" ]
+     }
+   }
+@@ -411,7 +411,7 @@ if (rtc_include_tests) {
+       ":primitives",
+       "../../test:test_support",
+     ]
+-    if ((is_linux || is_chromeos) && rtc_use_pipewire) {
++    if ((is_linux || is_chromeos || is_bsd) && rtc_use_pipewire) {
+       configs += [ "../portal:gio" ]
+     }
+   }
+@@ -425,7 +425,7 @@ if (rtc_include_tests) {
+       "../../rtc_base:logging",
+       "../../test:test_support",
+     ]
+-    if ((is_linux || is_chromeos) && rtc_use_pipewire) {
++    if ((is_linux || is_chromeos || is_bsd) && rtc_use_pipewire) {
+       configs += [ "../portal:gio" ]
+     }
+   }
+@@ -438,7 +438,7 @@ if (rtc_include_tests) {
+       ":primitives",
+       "../../test:test_support",
+     ]
+-    if ((is_linux || is_chromeos) && rtc_use_pipewire) {
++    if ((is_linux || is_chromeos || is_bsd) && rtc_use_pipewire) {
+       configs += [ "../portal:gio" ]
+     }
+   }
+@@ -526,7 +526,7 @@ if (rtc_include_tests) {
        "screen_drawer.h",
      ]
  
@@ -95,16 +167,16 @@ index 5c843cfc2b6a..0ed9f98a964f 100644
        sources += [ "screen_drawer_linux.cc" ]
        libs = [ "X11" ]
      }
-@@ -254,7 +254,7 @@ if (rtc_include_tests) {
+@@ -565,7 +565,7 @@ if (rtc_include_tests) {
        "mock_desktop_capturer_callback.h",
      ]
  
 -    if ((is_linux || is_chromeos) && rtc_use_pipewire) {
-+    if ((is_linux || is_chromeos || us_bsd) && rtc_use_pipewire) {
++    if ((is_linux || is_chromeos || is_bsd) && rtc_use_pipewire) {
        configs += [ "../portal:gio" ]
      }
  
-@@ -267,7 +267,7 @@ if (rtc_include_tests) {
+@@ -578,7 +578,7 @@ if (rtc_include_tests) {
  }
  
  # TODO(bugs.webrtc.org/14187): remove when all users are gone
@@ -114,7 +186,7 @@ index 5c843cfc2b6a..0ed9f98a964f 100644
      configs = [ "../portal:pipewire_config" ]
    }
 diff --git third_party/libwebrtc/modules/portal/BUILD.gn third_party/libwebrtc/modules/portal/BUILD.gn
-index 70b4739ad0c4..99ab95d441f3 100644
+index 7f91839dfdda..5c75495af570 100644
 --- third_party/libwebrtc/modules/portal/BUILD.gn
 +++ third_party/libwebrtc/modules/portal/BUILD.gn
 @@ -10,7 +10,7 @@ import("//chromium/build/config/linux/pkg_config.gni")
@@ -127,15 +199,15 @@ index 70b4739ad0c4..99ab95d441f3 100644
    pkg_config("gio") {
      packages = [
 diff --git third_party/libwebrtc/webrtc.gni third_party/libwebrtc/webrtc.gni
-index 1e87de20e545..77a8a55d8659 100644
+index 82b7935174af..6c681dd64339 100644
 --- third_party/libwebrtc/webrtc.gni
 +++ third_party/libwebrtc/webrtc.gni
-@@ -151,7 +151,7 @@ declare_args() {
+@@ -134,7 +134,7 @@ declare_args() {
    # By default it's only enabled on desktop Linux (excludes ChromeOS) and
    # only when using the sysroot as PipeWire is not available in older and
    # supported Ubuntu and Debian distributions.
 -  rtc_use_pipewire = is_linux && use_sysroot
 +  rtc_use_pipewire = (is_linux || is_bsd) && use_sysroot
  
-   # Set this to link PipeWire and required libraries directly instead of using the dlopen.
-   rtc_link_pipewire = false
+   # Set this to link PipeWire and required libraries directly instead of using
+   # the dlopen.

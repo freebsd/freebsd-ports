@@ -1,0 +1,3 @@
+xdg-desktop-portal-cosmic is an XDG desktop portal backend for the COSMIC
+desktop environment that uses libcosmic. It provides standard interfaces
+such as the Screenshot or FileChooser portals.

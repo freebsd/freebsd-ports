@@ -1,0 +1,9 @@
+The ip_anon module masks the host part of the client address.
+$remote_addr_anon and $binary_remote_addr_anon carry the result, and
+ip_anon_v4_prefix and ip_anon_v6_prefix say how much of the address is
+kept, for a log or a limit key that is not meant to name anybody.  An
+IPv4-mapped address is masked with the IPv4 prefix, so a dual stack
+listener does not log the client's four bytes.
+
+This port only installs the module sources.  The module itself is built by
+the nginx ports when their IP_ANON option is enabled.

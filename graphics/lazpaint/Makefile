@@ -1,7 +1,7 @@
 PORTNAME=	lazpaint
 PORTVERSION=	7.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 
@@ -11,7 +11,7 @@ WWW=		https://wiki.freepascal.org/LazPaint
 
 LICENSE=	GPLv3
 
-ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS=	aarch64 amd64 i386
 
 gtk2_CONFLICTS_INSTALL=	${PORTNAME}-qt5 ${PORTNAME}-qt6
 qt5_CONFLICTS_INSTALL=	${PORTNAME}-gtk2 ${PORTNAME}-qt6
@@ -19,7 +19,7 @@ qt6_CONFLICTS_INSTALL=	${PORTNAME}-gtk2 ${PORTNAME}-qt5
 
 USES=		desktop-file-utils dos2unix fpc gnome lazarus:flavors xorg
 USE_XORG=	x11
-DOS2UNIX_REGEX=	.*\.([txt]|pas|lpi|txt)
+DOS2UNIX_REGEX=	.*\.([txt]|pas|lpi|txt|inc)
 USE_GITHUB=	yes
 GH_TAGNAME=	a11930b
 GH_ACCOUNT=	bgrabitmap

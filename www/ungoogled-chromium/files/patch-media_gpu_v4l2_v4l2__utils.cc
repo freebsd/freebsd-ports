@@ -1,4 +1,4 @@
---- media/gpu/v4l2/v4l2_utils.cc.orig	2026-05-09 18:09:27 UTC
+--- media/gpu/v4l2/v4l2_utils.cc.orig	2026-08-13 07:41:05 UTC
 +++ media/gpu/v4l2/v4l2_utils.cc
 @@ -15,7 +15,7 @@
  
@@ -17,4 +17,4 @@
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    if (video_fourcc == Fourcc(Fourcc::MM21)) {
      modifiers = DRM_FORMAT_MOD_MTK_16L_32S_TILE;
-   }
+   } else {

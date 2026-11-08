@@ -1,0 +1,4 @@
+A self-hosted Git service.
+
+Forgejo is a community-managed repository hosting solution written in
+Go and published under the GPL 3 license.

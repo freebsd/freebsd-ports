@@ -1,0 +1,9 @@
+The stream limit_req module rate limits incoming connections in the stream
+subsystem.  limit_req_zone and limit_req are spelled and counted as in the
+http module, burst, nodelay, delay and the dry run included, so a rate
+written down once reads the same for TCP, UDP and HTTP.  The handler runs
+in the preaccess phase, so a refused connection is closed before anything
+is proxied.
+
+This port only installs the module sources.  The module itself is built by
+the nginx ports when their STREAM_LIMIT_REQ option is enabled.

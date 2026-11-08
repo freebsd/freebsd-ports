@@ -1,9 +1,9 @@
---- torch/_inductor/compile_worker/__main__.py.orig	2026-04-19 02:49:11 UTC
+--- torch/_inductor/compile_worker/__main__.py.orig	2026-09-02 17:44:01 UTC
 +++ torch/_inductor/compile_worker/__main__.py
-@@ -30,7 +30,7 @@ try:
-     import triton
+@@ -31,7 +31,7 @@ try:
  
-     assert triton is not None  # preload in parent
+     if triton is None:
+         raise AssertionError("triton failed to preload in parent")
 -except ImportError:
 +except (ImportError, AttributeError):
      pass

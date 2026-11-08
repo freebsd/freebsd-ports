@@ -1,6 +1,5 @@
 PORTNAME=	ttygif
-PORTVERSION=	1.4.0
-PORTREVISION=	3
+PORTVERSION=	1.6.0
 CATEGORIES=	graphics
 
 MAINTAINER=	olivier@FreeBSD.org
@@ -10,15 +9,18 @@ WWW=		https://github.com/icholy/ttygif
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=		gmake magick:run
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	icholy
 
-USES=		gmake magick:6,run
-
 PLIST_FILES=	bin/${PORTNAME}
 
+# Upstream forgets to bump VERSION in its Makefile on release
 post-patch:
 	@${REINPLACE_CMD} 's:gcc:${CC}:' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} "s:^VERSION = .*:VERSION = '\"${PORTVERSION}\"':" \
+		${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/

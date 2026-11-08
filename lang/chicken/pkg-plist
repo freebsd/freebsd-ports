@@ -1,17 +1,16 @@
 bin/chicken
+bin/chicken-csc
+bin/chicken-csi
 bin/chicken-do
 bin/chicken-install
 bin/chicken-profile
 bin/chicken-status
 bin/chicken-uninstall
-bin/chicken-csc
-bin/chicken-csi
-%%FEATHERS%%bin/feathers
 include/chicken/chicken-config.h
 include/chicken/chicken.h
 lib/chicken/%%BINARYVERSION%%/chicken.base.import.so
 lib/chicken/%%BINARYVERSION%%/chicken.bitwise.import.so
-lib/chicken/%%BINARYVERSION%%/chicken.blob.import.so
+lib/chicken/%%BINARYVERSION%%/chicken.bytevector.import.so
 lib/chicken/%%BINARYVERSION%%/chicken.compiler.user-pass.import.so
 lib/chicken/%%BINARYVERSION%%/chicken.condition.import.so
 lib/chicken/%%BINARYVERSION%%/chicken.continuation.import.so
@@ -33,6 +32,7 @@ lib/chicken/%%BINARYVERSION%%/chicken.load.import.so
 lib/chicken/%%BINARYVERSION%%/chicken.locative.import.so
 lib/chicken/%%BINARYVERSION%%/chicken.memory.import.so
 lib/chicken/%%BINARYVERSION%%/chicken.memory.representation.import.so
+lib/chicken/%%BINARYVERSION%%/chicken.number-vector.import.so
 lib/chicken/%%BINARYVERSION%%/chicken.pathname.import.so
 lib/chicken/%%BINARYVERSION%%/chicken.platform.import.so
 lib/chicken/%%BINARYVERSION%%/chicken.plist.import.so
@@ -51,12 +51,16 @@ lib/chicken/%%BINARYVERSION%%/chicken.syntax.import.so
 lib/chicken/%%BINARYVERSION%%/chicken.tcp.import.so
 lib/chicken/%%BINARYVERSION%%/chicken.time.import.so
 lib/chicken/%%BINARYVERSION%%/chicken.time.posix.import.so
+lib/chicken/%%BINARYVERSION%%/chicken.version.import.so
+lib/chicken/%%BINARYVERSION%%/scheme.file.import.so
+lib/chicken/%%BINARYVERSION%%/scheme.process-context.import.so
+lib/chicken/%%BINARYVERSION%%/scheme.time.import.so
+lib/chicken/%%BINARYVERSION%%/scheme.write.import.so
 lib/chicken/%%BINARYVERSION%%/srfi-4.import.so
 lib/chicken/%%BINARYVERSION%%/types.db
-lib/libchicken.a
+lib/libchicken-static.a
 lib/libchicken.so
 lib/libchicken.so.%%BINARYVERSION%%
-%%FEATHERS%%%%DATADIR%%/feathers.tcl
 %%DATADIR%%/setup.defaults
 %%PORTDOCS%%%%DOCSDIR%%/DEPRECATED
 @comment %%PORTDOCS%%%%DOCSDIR%%/LICENSE
@@ -69,7 +73,6 @@ lib/libchicken.so.%%BINARYVERSION%%
 %%PORTDOCS%%%%DOCSDIR%%/manual/C interface.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/Cross development.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/Data representation.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/Debugging.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/Declarations.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/Deployment.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/Deviations from the standard.html
@@ -84,7 +87,7 @@ lib/libchicken.so.%%BINARYVERSION%%
 %%PORTDOCS%%%%DOCSDIR%%/manual/Interface to external functions and variables.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken base).html
 %%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken bitwise).html
-%%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken blob).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken bytevector).html
 %%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken condition).html
 %%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken continuation).html
 %%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken csi).html
@@ -124,8 +127,24 @@ lib/libchicken.so.%%BINARYVERSION%%
 %%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken time posix).html
 %%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken time).html
 %%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken type).html
-%%PORTDOCS%%%%DOCSDIR%%/manual/Module r4rs.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/Module r5rs.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken version).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (scheme base).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (scheme case-lambda).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (scheme char).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (scheme complex).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (scheme cxr).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (scheme eval).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (scheme file).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (scheme inexact).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (scheme lazy).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (scheme load).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (scheme process-context).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (scheme r4rs).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (scheme r5rs).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (scheme read).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (scheme repl).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (scheme time).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (scheme write).html
 %%PORTDOCS%%%%DOCSDIR%%/manual/Module scheme.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/Module srfi-4.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/Modules.html
@@ -135,14 +154,13 @@ lib/libchicken.so.%%BINARYVERSION%%
 %%PORTDOCS%%%%DOCSDIR%%/manual/Using the compiler.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/Using the interpreter.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/manual.css
+share/man/man1/chicken-csc.1.gz
+share/man/man1/chicken-csi.1.gz
 share/man/man1/chicken-do.1.gz
 share/man/man1/chicken-install.1.gz
 share/man/man1/chicken-profile.1.gz
 share/man/man1/chicken-status.1.gz
 share/man/man1/chicken-uninstall.1.gz
 share/man/man1/chicken.1.gz
-share/man/man1/chicken-csc.1.gz
-share/man/man1/chicken-csi.1.gz
-%%FEATHERS%%share/man/man1/feathers.1.gz
 @postexec %D/bin/chicken-install -update-db
 @postunexec rm -f %D/lib/chicken/%%BINARYVERSION%%/modules.db

@@ -1,6 +1,6 @@
 PORTNAME=	cld
 PORTVERSION=	20150113
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	LOCAL/demon
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,14 +12,11 @@ WWW=		https://code.google.com/p/chromium-compact-language-detector/
 
 LICENSE=	BSD3CLAUSE
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR}
 LIB_DEPENDS=	libcld2.so:devel/cld2
 
 USES=		python
 USE_PYTHON=	flavors
-
-PLIST_FILES=	${PYTHON_SITELIBDIR}/chromium_compact_language_detector-2.0-py${PYTHON_VER}.egg-info \
-		${PYTHON_SITELIBDIR}/cld2${PYTHON_TAG}.so \
-		${PYTHON_SITELIBDIR}/cld2full${PYTHON_TAG}.so
 
 post-patch:
 	${REINPLACE_CMD} -e "s#\.\./cld2#${LOCALBASE}/include/cld#" ${WRKSRC}/setup.py ${WRKSRC}/setup_full.py

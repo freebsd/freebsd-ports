@@ -1,0 +1,13 @@
+--- wayland/Makefile.am.orig	2026-10-10 17:21:59 UTC
++++ wayland/Makefile.am
+@@ -26,8 +26,8 @@ uim_wayland_CFLAGS = @WAYLAND_CFLAGS@ -Wall
+ nodist_uim_wayland_SOURCES = $(PROTOCOL_SOURCES)
+ uim_wayland_CPPFLAGS = $(AM_CPPFLAGS)
+ uim_wayland_CFLAGS = @WAYLAND_CFLAGS@ -Wall
+-uim_wayland_LDADD = $(top_builddir)/uim/libuim-scm.la \
+-		    $(top_builddir)/uim/libuim.la \
++uim_wayland_LDADD = -luim-scm \
++		    -luim \
+ 		    @WAYLAND_LIBS@
+ 
+ # Client code for zwp_input_method_v1 generated from wayland-protocols.

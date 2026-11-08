@@ -1,11 +1,12 @@
 PORTNAME=	pocket-id
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.11.0
+DISTVERSION=	2.14.0
+PORTREVISION=	3
 CATEGORIES=	www
-MASTER_SITES=	LOCAL/dtxdf/${PORTNAME}/
+MASTER_SITES=	LOCAL/dtxdf/${PORTNAME}/:assets
 # For instructions on how to create assets:
 #   https://github.com/DtxdF/port-assets-makejails/tree/main/pocket-id
-DISTFILES=	${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}.frontend${EXTRACT_SUFX}
+DISTFILES=	${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}.frontend${EXTRACT_SUFX}:assets
 
 MAINTAINER=	dtxdf@FreeBSD.org
 COMMENT=	OIDC provider that allows users to authenticate with their passkeys
@@ -16,7 +17,7 @@ LICENSE=	BSD2CLAUSE
 ONLY_FOR_ARCHS=	aarch64 amd64                                                                                   
 ONLY_FOR_ARCHS_REASON=	module modernc.org/sqlite only supported on aarch64 and amd64   
 
-USES=		go:1.26+,modules
+USES=		go:modules
 USE_GITHUB=	yes
 USE_RC_SUBR=	${PORTNAME}
 

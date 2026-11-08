@@ -1,0 +1,21 @@
+--- pyproject.toml.orig	2026-02-25 18:17:27 UTC
++++ pyproject.toml
+@@ -7,7 +7,7 @@ requires = [
+ 
+ [build-system]
+ requires = [
+-    "setuptools >=79",
++    "setuptools >=61",
+     # "setuptools-scm",   # if we want to use git versions for versioning
+     # "wheel",  # setuptools doesn't need wheel anymore, see https://pypi.org/project/wheel/
+ ]
+@@ -28,8 +28,7 @@ readme = "README.rst"
+            # "readme",
+           ]
+ readme = "README.rst"
+-license = "BSD-3-Clause"
+-license-files = ["LICENSE"]
++license = {text = "BSD-3-Clause"}
+ 
+ keywords = [
+     "optimization",

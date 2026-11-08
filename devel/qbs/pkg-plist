@@ -366,6 +366,7 @@ libexec/qbs/qbs_processlauncher
 %%PORTDOCS%%%%DOCSDIR%%/html/style/offline-dark.css
 %%PORTDOCS%%%%DOCSDIR%%/html/style/offline-simple.css
 %%PORTDOCS%%%%DOCSDIR%%/html/style/offline.css
+%%PORTDOCS%%%%DOCSDIR%%/html/style/tech_preview.svg
 %%PORTDOCS%%%%DOCSDIR%%/html/tutorial-1.html
 %%PORTDOCS%%%%DOCSDIR%%/html/tutorial-10.html
 %%PORTDOCS%%%%DOCSDIR%%/html/tutorial-2.html

@@ -1,6 +1,7 @@
 PORTNAME=	afuse
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	filesystems
 MASTER_SITES=	https://BSDforge.com/projects/source/sysutils/afuse/
 PKGNAMEPREFIX=	fusefs-
@@ -8,7 +9,7 @@ PKGNAMEPREFIX=	fusefs-
 PATCH_SITES=	https://github.com/pcarrier/afuse/commit/
 PATCHFILES=	30057222cc58ffe1f8c0889fce8da314d5364691.patch:-p1
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File system automounting implemented in user-space using FUSE
 WWW=		https://github.com/pcarrier/afuse
 

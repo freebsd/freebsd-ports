@@ -1,0 +1,6 @@
+-- Add stubs package files to be included by include-package-data = true in pyproject.toml.
+--- MANIFEST.in.orig	2026-09-10 09:09:38 UTC
++++ MANIFEST.in
+@@ -1 +1,2 @@ include CHANGELOG.md
+ include CHANGELOG.md
++recursive-include aws_xray_sdk-stubs *

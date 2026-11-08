@@ -1,0 +1,56 @@
+#!/bin/sh
+
+# PROVIDE: immich_deduper
+# REQUIRE: LOGIN postgresql qdrant
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# immich_deduper_enable (bool):	Set to NO by default.
+#				Set it to YES to enable the deduper.
+# immich_deduper_dotenv (str):	File with the path of the Immich library,
+#				the PSQL_* settings of its database and
+#				the address of Qdrant, read by the program
+#				itself.  Default: %%ETCDIR%%/deduper.env
+# immich_deduper_data (str):	Cache, models and log of the service.
+#				Default: %%DBDIR%%
+
+. /etc/rc.subr
+
+name=immich_deduper
+rcvar=immich_deduper_enable
+desc="Immich duplicate photo finder"
+
+load_rc_config $name
+
+: ${immich_deduper_enable:=NO}
+: ${immich_deduper_user:=immich}
+: ${immich_deduper_group:=immich}
+: ${immich_deduper_dotenv:=%%ETCDIR%%/deduper.env}
+: ${immich_deduper_data:=%%DBDIR%%}
+: ${immich_deduper_env:="PATH=%%LOCALBASE%%/sbin:%%LOCALBASE%%/bin:/usr/sbin:/usr/bin:/sbin:/bin \
+	DEDUP_ENV=${immich_deduper_dotenv} \
+	DEDUP_DATA=${immich_deduper_data}/"}
+
+pidfile=/var/run/immich/${name}.pid
+childpidfile=/var/run/immich/${name}_child.pid
+required_files="${immich_deduper_dotenv}"
+
+start_precmd=immich_deduper_precmd
+command=/usr/sbin/daemon
+command_args="-f -H -t ${name} -P ${pidfile} -p ${childpidfile} \
+	-o /var/log/immich/${name}.log \
+	%%PREFIX%%/bin/immich-deduper"
+
+immich_deduper_precmd()
+{
+	# Keep what the service creates itself out of other users' reach
+	umask 027
+
+	install -d -m 750 -o ${immich_deduper_user} \
+		-g ${immich_deduper_group} \
+		/var/run/immich /var/log/immich ${immich_deduper_data}
+}
+
+run_rc_command "$1"

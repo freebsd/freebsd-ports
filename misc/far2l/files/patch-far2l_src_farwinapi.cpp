@@ -1,9 +1,9 @@
---- far2l/src/farwinapi.cpp.orig	2025-10-26 08:39:52 UTC
+--- far2l/src/farwinapi.cpp.orig	2026-10-07 18:45:16 UTC
 +++ far2l/src/farwinapi.cpp
 @@ -38,6 +38,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF S
  #include <fcntl.h>
  #include <errno.h>
- #if defined(__APPLE__) || defined(__FreeBSD__) || defined(__NetBSD__) || defined(__DragonFly__) || defined(__CYGWIN__)
+ #if defined(__APPLE__) || defined(__FreeBSD__) || defined(__NetBSD__) || defined(__DragonFly__) || defined(__OpenBSD__) || defined(__CYGWIN__)
 +#include <sys/disk.h>
  #include <sys/mount.h>
  #elif !defined(__HAIKU__)
@@ -13,27 +13,29 @@
  
  BOOL apiGetVolumeInformation(const wchar_t *lpwszRootPathName, FARString *pVolumeName,
 -		DWORD64 *lpVolumeSerialNumber, LPDWORD lpMaximumComponentLength, LPDWORD lpFileSystemFlags,
--		FARString *pFileSystemName, FARString *pFileSystemMountPoint)
+-		LPDWORD pClusterSize, FARString *pFileSystemName, FARString *pFileSystemMountPoint)
 +		FARString *pDiskIdent, LPDWORD lpMaximumComponentLength, LPDWORD lpFileSystemFlags,
-+		FARString *pFileSystemName, FARString *pDeviceName, FARString *pFileSystemMountPoint)
++		LPDWORD pClusterSize, FARString *pFileSystemName, FARString *pDeviceName, FARString *pFileSystemMountPoint)
  {
  	struct statvfs svfs {};
  	const std::string &path = Wide2MB(lpwszRootPathName);
-@@ -483,13 +484,9 @@ BOOL apiGetVolumeInformation(const wchar_t *lpwszRootP
- 
+@@ -482,15 +483,11 @@ BOOL apiGetVolumeInformation(const wchar_t *lpwszRootP
+ 	}
  	if (lpMaximumComponentLength)
  		*lpMaximumComponentLength = svfs.f_namemax;
 -	if (lpVolumeSerialNumber)
 -		*lpVolumeSerialNumber = (DWORD)svfs.f_fsid;
  	if (lpFileSystemFlags)
  		*lpFileSystemFlags = (DWORD)svfs.f_flag;
+ 	if (pClusterSize)
+ 		*pClusterSize = svfs.f_bsize;
  
 -	if (pVolumeName) {
 -		pVolumeName->Clear();
  #if 0
  #if defined(FS_IOC_GETFSLABEL) && defined(FSLABEL_MAX)
  		int fd = open(path.c_str(), O_RDONLY);
-@@ -502,13 +499,35 @@ BOOL apiGetVolumeInformation(const wchar_t *lpwszRootP
+@@ -503,13 +500,35 @@ BOOL apiGetVolumeInformation(const wchar_t *lpwszRootP
  		}
  #endif
  #endif

@@ -1,5 +1,5 @@
 PORTNAME=	mikmod
-DISTVERSION=	3.2.9
+DISTVERSION=	3.2.10
 CATEGORIES=	audio
 MASTER_SITES=	SF \
 		LOCAL/ehaupt
@@ -12,8 +12,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libmikmod.so:audio/libmikmod
 
-USES=				gmake ncurses
-GNU_CONFIGURE=			yes
+USES=		cmake ncurses
 
 PLIST_FILES=	%%DATADIR%%/mikmodrc \
 		bin/mikmod \

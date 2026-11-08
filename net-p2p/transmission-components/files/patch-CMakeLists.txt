@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2026-02-20 00:30:46 UTC
+--- CMakeLists.txt.orig	2026-10-23 00:18:54 UTC
 +++ CMakeLists.txt
 @@ -45,15 +45,25 @@ set(EVENT2_MINIMUM 2.1.0)
  set(WOLFSSL_MINIMUM 3.4)
@@ -28,9 +28,9 @@
  
  option(ENABLE_DAEMON "Build daemon" ON)
  tr_auto_option(ENABLE_GTK "Build GTK client" AUTO)
-@@ -71,14 +81,21 @@ tr_auto_option(RUN_CLANG_TIDY "Run clang-tidy on the c
+@@ -70,14 +80,21 @@ tr_auto_option(RUN_CLANG_TIDY "Run clang-tidy on the c
+ option(INSTALL_DOC "Build/install documentation" ON)
  option(INSTALL_LIB "Install the library" OFF)
- tr_auto_option(ENABLE_DEPRECATED "Allow deprecated API use of upstream packages, e.g. GTK" AUTO)
  tr_auto_option(RUN_CLANG_TIDY "Run clang-tidy on the code" AUTO)
 -tr_auto_option(USE_SYSTEM_EVENT2 "Use system event2 library" AUTO)
 -tr_auto_option(USE_SYSTEM_DEFLATE "Use system deflate library" AUTO)
@@ -58,7 +58,7 @@
  tr_list_option(USE_GTK_VERSION "Use specific GTK version" AUTO 3 4)
  tr_list_option(USE_QT_VERSION "Use specific Qt version" AUTO 5 6)
  tr_list_option(WITH_CRYPTO "Use specified crypto library" AUTO ccrypto mbedtls openssl wolfssl)
-@@ -239,26 +256,13 @@ set(SOURCE_ICONS_DIR "${PROJECT_SOURCE_DIR}/icons")
+@@ -238,12 +255,7 @@ set(SOURCE_ICONS_DIR "${PROJECT_SOURCE_DIR}/icons")
  
  set(SOURCE_ICONS_DIR "${PROJECT_SOURCE_DIR}/icons")
  
@@ -71,21 +71,7 @@
  
  find_package(Threads)
  find_package(PkgConfig QUIET)
- 
- find_package(CURL ${CURL_MINIMUM} REQUIRED)
- 
--if(ENABLE_DEPRECATED STREQUAL "AUTO")
--    if(DEFINED ENV{CI})
--        set(ENABLE_DEPRECATED OFF)
--    else()
--        set(ENABLE_DEPRECATED ON)
--    endif()
--endif()
--
- set(CRYPTO_PKG "")
- if(WITH_CRYPTO STREQUAL "AUTO" OR WITH_CRYPTO STREQUAL "ccrypto")
-     tr_get_required_flag(WITH_CRYPTO CCRYPTO_IS_REQUIRED)
-@@ -369,7 +373,7 @@ if(GTK_FOUND)
+@@ -360,7 +372,7 @@ if(GTK_FOUND)
          INTERFACE
              ${GTK${GTK_VERSION}_CFLAGS_OTHER})
  
@@ -94,7 +80,7 @@
          INTERFACE
              ${GTK${GTK_VERSION}_INCLUDE_DIRS})
  
-@@ -408,6 +412,9 @@ if(ENABLE_QT)
+@@ -399,6 +411,9 @@ if(ENABLE_QT)
          Network
          Svg
          LinguistTools)
@@ -104,7 +90,7 @@
      set(QT_OPTIONAL_MODULES
          DBus
          AxContainer
-@@ -428,7 +435,7 @@ if(ENABLE_QT)
+@@ -419,7 +434,7 @@ if(ENABLE_QT)
          foreach(M ${QT_REQUIRED_MODULES})
              find_package(Qt${Qt_VERSION_MAJOR}${M} ${QT_MINIMUM} QUIET)
              if(Qt${Qt_VERSION_MAJOR}${M}_FOUND)
@@ -113,7 +99,7 @@
                      list(APPEND QT_TARGETS Qt${Qt_VERSION_MAJOR}::${M})
                  endif()
              else()
-@@ -493,19 +500,24 @@ endif()
+@@ -484,19 +499,24 @@ endif()
      tr_fixup_auto_option(ENABLE_MAC MAC_FOUND MAC_IS_REQUIRED)
  endif()
  
@@ -142,7 +128,7 @@
      CMAKE_ARGS
          -DEVENT__DISABLE_OPENSSL:BOOL=ON
          -DEVENT__DISABLE_BENCHMARK:BOOL=ON
-@@ -513,8 +525,14 @@ tr_add_external_auto_library(EVENT2 libevent event
+@@ -504,8 +524,14 @@ tr_add_external_auto_library(EVENT2 libevent event
          -DEVENT__DISABLE_REGRESS:BOOL=ON
          -DEVENT__DISABLE_SAMPLES:BOOL=ON
          -DEVENT__LIBRARY_TYPE:STRING=STATIC)
@@ -158,7 +144,7 @@
      TARGET natpmp::natpmp
      CMAKE_ARGS
          -DBUILD_SHARED_LIBS=OFF)
-@@ -530,14 +548,16 @@ endif()
+@@ -521,14 +547,16 @@ endif()
  else()
      set(TR_MINIUPNPC_LIBNAME miniupnpc)
  endif()
@@ -178,7 +164,7 @@
          INTERFACE
              MINIUPNP_STATICLIB)
  endif()
-@@ -546,26 +566,90 @@ add_subdirectory(${TR_THIRD_PARTY_SOURCE_DIR}/wildmat)
+@@ -537,26 +565,90 @@ add_subdirectory(${TR_THIRD_PARTY_SOURCE_DIR}/wildmat)
  add_subdirectory(${TR_THIRD_PARTY_SOURCE_DIR}/madler-crcany)
  add_subdirectory(${TR_THIRD_PARTY_SOURCE_DIR}/wildmat)
  
@@ -275,9 +261,9 @@
  set(TR_WEB_ASSETS ${PROJECT_SOURCE_DIR}/web/public_html)
  if(REBUILD_WEB)
      tr_get_required_flag(REBUILD_WEB NPM_IS_REQUIRED)
-@@ -804,11 +888,6 @@ endif()
-     endif()
- endif()
+@@ -805,11 +897,6 @@ set(TR_GTK_APP_ID "com.transmissionbt.transmission" CA
+ # it can be shared by `gtk/` and by `tests/gtk/`.
+ set(TR_GTK_APP_ID "com.transmissionbt.transmission" CACHE INTERNAL "the app id the client and its desktop file share")
  
 -if(ENABLE_TESTS)
 -    enable_testing()
@@ -287,7 +273,7 @@
  function(tr_install_web DST_DIR)
      if(INSTALL_WEB)
          install(
-@@ -836,6 +915,11 @@ endforeach()
+@@ -837,6 +924,11 @@ endforeach()
          add_subdirectory(${P})
      endif()
  endforeach()

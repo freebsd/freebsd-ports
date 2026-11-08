@@ -1,5 +1,5 @@
 PORTNAME=	jackson-core
-DISTVERSION=	2.14.2
+DISTVERSION=	2.22.4
 CATEGORIES=	devel java
 MASTER_SITES=	https://repo1.maven.org/maven2/com/fasterxml/jackson/core/${PORTNAME}/${DISTVERSION}/
 EXTRACT_SUFX=	.jar
@@ -11,7 +11,8 @@ WWW=		https://github.com/FasterXML/jackson-core
 
 LICENSE=	APACHE20
 
-USES=		java:run
+USES=		cpe java:run
+CPE_VENDOR=	fasterxml
 JAVA_VERSION=	8+
 
 NO_ARCH=	yes

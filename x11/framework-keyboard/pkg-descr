@@ -1,0 +1,9 @@
+Meta-port for the Framework laptop Fn row and media keys.  It
+installs framework-keyboard(7) and depends on bhotkeys, bosd, and
+the six packages those keys run: bhotkeys-airplane, bhotkeys-audio,
+bhotkeys-brightness, bhotkeys-media, bhotkeys-mirror, and
+bhotkeys-screenshot.
+
+bhotkeys-extend, bhotkeys-lid-state, bhotkeys-lock, bhotkeys-albert,
+and framework-autorotate-hotkey are separate ports.  The manual
+marks those chords optional.

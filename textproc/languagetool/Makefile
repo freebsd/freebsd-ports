@@ -1,9 +1,10 @@
 PORTNAME=	languagetool
-DISTVERSION=	6.6
-PORTREVISION=	1
+DISTVERSION=	20261106
+DISTVERSIONSUFFIX=	-snapshot
+PORTEPOCH=	1
 CATEGORIES=	textproc java
-MASTER_SITES=	https://languagetool.org/download/
-DISTNAME=	LanguageTool-${DISTVERSION}
+MASTER_SITES=	https://languagetool.org/download/snapshots/
+DISTNAME=	LanguageTool-${DISTVERSIONFULL}
 
 MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Style and grammar checker for more than 25 languages
@@ -24,7 +25,10 @@ DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 NO_ARCH=	yes
 NO_BUILD=	yes
 
+PORTSCOUT=	ignore:1
+
 SUB_FILES=	languagetool-cli languagetool-gui pkg-message
+WRKSRC=		${WRKDIR}/LanguageTool-6.9-SNAPSHOT
 
 USERS=		languagetool
 GROUPS=		languagetool

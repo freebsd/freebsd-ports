@@ -1,0 +1,12 @@
+Intel's FreeBSD NVMUpdate utility and NVM images for Intel I225 and I226
+Ethernet controllers.  The utility and license files are fetched from Intel's
+E610 FreeBSD update package.  Intel's I225 v1.00 package supplies the I225
+device 15F2 images and EEPROM map.  The I225-V device 15F3 and I226 images are
+fetched from a pinned commit of an unofficial, unsupported GitHub mirror.
+
+The generated configuration is limited to Intel reference subsystem IDs.  It
+uses Intel's exact I225 device 15F2 matches and known ETrack lineages for
+I225-V and I226-V.  I226-LM and I226-IT entries omit REPLACES so they match the
+exact four-part PCI ID regardless of installed NVM version; separate
+configurations select each flash-size variant.  The combined configuration is
+not supplied, approved, or supported by Intel.

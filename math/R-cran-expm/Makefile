@@ -1,11 +1,11 @@
 PORTNAME=	expm
-DISTVERSION=	1.0-0
+DISTVERSION=	1.0-1
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Matrix Exponential, Log, 'etc'
-WWW=		https://cran.r-project.org/web/packages/expm/
+WWW=		https://cran.r-project.org/package=expm
 
 LICENSE=	GPLv2+
 

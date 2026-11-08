@@ -1,0 +1,20 @@
+--- configure.ac.orig	2026-09-17 14:15:43 UTC
++++ configure.ac
+@@ -234,7 +234,7 @@ AS_IF([test "x$with_cld2" != "xno"],
+ AS_IF([test "x$with_cld2" != "xno"],
+       [
+           have_cld2=no
+-          AC_CHECK_HEADERS([cld2/public/compact_lang_det.h],
++          AC_CHECK_HEADERS([cld/public/compact_lang_det.h],
+               [
+                   AC_MSG_CHECKING([for libcld2])
+                   old_LIBS="$LIBS"
+@@ -242,7 +242,7 @@ AS_IF([test "x$with_cld2" != "xno"],
+                   AC_LINK_IFELSE([AC_LANG_PROGRAM(
+                       [
+                           #include <stdio.h>
+-                          #include <cld2/public/compact_lang_det.h>
++                          #include <cld/public/compact_lang_det.h>
+                       ],
+                       [
+                           CLD2::isDataDynamic();

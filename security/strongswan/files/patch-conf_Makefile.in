@@ -1,6 +1,6 @@
---- conf/Makefile.in.orig	2026-03-23 12:42:09 UTC
+--- conf/Makefile.in.orig	2026-09-10 17:39:46 UTC
 +++ conf/Makefile.in
-@@ -931,25 +931,25 @@ install-data-local: $(plugins_install_src)
+@@ -919,25 +919,25 @@ install-data-local: $(plugins_install_src)
  	test -e "$(DESTDIR)${charonconfdir}" || test -z "${charon_install_src}" || $(INSTALL) -d "$(DESTDIR)$(charonconfdir)" || true
  	test -e "$(DESTDIR)${cmdconfdir}" || test -z "${cmd_install_src}" || $(INSTALL) -d "$(DESTDIR)$(cmdconfdir)" || true
  	test -e "$(DESTDIR)${nmconfdir}" || test -z "${nm_install_src}" || $(INSTALL) -d "$(DESTDIR)$(nmconfdir)" || true

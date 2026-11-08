@@ -1,4 +1,4 @@
---- components/user_education/views/help_bubble_view.cc.orig	2026-07-01 06:24:19 UTC
+--- components/user_education/views/help_bubble_view.cc.orig	2026-10-18 13:29:39 UTC
 +++ components/user_education/views/help_bubble_view.cc
 @@ -272,7 +272,7 @@ DEFINE_CLASS_ELEMENT_IDENTIFIER_VALUE(HelpBubbleView, 
  // TODO(https://crbug.com/382611284): Temporarily handle the case when the
@@ -9,7 +9,7 @@
  class HelpBubbleView::PrimaryWidgetObserver : public views::WidgetObserver {
   public:
    explicit PrimaryWidgetObserver(HelpBubbleView& help_bubble)
-@@ -751,7 +751,7 @@ void HelpBubbleView::InitializeAndShow(bool visible_ar
+@@ -755,7 +755,7 @@ void HelpBubbleView::InitializeAndShow(bool visible_ar
      event_relay_->Init(this);
    }
  
@@ -18,7 +18,7 @@
    primary_widget_observer_ = std::make_unique<PrimaryWidgetObserver>(*this);
  #endif
  
-@@ -868,7 +868,7 @@ gfx::Rect HelpBubbleView::GetAnchorRect() const {
+@@ -853,7 +853,7 @@ gfx::Rect HelpBubbleView::GetAnchorRect() const {
  void HelpBubbleView::OnBeforeBubbleWidgetInit(views::Widget::InitParams* params,
                                                views::Widget* widget) const {
    BubbleDialogDelegateView::OnBeforeBubbleWidgetInit(params, widget);

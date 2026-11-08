@@ -1270,6 +1270,17 @@ sub check_depends_syntax {
 				}
 			}
 
+			# check USES=ldap
+			if ($m{'dir'} =~ m{^(net|databases)/openldap\d+-client$}) {
+				my $ldapdir = $m{'dir'};
+				(my $serverdir = $ldapdir) =~ s/-client$/-server/;
+				if ($makevar{PKGORIGIN} ne $serverdir) {
+					&perror("WARN", $file, -1, "dependency on $ldapdir ".
+						"listed in $j.  consider using ".
+						"USES[+]=ldap.");
+				}
+			}
+
 			# check USE_QT
 			if ($m{'dep'} =~ /^(qt\d)+$/) {
 				&perror("WARN", $file, -1, "dependency to $1 ".

@@ -1,6 +1,5 @@
 PORTNAME=	zoneminder
-DISTVERSION=	1.38.1
-PORTREVISION=	1
+DISTVERSION=	1.38.6
 CATEGORIES=	multimedia
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
@@ -10,8 +9,8 @@ WWW=		https://www.zoneminder.com/
 
 LICENSE=	GPLv2
 
-ZM_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
-		${DBD_MYSQL} \
+BUILD_RUN_DEPENDS=	${DBD_MYSQL} \
+		p5-DBI>=0:databases/p5-DBI \
 		p5-Date-Manip>=0:devel/p5-Date-Manip \
 		p5-Test-LWP-UserAgent>=0:www/p5-Test-LWP-UserAgent \
 		p5-Sys-Mmap>=0:devel/p5-Sys-Mmap \
@@ -24,17 +23,13 @@ ZM_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
 		p5-IO-Socket-Multicast>=0:net/p5-IO-Socket-Multicast \
 		p5-Number-Bytes-Human>=0:devel/p5-Number-Bytes-Human \
 		p5-JSON-MaybeXS>=0:converters/p5-JSON-MaybeXS
-BUILD_DEPENDS=	${ZM_DEPENDS} \
+BUILD_DEPENDS=	soapcpp2:devel/gsoap \
 		${LOCALBASE}/include/jwt-cpp/jwt.h:devel/jwt-cpp \
 		${LOCALBASE}/include/nlohmann/json.hpp:devel/nlohmann-json
-LIB_DEPENDS=	libx264.so:multimedia/libx264 \
-		libmp4v2.so:multimedia/mp4v2 \
-		libgcrypt.so:security/libgcrypt \
-		libavcodec.so:multimedia/ffmpeg \
+LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libcurl.so:ftp/curl \
 		libunwind.so:devel/libunwind
-RUN_DEPENDS=	${ZM_DEPENDS} \
-		p5-Device-SerialPort>=0:comms/p5-Device-SerialPort \
+RUN_DEPENDS=	p5-Device-SerialPort>=0:comms/p5-Device-SerialPort \
 		p5-Crypt-Eksblowfish>=0:security/p5-Crypt-Eksblowfish \
 		p5-Bytes-Random-Secure>=0:security/p5-Bytes-Random-Secure \
 		p5-XML-LibXML>=0:textproc/p5-XML-LibXML \

@@ -1,7 +1,7 @@
 PORTNAME=	ltfs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.8.4
-DISTVERSIONSUFFIX=	-10522
+DISTVERSION=	2.4.9.0
+DISTVERSIONSUFFIX=	-10523
 CATEGORIES=	filesystems sysutils
 
 MAINTAINER=	kbowling@FreeBSD.org
@@ -29,6 +29,10 @@ GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 CONFIGURE_ARGS+=	--enable-icu-6x
+
+# GitHub tags are vX.Y.Z.W-NNNNN; portscout normalizes that to X.Y.Z.W.NNNNN
+# and treats it as newer than DISTVERSION. Skip the current tag in both forms.
+PORTSCOUT=	skipv:${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX},${DISTVERSION}${DISTVERSIONSUFFIX:S|-|.|}
 
 #INSTALL_TARGET=	install-strip
 

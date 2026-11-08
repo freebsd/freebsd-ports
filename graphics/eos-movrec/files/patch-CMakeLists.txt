@@ -1,6 +1,14 @@
---- CMakeLists.txt.orig	2015-01-27 14:22:56 UTC
+--- CMakeLists.txt.orig	2013-06-08 16:30:01 UTC
 +++ CMakeLists.txt
-@@ -24,12 +24,14 @@ if(WIN32)
+@@ -1,6 +1,6 @@ project(eos-movrec)
+ project(eos-movrec)
+ 
+-cmake_minimum_required(VERSION 2.6.2)
++cmake_minimum_required(VERSION 2.6.2...9.9.9)
+ 
+ include(FindPkgConfig)
+ include(CheckIncludeFile)
+@@ -24,12 +24,14 @@ endif(WIN32)
  	endif(MINGW)
  endif(WIN32)
  
@@ -19,7 +27,7 @@
  set(EDSDK_LDFLAGS "")
  if(WIN32)
  	set(EDSDKPATH "${CMAKE_SOURCE_DIR}/EDSDK")
-@@ -50,6 +52,13 @@ elseif(UNIX)
+@@ -46,6 +48,13 @@ endif(WIN32)
  	add_definitions(-DGPHOTO2=1)
  endif(WIN32)
  
@@ -33,8 +41,8 @@
  set(eos_movrec_SRCS
  	main.cpp
  	mainwnd.cpp
-@@ -73,12 +82,6 @@ if(WIN32)
- 	set_property(SOURCE eos_movrec.rc PROPERTY OBJECT_DEPENDS ${CMAKE_SOURCE_DIR}/CMakeLists.txt)
+@@ -68,12 +77,6 @@ endif(WIN32)
+ 	set(eos_movrec_SRCS ${eos_movrec_SRCS} eos_movrec.rc)
  endif(WIN32)
  
 -# headers with Q_OBJECT
@@ -46,7 +54,7 @@
  # force use exceptions
  set(CMAKE_CXX_FLAGS         "${CMAKE_CXX_FLAGS} -fexceptions")
  # add debug defines
-@@ -86,12 +89,13 @@ set(CMAKE_CXX_FLAGS_DEBUG   "${CMAKE_CXX_FLAGS_DEBUG} 
+@@ -81,12 +84,13 @@ add_definitions(-D_FILE_OFFSET_BITS=64 -D_LARGE_FILES=
  set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -DNDEBUG")
  
  add_definitions(-D_FILE_OFFSET_BITS=64 -D_LARGE_FILES=1)
@@ -61,7 +69,7 @@
  
  	# enable resource language
  	enable_language(RC)
-@@ -102,10 +106,10 @@ if (WIN32)
+@@ -97,10 +101,10 @@ endif(WIN32)
  	set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,--enable-auto-import")
  endif(WIN32)
  

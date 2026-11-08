@@ -1,6 +1,6 @@
---- src/dialogs/power/window.vala.orig	2023-01-29 15:27:27 UTC
+--- src/dialogs/power/window.vala.orig	2025-11-09 13:21:57 UTC
 +++ src/dialogs/power/window.vala
-@@ -13,7 +13,7 @@ using Gdk;
+@@ -13,7 +13,7 @@ namespace Budgie {
  using Gtk;
  
  namespace Budgie {
@@ -9,7 +9,7 @@
  	const string G_SESSION = "org.gnome.SessionManager";
  
  	/**
-@@ -181,9 +181,9 @@ namespace Budgie {
+@@ -176,9 +176,9 @@ namespace Budgie {
  		 */
  		private async void setup_dbus() {
  			try {

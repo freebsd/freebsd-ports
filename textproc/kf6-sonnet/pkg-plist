@@ -36,6 +36,7 @@ lib/libKF6SonnetUi.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF6SonnetUi.so.6
 %%QT_PLUGINDIR%%/designer/sonnet6widgets.so
 %%QT_PLUGINDIR%%/kf6/sonnet/sonnet_aspell.so
+%%QT_PLUGINDIR%%/kf6/sonnet/sonnet_hunspell.so
 %%QT_QMLDIR%%/org/kde/sonnet/kde-qmlmodule.version
 %%QT_QMLDIR%%/org/kde/sonnet/libsonnetquickplugin.so
 %%QT_QMLDIR%%/org/kde/sonnet/qmldir

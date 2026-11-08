@@ -1,6 +1,5 @@
 PORTNAME=	pyhdfe
-DISTVERSION=	0.2.0
-PORTREVISION=	1
+DISTVERSION=	0.2.1
 CATEGORIES=	math python # statistics
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,6 +21,10 @@ USE_PYTHON=	distutils autoplist pytest
 
 NO_ARCH=	yes
 
+TEST_ARGS=	--disable-plugin-autoload
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_WRKSRC=	${WRKSRC}/pyhdfe/tests
+
+# tests as of 0.2.1: 15724 passed, 7796 skipped in 611.60s (0:10:11)
 
 .include <bsd.port.mk>

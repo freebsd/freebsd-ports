@@ -1,0 +1,22 @@
+# $FreeBSD$
+CARGO_CRATES=	anstyle-1.0.14 \
+		clap-4.6.6 \
+		clap_builder-4.6.6 \
+		clap_lex-1.1.0 \
+		codespan-reporting-0.13.1 \
+		equivalent-1.0.2 \
+		hashbrown-0.17.1 \
+		indexmap-2.14.0 \
+		proc-macro2-1.0.107 \
+		quote-1.0.47 \
+		serde-1.0.229 \
+		serde_core-1.0.229 \
+		serde_derive-1.0.229 \
+		strsim-0.11.1 \
+		syn-3.0.3 \
+		termcolor-1.4.1 \
+		unicode-ident-1.0.24 \
+		unicode-width-0.2.2 \
+		winapi-util-0.1.11 \
+		windows-link-0.2.1 \
+		windows-sys-0.61.2

@@ -1,5 +1,5 @@
 PORTNAME=	haruna
-DISTVERSION=	1.8.1
+DISTVERSION=	1.9.0
 CATEGORIES=	multimedia kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}
 
@@ -19,7 +19,7 @@ RUN_DEPENDS=	kio-extras>0:devel/kio-extras
 USES=		cmake desktop-file-utils gettext-tools gl kde:6 pkgconfig \
 		qt:6 tar:xz xorg
 USE_GL=		opengl
-USE_KDE=	breeze colorscheme config coreaddons crash \
+USE_KDE=	breeze-icons colorscheme config coreaddons crash \
 		filemetadata i18n iconthemes kio kirigami2 \
 		windowsystem \
 		ecm:build

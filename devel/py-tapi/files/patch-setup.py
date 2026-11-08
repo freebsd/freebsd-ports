@@ -1,11 +1,18 @@
---- setup.py.orig	2014-01-29 07:49:14 UTC
+--- setup.py.orig	2026-04-04 18:22:55 UTC
 +++ setup.py
-@@ -1,7 +1,7 @@ setup(
- from setuptools import setup, find_packages
+@@ -7,7 +7,7 @@ setup(
+     long_description = f.read()
  
  setup(
--    name = "Tapi",
-+    name = "tapi",
-     version = "0.1.7",
-     packages = find_packages(),
-     scripts = ['tapi.py'],
+-    name                          = "Tapi",
++    name                          = "tapi",
+     version                       = "0.2.2",
+     description                   = "Tines REST API wrapper",
+     long_description              = long_description,
+@@ -25,4 +25,4 @@ setup(
+         "dev": ["pytest", "twine"],
+     },
+     python_requires               = ">=3.10"
+-)
+\ No newline at end of file
++)

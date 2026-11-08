@@ -1,5 +1,5 @@
 PORTNAME=	libnjs
-DISTVERSION=	1.0.0
+DISTVERSION=	1.0.2
 CATEGORIES=	devel www
 
 MAINTAINER=	joneum@FreeBSD.org
@@ -15,6 +15,7 @@ LIB_DEPENDS=	libpcre2-8.so:devel/pcre2 \
 USES=		compiler:c11 cpe ssl
 
 CPE_VENDOR=	f5
+CPE_PRODUCT=	njs
 
 USE_GITHUB=	yes
 GH_TUPLE=	nginx:njs:${DISTVERSION}

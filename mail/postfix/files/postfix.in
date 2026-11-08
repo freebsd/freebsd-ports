@@ -39,10 +39,12 @@ procname=${postfix_procname}
 
 postfix_start() {
 	%%PREFIX%%/sbin/postfix ${postfix_flags} start
+	wait_for_pids $rc_pid
 }
 
 postfix_stop() {
 	%%PREFIX%%/sbin/postfix ${postfix_flags} stop
+	wait_for_pids $rc_pid
 }
 
 postfix_reload() {

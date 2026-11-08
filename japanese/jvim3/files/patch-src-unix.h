@@ -1,6 +1,6 @@
---- src/unix.h.orig	2013-09-05 04:16:52.000000000 +0900
-+++ src/unix.h	2013-09-05 04:18:11.000000000 +0900
-@@ -104,7 +104,7 @@
+--- src/unix.h.orig	2025-12-15 09:04:17 UTC
++++ src/unix.h
+@@ -104,7 +104,7 @@ extern void bcopy __ARGS((char *, char *, int));
  # define strrchr(ptr, c)		rindex((ptr), (c))
  #endif
  

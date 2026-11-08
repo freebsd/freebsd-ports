@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	jpbeconne@free.fr
 COMMENT=	Run 'R CMD check' from 'R' and Capture Results
-WWW=		https://CRAN.R-project.org/package=rcmdcheck
+WWW=		https://cran.r-project.org/package=rcmdcheck
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -22,7 +22,6 @@ CRAN_DEPENDS=	R-cran-callr>=3.1.1.9000:devel/R-cran-callr \
 		R-cran-sessioninfo>=1.1.1:devel/R-cran-sessioninfo \
 		R-cran-withr>0:devel/R-cran-withr \
 		R-cran-xopen>0:sysutils/R-cran-xopen
-BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
 USES=		cran:auto-plist

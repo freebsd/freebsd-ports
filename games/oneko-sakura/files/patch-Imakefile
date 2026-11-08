@@ -1,0 +1,14 @@
+--- Imakefile.orig	1999-06-05 14:03:59 UTC
++++ Imakefile
+@@ -1,4 +1,4 @@
+-/**/# Cannot compile in using Gcc
++/* Cannot compile using Gcc */
+ #             CC = cc
+ 
+   SYS_LIBRARIES = MathLibrary
+@@ -9,3 +9,5 @@ SimpleProgramTarget(oneko)
+ SimpleProgramTarget(oneko)
+ 
+ /* InstallAppDefaults(Oneko) */
++
++MANSUFFIX=6

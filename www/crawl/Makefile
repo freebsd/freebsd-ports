@@ -1,10 +1,10 @@
 PORTNAME=	crawl
 PORTVERSION=	0.4
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	www
 MASTER_SITES=	http://www.monkey.org/~provos/
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small, efficient web crawler with advanced features
 WWW=		https://www.monkey.org/~provos/crawl/
 

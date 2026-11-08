@@ -1,0 +1,12 @@
+--- tests/libtransmission-app/CMakeLists.txt.orig	2026-10-24 07:25:07 UTC
++++ tests/libtransmission-app/CMakeLists.txt
+@@ -27,7 +27,8 @@ target_link_libraries(libtransmission-app-test
+         gtestall
+         dht::dht
+         fmt::fmt-header-only
+-        libevent::event)
++        libevent::core
++        libevent::extra)
+ 
+ if(NOT CMAKE_CROSSCOMPILING OR CMAKE_CROSSCOMPILING_EMULATOR)
+     gtest_discover_tests(libtransmission-app-test

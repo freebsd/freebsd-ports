@@ -1,5 +1,5 @@
 PORTNAME=	pybind11-stubgen
-DISTVERSION=	2.5.5
+DISTVERSION=	3.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE=	BSD3CLAUSE
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 
-USES=		cmake:indirect python
+USES=		python
 USE_PYTHON=	pep517 concurrent autoplist pytest
 
 NO_ARCH=	yes

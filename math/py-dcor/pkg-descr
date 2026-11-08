@@ -1,0 +1,4 @@
+Distance correlation and energy statistics in Python.
+
+It offers measures of dependence and independence tests based on
+distance covariance and energy statistics.

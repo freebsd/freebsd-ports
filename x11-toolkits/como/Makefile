@@ -13,6 +13,10 @@ MAINTAINER=	jsm@FreeBSD.org
 COMMENT=	Compositor Modules for Wayland and X11
 WWW=		https://github.com/winft/como
 
+BROKEN=		Does not support KDE Plasma 6.8
+DEPRECATED=	Does not support KDE Plasma 6.8
+EXPIRATION_DATE=	2026-11-30
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

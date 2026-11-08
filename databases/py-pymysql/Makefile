@@ -1,6 +1,5 @@
 PORTNAME=	pymysql
-DISTVERSION=	1.1.1
-PORTREVISION=	2
+DISTVERSION=	1.2.0
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,7 +21,7 @@ NO_ARCH=	yes
 OPTIONS_DEFINE=	ED25519 RSA
 
 ED25519_DESC=	MariaDB ed25519 auth method support
-ED25519_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}PyNaCl>=1.4.0:security/py-pynacl@${PY_FLAVOR}
+ED25519_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}PyNaCl>=1.6.2:security/py-pynacl@${PY_FLAVOR}
 
 RSA_DESC=	sha256_password or caching_sha2_password auth method support
 RSA_USE=	PYTHON=cryptography

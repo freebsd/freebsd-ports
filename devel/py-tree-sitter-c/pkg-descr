@@ -1,0 +1,3 @@
+tree-sitter-c provides a C grammar for the Tree-sitter parsing library.
+It can be used with the tree-sitter Python bindings to parse C source
+code into a concrete syntax tree.

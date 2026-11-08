@@ -1,19 +1,18 @@
---- src/Makefile.in.orig	1998-12-30 16:31:46 UTC
-+++ src/Makefile.in
-@@ -372,13 +372,13 @@ install-exec-local:
- 	rm -f $(DESTDIR)/$(bindir)/`echo lsb | sed -e '$(transform)'`
- 	ln $(DESTDIR)/$(bindir)/`echo lsz |sed -e '$(transform)'` \
- 		$(DESTDIR)/$(bindir)/`echo lsb |sed -e '$(transform)'` 
--	rm -f $(bindir)/`echo lsx | sed -e '$(transform)'`
-+	rm -f $(DESTDIR)/$(bindir)/`echo lsx | sed -e '$(transform)'`
- 	ln $(DESTDIR)/$(bindir)/`echo lsz |sed -e '$(transform)'` \
- 		$(DESTDIR)/$(bindir)/`echo lsx |sed -e '$(transform)'` 
--	rm -f $(bindir)/`echo lrb | sed -e '$(transform)'`
-+	rm -f $(DESTDIR)/$(bindir)/`echo lrb | sed -e '$(transform)'`
- 	ln $(DESTDIR)/$(bindir)/`echo lrz |sed -e '$(transform)'` \
- 		$(DESTDIR)/$(bindir)/`echo lrb |sed -e '$(transform)'` 
--	rm -f $(bindir)/`echo lrx | sed -e '$(transform)'`
-+	rm -f $(DESTDIR)/$(bindir)/`echo lrx | sed -e '$(transform)'`
- 	ln $(DESTDIR)/$(bindir)/`echo lrz |sed -e '$(transform)'` \
- 		$(DESTDIR)/$(bindir)/`echo lrx |sed -e '$(transform)'` 
- #	rm -f $(bindir)/`echo lrzszbug | sed -e '$(transform)'`
+--- Makefile.in.orig	2026-10-04 09:37:14 UTC
++++ Makefile.in
+@@ -945,6 +945,7 @@ $(SANITIZERS):
+ 		QUIET=1 make -s V=0 vcheck || exit 1 ; \
+ 	fi ; done
+ 
++.if defined(GMAKE)
+ coverage: coverage/coverage.html
+ coverage/coverage.html: $(wildcard src/*.c src/*.h)
+ 	mkdir coverage 2>/dev/null || exit 0
+@@ -956,6 +957,7 @@ coverage/coverage.html: $(wildcard src/*.c src/*.h)
+ 	./configure -q
+ 	make -s V=0 clean
+ 	make -s V=0 -j 4
++.endif
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

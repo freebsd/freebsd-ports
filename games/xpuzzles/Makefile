@@ -1,5 +1,5 @@
 PORTNAME=	xpuzzles
-PORTVERSION=	8.9.4
+PORTVERSION=	8.9.5
 PORTREVISION=	0
 CATEGORIES=	games
 MASTER_SITES=	https://www.sillycycle.com/puzzles/

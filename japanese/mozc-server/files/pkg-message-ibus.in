@@ -1,0 +1,27 @@
+[
+{ type: install
+  message: <<EOM
+To enable Mozc, open ibus-setup and add Japanese > Mozc
+to the Input Method list.
+
+For an X11 session that does not configure IBus automatically,
+set the following environment variables before starting applications:
+
+export GTK_IM_MODULE=ibus
+export QT_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+
+For example, place these settings in ~/.xinitrc before the command
+that starts your desktop or window manager.
+
+If your desktop does not start IBus automatically, also run:
+
+%%LOCALBASE%%/bin/ibus-daemon --daemonize --xim
+
+Do not start a second IBus daemon if your desktop already manages it.
+For Wayland sessions, use your desktop's input method configuration.
+
+The Mozc server starts automatically when needed.
+EOM
+}
+]

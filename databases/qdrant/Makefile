@@ -1,9 +1,18 @@
 PORTNAME=	qdrant
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.18.3
-PORTREVISION=	1
+DISTVERSION=	1.20.0
+PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	databases
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+# https://github.com/qdrant/qdrant/pull/11321
+# "fix: build for targets that enable no target features (ppc64le, s390x)"
+PATCHFILES+=	e1d8c216ce5b2cb75f0aa5378fbfecd5976e63f0.patch:-p1 \
+		b54ddb8d0338547aa21c73d416ec9fbbcbe9c76a.patch:-p1
+# https://github.com/qdrant/qdrant/pull/11340
+# "telemetry: fix the build on targets without jemalloc"
+PATCHFILES+=	7d8c3e397d0fa0b1b4fa5eadbbf1f19735ddaac8.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Vector search engine and database for the next gen AI applications
@@ -15,7 +24,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_armv7=	compiler crashes, see https://github.com/rust-lang/rust/issues/120637
 BROKEN_i386=	compilation breaks with fatal warning: implicit conversion from 'std::numeric_limits<unsigned long long>::type' (aka 'unsigned long long') to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295
-BROKEN_powerpc64le=	compilation failure: called `Option::unwrap()` on a `None` value in ring-0.16.20/build.rs: # see https://github.com/qdrant/qdrant/issues/3392
 
 BUILD_DEPENDS=	protoc:devel/protobuf
 LIB_DEPENDS=	librocksdb.so:databases/rocksdb \
@@ -25,8 +33,6 @@ USES=		cargo cpe gmake llvm:min=13 perl5 pkgconfig
 USE_GITHUB=	yes
 USE_PERL5=	build
 USE_RC_SUBR=	qdrant
-
-MAKE_ENV=	AWS_LC_SYS_NO_JITTER_ENTROPY=1 # workaround for https://github.com/aws/aws-lc-rs/issues/1097
 
 QDRANT_DBDIR?=	/var/db/qdrant
 QDRANT_USER?=	nobody

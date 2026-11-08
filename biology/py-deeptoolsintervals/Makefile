@@ -5,7 +5,7 @@ CATEGORIES=	biology python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python interface for deepTools interval trees
 WWW=		https://github.com/deeptools/deeptools_intervals
 

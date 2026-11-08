@@ -1,17 +1,3 @@
-%%FONTSDIR%%/Ubuntu-B.ttf
-%%FONTSDIR%%/Ubuntu-BI.ttf
-%%FONTSDIR%%/Ubuntu-C.ttf
-%%FONTSDIR%%/Ubuntu-L.ttf
-%%FONTSDIR%%/Ubuntu-LI.ttf
-%%FONTSDIR%%/Ubuntu-M.ttf
-%%FONTSDIR%%/Ubuntu-MI.ttf
-%%FONTSDIR%%/Ubuntu-R.ttf
-%%FONTSDIR%%/Ubuntu-RI.ttf
-%%FONTSDIR%%/Ubuntu-Th.ttf
-%%FONTSDIR%%/UbuntuMono-B.ttf
-%%FONTSDIR%%/UbuntuMono-BI.ttf
-%%FONTSDIR%%/UbuntuMono-R.ttf
-%%FONTSDIR%%/UbuntuMono-RI.ttf
 %%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTING.txt
 %%PORTDOCS%%%%DOCSDIR%%/FONTLOG.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENCE-FAQ.txt
@@ -19,3 +5,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/TRADEMARKS.txt
 %%PORTDOCS%%%%DOCSDIR%%/copyright.txt
+%%FONTSDIR%%/Ubuntu-Italic[wdth,wght].ttf
+%%FONTSDIR%%/UbuntuMono-Italic[wght].ttf
+%%FONTSDIR%%/UbuntuMono[wght].ttf
+%%FONTSDIR%%/Ubuntu[wdth,wght].ttf

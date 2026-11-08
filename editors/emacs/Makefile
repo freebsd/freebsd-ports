@@ -1,13 +1,13 @@
 PORTNAME=	emacs
-DISTVERSION=	30.2
-PORTREVISION=	4
+DISTVERSION=	31.1
+PORTREVISION=	3
 PORTEPOCH=	3
 CATEGORIES=	editors
 MASTER_SITES=	GNU
 
 .if ${FLAVOR:U} == canna
-PATCH_SITES+=	https://www.gentei.org/~yuuji/software/emacs30canna/:canna
-PATCHFILES+=	emacs30.1-canna-20250224.diff.gz:-p1:canna
+PATCH_SITES+=	https://www.gentei.org/~yuuji/software/emacs31canna/:canna
+PATCHFILES+=	emacs31.1canna-20260824.diff.gz:-p1:canna
 .endif
 
 MAINTAINER=	emacs@FreeBSD.org
@@ -44,6 +44,10 @@ CONFIGURE_ARGS=		--disable-build-details \
 			--without-selinux
 .if ${FLAVOR:U} == canna
 CONFIGURE_ARGS+=	--with-canna
+# isearch-ext.el is a file that comes with the canna patch.  Native compiling it
+# during bootstrap creates the native-lisp directory early on in the build, and
+# that causes AOT to be silently skipped.
+MAKE_ARGS+=		BYTE_COMPILE_EXTRA_FLAGS="--eval '(setq native-comp-bootstrap-deny-list (list \"isearch-ext\"))'"
 .elif ${FLAVOR:U} == nox
 CONFIGURE_ARGS+=	--with-sound=no \
 			--with-x-toolkit=no \
@@ -90,7 +94,7 @@ INFO=		auth autotype bovine calc ccmode cl dbus dired-x ebrowse ede \
 		modus-themes newsticker nxml-mode octave-mode org pcl-cvs pgg \
 		rcirc reftex remember sasl sc semantic ses sieve smtpmail \
 		speedbar srecode todo-mode tramp transient url use-package \
-		vhdl-mode vip viper vtable widget wisent woman
+		vhdl-mode viper vtable widget wisent woman
 INFO_PATH=	${DATADIR_REL}/info
 .if ${FLAVOR:U} == canna
 PLIST_FILES+=	${DATADIR}/${DISTVERSION}/lisp/canna.el.gz \
@@ -105,32 +109,37 @@ OPTIONS_DEFINE=			ACL DBUS GNUTLS GSETTINGS HARFBUZZ LCMS2 M17N \
 				MAILUTILS MODULES NATIVECOMP OTF PGTK \
 				SCROLLBARS SOURCES SQLITE3 THREADS TREESITTER \
 				XFT XIM XML XWIDGETS
-OPTIONS_DEFAULT=		ACL CAIRO DBUS GIF GNUTLS GSETTINGS GTK3 \
-				HARFBUZZ JPEG KQUEUE LCMS2 MAILUTILS MODULES \
-				OSS PNG SCROLLBARS SOURCES SQLITE3 SVG THREADS \
-				TIFF TREESITTER WEBP XIM XML XPM
-.if ${FLAVOR:U} != nox
-OPTIONS_DEFAULT+=		NATIVECOMP
-.endif
 OPTIONS_GROUP=			GRAPHICS
 OPTIONS_GROUP_GRAPHICS=		CAIRO GIF JPEG MAGICK PNG SVG TIFF WEBP XPM
 OPTIONS_RADIO=			FILENOTIFY SOUND X11TOOLKIT
 OPTIONS_RADIO_FILENOTIFY=	GFILE KQUEUE
 OPTIONS_RADIO_SOUND=		ALSA OSS
 OPTIONS_RADIO_X11TOOLKIT=	GTK2 GTK3 MOTIF XAW XAW3D
+
+OPTIONS_DEFAULT=		ACL CAIRO DBUS GIF GNUTLS GSETTINGS GTK3 \
+				HARFBUZZ JPEG KQUEUE LCMS2 MAILUTILS MODULES \
+				OSS PNG SCROLLBARS SOURCES SQLITE3 SVG \
+				THREADS TIFF TREESITTER WEBP XIM XML XPM
+
+OPTIONS_EXCLUDE_armv7=		NATIVECOMP
+OPTIONS_EXCLUDE_powerpc64=	NATIVECOMP
+
+.if ${FLAVOR:U} == nox
+OPTIONS_EXCLUDE=		ALSA CAIRO DBUS GFILE GIF GSETTINGS GTK2 GTK3 \
+				HARFBUZZ JPEG LCMS2 M17N MAGICK MOTIF OSS OTF \
+				PGTK PNG SCROLLBARS SVG TIFF WEBP XAW XAW3D XFT \
+				XIM XPM XWIDGETS
+.else
+OPTIONS_DEFAULT+=		NATIVECOMP
+.endif
+
 .if ${FLAVOR:U} == wayland
 OPTIONS_EXCLUDE+=		GTK2 MOTIF XAW XAW3D XIM ${PGTK_PREVENTS} \
 				${PGTK_IMPLIES:@i@${${i}_PREVENTS}@}
 OPTIONS_SLAVE+=			PGTK ${PGTK_IMPLIES} \
 				${PGTK_IMPLIES:@i@${${i}_IMPLIES}@}
-.elif ${FLAVOR:U} == nox
-OPTIONS_EXCLUDE+=		ALSA CAIRO DBUS GFILE GIF GSETTINGS GTK2 GTK3 \
-				HARFBUZZ JPEG LCMS2 M17N MAGICK MOTIF OSS OTF \
-				PGTK PNG SCROLLBARS SVG TIFF WEBP XAW XAW3D XFT \
-				XIM XPM XWIDGETS
 .endif
-OPTIONS_EXCLUDE_armv7=		NATIVECOMP
-OPTIONS_EXCLUDE_powerpc64=	NATIVECOMP
+
 OPTIONS_SUB=			YES
 
 ACL_DESC=		Access control list support

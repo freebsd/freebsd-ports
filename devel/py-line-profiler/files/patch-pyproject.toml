@@ -1,0 +1,56 @@
+-- Use setuptools>=63.1.0 (version available in ports) instead of >=77.
+-- Convert license field from PEP 639 SPDX string to old-style dict format,
+-- which is required for compatibility with setuptools < 77.
+-- Remove license-files from [project] (PEP 639, not supported by setuptools < 77).
+-- Remove [[tool.setuptools.ext-modules]] section (not supported by setuptools < 77);
+-- the extension is defined in setup.py which is added by the port's post-patch.
+
+--- pyproject.toml.orig	2026-10-23 08:50:57 UTC
++++ pyproject.toml
+@@ -2,17 +2,13 @@ requires = [
+ build-backend = "setuptools.build_meta"
+ requires = [
+   "cython>=3.0.3",
+-  "setuptools>=77",
++  "setuptools>=63.1.0",
+ ]
+ 
+ [project]
+ name = "line_profiler"
+ description = "Line-by-line profiler"
+-license = "BSD-3-Clause"
+-license-files = [
+-  "LICENSE.txt",
+-  "LICENSE_Python.txt",
+-]
++license = { text = "BSD-3-Clause" }
+ authors = [ { name = "Robert Kern", email = "robert.kern@enthought.com" } ]
+ requires-python = ">=3.10"
+ classifiers = [
+@@ -86,17 +82,6 @@ packages.find.include = [
+   "line_profiler*",
+ ]
+ 
+-[[tool.setuptools.ext-modules]]
+-name = "line_profiler._line_profiler"
+-sources = [
+-  "line_profiler/_line_profiler.pyx",
+-  "line_profiler/timers.c",
+-  "line_profiler/c_trace_callbacks.c",
+-]
+-language = "c++"
+-depends = [
+-  "line_profiler/_map_helpers.pxd",
+-]
+ 
+ [tool.uv]
+ cache-keys = [
+@@ -220,7 +205,7 @@ url = "https://github.com/pyutils/line_profiler"
+ author_email = "robert.kern@enthought.com"
+ description = "Line-by-line profiler"
+ url = "https://github.com/pyutils/line_profiler"
+-license = "BSD-3-Clause"
++license = { text = "BSD-3-Clause" }
+ dev_status = "stable"
+ ci_pypi_trusted_publishing = true
+ ci_gpg_secret_transport = "direct_ci"

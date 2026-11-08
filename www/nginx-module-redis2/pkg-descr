@@ -1,0 +1,8 @@
+The redis2 module sends commands to a Redis server and answers with the
+reply as it arrived, in Redis' own protocol: the body is what Redis sent,
+and whatever asked for it parses that.  The module speaks the protocol
+itself rather than through a library, keeps a connection for reuse, and
+can send several commands in one request.
+
+This port only installs the module sources.  The module itself is built by
+the nginx ports when their REDIS2 option is enabled.

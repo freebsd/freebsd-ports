@@ -1,0 +1,21 @@
+--- src/BUILD.bazel.orig
++++ src/BUILD.bazel
+@@ -239,6 +239,8 @@ mongo_cc_library(
+         "//src/mongo/db/matcher:matcher_global_hdrs",
+         "//src/mongo/db/matcher/schema:encrypt_schema_idl_gen",
+         "//src/mongo/db/matcher/schema:schema_global_hdrs",
++    ] + select({
++        "//bazel/config:build_enterprise_enabled": [
+         "//src/mongo/db/modules/enterprise:enterprise_global_hdrs",
+         "//src/mongo/db/modules/enterprise/docs:docs_global_hdrs",
+         "//src/mongo/db/modules/enterprise/docs/fle:fle_global_hdrs",
+@@ -328,6 +330,9 @@ mongo_cc_library(
+         "//src/mongo/db/modules/enterprise/src/util:util_global_hdrs",
+         "//src/mongo/db/modules/enterprise/src/workloads:workloads_global_hdrs",
+         "//src/mongo/db/modules/enterprise/src/workloads/streams:streams_global_hdrs",
++        ],
++        "//conditions:default": [],
++    }) + [
+         "//src/mongo/db/op_observer:op_observer_global_hdrs",
+         "//src/mongo/db/ops:delete_request_idl_gen",
+         "//src/mongo/db/ops:ops_global_hdrs",

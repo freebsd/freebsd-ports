@@ -1,0 +1,24 @@
+--- etc/jvm_options.xml.orig	2026-05-19 09:32:07 UTC
++++ etc/jvm_options.xml
+@@ -16,7 +16,8 @@ -->
+ $SCILAB : scilab path (SCI in Scilab)
+ -->
+ <jvm_options>
+-    <option value="-Djava.library.path="/>
++    <!-- Needed for FreeBSD because LibraryPath.addPath does not work -->
++    <option value="-Djava.library.path=%%WRKSRC%%/bin:%%WRKSRC%%/.libs:%%WRKSRC%%/modules/.libs:%%WRKSRC%%/modules/action_binding/.libs:%%WRKSRC%%/modules/arnoldi/.libs:%%WRKSRC%%/modules/ast/.libs:%%WRKSRC%%/modules/call_scilab/.libs:%%WRKSRC%%/modules/commons/.libs:%%WRKSRC%%/modules/completion/.libs:%%WRKSRC%%/modules/console/.libs:%%WRKSRC%%/modules/coverage/.libs:%%WRKSRC%%/modules/differential_equations/.libs:%%WRKSRC%%/modules/external_objects_java/.libs:%%WRKSRC%%/modules/external_objects/.libs:%%WRKSRC%%/modules/functions_manager/.libs:%%WRKSRC%%/modules/functions/.libs:%%WRKSRC%%/modules/graphic_export/.libs:%%WRKSRC%%/modules/graphic_objects/.libs:%%WRKSRC%%/modules/graphics/.libs:%%WRKSRC%%/modules/gui/.libs:%%WRKSRC%%/modules/hdf5/.libs:%%WRKSRC%%/modules/helptools/.libs:%%WRKSRC%%/modules/history_browser/.libs:%%WRKSRC%%/modules/history_manager/.libs:%%WRKSRC%%/modules/interpolation/.libs:%%WRKSRC%%/modules/javasci/.libs:%%WRKSRC%%/modules/jvm/.libs:%%WRKSRC%%/modules/localization/.libs:%%WRKSRC%%/modules/matio/.libs:%%WRKSRC%%/modules/optimization/.libs:%%WRKSRC%%/modules/parallel/.libs:%%WRKSRC%%/modules/preferences/.libs:%%WRKSRC%%/modules/randlib/.libs:%%WRKSRC%%/modules/renderer/.libs:%%WRKSRC%%/modules/scicos_blocks/.libs:%%WRKSRC%%/modules/scicos/.libs:%%WRKSRC%%/modules/scinotes/.libs:%%WRKSRC%%/modules/signal_processing/.libs:%%WRKSRC%%/modules/slint/.libs:%%WRKSRC%%/modules/sound/.libs:%%WRKSRC%%/modules/special_functions/.libs:%%WRKSRC%%/modules/spreadsheet/.libs:%%WRKSRC%%/modules/statistics/.libs:%%WRKSRC%%/modules/tclsci/.libs:%%WRKSRC%%/modules/types/.libs:%%WRKSRC%%/modules/ui_data/.libs:%%WRKSRC%%/modules/umfpack/.libs:%%WRKSRC%%/modules/webtools/.libs:%%WRKSRC%%/modules/xcos/.libs:%%WRKSRC%%/modules/xml/.libs:%%LOCALBASE%%/lib:%%JAVA_HOME%%/lib:%%JAVA_HOME%%/lib/server:"/>
+     <option value="-Djava.class.path=$SCILAB/modules/jvm/jar/org.scilab.modules.jvm.jar"/>
+     <option value="-Djava.system.class.loader=org.scilab.modules.jvm.ScilabClassLoader"/>
+     <!-- Use of Scilab class loader requires to disable class data sharing to hide a "Archived non-system classes are disabled" warning at startup -->
+@@ -26,6 +27,11 @@ -->
+     <!-- Needed for Linux version startup -->
+     <option value="--add-opens=java.desktop/sun.awt.X11=ALL-UNNAMED" os="linux"/>
+     <option value="-Djdk.lang.processReaperUseDefaultStackSize=true" os="linux"/>
++
++    <!-- Needed for FreeBSD version startup -->
++    <option value="--add-opens=java.desktop/sun.awt.X11=ALL-UNNAMED" os="freebsd"/>
++    <option value="-Djdk.lang.processReaperUseDefaultStackSize=true" os="freebsd"/>
++    <option value="--enable-native-access=ALL-UNNAMED" os="freebsd"/>
+ 
+     <!-- Needed by org.scilab.modules.ui_data.filebrowser.SwingScilabTreeTable to be able to invoke non-public "isLocationInExpandControl" method by reflexion -->
+     <option value="--add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED"/>

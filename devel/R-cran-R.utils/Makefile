@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Utility functions useful developing R packages
-WWW=		https://cran.r-project.org/package=R.utils
 
 LICENSE=	LGPL21 LGPL3
 LICENSE_COMB=	dual

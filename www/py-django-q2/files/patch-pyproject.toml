@@ -1,0 +1,9 @@
+--- pyproject.toml.orig	2026-09-08 21:48:42 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["uv_build>=0.10.7,<=0.12.1"]
++requires = ["uv_build>=0.10.7"]
+ build-backend = "uv_build"
+ 
+ [project]

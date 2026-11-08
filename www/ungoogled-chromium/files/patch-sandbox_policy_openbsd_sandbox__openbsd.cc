@@ -1,4 +1,4 @@
---- sandbox/policy/openbsd/sandbox_openbsd.cc.orig	2026-05-09 18:09:27 UTC
+--- sandbox/policy/openbsd/sandbox_openbsd.cc.orig	2026-08-13 07:41:05 UTC
 +++ sandbox/policy/openbsd/sandbox_openbsd.cc
 @@ -0,0 +1,445 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
@@ -116,7 +116,7 @@
 +  const std::string process_type =
 +      command_line->GetSwitchValueASCII(switches::kProcessType);
 +
-+  base::SysInfo::AmountOfPhysicalMemory();
++  base::SysInfo::AmountOfTotalPhysicalMemory();
 +  base::SysInfo::NumberOfProcessors();
 +  base::SysInfo::CPUModelName();
 +
@@ -386,7 +386,7 @@
 +    // up to 64 GB.
 +    constexpr rlim_t GB = 1024 * 1024 * 1024;
 +    const rlim_t physical_memory =
-+        base::SysInfo::AmountOfPhysicalMemory().InBytes();
++        base::SysInfo::AmountOfTotalPhysicalMemory().InBytes();
 +    rlim_t limit;
 +    if ((sandbox_type == sandbox::mojom::Sandbox::kGpu ||
 +         sandbox_type == sandbox::mojom::Sandbox::kOnDeviceModelExecution) &&  

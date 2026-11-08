@@ -1,0 +1,21 @@
+-- Fix pyproject.toml: relax setuptools version requirement (ports have 63.x) and fix license field format.
+
+--- pyproject.toml.orig	2026-10-06 15:25:40 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=77.0.3", "wheel"]
++requires = ["setuptools>=63.0", "wheel"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -7,8 +7,7 @@ description = "Parsing library for extracting data fra
+ requires-python = ">=3.9"
+ authors = [ {name="Alex Rubinsteyn", email="alex.rubinsteyn@unc.edu" } ]
+ description = "Parsing library for extracting data frames of genomic features from GTF files"
+-license = "Apache-2.0"
+-license-files = ["LICENSE"]
++license = {text = "Apache-2.0"}
+ classifiers = [
+     "Development Status :: 4 - Beta",
+     "Environment :: Console",

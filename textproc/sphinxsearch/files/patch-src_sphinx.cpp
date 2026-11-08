@@ -91,6 +91,15 @@
  			if ( *str==*s && !memcmp ( str+1, s+1, len-1 ) )
  				return wordlist[key].m_iCode;
  		}
+@@ -25836,7 +25836,7 @@ bool CSphFieldRegExps::AddRegExp ( const char * sRegExp, CSphString & sError )
+ 	tRegExp.m_sTo.Trim();
+ 
+ 	RE2::Options tOptions;
+-	tOptions.set_utf8 ( true );
++	// RE2 removed set_utf8() in the 2020-05-01 release. UTF-8 is the default encoding.
+ 	tRegExp.m_pRE2 = new RE2 ( tRegExp.m_sFrom.cstr(), tOptions );
+ 
+ 	std::string sRE2Error;
 @@ -27817,7 +27817,7 @@ const char * CSphSource_SQL::SqlUnpackColumn ( int iFi
  				{
  					m_bUnpackFailed = true;

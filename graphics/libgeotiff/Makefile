@@ -1,6 +1,6 @@
 PORTNAME=	libgeotiff
 PORTVERSION=	1.7.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/OSGeo/libgeotiff/releases/download/${PORTVERSION}/ \
 		https://download.osgeo.org/geotiff/libgeotiff/

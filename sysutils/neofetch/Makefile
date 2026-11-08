@@ -1,6 +1,6 @@
 PORTNAME=	neofetch
 DISTVERSION=	7.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -14,6 +14,8 @@ RUN_DEPENDS=	bash:shells/bash
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dylanaraps
+
+CONFLICTS_INSTALL=	hyfetch
 
 NO_ARCH=	yes
 NO_BUILD=	yes

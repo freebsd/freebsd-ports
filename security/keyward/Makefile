@@ -1,6 +1,6 @@
 PORTNAME=	keyward
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.1
+DISTVERSION=	1.1.0
 CATEGORIES=	security
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -10,9 +10,10 @@ WWW=		https://github.com/gateway-of-last-resort/keyward
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.26+,modules
+USES=		go:modules
 GO_MODULE=	github.com/gateway-of-last-resort/keyward
 GO_TARGET=	./cmd/keyward
+GO_LDFLAGS=	-X main.version=${DISTVERSION}
 
 PLIST_FILES=	bin/keyward
 

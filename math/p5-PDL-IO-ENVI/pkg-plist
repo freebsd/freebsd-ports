@@ -1,2 +1,3 @@
 %%SITE_PERL%%/PDL/IO/ENVI.pm
+%%SITE_PERL%%/PDL/Pdldoc/PDL-IO-ENVI.db
 %%PERL5_MAN3%%/PDL::IO::ENVI.3.gz

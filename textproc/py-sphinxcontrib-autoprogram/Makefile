@@ -24,8 +24,17 @@ OPTIONS_DEFINE=	DOCS
 DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.2,1:textproc/py-sphinx@${PY_FLAVOR}
 DOCS_PORTDOCS=		*
 
+.include <bsd.port.pre.mk>
+
 post-extract:
 	@(cd ${BUILD_WRKSRC}; ${RM} sphinxcontrib/__init__.py;)
+
+.if ${PYTHON_REL} >= 31400
+post-patch:
+	${REINPLACE_CMD} -e "s/node.value.s/node.value.value/g" \
+		-e "s/ast.Str/ast.Constant/g" \
+		${WRKSRC}/doc/conf.py
+.endif
 
 pre-build-DOCS-on:
 	@(cd ${BUILD_WRKSRC}; \
@@ -44,4 +53,4 @@ do-test:
 	${SETENV} ${MAKE_ENV} \
 	${PYTHON_CMD} -m unittest -v sphinxcontrib/autoprogram.py
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

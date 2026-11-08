@@ -1,6 +1,17 @@
 --- CMakeLists.txt.orig	2017-02-11 19:09:37 UTC
 +++ CMakeLists.txt
-@@ -234,7 +234,7 @@ include_directories(
+@@ -1,8 +1,7 @@
++cmake_minimum_required(VERSION 3.10)
++
+ project(lugaru)
+ 
+-cmake_minimum_required(VERSION 3.0)
+-cmake_policy(SET CMP0004 OLD)
+-
+ include(FindPkgConfig)
+ include(GNUInstallDirs)
+ 
+@@ -234,7 +233,7 @@ include_directories(
      ${CMAKE_SOURCE_DIR}/Source
  )
  

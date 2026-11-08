@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+This package contains the sources of the zstd modules only.  It does
+not install loadable modules.
+
+The modules themselves are built by the nginx ports.  To use zstd,
+build www/nginx, www/nginx-devel or www/freenginx with the ZSTD
+option enabled.  Those ports pick the sources up from
+%%PREFIX%%/share/nginx/modules/nginx-module-zstd and produce
+ngx_http_zstd_filter_module.so and
+ngx_http_zstd_static_module.so.
+EOM
+}
+]

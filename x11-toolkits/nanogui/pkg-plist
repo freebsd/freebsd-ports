@@ -1,10 +1,16 @@
+include/GLFW/glfw3.h
+include/GLFW/glfw3native.h
 include/nanogui/button.h
+include/nanogui/camera.h
 include/nanogui/canvas.h
 include/nanogui/checkbox.h
+include/nanogui/chroma.h
+include/nanogui/colorpass.h
 include/nanogui/colorpicker.h
 include/nanogui/colorwheel.h
 include/nanogui/combobox.h
 include/nanogui/common.h
+include/nanogui/fence.h
 include/nanogui/formhelper.h
 include/nanogui/graph.h
 include/nanogui/icons.h
@@ -12,6 +18,7 @@ include/nanogui/imagepanel.h
 include/nanogui/imageview.h
 include/nanogui/label.h
 include/nanogui/layout.h
+include/nanogui/lines.h
 include/nanogui/messagedialog.h
 include/nanogui/metal.h
 include/nanogui/nanogui.h
@@ -21,6 +28,8 @@ include/nanogui/popup.h
 include/nanogui/popupbutton.h
 include/nanogui/progressbar.h
 include/nanogui/python.h
+include/nanogui/quad.h
+include/nanogui/ratemeter.h
 include/nanogui/renderpass.h
 include/nanogui/screen.h
 include/nanogui/shader.h

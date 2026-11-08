@@ -1,0 +1,7 @@
+Javax Activation defines a set of standard services to: determine the MIME
+type of an arbitrary piece of data; encapsulate access to it; discover the
+operations available on it; and instantiate the appropriate bean to perform
+the operation(s).
+
+Remark: this is an old package, to be used by math/scilab, and if possible
+	you should prefer devel/jakarta-activation.

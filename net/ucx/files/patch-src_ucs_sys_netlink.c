@@ -1,4 +1,4 @@
---- src/ucs/sys/netlink.c.orig	2026-05-06 13:47:14 UTC
+--- src/ucs/sys/netlink.c.orig	2026-09-09 14:48:02 UTC
 +++ src/ucs/sys/netlink.c
 @@ -8,6 +8,8 @@
  #include "config.h"
@@ -9,7 +9,7 @@
  #include "netlink.h"
  
  #include <ucs/datastruct/khash.h>
-@@ -347,3 +349,80 @@ int ucs_netlink_is_best_route(int if_index, const stru
+@@ -384,3 +386,80 @@ int ucs_netlink_is_best_route(int if_index, const stru
  
      return (ucs_netlink_max_netmask_len(sa_remote) == netmask_len);
  }

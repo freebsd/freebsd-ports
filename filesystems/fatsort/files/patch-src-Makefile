@@ -1,0 +1,19 @@
+--- src/Makefile.orig	2023-03-11 15:06:49 UTC
++++ src/Makefile
+@@ -1,5 +1,5 @@
+-CC=gcc
+-LD=gcc
++CC?=gcc
++LD?=gcc
+ 
+ ifdef DEBUG
+ CFLAGS += -g -DDEBUG=$(DEBUG) -fstack-protector-all
+@@ -11,7 +11,7 @@ override CFLAGS+= -D_LARGEFILE_SOURCE -D_FILE_OFFSET_B
+ CFLAGS += -Wall -Wextra
+ override CFLAGS+= -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE ${CPPFLAGS}
+ 
+-INSTALL_FLAGS=-m 0755 -p -D
++INSTALL_FLAGS?=-m 0755 -p -D
+ 
+ UNAME_S := $(shell uname -s)
+ UNAME_P := $(shell uname -p)

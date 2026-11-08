@@ -32,6 +32,7 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/data/annotations/ceb.xml
 %%DATADIR%%/data/annotations/chr.xml
 %%DATADIR%%/data/annotations/ckb.xml
+%%DATADIR%%/data/annotations/cop.xml
 %%DATADIR%%/data/annotations/cs.xml
 %%DATADIR%%/data/annotations/cv.xml
 %%DATADIR%%/data/annotations/cy.xml
@@ -83,6 +84,7 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/data/annotations/ja.xml
 %%DATADIR%%/data/annotations/jv.xml
 %%DATADIR%%/data/annotations/ka.xml
+%%DATADIR%%/data/annotations/kaa.xml
 %%DATADIR%%/data/annotations/kab.xml
 %%DATADIR%%/data/annotations/kk.xml
 %%DATADIR%%/data/annotations/kk_Arab.xml
@@ -204,6 +206,7 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/data/annotationsDerived/ceb.xml
 %%DATADIR%%/data/annotationsDerived/chr.xml
 %%DATADIR%%/data/annotationsDerived/ckb.xml
+%%DATADIR%%/data/annotationsDerived/cop.xml
 %%DATADIR%%/data/annotationsDerived/cs.xml
 %%DATADIR%%/data/annotationsDerived/cv.xml
 %%DATADIR%%/data/annotationsDerived/cy.xml
@@ -255,6 +258,7 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/data/annotationsDerived/ja.xml
 %%DATADIR%%/data/annotationsDerived/jv.xml
 %%DATADIR%%/data/annotationsDerived/ka.xml
+%%DATADIR%%/data/annotationsDerived/kaa.xml
 %%DATADIR%%/data/annotationsDerived/kab.xml
 %%DATADIR%%/data/annotationsDerived/kk.xml
 %%DATADIR%%/data/annotationsDerived/kk_Arab.xml

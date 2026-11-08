@@ -18,23 +18,33 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 		libpcap.so:net/libpcap \
 		libunistring.so:devel/libunistring
 
+FLAVORS=	default netmap
+FLAVOR?=	${FLAVORS:[1]}
+netmap_PKGNAMESUFFIX=	-netmap
+
 USES=		cmake pkgconfig
 
 USE_GITHUB=	yes
 
-CMAKE_ON=	FORCE_CONF_INSTALL
+.if ${FLAVOR} == netmap
+COMMENT+=	(with netmap support)
+CMAKE_ON=	WITH_NETMAP
+.endif
+
+CMAKE_ON+=	FORCE_CONF_INSTALL
 
 post-patch:
-	@${REINPLACE_CMD} -i '' -e 's|/etc/zmap|${LOCALBASE}/etc/zmap|g' -e 's|/usr/local|${LOCALBASE}|g' \
-		${WRKSRC}/CMakeLists.txt
-	@${REINPLACE_CMD} -i '' -e 's|/etc/zmap/zmap.conf|${LOCALBASE}/etc/zmap/zmap.conf|g' \
-		${WRKSRC}/src/zopt.ggo.in \
-		${WRKSRC}/src/zmap.c
-	@${REINPLACE_CMD} -i '' -e 's|/etc/zmap/blocklist.conf|${LOCALBASE}/etc/zmap/blocklist.conf|g' \
-		${WRKSRC}/conf/zmap.conf \
-		${WRKSRC}/src/zmap.c
+	@${REINPLACE_CMD} -e '\
+		s|/etc/zmap|${LOCALBASE}/etc/zmap|g; \
+		s|/usr/local|${LOCALBASE}|g' \
+		${PATCH_WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e 's|/etc/zmap/zmap.conf|${LOCALBASE}/etc/zmap/zmap.conf|g' \
+		${PATCH_WRKSRC}/src/zopt.ggo.in
+	@${REINPLACE_CMD} -e 's|/etc/zmap/blocklist.conf|${LOCALBASE}/etc/zmap/blocklist.conf|g' \
+		${PATCH_WRKSRC}/conf/zmap.conf
 
 post-install:
+	@${RM} ${STAGEDIR}${ETCDIR}/zmap.conf.bak
 	@${MV} ${STAGEDIR}${ETCDIR}/blocklist.conf ${STAGEDIR}${ETCDIR}/blocklist.conf.sample
 	@${MV} ${STAGEDIR}${ETCDIR}/zmap.conf ${STAGEDIR}${ETCDIR}/zmap.conf.sample
 

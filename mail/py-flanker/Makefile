@@ -1,8 +1,8 @@
 PORTNAME=	flanker
-PORTVERSION=	0.9.11
-PORTREVISION=	1
+PORTVERSION=	0.9.16
+DISTVERSIONPREFIX=	v
 CATEGORIES=	mail python
-MASTER_SITES=	PYPI
+#MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -28,9 +28,18 @@ USE_PYTHON=	autoplist concurrent cryptography pep517
 
 NO_ARCH=	yes
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	mailgun
+
 OPTIONS_DEFINE=	CCHARDET
 CCHARDET_DESC=	Character encoding detection via cchardet
 
 CCHARDET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cchardet>=0.3.5:textproc/py-cchardet@${PY_FLAVOR}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} >= 31300
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}standard-imghdr>=3.13.0<3.13.0_99:devel/py-standard-imghdr@${PY_FLAVOR}
+.endif
+
+.include <bsd.port.post.mk>

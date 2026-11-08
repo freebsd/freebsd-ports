@@ -1,15 +1,15 @@
---- Makefile.PL.orig	2020-04-18 17:55:08 UTC
+--- Makefile.PL.orig	2026-08-26 19:57:11 UTC
 +++ Makefile.PL
-@@ -212,7 +212,7 @@ my %opts =
+@@ -232,7 +232,7 @@ my %opts =
      (
       NAME           => 'DBD::Pg',
       VERSION_FROM   => 'Pg.pm',
--     INC            => "-I$POSTGRES_INCLUDE -I$dbi_arch_dir",
-+     INC            => "-I$POSTGRES_INCLUDE -I$dbi_arch_dir $comp_opts",
-      OBJECT         => 'Pg$(OBJ_EXT) dbdimp$(OBJ_EXT) quote$(OBJ_EXT) types$(OBJ_EXT)',
-      LIBS           => ["-L$POSTGRES_LIB -lpq -lm"],
+-     INC            => qq{-I"$POSTGRES_INCLUDE" -I"$dbi_arch_dir"},
++     INC            => qq{-I"$POSTGRES_INCLUDE" -I"$dbi_arch_dir" $comp_opts},
+      OBJECT         => 'Pg$(OBJ_EXT) dbdimp$(OBJ_EXT) quote$(OBJ_EXT) types$(OBJ_EXT) strbuf$(OBJ_EXT)',
+      LIBS           => ["-L\"$POSTGRES_LIB\" -lpq -lm"],
       AUTHOR         => 'Greg Sabino Mullane',
-@@ -224,7 +224,6 @@ my %opts =
+@@ -245,7 +245,6 @@ my %opts =
                          'Time::HiRes'         => '0',
                          'version'             => '0',
                         },

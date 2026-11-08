@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Datasets for Spatial Analysis
-WWW=		https://cran.r-project.org/web/packages/spData/
+WWW=		https://cran.r-project.org/package=spData
 
 LICENSE=	CC0-1.0
 

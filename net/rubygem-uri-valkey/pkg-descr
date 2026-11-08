@@ -1,0 +1,2 @@
+URI-Valkey creates URI objects for Valkey URLs, with support for parsing
+connection strings and extracting configuration parameters.

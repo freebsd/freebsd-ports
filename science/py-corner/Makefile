@@ -1,5 +1,5 @@
 PORTNAME=	corner
-DISTVERSION=	2.2.3
+DISTVERSION=	2.3.0
 CATEGORIES=	science graphics python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,6 +15,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR
 		${PYTHON_PKGNAMEPREFIX}hatch-vcs>0:devel/py-hatch-vcs@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=2.1:math/py-matplotlib@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}arviz>=0.9:math/py-arviz@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}arviz-base>0:math/py-arviz-base@${PY_FLAVOR} \
 		nox>0:devel/nox \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
 
@@ -23,9 +24,10 @@ USE_PYTHON=	autoplist concurrent pep517 pytest
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_WRKSRC=	${WRKSRC}/tests
+TEST_ARGS=	-p no:black -p no:mypy -p no:cov
 
 NO_ARCH=	yes
 
-# tests as of 2.2.3: 12 failed, 49 passed in 174.75s (0:02:54)
+# tests as of 2.3.0: 64 passed, 1 skipped in 32.28s
 
 .include <bsd.port.mk>

@@ -43,10 +43,6 @@ OPTIONS_DEFINE=		DOCS
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == "amd64"
-CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:tl}${OSREL}
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} '/install:/s/:.*/:/' \
 		${WRKSRC}/Makefile.in \

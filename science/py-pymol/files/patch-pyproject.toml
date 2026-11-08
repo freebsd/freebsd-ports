@@ -1,0 +1,24 @@
+-- Relax the numpy upper limit and the setuptools requirement
+-- The numpy upper limit would break the build with the numpy in the tree, and the setuptools in the tree is older than required
+
+--- pyproject.toml.orig	2025-01-25 04:19:47 UTC
++++ pyproject.toml
+@@ -14,15 +14,15 @@ dependencies = [
+   {name = "Schrodinger", email = "pymol-users@lists.sourceforge.net"},
+ ]
+ dependencies = [
+-  "numpy>=1.26.4,<2",
++  "numpy>=1.26.4",
+ ]
+ 
+ [build-system]
+ build-backend = "backend"
+ backend-path = ["_custom_build"]
+ requires = [
+-  "numpy>=1.26.4,<2",
+-  "setuptools>=69.2.0",
++  "numpy>=1.26.4",
++  "setuptools>=63",
+ ]
+ 
+ [project.optional-dependencies]

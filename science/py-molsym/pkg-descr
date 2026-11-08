@@ -1,0 +1,4 @@
+MolSym is a program for molecular point group detection, symmetry
+operations, character tables, and the construction of symmetry-adapted
+linear combinations (SALCs) of internal coordinates and Cartesian
+displacements.

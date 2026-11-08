@@ -1,0 +1,7 @@
+ONNX IR is an in-memory representation for ONNX models.  It loads a model
+into a mutable object graph, lets programs inspect and rewrite graphs,
+initializers and metadata, and serializes the result back to ONNX, without
+going through protobuf by hand.
+
+It is the representation that the ONNX rewriter and exporter tooling build
+upon.

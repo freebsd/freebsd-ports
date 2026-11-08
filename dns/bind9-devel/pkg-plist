@@ -4,6 +4,7 @@ bin/named-compilezone
 bin/named-journalprint
 bin/named-makejournal
 bin/named-nzd2nzf
+bin/named-wireformat
 @sample etc/mtree/BIND.chroot.dist.sample
 @sample etc/mtree/BIND.chroot.local.dist.sample
 @sample %%ETCDIR%%/named.conf.sample
@@ -205,7 +206,6 @@ include/isc/tid.h
 include/isc/time.h
 include/isc/timer.h
 include/isc/tls.h
-include/isc/tm.h
 include/isc/types.h
 include/isc/urcu.h
 include/isc/url.h
@@ -243,11 +243,11 @@ include/ns/xfrout.h
 lib/bind/filter-a.so
 lib/bind/filter-aaaa.so
 lib/bind/synthrecord.so
-lib/libdns-9.21.24.so
-lib/libisc-9.21.24.so
-lib/libisccc-9.21.24.so
-lib/libisccfg-9.21.24.so
-lib/libns-9.21.24.so
+lib/libdns-9.21.27.so
+lib/libisc-9.21.27.so
+lib/libisccc-9.21.27.so
+lib/libisccfg-9.21.27.so
+lib/libns-9.21.27.so
 @comment share/man/man1/arpaname.1.gz
 @comment share/man/man1/delv.1.gz
 @comment share/man/man1/dig.1.gz
@@ -271,6 +271,7 @@ share/man/man1/named-journalprint.1.gz
 share/man/man1/named-makejournal.1.gz
 share/man/man1/named-nzd2nzf.1.gz
 @comment share/man/man1/named-rrchecker.1.gz
+share/man/man1/named-wireformat.1.gz
 @comment share/man/man1/nsec3hash.1.gz
 @comment share/man/man1/nslookup.1.gz
 @comment share/man/man1/nsupdate.1.gz

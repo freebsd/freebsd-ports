@@ -1,10 +1,10 @@
 PORTNAME=	nickel
-DISTVERSION=	1.17.0
+DISTVERSION=	1.18.0
 PORTREVISION=	1
 CATEGORIES=	lang devel
 
 MAINTAINER=	ports@nxtrn.dev
-COMMENT=	Universal configuration language
+COMMENT=	The universal configuration language
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

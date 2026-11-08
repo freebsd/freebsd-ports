@@ -1,24 +1,24 @@
---- media/gpu/chromeos/video_decoder_pipeline.cc.orig	2026-03-13 06:02:14 UTC
+--- media/gpu/chromeos/video_decoder_pipeline.cc.orig	2026-10-18 13:29:39 UTC
 +++ media/gpu/chromeos/video_decoder_pipeline.cc
-@@ -1134,7 +1134,7 @@ VideoDecoderPipeline::PickDecoderOutputFormat(
+@@ -720,7 +720,7 @@ void VideoDecoderPipeline::InitializeTask(const VideoD
+       NOTREACHED();
+ #endif  // BUILDFLAG(ENABLE_OOP_VIDEO_DECODER)
+     } else {
+-#if BUILDFLAG(IS_LINUX) && BUILDFLAG(USE_V4L2_CODEC)
++#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && BUILDFLAG(USE_V4L2_CODEC)
+       if (!main_frame_pool_) {
+         get_original_frame_cb = base::NullCallback();
+       } else
+@@ -1179,7 +1179,7 @@ VideoDecoderPipeline::PickDecoderOutputFormat(
    }
  #endif
  
--#if BUILDFLAG(IS_LINUX) && BUILDFLAG(USE_VAAPI)
-+#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && BUILDFLAG(USE_VAAPI)
-   // Linux should always use a custom allocator (to allocate buffers using
-   // libva) and a PlatformVideoFramePool.
-   CHECK(allocator.has_value());
-@@ -1143,7 +1143,7 @@ VideoDecoderPipeline::PickDecoderOutputFormat(
-   // VideoFrame::StorageType of VideoFrame::STORAGE_DMABUFS.
-   main_frame_pool_->AsPlatformVideoFramePool()->SetCustomFrameAllocator(
-       *allocator, VideoFrame::STORAGE_DMABUFS);
--#elif BUILDFLAG(IS_LINUX) && BUILDFLAG(USE_V4L2_CODEC)
-+#elif (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && BUILDFLAG(USE_V4L2_CODEC)
-   // Linux w/ V4L2 should not use a custom allocator
-   // Only tested with video_decode_accelerator_tests
-   // TODO(wenst@) Test with full Chromium Browser
-@@ -1317,7 +1317,7 @@ VideoDecoderPipeline::PickDecoderOutputFormat(
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   // Linux: behavior depends on which backend the decoder represents, signaled
+   // by whether it supplied a custom allocator.
+   if (allocator.has_value()) {
+@@ -1373,7 +1373,7 @@ VideoDecoderPipeline::PickDecoderOutputFormat(
               << " VideoFrames";
      auxiliary_frame_pool_->set_parent_task_runner(decoder_task_runner_);
  

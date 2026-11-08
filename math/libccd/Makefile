@@ -20,4 +20,6 @@ OPTIONS_DEFINE=	DOUBLE_PECISION
 DOUBLE_PECISION_DESC=		Enable double precision computations
 DOUBLE_PECISION_CMAKE_BOOL=	ENABLE_DOUBLE_PRECISION
 
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/danfis/libccd/issues/85
+
 .include <bsd.port.mk>

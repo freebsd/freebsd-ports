@@ -1,0 +1,9 @@
+--- Makefile.am.orig	2026-08-07 12:00:39.904332000 +0200
++++ Makefile.am	2026-08-07 12:00:39.907284000 +0200
+@@ -1,5 +1,5 @@
+ EXTRA_DIST = COPYING NEWS README STATUS slapi-nis.spec doc/sch-*.txt doc/format-*.txt doc/betxn-notes.txt doc/examples/sch-*.ldif.in doc/devel doc/ipa
+-SUBDIRS = yp src tests
++SUBDIRS = yp src
+ ACLOCAL_AMFLAGS=-I m4
+ 
+ noinst_DATA =

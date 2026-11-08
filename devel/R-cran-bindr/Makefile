@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Parametrized Active Bindings
-WWW=		https://cran.r-project.org/web/packages/bindr/
+WWW=		https://cran.r-project.org/package=bindr
 
 LICENSE=	GPLv2+
 

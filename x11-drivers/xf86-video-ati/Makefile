@@ -16,7 +16,7 @@ ONLY_FOR_ARCHS_REASON=	KMS is required and currently only available on x86/arm64
 
 LIB_DEPENDS=	libdrm_radeon.so:graphics/libdrm
 
-USES=		gl tar:xz xorg xorg-cat:driver
+USES=		gl xorg xorg-cat:driver
 USE_GL=		gbm
 USE_XORG=	pciaccess
 

@@ -1,10 +1,8 @@
 PORTNAME=	bifrost
-DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.5
-PORTREVISION=	1
+DISTVERSION=	1.3.9
 CATEGORIES=	biology
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parallel construction, indexing and querying of de Bruijn graphs
 WWW=		https://github.com/pmelsted/bifrost
 

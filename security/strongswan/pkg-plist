@@ -2,7 +2,6 @@
 %%TPM%%bin/tpm_extendpcr
 @sample %%ETCDIR%%.conf.sample
 @sample %%ETCDIR%%.d/charon-cmd.conf.sample
-@sample %%ETCDIR%%.d/charon-cmd/blowfish.conf.sample
 @sample %%ETCDIR%%.d/charon-cmd/cmac.conf.sample
 @sample %%ETCDIR%%.d/charon-cmd/constraints.conf.sample
 %%CTR%%@sample %%ETCDIR%%.d/charon-cmd/ctr.conf.sample
@@ -47,7 +46,6 @@
 @sample %%ETCDIR%%.d/charon/addrblock.conf.sample
 %%SQL%%@sample %%ETCDIR%%.d/charon/attr-sql.conf.sample
 @sample %%ETCDIR%%.d/charon/attr.conf.sample
-@sample %%ETCDIR%%.d/charon/blowfish.conf.sample
 @sample %%ETCDIR%%.d/charon/cmac.conf.sample
 @sample %%ETCDIR%%.d/charon/constraints.conf.sample
 @sample %%ETCDIR%%.d/charon/counters.conf.sample
@@ -161,8 +159,6 @@ lib/ipsec/plugins/libstrongswan-addrblock.so
 %%SQL%%lib/ipsec/plugins/libstrongswan-attr-sql.so
 lib/ipsec/plugins/libstrongswan-attr.la
 lib/ipsec/plugins/libstrongswan-attr.so
-lib/ipsec/plugins/libstrongswan-blowfish.la
-lib/ipsec/plugins/libstrongswan-blowfish.so
 lib/ipsec/plugins/libstrongswan-cmac.la
 lib/ipsec/plugins/libstrongswan-cmac.so
 lib/ipsec/plugins/libstrongswan-constraints.la
@@ -333,7 +329,6 @@ sbin/charon-cmd
 %%DATADIR%%/templates/config/plugins/addrblock.conf
 %%SQL%%%%DATADIR%%/templates/config/plugins/attr-sql.conf
 %%DATADIR%%/templates/config/plugins/attr.conf
-%%DATADIR%%/templates/config/plugins/blowfish.conf
 %%DATADIR%%/templates/config/plugins/cmac.conf
 %%DATADIR%%/templates/config/plugins/constraints.conf
 %%DATADIR%%/templates/config/plugins/counters.conf

@@ -1,9 +1,9 @@
 PORTNAME=	httptunnel
 PORTVERSION=	3.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tunnel a TCP/IP connection through a HTTP/TCP/IP connection
 WWW=		https://github.com/larsbrinkhoff/httptunnel/
 

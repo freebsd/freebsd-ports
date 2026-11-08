@@ -1,3 +1,3 @@
-TIMESTAMP = 1776644553
-SHA256 (libmicrohttpd-1.0.5.tar.gz) = b46d00f58efa6f497b97d2e782c4ee66301d412ddd855dd3068518b3a2cd3ea2
-SIZE (libmicrohttpd-1.0.5.tar.gz) = 2103850
+TIMESTAMP = 1786919871
+SHA256 (libmicrohttpd-1.0.10.tar.gz) = 04bfe8ef75db7d629a33de767599765cecadc56274a39822d5d081030d577685
+SIZE (libmicrohttpd-1.0.10.tar.gz) = 2626750

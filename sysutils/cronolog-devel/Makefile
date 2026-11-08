@@ -1,10 +1,11 @@
 PORTNAME=	cronolog
 DISTVERSION=	1.7.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://codeberg.org/BSDforge/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web log rotation utility that provides datestamp filenames
 WWW=		https://BSDforge.com/projects/sysutils/cronolog-devel
 

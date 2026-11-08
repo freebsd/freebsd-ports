@@ -1,17 +1,19 @@
 bin/far2l
 bin/far2ledit
 lib/far2l/Plugins/ImageViewer/plug/ImageViewer.far-plug-wide
-%%AWS%%lib/far2l/Plugins/NetRocks/plug/NetRocks-AWS.broker
+%%NEON%%lib/far2l/Plugins/NetRocks/plug/NetRocks-AWS.broker
 lib/far2l/Plugins/NetRocks/plug/NetRocks-FILE.broker
+lib/far2l/Plugins/NetRocks/plug/NetRocks-FISHPLUS.broker
 lib/far2l/Plugins/NetRocks/plug/NetRocks-FTP.broker
 %%NFS%%lib/far2l/Plugins/NetRocks/plug/NetRocks-NFS.broker
 %%SFTP%%lib/far2l/Plugins/NetRocks/plug/NetRocks-SFTP.broker
 lib/far2l/Plugins/NetRocks/plug/NetRocks-SHELL.broker
 %%SMB%%lib/far2l/Plugins/NetRocks/plug/NetRocks-SMB.broker
-%%WEBDAV%%lib/far2l/Plugins/NetRocks/plug/NetRocks-WebDAV.broker
+%%NEON%%lib/far2l/Plugins/NetRocks/plug/NetRocks-WebDAV.broker
 lib/far2l/Plugins/NetRocks/plug/NetRocks.far-plug-wide
 lib/far2l/Plugins/OpenWith/plug/OpenWith.far-plug-wide
 lib/far2l/Plugins/SimpleIndent/plug/SimpleIndent.far-plug-wide
+lib/far2l/Plugins/adb/plug/adb.far-plug-wide
 lib/far2l/Plugins/align/plug/align.far-plug-wide
 lib/far2l/Plugins/arclite/plug/arclite.far-plug-wide
 lib/far2l/Plugins/autowrap/plug/autowrap.far-plug-wide
@@ -23,21 +25,27 @@ lib/far2l/Plugins/editcase/plug/editcase.far-plug-wide
 lib/far2l/Plugins/editorcomp/plug/editorcomp.far-plug-wide
 lib/far2l/Plugins/edsort/plug/edsort.far-plug-wide
 lib/far2l/Plugins/filecase/plug/filecase.far-plug-wide
+lib/far2l/Plugins/gitgutter/plug/gitgutter.far-plug-wide
 lib/far2l/Plugins/hexitor/plug/hexitor.far-plug-wide
 lib/far2l/Plugins/incsrch/plug/incsrch.far-plug-wide
 lib/far2l/Plugins/inside/plug/inside.far-plug-mb
+lib/far2l/Plugins/jumpword/plug/jumpword.far-plug-wide
 lib/far2l/Plugins/memo/plug/memo.far-plug-wide
+lib/far2l/Plugins/mtp/plug/mtp.far-plug-wide
 lib/far2l/Plugins/multiarc/plug/multiarc.far-plug-mb
 lib/far2l/Plugins/tmppanel/plug/tmppanel.far-plug-wide
+lib/far2l/Plugins/transformer/plug/transformer.far-plug-wide
 lib/far2l/Plugins/truncate/plug/truncate.far-plug-wide
 lib/far2l/far2l_askpass
 %%WXGTK%%lib/far2l/far2l_gui.so
+%%SDL%%lib/far2l/far2l_sdl.so
 lib/far2l/far2l_sudoapp
 %%X11%%lib/far2l/far2l_ttyx.broker
 share/applications/far2l-tty.desktop
 share/applications/far2l.desktop
 share/applications/far2ledit-tty.desktop
 share/applications/far2ledit.desktop
+share/applications/far2lma.desktop
 share/bash-completion/completions/far2l
 %%DATADIR%%/FarBel.lng
 %%DATADIR%%/FarCze.lng
@@ -56,6 +64,10 @@ share/bash-completion/completions/far2l
 %%DATADIR%%/Plugins/ImageViewer/plug/ImageViewer_en.lng
 %%DATADIR%%/Plugins/ImageViewer/plug/ImageViewer_ru.hlf
 %%DATADIR%%/Plugins/ImageViewer/plug/ImageViewer_ru.lng
+%%DATADIR%%/Plugins/NetRocks/plug/FISHPLUS/UPSTREAM.md
+%%DATADIR%%/Plugins/NetRocks/plug/FISHPLUS/helper.sh
+%%DATADIR%%/Plugins/NetRocks/plug/FISHPLUS/sync-from-f4.sh
+%%DATADIR%%/Plugins/NetRocks/plug/FISHPLUS/ways.ini
 %%DATADIR%%/Plugins/NetRocks/plug/SHELL/remote.sh
 %%DATADIR%%/Plugins/NetRocks/plug/SHELL/ways.ini
 %%DATADIR%%/Plugins/NetRocks/plug/bel.lng
@@ -67,6 +79,10 @@ share/bash-completion/completions/far2l
 %%DATADIR%%/Plugins/OpenWith/plug/OpenWithRus.lng
 %%DATADIR%%/Plugins/OpenWith/plug/help_en.hlf
 %%DATADIR%%/Plugins/OpenWith/plug/help_ru.hlf
+%%DATADIR%%/Plugins/adb/plug/adbEng.hlf
+%%DATADIR%%/Plugins/adb/plug/adbEng.lng
+%%DATADIR%%/Plugins/adb/plug/adbRus.hlf
+%%DATADIR%%/Plugins/adb/plug/adbRus.lng
 %%DATADIR%%/Plugins/align/plug/AlignBel.lng
 %%DATADIR%%/Plugins/align/plug/AlignEng.lng
 %%DATADIR%%/Plugins/align/plug/AlignRus.lng
@@ -116,25 +132,35 @@ share/bash-completion/completions/far2l
 %%DATADIR%%/Plugins/colorer/base/hrc/base/cpp-qt.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/base/cpp.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/base/csharp.hrc
+%%DATADIR%%/Plugins/colorer/base/hrc/base/cython.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/base/d.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/base/d1-phobos.ent.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/base/d1-tango.ent.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/base/d2-phobos.ent.hrc
+%%DATADIR%%/Plugins/colorer/base/hrc/base/dart.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/base/default.hrc
+%%DATADIR%%/Plugins/colorer/base/hrc/base/elixir.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/base/forth.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/base/fortran.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/base/fsharp.hrc
+%%DATADIR%%/Plugins/colorer/base/hrc/base/gdscript.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/base/gen/perl-brackets.ent.hrc
+%%DATADIR%%/Plugins/colorer/base/hrc/base/gleam.hrc
+%%DATADIR%%/Plugins/colorer/base/hrc/base/go-mod.hrc
+%%DATADIR%%/Plugins/colorer/base/hrc/base/go-sum.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/base/go.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/base/groovy.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/base/haxe.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/base/idl.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/base/java.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/base/js.net.hrc
+%%DATADIR%%/Plugins/colorer/base/hrc/base/julia.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/base/kotlin-jdk.ent.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/base/kotlin-runtime.ent.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/base/kotlin.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/base/lua.hrc
+%%DATADIR%%/Plugins/colorer/base/hrc/base/luau.hrc
+%%DATADIR%%/Plugins/colorer/base/hrc/base/moonscript.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/base/nix.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/base/pascal.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/base/perl-heredoc.ent.hrc
@@ -151,15 +177,18 @@ share/bash-completion/completions/far2l
 %%DATADIR%%/Plugins/colorer/base/hrc/base/ruby.kw.ent.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/base/rust.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/base/scala.hrc
+%%DATADIR%%/Plugins/colorer/base/hrc/base/solidity.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/base/swift.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/base/tcltk.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/base/vb.net.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/base/vbasic.hrc
+%%DATADIR%%/Plugins/colorer/base/hrc/base/zig.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/db/clarion.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/db/clipper.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/db/foxpro.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/db/mysql.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/db/paradox.hrc
+%%DATADIR%%/Plugins/colorer/base/hrc/db/prisma.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/db/sql.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/db/sqlj.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/inet/actionscript.hrc
@@ -168,6 +197,8 @@ share/bash-completion/completions/far2l
 %%DATADIR%%/Plugins/colorer/base/hrc/inet/asp.js.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/inet/asp.ps.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/inet/asp.vb.hrc
+%%DATADIR%%/Plugins/colorer/base/hrc/inet/astro.hrc
+%%DATADIR%%/Plugins/colorer/base/hrc/inet/blade.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/inet/coldfusion.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/inet/css.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/inet/erb.hrc
@@ -191,17 +222,24 @@ share/bash-completion/completions/far2l
 %%DATADIR%%/Plugins/colorer/base/hrc/inet/html.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/inet/jscript.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/inet/jsp.hrc
+%%DATADIR%%/Plugins/colorer/base/hrc/inet/jsx.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/inet/less.hrc
+%%DATADIR%%/Plugins/colorer/base/hrc/inet/mdx.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/inet/mxml.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/inet/php-script.ent.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/inet/php.hrc
+%%DATADIR%%/Plugins/colorer/base/hrc/inet/razor.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/inet/sass.hrc
+%%DATADIR%%/Plugins/colorer/base/hrc/inet/scss.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/inet/shpaml.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/inet/smarty.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/inet/ss.hrc
+%%DATADIR%%/Plugins/colorer/base/hrc/inet/svelte.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/inet/svg-css.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/inet/twig.hrc
+%%DATADIR%%/Plugins/colorer/base/hrc/inet/typescript.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/inet/vbscript.hrc
+%%DATADIR%%/Plugins/colorer/base/hrc/inet/vue.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/lib/def.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/lib/doxygen.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/lib/far-macro-string.ent.hrc
@@ -226,6 +264,7 @@ share/bash-completion/completions/far2l
 %%DATADIR%%/Plugins/colorer/base/hrc/misc/mediawiki.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/misc/srt.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/misc/text.hrc
+%%DATADIR%%/Plugins/colorer/base/hrc/misc/typst.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/php-prot-gen.ent.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/proto.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/rare.gen.ent.hrc
@@ -247,6 +286,7 @@ share/bash-completion/completions/far2l
 %%DATADIR%%/Plugins/colorer/base/hrc/rare/cache.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/rare/cobol.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/rare/cobolfr.hrc
+%%DATADIR%%/Plugins/colorer/base/hrc/rare/csv.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/rare/cup.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/rare/diet.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/rare/dssp.hrc
@@ -297,6 +337,7 @@ share/bash-completion/completions/far2l
 %%DATADIR%%/Plugins/colorer/base/hrc/rare/ie-weidu/tp2.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/rare/ie-weidu/tp2h.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/rare/ie-weidu/tra.hrc
+%%DATADIR%%/Plugins/colorer/base/hrc/rare/ipynb.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/rare/jcl.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/rare/json.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/rare/lisp.hrc
@@ -311,6 +352,7 @@ share/bash-completion/completions/far2l
 %%DATADIR%%/Plugins/colorer/base/hrc/rare/picasm.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/rare/pl1.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/rare/postscript.hrc
+%%DATADIR%%/Plugins/colorer/base/hrc/rare/protobuf.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/rare/qrm/atl.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/rare/qrm/dii.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/rare/qrm/rpt.hrc
@@ -344,6 +386,7 @@ share/bash-completion/completions/far2l
 %%DATADIR%%/Plugins/colorer/base/hrc/rare/sml.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/rare/sprolog.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/rare/stata.hrc
+%%DATADIR%%/Plugins/colorer/base/hrc/rare/toml.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/rare/tprolog.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/rare/ubasic.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/rare/verilog.hrc
@@ -365,6 +408,9 @@ share/bash-completion/completions/far2l
 %%DATADIR%%/Plugins/colorer/base/hrc/scripts/dcl.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/scripts/dfm.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/scripts/dockerfile.hrc
+%%DATADIR%%/Plugins/colorer/base/hrc/scripts/dotenv.hrc
+%%DATADIR%%/Plugins/colorer/base/hrc/scripts/far/far2lmenu.hrc
+%%DATADIR%%/Plugins/colorer/base/hrc/scripts/far/far2lusermenu.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/scripts/far/farhelp.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/scripts/far/farlng.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/scripts/far/farmailscript.hrc
@@ -391,6 +437,8 @@ share/bash-completion/completions/far2l
 %%DATADIR%%/Plugins/colorer/base/hrc/scripts/gen/sh-brackets.ent.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/scripts/gen/wsc.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/scripts/gen/wsf.hrc
+%%DATADIR%%/Plugins/colorer/base/hrc/scripts/gitattributes.hrc
+%%DATADIR%%/Plugins/colorer/base/hrc/scripts/gitignore.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/scripts/graphviz.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/scripts/hcl/hcl.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/scripts/hcl/terraform.hrc
@@ -409,6 +457,7 @@ share/bash-completion/completions/far2l
 %%DATADIR%%/Plugins/colorer/base/hrc/scripts/linkdef.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/scripts/m4.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/scripts/makefile.hrc
+%%DATADIR%%/Plugins/colorer/base/hrc/scripts/meson.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/scripts/mkb.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/scripts/msg/email.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/scripts/msg/farmsg.hrc
@@ -421,6 +470,8 @@ share/bash-completion/completions/far2l
 %%DATADIR%%/Plugins/colorer/base/hrc/scripts/r.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/scripts/rarscrpt.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/scripts/resrc.hrc
+%%DATADIR%%/Plugins/colorer/base/hrc/scripts/rmd.hrc
+%%DATADIR%%/Plugins/colorer/base/hrc/scripts/rproj.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/scripts/rtf.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/scripts/rul.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/scripts/scons.hrc
@@ -474,6 +525,7 @@ share/bash-completion/completions/far2l
 %%DATADIR%%/Plugins/colorer/base/hrd/console/contrib/violet.hrd
 %%DATADIR%%/Plugins/colorer/base/hrd/console/contrib/visual.hrd
 %%DATADIR%%/Plugins/colorer/base/hrd/console/default.hrd
+%%DATADIR%%/Plugins/colorer/base/hrd/console/dn.hrd
 %%DATADIR%%/Plugins/colorer/base/hrd/console/dnlike.hrd
 %%DATADIR%%/Plugins/colorer/base/hrd/console/emu/mirror.hrd
 %%DATADIR%%/Plugins/colorer/base/hrd/console/gray.hrd
@@ -482,21 +534,45 @@ share/bash-completion/completions/far2l
 %%DATADIR%%/Plugins/colorer/base/hrd/console/nc.hrd
 %%DATADIR%%/Plugins/colorer/base/hrd/console/white.hrd
 %%DATADIR%%/Plugins/colorer/base/hrd/console/xmastree.hrd
+%%DATADIR%%/Plugins/colorer/base/hrd/rgb/FalloutRed.hrd
+%%DATADIR%%/Plugins/colorer/base/hrd/rgb/ayu-dark.hrd
+%%DATADIR%%/Plugins/colorer/base/hrd/rgb/ayu-light.hrd
+%%DATADIR%%/Plugins/colorer/base/hrd/rgb/ayu-mirage.hrd
 %%DATADIR%%/Plugins/colorer/base/hrd/rgb/black.hrd
 %%DATADIR%%/Plugins/colorer/base/hrd/rgb/blue.hrd
+%%DATADIR%%/Plugins/colorer/base/hrd/rgb/catppuccin-latte.hrd
+%%DATADIR%%/Plugins/colorer/base/hrd/rgb/catppuccin-macchiato.hrd
+%%DATADIR%%/Plugins/colorer/base/hrd/rgb/catppuccin-mocha.hrd
 %%DATADIR%%/Plugins/colorer/base/hrd/rgb/contrib/bred3.hrd
 %%DATADIR%%/Plugins/colorer/base/hrd/rgb/contrib/fmx.hrd
 %%DATADIR%%/Plugins/colorer/base/hrd/rgb/contrib/navy-mirror.hrd
 %%DATADIR%%/Plugins/colorer/base/hrd/rgb/contrib/visual-rgb.hrd
-%%DATADIR%%/Plugins/colorer/base/hrd/rgb/default.hrd
+%%DATADIR%%/Plugins/colorer/base/hrd/rgb/dn.hrd
+%%DATADIR%%/Plugins/colorer/base/hrd/rgb/dracula.hrd
 %%DATADIR%%/Plugins/colorer/base/hrd/rgb/eclipse.hrd
+%%DATADIR%%/Plugins/colorer/base/hrd/rgb/far2l.hrd
+%%DATADIR%%/Plugins/colorer/base/hrd/rgb/github-dark.hrd
+%%DATADIR%%/Plugins/colorer/base/hrd/rgb/github-light.hrd
 %%DATADIR%%/Plugins/colorer/base/hrd/rgb/grayscale.hrd
+%%DATADIR%%/Plugins/colorer/base/hrd/rgb/gruvbox-dark.hrd
+%%DATADIR%%/Plugins/colorer/base/hrd/rgb/gruvbox-light.hrd
 %%DATADIR%%/Plugins/colorer/base/hrd/rgb/hs.hrd
 %%DATADIR%%/Plugins/colorer/base/hrd/rgb/mirice.hrd
 %%DATADIR%%/Plugins/colorer/base/hrd/rgb/mirror.hrd
+%%DATADIR%%/Plugins/colorer/base/hrd/rgb/monokai.hrd
 %%DATADIR%%/Plugins/colorer/base/hrd/rgb/navy.hrd
 %%DATADIR%%/Plugins/colorer/base/hrd/rgb/neo.hrd
+%%DATADIR%%/Plugins/colorer/base/hrd/rgb/night-owl.hrd
+%%DATADIR%%/Plugins/colorer/base/hrd/rgb/nord.hrd
+%%DATADIR%%/Plugins/colorer/base/hrd/rgb/one-dark.hrd
+%%DATADIR%%/Plugins/colorer/base/hrd/rgb/one-light.hrd
+%%DATADIR%%/Plugins/colorer/base/hrd/rgb/palenight.hrd
+%%DATADIR%%/Plugins/colorer/base/hrd/rgb/solarized-dark.hrd
+%%DATADIR%%/Plugins/colorer/base/hrd/rgb/solarized-light.hrd
+%%DATADIR%%/Plugins/colorer/base/hrd/rgb/tokyo-night.hrd
+%%DATADIR%%/Plugins/colorer/base/hrd/rgb/tomorrow-night.hrd
 %%DATADIR%%/Plugins/colorer/base/hrd/rgb/violet.hrd
+%%DATADIR%%/Plugins/colorer/base/hrd/rgb/vscode-dark.hrd
 %%DATADIR%%/Plugins/colorer/base/hrd/rgb/white.hrd
 %%DATADIR%%/Plugins/colorer/plug/colorerb.lng
 %%DATADIR%%/Plugins/colorer/plug/colorere.hlf
@@ -533,6 +609,11 @@ share/bash-completion/completions/far2l
 %%DATADIR%%/Plugins/filecase/plug/CaseEng.lng
 %%DATADIR%%/Plugins/filecase/plug/CaseRus.hlf
 %%DATADIR%%/Plugins/filecase/plug/CaseRus.lng
+%%DATADIR%%/Plugins/gitgutter/plug/gitgutter.ini
+%%DATADIR%%/Plugins/gitgutter/plug/gitgutter_en.lng
+%%DATADIR%%/Plugins/gitgutter/plug/gitgutter_ru.lng
+%%DATADIR%%/Plugins/gitgutter/plug/help_en.hlf
+%%DATADIR%%/Plugins/gitgutter/plug/help_ru.hlf
 %%DATADIR%%/Plugins/hexitor/plug/Hexitor_en.hlf
 %%DATADIR%%/Plugins/hexitor/plug/Hexitor_en.lng
 %%DATADIR%%/Plugins/hexitor/plug/Hexitor_pl.hlf
@@ -549,8 +630,15 @@ share/bash-completion/completions/far2l
 %%DATADIR%%/Plugins/inside/plug/config.ini
 %%DATADIR%%/Plugins/inside/plug/eng.lng
 %%DATADIR%%/Plugins/inside/plug/rus.lng
+%%DATADIR%%/Plugins/jumpword/plug/JumpWordEng.lng
+%%DATADIR%%/Plugins/jumpword/plug/JumpWordRus.lng
+%%DATADIR%%/Plugins/jumpword/plug/JumpWordUkr.lng
 %%DATADIR%%/Plugins/memo/plug/memoe.lng
 %%DATADIR%%/Plugins/memo/plug/memor.lng
+%%DATADIR%%/Plugins/mtp/plug/mtpEng.hlf
+%%DATADIR%%/Plugins/mtp/plug/mtpEng.lng
+%%DATADIR%%/Plugins/mtp/plug/mtpRus.hlf
+%%DATADIR%%/Plugins/mtp/plug/mtpRus.lng
 %%DATADIR%%/Plugins/multiarc/plug/arcbel.lng
 %%DATADIR%%/Plugins/multiarc/plug/arceng.hlf
 %%DATADIR%%/Plugins/multiarc/plug/arceng.lng
@@ -563,6 +651,21 @@ share/bash-completion/completions/far2l
 %%DATADIR%%/Plugins/tmppanel/plug/TmpEng.lng
 %%DATADIR%%/Plugins/tmppanel/plug/TmpRus.hlf
 %%DATADIR%%/Plugins/tmppanel/plug/TmpRus.lng
+%%DATADIR%%/Plugins/transformer/plug/TransformerEng.hlf
+%%DATADIR%%/Plugins/transformer/plug/TransformerEng.lng
+%%DATADIR%%/Plugins/transformer/plug/TransformerRus.hlf
+%%DATADIR%%/Plugins/transformer/plug/TransformerRus.lng
+%%DATADIR%%/Plugins/transformer/plug/formats/common.ini
+%%DATADIR%%/Plugins/transformer/plug/formats/cpp.ini
+%%DATADIR%%/Plugins/transformer/plug/formats/encoding.ini
+%%DATADIR%%/Plugins/transformer/plug/formats/json.ini
+%%DATADIR%%/Plugins/transformer/plug/formats/markdown.ini
+%%DATADIR%%/Plugins/transformer/plug/formats/python.ini
+%%DATADIR%%/Plugins/transformer/plug/formats/shell.ini
+%%DATADIR%%/Plugins/transformer/plug/formats/sql.ini
+%%DATADIR%%/Plugins/transformer/plug/formats/xml.ini
+%%DATADIR%%/Plugins/transformer/plug/formats/yaml.ini
+%%DATADIR%%/Plugins/transformer/plug/transformer.ini
 %%DATADIR%%/Plugins/truncate/plug/TruncEng.lng
 %%DATADIR%%/Plugins/truncate/plug/TruncRus.lng
 %%DATADIR%%/closewait.sh
@@ -572,16 +675,32 @@ share/bash-completion/completions/far2l
 %%DATADIR%%/ps.sh
 %%DATADIR%%/themes/Amber on Black/author.txt
 %%DATADIR%%/themes/Amber on Black/farcolors.ini
+%%DATADIR%%/themes/CRT Classic/author.txt
+%%DATADIR%%/themes/CRT Classic/farcolors.ini
+%%DATADIR%%/themes/Catpuccin Macchiato/author.txt
+%%DATADIR%%/themes/Catpuccin Macchiato/colors.ini
+%%DATADIR%%/themes/Catpuccin Macchiato/farcolors.ini
+%%DATADIR%%/themes/Catpuccin Macchiato/palette.ini
 %%DATADIR%%/themes/DOS Navigator/author.txt
 %%DATADIR%%/themes/DOS Navigator/farcolors.ini
 %%DATADIR%%/themes/Dark classic/author.txt
 %%DATADIR%%/themes/Dark classic/farcolors.ini
+%%DATADIR%%/themes/Fallout Red/author.txt
+%%DATADIR%%/themes/Fallout Red/farcolors.ini
 %%DATADIR%%/themes/Gold on Blue/author.txt
 %%DATADIR%%/themes/Gold on Blue/farcolors.ini
 %%DATADIR%%/themes/Green on LightGray/author.txt
 %%DATADIR%%/themes/Green on LightGray/farcolors.ini
+%%DATADIR%%/themes/Hercules Classic/author.txt
+%%DATADIR%%/themes/Hercules Classic/farcolors.ini
+%%DATADIR%%/themes/Hercules Night/author.txt
+%%DATADIR%%/themes/Hercules Night/farcolors.ini
+%%DATADIR%%/themes/MDA Classic/author.txt
+%%DATADIR%%/themes/MDA Classic/farcolors.ini
 %%DATADIR%%/themes/Magenta on Violet/author.txt
 %%DATADIR%%/themes/Magenta on Violet/farcolors.ini
+%%DATADIR%%/themes/Ogres and Goblins/author.txt
+%%DATADIR%%/themes/Ogres and Goblins/farcolors.ini
 %%DATADIR%%/themes/Tokyo Night/author.txt
 %%DATADIR%%/themes/Tokyo Night/farcolors.ini
 %%DATADIR%%/trash.sh

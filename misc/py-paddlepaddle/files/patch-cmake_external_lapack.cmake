@@ -3,9 +3,9 @@
 -- which fails in a clean build environment with no network access.
 -- Add a FreeBSD branch that uses the system OpenBLAS (which includes LAPACK)
 -- and replaces the ExternalProject download with a no-op custom target.
---- cmake/external/lapack.cmake.orig	2026-06-20 04:47:39 UTC
+--- cmake/external/lapack.cmake.orig	2026-09-09 02:40:49 UTC
 +++ cmake/external/lapack.cmake
-@@ -48,6 +48,11 @@ elseif(WIN32)
+@@ -58,6 +58,11 @@ elseif(WIN32)
    set(GFORTRAN_LIB "${LAPACK_LIB_DIR}/libgfortran-3.dll")
    set(BLAS_LIB "${LAPACK_LIB_DIR}/libblas.dll")
    set(LAPACK_LIB "${LAPACK_LIB_DIR}/liblapack.dll")
@@ -17,7 +17,7 @@
  else() # MacOS
    if(APPLE AND WITH_ARM)
      set(LAPACK_FILE
-@@ -97,31 +102,36 @@ endfunction()
+@@ -107,31 +112,36 @@ endfunction()
  endfunction()
  
  # Download and check lapack.

@@ -2,7 +2,7 @@ PORTNAME=	fpdf
 DISTVERSION=	1.86
 PORTEPOCH=	1
 CATEGORIES=	print www
-MASTER_SITES=	http://www.fpdf.org/en/
+MASTER_SITES=	http://www.fpdf.org/en/dl.php?v=${DISTVERSION:S|.||}&f=${EXTRACT_SUFX:S|.||}&dummy=/
 DISTNAME=	${PORTNAME}${DISTVERSION:S|.||}
 
 MAINTAINER=	xaa+ports@dohd.org
@@ -14,7 +14,6 @@ LICENSE_NAME=	As_Is
 LICENSE_FILE=	${WRKSRC}/license.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-FETCH_CMD=	${FETCH_BINARY} -ARr -o ${DISTDIR}/${DISTFILES}
 USES=		dos2unix php tar:tgz
 USE_PHP=	zlib
 NO_BUILD=	yes
@@ -30,12 +29,6 @@ EXT2CNV=	afm css htm php txt
 DOCS=		FAQ.htm changelog.htm doc fpdf.css install.txt tutorial
 
 OPTIONS_DEFINE=	DOCS
-
-do-fetch:
-	@if [ ! -f ${DISTDIR}/${DISTFILES} ]; then \
-	${FETCH_CMD} ${FETCH_BEFORE_ARGS}	\
-		'${MASTER_SITES}dl.php?v=${DISTVERSION:S|.||}&f=${EXTRACT_SUFX:S|.||}'; \
-	fi
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${FPDF_DIR}

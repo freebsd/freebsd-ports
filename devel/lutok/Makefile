@@ -1,5 +1,5 @@
 PORTNAME=	lutok
-DISTVERSION=	0.6.2
+DISTVERSION=	0.6.3
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/freebsd/${PORTNAME}/releases/download/${DISTNAME}/
 

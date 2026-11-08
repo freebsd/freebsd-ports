@@ -4,5 +4,13 @@ bin/lrz
 bin/lsb
 bin/lsx
 bin/lsz
+%%PORTDOCS%%%%DOCSDIR%%/COMPATABILITY
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/zmodem-forsberg.txt
+%%PORTDOCS%%%%DOCSDIR%%/zmodem-wip.txt
+%%PORTDOCS%%%%DOCSDIR%%/zmodem-zmtx-zmrx.txt
+%%PORTDOCS%%%%DOCSDIR%%/zmodemsnif.txt
 share/man/man1/lrz.1.gz
 share/man/man1/lsz.1.gz

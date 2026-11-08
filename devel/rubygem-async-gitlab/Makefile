@@ -1,5 +1,5 @@
 PORTNAME=	async
-PORTVERSION=	2.39.0
+PORTVERSION=	2.45.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-gitlab
@@ -14,9 +14,7 @@ LICENSE_FILE=	${WRKSRC}/license.md
 
 RUN_DEPENDS=	rubygem-console>=1.29<2:devel/rubygem-console \
 		rubygem-fiber-annotation>=0:devel/rubygem-fiber-annotation \
-		rubygem-io-event>=1.11<2:devel/rubygem-io-event \
-		rubygem-metrics>=0.12<1:devel/rubygem-metrics \
-		rubygem-traces>=0.18<1:devel/rubygem-traces
+		rubygem-io-event-gitlab>=1.21<2:devel/rubygem-io-event-gitlab
 
 USES=		gem
 

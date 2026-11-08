@@ -1,0 +1,4 @@
+bin/brightness-osd
+share/bhotkeys/plugins.d/fn-bright-down
+share/bhotkeys/plugins.d/fn-bright-up
+share/man/man1/brightness-osd.1.gz

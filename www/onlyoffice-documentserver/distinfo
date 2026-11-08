@@ -1,10 +1,12 @@
-TIMESTAMP = 1783868045
+TIMESTAMP = 1790366864
 SHA256 (v8-8.9.255.25_all.tar.gz) = 54853ef93accc063a82a0dc29457b25c9b6d88315431d62e06ab1f84797c5f80
 SIZE (v8-8.9.255.25_all.tar.gz) = 72818814
-SHA256 (node-v24.18.0.tar.gz) = c8348067b41d8739ec69fd4da615cd8995ad6a76eb53e84a7fa7291c8a477eb7
-SIZE (node-v24.18.0.tar.gz) = 114348532
-SHA256 (onlyoffice-DS-npm-cache-v9.4.0.129-202607080141.tar.gz) = 88e54a323fa7fb415bdc40a3cc051889526440bc79d163afedab18aec632de74
-SIZE (onlyoffice-DS-npm-cache-v9.4.0.129-202607080141.tar.gz) = 109697632
+SHA256 (node-v24.21.0.tar.gz) = 622424efb5dc0c26c93fbb619ff10737ee289c605b837c88778e186925d82777
+SIZE (node-v24.21.0.tar.gz) = 116929256
+SHA256 (onlyoffice-DS-npm-cache-v9.4.0.129-202609220214.tar.gz) = d2652a63449af87dbc96a812578150ca5ad2fa1fabb9ed55b2d45529052ddd0e
+SIZE (onlyoffice-DS-npm-cache-v9.4.0.129-202609220214.tar.gz) = 114139446
+SHA256 (hyphen-2.8.9.tar.gz) = 783743daf477de8c4d16e3c74b4d2827377017718d8e17e2d9440210246f6abe
+SIZE (hyphen-2.8.9.tar.gz) = 692993
 SHA256 (ONLYOFFICE-DocumentServer-v9.4.0_GH0.tar.gz) = 678401ead43a1c1325bc6a662bab95494c85c21546f38584cd76597bdeb743f9
 SIZE (ONLYOFFICE-DocumentServer-v9.4.0_GH0.tar.gz) = 985804
 SHA256 (ONLYOFFICE-build_tools-v9.4.0.129_GH0.tar.gz) = 8f65a62e000e7cc913dd0ee4db5d8dcf6256c16040633dd82f36c104dab52d46
@@ -35,5 +37,3 @@ SHA256 (ONLYOFFICE-onlyoffice.github.io-b26d001664d771df4f663d2d3ba7dd4a188b6cab
 SIZE (ONLYOFFICE-onlyoffice.github.io-b26d001664d771df4f663d2d3ba7dd4a188b6cab_GH0.tar.gz) = 17009005
 SHA256 (jasenhuang-katana-parser-be6df45_GH0.tar.gz) = 363ede45ba6d125fdb7323c43d34acd3d0ae9028ac18aec632eb6a623160f09a
 SIZE (jasenhuang-katana-parser-be6df45_GH0.tar.gz) = 97712
-SHA256 (hunspell-hyphen-73dd296_GH0.tar.gz) = 93e80ad69ee7afd507b12f0b58ca34a6a78347dcbb5fe5d9b6f0e19b02397ef7
-SIZE (hunspell-hyphen-73dd296_GH0.tar.gz) = 292528

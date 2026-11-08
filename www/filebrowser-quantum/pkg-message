@@ -1,0 +1,14 @@
+[
+{ type: upgrade
+  minimum_version: "1.0.0,1"
+  maximum_version: "2.0.1,1"
+  message: <<EOM
+This version represents the most significant change to date. It requires
+both a database migration and config structural changes.
+
+See the migration guide for step-by-step upgrade instructions:
+
+  https://filebrowserquantum.com/en/docs/getting-started/v2/migration/
+EOM
+}
+]

@@ -5,6 +5,6 @@
    s.add_runtime_dependency(%q<actionpack>.freeze, ["= 5.2.8.1".freeze])
    s.add_runtime_dependency(%q<activerecord>.freeze, ["= 5.2.8.1".freeze])
 -  s.add_runtime_dependency(%q<marcel>.freeze, ["~> 1.0.0".freeze])
-+  s.add_runtime_dependency(%q<marcel>.freeze, ["~> 1.0".freeze])
++  s.add_runtime_dependency(%q<marcel>.freeze, ["~> 2.0".freeze])
  end
  

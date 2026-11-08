@@ -1,5 +1,6 @@
 PORTNAME=	${GH_PROJECT:tl}
 PORTVERSION=	0.2.1
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -12,6 +13,9 @@ WWW=		https://github.com/YukiWorkshop/libevdevPlus
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	Abandoned upstream, does not build with CMake 4
+EXPIRATION_DATE=2026-11-30
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/uinput.h:devel/evdev-proto
 

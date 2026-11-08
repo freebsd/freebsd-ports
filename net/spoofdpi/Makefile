@@ -1,7 +1,7 @@
 PORTNAME=	spoofdpi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.3
-PORTREVISION=	2
+DISTVERSION=	1.5.5
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	nxjoseph@FreeBSD.org
@@ -12,7 +12,7 @@ WWW=		https://spoofdpi.dev/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.26+,modules
+USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	xvzc
 GH_TUPLE=	BurntSushi:toml:v1.5.0:burntsushi_toml/vendor/github.com/BurntSushi/toml \

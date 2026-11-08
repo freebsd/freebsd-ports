@@ -145,9 +145,7 @@
 %%LINUXBASE%%/opt/google/earth/pro/libwmsbase.so
 %%LINUXBASE%%/opt/google/earth/pro/libxsltransform.so
 %%LINUXBASE%%/opt/google/earth/pro/plugins/audio/libqtaudio_alsa.so
-%%LINUXBASE%%/opt/google/earth/pro/plugins/bearer/libqconnmanbearer.so
 %%LINUXBASE%%/opt/google/earth/pro/plugins/bearer/libqgenericbearer.so
-%%LINUXBASE%%/opt/google/earth/pro/plugins/bearer/libqnmbearer.so
 %%LINUXBASE%%/opt/google/earth/pro/plugins/imageformats/libqgif.so
 %%LINUXBASE%%/opt/google/earth/pro/plugins/imageformats/libqico.so
 %%LINUXBASE%%/opt/google/earth/pro/plugins/imageformats/libqjpeg.so

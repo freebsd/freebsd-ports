@@ -75,12 +75,6 @@ lib/libpspell.a
 lib/libpspell.so
 lib/libpspell.so.15
 lib/libpspell.so.15.3.1
-share/man/man1/aspell-import.1.gz
-share/man/man1/aspell.1.gz
-share/man/man1/prezip-bin.1.gz
-share/man/man1/pspell-config.1.gz
-share/man/man1/run-with-aspell.1.gz
-share/man/man1/word-list-compress.1.gz
 %%DATADIR%%/ccpp.amf
 %%DATADIR%%/comment.amf
 %%DATADIR%%/email.amf
@@ -93,6 +87,7 @@ share/man/man1/word-list-compress.1.gz
 %%DATADIR%%/tex.amf
 %%DATADIR%%/texinfo.amf
 %%DATADIR%%/url.amf
+%%NLS%%share/locale/ar/LC_MESSAGES/aspell.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/aspell.mo
 %%NLS%%share/locale/be/LC_MESSAGES/aspell.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/aspell.mo
@@ -131,3 +126,10 @@ share/man/man1/word-list-compress.1.gz
 %%NLS%%share/locale/vi/LC_MESSAGES/aspell.mo
 %%NLS%%share/locale/wa/LC_MESSAGES/aspell.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/aspell.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/aspell.mo
+share/man/man1/aspell-import.1.gz
+share/man/man1/aspell.1.gz
+share/man/man1/prezip-bin.1.gz
+share/man/man1/pspell-config.1.gz
+share/man/man1/run-with-aspell.1.gz
+share/man/man1/word-list-compress.1.gz

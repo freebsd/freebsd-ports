@@ -1,0 +1,9 @@
+This project aims at providing tools (functions, classes, bindings,
+etc...) to handle behaviours written using `MFront` generic interface.
+
+Those tools are meant to be used by (`FEM`, `FFT`, etc.) solver
+developers. This tools are *not* linked to the `TFEL` libraries.
+Permissive licences have been chosen to allow integration in open-source
+and proprietary codes.
+
+See also <https://doi.org/10.21105/joss.02003>.

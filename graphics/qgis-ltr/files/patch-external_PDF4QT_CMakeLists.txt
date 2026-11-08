@@ -1,0 +1,10 @@
+--- external/PDF4QT/CMakeLists.txt.orig	2026-07-31 12:30:19 UTC
++++ external/PDF4QT/CMakeLists.txt
+@@ -94,6 +94,7 @@ if (UNIX AND NOT APPLE)
+ 
+ if (UNIX AND NOT APPLE)
+     set(PDF4QT_LINUX ON)
++    add_compile_options("-fexperimental-library")
+ endif()
+ 
+ if (LINUX_GCC)

@@ -4,12 +4,12 @@
  process that does not generate this patch. To get around this, remove
  ${WRKSRC}/Misc/vq_pak/maps when the patches need to be regenerated.
 
---- Quake/common.c.orig	2025-05-01 11:30:09 UTC
+--- Quake/common.c.orig	2026-10-04 06:48:53 UTC
 +++ Quake/common.c
-@@ -2454,7 +2454,7 @@ void COM_InitFilesystem (void) // johnfitz -- modified
+@@ -3878,7 +3878,7 @@ void COM_InitFilesystem (void) // johnfitz -- modified
  	if (i && i < com_argc - 1)
  		q_strlcpy (com_basedir, com_argv[i + 1], sizeof (com_basedir));
- 	else
+ 	else if (!startarg || !COM_FindStartArgBaseDir (startarg))
 -		q_strlcpy (com_basedir, host_parms->basedir, sizeof (com_basedir));
 +		q_strlcpy (com_basedir, DATADIR, sizeof (com_basedir));
  

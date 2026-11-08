@@ -1,6 +1,6 @@
---- chrome/browser/signin/signin_util.h.orig	2026-06-04 10:12:25 UTC
+--- chrome/browser/signin/signin_util.h.orig	2026-09-25 15:26:43 UTC
 +++ chrome/browser/signin/signin_util.h
-@@ -206,7 +206,7 @@ bool IsSyncingUserSelectableTypesAllowedByPolicy(
+@@ -172,7 +172,7 @@ bool IsSyncingUserSelectableTypesAllowedByPolicy(
      const syncer::SyncService* sync_service,
      const syncer::UserSelectableTypeSet& types);
  

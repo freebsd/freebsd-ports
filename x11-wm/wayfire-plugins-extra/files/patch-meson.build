@@ -1,0 +1,11 @@
+--- meson.build.orig	2026-08-28 18:35:35 UTC
++++ meson.build
+@@ -21,7 +21,7 @@ if get_option('wayfire_shadows') == true or get_option
+ 
+ if get_option('wayfire_shadows') == true or get_option('focus_request') == true or \
+     get_option('pixdecor') == true or get_option('filters') == true
+-    find_program('git', required: true)
++    find_program('git', required: false)
+ endif
+ 
+ if get_option('wayfire_shadows') == true

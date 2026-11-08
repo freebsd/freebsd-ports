@@ -1,6 +1,6 @@
 PORTNAME=	bout++-merging-filaments
 DISTVERSION=	g20200812
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science # physics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,10 +9,14 @@ WWW=		https://github.com/boutproject/merging-filaments
 
 LICENSE=	GPLv3 # based on the parent project BOUT++
 
-BROKEN=		build fails, see https://github.com/boutproject/merging-filaments/issues/6
-
 BUILD_DEPENDS=	gmake:devel/gmake
-LIB_DEPENDS=	libbout++.so:science/bout++ # also wronglfully linked with all dependencies of BOUT++, see https://github.com/boutproject/BOUT-dev/issues/2622
+LIB_DEPENDS=	libbout++.so:science/bout++ \
+		libfftw3.so:math/fftw3 \
+		libfmt.so:devel/libfmt \
+		libmpi.so:net/mpich \
+		libnetcdf.so:science/netcdf \
+		libnetcdf_c++4.so:science/netcdf-cxx \
+		libuuid.so:misc/libuuid
 
 USES=		cmake:testing gettext
 USE_LDCONFIG=	yes

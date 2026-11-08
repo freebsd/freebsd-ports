@@ -1,6 +1,6 @@
 --- cmake/platforms/FreeBSD-clang.cmake.orig	2018-12-09 17:28:39 UTC
 +++ cmake/platforms/FreeBSD-clang.cmake
-@@ -0,0 +1,153 @@
+@@ -0,0 +1,155 @@
 +###
 +### Adopted from cmake/platforms/Linux-clang.cmake
 +###
@@ -44,8 +44,10 @@
 +#add_flags(CMAKE_C_FLAGS_RELEASE -D_FORTIFY_SOURCE=2)
 +
 +# Enable SSE3 instruction set
++if(CMAKE_SYSTEM_PROCESSOR MATCHES "^(amd64|x86_64|i386|i686)$")
 +add_flags(CMAKE_CXX_FLAGS -msse3)
 +add_flags(CMAKE_C_FLAGS -msse3)
++endif()
 +
 +# C++11 standard
 +add_flags(CMAKE_CXX_FLAGS -Qunused-arguments -std=c++11 -Wno-c++98-compat)

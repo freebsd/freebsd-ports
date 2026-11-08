@@ -1,6 +1,18 @@
---- src/3rdparty/chromium/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_constants.h.orig	2026-02-26 14:39:03 UTC
+--- src/3rdparty/chromium/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_constants.h.orig	2026-05-08 07:54:08 UTC
 +++ src/3rdparty/chromium/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_constants.h
-@@ -315,7 +315,7 @@ constexpr size_t kPoolMaxSize = 1 * kGiB;
+@@ -115,11 +115,6 @@ PartitionPageShift() {
+ PartitionPageShift() {
+   return 16;  // 64 KiB
+ }
+-#elif PA_BUILDFLAG(PA_ARCH_CPU_PPC64)
+-PA_ALWAYS_INLINE PAGE_ALLOCATOR_CONSTANTS_DECLARE_CONSTEXPR size_t
+-PartitionPageShift() {
+-  return 18;  // 256 KiB
+-}
+ #else
+ PA_ALWAYS_INLINE PAGE_ALLOCATOR_CONSTANTS_DECLARE_CONSTEXPR size_t
+ PartitionPageShift() {
+@@ -315,7 +310,7 @@ constexpr size_t kPoolMaxSize = 1 * kGiB;
  #if PA_BUILDFLAG(IS_IOS)
  constexpr size_t kPoolMaxSize = 1 * kGiB;
  #elif PA_BUILDFLAG(IS_ANDROID) || \
@@ -9,7 +21,7 @@
  constexpr size_t kPoolMaxSize = 8 * kGiB;
  #else
  constexpr size_t kPoolMaxSize = 16 * kGiB;
-@@ -399,7 +399,7 @@ PA_ALWAYS_INLINE constexpr size_t MaxDirectMapped() {
+@@ -399,7 +394,7 @@ PA_ALWAYS_INLINE constexpr size_t MaxDirectMapped() {
  // TODO(casey.smalley@arm.com): under 64k pages we can end up in a situation
  // where a normal slot span will be large enough to contain multiple items,
  // but the address will go over the final partition page after being aligned.

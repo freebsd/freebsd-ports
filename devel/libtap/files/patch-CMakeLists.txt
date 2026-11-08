@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2026-09-19 20:27:31.463582000 +0000
++++ CMakeLists.txt	2026-09-19 20:27:52.350739000 +0000
+@@ -25,7 +25,7 @@
+     ENDFOREACH (file_to_copy)
+ ENDFUNCTION (LIBTAP_TEST_TARGET target)
+ 
+-cmake_minimum_required(VERSION 2.8)
++cmake_minimum_required(VERSION 3.10)
+ 
+ INCLUDE(InstallRequiredSystemLibraries)
+ 

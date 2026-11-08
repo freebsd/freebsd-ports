@@ -1,0 +1,4 @@
+Shared RandR subroutines for the laptop, mirror, and extend
+layouts.  display-laptop-only turns external outputs off.
+display-session-restore replays the mode saved in the previous
+session.

@@ -1,0 +1,31 @@
+--- MakeFiles/FreeBSD/Makefile.orig	2023-02-11 19:53:26 UTC
++++ MakeFiles/FreeBSD/Makefile
+@@ -1,7 +1,8 @@
+ # $Id$
+-CC	= c++
++CC	?= c++
+ SMAPIDIR= ../../smapi
+-CFLAGS	= -Wall -W -fno-rtti -I../../hpp -I../../src -I$(SMAPIDIR)/h -I$(SMAPIDIR)/src -O3
++CFLAGS	+= -Wall -W -fno-rtti -I../../hpp -I../../src -I$(SMAPIDIR)/h -I$(SMAPIDIR)/src
++CXXFLAGS+= -Wall -W -fno-rtti -I../../hpp -I../../src -I$(SMAPIDIR)/h -I$(SMAPIDIR)/src
+ CDEFS	= -DUNIX -DHAVE_STDIO_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_CTYPE_H -DHAVE_SYS_TYPES_H \
+           -DHAVE_SYS_STAT_H -DHAVE_UNISTD_H -DHAVE_FCNTL_H -DHAVE_ERRNO_H -DHAVE_IOSTREAM_H \
+           -DHAVE_TIME_H -DHAVE_STDARG_H -DHAVE_ASSERT_H -DHAVE_DIRECT_H -DHAVE_DIRENT_H \
+@@ -75,7 +76,7 @@ OBJS= \
+ .PATH.c: $(SRCDIR)
+ 
+ .cpp.o:
+-	${CC} ${CFLAGS} ${CDEFS} -c $<
++	${CC} ${CXXFLAGS} ${CDEFS} -c $<
+ 
+ .c.o:
+ 	${CC} ${CFLAGS} ${CDEFS} -c $<
+@@ -88,7 +89,7 @@ rntrack: smapi ${OBJS}
+ 	$(MAKE) -C $(SMAPIDIR) -f makefile.bsd
+ 
+ rntrack: smapi ${OBJS}
+-	${CC} -o rntrack ${OBJS} ${LFLAGS}
++	${CXX} -o rntrack ${OBJS} ${LFLAGS}
+ 
+ clean:
+ 	-rm -f $(SMAPIDIR)/*.o

@@ -1,5 +1,5 @@
 PORTNAME=	parallel
-PORTVERSION=	1.28.0
+PORTVERSION=	2.2.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 

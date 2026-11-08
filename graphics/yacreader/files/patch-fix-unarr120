@@ -1,0 +1,42 @@
+https://github.com/selmf/unarr/issues/40
+
+--- YACReaderLibrary/db/comic_model.cpp.orig	2026-11-01 14:43:00 UTC
++++ YACReaderLibrary/db/comic_model.cpp
+@@ -468,12 +468,10 @@ QVariant ComicModel::headerData(int section, Qt::Orien
+             return QVariant(QIcon(":/images/zip.png"));
+         else if (ext.compare("rar", Qt::CaseInsensitive) == 0)
+             return QVariant(QIcon(":/images/rar.png"));
+-#if !defined(use_unarr) || (UNARR_API_VERSION >= 110)
+         else if (ext.compare("7z", Qt::CaseInsensitive) == 0)
+             return QVariant(QIcon(":/images/7z.png"));
+         else if (ext.compare("cb7", Qt::CaseInsensitive) == 0)
+             return QVariant(QIcon(":/images/comic7z.png"));
+-#endif
+         else if (ext.compare("cbt", Qt::CaseInsensitive) == 0)
+             return QVariant(QIcon(":/images/comicTar.png"));
+     }
+
+--- common/comic.cpp.orig	2026-11-01 14:40:07 UTC
++++ common/comic.cpp
+@@ -96,10 +96,8 @@ const QStringList ComicArchiveExtensions = QStringList
+                                                          << "*.rar"
+                                                          << "*.zip"
+                                                          << "*.tar"
+-#if (UNARR_API_VERSION >= 110)
+                                                          << "*.7z"
+                                                          << "*.cb7"
+-#endif
+                                                          << "*.cbt";
+ const QStringList LiteralComicArchiveExtensions = QStringList() << "cbr"
+                                                                 << "cbz"
+@@ -107,10 +105,8 @@ const QStringList LiteralComicArchiveExtensions = QStr
+                                                                 << "rar"
+                                                                 << "zip"
+                                                                 << "tar"
+-#if (UNARR_API_VERSION >= 110)
+                                                                 << "7z"
+                                                                 << "cb7"
+-#endif
+                                                                 << "cbt";
+ #endif // use_unarr
+ #ifndef NO_PDF

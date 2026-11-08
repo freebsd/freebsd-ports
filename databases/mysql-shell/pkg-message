@@ -1,0 +1,7 @@
+MySQL Shell on FreeBSD supports the SQL (\sql) and Python (\py) modes,
+both the classic MySQL protocol and the X protocol, as well as the
+AdminAPI and the bundled Python plugins.
+
+The JavaScript mode (\js) is not available: upstream implements it on
+top of the GraalVM polyglot runtime, which has not been ported to
+FreeBSD yet.

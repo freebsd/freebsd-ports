@@ -6,7 +6,7 @@ MASTER_SITES=	https://software.broadinstitute.org/software/score/
 # Get this right, or ports will download bcftools in it's place via tuple
 DISTFILES+=	score_${DISTVERSION}-20240505.tar.gz
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bcftools plugins for GWAS-VCF summary statistics files
 WWW=		https://software.broadinstitute.org/software/score/
 

@@ -136,6 +136,7 @@ etc/amavisd.conf-default
 %%SITE_PERL%%/Amavis/Unpackers/Validity.pm
 %%SITE_PERL%%/Amavis/Util.pm
 %%SITE_PERL%%/Amavis/ZMQ.pm
+%%SITE_PERL%%/Amavis/ZMQ/FFICompat.pm
 %%SITE_PERL%%/Amavis/rfc2821_2822_Tools.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Logger/Amavislog.pm
 sbin/amavisd

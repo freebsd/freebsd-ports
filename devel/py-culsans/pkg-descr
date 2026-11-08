@@ -1,0 +1,5 @@
+culsans is a thread-safe queue that is also async-aware. It provides mixed
+sync-async queues (FIFO, LIFO and priority) with both synchronous and
+asynchronous interfaces, which allow communication between threads and
+asynchronous tasks (asyncio, trio, anyio). It is a fork-like successor of
+janus, built on top of aiologic.

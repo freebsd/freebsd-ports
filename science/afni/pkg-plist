@@ -13,6 +13,7 @@ bin/1dRplot.R
 bin/1dSEM
 bin/1dSEMr.R
 bin/1dSVAR.R
+bin/1dTrdm
 bin/1dTsort
 bin/1dUpsample
 bin/1d_tool.py
@@ -107,6 +108,7 @@ bin/3dICC
 bin/3dICC.R
 bin/3dISC
 bin/3dISC.R
+bin/3dInSync
 bin/3dIntracranial
 bin/3dInvFMRI
 bin/3dKS.R
@@ -166,6 +168,7 @@ bin/3dQwarp
 bin/3dREMLfit
 bin/3dROIMaker
 bin/3dROIstats
+bin/3dRSA
 bin/3dRSFC
 bin/3dRank
 bin/3dRankizer
@@ -178,6 +181,7 @@ bin/3dRprogDemo.R
 bin/3dSeg
 bin/3dSetupGroupInCorr
 bin/3dSharpen
+bin/3dShuffle
 bin/3dSignatures
 bin/3dSignatures.R
 bin/3dSkullStrip
@@ -269,9 +273,6 @@ bin/3dtoXdataset
 bin/3dttest++
 bin/3dvolreg
 bin/4swap
-bin/adjunct_refacer_make_master_addendum2
-bin/afni_refacer2
-bin/asymm_report.csh
 bin/@1dDiffMag
 bin/@2dwarper
 bin/@2dwarper.Allin
@@ -451,11 +452,15 @@ bin/FATCAT_matplot
 bin/FIRdesign
 bin/FSread_annot
 bin/FiraCode-Bold.woff2
+bin/FiraCode-Medium.woff2
 bin/FiraCode-Regular.woff2
 bin/GLTsymtest
 bin/HalloSuma
 bin/InstaTract
 bin/IsoSurface
+bin/LICENSE_OFL_arimo.txt
+bin/LICENSE_OFL_cousine.txt
+bin/LICENSE_OFL_firacode.txt
 bin/Level2.R
 bin/MBA
 bin/MBA.R
@@ -466,6 +471,7 @@ bin/PTA.R
 bin/ParseName
 bin/RBA
 bin/RBA.R
+bin/README_fonts.txt
 bin/ROI2dataset
 bin/ROIgrow
 bin/RSFgen
@@ -480,6 +486,7 @@ bin/SpharmDeco
 bin/SpharmReco
 bin/Surf2VolCoord
 bin/SurfClust
+bin/SurfClustSim
 bin/SurfDist
 bin/SurfDsetInfo
 bin/SurfExtrema
@@ -511,6 +518,7 @@ bin/adjunct_deob_around_origin
 bin/adjunct_is_label.py
 bin/adjunct_make_script_and_rst.py
 bin/adjunct_middle_pair_mask
+bin/adjunct_refacer_make_master_addendum2
 bin/adjunct_select_str.py
 bin/adjunct_simplify_cost.py
 bin/adjunct_suma_fs_mask_and_qc
@@ -526,6 +534,7 @@ bin/afni_history
 bin/afni_open
 bin/afni_proc.py
 bin/afni_python_wrapper.py
+bin/afni_refacer2
 bin/afni_run_R
 bin/afni_seeds_per_space.txt
 bin/afni_skeleton.py
@@ -547,6 +556,9 @@ bin/apqc_logo_main.svg
 bin/apqc_make_html.py
 bin/apqc_make_tcsh.py
 bin/apsearch
+bin/arimo-v36-latin-700.woff2
+bin/arimo-v36-latin-regular.woff2
+bin/asymm_report.csh
 bin/auto_warp.py
 bin/bayes_view
 bin/build_afni.py
@@ -561,6 +573,8 @@ bin/compute_ROI_stats.tcsh
 bin/convert_cdiflist_to_grads.py
 bin/count
 bin/count_afni
+bin/cousine-v31-latin-700.woff2
+bin/cousine-v31-latin-regular.woff2
 bin/dcm2niix_afni
 bin/demo.fixed.niml.do
 bin/demo.mobile.niml.do
@@ -892,17 +906,21 @@ lib/afni/plug_zeropad.so
 %%PYTHON_SITELIBDIR%%/afnipy/lib_obl_child.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_obl_name.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_obl_tool.py
+%%PYTHON_SITELIBDIR%%/afnipy/lib_physio_convolve.py
+%%PYTHON_SITELIBDIR%%/afnipy/lib_physio_defs.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_physio_filt.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_physio_funcs.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_physio_interact.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_physio_logs.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_physio_opts.py
+%%PYTHON_SITELIBDIR%%/afnipy/lib_physio_outliers.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_physio_peaks.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_physio_phases.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_physio_plot.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_physio_reading.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_physio_regress.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_physio_rvt.py
+%%PYTHON_SITELIBDIR%%/afnipy/lib_physio_testing.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_physio_util.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_plot_1D.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_qt_gui.py
@@ -2047,6 +2065,7 @@ lib/afni/plug_zeropad.so
 %%DATADIR%%/shiny/bayes_view/server.R
 %%DATADIR%%/shiny/bayes_view/ui.R
 %%DATADIR%%/shiny/misc/OmicCircos_pkg_install.R
+%%DATADIR%%/funstuff/face_gcotter1.jpg
 %%PORTDOCS%%%%DOCSDIR%%/CMakeLists.txt
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.Ifile

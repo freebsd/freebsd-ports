@@ -1,5 +1,6 @@
 %%PLOTFILE_TOOLS%%bin/amrex_fboxinfo
 %%PLOTFILE_TOOLS%%bin/amrex_fcompare
+%%PLOTFILE_TOOLS%%bin/amrex_fconvert
 %%PLOTFILE_TOOLS%%bin/amrex_fextract
 %%PLOTFILE_TOOLS%%bin/amrex_fextrema
 %%PLOTFILE_TOOLS%%bin/amrex_fgradient
@@ -46,7 +47,6 @@ include/AMReX_BaseFab.H
 include/AMReX_BaseFabUtility.H
 include/AMReX_BaseFwd.H
 %%PARTICLES%%include/AMReX_BinIterator.H
-include/AMReX_BlockMutex.H
 include/AMReX_BndryData.H
 include/AMReX_BndryRegister.H
 include/AMReX_BoundCond.H
@@ -63,6 +63,7 @@ include/AMReX_COORDSYS_C.H
 %%LINEAR_SOLVERS%%include/AMReX_CSR.H
 include/AMReX_CTOParallelForImpl.H
 include/AMReX_Cluster.H
+include/AMReX_CompensatedSum.H
 include/AMReX_Concepts.H
 include/AMReX_Config.H
 include/AMReX_Config_3D.H
@@ -341,6 +342,7 @@ include/AMReX_Parser_Y.H
 %%PARTICLES%%include/AMReX_ParticleMPIUtil.H
 %%PARTICLES%%include/AMReX_ParticleMesh.H
 %%PARTICLES%%include/AMReX_ParticleReduce.H
+%%PARTICLES%%include/AMReX_ParticleReduceSIMD.H
 %%PARTICLES%%include/AMReX_ParticleTile.H
 %%PARTICLES%%include/AMReX_ParticleTileRT.H
 %%PARTICLES%%include/AMReX_ParticleTransformation.H
@@ -360,6 +362,7 @@ include/AMReX_RandomEngine.H
 include/AMReX_RealBox.H
 include/AMReX_RealVect.H
 include/AMReX_Reduce.H
+include/AMReX_ReduceSIMD.H
 include/AMReX_RungeKutta.H
 include/AMReX_SArena.H
 include/AMReX_SIMD.H
@@ -386,6 +389,7 @@ include/AMReX_TagBox.H
 include/AMReX_TagParallelFor.H
 include/AMReX_TimeIntegrator.H
 %%PARTICLES%%include/AMReX_TracerParticles.H
+%%PARTICLES%%include/AMReX_TracerParticle_mod_K.H
 include/AMReX_TrackedVector.H
 include/AMReX_Tuple.H
 include/AMReX_TypeList.H
@@ -419,6 +423,7 @@ include/amrex_parser.lex.nolint.H
 include/amrex_parser.tab.nolint.H
 lib/cmake/AMReX/AMReXCMakeModules/AMReXBuildInfo.cmake
 lib/cmake/AMReX/AMReXCMakeModules/AMReXCUDAOptions.cmake
+lib/cmake/AMReX/AMReXCMakeModules/AMReXCUDAArchs.cmake
 lib/cmake/AMReX/AMReXCMakeModules/AMReXClangTidy.cmake
 lib/cmake/AMReX/AMReXCMakeModules/AMReXConfig.cmake.in
 lib/cmake/AMReX/AMReXCMakeModules/AMReXFlagsTargets.cmake
@@ -436,7 +441,6 @@ lib/cmake/AMReX/AMReXCMakeModules/AMReXUtils.cmake
 lib/cmake/AMReX/AMReXCMakeModules/AMReX_Config.H.in
 lib/cmake/AMReX/AMReXCMakeModules/AMReX_Config.cmake
 lib/cmake/AMReX/AMReXCMakeModules/AMReX_Config_ND.H.in
-lib/cmake/AMReX/AMReXCMakeModules/AMReX_SetupCUDA.cmake
 lib/cmake/AMReX/AMReXCMakeModules/AMReX_ThirdPartyProfilers.cmake
 lib/cmake/AMReX/AMReXCMakeModules/AMReX_Version.H.in
 lib/cmake/AMReX/AMReXCMakeModules/AMReX_buildInfo.cpp.in

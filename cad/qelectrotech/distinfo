@@ -1,3 +1,13 @@
-TIMESTAMP = 1771414224
+TIMESTAMP = 1791969655
 SHA256 (qelectrotech-0.100.tar.gz) = 2a658df42fa9f8be95bf6dafae2a53ab47962af8afb7043f78a018b7ca6b7310
 SIZE (qelectrotech-0.100.tar.gz) = 27383220
+SHA256 (catchorg-Catch2-v2.13.10_GH0.tar.gz) = d54a712b7b1d7708bc7a819a8e6e47b2fde9536f487b89ccbca295072a7d9943
+SIZE (catchorg-Catch2-v2.13.10_GH0.tar.gz) = 662225
+SHA256 (google-googletest-v1.17.0_GH0.tar.gz) = 65fab701d9829d38cb77c14acdc431d2108bfdbf8979e40eb8ae567edf10b27c
+SIZE (google-googletest-v1.17.0_GH0.tar.gz) = 885595
+SHA256 (zeux-pugixml-v1.11.4_GH0.tar.gz) = 017139251c122dbff400a507cddc4cb74120a431a50c6c524f30edcc5b331ade
+SIZE (zeux-pugixml-v1.11.4_GH0.tar.gz) = 566750
+SHA256 (itay-grudev-SingleApplication-v3.2.0_GH0.tar.gz) = 088cf1ca9e07546db280795d97703b15deea0ca69e9c01eef34412c665e37c57
+SIZE (itay-grudev-SingleApplication-v3.2.0_GH0.tar.gz) = 20640
+SHA256 (d0cea474a6cc45b28114ba158061d42c0cfed484.patch) = eac9f86ec28b96fd2e34c4246c6779e75fcef810ccfddf6476662b8af7859483
+SIZE (d0cea474a6cc45b28114ba158061d42c0cfed484.patch) = 8743

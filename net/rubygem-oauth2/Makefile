@@ -1,5 +1,5 @@
 PORTNAME=	oauth2
-PORTVERSION=	2.0.24
+PORTVERSION=	2.0.25
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -9,17 +9,17 @@ WWW=		https://oauth2.galtzo.com/ \
 		https://github.com/ruby-oauth/oauth2
 
 LICENSE=	MIT
-#LICENSE_FILE=	${WRKSRC}/MIT.md
+LICENSE_FILE=	${WRKSRC}/MIT.md
 
-RUN_DEPENDS=	rubygem-anonymous_loader>=0.1.1<1:devel/rubygem-anonymous_loader \
-		rubygem-auth-sanitizer>=0.2.2<1:security/rubygem-auth-sanitizer \
+RUN_DEPENDS=	rubygem-anonymous_loader>=0.1.3<1:devel/rubygem-anonymous_loader \
+		rubygem-auth-sanitizer>=0.2.3<1:security/rubygem-auth-sanitizer \
 		rubygem-faraday>=0.17.3<4.0:www/rubygem-faraday \
 		rubygem-jwt>=1.0<4.0:www/rubygem-jwt \
 		rubygem-logger>=1.2<2:devel/rubygem-logger \
 		rubygem-multi_xml>=0.5<1:textproc/rubygem-multi_xml \
 		rubygem-rack>=1.2,3<4,3:www/rubygem-rack \
-		rubygem-snaky_hash>=2.0.6<3:devel/rubygem-snaky_hash \
-		rubygem-version_gem>=1.1.12<2:devel/rubygem-version_gem
+		rubygem-snaky_hash>=2.0.7<3:devel/rubygem-snaky_hash \
+		rubygem-version_gem>=1.1.14<2:devel/rubygem-version_gem
 
 USES=		gem
 

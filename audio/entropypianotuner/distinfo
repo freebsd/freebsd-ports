@@ -1,0 +1,9 @@
+TIMESTAMP = 1773641173
+SHA256 (tp3-Entropy-Piano-Tuner-f9181865345be460ab5a08a009b49caae1f0d37c_GL0.tar.gz) = c2a5e3f8c191e59dac760058f455d0c6fabd612ef0ba8f25d737f8cd4d69fbde
+SIZE (tp3-Entropy-Piano-Tuner-f9181865345be460ab5a08a009b49caae1f0d37c_GL0.tar.gz) = 12358847
+SHA256 (qtmidi-1c3bf17.tar.bz2) = 115db1ec1a1a0b3ff52020b96f59c8e279b5a40740a2c3af3839c4bcf9d89d1a
+SIZE (qtmidi-1c3bf17.tar.bz2) = 205355
+SHA256 (qwt-lib-c778d34.tar.bz2) = e98e22f2d726287ac4b564dc9cb2e0bb1be2b0beeca70d0ec1a03591c76407ae
+SIZE (qwt-lib-c778d34.tar.bz2) = 256191
+SHA256 (tp3log-3861a44.tar.bz2) = d9278581452596ded01852ce21890836b1c2d9527ac0805e9e4c6297938abe6e
+SIZE (tp3log-3861a44.tar.bz2) = 5962

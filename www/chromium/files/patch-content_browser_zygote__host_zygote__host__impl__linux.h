@@ -1,8 +1,8 @@
---- content/browser/zygote_host/zygote_host_impl_linux.h.orig	2025-02-19 07:43:18 UTC
+--- content/browser/zygote_host/zygote_host_impl_linux.h.orig	2026-10-18 13:29:39 UTC
 +++ content/browser/zygote_host/zygote_host_impl_linux.h
-@@ -46,12 +46,14 @@ class CONTENT_EXPORT ZygoteHostImpl : public ZygoteHos
-                      base::ScopedFD* control_fd,
-                      base::FileHandleMappingVector additional_remapped_fds);
+@@ -51,12 +51,14 @@ class CONTENT_EXPORT ZygoteHostImpl : public ZygoteHos
+       base::ScopedFD* control_fd,
+       base::FileHandleMappingVector additional_remapped_fds);
  
 +#if !BUILDFLAG(IS_BSD)
    void AdjustRendererOOMScore(base::ProcessHandle process_handle,
@@ -13,11 +13,11 @@
  #endif  // BUILDFLAG(IS_CHROMEOS)
 +#endif
  
-   bool HasZygote() { return !zygote_pids_.empty(); }
+   bool HasZygote() { return has_zygote_; }
  
-@@ -66,9 +68,11 @@ class CONTENT_EXPORT ZygoteHostImpl : public ZygoteHos
- 
-   int renderer_sandbox_status_;
+@@ -77,9 +79,11 @@ class CONTENT_EXPORT ZygoteHostImpl : public ZygoteHos
+   // other threads are created.
+   bool has_zygote_ = false;
  
 +#if !BUILDFLAG(IS_BSD)
    bool use_namespace_sandbox_;
@@ -26,4 +26,4 @@
 +#endif
    std::string sandbox_binary_;
  
-   // This lock protects the |zygote_pids_| set.
+   base::Lock zygote_pids_lock_;

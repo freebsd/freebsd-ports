@@ -1,6 +1,6 @@
 PORTNAME=	beats
 DISTVERSIONPREFIX=	v
-DISTVERSION=	9.3.4
+DISTVERSION=	9.3.8
 PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	https://raw.githubusercontent.com/${GH_ACCOUNT}/${GH_PROJECT}/${DISTVERSIONFULL}/:gomod
@@ -12,6 +12,9 @@ COMMENT=	Send logs, network, metrics and heartbeat to Elasticsearch or Logstash 
 WWW=		https://www.elastic.co/products/beats/
 
 LICENSE=	APACHE20
+
+DEPRECATED=	Support for ${DISTVERSION:R}.x has ended 04 Aug 2026 - use ${PORTNAME}94 or ${PORTNAME}95 instead
+EXPIRATION_DATE=	2026-12-31
 
 USES=		go:modules
 USE_GITHUB=	yes
@@ -31,15 +34,13 @@ PORTSCOUT=	limit:^${DISTVERSION:R:S|.|\.|}\.
 
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=		AUDITBEAT FILEBEAT HEARTBEAT METRICBEAT PACKETBEAT
-.ifmake makesum || makeplist || distclean
-OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
-.else
 OPTIONS_DEFAULT=	FILEBEAT HEARTBEAT METRICBEAT
-.endif
+OPTIONS_MULTI=		BEATS
+OPTIONS_MULTI_BEATS=	AUDITBEAT FILEBEAT HEARTBEAT METRICBEAT PACKETBEAT
 OPTIONS_SUB=		yes
 
 AUDITBEAT_DESC=			Auditbeat
+BEATS_DESC=			Beats modules
 FILEBEAT_DESC=			Filebeat
 HEARTBEAT_DESC=			Heartbeat
 METRICBEAT_DESC=		Metricbeat
@@ -70,6 +71,15 @@ PACKETBEAT_VARS=		CGO_CFLAGS+=-I/usr/include \
 LOCAL_MASTER_SITES=		LOCAL/vvd/elastic
 
 .include <bsd.port.options.mk>
+
+.ifmake makesum || makeplist || distclean
+.  for O in ${OPTIONS_MULTI_BEATS}
+.    if !${PORT_OPTIONS:M${O}}
+MASTER_SITES+=	${${O}_MASTER_SITES}
+DISTFILES+=	${${O}_DISTFILES}
+.    endif
+.  endfor
+.endif
 
 post-patch:
 	${REINPLACE_CMD} -e "s|%%BEATSVERSION%%|v${DISTVERSION}|g" ${WRKSRC}/dev-tools/mage/settings.go

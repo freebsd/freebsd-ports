@@ -1,5 +1,6 @@
 %%PYTHON_SITELIBDIR%%/faiss/__init__.py
 %%PYTHON_SITELIBDIR%%/faiss/_swigfaiss.so
+%%PYTHON_SITELIBDIR%%/faiss/_faiss_example_external_module.so
 %%PYTHON_SITELIBDIR%%/faiss/array_conversions.py
 %%PYTHON_SITELIBDIR%%/faiss/class_wrappers.py
 %%PYTHON_SITELIBDIR%%/faiss/contrib/README.md

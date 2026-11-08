@@ -1,3 +1,0 @@
-fontmake compiles fonts from various sources (.glyphs, .ufo, designspace) into
-binaries (.otf, .ttf). You can use it to create static instances and variable
-fonts.

@@ -1,6 +1,7 @@
 PORTNAME=	gemmi
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.5
+PORTREVISION=	1
 CATEGORIES=	science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -20,7 +21,7 @@ LIB_DEPENDS=	libgemmi_cpp.so:science/gemmi
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}biopython>0:biology/py-biopython@${PY_FLAVOR}
 
 USES=		cmake compiler:c++17-lang localbase:ldflags python
-USE_PYTHON=	flavors
+USE_PYTHON=	flavors pytest
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	project-gemmi
@@ -30,13 +31,11 @@ CMAKE_OFF=	BUILD_GEMMI_PROGRAM STANDALONE_PYTHON_MODULE
 CMAKE_ARGS=	-DPython_EXECUTABLE=${PYTHON_CMD}
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
-TEST_WRKSRC=	${BUILD_WRKSRC}/tests
+TEST_WRKSRC=	${WRKSRC}/tests
+TEST_ARGS=	--disable-plugin-autoload
 
 PLIST_SUB=	VER=${PORTVERSION}
 
-do-test:
-	@cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m unittest discover -v tests/
-
-# tests as of 0.7.3: test 'test_syntax_error' fails with syntax error, see https://github.com/project-gemmi/gemmi/issues/384
+# tests as of 0.7.5: 204 passed, 4 skipped in 0.54s
 
 .include <bsd.port.mk>

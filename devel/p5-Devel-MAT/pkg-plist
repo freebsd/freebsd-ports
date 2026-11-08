@@ -95,6 +95,7 @@ bin/pmat-list-orphans
 %%PERL5_MAN3%%/Devel::MAT::Tool::Strtab.3.gz
 %%PERL5_MAN3%%/Devel::MAT::Tool::Summary.3.gz
 %%PERL5_MAN3%%/Devel::MAT::Tool::Symbols.3.gz
+%%PERL5_MAN3%%/Devel::MAT::Tool::Tools.3.gz
 %%PERL5_MAN3%%/Devel::MAT::UI.3.gz
 %%PERL5_MAN3%%/Devel::MAT::UserGuide.3.gz
 %%PERL5_MAN3%%/Devel::MAT::UserGuide::IdentifyingAnSV.3.gz

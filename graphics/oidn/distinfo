@@ -1,8 +1,8 @@
-TIMESTAMP = 1780472466
+TIMESTAMP = 1789169895
 SHA256 (oidn-weights-28883d1769d5930e13cf7f1676dd852bd81ed9e7.tar.gz) = 90726b544f6e8b86a8bc4756e7c0b3da7530d4bab9dd671f2689001b4f9801f7
 SIZE (oidn-weights-28883d1769d5930e13cf7f1676dd852bd81ed9e7.tar.gz) = 46880514
-SHA256 (RenderKit-oidn-v2.5.0_GH0.tar.gz) = 3657f1536be599f2cf531543b5472e4fd7226ab1259a9e6bf0d512b9b36441b1
-SIZE (RenderKit-oidn-v2.5.0_GH0.tar.gz) = 3657894
+SHA256 (RenderKit-oidn-v2.5.1_GH0.tar.gz) = b8e129690e34608429b21361e9a56dabfb99ef848c1d602bd78d583577ca8d29
+SIZE (RenderKit-oidn-v2.5.1_GH0.tar.gz) = 3671142
 SHA256 (ROCmSoftwarePlatform-composable_kernel-3e6d21a_GH0.tar.gz) = e10466f2a464f39bd61c2a436acff25b51be72eb5d5ba0ae8c894d606693db36
 SIZE (ROCmSoftwarePlatform-composable_kernel-3e6d21a_GH0.tar.gz) = 4636914
 SHA256 (NVIDIA-cutlass-d55f6be_GH0.tar.gz) = 4b0b204590a2cf7dc39139e4deaf1ea29a55eef5afe5a815b16b642e77ede24e

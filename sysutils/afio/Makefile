@@ -1,10 +1,10 @@
 PORTNAME=	afio
 PORTVERSION=	2.5.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://members.chello.nl/~k.holtman/
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Archiver and backup program with builtin compression
 WWW=		http://members.chello.nl/k.holtman/afio.html
 

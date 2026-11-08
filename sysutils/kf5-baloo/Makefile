@@ -1,12 +1,15 @@
 PORTNAME=	baloo
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils kde kde-frameworks
+CMAKE_ARGS+=	-DCMAKE_INCLUDE_PATH=${LOCALBASE}/lmdb0/include
+CMAKE_ARGS+=	-DCMAKE_LIBRARY_PATH=${LOCALBASE}/lmdb0/lib
+CONFIGURE_ENV+=	PKG_CONFIG_PATH=${LOCALBASE}/lmdb0/libdata/pkgconfig
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 Framework for searching and managing user metadata
 
-LIB_DEPENDS=	liblmdb.so:databases/lmdb0 \
+LIB_DEPENDS=	liblmdb0.so:databases/lmdb0 \
 		libinotify.so:devel/libinotify
 
 DEPRECATED=	has its functionality stripped compared to a kf6 variant

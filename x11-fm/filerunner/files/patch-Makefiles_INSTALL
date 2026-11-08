@@ -1,0 +1,20 @@
+--- Makefiles/INSTALL.orig	2026-09-09 08:15:02 UTC
++++ Makefiles/INSTALL
+@@ -76,7 +76,7 @@ set legalmhelp { 
+ 
+ # Check on who we are.  If not root we do different things...
+ 
+-set username [exec whoami]
++set username root
+ set root [expr { $username == {root} ? 1 : 0}]
+  
+ #
+@@ -705,7 +705,7 @@ if {!$test} {
+     set r [catch {exec ln -sf $target $::DESTDIR$EXEC/fr} out]
+     set fl {}
+   } else {
+-    set r [catch {exec ln -sfr $target $::DESTDIR$EXEC/fr} out]
++    set r [catch {exec install -l rs $target $::DESTDIR$EXEC/fr} out]
+     set fl r
+   }
+   #set r [catch {file link -symbolic $::DESTDIR$EXEC/fr $target} out]

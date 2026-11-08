@@ -1,24 +1,29 @@
 server:
-  port: 3080
-  baseURL:  /
   logging:
-    - levels: 'info|warning|error'
-      output: stdout
+    - levels: "info|warning|error"
+      output: "stdout"
   sources:
     - path: %%WWWDIR%%
-  database: '/var/db/filebrowser-quantum/filebrowser-quantum.db'
+      config:
+        defaultPermissions:
+          view: true
+          modify: false
+          create: false
+          delete: false
+          download: false
+  database:
+    path: "/var/db/filebrowser-quantum/filebrowser.sqlite"
+http:
+  port: 3080
+  baseURL: "/"
 userDefaults:
-  preview:
-    image: true
-    popup: true
-    video: false
-    office: false
-    highQuality: false
-  darkMode: true
-  disableSettings: false
-  singleClick: false
-  permissions:
-    admin: false
-    modify: false
-    share: false
-    api: false
+  listing:
+    singleClick: false
+  ui:
+    darkMode: true
+  account:
+    disableSettings: false
+    permissions:
+      admin: false
+      api: false
+      share: false

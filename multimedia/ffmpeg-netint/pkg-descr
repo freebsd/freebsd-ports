@@ -1,0 +1,7 @@
+NETINT's fork of FFmpeg 7.1 with hardware decoders, encoders and filters
+for the NETINT Quadra video processing units, through libxcoder.
+
+The programs are ffmpeg-netint and ffprobe-netint; libraries and headers
+live in lib/ffmpeg-netint and include/ffmpeg-netint, so the port does not
+conflict with multimedia/ffmpeg. Hardware filters need the decoder option
+"-xcoder-params out=hw".

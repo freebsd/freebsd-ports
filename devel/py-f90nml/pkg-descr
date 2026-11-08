@@ -1,0 +1,2 @@
+f90nml is a Python module that provides a simple interface for the reading,
+writing and modifying of Fortran namelist files (Fortran 90 namelists).

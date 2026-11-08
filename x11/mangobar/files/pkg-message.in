@@ -1,0 +1,13 @@
+[
+{ type: install
+  message: <<EOM
+Before using mangobar run the following commands as user:
+
+    mkdir -p ~/.config/mangobar
+    cp %%DATADIR%%/config.jsonc ~/.config/mangobar/config.jsonc
+    cp %%DATADIR%%/style.css ~/.config/mangobar/style.css
+
+then customize those files.
+EOM
+}
+]

@@ -13,9 +13,6 @@ WWW=		https://coder-com.undernet.org
 LICENSE=	GPLv1
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_aarch64=		Fails to compile: undefined reference to .mcount
-BROKEN_riscv64=		Fails to compile: undefined reference to .mcount
-
 USE_GCC=	yes
 USE_RC_SUBR=	undernet
 
@@ -62,10 +59,6 @@ POLL_CONFIGURE_ENABLE=		poll
 WARNINGS_CONFIGURE_ENABLE=	warnings
 
 .include <bsd.port.options.mk>
-
-.if !defined(NO_PROFILE)
-CONFIGURE_ARGS+=		--enable-profile
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ircd/ircd ${STAGEDIR}${PREFIX}/sbin

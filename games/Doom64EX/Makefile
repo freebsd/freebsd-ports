@@ -1,26 +1,41 @@
 PORTNAME=	Doom64EX
-PORTVERSION=	g20180824
-PORTREVISION=	1
+DISTVERSION=	2.6-14
+DISTVERSIONSUFFIX=	-g496d6e5
 CATEGORIES=	games
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Project aimed to recreate Doom64
-WWW=		https://doom64ex.wordpress.com/
+WWW=		https://github.com/atsb/Doom64EX-Classic
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth \
 		libpng.so:graphics/png
 
-USES=		cmake sdl
+USES=		cmake gl sdl
 USE_GITHUB=	yes
-GH_ACCOUNT=	svkaiser
-GH_TAGNAME=	03a5e6a5a3a14d66886f62b72431b37ef7336706
-USE_SDL=	net2 sdl2
+GH_ACCOUNT=	atsb
+GH_PROJECT=	Doom64EX-Classic
+USE_GL=		gl glu
+USE_SDL=	sdl3
 
-CMAKE_ON=	ENABLE_SYSTEM_FLUIDSYNTH
-PLIST_FILES=	bin/doom64ex \
-		share/games/doom64ex/doom64ex.pk3
+CMAKE_SOURCE_PATH=	${WRKSRC}/src
+
+SUB_FILES=	pkg-message
+
+DATADIR=	${PREFIX}/share/games/doom64
+
+post-patch:
+	${CP} ${FILESDIR}/CMakeLists.txt ${WRKSRC}/src
+
+do-install:
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/bin/DOOM64 \
+		${STAGEDIR}${PREFIX}/bin/doom64ex
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/bin/WadGen \
+		${STAGEDIR}${PREFIX}/bin/doom64ex-wadgen
+	@${MKDIR} ${STAGEDIR}${DATADIR}/Content
+	${INSTALL_DATA} ${WRKSRC}/src/wadgen/Content/* \
+		${STAGEDIR}${DATADIR}/Content
 
 .include <bsd.port.mk>

@@ -23,12 +23,17 @@ USE_KDE=	archive attica auth bookmarks codecs completion config \
 		sonnet syntaxhighlighting texteditor textwidgets widgetsaddons \
 		windowsystem xmlgui \
 		ecm:build
-USE_QT=		base svg webchannel webengine \
+USE_QT=		base svg webchannel \
 		tools:build
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	LUAJIT MAXIMA OCTAVE R SCILAB DOCS
+OPTIONS_DEFINE=	LUAJIT MAXIMA OCTAVE R SCILAB WEBENGINE DOCS
+OPTIONS_DEFAULT_aarch64=	WEBENGINE
+OPTIONS_DEFAULT_amd64=		WEBENGINE
+OPTIONS_DEFAULT_armv7=		WEBENGINE
+OPTIONS_DEFAULT_i386=		WEBENGINE
+OPTIONS_DEFAULT_powerpc64le=	WEBENGINE
 OPTIONS_SUB=	yes # R LUAJIT
 
 LUAJIT_DESC=	Build LuaJIT backend and install LuaJIT
@@ -50,6 +55,10 @@ R_BROKEN=	R backend fails with: /usr/include/c++/v1/__locale:1130:9: error: expe
 
 SCILAB_DESC=	Install Scilab
 SCILAB_RUN_DEPENDS=	scilab:math/scilab
+
+WEBENGINE_DESC=		Embedded documentation panel (requires QtWebEngine)
+WEBENGINE_USE=		QT=webengine
+WEBENGINE_CMAKE_BOOL=	ENABLE_EMBEDDED_DOCUMENTATION
 
 post-patch:
 	${REINPLACE_CMD} -e '/FIND_PROGRAM(_GFORTRAN_EXECUTABLE/s,gfortran,${FC},' \

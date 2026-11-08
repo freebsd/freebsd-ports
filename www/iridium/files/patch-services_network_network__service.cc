@@ -1,6 +1,6 @@
---- services/network/network_service.cc.orig	2026-06-10 12:51:34 UTC
+--- services/network/network_service.cc.orig	2026-08-13 16:48:13 UTC
 +++ services/network/network_service.cc
-@@ -104,7 +104,7 @@
+@@ -105,7 +105,7 @@
  #include "third_party/boringssl/src/include/openssl/cpu.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "services/network/network_change_notifier_passive_factory.h"
  #endif
  
-@@ -1038,7 +1038,7 @@ void NetworkService::SetExplicitlyAllowedPorts(
+@@ -1073,7 +1073,7 @@ void NetworkService::SetExplicitlyAllowedPorts(
    net::SetExplicitlyAllowedPorts(ports);
  }
  
@@ -18,7 +18,7 @@
  void NetworkService::SetGssapiLibraryLoadObserver(
      mojo::PendingRemote<mojom::GssapiLibraryLoadObserver>
          gssapi_library_load_observer) {
-@@ -1178,7 +1178,7 @@ NetworkService::CreateHttpAuthHandlerFactory(NetworkCo
+@@ -1213,7 +1213,7 @@ NetworkService::CreateHttpAuthHandlerFactory(NetworkCo
    );
  }
  

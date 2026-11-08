@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.12.9
 CATEGORIES=	biology
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GFF/GTF format conversions, filtering, FASTA extraction, etc
 WWW=		https://ccb.jhu.edu/software/stringtie/gff.shtml#gffread
 

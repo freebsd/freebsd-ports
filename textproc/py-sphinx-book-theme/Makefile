@@ -1,6 +1,5 @@
 PORTNAME=	sphinx-book-theme
-PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTVERSION=	1.4.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI \
 		LOCAL/sunpoet:static
@@ -16,9 +15,9 @@ WWW=		https://sphinx-book-theme.readthedocs.io/en/stable/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>=3.9.0:devel/py-flit-core@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pydata-sphinx-theme>=0.16.1:textproc/py-pydata-sphinx-theme@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sphinx>=7.0,1:textproc/py-sphinx@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>=3.12:devel/py-flit-core@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pydata-sphinx-theme>=0.20.0:textproc/py-pydata-sphinx-theme@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sphinx>=8.2,1:textproc/py-sphinx@${PY_FLAVOR} \
 
 USES=		python:3.11+
 USE_PYTHON=	autoplist concurrent pep517

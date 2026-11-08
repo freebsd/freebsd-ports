@@ -1,10 +1,10 @@
 PORTNAME=	dbeacon
 PORTVERSION=	0.3.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	https://BSDforge.com/projects/source/net/dbeacon/
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Distributed multicast beacon server
 WWW=		http://fivebits.net/proj/dbeacon
 

@@ -11,7 +11,6 @@ LICENSE=	MIT
 
 CRAN_DEPENDS=	R-cran-openssl>0:security/R-cran-openssl \
 		R-cran-uuid>0:devel/R-cran-uuid
-BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 TEST_DEPENDS=	R-cran-testthat>0:devel/R-cran-testthat
 

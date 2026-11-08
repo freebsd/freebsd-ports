@@ -1,0 +1,9 @@
+--- tests/CMakeLists.txt.orig	2018-06-29 10:29:17 UTC
++++ tests/CMakeLists.txt
+@@ -106,5 +106,5 @@ ADD_TEST(test_lffuzzystrcmp test_lffuzzystrcmp)
+ TARGET_LINK_LIBRARIES(test_lffuzzystrcmp lensfun ${COMMON_LIBS})
+ ADD_TEST(test_lffuzzystrcmp test_lffuzzystrcmp)
+ 
+-FIND_PACKAGE(PythonInterp REQUIRED)
++FIND_PACKAGE(Python REQUIRED COMPONENTS Interpreter) # cmake --help-policy CMP0148
+ ADD_TEST(NAME Database_integrity COMMAND ${PYTHON_EXECUTABLE} ${CMAKE_SOURCE_DIR}/tools/check_database/check_database.py ${CMAKE_SOURCE_DIR}/data/db)

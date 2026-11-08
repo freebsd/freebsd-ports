@@ -23,5 +23,6 @@ GH_ACCOUNT=	dorian3d
 GH_PROJECT=	DBoW2
 
 CMAKE_OFF=	BUILD_Demo
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/dorian3d/DBoW2/issues/76
 
 .include <bsd.port.mk>

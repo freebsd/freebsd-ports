@@ -1,4 +1,3 @@
-PORTREVISION=	1
 CATEGORIES=	japanese
 .if defined(WITHOUT_X11)
 PKGNAMESUFFIX=	-anthy-unicode-nox11
@@ -36,7 +35,7 @@ do-build:
 
 do-install:
 	(cd ${WRKSRC}/uim && \
-	${MAKE_CMD} DESTDIR=${STAGEDIR} uim_plugin_LTLIBRARIES=libuim-anthy-utf8.la INSTALL_STRIP_FLAG=-s install-uim_pluginLTLIBRARIES)
+	${MAKE_CMD} DESTDIR=${STAGEDIR} uimplugin_LTLIBRARIES=libuim-anthy-utf8.la lib_LTLIBRARIES= INSTALL_STRIP_FLAG=-s install-uimpluginLTLIBRARIES)
 .if !defined(WITHOUT_X11)
 	(cd ${WRKSRC}/gtk3/dict && ${MAKE_CMD} DESTDIR=${STAGEDIR} bin_PROGRAMS=uim-dict-gtk3 INSTALL_STRIP_FLAG=-s install-binPROGRAMS install-uim_dict_uiDATA)
 .endif

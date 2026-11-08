@@ -2,6 +2,7 @@
 bin/mstconfig
 bin/mstcongestion
 bin/mstdevices_info
+bin/mstefuse
 bin/mstflint
 %%FWMANAGER%%bin/mstfwmanager
 bin/mstfwreset
@@ -39,7 +40,6 @@ bin/mstvpd
 %%DATADIR%%/CableSFP51.csv
 %%DATADIR%%/CableSFP51Paging.csv
 %%DATADIR%%/ConnectIB.csv
-%%DATADIR%%/ConnectX10.csv
 %%DATADIR%%/ConnectX2.csv
 %%DATADIR%%/ConnectX3.csv
 %%DATADIR%%/ConnectX3Pro.csv
@@ -73,6 +73,7 @@ bin/mstvpd
 %%DATADIR%%/SwitchIB.csv
 %%DATADIR%%/SwitchIB2.csv
 %%DATADIR%%/SwitchX.csv
+%%DATADIR%%/efuse/efuse_config.json
 %%DATADIR%%/mlxconfig_dbs/mlxconfig_host.db
 %%DATADIR%%/mlxconfig_dbs/mlxconfig_switch.db
 %%FWMANAGER%%bin/mstarchive
@@ -90,6 +91,7 @@ include/mstflint/sdk/resource_dump_types.h
 include/mstflint/tools_layouts/adb_to_c_utils.h
 include/mstflint/tools_layouts/icmd_hca_layouts.h
 include/mstflint/tools_layouts/icmd_layouts.h
+include/mstflint/tools_layouts/hca_cap_types_enums.h
 lib/mstflint/python_tools/c_dev_mgt.so
 lib/mstflint/python_tools/ccmdif.so
 lib/mstflint/python_tools/cmdif.py
@@ -105,7 +107,6 @@ lib/mstflint/python_tools/mstfwreset/mlxfwresetlib/cmd_reg_mpcir.py
 lib/mstflint/python_tools/mstfwreset/mlxfwresetlib/cmd_reg_mroq.py
 lib/mstflint/python_tools/mstfwreset/mlxfwresetlib/cmd_reg_mrsi.py
 lib/mstflint/python_tools/mstfwreset/mlxfwresetlib/drivers_safety_check.py
-lib/mstflint/python_tools/mstfwreset/mlxfwresetlib/gpu_drivers_safety_check.py
 lib/mstflint/python_tools/mstfwreset/mlxfwresetlib/hot_reset.py
 lib/mstflint/python_tools/mstfwreset/mlxfwresetlib/logger.py
 lib/mstflint/python_tools/mstfwreset/mlxfwresetlib/mcra.py

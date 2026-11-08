@@ -1,6 +1,6 @@
 PORTNAME=	lxappearance-obconf
 PORTVERSION=	0.2.3
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF/lxde/LXAppearance%20Obconf/
 
@@ -14,9 +14,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libImlib2.so:graphics/imlib2 \
 	libfontconfig.so:x11-fonts/fontconfig \
 	libfreetype.so:print/freetype2
-BUILD_DEPENDS=	openbox:x11-wm/openbox \
+OTHER_DEPENDS=	openbox:x11-wm/openbox \
 	lxappearance:x11-themes/lxappearance
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${OTHER_DEPENDS}
+RUN_DEPENDS=	${OTHER_DEPENDS}
 
 USES=	gettext-tools gmake gnome libtool pkgconfig tar:xz xorg
 GNU_CONFIGURE=	yes

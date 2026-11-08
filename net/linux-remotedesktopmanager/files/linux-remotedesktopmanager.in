@@ -1,0 +1,41 @@
+#!/bin/sh
+
+find_pulse_socket()
+{
+	PA_SOCK_PATH=$(sockstat -uw | awk -v me="$(whoami)" -F'[ \t]+' '
+		$1 == me && $2 ~ /^(pulseaudio|pipewire)/ && $6 ~ /native/ {
+			print $6
+			exit 0
+		}'
+	)
+}
+
+# dbus-run-session exports DBUS_SESSION_BUS_ADDRESS to the child, so the
+# re-exec cannot loop.
+if [ ! "${DBUS_SESSION_BUS_ADDRESS-}" ]; then
+	exec %%LOCALBASE%%/bin/dbus-run-session -- "$0" "$@"
+fi
+
+if [ ! "${PULSE_SERVER-}" ]; then
+	find_pulse_socket
+	if [ -S "${PA_SOCK_PATH-}" ]; then
+		export PULSE_SERVER=unix:$PA_SOCK_PATH
+		[ -r "$HOME/.config/pulse/cookie" ] &&
+			export PULSE_COOKIE="$HOME/.config/pulse/cookie"
+	fi
+fi
+
+# Both are set by the vendor's own launcher.
+: ${GDK_BACKEND:=x11}
+: ${DOTNET_EnableWriteXorExecute:=0}
+export GDK_BACKEND DOTNET_EnableWriteXorExecute
+
+# WebKit's sandbox needs unprivileged user namespaces and seccomp, which
+# the Linuxulator does not provide.
+: ${WEBKIT_DISABLE_SANDBOX_THIS_IS_DANGEROUS:=1}
+export WEBKIT_DISABLE_SANDBOX_THIS_IS_DANGEROUS
+
+# A FreeBSD side .so in LD_PRELOAD breaks the Linux run-time linker.
+unset LD_PRELOAD
+
+exec %%DATADIR%%/RemoteDesktopManager "$@"

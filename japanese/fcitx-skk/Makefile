@@ -1,6 +1,6 @@
 PORTNAME=	fcitx-skk
 PORTVERSION=	0.1.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	japanese
 MASTER_SITES=	http://download.fcitx-im.org/${PORTNAME}/
 DIST_SUBDIR=	fcitx
@@ -10,6 +10,9 @@ COMMENT=	SKK support for Fcitx
 WWW=		https://fcitx-im.org/wiki/Fcitx
 
 LICENSE=	GPLv3
+
+DEPRECATED=	Abandoned, migrate to fcitx5-cskk or fcitx5-skk
+EXPIRATION_DATE=2026-12-31
 
 RUN_DEPENDS=	${LOCALBASE}/share/skk/SKK-JISYO.L:japanese/skk-jisyo
 LIB_DEPENDS=	libfcitx-config.so:chinese/fcitx \

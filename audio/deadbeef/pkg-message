@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+This package installs core program only, GUI plugin is required for normal
+operation.  Please install the `audio/deadbeef-gui-plugins' port or package
+of desired GTK version flavor.
+EOM
+}
+]

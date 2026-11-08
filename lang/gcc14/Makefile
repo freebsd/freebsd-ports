@@ -1,6 +1,6 @@
 PORTNAME=	gcc
 PORTVERSION=	14.2.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	lang
 MASTER_SITES=	GCC
 PKGNAMESUFFIX=	${SUFFIX}
@@ -77,10 +77,7 @@ GRAPHITE_CONFIGURE_WITH+=      isl
 CONFIGURE_ARGS+=	--with-long-double-format=ieee
 .endif
 
-.if ${ARCH} == amd64
-CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:tl}${OSREL}
-
-.elif ${ARCH} == powerpc64
+.if ${ARCH} == powerpc64
 CONFIGURE_ARGS+=	--with-abi=elfv2
 .endif
 

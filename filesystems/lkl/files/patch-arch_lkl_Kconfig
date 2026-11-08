@@ -1,0 +1,23 @@
+--- arch/lkl/Kconfig.orig	2018-06-28 05:58:16 UTC
++++ arch/lkl/Kconfig
+@@ -20,6 +20,8 @@ config LKL
+        select HAVE_UNDERSCORE_SYMBOL_PREFIX if OUTPUT_FORMAT = "pe-i386"
+        select 64BIT if OUTPUT_FORMAT = "elf64-x86-64-freebsd"
+        select 64BIT if OUTPUT_FORMAT = "elf64-littleaarch64"
++       select 64BIT if OUTPUT_FORMAT = "elf64-powerpc-freebsd"
++       select 64BIT if OUTPUT_FORMAT = "elf64-powerpcle-freebsd"
+        select NET
+        select MULTIUSER
+        select INET
+@@ -56,7 +58,10 @@ config BIG_ENDIAN
+        def_bool n
+ 
+ config BIG_ENDIAN
+-       def_bool n
++       def_bool y if OUTPUT_FORMAT = "elf64-powerpc-freebsd"
++
++config CPU_BIG_ENDIAN
++       def_bool BIG_ENDIAN
+ 
+ config GENERIC_CSUM
+        def_bool y

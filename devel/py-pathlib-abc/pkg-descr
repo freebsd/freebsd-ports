@@ -1,0 +1,3 @@
+pathlib-abc is a backport of pathlib abstract base classes and related
+functionality for Python versions that do not include them in the standard
+library. It is used by libraries that implement custom path-like objects.

@@ -23,7 +23,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}geopandas>=0.14.0:graphics/py-geopandas@${PY
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.26.0,1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pandas>=2.1.0,1:math/py-pandas@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pointpats>=2.4.0:graphics/py-pointpats@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}PuLP>=2.8:math/py-PuLP@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pulp>=2.8:math/py-PuLP@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scikit-learn>=1.4.0:science/py-scikit-learn@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.12.0:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}shapely>=2.1.0:devel/py-shapely@${PY_FLAVOR} \

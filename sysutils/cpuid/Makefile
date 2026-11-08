@@ -1,5 +1,5 @@
 PORTNAME=	cpuid
-DISTVERSION=	20260220
+DISTVERSION=	20260503
 DISTVERSIONSUFFIX=	.src
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.etallen.com/cpuid/
@@ -25,9 +25,6 @@ CPUID_SUFFIX=	-etallen
 
 PLIST_FILES=	bin/cpuid${CPUID_SUFFIX} \
 		share/man/man1/cpuid${CPUID_SUFFIX}.1.gz
-
-post-patch:
-	${REINPLACE_CMD} 's,CFL=.*,& -pthread,' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cpuid ${STAGEDIR}${PREFIX}/bin/cpuid${CPUID_SUFFIX}

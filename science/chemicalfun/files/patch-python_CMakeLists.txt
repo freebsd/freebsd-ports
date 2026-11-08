@@ -1,0 +1,66 @@
+-- replace broken installation code with a clean one
+
+--- python/CMakeLists.txt.orig	2025-12-03 16:37:32 UTC
++++ python/CMakeLists.txt
+@@ -12,49 +12,21 @@ add_subdirectory(src/chemicalfun)
+ 
+ #set(CHEMICALFUN_PYTHON_MODULE_FILENAME PyChemicalFun${PYTHON_MODULE_EXTENSION})
+ 
+-# Install where the python package is installed to CMAKE_INSTALL_PREFIX if not given
+-if(NOT DEFINED CHEMICALFUN_PYTHON_INSTALL_PREFIX)
+ 
+-# Install the ChemicalFun python package using setuptools
+-install(CODE
+-"
+-   if(${CMAKE_CXX_COMPILER_ID} STREQUAL MSVC)
+-      execute_process(
+-        COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:PyChemicalFun>
+-                ${CMAKE_CURRENT_BINARY_DIR}/src/chemicalfun/$<TARGET_FILE_NAME:PyChemicalFun>
+-      )
+-   endif()
++# In your CMakeLists.txt (Remove the execute_process(pip) lines completely)
+ 
+-   execute_process(
+-        COMMAND ${Python3_EXECUTABLE} -m pip install ${CMAKE_CURRENT_BINARY_DIR}
+-        WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
+-"
+-)
++if(NOT DEFINED CHEMICALFUN_PYTHON_INSTALL_PREFIX)
++    set(CHEMICALFUN_PYTHON_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
++endif()
+ 
+-else()
+-
+-# If the path is already in Windows format (with backslashes), it can't be added directly
+-# to the string below, otherwise CMake will later complain about "Invalid escape sequence".
+-file(TO_CMAKE_PATH "${CHEMICALFUN_PYTHON_INSTALL_PREFIX}" CHEMICALFUN_PYTHON_INSTALL_PREFIX)
+-message(STATUS "CHEMICALFUN_PYTHON_INSTALL_PREFIX: ${CHEMICALFUN_PYTHON_INSTALL_PREFIX}")
+-
+-# Install the ChemicalFun python package using setuptools
+-install(CODE
+-"
+-   file(TO_NATIVE_PATH \"${CHEMICALFUN_PYTHON_INSTALL_PREFIX}\" CHEMICALFUN_PYTHON_INSTALL_PREFIX_NATIVE)
+-
+-   if(${CMAKE_CXX_COMPILER_ID} STREQUAL MSVC)
+-      execute_process(
+-        COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:PyChemicalFun>
+-                ${CMAKE_CURRENT_BINARY_DIR}/src/chemicalfun/$<TARGET_FILE_NAME:PyChemicalFun>
+-        )
+-    endif()
+-
+-    execute_process(
+-        COMMAND ${Python3_EXECUTABLE} -m pip install --prefix \${CHEMICALFUN_PYTHON_INSTALL_PREFIX_NATIVE} ${CMAKE_CURRENT_BINARY_DIR}
+-        WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
+-"
++# Just install the shared object library built by pybind11 natively
++install(TARGETS PyChemicalFun
++    DESTINATION "${CHEMICALFUN_PYTHON_INSTALL_PREFIX}/lib/python${Python3_VERSION_MAJOR}.${Python3_VERSION_MINOR}/site-packages/chemicalfun"
+ )
+ 
+-endif()
++# Install the Python source wrapper files natively 
++install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/src/chemicalfun/
++        DESTINATION "${CHEMICALFUN_PYTHON_INSTALL_PREFIX}/lib/python${Python3_VERSION_MAJOR}.${Python3_VERSION_MINOR}/site-packages/chemicalfun"
++        FILES_MATCHING PATTERN "*.py"
++)
+ 

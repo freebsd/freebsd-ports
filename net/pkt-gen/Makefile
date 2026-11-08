@@ -1,5 +1,5 @@
 PORTNAME=	pkt-gen
-PORTVERSION=	g2025.10.08
+PORTVERSION=	g2026.08.08
 CATEGORIES=	net
 
 MAINTAINER=	olivier@FreeBSD.org
@@ -12,7 +12,7 @@ USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	luigirizzo
 GH_PROJECT=	netmap
-GH_TAGNAME=	bc3a126
+GH_TAGNAME=	389daea
 
 MAKEFILE=	GNUmakefile
 

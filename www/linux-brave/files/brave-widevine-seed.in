@@ -1,0 +1,79 @@
+#!/bin/sh
+#
+# Seed brave.widevine_opted_in in Brave Local State when unset, and
+# keep the Widevine component hint file pointing at an installed CDM,
+# so DRM works from the very first launch and recovers when the CDM
+# port is reinstalled.  Used by the brave-browser wrapper when the
+# port is built with WIDEVINE.
+#
+
+user_data=""
+while [ $# -gt 0 ]; do
+	case "$1" in
+	--user-data-dir=*)
+		user_data="${1#--user-data-dir=}"
+		;;
+	--user-data-dir)
+		shift
+		user_data="$1"
+		;;
+	esac
+	shift
+done
+
+if [ ! "$user_data" ]; then
+	user_data="$HOME/.config/BraveSoftware/Brave-Browser"
+fi
+
+state="$user_data/Local State"
+mkdir -p "$user_data" || exit 0
+
+#
+# Chromium registers the Widevine CDM at browser startup from the hint
+# file, and never repairs the hint itself: Brave first writes it after
+# discovering the preinstalled component during the first run, and a
+# session that starts with a missing or stale hint runs without DRM
+# for its whole lifetime.  Plant the hint pointing at the packaged CDM
+# when it is missing, and repoint it when its target no longer holds a
+# CDM (e.g. www/linux-widevine-cdm was reinstalled), so DRM works on
+# this launch instead of the next.  A hint whose target is intact is
+# left alone: Brave maintains it and it may point at a newer
+# component-updated CDM.
+#
+cdm="%%LOCALBASE%%/lib/WidevineCdm"
+hint="$user_data/WidevineCdm/latest-component-updated-widevine-cdm"
+if [ -e "$cdm/manifest.json" ]; then
+	hint_path=
+	[ -e "$hint" ] &&
+		hint_path=$( sed -n 's/.*"Path":"\([^"]*\)".*/\1/p' "$hint" )
+	if [ ! "$hint_path" ] ||
+	   [ ! -e "$hint_path/manifest.json" ]
+	then
+		mkdir -p "$user_data/WidevineCdm" &&
+			printf '{"Path":"%s"}' "$cdm" > "$hint.tmp" &&
+			mv "$hint.tmp" "$hint"
+	fi
+fi
+
+%%PYTHON_CMD%% - "$state" <<'PY'
+import json, os, sys
+
+path = sys.argv[1]
+data = {}
+if os.path.exists(path):
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+    except Exception:
+        sys.exit(0)
+
+brave = data.setdefault("brave", {})
+if brave.get("widevine_opted_in") is True:
+    sys.exit(0)
+
+brave["widevine_opted_in"] = True
+tmp = path + ".tmp"
+with open(tmp, "w", encoding="utf-8") as f:
+    json.dump(data, f, separators=(",", ":"), ensure_ascii=False)
+os.replace(tmp, path)
+PY

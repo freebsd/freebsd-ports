@@ -1,6 +1,6 @@
---- Makefile.in.orig	2012-04-16 22:56:21 UTC
+--- Makefile.in.orig	2026-09-21 20:32:11 UTC
 +++ Makefile.in
-@@ -162,7 +162,7 @@ am__tac_plus_SOURCES_DIST = acct.c authe
+@@ -164,7 +164,7 @@ am__tac_plus_SOURCES_DIST = acct.c authen.c author.c c
  	config.c default_fn.c default_v0_fn.c do_acct.c do_author.c \
  	dump.c enable.c encrypt.c expire.c hash.c maxsessint.c parse.c \
  	programs.c pw.c pwlib.c report.c sendauth.c sendpass.c \
@@ -9,7 +9,7 @@
  @TACSKEY_TRUE@am__objects_1 = skey_fn.$(OBJEXT)
  @TACACECLNT_TRUE@am__objects_2 = aceclnt_fn.$(OBJEXT)
  am_tac_plus_OBJECTS = acct.$(OBJEXT) authen.$(OBJEXT) author.$(OBJEXT) \
-@@ -173,7 +173,7 @@ am_tac_plus_OBJECTS = acct.$(OBJEXT) aut
+@@ -175,7 +175,7 @@ am_tac_plus_OBJECTS = acct.$(OBJEXT) authen.$(OBJEXT) 
  	parse.$(OBJEXT) programs.$(OBJEXT) pw.$(OBJEXT) \
  	pwlib.$(OBJEXT) report.$(OBJEXT) sendauth.$(OBJEXT) \
  	sendpass.$(OBJEXT) tac_plus.$(OBJEXT) utils.$(OBJEXT) \
@@ -17,16 +17,33 @@
 +	opie_fn.$(OBJEXT) $(am__objects_1) $(am__objects_2)
  tac_plus_OBJECTS = $(am_tac_plus_OBJECTS)
  am__DEPENDENCIES_1 =
- tac_plus_DEPENDENCIES = $(am__DEPENDENCIES_1)
-@@ -770,6 +770,7 @@ distclean-compile:
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sendauth.Po@am__quote@
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sendpass.Po@am__quote@
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/skey_fn.Po@am__quote@
-+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/opie_fn.Po@am__quote@
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/tac_plus.Po@am__quote@
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/tac_pwd.Po@am__quote@
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/utils.Po@am__quote@
-@@ -1256,8 +1257,7 @@ info: info-am
+ tac_plus_DEPENDENCIES = $(am__DEPENDENCIES_1) libtacacs.la
+@@ -218,7 +218,7 @@ am__depfiles_remade = ./$(DEPDIR)/acct.Po ./$(DEPDIR)/
+ 	./$(DEPDIR)/pwlib.Po ./$(DEPDIR)/report.Po \
+ 	./$(DEPDIR)/sendauth.Po ./$(DEPDIR)/sendpass.Po \
+ 	./$(DEPDIR)/skey_fn.Po ./$(DEPDIR)/tac_plus.Po \
+-	./$(DEPDIR)/tac_pwd.Po ./$(DEPDIR)/utils.Po
++	./$(DEPDIR)/tac_pwd.Po ./$(DEPDIR)/utils.Po ./$(DEPDIR)/opie_fn.Po
+ am__mv = mv -f
+ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
+ 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+@@ -796,6 +796,7 @@ distclean-compile:
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sendauth.Po@am__quote@ # am--include-marker
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sendpass.Po@am__quote@ # am--include-marker
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/skey_fn.Po@am__quote@ # am--include-marker
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/opie_fn.Po@am__quote@ # am--include-marker
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/tac_plus.Po@am__quote@ # am--include-marker
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/tac_pwd.Po@am__quote@ # am--include-marker
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/utils.Po@am__quote@ # am--include-marker
+@@ -1319,6 +1320,7 @@ distclean: distclean-am
+ 	-rm -f ./$(DEPDIR)/sendauth.Po
+ 	-rm -f ./$(DEPDIR)/sendpass.Po
+ 	-rm -f ./$(DEPDIR)/skey_fn.Po
++	-rm -f ./$(DEPDIR)/opie_fn.Po
+ 	-rm -f ./$(DEPDIR)/tac_plus.Po
+ 	-rm -f ./$(DEPDIR)/tac_pwd.Po
+ 	-rm -f ./$(DEPDIR)/utils.Po
+@@ -1338,8 +1340,7 @@ info-am:
  
  info-am:
  
@@ -36,3 +53,11 @@
  
  install-dvi: install-dvi-am
  
+@@ -1400,6 +1401,7 @@ maintainer-clean: maintainer-clean-am
+ 	-rm -f ./$(DEPDIR)/sendauth.Po
+ 	-rm -f ./$(DEPDIR)/sendpass.Po
+ 	-rm -f ./$(DEPDIR)/skey_fn.Po
++	-rm -f ./$(DEPDIR)/opie_fn.Po
+ 	-rm -f ./$(DEPDIR)/tac_plus.Po
+ 	-rm -f ./$(DEPDIR)/tac_pwd.Po
+ 	-rm -f ./$(DEPDIR)/utils.Po

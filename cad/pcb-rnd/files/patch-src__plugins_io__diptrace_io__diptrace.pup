@@ -1,0 +1,9 @@
+--- src_plugins/io_diptrace/io_diptrace.pup.orig	2026-10-22 10:04:16 UTC
++++ src_plugins/io_diptrace/io_diptrace.pup
+@@ -7,5 +7,6 @@ dep lib_compat_help
+ #$fmt-feature-r DipTrace binary board file, version 43
+ $package io-alien
+ dep lib_compat_help
++dep lib_gensexpr
+ default buildin
+ autoload 1

@@ -1,5 +1,5 @@
 PORTNAME=	pylatexenc
-PORTVERSION=	2.10
+PORTVERSION=	2.11
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,10 +19,12 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>0:devel/py-poetry-core@${PY_FL
 USES=		python
 USE_PYTHON=	pep517 autoplist pytest
 
+TEST_ARGS=	--disable-plugin-autoload
+
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 NO_ARCH=	yes
 
-# tests as of 2.10: 97 passed, 1 warning in 39.53s
+# tests as of 2.11: 97 passed, 1 warning in 3.76s
 
 .include <bsd.port.mk>

@@ -1,11 +1,11 @@
---- components/regional_capabilities/regional_capabilities_service.cc.orig	2026-04-15 12:07:04 UTC
+--- components/regional_capabilities/regional_capabilities_service.cc.orig	2026-08-13 16:48:13 UTC
 +++ components/regional_capabilities/regional_capabilities_service.cc
-@@ -413,7 +413,7 @@ bool RegionalCapabilitiesService::IsInSearchEngineChoi
+@@ -420,7 +420,7 @@ bool RegionalCapabilitiesService::IsInAnySearchEngineC
        .choice_screen_eligibility_config.has_value();
  }
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  // static
- bool RegionalCapabilitiesService::IsInSearchEngineChoiceScreenRegion(
+ bool RegionalCapabilitiesService::IsInAnySearchEngineChoiceScreenRegion(
      Client& client) {

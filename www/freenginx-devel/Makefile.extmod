@@ -22,10 +22,11 @@ ARRAYVAR_GH_TUPLE=	openresty:array-var-nginx-module:v0.06:arrayvar
 ARRAYVAR_IMPLIES=	DEVEL_KIT
 ARRAYVAR_VARS=		DSO_EXTMODS+=arrayvar
 
-AUTH_JWT_VERSION=	0.14.2
+AUTH_JWT_VERSION=	0.15.0
 AUTH_JWT_GH_TUPLE=	kjdev:nginx-auth-jwt:${AUTH_JWT_VERSION}:auth_jwt \
 			kjdev:nxe-json:0.5.0:nxe_json \
-			kjdev:nxe-jwx:0.2.0:nxe_jwx
+			kjdev:nxe-jwx:0.3.0:nxe_jwx \
+			kjdev:nxe-phase:0.1.0:nxe_phase
 AUTH_JWT_LIB_DEPENDS=	libjansson.so:devel/jansson
 AUTH_JWT_PREVENTS=	HTTP_AUTH_JWT
 AUTH_JWT_PREVENTS_MSG=	choose auth_jwt or http_auth_jwt module
@@ -36,14 +37,14 @@ BROTLI_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_brotli_filter_config
 BROTLI_LIB_DEPENDS=	libbrotlicommon.so:archivers/brotli
 BROTLI_VARS=		DSO_EXTMODS+=brotli
 
-CACHE_PURGE_GH_TUPLE=	nginx-modules:ngx_cache_purge:3.0.2:cache_purge
+CACHE_PURGE_GH_TUPLE=	nginx-modules:ngx_cache_purge:3.0.4:cache_purge
 CACHE_PURGE_VARS=	DSO_EXTMODS+=cache_purge
 
 ECHO_GH_TUPLE=		openresty:echo-nginx-module:ebed47c:echo
 ECHO_VARS=		DSO_EXTMODS+=echo
 
 DRIZZLE_GH_TUPLE=	openresty:drizzle-nginx-module:3b4cb3d:drizzle
-DRIZZLE_CONFIGURE_ENV=	LIBDRIZZLE_INC=${LOCALBASE}/include \
+DRIZZLE_CONFIGURE_ENV=	LIBDRIZZLE_INC=${LOCALBASE}/include/libdrizzle-1.0 \
 			LIBDRIZZLE_LIB=${LOCALBASE}/lib
 DRIZZLE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-openresty-drizzle-nginx-module-config
 DRIZZLE_LIB_DEPENDS=	libdrizzle.so:databases/libdrizzle
@@ -70,11 +71,14 @@ FORMINPUT_IMPLIES=	DEVEL_KIT
 FORMINPUT_VARS=		DSO_EXTMODS+=forminput
 
 GRIDFS_GH_TUPLE=	nieoding:nginx-gridfs:059bdc3:gridfs
-GRIDFS_LIB_DEPENDS=	libbson-1.0.so:devel/libbson \
-			libmongoc-1.0.so:devel/mongo-c-driver
+GRIDFS_LIB_DEPENDS=	libbson2.so:devel/libbson \
+			libmongoc2.so:devel/mongo-c-driver
+GRIDFS_USES=		pkgconfig
 GRIDFS_VARS=		DSO_EXTMODS+=gridfs GRIDFS_SUBDIR=/nginx-gridfs
+GRIDFS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-gridfs_config \
+			${PATCHDIR}/extra-patch-nginx-gridfs_ngx_http_gridfs_module.c
 
-HEADERS_MORE_GH_TUPLE=		openresty:headers-more-nginx-module:v0.39:headers_more
+HEADERS_MORE_GH_TUPLE=		openresty:headers-more-nginx-module:v0.40:headers_more
 HEADERS_MORE_VARS=		DSO_EXTMODS+=headers_more
 
 HTTP_ACCEPT_LANGUAGE_GH_TUPLE=	dvershinin:nginx_accept_language_module:5683967:accept_language
@@ -83,8 +87,7 @@ HTTP_ACCEPT_LANGUAGE_VARS=	DSO_EXTMODS+=accept_language
 HTTP_AUTH_DIGEST_GH_TUPLE=	atomx:nginx-http-auth-digest:ac91c88:auth_digest
 HTTP_AUTH_DIGEST_VARS=		DSO_EXTMODS+=auth_digest
 
-HTTP_AUTH_JWT_GH_TUPLE=		TeslaGov:ngx-http-auth-jwt-module:2.4.0:http_auth_jwt
-HTTP_AUTH_JWT_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_auth_jwt_module.c
+HTTP_AUTH_JWT_GH_TUPLE=		TeslaGov:ngx-http-auth-jwt-module:2.5.0:http_auth_jwt
 HTTP_AUTH_JWT_LIB_DEPENDS=	libjansson.so:devel/jansson \
 				libjwt.so:www/libjwt
 HTTP_AUTH_JWT_PREVENTS=		AUTH_JWT
@@ -209,18 +212,18 @@ KEYVAL_VARS=		DSO_EXTMODS+=keyval
 LET_GH_TUPLE=		baysao:nginx-let-module:c1f23aa:let
 LET_VARS=		DSO_EXTMODS+=let
 
-LUA_GH_TUPLE=		openresty:lua-nginx-module:de7e57f:lua \
-			openresty:lua-resty-core:be42297:luarc \
-			openresty:lua-resty-lrucache:1c7cf6b:luarl
+LUA_GH_TUPLE=		openresty:lua-nginx-module:e672520:lua \
+			openresty:lua-resty-core:084ff6d:luarc \
+			openresty:lua-resty-lrucache:ad373f4:luarl
 LUA_CONFIGURE_ENV=	LUAJIT_INC=${LOCALBASE}/include/luajit-2.1 \
 			LUAJIT_LIB=${LOCALBASE}/lib
 LUA_IMPLIES=		DEVEL_KIT
 LUA_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
 LUA_VARS=		DSO_EXTMODS+=lua
 
-LUASTREAM_GH_TUPLE=	openresty:stream-lua-nginx-module:11f9e38:luastream \
-			openresty:lua-resty-core:be42297:luarc \
-			openresty:lua-resty-lrucache:1c7cf6b:luarl
+LUASTREAM_GH_TUPLE=	openresty:stream-lua-nginx-module:10378d5:luastream \
+			openresty:lua-resty-core:084ff6d:luarc \
+			openresty:lua-resty-lrucache:ad373f4:luarl
 LUASTREAM_CONFIGURE_ENV=LUAJIT_INC=${LOCALBASE}/include/luajit-2.1 \
 			LUAJIT_LIB=${LOCALBASE}/lib
 LUASTREAM_IMPLIES=	DEVEL_KIT
@@ -251,7 +254,7 @@ NAXSI_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-naxsi-libinjection__sqli_c \
 			${PATCHDIR}/extra-patch-naxsi_config
 NAXSI_VARS=		DSO_EXTMODS+=naxsi NAXSI_SUBDIR=/naxsi_src
 
-NJS_GH_TUPLE=		nginx:njs:1.0.0:njs
+NJS_GH_TUPLE=		nginx:njs:1.0.2:njs
 NJS_CFLAGS=		-I ${LOCALBASE}/include/quickjs
 NJS_CONFIGURE_ARGS=	--cc-opt="${CFLAGS}" --ld-opt="${LDFLAGS}" --with-quickjs
 NJS_IMPLIES=		HTTP STREAM
@@ -271,7 +274,7 @@ OTEL_LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 			libre2.so:devel/re2
 OTEL_VARS=		DSO_EXTMODS+=otel OTEL_SUBDIR=/
 
-PASSENGER_NGINX_VER=	6.1.7
+PASSENGER_NGINX_VER=	6.2.1
 PASSENGER_MASTER_SITES=	https://s3.amazonaws.com/phusion-passenger/releases/:passenger
 PASSENGER_DISTFILES=	passenger-${PASSENGER_NGINX_VER}.tar.gz:passenger
 PASSENGER_BUILD_DEPENDS=${LOCALBASE}/bin/rake:devel/rubygem-rake
@@ -332,6 +335,8 @@ VOD_LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 			libavutil.so:multimedia/ffmpeg
 VOD_USES=		iconv
 VOD_VARS=		DSO_EXTMODS+=vod
+VOD_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-vod-module-audio_decoder.c \
+			${PATCHDIR}/extra-patch-vod-module-audio_encoder.c
 
 VTS_GH_TUPLE=		vozlt:nginx-module-vts:d421ab0:vts
 VTS_VARS=		DSO_EXTMODS+=vts

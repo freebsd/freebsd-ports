@@ -1,0 +1,7 @@
+This package combines Lenovo's Intel Ethernet firmware bundle with Intel's
+FreeBSD NVMUpdate utility.  It retains all 31 entries in Lenovo's
+configuration, including X550, X710, XXV710, X722, I350, and I210 entries.
+Some I350 and I210 entries update only the option ROM, exactly as supplied by
+Lenovo.
+
+Use nvmupdate-i210-i350-x550-700series-lenovo.

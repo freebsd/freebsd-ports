@@ -1,0 +1,3 @@
+C++ bindings generator for the Rust "cxx" crate. It produces the C++
+side of the cxx bridge and is required at build time by projects that
+use corrosion's corrosion_add_cxxbridge() without network access.

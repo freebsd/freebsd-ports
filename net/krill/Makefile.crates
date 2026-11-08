@@ -360,7 +360,7 @@ CARGO_CRATES=	adler32-1.2.0 \
 		wasmparser-0.244.0 \
 		web-sys-0.3.85 \
 		web-time-1.1.0 \
-		webpki-root-certs-1.0.6 \
+		webpki-root-certs-1.0.11 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.11 \

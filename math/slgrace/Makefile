@@ -2,8 +2,7 @@ PORTNAME=	slgrace
 PORTVERSION=	0.2.2
 PORTREVISION=	11
 CATEGORIES=	math devel
-MASTER_SITES=	ftp://space.mit.edu/pub/davis/slang/v${SLANG_VER}/modules/grace/ \
-		ftp://ftp.fu-berlin.de/pub/unix/misc/slang/v${SLANG_VER}/modules/grace/ \
+MASTER_SITES=	ftp://ftp.fu-berlin.de/pub/unix/misc/slang/v${SLANG_VER}/modules/grace/ \
 		LOCAL/garga/slgrace
 
 MAINTAINER=	garga@FreeBSD.org
@@ -15,13 +14,14 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libslang.so:devel/libslang2
 RUN_DEPENDS=	grace:math/grace
 
+GNU_CONFIGURE=	yes
+MAKE_JOBS_UNSAFE=	yes
+
+PLIST_SUB=	VERSION=${PORTVERSION}
+
 OPTIONS_DEFINE=	DOCS
 
 SLANG_VER=	2.1
-
-GNU_CONFIGURE=	yes
-MAKE_JOBS_UNSAFE=	yes
-PLIST_SUB=	VERSION=${PORTVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's, install_docfiles,,' \

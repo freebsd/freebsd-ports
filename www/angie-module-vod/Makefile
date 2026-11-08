@@ -1,5 +1,5 @@
 PORTNAME=	angie-module-vod
-MODULE_VERSION=		1.9.1
+MODULE_VERSION=		1.9.3
 MODULE_PORTREVISION=	0
 MODULE_PORTEPOCH=	2
 GH_TUPLE=	dio-az:nginx-vod-module:v${MODULE_VERSION}:module

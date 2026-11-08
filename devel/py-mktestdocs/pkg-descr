@@ -1,0 +1,3 @@
+mktestdocs is a small Python tool that runs pytest against code blocks in
+markdown files and Python docstrings. It helps keep documentation examples
+up to date and free of syntax errors.

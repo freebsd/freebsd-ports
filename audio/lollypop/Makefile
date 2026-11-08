@@ -1,5 +1,6 @@
 PORTNAME=	lollypop
 DISTVERSION=	1.4.45
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://adishatz.org/${PORTNAME}/
 
@@ -16,7 +17,7 @@ LIB_DEPENDS=	libnotify.so:devel/libnotify \
 		libsecret-1.so:security/libsecret \
 		libsoup-3.0.so:devel/libsoup3
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}beautifulsoup>0:www/py-beautifulsoup@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}beautifulsoup4>0:www/py-beautifulsoup4@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR}
 
 USES=		desktop-file-utils gettext-tools gnome gstreamer meson \

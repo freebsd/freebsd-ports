@@ -6218,7 +6218,7 @@ dt/infolib/ja_JP.UTF-8/cde.dti/CDEDOC/dtsearch/dtsearch.ocf
 dt/infolib/ja_JP.UTF-8/cde.dti/bookcase.map
 dt/infolib/ja_JP.UTF-8/cde.dti/cde.oli
 dt/lib/cde/dtdocbook/tcl/docbook.tcl
-dt/lib/dtksh/DtFuncs.dtsh
+dt/dtksh/DtFuncs.dtsh
 dt/lib/libDtHelp.a
 dt/lib/libDtHelp.so
 dt/lib/libDtHelp.so.2

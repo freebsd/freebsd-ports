@@ -1,0 +1,96 @@
+#!/bin/sh
+#
+# Create SPDX 2.2 (.spdx, bomtool) and SPDX 3.0.1 (.jsonld, spdxtool)
+# documents from the pc(5) SBOM files that packages install.
+#
+# bomtool and spdxtool read the Requires: field of each file.
+# They add each dependency, and its own dependencies, to the documents.
+
+set -u
+
+LOCALBASE="${LOCALBASE:-%%LOCALBASE%%}"
+SBOMDIR="${LOCALBASE}/share/sbom/pc"
+SPDX22DIR="${LOCALBASE}/share/sbom/spdx-2.2"
+SPDX30DIR="${LOCALBASE}/share/sbom/spdx-3.0.1"
+
+usage() {
+	echo "usage: ${0##*/} [-c] [package ...]" >&2
+	exit 64
+}
+
+clean=0
+while getopts c opt; do
+	case ${opt} in
+	c) clean=1 ;;
+	*) usage ;;
+	esac
+done
+shift $((OPTIND - 1))
+
+# Find modules only in the SBOM directory.
+# This prevents a clash between SBOM names and regular pkg-config modules.
+PKG_CONFIG_LIBDIR="${SBOMDIR}"
+export PKG_CONFIG_LIBDIR
+unset PKG_CONFIG_PATH PKG_CONFIG_PRELOADED_FILES
+
+if [ ! -d "${SBOMDIR}" ]; then
+	echo "${0##*/}: ${SBOMDIR}: no such directory" >&2
+	exit 1
+fi
+
+mkdir -p "${SPDX22DIR}" "${SPDX30DIR}"
+
+if [ $# -eq 0 ]; then
+	set -- $(cd "${SBOMDIR}" && ls -1 | sed -n 's/\.pc$//p')
+fi
+
+rc=0
+
+# generate <destfile> <command> [args ...]
+# Write the output of the command to a temporary file, then move it to
+# <destfile> if the command succeeds.
+generate() {
+	local dest=$1
+	local tmp
+
+	tmp=$(mktemp "${dest}.XXXXXX") || {
+		rc=1
+		return
+	}
+	shift
+	if "$@" >"${tmp}" 2>/dev/null && [ -s "${tmp}" ]; then
+		chmod 644 "${tmp}"
+		mv -f "${tmp}" "${dest}"
+	else
+		rm -f "${tmp}"
+		echo "${0##*/}: failed to generate ${dest##*/}" >&2
+		rc=1
+	fi
+}
+
+for name in "$@"; do
+	name=${name%.pc}
+	if [ ! -f "${SBOMDIR}/${name}.pc" ]; then
+		echo "${0##*/}: ${name}: no SBOM file in ${SBOMDIR}" >&2
+		rc=1
+		continue
+	fi
+	generate "${SPDX22DIR}/${name}.spdx" bomtool "${name}"
+	generate "${SPDX30DIR}/${name}.jsonld" \
+	    spdxtool --agent-name "FreeBSD Ports" "${name}"
+done
+
+if [ ${clean} -eq 1 ]; then
+	for f in "${SPDX22DIR}"/*.spdx; do
+		[ -e "${f}" ] || continue
+		n=${f##*/}
+		[ -f "${SBOMDIR}/${n%.spdx}.pc" ] || rm -f "${f}"
+	done
+	for f in "${SPDX30DIR}"/*.jsonld; do
+		[ -e "${f}" ] || continue
+		n=${f##*/}
+		[ -f "${SBOMDIR}/${n%.jsonld}.pc" ] || rm -f "${f}"
+	done
+fi
+
+exit ${rc}

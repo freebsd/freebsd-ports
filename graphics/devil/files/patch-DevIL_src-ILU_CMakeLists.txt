@@ -1,6 +1,12 @@
 --- DevIL/src-ILU/CMakeLists.txt.orig	2017-01-01 23:37:37 UTC
 +++ DevIL/src-ILU/CMakeLists.txt
-@@ -44,6 +44,8 @@ source_group("Resource Files" FILES ${ILU_RSRC} )
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.6)
++cmake_minimum_required(VERSION 3.31.12)
+ 
+ project(ILU)
+ 
+@@ -44,6 +44,8 @@ add_library(ILU SHARED ${ILU_SRCS} ${ILU_INC} ${ILU_RS
  
  # Remove SHARED to create a static library
  add_library(ILU SHARED ${ILU_SRCS} ${ILU_INC} ${ILU_RSRC})

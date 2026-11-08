@@ -1,8 +1,8 @@
-TIMESTAMP = 1776861689
-SHA256 (orthanc/OrthancDicomWeb-1.23.tar.gz) = d86d1727e90fcfcd25f94e45f0d1f53053795b3ac8fa0d479fd32a17e09afd9f
-SIZE (orthanc/OrthancDicomWeb-1.23.tar.gz) = 314597
-SHA256 (orthanc/Orthanc-1.12.11.tar.gz) = 1d1f8a9a71c831fa07155e9f88fdb22be8e5792e19fa6a27b9a62145fa822b66
-SIZE (orthanc/Orthanc-1.12.11.tar.gz) = 2237393
+TIMESTAMP = 1788013123
+SHA256 (orthanc/OrthancDicomWeb-1.24.tar.gz) = eacf9677cf9af0d19d7717fdd66b93c2e018cd9d97be7a64bc2b1d189c169ad0
+SIZE (orthanc/OrthancDicomWeb-1.24.tar.gz) = 379888
+SHA256 (orthanc/Orthanc-1.13.0.tar.gz) = 90e15e709ba1e472457a35784f6ab66ea87d9ff0b16f12f3fd3cc19e82a6123a
+SIZE (orthanc/Orthanc-1.13.0.tar.gz) = 2306001
 SHA256 (orthanc/e2fsprogs-1.44.5.tar.gz) = 2e211fae27ef74d5af4a4e40b10b8df7f87c655933bd171aab4889bfc4e6d1cc
 SIZE (orthanc/e2fsprogs-1.44.5.tar.gz) = 7619237
 SHA256 (orthanc/bootstrap-5.3.3.zip) = 55d7f1ce795040afb8311df09d29d0d34648400c1eaabb2d0a2ed2216b3db05d

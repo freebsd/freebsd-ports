@@ -1,5 +1,6 @@
 bin/sudachi
 %%DATADIR%%/resources/char.def
+%%DATADIR%%/resources/pos.csv
 %%DATADIR%%/resources/rewrite.def
 %%DATADIR%%/resources/sudachi.json
 %%DATADIR%%/resources/system.dic

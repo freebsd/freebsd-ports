@@ -11,6 +11,9 @@ WWW=		https://metacpan.org/release/Mojo-IOLoop-Delay
 
 LICENSE=	ART20
 
+DEPRECATED=	Deprecated upstream, superseded by Mojo::Promise in Mojolicious 9.0
+EXPIRATION_DATE=	2027-02-28
+
 BUILD_DEPENDS=	p5-Module-Build-Tiny>0:devel/p5-Module-Build-Tiny
 RUN_DEPENDS=	p5-Mojolicious>=5.08:www/p5-Mojolicious
 

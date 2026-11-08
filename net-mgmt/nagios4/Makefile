@@ -1,9 +1,8 @@
 PORTNAME=	nagios
-DISTVERSION=	4.5.12
+DISTVERSION=	4.5.14
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	https://assets.nagios.com/downloads/nagioscore/releases/ \
-		SF/${PORTNAME}/${PORTNAME}-4.x/${PORTNAME}-${DISTVERSION}
+MASTER_SITES=	https://assets.nagios.com/downloads/nagioscore/releases/
 PKGNAMESUFFIX=	4
 
 MAINTAINER=	hard.egg0918@fastmail.com

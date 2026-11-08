@@ -1,6 +1,6 @@
---- chrome/browser/ui/web_applications/app_browser_controller.cc.orig	2026-06-10 12:51:34 UTC
+--- chrome/browser/ui/web_applications/app_browser_controller.cc.orig	2026-08-13 16:48:13 UTC
 +++ chrome/browser/ui/web_applications/app_browser_controller.cc
-@@ -541,7 +541,7 @@ std::u16string AppBrowserController::GetLaunchFlashTex
+@@ -562,7 +562,7 @@ std::u16string AppBrowserController::GetLaunchFlashTex
    // web bundle. The flash text is not needed on platforms that already display
    // the app name in the title bar (e.g. Mac, Windows, and Linux).
    if (IsIsolatedWebApp()) {

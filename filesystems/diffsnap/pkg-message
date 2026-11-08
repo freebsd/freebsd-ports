@@ -1,0 +1,10 @@
+[
+{ type: install
+  message: <<EOM
+Configure ${PREFIX}/etc/diffsnap.conf
+Uncomment ${PREFIX}/etc/cron.d/diffsnap to enable the cron schedule
+The default is every minute which can be changed by editing the file
+More details at https://github.com/joe81tx/diffsnap
+EOM
+}
+]

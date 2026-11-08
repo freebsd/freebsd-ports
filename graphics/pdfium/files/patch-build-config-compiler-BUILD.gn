@@ -1,0 +1,55 @@
+-- Avoid GN "Assignment had no effect" errors for `c_additional_outputs`
+-- values that are set but not consumed by this FreeBSD build.
+-- Also remove Clang flags that are not supported by the Clang version used for
+-- this FreeBSD port (-fdiagnostics-show-inlining-chain and -fno-lifetime-dse).
+--- build/config/compiler/BUILD.gn.orig	2026-09-24 10:29:01 UTC
++++ build/config/compiler/BUILD.gn
+@@ -588,14 +588,6 @@ config("compiler") {
+   if (is_clang) {
+     # Flags for diagnostics.
+     cflags += [ "-fcolor-diagnostics" ]
+-    if (!is_wasm) {
+-      if (!is_win) {
+-        cflags += [ "-fdiagnostics-show-inlining-chain" ]
+-      } else {
+-        # Combine after https://github.com/llvm/llvm-project/pull/192241
+-        cflags += [ "/clang:-fdiagnostics-show-inlining-chain" ]
+-      }
+-    }
+     if (diagnostics_print_source_range_info && !is_win) {
+       cflags += [ "-fdiagnostics-print-source-range-info" ]
+     }
+@@ -626,13 +618,6 @@ config("compiler") {
+       ]
+     }
+ 
+-    # The performance improvement does not seem worth the risk. See
+-    # https://crbug.com/484082200 for background and https://crrev.com/c/7593035
+-    # for discussion.
+-    if (!is_wasm) {
+-      cflags += [ "-fno-lifetime-dse" ]
+-    }
+-
+     # TODO(hans): Remove this once Clang generates better optimized debug info
+     # by default. https://crbug.com/765793
+     cflags += [
+@@ -910,8 +895,6 @@ config("compiler") {
+   if (compiler_timing) {
+     if (is_clang) {
+       cflags += [ "-ftime-trace" ]
+-      c_additional_outputs =
+-          [ "{{target_out_dir}}/{{label_name}}/{{source_name_part}}.json" ]
+       if (use_lld && is_mac) {
+         ldflags += [ "-Wl,--time-trace" ]
+       }
+@@ -2868,10 +2851,6 @@ config("split_dwarf") {
+   # thinlto requires -gsplit-dwarf in ldflags.
+   if (use_thin_lto && !is_apple) {
+     ldflags = split_dwarf_flags
+-  } else {
+-    # .dwo files are generated when ThinLTO is not used.
+-    c_additional_outputs =
+-        [ "{{target_out_dir}}/{{label_name}}/{{source_name_part}}.dwo" ]
+   }
+ }
+ 

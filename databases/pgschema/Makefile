@@ -1,12 +1,11 @@
 PORTNAME=	pgschema
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.1
-PORTREVISION=	8
+DISTVERSION=	1.13.3
 CATEGORIES=	databases
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Terraform-style declarative schema migration workflow for Postgres
-WWW=		https://github.com/pgschema/pgschema
+WWW=		https://github.com/pgplex/pgschema
 
 LICENSE=	PGSCHEMA
 LICENSE_NAME=	pgschema Community License v1.0
@@ -15,7 +14,7 @@ LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 USES=		go:modules
 
-GO_MODULE=	github.com/pgschema/pgschema
+GO_MODULE=	github.com/pgplex/pgschema
 
 PLIST_FILES=	bin/pgschema
 

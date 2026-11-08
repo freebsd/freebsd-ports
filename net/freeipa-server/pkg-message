@@ -1,0 +1,60 @@
+[
+{ type: install
+  message: <<EOM
+======================================================================
+ ATTENTION - REQUIRED before you run ipa-server-install
+======================================================================
+
+  >>> Read /usr/local/share/doc/freeipa-server/README.md first,
+  >>> section "Prerequisites (read this first)".
+
+FreeIPA on FreeBSD uses the MIT Kerberos from ports (security/krb5).
+The SASL/GSSAPI plugin that the final "client enrolment" step of
+ipa-server-install relies on MUST use that SAME Kerberos - otherwise the
+install runs all the way through and then fails at the very end with:
+
+    Insufficient access: SASL(-1): generic failure: GSSAPI Error:
+    ... (SPNEGO cannot find mechanisms to negotiate)
+  or
+    ... Cannot find KDC for realm "EXAMPLE.COM"
+
+By default security/cyrus-sasl2-gssapi is built with GSSAPI_BASE, which
+links the BASE-system Kerberos (/usr/lib/libgssapi_krb5) and reads
+/etc/krb5.conf - the wrong Kerberos for FreeIPA. You MUST rebuild it with
+the GSSAPI_MIT option so it links the ports Kerberos
+(/usr/local/lib/libgssapi_krb5) and reads /usr/local/etc/krb5.conf:
+
+  * via make.conf (ports / poudriere):
+
+        security_cyrus-sasl2-gssapi_SET=GSSAPI_MIT
+        security_cyrus-sasl2-gssapi_UNSET=GSSAPI_BASE
+        security_py-gssapi_SET=GSSAPI_MIT
+        security_py-gssapi_UNSET=GSSAPI_BASE
+
+  * or interactively, then rebuild + reinstall the plugin:
+
+        make -C /usr/ports/security/cyrus-sasl2-gssapi config
+        # select GSSAPI_MIT, deselect GSSAPI_BASE
+
+Verify the plugin now links the ports Kerberos:
+
+        ldd /usr/local/lib/sasl2/libgssapiv2.so | grep libgssapi_krb5
+        # MUST show /usr/local/lib/libgssapi_krb5.so
+        # NOT     /usr/lib/libgssapi_krb5.so.*
+
+The Python bindings security/py-gssapi need the same GSSAPI_MIT choice;
+ipalib uses them for the kinit during self-enrolment, and with the base
+Kerberos the install fails at the very end with "Cannot find KDC".
+
+Note: this is a system-wide choice. All SASL/GSSAPI consumers (SSSD,
+OpenLDAP, Postfix, ...) will then use the ports MIT Kerberos - which is
+the correct, consistent setup on a host dedicated to FreeIPA.
+
+Full details and the rest of the prerequisites (FQDN, /etc/hosts,
+D-Bus/dbus_enable, cloud-init manage_etc_hosts, reboot persistence):
+
+        /usr/local/share/doc/freeipa-server/README.md
+======================================================================
+EOM
+}
+]

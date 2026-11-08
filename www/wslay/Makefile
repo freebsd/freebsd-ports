@@ -21,8 +21,8 @@ GH_ACCOUNT=	tatsuhiro-t
 
 CMAKE_ON=	WSLAY_SHARED
 CMAKE_OFF=	WSLAY_STATIC
-
 CMAKE_TESTING_ON=	WSLAY_TESTS
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/tatsuhiro-t/wslay/issues/76
 
 post-extract:
 	${CP} ${FILESDIR}/wslay.pc.cmake.in ${WRKSRC}

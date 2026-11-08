@@ -1,5 +1,5 @@
 PORTNAME=	amgcl
-DISTVERSION=	1.4.9
+DISTVERSION=	1.5.0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,5 +24,7 @@ do-test:
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DAMGCL_BUILD_TESTS:BOOL=ON ${CMAKE_SOURCE_PATH} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
+
+# tests hang, see https://github.com/ddemidov/amgcl/issues/320
 
 .include <bsd.port.mk>

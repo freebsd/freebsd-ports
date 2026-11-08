@@ -1,4 +1,4 @@
---- meson.build.orig	2026-05-29 13:04:35 UTC
+--- meson.build.orig	2026-09-12 12:52:03 UTC
 +++ meson.build
 @@ -12,12 +12,16 @@ endif
      endif
@@ -9,19 +9,19 @@
  prefix = get_option('prefix')
  sysconfdir = get_option('sysconfdir')
  
- # 如果 sysconfdir 以 prefix 开头，去掉 prefix
+ # If sysconfdir starts with prefix, strip the prefix.
 -if sysconfdir.startswith(prefix) and not is_nixos
 -  sysconfdir = sysconfdir.substring(prefix.length())
 +if sysconfdir.startswith(prefix) and not is_nixos and osname != 'freebsd'
 +  # this fails with: Unknown method "length" in object <[OptionStringHolder] holds [OptionString]
 +  # sysconfdir = sysconfdir.substring(prefix.length())
 +  sysconfdir = sysconfdir.replace(prefix, '')
-   # 确保 sysconfdir 是绝对路径
+   # Ensure sysconfdir is an absolute path.
    if not sysconfdir.startswith('/')
      sysconfdir = '/' + sysconfdir
 @@ -72,9 +76,8 @@ c_args = [
-   '-g',
    '-Wno-unused-function',
+   '-Wno-unused-result',
    '-DWLR_USE_UNSTABLE',
 -  '-D_POSIX_C_SOURCE=200809L',
    '-DVERSION="@0@"'.format(version_with_hash),
@@ -29,4 +29,4 @@
 +  '-DSYSCONFDIR="@0@"'.format(sysconfdir),
  ]
  
- # 仅在 debug 选项启用时添加调试参数
+ # add debug args only when debug option is enabled

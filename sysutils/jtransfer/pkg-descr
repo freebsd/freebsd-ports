@@ -1,0 +1,5 @@
+jtransfer is a lightweight tool for reading a file from a FreeBSD jail
+and writing it to standard output, or for reading from standard input and
+writing the content as a file inside a FreeBSD jail. The transfer is
+implemented essentially using a standard pipe(2), following the typical
+Unix way.

@@ -1,0 +1,8 @@
+--- analyzers/src/watch/CMakeLists.txt.orig	2017-01-31 21:48:12 UTC
++++ analyzers/src/watch/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required (VERSION 2.8.12)
++cmake_minimum_required (VERSION 3.5)
+ project (watch)
+ 
+ # check system dependencies instructions =======================================

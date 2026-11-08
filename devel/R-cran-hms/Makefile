@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Pretty Time of Day
-WWW=		https://cran.r-project.org/web/packages/hms/
+WWW=		https://cran.r-project.org/package=hms
 
 LICENSE=	MIT
 

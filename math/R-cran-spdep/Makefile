@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Spatial dependence: weighting schemes, statistics, and models
-WWW=		https://cran.r-project.org/web/packages/spdep/
+WWW=		https://cran.r-project.org/package=spdep
 
 LICENSE=	GPLv2+
 

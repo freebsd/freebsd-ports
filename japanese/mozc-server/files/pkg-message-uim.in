@@ -1,0 +1,33 @@
+[
+{ type: install
+  message: <<EOM
+Select Mozc as your input method in the uim preferences.
+
+For an X11 session, set the following environment variables before
+starting applications:
+
+export GTK_IM_MODULE=uim
+export QT_IM_MODULE=uim
+export XMODIFIERS=@im=uim
+
+For example, place these settings in ~/.xinitrc before the command
+that starts your desktop or window manager.
+
+Install the uim input module matching your applications:
+  GTK3: textproc/uim-gtk3
+  GTK4: textproc/uim-gtk4
+  Qt5:  textproc/uim-qt5
+  Qt6:  textproc/uim-qt6
+
+For XIM applications, start uim-xim if your session does not
+already start it:
+
+%%LOCALBASE%%/bin/uim-xim &
+
+uim-xim requires uim built with X11 support.
+For Wayland sessions, use the setup appropriate to your compositor.
+
+The Mozc server starts automatically when needed.
+EOM
+}
+]

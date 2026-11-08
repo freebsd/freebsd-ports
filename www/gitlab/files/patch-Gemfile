@@ -1,24 +1,24 @@
---- Gemfile.orig	2026-07-15 20:09:39 UTC
+--- Gemfile.orig	2026-10-20 23:03:29 UTC
 +++ Gemfile
-@@ -176,7 +176,7 @@ gem 'graphql', '2.6.3', feature_category: :api
+@@ -170,7 +170,7 @@ gem 'graphql', '~> 2.6.10', feature_category: :api
  
  # GraphQL API
- gem 'graphql', '2.6.3', feature_category: :api
+ gem 'graphql', '~> 2.6.10', feature_category: :api
 -gem 'graphql-docs', '~> 5.2.0', group: [:development, :test], feature_category: :api
 +#gem 'graphql-docs', '~> 5.2.0', group: [:development, :test], feature_category: :api
  gem 'apollo_upload_server', '~> 2.1.6', feature_category: :api
  
  # IAM service gRPC client stubs
-@@ -311,7 +311,7 @@ gem 'state_machines-activerecord', '~> 0.100.0', featu
+@@ -305,7 +305,7 @@ gem 'state_machines-activerecord', '~> 0.100.0', featu
  gem 'state_machines-activerecord', '~> 0.100.0', feature_category: :shared # rubocop:todo Gemfile/MissingFeatureCategory -- https://gitlab.com/gitlab-org/gitlab/-/issues/581839
  
  # Background jobs
 -gem 'sidekiq', path: 'vendor/gems/sidekiq', require: 'sidekiq', feature_category: :scalability
 +gem 'sidekiq', '>= 7.3.9', require: 'sidekiq', feature_category: :scalability
- gem 'sidekiq-cron', '~> 2.3.0', feature_category: :scalability
+ gem 'sidekiq-cron', '~> 2.4.0', feature_category: :scalability
  gem 'gitlab-sidekiq-fetcher',
    path: 'vendor/gems/sidekiq-reliable-fetch',
-@@ -501,128 +501,6 @@ gem 'warning', '~> 1.5.0', feature_category: :shared #
+@@ -518,136 +518,6 @@ gem 'warning', '~> 1.5.0', feature_category: :shared #
  
  gem 'warning', '~> 1.5.0', feature_category: :shared # rubocop:todo Gemfile/MissingFeatureCategory -- https://gitlab.com/gitlab-org/gitlab/-/issues/581839
  
@@ -27,11 +27,11 @@
 -  gem 'rubocop', feature_category: :tooling, require: false
 -  gem 'debug', '~> 1.11.0', feature_category: :shared # rubocop:todo Gemfile/MissingFeatureCategory -- https://gitlab.com/gitlab-org/gitlab/-/issues/581839
 -
--  gem 'solargraph', '~> 0.58.0', require: false, feature_category: :shared # rubocop:todo Gemfile/MissingFeatureCategory -- https://gitlab.com/gitlab-org/gitlab/-/issues/581839
--  gem 'solargraph-rspec', '~> 0.5.1', require: false, feature_category: :shared # rubocop:todo Gemfile/MissingFeatureCategory -- https://gitlab.com/gitlab-org/gitlab/-/issues/581839
+-  gem 'solargraph', '~> 0.60.0', require: false, feature_category: :shared # rubocop:todo Gemfile/MissingFeatureCategory -- https://gitlab.com/gitlab-org/gitlab/-/issues/581839
+-  gem 'solargraph-rspec', '~> 0.6.0', require: false, feature_category: :shared # rubocop:todo Gemfile/MissingFeatureCategory -- https://gitlab.com/gitlab-org/gitlab/-/issues/581839
 -
 -  gem 'letter_opener_web', '~> 3.0.0', feature_category: :shared # rubocop:todo Gemfile/MissingFeatureCategory -- https://gitlab.com/gitlab-org/gitlab/-/issues/581839
--  gem 'lookbook', '~> 2.3', feature_category: :shared # rubocop:todo Gemfile/MissingFeatureCategory -- https://gitlab.com/gitlab-org/gitlab/-/issues/581839
+-  gem 'lookbook', '~> 2.3.15', feature_category: :shared # rubocop:todo Gemfile/MissingFeatureCategory -- https://gitlab.com/gitlab-org/gitlab/-/issues/581839
 -
 -  gem 'sprite-factory', '~> 1.7', feature_category: :shared # rubocop:todo Gemfile/MissingFeatureCategory -- https://gitlab.com/gitlab-org/gitlab/-/issues/581839
 -
@@ -45,7 +45,7 @@
 -
 -  gem 'gdk-toogle', '~> 1.0', require: 'toogle', feature_category: :tooling
 -
--  gem 'grpc-tools', '~> 1.81.0', feature_category: :system_access
+-  gem 'grpc-tools', '~> 1.83.0', feature_category: :system_access
 -
 -  # Used by
 -  # * `lib/tasks/gitlab/security/update_banned_ssh_keys.rake`
@@ -56,7 +56,7 @@
 -
 -group :development, :test do
 -  gem 'bullet', '~> 8.0.0', feature_category: :shared # rubocop:todo Gemfile/MissingFeatureCategory -- https://gitlab.com/gitlab-org/gitlab/-/issues/581839
--  gem 'parser', '= 3.3.11.1', feature_category: :shared # rubocop:todo Gemfile/MissingFeatureCategory -- https://gitlab.com/gitlab-org/gitlab/-/issues/581839
+-  gem 'parser', '= 3.3.12.0', feature_category: :shared # rubocop:todo Gemfile/MissingFeatureCategory -- https://gitlab.com/gitlab-org/gitlab/-/issues/581839
 -  gem 'pry-byebug', feature_category: :shared # rubocop:todo Gemfile/MissingFeatureCategory -- https://gitlab.com/gitlab-org/gitlab/-/issues/581839
 -  gem 'pry-rails', '~> 0.3.9', feature_category: :shared # rubocop:todo Gemfile/MissingFeatureCategory -- https://gitlab.com/gitlab-org/gitlab/-/issues/581839
 -  gem 'pry-shell', '~> 0.7.0', feature_category: :shared # rubocop:todo Gemfile/MissingFeatureCategory -- https://gitlab.com/gitlab-org/gitlab/-/issues/581839
@@ -75,14 +75,17 @@
 -
 -  gem 'gitlab-styles', '~> 14.1', feature_category: :tooling, require: false
 -  gem 'haml_lint', '~> 0.75', feature_category: :tooling, require: false
+-  gem 'keela', '~> 0.5.0', feature_category: :tooling, require: false
 -
 -  # Benchmarking & profiling
--  gem 'benchmark-ips', '~> 2.14.0', require: false, feature_category: :shared # rubocop:todo Gemfile/MissingFeatureCategory -- https://gitlab.com/gitlab-org/gitlab/-/issues/581839
+-  gem 'benchmark-ips', '~> 2.15.0', require: false, feature_category: :shared # rubocop:todo Gemfile/MissingFeatureCategory -- https://gitlab.com/gitlab-org/gitlab/-/issues/581839
 -  gem 'benchmark-memory', '~> 0.1', require: false, feature_category: :shared # rubocop:todo Gemfile/MissingFeatureCategory -- https://gitlab.com/gitlab-org/gitlab/-/issues/581839
+-  gem 'benchmark-swap', '~> 0.2', require: false, feature_category: :tooling
 -
 -  gem 'knapsack', '~> 4.0.0', feature_category: :tooling
 -  gem 'gitlab-crystalball', '~> 1.1.3', require: false, feature_category: :tooling
 -  gem 'test_file_finder', '~> 0.3.1', feature_category: :tooling
+-  gem 'gitlab-test-balancing', path: 'gems/gitlab-test-balancing', require: false, feature_category: :code_testing
 -
 -  gem 'simple_po_parser', '~> 1.1.6', require: false, feature_category: :shared # rubocop:todo Gemfile/MissingFeatureCategory -- https://gitlab.com/gitlab-org/gitlab/-/issues/581839
 -
@@ -96,15 +99,20 @@
 -
 -  gem 'gitlab-housekeeper', path: 'gems/gitlab-housekeeper', feature_category: :tooling
 -
+-  gem 'gitlab-cells-http_router', path: 'gems/gitlab-cells-http_router',
+-    require: false, feature_category: :cell
+-
 -  gem 'yard', '~> 0.9', require: false, feature_category: :tooling
 -
 -  # Gems required for Dangerfile
 -  gem 'gitlab-dangerfiles', '~> 4.12.0', require: false, feature_category: :tooling
+-  gem 'danger', '~> 9.6', require: false, feature_category: :tooling
+-  gem 'danger-gitlab', '~> 10.0', require: false, feature_category: :tooling
 -
 -  # Gems required for code coverage
--  gem 'simplecov', '~> 0.22', require: false, feature_category: :tooling
+-  gem 'simplecov', '~> 1.3', require: false, feature_category: :tooling
 -  gem 'simplecov-lcov', '~> 0.8.0', require: false, feature_category: :tooling
--  gem 'simplecov-cobertura', '~> 3.1.0', require: false, feature_category: :tooling
+-  gem 'simplecov-cobertura', '~> 4.0', require: false, feature_category: :tooling
 -  gem 'undercover', '~> 0.8.0', require: false, feature_category: :tooling
 -
 -  # Gems required in various pipelines
@@ -138,7 +146,7 @@
 -  # Moved in `test` because https://gitlab.com/gitlab-org/gitlab/-/issues/217527
 -  gem 'derailed_benchmarks', require: false, feature_category: :shared # rubocop:todo Gemfile/MissingFeatureCategory -- https://gitlab.com/gitlab-org/gitlab/-/issues/581839
 -
--  gem 'gitlab_quality-test_tooling', '~> 3.20.1', require: false, feature_category: :tooling
+-  gem 'gitlab_quality-test_tooling', '~> 3.22.1', require: false, feature_category: :tooling
 -
 -  # Test execution result export
 -  gem 'gitlab-rspec-metrics-exporter', '~> 0.2.0', require: false, feature_category: :tooling
@@ -147,7 +155,7 @@
  gem 'octokit', '~> 9.0', feature_category: :importers
  # Needed by octokit: https://github.com/octokit/octokit.rb/pull/1688
  gem 'faraday-multipart', '~> 1.0', feature_category: :importers
-@@ -690,7 +568,7 @@ gem 'gitlab-net-dns', '~> 0.15.0', feature_category: :
+@@ -709,7 +579,7 @@ gem 'gitlab-net-dns', '~> 0.15.0', feature_category: :
  gem 'gitlab-net-dns', '~> 0.15.0', feature_category: :shared # rubocop:todo Gemfile/MissingFeatureCategory -- https://gitlab.com/gitlab-org/gitlab/-/issues/581839
  
  # Countries list
@@ -156,7 +164,7 @@
  
  gem 'retriable', '~> 3.1.2', feature_category: :shared # rubocop:todo Gemfile/MissingFeatureCategory -- https://gitlab.com/gitlab-org/gitlab/-/issues/581839
  
-@@ -779,11 +657,16 @@ gem 'duo_api', '~> 1.3', feature_category: :system_acc
+@@ -798,11 +668,16 @@ gem 'duo_api', '~> 1.3', feature_category: :system_acc
  
  gem 'duo_api', '~> 1.3', feature_category: :system_access
  
@@ -172,9 +180,9 @@
 -gem "i18n_data", "~> 0.13.1", feature_category: :system_access
 +gem "i18n_data", "~> 0.13", feature_category: :system_access
  
- gem "gitlab-cloud-connector", "~> 1.52", require: 'gitlab/cloud_connector', feature_category: :plan_provisioning
+ gem "gitlab-cloud-connector", "~> 1.54", require: 'gitlab/cloud_connector', feature_category: :plan_provisioning
  
-@@ -796,3 +679,4 @@ gem 'license_finder', '~> 7.0', require: false, featur
+@@ -815,3 +690,4 @@ gem 'license_finder', '~> 7.0', require: false, featur
  
  # Gems required in omnibus-gitlab pipeline
  gem 'license_finder', '~> 7.0', require: false, feature_category: :build

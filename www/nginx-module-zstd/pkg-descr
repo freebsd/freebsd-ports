@@ -1,0 +1,8 @@
+Two modules for ZStandard compression.  The filter module compresses
+responses on the fly for clients that announce zstd in Accept-Encoding,
+the way the gzip filter does.  The static module serves a pre-compressed
+.zst file from disk when one sits beside the requested file, and never
+calls into libzstd at all.
+
+This port only installs the module sources.  The modules themselves are
+built by the nginx ports when their ZSTD option is enabled.

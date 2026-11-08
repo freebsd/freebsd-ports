@@ -1,6 +1,6 @@
---- src/CMakeLists.txt.orig	2018-06-05 22:25:08 UTC
+--- src/CMakeLists.txt.orig	2026-09-21 17:36:31 UTC
 +++ src/CMakeLists.txt
-@@ -119,7 +119,7 @@ if(ENABLE_SHARED)
+@@ -128,7 +128,7 @@ install(DIRECTORY ${GSOURCE_PATH}/include/
  endif()
  
  install(DIRECTORY ${GSOURCE_PATH}/include/

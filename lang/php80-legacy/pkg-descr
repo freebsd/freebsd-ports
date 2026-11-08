@@ -1,0 +1,30 @@
+PHP, which stands for "PHP: Hypertext Preprocessor" is a widely-used
+Open Source general-purpose scripting language that is especially suited
+for Web development and can be embedded into HTML.  Its syntax draws
+upon C, Java, and Perl, and is easy to learn.  The main goal of the
+language is to allow web developers to write dynamically generated
+webpages quickly, but you can do much more with PHP.
+
+* THIS IS A LIMITED PORT. DO NOT USE IT UNLESS YOU KNOW WHY IT EXISTS. *
+
+PHP 8.0 has been end of life since 2023-11-26 and receives no upstream
+security fixes. This port is kept in the tree only for a single
+deployment that still requires PHP 8.0. It is IGNOREd by default and is
+not built on the official package builders. It is only built when the
+builder operator explicitly sets WITH_PHP80_ALLOW_TECHNICAL_DEBTS=yes in
+make.conf.
+
+Differences from the other lang/phpXX ports:
+
+- PHP is built statically with only the extensions needed by that
+  deployment. There are no separate php80-<extension> packages, and this
+  port does not use the USE_PHP framework or php.mk.
+- Extensions cannot be added at runtime through extension= lines. Adding
+  an extension requires changing the port and rebuilding it.
+- It may not build against current versions of its dependencies without
+  local patches (for example, recent libxml2 releases).
+- Security fixes for libraries PHP links against are only picked up when
+  this port is rebuilt.
+- No support is offered. Do not report problems with this port to the
+  PHP maintainers, and do not make other ports depend on it. For
+  anything else, use a supported PHP version.

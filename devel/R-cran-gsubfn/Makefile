@@ -12,7 +12,6 @@ LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
 CRAN_DEPENDS=	R-cran-proto>=0.3.9.2_6:devel/R-cran-proto
-BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
 USES=	cran:auto-plist

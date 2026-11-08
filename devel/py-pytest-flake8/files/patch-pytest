@@ -1,0 +1,24 @@
+--- pytest_flake8.py.orig	2024-11-09 00:08:47 UTC
++++ pytest_flake8.py
+@@ -1,6 +1,7 @@ import os
+ """py.test plugin to test with flake8."""
+ 
+ import os
++import py
+ import re
+ from contextlib import redirect_stdout, redirect_stderr
+ from io import BytesIO, TextIOWrapper
+@@ -59,11 +60,11 @@ def pytest_configure(config):
+             config._flake8mtimes = config.cache.get(HISTKEY, {})
+ 
+ 
+-def pytest_collect_file(file_path, path, parent):
++def pytest_collect_file(file_path, parent):
+     """Filter files down to which ones should be checked."""
+     config = parent.config
+     if config.option.flake8 and file_path.suffix in config._flake8exts:
+-        flake8ignore = config._flake8ignore(path)
++        flake8ignore = config._flake8ignore(py.path.local(file_path))
+         if flake8ignore is not None:
+             item = Flake8File.from_parent(
+                 parent,

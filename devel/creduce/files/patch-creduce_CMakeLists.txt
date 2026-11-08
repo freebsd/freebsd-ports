@@ -1,0 +1,11 @@
+--- creduce/CMakeLists.txt.orig	2026-09-12 08:11:11 UTC
++++ creduce/CMakeLists.txt
+@@ -8,7 +8,7 @@
+ 
+ ###############################################################################
+ 
+-cmake_minimum_required(VERSION 2.8.12)
++cmake_minimum_required(VERSION 3.5)
+ 
+ project(creduce_perl)
+ 

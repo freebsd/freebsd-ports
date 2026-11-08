@@ -1,0 +1,3 @@
+Screenshot hotkeys for bhotkeys.  desktop-screenshot and
+greeter-screenshot use ffmpeg.  window-screenshot uses gm import.
+bosd shows the file name.

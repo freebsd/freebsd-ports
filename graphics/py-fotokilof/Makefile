@@ -1,5 +1,5 @@
 PORTNAME=	fotokilof
-PORTVERSION=	5.2.4
+PORTVERSION=	5.3.0
 PORTREVISION=	0
 CATEGORIES=	graphics
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}darkdetect>=0.8.0:devel/py-darkdetect@${PY_F
 		${PYTHON_PKGNAMEPREFIX}requests>=2.32.3:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tkcolorpicker>=2.1.3:graphics/py-tkcolorpicker@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ttkbootstrap>=1.10.1:devel/py-ttkbootstrap@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}Wand>=0.6.11:graphics/py-wand@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}wand>=0.6.11:graphics/py-wand@${PY_FLAVOR}
 
 USES=		magick:run python
 USE_GITHUB=	yes

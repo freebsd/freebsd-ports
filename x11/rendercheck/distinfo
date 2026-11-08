@@ -1,2 +1,3 @@
-SHA256 (xorg/app/rendercheck-1.5.tar.bz2) = 00605679436d65ccf9a6f1f1cb206df7a2e8b28a7821e867922d2b14b009f1cc
-SIZE (xorg/app/rendercheck-1.5.tar.bz2) = 143656
+TIMESTAMP = 1751361593
+SHA256 (xorg/test/rendercheck-1.6.tar.xz) = 006a70232b190c8fc035db0b5c033e7d54e7f3442ac0325dbad10b7134c32a01
+SIZE (xorg/test/rendercheck-1.6.tar.xz) = 23996

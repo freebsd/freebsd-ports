@@ -1,0 +1,21 @@
+--- meson.build.orig	2026-09-22 11:50:27 UTC
++++ meson.build
+@@ -22,7 +22,17 @@ swscale_dep = dependency('libswscale')
+ avcodec_dep = dependency('libavcodec')
+ avutil_dep = dependency('libavutil')
+ swscale_dep = dependency('libswscale')
+-libsystemd_dep = dependency('libsystemd')
++libsystemd_dep = dependency('libsystemd', required : false)
++if libsystemd_dep.found()
++  add_project_arguments('-DHAVE_LIBSYSTEMD', language : 'c')
++else
++  # Systems without systemd (e.g. FreeBSD) get sd-bus from basu; the
++  # sd-login session lookup falls back to $XDG_SESSION_ID.
++  libsystemd_dep = dependency('basu')
++endif
++if cc.has_function('sd_bus_close_unref', dependencies : libsystemd_dep)
++  add_project_arguments('-DHAVE_SD_BUS_CLOSE_UNREF', language : 'c')
++endif
+ threads_dep = dependency('threads')
+ 
+ wayland_scanner = find_program('wayland-scanner')

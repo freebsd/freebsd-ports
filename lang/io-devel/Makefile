@@ -1,15 +1,18 @@
 PORTNAME=	io
 PORTVERSION=	20240207
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small prototype-based programming language (devel version)
 WWW=		https://iolanguage.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+DEPRECATED=	Umaintained downstream, does not build with CMake 4
+EXPIRATION_DATE=2026-11-30
 
 CONFLICTS=	io
 

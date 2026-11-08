@@ -38,6 +38,7 @@ CMAKE_ARGS=	-DFREEBSD_PYTHON_CMD:STRING=${PYTHON_CMD} \
 		-DMSGPACK_INCLUDE_PATH:STRING=${LOCALBASE}/include/mgpack
 CMAKE_OFF=	MSGPACK_USE_BOOST # this should work, but Veles doesn't use cmake scripts for msgpack
 CXXFLAGS+=	-DMSGPACK_NO_BOOST # workaround for the above
+CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility
 
 .include <bsd.port.pre.mk>
 

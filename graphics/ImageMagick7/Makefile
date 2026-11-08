@@ -1,12 +1,11 @@
 PORTNAME=	ImageMagick
-DISTVERSION=	7.1.2-25
-PORTREVISION=	2
+DISTVERSION=	7.1.2-34
 CATEGORIES=	graphics perl5
 MASTER_SITES=	https://ftp.acc.umu.se/mirror/imagemagick.org/ftp/releases/ \
 		https://mirror.dogado.de/imagemagick/releases/ \
 		https://mirror.checkdomain.de/imagemagick/releases/ \
 		https://ftp.icm.edu.pl/pub/unix/graphics/ImageMagick/releases/ \
-		https://imagemagick.org/archive/releases/
+		https://download.imagemagick.org/archive/releases/
 PKGNAMESUFFIX=	7
 
 MAINTAINER=	desktop@FreeBSD.org
@@ -35,7 +34,7 @@ USES=		cpe gettext-runtime gmake gnome libtool:keepla localbase \
 		pathfix perl5 pkgconfig:both shebangfix tar:xz
 CPE_PRODUCT=	imagemagick
 CPE_VENDOR=	imagemagick
-SHEBANG_FILES=	www/source/examples.pl
+SHEBANG_FILES=	www/source/examples.perl
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKE=${MAKE_CMD}
 CONFIGURE_ARGS=	--without-dps \

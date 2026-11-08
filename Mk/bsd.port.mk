@@ -569,6 +569,9 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # run-depends-list
 #				- Show all directories which are run-dependencies
 #				  for this port.
+# test-depends
+#				- Build and install all test-dependencies for this
+#				  port.
 # test-depends-list
 #				- Show all directories which are test-dependencies
 #				  for this port.
@@ -726,7 +729,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # CONFIGURE_TARGET
 #				- The name of target to call when GNU_CONFIGURE is
 #				  defined.
-#				  Default: ${ARCH}-portbld-${OPSYS:tl}${OSREL}
+#				  Default: ${HOSTARCH:S/amd64/x86_64/}-portbld-${OPSYS:tl}${OSREL}
 # GNU_CONFIGURE_PREFIX
 #				- The directory passed as prefix to the configure script if
 #				  GNU_CONFIGURE is set.
@@ -1164,7 +1167,7 @@ OSVERSION!=	${AWK} '/^\#define[[:blank:]]__FreeBSD_version/ {print $$3}' < ${SRC
 .    endif
 _EXPORTED_VARS+=	OSVERSION
 
-.    if ${OPSYS} == FreeBSD && ${OSVERSION} < 1404000
+.    if ${OPSYS} == FreeBSD && (${OSVERSION} < 1404000 || (${OSVERSION} >= 1500000 && ${OSVERSION} < 1501000))
 _UNSUPPORTED_SYSTEM_MESSAGE=	Ports Collection support for your ${OPSYS} version has ended, and no ports\
 								are guaranteed to build on this system. Please upgrade to a supported release.
 .      if defined(ALLOW_UNSUPPORTED_SYSTEM)
@@ -1466,9 +1469,9 @@ DEV_ERROR+=		"FLAVORS contains flavors that are not all [a-z0-9_]: ${_BAD_FLAVOR
 
 .    if !empty(FLAVOR)
 .      if empty(FLAVORS)
-IGNORE=	FLAVOR is defined (to ${FLAVOR}) while this port does not have FLAVORS
+IGNORE=	has an unknown flavor '${FLAVOR}', this port does not have any flavors
 .      elif ! ${FLAVORS:M${FLAVOR}}
-IGNORE=	Unknown flavor '${FLAVOR}', possible flavors: ${FLAVORS}
+IGNORE=	has an unknown flavor '${FLAVOR}', possible flavors: ${FLAVORS}
 .      endif
 .    endif
 
@@ -1486,8 +1489,8 @@ _DID_FLAVORS_HELPERS=	yes
 _FLAVOR_HELPERS_OVERRIDE=	DESCR PLIST PKGNAMEPREFIX PKGNAMESUFFIX
 _FLAVOR_HELPERS_APPEND=	 	CONFLICTS CONFLICTS_BUILD CONFLICTS_INSTALL \
 							PKG_DEPENDS EXTRACT_DEPENDS PATCH_DEPENDS \
-							FETCH_DEPENDS BUILD_DEPENDS LIB_DEPENDS \
-							RUN_DEPENDS TEST_DEPENDS
+							FETCH_DEPENDS BUILD_RUN_DEPENDS BUILD_DEPENDS \
+							LIB_DEPENDS RUN_DEPENDS TEST_DEPENDS
 # These overwrite the current value
 .      for v in ${_FLAVOR_HELPERS_OVERRIDE}
 .        if defined(${FLAVOR}_${v})
@@ -1702,6 +1705,13 @@ PKGCONFIG_BASEDIR=	/usr/libdata/pkgconfig
 .    if !${MAKE_ENV:MPKG_CONFIG_LIBDIR=*} && !${CONFIGURE_ENV:MPKG_CONFIG_LIBDIR=*}
 MAKE_ENV+=			PKG_CONFIG_LIBDIR=${PKGCONFIG_LINKDIR}:${LOCALBASE}/libdata/pkgconfig:${LOCALBASE}/share/pkgconfig:${PKGCONFIG_BASEDIR}
 CONFIGURE_ENV+=		PKG_CONFIG_LIBDIR=${PKGCONFIG_LINKDIR}:${LOCALBASE}/libdata/pkgconfig:${LOCALBASE}/share/pkgconfig:${PKGCONFIG_BASEDIR}
+.    endif
+
+.    if !defined(IGNORE_MASTER_SITE_FORGEJO) && defined(USE_FORGEJO) && empty(USE_FORGEJO:Mnodefault)
+.      if defined(WRKSRC)
+DEV_WARNING+=	"You are using USE_FORGEJO and WRKSRC is set which is wrong.  Set FJ_PROJECT correctly or set WRKSRC_SUBDIR and remove WRKSRC entirely."
+.      endif
+WRKSRC?=		${WRKDIR}/${FJ_PROJECT_DEFAULT}
 .    endif
 
 .    if !defined(IGNORE_MASTER_SITE_GITHUB) && defined(USE_GITHUB) && empty(USE_GITHUB:Mnodefault)
@@ -2674,10 +2684,38 @@ WRKDIR_PKGFILE${_SP.${sp}}=	${WRKDIR}/pkg/${PKGNAME${_SP.${sp}}}${PKG_SUFX}
 .include "${PORTSDIR}/Mk/bsd.licenses.mk"
 .    endif
 
+.    if !defined(DISABLE_SBOM)
+SBOMDIR=		${PREFIX}/share/sbom/pc
+SBOM_REL=		share/sbom/pc
+
+PORT_SBOM_VERSION?=	${PORTVERSION}
+PORT_SBOM_URL?=		${WWW:[1]}
+PORT_SBOM_LICENSE?=	${_LICENSE}
+PORT_SBOM_CPE?=		${CPE_STR}
+PORT_SBOM_COPYRIGHT?=
+PORT_SBOM_PROVIDES?=
+
+# Only claim a Source: URL when the main distfile is unambiguous and at
+# least one master site is known
+_SBOM_DISTFILE=		${_DISTFILES:M${DISTNAME}${EXTRACT_SUFX}}
+.      if !empty(_SBOM_DISTFILE) && !empty(_MASTER_SITES_ALL)
+PORT_SBOM_SOURCE?=	${_MASTER_SITES_ALL:[1]}${_SBOM_DISTFILE:[1]}
+.      else
+PORT_SBOM_SOURCE?=
+.      endif
+
+# Per package/subpackage: defaults to COMMENT / COMMENT.${sp} (bsd.port.mk:2655
+# appends " (subpkg: ${sp})" for subpackages), overridable as
+# PORT_SBOM_DESC / PORT_SBOM_DESC.${sp}.
+.      for sp in ${_PKGS}
+PORT_SBOM_DESC${_SP.${sp}}?=	${COMMENT${_SP.${sp}}}
+PLIST_FILES${_SP.${sp}}+=	${SBOM_REL}/${sp}.pc
+.      endfor
+.    endif
+
 CONFIGURE_SCRIPT?=	configure
 CONFIGURE_CMD?=		./${CONFIGURE_SCRIPT}
-CONFIGURE_TARGET?=	${HOSTARCH}-portbld-${OPSYS:tl}${OSREL}
-CONFIGURE_TARGET:=	${CONFIGURE_TARGET:S/--build=//}
+CONFIGURE_TARGET?=	${HOSTARCH:S/amd64/x86_64/}-portbld-${OPSYS:tl}${OSREL}
 CONFIGURE_LOG?=		config.log
 
 # A default message to print if do-configure fails.
@@ -3111,57 +3149,65 @@ _DO_FETCH_ENV+= dp_DEVELOPER=
 
 # Fetch
 
-.    if !target(do-fetch)
-do-fetch:
-.      if !empty(DISTFILES)
-	@${SETENV} \
-			${_DO_FETCH_ENV} ${_MASTER_SITES_ENV} \
-			dp_SITE_FLAVOR=MASTER \
-			${SH} ${SCRIPTSDIR}/do-fetch.sh ${DISTFILES:C/.*/'&'/}
-.      endif
-.      if defined(PATCHFILES) && !empty(PATCHFILES)
-	@${SETENV} \
-			${_DO_FETCH_ENV} ${_PATCH_SITES_ENV} \
-			dp_SITE_FLAVOR=PATCH \
-			${SH} ${SCRIPTSDIR}/do-fetch.sh ${PATCHFILES:C/:-p[0-9]//:C/.*/'&'/}
-.      endif
-.    endif
-#
-# Prints out a list of files to fetch (useful to do a batch fetch)
+_MASTER_SITES_FILE=${WRKDIR}/.master_sites
+_DISTFILES_FILE=${WRKDIR}/.distfiles
+_PATCH_SITES_FILE=${WRKDIR}/.patch_sites
+_PATCHFILES_FILE=${WRKDIR}/.patchfiles
 
-.    if !target(fetch-list)
-fetch-list:
-.      if !empty(DISTFILES)
-	@${SETENV} \
-			${_DO_FETCH_ENV} ${_MASTER_SITES_ENV} \
-			dp_SITE_FLAVOR=MASTER \
-			${SH} ${SCRIPTSDIR}/do-fetch.sh ${DISTFILES:C/.*/'&'/}
-.      endif
-.      if defined(PATCHFILES) && !empty(PATCHFILES)
-	@${SETENV} \
-			${_DO_FETCH_ENV} ${_PATCH_SITES_ENV} \
-			dp_SITE_FLAVOR=PATCH \
-			${SH} ${SCRIPTSDIR}/do-fetch.sh ${PATCHFILES:C/:-p[0-9]//:C/.*/'&'/}
+create-do-fetch-distfiles-files: .PHONY
+.    if !empty(DISTFILES)
+.      if !defined(_DO_FETCH_FILES_CREATED) || ${_DO_FETCH_FILES_CREATED} != ${PKGORIGIN}
+	@${MKDIR} ${WRKDIR}
+	@${RM} ${_MASTER_SITES_FILE} ${_DISTFILES_FILE}
+.        for site in ${_MASTER_SITES_ENV}
+	@printf '%s\n' "${site}" >> ${_MASTER_SITES_FILE}
+.        endfor
+.        for file in ${DISTFILES}
+	@printf '%s\n' "${file}" >> ${_DISTFILES_FILE}
+.        endfor
 .      endif
 .    endif
 
-# Used by fetch-urlall-list and fetch-url-list
-
-.    if !target(fetch-url-list-int)
-fetch-url-list-int:
-.      if !empty(DISTFILES)
-	@${SETENV} \
-			${_DO_FETCH_ENV} ${_MASTER_SITES_ENV} \
-			dp_SITE_FLAVOR=MASTER \
-			${SH} ${SCRIPTSDIR}/do-fetch.sh ${DISTFILES:C/.*/'&'/}
-.      endif
-.      if defined(PATCHFILES) && !empty(PATCHFILES)
-	@${SETENV} \
-			${_DO_FETCH_ENV} ${_PATCH_SITES_ENV} \
-			dp_SITE_FLAVOR=PATCH \
-			${SH} ${SCRIPTSDIR}/do-fetch.sh ${PATCHFILES:C/:-p[0-9]//:C/.*/'&'/}
+create-do-fetch-patchfiles-files: .PHONY
+.    if defined(PATCHFILES) && !empty(PATCHFILES)
+.      if !defined(_DO_FETCH_FILES_CREATED) || ${_DO_FETCH_FILES_CREATED} != ${PKGORIGIN}
+	@${MKDIR} ${WRKDIR}
+	@${RM} ${_PATCH_SITES_FILE} ${_PATCHFILES_FILE}
+.        for site in ${_PATCH_SITES_ENV}
+	@printf '%s\n' "${site}" >> ${_PATCH_SITES_FILE}
+.        endfor
+.        for file in ${PATCHFILES}
+	@printf '%s\n' "${file:C/:-p[0-9]//}" >> ${_PATCHFILES_FILE}
+.        endfor
 .      endif
 .    endif
+
+
+# do-fetch does the fetching
+# fetch-list Prints out a list of files to fetch (useful to do a batch fetch)
+# fetch-url-list-int Used by fetch-urlall-list and fetch-url-list
+.    for _target in do-fetch fetch-list fetch-url-list-int
+.      if !target(${_target})
+${_target}: create-do-fetch-distfiles-files create-do-fetch-patchfiles-files
+	@${MKDIR} ${WRKDIR}
+.        if !empty(DISTFILES)
+	@${SETENV} \
+			${_DO_FETCH_ENV} \
+			dp_SITES_FILE=${_MASTER_SITES_FILE} \
+			dp_FILES_FILE=${_DISTFILES_FILE} \
+			dp_SITE_FLAVOR=MASTER \
+			${SH} ${SCRIPTSDIR}/do-fetch.sh
+.        endif
+.        if defined(PATCHFILES) && !empty(PATCHFILES)
+	@${SETENV} \
+			${_DO_FETCH_ENV} \
+			dp_SITES_FILE=${_PATCH_SITES_FILE} \
+			dp_FILES_FILE=${_PATCHFILES_FILE} \
+			dp_SITE_FLAVOR=PATCH \
+			${SH} ${SCRIPTSDIR}/do-fetch.sh
+.        endif
+.      endif
+.    endfor
 
 .    if !target(fetch-url-recursive-list-int)
 fetch-url-recursive-list-int: fetch-url-list-int
@@ -3935,6 +3981,8 @@ delete-distfiles-list:
 _CHECKSUM_INIT_ENV= \
 	dp_SHA256=${SHA256}
 
+_CKSUMFILES_FILE=${WRKDIR}/.cksumfiles
+
 .    if !target(makesum)
 # Some port change the options with OPTIONS_*_FORCE when make(makesum) to be
 # able to add all distfiles in one go.
@@ -3942,29 +3990,39 @@ _CHECKSUM_INIT_ENV= \
 # the options consistent when fetching and when makesum'ing.
 # As we're fetching new distfiles, that are not in the distinfo file, disable
 # checksum and sizes checks.
-makesum: check-sanity
-	@cd ${.CURDIR} && ${MAKE} fetch NO_CHECKSUM=yes \
-			DISABLE_SIZE=yes DISTFILES="${DISTFILES}" \
-			MASTER_SITES="${MASTER_SITES}" \
-			MASTER_SITE_SUBDIR="${MASTER_SITE_SUBDIR}" \
-			PATCH_SITES="${PATCH_SITES}"
+makesum: check-sanity create-do-fetch-distfiles-files create-do-fetch-patchfiles-files
+	@cd ${.CURDIR} && ${MAKE} fetch \
+			NO_CHECKSUM=yes \
+			DISABLE_SIZE=yes \
+			_DO_FETCH_FILES_CREATED=${PKGORIGIN}
+	@${MKDIR} ${WRKDIR}
+	@${RM} ${_CKSUMFILES_FILE}
+.      for file in ${_CKSUMFILES}
+	@printf '%s\n' "${file}" >> ${_CKSUMFILES_FILE}
+.      endfor
 	@${SETENV} \
 			${_CHECKSUM_INIT_ENV} \
 			dp_CHECKSUM_ALGORITHMS='${CHECKSUM_ALGORITHMS:tu}' \
-			dp_CKSUMFILES='${_CKSUMFILES}' \
+			dp_CKSUMFILES_FILE='${_CKSUMFILES_FILE}' \
 			dp_DISTDIR='${DISTDIR}' \
 			dp_DISTINFO_FILE='${DISTINFO_FILE}' \
 			dp_ECHO_MSG='${ECHO_MSG}' \
 			dp_SCRIPTSDIR='${SCRIPTSDIR}' \
-			${SH} ${SCRIPTSDIR}/makesum.sh ${DISTFILES:C/.*/'&'/}
+			${SH} ${SCRIPTSDIR}/makesum.sh
 .    endif
 
 .    if !target(checksum)
 checksum: fetch
 .      if !empty(_CKSUMFILES) && !defined(NO_CHECKSUM)
+	@${MKDIR} ${WRKDIR}
+	@${RM} ${_CKSUMFILES_FILE}
+.        for file in ${_CKSUMFILES}
+	@printf '%s\n' "${file}" >> ${_CKSUMFILES_FILE}
+.        endfor
 	@${SETENV} \
 			${_CHECKSUM_INIT_ENV} \
 			dp_CHECKSUM_ALGORITHMS='${CHECKSUM_ALGORITHMS:tu}' \
+			dp_CKSUMFILES_FILE='${_CKSUMFILES_FILE}' \
 			dp_CURDIR='${.CURDIR}' \
 			dp_DISTDIR='${DISTDIR}' \
 			dp_DISTINFO_FILE='${DISTINFO_FILE}' \
@@ -3976,7 +4034,7 @@ checksum: fetch
 			dp_SCRIPTSDIR='${SCRIPTSDIR}' \
 			dp_DISABLE_SIZE='${DISABLE_SIZE}' \
 			dp_NO_CHECKSUM='${NO_CHECKSUM}' \
-			${SH} ${SCRIPTSDIR}/checksum.sh ${_CKSUMFILES:C/.*/'&'/}
+			${SH} ${SCRIPTSDIR}/checksum.sh
 .      endif
 .    endif
 
@@ -4023,6 +4081,11 @@ package-noinstall: package
 # Dependency checking
 ################################################################
 
+.    for sp in ${_PKGS}
+BUILD_DEPENDS${_SP.${sp}}+=		${BUILD_RUN_DEPENDS${_SP.${sp}}}
+RUN_DEPENDS${_SP.${sp}}+=		${BUILD_RUN_DEPENDS${_SP.${sp}}}
+.    endfor
+
 .    if !target(depends)
 depends: pkg-depends extract-depends patch-depends lib-depends fetch-depends build-depends run-depends
 
@@ -4062,7 +4125,7 @@ ${deptype:tl}-depends:
 
 # Dependency lists: both build and runtime, recursive.  Print out directory names.
 
-_UNIFIED_DEPENDS=${PKG_DEPENDS_ALL} ${EXTRACT_DEPENDS_ALL} ${PATCH_DEPENDS_ALL} ${FETCH_DEPENDS_ALL} ${BUILD_DEPENDS_ALL} ${LIB_DEPENDS_ALL} ${RUN_DEPENDS_ALL} ${TEST_DEPENDS_ALL}
+_UNIFIED_DEPENDS=${PKG_DEPENDS_ALL} ${EXTRACT_DEPENDS_ALL} ${PATCH_DEPENDS_ALL} ${FETCH_DEPENDS_ALL} ${BUILD_DEPENDS_ALL} ${LIB_DEPENDS_ALL} ${RUN_DEPENDS_ALL}
 _DEPEND_SPECIALS=	${_UNIFIED_DEPENDS:M*\:*\:*:C,^[^:]*:([^:]*):.*$,\1,}
 
 .    for d in ${_UNIFIED_DEPENDS:M*\:/*}
@@ -4114,7 +4177,7 @@ DEPENDS-LIST= \
 ALL-DEPENDS-LIST=			${DEPENDS-LIST} -r ${_UNIFIED_DEPENDS:Q}
 ALL-DEPENDS-FLAVORS-LIST=	${DEPENDS-LIST} -f -r ${_UNIFIED_DEPENDS:Q}
 DEINSTALL-DEPENDS-FLAVORS-LIST=	${DEPENDS-LIST} -f -r ${_UNIFIED_DEPENDS:N${PKG_DEPENDS}:Q}
-MISSING-DEPENDS-LIST=		${DEPENDS-LIST} -m ${_UNIFIED_DEPENDS:Q}
+MISSING-DEPENDS-LIST=		${DEPENDS-LIST} -f -m ${_UNIFIED_DEPENDS:Q}
 BUILD-DEPENDS-LIST=			${DEPENDS-LIST} "${PKG_DEPENDS_ALL} ${EXTRACT_DEPENDS_ALL} ${PATCH_DEPENDS_ALL} ${FETCH_DEPENDS_ALL} ${BUILD_DEPENDS_ALL} ${LIB_DEPENDS_ALL}"
 RUN-DEPENDS-LIST=			${DEPENDS-LIST} "${LIB_DEPENDS_ALL} ${RUN_DEPENDS_ALL}"
 TEST-DEPENDS-LIST=			${DEPENDS-LIST} ${TEST_DEPENDS_ALL:Q}
@@ -4328,6 +4391,36 @@ ACTUAL-PACKAGE-DEPENDS${_SP.${sp}}?= \
 	${SETENV} PKG_BIN="${PKG_BIN}" ${SH} ${SCRIPTSDIR}/actual-package-depends.sh $${depfiles} ${RUN_DEPENDS${_SP.${sp}}:C/(.*)\:.*/"\1"/}
 .    endfor
 
+.    if !defined(DISABLE_SBOM)
+.      for sp in ${_PKGS}
+create-sbom: create-sbom.${sp}
+create-sbom.${sp}:
+	@${SETENV} \
+			dp_ACTUAL_PACKAGE_DEPENDS='${ACTUAL-PACKAGE-DEPENDS${_SP.${sp}}}' \
+			dp_COMMENT=${PORT_SBOM_DESC${_SP.${sp}}:Q}            \
+			dp_LICENSE='${PORT_SBOM_LICENSE}'                     \
+			dp_LICENSE_COMB='${LICENSE_COMB:Usingle}'             \
+			dp_MAINTAINER='${MAINTAINER}'                         \
+			dp_PKGBASE='${sp}'                                    \
+			dp_PKGORIGIN='${PKGORIGIN}'                           \
+			dp_PKGVERSION='${PKGVERSION}'                         \
+			dp_PKG_BIN='${PKG_BIN}'                               \
+			dp_PKG_IGNORE_DEPENDS='${PKG_IGNORE_DEPENDS}'         \
+			dp_PORTVERSION='${PORT_SBOM_VERSION}'                 \
+			dp_PORT_SBOM_COPYRIGHT=${PORT_SBOM_COPYRIGHT:Q}       \
+			dp_PORT_SBOM_CPE=${PORT_SBOM_CPE:Q}                   \
+			dp_PORT_SBOM_PROVIDES='${PORT_SBOM_PROVIDES}'         \
+			dp_PORT_SBOM_SOURCE=${PORT_SBOM_SOURCE:Q}             \
+			dp_PORT_SBOM_URL=${PORT_SBOM_URL:Q}                   \
+			dp_PREFIX='${PREFIX}'                                 \
+			dp_SBOMDIR='${SBOMDIR}'                               \
+			dp_SBOMNAME='${sp}'                                   \
+			dp_SCRIPTSDIR='${SCRIPTSDIR}'                         \
+			dp_STAGEDIR='${STAGEDIR}'                             \
+			${SH} ${SCRIPTSDIR}/create-sbom.sh
+.      endfor
+.    endif
+
 PKG_NOTES_ENV?=
 .    for note in ${PKG_NOTES}
 PKG_NOTES_ENV+=	dp_PKG_NOTE_${note}=${PKG_NOTE_${note}:Q}
@@ -4414,10 +4507,17 @@ missing-packages:
 	done
 
 # Install missing dependencies from package
+# Preserve the interactive pkg prompt unless running in BATCH mode, in
+# which case -o cannot reopen stdin from /dev/tty and is not wanted.
+.    if defined(BATCH)
+_INSTALL_MISSING_PKGS=	${XARGS} ${PKG_BIN} install -yA
+.    else
+_INSTALL_MISSING_PKGS=	${XARGS} -o ${PKG_BIN} install -A
+.    endif
 install-missing-packages:
 	@_dirs=$$(${MISSING-DEPENDS-LIST}); \
 	${ECHO_CMD} "$${_dirs}" | ${SED} "s%${PORTSDIR}/%%g" | \
-		${SU_CMD} "${XARGS} -o ${PKG_BIN} install -A"
+		${SU_CMD} "${_INSTALL_MISSING_PKGS}"
 
 ################################################################
 # Everything after here are internal targets and really
@@ -4494,6 +4594,10 @@ describe-json:
 	${ECHO_CMD} \"distversionsuffix\":\"${DISTVERSIONSUFFIX}\", ;\
 	${ECHO_CMD} \"expiration_date\":\"${EXPIRATION_DATE}\", ;\
 	${ECHO_CMD} \"flavor\":\"${FLAVOR}\", ;\
+	${ECHO_CMD} \"fj_account\":\"${FJ_ACCOUNT}\", ;\
+	${ECHO_CMD} \"fj_project\":\"${FJ_PROJECT}\", ;\
+	${ECHO_CMD} \"fj_site\":\"${FJ_SITE}\", ;\
+	${ECHO_CMD} \"fj_tagname\":\"${FJ_TAGNAME}\", ;\
 	${ECHO_CMD} \"gh_account\":\"${GH_ACCOUNT}\", ;\
 	${ECHO_CMD} \"gh_project\":\"${GH_PROJECT}\", ;\
 	${ECHO_CMD} \"gh_tagname\":\"${GH_TAGNAME}\", ;\
@@ -4512,6 +4616,7 @@ describe-json:
 	${ECHO_CMD} \"portname\":\"${PORTNAME}\", ;\
 	${ECHO_CMD} \"portrevision\":\"${PORTREVISION}\", ;\
 	${ECHO_CMD} \"portversion\":\"${PORTVERSION}\", ;\
+	${ECHO_CMD} \"use_forgejo\":\"${USE_FORGEJO}\", ;\
 	${ECHO_CMD} \"use_github\":\"${USE_GITHUB}\", ;\
 	${ECHO_CMD} \"use_gitlab\":\"${USE_GITLAB}\", ;\
 	${ECHO_CMD} \"www\":\"${WWW:Q}\" ;\
@@ -5446,6 +5551,7 @@ _STAGE_SEQ=		050:stage-message 100:stage-dir 150:run-depends \
 				500:do-install 550:kmod-post-install 600:fixup-lib-pkgconfig 700:post-install \
 				750:post-install-script 800:post-stage 850:compress-man \
 				860:install-rc-script 870:install-ldconfig-file \
+				875:create-sbom \
 				880:install-license 890:install-desktop-entries \
 				900:add-plist-info 910:add-plist-docs 920:add-plist-examples \
 				930:add-plist-data 940:add-plist-post 994:stage-sanity \

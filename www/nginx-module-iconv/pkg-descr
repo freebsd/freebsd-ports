@@ -1,0 +1,8 @@
+The iconv module converts text between character sets inside nginx, using
+the iconv(3) facility of the system.  It brings three directives:
+set_iconv converts the content of one variable into another, iconv_filter
+converts a response body as it is sent, and iconv_buffer_size sizes the
+buffers the filter works with.
+
+This port only installs the module sources.  The module itself is built by
+the nginx ports when their ICONV option is enabled.

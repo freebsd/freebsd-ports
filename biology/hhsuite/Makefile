@@ -38,5 +38,6 @@ CMAKE_ON=	HAVE_SSE2
 .elif ${ARCH} == powerpc64le
 CMAKE_ON=	HAVE_POWER8
 .endif
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/soedinglab/hh-suite/issues/390
 
 .include <bsd.port.mk>

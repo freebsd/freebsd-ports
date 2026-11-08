@@ -1,5 +1,5 @@
-TIMESTAMP = 1783930275
-SHA256 (node-sqlcipher-3.3.9.tar.gz) = 4054a1c4ee041f8842e931ee276bc61258db683de34aa1806573500b255cc5de
-SIZE (node-sqlcipher-3.3.9.tar.gz) = 2732963
-SHA256 (node-sqlcipher-3.3.9-npm-cache.tar.gz) = 326833e2cf5355ab92aec60ff0c9e5c8fbcb7a1ea65de8ea3a71910a9d77e40d
-SIZE (node-sqlcipher-3.3.9-npm-cache.tar.gz) = 75169226
+TIMESTAMP = 1788509828
+SHA256 (node-sqlcipher-4.1.0.tar.gz) = e0507cb915147ff07cd784f43726343ad23af7e5f5f36db23926c7d79cb6494c
+SIZE (node-sqlcipher-4.1.0.tar.gz) = 2802176
+SHA256 (node-sqlcipher-4.1.0-npm-cache.tar.gz) = 3d1d59a43e54d06f03da15da0a10bfc0f7cf22b6c7dfe2d428341b055525943f
+SIZE (node-sqlcipher-4.1.0-npm-cache.tar.gz) = 76902142

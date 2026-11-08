@@ -1,11 +1,13 @@
---- vendor/llama.cpp/ggml/src/ggml-cpu/CMakeLists.txt.orig	2026-04-03 02:35:15 UTC
+-- Prevent llama.cpp from injecting -mcpu=native / -mtune=native / -mpowerpc64
+-- flags on PowerPC, which break the FreeBSD ports build framework.
+
+--- vendor/llama.cpp/ggml/src/ggml-cpu/CMakeLists.txt.orig
 +++ vendor/llama.cpp/ggml/src/ggml-cpu/CMakeLists.txt
-@@ -396,16 +396,6 @@ function(ggml_add_cpu_backend_variant_impl tag_name)
-             string(TOUPPER "${POWER10_M}" POWER10_M_UPPER)
+@@ -389,15 +389,6 @@
              string(REGEX MATCHALL "POWER *([0-9]+)" MATCHED_STRING "${POWER10_M_UPPER}")
              string(REGEX REPLACE "POWER *([0-9]+)" "\\1" EXTRACTED_NUMBER "${MATCHED_STRING}")
--
--            if (EXTRACTED_NUMBER GREATER_EQUAL 10)
+
+-            if (EXTRACTED_NUMBER EQUAL 10 OR EXTRACTED_NUMBER EQUAL 11)
 -                list(APPEND ARCH_FLAGS -mcpu=power10)
 -            elseif (EXTRACTED_NUMBER EQUAL 9)
 -                list(APPEND ARCH_FLAGS -mcpu=power9)

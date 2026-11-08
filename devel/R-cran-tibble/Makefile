@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Simple Data Frames
-WWW=		https://cran.r-project.org/web/packages/tibble/
+WWW=		https://cran.r-project.org/package=tibble
 
 LICENSE=	MIT
 

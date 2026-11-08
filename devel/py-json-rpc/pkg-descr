@@ -1,0 +1,3 @@
+json-rpc is a transport-agnostic implementation of the JSON-RPC 1.0 and 2.0
+protocols. It provides request/response parsing, a method dispatcher, and
+optional integration with Django and Flask backends.

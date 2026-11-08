@@ -1,0 +1,95 @@
+#!/bin/sh
+#
+# PROVIDE: apiary_frontend
+# REQUIRE: NETWORKING apiary_managerd
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="apiary_frontend"
+rcvar="apiary_frontend_enable"
+
+load_rc_config "$name"
+
+: ${apiary_frontend_enable:="NO"}
+: ${apiary_frontend_args:=""}
+: ${apiary_frontend_logfile:="/var/log/apiary/frontend.log"}
+# Port frontend serves the web UI on, so a restart can tell a stale,
+# untracked listener (issue #76) apart from "nothing is using this
+# port". Left empty, it falls back to parsing frontend.json's
+# http_addr (ADR-0100), and failing that to 8080 (frontendconfig's own
+# hardcoded default) - see apiary_frontend_orphanport below. Set this
+# explicitly if http_addr is ever something this fallback can't parse.
+: ${apiary_frontend_port:=""}
+apiary_frontend_configfile="%%PREFIX%%/etc/apiary/frontend.json"
+
+rc_flags=""
+frontend_bin="%%PREFIX%%/libexec/apiary/frontend"
+# See apiary_raftd's own copy of this -P/procname setup for why it's
+# needed - the same daemon(8) -p+-r orphan-respawn defect applies
+# identically here.
+procname="/usr/sbin/daemon"
+pidfile="/var/run/${name}.pid"
+command="/usr/sbin/daemon"
+command_args="-f -r -R 5 -C 24 -o ${apiary_frontend_logfile} -P ${pidfile} ${frontend_bin} ${apiary_frontend_args}"
+
+# See apiary_raftd's own copy of this hook for why it's needed - the
+# same daemon(8)/rc.subr pidfile race applies identically here.
+stop_postcmd="apiary_frontend_poststop"
+apiary_frontend_poststop()
+{
+	if [ -f "$pidfile" ] && [ -z "$(check_pidfile "$pidfile" "$procname")" ]; then
+		rm -f "$pidfile"
+	fi
+}
+
+# Issue #76: rc.subr only calls start_precmd when it already believes
+# nothing is running - no pidfile, or a pidfile whose pid is dead. That
+# is exactly the gap: a frontend process left over from before this
+# pidfile existed, or one whose pidfile was lost some other way, has no
+# pidfile to be found by and keeps right on listening. The daemon(8)
+# supervisor this script is about to launch then races it for the same
+# port and loses - "address already in use" - while the real fix (killing
+# the old process) never happens, because SIGTERM alone doesn't do it
+# when the old process is itself ignoring it (observed live: it was).
+# So before every start (including a restart's start half), check
+# whether the configured port already has a listener despite rc.subr
+# finding no tracked process, and if so, try to stop that listener
+# cleanly before racing it.
+start_precmd="apiary_frontend_orphanport"
+apiary_frontend_orphanport()
+{
+	local port pids pid comm waited
+
+	port="$apiary_frontend_port"
+	if [ -z "$port" ] && [ -r "$apiary_frontend_configfile" ]; then
+		port=$(grep -o '"http_addr"[[:space:]]*:[[:space:]]*"[^"]*"' \
+			"$apiary_frontend_configfile" 2>/dev/null | sed -E 's/.*:([0-9]+)"$/\1/')
+	fi
+	: ${port:=8080}
+
+	pids=$(sockstat -4 -6 -l -p "$port" 2>/dev/null | awk 'NR>1 {print $3}' | sort -un)
+	if [ -z "$pids" ]; then
+		return 0
+	fi
+
+	for pid in $pids; do
+		comm=$(ps -o comm= -p "$pid" 2>/dev/null)
+		warn "${name}: port ${port} is already held by pid ${pid} (${comm:-unknown}), not tracked by ${pidfile} - sending SIGTERM before starting"
+		kill -TERM "$pid" 2>/dev/null
+	done
+
+	waited=0
+	while [ "$waited" -lt 10 ]; do
+		pids=$(sockstat -4 -6 -l -p "$port" 2>/dev/null | awk 'NR>1 {print $3}' | sort -un)
+		if [ -z "$pids" ]; then
+			return 0
+		fi
+		sleep 1
+		waited=$((waited + 1))
+	done
+
+	err 1 "${name}: cannot start - port ${port} is still held by pid(s) ${pids} after SIGTERM and a 10s wait; stop it manually (e.g. \`kill -9 ${pids}\`), confirm it is safe to kill first, and retry"
+}
+
+run_rc_command "$1"

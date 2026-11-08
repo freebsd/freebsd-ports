@@ -1,0 +1,3 @@
+VTracer is an open source software to convert raster images (like jpg & png)
+into vector graphics (svg). It can vectorize graphics and photographs and trace
+the curves to output compact vector files.

@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2026-09-12 02:44:17 UTC
++++ CMakeLists.txt
+@@ -43,8 +43,6 @@ set(DOC_FILES
+ 
+ # Install documentation
+ set(DOC_FILES
+-	LICENSE.LGPL3.txt
+-	LICENSE.txt
+ 	NEWS.txt
+ 	README.md
+ )

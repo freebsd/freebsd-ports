@@ -14,13 +14,13 @@ LICENSE=	PostgreSQL
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libv8.so:lang/v8
 
-USES=		compiler:c++17-lang gmake pgsql
+USES=		compiler:c++20-lang gmake pgsql
 USE_GITHUB=	yes
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
 .include <bsd.port.options.mk>
 
-CXXFLAGS+=	-std=c++17 -fno-rtti
+CXXFLAGS+=	-std=c++20 -fno-rtti -DV8_CPPGC_MICROTASK_QUEUE=1
 # Only for 64-bit architectures
 .if ${ARCH} != armv6 && ${ARCH} != armv7 && ${ARCH} != i386 && ${ARCH} != powerpc && ${ARCH} != powerpcspe
 CXXFLAGS+=	-DV8_COMPRESS_POINTERS=1 -DV8_31BIT_SMIS_ON_64BIT_ARCH=1

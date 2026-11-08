@@ -1,6 +1,6 @@
---- chrome/browser/ui/autofill/chrome_autofill_client.cc.orig	2026-06-10 12:51:34 UTC
+--- chrome/browser/ui/autofill/chrome_autofill_client.cc.orig	2026-08-13 16:48:13 UTC
 +++ chrome/browser/ui/autofill/chrome_autofill_client.cc
-@@ -315,7 +315,7 @@ ChromeAutofillClient::~ChromeAutofillClient() {
+@@ -327,7 +327,7 @@ ChromeAutofillClient::~ChromeAutofillClient() {
  }
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

@@ -1,0 +1,24 @@
+--- configure.ac.orig	2026-08-07 11:29:23.851720000 +0200
++++ configure.ac	2026-08-07 11:33:11.008191000 +0200
+@@ -608,19 +608,9 @@
+ AC_SUBST(test_gid)
+ test_basedn=dc=example,dc=com
+ AC_SUBST(test_basedn)
+-while true ; do
+-	test_ldapport=$RANDOM
+-	if test $test_ldapport -ge 1024 ; then
+-		break
+-	fi
+-done
++test_ldapport=`expr $$ % 64512 + 1024`
+ AC_SUBST(test_ldapport)
+-while true ; do
+-	test_nisport=$RANDOM
+-	if test $test_nisport -ge 1024 ; then
+-		break
+-	fi
+-done
++test_nisport=`expr $$ % 63488 + 2048`
+ if test "x$enable_nis" = xyes ; then
+ AC_SUBST(test_nisport)
+ NIS_PLUGIN_CONTINUE_WITHOUT_PORTMAP_ENV="nis_plugin_continue_without_portmap_for_testing_only_no_i_really_mean_that"

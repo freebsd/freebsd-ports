@@ -1,5 +1,5 @@
 PORTNAME=	ros-urdfdom_headers
-DISTVERSION=	1.0.6
+DISTVERSION=	3.0.1
 CATEGORIES=	devel
 
 MAINTAINER=	trueos@norwegianrockcat.com
@@ -13,6 +13,7 @@ USE_GITHUB=	yes
 
 GH_ACCOUNT=	ros
 GH_PROJECT=	${PORTNAME:S/ros-//}
+GH_TAGNAME=	d80638a
 
 NO_ARCH=	yes
 

@@ -14,7 +14,6 @@ CRAN_DEPENDS=	R-cran-fs>=1.2.4:filesystems/R-cran-fs \
 		R-cran-R6>0:devel/R-cran-R6 \
 		R-cran-rappdirs>0:devel/R-cran-rappdirs \
 		R-cran-rlang>=0.4.10:devel/R-cran-rlang
-BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 TEST_DEPENDS=	R-cran-knitr>0:print/R-cran-knitr \
 		R-cran-testthat>0:devel/R-cran-testthat

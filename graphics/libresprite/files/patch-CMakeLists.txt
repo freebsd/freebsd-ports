@@ -1,0 +1,13 @@
+-- Fix CMake 4.x compatibility by raising the minimum required CMake version.
+-- CMake 4.0 dropped support for cmake_minimum_required(VERSION < 3.5).
+
+--- CMakeLists.txt.orig	2026-08-28 06:30:00.000000000 -0700
++++ CMakeLists.txt	2026-08-28 06:30:00.000000000 -0700
+@@ -3,7 +3,7 @@
+ # LibreSprite  | Copyright (C)      2022  LibreSprite contributors
+
+-cmake_minimum_required(VERSION 3.4)
++cmake_minimum_required(VERSION 3.5)
+
+ enable_testing()
+

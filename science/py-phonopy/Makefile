@@ -1,6 +1,5 @@
 PORTNAME=	phonopy
-DISTVERSION=	4.4.0
-PORTREVISION=	1
+DISTVERSION=	4.10.0
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,18 +24,19 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}h5py>=3.0:science/py-h5py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=5.3:devel/py-pyyaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}spglib>=2.5:science/py-spglib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}symfc>=1.7:science/py-symfc@${PY_FLAVOR}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}phonors>0:science/py-phonors@${PY_FLAVOR} # undeclared dependency of phonopy, but required for run and tests
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}phonors>=0.6.0:science/py-phonors@${PY_FLAVOR} # undeclared dependency of phonopy, but required for run and tests
 
 USES=		python
 USE_PYTHON=	pep517 autoplist pytest
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_ARGS=	--disable-plugin-autoload
 TEST_WRKSRC=	${WRKSRC}/test
 
 post-install:
 	@${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR}/phonopy -maxdepth 1 -name '_phonopy*.so' -exec ${STRIP_CMD} {} +
 	@${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR}/phonopy -maxdepth 1 -name '_recgrid*.so' -exec ${STRIP_CMD} {} +
 
-# tests as of 4.4.0: 1332 passed, 25 skipped, 81 warnings in 108.92s (0:01:48)
+# tests as of 4.10.0: 48 failed, 1884 passed, 42 skipped, 239 warnings in 545.49s (0:09:05), see https://github.com/phonopy/phonopy/issues/1092
 
 .include <bsd.port.mk>

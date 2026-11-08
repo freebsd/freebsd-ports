@@ -1,0 +1,9 @@
+TIMESTAMP = 1790178231
+SHA256 (rocky/l/lcms2-2.12-3.el9.aarch64.rpm) = d7a650b6872139e9b7fa747e5a12414327e171035e519a01ad6149a540403da2
+SIZE (rocky/l/lcms2-2.12-3.el9.aarch64.rpm) = 167962
+SHA256 (rocky/l/lcms2-2.12-3.el9.i686.rpm) = 0bb687a9dc452f451f0dd8ea188ce2caf347abf1c0f1a992bdd45afcf59a1c7d
+SIZE (rocky/l/lcms2-2.12-3.el9.i686.rpm) = 188535
+SHA256 (rocky/l/lcms2-2.12-3.el9.x86_64.rpm) = f7cf689b4e88369620ed8f2a8077126e728935b3a78d8c16f44f81d6b38bb1d1
+SIZE (rocky/l/lcms2-2.12-3.el9.x86_64.rpm) = 169716
+SHA256 (rocky/l/lcms2-2.12-3.el9.src.rpm) = 47d6492e34b88ba293c05032c6822fa6860cd9da4811e6595382ca1b787edd68
+SIZE (rocky/l/lcms2-2.12-3.el9.src.rpm) = 7427177

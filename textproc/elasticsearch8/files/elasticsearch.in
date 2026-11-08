@@ -9,11 +9,11 @@
 #
 # elasticsearch_enable="YES"
 #
-# elasticsearch_user (username): Set to elasticsearch by default.
-#               Set it to required username.
-# elasticsearch_group (group):   Set to elasticsearch by default.
-#               Set it to required group.
-# elasticsearch_config (path):   Set to %%PREFIX%%/etc/elasticsearch/elasticsearch.yml by default.
+# elasticsearch_user (username): Set to %%SEARCHUSER%% by default.
+#               Set it to the required username.
+# elasticsearch_group (group):   Set to %%SEARCHUSER%% by default.
+#               Set it to the required group.
+# elasticsearch_config (path):   Set to %%ETCDIR%% by default.
 #               Set it to the config file location.
 # elasticsearch_java_home (path): Set to %%JAVA_HOME%% by default.
 #               Set it to the root of the JDK to use.
@@ -25,11 +25,11 @@ rcvar=elasticsearch_enable
 
 load_rc_config ${name}
 
-: ${elasticsearch_enable:=NO}
-: ${elasticsearch_user=elasticsearch}
-: ${elasticsearch_group=elasticsearch}
-: ${elasticsearch_config=%%PREFIX%%/etc/elasticsearch}
-: ${elasticsearch_login_class=root}
+: ${elasticsearch_enable:="NO"}
+: ${elasticsearch_user="%%SEARCHUSER%%"}
+: ${elasticsearch_group="%%SEARCHUSER%%"}
+: ${elasticsearch_config="%%ETCDIR%%"}
+: ${elasticsearch_login_class="root"}
 : ${elasticsearch_java_home="%%JAVA_HOME%%"}
 
 required_files="${elasticsearch_config}/elasticsearch.yml"
@@ -43,14 +43,14 @@ start_precmd=elasticsearch_precmd
 command=%%PREFIX%%/lib/elasticsearch/bin/elasticsearch
 command_args="-d --pidfile=${pidfile}"
 
-export ES_PATH_CONF=${elasticsearch_config}
-export ES_JAVA_HOME=${elasticsearch_java_home}
+export ES_PATH_CONF="${elasticsearch_config}"
+export ES_JAVA_HOME="${elasticsearch_java_home}"
 
 elasticsearch_precmd()
 {
-    /usr/bin/install -d -o ${elasticsearch_user} -g ${elasticsearch_group} -m 755 ${pidfile%/*}
-    /usr/bin/install -d -o ${elasticsearch_user} -g ${elasticsearch_group} -m 755 /var/db/elasticsearch
-    /usr/bin/install -d -o ${elasticsearch_user} -g ${elasticsearch_group} -m 755 /var/log/elasticsearch
+    /usr/bin/install -d -o "${elasticsearch_user}" -g "${elasticsearch_group}" -m 755 ${pidfile%/*}
+    /usr/bin/install -d -o "${elasticsearch_user}" -g "${elasticsearch_group}" -m 755 /var/db/elasticsearch
+    /usr/bin/install -d -o "${elasticsearch_user}" -g "${elasticsearch_group}" -m 755 /var/log/elasticsearch
 }
 
 elasticsearch_console()
@@ -64,21 +64,21 @@ if [ -n "$2" ]; then
     if [ "x${elasticsearch_profiles}" != "x" ]; then
         eval elasticsearch_config="\${elasticsearch_${profile}_config:-}"
         if [ "x${elasticsearch_config}" = "x" ]; then
-            echo "You must define a configuration  (elasticsearch_${profile}_config)"
+            echo "You must define a configuration path: elasticsearch_${profile}_config"
             exit 1
         fi
-	export ES_PATH_CONF=${elasticsearch_config}
-        required_files="${elasticsearch_config}/elasticsearch.yml"
-        required_files="${elasticsearch_config}/jvm.options"
-        eval elasticsearch_enable="\${elasticsearch_${profile}_enable:-${elasticsearch_enable}}"
-        pidfile="${_pidprefix}.${profile}.pid"
-	command_args="-d --pidfile=${pidfile}"
-	echo "===> elasticsearch profile: ${profile}"
+        export ES_PATH_CONF="${elasticsearch_config}"
+              required_files="${elasticsearch_config}/elasticsearch.yml"
+              required_files="${elasticsearch_config}/jvm.options"
+              eval elasticsearch_enable="\${elasticsearch_${profile}_enable:-${elasticsearch_enable}}"
+              pidfile="${_pidprefix}.${profile}.pid"
+        command_args="-d --pidfile=${pidfile}"
+        echo "===> Elasticsearch profile: ${profile}"
     else
         echo "$0: extra argument ignored"
     fi
 else
-    if [ "x${elasticsearch_profiles}" != "x" -a "x$1" != "x" ]; then
+    if [ "x${elasticsearch_profiles}" != "x" ] && [ "x$1" != "x" ]; then
         for profile in ${elasticsearch_profiles}; do
             eval _enable="\${elasticsearch_${profile}_enable}"
             case "x${_enable:-${elasticsearch_enable}}" in
@@ -110,19 +110,6 @@ else
         done
         exit 0
     fi
-fi
-
-if [ "x${elasticsearch_mem_min}" != "x" ]; then
-    echo "The elasticsearch_mem_min variable is no longer supported please set this in ${elasticsearch_config}/jvm.options"
-    exit 1;
-fi
-if [ "x${elasticsearch_mem_max}" != "x" ]; then
-    echo "The elasticsearch_mem_max variable is no longer supported please set this in ${elasticsearch_config}/jvm.options"
-    exit 1;
-fi
-if [ "x${elasticsearch_props}" != "x" ]; then
-    echo "The elasticsearch_props variable is no longer supported please set this in ${elasticsearch_config}/jvm.options"
-    exit 1;
 fi
 
 run_rc_command "$1"

@@ -1,17 +1,20 @@
 PORTNAME=	nagios-pf-plugin
 PORTVERSION=	0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	rand@iteris.com
 COMMENT=	Nagios plugin for checking PF
 WWW=		https://github.com/kian/nagios-pf-plugin/
 
-# https://reviews.freebsd.org/D41651
-BROKEN_FreeBSD_15=	requires no longer supported ioctl(DIOCGETSTATUS)
+.include <bsd.port.options.mk>
 
-DEPRECATED=	dead upstream, broken on FreeBSD 15
-EXPIRATION_DATE=	2026-03-31
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1500000
+LIB_DEPENDS=	libpfctl.so:net/libpfctl
+
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lpfctl
+.endif
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	kian
@@ -19,6 +22,12 @@ GH_TAGNAME=	2aba423
 
 PLIST_FILES=	libexec/nagios/check_pf
 SUB_FILES=	pkg-message
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1500000
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-check_pf.c
+.else
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-check_pf_15.c
+.endif
 
 pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/nagios

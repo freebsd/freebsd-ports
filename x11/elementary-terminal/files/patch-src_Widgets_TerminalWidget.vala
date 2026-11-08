@@ -1,21 +1,22 @@
---- src/Widgets/TerminalWidget.vala.orig	2022-10-27 16:47:44 UTC
+--- src/Widgets/TerminalWidget.vala.orig	2026-08-03 19:07:29 UTC
 +++ src/Widgets/TerminalWidget.vala
-@@ -68,13 +68,6 @@ namespace Terminal {
-         }
+@@ -65,14 +65,6 @@ namespace Terminal {
+         public const string[] ACCELS_ZOOM_IN = { "<Control>plus", "<Control>equal", "<Control>KP_Add", null };
+         public const string[] ACCELS_ZOOM_OUT = { "<Control>minus", "<Control>KP_Subtract", null };
  
-         public int default_size;
--        const string SEND_PROCESS_FINISHED_BASH = "dbus-send --type=method_call " +
--                                                  "--session --dest=io.elementary.terminal " +
--                                                  "/io/elementary/terminal " +
--                                                  "io.elementary.terminal.ProcessFinished " +
--                                                  "string:$PANTHEON_TERMINAL_ID " +
--                                                  "string:\"$(fc -nl -1 | cut -c 3-)\" " +
--                                                  "int32:\$__bp_last_ret_value >/dev/null 2>&1";
- 
+-        private const string SEND_PROCESS_FINISHED_BASH = "dbus-send --type=method_call " +
+-                                                          "--session --dest=io.elementary.terminal " +
+-                                                          "/io/elementary/terminal " +
+-                                                          "io.elementary.terminal.ProcessFinished " +
+-                                                          "string:$PANTHEON_TERMINAL_ID " +
+-                                                          "string:\"$(fc -nl -1 | cut -c 3-)\" " +
+-                                                          "int32:\$__bp_last_ret_value >/dev/null 2>&1";
+-
          /* Following strings are used to build RegEx for matching URIs */
-         const string USERCHARS = "-[:alnum:]";
-@@ -351,15 +344,7 @@ namespace Terminal {
-                 shell = Vte.get_user_shell ();
+         private const string USERCHARS = "-[:alnum:]";
+         private const string USERCHARS_CLASS = "[" + USERCHARS + "]";
+@@ -867,15 +859,7 @@ namespace Terminal {
+             }
  
              envv = {
 -                // Export ID so we can identify the terminal for which the process completion is reported
@@ -31,8 +32,8 @@
              };
  
              /* We need opening uri to be available asap when constructing window with working directory
-@@ -436,12 +421,49 @@ namespace Terminal {
-             return this.match_check_event (event, null);
+@@ -948,12 +932,49 @@ namespace Terminal {
+             return check_match_at (x, y, null);
          }
  
 +        private string? extract_cwd (string data) {

@@ -1,12 +1,11 @@
 bin/cluster-all-nodes
-bin/cluster-backup-nodes
 bin/cluster-compute-nodes
 bin/cluster-down-nodes
 bin/cluster-file-servers
 bin/cluster-head-check
 bin/cluster-io-nodes
 bin/cluster-node-status
-bin/cluster-passwd
+@(root,wheel,4510) bin/cluster-passwd
 bin/cluster-pfs-nodes
 bin/cluster-pw-check
 bin/cluster-raid-nodes
@@ -87,7 +86,6 @@ sbin/cluster-software-manager
 sbin/cluster-spcm-update-from-wip
 sbin/cluster-ssh-keygen
 sbin/cluster-stay-down
-sbin/cluster-sync-backup-nodes
 sbin/cluster-sync-files
 sbin/cluster-sync-node
 sbin/cluster-sync-packages
@@ -98,7 +96,6 @@ sbin/cluster-sync-user
 sbin/cluster-transfer-pw
 sbin/cluster-unlock-local-pw
 sbin/cluster-unlock-user
-sbin/cluster-update-backup-nodes
 sbin/cluster-update-file-servers
 sbin/cluster-update-manager
 sbin/cluster-update-vis-nodes
@@ -129,7 +126,6 @@ sbin/slurm-restart
 sbin/slurm-resume-all-updated-nodes
 sbin/slurm-resume-nodes
 sbin/slurm-resume-updated-nodes
-sbin/slurm-sync-backup
 sbin/slurm-sync-config
 sbin/slurm-update-idle-nodes
 sbin/slurm-usage-report

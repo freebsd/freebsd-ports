@@ -1,0 +1,19 @@
+--- pyproject.toml.orig	2026-06-15 17:48:12 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@ requires = [
+ [build-system]
+ requires = [
+-    "setuptools >= 77",
++    "setuptools >= 61",
+     "setuptools-scm >= 8",
+ ]
+ build-backend = "setuptools.build_meta"
+@@ -41,7 +41,7 @@ readme = "README.md"
+ name = "jbpy"
+ description = "Library for reading and writing Joint BIIF Profile (JBP) files (NITF and NSIF)"
+ readme = "README.md"
+-license = "MIT"
++license = {text = "MIT"}
+ authors = [
+     {name = "Valkyrie Systems Corporation"},
+ ]

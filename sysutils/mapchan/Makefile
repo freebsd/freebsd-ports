@@ -1,6 +1,6 @@
 PORTNAME=	mapchan
-PORTVERSION=	3.2
-PORTREVISION=	4
+DISTVERSION=	3.2
+PORTREVISION=	5
 CATEGORIES=	sysutils converters
 MASTER_SITES=	SF
 
@@ -9,6 +9,9 @@ COMMENT=	Transform the input and output of a terminal (SCO Unix alike)
 WWW=		https://mapchan.sourceforge.io/
 
 LICENSE=	GPLv2
+
+DEPRECATED=	Incomplete implementation and does not work as intended anymore
+EXPIRATION_DATE=	2026-11-10
 
 USES=		iconv tar:tgz
 

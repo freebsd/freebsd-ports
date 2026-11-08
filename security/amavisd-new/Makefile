@@ -1,5 +1,5 @@
 PORTNAME=	amavisd-new
-DISTVERSION=	2.14.0
+DISTVERSION=	2.15.0
 PORTEPOCH=	1
 CATEGORIES=	security
 
@@ -23,7 +23,7 @@ USE_PERL5=	run
 USE_GITLAB=	yes
 GL_ACCOUNT=	amavis
 GL_PROJECT=	amavis
-GL_TAGNAME=	fc0e86edb3fd4fb779e4e906fb1cc61fdf7e6e7f
+GL_TAGNAME=	5cd43bdfb1b83e299471e179ff7c13d733ed3c43
 
 SHEBANG_FILES=	bin/amavisd bin/amavisd-agent bin/amavisd-nanny \
 		bin/amavisd-release bin/amavisd-snmp-subagent \

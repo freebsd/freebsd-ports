@@ -1,5 +1,6 @@
 PORTNAME=	highwayhash
 PORTVERSION=	g20240418
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security
 
@@ -22,8 +23,9 @@ GH_TAGNAME=	f8381f3
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH:Mpowerpc*}
-CXXFLAGS+=	-mpower8-vector
+.if ${ARCH} == powerpc64le
+MAKE_ENV+=	HH_POWER=1 HH_VSX=1
+.elif ${ARCH:Mpowerpc*}
 MAKE_ENV+=	HH_POWER=1
 .elif ${ARCH} == aarch64 || ${ARCH:Marmv*}
 MAKE_ENV+=	HH_ARM=1

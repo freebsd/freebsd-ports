@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2018-01-22 13:10:17 UTC
++++ CMakeLists.txt
+@@ -18,7 +18,7 @@
+ 
+ # Preamble ####################################################################
+ #
+-cmake_minimum_required(VERSION 3.0.1)
++cmake_minimum_required(VERSION 3.5)
+ 
+ project(PNGwriter VERSION 0.7.0 LANGUAGES CXX)
+ 

@@ -1,4 +1,4 @@
---- ui/ozone/platform/wayland/host/wayland_frame_manager.cc.orig	2026-04-28 21:06:17 UTC
+--- ui/ozone/platform/wayland/host/wayland_frame_manager.cc.orig	2026-09-03 07:08:43 UTC
 +++ ui/ozone/platform/wayland/host/wayland_frame_manager.cc
 @@ -5,7 +5,9 @@
  #include "ui/ozone/platform/wayland/host/wayland_frame_manager.h"
@@ -10,7 +10,7 @@
  
  #include <cstdint>
  #include <variant>
-@@ -463,8 +465,10 @@ std::optional<bool> WaylandFrameManager::ApplySurfaceC
+@@ -467,8 +469,10 @@ std::optional<bool> WaylandFrameManager::ApplySurfaceC
    surface->UpdateBufferDamageRegion(
        gfx::ToEnclosingRectIgnoringError(surface_damage));
  
@@ -21,7 +21,7 @@
  
    bool needs_commit = false;
  
-@@ -496,6 +500,9 @@ std::optional<bool> WaylandFrameManager::ApplySurfaceC
+@@ -500,6 +504,9 @@ std::optional<bool> WaylandFrameManager::ApplySurfaceC
        case WaylandBufferHandle::SyncMethod::kNone:
          break;
        case WaylandBufferHandle::SyncMethod::kSyncobj:
@@ -31,7 +31,7 @@
          surface->RequestExplicitRelease(
              base::BindOnce(&WaylandFrameManager::OnExplicitBufferRelease,
                             weak_factory_.GetWeakPtr(), surface));
-@@ -503,6 +510,9 @@ std::optional<bool> WaylandFrameManager::ApplySurfaceC
+@@ -507,6 +514,9 @@ std::optional<bool> WaylandFrameManager::ApplySurfaceC
        case WaylandBufferHandle::SyncMethod::kDMAFence:
          [[fallthrough]];
        case WaylandBufferHandle::SyncMethod::kImplicit:
@@ -41,7 +41,7 @@
          buffer_handle->set_buffer_released_callback(
              base::BindOnce(&WaylandFrameManager::OnWlBufferRelease,
                             weak_factory_.GetWeakPtr(), surface),
-@@ -737,8 +747,10 @@ void WaylandFrameManager::OnExplicitBufferRelease(Wayl
+@@ -741,8 +751,10 @@ void WaylandFrameManager::OnExplicitBufferRelease(Wayl
  
        if (fence.is_valid()) {
          if (frame->merged_release_fence_fd.is_valid()) {
@@ -52,7 +52,7 @@
          } else {
            frame->merged_release_fence_fd = std::move(fence);
          }
-@@ -776,8 +788,10 @@ void WaylandFrameManager::OnWlBufferRelease(WaylandSur
+@@ -780,8 +792,10 @@ void WaylandFrameManager::OnWlBufferRelease(WaylandSur
  
          if (fence.is_valid()) {
            if (frame->merged_release_fence_fd.is_valid()) {

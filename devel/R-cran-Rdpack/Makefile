@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Update and Manipulate Rd Documentation Objects
-WWW=		https://cran.r-project.org/web/packages/Rdpack/
+WWW=		https://cran.r-project.org/package=Rdpack
 
 LICENSE=	GPLv2+
 

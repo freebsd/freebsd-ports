@@ -1,0 +1,31 @@
+--- CMakeLists.txt.orig	2024-10-30 15:32:39 UTC
++++ CMakeLists.txt
+@@ -27,7 +27,7 @@ set(SCRIPT_DIR "${PROJECT_SOURCE_DIR}/script")
+ set(SCRIPT_DIR "${PROJECT_SOURCE_DIR}/script")
+ 
+ # Version.
+-set(CLIB_VERSION "${COLLECT_MAJOR}.${COLLECT_MINOR}.${COLLECT_PATCH}")
++set(CLIB_VERSION "24.10.0")
+ 
+ # Include module to check existing libraries.
+ include(CheckLibraryExists)
+@@ -110,6 +110,10 @@ endif()
+                   "be disabled.")
+ endif()
+ 
++if(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
++  find_package(fmt CONFIG REQUIRED)
++endif()
++
+ # Set sources.
+ set(SOURCES
+     "${SRC_DIR}/library.cc"
+@@ -165,7 +169,7 @@ install(
+ # Install header files for devel.
+ install(
+   DIRECTORY "${INCLUDE_DIR}/"
+-  DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/centreon-clib"
++  DESTINATION "${CMAKE_INSTALL_PREFIX}/include/centreon-clib"
+   COMPONENT "development"
+   FILES_MATCHING
+   PATTERN "*.hh")

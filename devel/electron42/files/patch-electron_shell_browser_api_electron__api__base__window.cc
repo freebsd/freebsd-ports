@@ -1,4 +1,4 @@
---- electron/shell/browser/api/electron_api_base_window.cc.orig	2026-05-08 13:54:01 UTC
+--- electron/shell/browser/api/electron_api_base_window.cc.orig	2026-08-31 00:54:46 UTC
 +++ electron/shell/browser/api/electron_api_base_window.cc
 @@ -43,7 +43,7 @@
  #include "shell/browser/ui/views/win_frame_view.h"
@@ -9,7 +9,7 @@
  #include "shell/browser/ui/views/opaque_frame_view.h"
  #include "ui/gfx/image/image_skia.h"
  #endif
-@@ -1043,7 +1043,7 @@ void BaseWindow::SetIconImpl(v8::Isolate* isolate,
+@@ -1063,7 +1063,7 @@ void BaseWindow::SetIconImpl(v8::Isolate* isolate,
    static_cast<NativeWindowViews*>(window_.get())
        ->SetIcon(native_image->GetHICON(GetSystemMetrics(SM_CXSMICON)),
                  native_image->GetHICON(GetSystemMetrics(SM_CXICON)));
@@ -18,7 +18,7 @@
    static_cast<NativeWindowViews*>(window_.get())
        ->SetIcon(native_image->image().AsImageSkia());
  #endif
-@@ -1144,7 +1144,7 @@ v8::Local<v8::Value> BaseWindow::GetAccentColor() cons
+@@ -1164,7 +1164,7 @@ v8::Local<v8::Value> BaseWindow::GetAccentColor() cons
  }
  #endif
  
@@ -27,7 +27,7 @@
  void BaseWindow::SetTitleBarOverlay(const gin_helper::Dictionary& options,
                                      gin::Arguments* args) {
    static_cast<NativeWindowViews*>(window_.get())
-@@ -1326,7 +1326,7 @@ void BaseWindow::BuildPrototype(v8::Isolate* isolate,
+@@ -1346,7 +1346,7 @@ void BaseWindow::BuildPrototype(v8::Isolate* isolate,
        .SetMethod("setThumbnailToolTip", &BaseWindow::SetThumbnailToolTip)
        .SetMethod("setAppDetails", &BaseWindow::SetAppDetails)
  #endif

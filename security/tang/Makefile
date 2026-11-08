@@ -1,6 +1,5 @@
 PORTNAME=	tang
-DISTVERSION=	15
-PORTREVISION=	1
+DISTVERSION=	16
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/latchset/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -11,13 +10,13 @@ WWW=		https://github.com/latchset/tang
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS= 	libllhttp.so:www/llhttp \
-		libjansson.so:devel/jansson \
-		libjose.so:net/jose
-BUILD_DEPENDS=	a2x:textproc/asciidoc \
-		${LOCALBASE}/libdata/pkgconfig/jose.pc:net/jose \
-		socat:net/socat \
-		curl:ftp/curl
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/jose.pc:net/jose \
+		a2x:textproc/asciidoc \
+		curl:ftp/curl \
+		socat:net/socat
+LIB_DEPENDS=	libjansson.so:devel/jansson \
+		libjose.so:net/jose \
+		libllhttp.so:www/llhttp
 
 USES=		compiler:c11 cpe meson pkgconfig tar:xz
 

@@ -1,6 +1,6 @@
 PORTNAME=	simple-dftd3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.0
+DISTVERSION=	1.7.0
 CATEGORIES=	science # chemistry
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,8 +9,6 @@ WWW=		https://github.com/dftd3/simple-dftd3
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BROKEN_aarch64=	cannot open module file 'ieee_arithmetic.mod' for reading at (1): No such file or directory
 
 BUILD_DEPENDS=	mstore>0:science/mstore
 LIB_DEPENDS=	libmctc-lib.so:science/mctc-lib \
@@ -28,6 +26,6 @@ CMAKE_ON=	BUILD_SHARED_LIBS
 post-patch: # see https://github.com/toml-f/toml-f/issues/51
 	@${REINPLACE_CMD} -e 's|$${CMAKE_Fortran_COMPILER_ID}-$${CMAKE_Fortran_COMPILER_VERSION}||' ${WRKSRC}/config/CMakeLists.txt
 
-# tests as of 1.4.0: 100% tests passed, 0 tests failed out of 7
+# tests as of 1.7.0: 100% tests passed, 0 tests failed out of 7
 
 .include <bsd.port.mk>

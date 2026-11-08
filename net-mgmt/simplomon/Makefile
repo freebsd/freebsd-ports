@@ -1,6 +1,6 @@
 PORTNAME=	simplomon
 DISTVERSION=	g20250224
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	net-mgmt dns net
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Simple network status and uptime monitoring tool
@@ -13,10 +13,12 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pip>0:devel/py-pip@${PY_FLAVOR} \
 		nlohmann-json>0:devel/nlohmann-json \
 		xxd>0:sysutils/xxd
 
-LIB_DEPENDS=	libcurl.so:ftp/curl \
+LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
+		libbrotlienc.so:archivers/brotli \
+		libcurl.so:ftp/curl \
 		libfmt.so:devel/libfmt \
 		libnghttp2.so:www/libnghttp2
-USES=		cmake:indirect compiler:c++17-lang llvm:18,build lua:53,build \
+USES=		cmake:indirect compiler:c++20-lang lua:53,build \
 		meson ninja pkgconfig python:build sqlite ssl
 
 USE_GITHUB=	yes

@@ -1,0 +1,3 @@
+FreeIPA server provides integrated identity management,
+authentication, authorization, and policy services based on
+LDAP, Kerberos, DNS, and PKI technologies.

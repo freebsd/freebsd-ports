@@ -1,6 +1,6 @@
 PORTNAME=	git-cinnabar
-DISTVERSION=	0.7.4
-PORTREVISION=	3
+DISTVERSION=	0.7.5
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -17,7 +17,7 @@ RUN_DEPENDS=	git:devel/git
 USES=		cargo gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	glandium
-GH_TUPLE=	git-for-windows:git:v2.53.0.windows.1-2-g7f53654581:git/git-core
+GH_TUPLE=	git-for-windows:git:v2.55.0.windows.1-4-g33e5ecf213:git/git-core
 DATADIR=	${PREFIX}/libexec/git-core
 PORTDATA=	*
 PORTDOCS=	README.md

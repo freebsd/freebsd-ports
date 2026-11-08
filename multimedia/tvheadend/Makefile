@@ -1,5 +1,5 @@
 PORTNAME=	tvheadend
-PORTVERSION=	4.3.0.20260709
+PORTVERSION=	4.3.0.20261028
 DISTVERSIONPREFIX=	v
 CATEGORIES=	multimedia
 
@@ -14,14 +14,15 @@ BUILD_DEPENDS=	bash:shells/bash \
 		cmake:devel/cmake-core \
 		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 LIB_DEPENDS=	libdvbcsa.so:multimedia/libdvbcsa \
-		libcurl.so:ftp/curl \
+		libpcre2-8.so:devel/pcre2 \
 		liburiparser.so:net/uriparser \
 		libunwind.so:devel/libunwind
 RUN_DEPENDS=	dtv-scan-tables>=0:multimedia/dtv-scan-tables
 
-USES=		compiler:c++11-lang gettext gmake pkgconfig python shebangfix ssl
+USES=		compiler:c++11-lang gettext-tools gmake iconv:translit pkgconfig \
+		python shebangfix ssl
 USE_GITHUB=	yes
-GH_TAGNAME=	8ddfe27
+GH_TAGNAME=	443f15b
 
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
@@ -47,14 +48,19 @@ SUB_LIST+=	TVHUSER="${TVHUSER}" \
 
 CONFIGURE_ENV+=	PLATFORM=freebsd
 CONFIGURE_ARGS+=--disable-dvbscan --disable-zlib --disable-hdhomerun_static \
-		--disable-bintray_cache --disable-ffmpeg_static --disable-pie
+		--disable-bintray_cache --disable-ffmpeg_static --disable-pie \
+		--disable-vue_build
 CFLAGS+=	-I${LOCALBASE}/include -Wno-conversion -Wno-int-to-pointer-cast
 LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo -lssl -lcrypto -lz
 
-OPTIONS_DEFINE=	AVAHI DVBEN50221 HDHOMERUN INOTIFY TRANSCODING XMLTV
+OPTIONS_DEFINE=	AVAHI DBUS DVBEN50221 HDHOMERUN INOTIFY TRANSCODING XMLTV
 OPTIONS_DEFAULT=HDHOMERUN INOTIFY
 
 AVAHI_LIB_DEPENDS=	libavahi-client.so:net/avahi-app
+AVAHI_CONFIGURE_ENABLE=	avahi
+
+DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
+DBUS_CONFIGURE_ENABLE=	dbus_1
 
 DVBEN50221_DESC=	Hardware CAM support
 DVBEN50221_LIB_DEPENDS=	libdvben50221.so:multimedia/dvb-apps

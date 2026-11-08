@@ -1,6 +1,5 @@
 PORTNAME=	scribus
-DISTVERSION=	1.6.6
-PORTREVISION=	1
+DISTVERSION=	1.6.7
 CATEGORIES=	print editors
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}${PKGNAMESUFFIX}/${PORTVERSION}/ \
 		http://www.scribus.net/downloads/${PORTVERSION}/
@@ -31,27 +30,28 @@ LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 		libqxp-0.0.so:textproc/libqxp \
 		libzmf-0.0.so:graphics/libzmf
 
-USES=		cmake compiler:c++17-lang desktop-file-utils gnome jpeg \
+USES=		cmake compiler:c++20-lang desktop-file-utils gnome jpeg \
 		pkgconfig python qt:5 shared-mime-info tar:xz
 USE_QT=		buildtools:build core gui linguisttools:build network opengl \
 		printsupport qmake:build widgets xml
 USE_GNOME=	cairo libxml2
 
-CMAKE_ARGS=	-DWANT_CPP17=YES
-
 CONFLICTS_INSTALL=	scribus-devel
 
-OPTIONS_DEFINE=	BOOST DOCS GRAPHICSMAGICK HUNSPELL OSG PDF
+OPTIONS_DEFINE=	BOOST DOCS EXAMPLES GRAPHICSMAGICK HUNSPELL OSG PDF
 OPTIONS_DEFAULT=BOOST GRAPHICSMAGICK HUNSPELL OSG PDF
+OPTIONS_SUB=	yes
 
 BOOST_DESC=	Enable support for Boost-based enhancement
 GRAPHICSMAGICK_DESC=	Use GraphicsMagick for image import support
 HUNSPELL_DESC=	Enable spellchecking via hunspell
 OSG_DESC=	Enable 3D rendering via osg
-PDF_DESC=	Enable PDF export via podofo
+PDF_DESC=	Embed PDF files in PDF export and import AI files via podofo
 
 BOOST_BUILD_DEPENDS=	boost-libs>0:devel/boost-libs
 BOOST_CMAKE_BOOL=	WITH_BOOST
+
+EXAMPLES_CMAKE_BOOL_OFF=	WANT_NOEXAMPLES
 
 GRAPHICSMAGICK_LIB_DEPENDS=	libGraphicsMagick.so:graphics/GraphicsMagick
 GRAPHICSMAGICK_CMAKE_BOOL=	WANT_GRAPHICSMAGICK

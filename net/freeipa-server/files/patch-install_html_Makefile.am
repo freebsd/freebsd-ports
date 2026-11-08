@@ -1,0 +1,11 @@
+--- install/html/Makefile.am.orig	2025-01-15 09:52:47 UTC
++++ install/html/Makefile.am
+@@ -19,7 +19,6 @@ install-data-hook:
+ install-data-hook:
+ 	$(INSTALL) -d -m 755 $(DESTDIR)$(htmldatadir)
+ 	for FILE in $(app_DATA); do				\
+-		$(LN_S) --force --relative			\
+-			$(DESTDIR)$(appdir)/$${FILE}		\
++		$(LN_S) -sf ../../../etc/ipa/html/$${FILE} \
+ 			$(DESTDIR)$(htmldatadir)/$${FILE};	\
+ 	done

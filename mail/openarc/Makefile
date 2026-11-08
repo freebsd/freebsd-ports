@@ -7,8 +7,13 @@ MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library to validate use of certain identifiers in messages
 WWW=		https://github.com/trusteddomainproject/OpenARC
 
-LICENSE=	AGPLv3
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE=	BSD2CLAUSE SENDMAIL
+LICENSE_COMB=	multi
+LICENSE_GROUPS_SENDMAIL=	FSF OSI
+LICENSE_NAME_SENDMAIL=	Sendmail Open Source License
+LICENSE_FILE_BSD2CLAUSE=	${WRKSRC}/LICENSE
+LICENSE_FILE_SENDMAIL=	${WRKSRC}/LICENSE.Sendmail
+LICENSE_PERMS_SENDMAIL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=	autoconf-archive>0:devel/autoconf-archive
 LIB_DEPENDS=	libjansson.so:devel/jansson

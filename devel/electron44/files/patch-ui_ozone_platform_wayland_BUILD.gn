@@ -1,0 +1,10 @@
+--- ui/ozone/platform/wayland/BUILD.gn.orig	2026-06-23 23:37:18 UTC
++++ ui/ozone/platform/wayland/BUILD.gn
+@@ -248,7 +248,6 @@ source_set("wayland") {
+     "//mojo/public/cpp/system",
+     "//skia",
+     "//third_party/angle:includes",
+-    "//third_party/libsync",
+     "//third_party/wayland:wayland_client",
+     "//third_party/wayland:wayland_cursor",
+     "//third_party/wayland:wayland_egl",

@@ -1,8 +1,7 @@
 PORTNAME=	manrope
-DISTVERSION=	4.20211221
+DISTVERSION=	4.505
+PORTEPOCH=	1
 CATEGORIES=	x11-fonts
-MASTER_SITES=	https://www.gent.media/assets/manrope/
-DISTNAME=	manrope
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Modern geometric sans-serif font
@@ -10,13 +9,14 @@ WWW=		https://www.gent.media/manrope
 
 LICENSE=	OFL11
 
-USES=		fonts zip
+USES=		fonts
 FONTNAME=	Manrope
+USE_GITHUB=	yes
+GH_ACCOUNT=	googlefonts
+GH_TAGNAME=	468c0dbe38efa331b80bfe9448256abe27be44c3
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-
-NO_WRKSUBDIR=	yes
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${FONTSDIR}

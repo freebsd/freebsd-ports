@@ -24,6 +24,7 @@ include/Corrade/Containers/PairStl.h
 include/Corrade/Containers/Pointer.h
 include/Corrade/Containers/PointerStl.h
 include/Corrade/Containers/Reference.h
+include/Corrade/Containers/ReferenceStl.h
 include/Corrade/Containers/ScopeGuard.h
 include/Corrade/Containers/StaticArray.h
 include/Corrade/Containers/StridedArrayView.h
@@ -85,6 +86,7 @@ include/Corrade/Utility/Debug.h
 include/Corrade/Utility/DebugAssert.h
 include/Corrade/Utility/DebugStl.h
 include/Corrade/Utility/DebugStlStringView.h
+include/Corrade/Utility/DeprecationMacros.h
 include/Corrade/Utility/Directory.h
 include/Corrade/Utility/Endianness.h
 include/Corrade/Utility/EndiannessBatch.h

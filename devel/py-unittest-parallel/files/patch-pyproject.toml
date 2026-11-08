@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2026-08-06 18:00:34 UTC
++++ pyproject.toml
+@@ -7,7 +7,7 @@ readme = "README.md"
+ version = "1.8.3"
+ description = "Parallel unit test runner with coverage support"
+ readme = "README.md"
+-license = "MIT"
++license = {text = "MIT"}
+ keywords = ["test", "unittest", "coverage", "parallel"]
+ authors = [
+     {name = "Craig A. Hobbs", email = "craigahobbs@gmail.com"}

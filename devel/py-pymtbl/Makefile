@@ -1,6 +1,5 @@
 PORTNAME=	pymtbl
-PORTVERSION=	0.6.0
-PORTREVISION=	3
+PORTVERSION=	0.6.1
 CATEGORIES=	devel python
 MASTER_SITES=	FARSIGHT LOCAL/truckman/farsight
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,10 +11,12 @@ WWW=		https://github.com/farsightsec/pymtbl
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 LIB_DEPENDS=	libmtbl.so:devel/mtbl
 
 USES=		pkgconfig python shebangfix uniquefiles:dirs
-USE_PYTHON=	autoplist cython distutils
+USE_PYTHON=	autoplist cython pep517
 
 SHEBANG_FILES=	examples/*.py examples/*/*.py
 

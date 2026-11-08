@@ -1,6 +1,6 @@
 PORTNAME=	jh2
-PORTVERSION=	5.0.11
-PORTREVISION=	3
+PORTVERSION=	5.0.15
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI \
 		https://github.com/jawah/h2/releases/download/v${PORTVERSION}/
@@ -22,5 +22,6 @@ USE_PYTHON=	autoplist concurrent pep517
 
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
+CARGO_TEST=	no
 
 .include <bsd.port.mk>

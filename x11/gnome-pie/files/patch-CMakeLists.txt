@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2021-07-17 09:00:37 UTC
++++ CMakeLists.txt
+@@ -4,7 +4,7 @@ project("gnomepie" C)
+ 
+ project("gnomepie" C)
+ 
+-cmake_minimum_required(VERSION 2.6)
++cmake_minimum_required(VERSION 3.5)
+ 
+ # Location where cmake first looks for modules.
+ list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/vala)

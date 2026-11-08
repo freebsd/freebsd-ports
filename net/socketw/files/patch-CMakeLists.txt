@@ -1,0 +1,15 @@
+--- CMakeLists.txt.orig	2022-03-18 09:17:18 UTC
++++ CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 3.0.2)
++cmake_minimum_required(VERSION 3.10)
+ 
+ # Required for conan
+ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_BINARY_DIR})
+@@ -82,4 +82,4 @@ install(
+         FILES ${CMAKE_BINARY_DIR}/SocketWConfig.cmake
+         ${CMAKE_BINARY_DIR}/SocketWConfigVersion.cmake
+         DESTINATION ${CMAKEFILES_INSTALL_DIR}
+-)
+\ No newline at end of file
++)

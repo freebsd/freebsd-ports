@@ -1,0 +1,39 @@
+--- net/dns/BUILD.gn.orig	2026-07-07 05:57:55 UTC
++++ net/dns/BUILD.gn
+@@ -167,7 +167,7 @@ source_set("dns") {
+       "dns_config_service_android.cc",
+       "dns_config_service_android.h",
+     ]
+-  } else if (is_linux) {
++  } else if (is_linux && !is_bsd) {
+     sources += [
+       "dns_config_service_linux.cc",
+       "dns_config_service_linux.h",
+@@ -201,6 +201,7 @@ source_set("dns") {
+   }
+ 
+   deps = [ "//net:net_deps" ]
++  deps += [ "//services/screen_ai/buildflags" ]
+ 
+   public_deps = [
+     ":dns_client",
+@@ -281,6 +282,7 @@ source_set("host_resolver") {
+   deps = [
+     "//net:net_deps",
+     "//net/dns/public",
++    "//printing/buildflags",
+   ]
+   public_deps = [ "//net:net_public_deps" ]
+ 
+@@ -483,9 +485,9 @@ source_set("tests") {
+       "mock_dns_platform_android_attempt_delegate.cc",
+       "mock_dns_platform_android_attempt_delegate.h",
+     ]
+-  } else if (is_linux) {
++  } else if (is_linux && !is_bsd) {
+     sources += [ "dns_config_service_linux_unittest.cc" ]
+-  } else if (is_posix) {
++  } else if (is_posix && !is_bsd) {
+     sources += [ "dns_config_service_posix_unittest.cc" ]
+   }
+ 

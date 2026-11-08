@@ -1,0 +1,22 @@
+diff --git meson.build meson.build
+index 642bdad3..f624e538 100644
+--- meson.build
++++ meson.build
+@@ -42,7 +42,7 @@ liferea_deps = [
+   dependency('glib-2.0', version: '>= 2.74.0'),
+   dependency('gsettings-desktop-schemas'),
+   dependency('gtk4', version: '>= 4.12.0'),
+-  dependency('libadwaita-1', version: '>=1.9'),
++  dependency('libadwaita-1', version: '>=1.8.5'),
+   dependency('json-glib-1.0', version: '>= 1.6'),
+   dependency('libxml-2.0', version: '>= 2.6.12'),
+   dependency('libxslt', version: '>= 1.1.19'),
+@@ -95,7 +95,7 @@ endforeach
+ 
+ install_subdir('plugins', install_dir: libdir)
+ install_subdir('css', install_dir: datadir)
+-install_subdir('opml', install_dir: datadir)
++install_subdir('opml', install_dir: datadir, exclude_files: ['update.sh'])
+ install_subdir('resources/help', install_dir: datadir)
+ 
+ dbus_service_file = configure_file(

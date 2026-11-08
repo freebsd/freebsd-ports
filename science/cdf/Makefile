@@ -1,13 +1,11 @@
 PORTNAME=	cdf3
-DISTVERSION=	3.9.1
-PORTREVISION=	1
+DISTVERSION=	3.9.2
 CATEGORIES=	science
-MASTER_SITES=	https://spdf.gsfc.nasa.gov/pub/software/cdf/dist/cdf39_1/
+MASTER_SITES=	https://spdf.gsfc.nasa.gov/pub/software/cdf/dist/cdf${VER}/unix/
 DISTNAME=	cdf${VER}-dist-cdf
-DIST_SUBDIR=	${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	alven@FreeBSD.org
-COMMENT=	Device independent view of the CDF data model
+COMMENT=	NASA Common Data Format (CDF) library for scientific data management
 WWW=		https://cdf.gsfc.nasa.gov/
 
 LICENSE=	NASA-G
@@ -15,30 +13,23 @@ LICENSE_NAME=	NASA/Goddard Space Flight Center
 LICENSE_FILE=	${WRKSRC}/CDF_copyright.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BUILD_DEPENDS=	bash:shells/bash
-
-USES=		fortran gmake ncurses
+USES=		cmake:testing fortran ncurses
 USE_LDCONFIG=	yes
 
-MAKE_ARGS+=	OS=freebsd ENV=gnu all
-MAKE_FLAGS=	INSTALLDIR=${STAGEDIR}${PREFIX} OS=freebsd ENV=gnu \
-		FORTRAN=yes FC_freebsd=${F77}
-MAKE_JOBS_UNSAFE=	yes
-TEST_TARGET=	test
-
-PIE_UNSAFE=	yes
+CMAKE_OFF=	BUILD_STATIC_CDF
 
 SUB_FILES=	pkg-message
 
-WRKSRC=		${WRKDIR}/cdf${VER}-dist
+WRKSRC=		${WRKDIR}/cdf${VER}-dist-main
 
 PLIST_SUB=	SOVERSION=${DISTVERSION}
-PORTDOCS=	CDF_copyright.txt CHANGES.txt Release.notes Welcome.txt
+PORTDOCS=	CDF_copyright.txt CHANGES.txt README_cdf_tools.txt \
+		Release_notes.txt Welcome.txt
+PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-DEFS=		B C K
-VER=		${PORTVERSION:S/.//:S/./_/}
+VER=		${DISTVERSION:S/.//:S/./_/}
 
 .include <bsd.port.pre.mk>
 
@@ -47,23 +38,18 @@ FFLAGS=		-std=legacy
 .endif
 
 post-patch:
-.for def in ${DEFS}
-	@${REINPLACE_CMD} -e 's|<path>|${PREFIX}|' \
-		 ${WRKSRC}/src/definitions/definitions.${def}
-.endfor
+	${REINPLACE_CMD} -e 's|<path>|${PREFIX}|' \
+		${WRKSRC}/src/definitions/definitions.*
 
 post-install:
-	${SED} -i '' 's,${STAGEDIR},,g' ${STAGEDIR}${PREFIX}/bin/definitions.?
-	${RM} -f ${STAGEDIR}${PREFIX}/CDFLeapSeconds.txt
-	cd ${STAGEDIR}${PREFIX} && \
-		${FIND} bin/* lib/* -executable -exec ${STRIP_CMD} {} \;
+	cd ${STAGEDIR}${PREFIX} && ${RM} ${PORTDOCS} CDFLeapSeconds.txt HOWTO*
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/samples/* ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/samples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.post.mk>

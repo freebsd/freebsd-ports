@@ -1,10 +1,13 @@
-@(,kmem,2755) bin/wmcube
+bin/wmcube
 %%DATADIR%%/2planes-solid.wmc
 %%DATADIR%%/4d.wmc
 %%DATADIR%%/8star-small.wmc
 %%DATADIR%%/8star.wmc
+%%DATADIR%%/X-lines.wmc
+%%DATADIR%%/X-planes.wmc
 %%DATADIR%%/ball-solid.wmc
 %%DATADIR%%/ball.wmc
+%%DATADIR%%/beryllium.wmc
 %%DATADIR%%/celtic.wmc
 %%DATADIR%%/cross.wmc
 %%DATADIR%%/cross2-solid.wmc
@@ -28,8 +31,12 @@
 %%DATADIR%%/pyramid.wmc
 %%DATADIR%%/radioactive.wmc
 %%DATADIR%%/shield.wmc
+%%DATADIR%%/slackware1.wmc
+%%DATADIR%%/slackware2.wmc
+%%DATADIR%%/slackware3.wmc
 %%DATADIR%%/spaceshuttle.wmc
 %%DATADIR%%/spiral.wmc
 %%DATADIR%%/star.wmc
 %%DATADIR%%/starcube.wmc
 %%DATADIR%%/wmlogo.wmc
+share/man/man1/wmcube.1.gz

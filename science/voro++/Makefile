@@ -4,7 +4,7 @@ PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	http://math.lbl.gov/voro++/download/dir/
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Three-dimensional computations of the Voronoi tessellation
 WWW=		http://math.lbl.gov/voro++/
 

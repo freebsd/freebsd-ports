@@ -1,5 +1,12 @@
-mold is a faster drop-in replacement for existing Unix linkers. It
-is several times faster than LLVM lld linker, the second-fastest
-open-source linker which I originally created a few years ago.
-mold is created for increasing developer productivity by reducing
-build time especially in rapid debug-edit-rebuild cycles.
+mold is a high-performance drop-in replacement for existing Unix
+linkers, designed to speed up builds. In our August 2026 benchmarks,
+it links 4.9x faster than LLVM lld and 1.9x faster than wild at the
+median.
+
+mold is written by the original developer of LLVM lld, the linker that
+Android, Chrome, FreeBSD, PlayStation, Nintendo Switch, and other
+production systems are built with. mold started as an effort to build
+an even faster linker from scratch, free of the architectural limits
+its author had run into while optimizing lld. It has been in
+production use since 2021, and today it is the default linker of many
+large open-source projects and is used internally by many companies.

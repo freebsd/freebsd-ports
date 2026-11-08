@@ -1,11 +1,11 @@
 PORTNAME=	bit64
-DISTVERSION=	4.8.2
+DISTVERSION=	4.8.6
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	S3 Class for Vectors of 64bit Integers
-WWW=		https://cran.r-project.org/web/packages/bit64/
+WWW=		https://cran.r-project.org/package=bit64
 
 LICENSE=	GPLv2+
 

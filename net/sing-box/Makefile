@@ -1,6 +1,6 @@
 PORTNAME=	sing-box
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.13.15
+DISTVERSION=	1.14.4
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,17 +11,19 @@ WWW=		https://sing-box.sagernet.org \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.24+,modules
+USES=		go:modules
 
 GO_MODULE=	github.com/sagernet/sing-box
 GO_TARGET=	./cmd/sing-box
+# experimental/libbox contains platform-specific mobile code that does not build in this environment
+GO_TESTTARGET=	./adapter/... ./cmd/... ./common/... ./constant/... ./daemon/... ./dns/... ./include/... ./log/... ./option/... ./protocol/... ./route/... ./schema/... ./service/... ./transport/...
 
 PLIST_FILES=	bin/${PORTNAME} \
 		"@sample etc/sing-box.json.sample"
 
 USE_RC_SUBR=	${PORTNAME}
 
-OPTIONS_DEFINE=		QUIC GRPC DHCP WIREGUARD UTLS ACME CLASH_API V2RAY_API GVISOR EMBEDDED_TOR CCM OCM 
+OPTIONS_DEFINE=		QUIC GRPC DHCP WIREGUARD UTLS ACME CLASH_API V2RAY_API GVISOR EMBEDDED_TOR CCM OCM
 OPTIONS_DEFAULT=	QUIC UTLS
 
 QUIC_DESC=		Build with QUIC support

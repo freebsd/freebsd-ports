@@ -1,6 +1,6 @@
 PORTNAME=	dtse
 PORTVERSION=	1.3
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	www perl5
 MASTER_SITES=	http://dl1.douglasthrift.net/${PORTNAME}/ \
 		http://dl2.douglasthrift.net/${PORTNAME}/

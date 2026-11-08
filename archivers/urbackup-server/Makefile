@@ -1,6 +1,5 @@
 PORTNAME=	urbackup-server
-DISTVERSION=	2.5.37
-PORTREVISION=	1
+DISTVERSION=	2.5.38
 CATEGORIES=	archivers
 MASTER_SITES=	https://hndl.urbackup.org/Server/${DISTVERSION}/
 
@@ -13,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/server-license.txt
 
 LIB_DEPENDS=	libcryptopp.so:security/cryptopp \
 		libcurl.so:ftp/curl \
-		liblmdb.so:databases/lmdb0 \
+		liblmdb0.so:databases/lmdb0 \
 		libzstd.so:archivers/zstd
 
 USES=		autoreconf compiler:c++11-lang dos2unix fakeroot fuse libtool \
@@ -28,6 +27,9 @@ CONFIGURE_ARGS=	--enable-packaging \
 		--without-embedded-lmdb \
 		--without-embedded-lua \
 		--without-embedded-sqlite3
+CONFIGURE_ENV+=	PKG_CONFIG_PATH=${LOCALBASE}/lmdb0/libdata/pkgconfig
+CPPFLAGS+=	-I${LOCALBASE}/lmdb0/include
+LDFLAGS+=	-L${LOCALBASE}/lmdb0/lib
 
 .include <bsd.port.options.mk>
 
@@ -50,8 +52,8 @@ post-patch:
 		urbackupserver/dllmain.cpp \
 		snapshot_helper/main.cpp \
 	)
-	${FIND} ${WRKSRC} -type f -exec ${REINPLACE_CMD} \
-		-e 's|auto_ptr|unique_ptr|g' {} +
+	${FIND} ${WRKSRC} -type f '(' -name '*.cpp' -o -name '*.h' ')' -exec \
+		${REINPLACE_CMD} -i '' -e 's|auto_ptr|unique_ptr|g' {} +
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/urbackup \

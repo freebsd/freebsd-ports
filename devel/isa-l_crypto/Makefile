@@ -10,8 +10,8 @@ WWW=		https://github.com/intel/isa-l_crypto
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64le
-ONLY_FOR_ARCHS_REASON=	Only amd64/aarch64 are listed in README.md, powerpc64le mentioned in v2.22
+ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le
+ONLY_FOR_ARCHS_REASON=	Only amd64/aarch64 are listed in README.md, powerpc64* build the generic base implementations
 
 BUILD_DEPENDS=	nasm:devel/nasm
 
@@ -24,5 +24,13 @@ TEST_TARGET=	check
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	intel
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH:Mpowerpc64*}
+PLIST_SUB+=	AES="@comment "
+.else
+PLIST_SUB+=	AES=""
+.endif
 
 .include <bsd.port.mk>

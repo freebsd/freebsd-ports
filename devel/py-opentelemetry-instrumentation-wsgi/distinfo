@@ -1,3 +1,3 @@
-TIMESTAMP = 1782966428
-SHA256 (opentelemetry_instrumentation_wsgi-0.64b0.tar.gz) = 1cce6ea28d1800c154e6ccdf52f05bae2f05c5e28ee44f0dddb17ada26208986
-SIZE (opentelemetry_instrumentation_wsgi-0.64b0.tar.gz) = 19667
+TIMESTAMP = 1791047106
+SHA256 (opentelemetry_instrumentation_wsgi-0.66b0.tar.gz) = 2e4e8b99a7df6bcc1f4c4092028e8aadf69a263a4422aa2ddbe954bd099a9061
+SIZE (opentelemetry_instrumentation_wsgi-0.66b0.tar.gz) = 19529

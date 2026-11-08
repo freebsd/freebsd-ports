@@ -1,6 +1,6 @@
---- examples/CMakeLists.txt.orig	2022-11-18 19:47:51 UTC
+--- examples/CMakeLists.txt.orig	2026-08-13 11:44:36 UTC
 +++ examples/CMakeLists.txt
-@@ -37,8 +37,8 @@ set(EXAMPLE_overload   overload       cpp)
+@@ -36,8 +36,8 @@ set(EXAMPLE_overload   overload       cpp)
  set(EXAMPLE_author     author         cpp)
  set(EXAMPLE_par        par            cpp)
  set(EXAMPLE_overload   overload       cpp)
@@ -11,37 +11,39 @@
  set(EXAMPLE_qtstyle    qtstyle        cpp)
  set(EXAMPLE_jdstyle    jdstyle        cpp)
  set(EXAMPLE_autolink   autolink       cpp)
-@@ -69,14 +69,18 @@ foreach (f_inp  ${BASIC_EXAMPLES})
- 	set(f_dep "")
- 	if (${f_len} GREATER 2)
- 	  list(GET  ${f_inp} 2 f_dep)
--	  set(f_dep "${PROJECT_BINARY_DIR}/html/examples/${f_dep}/html/index.html")
-+	  if (${f_dep} MATCHES _test$)
-+	    set(f_dep "${CMAKE_CURRENT_BINARY_DIR}/${f_dep}.${f_ext}")
-+	  else()
-+	    set(f_dep "${PROJECT_BINARY_DIR}/html/examples/${f_dep}/html/index.html")
-+	  endif()
- 	endif()
+@@ -74,7 +74,11 @@ foreach (f_inp  ${BASIC_EXAMPLES})
+         if (${f_len} GREATER 2)
+           list(GET  ${f_inp} 2 f_dep)
+           list(GET  ${f_inp} 2 f_dep_chm)
+-          set(f_dep "${PROJECT_BINARY_DIR}/html/examples/${f_dep}/html/index.html")
++          if (${f_dep} MATCHES _test$)
++            set(f_dep "${CMAKE_CURRENT_BINARY_DIR}/${f_dep}.${f_ext}")
++          else()
++            set(f_dep "${PROJECT_BINARY_DIR}/html/examples/${f_dep}/html/index.html")
++          endif()
+           if (build_doc_chm)
+             set(f_dep_chm "${PROJECT_BINARY_DIR}/chm/html/examples/${f_dep_chm}/html/index.html")
+           endif()
+@@ -82,9 +86,9 @@ foreach (f_inp  ${BASIC_EXAMPLES})
      add_custom_command(
          COMMAND ${CMAKE_COMMAND} -E make_directory ${PROJECT_BINARY_DIR}/html/examples/${f}
          COMMAND ${CMAKE_COMMAND} -E make_directory ${PROJECT_BINARY_DIR}/latex/examples/${f}
--        COMMAND ${CMAKE_COMMAND} -E env PROJECT_BINARY_DIR=${PROJECT_BINARY_DIR} ${EXECUTABLE_OUTPUT_PATH}/doxygen ${f}.cfg
-+        COMMAND ${CMAKE_COMMAND} -E env PROJECT_BINARY_DIR=${PROJECT_BINARY_DIR} ${EXECUTABLE_OUTPUT_PATH}/doxygen ${CMAKE_CURRENT_BINARY_DIR}/${f}.cfg
-         COMMAND ${PYTHON_EXECUTABLE}  ${TOP}/examples/strip_example.py  < ${PROJECT_BINARY_DIR}/latex/examples/${f}/latex/refman.tex > ${PROJECT_BINARY_DIR}/latex/examples/${f}/latex/refman_doc.tex
--	DEPENDS doxygen ${f}.${f_ext} ${f}.cfg ${TOP}/examples/strip_example.py ${f_dep}
-+	DEPENDS doxygen ${CMAKE_CURRENT_BINARY_DIR}/${f}.${f_ext} ${CMAKE_CURRENT_BINARY_DIR}/${f}.cfg ${TOP}/examples/strip_example.py ${f_dep} ${CMAKE_CURRENT_BINARY_DIR}/baseexample.cfg
- 	OUTPUT ${PROJECT_BINARY_DIR}/html/examples/${f}/html/index.html ${PROJECT_BINARY_DIR}/latex/examples/${f}/latex/refman_doc.tex
+-        COMMAND ${CMAKE_COMMAND} -E env PROJECT_BINARY_DIR=${PROJECT_BINARY_DIR} EXTRA_SETTINGS=docuexample.cfg ${EXECUTABLE_OUTPUT_PATH}/doxygen ${f}.cfg
++        COMMAND ${CMAKE_COMMAND} -E env PROJECT_BINARY_DIR=${PROJECT_BINARY_DIR} EXTRA_SETTINGS=docuexample.cfg ${EXECUTABLE_OUTPUT_PATH}/doxygen ${CMAKE_CURRENT_BINARY_DIR}/${f}.cfg
+         COMMAND ${Python_EXECUTABLE}  ${PROJECT_SOURCE_DIR}/examples/strip_example.py  < ${PROJECT_BINARY_DIR}/latex/examples/${f}/latex/refman.tex > ${PROJECT_BINARY_DIR}/latex/examples/${f}/latex/refman_doc.tex
+-        DEPENDS doxygen ${f}.${f_ext} ${f}.cfg ${PROJECT_SOURCE_DIR}/examples/strip_example.py ${f_dep} baseexample.cfg docuexample.cfg
++        DEPENDS doxygen ${CMAKE_CURRENT_BINARY_DIR}/${f}.${f_ext} ${CMAKE_CURRENT_BINARY_DIR}/${f}.cfg ${PROJECT_SOURCE_DIR}/examples/strip_example.py ${f_dep} ${CMAKE_CURRENT_BINARY_DIR}/baseexample.cfg ${CMAKE_CURRENT_BINARY_DIR}/docuexample.cfg
+         OUTPUT ${PROJECT_BINARY_DIR}/html/examples/${f}/html/index.html ${PROJECT_BINARY_DIR}/latex/examples/${f}/latex/refman_doc.tex
+         WORKING_DIRECTORY ${PROJECT_BINARY_DIR}/examples
      )
-     set(EXAMPLES_RES ${EXAMPLES_RES} "" ${PROJECT_BINARY_DIR}/html/examples/${f}/html/index.html)
-@@ -93,9 +97,9 @@ if (DOT)
-   add_custom_command(
-         COMMAND ${CMAKE_COMMAND} -E make_directory ${PROJECT_BINARY_DIR}/html/examples/diagrams
-         COMMAND ${CMAKE_COMMAND} -E make_directory ${PROJECT_BINARY_DIR}/latex/examples/diagrams
--        COMMAND ${CMAKE_COMMAND} -E env PROJECT_BINARY_DIR=${PROJECT_BINARY_DIR} ${EXECUTABLE_OUTPUT_PATH}/doxygen diagrams.cfg
-+        COMMAND ${CMAKE_COMMAND} -E env PROJECT_BINARY_DIR=${PROJECT_BINARY_DIR} ${EXECUTABLE_OUTPUT_PATH}/doxygen ${CMAKE_CURRENT_BINARY_DIR}/diagrams.cfg
-         COMMAND ${PYTHON_EXECUTABLE}  ${TOP}/examples/strip_example.py  < ${PROJECT_BINARY_DIR}/latex/examples/diagrams/latex/refman.tex > ${PROJECT_BINARY_DIR}/latex/examples/diagrams/latex/refman_doc.tex
--	DEPENDS doxygen diagrams_a.h diagrams_b.h diagrams_c.h diagrams_d.h diagrams_e.h diagrams.cfg ${TOP}/examples/strip_example.py
-+	DEPENDS doxygen ${CMAKE_CURRENT_BINARY_DIR}/diagrams_a.h ${CMAKE_CURRENT_BINARY_DIR}/diagrams_b.h ${CMAKE_CURRENT_BINARY_DIR}/diagrams_c.h ${CMAKE_CURRENT_BINARY_DIR}/diagrams_d.h ${CMAKE_CURRENT_BINARY_DIR}/diagrams_e.h ${CMAKE_CURRENT_BINARY_DIR}/diagrams.cfg ${TOP}/examples/strip_example.py ${CMAKE_CURRENT_BINARY_DIR}/baseexample.cfg
- 	OUTPUT ${PROJECT_BINARY_DIR}/html/examples/diagrams/html/index.html ${PROJECT_BINARY_DIR}/latex/examples/diagrams/latex/refman_doc.tex
-   )
- endif(DOT)
+@@ -93,8 +97,8 @@ foreach (f_inp  ${BASIC_EXAMPLES})
+     if (build_doc_chm)
+       add_custom_command(
+         COMMAND ${CMAKE_COMMAND} -E make_directory ${PROJECT_BINARY_DIR}/chm/html/examples/${f}
+-        COMMAND ${CMAKE_COMMAND} -E env PROJECT_BINARY_DIR=${PROJECT_BINARY_DIR} EXTRA_SETTINGS=chmexample.cfg ${EXECUTABLE_OUTPUT_PATH}/doxygen ${f}.cfg
+-        DEPENDS doxygen ${f}.${f_ext} ${f}.cfg ${f_dep_chm} baseexample.cfg chmexample.cfg
++        COMMAND ${CMAKE_COMMAND} -E env PROJECT_BINARY_DIR=${PROJECT_BINARY_DIR} EXTRA_SETTINGS=chmexample.cfg ${EXECUTABLE_OUTPUT_PATH}/doxygen ${CMAKE_CURRENT_BINARY_DIR}/${f}.cfg
++        DEPENDS doxygen ${CMAKE_CURRENT_BINARY_DIR}/${f}.${f_ext} ${CMAKE_CURRENT_BINARY_DIR}/${f}.cfg ${f_dep_chm} ${CMAKE_CURRENT_BINARY_DIR}/baseexample.cfg ${CMAKE_CURRENT_BINARY_DIR}/chmexample.cfg
+         OUTPUT ${PROJECT_BINARY_DIR}/chm/html/examples/${f}/html/index.html
+         WORKING_DIRECTORY ${PROJECT_BINARY_DIR}/examples
+       )

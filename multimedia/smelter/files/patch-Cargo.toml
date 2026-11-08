@@ -1,0 +1,14 @@
+-- Bump ffmpeg-next to 9.0.0 for FFmpeg 9 support.
+-- https://github.com/software-mansion/smelter/pull/2182
+
+--- Cargo.toml.orig
++++ Cargo.toml
+@@ -46,7 +46,7 @@ thiserror = "1.0.40"
+ crossbeam-channel = "0.5.15"
+ reqwest = { version = "0.12.3", features = ["blocking", "json"] }
+ signal-hook = "0.3.15"
+-ffmpeg-next = "8.1.0"
++ffmpeg-next = "9.0.0"
+ fs_extra = "1.3.0"
+ anyhow = "1.0.71"
+ image = { version = "0.24.7", features = ["jpeg", "png"] }

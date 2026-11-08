@@ -1,5 +1,6 @@
 PORTNAME=	dsbmd
 PORTVERSION=	1.12
+PORTREVISION=	1
 CATEGORIES=	filesystems sysutils
 
 MAINTAINER=	mk@nic-nac-project.org

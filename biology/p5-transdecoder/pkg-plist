@@ -1,3 +1,4 @@
+bin/TransDecoder
 bin/TransDecoder.LongOrfs
 bin/TransDecoder.Predict
 %%SITE_PERL%%/transdecoder/DelimParser.pm

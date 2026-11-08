@@ -1,0 +1,10 @@
+https://codeberg.org/tenacityteam/libmad/commit/be34ec9fe47577e7f3d84cc9640d2a4696d478d6
+
+--- CMakeLists.txt.orig	2026-10-03 08:10:01 UTC
++++ CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 3.1.0)
++cmake_minimum_required(VERSION 3.10)
+ project(mad VERSION 0.16.4)
+ 
+ option(BUILD_SHARED_LIBS "Build dynamic library" ON)

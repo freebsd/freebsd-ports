@@ -5,14 +5,15 @@
 # KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf to enable anubis:
-# anubis_enable (bool):        Set to "NO" by default.
-#                              Set it to "YES" to enable anubis.
-# anubis_user (user):          Set to "www" by default.
-#                              User to run anubis as.
-# anubis_group (group):        Set to "www" by default.
-#                              Group to run anubis as.
-# anubis_args (str):           Set to "" by default.
-#                              Extra flags passed to anubis.
+# anubis_enable (bool):          Set to "NO" by default.
+#                                Set it to "YES" to enable anubis.
+# anubis_user (user):            Set to "www" by default.
+#                                User to run anubis as.
+# anubis_group (group):          Set to "www" by default.
+#                                Group to run anubis as.
+# anubis_args (str):             Set to "" by default.
+#                                Extra flags passed to anubis.
+# anubis_syslog_facility (str):  Set to "daemon" by default. Sets syslog facility.
 
 . /etc/rc.subr
 
@@ -25,12 +26,13 @@ load_rc_config $name
 : ${anubis_user:="www"}
 : ${anubis_group:="www"}
 : ${anubis_args:=""}
+: ${anubis_syslog_facility:="daemon"}
 
 pidfile="/var/run/${name}.pid"
 daemon_pidfile="/var/run/${name}-daemon.pid"
 procname="%%PREFIX%%/sbin/anubis"
 command="/usr/sbin/daemon"
-command_args="-f -c -R 5 -r -T ${name} -p ${pidfile} -P ${daemon_pidfile} ${procname} ${anubis_args}"
+command_args="-f -c -R 5 -r -T ${name} -s ${anubis_syslog_facility} -p ${pidfile} -P ${daemon_pidfile} ${procname} ${anubis_args}"
 
 start_precmd=anubis_startprecmd
 stop_postcmd=anubis_stoppostcmd

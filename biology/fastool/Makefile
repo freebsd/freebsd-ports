@@ -2,7 +2,7 @@ PORTNAME=	fastool
 PORTVERSION=	0.1.4
 CATEGORIES=	biology
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple and quick FastQ and FastA tool for file reading and conversion
 WWW=		https://github.com/fstrozzi/Fastool
 

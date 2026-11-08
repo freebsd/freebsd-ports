@@ -1,6 +1,7 @@
 share/lua/5.1/resty/openssl.lua
 share/lua/5.1/resty/openssl/asn1.lua
 share/lua/5.1/resty/openssl/auxiliary/bio.lua
+share/lua/5.1/resty/openssl/auxiliary/compat.lua
 share/lua/5.1/resty/openssl/auxiliary/ctypes.lua
 share/lua/5.1/resty/openssl/auxiliary/ecdsa.lua
 share/lua/5.1/resty/openssl/auxiliary/jwk.lua
@@ -8,6 +9,7 @@ share/lua/5.1/resty/openssl/auxiliary/nginx.lua
 share/lua/5.1/resty/openssl/auxiliary/nginx_c.lua
 share/lua/5.1/resty/openssl/bn.lua
 share/lua/5.1/resty/openssl/cipher.lua
+share/lua/5.1/resty/openssl/crypto.lua
 share/lua/5.1/resty/openssl/ctx.lua
 share/lua/5.1/resty/openssl/dh.lua
 share/lua/5.1/resty/openssl/digest.lua
@@ -57,6 +59,7 @@ share/lua/5.1/resty/openssl/param.lua
 share/lua/5.1/resty/openssl/pkcs12.lua
 share/lua/5.1/resty/openssl/pkey.lua
 share/lua/5.1/resty/openssl/provider.lua
+share/lua/5.1/resty/openssl/provider_key.lua
 share/lua/5.1/resty/openssl/rand.lua
 share/lua/5.1/resty/openssl/rsa.lua
 share/lua/5.1/resty/openssl/ssl.lua

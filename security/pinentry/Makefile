@@ -103,6 +103,9 @@ CONFIGURE_ARGS+=--disable-pinentry-gnome3
 .endif
 
 .if ${PINENTRY_GUI} == "qt5"
+DEPRECATED=		Depends on deprecated Qt5 and KDE Frameworks 5
+EXPIRATION_DATE=	2026-11-30
+
 USES+=		compiler:c++11-lang kde:5 qt:5 xorg
 USE_KDE=	wayland
 USE_QT=		core gui widgets x11extras buildtools:build

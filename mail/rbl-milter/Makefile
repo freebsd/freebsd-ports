@@ -8,6 +8,9 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Milter that adds mail header warnings on mail from open-relays
 WWW=		https://github.com/jbeker/rbl-milter
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		gmake
 GNU_CONFIGURE=	yes
 

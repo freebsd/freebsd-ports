@@ -1,7 +1,7 @@
 PORTNAME=	claws
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.1
-PORTREVISION=	8
+DISTVERSION=	0.18.0
+PORTREVISION=	4
 CATEGORIES=	net
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -15,6 +15,7 @@ USES=		go:modules
 
 GO_MODULE=	github.com/clawscli/claws
 GO_TARGET=	./cmd/claws
+GO_LDFLAGS=	-X main.version=${DISTVERSION}
 
 PLIST_FILES=	bin/claws
 

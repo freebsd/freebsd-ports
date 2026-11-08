@@ -1,6 +1,6 @@
---- setup.py.orig	2025-04-05 17:55:07 UTC
+--- setup.py.orig	2026-06-03 15:03:03 UTC
 +++ setup.py
-@@ -47,12 +47,6 @@ setup(
+@@ -50,12 +50,6 @@ setup(
          "fast": ["ujson"],
      },
      scripts=[
@@ -13,11 +13,3 @@
          "scripts/ripe-atlas",
      ],
      keywords=["RIPE", "RIPE NCC", "RIPE Atlas", "Command Line"],
-@@ -65,6 +59,7 @@ setup(
-         "Programming Language :: Python :: 3.8",
-         "Programming Language :: Python :: 3.9",
-         "Programming Language :: Python :: 3.10",
-+        "Programming Language :: Python :: 3.11",
-         "Topic :: Internet :: WWW/HTTP",
-     ],
- )

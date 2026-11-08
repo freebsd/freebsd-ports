@@ -1,8 +1,9 @@
 PORTNAME=	nbd
-DISTVERSION=	3.27.0
+DISTVERSIONPREFIX=	nbd-
+DISTVERSION=	3.27.1
 PORTEPOCH=	1
 CATEGORIES=	net
-MASTER_SITES=	https://github.com/NetworkBlockDevice/${PORTNAME}/releases/download/${PORTNAME}-${DISTVERSION}/
+#MASTER_SITES=	https://github.com/NetworkBlockDevice/${PORTNAME}/releases/download/${PORTNAME}-${DISTVERSION}/
 PKGNAMESUFFIX=	-server
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -12,8 +13,13 @@ WWW=		https://github.com/NetworkBlockDevice/nbd
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		bison:wrapper cpe gmake gnome pkgconfig tar:xz
+BUILD_DEPENDS=	autoconf-archive>=0:devel/autoconf-archive
+
+USES=		autoreconf bison:build cpe gmake gnome libtool pkgconfig \
+		tar:xz
 CPE_VENDOR=	wouter_verhelst
+USE_GITHUB=	yes
+GH_ACCOUNT=	NetworkBlockDevice
 USE_GNOME=	glib20
 
 GNU_CONFIGURE=	yes

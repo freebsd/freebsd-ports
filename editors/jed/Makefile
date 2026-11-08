@@ -2,9 +2,9 @@ PORTNAME=	jed
 DISTVERSION=	0.99-19
 PORTREVISION=	6
 CATEGORIES=	editors
-MASTER_SITES=	ftp://space.mit.edu/pub/davis/jed/v${PORTVERSION:R}/ \
-		ftp://ftp.fu-berlin.de/pub/unix/editors/jed/v${PORTVERSION:R}/ \
+MASTER_SITES=	ftp://ftp.fu-berlin.de/pub/unix/editors/jed/v${PORTVERSION:R}/ \
 		ftp://ftp.ntua.gr/pub/lang/slang/jed/v${PORTVERSION:R}/
+DIST_SUBDIR=	jed
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	SLang-based text editor
@@ -14,29 +14,31 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libslang.so:devel/libslang2
 
-CONFLICTS=	ja-jed
-
-OPTIONS_DEFINE=	X11 PERMS HOSTLOOKUP DOCS
-OPTIONS_DEFAULT=X11 HOSTLOOKUP
-
-PERMS_DESC=	Respect permissions by Root
-HOSTLOOKUP_DESC=Look-up for hostname
-
-OPTIONS_SUB=	yes
 USES=		tar:bzip2
-DIST_SUBDIR=	jed
+
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
-MAKE_JOBS_UNSAFE=	yes
 CONFIGURE_ENV+=	JED_ROOT=${PREFIX}/lib/jed
 
-PORTDOCS=	*
 MAKE_ENV+=	DEST_DOC_DIR=${STAGEDIR}${DOCSDIR}
-
+MAKE_JOBS_UNSAFE=	yes
 ALL_TARGET=	all getmail
 
+CONFLICTS=	ja-jed
+
+PORTDOCS=	*
+
+OPTIONS_DEFINE=	DOCS HOSTLOOKUP PERMS X11
+OPTIONS_DEFAULT=	HOSTLOOKUP X11
+OPTIONS_SUB=	yes
+
+HOSTLOOKUP_DESC=	Look-up for hostname
+PERMS_DESC=	Respect permissions by Root
+
 X11_USES=	xorg
-X11_USE=	XORG=x11 XORG=ice XORG=xt
+X11_USE=	XORG=ice \
+		XORG=x11 \
+		XORG=xt
 X11_ALL_TARGET=	xjed
 
 .include <bsd.port.pre.mk>

@@ -1,6 +1,6 @@
 PORTNAME=	nnn
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.2
+DISTVERSION=	5.3
 CATEGORIES=	misc shells
 MASTER_SITES=	https://github.com/jarun/${PORTNAME}/releases/download/${DISTVERSIONFULL}/
 

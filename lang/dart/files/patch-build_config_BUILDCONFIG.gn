@@ -1,0 +1,28 @@
+Build FreeBSD as a Linux variant in GN (series 0003): is_linux and
+is_clang are true for current_os "freebsd", matching the C++ side,
+where __FreeBSD__ already selects DART_HOST_OS_LINUX.
+FreeBSD-specific, not submitted upstream yet.
+--- build/config/BUILDCONFIG.gn.orig	2026-09-29 08:00:52 UTC
++++ build/config/BUILDCONFIG.gn
+@@ -117,7 +117,8 @@ declare_args() {
+ 
+   # Set to true when compiling with the Clang compiler. Typically this is used
+   # to configure warnings.
+-  is_clang = current_os == "mac" || current_os == "linux"
++  is_clang = current_os == "mac" || current_os == "linux" ||
++             current_os == "freebsd"
+ 
+   # Compile for Address Sanitizer to find memory bugs.
+   is_asan = false
+@@ -201,7 +202,10 @@ if (current_os == "win") {
+   is_posix = true
+   is_watchos = false
+   is_win = false
+-} else if (current_os == "linux") {
++} else if (current_os == "linux" || current_os == "freebsd") {
++  # FreeBSD is built as a variant of Linux, matching the C++ side where
++  # __FreeBSD__ selects DART_HOST_OS_LINUX (see runtime/platform/globals.h).
++  # Use current_os == "freebsd" where the two differ.
+   is_android = false
+   is_chromeos = false
+   is_fuchsia = false

@@ -1,0 +1,4 @@
+Provides fast, cached lookup of help topics and aliases across installed,
+source, and in-development packages, plus efficient retrieval of parsed 'Rd'
+('R' documentation) objects. Per-package indexes are built once and cached,
+making repeated retrieval cheap enough to call in a tight loop.

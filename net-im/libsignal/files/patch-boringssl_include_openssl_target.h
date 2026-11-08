@@ -1,5 +1,5 @@
---- ../boring-signal-v5.0.2/boring-sys/deps/boringssl/include/openssl/target.h.orig
-+++ ../boring-signal-v5.0.2/boring-sys/deps/boringssl/include/openssl/target.h
+--- ../boring-signal-v5.2.0/boring-sys/deps/boringssl/include/openssl/target.h.orig
++++ ../boring-signal-v5.2.0/boring-sys/deps/boringssl/include/openssl/target.h
 @@ -54,6 +54,11 @@
  #define OPENSSL_32_BIT
  #elif defined(__myriad2__)

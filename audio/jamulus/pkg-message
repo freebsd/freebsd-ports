@@ -24,8 +24,10 @@ You can also start the Jamulus Server service once with:
 # service jamulus-server onestart
 
 Please read https://jamulus.io/wiki/Command-Line-Options and add appropriate
-Jamulus Server options to jamulus_server_flags="{your options}"
+Jamulus Server options to jamulus_server_args="{your options}"
 in /etc/rc.config
+
+In order to listen on both IPv4 and IPv6 use the argument "-6".
 
 EOM
 }

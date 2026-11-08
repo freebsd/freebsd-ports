@@ -17,6 +17,7 @@ USES=		cmake
 USE_LDCONFIG=	yes
 
 CMAKE_ON=	BUILD_SHARED_LIBS
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/cmake/Teem

@@ -1,4 +1,4 @@
-TIMESTAMP = 1783335190
+TIMESTAMP = 1791789574
 SHA256 (rust/crates/ab_glyph-0.2.32.crate) = 01c0457472c38ea5bd1c3b5ada5e368271cb550be7a4ca4a0b4634e9913f6cc2
 SIZE (rust/crates/ab_glyph-0.2.32.crate) = 20967
 SHA256 (rust/crates/ab_glyph_rasterizer-0.1.10.crate) = 366ffbaa4442f4684d91e2cd7c5ea7c4ed8add41959a31447066e279e432b618
@@ -919,5 +919,5 @@ SHA256 (rust/crates/zune-core-0.5.1.crate) = cb8a0807f7c01457d0379ba880ba6322660
 SIZE (rust/crates/zune-core-0.5.1.crate) = 27883
 SHA256 (rust/crates/zune-jpeg-0.5.15.crate) = 27bc9d5b815bc103f142aa054f561d9187d191692ec7c2d1e2b4737f8dbd7296
 SIZE (rust/crates/zune-jpeg-0.5.15.crate) = 88879
-SHA256 (SnowflakePowered-librashader-v0.12.0-librashader-v0.12.0_GH0.tar.gz) = 4bf8cf2489d00848dcabbf2163204093776082da4217d5a5db45e4cbf335cedf
-SIZE (SnowflakePowered-librashader-v0.12.0-librashader-v0.12.0_GH0.tar.gz) = 3011420
+SHA256 (SnowflakePowered-librashader-v0.12.1-librashader-v0.12.1_GH0.tar.gz) = dfa1098ac5bda745bf0e0fc4797b0af441baaaae4b3c7f2982503d468cec9548
+SIZE (SnowflakePowered-librashader-v0.12.1-librashader-v0.12.1_GH0.tar.gz) = 3011486

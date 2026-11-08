@@ -1,8 +1,9 @@
 PORTNAME=	wazuh
-DISTVERSION=	4.14.6
+DISTVERSION=	4.14.9
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	https://packages.wazuh.com/deps/53/libraries/sources/:wazuh_sources
+MASTER_SITES=	https://packages.wazuh.com/deps/55/libraries/sources/:wazuh_sources
 PKGNAMESUFFIX=	-agent
 DISTFILES=	${EXTERNAL_DISTFILES}
 DIST_SUBDIR=	${PORTNAME}-${DISTVERSION}
@@ -23,7 +24,7 @@ USES=		cmake:indirect cpe gmake perl5 readline shebangfix sqlite:3 uidfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	alonsobsd
 GH_PROJECT=	wazuh-freebsd
-GH_TAGNAME=	62e1b663bbec762efd9d71bf5bdd33134e028d0a
+GH_TAGNAME=	9fbc25e4d88330cfe6e83a5889e105f648d4494c
 
 USE_RC_SUBR=	${PORTNAME}${PKGNAMESUFFIX}
 

@@ -1,4 +1,4 @@
---- Makefile.orig	2025-11-28 15:27:50 UTC
+--- Makefile.orig	2026-10-15 16:15:23 UTC
 +++ Makefile
 @@ -45,8 +45,8 @@ endif
  #
@@ -11,7 +11,7 @@
  ifdef KCPP_DEBUG
  CFLAGS = -g -O0
  CXXFLAGS = -g -O0
-@@ -178,10 +178,10 @@ else
+@@ -186,10 +186,10 @@ else
  endif # LLAMA_NOAVX2
  endif # LLAMA_NOAVX1
  else
@@ -26,16 +26,16 @@
  endif # LLAMA_PORTABLE
  endif # if x86
  
-@@ -251,7 +251,7 @@ else
- endif
+@@ -261,7 +261,7 @@ else
+ NVCCFLAGS += -Wno-deprecated-gpu-targets -arch=all
  
  else
 -NVCCFLAGS += -arch=native
 +#NVCCFLAGS += -arch=native
- endif # LLAMA_PORTABLE
+ endif
  
  ifdef LLAMA_CUDA_CCBIN
-@@ -368,15 +368,15 @@ ifneq ($(findstring clang, $(CCV)), )
+@@ -369,15 +369,15 @@ ifneq ($(findstring clang, $(CCV)), )
  # sve is cooked on termux so we are disabling it
  ifeq ($(UNAME_O), Android)
  ifneq ($(findstring clang, $(CCV)), )

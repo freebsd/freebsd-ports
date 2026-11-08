@@ -1,5 +1,5 @@
 PORTNAME=	pnetcdf
-PORTVERSION=	1.15.0
+PORTVERSION=	1.15.1
 CATEGORIES=	science parallel
 MASTER_SITES=	https://parallel-netcdf.github.io/Release/
 

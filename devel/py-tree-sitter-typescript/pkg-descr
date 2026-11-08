@@ -1,0 +1,2 @@
+tree-sitter-typescript provides TypeScript and TSX grammars for the
+Tree-sitter parsing library.

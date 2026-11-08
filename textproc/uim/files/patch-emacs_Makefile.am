@@ -1,6 +1,6 @@
---- emacs/Makefile.am.orig	2025-05-18 06:22:16 UTC
+--- emacs/Makefile.am.orig	2026-10-10 10:29:44 UTC
 +++ emacs/Makefile.am
-@@ -7,9 +7,6 @@ uimel_lispdir = $(UIMEL_LISP_DIR)
+@@ -13,9 +13,6 @@ uimel_lispdir = $(UIMEL_LISP_DIR)
  	-I$(top_srcdir)
  
  uimel_lispdir = $(UIMEL_LISP_DIR)

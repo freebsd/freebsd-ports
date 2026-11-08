@@ -1,7 +1,7 @@
 Add support for x11/budgie and fix x11/gnome-flashback,
 x11/gnome-shell-extensions
 
---- lib/Services/Environment.vala.orig	2025-09-17 00:18:24 UTC
+--- lib/Services/Environment.vala.orig	2026-08-04 01:49:12 UTC
 +++ lib/Services/Environment.vala
 @@ -56,6 +56,7 @@ namespace Plank {
      PANTHEON = 1 << 11,
@@ -21,8 +21,8 @@ x11/gnome-shell-extensions
        case "ubuntu": result = XdgSessionDesktop.UBUNTU; break;
        case "ubuntu-xorg": result = XdgSessionDesktop.UBUNTU; break;
        case "kde": result = XdgSessionDesktop.KDE; break;
-@@ -83,6 +85,7 @@ namespace Plank {
-       case "cinnamon": result = XdgSessionDesktop.CINNAMON; break;
+@@ -84,6 +86,7 @@ namespace Plank {
+       case "x-cinnamon": result = XdgSessionDesktop.CINNAMON; break;
        case "pantheon": result = XdgSessionDesktop.PANTHEON; break;
        case "dde": result = XdgSessionDesktop.DDE; break;
 +      case "budgie": result = XdgSessionDesktop.BUDGIE; break;

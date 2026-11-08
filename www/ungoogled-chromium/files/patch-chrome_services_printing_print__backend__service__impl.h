@@ -1,15 +1,15 @@
---- chrome/services/printing/print_backend_service_impl.h.orig	2026-02-15 10:01:45 UTC
+--- chrome/services/printing/print_backend_service_impl.h.orig	2026-08-13 07:41:05 UTC
 +++ chrome/services/printing/print_backend_service_impl.h
-@@ -35,7 +35,7 @@
- #include "mojo/public/cpp/bindings/remote.h"
- #endif  // BUILDFLAG(IS_WIN)
+@@ -28,7 +28,7 @@
+ #include "printing/printing_context.h"
+ #include "ui/gfx/native_ui_types.h"
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  #include "printing/printing_context_linux.h"
  #endif
  
-@@ -270,7 +270,7 @@ class PrintBackendServiceImpl : public mojom::PrintBac
+@@ -242,7 +242,7 @@ class PrintBackendServiceImpl : public mojom::PrintBac
  
    scoped_refptr<PrintBackend> print_backend_;
  

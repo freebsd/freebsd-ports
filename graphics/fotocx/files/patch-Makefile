@@ -1,4 +1,4 @@
---- Makefile.orig	2025-07-10 05:25:44 UTC
+--- Makefile.orig	2026-09-30 11:06:25 UTC
 +++ Makefile
 @@ -1,6 +1,7 @@
  #  fotocx Makefile
@@ -8,7 +8,7 @@
  #  export CXX=g++          gnu compiler
  #  export CXX=clang++      clang compiler
  #  export DEBUG=x          debug build with address checking
-@@ -27,6 +28,7 @@ else                                                  
+@@ -27,10 +28,11 @@ else
                    -Wno-format-truncation -Wno-stringop-truncation
     endif
  endif
@@ -16,12 +16,31 @@
  
  PKG_CONFIG ?= pkg-config
  
-@@ -34,7 +36,7 @@ CFLAGS = $(CXXFLAGS) $(CPPFLAGS) -c                   
-          `$(PKG_CONFIG) --cflags gtk+-3.0 --cflags champlain-gtk-0.12`
+-CFLAGS = $(CXXFLAGS) $(CPPFLAGS) -c `$(PKG_CONFIG) --cflags gtk+-3.0 webkit2gtk-4.1`
++CFLAGS = $(CXXFLAGS) $(CPPFLAGS) -c $(shell $(PKG_CONFIG) --cflags gtk+-3.0)
  
- LIBS = `$(PKG_CONFIG) --libs gtk+-3.0`                                           \
--         -lrt -lpthread -ltiff -lpng -ljpeg                                      \
-+         -lrt -lpthread -ltiff -lpng -ljpeg -lexecinfo \
-          -lclutter-1.0 -lclutter-gtk-1.0                                         \
-          -lchamplain-0.12 -lchamplain-gtk-0.12
+ ifdef DEBUG
+    CFLAGS += -DDEBUG
+@@ -39,14 +41,19 @@ endif
+ JXL_CFLAGS := $(shell pkg-config --cflags libjxl) 
+ JXL_LDFLAGS := $(shell pkg-config --libs libjxl libjxl_threads libhwy            \
+                                      libbrotlicommon libbrotlidec)
+-NETMAP_LDFLAGS := $(shell pkg-config --libs webkit2gtk-4.1)
  
+-LIBS = `$(PKG_CONFIG) --libs gtk+-3.0` -lrt -lpthread -ltiff -lpng -ljpeg
++LIBS = $(shell $(PKG_CONFIG) --libs gtk+-3.0) -lpthread -ltiff -lpng -ljpeg -lexecinfo
+ 
+ ALLFILES = fotocx.o f.widgets.o f.file.o f.gallery.o f.albums.o f.select.o       \
+            f.meta.o f.edit.o f.repair.o f.refine.o f.effects.o f.warp.o          \
+            f.combine.o f.mashup.o f.tools.o f.batch.o f.pixmap.o f.develop.o     \
+-           f.netmap.o zfuncs.o
++           zfuncs.o
++
++ifdef NETMAP_SUPPORT
++CFLAGS += $(shell $(PKG_CONFIG) --cflags webkit2gtk-4.1) -DNETMAP_SUPPORT
++NETMAP_LDFLAGS = $(shell $(PKG_CONFIG) --libs webkit2gtk-4.1)
++ALLFILES += f.netmap.o
++endif
+ 
+ fotocx: $(ALLFILES)
+ 	$(CXX) $(ALLFILES) $(LIBS) -o fotocx $(LDFLAGS) $(JXL_CFLAGS) $(JXL_LDFLAGS) $(NETMAP_LDFLAGS)

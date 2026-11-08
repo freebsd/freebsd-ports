@@ -1,6 +1,6 @@
---- src/Makefile.orig	2026-06-09 03:55:00.000000000 -0700
-+++ src/Makefile	2026-06-17 12:20:53.693603000 -0700
-@@ -47,10 +47,10 @@
+--- src/Makefile.orig	2026-06-09 10:55:00 UTC
++++ src/Makefile
+@@ -47,10 +47,10 @@ export CFLAGS := -Wall
  export RANLIB ?= ranlib
  
  export CFLAGS := -Wall

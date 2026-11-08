@@ -1,0 +1,11 @@
+--- src/CMakeLists.txt.orig	2026-09-05 15:45:40 UTC
++++ src/CMakeLists.txt
+@@ -19,7 +19,7 @@ else( )
+ 	# executables properly with multiple periods
+ 	cmake_minimum_required( VERSION 2.8.3 )
+ else( )
+-	cmake_minimum_required( VERSION 2.6 )
++	cmake_minimum_required( VERSION 3.10 )
+ endif( )
+ 
+ if( CMAKE_GENERATOR MATCHES "NMake" )

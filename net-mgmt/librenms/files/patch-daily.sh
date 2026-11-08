@@ -17,7 +17,7 @@
 @@ -60,7 +60,7 @@ status_run() {
  
      printf "%-50s" "${arg_text}"
-     echo "${arg_text}" >> "${log_file}"
+     log_line "${arg_text}"
 -    tmp=$(bash -c "${arg_command}" 2>&1)
 +    tmp=$(%%LOCALBASE%%/bin/bash -c "${arg_command}" 2>&1)
      exit_code=$?

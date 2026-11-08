@@ -1,7 +1,6 @@
 PORTNAME=	opensearch-dashboards
-DISTVERSION=	2.19.5
+DISTVERSION=	2.19.6
 DISTVERSIONSUFFIX=	-linux-${OPENSEARCH_ARCH}
-PORTREVISION=	1
 CATEGORIES=	textproc www
 MASTER_SITES=	https://artifacts.opensearch.org/releases/bundle/${PORTNAME}/${DISTVERSION}/
 PKGNAMESUFFIX=	219
@@ -13,7 +12,7 @@ WWW=		https://opensearch.org
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-ONLY_FOR_ARCHS=	aarch64 amd64
+ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le
 
 CONFLICTS=	opensearch-dashboards opensearch-dashboards210 opensearch-dashboards213 \
 		opensearch-dashboards216

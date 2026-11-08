@@ -38,7 +38,6 @@
     SUBDIR += ncftp3
     SUBDIR += netdumpd
     SUBDIR += ocaml-ocurl
-    SUBDIR += oftpd
     SUBDIR += omi
     SUBDIR += p5-File-Fetch
     SUBDIR += p5-Net-FTP-Common
@@ -69,6 +68,7 @@
     SUBDIR += pure-ftpd
     SUBDIR += py-aioftp
     SUBDIR += py-curl-cffi
+    SUBDIR += py-ftpretty
     SUBDIR += py-ftputil
     SUBDIR += py-parfive
     SUBDIR += py-pycurl

@@ -1,7 +1,8 @@
 PORTNAME=	XML-LibXML-Simple
-PORTVERSION=	0.95
+DISTVERSION=	0.95
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:MARKOV
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	markun@onohara.to
@@ -11,8 +12,7 @@ WWW=		https://metacpan.org/release/XML-LibXML-Simple
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-File-Slurp-Tiny>=0:devel/p5-File-Slurp-Tiny \
+BUILD_RUN_DEPENDS=	p5-File-Slurp-Tiny>=0:devel/p5-File-Slurp-Tiny \
 		p5-XML-LibXML>=1.64:textproc/p5-XML-LibXML
 
 USES=		perl5

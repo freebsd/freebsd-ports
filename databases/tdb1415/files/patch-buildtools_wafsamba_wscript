@@ -1,0 +1,15 @@
+--- buildtools/wafsamba/wscript.orig	2019-02-26 06:44:21 UTC
++++ buildtools/wafsamba/wscript
+@@ -82,10 +82,10 @@ def options(opt):
+ 
+     opt.add_option('--with-libiconv',
+                    help='additional directory to search for libiconv',
+-                   action='store', dest='iconv_open', default='/usr/local',
++                   action='store', dest='iconv_open', default=None,
+                    match = ['Checking for library iconv', 'Checking for iconv_open', 'Checking for header iconv.h'])
+     opt.add_option('--without-gettext',
+-                   help=("Disable use of gettext"),
++                   help=("disable use of gettext"),
+                    action="store_true", dest='disable_gettext', default=False)
+ 
+     gr = opt.option_group('developer options')

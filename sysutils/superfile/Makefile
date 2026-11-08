@@ -1,8 +1,8 @@
 PORTNAME=	superfile
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.6.1-0.20260618150422
-PORTREVISION=	1
 DISTVERSIONSUFFIX=	-5845124b77cd
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 
@@ -13,7 +13,7 @@ WWW=		https://github.com/yorukot/superfile
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.26+,modules
+USES=		go:modules
 
 GO_MODULE=	github.com/yorukot/superfile
 

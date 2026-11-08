@@ -1,0 +1,28 @@
+-- Disable the removed EXPORT_LIBRARY_DEPENDENCIES / CMAKE_EXPORT_BUILD_SETTINGS
+-- commands (CMP0033) for CMake 4.0 compatibility, and replace the generated
+-- TeemLibraryDepends.cmake with an empty file.  Drop TeemBuildSettings.cmake
+-- from the install list because CMAKE_EXPORT_BUILD_SETTINGS no longer creates it.
+
+--- CMakeLists.txt.orig	2024-04-05 00:00:00 UTC
++++ CMakeLists.txt
+@@ -447,4 +447,5 @@
+ # Help outside projects build Teem projects.
+-INCLUDE(CMakeExportBuildSettings)
+-EXPORT_LIBRARY_DEPENDENCIES(${Teem_BINARY_DIR}/TeemLibraryDepends.cmake)
+-CMAKE_EXPORT_BUILD_SETTINGS(${Teem_BINARY_DIR}/TeemBuildSettings.cmake)
++# The EXPORT_LIBRARY_DEPENDENCIES and CMAKE_EXPORT_BUILD_SETTINGS commands were
++# removed in CMake 4.0.  Create an empty TeemLibraryDepends.cmake so the
++# install step can still reference it.
++file(WRITE ${Teem_BINARY_DIR}/TeemLibraryDepends.cmake "")
+@@ -507,11 +507,10 @@
+ INSTALL(FILES ${Teem_INSTALLED_HEADER_FILES}
+   DESTINATION include/teem
+   )
+
+ INSTALL(FILES
+   "${Teem_BINARY_DIR}/CMake/TeemConfig.cmake"
+   "${Teem_SOURCE_DIR}/CMake/TeemUse.cmake"
+-  "${Teem_BINARY_DIR}/TeemBuildSettings.cmake"
+   "${Teem_BINARY_DIR}/TeemLibraryDepends.cmake"
+   DESTINATION lib${EXTRA_INSTALL_PATH}
+   )

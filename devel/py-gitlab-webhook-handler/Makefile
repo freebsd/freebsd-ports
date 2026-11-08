@@ -16,8 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flask>=1.0:www/py-flask@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.19.0:www/py-requests@${PY_FLAVOR}
 
-USES=		cpe python
-CPE_VENDOR=	python
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 PYDISTUTILS_PKGNAME=	gwh
 

@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2026-09-04 20:58:46 UTC
++++ CMakeLists.txt
+@@ -23,7 +23,7 @@
+ #
+ # ==================================================================================================
+ 
+-cmake_minimum_required(VERSION 2.8.11)
++cmake_minimum_required(VERSION 3.10)
+ 
+ # Overrides for MSVC static runtime
+ set(CMAKE_USER_MAKE_RULES_OVERRIDE ${CMAKE_CURRENT_SOURCE_DIR}/cmake/c_flag_overrides.cmake)

@@ -1,0 +1,8 @@
+RapidOCR provides the text detection and recognition models of PaddleOCR
+converted to ONNX, so they can be run without the PaddlePaddle framework.
+ONNX Runtime, OpenVINO, MNN, PaddlePaddle and PyTorch are supported as
+inference engines.
+
+Detection locates the text boxes in an image, recognition reads the text
+inside them.  Models for Chinese, English, Japanese, Korean and further
+languages are fetched on demand.

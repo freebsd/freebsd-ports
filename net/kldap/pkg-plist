@@ -60,10 +60,10 @@ lib/cmake/KPim6LdapWidgets/KPim6LdapWidgetsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KPim6LdapWidgets/KPim6LdapWidgetsTargets.cmake
 lib/libKPim6LdapCore.so
 lib/libKPim6LdapCore.so.6
-lib/libKPim6LdapCore.so.%%KDE_APPLICATIONS_SHLIB_VER%%
+lib/libKPim6LdapCore.so.%%KDE_PIM_SHLIB_VER%%
 lib/libKPim6LdapWidgets.so
 lib/libKPim6LdapWidgets.so.6
-lib/libKPim6LdapWidgets.so.%%KDE_APPLICATIONS_SHLIB_VER%%
+lib/libKPim6LdapWidgets.so.%%KDE_PIM_SHLIB_VER%%
 %%QT_PLUGINDIR%%/kf6/kio/ldap.so
 share/locale/af/LC_MESSAGES/kio_ldap.mo
 share/locale/ar/LC_MESSAGES/kio_ldap.mo

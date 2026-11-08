@@ -1,5 +1,5 @@
 PORTNAME=	patchelf
-DISTVERSION=	0.18.0
+DISTVERSION=	0.19.2
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/NixOS/${PORTNAME}/releases/download/${DISTVERSION}/
 
@@ -18,6 +18,6 @@ TEST_TARGET=	check
 
 OPTIONS_DEFINE=	DOCS
 
-# tests as of 0.18.0: 2 tests fail, see https://github.com/NixOS/patchelf/issues/584
+# tests as of 0.19.2: 3 tests fail, see https://github.com/NixOS/patchelf/issues/584
 
 .include <bsd.port.mk>

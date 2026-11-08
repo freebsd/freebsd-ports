@@ -1,0 +1,25 @@
+PORTNAME=	nng
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.12.5
+CATEGORIES=	net
+PKGNAMESUFFIX=	1
+
+MAINTAINER=	cmt@FreeBSD.org
+COMMENT=	Lightweight, broker-less messaging (1.X)
+WWW=		https://nanomsg.github.io/nng/
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+USES=		cmake
+USE_GITHUB=	yes
+GH_ACCOUNT=	nanomsg
+USE_LDCONFIG=	yes
+
+CMAKE_ON=	BUILD_SHARED_LIBS
+
+CONFLICTS_INSTALL=	nng*
+
+PLIST_SUB=	PORTMAJ=${DISTVERSION:C/\..*//}
+
+.include <bsd.port.mk>

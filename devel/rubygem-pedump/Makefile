@@ -1,5 +1,5 @@
 PORTNAME=	pedump
-PORTVERSION=	0.6.7
+PORTVERSION=	0.7.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,16 +11,16 @@ WWW=		https://pedump.me/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-awesome_print>=0:devel/rubygem-awesome_print \
-		rubygem-iostruct>=0.0.4:devel/rubygem-iostruct \
-		rubygem-multipart-post>=2.0.0:www/rubygem-multipart-post \
-		rubygem-rainbow>=0:devel/rubygem-rainbow \
+RUN_DEPENDS=	rubygem-iostruct>=0.7.0:devel/rubygem-iostruct \
+		rubygem-logger>=0:devel/rubygem-logger \
 		rubygem-zhexdump>=0.0.2:devel/rubygem-zhexdump
 
-USES=		gem
+USES=		gem python:env shebangfix
 
 NO_ARCH=	yes
 
 PLIST_FILES=	bin/pedump
+
+SHEBANG_FILES=	data/ordlookup/pefile2json.py
 
 .include <bsd.port.mk>

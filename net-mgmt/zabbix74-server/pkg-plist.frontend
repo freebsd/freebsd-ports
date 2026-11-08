@@ -1538,6 +1538,7 @@
 %%WWWDIR%%/js/defines.js
 %%WWWDIR%%/js/fields/class.field.array.js
 %%WWWDIR%%/js/fields/class.field.checkbox.js
+%%WWWDIR%%/js/fields/class.field.collection.js
 %%WWWDIR%%/js/fields/class.field.hidden.js
 %%WWWDIR%%/js/fields/class.field.js
 %%WWWDIR%%/js/fields/class.field.multiline.js

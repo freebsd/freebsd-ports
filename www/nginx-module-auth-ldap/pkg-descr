@@ -1,0 +1,8 @@
+The auth_ldap module authenticates HTTP basic credentials against an LDAP
+directory.  An ldap_server block describes one directory, require rules say
+who is let in -- any account that binds, one named account, or membership
+in a group -- and every worker keeps a pool of connections to the directory
+and can remember the outcome of a bind for a while.
+
+This port only installs the module sources.  The module itself is built by
+the nginx ports when their HTTP_AUTH_LDAP option is enabled.

@@ -1,0 +1,14 @@
+[
+{ type: install
+  message: <<EOM
+This package contains the sources of the eval module only.  It does not
+install a loadable module.
+
+The module itself is built by the nginx ports.  To use eval, build
+www/nginx, www/nginx-devel or www/freenginx with the HTTP_EVAL option enabled.
+Those ports pick the sources up from
+%%PREFIX%%/share/nginx/modules/nginx-module-eval and produce
+ngx_http_eval_module.so.
+EOM
+}
+]

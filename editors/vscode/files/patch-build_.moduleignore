@@ -1,0 +1,11 @@
+--- build/.moduleignore.orig	2026-09-30 08:38:38 UTC
++++ build/.moduleignore
+@@ -223,7 +223,7 @@ zone.js/dist/**
+ 
+ # @github/copilot - strip unneeded binaries and files
+ # Agent Host uses the runtime bundled with @github/copilot-sdk.
+-@github/copilot/**
++# @github/copilot/**
+ 
+ # Standalone Copilot CLI platform packages are not product dependencies.
+ @github/copilot-darwin-arm64/**

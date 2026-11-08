@@ -1,0 +1,9 @@
+TIMESTAMP = 1790178243
+SHA256 (rocky/v/vte291-0.64.2-2.el9.aarch64.rpm) = 7dfbe6a74df13d55be763ebc4bf5ec23b9b9cd9e542683bd68817187b16489dd
+SIZE (rocky/v/vte291-0.64.2-2.el9.aarch64.rpm) = 286434
+SHA256 (rocky/v/vte291-0.64.2-2.el9.i686.rpm) = c0158d2b79be8f0cd01fffde4e9a0426b3cad635f9536cb482ace5ef45b85ec8
+SIZE (rocky/v/vte291-0.64.2-2.el9.i686.rpm) = 309632
+SHA256 (rocky/v/vte291-0.64.2-2.el9.x86_64.rpm) = 8766225fa4af594b3e4d89c27f6e17c07e65db0deb3f5f47012f593db8efdd47
+SIZE (rocky/v/vte291-0.64.2-2.el9.x86_64.rpm) = 302736
+SHA256 (rocky/v/vte291-0.64.2-2.el9.src.rpm) = 2698bd60734ebfa664922100e815ea9e6388a04ccbd3c1fba7685e961ac97c01
+SIZE (rocky/v/vte291-0.64.2-2.el9.src.rpm) = 902071

@@ -1,5 +1,5 @@
 PORTNAME=	letos
-DISTVERSION=	4.0.1
+DISTVERSION=	4.0.4
 CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,7 +24,7 @@ PLUGINS_DESC=		Install plugins:
 
 ALL_PLUGINS=	\
 	CellRendererImage CsvExport CsvImport DbAndroid DbSQLite3MC \
-	ErdEditor FusionDarkStyle HtmlExport JsonExport MultiEditorImage \
+	ErdEditor FusionDarkStyle FusionLightStyle HtmlExport JsonExport MultiEditorImage \
 	MultiEditorJson PdfExport Printing PythonSyntaxHighlighter RegExpImport \
 	ScriptingPython ScriptingTcl SqlEnterpriseFormatter SqlExport SqlFormatterSimple \
 	TclSyntaxHighlighter TipOfTheDay XmlExport
@@ -56,6 +56,8 @@ OPTIONS_DEFAULT+=	${opt}
 
 WRKSRC_SUBDIR=	Letos
 
+CMAKE_ON=	WITH_UNIX_FAV
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|pluginDirs += QDir(CFG->getConfigDir()).absoluteFilePath("plugins");|pluginDirs += "${LOCALBASE}/lib/${PORTNAME}";|' \
 		${WRKSRC}/core/services/impl/pluginmanagerimpl.cpp
@@ -64,7 +66,7 @@ post-build:
 	@${ECHO} "===> Building plugins" && \
 	${MKDIR} ${WRKSRC}/../Plugins/build && \
 	cd ${WRKSRC}/../Plugins/build && \
-	${SETENVI} ${WRK_ENV} ${CONFIGURE_ENV} ${CMAKE_BIN} .. -GNinja ${WITH_PLUGIN_ARGS_OFF} ${WITH_PLUGIN_ARGS_ON} && \
+	${SETENVI} ${WRK_ENV} ${CONFIGURE_ENV} ${CMAKE_BIN} .. -GNinja -DWITH_UNIX_FAV=ON ${WITH_PLUGIN_ARGS_OFF} ${WITH_PLUGIN_ARGS_ON} && \
 	${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE_CMD} ${_MAKE_JOBS} ${ALL_TARGET}
 
 post-install:

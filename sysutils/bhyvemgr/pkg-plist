@@ -36,6 +36,7 @@ share/applications/bhyvemgr.desktop
 %%DATADIR%%/images/menu/quit.png
 %%DATADIR%%/images/menu/rdp.png
 %%DATADIR%%/images/menu/remove.png
+%%DATADIR%%/images/menu/snapshot.png
 %%DATADIR%%/images/menu/ssh.png
 %%DATADIR%%/images/menu/vm.png
 %%DATADIR%%/images/systems/almalinux.png
@@ -51,6 +52,7 @@ share/applications/bhyvemgr.desktop
 %%DATADIR%%/images/systems/fedora.png
 %%DATADIR%%/images/systems/freebsd.png
 %%DATADIR%%/images/systems/ghostbsd.png
+%%DATADIR%%/images/systems/haiku.png
 %%DATADIR%%/images/systems/kalilinux.png
 %%DATADIR%%/images/systems/linux.png
 %%DATADIR%%/images/systems/linuxmint.png

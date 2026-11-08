@@ -1,7 +1,16 @@
 etc/rc.d/rshim
 etc/rshim.conf
+sbin/bf-pldm-ver
+sbin/bf-reg
 @comment sbin/bfb-install
+sbin/bfb-tool
+sbin/fwpkg_unpack.py
+sbin/mlx-mkbfb
 sbin/rshim
 share/doc/rshim/README.md
-share/man/man8/rshim.8.gz
+share/man/man1/mlx-mkbfb.1.gz
+share/man/man8/bf-pldm-ver.8.gz
+share/man/man8/bf-reg.8.gz
 @comment share/man/man8/bfb-install.8.gz
+share/man/man8/bfb-tool.8.gz
+share/man/man8/rshim.8.gz

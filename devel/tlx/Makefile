@@ -16,5 +16,6 @@ USE_LDCONFIG=	yes
 
 CMAKE_ON=	TLX_BUILD_SHARED_LIBS
 CMAKE_TESTING_ON=	TLX_BUILD_TESTS # 1 test fails, see https://github.com/tlx/tlx/issues/46
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/tlx/tlx/issues/73
 
 .include <bsd.port.mk>

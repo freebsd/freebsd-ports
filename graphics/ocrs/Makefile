@@ -1,7 +1,7 @@
 PORTNAME=	ocrs
 DISTVERSIONPREFIX=	ocrs-cli-v
-DISTVERSION=	0.12.2
-PORTREVISION=	3
+DISTVERSION=	0.13.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,16 +19,17 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	robertknight
 
 CARGO_CRATES=	adler2-2.0.0 \
-		anyhow-1.0.102 \
+		anyhow-1.0.104 \
 		arboard-3.6.1 \
 		autocfg-1.1.0 \
-		base64-0.22.1 \
+		base64-0.23.1 \
 		bitflags-1.3.2 \
 		bitflags-2.9.4 \
 		bumpalo-3.14.0 \
 		bytemuck-1.14.0 \
 		byteorder-lite-0.1.0 \
 		bytes-1.11.1 \
+		cbindgen-0.29.4 \
 		cc-1.0.83 \
 		cfg-if-1.0.0 \
 		clipboard-win-5.4.1 \
@@ -38,28 +39,37 @@ CARGO_CRATES=	adler2-2.0.0 \
 		crossbeam-utils-0.8.18 \
 		crunchy-0.2.4 \
 		dispatch2-0.3.0 \
+		downcast-rs-1.2.1 \
 		either-1.9.0 \
+		equivalent-1.0.2 \
 		errno-0.3.14 \
 		error-code-3.3.2 \
-		fastrand-2.3.0 \
+		fastrand-2.5.0 \
 		fax-0.2.6 \
 		fax_derive-0.2.0 \
 		fdeflate-0.3.3 \
+		fixedbitset-0.5.7 \
 		flatbuffers-24.3.25 \
 		flate2-1.0.35 \
 		fnv-1.0.7 \
+		foldhash-0.1.5 \
 		form_urlencoded-1.2.1 \
 		gethostname-1.1.0 \
 		getrandom-0.2.11 \
+		getrandom-0.4.3 \
 		half-2.7.1 \
+		hashbrown-0.15.5 \
+		hashbrown-0.17.1 \
+		heck-0.5.0 \
 		hermit-abi-0.3.9 \
 		home-0.5.12 \
 		http-1.2.0 \
 		httparse-1.10.0 \
 		idna-1.0.3 \
 		idna_adapter-1.0.0 \
-		image-0.25.9 \
+		image-0.25.10 \
 		image-webp-0.2.0 \
+		indexmap-2.14.0 \
 		itoa-1.0.10 \
 		lexopt-0.3.2 \
 		libc-0.2.180 \
@@ -68,7 +78,8 @@ CARGO_CRATES=	adler2-2.0.0 \
 		log-0.4.25 \
 		memchr-2.7.4 \
 		miniz_oxide-0.8.0 \
-		moxcms-0.7.7 \
+		moxcms-0.8.1 \
+		nom-8.0.0 \
 		num-traits-0.2.17 \
 		num_cpus-1.16.0 \
 		objc2-0.6.3 \
@@ -79,29 +90,35 @@ CARGO_CRATES=	adler2-2.0.0 \
 		objc2-foundation-0.3.2 \
 		objc2-io-surface-0.3.2 \
 		once_cell-1.19.0 \
+		os_pipe-1.2.3 \
 		parking_lot-0.12.5 \
 		parking_lot_core-0.9.12 \
 		percent-encoding-2.3.1 \
+		petgraph-0.8.3 \
+		pkg-config-0.3.33 \
 		png-0.18.1 \
-		proc-macro2-1.0.89 \
+		proc-macro2-1.0.107 \
 		pxfm-0.1.25 \
 		quick-error-2.0.1 \
+		quick-xml-0.39.4 \
 		quote-1.0.35 \
-		rayon-1.11.0 \
+		r-efi-6.0.0 \
+		rayon-1.12.0 \
 		rayon-core-1.13.0 \
 		redox_syscall-0.5.18 \
 		ring-0.17.7 \
-		rten-0.24.0 \
-		rten-base-0.24.0 \
-		rten-gemm-0.24.0 \
-		rten-imageproc-0.24.0 \
-		rten-model-file-0.24.0 \
-		rten-onnx-0.24.0 \
-		rten-shape-inference-0.24.0 \
-		rten-simd-0.24.0 \
-		rten-tensor-0.24.0 \
-		rten-vecmath-0.24.0 \
-		rustc-hash-2.0.0 \
+		rten-0.26.0 \
+		rten-base-0.26.0 \
+		rten-gemm-0.26.0 \
+		rten-imageproc-0.26.0 \
+		rten-model-file-0.26.0 \
+		rten-onnx-0.26.0 \
+		rten-parallel-0.26.0 \
+		rten-shape-inference-0.26.0 \
+		rten-simd-0.26.0 \
+		rten-tensor-0.26.0 \
+		rten-vecmath-0.26.0 \
+		rustc-hash-2.1.3 \
 		rustc_version-0.4.0 \
 		rustix-1.1.3 \
 		rustls-0.23.22 \
@@ -113,22 +130,30 @@ CARGO_CRATES=	adler2-2.0.0 \
 		serde-1.0.228 \
 		serde_core-1.0.228 \
 		serde_derive-1.0.228 \
-		serde_json-1.0.149 \
+		serde_json-1.0.151 \
+		serde_spanned-1.1.1 \
 		simd-adler32-0.3.7 \
 		smallvec-1.13.2 \
 		spin-0.9.8 \
 		subtle-2.5.0 \
 		syn-2.0.87 \
-		thiserror-2.0.18 \
-		thiserror-impl-2.0.18 \
-		tiff-0.10.3 \
+		syn-3.0.3 \
+		tempfile-3.25.0 \
+		thiserror-2.0.20 \
+		thiserror-impl-2.0.20 \
+		tiff-0.11.3 \
+		toml-0.9.12+spec-1.1.0 \
+		toml_datetime-0.7.5+spec-1.1.0 \
+		toml_parser-1.1.2+spec-1.1.0 \
+		toml_writer-1.1.1+spec-1.1.0 \
+		tree_magic_mini-3.2.2 \
 		typeid-1.0.3 \
 		unicode-ident-1.0.12 \
 		untrusted-0.9.0 \
-		ureq-3.2.0 \
-		ureq-proto-0.5.3 \
+		ureq-3.4.0 \
+		ureq-proto-0.6.1 \
 		url-2.5.4 \
-		utf-8-0.7.6 \
+		utf8-zero-0.8.1 \
 		utf8_iter-1.0.4 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.100 \
@@ -136,6 +161,12 @@ CARGO_CRATES=	adler2-2.0.0 \
 		wasm-bindgen-macro-0.2.100 \
 		wasm-bindgen-macro-support-0.2.100 \
 		wasm-bindgen-shared-0.2.100 \
+		wayland-backend-0.3.15 \
+		wayland-client-0.31.14 \
+		wayland-protocols-0.32.12 \
+		wayland-protocols-wlr-0.3.12 \
+		wayland-scanner-0.31.10 \
+		wayland-sys-0.31.11 \
 		webpki-roots-1.0.2 \
 		weezl-0.1.12 \
 		windows-link-0.2.1 \
@@ -159,15 +190,16 @@ CARGO_CRATES=	adler2-2.0.0 \
 		windows_x86_64_gnullvm-0.53.1 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.53.1 \
+		winnow-0.7.15 \
+		winnow-1.0.3 \
+		wl-clipboard-rs-0.9.3 \
 		x11rb-0.13.2 \
 		x11rb-protocol-0.13.2 \
 		zerocopy-0.8.27 \
 		zerocopy-derive-0.8.27 \
 		zeroize-1.7.0 \
 		zmij-1.0.7 \
-		zune-core-0.4.12 \
 		zune-core-0.5.0 \
-		zune-jpeg-0.4.21 \
 		zune-jpeg-0.5.5
 
 PLIST_FILES=	bin/${PORTNAME}

@@ -9,8 +9,8 @@ LIB_DEPENDS=	libpolkit-qt6-agent-1.so:sysutils/polkit-qt-1@qt6
 
 USES=		cmake gettext gl kde:6 qt:6 tar:xz xorg
 USE_GL=		gl opengl
-USE_KDE=	coreaddons crash dbusaddons i18n notifications \
-		windowsystem \
+USE_KDE=	coreaddons crash dbusaddons i18n kirigami2 \
+		notifications windowsystem \
 		ecm:build
 USE_QT=		base declarative tools
 USE_XORG=	x11

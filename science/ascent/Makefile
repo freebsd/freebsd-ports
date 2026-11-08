@@ -1,7 +1,7 @@
 PORTNAME=	ascent
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.5
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	science
 PKGNAMESUFFIX=	-visualizer
 
@@ -12,8 +12,6 @@ WWW=		https://ascent.readthedocs.io/en/latest/ \
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/../LICENSE
-
-BROKEN_FreeBSD_15=	compilation fails with clang-19, see https://github.com/Alpine-DAV/ascent/issues/1422
 
 LIB_DEPENDS=	libconduit.so:science/conduit \
 		libhdf5.so:science/hdf5 \

@@ -1,5 +1,5 @@
 PORTNAME=	kibana
-DISTVERSION=	9.4.1
+DISTVERSION=	9.4.9
 DISTVERSIONSUFFIX=	-linux-x86_64
 CATEGORIES=	textproc www
 MASTER_SITES=	https://artifacts.elastic.co/downloads/kibana/ \
@@ -54,9 +54,9 @@ BINS=	kibana-encryption-keys kibana-health-gateway kibana-keystore \
 
 #######################################################################
 # Set node-nan version here
-_NODE_NAN_VER=	2.27.0
+_NODE_NAN_VER=	2.30.0
 # Set node-re version here
-_NODE_RE2_VER=	1.24.1
+_NODE_RE2_VER=	1.27.0
 #######################################################################
 
 _NODECMD=	${LOCALBASE}/bin/node --version
@@ -134,6 +134,7 @@ post-install:
 	${ECHO} "@dir(${KIBANAUSER},${KIBANAGROUP}) ${WWWDIR}/data" >> ${TMPPLIST}
 	${ECHO} "@dir ${WWWDIR}/plugins" >> ${TMPPLIST}
 	${ECHO} "@dir ${WWWDIR}/logs" >> ${TMPPLIST}
+	${ECHO} "@dir ${WWWDIR}/src/core/packages/chrome" >> ${TMPPLIST}
 	${ECHO} "@dir ${WWWDIR}/src/platform/packages/private/analytics" >> ${TMPPLIST}
 	${ECHO} "@dir ${WWWDIR}/src/platform/packages/private/kbn-reporting" >> ${TMPPLIST}
 	${ECHO} "@dir ${WWWDIR}/src/platform/packages/shared/content-management" >> ${TMPPLIST}

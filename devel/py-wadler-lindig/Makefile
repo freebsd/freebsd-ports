@@ -1,12 +1,12 @@
 PORTNAME=	wadler-lindig
-DISTVERSION=	0.1.7
+DISTVERSION=	0.1.8
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME:S/-/_/}-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	Wadler–Lindig pretty-printer for Python
+COMMENT=	Wadler-Lindig pretty-printer for Python
 WWW=		https://docs.kidger.site/wadler_lindig/ \
 		https://github.com/patrick-kidger/wadler_lindig
 

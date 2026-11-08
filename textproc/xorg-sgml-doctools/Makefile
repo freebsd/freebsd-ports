@@ -9,6 +9,6 @@ WWW=		https://gitlab.freedesktop.org/xorg/doc/xorg-sgml-doctools
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake tar:xz xorg-cat:doc
+USES=		gmake xorg-cat:doc
 
 .include <bsd.port.mk>

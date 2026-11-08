@@ -1,5 +1,5 @@
 PORTNAME=	cdogs-sdl
-DISTVERSION=	2.4.0
+DISTVERSION=	2.5.0
 CATEGORIES=	games
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -9,13 +9,16 @@ WWW=		https://github.com/cxong/cdogs-sdl
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake gl sdl
+LIB_DEPENDS=	libenet.so:net/enet
+
+USES=		cmake gl localbase:ldflags sdl
 USE_GITHUB=	yes
 GH_ACCOUNT=	cxong
 USE_GL=		opengl
 USE_SDL=	image2 mixer2 sdl2
 
 CMAKE_ARGS=	-DCDOGS_DATA_DIR=${DATADIR}/
+CMAKE_ON=	USE_SHARED_ENET
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/cdogs-sdl

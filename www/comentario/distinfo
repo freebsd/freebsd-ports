@@ -1,0 +1,9 @@
+TIMESTAMP = 1787543111
+SHA256 (go/www_comentario/comentario-v3.18.0/go.mod) = d7ec75fec88b1241009740e80de10cc7304b1a4df8458bf424dc3677ea1d9ee1
+SIZE (go/www_comentario/comentario-v3.18.0/go.mod) = 3375
+SHA256 (go/www_comentario/comentario-v3.18.0/yarn-4.17.1.tgz) = 6d9cbd4d43c8b82cdedef5c50e8a3db8c7c4ad542922edf31e687e9c2d2faec5
+SIZE (go/www_comentario/comentario-v3.18.0/yarn-4.17.1.tgz) = 1063945
+SHA256 (go/www_comentario/comentario-v3.18.0/comentario-3.18.0-node-modules-x64.tar.gz) = 6a0018e0c93da94156ed6666cfbc0003baa4a5f6f0aa3c8950f8b9b19241eba3
+SIZE (go/www_comentario/comentario-v3.18.0/comentario-3.18.0-node-modules-x64.tar.gz) = 129903093
+SHA256 (go/www_comentario/comentario-v3.18.0/comentario-v3.18.0.tar.bz2) = c9b2a0c8a3973840ddd83c3d9f6472e462ed5bcedad6c52fc8d7d90a5f70240f
+SIZE (go/www_comentario/comentario-v3.18.0/comentario-v3.18.0.tar.bz2) = 3395665

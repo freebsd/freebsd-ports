@@ -1,0 +1,6 @@
+The subs_filter module rewrites strings in the response body as nginx sends
+it, like a streaming sed for HTTP.  Matches can be fixed strings or regular
+expressions with captures, applied to a configurable set of content types.
+
+This port only installs the module sources.  The module itself is built by the
+nginx ports when their HTTP_SUBS_FILTER option is enabled.

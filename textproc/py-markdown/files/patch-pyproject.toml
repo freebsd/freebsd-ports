@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2025-11-03 19:50:58 UTC
+--- pyproject.toml.orig	2026-09-25 13:46:07 UTC
 +++ pyproject.toml
 @@ -1,10 +1,10 @@
  [build-system]
@@ -19,7 +19,7 @@
  ]
 -license = "BSD-3-Clause"
 -license-files = ["LICENSE.md"]
-+license = {file = 'LICENSE.md'}
- requires-python = '>=3.10'
++license = {text = "BSD-3-Clause"}
+ requires-python = '>=3.11'
  keywords = ['markdown', 'markdown-parser', 'python-markdown', 'markdown-to-html']
  classifiers = [

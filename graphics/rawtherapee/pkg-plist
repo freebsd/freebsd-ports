@@ -495,13 +495,9 @@ share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %%DATADIR%%/icons/rawtherapee/scalable/apps/square-toggle-theme-on-narrow.svg
 %%DATADIR%%/icons/rawtherapee/scalable/apps/square-toggle-white-off-narrow.svg
 %%DATADIR%%/icons/rawtherapee/scalable/apps/square-toggle-white-on-narrow.svg
-%%DATADIR%%/icons/rawtherapee/scalable/apps/star-gold-hollow-narrow.svg
 %%DATADIR%%/icons/rawtherapee/scalable/apps/star-gold-hollow-small.svg
-%%DATADIR%%/icons/rawtherapee/scalable/apps/star-gold-narrow.svg
 %%DATADIR%%/icons/rawtherapee/scalable/apps/star-gold-small.svg
-%%DATADIR%%/icons/rawtherapee/scalable/apps/star-hollow-narrow.svg
 %%DATADIR%%/icons/rawtherapee/scalable/apps/star-hollow-small.svg
-%%DATADIR%%/icons/rawtherapee/scalable/apps/star-narrow.svg
 %%DATADIR%%/icons/rawtherapee/scalable/apps/star-small.svg
 %%DATADIR%%/icons/rawtherapee/scalable/apps/star.svg
 %%DATADIR%%/icons/rawtherapee/scalable/apps/template-16.svg
@@ -572,8 +568,10 @@ share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %%DATADIR%%/languages/Espanol (Castellano)
 %%DATADIR%%/languages/Espanol (Latin America)
 %%DATADIR%%/languages/Francais
+%%DATADIR%%/languages/Hebrew
 %%DATADIR%%/languages/Italiano
 %%DATADIR%%/languages/Japanese
+%%DATADIR%%/languages/Korean
 %%DATADIR%%/languages/LICENSE
 %%DATADIR%%/languages/Magyar
 %%DATADIR%%/languages/Nederlands

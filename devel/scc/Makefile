@@ -1,7 +1,7 @@
 PORTNAME=	scc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.7.0
-PORTREVISION=	5
+DISTVERSION=	4.1.0
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	adamw@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
-GO_MODULE=	github.com/boyter/scc/v3
+GO_MODULE=	github.com/boyter/scc/v4
 
 PLIST_FILES=	bin/scc
 

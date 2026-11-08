@@ -1,7 +1,7 @@
 PORTNAME=	objconv
 DISTVERSION=	2.57
 CATEGORIES=	devel
-MASTER_SITES=	http://fuz.su/pub/objconv/ \
+MASTER_SITES=	http://fuz.ooo/pub/objconv/ \
 		https://www.agner.org/optimize/objconv.zip?dummy=/
 
 MAINTAINER=	fuz@FreeBSD.org

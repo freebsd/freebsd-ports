@@ -1,6 +1,7 @@
 PORTNAME=	opensubdiv
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3_7_0
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	FreeBSD@Shaneware.biz
@@ -73,7 +74,7 @@ TEST_CMAKE_BOOL_OFF=	NO_REGRESSION NO_TESTS
 
 TUTORIALS_CMAKE_BOOL_OFF=	NO_TUTORIALS
 
-post-patch:
+pre-configure:
 	${FIND} ${WRKSRC}/tutorials -name CMakeLists.txt -exec \
 		${REINPLACE_CMD} -e 's|{CMAKE_BINDIR_BASE}/tutorials|{CMAKE_INSTALL_PREFIX}/${DATADIR_REL}/tutorials|g' {} +
 	${FIND} ${WRKSRC}/examples -name CMakeLists.txt -exec \

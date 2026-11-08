@@ -1,14 +1,12 @@
 PORTNAME=	astrometry
-PORTVERSION=	0.97
-PORTREVISION=	4
+PORTVERSION=	0.98
 CATEGORIES=	astro
-MASTER_SITES=	https://github.com/dstndstn/${PORTNAME}.net/releases/download/${DISTVERSION}/
+MASTER_SITES=	https://${PORTNAME}.net/downloads/
 DISTNAME=	${PORTNAME}.net-${PORTVERSION}
 
 MAINTAINER=	rhurlin@FreeBSD.org
-COMMENT=	Astronomic calibration service
+COMMENT=	Astrometry.net - automatic recognition of astronomical images
 WWW=		https://astrometry.net/
-
 LICENSE=	GPLv3+
 
 BROKEN_armv6=	fails to link: os-features-test.c:10: undefined symbol 'canonicalize_file_name'
@@ -16,28 +14,28 @@ BROKEN_armv7=	fails to link: os-features-test.c:10: undefined symbol 'canonicali
 
 BUILD_DEPENDS=	bash:shells/bash \
 		${PY_SETUPTOOLS} \
-		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}numpy>=2.4.6:math/py-numpy@${PY_FLAVOR}
 LIB_DEPENDS=	libcairo.so:graphics/cairo \
 		libcfitsio.so:astro/cfitsio \
 		libgsl.so:math/gsl \
 		libnetpbm.so:graphics/netpbm \
 		libpng16.so:graphics/png \
 		libwcs.so:astro/wcslib
+# For some reason 'poudriere testport' only works with pytest in RUN_DEPENDS
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}astropy>0:astro/py-astropy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
-#TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=3.3.0:math/py-matplotlib@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=2.4.6:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR}
 
 USES=		gmake jpeg localbase pkgconfig python shebangfix
-# solver/test_tweak_plots.py: No module named 'tt'
-#USE_PYTHON=	pytest
 USE_LDCONFIG=	yes
+USE_PYTHON=	pytest
 
 SHEBANG_FILES=	bin/* configure gsl-an/grab-gsl-sources.sh \
 		plot/plotann.py sdss/*.py solver/*.py util/[!c]*.py
 
-MAKE_ARGS=	NETPBM_INC="-I${LOCALBASE}/include/netpbm" \
-		NETPBM_LIB="-L${LOCALBASE}/lib -lnetpbm" \
-		SYSTEM_GSL=yes
+MAKE_ARGS=	SYSTEM_GSL=yes
 MAKE_ENV=	INSTALL_DIR=${STAGEDIR}${PREFIX} \
 		DATA_INSTALL_DIR=${STAGEDIR}${DATADIR} \
 		DOC_INSTALL_DIR=${STAGEDIR}${DOCSDIR} \
@@ -48,7 +46,10 @@ MAKE_ENV=	INSTALL_DIR=${STAGEDIR}${PREFIX} \
 MAKE_JOBS_UNSAFE=	yes
 ALL_TARGET=	all py extra cfitsio-utils
 INSTALL_TARGET=	install install-cfitsio-utils
-#TEST_TARGET=	test
+TEST_ENV=	${MAKE_ENV} \
+		PYTHONPATH="${WRKSRC}:${WRKSRC}/util:${WRKSRC}/libkd:${WRKSRC}/solver:${WRKSRC}/plot" \
+		PATH="${WRKSRC}/bin:${WRKSRC}/util:${PATH}"
+TEST_TARGET=	test
 
 LDFLAGS+=	-lz
 
@@ -92,5 +93,13 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/sdss/testdata/*.fit* ${STAGEDIR}${DATADIR}/sdss
 	${INSTALL_DATA} ${WRKSRC}/solver/index-9918.fits ${STAGEDIR}${DATADIR}/solver
 	${INSTALL_DATA} ${WRKSRC}/catalogs/*.fit* ${STAGEDIR}${DATADIR}/catalogs
+
+do-test:
+	# 1. Compile all test-binaries in the main dir
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${TEST_ENV} ${MAKE_CMD} test
+	# 2. Run native test-suites in their subdirs
+	@cd ${WRKSRC}/util && ${SETENV} ${TEST_ENV} ./test
+	@cd ${WRKSRC}/libkd && ${SETENV} ${TEST_ENV} ./test
+	@cd ${WRKSRC}/solver && ${SETENV} ${TEST_ENV} ./test
 
 .include <bsd.port.mk>

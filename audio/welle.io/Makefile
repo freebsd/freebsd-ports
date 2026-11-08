@@ -1,6 +1,7 @@
 PORTNAME=	welle.io
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.7
+PORTREVISION=	1
 CATEGORIES=	audio hamradio
 
 MAINTAINER=	nsonack@herrhotzenplotz.de

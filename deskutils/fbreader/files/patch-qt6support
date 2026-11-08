@@ -222,8 +222,8 @@
  
  #include "../../../../core/src/desktop/dialogs/ZLDesktopOptionsDialog.h"
  
---- zlibrary/ui/src/qt4/dialogs/ZLQtProgressDialog.cpp.orig	2014-01-11 12:45:25 UTC
-+++ zlibrary/ui/src/qt4/dialogs/ZLQtProgressDialog.cpp
+--- zlibrary/ui/src/qt4/dialogs/ZLQtProgressDialog.cpp.orig	2026-09-22 02:59:21.446335000 +0900
++++ zlibrary/ui/src/qt4/dialogs/ZLQtProgressDialog.cpp		2026-09-22 03:00:55.215426000 +0900
 @@ -19,12 +19,12 @@
  
  #include <unistd.h>
@@ -242,15 +242,28 @@
  
  #include "ZLQtProgressDialog.h"
  #include "ZLQtUtil.h"
-@@ -69,7 +69,7 @@ ZLQtWaitMessage::ZLQtWaitMessage(const std::string &me
+@@ -69,13 +69,15 @@ ZLQtWaitMessage::ZLQtWaitMessage(const std::string &me
  	myLayout->addWidget(myLabel);
  
  	if (main == 0) {
 -		main = QApplication::desktop();
 +		main = qApp->activeWindow();
  	}
- 	move(
- 		main->x() + main->width() / 2 - myLabel->width() / 2 - 10,
+-	move(
+-		main->x() + main->width() / 2 - myLabel->width() / 2 - 10,
+-		main->y() + main->height() / 2 - myLabel->height() / 2 - 10
+-	);
+-	show();
++	if (main != 0) {
++		move(
++			main->x() + main->width() / 2 - myLabel->width() / 2 - 10,
++			main->y() + main->height() / 2 - myLabel->height() / 2 - 10
++		);
++		show();
++	}
+ 
+ 	qApp->processEvents();
+ 	usleep(5000);
 --- zlibrary/ui/src/qt4/dialogs/ZLQtProgressDialog.h.orig	2014-01-11 12:45:25 UTC
 +++ zlibrary/ui/src/qt4/dialogs/ZLQtProgressDialog.h
 @@ -22,7 +22,8 @@

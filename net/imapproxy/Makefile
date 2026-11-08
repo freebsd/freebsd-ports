@@ -8,6 +8,9 @@ MAINTAINER=	lasse@freebsdcluster.org
 COMMENT=	Caching IMAP proxy daemon to be used with Horde/IMP
 WWW=		http://www.kuleuven.net/projects/imapproxy/
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 HAS_CONFIGURE=	yes
 
 post-patch:

@@ -1,10 +1,10 @@
 PORTNAME=	fcitx5-configtool
-DISTVERSION=	5.1.12
+DISTVERSION=	5.1.16
 PORTREVISION=	1
 CATEGORIES=	textproc x11
 MASTER_SITES=	https://download.fcitx-im.org/fcitx5/${PORTNAME}/
 
-MAINTAINER=	khng@FreeBSD.org
+MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Fcitx5 IM framework configuration tool
 WWW=		https://github.com/fcitx/fcitx5-configtool
 

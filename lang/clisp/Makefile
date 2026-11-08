@@ -31,7 +31,6 @@ CONFIGURE_ARGS=		--docdir="${DOCSDIR}" \
 			--vimdir="${DATADIR}/vim" \
 			--with-libiconv=${ICONV_PREFIX}
 CONFIGURE_ENV=		FORCE_UNSAFE_CONFIGURE=1
-CONFIGURE_TARGET=	${ARCH:S/amd64/x86_64/}-portbld-freebsd${OSREL}
 
 MAKE_ENV=		${CONFIGURE_ENV}
 MAKE_JOBS_UNSAFE=	yes

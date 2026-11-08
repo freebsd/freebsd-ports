@@ -1,0 +1,9 @@
+TIMESTAMP = 1790178237
+SHA256 (rocky/e/enchant2-2.2.15-6.el9.aarch64.rpm) = a7b8245386f17f1d9d4f3439800b8ceef732a587fb42bcc37d53ac1218d8de50
+SIZE (rocky/e/enchant2-2.2.15-6.el9.aarch64.rpm) = 63405
+SHA256 (rocky/e/enchant2-2.2.15-6.el9.i686.rpm) = d65d036c48523257678eda1071cbfd79a827e15924cf8c295e3bc227d010c0d5
+SIZE (rocky/e/enchant2-2.2.15-6.el9.i686.rpm) = 67263
+SHA256 (rocky/e/enchant2-2.2.15-6.el9.x86_64.rpm) = f0ac2534a1dd08b82840623a8472d5c88e12d830df402ba7300421667a1c4be9
+SIZE (rocky/e/enchant2-2.2.15-6.el9.x86_64.rpm) = 64203
+SHA256 (rocky/e/enchant2-2.2.15-6.el9.src.rpm) = 2081ffb27128bed6e6014a755c653e1356c1802d42b8402bc1e4ac4810911c02
+SIZE (rocky/e/enchant2-2.2.15-6.el9.src.rpm) = 1000084

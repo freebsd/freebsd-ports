@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Username, Full Name, Email Address, 'GitHub' Username of the Current User
-WWW=		https://cran.r-project.org/package=whoami
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

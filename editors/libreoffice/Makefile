@@ -1,4 +1,4 @@
-PORTREVISION=	1
+PORTREVISION=	2
 
 .include "${.CURDIR}/Makefile.common"
 
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		cppunit-config:devel/cppunit \
 		dmake:devel/dmake \
 		gperf>=3.1:devel/gperf \
-		mdds>=${MDDS_VERSION}:devel/mdds \
+		mdds>=${MDDS_API_VERSION}:devel/mdds \
 		gpatch:devel/patch \
 		${LOCALBASE}/include/sane/sane.h:graphics/sane-backends \
 		vigra-config:graphics/vigra \
@@ -113,7 +113,7 @@ DISTFILES+=	afdko-4.0.3.tar.gz:src
 DISTFILES+=	antlr4-cpp-runtime-4.13.2-source.zip:src
 DISTFILES+=	dragonbox-1.1.3.tar.gz:src
 DISTFILES+=	phc-winner-argon2-20190702.tar.gz:src
-DISTFILES+=	skia-m142-f4ed99d2443962782cf5f8b4dd27179f131e7cbe.tar.xz:src
+DISTFILES+=	skia-m147-ad8ecedbfdef9f4ae4b1e73347b6dd56e6637d38.tar.xz:src
 DISTFILES+=	y-crdt-0.23.5.tar.gz:src
 DISTFILES+=	zxcvbn-c-2.6.tar.gz:src
 
@@ -141,25 +141,18 @@ USE_XORG=	ice sm x11 xaw xcb xext xinerama xrandr xrender
 USES+=		elfctl
 ELF_FEATURES=	+wxneeded:instdir/program/soffice.bin
 
-OPTIONS_DEFINE=	COINMP CUPS DOCS GNOME GTK3 GTK4 JAVA LTO MMEDIA PDFIUM PGSQL MARIADB SDK TEST WEBDAV
-OPTIONS_RADIO=	QT KDE
-OPTIONS_RADIO_QT=	QT5 QT6
-OPTIONS_RADIO_KDE=	KF5 KF6
+OPTIONS_DEFINE=	COINMP CUPS DOCS GNOME GTK3 GTK4 JAVA KF6 LTO MMEDIA PDFIUM PGSQL QT6 MARIADB SDK TEST WEBDAV
 OPTIONS_DEFAULT=	CUPS DOCS GTK3 JAVA MMEDIA PDFIUM QT6
 #OPTIONS_EXCLUDE=	GTK4
 
 COINMP_DESC=	Enable CoinMP (deprecated) math solver
 GTK4_DESC=	GTK+ 4 GUI toolkit support (experimental)
 JAVA_DESC=	Add Java support (XML filters, macros, DB connections)
-KF5_DESC=	KF5/Qt5 GUI toolkit support (implies QT5)
 KF6_DESC=	KF6/Qt6 GUI toolkit support (implies QT6)
 MMEDIA_DESC=	Enable multimedia backend for Impress
 PDFIUM_DESC=	Enable PDFium secure engine
 PGSQL_DESC=	Build with PostgreSQL-SDBC driver
 MARIADB_DESC=	Build with MariaDB/MySQL-SDBC driver
-QT_DESC=	Select Qt GUI engine version
-KDE_DESC=	Select KDE GUI engine version
-QT5_DESC=	Qt5 GUI toolkit support
 QT6_DESC=	Qt6 GUI toolkit support (default visual style)
 SDK_DESC=	Build with SDK
 TEST_DESC=	Run all regression tests
@@ -212,7 +205,6 @@ JAVA_DISTFILES=	17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip:src \
 		3bdf40c0d199af31923e900d082ca2dd-libfonts-1.1.6.zip:src \
 		8ce2fcd72becf06c41f7201d15373ed9-librepository-1.1.6.zip:src \
 		97b2d4dba862397f446b217e2b623e71-libloader-1.1.6.zip:src \
-		a084cd548b586552cb7d3ee51f1af969-odfvalidator-1.1.8-incubating-SNAPSHOT-jar-with-dependencies.jar:ext \
 		ace6ab49184e329db254e454a010f56d-libxml-1.1.7.zip:src \
 		ba2930200c9f019c2d93a8c88c651a0f-flow-engine-0.9.4.zip:src \
 		d8bd5eed178db6e2b18eeed243f85aa8-flute-1.1.6.zip:src \
@@ -221,24 +213,17 @@ JAVA_DISTFILES=	17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip:src \
 		f94d9870737518e3b597f9265f4e9803-libserializer-1.1.6.zip:src \
 		Java-WebSocket-1.6.0.tar.gz:src \
 		bsh-2.1.1-src.zip:src \
-		officeotron-0.8.5.jar:ext \
-		rhino-1.7.15.1.zip:src
+		odfvalidator-0.13.0-jar-with-dependencies.jar:ext \
+		officeotron-0.8.8.jar:ext \
+		rhino-1.7.15.1.zip:src \
+		verapdf-cli-1.29.0.jar:ext
 JAVA_USES=	java
 JAVA_VARS=	JAVA_VERSION=17+ NO_SHLIB_REQUIRES_GLOB=libjawt.so
-
-KF5_CONFIGURE_ENABLE=	kf5
-KF5_USE=	kde=config,coreaddons,i18n,kio,windowsystem
-KF5_USES=	kde:5
-KF5_IMPLIES=	QT5
-KF5_PREVENTS=	KF6
-KF5_PREVENTS_MSG=	KF5 cannot coexist with KF6
 
 KF6_CONFIGURE_ENABLE=	kf6
 KF6_USE=	kde=config,coreaddons,i18n,kio,windowsystem
 KF6_USES=	kde:6
 KF6_IMPLIES=	QT6
-KF6_PREVENTS=	KF5
-KF6_PREVENTS_MSG=	KF6 cannot coexist with KF5
 
 LTO_CONFIGURE_ENABLE=	lto
 
@@ -246,7 +231,7 @@ MMEDIA_USES=		gstreamer
 MMEDIA_CONFIGURE_ENABLE=	gstreamer-1-0
 
 PDFIUM_CONFIGURE_ENABLE=	pdfium
-PDFIUM_DISTFILES=	pdfium-7471.tar.bz2:src
+PDFIUM_DISTFILES=	pdfium-7681.tar.bz2:src
 PDFIUM_LIB_DEPENDS=	libabsl_strings.so:devel/abseil \
 			libopenjp2.so:graphics/openjpeg
 
@@ -257,16 +242,8 @@ PGSQL_USES=	pgsql
 MARIADB_CONFIGURE_ENABLE=	mariadb-sdbc
 MARIADB_USES=	mysql:client
 
-QT5_CONFIGURE_ENABLE=	qt5
-QT5_PREVENTS=	KF6
-QT5_PREVENTS_MSG=	KF6 support require Qt6 engine
-QT5_USE=	qt=buildtools:build,core,gui,network,qmake:build,widgets,x11extras
-QT5_USES=	qt:5
-
 QT6_CONFIGURE_ENABLE=	qt6
 QT6_CONFIGURE_ENV=	QMAKE6=${QMAKE} MOC6=${MOC} PATH="${QT_TOOLDIR}:${PATH}"
-QT6_PREVENTS=	KF5
-QT6_PREVENTS_MSG=	KF5 support require Qt5 engine
 QT6_USE=	qt=base,declarative,multimedia,tools:build
 QT6_USES=	qt:6
 
@@ -288,8 +265,10 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--disable-epm \
 		--disable-fetch-external \
 		--disable-firebird-sdbc \
+		--disable-kf5 \
 		--disable-mergelibs \
 		--disable-online-update \
+		--disable-qt5 \
 		--enable-cairo-canvas \
 		--enable-python=system \
 		--enable-release-build \
@@ -358,7 +337,8 @@ BINARY_ALIAS=	sed=gsed
 
 PIE_UNSAFE=	yes
 #MAKE_JOBS_UNSAFE=	yes
-MDDS_VERSION=	3.1
+
+.include "${.CURDIR:H:H}/devel/mdds/Makefile.version"
 
 .include <bsd.port.options.mk>
 
@@ -393,7 +373,7 @@ LDFLAGS+=	-Wl,--undefined-version
 post-patch:
 	${REINPLACE_CMD} \
 		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-		-e 's|mdds-3.0|mdds-${MDDS_VERSION}|g' \
+		-e 's|mdds-3.0|mdds-${MDDS_API_VERSION}|g' \
 		${WRKSRC}/configure
 .if ${COMPILER_FEATURES:Mlibstdc++}
 	${REINPLACE_CMD} -e 's/gb_CC/gb_CXX/' ${WRKSRC}/solenv/gbuild/platform/unxgcc.mk

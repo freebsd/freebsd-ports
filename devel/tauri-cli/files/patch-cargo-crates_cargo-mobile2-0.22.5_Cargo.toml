@@ -1,0 +1,16 @@
+-- Enable the freedesktop_entry_parser dependency on FreeBSD. cargo-mobile2
+-- reuses the Linux OS module on FreeBSD, which requires this crate.
+
+-- All mobile2 patches upstyreamed: https://github.com/tauri-apps/cargo-mobile2/pull/530
+
+--- cargo-crates/cargo-mobile2-0.22.5/Cargo.toml.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/cargo-mobile2-0.22.5/Cargo.toml
+@@ -199,7 +199,7 @@ default-features = false
+ features = ["gzip"]
+ default-features = false
+ 
+-[target.'cfg(target_os = "linux")'.dependencies.freedesktop_entry_parser]
++[target.'cfg(any(target_os = "linux", target_os = "freebsd"))'.dependencies.freedesktop_entry_parser]
+ version = "2.0"
+ 
+ [target.'cfg(target_os = "macos")'.dependencies.core-foundation]

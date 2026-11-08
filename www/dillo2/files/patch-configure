@@ -1,0 +1,25 @@
+--- configure.orig	2025-01-18 10:52:00 UTC
++++ configure
+@@ -7026,18 +7026,15 @@ printf "%s\n" "no" >&6; }
+ fi
+ 
+ 
+-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking FLTK 1.3" >&5
+-printf %s "checking FLTK 1.3... " >&6; }
++{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking FLTK version" >&5
++printf %s "checking FLTK version... " >&6; }
+ fltk_version="`$FLTK_CONFIG --version 2>/dev/null`"
+ case $fltk_version in
+-  1.3.*) { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+-printf "%s\n" "yes" >&6; }
++  1.[34].*) { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $fltk_version" >&5
++printf "%s\n" "$fltk_version" >&6; }
+          LIBFLTK_CXXFLAGS=`$FLTK_CONFIG --cxxflags`
+          LIBFLTK_CFLAGS=`$FLTK_CONFIG --cflags`
+          LIBFLTK_LIBS=`$FLTK_CONFIG --ldflags`;;
+-  1.4.*) { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-printf "%s\n" "no" >&6; }
+-         as_fn_error $? "FLTK $fltk_version not supported yet; use FLTK 1.3" "$LINENO" 5;;
+   ?*)    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no" >&5
+ printf "%s\n" "no" >&6; }
+          as_fn_error $? "FLTK 1.3 required; version found: $fltk_version" "$LINENO" 5;;

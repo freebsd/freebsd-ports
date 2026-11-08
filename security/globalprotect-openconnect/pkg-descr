@@ -1,2 +1,0 @@
-A GlobalProtect VPN client (GUI) for *nix based on Openconnect and
-built with Qt5, supports SAML auth mode, inspired by gp-saml-gui.

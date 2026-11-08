@@ -1,3 +1,3 @@
-TIMESTAMP = 1782017879
-SHA256 (pybind11_stubgen-2.5.5.tar.gz) = 758d6d6bbeefc62ad7f78d5e5bbf357ccf6af83cd4504f5f549403f452942708
-SIZE (pybind11_stubgen-2.5.5.tar.gz) = 25031
+TIMESTAMP = 1791878751
+SHA256 (pybind11_stubgen-3.0.0.tar.gz) = b0a908ae99204e201a5148c17dc3cb789021a339ab9dc1d0517a23a87490204c
+SIZE (pybind11_stubgen-3.0.0.tar.gz) = 33753

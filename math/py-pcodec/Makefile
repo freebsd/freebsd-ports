@@ -1,5 +1,5 @@
 PORTNAME=	pcodec
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 PORTREVISION=	2
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
@@ -19,5 +19,6 @@ USE_PYTHON=	autoplist concurrent pep517
 
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
+CARGO_TEST=	no
 
 .include <bsd.port.mk>

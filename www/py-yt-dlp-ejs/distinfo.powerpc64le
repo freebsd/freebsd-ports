@@ -1,0 +1,5 @@
+TIMESTAMP = 1791274240
+SHA256 (yt-dlp-ejs/powerpc64le/yt_dlp_ejs-0.8.0.tar.gz) = d5fa1639f63b5c4af8d932495f60689d5370f1a095782c944f7f62a303eb104e
+SIZE (yt-dlp-ejs/powerpc64le/yt_dlp_ejs-0.8.0.tar.gz) = 96571
+SHA256 (yt-dlp-ejs/powerpc64le/yt-dlp-ejs-node-modules-0.8.0.tar.gz) = fa735877fffee39149fb68cbd3eabcf873bcb0a99ab146ee9189ff3a9749affe
+SIZE (yt-dlp-ejs/powerpc64le/yt-dlp-ejs-node-modules-0.8.0.tar.gz) = 14818912

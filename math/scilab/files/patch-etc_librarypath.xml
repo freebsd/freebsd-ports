@@ -1,12 +1,34 @@
---- etc/librarypath.xml.orig	2020-02-25 09:59:42 UTC
+--- etc/librarypath.xml.orig	2026-05-19 09:32:07 UTC
 +++ etc/librarypath.xml
-@@ -42,6 +42,9 @@
-     <!-- Some distributions (like openSUSE) put gluegen-rt in /usr/lib instead pf /usr/lib/jni -->
-     <path value="/usr/lib/" />
-     <path value="/usr/lib64/" />
-+    <!-- FreeBSD ports -->
-+    <path value="/usr/local/share/java/classes" />
-+    <path value="/usr/local/lib" />
+@@ -32,19 +32,8 @@ -->
+     <path value="$SCILAB/../../lib/thirdparty/jcef/"/>
+ 
+     <!-- System provided libraries -->
+-    <!-- Default path to the JNI classes under some Linux (JoGL under Debian for example) -->
+-    <path value="/usr/lib/jni/"/>
+-    <!-- Standard path for %{_jnidir} rpm macro (jpackage) -->
+-    <path value="/usr/lib/java/"/>
+-    <path value="/usr/lib64/java/"/>
+-    <!-- RedHat put JNI on /usr/%{libdir}/%{name} instead of /usr/lib/jni -->
+-    <path value="/usr/lib/jogl2/"/>
+-    <path value="/usr/lib64/jogl2/"/>
+-    <path value="/usr/lib/gluegen2/"/>
+-    <path value="/usr/lib64/gluegen2/"/>
+-    <!-- Some distributions (like openSUSE) put gluegen-rt in /usr/lib instead pf /usr/lib/jni -->
+-    <path value="/usr/lib/" />
+-    <path value="/usr/lib64/" />
++    <!-- Default path to the JNI classes under FreeBSD (JoGL for example) -->
++    <path value="%%LOCALBASE%%/lib"/>
  
      <!-- SCILAB LIBRARIES -->
      <!-- Developpement environment -->
+@@ -68,7 +57,7 @@ -->
+     <path value="$SCILAB/../../lib/scilab/"/>
+ 
+     <!-- Standard path -->
+-    <path value="/usr/lib/scilab/"/>
++    <path value="%%LOCALBASE%%/lib/scilab/"/>
+     <!-- Standard path for 64 bits -->
+-    <path value="/usr/lib64/scilab/"/>
++    <path value="%%LOCALBASE%%/lib/scilab/"/>
+ </librarypaths>

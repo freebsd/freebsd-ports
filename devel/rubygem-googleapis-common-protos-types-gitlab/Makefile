@@ -1,5 +1,6 @@
 PORTNAME=	googleapis-common-protos-types
 PORTVERSION=	1.20.0
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-gitlab
@@ -11,7 +12,7 @@ WWW=		https://github.com/googleapis/common-protos-ruby/tree/main/googleapis-comm
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	rubygem-google-protobuf>=3.18<5.0:devel/rubygem-google-protobuf
+RUN_DEPENDS=	rubygem-google-protobuf-gitlab>=3.18<5.0:devel/rubygem-google-protobuf-gitlab
 
 USES=		gem
 

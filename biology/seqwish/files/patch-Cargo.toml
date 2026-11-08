@@ -1,0 +1,8 @@
+--- Cargo.toml.orig	2024-07-24 10:53:00 UTC
++++ Cargo.toml
+@@ -64,4 +64,4 @@ clap = { version = "4.5", features = ["derive"] }  # 
+ clap = { version = "4.5", features = ["derive"] }  # Command-line argument parsing
+ 
+ # AGC (Assembled Genomes Compressor) input support: pure-Rust decompressor, same crate/rev impg and cigzip use
+-ragc-core = { git = "https://github.com/AndreaGuarracino/ragc", rev = "c2d7ac2f40b80bab7b17b3c038f755f061dd5593" }
++ragc-core = { git = "https://github.com/AndreaGuarracino/ragc" }

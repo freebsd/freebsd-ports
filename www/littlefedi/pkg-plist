@@ -1,0 +1,4 @@
+bin/littlefedi
+@dir(root,littlefedi,0750) %%ETCDIR%%
+@(root,littlefedi,0640) %%ETCDIR%%/littlefedi.toml.sample
+@dir(littlefedi,littlefedi,0700) /var/db/littlefedi

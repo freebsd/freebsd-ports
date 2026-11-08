@@ -1,0 +1,59 @@
+#!/bin/sh
+# SPDX-License-Identifier: BSD-2-Clause
+# Copyright (c) 2026 Przemyslaw Frasunek <przemyslaw@frasunek.com>
+#
+# PROVIDE: tarpitd
+# REQUIRE: LOGIN FILESYSTEMS
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable tarpitd:
+#
+# tarpitd_enable="YES"
+# tarpitd_listen="127.0.0.1:8025"
+# tarpitd_maxconn="8192"
+# tarpitd_runas="nobody"
+# tarpitd_flags=""
+#
+# Note: the user to drop to is tarpitd_runas, not tarpitd_user.  rc.subr
+# treats ${name}_user as "start the whole thing under su", which would leave
+# tarpitd unable to write its pidfile or bind a privileged port, and unable
+# to drop privileges itself.
+#
+
+. /etc/rc.subr
+
+name="tarpitd"
+rcvar="tarpitd_enable"
+
+load_rc_config $name
+
+: ${tarpitd_enable:="NO"}
+: ${tarpitd_flags:=""}
+: ${tarpitd_runas:="nobody"}
+: ${tarpitd_listen:="127.0.0.1:8025"}
+: ${tarpitd_maxconn:="4096"}
+: ${tarpitd_pidfile:="/var/run/tarpitd.pid"}
+
+pidfile="${tarpitd_pidfile}"
+command="%%PREFIX%%/sbin/tarpitd"
+command_args="-P ${pidfile} -u ${tarpitd_runas} -l ${tarpitd_listen} -c ${tarpitd_maxconn}"
+
+start_precmd="tarpitd_precmd"
+
+tarpitd_precmd()
+{
+	#
+	# One descriptor per tarpitted connection, so the process limit has
+	# to be at least as large as tarpitd_maxconn.  The daemon raises its
+	# own soft limit, but it cannot exceed the hard limit set here.
+	#
+	local want
+	want=$((tarpitd_maxconn + 128))
+	if [ "$(ulimit -Hn)" -lt "${want}" ]; then
+		ulimit -Hn "${want}" 2>/dev/null || \
+		    warn "cannot raise the descriptor limit to ${want}"
+	fi
+	ulimit -Sn "${want}" 2>/dev/null
+}
+
+run_rc_command "$1"

@@ -5,7 +5,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	http://komquats.com/distfiles/ \
 		LOCAL/cy
 
-MAINTAINER=	cy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Print lines with IP addresses matching a pattern in CIDR format
 WWW=		https://www.lexa.ru/lexa/
 

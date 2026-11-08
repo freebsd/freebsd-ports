@@ -1,5 +1,5 @@
 PORTNAME=	dulwich
-PORTVERSION=	1.2.10
+PORTVERSION=	1.2.15
 PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
@@ -29,6 +29,7 @@ USE_PYTHON=	autoplist concurrent pep517 unittest
 
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
+CARGO_TEST=	no
 
 CPE_VENDOR=	dulwich_project
 

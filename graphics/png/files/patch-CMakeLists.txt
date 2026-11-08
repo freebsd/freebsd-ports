@@ -1,0 +1,13 @@
+Can be removed once FreeBSD 14 goes EoL
+
+--- CMakeLists.txt.orig	2026-10-10 15:08:05 UTC
++++ CMakeLists.txt
+@@ -393,7 +393,7 @@ if(ld-version-script AND NOT (ANDROID OR APPLE))
+ if(ld-version-script AND NOT (ANDROID OR APPLE))
+   # Check if LD supports linker scripts.
+   file(WRITE "${CMAKE_CURRENT_BINARY_DIR}/conftest.map" "
+-VERS_1 { global: sym1; local: *; };
++VERS_1 { global: sym1; };
+ VERS_2 { global: sym2; main; } VERS_1;
+ ")
+   # CMAKE_REQUIRED_FLAGS is a space-separated string, not a CMake list.

@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Squared Extrapolation Methods for Accelerating EM-Like Algorithms
-WWW=		https://cran.r-project.org/web/packages/SQUAREM/
+WWW=		https://cran.r-project.org/package=SQUAREM
 
 LICENSE=	GPLv2+
 

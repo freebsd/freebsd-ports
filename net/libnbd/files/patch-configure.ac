@@ -1,0 +1,20 @@
+Export enabled library dependencies for static pkg-config consumers.
+
+--- configure.ac.orig	2026-10-13 11:57:24 UTC
++++ configure.ac
+@@ -328,6 +328,15 @@
+     ])
+ ])
+ AM_CONDITIONAL([HAVE_LIBXML2], [test "x$LIBXML2_LIBS" != "x"])
++
++LIBNBD_REQUIRES_PRIVATE=
++AS_IF([test "x$GNUTLS_LIBS" != "x"],[
++    LIBNBD_REQUIRES_PRIVATE="gnutls"
++])
++AS_IF([test "x$LIBXML2_LIBS" != "x"],[
++    LIBNBD_REQUIRES_PRIVATE="$LIBNBD_REQUIRES_PRIVATE libxml-2.0"
++])
++AC_SUBST([LIBNBD_REQUIRES_PRIVATE])
+ 
+ dnl glib2 main loop for examples that interoperate with the glib main loop.
+ PKG_CHECK_MODULES([GLIB], [glib-2.0], [

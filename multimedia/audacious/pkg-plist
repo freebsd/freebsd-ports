@@ -60,7 +60,14 @@ share/man/man1/audtool.1.gz
 share/applications/audacious.desktop
 %%DATADIR%%/AUTHORS
 %%DATADIR%%/COPYING
+share/icons/hicolor/128x128/apps/audacious.png
+share/icons/hicolor/16x16/apps/audacious.png
+share/icons/hicolor/24x24/apps/audacious.png
+share/icons/hicolor/256x256/apps/audacious.png
+share/icons/hicolor/32x32/apps/audacious.png
 share/icons/hicolor/48x48/apps/audacious.png
+share/icons/hicolor/64x64/apps/audacious.png
+share/icons/hicolor/96x96/apps/audacious.png
 share/icons/hicolor/scalable/apps/audacious.svg
 %%NLS%%share/locale/af/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/audacious.mo

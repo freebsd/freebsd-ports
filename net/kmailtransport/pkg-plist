@@ -36,7 +36,7 @@ lib/cmake/KPim6MailTransport/KPim6MailTransportTargets-%%CMAKE_BUILD_TYPE%%.cmak
 lib/cmake/KPim6MailTransport/KPim6MailTransportTargets.cmake
 lib/libKPim6MailTransport.so
 lib/libKPim6MailTransport.so.6
-lib/libKPim6MailTransport.so.%%KDE_APPLICATIONS_SHLIB_VER%%
+lib/libKPim6MailTransport.so.%%KDE_PIM_SHLIB_VER%%
 %%QT_PLUGINDIR%%/pim6/mailtransport/mailtransport_smtpplugin.so
 share/config.kcfg/mailtransport.kcfg
 share/locale/ar/LC_MESSAGES/libmailtransport6.mo

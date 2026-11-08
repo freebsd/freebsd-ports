@@ -4,7 +4,7 @@
          sha256 = "44bf8a258cfd0d7b500b6058a2bb5c7387c8cebba295cfca985a68d16513f7c8",
          strip_prefix = "XNNPACK-25b42dfddb0ee22170d73ff0d4b333ea1e6edfeb",
          urls = tf_mirror_urls("https://github.com/google/XNNPACK/archive/25b42dfddb0ee22170d73ff0d4b333ea1e6edfeb.zip"),
-+        patch_file = ["@xla//third_party/xnnpack:freebsd_mmap.patch"],
++        patch_file = ["@xla//third_party/xnnpack:freebsd_mmap.patch", "@xla//third_party/xnnpack:freebsd_ppc_hwcap.patch"],
      )
      # LINT.ThenChange(//tensorflow/lite/tools/cmake/modules/xnnpack.cmake)
  

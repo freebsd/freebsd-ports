@@ -6,6 +6,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE terminal emulator
 WWW=		https://konsole.kde.org/
 
+LIB_DEPENDS=	libssh.so:security/libssh
 BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-xsl \
 		docbook-xml>0:textproc/docbook-xml
 RUN_DEPENDS=	keditbookmarks:deskutils/keditbookmarks

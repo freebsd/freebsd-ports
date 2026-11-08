@@ -10,6 +10,7 @@ LICENSE=	LGPL21
 
 USES=		cmake compiler:c++11-lib gettext kde:6 qt:6 tar:xz
 USE_KDE=	calendarcore libkleo mbox mime \
+		kirigami-addons:run kirigami2:run \
 		ecm:build
 USE_QT=		base
 

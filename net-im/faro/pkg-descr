@@ -1,0 +1,7 @@
+faro is a terminal (TUI) client for Signal, written in Rust and built for
+people who run everything over SSH inside tmux. It focuses on a polished,
+discoverable interface that never freezes, with an OpenCode-style command
+palette and btop-style colour and glyph graphics.
+
+It uses presage for the Signal protocol and never reimplements it. Unofficial;
+not affiliated with Signal.

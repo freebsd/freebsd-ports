@@ -1,6 +1,6 @@
---- lib389/__init__.py.orig	2026-06-29 17:03:20 UTC
+--- lib389/__init__.py.orig	2026-04-30 12:45:04 UTC
 +++ lib389/__init__.py
-@@ -1158,6 +1158,14 @@ class DirSrv(SimpleLDAPObject, object):
+@@ -1158,10 +1158,18 @@ class DirSrv(SimpleLDAPObject, object):
                  raise e from None
          else:
              self.log.debug("systemd status -> False")
@@ -15,3 +15,8 @@
              # Start the process.
              # Wait for it to terminate
              # This means the server is probably ready to go ....
+-            env = {}
++            env = dict(os.environ)
+             if self.has_asan():
+                 self.log.warning("WARNING: Starting instance with ASAN options. This is probably not what you want. Please contact support.")
+                 env.update(os.environ)

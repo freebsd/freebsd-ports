@@ -1,0 +1,23 @@
+the setuptools in ports does not support
+PEP 639 license = "Apache-2.0" expression yet.
+
+--- pyproject.toml.orig	2026-10-18 15:22:01 UTC
++++ pyproject.toml
+@@ -6,7 +6,7 @@ authors = [
+ authors = [
+     { name = "Simon Willison" },
+ ]
+-license = "Apache-2.0"
++license = {text = "Apache-2.0"}
+ requires-python = ">=3.10"
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",
+@@ -73,7 +73,7 @@ sqlite-utils = "sqlite_utils.cli:cli"
+ 
+ [build-system]
+ # setuptools 77+ is needed for the PEP 639 license = "Apache-2.0" expression
+-requires = ["setuptools>=77"]
++requires = ["setuptools>0"]
+ build-backend = "setuptools.build_meta"
+ 
+ [tool.flake8]

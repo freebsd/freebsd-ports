@@ -1,6 +1,6 @@
 PORTNAME=	fop
 DISTVERSION=	2.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc java
 MASTER_SITES=	APACHE/xmlgraphics/fop/source/:fop \
 		SF/offo/offo-hyphenation/2.2:hyph \
@@ -48,5 +48,11 @@ do-install:
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} README NOTICE KEYS ${STAGEDIR}${DOCSDIR}
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
+	${RLN} ${STAGEDIR}${DATADIR}/build/fop*.jar ${STAGEDIR}${JAVAJARDIR}
+	${RLN} ${STAGEDIR}${DATADIR}/build/fop.jar	\
+		${STAGEDIR}${JAVAJARDIR}/fop-core.jar
 
 .include <bsd.port.mk>

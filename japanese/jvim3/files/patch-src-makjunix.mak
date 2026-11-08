@@ -1,5 +1,5 @@
---- src/makjunix.mak.orig	2014-08-30 01:12:22.000000000 +0900
-+++ src/makjunix.mak	2014-08-30 01:19:58.000000000 +0900
+--- src/makjunix.mak.orig	2025-12-15 09:04:17 UTC
++++ src/makjunix.mak
 @@ -72,19 +72,19 @@
  
  
@@ -25,7 +25,7 @@
  
  ### Program to run on installed binary
  STRIP = strip
-@@ -100,7 +101,7 @@
+@@ -100,7 +100,7 @@ MANFILE = ../doc/vim.1
  
  MANFILE = ../doc/vim.1
  
@@ -34,7 +34,7 @@
  
  #
  # PART 2: various choices
-@@ -168,7 +169,8 @@
+@@ -168,7 +168,8 @@ DEFS = -DDIGRAPHS -DTERMCAP -DSOME_BUILTIN_TCAPS -DNO_
  
  DEFS = -DDIGRAPHS -DTERMCAP -DSOME_BUILTIN_TCAPS -DNO_FREE_NULL -DVIM_ISSPACE \
  		-DWEBB_COMPLETE -DWEBB_KEYWORD_COMPL \
@@ -44,7 +44,7 @@
  		-DKANJI -DUCODE -DTRACK -DCRMARK -DFEXRC -DUSE_GREP -DUSE_TAGEX -DUSE_OPT $(FEPOPT)
  
  #
-@@ -424,7 +426,7 @@
+@@ -424,7 +425,7 @@ DEFS = -DDIGRAPHS -DTERMCAP -DSOME_BUILTIN_TCAPS -DNO_
  ##   no changes required below this line      ##
  ################################################
  
@@ -53,7 +53,7 @@
  
  INCL = vim.h globals.h param.h keymap.h macros.h ascii.h term.h unix.h structs.h proto.h
  
-@@ -438,36 +440,32 @@
+@@ -438,36 +439,32 @@ GOBJ = grep.o alloc.o charset.o kanji.o regexp.o regsu
  
  GOBJ = grep.o alloc.o charset.o kanji.o regexp.o regsub.o u2s.o s2u.o
  
@@ -106,7 +106,7 @@
  	-rm -f *.bak
  	-rm -f $(GOBJ)
  #	-rm -f jptab.h jptab
-@@ -490,97 +488,97 @@
+@@ -490,97 +487,97 @@ alloc.o:	alloc.c  $(INCL)
  ###########################################################################
  
  alloc.o:	alloc.c  $(INCL)
@@ -235,7 +235,7 @@
  
  cmdtab.h: cmdtab.tab mkcmdtab
  	./mkcmdtab cmdtab.tab cmdtab.h
-@@ -589,19 +587,19 @@
+@@ -589,19 +586,19 @@ mkcmdtab.o: mkcmdtab.c
  	$(CC) -o mkcmdtab mkcmdtab.o
  
  mkcmdtab.o: mkcmdtab.c
@@ -260,7 +260,7 @@
  
  #jptab.h: jptab
  #	./jptab > jptab.h
-@@ -610,19 +608,19 @@
+@@ -610,19 +607,19 @@ jptab.o: jptab.c
  	$(CC) -o jptab jptab.o
  
  jptab.o: jptab.c

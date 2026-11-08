@@ -1,7 +1,7 @@
 PORTNAME=	PrusaSlicer
 DISTVERSIONPREFIX=version_
 DISTVERSION=	2.9.5
-PORTREVISION=	1
+PORTREVISION=	8
 CATEGORIES=	cad
 DIST_SUBDIR=	PrusaSlicer
 
@@ -39,7 +39,6 @@ LIB_DEPENDS+=	libbgcode_convert.so:cad/libbgcode \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreeimage.so:graphics/freeimage \
 		libfreetype.so:print/freetype2 \
-		libavcodec.so:multimedia/ffmpeg4 \
 		libharfbuzz.so:print/harfbuzz \
 		libwayland-egl.so:graphics/wayland \
 		libwebkit2gtk-4.1.so:www/webkit2-gtk@41 \
@@ -65,6 +64,7 @@ CMAKE_ARGS+=	-DwxWidgets_CONFIG_EXECUTABLE="${WX_CONFIG}" \
 		-DSLIC3R_PCH=OFF \
 		-DSLIC3R_BUILD_TESTS=OFF \
 		-DSLIC3R_STATIC=OFF \
+		-DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
 		-Wno-dev
 
 PORTDATA=	*

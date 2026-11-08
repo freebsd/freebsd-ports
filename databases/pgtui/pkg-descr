@@ -1,0 +1,11 @@
+pgtui is a terminal user interface for PostgreSQL, built with the Bubble
+Tea framework.
+
+It browses databases, schemas and tables in a tree view, filters rows
+interactively, formats and navigates JSONB values, and runs ad-hoc SQL
+with the results shown in tabs.  A command palette gives keyboard access
+to commands, tables and recent queries.
+
+Other features include saved query favorites, discovery of local
+PostgreSQL instances, connection history, vim-style motions and optional
+mouse support.

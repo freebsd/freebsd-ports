@@ -1,7 +1,7 @@
-# git.sr.ht/~rjarry/go-opt/v2 v2.1.0
+# git.sr.ht/~rjarry/go-opt/v2 v2.2.0
 ## explicit; go 1.18
 git.sr.ht/~rjarry/go-opt/v2
-# git.sr.ht/~rockorager/go-jmap v0.5.2
+# git.sr.ht/~rockorager/go-jmap v0.5.3
 ## explicit; go 1.19
 git.sr.ht/~rockorager/go-jmap
 git.sr.ht/~rockorager/go-jmap/core/push
@@ -11,16 +11,8 @@ git.sr.ht/~rockorager/go-jmap/mail/emailsubmission
 git.sr.ht/~rockorager/go-jmap/mail/identity
 git.sr.ht/~rockorager/go-jmap/mail/mailbox
 git.sr.ht/~rockorager/go-jmap/mail/thread
-# git.sr.ht/~rockorager/vaxis v0.15.0
-## explicit; go 1.18
-git.sr.ht/~rockorager/vaxis
-git.sr.ht/~rockorager/vaxis/ansi
-git.sr.ht/~rockorager/vaxis/log
-git.sr.ht/~rockorager/vaxis/octreequant
-git.sr.ht/~rockorager/vaxis/widgets/align
-git.sr.ht/~rockorager/vaxis/widgets/term
-# github.com/ProtonMail/go-crypto v1.3.0
-## explicit; go 1.22.0
+# github.com/ProtonMail/go-crypto v1.4.1
+## explicit; go 1.23.0
 github.com/ProtonMail/go-crypto/bitcurves
 github.com/ProtonMail/go-crypto/brainpool
 github.com/ProtonMail/go-crypto/eax
@@ -43,11 +35,14 @@ github.com/ProtonMail/go-crypto/openpgp/packet
 github.com/ProtonMail/go-crypto/openpgp/s2k
 github.com/ProtonMail/go-crypto/openpgp/x25519
 github.com/ProtonMail/go-crypto/openpgp/x448
-# github.com/arran4/golang-ical v0.3.2
+# github.com/arran4/golang-ical v0.3.5
 ## explicit; go 1.20
 github.com/arran4/golang-ical
-# github.com/cloudflare/circl v1.6.1
-## explicit; go 1.22.0
+# github.com/clipperhouse/uax29/v2 v2.7.0
+## explicit; go 1.18
+github.com/clipperhouse/uax29/v2/graphemes
+# github.com/cloudflare/circl v1.6.4
+## explicit; go 1.24.0
 github.com/cloudflare/circl/dh/x25519
 github.com/cloudflare/circl/dh/x448
 github.com/cloudflare/circl/ecc/goldilocks
@@ -60,12 +55,6 @@ github.com/cloudflare/circl/math/mlsbset
 github.com/cloudflare/circl/sign
 github.com/cloudflare/circl/sign/ed25519
 github.com/cloudflare/circl/sign/ed448
-# github.com/containerd/console v1.0.5
-## explicit; go 1.13
-github.com/containerd/console
-# github.com/creack/pty v1.1.24
-## explicit; go 1.18
-github.com/creack/pty
 # github.com/danwakefield/fnmatch v0.0.0-20160403171240-cbb64ac3d964
 ## explicit
 github.com/danwakefield/fnmatch
@@ -111,8 +100,8 @@ github.com/emersion/go-smtp
 # github.com/fsnotify/fsevents v0.2.0
 ## explicit; go 1.17
 github.com/fsnotify/fsevents
-# github.com/fsnotify/fsnotify v1.9.0
-## explicit; go 1.17
+# github.com/fsnotify/fsnotify v1.10.1
+## explicit; go 1.23
 github.com/fsnotify/fsnotify
 github.com/fsnotify/fsnotify/internal
 # github.com/go-ini/ini v1.67.0
@@ -126,15 +115,12 @@ github.com/golang/snappy
 # github.com/lithammer/fuzzysearch v1.1.8
 ## explicit; go 1.15
 github.com/lithammer/fuzzysearch/fuzzy
-# github.com/mattn/go-isatty v0.0.20
-## explicit; go 1.15
+# github.com/mattn/go-isatty v0.0.23
+## explicit; go 1.20
 github.com/mattn/go-isatty
-# github.com/mattn/go-runewidth v0.0.16
-## explicit; go 1.9
+# github.com/mattn/go-runewidth v0.0.24
+## explicit; go 1.20
 github.com/mattn/go-runewidth
-# github.com/mattn/go-sixel v0.0.5
-## explicit; go 1.16
-github.com/mattn/go-sixel
 # github.com/onsi/gomega v1.20.0
 ## explicit; go 1.18
 # github.com/pkg/errors v0.9.1
@@ -143,19 +129,14 @@ github.com/pkg/errors
 # github.com/pmezard/go-difflib v1.0.0
 ## explicit
 github.com/pmezard/go-difflib/difflib
-# github.com/rivo/uniseg v0.4.7
-## explicit; go 1.18
-github.com/rivo/uniseg
 # github.com/riywo/loginshell v0.0.0-20200815045211-7d26008be1ab
 ## explicit
 github.com/riywo/loginshell
+# github.com/rockorager/go-uucode v1.2.0
+## explicit; go 1.21
+github.com/rockorager/go-uucode
 # github.com/rogpeppe/go-internal v1.8.1
 ## explicit; go 1.16
-# github.com/soniakeys/quant v1.0.0
-## explicit
-github.com/soniakeys/quant
-github.com/soniakeys/quant/internal
-github.com/soniakeys/quant/median
 # github.com/stretchr/testify v1.11.1
 ## explicit; go 1.17
 github.com/stretchr/testify/assert
@@ -175,8 +156,19 @@ github.com/syndtr/goleveldb/leveldb/opt
 github.com/syndtr/goleveldb/leveldb/storage
 github.com/syndtr/goleveldb/leveldb/table
 github.com/syndtr/goleveldb/leveldb/util
-# golang.org/x/crypto v0.41.0
-## explicit; go 1.23.0
+# go.rockorager.dev/vaxis v0.17.1
+## explicit; go 1.21
+go.rockorager.dev/vaxis
+go.rockorager.dev/vaxis/ansi
+go.rockorager.dev/vaxis/log
+go.rockorager.dev/vaxis/octreequant
+go.rockorager.dev/vaxis/sixel
+go.rockorager.dev/vaxis/ui
+go.rockorager.dev/vaxis/widgets/align
+go.rockorager.dev/vaxis/widgets/term
+go.rockorager.dev/vaxis/widgets/term/pty
+# golang.org/x/crypto v0.54.0
+## explicit; go 1.25.0
 golang.org/x/crypto/argon2
 golang.org/x/crypto/blake2b
 golang.org/x/crypto/cast5
@@ -184,35 +176,42 @@ golang.org/x/crypto/cryptobyte
 golang.org/x/crypto/cryptobyte/asn1
 golang.org/x/crypto/hkdf
 golang.org/x/crypto/sha3
-# golang.org/x/image v0.30.0
-## explicit; go 1.23.0
+# golang.org/x/image v0.44.0
+## explicit; go 1.25.0
 golang.org/x/image/bmp
 golang.org/x/image/ccitt
-golang.org/x/image/draw
-golang.org/x/image/math/f64
+golang.org/x/image/internal/safemath
 golang.org/x/image/riff
 golang.org/x/image/tiff
 golang.org/x/image/tiff/lzw
 golang.org/x/image/vp8
 golang.org/x/image/vp8l
 golang.org/x/image/webp
-# golang.org/x/mod v0.27.0
-## explicit; go 1.23.0
+# golang.org/x/mod v0.38.0
+## explicit; go 1.25.0
 golang.org/x/mod/semver
-# golang.org/x/oauth2 v0.30.0
-## explicit; go 1.23.0
+# golang.org/x/net v0.57.0
+## explicit; go 1.25.0
+golang.org/x/net/html
+golang.org/x/net/html/atom
+# golang.org/x/oauth2 v0.36.0
+## explicit; go 1.25.0
 golang.org/x/oauth2
 golang.org/x/oauth2/internal
-# golang.org/x/sync v0.16.0
-## explicit; go 1.23.0
+# golang.org/x/sync v0.22.0
+## explicit; go 1.25.0
 golang.org/x/sync/errgroup
-# golang.org/x/sys v0.35.0
-## explicit; go 1.23.0
+# golang.org/x/sys v0.47.0
+## explicit; go 1.25.0
 golang.org/x/sys/cpu
+golang.org/x/sys/plan9
 golang.org/x/sys/unix
 golang.org/x/sys/windows
-# golang.org/x/text v0.28.0
-## explicit; go 1.23.0
+# golang.org/x/term v0.45.0
+## explicit; go 1.25.0
+golang.org/x/term
+# golang.org/x/text v0.40.0
+## explicit; go 1.25.0
 golang.org/x/text/encoding
 golang.org/x/text/encoding/charmap
 golang.org/x/text/encoding/htmlindex
@@ -232,8 +231,8 @@ golang.org/x/text/language
 golang.org/x/text/runes
 golang.org/x/text/transform
 golang.org/x/text/unicode/norm
-# golang.org/x/tools v0.36.0
-## explicit; go 1.23.0
+# golang.org/x/tools v0.48.0
+## explicit; go 1.25.0
 golang.org/x/tools/go/analysis
 golang.org/x/tools/go/analysis/checker
 golang.org/x/tools/go/analysis/internal
@@ -241,6 +240,7 @@ golang.org/x/tools/go/analysis/internal/analysisflags
 golang.org/x/tools/go/analysis/internal/checker
 golang.org/x/tools/go/analysis/multichecker
 golang.org/x/tools/go/analysis/unitchecker
+golang.org/x/tools/go/ast/astutil
 golang.org/x/tools/go/ast/edge
 golang.org/x/tools/go/ast/inspector
 golang.org/x/tools/go/gcexportdata
@@ -248,7 +248,8 @@ golang.org/x/tools/go/packages
 golang.org/x/tools/go/types/objectpath
 golang.org/x/tools/go/types/typeutil
 golang.org/x/tools/internal/aliases
-golang.org/x/tools/internal/analysisinternal
+golang.org/x/tools/internal/analysis/driverutil
+golang.org/x/tools/internal/astutil/free
 golang.org/x/tools/internal/diff
 golang.org/x/tools/internal/diff/lcs
 golang.org/x/tools/internal/event

@@ -1,5 +1,5 @@
 PORTNAME=	taglib
-DISTVERSION=	2.3.1
+DISTVERSION=	2.3.2
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/ \
 		https://taglib.org/releases/
@@ -16,7 +16,7 @@ LICENSE_FILE_MPL11=	${WRKSRC}/COPYING.MPL
 BUILD_DEPENDS=	utf8cpp>0:devel/utf8cpp
 TEST_DEPENDS=	cppunit-config:devel/cppunit
 
-USES=		cmake:testing compiler:c++17-lang cpe
+USES=		cmake:testing compiler:c++17-lang cpe pathfix
 USE_LDCONFIG=	yes
 
 CMAKE_ON=	VISIBILITY_HIDDEN

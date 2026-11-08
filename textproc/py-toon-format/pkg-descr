@@ -1,0 +1,4 @@
+TOON (Token-Oriented Object Notation) is a compact, human-readable
+serialization format for handing structured data to large language models,
+encoding the same content as JSON in markedly fewer tokens.  It provides
+encode and decode functions along with a toon command-line tool.

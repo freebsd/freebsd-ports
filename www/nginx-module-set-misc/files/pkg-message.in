@@ -1,0 +1,14 @@
+[
+{ type: install
+  message: <<EOM
+This package contains the sources of the set_misc module only.  It does not
+install a loadable module.
+
+The module itself is built by the nginx ports.  To use set_misc, build
+www/nginx, www/nginx-devel or www/freenginx with the SET_MISC option enabled.
+Those ports pick the sources up from
+%%PREFIX%%/share/nginx/modules/nginx-module-set-misc and produce
+ngx_http_set_misc_module.so.
+EOM
+}
+]

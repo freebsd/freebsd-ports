@@ -1,6 +1,6 @@
 PORTNAME=	ggwave
 DISTVERSIONPREFIX=	ggwave-v
-DISTVERSION=	0.4.1
+DISTVERSION=	0.4.3
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,5 +24,7 @@ PLIST_FILES=	include/ggwave/ggwave.h \
 
 post-install:
 	@cd ${WRKSRC}/include && ${COPYTREE_SHARE} ggwave ${STAGEDIR}${PREFIX}/include
+
+# tests as of 0.4.3: 100% tests passed, 0 tests failed out of 2
 
 .include <bsd.port.mk>

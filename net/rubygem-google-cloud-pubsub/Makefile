@@ -1,11 +1,11 @@
 PORTNAME=	google-cloud-pubsub
-PORTVERSION=	3.3.0
+PORTVERSION=	3.4.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Official library for Google Cloud Pub/Sub
-WWW=		https://cloud.google.com/ruby/docs/reference/google-cloud-pubsub/latest/ \
+WWW=		https://docs.cloud.google.com/ruby/docs/reference/google-cloud-pubsub/latest \
 		https://googleapis.github.io/google-cloud-ruby/docs/ \
 		https://github.com/googleapis/google-cloud-ruby/tree/main/google-cloud-pubsub \
 		https://github.com/googleapis/google-cloud-ruby

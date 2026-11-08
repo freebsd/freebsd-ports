@@ -1,11 +1,11 @@
 PORTNAME=	strucchange
-DISTVERSION=	1.5-4
+DISTVERSION=	1.6-0
 CATEGORIES=	finance
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Testing, Monitoring, and Dating Structural Changes
-WWW=		https://cran.r-project.org/web/packages/strucchange/
+WWW=		https://cran.r-project.org/package=strucchange
 
 LICENSE=	GPLv2+
 

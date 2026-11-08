@@ -1,6 +1,5 @@
 PORTNAME=	mailfromd
-PORTVERSION=	9.1
-PORTREVISION=	1
+PORTVERSION=	9.2
 CATEGORIES=	mail
 MASTER_SITES=	http://download.gnu.org.ua/pub/release/${PORTNAME}/ \
 		http://download.gnu.org.ua/pub/alpha/${PORTNAME}/

@@ -1,0 +1,22 @@
+--- libpiper/src/main/CMakeLists.txt.orig	2026-09-04 16:40:50 UTC
++++ libpiper/src/main/CMakeLists.txt	2026-09-04 16:40:50 UTC
+@@ -1,6 +1,8 @@
+ cmake_minimum_required(VERSION 3.26)
+ 
+ add_executable(piper_exe main.cpp)
++
++set_target_properties(piper_exe PROPERTIES OUTPUT_NAME piper)
+ enable_clang_tidy(piper_exe)
+ 
+ add_library(main_utils
+@@ -26,6 +28,10 @@
+ 
+ target_link_libraries(piper_exe PRIVATE piper main_utils)
+ 
++target_compile_definitions(
++  piper_exe
++  PRIVATE PIPER_ESPEAK_DATA_DIR="${CMAKE_INSTALL_PREFIX}/share/espeak-ng/espeak-ng-data")
++
+ install(
+   TARGETS piper_exe
+   RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}

@@ -7,7 +7,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Grounder and solver for logic programs
-WWW=		https://potassco.org/clingo/
+WWW=		https://potassco.org/clingo/ \
+		https://github.com/potassco/clingo
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
@@ -19,6 +20,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>0:devel/py-cffi@${PY_FLAVOR}
 
 USES=		compiler:c++14-lang python
 USE_PYTHON=	distutils autoplist unittest
+
+MAKE_ENV+=	CMAKE_ARGS=-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/potassco/clingo/issues/677
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/clingo
 TEST_WRKSRC=	${WRKSRC}/libpyclingo

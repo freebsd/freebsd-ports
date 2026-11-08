@@ -1,8 +1,8 @@
---- net/dns/dns_util.cc.orig	2026-05-07 17:02:56 UTC
+--- net/dns/dns_util.cc.orig	2026-08-12 09:02:10 UTC
 +++ net/dns/dns_util.cc
 @@ -27,6 +27,8 @@
- #include "net/dns/public/util.h"
  #include "net/third_party/uri_template/uri_template.h"
+ #include "third_party/abseil-cpp/absl/container/flat_hash_map.h"
  
 +#include <sys/socket.h>
 +

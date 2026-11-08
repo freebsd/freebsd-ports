@@ -1,10 +1,10 @@
 PORTNAME=	glibd
-PORTVERSION=	2.4.4.g
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
+DISTVERSION=	2.4.4.g
+PORTREVISION=	2
 CATEGORIES=	devel
 
-MAINTAINER=	arrowd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	D language bindings for the GLib Utility Library
 WWW=		https://github.com/gtkd-developers/GlibD
 

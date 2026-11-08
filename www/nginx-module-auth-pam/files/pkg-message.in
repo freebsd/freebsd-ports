@@ -1,0 +1,20 @@
+[
+{ type: install
+  message: <<EOM
+This package contains the sources of the auth_pam module only.  It does not
+install a loadable module.
+
+The module itself is built by the nginx ports.  To use it, build www/nginx,
+www/nginx-devel or www/freenginx with the HTTP_AUTH_PAM option enabled.
+Those ports pick the sources up from
+%%PREFIX%%/share/nginx/modules/nginx-module-auth-pam
+and produce ngx_http_auth_pam_module.so.
+
+The module needs a PAM service of its own: put a file under
+%%PREFIX%%/etc/pam.d, which does not exist by default, and name it in
+auth_pam_service_name.  The worker runs as the web server's user, so a
+service built on pam_unix(8) will not work -- that module reads files
+only root may read.
+EOM
+}
+]

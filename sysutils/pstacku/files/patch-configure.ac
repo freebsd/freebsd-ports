@@ -1,0 +1,19 @@
+--- configure.ac.orig	2025-04-19 13:58:30 UTC
++++ configure.ac
+@@ -33,7 +33,6 @@ AC_PROG_MAKE_SET
+ AC_PROG_CC
+ AC_PROG_INSTALL
+ AC_PROG_MAKE_SET
+-LT_INIT
+ 
+ AC_ARG_WITH([libunwind],
+     [AS_HELP_STRING([--with-libunwind@<:@=DIR@:>@],
+@@ -45,7 +44,7 @@ AS_CASE([$host],
+ AC_SUBST([LIBUNWIND])
+ 
+ AS_CASE([$host],
+-	[amd64-*-*], [ARCH_OBJ=pstack-amd64.$OBJEXT],
++	[x86_64-*-*], [ARCH_OBJ=pstack-amd64.$OBJEXT],
+ 	[i?86-*-*],   [ARCH_OBJ=pstack-i386.$OBJEXT],
+ 	[arm-*-*],   [ARCH_OBJ=pstack-arm.$OBJEXT],
+ 	[armv6-*-*],   [ARCH_OBJ=pstack-arm.$OBJEXT],

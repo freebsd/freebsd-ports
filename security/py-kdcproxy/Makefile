@@ -16,7 +16,8 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dnspython>0:dns/py-dnspython@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyasn1>0:devel/py-pyasn1@${PY_FLAVOR}
 
-USES=		python
+USES=		cpe python
+CPE_VENDOR=	kdcproxy_project
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes

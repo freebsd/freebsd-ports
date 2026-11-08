@@ -1,0 +1,15 @@
+-- Bump cmake_minimum_required to 3.5 for CMake 4.0 compatibility.
+-- CMake 4.0 removed support for cmake_minimum_required(VERSION < 3.5).
+-- This template is configured into a script that is executed with `cmake -P`
+-- during the build, so it does not inherit CMAKE_POLICY_VERSION_MINIMUM.
+
+--- CMake/Basis/configure_script.cmake.in.orig	2026-08-27 09:05:25 UTC
++++ CMake/Basis/configure_script.cmake.in
+@@ -24,7 +24,7 @@
+ # -D CONFIGURATION=$<CONFIGURATION> CMake option with generator expression.
+ ##############################################################################
+
+-cmake_minimum_required (VERSION 2.8.12 FATAL_ERROR)
++cmake_minimum_required (VERSION 3.5 FATAL_ERROR)
+
+ include ("@BASIS_MODULE_PATH@/CommonTools.cmake") # basis_configure_script()

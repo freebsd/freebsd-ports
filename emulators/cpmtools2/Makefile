@@ -1,6 +1,6 @@
 PORTNAME=	cpmtools2
 PORTVERSION=	2.24
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators sysutils
 MASTER_SITES=	http://www.moria.de/~michael/cpmtools/files/
 DISTNAME=	${PORTNAME:C/2$//}-${PORTVERSION}

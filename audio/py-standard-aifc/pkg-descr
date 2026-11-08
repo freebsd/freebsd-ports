@@ -1,0 +1,4 @@
+The aifc module from the Python standard library, redistributed as a standalone
+package.
+
+It provides support for reading and writing AIFF and AIFF-C audio files.

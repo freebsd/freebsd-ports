@@ -1,0 +1,34 @@
+Build FreeBSD as a Linux variant in GN (series 0003): take the Linux
+branches of the runtime configs for target_os "freebsd".
+FreeBSD-specific, not submitted upstream yet.
+--- runtime/BUILD.gn.orig	2026-09-29 08:00:52 UTC
++++ runtime/BUILD.gn
+@@ -31,7 +31,7 @@ config("dart_maybe_product_config") {
+     }
+     assert(!dart_debug)
+     defines += [ "PRODUCT" ]
+-    if (target_os == "linux") {
++    if (target_os == "linux" || target_os == "freebsd") {
+       defines += [ "DART_DISABLE_TIMELINE" ]
+     }
+   }
+@@ -44,7 +44,8 @@ config("dart_product_config") {
+   cflags = []
+   if (!dart_debug) {
+     defines += [ "PRODUCT" ]
+-    if (dart_runtime_mode == "release" && target_os == "linux") {
++    if (dart_runtime_mode == "release" &&
++        (target_os == "linux" || target_os == "freebsd")) {
+       defines += [ "DART_DISABLE_TIMELINE" ]
+     }
+   }
+@@ -125,7 +126,8 @@ config("dart_os_config") {
+     # If we need to differentiate iOS and watchOS targets later, we'll
+     # change this.
+     defines += [ "DART_TARGET_OS_MACOS_IOS" ]
+-  } else if (target_os == "linux") {
++  } else if (target_os == "linux" || target_os == "freebsd") {
++    # FreeBSD is a Linux variant, see //build/config/BUILDCONFIG.gn.
+     defines += [ "DART_TARGET_OS_LINUX" ]
+   } else if (target_os == "mac") {
+     defines += [ "DART_TARGET_OS_MACOS" ]

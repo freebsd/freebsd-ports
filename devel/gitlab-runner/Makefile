@@ -1,7 +1,6 @@
 PORTNAME=	gitlab-runner
 DISTVERSIONPREFIX=	v
-DISTVERSION=	19.2.0
-PORTREVISION=	1
+DISTVERSION=	19.5.2
 CATEGORIES=	devel
 MASTER_SITES=	https://gitlab-runner-downloads.s3.amazonaws.com/master/docker/:dockerx64 \
 		https://gitlab-runner-downloads.s3.amazonaws.com/master/docker/:dockerarm
@@ -32,10 +31,9 @@ CPE_VENDOR=	gitlab
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 USE_RC_SUBR=	gitlab_runner
-# this branch removes the replace line in go.mod which breaks the way FreeBSD ports build go packages
-GO_MOD_DIST=	https://gitlab.com/mfechner/gitlab-runner/-/raw/19-2-stable/
+GO_MOD_DIST=	gitlab
 
-GITBRANCH=	19-2-stable
+GITBRANCH=	19-5-stable
 GO_MODULE=	gitlab.com/gitlab-org/gitlab-runner
 
 _BUILD_DATE=	$$(date -u +%Y-%m-%dT%H:%M:%S%z)
@@ -61,6 +59,20 @@ USERS=		gitlab-runner
 GROUPS=		gitlab-runner
 
 PLIST_FILES=	bin/gitlab-runner
+
+# Since v19.x the go.mod has a local path replace
+# (helpers/runner_wrapper/api). The framework's go-post-fetch hook runs
+# "go mod download all" from the distdir, where only the bare go.mod has
+# been fetched, and resolves that local path relative to it. Extract the
+# subtree from the main tarball first (this runs before go-post-fetch).
+post-fetch:
+	if [ ! -d "${DISTDIR}/${DIST_SUBDIR}/helpers" ]; then \
+		${MKDIR} ${DISTDIR}/${DIST_SUBDIR} && \
+		cd ${DISTDIR}/${DIST_SUBDIR} && \
+			${TAR} -xf "${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}.tar.bz2" \
+			--strip-components 1 --no-same-owner --no-same-permissions \
+			"${DISTNAME}/helpers/runner_wrapper/api/go.mod" "${DISTNAME}/helpers/runner_wrapper/api/go.sum"; \
+	fi
 
 post-patch:
 	@${MKDIR} ${WRKSRC}/out/docker/

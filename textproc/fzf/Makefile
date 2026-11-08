@@ -1,6 +1,6 @@
 PORTNAME=	fzf
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.74.1
+DISTVERSION=	0.75.0
 CATEGORIES=	textproc
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -14,7 +14,7 @@ USES=		go:modules
 GO_MODULE=	github.com/junegunn/fzf
 GO_BUILDFLAGS=	-ldflags="-X main.version=${DISTVERSION} -X main.revision=${COMMIT_ID} -s -w"
 
-COMMIT_ID=	eae8d9d
+COMMIT_ID=	c7bf2b8
 
 PLIST_FILES=	bin/fzf share/man/man1/fzf.1.gz
 

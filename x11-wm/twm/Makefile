@@ -9,7 +9,7 @@ WWW=		https://gitlab.freedesktop.org/xorg/app/twm
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:xz xorg xorg-cat:app
+USES=		xorg xorg-cat:app
 USE_XORG=	ice sm x11 xext xmu xorgproto xrandr xt
 
 .include <bsd.port.mk>

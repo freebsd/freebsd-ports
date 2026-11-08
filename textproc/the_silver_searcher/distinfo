@@ -1,3 +1,5 @@
-TIMESTAMP = 1533749428
+TIMESTAMP = 1785055909
 SHA256 (ggreer-the_silver_searcher-2.2.0_GH0.tar.gz) = 6a0a19ca5e73b2bef9481c29a508d2413ca1a0a9a5a6b1bd9bbd695a7626cbf9
 SIZE (ggreer-the_silver_searcher-2.2.0_GH0.tar.gz) = 163686
+SHA256 (Add-support-for-libpcre2.patch) = e0e4970039f3e9a72b60dc313e3a9e1cf8848dc26e0f12e21888cdd46a854460
+SIZE (Add-support-for-libpcre2.patch) = 27717

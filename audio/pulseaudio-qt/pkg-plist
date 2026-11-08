@@ -45,4 +45,5 @@ lib/cmake/KF6PulseAudioQt/KF6PulseAudioQtTargets.cmake
 lib/libKF6PulseAudioQt.so
 lib/libKF6PulseAudioQt.so.%%SOVERSION%%
 lib/libKF6PulseAudioQt.so.5
+%%QT_LIBDIR%%/metatypes/qt6kf6pulseaudioqt_metatypes.json
 libdata/pkgconfig/KF6PulseAudioQt.pc

@@ -1,0 +1,9 @@
+bin/auto-rotate-disable
+bin/auto-rotate-enable
+bin/auto-rotate-osd
+bin/auto-rotate-toggle
+share/bhotkeys/plugins.d/rotate
+share/man/man1/auto-rotate-disable.1.gz
+share/man/man1/auto-rotate-enable.1.gz
+share/man/man1/auto-rotate-osd.1.gz
+share/man/man1/auto-rotate-toggle.1.gz

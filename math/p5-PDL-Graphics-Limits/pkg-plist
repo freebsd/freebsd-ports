@@ -1,2 +1,3 @@
 %%SITE_PERL%%/PDL/Graphics/Limits.pm
+%%SITE_PERL%%/PDL/Pdldoc/PDL-Graphics-Limits.db
 %%PERL5_MAN3%%/PDL::Graphics::Limits.3.gz

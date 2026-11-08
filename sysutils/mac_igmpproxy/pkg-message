@@ -1,0 +1,19 @@
+mac_igmpproxy needs to be loaded before igmpproxy starts, for example
+by adding the following line to /boot/loader.conf:
+
+  mac_igmpproxy_load="YES"
+
+Then make igmpproxy drop privileges by adding the following to
+igmpproxy.conf:
+
+  user igmpproxy
+  chroot /var/empty
+
+The policy applies to UID 422 (the igmpproxy user created by this
+package) by default.  This can be changed with:
+
+  sysctl security.mac.igmpproxy.uid=<uid>
+
+and enforcement can be disabled with:
+
+  sysctl security.mac.igmpproxy.enabled=0

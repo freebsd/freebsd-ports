@@ -1,5 +1,5 @@
 PORTNAME=	io-wait
-PORTVERSION=	0.4.0
+PORTVERSION=	1.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,5 +12,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE_RUBY=	${WRKSRC}/COPYING
 
 USES=		gem
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

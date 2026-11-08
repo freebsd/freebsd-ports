@@ -1,14 +1,38 @@
---- jacal.info.orig	2020-03-30 19:59:43 UTC
+--- jacal.info.orig	2026-08-16 22:53:00 UTC
 +++ jacal.info
-@@ -201,9 +201,9 @@ interactive session.
- This may involve setting up that implementation's initialization file or
- LOADing a '.init' file from the 'slib' directory.  Then type:
+@@ -214,8 +214,8 @@ then the ‘scm’ steps are unnecessary.             
+  -- System: Unix                                                              |
+  -- System: GNU/Linux                                                         |
  
--     (slib:load "/usr/local/lib/jacal/math")
-+     (slib:load "%%PREFIX%%/lib/jacal/math")
+-     If you lack permission to install into /usr/local/, you can install      |
+-     into your home directory by changing ‘/usr/local/’ to your home      |
++     If you lack permission to install into %%PREFIX%%/, you can install      |
++     into your home directory by changing ‘%%PREFIX%%/’ to your home      |
+      directory in this script.                                                |
+                                                                               |
+           wget https://ftp.gnu.org/gnu/scm/scm-5f5.tar.gz                     |
+@@ -224,9 +224,9 @@ then the ‘scm’ steps are unnecessary.             
+           tar -xzf scm-5f5.tar.gz                                             |
+           tar -xzf slib-3c2.tar.gz                                            |
+           tar -xzf jacal-2a1.tar.gz                                           |
+-          (cd slib-3c2; ./configure --prefix=/usr/local/; make install)       |
+-          (cd scm-5f5; ./configure --prefix=/usr/local/; make scm; make install)
+-          (cd jacal-2a1; ./configure --prefix=/usr/local/; make install)      |
++          (cd slib-3c2; ./configure --prefix=%%PREFIX%%/; make install)       |
++          (cd scm-5f5; ./configure --prefix=%%PREFIX%%/; make scm; make install)
++          (cd jacal-2a1; ./configure --prefix=%%PREFIX%%/; make install)      |
+           # rm scm-5f5.tar.gz slib-3c2.tar.gz jacal-2a1.tar.gz                |
  
--where '/usr/local/lib/jacal/' is a path to the JACAL directory.  JACAL
-+where '%%PREFIX%%/lib/jacal/' is a path to the JACAL directory.  JACAL
- should then print:
- 
-      JACAL version 1c7, Copyright 1989-2020 Aubrey Jaffer                     |
+      The command ‘jacal’ will start an interactive session.
+@@ -798,9 +798,9 @@ LOADing a ‘.init’ file from the ‘slib’ directo
+ This may involve setting up that implementation's initialization file or      |
+ LOADing a ‘.init’ file from the ‘slib’ directory.  Then type:         |
+                                                                               |
+-     (slib:load "/usr/local/lib/jacal/math")                                  |
++     (slib:load "%%PREFIX%%/lib/jacal/math")                                  |
+                                                                               |
+-where ‘/usr/local/lib/jacal/’ is a path to the JACAL directory.  JACAL    |
++where ‘%%PREFIX%%/lib/jacal/’ is a path to the JACAL directory.  JACAL    |
+ should then print:                                                            |
+                                                                               |
+      JACAL version 2a1, Copyright 1989-2026 Aubrey Jaffer                     |

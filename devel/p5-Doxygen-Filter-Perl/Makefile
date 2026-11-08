@@ -1,5 +1,5 @@
 PORTNAME=	Doxygen-Filter-Perl
-PORTVERSION=	1.61
+DISTVERSION=	1.61
 PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -10,6 +10,8 @@ COMMENT=	Input filter for Doxygen enabling support for Perl code documentation
 WWW=		http://perldoxygen.sourceforge.net/
 
 LICENSE=	GPLv3
+
+BROKEN=	Fails to fetch
 
 RUN_DEPENDS=	doxygen:devel/doxygen \
 		p5-Pod-POM>=0.27:textproc/p5-Pod-POM \

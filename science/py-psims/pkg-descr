@@ -1,0 +1,5 @@
+Prototype work for a unified API for writing Proteomics Standards Initiative
+standardized formats for mass spectrometry:
+1. mzML
+2. mzIdentML
+3. mzMLb

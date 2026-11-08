@@ -35,12 +35,12 @@ KBCD_DATE=		20250515
 # Custom: This is the date when the bank data is officially recocognized and
 # supported. Do not edit manually, unless you really know what you are doing!
 # Run `make ktoblzcheck-data-update` to update this value automatically.
-BANKDATA_START_DATE=	20260608
+BANKDATA_START_DATE=	20260907
 # Custom: This is the date when the bank data is officially void and can no
 # longer be relied upon. Do not edit manually, unless you really know what you
 # are doing! Run `make ktoblzcheck-data-update` to update this value
 # automatically.
-BANKDATA_END_DATE=	20260906
+BANKDATA_END_DATE=	20261206
 # Custom: Raw distfile name for the bank data.
 BANKDATA_DISTFILE=	${PORTNAME}-bankdata-${BANKDATA_START_DATE}${EXTRACT_SUFX}
 

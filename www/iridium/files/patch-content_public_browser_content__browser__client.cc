@@ -1,6 +1,6 @@
---- content/public/browser/content_browser_client.cc.orig	2026-06-10 12:51:34 UTC
+--- content/public/browser/content_browser_client.cc.orig	2026-08-13 16:48:13 UTC
 +++ content/public/browser/content_browser_client.cc
-@@ -1419,7 +1419,7 @@ bool ContentBrowserClient::ShouldRunOutOfProcessSystem
+@@ -1452,7 +1452,7 @@ bool ContentBrowserClient::ShouldRunOutOfProcessSystem
  // that can be adequately sandboxed.
  // Currently Android's network service will not run out of process or sandboxed,
  // so OutOfProcessSystemDnsResolution is not currently enabled on Android.

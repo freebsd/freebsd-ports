@@ -1,0 +1,16 @@
+Lenovo AnyOS package:
+  intc-lnvgy_fw_nic_net.e800-4.90-1.3897.0-ja0cn-0262_anyos_comp.zip
+  SHA256 1d7dc96b1c8fded693d6ae370d60111dd11d90e743190e3065700c14861a64f7
+
+Installed NVM images:
+  8086:159b:8086:4002  EEPID 80021365
+    SHA256 fe18c2c778532a0564f7b1d68fce71ab54d1e4c594ba33f42e06959a17f6563a
+  8086:159b:8086:4003  EEPID 80021362
+    SHA256 37db7702c39d172f6b20372f8c4c57f708e30ffcf9e73a2ed4f214577f5db79f
+  8086:1593:8086:4010  EEPID 80021364
+    SHA256 156b373d050ec6fdc11059fc2d3c0074dc63f7788d42b9845b213875229e98ec
+  8086:1593:8086:4013  EEPID 80021363
+    SHA256 9b0c4dbc37e26bfaac048cdaa289cde41d632ddd37b88fef99a9573e30b974e0
+
+The four payload hashes match Lenovo's first-party per-adapter packages.
+The firmware images are cryptographically signed for validation by the NIC.

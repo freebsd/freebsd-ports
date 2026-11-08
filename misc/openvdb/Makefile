@@ -1,11 +1,7 @@
 PORTNAME=	openvdb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	13.0.0
-PORTREVISION=	1
+DISTVERSION=	14.0.0
 CATEGORIES=	misc
-
-PATCH_SITES=	https://github.com/AcademySoftwareFoundation/openvdb/commit/
-PATCHFILES=	d68d0914fc6ed41cadd363bd4330c39a7fb5b1f1.diff:-p1 # TBB 2023 fix
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Tools for storage and manipulation of sparse volumetric data
@@ -15,10 +11,8 @@ WWW=		https://www.openvdb.org/ \
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libblosc.so:archivers/c-blosc \
-		libboost_iostreams.so:devel/boost-libs \
-		libImath.so:math/Imath \
-		libtbb.so:devel/onetbb
+LIB_DEPENDS=	libtbb.so:devel/onetbb \
+		libzstd.so:archivers/zstd
 TEST_DEPENDS=	googletest>0:devel/googletest
 
 USES=		cmake:testing compiler:c++17-lang localbase:ldflags pkgconfig
@@ -29,7 +23,12 @@ GH_ACCOUNT=	AcademySoftwareFoundation
 
 CMAKE_ARGS=		-DCONCURRENT_MALLOC="Tbbmalloc" -DTbb_INCLUDE_DIR=${LOCALBASE}/include
 CMAKE_OFF=		OPENVDB_CORE_STATIC
-CMAKE_TESTING_ON=	OPENVDB_BUILD_UNITTESTS # one test fails: https://github.com/AcademySoftwareFoundation/openvdb/issues/1103
+CMAKE_TESTING_ON=	OPENVDB_BUILD_UNITTESTS
+
+TEST_ENV=		${MAKE_ENV} TMPDIR=${WRKDIR}/tmp GTEST_FILTER=-TestStreamCompression.testPagedStreams
+
+pre-test:
+	@${MKDIR} ${WRKDIR}/tmp
 
 OPTIONS_DEFINE=		TOOLS #DOCS # TOOLS should be made into a subpackage
 OPTIONS_DEFAULT=	TOOLS
@@ -38,8 +37,7 @@ OPTIONS_SUB=		yes
 TOOLS_DESC=		Build CLI tools
 TOOLS_CMAKE_BOOL=	OPENVDB_BUILD_BINARIES OPENVDB_BUILD_VDB_LOD \
 			OPENVDB_BUILD_VDB_RENDER OPENVDB_BUILD_VDB_VIEW
-TOOLS_LIB_DEPENDS=	libglfw.so:graphics/glfw \
-			libOpenEXR.so:graphics/openexr
+TOOLS_LIB_DEPENDS=	libglfw.so:graphics/glfw
 TOOLS_USES=		gl xorg
 TOOLS_USE=		GL=gl,glu XORG=ice,sm,x11,xcursor,xext,xi,xinerama,xrandr,xxf86vm
 
@@ -49,11 +47,9 @@ TOOLS_USE=		GL=gl,glu XORG=ice,sm,x11,xcursor,xext,xi,xinerama,xrandr,xxf86vm
 
 #PORTDOCS=	*
 
-# tests as of 13.0.0:
-# [==========] 732 tests from 118 test suites ran. (50897 ms total)
-# [  PASSED  ] 731 tests.
-# [  FAILED  ] 1 test, listed below:
-# [  FAILED  ] TestStreamCompression.testPagedStreams
-# see https://github.com/AcademySoftwareFoundation/openvdb/issues/2133
+post-install: # remove license files
+	@${RM} -r ${STAGEDIR}${PREFIX}/share/doc
+
+# tests as of 13.1.0: 100% tests passed out of 1
 
 .include <bsd.port.mk>

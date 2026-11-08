@@ -3,12 +3,14 @@ bin/galenectl
 %%DATADIR%%/404.css
 %%DATADIR%%/404.html
 %%DATADIR%%/background-blur-worker.js
+%%DATADIR%%/camera-test.js
 %%DATADIR%%/change-password.css
 %%DATADIR%%/change-password.html
 %%DATADIR%%/change-password.js
 %%DATADIR%%/common.css
 %%DATADIR%%/example/example.html
 %%DATADIR%%/example/example.js
+%%DATADIR%%/filter.js
 %%DATADIR%%/galene.css
 %%DATADIR%%/galene.html
 %%DATADIR%%/galene.js
@@ -17,6 +19,7 @@ bin/galenectl
 %%DATADIR%%/mainpage.js
 %%DATADIR%%/management.js
 %%DATADIR%%/protocol.js
+%%DATADIR%%/settings.js
 %%DATADIR%%/stats.html
 %%DATADIR%%/stats.js
 %%DATADIR%%/third-party/contextual/LICENSE

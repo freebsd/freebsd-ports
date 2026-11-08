@@ -1,6 +1,6 @@
 PORTNAME=	brotli
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.0
+DISTVERSION=	1.2.1
 PORTEPOCH=	1
 CATEGORIES=	archivers devel
 MASTER_SITES+=	https://github.com/google/${PORTNAME}/releases/download/${DISTVERSIONFULL}/

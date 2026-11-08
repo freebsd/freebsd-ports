@@ -1,0 +1,11 @@
+--- buildtools/third_party/libc++abi/BUILD.gn.orig	2026-09-25 15:26:43 UTC
++++ buildtools/third_party/libc++abi/BUILD.gn
+@@ -59,7 +59,7 @@ target(libcxxabi_target_type, "libc++abi") {
+ 
+   defines = [ "LIBCXXABI_SILENT_TERMINATE" ]
+ 
+-  if (is_linux || is_android) {
++  if ((is_linux || is_android) && !is_freebsd) {
+     defines += [ "_LIBCXXABI_USE_FUTEX" ]
+   }
+ 

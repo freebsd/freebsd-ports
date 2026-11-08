@@ -1,5 +1,5 @@
 PORTNAME=	OrePAN2
-PORTVERSION=	0.53
+PORTVERSION=	0.54
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:OALDERS
@@ -31,7 +31,8 @@ RUN_DEPENDS=	p5-Archive-Extract>=0.72:archivers/p5-Archive-Extract \
 		p5-Types-Path-Tiny>=0:devel/p5-Types-Path-Tiny \
 		p5-Types-Self>=0:devel/p5-Types-Self \
 		p5-Types-URI>=0:devel/p5-Types-URI
-TEST_DEPENDS=	p5-File-pushd>=0:devel/p5-File-pushd \
+TEST_DEPENDS=	p5-Capture-Tiny>=0:devel/p5-Capture-Tiny \
+		p5-File-pushd>=0:devel/p5-File-pushd \
 		p5-File-Touch>=0:devel/p5-File-Touch \
 		p5-File-Which>=0:sysutils/p5-File-Which \
 		p5-Test-Needs>=0:devel/p5-Test-Needs \

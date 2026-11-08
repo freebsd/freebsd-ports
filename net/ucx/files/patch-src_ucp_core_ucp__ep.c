@@ -1,6 +1,6 @@
---- src/ucp/core/ucp_ep.c.orig	2026-07-01 23:04:16 UTC
+--- src/ucp/core/ucp_ep.c.orig	2026-09-09 02:32:02 UTC
 +++ src/ucp/core/ucp_ep.c
-@@ -3181,11 +3181,25 @@ void ucp_ep_config_lane_info_str(ucp_worker_h worker,
+@@ -3499,11 +3499,25 @@ void ucp_ep_config_lane_info_str(ucp_worker_h worker,
      }
  
      dst_md_index = key->lanes[lane].dst_md_index;

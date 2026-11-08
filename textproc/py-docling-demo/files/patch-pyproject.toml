@@ -1,7 +1,18 @@
+-- workaround for https://github.com/docling-project/docling/issues/4402
+-- exclude some folders
+
 -- Add setuptools packages.find config to exclude top-level utils package that conflicts with other ports.
---- pyproject.toml.orig	2026-07-09 20:28:23 UTC
+--- pyproject.toml.orig	2025-12-19 09:04:27 UTC
 +++ pyproject.toml
-@@ -19,3 +19,6 @@ dependencies = [
+@@ -6,7 +6,6 @@ dependencies = [
+ requires-python = ">=3.10"
+ dependencies = [
+     "azure-identity>=1.25.1",
+-    "azure-search>=1.0.0b2",
+     "azure-search-documents>=11.6.0",
+     "build>=1.3.0",
+     "docling>=2.64.0",
+@@ -19,3 +18,6 @@ dependencies = [
      "transformers>=4.57.3",
      "twine>=6.2.0",
  ]

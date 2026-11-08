@@ -1,5 +1,5 @@
 PORTNAME=	libosmpbf
-PORTVERSION=	1.7.0
+PORTVERSION=	1.8.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	astro geography devel
 

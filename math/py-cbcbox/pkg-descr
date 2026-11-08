@@ -1,0 +1,9 @@
+cbcbox provides Python access to the COIN-OR CBC (Coin-or Branch and Cut)
+mixed-integer linear programming (MILP) solver.
+
+It exposes helpers for locating the CBC binary, library and include
+directories, and a Python module entry point that forwards to the CBC
+executable.
+
+This FreeBSD port uses the system math/cbc CBC installation instead of
+the bundled binaries that upstream ships in its wheels.

@@ -1,7 +1,6 @@
 PORTNAME=	go-ethereum
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.17.2
-PORTREVISION=	3
+DISTVERSION=	1.17.10
 CATEGORIES=	net-p2p
 
 MAINTAINER=	me@enriquefynn.com
@@ -11,8 +10,7 @@ WWW=		https://github.com/ethereum/go-ethereum
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libhidapi.so:comms/hidapi \
-		libiconv.so:converters/libiconv
+LIB_DEPENDS=	libiconv.so:converters/libiconv
 
 USES=		cpe go:modules
 CPE_VENDOR=	ethereum
@@ -28,7 +26,10 @@ OPTIONS_DEFINE=	DEVTOOLS
 OPTIONS_SUB=	yes
 DEVTOOLS_DESC=	Ethereum developer tools
 
-DEVTOOLS_VARS=		GO_TARGET="./cmd/geth ./cmd/abigen ./cmd/evm ./cmd/rlpdump ./cmd/clef ./cmd/ethkey ./cmd/blsync ./cmd/era"
+DEVTOOLS_VARS=		GO_TARGET="./cmd/geth ./cmd/abigen ./cmd/evm ./cmd/rlpdump ./cmd/ethkey ./cmd/blsync ./cmd/era"
 DEVTOOLS_VARS_OFF=	GO_TARGET=./cmd/geth
+
+do-test:
+	cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} CGO_ENABLED=0 go run ./build/ci.go test -short -p ${MAKE_JOBS_NUMBER} ./...
 
 .include <bsd.port.mk>

@@ -1,0 +1,14 @@
+docify is a script to add docstrings to Python type stubs using reflection.
+
+Features:
+- Uses LibCST to parse and modify the stub file
+- Dynamically imports the actual module to get the runtime docstring
+- Handles most sys.version and sys.platform conditional blocks, will only add
+  docstrings to the correct branch
+- Able to modify files in-place with -i or --in-place
+- Won't overwrite existing docstrings
+- With -b or --builtins-only, will only add docstrings for modules found in
+  sys.builtin_module_names (stdlib modules written in C).
+- With --if-needed, will only add docstrings if the object's (Python) source
+  code is unavailable. Useful for language servers like basedpyright that are
+  able to extract docstrings from source code.

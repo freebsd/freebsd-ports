@@ -7,7 +7,7 @@ COMMENT=	Send and read mail with an X interface to MH
 
 RUN_DEPENDS+=	repl:mail/nmh
 
-USES=		tar:xz xorg xorg-cat:app
+USES=		xorg xorg-cat:app
 USE_XORG=	x11 xaw xmu xt xbitmaps
 
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share

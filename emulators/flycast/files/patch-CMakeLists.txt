@@ -1,15 +1,43 @@
---- CMakeLists.txt.orig	2026-01-07 13:28:32 UTC
+--- CMakeLists.txt.orig	2026-08-14 22:37:38 UTC
 +++ CMakeLists.txt
-@@ -488,7 +488,7 @@ if(NOT LIBRETRO)
+@@ -448,13 +448,16 @@ endif()
+ 	endif()
+ endif()
  
- 			# DreamPicoPort-API
- 			option(DREAMPICOPORT_ADD_LIBUSB "Add internal libusb library" OFF) # Already included above, when applicable
--			add_subdirectory(core/deps/DreamPicoPort-API)
-+			add_subdirectory(core/deps/DreamPicoPort-API EXCLUDE_FROM_ALL)
- 			target_link_libraries(${PROJECT_NAME} PRIVATE dream_pico_port_api)
- 		endif()
++find_package(PkgConfig REQUIRED)
++
+ option(BUILD_SHARED_LIBS "Build shared library" OFF)
+ set(XXHASH_BUILD_XXHSUM OFF CACHE BOOL "Build the xxhsum binary")
+-add_subdirectory(core/deps/xxHash/cmake_unofficial)
++pkg_check_modules(libxxhash REQUIRED IMPORTED_TARGET libxxhash)
++add_library(xxHash::xxhash ALIAS PkgConfig::libxxhash)
+ target_link_libraries(${PROJECT_NAME} PRIVATE xxHash::xxhash)
  
-@@ -1001,8 +1001,11 @@ if(NOT LIBRETRO)
+ option(BUILD_SHARED_LIBS "Build shared library" OFF)
+-add_subdirectory(core/deps/glm)
++find_package(glm REQUIRED)
+ target_link_libraries(${PROJECT_NAME} PRIVATE glm::glm)
+ 
+ if(USE_VULKAN)
+@@ -491,7 +494,7 @@ if(NOT LIBRETRO)
+ 	endif()
+ 
+ 	if(NOT ANDROID AND NOT IOS)
+-		if (NOT NINTENDO_SWITCH)
++		if (NOT NINTENDO_SWITCH AND USE_DREAMPICOPORT)
+ 			# DreamLink enabled for non-mobile Linux, MacOS, and Windows
+ 			target_compile_definitions(${PROJECT_NAME} PRIVATE USE_DREAMLINK_DEVICES=1)
+ 			set(USE_DREAMLINK_DEVICES ON) # Must be set before adding core/sdl
+@@ -903,7 +906,7 @@ if(NOT LIBRETRO)
+ 	set(FT_DISABLE_BZIP2 ON CACHE BOOL "" FORCE)
+ 	set(FT_DISABLE_HARFBUZZ ON CACHE BOOL "" FORCE)
+ 	set(FT_DISABLE_BROTLI ON CACHE BOOL "" FORCE)
+-	add_subdirectory(core/deps/freetype EXCLUDE_FROM_ALL)
++	find_package(freetype REQUIRED)
+ 	if(WINDOWS_STORE)
+ 		target_compile_definitions(freetype PRIVATE _WINRT_DLL)
+ 	endif()
+@@ -1053,8 +1056,11 @@ if(NOT LIBRETRO)
  			core/deps/rcheevos/src/rhash/aes.c
  			core/deps/rcheevos/src/rhash/cdreader.c
  			core/deps/rcheevos/src/rhash/hash.c
@@ -23,7 +51,7 @@
  	target_include_directories(${PROJECT_NAME} PRIVATE core/deps/rcheevos/include)
  	target_compile_definitions(${PROJECT_NAME} PRIVATE USE_RACHIEVEMENTS RC_DISABLE_LUA)
  endif()
-@@ -1080,8 +1083,7 @@ if(USE_VULKAN)
+@@ -1088,8 +1094,7 @@ if(USE_VULKAN)
  		target_compile_definitions(${PROJECT_NAME} PUBLIC VK_USE_PLATFORM_METAL_EXT)
  	endif()
  

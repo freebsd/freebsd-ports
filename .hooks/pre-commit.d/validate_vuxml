@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# Validate changes to vuxml
+#
+
+modified_vulns=$(git diff --name-only --cached --diff-filter=ACMR | \
+  grep -E '^security/vuxml/vuln/[^.]+\.xml$')
+if [ -n "$modified_vulns" ]; then
+	set -e
+	cd "$(git rev-parse --show-toplevel)/security/vuxml"
+	make validate
+fi

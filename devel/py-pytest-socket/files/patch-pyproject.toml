@@ -1,0 +1,13 @@
+-- Relax the uv_build upper bound so the port builds with the uv_build version
+-- available in the FreeBSD ports tree.
+-- Upstream pins <0.13.0, but FreeBSD has moved past that release.
+
+--- pyproject.toml.orig
++++ pyproject.toml
+@@ -92,5 +92,5 @@ do_not_mutate_patterns = [
+ ]
+ 
+ [build-system]
+-requires = ["uv_build>=0.7.20,<0.13.0"]
++requires = ["uv_build>=0.7.20"]
+ build-backend = "uv_build"

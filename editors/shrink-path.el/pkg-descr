@@ -1,0 +1,4 @@
+shrink-path.el is a small Emacs Lisp utility library that provides fish-style
+truncated directories.  For example, ~/dev/projects/freebsd can be shrunk to
+~/d/p/freebsd.  This is particularly useful in an eshell prompt or in the
+mode line.

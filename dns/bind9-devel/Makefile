@@ -1,7 +1,7 @@
 # pkg-help formatted with fmt 59 63
 
 PORTNAME=	bind
-DISTVERSION=	9.21.24
+DISTVERSION=	9.21.27
 .if defined(BIND_TOOLS_SLAVE)
 # dns/bind-tools here
 PORTREVISION=	0
@@ -11,6 +11,7 @@ PORTREVISION=	0
 PORTREVISION=	0
 .endif
 CATEGORIES=	dns net
+CONFIGURE_ENV+=	PKG_CONFIG_PATH=${LOCALBASE}/lmdb0/libdata/pkgconfig
 MASTER_SITES=	ISC/bind9/${DISTVERSION}
 .if defined(BIND_TOOLS_SLAVE)
 PKGNAMESUFFIX=	-tools
@@ -35,17 +36,16 @@ WWW=		https://www.isc.org/bind/
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-LIB_DEPENDS=	libnghttp2.so:www/libnghttp2 \
+LIB_DEPENDS=	liblmdb0.so:databases/lmdb0 \
+		libnghttp2.so:www/libnghttp2 \
 		liburcu.so:sysutils/liburcu \
-		libuv.so:devel/libuv \
-		liblmdb.so:databases/lmdb0
+		libuv.so:devel/libuv
 
 .if !defined(BIND_TOOLS_SLAVE)
 RUN_DEPENDS=	bind-tools>0:dns/bind-tools
 .endif
 
-USES=		compiler:c11 cpe gnome libedit meson perl5 pkgconfig \
-		ssl tar:xz
+USES=		compiler:c11 cpe gnome libedit meson perl5 pkgconfig ssl tar:xz
 
 CPE_VENDOR=	isc
 CPE_VERSION=	${DISTVERSION:C/-.*//}
@@ -175,6 +175,10 @@ BUILD_DEPENDS+=	cmocka>0:sysutils/cmocka
 .else
 MESON_ARGS+=	-Dcmocka=disabled \
 		-Ddeveloper=disabled
+.endif
+
+.if ${OSREL:R} >= 15 && ${PORT_OPTIONS:MGSSAPI_HEIMDAL}
+BROKEN=		Does not build
 .endif
 
 .include <bsd.port.pre.mk>

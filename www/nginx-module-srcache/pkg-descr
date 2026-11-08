@@ -1,0 +1,6 @@
+The srcache module provides transparent subrequest based caching, storing
+a response through one location and fetching it through another, for
+example together with the memc or redis2 modules.
+
+This port only installs the module sources.  The module itself is built
+by the nginx ports when their SRCACHE option is enabled.

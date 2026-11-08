@@ -11,6 +11,7 @@
     SUBDIR += fastest_pkg
     SUBDIR += freebsd-bugzilla-cli
     SUBDIR += genpatch
+    SUBDIR += git-proxy
     SUBDIR += hs-cabal2tuple
     SUBDIR += hs-panopticum
     SUBDIR += jailaudit
@@ -18,6 +19,7 @@
     SUBDIR += mkreadmes
     SUBDIR += modules2tuple
     SUBDIR += octopkg
+    SUBDIR += optique
     SUBDIR += p5-FreeBSD-Ports
     SUBDIR += p5-FreeBSD-Ports-INDEXhash
     SUBDIR += packagekit
@@ -25,6 +27,7 @@
     SUBDIR += pchecker
     SUBDIR += pkg
     SUBDIR += pkg-appstream
+    SUBDIR += pkg-be-plugin
     SUBDIR += pkg-devel
     SUBDIR += pkg-graph
     SUBDIR += pkg-provides
@@ -77,6 +80,7 @@
     SUBDIR += py-skog
     SUBDIR += rc-subr-jail
     SUBDIR += reprise
+    SUBDIR += sbom-generator
     SUBDIR += sccache-overlay
     SUBDIR += submodules2tuple
     SUBDIR += synth

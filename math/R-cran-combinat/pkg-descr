@@ -1,1 +1,5 @@
-Routines for combinatorics.
+Provides routines for combinatorial enumeration including generation of all
+combinations, permutations, and lattice points on hypercuboids and simplex
+lattices. Includes utilities for multinomial distributions: the multinomial
+probability mass function, random sampling with varying parameters, and
+encoding conversions between simplex representations.

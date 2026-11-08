@@ -1,6 +1,6 @@
 PORTNAME=	neomutt
 PORTVERSION=	20260616
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 
 MAINTAINER=	gahr@FreeBSD.org
@@ -59,8 +59,9 @@ GDBM_CONFIGURE_ON=		--gdbm
 GDBM_LIB_DEPENDS=		libgdbm.so:databases/gdbm
 KYOTOCABINET_CONFIGURE_ON=	--kyotocabinet
 KYOTOCABINET_LIB_DEPENDS=	libkyotocabinet.so:databases/kyotocabinet
-LMDB_CONFIGURE_ON=		--lmdb
-LMDB_LIB_DEPENDS=		liblmdb.so:databases/lmdb0
+LMDB_CONFIGURE_ON=		--with-lmdb=${LOCALBASE}/lmdb0
+LMDB_CONFIGURE_ENV=		PKG_CONFIG_PATH=${LOCALBASE}/lmdb0/libdata/pkgconfig
+LMDB_LIB_DEPENDS=		liblmdb0.so:databases/lmdb0
 QDBM_CONFIGURE_ON=		--qdbm
 QDBM_LIB_DEPENDS=		libqdbm.so:databases/qdbm
 TOKYOCABINET_CONFIGURE_ON=	--tokyocabinet

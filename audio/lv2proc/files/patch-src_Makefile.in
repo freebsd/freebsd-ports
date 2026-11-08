@@ -1,0 +1,15 @@
+-- Silence build failure with newer audio/lilv, whose headers use Clang
+-- nullability extensions (_Nonnull/_Nullable). Upstream's -Werror turns
+-- the resulting -Wnullability-extension warnings into hard errors.
+
+--- src/Makefile.in.orig	2026-09-16 00:58:51 UTC
++++ src/Makefile.in
+@@ -251,7 +251,7 @@ top_srcdir = @top_srcdir@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-AM_CFLAGS = -pedantic -Wall -Werror @SNDFILE_CFLAGS@ @LILV_CFLAGS@
++AM_CFLAGS = -pedantic -Wall -Werror -Wno-error=nullability-extension @SNDFILE_CFLAGS@ @LILV_CFLAGS@
+ lv2proc_SOURCES = main.c
+ all: all-am
+ 

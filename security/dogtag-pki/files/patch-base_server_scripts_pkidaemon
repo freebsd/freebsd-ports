@@ -1,4 +1,4 @@
---- base/server/scripts/pkidaemon.orig	2026-07-12 08:50:33 UTC
+--- base/server/scripts/pkidaemon.orig	2026-08-19 11:25:59 UTC
 +++ base/server/scripts/pkidaemon
 @@ -1,4 +1,4 @@
 -#!/bin/sh

@@ -1,0 +1,8 @@
+--- hangul/Makefile.am.orig	2026-08-19 05:55:48 UTC
++++ hangul/Makefile.am
+@@ -24,4 +24,4 @@ libhangul_la_LDFLAGS = -version-info $(LIBHANGUL_CURRE
+ 	$(NULL)
+ 
+ libhangul_la_LDFLAGS = -version-info $(LIBHANGUL_CURRENT):$(LIBHANGUL_REVISION):$(LIBHANGUL_AGE)
+-libhangul_la_LIBADD = $(EXPAT_LIBS)
++libhangul_la_LIBADD = $(EXPAT_LIBS) $(LTLIBINTL)

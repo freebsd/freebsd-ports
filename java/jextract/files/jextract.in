@@ -1,0 +1,6 @@
+#!/bin/sh
+%%JAVA%% $JEXTRACT_JAVA_OPTIONS \
+	-Djava.library.path=%%LLVM_PREFIX%%/lib \
+	--module-path %%JAVAJARDIR%%/org.openjdk.jextract.jar \
+	--enable-native-access=org.openjdk.jextract \
+	-m org.openjdk.jextract/org.openjdk.jextract.JextractTool "$@"

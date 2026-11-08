@@ -1,5 +1,5 @@
 PORTNAME=	zathura
-DISTVERSION=	2026.05.20
+DISTVERSION=	2026.07.18
 CATEGORIES=	graphics print
 MASTER_SITES=	https://pwmt.org/projects/zathura/download/
 
@@ -11,13 +11,16 @@ LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libgirara.so:x11-toolkits/girara \
-		libjson-glib-1.0.so:devel/json-glib
+		libgraphene-1.0.so:graphics/graphene \
+		libjson-glib-1.0.so:devel/json-glib \
+		libxxhash.so:devel/xxhash
 
 USES=		compiler:c17 gettext gnome meson pkgconfig sqlite tar:xz
-USE_GNOME=	glib20 gtk30
+USE_GNOME=	cairo glib20 gtk40
 MESON_ARGS=	-Dlandlock=disabled \
 		-Dseccomp=disabled \
-		-Dtests=disabled
+		-Dtests-wayland=disabled \
+		-Dtests-x11=disabled
 
 OPTIONS_DEFINE=		MANPAGES SYNCTEX
 OPTIONS_DEFAULT=	MANPAGES SYNCTEX

@@ -1,4 +1,4 @@
---- media/base/media_switches.cc.orig	2026-06-17 08:52:30 UTC
+--- media/base/media_switches.cc.orig	2026-08-13 16:48:13 UTC
 +++ media/base/media_switches.cc
 @@ -20,7 +20,7 @@
  #include "ui/gl/gl_features.h"
@@ -9,7 +9,7 @@
  #include "base/cpu.h"
  #include "components/system_media_controls/linux/buildflags/buildflags.h"
  #endif
-@@ -434,13 +434,35 @@ BASE_FEATURE(kApplicationAudioCaptureMac, base::FEATUR
+@@ -469,13 +469,35 @@ BASE_FEATURE(kApplicationAudioCaptureMac, base::FEATUR
  
  #endif  // BUILDFLAG(IS_MAC)
  
@@ -46,7 +46,25 @@
  #endif  // BUILDFLAG(IS_LINUX)
  
  // When enabled, MediaCapabilities will check with GPU Video Accelerator
-@@ -721,7 +743,7 @@ BASE_FEATURE(kMediaCodecColorSpaceCleanup, base::FEATU
+@@ -647,7 +669,7 @@ BASE_FEATURE(kRevokeMediaSourceObjectURLOnAttach,
+ // Android / Fuchsia are expected to launch in M150.
+ BASE_FEATURE(kSymphoniaAudioDecoding,
+ #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
+-    BUILDFLAG(IS_CHROMEOS)
++    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+              base::FEATURE_ENABLED_BY_DEFAULT
+ #else
+              base::FEATURE_DISABLED_BY_DEFAULT
+@@ -657,7 +679,7 @@ BASE_FEATURE(kSymphoniaAudioDecoding,
+ // Android / Fuchsia are expected to launch in M150.
+ BASE_FEATURE(kSymphoniaMp3Decoding,
+ #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
+-    BUILDFLAG(IS_CHROMEOS)
++    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+              base::FEATURE_ENABLED_BY_DEFAULT
+ #else
+              base::FEATURE_DISABLED_BY_DEFAULT
+@@ -768,7 +790,7 @@ BASE_FEATURE(kMediaCodecColorSpaceCleanup, base::FEATU
  #if !BUILDFLAG(IS_ANDROID)
  // If enabled, users can request Media Remoting without fullscreen-in-tab.
  BASE_FEATURE(kMediaRemotingWithoutFullscreen,
@@ -55,16 +73,16 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -744,7 +766,7 @@ BASE_FEATURE(kSuspendMediaForFrozenFrames, base::FEATU
+@@ -791,7 +813,7 @@ BASE_FEATURE(kSuspendMediaForFrozenFrames, base::FEATU
  // autoplay policy.
  BASE_FEATURE(kUnifiedAutoplay, base::FEATURE_ENABLED_BY_DEFAULT);
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ 
  // Enable vaapi/v4l2 video decoding on linux. This is already enabled by default
  // on chromeos, but needs an experiment on linux.
- BASE_FEATURE(kAcceleratedVideoDecodeLinux,
-@@ -812,7 +834,7 @@ BASE_FEATURE(kVaapiVp9SModeHWEncoding, base::FEATURE_E
+@@ -869,7 +891,7 @@ BASE_FEATURE(kVaapiVp9SModeHWEncoding, base::FEATURE_E
  // Enables VSync aligned MJPEG decoding.
  BASE_FEATURE(kVSyncMjpegDecoding, base::FEATURE_DISABLED_BY_DEFAULT);
  #endif  // defined(ARCH_CPU_X86_FAMILY) && BUILDFLAG(IS_CHROMEOS)
@@ -73,7 +91,7 @@
  // Enable H264 temporal layer encoding with V4L2 HW encoder on ChromeOS.
  BASE_FEATURE(kV4L2H264TemporalLayerHWEncoding,
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -1007,7 +1029,7 @@ BASE_FEATURE(kMediaFoundationMultiGpuAdapterSelection,
+@@ -1074,7 +1096,7 @@ BASE_FEATURE(kMediaFoundationMultiGpuAdapterSelection,
  BASE_FEATURE(kHardwareMediaKeyHandling,
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC)
               base::FEATURE_ENABLED_BY_DEFAULT
@@ -82,7 +100,7 @@
  #if BUILDFLAG(USE_MPRIS)
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
-@@ -1383,7 +1405,7 @@ BASE_FEATURE(kUseOutOfProcessVideoDecoding,
+@@ -1436,7 +1458,7 @@ BASE_FEATURE(kUseOutOfProcessVideoDecoding,
  BASE_FEATURE(kUseSharedImageInOOPVDProcess, base::FEATURE_ENABLED_BY_DEFAULT);
  #endif  // BUILDFLAG(ALLOW_OOP_VIDEO_DECODER)
  
@@ -91,7 +109,7 @@
  // Spawn utility processes to perform hardware encode acceleration instead of
  // using the GPU process.
  BASE_FEATURE(kUseOutOfProcessVideoEncoding, base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -1445,7 +1467,7 @@ BASE_FEATURE(kRecordMediaEngagementScores, base::FEATU
+@@ -1498,7 +1520,7 @@ BASE_FEATURE(kRecordMediaEngagementScores, base::FEATU
  // Enables Media Engagement Index recording for Web Audio playbacks.
  BASE_FEATURE(kRecordWebAudioEngagement, base::FEATURE_ENABLED_BY_DEFAULT);
  
@@ -100,7 +118,7 @@
  // Reduces the number of buffers needed in the output video frame pool to
  // populate the Renderer pipeline for hardware accelerated VideoDecoder in
  // non-low latency scenarios.
-@@ -1772,7 +1794,7 @@ bool IsSystemLoopbackCaptureSupported() {
+@@ -1823,7 +1845,7 @@ bool IsSystemLoopbackCaptureSupported() {
  #elif BUILDFLAG(IS_MAC)
    return (IsMacSckSystemLoopbackCaptureSupported() ||
            IsMacCatapSystemLoopbackCaptureSupported());

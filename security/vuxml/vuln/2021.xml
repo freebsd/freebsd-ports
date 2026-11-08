@@ -9,7 +9,7 @@
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The Roundcube project reports:</p>
-	<blockquote cite="://roundcube.net/news/2021/12/30/update-1.5.2-released">
+	<blockquote cite="https://roundcube.net/news/2021/12/30/update-1.5.2-released">
 	  <p>Cross-site scripting (XSS) via HTML messages with malicious CSS
 	    content</p>
 	</blockquote>
@@ -266,7 +266,6 @@
     </description>
     <references>
       <cvename>CVE-2021-2322</cvename>
-      <url>https://www.oracle.com/security-alerts/oracle-open-source-cves-outside-other-oracle-public-documents.html</url>
       <url>https://www.oracle.com/security-alerts/oracle-open-source-cves-outside-other-oracle-public-documents.html</url>
       <url>https://github.com/oracle/opengrok/pull/3528</url>
     </references>
@@ -2577,7 +2576,7 @@
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Red Hat reports:</p>
-	<blockquote cite="">
+	<blockquote cite="https://access.redhat.com/security/cve/CVE-2021-3620">
        <p>A flaw was found in Ansible Engine's ansible-connection
        module, where sensitive information such as the Ansible
        user credentials is disclosed by default in the traceback
@@ -3376,7 +3375,7 @@
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Node.js reports:</p>
-	<blockquote cite="ihttps://nodejs.org/en/blog/vulnerability/july-2021-security-releases-2/">
+	<blockquote cite="https://nodejs.org/en/blog/vulnerability/july-2021-security-releases-2/">
 	  <h1>Use after free on close http2 on stream canceling (High) (CVE-2021-22930)</h1>
 	  <p>Node.js is vulnerable to a use after free attack where an attacker might be able to exploit the memory corruption, to change process behavior.</p>
 	</blockquote>
@@ -4612,7 +4611,7 @@ The string hashing algorithm has been replaced with a better one, and now also u
     <affects>
       <package>
 	<name>ja-lynx</name>
-	<range><lt>2.8.10</lt></range>
+	<range><lt>2.8.10,1</lt></range>
       </package>
       <package>
 	<name>ja-lynx-current</name>
@@ -10457,7 +10456,7 @@ In limited circumstances it was possible for users to authenticate using variati
       </body>
     </description>
     <references>
-      <url>"https://saltproject.io/security_announcements/active-saltstack-cve-release-2021-feb-25/"</url>
+      <url>https://saltproject.io/security_announcements/active-saltstack-cve-release-2021-feb-25/</url>
       <cvename>CVE-2021-3197</cvename>
       <cvename>CVE-2021-25281</cvename>
       <cvename>CVE-2021-25282</cvename>
@@ -11525,6 +11524,17 @@ raptor_xml_writer_start_element_common.</p>
 	<name>py37-pysaml2</name>
 	<name>py38-pysaml2</name>
 	<name>py39-pysaml2</name>
+	<name>py310-pysaml2</name>
+	<name>py311-pysaml2</name>
+	<range><lt>6.5.0</lt></range>
+      </package>
+      <package>
+	<name>py36-pysaml24</name>
+	<name>py37-pysaml24</name>
+	<name>py38-pysaml24</name>
+	<name>py39-pysaml24</name>
+	<name>py310-pysaml24</name>
+	<name>py311-pysaml24</name>
 	<range><lt>6.5.0</lt></range>
       </package>
     </affects>
@@ -11541,12 +11551,15 @@ raptor_xml_writer_start_element_common.</p>
       <url>https://github.com/IdentityPython/pysaml2/releases</url>
       <url>https://github.com/IdentityPython/pysaml2/security/advisories/GHSA-f4g9-h89h-jgv9</url>
       <url>https://github.com/IdentityPython/pysaml2/security/advisories/GHSA-5p3x-r448-pc62</url>
+      <url>https://osv.dev/vulnerability/PYSEC-2021-48</url>
+      <url>https://osv.dev/vulnerability/PYSEC-2021-49</url>
       <cvename>CVE-2021-21238</cvename>
       <cvename>CVE-2021-21239</cvename>
     </references>
     <dates>
       <discovery>2021-01-20</discovery>
       <entry>2021-01-26</entry>
+      <modified>2023-04-12</modified>
     </dates>
   </vuln>
 
@@ -11654,45 +11667,45 @@ raptor_xml_writer_start_element_common.</p>
       </body>
     </description>
     <references>
+      <cvename>CVE-2021-2046</cvename>
+      <cvename>CVE-2021-2020</cvename>
+      <cvename>CVE-2021-2024</cvename>
+      <cvename>CVE-2021-2011</cvename>
+      <cvename>CVE-2021-2006</cvename>
+      <cvename>CVE-2021-2048</cvename>
+      <cvename>CVE-2021-2028</cvename>
+      <cvename>CVE-2021-2122</cvename>
+      <cvename>CVE-2021-2058</cvename>
+      <cvename>CVE-2021-2001</cvename>
+      <cvename>CVE-2021-2016</cvename>
+      <cvename>CVE-2021-2021</cvename>
+      <cvename>CVE-2021-2030</cvename>
+      <cvename>CVE-2021-2031</cvename>
+      <cvename>CVE-2021-2036</cvename>
+      <cvename>CVE-2021-2055</cvename>
+      <cvename>CVE-2021-2060</cvename>
+      <cvename>CVE-2021-2070</cvename>
+      <cvename>CVE-2021-2076</cvename>
+      <cvename>CVE-2021-2065</cvename>
+      <cvename>CVE-2021-2014</cvename>
+      <cvename>CVE-2021-2002</cvename>
+      <cvename>CVE-2021-2012</cvename>
+      <cvename>CVE-2021-2009</cvename>
+      <cvename>CVE-2021-2072</cvename>
+      <cvename>CVE-2021-2081</cvename>
+      <cvename>CVE-2021-2022</cvename>
+      <cvename>CVE-2021-2038</cvename>
+      <cvename>CVE-2021-2061</cvename>
+      <cvename>CVE-2021-2056</cvename>
+      <cvename>CVE-2021-2087</cvename>
+      <cvename>CVE-2021-2088</cvename>
+      <cvename>CVE-2021-2032</cvename>
+      <cvename>CVE-2021-2010</cvename>
+      <cvename>CVE-2021-1998</cvename>
+      <cvename>CVE-2021-2007</cvename>
+      <cvename>CVE-2021-2019</cvename>
+      <cvename>CVE-2021-2042</cvename>
       <url>https://www.oracle.com/security-alerts/cpujan2021.html#AppendixMSQL</url>
-      <url>CVE-2021-2046</url>
-      <url>CVE-2021-2020</url>
-      <url>CVE-2021-2024</url>
-      <url>CVE-2021-2011</url>
-      <url>CVE-2021-2006</url>
-      <url>CVE-2021-2048</url>
-      <url>CVE-2021-2028</url>
-      <url>CVE-2021-2122</url>
-      <url>CVE-2021-2058</url>
-      <url>CVE-2021-2001</url>
-      <url>CVE-2021-2016</url>
-      <url>CVE-2021-2021</url>
-      <url>CVE-2021-2030</url>
-      <url>CVE-2021-2031</url>
-      <url>CVE-2021-2036</url>
-      <url>CVE-2021-2055</url>
-      <url>CVE-2021-2060</url>
-      <url>CVE-2021-2070</url>
-      <url>CVE-2021-2076</url>
-      <url>CVE-2021-2065</url>
-      <url>CVE-2021-2014</url>
-      <url>CVE-2021-2002</url>
-      <url>CVE-2021-2012</url>
-      <url>CVE-2021-2009</url>
-      <url>CVE-2021-2072</url>
-      <url>CVE-2021-2081</url>
-      <url>CVE-2021-2022</url>
-      <url>CVE-2021-2038</url>
-      <url>CVE-2021-2061</url>
-      <url>CVE-2021-2056</url>
-      <url>CVE-2021-2087</url>
-      <url>CVE-2021-2088</url>
-      <url>CVE-2021-2032</url>
-      <url>CVE-2021-2010</url>
-      <url>CVE-2021-1998</url>
-      <url>CVE-2021-2007</url>
-      <url>CVE-2021-2019</url>
-      <url>CVE-2021-2042</url>
     </references>
     <dates>
       <discovery>2021-01-23</discovery>

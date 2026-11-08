@@ -1,0 +1,4 @@
+Smith is a 3D implicit nonlinear thermal-structural simulation code. Its primary
+purpose is to investigate abstraction strategies and implicit finite
+element-based algorithm development for emerging computing architectures. It
+also heavily leverages the MFEM finite element library.

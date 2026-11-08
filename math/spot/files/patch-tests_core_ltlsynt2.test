@@ -1,0 +1,11 @@
+--- tests/core/ltlsynt2.test.orig	2026-08-06 20:12:34 UTC
++++ tests/core/ltlsynt2.test
+@@ -95,7 +95,7 @@ ltlsynt -F input.csv/-2 --csv=out.csv -q
+ diff filtered.csv expected
+ 
+ ltlsynt -F input.csv/-2 --csv=out.csv -q
+-cut out.csv -d, -f1,2,3 >filtered.csv
++gcut out.csv -d, -f1,2,3 >filtered.csv
+ cat >expected <<EOF
+ source,subspecs,algo
+ "input.csv:2",1,lar

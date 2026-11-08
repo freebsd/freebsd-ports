@@ -1,6 +1,6 @@
---- base/debug/stack_trace.cc.orig	2026-06-05 13:45:06 UTC
+--- base/debug/stack_trace.cc.orig	2026-10-31 12:09:36 UTC
 +++ base/debug/stack_trace.cc
-@@ -293,7 +293,7 @@ bool StackTrace::WillSymbolizeToStreamForTesting() {
+@@ -294,7 +294,7 @@ bool StackTrace::WillSymbolizeToStreamForTesting() {
    // Symbols are not expected to be reliable when gn args specifies
    // symbol_level=0.
    return false;
@@ -9,7 +9,7 @@
    // StackTrace::OutputToStream() is not implemented under uclibc, nor AIX.
    // See https://crbug.com/706728
    return false;
-@@ -360,7 +360,9 @@ void StackTrace::OutputToStreamWithPrefix(std::ostream
+@@ -365,7 +365,9 @@ void StackTrace::OutputToStreamWithPrefix(std::ostream
      }
      return;
    }
@@ -19,7 +19,7 @@
  }
  
  std::string StackTrace::ToString() const {
-@@ -369,7 +371,7 @@ std::string StackTrace::ToString() const {
+@@ -374,7 +376,7 @@ std::string StackTrace::ToString() const {
  
  std::string StackTrace::ToStringWithPrefix(cstring_view prefix_string) const {
    std::stringstream stream;
@@ -28,7 +28,7 @@
    OutputToStreamWithPrefix(&stream, prefix_string);
  #endif
    return std::move(stream).str();
-@@ -393,7 +395,7 @@ bool StackTrace::ShouldSuppressOutput() {
+@@ -398,7 +400,7 @@ bool StackTrace::ShouldSuppressOutput() {
  }
  
  std::ostream& operator<<(std::ostream& os, const StackTrace& s) {

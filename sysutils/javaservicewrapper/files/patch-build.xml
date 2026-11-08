@@ -1,0 +1,20 @@
+--- build.xml.orig	2026-09-07 19:38:32 UTC
++++ build.xml
+@@ -528,7 +528,7 @@
+     <target name="compile-java:javac-javah" depends="compile-java:setup:wrapper" if="is.javah_supported">
+         <!-- compile everything under src/java -->
+         <javac srcdir="${java.dir}"
+-               excludes="testmodule/**/*,module-info.java"
++               excludes="testmodule/**/*,module-info.java,**/test/*,**/test2/*,**/demo/*"
+                destdir="${build.classes}"
+                deprecation="on"
+                debug="on"
+@@ -550,7 +550,7 @@
+              NOTE - Headers will only be generated if the source is also recompiled.  If the class is up to date, the headers will not be generated. -->
+         <echo message="Write JNI headers to ${build.headers}"/>
+         <javac srcdir="${java.dir}"
+-               excludes="testmodule/**/*,module-info.java"
++               excludes="testmodule/**/*,module-info.java,**/test/*,**/test2/*,**/demo/*"
+                destdir="${build.classes}"
+                nativeheaderdir="${build.headers}"
+                deprecation="on"

@@ -4,7 +4,7 @@ CATEGORIES=	graphics python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	nc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ctypes-based wrapper for GLFW3
 WWW=		https://github.com/FlorianRhiem/pyGLFW
 

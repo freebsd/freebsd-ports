@@ -1,11 +1,11 @@
 PORTNAME=	opencolorio
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.5.0
+DISTVERSION=	2.6.0
 # PORTREVISION must be set with ?= so as not to stomp over
 # py-opencolorio's PORTREVISION.
 # Also, just to be on the safe side, when resetting,
 # best keep PORTREVISION?=	0.
-PORTREVISION?=	1
+PORTREVISION?=	0
 CATEGORIES=	graphics multimedia
 
 MAINTAINER?=	FreeBSD@Shaneware.biz
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libpystring.so:devel/pystring \
 		libyaml-cpp.so:devel/yaml-cpp
 
-USES=		cmake compiler:c++14-lang localbase:ldflags minizip:ng \
+USES=		cmake compiler:c++17-lang localbase:ldflags minizip:ng \
 		pkgconfig
 
 USE_GITHUB=	yes
@@ -35,10 +35,6 @@ PLIST_SUB=	SHL2=${PORTVERSION:R} \
 
 OPTIONS_DEFINE=		DOCS
 OPTIONS_SUB=		yes
-
-# docs currently failing with Unhandled Doxygen XML element(s) found: 'zwj'
-# prevent pkg building from enabling docs
-graphics_opencolorio_UNSET_FORCE=	DOCS
 
 DOCS_BUILD_DEPENDS=	doxygen>0:devel/doxygen
 DOCS_CMAKE_BOOL=	OCIO_BUILD_DOCS
@@ -74,7 +70,7 @@ LIB_DEPENDS+=	liblcms2.so:graphics/lcms2 \
 USES+=		gl xorg
 USE_GL=		glew glu glut opengl
 USE_XORG=	xi xmu
-CMAKE_ARGS+=	-DCMAKE_CXX_STANDARD=14
+CMAKE_ARGS+=	-DCMAKE_CXX_STANDARD=17
 CMAKE_ON+=	OCIO_BUILD_APPS USE_EXTERNAL_LCMS
 CMAKE_OFF+=	BUILD_SHARED_LIBS OCIO_BUILD_DOCS \
 		OCIO_BUILD_PYGLUE OCIO_BUILD_PYTHON

@@ -1,10 +1,10 @@
 PORTNAME=	rate
 PORTVERSION=	0.9
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://s-tech.elsat.net.pl/bmtools/
 
-MAINTAINER=	portmaster@bsdforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Traffic analysis command-line utility
 WWW=		http://s-tech.elsat.net.pl/
 

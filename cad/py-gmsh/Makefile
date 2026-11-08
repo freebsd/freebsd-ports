@@ -1,5 +1,6 @@
 PORTNAME=	gmsh
 DISTVERSION=	5.0.0-git
+PORTREVISION=	2
 CATEGORIES=	cad python
 MASTER_SITES=	LOCAL/thierry
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -8,31 +9,46 @@ DIST_SUBDIR=	gmsh
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Automatic 3D finite element mesh generator (gmsh's own binding)
-WWW=		https://gmsh.info/
+WWW=		https://gmsh.info/ \
+		https://github.com/sasobadovinac/gmsh
 
 LICENSE=	AGPLv3+ APACHE20 GPLv3+ GPLv2+ LGPL21
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	swig:devel/swig
-LIB_DEPENDS=	libmmg.so:science/mmg \
+BROKEN_i386=	fails to compile: error: no matching constructor for initialization of 'Mesquite2::ArrayMesh'
+
+BUILD_DEPENDS=	swig:devel/swig \
+		getdp:science/getdp \
+		gmm++>0:math/gmm++
+LIB_DEPENDS=	libgmsh.so:cad/gmsh \
+		libmmg.so:science/mmg \
 		libmesquite.so:math/mesquite \
+		libmetis.so:math/metis \
 		libcgns.so:science/cgnslib \
+		libfltk.so:x11-toolkits/fltk \
 		libfltk_images.so:x11-toolkits/fltk \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libgmp.so:math/gmp \
 		libhdf5.so:science/hdf5 \
+		libmathex.so:math/mathex \
+		libalglib.so:math/alglib \
 		libmedC.so:french/med \
 		libpng16.so:graphics/png \
 		libsz.so:science/libaec \
+		libtinyxml2.so:textproc/tinyxml2 \
+		libvoro++.so:science/voro++ \
 		libTKV3d.so:cad/opencascade
 
-USES=		cmake gl gnome jpeg python tar:tgz xorg
+USES=		compiler:c++17-lang cmake eigen:3 fortran gl gnome jpeg \
+		localbase mpi python tar:tgz xorg
 USE_PYTHON=	flavors
 USE_GNOME=	cairo
 USE_GL=		gl glu
 USE_XORG=	ice sm x11 xcursor xext xfixes xft xinerama xrender
 USE_LDCONFIG=	${PYTHON_SITELIBDIR}
+
+LDFLAGS+=	${MPI_LIBS} -lexecinfo	# MED is built with MPI
 
 # Pre-release, temporarily used to support OCCT-8
 #USE_GITLAB=	yes
@@ -45,8 +61,6 @@ PATCHDIR=	${PORTSDIR}/cad/gmsh/files
 CMAKE_ON=	ENABLE_WRAP_PYTHON ENABLE_PRIVATE_API ENABLE_OCC
 CMAKE_ARGS=	-DOCC_INC=${LOCALBASE}/include/OpenCASCADE \
 		-DGMSHPY_INSTALL_DIRECTORY=${PYTHON_SITELIBDIR}/gmshpy
-
-CXXFLAGS_powerpc64=	-mvsx
 
 post-install: # remove all except for the python binding
 	@cd ${STAGEDIR}${PREFIX} && \

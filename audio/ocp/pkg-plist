@@ -114,6 +114,7 @@ share/mime/packages/opencubicplayer.xml
 %%PORTDOCS%%%%DOCSDIR%%/html/wap.html
 %%SDL%%bin/ocp-sdl2
 %%SDL%%lib/ocp/autoload/35-devpsdl2.so
+%%SPEEX%%lib/ocp/autoload/95-playspeex.so
 %%XORG%%bin/ocp-x11
 %%XORG%%share/icons/hicolor/128x128/apps/opencubicplayer.png
 %%XORG%%share/icons/hicolor/16x16/apps/opencubicplayer.png

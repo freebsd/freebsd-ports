@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2025-05-20 19:39:10 UTC
++++ CMakeLists.txt
+@@ -214,7 +214,7 @@ include(GNUInstallDirs)
+ 
+ include(GNUInstallDirs)
+ 
+-install(FILES "${CMAKE_CURRENT_BINARY_DIR}/optipng"
++install(PROGRAMS "${CMAKE_CURRENT_BINARY_DIR}/optipng"
+         DESTINATION "${CMAKE_INSTALL_BINDIR}"
+ )
+ install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/src/optipng/man/optipng.1"

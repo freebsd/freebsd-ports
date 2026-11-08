@@ -1,6 +1,21 @@
---- spf_engine/milter_spf.py.orig	2023-01-11 14:35:12 UTC
+--- spf_engine/milter_spf.py.orig	2024-07-06 22:24:06 UTC
 +++ spf_engine/milter_spf.py
-@@ -211,7 +211,7 @@ class spfMilter(Milter.Base):
+@@ -152,8 +152,12 @@
+             h = fold(str(h))
+             if milterconfig.get('debugLevel') >= 2:
+                 syslog.syslog(str(h))
+-            name, val = str(h).split(': ', 1)
+-            self.addheader(name, val, 0)
++            name, sep, val = str(h).partition(': ')
++            if sep:
++                self.addheader(name, val, 0)
++            else:
++                syslog.syslog(syslog.LOG_WARNING,
++                    "pyspf-milter: malformed AR result, header not added: %r" % h)
+         return Milter.CONTINUE
+ 
+ 
+@@ -223,7 +227,7 @@
  def main():
      # Ugh, but there's no easy way around this.
      global milterconfig

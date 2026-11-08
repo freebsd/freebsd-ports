@@ -1,7 +1,7 @@
 PORTNAME=	songsee
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.1
-PORTREVISION=	2
+PORTREVISION=	7
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg
 
-USES=		go:1.25+,modules
+USES=		go:modules
 
 GO_MODULE=	github.com/steipete/songsee
 

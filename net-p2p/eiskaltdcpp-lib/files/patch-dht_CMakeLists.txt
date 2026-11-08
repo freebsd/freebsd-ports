@@ -1,0 +1,11 @@
+--- dht/CMakeLists.txt.orig	2026-09-06 11:21:21 UTC
++++ dht/CMakeLists.txt
+@@ -2,7 +2,7 @@ include_directories(${PROJECT_BINARY_DIR})
+ 
+ include_directories(${PROJECT_BINARY_DIR})
+ 
+-cmake_minimum_required (VERSION 2.6)
++cmake_minimum_required (VERSION 3.10)
+ 
+ aux_source_directory(${PROJECT_SOURCE_DIR} dht_srcs)
+ 

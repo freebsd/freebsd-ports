@@ -1,4 +1,4 @@
---- src/VBox/Runtime/Makefile.kmk.orig	2026-04-18 10:21:06 UTC
+--- src/VBox/Runtime/Makefile.kmk.orig	2026-10-19 18:50:52 UTC
 +++ src/VBox/Runtime/Makefile.kmk
 @@ -233,6 +233,9 @@ $(IPRT_OUT_DIR)/oiddb.h.ts +| $(IPRT_OUT_DIR)/oiddb.h:
  	$(QUIET)$(oiddb2c_1_TARGET) "$@" $(filter %.cfg,$^)
@@ -18,12 +18,12 @@
  	r3/freebsd/fileaio-freebsd.cpp \
  	r3/freebsd/RTFileQuerySectorSize-freebsd.cpp \
  	r3/freebsd/mp-freebsd.cpp \
-@@ -3090,6 +3094,8 @@ VBoxRT_LDFLAGS.win             = /MANIFEST \
+@@ -3092,6 +3096,8 @@ VBoxRT_LDFLAGS.win             = /MANIFEST \
  	/delayload:oleaut32.dll \
  	/delayload:advapi32.dll \
  	/delayload:mpr.dll
 +VBoxRT_LDFLAGS.freebsd		= \
 +	-Wl,--allow-multiple-definition
- 
- if1of (VBoxRT, $(DLLS))
-  $(call VBOX_SET_VER_INFO_DLL,VBoxRT,VirtualBox Runtime)
+ # We could alias symbols on linux this way:
+ #ifn1of ($(KBUILD_TARGET), darwin os2 solaris win)
+ # if "$(substr $(VBOX_GCC_std),-2)" >= "17"

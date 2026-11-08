@@ -1,0 +1,14 @@
+-- Relax setuptools-scm version requirement to work with setuptools-scm 9.x
+-- which is the version currently available in FreeBSD ports (py-setuptools-scm).
+-- When building from a tarball (not git), setuptools-scm 9.x is sufficient
+-- since SETUPTOOLS_SCM_PRETEND_VERSION is used to bypass git-based versioning.
+--- pyproject.toml.orig	2026-10-13 15:00:45 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@
+ [build-system]
+ # setuptools-scm 10 is the first version that knows the version scheme used below.
+-requires = ["hatchling", "hatch-vcs", "setuptools-scm>=10"]
++requires = ["hatchling", "hatch-vcs", "setuptools-scm>=9"]
+ build-backend = "hatchling.build"
+ 
+ [tool.hatch.metadata]

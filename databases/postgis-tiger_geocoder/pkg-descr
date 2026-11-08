@@ -1,0 +1,2 @@
+The PostGIS TIGER geocoder is a PL/pgSQL extension for geocoding, reverse
+geocoding, and standardizing address data using US Census TIGER/Line data.

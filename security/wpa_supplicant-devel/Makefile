@@ -1,6 +1,6 @@
 PORTNAME=	wpa_supplicant
 PORTVERSION=	${COMMIT_DATE}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security net
 PKGNAMESUFFIX=	-devel
 
@@ -11,8 +11,8 @@ WWW=		https://w1.fi/wpa_supplicant/
 USE_GITHUB=	yes
 GH_ACCOUNT=	cschuber
 GH_PROJECT=	hostap
-GH_TAGNAME=	1aec83962b
-COMMIT_DATE=	2026.07.27
+GH_TAGNAME=	4bd12dcff7
+COMMIT_DATE=	2026.10.28
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/README
@@ -26,9 +26,10 @@ CPPFLAGS+=	-Wno-incompatible-function-pointer-types
 CFLAGS+=	${CPPFLAGS} # USES=readline only augments CPPFLAGS and LDFLAGS
 CFLAGS+=	-Wno-undefined-internal
 CFLAGS+=	-I${OPENSSLINC}
-CFLAGS+=	-Wno-deprecated-declarations
+CFLAGS+=	-Wno-deprecated-declarations -Wno-c23-extensions
 LDFLAGS+=	-L${OPENSSLLIB} -lutil
 MAKE_ENV=	V=1
+ALL_TARGET+=	all
 
 SUB_FILES=	pkg-message
 PORTDOCS=	README ChangeLog
@@ -149,6 +150,10 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 LIB_DEPENDS+=	libdbus-1.so:devel/dbus
 .endif
 
+.if ${PORT_OPTIONS:MEAPOL_TEST}
+ALL_TARGET+=	eapol_test
+.endif
+
 post-patch:
 	@${CP} ${FILESDIR}/Packet32.[ch] ${FILESDIR}/ntddndis.h \
 		${WRKSRC}/src/utils
@@ -224,9 +229,6 @@ post-patch:
 	@${ECHO_CMD} CONFIG_BACKEND=file >> ${CFG}
 	@${ECHO_CMD} CONFIG_L2_PACKET=freebsd >> ${CFG}
 	@${ECHO_CMD} CONFIG_TLS=openssl >> ${CFG}
-
-post-build-EAPOL_TEST-on:
-	cd ${BUILD_WRKSRC} && ${GMAKE} eapol_test
 
 do-install:
 	(cd ${BUILD_WRKSRC} && ${INSTALL_PROGRAM} wpa_supplicant wpa_cli \

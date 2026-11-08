@@ -379,6 +379,7 @@
 %%PGADMDIR%%/libraries/adodb/lang/adodb-fr.inc.php
 %%PGADMDIR%%/libraries/adodb/lang/adodb-hu.inc.php
 %%PGADMDIR%%/libraries/adodb/lang/adodb-id.inc.php
+%%PGADMDIR%%/libraries/adodb/lang/adodb-ka.inc.php
 %%PGADMDIR%%/libraries/adodb/lang/adodb-it.inc.php
 %%PGADMDIR%%/libraries/adodb/lang/adodb-nl.inc.php
 %%PGADMDIR%%/libraries/adodb/lang/adodb-oc.inc.php

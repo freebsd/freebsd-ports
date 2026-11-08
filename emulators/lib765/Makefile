@@ -1,12 +1,12 @@
 PORTNAME=	lib765
 PORTVERSION=	0.4.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators devel
-MASTER_SITES=	http://www.seasip.demon.co.uk/Unix/LibDsk/
+MASTER_SITES=	https://www.seasip.info/Unix/LibDsk/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emulation of uPD765a Floppy Disc Controller
-WWW=		http://www.seasip.demon.co.uk/Unix/LibDsk/
+WWW=		https://www.seasip.info/Unix/LibDsk/index.html
 
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/doc/COPYING.LIB

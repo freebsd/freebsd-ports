@@ -1,0 +1,20 @@
+--- pyproject.toml.orig	2026-03-21 10:15:41 UTC
++++ pyproject.toml
+@@ -20,7 +20,7 @@ requires = [
+ [build-system]
+ requires = [
+     "setuptools >= 59.6, < 61.0; python_version < '3.9'",
+-    "setuptools >= 77.0; python_version >= '3.9'",
++    "setuptools >= 59.6; python_version >= '3.9'",
+     "toml; python_version < '3.9'"
+ ]
+ build-backend = "setuptools.build_meta"
+@@ -29,7 +29,7 @@ readme = "README.rst"
+ name = "exiv2"
+ description = "Python interface to libexiv2"
+ readme = "README.rst"
+-license = "GPL-3.0-or-later"
++license = {text = "GPL-3.0-or-later"}
+ authors = [
+     {name = "Jim Easterbrook", email = "jim@jim-easterbrook.me.uk"}
+ ]

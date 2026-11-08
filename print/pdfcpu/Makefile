@@ -1,7 +1,6 @@
 PORTNAME=	pdfcpu
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.13.0
-PORTREVISION=	1
+DISTVERSION=	0.16.4
 CATEGORIES=	print
 
 MAINTAINER=	diizzy@FreeBSD.org
@@ -11,14 +10,15 @@ WWW=		https://github.com/pdfcpu/pdfcpu
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		go:1.25+,modules
+USES=		go:modules
 
 GO_MODULE=	github.com/${PORTNAME}/${PORTNAME}
 
 PLIST_FILES=	bin/pdfcpu
 
+CGO_ENABLED=	0
 GO_LDFLAGS=	-X main.commit=Release \
-		-X main.date=tagged
+		-X main.date=Tagged
 GO_TARGET=	./cmd/${PORTNAME}
 
 .include <bsd.port.mk>

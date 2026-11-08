@@ -1,11 +1,10 @@
 PORTNAME=	stringi
-DISTVERSION=	1.8.7
+DISTVERSION=	1.8.9
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Character String Processing Facilities
-WWW=		https://cran.r-project.org/package=stringi
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

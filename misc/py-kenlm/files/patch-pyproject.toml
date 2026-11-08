@@ -1,0 +1,6 @@
+--- pyproject.toml.orig	2026-09-17 06:52:08 UTC
++++ pyproject.toml
+@@ -1,2 +1,2 @@
+ [build-system]
+-requires = ["setuptools", "wheel", "cmake>=3.10"]
++requires = ["setuptools", "wheel"]

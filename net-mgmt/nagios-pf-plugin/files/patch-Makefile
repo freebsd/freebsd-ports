@@ -1,7 +1,19 @@
 --- Makefile.orig	2012-07-30 18:13:57 UTC
 +++ Makefile
-@@ -14,7 +14,7 @@
- 	$(CC) $(CFLAGS) -o $(PROGRAM) $(PROGRAM).c
+@@ -4,17 +4,17 @@ CC = cc
+ #
+ 
+ CC = cc
+-CFLAGS  = -Wall
++CFLAGS  += -Wall
+ PROGRAM = check_pf
+ DESTDIR = /usr/local/libexec/nagios/
+ 
+ all:	$(PROGRAM)
+ 
+ $(PROGRAM):  
+-	$(CC) $(CFLAGS) -o $(PROGRAM) $(PROGRAM).c
++	$(CC) $(CFLAGS) -W$(LDFLAGS) -o $(PROGRAM) $(PROGRAM).c
  
  install:
 -	install -m 755 -o root -g wheel $(PROGRAM) $(DESTDIR)/$(PROGRAM)

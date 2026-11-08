@@ -1,0 +1,20 @@
+--- liblib/CMakeLists.txt.orig	2026-07-08 20:52:59 UTC
++++ liblib/CMakeLists.txt
+@@ -292,7 +292,7 @@ endif()
+ # Jar
+ ######
+ 
+-#if(MSVC)
++if(BUILD_JNI)
+   install(FILES ${CDF_SOURCE_DIR}/cdfjava/classes/cdfjava.jar
+ 	  DESTINATION ${CMAKE_INSTALL_PREFIX}/lib)
+   install(FILES ${CDF_SOURCE_DIR}/cdfjava/classes/cdfml.jar
+@@ -310,7 +310,7 @@ endif()
+     install(FILES ${CDF_SOURCE_DIR}/cdfjava/cdftools/CDFToolsDriver.jar
+             DESTINATION ${CMAKE_INSTALL_PREFIX}/lib)
+   endif()
+-#endif()
++endif()
+ 
+ ########
+ # Others

@@ -1,0 +1,2 @@
+An extension to the 'testthat' package that makes it easy to add graphical unit
+tests. It provides a Shiny application to manage the test cases.

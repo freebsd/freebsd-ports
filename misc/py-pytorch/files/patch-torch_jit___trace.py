@@ -1,4 +1,4 @@
---- torch/jit/_trace.py.orig	2026-04-18 00:49:58 UTC
+--- torch/jit/_trace.py.orig	2026-10-28 18:16:03 UTC
 +++ torch/jit/_trace.py
 @@ -300,6 +300,13 @@ def indent(s):
      return "\n".join(["\t" + line for line in s.splitlines()])
@@ -77,7 +77,7 @@
                          if compare_stack:
                              tensor_compare_errors += (
 @@ -504,7 +525,7 @@ def _check_trace(
-                     "Did you forget call .eval() on your model? Nodes:\n"
+                     "Did you forget to call .eval() on your model? Nodes:\n"
                  )
                  nondeterministic_ops_warning += "\n".join(
 -                    [indent(str(op)) for op in nondeterm_ops][:20]

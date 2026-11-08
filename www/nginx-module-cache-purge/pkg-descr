@@ -1,0 +1,5 @@
+The cache_purge module adds the ability to purge content from the
+proxy, FastCGI, SCGI and uwsgi caches of nginx.
+
+This port only installs the module sources.  The module itself is built
+by the nginx ports when their CACHE_PURGE option is enabled.

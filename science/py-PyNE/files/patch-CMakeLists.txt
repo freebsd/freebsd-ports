@@ -1,0 +1,18 @@
+--- CMakeLists.txt.orig	2026-08-07 04:43:33 UTC
++++ CMakeLists.txt
+@@ -12,7 +12,14 @@ project(pyne)
+ project(pyne)
+ 
+ # Get the version from Git
+-include(GetVersionFromGit)
++#include(GetVersionFromGit)
++set(PYNE_VERSION_MAJOR "0")
++set(PYNE_VERSION_MINOR "7")
++set(PYNE_VERSION_PATCH "8")
++set(PYNE_VERSION "${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}")
++set(PYNE_COMMIT_HASH "760c695d")
++set(PYNE_DEV_STATE "1")
++set(PYNE_COMMIT_COUNT "226")
+ 
+ # Output version information
+ message(STATUS "PyNE version: ${PYNE_VERSION}")

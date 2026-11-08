@@ -1,5 +1,6 @@
 PORTNAME=	pluma
 DISTVERSION=	1.28.1
+PORTREVISION=	1
 CATEGORIES=	editors mate
 MASTER_SITES=	https://github.com/mate-desktop/${PORTNAME}/releases/download/v${DISTVERSION}/
 DIST_SUBDIR=	mate
@@ -47,5 +48,9 @@ GLIB_SCHEMAS=	org.mate.pluma.gschema.xml \
 		org.mate.pluma.plugins.time.gschema.xml
 
 OPTIONS_DEFINE=	DOCS
+
+# avoid generating "*.cpython3*.opt-2.pyc" by -OO on byte compiling
+post-patch:
+	@${REINPLACE_CMD} -e '/PYTHON/ s|-OO|-O|' ${WRKSRC}/py-compile
 
 .include <bsd.port.mk>

@@ -1,0 +1,13 @@
+[
+{ type: install
+  message: <<EOM
+You can install  and use different backend for the visualisation:
+
+- "tk"      x11-toolkits/py-tkinter
+- "pyqt5"   devel/py-qt5-pyqt
+- "pyqt6"   devel/py-qt6-pyqt
+- "pyside6" devel/pyside6
+- "wx":     x11-toolkits/py-wxpython
+EOM
+}
+]

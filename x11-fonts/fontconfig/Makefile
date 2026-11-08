@@ -1,5 +1,5 @@
 PORTNAME=	fontconfig
-DISTVERSION=	2.17.1
+DISTVERSION=	2.18.3
 PORTEPOCH=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://gitlab.freedesktop.org/api/v4/projects/890/packages/generic/${PORTNAME}/${DISTVERSION}/
@@ -19,14 +19,19 @@ USES=		cpe gperf meson pkgconfig python:build shebangfix tar:xz \
 CPE_VENDOR=	fontconfig_project
 USE_LDCONFIG=	yes
 
-SHEBANG_FILES=	conf.d/link_confs.py \
+SHEBANG_FILES=	build-aux/meson-dist-docs.py \
+		build-aux/meson-dist-autotools.py \
+		conf.d/link_confs.py \
 		conf.d/write-35-lang-normalize-conf.py \
 		fc-case/fc-case.py \
+		fc-const/fc-const.py \
+		fc-genericfamily/fc-genericfamily.py \
 		fc-lang/fc-lang.py \
 		src/cutout.py \
 		src/makealias.py \
-		test/run-test-map.sh \
-		test/run-test.sh
+		test/test_issue547.py \
+		test/test_issue431.py \
+		test/test_fontations_ft_query.py
 
 TEST_TARGET=	test
 
@@ -69,7 +74,7 @@ NLS_MESON_ENABLED=	nls
 
 TEST_TEST_DEPENDS=	bash:shells/bash
 TEST_MESON_ENABLED=	tests
-TESTING_UNSAFE=		Requires network access for fetching fonts
+TEST_MESON_ARGS=	-Dtests-external-fonts=disabled
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/fc-*/*.1 ${STAGEDIR}${PREFIX}/share/man/man1

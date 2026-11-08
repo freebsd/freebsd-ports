@@ -1,0 +1,11 @@
+--- crates/zizmor/Cargo.toml.orig	2026-11-02 23:13:06 UTC
++++ crates/zizmor/Cargo.toml
+@@ -74,7 +74,7 @@ fst.workspace = true
+ csv.workspace = true
+ fst.workspace = true
+ 
+-[target.'cfg(not(any(target_family = "windows", target_os = "openbsd")))'.dependencies]
++[target.'cfg(not(any(target_family = "windows", target_os = "openbsd", target_os = "freebsd")))'.dependencies]
+ tikv-jemallocator.workspace = true
+ 
+ [features]

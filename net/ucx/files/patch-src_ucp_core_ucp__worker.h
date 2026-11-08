@@ -1,6 +1,6 @@
---- src/ucp/core/ucp_worker.h.orig	2026-02-05 12:41:56 UTC
+--- src/ucp/core/ucp_worker.h.orig	2026-09-09 02:32:02 UTC
 +++ src/ucp/core/ucp_worker.h
-@@ -319,6 +319,10 @@ typedef struct ucp_worker {
+@@ -323,6 +323,10 @@ typedef struct ucp_worker {
      int                              event_fd;            /* Allocated (on-demand) event fd for wakeup */
      ucs_sys_event_set_t              *event_set;          /* Allocated UCS event set for wakeup */
      int                              eventfd;             /* Event fd to support signal() calls */

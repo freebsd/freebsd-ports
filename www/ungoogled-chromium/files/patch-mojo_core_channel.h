@@ -1,6 +1,6 @@
---- mojo/core/channel.h.orig	2025-12-06 13:30:52 UTC
+--- mojo/core/channel.h.orig	2026-08-13 07:41:05 UTC
 +++ mojo/core/channel.h
-@@ -167,7 +167,7 @@ class MOJO_SYSTEM_IMPL_EXPORT Channel
+@@ -169,7 +169,7 @@ class MOJO_SYSTEM_IMPL_EXPORT Channel
        } v2;
  
  #if BUILDFLAG(IS_ANDROID) || \

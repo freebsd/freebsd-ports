@@ -1,1 +1,4 @@
-This package contains the X.Org font server.
+Xfs is the X Window System font server. It supplies fonts to X Window
+System display servers. The server is usually run by a system
+administrator. Users may also wish to start private font servers for
+specific sets of fonts.

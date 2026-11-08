@@ -1,5 +1,6 @@
 PORTNAME=	docling-eval
 DISTVERSION=	1.4.2
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}apted>=1.0.3:math/py-apted@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.12.3:www/py-beautifulsoup@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}beautifulsoup4>=4.12.3:www/py-beautifulsoup4@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}datasets>=3.2.0:misc/py-datasets@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}distance>=0.1.3:math/py-distance@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}docling>=2.56.1:textproc/py-docling@${PY_FLAVOR} \

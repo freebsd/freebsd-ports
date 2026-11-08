@@ -68,6 +68,7 @@ share/applications/gcin-tools.desktop
 %%DATADIR%%/table/phrase-ctrl.table
 %%DATADIR%%/table/phrase.table
 %%DATADIR%%/table/pin-juyin.xlt
+%%DATADIR%%/table/pin-juyin2.xlt
 %%DATADIR%%/table/pinyin-no-tone.kbm
 %%DATADIR%%/table/pinyin.gtab
 %%DATADIR%%/table/pinyin.kbm

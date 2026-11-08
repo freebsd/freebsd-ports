@@ -10,19 +10,20 @@ share/icons/hicolor/48x48/apps/sublime-text.png
 %%DATADIR%%/Icon/256x256/sublime-text.png
 %%DATADIR%%/Icon/32x32/sublime-text.png
 %%DATADIR%%/Icon/48x48/sublime-text.png
+%%DATADIR%%/Lib/python3.14.zip
 %%DATADIR%%/Lib/python3.3.zip
-%%DATADIR%%/Lib/python3.8.zip
 %%DATADIR%%/Lib/python3/certifi/LICENSE
 %%DATADIR%%/Lib/python3/certifi/__init__.py
 %%DATADIR%%/Lib/python3/certifi/__main__.py
 %%DATADIR%%/Lib/python3/certifi/cacert.pem
 %%DATADIR%%/Lib/python3/certifi/core.py
 %%DATADIR%%/Lib/python3/certifi/py.typed
+%%DATADIR%%/Lib/python314/imp.py
+%%DATADIR%%/Lib/python314/sublime.py
+%%DATADIR%%/Lib/python314/sublime_plugin.py
+%%DATADIR%%/Lib/python314/sublime_types.py
 %%DATADIR%%/Lib/python33/sublime.py
 %%DATADIR%%/Lib/python33/sublime_plugin.py
-%%DATADIR%%/Lib/python38/sublime.py
-%%DATADIR%%/Lib/python38/sublime_plugin.py
-%%DATADIR%%/Lib/python38/sublime_types.py
 %%DATADIR%%/Packages/ASP.sublime-package
 %%DATADIR%%/Packages/ActionScript.sublime-package
 %%DATADIR%%/Packages/AppleScript.sublime-package
@@ -70,6 +71,7 @@ share/icons/hicolor/48x48/apps/sublime-text.png
 %%DATADIR%%/Packages/Scala.sublime-package
 %%DATADIR%%/Packages/ShellScript.sublime-package
 %%DATADIR%%/Packages/TCL.sublime-package
+%%DATADIR%%/Packages/TOML.sublime-package
 %%DATADIR%%/Packages/Text.sublime-package
 %%DATADIR%%/Packages/Textile.sublime-package
 %%DATADIR%%/Packages/Theme - Default.sublime-package
@@ -78,11 +80,13 @@ share/icons/hicolor/48x48/apps/sublime-text.png
 %%DATADIR%%/Packages/YAML.sublime-package
 %%DATADIR%%/attribution.txt
 %%DATADIR%%/changelog.txt
-%%DATADIR%%/sublime_text.desktop
 @(,,555) %%DATADIR%%/crash_handler
 %%DATADIR%%/libcrypto.so.1.1
+%%DATADIR%%/libcrypto.so.3
+%%DATADIR%%/libpython3.14.so.1.0
 %%DATADIR%%/libsqlite3.so
 %%DATADIR%%/libssl.so.1.1
+%%DATADIR%%/libssl.so.3
+@(,,555) %%DATADIR%%/plugin_host-3.14
 @(,,555) %%DATADIR%%/plugin_host-3.3
-@(,,555) %%DATADIR%%/plugin_host-3.8
 @(,,555) %%DATADIR%%/sublime_text

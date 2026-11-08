@@ -169,7 +169,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		lexical-util-1.0.6 \
 		lexical-write-float-1.0.5 \
 		lexical-write-integer-1.0.5 \
-		libc-0.2.172 \
+		libc-0.2.186 \
 		libffi-4.1.0 \
 		libffi-sys-3.3.1 \
 		libloading-0.8.7 \

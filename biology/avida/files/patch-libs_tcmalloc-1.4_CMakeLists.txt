@@ -1,0 +1,32 @@
+--- libs/tcmalloc-1.4/CMakeLists.txt.orig	2012-09-29 03:33:39 UTC
++++ libs/tcmalloc-1.4/CMakeLists.txt
+@@ -1,6 +1,6 @@ PROJECT(TCMALLOC CXX)
+ PROJECT(TCMALLOC CXX)
+ 
+-CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
++CMAKE_MINIMUM_REQUIRED(VERSION 3.10)
+ 
+ # Default location for installed software/configs/ docs is the build directory.
+ SET(CMAKE_INSTALL_PREFIX
+@@ -32,10 +32,10 @@ IF(UNIX)
+     "-Os -DNDEBUG"
+     CACHE STRING "Flags used by the compiler during release minsize builds." FORCE)
+   SET(CMAKE_CXX_FLAGS_RELWITHDEBINFO
+-    "-O3 -g -DDEBUG"
++    " -g -DDEBUG"
+     CACHE STRING "Flags used by the compiler during release builds." FORCE)
+   SET(CMAKE_CXX_FLAGS_RELEASE
+-    "-O3 -DNDEBUG"
++    " -DNDEBUG"
+     CACHE STRING "Flags used by the compiler during release builds." FORCE)
+ ENDIF(UNIX)
+ 
+@@ -76,7 +76,7 @@ IF(NOT MSVC)
+ 
+ ADD_LIBRARY(tcmalloc-1.4 STATIC ${TCMALLOC_SOURCES})
+ IF(NOT MSVC)
+-  TARGET_LINK_LIBRARIES(tcmalloc-1.4 pthread)
++  TARGET_LINK_LIBRARIES(tcmalloc-1.4 -pthread)
+ ENDIF(NOT MSVC)
+ INSTALL(TARGETS tcmalloc-1.4 DESTINATION ${CMAKE_INSTALL_PREFIX}/lib)
+ SET(tcmalloc_BUILT 1 CACHE INTERNAL "")

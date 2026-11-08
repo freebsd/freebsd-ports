@@ -173,6 +173,7 @@
 %%DATADIR%%/crt/CRT-beam.glslp
 %%DATADIR%%/crt/GritsScanlines.glslp
 %%DATADIR%%/crt/crt-1tap.glslp
+%%DATADIR%%/crt/crt-2tap.glslp
 %%DATADIR%%/crt/crt-Cyclon.glslp
 %%DATADIR%%/crt/crt-aperture.glslp
 %%DATADIR%%/crt/crt-blurPi-soft.glslp
@@ -241,8 +242,9 @@
 %%DATADIR%%/crt/shaders/GritsScanlines/Fake-Self-Illumination.png
 %%DATADIR%%/crt/shaders/GritsScanlines/GritsScanlines.glsl
 %%DATADIR%%/crt/shaders/GritsScanlines/Scanline-LUT-4px.png
-%%DATADIR%%/crt/shaders/crt-1tap.glsl
 %%DATADIR%%/crt/shaders/crt-Cyclon.glsl
+%%DATADIR%%/crt/shaders/crt-Ntap/crt-1tap.glsl
+%%DATADIR%%/crt/shaders/crt-Ntap/crt-2tap.glsl
 %%DATADIR%%/crt/shaders/crt-aperture.glsl
 %%DATADIR%%/crt/shaders/crt-blurPi.glsl
 %%DATADIR%%/crt/shaders/crt-blurPiScanlines.glsl
@@ -524,6 +526,7 @@
 %%DATADIR%%/gpu/shaders/3dfx/3dfx_pass_1.glsl
 %%DATADIR%%/gpu/shaders/3dfx/3dfx_pass_2.glsl
 %%DATADIR%%/gpu/shaders/powervr2.glsl
+%%DATADIR%%/handheld/PT_SkyWalker541.glslp
 %%DATADIR%%/handheld/agb001-gba-color-motionblur.glslp
 %%DATADIR%%/handheld/agb001.glslp
 %%DATADIR%%/handheld/ags001-gba-color-motionblur.glslp
@@ -619,6 +622,7 @@
 %%DATADIR%%/handheld/console-border/resources/pocket-palette.png
 %%DATADIR%%/handheld/console-border/resources/psp border.png
 %%DATADIR%%/handheld/console-border/shader-files/border.glsl
+%%DATADIR%%/handheld/console-border/shader-files/gb-pass-5-original-size.glsl
 %%DATADIR%%/handheld/console-border/shader-files/gb-pass-5.glsl
 %%DATADIR%%/handheld/console-border/shader-files/gb-pass0.glsl
 %%DATADIR%%/handheld/console-border/shader-files/gb-pass1.glsl
@@ -682,6 +686,7 @@
 %%DATADIR%%/handheld/sameboy-gbp-response-time.glslp
 %%DATADIR%%/handheld/sameboy-lcd-gbc-color-motionblur.glslp
 %%DATADIR%%/handheld/sameboy-lcd.glslp
+%%DATADIR%%/handheld/shaders/PT_SkyWalker541.glsl
 %%DATADIR%%/handheld/shaders/authentic_gbc/authentic_gbc.glsl
 %%DATADIR%%/handheld/shaders/authentic_gbc/authentic_gbc_fast.glsl
 %%DATADIR%%/handheld/shaders/authentic_gbc/authentic_gbc_single_pass.glsl
@@ -1327,6 +1332,7 @@
 %%DATADIR%%/scalenx/scale2xSFX.glslp
 %%DATADIR%%/scalenx/scale2xplus.glslp
 %%DATADIR%%/scalenx/scale3x.glslp
+%%DATADIR%%/scalenx/scale3xSFX.glslp
 %%DATADIR%%/scalenx/shaders/epx.glsl
 %%DATADIR%%/scalenx/shaders/mmpx.glsl
 %%DATADIR%%/scalenx/shaders/scale2x.glsl
@@ -1461,6 +1467,7 @@
 %%DATADIR%%/xbrz/shaders/xbrz-freescale-multipass/xbrz-freescale-pass0.glsl
 %%DATADIR%%/xbrz/shaders/xbrz-freescale-multipass/xbrz-freescale-pass1.glsl
 %%DATADIR%%/xbrz/shaders/xbrz-freescale.glsl
+%%DATADIR%%/xbrz/xbrz-crisp.glslp
 %%DATADIR%%/xbrz/xbrz-freescale-multipass.glslp
 %%DATADIR%%/xbrz/xbrz-freescale.glslp
 %%DATADIR%%/xsal/2xsal-level2-crt.glslp

@@ -1,9 +1,9 @@
 PORTNAME=	chrony
-DISTVERSION=	4.8
+DISTVERSION=	4.9
 PORTREVISION=	0
 CATEGORIES=	net
-MASTER_SITES=	https://chrony-project.org/releases/ \
-		LOCAL/mandree
+MASTER_SITES=	https://chrony-project.org/releases/
+# the signature file has pattern https://chrony-project.org/releases/chrony-${DISTVERSION}-tar-gz-asc.txt
 
 # overridden in net/chrony-lite
 MAINTAINER?=	mandree@FreeBSD.org
@@ -12,6 +12,8 @@ WWW=		https://chrony-project.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+TEST_DEPENDS=	bash:shells/bash
 
 USES=		cpe gmake libedit pkgconfig
 

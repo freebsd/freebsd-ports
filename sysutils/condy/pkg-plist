@@ -1,0 +1,19 @@
+bin/condy
+@sample etc/condy.conf.sample
+share/man/man1/condy.1.gz
+%%DOCS%%%%DOCSDIR%%/CHANGELOG.md
+%%DOCS%%%%DOCSDIR%%/README.md
+%%EXAMPLES%%%%EXAMPLESDIR%%/autostart/condy.desktop
+%%EXAMPLES%%%%EXAMPLESDIR%%/condy.conf
+%%EXAMPLES%%%%EXAMPLESDIR%%/theme/conky/ident.conkyrc
+%%EXAMPLES%%%%EXAMPLESDIR%%/theme/conky/ident-gnome.conkyrc
+%%EXAMPLES%%%%EXAMPLESDIR%%/theme/conky/ident-gnome-hires.conkyrc
+%%EXAMPLES%%%%EXAMPLESDIR%%/theme/conky/ident-hires.conkyrc
+%%EXAMPLES%%%%EXAMPLESDIR%%/theme/conky/ident-kde.conkyrc
+%%EXAMPLES%%%%EXAMPLESDIR%%/theme/conky/ident-kde-hires.conkyrc
+%%EXAMPLES%%%%EXAMPLESDIR%%/theme/tallpaper/sample-dusk.png
+%%EXAMPLES%%%%EXAMPLESDIR%%/theme/tallpaper/sample-field.png
+%%EXAMPLES%%%%EXAMPLESDIR%%/theme/tallpaper/sample-night.png
+%%EXAMPLES%%%%EXAMPLESDIR%%/theme/wallpaper/sample-dusk.png
+%%EXAMPLES%%%%EXAMPLESDIR%%/theme/wallpaper/sample-field.png
+%%EXAMPLES%%%%EXAMPLESDIR%%/theme/wallpaper/sample-night.png

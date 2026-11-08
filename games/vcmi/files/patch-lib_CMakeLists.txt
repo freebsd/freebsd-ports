@@ -1,11 +1,12 @@
---- lib/CMakeLists.txt.orig	2025-01-09 19:59:03 UTC
+--- lib/CMakeLists.txt.orig	2026-08-13 14:13:18 UTC
 +++ lib/CMakeLists.txt
-@@ -793,6 +793,11 @@ if(WIN32)
- 	)
+@@ -913,6 +913,12 @@ endif()
+ 	endif()
  endif()
  
 +if(BSD)
-+	set_source_files_properties(CConsoleHandler.cpp PROPERTIES
++	set_source_files_properties(CConsoleHandler.cpp CRandomGenerator.cpp
++		PROPERTIES
 +		COMPILE_FLAGS -DBOOST_STACKTRACE_GNU_SOURCE_NOT_REQUIRED)
 +endif(BSD)
 +

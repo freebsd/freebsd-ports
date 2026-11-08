@@ -1,0 +1,20 @@
+-- Remove cmake and ninja from PEP 517 build-system requires: the port uses the
+-- system cmake binary at build time, and the FreeBSD CUDA-free build does not
+-- need the Ninja generator.  This avoids a conflict between devel/py-cmake and
+-- devel/cmake-core which both install /usr/local/bin/ccmake.
+--- pyproject.toml.orig	2025-03-01 00:00:00 UTC
++++ pyproject.toml
+@@ -3,13 +3,6 @@
+     "setuptools>=61.0",
+     "wheel",
+     "nanobind>=2.0.0",
+-    # setup.py drives both extensions through CMake. 3.21 is the HIP language's own
+-    # floor (CMAKE_HIP_ARCHITECTURES does not exist before it), but both backends
+-    # ask FindPython for Development.SABIModule, which arrived in 3.26.
+-    "cmake>=3.26",
+-    # The HIP extension pins the Ninja generator on every platform: CMake's default
+-    # generator on Windows is Visual Studio, which cannot build the HIP language.
+-    "ninja",
+     "tomli; python_version < '3.11'",
+ ]
+ build-backend = "setuptools.build_meta"

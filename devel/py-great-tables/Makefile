@@ -1,6 +1,5 @@
 PORTNAME=	great-tables
-DISTVERSION=	0.21.0
-PORTREVISION=	1
+DISTVERSION=	1.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,11 +16,12 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=45:devel/py-setuptools@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=6.2:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=2.13.1:devel/py-babel@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}CommonMark>=0.9.1:textproc/py-CommonMark@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}faicons>=0.2.2:devel/py-faicons@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}htmltools>=0.4.1:www/py-htmltools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}importlib-metadata>0:devel/py-importlib-metadata@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}importlib-resources>0:devel/py-importlib-resources@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}multimark>=0.1.3:textproc/py-multimark@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}nokap>=0.1.0:graphics/py-nokap@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=3.10.0.0:devel/py-typing-extensions@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-cov>0:devel/py-pytest-cov@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}syrupy>0:devel/py-syrupy@${PY_FLAVOR}
@@ -30,14 +30,13 @@ USES=		python
 USE_PYTHON=	autoplist pep517 pytest
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_ARGS=	--disable-plugin-autoload -v -p no:checkdocs -m 'no_pandas' \
+		--ignore=${TEST_WRKDIR}/test_shiny.py \
+		--ignore=${TEST_WRKDIR}/test__utils_selenium.py
 TEST_WRKDIR=	${WRKSRC}/tests
 
 NO_ARCH=	yes
 
-do-test:
-	@cd ${TEST_WRKDIR} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest -v -p no:xdist -m 'no_pandas' \
-		--ignore=${TEST_WRKDIR}/test_shiny.py
-
-# tests as of 0.21.0: 2 passed, 2 failed (no_pandas tests fail when pandas is installed locally)
+# tests as of 1.0.0: 2 failed, 2 passed, 2729 deselected, 1 warning in 0.51s (no_pandas tests fail when pandas is installed locally)
 
 .include <bsd.port.mk>

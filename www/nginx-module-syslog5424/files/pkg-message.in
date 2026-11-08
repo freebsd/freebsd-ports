@@ -1,0 +1,14 @@
+[
+{ type: install
+  message: <<EOM
+This package contains the sources of the syslog5424 module only.  It does
+not install a loadable module.
+
+The module itself is built by the nginx ports.  To use syslog5424, build
+www/nginx, www/nginx-devel or www/freenginx with the SYSLOG5424 option
+enabled.  Those ports pick the sources up from
+%%PREFIX%%/share/nginx/modules/nginx-module-syslog5424 and produce
+ngx_http_syslog5424_module.so.
+EOM
+}
+]

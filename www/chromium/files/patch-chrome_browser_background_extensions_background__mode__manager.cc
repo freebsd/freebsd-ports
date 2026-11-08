@@ -1,4 +1,4 @@
---- chrome/browser/background/extensions/background_mode_manager.cc.orig	2026-06-04 10:12:25 UTC
+--- chrome/browser/background/extensions/background_mode_manager.cc.orig	2026-10-18 13:29:39 UTC
 +++ chrome/browser/background/extensions/background_mode_manager.cc
 @@ -871,7 +871,7 @@ gfx::ImageSkia GetStatusTrayIcon() {
    }

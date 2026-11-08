@@ -5,6 +5,7 @@
 %%QT_PLUGINDIR%%/dolphin/vcs/fileviewsvnplugin.so
 %%QT_PLUGINDIR%%/kf6/kfileitemaction/makefileactions.so
 %%QT_PLUGINDIR%%/kf6/kfileitemaction/mountisoaction.so
+%%QT_PLUGINDIR%%/kf6/overlayicon/mountedisooverlay.so
 share/config.kcfg/fileviewgitpluginsettings.kcfg
 share/config.kcfg/fileviewhgpluginsettings.kcfg
 share/config.kcfg/fileviewsvnpluginsettings.kcfg
@@ -217,7 +218,9 @@ share/locale/nl/LC_MESSAGES/makefileactions.mo
 share/locale/nl/LC_MESSAGES/mountisoaction.mo
 share/locale/nn/LC_MESSAGES/fileviewbazaarplugin.mo
 share/locale/nn/LC_MESSAGES/fileviewgitplugin.mo
+share/locale/nn/LC_MESSAGES/fileviewhgplugin.mo
 share/locale/nn/LC_MESSAGES/fileviewsvnplugin.mo
+share/locale/nn/LC_MESSAGES/makefileactions.mo
 share/locale/nn/LC_MESSAGES/mountisoaction.mo
 share/locale/pa/LC_MESSAGES/fileviewgitplugin.mo
 share/locale/pa/LC_MESSAGES/fileviewhgplugin.mo
@@ -288,6 +291,8 @@ share/locale/ug/LC_MESSAGES/fileviewbazaarplugin.mo
 share/locale/ug/LC_MESSAGES/fileviewgitplugin.mo
 share/locale/ug/LC_MESSAGES/fileviewhgplugin.mo
 share/locale/ug/LC_MESSAGES/fileviewsvnplugin.mo
+share/locale/ug/LC_MESSAGES/makefileactions.mo
+share/locale/ug/LC_MESSAGES/mountisoaction.mo
 share/locale/uk/LC_MESSAGES/fileviewbazaarplugin.mo
 share/locale/uk/LC_MESSAGES/fileviewgitplugin.mo
 share/locale/uk/LC_MESSAGES/fileviewhgplugin.mo

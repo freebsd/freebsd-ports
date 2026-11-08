@@ -1,5 +1,5 @@
-TIMESTAMP = 1688364679
-SHA256 (pine64-blisp-g20230703-048a724_GH0.tar.gz) = 7e27ef9c52e0138c881b1ab8df6de1ee52352196664182a019b866e47481bc9a
-SIZE (pine64-blisp-g20230703-048a724_GH0.tar.gz) = 145320
-SHA256 (argtable-argtable3-6f0e40b_GH0.tar.gz) = 5ac298f92cd26bc2cab541ac7a8f7295a040675d621e594864bb93ac8bfbcf59
-SIZE (argtable-argtable3-6f0e40b_GH0.tar.gz) = 510332
+TIMESTAMP = 1793368113
+SHA256 (pine64-blisp-g20250802-b1d9a69_GH0.tar.gz) = ee8045f1c9b9a4a2ec6fc52d440e69587a0f5b5382cfee22fd49f7b9ba51d159
+SIZE (pine64-blisp-g20250802-b1d9a69_GH0.tar.gz) = 170010
+SHA256 (argtable-argtable3-b50c6c8_GH0.tar.gz) = 1ee60e145a7af731ca79571a805b286296414b540add9b6e604d44b9ffad1749
+SIZE (argtable-argtable3-b50c6c8_GH0.tar.gz) = 178829

@@ -1,0 +1,16 @@
+--- CMakeLists.txt.orig	2026-09-16 10:31:01 UTC
++++ CMakeLists.txt
+@@ -327,6 +327,13 @@ else()
+         set (EXTRA_CFLAGS "${EXTRA_CFLAGS} -DUNICORN_TRACER")
+     endif()
+     if (ATOMIC_LINKAGE_FIX)
++        include(CheckLibraryExists)
++        check_library_exists(atomic __atomic_fetch_add_4 "" HAVE_LIBATOMIC)
++        if (NOT HAVE_LIBATOMIC)
++            set(ATOMIC_LINKAGE_FIX FALSE)
++        endif()
++    endif()
++    if (ATOMIC_LINKAGE_FIX)
+         set (EXTRA_CFLAGS "${EXTRA_CFLAGS} -latomic")
+     endif()
+     if (CMAKE_OSX_SYSROOT)

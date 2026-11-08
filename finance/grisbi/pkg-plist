@@ -482,6 +482,7 @@ share/applications/org.grisbi.Grisbi.desktop
 %%DATADIR%%/pixmaps/gsb-transaction-list-32.png
 %%DATADIR%%/pixmaps/gsb-transdisplay-32.png
 %%DATADIR%%/pixmaps/gsb-transfer-32.png
+%%DATADIR%%/pixmaps/gsb-up-16.png
 %%DATADIR%%/pixmaps/gsb-warnings-32.png
 %%DATADIR%%/pixmaps/gsb-web-browser-16.png
 %%DATADIR%%/pixmaps/gtk-about-16.png
@@ -516,6 +517,7 @@ share/applications/org.grisbi.Grisbi.desktop
 %%DATADIR%%/ui/grisbi.css
 %%DATADIR%%/ui/grisbi_menu.ui
 %%DATADIR%%/ui/grisbi_prefs.ui
+%%DATADIR%%/ui/grisbi_report_default.css
 %%DATADIR%%/ui/grisbi_win.ui
 share/icons/hicolor/scalable/apps/grisbi.svg
 share/icons/hicolor/scalable/mimetypes/application-x-grisbi.svg

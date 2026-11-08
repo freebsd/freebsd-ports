@@ -1,5 +1,5 @@
 PORTNAME=	sonarr
-DISTVERSION=	4.0.19.2979
+DISTVERSION=	4.0.20.3014
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/Sonarr/Sonarr/releases/download/v${DISTVERSION}/
 DISTNAME=	Sonarr.main.${DISTVERSION}.freebsd-x64
@@ -19,13 +19,13 @@ RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss \
 		libinotify>0:devel/libinotify \
 		libunwind>0:devel/libunwind
 
-USES=	sqlite:3 ssl:run
+USES=		sqlite:3 ssl:run
 USE_RC_SUBR=	sonarr
 
 CONFLICTS_INSTALL=	sonarr
 
 NO_BUILD=	YES
-SUB_FILES=	sonarr package_info pkg-message
+SUB_FILES=	package_info pkg-message sonarr
 SUB_LIST=	DATADIR=${DATADIR} \
 		GROUPS=${GROUPS} \
 		MAINTAINER=${MAINTAINER} \

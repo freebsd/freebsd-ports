@@ -1,0 +1,5 @@
+OpenTelemetry Exporters HTTP Transport provides shared HTTP transport
+abstractions used by OpenTelemetry exporters.
+
+The package has no required dependencies. The requests and urllib3 transports
+are available as optional extras.

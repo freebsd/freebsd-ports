@@ -138,9 +138,6 @@ share/pixmaps/tenacity.xpm
 share/pixmaps/tenacity16.xpm
 share/pixmaps/tenacity32.xpm
 %%DATADIR%%/EffectsMenuDefaults.xml
-%%DATADIR%%/help/CMakeLists.txt
-%%DATADIR%%/help/tenacity.1
-%%DATADIR%%/help/tenacity.metainfo.xml.in
 %%DATADIR%%/nyquist/aud-do-support.lsp
 %%DATADIR%%/nyquist/dspprims.lsp
 %%DATADIR%%/nyquist/envelopes.lsp

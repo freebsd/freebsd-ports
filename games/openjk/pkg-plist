@@ -10,5 +10,6 @@ share/JediAcademy/base/ui%%ARCH%%.so
 share/JediAcademy/openjk.%%ARCH%%
 share/JediAcademy/openjk_sp.%%ARCH%%
 share/JediAcademy/openjkded.%%ARCH%%
+share/JediAcademy/rd-rend2_%%ARCH%%.so
 share/JediAcademy/rd-vanilla_%%ARCH%%.so
 share/JediAcademy/rdsp-vanilla_%%ARCH%%.so

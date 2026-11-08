@@ -1,6 +1,6 @@
 PORTNAME=	kew
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.2.7
+DISTVERSION=	4.4.2
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,22 +14,18 @@ LIB_DEPENDS=	libchafa.so:graphics/chafa \
 		libcurl.so:ftp/curl \
 		libfaad.so:audio/faad \
 		libfftw3f.so:math/fftw3-float \
-		libnotify.so:devel/libnotify \
 		libogg.so:audio/libogg \
 		libopus.so:audio/opus \
 		libopusfile.so:audio/opusfile \
 		libtag.so:audio/taglib \
 		libvorbis.so:audio/libvorbis
 
-USES=		gettext-runtime gmake gnome pkgconfig
+USES=		desktop-file-utils gettext-runtime gmake gnome pkgconfig
 USE_GNOME=	glib20
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ravachol
 
 MAKE_ARGS=	CC=${CC} PREFIX=${PREFIX}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/kew
 
 .include <bsd.port.mk>

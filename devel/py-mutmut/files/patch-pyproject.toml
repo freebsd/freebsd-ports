@@ -1,11 +1,24 @@
---- pyproject.toml.orig	2026-06-28 02:09:21 UTC
+-- Drop the uv_build upper bound so the port builds with the version of
+-- uv-build available in the FreeBSD ports tree, and lower the click lower
+-- bound to match the devel/py-click version currently in the ports tree.
+
+--- pyproject.toml.orig	2026-09-12 16:53:22 UTC
 +++ pyproject.toml
-@@ -45,7 +45,7 @@ mutmut = "mutmut.__main__:cli"
+@@ -25,7 +25,7 @@
+ ]
+
+ dependencies = [
+-    "click>=8.4.2",
++    "click>=8.3.1",
+     "coverage>=7.3.0",
+     "libcst>=1.9.0",
+     "pytest>=6.2.5",
+@@ -46,7 +46,7 @@
  mutmut = "mutmut.__main__:cli"
- 
+
  [build-system]
--requires = ["uv_build>=0.9.5,<0.10.0"]
-+requires = ["uv_build>=0.9.5"]
+-requires = ["uv_build>=0.12.3,<1"]
++requires = ["uv_build>=0.12.3"]
  build-backend = "uv_build"
- 
+
  [tool.uv.build-backend]

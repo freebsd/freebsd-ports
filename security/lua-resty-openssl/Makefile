@@ -1,8 +1,8 @@
 PORTNAME=	lua-resty-openssl
-DISTVERSION=	1.1.0
+DISTVERSION=	1.9.0
 CATEGORIES=	security
 
-MAINTAINER=	netchild@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	FFI-based OpenSSL binding for OpenResty / ngx_lua
 WWW=		https://github.com/fffonion/lua-resty-openssl
 
@@ -38,6 +38,6 @@ gen-plist:
 	    | ${SORT} > pkg-plist.new
 	@${FIND} ${WRKSRC}/lib/resty/openssl -type d | ${SED} -e 's:${WRKSRC}/lib:@dir share/lua/5.1:g' \
 	    | ${SORT} -r >> pkg-plist.new
-	
+
 
 .include <bsd.port.mk>

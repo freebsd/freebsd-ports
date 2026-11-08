@@ -1,5 +1,5 @@
 PORTNAME=	rsyslog
-PORTVERSION=	8.2606.0
+PORTVERSION=	8.2610.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsyslog.com/files/download/rsyslog/
 
@@ -9,6 +9,10 @@ WWW=		https://www.rsyslog.com/
 
 LICENSE=	GPLv3 LGPL3 APACHE20
 LICENSE_COMB=	multi
+
+FLAVORS=		default mysql pgsql
+mysql_PKGNAMESUFFIX=	-mysql
+pgsql_PKGNAMESUFFIX=	-pgsql
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libestr.so:devel/libestr \
@@ -30,6 +34,12 @@ OPTIONS_RADIO=	SSLLIB
 OPTIONS_RADIO_SSLLIB=	GNUTLS OPENSSL
 OPTIONS_DEFAULT=GCRYPT
 OPTIONS_SUB=	yes
+
+.if ${FLAVOR:U} == mysql
+OPTIONS_SLAVE=	MYSQL
+.elif ${FLAVOR:U} == pgsql
+OPTIONS_SLAVE=	PGSQL
+.endif
 
 BEATS_DESC=		Enable input from Elastic *Beats
 BEATS_CONFIGURE_ENABLE=	imbeats

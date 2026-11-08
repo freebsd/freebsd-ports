@@ -1,0 +1,11 @@
+--- hermes_cli/gateway_setup_wizard.py.orig	2026-11-06 16:56:46 UTC
++++ hermes_cli/gateway_setup_wizard.py
+@@ -396,7 +396,7 @@ _WIZARD_BANNER = (
+ )
+ 
+ 
+-_WIZARD_BACKEND_LABELS = {"systemd": "systemd", "launchd": "launchd", "windows": "Scheduled Task"}
++_WIZARD_BACKEND_LABELS = {"systemd": "systemd", "freebsd_rc": "rc.d", "launchd": "launchd", "windows": "Scheduled Task"}
+ 
+ 
+ # Post-setup guidance when no service backend applies, keyed by the fallthrough reason.

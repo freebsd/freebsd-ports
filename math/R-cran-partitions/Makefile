@@ -1,11 +1,11 @@
 PORTNAME=	partitions
-DISTVERSION=	1.10-9
+DISTVERSION=	1.11-1
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Additive Partitions of Integers
-WWW=		https://cran.r-project.org/web/packages/partitions/
+WWW=		https://cran.r-project.org/package=partitions
 
 LICENSE=	GPLv3+
 

@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	High Performance Colour Space Manipulation
-WWW=		https://cran.r-project.org/web/packages/farver/
+WWW=		https://cran.r-project.org/package=farver
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.note

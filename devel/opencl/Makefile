@@ -1,5 +1,5 @@
 PORTNAME=	opencl
-DISTVERSION=	3.0.19
+DISTVERSION=	3.1.1
 CATEGORIES=	devel
 
 MAINTAINER=	ohartmann@walstatt.org
@@ -16,14 +16,14 @@ GH_ACCOUNT=	KhronosGroup
 GH_PROJECT=	OpenCL-Headers OpenCL-CLHPP:clhpp
 GH_TAGNAME=	${HEADER_TAG} ${CLHPP_TAG}:clhpp
 
-# the header releases don't have tags yet, so use git commit for now
-HEADER_TAG=	v2025.07.22
-CLHPP_TAG=	v2025.07.22 #  include missing CL/opencl.hpp
-
 NO_ARCH=	yes
 NO_BUILD=	yes
 
 WRKSRC_SUBDIR=	CL
+
+# the header releases don't have tags yet, so use git commit for now
+CLHPP_TAG=	v2026.05.29 #  include missing CL/opencl.hpp
+HEADER_TAG=	v2026.05.29
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/CL

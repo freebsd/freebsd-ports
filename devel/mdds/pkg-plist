@@ -41,4 +41,5 @@ include/mdds-%%API_VERSION%%/mdds/sorted_string_map.hpp
 include/mdds-%%API_VERSION%%/mdds/trie_map_def.inl
 include/mdds-%%API_VERSION%%/mdds/trie_map_itr.hpp
 include/mdds-%%API_VERSION%%/mdds/trie_map.hpp
+include/mdds-%%API_VERSION%%/mdds/version.hpp
 libdata/pkgconfig/mdds-%%API_VERSION%%.pc

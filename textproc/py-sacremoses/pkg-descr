@@ -1,1 +1,3 @@
 sacremoses is a Python port of Moses tokenizer, truecaser and normalizer.
+It supports tokenizer, truecaser, and normalizer operations commonly used in
+natural language processing pipelines.

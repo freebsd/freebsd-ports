@@ -1,6 +1,8 @@
-TIMESTAMP = 1785181328
-SHA256 (nkanaev-yarr-v2.8_GH0.tar.gz) = c15adc91c9c0ef085ce6161c81f296e96b066e99352416b920288ef9a8d0aafa
-SIZE (nkanaev-yarr-v2.8_GH0.tar.gz) = 4759895
+TIMESTAMP = 1788848038
+SHA256 (nkanaev-yarr-v2.9_GH0.tar.gz) = f6e667ec25e836add55b468fa478b089c14b71fea76131e07b429a171c1984e8
+SIZE (nkanaev-yarr-v2.9_GH0.tar.gz) = 5199403
+SHA256 (expr-lang-expr-v1.17.8_GH0.tar.gz) = 33fdb84a174326187d8c17147529613757e13ef6b50c852c9a42649bc86872e8
+SIZE (expr-lang-expr-v1.17.8_GH0.tar.gz) = 2057596
 SHA256 (fyne-io-systray-v1.12.0_GH0.tar.gz) = 4e73b29a0c15ba995beb63be2b6c398ed5aa8bf05297bd7e6bdf353128a87240
 SIZE (fyne-io-systray-v1.12.0_GH0.tar.gz) = 75499
 SHA256 (golang-net-v0.56.0_GH0.tar.gz) = c2097a7d1043e482386bf71f4df9d4e269685809ad057e1c42fa58e5dd8ff4ec

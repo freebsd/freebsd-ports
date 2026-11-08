@@ -1,0 +1,8 @@
+bin/ms-sys
+%%NLS%%share/locale/de/LC_MESSAGES/ms-sys.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/ms-sys.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/ms-sys.mo
+%%NLS%%share/man/de/man1/ms-sys.1.gz
+%%NLS%%share/man/fr/man1/ms-sys.1.gz
+share/man/man1/ms-sys.1.gz
+%%NLS%%share/man/sv/man1/ms-sys.1.gz

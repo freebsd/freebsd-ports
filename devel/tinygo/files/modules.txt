@@ -1,0 +1,260 @@
+# github.com/BurntSushi/toml v1.4.0
+## explicit; go 1.18
+github.com/BurntSushi/toml
+github.com/BurntSushi/toml/internal
+# github.com/aykevl/go-wasm v0.0.2-0.20250317121156-42b86c494139
+## explicit; go 1.15
+github.com/aykevl/go-wasm
+# github.com/blakesmith/ar v0.0.0-20150311145944-8bd4349a67f2
+## explicit
+github.com/blakesmith/ar
+# github.com/chavacava/garif v0.1.0
+## explicit; go 1.16
+github.com/chavacava/garif
+# github.com/coreos/go-semver v0.3.1
+## explicit; go 1.8
+github.com/coreos/go-semver/semver
+# github.com/docker/libtrust v0.0.0-20160708172513-aabc10ec26b7
+## explicit
+github.com/docker/libtrust
+# github.com/fatih/color v1.17.0
+## explicit; go 1.17
+github.com/fatih/color
+# github.com/fatih/structtag v1.2.0
+## explicit; go 1.12
+github.com/fatih/structtag
+# github.com/gofrs/flock v0.8.1
+## explicit
+github.com/gofrs/flock
+# github.com/golangci/misspell v0.6.0
+## explicit; go 1.21
+github.com/golangci/misspell
+# github.com/google/shlex v0.0.0-20181106134648-c34317bd91bf
+## explicit
+github.com/google/shlex
+# github.com/hashicorp/go-version v1.7.0
+## explicit
+github.com/hashicorp/go-version
+# github.com/inhies/go-bytesize v0.0.0-20220417184213-4913239db9cf
+## explicit; go 1.12
+github.com/inhies/go-bytesize
+# github.com/klauspost/compress v1.17.11
+## explicit; go 1.21
+github.com/klauspost/compress
+github.com/klauspost/compress/fse
+github.com/klauspost/compress/huff0
+github.com/klauspost/compress/internal/cpuinfo
+github.com/klauspost/compress/internal/snapref
+github.com/klauspost/compress/zstd
+github.com/klauspost/compress/zstd/internal/xxhash
+# github.com/marcinbor85/gohex v0.0.0-20200531091804-343a4b548892
+## explicit
+github.com/marcinbor85/gohex
+# github.com/mattn/go-colorable v0.1.13
+## explicit; go 1.15
+github.com/mattn/go-colorable
+# github.com/mattn/go-isatty v0.0.20
+## explicit; go 1.15
+github.com/mattn/go-isatty
+# github.com/mattn/go-runewidth v0.0.9
+## explicit; go 1.9
+github.com/mattn/go-runewidth
+# github.com/mattn/go-tty v0.0.4
+## explicit; go 1.14
+github.com/mattn/go-tty
+# github.com/mgechev/dots v0.0.0-20210922191527-e955255bf517
+## explicit
+github.com/mgechev/dots
+# github.com/mgechev/revive v1.3.9
+## explicit; go 1.21
+github.com/mgechev/revive
+github.com/mgechev/revive/cli
+github.com/mgechev/revive/config
+github.com/mgechev/revive/formatter
+github.com/mgechev/revive/internal/ifelse
+github.com/mgechev/revive/internal/typeparams
+github.com/mgechev/revive/lint
+github.com/mgechev/revive/logging
+github.com/mgechev/revive/revivelib
+github.com/mgechev/revive/rule
+# github.com/mitchellh/go-homedir v1.1.0
+## explicit
+github.com/mitchellh/go-homedir
+# github.com/olekukonko/tablewriter v0.0.5
+## explicit; go 1.12
+github.com/olekukonko/tablewriter
+# github.com/opencontainers/go-digest v1.0.0
+## explicit; go 1.13
+github.com/opencontainers/go-digest
+# github.com/pkg/errors v0.9.1
+## explicit
+github.com/pkg/errors
+# github.com/regclient/regclient v0.8.2
+## explicit; go 1.21
+github.com/regclient/regclient
+github.com/regclient/regclient/config
+github.com/regclient/regclient/internal/auth
+github.com/regclient/regclient/internal/cache
+github.com/regclient/regclient/internal/conffile
+github.com/regclient/regclient/internal/httplink
+github.com/regclient/regclient/internal/limitread
+github.com/regclient/regclient/internal/pqueue
+github.com/regclient/regclient/internal/reghttp
+github.com/regclient/regclient/internal/reqmeta
+github.com/regclient/regclient/internal/sloghandle
+github.com/regclient/regclient/internal/strparse
+github.com/regclient/regclient/internal/timejson
+github.com/regclient/regclient/internal/units
+github.com/regclient/regclient/internal/version
+github.com/regclient/regclient/pkg/archive
+github.com/regclient/regclient/scheme
+github.com/regclient/regclient/scheme/ocidir
+github.com/regclient/regclient/scheme/reg
+github.com/regclient/regclient/types
+github.com/regclient/regclient/types/blob
+github.com/regclient/regclient/types/descriptor
+github.com/regclient/regclient/types/docker
+github.com/regclient/regclient/types/docker/schema1
+github.com/regclient/regclient/types/docker/schema2
+github.com/regclient/regclient/types/errs
+github.com/regclient/regclient/types/manifest
+github.com/regclient/regclient/types/mediatype
+github.com/regclient/regclient/types/oci
+github.com/regclient/regclient/types/oci/v1
+github.com/regclient/regclient/types/ping
+github.com/regclient/regclient/types/platform
+github.com/regclient/regclient/types/ref
+github.com/regclient/regclient/types/referrer
+github.com/regclient/regclient/types/repo
+github.com/regclient/regclient/types/tag
+github.com/regclient/regclient/types/warning
+# github.com/sigurn/crc16 v0.0.0-20211026045750-20ab5afb07e3
+## explicit
+github.com/sigurn/crc16
+# github.com/sirupsen/logrus v1.9.3
+## explicit; go 1.13
+github.com/sirupsen/logrus
+# github.com/spf13/afero v1.11.0
+## explicit; go 1.19
+github.com/spf13/afero
+github.com/spf13/afero/internal/common
+github.com/spf13/afero/mem
+# github.com/tetratelabs/wazero v1.9.0
+## explicit; go 1.22.0
+github.com/tetratelabs/wazero
+github.com/tetratelabs/wazero/api
+github.com/tetratelabs/wazero/experimental
+github.com/tetratelabs/wazero/experimental/sys
+github.com/tetratelabs/wazero/imports/wasi_snapshot_preview1
+github.com/tetratelabs/wazero/internal/descriptor
+github.com/tetratelabs/wazero/internal/engine/interpreter
+github.com/tetratelabs/wazero/internal/engine/wazevo
+github.com/tetratelabs/wazero/internal/engine/wazevo/backend
+github.com/tetratelabs/wazero/internal/engine/wazevo/backend/isa/amd64
+github.com/tetratelabs/wazero/internal/engine/wazevo/backend/isa/arm64
+github.com/tetratelabs/wazero/internal/engine/wazevo/backend/regalloc
+github.com/tetratelabs/wazero/internal/engine/wazevo/frontend
+github.com/tetratelabs/wazero/internal/engine/wazevo/ssa
+github.com/tetratelabs/wazero/internal/engine/wazevo/wazevoapi
+github.com/tetratelabs/wazero/internal/expctxkeys
+github.com/tetratelabs/wazero/internal/filecache
+github.com/tetratelabs/wazero/internal/fsapi
+github.com/tetratelabs/wazero/internal/ieee754
+github.com/tetratelabs/wazero/internal/internalapi
+github.com/tetratelabs/wazero/internal/leb128
+github.com/tetratelabs/wazero/internal/moremath
+github.com/tetratelabs/wazero/internal/platform
+github.com/tetratelabs/wazero/internal/sock
+github.com/tetratelabs/wazero/internal/sys
+github.com/tetratelabs/wazero/internal/sysfs
+github.com/tetratelabs/wazero/internal/u32
+github.com/tetratelabs/wazero/internal/u64
+github.com/tetratelabs/wazero/internal/version
+github.com/tetratelabs/wazero/internal/wasip1
+github.com/tetratelabs/wazero/internal/wasm
+github.com/tetratelabs/wazero/internal/wasm/binary
+github.com/tetratelabs/wazero/internal/wasmdebug
+github.com/tetratelabs/wazero/internal/wasmruntime
+github.com/tetratelabs/wazero/sys
+# github.com/ulikunitz/xz v0.5.12
+## explicit; go 1.12
+github.com/ulikunitz/xz
+github.com/ulikunitz/xz/internal/hash
+github.com/ulikunitz/xz/internal/xlog
+github.com/ulikunitz/xz/lzma
+# github.com/urfave/cli/v3 v3.0.0-beta1
+## explicit; go 1.18
+github.com/urfave/cli/v3
+# go.bug.st/serial v1.8.0
+## explicit; go 1.25.0
+go.bug.st/serial
+go.bug.st/serial/enumerator
+go.bug.st/serial/unixutils
+# go.bytecodealliance.org v0.6.2
+## explicit; go 1.23.0
+go.bytecodealliance.org/cmd/wit-bindgen-go
+go.bytecodealliance.org/cmd/wit-bindgen-go/cmd/generate
+go.bytecodealliance.org/cmd/wit-bindgen-go/cmd/wit
+go.bytecodealliance.org/internal/codec
+go.bytecodealliance.org/internal/codec/json
+go.bytecodealliance.org/internal/go/gen
+go.bytecodealliance.org/internal/module
+go.bytecodealliance.org/internal/oci
+go.bytecodealliance.org/internal/relpath
+go.bytecodealliance.org/internal/stringio
+go.bytecodealliance.org/internal/wasm
+go.bytecodealliance.org/internal/wasm/uleb128
+go.bytecodealliance.org/internal/wasmtools
+go.bytecodealliance.org/internal/witcli
+go.bytecodealliance.org/wit
+go.bytecodealliance.org/wit/bindgen
+go.bytecodealliance.org/wit/iterate
+go.bytecodealliance.org/wit/logging
+go.bytecodealliance.org/wit/ordered
+# go.bytecodealliance.org/cm v0.2.2
+## explicit; go 1.23.0
+go.bytecodealliance.org/cm
+# golang.org/x/mod v0.37.0
+## explicit; go 1.25.0
+golang.org/x/mod/internal/lazyregexp
+golang.org/x/mod/modfile
+golang.org/x/mod/module
+golang.org/x/mod/semver
+# golang.org/x/net v0.56.0
+## explicit; go 1.25.0
+golang.org/x/net/http/httpguts
+golang.org/x/net/idna
+# golang.org/x/sys v0.47.0
+## explicit; go 1.25.0
+golang.org/x/sys/unix
+golang.org/x/sys/windows
+golang.org/x/sys/windows/registry
+# golang.org/x/text v0.38.0
+## explicit; go 1.25.0
+golang.org/x/text/runes
+golang.org/x/text/secure/bidirule
+golang.org/x/text/transform
+golang.org/x/text/unicode/bidi
+golang.org/x/text/unicode/norm
+# golang.org/x/tools v0.47.0
+## explicit; go 1.25.0
+golang.org/x/tools/go/ast/astutil
+golang.org/x/tools/go/ast/edge
+golang.org/x/tools/go/ast/inspector
+golang.org/x/tools/go/buildutil
+golang.org/x/tools/go/ssa
+golang.org/x/tools/go/types/typeutil
+golang.org/x/tools/internal/aliases
+golang.org/x/tools/internal/stdlib
+golang.org/x/tools/internal/typeparams
+golang.org/x/tools/internal/typesinternal
+golang.org/x/tools/internal/versions
+# gopkg.in/yaml.v2 v2.4.0
+## explicit; go 1.15
+gopkg.in/yaml.v2
+# tinygo.org/x/espflasher v0.8.1
+## explicit; go 1.25.0
+tinygo.org/x/espflasher/pkg/espflasher
+# tinygo.org/x/go-llvm v0.0.0-20260721072906-185673ef46a5
+## explicit; go 1.14
+tinygo.org/x/go-llvm

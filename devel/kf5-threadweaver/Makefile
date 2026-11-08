@@ -10,4 +10,6 @@ USE_KDE=	ecm:build
 USE_QT=		core widgets xml \
 		buildtools:build qmake:build testlib:build
 
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

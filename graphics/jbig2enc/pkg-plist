@@ -1,0 +1,11 @@
+bin/jbig2
+bin/jbig2topdf.py
+include/jbig2arith.h
+include/jbig2comparator.h
+include/jbig2segments.h
+include/jbig2structs.h
+include/jbig2sym.h
+lib/libjbig2enc.a
+lib/libjbig2enc.so
+lib/libjbig2enc.so.0
+lib/libjbig2enc.so.0.0.32

@@ -1,0 +1,4 @@
+Dart is a client-optimized language for fast apps on any platform. The
+SDK contains the Dart VM, the dart command line tool (create, pub, analyze,
+format, test, run), and the compilers to native executables (dart compile
+exe), JavaScript and WebAssembly.

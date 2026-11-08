@@ -1,9 +1,9 @@
 [
 { type: install
   message: <<EOM
-To utilize CUDA support for PyTorch, both https://github.com/shkhln 's
-compatibility library preloading and Linux compatibility layer usage are
-required, as demonstrated in the provided demonstration scripts.
+To utilize CUDA support, make sure that appropriate NVidia drivers are installed:
+
+	pkg install linux-nvidia-libs nvidia-driver
 
 To play with Stable Diffusion copy it to a user-writable directory, edit at will
 and launch it via ai-ml-env-python:
@@ -23,7 +23,7 @@ and then launch the entry point script via ai-ml-env-bash:
 
 You can then run
 
-ai-ml-env-bash ./run_python_examples.sh clean
+	ai-ml-env-bash ./run_python_examples.sh clean
 
 to remove downloaded data or just remove the whole directory to clean up
 everything.

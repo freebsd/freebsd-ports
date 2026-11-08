@@ -1,0 +1,18 @@
+--- Makefile.cbm.orig	2026-10-16 05:39:05 UTC
++++ Makefile.cbm
+@@ -372,6 +372,7 @@ EXTRACTION_SRCS = \
+     $(CBM_DIR)/extract_type_assigns.c \
+     $(CBM_DIR)/extract_env_accesses.c \
+     $(CBM_DIR)/extract_channels.c \
++    $(CBM_DIR)/extract_sysctl.c \
+     $(CBM_DIR)/extract_k8s.c \
+     $(CBM_DIR)/extract_dbt.c \
+     $(CBM_DIR)/doclink.c \
+@@ -551,6 +552,7 @@ PIPELINE_SRCS = \
+     src/pipeline/pass_cross_repo.c \
+     src/pipeline/artifact.c \
+     src/pipeline/pass_ensemble_routing.c \
++    src/pipeline/pass_sysctl.c \
+     src/pipeline/pass_pkgmap.c
+ 
+ # SimHash / MinHash module

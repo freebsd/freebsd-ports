@@ -1,0 +1,19 @@
+--- apps/web/package.json.orig	2026-09-22 09:39:55 UTC
++++ apps/web/package.json
+@@ -13,7 +13,7 @@
+     "lint": "next lint",
+     "e2e": "playwright test e2e",
+     "format": "prettier --write \"**/*.{ts,tsx,js,json,md}\"",
+-    "postinstall": "playwright install --with-deps chromium"
++    "postinstall": "true"
+   },
+   "dependencies": {
+     "@apple/app-store-server-library": "^3.1.0",
+@@ -29,6 +29,7 @@
+     "@linkwarden/prisma": "*",
+     "@linkwarden/router": "*",
+     "@linkwarden/types": "*",
++    "@next/swc-wasm-nodejs": "15.5.21",
+     "@phosphor-icons/core": "^2.1.1",
+     "@phosphor-icons/react": "^2.1.7",
+     "@radix-ui/react-checkbox": "^1.3.3",

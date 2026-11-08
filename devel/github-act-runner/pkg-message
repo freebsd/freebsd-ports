@@ -1,0 +1,13 @@
+[
+{ type: install
+  message: <<EOM
+JavaScript actions, such as actions/checkout, require a Node.js runtime
+in the runner's PATH. Node.js is not installed automatically; shell-only
+workflows do not require it.
+
+Install a runtime suitable for your workflows, for example:
+
+  pkg install node24
+EOM
+}
+]

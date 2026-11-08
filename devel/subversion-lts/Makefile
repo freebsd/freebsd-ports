@@ -1,11 +1,19 @@
-PORTREVISION=	1
+PORTREVISION=	8
 PKGNAMESUFFIX=	-lts
 
 MAINTAINER=	michaelo@apache.org
-COMMENT=	Version control system, long-term-support version
+COMMENT=	Apache Subversion is a full-featured version control system (LTS)
 WWW=		https://subversion.apache.org/
 
 CONFLICTS_INSTALL=	subversion
+
+# !!! DO NOT REMOVE THIS PORT WITHOUT COORDINATING WITH THE MAINTAINER !!!
+# Removal is NOT a simple "delete the directory" -- devel/subversion's
+# Makefile.addons, its slave ports' PORTREVISION_LTS, and ~30 unrelated
+# ports with a WITH_SUBVERSION_VER==LTS conditional dependency branch
+# all need matching edits. See the maintainer before touching this.
+DEPRECATED=	Upstream no longer maintains a separate LTS release line, use devel/subversion instead
+EXPIRATION_DATE=2027-01-15
 
 USE_RC_SUBR=	svnserve
 
@@ -19,20 +27,16 @@ OPTIONS_DEFINE=	\
 		SASL		\
 		SERF		\
 		SVNSERVE_WRAPPER\
-		TEST		\
 		TOOLS
 
 OPTIONS_DEFAULT=GPG_AGENT SERF TOOLS
 
-GPG_AGENT_DESC=		Enable GPG agent password store
+GPG_AGENT_DESC=		Enable GPG agent credential cache
 SERF_DESC=		WebDAV/Delta-V (HTTP/HTTPS) repo access module
 SVNSERVE_WRAPPER_DESC=	Enable svnserve wrapper (umask setter)
-TEST_DESC=		Run subversion test suite
 TOOLS_DESC=		Install several tools
 
-SVNSERVE_WRAPPER_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-svnserve-wrapper
-
-USES+=			shebangfix python:env
+USES+=			shebangfix
 python_OLD_CMD+=	"/bin/env python"
 SHEBANG_REGEX=		./tools/.*
 
@@ -61,9 +65,8 @@ PLIST_SUB+=	NO_SVNSERVE_WRAPPER=""
 SVNSERVE_EXT=
 .endif
 
-.if ${PORT_OPTIONS:MTEST}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
-.endif
+TEST_TARGET=	check
 
 .if make(repository)
 WITH_REPOSITORY_CREATION=	yes
@@ -118,18 +121,22 @@ pre-configure:
 	fi
 .endif
 
+post-patch-SVNSERVE_WRAPPER-on:
+# the real svnserve binary installs as svnserve.bin so bin/svnserve can be
+# the umask-setting wrapper script instead; build.conf has no per-target
+# install-name override, so rename it here, after Makefile.common's
+# post-patch has (re)generated build-outputs.mk from the patched build.conf
+	@${REINPLACE_CMD} -e 's#(bindir)/svnserve$$(EXEEXT)#(bindir)/svnserve.bin$$(EXEEXT)#' \
+		${WRKSRC}/build-outputs.mk
+
 post-configure:
-# Enable GNOME Keyring / KWallet support in main code, as it is harmless
-	@${REINPLACE_CMD} -E 's%.*#undef SVN_HAVE_(GNOME_KEYRING|KWALLET).*%#define SVN_HAVE_\1 1%' ${WRKSRC}/subversion/svn_private_config.h
+# security/subversion-gnome-keyring provides the library for
+# --with-gnome-keyring (SVN_HAVE_LIBSECRET), not the legacy
+# --with-old-gnome-keyring (SVN_HAVE_GNOME_KEYRING)
+	@${REINPLACE_CMD} -E 's%.*#undef SVN_HAVE_LIBSECRET.*%#define SVN_HAVE_LIBSECRET 1%' ${WRKSRC}/subversion/svn_private_config.h
 # ugly hack: save tools directory so we don't have to cleanup before installing
 	@${CP} -R ${WRKSRC}/tools ${WRKSRC}/tools.examples
 	@${CHMOD} -R a-st,o+rX ${WRKSRC}/tools.examples
-
-# takes a long time, and will fail but gives maintainer a good oversight
-.if ${PORT_OPTIONS:MTEST}
-test: build
-	-@make check -C ${WRKSRC}
-.endif
 
 post-build-TOOLS-on:
 	@${MAKE} -C ${WRKSRC} tools ${MAKE_ARGS}
@@ -143,6 +150,15 @@ post-install:	${MKREPOS_TARGET}
 	(cd ${WRKSRC}/tools.examples && ${TAR} --exclude '*.in' -cf - * | ${TAR} -C ${STAGEDIR}${DATADIR} -xof - )
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/bash-completion/completions
+	${INSTALL_DATA} ${WRKSRC}/tools/client-side/bash_completion \
+		${STAGEDIR}${PREFIX}/share/bash-completion/completions/svn
+# bash_completion defines completions for svn, svnadmin, svndumpfilter,
+# svnlook, svnsync, and svnversion; the loader looks up one file per
+# command name, so symlink the other five to the real file
+.for cmd in svnadmin svndumpfilter svnlook svnsync svnversion
+	${LN} -sf svn ${STAGEDIR}${PREFIX}/share/bash-completion/completions/${cmd}
+.endfor
 
 post-install-SVNSERVE_WRAPPER-on:
 	@${INSTALL_SCRIPT} ${FILESDIR}/svnserve.wrapper ${STAGEDIR}${PREFIX}/bin/svnserve.sample
@@ -203,9 +219,5 @@ _mkrepos:	.USE
 	done
 .endif
 .endif
-
-svn-build-outputs-hack:
-	(cd ${WRKSRC} && python gen-make.py --release --installed-libs libsvn_client,libsvn_delta,libsvn_diff,libsvn_fs,libsvn_fs_x,libsvn_ra,libsvn_repos,libsvn_subr,libsvn_wc)
-	${MV} ${WRKSRC}/build-outputs.mk ${FILESDIR}/build-outputs.mk.addons
 
 .include <bsd.port.post.mk>

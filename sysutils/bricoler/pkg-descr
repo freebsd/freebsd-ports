@@ -1,0 +1,8 @@
+bricoler is a utility for running FreeBSD src development workflows. The basic
+idea is to simplify common src development tasks by providing a framework to
+wrap operations like:
+
+- building a FreeBSD src tree,
+- constructing a VM image from the output of a build,
+- booting the VM image,
+- running things in the guest once it has booted.

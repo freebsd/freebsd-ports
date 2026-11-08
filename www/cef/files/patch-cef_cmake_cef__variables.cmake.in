@@ -1,0 +1,40 @@
+--- cef/cmake/cef_variables.cmake.in.orig	2026-09-06 17:31:54 UTC
++++ cef/cmake/cef_variables.cmake.in
+@@ -17,7 +17,8 @@ if("${CMAKE_SYSTEM_NAME}" STREQUAL "Darw
+   set(OS_MAC 1)
+   set(OS_MACOSX 1)  # For backwards compatibility.
+   set(OS_POSIX 1)
+-elseif("${CMAKE_SYSTEM_NAME}" STREQUAL "Linux")
++elseif("${CMAKE_SYSTEM_NAME}" MATCHES "^(Linux|FreeBSD|OpenBSD)$")
++  # The BSDs use the Linux configuration.
+   set(OS_LINUX 1)
+   set(OS_POSIX 1)
+ elseif("${CMAKE_SYSTEM_NAME}" STREQUAL "Windows")
+@@ -27,6 +28,7 @@ endif()
+ # Determine the project architecture.
+ if(NOT DEFINED PROJECT_ARCH)
+   if(("${CMAKE_HOST_SYSTEM_PROCESSOR}" STREQUAL "arm64") OR
++     ("${CMAKE_HOST_SYSTEM_PROCESSOR}" STREQUAL "aarch64") OR
+      ("${CMAKE_CXX_COMPILER_ARCHITECTURE_ID}" STREQUAL "ARM64"))
+     set(PROJECT_ARCH "arm64")
+   elseif(CMAKE_SIZEOF_VOID_P MATCHES 8)
+@@ -130,13 +132,18 @@ if(OS_LINUX)
+     -pipe                           # Use pipes rather than temporary files for communication between build stages
+     -pthread                        # Use the pthread library
+     -Wall                           # Enable all warnings
+-    -Werror                         # Treat warnings as errors
+     -Wno-missing-field-initializers # Don't warn about missing field initializers
+     -Wno-unused-parameter           # Don't warn about unused parameters
+     -Wno-error=comment              # Don't warn about code in comments
+     -Wno-comment                    # Don't warn about code in comments
+     -Wno-deprecated-declarations    # Don't warn about using deprecated methods
+     )
++  if(NOT "${CMAKE_SYSTEM_NAME}" MATCHES "BSD$")
++    # Warnings from newer system compilers must not break the BSD builds.
++    list(APPEND CEF_COMPILER_FLAGS
++      -Werror                       # Treat warnings as errors
++      )
++  endif()
+   list(APPEND CEF_C_COMPILER_FLAGS
+     -std=c99                        # Use the C99 language standard
+     )

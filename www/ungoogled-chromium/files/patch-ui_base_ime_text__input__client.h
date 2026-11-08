@@ -1,8 +1,8 @@
---- ui/base/ime/text_input_client.h.orig	2025-03-09 21:38:10 UTC
+--- ui/base/ime/text_input_client.h.orig	2026-08-13 07:41:05 UTC
 +++ ui/base/ime/text_input_client.h
-@@ -337,7 +337,7 @@ class COMPONENT_EXPORT(UI_BASE_IME) TextInputClient {
-   // fields that are considered 'private' (e.g. in incognito tabs).
-   virtual bool ShouldDoLearning() = 0;
+@@ -342,7 +342,7 @@ class COMPONENT_EXPORT(UI_BASE_IME) TextInputClient {
+   virtual bool SupportsAutoFill() const;
+ #endif
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)

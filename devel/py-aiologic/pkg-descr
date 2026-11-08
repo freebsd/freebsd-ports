@@ -1,0 +1,4 @@
+aiologic is a GIL-powered locking library for Python. It provides
+synchronization primitives (locks, semaphores, events, queues, barriers, etc.)
+that work across threads and async libraries (asyncio, trio, anyio, curio,
+eventlet, gevent) and allow them to interoperate with each other.

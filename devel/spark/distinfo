@@ -1,5 +1,11 @@
-TIMESTAMP = 1721161093
-SHA256 (spark-3.3.4.tgz) = 0b86dd8a61d317523c2e116cd11f65ed6f87ad69bf564819446ed74569c49f4c
-SIZE (spark-3.3.4.tgz) = 29214872
-SHA256 (spark-3.3.4-deps.tgz) = 6978b59996b94db73f50799be2842501467f0b79b018517a74aa27c1e662f6d8
-SIZE (spark-3.3.4-deps.tgz) = 695771185
+TIMESTAMP = 1791709967
+SHA256 (spark-4.2.0.tgz) = 6e7be4c3eee79903ed6c413f434fb2526b7ccd031f1f99a8db5c24cc5f66e8cd
+SIZE (spark-4.2.0.tgz) = 50578388
+SHA256 (protobuf-29.6.tar.gz) = 877bf9f880631aa31daf2c09896276985696728137fcd43cc534a28c5566d9ba
+SIZE (protobuf-29.6.tar.gz) = 9340881
+SHA256 (abseil-cpp-20250127.1.tar.gz) = b396401fd29e2e679cace77867481d388c807671dc2acc602a0259eeb79b7811
+SIZE (abseil-cpp-20250127.1.tar.gz) = 2267282
+SHA256 (spark-4.2.0-deps.tgz) = 48fa0cc807182144e394f2cca223e54d53771924c98b403fc63654cc879bdbc5
+SIZE (spark-4.2.0-deps.tgz) = 1389906598
+SHA256 (grpc-grpc-java-v1.76.0_GH0.tar.gz) = 8c7ec45c35b0956044041799f7a028ccf76eb6c1fc8bde7bb3fcd8d896eb7b70
+SIZE (grpc-grpc-java-v1.76.0_GH0.tar.gz) = 3306002

@@ -1,0 +1,11 @@
+--- plugins/obs-browser/CMakeLists.txt.orig	2026-10-29 21:06:38 UTC
++++ plugins/obs-browser/CMakeLists.txt
+@@ -52,7 +52,7 @@ elseif(OS_MACOS)
+   include(cmake/os-windows.cmake)
+ elseif(OS_MACOS)
+   include(cmake/os-macos.cmake)
+-elseif(OS_LINUX)
++elseif(OS_LINUX OR OS_FREEBSD)
+   include(cmake/os-linux.cmake)
+ endif()
+ 

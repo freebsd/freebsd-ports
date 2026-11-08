@@ -1,0 +1,5 @@
+#!/bin/sh
+: ${APP_DB_PATH:=%%DBDIR%%/app.db}
+export APP_DB_PATH
+cd %%WWWDIR%% || exit 1
+exec %%NODE%% %%WWWDIR%%/server.js "$@"

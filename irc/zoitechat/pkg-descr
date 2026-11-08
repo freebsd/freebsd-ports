@@ -1,0 +1,7 @@
+ZoiteChat is a GTK3 IRC client based on HexChat. It allows you to join
+multiple IRC channels at the same time, talk publicly or in private
+one-on-one conversations, and transfer files over DCC.
+
+Features include SASL and other authentication methods, proxy support,
+spell checking, alerts and notifications, logging, custom themes, and
+HexChat-compatible Python, Perl and Lua scripting through a plugin API.

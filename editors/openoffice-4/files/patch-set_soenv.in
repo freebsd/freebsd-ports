@@ -1,0 +1,15 @@
+--- set_soenv.in.orig	2026-04-16 00:00:00 UTC
++++ set_soenv.in
+@@ -421,6 +421,12 @@
+             $JRETOOLKITDIR  = '$JAVA_HOME'.$ds."jre".$ds."lib".$ds."ppc64".$ds."client";
+             $JRETHREADDIR   = '$JAVA_HOME'.$ds."jre".$ds."lib".$ds."ppc64".$ds."native_threads";
+          }
++         else {
++            my $jrearch = ($platform =~ m/^powerpc64le/) ? "ppc64le" : "ppc64";
++            $JRELIBDIR      = '$JAVA_HOME'.$ds."jre".$ds."lib".$ds.$jrearch;
++            $JRETOOLKITDIR  = '$JAVA_HOME'.$ds."jre".$ds."lib".$ds.$jrearch.$ds."server";
++            $JRETHREADDIR   = '$JAVA_HOME'.$ds."jre".$ds."lib".$ds.$jrearch.$ds."native_threads";
++         }
+       }
+       else {
+          print "Setting FreeBSD PPC specific values... ";

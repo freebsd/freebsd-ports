@@ -1,6 +1,6 @@
---- sbin/spark-daemon.sh.orig	2022-06-09 18:11:30 UTC
+--- sbin/spark-daemon.sh.orig	2026-07-11 15:25:14 UTC
 +++ sbin/spark-daemon.sh
-@@ -108,14 +108,6 @@ fi
+@@ -112,14 +112,6 @@
  if [ "$SPARK_LOG_DIR" = "" ]; then
    export SPARK_LOG_DIR="${SPARK_HOME}/logs"
  fi
@@ -15,12 +15,12 @@
  
  if [ "$SPARK_PID_DIR" = "" ]; then
    SPARK_PID_DIR=/tmp
-@@ -161,8 +153,6 @@ run_command() {
- run_command() {
+@@ -166,8 +158,6 @@
    mode="$1"
    shift
--
--  mkdir -p "$SPARK_PID_DIR"
  
+-  mkdir -p "$SPARK_PID_DIR"
+-
    if [ -f "$pid" ]; then
      TARGET_ID="$(cat "$pid")"
+     if [[ $(ps -p "$TARGET_ID" -o comm=) =~ "java" ]]; then

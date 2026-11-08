@@ -25,5 +25,6 @@ CMAKE_ARGS+=	-DENABLE_TESTS:BOOL=OFF
 CMAKE_ARGS+=	-DENABLE_XHOST:BOOL=OFF # shouldn't optimize the port in case of central build
 CMAKE_ARGS+=	-DENABLE_OPENMP:BOOL=OFF # find_package(OpenMP) is broken since the merge into cmake: bug#223678
 CMAKE_ARGS+=	-DLAPACK_LIBRARIES="-lopenblas" # can't find it using find_package for some reason
+CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM:STRING=3.5 # CMake 4 compatibility, see https://github.com/SebWouters/CheMPS2/issues/92
 
 .include <bsd.port.mk>

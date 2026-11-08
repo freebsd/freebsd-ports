@@ -1,13 +1,13 @@
---- pyproject.toml.orig	2026-06-16 01:14:38 UTC
+--- pyproject.toml.orig	2026-09-28 21:44:29 UTC
 +++ pyproject.toml
-@@ -65,13 +65,10 @@ mypycrosshair = "crosshair.main:mypy_and_check"
+@@ -74,13 +74,10 @@ mypycrosshair = "crosshair.main:mypy_and_check"
  mypycrosshair = "crosshair.main:mypy_and_check"
  
  [tool.setuptools.packages.find]
 +exclude = ["doc", "doc.*"]
  
  [tool.setuptools.package-data]
- crosshair = ["*.h", "py.typed"]
+ crosshair = ["*.h", "py.typed", "unicode_data/*.json"]
 -
 -[[tool.setuptools.ext-modules]]
 -name = "_crosshair_tracers"

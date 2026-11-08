@@ -18,13 +18,13 @@ MASTER_SITES=	\
 		https://github.com/boostorg/mp11/archive/refs/tags/:mp11 \
 		https://github.com/onnx/onnx/archive/refs/tags/:onnx \
 		https://github.com/onnx/onnx-tensorrt/archive/:onnx_tensorrt \
-		https://github.com/protocolbuffers/protobuf/archive/refs/tags/:protobuf \
-		https://github.com/protocolbuffers/protobuf/releases/download/v21.12/:protoc_win64 \
-		https://github.com/protocolbuffers/protobuf/releases/download/v21.12/:protoc_win32 \
-		https://github.com/protocolbuffers/protobuf/releases/download/v21.12/:protoc_linux_x64 \
-		https://github.com/protocolbuffers/protobuf/releases/download/v21.12/:protoc_linux_x86 \
-		https://github.com/protocolbuffers/protobuf/releases/download/v21.12/:protoc_linux_aarch64 \
-		https://github.com/protocolbuffers/protobuf/releases/download/v21.12/:protoc_mac_universal \
+		https://github.com/protocolbuffers/protobuf/releases/download/v33.6/:protobuf \
+		https://github.com/protocolbuffers/protobuf/releases/download/v33.6/:protoc_win64 \
+		https://github.com/protocolbuffers/protobuf/releases/download/v33.6/:protoc_win32 \
+		https://github.com/protocolbuffers/protobuf/releases/download/v33.6/:protoc_linux_x64 \
+		https://github.com/protocolbuffers/protobuf/releases/download/v33.6/:protoc_linux_x86 \
+		https://github.com/protocolbuffers/protobuf/releases/download/v33.6/:protoc_linux_aarch64 \
+		https://github.com/protocolbuffers/protobuf/releases/download/v33.6/:protoc_mac_universal \
 		https://github.com/Maratyszcza/psimd/archive/:psimd \
 		https://github.com/google/pthreadpool/archive/:pthreadpool \
 		https://github.com/pybind/pybind11/archive/refs/tags/:pybind11 \
@@ -33,11 +33,15 @@ MASTER_SITES=	\
 		https://github.com/dcleblanc/SafeInt/archive/refs/tags/:safeint \
 		https://github.com/tensorflow/tensorboard/archive/:tensorboard \
 		https://github.com/NVIDIA/cutlass/archive/refs/tags/:cutlass \
+		https://github.com/deepseek-ai/DeepGEMM/archive/:deep_gemm \
 		https://github.com/microsoft/onnxruntime-extensions/archive/:extensions \
 		https://github.com/microsoft/DirectX-Headers/archive/refs/tags/:directx_headers \
 		https://github.com/NVIDIA/cudnn-frontend/archive/refs/tags/:cudnn_frontend \
-		https://github.com/google/dawn/archive/:dawn \
+		https://github.com/google/dawn/archive/refs/tags/:dawn \
+		https://www.nuget.org/api/v2/package/Microsoft.Direct3D.D3D12/:dawn_agility_sdk \
 		https://github.com/ARM-software/kleidiai/archive/refs/tags/:kleidiai \
 		https://github.com/qualcomm/kleidiai/archive/:kleidiai_qmx \
-		https://github.com/svaarala/duktape/releases/download/v2.7.0/:duktape \
 		https://codeload.github.com/KhronosGroup/Vulkan-Headers/tar.gz/refs/tags/:vulkan_headers \
+		https://github.com/microsoft/cpp_client_telemetry/archive/refs/tags/:cpp_client_telemetry \
+		https://github.com/curl/curl/releases/download/curl-8_21_0/:curl \
+		https://github.com/Mbed-TLS/mbedtls/releases/download/mbedtls-3.6.7/:mbedtls \

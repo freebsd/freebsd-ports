@@ -1,0 +1,23 @@
+--- pyproject.toml.orig	2026-01-07 12:22:38 UTC
++++ pyproject.toml
+@@ -1,7 +1,7 @@ requires = [
+ [build-system]
+ build-backend = "setuptools.build_meta"
+ requires = [
+-  "setuptools>=78.0.2"
++  "setuptools>=61"
+ ]
+ 
+ [dependency-groups]
+@@ -35,9 +35,8 @@ dynamic = [
+ dynamic = [
+   "version"
+ ]
+-license = "MIT"
+-license-files = ["LICENSE"]
+-name = "uTidylib"
++license = {text = "MIT"}
++name = "utidylib"
+ requires-python = ">=3.10"
+ 
+ [project.readme]

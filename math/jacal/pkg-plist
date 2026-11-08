@@ -3,6 +3,7 @@ lib/jacal/COPYING
 lib/jacal/English.scm
 lib/jacal/HELP
 lib/jacal/Makefile
+lib/jacal/UFD-basis.scm
 lib/jacal/anti-diff.scm
 lib/jacal/builtin.scm
 lib/jacal/combin.scm
@@ -27,11 +28,12 @@ lib/jacal/norm.scm
 lib/jacal/poly.scm
 lib/jacal/sexp.scm
 lib/jacal/sqfree.scm
+lib/jacal/std.scm
 lib/jacal/tensor.scm
+lib/jacal/timing.scm
 lib/jacal/toploads.scm
 lib/jacal/types.scm
 lib/jacal/unparse.scm
 lib/jacal/uv-hensel.scm
 lib/jacal/vect.scm
-lib/jacal/view.scm
 share/man/man1/jacal.1.gz

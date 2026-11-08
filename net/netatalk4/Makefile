@@ -1,5 +1,5 @@
 PORTNAME=	netatalk
-PORTVERSION=	4.5.0
+PORTVERSION=	4.6.1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/netatalk-${PORTVERSION:S/./-/g}/
 PKGNAMESUFFIX=	4
@@ -14,7 +14,9 @@ BUILD_DEPENDS=	cmark:textproc/cmark
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libevent.so:devel/libevent \
 		libiniparser.so:devel/iniparser \
-		libbstring.so:devel/bstring
+		libbstring.so:devel/bstring \
+		libcrack.so:security/cracklib \
+		libunwind.so:devel/libunwind
 
 USES=		bdb:18 cpe gettext iconv:wchar_t meson perl5 pkgconfig shebangfix ssl tar:xz
 USE_GNOME=	libxslt:build
@@ -98,6 +100,7 @@ post-patch:
 #	@${REINPLACE_CMD} -e 's|%%PYTHONCMD%%|${PYTHONCMD}|' \
 #		${WRKSRC}/contrib/shell_utils/afpstats
 
+post-install:
 .if ${PORT_OPTIONS:MPAM}
 	${INSTALL_DATA} ${FILESDIR}/pam.conf ${STAGEDIR}${PREFIX}/etc/pam.d/netatalk.sample
 .endif

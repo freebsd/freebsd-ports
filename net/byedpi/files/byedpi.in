@@ -1,0 +1,36 @@
+#!/bin/sh
+#
+# PROVIDE: byedpi
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable byedpi:
+#
+# byedpi_enable (bool):	Set to "YES" to enable byedpi.
+#			(default: "NO")
+# byedpi_addr (str):	Listening IP.
+#			(default: "127.0.0.1")
+# byedpi_port (str):	Listening port.
+#			(default: "1080")
+# byedpi_flags (str):	ciadpi arguments
+#			(default: "")
+
+. /etc/rc.subr
+
+name=byedpi
+rcvar=byedpi_enable
+desc="SOCKS proxy server to bypass DPI"
+
+load_rc_config $name
+
+: ${byedpi_enable:=NO}
+: ${byedpi_addr=127.0.0.1}
+: ${byedpi_port=1080}
+
+command=%%PREFIX%%/bin/ciadpi
+pidfile=/var/run/${name}.pid
+
+command_args="--daemon --pidfile $pidfile --ip ${byedpi_addr} --port ${byedpi_port}"
+
+run_rc_command "$1"

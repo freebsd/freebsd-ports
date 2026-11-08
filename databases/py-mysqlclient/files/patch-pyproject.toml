@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2026-02-10 12:41:57 UTC
+--- pyproject.toml.orig	2026-09-26 11:52:07 UTC
 +++ pyproject.toml
 @@ -6,7 +6,7 @@ authors = [
  authors = [
@@ -9,3 +9,12 @@
  keywords = ["MySQL"]
  classifiers = [
      "Development Status :: 5 - Production/Stable",
+@@ -35,7 +35,7 @@ Documentation = "https://mysqlclient.readthedocs.io/"
+ Documentation = "https://mysqlclient.readthedocs.io/"
+ 
+ [build-system]
+-requires = ["setuptools>=77"]
++requires = ["setuptools>=63"]
+ build-backend = "setuptools.build_meta"
+ 
+ [tool.setuptools]

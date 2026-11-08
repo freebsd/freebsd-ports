@@ -1,0 +1,2 @@
+PyTauri provides a Python binding for Tauri via PyO3, allowing Python
+developers to build cross-platform desktop applications with a web frontend.

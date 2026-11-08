@@ -1,0 +1,10 @@
+https://cmdns.dns-oarc.net/ is a custom developed DNS nameserver
+that creates dynamic delegated subdomains to enable clients to query
+for never-seen-before resource records in order to support a
+general-purpose framework for testing DNS resolvers.
+
+This is the command line client that you can run locally,
+this will allow you to specify which resolver to test against.
+
+Note: run tests with -done, otherwise it looks like it hangs
+Example: cmdns-cli -suite standard -done

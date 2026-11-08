@@ -1,12 +1,13 @@
 PORTNAME=	mercury
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.1
+DISTVERSION=	2.4.1
 CATEGORIES=	net
 PKGNAMESUFFIX=	-rpc
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C library for implementing RPC, optimized for HPC
-WWW=		https://mercury-hpc.github.io/
+WWW=		https://mercury-hpc.github.io/ \
+		https://github.com/mercury-hpc/mercury
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
@@ -23,9 +24,12 @@ GH_TUPLE=	mercury-hpc:kwsys:ee35b49:kwsys/Testing/driver/kwsys \
 		mercury-hpc:preprocessor:749783c:preprocessor/src/boost
 
 CMAKE_ON=	BUILD_SHARED_LIBS
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/mercury-hpc/mercury/issues/869
 
 .if !exists(/usr/include/byteswap.h)
 BROKEN=		needs /usr/include/byteswap.h
 .endif
+
+# tests as of 2.4.1: 100% tests passed, 0 tests failed out of 16
 
 .include <bsd.port.mk>

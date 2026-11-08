@@ -1,0 +1,7 @@
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+share/emacs/site-lisp/google-translate/google-translate-backend.el
+share/emacs/site-lisp/google-translate/google-translate-core-ui.el
+share/emacs/site-lisp/google-translate/google-translate-core.el
+share/emacs/site-lisp/google-translate/google-translate-default-ui.el
+share/emacs/site-lisp/google-translate/google-translate-smooth-ui.el
+share/emacs/site-lisp/google-translate/google-translate.el

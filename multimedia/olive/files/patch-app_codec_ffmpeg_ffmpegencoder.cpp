@@ -1,5 +1,71 @@
---- app/codec/ffmpeg/ffmpegencoder.cpp.orig	2024-12-04 17:13:33 UTC
+-- Fix build with FFmpeg 9 (libavcodec 61+) where AVCodec::pix_fmts and
+-- AVCodec::sample_fmts are no longer directly accessible. Use the new
+-- avcodec_get_supported_config() API instead.
+-- See: https://github.com/olive-editor/olive/issues/2387
+
+--- app/codec/ffmpeg/ffmpegencoder.cpp.orig
 +++ app/codec/ffmpeg/ffmpegencoder.cpp
+@@ -55,6 +55,22 @@ QStringList FFmpegEncoder::GetPixelFormatsForCodec(ExportCodec::Codec c) const
+   const AVCodec* codec_info = GetEncoder(c, SampleFormat::INVALID);
+
+   if (codec_info) {
++#if LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(61, 13, 100)
++    const AVPixelFormat* supported_pix_fmts = nullptr;
++    if (avcodec_get_supported_config(nullptr, codec_info, AV_CODEC_CONFIG_PIX_FORMAT, 0,
++                                     reinterpret_cast<const void**>(&supported_pix_fmts), nullptr) >= 0
++        && supported_pix_fmts) {
++      for (int i=0; supported_pix_fmts[i]!=AV_PIX_FMT_NONE; i++) {
++        if (FFmpegUtils::ConvertJPEGSpaceToRegularSpace(supported_pix_fmts[i]) != supported_pix_fmts[i]) {
++          // This is a deprecated "JPEG" space, skip it
++          continue;
++        }
++
++        const char* pix_fmt_name = av_get_pix_fmt_name(supported_pix_fmts[i]);
++        pix_fmts.append(pix_fmt_name);
++      }
++    }
++#else
+     for (int i=0; codec_info->pix_fmts[i]!=-1; i++) {
+       if (FFmpegUtils::ConvertJPEGSpaceToRegularSpace(codec_info->pix_fmts[i]) != codec_info->pix_fmts[i]) {
+         // This is a deprecated "JPEG" space, skip it
+@@ -64,6 +80,7 @@ QStringList FFmpegEncoder::GetPixelFormatsForCodec(ExportCodec::Codec c) const
+       const char* pix_fmt_name = av_get_pix_fmt_name(codec_info->pix_fmts[i]);
+       pix_fmts.append(pix_fmt_name);
+     }
++#endif
+   }
+
+   return pix_fmts;
+@@ -88,6 +105,21 @@ std::vector<SampleFormat> FFmpegEncoder::GetSampleFormatsForCodec(ExportCodec::Co
+   } else {
+     const AVCodec* codec_info = GetEncoder(c, SampleFormat::INVALID);
+
++#if LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(61, 13, 100)
++    if (codec_info) {
++      const AVSampleFormat* supported_sample_fmts = nullptr;
++      if (avcodec_get_supported_config(nullptr, codec_info, AV_CODEC_CONFIG_SAMPLE_FORMAT, 0,
++                                       reinterpret_cast<const void**>(&supported_sample_fmts), nullptr) >= 0
++          && supported_sample_fmts) {
++        for (int i=0; supported_sample_fmts[i]!=AV_SAMPLE_FMT_NONE; i++) {
++          SampleFormat this_format = FFmpegUtils::GetNativeSampleFormat(supported_sample_fmts[i]);
++          if (this_format != SampleFormat::INVALID) {
++            f.push_back(this_format);
++          }
++        }
++      }
++    }
++#else
+     if (codec_info && codec_info->sample_fmts) {
+       for (int i=0; codec_info->sample_fmts[i]!=-1; i++) {
+         SampleFormat this_format = FFmpegUtils::GetNativeSampleFormat(static_cast<AVSampleFormat>(codec_info->sample_fmts[i]));
+@@ -96,6 +128,7 @@ std::vector<SampleFormat> FFmpegEncoder::GetSampleFormatsForCodec(ExportCodec::Co
+         }
+       }
+     }
++#endif
+   }
+
+   return f;
 @@ -334,7 +334,11 @@ bool FFmpegEncoder::WriteAudioData(const AudioParams &
    int output_sample_count = input_sample_count ? swr_get_out_samples(audio_resample_ctx_, input_sample_count) : 102400;
    uint8_t** output_data = nullptr;

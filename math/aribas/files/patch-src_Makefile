@@ -1,0 +1,21 @@
+--- src/Makefile.orig	2024-08-19 07:18:00 UTC
++++ src/Makefile
+@@ -11,8 +11,7 @@
+ # to use gcc. Then outcomment the first two lines and activate 
+ # the next two lines.
+ 
+-CC = gcc
+-CFLAGS = -DUNiX -DPROTO -O -v
++CFLAGS += -DUNiX -DPROTO 
+ 
+ MEMFLAG1 = -DMEM=16
+ # MEM may be set to any integer value from 1 to 32.
+@@ -47,7 +46,7 @@ $(PROGRAM): $(OBJECTS)
+ 	$(CC) $(CFLAGS) $(MEMFLAG) -c alloc.c
+ 
+ $(PROGRAM): $(OBJECTS)
+-	$(CC) -o $(PROGRAM) $(OBJECTS)
++	$(CC) $(CFLAGS) -o $(PROGRAM) $(OBJECTS)
+ 	strip $(PROGRAM)
+ clean:
+ 	\rm *.o

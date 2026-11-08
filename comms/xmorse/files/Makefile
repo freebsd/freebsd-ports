@@ -8,7 +8,7 @@ m.cxx: m.fl
 	fluid -c m.fl
 
 xmorse: m.o Bargraph.o Codebox.o Cw.o Knob.o
-	${CXX} -o$@ $> `fltk-config --ldflags` `sdl-config --libs`
+	${CXX} -o$@ $> `fltk-config --ldflags --use-images` `sdl-config --libs`
 
 install: xmorse
 	${INSTALL_PROGRAM} xmorse ${PREFIX}/bin/xmorse

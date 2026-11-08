@@ -1,0 +1,4 @@
+mkcacerts reads the trusted certificates maintained by certctl(8) and
+generates a Java-compatible PKCS#12 truststore from them, so that a Java
+Virtual Machine's default truststore can be derived from the system
+truststore without invoking a JVM or keytool to build it.

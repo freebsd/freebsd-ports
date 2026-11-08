@@ -1,3 +1,5 @@
-TIMESTAMP = 1781501270
-SHA256 (mozc_unidic_merged_v1.0.0.zip) = ee14bea5c6ce372158a75c34ef8faa3469d4f38832f3aa7da9568d0649c426de
-SIZE (mozc_unidic_merged_v1.0.0.zip) = 2327456
+TIMESTAMP = 1788778222
+SHA256 (mozc_unidic_merged_v1.1.0.zip) = 5fd71b66080c2729dc19cc339104bb8b99ebdff29f3eaa7de57da021c85a4faf
+SIZE (mozc_unidic_merged_v1.1.0.zip) = 1942053
+SHA256 (mozc_unidic_names_v1.1.0.zip) = 6ede4bc908bd1e1214298b4070aa8f438bbf3ddacf2f5b5b6f2cd2ef62b1de6f
+SIZE (mozc_unidic_names_v1.1.0.zip) = 602725

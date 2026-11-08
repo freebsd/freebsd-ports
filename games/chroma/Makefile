@@ -1,12 +1,11 @@
 PORTNAME=	chroma
-PORTVERSION=	1.20
+PORTVERSION=	1.21
 CATEGORIES=	games
-MASTER_SITES=	http://www.level7.org.uk/chroma/download/ \
-		https://mirror.amdmi3.ru/distfiles/
+MASTER_SITES=	https://www.level7.org.uk/chroma/download/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Abstract puzzle game
-WWW=		http://www.level7.org.uk/chroma/
+WWW=		https://www.level7.org.uk/chroma/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

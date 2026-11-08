@@ -1,0 +1,12 @@
+--- cargo-crates/minidumper-0.10.1/Cargo.toml.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/minidumper-0.10.1/Cargo.toml
+@@ -84,6 +84,9 @@ version = "0.4"
+ [target.'cfg(any(target_os = "linux", target_os = "android"))'.dependencies.uds]
+ version = "0.4"
+ 
++[target."cfg(target_os = \"freebsd\")".dependencies.uds]
++version = "0.4"
++
+ [target.'cfg(any(target_os = "windows", target_os = "macos"))'.dependencies.scroll]
+ version = "0.12"
+ features = ["derive"]

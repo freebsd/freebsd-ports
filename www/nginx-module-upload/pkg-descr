@@ -1,0 +1,7 @@
+The upload module parses file uploads sent as multipart/form-data, stores the
+files on disk and then hands the request on to a location of your choice with
+the file metadata turned into form fields.  It also supports resumable uploads,
+so a large transfer can carry on after an interruption.
+
+This port only installs the module sources.  The module itself is built by the
+nginx ports when their UPLOAD option is enabled.

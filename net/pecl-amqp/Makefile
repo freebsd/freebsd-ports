@@ -1,5 +1,5 @@
 PORTNAME=	amqp
-PORTVERSION=	2.1.1
+PORTVERSION=	2.2.0
 CATEGORIES=	net pear
 
 MAINTAINER=	jnlin@freebsd.cs.nctu.edu.tw
@@ -11,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	librabbitmq.so:net/rabbitmq-c
 
-USES=		php:pecl localbase
-IGNORE_WITH_PHP=	85 86
+USES=		localbase php:pecl
+IGNORE_WITH_PHP=	86
 
 .include <bsd.port.mk>

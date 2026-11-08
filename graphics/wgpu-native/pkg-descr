@@ -1,0 +1,3 @@
+wgpu-native is a native WebGPU implementation based on wgpu-core. It provides
+a C API conforming to the webgpu-headers specification, plus wgpu-specific
+extensions, and is used as the backend of language bindings such as wgpu-py.

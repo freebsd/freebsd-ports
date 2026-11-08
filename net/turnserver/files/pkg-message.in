@@ -39,6 +39,10 @@ The TURN Server supports (optionally) SQLite, MySQL, PostgreSQL, Redis.
    $ man turnserver
    $ man turnadmin
    $ man turnutils
+
+Please be aware that running as non-root user may require additional
+workarounds on FreeBSD, as suggested by this bug report:
+https://github.com/coturn/coturn/issues/1098
 EOM
 }
 ]

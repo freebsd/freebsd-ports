@@ -1,0 +1,6 @@
+ufs-utils is a userspace tool for Universal Flash Storage (UFS) devices.
+It reads and writes descriptors, attributes, and flags, sends UIC
+commands, and drives RPMB and advanced RPMB, among other operations.
+
+On FreeBSD it reaches the device through the ufshci(4) passthrough
+ioctl and the CAM pass(4) device.

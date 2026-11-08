@@ -9,7 +9,7 @@ WWW=		https://gitlab.freedesktop.org/xorg/util/cf
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:xz xorg-cat:util,meson
+USES=		xorg-cat:util,meson
 
 NO_ARCH=	yes
 

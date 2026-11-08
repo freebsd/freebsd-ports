@@ -1,4 +1,4 @@
---- media/audio/alsa/audio_manager_alsa.cc.orig	2026-07-01 17:42:29 UTC
+--- media/audio/alsa/audio_manager_alsa.cc.orig	2026-08-12 15:23:09 UTC
 +++ media/audio/alsa/audio_manager_alsa.cc
 @@ -106,7 +106,9 @@ bool AudioManagerAlsa::GetAlsaAudioDevices(StreamType 
    // Loop through the physical sound cards to get ALSA device hints.

@@ -1,5 +1,5 @@
 PORTNAME=	dav1d
-DISTVERSION=	1.5.3
+DISTVERSION=	1.5.4
 PORTREVISION=	1
 CATEGORIES=	multimedia
 
@@ -14,7 +14,8 @@ BUILD_DEPENDS=	${BUILD_DEPENDS_${ARCH}}
 BUILD_DEPENDS_amd64=	nasm:devel/nasm
 BUILD_DEPENDS_i386=	nasm:devel/nasm
 
-USES=		compiler:c11 meson
+USES=		compiler:c11 cpe meson
+CPE_VENDOR=	videolan
 USE_GITLAB=	yes
 USE_LDCONFIG=	yes
 GL_SITE=	https://code.videolan.org

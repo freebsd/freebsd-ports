@@ -1,0 +1,6 @@
+#!/bin/sh
+: ${DEDUP_ENV:=%%ETCDIR%%/deduper.env}
+: ${DEDUP_DATA:=%%DBDIR%%/}
+export DEDUP_ENV DEDUP_DATA
+cd %%DATADIR%% || exit 1
+exec %%PYTHON_CMD%% %%DATADIR%%/src/app.py "$@"

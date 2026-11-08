@@ -1,2 +1,19 @@
-verismith is a Verilog fuzzer to test the major simulators and sythesisers
-by generating random, valid Verilog.
+Verilog fuzzer to test the major Verilog compilers by generating random, valid
+and deterministic Verilog.
+
+It currently supports the following synthesis tools: Yosys, Xst, Vivado, Quartus
+and the following simulator: Icarus Verilog.
+
+The fuzzer generates combinational and behavioural Verilog to test the various
+tools. The most notable constructs that are supported and generated are the
+following:
+
+- module definitions with parameter definitions, inputs and outputs
+- module items, such as instantiations, continuous assignment, always blocks,
+  initial blocks, parameter and local parameter declarations
+- most expressions, for example concatenation, arithmetic operations, ternary
+  conditional operator
+- behavioural code in sequential always blocks
+- behavioural control flow such as if-else and for loops
+- declaration of wires and variables of any size, signed or unsigned
+- bit selection from wires and variables

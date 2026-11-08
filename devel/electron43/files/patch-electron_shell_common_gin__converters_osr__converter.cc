@@ -1,4 +1,4 @@
---- electron/shell/common/gin_converters/osr_converter.cc.orig	2026-06-29 20:35:15 UTC
+--- electron/shell/common/gin_converters/osr_converter.cc.orig	2026-08-31 00:54:38 UTC
 +++ electron/shell/common/gin_converters/osr_converter.cc
 @@ -12,7 +12,7 @@
  
@@ -9,7 +9,7 @@
  #include "base/strings/string_number_conversions.h"
  #endif
  #include "shell/common/gin_converters/gfx_converter.h"
-@@ -134,7 +134,7 @@ v8::Local<v8::Value> Converter<electron::OffscreenShar
+@@ -131,7 +131,7 @@ v8::Local<v8::Value> Converter<electron::OffscreenShar
        electron::Buffer::Copy(
            isolate, base::byte_span_from_ref(val.shared_texture_handle))
            .ToLocalChecked());

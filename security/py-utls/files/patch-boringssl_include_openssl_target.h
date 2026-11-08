@@ -1,5 +1,5 @@
---- ../boringssl-e2a57cf/include/openssl/target.h.orig
-+++ ../boringssl-e2a57cf/include/openssl/target.h
+--- ../boringssl-7c1efd8/include/openssl/target.h.orig	2026-08-13 14:49:24 UTC
++++ ../boringssl-7c1efd8/include/openssl/target.h
 @@ -56,6 +56,11 @@
  #define OPENSSL_32_BIT
  #elif defined(__myriad2__)

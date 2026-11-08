@@ -1,5 +1,5 @@
 PORTNAME=	gigedit
-DISTVERSION=	1.2.4
+DISTVERSION=	1.3.0
 CATEGORIES=	audio
 MASTER_SITES=	http://download.linuxsampler.org/packages/
 
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libgig.so:audio/libgig \
 
 USES=		autoreconf gettext gmake gnome libtool pkgconfig tar:bz2
 USE_GNOME=	cairo cairomm gdkpixbuf glib20 glibmm gtk30 gtkmm30 intltool pango pangomm
-USE_LDCONFIG=	yes
+USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 
 GNU_CONFIGURE=	yes
 

@@ -1,0 +1,13 @@
+--- cmake/simde.cmake.orig	2026-08-23 08:41:50 UTC
++++ cmake/simde.cmake
+@@ -1,10 +1,7 @@
+-LIST(APPEND CMAKE_REQUIRED_INCLUDES ${PROJECT_SOURCE_DIR}/simde)
+-
+ CHECK_INCLUDE_FILES(simde/x86/sse4.2.h SIMDE_SSE42_H_FOUND)
+ 
+ if (SIMDE_SSE42_H_FOUND)
+   set(SIMDE_FLAGS "-DVS_SIMDE_BACKEND")
+-  include_directories(${PROJECT_SOURCE_DIR}/simde)
+ 
+   if (CMAKE_COMPILER_IS_CLANG)
+     set(SIMDE_FLAGS "${SIMDE_FLAGS} -DSIMDE_NO_CHECK_IMMEDIATE_CONSTANT")

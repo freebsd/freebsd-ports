@@ -1,3 +1,3 @@
-TIMESTAMP = 1783564038
-SHA256 (azure_mgmt_recoveryservices-4.1.0.tar.gz) = 63cd596e6ff1b801e06283d153ce0c7f1d44f7edf052d321c132746c3c8c871e
-SIZE (azure_mgmt_recoveryservices-4.1.0.tar.gz) = 113845
+TIMESTAMP = 1787587782
+SHA256 (azure_mgmt_recoveryservices-4.2.0.tar.gz) = a89251182f1ad0ca3935970e3a9b641e3eaa54d8676af798b5851e31eb3b6d98
+SIZE (azure_mgmt_recoveryservices-4.2.0.tar.gz) = 109461

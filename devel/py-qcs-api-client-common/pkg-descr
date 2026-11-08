@@ -1,0 +1,1 @@
+Core QCS (Rigetti Quantum Cloud Services) client functionality and middleware implementations (configuration, authentication, gRPC and HTTP helpers), implemented in Rust with Python bindings.

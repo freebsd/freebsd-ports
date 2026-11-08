@@ -1,4 +1,4 @@
---- src/core/CMakeLists.txt.orig	2026-02-26 14:39:03 UTC
+--- src/core/CMakeLists.txt.orig	2026-08-11 12:42:19 UTC
 +++ src/core/CMakeLists.txt
 @@ -21,7 +21,7 @@ add_subdirectory(tools/qwebengine_convert_dict)
  #   TOOLCHAIN SETUP
@@ -40,15 +40,15 @@
                  ozone/egl_helper.cpp ozone/egl_helper.h
          )
 @@ -452,7 +452,7 @@ foreach(arch ${archs})
-             CONDITION QT_FEATURE_webenginedriver
+             CONDITION QT_FEATURE_webengine_extensions
          )
  
 -        if(LINUX)
 +        if(LINUX OR FREEBSD)
              list(APPEND gnArgArg
-                 angle_enable_gl=true
                  use_gtk=false # GTK toolkit bindings
-@@ -519,6 +519,10 @@ foreach(arch ${archs})
+                 use_qt5=false # Qt5 toolkit bindings
+@@ -522,6 +522,10 @@ foreach(arch ${archs})
              extend_gn_list(gnArgArg
                  ARGS use_pulseaudio
                  CONDITION QT_FEATURE_webengine_system_pulseaudio

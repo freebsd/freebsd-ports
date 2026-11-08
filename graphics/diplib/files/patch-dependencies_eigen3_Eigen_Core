@@ -1,0 +1,11 @@
+--- dependencies/eigen3/Eigen/Core.orig	2026-06-27 21:12:34 UTC
++++ dependencies/eigen3/Eigen/Core	2026-09-02 17:05:45 UTC
+@@ -347,7 +347,7 @@
+ #include "src/Core/CoreIterators.h"
+ #include "src/Core/ConditionEstimator.h"
+ 
+-#if defined(EIGEN_VECTORIZE_ALTIVEC) || defined(EIGEN_VECTORIZE_VSX)
++#if defined(EIGEN_VECTORIZE_VSX)
+   #include "src/Core/arch/AltiVec/MatrixProduct.h"
+ #elif defined EIGEN_VECTORIZE_NEON
+   #include "src/Core/arch/NEON/GeneralBlockPanelKernel.h"

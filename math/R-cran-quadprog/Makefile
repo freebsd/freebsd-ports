@@ -4,9 +4,9 @@ PORTREVISION=	2
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	chris.longros@gmail.com
+MAINTAINER=	longros@FreeBSD.org
 COMMENT=	Functions to solve Quadratic Programming Problems
-WWW=		https://cran.r-project.org/web/packages/quadprog/
+WWW=		https://cran.r-project.org/package=quadprog
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

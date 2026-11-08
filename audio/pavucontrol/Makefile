@@ -1,5 +1,5 @@
 PORTNAME=	pavucontrol
-PORTVERSION=	6.1
+PORTVERSION=	6.2
 CATEGORIES=	audio
 MASTER_SITES=	http://freedesktop.org/software/pulseaudio/${PORTNAME}/
 
@@ -10,11 +10,12 @@ WWW=		https://freedesktop.org/software/pulseaudio/pavucontrol/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
+LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
+		libjson-glib-1.0.so:devel/json-glib \
 		libpulse.so:audio/pulseaudio
 
 USES=		gettext gnome meson pkgconfig tar:xz
 USE_GNOME=	gtkmm40 intltool
-MESON_ARGS=	-Dlynx=false
+MESON_ARGS=	-Dlynx=disabled
 
 .include <bsd.port.mk>

@@ -1,0 +1,15 @@
+sbcl-2.6.9+: Use remove-duplicates in %prompt-args to avoid modifying a literal
+
+https://github.com/atlas-engineer/nyxt/issues/3731
+
+--- source/prompt-buffer.lisp.orig	2026-09-29 19:35:23 UTC
++++ source/prompt-buffer.lisp
+@@ -709,7 +709,7 @@ See `update-prompt-input' to update the changes visual
+        (error 'prompt-buffer-canceled)))))
+ 
+ (sera:eval-always
+-  (defvar %prompt-args (delete-duplicates
++  (defvar %prompt-args (remove-duplicates
+                         (append
+                          (public-initargs 'prompt-buffer)
+                          (public-initargs 'prompter:prompter)

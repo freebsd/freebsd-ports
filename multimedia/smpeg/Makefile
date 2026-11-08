@@ -1,22 +1,24 @@
 PORTNAME=	smpeg
-PORTVERSION=	0.4.4
-PORTREVISION=	18
+DISTVERSION=	0.4.5
+PORTREVISION=	1
 CATEGORIES=	multimedia
-MASTER_SITES=	GENTOO
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free MPEG1 video player library with sound support
-WWW=		https://www.lokigames.com/development/smpeg.php3
+WWW=		http://icculus.org/smpeg/
 
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler gmake libtool:build sdl
+USE_GITHUB=	yes
+GH_ACCOUNT=	icculus
+GH_TAGNAME=	release_${PORTVERSION:S/./_/g}
+
+USES=		autoreconf compiler gmake libtool:build pkgconfig sdl
 USE_SDL=	sdl
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ENV=	GLBASE="${LOCALBASE}" \
 		CC="${CC}" CXX="${CXX} -std=gnu++98" \
 		SDL_CONFIG="${SDL_CONFIG}"

@@ -1,0 +1,24 @@
+--- Makefile.in.orig	2016-06-19 11:30:46 UTC
++++ Makefile.in
+@@ -460,11 +460,7 @@ target_alias = @target_alias@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-SUBDIRS = pixmaps\
+-		  icons\
+-		  ${PLUGINS_DIRS}\
+-		  po\
+-		  intl
++SUBDIRS = ${PLUGINS_DIRS}
+ 
+ INTLTOOL_FILES = \
+ 		intltool-extract.in \
+@@ -786,7 +782,7 @@ $(RECURSIVE_TARGETS):
+ 	  ($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+ 	  || eval $$failcom; \
+ 	done; \
+-	if test "$$dot_seen" = "no"; then \
++	exit; if test "$$dot_seen" = "no"; then \
+ 	  $(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+ 	fi; test -z "$$fail"
+ 

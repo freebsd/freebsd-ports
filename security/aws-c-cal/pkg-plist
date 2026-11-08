@@ -12,4 +12,5 @@ lib/cmake/aws-c-cal/modules/Findcrypto.cmake
 lib/cmake/aws-c-cal/shared/aws-c-cal-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/aws-c-cal/shared/aws-c-cal-targets.cmake
 lib/libaws-c-cal.so
+lib/libaws-c-cal.so.1.0
 lib/libaws-c-cal.so.1.0.0

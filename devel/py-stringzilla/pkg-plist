@@ -1,0 +1,12 @@
+%%PYTHON_SITELIBDIR%%/stringzilla-%%PORTVERSION%%.dist-info/LICENSE
+%%PYTHON_SITELIBDIR%%/stringzilla-%%PORTVERSION%%.dist-info/METADATA
+%%PYTHON_SITELIBDIR%%/stringzilla-%%PORTVERSION%%.dist-info/RECORD
+%%PYTHON_SITELIBDIR%%/stringzilla-%%PORTVERSION%%.dist-info/WHEEL
+%%PYTHON_SITELIBDIR%%/stringzilla-%%PORTVERSION%%.dist-info/top_level.txt
+%%PYTHON_SITELIBDIR%%/stringzilla%%PYTHON_TAG%%.so
+%%PYTHON_SITELIBDIR%%/stringzillas%%PYTHON_TAG%%.so
+%%PYTHON_SITELIBDIR%%/stringzillas_cpus-%%PORTVERSION%%.dist-info/LICENSE
+%%PYTHON_SITELIBDIR%%/stringzillas_cpus-%%PORTVERSION%%.dist-info/METADATA
+%%PYTHON_SITELIBDIR%%/stringzillas_cpus-%%PORTVERSION%%.dist-info/RECORD
+%%PYTHON_SITELIBDIR%%/stringzillas_cpus-%%PORTVERSION%%.dist-info/WHEEL
+%%PYTHON_SITELIBDIR%%/stringzillas_cpus-%%PORTVERSION%%.dist-info/top_level.txt

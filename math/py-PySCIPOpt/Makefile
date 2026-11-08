@@ -1,6 +1,6 @@
 PORTNAME=	PySCIPOpt
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.2.1
+DISTVERSION=	6.3.0
 CATEGORIES=	math python
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,10 +23,11 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	scipopt
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_ARGS=	--disable-plugin-autoload
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/pyscipopt/scip*.so
 
-# tests as of 6.1.0: 418 passed, 109 skipped, 11 xfailed, 12 warnings in 24.22s
+# tests as of 6.3.0: 464 passed, 108 skipped, 11 xfailed in 77.57s (0:01:17)
 
 .include <bsd.port.mk>

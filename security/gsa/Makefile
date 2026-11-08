@@ -1,6 +1,6 @@
 PORTNAME=	gsa
 DISTVERSIONPREFIX=	v
-DISTVERSION=	27.4.1
+DISTVERSION=	28.2.0
 CATEGORIES=	security
 
 MAINTAINER=	acm@FreeBSD.org
@@ -9,7 +9,7 @@ WWW=		https://github.com/greenbone/gsa
 
 LICENSE=	AGPLv3+
 
-ONLY_FOR_ARCHS=	aarch64 amd64
+ONLY_FOR_ARCHS=	amd64
 
 BUILD_DEPENDS=	npm-node24>0:www/npm-node24
 RUN_DEPENDS=	${LOCALBASE}/sbin/gsad:security/gsad

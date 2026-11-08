@@ -1,0 +1,4 @@
+rendercanvas provides a single canvas API for various backends, such as glfw,
+Qt (PySide6, PyQt6, PyQt5), wx, Jupyter (jupyter_rfb), and an offscreen canvas.
+It is the canvas abstraction used by wgpu-py and pygfx. A canvas offers
+events, a render loop, scheduling, and a way to present rendered images.

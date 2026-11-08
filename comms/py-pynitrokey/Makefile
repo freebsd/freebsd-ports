@@ -1,5 +1,5 @@
 PORTNAME=	pynitrokey
-DISTVERSION=	0.12.3
+DISTVERSION=	0.14.0
 CATEGORIES=	comms python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,16 +13,16 @@ LICENSE=	MIT
 _BR_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=0:devel/py-cffi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click>=8.2,<9:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fido2>=2,<3:security/py-fido2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}hidapi>=0.14,<0.15:comms/py-hidapi@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}hidapi>=0.14,<0.16:comms/py-hidapi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}intelhex>=0:devel/py-intelhex@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nkdfu>=0:comms/py-nkdfu@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}nitrokey>=0.4<0.5:security/py-nitrokey@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}nitrokey>=0.5<0.6:security/py-nitrokey@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyusb>=0:devel/py-pyusb@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tqdm>=0:misc/py-tqdm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tlv8>=0:converters/py-tlv8@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}semver>=0:devel/py-semver@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}nethsm>=2.1.1,<3:security/py-nethsm@${PY_FLAVOR}  \
+		${PYTHON_PKGNAMEPREFIX}nethsm>=3,<4:security/py-nethsm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}importlib-metadata>0:devel/py-importlib-metadata@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyscard>=2,<3:security/py-pyscard@${PY_FLAVOR}
 BUILD_DEPENDS=	${_BR_DEPENDS} \

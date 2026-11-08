@@ -1,0 +1,12 @@
+--- third_party/google_benchmark/BUILD.gn.orig	2026-09-25 04:35:37 UTC
++++ third_party/google_benchmark/BUILD.gn
+@@ -79,7 +79,8 @@ component("google_benchmark") {
+     "BENCHMARK_VERSION=\"1.9.0\"",
+   ]
+ 
+-  if (is_linux) {
++  # libpfm4 is built on the Linux perf_event interface.
++  if (is_linux && !is_bsd) {
+     # Include hardware performance counter support.
+     defines += [ "HAVE_LIBPFM=1" ]
+     deps = [ "//third_party/libpfm4" ]

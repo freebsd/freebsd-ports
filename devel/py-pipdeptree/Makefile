@@ -1,10 +1,10 @@
 PORTNAME=	pipdeptree
-DISTVERSION=	3.1.0
+DISTVERSION=	3.1.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line utility to show dependency tree of packages
 WWW=		https://github.com/naiquevin/pipdeptree
 

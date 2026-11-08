@@ -1,4 +1,16 @@
 bin/qelectrotech
+@comment include/pugiconfig.hpp
+@comment include/pugixml.hpp
+@comment lib/libgmock.a
+@comment lib/libgmock_main.a
+@comment lib/libgtest.a
+@comment lib/libgtest_main.a
+@comment lib/libpugixml.a
+@comment libdata/pkgconfig/gmock.pc
+@comment libdata/pkgconfig/gmock_main.pc
+@comment libdata/pkgconfig/gtest.pc
+@comment libdata/pkgconfig/gtest_main.pc
+@comment libdata/pkgconfig/pugixml.pc
 share/appdata/qelectrotech.appdata.xml
 share/applications/org.qelectrotech.qelectrotech.desktop
 %%DOCSDIR%%/CREDIT
@@ -34,20 +46,6 @@ share/icons/hicolor/64x64/apps/qelectrotech.png
 share/icons/hicolor/64x64/mimetypes/application-x-qet-element.png
 share/icons/hicolor/64x64/mimetypes/application-x-qet-project.png
 share/icons/hicolor/64x64/mimetypes/application-x-qet-titleblock.png
-share/man/be/man1/qelectrotech.1.gz
-share/man/ca/man1/qelectrotech.1.gz
-share/man/cs/man1/qelectrotech.1.gz
-share/man/el/man1/qelectrotech.1.gz
-share/man/es/man1/qelectrotech.1.gz
-share/man/fr.ISO8859-1/man1/qelectrotech.1.gz
-share/man/fr.UTF-8/man1/qelectrotech.1.gz
-share/man/fr/man1/qelectrotech.1.gz
-share/man/it/man1/qelectrotech.1.gz
-share/man/man1/qelectrotech.1.gz
-share/man/nl/man1/qelectrotech.1.gz
-share/man/pl/man1/qelectrotech.1.gz
-share/man/pt/man1/qelectrotech.1.gz
-share/man/ru/man1/qelectrotech.1.gz
 share/mime/packages/qelectrotech.xml
 %%DATADIR%%/elements/10_electric/10_allpole/100_folio_referencing/01coming_arrow.elmt
 %%DATADIR%%/elements/10_electric/10_allpole/100_folio_referencing/02going_arrow.elmt
@@ -9829,6 +9827,7 @@ share/mime/packages/qelectrotech.xml
 %%DATADIR%%/lang/qet_pt.qm
 %%DATADIR%%/lang/qet_pt_BR.qm
 %%DATADIR%%/lang/qet_ro.qm
+%%DATADIR%%/lang/qet_rs.qm
 %%DATADIR%%/lang/qet_ru.qm
 %%DATADIR%%/lang/qet_sk.qm
 %%DATADIR%%/lang/qet_sl.qm

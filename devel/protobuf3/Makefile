@@ -13,6 +13,9 @@ WWW=		https://protobuf.dev/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Outdated. Use devel/protobuf instead
+EXPIRATION_DATE=2026-10-31
+
 TEST_DEPENDS=	googletest>=0:devel/googletest
 
 USES=		compiler:c++11-lang cpe libtool localbase pkgconfig

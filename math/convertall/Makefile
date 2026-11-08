@@ -11,6 +11,9 @@ WWW=		https://convertall.bellz.org/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 
+DEPRECATED=	Newer versions use Dart/Flutter not ported to FreeBSD and Qt5 is no longer supported
+EXPIRATION_DATE=	2026-11-20
+
 USES=		pyqt:5 python shebangfix
 USE_PYQT=	pyqt5
 

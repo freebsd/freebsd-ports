@@ -1,5 +1,6 @@
 PORTNAME=	xcb-imdkit
 DISTVERSION=	1.0.9
+PORTREVISION=	1
 CATEGORIES=	x11 textproc
 MASTER_SITES=	https://download.fcitx-im.org/fcitx5/${PORTNAME}/
 
@@ -14,9 +15,9 @@ BUILD_DEPENDS=	uthash>=0:devel/uthash
 LIB_DEPENDS=	libxcb-keysyms.so:x11/xcb-util-keysyms \
 		libxcb-util.so:x11/xcb-util
 
-USES=		cmake compiler:c11 kde:5 pkgconfig tar:zstd xorg
+USES=		cmake compiler:c11 kde pkgconfig tar:zstd xorg
 
-USE_KDE=	ecm
+USE_KDE=	ecm:build
 USE_XORG=	xcb
 
 CMAKE_ON=	SYSTEM_USE_UTHASH

@@ -1,6 +1,6 @@
 PORTNAME=	libgpod
 PORTVERSION=	0.8.3
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	audio
 MASTER_SITES=	SF/gtkpod/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
 
@@ -25,6 +25,8 @@ USE_GNOME=	gdkpixbuf intltool libxml2
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
+CFLAGS+=	-Wno-error=incompatible-pointer-types
+
 OPTIONS_DEFINE=	DOCS IMOBILE
 OPTIONS_DEFAULT=IMOBILE
 OPTIONS_SUB=	yes
@@ -44,8 +46,8 @@ COMMENT:=	${COMMENT:S,iPod,&/iPhone,}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|libplist >= 1\.0|libplist-2.0 >= 2.0|g' \
+		-e 's|-lsgutils|-lcam -lsgutils|g' \
 		${WRKSRC}/configure
-
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tools/ipod-time-sync \
 		${STAGEDIR}${PREFIX}/bin

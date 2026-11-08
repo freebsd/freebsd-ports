@@ -8,13 +8,14 @@ WWW=		https://github.com/grame-cncm/guidoar
 
 LICENSE=	MPL20
 
-
 USES=		cmake:indirect gmake
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	grame-cncm
 GH_TAGNAME=	cf5681a
+
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility
 
 BUILD_WRKSRC=	${WRKSRC}/build
 INSTALL_WRKSRC=	${WRKSRC}/build

@@ -1,11 +1,11 @@
 PORTNAME=	google-iam-credentials
-PORTVERSION=	1.7.0
+PORTVERSION=	1.7.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby Client for the IAM Policy API
-WWW=		https://cloud.google.com/ruby/docs/reference/google-iam-credentials/latest/ \
+WWW=		https://docs.cloud.google.com/ruby/docs/reference/google-iam-credentials/latest \
 		https://github.com/googleapis/google-cloud-ruby/tree/main/google-iam-credentials \
 		https://github.com/googleapis/google-cloud-ruby
 

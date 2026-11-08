@@ -1,0 +1,13 @@
+git-proxy is a caching proxy for package registries. It sits between
+package managers and their upstream repositories, keeps a local copy of
+every package it serves, and keeps serving them while the upstream is
+unreachable.
+
+It speaks the FreeBSD pkg(8) repository protocol, so a single host can
+cache pkg.FreeBSD.org (ports, kmods and pkgbase, for every ABI) and
+self-hosted poudriere repositories for a whole network. Repository
+catalogues are served byte for byte, so pkg(8) still checks their
+signatures against the keys in /usr/share/keys.
+
+It also proxies npm, PyPI, Cargo, RubyGems, Go modules, Maven, Hex,
+OCI images, Debian, RPM, Alpine and Arch repositories and more.

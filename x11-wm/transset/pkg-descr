@@ -1,2 +1,12 @@
-A patched version of X.org's original transset, supporting
-several different 'select methods'.
+Transset is a simple program for X servers supporting the XFIXES,
+DAMAGE, and COMPOSITE extensions. It lets the user set the transparency
+on a window.
+
+Features:
+
+ * select window by clicking (as transset)
+ * select actual focused X11 window
+ * select window by pointing
+ * select by window name or id
+ * force toggle
+ * increase or decrease opacity

@@ -1,0 +1,17 @@
+--- configure.ac.orig	2026-10-13 23:02:16 UTC
++++ configure.ac
+@@ -161,12 +161,8 @@ if test "${PYTHONFRAMEWORKDIR}" = "no-framework" -o \
+         LDLIBS1="-lpython${PYTHON_VERSION}"
+     fi
+ 
+-    LDLIBS2=`${PYTHON} -c 'from sys import stdout; \
+-        import sysconfig; \
+-        stdout.write(sysconfig.get_config_var("LIBS"))'`
+-    LDLIBS3=`${PYTHON} -c 'from sys import stdout; \
+-        import sysconfig; \
+-        stdout.write(sysconfig.get_config_var("SYSLIBS"))'`
++    LDLIBS2=""
++    LDLIBS3=""
+ 
+     # Only add the Python library directory to the linker search path
+     # when the linker cannot find libpython without it. The directory

@@ -1,5 +1,5 @@
 PORTNAME=	gpaw
-DISTVERSION=	25.7.0
+DISTVERSION=	26.7.0
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -9,28 +9,28 @@ COMMENT=	DFT and beyond within the projector-augmented wave method in chemistry
 WWW=		https://wiki.fysik.dtu.dk/gpaw/ \
 		https://gitlab.com/gpaw/gpaw
 
-BROKEN=		fails to build with NumPy 2.x
-
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.20:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pybind11>=2.6.2:devel/py-pybind11@${PY_FLAVOR}
 LIB_DEPENDS=	libblas.so:math/blas \
 		libmpich.so:net/mpich \
 		libopenblas.so:math/openblas \
 		libxc.so:science/libxc
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ase>0:science/py-ase@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ase>=3.29.0:science/py-ase@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.20:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scipy>=1.6.0:science/py-scipy@${PY_FLAVOR} \
 		gpaw-setups>0:science/gpaw-setups
 
-USES=		gettext-runtime localbase python shebangfix
+USES=		gettext-runtime localbase python
 USE_PYTHON=	distutils concurrent autoplist
 
-SHEBANG_FILES=	tools/*
+LDFLAGS+=	-lmpi # otherwise: ImportError: /usr/local/lib/python3.8/site-packages/_gpaw.cpython-38.so: Undefined symbol "MPI_Comm_rank"
 
-LDFLAGS=	-lmpi # otherwise: ImportError: /usr/local/lib/python3.8/site-packages/_gpaw.cpython-38.so: Undefined symbol "MPI_Comm_rank"
+post-patch:
+	@${RM} -rf ${WRKSRC}/doc
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_gpaw*.so

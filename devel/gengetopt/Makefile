@@ -1,6 +1,5 @@
 PORTNAME=	gengetopt
-PORTVERSION=	2.23
-PORTREVISION=	1
+DISTVERSION=	2.23.1
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -11,7 +10,7 @@ WWW=		https://www.gnu.org/software/gengetopt/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:xz
+USES=		makeinfo tar:xz
 USE_CXXSTD=	c++14
 
 GNU_CONFIGURE=	yes

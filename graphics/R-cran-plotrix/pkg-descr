@@ -1,0 +1,3 @@
+The plotrix package provides many functions for enhancing R plots:
+specialized plot types, axis and legend labeling helpers, and color
+scaling and manipulation tools.

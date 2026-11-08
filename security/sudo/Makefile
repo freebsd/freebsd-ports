@@ -1,6 +1,6 @@
 PORTNAME=	sudo
 PORTVERSION=	1.9.17p2
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	SUDO
 
@@ -30,14 +30,15 @@ CONFIGURE_ARGS=	--mandir=${PREFIX}/share/man \
 		--with-logincap \
 		--with-long-otp-prompt \
 		--with-rundir=/var/run/sudo \
+		--with-secure-path-value=/sbin:/bin:/usr/sbin:/usr/bin:${LOCALBASE}/sbin:${LOCALBASE}/bin \
 		--with-tty-tickets
 LDFLAGS+=	-lgcc
 
 PORTSCOUT=	ignore:1
 
 OPTIONS_DEFINE=		AUDIT DISABLE_AUTH DISABLE_ROOT_SUDO DOCS EXAMPLES \
-			INSULTS LDAP NLS NOARGS_SHELL OPIE PAM PYTHON SSL
-OPTIONS_DEFAULT=	AUDIT PAM SSL
+			INSULTS LDAP LOGSRVD NLS NOARGS_SHELL OPIE PAM PYTHON SSL
+OPTIONS_DEFAULT=	AUDIT LOGSRVD PAM SSL
 OPTIONS_RADIO=		KERBEROS
 OPTIONS_RADIO_KERBEROS=	GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT
 OPTIONS_SUB=		yes
@@ -47,10 +48,11 @@ DISABLE_AUTH_DESC=	Do not require authentication by default
 DISABLE_ROOT_SUDO_DESC=	Do not allow root to run sudo
 INSULTS_DESC=		Enable insults on failures
 KERBEROS_DESC=		Enable Kerberos 5 authentication (no PAM support)
+LOGSRVD_DESC=		Build sudo_logsrvd, the I/O log server
 NOARGS_SHELL_DESC=	Run a shell if no arguments are given
 OPIE_DESC=		Enable one-time passwords (no PAM support)
 PYTHON_DESC=		Enable python plugin support
-SSL_DESC=		Use OpenSSL TLS and SHA2 functions
+SSL_DESC=		TLS for sudo_logsrvd and I/O log transfer
 
 AUDIT_CONFIGURE_WITH=	bsm-audit
 
@@ -69,6 +71,9 @@ INSULTS_CONFIGURE_ON=	--with-insults --with-all-insults
 LDAP_USES=		ldap
 LDAP_CONFIGURE_ON=	--with-ldap=${PREFIX} \
 			--with-ldap-conf-file=${PREFIX}/etc/${SUDO_LDAP_CONF}
+
+LOGSRVD_CONFIGURE_OFF=	--disable-log-server
+LOGSRVD_USE=		RC_SUBR=sudo_logsrvd
 
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
@@ -134,17 +139,19 @@ post-patch:
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/pam.conf ${STAGEDIR}${PREFIX}/etc/pam.d/sudo.default
 	${MV} ${STAGEDIR}${PREFIX}/etc/sudo.conf ${STAGEDIR}${PREFIX}/etc/sudo.conf.sample
-	${MV} ${STAGEDIR}${PREFIX}/etc/sudo_logsrvd.conf ${STAGEDIR}${PREFIX}/etc/sudo_logsrvd.conf.sample
 	${RM} ${STAGEDIR}${PREFIX}/etc/sudoers
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/cvtsudoers
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/sudoreplay
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/sudo/sudo_intercept.so
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/sudo_logsrvd
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/sudo_sendlog
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/visudo
 .for f in audit_json.so group_file.so libsudo_util.so sudoers.so system_group.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/sudo/${f}
 .endfor
+
+post-install-LOGSRVD-on:
+	${MV} ${STAGEDIR}${PREFIX}/etc/sudo_logsrvd.conf ${STAGEDIR}${PREFIX}/etc/sudo_logsrvd.conf.sample
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/sudo_logsrvd
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/sudo_sendlog
 
 post-install-PYTHON-on:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/sudo/python_plugin.so

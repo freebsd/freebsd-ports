@@ -1,6 +1,19 @@
+https://github.com/kaworu/tagutil/commit/5d1a1d74815375edb69314f8189e8590f188b6f4
+
 --- src/CMakeLists.txt.orig	2019-12-23 16:19:17 UTC
 +++ src/CMakeLists.txt
-@@ -31,10 +31,10 @@ include_directories(
+@@ -1,8 +1,6 @@
+ # {{{ CMake stuff
+-cmake_minimum_required(VERSION 2.6.0)
+-if(COMMAND cmake_policy)
+-    cmake_policy(VERSION 2.6)
+-endif()
++cmake_minimum_required(VERSION 3.8)
++cmake_policy(VERSION 3.8)
+ # }}}
+ 
+ #{{{ Basic App setup
+@@ -31,10 +29,10 @@ add_compile_options(-std=c11 -Wall -Wextra)
  
  # CFLAGS
  add_compile_options(-std=c11 -Wall -Wextra)

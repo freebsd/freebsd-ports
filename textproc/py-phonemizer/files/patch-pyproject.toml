@@ -1,0 +1,19 @@
+--- pyproject.toml.orig	2026-07-31 15:52:23 UTC
++++ pyproject.toml
+@@ -62,9 +62,6 @@ Changelog = "https://github.com/bootphon/phonemizer/bl
+ Issues = "https://github.com/bootphon/phonemizer"
+ Changelog = "https://github.com/bootphon/phonemizer/blob/master/docs/source/changelog.rst"
+ 
+-[tool.setuptools.packages]
+-find = {}
+-
+ [tool.setuptools.package-data]
+ phonemizer = [
+     "share/espeak/*",
+@@ -136,3 +133,6 @@ python = "3.14.*"
+ 
+ [tool.pixi.feature.py314.dependencies]
+ python = "3.14.*"
++
++[tool.setuptools.packages.find]
++exclude = ["docs", "docs.*", "test", "test.*"]

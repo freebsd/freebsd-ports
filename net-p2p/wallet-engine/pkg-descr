@@ -1,0 +1,4 @@
+Wallet Engine is a Rust library for TON wallet applications.
+
+It gives Swift, Kotlin, and TypeScript applications the same wallet behavior.
+

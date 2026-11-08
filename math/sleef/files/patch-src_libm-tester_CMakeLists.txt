@@ -1,0 +1,26 @@
+Backport of upstream commit 1c246c2e91fa (part of "Code cleanup (#692)"): only
+build the VSX dispatcher when the compiler supports VSX. On big-endian
+powerpc64 the VSX helper is unavailable, so the dispatcher referenced
+Sleef_*vsx functions that were never built and libsleef.so could not be
+loaded (undefined symbol Sleef_sind2_u35vsx).
+
+--- src/libm-tester/CMakeLists.txt.orig	2026-10-09 21:23:09 UTC
++++ src/libm-tester/CMakeLists.txt
+@@ -536,7 +536,7 @@ endif(SLEEF_ARCH_X86)
+   endif(SLEEF_ENABLE_TESTER4 AND TLFLOAT_LIBRARIES)
+ endif(SLEEF_ARCH_X86)
+ 
+-if (SLEEF_ARCH_PPC64)
++if (SLEEF_ARCH_PPC64 AND COMPILER_SUPPORTS_VSX)
+   if (SLEEF_ENABLE_TESTER)
+     add_executable(iutdsp128 ${IUT_SRC})
+     target_compile_definitions(iutdsp128 PRIVATE ENABLE_DSPPOWER_128=1 ${COMMON_TARGET_DEFINITIONS})
+@@ -555,7 +555,7 @@ if (SLEEF_ARCH_PPC64)
+     add_dependencies(tester4dsp128 ${TARGET_HEADERS} ${TARGET_LIBSLEEF} ext_tlfloat)
+     add_test_with_emu(1.0 tester4dsp128)
+   endif(SLEEF_ENABLE_TESTER4 AND TLFLOAT_LIBRARIES)
+-endif(SLEEF_ARCH_PPC64)
++endif(SLEEF_ARCH_PPC64 AND COMPILER_SUPPORTS_VSX)
+ 
+ if (SLEEF_ARCH_S390X)
+   if (SLEEF_ENABLE_TESTER)

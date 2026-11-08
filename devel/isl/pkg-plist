@@ -10,9 +10,14 @@ include/isl/ctx.h
 include/isl/fixed_box.h
 include/isl/flow.h
 include/isl/hash.h
+include/isl/hbase.h
+include/isl/hbase_templ.c
 include/isl/hmap.h
 include/isl/hmap_templ.c
+include/isl/hset.h
+include/isl/hset_templ.c
 include/isl/id.h
+include/isl/id_set.h
 include/isl/id_to_ast_expr.h
 include/isl/id_to_id.h
 include/isl/id_to_pw_aff.h
@@ -63,6 +68,7 @@ include/isl/vertices.h
 lib/libisl.a
 lib/libisl.so
 lib/libisl.so.23
-lib/libisl.so.23.4.0
-lib/libisl.so.23.4.0-gdb.py
+lib/libisl.so.23.5.0
+lib/libisl.so.23.5.0-gdb.py
 libdata/pkgconfig/isl.pc
+share/aclocal/isl_detect_clang.m4

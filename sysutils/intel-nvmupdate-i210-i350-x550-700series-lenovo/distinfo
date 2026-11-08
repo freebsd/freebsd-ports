@@ -1,0 +1,5 @@
+TIMESTAMP = 1788516808
+SHA256 (intc-lnvgy_fw_nic_net-9.55-6.50-1.3866.0-4_linux_x86-64.bin) = a1c82c3def34da66ed44c7c6e6ec59dca866557961d5a9a38d07562fd3e7be70
+SIZE (intc-lnvgy_fw_nic_net-9.55-6.50-1.3866.0-4_linux_x86-64.bin) = 16399945
+SHA256 (E810_NVMUpdatePackage_v5_01_FreeBSD.tar.gz) = d32d055717cf0d745a9170066b0039769b9a7edcdb53bf1b9aa21c88d7a4fc38
+SIZE (E810_NVMUpdatePackage_v5_01_FreeBSD.tar.gz) = 50506169

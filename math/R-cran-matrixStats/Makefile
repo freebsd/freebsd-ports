@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Functions that Apply to Rows and Columns of Matrices
-WWW=		https://cran.r-project.org/web/packages/matrixStats/
+WWW=		https://cran.r-project.org/package=matrixStats
 
 LICENSE=	ART20
 

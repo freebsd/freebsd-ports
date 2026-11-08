@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/v8/BUILD.gn.orig	2026-02-26 14:39:03 UTC
+--- src/3rdparty/chromium/v8/BUILD.gn.orig	2026-05-08 07:54:08 UTC
 +++ src/3rdparty/chromium/v8/BUILD.gn
 @@ -977,6 +977,8 @@ external_v8_defines = [
    "V8_TARGET_OS_MACOS",
@@ -22,7 +22,22 @@
  }
  
  disabled_external_v8_defines = external_v8_defines - enabled_external_v8_defines
-@@ -2588,6 +2596,12 @@ template("run_mksnapshot") {
+@@ -1559,6 +1567,14 @@ config("toolchain") {
+   if (v8_current_cpu == "ppc64") {
+     defines += [ "V8_TARGET_ARCH_PPC64" ]
+     cflags += [ "-ffp-contract=off" ]
++    if (host_byteorder == "little") {
++      defines += [ "V8_TARGET_ARCH_PPC_LE" ]
++      cflags += [
++        "-mcpu=power8",
++        "-maltivec",
++        "-mvsx",
++      ]
++    }
+     if (current_os == "aix") {
+       cflags += [
+         # Work around AIX ceil, trunc and round oddities.
+@@ -2588,6 +2604,12 @@ template("run_mksnapshot") {
        if (!v8_enable_builtins_profiling && v8_enable_builtins_reordering) {
          args += [ "--reorder-builtins" ]
        }
@@ -35,7 +50,7 @@
      }
  
      # This is needed to distinguish between generating code for the simulator
-@@ -6862,7 +6876,7 @@ v8_component("v8_libbase") {
+@@ -6862,7 +6884,7 @@ v8_component("v8_libbase") {
      }
    }
  
@@ -44,7 +59,7 @@
      sources += [
        "src/base/debug/stack_trace_posix.cc",
        "src/base/platform/platform-linux.cc",
-@@ -6873,6 +6887,18 @@ v8_component("v8_libbase") {
+@@ -6873,6 +6895,18 @@ v8_component("v8_libbase") {
        "dl",
        "rt",
      ]

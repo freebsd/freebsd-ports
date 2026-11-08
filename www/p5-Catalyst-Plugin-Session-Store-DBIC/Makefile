@@ -1,8 +1,8 @@
 PORTNAME=	Catalyst-Plugin-Session-Store-DBIC
-PORTVERSION=	0.14
-PORTREVISION=	1
+PORTVERSION=	0.15
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:ARODLAND
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -11,6 +11,7 @@ WWW=		https://metacpan.org/release/Catalyst-Plugin-Session-Store-DBIC
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE_GPLv1+ =	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Catalyst-Runtime>=5.7000:www/p5-Catalyst-Runtime \
@@ -18,7 +19,7 @@ RUN_DEPENDS=	p5-Catalyst-Runtime>=5.7000:www/p5-Catalyst-Runtime \
 		p5-DBIx-Class>=0.0700:databases/p5-DBIx-Class \
 		p5-MRO-Compat>0:devel/p5-MRO-Compat \
 		p5-Class-Accessor>=0:devel/p5-Class-Accessor
-TEST_DEPENDS=	p5-Test-Warn>=0:devel/p5-Test-Warn
+TEST_DEPENDS=	p5-Test-Warn>=0.20:devel/p5-Test-Warn
 
 USES=		perl5
 USE_PERL5=	configure

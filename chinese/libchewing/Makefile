@@ -1,8 +1,8 @@
 PORTNAME=	libchewing
-PORTVERSION=	0.12.0
+PORTVERSION=	0.13.1
 PORTREVISION=	1
 CATEGORIES=	chinese textproc
-MASTER_SITES=	https://github.com/chewing/libchewing/releases/download/v${PORTVERSION}/
+MASTER_SITES=	https://codeberg.org/chewing/libchewing/releases/download/v${PORTVERSION}/
 DISTFILES=	libchewing-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -19,6 +19,7 @@ USES=		cargo cmake:testing localbase:ldflags pkgconfig sqlite tar:zst
 
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
+CARGO_TEST=	no
 CMAKE_OFF=	BUILD_INFO \
 		BUILD_TESTING \
 		ENABLE_GCOV \
@@ -36,5 +37,8 @@ OPTIONS_DEFAULT=MANPAGES
 OPTIONS_SUB=	yes
 
 MANPAGES_CMAKE_BOOL=	BUILD_DOC
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/chewing-cli
 
 .include <bsd.port.mk>

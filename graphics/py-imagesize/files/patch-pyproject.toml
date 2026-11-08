@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2026-08-24 12:32:30 UTC
++++ pyproject.toml
+@@ -9,7 +9,7 @@ readme = {file = "README.rst", content-type = "text/x-
+     {name = "Yoshiki Shibukawa", email="yoshiki@shibu.jp"},
+ ]
+ readme = {file = "README.rst", content-type = "text/x-rst"}
+-license = "MIT"
++license = {text = "MIT"}
+ dynamic = ["version"]
+ requires-python = ">=3.10"
+ classifiers = [

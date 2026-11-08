@@ -1,6 +1,7 @@
 PORTNAME=	emptyepsilon
 DISTVERSIONPREFIX=	EE-
 DISTVERSION=	2024.12.08
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,7 +23,6 @@ LICENSE_PERMS_AngryFly-Royalty-Free-License=	auto-accept dist-mirror pkg-mirror
 # u8vec4, vec3 functions/types in newer glm versions).
 #BUILD_DEPENDS=	glm>0:math/glm
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
-		libsfml-system.so:devel/sfml \
 		libmeshoptimizer.so:misc/meshoptimizer \
 		libopus.so:audio/opus
 RUN_DEPENDS=	xclip:x11/xclip
@@ -40,6 +40,8 @@ GH_TUPLE=	daid:SeriousProton:${DISTVERSIONFULL}:sproton/sproton \
 CMAKE_ARGS=	-DSERIOUS_PROTON_DIR="${WRKSRC}/sproton" \
 		-DWITH_OPUS=system \
 		-DWITH_GLM=bundled
+CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM:STRING=3.5 # CMake 4 compatibility
+
 CXXFLAGS+=	-DGLM_ENABLE_EXPERIMENTAL
 
 post-patch:

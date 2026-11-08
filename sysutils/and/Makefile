@@ -1,10 +1,10 @@
 PORTNAME=	and
 PORTVERSION=	1.2.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Auto Nice Daemon
 WWW=		https://and.sourceforge.net/
 

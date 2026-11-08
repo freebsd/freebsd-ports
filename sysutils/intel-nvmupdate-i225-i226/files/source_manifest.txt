@@ -1,0 +1,76 @@
+FreeBSD port data version: 20260904
+
+Intel I225/I226 secure NVM documentation
+  Intel Ethernet Controller I225/I226 Datasheet, document 596659
+  URL: https://www.intel.com/content/www/us/en/secure/content-details/596659/intel-ethernet-controller-i225-i226-datasheet.html
+
+Intel NVMUpdate configuration semantics
+  Intel Ethernet Adapters and Devices User Guide
+  URL: https://edc.intel.com/content/www/us/en/design/products/ethernet/adapters-and-devices-user-guide/intel-ethernet-nvm-update-tool/
+  EEPID is the optional target image ETrack tag.  With REPLACES omitted, a
+  device block wildcard-matches its VENDOR, DEVICE, SUBVENDOR, and SUBDEVICE.
+
+Intel I226 NVM package
+  Intel Ethernet Controller I226 NVM, document 686540
+  URL: https://www.intel.com/content/www/us/en/secure/content-details/686540/intel-ethernet-controller-i226-nvm.html
+
+Intel FreeBSD updater source
+  URL: https://downloadmirror.intel.com/923640/E610_NVMUpdatePackage_v1_61_FreeBSD.tar.gz
+  Archive: E610_NVMUpdatePackage_v1_61_FreeBSD.tar.gz
+  SHA256: b88cbbd093611f35bbb892b3cdb8cfcdf0df92fa0783b8bdeae24f659275fd70
+  nvmupdate64e SHA256: 8de98098a32798b668357bbdb9364d779bc177f624a47bd42b7544149936c179
+  Version: 1.43.37.1a
+
+Intel I225 NVM package
+  Intel complete driver pack URL:
+  https://downloadmirror.intel.com/923522/Release_31.2.2.zip
+  Path in archive:
+  NVMUpdatePackage/I225/I225_NVMUpdatePackage_v1_00_Linux.tar.gz
+  FreeBSD distfile mirror URL:
+  https://people.freebsd.org/~kbowling/distfiles/I225_NVMUpdatePackage_v1_00_Linux.tar.gz
+  Archive: I225_NVMUpdatePackage_v1_00_Linux.tar.gz
+  SHA256: 5f633957e87a0b7c5c903a180a22c0585f6c9e65015f5635cedcb063cdaa099d
+  Package version: 1.00
+  Intel publishes this archive inside its complete driver pack; the FreeBSD
+  URL above is an unchanged mirror for use by the ports framework.
+
+  FoxPond1_I225_15F2_2MB_1p94_800003BB.bin
+    PCI ID: 8086:15F2, subsystem 8086:0001
+    ETrack: 800003BB
+    SHA256: 2099e6e3475ff6fe150770b69eb66ef3dc0568711339811348325644c0a0e483
+  Foxpond1_I225_15F2_LM_1MB_1p94_800003BC.bin
+    PCI ID: 8086:15F2, subsystem 8086:0002
+    ETrack: 800003BC
+    SHA256: 1170197dd1b66947f9753b1a925adc7aee793a2c2d55297c4e2182c71ed93cd0
+  Foxpond_Map_File_v01.txt
+    SHA256: bfae47c7ab7a57407bb52da52689e25d646e5a46d7f4714a464df9dbd0b2a60a
+
+Unofficial I225-V/I226 image mirror
+  URL: https://github.com/BillyCurtis/Intel-I226-V-NVM-Firmware
+  Commit: 5fb02f3128f894fdeb47bea6450af872fb85ff45
+  This is not an official or supported Intel distribution channel.
+
+  FXVL_15F3_V_1MB_1.89.bin
+    ETrack: 800002FC
+    SHA256: f0329ccb43a4e5d44a74c772c29404253bbf7d208920ae6414ec053358cf0f61
+  FXVL_15F3_V_2MB_1.89.bin
+    ETrack: 800002F4
+    SHA256: 227121965e7248ef1cd1723ec59e381d9c80c3116b4350267f5fbee588602683
+  FXVL_125C_V_1MB_2.32.bin
+    ETrack: 80000425
+    SHA256: 881434a8e54ebaf70117dd5061c3a2f04b16fe1cc3e443777337fb6774892024
+  FXVL_125C_V_2MB_2.32.bin
+    ETrack: 80000422
+    SHA256: 1bc7ce6aec0dfacb1bd4f156054af0018efee7fbff23687a20efe8c50b346e08
+  FXVL_125B_LM_1MB_2.32.bin (wildcard four-part PCI ID config entry)
+    ETrack: 80000424
+    SHA256: 5426ed761d21527105fc794cd8f694e3013db580d1203fd07c387192a6c9e710
+  FXVL_125B_LM_2MB_2.32.bin (wildcard four-part PCI ID config entry)
+    ETrack: 80000421
+    SHA256: cddc090b99541e05a0a2a36c5e2cb52e8d920e2d07067d565d486aad3a9728f6
+  FXVL_125D_IT_1MB_2.32.bin (wildcard four-part PCI ID config entry)
+    ETrack: 80000433
+    SHA256: b0a3eeea63b0d26f669337c55c0aed727978b365913633af524983b4d866017a
+  FXVL_125D_IT_2MB_2.32.bin (wildcard four-part PCI ID config entry)
+    ETrack: 80000431
+    SHA256: f0825b2136ecd35a0cd357789ca53cfbe9bd0f4270036a5782de95cb5fde1869

@@ -5316,8 +5316,8 @@
       <cvename>CVE-2004-0721</cvename>
       <url>http://secunia.com/advisories/11978/</url>
       <url>http://bugzilla.mozilla.org/show_bug.cgi?id=246448</url>
-      <url>ftp://ftp.kde.org/pub/kde/security_patches/post-3.2.3-kdelibs-htmlframes.patch</url>
-      <url>ftp://ftp.kde.org/pub/kde/security_patches/post-3.2.3-kdebase-htmlframes.patch</url>
+      <url>https://download.kde.org/security_patches/post-3.2.3-kdelibs-htmlframes.patch</url>
+      <url>https://download.kde.org/security_patches/post-3.2.3-kdebase-htmlframes.patch</url>
     </references>
     <dates>
       <discovery>2004-08-11</discovery>
@@ -5568,7 +5568,7 @@
       <cvename>CVE-2004-0794</cvename>
       <bid>10967</bid>
       <url>http://cvsweb.netbsd.org/bsdweb.cgi/src/libexec/ftpd/ftpd.c#rev1.158</url>
-      <url>ftp://ftp.netbsd.org/pub/NetBSD/security/advisories/NetBSD-SA2004-009.txt.asc</url>
+      <url>https://ftp.netbsd.org/pub/NetBSD/security/advisories/NetBSD-SA2004-009.txt.asc</url>
       <mlist msgid="412239E7.1070807@freebsd.lublin.pl">http://lists.netsys.com/pipermail/full-disclosure/2004-August/025418.html</mlist>
     </references>
     <dates>
@@ -6281,8 +6281,8 @@
       <cvename>CVE-2004-0690</cvename>
       <url>http://www.kde.org/info/security/advisory-20040811-1.txt</url>
       <url>http://www.kde.org/info/security/advisory-20040811-2.txt</url>
-      <url>ftp://ftp.kde.org/pub/kde/security_patches/post-3.2.3-kdelibs-kstandarddirs.patch</url>
-      <url>ftp://ftp.kde.org/pub/kde/security_patches/post-3.2.3-kdelibs-dcopserver.patch</url>
+      <url>https://download.kde.org/security_patches/post-3.2.3-kdelibs-kstandarddirs.patch</url>
+      <url>https://download.kde.org/security_patches/post-3.2.3-kdelibs-dcopserver.patch</url>
     </references>
     <dates>
       <discovery>2004-08-11</discovery>
@@ -6343,7 +6343,7 @@
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>An iDEFENSE security advisory reports:</p>
-	<blockquote cite="www.idefense.com/application/poi/display?id=124&amp;type=vulnerabilities">
+	<blockquote cite="http://www.idefense.com/application/poi/display?id=124&amp;type=vulnerabilities">
 	  <p>Remote exploitation of an input validation error in the
 	    uudecoding feature of Adobe Acrobat Reader (Unix) 5.0
 	    allows an attacker to execute arbitrary code.</p>

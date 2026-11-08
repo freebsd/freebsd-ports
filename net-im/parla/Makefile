@@ -1,5 +1,5 @@
 PORTNAME=	parla
-DISTVERSION=	0.6.6
+DISTVERSION=	0.10.2
 PORTREVISION=	0
 CATEGORIES=	net-im
 
@@ -19,5 +19,10 @@ USE_GNOME=	gdkpixbuf gtk40 libadwaita
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	trufae
+
+OPTIONS_DEFINE=	WEBXDC
+OPTIONS_DEFAULT=
+WEBXDC_LIB_DEPENDS=	libwebkitgtk-6.0.so:www/webkit2-gtk@60
+WEBXDC_MESON_OFF=	-Dwebxdc=false
 
 .include <bsd.port.mk>

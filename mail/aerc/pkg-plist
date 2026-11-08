@@ -24,6 +24,7 @@ libexec/aerc/filters/wrap
 %%DATADIR%%/templates/new_message
 %%DATADIR%%/templates/quoted_reply
 share/applications/aerc.desktop
+share/icons/hicolor/scalable/apps/aerc.svg
 share/man/man1/aerc-search.1.gz
 share/man/man1/aerc.1.gz
 share/man/man1/carddav-query.1.gz

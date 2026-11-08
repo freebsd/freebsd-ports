@@ -1,5 +1,20 @@
+Description: Fix indentation and import the ABCs from collections.abc (removed
+  from collections in Python 3.10).
+Issue ID: none
+Changeset: none
+TODO: Upstream is dead (last release 1.0.1 in 2011); keep locally.
+
 --- apache_conf_parser.py.orig	2011-04-12 03:06:39 UTC
 +++ apache_conf_parser.py
+@@ -1,7 +1,7 @@ import abc as abc_mod
+ 
+ import re as re_mod
+ import abc as abc_mod
+-import collections as col_mod
++import collections.abc as col_mod
+ 
+ INDENT = "    "
+ _NODES = []
 @@ -466,8 +466,8 @@ class ApacheConfParser(ComplexNode):
      def __init__(self, source, infile=True, delay=False, count=None):
          """Count is the starting number for line counting..."""

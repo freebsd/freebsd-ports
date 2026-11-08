@@ -466,13 +466,6 @@
     </description>
     <references>
       <url>https://codeberg.org/forgejo/forgejo/pulls/5974</url>
-      <url>https://codeberg.org/forgejo/forgejo/pulls/5974</url>
-      <url>https://codeberg.org/forgejo/forgejo/pulls/5974</url>
-      <url>https://codeberg.org/forgejo/forgejo/pulls/5974</url>
-      <url>https://codeberg.org/forgejo/forgejo/pulls/5974</url>
-      <url>https://codeberg.org/forgejo/forgejo/pulls/5974</url>
-      <url>https://codeberg.org/forgejo/forgejo/pulls/5974</url>
-      <url>https://codeberg.org/forgejo/forgejo/pulls/5974</url>
     </references>
     <dates>
       <discovery>2024-12-12</discovery>
@@ -663,7 +656,6 @@
       <cvename>CVE-2024-8116</cvename>
       <cvename>CVE-2024-8650</cvename>
       <cvename>CVE-2024-9367</cvename>
-      <cvename>CVE-2024-12292</cvename>
       <cvename>CVE-2024-12292</cvename>
       <cvename>CVE-2024-10043</cvename>
       <url>https://about.gitlab.com/releases/2024/12/11/patch-release-gitlab-17-6-2-released/</url>
@@ -1050,11 +1042,8 @@
       <cvename>CVE-2024-47775</cvename>
       <url>https://gstreamer.freedesktop.org/security/sa-2024-0027.html</url>
       <cvename>CVE-2024-47776</cvename>
-      <url>https://gstreamer.freedesktop.org/security/sa-2024-0027.html</url>
       <cvename>CVE-2024-47777</cvename>
-      <url>https://gstreamer.freedesktop.org/security/sa-2024-0027.html</url>
       <cvename>CVE-2024-47778</cvename>
-      <url>https://gstreamer.freedesktop.org/security/sa-2024-0027.html</url>
       <cvename>CVE-2024-47835</cvename>
       <url>https://gstreamer.freedesktop.org/security/sa-2024-0028.html</url>
       <cvename>CVE-2024-47834</cvename>
@@ -5853,8 +5842,7 @@
 <ul>
 <li>SSRF/XSS (CometVisu) - <a href="https://github.com/openhab/openhab-webui/security/advisories/GHSA-v7gr-mqpj-wwh3">GHSA-v7gr-mqpj-wwh3</a></li>
 <li>Sensitive information disclosure (CometVisu) - <a href="https://github.com/openhab/openhab-webui/security/advisories/GHSA-3g4c-hjhr-73rj">GHSA-3g4c-hjhr-73rj</a></li>
-<li>RCE through path traversal (CometVisu) - <a href="https://github.com/openhab/openhab-webui/sec
-urity/advisories/GHSA-f729-58x4-gqgf">GHSA-f729-58x4-gqgf</a></li>
+<li>RCE through path traversal (CometVisu) - <a href="https://github.com/openhab/openhab-webui/security/advisories/GHSA-f729-58x4-gqgf">GHSA-f729-58x4-gqgf</a></li>
 <li>Path traversal (CometVisu) - <a href="https://github.com/openhab/openhab-webui/security/advisories/GHSA-pcwp-26pw-j98w">GHSA-pcwp-26pw-j98w</a></li>
 </ul>
 <p>

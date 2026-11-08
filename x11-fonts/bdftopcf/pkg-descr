@@ -1,2 +1,7 @@
-This package contains bdftopcf, a font compiler for the X server and font
-server.
+Bdftopcf is a font compiler for the X server and font server.
+
+Fonts in Portable Compiled Format can be read by any architecture,
+although the file is structured to allow one particular architecture
+to read them directly without reformatting. This allows fast reading
+on the appropriate machine, but the files are still portable (but
+read more slowly) on other machines.

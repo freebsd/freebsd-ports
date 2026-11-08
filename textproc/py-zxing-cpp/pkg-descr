@@ -1,0 +1,5 @@
+Python bindings for the zxing-cpp barcode library.
+
+zxing-cpp is a C++ port of ZXing, the widely used open-source multi-format
+1D/2D barcode image processing library. This package exposes barcode reading
+and writing functionality to Python via nanobind.

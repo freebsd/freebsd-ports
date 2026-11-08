@@ -1,0 +1,22 @@
+#!/bin/sh
+#
+# FreeBSD ports wrapper for Anthropic Claude Code (native Node.js)
+#
+
+export USE_BUILTIN_RIPGREP=false
+
+# Updates are managed through ports/pkg. The bundled auto-updater replaces this
+# installation with an npm wrapper that does not support FreeBSD, leaving a
+# broken bin/claude behind (anthropics/claude-code#51833). Assignment is
+# conditional, so DISABLE_AUTOUPDATER=0 in the environment still opts back in.
+: ${DISABLE_AUTOUPDATER:=1}
+export DISABLE_AUTOUPDATER
+
+# Set SHELL=bash so claude uses bash for tool execution (avoids issues with
+# non-bash shells like tcsh that claude's tool runner may not handle correctly).
+export SHELL=%%LOCALBASE%%/bin/bash
+
+# Load Bun polyfill before cli (provides Bun-specific APIs for Bun-compiled code)
+exec %%PREFIX%%/bin/node \
+    --require %%PREFIX%%/lib/node_modules/@anthropic-ai/claude-code/bun-polyfill.cjs \
+    %%PREFIX%%/lib/node_modules/@anthropic-ai/claude-code/cli "$@"

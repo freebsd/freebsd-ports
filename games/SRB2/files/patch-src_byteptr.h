@@ -1,6 +1,6 @@
---- src/byteptr.h.orig	2021-10-10 01:56:02 UTC
+--- src/byteptr.h.orig	2025-01-25 22:35:40 UTC
 +++ src/byteptr.h
-@@ -83,6 +83,7 @@
+@@ -56,6 +56,7 @@
  //
  // Write a value to a little-endian, unaligned destination.
  //

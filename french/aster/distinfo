@@ -1,3 +1,5 @@
-TIMESTAMP = 1604590054
-SHA256 (aster-full-src-14.6.0-1.noarch.tar.gz) = dcb3900de1e5c0624060253660a63512ab415cbe143cdd87867a0276ef6bf233
-SIZE (aster-full-src-14.6.0-1.noarch.tar.gz) = 270695003
+TIMESTAMP = 1789835588
+SHA256 (Code_Aster/src-17.5.4.tar.bz2) = 09dd96dff948746c5a34c04cf8ab990c09de81d0caff9c2089490b1e46fd17ef
+SIZE (Code_Aster/src-17.5.4.tar.bz2) = 84623873
+SHA256 (Code_Aster/codeaster-prerequisites-20251026-oss.tar.gz) = e450bbbee0047cf17f6f9423400a7ac83fc633e6e62e596111825016e945e7df
+SIZE (Code_Aster/codeaster-prerequisites-20251026-oss.tar.gz) = 253948604

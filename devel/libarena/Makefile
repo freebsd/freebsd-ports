@@ -9,6 +9,8 @@ WWW=		https://www.25thandclement.com/~william/projects/libarena.html
 
 LICENSE=	MIT
 
+DEPRECATED=	Upstream is inactive since 2014
+
 USES=		gmake tar:tgz
 
 PLIST_FILES=	include/arena/align.h \

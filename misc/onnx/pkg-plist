@@ -31,6 +31,7 @@ include/onnx/defs/operator_sets.h
 include/onnx/defs/operator_sets_ml.h
 include/onnx/defs/operator_sets_preview.h
 include/onnx/defs/operator_sets_training.h
+include/onnx/defs/optional/utils.h
 include/onnx/defs/parser.h
 include/onnx/defs/printer.h
 include/onnx/defs/reduction/utils.h
@@ -55,6 +56,7 @@ include/onnx/shape_inference/implementation.h
 include/onnx/string_utils.h
 include/onnx/version_converter/BaseConverter.h
 include/onnx/version_converter/adapters/Attention_24_23.h
+include/onnx/version_converter/adapters/Attention_25_24.h
 include/onnx/version_converter/adapters/adapter.h
 include/onnx/version_converter/adapters/axes_attribute_to_input.h
 include/onnx/version_converter/adapters/axes_input_to_attribute.h
@@ -63,6 +65,7 @@ include/onnx/version_converter/adapters/axis_input_to_attribute.h
 include/onnx/version_converter/adapters/batch_normalization_13_14.h
 include/onnx/version_converter/adapters/broadcast_backward_compatibility.h
 include/onnx/version_converter/adapters/broadcast_forward_compatibility.h
+include/onnx/version_converter/adapters/cast_28_27.h
 include/onnx/version_converter/adapters/cast_9_8.h
 include/onnx/version_converter/adapters/clip_10_11.h
 include/onnx/version_converter/adapters/compatible.h
@@ -74,13 +77,17 @@ include/onnx/version_converter/adapters/gridsample_19_20.h
 include/onnx/version_converter/adapters/group_normalization_20_21.h
 include/onnx/version_converter/adapters/maxpool_8_7.h
 include/onnx/version_converter/adapters/no_previous_version.h
+include/onnx/version_converter/adapters/optional_ops.h
 include/onnx/version_converter/adapters/pad_10_11.h
 include/onnx/version_converter/adapters/q_dq_21_20.h
+include/onnx/version_converter/adapters/quantize_linear_28_27.h
 include/onnx/version_converter/adapters/range_27_26.h
+include/onnx/version_converter/adapters/reduce_log_sum_27_28.h
 include/onnx/version_converter/adapters/remove_consumed_inputs.h
 include/onnx/version_converter/adapters/reshape_4_5.h
 include/onnx/version_converter/adapters/reshape_5_4.h
 include/onnx/version_converter/adapters/resize_10_11.h
+include/onnx/version_converter/adapters/resize_18_17.h
 include/onnx/version_converter/adapters/scan_8_9.h
 include/onnx/version_converter/adapters/scan_9_8.h
 include/onnx/version_converter/adapters/scatter_10_11.h

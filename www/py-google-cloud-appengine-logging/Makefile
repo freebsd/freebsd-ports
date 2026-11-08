@@ -7,7 +7,7 @@ DISTNAME=	google_cloud_appengine_logging-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python Client for Google Cloud Appengine Logging
-WWW=		https://cloud.google.com/python/docs/reference/appenginelogging/latest \
+WWW=		https://docs.cloud.google.com/python/docs/reference/appenginelogging/latest \
 		https://github.com/googleapis/google-cloud-python/tree/main/packages/google-cloud-appengine-logging \
 		https://github.com/googleapis/google-cloud-python
 

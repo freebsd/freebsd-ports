@@ -1,7 +1,7 @@
 PORTNAME=	freenginx
 PORTVERSION=	${NGINX_VERSION}
 .include "version.mk"
-PORTREVISION=	6
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	https://freenginx.org/download/ \
 		LOCAL/osa
@@ -182,8 +182,8 @@ HTTPV3_LSSL_BUILD_DEPENDS=	${LOCALBASE}/include/tls.h:security/libressl-devel
 HTTPV3_LSSL_RUN_DEPENDS=	${LOCALBASE}/include/tls.h:security/libressl-devel
 HTTPV3_LSSL_IMPLIES=		HTTPV3
 HTTPV3_LSSL_PREVENTS=		HTTPV3_BORING HTTPV3_OSSL35
-HTTPV3_OSSL35_BUILD_DEPENDS=	${LOCALBASE}/include/openssl/quic.h:security/openssl35
-HTTPV3_OSSL35_RUN_DEPENDS=	${LOCALBASE}/include/openssl/quic.h:security/openssl35
+HTTPV3_OSSL35_BUILD_DEPENDS=	${LOCALBASE}/include/openssl/quic.h:security/openssl
+HTTPV3_OSSL35_RUN_DEPENDS=	${LOCALBASE}/include/openssl/quic.h:security/openssl
 HTTPV3_OSSL35_IMPLIES=		HTTPV3
 HTTPV3_OSSL35_PREVENTS=		HTTPV3_BORING HTTPV3_LSSL
 MAIL_VARS=			DSO_BASEMODS+=mail
@@ -258,9 +258,10 @@ pre-everything::
 	@${ECHO_MSG}
 
 post-extract-AUTH_JWT-on:
-	@${RMDIR} ${WRKSRC_auth_jwt}/nxe-json ${WRKSRC_auth_jwt}/nxe-jwx
+	@${RMDIR} ${WRKSRC_auth_jwt}/nxe-json ${WRKSRC_auth_jwt}/nxe-jwx ${WRKSRC_auth_jwt}/nxe-phase
 	@${LN} -s ${WRKSRC_nxe_json} ${WRKSRC_auth_jwt}/nxe-json
 	@${LN} -s ${WRKSRC_nxe_jwx} ${WRKSRC_auth_jwt}/nxe-jwx
+	@${LN} -s ${WRKSRC_nxe_phase} ${WRKSRC_auth_jwt}/nxe-phase
 
 post-extract-NAXSI-on:
 	@${RMDIR} ${WRKSRC_naxsi}/naxsi_src/libinjection
@@ -282,10 +283,6 @@ post-patch-FASTDFS-on:
 	@${REINPLACE_CMD} \
 		's!%%PREFIX%%!${PREFIX}!g;s!%%LOCALBASE%%!${LOCALBASE}!g' \
 		${WRKSRC_fastdfs}/src/config
-
-post-patch-GRIDFS-on:
-	@${REINPLACE_CMD} 's!\/usr!${LOCALBASE}!g' \
-		${WRKSRC_gridfs}/nginx-gridfs/config
 
 post-patch-HTTP_AUTH_KRB5-on:
 	@${REINPLACE_CMD} 's!%%GSSAPILIBS%%!${GSSAPILIBS}!g; \

@@ -1,5 +1,5 @@
 PORTNAME=	asteval
-PORTVERSION=	1.0.9
+PORTVERSION=	1.0.10
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,6 +21,6 @@ USE_PYTHON=	pep517 autoplist pytest
 
 NO_ARCH=	yes
 
-# tests as of 1.0.9: 196 passed in 6.40s
+# tests as of 1.0.10: 199 passed in 2.87s
 
 .include <bsd.port.mk>

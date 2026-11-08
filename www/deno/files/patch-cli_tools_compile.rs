@@ -1,6 +1,6 @@
---- cli/tools/compile.rs.orig	2026-07-01 13:28:43 UTC
+--- cli/tools/compile.rs.orig	2026-09-16 15:45:55 UTC
 +++ cli/tools/compile.rs
-@@ -1462,6 +1462,32 @@ mod test {
+@@ -1459,6 +1459,32 @@ mod test {
    }
  
    #[tokio::test]

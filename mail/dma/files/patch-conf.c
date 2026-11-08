@@ -1,6 +1,6 @@
---- conf.c.orig	2016-02-07 12:41:49 UTC
+--- conf.c.orig	2026-08-30 20:07:40 UTC
 +++ conf.c
-@@ -121,7 +121,7 @@ parse_authfile(const char *path)
+@@ -123,7 +123,7 @@ parse_authfile(const char *path)
  
  		au = calloc(1, sizeof(*au));
  		if (au == NULL)

@@ -1,6 +1,5 @@
 PORTNAME=	slepc
-DISTVERSION=	3.22.2
-PORTREVISION=	3
+DISTVERSION=	3.26.1
 CATEGORIES=	math devel
 MASTER_SITES=	http://slepc.upv.es/download/distrib/
 
@@ -13,10 +12,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 LIB_DEPENDS=	libblas.so:math/blas \
 		libblis.so:math/blis \
+		libHYPRE.so:science/hypre \
 		liblapack.so:math/lapack \
 		libmetis.so:math/metis \
 		libmpich.so:net/mpich \
-		libpetsc.so:science/PETSc
+		libopenblas.so:math/openblas \
+		libpetsc.so:science/PETSc \
+		libsuperlu.so:math/superlu
 
 USES=		gmake fortran python shebangfix xorg
 USE_XORG=	x11 # not really needed, but is inherited from the PETSc setup
@@ -26,20 +28,25 @@ SHEBANG_FILES=	configure
 SHEBANG_GLOB=	*.py
 
 MAKEFILE=	makefile
-MAKE_ENV=	PETSC_DIR=${LOCALBASE} PETSC_ARCH="" SLEPC_DIR=${WRKSRC} PYTHON=${PYTHON_CMD}
+MAKE_ENV=	PETSC_DIR=${LOCALBASE} PETSC_ARCH="" SLEPC_DIR=${WRKSRC} PYTHON=${PYTHON_CMD} PYTHONDONTWRITEBYTECODE=1
 
-TEST_TARGET=	test # 1 of 2568 tests fail because some file can't be opened
+TEST_TARGET=	test
+TEST_ENV=	${MAKE_ENV} PETSC_OPTIONS=-nox
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
-
-OPTIONS_DEFINE=	EXAMPLES
-
-PORTEXAMPLES=	*
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./configure --prefix=${PREFIX}
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libslepc.so.${PORTVERSION}
+
+# tests as of 3.25.1: 2480 passed, 6 skipped, 0 failed in 702s
+
+# tests as of 3.26.0: (need to investigate 2 failures)
+# success 2661/2677 tests (99.4%)
+# failed 2/2677 tests (0.1%)
+# todo 0/2677 tests (0.0%)
+# skip 14/2677 tests (0.5%)
 
 .include <bsd.port.mk>

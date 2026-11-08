@@ -1,6 +1,7 @@
 PORTNAME=	gismo
 DISTVERSIONPREFIX=	v
 DISTVERSION=	25.07.0
+PORTREVISION=	1
 CATEGORIES=	math # geometry
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,7 +20,6 @@ USE_LDCONFIG=	yes
 
 CMAKE_TESTING_ON=	GISMO_BUILD_UNITTESTS
 
-CXXFLAGS_powerpc64=	-mvsx
 
 .include <bsd.port.pre.mk>
 

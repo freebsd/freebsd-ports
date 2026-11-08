@@ -1,10 +1,10 @@
 PORTNAME=	csvtk
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.37.0
-PORTREVISION=	1
+PORTREVISION=	7
 CATEGORIES=	science
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform and ultrafast toolkit for CSV/TSV processing
 WWW=		https://bioinf.shenwei.me/csvtk/ \
 		https://github.com/shenwei356/csvtk/
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
 USE_GITHUB=	nodefault
-GH_TUPLE=	golang:sys:v0.6.0:sys
+GH_TUPLE=	golang:sys:v0.47.0:sys
 
 GO_MODULE=	github.com/shenwei356/csvtk
 GO_TARGET=	./${PORTNAME}

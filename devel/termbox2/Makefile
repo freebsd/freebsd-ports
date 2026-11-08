@@ -1,6 +1,6 @@
 PORTNAME=	termbox2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.5.0
+DISTVERSION=	2.7.0
 CATEGORIES=	devel
 
 MAINTAINER=	alven@FreeBSD.org
@@ -28,7 +28,7 @@ post-install-DOCS-on:
 
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	(cd ${WRKSRC}/demo && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR} "! -name keyboard")
-	${INSTALL_PROGRAM} ${WRKSRC}/demo/keyboard ${STAGEDIR}${EXAMPLESDIR}/
+	${INSTALL_PROGRAM} ${WRKSRC}/demo/keyboard ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/demo && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR} "! -name keyboard"
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
 PORTNAME=	tinyfugue
-PORTVERSION=	5.2.2
+PORTVERSION=	5.2.3
 PORTREVISION=	0
 CATEGORIES=	net games
 PKGNAMESUFFIX=	-devel${PKGNAMESUFFIX2}
@@ -8,7 +8,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Popular programmable MUD client, with macro support and more
 WWW=		https://github.com/ingwarsw/tinyfugue
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpcre2-8.so:devel/pcre2

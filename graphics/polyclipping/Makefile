@@ -16,6 +16,7 @@ USE_LDCONFIG=	yes
 
 NO_WRKSUBDIR=	yes
 
+CMAKE_ARGS=		-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 CMAKE_SOURCE_PATH=	${WRKSRC}/cpp
 
 PLIST_FILES=	include/polyclipping/clipper.hpp \

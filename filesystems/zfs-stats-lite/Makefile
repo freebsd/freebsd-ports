@@ -1,18 +1,19 @@
 PORTNAME=	zfs-stats-lite
-PORTVERSION=	1.4
+DISTVERSION=	1.5
 CATEGORIES=	filesystems sysutils
-MASTER_SITES=	http://druidbsd.sourceforge.net/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dteske@FreeBSD.org
 COMMENT=	Display human-readable ZFS statistics
-WWW=		https://druidbsd.sourceforge.net/download.shtml #zfs-stats-lite
 
 LICENSE=	BSD2CLAUSE
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	FrauBSD
+
 CONFLICTS_INSTALL=	zfs-stats
 
-NO_BUILD=	yes
 NO_ARCH=	yes
+NO_BUILD=	yes
 
 PLIST_FILES=	bin/zfs-stats
 

@@ -1,0 +1,10 @@
+--- daemons/ipa-sam/Makefile.am.orig	2026-08-19 13:39:07 UTC
++++ daemons/ipa-sam/Makefile.am
+@@ -4,7 +4,6 @@ SAMBA40EXTRA_LIBS = $(SAMBA40EXTRA_LIBPATH)	\
+ 			-lsmbldap		\
+ 			-l$(LIBPDB_NAME)			\
+ 			-lsmbconf		\
+-			-lgse-private-samba	\
+ 			$(NULL)
+ 
+ AM_CPPFLAGS =						\

@@ -1,6 +1,6 @@
---- ipc-uapi.h.orig	2025-09-03 14:11:13 UTC
+--- ipc-uapi.h.orig	2026-08-12 22:24:49 UTC
 +++ ipc-uapi.h
-@@ -126,7 +126,7 @@ static int userspace_set_device(struct wgdevice *dev)
+@@ -147,7 +147,7 @@ static int userspace_set_device(struct wgdevice *dev)
  					continue;
  			} else
  				continue;

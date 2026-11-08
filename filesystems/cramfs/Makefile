@@ -1,10 +1,10 @@
 PORTNAME=	cramfs
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	filesystems sysutils
 MASTER_SITES=	SF
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Linux Compressed ROM FileSystem
 WWW=		https://sourceforge.net/projects/cramfs/
 

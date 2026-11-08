@@ -35,7 +35,7 @@ load_rc_config $name
 athens_command="%%PREFIX%%/bin/athens -config_file ${athens_config}"
 pidfile="/var/run/${name}/${name}.pid"
 command="/usr/sbin/daemon"
-command_args="-P ${pidfile} -S ${athens_command} -T ${name}"
+command_args="-P ${pidfile} -T ${name} ${athens_command}"
 
 PATH="${PATH}:%%PREFIX%%/bin"
 

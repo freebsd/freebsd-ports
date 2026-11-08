@@ -1,4 +1,4 @@
---- src/uct/sm/mm/base/mm_iface.c.orig	2026-03-14 22:02:10 UTC
+--- src/uct/sm/mm/base/mm_iface.c.orig	2026-09-14 16:39:41 UTC
 +++ src/uct/sm/mm/base/mm_iface.c
 @@ -19,6 +19,9 @@
  #include <ucs/async/async.h>
@@ -10,7 +10,30 @@
  
  
  /* Maximal number of events to clear from the signaling pipe in single call */
-@@ -681,6 +684,10 @@ static ucs_status_t uct_mm_iface_create_signal_fd(uct_
+@@ -143,10 +146,18 @@ uct_mm_iface_is_reachable_v2(const uct_iface_h tl_ifac
+         return 0;
+     }
+ 
+-    return uct_sm_iface_is_reachable(tl_iface, params) &&
+-           uct_mm_md_mapper_ops(md)->is_reachable(md, iface_addr->fifo_seg_id,
+-                                                  iface_addr + 1) &&
+-           uct_iface_scope_is_reachable(tl_iface, params);
++    if (!uct_sm_iface_is_reachable(tl_iface, params)) {
++        return 0;
++    }
++
++    if (!uct_mm_md_mapper_ops(md)->is_reachable(md, iface_addr->fifo_seg_id,
++                                                iface_addr + 1)) {
++        uct_iface_fill_info_str_buf(params,
++                                    "shared memory segment is not reachable");
++        return 0;
++    }
++
++    return uct_iface_scope_is_reachable(tl_iface, params);
+ }
+ 
+ void uct_mm_iface_release_desc(uct_recv_desc_t *self, void *desc)
+@@ -680,6 +691,10 @@ static ucs_status_t uct_mm_iface_create_signal_fd(uct_
      ucs_status_t status;
      socklen_t addrlen;
      struct sockaddr_un bind_addr;
@@ -21,7 +44,7 @@
      int ret;
  
      /* Create a UNIX domain socket to send and receive wakeup signal from remote processes */
-@@ -700,10 +707,33 @@ static ucs_status_t uct_mm_iface_create_signal_fd(uct_
+@@ -699,10 +714,33 @@ static ucs_status_t uct_mm_iface_create_signal_fd(uct_
      /* Bind the signal socket to automatic address */
      bind_addr.sun_family = AF_UNIX;
      memset(bind_addr.sun_path, 0, sizeof(bind_addr.sun_path));
@@ -55,7 +78,7 @@
          goto err_close;
      }
  
-@@ -718,6 +748,11 @@ static ucs_status_t uct_mm_iface_create_signal_fd(uct_
+@@ -717,6 +755,11 @@ static ucs_status_t uct_mm_iface_create_signal_fd(uct_
      if (ret < 0) {
          ucs_error("Failed to retrieve unix domain socket address: %m");
          status = UCS_ERR_IO_ERROR;
@@ -67,7 +90,7 @@
          goto err_close;
      }
  
-@@ -904,6 +939,17 @@ static UCS_CLASS_CLEANUP_FUNC(uct_mm_iface_t)
+@@ -903,6 +946,17 @@ static UCS_CLASS_CLEANUP_FUNC(uct_mm_iface_t)
  
      ucs_mpool_put(self->last_recv_desc);
      ucs_mpool_cleanup(&self->recv_desc_mp, 1);

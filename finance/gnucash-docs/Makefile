@@ -1,5 +1,5 @@
 PORTNAME=	gnucash-docs
-PORTVERSION=	5.16
+PORTVERSION=	5.17
 CATEGORIES=	finance gnome
 MASTER_SITES=	SF/gnucash/gnucash%20%28stable%29/${PORTVERSION}
 

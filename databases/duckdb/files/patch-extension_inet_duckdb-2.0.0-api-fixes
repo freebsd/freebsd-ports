@@ -1,0 +1,134 @@
+-- Apply upstream DuckDB v2.0.0 out-of-tree extension patches for the INET extension.
+-- These patches adapt the duckdb-inet submodule to the DuckDB 2.0.0 core API changes
+-- (mutable vector accessors, bind function input wrapping, immutable LogicalType,
+-- private BoundFunctionExpression members, fallible arithmetic, cast includes).
+-- Without them the extension fails to compile against DuckDB 2.0.0.
+-- Source: https://github.com/duckdb/duckdb/tree/v2.0.0/.github/patches/extensions/inet
+--- extension/inet/src/inet_functions.cpp.orig
++++ extension/inet/src/inet_functions.cpp
+@@ -49,9 +49,9 @@ bool INetFunctions::CastVarcharToINET(Vector &source, Vector &result,
+   source.ToUnifiedFormat(count, vdata);
+ 
+   auto &entries = StructVector::GetEntries(result);
+-  auto ip_type = FlatVector::GetData<uint8_t>(*entries[0]);
+-  auto address_data = FlatVector::GetData<hugeint_t>(*entries[1]);
+-  auto mask_data = FlatVector::GetData<uint16_t>(*entries[2]);
++  auto ip_type = FlatVector::GetDataMutable<uint8_t>(entries[0]);
++  auto address_data = FlatVector::GetDataMutable<hugeint_t>(entries[1]);
++  auto mask_data = FlatVector::GetDataMutable<uint16_t>(entries[2]);
+ 
+   auto input = UnifiedVectorFormat::GetData<string_t>(vdata);
+   bool success = true;
+--- extension/inet/test/sql/test_inet_storage.test.orig
++++ extension/inet/test/sql/test_inet_storage.test
+@@ -8,7 +8,7 @@ require inet
+ require no_extension_autoloading "FIXME: to be reviewed whether this can be lifted"
+ 
+ # load the DB from disk
+-load __TEST_DIR__/store_inet.db
++load {TEST_DIR}/store_inet.db
+ 
+ statement ok
+ PRAGMA enable_verification
+--- extension/inet/test/sql/test_ipv6_inet_storage.test.orig
++++ extension/inet/test/sql/test_ipv6_inet_storage.test
+@@ -4,8 +4,7 @@
+ 
+ require inet
+ 
+-# load the DB from disk
+-load __TEST_DIR__/store_ipv6_inet.db
++load {TEST_DIR}/store_ipv6_inet.db
+ 
+ statement ok
+ PRAGMA enable_verification
+--- extension/inet/src/inet_escape_functions.cpp.orig
++++ extension/inet/src/inet_escape_functions.cpp
+@@ -38,8 +38,7 @@ struct UnescapeBindData : public FunctionData {
+ };
+ 
+ unique_ptr<FunctionData>
+-UnescapeBind(ClientContext &context, ScalarFunction &bound_function,
+-             vector<unique_ptr<Expression>> &arguments) {
++UnescapeBind(BindScalarFunctionInput &) {
+   return make_uniq<UnescapeBindData>();
+ }
+ 
+--- extension/inet/src/inet_functions.cpp.orig
++++ extension/inet/src/inet_functions.cpp
+@@ -46,7 +46,7 @@ bool INetFunctions::CastVarcharToINET(Vector &source, Vector &result,
+   auto constant = source.GetVectorType() == VectorType::CONSTANT_VECTOR;
+ 
+   UnifiedVectorFormat vdata;
+-  source.ToUnifiedFormat(count, vdata);
++  source.ToUnifiedFormat(vdata);
+ 
+   auto &entries = StructVector::GetEntries(result);
+   auto ip_type = FlatVector::GetDataMutable<uint8_t>(entries[0]);
+--- extension/inet/src/inet_escape_functions.cpp.orig
++++ extension/inet/src/inet_escape_functions.cpp
+@@ -388,7 +388,7 @@ void INetFunctions::Escape(DataChunk &args, ExpressionState &state,
+ void INetFunctions::Unescape(DataChunk &args, ExpressionState &state,
+                              Vector &result) {
+   auto &func_expr = state.expr.Cast<BoundFunctionExpression>();
+-  auto &info = func_expr.bind_info->Cast<UnescapeBindData>();
++  auto &info = func_expr.BindInfo()->Cast<UnescapeBindData>();
+   UnaryExecutor::Execute<string_t, string_t>(
+       args.data[0], result, args.size(), [&](string_t input_st) {
+         idx_t result_size = 0;
+--- extension/inet/src/inet_extension.cpp.orig
++++ extension/inet/src/inet_extension.cpp
+@@ -18,12 +18,12 @@ static constexpr auto INET_TYPE_NAME = "INET";
+ static void LoadInternal(ExtensionLoader &loader) {
+   // add the "inet" type
+   child_list_t<LogicalType> children;
+-  children.push_back(make_pair("ip_type", LogicalType::UTINYINT));
++  children.emplace_back(make_pair("ip_type", LogicalType::UTINYINT));
+   // The address type would ideally be UHUGEINT, but the initial version was
+   // HUGEINT so maintain backwards-compatibility with db written with older
+   // versions.
+-  children.push_back(make_pair("address", LogicalType::HUGEINT));
+-  children.push_back(make_pair("mask", LogicalType::USMALLINT));
++  children.emplace_back(make_pair("address", LogicalType::HUGEINT));
++  children.emplace_back(make_pair("mask", LogicalType::USMALLINT));
+   auto inet_type = LogicalType::STRUCT(std::move(children));
+   inet_type.SetAlias(INET_TYPE_NAME);
+   loader.RegisterType(INET_TYPE_NAME, inet_type);
+--- extension/inet/src/ipaddress.cpp.orig
++++ extension/inet/src/ipaddress.cpp
+@@ -1,4 +1,5 @@
+ #include "ipaddress.hpp"
+ #include "duckdb/common/operator/cast_operators.hpp"
++#include "duckdb/function/cast/default_casts.hpp"
+ #include "duckdb/common/types/cast_helpers.hpp"
+ #include "duckdb/common/string_util.hpp"
+--- extension/inet/src/inet_extension.cpp.orig
++++ extension/inet/src/inet_extension.cpp
+@@ -56,10 +56,14 @@ static void LoadInternal(ExtensionLoader &loader) {
+   // Add - function with ALTER_ON_CONFLICT
+   ScalarFunction substract_fun("-", {inet_type, LogicalType::HUGEINT},
+                                inet_type, INetFunctions::Subtract);
++  // throws when the address over- or underflows
++  substract_fun.SetFallible();
+   loader.AddFunctionOverload(substract_fun);
+ 
+   ScalarFunction add_fun("+", {inet_type, LogicalType::HUGEINT}, inet_type,
+                          INetFunctions::Add);
++  // throws when the address over- or underflows
++  add_fun.SetFallible();
+   loader.AddFunctionOverload(add_fun);
+ 
+   // Add IP range operators
+--- extension/inet/src/inet_extension.cpp.orig
++++ extension/inet/src/inet_extension.cpp
+@@ -24,8 +24,8 @@ static void LoadInternal(ExtensionLoader &loader) {
+   // versions.
+   children.emplace_back(make_pair("address", LogicalType::HUGEINT));
+   children.emplace_back(make_pair("mask", LogicalType::USMALLINT));
+-  auto inet_type = LogicalType::STRUCT(std::move(children));
+-  inet_type.SetAlias(INET_TYPE_NAME);
++  auto inet_type =
++      LogicalType::STRUCT(std::move(children)).WithAlias(INET_TYPE_NAME);
+   loader.RegisterType(INET_TYPE_NAME, inet_type);
+ 
+   // add the casts to and from INET type

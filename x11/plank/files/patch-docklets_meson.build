@@ -1,9 +1,10 @@
---- docklets/meson.build.orig	2025-02-28 03:58:18 UTC
+--- docklets/meson.build.orig	2026-08-04 01:49:12 UTC
 +++ docklets/meson.build
-@@ -2,6 +2,5 @@ subdir('Clock')
+@@ -2,7 +2,6 @@ subdir('Clock')
  subdir('Battery')
  subdir('Clippy')
  subdir('Clock')
 -subdir('CPUMonitor')
  subdir('Desktop')
+ subdir('Notifications')
  subdir('Trash')

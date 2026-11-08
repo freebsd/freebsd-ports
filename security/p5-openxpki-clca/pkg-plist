@@ -1,7 +1,5 @@
 bin/change-quorum.sh
 bin/clca
-%%PORTDOCS%%%%DOCSDIR%%/README.keyceremony-shared-interactive.md
-%%PORTDOCS%%%%DOCSDIR%%/README.keyceremony-simple-noninteractive.md
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%EXAMPLESDIR%%/bin/change-quorum.sh
 %%EXAMPLESDIR%%/bin/clca

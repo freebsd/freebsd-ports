@@ -1,0 +1,8 @@
+oddjob is a D-Bus service which performs particular tasks for clients that
+connect to it and issue requests over the system message bus.  Each task is
+run by a helper started by the oddjobd daemon under a configurable set of
+access controls, so unprivileged clients can trigger specific privileged
+operations without being granted broad privileges.
+
+FreeIPA uses oddjob to run privileged server-side helpers (AD trust setup,
+SID configuration and replica connection checks).

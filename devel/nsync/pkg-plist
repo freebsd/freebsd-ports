@@ -11,9 +11,13 @@ include/nsync_once.h
 include/nsync_time.h
 include/nsync_time_internal.h
 include/nsync_waiter.h
+lib/cmake/nsync/nsyncConfig-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/nsync/nsyncConfig.cmake
+lib/cmake/nsync_cpp/nsync_cppConfig-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/nsync_cpp/nsync_cppConfig.cmake
 lib/libnsync.so
 lib/libnsync.so.1
-lib/libnsync.so.1.27.0
+lib/libnsync.so.1.30.0
 lib/libnsync_cpp.so
 lib/libnsync_cpp.so.1
-lib/libnsync_cpp.so.1.27.0
+lib/libnsync_cpp.so.1.30.0

@@ -1,6 +1,6 @@
 PORTNAME=	rustrover
 DISTVERSION=	2025.2.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel java
 MASTER_SITES=	https://download-cdn.jetbrains.com/rustrover/
 PKGNAMEPREFIX=	jetbrains-
@@ -41,8 +41,9 @@ SUB_LIST=	JAVA_HOME=${JAVA_HOME}
 
 WRKSRC=		${WRKDIR}/RustRover-${PORTVERSION}
 
-_PTY4J_ARCH=	freebsd/${ARCH:S/amd64/x86-64/}
-_SQLITE_ARCH=	linux-${ARCH:S/amd64/x86_64/}
+_PTY4J_ARCH=	freebsd/${ARCH:S/amd64/x86-64/:S/powerpc64le/ppc64le/}
+# The IDE only knows aarch64 and x86_64 for the sqlite native library path
+_SQLITE_ARCH=	linux-${ARCH:S/amd64/x86_64/:S/powerpc64le/x86_64/}
 
 PLIST_SUB+=	ARCH=${ARCH} \
 		PTY4J_ARCH=${_PTY4J_ARCH} \

@@ -7,7 +7,7 @@ mail:*:6:postfix,clamav
 ftp:*:14:
 smmsp:*:25:
 audio:*:43:
-video:*:44:lightdm
+video:*:44:lightdm,sddm
 bind:*:53:
 rdfdb:*:55:
 spamd:*:58:
@@ -259,7 +259,7 @@ promscale:*:314:
 lavinmq:*:315:
 nut:*:316:
 hedgedoc:*:317:
-# free: 318, UID used by icingadirector
+rayfish:*:318:
 rustdesk:*:319:
 teleirc:*:320:
 caldera:*:321:
@@ -333,19 +333,19 @@ autopulse:*:388:
 ldap:*:389:
 bunkerweb:*:390:
 dirsrv:*:391:
-# free: 392
-# free: 393
-# free: 394
-# free: 395
-# free: 396
+_turnserver:*:392:
+immich:*:393:
+mysqlrouter:*:394:
+comentario:*:395:
+littlefedi:*:396:
 rtorrent:*:397:
 tiarra:*:398:
-# free: 399
+linkwarden:*:399:
 evcc:*:400:
 spectrumknx:*:401:
-# free: 402
-# free: 403
-# free: 404
+lid_switchd:*:402:
+airplane_radiosd:*:403:
+svn:*:404:
 # free: 405
 # free: 406
 # free: 407
@@ -363,7 +363,7 @@ uhub:*:411:
 # free: 419
 oxidized:*:420:
 # free: 421
-# free: 422
+igmpproxy:*:422:
 # free: 423
 # free: 424
 # free: 425
@@ -426,7 +426,7 @@ promxy:*:481:
 openbao:*:482:
 garage:*:483:
 stalwart:*:484:
-# free: 485
+stalwart-proxy:*:485:
 # free: 486
 # free: 487
 # free: 488
@@ -444,7 +444,7 @@ microbin:*:499:
 qw:*:500:
 qwfwd:*:501:
 birdvty:*:502:
-# free: 503
+gerrit:*:503:
 # free: 504
 _bbstored:*:505:
 radmind:*:506:
@@ -465,7 +465,7 @@ libvirtdbus:*:520:
 davmail:*:521:
 nullmail:*:522:
 freevo:*:523:
-# free: 524
+semaphore:*:524:
 dkimproxy:*:525:
 # free: 526
 # free: 527
@@ -540,7 +540,7 @@ avahi-autoipd:*:588:
 # free: 595
 # free: 596
 # free: 597
-# free: 598
+ipaapi:*:598:www
 pkiuser:*:599:
 _xsi:*:600:
 _tss:*:601:
@@ -548,7 +548,7 @@ _pkcs11:*:602:
 _acme:*:603:
 _lego:*:604:
 _hockeypuck:*:605:
-# free: 606
+kdcproxy:*:606:
 # free: 607
 # free: 608
 # free: 609
@@ -662,7 +662,7 @@ _sndio:*:702:
 bopm:*:717:
 # free: 718
 # free: 719
-# free: 720
+pgdog:*:720:
 # free: 721
 # free: 722
 # free: 723
@@ -773,9 +773,9 @@ _tuptime:*:827:
 cirrus:*:828:
 # free: 829
 # free: 830
-# free: 831
+telemt:*:831:
 beehive:*:832:
-# free: 833
+bhyvemgrd:*:833:
 pocket-id:*:834:
 filebrowser:*:835:
 tinyauth:*:836:
@@ -787,7 +787,7 @@ tcpcryptd:*:841:
 munin:*:842:
 dahdi:*:843:asterisk
 subsonic:*:844:
-# free: 845
+rauthy:*:845:
 sogod:*:846:
 domoticz:*:847:
 graylog:*:848:

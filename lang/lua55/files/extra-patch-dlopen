@@ -1,6 +1,6 @@
---- src/lua.c.orig	2025-12-15 10:44:40 UTC
+--- src/lua.c.orig	2026-08-07 07:59:17 UTC
 +++ src/lua.c
-@@ -498,18 +498,30 @@ static void lua_initreadline (lua_State *L) {
+@@ -513,18 +513,29 @@ static void lua_initreadline (lua_State *L) {
  #include <dlfcn.h>
  
  static void lua_initreadline (lua_State *L) {
@@ -12,31 +12,32 @@
 +    int *icompvar;
 +  } u;
 +
-   void *lib = dlopen(LUA_READLINELIB, RTLD_NOW | RTLD_LOCAL);
--  if (lib == NULL)
-+  if (lib == NULL) {
-     lua_warning(L, "library '" LUA_READLINELIB "' not found", 0);
--  else {
+   const char *rllib = l_getenv(LUA_RLLIB_VAR);  /* name of readline library */
+   void *lib;  /* library handle */
+   if (rllib == NULL)  /* no environment variable? */
+     rllib = LUA_READLINELIB;  /* use default name */
+   lib = dlopen(rllib, RTLD_NOW | RTLD_LOCAL);
+   if (lib != NULL) {
 -    const char **name = cast(const char**, dlsym(lib, "rl_readline_name"));
 -    if (name != NULL)
 -      *name = "lua";
 -    l_readline = cast(l_readlineT, cast_func(dlsym(lib, "readline")));
 -    l_addhist = cast(l_addhistT, cast_func(dlsym(lib, "add_history")));
--    if (l_readline == NULL)
--      lua_warning(L, "unable to load 'readline'", 0);
-+    return;
+-    if (l_readline != NULL)  /* could load readline function? */
++    u.ptr = dlsym(lib, "readline");
++    l_readline = u.rlfunc;
++    u.ptr = dlsym(lib, "add_history");
++    l_addhist = u.ahfunc;
++    if ((u.ptr = dlsym(lib, "rl_readline_name")))
++      *u.rlnamevar = "lua";
++    if ((u.ptr = dlsym(lib, "rl_inhibit_completion")))
++      *u.icompvar = 1;
++    if (l_readline != NULL)
+       return;  /* everything ok */
+     /* else emit a warning */
    }
-+
-+  u.ptr = dlsym(lib, "readline");
-+  l_readline = u.rlfunc;
-+  u.ptr = dlsym(lib, "add_history");
-+  l_addhist = u.ahfunc;
-+  if ((u.ptr = dlsym(lib, "rl_readline_name")))
-+    *u.rlnamevar = "lua";
-+  if ((u.ptr = dlsym(lib, "rl_inhibit_completion")))
-+    *u.icompvar = 1;
-+  if (l_readline == NULL)
-+    lua_warning(L, "unable to load 'readline' from dynamic library", 0);
+@@ -791,4 +802,3 @@ int main (int argc, char **argv) {
+   lua_close(L);
+   return (result && status == LUA_OK) ? EXIT_SUCCESS : EXIT_FAILURE;
  }
- 
- #else		/* }{ */
+-

@@ -10,11 +10,11 @@ WWW=		https://sg.danny.cz/sg/sdparm.html
 
 LICENSE=	BSD3CLAUSE
 
-USE_LDCONFIG=	yes
 USES=		shebangfix tar:tgz
-GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
 
 SHEBANG_FILES=	scripts/sas_disk_blink
+GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/sas_disk_blink \
 		bin/sdparm \

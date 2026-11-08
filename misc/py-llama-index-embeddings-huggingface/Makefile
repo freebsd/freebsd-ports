@@ -1,5 +1,5 @@
 PORTNAME=	llama-index-embeddings-huggingface
-DISTVERSION=	0.7.0
+DISTVERSION=	0.8.0
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ LICENSE=	MIT
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}huggingface-hub>=0.19.0:misc/py-huggingface-hub@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}llama-index-core>=0.13.0:misc/py-llama-index-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}llama-index-core>=0.14.24:misc/py-llama-index-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sentence-transformers>=2.6.1:misc/py-sentence-transformers@${PY_FLAVOR}
 
 USES=		python

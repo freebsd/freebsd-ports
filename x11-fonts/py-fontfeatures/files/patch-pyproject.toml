@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2025-06-26 14:09:35 UTC
++++ pyproject.toml
+@@ -3,7 +3,7 @@ build-backend = "setuptools.build_meta"
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+-name = "fontFeatures"
++name = "fontfeatures"
+ description = "Python library for manipulating OpenType font features"
+ readme = "README.md"
+ dynamic = ["version"]

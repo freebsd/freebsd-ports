@@ -1,5 +1,5 @@
 PORTNAME=	raylib
-DISTVERSION=	6.0
+DISTVERSION=	6.2
 CATEGORIES=	devel education
 
 MAINTAINER=	freebsd@sysctl.cz
@@ -16,15 +16,15 @@ USE_LDCONFIG=	yes
 USE_SDL=	sdl3
 USE_XORG=	ice sm x11 xcursor xext xi xinerama xrandr xxf86vm
 
-CMAKE_ARGS=	-DPLATFORM=SDL
+CMAKE_ARGS=	-DCMAKE_INSTALL_INCLUDEDIR=include/${PORTNAME} -DPLATFORM=SDL
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	BUILD_EXAMPLES
 
-post-install:
-# Install all parts for raylib
-	${INSTALL_DATA}	${WRKSRC}/src/raylib.h \
-		${WRKSRC}/src/raymath.h \
-		${WRKSRC}/src/rlgl.h \
-		${STAGEDIR}${PREFIX}/include
+EXTRACT_AFTER_ARGS=	--exclude .github \
+			--exclude examples \
+			--no-same-owner --no-same-permissions
+
+PLIST_SUB=	SONAME=${DISTVERSION:S|.||}0 \
+		VER=${DISTVERSION}.0
 
 .include <bsd.port.mk>

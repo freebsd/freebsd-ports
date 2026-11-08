@@ -1,5 +1,5 @@
 PORTNAME=	tesseract
-PORTVERSION=	5.5.3
+PORTVERSION=	5.5.4
 CATEGORIES=	graphics
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -16,7 +16,6 @@ LIB_DEPENDS=	liblept.so:graphics/leptonica \
 		libharfbuzz.so:print/harfbuzz \
 		libfreetype.so:print/freetype2 \
 		libcurl.so:ftp/curl
-
 RUN_DEPENDS=	tesseract-data>=0:graphics/tesseract-data
 
 USES=		autoreconf compiler:c++20-lang cpe gnome libarchive libtool \

@@ -1,6 +1,6 @@
 PORTNAME=	vttest
-PORTVERSION=	2023.12.30
-PORTREVISION=	1
+PORTVERSION=	2025.12.05
+PORTREVISION=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://invisible-island.net/archives/${PORTNAME}/ \
 		https://invisible-mirror.net/archives/${PORTNAME}/

@@ -1,6 +1,5 @@
 PORTNAME=	python-crontab
-PORTVERSION=	2.4.0
-PORTREVISION=	2
+PORTVERSION=	3.4.0
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,8 +10,7 @@ WWW=		https://gitlab.com/doctormo/python-crontab
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-dateutil>=1.5:devel/py-python-dateutil@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}croniter>0:sysutils/py-croniter@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}croniter>0:sysutils/py-croniter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cron-descriptor>0:sysutils/py-cron-descriptor@${PY_FLAVOR}
 
 USES=		python shebangfix
@@ -21,7 +19,7 @@ USE_PYTHON=	autoplist distutils
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	doctormo
-GL_TAGNAME=	ba23056ddf1a00ecfd14b0a31c2e0cdad132f8d0
+GL_TAGNAME=	040c496686a6dd8739efee67024caf646e33623d
 
 do-test:
 	@cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test

@@ -1,7 +1,6 @@
 PORTNAME=	rustls-ffi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.15.3
-PORTREVISION=	3
+DISTVERSION=	0.15.7
 CATEGORIES=	security
 
 MAINTAINER=	brnrd@FreeBSD.org
@@ -22,6 +21,12 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rustls
+
+PLIST_FILES=	include/rustls.h \
+		lib/librustls.a \
+		lib/librustls.so \
+		lib/librustls.so.${DISTVERSION} \
+		libdata/pkgconfig/rustls.pc
 
 do-build:
 	@${CARGO_CARGO_RUN} cbuild --verbose --verbose ${CARGO_BUILD_ARGS}

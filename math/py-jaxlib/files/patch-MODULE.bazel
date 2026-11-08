@@ -1,0 +1,112 @@
+-- Use the system Python and a stub pypi repo instead of pip, and patch protobuf and curl for FreeBSD. FreeBSD is not supported upstream; bazel cannot download wheels offline.
+--- MODULE.bazel.orig	2026-10-20 13:31:57 UTC
++++ MODULE.bazel
+@@ -136,6 +136,7 @@ single_version_override(
+     patch_strip = 1,
+     patches = [
+         "//third_party/protobuf:protobuf_arena.patch",
++        "//third_party/protobuf:freebsd_upb.patch",
+     ],
+     version = "35.1",
+ )
+@@ -157,6 +158,24 @@ JAXLIB_VERSION = "0.9.2"
+ 
+ JAXLIB_VERSION = "0.9.2"
+ 
++local_runtime_repo = use_repo_rule("@rules_python//python/local_toolchains:repos.bzl", "local_runtime_repo")
++
++local_runtime_repo(
++    name = "local_python3",
++    interpreter_path = "%%PYTHON_CMD%%",
++    on_failure = "fail",
++)
++
++local_runtime_toolchains_repo = use_repo_rule("@rules_python//python/local_toolchains:repos.bzl", "local_runtime_toolchains_repo")
++
++local_runtime_toolchains_repo(
++    name = "local_toolchains",
++    runtimes = ["local_python3"],
++    default_runtimes = ["local_python3"],
++)
++
++register_toolchains("@local_toolchains//:all")
++
+ python = use_extension("@rules_python//python/extensions:python.bzl", "python")
+ python.override(
+     add_runtime_manifest_files = ["//third_party/py:rules_python_cpython_3_15.txt"],
+@@ -175,59 +194,11 @@ python.toolchain(python_version = "3.15")
+ python.toolchain(python_version = "3.15")
+ 
+ ### Pypi
+-pip = use_extension("@rules_python//python/extensions:pip.bzl", "pip", dev_dependency = True)
++local_repository = use_repo_rule("@bazel_tools//tools/build_defs/repo:local.bzl", "local_repository")
+ 
+-[pip.parse(
+-    download_only = True,
+-    experimental_index_url = "https://us-python.pkg.dev/ml-oss-artifacts-published/pypi-mirror/simple",
+-    extra_hub_aliases = {
+-        "numpy": ["numpy_headers"],
+-    },
+-    hub_name = "jax_pypi",
+-    local_wheels = {
+-        "jax": "dist/jax-*.whl",
+-        "jaxlib": "dist/jaxlib-*.whl",
+-        "jax-cuda12-pjrt": "dist/jax_cuda12_pjrt-*.whl",
+-        "jax-cuda12-plugin": "dist/jax_cuda12_plugin-*.whl",
+-        "jax-cuda13-pjrt": "dist/jax_cuda13_pjrt-*.whl",
+-        "jax-cuda13-plugin": "dist/jax_cuda13_plugin-*.whl",
+-        "libtpu": "dist/libtpu-*.whl",  # On CI, we use the downloaded nightly version of libtpu.
+-        "ml_dtypes": "dist/ml_dtypes-*.whl",
+-        "numpy": "dist/numpy-*.whl",  # On TSAN CI, we use a custom TSAN-instrumented NumPy wheel.
+-        "scipy": "dist/scipy-*.whl",
+-    },
+-    python_version = python_version,
+-    requirements_by_platform = {} if python_version in [
+-        "3.12",
+-        "3.13",
+-    ] else {
+-        "//build:requirements_lock_{}_ft.txt".format(python_version.replace(".", "_")): "linux_x86_64_freethreaded,windows_x86_64_freethreaded,linux_aarch64_freethreaded,osx_aarch64_freethreaded",
+-    },
+-    requirements_lock = "//build:requirements_lock_{}.txt".format(python_version.replace(".", "_")),
+-    target_platforms = [
+-        # Explicitly list both x86_64 and aarch64 to ensure cross-compilation works.
+-        "{os}_x86_64",
+-        "{os}_aarch64",
+-        "{os}_x86_64_freethreaded",
+-        "{os}_aarch64_freethreaded",
+-    ],
+-    whl_modifications = {
+-        "//build:numpy.json": "numpy",  # @pypi_mods is defined in XLA's MODULE.bazel
+-    },
+-) for python_version in [
+-    "3.12",
+-    "3.13",
+-    "3.14",
+-    "3.15",
+-]]
+-
+-use_repo(pip, "pypi_mods", pypi = "jax_pypi")
+-
+-# Override XLA's pypi installation to use the one defined by JAX.
+-# TODO: have a better way to unify the pypi installation.
+-override_repo(
+-    pip,
+-    xla_pypi = "pypi",
++local_repository(
++    name = "pypi",
++    path = "%%PYPI_STUB%%",
+ )
+ 
+ ### Pybind
+@@ -383,4 +354,11 @@ external_deps_repository(
+         "@rocm_wheels//:rocm_pjrt_py_import",
+         "@rocm_wheels//:rocm_plugin_py_import",
+     ],
++)
++
++single_version_override(
++    module_name = "curl",
++    patch_strip = 1,
++    patches = ["//third_party/protobuf:curl_freebsd.patch"],
++    version = "8.22.0",
+ )

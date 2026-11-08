@@ -1,0 +1,17 @@
+## vim: set filetype=apache:
+##
+## Disabled sample configuration for mod_lookup_identity.
+## Applications such as FreeIPA may load this module from their own
+## Apache configuration.
+##
+
+#LoadModule lookup_identity_module %%APACHEMODDIR%%/mod_lookup_identity.so
+
+#<Location /login>
+#  LookupUserAttr mail REMOTE_USER_EMAIL " "
+#  LookupUserAttr givenname REMOTE_USER_FIRSTNAME
+#  LookupUserAttr sn REMOTE_USER_LASTNAME
+#  LookupUserAttrIter custom REMOTE_USER_CUSTOM
+#  LookupUserGroups REMOTE_USER_GROUPS ":"
+#  LookupUserGroupsIter REMOTE_USER_GROUP
+#</Location>

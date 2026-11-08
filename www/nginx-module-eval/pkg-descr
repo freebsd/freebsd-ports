@@ -1,0 +1,6 @@
+The eval module evaluates the response of a proxied or memcached request
+into nginx variables, so the result of one request can drive how a later
+request is handled.
+
+This port only installs the module sources.  The module itself is built
+by the nginx ports when their HTTP_EVAL option is enabled.

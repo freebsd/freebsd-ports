@@ -1,7 +1,7 @@
 PORTNAME=	rnp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.18.0
-PORTREVISION=	5
+DISTVERSION=	0.18.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/rnpgp/${PORTNAME}/releases/download/${DISTVERSIONFULL}/
 
@@ -25,20 +25,20 @@ TEST_DEPENDS=	googletest>0:devel/googletest \
 USES=		cmake:testing compiler:c++20-lang pathfix pkgconfig \
 		python:env,test shebangfix
 PATHFIX_WRKSRC=	${WRKSRC}/src/lib
-SHEBANG_FILES=	src/tests/cli_perf.py \
-		src/tests/cli_tests.py \
-		src/tests/data/cli_EncryptSign/regenerate_keys
+
 USE_LDCONFIG=	yes
+
+SHEBANG_FILES=	src/tests/cli_perf.py src/tests/cli_tests.py \
+		src/tests/data/cli_EncryptSign/regenerate_keys
+
+CMAKE_ON=	BUILD_SHARED_LIBS CMAKE_DISABLE_FIND_PACKAGE_Git
+CMAKE_OFF=	BUILD_TESTING DOWNLOAD_GTEST
 
 PLIST_SUB=	VERS=${DISTVERSION}
 
-CMAKE_ON=	BUILD_SHARED_LIBS \
-		CMAKE_DISABLE_FIND_PACKAGE_Git
-CMAKE_OFF=	BUILD_TESTING \
-		DOWNLOAD_GTEST
-
-OPTIONS_DEFINE=	MANPAGES
-OPTIONS_SUB=	yes
+OPTIONS_DEFINE=		MANPAGES
+OPTIONS_DEFAULT=	MANPAGES
+OPTIONS_SUB=		yes
 
 MANPAGES_BUILD_DEPENDS=	asciidoctor:textproc/rubygem-asciidoctor
 MANPAGES_CMAKE_BOOL=	ENABLE_DOC

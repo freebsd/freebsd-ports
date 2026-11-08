@@ -73,8 +73,8 @@ OPENSSL_CMAKE_BOOL=	WITH_OPENSSL
 SPAWNFCGI_RUN_DEPENDS=	spawn-fcgi:www/spawn-fcgi
 WEBDAV_CMAKE_BOOL=	WITH_WEBDAV_LOCKS \
 			WITH_WEBDAV_PROPS
-WEBDAV_LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
-			libsqlite3.so:databases/sqlite3
+WEBDAV_LIB_DEPENDS=	libxml2.so:textproc/libxml2
+WEBDAV_USES=		sqlite
 WOLFSSL_CMAKE_BOOL=	WITH_WOLFSSL
 WOLFSSL_LIB_DEPENDS=	libwolfssl.so:security/wolfssl
 ZSTD_CMAKE_BOOL=	WITH_ZSTD

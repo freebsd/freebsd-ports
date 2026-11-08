@@ -1,7 +1,7 @@
 -- Remove invalid license-files property from pyproject.toml.
 -- The license-files property is not supported by the version of setuptools available on FreeBSD, causing a build failure. It is a relatively new PEP 639 feature.
 
---- pyproject.toml.orig	2026-06-02 20:36:38 UTC
+--- pyproject.toml.orig	2026-08-13 07:10:38 UTC
 +++ pyproject.toml
 @@ -3,7 +3,6 @@ requires-python = ">=3.10"
  description = "A video decoder for PyTorch"
@@ -11,3 +11,19 @@
  authors = [
      { name = "PyTorch Team", email = "packages@pytorch.org" },
  ]
+@@ -18,6 +17,7 @@ build-backend = "scikit_build_core.build"
+ build-backend = "scikit_build_core.build"
+ 
+ [tool.scikit-build]
++cmake.args = ["--trace-expand"]
+ minimum-version = "build-system.requires"
+ build-dir = "build/{wheel_tag}"
+ wheel.packages = ["src/torchcodec"]
+@@ -48,6 +48,7 @@ location = "source"
+ path = "src/torchcodec/version.py"
+ template = "__version__ = '${version}'"
+ location = "source"
++
+ 
+ [tool.scikit-build.cmake.define]
+ ENABLE_CUDA = {env = "ENABLE_CUDA", default = ""}

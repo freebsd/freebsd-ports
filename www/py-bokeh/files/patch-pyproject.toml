@@ -1,0 +1,33 @@
+Description: Relax the setuptools build requirement, use the PEP 621 license
+  table for the ports tree's setuptools 63 and only package bokeh.
+Issue ID: none
+Changeset: none
+TODO: FreeBSD-specific (old setuptools in ports), not for upstream.
+
+--- pyproject.toml.orig	2026-10-12 00:55:10 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=77", "setuptools-git-versioning", "colorama"]
++requires = ["setuptools>=61", "setuptools-git-versioning"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -22,8 +22,7 @@ authors = [
+   {email = "info@bokeh.org"},
+   {name = "Bokeh Team"}
+ ]
+-license = "BSD-3-Clause"
+-license-files = ["LICENSE.txt"]
++license = {text = "BSD-3-Clause"}
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",
+     "Environment :: Console",
+@@ -78,6 +77,7 @@ where = ["src"]
+ 
+ [tool.setuptools.packages.find]
+ where = ["src"]
++include = ["bokeh", "bokeh.*"]
+ 
+ [tool.setuptools-git-versioning]
+ enabled = true

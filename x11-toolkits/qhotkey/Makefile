@@ -37,5 +37,6 @@ USES+=		qt:6
 USE_QT=		base
 CMAKE_ARGS=	-DQT_DEFAULT_MAJOR_VERSION=6
 .endif
+CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility
 
 .include <bsd.port.mk>

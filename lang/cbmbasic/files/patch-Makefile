@@ -1,14 +1,14 @@
---- Makefile.orig	2014-12-06 23:57:18 UTC
+--- Makefile.orig	2026-08-23 09:59:25 UTC
 +++ Makefile
-@@ -1,10 +1,9 @@
+@@ -1,10 +1,9 @@ OBJS=cbmbasic.o runtime.o plugin.o console.o
  OBJS=cbmbasic.o runtime.o plugin.o console.o
--CFLAGS=-Wall -O3
+-CFLAGS+=-Wall -O3
  
  all: cbmbasic
  
  cbmbasic: $(OBJS)
--	$(CC) -o cbmbasic $(OBJS)
-+	$(CC) $(CFLAGS) -o cbmbasic $(OBJS)
+-	$(CC) $(LDFLAGS) -o cbmbasic $(OBJS)
++	$(CC) $(CFLAGS) $(LDFLAGS) -o cbmbasic $(OBJS)
  
  clean:
  	rm -f $(OBJS) cbmbasic

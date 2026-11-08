@@ -1,0 +1,13 @@
+--- ibus/Makefile.am.orig	2026-10-10 16:49:17 UTC
++++ ibus/Makefile.am
+@@ -22,8 +22,8 @@ ibus_engine_uim_CFLAGS = @IBUS_CFLAGS@ -Wall
+ 	text.c
+ ibus_engine_uim_CPPFLAGS = $(AM_CPPFLAGS)
+ ibus_engine_uim_CFLAGS = @IBUS_CFLAGS@ -Wall
+-ibus_engine_uim_LDADD = $(top_builddir)/uim/libuim-scm.la \
+-			$(top_builddir)/uim/libuim.la \
++ibus_engine_uim_LDADD = -luim-scm \
++			-luim \
+ 			@IBUS_LIBS@
+ 
+ # ibus-daemon lists the engines described in this directory.

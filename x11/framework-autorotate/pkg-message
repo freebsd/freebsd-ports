@@ -1,0 +1,16 @@
+[
+{ type: install
+  message: <<EOM
+framework-autorotate provides Framework Laptop 12 X11 display autorotate
+via framework_autorotate(8).
+
+To enable at boot:
+
+  sysrc framework_autorotate_enable=YES
+  service framework_autorotate start
+
+Optional: framework_autorotate_mode=always|tablet and
+framework_autorotate_logfile.  See framework_autorotate(8).
+EOM
+}
+]

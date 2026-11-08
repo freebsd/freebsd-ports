@@ -1,3 +1,9 @@
-TIMESTAMP = 1780414265
-SHA256 (YosysHQ-yosys-v0.66_GH0.tar.gz) = 096981d3cfd09a48cdd7cd52dd6135323477f9fb6b3bdcb09d4c7d8f1f324c99
-SIZE (YosysHQ-yosys-v0.66_GH0.tar.gz) = 3633415
+TIMESTAMP = 1789528033
+SHA256 (YosysHQ-yosys-v0.69_GH0.tar.gz) = 2a0831468cb1fe08ce5fff111d4cb8763dd6d744c9d981f6c7c6b2a6ce37bcd2
+SIZE (YosysHQ-yosys-v0.69_GH0.tar.gz) = 3686126
+SHA256 (fmtlib-fmt-a00f82c6b6_GH0.tar.gz) = 28ebc2a49002c87f2326fb01ef61807c3b625b07533bdf1549ffadc7ce07b89d
+SIZE (fmtlib-fmt-a00f82c6b6_GH0.tar.gz) = 741884
+SHA256 (jarro2783-cxxopts-4bf61f0869_GH0.tar.gz) = 54f2fd414aa402150bcf2a61cea3d26d5833ac4f31a847d4dbad9c58d33e2967
+SIZE (jarro2783-cxxopts-4bf61f0869_GH0.tar.gz) = 160620
+SHA256 (YosysHQ-symfpu-5d5e508674_GH0.tar.gz) = e4c45384be9e716d75e1d27cfe3de07a4d97e912398a15e3a79e414d80a479a2
+SIZE (YosysHQ-symfpu-5d5e508674_GH0.tar.gz) = 86713

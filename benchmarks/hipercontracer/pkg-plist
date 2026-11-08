@@ -105,7 +105,6 @@
 %%IMPORTER%%%%DATADIR%%/TestDB/5-perform-hpct-importer-test
 %%IMPORTER%%%%DATADIR%%/TestDB/6-perform-hpct-query-test
 %%IMPORTER%%%%DATADIR%%/TestDB/9-uninstall-database
-%%IMPORTER%%%%DATADIR%%/TestDB/CertificateHelper.py
 %%IMPORTER%%%%DATADIR%%/TestDB/README.md
 %%IMPORTER%%%%DATADIR%%/TestDB/hpct-users.conf.example
 %%IMPORTER%%%%DATADIR%%/TestDB/name-in-etc-hosts

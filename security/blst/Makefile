@@ -1,12 +1,11 @@
 PORTNAME=	blst
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.14
-PORTREVISION=	2
+DISTVERSION=	0.3.17
 CATEGORIES=	security devel
 
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	Implementation of BLS12-381 signature algorithm
-WWW=		https://github.com/supranational/blst
+WWW=		https://github.com/supranational/blst/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

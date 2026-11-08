@@ -1,6 +1,7 @@
 PORTNAME=	whisper.cpp
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.8.4
+PORTREVISION=	3
 CATEGORIES=	audio # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org

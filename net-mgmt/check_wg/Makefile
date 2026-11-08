@@ -1,7 +1,7 @@
 PORTNAME=	check_wg
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.0.8
-PORTREVISION=	11
+PORTREVISION=	16
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	dsh@bamus.cz
@@ -11,7 +11,7 @@ WWW=		https://github.com/dsh2dsh/${PORTNAME}
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.25+,modules
+USES=		go:modules
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dsh2dsh

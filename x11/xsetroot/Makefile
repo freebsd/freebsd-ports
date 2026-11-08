@@ -9,7 +9,7 @@ WWW=		https://gitlab.freedesktop.org/xorg/app/xsetroot
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:xz xorg xorg-cat:app
+USES=		xorg xorg-cat:app
 USE_XORG=	x11 xbitmaps xcursor xmuu xorgproto
 
 PLIST_FILES=	bin/xsetroot share/man/man1/xsetroot.1.gz

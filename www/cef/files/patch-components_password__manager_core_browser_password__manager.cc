@@ -1,0 +1,35 @@
+--- components/password_manager/core/browser/password_manager.cc.orig	2026-08-12 09:02:10 UTC
++++ components/password_manager/core/browser/password_manager.cc
+@@ -602,12 +602,12 @@ void PasswordManager::RegisterProfilePrefs(
+   registry->RegisterListPref(prefs::kPasswordManagerPromoCardsList);
+ #endif  // BUILDFLAG(IS_ANDROID) && !BUILDFLAG(IS_IOS)
+ #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || \
+-    BUILDFLAG(IS_MAC)
++    BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
+   registry->RegisterListPref(prefs::kPasswordManagerBlocklist);
+ #endif  // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) ||
+         // BUILDFLAG(IS_MAC)
+   registry->RegisterBooleanPref(prefs::kPasswordSharingEnabled, true);
+-#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   registry->RegisterIntegerPref(prefs::kRelaunchChromeBubbleDismissedCounter,
+                                 0);
+ #endif
+@@ -620,7 +620,7 @@ void PasswordManager::RegisterProfilePrefs(
+ #endif
+ 
+ #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
+-    BUILDFLAG(IS_IOS)
++    BUILDFLAG(IS_IOS) || BUILDFLAG(IS_BSD)
+   registry->RegisterBooleanPref(prefs::kDeletingUndecryptablePasswordsEnabled,
+                                 true);
+ #endif
+@@ -650,7 +650,7 @@ void PasswordManager::RegisterLocalPrefs(PrefRegistryS
+   registry->RegisterBooleanPref(prefs::kOsPasswordBlank, false);
+   registry->RegisterBooleanPref(prefs::kIsBiometricAvailable, false);
+ #endif  // BUILDFLAG(IS_WIN)
+-#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+   registry->RegisterBooleanPref(prefs::kHadBiometricsAvailable, false);
+ #endif  // BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS)
+   registry->RegisterListPref(prefs::kLocalPasswordHashDataList,

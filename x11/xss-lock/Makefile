@@ -1,9 +1,7 @@
 PORTNAME=	xss-lock
 DISTVERSION=	0.3.0-g20140302
 CATEGORIES=	x11
-MASTER_SITES=	https://bitbucket.org/raymonad/xss-lock/get/
-DISTNAME=	${BB_TAGNAME}	# commit hash: no embedded ${PORTNAME}
-DIST_SUBDIR=	${PORTNAME}	# and that's why we need ${DIST_SUBDIR}
+MASTER_SITES=	https://bitbucket.org/raymonad/xss-lock/get/${BB_TAGNAME}.tar.bz2?dummy=/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Use external locker as X11 screen saver

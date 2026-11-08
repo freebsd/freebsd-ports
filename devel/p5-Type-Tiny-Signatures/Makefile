@@ -19,4 +19,6 @@ RUN_DEPENDS=	p5-Type-Tiny>=1.000005:devel/p5-Type-Tiny \
 USE_PERL5=	configure
 USES=		perl5
 
+PORTSCOUT=	skipv:0.71.0
+
 .include <bsd.port.mk>

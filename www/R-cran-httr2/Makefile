@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Tools for Working HTTP requests
-WWW=		https://cran.r-project.org/package=httr2
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

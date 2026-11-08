@@ -1,6 +1,5 @@
 PORTNAME=	gnatcoll-core
-DISTVERSIONPREFIX=	v
-DISTVERSION=	26.0.0
+DISTVERSION=	26.2
 CATEGORIES=	devel lang
 
 MAINTAINER=	ada@FreeBSD.org
@@ -24,11 +23,12 @@ MAKE_CMD=	gprbuild
 
 NO_SHLIB_REQUIRES_GLOB=	libgnarl-${_ada_version}.so libgnat-${_ada_version}.so
 
-CONFLICTS=	gnatcoll-core-minimal
+CONFLICTS=	gnatcoll-minimal
 
 EXTRACT_AFTER_ARGS=	${_DIST_EXCLUDES:S,^,--exclude ,}
 
-PLIST_SUB=	SO_VERSION=${DISTVERSION}
+PLIST_SUB=	SO_DISTVERSION=${DISTVERSION} \
+		SO_VERSION=${DISTVERSION:R}
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
@@ -48,6 +48,7 @@ _GPR_PROJECT_ARGS=	-aP${WRKSRC}/minimal \
 			-XGNATCOLL_BUILD_MODE=${WITH_DEBUG:UPROD:DDEBUG} \
 			-XGNATCOLL_VERSION=${DISTVERSION}
 _GPR_PROJECT=		${PORTNAME:C/-.*/_/}
+_GPR_SUBDIR=		${PORTNAME:C,-,/,}
 
 do-build:
 . for _component in core minimal
@@ -69,12 +70,20 @@ post-build-DOCS-on:
 do-install:
 . for _component in core minimal
 .  for _library_type in ${_GPR_LIBRARY_TYPES}
+.    if ${_component} == minimal
 	(cd ${WRKSRC}/${_component} && \
-		${SETENV} ${MAKE_ENV} gprinstall ${_GPRINSTALL_ARGS} --ali-subdir=libdata/${_GPR_PROJECT}/${_component}/${_library_type} \
+		${SETENV} ${MAKE_ENV} gprinstall ${_GPRINSTALL_ARGS} --ali-subdir=libdata/${_GPR_SUBDIR}/${_component}/${_library_type} \
 		--build-name=${_library_type} --build-var=${_library_type} \
-		--lib-subdir=lib/${_GPR_PROJECT}${_component}/${_library_type} \
-		--sources-subdir=include/${_GPR_PROJECT}${_component} \
+		--lib-subdir=lib/${_GPR_SUBDIR}/${_component}/${_library_type} \
+		--sources-subdir=include/${_GPR_SUBDIR}/${_component} \
 		-XLIBRARY_TYPE=${_library_type} -P ${_GPR_PROJECT}${_component})
+.    else
+	(cd ${WRKSRC}/${_component} && \
+		${SETENV} ${MAKE_ENV} gprinstall ${_GPRINSTALL_ARGS} --ali-subdir=libdata/${_GPR_SUBDIR}/${_library_type} \
+		--build-name=${_library_type} --build-var=${_library_type} \
+		--lib-subdir=lib/${_GPR_SUBDIR}/${_library_type} --sources-subdir=include/${_GPR_SUBDIR}/ \
+		-XLIBRARY_TYPE=${_library_type} -P ${_GPR_PROJECT}${_component})
+.    endif
 .  endfor
 . endfor
 	${INSTALL_MAN} ${WRKSRC}/docs/build/man/${PORTNAME:C|-.*||}.1 \

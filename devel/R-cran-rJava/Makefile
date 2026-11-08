@@ -31,10 +31,10 @@ MAKE_ENV+=	JAVA_HOME=${JAVA_HOME}	\
 		LD_LIBRARY_PATH="${JRE_LIBS}"	\
 		JAVA_LD_LIBRARY_PATH="${JRE_LIBS}"	\
 		JAVA_LIBS="-Wl,-rpath=${JRE_LIBS} -L${JRE_LIBS} -ljvm -lpthread"	\
-		JAVA_CPPFLAGS="-I${JAVA_HOME}/include -I${JAVA_HOME}/include/${OPSYS:tl}" \
-		${TEST_ENV}
-# Mk/Uses/cran.mk does not use TEST_ENV for test but MAKE_ENV
-TEST_ENV=	DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
+		JAVA_CPPFLAGS="-I${JAVA_HOME}/include -I${JAVA_HOME}/include/${OPSYS:tl}"
+TEST_ENV=	${MAKE_ENV} \
+		DISPLAY=${DISPLAY} \
+		XAUTHORITY=${XAUTHORITY}
 NO_SHLIB_REQUIRES_GLOB=	libjvm.so
 
 #pre-configure:

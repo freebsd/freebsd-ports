@@ -1,6 +1,6 @@
---- torch/csrc/Exceptions.h.orig	2026-04-18 16:00:24 UTC
+--- torch/csrc/Exceptions.h.orig	2026-10-28 18:16:03 UTC
 +++ torch/csrc/Exceptions.h
-@@ -153,7 +153,10 @@ extern PyObject *THPException_FatalError, *THPExceptio
+@@ -158,7 +158,10 @@ extern PyObject *THPException_FatalError, *THPExceptio
  
  // Throwing this exception means that the python error flags have been already
  // set and control should be immediately returned to the interpreter.
@@ -12,7 +12,7 @@
    python_error() = default;
  
    python_error(const python_error& other)
-@@ -181,18 +184,12 @@ struct python_error : public std::exception {
+@@ -186,18 +189,12 @@ struct python_error : public std::exception {
    python_error& operator=(python_error&& other) = delete;
  
    // NOLINTNEXTLINE(bugprone-exception-escape)
@@ -36,7 +36,7 @@
  
    void build_message() {
      // Ensure we have the GIL.
-@@ -274,34 +271,31 @@ TORCH_PYTHON_API std::string processErrorMsg(std::stri
+@@ -321,34 +318,31 @@ TORCH_PYTHON_API std::string processErrorMsg(std::stri
  
  TORCH_PYTHON_API std::string processErrorMsg(std::string str);
  

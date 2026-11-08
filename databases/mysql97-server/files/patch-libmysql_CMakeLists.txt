@@ -1,19 +1,53 @@
---- libmysql/CMakeLists.txt.orig	2024-04-10 06:26:28 UTC
+--- libmysql/CMakeLists.txt.orig	2026-10-30 11:00:05 UTC
 +++ libmysql/CMakeLists.txt
-@@ -214,6 +214,11 @@ ENDIF()
-     ../sql-common/mysql_native_authentication_client.cc)
- ENDIF()
+@@ -227,6 +227,11 @@
+ 
+ ENDIF (WITH_CLIENT_PROTOCOL_TRACING)
  
 +INCLUDE(${MYSQL_CMAKE_SCRIPT_DIR}/compile_flags.cmake)
 +IF (CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
 +  ADD_COMPILE_FLAGS(${CLIENT_SOURCES} COMPILE_FLAGS "-fPIC")
 +ENDIF()
 +
- #
- # Include protocol tracing infrastructure and the test
- # trace plugin if enabled by build options.
-@@ -308,10 +313,18 @@ ADD_SUBDIRECTORY(fido_client)
- ADD_SUBDIRECTORY(fido_client)
+ ADD_CONVENIENCE_LIBRARY(clientlib ${CLIENT_SOURCES}
+   DEPENDENCIES GenError
+   LINK_LIBRARIES ext::zlib
+@@ -291,29 +296,39 @@
+   LIST(APPEND LIBS_TO_MERGE auth_win_client)
+ ENDIF()
+ 
+-# LDAP authentication SASL client plug-in
+-ADD_SUBDIRECTORY(authentication_ldap)
+-
+-# authentication kerberos client plug-in
+-ADD_SUBDIRECTORY(authentication_kerberos)
++IF(NOT WITHOUT_CLIENTLIBS)
++  # LDAP authentication SASL client plug-in
++  ADD_SUBDIRECTORY(authentication_ldap)
+ 
+-# authentication IAM client plug-in
+-ADD_SUBDIRECTORY(authentication_oci_client)
++  # authentication kerberos client plug-in
++  ADD_SUBDIRECTORY(authentication_kerberos)
+ 
+-# WebAuthn client authentication plug-in
+-ADD_SUBDIRECTORY(authentication_webauthn)
++  # authentication IAM client plug-in
++  ADD_SUBDIRECTORY(authentication_oci_client)
+ 
+-# authentication mysql_native_password client plug-in
+-ADD_SUBDIRECTORY(authentication_native_password)
++  # WebAuthn client authentication plug-in
++  ADD_SUBDIRECTORY(authentication_webauthn)
+ 
+-# authentication openid connect client plug-in
+-ADD_SUBDIRECTORY(authentication_openid_connect_client)
++  # authentication mysql_native_password client plug-in
++  ADD_SUBDIRECTORY(authentication_native_password)
++
++  # authentication openid connect client plug-in
++  ADD_SUBDIRECTORY(authentication_openid_connect_client)
++ENDIF()
  
  # Merge several convenience libraries into one big mysqlclient
 +IF(WITHOUT_CLIENTLIBS)
@@ -31,7 +65,7 @@
  
  # Visual Studio users need debug  static library for debug projects
  IF(MSVC)
-@@ -358,6 +371,7 @@ ENDIF()
+@@ -360,6 +375,7 @@
  
  # Merge several convenience libraries into one big mysqlclient
  # and link them together into shared library.
@@ -39,12 +73,12 @@
  MERGE_LIBRARIES_SHARED(libmysql ${LIBS_TO_MERGE}
    EXPORTS
    ${CLIENT_API_FUNCTIONS}
-@@ -365,11 +379,21 @@ MERGE_LIBRARIES_SHARED(libmysql ${LIBS_TO_MERGE}
-   ${CLIENT_API_NONBLOCKING_FUNCTIONS}
-   COMPONENT SharedLibraries
-   LINK_LIBRARIES ${LIBS_TO_LINK}
+@@ -370,7 +386,21 @@
+   ${UNIX_OUTPUT_NAME}
+   ${UNIX_SOVERSION}
+   ${UNIX_VERSION}
 +  SKIP_INSTALL
-+  )
+   )
 +ELSE()
 +MERGE_LIBRARIES_SHARED(libmysql ${LIBS_TO_MERGE}
 +  EXPORTS
@@ -53,12 +87,11 @@
 +  ${CLIENT_API_NONBLOCKING_FUNCTIONS}
 +  COMPONENT SharedLibraries
 +  LINK_LIBRARIES ${LIBS_TO_LINK}
-   ${UNIX_OUTPUT_NAME}
-   ${UNIX_SOVERSION}
-   ${UNIX_VERSION}
-   )
--
++  ${UNIX_OUTPUT_NAME}
++  ${UNIX_SOVERSION}
++  ${UNIX_VERSION}
++  )
 +ENDIF()
+ 
  # Downgrade warning for strncat in my_crypt_genhash.
  IF((WITH_LTO OR CMAKE_COMPILER_FLAG_WITH_LTO) AND MY_COMPILER_IS_GNU)
-   MY_TARGET_LINK_OPTIONS(libmysql "-Wno-error=stringop-truncation")

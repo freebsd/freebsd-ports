@@ -1,0 +1,20 @@
+--- Makefile.am.orig	2026-07-13 12:45:28 UTC
++++ Makefile.am
+@@ -4,7 +4,7 @@ SUBDIRS = include example misc test tools
+ 
+ SUBDIRS = include example misc test tools
+ 
+-pkgconfdir = $(datarootdir)/pkgconfig
++pkgconfdir = @prefix@/libdata/pkgconfig
+ 
+ AM_CPPFLAGS = \
+ 	-I$(top_srcdir)/include \
+@@ -12,7 +12,7 @@ dist_doc_DATA = AUTHORS README.md
+ 	$(CXXFLAGS_UNITTESTS)
+ 
+ dist_doc_DATA = AUTHORS README.md
+-nodist_pkgconf_DATA = misc/mdds-@MDDS_API_VERSION@.pc
++dist_pkgconf_DATA = misc/mdds-@MDDS_API_VERSION@.pc
+ 
+ DISTCLEANFILES = \
+ 	misc/mdds-@MDDS_API_VERSION@.pc

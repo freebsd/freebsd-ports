@@ -1,8 +1,9 @@
 PORTNAME=	WWW-DHL
-PORTVERSION=	0.03
+DISTVERSION=	0.03
 PORTREVISION=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:SEPP
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -12,8 +13,7 @@ WWW=		https://metacpan.org/release/SEPP/WWW-DHL-0.03
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-HTML-Parser>=0:www/p5-HTML-Parser \
+BUILD_RUN_DEPENDS=	p5-HTML-Parser>=0:www/p5-HTML-Parser \
 		p5-HTML-TokeParser-Simple>=0:www/p5-HTML-TokeParser-Simple \
 		p5-libwww>=0:www/p5-libwww
 

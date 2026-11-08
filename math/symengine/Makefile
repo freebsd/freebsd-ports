@@ -1,7 +1,6 @@
 PORTNAME=	symengine
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.14.0
-PORTREVISION=	4
+DISTVERSION=	0.15.0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,6 +21,8 @@ USE_LDCONFIG=	yes
 
 CMAKE_ON=	WITH_SYMENGINE_THREAD_SAFE BUILD_SHARED_LIBS BUILD_FOR_DISTRIBUTION
 CMAKE_OFF=	BUILD_BENCHMARKS WITH_COTIRE
+
+LDFLAGS+=	-pthread
 
 OPTIONS_DEFINE=			ARB ECM LLVM MPC TCMALLOC ASSERT
 OPTIONS_SINGLE=			INTCLASS
@@ -84,6 +85,6 @@ do-test: # one test fails: https://github.com/symengine/symengine/issues/1697
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
 
-# tests as of 0.14.0: 100% tests passed, 0 tests failed out of 66
+# tests as of 0.15.0: 100% tests passed, 0 tests failed out of 66
 
 .include <bsd.port.mk>

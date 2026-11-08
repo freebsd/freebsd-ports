@@ -9,7 +9,7 @@ import time
 import urllib.error
 import urllib.request
 import uuid
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import Callable, Dict, List, Set, Tuple, Iterator
 
 def clean_subject_description(subject: str, cves: Set[str]) -> str:
@@ -33,7 +33,7 @@ def generate_vuxml_entry(cve_dict: Dict[str, str], discovery_date: str, non_vuln
 
     sorted_cves = sorted(cve_dict.keys())
     vid = str(uuid.uuid1())
-    today = datetime.utcnow().strftime("%Y-%m-%d")
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     final_discovery = discovery_date if discovery_date else today
     cgit_url = f"https://code.qt.io/cgit/qt/qtwebengine-chromium.git/log/?h={branch_name}"
 

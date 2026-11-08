@@ -1,5 +1,5 @@
 PORTNAME=	vimb
-DISTVERSION=	3.7.1
+DISTVERSION=	4.0.0
 CATEGORIES=	www
 
 MAINTAINER=	mce@FreeBSD.org
@@ -10,12 +10,12 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libsoup-3.0.so:devel/libsoup3 \
-		libwebkit2gtk-4.1.so:www/webkit2-gtk@41
+		libwebkitgtk-6.0.so:www/webkit2-gtk@60
 
 USES=		desktop-file-utils gmake gnome pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	fanglingsu
-USE_GNOME=	glib20 gtk30
+USE_GNOME=	glib20 gtk40
 
 MAKE_ARGS=	V=1
 LDFLAGS+=	-Wl,--as-needed

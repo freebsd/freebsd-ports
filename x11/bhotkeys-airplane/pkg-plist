@@ -1,0 +1,7 @@
+bin/airplane-mode
+etc/rc.d/airplane-radiosd
+sbin/airplane-radiosd
+share/bhotkeys/plugins.d/fn-airplane
+share/bhotkeys/plugins.d/fn-rfkill
+share/man/man1/airplane-mode.1.gz
+share/man/man8/airplane-radiosd.8.gz

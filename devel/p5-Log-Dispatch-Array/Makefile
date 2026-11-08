@@ -1,7 +1,8 @@
 PORTNAME=	Log-Dispatch-Array
-PORTVERSION=	1.003
+DISTVERSION=	1.003
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:RJBS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	geraud@gcu.info
@@ -16,8 +17,9 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Log-Dispatch>=0:devel/p5-Log-Dispatch
 TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

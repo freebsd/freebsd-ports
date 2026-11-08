@@ -1,7 +1,6 @@
 PORTNAME=	costa
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.2
-PORTREVISION=	5
+DISTVERSION=	2.3.3
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libopenblas.so:math/openblas \
 		libscalapack.so:math/scalapack
 
-USES=		cmake:testing pkgconfig
+USES=		cmake:testing localbase:ldflags pkgconfig
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
@@ -37,6 +36,8 @@ OPTIONS_DEFAULT=	MPICH
 MPICH_USES=		mpi:mpich
 
 OPENMPI_USES=		mpi:openmpi
+
+# tests as of 2.3.3: 100% tests passed, 0 tests failed out of 1
 
 post-install: # workaround for https://github.com/eth-cscs/COSTA/issues/9
 	@cd ${STAGEDIR}${PREFIX} && ${RMDIR} \

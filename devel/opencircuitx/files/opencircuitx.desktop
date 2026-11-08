@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=OpenCircuitX
+GenericName=VHD and Verilog, HDL editor.
+Comment=Free, open-source EDA platform for VHDL and Verilog. HDL editor.
+Exec=OpenCircuitX
+Terminal=false
+Type=Application
+Categories=Development;Programming
+Keywords=fpga;debugging;developing
+

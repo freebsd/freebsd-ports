@@ -30,6 +30,8 @@ GH_TUPLE=	dfranx:assimp:2012451:assimp/libs/assimp \
 		KhronosGroup:glslang:c594de2:glslang/libs/glslang \
 		zeux:pugixml:40be014:pugixml/libs/pugixml
 
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/dfranx/SHADERed/issues/351
+
 LDFLAGS+=	-linotify
 
 post-install: # workaround for https://github.com/dfranx/SHADERed/issues/304

@@ -3,7 +3,7 @@ DISTVERSION=	1.20
 CATEGORIES=	devel
 MASTER_SITES=	https://ftp.registro.br/pub/libepp-nicbr/
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Partial Extensible Provisioning Protocol to .br domains
 WWW=		https://registro.br/epp/ \
 		https://registro.br/epp/rfc-EN.html

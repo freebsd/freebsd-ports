@@ -1,5 +1,5 @@
 PORTNAME=	libXpm
-DISTVERSION=	3.5.19
+DISTVERSION=	3.5.20
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -9,7 +9,7 @@ WWW=		https://gitlab.freedesktop.org/xorg/lib/libxpm
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe localbase:ldflags tar:xz xorg xorg-cat:lib
+USES=		cpe localbase:ldflags xorg xorg-cat:lib
 USE_XORG=	xorgproto x11 xext xt
 
 CPE_VENDOR=	x.org

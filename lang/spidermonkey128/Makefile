@@ -1,6 +1,6 @@
 PORTNAME=	spidermonkey
 DISTVERSION=	128.14.0
-PORTREVISION=	6
+PORTREVISION=	9
 CATEGORIES=	lang
 MASTER_SITES=	MOZILLA/firefox/releases/${DISTVERSION}esr/source \
 		MOZILLA/firefox/candidates/${DISTVERSION}esr-candidates/build1/source
@@ -53,8 +53,10 @@ PLIST_SUB=	SP_VER=${SP_VER}
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == amd64
-CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
+.if ${ARCH} == powerpc64le && (${OSVERSION} < 1405000 || \
+	(${OSVERSION} >= 1500000 && ${OSVERSION} < 1501501) || \
+	(${OSVERSION} >= 1600000 && ${OSVERSION} < 1600019))
+MAKE_ENV+=	RUST_LIB_BACKTRACE=0
 .endif
 
 .if ${CHOSEN_COMPILER_TYPE} == gcc

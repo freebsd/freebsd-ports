@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-instrumentation-lmdb
-PORTVERSION=	0.26.0
+PORTVERSION=	0.26.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

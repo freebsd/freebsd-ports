@@ -1,6 +1,6 @@
 PORTNAME=	aws-c-mqtt
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.16.1
+DISTVERSION=	1.1.2
 CATEGORIES=	devel
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -17,12 +17,15 @@ LIB_DEPENDS=	libaws-c-cal.so:security/aws-c-cal \
 		libaws-c-io.so:devel/aws-c-io \
 		libs2n.so:security/s2n-tls
 
-USES=		cmake:testing ssl
+USES=		cmake:testing localbase ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	awslabs
 USE_LDCONFIG=	yes
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	BUILD_TESTING
+
+PLIST_SUB=	SOVERSION=${DISTVERSION} \
+		SOVERSION_R=${DISTVERSION:R}
 
 .include <bsd.port.mk>

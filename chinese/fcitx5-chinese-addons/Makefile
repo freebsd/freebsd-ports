@@ -1,6 +1,5 @@
 PORTNAME=	fcitx5-chinese-addons
-DISTVERSION=	5.1.11
-PORTREVISION=	1
+DISTVERSION=	5.1.15
 CATEGORIES=	chinese textproc
 MASTER_SITES=	https://download.fcitx-im.org/fcitx5/${PORTNAME}/ \
 		https://download.fcitx-im.org/data/:py_stroke,py_table
@@ -9,37 +8,48 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PY_TABLE_TAR}:py_table
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	khng@FreeBSD.org
+MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Pinyin and table input method support for Fcitx5
 WWW=		https://github.com/fcitx/fcitx5-chinese-addons
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSES/LGPL-2.1-or-later.txt
 
-BUILD_DEPENDS=	fcitx5-lua>0:textproc/fcitx5-lua
-LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs \
-		libcurl.so:ftp/curl \
+BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
+		fcitx5-lua>0:textproc/fcitx5-lua \
+		nlohmann-json>=3.2:devel/nlohmann-json
+LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libFcitx5Core.so:textproc/fcitx5 \
-		libfmt.so:devel/libfmt \
 		libIMEPinyin.so:chinese/libime \
 		libopencc.so:chinese/opencc
 RUN_DEPENDS=	fcitx5-lua>0:textproc/fcitx5-lua
 
-USES=		cmake compiler:c++17-lang gettext kde:5 localbase pkgconfig \
+USES=		cmake compiler:c++17-lang gettext-tools kde localbase pkgconfig \
 		tar:zst
 
-OPTIONS_DEFINE=		GUI
+OPTIONS_DEFINE=		GUI WEBENGINE
 OPTIONS_DEFAULT=	GUI
+OPTIONS_DEFAULT_aarch64=	WEBENGINE
+OPTIONS_DEFAULT_amd64=		WEBENGINE
+OPTIONS_DEFAULT_armv7=		WEBENGINE
+OPTIONS_DEFAULT_i386=		WEBENGINE
+OPTIONS_DEFAULT_powerpc64le=	WEBENGINE
 
 USE_LDCONFIG=	yes
 
 GUI_DESC=	Configuration GUI
 GUI_USES=	qt:6
-GUI_USE=	qt=base,webengine
-GUI_LIB_DEPENDS=	libFcitx5Qt6DBusAddons.so:textproc/fcitx5-qt@qt6
+GUI_USE=	qt=base
+GUI_LIB_DEPENDS=	libFcitx5Qt6WidgetsAddons.so:textproc/fcitx5-qt@qt6
 GUI_CMAKE_ON=	-DUSE_WEBKIT:BOOL=false
 
-USE_KDE=	ecm
+WEBENGINE_DESC=		Built-in browser in the dictionary manager (requires QtWebEngine)
+WEBENGINE_IMPLIES=	GUI
+WEBENGINE_USES=		qt:6
+WEBENGINE_USE=		qt=webengine
+WEBENGINE_CMAKE_BOOL=	ENABLE_BROWSER
+
+USE_KDE=	ecm:build
 
 CMAKE_ON=	ENABLE_OPENCC
 CMAKE_OFF=	ENABLE_TEST

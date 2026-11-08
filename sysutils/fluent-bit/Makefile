@@ -1,6 +1,6 @@
 PORTNAME=	fluent-bit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.0.9
+DISTVERSION=	5.1.5
 CATEGORIES=	sysutils
 
 MAINTAINER=	girgen@FreeBSD.org
@@ -9,7 +9,8 @@ WWW=		https://fluentbit.io/
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS=	libyaml.so:textproc/libyaml
+LIB_DEPENDS=	libyaml.so:textproc/libyaml \
+		libzstd.so:archivers/zstd
 
 USES=		bison cmake:noninja compiler:c11 gmake localbase:ldflags
 USE_GITHUB=	yes

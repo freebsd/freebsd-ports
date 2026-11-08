@@ -1,0 +1,3 @@
+Generates text from a Python list of variables or will read a line of
+text into Python variables according to the FORTRAN format statement
+passed.

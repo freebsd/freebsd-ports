@@ -1,11 +1,12 @@
 PORTNAME=	html5_notifier
 PORTVERSION=	0.6.4
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	mail
 PKGNAMEPREFIX=	roundcube-
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
-MAINTAINER=	meta@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTML5 desktop notifier plugin for roundcube
 WWW=		https://github.com/stremlau/html5_notifier
 

@@ -1,0 +1,14 @@
+[
+{ type: install
+  message: <<EOM
+This package contains the sources of the accept_language module only.  It does not
+install a loadable module.
+
+The module itself is built by the nginx ports.  To use accept_language, build
+www/nginx, www/nginx-devel or www/freenginx with the HTTP_ACCEPT_LANGUAGE option
+enabled.  Those ports pick the sources up from
+%%PREFIX%%/share/nginx/modules/nginx-module-accept-language and produce
+ngx_http_accept_language_module.so.
+EOM
+}
+]

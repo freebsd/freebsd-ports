@@ -1,6 +1,6 @@
 PORTNAME=	blender4
-DISTVERSION=	4.5.5
-PORTREVISION=	4
+DISTVERSION=	4.5.14
+PORTREVISION=	2
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/doc/license/GPL3-license.txt
 ONLY_FOR_ARCHS=		aarch64 amd64 powerpc64 powerpc64le riscv64
 ONLY_FOR_ARCHS_REASON=	static_assert(sizeof(unsigned long long) == sizeof(struct hipArray*))
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=2.0:math/py-numpy@${PY_FLAVOR}
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libfreetype.so:print/freetype2 \
 		libepoxy.so:graphics/libepoxy \
@@ -25,8 +25,8 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
 		libzstd.so:archivers/zstd
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
-# libboost_regex.so just acts as a placeholder; several boost
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=2.0:math/py-numpy@${PY_FLAVOR}
+# libboost_thread.so just acts as a placeholder; several boost
 # libraries are used, if either of the most common options in blender
 # are set. We will pull boost in just to be on the safe side.
 
@@ -40,7 +40,8 @@ SHEBANG_FILES=	scripts/modules/bl_i18n_utils/merge_po.py \
 		scripts/modules/blend_render_info.py
 
 CMAKE_ARGS=	-DCMAKE_CXX_STANDARD:INTEGER=17 \
-		-DLLVM_CONFIG:STRING="${LOCALBASE}/bin/llvm-config${LLVM_VERSION}"
+		-DLLVM_CONFIG:STRING="${LOCALBASE}/bin/llvm-config${LLVM_VERSION}" \
+		-DPYTHON_VERSION=${PYTHON_VER}
 .if defined(WITH_DEBUG)
 CMAKE_ARGS+=	-DWITH_GHOST_DEBUG:BOOL=ON
 .endif
@@ -81,8 +82,9 @@ COLLADA_USES=			gnome
 COMPOSITOR_CMAKE_BOOL=		WITH_COMPOSITOR_CPU
 CYCLES_CMAKE_BOOL=		WITH_CYCLES WITH_CYCLES_LOGGING
 CYCLES_IMPLIES=			TBB
-CYCLES_LDFLAGS=			-L${LOCALBASE}/lib -lgflags
-CYCLES_LIB_DEPENDS=		libgflags.so:devel/gflags
+CYCLES_LDFLAGS=			-L${LOCALBASE}/lib -lgflags -lglog
+CYCLES_LIB_DEPENDS=		libgflags.so:devel/gflags \
+				libglog.so:devel/glog
 CYCLES_EMBR_CMAKE_BOOL=		WITH_CYCLES_EMBREE
 CYCLES_EMBR_IMPLIES=		CYCLES
 CYCLES_EMBR_LIB_DEPENDS=	libembree4.so:graphics/embree
@@ -93,7 +95,6 @@ CYCLES_OSL_CMAKE_ON=		-DOSL_SHADER_DIR:STRING="${LOCALBASE}/share/openshadinglan
 CYCLES_OSL_IMPLIES=		CYCLES OPENEXR PUGIXML
 CYCLES_OSL_LIB_DEPENDS=		liboslcomp.so:graphics/openshadinglanguage
 DRACO_CMAKE_BOOL=		WITH_DRACO
-DRACO_USE=			LDCONFIG=${PYTHON_SITELIBDIR}
 EBOOL_CMAKE_BOOL=		WITH_GMP
 EBOOL_LIB_DEPENDS=		libgmp.so:math/gmp
 FFMPEG_CMAKE_BOOL=		WITH_CODEC_FFMPEG
@@ -209,7 +210,8 @@ XINPUT_USE=			XORG=xi
 
 post-patch:
 	${REINPLACE_CMD} -e 's|%%VERS_TAG%%|${VERS_TAG}|g' \
-		${WRKSRC}/release/freedesktop/org.blender.Blender.metainfo.xml
+		${WRKSRC}/release/freedesktop/org.blender.Blender.metainfo.xml \
+		${WRKSRC}/release/freedesktop/blender.desktop
 
 post-build:
 	@(cd ${WRKSRC}/doc/manpage && \
@@ -246,12 +248,8 @@ post-install-THUMBNAILER-on:
 		${STAGEDIR}${PREFIX}/bin/blender-thumbnailer-${VERS_TAG}
 
 post-install-DRACO-on:
-	# move draco pylib into site-packages
-	${MKDIR} ${STAGEDIR}/${PYTHON_SITELIBDIR}/
-	${INSTALL_LIB} ${INSTALL_WRKSRC}/lib/libextern_draco.so ${STAGEDIR}/${PYTHON_SITELIBDIR}/
-	${STRIP_CMD} ${STAGEDIR}/${PYTHON_SITELIBDIR}/libextern_draco.so
-	@${RM} -R ${STAGEDIR}/${DATADIR}/${DISTVERSION:R}/python
-	@${RM} ${STAGEDIR}/${DATADIR}/scripts/addons_core/io_scene_gltf2/libextern_draco.so
+	@(cd ${STAGEDIR}/${DATADIR}/scripts/addons_core/io_scene_gltf2 && \
+		${STRIP_CMD} libextern_draco.so)
 
 post-install-MENU-on:
 	@-update-desktop-database -q

@@ -196,6 +196,7 @@ share/man/man7/xkeyboard-config.7.gz
 %%DATADIR%%-2/symbols/bd
 %%DATADIR%%-2/symbols/be
 %%DATADIR%%-2/symbols/bg
+%%DATADIR%%-2/symbols/blackberry_vndr/key2/us
 %%DATADIR%%-2/symbols/bqn
 %%DATADIR%%-2/symbols/br
 %%DATADIR%%-2/symbols/brai
@@ -289,6 +290,7 @@ share/man/man7/xkeyboard-config.7.gz
 %%DATADIR%%-2/symbols/macintosh_vndr/us
 %%DATADIR%%-2/symbols/md
 %%DATADIR%%-2/symbols/me
+%%DATADIR%%-2/symbols/meta
 %%DATADIR%%-2/symbols/mk
 %%DATADIR%%-2/symbols/ml
 %%DATADIR%%-2/symbols/mm

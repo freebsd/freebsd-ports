@@ -1,3 +1,3 @@
-TIMESTAMP = 1782966276
-SHA256 (azure_mgmt_compute-38.1.0.tar.gz) = dbbe8355472bf58e9b358041d0124ca6b0fffff79d60aa6d0f094d8644ccffe5
-SIZE (azure_mgmt_compute-38.1.0.tar.gz) = 527915
+TIMESTAMP = 1791047002
+SHA256 (azure_mgmt_compute-38.4.0.tar.gz) = 7bf2f2b49e2b7cedf5f3eb2a71cf501b70e5898bd45d2421650029b95d589835
+SIZE (azure_mgmt_compute-38.4.0.tar.gz) = 700150

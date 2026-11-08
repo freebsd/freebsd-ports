@@ -1,7 +1,11 @@
-TIMESTAMP = 1625725439
+TIMESTAMP = 1681407623
 SHA256 (imgui-1.81-1-wrap.zip) = 6d00b442690b6a5c5d8f898311daafbce16d370cf64f53294c3b8c5c661e435f
 SIZE (imgui-1.81-1-wrap.zip) = 1850
-SHA256 (flightlessmango-MangoHud-v0.6.5_GH0.tar.gz) = 5e5490407a64275e04dae7b3068cbfcbb522f02c632c872a212b95025a316f72
-SIZE (flightlessmango-MangoHud-v0.6.5_GH0.tar.gz) = 14828281
+SHA256 (vulkan-headers-1.2.158-2-wrap.zip) = 860358cf5e73f458cd1e88f8c38116d123ab421d5ce2e4129ec38eaedd820e17
+SIZE (vulkan-headers-1.2.158-2-wrap.zip) = 1107
+SHA256 (flightlessmango-MangoHud-v0.6.9_GH0.tar.gz) = a2b700ea8e2f4abdceafddfbde4609ad32609bc232e17371b1dfcb43bbe2b8bf
+SIZE (flightlessmango-MangoHud-v0.6.9_GH0.tar.gz) = 14851891
 SHA256 (ocornut-imgui-v1.81_GH0.tar.gz) = f7c619e03a06c0f25e8f47262dbc32d61fd033d2c91796812bf0f8c94fca78fb
 SIZE (ocornut-imgui-v1.81_GH0.tar.gz) = 1413443
+SHA256 (KhronosGroup-Vulkan-Headers-v1.2.158_GH0.tar.gz) = 53361271cfe274df8782e1e47bdc9e61b7af432ba30acbfe31723f9df2c257f3
+SIZE (KhronosGroup-Vulkan-Headers-v1.2.158_GH0.tar.gz) = 831647

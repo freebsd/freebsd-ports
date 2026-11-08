@@ -24,8 +24,9 @@ OPTIONS_DEFINE=	EXAMPLES
 .include <bsd.port.options.mk>
 
 # libcminpackld is only built on platforms where
-# sizeof(long double) > sizeof(double)
-.if ${ARCH:Mpowerpc*} || ${ARCH:Marmv?}
+# sizeof(long double) > sizeof(double), which powerpc64le only has since 16.0
+.if (${ARCH:Mpowerpc*} || ${ARCH:Marmv?}) && \
+    !(${ARCH} == powerpc64le && ${OSVERSION} >= 1600019)
 PLIST_SUB+=	LONG_DOUBLE="@comment "
 .else
 PLIST_SUB+=	LONG_DOUBLE=""

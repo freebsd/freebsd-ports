@@ -1,0 +1,5 @@
+include/tlottie.h
+lib/libtlottie.a
+@comment lib/libtlottie.so
+@comment lib/libtlottie.so.0
+@comment lib/libtlottie.so.0.1

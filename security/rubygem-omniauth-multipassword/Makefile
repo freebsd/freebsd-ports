@@ -1,6 +1,5 @@
 PORTNAME=	omniauth-multipassword
-PORTVERSION=	0.4.2
-PORTREVISION=	1
+PORTVERSION=	2.1.0
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +10,7 @@ WWW=		https://github.com/jgraichen/omniauth-multipassword
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-omniauth1>=1.0<2:security/rubygem-omniauth1
+RUN_DEPENDS=	rubygem-omniauth>=2.0<3:security/rubygem-omniauth
 
 USES=		gem
 

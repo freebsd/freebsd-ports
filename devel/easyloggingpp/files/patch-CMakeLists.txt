@@ -1,6 +1,12 @@
 --- CMakeLists.txt.orig	2023-07-20 03:46:10 UTC
 +++ CMakeLists.txt
-@@ -22,7 +22,7 @@ macro(require_cpp14)
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8.7)
++cmake_minimum_required(VERSION 3.5)
+ 
+ project(Easyloggingpp CXX)
+ 
+@@ -22,7 +22,7 @@ option(test "Build all tests" OFF)
  endmacro()
  
  option(test "Build all tests" OFF)
@@ -9,7 +15,7 @@
  option(lib_utc_datetime "Build library with UTC date/time logging" OFF)
  
  set(ELPP_MAJOR_VERSION "9")
-@@ -31,7 +31,7 @@ set(ELPP_PATCH_VERSION "7")
+@@ -31,7 +31,7 @@ set(ELPP_INCLUDE_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/
  set(ELPP_VERSION_STRING "${ELPP_MAJOR_VERSION}.${ELPP_MINOR_VERSION}.${ELPP_PATCH_VERSION}")
  
  set(ELPP_INCLUDE_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/include" CACHE PATH "The directory the headers are installed in")
@@ -18,7 +24,7 @@
  
  include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
  
-@@ -52,18 +52,18 @@ if (HAVE_EXECINFO)
+@@ -52,18 +52,18 @@ endif()
  	add_definitions(-DHAVE_EXECINFO)
  endif()
  

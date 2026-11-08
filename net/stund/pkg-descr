@@ -1,12 +1,17 @@
-The STUN (Simple Traversal of UDP through NATs (Network Address Translation))
-server is an implementation of the STUN protocol that enables STUN
-functionality in SIP-based systems. The STUN server tar ball also include a
-client API to enable STUN functionality in SIP endpoints. In addition there
-is a command line UNIX client and a graphical Windows client that check what
-type of NAT the user is using.
+stund is Minimal STUN (RFC 8489) binding server for FreeBSD.
+It listens on standard UDP port 3478, supports IPv4/IPv6 dual-stack,
+and responds to Binding requests with the XOR-MAPPED-ADDRESS attribute.
 
-STUN is an application-layer protocol that can determine the public IP and
-nature of a NAT device that sits between the STUN client and STUN server.
+Engineered for maximum throughput and minimal resource footprint on FreeBSD,
+stund uses kqueue for event notification, recvmmsg/sendmmsg for batch I/O,
+and SO_REUSEPORT_LB with one worker thread per CPU. It performs no runtime
+dynamic memory allocation, using pre-allocated thread-local buffers.
+Memory usage is approximately 1.5 MB per CPU core.
+Responses are generated in-place in the receive buffer. It uses the
+FreeBSD base system, the C++ standard library, and pthreads,
+with no third-party library dependencies.
 
-The current version of the code supports most of RFC 3489 except the ability
-to get OTPs from the server.
+To enable and start the service:
+
+  sysrc stund_enable="YES"
+  service stund start

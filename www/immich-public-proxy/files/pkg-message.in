@@ -1,0 +1,21 @@
+[
+{ type: install
+  message: <<EOM
+Immich Public Proxy needs to know where your Immich server is and under
+which address it is reached from the outside.  Put both into
+%%PREFIX%%/etc/immich-public-proxy.env:
+
+  IMMICH_URL=http://127.0.0.1:2283
+  PUBLIC_BASE_URL=https://photos.example.org
+
+Then enable and start it:
+
+  sysrc immich_public_proxy_enable=YES
+  service immich_public_proxy start
+
+It listens on port 3000 by default; put a reverse proxy with TLS in front
+of it.  Only links that were shared in Immich are served, the Immich
+server itself stays unreachable from the internet.
+EOM
+}
+]

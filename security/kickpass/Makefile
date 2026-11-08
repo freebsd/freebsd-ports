@@ -1,7 +1,7 @@
 PORTNAME=	kickpass
 PORTVERSION=	0.2.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security
 
 MAINTAINER=	bapt@FreeBSD.org
@@ -9,6 +9,9 @@ COMMENT=	Stupid simple password safe
 WWW=		https://kickpass.pw/
 
 LICENSE=	MIT
+
+DEPRECATED=	Abandoned upstream, does not build with CMake 4
+EXPIRATION_DATE=2026-11-30
 
 LIB_DEPENDS=	libsodium.so:security/libsodium \
 		libevent.so:devel/libevent

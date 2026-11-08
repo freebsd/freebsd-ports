@@ -1,4 +1,4 @@
---- gpu/command_buffer/client/internal/mappable_buffer_native_pixmap.cc.orig	2026-07-01 06:24:19 UTC
+--- gpu/command_buffer/client/internal/mappable_buffer_native_pixmap.cc.orig	2026-10-18 13:29:39 UTC
 +++ gpu/command_buffer/client/internal/mappable_buffer_native_pixmap.cc
 @@ -62,7 +62,7 @@ MappableBufferNativePixmap::CreateFromHandle(
      viz::SharedImageFormat format,

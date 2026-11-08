@@ -1,6 +1,7 @@
 PORTNAME=	erlang
 DISTVERSIONPREFIX=	OTP-
-DISTVERSION=	28.5.0.4
+DISTVERSION=	28.5.0.8
+PORTREVISION=	1
 PORTEPOCH=	4
 CATEGORIES=	lang parallel java
 DIST_SUBDIR=	erlang
@@ -23,12 +24,12 @@ USE_PERL5=	build
 USE_RC_SUBR=	epmd
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-dirty-schedulers \
+CONFIGURE_ARGS=	--enable-deterministic-build \
+		--enable-dirty-schedulers \
 		--enable-kernel-poll \
 		--enable-smp-support \
 		--enable-threads
 MAKE_ARGS=	all
-MAKE_ENV+=	ERL_LIBS=${WRKSRC}/lib
 
 _ERLANG_LIB=	${PORTNAME}
 
@@ -40,9 +41,9 @@ WRKSRC=		${WRKSRC_otp}
 USERS=		beam
 GROUPS=		beam
 
-_EI_VSN=	5.7.0.1
-_SNMP_VSN=	5.20.2.1
-_TOOLS_VSN=	4.1.4
+_EI_VSN=	5.7.0.2
+_SNMP_VSN=	5.20.2.3
+_TOOLS_VSN=	4.1.4.1
 
 OPTIONS_DEFINE=		CHUNKS CORBA DTRACE JAVA KQUEUE MANPAGES ODBC \
 			OPENSSL SCTP SHARING WX
@@ -117,13 +118,13 @@ MAKE_ARGS+=	ARCH=arm
 .endif
 
 pre-configure:
-	@if [ ! $$(${CAT} ${WRKSRC}/lib/erl_interface/vsn.mk | ${GREP} "_EI_VSN *=" | ${CUT} -w -f3) = ${_EI_VSN} ]; then \
+	@if [ ! $$(${CAT} ${WRKSRC}/lib/erl_interface/vsn.mk | ${GREP} -E "^EI_VSN *=" | ${CUT} -w -f3) = ${_EI_VSN} ]; then \
 		${ECHO_MSG} "===>  _EI_VSN (${_EI_VSN}) in Makefile does not match value in lib/erl_interface/vsn.mk"; exit 1; \
 	fi
-	@if [ ! $$(${CAT} ${WRKSRC}/lib/tools/vsn.mk | ${GREP} "_TOOLS_VSN *=" | ${CUT} -w -f3) = ${_TOOLS_VSN} ]; then \
+	@if [ ! $$(${CAT} ${WRKSRC}/lib/tools/vsn.mk | ${GREP} -E "^TOOLS_VSN *=" | ${CUT} -w -f3) = ${_TOOLS_VSN} ]; then \
 		${ECHO_MSG} "===>  _TOOLS_VSN (${_TOOLS_VSN}) in Makefile does not match value in lib/tools/vsn.mk"; exit 1; \
 	fi
-	@if [ ! $$(${CAT} ${WRKSRC}/lib/snmp/vsn.mk | ${GREP} -E "_SNMP_VSN *=" | ${CUT} -w -f3) = ${_SNMP_VSN} ]; then \
+	@if [ ! $$(${CAT} ${WRKSRC}/lib/snmp/vsn.mk | ${GREP} -E "^SNMP_VSN *=" | ${CUT} -w -f3) = ${_SNMP_VSN} ]; then \
 		${ECHO_MSG} "===>  _SNMP_VSN (${_SNMP_VSN}) in Makefile does not match value in lib/snmp/vsn.mk"; exit 1; \
 	fi
 

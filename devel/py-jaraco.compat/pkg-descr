@@ -1,0 +1,2 @@
+Forward compatibility for Python packages, allowing future constructs to be
+borrowed before they are available in the standard library.

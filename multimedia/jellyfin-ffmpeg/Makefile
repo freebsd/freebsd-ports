@@ -1,0 +1,162 @@
+PORTNAME=	jellyfin-ffmpeg
+PORTVERSION=	8.1.3.2
+CATEGORIES=	multimedia
+
+MAINTAINER=	ahze@FreeBSD.org
+COMMENT=	FFmpeg with patches for HDR tone mapping (tonemapx/libplacebo)
+WWW=		https://github.com/jellyfin/jellyfin-ffmpeg
+
+LICENSE=	GPLv2+ LGPL21+
+LICENSE_COMB=	multi
+
+NOT_FOR_ARCHS=	armv6 armv7 i386 powerpc powerpcspe
+NOT_FOR_ARCHS_REASON=	upstream jellyfin-ffmpeg targets 64-bit; 32-bit builds non-PIC asm that lld rejects
+
+BUILD_DEPENDS=	nasm:devel/nasm \
+		${LOCALBASE}/include/fftw3.h:math/fftw3 \
+		${LOCALBASE}/lib/libfftw3f.a:math/fftw3-float \
+		${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers \
+		${LOCALBASE}/include/CL/cl.h:devel/opencl
+PATCH_DEPENDS=	quilt:devel/quilt
+LIB_DEPENDS=	libOpenCL.so:devel/ocl-icd \
+		libass.so:multimedia/libass \
+		libbluray.so:multimedia/libbluray \
+		libdav1d.so:multimedia/dav1d \
+		libfdk-aac.so:audio/fdk-aac \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
+		libfribidi.so:converters/fribidi \
+		libgmp.so:math/gmp \
+		libharfbuzz.so:print/harfbuzz \
+		libmp3lame.so:audio/lame \
+		libopenmpt.so:audio/libopenmpt \
+		libopus.so:audio/opus \
+		libplacebo.so:graphics/libplacebo \
+		libshaderc_shared.so:graphics/shaderc \
+		libSvtAv1Enc.so:multimedia/svt-av1 \
+		libtheoraenc.so:multimedia/libtheora \
+		libvorbis.so:audio/libvorbis \
+		libvpx.so:multimedia/libvpx \
+		libvulkan.so:graphics/vulkan-loader \
+		libwebp.so:graphics/webp \
+		libx264.so:multimedia/libx264 \
+		libx265.so:multimedia/x265 \
+		libzimg.so:graphics/sekrit-twc-zimg \
+		libzvbi.so:devel/libzvbi \
+		libgnutls.so:security/gnutls \
+		libxml2.so:textproc/libxml2 \
+		libiconv.so:converters/libiconv \
+		libva.so:multimedia/libva \
+		libva-drm.so:multimedia/libva \
+		libdrm.so:graphics/libdrm \
+		libvdpau.so:multimedia/libvdpau \
+		libX11.so:x11/libX11 \
+		libasound.so:audio/alsa-lib \
+		libsndio.so:audio/sndio
+
+USES=		cmake:indirect compiler:c17 gmake localbase:ldflags pkgconfig tar:xz
+USE_GITHUB=	yes
+GH_ACCOUNT=	jellyfin
+GH_PROJECT=	jellyfin-ffmpeg
+GH_TAGNAME=	v${PORTVERSION:C/\.([0-9]+)$/-\1/}
+GH_TUPLE=	acoustid:chromaprint:v1.6.0:chromaprint
+
+# Everything installs into a private subdir so nothing collides with
+# multimedia/ffmpeg or jellyfin-ffmpeg7; only the suffixed bin/ symlinks land
+# in PREFIX. --enable-rpath lets the binary load the bundled libs without
+# ldconfig even when base ffmpeg shares the same soname.
+JFFMPEG_DIR=	${PREFIX}/lib/jellyfin-ffmpeg8
+
+post-patch:
+	cd ${WRKSRC} && QUILT_PATCHES=debian/patches quilt push -a || \
+	    QUILT_PATCHES=debian/patches quilt applied | ${GREP} -q 0106
+	cd ${WRKSRC} && ${PATCH} -p0 --forward --quiet \
+	    < ${FILESDIR}/extra-patch-overlay_vulkan-framesync
+
+# Static chromaprint on fftw3f, as upstream's builder does: audio/chromaprint
+# links multimedia/ffmpeg for its FFT, dragging a second FFmpeg and ~30 other
+# ports (gcc, boost, numpy, ...) into this port's runtime.
+CHROMAPRINT_PREFIX=	${WRKDIR}/chromaprint-static
+CMAKE_INSTALL_PREFIX=	${CHROMAPRINT_PREFIX}
+CMAKE_ARGS+=	-DCMAKE_INSTALL_LIBDIR:STRING=lib -DFFT_LIB:STRING=fftw3f
+CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_FFmpeg CMAKE_POSITION_INDEPENDENT_CODE
+CMAKE_OFF=	BUILD_SHARED_LIBS BUILD_TESTS BUILD_TOOLS
+
+pre-configure:
+	${SETENVI} ${WRK_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} \
+	    -S ${WRKSRC_chromaprint} -B ${WRKDIR}/chromaprint-build
+	${SETENVI} ${WRK_ENV} ${CMAKE_BIN} --build ${WRKDIR}/chromaprint-build \
+	    -j ${MAKE_JOBS_NUMBER}
+	${SETENVI} ${WRK_ENV} ${CMAKE_BIN} --install ${WRKDIR}/chromaprint-build
+	# configure links with plain `pkg-config --libs` (shared build), so the
+	# static deps go in Libs:, not Libs.private: as upstream's builder does.
+	# Archives by full path: with -lchromaprint the ports -L${LOCALBASE}/lib
+	# comes first and an installed audio/chromaprint .so wins the search.
+	${REINPLACE_CMD} -e 's|^Libs:.*|Libs: $${libdir}/libchromaprint.a ${LOCALBASE}/lib/libfftw3f.a -lc++ -lm|' \
+	    ${CHROMAPRINT_PREFIX}/lib/pkgconfig/libchromaprint.pc
+
+HAS_CONFIGURE=	yes
+CONFIGURE_LOG=	ffbuild/config.log
+CONFIGURE_ENV+=	PKG_CONFIG_PATH=${CHROMAPRINT_PREFIX}/lib/pkgconfig
+NOPRECIOUSMAKEVARS=	yes
+
+MAKE_ENV+=	V=1
+
+CONFIGURE_ARGS=	--prefix="${JFFMPEG_DIR}" \
+		--libdir="${JFFMPEG_DIR}/lib" \
+		--enable-rpath \
+		--target-os=freebsd \
+		--cc="${CC}" --cxx="${CXX}" \
+		--extra-version=Jellyfin \
+		--disable-unstable \
+		--disable-doc \
+		--disable-ffplay \
+		--disable-static \
+		--disable-libxcb \
+		--disable-sdl2 \
+		--disable-xlib \
+		--enable-lto=auto \
+		--enable-gpl \
+		--enable-version3 \
+		--enable-shared \
+		--enable-gmp \
+		--enable-gnutls \
+		--enable-libxml2 \
+		--enable-libass \
+		--enable-libfreetype \
+		--enable-libfribidi \
+		--enable-libfontconfig \
+		--enable-libharfbuzz \
+		--enable-libbluray \
+		--enable-chromaprint \
+		--enable-libdrm \
+		--enable-libfdk-aac \
+		--enable-libmp3lame \
+		--enable-libopenmpt \
+		--enable-libopus \
+		--enable-libtheora \
+		--enable-libvorbis \
+		--enable-libdav1d \
+		--enable-libsvtav1 \
+		--enable-libwebp \
+		--enable-libvpx \
+		--enable-libx264 \
+		--enable-libx265 \
+		--enable-libzimg \
+		--enable-libzvbi \
+		--enable-opencl \
+		--enable-libplacebo \
+		--enable-libshaderc \
+		--enable-vulkan \
+		--enable-vaapi \
+		--enable-vdpau \
+		--disable-ffnvcodec
+
+INSTALL_TARGET=	install-progs install-data install-libs
+
+post-install:
+	# Version-suffixed symlinks in /usr/local/bin for PATH access
+	${LN} -sf ../lib/jellyfin-ffmpeg8/bin/ffmpeg ${STAGEDIR}${PREFIX}/bin/jellyfin-ffmpeg8
+	${LN} -sf ../lib/jellyfin-ffmpeg8/bin/ffprobe ${STAGEDIR}${PREFIX}/bin/jellyfin-ffprobe8
+
+.include <bsd.port.mk>

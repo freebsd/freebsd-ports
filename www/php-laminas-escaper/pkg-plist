@@ -1,0 +1,5 @@
+share/pear/Laminas/Escaper/Escaper.php
+share/pear/Laminas/Escaper/EscaperInterface.php
+share/pear/Laminas/Escaper/Exception/ExceptionInterface.php
+share/pear/Laminas/Escaper/Exception/InvalidArgumentException.php
+share/pear/Laminas/Escaper/Exception/RuntimeException.php

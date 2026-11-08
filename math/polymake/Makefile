@@ -1,5 +1,6 @@
 PORTNAME=	polymake
 DISTVERSION=	4.15
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/V${DISTVERSION}/ \
 		https://polymake.org/lib/exe/fetch.php/download/
@@ -33,6 +34,9 @@ USES=		compiler:c++14-lang gmake gnome perl5 readline shebangfix \
 USE_GNOME=	libxml2 libxslt
 USE_LDCONFIG=	${PREFIX}/lib
 USE_PERL5=	build run
+
+# configure.pl auto-selects gold when it links; gold produces crashing binaries on powerpc64
+LDFLAGS_powerpc64=	-fuse-ld=lld
 
 SHEBANG_FILES=	resources/host-agent/bin/env resources/host-agent/bin/polymake
 SHEBANG_GLOB=	*.pl *.sh

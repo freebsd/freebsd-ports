@@ -1,0 +1,13 @@
+--- requirements.txt.orig	2026-09-27 23:52:43 UTC
++++ requirements.txt
+@@ -0,0 +1,10 @@
++anyio>=4.13.0
++certifi>=2026.2.25
++h11>=0.16.0
++httpcore>=1.0.9
++httpx>=0.28.1
++idna>=3.11
++python-dotenv>=1.2.2
++setuptools
++typing_extensions>=4.15.0
++urllib3>=2.6.3

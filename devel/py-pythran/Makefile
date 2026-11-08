@@ -1,9 +1,12 @@
 PORTNAME=	pythran
-PORTVERSION=	0.18.1
-PORTREVISION=	2
+PORTVERSION=	0.19.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+PATCH_SITES=	https://github.com/xtensor-stack/xsimd/commit/
+PATCHFILES=	8df8da7d9ce069348994179f840e3f1680c0dbef.patch:-p2
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Ahead of Time compiler for numeric kernels
@@ -16,17 +19,14 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ply>=3.4:devel/py-ply@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}gast>=0.7.0<=0.8:devel/py-gast@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}beniget>=0.4.0:devel/py-beniget@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}gast>=0.7.0<0.8:devel/py-gast@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}beniget>=0.5.0<0.6:devel/py-beniget@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
-NO_ARCH=	yes
+PATCH_WRKSRC=	${WRKSRC}/pythran
 
-post-extract:
-	${RM} ${WRKSRC}/third_party/xsimd/config/*.rej
-	${RM} ${WRKSRC}/third_party/xsimd/*.rej
-	${RM} ${WRKSRC}/third_party/xsimd/math/.xsimd_gamma.hpp.swp
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

@@ -1,0 +1,17 @@
+--- configure.orig	2026-10-13 07:42:00 UTC
++++ configure
+@@ -7888,13 +7888,7 @@ printf "%s\n" "#define WORDS_BIGENDIAN 1" >>confdefs.h
+   ;; #(
+    no)
+ 
+-  if test "$enable_vmx" = "yes"; then
+-    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: ::::::::::--- no vector instruction set ---::::::::::" >&5
+-printf "%s\n" "$as_me: ::::::::::--- no vector instruction set ---::::::::::" >&6;}
+-    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: HMMER3 Altivec/VMX only supports big-endian platforms: e.g. ppc64 not ppc64le" >&5
+-printf "%s\n" "$as_me: HMMER3 Altivec/VMX only supports big-endian platforms: e.g. ppc64 not ppc64le" >&6;}
+-    as_fn_error $? "No supported vectorization found for your machine." "$LINENO" 5
+-  elif test "$enable_neon" = "yes"; then
++  if test "$enable_neon" = "yes"; then
+     as_CACHEVAR=`printf "%s\n" "ax_cv_check_cflags_$NEON_CFLAGS_-mlittle-endian" | $as_tr_sh`
+ { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether C compiler accepts -mlittle-endian" >&5
+ printf %s "checking whether C compiler accepts -mlittle-endian... " >&6; }

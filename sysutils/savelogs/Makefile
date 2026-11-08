@@ -1,11 +1,11 @@
 PORTNAME=	savelogs
 PORTVERSION=	1.98
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SCOTTW
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Save log files in a nice way
 WWW=		https://metacpan.org/release/SCOTTW/savelogs-1.98
 

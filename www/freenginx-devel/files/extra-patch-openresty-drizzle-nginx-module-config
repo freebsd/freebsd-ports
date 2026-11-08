@@ -7,7 +7,7 @@
 -        ngx_feature="libdrizzle library in /usr/local/"
 -        ngx_feature_path="/usr/local/include/libdrizzle-1.0"
 +        ngx_feature="libdrizzle library in %%PREFIX%%"
-+        ngx_feature_path="%%PREFIX%%/include/libdrizzle"
++        ngx_feature_path="%%PREFIX%%/include/libdrizzle-1.0"
          if [ $NGX_RPATH = YES ]; then
 -            ngx_feature_libs="-R/usr/local/lib -L/usr/local/lib -ldrizzle"
 +            ngx_feature_libs="-R%%PREFIX%%/lib -L%%PREFIX%%/lib -ldrizzle"

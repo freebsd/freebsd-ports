@@ -29,6 +29,7 @@ PLIST_FILES=	include/divsufsort.h \
 		libdata/pkgconfig/libdivsufsort64.pc
 
 CMAKE_ON=	BUILD_DIVSUFSORT64
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/y-256/libdivsufsort/issues/30
 
 do-test:
 	@cd ${TEST_WRKSRC} && \

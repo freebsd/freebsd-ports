@@ -1,7 +1,7 @@
 PORTNAME=	nats-streaming-server
 PORTVERSION=	0.25.6
 DISTVERSIONPREFIX=	v
-PORTREVISION=	9
+PORTREVISION=	14
 CATEGORIES=	net
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -10,6 +10,9 @@ WWW=		https://nats.io/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	Deprecated by upstream, use JetStream in net/nats-server instead
+EXPIRATION_DATE=2026-12-31
 
 USES=		go:modules
 USE_GITHUB=	yes

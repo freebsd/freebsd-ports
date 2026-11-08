@@ -1,6 +1,14 @@
---- assets/CMakeLists.txt.orig	2024-06-23 17:50:54 UTC
+--- assets/CMakeLists.txt.orig	2025-01-25 22:35:40 UTC
 +++ assets/CMakeLists.txt
-@@ -43,9 +43,9 @@ if(${CMAKE_SYSTEM} MATCHES Darwin)
+@@ -29,7 +29,6 @@ set(SRB2_ASSETS_GAME
+ 	"srb2.pk3"
+ 	"characters.pk3"
+ 	"zones.pk3"
+-	"patch.pk3"
+ 	"music.pk3"
+ 	"models.dat"
+ )
+@@ -43,9 +42,9 @@ if(${CMAKE_SYSTEM} MATCHES Darwin)
  if(${CMAKE_SYSTEM} MATCHES Darwin)
  	get_target_property(outname SRB2SDL2 OUTPUT_NAME)
  	install(FILES ${SRB2_ASSETS} DESTINATION "${outname}.app/Contents/Resources")

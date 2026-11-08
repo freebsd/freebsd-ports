@@ -1,8 +1,6 @@
 PORTNAME=	dihydrogen
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.1-36
-DISTVERSIONSUFFIX=	-g4bda15e
-PORTREVISION=	9
+DISTVERSION=	0.3.0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,10 +13,12 @@ LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 		libfabric.so:net/libfabric \
 		libfmt.so:devel/libfmt \
 		libhwloc.so:devel/hwloc2 \
+		libHydrogen_CXX.so:math/hydrogen \
 		libjson-c.so:devel/json-c \
+		libopenblas.so:math/openblas \
 		libspdlog.so:devel/spdlog \
 		libze_loader.so:devel/level-zero
-TEST_DEPENDS=	catch>0:devel/catch
+TEST_DEPENDS=	catch2>0:devel/catch2
 
 USES=		cmake:testing compiler:c++17-lang
 
@@ -39,5 +39,7 @@ OPTIONS_DEFAULT=	MPICH # should be same as in misc/lbann
 MPICH_USES=		mpi:mpich
 
 OPENMPI_USES=		mpi:openmpi
+
+# tests as of 0.3.0: 100% tests passed, 0 tests failed out of 36
 
 .include <bsd.port.mk>

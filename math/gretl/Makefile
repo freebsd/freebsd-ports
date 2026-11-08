@@ -32,13 +32,15 @@ SSP_CFLAGS?=	-fstack-protector # XXX -strong crashes mklang on 12.0+ i386
 CONFIGURE_ENV=	ac_cv_lib_dl_dlopen="" \
 		LAPACK_LIBS="${LAPACK} ${BLAS}"
 
-LDFLAGS+=	-lomp
-
 PLIST_SUB=	GTK_VER=${GTK_VER}
 
 OPTIONS_DEFINE=		ADDONS ATLAS GUI MPI NLS ODBC OPENMP R UNZIP
 OPTIONS_DEFAULT=	ADDONS GUI OPENMP UNZIP
 OPTIONS_SUB=		yes
+
+.if !exists(/usr/include/omp.h)
+OPTIONS_EXCLUDE=	OPENMP
+.endif
 
 ADDONS_DESC=		Build gretl addons
 ADDONS_CONFIGURE_ENABLE=	build-addons

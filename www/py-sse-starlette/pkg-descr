@@ -1,1 +1,3 @@
 SSE (Server Sent Events) plugin for the Starlette framework.
+
+It supports streaming responses and is compatible with ASGI frameworks.

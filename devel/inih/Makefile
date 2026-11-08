@@ -18,4 +18,15 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	benhoyt
 
+test-quick: stage
+	@${ECHO} "==> Running smoke test"
+	@cd ${TEST_WRKSRC} && \
+		${CC} ${FILESDIR}/test-main.c -I${STAGEDIR}${PREFIX}/include ${STAGEDIR}${PREFIX}/lib/libinih.so -o test && \
+		./test ${FILESDIR}/test-config.ini
+	@${ECHO} "... smoke test completed successfully"
+
+# tests as of 62:
+# Ok:                16
+# Fail:              0
+
 .include <bsd.port.mk>

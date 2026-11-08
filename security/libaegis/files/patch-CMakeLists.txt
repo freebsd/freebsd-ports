@@ -1,7 +1,7 @@
---- CMakeLists.txt.orig	2024-06-10 09:34:37 UTC
+--- CMakeLists.txt.orig	2026-09-15 16:50:36 UTC
 +++ CMakeLists.txt
-@@ -13,8 +13,9 @@ file(GLOB HEADER_FILES "src/include/*.h")
- file(GLOB SOURCE_FILES "src/aegis128l/*.c" "src/aegis128x2/*.c" "src/aegis128x4/*.c" "src/aegis256/*.c" "src/aegis256x2/*.c" "src/aegis256x4/*.c" "src/common/*.c")
+@@ -19,8 +19,9 @@ file(GLOB HEADER_FILES "src/include/*.h")
+ file(GLOB SOURCE_FILES "src/aegis128l/*.c" "src/aegis128x2/*.c" "src/aegis128x4/*.c" "src/aegis256/*.c" "src/aegis256x2/*.c" "src/aegis256x4/*.c" "src/common/*.c" "src/raf/*.c")
  file(GLOB HEADER_FILES "src/include/*.h")
  
 -add_library("${PROJECT_NAME}")
@@ -9,16 +9,16 @@
  add_library("${PROJECT_NAME}::${PROJECT_NAME}" ALIAS "${PROJECT_NAME}")
 +add_library("${PROJECT_NAME}_static" STATIC)
  
- target_sources("${PROJECT_NAME}" PRIVATE ${SOURCE_FILES})
- 
-@@ -22,11 +23,19 @@ target_include_directories("${PROJECT_NAME}"
-                            PUBLIC $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}>
+ if(BUILD_SHARED_LIBS)
+   set_target_properties("${PROJECT_NAME}" PROPERTIES VERSION "${PROJECT_VERSION}"
+@@ -43,11 +44,19 @@ target_include_directories("${PROJECT_NAME}"
+                            PUBLIC $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/src/include>
                                    $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
  
 +target_sources("${PROJECT_NAME}_static" PRIVATE ${SOURCE_FILES})
 +
 +target_include_directories("${PROJECT_NAME}_static"
-+                           PUBLIC $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}>
++                           PUBLIC $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/src/include>
 +                                  $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
 +
 +set_target_properties("${PROJECT_NAME}_static" PROPERTIES OUTPUT_NAME "${PROJECT_NAME}")
@@ -30,5 +30,5 @@
 -install(TARGETS "${PROJECT_NAME}"
 +install(TARGETS "${PROJECT_NAME}" "${PROJECT_NAME}_static"
          EXPORT "${TARGETS_EXPORT_NAME}"
+         RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}"
          LIBRARY DESTINATION "${CMAKE_INSTALL_LIBDIR}"
-         ARCHIVE DESTINATION "${CMAKE_INSTALL_LIBDIR}")

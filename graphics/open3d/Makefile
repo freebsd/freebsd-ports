@@ -6,7 +6,8 @@ CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Modern library for 3D data processing
-WWW=		http://www.open3d.org/
+WWW=		http://www.open3d.org/ \
+		https://github.com/isl-org/Open3D
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../LICENSE
@@ -24,6 +25,7 @@ USE_LDCONFIG=	yes
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	BUILD_TESTS BUILD_PYBIND11 BUILD_PYTHON_MODULE BUILD_PYTHON_TUTORIALS
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/isl-org/Open3D/issues/7596
 
 WRKSRC_SUBDIR=	src
 LDFLAGS+=	-pthread # https://github.com/IntelVCL/Open3D/issues/510

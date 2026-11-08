@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2021-05-13 19:09:42 UTC
+--- CMakeLists.txt.orig	2026-02-27 10:57:49 UTC
 +++ CMakeLists.txt
-@@ -56,7 +56,6 @@ set(BUILD_SHARED_LIBS ${OIS_BUILD_SHARED_LIBS})
+@@ -56,7 +56,6 @@ if (UNIX AND NOT APPLE)
  if (UNIX AND NOT APPLE)
  
      find_package(X11 REQUIRED)
@@ -8,11 +8,10 @@
  
      set(ois_source
          ${ois_source}
-@@ -188,8 +187,7 @@ endif()
+@@ -218,7 +217,7 @@ if(UNIX)
  if(UNIX)
  
      if (NOT APPLE)
--        add_dependencies(OIS X11)
 -        target_link_libraries(OIS X11)
 +        target_link_libraries(OIS X11::X11)
      endif()

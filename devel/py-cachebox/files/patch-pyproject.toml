@@ -1,0 +1,22 @@
+--- pyproject.toml.orig	2006-07-24 01:21:28 UTC
++++ pyproject.toml
+@@ -55,8 +55,8 @@ maturin = [
+   "ruff>=0.16.9",
+ ]
+ maturin = [
+-  "maturin == 1.15.0 ; sys_platform != 'linux'",
+-  "maturin[patchelf] == 1.15.0 ; sys_platform == 'linux'",
++  "maturin; sys_platform != 'linux'",
++  "maturin[patchelf] ; sys_platform == 'linux'",
+ ]
+ test = [
+   "hypothesis >= 6.165.0",
+@@ -68,7 +68,7 @@ zizmor = ["zizmor >= 1.29.0"]
+ zizmor = ["zizmor >= 1.29.0"]
+ 
+ [build-system]
+-requires = ["maturin == 1.15.0"]
++requires = ["maturin"]
+ build-backend = "maturin"
+ 
+ [tool.maturin]

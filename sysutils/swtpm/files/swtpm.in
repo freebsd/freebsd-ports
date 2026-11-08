@@ -81,8 +81,9 @@ stop_instance()
     pid=$(check_pidfile ${pidpath}/${config}.pid %%PREFIX%%/bin/swtpm)
     if [ ! -z "${pid}" ]; then
       echo -n "Stopping SWTPM config ${config} ... "
-      kill $pid
+      kill ${pid}
       rm -f ${pidpath}/${config}.pid
+      pwait ${pid}
       echo "done"
     fi
   fi

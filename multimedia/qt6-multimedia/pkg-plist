@@ -79,6 +79,7 @@
 %%GSTREAMER%%%%QT_INCDIR%%/QtGstreamerMediaPluginImpl/%%FULLVER%%/QtGstreamerMediaPluginImpl/private/qgstreameraudiooutput_p.h
 %%GSTREAMER%%%%QT_INCDIR%%/QtGstreamerMediaPluginImpl/%%FULLVER%%/QtGstreamerMediaPluginImpl/private/qgstreamerbufferprobe_p.h
 %%GSTREAMER%%%%QT_INCDIR%%/QtGstreamerMediaPluginImpl/%%FULLVER%%/QtGstreamerMediaPluginImpl/private/qgstreamercamera_p.h
+%%GSTREAMER%%%%QT_INCDIR%%/QtGstreamerMediaPluginImpl/%%FULLVER%%/QtGstreamerMediaPluginImpl/private/qgstreameregldisplay_p.h
 %%GSTREAMER%%%%QT_INCDIR%%/QtGstreamerMediaPluginImpl/%%FULLVER%%/QtGstreamerMediaPluginImpl/private/qgstreamerformatinfo_p.h
 %%GSTREAMER%%%%QT_INCDIR%%/QtGstreamerMediaPluginImpl/%%FULLVER%%/QtGstreamerMediaPluginImpl/private/qgstreamerimagecapture_p.h
 %%GSTREAMER%%%%QT_INCDIR%%/QtGstreamerMediaPluginImpl/%%FULLVER%%/QtGstreamerMediaPluginImpl/private/qgstreamerintegration_p.h

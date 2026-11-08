@@ -1,5 +1,5 @@
 PORTNAME=	yaconf
-PORTVERSION=	1.1.2
+PORTVERSION=	1.2.0
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org

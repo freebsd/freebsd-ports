@@ -1,6 +1,6 @@
 PORTNAME=	pytorch
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.13.0
+DISTVERSION=	2.15.0
 CATEGORIES=	misc # machine-learning
 MASTER_SITES=	https://github.com/pytorch/pytorch/releases/download/v${DISTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,12 +15,10 @@ WWW=		https://pytorch.org/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_aarch64=	build fails: CMake Error at third_party/QNNPACK/CMakeLists.txt:47 (MESSAGE): Unrecognized CMAKE_SYSTEM_NAME = FreeBSD, see https://github.com/pytorch/pytorch/issues/144608
 BROKEN_armv7=	build fails: CMake Error at third_party/QNNPACK/CMakeLists.txt:47 (MESSAGE): Unrecognized CMAKE_SYSTEM_NAME = FreeBSD, see https://github.com/pytorch/pytorch/issues/144608
 BROKEN_i386=	build fails: DispatchStub.cpp:162:29: [0m[0;1;31merror: [0m[1muse of undeclared identifier 'AVX2'[0m
 
-BUILD_DEPENDS=	${PY_SETUPTOOLS} \
-		cmake:devel/cmake-core \
+BUILD_DEPENDS=	cmake:devel/cmake-core \
 		gmake:devel/gmake \
 		pybind11>0:devel/pybind11 \
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
@@ -34,6 +32,7 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>0:devel/py-pyyaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scikit-build-core>=1.0:devel/py-scikit-build-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sympy>=1.13.3:math/py-sympy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>0:devel/py-typing-extensions@${PY_FLAVOR} \
@@ -54,11 +53,14 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}filelock>0:sysutils/py-filelock@${PY_FLAVOR}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}astunparse>0:devel/py-astunparse@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dill>0:devel/py-dill@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}protobuf>0:devel/py-protobuf@${PY_FLAVOR} # optional dependencies
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-rerunfailures>0:devel/py-pytest-rerunfailures@${PY_FLAVOR} \
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}expecttest>0:devel/py-expecttest@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-rerunfailures>0:devel/py-pytest-rerunfailures@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-xdist>0:devel/py-pytest-xdist@${PY_FLAVOR}
 
-USES=		compiler:c++17-lang localbase:ldflags mpi:openmpi python
+USES=		compiler:c++17-lang localbase:ldflags mpi:openmpi python shebangfix
 USE_PYTHON=	pep517 autoplist
+
+SHEBANG_FILES=	torch/utils/hipify/hipify_python.py # installed executable, unlike with the pre-2.14 setuptools build
 USE_LDCONFIG=	${PYTHON_SITELIBDIR}/torch/lib
 
 # The Python package is named "torch" not "pytorch"
@@ -75,7 +77,13 @@ MAKE_ENV+=	USE_CUDNN=0
 MAKE_ENV+=	USE_LAPACK=1 # needed on FreeBSD to run w/out GPU
 MAKE_ENV+=	USE_QNNPACK=0
 MAKE_ENV+=	USE_DISTRIBUTED=1
+# point FindMPI at the openmpi requested by USES=mpi, otherwise it picks up the
+# mpicc/mpicxx wrappers that net/mpich installs into LOCALBASE/bin, which link
+# libmpi/libmpicxx from mpich and drag in lang/gcc14 via the wrapper's -rpath
+MAKE_ENV+=	CMAKE_ARGS="-DMPI_C_COMPILER=${MPI_HOME}/bin/mpicc -DMPI_CXX_COMPILER=${MPI_HOME}/bin/mpicxx" \
+		MAX_JOBS=${MAKE_JOBS_NUMBER}
 LDFLAGS+=	-lexecinfo
+LDFLAGS_powerpc64=	-pthread
 LDFLAGS_powerpc64le=	-pthread
 
 BINARY_ALIAS=	make=${GMAKE}
@@ -92,7 +100,20 @@ VULKAN_BUILD_DEPENDS=	glslc:graphics/shaderc \
 			vulkan-headers>0:graphics/vulkan-headers
 VULKAN_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
 
+CONFLICTS_BUILD=	mpich # binaries are still linked with mpich when it is present
+
 .include <bsd.port.options.mk>
+
+.if ${ARCH} == aarch64
+# torch's many dlopen'd shared libraries (OpenMP, mimalloc, cpuinfo, etc.) require
+# more initial-exec TLS than rtld's small default dlopen reserve, see rtld(1)
+TEST_ENV+=	LD_STATIC_TLS_EXTRA=4096
+.endif
+
+post-extract:
+	# upstream ships a stray *.orig file that 'make makepatch' would otherwise
+	# mistake for a patch baseline and turn into a bogus binary patch
+	@${RM} ${WRKSRC}/third_party/aiter/hsa/gfx950/pa/pa_bf16_noquant_gqa8_1tg_4w.co.orig
 
 post-patch:
 	@cd ${WRKSRC} && \
@@ -125,5 +146,10 @@ do-install: # port should be moved to 'torch', but keep this for now with the ha
 
 do-test:
 	@cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} run_test.py
+
+test-quick: # tests basic training+inference functionality
+	@cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} ${FILESDIR}/example.py
+
+# tests as of 2.14.0: 231 passed 6 skipped
 
 .include <bsd.port.mk>

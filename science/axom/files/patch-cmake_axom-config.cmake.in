@@ -1,0 +1,21 @@
+-- Skip ALIAS targets when stripping nonexistent include dirs from axom's
+-- dependency targets in the exported CMake config, since CMake disallows
+-- set_target_properties() on ALIAS targets (e.g. Kokkos::all_libs, pulled
+-- in transitively when a downstream consumer like science/smith also links
+-- devel/kokkos); without this guard, any downstream project's CMake
+-- configure step fails with "set_target_properties can not be used on an
+-- ALIAS target".
+
+--- cmake/axom-config.cmake.in.orig	2026-10-01 18:57:13 UTC
++++ cmake/axom-config.cmake.in
+@@ -328,6 +328,10 @@ if(NOT AXOM_FOUND)
+ 
+   foreach(_target ${_deps})
+     if(TARGET ${_target})
++      get_target_property(_is_alias ${_target} ALIASED_TARGET)
++      if(_is_alias)
++        continue()
++      endif()
+       get_target_property(_dirs ${_target} INTERFACE_INCLUDE_DIRECTORIES)
+       set(_existing_dirs)
+       foreach(_dir ${_dirs})

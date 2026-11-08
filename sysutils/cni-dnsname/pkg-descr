@@ -1,0 +1,6 @@
+dnsname is a CNI plugin that provides name resolution for containers
+within a CNI network using dnsmasq. When enabled, containers on the
+same network can resolve each other using their container names.
+
+This plugin is primarily used by Podman to provide DNS resolution for
+containers when using the CNI networking backend (e.g., on FreeBSD).

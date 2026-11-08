@@ -1,6 +1,6 @@
 PORTNAME=			samba422
-DISTVERSION=			4.22.10
-PORTREVISION=	1
+DISTVERSION=			4.22.11
+PORTREVISION=	3
 CATEGORIES?=			net
 MASTER_SITES=			SAMBA/samba/stable SAMBA/samba/rc
 DISTNAME=			samba-${DISTVERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
@@ -245,8 +245,8 @@ BUNDLED_CMOCKA_VARS=			_BUNDLED_LIBS+=cmocka \
 					_BUNDLED_LIB_replace=replace
 BUNDLED_CMOCKA_VARS_OFF=		_BUNDLED_LIBS+=!cmocka
 
-BUNDLED_TALLOC_BUILD_DEPENDS_OFF=	talloc243>=2.4.3:devel/talloc243
-BUNDLED_TALLOC_RUN_DEPENDS_OFF=		talloc243>=2.4.3:devel/talloc243
+BUNDLED_TALLOC_BUILD_DEPENDS_OFF=	talloc244>=2.4.4:devel/talloc244
+BUNDLED_TALLOC_RUN_DEPENDS_OFF=		talloc244>=2.4.4:devel/talloc244
 BUNDLED_TALLOC_CONFLICTS_INSTALL=	talloc-* talloc2*
 BUNDLED_TALLOC_VARS=			_BUNDLED_LIBS+=talloc \
 					_BUNDLED_LIB_replace=replace
@@ -439,6 +439,9 @@ _BUNDLED_LIBS+=			${"${PORT_OPTIONS:MBUNDLED_TDB}" == "BUNDLED_TDB":?:!}pytdb
 .	if (${PORT_OPTIONS:MAD_DC} || ${PORT_OPTIONS:MDEVELOPER})
 # LMDB
 _LMDB_DEPDENDS=			lmdb0>=0.9.16:databases/lmdb0
+CFLAGS+=			-I${LOCALBASE}/lmdb0/include
+LDFLAGS+=			-L${LOCALBASE}/lmdb0/lib
+CONFIGURE_ENV+=			PKG_CONFIG_PATH=${LOCALBASE}/lmdb0/libdata/pkgconfig
 PLIST_FILES+=			${SAMBA_LIBDIR}/private/libldb-mdb-int-private-samba.so \
 				${SAMBA_LDB_MODULESDIR}/mdb.so
 .	endif

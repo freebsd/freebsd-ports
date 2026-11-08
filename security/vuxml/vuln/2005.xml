@@ -6451,7 +6451,6 @@
       <cvename>CVE-2005-1846</cvename>
       <cvename>CVE-2005-1847</cvename>
       <url>http://rpmfind.net/linux/RPM/suse/updates/8.2/i386/rpm/i586/yamt-0.5-1277.i586.html</url>
-      <url>ftp://ftp.suse.com/pub/suse/i386/update/8.2/rpm/src/yamt-0.5-1277.src.rpm</url>
     </references>
     <dates>
       <discovery>2005-01-20</discovery>
@@ -12631,7 +12630,7 @@ http_access deny Gopher</pre>
 	<p>Ciaran McCreesh discovered news ways in which a VIM modeline
 	  can be used to trojan a text file.  The patch by Bram
 	  Moolenaar reads:</p>
-	<blockquote cite="ftp://ftp.vim.org/pub/vim/patches/6.3/6.3.045">
+	<blockquote cite="https://ftp.nluug.nl/pub/vim/patches/6.3/6.3.045">
 	  <p>Problem: Unusual characters in an option value may cause
 	    unexpected behavior, especially for a modeline. (Ciaran
 	    McCreesh)</p>
@@ -12649,7 +12648,7 @@ http_access deny Gopher</pre>
     </description>
     <references>
       <cvename>CVE-2004-1138</cvename>
-      <url>ftp://ftp.vim.org/pub/vim/patches/6.3/6.3.045</url>
+      <url>https://ftp.nluug.nl/pub/vim/patches/6.3/6.3.045</url>
       <mlist>http://groups.yahoo.com/group/vimdev/message/38084</mlist>
     </references>
     <dates>

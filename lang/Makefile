@@ -1,5 +1,6 @@
     COMMENT = Programming languages
 
+    SUBDIR += R-cran-languageserver
     SUBDIR += abcl
     SUBDIR += alchemist.el
     SUBDIR += algol68g
@@ -48,7 +49,7 @@
     SUBDIR += crumb
     SUBDIR += crystal
     SUBDIR += cython
-    SUBDIR += cython0
+    SUBDIR += dart
     SUBDIR += dhall
     SUBDIR += dlang-tools
     SUBDIR += dotnet
@@ -75,6 +76,7 @@
     SUBDIR += erlang-wx
     SUBDIR += execline
     SUBDIR += expect
+    SUBDIR += ez80asm
     SUBDIR += f2c
     SUBDIR += fasm
     SUBDIR += fennel
@@ -84,6 +86,8 @@
     SUBDIR += fpc-devel-source
     SUBDIR += fpc-docs
     SUBDIR += fpc-source
+    SUBDIR += fpc-wasip1-devel
+    SUBDIR += fpc-wasip1threads-devel
     SUBDIR += fsharp
     SUBDIR += fth
     SUBDIR += gambit-c
@@ -125,8 +129,8 @@
     SUBDIR += gnu-cobol
     SUBDIR += gnustep-base
     SUBDIR += go
-    SUBDIR += go125
     SUBDIR += go126
+    SUBDIR += go127
     SUBDIR += gomacro
     SUBDIR += gprolog
     SUBDIR += gptscript
@@ -149,7 +153,6 @@
     SUBDIR += hs-unlambda
     SUBDIR += huc
     SUBDIR += inko
-    SUBDIR += intel-compute-runtime
     SUBDIR += intercal
     SUBDIR += io
     SUBDIR += io-devel
@@ -165,7 +168,6 @@
     SUBDIR += kefir
     SUBDIR += kf5-kross
     SUBDIR += kotlin
-    SUBDIR += kotlin22
     SUBDIR += kturtle
     SUBDIR += lafontaine
     SUBDIR += lci
@@ -274,6 +276,7 @@
     SUBDIR += pfe
     SUBDIR += pharo
     SUBDIR += php-mode.el
+    SUBDIR += php80-legacy
     SUBDIR += php82
     SUBDIR += php82-extensions
     SUBDIR += php83
@@ -293,6 +296,7 @@
     SUBDIR += pomsky
     SUBDIR += prql
     SUBDIR += ptoc
+    SUBDIR += puffin
     SUBDIR += purescript
     SUBDIR += py-dhall
     SUBDIR += py-gherkin-official
@@ -308,7 +312,6 @@
     SUBDIR += python2
     SUBDIR += python27
     SUBDIR += python3
-    SUBDIR += python310
     SUBDIR += python311
     SUBDIR += python312
     SUBDIR += python313
@@ -341,7 +344,7 @@
     SUBDIR += rust
     SUBDIR += rust-bootstrap
     SUBDIR += rust-nightly
-    SUBDIR += rust188
+    SUBDIR += rust-nightly-bun
     SUBDIR += rustpython
     SUBDIR += s7
     SUBDIR += s7-nrepl
@@ -364,6 +367,7 @@
     SUBDIR += slib
     SUBDIR += slib-guile
     SUBDIR += slisp
+    SUBDIR += smallbasic
     SUBDIR += smalltalk
     SUBDIR += smlnj
     SUBDIR += snobol4
@@ -380,10 +384,10 @@
     SUBDIR += tauthon
     SUBDIR += tcbasic
     SUBDIR += tcc
+    SUBDIR += tcl
     SUBDIR += tcl-manual
     SUBDIR += tcl-wrapper
     SUBDIR += tcl86
-    SUBDIR += tcl90
     SUBDIR += tclX
     SUBDIR += tolua
     SUBDIR += tolua++

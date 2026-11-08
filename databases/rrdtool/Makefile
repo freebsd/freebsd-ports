@@ -1,5 +1,5 @@
 PORTNAME=	rrdtool
-DISTVERSION=	1.10.3
+DISTVERSION=	1.11.0
 CATEGORIES=	databases graphics
 MASTER_SITES=	https://github.com/oetiker/rrdtool-1.x/releases/download/v${DISTVERSION}/
 

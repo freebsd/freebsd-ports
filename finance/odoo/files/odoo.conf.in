@@ -1,0 +1,10 @@
+[options]
+#admin_passwd = secretpassword
+db_host = localhost
+db_port = 5432
+db_user = odoouser
+db_password = odoopwd
+; 0.0.0.0 listens on all interfaces; set 127.0.0.1 when odoo runs behind
+; a local proxy (the default from Odoo 20.0)
+http_interface = 0.0.0.0
+;addons_path = %%PYTHON_SITELIBDIR%%/odoo/addons/

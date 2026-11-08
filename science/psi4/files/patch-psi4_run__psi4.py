@@ -1,15 +1,16 @@
---- psi4/run_psi4.py.orig	2025-09-05 14:52:21 UTC
+--- psi4/run_psi4.py.orig	2026-06-30 02:22:36 UTC
 +++ psi4/run_psi4.py
-@@ -38,6 +38,8 @@ from pathlib import Path
+@@ -38,6 +38,9 @@ from pathlib import Path
  import warnings
  from pathlib import Path
  
-+os.environ["PSIDATADIR"] = "/usr/local/share/psi4"
++if "PSIDATADIR" not in os.environ.keys():
++    os.environ["PSIDATADIR"] = "%%DATADIR%%"
 +
  # yapf: disable
  parser = argparse.ArgumentParser(description="Psi4: Open-Source Quantum Chemistry", formatter_class=argparse.RawTextHelpFormatter)
  parser.add_argument("-i", "--input", default="input.dat",
-@@ -162,7 +164,7 @@ if args["inplace"]:
+@@ -162,7 +165,7 @@ if args["inplace"]:
  
      lib_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
      if ("PSIDATADIR" not in os.environ.keys()) and (not args["psidatadir"]):

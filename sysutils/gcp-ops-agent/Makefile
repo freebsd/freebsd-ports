@@ -1,12 +1,13 @@
 PORTNAME=	ops-agent
 DISTVERSION=	2.48.0
-PORTREVISION=	21
+PORTREVISION=	26
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	gcp-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gather logs and metrics from Google Compute Engine instances
-WWW=		https://cloud.google.com/stackdriver/docs/solutions/agents/ops-agent
+WWW=		https://docs.cloud.google.com/stackdriver/docs/solutions/agents/ops-agent \
+		https://github.com/GoogleCloudPlatform/ops-agent
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

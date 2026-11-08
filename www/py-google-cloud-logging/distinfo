@@ -1,3 +1,3 @@
-TIMESTAMP = 1783784480
-SHA256 (google_cloud_logging-3.16.1.tar.gz) = 603024ad8257d8194f53c9dfaf27fc2c32111d627bc4c574556584a8150fcace
-SIZE (google_cloud_logging-3.16.1.tar.gz) = 293629
+TIMESTAMP = 1788500354
+SHA256 (google_cloud_logging-3.16.3.tar.gz) = 5d7924bbb33c066bb43f70d33ba66749ff1c29b207de4c80b2bce1aacd53f676
+SIZE (google_cloud_logging-3.16.3.tar.gz) = 294772

@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Syntax Highlighting and Automatic Linking
-WWW=		https://cran.r-project.org/package=downlit
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

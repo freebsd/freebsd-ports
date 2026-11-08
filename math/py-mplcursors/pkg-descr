@@ -1,0 +1,2 @@
+mplcursors provides interactive data selection cursors for Matplotlib.
+It is inspired by mpldatacursor, with a much simplified API.

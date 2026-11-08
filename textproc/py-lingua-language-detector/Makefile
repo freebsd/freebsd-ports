@@ -1,7 +1,7 @@
 PORTNAME=	lingua-language-detector
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.2.0
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	textproc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,6 +11,8 @@ WWW=		https://github.com/pemistahl/lingua-py
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN_i386=	fails to compile: rustc-LLVM ERROR: out of memory
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}maturin>=1.1:devel/py-maturin@${PY_FLAVOR}
 

@@ -1,0 +1,10 @@
+--- pyproject.toml.orig	2026-07-27 20:39:35 UTC
++++ pyproject.toml
+@@ -49,7 +49,6 @@ plus = [
+     "geojson",
+     "geopandas>=1.1",
+     "matplotlib>=3.10",
+-    "mplleaflet",
+     "numba>=0.60",
+     "numexpr",
+     "seaborn",

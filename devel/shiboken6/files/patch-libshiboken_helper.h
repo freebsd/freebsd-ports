@@ -1,8 +1,8 @@
---- libshiboken/helper.h.orig	2023-10-14 09:37:51 UTC
+--- libshiboken/helper.h.orig	2026-08-14 07:58:27 UTC
 +++ libshiboken/helper.h
-@@ -61,7 +61,7 @@ class AutoArrayPointer
-         T *data;
- };
+@@ -74,7 +74,7 @@ using AutoArrayPointer = ArrayPointer<T>; // deprecate
+ template <class T>
+ using AutoArrayPointer = ArrayPointer<T>; // deprecated
  
 -using ThreadId = unsigned long long;
 +using ThreadId = pthread_t;

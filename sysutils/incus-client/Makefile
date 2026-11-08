@@ -1,7 +1,7 @@
 PORTNAME=	incus-client
-PORTVERSION=	7.0.0
-PORTREVISION=	2
+PORTVERSION=	7.5.1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://github.com/lxc/incus
 
 LICENSE=	APACHE20
 
-USES=		cpe go:1.25+,modules
+USES=		cpe go:modules
 CPE_PRODUCT=	incus
 
 GO_MODULE=	github.com/lxc/incus/v7

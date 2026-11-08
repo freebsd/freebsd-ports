@@ -1,7 +1,7 @@
 PORTNAME=	mkbrr
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.24.0
-PORTREVISION=	1
+DISTVERSION=	1.27.0
+PORTREVISION=	2
 CATEGORIES=	net-p2p
 
 MAINTAINER=	diizzy@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://github.com/autobrr/mkbrr
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.25+,modules
+USES=		go:1.27+,modules
 
 CGO_ENABLED=	0
 GO_MODULE=	github.com/autobrr/${PORTNAME}

@@ -1,6 +1,6 @@
---- torch/_utils_internal.py.orig	2026-04-18 15:44:50 UTC
+--- torch/_utils_internal.py.orig	2026-10-28 18:16:03 UTC
 +++ torch/_utils_internal.py
-@@ -265,7 +265,10 @@ USE_GLOBAL_DEPS = True
+@@ -298,7 +298,10 @@ USE_GLOBAL_DEPS = True
  USE_GLOBAL_DEPS = True
  # USE_RTLD_GLOBAL_WITH_LIBTORCH controls whether __init__.py tries to load
  # _C.so with RTLD_GLOBAL during the call to dlopen.

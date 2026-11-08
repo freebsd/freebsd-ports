@@ -6,14 +6,17 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Printer manager for KDE
 WWW=		https://www.kde.org
 
-LIB_DEPENDS=	libcups.so:print/cups
+LIB_DEPENDS=	libcups.so:print/cups \
+		libpackagekitqt6.so:ports-mgmt/packagekit-qt
 
 USES=		cmake compiler:c++11-lang gettext kde:6 pkgconfig qt:6 tar:xz \
 		xorg
-USE_KDE=	config configwidgets coreaddons dbusaddons i18n \
-		kio kirigami2 kcmutils libplasma \
-		notifications widgetsaddons windowsystem \
+USE_KDE=	config configwidgets coreaddons dbusaddons i18n itemmodels \
+		kcmutils kdeclarative kio kirigami-addons kirigami2 \
+		notifications widgetsaddons \
 		ecm:build
+# Plasma components
+USE_KDE+=	libplasma
 USE_QT=		base declarative
 USE_XORG=	x11
 

@@ -4,8 +4,8 @@
  
      // write the implementation part
      rOutStm.WriteOString( "#ifdef SFX_TYPEMAP" ) << endl;
--    rOutStm.WriteOString( "#if !defined(_WIN32) && (defined(DISABLE_DYNLOADING) && (defined(ANDROID) || defined(IOS) || defined(EMSCRIPTEN) || defined(LINUX)))" ) << endl;
-+    rOutStm.WriteOString( "#if !defined(_WIN32) && (defined(DISABLE_DYNLOADING) && (defined(ANDROID) || defined(IOS) || defined(EMSCRIPTEN) || defined(LINUX) || defined(FREEBSD)))" ) << endl;
+-    rOutStm.WriteOString( "#if !defined(_WIN32) && (defined(DISABLE_DYNLOADING) && (defined(ANDROID) || defined(IOS) || defined(__EMSCRIPTEN__) || defined(LINUX)))" ) << endl;
++    rOutStm.WriteOString( "#if !defined(_WIN32) && (defined(DISABLE_DYNLOADING) && (defined(ANDROID) || defined(IOS) || defined(__EMSCRIPTEN__) || defined(LINUX) || defined(FREEBSD)))" ) << endl;
      rOutStm.WriteOString( "__attribute__((__weak__))" ) << endl;
      rOutStm.WriteOString( "#endif" ) << endl;
      rOutStm.WriteOString( aTypeName ).WriteOString( aVarName )

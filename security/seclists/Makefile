@@ -1,8 +1,8 @@
 PORTNAME=	seclists
-DISTVERSION=	2024.1
+DISTVERSION=	2026.2
 CATEGORIES=	security www
 
-MAINTAINER=	salvadore@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of multiple types of lists used during security assessments
 WWW=		https://github.com/danielmiessler/SecLists
 
@@ -18,6 +18,8 @@ GH_PROJECT=	SecLists
 
 NO_ARCH=	yes
 NO_BUILD=	yes
+
+PORTDATA=	*
 
 FILES_TO_BE_REMOVED=	.gitattributes \
 			.gitignore \

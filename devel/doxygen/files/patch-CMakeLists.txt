@@ -1,10 +1,23 @@
---- CMakeLists.txt.orig	2022-12-20 18:30:03 UTC
+--- CMakeLists.txt.orig	2026-01-06 12:11:01 UTC
 +++ CMakeLists.txt
-@@ -197,7 +197,6 @@ include(cmake/Coverage.cmake)
- include(cmake/CompilerWarnings.cmake)
- include(cmake/Coverage.cmake)
+@@ -37,13 +37,13 @@ option(enable_lex_debug "Enable debugging info for lex
+ option(enable_tracing  "Enable tracing option in release builds [development]" OFF)
+ option(enable_lex_debug "Enable debugging info for lexical scanners in release builds [development]" OFF)
  
--add_subdirectory(libmd5)
- add_subdirectory(liblodepng)
- add_subdirectory(libmscgen)
- add_subdirectory(libversion)
+-if(CMAKE_BUILD_TYPE STREQUAL "Release")
+-  if (CYGWIN OR MINGW OR NOT "${CMAKE_TOOLCHAIN_FILE}" STREQUAL "")
+-    set(CMAKE_INTERPROCEDURAL_OPTIMIZATION FALSE)
+-  else()
+-    set(CMAKE_INTERPROCEDURAL_OPTIMIZATION TRUE)
+-  endif()
+-endif()
++#if(CMAKE_BUILD_TYPE STREQUAL "Release")
++#  if (CYGWIN OR MINGW OR NOT "${CMAKE_TOOLCHAIN_FILE}" STREQUAL "")
++#    set(CMAKE_INTERPROCEDURAL_OPTIMIZATION FALSE)
++#  else()
++#    set(CMAKE_INTERPROCEDURAL_OPTIMIZATION TRUE)
++#  endif()
++#endif()
+ 
+ include(CheckCXXCompilerFlag)
+ 

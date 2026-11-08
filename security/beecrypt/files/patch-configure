@@ -1,14 +1,5 @@
 --- configure	Mon Nov 29 13:50:41 2004
 +++ configure	2014-04-27 14:31:36.000000000 -0400
-@@ -3008,7 +3005,7 @@
-     sparc*)
-       bc_target_arch=sparc
-       ;;
--    x86_64)
-+    x86_64|amd64)
-       bc_target_arch=x86_64
-       ;;
-     esac
 @@ -3120,7 +3121,4 @@
  # Check for expert mode
  if test "$ac_enable_expert_mode" = yes; then

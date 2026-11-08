@@ -1,0 +1,11 @@
+--- external/SPIRV-Cross/CMakeLists.txt.orig	2023-07-26 08:52:38 UTC
++++ external/SPIRV-Cross/CMakeLists.txt
+@@ -19,7 +19,7 @@
+ #  2. The MIT License, found at <http://opensource.org/licenses/MIT>.
+ #
+ 
+-cmake_minimum_required(VERSION 3.0)
++cmake_minimum_required(VERSION 3.5)
+ set(CMAKE_CXX_STANDARD 11)
+ set(CMAKE_CXX_EXTENSIONS OFF)
+ 

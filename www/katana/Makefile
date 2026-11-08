@@ -1,7 +1,7 @@
 PORTNAME=	katana
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.1
-PORTREVISION=	1
+DISTVERSION=	1.7.0
+PORTREVISION=	2
 CATEGORIES=	www
 
 MAINTAINER=	dutra@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://github.com/projectdiscovery/katana
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=		go:1.24+,modules
+USES=		go:modules
 GO_MODULE=	github.com/projectdiscovery/katana
 
 GO_TARGET=	./cmd/${PORTNAME}

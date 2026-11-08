@@ -1,6 +1,5 @@
 PORTNAME=	libac
-PORTVERSION=	g20190308
-PORTREVISION=	1
+PORTVERSION=	g20240916
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -19,7 +18,7 @@ PLIST_FILES=	include/ac.h \
 USE_GITHUB=	yes
 GH_ACCOUNT=	cloudflare
 GH_PROJECT=	lua-aho-corasick
-GH_TAGNAME=	ca6043c
+GH_TAGNAME=	6e12872
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/ac.h ${STAGEDIR}${PREFIX}/include/ac.h

@@ -1,5 +1,5 @@
 PORTNAME=	${GH_PROJECT:tl}
-PORTVERSION=	1.13.0.7
+PORTVERSION=	1.14.1.2
 CATEGORIES=	games
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -28,27 +28,46 @@ NUGET_DEPENDS=	Antlr4.Runtime=4.6.6 \
 		HidSharp=2.6.4 \
 		LibUsbDotNet=2.2.29 \
 		Microsoft.Bcl.AsyncInterfaces=8.0.0 \
+		Microsoft.Bcl.HashCode=6.0.0 \
+		Microsoft.NETFramework.ReferenceAssemblies.net461=1.0.3 \
+		Microsoft.NETFramework.ReferenceAssemblies.net48=1.0.3 \
+		Microsoft.NETFramework.ReferenceAssemblies=1.0.3 \
+		Microsoft.Win32.Registry=4.7.0 \
 		Mono.Cecil=0.11.3 \
+		NAudio.Asio=2.0.0 \
+		NAudio.Core=2.0.0 \
+		NAudio.Core=2.3.0 \
+		NAudio.Midi=2.0.0 \
+		NAudio.Vorbis.Latest=1.6.0 \
 		NAudio.Vorbis=1.2.0 \
-		NAudio=1.10.0 \
-		NLayer.NAudioSupport=1.0.0 \
-		NLayer=1.12.0 \
-		NVorbis=0.10.1 \
+		NAudio.Wasapi=2.0.0 \
+		NAudio.WinForms=2.0.0 \
+		NAudio.WinMM=2.0.0 \
+		NAudio=2.0.0 \
+		NLayer.NAudioSupport=2.0.1 \
+		NLayer=2.0.1 \
+		NVorbis=0.10.5 \
 		Newtonsoft.Json=13.0.4 \
-		OpenTK-OpenBVE=1.0.4 \
+		OpenTK-OpenBVE=1.0.7 \
 		OpenTK.GLControl-OpenBVE=1.0.1 \
 		ReactiveProperty.Core=9.7.0 \
 		ReactiveProperty=9.7.0 \
-		SharpCompress=0.48.0 \
-		System.Buffers=4.5.1 \
+		SharpCompress=0.50.4 \
+		System.Buffers=4.6.1 \
+		System.Collections.Immutable=10.0.10 \
 		System.ComponentModel.Annotations=5.0.0 \
-		System.Memory=4.5.5 \
-		System.Numerics.Vectors=4.5.0 \
+		System.Formats.Nrbf=10.0.10 \
+		System.Memory=4.6.3 \
+		System.Numerics.Vectors=4.6.1 \
 		System.Reactive=6.0.1 \
-		System.Runtime.CompilerServices.Unsafe=6.0.0 \
+		System.Reflection.Metadata=10.0.10 \
+		System.Resources.Extensions=4.6.0 \
+		System.Runtime.CompilerServices.Unsafe=6.1.2 \
+		System.Security.AccessControl=4.7.0 \
+		System.Security.Principal.Windows=4.7.0 \
 		System.Text.Encoding.CodePages=8.0.0 \
 		System.Threading.Tasks.Extensions=4.5.4 \
-		System.ValueTuple=4.5.0 \
+		System.ValueTuple=4.6.2 \
 		Ude.NetStandard=1.2.0
 
 DATADIR=	${PREFIX}/lib/${PORTNAME}
@@ -67,13 +86,6 @@ PLIST_SUB+=	DEBUG="" RELEASE="@comment "
 .else
 PLIST_SUB+=	RELEASE="" DEBUG="@comment "
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e '/TargetFrameworkVersion/s,4[^<]*,4.6.1,' \
-		${WRKSRC}/source/Plugins/Route.Bve5/Route.Bve5.csproj \
-		${WRKSRC}/source/TrainEditor2/TrainEditor2.csproj
-	@${REINPLACE_CMD} -e '/System\.ValueTuple\.dll/s,net4.,net46,' \
-		${WRKSRC}/source/TrainEditor2/TrainEditor2.csproj
 
 _AUX_PROGS=	CarXmlConvertor ObjectBender ObjectViewer RouteViewer \
 		TrainEditor TrainEditor2

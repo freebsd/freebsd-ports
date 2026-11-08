@@ -13,9 +13,9 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	gsed:textproc/gsed \
-		lmdb0>=0.9.15:databases/lmdb0
+		lmdb>=1.0.0:databases/lmdb
 LIB_DEPENDS=	libgnutls.so:security/gnutls \
-		liblmdb.so:databases/lmdb0
+		liblmdb.so:databases/lmdb
 
 USES=		compiler:c11 libtool localbase pkgconfig tar:xz
 USE_LDCONFIG=	yes
@@ -46,10 +46,11 @@ PLIST_SUB=	RUNDIR=${RUNDIR} \
 
 PORTDOCS=	COPYING NEWS
 
-OPTIONS_DEFINE=			DAEMON UTILS DOCS EXAMPLES
-OPTIONS_DEFAULT=		DAEMON FASTPARSER DOH DOQ IDN MODACL MODAUTH \
-				MODCOOKIES MODPROXY MODNOUDP MODPROBE MODRRL \
-				MODSIGN MODSTATS MODSYNTH MODWHOAMI UTILS
+OPTIONS_DEFINE=			DAEMON UTILS DOCS EXAMPLES MANPAGES
+OPTIONS_DEFAULT=		DAEMON FASTPARSER DOH DOQ IDN MANPAGES \
+				MODACL MODAUTH MODCOOKIES MODPROXY MODNOUDP \
+				MODPROBE MODRRL MODSIGN MODSTATS MODSYNTH \
+				MODWHOAMI UTILS
 OPTIONS_GROUP=			DAEMONGR UTILGR
 OPTIONS_GROUP_DAEMONGR=		DNSTAP FASTPARSER MODACL MODAUTH MODCOOKIES \
 				MODPROXY MODGEO MODNOUDP MODPROBE MODRRL \
@@ -61,11 +62,9 @@ OPTIONS_SUB=			yes
 DAEMONGR_DESC=			Options for daemon
 DAEMON_DESC=			Install daemon
 DNSTAP_DESC=			dnstap support (see dnstap.info)
-DOCS_DESC=			Install documentation
 DOH_DESC=			Support for DNS over HTTPS (DoH)
 DOQ_DESC=			Support for DNS over QUIC (DoQ)
 FASTPARSER_DESC=		Fast zone parser (demands compiling)
-IDN_DESC=			Support for International Domain Names (IDN)
 MODACL_DESC=			Build 'queryacl' module
 MODAUTH_DESC=			Build 'authsignal' module
 MODCOOKIES_DESC=		Build 'cookies' module
@@ -92,16 +91,13 @@ DNSTAP_LIB_DEPENDS=		libfstrm.so:devel/fstrm \
 				libprotobuf-c.so:devel/protobuf-c
 DNSTAP_CONFIGURE_ENABLE=	dnstap
 DNSTAP_CONFIGURE_WITH=		module-dnstap=yes
+DNSTAP_CPPFLAGS=		-I${LOCALBASE}/include
 #
 # XXX: because `kdig_CPPFLAGS += $(DNSTAP_CFLAGS)' line is missing from
 # `src/Makefile.am' file (and thus pre-generated `src/Makefile.in') which
 # should contain "$libfstrm_CFLAGS $libprotobuf_c_CFLAGS" set by configure
 # script, provide it here explicitly as patching those files would result
 # in higher line count.  Ideally this bug should be fixed upstream.
-DNSTAP_CPPFLAGS=		-I${LOCALBASE}/include
-
-DOCS_BUILD_DEPENDS=		sphinx-build:textproc/py-sphinx
-DOCS_CONFIGURE_ENABLE=		documentation
 
 DOH_LIB_DEPENDS=		libnghttp2.so:www/libnghttp2
 
@@ -114,6 +110,9 @@ FASTPARSER_CONFIGURE_ENABLE=	fastparser
 
 IDN_LIB_DEPENDS=		libidn2.so:dns/libidn2
 IDN_CONFIGURE_WITH=		libidn
+
+MANPAGES_BUILD_DEPENDS=		sphinx-build:textproc/py-sphinx
+MANPAGES_CONFIGURE_ENABLE=	documentation
 
 MODACL_CONFIGURE_WITH=		module-queryacl=yes
 
@@ -159,6 +158,8 @@ post-patch-DAEMON-on:
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
+
+do-install-MANPAGES-on:
 	${INSTALL_MAN} ${WRKSRC}/doc/man/*.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/man/*.5 ${STAGEDIR}${PREFIX}/share/man/man5
 	${INSTALL_MAN} ${WRKSRC}/doc/man/*.8 ${STAGEDIR}${PREFIX}/share/man/man8

@@ -1,7 +1,7 @@
 PORTNAME=	mautrix-whatsapp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2606.0
-PORTREVISION=	1
+DISTVERSION=	0.2608.0
+PORTREVISION=	3
 CATEGORIES=	net-im
 
 MAINTAINER=	juw@posteo.de
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/../../LICENSE
 
 LIB_DEPENDS=	libolm.so:security/olm
 
-USES=		go:1.26+,modules
+USES=		go:modules
 USE_RC_SUBR=	mautrix_whatsapp
 
 GO_MODULE=	go.mau.fi/mautrix-whatsapp

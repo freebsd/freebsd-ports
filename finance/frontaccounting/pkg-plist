@@ -73,6 +73,7 @@
 %%WWWDIR%%/company/0/js_cache/index.php
 %%WWWDIR%%/company/0/pdf_files/index.php
 %%WWWDIR%%/company/0/reporting/index.php
+%%WWWDIR%%/company/examples/reporting/email_template.php
 %%WWWDIR%%/company/index.php
 %%WWWDIR%%/config.default.php
 %%WWWDIR%%/dimensions/dimension_entry.php
@@ -540,10 +541,10 @@
 %%WWWDIR%%/sql/alter2.3.php
 %%WWWDIR%%/sql/alter2.3.sql
 %%WWWDIR%%/sql/alter2.3rc.sql
-%%WWWDIR%%/sql/alter%%APACHE_VERSION%%.php
-%%WWWDIR%%/sql/alter%%APACHE_VERSION%%.sql
-%%WWWDIR%%/sql/alter%%APACHE_VERSION%%rc1.php
-%%WWWDIR%%/sql/alter%%APACHE_VERSION%%rc1.sql
+%%WWWDIR%%/sql/alter2.4.php
+%%WWWDIR%%/sql/alter2.4.sql
+%%WWWDIR%%/sql/alter2.4rc1.php
+%%WWWDIR%%/sql/alter2.4rc1.sql
 %%WWWDIR%%/sql/alter2.sql
 %%WWWDIR%%/sql/en_US-demo.sql
 %%WWWDIR%%/sql/en_US-new.sql

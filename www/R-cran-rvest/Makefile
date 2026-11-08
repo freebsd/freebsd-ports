@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Easily Harvest (Scrape) Web Pages
-WWW=		https://cran.r-project.org/web/packages/rvest/
+WWW=		https://cran.r-project.org/package=rvest
 
 LICENSE=	MIT
 

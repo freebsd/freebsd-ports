@@ -1,8 +1,8 @@
 -- Guard basename() with #ifdef __linux__ since it is only called from Linux-specific
 -- code; without the guard Clang emits -Wunneeded-internal-declaration treated as error.
---- third_party/kineto/libkineto/src/ThreadUtil.cpp.orig	2026-05-16 03:52:38 UTC
+--- third_party/kineto/libkineto/src/ThreadUtil.cpp.orig	2026-10-28 18:15:59 UTC
 +++ third_party/kineto/libkineto/src/ThreadUtil.cpp
-@@ -130,11 +130,13 @@ constexpr size_t kMaxThreadNameLength = 16;
+@@ -132,11 +132,13 @@ constexpr size_t kMaxThreadNameLength = 16;
  namespace {
  constexpr size_t kMaxThreadNameLength = 16;
  

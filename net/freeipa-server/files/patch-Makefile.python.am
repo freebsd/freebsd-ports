@@ -1,0 +1,15 @@
+--- Makefile.python.am.orig	2025-01-15 09:52:47 UTC
++++ Makefile.python.am
+@@ -25,9 +25,10 @@ install-exec-local: $(top_builddir)/ipasetup.py
+ 		    build \
+ 		        --build-base "$(abs_builddir)/build" \
+ 		    install \
+-		        --prefix "$(DESTDIR)$(prefix)" \
++		        --root "$(DESTDIR)" \
++		        --prefix "$(prefix)" \
+ 		        --single-version-externally-managed \
+-		        --record "$(DESTDIR)$(pkgpythondir)/install_files.txt" \
++		        --record "$(abs_builddir)/install_files.txt" \
+ 		        --optimize 1 \
+ 		        $(PYTHON_INSTALL_EXTRA_OPTIONS); \
+ 	fi

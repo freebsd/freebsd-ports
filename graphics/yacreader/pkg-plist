@@ -10,4 +10,6 @@ share/man/man1/YACReader.1.gz
 share/man/man1/YACReaderLibrary.1.gz
 %%DATADIR%%/server/docroot/css/webui.css
 %%DATADIR%%/server/docroot/images/webui/YACLibraryServer.svg
+%%DATADIR%%/server/docroot/images/webui/app-store-badge.svg
+%%DATADIR%%/server/docroot/images/webui/google-play-badge.png
 %%DATADIR%%/server/docroot/js/webui.js

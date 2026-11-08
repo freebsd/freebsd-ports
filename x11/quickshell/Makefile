@@ -1,7 +1,6 @@
 PORTNAME=	quickshell
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.0
-PORTREVISION=	1
+DISTVERSION=	0.3.2
 CATEGORIES=	x11
 MASTER_SITES=	https://git.outfoxxed.me/${PORTNAME}/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -61,7 +60,8 @@ X11_USE=		gl=egl,gbm,gl \
 			xorg=xcb
 X11_CMAKE_BOOL=		X11
 
-GIT_COMMIT_HASH=	59e9c47b0eb48a9e4bcf9631fa062ee939bd2e83
+# git ls-remote --tags https://git.outfoxxed.me/quickshell/quickshell 'refs/tags/${DISTVERSIONFULL}^{}'
+GIT_COMMIT_HASH=	4f508be500dea6e5732cc3d50382a0048b17e7b1
 
 .include <bsd.port.options.mk>
 

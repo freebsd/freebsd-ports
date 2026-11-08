@@ -1,4 +1,4 @@
---- base/server/python/pki/server/instance.py.orig	2025-08-05 19:20:05 UTC
+--- base/server/python/pki/server/instance.py.orig	2026-07-28 16:37:15 UTC
 +++ base/server/python/pki/server/instance.py
 @@ -50,9 +50,6 @@ class PKIInstance(pki.server.PKIServer):
  class PKIInstance(pki.server.PKIServer):
@@ -31,23 +31,20 @@
      def execute(
              self, command,
              as_current_user=False,
-@@ -196,20 +186,24 @@ class PKIInstance(pki.server.PKIServer):
+@@ -196,7 +186,7 @@ class PKIInstance(pki.server.PKIServer):
              else:
                  instance_id = '%s@%s' % (self.type, self.name)
  
 -            prefix = []
 +            subprocess_kwargs = {}
  
--            # by default run pkidaemon as systemd user
-+            # by default run commands as service user
+             # by default run pkidaemon as systemd user
              if not as_current_user:
+@@ -205,11 +195,15 @@ class PKIInstance(pki.server.PKIServer):
  
-                 current_user = pwd.getpwuid(os.getuid()).pw_name
- 
--                # switch to systemd user if different from current user
-+                # switch to service user if different from current user
+                 # switch to systemd user if different from current user
                  if current_user != self.user:
--                    prefix.extend(['/usr/sbin/runuser', '-u', self.user, '--'])
+-                    prefix.extend(['runuser', '-u', self.user, '--'])
 +                    subprocess_kwargs.update({
 +                        'user': self.user,
 +                        'group': self.group,
@@ -92,35 +89,47 @@
  
          return super().execute(
              command,
-@@ -257,8 +251,6 @@ class PKIInstance(pki.server.PKIServer):
- 
+@@ -258,8 +252,6 @@ class PKIInstance(pki.server.PKIServer):
          self.create_registry()
  
+         # Create symlink to enable the instance
 -        self.symlink(PKIInstance.UNIT_FILE, self.unit_file, exist_ok=True)
 -
      def create_libs(self, force=False):
  
          if not self.with_maven_deps:
-@@ -400,9 +392,6 @@ class PKIInstance(pki.server.PKIServer):
+@@ -401,10 +393,6 @@ class PKIInstance(pki.server.PKIServer):
  
      def remove(self, remove_conf=False, remove_logs=False, force=False):
  
--        logger.info('Removing %s', self.unit_file)
--        pki.util.unlink(self.unit_file, force=force)
+-        if os.path.exists(self.unit_file):
+-            logger.info('Removing %s', self.unit_file)
+-            pki.util.unlink(self.unit_file, force=force)
 -
          self.remove_registry(force=force)
  
          super().remove(
-@@ -776,8 +765,6 @@ class PKIInstance(pki.server.PKIServer):
+@@ -529,9 +517,6 @@ class PKIInstance(pki.server.PKIServer):
+ 
+                 # add the certificate, key, and chain
+                 cmd = [
+-                    'runuser',
+-                    '-u', self.user,
+-                    '--',
+                     'pki',
+                     '-d', self.nssdb_dir,
+                     '-f', self.password_conf
+@@ -787,9 +772,6 @@ class PKIInstance(pki.server.PKIServer):
          csr_file = self.csr_file(cert_id)
  
          cmd = [
--            '/usr/sbin/runuser',
--            '-u', self.user, '--',
+-            'runuser',
+-            '-u', self.user,
+-            '--',
              'pki',
              '-d', self.nssdb_dir,
              '-f', self.password_conf
-@@ -803,7 +790,11 @@ class PKIInstance(pki.server.PKIServer):
+@@ -815,7 +797,11 @@ class PKIInstance(pki.server.PKIServer):
  
          logger.debug('Command: %s', ' '.join(cmd))
  
@@ -133,16 +142,17 @@
  
      def cert_create(
              self, cert_id=None,
-@@ -870,8 +861,6 @@ class PKIInstance(pki.server.PKIServer):
+@@ -882,9 +868,6 @@ class PKIInstance(pki.server.PKIServer):
              cert_file = self.cert_file(cert_id)
  
              cmd = [
--                '/usr/sbin/runuser',
--                '-u', self.user, '--',
+-                'runuser',
+-                '-u', self.user,
+-                '--',
                  'pki',
                  '-d', self.nssdb_dir,
                  '-f', self.password_conf
-@@ -900,7 +889,11 @@ class PKIInstance(pki.server.PKIServer):
+@@ -913,7 +896,11 @@ class PKIInstance(pki.server.PKIServer):
  
              logger.debug('Command: %s', ' '.join(cmd))
  

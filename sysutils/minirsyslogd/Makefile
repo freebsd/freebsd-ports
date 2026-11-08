@@ -7,6 +7,8 @@ MASTER_SITES=	http://redundancy.redundancy.org/mirror/
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Minimal, fast and secure syslog receiver
 
+LICENSE=	PD
+
 USE_RC_SUBR=	minirsyslogd
 
 do-build:

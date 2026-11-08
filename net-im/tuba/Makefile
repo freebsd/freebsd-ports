@@ -1,11 +1,12 @@
 PORTNAME=	Tuba
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.3
+DISTVERSION=	0.11.1
 CATEGORIES=	net-im
+MASTER_SITES=	https://codeberg.org/GeopJr/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
 MAINTAINER=	nxjoseph@FreeBSD.org
 COMMENT=	Browse the Fediverse
-WWW=		https://github.com/GeopJr/Tuba \
+WWW=		https://codeberg.org/GeopJr/Tuba \
 		https://tuba.geopjr.dev
 
 LICENSE=	GPLv3+
@@ -20,10 +21,10 @@ LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 
 USES=		desktop-file-utils gettext-tools gnome meson pkgconfig \
 		vala:build
-USE_GITHUB=	yes
-GH_ACCOUNT=	GeopJr
 USE_GNOME=	cairo gdkpixbuf glib20 gtk40 gtksourceview5 libadwaita libxml2
 GLIB_SCHEMAS=	dev.geopjr.Tuba.gschema.xml
+
+WRKSRC=		${WRKDIR}/tuba
 
 OPTIONS_DEFAULT=	CLAPPER GNOMEKEYRING GSTREAMER SPELLING WEBP
 OPTIONS_GROUP=		FEATURES
@@ -53,7 +54,7 @@ SPELLING_MESON_ENABLED=		spelling
 WEBP_RUN_DEPENDS=		webp-pixbuf-loader>=0:graphics/webp-pixbuf-loader
 
 post-patch:
-	@${REINPLACE_CMD} '176,190d' ${WRKSRC}/meson.build
+	@${REINPLACE_CMD} '232,246d' ${WRKSRC}/meson.build
 
 post-install:
 	(cd ${BUILD_WRKSRC} && \

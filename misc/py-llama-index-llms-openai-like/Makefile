@@ -1,5 +1,5 @@
 PORTNAME=	llama-index-llms-openai-like
-PORTVERSION=	0.7.2
+PORTVERSION=	0.8.1
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ LICENSE=	MIT
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}llama-index-core>=0.14.3:misc/py-llama-index-core@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}llama-index-llms-openai>=0.7.0:misc/py-llama-index-llms-openai@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}llama-index-llms-openai>=0.8.0:misc/py-llama-index-llms-openai@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517

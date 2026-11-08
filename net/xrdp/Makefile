@@ -1,11 +1,14 @@
 PORTNAME=	xrdp
 DISTVERSION=	0.10.6.1
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/neutrinolabs/${PORTNAME}/releases/download/v${DISTVERSION}/
 DIST_SUBDIR?=	${PORTNAME}
 
 PATCH_SITES=	https://github.com/neutrinolabs/${PORTNAME}/commit/
+PATCHFILES=	70cc370.patch
+PATCH_DIST_STRIP= -p1
 
 MAINTAINER=	meta@FreeBSD.org
 COMMENT=	Open source Remote Desktop Protocol (RDP) server
@@ -41,7 +44,7 @@ INSTALL_TARGET=	install-strip
 
 LDFLAGS+=	-lssl
 CONFLICTS=	xrdp-devel
-SUB_FILES=	pkg-deinstall pkg-install pkg-message
+SUB_FILES=	pkg-message
 SUB_LIST=	OPENSSLBASE=${OPENSSLBASE}
 
 OPTIONS_DEFINE=			DEBUG FUSE IPV6
@@ -70,8 +73,8 @@ OPUS_CONFIGURE_ENABLE=		opus
 X264_LIB_DEPENDS=		libx264.so:multimedia/libx264
 X264_CONFIGURE_ENABLE=		x264
 
-GROUP=		_xrdp
-USER=		_xrdp
+GROUPS=		_xrdp
+USERS=		_xrdp
 
 .include <bsd.port.pre.mk>
 

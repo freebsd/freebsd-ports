@@ -1,6 +1,6 @@
---- content/utility/utility_blink_platform_with_sandbox_support_impl.h.orig	2025-03-05 08:14:56 UTC
+--- content/utility/utility_blink_platform_with_sandbox_support_impl.h.orig	2026-08-12 09:02:10 UTC
 +++ content/utility/utility_blink_platform_with_sandbox_support_impl.h
-@@ -34,7 +34,7 @@ class UtilityBlinkPlatformWithSandboxSupportImpl : pub
+@@ -38,7 +38,7 @@ class UtilityBlinkPlatformWithSandboxSupportImpl : pub
  
   private:
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \

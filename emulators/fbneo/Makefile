@@ -1,6 +1,5 @@
 PORTNAME=	fbneo
-DISTVERSION=	1.0.0.3.20250406
-PORTREVISION=	1
+DISTVERSION=	1.0.0.3.20260816
 CATEGORIES=	emulators
 
 MAINTAINER=	acm@FreeBSD.org
@@ -17,9 +16,9 @@ BUILD_DEPENDS=	nasm>0:devel/nasm
 USES=		compiler:c11 gl gmake perl5 sdl shebangfix
 
 USE_GITHUB=     yes
-GH_ACCOUNT=     finalburnneo
+GH_ACCOUNT=     libretro
 GH_PROJECT=     FBNeo
-GH_TAGNAME=     83c57f2b85787091fd1adc17e27d62043fbbab3a
+GH_TAGNAME=     0332bb983c8f8a3e9b61cb79ade30f97a5032535
 
 USE_GL=		gl
 USE_SDL=	sdl2 image2
@@ -31,6 +30,7 @@ PLIST_DIRS=	share/fbneo
 
 MAKEFILE=	makefile
 ALL_TARGET=	sdl2
+MAKE_ENV=	RELEASEBUILD=1
 SUB_FILES=	pkg-message
 
 do-install:

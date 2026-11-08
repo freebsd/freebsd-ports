@@ -8,7 +8,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Web Syslog and IT Event Viewer
 WWW=		https://loganalyzer.adiscon.com/
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cpe php:web,flavors

@@ -1,0 +1,2 @@
+@sample %%APACHEETCDIR%%/modules.d/240_mod_lookup_identity.conf.sample
+%%APACHEMODDIR%%/mod_lookup_identity.so

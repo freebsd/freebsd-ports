@@ -1,6 +1,6 @@
---- base/process/process_metrics_openbsd.cc.orig	2025-10-02 04:28:32 UTC
+--- base/process/process_metrics_openbsd.cc.orig	2026-09-25 15:26:43 UTC
 +++ base/process/process_metrics_openbsd.cc
-@@ -6,73 +6,85 @@
+@@ -6,73 +6,83 @@
  
  #include <stddef.h>
  #include <stdint.h>
@@ -9,8 +9,6 @@
  #include <sys/sysctl.h>
 +#include <sys/vmmeter.h>
  
-+#include <kvm.h>
-+
  #include "base/memory/ptr_util.h"
  #include "base/types/expected.h"
 +#include "base/values.h"
@@ -122,7 +120,7 @@
    struct vmtotal vmtotal;
    unsigned long mem_total, mem_free, mem_inactive;
    size_t len = sizeof(vmtotal);
-@@ -85,9 +97,60 @@ size_t GetSystemCommitCharge() {
+@@ -85,9 +95,60 @@ size_t GetSystemCommitCharge() {
    mem_free = vmtotal.t_free;
    mem_inactive = vmtotal.t_vm - vmtotal.t_avm;
  
