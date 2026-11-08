@@ -225,6 +225,7 @@
     SUBDIR += neovim
     SUBDIR += neovim-gtk
     SUBDIR += neovim-qt
+    SUBDIR += nerd-icons.el
     SUBDIR += notepadnext
     SUBDIR += novelwriter
     SUBDIR += nvi-m17n

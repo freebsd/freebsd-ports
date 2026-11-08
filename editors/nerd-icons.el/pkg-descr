@@ -1,0 +1,6 @@
+nerd-icons.el is a library for easily using Nerd Font icons inside
+Emacs.  It is an alternative to all-the-icons, and works in both the GUI
+and the terminal.  In graphical Emacs, icons are rendered with Symbols
+Nerd Font Mono by default, but any Nerd Font can be used by setting
+nerd-icons-font-family.  In a terminal, the terminal's font must be a
+Nerd Font.
