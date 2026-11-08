@@ -4,7 +4,7 @@ CATEGORIES=	net linux
 MASTER_SITES=	https://cdn.devolutions.net/download/Linux/RDM/${DISTVERSION}/
 DISTNAME=	RemoteDesktopManager_${DISTVERSION}_amd64
 EXTRACT_SUFX=	.deb
-EXTRACT_ONLY=	${DISTNAME}.tar.xz
+EXTRACT_ONLY=	# empty, do-extract reads the archive in place
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Centralize, manage and secure remote connections
@@ -19,10 +19,9 @@ LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell auto-accept
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	only amd64 binaries are provided by the vendor
 
-EXTRACT_DEPENDS=	deb2targz:archivers/deb2targz
 RUN_DEPENDS=	dbus-run-session:devel/dbus
 
-USES=		desktop-file-utils linux:rl9 shared-mime-info tar:xz
+USES=		desktop-file-utils linux:rl9 shared-mime-info
 USE_LINUX=	alsa-plugins-oss alsa-plugins-pulseaudio alsalib at-spi2-atk \
 		atk ca-certificates cups-libs dbuslibs dri enchant2 \
 		fontconfig freetype gdkpixbuf2 gstreamer1 gtk3 harfbuzz \
@@ -36,11 +35,10 @@ SUB_FILES=	${PORTNAME}
 
 NO_WRKSUBDIR=	yes
 
-pre-extract:
-	${LOCALBASE}/bin/deb2targz ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}
-
-post-extract:
-	@${RM} ${DISTDIR}/${DISTNAME}.tar.xz
+do-extract:
+	@${MKDIR} ${WRKSRC}
+	@${TAR} -xOf ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} data.tar.xz | \
+		${TAR} -xf - -C ${WRKSRC}
 
 post-patch:
 	@${REINPLACE_CMD} -i "" -e 's,^Exec=remotedesktopmanager,Exec=${PREFIX}/bin/${PORTNAME},' \
