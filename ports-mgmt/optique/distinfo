@@ -1,4 +1,4 @@
-TIMESTAMP = 1792666014
+TIMESTAMP = 1794140933
 SHA256 (rust/crates/allocator-api2-0.2.21.crate) = 683d7910e743518b0e34f1186f92494becacb047c7b6bf616c96772180fef923
 SIZE (rust/crates/allocator-api2-0.2.21.crate) = 63622
 SHA256 (rust/crates/anstream-1.0.0.crate) = 824a212faf96e9acacdbd09febd34438f8f711fb84e09a8916013cd7815ca28d
@@ -215,5 +215,5 @@ SHA256 (rust/crates/windows_x86_64_msvc-0.52.6.crate) = 589f6da84c646204747d1270
 SIZE (rust/crates/windows_x86_64_msvc-0.52.6.crate) = 832564
 SHA256 (rust/crates/zmij-1.0.23.crate) = 29666d0abbfad1e3dc4dcf6144730dd3a3ab225bbbdac83319345b1b44ccfc1b
 SIZE (rust/crates/zmij-1.0.23.crate) = 28612
-SHA256 (sdalu-optique-v0.2.0_GH0.tar.gz) = 03fb67e33aab330a6579247cdad1d56e93e8cec498176b0de3918683194b8c03
-SIZE (sdalu-optique-v0.2.0_GH0.tar.gz) = 221330
+SHA256 (sdalu-optique-v0.5.0_GH0.tar.gz) = f5c4f4f249986fe331fa4835344be37b1755f2777a182c453dd8b5a8415c85dc
+SIZE (sdalu-optique-v0.5.0_GH0.tar.gz) = 610464
