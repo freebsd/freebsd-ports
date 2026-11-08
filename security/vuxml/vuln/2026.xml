@@ -1,3 +1,34 @@
+  <vuln vid="eb135656-db92-11f1-83b3-3c7c3fba4204">
+    <topic>PowerDNS Authoritative Server -- Denial of Service vulnerability</topic>
+    <affects>
+	<package>
+	  <name>powerdns</name>
+	  <range><lt>5.1.5</lt></range>
+	</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PowerDNS Team reports:</p>
+	<blockquote cite="https://doc.powerdns.com/authoritative/security-advisories/powerdns-advisory-2026-13.html">
+	  <p>CVE ID: CVE-2026-73206<br/><br/>A malicious server can send a crafted reply that leads to high resource
+	     utilization decompression name pointers in DNS packets.<br/><br/>This is a multi-vendor issue. Multiple
+	     DNS vendors are releasing fixed version of their products.<br/><br/>The remedy is: upgrade to a patched
+	     version. The patched version imposes limits on the number of decompression done for a single name and for
+	     a DNS packet as a whole.
+	  </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-73206</cvename>
+      <url>https://doc.powerdns.com/authoritative/security-advisories/powerdns-advisory-2026-13.html</url>
+    </references>
+    <dates>
+      <discovery>2026-07-10</discovery>
+      <entry>2026-11-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f96ffef6-db4c-11f1-985e-901b0edee044">
     <topic>py-svglib -- 2.3.3 remediates a incomplete fix in 2.3.1</topic>
     <affects>
