@@ -1,6 +1,6 @@
-TIMESTAMP = 1792968935
-SHA256 (jiter-0.18.0.tar.gz) = a0ca63fd9450a212e4e658d4cfe0ab4977c4f9b0003c68828b843c65e27662ff
-SIZE (jiter-0.18.0.tar.gz) = 234470
+TIMESTAMP = 1794119370
+SHA256 (jiter-0.19.0.tar.gz) = ba3064f8be276d7cfb83c2fb85c858be533da2c2f80f9b048c3781b45a57a195
+SIZE (jiter-0.19.0.tar.gz) = 665248
 SHA256 (rust/crates/ahash-0.8.12.crate) = 5a15f179cd60c4584b8a8c596927aadc462e27f2ca70c04e0071964a73ba7a75
 SIZE (rust/crates/ahash-0.8.12.crate) = 43413
 SHA256 (rust/crates/aho-corasick-1.1.5.crate) = c982642fa9e8606056828ee9a8505737230110bb1099153c79efe865c59d12ba
