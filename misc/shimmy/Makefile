@@ -1,10 +1,10 @@
 PORTNAME=	shimmy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.6.5
+DISTVERSION=	2.6.6
 CATEGORIES=	misc
 
 MAINTAINER=	tagattie@FreeBSD.org
-COMMENT=	Privacy-first alternative to Ollama
+COMMENT=	Pure-Rust WebGPU inference engine
 WWW=		https://github.com/Michael-A-Kuykendall/shimmy
 
 LICENSE=	APACHE20
@@ -15,10 +15,7 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	Michael-A-Kuykendall
 
-PLIST_FILES=	bin/create_realistic_safetensors \
-		bin/create_test_safetensors \
-		bin/${PORTNAME} \
-		bin/test_real_safetensors
+PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	CHANGELOG.md CONTRIBUTING.md DEVELOPERS.md README.md \
 		ROADMAP.md SECURITY.md
 
