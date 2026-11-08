@@ -1,3 +1,42 @@
+  <vuln vid="f96ffef6-db4c-11f1-985e-901b0edee044">
+    <topic>py-svglib -- 2.3.3 remediates a incomplete fix in 2.3.1</topic>
+    <affects>
+    <package>
+      <name>py311-svglib</name>
+      <name>py312-svglib</name>
+      <name>py313-svglib</name>
+      <name>py313t-svglib</name>
+      <name>py314-svglib</name>
+      <name>py314t-svglib</name>
+      <name>py315-svglib</name>
+      <range><lt>2.3.3</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Dinu Gherman reports:</p>
+	<blockquote cite="https://github.com/deeplook/svglib/security/advisories/GHSA-xpfm-fw4h-qxwv">
+	<p>The 2.3.1 fix for GHSA-555j-qj3j-c8jv stops "renderUse()" after
+	"MAX_USE_EXPANSIONS" (10,000) expansions. But each expansion deep-copies and
+	renders the whole referenced subtree, so the total work is 10,000 × (subtree
+	size), and the subtree size is unbounded. Nested &lt;use&gt; groups whose leaf
+	group holds N rects make about 9,000 of the allowed expansions clone that leaf.
+	In svglib 2.3.2, a 2,254-byte SVG takes 68 s, and a 6,454-byte one (200 rects)
+	takes 247 s and 2.6 GB RSS. The cost grows linearly with N. Only the SVG needs
+	to be attacker-controlled, as in GHSA-555j. main (6e79811) behaves the same (50
+	rects: 62 s / 727 MB).</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/deeplook/svglib/security/advisories/GHSA-xpfm-fw4h-qxwv</url>
+    </references>
+    <dates>
+      <discovery>2026-11-04</discovery>
+      <entry>2026-11-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="de74d92b-4f87-4334-973b-5d24a7c4528a">
     <topic>gstreamer1 -- multiple vulnerabilities</topic>
     <affects>
