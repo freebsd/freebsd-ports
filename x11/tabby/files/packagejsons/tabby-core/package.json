@@ -1,0 +1,41 @@
+{
+  "name": "tabby-core",
+  "version": "1.0.231-nightly.0",
+  "description": "Tabby core",
+  "keywords": [
+    "tabby-builtin-plugin"
+  ],
+  "main": "dist/index.js",
+  "typings": "typings/index.d.ts",
+  "scripts": {
+    "build": "webpack --progress --color --display-modules",
+    "watch": "webpack --progress --color --watch"
+  },
+  "files": [
+    "dist",
+    "typings"
+  ],
+  "author": "Tabby Developers",
+  "license": "MIT",
+  "devDependencies": {
+    "bootstrap": "^5.3.0-alpha.1",
+    "color": "^4",
+    "@types/color": "^4",
+    "deepmerge": "^4",
+    "fuzzy-search": "^3",
+    "js-yaml": "^4",
+    "messageformat": "^2",
+    "mixpanel": "^0.17.0",
+    "ngx-translate-messageformat-compiler": "^4",
+    "uuid": "^9"
+  },
+  "peerDependencies": {
+    "@angular/animations": "^15",
+    "@angular/common": "^15",
+    "@angular/core": "^15",
+    "@angular/forms": "^15",
+    "@angular/platform-browser": "^15",
+    "@angular/platform-browser-dynamic": "^15",
+    "rxjs": "^7"
+  }
+}

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Tabby
+Comment=Highly configurable terminal emulator with SSH and serial support
+Icon=tabby
+Exec=tabby %U
+Categories=System;TerminalEmulator;
+Terminal=false
+StartupWMClass=tabby
+MimeType=x-scheme-handler/tabby;
+Keywords=terminal;emulator;ssh;serial;

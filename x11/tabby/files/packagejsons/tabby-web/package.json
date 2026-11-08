@@ -1,0 +1,29 @@
+{
+  "name": "tabby-web",
+  "version": "1.0.231-nightly.0",
+  "description": "Web-specific bindings",
+  "keywords": [
+    "tabby-builtin-plugin"
+  ],
+  "main": "dist/index.js",
+  "typings": "typings/index.d.ts",
+  "scripts": {
+    "build": "webpack --progress --color",
+    "watch": "webpack --progress --color --watch"
+  },
+  "files": [
+    "dist",
+    "typings"
+  ],
+  "author": "Tabby Developers",
+  "license": "MIT",
+  "peerDependencies": {
+    "@angular/core": "^15"
+  },
+  "devDependencies": {
+    "@vaadin/vaadin-context-menu": "^5",
+    "bootstrap": "^4",
+    "bowser": "^2",
+    "copy-text-to-clipboard": "^3"
+  }
+}

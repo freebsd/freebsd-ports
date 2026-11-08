@@ -1,0 +1,15 @@
+--- tabby-core/src/configDefaults.yaml.orig	2026-10-06 20:10:47 UTC
++++ tabby-core/src/configDefaults.yaml
+@@ -40,10 +40,10 @@
+   ssh:
+     disableDynamicTitle: true
+ recoverTabs: true
+-enableAnalytics: true
++enableAnalytics: false
+ enableWelcomeTab: true
+ electronFlags: []
+-enableAutomaticUpdates: true
++enableAutomaticUpdates: false
+ hideTray: false
+ version: 1
+ vault: null

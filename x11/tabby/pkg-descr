@@ -1,0 +1,3 @@
+Tabby is a configurable terminal emulator built on Electron.  It provides
+tabs and split panes, a built-in SSH and Telnet client with an encrypted
+connection manager, serial terminal support, theming and a plugin system.

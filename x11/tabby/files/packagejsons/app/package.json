@@ -1,0 +1,69 @@
+{
+  "name": "tabby",
+  "description": "A terminal for a modern age",
+  "private": true,
+  "repository": "https://github.com/Eugeny/tabby",
+  "author": {
+    "name": "Tabby Developers",
+    "email": "e@ajenti.org"
+  },
+  "main": "dist/main.js",
+  "version": "1.0.0-alpha.1",
+  "scripts": {
+    "postinstall": "patch-package",
+    "build": "webpack --progress --color --display-modules",
+    "watch": "webpack --progress --color --watch"
+  },
+  "dependencies": {
+    "@electron/remote": "^2",
+    "@npmcli/arborist": "^9",
+    "any-promise": "^1",
+    "atomically": "^2",
+    "dunder-proto": "^1",
+    "electron-config": "2.0.0",
+    "electron-debug": "^3",
+    "electron-promise-ipc": "^2",
+    "electron-updater": "^5",
+    "fontmanager-redux": "1.1.0",
+    "glasstron": "0.1.1",
+    "js-yaml": "4.1.0",
+    "keytar": "^7",
+    "mz": "^2",
+    "native-process-working-directory": "^1",
+    "node-abi": "4.35.0",
+    "node-pty": "^1.2.0-beta.8",
+    "russh": "0.1.38",
+    "rxjs": "^7",
+    "yargs": "^18"
+  },
+  "optionalDependencies": {
+    "@tabby-gang/windows-process-tree": "^0.6.1",
+    "macos-native-processlist": "^2",
+    "patch-package": "^8",
+    "serialport": "11.0.1",
+    "serialport-binding-webserialapi": "^1",
+    "windows-native-registry": "^3"
+  },
+  "devDependencies": {
+    "@ngx-translate/core": "^14",
+    "@types/mz": "2.7.4",
+    "@types/node": "22"
+  },
+  "peerDependencies": {
+    "tabby-community-color-schemes": "*",
+    "tabby-core": "*",
+    "tabby-electron": "*",
+    "tabby-local": "*",
+    "tabby-plugin-manager": "*",
+    "tabby-serial": "*",
+    "tabby-settings": "*",
+    "tabby-ssh": "*",
+    "tabby-terminal": "*"
+  },
+  "resolutions": {
+    "node-abi": "4.35.0",
+    "node-gyp": "^13",
+    "nan": "2.22.2",
+    "node-addon-api": "^8"
+  }
+}
