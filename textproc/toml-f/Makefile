@@ -11,8 +11,6 @@ WWW=		https://toml-f.github.io/toml-f/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE-MIT
 
-BROKEN_aarch64=	cannot find an intrinsic module named 'ieee_arithmetic'
-
 USES=		cmake:testing fortran tar:xz
 USE_LDCONFIG=	yes
 

@@ -10,8 +10,6 @@ WWW=		https://octopus-code.org/documentation/15/
 
 LICENSE=	GPLv2
 
-BROKEN_aarch64=	fails to build: Cannot find an intrinsic module named 'ieee_arithmetic'
-
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libarpack.so:math/arpack-ng@nompi \
 		libblas.so:math/blas \

@@ -14,8 +14,6 @@ WWW=		https://zenodo.org/record/5799134
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_aarch64=	fails to build: Cannot open module file 'ieee_arithmetic.mod' for reading
-
 LIB_DEPENDS=	libGBTO.so:science/gbtolib \
 		libopenblas.so:math/openblas
 

@@ -10,8 +10,6 @@ WWW=		https://github.com/dftd3/simple-dftd3
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_aarch64=	cannot open module file 'ieee_arithmetic.mod' for reading at (1): No such file or directory
-
 BUILD_DEPENDS=	mstore>0:science/mstore
 LIB_DEPENDS=	libmctc-lib.so:science/mctc-lib \
 		libopenblas.so:math/openblas \
