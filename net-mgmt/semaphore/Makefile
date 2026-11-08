@@ -13,6 +13,10 @@ WWW=		https://semaphoreui.com/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+ONLY_FOR_ARCHS=	aarch64 amd64
+ONLY_FOR_ARCHS_REASON=	modernc.org/sqlite ships outdated FreeBSD bindings \
+			for the other architectures
+
 RUN_DEPENDS=	ansible:sysutils/py-ansible-core@${PY_FLAVOR} \
 		git:devel/git
 
