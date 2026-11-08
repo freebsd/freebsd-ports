@@ -3,7 +3,7 @@ DISTVERSION=	2.20.0
 PORTREVISION=	2
 CATEGORIES=	devel elisp
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Modern list library for Emacs
 WWW=		https://github.com/magnars/dash.el
 
