@@ -384,10 +384,10 @@
     SUBDIR += tauthon
     SUBDIR += tcbasic
     SUBDIR += tcc
+    SUBDIR += tcl
     SUBDIR += tcl-manual
     SUBDIR += tcl-wrapper
     SUBDIR += tcl86
-    SUBDIR += tcl
     SUBDIR += tclX
     SUBDIR += tolua
     SUBDIR += tolua++

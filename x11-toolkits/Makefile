@@ -258,9 +258,9 @@
     SUBDIR += thentenaar-motif
     SUBDIR += thentenaar-motif-devel
     SUBDIR += tix
+    SUBDIR += tk
     SUBDIR += tk-wrapper
     SUBDIR += tk86
-    SUBDIR += tk
     SUBDIR += tkdnd
     SUBDIR += tkshape
     SUBDIR += tktable

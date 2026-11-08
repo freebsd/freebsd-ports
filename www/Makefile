@@ -1522,8 +1522,8 @@
     SUBDIR += php-http
     SUBDIR += php-laminas-escaper
     SUBDIR += php-laminas-feed
-    SUBDIR += php-url-highlight
     SUBDIR += php-solr
+    SUBDIR += php-url-highlight
     SUBDIR += php82-opcache
     SUBDIR += php82-session
     SUBDIR += php82-tidy

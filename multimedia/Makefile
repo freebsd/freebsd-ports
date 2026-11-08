@@ -56,10 +56,10 @@
     SUBDIR += ffaudioconverter
     SUBDIR += ffdec
     SUBDIR += ffmpeg
+    SUBDIR += ffmpeg-netint
     SUBDIR += ffmpeg3
     SUBDIR += ffmpeg4
     SUBDIR += ffmpegthumbnailer
-    SUBDIR += ffmpeg-netint
     SUBDIR += ffms2
     SUBDIR += ffnvcodec-headers
     SUBDIR += filebot
