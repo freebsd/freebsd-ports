@@ -1,0 +1,5 @@
+f.el is a modern API for working with files and directories in Emacs
+Lisp.  It provides a consistent set of functions for building and
+splitting paths, testing file properties, reading and writing files,
+and traversing directory trees, with names that follow a predictable
+f-<operation> convention.

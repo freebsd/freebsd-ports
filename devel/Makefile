@@ -713,6 +713,7 @@
     SUBDIR += evemu
     SUBDIR += exomizer
     SUBDIR += expected
+    SUBDIR += f.el
     SUBDIR += f77flow
     SUBDIR += fbthrift
     SUBDIR += fc++
