@@ -38,6 +38,7 @@ CXXFLAGS+=	-Wno-array-bounds # workaround for https://github.com/microsoft/onnxr
 CXXFLAGS+=	-Wno-deprecated-declarations #fixes error: 'vec_lvsl' is deprecated: use assignment for unaligned little endian loads/stores
 #CXXFLAGS+=	-Wno-deprecated-altivec-src-compat #fixes error: current handling of vector bool and vector pixel types in this context are deprecated; the default behaviour will soon change to that implied by the '-altivec-compat=xl' option
 CXXFLAGS+=	-I${WRKSRC}/include/onnxruntime/core/common/logging # otherwise logging.h isn't found
+CXXFLAGS_aarch64=	-Wno-error=unused-const-variable # kleidiai halfgemm_kleidiai.cpp: unused variable 'Sve2p1HalfGemmKernelName' when kernel logging is off
 CXXFLAGS_powerpc64=	-Wno-error=deprecated-altivec-src-compat
 
 BINARY_ALIAS=	patch=gpatch
