@@ -1,4 +1,4 @@
-TIMESTAMP = 1794074900
+TIMESTAMP = 1794155354
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
 SIZE (rust/crates/adler2-2.0.1.crate) = 13366
 SHA256 (rust/crates/ahash-0.8.12.crate) = 5a15f179cd60c4584b8a8c596927aadc462e27f2ca70c04e0071964a73ba7a75
@@ -679,5 +679,5 @@ SHA256 (rust/crates/zlib-rs-0.6.8.crate) = b268e58e7c693d7c271f93ffc4ba3b3804125
 SIZE (rust/crates/zlib-rs-0.6.8.crate) = 215857
 SHA256 (rust/crates/zmij-1.0.23.crate) = 29666d0abbfad1e3dc4dcf6144730dd3a3ab225bbbdac83319345b1b44ccfc1b
 SIZE (rust/crates/zmij-1.0.23.crate) = 28612
-SHA256 (stalwartlabs-vandelay-v1.0.14_GH0.tar.gz) = 95ff70637955acf1b6ac19f63a7ed9517e2b487caf293f456dc3b95d463cd828
-SIZE (stalwartlabs-vandelay-v1.0.14_GH0.tar.gz) = 2782301
+SHA256 (stalwartlabs-vandelay-v1.0.15_GH0.tar.gz) = daf24f8fd405b15d7ef20eb86a50006067027f1a8f31ae41401bca2addb36a8c
+SIZE (stalwartlabs-vandelay-v1.0.15_GH0.tar.gz) = 2785937
