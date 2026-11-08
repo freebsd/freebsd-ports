@@ -1,6 +1,6 @@
---- test/errorshow.jl.orig	2024-08-27 21:19:31 UTC
+--- test/errorshow.jl.orig	2026-10-25 17:06:47 UTC
 +++ test/errorshow.jl
-@@ -713,6 +713,7 @@ backtrace()
+@@ -786,6 +786,7 @@ backtrace()
  backtrace()
  
  # issue #28442
@@ -8,11 +8,11 @@
  @testset "Long stacktrace printing" begin
      f28442(c) = g28442(c + 1)
      g28442(c) = c > 10000 ? (return backtrace()) : f28442(c+1)
-@@ -726,6 +727,7 @@ backtrace()
-     @test occursin("f28442", output[5])
-     @test occursin("the last 2 lines are repeated 5000 more times", output[7])
-     @test lstrip(output[8])[1:7] == "[10003]"
+@@ -948,6 +949,7 @@ end
+     # The cycle is closed, and what follows it is numbered past all of its repetitions
+     @test any(l -> occursin("repeated 13 times", l), output)
+     @test any(l -> occursin("[53] tail", l), output)
 +end
  end
  
- @testset "Line number correction" begin
+ 

@@ -1,6 +1,6 @@
---- stdlib/Test/test/runtests.jl.orig	2024-08-27 21:19:31 UTC
+--- stdlib/Test/test/runtests.jl.orig	2026-10-25 17:06:47 UTC
 +++ stdlib/Test/test/runtests.jl
-@@ -783,13 +783,13 @@ end
+@@ -907,13 +907,13 @@ end
      fail = failures[1]; lines = split(fail.stacktrace, '\n')
      @test length(lines)/2 ≤ 6
      @test fail.testset == "Tests" && fail.source == test_properties_macro_source && fail.ex == "isodd(value)"

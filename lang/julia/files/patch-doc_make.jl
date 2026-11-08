@@ -1,62 +1,35 @@
---- doc/make.jl.orig	2024-08-27 21:19:31 UTC
+--- doc/make.jl.orig	2026-10-25 17:06:47 UTC
 +++ doc/make.jl
-@@ -5,7 +5,30 @@ using Pkg
- empty!(DEPOT_PATH)
- pushfirst!(DEPOT_PATH, joinpath(@__DIR__, "deps"))
+@@ -28,7 +28,31 @@ Pkg.activate(documenter_project_dir)
+ push!(DEPOT_PATH, abspath(Sys.BINDIR, Base.DATAROOTDIR, "julia"))
  using Pkg
+ Pkg.activate(documenter_project_dir)
 -Pkg.instantiate()
 +# Pkg.instantiate()
 +Pkg.develop([
-+    PackageSpec(path="deps/packages/LazilyInitializedFields"),
-+    PackageSpec(path="deps/packages/RegistryInstances"),
 +    PackageSpec(path="deps/packages/AbstractTrees"),
-+    PackageSpec(path="deps/packages/Documenter"),
-+    PackageSpec(path="deps/packages/TranscodingStreams"),
-+    PackageSpec(path="deps/packages/CodecZlib"),
-+    PackageSpec(path="deps/packages/DocumenterInventoryWritingBackport"),
-+    PackageSpec(path="deps/packages/Preferences"),
-+    PackageSpec(path="deps/packages/JLLWrappers"),
-+    PackageSpec(path="deps/packages/OpenSSL_jll"),
-+    PackageSpec(path="deps/packages/Libiconv_jll"),
-+    PackageSpec(path="deps/packages/Git_jll"),
-+    PackageSpec(path="deps/packages/Git"),
-+    PackageSpec(path="deps/packages/Expat_jll"),
 +    PackageSpec(path="deps/packages/ANSIColoredPrinters"),
-+    PackageSpec(path="deps/packages/PrecompileTools"),
-+    PackageSpec(path="deps/packages/Parsers"),
-+    PackageSpec(path="deps/packages/MarkdownAST"),
-+    PackageSpec(path="deps/packages/JSON"),
++    PackageSpec(path="deps/packages/CodecZlib"),
++    PackageSpec(path="deps/packages/DocStringExtensions"),
++    PackageSpec(path="deps/packages/Documenter"),
++    PackageSpec(path="deps/packages/Expat_jll"),
++    PackageSpec(path="deps/packages/Git"),
++    PackageSpec(path="deps/packages/Git_jll"),
++    PackageSpec(path="deps/packages/Git_LFS_jll"),
 +    PackageSpec(path="deps/packages/IOCapture"),
-+    PackageSpec(path="deps/packages/DocStringExtensions")
++    PackageSpec(path="deps/packages/JLLWrappers"),
++    PackageSpec(path="deps/packages/JSON"),
++    PackageSpec(path="deps/packages/LazilyInitializedFields"),
++    PackageSpec(path="deps/packages/Libiconv_jll"),
++    PackageSpec(path="deps/packages/MarkdownAST"),
++    PackageSpec(path="deps/packages/OpenSSH_jll"),
++    PackageSpec(path="deps/packages/Parsers"),
++    PackageSpec(path="deps/packages/PrecompileTools"),
++    PackageSpec(path="deps/packages/Preferences"),
++    PackageSpec(path="deps/packages/RegistryInstances"),
++    PackageSpec(path="deps/packages/StructUtils"),
++    PackageSpec(path="deps/packages/TranscodingStreams")
 +])
  
- using Documenter
- using DocumenterInventoryWritingBackport
-@@ -288,6 +311,13 @@ else
-         collapselevel = 1,
-         sidebar_sitename = false,
-         ansicolor = true,
-+        size_threshold_ignore = [
-+            "base/arrays.md",
-+            "base/base.md",
-+            "base/collections.md",
-+            "manual/unicode-input.md",
-+            "stdlib/LinearAlgebra.md",
-+        ],
-     )
- end
- 
-@@ -299,12 +329,12 @@ makedocs(
-     doctest   = ("doctest=fix" in ARGS) ? (:fix) : ("doctest=only" in ARGS) ? (:only) : ("doctest=true" in ARGS) ? true : false,
-     linkcheck = "linkcheck=true" in ARGS,
-     linkcheck_ignore = ["https://bugs.kde.org/show_bug.cgi?id=136779"], # fails to load from nanosoldier?
--    strict    = true,
-     checkdocs = :none,
-     format    = format,
-     sitename  = "The Julia Language",
-     authors   = "The Julia Project",
-     pages     = PAGES,
-+    remotes   = nothing,
- )
- 
- # Update URLs to external stdlibs (JuliaLang/julia#43199)
+ if "deps" in ARGS
+     exit()

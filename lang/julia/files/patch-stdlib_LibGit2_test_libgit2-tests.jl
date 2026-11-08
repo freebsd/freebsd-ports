@@ -1,6 +1,6 @@
---- stdlib/LibGit2/test/libgit2-tests.jl.orig	2024-08-27 21:19:31 UTC
+--- stdlib/LibGit2/test/libgit2-tests.jl.orig	2026-10-25 17:06:47 UTC
 +++ stdlib/LibGit2/test/libgit2-tests.jl
-@@ -1179,22 +1179,23 @@ mktempdir() do dir
+@@ -1131,22 +1131,23 @@ mktempdir() do dir
              end
          end
  

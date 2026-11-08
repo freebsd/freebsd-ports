@@ -1,6 +1,6 @@
---- Make.inc.orig	2024-04-30 17:45:14 UTC
+--- Make.inc.orig	2026-10-25 17:06:47 UTC
 +++ Make.inc
-@@ -260,7 +260,7 @@ docdir := $(datarootdir)/doc/julia
+@@ -315,7 +315,7 @@ docdir := $(datarootdir)/doc/julia
  libexecdir := $(prefix)/libexec
  datarootdir := $(prefix)/share
  docdir := $(datarootdir)/doc/julia
@@ -9,7 +9,16 @@
  man1dir := $(mandir)/man1
  includedir := $(prefix)/include
  sysconfdir := $(prefix)/etc
-@@ -1339,7 +1339,7 @@ ifeq ($(OS), FreeBSD)
+@@ -1386,7 +1386,7 @@ ifeq ($(USE_SYSTEM_LIBUV), 1)
+ endif
+ 
+ ifeq ($(USE_SYSTEM_LIBUV), 1)
+-  LIBUV := $(LOCALBASE)/lib/libuv-julia.a
++  LIBUV := $(LOCALBASE)/lib/libuv.a
+   LIBUV_INC := $(LOCALBASE)/include
+ else
+   LIBUV := $(build_libdir)/libuv.a
+@@ -1609,7 +1609,7 @@ ifeq ($(OS), FreeBSD)
  endif
  
  ifeq ($(OS), FreeBSD)
@@ -18,13 +27,3 @@
  OSLIBS += -lelf -lkvm -lrt -lpthread -latomic
  
  # Tweak order of libgcc_s in DT_NEEDED,
-@@ -1348,8 +1348,7 @@ OSLIBS += -lgcc_s
- # See #21788
- OSLIBS += -lgcc_s
- 
--OSLIBS += -Wl,--export-dynamic -Wl,--version-script=$(BUILDROOT)/src/julia.expmap \
--	$(NO_WHOLE_ARCHIVE)
-+OSLIBS += -Wl,--export-dynamic $(NO_WHOLE_ARCHIVE)
- endif
- 
- ifeq ($(OS), Darwin)

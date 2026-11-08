@@ -1,10 +1,10 @@
 PORTNAME=	julia
-DISTVERSION=	1.10.5
-PORTREVISION=	1
+DISTVERSION=	1.13.3
 DISTVERSIONSUFFIX=	-full
-CATEGORIES=	lang math
+CATEGORIES=	lang math science
 MASTER_SITES=	https://github.com/JuliaLang/${PORTNAME}/releases/download/v${DISTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+DIST_SUBDIR=	julia-${PORTVERSION}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -14,55 +14,66 @@ WWW=		https://julialang.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-BROKEN=		Fails to build, build crashes
-
 ONLY_FOR_ARCHS=		amd64
 ONLY_FOR_ARCHS_REASON=	Has not been ported to this platform for freebsd
 
-MY_DEPENDS=	7zz:archivers/7-zip \
+BUILD_RUN_DEPENDS=	\
+		7zz:archivers/7-zip \
 		ca_root_nss>=0:security/ca_root_nss \
 		gfortran${_GCC_VER}:lang/gcc${_GCC_VER}
-BUILD_DEPENDS=	patchelf:sysutils/patchelf \
-		cmake:devel/cmake-core \
-		${MY_DEPENDS}
-LIB_DEPENDS=	libcurl.so:ftp/curl \
+BUILD_DEPENDS=	gawk:lang/gawk \
+		patchelf:sysutils/patchelf \
+		gsed:textproc/gsed
+LIB_DEPENDS=	libamd.so:math/suitesparse-amd \
+		libbtf.so:math/suitesparse-btf \
+		libcamd.so:math/suitesparse-camd \
+		libccolamd.so:math/suitesparse-ccolamd \
+		libcholmod.so:math/suitesparse-cholmod \
+		libcolamd.so:math/suitesparse-colamd \
+		libcurl.so:ftp/curl \
 		libdSFMT.so:math/dsfmt \
+		libelf.so:devel/elfutils \
 		libgit2.so:devel/libgit2 \
 		libgmp.so:math/gmp \
+		libklu.so:math/suitesparse-klu \
+		libldl.so:math/suitesparse-ldl \
 		libnghttp2.so:www/libnghttp2 \
+		libmbedcrypto.so:security/mbedtls3 \
 		libmpfr.so:math/mpfr \
 		libopenlibm.so:math/openlibm \
 		libpcre2-8.so:devel/pcre2 \
+		librbio.so:math/suitesparse-rbio \
 		libssh2.so:security/libssh2 \
-		libmbedcrypto.so:security/mbedtls3 \
 		libspqr.so:math/suitesparse-spqr \
 		libumfpack.so:math/suitesparse-umfpack \
-		libutf8proc.so:textproc/utf8proc \
 		libunwind.so:devel/libunwind \
-		libzstd.so:archivers/zstd \
-		libelf.so:devel/elfutils
-RUN_DEPENDS=	${MY_DEPENDS}
+		libutf8proc.so:textproc/utf8proc \
+		libzstd.so:archivers/zstd
 
 BUILD_DEPENDS_amd64=	ittapi>0:devel/ittapi
 BUILD_DEPENDS_i386=	ittapi>0:devel/ittapi
 
 # Do not set USES=fortran to avoid extra-linkage
-USES=		blaslapack:openblas compiler:c++17-lang cpe elfctl gmake \
-		libedit perl5 python shebangfix
+USES=		blaslapack:openblas cmake:indirect compiler:c++17-lang cpe elfctl \
+		gmake libedit llvm:min=20,lib perl5 python shebangfix
+#USES+=	ssl	# Not supported by some artifacts
 _GCC_VER=	${GCC_DEFAULT:S/.//}
 
 DOCS_DISTFILES=	UnicodeData.txt:unicode \
-		Expat.v2.6.2.x86_64-unknown-freebsd.tar.gz:afexpat \
-		Git.v2.44.0.x86_64-unknown-freebsd.tar.gz:afgit \
-		Libiconv.v1.17.0.x86_64-unknown-freebsd.tar.gz:aflibiconv \
-		OpenSSL.v3.0.13.x86_64-unknown-freebsd.tar.gz:afopenssl \
+		${DARC_afexpat}:afexpat \
+		${DARC_afgit}:afgit \
+		${DARC_afgitlfs}:afgitlfs \
+		${DARC_aflibiconv}:aflibiconv \
+		${DARC_afopenssh}:afopenssh \
 		${JPKGSHA1}:jpkg
-DOCS_MASTER_SITES=	https://www.unicode.org/Public/${UNICODE_DATA_VERSION}/ucd/:unicode \
+DOCS_MASTER_SITES=	\
+		https://www.unicode.org/Public/${UNICODE_DATA_VERSION}/ucd/:unicode \
 		https://jp.pkg.julialang.org/registry/${JPKGUUID}/:jpkg \
-		https://github.com/JuliaBinaryWrappers/Expat_jll.jl/releases/download/Expat-v2.6.2+0/:afexpat \
-		https://github.com/JuliaBinaryWrappers/Git_jll.jl/releases/download/Git-v2.44.0+2/:afgit \
-		https://github.com/JuliaBinaryWrappers/Libiconv_jll.jl/releases/download/Libiconv-v1.17.0+0/:aflibiconv \
-		https://github.com/JuliaBinaryWrappers/OpenSSL_jll.jl/releases/download/OpenSSL-v3.0.13+1/:afopenssl
+		https://github.com/JuliaBinaryWrappers/Expat_jll.jl/releases/download/Expat-v2.8.3+0/:afexpat \
+		https://github.com/JuliaBinaryWrappers/Git_jll.jl/releases/download/Git-v2.55.0+0/:afgit \
+		https://github.com/JuliaBinaryWrappers/Git_LFS_jll.jl/releases/download/Git_LFS-v3.7.1+0/:afgitlfs \
+		https://github.com/JuliaBinaryWrappers/Libiconv_jll.jl/releases/download/Libiconv-v1.18.0+0/:aflibiconv \
+		https://github.com/JuliaBinaryWrappers/OpenSSH_jll.jl/releases/download/OpenSSH-v10.5.1+0/:afopenssh
 
 CPE_VENDOR=	julialang
 
@@ -73,6 +84,9 @@ USE_LDCONFIG=	${PREFIX}/lib/julia
 GMP_VER=	6.3.0	# Version of math/gmp
 MPFR_VER=	4.2.2	# Version of math/mpfr
 
+# Warning if you set USE_SYSTEM_ZLIB=1, the artifacts are linked against libz.so.1, not libz.so.6
+# Same for USE_SYSTEM_OPENSSL=1 and libssl.so.3 != /usr/lib/libssl.so.35
+# /!\ Julia could be vulnerable in case of SSL issues.
 MAKE_ARGS+=	JULIA_DEBUG=Documenter \
 		VERBOSE=1 \
 		NO_GIT=1 \
@@ -86,28 +100,41 @@ MAKE_ARGS+=	JULIA_DEBUG=Documenter \
 		USE_SYSTEM_CURL=1 \
 		USE_SYSTEM_DSFMT=1 \
 		USE_SYSTEM_GMP=1 \
-		USE_SYSTEM_OPENLIBM=1 \
 		USE_SYSTEM_LAPACK=1 \
 		USE_SYSTEM_LIBGIT2=1 \
+		USE_SYSTEM_LIBM=0 \
 		USE_SYSTEM_LIBSSH2=1 \
 		USE_SYSTEM_LIBUNWIND=1 \
+		USE_SYSTEM_LIBUV=0 \
 		USE_SYSTEM_LLD=1 \
+		USE_SYSTEM_LIBSUITESPARSE=1 \
+		USE_SYSTEM_LLVM=1 \
+		USE_LLVM_SHLIB=1 \
 		USE_SYSTEM_MPFR=1 \
 		USE_SYSTEM_NGHTTP2=1 \
+		USE_SYSTEM_OPENLIBM=1 \
+		USE_SYSTEM_OPENSSL=0 \
 		USE_SYSTEM_P7ZIP=1 \
 		USE_SYSTEM_PATCHELF=1 \
 		USE_SYSTEM_PCRE=1 \
 		USE_SYSTEM_UTF8PROC=1 \
 		USE_SYSTEM_ZLIB=0 \
+		USE_SYSTEM_ZSTD=1 \
 		CC=${CC} \
 		CXX=${CXX}
 ALL_TARGET=	default
 INSTALL_TARGET=	install
 TEST_TARGET=	test
+TESTING_UNSAFE=	yes # It would prefer openblas64 + others to be investigated
 
 CFLAGS+=	-fpic
 
-BINARY_ALIAS=	python3=${PYTHON_CMD} gfortran=gfortran${_GCC_VER}
+BINARY_ALIAS=	awk=gawk sed=gsed	\
+		dsymutil=dsymutil${LLVM_VERSION} \
+		lld=lld${LLVM_VERSION} \
+		llvm-config=${LLVM_CONFIG} \
+		python3=${PYTHON_CMD}	\
+		gfortran=gfortran${_GCC_VER}
 
 WRKSRC=		${WRKDIR}/julia-${DISTVERSION}
 
@@ -122,9 +149,11 @@ OPTIONS_SUB=		yes
 NATIVE_DESC=		Build with native CPU JIT tuning
 NATIVE_MAKE_ARGS=	JULIA_CPU_TARGET=native
 
-DEBUG_VARS=		ALL_TARGET=all
+DEBUG_VARS=		ALL_TARGET=all \
+			WITH_DEBUG=yes
 DEBUG_MAKE_ARGS=	FORCE_ASSERTIONS=1 \
-			BUNDLE_DEBUG_LIBS=1
+			BUNDLE_DEBUG_LIBS=1 \
+			MAKECMDGOALS=debug
 
 DOCS_MAKE_ENV+=		JULIA_PKG_OFFLINE="true"
 DOCS_VARS=		ALL_TARGET+=docs  \
@@ -140,92 +169,108 @@ LATE_SHEBANG_GLOB=	compile.jl generator.jl
 MAKE_ARGS+=	USE_SYSTEM_ITTAPI=1
 .endif
 
-.if ${PORT_OPTIONS:MDOCS}
 USE_GITHUB=	nodefault
-UNICODE_DATA_VERSION=	13.0.0
-GH_TUPLE=	JuliaDocs:Documenter.jl:v1.4.1:documenter \
-	JuliaDocs:ANSIColoredPrinters.jl:v0.0.1:ansicoloredprinters \
+SHA1_JULIA=	b21d6d84e46f6c97ecbc8e4e8a8ea6ad98049ea8
+# LIBUV not compatible with the port devel/libuv
+GH_TUPLE=	\
+	JuliaLang:libuv:${SHA1_JULIA}:libuv
+
+.if ${PORT_OPTIONS:MDOCS}
+UNICODE_DATA_VERSION=	17.0.0
+# See files/gen-docs-stuff.sh to regenerate GH_TUPLE
+GH_TUPLE+=	\
 	JuliaCollections:AbstractTrees.jl:6f9cd4ad60dc579f7a3271950d4846610c2f340d:abstracttrees \
-	JuliaIO:CodecZlib.jl:v0.7.4:codeczlib \
-	JuliaDocs:DocStringExtensions.jl:v0.9.3:docstringextensions \
-	JuliaDocs:DocumenterInventoryWritingBackport.jl:v0.1.0:documenterinventorywritingbackport \
-	JuliaBinaryWrappers:Expat_jll.jl:Expat-v2.6.2+0:expatjll \
-	JuliaVersionControl:Git.jl:v1.3.1:git \
-	JuliaBinaryWrappers:Git_jll.jl:Git-v2.44.0+2:gitjll \
-	JuliaDocs:IOCapture.jl:v0.2.4:iocapture \
-	JuliaPackaging:JLLWrappers.jl:v1.5.0:jllwrappers \
-	JuliaIO:JSON.jl:v0.21.4:json \
-	KristofferC:LazilyInitializedFields.jl:3b6cc53c8780ebbe3ee209b8a8e6b8844ce284f2:lazilyinitializedfields \
-	JuliaBinaryWrappers:Libiconv_jll.jl:Libiconv-v1.17.0+0:libiconvjll \
-	JuliaDocs:MarkdownAST.jl:v0.1.2:markdownast \
-	JuliaBinaryWrappers:OpenSSL_jll.jl:OpenSSL-v3.0.13+1:openssljll \
-	JuliaData:Parsers.jl:v2.8.1:parsers \
-	JuliaLang:PrecompileTools.jl:v1.2.1:precompiletools \
-	JuliaPackaging:Preferences.jl:v1.4.3:preferences \
-	GunnarFarneback:RegistryInstances.jl:2796d959014475bc19e2dfa174179cdf02642d28:registryinstances \
-	JuliaIO:TranscodingStreams.jl:v0.10.8:transcodingstreams
-DOCPKGDIR_documenter=	Documenter
+	JuliaDocs:ANSIColoredPrinters.jl:v0.0.1:ansicoloredprinters \
+	JuliaIO:CodecZlib.jl:v0.7.9:codeczlib \
+	JuliaDocs:DocStringExtensions.jl:v0.9.5:docstringextensions \
+	JuliaDocs:Documenter.jl:v1.19.0:documenter \
+	JuliaBinaryWrappers:Expat_jll.jl:Expat-v2.8.3+0:expatjll \
+	JuliaVersionControl:Git.jl:eb038049fdc4fc7da8410d3e8d5af5bfbe235248:git \
+	JuliaBinaryWrappers:Git_jll.jl:Git-v2.55.0+0:gitjll \
+	JuliaBinaryWrappers:Git_LFS_jll.jl:Git_LFS-v3.7.1+0:gitlfsjll \
+	JuliaDocs:IOCapture.jl:v1.0.0:iocapture \
+	JuliaPackaging:JLLWrappers.jl:v1.8.0:jllwrappers \
+	JuliaIO:JSON.jl:v1.7.1:json \
+	KristofferC:LazilyInitializedFields.jl:a8776608095f107a601b47bbc27c86caa3c612fc:lazilyinitializedfields \
+	JuliaBinaryWrappers:Libiconv_jll.jl:Libiconv-v1.18.0+0:libiconvjll \
+	JuliaDocs:MarkdownAST.jl:v0.1.3:markdownast \
+	JuliaBinaryWrappers:OpenSSH_jll.jl:OpenSSH-v10.5.1+0:opensshjll \
+	JuliaData:Parsers.jl:v2.8.7:parsers \
+	JuliaLang:PrecompileTools.jl:v1.3.4:precompiletools \
+	JuliaPackaging:Preferences.jl:v1.5.2:preferences \
+	JuliaRegistries:RegistryInstances.jl:v0.1.0:registryinstances \
+	JuliaServices:StructUtils.jl:v2.8.5:structutils \
+	JuliaIO:TranscodingStreams.jl:v0.11.3:transcodingstreams
 DOCPKGDIR_abstracttrees=	AbstractTrees
 DOCPKGDIR_ansicoloredprinters=	ANSIColoredPrinters
 DOCPKGDIR_codeczlib=	CodecZlib
 DOCPKGDIR_docstringextensions=	DocStringExtensions
-DOCPKGDIR_documenterinventorywritingbackport=	DocumenterInventoryWritingBackport
+DOCPKGDIR_documenter=	Documenter
 DOCPKGDIR_expatjll=	Expat_jll
 DOCPKGDIR_git=		Git
 DOCPKGDIR_gitjll=	Git_jll
+DOCPKGDIR_gitlfsjll=	Git_LFS_jll
 DOCPKGDIR_iocapture=	IOCapture
 DOCPKGDIR_jllwrappers=	JLLWrappers
 DOCPKGDIR_json=		JSON
 DOCPKGDIR_lazilyinitializedfields=	LazilyInitializedFields
 DOCPKGDIR_libiconvjll=	Libiconv_jll
 DOCPKGDIR_markdownast=	MarkdownAST
-DOCPKGDIR_openssljll=	OpenSSL_jll
+DOCPKGDIR_opensshjll=	OpenSSH_jll
 DOCPKGDIR_parsers=	Parsers
 DOCPKGDIR_precompiletools=	PrecompileTools
 DOCPKGDIR_preferences=	Preferences
 DOCPKGDIR_registryinstances=	RegistryInstances
+DOCPKGDIR_structutils=	StructUtils
 DOCPKGDIR_transcodingstreams=	TranscodingStreams
 JPKGUUID=	23338594-aafe-5451-b93e-139f81909106
-JPKGSHA1=	151ade91c9c8fcadd03fda2a9df961a173dae33d
-ADIR_afexpat=	f6cac9c7c81901bdea8226624199290c849eb8fd
-ADIR_afgit=	9d10e86e65fcea93f0a73ac9ab7efbc9507ef246
-ADIR_aflibiconv=	7f55b73b331bc9ab70cbd95a194c89feb3650f16
-ADIR_afopenssl=	f87ab68c6b682f7ab08df0745d5e38edb8e5bded
-DARC_afexpat=	Expat.v2.6.2.x86_64-unknown-freebsd.tar.gz
-DARC_afgit=	Git.v2.44.0.x86_64-unknown-freebsd.tar.gz
-DARC_aflibiconv=	Libiconv.v1.17.0.x86_64-unknown-freebsd.tar.gz
-DARC_afopenssl=	OpenSSL.v3.0.13.x86_64-unknown-freebsd.tar.gz
+JPKGSHA1=	1edcb1202670b2a845eca32c6b3b838a80785c8f
+ADIR_afexpat=	a764c804bdcc4e2d454b972688bf8b3b8f527ab0
+ADIR_afgit=	809f55a48211bb703df70cf2f348ea2b10253bb6
+ADIR_afgitlfs=	407b2d6a1112f15186d59fdebe33c77aa9c669ed
+ADIR_aflibiconv=06ea3cc0c9925172aafee4b52f98b99ec11b04ff
+ADIR_afopenssh=	83aff31b530088d4cd29a289450cda08a588bcc7
+DARC_afexpat=	Expat.v2.8.3.x86_64-unknown-freebsd.tar.gz
+DARC_afgit=	Git.v2.55.0.x86_64-unknown-freebsd.tar.gz
+DARC_afgitlfs=	Git_LFS.v3.7.1.x86_64-unknown-freebsd.tar.gz
+DARC_aflibiconv=Libiconv.v1.18.0.x86_64-unknown-freebsd.tar.gz
+DARC_afopenssh=	OpenSSH.v10.5.1.x86_64-unknown-freebsd.tar.gz
 .endif
 
 LATE_PATCHES=	stdlib_SparseArrays_test_fixed.jl.patch \
-		stdlib_SparseArrays_test_testgroups.patch \
 		stdlib_Tar_test_runtest.jl.patch
+
+.if ${OSVERSION} >= 1500000
+# Some artifacts depend on libgssapi.so.10, e.g. libQt6Network.so for Plots
+RUN_DEPENDS+=	${LOCALBASE}/lib/compat/libgssapi.so.10:misc/compat14x
+.endif
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/deps/srccache
-	${CP} ${FILESDIR}/llvm-patch-backport-version-fixes \
+	#${CP} ${FILESDIR}/llvm-patch-backport-version-fixes \
 		${WRKSRC}/deps/patches/llvm-version-fixes.patch
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/JuliaLang-libuv-${SHA1_JULIA}_GH0.tar.gz	\
+		${WRKSRC}/deps/libuv-${SHA1_JULIA}.tar.gz
 
 post-extract-DOCS-on:
 	@${MKDIR} ${WRKSRC}/doc/deps/registries
-	${CP} ${DISTDIR}/UnicodeData.txt \
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/UnicodeData.txt \
 		${WRKSRC}/deps/srccache/UnicodeData-${UNICODE_DATA_VERSION}.txt
-.for pkg in documenter ansicoloredprinters abstracttrees codeczlib \
-	docstringextensions documenterinventorywritingbackport expatjll \
-	git gitjll iocapture jllwrappers json lazilyinitializedfields \
-       	libiconvjll markdownast openssljll parsers precompiletools \
-	preferences registryinstances transcodingstreams
+.for pkg in abstracttrees ansicoloredprinters codeczlib docstringextensions \
+	documenter expatjll git gitjll gitlfsjll iocapture jllwrappers json \
+	lazilyinitializedfields libiconvjll markdownast opensshjll parsers \
+	precompiletools preferences registryinstances structutils transcodingstreams
 	@${MKDIR} ${WRKSRC}/doc/deps/packages/${DOCPKGDIR_${pkg}}
 	${TAR} -C ${WRKSRC}/doc/deps/packages/${DOCPKGDIR_${pkg}} \
 		--strip-components 1 \
-		-xf ${DISTDIR}/${DISTFILE_${pkg}}
+		-xf ${DISTDIR}/${DIST_SUBDIR}/${DISTFILE_${pkg}}
 .endfor
-.for af in afexpat afgit aflibiconv afopenssl
-	@${MKDIR} ${WRKSRC}/doc/deps/artifacts/${ADIR_${af}}
-	${TAR} -C ${WRKSRC}/doc/deps/artifacts/${ADIR_${af}} \
-		-xf ${DISTDIR}/${DARC_${af}}
+.for af in afexpat afgit afgitlfs aflibiconv afopenssh
+	@${MKDIR} ${WRKSRC}/deps/jlutilities/depot/artifacts/${ADIR_${af}}
+	${TAR} -C ${WRKSRC}/deps/jlutilities/depot/artifacts/${ADIR_${af}} \
+		-xf ${DISTDIR}/${DIST_SUBDIR}/${DARC_${af}}
 .endfor
-	${CP} ${DISTDIR}/${JPKGSHA1} \
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/${JPKGSHA1} \
 		${WRKSRC}/doc/deps/registries/General.tar.gz
 	${CAT} ${FILESDIR}/General.toml.in | \
 		${SED} 's/%%UUID%%/${JPKGUUID}/' | \
@@ -255,15 +300,10 @@ pre-configure:
 
 pre-install:
 	${MAKE} SHEBANG_GLOB="${LATE_SHEBANG_GLOB}" fix-shebang
-	${CP} ${WRKSRC}/deps/srccache/cacert-2023-01-10.pem ${WRKSRC}/usr/share/julia/cert.pem
+	${CP} ${WRKSRC}/deps/srccache/cacert-2026-10-20.pem ${WRKSRC}/usr/share/julia/cert.pem
 .for patch in ${LATE_PATCHES}
 	${PATCH} -d ${WRKSRC} -p0 < ${PATCHDIR}/${patch}
 .endfor
-
-pre-install-DEBUG-on:
-	@(cd ${INSTALL_WRKSRC} && ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${FAKEROOT} \
-		${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} \
-		MAKECMDGOALS=debug install)
 
 pre-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
@@ -276,7 +316,6 @@ post-install:
 	${FIND} ${STAGEDIR}${DATADIR} -name "${dir}" -type d -exec ${RM} -fr {} +
 .endfor
 	${RM} ${STAGEDIR}${DATADIR}/base.cache
-
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/julia
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libjulia.so*
 .for dir in lib/${PORTNAME} share/${PORTNAME}/compiled/v${PORTVERSION:R}
@@ -285,10 +324,12 @@ post-install:
 		\( -name *-debug.so.* -o -name *-debug.so \) \
 		-a -not -type l -exec ${STRIP_CMD} {} +
 .endfor
+	(cd ${STAGEDIR}${PREFIX}/lib/julia &&	\
+	${LN} -fs libLLVM.so libLLVM-${LLVM_VERSION}jl.so)
 .for bin in lld dsymutil
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/julia/${bin}
+	(cd ${STAGEDIR}${PREFIX}/libexec/julia &&	\
+	${LN} -fs ${LLVM_PREFIX}/bin/${bin})
 .endfor
-
 	@${MV} ${STAGEDIR}${ETCDIR}/startup.jl \
 		${STAGEDIR}${ETCDIR}/startup.jl.sample
 

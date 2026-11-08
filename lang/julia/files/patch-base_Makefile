@@ -1,0 +1,15 @@
+--- base/Makefile.orig	2026-10-25 17:06:47 UTC
++++ base/Makefile
+@@ -309,6 +309,12 @@ $(eval $(call symlink_system_library,LIBSUITESPARSE,li
+ $(eval $(call symlink_system_library,LIBSUITESPARSE,libumfpack))
+ $(eval $(call symlink_system_library,LIBSUITESPARSE,libspqr))
+ $(eval $(call symlink_system_library,LIBSUITESPARSE,libsuitesparseconfig))
++ifneq ($(USE_SYSTEM_OPENLIBM),0)
++$(eval $(call symlink_system_library,OPENLIBM,libopenlibm))
++endif
++ifneq ($(USE_SYSTEM_ZLIB),0)
++$(eval $(call symlink_system_library,ZLIB,libz))
++endif
+ # EXCLUDED LIBRARIES (installed/used, but not vendored for use with dlopen):
+ # libunwind
+ endif # WINNT

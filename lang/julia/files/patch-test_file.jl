@@ -1,6 +1,6 @@
---- test/file.jl.orig	2024-08-27 21:19:31 UTC
+--- test/file.jl.orig	2026-10-25 17:06:47 UTC
 +++ test/file.jl
-@@ -1628,7 +1628,7 @@ end
+@@ -2040,7 +2040,7 @@ end
                  @test isempty(readdir(join=true))
                  rm(d, recursive=true)
                  @test !ispath(d)

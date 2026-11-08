@@ -1,5 +1,5 @@
---- stdlib/Tar-ff55460f4d329949661a33e6c8168ce6d890676c/test/runtests.jl.orig	2024-09-12 13:53:09.737915000 +0000
-+++ stdlib/Tar-ff55460f4d329949661a33e6c8168ce6d890676c/test/runtests.jl	2024-09-12 13:52:09.602089000 +0000
+--- stdlib/Tar-10e4e964e372dc644c375e99c43d907067c45190/test/runtests.jl.orig	2025-12-29 13:50:13.000000000 +0100
++++ stdlib/Tar-10e4e964e372dc644c375e99c43d907067c45190/test/runtests.jl	2026-11-08 22:42:14.001645000 +0100
 @@ -541,7 +541,12 @@
                  VERSION < v"1.7" && return
              end

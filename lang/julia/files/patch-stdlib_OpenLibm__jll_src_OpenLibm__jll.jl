@@ -1,6 +1,6 @@
---- stdlib/OpenLibm_jll/src/OpenLibm_jll.jl.orig	2024-04-30 17:45:14 UTC
+--- stdlib/OpenLibm_jll/src/OpenLibm_jll.jl.orig	2026-10-25 17:06:47 UTC
 +++ stdlib/OpenLibm_jll/src/OpenLibm_jll.jl
-@@ -22,7 +22,7 @@ else
+@@ -24,7 +24,7 @@ else
  elseif Sys.isapple()
      const libopenlibm = "@rpath/libopenlibm.4.dylib"
  else
