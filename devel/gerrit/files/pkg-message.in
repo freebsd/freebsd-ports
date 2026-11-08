@@ -3,7 +3,7 @@
   message: <<EOM
 To initialize a new Gerrit site, run:
 
-  java -jar %%DATADIR%%/gerrit.war init -d /var/db/gerrit
+  java -jar %%DATADIR%%/gerrit.war init -d %%GERRIT_HOME%%
 
 Then enable and start the service:
 
@@ -12,7 +12,7 @@ Then enable and start the service:
 
 Gerrit defaults to listening on http://*:8080 for HTTP and port 29418 for SSH.
 
-More information: https://gerrit-documentation.storage.googleapis.com/Documentation/3.14.2/install.html
+More information: https://gerrit-documentation.storage.googleapis.com/Documentation/%%PORTVERSION%%/install.html
 EOM
 }
 ]
