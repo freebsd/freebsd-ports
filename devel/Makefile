@@ -8681,6 +8681,7 @@
     SUBDIR += rvi
     SUBDIR += rvm
     SUBDIR += rxcpp
+    SUBDIR += s.el
     SUBDIR += sabre
     SUBDIR += safe-iop
     SUBDIR += samurai
