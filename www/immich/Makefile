@@ -12,9 +12,8 @@ WWW=		https://immich.app/
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	aarch64 amd64
-ONLY_FOR_ARCHS_REASON=	native Node.js modules are only tested on \
-			64-bit platforms
+ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS_REASON=	rolldown provides no FreeBSD/arm64 binding
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/npm:www/npm-node22
 LIB_DEPENDS=	libheif.so:graphics/libheif \
