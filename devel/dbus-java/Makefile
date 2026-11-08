@@ -1,6 +1,6 @@
 PORTNAME=	dbus-java
 PORTVERSION=	2.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel java
 MASTER_SITES=	https://dbus.freedesktop.org/releases/dbus-java/
 
@@ -14,6 +14,9 @@ LICENSE_NAME_ACADEMIC=	Academic Free License version 2.1
 LICENSE_FILE_ACADEMIC=	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL21+ =	${WRKSRC}/COPYING
 LICENSE_PERMS_ACADEMIC=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
+DEPRECATED=	Version from 2009, JDK 8 only, unused in the ports tree, a fork is in https://github.com/hypfvieh/dbus-java
+EXPIRATION_DATE=	2027-01-15
 
 LIB_DEPENDS=	libunix-java.so:devel/libmatthew
 
