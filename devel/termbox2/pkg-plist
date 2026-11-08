@@ -15,3 +15,4 @@ lib/libtermbox2.so.2.0.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/keyboard
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/keyboard.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/keyboard.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/readline.c
