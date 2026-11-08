@@ -1,7 +1,7 @@
 PORTNAME=	dotnet-host
-DISTVERSIONPREFIX=	v
 DISTVERSION=	10.0.14
 CATEGORIES=	lang devel
+DIST_SUBDIR=	dotnet
 
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	Host runtime binary for the .NET platform
@@ -18,9 +18,12 @@ USES=		cmake:indirect llvm:noexport
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dotnet
-GH_PROJECT=	runtime
+GH_PROJECT=	dotnet
+GH_TAGNAME=	v10.0.114
 
 DATADIR=	${PREFIX}/share/dotnet
+
+WRKSRC_SUBDIR=	src/runtime
 
 PLIST_FILES=	bin/dotnet \
 		share/dotnet/LICENSE.TXT \
