@@ -1,6 +1,6 @@
 PORTNAME=	oyo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.61
+DISTVERSION=	0.1.72
 PORTREVISION=	0
 CATEGORIES=	textproc
 
@@ -11,7 +11,8 @@ WWW=		https://oyo.victorare.mu/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-LIB_DEPENDS=	libonig.so:devel/oniguruma
+LIB_DEPENDS=	libgit2.so:devel/libgit2 \
+		libonig.so:devel/oniguruma
 
 USES=		cargo
 USE_GITHUB=	yes

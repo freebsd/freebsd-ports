@@ -59,6 +59,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		derive_more-impl-2.1.1 \
 		dirs-5.0.1 \
 		dirs-sys-0.4.1 \
+		displaydoc-0.2.7 \
 		document-features-0.2.12 \
 		either-1.15.0 \
 		equivalent-1.0.2 \
@@ -73,10 +74,13 @@ CARGO_CRATES=	adler2-2.0.1 \
 		fnv-1.0.7 \
 		foldhash-0.1.5 \
 		foldhash-0.2.0 \
+		form_urlencoded-1.2.2 \
 		funty-2.0.0 \
 		getopts-0.2.24 \
 		getrandom-0.2.16 \
+		getrandom-0.4.3 \
 		gif-0.14.2 \
+		git2-0.21.0 \
 		globset-0.4.18 \
 		half-2.7.1 \
 		hashbrown-0.14.5 \
@@ -85,8 +89,17 @@ CARGO_CRATES=	adler2-2.0.1 \
 		hashbrown-0.17.1 \
 		hashlink-0.9.1 \
 		heck-0.5.0 \
+		icu_collections-2.4.0 \
+		icu_locale_core-2.4.0 \
+		icu_normalizer-2.4.0 \
+		icu_normalizer_data-2.4.0 \
+		icu_properties-2.4.0 \
+		icu_properties_data-2.4.0 \
+		icu_provider-2.4.0 \
 		icy_sixel-0.5.0 \
 		ident_case-1.0.1 \
+		idna-1.1.0 \
+		idna_adapter-1.2.2 \
 		ignore-0.4.25 \
 		image-0.25.10 \
 		image-webp-0.2.4 \
@@ -98,6 +111,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		itertools-0.13.0 \
 		itertools-0.14.0 \
 		itoa-1.0.15 \
+		jobserver-0.1.35 \
 		js-sys-0.3.83 \
 		kasuari-0.4.12 \
 		keymap-1.0.0-rc.6 \
@@ -105,13 +119,16 @@ CARGO_CRATES=	adler2-2.0.1 \
 		keymap_parser-1.0.0-rc.6 \
 		lazy_static-1.5.0 \
 		libc-0.2.184 \
+		libgit2-sys-0.18.8+1.9.7 \
 		libm-0.2.16 \
 		libredox-0.1.11 \
 		libsqlite3-sys-0.30.1 \
+		libz-sys-1.1.31 \
 		line-clipping-0.3.5 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.15 \
 		linux-raw-sys-0.11.0 \
+		litemap-0.8.3 \
 		litrs-1.0.0 \
 		lock_api-0.4.14 \
 		log-0.4.29 \
@@ -139,6 +156,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		palette_derive-0.7.6 \
 		parking_lot-0.12.5 \
 		parking_lot_core-0.9.12 \
+		percent-encoding-2.3.2 \
 		pin-project-lite-0.2.16 \
 		pkg-config-0.3.32 \
 		plist-1.8.0 \
@@ -147,6 +165,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		plotters-svg-0.3.7 \
 		png-0.18.1 \
 		portable-atomic-1.13.1 \
+		potential_utf-0.1.6 \
 		powerfmt-0.2.0 \
 		ppv-lite86-0.2.21 \
 		proc-macro2-1.0.106 \
@@ -157,6 +176,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		quick-error-2.0.1 \
 		quick-xml-0.38.4 \
 		quote-1.0.45 \
+		r-efi-6.0.0 \
 		radium-0.7.0 \
 		rand-0.8.6 \
 		rand-0.9.4 \
@@ -165,7 +185,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rand_core-0.9.5 \
 		rand_xoshiro-0.7.0 \
 		ratatui-0.30.2 \
-		ratatui-comfy-toaster-0.4.3 \
 		ratatui-core-0.1.2 \
 		ratatui-crossterm-0.1.2 \
 		ratatui-image-12.0.0-rc.3 \
@@ -203,17 +222,18 @@ CARGO_CRATES=	adler2-2.0.1 \
 		signal-hook-registry-1.4.7 \
 		simd-adler32-0.3.8 \
 		smallvec-1.15.1 \
-		smawk-0.3.3 \
 		socket2-0.6.3 \
+		stable_deref_trait-1.2.1 \
 		static_assertions-1.1.0 \
 		strsim-0.11.1 \
 		strum-0.28.0 \
 		strum_macros-0.28.0 \
 		syn-1.0.109 \
 		syn-2.0.117 \
+		syn-3.0.9 \
+		synstructure-0.14.0 \
 		syntect-5.3.0 \
 		tap-1.0.1 \
-		textwrap-0.16.2 \
 		thiserror-1.0.69 \
 		thiserror-2.0.18 \
 		thiserror-impl-1.0.69 \
@@ -221,6 +241,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		time-0.3.47 \
 		time-core-0.1.8 \
 		time-macros-0.2.27 \
+		tinystr-0.8.5 \
 		tinytemplate-1.2.1 \
 		tokio-1.52.1 \
 		tokio-macros-2.7.0 \
@@ -234,11 +255,13 @@ CARGO_CRATES=	adler2-2.0.1 \
 		two-face-0.5.1 \
 		unicase-2.9.0 \
 		unicode-ident-1.0.22 \
-		unicode-linebreak-0.1.5 \
 		unicode-segmentation-1.13.2 \
 		unicode-truncate-2.0.1 \
 		unicode-width-0.2.2 \
+		url-2.5.8 \
+		utf8_iter-1.1.0 \
 		utf8parse-0.2.2 \
+		utf_types-1.0.0 \
 		vcpkg-0.2.15 \
 		version_check-0.9.5 \
 		vsimd-0.8.0 \
@@ -284,10 +307,18 @@ CARGO_CRATES=	adler2-2.0.1 \
 		windows_x86_64_msvc-0.52.6 \
 		winnow-0.7.15 \
 		winnow-1.0.1 \
+		writeable-0.6.4 \
 		wyz-0.5.1 \
 		yaml-rust-0.4.5 \
+		yoke-0.8.4 \
+		yoke-derive-0.8.4 \
 		zerocopy-0.8.33 \
 		zerocopy-derive-0.8.33 \
+		zerofrom-0.1.8 \
+		zerofrom-derive-0.1.8 \
+		zerotrie-0.2.5 \
+		zerovec-0.11.9 \
+		zerovec-derive-0.11.7 \
 		zmij-1.0.21 \
 		zune-core-0.5.1 \
 		zune-jpeg-0.5.15
