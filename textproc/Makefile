@@ -2060,6 +2060,7 @@
     SUBDIR += rubygem-phone
     SUBDIR += rubygem-pretty-xml
     SUBDIR += rubygem-prism
+    SUBDIR += rubygem-prism1
     SUBDIR += rubygem-psych
     SUBDIR += rubygem-psych3
     SUBDIR += rubygem-raabro

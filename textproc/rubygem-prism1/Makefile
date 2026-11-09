@@ -1,0 +1,21 @@
+PORTNAME=	prism
+PORTVERSION=	1.9.0
+CATEGORIES=	textproc rubygems
+MASTER_SITES=	RG
+PKGNAMESUFFIX=	1
+
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Prism Ruby parser
+WWW=		https://ruby.github.io/prism/ \
+		https://github.com/ruby/prism
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
+
+BUILD_DEPENDS=	rubygem-rake>=0:devel/rubygem-rake
+
+USES=		gem gmake
+
+PORTSCOUT=	limit:^1\.
+
+.include <bsd.port.mk>
