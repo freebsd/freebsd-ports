@@ -1,0 +1,5 @@
+The official Python SDK for SurrealDB.
+
+It provides both asyncio and blocking clients for connecting to SurrealDB
+over HTTP or WebSocket, along with the data types and CBOR encoding used by
+the database.
