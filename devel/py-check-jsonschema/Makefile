@@ -1,5 +1,5 @@
 PORTNAME=	check-jsonschema
-PORTVERSION=	0.38.1
+PORTVERSION=	0.39.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/python-jsonschema/check-jsonschema/releases/download/${PORTVERSION}/
@@ -12,9 +12,8 @@ WWW=		https://github.com/python-jsonschema/check-jsonschema
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61.2:devel/py-setuptools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=8<9:devel/py-click@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>=3.12.0:devel/py-flit-core@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=8.5<9:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonschema>=4.18.0<5.0:devel/py-jsonschema@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}regress>=2024.11.1:devel/py-regress@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=0<3.0:www/py-requests@${PY_FLAVOR} \
