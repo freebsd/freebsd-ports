@@ -1,6 +1,5 @@
 PORTNAME=	ntfs
-PORTVERSION=	2022.10.3
-PORTREVISION=	2
+PORTVERSION=	2026.2.25
 CATEGORIES=	filesystems
 MASTER_SITES=	https://download.tuxera.com/opensource/
 PKGNAMEPREFIX=	fusefs-
@@ -18,10 +17,10 @@ LIB_DEPENDS=	libuuid.so:misc/libuuid
 USES=		fuse pkgconfig iconv libtool localbase:ldflags tar:tgz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--exec-prefix=${PREFIX} --disable-mount-helper \
 		--disable-mtab --with-fuse=external --disable-ldconfig
 INSTALL_TARGET=	install-strip
+WRKSRC=		${WRKDIR}/${DISTNAME:S/_ntfsprogs//}
 
 OPTIONS_DEFINE=	CRYPTO DOCS EXTRAS LOCK UBLIO
 OPTIONS_DEFAULT=EXTRAS LOCK UBLIO
