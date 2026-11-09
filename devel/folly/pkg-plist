@@ -637,6 +637,7 @@ include/folly/io/async/IoUringOptions.h
 include/folly/io/async/IoUringProvidedBufferRing.h
 include/folly/io/async/IoUringRecv.h
 include/folly/io/async/IoUringSend.h
+include/folly/io/async/IoUringSetupRetry.h
 include/folly/io/async/IoUringZeroCopyBufferPool.h
 include/folly/io/async/Liburing.h
 include/folly/io/async/MuxIOThreadPoolExecutor.h
@@ -785,6 +786,7 @@ include/folly/math/ReproducibleAccumulator.h
 include/folly/memory/Allocator.h
 include/folly/memory/Arena-inl.h
 include/folly/memory/Arena.h
+include/folly/memory/FixedRegionAllocator.h
 include/folly/memory/IOBufArenaFactory.h
 include/folly/memory/IoUringArena.h
 include/folly/memory/JemallocHugePageAllocator.h
@@ -843,7 +845,6 @@ include/folly/portability/IOVec.h
 include/folly/portability/Libgen.h
 include/folly/portability/Libunwind.h
 include/folly/portability/Malloc.h
-include/folly/portability/Math.h
 include/folly/portability/Memory.h
 include/folly/portability/OpenSSL.h
 include/folly/portability/PThread.h
