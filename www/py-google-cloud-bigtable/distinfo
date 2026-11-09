@@ -1,3 +1,3 @@
-TIMESTAMP = 1791047218
-SHA256 (google_cloud_bigtable-2.48.0.tar.gz) = 659a287c864308a21b49d18457da8bc9ce81e67b0b2cb2fac9ca2a26d118891e
-SIZE (google_cloud_bigtable-2.48.0.tar.gz) = 848482
+TIMESTAMP = 1793587914
+SHA256 (google_cloud_bigtable-2.50.2.tar.gz) = 9ec98036e2b05eeee99a750f3b822e8aa1429b888f864bb087f9e857a3f1b51d
+SIZE (google_cloud_bigtable-2.50.2.tar.gz) = 858287
