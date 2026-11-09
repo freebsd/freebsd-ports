@@ -1,3 +1,3 @@
-TIMESTAMP = 1784005074
-SHA256 (python_binary_memcached-0.32.0.tar.gz) = d0572e1db5a61a6c3185ed783b8337d00d65d1eb1521e2302a36e45d5e0fb3b7
-SIZE (python_binary_memcached-0.32.0.tar.gz) = 101276
+TIMESTAMP = 1793587244
+SHA256 (python_binary_memcached-0.33.0.tar.gz) = 032241550a64f1d1b668cd858ccb4d78a471b936eee8cdf0718af15811ae7036
+SIZE (python_binary_memcached-0.33.0.tar.gz) = 109566
