@@ -1,10 +1,10 @@
---- pyproject.toml.orig	2025-09-27 18:10:32 UTC
+--- pyproject.toml.orig	2026-10-02 22:42:55 UTC
 +++ pyproject.toml
 @@ -1,10 +1,9 @@
  [project]
 -name = "MarkupSafe"
 +name = "markupsafe"
- version = "3.0.3"
+ version = "3.0.4"
  description = "Safely add untrusted strings to HTML/XML markup."
  readme = "README.md"
 -license = "BSD-3-Clause"

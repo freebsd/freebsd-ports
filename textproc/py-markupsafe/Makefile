@@ -1,5 +1,5 @@
 PORTNAME=	markupsafe
-PORTVERSION=	3.0.3
+PORTVERSION=	3.0.4
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI \
 		https://github.com/pallets/markupsafe/releases/download/${PORTVERSION}/
