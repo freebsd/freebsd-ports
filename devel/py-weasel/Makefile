@@ -1,5 +1,5 @@
 PORTNAME=	weasel
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/explosion/weasel/releases/download/release-v${PORTVERSION}/
@@ -14,8 +14,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cloudpathlib>=0.7.0:devel/py-cloudpathlib@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}confection>=1.0.0:devel/py-confection@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=8.0.0<9.0.0:devel/py-click@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}cloudpathlib>=0.7.0:devel/py-cloudpathlib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}confection>=1.3.4<2.0.0:devel/py-confection@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httpx>=0.24.0:www/py-httpx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=20.0:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.0.0:devel/py-pydantic2@${PY_FLAVOR} \
