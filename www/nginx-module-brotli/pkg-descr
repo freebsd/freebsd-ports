@@ -1,0 +1,7 @@
+The brotli module adds Brotli compression to nginx: an output filter that
+compresses responses on the fly, and a static module that serves
+precompressed .br files.  It links against the shared libbrotli from
+archivers/brotli.
+
+This port only installs the module sources.  The module itself is built
+by the nginx ports when their BROTLI option is enabled.

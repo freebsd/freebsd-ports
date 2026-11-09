@@ -1,0 +1,14 @@
+[
+{ type: install
+  message: <<EOM
+This package contains the sources of the brotli module only.  It does not
+install a loadable module.
+
+The module itself is built by the nginx ports.  To use brotli, build
+www/nginx, www/nginx-devel or www/freenginx with the BROTLI option
+enabled.  Those ports pick the sources up from
+%%PREFIX%%/share/nginx/modules/nginx-module-brotli and produce
+ngx_http_brotli_filter_module.so and ngx_http_brotli_static_module.so.
+EOM
+}
+]
