@@ -1,0 +1,12 @@
+--- pyproject.toml.orig	2026-10-07 03:59:16 UTC
++++ pyproject.toml
+@@ -10,8 +10,7 @@ authors = [{ "name" = "Vincent Driessen", "email" = "m
+ description = "pip-tools keeps your pinned dependencies fresh."
+ readme = "README.md"
+ authors = [{ "name" = "Vincent Driessen", "email" = "me@nvie.com" }]
+-license = "BSD-3-Clause"
+-license-files = ["LICENSE"]
++license = { text = "BSD-3-Clause" }
+ classifiers = [
+   "Development Status :: 5 - Production/Stable",
+   "Environment :: Console",
