@@ -1,5 +1,5 @@
 PORTNAME=	flask-socketio
-PORTVERSION=	5.6.1
+PORTVERSION=	5.7.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -7,7 +7,8 @@ DISTNAME=	flask_socketio-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Socket.IO integration for Flask applications
-WWW=		https://github.com/miguelgrinberg/Flask-SocketIO
+WWW=		https://github.com/miguelgrinberg/Flask-SocketIO \
+		https://code.miguelgrinberg.com/miguelgrinberg/flask-socketio
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
