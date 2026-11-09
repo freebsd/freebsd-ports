@@ -125,7 +125,7 @@ KDE_PLASMA6_VERSION?=		6.8.2
 KDE_PLASMA6_BRANCH?=		stable
 
 # KDE Plasma 6 LTS
-KDE_PLASMA6lts_VERSION?=	6.6.6
+KDE_PLASMA6lts_VERSION?=	6.6.7
 KDE_PLASMA6lts_BRANCH?=		stable
 
 # Legacy KDE frameworks (Qt5 based).

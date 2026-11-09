@@ -51,7 +51,6 @@ lib/libplasmaweatherion.so.%%KDE_PLASMA_VERSION%%
 %%QT_PLUGINDIR%%/plasma/weather_ions/dwd.so
 %%QT_PLUGINDIR%%/plasma/weather_ions/envcan.so
 %%QT_PLUGINDIR%%/plasma/weather_ions/noaa.so
-%%QT_PLUGINDIR%%/plasma/weather_ions/wettercom.so
 %%QT_PLUGINDIR%%/plasmacalendarplugins/alternatecalendar.so
 %%QT_PLUGINDIR%%/plasmacalendarplugins/alternatecalendar/AlternateCalendarConfig.qml
 %%QT_PLUGINDIR%%/plasmacalendarplugins/astronomicalevents.so
