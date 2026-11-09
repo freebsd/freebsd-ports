@@ -265,6 +265,7 @@ lib/sbcl/sb-sprof/package.lisp
 lib/sbcl/sb-sprof/record.lisp
 lib/sbcl/sb-sprof/report.lisp
 lib/sbcl/sb-sprof/sb-sprof.asd
+lib/sbcl/sb-sprof/stack-profile.lisp
 lib/sbcl/sb-sprof/test.lisp
 lib/sbcl/sbcl.mk
 lib/sbcl/sbcl.core
