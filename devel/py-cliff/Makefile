@@ -1,5 +1,5 @@
 PORTNAME=	cliff
-PORTVERSION=	4.16.0
+PORTVERSION=	4.17.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}autopage>=0.4.0:devel/py-autopage@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=3.12:devel/py-pyyaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}stevedore>=5.6.0:devel/py-stevedore@${PY_FLAVOR}
 
-USES=		python:3.11+
+USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
