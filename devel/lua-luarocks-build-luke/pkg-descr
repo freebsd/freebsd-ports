@@ -1,0 +1,2 @@
+Build a rock from the recipe in the `build` table of its rockspec, with
+build.type = "luke". The backend is one file that needs nothing else installed.
