@@ -1,5 +1,5 @@
 PORTNAME=	undercover
-PORTVERSION=	0.8.5
+PORTVERSION=	0.9.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,12 +13,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-base64>=0:converters/rubygem-base64 \
 		rubygem-benchmark>=0:benchmarks/rubygem-benchmark \
-		rubygem-bigdecimal>=0:math/rubygem-bigdecimal \
-		rubygem-imagen>=0.2.0:devel/rubygem-imagen \
+		rubygem-erubi>=1.13:www/rubygem-erubi \
+		rubygem-prism>=1.8<3:textproc/rubygem-prism \
 		rubygem-rainbow>=2.1<4.0:devel/rubygem-rainbow \
 		rubygem-rugged>=0.27<1.10:devel/rubygem-rugged \
-		rubygem-simplecov>=0:devel/rubygem-simplecov \
-		rubygem-simplecov_json_formatter>=0:devel/rubygem-simplecov_json_formatter
+		rubygem-simplecov>=1.0:devel/rubygem-simplecov \
+		rubygem-simplecov_json_formatter>=0.1<1:devel/rubygem-simplecov_json_formatter
 
 USES=		gem
 
