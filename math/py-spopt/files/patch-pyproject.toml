@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2026-10-02 01:34:53 UTC
++++ pyproject.toml
+@@ -33,7 +33,7 @@ dependencies = [
+     "numpy>=2.0.0",
+     "pandas>=2.3.0",
+     "pointpats>=2.5.2",
+-    "pulp>=3.2,<4",
++    "pulp>=3.2",
+     "scikit-learn>=1.5.0",
+     "scipy>=1.14.0",
+     "shapely>=2.1.0",
