@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-logs-sdk
-PORTVERSION=	0.7.0
+PORTVERSION=	0.8.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-opentelemetry-api>=1.2<2:devel/rubygem-opentelemetry-api \
-		rubygem-opentelemetry-logs-api>=0.1<1:devel/rubygem-opentelemetry-logs-api \
+		rubygem-opentelemetry-logs-api>=0.7.0<0.8:devel/rubygem-opentelemetry-logs-api \
 		rubygem-opentelemetry-sdk>=1.3<2:devel/rubygem-opentelemetry-sdk
 
 USES=		gem
