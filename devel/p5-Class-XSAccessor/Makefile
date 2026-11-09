@@ -17,6 +17,8 @@ LICENSE_COMB=	dual
 USES=		perl5
 USE_PERL5=	configure
 
+PORTSCOUT=	limit:^[0-9\.]*$$
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Class/XSAccessor/XSAccessor.so
 
