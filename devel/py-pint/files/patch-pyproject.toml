@@ -1,9 +1,13 @@
 --- pyproject.toml.orig	2020-02-02 00:00:00 UTC
 +++ pyproject.toml
-@@ -1,5 +1,5 @@
+@@ -1,8 +1,8 @@
  [project]
 -name = "Pint"
 +name = "pint"
  authors = [{ name = "Hernan E. Grecco", email = "hernan.grecco@gmail.com" }]
  dynamic = ["version"]
- license = { text = "BSD" }
+-license = "BSD-3-Clause"
++license = { text = "BSD-3-Clause" }
+ description = "Physical quantities module"
+ readme = "README.rst"
+ maintainers = [
