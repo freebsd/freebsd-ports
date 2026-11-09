@@ -1,5 +1,5 @@
 PORTNAME=	caldav
-PORTVERSION=	3.3.1
+PORTVERSION=	3.4.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -41,10 +41,9 @@ USE_PYTHON=	autoplist concurrent pep517 pytest
 NO_ARCH=	yes
 TEST_ENV=	TZ=UTC
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	JMAP
+JMAP_DESC=	JSON Meta Application Protocol (JMAP) support
 
-.if ${PYTHON_REL} < 31100
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR}
-.endif
+JMAP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}calendaring-jmap>=1.1.0:devel/py-calendaring-jmap@${PY_FLAVOR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
