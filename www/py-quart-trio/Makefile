@@ -13,8 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pdm-backend>=0:devel/py-pdm-backend@${PY_FLAVOR}
-RUN_DEPENDS=	${PY_EXCEPTIONGROUP} \
-		${PYTHON_PKGNAMEPREFIX}hypercorn>=0.12.0:www/py-hypercorn@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hypercorn>=0.12.0:www/py-hypercorn@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}quart>=0.23:www/py-quart@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}trio>=0.19.0:net/py-trio@${PY_FLAVOR}
 
