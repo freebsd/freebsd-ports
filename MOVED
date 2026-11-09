@@ -4831,7 +4831,6 @@ devel/py-pyjq|textproc/py-jq|2025-11-01|Removed: Depended on expired Python vers
 devel/py-ctags||2025-11-01|Removed: Depended on expired Python version 3.9 and does not build with newer Python
 net-im/tdlib-purple||2025-11-01|Remove broken port
 databases/erlfdb||2025-11-01|Depends on removed port databases/foundationdb71-client
-www/mitmproxy||2025-11-02|Remove broken port
 net-im/signald|net-im/signal-cli|2025-11-02|Has expired: this project is no longer actively maintained. Use signal-cli instead
 net-im/libsignal-client|net-im/libsignal|2025-11-05|Renamed to match upstream name
 games/openlierox||2025-11-06|Remove broken port

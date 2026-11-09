@@ -1,0 +1,17 @@
+--- pyproject.toml.orig	2026-11-10 17:26:43 UTC
++++ pyproject.toml
+@@ -140,11 +140,11 @@ exclude_lines = [
+     "\\.\\.\\.",
+ ]
+ 
+-[tool.pytest.ini_options]
++[tool.pytest]
+ asyncio_mode = "auto"
+ asyncio_default_fixture_loop_scope = "function"
+-testpaths = "test"
+-addopts = "--capture=no --color=yes"
++testpaths = ["test"]
++addopts = ["--capture=no", "--color=yes"]
+ filterwarnings = [
+     "ignore::DeprecationWarning:tornado.*:",
+     "ignore:datetime.datetime.utcnow:DeprecationWarning:aioquic.*:",
