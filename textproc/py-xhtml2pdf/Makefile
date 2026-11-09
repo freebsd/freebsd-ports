@@ -1,5 +1,5 @@
 PORTNAME=	xhtml2pdf
-PORTVERSION=	0.2.21
+PORTVERSION=	0.2.28
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,16 +12,13 @@ WWW=		https://xhtml2pdf.readthedocs.io/en/latest/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}arabic-reshaper>=3.0.0:textproc/py-arabic-reshaper@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}html5lib>=1.1:www/py-html5lib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pillow>=8.1.1:graphics/py-pillow@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyhanko>=0.12.1:security/py-pyhanko@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyhanko-certvalidator>=0.19.5:security/py-pyhanko-certvalidator@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pypdf>=3.1.0:print/py-pypdf@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}python-bidi>=0.5.0:textproc/py-python-bidi@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}reportlab>=4.0.4<6:print/py-reportlab@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}reportlab>=4.4.9<6:print/py-reportlab@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}svglib>=1.2.1:converters/py-svglib@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=1.0:devel/py-nose@${PY_FLAVOR}
 
@@ -29,5 +26,14 @@ USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
+
+OPTIONS_DEFINE=	FONTS SIGNING
+FONTS_DESC=	OpenType (CFF), WOFF and WOFF2 fonts support
+SIGNING_DESC=	Digital signatures support
+
+FONTS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}brotli>=1.0.9:archivers/py-brotli@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}fonttools>=4.40:print/py-fonttools@${PY_FLAVOR}
+SIGNING_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyhanko>=0.37.0:security/py-pyhanko@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}pyhanko-certvalidator>=0.32.1:security/py-pyhanko-certvalidator@${PY_FLAVOR}
 
 .include <bsd.port.mk>

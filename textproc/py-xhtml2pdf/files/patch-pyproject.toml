@@ -1,0 +1,19 @@
+--- pyproject.toml.orig	2026-10-25 01:52:24 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=77"]
++requires = ["setuptools>=61"]
+ build-backend = "setuptools.build_meta"
+ 
+ 
+@@ -15,8 +15,7 @@ readme = "README.rst"
+ description = "PDF generator using HTML and CSS"
+ keywords = ["PDF", "HTML", "HTML", "XML", "CSS"]
+ readme = "README.rst"
+-license = "Apache-2.0"
+-license-files = ["LICENSE.txt"]
++license = {text = "Apache-2.0"}
+ classifiers = [
+     "Development Status :: 4 - Beta",
+     "Environment :: Console",
