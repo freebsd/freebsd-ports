@@ -1,18 +1,19 @@
 PORTNAME=	platformdirs
-PORTVERSION=	4.12.2
+PORTVERSION=	4.14.3
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Python module for determining appropriate platform-specific dirs
+COMMENT=	Python package for determining appropriate platform-specific dirs
 WWW=		https://platformdirs.readthedocs.io/en/latest/ \
 		https://github.com/tox-dev/platformdirs
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-vcs>=0.5:devel/py-hatch-vcs@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-fancy-pypi-readme>=25.1:devel/py-hatch-fancy-pypi-readme@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}hatch-vcs>=0.5:devel/py-hatch-vcs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hatchling>=1.29:devel/py-hatchling@${PY_FLAVOR}
 
 USES=		python
