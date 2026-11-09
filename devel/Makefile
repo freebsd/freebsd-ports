@@ -8009,6 +8009,7 @@
     SUBDIR += rubygem-lrama
     SUBDIR += rubygem-lru_redux
     SUBDIR += rubygem-lumberjack
+    SUBDIR += rubygem-lumberjack1
     SUBDIR += rubygem-main
     SUBDIR += rubygem-manpages
     SUBDIR += rubygem-map
