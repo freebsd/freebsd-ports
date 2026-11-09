@@ -1,6 +1,7 @@
 PORTNAME=	ini2toml
 PORTVERSION=	0.16
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	textproc python
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -35,7 +36,7 @@ ALL_IMPLIES=	FULL LITE
 FULL_DESC=	Create TOML document with TOML-equivalent comment
 LITE_DESC=	Create TOML document without comment
 
-FULL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}configupdater>=3.0.1<4:devel/py-configupdater@${PY_FLAVOR} \
+FULL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}configupdater3>=3.0.1<4:devel/py-configupdater3@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}tomlkit>=0.10.0<2:textproc/py-tomlkit@${PY_FLAVOR}
 LITE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tomli-w>=0.4.0<2:textproc/py-tomli-w@${PY_FLAVOR}
 
