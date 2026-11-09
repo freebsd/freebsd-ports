@@ -11,6 +11,8 @@ LICENSE=	GPLv2+ MPL20
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/README.md
 
+BROKEN_i386=	no matching function for call to 'operator new'
+
 BUILD_DEPENDS=	${LOCALBASE}/include/eigen3/Eigen/Core:math/eigen3 \
 		${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
 LIB_DEPENDS=	libboost_container.so:devel/boost-libs \
