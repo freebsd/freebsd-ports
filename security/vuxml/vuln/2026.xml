@@ -1,3 +1,29 @@
+  <vuln vid="e107a804-dc3c-11f1-8135-8447094a420f">
+    <topic>Weechat -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>weechat</name>
+	<range><lt>4.10.4</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Weechat project reports:</p>
+	<blockquote cite="https://github.com/weechat/weechat/releases/tag/v4.10.3">
+	  <p>See details on the 9 fixed vulns in linked release notes.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/weechat/weechat/releases/tag/v4.10.4</url>
+      <url>https://github.com/weechat/weechat/releases/tag/v4.10.3</url>
+    </references>
+    <dates>
+      <discovery>2026-11-09</discovery>
+      <entry>2026-11-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="daaf4fec-dc3b-11f1-8135-8447094a420f">
     <topic>Roundcube -- Multiple vulnerabilities</topic>
     <affects>
