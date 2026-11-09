@@ -8,17 +8,18 @@ CARGO_CRATES=	cfg-if-1.0.4 \
 		portable-atomic-1.13.1 \
 		ppv-lite86-0.2.21 \
 		proc-macro2-1.0.106 \
-		pyo3-0.29.2 \
-		pyo3-build-config-0.29.2 \
-		pyo3-ffi-0.29.2 \
-		pyo3-macros-0.29.2 \
-		pyo3-macros-backend-0.29.2 \
+		pyo3-0.30.1 \
+		pyo3-build-config-0.30.1 \
+		pyo3-ffi-0.30.1 \
+		pyo3-macros-0.30.1 \
+		pyo3-macros-backend-0.30.1 \
 		quote-1.0.46 \
 		r-efi-5.3.0 \
 		rand-0.9.4 \
 		rand_chacha-0.9.0 \
 		rand_core-0.9.5 \
 		syn-2.0.118 \
+		syn-3.0.9 \
 		target-lexicon-0.13.5 \
 		unicode-ident-1.0.24 \
 		wasip2-1.0.4+wasi-0.2.12 \
