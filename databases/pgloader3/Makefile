@@ -1,7 +1,7 @@
 PORTNAME=	pgloader
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.6.9
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	databases
 MASTER_SITES=	https://beta.quicklisp.org/archive/alexandria/2023-10-21/:alexandria \
 		https://beta.quicklisp.org/archive/anaphora/2022-02-20/:anaphora \
