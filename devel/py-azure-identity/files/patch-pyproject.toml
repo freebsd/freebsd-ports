@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2025-10-06 19:11:24 UTC
+--- pyproject.toml.orig	2026-10-26 18:31:07 UTC
 +++ pyproject.toml
 @@ -1,5 +1,5 @@
  [build-system]
@@ -7,19 +7,12 @@
  build-backend = "setuptools.build_meta"
  
  [project]
-@@ -10,7 +10,7 @@ requires-python = ">=3.9"
+@@ -10,7 +10,7 @@ requires-python = ">=3.10"
  description = "Microsoft Azure Identity Library for Python"
  keywords = ["azure", "azure sdk"]
- requires-python = ">=3.9"
+ requires-python = ">=3.10"
 -license = "MIT"
 +license = {text = "MIT"}
  classifiers = [
      "Development Status :: 5 - Production/Stable",
      "Programming Language :: Python",
-@@ -47,4 +47,4 @@ verifytypes = true
- [tool.azure-sdk-build]
- pyright = false
- verifytypes = true
--black = true
-\ No newline at end of file
-+black = true

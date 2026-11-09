@@ -1,5 +1,5 @@
 PORTNAME=	azure-identity
-PORTVERSION=	1.25.3
+PORTVERSION=	1.27.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}azure-core>=1.31.0:devel/py-azure-core@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}msal>=1.35.1:devel/py-msal@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}msal>=1.39.0:devel/py-msal@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}msal-extensions>=1.2.0:devel/py-msal-extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.0.0:devel/py-typing-extensions@${PY_FLAVOR}
 
