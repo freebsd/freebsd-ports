@@ -5,12 +5,12 @@ bin/cf-key
 bin/cf-monitord
 bin/cf-net
 bin/cf-promises
+bin/cf-reactor
 bin/cf-runagent
 bin/cf-secret
 bin/cf-serverd
 bin/cf-support
 bin/cf-upgrade
-bin/cf-reactor
 bin/rpmvercmp
 libexec/cfengine/libpromises.so
 libexec/cfengine/libpromises.so.3
