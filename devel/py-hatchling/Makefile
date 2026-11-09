@@ -1,7 +1,8 @@
 PORTNAME=	hatchling
-PORTVERSION=	1.32.4
+PORTVERSION=	1.33.0
 CATEGORIES=	devel python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/pypa/hatch/releases/download/hatchling-v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
