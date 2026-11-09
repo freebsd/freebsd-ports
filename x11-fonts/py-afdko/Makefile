@@ -25,9 +25,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}booleanOperations>=0.9.0:x11-fonts/py-boolea
 		${PYTHON_PKGNAMEPREFIX}ufoprocessor>=1.13.1:x11-fonts/py-ufoprocessor@${PY_FLAVOR}
 # x11-fonts/py-defcon[pens]: print/py-fontpens
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}fontpens>=0.1.0:print/py-fontpens@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-cov>=2.6.1:devel/py-pytest-cov@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-xdist>=2.5.0:devel/py-pytest-xdist@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}uharfbuzz>=0.45.0:print/py-uharfbuzz@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist concurrent cython pep517
+USE_PYTHON=	autoplist concurrent cython pep517 pytest
 
 NO_ARCH=	yes
 
