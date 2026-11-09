@@ -1,6 +1,6 @@
---- configure.orig	2025-10-29 15:50:28 UTC
+--- configure.orig	2026-10-08 19:50:04 UTC
 +++ configure
-@@ -14945,7 +14945,6 @@ fi
+@@ -15283,7 +15283,6 @@ fi
      # FreeBSD 3 and greater uses gcc -shared to do shared libraries.
      freebsd* | dragonfly* | midnightbsd*)
        archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
@@ -8,7 +8,7 @@
        hardcode_direct=yes
        hardcode_shlibpath_var=no
        ;;
-@@ -28387,65 +28386,6 @@ else
+@@ -28551,65 +28550,6 @@ else
      X_CFLAGS="$X_CFLAGS -I$x_includes"
    fi
  
@@ -17,7 +17,7 @@
 -    X_LIBS="$X_LIBS -L$x_libraries"
 -    # For Solaris; some versions of Sun CC require a space after -R and
 -    # others require no space.  Words are not sufficient . . . .
--    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether -R must be followed by a space" >&5
+-    { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking whether -R must be followed by a space" >&5
 -printf %s "checking whether -R must be followed by a space... " >&6; }
 -    ac_xsave_LIBS=$LIBS; LIBS="$LIBS -R$x_libraries"
 -    ac_xsave_c_werror_flag=$ac_c_werror_flag
@@ -35,8 +35,8 @@
 -_ACEOF
 -if ac_fn_c_try_link "$LINENO"
 -then :
--  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no" >&5
--printf "%s\n" "no" >&6; }
+-  { printf '%s\n' "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-printf '%s\n' "no" >&6; }
 -       X_LIBS="$X_LIBS -R$x_libraries"
 -else case e in #(
 -  e) LIBS="$ac_xsave_LIBS -R $x_libraries"
@@ -53,12 +53,12 @@
 -_ACEOF
 -if ac_fn_c_try_link "$LINENO"
 -then :
--  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: yes" >&5
--printf "%s\n" "yes" >&6; }
+-  { printf '%s\n' "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+-printf '%s\n' "yes" >&6; }
 -	  X_LIBS="$X_LIBS -R $x_libraries"
 -else case e in #(
--  e) { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: neither works" >&5
--printf "%s\n" "neither works" >&6; } ;;
+-  e) { printf '%s\n' "$as_me:${as_lineno-$LINENO}: result: neither works" >&5
+-printf '%s\n' "neither works" >&6; } ;;
 -esac
 -fi
 -rm -f core conftest.err conftest.$ac_objext conftest.beam \
@@ -74,16 +74,16 @@
    # Check for system-dependent libraries X programs must link with.
    # Do this before checking for the system-independent R6 libraries
    # (-lICE), since we may need -lsocket or whatever for X linking.
-@@ -33803,7 +33743,7 @@ fi
+@@ -33979,7 +33919,7 @@ fi
  #
  
  # Subdirectory under lib to place GraphicsMagick lib files
 -MagickLibSubdir="${PACKAGE_NAME}-${PACKAGE_VERSION}"
 +MagickLibSubdir="${PACKAGE_NAME}"
  
- printf "%s\n" "#define MagickLibSubdir \"$MagickLibSubdir\"" >>confdefs.h
+ printf '%s\n' "#define MagickLibSubdir \"$MagickLibSubdir\"" >>confdefs.h
  
-@@ -33889,7 +33829,7 @@ printf "%s\n" "#define MagickFilterModulesPath \"$Magi
+@@ -34065,7 +34005,7 @@ printf '%s\n' "#define MagickFilterModulesPath \"$Magi
  
  #
  # Path to GraphicsMagick share files
