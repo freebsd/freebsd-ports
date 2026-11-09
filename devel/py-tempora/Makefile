@@ -1,5 +1,5 @@
 PORTNAME=	tempora
-PORTVERSION=	5.12.0
+PORTVERSION=	5.13.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -9,7 +9,6 @@ COMMENT=	Objects and routines pertaining to date and time
 WWW=		https://github.com/jaraco/tempora
 
 LICENSE=	APACHE20
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>=3.11<4:devel/py-flit-core@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jaraco.collections>=0:devel/py-jaraco.collections@${PY_FLAVOR} \
