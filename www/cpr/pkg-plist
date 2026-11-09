@@ -13,6 +13,7 @@ include/cpr/connect_timeout.h
 include/cpr/connection_pool.h
 include/cpr/cookies.h
 include/cpr/cpr.h
+include/cpr/cprexport.h
 include/cpr/cprtypes.h
 include/cpr/cprver.h
 include/cpr/curl_container.h
@@ -47,6 +48,7 @@ include/cpr/ssl_ctx.h
 include/cpr/ssl_options.h
 include/cpr/status_codes.h
 include/cpr/threadpool.h
+include/cpr/threadpool_backend.h
 include/cpr/timeout.h
 include/cpr/unix_socket.h
 include/cpr/user_agent.h
