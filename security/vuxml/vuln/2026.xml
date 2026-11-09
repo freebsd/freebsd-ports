@@ -1,3 +1,35 @@
+  <vuln vid="bb6a3ddb-dc22-11f1-8e49-3c7c3fba4204">
+    <topic>OpenEXR -- 3.4.18 fixes two vulnerabilities</topic>
+    <affects>
+	<package>
+	  <name>openexr</name>
+	  <range><lt>3.4.18</lt></range>
+	</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Cary Phillips reports:</p>
+	<blockquote cite="https://github.com/AcademySoftwareFoundation/openexr/releases/tag/v3.4.18">
+	  <ul>
+	    <li>CVE Pending (GHSA-PP92-4RV3-WFQ6): A signed-int data-window-origin overflow in the OpenEXRUtil Image API turns
+		Imf::loadImage into an attacker-steered out-of-bounds write.</li>
+	    <li>CVE Pending (GHSA-2V77-PVHX-25C3): Integer overflow in legacy OpenEXR.OutputFile.writePixels() causes heap over-read.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/AcademySoftwareFoundation/openexr/security/advisories/GHSA-PP92-4RV3-WFQ6</url>
+      <url>https://github.com/AcademySoftwareFoundation/openexr/security/advisories/GHSA-2V77-PVHX-25C3</url>
+      <url>https://github.com/AcademySoftwareFoundation/openexr/releases/tag/v3.4.18</url>
+      <url>https://github.com/AcademySoftwareFoundation/openexr/blob/v3.4.18/CHANGES.md#version-3418-november-7-2026</url>
+    </references>
+    <dates>
+      <discovery>2026-11-08</discovery>
+      <entry>2026-11-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="eb135656-db92-11f1-83b3-3c7c3fba4204">
     <topic>PowerDNS Authoritative Server -- Denial of Service vulnerability</topic>
     <affects>
