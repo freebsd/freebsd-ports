@@ -1,5 +1,5 @@
 PORTNAME=	net-ssh
-PORTVERSION=	7.3.3
+PORTVERSION=	7.3.8
 PORTEPOCH=	2
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
@@ -10,6 +10,8 @@ WWW=		https://github.com/net-ssh/net-ssh
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+RUN_DEPENDS=	rubygem-logger>=0:devel/rubygem-logger
 
 USES=		gem shebangfix
 
