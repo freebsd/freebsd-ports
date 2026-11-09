@@ -11,7 +11,7 @@ MAINTAINER=	vanilla@FreeBSD.org
 COMMENT?=	Traditional Chinese input utility in X
 WWW=		https://hyperrate.com/dir.php?eid=67
 
-LICENSE=	LGPL21
+LICENSE?=	LGPL21
 
 BUILD_GCIN_LIST?=	base
 USES?=		cmake gnome pkgconfig tar:xz
@@ -58,6 +58,7 @@ CMAKE_ARGS+=	-DGCIN_USE_CHEWING:BOOL=ON
 CMAKE_ARGS+=	-DGCIN_USE_MCBOPOMOFO:BOOL=ON \
 		-DGCIN_MCBOPOMOFO_SOURCE=${WRKSRC}/mcbopomofo-src
 .elif ${BUILD_GCIN_LIST:Mguanyinma} == "guanyinma"
+LICENSE=	MIT
 CMAKE_ARGS+=	-DGCIN_USE_GUANYINMA:BOOL=ON \
 		-DGCIN_GUANYINMA_SOURCE=${GYM_SRC} \
 		"-DGCIN_CARGO_ARGS=--locked;--offline"
