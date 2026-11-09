@@ -1,7 +1,8 @@
 PORTNAME=	noto
-PORTVERSION=	2.051
+PORTVERSION=	2.057
 CATEGORIES=	x11-fonts
-MASTER_SITES=	https://github.com/googlefonts/noto-emoji/raw/v${PORTVERSION}/fonts/
+#MASTER_SITES=	https://github.com/googlefonts/noto-emoji/raw/v${PORTVERSION}/2D/fonts/
+MASTER_SITES=	https://github.com/googlefonts/noto-emoji/raw/v2026-09-24-unicode18_0/2D/fonts/
 PKGNAMESUFFIX=	-emoji
 DISTFILES=	NotoColorEmoji.ttf
 DIST_SUBDIR=	Noto/Emoji/${PORTVERSION}
