@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2025-12-13 03:12:35 UTC
+--- pyproject.toml.orig	2026-10-09 15:35:51 UTC
 +++ pyproject.toml
 @@ -1,13 +1,13 @@
  [build-system]
@@ -9,7 +9,7 @@
  [project]
 -name = "SQLAlchemy-Utils"
 +name = "sqlalchemy-utils"
- version = "0.42.1"
+ version = "0.43.0"
  description = "Various utility functions for SQLAlchemy."
  readme = "README.rst"
 -license = "BSD-3-Clause"
