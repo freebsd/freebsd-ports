@@ -1,0 +1,4 @@
+napari-resources provides the resources used by the napari multi-dimensional
+image viewer: logos in various variants and fonts.
+napari-resources provides common resources (icons, stylesheets, fonts) for
+the napari multi-dimensional image viewer.
