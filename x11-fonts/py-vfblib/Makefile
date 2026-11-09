@@ -1,5 +1,5 @@
 PORTNAME=	vfblib
-PORTVERSION=	0.12.1
+PORTVERSION=	0.12.2
 CATEGORIES=	x11-fonts python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>=3.12:devel/py-flit-core@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fonttools>=4.65.0:print/py-fonttools@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fonttools>=4.66.1:print/py-fonttools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}orjson>=3.11.9<4:devel/py-orjson@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.16.0:devel/py-typing-extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ufolib2>=0.18.1:print/py-ufolib2@${PY_FLAVOR} \
