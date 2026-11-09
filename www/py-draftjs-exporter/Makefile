@@ -1,5 +1,5 @@
 PORTNAME=	draftjs-exporter
-PORTVERSION=	7.1.0
+PORTVERSION=	7.3.1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,6 +26,6 @@ LXML_DESC=	Use lxml as backing engine
 
 HTML5LIB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup4>=4.4.1<5:www/py-beautifulsoup4@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}html5lib>=0.999<2:www/py-html5lib@${PY_FLAVOR}
-LXML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=4.6.5<7:devel/py-lxml@${PY_FLAVOR}
+LXML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=4.9.4<7:devel/py-lxml@${PY_FLAVOR}
 
 .include <bsd.port.mk>
