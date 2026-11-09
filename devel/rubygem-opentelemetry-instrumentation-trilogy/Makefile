@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-instrumentation-trilogy
-PORTVERSION=	0.69.0
+PORTVERSION=	0.69.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-opentelemetry-helpers-mysql>=0:devel/rubygem-opentelemetry-helpers-mysql \
 		rubygem-opentelemetry-helpers-sql>=0:devel/rubygem-opentelemetry-helpers-sql \
-		rubygem-opentelemetry-helpers-sql-processor>=0:devel/rubygem-opentelemetry-helpers-sql-processor \
+		rubygem-opentelemetry-helpers-sql-processor>=0.5.1<1.0:devel/rubygem-opentelemetry-helpers-sql-processor \
 		rubygem-opentelemetry-instrumentation-base>=0.25<1:devel/rubygem-opentelemetry-instrumentation-base \
 		rubygem-opentelemetry-semantic_conventions>=1.8.0:devel/rubygem-opentelemetry-semantic_conventions
 
