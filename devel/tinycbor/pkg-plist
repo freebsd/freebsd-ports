@@ -9,5 +9,5 @@ lib/cmake/tinycbor/tinycbor-config-version.cmake
 lib/cmake/tinycbor/tinycbor-config.cmake
 lib/libtinycbor.so
 lib/libtinycbor.so.0
-lib/libtinycbor.so.0.%%PORTVERSION%%
+lib/libtinycbor.so.0.%%PORTVERSION%%.0
 libdata/pkgconfig/tinycbor.pc
