@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-sdk
-PORTVERSION=	1.45.0
+PORTVERSION=	1.45.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,6 +27,6 @@ NO_ARCH=	yes
 OPTIONS_DEFINE=	FILE_CONFIGURATION
 FILE_CONFIGURATION_DESC=	JSON/YAML configuration file
 
-FILE_CONFIGURATION_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}opentelemetry-configuration>=0.66b0<0.66b0_99:devel/py-opentelemetry-configuration@${PY_FLAVOR}
+FILE_CONFIGURATION_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}opentelemetry-configuration>=0.66b${PORTVERSION:E}<0.66b${PORTVERSION:E}_99:devel/py-opentelemetry-configuration@${PY_FLAVOR}
 
 .include <bsd.port.mk>
