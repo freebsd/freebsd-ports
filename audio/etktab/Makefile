@@ -12,7 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Guitar tablature editor
 WWW=		https://etktab.sourceforge.net/
 
-USES=		tk
+USES=		tk:86
 NO_BUILD=	yes
 NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/eTktab-${PORTVERSION}

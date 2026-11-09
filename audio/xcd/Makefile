@@ -9,7 +9,7 @@ COMMENT=	Tcl/Tk CD player
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		tk
+USES=		tk:86
 
 WITH_CDROM_PLAYER?=	cd0
 

@@ -14,7 +14,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libboost_thread.so:devel/boost-libs \
 		libjack.so:audio/jack
 
-USES=		autoreconf gl gnome sdl tcl:86+ xorg
+USES=		autoreconf gl gnome sdl tcl:86 xorg
 USE_GL=		gl
 USE_SDL=	sdl
 

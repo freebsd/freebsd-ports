@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/../COPYING
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		tk:tea xorg
+USES=		tk:86,tea xorg
 USE_LDCONFIG=	${PREFIX}/lib/snack${PORTVERSION:R}
 USE_XORG=	x11 xscrnsaver xext xft xrender
 

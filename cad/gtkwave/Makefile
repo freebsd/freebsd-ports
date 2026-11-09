@@ -28,10 +28,12 @@ PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=		DOCS EXAMPLES TCL
 TCL_DESC=		Enable support for TCL/TK
-TCL_USES=		tcl tk
+TCL_USES=		tk
 TCL_CONFIGURE_ON=	--with-tcl=${TCL_LIBDIR} \
 			--with-tk=${TK_LIBDIR}
 TCL_CONFIGURE_OFF=	--disable-tcl
+TCL_CONFIGURE_ENV=	TK_SHLIB_VER=${TK_SHLIB_VER}
+
 
 CPE_VENDOR=		tonybybell
 

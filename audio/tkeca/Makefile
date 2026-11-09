@@ -12,7 +12,7 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	normalize:audio/normalize \
 		ecasound:audio/ecasound
 
-USES=		desktop-file-utils tk
+USES=		desktop-file-utils tk:86
 
 NO_BUILD=	yes
 PORTDOCS=	*
