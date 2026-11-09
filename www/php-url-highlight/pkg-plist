@@ -7,6 +7,7 @@ share/pear/VStelmakh/UrlHighlight/Matcher/Domains/tld_map.php
 share/pear/VStelmakh/UrlHighlight/Matcher/HostValidator.php
 share/pear/VStelmakh/UrlHighlight/Matcher/Matcher.php
 share/pear/VStelmakh/UrlHighlight/Matcher/PunctuationFilter.php
+share/pear/VStelmakh/UrlHighlight/Matcher/SchemeValidator.php
 share/pear/VStelmakh/UrlHighlight/Matcher/UrlMatch.php
 share/pear/VStelmakh/UrlHighlight/Matcher/UrlRegex.php
 share/pear/VStelmakh/UrlHighlight/Replacer/Decoder/DecodedString.php
