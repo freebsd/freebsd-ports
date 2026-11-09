@@ -1,14 +1,14 @@
---- pyproject.toml.orig	2026-01-21 14:20:40 UTC
+--- pyproject.toml.orig	2026-10-08 12:16:12 UTC
 +++ pyproject.toml
 @@ -1,5 +1,5 @@
  [build-system]
--requires = ["setuptools>=69", "wheel"]
-+requires = ["setuptools>=61", "wheel"]
+-requires = ["setuptools>=69"]
++requires = ["setuptools>=61"]
  build-backend = "setuptools.build_meta"
  
  [project]
 @@ -7,8 +7,7 @@ readme = "README.rst"
- version = "3.00"
+ version = "3.01"
  description = "C parser in Python"
  readme = "README.rst"
 -license = "BSD-3-Clause"
