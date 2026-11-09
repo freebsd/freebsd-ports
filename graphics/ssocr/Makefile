@@ -1,5 +1,5 @@
 PORTNAME=	ssocr
-DISTVERSION=	2.25.1
+DISTVERSION=	2.26.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.unix-ag.uni-kl.de/~auerswal/ssocr/ \
 		LOCAL/ehaupt
