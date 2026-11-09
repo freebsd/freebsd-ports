@@ -1,3 +1,3 @@
-TIMESTAMP = 1791047272
-SHA256 (rubygem/aws-sdk-eventbridge-1.105.0.gem) = 4011ed25969c6e85f2fb85ad6dc5d984b0f1f9898bb65c828b4efeb070f2489a
-SIZE (rubygem/aws-sdk-eventbridge-1.105.0.gem) = 97792
+TIMESTAMP = 1793588296
+SHA256 (rubygem/aws-sdk-eventbridge-1.110.0.gem) = ce80eb3faf9fa90c5642b4aaacd597f29b99a2df661d927e4825cfd315fb7594
+SIZE (rubygem/aws-sdk-eventbridge-1.110.0.gem) = 98304
