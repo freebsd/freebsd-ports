@@ -1,9 +1,16 @@
---- pyproject.toml.orig	2025-10-10 17:06:42 UTC
+--- pyproject.toml.orig	2026-10-11 09:47:39 UTC
 +++ pyproject.toml
-@@ -7,7 +7,7 @@ requires-python = ">=3.10"
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=70.1"]
++requires = ["setuptools>=61"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -7,7 +7,7 @@ requires-python = ">=3.11"
  description = "Python wrapper for the ls-qpack QPACK library"
  readme = "README.rst"
- requires-python = ">=3.10"
+ requires-python = ">=3.11"
 -license = "BSD-3-Clause"
 +license = { text = "BSD-3-Clause" }
  authors = [
