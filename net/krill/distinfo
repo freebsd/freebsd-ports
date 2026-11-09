@@ -1,4 +1,4 @@
-TIMESTAMP = 1793640272
+TIMESTAMP = 1794068546
 SHA256 (rust/crates/adler32-1.2.0.crate) = aae1277d39aeec15cb388266ecc24b11c80469deae6067e17a1a7aa9e5c1f234
 SIZE (rust/crates/adler32-1.2.0.crate) = 6411
 SHA256 (rust/crates/aho-corasick-1.1.4.crate) = ddd31a130427c27518df266943a5308ed92d4b226cc639f5a8f1002816174301
@@ -849,5 +849,5 @@ SHA256 (rust/crates/zerovec-derive-0.11.2.crate) = eadce39539ca5cb3985590102671f
 SIZE (rust/crates/zerovec-derive-0.11.2.crate) = 21421
 SHA256 (rust/crates/zmij-1.0.21.crate) = b8848ee67ecc8aedbaf3e4122217aff892639231befc6a1b58d29fff4c2cabaa
 SIZE (rust/crates/zmij-1.0.21.crate) = 26665
-SHA256 (NLnetLabs-krill-v0.16.1_GH0.tar.gz) = c8b96a836f2c1aaa6063e85e937692bf00db774f8fdbac2586146e31764a7fbd
-SIZE (NLnetLabs-krill-v0.16.1_GH0.tar.gz) = 20285213
+SHA256 (NLnetLabs-krill-v0.16.2_GH0.tar.gz) = ba168732b9af2e5099ee8d3d85345d29aa650b106bf2cede176da2eb4c208ba9
+SIZE (NLnetLabs-krill-v0.16.2_GH0.tar.gz) = 20286999
