@@ -1,15 +1,15 @@
---- setup.py.orig	2026-08-26 01:18:36 UTC
+--- setup.py.orig	2026-09-29 06:56:52 UTC
 +++ setup.py
 @@ -51,117 +51,117 @@ DEPENDENCIES = [
  ]
  
  DEPENDENCIES = [
 -    "antlr4-python3-runtime~=4.13.1",
--    'azure-appconfiguration~=1.8.0',
+-    'azure-appconfiguration==1.10.0b1',
 -    'azure-ai-projects~=1.0.0',
 -    'azure-batch==15.0.0b1',
 +    "antlr4-python3-runtime>=4.13.1",
-+    'azure-appconfiguration>=1.8.0',
++    'azure-appconfiguration>=1.10.0b1',
 +    'azure-ai-projects>=1.0.0',
 +    'azure-batch>=15.0.0b1',
      'azure-cli-core=={}'.format(VERSION),
@@ -37,9 +37,9 @@
 -    'azure-mgmt-cognitiveservices==15.0.0b4',  # 15.0.0b4 version supports compute operations which is in PrPr, pls don't remove it without consulting our team
 -    'azure-mgmt-compute~=34.1.0',
 -    'azure-mgmt-containerinstance==10.2.0b1',
--    'azure-mgmt-containerregistry==15.1.0b2',
+-    'azure-mgmt-containerregistry==15.1.0b3',
 -    'azure-mgmt-containerregistrytasks==1.0.0b1',
--    'azure-mgmt-containerservice~=41.5.0',
+-    'azure-mgmt-containerservice~=41.6.0',
 -    'azure-mgmt-cosmosdb==10.0.0',
 -    'azure-mgmt-datalake-store~=1.1.0b1',
 -    'azure-mgmt-datamigration~=10.0.0',
@@ -66,8 +66,9 @@
 -    'azure-mgmt-privatedns~=1.0.0',
 -    'azure-mgmt-rdbms==10.2.0b17',
 -    'azure-mgmt-mysqlflexibleservers==1.1.0b3',
--    'azure-mgmt-recoveryservicesbackup~=9.2.0',
--    'azure-mgmt-recoveryservices~=4.1.0',
+-    'azure-mgmt-recoveryservicesbackup~=11.1.0',
+-    'azure-mgmt-recoveryservicesbackup-passivestamp==1.0.0b1',
+-    'azure-mgmt-recoveryservices~=4.2.0',
 -    'azure-mgmt-redhatopenshift~=3.0.0',
 -    'azure-mgmt-redis~=14.5.0',
 -    'azure-mgmt-resource==24.0.0',
@@ -119,9 +120,9 @@
 +    'azure-mgmt-cognitiveservices>=15.0.0b4',  # 15.0.0b4 version supports compute operations which is in PrPr, pls don't remove it without consulting our team
 +    'azure-mgmt-compute>=34.1.0',
 +    'azure-mgmt-containerinstance>=10.2.0b1',
-+    'azure-mgmt-containerregistry>=15.1.0b2',
++    'azure-mgmt-containerregistry>=15.1.0b3',
 +    'azure-mgmt-containerregistrytasks>=1.0.0b1',
-+    'azure-mgmt-containerservice>=41.5.0',
++    'azure-mgmt-containerservice>=41.6.0',
 +    'azure-mgmt-cosmosdb>=10.0.0',
 +    'azure-mgmt-datalake-store>=1.1.0b1',
 +    'azure-mgmt-datamigration>=10.0.0',
@@ -148,8 +149,9 @@
 +    'azure-mgmt-privatedns>=1.0.0',
 +    'azure-mgmt-rdbms>=10.2.0b17',
 +    'azure-mgmt-mysqlflexibleservers>=1.1.0b3',
-+    'azure-mgmt-recoveryservicesbackup>=9.2.0',
-+    'azure-mgmt-recoveryservices>=4.1.0',
++    'azure-mgmt-recoveryservicesbackup>=11.1.0',
++    'azure-mgmt-recoveryservicesbackup-passivestamp>=1.0.0b1',
++    'azure-mgmt-recoveryservices>=4.2.0',
 +    'azure-mgmt-redhatopenshift>=3.0.0',
 +    'azure-mgmt-redis>=14.5.0',
 +    'azure-mgmt-resource>=24.0.0',
@@ -198,7 +200,6 @@
 +    'PyNaCl>=1.5.0,<1.7',
 +    'scp>=0.13.2',
      'semver~=3.0',
-     'setuptools',
      'six>=1.10.0',  # six is still used by countless extensions
 -    'sshtunnel~=0.1.4',
 +    'sshtunnel>=0.1.4',
