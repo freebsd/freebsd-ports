@@ -1,0 +1,19 @@
+--- pyproject.toml.orig	2026-10-25 17:48:30 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=77.0.3"]
++requires = ["setuptools>=61"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -8,8 +8,7 @@ authors = [{ name = "Marc Brinkmann", email = "git@mar
+ description = "Draws ASCII trees."
+ readme = "README.md"
+ authors = [{ name = "Marc Brinkmann", email = "git@marcbrinkmann.de" }]
+-license = "MIT"
+-license-files = ["LICENSE"]
++license = { text = "MIT" }
+ dependencies = []
+ 
+ [project.urls]
