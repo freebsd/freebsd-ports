@@ -1,5 +1,5 @@
 PORTNAME=	googleapis-common-protos
-PORTVERSION=	1.10.0
+PORTVERSION=	1.11.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	rubygem-google-protobuf>=4.26<5:devel/rubygem-google-protobuf \
 		rubygem-googleapis-common-protos-types>=1.21<2:devel/rubygem-googleapis-common-protos-types \
-		rubygem-grpc>=1.41<2:net/rubygem-grpc
+		rubygem-grpc>=1.84.1<2:net/rubygem-grpc
 
 USES=		gem
 
