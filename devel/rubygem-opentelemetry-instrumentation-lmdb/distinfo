@@ -1,3 +1,3 @@
-TIMESTAMP = 1789129420
-SHA256 (rubygem/opentelemetry-instrumentation-lmdb-0.26.1.gem) = a1a3274624ce520e7fa64e2b20635cca4b51bc9466ddaddddb1323a47da794b0
-SIZE (rubygem/opentelemetry-instrumentation-lmdb-0.26.1.gem) = 11264
+TIMESTAMP = 1793588954
+SHA256 (rubygem/opentelemetry-instrumentation-lmdb-0.28.0.gem) = a2e05b56ffc7a335714c4fdfe3b670a69ff71f05b99f43896f5a68652cb2f64f
+SIZE (rubygem/opentelemetry-instrumentation-lmdb-0.28.0.gem) = 13824
