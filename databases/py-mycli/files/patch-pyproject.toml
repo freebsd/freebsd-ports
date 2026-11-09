@@ -1,45 +1,37 @@
---- pyproject.toml.orig	2026-06-20 14:39:51 UTC
+--- pyproject.toml.orig	2026-10-28 08:46:40 UTC
 +++ pyproject.toml
-@@ -4,28 +4,28 @@ requires-python = ">=3.10"
- description = "CLI for MySQL Database. With auto-completion and syntax highlighting."
+@@ -4,7 +4,7 @@ requires-python = ">=3.11"
+ description = "Rich MySQL terminal client with autocompletion, syntax highlighting, and dataframes"
  readme = "README.md"
- requires-python = ">=3.10"
+ requires-python = ">=3.11"
 -license = "BSD-3-Clause"
 +license = { text = "BSD-3-Clause" }
  authors = [{ name = "Mycli Core Team" }]
- 
- dependencies = [
-     "click ~= 8.3.1",
-     "clickdc ~= 0.1.1",
--    "cryptography ~= 46.0.5",
--    "Pygments ~= 2.19.2",
-+    "cryptography>=46.0.5",
-+    "Pygments>=2.19.2",
-     "prompt_toolkit>=3.0.41,<4.0.0",
--    "PyMySQL ~= 1.1.2",
--    "sqlparse>=0.3.0,<0.6.0",
--    "sqlglot ~= 30.8.0",
--    "sqlglotc ~= 30.8.0",
-+    "PyMySQL>=1.1.2",
-+    "sqlparse>=0.3.0,<0.7.0",
-+    "sqlglot>=30.8.0",
-+    "sqlglotc>=30.8.0",
+ classifiers = [
+     'Environment :: Console',
+@@ -30,17 +30,17 @@ dependencies = [
+     "cryptography ~= 50.0.2",
+     "Pygments ~= 2.21.0",
+     "prompt_toolkit ~= 3.0.53",
+-    "PyMySQL ~= 1.2.3",
++    "PyMySQL ~= 1.2.0",
+     "sqlparse ~= 0.6.0",
+-    "sqlglot ~= 30.23.0",
+-    "sqlglotc ~= 30.23.0",
++    "sqlglot >= 30.23.0",
++    "sqlglotc >= 30.23.0",
      "configobj ~= 5.0.9",
-     "cli_helpers[styles] ~= 2.15.0",
--    "wcwidth ~= 0.6.0",
-+    "wcwidth>=0.6.0",
+     "cli_helpers[styles] ~= 2.15.3",
+     "wcwidth ~= 0.9.2",
      "pyperclip ~= 1.11.0",
-     "pycryptodomex ~= 3.23.0",
-     "pyfzf ~= 0.3.1",
-     "rapidfuzz ~= 3.14.3",
+     "pycryptodomex ~= 3.24.1",
+     "rapidfuzz ~= 3.14.6",
 -    "keyring ~= 25.7.0",
--    "yaspin ~= 3.4.0",
-+    "keyring>=25.6.0,<25.8",
-+    "yaspin>=3.4.0,<3.6",
- ]
- 
- [project.urls]
-@@ -36,7 +36,7 @@ Changelog = 'https://github.com/dbcli/mycli/blob/main/
++    "keyring >= 25.6.0",
+     "jinja2 ~= 3.1.6",
+     "markupsafe ~= 3.0.4",                  # removeme: transitive dependency forced for binary 3.15 wheel
+     "yaspin ~= 3.5.1",
+@@ -54,7 +54,7 @@ Changelog = 'https://github.com/dbcli/mycli/blob/main/
  Changelog = 'https://github.com/dbcli/mycli/blob/main/changelog.md'
  
  [build-system]
