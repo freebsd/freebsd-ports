@@ -1,31 +1,26 @@
 PORTNAME=	korganizer
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	deskutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Calendar and scheduling Program
 WWW=		https://www.kde.org/
 
-LIB_DEPENDS=	libical.so:devel/libical
-
-USES=		cmake compiler:c++11-lib desktop-file-utils gettext gl kde:6 \
+USES=		cmake desktop-file-utils gettext-tools gl kde:6 \
 		qt:6 tar:xz xorg
 USE_GL=		gl
-USE_KDE=	attica auth bookmarks codecs completion config configwidgets \
-		coreaddons crash dbusaddons guiaddons i18n iconthemes \
-		itemmodels itemviews jobwidgets kcmutils kio newstuff \
-		notifications parts service solid sonnet textwidgets \
-		unitconversion userfeedback wallet widgetsaddons windowsystem \
-		xmlgui \
+USE_KDE=	calendarcore contacts coreaddons crash holidays i18n \
+		iconthemes itemviews jobwidgets kcmutils ktextaddons \
+		mime parts userfeedback xmlgui \
 		ecm:build
-# pim components
-USE_KDE+=	akonadi akonadicalendar akonadicontacts akonadimime \
-		akonadisearch calendarcore calendarsupport \
-		calendarutils contacts eventviews grantleetheme holidays \
-		identitymanagement imap incidenceeditor kontactinterface ldap \
-		libkdepim mailtransport mime pimcommon pimtextedit \
-		kdepim-runtime:run
-USE_QT=		base
+# KDE PIM
+USE_KDE+=	akonadi akonadicalendar akonadicontacts calendarsupport \
+		calendarutils eventviews incidenceeditor \
+		kontactinterface ldap libkdepim mailtransport pimcommon
+# KDE Plasma
+USE_KDE+=	activities
+USE_QT=		base declarative tools
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 

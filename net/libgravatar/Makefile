@@ -1,5 +1,6 @@
 PORTNAME=	libgravatar
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -8,15 +9,11 @@ WWW=		https://invent.kde.org/pim/libgravatar
 
 LICENSE=	LGPL21
 
-USES=		cmake compiler:c++11-lib gettext kde:6 qt:6 tar:xz
-USE_KDE=	auth codecs config configwidgets coreaddons i18n kio service \
-		sonnet textwidgets widgetsaddons \
+USES=		cmake gettext-tools kde:6 qt:6 tar:xz
+# KDE Frameworks
+USE_KDE=	config configwidgets coreaddons i18n widgetsaddons \
 		ecm:build
-# pim components
-USE_KDE+=	pimcommon
 USE_QT=		base
 USE_LDCONFIG=	yes
-
-OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>

@@ -1,31 +1,25 @@
 PORTNAME=	mbox-importer
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	deskutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Import mbox files to KMail
-WWW=		https://www.kde.org/
+WWW=		https://invent.kde.org/pim/mbox-importer
 
-LIB_DEPENDS=	libassuan.so:security/libassuan \
-		libgpg-error.so:security/libgpg-error \
-		libgpgme.so:security/gpgme \
-		libgpgmepp.so:security/gpgmepp \
-		libqgpgmeqt6.so:security/qgpgme@qt6
+LIB_DEPENDS=	libgpg-error.so:security/libgpg-error \
+		libgpgme.so:security/gpgme
 
-USES=		cmake compiler:c++11-lib desktop-file-utils gettext kde:6 qt:6 \
+USES=		cmake desktop-file-utils gettext-tools kde:6 qt:6 \
 		tar:xz
-USE_KDE=	archive auth codecs completion config configwidgets coreaddons \
-		crash i18n itemmodels kio service widgetsaddons \
+# KDE Frameworks
+USE_KDE=	config crash i18n service \
 		ecm:build
-# pim components
-USE_KDE+=	akonadi akonadicontacts akonadimime contacts grantleetheme \
-		identitymanagement imap libkdepim libkleo mailcommon \
-		mailimporter messagelib mime pimcommon pimtextedit
+# KDE PIM
+USE_KDE+=	akonadi identitymanagement mailcommon mailimporter
 USE_QT=		base
 USE_LDCONFIG=	yes
 
 DESCR=		${.CURDIR:H:H}/deskutils/kdepim/pkg-descr
-
-OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>

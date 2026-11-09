@@ -1,5 +1,6 @@
 PORTNAME=	kdepim-runtime
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	deskutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -12,28 +13,21 @@ LIB_DEPENDS=	libqca-qt6.so:devel/qca@qt6 \
 		libsasl2.so:security/cyrus-sasl2 \
 		libqt6keychain.so:security/qtkeychain@qt6
 
-USES=		cmake:noninja compiler:c++11-lib gettext kde:6 qt:6 \
-		shared-mime-info tar:xz xorg
-USE_KDE=	auth bookmarks codecs completion config configwidgets \
-		coreaddons crash dbusaddons guiaddons holidays i18n iconthemes \
-		itemmodels itemviews jobwidgets kcmutils kdav kio \
-		notifications notifyconfig parts service solid sonnet \
-		textwidgets unitconversion widgetsaddons windowsystem \
-		xmlgui \
+USES=		cmake:noninja compiler gettext-tools kde:6 qt:6 \
+		shared-mime-info tar:xz
+# KDE Frameworks
+USE_KDE=	calendarcore codecs contacts i18n itemmodels kcmutils \
+		kdav mime notifications notifyconfig \
 		ecm:build
-# pim components
-USE_KDE+=	akonadi akonadicalendar akonadicontacts akonadimime \
-		akonadisearch calendarcore calendarutils contacts \
-		gapi grantleetheme identitymanagement imap kontactinterface \
-		ldap libkdepim mailtransport mbox mime pimcommon pimtextedit \
-		syndication
-USE_QT=		base networkauth webengine
-USE_XORG=	x11
+# KDE PIM
+USE_KDE+=	akonadicalendar akonadimime calendarutils gapi \
+		identitymanagement ldap mailtransport mbox pimcommon
+# KDE Plasma
+USE_KDE+=	activities
+USE_QT=		base declarative networkauth speech webengine
 USE_LDCONFIG=	yes
 
 DESCR=		${.CURDIR:H:H}/deskutils/kdepim/pkg-descr
-
-OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
 

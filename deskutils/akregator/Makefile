@@ -1,5 +1,6 @@
 PORTNAME=	akregator
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	deskutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -8,26 +9,23 @@ WWW=		https://www.kde.org/
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libassuan.so:security/libassuan \
-		libgpg-error.so:security/libgpg-error \
+LIB_DEPENDS=	libgpg-error.so:security/libgpg-error \
 		libgpgme.so:security/gpgme \
-		libgpgmepp.so:security/gpgmepp \
-		libqgpgmeqt6.so:security/qgpgme@qt6
+		libgpgmepp.so:security/gpgmepp
 
-USES=		cmake compiler:c++11-lib desktop-file-utils gettext kde:6 qt:6 \
-		tar:xz xorg
-USE_KDE=	auth codecs completion config configwidgets coreaddons crash \
-		i18n iconthemes itemmodels jobwidgets kcmutils kio \
-		notifications notifyconfig parts service solid sonnet \
-		statusnotifieritem texteditor textwidgets userfeedback \
-		widgetsaddons windowsystem xmlgui \
+USES=		cmake desktop-file-utils gettext-tools kde:6 qt:6 \
+		tar:xz
+# KDE Frameworks
+USE_KDE=	codecs crash i18n iconthemes kcmutils ktextaddons \
+		notifications notifyconfig parts statusnotifieritem \
+		syndication userfeedback xmlgui \
 		ecm:build
-# pim components
-USE_KDE+=	akonadi akonadimime contacts grantleetheme kontactinterface \
-		ktextaddons libkdepim libkleo messagelib mime pimcommon \
-		pimtextedit syndication
-USE_QT=		base webengine
-USE_XORG=	x11
+# KDE PIM
+USE_KDE+=	grantleetheme kontactinterface libkdepim messagelib \
+		pimcommon
+# KDE Plasma
+USE_KDE+=	activities
+USE_QT=		base declarative webengine
 USE_LDCONFIG=	yes
 
 DESCR=		${.CURDIR:H:H}/deskutils/kdepim/pkg-descr

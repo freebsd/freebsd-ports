@@ -1,27 +1,26 @@
 PORTNAME=	akonadi
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	databases kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Storage server for KDE-Pim
+COMMENT=	Storage server for KDE PIM
 WWW=		https://community.kde.org/KDE_PIM/Akonadi
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 # Let process generate meaningful backtrace on core dump.
 BUILD_DEPENDS=	xsltproc:textproc/libxslt
 
-USES=		cmake compiler:c++11-lib gettext gnome kde:6 qt:6 \
-		shared-mime-info sqlite:3 tar:xz xorg
+USES=		cmake gettext-tools gnome kde:6 qt:6 \
+		shared-mime-info tar:xz
 USE_GNOME=	libxml2
-USE_KDE=	auth codecs completion config configwidgets coreaddons crash \
-		dbusaddons guiaddons i18n iconthemes itemmodels itemviews kio \
-		service widgetsaddons xmlgui \
+# KDE Frameworks
+USE_KDE=	colorscheme config configwidgets coreaddons crash i18n \
+		iconthemes itemmodels widgetsaddons xmlgui \
 		ecm:build
-USE_QT=		base \
+USE_QT=		base declarative tools \
 		sqldriver-sqlite:run
-USE_XORG=	x11
 CMAKE_ARGS+=	-DCMAKE_REQUIRED_INCLUDES:STRING="${LOCALBASE}/include" \
 		-DMYSQLD_EXECUTABLE:FILEPATH="${LOCALBASE}/libexec/mysqld" \
 		-DMYSQLD_SCRIPTS_PATH:PATH="${LOCALBASE}/bin" \

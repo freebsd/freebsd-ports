@@ -1,5 +1,6 @@
 PORTNAME=	kdepim-addons
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	deskutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -8,35 +9,30 @@ WWW=		https://www.kde.org/
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	markdown:textproc/discount
-RUN_DEPENDS=	markdown:textproc/discount
-LIB_DEPENDS=	libassuan.so:security/libassuan \
-		libgpg-error.so:security/libgpg-error \
+LIB_DEPENDS=	libgpg-error.so:security/libgpg-error \
 		libgpgme.so:security/gpgme \
-		libgpgmepp.so:security/gpgmepp
+		libgpgmepp.so:security/gpgmepp \
+		libmarkdown.so:textproc/discount
 
-USES=		cmake compiler:c++11-lib gettext kde:6 pkgconfig qt:6 tar:xz \
-		xorg
-USE_KDE=	archive auth codecs completion config configwidgets coreaddons \
-		dbusaddons guiaddons i18n iconthemes itemmodels itemviews \
-		jobwidgets kdeclarative kio parts prison service solid sonnet \
-		syntaxhighlighting textwidgets wallet widgetsaddons \
-		windowsystem xmlgui \
+USES=		cmake gettext-tools kde:6 pkgconfig qt:6 tar:xz
+# KDE Frameworks
+USE_KDE=	calendarcore colorscheme configwidgets contacts \
+		dbusaddons guiaddons holidays i18n iconthemes kcmutils \
+		kdeclarative ktextaddons mime parts prison \
+		syntaxhighlighting texttemplate xmlgui \
 		ecm:build
-# pim components
-USE_KDE+=	akonadi akonadicalendar akonadicontacts akonadiimportwizard \
-		akonadimime calendarcore calendarsupport \
-		calendarutils contacts eventviews gapi grantleetheme gravatar \
-		holidays identitymanagement imap incidenceeditor kaddressbook \
-		kitinerary kontactinterface kpkpass libkdepim libkleo \
-		libksieve mailcommon mailimporter mailtransport messagelib \
-		mime pimcommon pimtextedit tnef
-USE_QT=		base webengine
-USE_XORG=	x11
+# KDE PIM
+USE_KDE+=	akonadi akonadicalendar akonadicontacts \
+		akonadiimportwizard calendarsupport calendarutils \
+		grantleetheme gravatar identitymanagement imap \
+		incidenceeditor kaddressbook kitinerary ldap libkdepim \
+		libkleo libksieve mailcommon mailimporter messagelib \
+		pimcommon pimtextedit tnef
+# KDE Plasma
+USE_KDE+=	activities
+USE_QT=		base declarative webengine
 USE_LDCONFIG=	yes
 
 DESCR=		${.CURDIR:H:H}/deskutils/kdepim/pkg-descr
-
-OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>

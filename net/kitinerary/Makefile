@@ -1,5 +1,6 @@
 PORTNAME=	kitinerary
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -10,22 +11,22 @@ LICENSE=	LGPL21
 
 IGNORE_FreeBSD_13=	does not build with OpenSSL 1.1.1
 
-LIB_DEPENDS=	libphonenumber.so:devel/libphonenumber \
+LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
+		libphonenumber.so:devel/libphonenumber \
 		libpoppler.so:graphics/poppler \
 		libZXing.so:textproc/zxing-cpp
 
-USES=		cmake compiler:c++11-lang gettext gnome kde:6 pkgconfig qt:6 \
+USES=		cmake gettext-tools gnome kde:6 pkgconfig qt:6 \
 		shared-mime-info ssl tar:xz
 USE_GNOME=	libxml2
-USE_KDE=	archive codecs coreaddons i18n \
+# KDE Frameworks
+USE_KDE=	calendarcore codecs contacts i18n mime \
 		ecm:build
-# Pim components
-USE_KDE+=	calendarcore contacts kpkpass mime
-USE_QT=		base
+# KDE PIM
+USE_KDE+=	kpkpass
+USE_QT=		base declarative
 USE_LDCONFIG=	yes
 
 DESCR=		${.CURDIR:H:H}/deskutils/kdepim/pkg-descr
-
-OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>

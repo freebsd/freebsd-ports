@@ -1,5 +1,6 @@
 PORTNAME=	messagelib
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -8,38 +9,25 @@ WWW=		https://invent.kde.org/pim/messagelib
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/range/algorithm.hpp:devel/boost-libs
-LIB_DEPENDS=	libassuan.so:security/libassuan \
-		libgpg-error.so:security/libgpg-error \
-		libgpgme.so:security/gpgme \
-		libgpgmepp.so:security/gpgmepp \
-		libqca-qt6.so:devel/qca@qt6 \
+LIB_DEPENDS=	libgpgmepp.so:security/gpgmepp \
 		libqgpgmeqt6.so:security/qgpgme@qt6
 
-USES=		cmake compiler:c++11-lib cpe gettext kde:6 qt:6 tar:xz \
-		xorg
+USES=		cmake compiler cpe gettext-tools inotify kde:6 qt:6 \
+		ssl tar:xz
 CPE_VENDOR=	kde
-USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
-		coreaddons guiaddons i18n iconthemes imap itemmodels itemviews \
-		jobwidgets kio ktextaddons notifications service solid sonnet \
-		syntaxhighlighting textwidgets wallet widgetsaddons \
-		windowsystem xmlgui \
+# KDE Frameworks
+USE_KDE=	archive calendarcore codecs colorscheme completion \
+		contacts coreaddons guiaddons i18n iconthemes itemviews \
+		jobwidgets kio ktextaddons mime newstuff notifications \
+		sonnet syntaxhighlighting texttemplate textwidgets \
+		widgetsaddons xmlgui \
 		ecm:build
-# pim components
-USE_KDE+=	akonadi akonadicontacts akonadimime akonadisearch calendarcore \
-		contacts grantleetheme gravatar identitymanagement ldap \
-		libkdepim libkleo mailtransport mbox mime pimcommon \
-		pimtextedit
-USE_QT=		base webengine
-USE_XORG=	x11
+# KDE PIM
+USE_KDE+=	akonadi akonadicontacts akonadimime akonadisearch \
+		grantleetheme gravatar identitymanagement libkdepim \
+		libkleo mailtransport mbox pimcommon pimtextedit
+USE_QT=		base declarative webengine
 USE_LDCONFIG=	yes
-
-OPTIONS_DEFINE=		INOTIFY DOCS
-OPTIONS_DEFAULT=	INOTIFY
-OPTIONS_SUB=		yes
-
-INOTIFY_DESC=		Filesystem alteration notifications using inotify
-INOTIFY_LIB_DEPENDS=	libinotify.so:devel/libinotify
 
 .include <bsd.port.pre.mk>
 

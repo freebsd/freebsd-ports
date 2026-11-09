@@ -1,21 +1,25 @@
 PORTNAME=	mimetreeparser
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Parser for MIME trees 
-WWW=		https://www.kde.org/
+COMMENT=	Parser for MIME trees
+WWW=		https://invent.kde.org/pim/mimetreeparser
 
 LICENSE=	LGPL21
 
-USES=		cmake compiler:c++11-lib gettext kde:6 qt:6 tar:xz
-USE_KDE=	calendarcore libkleo mbox mime \
+LIB_DEPENDS=	libgpgmepp.so:security/gpgmepp
+
+USES=		cmake gettext-tools kde:6 qt:6 tar:xz
+# KDE Frameworks
+USE_KDE=	calendarcore colorscheme i18n kio mime service \
 		kirigami-addons:run kirigami2:run \
 		ecm:build
-USE_QT=		base
+# KDE PIM
+USE_KDE+=	libkleo mbox
+USE_QT=		base declarative
 
 DESCR=		${.CURDIR:H:H}/deskutils/kdepim/pkg-descr
-
-OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>

@@ -1,5 +1,6 @@
 PORTNAME=	kidentitymanagement
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -8,19 +9,16 @@ WWW=		https://www.kde.org/
 
 LICENSE=	LGPL21
 
-USES=		cmake compiler:c++11-lib gettext kde:6 qt:6 tar:xz xorg
-USE_KDE=	auth codecs completion config configwidgets coreaddons i18n \
-		itemmodels itemviews jobwidgets kio kirigami-addons service \
-		solid widgetsaddons windowsystem xmlgui \
+USES=		cmake gettext-tools kde:6 qt:6 tar:xz
+# KDE Frameworks
+USE_KDE=	codecs config coreaddons i18n kio kirigami-addons \
+		ktextaddons xmlgui \
 		ecm:build
-# pim components
+# KDE PIM
 USE_KDE+=	pimtextedit
-USE_QT=		base
-USE_XORG=	x11
+USE_QT=		base declarative
 USE_LDCONFIG=	yes
 
 DESCR=		${.CURDIR:H:H}/deskutils/kdepim/pkg-descr
-
-OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>

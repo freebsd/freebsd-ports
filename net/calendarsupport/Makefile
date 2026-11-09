@@ -1,28 +1,23 @@
 PORTNAME=	calendarsupport
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Calendar support libraries for KDEPim
+COMMENT=	Calendar support libraries for KDE PIM
 WWW=		https://invent.kde.org/pim/calendarsupport
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/range/algorithm.hpp:devel/boost-libs
-
-USES=		cmake compiler:c++11-lib gettext kde:6 qt:6 tar:xz xorg
-USE_KDE=	auth codecs completion config configwidgets coreaddons \
-		guiaddons i18n iconthemes itemmodels jobwidgets kio service \
-		solid widgetsaddons windowsystem \
+USES=		cmake gettext-tools kde:6 qt:6 tar:xz
+# KDE Frameworks
+USE_KDE=	calendarcore codecs guiaddons holidays i18n kio \
+		ktextaddons mime \
 		ecm:build
-# pim components
-USE_KDE+=	akonadi akonadicalendar calendarcore \
-		calendarutils holidays identitymanagement mime pimcommon \
-		pimtextedit
+# KDE PIM
+USE_KDE+=	akonadi akonadicalendar calendarutils \
+		identitymanagement
 USE_QT=		base
-USE_XORG=	x11
 USE_LDCONFIG=	yes
-
-OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>
