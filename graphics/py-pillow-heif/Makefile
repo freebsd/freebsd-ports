@@ -1,7 +1,8 @@
 PORTNAME=	pillow-heif
-PORTVERSION=	1.4.0
+PORTVERSION=	1.8.1
 CATEGORIES=	graphics python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/bigcat88/pillow_heif/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pillow_heif-${PORTVERSION}
 
@@ -12,7 +13,8 @@ WWW=		https://github.com/bigcat88/pillow_heif
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FLAVOR} \
+BUILD_DEPENDS=	libheif>=1.23.6:graphics/libheif \
+		${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 LIB_DEPENDS=	libheif.so:graphics/libheif
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>=11.1.0:graphics/py-pillow@${PY_FLAVOR}
