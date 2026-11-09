@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-instrumentation-sinatra
-PORTVERSION=	0.30.0
+PORTVERSION=	0.30.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
