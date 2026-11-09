@@ -1,3 +1,3 @@
-TIMESTAMP = 1787587776
-SHA256 (azure_mgmt_netapp-17.1.0.tar.gz) = 8d706c711a2811835d6a673ddd721323e441e91842a563fe17b03608cebb87fa
-SIZE (azure_mgmt_netapp-17.1.0.tar.gz) = 273358
+TIMESTAMP = 1793587300
+SHA256 (azure_mgmt_netapp-18.0.0.tar.gz) = 970cd265e27d58280314bb120206e2a8559be095a15f380bb926ee2c1702035e
+SIZE (azure_mgmt_netapp-18.0.0.tar.gz) = 281577
