@@ -7613,6 +7613,7 @@
     SUBDIR += rubygem-cucumber-tag-expressions9
     SUBDIR += rubygem-cucumber-wire
     SUBDIR += rubygem-cucumber10
+    SUBDIR += rubygem-cucumber11
     SUBDIR += rubygem-curses
     SUBDIR += rubygem-cyoi
     SUBDIR += rubygem-daemon_controller

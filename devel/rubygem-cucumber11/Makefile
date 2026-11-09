@@ -1,0 +1,35 @@
+PORTNAME=	cucumber
+PORTVERSION=	11.1.1
+CATEGORIES=	devel rubygems
+MASTER_SITES=	RG
+PKGNAMESUFFIX=	11
+
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Behaviour Driven Development with elegance and joy
+WWW=		https://cucumber.io/ \
+		https://github.com/cucumber/cucumber-ruby
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	rubygem-base64>=0.2<1:converters/rubygem-base64 \
+		rubygem-builder>=3.2<4:devel/rubygem-builder \
+		rubygem-cucumber-ci-environment11>=9<12:devel/rubygem-cucumber-ci-environment11 \
+		rubygem-cucumber-core16>=16.2.0<17:devel/rubygem-cucumber-core16 \
+		rubygem-cucumber-cucumber-expressions19>=17<20:devel/rubygem-cucumber-cucumber-expressions19 \
+		rubygem-cucumber-html-formatter23>=21<24:textproc/rubygem-cucumber-html-formatter23 \
+		rubygem-diff-lcs>=1.5<2:textproc/rubygem-diff-lcs \
+		rubygem-logger>=1.6<2:devel/rubygem-logger \
+		rubygem-mini_mime>=1.1<2:mail/rubygem-mini_mime \
+		rubygem-multi_test1>=1.1<2:devel/rubygem-multi_test1 \
+		rubygem-sys-uname>=1.5<2:sysutils/rubygem-sys-uname
+
+USES=		gem
+
+NO_ARCH=	yes
+
+PLIST_FILES=	bin/cucumber
+
+PORTSCOUT=	limit:^11\.
+
+.include <bsd.port.mk>
