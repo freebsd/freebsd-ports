@@ -1,0 +1,20 @@
+--- pyproject.toml.orig	2026-10-29 20:11:09 UTC
++++ pyproject.toml
+@@ -6,7 +6,7 @@
+ # --------------------------------------------------------------------------
+ 
+ [build-system]
+-requires = ["setuptools>=77.0.3", "wheel"]
++requires = ["setuptools>=61", "wheel"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -15,7 +15,7 @@ description = "Microsoft Corporation Azure Storage Fil
+   { name = "Microsoft Corporation", email = "azpysdkhelp@microsoft.com" },
+ ]
+ description = "Microsoft Corporation Azure Storage File Share Client Library for Python"
+-license = "MIT"
++license = { text = "MIT" }
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",
+     "Programming Language :: Python",
