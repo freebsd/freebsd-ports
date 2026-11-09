@@ -1,5 +1,5 @@
 PORTNAME=	bullet
-PORTVERSION=	8.2.0
+PORTVERSION=	8.3.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX?=	# empty for base port
