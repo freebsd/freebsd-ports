@@ -1,5 +1,5 @@
 PORTNAME=	smart-open
-PORTVERSION=	8.0.2
+PORTVERSION=	9.0.1
 CATEGORIES=	net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,7 +23,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}awscli>=0:devel/py-awscli@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}boto3>=0:www/py-boto3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}google-cloud-storage>=2.6.0:www/py-google-cloud-storage@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}paramiko>=0:security/py-paramiko@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}paramiko>=3.2:security/py-paramiko@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyopenssl>=0,1:security/py-pyopenssl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-benchmark>=0:devel/py-pytest-benchmark@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-rerunfailures>=0:devel/py-pytest-rerunfailures@${PY_FLAVOR} \
@@ -51,7 +51,7 @@ AZURE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}azure-common>=0:www/py-azure-common@${
 HTTP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR}
 GCS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-cloud-storage>=2.6.0:www/py-google-cloud-storage@${PY_FLAVOR}
 S3_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}boto3>=1.9.17:www/py-boto3@${PY_FLAVOR}
-SSH_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}paramiko>=0:security/py-paramiko@${PY_FLAVOR}
+SSH_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}paramiko>=3.2:security/py-paramiko@${PY_FLAVOR}
 WEBHDFS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR}
 ZST_RUN_DEPENDS=	${PY_BACKPORTS.ZSTD}
 
