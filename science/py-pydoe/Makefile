@@ -1,5 +1,5 @@
 PORTNAME=	pydoe
-PORTVERSION=	1.5.0
+PORTVERSION=	1.6.0
 CATEGORIES=	science math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-vcs>=0:devel/py-hatch-vcs@${PY_FLAVO
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=2.2.6,1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.15.3:science/py-scipy@${PY_FLAVOR}
 
-USES=		python
+USES=		python:-3.14
 USE_PYTHON=	autoplist concurrent pep517 pytest
 
 NO_ARCH=	yes
