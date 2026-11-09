@@ -4,6 +4,7 @@
 %%SITE_ARCH%%/Net/DNS/SEC/ECDSA.pm
 %%SITE_ARCH%%/Net/DNS/SEC/EdDSA.pm
 %%SITE_ARCH%%/Net/DNS/SEC/Keyset.pm
+%%SITE_ARCH%%/Net/DNS/SEC/MLDSA.pm
 %%SITE_ARCH%%/Net/DNS/SEC/Private.pm
 %%SITE_ARCH%%/Net/DNS/SEC/RSA.pm
 %%SITE_ARCH%%/Net/DNS/SEC/libcrypto.pod
@@ -14,6 +15,7 @@
 %%PERL5_MAN3%%/Net::DNS::SEC::ECDSA.3.gz
 %%PERL5_MAN3%%/Net::DNS::SEC::EdDSA.3.gz
 %%PERL5_MAN3%%/Net::DNS::SEC::Keyset.3.gz
+%%PERL5_MAN3%%/Net::DNS::SEC::MLDSA.3.gz
 %%PERL5_MAN3%%/Net::DNS::SEC::Private.3.gz
 %%PERL5_MAN3%%/Net::DNS::SEC::RSA.3.gz
 %%PERL5_MAN3%%/Net::DNS::SEC::libcrypto.3.gz
