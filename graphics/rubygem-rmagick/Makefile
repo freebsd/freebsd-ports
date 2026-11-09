@@ -1,5 +1,5 @@
 PORTNAME=	rmagick
-PORTVERSION=	7.1.6
+PORTVERSION=	7.2.0
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
