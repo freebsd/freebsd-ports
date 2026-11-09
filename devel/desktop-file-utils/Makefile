@@ -1,5 +1,5 @@
 PORTNAME=	desktop-file-utils
-PORTVERSION=	0.28
+PORTVERSION=	0.29
 CATEGORIES=	devel
 MASTER_SITES=	http://freedesktop.org/software/${PORTNAME}/releases/
 
@@ -10,9 +10,14 @@ WWW=		https://www.freedesktop.org/wiki/Software/desktop-file-utils/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler:c11 gettext-runtime meson gnome pkgconfig trigger tar:xz
+TEST_DEPENDS=	bash:shells/bash
+
+USES=		compiler:c11 gettext-runtime meson gnome pkgconfig shebangfix \
+		trigger tar:xz
+
 USE_GNOME=	glib20
 
+SHEBANG_FILES=	tests/intent-cache.sh
 MIMEDIRS=	share/applications
 SUB_FILES=	pkg-post-install.lua
 SUB_LIST=	MIMEDIRS="${MIMEDIRS}"
