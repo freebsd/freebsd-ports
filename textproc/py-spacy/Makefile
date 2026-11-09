@@ -1,5 +1,5 @@
 PORTNAME=	spacy
-PORTVERSION=	3.8.16
+PORTVERSION=	3.8.18
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI \
 		https://github.com/explosion/spaCy/releases/download/release-v${PORTVERSION}/
@@ -22,7 +22,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cymem>=2.0.2<2.1.0:devel/py-cymem@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}catalogue>=2.0.6<2.1.0:devel/py-catalogue@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click>=8.2.1<9.0.0:devel/py-click@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}confection>=1.3.2<2.0.0:devel/py-confection@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}confection>=1.3.4<2.0.0:devel/py-confection@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cymem>=2.0.2<2.1.0:devel/py-cymem@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}murmurhash>=0.28.0<1.1.0:devel/py-murmurhash@${PY_FLAVOR} \
@@ -39,7 +39,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}catalogue>=2.0.6<2.1.0:devel/py-catalogue@${
 		${PYTHON_PKGNAMEPREFIX}tqdm>=4.38.0<5.0.0:misc/py-tqdm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typer>=0.3.0<1.0.0:devel/py-typer@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wasabi>=0.9.1<1.2.0:textproc/py-wasabi@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}weasel>=1.0.0<2.0.0:devel/py-weasel@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}weasel>=1.0.1<2.0.0:devel/py-weasel@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent cython pep517
