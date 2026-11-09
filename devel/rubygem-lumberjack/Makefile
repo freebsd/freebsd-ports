@@ -1,5 +1,5 @@
 PORTNAME=	lumberjack
-PORTVERSION=	1.4.2
+PORTVERSION=	2.1.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -9,6 +9,8 @@ WWW=		https://github.com/bdurand/lumberjack
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT_LICENSE.txt
+
+RUN_DEPENDS=	rubygem-logger>=0:devel/rubygem-logger
 
 USES=		gem
 
