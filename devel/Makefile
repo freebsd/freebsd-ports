@@ -5286,6 +5286,7 @@
     SUBDIR += py-interface-meta
     SUBDIR += py-intervals
     SUBDIR += py-intervaltree
+    SUBDIR += py-inversion
     SUBDIR += py-invoke
     SUBDIR += py-ioflo
     SUBDIR += py-iopath
