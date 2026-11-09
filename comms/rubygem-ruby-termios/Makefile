@@ -1,5 +1,5 @@
 PORTNAME=	ruby-termios
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 CATEGORIES=	comms rubygems
 MASTER_SITES=	RG
 
