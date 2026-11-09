@@ -1,5 +1,5 @@
 PORTNAME=	cucumber-core
-PORTVERSION=	19.0.0
+PORTVERSION=	20.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
