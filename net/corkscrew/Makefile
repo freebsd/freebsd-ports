@@ -1,13 +1,11 @@
 PORTNAME=	corkscrew
-PORTVERSION=	2.0
-PORTREVISION=	1
+PORTVERSION=	3.1
 CATEGORIES=	net
-MASTER_SITES=	http://www.agroman.net/corkscrew/ \
-		LOCAL/ehaupt
+MASTER_SITES=	https://github.com/patpadgett/corkscrew/releases/download/${PORTVERSION}/
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	HTTP tunnelling utility for SSH
-WWW=		http://www.agroman.net/corkscrew/
+WWW=		https://github.com/patpadgett/corkscrew
 
 LICENSE=	GPLv2
 
@@ -17,7 +15,7 @@ OPTIONS_DEFINE=	DOCS
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for file in NEWS README TODO
+.for file in NEWS README.md TODO
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
 

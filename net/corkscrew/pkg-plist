@@ -1,4 +1,5 @@
 bin/corkscrew
+share/man/man1/corkscrew.1.gz
 %%PORTDOCS%%share/doc/corkscrew/NEWS
-%%PORTDOCS%%share/doc/corkscrew/README
+%%PORTDOCS%%share/doc/corkscrew/README.md
 %%PORTDOCS%%share/doc/corkscrew/TODO
