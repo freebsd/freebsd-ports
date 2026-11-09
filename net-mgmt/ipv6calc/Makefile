@@ -1,5 +1,5 @@
 PORTNAME=	ipv6calc
-PORTVERSION=	4.4.0
+PORTVERSION=	4.4.1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	sunpoet@FreeBSD.org
