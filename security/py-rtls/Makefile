@@ -1,6 +1,5 @@
 PORTNAME=	rtls
-PORTVERSION=	2026.9.21
-PORTREVISION=	1
+PORTVERSION=	2026.10.3
 CATEGORIES=	security python
 MASTER_SITES=	PYPI \
 		https://github.com/jawah/rtls/releases/download/${PORTVERSION}/
@@ -25,5 +24,6 @@ CARGO_CARGOTOML=${WRKSRC}/rust/Cargo.toml
 CARGO_CARGOLOCK=${WRKSRC}/rust/Cargo.lock
 CARGO_INSTALL=	no
 CARGO_TEST=	no
+MAKE_ENV=	AWS_LC_SYS_NO_JITTER_ENTROPY=1
 
 .include <bsd.port.mk>
