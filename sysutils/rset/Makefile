@@ -1,5 +1,5 @@
 PORTNAME=	rset
-PORTVERSION=	3.4
+PORTVERSION=	3.5
 CATEGORIES=	sysutils
 MASTER_SITES=	https://scriptedconfiguration.org/code/
 
