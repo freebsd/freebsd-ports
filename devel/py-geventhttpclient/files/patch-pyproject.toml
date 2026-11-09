@@ -1,11 +1,19 @@
---- pyproject.toml.orig	2026-09-29 00:00:02 UTC
+--- pyproject.toml.orig	2026-10-09 18:44:55 UTC
 +++ pyproject.toml
-@@ -9,7 +9,7 @@ requires-python = ">=3.11"
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=77", "setuptools-scm>=8"]
++requires = ["setuptools>=61", "setuptools-scm>=8"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -8,8 +8,7 @@ requires-python = ">=3.11"
  description = "HTTP client library for gevent"
  readme = "README.md"
  requires-python = ">=3.11"
 -license = "MIT"
-+license = {file = "LICENSE-MIT"}
+-license-files = ["LICENSE-MIT", "llhttp/LICENSE"]
++license = {text = "MIT"}
  keywords = ["http", "gevent", "client"]
  authors = [{name = "Antonin Amand", email = "antonin.amand@gmail.com"}]
  classifiers = [
