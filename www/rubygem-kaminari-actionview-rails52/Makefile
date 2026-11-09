@@ -1,5 +1,5 @@
 PORTNAME=	kaminari-actionview
-PORTVERSION=	1.2.2
+PORTVERSION=	1.3.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails52
@@ -12,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-actionview52>=0:devel/rubygem-actionview52 \
-		rubygem-kaminari-core>=${PORTVERSION}:www/rubygem-kaminari-core
+		rubygem-kaminari-core>=${PORTVERSION}<${PORTVERSION}_99:www/rubygem-kaminari-core
 
 USES=		gem
 
