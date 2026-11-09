@@ -1,6 +1,6 @@
 PORTNAME=	photocraft
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.21.0
+DISTVERSION=	0.22.0
 CATEGORIES=	graphics
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -101,6 +101,7 @@ CARGO_CRATES=	accesskit-0.25.1 \
 		blocking-1.7.0 \
 		borsh-1.8.1 \
 		borsh-derive-1.8.1 \
+		brotli-8.0.4 \
 		brotli-decompressor-5.0.3 \
 		built-0.8.1 \
 		bumpalo-3.20.3 \
@@ -232,6 +233,7 @@ CARGO_CRATES=	accesskit-0.25.1 \
 		fnv-1.0.7 \
 		foldhash-0.1.5 \
 		foldhash-0.2.0 \
+		font-types-0.11.3 \
 		font-types-0.12.5 \
 		fontconfig-parser-0.5.8 \
 		fontdb-0.23.0 \
@@ -264,6 +266,7 @@ CARGO_CRATES=	accesskit-0.25.1 \
 		gif-0.14.2 \
 		gl-0.14.0 \
 		gl_generator-0.14.0 \
+		glifo-0.1.1 \
 		glifo-0.3.0 \
 		glob-0.3.4 \
 		glow-0.17.0 \
@@ -280,6 +283,10 @@ CARGO_CRATES=	accesskit-0.25.1 \
 		hashbrown-0.15.5 \
 		hashbrown-0.16.1 \
 		hashbrown-0.17.1 \
+		hayro-ccitt-0.3.0 \
+		hayro-cmap-0.1.1 \
+		hayro-jpeg2000-0.3.5 \
+		hayro-postscript-0.2.0 \
 		heck-0.5.0 \
 		heic-rs-0.1.4 \
 		hermit-abi-0.5.3 \
@@ -293,6 +300,8 @@ CARGO_CRATES=	accesskit-0.25.1 \
 		hyper-util-0.1.21 \
 		iana-time-zone-0.1.65 \
 		iana-time-zone-haiku-0.1.2 \
+		icu_casemap-2.3.0 \
+		icu_casemap_data-2.3.0 \
 		icu_collections-2.3.0 \
 		icu_decimal-2.3.0 \
 		icu_locale_core-2.3.0 \
@@ -481,10 +490,15 @@ CARGO_CRATES=	accesskit-0.25.1 \
 		peniko-0.6.1 \
 		percent-encoding-2.3.2 \
 		petgraph-0.8.3 \
+		phf-0.13.1 \
 		phf-0.14.0 \
+		phf_generator-0.13.1 \
 		phf_generator-0.14.0 \
+		phf_macros-0.13.1 \
 		phf_macros-0.14.0 \
+		phf_shared-0.13.1 \
 		phf_shared-0.14.0 \
+		pic-scale-0.7.12 \
 		pico-args-0.5.0 \
 		pin-project-1.1.13 \
 		pin-project-internal-1.1.13 \
@@ -547,7 +561,9 @@ CARGO_CRATES=	accesskit-0.25.1 \
 		raw-window-metal-1.1.0 \
 		rayon-1.12.0 \
 		rayon-core-1.13.0 \
+		read-fonts-0.39.2 \
 		read-fonts-0.41.0 \
+		read-fonts-0.44.0 \
 		reborrow-0.5.5 \
 		redox_syscall-0.4.1 \
 		redox_syscall-0.5.18 \
@@ -629,7 +645,9 @@ CARGO_CRATES=	accesskit-0.25.1 \
 		simdutf8-0.1.5 \
 		simplecss-0.2.2 \
 		siphasher-1.0.4 \
+		skrifa-0.42.1 \
 		skrifa-0.44.0 \
+		skrifa-0.47.0 \
 		slab-0.4.12 \
 		slotmap-1.1.1 \
 		smallvec-1.16.2 \
@@ -732,7 +750,10 @@ CARGO_CRATES=	accesskit-0.25.1 \
 		utf8parse-0.2.2 \
 		uuid-1.26.1 \
 		v_frame-0.3.9 \
+		vello_common-0.0.8 \
+		vello_common-0.0.9 \
 		vello_common-0.2.0 \
+		vello_cpu-0.0.8 \
 		vello_cpu-0.2.0 \
 		verifysign-1.0.1 \
 		version-compare-0.2.1 \
@@ -858,7 +879,6 @@ CARGO_CRATES=	accesskit-0.25.1 \
 		zip-9.1.0 \
 		zlib-rs-0.6.8 \
 		zmij-1.0.23 \
-		zopfli-0.8.4 \
 		zune-core-0.4.12 \
 		zune-core-0.5.3 \
 		zune-inflate-0.2.54 \
@@ -868,9 +888,9 @@ CARGO_CRATES=	accesskit-0.25.1 \
 		zvariant-5.15.0 \
 		zvariant_derive-5.15.0 \
 		zvariant_utils-4.2.0 \
-		winprint@git+https://github.com/storytold/winprint.rs?rev=5f80b9baf6b58937c401656634e42d33f00ddf49\#5f80b9baf6b58937c401656634e42d33f00ddf49 \
-		craft-winprint-gdi@git+https://github.com/storytold/winprint.rs?rev=417ac3c4d14d3da5485a99c7d5ce8f05664ec312\#417ac3c4d14d3da5485a99c7d5ce8f05664ec312 \
-		craft-docpath,craft-fonts-build,craft-i18n,craft-jpeg,craft-print,craft-ui,craft-update@git+https://github.com/storytold/craft-libs?rev=c5a1cbfb5f9049f9270955caffb5bee5997aebf7\#c5a1cbfb5f9049f9270955caffb5bee5997aebf7 \
+		craft-winprint-gdi@git+https://github.com/storytold/winprint.rs?rev=64e7afd4d1483512385012c340ecaaaf0f3beb7f\#64e7afd4d1483512385012c340ecaaaf0f3beb7f \
+		winprint@git+https://github.com/storytold/winprint.rs?rev=51934db382f225454cf152a8657eb03789be63c4\#51934db382f225454cf152a8657eb03789be63c4 \
+		craft-docpath,craft-fonts-build,craft-i18n,craft-jpeg,craft-pdf,craft-print,craft-ui,craft-update,hayro,hayro-interpret,hayro-jbig2,hayro-syntax@git+https://github.com/storytold/craft-libs?rev=1b34eba41e62138fc2438d2734523b302840b45d\#1b34eba41e62138fc2438d2734523b302840b45d \
 		ecolor,eframe,egui,egui-wgpu,egui-winit,egui_extras,egui_glow,egui_kittest,emath,epaint,epaint_default_fonts@git+https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a\#6d518fc799681571963842f95b55a6b68431b15a \
 		craft-pcraft-format@git+https://github.com/storytold/craft-libs?rev=b8f7d93b00dfb8f172938f3d2d796ae62dcfe123\#b8f7d93b00dfb8f172938f3d2d796ae62dcfe123 \
 		winit@git+https://github.com/storytold/winit.git?rev=a517b3846ee8457d84ee4975110bfda6797c44dc\#a517b3846ee8457d84ee4975110bfda6797c44dc
@@ -891,7 +911,7 @@ AVIF_VARS=	CARGO_FEATURES+=photocraft-codecs/avif
 HEIF_VARS=	CARGO_FEATURES+=heif
 
 APP_ID=		ai.storyteller.photocraft
-RELEASE_DATE=	2026-11-06
+RELEASE_DATE=	2026-11-09
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|@VERSION@|${DISTVERSION}|; s|@DATE@|${RELEASE_DATE}|' \
