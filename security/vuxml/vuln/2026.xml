@@ -1,3 +1,32 @@
+  <vuln vid="daaf4fec-dc3b-11f1-8135-8447094a420f">
+    <topic>Roundcube -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>roundcube-php82</name>
+	<name>roundcube-php83</name>
+	<name>roundcube-php84</name>
+	<name>roundcube-php85</name>
+	<name>roundcube-php85</name>
+	<range><lt>1.7.6,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Roundcube project reports:</p>
+	<blockquote cite="https://roundcube.net/news/2026/11/09/security-updates-1.6.21-and-1.7.6">
+	  <p>See linked page for details.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://roundcube.net/news/2026/11/09/security-updates-1.6.21-and-1.7.6</url>
+    </references>
+    <dates>
+      <discovery>2026-11-09</discovery>
+      <entry>2026-11-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bb6a3ddb-dc22-11f1-8e49-3c7c3fba4204">
     <topic>OpenEXR -- 3.4.18 fixes two vulnerabilities</topic>
     <affects>
