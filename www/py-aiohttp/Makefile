@@ -1,5 +1,5 @@
 PORTNAME=	aiohttp
-PORTVERSION=	3.14.3
+PORTVERSION=	3.14.5
 CATEGORIES=	www python
 MASTER_SITES=	PYPI \
 		https://github.com/aio-libs/aiohttp/releases/download/v${PORTVERSION}/
@@ -21,9 +21,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohappyeyeballs>=2.5.0:net/py-aiohappyeyeba
 		${PYTHON_PKGNAMEPREFIX}aiosignal>=1.4.0:devel/py-aiosignal@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}attrs>=17.3.0:devel/py-attrs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}frozenlist>=1.1.1:devel/py-frozenlist@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}multidict>=4.5<7.0:www/py-multidict@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}multidict>=4.5<8.0:www/py-multidict@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}propcache>=0.2.0:devel/py-propcache@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}yarl>=1.17.0<2.0:www/py-yarl@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}yarl>=1.25.1<2.0:www/py-yarl@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiodns>=3.3.0:dns/py-aiodns@${PY_FLAVOR} \
 		${PY_BACKPORTS.ZSTD} \
 		${PYTHON_PKGNAMEPREFIX}brotli>=1.2:archivers/py-brotli@${PY_FLAVOR} \
@@ -54,10 +54,6 @@ SPEEDUPS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiodns>=3.3.0:dns/py-aiodns@${PY_FL
 			${PYTHON_PKGNAMEPREFIX}brotli>=1.2:archivers/py-brotli@${PY_FLAVOR}
 
 .include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 31100
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}async_timeout>=4.0<6.0:devel/py-async_timeout@${PY_FLAVOR}
-.endif
 
 .if ${PYTHON_REL} < 31300
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.4:devel/py-typing-extensions@${PY_FLAVOR}

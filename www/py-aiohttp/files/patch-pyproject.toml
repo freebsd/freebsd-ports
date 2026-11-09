@@ -1,11 +1,22 @@
---- pyproject.toml.orig	2026-01-03 16:40:12 UTC
+--- pyproject.toml.orig	2026-10-11 00:04:28 UTC
 +++ pyproject.toml
-@@ -5,7 +5,7 @@ requires = [
-     # Next step should be >= 77.0 for PEP 639 support
-     # Don't bump too early to give distributors time to update
-     # their setuptools version.
--    "setuptools >= 67.0",
+@@ -3,17 +3,13 @@ requires = [
+     "pkgconfig",
+     # setuptools >= 77.0 required for PEP 639 SPDX license metadata
+     # (it also covers the >= 67.0 floor needed for Python 3.12+ support).
+-    "setuptools >= 77.0",
 +    "setuptools >= 61.0",
  ]
  build-backend = "setuptools.build_meta"
  
+ [project]
+ name        = "aiohttp"
+-license     = "Apache-2.0 AND MIT"
+-license-files = [
+-  "LICENSE.txt",
+-  "vendor/llhttp/LICENSE",
+-]
++license     = {text = "Apache-2.0 AND MIT"}
+ description = "Async http client/server framework (asyncio)"
+ readme      = "README.rst"
+ classifiers = [
