@@ -1,5 +1,5 @@
 PORTNAME=	rpy2
-PORTVERSION=	3.6.8
+PORTVERSION=	3.6.9
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.15.0:devel/py-cffi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}rpy2-rinterface>=3.6.7:math/py-rpy2-rinterface@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}rpy2-robjects>=3.6.5:math/py-rpy2-robjects@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}rpy2-robjects>=3.6.6:math/py-rpy2-robjects@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517
