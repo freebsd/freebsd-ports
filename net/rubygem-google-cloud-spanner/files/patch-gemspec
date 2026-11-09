@@ -1,4 +1,4 @@
---- google-cloud-spanner.gemspec.orig	2025-12-29 04:29:08 UTC
+--- google-cloud-spanner.gemspec.orig	2026-11-01 08:12:23 UTC
 +++ google-cloud-spanner.gemspec
 @@ -20,11 +20,11 @@ Gem::Specification.new do |s|
  
@@ -11,6 +11,6 @@
    s.add_runtime_dependency(%q<google-cloud-spanner-admin-database-v1>.freeze, ["~> 1.4".freeze])
 -  s.add_runtime_dependency(%q<google-cloud-spanner-admin-instance-v1>.freeze, ["~> 1.6".freeze])
 +  s.add_runtime_dependency(%q<google-cloud-spanner-admin-instance-v1>.freeze, [">= 1.6".freeze], ["< 3".freeze])
-   s.add_runtime_dependency(%q<google-cloud-spanner-v1>.freeze, ["~> 1.6".freeze])
+   s.add_runtime_dependency(%q<google-cloud-spanner-v1>.freeze, ["~> 1.12".freeze])
  end
  
