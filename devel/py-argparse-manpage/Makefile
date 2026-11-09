@@ -1,5 +1,5 @@
 PORTNAME=	argparse-manpage
-PORTVERSION=	4.7
+PORTVERSION=	4.8
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/praiskup/argparse-manpage/releases/download/v${PORTVERSION}/
