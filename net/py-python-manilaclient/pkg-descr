@@ -1,0 +1,6 @@
+This is a client for the OpenStack Manila API. There's a Python API (the
+manilaclient module), and a command-line script (manila). Each implements 100%
+of the OpenStack Manila API.
+
+See the OpenStack CLI guide for information on how to use the manila
+command-line tool. You may also want to look at the OpenStack API documentation.

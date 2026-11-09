@@ -1149,6 +1149,7 @@
     SUBDIR += py-python-ipware
     SUBDIR += py-python-keystoneclient
     SUBDIR += py-python-ldap
+    SUBDIR += py-python-manilaclient
     SUBDIR += py-python-neutronclient
     SUBDIR += py-python-novaclient
     SUBDIR += py-python-openstackclient
