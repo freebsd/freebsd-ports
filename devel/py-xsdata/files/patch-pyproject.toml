@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2026-02-15 16:13:07 UTC
+--- pyproject.toml.orig	2026-10-16 10:05:35 UTC
 +++ pyproject.toml
 @@ -1,5 +1,5 @@
  [build-system]
@@ -12,7 +12,7 @@
  description = "Python XML Binding"
  authors = [{name = "Christodoulos Tsoulloftas", email = "chris@komposta.net"}]
 -license = "MIT"
--license-files = ["LICENSE"]
+-license-files = ["LICENSE", "THIRD_PARTY_LICENSES.md"]
 +license = {text = "MIT"}
  classifiers = [
      "Intended Audience :: Developers",
