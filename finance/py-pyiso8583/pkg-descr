@@ -1,0 +1,6 @@
+pyiso8583 is a Python library for encoding and decoding ISO 8583
+financial transaction messages. It supports configurable message
+specifications, field encodings, and variable-length data elements.
+
+The library can be used to develop and test applications that exchange
+ISO 8583 messages.

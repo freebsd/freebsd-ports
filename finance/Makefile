@@ -180,6 +180,7 @@
     SUBDIR += py-pandas-ta-openbb
     SUBDIR += py-pycoin
     SUBDIR += py-pycoingecko
+    SUBDIR += py-pyiso8583
     SUBDIR += py-pythclient
     SUBDIR += py-python-binance
     SUBDIR += py-python-bitcoinlib
