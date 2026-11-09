@@ -1,5 +1,5 @@
 PORTNAME=	icalendar-searcher
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.7
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -7,7 +7,7 @@ DISTNAME=	icalendar_searcher-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Search, filter and sort iCalendar components
-WWW=		https://github.com/pycalendar/icalendar-searcher
+WWW=		https://github.com/PyCalendar/icalendar-searcher
 
 LICENSE=	AGPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
