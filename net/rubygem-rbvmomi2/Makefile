@@ -1,6 +1,5 @@
 PORTNAME=	rbvmomi2
-PORTVERSION=	3.10.0
-PORTREVISION=	1
+PORTVERSION=	3.11.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +11,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-builder>=3.2<4:devel/rubygem-builder \
-		rubygem-json2>=2.3<3:devel/rubygem-json2 \
+		rubygem-json>=2.3<4.0:devel/rubygem-json \
 		rubygem-nokogiri>=1.12.5<2:textproc/rubygem-nokogiri \
 		rubygem-optimist>=3.0<4:devel/rubygem-optimist
 
