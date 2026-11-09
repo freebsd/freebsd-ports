@@ -204,7 +204,7 @@ bin/gem
 %%RUBY_SITELIBDIR%%/rubygems/vendor/net-http/lib/net/http/responses.rb
 %%RUBY_SITELIBDIR%%/rubygems/vendor/net-http/lib/net/http/status.rb
 %%RUBY_SITELIBDIR%%/rubygems/vendor/net-http/lib/net/https.rb
-%%RUBY_SITELIBDIR%%/rubygems/vendor/net-protocol/LICENSE.txt
+%%RUBY_SITELIBDIR%%/rubygems/vendor/net-protocol/COPYING
 %%RUBY_SITELIBDIR%%/rubygems/vendor/net-protocol/lib/net/protocol.rb
 %%RUBY_SITELIBDIR%%/rubygems/vendor/optparse/COPYING
 %%RUBY_SITELIBDIR%%/rubygems/vendor/optparse/lib/optionparser.rb
