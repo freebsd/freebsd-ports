@@ -22,6 +22,8 @@ TEST_DEPENDS=	p5-Test-Simple>=1.302200:devel/p5-Test-Simple
 USES=		gmake perl5 pkgconfig
 USE_PERL5=	configure
 
+PORTSCOUT=	limit:^[0-9\.]*$$
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/FFI/Platypus/Platypus.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/share/dist/FFI-Platypus/lib/libplfill.so
