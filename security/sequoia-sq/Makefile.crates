@@ -293,10 +293,10 @@ CARGO_CRATES=	adler2-2.0.1 \
 		once_cell_polyfill-1.70.2 \
 		opaque-debug-0.3.1 \
 		openpgp-cert-d-0.3.4 \
-		openssl-0.10.81 \
+		openssl-0.10.82 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.2.1 \
-		openssl-sys-0.9.117 \
+		openssl-sys-0.9.118 \
 		option-ext-0.2.0 \
 		ossl-1.5.3 \
 		p256-0.13.2 \
