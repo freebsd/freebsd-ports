@@ -7,5 +7,5 @@ include/libinjection_xss.h
 lib/libinjection.a
 lib/libinjection.so
 lib/libinjection.so.4
-lib/libinjection.so.%%PORTVERSION%%
+lib/libinjection.so.4.0.0
 libdata/pkgconfig/libinjection.pc

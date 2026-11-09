@@ -1,5 +1,5 @@
 PORTNAME=	libinjection
-PORTVERSION=	4.0.0
+PORTVERSION=	4.0.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -15,8 +15,6 @@ USES=		autoreconf libtool python:build shebangfix
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-
-PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 USE_GITHUB=	yes
 
