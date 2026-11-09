@@ -1,0 +1,4 @@
+protobuf-py-pure is the pure Python implementation of protobuf-py, an ergonomic
+and modern Protobuf library for Python. It contains the entire runtime,
+including the base types, serialization, and the pre-generated well-known types,
+and has no compiled code and no third-party dependencies.
