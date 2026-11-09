@@ -1,5 +1,5 @@
 PORTNAME=	oauthlib
-PORTVERSION=	4.0.0
+PORTVERSION=	4.0.1
 CATEGORIES=	security net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,9 +26,9 @@ RSA_DESC=		RSA support
 SIGNALS_DESC=		Signal support
 SIGNEDTOKEN_DESC=	Signed token support
 
-RSA_USE=			PYTHON=cryptography
-SIGNALS_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}blinker>=1.4.0:devel/py-blinker@${PY_FLAVOR}
-SIGNEDTOKEN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyjwt>=2.0.0<3:www/py-pyjwt@${PY_FLAVOR}
-SIGNEDTOKEN_USE=		PYTHON=cryptography
+RSA_USE=		PYTHON=cryptography
+SIGNALS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}blinker>=1.4.0:devel/py-blinker@${PY_FLAVOR}
+SIGNEDTOKEN_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}pyjwt>=2.0.0<3:www/py-pyjwt@${PY_FLAVOR}
+SIGNEDTOKEN_USE=	PYTHON=cryptography
 
 .include <bsd.port.mk>
