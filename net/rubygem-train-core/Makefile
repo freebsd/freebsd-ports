@@ -1,6 +1,6 @@
 PORTNAME=	train-core
 PORTVERSION=	3.16.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -16,7 +16,7 @@ RUN_DEPENDS=	rubygem-addressable>=2.5<3:www/rubygem-addressable \
 		rubygem-json2>=2.19.2<3.0:devel/rubygem-json2 \
 		rubygem-mixlib-shellout>=2.0<4.0:devel/rubygem-mixlib-shellout \
 		rubygem-net-scp>=1.2<5.0:security/rubygem-net-scp \
-		rubygem-net-ssh6>=2.9<8.0:security/rubygem-net-ssh6
+		rubygem-net-ssh>=2.9,2<8.0,2:security/rubygem-net-ssh
 
 USES=		gem
 
