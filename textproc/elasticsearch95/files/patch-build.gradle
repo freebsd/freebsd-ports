@@ -1,0 +1,22 @@
+--- build.gradle.orig	2026-10-28 20:24:18 UTC
++++ build.gradle
+@@ -462,6 +462,10 @@ tasks.named("updateDaemonJvm") {
+       org.gradle.platform.Architecture.AARCH64,
+       org.gradle.platform.OperatingSystem.WINDOWS
+     ),
++    BuildPlatformFactory.of(
++      org.gradle.platform.Architecture.X86_64,
++      org.gradle.platform.OperatingSystem.FREE_BSD
++    ),
+     // anyone still using x86 osx?
+     BuildPlatformFactory.of(
+       org.gradle.platform.Architecture.X86_64,
+@@ -470,7 +474,7 @@ tasks.named("updateDaemonJvm") {
+   ]
+   toolchainPlatforms.set(myPlatforms)
+   languageVersion = JavaLanguageVersion.of(21)
+-  vendor = JvmVendorSpec.ADOPTIUM
++  // vendor = JvmVendorSpec.ADOPTIUM
+ }
+ 
+ tasks.register("verifyBwcTestsEnabled") {

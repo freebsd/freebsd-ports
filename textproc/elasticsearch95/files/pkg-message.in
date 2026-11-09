@@ -1,0 +1,41 @@
+[
+{ type: install
+  message: <<EOM
+Elasticsearch-specific utilities are symlinked into %%BINDIR%%.
+
+Please see %%ETCDIR%% for a sample version of elasticsearch.yml.
+
+For optimal performance, Elasticsearch requires locking large amounts of RAM.
+Therefore, it is advisable to set the following in /etc/sysctl.conf:
+
+  security.bsd.unprivileged_mlock=1
+
+When running within a jail, it's highly advisable to set:
+
+  enforce_statfs = 1
+
+for the jail running the Elasticsearch instance.
+
+!!! PLUGINS NOTICE !!!
+
+Elasticsearch plugins should only be installed via the elasticsearch-plugin
+included with this software. As we strive to provide a minimum semblance
+of security, the files installed by the package are owned by root:wheel.
+This is different than upstream which expects all of the files to be
+owned by the user and for you to execute the elasticsearch-plugin script
+as said user.
+
+You will encounter permissions errors with configuration files and
+directories created by plugins which you will have to manually correct.
+This is the price we have to pay to protect ourselves in the face of
+a poorly designed security model.
+
+e.g. After modifying the keystore, or installing a plugin, you may have to run:
+
+chown %%SEARCHUSER%%:%%SEARCHUSER%% %%ETCDIR%%/elasticsearch.keystore
+chown -R %%SEARCHUSER%%:%%SEARCHUSER%% %%ETCDIR%%/plugin
+
+!!! PLUGINS NOTICE !!!
+EOM
+}
+]

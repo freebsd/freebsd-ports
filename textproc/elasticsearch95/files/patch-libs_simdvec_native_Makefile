@@ -1,0 +1,87 @@
+--- libs/simdvec/native/Makefile.orig	2026-10-28 20:24:18 UTC
++++ libs/simdvec/native/Makefile
+@@ -37,6 +37,7 @@ CXX_X64     = clang++-21 -Winline
+ CLANG_STRIP = llvm-strip-21 --strip-debug
+ CXX_ARM     = clang++-21 --target=aarch64-linux-gnu -Winline
+ CXX_X64     = clang++-21 -Winline
++CXX_FBSD_X64 = clang++ --target=x86_64-unknown-freebsd -Winline
+ 
+ # Sources split by tier
+ SRC_AARCH64_TIER1 = $(filter-out %_2.cpp, $(wildcard src/vec/c/aarch64/*.cpp))
+@@ -48,6 +49,7 @@ OBJ_LIN_X64 = build/obj/linux-x64
+ OBJ_DARWIN  = build/obj/darwin-aarch64
+ OBJ_LIN_ARM = build/obj/linux-aarch64
+ OBJ_LIN_X64 = build/obj/linux-x64
++OBJ_FBSD_X64 = build/obj/freebsd-x64
+ 
+ # Object files
+ OBJ_DARWIN_TIER1  = $(SRC_AARCH64_TIER1:src/vec/c/aarch64/%.cpp=$(OBJ_DARWIN)/%.o)
+@@ -56,13 +58,17 @@ OBJ_LIN_X64_TIER2 = $(SRC_AMD64_TIER2:src/vec/c/amd64/
+ OBJ_LIN_ARM_TIER2 = $(SRC_AARCH64_TIER2:src/vec/c/aarch64/%.cpp=$(OBJ_LIN_ARM)/%.o)
+ OBJ_LIN_X64_TIER1 = $(SRC_AMD64_TIER1:src/vec/c/amd64/%.cpp=$(OBJ_LIN_X64)/%.o)
+ OBJ_LIN_X64_TIER2 = $(SRC_AMD64_TIER2:src/vec/c/amd64/%.cpp=$(OBJ_LIN_X64)/%.o)
++OBJ_FBSD_X64_TIER1 = $(SRC_AMD64_TIER1:src/vec/c/amd64/%.cpp=$(OBJ_FBSD_X64)/%.o)
++OBJ_FBSD_X64_TIER2 = $(SRC_AMD64_TIER2:src/vec/c/amd64/%.cpp=$(OBJ_FBSD_X64)/%.o)
+ 
+ # Output files
+ OUT_DIR_AARCH64 = build/libs/vec/shared/aarch64
+ OUT_DIR_AMD64   = build/libs/vec/shared/amd64
++OUT_DIR_FREEBSD_AMD64 = build/libs/vec/freebsd/amd64
+ DYLIB  = $(OUT_DIR_AARCH64)/libvec.dylib
+ SO_ARM = $(OUT_DIR_AARCH64)/libvec.so
+ SO_X64 = $(OUT_DIR_AMD64)/libvec.so
++SO_FBSD_X64 = $(OUT_DIR_FREEBSD_AMD64)/libvec.so
+ 
+ # --- local: build for the current platform using the native compiler ---
+ # On macOS, overrides CLANG/CLANG_LINK to use the system clang (SDK available natively).
+@@ -82,6 +88,14 @@ else ifeq ($(shell uname -m),aarch64)
+   LOCAL_OUTPUT   = $(SO_ARM)
+   local: CXX_ARM = clang++-21 -Winline
+   local: $(SO_ARM)
++else ifeq ($(shell uname -s),FreeBSD)
++  LOCAL_PLATFORM = freebsd-x64
++  LOCAL_OUTPUT   = $(SO_FBSD_X64)
++  local: CLANG = clang++
++  local: CXX_FBSD_X64 = clang++ -Winline
++  local: FREEBSD_STRIP = strip --strip-unneeded
++  local: FREEBSD_OBJCOPY = objcopy
++  local: $(SO_FBSD_X64)
+ else
+   LOCAL_PLATFORM = linux-x64
+   LOCAL_OUTPUT   = $(SO_X64)
+@@ -96,7 +110,7 @@ install: local
+ 
+ # --- all: cross-compile all three targets (inside Docker) ---
+ 
+-all: $(DYLIB) $(SO_ARM) $(SO_X64)
++all: $(DYLIB) $(SO_ARM) $(SO_X64) $(SO_FBSD_X64)
+ 
+ # --- darwin-aarch64 ---
+ 
+@@ -134,10 +148,24 @@ $(SO_X64): $(OBJ_LIN_X64_TIER1) $(OBJ_LIN_X64_TIER2) |
+ 	$(CXX_X64) -shared $^ -o $@
+ 	llvm-strip-21 --strip-unneeded $@
+ 
++# --- freebsd-x64 ---
++
++$(OBJ_FBSD_X64_TIER1): $(OBJ_FBSD_X64)/%.o: src/vec/c/amd64/%.cpp | $(OBJ_FBSD_X64)
++	$(CXX_FBSD_X64) $(CXXFLAGS) -march=$(MARCH_AMD64_TIER1) $(HEADERS) -c $< -o $@
++
++$(OBJ_FBSD_X64_TIER2): $(OBJ_FBSD_X64)/%.o: src/vec/c/amd64/%.cpp | $(OBJ_FBSD_X64)
++	$(CXX_FBSD_X64) $(CXXFLAGS) -march=$(MARCH_AMD64_TIER2) $(HEADERS) -c $< -o $@
++
++$(SO_FBSD_X64): $(OBJ_FBSD_X64_TIER1) $(OBJ_FBSD_X64_TIER2) | $(OUT_DIR_FREEBSD_AMD64)
++	$(CXX_FBSD_X64) -fuse-ld=lld -shared $^ -o $@
++	$(FREEBSD_OBJCOPY) --only-keep-debug $@ $@.debug
++	$(FREEBSD_STRIP) $@
++	$(FREEBSD_OBJCOPY) --add-gnu-debuglink=$@.debug $@
++
+ # --- directories ---
+ 
+-$(OBJ_DARWIN) $(OBJ_LIN_ARM) $(OBJ_LIN_X64) $(OUT_DIR_AARCH64) $(OUT_DIR_AMD64):
++$(OBJ_DARWIN) $(OBJ_LIN_ARM) $(OBJ_LIN_X64) $(OBJ_FBSD_X64) $(OUT_DIR_AARCH64) $(OUT_DIR_AMD64) $(OUT_DIR_FREEBSD_AMD64):
+ 	mkdir -p $@
+ 
+ clean:
+-	rm -rf build/obj build/libs/vec/shared
++	rm -rf build/obj build/libs/vec/shared build/libs/vec/freebsd

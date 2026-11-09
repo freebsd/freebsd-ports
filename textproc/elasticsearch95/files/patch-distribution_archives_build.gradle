@@ -1,0 +1,25 @@
+--- distribution/archives/build.gradle.orig	2026-10-28 20:24:18 UTC
++++ distribution/archives/build.gradle
+@@ -40,7 +40,7 @@ CopySpec archiveFiles(String distributionType, String 
+         with binFiles(distributionType, isTestDistro)
+       }
+       into("darwin".equals(os) ? 'jdk.app' : 'jdk') {
+-        if (isTestDistro == false) {
++        if (isTestDistro == false && !"freebsd".equals(os)) {
+           with jdkFiles(project, os, architecture)
+         }
+       }
+@@ -113,6 +113,13 @@ distribution_archives {
+     archiveClassifier = 'darwin-aarch64'
+     content {
+       archiveFiles('tar', 'darwin', 'aarch64', false)
++    }
++  }
++
++  freebsdTar {
++    archiveClassifier = 'freebsd-x86_64'
++    content {
++      archiveFiles('tar', 'freebsd', 'x64', false)
+     }
+   }
+ 

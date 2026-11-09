@@ -1,0 +1,5 @@
+--- distribution/archives/freebsd-tar/build.gradle.orig	2026-11-03 20:05:23 UTC
++++ distribution/archives/freebsd-tar/build.gradle
+@@ -0,0 +1,2 @@
++// This file is intentionally blank. All configuration of the
++// distribution is done in the parent project.
