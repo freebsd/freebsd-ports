@@ -4783,6 +4783,7 @@
     SUBDIR += py-cachy
     SUBDIR += py-caio
     SUBDIR += py-calendaring-config
+    SUBDIR += py-calendaring-jmap
     SUBDIR += py-calver
     SUBDIR += py-camel-converter
     SUBDIR += py-canonicaljson
