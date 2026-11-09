@@ -1,11 +1,7 @@
 PORTNAME=	sz3
-PORTVERSION=	3.3.2
+PORTVERSION=	3.4.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
 CATEGORIES=	science
-
-PATCH_SITES=	https://github.com/szcompressor/SZ3/commit/
-PATCHFILES=	1bc1cc16e6ecbc6080abbc9a8fb5640876071089.patch:-p1
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Modular Error-bounded Lossy Compression Framework for Scientific Datasets
@@ -23,11 +19,14 @@ USES=		cmake:testing pkgconfig
 
 CMAKE_OFF=	BUILD_H5Z_FILTER \
 		BUILD_MDZ \
+		BUILD_PARAVIEW_PLUGIN \
 		BUILD_TESTING \
 		SZ3_DEBUG_TIMINGS \
 		SZ3_USE_BUNDLED_ZSTD
 CMAKE_ON=	BUILD_SHARED_LIBS \
 		BUILD_STATIC_LIBS \
+		BUILD_SZ3_BINARY \
+		SZ3_INSTALL \
 		SZ3_USE_SKA_HASH
 
 DATADIR=	${PREFIX}/share/SZ3

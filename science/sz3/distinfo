@@ -1,5 +1,3 @@
-TIMESTAMP = 1782510038
-SHA256 (szcompressor-SZ3-v3.3.2_GH0.tar.gz) = 5ab31e5d3fa2993bfdc13ac7f102ec31f893eeab716777f41e92eafe98abf878
-SIZE (szcompressor-SZ3-v3.3.2_GH0.tar.gz) = 167972
-SHA256 (1bc1cc16e6ecbc6080abbc9a8fb5640876071089.patch) = e715a491f040448eebddb7fa4e838d441fd1a404a011425a175688889a891b07
-SIZE (1bc1cc16e6ecbc6080abbc9a8fb5640876071089.patch) = 5109
+TIMESTAMP = 1793587094
+SHA256 (szcompressor-SZ3-v3.4.0_GH0.tar.gz) = 4e1559d291cd0b892350bd74ddb749ad4aa4d6fbba170e588eb54f325a529e0d
+SIZE (szcompressor-SZ3-v3.4.0_GH0.tar.gz) = 718593
