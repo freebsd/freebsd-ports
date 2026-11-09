@@ -1,3 +1,3 @@
-TIMESTAMP = 1779223136
-SHA256 (rubygem/opentelemetry-instrumentation-aws_lambda-0.7.0.gem) = 50e5a32c454f2d38ecb53cc94e77dc646b33c47294cc6e6363e7c226097fa132
-SIZE (rubygem/opentelemetry-instrumentation-aws_lambda-0.7.0.gem) = 13312
+TIMESTAMP = 1793588948
+SHA256 (rubygem/opentelemetry-instrumentation-aws_lambda-0.7.1.gem) = e7d19e8fc850fe337f9b5b4b692d02cec5172908e71e265c55af726cbeaab37b
+SIZE (rubygem/opentelemetry-instrumentation-aws_lambda-0.7.1.gem) = 13312
