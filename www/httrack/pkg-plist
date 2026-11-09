@@ -59,7 +59,7 @@ lib/httrack/libsimple.so.1.0.0
 lib/libhttrack.a
 lib/libhttrack.so
 lib/libhttrack.so.3
-lib/libhttrack.so.3.0.25
+lib/libhttrack.so.3.0.28
 libdata/pkgconfig/libhttrack.pc
 share/applications/WebHTTrack-Websites.desktop
 share/applications/WebHTTrack.desktop
@@ -133,6 +133,7 @@ share/applications/WebHTTrack.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/img/guide-web-start.png
 %%PORTDOCS%%%%DOCSDIR%%/html/img/guide-win-finished.png
 %%PORTDOCS%%%%DOCSDIR%%/html/img/guide-win-language.png
+%%PORTDOCS%%%%DOCSDIR%%/html/img/guide-win-opt-accept-headers.png
 %%PORTDOCS%%%%DOCSDIR%%/html/img/guide-win-opt-browser-id.png
 %%PORTDOCS%%%%DOCSDIR%%/html/img/guide-win-opt-build.png
 %%PORTDOCS%%%%DOCSDIR%%/html/img/guide-win-opt-experts-only.png
@@ -153,8 +154,10 @@ share/applications/WebHTTrack.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/img/snap4_a.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/library.html
+%%PORTDOCS%%%%DOCSDIR%%/html/login.html
 %%PORTDOCS%%%%DOCSDIR%%/html/options.html
 %%PORTDOCS%%%%DOCSDIR%%/html/overview.html
+%%PORTDOCS%%%%DOCSDIR%%/html/palette.css
 %%PORTDOCS%%%%DOCSDIR%%/html/plug.html
 %%PORTDOCS%%%%DOCSDIR%%/html/plug_330.html
 %%PORTDOCS%%%%DOCSDIR%%/html/scripting.html
@@ -179,12 +182,16 @@ share/applications/WebHTTrack.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/step9_opt8.html
 %%PORTDOCS%%%%DOCSDIR%%/html/step9_opt9.html
 %%PORTDOCS%%%%DOCSDIR%%/httrack-doc.html
+%%PORTDOCS%%%%DOCSDIR%%/httrack.css
+%%PORTDOCS%%%%DOCSDIR%%/license-psl.txt
 %%PORTDOCS%%%%DOCSDIR%%/license.txt
 %%PORTDOCS%%%%DATADIR%%/html/doc
 %%NO_DOCS%%@dir(,,755) %%DATADIR%%/html/doc
 %%PORTDOCS%%%%DATADIR%%/html/httrack
+%%DATADIR%%/html/palette.css
 %%DATADIR%%/html/server/about.html
 %%DATADIR%%/html/server/addurl.html
+%%DATADIR%%/html/server/browserlogin.html
 %%DATADIR%%/html/server/error.html
 %%DATADIR%%/html/server/exit.html
 %%DATADIR%%/html/server/finished.html
@@ -210,6 +217,8 @@ share/applications/WebHTTrack.desktop
 %%DATADIR%%/html/server/step3.html
 %%DATADIR%%/html/server/step4.html
 %%DATADIR%%/html/server/style.css
+%%DATADIR%%/html/server/themes/modern/theme.css
+%%DATADIR%%/html/server/user.css
 %%DATADIR%%/lang.def
 %%DATADIR%%/lang.indexes
 %%DATADIR%%/lang/Bulgarian.txt
@@ -278,4 +287,3 @@ share/pixmaps/httrack.xpm
 share/pixmaps/httrack16x16.xpm
 share/pixmaps/httrack32x32.xpm
 share/pixmaps/httrack48x48.xpm
-%%PORTDOCS%%%%DOCSDIR%%/httrack.css
