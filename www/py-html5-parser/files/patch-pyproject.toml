@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2026-09-20 04:52:14 UTC
++++ pyproject.toml
+@@ -9,7 +9,7 @@ description = "Fast C based HTML 5 parsing for python"
+     {name = "Kovid Goyal", email = "redacted@acme.com"},
+ ]
+ description = "Fast C based HTML 5 parsing for python"
+-license = "Apache-2.0"
++license = {text = "Apache-2.0"}
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",
+     "Intended Audience :: Developers",
