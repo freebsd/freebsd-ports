@@ -1,5 +1,5 @@
 PORTNAME=	pipenv
-PORTVERSION=	2026.8.0
+PORTVERSION=	2026.10.4
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FL
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}certifi>=0:security/py-certifi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=22:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}virtualenv>=20.26.6:devel/py-virtualenv@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}virtualenv>=21.14.6:devel/py-virtualenv@${PY_FLAVOR}
 
 USES=		cpe python
 USE_PYTHON=	autoplist concurrent pep517
