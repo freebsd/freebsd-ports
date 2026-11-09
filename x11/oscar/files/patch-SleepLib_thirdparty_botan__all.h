@@ -1,4 +1,4 @@
---- SleepLib/thirdparty/botan_all.h
+--- SleepLib/thirdparty/botan_all.h.orig	2026-10-31 09:48:51 UTC
 +++ SleepLib/thirdparty/botan_all.h
 @@ -22,5 +22,8 @@
  #ifdef Q_OS_MACOS

@@ -1,6 +1,6 @@
---- mainwindow.cpp
+--- mainwindow.cpp.orig	2026-10-31 09:48:51 UTC
 +++ mainwindow.cpp
-@@ -859,6 +859,9 @@ QStringList getDriveList()
+@@ -1235,6 +1235,9 @@ QStringList getDriveList()
  #if QT_VERSION >= QT_VERSION_CHECK(5,4,0)
  #if defined(Q_OS_LINUX)
      #define VFAT "vfat"

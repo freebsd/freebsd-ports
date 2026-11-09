@@ -1,4 +1,4 @@
---- SleepLib/thirdparty/botan_freebsd.h
+--- SleepLib/thirdparty/botan_freebsd.h.orig	2026-11-08 21:04:16 UTC
 +++ SleepLib/thirdparty/botan_freebsd.h
 @@ -75,7 +75,6 @@
  #define BOTAN_TARGET_OS_HAS_CLOCK_GETTIME

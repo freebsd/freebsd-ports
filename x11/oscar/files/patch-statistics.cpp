@@ -1,6 +1,6 @@
---- statistics.cpp
+--- statistics.cpp.orig	2026-10-31 09:48:51 UTC
 +++ statistics.cpp
-@@ -1315,7 +1315,7 @@ void Statistics::printReport(QWidget * parent) {
+@@ -1764,7 +1764,7 @@ void Statistics::printReport(QWidget * parent) {
  
      QPrinter printer(QPrinter::ScreenResolution); // ScreenResolution required for graphics sizing
  

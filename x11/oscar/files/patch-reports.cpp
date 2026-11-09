@@ -1,6 +1,6 @@
---- reports.cpp
+--- reports.cpp.orig	2026-10-31 09:48:51 UTC
 +++ reports.cpp
-@@ -74,7 +74,7 @@ void Report::PrintReport(gGraphView *gv, QString name, QDate date)
+@@ -73,7 +73,7 @@ void Report::PrintReport(gGraphView *gv, QString name,
  
      printer = new QPrinter(QPrinter::HighResolution);
  
