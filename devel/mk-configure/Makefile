@@ -1,5 +1,5 @@
 PORTNAME=	mk-configure
-PORTVERSION=	0.40.0
+PORTVERSION=	0.40.3
 CATEGORIES=	devel
 MASTER_SITES=	SF/mk-configure/mk-configure/mk-configure-${PORTVERSION}
 
