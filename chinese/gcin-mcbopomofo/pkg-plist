@@ -1,0 +1,8 @@
+lib/gcin/mcbopomofo-module.so
+%%DATADIR%%/mcbopomofo/data/mcbopomofo-associated-phrases-v2.txt
+%%DATADIR%%/mcbopomofo/data/mcbopomofo-bpmfvs-pua.txt
+%%DATADIR%%/mcbopomofo/data/mcbopomofo-bpmfvs-variants.txt
+%%DATADIR%%/mcbopomofo/data/mcbopomofo-data-plain-bpmf.txt
+%%DATADIR%%/mcbopomofo/data/mcbopomofo-data.txt
+%%DATADIR%%/mcbopomofo/data/mcbopomofo-dictionary-service.json
+share/icons/gcin/mcbopomofo.png

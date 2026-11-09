@@ -21,7 +21,6 @@ bin/tsd2a32
 bin/tsin2gtab-phrase
 bin/tslearn
 bin/txt2gtab-phrase
-%%ANTHY%%lib/gcin/anthy-module.so
 lib/gcin/gcin1.so
 lib/gcin/gcin2.so
 lib/gcin/intcode-module.so

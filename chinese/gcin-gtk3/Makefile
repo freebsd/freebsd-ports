@@ -1,28 +1,15 @@
-PORTNAME=	gcin
-PORTVERSION=	2.9.4
-PORTREVISION=	0
-CATEGORIES=	chinese textproc gnome
-MASTER_SITES=	http://hyperrate.com/gcin-source/
 PKGNAMESUFFIX=	-gtk3
-EXTRACT_ONLY=	gcin-${PORTVERSION}.tar.xz
 
-MAINTAINER=	vanilla@FreeBSD.org
-COMMENT=	Traditional Chinese input utility in X
-WWW=		https://hyperrate.com/dir.php?eid=67
-
-LICENSE=	LGPL21
-
+MASTERDIR=	${.CURDIR}/../../chinese/gcin
+PLIST=		${.CURDIR}/pkg-plist
+COMMENT=	Gtk3 support for gcin
 LIB_DEPENDS=	libgcin-im-client.so:chinese/gcin
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/gtk3-im
-
-USES=		gmake gnome pkgconfig tar:xz
 USE_GNOME=	gtk30
-MAKE_ENV=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
-		MKDIR="${MKDIR}"
+ALL_TARGET=	gtk3-im
+BUILD_GCIN_LIST=gtk3
 
-post-patch:
-	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g; \
-		s,%%MOC%%,${MOC},;' ${WRKSRC}/Makefile
+do-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/gtk-3.0/immodules
+	@${INSTALL_PROGRAM} ${BUILD_WRKSRC}/gtk3-im/im-gcin.so ${STAGEDIR}${PREFIX}/lib/gtk-3.0/immodules
 
-.include <bsd.port.mk>
+.include "${MASTERDIR}/Makefile"
