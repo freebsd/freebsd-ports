@@ -1,5 +1,6 @@
 PORTNAME=	kaminari
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails-gitlab
@@ -14,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 RUN_DEPENDS=	rubygem-activesupport-gitlab>=4.1.0:devel/rubygem-activesupport-gitlab \
 		rubygem-kaminari-actionview-rails-gitlab>=${PORTVERSION}:www/rubygem-kaminari-actionview-rails-gitlab \
 		rubygem-kaminari-activerecord-rails-gitlab>=${PORTVERSION}:www/rubygem-kaminari-activerecord-rails-gitlab \
-		rubygem-kaminari-core>=${PORTVERSION}:www/rubygem-kaminari-core
+		rubygem-kaminari-core-gitlab>=${PORTVERSION}:www/rubygem-kaminari-core-gitlab
 
 USES=		cpe gem
 
