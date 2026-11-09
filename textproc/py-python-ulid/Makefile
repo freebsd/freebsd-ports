@@ -1,5 +1,5 @@
 PORTNAME=	python-ulid
-PORTVERSION=	4.0.1
+PORTVERSION=	4.1.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,7 +29,7 @@ PYDANTIC_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pydantic2>=2.0:devel/py-pydantic2@$
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} < 31100
+.if ${PYTHON_REL} < 31200
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR}
 .endif
 
