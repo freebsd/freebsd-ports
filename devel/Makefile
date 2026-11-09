@@ -5030,6 +5030,7 @@
     SUBDIR += py-dunamai
     SUBDIR += py-durationpy
     SUBDIR += py-durus
+    SUBDIR += py-dynamic-metadata
     SUBDIR += py-dynrules
     SUBDIR += py-e3-core
     SUBDIR += py-e3-testsuite

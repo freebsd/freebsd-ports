@@ -1,0 +1,5 @@
+dynamic-metadata defines a plugin protocol that lets a Python build backend
+compute [project] fields (version, readme, dependencies, …) at build time.
+Plugins are configured as an ordered array of tables, [[tool.dynamic-metadata]],
+each naming a provider. Entries run in order, so a later entry sees every field
+an earlier entry produced.
