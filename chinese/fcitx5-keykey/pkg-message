@@ -1,0 +1,24 @@
+[
+{ type: upgrade
+  maximum_version: "1.5.0"
+  message: <<EOM
+KeyKey 1.5.0 replaces its input engine with Guanyinma, a shared Rust core.
+Custom phrases and learning are now kept in guanyinma-user.db; the data of
+the old engine is neither read nor imported, and it is not deleted.
+
+Export your custom phrases with the old version before upgrading, then add
+them again with keykey-user-phrases.
+EOM
+}
+{ type: install
+  message: <<EOM
+To use KeyKey, run Fcitx 5 and add the KeyKey input methods in its
+configuration. Applications find Fcitx through these variables, set for
+example in ~/.xinitrc or ~/.xprofile:
+
+  export GTK_IM_MODULE=fcitx
+  export QT_IM_MODULE=fcitx
+  export XMODIFIERS=@im=fcitx
+EOM
+}
+]

@@ -1,13 +1,15 @@
 bin/keykey-about
 bin/keykey-cangjie-settings
 bin/keykey-fcitx-app
-bin/keykey-update-notify
 bin/keykey-smart-phrases
+bin/keykey-update-notify
+bin/keykey-user-phrases
 etc/xdg/autostart/org.chichi77.KeyKey.UpdateNotification.desktop
 lib/fcitx5/chichi77-keykey.so
 share/applications/org.chichi77.KeyKey.About.desktop
 share/applications/org.chichi77.KeyKey.TextEditor.desktop
 share/applications/org.chichi77.KeyKey.UpdateNotification.desktop
+share/applications/org.chichi77.KeyKey.UserPhrases.desktop
 share/chichi77-keykey/ProjectMotivation.txt
 share/chichi77-keykey/about_gui.py
 share/chichi77-keykey/cangjie_settings.py
@@ -51,6 +53,8 @@ share/chichi77-keykey/data/smart-mandarin.db
 share/chichi77-keykey/data/tc2sc.cin
 share/chichi77-keykey/update_notify.py
 share/chichi77-keykey/update_notify_gui.py
+share/chichi77-keykey/user_phrases.py
+share/doc/chichi77-keykey/Guanyinma-NOTICES.txt
 share/doc/chichi77-keykey/LICENSE-MIT.txt
 share/doc/chichi77-keykey/LICENSE-McBopomofo.txt
 share/doc/chichi77-keykey/LICENSE-associated-phrase-collections.txt
