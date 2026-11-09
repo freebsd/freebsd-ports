@@ -7275,6 +7275,7 @@
     SUBDIR += rubygem-aws-sdk-sagemakermetrics
     SUBDIR += rubygem-aws-sdk-sagemakerruntime
     SUBDIR += rubygem-aws-sdk-sagemakerruntimehttp2
+    SUBDIR += rubygem-aws-sdk-sagemakertrainingsessionruntime
     SUBDIR += rubygem-aws-sdk-savingsplans
     SUBDIR += rubygem-aws-sdk-scheduler
     SUBDIR += rubygem-aws-sdk-schemas
