@@ -37,7 +37,7 @@
      it.path = it.path.replace("win32", "windows")
 +  }
 +  if (System.getProperty("os.name", "").startsWith("FreeBSD")) {
-+    if (Boolean.parseBoolean(System.getProperty("freebsd.build.fromPorts", "false")) == true) {
++    if (Boolean.parseBoolean(System.getProperty("freebsd.build.fromPorts", "false"))) {
 +      from('%%LOCALBASE%%/lib') {
 +        include 'libzstd.so'
 +        into 'freebsd-x64'
@@ -48,7 +48,7 @@
 +        into 'freebsd-x64'
 +      }
 +    }
-+    if (Boolean.parseBoolean(System.getProperty("freebsd.build.libvec", "false")) == true) {
++    if (Boolean.parseBoolean(System.getProperty("freebsd.build.libvec", "false"))) {
 +      dependsOn buildLibVec
 +      from(file("../../simdvec/native/build/libs/vec/freebsd/amd64/")) {
 +        include 'libvec.so'
