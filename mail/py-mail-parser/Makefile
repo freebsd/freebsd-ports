@@ -1,5 +1,5 @@
 PORTNAME=	mail-parser
-PORTVERSION=	4.6.5
+PORTVERSION=	4.10.0
 CATEGORIES=	mail python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -7,7 +7,8 @@ DISTNAME=	mail_parser-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Wrapper for email standard library
-WWW=		https://github.com/SpamScope/mail-parser
+WWW=		https://spamscope.ai/ \
+		https://github.com/SpamScope/mail-parser
 
 LICENSE=	APACHE20
 
