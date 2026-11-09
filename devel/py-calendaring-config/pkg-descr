@@ -1,0 +1,3 @@
+One configuration file for the pycalendar libraries: caldav, calendaring and
+calendaring-jmap. A user with a CalDAV server, a JMAP account, a directory of
+.ics files and a GitHub repository describes them once.
