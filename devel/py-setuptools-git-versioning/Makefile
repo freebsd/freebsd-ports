@@ -1,5 +1,5 @@
 PORTNAME=	setuptools-git-versioning
-PORTVERSION=	3.1.0
+PORTVERSION=	3.2.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/dolfinus/setuptools-git-versioning/releases/download/v${PORTVERSION}/
