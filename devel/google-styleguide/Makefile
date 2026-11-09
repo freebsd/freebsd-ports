@@ -1,5 +1,5 @@
 PORTNAME=	styleguide
-PORTVERSION=	20260929
+PORTVERSION=	20261030
 CATEGORIES=	devel
 PKGNAMEPREFIX=	google-
 
@@ -20,7 +20,7 @@ NO_BUILD=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
-GH_TAGNAME=	403f058
+GH_TAGNAME=	70d70c9
 
 OPTIONS_DEFINE=	DOCS
 
@@ -30,7 +30,7 @@ do-install:
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${DOCSDIR}/docguide
-	${INSTALL_DATA} ${WRKSRC}/*.css ${WRKSRC}/*.html ${WRKSRC}/*.md ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.html ${WRKSRC}/*.md ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/docguide && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/docguide
 
 .include <bsd.port.mk>
