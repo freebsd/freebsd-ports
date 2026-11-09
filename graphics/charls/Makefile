@@ -1,5 +1,5 @@
 PORTNAME=	charls
-PORTVERSION=	2.4.4
+PORTVERSION=	2.4.5
 CATEGORIES=	graphics
 
 MAINTAINER=	sunpoet@FreeBSD.org
