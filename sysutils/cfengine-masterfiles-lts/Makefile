@@ -1,4 +1,4 @@
-VERSIONS=		324 327
+VERSIONS=		327
 # Upgrade to LTS versions only: https://cfengine.com/supported-versions/
 CFENGINE_VERSION?=	327
 PKGNAMESUFFIX=		-lts
