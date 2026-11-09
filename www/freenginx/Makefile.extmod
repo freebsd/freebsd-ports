@@ -29,10 +29,10 @@ WRKSRC_aws_auth=	${WRKDIR}/ngx_aws_auth
 AWS_AUTH_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_aws_auth-freenginx
 AWS_AUTH_VARS=		DSO_EXTMODS+=aws_auth
 
+BROTLI_BUILD_DEPENDS=	nginx-module-brotli>0:www/nginx-module-brotli
 BROTLI_LIB_DEPENDS=	libbrotlicommon.so:archivers/brotli
-BROTLI_GH_TUPLE=	google:ngx_brotli:a71f931:brotli
+WRKSRC_brotli=		${WRKDIR}/ngx_brotli
 BROTLI_VARS=		DSO_EXTMODS+=brotli
-BROTLI_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_brotli_filter_config
 
 CACHE_PURGE_BUILD_DEPENDS=	nginx-module-cache-purge>0:www/nginx-module-cache-purge
 WRKSRC_cache_purge=	${WRKDIR}/ngx_cache_purge

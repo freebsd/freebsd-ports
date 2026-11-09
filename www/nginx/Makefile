@@ -1,7 +1,7 @@
 PORTNAME=	nginx
 PORTVERSION=	${NGINX_VERSION}
 .include "version.mk"
-PORTREVISION=	14
+PORTREVISION=	15
 PORTEPOCH=	3
 CATEGORIES=	www
 MASTER_SITES=	https://nginx.org/download/ \
@@ -295,9 +295,6 @@ post-patch:
 		s!%%NGINX_ERRORLOG%%!${NGINX_ERRORLOG}!' \
 		${WRKSRC}/conf/nginx.conf
 
-post-patch-BROTLI-on:
-	@${REINPLACE_CMD} 's!%%PREFIX%%!${LOCALBASE}!g' ${WRKSRC_brotli}/filter/config
-
 
 post-patch-FASTDFS-on:
 	@${REINPLACE_CMD} \
@@ -329,6 +326,11 @@ pre-configure-AWS_AUTH-on:
 	@${RM} -rf ${WRKSRC_aws_auth}
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-aws-auth ${WRKSRC_aws_auth}
 	@${CHMOD} -R u+w ${WRKSRC_aws_auth}
+
+pre-configure-BROTLI-on:
+	@${RM} -rf ${WRKSRC_brotli}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-brotli ${WRKSRC_brotli}
+	@${CHMOD} -R u+w ${WRKSRC_brotli}
 
 pre-configure-CACHE_PURGE-on:
 	@${RM} -rf ${WRKSRC_cache_purge}
