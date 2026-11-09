@@ -1,0 +1,11 @@
+%%LUA_MODSHAREDIR%%/std/prototype/_base.lua
+%%LUA_MODSHAREDIR%%/std/prototype/container.lua
+%%LUA_MODSHAREDIR%%/std/prototype/contextmanager.lua
+%%LUA_MODSHAREDIR%%/std/prototype/init.lua
+%%LUA_MODSHAREDIR%%/std/prototype/object.lua
+%%LUA_MODSHAREDIR%%/std/prototype/orderedmap.lua
+%%LUA_MODSHAREDIR%%/std/prototype/scanner.lua
+%%LUA_MODSHAREDIR%%/std/prototype/set.lua
+%%LUA_MODSHAREDIR%%/std/prototype/strbuf.lua
+%%LUA_MODSHAREDIR%%/std/prototype/trie.lua
+%%LUA_MODSHAREDIR%%/std/prototype/version.lua
