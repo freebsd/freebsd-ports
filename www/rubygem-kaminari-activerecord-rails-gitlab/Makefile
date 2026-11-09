@@ -1,5 +1,6 @@
 PORTNAME=	kaminari-activerecord
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails-gitlab
@@ -12,7 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-activerecord-gitlab>=0:databases/rubygem-activerecord-gitlab \
-		rubygem-kaminari-core>=${PORTVERSION}:www/rubygem-kaminari-core
+		rubygem-kaminari-core-gitlab>=${PORTVERSION}:www/rubygem-kaminari-core-gitlab
 
 USES=		gem
 
