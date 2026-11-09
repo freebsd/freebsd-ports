@@ -1,5 +1,5 @@
 PORTNAME=	ormsgpack
-DISTVERSION=	1.13.0
+DISTVERSION=	1.13.1
 CATEGORIES=	devel python
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -59,7 +59,7 @@ CARGO_CRATES=	ahash-0.8.12 \
 		serde_core-1.0.229 \
 		serde_derive-1.0.229 \
 		simdutf8-0.1.5 \
-		smallvec-1.16.2 \
+		smallvec-1.16.4 \
 		syn-2.0.114 \
 		syn-3.0.2 \
 		target-lexicon-0.13.4 \
@@ -76,6 +76,6 @@ CARGO_TARGET_DIR=	${WRKSRC}/target
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_ARGS=	--disable-plugin-autoload
 
-# tests as of 1.13.0: 623 passed in 0.61s
+# tests as of 1.13.1: 632 passed in 0.56s
 
 .include <bsd.port.mk>
