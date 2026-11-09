@@ -16,6 +16,7 @@
 %%DATADIR%%/Driver/XdebugDriver.php
 %%DATADIR%%/Exception/BranchAndPathCoverageNotSupportedException.php
 %%DATADIR%%/Exception/BranchCoverageNotSupportedException.php
+%%DATADIR%%/Exception/DataNotFilteredUsingTargetsNotCollectedException.php
 %%DATADIR%%/Exception/DirectoryCouldNotBeCreatedException.php
 %%DATADIR%%/Exception/DriverMismatchException.php
 %%DATADIR%%/Exception/EmptyPathListException.php
@@ -26,6 +27,7 @@
 %%DATADIR%%/Exception/InvalidArgumentException.php
 %%DATADIR%%/Exception/InvalidCodeCoverageTargetException.php
 %%DATADIR%%/Exception/InvalidCoverageDataException.php
+%%DATADIR%%/Exception/JsonException.php
 %%DATADIR%%/Exception/MethodNotImplementedException.php
 %%DATADIR%%/Exception/MixedGitInformationException.php
 %%DATADIR%%/Exception/NoSupportedDriverAvailableException.php
@@ -120,6 +122,9 @@
 %%DATADIR%%/Report/Html/Renderer/Template/summary_metric.html.dist
 %%DATADIR%%/Report/Html/SyntaxHighlighter.php
 %%DATADIR%%/Report/Html/Views.php
+%%DATADIR%%/Report/Jsonl/BranchCoverage.php
+%%DATADIR%%/Report/Jsonl/Facade.php
+%%DATADIR%%/Report/Jsonl/RangeEncoder.php
 %%DATADIR%%/Report/OpenClover.php
 %%DATADIR%%/Report/Summary.php
 %%DATADIR%%/Report/Text.php
@@ -184,6 +189,7 @@
 %%DATADIR%%/UnintentionallyCoveredCodeChecker.php
 %%DATADIR%%/Util/EnsuresUtf8.php
 %%DATADIR%%/Util/Filesystem.php
+%%DATADIR%%/Util/Json.php
 %%DATADIR%%/Util/PathReducer.php
 %%DATADIR%%/Util/Percentage.php
 %%DATADIR%%/Util/Phar.php
