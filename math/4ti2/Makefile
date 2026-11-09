@@ -1,6 +1,6 @@
 PORTNAME=	4ti2
 DISTVERSIONPREFIX=	Release_
-DISTVERSION=	1_6_15
+DISTVERSION=	1_6_16
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,12 +13,17 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libglpk.so:math/glpk \
 		libgmp.so:math/gmp
+TEST_DEPENDS=	bash:shells/bash
 
 USES=		autoreconf compiler:c++11-lang gmake libtool shebangfix
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
-SHEBANG_FILES=	test/check.template.in
+SHEBANG_FILES=	test/check.template.in \
+		test/ppi/check-ppi.in \
+		test/subdirsum.in \
+		test/flavorsum.in \
+		test/reportfailures.in
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static --enable-shared --with-glpk=${LOCALBASE} --with-gmp=${LOCALBASE}
@@ -28,5 +33,7 @@ INSTALL_TARGET=	install-strip
 TEST_TARGET=	check # tests fail to run: https://github.com/4ti2/4ti2/issues/26
 
 OPTIONS_DEFINE=	DOCS
+
+# tests as of 1.6.16: ALL TESTS PASSED
 
 .include <bsd.port.mk>
