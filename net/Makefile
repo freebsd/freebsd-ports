@@ -1414,6 +1414,7 @@
     SUBDIR += rubygem-nats-pure-gitlab
     SUBDIR += rubygem-net-http2
     SUBDIR += rubygem-net-ldap
+    SUBDIR += rubygem-net-ldap-gitlab
     SUBDIR += rubygem-net-ldap017
     SUBDIR += rubygem-net-netrc
     SUBDIR += rubygem-net-ntp
