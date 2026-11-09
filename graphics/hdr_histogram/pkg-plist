@@ -2,6 +2,7 @@ include/hdr/hdr_histogram.h
 include/hdr/hdr_histogram_log.h
 include/hdr/hdr_histogram_version.h
 include/hdr/hdr_interval_recorder.h
+include/hdr/hdr_packed_histogram.h
 include/hdr/hdr_thread.h
 include/hdr/hdr_time.h
 include/hdr/hdr_writer_reader_phaser.h
@@ -11,6 +12,6 @@ lib/cmake/hdr_histogram/hdr_histogram-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/hdr_histogram/hdr_histogram-targets.cmake
 lib/libhdr_histogram.so
 lib/libhdr_histogram.so.6
-lib/libhdr_histogram.so.6.3.3
+lib/libhdr_histogram.so.6.5.4
 lib/libhdr_histogram_static.a
 libdata/pkgconfig/hdr_histogram.pc
