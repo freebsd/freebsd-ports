@@ -1,5 +1,5 @@
 PORTNAME=	activerecord-import
-PORTVERSION=	2.3.0
+PORTVERSION=	3.0.1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/zdennis/activerecord-import
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-activerecord4>=4.2:databases/rubygem-activerecord4
+RUN_DEPENDS=	rubygem-activerecord81>=6.1:databases/rubygem-activerecord81
 
 USES=		gem
 
