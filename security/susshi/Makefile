@@ -1,7 +1,6 @@
 PORTNAME=	susshi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.25.3
-PORTREVISION=	0
+DISTVERSION=	0.25.4
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -49,7 +48,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		clap_derive-4.6.3 \
 		clap_lex-1.0.0 \
 		clap_mangen-0.3.1 \
-		clipboard-win-5.4.1 \
+		clipboard-win-5.4.3 \
 		colorchoice-1.0.4 \
 		compact_str-0.9.0 \
 		const-oid-0.10.2 \
@@ -121,7 +120,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		libm-0.2.16 \
 		libredox-0.1.12 \
 		libssh2-sys-0.3.3 \
-		libz-sys-1.1.24 \
+		libz-sys-1.1.32 \
 		line-clipping-0.3.5 \
 		linux-raw-sys-0.12.1 \
 		litrs-1.0.0 \
