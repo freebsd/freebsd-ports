@@ -1,6 +1,5 @@
 PORTNAME=	pyproject-fmt
-PORTVERSION=	2.29.4
-PORTREVISION=	1
+PORTVERSION=	2.30.3
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,9 +17,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}maturin>=1.15:devel/py-maturin@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}covdefaults>=2.3:devel/py-covdefaults@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-cov>=7.1:devel/py-pytest-cov@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest-mock>=3.15.1:devel/py-pytest-mock@${PY_FLAVOR} \
-		${PY_TOMLI} \
-		${PYTHON_PKGNAMEPREFIX}trove-classifiers>=2026.6.1.19:devel/py-trove-classifiers@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pytest-mock>=3.16:devel/py-pytest-mock@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}trove-classifiers>=2026.9.21.13:devel/py-trove-classifiers@${PY_FLAVOR}
 
 USES=		cargo python
 USE_PYTHON=	autoplist concurrent pep517 pytest
