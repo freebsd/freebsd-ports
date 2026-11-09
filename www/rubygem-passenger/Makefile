@@ -1,5 +1,5 @@
 PORTNAME=	passenger
-PORTVERSION=	6.2.0
+PORTVERSION=	6.2.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG \
 		https://github.com/phusion/passenger/releases/download/release-${PORTVERSION}/
@@ -24,7 +24,7 @@ RUN_DEPENDS=	rubygem-etc>=0:devel/rubygem-etc \
 		rubygem-rackup>=1.0.1:www/rubygem-rackup \
 		rubygem-rake>=12.3.3:devel/rubygem-rake
 
-USES=		compiler:c++14-lang cpe gem libtool python:env shebangfix ssl
+USES=		compiler:c++14-lang cpe gem libtool python:env ssl
 
 CXXFLAGS+=	-I${LOCALBASE}/include/utf8cpp
 USE_CXXSTD=	c++14
@@ -40,8 +40,6 @@ SUB_LIST=	GEM_LIB_DIR=${GEM_LIB_DIR} RUBY=${RUBY}
 CONFLICTS_INSTALL=	rubygem-passenger-apache rubygem-passenger-nginx
 
 CPE_VENDOR=	phusion
-
-SHEBANG_FILES=	src/cxx_supportlib/vendor-copy/libuv/gyp_uv.py
 
 FLAVORS=	apache nginx
 FLAVOR?=	${FLAVORS:[1]}
