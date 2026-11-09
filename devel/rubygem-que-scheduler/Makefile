@@ -1,5 +1,5 @@
 PORTNAME=	que-scheduler
-PORTVERSION=	7.0.1
+PORTVERSION=	10.1.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -9,10 +9,13 @@ WWW=		https://github.com/hlascelles/que-scheduler
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-activesupport70>=6.0:devel/rubygem-activesupport70 \
+BROKEN_RUBY33=	yes
+BROKEN_RUBY34=	yes
+
+xRUN_DEPENDS=	rubygem-activesupport81>=8.0:devel/rubygem-activesupport81 \
 		rubygem-fugit>=1.11.1<2:devel/rubygem-fugit \
-		rubygem-hashie>=3<6:devel/rubygem-hashie \
-		rubygem-que>=2.0<3.0:devel/rubygem-que
+		rubygem-que>=2.0<3.0:devel/rubygem-que \
+		rubygem-sorbet-runtime>=0.5:devel/rubygem-sorbet-runtime
 
 USES=		gem
 
