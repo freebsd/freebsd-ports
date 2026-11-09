@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-exporter-otlp-metrics
-PORTVERSION=	0.13.0
+PORTVERSION=	0.15.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
