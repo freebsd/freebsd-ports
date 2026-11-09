@@ -1,5 +1,5 @@
 PORTNAME=	lograge
-PORTVERSION=	0.15.0
+PORTVERSION=	0.15.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails61
@@ -12,6 +12,7 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-actionpack61>=4:www/rubygem-actionpack61 \
 		rubygem-activesupport61>=4:devel/rubygem-activesupport61 \
+		rubygem-logger>=0:devel/rubygem-logger \
 		rubygem-railties61>=4:www/rubygem-railties61 \
 		rubygem-request_store>=1.0<2:devel/rubygem-request_store
 
