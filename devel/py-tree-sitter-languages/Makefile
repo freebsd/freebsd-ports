@@ -9,6 +9,10 @@ WWW=		https://github.com/grantjenks/py-tree-sitter-languages
 
 LICENSE=	APACHE20
 
+BROKEN=		does not build with latest py-tree-sitter
+DEPRECATED=	Unmaintained by upstream. Use textproc/py-tree-sitter-language-pack instead
+EXPIRATION_DATE=2026-11-30
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tree-sitter>=0:devel/py-tree-sitter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
