@@ -5,6 +5,29 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20261109:
+  AFFECTS: users of chinese/gcin
+  AUTHOR: vanilla@FreeBSD.org
+
+  The ANTHY option of chinese/gcin has been removed. The Anthy input
+  method module is now built by a separate slave port,
+  chinese/gcin-anthy, which depends on chinese/gcin.
+
+  If you built chinese/gcin with the ANTHY option, the old package
+  contains the files now installed by gcin-anthy. Remove it first,
+  then install the new port:
+
+    # pkg delete gcin
+    # pkg install gcin-anthy
+
+  or, when building from ports:
+
+    # pkg delete gcin
+    # cd /usr/ports/chinese/gcin-anthy && make install clean
+
+  chinese/gcin is installed again as a dependency of gcin-anthy.
+  Then restart gcin.
+
 20261107:
   AFFECTS: users of net/rustdesk-server
   AUTHOR: madpilot@madpilot.net
