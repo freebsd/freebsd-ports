@@ -1,8 +1,10 @@
 PORTNAME=	noto
-PORTVERSION=	2.003
+PORTVERSION=	2.004
 CATEGORIES=	x11-fonts
-MASTER_SITES=	https://github.com/notofonts/notofonts.github.io/raw/NotoMusic-v${PORTVERSION}/fonts/ \
-		https://github.com/notofonts/notofonts.github.io/raw/NotoMusic-v${PORTVERSION}/fonts/NotoMusic/hinted/ttf/:fonts
+#MASTER_SITES=	https://github.com/notofonts/notofonts.github.io/raw/NotoMusic-v${PORTVERSION}/fonts/ \
+#		https://github.com/notofonts/notofonts.github.io/raw/NotoMusic-v${PORTVERSION}/fonts/NotoMusic/hinted/ttf/:fonts
+MASTER_SITES=	https://github.com/notofonts/notofonts.github.io/raw/noto-monthly-release-2026.11.01/fonts/ \
+		https://github.com/notofonts/notofonts.github.io/raw/noto-monthly-release-2026.11.01/fonts/NotoMusic/hinted/ttf/:fonts
 PKGNAMESUFFIX=	-music
 DISTFILES=	LICENSE \
 		${FONTS:S|$|:fonts|}
