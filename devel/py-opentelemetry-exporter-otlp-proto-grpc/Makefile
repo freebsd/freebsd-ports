@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-exporter-otlp-proto-grpc
-PORTVERSION=	1.45.0
+PORTVERSION=	1.45.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVO
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}googleapis-common-protos>=1.57<2:devel/py-googleapis-common-protos@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}grpcio>=1.75.1<2.0.0:devel/py-grpcio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}opentelemetry-api>=1.15<2:devel/py-opentelemetry-api@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}opentelemetry-exporter-otlp-common>=0.66b0<0.66b0_99:devel/py-opentelemetry-exporter-otlp-common@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}opentelemetry-exporter-otlp-common>=0.66b${PORTVERSION:E}<0.66b${PORTVERSION:E}_99:devel/py-opentelemetry-exporter-otlp-common@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}opentelemetry-exporter-otlp-proto-common>=${PORTVERSION}<${PORTVERSION}_99:devel/py-opentelemetry-exporter-otlp-proto-common@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}opentelemetry-proto>=${PORTVERSION}<${PORTVERSION}_99:devel/py-opentelemetry-proto@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}opentelemetry-sdk>=${PORTVERSION}<1.46:devel/py-opentelemetry-sdk@${PY_FLAVOR} \
