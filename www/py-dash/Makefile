@@ -1,5 +1,5 @@
 PORTNAME=	dash
-PORTVERSION=	4.4.1
+PORTVERSION=	4.5.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}comm>=0:devel/py-comm@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}flask>=1.0.4:www/py-flask@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}flask>=1.0.4<3.2:www/py-flask@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}importlib-metadata>=0:devel/py-importlib-metadata@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}janus>=1.0.0:devel/py-janus@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nest-asyncio>=0:devel/py-nest-asyncio@${PY_FLAVOR} \
