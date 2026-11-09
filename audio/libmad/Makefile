@@ -1,5 +1,5 @@
 PORTNAME=	libmad
-PORTVERSION=	0.16.4
+PORTVERSION=	0.16.5
 CATEGORIES=	audio
 MASTER_SITES=	https://codeberg.org/tenacityteam/libmad/releases/download/${PORTVERSION}/
 
@@ -18,9 +18,8 @@ CMAKE_ON=	BUILD_SHARED_LIBS ${CMAKE_ON_${ARCH}}
 CMAKE_ON_armv6=	ASO
 CMAKE_ON_armv7=	ASO
 CMAKE_ON_i386=	ASO
-
 USE_LDCONFIG=	yes
-WRKSRC=		${WRKDIR}/libmad
+WRKSRC=		${WRKDIR}/mad-${PORTVERSION}-source
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
