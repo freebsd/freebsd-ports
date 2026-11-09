@@ -1,6 +1,5 @@
 PORTNAME=	azure-monitor-opentelemetry-exporter
-PORTVERSION=	1.0.0b57
-PORTREVISION=	1
+PORTVERSION=	1.0.0b58
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}azure-core>=1.28.0<2.0.0:devel/py-azure-core@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}azure-core>=1.38.0<2.0.0:devel/py-azure-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-identity>=1.17<2:devel/py-azure-identity@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}msrest>=0.6.10:net-mgmt/py-msrest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}opentelemetry-api>=1.45.0<1.46:devel/py-opentelemetry-api@${PY_FLAVOR} \
