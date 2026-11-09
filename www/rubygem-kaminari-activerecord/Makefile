@@ -1,5 +1,5 @@
 PORTNAME=	kaminari-activerecord
-PORTVERSION=	1.2.2
+PORTVERSION=	1.3.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
