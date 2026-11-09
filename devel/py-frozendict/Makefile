@@ -1,5 +1,5 @@
 PORTNAME=	frozendict
-PORTVERSION=	2.4.7
+PORTVERSION=	2.5.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/Marco-Sulla/python-frozendict/releases/download/v${PORTVERSSION}/
