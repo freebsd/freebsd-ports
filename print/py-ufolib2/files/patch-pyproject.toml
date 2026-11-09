@@ -1,11 +1,23 @@
---- pyproject.toml.orig	2025-07-10 11:40:29 UTC
+--- pyproject.toml.orig	2026-10-13 15:19:32 UTC
 +++ pyproject.toml
-@@ -3,7 +3,7 @@ build-backend = "setuptools.build_meta"
- build-backend = "setuptools.build_meta"
- 
+@@ -1,9 +1,8 @@
  [project]
 -name = "ufoLib2"
 +name = "ufolib2"
  description = "ufoLib2 is a UFO font processing library."
+ requires-python = ">=3.10"
+-license = "Apache-2.0"
+-license-files = ["LICENSE"]
++license = { text = "Apache-2.0" }
  authors = [{ name = "Adrien Tétar", email = "adri-from-59@hotmail.fr" }]
- license = { text = "Apache 2.0" }
+ classifiers = [
+   "Development Status :: 4 - Beta",
+@@ -28,7 +27,7 @@ msgpack = ["cattrs >= 25.1.1", "msgpack"]
+ msgpack = ["cattrs >= 25.1.1", "msgpack"]
+ 
+ [build-system]
+-requires = ["setuptools>=77.0.0", "setuptools_scm>=6.2", "wheel"]
++requires = ["setuptools>=61", "setuptools_scm>=6.2", "wheel"]
+ build-backend = "setuptools.build_meta"
+ 
+ [tool.black]
