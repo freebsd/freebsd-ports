@@ -4885,6 +4885,7 @@
     SUBDIR += py-configobj
     SUBDIR += py-configparser
     SUBDIR += py-configupdater
+    SUBDIR += py-configupdater3
     SUBDIR += py-confusable-homoglyphs
     SUBDIR += py-confuse
     SUBDIR += py-connection_pool
