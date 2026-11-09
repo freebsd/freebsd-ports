@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2025-08-23 16:25:04 UTC
+--- pyproject.toml.orig	2026-10-11 01:34:34 UTC
 +++ pyproject.toml
 @@ -1,9 +1,9 @@
  [build-system]
@@ -10,7 +10,7 @@
 -name = "pyRFC3339"
 +name = "pyrfc3339"
  dynamic = ["version"]
- requires-python = ">= 3.9"
+ requires-python = ">= 3.11"
  authors = [
 @@ -12,8 +12,7 @@ keywords = ["rfc-3339", "timestamp", "iso-8601", "date
  description = "Generate and parse RFC 3339 timestamps"
