@@ -1,0 +1,3 @@
+%%LUA_MODSHAREDIR%%/optparse/_normalize.lua
+%%LUA_MODSHAREDIR%%/optparse/init.lua
+%%LUA_MODSHAREDIR%%/optparse/version.lua

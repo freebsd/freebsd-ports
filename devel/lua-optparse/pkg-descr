@@ -1,0 +1,10 @@
+In the common case, you can write the long-form help output typical of a modern
+command line program, and let this module generate a custom parser that collects
+and diagnoses the options it describes.
+
+The parser is actually an object instance which can then be tweaked for the
+uncommon case, by hand, or by using the "on" method to tie your custom handlers
+to options that are not handled quite the way you'd like.
+
+This is a pure Lua library compatible with LuaJIT, Lua 5.1, 5.2, 5.3, 5.4 and
+5.5.

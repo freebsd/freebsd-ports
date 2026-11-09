@@ -1698,6 +1698,7 @@
     SUBDIR += lua-lunit
     SUBDIR += lua-lunitx
     SUBDIR += lua-mode
+    SUBDIR += lua-optparse
     SUBDIR += lua-posix
     SUBDIR += lua-pty
     SUBDIR += lua-rds-parser
