@@ -2,6 +2,7 @@ include/opentelemetry/baggage/baggage.h
 include/opentelemetry/baggage/baggage_context.h
 include/opentelemetry/baggage/propagation/baggage_propagator.h
 include/opentelemetry/common/attribute_value.h
+include/opentelemetry/common/detail/ascii.h
 include/opentelemetry/common/key_value_iterable.h
 include/opentelemetry/common/key_value_iterable_view.h
 include/opentelemetry/common/kv_properties.h
@@ -92,16 +93,6 @@ include/opentelemetry/nostd/type_traits.h
 include/opentelemetry/nostd/unique_ptr.h
 include/opentelemetry/nostd/utility.h
 include/opentelemetry/nostd/variant.h
-include/opentelemetry/plugin/detail/dynamic_library_handle.h
-include/opentelemetry/plugin/detail/dynamic_load_unix.h
-include/opentelemetry/plugin/detail/dynamic_load_windows.h
-include/opentelemetry/plugin/detail/loader_info.h
-include/opentelemetry/plugin/detail/tracer_handle.h
-include/opentelemetry/plugin/detail/utility.h
-include/opentelemetry/plugin/dynamic_load.h
-include/opentelemetry/plugin/factory.h
-include/opentelemetry/plugin/hook.h
-include/opentelemetry/plugin/tracer.h
 include/opentelemetry/sdk/common/atomic_shared_ptr.h
 include/opentelemetry/sdk/common/atomic_unique_ptr.h
 include/opentelemetry/sdk/common/attribute_utils.h
@@ -383,6 +374,7 @@ include/opentelemetry/sdk/metrics/meter.h
 include/opentelemetry/sdk/metrics/meter_config.h
 include/opentelemetry/sdk/metrics/meter_context.h
 include/opentelemetry/sdk/metrics/meter_context_factory.h
+include/opentelemetry/sdk/metrics/meter_enabled_state.h
 include/opentelemetry/sdk/metrics/meter_provider.h
 include/opentelemetry/sdk/metrics/meter_provider_factory.h
 include/opentelemetry/sdk/metrics/metric_reader.h
