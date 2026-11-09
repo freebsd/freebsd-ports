@@ -21,10 +21,12 @@ load_rc_config $name
 : ${ttyd_acct:="nobody"}
 : ${ttyd_exec:="/usr/bin/login"}
 : ${ttyd_args:="--interface lo0 --port 7681 -W"}
+: ${ttyd_logfile:="/var/log/${name}.log"}
+: ${ttyd_pidfile:="/var/run/${name}.pid"}
 
 procname="/usr/local/bin/${name}"
 
 command="/usr/sbin/daemon"
-command_args="-r -R 15 -f -t ${name} -T ttyd -u ${ttyd_acct} /usr/local/bin/ttyd ${ttyd_args} ${ttyd_exec}"
+command_args="-r -R 15 -f -t ${name} -T ttyd -u ${ttyd_acct} -p ${ttyd_pidfile} -o ${ttyd_logfile} /usr/local/bin/ttyd ${ttyd_args} ${ttyd_exec}"
 
 run_rc_command "$1"
