@@ -1,6 +1,5 @@
 PORTNAME=	datafusion
-PORTVERSION=	54.0.0
-PORTREVISION=	3
+PORTVERSION=	55.0.0
 CATEGORIES=	databases python
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -36,7 +35,7 @@ GH_PROJECT=	datafusion-python
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 31300
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.12:devel/py-typing-extensions@${PY_FLAVOR}
 .endif
 
 .include <bsd.port.post.mk>
