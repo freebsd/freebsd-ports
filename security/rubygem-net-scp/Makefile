@@ -1,5 +1,5 @@
 PORTNAME=	net-scp
-PORTVERSION=	4.1.0
+PORTVERSION=	4.2.0
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/net-ssh/net-scp
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-net-ssh6>=2.6.5<7.0.0:security/rubygem-net-ssh6
+RUN_DEPENDS=	rubygem-net-ssh>=2.6.5,2<9.0.0,2:security/rubygem-net-ssh
 
 USES=		gem
 
