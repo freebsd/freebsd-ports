@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-instrumentation-rack
-PORTVERSION=	0.31.1
+PORTVERSION=	0.31.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
