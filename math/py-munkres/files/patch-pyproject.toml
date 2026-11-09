@@ -1,0 +1,33 @@
+--- pyproject.toml.orig	2026-10-18 13:37:12 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=77"]
++requires = ["setuptools>=61"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -8,8 +8,7 @@ requires-python = ">=3.10"
+ description = "The Munkres (Hungarian) algorithm for the assignment problem: fast, typed, dependency-free."
+ readme = "README.md"
+ requires-python = ">=3.10"
+-license = "Apache-2.0"
+-license-files = ["LICENSE.md", "NOTICE"]
++license = { text = "Apache-2.0" }
+ authors = [
+     { name = "Brian M. Clapper", email = "bmc@clapper.org" },
+     { name = "Eishit Nigam" },
+@@ -71,13 +70,6 @@ include-package-data = false
+ [tool.setuptools]
+ package-dir = { "" = "src" }
+ include-package-data = false
+-
+-[[tool.setuptools.ext-modules]]
+-name = "munkres._lapc"
+-sources = ["src/munkres/_native/lapmodule.c"]
+-# Portable flags: no -march=native (wheels must run on any CPU) and no -ffast-math (IEEE NaN semantics kept).
+-extra-compile-args = ["-O3", "-fno-trapping-math", "-fno-math-errno", "-funroll-loops"]
+-optional = true   # if the C compiler is missing the package still installs and runs in pure Python
+ 
+ [tool.setuptools.packages.find]
+ where = ["src"]
