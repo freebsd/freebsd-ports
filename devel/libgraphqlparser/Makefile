@@ -12,6 +12,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		bison cmake compiler:c++11-lang python:build
 
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	graphql
 
