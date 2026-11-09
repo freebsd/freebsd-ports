@@ -1,0 +1,11 @@
+--- fog.gemspec.orig	2026-11-08 02:30:07 UTC
++++ fog.gemspec
+@@ -36,7 +36,7 @@ Gem::Specification.new do |s|
+   s.add_runtime_dependency(%q<fog-cloudatcost>.freeze, ["~> 0.4".freeze])
+   s.add_runtime_dependency(%q<fog-cloudstack>.freeze, ["~> 0.1.0".freeze])
+   s.add_runtime_dependency(%q<fog-digitalocean>.freeze, [">= 0.3.0".freeze])
+-  s.add_runtime_dependency(%q<fog-dnsimple>.freeze, ["~> 2.1".freeze])
++  s.add_runtime_dependency(%q<fog-dnsimple>.freeze, [">= 2.1".freeze])
+   s.add_runtime_dependency(%q<fog-dynect>.freeze, [">= 0.0.2".freeze, "< 0.6.0".freeze])
+   s.add_runtime_dependency(%q<fog-ecloud>.freeze, ["~> 0.1".freeze])
+   s.add_runtime_dependency(%q<fog-google>.freeze, ["~> 1.0".freeze])

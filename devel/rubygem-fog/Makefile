@@ -1,6 +1,6 @@
 PORTNAME=	fog
 PORTVERSION=	2.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -19,7 +19,7 @@ RUN_DEPENDS=	rubygem-fog-aliyun>=0.1.0:net/rubygem-fog-aliyun \
 		rubygem-fog-cloudstack>=0.1.0<0.2:net/rubygem-fog-cloudstack \
 		rubygem-fog-core>=2.1<3:devel/rubygem-fog-core \
 		rubygem-fog-digitalocean>=0.3.0:net/rubygem-fog-digitalocean \
-		rubygem-fog-dnsimple>=2.1<3:net/rubygem-fog-dnsimple \
+		rubygem-fog-dnsimple>=2.1:net/rubygem-fog-dnsimple \
 		rubygem-fog-dynect>=0.0.2<0.6.0:net/rubygem-fog-dynect \
 		rubygem-fog-ecloud>=0.1<1:net/rubygem-fog-ecloud \
 		rubygem-fog-google>=1.0<2:net/rubygem-fog-google \
