@@ -1,5 +1,5 @@
 PORTNAME=	net-sftp
-PORTVERSION=	4.0.0
+PORTVERSION=	4.1.1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -9,7 +9,7 @@ WWW=		https://github.com/net-ssh/net-sftp
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-net-ssh>=5.0.0,2<8.0.0,2:security/rubygem-net-ssh
+RUN_DEPENDS=	rubygem-net-ssh>=5.0.0,2<9.0.0,2:security/rubygem-net-ssh
 
 USES=		gem
 
