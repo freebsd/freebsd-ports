@@ -1,3 +1,3 @@
-TIMESTAMP = 1782966656
-SHA256 (google_cloud_appengine_logging-1.10.0.tar.gz) = b5563e76010a36e6adf1cc489620c29ee4fb3b986b006d237e9a061eb0f0abb7
-SIZE (google_cloud_appengine_logging-1.10.0.tar.gz) = 17744
+TIMESTAMP = 1793587908
+SHA256 (google_cloud_appengine_logging-1.11.0.tar.gz) = ce053792df98fde4790c5f070176088c9ebf0e55a37c754c8f8e11b28ddb4d73
+SIZE (google_cloud_appengine_logging-1.11.0.tar.gz) = 21678
