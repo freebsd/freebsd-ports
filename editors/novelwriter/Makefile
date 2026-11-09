@@ -1,6 +1,7 @@
 PORTNAME=	novelWriter
 DISTVERSIONPREFIX=	v
 DISTVERSION=	26.2.2
+PORTREVISION=	1
 CATEGORIES=	editors python
 MASTER_SITES=	PYPI
 
@@ -27,5 +28,8 @@ GH_ACCOUNT=	vkbo
 GH_PROJECT=	novelWriter
 
 NO_ARCH=	yes
+
+post-configure: # compile translation files
+	@cd ${WRKSRC} && ${PYTHON_CMD} pkgutils.py qtlrelease
 
 .include <bsd.port.mk>
