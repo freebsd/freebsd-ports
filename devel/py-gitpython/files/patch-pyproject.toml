@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2026-10-08 07:12:38 UTC
++++ pyproject.toml
+@@ -3,7 +3,7 @@ build-backend = "setuptools.build_meta"
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+-name = "GitPython"
++name = "gitpython"
+ description = "GitPython is a Python library used to interact with Git repositories"
+ authors = [
+     {name = "Sebastian Thiel", email = "byronimo@gmail.com"},
