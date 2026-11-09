@@ -1,5 +1,5 @@
 PORTNAME=	excon
-PORTVERSION=	1.7.2
+PORTVERSION=	1.10.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -9,8 +9,6 @@ WWW=		https://github.com/excon/excon
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
-
-RUN_DEPENDS=	rubygem-logger>=0:devel/rubygem-logger
 
 USES=		cpe gem
 
