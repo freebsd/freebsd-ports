@@ -1,9 +1,9 @@
---- pyproject.toml.orig	2026-09-04 21:02:54 UTC
+--- pyproject.toml.orig	2026-10-19 16:48:47 UTC
 +++ pyproject.toml
-@@ -3,8 +3,7 @@ requires-python = ">=3.10"
+@@ -3,8 +3,7 @@ requires-python = ">=3.11"
  description = "Python implementation of the ASDF Standard"
  readme = "README.rst"
- requires-python = ">=3.10"
+ requires-python = ">=3.11"
 -license = "BSD-3-Clause"
 -license-files = ["LICENSE"]
 +license = { text = "BSD-3-Clause" }
