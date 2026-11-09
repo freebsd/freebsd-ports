@@ -1,6 +1,5 @@
 PORTNAME=	protobuf-py-ext
-PORTVERSION=	0.5.0
-PORTREVISION=	1
+PORTVERSION=	0.7.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,6 +12,7 @@ WWW=		https://protobufpy.com/ \
 		https://github.com/bufbuild/protobuf-py
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}maturin>=1.12<2.0:devel/py-maturin@${PY_FLAVOR}
 
