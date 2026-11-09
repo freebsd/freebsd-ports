@@ -1,0 +1,12 @@
+Obtained from:	https://github.com/redis/redis-rb/commit/1ec0285f15ab66b3f61011617f18f9751fd98172
+
+--- redis.gemspec.orig	2026-11-01 04:36:37 UTC
++++ redis.gemspec
+@@ -21,6 +21,6 @@ Gem::Specification.new do |s|
+ 
+   s.specification_version = 4
+ 
+-  s.add_runtime_dependency(%q<redis-client>.freeze, ["= 0.30.1".freeze])
++  s.add_runtime_dependency(%q<redis-client>.freeze, ["= 0.31.0".freeze])
+ end
+ 
