@@ -1703,6 +1703,7 @@
     SUBDIR += lua-pty
     SUBDIR += lua-rds-parser
     SUBDIR += lua-resty-string
+    SUBDIR += lua-std.functional
     SUBDIR += lua-stdlib
     SUBDIR += lua-stdlib-debug
     SUBDIR += lua-stdlib-normalize

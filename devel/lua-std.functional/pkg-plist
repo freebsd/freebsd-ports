@@ -1,0 +1,5 @@
+%%LUA_MODSHAREDIR%%/std/functional/_base.lua
+%%LUA_MODSHAREDIR%%/std/functional/init.lua
+%%LUA_MODSHAREDIR%%/std/functional/operator.lua
+%%LUA_MODSHAREDIR%%/std/functional/tuple.lua
+%%LUA_MODSHAREDIR%%/std/functional/version.lua

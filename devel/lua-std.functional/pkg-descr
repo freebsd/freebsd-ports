@@ -1,0 +1,7 @@
+This is a collection of Functional Programming libraries for Lua 5.1 (including
+LuaJIT), 5.2, 5.3, 5.4 and 5.5. The libraries are copyright by their authors
+(see the AUTHORS file for details), and released under the MIT license (the same
+license as Lua itself). There is no warranty.
+
+std.functional needs only std.normalize beyond a standard Lua system, though it
+will take advantage of strict and typecheck if they are installed.
