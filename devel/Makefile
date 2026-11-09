@@ -8180,6 +8180,7 @@
     SUBDIR += rubygem-opentelemetry-instrumentation-mysql2-gitlab
     SUBDIR += rubygem-opentelemetry-instrumentation-net_http
     SUBDIR += rubygem-opentelemetry-instrumentation-net_http-gitlab
+    SUBDIR += rubygem-opentelemetry-instrumentation-openai
     SUBDIR += rubygem-opentelemetry-instrumentation-pg
     SUBDIR += rubygem-opentelemetry-instrumentation-pg-gitlab
     SUBDIR += rubygem-opentelemetry-instrumentation-que
