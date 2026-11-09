@@ -1,0 +1,17 @@
+--- pyproject.toml.orig	2026-10-12 04:56:44 UTC
++++ pyproject.toml
+@@ -1,12 +1,12 @@
+ [build-system]
+-requires = ["setuptools>=64"]
++requires = ["setuptools>=61"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+ name = "fairlearn"
+ description = "A Python package to assess and improve fairness of machine learning models."
+ readme = "README.rst"
+-license = "MIT"
++license = { text = "MIT" }
+ dynamic = ["version"]
+ requires-python = ">=3.11"
+ authors = [
