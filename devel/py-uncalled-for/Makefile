@@ -1,5 +1,5 @@
 PORTNAME=	uncalled-for
-DISTVERSION=	0.4.1
+DISTVERSION=	0.6.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,6 +28,6 @@ TEST_ARGS=	--disable-plugin-autoload -p asyncio -p pytest_cov -p randomly -p tim
 
 NO_ARCH=	yes
 
-# tests as of 0.4.1: 121 passed in 0.19s
+# tests as of 0.6.0: 181 passed in 0.21s
 
 .include <bsd.port.mk>
