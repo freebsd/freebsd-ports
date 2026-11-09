@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2025-08-27 21:09:31 UTC
+--- pyproject.toml.orig	2026-10-30 18:18:18 UTC
 +++ pyproject.toml
 @@ -4,8 +4,7 @@ authors = [{ name = "Toby Mao", email = "toby.mao@gmai
  description = "An easily customizable SQL parser and transpiler"
@@ -10,3 +10,20 @@
  requires-python = ">= 3.9"
  classifiers = [
      "Development Status :: 5 - Production/Stable",
+@@ -23,7 +22,7 @@ Issues = "https://github.com/tobymao/sqlglot/issues"
+ Issues = "https://github.com/tobymao/sqlglot/issues"
+ 
+ [build-system]
+-requires = ["setuptools >= 61.0", "setuptools_scm >= 10.2"]
++requires = ["setuptools >= 61.0", "setuptools_scm >= 9.2"]
+ build-backend = "setuptools.build_meta"
+ 
+ [tool.setuptools]
+@@ -31,7 +30,6 @@ version_file = "sqlglot/_version.py"
+ 
+ [tool.setuptools_scm]
+ version_file = "sqlglot/_version.py"
+-write_to_source = true
+ fallback_version = "0.0.0"
+ local_scheme = "no-local-version"
+ 
