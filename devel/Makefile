@@ -7136,6 +7136,7 @@
     SUBDIR += rubygem-aws-sdk-lambda
     SUBDIR += rubygem-aws-sdk-lambdacore
     SUBDIR += rubygem-aws-sdk-lambdamicrovms
+    SUBDIR += rubygem-aws-sdk-lambdaweb
     SUBDIR += rubygem-aws-sdk-launchwizard
     SUBDIR += rubygem-aws-sdk-lex
     SUBDIR += rubygem-aws-sdk-lexmodelbuildingservice
