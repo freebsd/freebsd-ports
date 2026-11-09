@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-instrumentation-pg
-PORTVERSION=	0.37.0
+PORTVERSION=	0.37.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-opentelemetry-helpers-sql>=0:devel/rubygem-opentelemetry-helpers-sql \
-		rubygem-opentelemetry-helpers-sql-processor>=0:devel/rubygem-opentelemetry-helpers-sql-processor \
+		rubygem-opentelemetry-helpers-sql-processor>=0.5.1<1.0:devel/rubygem-opentelemetry-helpers-sql-processor \
 		rubygem-opentelemetry-instrumentation-base>=0.25<1:devel/rubygem-opentelemetry-instrumentation-base
 
 USES=		gem
