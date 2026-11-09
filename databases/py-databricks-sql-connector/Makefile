@@ -1,5 +1,5 @@
 PORTNAME=	databricks-sql-connector
-PORTVERSION=	4.6.0
+PORTVERSION=	4.8.0
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=1.0.0:devel/py-poetry-core@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lz4>=4.4.5<5:archivers/py-lz4@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}oauthlib>=3.1.0<5:security/py-oauthlib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}oauthlib>=3.1.0<5.0.0:security/py-oauthlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openpyxl>=3.0.10<4:textproc/py-openpyxl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pandas>=2.2.3,1<4.0.0,1:math/py-pandas@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pybreaker>=1.0.0<2:devel/py-pybreaker@${PY_FLAVOR} \
@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lz4>=4.4.5<5:archivers/py-lz4@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-dateutil>=2.8.0<3:devel/py-python-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.18.1<3:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests-kerberos>=0<0.16:security/py-requests-kerberos@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}thrift>=0.24.0,1<0.25,1:devel/py-thrift@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}thrift>=0.24.0,1<0.26.0,1:devel/py-thrift@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}urllib3>=1.26,1:net/py-urllib3@${PY_FLAVOR}
 
 USES=		python shebangfix

@@ -1,15 +1,6 @@
 --- pyproject.toml.orig	1970-01-01 00:00:00 UTC
 +++ pyproject.toml
-@@ -34,7 +34,7 @@ requests = "^2.18.1"
-     { version = "^4.4.5", python = ">=3.14" }
- ]
- requests = "^2.18.1"
--oauthlib = "^3.1.0"
-+oauthlib = ">=3.1.0,<5"
- openpyxl = "^3.0.10"
- urllib3 = ">=1.26"
- python-dateutil = "^2.8.0"
-@@ -45,7 +45,7 @@ pybreaker = "^1.0.0"
+@@ -61,7 +61,7 @@ pybreaker = "^1.0.0"
  ]
  pyjwt = "^2.0.0"
  pybreaker = "^1.0.0"
