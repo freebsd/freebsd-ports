@@ -1,5 +1,5 @@
 PORTNAME=	google-apis-generator
-PORTVERSION=	0.19.0
+PORTVERSION=	0.19.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
