@@ -1,5 +1,5 @@
 PORTNAME=	tomlkit
-PORTVERSION=	0.15.1
+PORTVERSION=	0.15.2
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI \
 		https://github.com/sdispater/tomlkit/releases/download/${PORTVERSION}/
@@ -13,7 +13,7 @@ WWW=		https://tomlkit.readthedocs.io/en/latest/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=1.0.0:devel/py-poetry-core@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=2.0.0:devel/py-poetry-core@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyyaml>=0:devel/py-pyyaml@${PY_FLAVOR}
 
 USES=		python shebangfix
