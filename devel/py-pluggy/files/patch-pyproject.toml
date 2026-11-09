@@ -1,9 +1,8 @@
---- pyproject.toml.orig	2025-05-15 12:29:37 UTC
+--- pyproject.toml.orig	2026-10-15 07:14:07 UTC
 +++ pyproject.toml
-@@ -1,7 +1,7 @@ requires = [
+@@ -1,6 +1,6 @@ requires = [
  [build-system]
  requires = [
-   # sync with setup.py until we discard non-pep-517/518
 -  "setuptools>=65.0",
 +  "setuptools>=61.0",
    "setuptools-scm[toml]>=8.0",
