@@ -1,4 +1,4 @@
---- Makefile.in.orig	2026-03-24 16:49:54 UTC
+--- Makefile.in.orig	2026-11-09 01:30:15 UTC
 +++ Makefile.in
 @@ -99,7 +99,7 @@ EXTRA_PROGRAMS = $(am__EXEEXT_1) tex$(EXEEXT) mf$(EXEE
  	mf-nowin$(EXEEXT) mflua$(EXEEXT) mflua-nowin$(EXEEXT) \
@@ -9,36 +9,34 @@
  	ttf2afm$(EXEEXT) pdftosrc$(EXEEXT) luatex$(EXEEXT) \
  	luajittex$(EXEEXT) luahbtex$(EXEEXT) luajithbtex$(EXEEXT) \
  	xetex$(EXEEXT) $(am__EXEEXT_3) aleph$(EXEEXT) synctex$(EXEEXT) \
-@@ -111,8 +111,8 @@ bin_PROGRAMS = tangle$(EXEEXT) ctangle$(EXEEXT) $(am__
+@@ -111,7 +111,7 @@ bin_PROGRAMS = tangle$(EXEEXT) ctangle$(EXEEXT) $(am__
  	$(am__EXEEXT_8) $(am__EXEEXT_9) $(am__EXEEXT_10) \
  	$(am__EXEEXT_11) $(am__EXEEXT_12) $(am__EXEEXT_13) \
  	$(am__EXEEXT_14) $(am__EXEEXT_15) $(am__EXEEXT_16) \
 -	$(am__EXEEXT_17) $(am__EXEEXT_18) $(am__EXEEXT_19) \
--	$(am__EXEEXT_20) $(am__EXEEXT_21) $(am__EXEEXT_22) \
-+	$(am__EXEEXT_17) $(am__EXEEXT_18) \
-+	$(am__EXEEXT_21) $(am__EXEEXT_22) \
++	$(am__EXEEXT_17) \
+ 	$(am__EXEEXT_20) $(am__EXEEXT_21) $(am__EXEEXT_22) \
  	$(am__EXEEXT_23) $(am__EXEEXT_24) $(am__EXEEXT_25) \
  	$(am__EXEEXT_26) $(am__EXEEXT_27) $(am__EXEEXT_28) \
- 	$(am__EXEEXT_29) $(am__EXEEXT_30) $(am__EXEEXT_31)
-@@ -3165,10 +3165,10 @@ EXTRA_LIBRARIES = libmf.a libmflua.a libmfluaotfcc.a l
+@@ -3166,10 +3166,10 @@ EXTRA_LIBRARIES = libmf.a libmflua.a libmfluaotfcc.a l
  	libluahbtexspecific.a libluajithbtexspecific.a libluaffi.a \
- 	libluaharfbuzz.a libluajitharfbuzz.a libxetex.a libsynctex.a \
- 	libmd5.a
+ 	libluaharfbuzz.a libluajitharfbuzz.a libluaharfbuzzsubset.a \
+ 	libluajitharfbuzzsubset.a libxetex.a libsynctex.a libmd5.a
 -EXTRA_LTLIBRARIES = libsynctex.la
 +EXTRA_LTLIBRARIES =
- lib_LIBRARIES = $(am__append_126)
- lib_LTLIBRARIES = $(am__append_125)
+ lib_LIBRARIES = $(am__append_120)
+ lib_LTLIBRARIES = $(am__append_119)
 -dist_man_MANS = synctexdir/man1/synctex.1 synctexdir/man5/synctex.5
 +dist_man_MANS =
  nodist_man_MANS = 
  TEST_EXTENSIONS = .pl .test
- #
-@@ -3724,7 +3724,7 @@ bin_links = $(am__append_5) $(am__append_14) $(am__app
- 	$(am__append_63) $(am__append_70) $(am__append_78)
+ 
+@@ -3717,7 +3717,7 @@ bin_links = $(am__append_5) $(am__append_14) $(am__app
+ 	$(am__append_65) $(am__append_72)
  bin_links = $(am__append_5) $(am__append_14) $(am__append_15) \
  	$(am__append_24) $(am__append_33) $(am__append_41) \
--	$(am__append_49) $(am__append_54) $(am__append_68) \
+-	$(am__append_49) $(am__append_54) $(am__append_63) \
 +	$(am__append_49) $(am__append_54) \
- 	$(am__append_74) $(am__append_75) $(am__append_76) \
- 	$(am__append_90) $(am__append_95) $(am__append_100) \
- 	$(am__append_105)
+ 	$(am__append_69) $(am__append_70) $(am__append_84) \
+ 	$(am__append_89) $(am__append_94) $(am__append_99)
+ install_exe_links = $(am__append_12) $(am__append_22) $(am__append_31) \

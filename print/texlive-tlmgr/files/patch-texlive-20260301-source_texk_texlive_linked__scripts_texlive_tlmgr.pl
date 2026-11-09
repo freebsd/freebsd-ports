@@ -1,6 +1,6 @@
---- texlive-20250308-source/texk/texlive/linked_scripts/texlive/tlmgr.pl.orig	2025-02-24 20:29:20 UTC
-+++ texlive-20250308-source/texk/texlive/linked_scripts/texlive/tlmgr.pl
-@@ -648,6 +648,9 @@ for the full story.\n";
+--- texlive-20260301-source/texk/texlive/linked_scripts/texlive/tlmgr.pl.orig	2026-11-09 01:39:24 UTC
++++ texlive-20260301-source/texk/texlive/linked_scripts/texlive/tlmgr.pl
+@@ -650,6 +650,9 @@ for the full story.\n";
    # besides doing normal logging if -logfile is specified, we try to log
    # package related actions (install, remove, update) to
    # the package-log file TEXMFSYSVAR/web2c/tlmgr.log
@@ -10,7 +10,7 @@
    $packagelogged = 0;  # how many msgs we logged
    $commandslogged = 0;
    chomp (my $texmfsysvar = `kpsewhich -var-value=TEXMFSYSVAR`);
-@@ -656,7 +659,7 @@ for the full story.\n";
+@@ -658,7 +661,7 @@ for the full story.\n";
    if ($opts{"usermode"}) {
      $packagelogfile ||= "$texmfvar/web2c/tlmgr.log";
    } else {
@@ -19,7 +19,7 @@
    }
    #
    # Try to open the packagelog file, but do NOT die when that does not work
-@@ -748,9 +751,9 @@ sub give_version {
+@@ -750,9 +753,9 @@ sub give_version {
      $::mrversion = "";
      $::version_string .= "tlmgr revision $tlmgrversion\n";
      $::mrversion .= "revision $tlmgrrevision\n";
@@ -32,7 +32,7 @@
        # print first, which has the TL version info.
        my $rel_tl = <REL_TL>;
        $::version_string .= $rel_tl;
-@@ -2440,7 +2443,7 @@ sub write_w32_updater {
+@@ -2442,7 +2445,7 @@ sub write_w32_updater {
    my $opt_src = $localtlpdb->option("install_srcfiles");
    my $opt_doc = $localtlpdb->option("install_docfiles");
    my $root = $localtlpdb->root;
@@ -41,7 +41,7 @@
    TeXLive::TLUtils::mkdirhier($temp);
    tlwarn("$prg: warning: backup option not implemented for infrastructure "
           . " update on Windows; continuing anyway.\n") 
-@@ -5502,15 +5505,14 @@ sub uninstall_texlive {
+@@ -5511,15 +5514,14 @@ sub uninstall_texlive {
    system("rm", "-rf", "$texmfsysvar");
  
    print "misc... ";
@@ -60,7 +60,7 @@
    rmdir($Master);
    print "done.\n";
    
-@@ -6451,7 +6453,7 @@ sub action_conf {
+@@ -6460,7 +6462,7 @@ sub action_conf {
        $fn || ( $fn = "$TEXMFCONFIG/tlmgr/config" ) ;
        $cf = TeXLive::TLConfFile->new($fn, "#", "=");
      } elsif ($arg eq "texmf" || $arg eq "auxtrees") {

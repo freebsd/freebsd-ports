@@ -9,10 +9,11 @@ share/man/man1/extractbb.1.gz
 share/man/man1/xdvipdfmx.1.gz
 %%TEXMFDISTDIR%%/doc/dvipdfmx/dvipdfmx-special.pdf
 %%TEXMFDISTDIR%%/doc/dvipdfmx/dvipdfmx-special.tex
+%%TEXMFDISTDIR%%/doc/dvipdfmx/Makefile
 %%TEXMFDISTDIR%%/doc/dvipdfmx/README
 %%TEXMFDISTDIR%%/doc/dvipdfmx/dvipdfmx.pdf
 %%TEXMFDISTDIR%%/doc/dvipdfmx/dvipdfmx.tex
-%%TEXMFDISTDIR%%/doc/dvipdfmx/fdl-1.3.txt
+%%TEXMFDISTDIR%%/doc/dvipdfmx/fdl-1.3.tex
 %%TEXMFDISTDIR%%/doc/dvipdfmx/tug2003-slides-src.zip
 %%TEXMFDISTDIR%%/doc/dvipdfmx/tug2003-slides.pdf
 %%TEXMFDISTDIR%%/doc/dvipdfmx/tug2005.pdf

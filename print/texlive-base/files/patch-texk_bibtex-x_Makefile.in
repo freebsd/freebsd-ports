@@ -1,4 +1,4 @@
---- texk/bibtex-x/Makefile.in.orig	2024-07-12 16:22:16 UTC
+--- texk/bibtex-x/Makefile.in.orig	2025-06-26 21:23:12 UTC
 +++ texk/bibtex-x/Makefile.in
 @@ -125,9 +125,7 @@ CONFIG_CLEAN_VPATH_FILES =
  CONFIG_CLEAN_VPATH_FILES =
@@ -47,8 +47,8 @@
  	$(nodist_EXTRA_bibtexu_SOURCES)
  DIST_SOURCES = $(bibtex8_SOURCES) $(bibtexu_SOURCES)
 @@ -838,11 +836,11 @@ clean-binPROGRAMS:
-	$(am__rm_f) $(bin_PROGRAMS)
-	test -z "$(EXEEXT)" || $(am__rm_f) $(bin_PROGRAMS:$(EXEEXT)=)
+ 	$(am__rm_f) $(bin_PROGRAMS)
+ 	test -z "$(EXEEXT)" || $(am__rm_f) $(bin_PROGRAMS:$(EXEEXT)=)
  
 -bibtex8$(EXEEXT): $(bibtex8_OBJECTS) $(bibtex8_DEPENDENCIES) $(EXTRA_bibtex8_DEPENDENCIES) 
 +bibtex8$(EXEEXT): $(bibtex8_OBJECTS) $(bibtex8_DEPENDENCIES) $(EXTRA_bibtex8_DEPENDENCIES)
@@ -60,7 +60,7 @@
  	@rm -f bibtexu$(EXEEXT)
  	$(AM_V_CXXLD)$(CXXLINK) $(bibtexu_OBJECTS) $(bibtexu_LDADD) $(LIBS)
  
-@@ -1652,7 +1650,7 @@ installdirs:
+@@ -1659,7 +1657,7 @@ installdirs:
  check: check-am
  all-am: Makefile $(PROGRAMS) $(MANS) $(DATA) config.h
  installdirs:
@@ -69,7 +69,7 @@
  	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
  	done
  install: install-am
-@@ -1724,8 +1722,7 @@ info-am:
+@@ -1731,8 +1729,7 @@ info-am:
  
  info-am:
  

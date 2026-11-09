@@ -1,6 +1,6 @@
 PORTNAME=	synctex
 DISTVERSION=	2.0.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel
 MASTER_SITES=	TEX_CTAN/systems/texlive/${TEXLIVE_YEAR}/
 PKGNAMEPREFIX=	tex-
@@ -49,8 +49,8 @@ EXTRACT_AFTER_ARGS=	${EXTRACT_FILES:S,^,${DISTNAME}/,}
 WRKSRC=		${WRKDIR}/${DISTNAME}/texk/web2c
 
 EXTRACT_FILES=		build-aux texk/web2c
-EXCLUDE_ENGINES=	etex aleph luatex luajittex pdftex mf mf-nowin ptex \
-			eptex uptex euptex xetex tex otangle mp pmp upmp web2c \
+EXCLUDE_ENGINES=	etex aleph luatex luajittex pdftex mf mf-nowin \
+			uptex euptex xetex tex otangle mp pmp upmp web2c \
 			web-progs luahbtex luajithbtex mflua mfluajit latex \
 			pdftex hitex texprof
 

@@ -1,4 +1,4 @@
---- man/Makefile.in.orig	2025-03-17 11:55:12 UTC
+--- man/Makefile.in.orig	2026-11-09 01:48:14 UTC
 +++ man/Makefile.in
 @@ -177,11 +177,11 @@ am__v_GEN_0 = @echo "  GEN     " $@;
  AM_V_GEN = $(am__v_GEN_@AM_V@)
@@ -34,15 +34,14 @@
  web_man_sources = bibtex.man dvicopy.man dvitomp.man dvitype.man gftodvi.man \
  	gftopk.man gftype.man mft.man patgen.man pktogf.man pktype.man \
  	pltotf.man pooltype.man tftopl.man twill.man \
-@@ -488,11 +485,7 @@ otangle_man_sources = ofm2opl.man opl2ofm.man ovf2ovp.
+@@ -488,10 +485,7 @@ otangle_man_sources = ofm2opl.man opl2ofm.man ovf2ovp.
  
  pdftex_man_sources = pdftex.man pdftosrc.man ttf2afm.man
  otangle_man_sources = ofm2opl.man opl2ofm.man ovf2ovp.man ovp2ovf.man
 -misc_man_sources = \
 -	amstex.man \
 -	latex.man \
--	latex-dev.man \
--	pdfetex.man
+-	latex-dev.man
 +misc_man_sources =
  
  SUFFIXES = .1 .man .ps .dvi

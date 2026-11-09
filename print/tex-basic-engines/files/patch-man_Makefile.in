@@ -1,6 +1,6 @@
---- man/Makefile.in.orig	2024-02-25 17:08:15 UTC
+--- man/Makefile.in.orig	2026-02-03 16:42:45 UTC
 +++ man/Makefile.in
-@@ -466,28 +466,18 @@ EXTRA_DIST = $(bootstrap_man_sources) $(web_man_source
+@@ -471,27 +471,18 @@ EXTRA_DIST = $(bootstrap_man_sources) $(web_man_source
  	mf.man mpost.man etex.man $(pdftex_man_sources) ptex.man \
  	ppltotf.man ptftopl.man pbibtex.man luatex.man xetex.man \
  	$(otangle_man_sources) aleph.man $(misc_man_sources) spell.add
@@ -28,8 +28,7 @@
 -misc_man_sources = \
 -	amstex.man \
 -	latex.man \
--	latex-dev.man \
--	pdfetex.man
+-	latex-dev.man
 +otangle_man_sources =
 +misc_man_sources =
  

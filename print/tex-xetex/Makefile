@@ -1,6 +1,5 @@
 PORTNAME=	xetex
 DISTVERSION=	${TEXLIVE_VERSION}
-PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	TEX_CTAN/systems/texlive/${TEXLIVE_YEAR}/
 PKGNAMEPREFIX=	tex-
@@ -23,7 +22,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libTECkit.so:textproc/teckit
 
 USES=		compiler:c++17-lang localbase gnome perl5 pkgconfig \
-		python:build tar:xz tex xorg
+		tar:xz tex xorg
 USE_CXXSTD=	c++17
 USE_GNOME=	cairo
 USE_PERL5=	build
@@ -73,7 +72,7 @@ EXTRACT_FILES_TEXMF= \
 	texmf-dist/tex/xelatex \
 	texmf-dist/tex/xetex
 EXCLUDE_ENGINES=aleph etex pdftex luatex luajittex mf mf-nowin \
-		mflua mfluajit luahbtex luajithbtex ptex eptex uptex euptex \
+		mflua mfluajit luahbtex luajithbtex uptex euptex \
 		otangle mp pmp upmp web2c web-progs tex synctex
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/texk/web2c
@@ -101,11 +100,6 @@ pre-install:
 post-stage:
 	${REINPLACE_CMD} -i '' -e 's|/bin/bash|${PREFIX}/bin/bash|' \
 		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/xelatex/hanzibox/build.sh
-	${REINPLACE_CMD} -i '' -e 's|/usr/bin/env python|${PYTHON_CMD}|g' \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/xelatex/xepersian/dkun-0.3.py \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/xelatex/xepersian/dkun-0.4.py \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/xelatex/xepersian/undk-0.6.py \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/xelatex/xepersian/unldk-0.2.py
 	${REINPLACE_CMD} -i '' -e 's|/usr/bin/perl|${PERL}|g' \
 		${STAGEDIR}${PREFIX}/share/texmf-dist/source/xelatex/arabxetex/makemaps.pl
 	${FIND} -s ${STAGEDIR}${PREFIX}/share/texmf-dist -not -type d | ${SORT} | \

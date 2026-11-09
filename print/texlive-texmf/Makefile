@@ -1,6 +1,5 @@
 PORTNAME=	texlive
 DISTVERSION=	${TEXLIVE_VERSION}
-PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	LOCAL/tex
 PKGNAMESUFFIX=	-texmf
@@ -42,7 +41,7 @@ do-install:
 		${SED} -e 's#^${STAGEDIR}${PREFIX}/#@dir #' >> ${TMPPLIST}
 
 .if defined(MAINTAINER_MODE)
-MASTER_SITES=	https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2025/
+MASTER_SITES=	https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/${TEXLIVE_YEAR}/
 EXCLUDE_FILES=		\*/doc/man ls-R doc dvipdfm dvipdfmx dvips \
 			fonts/cmap/dvipdfmx fonts/cmap/uptex fonts/enc/dvips \
 			fonts/map/dvipdfm fonts/map/dvipdfmx fonts/map/dvips \

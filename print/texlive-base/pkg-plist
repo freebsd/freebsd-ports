@@ -164,7 +164,6 @@ bin/ltximg
 bin/luafindfont
 bin/luaotfload-tool
 bin/lwarpmk
-bin/m-tx
 bin/mag
 bin/make4ht
 bin/makedtx
@@ -237,7 +236,9 @@ bin/rubibtex
 bin/rubikrotation
 bin/rumakeindex
 bin/rungs
+bin/runtexfile
 bin/scor2prt
+bin/show-pdf-tags
 bin/simpdftex
 bin/sjisconv
 bin/sjislatex
@@ -509,7 +510,6 @@ share/man/man5/updmap.cfg.5.gz
 %%TEXMFDISTDIR%%/scripts/luafindfont/luafindfont.lua
 %%TEXMFDISTDIR%%/scripts/luaotfload/luaotfload-tool.lua
 %%TEXMFDISTDIR%%/scripts/lwarp/lwarpmk.lua
-%%TEXMFDISTDIR%%/scripts/m-tx/m-tx.lua
 %%TEXMFDISTDIR%%/scripts/make4ht/make4ht
 %%TEXMFDISTDIR%%/scripts/makedtx/makedtx.pl
 %%TEXMFDISTDIR%%/scripts/markdown/markdown2tex.lua
@@ -556,6 +556,8 @@ share/man/man5/updmap.cfg.5.gz
 %%TEXMFDISTDIR%%/scripts/pythontex/pythontex.py
 %%TEXMFDISTDIR%%/scripts/rubik/rubikrotation.pl
 %%TEXMFDISTDIR%%/scripts/simpdftex/simpdftex
+%%TEXMFDISTDIR%%/scripts/runtexfile/runtexfile.lua
+%%TEXMFDISTDIR%%/scripts/show-pdf-tags/show-pdf-tags.lua
 %%TEXMFDISTDIR%%/scripts/spix/spix.py
 %%TEXMFDISTDIR%%/scripts/splitindex/splitindex.pl
 %%TEXMFDISTDIR%%/scripts/sqltex/sqltex

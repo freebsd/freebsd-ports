@@ -91,8 +91,8 @@ TEXMFVARDIR?=	share/texmf-var
 TEXMFCONFIGDIR?=share/texmf-config
 FMTUTIL_CNF?=	${TEXMFCONFIGDIR}/web2c/fmtutil.cnf
 TEXHASHDIRS?=	${TEXMFDIR} ${TEXMFDISTDIR} ${TEXMFLOCALDIR} ${TEXMFVARDIR} ${TEXMFCONFIGDIR}
-TEXLIVE_YEAR?=	2025
-TEXLIVE_VERSION?=	${TEXLIVE_YEAR}0308
+TEXLIVE_YEAR?=	2026
+TEXLIVE_VERSION?=	${TEXLIVE_YEAR}0301
 DISTNAME_TEXMF=	texlive-${TEXLIVE_VERSION}-texmf
 
 .for V in TEXMFDIR TEXMFDISTDIR TEXMFLOCALDIR TEXMFVARDIR TEXMFCONFIGDIR FMTUTIL_CNF
@@ -520,16 +520,16 @@ post-install-pdftex:
 	${LN} -sf pdftex ${STAGEDIR}${PREFIX}/bin/etex
 
 TEX_FORMAT_PTEX?= \
-	"ptex ptex - ptex.ini" \
-	"ptex eptex language.def *eptex.ini" \
-	"platex eptex language.dat *platex.ini"
+	"ptex euptex - ptex.ini" \
+	"eptex euptex language.def *eptex.ini" \
+	"platex euptex language.dat *platex.ini"
 TEX_FORMAT_PTEX_FILES= \
-	${TEXMFVARDIR}/web2c/ptex/ptex.log \
-	${TEXMFVARDIR}/web2c/ptex/ptex.fmt \
-	${TEXMFVARDIR}/web2c/eptex/ptex.log \
-	${TEXMFVARDIR}/web2c/eptex/ptex.fmt \
-	${TEXMFVARDIR}/web2c/eptex/platex.log \
-	${TEXMFVARDIR}/web2c/eptex/platex.fmt
+	${TEXMFVARDIR}/web2c/euptex/ptex.log \
+	${TEXMFVARDIR}/web2c/euptex/ptex.fmt \
+	${TEXMFVARDIR}/web2c/euptex/eptex.log \
+	${TEXMFVARDIR}/web2c/euptex/eptex.fmt \
+	${TEXMFVARDIR}/web2c/euptex/platex.log \
+	${TEXMFVARDIR}/web2c/euptex/platex.fmt
 TEX_FORMAT_PTEX_BIN= \
 	bin/eptex \
 	bin/ptex \
@@ -539,10 +539,11 @@ TEX_FORMAT_PTEX_BIN= \
 	bin/uppltotf \
 	bin/uptftopl
 TEX_FORMAT_PTEX_DIRS= \
-	${TEXMFVARDIR}/web2c/ptex \
-	${TEXMFVARDIR}/web2c/eptex
+	${TEXMFVARDIR}/web2c/euptex
 post-install-ptex:
-	${LN} -sf eptex ${STAGEDIR}${PREFIX}/bin/platex
+	${LN} -sf euptex ${STAGEDIR}${PREFIX}/bin/eptex
+	${LN} -sf euptex ${STAGEDIR}${PREFIX}/bin/platex
+	${LN} -sf euptex ${STAGEDIR}${PREFIX}/bin/ptex
 
 TEX_FORMAT_TEX?= \
 	"tex tex - tex.ini"

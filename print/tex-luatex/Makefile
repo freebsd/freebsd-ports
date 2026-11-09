@@ -1,6 +1,5 @@
 PORTNAME=	luatex
 DISTVERSION=	${TEXLIVE_VERSION}
-PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	TEX_CTAN/systems/texlive/${TEXLIVE_YEAR}/
 PKGNAMEPREFIX=	tex-
@@ -22,7 +21,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libTECkit.so:textproc/teckit \
 		libzzip.so:devel/zziplib
 
-USES=		gmake gnome libtool localbase pkgconfig python:env tar:xz tex xorg
+USES=		gmake gnome libtool localbase pkgconfig tar:xz tex xorg
 USE_GNOME=	cairo
 USE_LDCONFIG=	yes
 USE_TEX=	fmtutil formats kpathsea texlua texluajit web2c
@@ -55,14 +54,12 @@ EXTRACT_FILES_TEXMF=		texmf-dist/doc/lualatex texmf-dist/doc/luatex \
 				texmf-dist/scripts/context/lua \
 				texmf-dist/source/luatex \
 				texmf-dist/source/lualatex \
-				texmf-dist/fonts/map/luatex \
 				texmf-dist/tex/luatex \
 				texmf-dist/tex/generic/config/luatex-unicode-letters.tex \
-				texmf-dist/tex/generic/context/luatex \
 				texmf-dist/tex/latex/latexconfig/lualatexiniconfig.tex \
 				texmf-dist/tex/lualatex
 WRKSRC=				${WRKDIR}/${DISTNAME}/texk/web2c
-EXCLUDE_ENGINES=		aleph etex pdftex mf mf-nowin ptex eptex uptex \
+EXCLUDE_ENGINES=		aleph etex pdftex mf mf-nowin uptex \
 				euptex otangle mp pmp upmp web2c web-progs \
 				xetex tex synctex mflua mfluajit texprof hitex
 TEX_FORMATS=			luatex
@@ -94,10 +91,7 @@ pre-install:
 	${CAT} ${DISTDIR}/${DIST_SUBDIR}/texlive-${TEXLIVE_VERSION}-texmf${EXTRACT_SUFX} \
 	    ${EXTRACT_AFTER_ARGS_TEXMF}
 	${REINPLACE_CMD} -i '' -e 's|/bin/bash|${PREFIX}/bin/bash|' \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/lualatex/wallcalendar/doc/examples/diff-cal.sh \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/luatex/opbible/examples/make-all
-	${REINPLACE_CMD} -i '' -e 's|/usr/bin/python3|${PYTHON_CMD}|' \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/luatex/opbible/txs-gen/maketxs.py
+		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/lualatex/wallcalendar/doc/examples/diff-cal.sh
 
 post-install:
 	${FIND} -s ${STAGEDIR}${PREFIX}/share/texmf-dist -not -type d | ${SORT} | \

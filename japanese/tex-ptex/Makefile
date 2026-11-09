@@ -1,6 +1,5 @@
 PORTNAME=	ptex
-DISTVERSION=	3.6
-PORTREVISION=	6
+DISTVERSION=	4.1.2
 CATEGORIES=	japanese print
 MASTER_SITES=	TEX_CTAN/systems/texlive/${TEXLIVE_YEAR}/:source \
 		LOCAL/tex:texmf
@@ -19,9 +18,7 @@ USE_TEX=		fmtutil formats kpathsea ptexenc web2c
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		${EXCLUDE_ENGINES:S/^/--disable-/} \
-			--enable-ptex \
 			--enable-euptex \
-			--enable-ptex \
 			--enable-uptex \
 			--with-system-zlib \
 			--without-x

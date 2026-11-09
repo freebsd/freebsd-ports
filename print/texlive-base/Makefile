@@ -1,6 +1,5 @@
 PORTNAME=	texlive
 DISTVERSION=	${TEXLIVE_VERSION}
-PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	TEX_CTAN/systems/texlive/${TEXLIVE_YEAR}
 PKGNAMESUFFIX=	-base
@@ -94,6 +93,7 @@ CONFIGURE_ARGS=	--disable-native-texlive-build \
 		--disable-dvipdfmx \
 		--disable-dvipdfm-x \
 		--disable-xdvipdfmx \
+		--disable-xdvipsk \
 		--enable-build-in-source-tree \
 		--datarootdir=${LOCALBASE}/share \
 		--with-system-freetype2 \

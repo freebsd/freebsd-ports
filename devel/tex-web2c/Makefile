@@ -1,6 +1,5 @@
 PORTNAME=	web2c
 DISTVERSION=	${TEXLIVE_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	TEX_CTAN/systems/texlive/${TEXLIVE_YEAR}
 PKGNAMEPREFIX=	tex-
@@ -27,7 +26,6 @@ USE_XORG=	pixman
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--disable-aleph \
-			--disable-eptex \
 			--disable-euptex \
 			--disable-hitex \
 			--disable-latex \
@@ -38,7 +36,6 @@ CONFIGURE_ARGS=		--disable-aleph \
 			--disable-mflua \
 			--disable-mfluajit \
 			--disable-pdftex \
-			--disable-ptex \
 			--disable-synctex \
 			--disable-tex \
 			--disable-texprof \
