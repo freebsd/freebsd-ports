@@ -1,5 +1,6 @@
 PORTNAME=	ruby-lsp
 PORTVERSION=	0.26.11
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-language_server-protocol>=3.17.0<3.18:devel/rubygem-language_server-protocol \
-		rubygem-prism>=1.2<2.0:textproc/rubygem-prism \
+		rubygem-prism1>=1.2<2.0:textproc/rubygem-prism1 \
 		rubygem-rbs>=3<5:devel/rubygem-rbs
 
 USES=		gem
