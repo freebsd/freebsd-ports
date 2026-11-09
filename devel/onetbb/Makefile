@@ -1,7 +1,6 @@
 PORTNAME=	onetbb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2023.1.0
-PORTREVISION=	1
+DISTVERSION=	2023.2.0
 CATEGORIES=	devel
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 # https://github.com/uxlfoundation/oneTBB/pull/2194 (not in 2023.2.0)
