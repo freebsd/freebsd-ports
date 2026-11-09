@@ -1,6 +1,5 @@
 PORTNAME=	pendulum
-PORTVERSION=	3.2.0
-PORTREVISION=	6
+PORTVERSION=	3.3.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}maturin>=1.0<2.0:devel/py-maturin@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-dateutil>=2.6:devel/py-python-dateutil@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}time-machine>=2.6.0:devel/py-time-machine@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}time-machine>=3.0.0<4.0.0:devel/py-time-machine@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tzdata>=2020.1:devel/py-tzdata@${PY_FLAVOR}
 
 USES=		cargo python
@@ -27,5 +26,6 @@ CARGO_BUILD=	no
 CARGO_CARGOLOCK=${WRKSRC}/rust/Cargo.lock
 CARGO_CARGOTOML=${WRKSRC}/rust/Cargo.toml
 CARGO_INSTALL=	no
+CARGO_TEST=	no
 
 .include <bsd.port.mk>
