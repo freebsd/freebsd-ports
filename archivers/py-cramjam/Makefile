@@ -1,5 +1,5 @@
 PORTNAME=	cramjam
-PORTVERSION=	2.13.0
+PORTVERSION=	2.14.0
 CATEGORIES=	archivers python
 MASTER_SITES=	PYPI \
 		https://github.com/milesgranger/cramjam/releases/download/v${PORTVERSION}/
