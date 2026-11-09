@@ -1,5 +1,5 @@
 PORTNAME=	domdf-python-tools
-PORTVERSION=	3.10.0
+PORTVERSION=	3.11.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/domdfcoding/domdf_python_tools/releases/download/v${PORTVERSION}/
