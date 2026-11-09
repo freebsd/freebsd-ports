@@ -1,7 +1,6 @@
 PORTNAME=	ocrs
 DISTVERSIONPREFIX=	ocrs-cli-v
-DISTVERSION=	0.13.1
-PORTREVISION=	1
+DISTVERSION=	0.14.0
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,189 +17,175 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	robertknight
 
-CARGO_CRATES=	adler2-2.0.0 \
+CARGO_CRATES=	adler2-2.0.1 \
 		anyhow-1.0.104 \
-		arboard-3.6.1 \
-		autocfg-1.1.0 \
+		arboard-3.7.0 \
+		autocfg-1.5.1 \
 		base64-0.23.1 \
-		bitflags-1.3.2 \
-		bitflags-2.9.4 \
-		bumpalo-3.14.0 \
-		bytemuck-1.14.0 \
+		bitflags-2.13.2 \
+		bumpalo-3.20.3 \
+		bytemuck-1.25.2 \
 		byteorder-lite-0.1.0 \
-		bytes-1.11.1 \
+		bytes-1.12.1 \
 		cbindgen-0.29.4 \
-		cc-1.0.83 \
-		cfg-if-1.0.0 \
-		clipboard-win-5.4.1 \
-		crc32fast-1.3.2 \
-		crossbeam-deque-0.8.4 \
-		crossbeam-epoch-0.9.17 \
-		crossbeam-utils-0.8.18 \
+		cc-1.11.1 \
+		cfg-if-1.0.5 \
+		clipboard-win-5.4.3 \
+		crc32fast-1.5.4 \
+		crossbeam-deque-0.8.8 \
+		crossbeam-epoch-0.9.21 \
+		crossbeam-utils-0.8.23 \
 		crunchy-0.2.4 \
-		dispatch2-0.3.0 \
+		dispatch2-0.3.1 \
 		downcast-rs-1.2.1 \
-		either-1.9.0 \
-		equivalent-1.0.2 \
+		either-1.19.0 \
+		equivalent-1.0.3 \
 		errno-0.3.14 \
-		error-code-3.3.2 \
+		error-code-3.4.0 \
 		fastrand-2.5.0 \
-		fax-0.2.6 \
-		fax_derive-0.2.0 \
-		fdeflate-0.3.3 \
+		fax-0.2.7 \
+		fdeflate-0.3.7 \
+		find-msvc-tools-0.1.15 \
 		fixedbitset-0.5.7 \
-		flatbuffers-24.3.25 \
-		flate2-1.0.35 \
-		fnv-1.0.7 \
+		flatbuffers-25.12.19 \
+		flate2-1.1.11 \
 		foldhash-0.1.5 \
-		form_urlencoded-1.2.1 \
 		gethostname-1.1.0 \
-		getrandom-0.2.11 \
+		getrandom-0.2.17 \
 		getrandom-0.4.3 \
 		half-2.7.1 \
 		hashbrown-0.15.5 \
 		hashbrown-0.17.1 \
 		heck-0.5.0 \
-		hermit-abi-0.3.9 \
+		hermit-abi-0.5.3 \
 		home-0.5.12 \
-		http-1.2.0 \
-		httparse-1.10.0 \
-		idna-1.0.3 \
-		idna_adapter-1.0.0 \
+		http-1.5.0 \
+		httparse-1.10.1 \
 		image-0.25.10 \
-		image-webp-0.2.0 \
-		indexmap-2.14.0 \
-		itoa-1.0.10 \
+		image-webp-0.2.4 \
+		indexmap-2.14.2 \
+		itoa-1.0.18 \
 		lexopt-0.3.2 \
-		libc-0.2.180 \
-		linux-raw-sys-0.11.0 \
+		libc-0.2.191 \
+		linux-raw-sys-0.12.1 \
 		lock_api-0.4.14 \
-		log-0.4.25 \
-		memchr-2.7.4 \
-		miniz_oxide-0.8.0 \
+		log-0.4.35 \
+		memchr-2.8.3 \
+		miniz_oxide-0.8.9 \
+		miniz_oxide-0.9.1 \
 		moxcms-0.8.1 \
 		nom-8.0.0 \
-		num-traits-0.2.17 \
-		num_cpus-1.16.0 \
-		objc2-0.6.3 \
+		num-traits-0.2.19 \
+		num_cpus-1.17.0 \
+		objc2-0.6.5 \
 		objc2-app-kit-0.3.2 \
 		objc2-core-foundation-0.3.2 \
 		objc2-core-graphics-0.3.2 \
 		objc2-encode-4.1.0 \
 		objc2-foundation-0.3.2 \
 		objc2-io-surface-0.3.2 \
-		once_cell-1.19.0 \
+		once_cell-1.21.4 \
 		os_pipe-1.2.3 \
 		parking_lot-0.12.5 \
 		parking_lot_core-0.9.12 \
-		percent-encoding-2.3.1 \
+		percent-encoding-2.3.2 \
 		petgraph-0.8.3 \
-		pkg-config-0.3.33 \
+		pkg-config-0.3.34 \
 		png-0.18.1 \
 		proc-macro2-1.0.107 \
-		pxfm-0.1.25 \
+		pxfm-0.1.30 \
 		quick-error-2.0.1 \
-		quick-xml-0.39.4 \
-		quote-1.0.35 \
+		quick-xml-0.41.0 \
+		quote-1.0.47 \
 		r-efi-6.0.0 \
 		rayon-1.12.0 \
 		rayon-core-1.13.0 \
 		redox_syscall-0.5.18 \
-		ring-0.17.7 \
-		rten-0.26.0 \
-		rten-base-0.26.0 \
-		rten-gemm-0.26.0 \
-		rten-imageproc-0.26.0 \
-		rten-model-file-0.26.0 \
-		rten-onnx-0.26.0 \
-		rten-parallel-0.26.0 \
-		rten-shape-inference-0.26.0 \
-		rten-simd-0.26.0 \
-		rten-tensor-0.26.0 \
-		rten-vecmath-0.26.0 \
+		ring-0.17.14 \
+		rten-0.28.0 \
+		rten-base-0.28.0 \
+		rten-gemm-0.28.0 \
+		rten-imageproc-0.28.0 \
+		rten-model-file-0.28.0 \
+		rten-onnx-0.28.0 \
+		rten-parallel-0.28.0 \
+		rten-sequence-0.28.0 \
+		rten-shape-inference-0.28.0 \
+		rten-simd-0.28.0 \
+		rten-tensor-0.28.0 \
+		rten-vecmath-0.28.0 \
 		rustc-hash-2.1.3 \
-		rustc_version-0.4.0 \
-		rustix-1.1.3 \
-		rustls-0.23.22 \
-		rustls-pki-types-1.11.0 \
-		rustls-webpki-0.102.8 \
-		rustversion-1.0.19 \
+		rustc_version-0.4.1 \
+		rustix-1.1.6 \
+		rustls-0.23.46 \
+		rustls-pki-types-1.15.1 \
+		rustls-webpki-0.103.16 \
+		rustversion-1.0.23 \
 		scopeguard-1.2.0 \
-		semver-1.0.20 \
-		serde-1.0.228 \
-		serde_core-1.0.228 \
-		serde_derive-1.0.228 \
-		serde_json-1.0.151 \
-		serde_spanned-1.1.1 \
-		simd-adler32-0.3.7 \
-		smallvec-1.13.2 \
-		spin-0.9.8 \
-		subtle-2.5.0 \
-		syn-2.0.87 \
-		syn-3.0.3 \
-		tempfile-3.25.0 \
-		thiserror-2.0.20 \
-		thiserror-impl-2.0.20 \
+		semver-1.0.28 \
+		serde-1.0.229 \
+		serde_core-1.0.229 \
+		serde_derive-1.0.229 \
+		serde_json-1.0.154 \
+		serde_spanned-1.1.3 \
+		shlex-2.0.1 \
+		simd-adler32-0.3.10 \
+		smallvec-1.16.5 \
+		subtle-2.6.1 \
+		syn-2.0.119 \
+		syn-3.0.9 \
+		tempfile-3.27.0 \
+		thiserror-2.0.21 \
+		thiserror-impl-2.0.21 \
 		tiff-0.11.3 \
 		toml-0.9.12+spec-1.1.0 \
 		toml_datetime-0.7.5+spec-1.1.0 \
-		toml_parser-1.1.2+spec-1.1.0 \
-		toml_writer-1.1.1+spec-1.1.0 \
+		toml_parser-1.1.5+spec-1.1.0 \
+		toml_writer-1.2.0+spec-1.1.0 \
 		tree_magic_mini-3.2.2 \
 		typeid-1.0.3 \
-		unicode-ident-1.0.12 \
+		unicode-ident-1.0.27 \
 		untrusted-0.9.0 \
-		ureq-3.4.0 \
-		ureq-proto-0.6.1 \
-		url-2.5.4 \
+		ureq-3.5.1 \
+		ureq-proto-0.7.1 \
 		utf8-zero-0.8.1 \
-		utf8_iter-1.0.4 \
-		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.100 \
-		wasm-bindgen-backend-0.2.100 \
-		wasm-bindgen-macro-0.2.100 \
-		wasm-bindgen-macro-support-0.2.100 \
-		wasm-bindgen-shared-0.2.100 \
-		wayland-backend-0.3.15 \
-		wayland-client-0.31.14 \
-		wayland-protocols-0.32.12 \
+		wasi-0.11.1+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.130 \
+		wasm-bindgen-macro-0.2.130 \
+		wasm-bindgen-macro-support-0.2.130 \
+		wasm-bindgen-shared-0.2.130 \
+		wayland-backend-0.3.17 \
+		wayland-client-0.31.15 \
+		wayland-protocols-0.32.13 \
 		wayland-protocols-wlr-0.3.12 \
-		wayland-scanner-0.31.10 \
+		wayland-scanner-0.31.11 \
 		wayland-sys-0.31.11 \
-		webpki-roots-1.0.2 \
+		webpki-roots-1.0.11 \
 		weezl-0.1.12 \
 		windows-link-0.2.1 \
-		windows-sys-0.48.0 \
-		windows-sys-0.60.2 \
+		windows-sys-0.52.0 \
 		windows-sys-0.61.2 \
-		windows-targets-0.48.5 \
-		windows-targets-0.53.5 \
-		windows_aarch64_gnullvm-0.48.5 \
-		windows_aarch64_gnullvm-0.53.1 \
-		windows_aarch64_msvc-0.48.5 \
-		windows_aarch64_msvc-0.53.1 \
-		windows_i686_gnu-0.48.5 \
-		windows_i686_gnu-0.53.1 \
-		windows_i686_gnullvm-0.53.1 \
-		windows_i686_msvc-0.48.5 \
-		windows_i686_msvc-0.53.1 \
-		windows_x86_64_gnu-0.48.5 \
-		windows_x86_64_gnu-0.53.1 \
-		windows_x86_64_gnullvm-0.48.5 \
-		windows_x86_64_gnullvm-0.53.1 \
-		windows_x86_64_msvc-0.48.5 \
-		windows_x86_64_msvc-0.53.1 \
+		windows-targets-0.52.6 \
+		windows_aarch64_gnullvm-0.52.6 \
+		windows_aarch64_msvc-0.52.6 \
+		windows_i686_gnu-0.52.6 \
+		windows_i686_gnullvm-0.52.6 \
+		windows_i686_msvc-0.52.6 \
+		windows_x86_64_gnu-0.52.6 \
+		windows_x86_64_gnullvm-0.52.6 \
+		windows_x86_64_msvc-0.52.6 \
 		winnow-0.7.15 \
-		winnow-1.0.3 \
-		wl-clipboard-rs-0.9.3 \
+		winnow-1.0.5 \
+		wl-clipboard-rs-0.9.5 \
 		x11rb-0.13.2 \
 		x11rb-protocol-0.13.2 \
-		zerocopy-0.8.27 \
-		zerocopy-derive-0.8.27 \
-		zeroize-1.7.0 \
-		zmij-1.0.7 \
-		zune-core-0.5.0 \
-		zune-jpeg-0.5.5
+		zerocopy-0.8.63 \
+		zerocopy-derive-0.8.63 \
+		zeroize-1.9.1 \
+		zlib-rs-0.6.8 \
+		zmij-1.0.23 \
+		zune-core-0.5.3 \
+		zune-jpeg-0.5.15
 
 PLIST_FILES=	bin/${PORTNAME}
 
