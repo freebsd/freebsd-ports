@@ -1,5 +1,5 @@
-TIMESTAMP = 1791047198
-SHA256 (pydata_sphinx_theme-0.22.0.tar.gz) = 5a18c517494f7ea285263d117b0b22e56d4eb689fcab72d9f70e3a6d766a77f1
-SIZE (pydata_sphinx_theme-0.22.0.tar.gz) = 5013837
-SHA256 (pydata_sphinx_theme-0.22.0-static.tar.gz) = 07715692b3fffd1e7168f78576f6a4308474abc7888afbc637f6502e15eaa094
-SIZE (pydata_sphinx_theme-0.22.0-static.tar.gz) = 6211072
+TIMESTAMP = 1793587862
+SHA256 (pydata_sphinx_theme-0.23.0.tar.gz) = f9e647e0bb3f1d8eaa6d866248812711211313627cc4ae76b5f88a17a4be38ce
+SIZE (pydata_sphinx_theme-0.23.0.tar.gz) = 5015474
+SHA256 (pydata_sphinx_theme-0.23.0-static.tar.gz) = d87b4b886f754be63d3002794459117d23307bf5ebdfbdc6c879969ca90bbfe9
+SIZE (pydata_sphinx_theme-0.23.0-static.tar.gz) = 6211584
