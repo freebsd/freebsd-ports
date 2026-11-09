@@ -1,0 +1,59 @@
+#!/bin/sh
+
+# PROVIDE: surrealdb
+# REQUIRE: LOGIN CLEANFILES
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable surrealdb:
+# surrealdb_enable="YES"
+#
+# surrealdb_enable (bool):	Set to YES to enable surrealdb
+#				Default: NO
+# surrealdb_user (str):		User to run surrealdb
+#				Default: surrealdb
+# surrealdb_data_dir (str):	Directory for the database files
+#				Default: /var/db/surrealdb
+# surrealdb_flags (str):	Flags passed to surrealdb start
+#				Default: --user root --pass root surrealkv:${surrealdb_data_dir}/surreal.db
+
+. /etc/rc.subr
+
+name=surrealdb
+rcvar=surrealdb_enable
+
+load_rc_config $name
+
+: ${surrealdb_enable:="NO"}
+: ${surrealdb_user:="%%USER%%"}
+: ${surrealdb_data_dir:="/var/db/surrealdb"}
+: ${surrealdb_flags:="--user root --pass root surrealkv:${surrealdb_data_dir}/surreal.db"}
+: ${surrealdb_logfile:="/var/log/${name}.log"}
+: ${surrealdb_pidfile:="/var/run/${name}.pid"}
+
+run_command="%%PREFIX%%/bin/surreal"
+procname="${run_command}"
+
+start_precmd="surrealdb_precmd"
+start_cmd="surrealdb_start"
+
+surrealdb_precmd()
+{
+	install -d -m 0750 -o ${surrealdb_user} -g ${surrealdb_user} ${surrealdb_data_dir}
+	if [ ! -e ${surrealdb_logfile} ]; then
+		install -m 0640 -o ${surrealdb_user} -g ${surrealdb_user} /dev/null ${surrealdb_logfile}
+	else
+		chown ${surrealdb_user}:${surrealdb_user} ${surrealdb_logfile}
+	fi
+	install -o ${surrealdb_user} -g ${surrealdb_user} /dev/null ${surrealdb_pidfile}
+	cd ${surrealdb_data_dir}
+	export HOME=${surrealdb_data_dir}
+}
+
+surrealdb_start()
+{
+	echo "Starting ${name}."
+	/usr/sbin/daemon -f -t ${name} -p ${surrealdb_pidfile} -o ${surrealdb_logfile} -u ${surrealdb_user} \
+		${run_command} start ${surrealdb_flags}
+}
+
+run_rc_command "$1"

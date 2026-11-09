@@ -369,7 +369,7 @@ uhub:*:411:411::0:0:uHub ADC Daemon:/nonexistent:/usr/sbin/nologin
 oxidized:*:420:420::0:0:Oxidized Owner:/var/db/oxidized:/usr/sbin/nologin
 # free: 421
 igmpproxy:*:422:422::0:0:igmpproxy daemon:/nonexistent:/usr/sbin/nologin
-# free: 423
+surrealdb:*:423:423::0:0:surrealdb daemon:/var/db/surrealdb:/usr/sbin/nologin
 # free: 424
 # free: 425
 drweb:*:426:426::0:0:Dr.Web Mail Scanner:/nonexistent:/usr/sbin/nologin

@@ -1,0 +1,2 @@
+bin/surreal
+@dir(surrealdb,surrealdb,0750) /var/db/surrealdb

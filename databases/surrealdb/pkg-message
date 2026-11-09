@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+You installed surrealdb: a scalable, distributed, collaborative, document-graph
+database, for the realtime web.
+
+You can start an instance using:
+$ sudo service surrealdb onestart
+
+Then you can access it using a CLI tool:
+$ surreal sql --endpoint http://localhost:8000 --username root --password root --namespace test_ns --database test_db
+
+EOM
+}
+]
