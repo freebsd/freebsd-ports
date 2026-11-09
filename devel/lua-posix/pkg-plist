@@ -30,7 +30,6 @@
 %%LUA_MODSHAREDIR%%/posix/_bitwise.lua
 %%LUA_MODSHAREDIR%%/posix/_strict.lua
 %%LUA_MODSHAREDIR%%/posix/compat.lua
-%%LUA_MODSHAREDIR%%/posix/deprecated.lua
 %%LUA_MODSHAREDIR%%/posix/init.lua
 %%LUA_MODSHAREDIR%%/posix/sys.lua
 %%LUA_MODSHAREDIR%%/posix/util.lua
