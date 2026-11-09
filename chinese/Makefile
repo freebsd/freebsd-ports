@@ -44,8 +44,15 @@
     SUBDIR += gb2jis
     SUBDIR += gb2ps
     SUBDIR += gcin
+    SUBDIR += gcin-anthy
+    SUBDIR += gcin-chewing
+    SUBDIR += gcin-gtk2
     SUBDIR += gcin-gtk3
+    SUBDIR += gcin-gtk4
+    SUBDIR += gcin-guanyinma
+    SUBDIR += gcin-mcbopomofo
     SUBDIR += gcin-qt5
+    SUBDIR += gcin-qt6
     SUBDIR += gydict
     SUBDIR += hc
     SUBDIR += ibus-array
