@@ -15,9 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>=0:devel/py-flit-core@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>=23.2:devel/py-packaging@${PY_FLAVOR}
-TEST_DEPENDS=	${PY_EXCEPTIONGROUP} \
-		${PYTHON_PKGNAMEPREFIX}pytest-cov>=4:devel/py-pytest-cov@${PY_FLAVOR} \
-		${PY_TOMLI}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-cov>=4:devel/py-pytest-cov@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517 pytest
