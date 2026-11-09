@@ -1,5 +1,5 @@
 PORTNAME=	gapic-common
-PORTVERSION=	1.5.0
+PORTVERSION=	1.6.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -18,7 +18,7 @@ RUN_DEPENDS=	rubygem-faraday>=1.9<3:www/rubygem-faraday \
 		rubygem-googleapis-common-protos>=1.6<2:devel/rubygem-googleapis-common-protos \
 		rubygem-googleapis-common-protos-types>=1.15<2:devel/rubygem-googleapis-common-protos-types \
 		rubygem-googleauth>=1.12<2:security/rubygem-googleauth \
-		rubygem-grpc>=1.83<2:net/rubygem-grpc
+		rubygem-grpc>=1.84.1<2:net/rubygem-grpc
 
 USES=		gem
 
