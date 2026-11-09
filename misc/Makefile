@@ -646,6 +646,7 @@
     SUBDIR += py-polars-runtime
     SUBDIR += py-posthog
     SUBDIR += py-powerline-status
+    SUBDIR += py-prefab-ui
     SUBDIR += py-progressbar
     SUBDIR += py-progressbar2
     SUBDIR += py-pyEDFlib

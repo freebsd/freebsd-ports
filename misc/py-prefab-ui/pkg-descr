@@ -1,0 +1,3 @@
+Prefab is a generative UI framework that lets Python developers build and
+compose user interfaces from code. It is used by FastMCP's app layer to
+render interactive components.
