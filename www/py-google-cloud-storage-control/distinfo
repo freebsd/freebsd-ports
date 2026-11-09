@@ -1,3 +1,3 @@
-TIMESTAMP = 1789128518
-SHA256 (google_cloud_storage_control-1.15.0.tar.gz) = e3d50276f0aed0c33ebcf3c6221e933889e042df70a56886ddffe59c66889183
-SIZE (google_cloud_storage_control-1.15.0.tar.gz) = 160209
+TIMESTAMP = 1793587928
+SHA256 (google_cloud_storage_control-1.17.0.tar.gz) = b49f4d9e2d43e18cc6760e37a99ff5d9f674f4532e43e6d84fa69ec194c82bbb
+SIZE (google_cloud_storage_control-1.17.0.tar.gz) = 160368
