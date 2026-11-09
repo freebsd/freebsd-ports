@@ -1,3 +1,3 @@
-TIMESTAMP = 1791046914
-SHA256 (opentelemetry_instrumentation_aiohttp_server-0.66b0.tar.gz) = 0ff05c4d19d67dbacb17ef8f2fb53c5d29f746269947a02d467bb208f55de70b
-SIZE (opentelemetry_instrumentation_aiohttp_server-0.66b0.tar.gz) = 11514
+TIMESTAMP = 1793587490
+SHA256 (opentelemetry_instrumentation_aiohttp_server-0.66b2.tar.gz) = a0c80a1a44a67472e4674dab3ad60ee3205e34582afb3145b062aa0cf8e5a022
+SIZE (opentelemetry_instrumentation_aiohttp_server-0.66b2.tar.gz) = 11514
