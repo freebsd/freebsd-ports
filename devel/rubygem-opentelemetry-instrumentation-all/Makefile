@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-instrumentation-all
-PORTVERSION=	0.96.0
+PORTVERSION=	0.99.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -31,10 +31,11 @@ RUN_DEPENDS=	rubygem-opentelemetry-instrumentation-active_model_serializers>=0.2
 		rubygem-opentelemetry-instrumentation-http_client>=0.29.0<0.30:devel/rubygem-opentelemetry-instrumentation-http_client \
 		rubygem-opentelemetry-instrumentation-httpx>=0.8.0<0.9:devel/rubygem-opentelemetry-instrumentation-httpx \
 		rubygem-opentelemetry-instrumentation-koala>=0.24.0<0.25:devel/rubygem-opentelemetry-instrumentation-koala \
-		rubygem-opentelemetry-instrumentation-lmdb>=0.26.0<0.27:devel/rubygem-opentelemetry-instrumentation-lmdb \
+		rubygem-opentelemetry-instrumentation-lmdb>=0.28.0<0.29:devel/rubygem-opentelemetry-instrumentation-lmdb \
 		rubygem-opentelemetry-instrumentation-mongo>=0.26.0<0.27:devel/rubygem-opentelemetry-instrumentation-mongo \
 		rubygem-opentelemetry-instrumentation-mysql2>=0.34.0<0.35:devel/rubygem-opentelemetry-instrumentation-mysql2 \
 		rubygem-opentelemetry-instrumentation-net_http>=0.29.0<0.30:devel/rubygem-opentelemetry-instrumentation-net_http \
+		rubygem-opentelemetry-instrumentation-openai>=0.1.0<0.2:devel/rubygem-opentelemetry-instrumentation-openai \
 		rubygem-opentelemetry-instrumentation-pg>=0.37.0<0.38:devel/rubygem-opentelemetry-instrumentation-pg \
 		rubygem-opentelemetry-instrumentation-que>=0.13.0<0.14:devel/rubygem-opentelemetry-instrumentation-que \
 		rubygem-opentelemetry-instrumentation-racecar>=0.7.0<0.8:devel/rubygem-opentelemetry-instrumentation-racecar \
