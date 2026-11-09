@@ -1,6 +1,6 @@
---- libs/native/src/test/java/org/elasticsearch/nativeaccess/PosixCLibraryTests.java.orig	2026-10-28 20:24:18 UTC
+--- libs/native/src/test/java/org/elasticsearch/nativeaccess/PosixCLibraryTests.java.orig	2026-10-28 21:58:41 UTC
 +++ libs/native/src/test/java/org/elasticsearch/nativeaccess/PosixCLibraryTests.java
-@@ -37,11 +37,11 @@ public class PosixCLibraryTests extends ESTestCase {
+@@ -39,11 +39,11 @@ public class PosixCLibraryTests extends ESTestCase {
      @Before
      public void setup() {
          nativeAccess = NativeAccess.instance();

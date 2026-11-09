@@ -1,5 +1,5 @@
---- libs/native/src/main/java/org/elasticsearch/nativeaccess/lib/LoaderHelper.java.orig	2026-10-28 20:24:18 UTC
-+++ libs/native/src/main/java/org/elasticsearch/nativeaccess/lib/LoaderHelper.java
+--- libs/foreign-library/src/main/java/org/elasticsearch/foreign/LoaderHelper.java.orig	2026-10-28 21:58:41 UTC
++++ libs/foreign-library/src/main/java/org/elasticsearch/foreign/LoaderHelper.java
 @@ -37,6 +37,8 @@ public class LoaderHelper {
              os = "linux";
          } else if (osname.startsWith("Mac OS")) {

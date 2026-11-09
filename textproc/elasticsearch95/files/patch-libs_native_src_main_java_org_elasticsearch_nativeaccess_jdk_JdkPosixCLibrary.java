@@ -1,6 +1,6 @@
---- libs/native/src/main/java/org/elasticsearch/nativeaccess/jdk/JdkPosixCLibrary.java.orig	2026-10-28 20:24:18 UTC
+--- libs/native/src/main/java/org/elasticsearch/nativeaccess/jdk/JdkPosixCLibrary.java.orig	2026-10-28 21:58:41 UTC
 +++ libs/native/src/main/java/org/elasticsearch/nativeaccess/jdk/JdkPosixCLibrary.java
-@@ -87,8 +87,12 @@ class JdkPosixCLibrary implements PosixCLibrary {
+@@ -88,8 +88,12 @@ class JdkPosixCLibrary implements PosixCLibrary {
      private static final MethodHandle fstat$mh;
      static {
          MethodHandle fstat;

@@ -1,6 +1,6 @@
---- libs/native/src/main/java/org/elasticsearch/nativeaccess/FreebsdNativeAccess.java.orig	2026-11-04 18:59:19 UTC
+--- libs/native/src/main/java/org/elasticsearch/nativeaccess/FreebsdNativeAccess.java.orig	2026-11-05 15:10:31 UTC
 +++ libs/native/src/main/java/org/elasticsearch/nativeaccess/FreebsdNativeAccess.java
-@@ -0,0 +1,71 @@
+@@ -0,0 +1,70 @@
 +/*
 + * Copyright Elasticsearch B.V. and/or licensed to Elasticsearch B.V. under one
 + * or more contributor license agreements. Licensed under the "Elastic License
@@ -16,7 +16,7 @@
 +import org.elasticsearch.nativeaccess.lib.NativeLibraryProvider;
 +import org.elasticsearch.nativeaccess.lib.PosixCLibrary;
 +
-+class FreebsdNativeAccess extends PosixNativeAccess {
++public class FreebsdNativeAccess extends PosixNativeAccess {
 +
 +    private final FreebsdCLibrary bsdLibc;
 +    static final int RLIMIT_NPROC = 7;
@@ -25,7 +25,6 @@
 +    // sys/sys/resource.h and sys/sys/stat.h
 +    // Offset of st_size: 112 bytes
 +    // Offset of st_blocks: 120 bytes
-+    // Struct size: 224 bytes
 +    FreebsdNativeAccess(NativeLibraryProvider libraryProvider) {
 +        super("FreeBSD", libraryProvider, new PosixConstants(-1L, 10, 1, 6, 512, 224, 112, 120));
 +        this.bsdLibc = libraryProvider.getLibrary(FreebsdCLibrary.class);

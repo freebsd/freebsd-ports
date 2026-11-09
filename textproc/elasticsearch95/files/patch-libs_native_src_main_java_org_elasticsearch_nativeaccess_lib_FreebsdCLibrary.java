@@ -1,4 +1,4 @@
---- libs/native/src/main/java/org/elasticsearch/nativeaccess/lib/FreebsdCLibrary.java.orig	2026-11-03 20:05:23 UTC
+--- libs/native/src/main/java/org/elasticsearch/nativeaccess/lib/FreebsdCLibrary.java.orig	2026-11-05 15:10:31 UTC
 +++ libs/native/src/main/java/org/elasticsearch/nativeaccess/lib/FreebsdCLibrary.java
 @@ -0,0 +1,15 @@
 +/*
@@ -12,7 +12,7 @@
 +
 +package org.elasticsearch.nativeaccess.lib;
 +
-+public non-sealed interface FreebsdCLibrary extends NativeLibrary {
++public interface FreebsdCLibrary {
 +
 +    int posix_fallocate(int fd, long offset, long length);
 +}

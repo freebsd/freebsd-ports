@@ -1,0 +1,29 @@
+--- libs/parquet-rs/native/Makefile.orig	2026-10-28 21:58:41 UTC
++++ libs/parquet-rs/native/Makefile
+@@ -46,6 +46,13 @@ else ifeq ($(UNAME_S),Linux)
+   else
+     PLATFORM_DIR = linux-x64
+   endif
++else ifeq ($(UNAME_S),FreeBSD)
++  LIB_EXT = so
++  ifeq ($(UNAME_M),aarch64)
++    PLATFORM_DIR = freebsd-aarch64
++  else
++    PLATFORM_DIR = freebsd-x64
++  endif
+ endif
+ 
+ LIB_NAME = libes_parquet_rs.$(LIB_EXT)
+@@ -57,10 +64,12 @@ TARGET_LIN_X64 = x86_64-unknown-linux-gnu
+ TARGET_DARWIN  = aarch64-apple-darwin
+ TARGET_LIN_ARM = aarch64-unknown-linux-gnu
+ TARGET_LIN_X64 = x86_64-unknown-linux-gnu
++TARGET_FBSD_X64 = x86_64-unknown-freebsd
+ 
+ OUT_DARWIN  = build/darwin-aarch64/libes_parquet_rs.dylib
+ OUT_LIN_ARM = build/linux-aarch64/libes_parquet_rs.so
+ OUT_LIN_X64 = build/linux-x64/libes_parquet_rs.so
++OUT_FBSD_X64 = build/freebsd-x64/libes_parquet_rs.so
+ 
+ .PHONY: local install darwin linux all clean
+ 

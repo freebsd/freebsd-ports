@@ -1,0 +1,18 @@
+--- x-pack/plugin/esql-datasource-parquet-rs/build.gradle.orig	2026-10-28 21:58:41 UTC
++++ x-pack/plugin/esql-datasource-parquet-rs/build.gradle
+@@ -178,6 +178,7 @@ String libFileName = switch (OS.current()) {
+ String libFileName = switch (OS.current()) {
+   case OS.LINUX -> "${nativeLib}.so"
+   case OS.MAC -> "${nativeLib}.dylib"
++  case OS.FREEBSD -> "${nativeLib}.so"
+   // Not produced yet but the windows archive CI tests need it.
+   case OS.WINDOWS -> "${nativeLib}.dll"
+   default -> throw new GradleException("Unsupported platform: ${os}")
+@@ -251,6 +252,7 @@ ext.testsEnabled = switch(OS.current()) {
+       .orElse(null)
+     glibcVersion == null || glibcVersion.onOrAfter(Version.fromString("2.30.0"))
+   }
++  case OS.FREEBSD -> false // Disable since this library isn't actively developed
+   default -> true
+ }
+ 

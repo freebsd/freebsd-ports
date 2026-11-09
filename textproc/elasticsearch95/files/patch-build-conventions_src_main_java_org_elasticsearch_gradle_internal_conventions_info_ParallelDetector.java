@@ -1,6 +1,6 @@
---- build-conventions/src/main/java/org/elasticsearch/gradle/internal/conventions/info/ParallelDetector.java.orig	2026-10-28 21:29:53 UTC
+--- build-conventions/src/main/java/org/elasticsearch/gradle/internal/conventions/info/ParallelDetector.java.orig	2026-10-28 21:58:41 UTC
 +++ build-conventions/src/main/java/org/elasticsearch/gradle/internal/conventions/info/ParallelDetector.java
-@@ -83,6 +83,16 @@ public class ParallelDetector {
+@@ -83,6 +83,15 @@ public class ParallelDetector {
                  if (result.getResult().get().getExitValue() == 0 && stdout.isEmpty() == false) {
                      _defaultParallel = Integer.parseInt(stdout);
                  }
@@ -10,14 +10,13 @@
 +                    execSpec.setIgnoreExitValue(true);
 +                });
 +                String stdout = result.getStandardOutput().getAsText().get().trim();
-+                // in sandbox envs the sysctl key might not be available, fall through to availableProcessors fallback
 +                if (result.getResult().get().getExitValue() == 0 && stdout.isEmpty() == false) {
 +                    _defaultParallel = Integer.parseInt(stdout);
 +                }
              }
  
              if (_defaultParallel == null || _defaultParallel < 1) {
-@@ -96,6 +106,10 @@ public class ParallelDetector {
+@@ -96,6 +105,10 @@ public class ParallelDetector {
  
      private static boolean isMac(ProviderFactory providers) {
          return providers.systemProperty("os.name").getOrElse("").startsWith("Mac");
