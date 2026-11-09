@@ -1,5 +1,5 @@
 PORTNAME=	pyroute2
-PORTVERSION=	0.9.6
+PORTVERSION=	0.9.7
 CATEGORIES=	net python
 MASTER_SITES=	PYPI \
 		https://github.com/svinota/pyroute2/releases/download/${PORTVERSION}/
