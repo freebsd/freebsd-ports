@@ -1,5 +1,5 @@
 PORTNAME=	wrapt
-PORTVERSION=	2.5.0
+PORTVERSION=	2.5.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/GrahamDumpleton/wrapt/releases/download/${PORTVERSION}/
