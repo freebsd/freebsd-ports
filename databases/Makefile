@@ -802,6 +802,7 @@
     SUBDIR += py-asyncmy
     SUBDIR += py-asyncpg
     SUBDIR += py-berkeleydb
+    SUBDIR += py-burner-redis
     SUBDIR += py-chroma-hnswlib
     SUBDIR += py-chromadb
     SUBDIR += py-couchdb

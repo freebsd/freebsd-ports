@@ -1,0 +1,3 @@
+burner-redis is an embedded, in-process Redis-compatible database written in
+Rust. It is used by distributed Python task systems such as Docket for fast,
+self-contained testing and local execution without an external Redis server.
