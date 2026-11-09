@@ -1,12 +1,12 @@
 PORTNAME=	wsjtx
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.0.2
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
-MASTER_SITES=	SF/wsjt/${PORTNAME}-${PORTVERSION}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Weak signal ham radio communication package
-WWW=		https://physics.princeton.edu/pulsar/k1jt/wsjtx.html
+WWW=		https://wsjtx.github.io/wsjtx/index.html
 
 LICENSE=	GPLv3
 
@@ -30,7 +30,7 @@ USE_QT=		buildtools:build concurrent core gui linguisttools:build \
 		sql-sqlite3 testlib websockets widgets
 
 # for detailed debugging uncomment the next line
-#CMAKE_ARGS+=   --debug-output --trace
+CMAKE_ARGS+=   --debug-output --trace
 
 CMAKE_ARGS+=	-DUsb_LIBRARY=/usr/lib/libusb.so \
 		-DOpenMP_Fortran_FLAGS=-fopenmp \

@@ -1,6 +1,55 @@
 --- CMakeLists.txt.orig	2026-06-18 16:22:52 UTC
 +++ CMakeLists.txt
-@@ -1937,7 +1937,7 @@ install (DIRECTORY
+@@ -1052,7 +1052,12 @@ find_package (Boost 1.62 REQUIRED COMPONENTS log_setup
+ #
+ # OpenMP
+ #
+-find_package (OpenMP)
++if (NOT BSD)
++  find_package (OpenMP)
++else()
++  set (OPENMP_FOUND True)
++  set (OpenMP_C_FLAGS "-fopenmp")
++endif()
+ 
+ if (APPLE)
+   set (WSJT_MACOS_LIBGOMP_LIBRARY "" CACHE FILEPATH "Path to the static GNU OpenMP runtime archive")
+@@ -1640,6 +1645,7 @@ add_executable (jt9 ${jt9_FSRCS} ${jt9_VERSION_RESOURC
+ target_link_libraries (record_time_signal wsjt_cxx wsjt_qtmm wsjt_qt)
+ 
+ add_executable (jt9 ${jt9_FSRCS} ${jt9_VERSION_RESOURCES})
++
+ if (${OPENMP_FOUND} OR APPLE)
+   if (APPLE)
+     # On Mac we don't have working OpenMP support in the C/C++
+@@ -1655,12 +1661,20 @@ if (${OPENMP_FOUND} OR APPLE)
+       )
+   else (APPLE)
+     if (OpenMP_C_FLAGS)
+-      set_target_properties (jt9
+-        PROPERTIES
+-        COMPILE_FLAGS "${OpenMP_C_FLAGS}"
+-        LINK_FLAGS "${OpenMP_C_FLAGS}"
+-        )
+-    endif ()
++      if (BSD)
++	  set_target_properties (jt9
++          PROPERTIES
++          COMPILE_FLAGS "${OpenMP_C_FLAGS}"
++          LINK_FLAGS "${OpenMP_C_FLAGS} -z execstack"
++          )
++      else()
++        set_target_properties (jt9
++          PROPERTIES
++          COMPILE_FLAGS "${OpenMP_C_FLAGS}"
++          LINK_FLAGS "${OpenMP_C_FLAGS}"
++          )
++      endif(BSD)
++    endif (OpenMP_C_FLAGS)
+     set_target_properties (jt9
+       PROPERTIES
+       Fortran_MODULE_DIRECTORY ${CMAKE_BINARY_DIR}/fortran_modules_omp
+@@ -1937,7 +1951,7 @@ install (DIRECTORY
    #COMPONENT runtime
    )
  
