@@ -1,5 +1,5 @@
 PORTNAME=	uniform_notifier
-PORTVERSION=	1.18.0
+PORTVERSION=	1.18.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
