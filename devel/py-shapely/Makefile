@@ -1,6 +1,5 @@
 PORTNAME=	shapely
-PORTVERSION=	2.1.2
-PORTREVISION=	2
+PORTVERSION=	2.2.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/shapely/shapely/releases/download/${PORTVERSION}/
@@ -14,14 +13,13 @@ WWW=		https://shapely.readthedocs.io/en/stable/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.25,1<3,1:math/py-numpy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}setuptools>=61.0.0:devel/py-setuptools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}meson-python>=0.15.0,1:devel/meson-python@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.26,1<3,1:math/py-numpy@${PY_FLAVOR}
 LIB_DEPENDS=	libgeos_c.so:graphics/geos
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.21,1:math/py-numpy@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.26,1:math/py-numpy@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-cov>=0:devel/py-pytest-cov@${PY_FLAVOR}
 
-USES=		python
+USES=		pkgconfig python
 USE_PYTHON=	autoplist concurrent cython pep517 pytest
 
 post-install:
