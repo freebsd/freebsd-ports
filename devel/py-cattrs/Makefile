@@ -15,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-vcs>=0:devel/py-hatch-vcs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}attrs>=24.4.0:devel/py-attrs@${PY_FLAVOR} \
-		${PY_EXCEPTIONGROUP} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.14.0:devel/py-typing-extensions@${PY_FLAVOR}
 
 USES=		python
@@ -39,8 +38,7 @@ MSGSPEC_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgspec>=0.21.1:devel/py-msgspec@${P
 ORJSON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}orjson>=3.11.3:devel/py-orjson@${PY_FLAVOR}
 PYYAML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyyaml>=6.0:devel/py-pyyaml@${PY_FLAVOR}
 TOMLKIT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tomlkit>=0.11.8:textproc/py-tomlkit@${PY_FLAVOR}
-TOMLLIB_RUN_DEPENDS=	${PY_TOMLI} \
-			${PYTHON_PKGNAMEPREFIX}tomli-w>=1.1.0:textproc/py-tomli-w@${PY_FLAVOR}
+TOMLLIB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tomli-w>=1.1.0:textproc/py-tomli-w@${PY_FLAVOR}
 UJSON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ujson>=5.10.0:devel/py-ujson@${PY_FLAVOR}
 
 .include <bsd.port.mk>
