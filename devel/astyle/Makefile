@@ -1,5 +1,5 @@
 PORTNAME=	astyle
-PORTVERSION=	3.6.18
+PORTVERSION=	3.6.20
 CATEGORIES=	devel textproc
 MASTER_SITES=	SF/astyle/astyle/astyle%20${PORTVERSION:R}
 
