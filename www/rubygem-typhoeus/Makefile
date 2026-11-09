@@ -1,5 +1,5 @@
 PORTNAME=	typhoeus
-PORTVERSION=	1.6.0
+PORTVERSION=	1.7.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/typhoeus/typhoeus
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-ethon>=0.18.0:www/rubygem-ethon
+RUN_DEPENDS=	rubygem-ethon>=0.19.1<0.20.0:www/rubygem-ethon
 
 USES=		gem
 
