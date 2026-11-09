@@ -1,13 +1,17 @@
 [
 { type: install
   message: <<EOM
-You should authenticate your mail account first before using hydroxide.
-To authenticate:
-# service hydroxide init
-and follow the prompts.
+You should authenticate your mail account first after
+starting hydroxide service before using hydroxide.
 To enable/start hydroxide service:
 # service hydroxide enable
 # service hydroxide start
+To authenticate:
+# service hydroxide init
+
+Hydroxide was unusable since ProtonMail added extra steps
+to the login process, so you will now have to complete a
+CAPTCHA by using a web browser for the init command.
 EOM
 }
 ]
