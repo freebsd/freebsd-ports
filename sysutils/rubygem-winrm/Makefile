@@ -1,5 +1,5 @@
 PORTNAME=	winrm
-PORTVERSION=	2.4.1
+PORTVERSION=	2.4.2
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -12,11 +12,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-base64>=0.2<1:converters/rubygem-base64 \
 		rubygem-builder>=2.1.2:devel/rubygem-builder \
-		rubygem-erubi>=1.8<2:www/rubygem-erubi \
 		rubygem-gssapi>=1.2<2:security/rubygem-gssapi \
 		rubygem-gyoku>=1.0<2:devel/rubygem-gyoku \
 		rubygem-httpclient>=2.2.0.2<3:www/rubygem-httpclient \
-		rubygem-logger>=1.6<2:devel/rubygem-logger \
+		rubygem-logger>=1.5<2:devel/rubygem-logger \
 		rubygem-nori>=2.7.1<3:devel/rubygem-nori \
 		rubygem-rexml>=3.0<4:textproc/rubygem-rexml \
 		rubygem-rubyntlm>=0.6.3<0.7:net/rubygem-rubyntlm
