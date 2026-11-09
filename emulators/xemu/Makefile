@@ -1,6 +1,7 @@
 PORTNAME=	xemu
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8.136
+PORTREVISION=	1
 CATEGORIES=	emulators
 
 MAINTAINER=	jakedez7@gmail.com
@@ -9,8 +10,8 @@ WWW=		https://xemu.app/
 
 LICENSE=	GPLv2+ LGPL21+
 LICENSE_COMB=	multi
-LICENSE_FILE_GPLv2+=	${WRKSRC}/COPYING
-LICENSE_FILE_LGPL21+=	${WRKSRC}/COPYING.LIB
+LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING
+LICENSE_FILE_LGPL21+ =	${WRKSRC}/COPYING.LIB
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyyaml>0:devel/py-pyyaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tomli>0:textproc/py-tomli@${PY_FLAVOR} \
@@ -26,7 +27,9 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libtomlplusplus.so:devel/tomlplusplus \
 		libxxhash.so:devel/xxhash
 # Loader is dlopened by volk, so it is not a LIB_DEPENDS
-RUN_DEPENDS=	vulkan-loader>0:graphics/vulkan-loader
+# zenity is the fallback backend for SDL3 file dialogs
+RUN_DEPENDS=	vulkan-loader>0:graphics/vulkan-loader \
+		zenity>0:x11/zenity
 
 USES=		cmake:indirect compiler:c++17-lang gl gnome inotify \
 		localbase:ldflags ninja:build pkgconfig python:build sdl \
