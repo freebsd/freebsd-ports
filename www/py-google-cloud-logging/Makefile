@@ -1,5 +1,5 @@
 PORTNAME=	google-cloud-logging
-PORTVERSION=	3.16.3
+PORTVERSION=	3.17.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-api-core>=2.25.0<3.0.0:www/py-google-api-core@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-api-core>=2.28.0<3.0.0:www/py-google-api-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}google-auth>=2.14.1<3.0.0:security/py-google-auth@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}google-cloud-appengine-logging>=1.6.1<2.0.0:www/py-google-cloud-appengine-logging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}google-cloud-audit-log>=0.3.2<1.0.0:www/py-google-cloud-audit-log@${PY_FLAVOR} \
