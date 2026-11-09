@@ -1,6 +1,7 @@
 PORTNAME=	elasticsearch
 DISTVERSIONPREFIX=	v
 DISTVERSION=	9.4.9
+PORTREVISION=	1
 CATEGORIES=	textproc java devel
 PKGNAMESUFFIX=	${DISTVERSION:R:S|.||}
 
@@ -137,6 +138,8 @@ post-patch:
 			 -e 's|%%PREFIX%%|${PREFIX}|' \
 			 -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 		${WRKSRC}/libs/native/libraries/build.gradle \
+		${WRKSRC}/x-pack/plugin/otel-data/build.gradle \
+		${WRKSRC}/x-pack/plugin/prometheus/build.gradle \
 		${WRKSRC}/qa/packaging/src/test/java/org/elasticsearch/packaging/util/Cleanup.java
 
 do-configure:

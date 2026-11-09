@@ -1,13 +1,17 @@
 --- x-pack/plugin/prometheus/build.gradle.orig	2026-10-28 20:24:18 UTC
 +++ x-pack/plugin/prometheus/build.gradle
-@@ -53,7 +53,13 @@ protobuf {
+@@ -53,7 +53,17 @@ protobuf {
  
  protobuf {
    protoc {
 -    artifact = "com.google.protobuf:protoc:${protobufVersion}"
 +    if (System.getProperty("os.name", "").startsWith("FreeBSD")) {
 +      // Requires devel/protobuf to be installed
-+      path = '/usr/local/bin/protoc'
++      if (Boolean.parseBoolean(System.getProperty("freebsd.build.fromPorts", "false"))) {
++        path = '%%LOCALBASE%%/bin/protoc'
++      } else {
++        path = '/usr/local/bin/protoc'
++      }
 +    } else {
 +      // The artifact spec for the Protobuf Compiler
 +      artifact = "com.google.protobuf:protoc:${protobufVersion}"
