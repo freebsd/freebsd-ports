@@ -1,5 +1,5 @@
 PORTNAME=	io-console
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.5
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
