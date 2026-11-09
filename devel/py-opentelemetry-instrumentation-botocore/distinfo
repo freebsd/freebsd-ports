@@ -1,3 +1,3 @@
-TIMESTAMP = 1791046916
-SHA256 (opentelemetry_instrumentation_botocore-0.66b0.tar.gz) = b15932b2fc8662661ee79c3bbd9b583aceb64d47acaebf417d28d7da69b04312
-SIZE (opentelemetry_instrumentation_botocore-0.66b0.tar.gz) = 129126
+TIMESTAMP = 1793587494
+SHA256 (opentelemetry_instrumentation_botocore-0.66b2.tar.gz) = 744959d5f6bae940d3d41e5f2663fad733b50dedf742bc55da9bbbcfb9773903
+SIZE (opentelemetry_instrumentation_botocore-0.66b2.tar.gz) = 129131
