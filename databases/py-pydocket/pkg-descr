@@ -1,0 +1,3 @@
+Docket is a distributed background task system for Python functions with a
+focus on scheduling future work as seamlessly and efficiently as immediate
+work.  It is used by FastMCP for persistent task queues.

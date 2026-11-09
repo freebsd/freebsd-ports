@@ -878,6 +878,7 @@
     SUBDIR += py-pum
     SUBDIR += py-pyarrow
     SUBDIR += py-pyarrow-stubs
+    SUBDIR += py-pydocket
     SUBDIR += py-pyiceberg
     SUBDIR += py-pylance
     SUBDIR += py-pylibmc
