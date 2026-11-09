@@ -1,13 +1,12 @@
 PORTNAME=	tox-toml-fmt
-PORTVERSION=	1.10.3
-PORTREVISION=	1
+PORTVERSION=	1.11.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	tox_toml_fmt-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Format your pyproject.toml file
+COMMENT=	Format tox.toml files
 WWW=		https://tox-toml-fmt.readthedocs.io/en/latest/ \
 		https://github.com/tox-dev/toml-fmt/tree/main/tox-toml-fmt \
 		https://github.com/tox-dev/toml-fmt
