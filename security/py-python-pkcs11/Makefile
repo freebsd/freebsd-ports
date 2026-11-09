@@ -1,5 +1,5 @@
 PORTNAME=	python-pkcs11
-PORTVERSION=	0.10.0
+PORTVERSION=	0.10.1
 CATEGORIES=	security python
 MASTER_SITES=	PYPI \
 		https://github.com/pyauth/python-pkcs11/releases/download/v${PORTVERSION}/
