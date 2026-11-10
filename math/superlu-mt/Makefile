@@ -1,11 +1,7 @@
 PORTNAME=	superlu-mt
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.0.2
-PORTREVISION=	1
+DISTVERSION=	4.1.0
 CATEGORIES=	math
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	b121cf0fcafbd10a1ca18c8d062d54cd68bbae9d.patch:-p1 # add THREAD_API cmake option
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library of routines for performing sparse factorization
@@ -62,6 +58,6 @@ do-test:
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
 
-# tests as of 4.0.2: 100% tests passed, 0 tests failed out of 48
+# tests as of 4.1.0: 100% tests passed, 0 tests failed out of 48
 
 .include <bsd.port.mk>
