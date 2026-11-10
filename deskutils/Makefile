@@ -172,6 +172,7 @@
     SUBDIR += lumina-photo
     SUBDIR += lumina-screenshot
     SUBDIR += lumina-textedit
+    SUBDIR += lxqt-clip
     SUBDIR += lxqt-notificationd
     SUBDIR += maliit-framework
     SUBDIR += maliit-keyboard

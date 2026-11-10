@@ -1,0 +1,10 @@
+--- CMakeLists.txt.orig	2026-11-09 05:02:01 UTC
++++ CMakeLists.txt
+@@ -33,6 +33,7 @@ find_package(PkgConfig REQUIRED)
+ 
+ find_package(GLIB ${GLIB_MINIMUM_VERSION} REQUIRED)
+ find_package(PkgConfig REQUIRED)
++find_package(Intl REQUIRED)
+ 
+ pkg_check_modules(
+     GLIB_JSON

@@ -1,5 +1,5 @@
 PORTNAME=	pcmanfm-qt
-PORTVERSION=	2.4.1
+PORTVERSION=	2.5.0
 CATEGORIES=	x11-fm
 MASTER_SITES=	LXQT
 
@@ -9,8 +9,7 @@ WWW=		https://github.com/lxde/pcmanfm-qt
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libmenu-cache.so:x11/menu-cache \
-		libfm-qt6.so:x11/libfm-qt6 \
+LIB_DEPENDS=	libfm-qt6.so:x11/libfm-qt6 \
 		libexif.so:graphics/libexif
 RUN_DEPENDS=    lxqt-menu-data>=2.0.0:x11/lxqt-menu-data
 

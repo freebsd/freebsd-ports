@@ -1,5 +1,5 @@
 PORTNAME=	lximage-qt
-PORTVERSION=	2.4.0
+PORTVERSION=	2.5.0
 CATEGORIES=	graphics
 MASTER_SITES=	LXQT
 
@@ -9,8 +9,7 @@ WWW=		https://github.com/lxde/lximage-qt
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libexif.so:graphics/libexif \
-		libmenu-cache.so:x11/menu-cache
+LIB_DEPENDS=	libexif.so:graphics/libexif
 
 USES=		cmake compiler:c++20-lang desktop-file-utils gettext-runtime \
 		gnome localbase:ldflags lxqt:2 perl5 pkgconfig qt:6 gnome tar:xz xorg

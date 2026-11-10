@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2024-04-17 05:57:59.000000000 -0500
-+++ CMakeLists.txt	2024-04-25 13:02:12.269260000 -0500
-@@ -28,6 +28,16 @@
+--- CMakeLists.txt.orig	2026-11-04 10:45:11 UTC
++++ CMakeLists.txt
+@@ -28,6 +28,16 @@ include(LXQtCompilerSettings NO_POLICY_SCOPE)
  include(LXQtCreatePortableHeaders)
  include(LXQtCompilerSettings NO_POLICY_SCOPE)
  
@@ -17,7 +17,7 @@
  set(CMAKE_AUTOMOC ON)
  set(CMAKE_INCLUDE_CURRENT_DIR ON)
  
-@@ -80,7 +90,11 @@
+@@ -80,7 +90,11 @@ add_library(${SYSSTAT_LIBRARY_NAME}
          ${SYSSTAT_QM_FILES}
  )
  

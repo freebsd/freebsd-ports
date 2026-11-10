@@ -1,6 +1,5 @@
 PORTNAME=	lxqt-archiver
-PORTVERSION=	1.4.0
-PORTREVISION=	3
+PORTVERSION=	1.5.0
 CATEGORIES=	archivers
 MASTER_SITES=	LXQT
 
@@ -12,7 +11,6 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libfm-qt6.so:x11/libfm-qt6 \
 		libjson-glib-1.0.so:devel/json-glib \
-		libmenu-cache.so:x11/menu-cache \
 		libexif.so:graphics/libexif
 RUN_DEPENDS=	gtar:archivers/gtar
 

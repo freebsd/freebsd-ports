@@ -1,6 +1,6 @@
---- memstat.cpp.orig	2021-11-05 10:06:40 UTC
+--- memstat.cpp.orig	2026-11-04 10:45:11 UTC
 +++ memstat.cpp
-@@ -26,10 +26,58 @@
+@@ -26,11 +26,61 @@
  
  #include "memstat.h"
  #include "memstat_p.h"
@@ -16,6 +16,8 @@
 +    #include <sys/sysctl.h>
 +}
 +#endif
++
+ using namespace Qt::Literals::StringLiterals;
  
  namespace SysStat {
 +#ifdef HAVE_SYSCTL_H
@@ -56,20 +58,20 @@
 +    return res;
 +}
 +#endif
++
  MemStatPrivate::MemStatPrivate(MemStat *parent)
      : BaseStatPrivate(parent)
  {
-@@ -49,8 +97,39 @@ void MemStatPrivate::timeout()
+@@ -50,6 +100,38 @@ void MemStatPrivate::timeout()
      qulonglong memBuffers = 0;
      qulonglong memCached = 0;
      qulonglong swapTotal = 0;
--    qulonglong swapFree = 0;
 +#ifdef HAVE_SYSCTL_H
 +    memTotal = MemGetByBytes(QLatin1String("hw.physmem"));
 +    memFree = MemGetByPages(QLatin1String("vm.stats.vm.v_free_count"));
 +    memBuffers = MemGetByBytes(QLatin1String("vfs.bufspace"));
 +    memCached = MemGetByPages(QLatin1String("vm.stats.vm.v_inactive_count"));
- 
++
 +#endif
 +#ifdef HAVE_KVM_H
 +    qulonglong swapUsed = 0;
@@ -96,19 +98,19 @@
 +        kvm_close(kd);
 +#endif
 +#ifndef HAVE_SYSCTL_H
-+    qulonglong swapFree = 0;
-     const QStringList rows = readAllFile("/proc/meminfo").split(QLatin1Char('\n'), Qt::SkipEmptyParts);
-     for (const QString &row : rows)
-     {
-@@ -72,6 +151,7 @@ void MemStatPrivate::timeout()
+     qulonglong swapFree = 0;
+ 
+     const QStringList rows = readAllFile("/proc/meminfo").split(u'\n', Qt::SkipEmptyParts);
+@@ -72,7 +154,7 @@ void MemStatPrivate::timeout()
+         else if(tokens[0] == "SwapFree:"_L1)
              swapFree = tokens[1].toULong();
      }
- 
+-
 +#endif
-     if (mSource == QLatin1String("memory"))
+     if (mSource == "memory"_L1)
      {
          if (memTotal)
-@@ -88,8 +168,11 @@ void MemStatPrivate::timeout()
+@@ -89,8 +171,11 @@ void MemStatPrivate::timeout()
      {
          if (swapTotal)
          {

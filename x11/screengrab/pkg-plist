@@ -44,6 +44,7 @@ share/metainfo/screengrab.metainfo.xml
 %%DATADIR%%/translations/screengrab_sl.qm
 %%DATADIR%%/translations/screengrab_sv.qm
 %%DATADIR%%/translations/screengrab_tr.qm
+%%DATADIR%%/translations/screengrab_ug.qm
 %%DATADIR%%/translations/screengrab_uk.qm
 %%DATADIR%%/translations/screengrab_vi.qm
 %%DATADIR%%/translations/screengrab_zh_CN.qm

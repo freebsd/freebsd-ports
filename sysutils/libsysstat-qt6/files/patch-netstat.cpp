@@ -1,6 +1,6 @@
---- netstat.cpp.orig	2021-11-05 10:06:40 UTC
+--- netstat.cpp.orig	2026-11-04 10:45:11 UTC
 +++ netstat.cpp
-@@ -26,8 +26,23 @@
+@@ -26,7 +26,22 @@
  
  #include "netstat.h"
  #include "netstat_p.h"
@@ -19,20 +19,20 @@
 +    #include <sys/sysctl.h>
 +}
 +#endif
- 
 +
- namespace SysStat {
+ using namespace Qt::Literals::StringLiterals;
  
- NetStatPrivate::NetStatPrivate(NetStat *parent)
-@@ -37,6 +52,7 @@ NetStatPrivate::NetStatPrivate(NetStat *parent)
+ namespace SysStat {
+@@ -38,7 +53,7 @@ NetStatPrivate::NetStatPrivate(NetStat *parent)
  
      connect(mTimer, SIGNAL(timeout()), SLOT(timeout()));
  
+-
 +#ifndef HAVE_SYSCTL_H
+     QStringList rows(readAllFile("/proc/net/dev").split(u'\n', Qt::SkipEmptyParts));
  
-     QStringList rows(readAllFile("/proc/net/dev").split(QLatin1Char('\n'), Qt::SkipEmptyParts));
- 
-@@ -50,12 +66,79 @@ NetStatPrivate::NetStatPrivate(NetStat *parent)
+     rows.erase(rows.cbegin(), rows.cbegin() + 2);
+@@ -51,12 +66,79 @@ NetStatPrivate::NetStatPrivate(NetStat *parent)
  
          mSources.append(tokens[0].trimmed());
      }
@@ -109,10 +109,10 @@
 +        }
 +    }
 +#else
-     QStringList rows(readAllFile("/proc/net/dev").split(QLatin1Char('\n'), Qt::SkipEmptyParts));
+     QStringList rows(readAllFile("/proc/net/dev").split(u'\n', Qt::SkipEmptyParts));
  
  
-@@ -97,6 +180,7 @@ void NetStatPrivate::timeout()
+@@ -98,6 +180,7 @@ void NetStatPrivate::timeout()
  
          mPrevious[interfaceName] = current;
      }

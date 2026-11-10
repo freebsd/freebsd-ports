@@ -23,6 +23,7 @@ share/applications/lxqt-suspend.desktop
 %%LXQT_TRANSLATIONS%%/lxqt-config-session/lxqt-config-session_da.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-session/lxqt-config-session_de.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-session/lxqt-config-session_el.qm
+%%LXQT_TRANSLATIONS%%/lxqt-config-session/lxqt-config-session_en_GB.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-session/lxqt-config-session_eo.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-session/lxqt-config-session_es.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-session/lxqt-config-session_es_UY.qm
@@ -62,6 +63,7 @@ share/applications/lxqt-suspend.desktop
 %%LXQT_TRANSLATIONS%%/lxqt-config-session/lxqt-config-session_th_TH.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-session/lxqt-config-session_tr.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-session/lxqt-config-session_uk.qm
+%%LXQT_TRANSLATIONS%%/lxqt-config-session/lxqt-config-session_vi.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-session/lxqt-config-session_zh_CN.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-session/lxqt-config-session_zh_TW.qm
 %%LXQT_TRANSLATIONS%%/lxqt-leave/lxqt-leave_ar.qm
@@ -163,6 +165,7 @@ share/applications/lxqt-suspend.desktop
 %%LXQT_TRANSLATIONS%%/lxqt-session/lxqt-session_th_TH.qm
 %%LXQT_TRANSLATIONS%%/lxqt-session/lxqt-session_tr.qm
 %%LXQT_TRANSLATIONS%%/lxqt-session/lxqt-session_uk.qm
+%%LXQT_TRANSLATIONS%%/lxqt-session/lxqt-session_vi.qm
 %%LXQT_TRANSLATIONS%%/lxqt-session/lxqt-session_zh_CN.qm
 %%LXQT_TRANSLATIONS%%/lxqt-session/lxqt-session_zh_TW.qm
 %%LXQT_SHAREDIR%%/waylandwindowmanagers.conf

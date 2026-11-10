@@ -46,6 +46,7 @@ libdata/pkgconfig/qtermwidget6.pc
 %%DATADIR%%6/kb-layouts/historic/x11r5.keytab
 %%DATADIR%%6/kb-layouts/linux.keytab
 %%DATADIR%%6/kb-layouts/macbook.keytab
+%%DATADIR%%6/kb-layouts/modern.keytab
 %%DATADIR%%6/kb-layouts/solaris.keytab
 %%DATADIR%%6/kb-layouts/vt420pc.keytab
 %%DATADIR%%6/translations/qtermwidget_ar.qm
@@ -86,6 +87,8 @@ libdata/pkgconfig/qtermwidget6.pc
 %%DATADIR%%6/translations/qtermwidget_si.qm
 %%DATADIR%%6/translations/qtermwidget_sk.qm
 %%DATADIR%%6/translations/qtermwidget_tr.qm
+%%DATADIR%%6/translations/qtermwidget_ug.qm
 %%DATADIR%%6/translations/qtermwidget_uk.qm
+%%DATADIR%%6/translations/qtermwidget_zh.qm
 %%DATADIR%%6/translations/qtermwidget_zh_CN.qm
 %%DATADIR%%6/translations/qtermwidget_zh_TW.qm

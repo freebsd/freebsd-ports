@@ -1,5 +1,5 @@
 PORTNAME=	lxqt
-PORTVERSION=	2.4.0
+PORTVERSION=	2.5.0
 CATEGORIES=	x11-wm
 
 MAINTAINER=	lxqt@FreeBSD.org
@@ -9,6 +9,7 @@ WWW=		https://lxqt-project.org
 RUN_DEPENDS=	startlxqt:x11-wm/lxqt-session \
 	lxqt-about>=${PORTVERSION}:x11/lxqt-about \
 	lxqt-admin>=${PORTVERSION}:sysutils/lxqt-admin \
+	lxqt-clip>=${PORTVERSION}:deskutils/lxqt-clip \
 	lxqt-config>=${PORTVERSION}:sysutils/lxqt-config \
 	lxqt-qt6plugin>=${PORTVERSION}:sysutils/lxqt-qt6plugin \
 	qterminal>=2.3.0:x11/qterminal \
@@ -24,7 +25,6 @@ RUN_DEPENDS=	startlxqt:x11-wm/lxqt-session \
 	lxqt-panel>=${PORTVERSION}:x11-wm/lxqt-panel \
 	lxqt-policykit>=${PORTVERSION}:sysutils/lxqt-policykit \
 	lxqt-wayland-session>=0.3.0:x11-wm/lxqt-wayland-session \
-	qlipper:deskutils/qlipper \
 	openbox:x11-wm/openbox \
 	xdg-desktop-portal-lxqt>0:deskutils/xdg-desktop-portal-lxqt \
 	qtxdg-tools>0:sysutils/qtxdg-tools

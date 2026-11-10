@@ -1,5 +1,5 @@
 PORTNAME=	libfm-qt6
-PORTVERSION=	2.4.0
+PORTVERSION=	2.5.0
 CATEGORIES=	x11
 MASTER_SITES=	LXQT/${PORTNAME:S/6//}
 
@@ -10,8 +10,7 @@ WWW=		https://github.com/lxqt/libfm-qt
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libmenu-cache.so:x11/menu-cache \
-		libexif.so:graphics/libexif
+LIB_DEPENDS=	libexif.so:graphics/libexif
 BUILD_DEPENDS=	lxqt-menu-data>=2.0.0:x11/lxqt-menu-data
 RUN_DEPENDS=	lxqt-menu-data>=2.0.0:x11/lxqt-menu-data
 

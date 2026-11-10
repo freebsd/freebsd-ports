@@ -3,6 +3,10 @@ bin/startlxqtwayland
 %%LXQT_SHAREDIR%%/graphics/lxqt-labwc.png
 %%LXQT_SHAREDIR%%/wallpapers/origami-dark-labwc.png
 %%LXQT_SHAREDIR%%/wayland/firstrun/autostart
+%%LXQT_SHAREDIR%%/wayland/firstrun/hypr.lua
+%%LXQT_SHAREDIR%%/wayland/firstrun/niri.kdl
+%%LXQT_SHAREDIR%%/wayland/firstrun/sway.config
+%%LXQT_SHAREDIR%%/wayland/firstrun/wayfire.ini
 %%LXQT_SHAREDIR%%/wayland/labwc/README
 %%LXQT_SHAREDIR%%/wayland/labwc/autostart
 %%LXQT_SHAREDIR%%/wayland/labwc/environment
@@ -21,6 +25,7 @@ bin/startlxqtwayland
 %%LXQT_SHAREDIR%%/wayland/niri/outputs.kdl
 %%LXQT_SHAREDIR%%/wayland/niri/visual.kdl
 %%LXQT_SHAREDIR%%/wayland/niri/window-rules.kdl
+share/man/man1/lxqt-qdbus.1.gz
 share/man/man1/lxqt-wayland-session.1.gz
 share/man/man1/startlxqtwayland.1.gz
 share/themes/Vent-dark/openbox-3/close.xbm

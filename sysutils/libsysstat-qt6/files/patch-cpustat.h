@@ -1,4 +1,4 @@
---- cpustat.h.orig	2020-11-03 14:45:02 UTC
+--- cpustat.h.orig	2026-11-04 10:45:11 UTC
 +++ cpustat.h
 @@ -27,14 +27,19 @@
  #ifndef LIBSYSSTAT__CPU_STAT__INCLUDED
@@ -22,7 +22,7 @@
  class CpuStatPrivate;
  
  class SYSSTATSHARED_EXPORT CpuStat : public BaseStat
-@@ -54,7 +59,6 @@ class SYSSTATSHARED_EXPORT CpuStat : public BaseStat (
+@@ -52,7 +57,6 @@ class SYSSTATSHARED_EXPORT CpuStat : public BaseStat (
  
      uint minFreq(const QString &source) const;
      uint maxFreq(const QString &source) const;

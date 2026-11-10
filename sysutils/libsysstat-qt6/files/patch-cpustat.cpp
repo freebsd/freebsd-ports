@@ -1,13 +1,8 @@
---- cpustat.cpp.orig	2021-11-05 10:06:40 UTC
+--- cpustat.cpp.orig	2026-11-04 10:45:11 UTC
 +++ cpustat.cpp
-@@ -22,16 +22,65 @@
- **  51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
- **
- ** END_COMMON_COPYRIGHT_HEADER */
--
--
+@@ -27,12 +27,64 @@
  #include <unistd.h>
--
+ 
  #include "cpustat.h"
 +#ifdef HAVE_SYSCTL_H
 +extern "C"
@@ -16,20 +11,21 @@
 +    #include <limits.h>
 +    #include <string.h>
 +    #include <sys/resource.h> /* CPUSTATES */
-+
++    
 +    #include <sys/types.h>
 +    #include <sys/sysctl.h>
 +}
 +#endif
  #include "cpustat_p.h"
  
+ using namespace Qt::Literals::StringLiterals;
  
  namespace SysStat {
 +#ifdef HAVE_SYSCTL_H
 +char *GetFirstFragment(char *string, const char *delim)
 +{
 +    char *token = NULL;
- 
++    
 +    token = strsep(&string, delim);
 +    if (token != NULL)
 +    {
@@ -39,13 +35,13 @@
 +    else
 +        return NULL;
 +}
-+
++    
 +int GetCpu(void)
 +{
 +    static int mib[] = { CTL_HW, HW_NCPU };
 +    int buf;
 +    size_t len = sizeof(int);
-+
+ 
 +    if (sysctl(mib, 2, &buf, &len, NULL, 0) < 0)
 +        return 0;
 +    else
@@ -69,7 +65,7 @@
  CpuStatPrivate::CpuStatPrivate(CpuStat *parent)
      : BaseStatPrivate(parent)
      , mMonitoring(CpuStat::LoadAndFrequency)
-@@ -39,7 +88,17 @@ CpuStatPrivate::CpuStatPrivate(CpuStat *parent)
+@@ -40,7 +92,17 @@ CpuStatPrivate::CpuStatPrivate(CpuStat *parent)
      mSource = defaultSource();
  
      connect(mTimer, SIGNAL(timeout()), SLOT(timeout()));
@@ -88,7 +84,7 @@
      mUserHz = sysconf(_SC_CLK_TCK);
  
      updateSources();
-@@ -47,6 +106,51 @@ CpuStatPrivate::CpuStatPrivate(CpuStat *parent)
+@@ -48,6 +110,51 @@ void CpuStatPrivate::addSource(const QString &source)
  
  void CpuStatPrivate::addSource(const QString &source)
  {
@@ -139,8 +135,8 @@
 +#else
      bool ok = false;
  
-     uint min = readAllFile(qPrintable(QString::fromLatin1("/sys/devices/system/cpu/%1/cpufreq/scaling_min_freq").arg(source))).toUInt(&ok);
-@@ -56,11 +160,34 @@ void CpuStatPrivate::addSource(const QString &source)
+     uint min = readAllFile(qPrintable("/sys/devices/system/cpu/%1/cpufreq/scaling_min_freq"_L1.arg(source))).toUInt(&ok);
+@@ -57,11 +164,34 @@ void CpuStatPrivate::addSource(const QString &source)
          if (ok)
              mBounds[source] = qMakePair(min, max);
      }
@@ -172,18 +168,18 @@
 +
 +    mBounds[QStringLiteral("cpu")] = qMakePair(min,max);
 +#else
-     const QStringList rows = readAllFile("/proc/stat").split(QLatin1Char('\n'), Qt::SkipEmptyParts);
+     const QStringList rows = readAllFile("/proc/stat").split(u'\n', Qt::SkipEmptyParts);
      for (const QString &row : rows)
      {
-@@ -98,6 +225,7 @@ void CpuStatPrivate::updateSources()
-                 addSource(QString::fromLatin1("cpu%1").arg(number));
+@@ -99,6 +229,7 @@ void CpuStatPrivate::updateSources()
+                 addSource(u"cpu%1"_s.arg(number));
          }
      }
 +#endif
  }
  
  CpuStatPrivate::~CpuStatPrivate() = default;
-@@ -124,6 +252,113 @@ void CpuStatPrivate::recalculateMinMax()
+@@ -125,6 +256,113 @@ void CpuStatPrivate::timeout()
  
  void CpuStatPrivate::timeout()
  {
@@ -221,7 +217,7 @@
 +                if ((mPrevious.total != 0) && ((sumDelta < mIntervalMin) || (sumDelta > mIntervalMax)))
 +                {
 +                    if (mMonitoring == CpuStat::LoadAndFrequency)
-+		            {
++                           {
 +                        float freqRate = 1.0;
 +                        ulong freq = CurrentFreq(mSource);
 +
@@ -242,7 +238,7 @@
 +                        }
 +                    } else {
 +                        emit update(0.0, 0.0, 0.0, 0.0);
-+			        }
++                               }
 +                    mPrevious.clear();
 +                } else {
 +                        if (mMonitoring == CpuStat::LoadAndFrequency)
@@ -252,7 +248,7 @@
 +
 +                        if (freq > 0)
 +                        {
-+					        if (mSource == QLatin1String("cpu")) {
++                                               if (mSource == QLatin1String("cpu")) {
 +                                freq=0;
 +                                for (Bounds::ConstIterator I = mBounds.constBegin(); I != mBounds.constEnd(); ++I) {
 +                                    if (I.key() != QStringLiteral("cpu"))
@@ -261,7 +257,7 @@
 +                                    }
 +                        }
 +                        }
-+		                freqRate = static_cast<float>(freq) / static_cast<float>(mBounds[mSource].second);
++                               freqRate = static_cast<float>(freq) / static_cast<float>(mBounds[mSource].second);
 +                           emit update(
 +                               static_cast<float>(current.user   - mPrevious.user  ) / sumDelta,
 +                               static_cast<float>(current.nice   - mPrevious.nice  ) / sumDelta,
@@ -297,7 +293,7 @@
      if ( (mMonitoring == CpuStat::LoadOnly)
        || (mMonitoring == CpuStat::LoadAndFrequency) )
      {
-@@ -258,6 +493,7 @@ void CpuStatPrivate::timeout()
+@@ -259,6 +497,7 @@ void CpuStatPrivate::timeout()
          }
          emit update(freq);
      }

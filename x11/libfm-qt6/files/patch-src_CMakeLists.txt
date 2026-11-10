@@ -1,0 +1,10 @@
+--- src/CMakeLists.txt.orig	2026-11-09 01:52:42 UTC
++++ src/CMakeLists.txt
+@@ -148,6 +148,7 @@ target_link_libraries(${LIBFM_QT_LIBRARY_NAME}
+         ${GLIB_GTHREAD_LIBRARIES}
+         ${XCB_LIBRARIES}
+         ${EXIF_LIBRARIES}
++        Intl::Intl
+ )
+ 
+ # set libtool soname
