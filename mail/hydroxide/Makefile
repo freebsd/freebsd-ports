@@ -40,6 +40,8 @@ GROUPS=		${PORTNAME}
 
 PLIST_FILES=	bin/${PORTNAME}
 
+PORTSCOUT=	limit:^0\.2\.
+
 post-extract:
 	${MV} ${WRKDIR}/${PORTNAME}/* ${WRKSRC}
 	${RM} -r ${WRKDIR}/${PORTNAME}
