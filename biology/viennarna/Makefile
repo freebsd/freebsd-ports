@@ -1,7 +1,7 @@
 PORTNAME=	viennarna
-DISTVERSION=	2.7.2
+DISTVERSION=	2.8.0
 CATEGORIES=	biology
-MASTER_SITES=	https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_7_x/
+MASTER_SITES=	https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_8_x/
 DISTNAME=	ViennaRNA-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -55,16 +55,16 @@ post-configure: # remove -lstdc++ from .pc file
 
 post-extract:
 	# remove bundled dlib to ensure we use system version
-	@${RM} -rf ${WRKSRC}/src/dlib-19.24
+	@${RM} -rf ${WRKSRC}/src/dlib-*
 
 post-install:
 	# remove stray files
 	@${RM} ${STAGEDIR}/RNA/RNAconsensus.py
 	@${RMDIR} ${STAGEDIR}/RNA
 
-# tests as of 2.7.2:
-# TOTAL: 83
-# PASS:  83
+# tests as of 2.8.0:
+# TOTAL: 131
+# PASS:  131
 # SKIP:  0
 # XFAIL: 0
 # FAIL:  0
