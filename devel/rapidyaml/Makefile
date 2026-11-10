@@ -1,6 +1,6 @@
 PORTNAME=	rapidyaml
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.0
+DISTVERSION=	0.10.0
 CATEGORIES=	devel
 
 MAINTAINER=	gasol.wu@gmail.com
@@ -19,7 +19,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	biojppm
 GH_PROJECT=	cmake:cmake
 GH_SUBDIR=	ext/c4core/cmake:cmake
-GH_TAGNAME=	e87e11f:cmake
+GH_TAGNAME=	469017f:cmake
 
 USE_LDCONFIG=	yes
 
