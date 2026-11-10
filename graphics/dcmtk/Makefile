@@ -1,7 +1,6 @@
 PORTNAME=	dcmtk
 DISTVERSIONPREFIX=	${PORTNAME:tu}-
-DISTVERSION=	3.7.0
-PORTREVISION=	1
+DISTVERSION=	3.7.1
 CATEGORIES=	graphics devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -47,10 +46,10 @@ CC=		${LOCALBASE}/bin/clang${LLVM_VER}
 CXX=		${LOCALBASE}/bin/clang++${LLVM_VER}
 .endif
 
-# tests as of 3.7.0: 100% tests passed, 0 tests failed out of 381
-
 # Orthanc needs access to dicom.dic and doesn't care about the dcmtk version
 post-stage:
 	${RLN} ${STAGEDIR}${DATADIR} ${STAGEDIR}${PREFIX}/share/${PORTNAME}
+
+# tests as of 3.7.1: 100% tests passed, 0 tests failed out of 508
 
 .include <bsd.port.post.mk>
