@@ -58,6 +58,8 @@ CARGO_INSTALL=	no
 
 CARGO_TARGET_DIR=	${WRKSRC}/out/rust
 
+NPM_PREFETCH_ARCHS=	amd64 aarch64
+
 # Variables used by the "runner" build system
 MAKE_ENV+=	NODE_BINARY=${LOCALBASE}/bin/node \
 		NODE_OPTIONS=--max-old-space-size=1024 \
@@ -69,6 +71,7 @@ MAKE_ENV+=	NODE_BINARY=${LOCALBASE}/bin/node \
 		UV_NO_BUILD_ISOLATION=1 \
 		UV_OFFLINE=1 \
 		out=${WRKSRC}/out
+
 # If RELEASE is unset the "runner" build system omits the
 # "--release" flag for cargo(1).
 .if !defined(WITH_DEBUG)
