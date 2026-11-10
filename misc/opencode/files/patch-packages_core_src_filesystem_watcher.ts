@@ -9,8 +9,8 @@ reporting the subscription ready so config reloads cannot miss the first write.
 
 --- packages/core/src/filesystem/watcher.ts.orig
 +++ packages/core/src/filesystem/watcher.ts
-@@ -7,7 +7,8 @@
- import { FSUtil } from "@opencode/util/fs-util"
+@@ -8,7 +8,8 @@
+ import { isRecord } from "@opencode/util/record"
  import { Cause, Context, Effect, Layer, PubSub, RcMap, Stream } from "effect"
  import { lazy } from "../util/lazy.js"
 -import { watch } from "node:fs"
@@ -19,10 +19,11 @@ reporting the subscription ready so config reloads cannot miss the first write.
  import path from "path"
  import loadBinding from "./watcher-binding.js"
  
-@@ -198,13 +199,126 @@
+@@ -198,14 +199,126 @@
+     return Context.empty().pipe(Context.add(Service, test), Context.add(Test, test))
    }),
  )
- 
++
 +function poll(directory: string, names: ReadonlySet<string>, publish: (update: Update) => void): Subscription {
 +  const scan = () => {
 +    const next = new Map<string, string>()
@@ -116,8 +117,7 @@ reporting the subscription ready so config reloads cannot miss the first write.
 +    }
 +  })
 +}
-+
-+
+ 
  export const nativeLayer = Layer.succeed(
    Native,
    Native.of({
@@ -143,6 +143,6 @@ reporting the subscription ready so config reloads cannot miss the first write.
 +        if (process.platform === "freebsd") {
 +          return Effect.sync(() => poll(directory, names, input.publish))
 +        }
-         return Effect.try(() =>
-           watch(directory, { recursive: false }, (_event, file) => {
-             if (file && !names.has(file)) return
+         return Effect.try({
+           try: () =>
+             watch(directory, { recursive: false }, (_event, file) => {
