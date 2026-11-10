@@ -1,0 +1,14 @@
+[
+{ type: install
+  message: <<EOM
+This package contains the sources of the auth_krb5 module only.  It does not
+install a loadable module.
+
+The module itself is built by the nginx ports.  To use auth_krb5, build
+www/nginx, www/nginx-devel or www/freenginx with the HTTP_AUTH_KRB5 option
+enabled.  Those ports pick the sources up from
+%%PREFIX%%/share/nginx/modules/nginx-module-auth-krb5 and produce
+ngx_http_auth_spnego_module.so.
+EOM
+}
+]

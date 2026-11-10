@@ -1,0 +1,10 @@
+Sources of the auth_krb5 module for the NGINX ports.
+
+This port installs the sources only.  It does not build a loadable module by
+itself; www/nginx, www/nginx-devel and www/freenginx pick the sources up and
+build ngx_http_auth_spnego_module.so when their HTTP_AUTH_KRB5 option is
+enabled.
+
+The module authenticates HTTP clients with SPNEGO/GSSAPI (Kerberos), so a
+browser that already holds a valid ticket is logged in without a password
+prompt.
