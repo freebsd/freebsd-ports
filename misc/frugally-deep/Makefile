@@ -1,6 +1,6 @@
 PORTNAME=	frugally-deep
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.20.0
+DISTVERSION=	0.21.1
 CATEGORIES=	misc # deep-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -44,10 +44,12 @@ test-quick: # compiled files/example-* (from README) into executable test-quick
 		${ECHO} "Running test-quick ..." && \
 		./test-quick
 
-do-test: # tests fail to compile, see https://github.com/Dobiasd/frugally-deep/issues/462
+do-test: # tests need keras and tensorflow to generate the test models
 	@cd ${BUILD_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DFDEEP_BUILD_UNITTEST:BOOL=ON ${CMAKE_SOURCE_PATH} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
+
+# tests as of 0.21.1: 100% tests passed, 0 tests failed out of 8
 
 .include <bsd.port.mk>
