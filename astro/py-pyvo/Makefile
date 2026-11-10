@@ -1,5 +1,5 @@
 PORTNAME=	pyvo
-PORTVERSION=	1.9.1
+PORTVERSION=	1.10.0
 CATEGORIES=	astro python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}astropy>=5.0:astro/py-astropy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-astropy>0:astro/py-pytest-astropy@${PY_FLAVOR} \
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-astropy>=0.6:astro/py-pytest-astropy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-astropy-header>0:astro/py-pytest-astropy-header@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-doctestplus>=0.13:devel/py-pytest-doctestplus@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests-mock>0:www/py-requests-mock@${PY_FLAVOR} \
@@ -28,9 +28,16 @@ USE_PYTHON=	pep517 autoplist pytest
 
 NO_ARCH=	yes
 
-TEST_ARGS=	--remote-data
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_ARGS=	--disable-plugin-autoload \
+		-p pytest_astropy_header.display \
+		-p pytest_doctestplus.plugin \
+		-p pytest_remotedata.plugin \
+		-p pytest_skip_slow \
+		-p pytest_timeout \
+		-p requests_mock.contrib._pytest_plugin \
+		--ignore=pyvo/samp/tests/test_web_profile.py # hangs in teardown
 
-# tests as of 1.8.1: 510 passed, 1 xfailed, 1 xpassed in 101.56s
-# tests as of 1.9.1: failed to run due to missing pkg_resources (needed by pytest-doctestplus)
+# tests as of 1.10.0: 525 passed, 106 skipped, 1 xfailed in 33.84s (remote-data tests are skipped; run with astropy 7.1.1 import-shimmed for numpy 2.4 np.in1d removal)
 
 .include <bsd.port.mk>
