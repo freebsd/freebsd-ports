@@ -28,10 +28,9 @@ DOCS_DISTFILES=	blacs_install.ps f77blacsqref.ps lawn94.ps \
 		cblacsqref.ps  mpi_prop.ps mpiblacs_issues.ps
 
 OPENMPI_USES=	mpi:openmpi
-OPENMPI_EXTRA_PATCHES=	${FILESDIR}/Bmake.inc-openmpi.diff
 
 MPICH_USES=	mpi:mpich
-MPICH_EXTRA_PATCHES=	${FILESDIR}/Bmake.inc-mpich.diff
+EXTRA_PATCHES=	${FILESDIR}/Bmake.inc-mpi.diff
 
 .include <bsd.port.pre.mk>
 
@@ -74,8 +73,8 @@ post-patch:
 	${CP} -r ${WRKSRC} ${WRKSRC_SHARED}
 
 pre-configure:
-	(${REINPLACE_CMD} -e 's|@WRKSRC@|${WRKSRC}|g ; s|@DEBUG_LEVEL@|${DEBUG_LEVEL}|g ; s|@LOCALBASE@|${LOCALBASE}|g ; s|@CC@|${CC}|g ; s|@CFLAGS@|${CFLAGS}|g ; s|@F77@|${F77}|g ; s|@FFLAGS@|${FFLAGS}|g ; s|@F77EXTRAFLAGS@|${F77EXTRAFLAGS}|g ; s|   ARCH *.= ar|   ARCMD = ar|'  ${WRKSRC}/Bmake.inc)
-	(${REINPLACE_CMD} -e 's|@WRKSRC@|${WRKSRC_SHARED}|g ; s|@DEBUG_LEVEL@|${DEBUG_LEVEL}|g ; s|@LOCALBASE@|${LOCALBASE}|g ; s|@CC@|${CC}|g ; s|@CFLAGS@|${CFLAGS_SHARED}|g ; s|@F77@|${F77}|g ; s|@FFLAGS@|${FFLAGS_SHARED}|g ; s|@F77EXTRAFLAGS@|${F77EXTRAFLAGS}|g ; s|   ARCH *.= ar|   ARCMD = ar|'  ${WRKSRC_SHARED}/Bmake.inc)
+	(${REINPLACE_CMD} -e 's|@WRKSRC@|${WRKSRC}|g ; s|@DEBUG_LEVEL@|${DEBUG_LEVEL}|g ; s|@MPI_HOME@|${MPI_HOME}|g ; s|@MPICC@|${MPICC}|g ; s|@MPIFC@|${MPIFC}|g ; s|@CFLAGS@|${CFLAGS}|g ; s|@FFLAGS@|${FFLAGS}|g ; s|@F77EXTRAFLAGS@|${F77EXTRAFLAGS}|g ; s|   ARCH *.= ar|   ARCMD = ar|'  ${WRKSRC}/Bmake.inc)
+	(${REINPLACE_CMD} -e 's|@WRKSRC@|${WRKSRC_SHARED}|g ; s|@DEBUG_LEVEL@|${DEBUG_LEVEL}|g ; s|@MPI_HOME@|${MPI_HOME}|g ; s|@MPICC@|${MPICC}|g ; s|@MPIFC@|${MPIFC}|g ; s|@CFLAGS@|${CFLAGS_SHARED}|g ; s|@FFLAGS@|${FFLAGS_SHARED}|g ; s|@F77EXTRAFLAGS@|${F77EXTRAFLAGS}|g ; s|   ARCH *.= ar|   ARCMD = ar|'  ${WRKSRC_SHARED}/Bmake.inc)
 	${REINPLACE_CMD} -e 's|\$$(ARCH)|$$(ARCMD)|' ${WRKSRC}/SRC/MPI/Makefile
 	${REINPLACE_CMD} -e 's|\$$(ARCH)|$$(ARCMD)|' ${WRKSRC_SHARED}/SRC/MPI/Makefile
 
