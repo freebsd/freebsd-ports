@@ -173,6 +173,8 @@ libexec/qbs/qbs_processlauncher
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsconvenienceitems-configinstall.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsconvenienceitems-cppapplication-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsconvenienceitems-cppapplication.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsconvenienceitems-cpplibrary-members.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsconvenienceitems-cpplibrary.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsconvenienceitems-cppstd-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsconvenienceitems-cppstd.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsconvenienceitems-dynamiclibrary-members.html
@@ -189,6 +191,8 @@ libexec/qbs/qbs_processlauncher
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsconvenienceitems-library.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsconvenienceitems-loadablemodule-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsconvenienceitems-loadablemodule.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsconvenienceitems-objectlibrary-members.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsconvenienceitems-objectlibrary.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsconvenienceitems-plugin-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsconvenienceitems-plugin.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsconvenienceitems-qtapplication-members.html
@@ -748,6 +752,7 @@ share/man/man1/qbs.1.gz
 %%DATADIR%%/imports/qbs/base/ConfigBuild.qbs
 %%DATADIR%%/imports/qbs/base/ConfigInstall.qbs
 %%DATADIR%%/imports/qbs/base/CppApplication.qbs
+%%DATADIR%%/imports/qbs/base/CppLibrary.qbs
 %%DATADIR%%/imports/qbs/base/CppStd.qbs
 %%DATADIR%%/imports/qbs/base/DynamicLibrary.qbs
 %%DATADIR%%/imports/qbs/base/InnoSetup.qbs
@@ -760,6 +765,7 @@ share/man/man1/qbs.1.gz
 %%DATADIR%%/imports/qbs/base/NativeBinary.qbs
 %%DATADIR%%/imports/qbs/base/NetModule.qbs
 %%DATADIR%%/imports/qbs/base/NodeJSApplication.qbs
+%%DATADIR%%/imports/qbs/base/ObjectLibrary.qbs
 %%DATADIR%%/imports/qbs/base/Plugin.qbs
 %%DATADIR%%/imports/qbs/base/QtApplication.qbs
 %%DATADIR%%/imports/qbs/base/QtGuiApplication.qbs
@@ -879,6 +885,7 @@ share/man/man1/qbs.1.gz
 %%DATADIR%%/modules/freedesktop/FreeDesktop.qbs
 %%DATADIR%%/modules/freedesktop/freedesktop.js
 %%DATADIR%%/modules/ib/IBModule.qbs
+%%DATADIR%%/modules/ib/IBModuleBase.qbs
 %%DATADIR%%/modules/ib/ib.js
 %%DATADIR%%/modules/ico/IcoModule.qbs
 %%DATADIR%%/modules/ico/ico.js
