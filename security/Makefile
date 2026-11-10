@@ -1233,6 +1233,7 @@
     SUBDIR += rubygem-net-scp-gitlab
     SUBDIR += rubygem-net-scp1
     SUBDIR += rubygem-net-sftp
+    SUBDIR += rubygem-net-sftp-gitlab
     SUBDIR += rubygem-net-ssh
     SUBDIR += rubygem-net-ssh-gateway
     SUBDIR += rubygem-net-ssh-gitlab
