@@ -1,13 +1,7 @@
 PORTNAME=	jsonnet
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.21.0
+DISTVERSION=	0.22.0
 CATEGORIES=	devel
-# It is necessary to synchronize RY_VERSION with devel/rapidyaml port:
-RY_VERSION=	0.9.0
-RY_FILE=	rapidyaml-${RY_VERSION}.hpp
-MASTER_SITES=	https://github.com/biojppm/rapidyaml/releases/download/v${RY_VERSION}/:rapidyaml
-DISTFILES+=	${RY_FILE}:rapidyaml
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	JSON data templating language
@@ -27,13 +21,11 @@ GH_ACCOUNT=	google
 
 USE_LDCONFIG=	yes
 
-CMAKE_ON=	BUILD_JSONNET BUILD_JSONNETFMT BUILD_STATIC_LIBS \
-		BUILD_SHARED_BINARIES USE_SYSTEM_JSON
-CMAKE_OFF=	BUILD_TESTS
+CMAKE_ON=	BUILD_JSONNET BUILD_JSONNETFMT BUILD_SHARED_BINARIES \
+		BUILD_SHARED_LIBS BUILD_STATIC_LIBS USE_SYSTEM_JSON \
+		USE_SYSTEM_RAPIDYAML
+CMAKE_OFF=	BUILD_MAN_PAGES BUILD_TESTS
 
 PLIST_SUB=	VERSION=${DISTVERSION}
-
-post-extract:
-	${CP} ${DISTDIR}/${RY_FILE} ${WRKSRC}/third_party/rapidyaml/ryml_all.hpp
 
 .include <bsd.port.mk>
