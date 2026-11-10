@@ -19,5 +19,5 @@ lib/cmake/ffs/ffs-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/ffs/ffs-targets.cmake
 lib/libffs.so
 lib/libffs.so.3
-lib/libffs.so.3.3.0
+lib/libffs.so.3.3.1
 libdata/pkgconfig/ffs.pc
