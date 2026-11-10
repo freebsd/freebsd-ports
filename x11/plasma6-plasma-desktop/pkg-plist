@@ -2016,6 +2016,7 @@ share/locale/hu/LC_MESSAGES/org.kde.plasma.emojier.mo
 share/locale/hu/LC_MESSAGES/plasma-desktop-sddm-theme.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_org.kde.panel.mo
+share/locale/hu/LC_MESSAGES/plasma_applet_org.kde.plasma.dwellclicker.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_org.kde.plasma.keyboardlayout.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_org.kde.plasma.kicker.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_org.kde.plasma.kickoff.mo
@@ -4206,7 +4207,9 @@ share/sddm/themes/breeze/KeyboardButton.qml
 share/sddm/themes/breeze/Login.qml
 share/sddm/themes/breeze/Main.qml
 share/sddm/themes/breeze/Messages.sh
+share/sddm/themes/breeze/QtVirtualKeyboard.qml
 share/sddm/themes/breeze/SessionButton.qml
+share/sddm/themes/breeze/VirtualKeyboard.qml
 share/sddm/themes/breeze/default-logo.svg
 share/sddm/themes/breeze/faces/.face.icon
 share/sddm/themes/breeze/metadata.desktop

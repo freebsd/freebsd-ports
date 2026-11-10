@@ -225,6 +225,10 @@ lib/libtaskmanager.so.%%KDE_PLASMA_VERSION%%
 %%QT_QMLDIR%%/org/kde/breeze/components/kde-qmlmodule.version
 %%QT_QMLDIR%%/org/kde/breeze/components/libcomponents.so
 %%QT_QMLDIR%%/org/kde/breeze/components/qmldir
+%%QT_QMLDIR%%/org/kde/kworkspace/kde-qmlmodule.version
+%%QT_QMLDIR%%/org/kde/kworkspace/kworkspace.qmltypes
+%%QT_QMLDIR%%/org/kde/kworkspace/libkworkspaceplugin.so
+%%QT_QMLDIR%%/org/kde/kworkspace/qmldir
 %%QT_QMLDIR%%/org/kde/notificationmanager/kde-qmlmodule.version
 %%QT_QMLDIR%%/org/kde/notificationmanager/libnotificationmanagerplugin.so
 %%QT_QMLDIR%%/org/kde/notificationmanager/notificationmanager.qmltypes
