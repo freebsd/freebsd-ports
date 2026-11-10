@@ -1,0 +1,10 @@
+Sources of the ip2location module for the NGINX ports.
+
+This port installs the sources only.  It does not build a loadable module by
+itself; www/nginx, www/nginx-devel and www/freenginx pick the sources up and
+build ngx_http_ip2location_module.so when their HTTP_IP2LOCATION option is
+enabled.
+
+The module looks up the client address in an IP2Location BIN database and
+exposes the result -- country, region, city, coordinates and more -- as nginx
+variables for use in configuration, logging and proxying.

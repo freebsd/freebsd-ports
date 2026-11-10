@@ -1,0 +1,14 @@
+[
+{ type: install
+  message: <<EOM
+This package contains the sources of the ip2location module only.  It does
+not install a loadable module.
+
+The module itself is built by the nginx ports.  To use ip2location, build
+www/nginx, www/nginx-devel or www/freenginx with the HTTP_IP2LOCATION option
+enabled.  Those ports pick the sources up from
+%%PREFIX%%/share/nginx/modules/nginx-module-ip2location and produce
+ngx_http_ip2location_module.so.
+EOM
+}
+]

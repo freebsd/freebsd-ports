@@ -564,6 +564,7 @@
     SUBDIR += nginx-module-headers-more
     SUBDIR += nginx-module-iconv
     SUBDIR += nginx-module-ip-anon
+    SUBDIR += nginx-module-ip2location
     SUBDIR += nginx-module-json-status
     SUBDIR += nginx-module-let
     SUBDIR += nginx-module-link
