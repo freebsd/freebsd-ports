@@ -1,6 +1,5 @@
 PORTNAME=	litellm
-DISTVERSION=	1.106.2
-PORTREVISION=	1
+DISTVERSION=	1.108.4
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fastuuid>=0.14.0<1.0:devel/py-fastuuid@${PY_
 		${PYTHON_PKGNAMEPREFIX}python-dotenv>=1.0.0<2.0:www/py-python-dotenv@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=6.0.3<7.0:devel/py-pyyaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=24.0:devel/py-packaging@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}importlib-metadata9>=8.0.0<10.0:devel/py-importlib-metadata9@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}importlib-metadata>=8.0.0<11.0:devel/py-importlib-metadata@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tiktoken>=0.8.0<1.0:textproc/py-tiktoken@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tokenizers>=0.21.0<1.0:textproc/py-tokenizers@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}huggingface-hub>=0.34.0<3.0:misc/py-huggingface-hub@${PY_FLAVOR} \
@@ -32,7 +31,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fastuuid>=0.14.0<1.0:devel/py-fastuuid@${PY_
 		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.11.0<3.0.0:devel/py-pydantic2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic-settings>=2.14.1<3.0:devel/py-pydantic-settings@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonschema>=4.0.0<5.0:devel/py-jsonschema@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}boto3>=1.43.1<2.0:www/py-boto3@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}boto3>=1.43.117<2.0:www/py-boto3@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}certifi>=2026.10.19:security/py-certifi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.13.0<5.0:devel/py-typing-extensions@${PY_FLAVOR}
 
 USES=		cargo python shebangfix
@@ -78,9 +78,9 @@ PROXY_RUN_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}websockets>=15.0.1<18.0:devel/py-websockets@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-identity>=1.25.2<2.0:devel/py-azure-identity@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-storage-blob>=12.28.0<13.0:devel/py-azure-storage-blob@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}mcp>=2.2.0<3.0:misc/py-mcp@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}httpx2>=2.5.0<3:www/py-httpx2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}litellm-proxy-extras>=0.4.108:misc/py-litellm-proxy-extras@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mcp>=2.3.0<3.0:misc/py-mcp@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}httpx2>=2.10.0<3:www/py-httpx2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}litellm-proxy-extras>=0.4.110:misc/py-litellm-proxy-extras@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rich>=13.9.4<16.0:textproc/py-rich@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tomlkit>=0.13.3<1.0:textproc/py-tomlkit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}polars>=1.38.1<3.0:misc/py-polars@${PY_FLAVOR} \
@@ -95,6 +95,7 @@ PROXY_RUN_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}google-cloud-iam>=2.19.1<3.0:devel/py-google-cloud-iam@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}resend>=2.23.0<3.0:mail/py-resend@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}redisvl>=0.4.1<1.0:databases/py-redisvl@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}a2a-sdk>=1.1.0<2.0:misc/py-a2a-sdk@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}email-validator>0:mail/py-email-validator@${PY_FLAVOR}
 PROXY_USE=	python=cryptography
 
