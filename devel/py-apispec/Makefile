@@ -1,10 +1,10 @@
 PORTNAME=	apispec
-DISTVERSION=	6.10.0
+DISTVERSION=	6.10.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	meka@tilda.center
+MAINTAINER=	meka@sys.it.com
 COMMENT=	Pluggable API specification generator
 WWW=		https://github.com/marshmallow-code/apispec
 
