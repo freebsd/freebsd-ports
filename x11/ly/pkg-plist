@@ -22,9 +22,11 @@ bin/ly_wrapper
 %%ETCDIR%%/lang/ro.ini
 %%ETCDIR%%/lang/ru.ini
 %%ETCDIR%%/lang/sr.ini
+%%ETCDIR%%/lang/sr_Cyrl.ini
 %%ETCDIR%%/lang/sv.ini
 %%ETCDIR%%/lang/tr.ini
 %%ETCDIR%%/lang/uk.ini
 %%ETCDIR%%/lang/zh_CN.ini
+%%ETCDIR%%/lang/zh_TW.ini
 etc/pam.d/ly
 etc/pam.d/ly-autologin
