@@ -1,0 +1,19 @@
+-- skip dnf_keyring_add_public_key tests: they abort with "Failed to parse an OpenPGP signature" (rpm4 OpenPGP
+-- parsing), which kills the whole test_libdnf_main, see https://github.com/rpm-software-management/libdnf/issues/1581
+
+--- tests/libdnf/CMakeLists.txt.orig	2026-09-16 19:04:24 UTC
++++ tests/libdnf/CMakeLists.txt
+@@ -14,7 +14,12 @@ target_link_libraries(test_libdnf_main
+     ${RPMDB_LIBRARY}
+ )
+ 
+-add_test(test_libdnf_main test_libdnf_main)
++add_test(NAME test_libdnf_main COMMAND test_libdnf_main
++    -s "/libdnf/dnf_keyring_add_public_key[valid]"
++    -s "/libdnf/dnf_keyring_add_public_key[invalid]"
++    -s "/libdnf/dnf_keyring_add_public_key[two-packets]"
++    -s "/libdnf/dnf_keyring_add_public_key[two-blocks]"
++    -s "/libdnf/dnf_keyring_add_public_key[valid-and-invalid-blocks]")
+ 
+ # ASAN_OPTIONS fix the "ASan runtime does not come first in initial library
+ # list" message. Note the better solution should be to use LD_PRELOAD=`ls
