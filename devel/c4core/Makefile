@@ -1,6 +1,6 @@
 PORTNAME=	c4core
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.6
+DISTVERSION=	0.2.7
 CATEGORIES=	devel
 
 MAINTAINER=	gasol.wu@gmail.com
@@ -18,7 +18,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	biojppm
 GH_PROJECT=	cmake:cmake debugbreak:debugbreak fast_float:fast_float
 GH_SUBDIR=	cmake:cmake src/c4/ext/debugbreak:debugbreak src/c4/ext/fast_float:fast_float
-GH_TAGNAME=	e87e11f:cmake 328e4ab:debugbreak d28a332:fast_float
+GH_TAGNAME=	469017f:cmake 328e4ab:debugbreak d28a332:fast_float
 
 USE_LDCONFIG=	yes
 
