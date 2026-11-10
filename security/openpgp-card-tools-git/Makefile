@@ -1,6 +1,6 @@
 PORTNAME=	openpgp-card-tools-git
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.8
+DISTVERSION=	0.1.9
 CATEGORIES=	security
 
 MAINTAINER=	christian@hofstede.de
@@ -14,6 +14,7 @@ LICENSE_FILE_MIT=	${WRKSRC}/LICENSES/MIT.txt
 
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libpcsclite.so:devel/pcsc-lite
+RUN_DEPENDS=	git:devel/git
 
 USES=		cargo pkgconfig sqlite
 USE_FORGEJO=	yes
