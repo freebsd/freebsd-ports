@@ -1,6 +1,6 @@
 PORTNAME=	qTox
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.18.5
+DISTVERSION=	1.18.6
 CATEGORIES=	net-im net-p2p
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,7 +25,7 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libv4l2.so:multimedia/libv4l \
 		libvpx.so:multimedia/libvpx
 
-USES=		cmake compiler:c++11-lib desktop-file-utils gettext gl openal:soft pkgconfig qt:6
+USES=		cmake:testing compiler:c++11-lib desktop-file-utils gettext gl openal:soft pkgconfig qt:6
 USE_GL=		opengl
 USE_QT=		base sqldriver-sqlite:run svg
 
@@ -34,6 +34,7 @@ GH_ACCOUNT=	TokTok
 
 CMAKE_ARGS=	-DGIT_DESCRIBE:STRING=${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 CMAKE_OFF=	USE_CCACHE STRICT_OPTIONS
+TEST_ENV=	QT_QPA_PLATFORM=offscreen
 
 OPTIONS_DEFINE=			FILTERAUDIO PLATFORM_EXTENSIONS SPELL_CHECK APPINDICATOR GTK_SYSTRAY STATUSNOTIFIER
 OPTIONS_DEFAULT=		FILTERAUDIO PLATFORM_EXTENSIONS SPELL_CHECK GTK_SYSTRAY STATUSNOTIFIER # removing GTK_SYSTRAY, STATUSNOTIFIER doesn't reduce dependencies
@@ -52,6 +53,7 @@ SPELL_CHECK_USES=	kde:6
 SPELL_CHECK_USE=	KDE=sonnet
 SPELL_CHECK_CMAKE_BOOL=	SPELL_CHECK
 
+APPINDICATOR_DESC=		Enable AppIndicator support
 APPINDICATOR_CMAKE_BOOL=	ENABLE_APPINDICATOR
 APPINDICATOR_BROKEN=	can not find appindicator-0.1
 
@@ -90,5 +92,7 @@ pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "Warning: qTox won't build if the option NaCl was selected for Tox!"
 	@${ECHO_MSG}
+
+# tests as of 1.18.6: 100% tests passed, 0 tests failed out of 38
 
 .include <bsd.port.post.mk>
