@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2026-06-28 13:38:25 UTC
+--- CMakeLists.txt.orig	2026-09-28 05:13:26 UTC
 +++ CMakeLists.txt
-@@ -352,7 +352,7 @@ if (NOT CLAD_BUILD_STATIC_ONLY)
+@@ -471,7 +471,7 @@ if (NOT CLAD_BUILD_STATIC_ONLY)
      endforeach()
    endif()
  
