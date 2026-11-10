@@ -1,5 +1,5 @@
 PORTNAME=	filelock
-DISTVERSION=	4.2.4
+DISTVERSION=	4.2.10
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,7 +11,9 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=1.29:devel/py-hatchling@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}hatch-vcs>=0.5:devel/py-hatch-vcs@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}hatch-fancy-pypi-readme>=25.1:devel/py-hatch-fancy-pypi-readme@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}hatch-vcs>=0.5:devel/py-hatch-vcs@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}python-sbom>=0.1.2:devel/py-python-sbom@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}covdefaults>=2.3:devel/py-covdefaults@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}diff-cover>=10.2:devel/py-diff-cover@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-asyncio>=1.3:devel/py-pytest-asyncio@${PY_FLAVOR} \
@@ -28,6 +30,7 @@ GH_ACCOUNT=	tox-dev
 GH_PROJECT=	filelock
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_WRKSRC=	${WRKSRC}/tests
 TEST_ARGS=	--disable-plugin-autoload \
 		-p pytest_asyncio.plugin \
 		-p pytest_cov \
@@ -43,7 +46,8 @@ NO_ARCH=	yes
 MAKE_ENV+=	SETUPTOOLS_SCM_PRETEND_VERSION=${DISTVERSION}
 
 # 111 tests fail w/out being disabled, see https://github.com/tox-dev/filelock/issues/864
-PYTEST_BROKEN_TESTS=	test_async_expired_lock_is_broken \
+PYTEST_BROKEN_TESTS=	test_soft_windows_unlink_gives_up_after_every_attempt_is_denied \
+			test_async_expired_lock_is_broken \
 			test_async_reads_giving_up_behind_a_writer_leave_nothing_behind \
 			test_break_lock_file_break_name_is_unguessable \
 			test_break_lock_file_unlinks_a_dead_holders_marker \
@@ -105,6 +109,6 @@ PYTEST_BROKEN_TESTS=	test_async_expired_lock_is_broken \
 			test_stale_take_over_keeps_the_lock_when_a_rename_replaces_its_marker \
 			test_unparseable_lock_evicted_when_old
 
-# tests as of 4.2.2: 2661 passed, 173 skipped, 108 deselected in 555.29s
+# tests as of 4.2.10: 2710 passed, 206 skipped, 117 deselected in 219.85s
 
 .include <bsd.port.mk>
