@@ -7,7 +7,7 @@
 #include <sstream>
 #include <string>
 
-#include "third_party/absl/status/status.h"
+#include "absl/status/status.h"
 
 namespace absl {
 
