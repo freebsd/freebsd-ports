@@ -1,4 +1,4 @@
-TIMESTAMP = 1793074360
+TIMESTAMP = 1794315875
 SHA256 (rust/crates/ab_glyph-0.2.32.crate) = 01c0457472c38ea5bd1c3b5ada5e368271cb550be7a4ca4a0b4634e9913f6cc2
 SIZE (rust/crates/ab_glyph-0.2.32.crate) = 20967
 SHA256 (rust/crates/ab_glyph_rasterizer-0.1.10.crate) = 366ffbaa4442f4684d91e2cd7c5ea7c4ed8add41959a31447066e279e432b618
@@ -2147,5 +2147,5 @@ SHA256 (xMAC94x-portpicker-rs-e04e3a61d6c1645c865b36c57877f1f8e48e0cb7_GH0.tar.g
 SIZE (xMAC94x-portpicker-rs-e04e3a61d6c1645c865b36c57877f1f8e48e0cb7_GH0.tar.gz) = 2210
 SHA256 (veloren-conrod-c74446362371dc837b8b4b6d6ddcd7693b48d9b6_GL0.tar.gz) = 43f0faa196eb33341c8e9952da17876649dd3aade44fd357a3a098eaaeb78e9d
 SIZE (veloren-conrod-c74446362371dc837b8b4b6d6ddcd7693b48d9b6_GL0.tar.gz) = 808402
-SHA256 (veloren-v0.18.0-679-gda6626e6ed.tar.bz2) = de7cbbd2397f283586fa0a4d821df8482a56f934470daf3a59df59c19c2f3891
-SIZE (veloren-v0.18.0-679-gda6626e6ed.tar.bz2) = 352727336
+SHA256 (veloren-v0.18.0-683-g6c99b292e0.tar.bz2) = 518ea4e790857fc728ec226edf769ee2061620fd775543c71ddd188f50d4e5ae
+SIZE (veloren-v0.18.0-683-g6c99b292e0.tar.bz2) = 394667569
