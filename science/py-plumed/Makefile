@@ -21,5 +21,13 @@ USE_PYTHON=	pep517 autoplist pytest
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} \
 		PLUMED_KERNEL=${LOCALBASE}/lib/libplumedKernel.so
+# test data files (HILLS_av*, COLVAR*, traj.xyz) are missing from the sdist, test_mpi requires plumed built with MPI
+TEST_ARGS=	--disable-plugin-autoload \
+		--ignore=test/test_hills_average.py \
+		--ignore=test/test_mpi.py \
+		--ignore=test/test_pandas.py \
+		--deselect=test/test_run.py::Test::test
+
+# tests as of 2.10.0: 27 passed, 1 deselected
 
 .include <bsd.port.mk>
