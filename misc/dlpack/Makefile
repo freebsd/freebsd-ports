@@ -1,6 +1,6 @@
 PORTNAME=	dlpack
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3
+DISTVERSION=	1.4
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
