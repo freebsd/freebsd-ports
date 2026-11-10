@@ -1,6 +1,5 @@
 PORTNAME=	Furl
-PORTVERSION=	3.14
-PORTREVISION=	1
+PORTVERSION=	3.16
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TOKUHIROM
@@ -18,7 +17,15 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Class-Accessor-Lite>=0:devel/p5-Class-Accessor-Lite \
 		p5-HTTP-Parser-XS>=0.11:www/p5-HTTP-Parser-XS \
 		p5-Mozilla-CA>=0:www/p5-Mozilla-CA
-TEST_DEPENDS=	p5-Test-Requires>=0:devel/p5-Test-Requires \
+TEST_DEPENDS=	p5-HTTP-Body>=0:www/p5-HTTP-Body \
+		p5-HTTP-CookieJar>=0:www/p5-HTTP-CookieJar \
+		p5-HTTP-Proxy>=0:www/p5-HTTP-Proxy \
+		p5-IO-Callback>=0:devel/p5-IO-Callback \
+		p5-Plack-Middleware-Deflater>=0:www/p5-Plack-Middleware-Deflater \
+		p5-Plack>=0:www/p5-Plack \
+		p5-Starlet>=0:www/p5-Starlet \
+		p5-Test-Fake-HTTPD>=0:devel/p5-Test-Fake-HTTPD \
+		p5-Test-Requires>=0:devel/p5-Test-Requires \
 		p5-Test-TCP>=2.11:devel/p5-Test-TCP
 
 USES=		perl5
