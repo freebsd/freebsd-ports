@@ -1,5 +1,5 @@
 PORTNAME=	dmidiplayer
-DISTVERSION=	1.7.5
+DISTVERSION=	1.8.0
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/v${DISTVERSION}/
 
@@ -11,6 +11,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libdrumstick-widgets.so:audio/drumstick \
+		libkdsingleapplication-qt6.so:devel/kdsingleapplication \
 		libOpenGL.so:graphics/libglvnd \
 		libuchardet.so:textproc/uchardet
 
