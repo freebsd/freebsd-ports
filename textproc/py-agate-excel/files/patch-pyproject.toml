@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2026-11-10 20:57:02 UTC
++++ pyproject.toml
+@@ -42,7 +42,7 @@ test = [
+ ]
+ 
+ [tool.setuptools.packages.find]
+-exclude = ["tests", "tests.*"]
++exclude = ["tests", "tests.*", "docs", "docs.*", "examples", "examples.*"]
+ 
+ [tool.isort]
+ line_length = 119
