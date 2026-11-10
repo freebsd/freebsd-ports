@@ -744,7 +744,6 @@
     SUBDIR += magicrescue
     SUBDIR += magika
     SUBDIR += manck
-    SUBDIR += mapchan
     SUBDIR += mapdir
     SUBDIR += massadmin
     SUBDIR += mate-control-center
