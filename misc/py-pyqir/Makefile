@@ -1,7 +1,6 @@
 PORTNAME=	pyqir
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.12.6
-PORTREVISION=	1
+DISTVERSION=	0.12.8
 CATEGORIES=	misc python # quantum-computing
 #MASTER_SITES=	PYPI # no tarballs
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,6 +23,7 @@ WRKSRC_SUBSIR=	pyqir
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	qir-alliance
+GH_TAGNAME=	ae25adc1e72ff9eb44f49010bc49bf0749e36466 # not tagged, see https://github.com/qir-alliance/pyqir/issues/381
 
 CARGO_FEATURES=	llvm20-1
 CARGO_CRATES=	anyhow-1.0.98 \
@@ -65,6 +65,6 @@ do-install:
 	${INSTALL_LIB} ${WRKDIR}/target/release/libpyqir.so ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/_native.abi3.so
 	${INSTALL_DATA} ${WRKSRC}/pyqir/pyqir/*.py ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}
 
-# tests as of 0.12.6: test result: ok. 49 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+# tests as of 0.12.8: test result: ok. 49 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 
 .include <bsd.port.mk>
