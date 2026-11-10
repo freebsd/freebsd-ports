@@ -1,6 +1,6 @@
 PORTNAME=	atl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.2
+DISTVERSION=	2.4.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,12 +12,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		cmake shebangfix
+USES=		cmake:testing shebangfix
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	GTkorvo
 
 SHEBANG_FILES=	atl-config.in
+
+# tests as of 2.4.1: 100% tests passed, 0 tests failed out of 2
 
 .include <bsd.port.mk>
