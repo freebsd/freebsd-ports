@@ -1,3 +1,71 @@
+  <vuln vid="8dc02503-dd51-11f1-a654-f8b46a88f42c">
+    <topic>krb5 -- MIT krb5 Security Advisory 2026-001</topic>
+    <affects>
+      <package>
+	<name>krb5</name>
+	<range><lt>1.22.3</lt></range>
+      </package>
+      <package>
+	<name>krb5-122</name>
+	<range><lt>1.22.3</lt></range>
+      </package>
+      <package>
+	<name>krb5-devel</name>
+	<range><lt>2026-11-05</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The MIT KRB5 Project reports:</p>
+	<blockquote cite="https://web.mit.edu/kerberos/advisories/MITKRB5-SA-2026-001.txt">
+	  <p>An authenticated attacker can bypass authentication indicator
+	     enforcement by requesting a service ticket with fake CAMMAC
+	     authorization data.  Updating to the 1.22.3 release on the KDC
+	     is sufficient to prevent this attack.</p>
+	  <p>An authenticated attacker can bypass an application server's
+	     PAC authorization data checks by requesting a service ticket
+	     with a fake PAC.  Updating to the 1.22.3 release on either the
+	     KDC or the affected application server will prevent this
+	     attack.</p>
+	  <p>An authenticated attacker with administrative privileges can
+	     bypass the lockdown_keys attribute by using the password change
+	     protocol instead of the kadmin protocol to modify a principal's
+	     keys.</p>
+	  <p>The KDC, kadmind, and GSS-API application servers are all
+	     vulnerable to denial of service attacks by unauthenticated
+	     attackers.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-71199</cvename>
+      <cvename>CVE-2026-107884</cvename>
+      <cvename>CVE-2026-111423</cvename>
+      <cvename>CVE-2026-40355</cvename>
+      <cvename>CVE-2026-40356</cvename>
+      <cvename>CVE-2026-71200</cvename>
+      <cvename>CVE-2026-107364</cvename>
+      <cvename>CVE-2026-107708</cvename>
+      <cvename>CVE-2026-107778</cvename>
+      <cvename>CVE-2026-112314</cvename>
+      <cvename>CVE-2026-112315</cvename>
+      <cvename>CVE-2026-112316</cvename>
+      <cvename>CVE-2026-112317</cvename>
+      <cvename>CVE-2026-112318</cvename>
+      <cvename>CVE-2026-112319</cvename>
+      <cvename>CVE-2026-112320</cvename>
+      <cvename>CVE-2026-112321</cvename>
+      <cvename>CVE-2026-112322</cvename>
+      <cvename>CVE-2026-112323</cvename>
+      <cvename>CVE-2026-119079</cvename>
+      <url>https://web.mit.edu/kerberos/advisories/MITKRB5-SA-2026-001.txt</url>
+    </references>
+    <dates>
+      <discovery>2026-11-09</discovery>
+      <entry>2026-11-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a18ffa98-dd42-11f1-8816-a0369f7f7be0">
     <topic>chromium -- security fixes</topic>
     <affects>
