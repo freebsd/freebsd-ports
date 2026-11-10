@@ -1,6 +1,6 @@
 PORTNAME=	pytorch
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.13.0
+DISTVERSION=	2.15.0
 CATEGORIES=	misc # machine-learning
 MASTER_SITES=	https://github.com/pytorch/pytorch/releases/download/v${DISTVERSION}/
 DIST_SUBDIR=	${PORTNAME}
@@ -16,8 +16,11 @@ BROKEN_aarch64=	compilation fails: clang crashes, see https://bugs.freebsd.org/b
 BROKEN_i386=	compilation fails: error: use of undeclared identifier 'AVX2'
 
 BUILD_DEPENDS=	${LOCALBASE}/include/fxdiv.h:devel/fxdiv \
-		${PYTHON_PKGNAMEPREFIX}packaging>=0:devel/py-packaging@${PY_FLAVOR} \
-		${PY_SETUPTOOLS}
+		${PYTHON_PKGNAMEPREFIX}packaging>=24.2:devel/py-packaging@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyyaml>0:devel/py-pyyaml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}typing-extensions>0:devel/py-typing-extensions@${PY_FLAVOR} \
+		${PY_SETUPTOOLS} \
+		pybind11>0:devel/pybind11
 LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libblis.so:math/blis \
 		libfmt.so:devel/libfmt \
@@ -28,7 +31,7 @@ LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libprotobuf.so:devel/protobuf \
 		libsleef.so:math/sleef
 
-USES=		compiler:c++17-lang cmake:noninja gmake localbase:ldflags python # requires python even with PYTHON=off
+USES=		compiler:c++20-lang cmake:noninja gmake localbase:ldflags python # requires python even with PYTHON=off
 
 CMAKE_OFF=	BUILD_CUSTOM_PROTOBUF USE_CUDA USE_ROCM  USE_NNPACK USE_QNNPACK USE_PYTORCH_QNNPACK \
 		USE_FBGEMM # workaround recommended by the upstream here: https://github.com/pytorch/pytorch/issues/28337
@@ -45,19 +48,6 @@ LDFLAGS+=	-lexecinfo \
 		-pthread
 
 BINARY_ALIAS=	make=${GMAKE} git=true
-
-OPTIONS_DEFINE=		PYTHON # PYTHON only provides python support for the py-PyTorch port - it's not a python binding
-OPTIONS_DEFAULT=	PYTHON
-OPTIONS_SUB=		yes
-
-PYTHON_CMAKE_BOOL=	BUILD_PYTHON
-PYTHON_PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}typing-extensions>0:devel/py-typing-extensions@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}pyyaml>=0:devel/py-pyyaml@${PY_FLAVOR}
-PYTHON_BUILD_DEPENDS=	${PYTHON_PY_DEPENDS} \
-			${PY_SETUPTOOLS} \
-			pybind11>0:devel/pybind11
-PYTHON_RUN_DEPENDS=	${PYTHON_PY_DEPENDS}
 
 .include <bsd.port.pre.mk>
 
