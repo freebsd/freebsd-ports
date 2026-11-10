@@ -1,9 +1,22 @@
+-- Allow building with devel/py-setuptools 63.1.0
+-- Upstream requires setuptools>=77 and a PEP 639 license expression, which the ports tree version does not support
+
 --- pyproject.toml.orig	2026-01-19 23:00:00 UTC
 +++ pyproject.toml
-@@ -222,5 +222,5 @@ disable = [
+@@ -6,8 +6,7 @@
+ keywords = ["web", "testing",  "browsing", "automation"]
+ 
+ readme = "README.md"
+-license = "MIT"
+-license-files = ["LICENSE.txt"]
++license = { text = "MIT" }
+ 
+ authors = [
+   {name = "C. Titus Brown"},
+@@ -235,5 +234,5 @@
  ]
  
  [build-system]
--requires = ["setuptools >=69"]
+-requires = ["setuptools >=77"]
 +requires = ["setuptools"]
  build-backend = "setuptools.build_meta"

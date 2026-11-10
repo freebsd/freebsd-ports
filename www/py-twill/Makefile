@@ -1,5 +1,5 @@
 PORTNAME=	twill
-DISTVERSION=	3.3.1
+DISTVERSION=	3.4.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,17 +12,24 @@ WWW=		https://twill-tools.github.io/twill/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		python
-USE_PYTHON=	pep517 concurrent autoplist
-
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}httpx>=0.28.1:www/py-httpx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lxml>=6:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyparsing>=3.1:devel/py-pyparsing@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flask>=3.0:www/py-flask@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytidylib>=0.3:textproc/py-pytidylib@${PY_FLAVOR}
+
+USES=		python
+USE_PYTHON=	pep517 concurrent autoplist pytest
 
 NO_ARCH=	yes
 
 CONFLICTS_INSTALL=	tex-web2c # both install
+
+TEST_ARGS=	--disable-plugin-autoload
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+
+# tests as of 3.4.0: 230 passed, 1 xfailed in 6.91s
 
 .include <bsd.port.mk>
