@@ -2,7 +2,7 @@
 -- target for toolchain selection and default library configuration.
 -- Also disable the UBSan array-bounds/return hardening configs, which are not
 -- supported by the Clang used for this FreeBSD port and alter test semantics.
---- build/config/BUILDCONFIG.gn.orig	2026-09-24 10:29:01 UTC
+--- build/config/BUILDCONFIG.gn.orig	1970-01-01 00:00:00 UTC
 +++ build/config/BUILDCONFIG.gn
 @@ -222,7 +222,7 @@ if (host_toolchain == "") {
    # TODO(dpranke): Add some sort of assert here that verifies that
@@ -37,10 +37,10 @@
    "//build/config/compiler:runtime_library",
 -  "//build/config/compiler:sanitize_c_array_bounds",
 -  "//build/config/compiler:sanitize_return",
+   "//build/config/compiler:sanitize_unreachable",
    "//build/config/compiler:thin_archive",
    "//build/config/compiler:thinlto_optimize_default",
-   "//build/config/compiler:tot_warnings",
-@@ -391,6 +389,13 @@ default_compiler_configs = [
+@@ -393,6 +391,13 @@ default_compiler_configs = [
    "//build/config:feature_flags",
  ]
  
@@ -54,7 +54,7 @@
  if (is_win) {
    default_compiler_configs += [
      "//build/config/win:default_cfg_compiler",
-@@ -625,10 +630,6 @@ foreach(_target_type,
+@@ -631,10 +636,6 @@ foreach(_target_type,
          not_needed([ "strict_deps" ])
        }
  
@@ -65,7 +65,7 @@
        if (use_libcxx_modules) {
          # Add a dependency needed for Clang modules builds.
          deps += [ "//buildtools/third_party/libc++:all_modules" ]
-@@ -759,10 +760,6 @@ foreach(_target_type,
+@@ -765,10 +766,6 @@ foreach(_target_type,
          }
        } else {
          not_needed([ "strict_deps" ])

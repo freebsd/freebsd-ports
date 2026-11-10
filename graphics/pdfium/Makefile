@@ -1,6 +1,6 @@
 PORTNAME=	pdfium
-DISTVERSION=	8066
-PDFIUM_COMMIT=	fc46361ce75055cd549cb938fae5d6a3fe3a1a05
+DISTVERSION=	8152
+PDFIUM_COMMIT=	6688c576fd851f4159c6fae39396da50939de110
 CATEGORIES=	graphics
 # Additional DEPS tarballs required for a full FreeBSD build.
 # Hash of the test_fonts tarball in the chromium-fonts Google Storage bucket.
@@ -10,6 +10,7 @@ MASTER_SITES+=	https://pdfium.googlesource.com/pdfium/+archive/:pdfium_src \
 		https://chromium.googlesource.com/chromium/src/build/+archive/:build \
 		https://chromium.googlesource.com/chromium/src/buildtools/+archive/:buildtools \
 		https://pdfium.googlesource.com/pdfium_tests/+archive/:corpus \
+		https://chromium.googlesource.com/chromium/src/third_party/brotli/+archive/:brotli \
 		https://chromium.googlesource.com/chromium/src/third_party/abseil-cpp/+archive/:absl \
 		https://chromium.googlesource.com/external/github.com/llvm/llvm-project/clang/tools/clang-format/+archive/:clangfmt \
 		https://chromium.googlesource.com/chromium/tools/depot_tools/+archive/:depot \
@@ -27,6 +28,7 @@ MASTER_SITES+=	https://pdfium.googlesource.com/pdfium/+archive/:pdfium_src \
 		https://chromium.googlesource.com/external/github.com/llvm/llvm-project/libcxxabi/+archive/:libcxxabi \
 		https://chromium.googlesource.com/chromium/deps/libjpeg_turbo/+archive/:jpeg \
 		https://chromium.googlesource.com/chromium/src/third_party/libpng/+archive/:png \
+		https://chromium.googlesource.com/libyuv/libyuv/+archive/:libyuv \
 		https://chromium.googlesource.com/external/github.com/llvm/llvm-project/libc/+archive/:llvm_libc \
 		https://chromium.googlesource.com/chromium/src/third_party/markupsafe/+archive/:markupsafe \
 		https://chromium.googlesource.com/chromium/deps/nasm/+archive/:nasm \
@@ -40,39 +42,41 @@ MASTER_SITES+=	https://pdfium.googlesource.com/pdfium/+archive/:pdfium_src \
 		https://chromium.googlesource.com/chromium/src/tools/memory/+archive/:tools_mem \
 		https://chromium.googlesource.com/v8/v8/+archive/:v8
 DISTFILES+=	${PDFIUM_COMMIT}.tar.gz:pdfium_src \
-		89615a645f0220fb03875111c2d9ae4dea9887d8.tar.gz:pa \
-		2cd94c0abeada712aeea6906d99021913c9fc28d.tar.gz:build \
-		6f6a5dbf04b734214f3b1f386567d101ec9d607e.tar.gz:buildtools \
-		59ed3059c846ef5f92865d933fb705db55b1dc45.tar.gz:corpus \
-		435e7d977fb36fb47854a4c552c0706dad0bd7cf.tar.gz:absl \
-		70510081984cfcdb14a15b3e08dfe9776dc7ed37.tar.gz:clangfmt \
-		36a8df4ad006eaa0572fb446edb8145fe5403592.tar.gz:depot \
+		2b864a17731ee7ae5a994ea308178da1e444ba29.tar.gz:pa \
+		0c62137b8623a3fab2c6aa5d7c94f719b3aa31f6.tar.gz:build \
+		d0d4c192e3c718016b3a0c5d44ccec632bccfe96.tar.gz:buildtools \
+		f7a1d03ba45e874b7d3cdf722959a2b8ba4dbfa5.tar.gz:corpus \
+		803ac71664ad62af1de39ff55e63ebbe07006fc8.tar.gz:brotli \
+		56722f9eb6f40fb1a140caffd36e8f1f61b57aaf.tar.gz:absl \
+		9f796802e5d633c96dbe97e0b6683d5e62594f9f.tar.gz:clangfmt \
+		a03dfbf7f2d1cefa2795d81d59ca4f16c8616a8f.tar.gz:depot \
 		beeeef91cf6fef89a4d4ba5e95d47ca64ccb3a44.tar.gz:dragonbox \
-		34164f547b7df3f5d794ff67e9f885c36819ebfc.tar.gz:fastfloat \
+		42f254836ee416ffcf2f4e6576260003ac33d48c.tar.gz:fastfloat \
 		782eea126dc5c755827be751a099eb01826175cf.tar.gz:fp16 \
-		4800589f76dc62fbe523a74a59e0d4850a5dd7df.tar.gz:freetype \
-		4fe3307fb2d9f86d19777c7eb0e4809e9694dde7.tar.gz:gtest \
-		886fc1e645388080b72f6d9b06347533a0018045.tar.gz:harfbuzz \
+		25167984d2435930f9178e8d9d2ca3bdfa71a4e7.tar.gz:freetype \
+		0b656495436f57212be8700794a3d5fb14000c5f.tar.gz:gtest \
+		ff36703b95013ec1d437e6038e1aa7c881275f4e.tar.gz:harfbuzz \
 		2607d3b5b0113992fe84d3848859eae13b3b52c1.tar.gz:highway \
-		8cc91d9b6ab9991802fd208ee03a69714fd0251c.tar.gz:icu \
-		d15c278eed5d38d9acf2d8054cf37baba93cef8e.tar.gz:instlib \
-		c3027d884967773057bf74b957e3fea87e5df4d7.tar.gz:jinja2 \
-		97b436da4c33663581d394f4ee0a5977fc38c2f4.tar.gz:libcxx \
-		fc1897a2c12aa27e703c3ed48b62eba8abf4ce19.tar.gz:libcxxabi \
+		a0ea93436c528ca316a6e698e483e258839101a5.tar.gz:icu \
+		83128b60913a82a39d01055312687a27bb959b59.tar.gz:instlib \
+		fde3c16799bd5937e4f15aedc9037c89f96236b9.tar.gz:jinja2 \
+		9ba7713d3a0f1e179904c984bb626748b15e57d6.tar.gz:libcxx \
+		ce814c994055b107c631c310b1c668e3714c0704.tar.gz:libcxxabi \
 		640f254ad0fa03f6b1f29f89b7dd9366f2f6e533.tar.gz:jpeg \
 		0179a807421cf96731cdfa10008bba04fda243c1.tar.gz:png \
-		320824188c37e5c28738b9652a0ca8087c934bc9.tar.gz:llvm_libc \
+		1e2e3a35993609da1d89ac170b907719d555f4b3.tar.gz:libyuv \
+		d8f2045008e230f3c5f50095d918c11f1997e477.tar.gz:llvm_libc \
 		4256084ae14175d38a3ff7d739dca83ae49ccec6.tar.gz:markupsafe \
 		525a09a813be0f75b646ee93fc2a31c27b87d722.tar.gz:nasm \
 		f7356eed293f8208c40b3c1b344a50bd70971983.tar.gz:simdutf \
-		5549c93c9a1c66137ceed424f08c86ce9988290c.tar.gz:skia \
+		607de4b035dcf7fdbaafb66c6cc04f22009ff4d4.tar.gz:skia \
 		7f51783942943e965cd56facf786544ccfc07713.tar.gz:testfonts \
 		${_TEST_FONTS_HASH}:testfonts \
-		285e94b8fa95ad3b7d16b80798ec8dce6febb8c8.tar.gz:zlib \
-		450d823868eaee61e2b2cb986e19aec287f16d58.tar.gz:tools_clang \
-		e1878fbb1ff79de75d54b6b57caa19a92b90079b.tar.gz:codecov \
-		0732f7097d066a81e673f90862994f76886fc638.tar.gz:tools_mem \
-		df65d5c8f2932045c5af72cd7ecd0c8002fa631e.tar.gz:v8
+		9f9f52c60a14e8e772fb561029ae0a121fef7609.tar.gz:zlib \
+		7ea1bdeeaf498a513c77b66667e56f6f41f9f0b3.tar.gz:tools_clang \
+		084f00efb99dc9a1726ed68cc2e05d25bc52802b.tar.gz:codecov \
+		3d4610fc0dd49053c0395bc2825dfc6ac72ab64e.tar.gz:tools_mem \
+		bb54fc4e853a1ef1640b160e5e854d0a3b514e29.tar.gz:v8
 DIST_SUBDIR=	${PORTNAME}
 # Googlesource archives are not reproducible; normalize them right after fetching
 FETCH_CMD=	${SH} ${PORTSDIR}/Tools/scripts/fetch-normalize.sh
@@ -100,7 +104,7 @@ CLANG_VER=	${LLVM_DEFAULT}
 
 # Main pdfium source tarball is fetched directly from the upstream
 # googlesource mirror because the GitHub pdfium mirror does not carry
-# the chromium/8066 branch commit.
+# the chromium/8152 branch commit.
 
 GN_OUT=		out/Release
 GN_ARGS=	is_debug=false \
@@ -126,38 +130,40 @@ GN_ARGS=	is_debug=false \
 #GN_ARGS+=    concurrent_links=4
 #GN_ARGS+=    pkg_config_path="/usr/local/bin/pkg-config"
 
-_DEPS_DIRS=	base/allocator/partition_allocator:89615a645f0220fb03875111c2d9ae4dea9887d8 \
-		build:2cd94c0abeada712aeea6906d99021913c9fc28d \
-		buildtools:6f6a5dbf04b734214f3b1f386567d101ec9d607e \
-		testing/corpus:59ed3059c846ef5f92865d933fb705db55b1dc45 \
-		third_party/abseil-cpp:435e7d977fb36fb47854a4c552c0706dad0bd7cf \
-		third_party/clang-format/script:70510081984cfcdb14a15b3e08dfe9776dc7ed37 \
-		third_party/depot_tools:36a8df4ad006eaa0572fb446edb8145fe5403592 \
+_DEPS_DIRS=	base/allocator/partition_allocator:2b864a17731ee7ae5a994ea308178da1e444ba29 \
+		build:0c62137b8623a3fab2c6aa5d7c94f719b3aa31f6 \
+		buildtools:d0d4c192e3c718016b3a0c5d44ccec632bccfe96 \
+		testing/corpus:f7a1d03ba45e874b7d3cdf722959a2b8ba4dbfa5 \
+		third_party/brotli:803ac71664ad62af1de39ff55e63ebbe07006fc8 \
+		third_party/abseil-cpp:56722f9eb6f40fb1a140caffd36e8f1f61b57aaf \
+		third_party/clang-format/script:9f796802e5d633c96dbe97e0b6683d5e62594f9f \
+		third_party/depot_tools:a03dfbf7f2d1cefa2795d81d59ca4f16c8616a8f \
 		third_party/dragonbox/src:beeeef91cf6fef89a4d4ba5e95d47ca64ccb3a44 \
-		third_party/fast_float/src:34164f547b7df3f5d794ff67e9f885c36819ebfc \
+		third_party/fast_float/src:42f254836ee416ffcf2f4e6576260003ac33d48c \
 		third_party/fp16/src:782eea126dc5c755827be751a099eb01826175cf \
-		third_party/freetype/src:4800589f76dc62fbe523a74a59e0d4850a5dd7df \
-		third_party/googletest/src:4fe3307fb2d9f86d19777c7eb0e4809e9694dde7 \
-		third_party/harfbuzz/src:886fc1e645388080b72f6d9b06347533a0018045 \
+		third_party/freetype/src:25167984d2435930f9178e8d9d2ca3bdfa71a4e7 \
+		third_party/googletest/src:0b656495436f57212be8700794a3d5fb14000c5f \
+		third_party/harfbuzz/src:ff36703b95013ec1d437e6038e1aa7c881275f4e \
 		third_party/highway/src:2607d3b5b0113992fe84d3848859eae13b3b52c1 \
-		third_party/icu:8cc91d9b6ab9991802fd208ee03a69714fd0251c \
-		third_party/instrumented_libs:d15c278eed5d38d9acf2d8054cf37baba93cef8e \
-		third_party/jinja2:c3027d884967773057bf74b957e3fea87e5df4d7 \
-		third_party/libc++/src:97b436da4c33663581d394f4ee0a5977fc38c2f4 \
-		third_party/libc++abi/src:fc1897a2c12aa27e703c3ed48b62eba8abf4ce19 \
+		third_party/icu:a0ea93436c528ca316a6e698e483e258839101a5 \
+		third_party/instrumented_libs:83128b60913a82a39d01055312687a27bb959b59 \
+		third_party/jinja2:fde3c16799bd5937e4f15aedc9037c89f96236b9 \
+		third_party/libc++/src:9ba7713d3a0f1e179904c984bb626748b15e57d6 \
+		third_party/libc++abi/src:ce814c994055b107c631c310b1c668e3714c0704 \
 		third_party/libjpeg_turbo:640f254ad0fa03f6b1f29f89b7dd9366f2f6e533 \
 		third_party/libpng:0179a807421cf96731cdfa10008bba04fda243c1 \
-		third_party/llvm-libc/src:320824188c37e5c28738b9652a0ca8087c934bc9 \
+		third_party/libyuv:1e2e3a35993609da1d89ac170b907719d555f4b3 \
+		third_party/llvm-libc/src:d8f2045008e230f3c5f50095d918c11f1997e477 \
 		third_party/markupsafe:4256084ae14175d38a3ff7d739dca83ae49ccec6 \
 		third_party/nasm:525a09a813be0f75b646ee93fc2a31c27b87d722 \
 		third_party/simdutf:f7356eed293f8208c40b3c1b344a50bd70971983 \
-		third_party/skia:5549c93c9a1c66137ceed424f08c86ce9988290c \
+		third_party/skia:607de4b035dcf7fdbaafb66c6cc04f22009ff4d4 \
 		third_party/test_fonts:7f51783942943e965cd56facf786544ccfc07713 \
-		third_party/zlib:285e94b8fa95ad3b7d16b80798ec8dce6febb8c8 \
-		tools/clang:450d823868eaee61e2b2cb986e19aec287f16d58 \
-		tools/code_coverage:e1878fbb1ff79de75d54b6b57caa19a92b90079b \
-		tools/memory:0732f7097d066a81e673f90862994f76886fc638 \
-		v8:df65d5c8f2932045c5af72cd7ecd0c8002fa631e
+		third_party/zlib:9f9f52c60a14e8e772fb561029ae0a121fef7609 \
+		tools/clang:7ea1bdeeaf498a513c77b66667e56f6f41f9f0b3 \
+		tools/code_coverage:084f00efb99dc9a1726ed68cc2e05d25bc52802b \
+		tools/memory:3d4610fc0dd49053c0395bc2825dfc6ac72ab64e \
+		v8:bb54fc4e853a1ef1640b160e5e854d0a3b514e29
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
@@ -167,6 +173,7 @@ post-extract:
 	@${TAR} -xf ${DISTDIR}/${DIST_SUBDIR}/${dep:C/^.*://}.tar.gz -C ${WRKSRC}/${dep:C/:.*//}
 .endfor
 	@${TAR} -xf ${DISTDIR}/${DIST_SUBDIR}/${_TEST_FONTS_HASH} -C ${WRKSRC}/third_party/test_fonts
+	@${LN} -sf ${WRKSRC}/core/fxcrt/scoped_locale.h ${WRKSRC}/testing/scoped_locale.h
 	@${SED} -i '' -e 's|script_executable = "//third_party/cpython3/host/bin/python3"|script_executable = "python3"|' ${WRKSRC}/.gn
 	@${SED} -i '' -e '/^expand_directory_allowlist = build_dotfile_settings[.]expand_directory_allowlist$$/d' ${WRKSRC}/.gn
 	@${ECHO_CMD} '# Generated for FreeBSD port build' > ${WRKSRC}/build/config/gclient_args.gni
@@ -213,7 +220,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/public/*.h ${STAGEDIR}${PREFIX}/include/pdfium/
 	${INSTALL_DATA} ${WRKSRC}/public/cpp/*.h ${STAGEDIR}${PREFIX}/include/pdfium/cpp/
 
-_GTEST_FILTER=	-FPDFEditEmbedderTest.GetRenderedBitmapHandlesSMask:FPDFEditEmbedderTest.GetRenderedBitmapHandlesClipPath:FPDFEditEmbedderTest.GetRenderedBitmapForHelloWorldText:FPDFEditEmbedderTest.GetRenderedBitmapForRotatedText:FPDFEditEmbedderTest.GetRenderedBitmapForNewlyCreatedText:FPDFEditEmbedderTest.GetRenderedFillPattern:FPDFEditEmbedderTest.GetRenderedFillPatternUncolored:FPDFViewEmbedderTest.RenderAnnotsGrayScale
+_GTEST_FILTER=	-FPDFEditEmbedderTest.GetRenderedBitmapHandlesSMask:FPDFEditEmbedderTest.GetRenderedBitmapHandlesClipPath:FPDFEditEmbedderTest.GetRenderedBitmapForHelloWorldText:FPDFEditEmbedderTest.GetRenderedBitmapForRotatedText:FPDFEditEmbedderTest.GetRenderedBitmapForNewlyCreatedText:FPDFEditEmbedderTest.GetRenderedFillPattern:FPDFEditEmbedderTest.GetRenderedFillPatternUncolored:FPDFViewEmbedderTest.RenderAnnotsGrayScale:WideString.FormatString
 
 do-test:
 	@cd ${WRKSRC} && ${SETENV} ${TEST_ENV} \
@@ -221,6 +228,6 @@ do-test:
 	@cd ${WRKSRC}/${GN_OUT} && ${SETENV} ${TEST_ENV} ./pdfium_unittests --gtest_filter='${_GTEST_FILTER}'
 	@cd ${WRKSRC}/${GN_OUT} && ${SETENV} ${TEST_ENV} ./pdfium_embeddertests --gtest_filter='${_GTEST_FILTER}'
 
-# tests as of 8066: pdfium_unittests [  PASSED  ] 1099 tests.; pdfium_embeddertests [  PASSED  ] 871 tests.
+# tests as of 8152: pdfium_unittests [  PASSED  ] 1200 tests.; pdfium_embeddertests [  PASSED  ] 890 tests.
 
 .include <bsd.port.mk>

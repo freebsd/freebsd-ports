@@ -2,9 +2,9 @@
 -- The build treats FreeBSD as Linux (is_linux), but the MTE code needs Linux-only
 -- headers (asm/hwcap.h, sys/prctl.h) that do not exist on FreeBSD.
 
---- base/allocator/partition_allocator/partition_alloc.gni.orig	2026-09-24 10:00:00 UTC
+--- base/allocator/partition_allocator/partition_alloc.gni.orig	1970-01-01 00:00:00 UTC
 +++ base/allocator/partition_allocator/partition_alloc.gni
-@@ -111,7 +111,8 @@
+@@ -116,7 +116,8 @@ has_memory_tagging = current_cpu == "arm64" && is_clan
  use_large_empty_slot_span_ring = true
  
  has_memory_tagging = current_cpu == "arm64" && is_clang && !is_asan &&

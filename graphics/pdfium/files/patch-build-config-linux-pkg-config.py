@@ -1,11 +1,13 @@
---- build/config/linux/pkg-config.py.orig	2025-01-01 00:00:00 UTC
+-- Treat FreeBSD as a Linux-like target for pkg-config so system library
+-- .pc files are queried instead of returning empty results.
+--- build/config/linux/pkg-config.py.orig	1970-01-01 00:00:00 UTC
 +++ build/config/linux/pkg-config.py
-@@ -145,7 +145,7 @@
-     # If this is run on non-Linux platforms, just return nothing and indicate
-     # success. This allows us to "kind of emulate" a Linux build from other
-     # platforms.
+@@ -143,7 +143,7 @@ def main():
+     )
+     (options, args) = parser.parse_args()
+ 
 -    if "linux" not in sys.platform:
 +    if "linux" not in sys.platform and "freebsd" not in sys.platform:
-         if options.dridriverdir or options.libdir:
-             sys.stdout.write("")
-             return 0
+         if (
+             sys.platform == 'darwin'
+             and options.sysroot

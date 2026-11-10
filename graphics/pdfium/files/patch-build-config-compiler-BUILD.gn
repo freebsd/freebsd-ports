@@ -2,9 +2,9 @@
 -- values that are set but not consumed by this FreeBSD build.
 -- Also remove Clang flags that are not supported by the Clang version used for
 -- this FreeBSD port (-fdiagnostics-show-inlining-chain and -fno-lifetime-dse).
---- build/config/compiler/BUILD.gn.orig	2026-09-24 10:29:01 UTC
+--- build/config/compiler/BUILD.gn.orig	1970-01-01 00:00:00 UTC
 +++ build/config/compiler/BUILD.gn
-@@ -588,14 +588,6 @@ config("compiler") {
+@@ -594,14 +594,6 @@ config("compiler") {
    if (is_clang) {
      # Flags for diagnostics.
      cflags += [ "-fcolor-diagnostics" ]
@@ -19,7 +19,7 @@
      if (diagnostics_print_source_range_info && !is_win) {
        cflags += [ "-fdiagnostics-print-source-range-info" ]
      }
-@@ -626,13 +618,6 @@ config("compiler") {
+@@ -632,13 +624,6 @@ config("compiler") {
        ]
      }
  
@@ -33,7 +33,7 @@
      # TODO(hans): Remove this once Clang generates better optimized debug info
      # by default. https://crbug.com/765793
      cflags += [
-@@ -910,8 +895,6 @@ config("compiler") {
+@@ -918,8 +903,6 @@ config("compiler") {
    if (compiler_timing) {
      if (is_clang) {
        cflags += [ "-ftime-trace" ]
@@ -42,7 +42,7 @@
        if (use_lld && is_mac) {
          ldflags += [ "-Wl,--time-trace" ]
        }
-@@ -2868,10 +2851,6 @@ config("split_dwarf") {
+@@ -2944,10 +2927,6 @@ config("split_dwarf") {
    # thinlto requires -gsplit-dwarf in ldflags.
    if (use_thin_lto && !is_apple) {
      ldflags = split_dwarf_flags

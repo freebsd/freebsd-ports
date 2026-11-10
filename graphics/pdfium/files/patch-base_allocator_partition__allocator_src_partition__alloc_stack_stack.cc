@@ -1,6 +1,6 @@
 -- Use FreeBSD's pthread_np.h and pthread_attr_get_np() to obtain the current
 -- thread's stack attributes, since pthread_getattr_np() is glibc-specific.
---- base/allocator/partition_allocator/src/partition_alloc/stack/stack.cc.orig	2026-09-24 10:29:00 UTC
+--- base/allocator/partition_allocator/src/partition_alloc/stack/stack.cc.orig	1970-01-01 00:00:00 UTC
 +++ base/allocator/partition_allocator/src/partition_alloc/stack/stack.cc
 @@ -17,7 +17,10 @@
  #include <windows.h>
@@ -13,9 +13,9 @@
  
  #if PA_BUILDFLAG(PA_LIBC_GLIBC)
  extern "C" void* __libc_stack_end;
-@@ -55,7 +58,12 @@ void* GetStackTop() {
+@@ -55,7 +58,12 @@ uintptr_t GetStackTop() {
  
- void* GetStackTop() {
+ uintptr_t GetStackTop() {
    pthread_attr_t attr;
 +#if defined(__FreeBSD__)
 +  pthread_attr_init(&attr);
