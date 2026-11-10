@@ -1,6 +1,6 @@
 PORTNAME=	xtb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.7.1
+DISTVERSION=	6.8.0
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,6 +20,7 @@ USES=		cmake:testing fortran blaslapack:openblas
 BROKEN=		requires OpenMP support that is missing on this architecture
 .endif
 
+CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	WITH_TBLITE WITH_CPCMX
 
 USE_GITHUB=	yes
@@ -28,6 +29,9 @@ GH_ACCOUNT=	grimme-lab
 USE_LDCONFIG=	yes
 FFLAGS+=	-std=legacy
 
-# tests as of 6.7.1: 100% tests passed, 0 tests failed out of 34
+post-patch: # see https://github.com/toml-f/toml-f/issues/51
+	@${REINPLACE_CMD} -e 's|$${CMAKE_Fortran_COMPILER_ID}-$${CMAKE_Fortran_COMPILER_VERSION}||' ${WRKSRC}/CMakeLists.txt
+
+# tests as of 6.8.0: 100% tests passed, 0 tests failed out of 47
 
 .include <bsd.port.mk>
