@@ -2622,7 +2622,6 @@
     SUBDIR += p5-Devel-ebug
     SUBDIR += p5-Devel-ptkdb
     SUBDIR += p5-Device-Modbus
-    SUBDIR += p5-Device-USB
     SUBDIR += p5-Digest-TransformPath
     SUBDIR += p5-Dir-Project
     SUBDIR += p5-Dir-Self
