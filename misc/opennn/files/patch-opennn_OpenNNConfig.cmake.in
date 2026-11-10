@@ -1,0 +1,33 @@
+-- Use system zlib and libjpeg instead of bundled static copies (see patch-opennn_CMakeLists.txt)
+
+--- opennn/OpenNNConfig.cmake.in.orig
++++ opennn/OpenNNConfig.cmake.in
+@@ -4,26 +4,14 @@
+ 
+ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}")
+ 
+-# Resolve bundled paths before find_dependency(), which can change
+-# PACKAGE_PREFIX_DIR in consumers using older CMake versions.
+-if(NOT TARGET OpenNN::jpeg)
+-    set_and_check(_opennn_jpeg_library "@PACKAGE_CMAKE_INSTALL_LIBDIR@/@_opennn_jpeg_filename@")
+-    set_and_check(_opennn_jpeg_include "@PACKAGE_CMAKE_INSTALL_INCLUDEDIR@")
+-    add_library(OpenNN::jpeg STATIC IMPORTED)
+-    set_target_properties(OpenNN::jpeg PROPERTIES
+-        IMPORTED_LOCATION "${_opennn_jpeg_library}"
+-        INTERFACE_INCLUDE_DIRECTORIES "${_opennn_jpeg_include}")
+-    unset(_opennn_jpeg_library)
+-    unset(_opennn_jpeg_include)
+-endif()
+-
+ find_dependency(Eigen3 5.0)
+ 
+ if(@_opennn_needs_openmp@)
+     find_dependency(OpenMP COMPONENTS CXX)
+ endif()
+ 
+-find_dependency(ZLIB CONFIG COMPONENTS static)
++find_dependency(ZLIB)
++find_dependency(JPEG)
+ 
+ if(@TBB_FOUND@)
+     find_dependency(TBB)

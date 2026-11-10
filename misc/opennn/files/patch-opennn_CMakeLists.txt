@@ -1,18 +1,114 @@
---- opennn/CMakeLists.txt.orig	2026-04-08 05:34:55 UTC
+-- Use system zlib and libjpeg instead of downloading and statically building bundled copies
+-- Required for network-less builds and to avoid bundling third-party libraries
+
+--- opennn/CMakeLists.txt.orig
 +++ opennn/CMakeLists.txt
-@@ -5,7 +5,7 @@ file(GLOB_RECURSE HEADER_FILES CONFIGURE_DEPENDS "*.h"
- file(GLOB_RECURSE CPP_SOURCES CONFIGURE_DEPENDS "*.cpp")
- file(GLOB_RECURSE HEADER_FILES CONFIGURE_DEPENDS "*.h")
+@@ -238,80 +238,9 @@
  
--add_library(opennn STATIC ${CPP_SOURCES} ${HEADER_FILES})
-+add_library(opennn ${CPP_SOURCES} ${HEADER_FILES})
+ target_compile_features(opennn PUBLIC cxx_std_20)
  
- # Force linker to include all object files so that REGISTER() auto-registration
- # in anonymous namespaces is not stripped from the final binary.
-@@ -52,4 +52,4 @@ target_compile_options(opennn PRIVATE
- target_compile_options(opennn PRIVATE
-     $<$<CONFIG:DEBUG>:-O0 -g>
-     $<$<NOT:$<CONFIG:DEBUG>>:-O2>
--)
-\ No newline at end of file
-+)
+-set(ZLIB_BUILD_SHARED OFF CACHE BOOL "" FORCE)
+-set(ZLIB_BUILD_STATIC ON CACHE BOOL "" FORCE)
+-set(ZLIB_BUILD_TESTING OFF CACHE BOOL "" FORCE)
+-set(ZLIB_INSTALL ${OpenNN_INSTALL} CACHE BOOL "" FORCE)
+-FetchContent_Declare(
+-    opennn_zlib
+-    URL https://github.com/madler/zlib/releases/download/v1.3.2/zlib-1.3.2.tar.gz
+-        https://zlib.net/fossils/zlib-1.3.2.tar.gz
+-    URL_HASH SHA256=bb329a0a2cd0274d05519d61c667c062e06990d72e125ee2dfa8de64f0119d16
+-    DOWNLOAD_EXTRACT_TIMESTAMP TRUE)
+-FetchContent_MakeAvailable(opennn_zlib)
+-target_link_libraries(opennn PUBLIC
+-    $<BUILD_INTERFACE:ZLIB::ZLIBSTATIC>
+-    $<INSTALL_INTERFACE:ZLIB::ZLIBSTATIC>)
+-
+-include(ExternalProject)
+-set(_opennn_jpeg_install_dir
+-    ${CMAKE_BINARY_DIR}/_deps/opennn_libjpeg_turbo-install)
+-set(_opennn_jpeg_include_dir
+-    ${_opennn_jpeg_install_dir}/${CMAKE_INSTALL_INCLUDEDIR})
+-set(_opennn_jpeg_lib_dir
+-    ${_opennn_jpeg_install_dir}/${CMAKE_INSTALL_LIBDIR})
+-if(MSVC OR (WIN32 AND CMAKE_CXX_SIMULATE_ID STREQUAL "MSVC"))
+-    set(_opennn_jpeg_library ${_opennn_jpeg_lib_dir}/jpeg-static.lib)
+-else()
+-    set(_opennn_jpeg_library
+-        ${_opennn_jpeg_lib_dir}/${CMAKE_STATIC_LIBRARY_PREFIX}jpeg${CMAKE_STATIC_LIBRARY_SUFFIX})
+-endif()
+-file(MAKE_DIRECTORY ${_opennn_jpeg_include_dir} ${_opennn_jpeg_lib_dir})
+-
+-set(_opennn_jpeg_cmake_args
+-    -DCMAKE_BUILD_TYPE:STRING=${CMAKE_BUILD_TYPE}
+-    -DCMAKE_INSTALL_PREFIX=<INSTALL_DIR>
+-    -DCMAKE_INSTALL_INCLUDEDIR=${CMAKE_INSTALL_INCLUDEDIR}
+-    -DCMAKE_INSTALL_LIBDIR=${CMAKE_INSTALL_LIBDIR}
+-    -DENABLE_SHARED=OFF
+-    -DENABLE_STATIC=ON
+-    -DWITH_JAVA=OFF
+-    -DWITH_SIMD=OFF
+-    -DWITH_TESTS=OFF
+-    -DWITH_TOOLS=OFF
+-    -DWITH_TURBOJPEG=OFF)
+-if(MSVC)
+-    list(APPEND _opennn_jpeg_cmake_args -DWITH_CRT_DLL=ON)
+-    if(DEFINED CMAKE_MSVC_RUNTIME_LIBRARY)
+-        list(APPEND _opennn_jpeg_cmake_args
+-            "-DCMAKE_MSVC_RUNTIME_LIBRARY:STRING=${CMAKE_MSVC_RUNTIME_LIBRARY}")
+-    endif()
+-endif()
+-if(OpenNN_BUILD_SHARED)
+-    list(APPEND _opennn_jpeg_cmake_args -DCMAKE_POSITION_INDEPENDENT_CODE=ON)
+-endif()
+-
+-ExternalProject_Add(
+-    opennn_libjpeg_turbo_ep
+-    URL https://github.com/libjpeg-turbo/libjpeg-turbo/archive/refs/tags/3.1.4.tar.gz
+-    URL_HASH SHA256=3a581ad5a3060cee69487aae0bc71a1f3be94b89f92215e32b43742ec4a5055c
+-    DOWNLOAD_EXTRACT_TIMESTAMP TRUE
+-    INSTALL_DIR ${_opennn_jpeg_install_dir}
+-    CMAKE_ARGS ${_opennn_jpeg_cmake_args}
+-    BUILD_COMMAND ${CMAKE_COMMAND} --build <BINARY_DIR> --config $<CONFIG>
+-    INSTALL_COMMAND
+-        ${CMAKE_COMMAND} --install <BINARY_DIR> --config $<CONFIG> --component include
+-        COMMAND ${CMAKE_COMMAND} --install <BINARY_DIR> --config $<CONFIG> --component lib
+-    BUILD_BYPRODUCTS ${_opennn_jpeg_library})
+-add_library(opennn_jpeg STATIC IMPORTED GLOBAL)
+-add_dependencies(opennn_jpeg opennn_libjpeg_turbo_ep)
+-set_target_properties(opennn_jpeg PROPERTIES
+-    IMPORTED_LOCATION ${_opennn_jpeg_library}
+-    INTERFACE_INCLUDE_DIRECTORIES ${_opennn_jpeg_include_dir})
+-add_dependencies(opennn opennn_libjpeg_turbo_ep)
+-target_link_libraries(opennn PUBLIC
+-    $<BUILD_INTERFACE:opennn_jpeg>
+-    $<INSTALL_INTERFACE:OpenNN::jpeg>)
++find_package(ZLIB REQUIRED)
++find_package(JPEG REQUIRED)
++target_link_libraries(opennn PUBLIC ZLIB::ZLIB JPEG::JPEG)
+ 
+ target_include_directories(opennn PUBLIC
+     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/..>
+@@ -595,9 +524,6 @@
+         ${PROJECT_SOURCE_DIR}/THIRD_PARTY_NOTICES.txt
+         ${PROJECT_SOURCE_DIR}/README.md
+         DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/doc/OpenNN)
+-    ExternalProject_Get_Property(opennn_libjpeg_turbo_ep SOURCE_DIR)
+-    install(FILES ${SOURCE_DIR}/LICENSE.md ${SOURCE_DIR}/README.ijg
+-        DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/doc/OpenNN/libjpeg-turbo)
+     if(eigen_SOURCE_DIR)
+         install(FILES
+             ${eigen_SOURCE_DIR}/COPYING.MPL2
+@@ -641,14 +567,6 @@
+         PATTERN "*-DESKTOP-*.h" EXCLUDE
+         PATTERN "flash_attention_shim" EXCLUDE)
+ 
+-    install(DIRECTORY ${_opennn_jpeg_install_dir}/${CMAKE_INSTALL_INCLUDEDIR}/
+-        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+-    # Upstream JPEG exports contain absolute build-machine paths. Ship the
+-    # archive with our own relocatable imported target instead of those exports.
+-    install(FILES ${_opennn_jpeg_library}
+-        DESTINATION ${CMAKE_INSTALL_LIBDIR})
+-    get_filename_component(_opennn_jpeg_filename "${_opennn_jpeg_library}" NAME)
+-
+     install(EXPORT OpenNNTargets
+         FILE OpenNNTargets.cmake
+         NAMESPACE OpenNN::
