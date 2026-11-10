@@ -1,6 +1,6 @@
 PORTNAME=	openpgp-card-ssh-agent
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.7
+DISTVERSION=	0.3.8
 CATEGORIES=	security
 
 MAINTAINER=	christian@hofstede.de
@@ -14,11 +14,13 @@ LICENSE_FILE_MIT=	${WRKSRC}/LICENSES/MIT.txt
 
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libpcsclite.so:devel/pcsc-lite
+RUN_DEPENDS=	git:devel/git
 
 USES=		cargo pkgconfig
 USE_FORGEJO=	yes
 FJ_ACCOUNT=	openpgp-card
 FJ_PROJECT=	ssh-agent
+FJ_TAGNAME=	e92466566a407fc4f21ee9754d55cc72ac92434b
 
 PLIST_FILES=	bin/openpgp-card-ssh-agent
 
