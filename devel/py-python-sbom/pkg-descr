@@ -1,0 +1,8 @@
+python-sbom writes standardized CycloneDX Software Bill of Materials (SBOMs)
+into Python wheel distributions, adhering to the PEP 770 specification.
+
+The package integrates with Python build backends (such as Hatch, PDM, and
+Setuptools) to record the project, its runtime dependencies, bundled wheels,
+and the build toolchain. It ensures byte-for-byte reproducibility across builds
+and provides utilities to manually embed or validate SBOMs within continuous
+integration pipelines.

@@ -1,0 +1,43 @@
+-- Lower the setuptools and pytest-mock version requirements to match the
+-- versions available in the FreeBSD devel/py-setuptools and
+-- devel/py-pytest-mock ports.
+--- pyproject.toml.orig	2026-11-10 00:29:49 UTC
++++ pyproject.toml
+@@ -66,7 +66,7 @@ optional-dependencies.setuptools = [
+   "pdm-backend>=2.4",
+ ]
+ optional-dependencies.setuptools = [
+-  "setuptools>=77",
++  "setuptools>=63.1.0",
+ ]
+ optional-dependencies.validate = [
+   "jsonschema-rs>=0.60.3",
+@@ -101,8 +101,8 @@ test = [
+   "pdm-backend>=2.4",
+   "pytest>=9.1.1",
+   "pytest-cov>=7.1",
+-  "pytest-mock>=3.16",
+-  "setuptools>=77",
++  "pytest-mock>=3.15.1",
++  "setuptools>=63.1.0",
+   "spdx-tools>=0.8.5",
+ ]
+ type = [
+@@ -115,7 +115,7 @@ docs = [
+   "furo>=2025.12.19",
+   "hatchling>=1.28",
+   "pdm-backend>=2.4",
+-  "setuptools>=77",
++  "setuptools>=63.1.0",
+   "sphinx>=9.0.4",
+   "sphinx-argparse-cli>=1.23",
+   "sphinx-autodoc-typehints>=3.17",
+@@ -174,7 +174,7 @@ scikit-build-core = [ { include-group = "example" }, "
+   "towncrier>=26.9",
+ ]
+ scikit-build-core = [ { include-group = "example" }, "cmake>=4.4.4", "ninja>=1.13.2", "scikit-build-core>=1.1" ]
+-setuptools = [ { include-group = "example" }, "setuptools>=77" ]
++setuptools = [ { include-group = "example" }, "setuptools>=63.1.0" ]
+ uv-build = [ { include-group = "example" }, "uv-build>=0.13.6" ]
+ zipapp = [ { include-group = "example" }, "hatchling>=1.28" ]
+ 

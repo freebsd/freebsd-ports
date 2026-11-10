@@ -1,0 +1,17 @@
+--- docs/examples/setuptools/pyproject.toml.orig	2026-11-10 10:17:53 UTC
++++ docs/examples/setuptools/pyproject.toml
+@@ -1,12 +1,12 @@ build-backend = "setuptools.build_meta"
+ [build-system]
+ build-backend = "setuptools.build_meta"
+-requires = [ "python-sbom[setuptools]>=0.3", "setuptools>=77" ]
++requires = [ "python-sbom[setuptools]>=0.3", "setuptools>=63.1.0" ]
+ 
+ [project]
+ name = "greet"
+ version = "1.0"
+ description = "says hello"
+-license = "MIT"
++license = {text = "MIT"}
+ requires-python = ">=3.11"
+ classifiers = [
+   "Programming Language :: Python :: 3 :: Only",
