@@ -1,6 +1,6 @@
---- src/xilinx.cpp.orig	2026-03-01 10:27:31 UTC
+--- src/xilinx.cpp.orig	2026-10-18 09:11:29 UTC
 +++ src/xilinx.cpp
-@@ -540,6 +540,10 @@ bool Xilinx::zynqmp_init(const std::string &family)
+@@ -598,6 +598,10 @@ bool Xilinx::zynqmp_init(const std::string &family)
  	return true;
  }
  
