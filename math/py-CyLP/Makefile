@@ -1,6 +1,6 @@
 PORTNAME=	CyLP
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.94.0
+DISTVERSION=	0.94.1
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}hypothesis>0:devel/py-hypothesis@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=2.0.0:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 LIB_DEPENDS=	libblas.so:math/blas \
 		libCbc.so:math/cbc \
@@ -25,7 +25,7 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		libCoinUtils.so:math/coinutils \
 		liblapack.so:math/lapack \
 		libOsi.so:math/osi
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.26.0:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=0.10.0:science/py-scipy@${PY_FLAVOR}
 
 USES=		compiler:c++11-lang python
@@ -42,10 +42,10 @@ do-test:
 	# deselect tests:
 	# * test_PySolve.py: it SEGVs, see https://github.com/coin-or/CyLP/issues/232
 	# * test_removeVar2: it fails with Python error, see https://github.com/coin-or/CyLP/issues/231
-	@cd ${WRKDIR} && ${SETENV} ${TEST_ENV} pytest -rs --pyargs cylp \
+	@cd ${WRKDIR} && ${SETENV} ${TEST_ENV} pytest --disable-plugin-autoload -rs --pyargs cylp \
 		--ignore=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/cylp/py/test_PySolve.py \
 		-k 'not test_removeVar2'
 
-# tests as of 0.94.0: 12 passed, 1 deselected, 36 warnings in 0.20s
+# tests as of 0.94.1: 12 passed, 1 deselected, 36 warnings in 0.17s
 
 .include <bsd.port.mk>

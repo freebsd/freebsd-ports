@@ -9,7 +9,7 @@
  [project]
 -name = "cylp"
 +name = "CyLP"
- version = "0.94.0"
+ version = "0.94.1"
  description="A Python interface for CLP, CBC, and CGL"
  readme="README.rst"
 @@ -12,7 +12,7 @@ dependencies = [
