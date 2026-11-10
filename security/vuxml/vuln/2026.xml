@@ -1,3 +1,55 @@
+  <vuln vid="5e08ae9b-dcf1-11f1-97dc-40b034429ecf">
+    <topic>p5-HTTP-Body -- multiple vulnerabilities</topic>
+    <affects>
+<package>
+<name>p5-HTTP-Body</name>
+<range><lt>1.25</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>HTTP-Body project reports:</p>
+	<blockquote cite="https://metacpan.org/dist/HTTP-Body/changes">
+	  <p>Multiple vulnerabilities :</p>
+	  <ul>
+	    <li>SECURITY, CVE-2026-117500: the suffix of an upload's filename is
+	worked out from its last 255 bytes only, only when $file_temp_suffix
+	is unset, and for the default $basename_regexp by a string search
+	instead of the regexp; a filename of many dots ending in a backslash
+	made the default $basename_regexp take time quadratic in its length
+	(7 s per part at the 32 KiB header limit, once per part) in the
+	default configuration</li>
+	    <li>SECURITY, CVE-2026-117501: a chunked body is framed line by line with
+	a limit on the chunk-size line ($HTTP::Body::max_chunk_line_size,
+	1024 bytes), chunk data is passed on as it arrives instead of being
+	held until the chunk is complete, malformed framing (a line that is
+	no chunk-size line, a size that does not fit an integer, chunk data
+	not followed by CRLF) croaks instead of buffering forever, and
+	nothing after the trailer or after the body parser is done is kept</li>
+	    <li>SECURITY, CVE-2026-121006: the trailer of a chunked body is limited
+	to $HTTP::Body::max_trailer_size bytes (32768) and
+	$HTTP::Body::max_trailer_lines header lines (100); everything that
+	followed the last chunk in the same call to add() was parsed with
+	HTTP::Headers, which takes time quadratic in the number of fields of
+	one name (6 s for 16 KiB of "a:" lines)</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-117500</cvename>
+      <cvename>CVE-2026-117501</cvename>
+      <cvename>CVE-2026-121006</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/cve-2026-117500</url>
+      <url>https://nvd.nist.gov/vuln/detail/cve-2026-117501</url>
+      <url>https://nvd.nist.gov/vuln/detail/cve-2026-121006</url>
+    </references>
+    <dates>
+      <discovery>2026-11-05</discovery>
+      <entry>2026-11-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e107a804-dc3c-11f1-8135-8447094a420f">
     <topic>Weechat -- Multiple vulnerabilities</topic>
     <affects>
