@@ -1654,6 +1654,7 @@
     SUBDIR += virt-firmware
     SUBDIR += virt-what
     SUBDIR += virtualmin
+    SUBDIR += vitaly
     SUBDIR += vivid
     SUBDIR += vm-bhyve
     SUBDIR += vm-bhyve-devel

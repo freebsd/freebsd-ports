@@ -1,0 +1,10 @@
+Vial CLI tool allows to configure keyboard through VIA/Vial protocol with
+command line interface. It supports QMK keycodes notation together with aliases.
+
+Keys, encoders, combos, macros, tap dances, key overrides and alt repeat keys
+are supported. RGB lighting control is supported too.
+
+Non-colored underglow is not supported for now because there is no devices with
+such features around me.
+
+Tool support --help for tool as a whole and for all subcommands.
