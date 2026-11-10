@@ -1,5 +1,5 @@
 PORTNAME=	cwltest
-DISTVERSION=	2.7.20260814150058
+DISTVERSION=	2.7.20261106145043
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,8 +14,9 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=8.0.4:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}junit-xml>=1.8:textproc/py-junit-xml@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}schema-salad>=8.7:devel/py-schema-salad@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-cov>0:devel/py-pytest-cov@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}schema-salad>=5.0.20200220195218:devel/py-schema-salad@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}defusedxml>0:devel/py-defusedxml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-cov>0:devel/py-pytest-cov@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-xdist>0:devel/py-pytest-xdist@${PY_FLAVOR}
 
 USES=		python shebangfix
@@ -32,9 +33,6 @@ TEST_ENV=	${MAKE_ENV} \
 		PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} \
 		PATH=${STAGEDIR}${PREFIX}/bin:${PATH}
 
-# tests as of 2.7.20260814150058:
-# Results (12.29s):
-#        45 passed
-#        10 deselected
+# tests as of 2.7.20261106145043: 50 passed, 10 deselected in 9.29s
 
 .include <bsd.port.mk>
