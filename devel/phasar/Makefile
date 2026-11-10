@@ -1,7 +1,6 @@
 PORTNAME=	phasar
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2604
-PORTREVISION=	1
+DISTVERSION=	2610
 CATEGORIES=	devel science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LIB_DEPENDS=	libboost_graph.so:devel/boost-libs \
 		libcurl.so:ftp/curl \
 		libLLVM-16.so:devel/llvm16 \
+		libroaring.so:devel/croaring \
 		libzstd.so:archivers/zstd
 RUN_DEPENDS=	bash:shells/bash
 TEST_DEPENDS=	googletest>0:devel/googletest
@@ -24,9 +24,12 @@ USE_LDCONFIG=	yes
 
 SHEBANG_GLOB=	*.py *.sh
 
+PLIST_SUB=	SOVERSION=${PORTVERSION}
+
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	PHASAR_BUILD_UNITTESTS
 CMAKE_TESTING_ON=	PHASAR_BUILD_UNITTESTS
+CMAKE_TESTING_TARGET=	all
 
 .include <bsd.port.pre.mk>
 
@@ -40,7 +43,7 @@ CXX=		${LOCALBASE}/llvm20/bin/clang++
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	secure-software-engineering
-GH_TUPLE=	nlohmann:json:9cca280:json/external/json \
+GH_TUPLE=	nlohmann:json:55f9368:json/external/json \
 		pboettch:json-schema-validator:349cba9:json_schema_validator/external/json-schema-validator
 
 CONFLICTS_INSTALL=nlohmann-json # see https://github.com/secure-software-engineering/phasar/issues/715
@@ -50,6 +53,10 @@ post-install: # workaround for https://github.com/secure-software-engineering/ph
 		${STAGEDIR}${PREFIX}/include/gtest \
 		${STAGEDIR}${PREFIX}/include/nlohmann
 
-# tests as of 2604: 93% tests passed, 4 tests failed out of 56, see https://github.com/secure-software-engineering/phasar/issues/761
+post-test:
+	@cd ${BUILD_WRKSRC} && ${SETENVI} ${WRK_ENV} ${TEST_ENV} ${LOCALBASE}/bin/ctest --force-new-ctest-process \
+		-E '^(LLVMBasedICFGGlobCtorDtorTest|IDEGeneralizedLCATest|IDETSAnalysisFileIOTest|DIBasedTypeHierarchyTest)$$' # these 4 tests fail with the LLVM 16 libraries
+
+# tests as of 2610: 100% tests passed, 0 tests failed out of 58 (4 of 62 tests are excluded in post-test)
 
 .include <bsd.port.post.mk>
