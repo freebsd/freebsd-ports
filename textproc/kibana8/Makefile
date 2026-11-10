@@ -1,5 +1,5 @@
 PORTNAME=	kibana
-DISTVERSION=	8.19.24
+DISTVERSION=	8.19.25
 DISTVERSIONSUFFIX=	-linux-x86_64
 CATEGORIES=	textproc www
 MASTER_SITES=	https://artifacts.elastic.co/downloads/kibana/ \
@@ -56,7 +56,7 @@ BINS=	kibana-encryption-keys kibana-health-gateway kibana-keystore \
 # Set node-nan version here
 _NODE_NAN_VER=	2.30.0
 # Set node-re version here
-_NODE_RE2_VER=	1.27.0
+_NODE_RE2_VER=	1.27.1
 #######################################################################
 
 _NODECMD=	${LOCALBASE}/bin/node --version
