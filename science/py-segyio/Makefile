@@ -1,6 +1,6 @@
 PORTNAME=	segyio
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.9.14
+DISTVERSION=	1.9.15
 CATEGORIES=	science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -13,7 +13,7 @@ LICENSE=	LGPL3+
 BUILD_DEPENDS=	cmake:devel/cmake-core \
 		${PYTHON_PKGNAMEPREFIX}scikit-build-core>=0:devel/py-scikit-build-core@${PY_FLAVOR}
 LIB_DEPENDS=	libsegyio.so:science/segyio
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.10:math/py-numpy@${PY_FLAVOR}
 
 USES=		compiler:c++11-lang python
 USE_PYTHON=	autoplist pep517 pytest
@@ -28,6 +28,6 @@ TEST_ARGS=	--ignore=test/benchmarks.py --ignore=test/large.py --ignore=test/stre
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/segyio/_segyio*.so
 
-# tests as of 1.9.14: 209 passed, 8 warnings in 3.22s
+# tests as of 1.9.15: 211 passed, 8 warnings in 0.69s
 
 .include <bsd.port.mk>
