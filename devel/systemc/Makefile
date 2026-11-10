@@ -1,5 +1,5 @@
 PORTNAME=	systemc
-DISTVERSION=	3.0.1
+DISTVERSION=	3.0.2
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,6 +22,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-unix-layout=yes
 
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 
 PORTDOCS=	*
 
@@ -32,5 +33,7 @@ OPTIONS_DEFINE=	DOCS
 .if ${ARCH:Mpowerpc64*}
 CONFIGURE_ARGS+=	--enable-pthreads
 .endif
+
+# tests as of 3.0.2: SystemC examples: 22 tests, 22 PASS, 0 FAIL; TLM 2.0.6 examples: 11 tests, 11 PASS, 0 FAIL
 
 .include <bsd.port.mk>
