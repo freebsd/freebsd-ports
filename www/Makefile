@@ -242,7 +242,6 @@
     SUBDIR += ghostunnel
     SUBDIR += gist
     SUBDIR += gitea
-    SUBDIR += github-release-monitor
     SUBDIR += gitlab
     SUBDIR += gitlab-pages
     SUBDIR += gitlab-workhorse
