@@ -1,6 +1,6 @@
 PORTNAME=	cups-filters
 PORTVERSION=	1.28.17
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	print
 
 MAINTAINER=	tijl@FreeBSD.org
@@ -14,7 +14,6 @@ BUILD_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu
 LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 		libqpdf.so:print/qpdf \
 		libcups.so:print/cups \
-		libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig
 
 USES=		autoreconf compiler:c++11-lib cpe gettext-tools gmake gnome \
@@ -22,7 +21,7 @@ USES=		autoreconf compiler:c++11-lib cpe gettext-tools gmake gnome \
 CPE_VENDOR=	linuxfoundation
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenPrinting
-GH_TAGNAME=	f87687970d9c
+GH_TAGNAME=	e8424d1032b5
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	cups_browsed
