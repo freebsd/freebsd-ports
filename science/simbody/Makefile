@@ -1,6 +1,6 @@
 PORTNAME=	simbody
 DISTVERSIONPREFIX=	Simbody-
-DISTVERSION=	3.8-80a3f10	# Pre-3.9
+DISTVERSION=	3.9
 CATEGORIES=	science biology
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,11 +11,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		blaslapack:openblas cmake compiler:c++20-lang fortran localbase # fortran only for openblas
-
 USE_GITHUB=	yes
-# See https://github.com/opensim-org/opensim-core/issues/4369
-GH_TAGNAME=	80a3f10a6daa26c8aaf18f2c672cf385b227e62c
-
 USE_LDCONFIG=	yes
 
 CMAKE_OFF=	BUILD_TESTING
@@ -46,5 +42,7 @@ do-test:
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DBUILD_TESTING=ON ${CMAKE_SOURCE_PATH} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
+
+# tests as of 3.9: 100% tests passed, 0 tests failed out of 115
 
 .include <bsd.port.mk>
