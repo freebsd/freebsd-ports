@@ -216,7 +216,6 @@
     SUBDIR += mailutils
     SUBDIR += mailx
     SUBDIR += mairix
-    SUBDIR += masqmail
     SUBDIR += mb2md
     SUBDIR += mbar
     SUBDIR += mblaze
