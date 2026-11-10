@@ -1,6 +1,5 @@
 PORTNAME=	vlc
-DISTVERSION=	3.0.23
-PORTREVISION=	3
+DISTVERSION=	3.0.24
 PORTEPOCH=	4
 CATEGORIES=	multimedia audio net www
 MASTER_SITES=	https://get.videolan.org/${PORTNAME}/${DISTVERSION:S/a$//}/ \

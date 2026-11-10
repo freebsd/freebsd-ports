@@ -111,6 +111,10 @@ lib/libvlccore.so.9
 lib/libvlccore.so.9.0.1
 libdata/pkgconfig/libvlc.pc
 libdata/pkgconfig/vlc-plugin.pc
+share/applications/vlc-openbd.desktop
+share/applications/vlc-opencda.desktop
+share/applications/vlc-opendvd.desktop
+share/applications/vlc-openvcd.desktop
 share/man/man1/vlc-wrapper.1.gz
 share/man/man1/vlc.1.gz
 share/applications/vlc.desktop
