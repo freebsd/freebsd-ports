@@ -1,6 +1,6 @@
 PORTNAME=	atuin
 DISTVERSIONPREFIX=	v
-DISTVERSION=	18.24.5
+DISTVERSION=	18.24.6
 CATEGORIES=	shells
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -112,6 +112,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		console-0.16.3 \
 		const-oid-0.9.6 \
 		const-oid-0.10.2 \
+		const_format-0.2.37 \
+		const_format_proc_macros-0.2.37 \
 		convert_case-0.10.0 \
 		core-foundation-0.10.1 \
 		core-foundation-sys-0.8.7 \
@@ -256,7 +258,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		hyper-1.10.1 \
 		hyper-timeout-0.5.2 \
 		hyper-tls-0.6.0 \
-		hyper-util-0.1.20 \
+		hyper-util-0.1.21 \
 		i18n-config-0.4.8 \
 		i18n-embed-0.16.0 \
 		i18n-embed-fl-0.10.1 \
@@ -302,6 +304,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		jobserver-0.1.35 \
 		js-sys-0.3.100 \
 		kasuari-0.4.12 \
+		konst-0.2.20 \
+		konst_macro_rules-0.2.19 \
 		kqueue-1.1.1 \
 		kqueue-sys-1.0.4 \
 		lab-0.11.0 \
@@ -481,7 +485,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		reqwest-0.13.4 \
 		reqwest-middleware-0.5.2 \
 		ring-0.17.14 \
-		rmcp-3.3.0 \
+		rmcp-3.9.0 \
 		rmp-0.8.15 \
 		rmp-serde-1.3.1 \
 		rpassword-7.5.4 \
@@ -642,7 +646,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		unicase-2.9.0 \
 		unicode-bidi-0.3.18 \
 		unicode-ident-1.0.24 \
-		unicode-normalization-0.1.25 \
+		unicode-normalization-0.1.26 \
 		unicode-properties-0.1.4 \
 		unicode-segmentation-1.13.3 \
 		unicode-truncate-2.0.1 \
