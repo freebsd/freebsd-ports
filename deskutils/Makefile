@@ -131,6 +131,7 @@
     SUBDIR += jot
     SUBDIR += just
     SUBDIR += kaddressbook
+    SUBDIR += kaichat
     SUBDIR += kalarm
     SUBDIR += kanbanapp
     SUBDIR += kcharselect
