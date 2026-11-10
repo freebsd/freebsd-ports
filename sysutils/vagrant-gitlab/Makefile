@@ -1,7 +1,7 @@
 PORTNAME=	vagrant
 PORTVERSION=	2.4.9
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils rubygems devel
 PKGNAMESUFFIX=	-gitlab
 
@@ -33,9 +33,9 @@ RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
 		rubygem-logger-gitlab>=1.0<2:devel/rubygem-logger-gitlab \
 		rubygem-mime-types-gitlab>=3.3<4:misc/rubygem-mime-types-gitlab \
 		rubygem-net-ftp>=0.2<1:ftp/rubygem-net-ftp \
-		rubygem-net-scp>=4.0<5:security/rubygem-net-scp \
-		rubygem-net-sftp>=4.0<5:security/rubygem-net-sftp \
-		rubygem-net-ssh>=7.0,2<8,2:security/rubygem-net-ssh \
+		rubygem-net-scp-gitlab>=4.0<5:security/rubygem-net-scp-gitlab \
+		rubygem-net-sftp-gitlab>=4.0<5:security/rubygem-net-sftp-gitlab \
+		rubygem-net-ssh-gitlab>=7.0<8:security/rubygem-net-ssh-gitlab \
 		rubygem-ostruct>=0.6.0<0.7:devel/rubygem-ostruct \
 		rubygem-rb-kqueue>=0.2.0<0.3:devel/rubygem-rb-kqueue \
 		rubygem-rexml>=3.2<4:textproc/rubygem-rexml \
