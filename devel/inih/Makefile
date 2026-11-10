@@ -1,6 +1,6 @@
 PORTNAME=	inih
 DISTVERSIONPREFIX=	r
-DISTVERSION=	62
+DISTVERSION=	63
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,7 +25,7 @@ test-quick: stage
 		./test ${FILESDIR}/test-config.ini
 	@${ECHO} "... smoke test completed successfully"
 
-# tests as of 62:
+# tests as of 63:
 # Ok:                16
 # Fail:              0
 
