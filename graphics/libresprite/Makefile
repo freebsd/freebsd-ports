@@ -1,6 +1,6 @@
 PORTNAME=	libresprite
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2
+DISTVERSION=	1.3
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -26,11 +26,12 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	LibreSprite
 GH_PROJECT=	LibreSprite
 GH_TUPLE=	aseprite:simpleini:c94997d:simpleini/third_party/simpleini \
-		libresprite:duktape:6f71555:duktape/third_party/duktape \
-		aseprite:flic:876ef60:flic/src/flic \
-		aseprite:clip:94693e2:clip/src/clip \
-		aseprite:undo:f39b188:undo/src/undo
+		aseprite:flic:876ef60:flic/src/flic
 
 CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/LibreSprite/LibreSprite/issues/672
+
+post-patch: # upstream requires CMake 4.1 which is not available yet
+	@${FIND} ${WRKSRC} -name CMakeLists.txt | ${XARGS} ${REINPLACE_CMD} -E \
+		-e 's/(cmake_minimum_required\(VERSION )4\.1\)/\13.5)/'
 
 .include <bsd.port.mk>

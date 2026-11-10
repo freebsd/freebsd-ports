@@ -32,6 +32,7 @@ bin/libresprite
 %%DATADIR%%/data/languages/it.json
 %%DATADIR%%/data/languages/jp.json
 %%DATADIR%%/data/languages/kr.json
+%%DATADIR%%/data/languages/pl.json
 %%DATADIR%%/data/languages/pt.json
 %%DATADIR%%/data/languages/ru.json
 %%DATADIR%%/data/languages/zh.json
