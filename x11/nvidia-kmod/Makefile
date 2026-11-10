@@ -14,7 +14,7 @@
 PORTNAME?=	nvidia-kmod
 DISTVERSION?=	${NVIDIA_DISTVERSION}
 # Always try to set PORTREVISION as it can be overridden by the slave ports
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	x11
 MASTER_SITES=	NVIDIA/XFree86/FreeBSD-${ARCH_SUFX}/${DISTVERSION}
 DISTNAME=	NVIDIA-FreeBSD-${ARCH_SUFX}-${DISTVERSION}
@@ -254,5 +254,8 @@ post-install: .SILENT
 	${REINPLACE_CMD} -e '/nvidia_gsp_ga10x_fw\.ko/d' ${TMPPLIST}
 	${REINPLACE_CMD} -e '/nvidia_gsp_tu10x_fw\.ko/d' ${TMPPLIST}
 .endif
-
+.if ${NVVERSION} < 600.00000
+	${REINPLACE_CMD} -e '/nvidia_ucodes_ga10x_fw\.ko/d' ${TMPPLIST}
+	${REINPLACE_CMD} -e '/nvidia_ucodes_tu10x_fw\.ko/d' ${TMPPLIST}
+.endif
 .include <bsd.port.post.mk>
