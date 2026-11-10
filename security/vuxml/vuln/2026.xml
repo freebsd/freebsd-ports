@@ -1,3 +1,35 @@
+  <vuln vid="9b39eca8-dd1a-11f1-867b-3c7c3fba4204">
+    <topic>Newsboat -- Remote code execution via manual OPML import</topic>
+    <affects>
+	<package>
+	  <name>newsboat</name>
+	  <range><lt>2.45.1</lt></range>
+	</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Newsboat Team reports:</p>
+	<blockquote cite="https://github.com/newsboat/newsboat/releases/tag/r2.45.1">
+	  <p>GHSA-78q5-mpjq-5q34: This is a more specific version of GHSA-4m8m-vj3m-hfxx which was fixed
+	     in the previous release 2.45. The vulnerability is the same, but the attack vector is a bit
+	     more complex. When importing an OPML document, Newsboat doesn't sanitise newlines in the data
+	     it reads. This data is then written into a plain-text file (the urls file) which is then read
+	     back line-by-line. Specially crafted OPML documents could utilise this to add more lines to
+	     the urls file and inject 'exec:' and 'filter:' special URLs that contain shell commands to
+	     be executed when such URL is reloaded. In order to resolve this, URLs are sanitized by
+	     percent-encoding them, while newlines in tags are replaced by underscore character.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/newsboat/newsboat/releases/tag/r2.45.1</url>
+    </references>
+    <dates>
+      <discovery>2026-11-05</discovery>
+      <entry>2026-11-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7f156776-dd09-11f1-97dc-40b034429ecf">
     <topic>p5-Furl -- memory exhaustion vulnerability</topic>
     <affects>
