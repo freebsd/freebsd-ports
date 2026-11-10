@@ -1,5 +1,5 @@
 PORTNAME=	piwigo
-DISTVERSION=	16.4.0
+DISTVERSION=	16.5.0
 PORTREVISION=	0
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 CATEGORIES=	www
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
 USES=		cpe php:web,flavors zip
 # php hash/json/openssl/pcre/spl extension is required but it's statically linked in default php
-USE_PHP=	ctype dom exif filter gd iconv json mbstring mysqli \
+USE_PHP=	ctype dom exif fileinfo filter gd iconv json mbstring mysqli \
 		pdo session simplexml sodium tokenizer \
 		xml zip zlib
 # sodium is needed for randomisation stuff (prefferred option),

@@ -4086,5 +4086,6 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/template/toaster.tpl
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/theme.css
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/themeconf.inc.php
+share/sbom/pc/piwigo-php85.pc
 @dir(%%WWWOWN%%,%%WWWGRP%%,777) %%WWWDIR%%/_data
 @dir(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/upload
