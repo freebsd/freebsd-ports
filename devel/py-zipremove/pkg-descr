@@ -1,0 +1,3 @@
+zipremove extends the Python standard library zipfile module with
+remove-related capabilities, allowing entries to be deleted from ZIP archives
+without rewriting the whole file.

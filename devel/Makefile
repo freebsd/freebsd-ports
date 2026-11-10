@@ -6645,6 +6645,7 @@
     SUBDIR += py-zict
     SUBDIR += py-zipkin
     SUBDIR += py-zipp
+    SUBDIR += py-zipremove
     SUBDIR += py-zope.component
     SUBDIR += py-zope.configuration
     SUBDIR += py-zope.deprecation
