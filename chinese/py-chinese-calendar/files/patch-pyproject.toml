@@ -1,0 +1,22 @@
+-- Allow building with devel/py-setuptools 63.1.0 (no PEP 639 license expression support)
+-- Upstream requires setuptools>=77, but the ports tree has 63.1.0 and it must not be updated here
+
+--- pyproject.toml.orig	2026-11-08 17:46:08 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=77"]
++requires = ["setuptools>=63.1.0"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -8,8 +8,7 @@ readme = "README.md"
+ dynamic = ["version"]
+ description = "check if some day is holiday in China"
+ readme = "README.md"
+-license = "MIT"
+-license-files = ["LICENSE"]
++license = { text = "MIT" }
+ authors = [{ name = "Lirian Su", email = "liriansu@gmail.com" }]
+ requires-python = ">=3.10"
+ dependencies = []
