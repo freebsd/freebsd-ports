@@ -44,8 +44,9 @@ include/criterion/theories.h
 include/criterion/types.h
 lib/libcriterion.a
 lib/libcriterion.so
-lib/libcriterion.so.3
-lib/libcriterion.so.3.2.0
+lib/libcriterion.so.4
+lib/libcriterion.so.4.0.0
 libdata/pkgconfig/criterion.pc
 share/locale/de/LC_MESSAGES/criterion.mo
 share/locale/fr/LC_MESSAGES/criterion.mo
+share/locale/ka/LC_MESSAGES/criterion.mo

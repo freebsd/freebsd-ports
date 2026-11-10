@@ -1,20 +1,17 @@
 - use the shared library for nanopb
 
---- meson.build.orig	2023-05-13 16:02:30 UTC
+--- meson.build.orig	2026-10-03 19:32:11 UTC
 +++ meson.build
-@@ -138,9 +138,9 @@ deps = []
+@@ -136,7 +136,7 @@ cmake = import('cmake')
  
  cmake = import('cmake')
  
 -debugbreak = dependency('debugbreak')
 +#debugbreak = dependency('debugbreak')
  
--klib = dependency('klib')
-+#klib = dependency('klib')
- 
- threads = dependency('threads')
- 
-@@ -178,7 +178,7 @@ else
+ # klib is header-only
+ klib_fallback = (get_option('wrap_mode') == 'forcefallback'
+@@ -190,7 +190,7 @@ nanopb = dependency('nanopb', required: get_option('wr
  endif
  
  nanopb = dependency('nanopb', required: get_option('wrap_mode') == 'nofallback', method: 'cmake',
@@ -23,7 +20,7 @@
  must_regenerate_pb = nanopb.found()
  if (not nanopb.found()
  	or get_option('wrap_mode') == 'forcefallback'
-@@ -192,7 +192,7 @@ if (not nanopb.found()
+@@ -204,7 +204,7 @@ if (not nanopb.found()
  		'CMAKE_POSITION_INDEPENDENT_CODE': true,
  	})
  	nanopb_proj = cmake.subproject('nanopb-cmake', options: nanopb_opts)
@@ -32,14 +29,12 @@
  endif
  
  libgit2 = dependency('libgit2', required: get_option('wrap_mode') == 'nofallback')
-@@ -244,8 +244,8 @@ else
+@@ -257,7 +257,7 @@ deps += [
  endif
  
  deps += [
 -	debugbreak,
--	klib,
 +	#debugbreak,
-+	#klib,
+ 	klib,
  	threads,
  	boxfort,
- 	libffi,

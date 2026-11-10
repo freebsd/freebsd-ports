@@ -1,6 +1,6 @@
 PORTNAME=	criterion
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.3
+DISTVERSION=	2.5.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -53,8 +53,10 @@ quick-test:
 
 do-test:
 	cd ${WRKSRC} && \
-		${SETENV} ${CONFIGURE_ENV} ${CONFIGURE_CMD} --reconfigure ${CONFIGURE_ARGS} -Dtests=true && \
+		${SETENV} ${CONFIGURE_ENV} ${CONFIGURE_CMD} configure -Dtests=true ${BUILD_WRKSRC} && \
 	cd ${BUILD_WRKSRC} && \
 		${DO_MAKE_BUILD} ${ALL_TARGET} test
+
+# tests as of 2.5.0: Ok: 20, Fail: 0
 
 .include <bsd.port.mk>

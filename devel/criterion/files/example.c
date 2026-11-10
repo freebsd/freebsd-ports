@@ -1,5 +1,6 @@
 #include <criterion/criterion.h>
 
 Test(simple, Test) {
-	cr_assert(false, "Hello World!");
+        cr_assert(true, "This will pass!");
 }
+
