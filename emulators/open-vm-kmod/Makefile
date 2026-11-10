@@ -30,4 +30,17 @@ WRKSRC_SUBDIR=	open-vm-tools/modules/freebsd/
 PLIST_FILES=	${KMODDIR}/vmblock.ko \
 		${KMODDIR}/vmmemctl.ko
 
+STDARG_FILES= \
+	../shared/vmmemctl/kernelStubs.h \
+	../shared/vmmemctl/kernelStubs.h \
+	../shared/vmblock/stubs.c \
+	vmmemctl/kernelStubsBSD.c \
+	vmmemctl/os.c \
+	vmblock/os_panic.c \
+	vmblock/os.h \
+	../solaris/vmhgfs/kernelStubs.h
+
+post-extract:
+	${REINPLACE_CMD} -e 's|machine/stdarg.h|sys/stdarg.h|' ${STDARG_FILES:S/^/${WRKSRC}/}
+
 .include <bsd.port.mk>
