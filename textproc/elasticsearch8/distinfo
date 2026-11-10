@@ -1,5 +1,5 @@
-TIMESTAMP = 1793800000
-SHA256 (elasticsearch-8.19.24-deps.tar.gz) = 92c3dde7c960dc8f7b08538d220fd610cf48421e717d70b6c886f5454b159e3b
-SIZE (elasticsearch-8.19.24-deps.tar.gz) = 609694379
-SHA256 (elastic-elasticsearch-v8.19.24_GH0.tar.gz) = 3cc3b7ee956cf35f9044085239aaec82a8a3f11715506831736ac1357673e4b9
-SIZE (elastic-elasticsearch-v8.19.24_GH0.tar.gz) = 147967909
+TIMESTAMP = 1794317943
+SHA256 (elasticsearch-8.19.25-deps.tar.gz) = 75e6c832e92fcbc3fc0a74bf0aa19c093db30d71f22e4bedf0897f6674c3be62
+SIZE (elasticsearch-8.19.25-deps.tar.gz) = 610419638
+SHA256 (elastic-elasticsearch-v8.19.25_GH0.tar.gz) = 7dc4da5b88ed52b273aaae82bf7b8323734df5c132c5ce6c2e6188f64774c929
+SIZE (elastic-elasticsearch-v8.19.25_GH0.tar.gz) = 147996084
