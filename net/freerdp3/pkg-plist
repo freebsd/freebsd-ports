@@ -308,6 +308,7 @@ libdata/pkgconfig/winpr%%MAJORVERSION%%.pc
 %%WEBVIEW_QT%%libexec/freerdp-qt-aad-helper
 %%WEBVIEW%%libexec/freerdp-webview-aad-helper
 %%JSON%%%%KEYBOARD_LAYOUT%%share/FreeRDP/KeyboardLayoutMap.json
+%%JSON%%%%TIMEZONE_FILE%%share/WinPR/TimeZoneIanaAliases.json
 %%JSON%%%%TIMEZONE_FILE%%share/WinPR/TimeZoneNameMap.json
 %%SDL2%%share/applications/sdl2-freerdp%%MAJORVERSION%%-file.desktop
 %%SDL2%%share/applications/sdl2-freerdp%%MAJORVERSION%%.desktop
