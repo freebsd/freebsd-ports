@@ -1,10 +1,10 @@
 PORTNAME=	autoflake
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.3
+DISTVERSION=	2.4.0
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	meka@tilda.center
+MAINTAINER=	meka@sys.it.com
 COMMENT=	Removes unused imports and unused variables from Python code
 WWW=		https://github.com/PyCQA/autoflake
 
