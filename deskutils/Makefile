@@ -274,7 +274,6 @@
     SUBDIR += sysctlview
     SUBDIR += systempreferences
     SUBDIR += taskd
-    SUBDIR += tasksh
     SUBDIR += taskwarrior
     SUBDIR += taskwarrior-tui
     SUBDIR += tatuin
