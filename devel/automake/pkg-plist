@@ -16,6 +16,7 @@ share/aclocal-%%BUILD_VERSION%%/gcj.m4
 share/aclocal-%%BUILD_VERSION%%/init.m4
 share/aclocal-%%BUILD_VERSION%%/install-sh.m4
 share/aclocal-%%BUILD_VERSION%%/internal/ac-config-macro-dirs.m4
+share/aclocal-%%BUILD_VERSION%%/jobserver.m4
 share/aclocal-%%BUILD_VERSION%%/lead-dot.m4
 share/aclocal-%%BUILD_VERSION%%/lex.m4
 share/aclocal-%%BUILD_VERSION%%/lispdir.m4

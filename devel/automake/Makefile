@@ -1,6 +1,6 @@
+# Also update Templates/config.(guess|sub) if necessary.
 PORTNAME=	automake
-DISTVERSION=	1.19
-PORTREVISION=	1
+DISTVERSION=	1.20
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -8,13 +8,13 @@ MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	GNU Standards-compliant Makefile generator
 WWW=		https://www.gnu.org/software/automake/
 
-LICENSE=	GPLv2+ GFDL
+LICENSE=	GPLv3+ GFDL
 LICENSE_COMB=	multi
-LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING
+LICENSE_FILE_GPLv3+ =	${WRKSRC}/COPYING
 LICENSE_FILE_GFDL=	${WRKSRC}/doc/fdl.texi
 
-BUILD_DEPENDS=	autoconf>=2.72:devel/autoconf
-RUN_DEPENDS=	autoconf>=2.72:devel/autoconf
+BUILD_DEPENDS=	autoconf>=2.73:devel/autoconf
+RUN_DEPENDS=	autoconf>=2.73:devel/autoconf
 
 USES=		cpe perl5 tar:xz
 CPE_VENDOR=	gnu
