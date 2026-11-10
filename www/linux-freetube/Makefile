@@ -1,6 +1,6 @@
 PORTNAME=	freetube
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.25.3-beta
+DISTVERSION=	0.26.0-beta
 PORTREVISION=	0
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/FreeTubeApp/FreeTube/releases/download/${DISTVERSIONFULL}/ \
@@ -22,7 +22,8 @@ RUN_DEPENDS=	pulseaudio:audio/pulseaudio
 
 USES=		linux:rl9 zip
 USE_LINUX=	alsa-plugins-oss alsa-plugins-pulseaudio alsalib at-spi2-atk \
-		atk cups-libs dbuslibs devtools gtk3 imageformats-libs libdrm nss opus
+		atk cups-libs dbuslibs devtools gtk3 imageformats-libs libdrm \
+		nss opus
 
 DATADIR=	${PREFIX}/share/${PKGBASE}
 

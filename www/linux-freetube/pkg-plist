@@ -12,8 +12,6 @@ share/icons/hicolor/scalable/apps/freetube.svg
 %%DATADIR%%/chrome_100_percent.pak
 %%DATADIR%%/chrome_200_percent.pak
 %%DATADIR%%/icudtl.dat
-%%DATADIR%%/libEGL.so
-%%DATADIR%%/libGLESv2.so
 %%DATADIR%%/libffmpeg.so
 %%DATADIR%%/libvk_swiftshader.so
 %%DATADIR%%/libvulkan.so.1
