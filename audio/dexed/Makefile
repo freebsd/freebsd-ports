@@ -1,6 +1,6 @@
 PORTNAME=	dexed
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.1
+DISTVERSION=	1.1.0
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-synth
 
@@ -18,7 +18,8 @@ BUILD_DEPENDS=	libX11>0:x11/libX11 \
 		libXcursor>0:x11/libXcursor \
 		libXinerama>0:x11/libXinerama \
 		libXrandr>0:x11/libXrandr
-LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
 		libjack.so:audio/jack \
 		libpng16.so:graphics/png \
 		libasound.so:audio/alsa-lib # see https://github.com/asb2m10/dexed/issues/343 about the ALSA use
@@ -29,14 +30,13 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	asb2m10
 
 GH_TUPLE=	\
-		steinbergmedia:vst3sdk:56e4b2a:steinbergmedia_vst3sdk/libs/vst3sdk \
-		surge-synthesizer:tuning-library:3bbe951:surge_synthesizer_tuning_library/libs/tuning-library \
-		surge-synthesizer:surgesynthteam_tuningui:54f9a74cd55cdb33fb4d32d706067626857cfc75:surge_synthesizer_surgesynthteam_tuningui/libs/surgesynthteam_tuningui \
+		surge-synthesizer:tuning-library:6fa04a0:surge_synthesizer_tuning_library/libs/tuning-library \
+		asb2m10:surgesynthteam_tuningui:2446bfc:asb2m10_surgesynthteam_tuningui/libs/surgesynthteam_tuningui \
 		ODDSound:MTS-ESP:803c3aa:ODDSound_MTS_ESP/libs/MTS-ESP \
-		juce-framework:JUCE:ae51448:juce_framework_JUCE/libs/JUCE \
-		free-audio:clap-juce-extensions:4d454e5:free_audio_clap_juce_extensions/libs/clap-juce-extensions \
-			free-audio:clap:df8f16c:free_audio_clap/libs/clap-juce-extensions/clap-libs/clap \
-			free-audio:clap-helpers:7b53a68:free_audio_clap_helpers/libs/clap-juce-extensions/clap-libs/clap-helpers
+		juce-framework:JUCE:c352e24:juce_framework_JUCE/libs/JUCE \
+		free-audio:clap-juce-extensions:16e9d4c:free_audio_clap_juce_extensions/libs/clap-juce-extensions \
+			free-audio:clap:29ffcc2:free_audio_clap/libs/clap-juce-extensions/clap-libs/clap \
+			free-audio:clap-helpers:a61bcdf:free_audio_clap_helpers/libs/clap-juce-extensions/clap-libs/clap-helpers
 
 DOS2UNIX_GLOB=	*.cpp *.h
 
@@ -46,6 +46,7 @@ OPTIONS_DEFINE=		VST3
 #OPTIONS_DEFAULT=	VST3
 
 VST3_DESC=		Build the VST3 plugin
+VST3_CMAKE_OFF=		-DDEXED_SKIP_VST3=ON
 VST3_BUILD_DEPENDS=	vst3sdk>0:audio/vst3sdk
 VST3_CXXFLAGS=		-DJUCE_CUSTOM_VST3_SDK=1 -fPIC
 VST3_PLIST_FILES=	lib/vst3/Dexed.so
@@ -58,14 +59,11 @@ LDFLAGS+=	-lpng16
 
 PORTSCOUT=	skipv:nightly
 
-post-patch-VST3-off:
-	@${REINPLACE_CMD} -e 's/FORMATS AU VST3 Standalone/FORMATS AU Standalone/' ${WRKSRC}/Source/CMakeLists.txt
-
 do-install: # workaround for https://github.com/asb2m10/dexed/issues/342
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/Source/Dexed_artefacts/Release/Standalone/Dexed ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/source/Dexed_artefacts/Release/Standalone/Dexed ${STAGEDIR}${PREFIX}/bin
 
 do-install-VST3-on:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/vst3
-	${INSTALL_LIB} ${BUILD_WRKSRC}/Source/Dexed_artefacts/Release/VST3/Dexed.vst3/Contents/*/Dexed.so ${STAGEDIR}${PREFIX}/lib/vst3
+	${INSTALL_LIB} ${BUILD_WRKSRC}/source/Dexed_artefacts/Release/VST3/Dexed.vst3/Contents/*/Dexed.so ${STAGEDIR}${PREFIX}/lib/vst3
 
 .include <bsd.port.mk>
