@@ -1,6 +1,6 @@
 PORTNAME=	dftd4
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.3.0
+DISTVERSION=	4.3.1
 CATEGORIES=	science # chemistry
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,6 +25,6 @@ CMAKE_ON=	BUILD_SHARED_LIBS
 post-patch: # see https://github.com/toml-f/toml-f/issues/51
 	@${REINPLACE_CMD} -e 's|$${CMAKE_Fortran_COMPILER_ID}-$${CMAKE_Fortran_COMPILER_VERSION}||' ${WRKSRC}/config/CMakeLists.txt
 
-# tests as of 4.3.0: 100% tests passed, 0 tests failed out of 5
+# tests as of 4.3.1: 100% tests passed, 0 tests failed out of 5
 
 .include <bsd.port.mk>

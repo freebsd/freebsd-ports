@@ -1,5 +1,5 @@
 PORTNAME=	dftd4
-DISTVERSION=	4.3.0
+DISTVERSION=	4.3.1
 CATEGORIES=	science python # chemistry
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -32,6 +32,6 @@ TEST_WRKSRC=	${WRKDIR}
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/dftd4/_libdftd4${PYTHON_SOABI}.so
 
-# tests as of 4.3.0: 46 passed, 10 skipped in 22.72s
+# tests as of 4.3.1: 46 passed, 17 skipped in 1.69s
 
 .include <bsd.port.mk>
