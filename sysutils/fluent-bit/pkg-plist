@@ -62,6 +62,7 @@ include/fluent-bit/flb_http_client_debug.h
 include/fluent-bit/flb_http_client_http1.h
 include/fluent-bit/flb_http_client_http2.h
 include/fluent-bit/flb_http_common.h
+include/fluent-bit/flb_http_retry_after.h
 include/fluent-bit/flb_http_server.h
 include/fluent-bit/flb_info.h
 include/fluent-bit/flb_input.h
@@ -78,6 +79,7 @@ include/fluent-bit/flb_intermediate_metric.h
 include/fluent-bit/flb_io.h
 include/fluent-bit/flb_jsmn.h
 include/fluent-bit/flb_json.h
+include/fluent-bit/flb_json_tree.h
 include/fluent-bit/flb_kafka.h
 include/fluent-bit/flb_kernel.h
 include/fluent-bit/flb_kv.h
@@ -114,6 +116,7 @@ include/fluent-bit/flb_opentelemetry.h
 include/fluent-bit/flb_output.h
 include/fluent-bit/flb_output_plugin.h
 include/fluent-bit/flb_output_thread.h
+include/fluent-bit/flb_output_throttle.h
 include/fluent-bit/flb_pack.h
 include/fluent-bit/flb_pack_json.h
 include/fluent-bit/flb_parser.h
@@ -179,6 +182,7 @@ include/fluent-bit/tls/flb_tls_info.h
 include/fluent-bit/unicode/flb_conv.h
 include/fluent-bit/unicode/flb_wchar.h
 include/fluent-bit/wasm/flb_wasm.h
+include/fluent-bit/wasm/flb_wasm_http.h
 include/libco.h
 include/monkey/mk_core.h
 include/monkey/mk_core/mk_dep_unistd.h
