@@ -1,16 +1,20 @@
 PORTNAME=	octave-forge-general
-PORTVERSION=	2.1.4
-PORTREVISION=	2
+DISTVERSIONPREFIX=	release-
+DISTVERSION=	2.1.5
 CATEGORIES=	math
-MASTER_SITES=	SF/octave/Octave%20Forge%20Packages/Individual%20Package%20Releases
-DISTNAME=	${OCTAVE_PKGNAME}-${DISTVERSIONFULL}
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 WWW=		https://packages.octave.org/
 
-USES=		octave pkgconfig
+USES=		octave pkgconfig autoreconf
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	gnu-octave
+GH_PROJECT=	octave-general
 
 GNU_CONFIGURE=	yes
+
+OCTAVE_SRC=	${GH_PROJECT}-release-${DISTVERSION}
 
 .include <bsd.port.mk>
