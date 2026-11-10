@@ -11,6 +11,7 @@ LICENSE=	LGPL20
 
 USES=		compiler:c++17-lang cmake lxqt:2 qt:6 tar:xz
 USE_LDCONFIG=	yes
+USE_LXQT=	buildtools2
 USE_QT=		base
 
 post-patch:
