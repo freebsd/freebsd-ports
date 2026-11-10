@@ -5,7 +5,11 @@
 # KEYWORD: shutdown
 
 # Add the following lines to /etc/rc.conf to enable authelia:
-# authelia_enable : set to "YES" to enable the daemon, default is "NO"
+# authelia_enable  : set to "YES" to enable the daemon, default is "NO"
+# authelia_pidfile : PID file for authelia
+#                    Default: "/var/run/${name}.pid"
+# authelia_logfile : Log file for authelia
+#                    Default: "/var/log/${name}.log"
 
 . /etc/rc.subr
 
@@ -14,12 +18,12 @@ rcvar=authelia_enable
 
 load_rc_config $name
 
-authelia_enable=${authelia_enable:-"NO"}
-
-logfile="/var/log/${name}.log"
+: ${authelia_enable:="NO"}
+: ${authelia_pidfile:="/var/run/${name}.pid"}
+: ${authelia_logfile:="/var/log/${name}.log"}
 
 procname=%%PREFIX%%/bin/authelia
 command="/usr/sbin/daemon"
-command_args="-u %%USER%% -o ${logfile} -t ${name} %%PREFIX%%/bin/authelia --config %%PREFIX%%/etc/authelia.yml --config.experimental.filters template"
+command_args="-u %%USER%% -o ${authelia_logfile} -P ${authelia_pidfile} -t ${name} %%PREFIX%%/bin/authelia --config %%PREFIX%%/etc/authelia.yml --config.experimental.filters template"
 
 run_rc_command "$1"
