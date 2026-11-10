@@ -1,3 +1,56 @@
+  <vuln vid="a18ffa98-dd42-11f1-8816-a0369f7f7be0">
+    <topic>chromium -- security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>157.0.8103.50</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>157.0.8103.50</lt></range>
+      </package>
+      <package>
+       <name>linux-chrome</name>
+       <range><lt>157.0.8103.50</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_018223192.html">
+	 <p>This update includes 9 security fixes:</p>
+	 <ul>
+	    <li>High CVE-2026-125345: Uninitialized resource in WebGL.</li>
+	    <li>High CVE-2026-125347: Incorrect authorization in FileSystem.</li>
+	    <li>High CVE-2026-125343: Buffer overflow in Compositing.</li>
+	    <li>High CVE-2026-125348: Out of bounds write in GPU.</li>
+	    <li>High CVE-2026-125344: Type confusion in V8.</li>
+	    <li>High CVE-2026-125346: Use after free in XML.</li>
+	    <li>High CVE-2026-125350: Use after free in XML.</li>
+	    <li>Medium CVE-2026-125349: Uninitialized resource in GPU.</li>
+	    <li>Medium CVE-2026-125342: Uninitialized resource in GPU.</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-125345</cvename>
+      <cvename>CVE-2026-125347</cvename>
+      <cvename>CVE-2026-125343</cvename>
+      <cvename>CVE-2026-125348</cvename>
+      <cvename>CVE-2026-125344</cvename>
+      <cvename>CVE-2026-125346</cvename>
+      <cvename>CVE-2026-125350</cvename>
+      <cvename>CVE-2026-125349</cvename>
+      <cvename>CVE-2026-125342</cvename>
+      <url>https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_018223192.html</url>
+    </references>
+    <dates>
+      <discovery>2026-11-09</discovery>
+      <entry>2026-11-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="24e1443d-dd3b-11f1-b094-bc2411e144f8">
     <topic>git -- multiple vulnerabilities</topic>
     <affects>
