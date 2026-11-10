@@ -254,5 +254,8 @@ post-install: .SILENT
 	${REINPLACE_CMD} -e '/nvidia_gsp_ga10x_fw\.ko/d' ${TMPPLIST}
 	${REINPLACE_CMD} -e '/nvidia_gsp_tu10x_fw\.ko/d' ${TMPPLIST}
 .endif
-
+.if ${NVVERSION} < 600.00000
+	${REINPLACE_CMD} -e '/nvidia_ucodes_ga10x_fw\.ko/d' ${TMPPLIST}
+	${REINPLACE_CMD} -e '/nvidia_ucodes_tu10x_fw\.ko/d' ${TMPPLIST}
+.endif
 .include <bsd.port.post.mk>
