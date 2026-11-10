@@ -5808,3 +5808,4 @@ www/filebrowser||2026-11-08|Has expired: Upstream repo archived on Aug 31, 2026
 www/github-release-monitor||2026-11-10|Has expired: Cannot upgrade due to linuxisms
 mail/masqmail||2026-11-10|Has expired: Unmaintained with known parser and memory-safety issues use dma from base or mail/msmtp
 deskutils/tasksh||2026-11-10|Has expired: No upstream activity over the last 4 years
+games/polyglot||2026-11-10|Has expired: Obsolete software, original master site is no longer available

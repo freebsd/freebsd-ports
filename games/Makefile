@@ -778,7 +778,6 @@
     SUBDIR += pipewalker
     SUBDIR += pmars
     SUBDIR += pmars-sdl
-    SUBDIR += polyglot
     SUBDIR += pongix
     SUBDIR += ponscripter-07th-mod
     SUBDIR += popstar
