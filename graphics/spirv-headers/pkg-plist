@@ -71,6 +71,7 @@ include/spirv/unified1/extinst.spv-amd-shader-ballot.grammar.json
 include/spirv/unified1/extinst.spv-amd-shader-explicit-vertex-parameter.grammar.json
 include/spirv/unified1/extinst.spv-amd-shader-trinary-minmax.grammar.json
 include/spirv/unified1/extinst.tosa.001000.1.grammar.json
+include/spirv/unified1/org/khronos/spv/Spv.java
 include/spirv/unified1/spirv.bf
 include/spirv/unified1/spirv.core.grammar.json
 include/spirv/unified1/spirv.cs
