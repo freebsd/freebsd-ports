@@ -1,6 +1,6 @@
 PORTNAME=	entt
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.16.0
+DISTVERSION=	4.0.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	googletest>0:devel/googletest
 
-USES=		cmake:testing compiler:c++17-lang
+USES=		cmake:testing compiler:c++20-lang
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	skypjack
@@ -27,6 +27,6 @@ NO_ARCH=	yes
 post-install: # https://github.com/skypjack/entt/issues/1104
 	@${RM} ${STAGEDIR}${PREFIX}/include/BUILD.bazel
 
-# tests as of 3.16.0: 100% tests passed, 0 tests failed out of 67
+# tests as of 4.0.0: 100% tests passed, 0 tests failed out of 15
 
 .include <bsd.port.mk>
