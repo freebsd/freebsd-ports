@@ -1,6 +1,6 @@
-TIMESTAMP = 1791705653
-SHA256 (newsboat-2.45.tar.xz) = defe303d2518f3c4241780a9165e8750e9984e3f10aa341b7dde107579e34b3d
-SIZE (newsboat-2.45.tar.xz) = 835984
+TIMESTAMP = 1794310868
+SHA256 (newsboat-2.45.1.tar.xz) = bf7dd8c99f60220b659607a03d8f56ecaba4f697ac29984504108575b4a41474
+SIZE (newsboat-2.45.1.tar.xz) = 837480
 SHA256 (rust/crates/addr2line-0.25.1.crate) = 1b5d307320b3181d6d7954e663bd7c774a838b8220fe0593c86d9fb09f498b4b
 SIZE (rust/crates/addr2line-0.25.1.crate) = 43134
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
