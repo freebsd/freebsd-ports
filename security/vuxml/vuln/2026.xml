@@ -1,3 +1,90 @@
+  <vuln vid="24e1443d-dd3b-11f1-b094-bc2411e144f8">
+    <topic>git -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>git</name>
+	<name>git-cvs</name>
+	<name>git-gui</name>
+	<name>git-lite</name>
+	<name>git-p4</name>
+	<name>git-svn</name>
+	<name>git-tiny</name>
+	<range><lt>2.56.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Git development team reports:</p>
+	<blockquote cite="https://github.com/git/git/security/advisories/GHSA-vp2w-7xxj-jvxr">
+	  <p>CVE-2026-111760:
+	    Recursive clones are susceptible to Remote Code Execution: an
+	    attacker-controlled repository can be crafted in a way that
+	    exploits a bug in Git whereby Git can be fooled into overwriting
+	    a gitfile (used for submodules) with a symbolic link that then
+	    points to a directory with malicious config or hooks. The config
+	    or hooks may have attacker-specified code.
+	  </p>
+	  <p>CVE-2026-113408:
+	    It is possible for a server to advertise an unborn HEAD that
+	    contains path-traversal characters (e.g.,
+	    `refs/heads/../../../TARGET`). With the files ref backend that
+	    can lead to ref-updating actions to write to unwanted files.
+	  </p>
+	  <p>CVE-2026-114466:
+	    In response to CVE-2019-1348, `fast-import` disallows the
+	    `export-marks` feature by default. The features
+	    `rewrite-submodules-to` and `rewrite-submodules-from` as well as
+	    the option `export-pack-edges` that were introduced in the
+	    meantime also allow reading from arbitrary paths, and are
+	    therefore now also disallowed by default.
+	  </p>
+	  <p>CVE-2026-114467:
+	    When Git strips the GPG signatures from a commit message, it only
+	    accounts for two signatures. A commit message containing more
+	    than two signatures therefore causes a stack memory corruption.
+	    This can be triggered when using `git merge` with a tag which
+	    contains more than two signatures, making way for a DoS attack
+	    which can potentially also affect forges.
+	  </p>
+	  <p>CVE-2026-114469:
+	    Git rejects patches larger than ~1 GiB, but that check only
+	    considered the size of the patch as it appears in the input,
+	    which for binary patches is much smaller than the size of the
+	    file the patch describes. A binary patch that inflates to a very
+	    large size therefore slipped past the check and crashed Git with
+	    an out-of-bounds read.
+	  </p>
+	  <p>CVE-2026-105437:
+	    When merging, Git computes the size of the buffer holding the
+	    merge result in a way that can overflow for very large merges,
+	    which can be triggered by a large number of conflicts combined
+	    with a large `conflict-marker-size`. The resulting buffer can
+	    then be too small, and Git writes past its end (and, before and
+	    after that, before its start), corrupting the heap.
+	  </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-111760</cvename>
+      <cvename>CVE-2026-113408</cvename>
+      <cvename>CVE-2026-114466</cvename>
+      <cvename>CVE-2026-114467</cvename>
+      <cvename>CVE-2026-114469</cvename>
+      <cvename>CVE-2026-105437</cvename>
+      <url>https://github.com/git/git/security/advisories/GHSA-vp2w-7xxj-jvxr</url>
+      <url>https://gitlab.com/gitlab-org/git/-/work_items/809</url>
+      <url>https://gitlab.com/gitlab-org/git/-/work_items/810</url>
+      <url>https://gitlab.com/gitlab-org/git/-/work_items/811</url>
+      <url>https://gitlab.com/gitlab-org/git/-/work_items/812</url>
+      <url>https://gitlab.com/gitlab-org/git/-/work_items/814</url>
+    </references>
+    <dates>
+      <discovery>2026-11-10</discovery>
+      <entry>2026-11-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9b39eca8-dd1a-11f1-867b-3c7c3fba4204">
     <topic>Newsboat -- Remote code execution via manual OPML import</topic>
     <affects>
