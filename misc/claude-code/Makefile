@@ -1,5 +1,5 @@
 PORTNAME=	claude-code
-DISTVERSION=	2.1.319
+DISTVERSION=	2.1.322
 CATEGORIES=	misc # machine-learning
 # The linux-x64 package is fetched regardless of our own architecture,
 # because we extract the actual NodeJS code from it anyway.
