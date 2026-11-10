@@ -1,6 +1,6 @@
 PORTNAME=	tblite
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.0
+DISTVERSION=	0.8.0
 CATEGORIES=	science # chemistry
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,10 +10,6 @@ WWW=		https://tblite.readthedocs.io/ \
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
-
-.if !exists(/usr/include/omp.h)
-BROKEN=		requires OpenMP support that is missing on this architecture
-.endif
 
 BUILD_DEPENDS=	mstore>0:science/mstore # unclear if this is really needed
 LIB_DEPENDS=	libdftd4.so:science/dftd4 \
@@ -27,11 +23,17 @@ USES=		cmake:testing fortran
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
+.if !exists(/usr/include/omp.h)
+BROKEN=		requires OpenMP support that is missing on this architecture
+.endif
+
 CMAKE_ON=	BUILD_SHARED_LIBS
-CMAKE_OFF=	WITH_TESTS
-CMAKE_TESTING_ON=	WITH_TESTS
+CMAKE_OFF=	TBLITE_WITH_TESTS
+CMAKE_TESTING_ON=	TBLITE_WITH_TESTS
 
 post-patch: # see https://github.com/toml-f/toml-f/issues/51
 	@${REINPLACE_CMD} -e 's|$${CMAKE_Fortran_COMPILER_ID}-$${CMAKE_Fortran_COMPILER_VERSION}||' ${WRKSRC}/config/CMakeLists.txt
+
+# tests as of 0.8.0: 100% tests passed, 0 tests failed out of 36
 
 .include <bsd.port.mk>

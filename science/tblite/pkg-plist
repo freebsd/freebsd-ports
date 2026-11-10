@@ -5,6 +5,7 @@ include/tblite/container.h
 include/tblite/context.h
 include/tblite/double_dictionary.h
 include/tblite/error.h
+include/tblite/features.h
 include/tblite/macros.h
 include/tblite/param.h
 include/tblite/result.h
@@ -17,6 +18,7 @@ include/tblite/tblite_api_container.mod
 include/tblite/tblite_api_context.mod
 include/tblite/tblite_api_double_dictionary.mod
 include/tblite/tblite_api_error.mod
+include/tblite/tblite_api_features.mod
 include/tblite/tblite_api_param.mod
 include/tblite/tblite_api_result.mod
 include/tblite/tblite_api_solvation.mod
@@ -33,7 +35,6 @@ include/tblite/tblite_blas_level1.mod
 include/tblite/tblite_blas_level2.mod
 include/tblite/tblite_blas_level3.mod
 include/tblite/tblite_ceh_ceh.mod
-include/tblite/tblite_ceh_h0.mod
 include/tblite/tblite_ceh_singlepoint.mod
 include/tblite/tblite_classical_halogen.mod
 include/tblite/tblite_container.mod
@@ -69,9 +70,7 @@ include/tblite/tblite_features.mod
 include/tblite/tblite_fit_newuoa.mod
 include/tblite/tblite_fit_settings.mod
 include/tblite/tblite_integral_diat_trafo.mod
-include/tblite/tblite_integral_dipole.mod
-include/tblite/tblite_integral_multipole.mod
-include/tblite/tblite_integral_overlap.mod
+include/tblite/tblite_integral_native_integrals.mod
 include/tblite/tblite_integral_trafo.mod
 include/tblite/tblite_integral_type.mod
 include/tblite/tblite_io_data.mod
@@ -92,15 +91,18 @@ include/tblite/tblite_io_numpy_zip.mod
 include/tblite/tblite_io_tag.mod
 include/tblite/tblite_io_trexio.mod
 include/tblite/tblite_lapack.mod
+include/tblite/tblite_lapack_geqp3.mod
 include/tblite/tblite_lapack_getrf.mod
 include/tblite/tblite_lapack_getri.mod
 include/tblite/tblite_lapack_getrs.mod
 include/tblite/tblite_lapack_potrf.mod
+include/tblite/tblite_lapack_scalapack.mod
 include/tblite/tblite_lapack_solver.mod
 include/tblite/tblite_lapack_sygst.mod
 include/tblite/tblite_lapack_sygvd.mod
 include/tblite/tblite_lapack_sygvr.mod
 include/tblite/tblite_mesh_lebedev.mod
+include/tblite/tblite_mpi_utils.mod
 include/tblite/tblite_os.mod
 include/tblite/tblite_output_ascii.mod
 include/tblite/tblite_output_format.mod
@@ -114,13 +116,16 @@ include/tblite/tblite_param_hamiltonian.mod
 include/tblite/tblite_param_mask.mod
 include/tblite/tblite_param_multipole.mod
 include/tblite/tblite_param_post_processing.mod
+include/tblite/tblite_param_post_processing_localization.mod
 include/tblite/tblite_param_post_processing_molmom.mod
 include/tblite/tblite_param_post_processing_type.mod
 include/tblite/tblite_param_post_processing_xtbml.mod
 include/tblite/tblite_param_repulsion.mod
 include/tblite/tblite_param_serde.mod
 include/tblite/tblite_param_thirdorder.mod
+include/tblite/tblite_partition.mod
 include/tblite/tblite_post_processing_list.mod
+include/tblite/tblite_post_processing_localization.mod
 include/tblite/tblite_post_processing_molmom.mod
 include/tblite/tblite_post_processing_type.mod
 include/tblite/tblite_post_processing_wbo.mod
@@ -167,6 +172,10 @@ include/tblite/tblite_version.mod
 include/tblite/tblite_wavefunction.mod
 include/tblite/tblite_wavefunction_fermi.mod
 include/tblite/tblite_wavefunction_guess.mod
+include/tblite/tblite_wavefunction_localization.mod
+include/tblite/tblite_wavefunction_localization_fosterboys.mod
+include/tblite/tblite_wavefunction_localization_jacobi.mod
+include/tblite/tblite_wavefunction_localization_type.mod
 include/tblite/tblite_wavefunction_mulliken.mod
 include/tblite/tblite_wavefunction_restart.mod
 include/tblite/tblite_wavefunction_spin.mod
@@ -182,6 +191,8 @@ include/tblite/tblite_xtb_ipea1.mod
 include/tblite/tblite_xtb_singlepoint.mod
 include/tblite/tblite_xtb_spec.mod
 include/tblite/version.h
+lib/cmake/tblite/FindScalapack.cmake
+lib/cmake/tblite/FindddX.cmake
 lib/cmake/tblite/Finddftd4.cmake
 lib/cmake/tblite/Findmctc-lib.cmake
 lib/cmake/tblite/Findmstore.cmake
@@ -195,5 +206,5 @@ lib/cmake/tblite/tblite-targets.cmake
 lib/cmake/tblite/tblite-utils.cmake
 lib/libtblite.so
 lib/libtblite.so.0
-lib/libtblite.so.0.7.0
+lib/libtblite.so.0.8.0
 libdata/pkgconfig/tblite.pc
