@@ -1,0 +1,7 @@
+The dynamic_upstream module reconfigures the peers of an nginx upstream at
+run time over an HTTP API -- adding, removing, marking up or down, changing
+weights -- and keeps DNS-named peers in sync in the background, for both
+http and stream upstreams.
+
+This port only installs the module sources.  The module itself is built by
+the nginx ports when their DYNAMIC_UPSTREAM option is enabled.
