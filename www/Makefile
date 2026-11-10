@@ -435,6 +435,7 @@
     SUBDIR += minio-client
     SUBDIR += miniserve
     SUBDIR += mirrorselect
+    SUBDIR += mitmproxy
     SUBDIR += mknmz-wwwoffle
     SUBDIR += mod_asn
     SUBDIR += mod_auth_cas
@@ -1949,6 +1950,7 @@
     SUBDIR += py-mailman-hyperkitty
     SUBDIR += py-mechanicalsoup
     SUBDIR += py-mechanize
+    SUBDIR += py-mitmproxy_rs
     SUBDIR += py-modelsearch
     SUBDIR += py-multidict
     SUBDIR += py-mwoauth
