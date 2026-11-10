@@ -28,8 +28,8 @@ AWS_AUTH_BUILD_DEPENDS=	nginx-module-aws-auth>0:www/nginx-module-aws-auth
 WRKSRC_aws_auth=	${WRKDIR}/ngx_aws_auth
 AWS_AUTH_VARS=		DSO_EXTMODS+=aws_auth
 
-BROTLI_BUILD_DEPENDS=	nginx-module-brotli>0:www/nginx-module-brotli
 BROTLI_LIB_DEPENDS=	libbrotlicommon.so:archivers/brotli
+BROTLI_BUILD_DEPENDS=	nginx-module-brotli>0:www/nginx-module-brotli
 WRKSRC_brotli=		${WRKDIR}/ngx_brotli
 BROTLI_VARS=		DSO_EXTMODS+=brotli
 
@@ -54,7 +54,8 @@ WRKSRC_drizzle=		${WRKDIR}/drizzle-nginx-module
 DRIZZLE_VARS=		DSO_EXTMODS+=drizzle
 
 DYNAMIC_UPSTREAM_IMPLIES=	STREAM
-DYNAMIC_UPSTREAM_GH_TUPLE=	ZigzagAK:ngx_dynamic_upstream:960eef2:dynamic_upstream
+DYNAMIC_UPSTREAM_BUILD_DEPENDS=	nginx-module-dynamic-upstream>0:www/nginx-module-dynamic-upstream
+WRKSRC_dynamic_upstream=	${WRKDIR}/ngx_dynamic_upstream
 DYNAMIC_UPSTREAM_VARS=		DSO_EXTMODS+=dynamic_upstream
 
 DEVEL_KIT_BUILD_DEPENDS=	nginx-module-ndk>0:www/nginx-module-ndk
@@ -95,9 +96,9 @@ HTTP_AUTH_DIGEST_BUILD_DEPENDS=	nginx-module-auth-digest>0:www/nginx-module-auth
 WRKSRC_auth_digest=		${WRKDIR}/nginx-module-auth-digest
 HTTP_AUTH_DIGEST_VARS=		DSO_EXTMODS+=auth_digest
 
-HTTP_AUTH_KRB5_GH_TUPLE=	stnoonan:spnego-http-auth-nginx-module:3575542:auth_krb5
+HTTP_AUTH_KRB5_BUILD_DEPENDS=	nginx-module-auth-krb5>0:www/nginx-module-auth-krb5
+WRKSRC_auth_krb5=		${WRKDIR}/nginx-module-auth-krb5
 HTTP_AUTH_KRB5_VARS=		DSO_EXTMODS+=auth_krb5
-HTTP_AUTH_KRB5_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-spnego-http-auth-nginx-module-config
 
 HTTP_AUTH_LDAP_BUILD_DEPENDS=	nginx-module-auth-ldap>0:www/nginx-module-auth-ldap
 WRKSRC_http_auth_ldap=		${WRKDIR}/nginx-auth-ldap-module
@@ -133,8 +134,9 @@ HTTP_GEOIP2_CFLAGS=		-I${LOCALBASE}/include
 HTTP_GEOIP2_VARS=		DSO_EXTMODS+=geoip2
 HTTP_GEOIP2_LIB_DEPENDS=	libmaxminddb.so:net/libmaxminddb
 
-HTTP_IP2LOCATION_GH_TUPLE=	ip2location:ip2location-nginx:2df35fb:ip2location
 HTTP_IP2LOCATION_LIB_DEPENDS=	libIP2Location.so:net/ip2location
+HTTP_IP2LOCATION_BUILD_DEPENDS=	nginx-module-ip2location>0:www/nginx-module-ip2location
+WRKSRC_ip2location=		${WRKDIR}/nginx-module-ip2location
 HTTP_IP2LOCATION_VARS=		DSO_EXTMODS+=ip2location
 
 HTTP_IP2PROXY_GH_TUPLE=		ip2location:ip2proxy-nginx:02ce447:ip2proxy
