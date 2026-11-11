@@ -1,5 +1,5 @@
-TIMESTAMP = 1658079166
-SHA256 (go/sysutils_gotop/gotop-v4.1.4/v4.1.4.mod) = 7908eb62edb9e475d39706b7e1f2a20626010e389202b095581201bc5fc74e49
-SIZE (go/sysutils_gotop/gotop-v4.1.4/v4.1.4.mod) = 1131
-SHA256 (go/sysutils_gotop/gotop-v4.1.4/v4.1.4.zip) = aba26a8c4128b483ce8435a0d401302afc7e8d81562ace33dc64778dcb951be7
-SIZE (go/sysutils_gotop/gotop-v4.1.4/v4.1.4.zip) = 1253828
+TIMESTAMP = 1794422148
+SHA256 (go/sysutils_gotop/xxxserxxx-gotop-v4.2.0-30-g2872dab_GH0/go.mod) = 6723d04a9bd1c0f1470829d074f919bddee94a340349f811a20b223bb1587661
+SIZE (go/sysutils_gotop/xxxserxxx-gotop-v4.2.0-30-g2872dab_GH0/go.mod) = 2148
+SHA256 (go/sysutils_gotop/xxxserxxx-gotop-v4.2.0-30-g2872dab_GH0/xxxserxxx-gotop-v4.2.0-30-g2872dab_GH0.tar.gz) = 951e5823deb15c08cceedb5887b73591326253e89288d89c591615a128306923
+SIZE (go/sysutils_gotop/xxxserxxx-gotop-v4.2.0-30-g2872dab_GH0/xxxserxxx-gotop-v4.2.0-30-g2872dab_GH0.tar.gz) = 3358031
