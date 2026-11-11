@@ -146,6 +146,9 @@ post-patch:
 .if ${NVVERSION} >= 620.00000
 	${REINPLACE_CMD} -e 's/%llu\ /%lu\ /'	${WRKSRC}/nvidia-drm-connector.c
 .endif
+	# don't add `machine` to the search path for stdarg.h as it is deprecated
+	${REINPLACE_CMD} -e '/-Imachine/d' \
+	    ${WRKSRC}/Makefile
 	# Workaround for build failure on graphics/nvidia-drm-515-kmod*,
 	# as struct dma_buf_map was renamed to struct iosys_map at Linux 5.18 (DRM5.18).
 .if ${.CURDIR:M*nvidia-drm-515-kmod*}

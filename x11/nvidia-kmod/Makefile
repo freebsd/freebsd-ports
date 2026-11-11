@@ -244,6 +244,23 @@ post-patch: .SILENT
 		-e 's/DMAP_MAX_ADDRESS/kva_layout.dmap_high/' \
 		${WRKSRC}/src/${NVSRC}/nvidia_subr.c
 .endif
+# machine/stdarg.h is deprecated, use sys/stdarg.h.
+	${REINPLACE_CMD} -e '/machine\/stdarg.h/d' \
+		${WRKSRC}/src/${NVSRC}/Makefile
+.if ${NVVERSION:R} >= 390
+	${REINPLACE_CMD} -e 's|<stdarg.h>|<sys/stdarg.h>|' \
+		${WRKSRC}/src/common/inc/nv_stdarg.h
+.else
+	${REINPLACE_CMD} -e 's|<stdarg.h>|<sys/stdarg.h>|' \
+		${WRKSRC}/src/${NVSRC}/nv.h
+	${REINPLACE_CMD} -e 's|<stdarg.h>|<sys/stdarg.h>|' \
+		${WRKSRC}/src/${NVSRC}/os-interface.h
+.endif
+# don't add `machine` to the search path for stdarg.h as it is deprecated
+.if ${NVVERSION:R} >= 390
+	${REINPLACE_CMD} -e 's/-Imachine//' \
+	    ${WRKSRC}/src/nvidia-modeset/Makefile
+.endif
 
 post-install: .SILENT
 # pkg-plist is already overbloated, so use these hacks instead of PLIST_SUB's
