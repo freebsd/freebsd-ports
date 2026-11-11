@@ -2,8 +2,8 @@ See https://bz.apache.org/bugzilla/show_bug.cgi?id=59332
 
 Also reported in PR230538 devel/apr1 fails with mysql80-client
 
---- apr-util-1.6.3/dbd/apr_dbd_mysql.c.orig	2023-01-27 13:32:52 UTC
-+++ apr-util-1.6.3/dbd/apr_dbd_mysql.c
+--- apr-util-1.6.6/dbd/apr_dbd_mysql.c.orig	2023-01-27 13:32:52 UTC
++++ apr-util-1.6.6/dbd/apr_dbd_mysql.c
 @@ -44,6 +44,11 @@
  #include <errmsg.h>
  #endif
