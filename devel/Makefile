@@ -1914,6 +1914,7 @@
     SUBDIR += ode
     SUBDIR += ois
     SUBDIR += okteta
+    SUBDIR += okteta-qt5
     SUBDIR += ollama-hpp
     SUBDIR += omake
     SUBDIR += omniORB
