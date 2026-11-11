@@ -2449,6 +2449,7 @@
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Exception/ServerException.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Exception/TooManyRedirectsException.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Exception/TransferException.php
+%%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Handler/ChunkedBodyStream.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Handler/Clock.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Handler/CurlFactoryInterface.php
@@ -2457,10 +2458,12 @@
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Handler/CurlShareHandleState.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Handler/CurlVersion.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Handler/DeadlineSourceStream.php
+%%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Handler/DeclaredLengthStream.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Handler/EasyHandle.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Handler/EncodedBodyStream.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Handler/HeaderProcessor.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Handler/HostValidator.php
+%%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Handler/InflateBodyStream.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Handler/MockHandler.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Handler/Proxy.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Handler/ProxyEnv.php
@@ -2470,6 +2473,7 @@
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Handler/Timeout.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Handler/TlsVersion.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Handler/TransferByteCounter.php
+%%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Handler/TransportStream.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Handler/UriDiagnostic.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/HandlerStack.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/HostIdentity.php
@@ -2513,6 +2517,7 @@
 %%WWWDIR%%/vendor/guzzlehttp/promises/src/PromisorInterface.php
 %%WWWDIR%%/vendor/guzzlehttp/promises/src/RejectedPromise.php
 %%WWWDIR%%/vendor/guzzlehttp/promises/src/RejectionException.php
+%%WWWDIR%%/vendor/guzzlehttp/promises/src/State.php
 %%WWWDIR%%/vendor/guzzlehttp/promises/src/TaskQueue.php
 %%WWWDIR%%/vendor/guzzlehttp/promises/src/TaskQueueInterface.php
 %%WWWDIR%%/vendor/guzzlehttp/promises/src/Utils.php
@@ -2554,6 +2559,7 @@
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/NonSerializableStreamTrait.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/PumpStream.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/Query.php
+%%WWWDIR%%/vendor/guzzlehttp/psr7/src/ReadFailureCapturingStream.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/Request.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/Response.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/Rfc3986.php
