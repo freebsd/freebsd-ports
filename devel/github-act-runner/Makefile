@@ -1,6 +1,7 @@
 PORTNAME=	github-act-runner
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.13.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	hayzam@alchemilla.io

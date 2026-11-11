@@ -1,5 +1,6 @@
 PORTNAME=	cmdns-cli
 PORTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	https://codeberg.org/DNS-OARC/${PORTNAME}/archive/v${PORTVERSION}${EXTRACT_SUFX}?dummy=/
 

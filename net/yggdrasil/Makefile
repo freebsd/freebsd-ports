@@ -1,6 +1,7 @@
 PORTNAME=	yggdrasil
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.15
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	freebsd@neilalexander.dev

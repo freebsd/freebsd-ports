@@ -1,7 +1,7 @@
 PORTNAME=	immich-kiosk
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.47.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	https://registry.npmjs.org/choices.js/-/:choices \
 		https://registry.npmjs.org/date-fns/-/:datefns \

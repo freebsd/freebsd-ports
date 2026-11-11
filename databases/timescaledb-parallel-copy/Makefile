@@ -1,6 +1,7 @@
 PORTNAME=	timescaledb-parallel-copy
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.13.1
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	kbowling@FreeBSD.org
