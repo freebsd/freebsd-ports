@@ -1,1 +1,6 @@
 Python library for communicating with KeepKey Hardware Wallet.
+
+python-keepkey is the client-side implementation for KeepKey-compatible
+Bitcoin hardware wallets.  It is a modified version of python-trezor that
+supports KeepKey's protocol and feature set, such as device recovery with
+the Recovery Cipher, and includes the keepkeyctl command-line tool.

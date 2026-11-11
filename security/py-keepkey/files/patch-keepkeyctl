@@ -1,0 +1,151 @@
+Description: Replace Python 2 leftovers in the keepkeyctl command handlers
+  (str.decode('hex')/bytes.encode('hex') -> bytes.fromhex()/bytes.hex(),
+  urllib.urlretrieve -> urllib.request with a binary download, hexlify()
+  and b64encode() bytes formatted into strings, decrypt_keyvalue returning
+  bytes instead of the UTF-8 text encrypt_keyvalue takes (hex for values
+  that are not UTF-8), dead Python 2 branches).
+Issue ID: https://github.com/keepkey/python-keepkey/pull/231
+Changeset: none
+TODO: Drop once a release includes it.
+
+--- keepkeyctl.orig	2021-09-30 20:27:48 UTC
++++ keepkeyctl
+@@ -28,7 +28,7 @@ import binascii
+ import argparse
+ import json
+ import base64
+-import urllib
++import urllib.request
+ import tempfile
+ 
+ from keepkeylib.client import KeepKeyClient, KeepKeyClientVerbose, KeepKeyDebuglinkClient, KeepKeyDebuglinkClientVerbose
+@@ -167,7 +167,7 @@ class Commands(object):
+     def ethereum_get_address(self, args):
+         address_n = self.client.expand_path(args.n)
+         address = self.client.ethereum_get_address(address_n, args.show_display)
+-        return "0x%s" % (binascii.hexlify(address),)
++        return "0x%s" % (address.hex(),)
+ 
+     def ethereum_sign_tx(self, args):
+         from ethjsonrpc import EthJsonRpc
+@@ -198,16 +198,16 @@ class Commands(object):
+             gas_limit = int(gas_limit)
+ 
+         if args.to.startswith('0x') or args.to.startswith('0X'):
+-            to_address = args.to[2:].decode('hex')
++            to_address = bytes.fromhex(args.to[2:])
+         else:
+-            to_address = args.to.decode('hex')
++            to_address = bytes.fromhex(args.to)
+ 
+         nonce = args.nonce
+         if nonce:
+             nonce = int(nonce)
+ 
+         address_n = self.client.expand_path(args.n)
+-        address = "0x%s" % (binascii.hexlify(self.client.ethereum_get_address(address_n)),)
++        address = "0x%s" % (self.client.ethereum_get_address(address_n).hex(),)
+ 
+         if gas_price is None or gas_limit is None or nonce is None:
+             host, port = args.host.split(':')
+@@ -244,7 +244,7 @@ class Commands(object):
+ 
+         transaction = rlp.encode(
+             (nonce, gas_price, gas_limit, to_address, value, data) + sig)
+-        tx_hex = '0x%s' % binascii.hexlify(transaction)
++        tx_hex = '0x%s' % transaction.hex()
+ 
+         if args.publish:
+             tx_hash = eth.eth_sendRawTransaction(tx_hex)
+@@ -255,7 +255,7 @@ class Commands(object):
+     def eos_get_public_key(self, args):
+         address_n = self.client.expand_path(args.n)
+         res = self.client.eos_get_public_key(address_n, args.show_display)
+-        return "WIF: %s\nRaw: %s" % (str(res.wif_public_key), binascii.hexlify(res.raw_public_key))
++        return "WIF: %s\nRaw: %s" % (str(res.wif_public_key), res.raw_public_key.hex())
+ 
+     def eos_sign_tx(self, args):
+         import keepkeylib.eos as eos
+@@ -279,7 +279,7 @@ class Commands(object):
+ 
+     def nano_sign_tx(self, args):
+         def decode_hex(value):
+-            return value.decode('hex') if value else None
++            return bytes.fromhex(value) if value else None
+ 
+         address_n = self.client.expand_path(args.n)
+         link_recipient_n = None
+@@ -300,8 +300,8 @@ class Commands(object):
+         )
+ 
+         return "Block hash: %s\nSignature: %s" % (
+-            res.block_hash.encode('hex'),
+-            res.signature.encode('hex'),
++            res.block_hash.hex(),
++            res.signature.hex(),
+         )
+ 
+     def cosmos_get_address(self, args):
+@@ -378,7 +378,7 @@ class Commands(object):
+         return signed
+ 
+     def get_entropy(self, args):
+-        return binascii.hexlify(self.client.get_entropy(args.size))
++        return self.client.get_entropy(args.size).hex()
+ 
+     def get_features(self, args):
+         return self.client.features
+@@ -440,7 +440,7 @@ class Commands(object):
+         output = {
+             'message': args.message,
+             'address': ret.address,
+-            'signature': base64.b64encode(ret.signature)
++            'signature': base64.b64encode(ret.signature).decode('ascii')
+         }
+         return output
+ 
+@@ -450,19 +450,18 @@ class Commands(object):
+ 
+     def encrypt_keyvalue(self, args):
+         address_n = self.client.expand_path(args.n)
+-        if sys.version_info > (3,):
+-            ret = self.client.encrypt_keyvalue(address_n, args.key, bytes(args.value, 'utf-8'))
+-        else:
+-            ret = self.client.encrypt_keyvalue(address_n, args.key, args.value)
+-        return binascii.hexlify(ret)
++        ret = self.client.encrypt_keyvalue(address_n, args.key, bytes(args.value, 'utf-8'))
++        return ret.hex()
+ 
+     def decrypt_keyvalue(self, args):
+         address_n = self.client.expand_path(args.n)
+-        if sys.version_info > (3,):
+-            ret = self.client.decrypt_keyvalue(address_n, args.key, bytes.fromhex(args.value))
+-        else:
+-            ret = self.client.decrypt_keyvalue(address_n, args.key, args.value.decode("hex"))
+-        return ret
++        ret = self.client.decrypt_keyvalue(address_n, args.key, bytes.fromhex(args.value))
++        # encrypt_keyvalue encodes the value as UTF-8; return text so that it
++        # prints and serializes with -j, and hex for anything else.
++        try:
++            return ret.decode('utf-8')
++        except UnicodeDecodeError:
++            return ret.hex()
+ 
+     def firmware_update(self, args):
+         if not args.file and not args.url:
+@@ -472,11 +471,11 @@ class Commands(object):
+             fp = open(args.file, 'rb')
+         elif args.url:
+             print("Downloading from", args.url)
+-            resp = urllib.urlretrieve(args.url)
+-            fp = open(resp[0], 'r')
+-            urllib.urlcleanup() # We still keep file pointer open
++            resp = urllib.request.urlretrieve(args.url)
++            fp = open(resp[0], 'rb')
++            urllib.request.urlcleanup() # We still keep file pointer open
+ 
+-        if fp.read(8) == '54525a52':
++        if fp.read(8) == b'54525a52':
+             print("Converting firmware to binary")
+ 
+             fp.seek(0)
