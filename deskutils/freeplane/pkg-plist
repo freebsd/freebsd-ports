@@ -8,7 +8,7 @@ share/applications/freeplane.desktop
 %%DATADIR%%/core/org.freeplane.core/lib/commons-io-2.19.0.jar
 %%DATADIR%%/core/org.freeplane.core/lib/commons-lang-2.6.jar
 %%DATADIR%%/core/org.freeplane.core/lib/data-url-2.0.1.jar
-%%DATADIR%%/core/org.freeplane.core/lib/flatlaf-3.6.jar
+%%DATADIR%%/core/org.freeplane.core/lib/flatlaf-3.7.2.jar
 %%DATADIR%%/core/org.freeplane.core/lib/freeplane_mac-%%PORTVERSION%%.jar
 %%DATADIR%%/core/org.freeplane.core/lib/freeplaneapi_viewer.jar
 %%DATADIR%%/core/org.freeplane.core/lib/freeplaneeditor-%%PORTVERSION%%.jar
@@ -20,6 +20,8 @@ share/applications/freeplane.desktop
 %%DATADIR%%/core/org.freeplane.core/lib/imageio-metadata-3.12.0.jar
 %%DATADIR%%/core/org.freeplane.core/lib/jgoodies-common-1.8.1.jar
 %%DATADIR%%/core/org.freeplane.core/lib/jgoodies-forms-1.9.0.jar
+%%DATADIR%%/core/org.freeplane.core/lib/jna-5.19.1.jar
+%%DATADIR%%/core/org.freeplane.core/lib/jna-platform-5.19.1.jar
 %%DATADIR%%/core/org.freeplane.core/lib/jortho-%%PORTVERSION%%.jar
 %%DATADIR%%/core/org.freeplane.core/lib/simplyhtml-0.19.12.jar
 %%DATADIR%%/core/org.freeplane.core/lib/svgSalamander-1.1.4.jar
