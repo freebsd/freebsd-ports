@@ -1,0 +1,98 @@
+GH_TUPLE=	\
+		BurntSushi:toml:v1.2.0:burntsushi_toml/vendor/github.com/BurntSushi/toml \
+		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
+		bytedance:sonic:v1.12.0:bytedance_sonic/vendor/github.com/bytedance/sonic \
+		capnproto:go-capnp:v2.18.0:capnproto_go_capnproto2/vendor/zombiezen.com/go/capnproto2 \
+		cespare:xxhash:v2.3.0:cespare_xxhash_v2/vendor/github.com/cespare/xxhash/v2 \
+		chungthuang:quic-go:a9fddf436fc4:chungthuang_quic_go/vendor/github.com/quic-go/quic-go \
+		cloudflare:backoff:e46b80a3a7d0:cloudflare_backoff/vendor/github.com/cloudflare/backoff \
+		coder:websocket:v1.8.7:coder_websocket/vendor/nhooyr.io/websocket \
+		coreos:go-oidc:v3.17.0:coreos_go_oidc_v3/vendor/github.com/coreos/go-oidc/v3 \
+		coreos:go-systemd:v22.5.0:coreos_go_systemd_v22/vendor/github.com/coreos/go-systemd/v22 \
+		cpuguy83:go-md2man:v2.0.0:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
+		davecgh:go-spew:d8f796af33cc:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
+		ebitengine:purego:v0.10.0:ebitengine_purego/vendor/github.com/ebitengine/purego \
+		facebookgo:ensure:b4ab57deab51:facebookgo_ensure/vendor/github.com/facebookgo/ensure \
+		facebookgo:freeport:d4adf43b75b9:facebookgo_freeport/vendor/github.com/facebookgo/freeport \
+		facebookgo:grace:75cf19382434:facebookgo_grace/vendor/github.com/facebookgo/grace \
+		facebookgo:stack:751773369052:facebookgo_stack/vendor/github.com/facebookgo/stack \
+		facebookgo:subset:8dac2c3c4870:facebookgo_subset/vendor/github.com/facebookgo/subset \
+		fortytw2:leaktest:v1.3.0:fortytw2_leaktest/vendor/github.com/fortytw2/leaktest \
+		fsnotify:fsnotify:v1.4.9:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
+		getsentry:sentry-go:v0.43.0:getsentry_sentry_go/vendor/github.com/getsentry/sentry-go \
+		gin-gonic:gin:v1.9.1:gin_gonic_gin/vendor/github.com/gin-gonic/gin \
+		go-chi:chi:v5.5.0:go_chi_chi_v5/vendor/github.com/go-chi/chi/v5 \
+		go-chi:cors:v1.2.1:go_chi_cors/vendor/github.com/go-chi/cors \
+		go-jose:go-jose:v4.1.6:go_jose_go_jose_v4/vendor/github.com/go-jose/go-jose/v4 \
+		go-logr:logr:v1.4.4:go_logr_logr/vendor/github.com/go-logr/logr \
+		go-logr:stdr:v1.2.2:go_logr_stdr/vendor/github.com/go-logr/stdr \
+		go-ole:go-ole:v1.2.6:go_ole_go_ole/vendor/github.com/go-ole/go-ole \
+		go-playground:validator:v10.15.1:go_playground_validator_v10/vendor/github.com/go-playground/validator/v10 \
+		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
+		go-yaml:yaml:v3.0.1:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
+		gobwas:httphead:v0.1.0:gobwas_httphead/vendor/github.com/gobwas/httphead \
+		gobwas:pool:v0.2.1:gobwas_pool/vendor/github.com/gobwas/pool \
+		gobwas:ws:v1.2.1:gobwas_ws/vendor/github.com/gobwas/ws \
+		golang:arch:v0.4.0:golang_arch/vendor/golang.org/x/arch \
+		golang:crypto:v0.58.0:golang_crypto/vendor/golang.org/x/crypto \
+		golang:net:v0.61.0:golang_net/vendor/golang.org/x/net \
+		golang:oauth2:v0.36.0:golang_oauth2/vendor/golang.org/x/oauth2 \
+		golang:sync:v0.24.0:golang_sync/vendor/golang.org/x/sync \
+		golang:sys:v0.49.0:golang_sys/vendor/golang.org/x/sys \
+		golang:term:v0.47.0:golang_term/vendor/golang.org/x/term \
+		golang:text:v0.43.0:golang_text/vendor/golang.org/x/text \
+		google:go-genproto:0afa2a65878a:google_go_genproto_api/vendor/google.golang.org/genproto \
+		google:gopacket:v1.1.19:google_gopacket/vendor/github.com/google/gopacket \
+		google:uuid:v1.6.0:google_uuid/vendor/github.com/google/uuid \
+		gorilla:websocket:v1.5.3:gorilla_websocket/vendor/github.com/gorilla/websocket \
+		grpc-ecosystem:grpc-gateway:v2.29.0:grpc_ecosystem_grpc_gateway_v2/vendor/github.com/grpc-ecosystem/grpc-gateway/v2 \
+		grpc:grpc-go:v1.83.2:grpc_grpc_go/vendor/google.golang.org/grpc \
+		ipostelnik:cli:b6ea8234fe3d:ipostelnik_cli_v2/vendor/github.com/urfave/cli/v2 \
+		json-iterator:go:v1.1.12:json_iterator_go/vendor/github.com/json-iterator/go \
+		klauspost:compress:v1.20.3:klauspost_compress/vendor/github.com/klauspost/compress \
+		klauspost:cpuid:v2.2.5:klauspost_cpuid_v2/vendor/github.com/klauspost/cpuid/v2 \
+		lufia:plan9stats:39d0f177ccd0:lufia_plan9stats/vendor/github.com/lufia/plan9stats \
+		mattn:go-colorable:v0.1.13:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
+		mattn:go-isatty:v0.0.20:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
+		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
+		modern-go:concurrent:bacd9c7ef1dd:modern_go_concurrent/vendor/github.com/modern-go/concurrent \
+		modern-go:reflect2:v1.0.2:modern_go_reflect2/vendor/github.com/modern-go/reflect2 \
+		munnerz:goautoneg:a7dc8b61c822:munnerz_goautoneg/vendor/github.com/munnerz/goautoneg \
+		natefinch:lumberjack:v2.0.0:natefinch_lumberjack/vendor/gopkg.in/natefinch/lumberjack.v2 \
+		open-telemetry:opentelemetry-go-contrib:propagators/v0.22.0:open_telemetry_opentelemetry_go_contrib_propagators/vendor/go.opentelemetry.io/contrib \
+		open-telemetry:opentelemetry-go-instrumentation:sdk/v1.2.1:open_telemetry_opentelemetry_go_instrumentation_sdk/vendor/go.opentelemetry.io/auto \
+		open-telemetry:opentelemetry-go:exporters/otlp/otlptrace/v1.45.0:open_telemetry_opentelemetry_go_otlptrace \
+		open-telemetry:opentelemetry-go:metric/v1.45.0:open_telemetry_opentelemetry_go_metric \
+		open-telemetry:opentelemetry-go:sdk/v1.45.0:open_telemetry_opentelemetry_go_sdk \
+		open-telemetry:opentelemetry-go:trace/v1.45.0:open_telemetry_opentelemetry_go_trace \
+		open-telemetry:opentelemetry-go:v1.45.0:open_telemetry_opentelemetry_go/vendor/go.opentelemetry.io/otel \
+		open-telemetry:opentelemetry-proto-go:otlp/v1.11.0:open_telemetry_opentelemetry_proto_go_otlp/vendor/go.opentelemetry.io/proto \
+		pelletier:go-toml:v2.0.9:pelletier_go_toml_v2/vendor/github.com/pelletier/go-toml/v2 \
+		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
+		pmezard:go-difflib:5d4384ee4fb2:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
+		power-devops:perfstat:82ca36839d55:power_devops_perfstat/vendor/github.com/power-devops/perfstat \
+		prometheus:client_golang:v1.22.0:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
+		prometheus:client_model:v0.6.2:prometheus_client_model/vendor/github.com/prometheus/client_model \
+		prometheus:common:v0.64.0:prometheus_common/vendor/github.com/prometheus/common \
+		prometheus:procfs:v0.15.1:prometheus_procfs/vendor/github.com/prometheus/procfs \
+		protocolbuffers:protobuf-go:v1.36.11:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
+		rs:zerolog:v1.20.0:rs_zerolog/vendor/github.com/rs/zerolog \
+		russross:blackfriday:v2.1.0:russross_blackfriday_v2/vendor/github.com/russross/blackfriday/v2 \
+		shirou:gopsutil:v4.26.3:shirou_gopsutil_v4/vendor/github.com/shirou/gopsutil/v4 \
+		stretchr:testify:v1.11.1:stretchr_testify/vendor/github.com/stretchr/testify \
+		tinylib:msgp:v1.6.3:tinylib_msgp/vendor/github.com/tinylib/msgp \
+		tklauser:go-sysconf:v0.3.16:tklauser_go_sysconf/vendor/github.com/tklauser/go-sysconf \
+		tklauser:numcpus:v0.11.0:tklauser_numcpus/vendor/github.com/tklauser/numcpus \
+		uber-go:automaxprocs:v1.6.0:uber_go_automaxprocs/vendor/go.uber.org/automaxprocs \
+		uber-go:mock:v0.5.2:uber_go_mock/vendor/go.uber.org/mock \
+		yusufpapurcu:wmi:v1.2.4:yusufpapurcu_wmi/vendor/github.com/yusufpapurcu/wmi
+
+post-extract:
+	@${RM} -r ${WRKSRC}/vendor/go.opentelemetry.io/otel/exporters/otlp/otlptrace
+	@${RLN} ${WRKSRC_open_telemetry_opentelemetry_go_otlptrace}/exporters/otlp/otlptrace ${WRKSRC}/vendor/go.opentelemetry.io/otel/exporters/otlp/otlptrace
+	@${RM} -r ${WRKSRC}/vendor/go.opentelemetry.io/otel/metric
+	@${RLN} ${WRKSRC_open_telemetry_opentelemetry_go_metric}/metric ${WRKSRC}/vendor/go.opentelemetry.io/otel/metric
+	@${RM} -r ${WRKSRC}/vendor/go.opentelemetry.io/otel/sdk
+	@${RLN} ${WRKSRC_open_telemetry_opentelemetry_go_sdk}/sdk ${WRKSRC}/vendor/go.opentelemetry.io/otel/sdk
+	@${RM} -r ${WRKSRC}/vendor/go.opentelemetry.io/otel/trace
+	@${RLN} ${WRKSRC_open_telemetry_opentelemetry_go_trace}/trace ${WRKSRC}/vendor/go.opentelemetry.io/otel/trace
