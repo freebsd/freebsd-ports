@@ -1,7 +1,6 @@
 PORTNAME=	f3d
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.5.0
-PORTREVISION=	2
+DISTVERSION=	4.0.1
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,6 +17,8 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libfreetype.so:print/freetype2 \
 		libhdf5.so:science/hdf5 \
 		libinotify.so:devel/libinotify \
+		libpng16.so:graphics/png \
+		libminizip.so:archivers/minizip \
 		libnetcdf.so:science/netcdf \
 		libtbb.so:devel/onetbb \
 		libvtkCommonMisc-${VTK_VER}.so:math/vtk${VTK_VER:R}
@@ -74,7 +75,7 @@ OCCT_CMAKE_ON=			-DOpenCASCADE_DIR=${LOCALBASE}/lib/cmake
 
 VDB_DESC=			VDB plugin
 VDB_CMAKE_BOOL=			F3D_PLUGIN_BUILD_VDB
-VDB_BROKEN=			depends on the VTK module IOOpenVD that can't be enabled because OpenVDB doesn't install required cmake files, see https://github.com/AcademySoftwareFoundation/openvdb/issues/2058
+#VDB_BROKEN=			depends on the VTK module IOOpenVD that can't be enabled because OpenVDB doesn't install required cmake files, see https://github.com/AcademySoftwareFoundation/openvdb/issues/2058
 
 RAYTRACING_DESC=		Raytracing module
 RAYTRACING_CMAKE_BOOL=		F3D_MODULE_RAYTRACING
