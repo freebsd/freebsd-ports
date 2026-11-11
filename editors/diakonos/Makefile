@@ -1,6 +1,7 @@
 PORTNAME=	diakonos
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.10.0
+PORTREVISION=	1
 CATEGORIES=	editors ruby
 
 MAINTAINER=	chris@officialunix.com
@@ -10,7 +11,8 @@ WWW=		https://github.com/Pistos/diakonos
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
-RUN_DEPENDS=	rubygem-curses>=1.3.1:devel/rubygem-curses
+RUN_DEPENDS=	rubygem-curses>=1.3.1:devel/rubygem-curses \
+		rubygem-language_server-protocol>0:devel/rubygem-language_server-protocol
 
 USES=		ruby shebangfix
 USE_GITHUB=	yes
