@@ -1,6 +1,6 @@
 PORTNAME=	gomuks
 DISTVERSION=	26.08
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-im
 
 MAINTAINER=	dereks@lifeofadishwasher.com

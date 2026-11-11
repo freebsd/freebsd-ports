@@ -1,6 +1,6 @@
 PORTNAME=	google-guest-agent
 DISTVERSION=	20260724.00
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils
 
 MAINTAINER=	spadhi@google.com
