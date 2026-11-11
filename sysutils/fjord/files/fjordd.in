@@ -3,7 +3,7 @@
 # FJORD Daemon
 
 # PROVIDE: fjordd
-# REQUIRE: LOGIN podman_service
+# REQUIRE: LOGIN podman_service appjail
 # KEYWORD: shutdown
 
 # Enable in /etc/rc.conf:
