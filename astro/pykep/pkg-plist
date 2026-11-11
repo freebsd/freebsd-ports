@@ -24,6 +24,7 @@ include/kep3/leg/sf_checks.hpp
 include/kep3/leg/sims_flanagan.hpp
 include/kep3/leg/sims_flanagan_alpha.hpp
 include/kep3/leg/zoh.hpp
+include/kep3/leg/zoh_ms.hpp
 include/kep3/linalg.hpp
 include/kep3/planet.hpp
 include/kep3/ta/bcp.hpp
@@ -44,4 +45,4 @@ lib/cmake/kep3/kep3_export-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/kep3/kep3_export.cmake
 lib/libkep3.so
 lib/libkep3.so.3
-lib/libkep3.so.3.0.0
+lib/libkep3.so.3.1.0

@@ -8,6 +8,7 @@
 %%PYTHON_SITELIBDIR%%/pykep/data/tle.txt
 %%PYTHON_SITELIBDIR%%/pykep/leg/__init__.py
 %%PYTHON_SITELIBDIR%%/pykep/leg/_zoh.py
+%%PYTHON_SITELIBDIR%%/pykep/leg/_zoh_ms.py
 %%PYTHON_SITELIBDIR%%/pykep/plot/__init__.py
 %%PYTHON_SITELIBDIR%%/pykep/plot/_ballistic.py
 %%PYTHON_SITELIBDIR%%/pykep/plot/_lambert.py
@@ -23,6 +24,7 @@
 %%PYTHON_SITELIBDIR%%/pykep/test_core.py
 %%PYTHON_SITELIBDIR%%/pykep/test_leg_sims_flanagan.py
 %%PYTHON_SITELIBDIR%%/pykep/test_leg_zoh.py
+%%PYTHON_SITELIBDIR%%/pykep/test_leg_zoh_ms.py
 %%PYTHON_SITELIBDIR%%/pykep/test_ta.py
 %%PYTHON_SITELIBDIR%%/pykep/test_trajopt.py
 %%PYTHON_SITELIBDIR%%/pykep/test_udplas.py

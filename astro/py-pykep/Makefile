@@ -1,6 +1,6 @@
 PORTNAME=	pykep
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.0
+DISTVERSION=	3.1.0
 CATEGORIES=	astro python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -40,6 +40,6 @@ pre-test:
 
 TEST_ARGS=	-p no:xdist
 
-# tests as of 3.0.0: 89 passed in 10.76s
+# tests as of 3.1.0: 114 passed, 29 subtests passed in 11.22s
 
 .include <bsd.port.mk>

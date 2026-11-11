@@ -1,7 +1,6 @@
 PORTNAME=	pykep
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.0
-PORTREVISION=	3
+DISTVERSION=	3.1.0
 CATEGORIES=	astro
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -34,6 +33,6 @@ CMAKE_TESTING_ON=	kep3_BUILD_TESTS
 USE_GITHUB=	yes
 GH_ACCOUNT=	esa
 
-# tests as of 3.0.0: 97% tests passed, 1 tests failed out of 29, see https://github.com/esa/pykep/issues/198
+# tests as of 3.1.0: 100% tests passed, 0 tests failed out of 30
 
 .include <bsd.port.mk>
