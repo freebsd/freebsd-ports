@@ -1,7 +1,6 @@
 PORTNAME=	libjxl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.12.0
-PORTREVISION=	1
+DISTVERSION=	0.13.0
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -20,7 +19,7 @@ CPE_VENDOR=	${PORTNAME}_project
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_TUPLE=	libjxl:testdata:73695d3:testdata/testdata \
-		webmproject:sjpeg:94e0df6:sjpeg/third_party/sjpeg \
+		webmproject:sjpeg:dd4d985:sjpeg/third_party/sjpeg \
 		${NULL}
 CMAKE_ON=	JPEGXL_ENABLE_PLUGINS
 CMAKE_ON+=	${AVX512 AVX512_SPR AVX512_ZEN4:L:S/^/JPEGXL_ENABLE_/}
