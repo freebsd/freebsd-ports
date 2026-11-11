@@ -20,7 +20,7 @@
 +#  download("https://onlyoffice.github.io/sdkjs-plugins/v1/plugins-ui.js", out_dir + "/plugins-ui.js")
 +#  download("https://onlyoffice.github.io/sdkjs-plugins/v1/plugins.css", out_dir + "/plugins.css")
 +  git_dir = get_script_dir() + "/../.."
-+  plugins_dir = git_dir + "/sdkjs-plugins"
++  plugins_dir = git_dir + "/onlyoffice.github.io/sdkjs-plugins"
 +  copy_file(plugins_dir + "/v1/plugins.js", out_dir + "/plugins.js")
 +  copy_file(plugins_dir + "/v1/plugins-ui.js", out_dir + "/plugins-ui.js")
 +  copy_file(plugins_dir + "/v1/plugins.css", out_dir + "/plugins.css")

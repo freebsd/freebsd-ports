@@ -1,14 +1,16 @@
 PORTNAME=	onlyoffice-documentserver
 DISTVERSIONPREFIX=	v
 DISTVERSION=	10.0.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES+=	LOCAL/mikael/v8/:source1 \
 		https://nodejs.org/dist/v${_PKGFETCH_NODE_VERSION}/:source2 \
-		https://github.com/fsbruva/onlyoffice-DS-npm-cache/releases/download/${_NPM_CACHE_TAG}/:source3 \
+		https://github.com/fsbruva/onlyoffice-DS-build-support/releases/download/${_CACHE_TAG}/:source3 \
 		https://github.com/hunspell/hyphen/releases/download/v${_HYPHEN_VERSION}/:hyphen
 DISTFILES+=	v8-8.9.255.25_all.tar.gz:source1 \
 		node-v${_PKGFETCH_NODE_VERSION}.tar.gz:source2 \
-		onlyoffice-DS-npm-cache-${_NPM_CACHE_TAG}.tar.gz:source3 \
+		onlyoffice-DS-npm-cache-${_CACHE_TAG}.tar.gz:source3 \
+		onlyoffice-DS-sdkjs-plugins-${_CACHE_TAG}.tar.gz:source3 \
 		hyphen-${_HYPHEN_VERSION}.tar.gz:hyphen
 
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} ${_DISTFILES:M*_GH0.tar.gz}
@@ -26,9 +28,9 @@ ONLY_FOR_ARCHS_REASON=	Upstream only supports amd64 and arm64
 # node version used with "npm install" inside ${WRKSRC}/yao-pkg
 # kept in sync with patch-build__tools_scripts_build__server.py and patch-document-server-package_Makefile
 _DS_BUILD=		169
-_PKGFETCH_NODE_VERSION=	26.12.1
-_NPM_CACHE_TAG=		${_DS_TAGNAME}-202610260059
-_HYPHEN_VERSION=	2.8.9
+_PKGFETCH_NODE_VERSION=	26.13.1
+_CACHE_TAG=		${_DS_TAGNAME}-202611192038
+_HYPHEN_VERSION=	2.8.10
 # end of cache build config
 
 _NODE_DISTFILE=		node-v${_PKGFETCH_NODE_VERSION}.tar.gz
@@ -91,7 +93,6 @@ GH_TUPLE=	ONLYOFFICE:build_tools:${_DS_TAGNAME}:buildtools/build_tools \
 		ONLYOFFICE:server:${_DS_TAGNAME}:server/server \
 		ONLYOFFICE:web-apps:${_DS_TAGNAME}:webapps/web-apps \
 		ONLYOFFICE:DocumentBuilder:${DISTVERSIONPREFIX}${DISTVERSION}:document_builder/DocumentBuilder \
-		ONLYOFFICE:onlyoffice.github.io:b26d001664d771df4f663d2d3ba7dd4a188b6cab:sdkjs_plugins_v1/onlyoffice.github.io \
 		jasenhuang:katana-parser:be6df45:jasenhuang_katana/core/Common/3dParty/html/katana-parser \
 		GNOME:libxml2:v2.15.4:gnome_xml2/core/Common/3dParty/libxml/libxml2
 
@@ -179,15 +180,17 @@ post-extract:
 
 # Direct extraction for hyphen
 	@${MKDIR} ${WRKSRC}/core/Common/3dParty/hyphen/hyphen
-	@${TAR} -xf ${DISTDIR}/hyphen-2.8.9.tar.gz \
+	@${TAR} -xf ${DISTDIR}/hyphen-${_HYPHEN_VERSION}.tar.gz \
 		-C ${WRKSRC}/core/Common/3dParty/hyphen/hyphen \
 		--strip-components 1
 
 # Direct extraction for NPM Cache (no symlink required)
-	@${MKDIR} ${WRKDIR}/.npm
-	@${TAR} -xf ${DISTDIR}/onlyoffice-DS-npm-cache-${_NPM_CACHE_TAG}.tar.gz \
-		-C ${WRKDIR}/.npm \
-		--strip-components 1
+	@${TAR} -xf ${DISTDIR}/onlyoffice-DS-npm-cache-${_CACHE_TAG}.tar.gz \
+		-C ${WRKDIR}
+
+# Direct extraction for sdkjs-plugins cache
+	@${TAR} -xf ${DISTDIR}/onlyoffice-DS-sdkjs-plugins-${_CACHE_TAG}.tar.gz \
+		-C ${WRKSRC}
 
 # Prepare pkg-fetch / Node cache (Node tarball was never uncompressed)
 	@${MKDIR} ${WRKDIR}/.pkg-build
@@ -201,9 +204,6 @@ post-extract:
 			${AWK} '{print $$4 "  ${_NODE_DISTFILE}"}' \
 			> ${WRKDIR}/.pkg-cache/node/${_NODE_DISTFILE}.sha256sum
 	@${ECHO_MSG} "===>  Created pkg-fetch cache entry for ${_NODE_DISTFILE}"
-
-	@${MKDIR} ${WRKSRC}/sdkjs-plugins/v1
-	@${CP} ${WRKSRC}/onlyoffice.github.io/sdkjs-plugins/v1/* ${WRKSRC}/sdkjs-plugins/v1
 
 	@${MV} ${WRKSRC}/server/Common/config/production-linux.json ${WRKSRC}/server/Common/config/production-freebsd.json
 	@${MV} ${WRKSRC}/server/Common/config/development-linux.json ${WRKSRC}/server/Common/config/development-freebsd.json

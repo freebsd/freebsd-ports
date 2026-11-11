@@ -66,6 +66,35 @@ copies or alternate paths, synchronize the secure_link_secret values manually.
 
   - specify the JWT secret in the Nextcloud administrative configuration for Onlyoffice app
 
+  - If Nextcloud and ONLYOFFICE are on the same private network, Nextcloud may block connections
+    to private IP addresses by default. If necessary, permit these connections by adding the
+    following entry to Nextcloud's config/config.php:
+
+      'allow_local_remote_servers' => true,
+
+  - If Nextcloud and ONLYOFFICE use different internal and external addresses, or ONLYOFFICE is
+    behind a reverse proxy, ensure that both servers resolve the ONLYOFFICE and Nextcloud hostnames
+    to the appropriate addresses for their respective connections. This may require adding entries
+    to each server's /etc/hosts, or configuring equivalent internal DNS records.
+
+    For example, in a deployment where ONLYOFFICE is hosted on x.x.x.A, but HTTPS terminates on the
+    Nextcloud server at x.x.x.B, the following /etc/hosts entries may be required:
+
+    On the ONLYOFFICE server:
+
+      x.x.x.A   office       office.FQDN
+      x.x.x.B   nextcloud    nextcloud.FQDN
+
+    On the Nextcloud server (which also terminates HTTPS and proxies requests to ONLYOFFICE):
+
+      x.x.x.B   office       office.FQDN
+      x.x.x.B   nextcloud    nextcloud.FQDN
+
+    In this example, Nextcloud must resolve office.FQDN to the HTTPS endpoint at x.x.x.B, rather
+    than directly to the ONLYOFFICE backend at x.x.x.A, which only serves HTTP. Otherwise, Nextcloud's
+    HTTPS connection to ONLYOFFICE may fail. Adjust these entries to match your network topology, proxy
+    configuration, and DNS setup; the above is an example, not a requirement.
+
   - see the following for more info:
       https://api.onlyoffice.com/editors/nextcloud
 

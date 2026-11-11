@@ -33,7 +33,7 @@
     }
   },
   "openpgpjs": {
-    "_comment": "https://helpcenter.onlyoffice.com/docs/installation/docs-developer-configuring.aspx#openpgpprotocol_block",
+    "_comment": "https://api.onlyoffice.com/docs/docs-api/get-started/configuration/server-config#openpgp-protocol",
     "encrypt": {
       "passwords": ["PGPguardsecretstring"]
     },
@@ -42,7 +42,7 @@
     }
   },
   "aesEncrypt": {
-    "_comment": "https://helpcenter.onlyoffice.com/docs/installation/docs-developer-configuring.aspx#aes256gcmalgorithm_block",
+    "_comment": "https://api.onlyoffice.com/docs/docs-api/get-started/configuration/server-config#aes-256-gcm-algorithm",
     "secret": "docpasswordsecretstring"
   },
   "storage": {

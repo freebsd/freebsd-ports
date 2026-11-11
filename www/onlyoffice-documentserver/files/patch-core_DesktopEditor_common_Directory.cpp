@@ -1,6 +1,6 @@
---- core/DesktopEditor/common/Directory.cpp.orig	2021-09-30 12:13:32 UTC
+--- core/DesktopEditor/common/Directory.cpp.orig	2026-10-11 14:54:04 UTC
 +++ core/DesktopEditor/common/Directory.cpp
-@@ -35,7 +35,7 @@
+@@ -38,7 +38,7 @@
  #include "windef.h"
  #include <shlobj.h>
  #include <Rpc.h>
@@ -9,7 +9,7 @@
  #include <sys/types.h>
  #include <sys/stat.h>
  #include <unistd.h>
-@@ -120,7 +120,7 @@ namespace NSDirectory
+@@ -127,7 +127,7 @@
  		FindClose( hRes );
  #endif
  
@@ -18,7 +18,7 @@
  		BYTE* pUtf8 = NULL;
  		LONG lLen = 0;
  		NSFile::CUtf8Converter::GetUtf8StringFromUnicode(strDirectory.c_str(), strDirectory.length(), pUtf8, lLen, false);
-@@ -235,7 +235,7 @@ namespace NSDirectory
+@@ -242,7 +242,7 @@
  			}
  		} while( FindNextFileW( hRes, &oFD ) );
  		FindClose( hRes );
@@ -27,7 +27,7 @@
  		BYTE* pUtf8 = NULL;
  		LONG lLen = 0;
  		NSFile::CUtf8Converter::GetUtf8StringFromUnicode(strDirectory.c_str(), strDirectory.length(), pUtf8, lLen, false);
-@@ -299,7 +299,7 @@ namespace NSDirectory
+@@ -306,7 +306,7 @@
  #if defined(_WIN32) || defined (_WIN64)
  		DWORD dwAttrib = ::GetFileAttributesW(strDirectory.c_str());
  		return (dwAttrib != INVALID_FILE_ATTRIBUTES && 0 != (dwAttrib & FILE_ATTRIBUTE_DIRECTORY));
@@ -36,7 +36,7 @@
  		BYTE* pUtf8 = NULL;
  		LONG lLen = 0;
  		NSFile::CUtf8Converter::GetUtf8StringFromUnicode(strDirectory.c_str(), strDirectory.length(), pUtf8, lLen, false);
-@@ -398,7 +398,7 @@ namespace NSDirectory
+@@ -405,7 +405,7 @@
  		return true;
  #endif
  
@@ -45,8 +45,31 @@
  		BYTE* pUtf8 = NULL;
  		LONG lLen = 0;
  		NSFile::CUtf8Converter::GetUtf8StringFromUnicode(strSrc.c_str(), strSrc.length(), pUtf8, lLen, false);
-@@ -495,7 +495,7 @@ namespace NSDirectory
+@@ -486,7 +486,7 @@
+ 
+ 		return false;
+ 	}
+-#if defined(__linux__) || defined(MAC) || defined(_IOS)
++#if defined(__linux__) || defined(MAC) || defined(_IOS) || defined(__FreeBSD__)
+ 	static bool IsSymbolicLink(const std::wstring& strPath)
+ 	{
+ 		std::string sPath = NSFile::CUtf8Converter::GetUtf8StringFromUnicode(strPath);
+@@ -541,19 +541,19 @@
+ 		std::vector<std::wstring> aDirectories = GetDirectories(strDirectory);
+ 		for(size_t i = 0; i < aDirectories.size(); ++i)
+ 		{
+-#if defined(__linux__) || defined(MAC) || defined(_IOS)
++#if defined(__linux__) || defined(MAC) || defined(_IOS) || defined(__FreeBSD__)
+ 			// with DT_UNKNOWN (XFS) GetDirectories follows a link to a directory, never delete through it
+ 			if (IsSymbolicLink(aDirectories[i]))
+ 				continue;
+ #endif
+ 			DeleteDirectory(aDirectories[i]);
  		}
+-#if defined(__linux__) || defined(MAC) || defined(_IOS)
++#if defined(__linux__) || defined(MAC) || defined(_IOS) || defined(__FreeBSD__)
+ 		RemoveSymbolicLinks(strDirectory);
+ #endif
  #if defined(_WIN32) || defined (_WIN64)
  		if (deleteRoot) RemoveDirectoryW(strDirectory.c_str());
 -#elif __linux__
