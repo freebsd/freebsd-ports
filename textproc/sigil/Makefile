@@ -1,6 +1,5 @@
 PORTNAME=	sigil
-DISTVERSION=	2.8.1
-PORTREVISION=	1
+DISTVERSION=	2.8.6
 CATEGORIES=	textproc
 
 MAINTAINER=	jonc@chen.org.nz
@@ -29,7 +28,7 @@ USE_QT=		base declarative positioning svg webchannel webengine \
 SHEBANG_FILES=	src/Resource_Files/plugin_launchers/python/*.py \
 		src/Resource_Files/python3lib/*.py
 
-CMAKE_ARGS=	-DUSE_SYSTEM_LIBS:BOOL=1
+CMAKE_ON=	USE_SYSTEM_LIBS
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/sigil/*.so
