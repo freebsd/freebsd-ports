@@ -18,11 +18,31 @@
 	    <li>A malicious or intercepted server can read, exfiltrate and
 	      delete arbitrary local files through the duplicate check of the
 	      command line client.</li>
+	    <li>An external library import follows symbolic links, which
+	      allows arbitrary files to be read.</li>
+	    <li>Unsanitized EXIF make, model and lens model allow path
+	      traversal in the storage template engine.</li>
+	    <li>An unanchored regular expression allows the allowedHosts
+	      protection of plugins to be bypassed completely.</li>
+	    <li>A shared link ignores the "Show metadata" setting on metadata
+	      searches, which leaks EXIF and GPS data.</li>
+	    <li>An upload through a shared link runs as the link owner, so the
+	      owner check of the live photo video can never fail.</li>
+	    <li>Metadata of other owners can be written through the duplicate
+	      resolve endpoint.</li>
+	    <li>Archive downloads through a shared link can include original
+	      files despite the edited asset enforcement.</li>
 	    <li>A partner can read the metadata of the sharer's locked folder
-	      when a search request omits the visibility.</li>
+	      when a search request omits the visibility, and the archived
+	      timeline metadata as well.</li>
 	    <li>Read-scoped API keys can reset cluster group people data.</li>
 	    <li>An unbounded motion photo offset causes memory and disk
 	      exhaustion.</li>
+	    <li>An uploaded SVG asset allows stored cross-site scripting.</li>
+	    <li>Email messages allow HTML injection.</li>
+	    <li>Before 3.2.4, an uploaded SVG file reaches the ImageMagick
+	      coders, which allows code execution on the server
+	      (CVE-2026-105764).</li>
 	    <li>A share link with uploads disabled can be used to test whether
 	      the owner has a given file.</li>
 	  </ul>
@@ -30,11 +50,23 @@
       </body>
     </description>
     <references>
+      <cvename>CVE-2026-105764</cvename>
+      <url>https://github.com/immich-app/immich/security/advisories/GHSA-q89f-h332-8q2h</url>
       <url>https://github.com/immich-app/immich/security/advisories/GHSA-7j23-rprg-3g5q</url>
       <url>https://github.com/immich-app/immich/security/advisories/GHSA-p632-vh57-j6x4</url>
+      <url>https://github.com/immich-app/immich/security/advisories/GHSA-wp5v-5wj6-j2fh</url>
+      <url>https://github.com/immich-app/immich/security/advisories/GHSA-wwfq-95jq-3m3c</url>
+      <url>https://github.com/immich-app/immich/security/advisories/GHSA-8xfw-gq8x-8mrr</url>
+      <url>https://github.com/immich-app/immich/security/advisories/GHSA-gjj9-fvfp-jw63</url>
+      <url>https://github.com/immich-app/immich/security/advisories/GHSA-9g87-8gwq-4xqp</url>
+      <url>https://github.com/immich-app/immich/security/advisories/GHSA-6jjx-fxr3-8vf2</url>
+      <url>https://github.com/immich-app/immich/security/advisories/GHSA-rq4j-mp2m-85qp</url>
       <url>https://github.com/immich-app/immich/security/advisories/GHSA-v7v2-63g5-gwf7</url>
+      <url>https://github.com/immich-app/immich/security/advisories/GHSA-j722-3hvf-c9vr</url>
       <url>https://github.com/immich-app/immich/security/advisories/GHSA-qcp2-7vph-gq64</url>
       <url>https://github.com/immich-app/immich/security/advisories/GHSA-c9h4-ccvj-j2h2</url>
+      <url>https://github.com/immich-app/immich/security/advisories/GHSA-wjrq-m9hw-r4vq</url>
+      <url>https://github.com/immich-app/immich/security/advisories/GHSA-v94m-9pp2-pm59</url>
       <url>https://github.com/immich-app/immich/security/advisories/GHSA-xm8q-2hq2-gpxg</url>
     </references>
     <dates>
