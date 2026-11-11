@@ -3,7 +3,7 @@
 
 * Also relax version requirements for py-google-auth.
 
---- pyproject.toml.orig	2026-06-26 07:24:37 UTC
+--- pyproject.toml.orig	2026-09-30 15:55:06 UTC
 +++ pyproject.toml
 @@ -1,6 +1,6 @@ build-backend = "setuptools.build_meta"
  [build-system]
@@ -13,7 +13,7 @@
  
  [dependency-groups]
  dev = [
-@@ -54,8 +54,7 @@ keywords = ["oauth", "openid", "saml", "social auth"]
+@@ -58,8 +58,7 @@ keywords = ["oauth", "openid", "saml", "social auth"]
  ]
  description = "Python social authentication made simple."
  keywords = ["oauth", "openid", "saml", "social auth"]
@@ -23,11 +23,11 @@
  name = "social-auth-core"
  readme = "README.md"
  requires-python = ">=3.10"
-@@ -92,7 +91,7 @@ google-onetap = [
-   "types-requests==2.33.0.20260518"
+@@ -96,7 +95,7 @@ google-onetap = [
+   "types-requests==2.33.0.20260906"
  ]
  google-onetap = [
--  "google-auth>=2.40.0,<2.56"
+-  "google-auth>=2.40.0,<2.60"
 +  "google-auth>=2.40.0,<3"
  ]
  saml = [
