@@ -1,20 +1,21 @@
 Use current directory to generate the embedded documentation.
 
---- mkdocs.yml.orig	2025-03-21 21:17:50 UTC
+--- mkdocs.yml.orig	2026-11-10 16:16:29 UTC
 +++ mkdocs.yml
-@@ -1,5 +1,5 @@ site_name: NetBox Documentation
+@@ -1,6 +1,6 @@ site_name: NetBox Documentation
+ # Note: NetBox has migrated from MkDocs to Zensical
  site_name: NetBox Documentation
 -site_dir: netbox/project-static/docs
 +site_dir: project-static/docs
- site_url: https://docs.netbox.dev/
+ site_url: https://netboxlabs.com/docs/netbox/
  repo_name: netbox-community/netbox
  repo_url: https://github.com/netbox-community/netbox
-@@ -28,7 +28,7 @@ plugins:
+@@ -29,7 +29,7 @@ plugins:
    - mkdocstrings:
        handlers:
          python:
 -          paths: ["netbox"]
 +          paths: ["."]
            options:
-             heading_level: 3
-             members_order: source
+             docstring_options:
+               warn_missing_types: false

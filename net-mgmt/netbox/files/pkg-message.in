@@ -24,6 +24,7 @@ The following steps are required to finish the upgrade:
 # cd %%DATADIR%%
 # python%%PYTHON_VER%% manage.py migrate
 # python%%PYTHON_VER%% manage.py trace_paths --no-input
+# python%%PYTHON_VER%% manage.py rebuild_config_context_cache
 # zensical build
 # python%%PYTHON_VER%% manage.py collectstatic --no-input
 # python%%PYTHON_VER%% manage.py remove_stale_contenttypes --no-input
@@ -31,49 +32,6 @@ The following steps are required to finish the upgrade:
 # python%%PYTHON_VER%% manage.py clearsessions
 
 2. Restart WSGI/httpd environment (supervisord/apache/nginx/etc.)
-EOD
-}
-{ type: upgrade
-  maximum_version: 3.6.1
-  message: <<EOD
-1. The NetBox 3.6 release contains some breaking changes, so the following
-   items should be checked before upgrading:
-
-   * PostgreSQL 11 is no longer supported (dropped in Django 4.2). NetBox v3.6
-     requires PostgreSQL 12 or later.
-
-   * The "device_role" field on the Device model has been renamed to "role".
-     The "device_role" field has been temporarily retained on the REST API
-     serializer for devices for backward compatibility, but is read-only.
-
-   * The "choices" array field has been removed from the CustomField model.
-     Any defined choices are automatically migrated to CustomFieldChoiceSets,
-     accessible via the new "choice_set" field on the CustomField model.
-
-   * The "napalm_driver" and "napalm_args" fields (which were deprecated in v3.5)
-     have been removed from the Platform model.
-
-   * The "device" and "device_id" filter for interfaces will no longer include
-     interfaces from virtual chassis peers. Two new filters,
-     "virtual_chassis_member" and "virtual_chassis_member_id", have been
-     introduced to match all interfaces belonging to the specified device's
-     virtual chassis (if any).
-
-   * Reports and scripts are now returned within a "results" list when fetched via
-     the REST API, consistent with other models.
-
-   * Superusers can no longer retrieve API token keys via the web UI if
-     ALLOW_TOKEN_RETRIEVAL is disabled. (The admin view has been removed
-     per #13044.)
-
-2. The following dependencies are now optional and have therefore been moved to
-   corresponding options. An exception is the LDAP option, which has been added
-   for the sake of completeness, because this backend has been around for a
-   good while:
-
-   * devel/py-dulwich			-> non-default GIT option
-   * www/py-dj42-django-auth-ldap	-> non-default LDAP option
-   * www/py-boto3			-> non-default S3 option
 EOD
 }
 { type: upgrade
@@ -329,6 +287,134 @@ EOD
    The general update instructions in this pkg-message and the netbox sample rc
    script (available via the EXAMPLES option) have also been updated
    accordingly.
+EOD
+}
+{ type: upgrade
+  maximum_version: 4.7.5
+  message: <<EOD
+1. The NetBox 4.7 release contains some breaking changes, so the following
+   items should be checked before upgrading:
+
+   * PostgreSQL 14 is no longer supported. NetBox now requires PostgreSQL 15 or
+     later: The upgrade script will abort when connected to an earlier release.
+     (NetBox v4.6 reported this as a warning.)
+
+   * The PostgreSQL database must support the "ltree" extension. This is a
+     trusted module which ships with the PostgreSQL contrib utilities (e.g.
+     postgresql-contrib18 for PostgreSQL 18) and does not require superuser
+     permission to activate.
+
+     The following command can be used to check whether the "ltree" extension
+     is available:
+
+     => SELECT * FROM pg_available_extensions WHERE name = 'ltree';
+
+   * Redis 5.x is no longer supported. NetBox now requires Redis 6.0 or later.
+
+   * The py-netbox-secrets plugin v3.1.2 is not yet compatible with NetBox 4.7
+     and can no longer be used after upgrading.
+
+2. Following items should be checked as well:
+
+   * The upgrade script now runs the "rebuild_config_context_cache" management
+     command to populate the new config context cache. This issues one UPDATE
+     per device and virtual machine, and may extend the duration of the upgrade
+     considerably for deployments with a large number of either. The command
+     skips objects whose cache is already populated, so it is safe to interrupt
+     and re-run; it may also be deferred until after NetBox is back online, as
+     any object whose cache is empty falls back to rendering its config context
+     on demand.
+
+     The general update instructions in this pkg-message and the netbox sample
+     rc script (available via the EXAMPLES option) have also been updated
+     accordingly.
+
+   * py-dj61-django-tables2 has been upgraded to v3.0.1, which renames its
+     querystring template tag to querystring_replace and removes the
+     RelatedLinkColumn class.
+
+   * py-dj61-social-auth-app-django and py-social-auth-core5 have been upgraded
+     to v6.1.0 and v5.2.0 respectively, each a major release. Deployments which
+     employ single sign-on should test authentication against a non-production
+     instance before upgrading.
+
+   * Webhooks now support a configurable timeout. If you have lowered
+     RQ_DEFAULT_TIMEOUT to 60 seconds or less, you must also set
+     WEBHOOK_DEFAULT_TIMEOUT to a lower value; NetBox will refuse to start
+     otherwise.
+
+   * The username argument has been removed from extras.webhooks.send_webhook()
+     (the value remains available to webhook templates as request.user). Any
+     webhook jobs still enqueued when the workers are restarted will fail with
+     a TypeError, so the background queues should be allowed to drain before
+     upgrading.
+
+   * Specifying an email server under the EMAIL configuration parameter is now
+     mandatory in order to send mail: A deployment which does not define
+     EMAIL['SERVER'] will raise an InvalidMailer exception when attempting to
+     send, rather than failing at the SMTP connection.
+
+   * NetBox now populates Django's MAILERS setting rather than the individual
+     EMAIL_* settings which it supersedes. EMAIL_HOST, EMAIL_PORT,
+     EMAIL_HOST_USER, EMAIL_HOST_PASSWORD, EMAIL_USE_SSL, EMAIL_USE_TLS,
+     EMAIL_TIMEOUT, EMAIL_SSL_CERTFILE, and EMAIL_SSL_KEYFILE are no longer
+     defined, and EMAIL_BACKEND is no longer consulted. Plugin code which reads
+     any of these, or which calls django.core.mail.get_connection() with an
+     explicit backend (now raising a RuntimeError), must be updated. The EMAIL
+     configuration parameter itself is unchanged.
+
+   * API token plaintexts can no longer be specified by the client when
+     creating a token via the REST API. The token field is now read-only, and
+     any value supplied is ignored. (This restriction was already in effect in
+     the web UI.)
+
+   * Executing a custom script via the REST API now requires that the calling
+     token have its write ability enabled.
+
+   * Removal of deprecated behavior
+
+     * The housekeeping management command has been removed. (Its constituent
+       tasks are performed by the individual management commands introduced in
+       NetBox v4.6.)
+
+     * NetBox's custom querystring template tag has been removed in favor of
+       Django's built-in tag of the same name. The two are not interchangeable:
+       Django's tag reads the current request from the template context, so the
+       request argument must be dropped ({% querystring request page=1 %}
+       becomes {% querystring page=1 %}; passing request raises a
+       TemplateSyntaxError). It also returns a bare ? where NetBox's tag
+       returned an empty string.
+
+     * The legacy Sentry configuration parameters SENTRY_DSN,
+       SENTRY_SAMPLE_RATE, SENTRY_SEND_DEFAULT_PII, and
+       SENTRY_TRACES_SAMPLE_RATE have been removed. Use SENTRY_CONFIG instead.
+
+     * The obsolete DEFAULT_ACTION_PERMISSIONS constant has been removed.
+
+     * Support for legacy view action mappings has been dropped, and the
+       LEGACY_ACTIONS constant has been removed.
+
+     * Registered models are no longer populated under registry['models'].
+       (Use ObjectType.objects.public() instead.)
+
+     * The registry['denormalized_fields'] store has been removed as well.
+
+     * The backward compatibility shims for OptionalLimitOffsetPagination (now
+       NetBoxPagination), ExpandableIPAddressField (now
+       ExpandableIPNetworkField), and expand_ipaddress_pattern()
+       (now expand_ipnetwork_pattern()) have been removed.
+
+     * The request_id and username keys have been removed from the context
+       available to outgoing webhooks. Use request.id and request.user instead.
+
+     * The automatic reverse relationship created by OwnerMixin (e.g. site_set)
+       has been removed.
+
+Due to the large number of breaking changes, only certain entries have been
+included here. For a complete list, please see:
+
+https://netboxlabs.com/docs/netbox/release-notes/version-4.7#breaking-changes
+
 EOD
 }
 ]
