@@ -46,7 +46,7 @@ JPEG_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_JPEG
 JPEG_CMAKE_BOOL_OFF+=	JPEGXL_ENABLE_JPEGLI_LIBJPEG # XXX WITH_JPEG8, libmap.conf(5)
 
 LCMS2_LIB_DEPENDS=	liblcms2.so:graphics/lcms2
-LCMS2_GH_TUPLE_OFF=	jbeich:skcms:b2e6926:skcms/third_party/skcms
+LCMS2_GH_TUPLE_OFF=	google:skcms:b2e6926:skcms/third_party/skcms
 LCMS2_CMAKE_BOOL_OFF=	JPEGXL_ENABLE_SKCMS
 .if make(makesum)
 GH_TUPLE+=		${LCMS2_GH_TUPLE_OFF}
