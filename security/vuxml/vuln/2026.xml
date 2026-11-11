@@ -3203,12 +3203,6 @@
 	<name>sqlite3</name>
 	<range><lt>3.54.0,1</lt></range>
       </package>
-      <package>
-	<name>FreeBSD</name>
-	<range><ge>15.1</ge><lt>15.1_7</lt></range>
-	<range><ge>14.5</ge><lt>14.5_4</lt></range>
-	<range><ge>14.4</ge><lt>14.4_13</lt></range>
-      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -3250,6 +3244,7 @@
     <dates>
       <discovery>2026-10-30</discovery>
       <entry>2026-10-30</entry>
+      <modified>2026-11-11</modified>
     </dates>
   </vuln>
 
