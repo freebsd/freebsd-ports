@@ -1,5 +1,5 @@
 PORTNAME=	google-api-python-client
-DISTVERSION=	2.201.0
+DISTVERSION=	2.202.0
 PORTREVISION=	0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
@@ -25,6 +25,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-api-core>=1.31.5:www/py-google-api-c
 		${PYTHON_PKGNAMEPREFIX}google-auth-httplib2>=0.2.0:security/py-google-auth-httplib2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}google-auth>=1.32:security/py-google-auth@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httplib2>=0.19.0:www/py-httplib2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mock>=5.2.0_1:devel/py-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}parameterized>=0.8.1:devel/py-parameterized@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}uritemplate>=3.0.1:net/py-uritemplate@${PY_FLAVOR}
 
@@ -37,7 +38,8 @@ PYTEST_IGNORED_TESTS=	test_universe_env_var_configured_with_mtls \
 			test_tests_should_be_run_with_strict_positional_enforcement
 
 # We don't want to use Pytest plugins, for example devel/py-ruff, if available in the system
-TEST_ENV=	PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
+TEST_ENV=	PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 \
+		PYTHONPATH="${STAGEDIR}${PYTHON_SITELIBDIR}"
 
 NO_ARCH=	yes
 
