@@ -1,0 +1,15 @@
+* Relax upper bound of py-uv-build, because from a downstream perspective it's
+  set too tightly due to the its frequent releases.
+
+* Also relax lower bound to prevent issues with MFHs.
+
+--- pyproject.toml.orig	1970-01-01 00:00:00 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@ build-backend = "uv_build"
+ [build-system]
+ build-backend = "uv_build"
+-requires = ["uv-build>=0.12.1,<0.13"]
++requires = ["uv-build>=0.11.28"]
+ 
+ [project]
+ name = "django-htmx"

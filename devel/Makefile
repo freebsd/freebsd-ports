@@ -5005,6 +5005,8 @@
     SUBDIR += py-distributed
     SUBDIR += py-dj60-django-rq
     SUBDIR += py-dj60-strawberry-graphql
+    SUBDIR += py-dj61-django-rq
+    SUBDIR += py-dj61-strawberry-graphql
     SUBDIR += py-django-rq
     SUBDIR += py-dlinfo
     SUBDIR += py-dm-tree

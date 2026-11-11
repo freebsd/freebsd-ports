@@ -1,0 +1,20 @@
+Relax version requirements.
+
+--- pyproject.toml.orig	2026-10-25 18:28:34 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=77","setuptools_scm>=8"]
++requires = ["setuptools","setuptools_scm>=8"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -7,7 +7,7 @@ readme = "README.rst"
+ dynamic = ["version"]
+ description = "Thumbnails for Django, made in the template on first use with Pillow, libvips or ImageMagick, stored on any Django storage"
+ readme = "README.rst"
+-license = "BSD-3-Clause"
++license = { text="BSD-3-Clause" }
+ keywords = ["django", "thumbnail", "sorl"]
+ authors = [
+   {name = "Mikko Hellsing", email = "mikko@aino.se"},
