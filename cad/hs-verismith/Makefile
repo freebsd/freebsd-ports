@@ -15,6 +15,8 @@ BUILD_DEPENDS=	ghc-9.10.3:lang/ghc910
 
 USES=		cabal
 
+BROKEN_aarch64=		compilation fails, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=300682
+
 PORTSCOUT=	limit:^.*[0-9]\.[0-9] # prevent fpga20
 
 .include <bsd.port.mk>
