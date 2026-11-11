@@ -1,5 +1,5 @@
 PORTNAME=	oj
-PORTVERSION=	3.17.6
+PORTVERSION=	3.17.8
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-gitlab
@@ -12,8 +12,7 @@ WWW=		https://www.ohler.com/oj/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-bigdecimal-gitlab>=3.0:math/rubygem-bigdecimal-gitlab \
-		rubygem-ostruct>=0.2:devel/rubygem-ostruct
+RUN_DEPENDS=	rubygem-bigdecimal-gitlab>=3.0:math/rubygem-bigdecimal-gitlab
 
 USES=		gem
 
