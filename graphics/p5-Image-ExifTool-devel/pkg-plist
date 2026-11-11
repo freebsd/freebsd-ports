@@ -152,6 +152,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/MakerNotes.pm
 %%SITE_PERL%%/Image/ExifTool/Matroska.pm
 %%SITE_PERL%%/Image/ExifTool/Microsoft.pm
+%%SITE_PERL%%/Image/ExifTool/Mini.pm
 %%SITE_PERL%%/Image/ExifTool/Minolta.pm
 %%SITE_PERL%%/Image/ExifTool/MinoltaRaw.pm
 %%SITE_PERL%%/Image/ExifTool/Motorola.pm
@@ -363,6 +364,7 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::MakerNotes.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Matroska.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Microsoft.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::Mini.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Minolta.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::MinoltaRaw.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Motorola.3.gz
