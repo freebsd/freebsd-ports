@@ -1,19 +1,17 @@
 PORTNAME=	ivan
-PORTVERSION=	0.59
-PORTREVISION=	1
+PORTVERSION=	0.60
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Graphical roguelike game
 WWW=		https://attnam.com/ \
-		http://ivan.sourceforge.net/ \
 		https://github.com/Attnam/ivan
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:graphics/png \
-		libpcre.so:devel/pcre
+		libpcre2-8.so:devel/pcre2
 
 USES=		cmake pkgconfig sdl
 USE_SDL=	sdl2 mixer2
