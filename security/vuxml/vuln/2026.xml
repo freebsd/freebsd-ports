@@ -1,3 +1,31 @@
+  <vuln vid="3047b511-dde7-11f1-8135-8447094a420f">
+    <topic>LibreSSL -- Out of bounds read</topic>
+    <affects>
+      <package>
+	<name>libressl</name>
+	<name>libressl-libtls</name>
+	<name>libressl-devel</name>
+	<name>libressl-devel-libtls</name>
+	<range><lt>4.4.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenBSD project reports:</p>
+	<blockquote cite="https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-4.4.1-relnotes.txt.">
+	  <p>Out of bounds read that may happen during renegotiation in TLSv1.2.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-4.4.1-relnotes.txt</url>
+    </references>
+    <dates>
+      <discovery>2026-11-11</discovery>
+      <entry>2026-11-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f2904526-ddd3-11f1-8135-8447094a420f">
     <topic>Apache httpd -- Multiple vulnerabilities</topic>
     <affects>
