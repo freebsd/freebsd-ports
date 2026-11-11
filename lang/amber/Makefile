@@ -1,12 +1,12 @@
 PORTNAME=	amber
-DISTVERSION=	0.4.0-alpha
-PORTREVISION=	17
+DISTVERSION=	0.6.0-alpha
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-language
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Amber: the programming language compiled to bash
-WWW=		https://amber-lang.com
+WWW=		https://amber-lang.com \
+		https://github.com/amber-lang/Amber
 
 LICENSE=	GPLv3
 
@@ -20,115 +20,175 @@ GH_ACCOUNT=	amber-lang
 CARGO_CRATES=	aho-corasick-1.1.3 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
-		anstream-0.6.14 \
-		anstyle-1.0.10 \
-		anstyle-parse-0.2.4 \
-		anstyle-query-1.1.0 \
-		anstyle-wincon-3.0.3 \
+		anstream-0.6.19 \
+		anstyle-1.0.11 \
+		anstyle-parse-0.2.7 \
+		anstyle-query-1.1.3 \
+		anstyle-wincon-3.0.9 \
 		ascii-1.1.0 \
-		assert_cmd-2.0.14 \
-		autocfg-1.3.0 \
-		bitflags-2.6.0 \
-		bstr-1.9.1 \
+		assert_cmd-2.0.17 \
+		autocfg-1.5.0 \
+		bitflags-2.9.1 \
+		bstr-1.12.0 \
 		build-helper-0.1.1 \
-		bumpalo-3.16.0 \
+		built-0.7.7 \
+		bumpalo-3.19.0 \
 		capitalize-0.3.4 \
-		cc-1.0.104 \
-		cfg-if-1.0.0 \
-		chrono-0.4.38 \
+		cc-1.2.29 \
+		cfg-if-1.0.1 \
+		chrono-0.4.41 \
 		chunked_transfer-1.5.0 \
-		clap-4.5.20 \
-		clap_builder-4.5.20 \
-		clap_complete-4.5.36 \
-		clap_derive-4.5.18 \
-		clap_lex-0.7.1 \
-		colorchoice-1.0.1 \
-		colored-2.1.0 \
-		core-foundation-sys-0.8.6 \
+		clap-4.5.41 \
+		clap_builder-4.5.41 \
+		clap_complete-4.5.55 \
+		clap_derive-4.5.41 \
+		clap_lex-0.7.5 \
+		colorchoice-1.0.4 \
+		colored-2.2.0 \
+		console-0.15.11 \
+		core-foundation-sys-0.8.7 \
+		crossbeam-deque-0.8.6 \
+		crossbeam-epoch-0.9.18 \
+		crossbeam-utils-0.8.21 \
 		diff-0.1.13 \
 		difflib-0.4.0 \
+		displaydoc-0.2.5 \
 		doc-comment-0.3.3 \
-		either-1.13.0 \
-		errno-0.3.9 \
-		fastrand-2.1.0 \
-		float-cmp-0.9.0 \
-		glob-0.3.1 \
+		either-1.15.0 \
+		encode_unicode-1.0.0 \
+		errno-0.3.13 \
+		fastrand-2.3.0 \
+		float-cmp-0.10.0 \
+		form_urlencoded-1.2.1 \
+		getrandom-0.3.3 \
+		git2-0.20.2 \
+		glob-0.3.2 \
 		heck-0.5.0 \
-		heraclitus-compiler-1.8.1 \
+		heraclitus-compiler-1.9.0 \
 		httpdate-1.0.3 \
-		iana-time-zone-0.1.60 \
+		iana-time-zone-0.1.63 \
 		iana-time-zone-haiku-0.1.2 \
+		icu_collections-2.0.0 \
+		icu_locale_core-2.0.0 \
+		icu_normalizer-2.0.0 \
+		icu_normalizer_data-2.0.0 \
+		icu_properties-2.0.1 \
+		icu_properties_data-2.0.1 \
+		icu_provider-2.0.0 \
+		idna-1.0.3 \
+		idna_adapter-1.2.1 \
 		include_dir-0.7.4 \
 		include_dir_macros-0.7.4 \
-		is_terminal_polyfill-1.70.0 \
+		insta-1.43.1 \
+		inventory-0.3.22 \
+		is_terminal_polyfill-1.70.1 \
 		itertools-0.13.0 \
-		js-sys-0.3.69 \
+		jobserver-0.1.33 \
+		js-sys-0.3.77 \
 		lazy_static-1.5.0 \
-		libc-0.2.186 \
-		linux-raw-sys-0.4.14 \
-		log-0.4.22 \
-		memchr-2.7.4 \
+		libc-0.2.174 \
+		libgit2-sys-0.18.2+1.9.1 \
+		libz-sys-1.1.22 \
+		linux-raw-sys-0.9.4 \
+		litemap-0.8.0 \
+		log-0.4.27 \
+		memchr-2.7.5 \
 		normalize-line-endings-0.3.0 \
 		num-traits-0.2.19 \
-		once_cell-1.19.0 \
+		once_cell-1.21.3 \
+		once_cell_polyfill-1.70.1 \
 		pad-0.1.6 \
-		predicates-3.1.0 \
-		predicates-core-1.0.6 \
-		predicates-tree-1.0.9 \
+		percent-encoding-2.3.1 \
+		pkg-config-0.3.32 \
+		potential_utf-0.1.2 \
+		predicates-3.1.3 \
+		predicates-core-1.0.9 \
+		predicates-tree-1.0.12 \
 		pretty_assertions-1.4.1 \
 		proc-macro2-0.4.30 \
-		proc-macro2-1.0.86 \
+		proc-macro2-1.0.95 \
 		quote-0.6.13 \
-		quote-1.0.36 \
-		regex-1.10.5 \
-		regex-automata-0.4.7 \
-		regex-syntax-0.8.4 \
-		rustix-0.38.34 \
+		quote-1.0.40 \
+		r-efi-5.3.0 \
+		rayon-1.11.0 \
+		rayon-core-1.13.0 \
+		regex-1.12.2 \
+		regex-automata-0.4.13 \
+		regex-syntax-0.8.5 \
+		rustix-1.0.7 \
+		rustversion-1.0.21 \
 		semver-0.6.0 \
 		semver-parser-0.7.0 \
-		serde-1.0.203 \
-		serde_derive-1.0.203 \
+		serde-1.0.219 \
+		serde_derive-1.0.219 \
+		shlex-1.3.0 \
+		similar-2.7.0 \
 		similar-string-1.4.3 \
+		smallvec-1.15.1 \
+		stable_deref_trait-1.2.0 \
 		strsim-0.11.1 \
 		syn-0.15.44 \
-		syn-2.0.68 \
-		tempfile-3.10.1 \
-		termtree-0.4.1 \
+		syn-2.0.104 \
+		synstructure-0.13.2 \
+		tempfile-3.20.0 \
+		termtree-0.5.1 \
 		test-generator-0.3.1 \
 		tiny_http-0.12.0 \
-		unicode-ident-1.0.12 \
-		unicode-width-0.1.13 \
+		tinystr-0.8.1 \
+		unicode-ident-1.0.18 \
+		unicode-width-0.1.14 \
 		unicode-xid-0.1.0 \
+		url-2.5.4 \
+		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
-		wait-timeout-0.2.0 \
-		wasm-bindgen-0.2.92 \
-		wasm-bindgen-backend-0.2.92 \
-		wasm-bindgen-macro-0.2.92 \
-		wasm-bindgen-macro-support-0.2.92 \
-		wasm-bindgen-shared-0.2.92 \
+		vcpkg-0.2.15 \
+		wait-timeout-0.2.1 \
+		wasi-0.14.2+wasi-0.2.4 \
+		wasm-bindgen-0.2.100 \
+		wasm-bindgen-backend-0.2.100 \
+		wasm-bindgen-macro-0.2.100 \
+		wasm-bindgen-macro-support-0.2.100 \
+		wasm-bindgen-shared-0.2.100 \
 		wildmatch-2.4.0 \
-		windows-core-0.52.0 \
-		windows-sys-0.48.0 \
-		windows-sys-0.52.0 \
-		windows-targets-0.48.5 \
-		windows-targets-0.52.5 \
-		windows_aarch64_gnullvm-0.48.5 \
-		windows_aarch64_gnullvm-0.52.5 \
-		windows_aarch64_msvc-0.48.5 \
-		windows_aarch64_msvc-0.52.5 \
-		windows_i686_gnu-0.48.5 \
-		windows_i686_gnu-0.52.5 \
-		windows_i686_gnullvm-0.52.5 \
-		windows_i686_msvc-0.48.5 \
-		windows_i686_msvc-0.52.5 \
-		windows_x86_64_gnu-0.48.5 \
-		windows_x86_64_gnu-0.52.5 \
-		windows_x86_64_gnullvm-0.48.5 \
-		windows_x86_64_gnullvm-0.52.5 \
-		windows_x86_64_msvc-0.48.5 \
-		windows_x86_64_msvc-0.52.5 \
-		yansi-1.0.1
+		windows-core-0.61.2 \
+		windows-implement-0.60.0 \
+		windows-interface-0.59.1 \
+		windows-link-0.1.3 \
+		windows-result-0.3.4 \
+		windows-strings-0.4.2 \
+		windows-sys-0.59.0 \
+		windows-sys-0.60.2 \
+		windows-targets-0.52.6 \
+		windows-targets-0.53.2 \
+		windows_aarch64_gnullvm-0.52.6 \
+		windows_aarch64_gnullvm-0.53.0 \
+		windows_aarch64_msvc-0.52.6 \
+		windows_aarch64_msvc-0.53.0 \
+		windows_i686_gnu-0.52.6 \
+		windows_i686_gnu-0.53.0 \
+		windows_i686_gnullvm-0.52.6 \
+		windows_i686_gnullvm-0.53.0 \
+		windows_i686_msvc-0.52.6 \
+		windows_i686_msvc-0.53.0 \
+		windows_x86_64_gnu-0.52.6 \
+		windows_x86_64_gnu-0.53.0 \
+		windows_x86_64_gnullvm-0.52.6 \
+		windows_x86_64_gnullvm-0.53.0 \
+		windows_x86_64_msvc-0.52.6 \
+		windows_x86_64_msvc-0.53.0 \
+		wit-bindgen-rt-0.39.0 \
+		writeable-0.6.1 \
+		yansi-1.0.1 \
+		yoke-0.8.0 \
+		yoke-derive-0.8.0 \
+		zerofrom-0.1.6 \
+		zerofrom-derive-0.1.6 \
+		zerotrie-0.2.2 \
+		zerovec-0.11.2 \
+		zerovec-derive-0.11.1
 
 PLIST_FILES=	bin/${PORTNAME}
+
+# tests as of 0.6.0-alpha: test result: FAILED. 641 passed; 17 failed; 0 ignored; 0 measured; 0 filtered out; finished in 3.24s, see https://github.com/amber-lang/amber/issues/1198
 
 .include <bsd.port.mk>
