@@ -1,5 +1,5 @@
 PORTNAME=	libconfig
-DISTVERSION=	1.8.2
+DISTVERSION=	1.8.3
 CATEGORIES=	devel
 MASTER_SITES=	https://hyperrealm.github.io/${PORTNAME}/dist/
 
@@ -8,22 +8,16 @@ COMMENT=	Simple library for processing structured configuration files
 WWW=		https://hyperrealm.github.io/libconfig/
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
-USES=		libtool pathfix
+USES=		cmake:testing pathfix
 USE_LDCONFIG=	yes
 
-GNU_CONFIGURE=	yes
 CONFLICTS=	wand-libconfig
 
-TEST_TARGET=	check
+CMAKE_TESTING_ON=	BUILD_TESTS
 
-CONFIGURE_ARGS=	--disable-examples
-
-OPTIONS_DEFINE=	INFO
-OPTIONS_DEFAULT=INFO
-
-INFO_INFO=	libconfig
-INFO_CONFIGURE_OFF=	--disable-doc
-INFO_USES=	makeinfo
+CMAKE_OFF=	BUILD_EXAMPLES \
+		BUILD_TESTS
 
 .include <bsd.port.mk>
