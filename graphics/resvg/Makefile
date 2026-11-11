@@ -1,7 +1,6 @@
 PORTNAME=	resvg
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.49.0
-PORTREVISION=	1
+DISTVERSION=	0.50.0
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,7 +28,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		bitflags-1.3.2 \
 		bitflags-2.13.1 \
 		bytemuck-1.25.2 \
-		bytemuck_derive-1.11.0 \
+		bytemuck_derive-1.12.1 \
 		byteorder-lite-0.1.0 \
 		cfg-if-1.0.4 \
 		cloudabi-0.0.3 \
@@ -41,17 +40,19 @@ CARGO_CRATES=	adler2-2.0.1 \
 		fdeflate-0.3.7 \
 		flate2-1.1.9 \
 		float-cmp-0.9.0 \
-		font-types-0.12.1 \
+		foldhash-0.2.0 \
+		font-types-0.12.7 \
 		fontconfig-parser-0.5.8 \
 		fontdb-0.24.0 \
 		fuchsia-cprng-0.1.1 \
 		gif-0.14.2 \
-		harfrust-0.12.0 \
+		harfrust-0.15.0 \
 		image-webp-0.2.4 \
 		imagesize-0.15.0 \
 		itertools-0.14.0 \
 		kurbo-0.13.1 \
 		libc-0.2.189 \
+		libm-0.2.16 \
 		log-0.4.33 \
 		memchr-2.8.3 \
 		memmap2-0.9.11 \
@@ -78,7 +79,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rand_pcg-0.1.2 \
 		rand_xorshift-0.1.1 \
 		rdrand-0.4.0 \
-		read-fonts-0.41.0 \
+		read-fonts-0.46.0 \
 		rgb-0.8.53 \
 		roxmltree-0.20.0 \
 		roxmltree-0.21.1 \
@@ -86,12 +87,13 @@ CARGO_CRATES=	adler2-2.0.1 \
 		simplecss-0.2.2 \
 		siphasher-0.2.3 \
 		siphasher-1.0.3 \
-		skrifa-0.44.0 \
+		skrifa-0.49.0 \
 		slotmap-1.1.1 \
 		smallvec-1.15.2 \
+		stable_deref_trait-1.2.1 \
 		strict-num-0.1.1 \
-		svgtypes-0.16.1 \
-		syn-2.0.119 \
+		syn-3.0.6 \
+		synstructure-0.14.0 \
 		tiny-skia-0.12.0 \
 		tiny-skia-path-0.12.0 \
 		tinyvec-1.12.0 \
@@ -106,6 +108,10 @@ CARGO_CRATES=	adler2-2.0.1 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		xmlwriter-0.1.0 \
+		yoke-0.8.3 \
+		yoke-derive-0.8.4 \
+		zerofrom-0.1.8 \
+		zerofrom-derive-0.1.8 \
 		zune-core-0.5.1 \
 		zune-jpeg-0.5.15
 
