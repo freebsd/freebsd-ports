@@ -30,6 +30,7 @@ include/faiss/IndexIVFPQFastScan.h
 include/faiss/IndexIVFPQR.h
 include/faiss/IndexIVFRaBitQ.h
 include/faiss/IndexIVFRaBitQFastScan.h
+include/faiss/IndexIVFSQFastScan.h
 include/faiss/IndexIVFSpectralHash.h
 include/faiss/IndexLSH.h
 include/faiss/IndexLattice.h
@@ -38,12 +39,14 @@ include/faiss/IndexNSG.h
 include/faiss/IndexNeuralNetCodec.h
 include/faiss/IndexPQ.h
 include/faiss/IndexPQFastScan.h
+include/faiss/IndexPiPNN.h
 include/faiss/IndexPreTransform.h
 include/faiss/IndexRaBitQ.h
 include/faiss/IndexRaBitQFastScan.h
 include/faiss/IndexRefine.h
 include/faiss/IndexReplicas.h
 include/faiss/IndexRowwiseMinMax.h
+include/faiss/IndexSQFastScan.h
 include/faiss/IndexScalarQuantizer.h
 include/faiss/IndexShards.h
 include/faiss/IndexShardsIVF.h
@@ -103,6 +106,7 @@ include/faiss/impl/NSG.h
 include/faiss/impl/Panorama.h
 include/faiss/impl/PanoramaStats.h
 include/faiss/impl/PdxLayout.h
+include/faiss/impl/PiPNN.h
 include/faiss/impl/PolysemousTraining.h
 include/faiss/impl/ProductAdditiveQuantizer.h
 include/faiss/impl/ProductQuantizer-inl.h
@@ -130,6 +134,7 @@ include/faiss/impl/fast_scan/accumulate_loops_512.h
 include/faiss/impl/fast_scan/decompose_qbs.h
 include/faiss/impl/fast_scan/dispatching.h
 include/faiss/impl/fast_scan/fast_scan.h
+include/faiss/impl/fast_scan/kernels_neon.h
 include/faiss/impl/fast_scan/kernels_simd256.h
 include/faiss/impl/fast_scan/kernels_simd512.h
 include/faiss/impl/fast_scan/rabitq_dispatching.h
@@ -144,6 +149,9 @@ include/faiss/impl/kmeans1d.h
 include/faiss/impl/lattice_Zn.h
 include/faiss/impl/mapped_io.h
 include/faiss/impl/maybe_owned_vector.h
+include/faiss/impl/pipnn/HashPrune.h
+include/faiss/impl/pipnn/Partition.h
+include/faiss/impl/pipnn/kernels.h
 include/faiss/impl/platform_macros.h
 include/faiss/impl/polysemous_training/dispatch.h
 include/faiss/impl/pq_code_distance/IVFPQScanner_impl.h
@@ -153,6 +161,7 @@ include/faiss/impl/pq_code_distance/pq_code_distance-avx2.h
 include/faiss/impl/pq_code_distance/pq_code_distance-avx512.h
 include/faiss/impl/pq_code_distance/pq_code_distance-generic.h
 include/faiss/impl/pq_code_distance/pq_code_distance-inl.h
+include/faiss/impl/pq_code_distance/pq_rvv_kernel.h
 include/faiss/impl/residual_quantizer_encode_steps.h
 include/faiss/impl/scalar_quantizer/codecs.h
 include/faiss/impl/scalar_quantizer/distance_computers.h
@@ -160,6 +169,8 @@ include/faiss/impl/scalar_quantizer/quantizers.h
 include/faiss/impl/scalar_quantizer/scanners.h
 include/faiss/impl/scalar_quantizer/similarities.h
 include/faiss/impl/scalar_quantizer/sq-dispatch.h
+include/faiss/impl/scalar_quantizer/sq8_coefficients.h
+include/faiss/impl/scalar_quantizer/sq8_rvv_kernel.h
 include/faiss/impl/scalar_quantizer/training.h
 include/faiss/impl/simd_dispatch.h
 include/faiss/impl/simdlib/simdlib.h
@@ -204,15 +215,21 @@ include/faiss/utils/hamming_distance/hamming_computer.h
 include/faiss/utils/hamming_distance/hamming_impl.h
 include/faiss/utils/ordered_key_value.h
 include/faiss/utils/partitioning.h
+include/faiss/utils/popcount.h
 include/faiss/utils/prefetch.h
 include/faiss/utils/quantize_lut.h
 include/faiss/utils/rabitq_simd.h
 include/faiss/utils/random.h
 include/faiss/utils/simd_impl/IVFFlatScanner-inl.h
 include/faiss/utils/simd_impl/distances_autovec-inl.h
+include/faiss/utils/simd_impl/distances_rvv_kernel.h
 include/faiss/utils/simd_impl/distances_simdlib256.h
 include/faiss/utils/simd_impl/distances_sse-inl.h
 include/faiss/utils/simd_impl/exhaustive_L2sqr_blas_cmax.h
+include/faiss/utils/simd_impl/fp16_kernels.h
+include/faiss/utils/simd_impl/masked_sum-avx2.h
+include/faiss/utils/simd_impl/masked_sum-avx512.h
+include/faiss/utils/simd_impl/masked_sum.h
 include/faiss/utils/simd_impl/super_kmeans_dispatch.h
 include/faiss/utils/simd_impl/super_kmeans_kernels.h
 include/faiss/utils/simd_levels.h
