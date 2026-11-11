@@ -1,6 +1,7 @@
 PORTNAME=	libjxl
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.12.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -18,7 +19,7 @@ USES=		cmake:testing compiler:c++11-lib cpe localbase:ldflags pkgconfig shared-m
 CPE_VENDOR=	${PORTNAME}_project
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
-GH_TUPLE=	libjxl:testdata:ff8d743:testdata/testdata \
+GH_TUPLE=	libjxl:testdata:73695d3:testdata/testdata \
 		webmproject:sjpeg:94e0df6:sjpeg/third_party/sjpeg \
 		${NULL}
 CMAKE_ON=	JPEGXL_ENABLE_PLUGINS
@@ -46,7 +47,7 @@ JPEG_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_JPEG
 JPEG_CMAKE_BOOL_OFF+=	JPEGXL_ENABLE_JPEGLI_LIBJPEG # XXX WITH_JPEG8, libmap.conf(5)
 
 LCMS2_LIB_DEPENDS=	liblcms2.so:graphics/lcms2
-LCMS2_GH_TUPLE_OFF=	google:skcms:b2e6926:skcms/third_party/skcms
+LCMS2_GH_TUPLE_OFF=	google:skcms:96d9171:skcms/third_party/skcms
 LCMS2_CMAKE_BOOL_OFF=	JPEGXL_ENABLE_SKCMS
 .if make(makesum)
 GH_TUPLE+=		${LCMS2_GH_TUPLE_OFF}
