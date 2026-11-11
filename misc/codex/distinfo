@@ -1,4 +1,4 @@
-TIMESTAMP = 1793785130
+TIMESTAMP = 1794341999
 SHA256 (codex/build-2c779f961da7f5632d6836113112179e67938868.tar.gz) = 1d63e74e909fcc1ae814eb928bb54dd210565c04d9432e3e4d338916e8b8cf36
 SIZE (codex/build-2c779f961da7f5632d6836113112179e67938868.tar.gz) = 1852097
 SHA256 (codex/buildtools-0d8a204ff274ee12fa9ace5e3ffd8e5fbcb54926.tar.gz) = adb9e0362be5924b57da9147d8605763526b11c9c5a84ca2b51c88326581e66b
@@ -1243,8 +1243,8 @@ SHA256 (codex/rust/crates/minimal-lexical-0.2.1.crate) = 68354c5c6bd36d73ff3fece
 SIZE (codex/rust/crates/minimal-lexical-0.2.1.crate) = 94841
 SHA256 (codex/rust/crates/miniz_oxide-0.8.9.crate) = 1fa76a2c86f704bdb222d66965fb3d63269ce38518b83cb0575fca855ebb6316
 SIZE (codex/rust/crates/miniz_oxide-0.8.9.crate) = 67132
-SHA256 (codex/rust/crates/mio-1.2.0.crate) = 50b7e5b27aa02a74bac8c3f23f448f8d87ff11f92d3aac1a6ed369ee08cc56c1
-SIZE (codex/rust/crates/mio-1.2.0.crate) = 106403
+SHA256 (codex/rust/crates/mio-1.2.4.crate) = 1788edb87fdc09c7e26304471e2f5be8cdefb1b6930d6e3985fc02ff53bf86ee
+SIZE (codex/rust/crates/mio-1.2.4.crate) = 110437
 SHA256 (codex/rust/crates/ml-kem-0.2.3.crate) = 8de49b3df74c35498c0232031bb7e85f9389f913e2796169c8ab47a53993a18f
 SIZE (codex/rust/crates/ml-kem-0.2.3.crate) = 34655
 SHA256 (codex/rust/crates/moka-0.12.13.crate) = b4ac832c50ced444ef6be0767a008b02c106a909ba79d1d830501e94b96f6b7e
@@ -2649,5 +2649,5 @@ SHA256 (codex/modelcontextprotocol-rust-sdk-98a54789b80110ad210495c4ad845c89e198
 SIZE (codex/modelcontextprotocol-rust-sdk-98a54789b80110ad210495c4ad845c89e1980471_GH0.tar.gz) = 763437
 SHA256 (codex/hyperium-h3-e07e69412876f7e26f026bd75a48b2704d8c8283_GH0.tar.gz) = 3b9d8a9d10841fe27fb86c97a06bece1411fcb0acfadc0ca857b6365d4e5d29a
 SIZE (codex/hyperium-h3-e07e69412876f7e26f026bd75a48b2704d8c8283_GH0.tar.gz) = 244832
-SHA256 (codex/openai-codex-rust-v0.166.0_GH0.tar.gz) = 718c86dcd7104919f2820aa79db0fa0083b5f240aa16da704f43e4acf7b544e5
-SIZE (codex/openai-codex-rust-v0.166.0_GH0.tar.gz) = 18852337
+SHA256 (codex/openai-codex-rust-v0.167.0_GH0.tar.gz) = 313e49728fba6c3d44683554c28018f36781f9f9b6bd09eaa65dccdd6c13b1a7
+SIZE (codex/openai-codex-rust-v0.167.0_GH0.tar.gz) = 19101987
