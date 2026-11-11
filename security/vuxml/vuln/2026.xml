@@ -1,3 +1,30 @@
+  <vuln vid="05286f93-de01-11f1-bbb3-901b0e9408dc">
+    <topic>conduit -- e2ee signing keys vulnerability</topic>
+    <affects>
+      <package>
+	<name>matrix-conduit</name>
+	<range><lt>0.10.16</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Conduit team reports:</p>
+	<blockquote cite="https://gitlab.com/famedly/conduit/-/releases/v0.10.16">
+	  <p>Fixes a vulnerability where E2EE signing keys could be
+	  accepted from servers other than the one the user belongs
+	  to. It is recommended you upgrade ASAP.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://gitlab.com/famedly/conduit/-/releases/v0.10.16</url>
+    </references>
+    <dates>
+      <discovery>2026-11-10</discovery>
+      <entry>2026-11-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9e9c6e36-dd9f-11f1-bae2-3497f65b111b">
     <topic>immich -- multiple vulnerabilities</topic>
     <affects>
