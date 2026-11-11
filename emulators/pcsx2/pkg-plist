@@ -105,4 +105,5 @@ share/applications/PCSX2.desktop
 %%DATADIR%%/resources/sounds/achievements/lbsubmit.wav
 %%DATADIR%%/resources/sounds/achievements/message.wav
 %%DATADIR%%/resources/sounds/achievements/unlock.wav
+%%DATADIR%%/resources/patches.zip
 share/pixmaps/PCSX2.png

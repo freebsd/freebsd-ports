@@ -1,7 +1,7 @@
 PORTNAME=	pcsx2
 PORTVERSION=	2.8.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 
 MAINTAINER=	martymac@FreeBSD.org
@@ -13,7 +13,8 @@ LICENSE_COMB=	multi
 
 ONLY_FOR_ARCHS=	amd64
 
-BUILD_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers
+BUILD_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers \
+		zip:archivers/zip
 # Notes on dependencies (see cmake/SearchForStuff.cmake):
 # - glad comes from 3rdparty/ (conflicts with libglvnd)
 # - fmt, soundtouch, zydis, libzip
@@ -49,6 +50,9 @@ USES=		cmake compiler:c++20-lang desktop-file-utils elfctl gl jpeg \
 
 USE_GITHUB=	yes
 GH_PROJECT=	pcsx2
+# Regenerate patches.zip from a specific commit
+# See: https://github.com/PCSX2/pcsx2_patches/
+GH_TUPLE=	PCSX2:pcsx2_patches:b919d7fb5849feeb30b2da07d02f6dc662f28ba5:PCSX2/Patches
 
 USE_GL=		egl
 USE_SDL=	sdl3 ttf3
@@ -94,6 +98,8 @@ do-install:
 		${STAGEDIR}${PREFIX}/share/pixmaps/PCSX2.png
 	${INSTALL_DATA} ${WRKSRC}/.github/workflows/scripts/linux/pcsx2-qt.desktop \
 		${STAGEDIR}${PREFIX}/share/applications/PCSX2.desktop
+	${LOCALBASE}/bin/zip -r -j ${STAGEDIR}${DATADIR}/resources/patches.zip \
+		${WRKSRC}/Patches/patches
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR} && \
