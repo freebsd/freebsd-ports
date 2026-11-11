@@ -1,5 +1,6 @@
 PORTNAME=	kdesdk
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel kde
 
 MAINTAINER=	kde@FreeBSD.org
@@ -16,7 +17,6 @@ OPTIONS_DEFINE=	DEVUTILS \
 		KCACHEGRIND \
 		KOMPARE \
 		LOKALIZE \
-		OKTETA \
 		POXML \
 		THUMBNAILER \
 		UMBRELLO
@@ -45,9 +45,6 @@ KOMPARE_RUN_DEPENDS=	kompare>=${KDE_APPLICATIONS_VERSION}:textproc/kompare
 
 LOKALIZE_DESC=		Computer-aided translation system
 LOKALIZE_RUN_DEPENDS=	lokalize>=${KDE_APPLICATIONS_VERSION}:devel/lokalize
-
-OKTETA_DESC=		Hex editor
-OKTETA_RUN_DEPENDS=	okteta>=0.26:devel/okteta
 
 POXML_DESC=		Tools to translate DocBook XML using gettext
 POXML_RUN_DEPENDS=	poxml>=${KDE_APPLICATIONS_VERSION}:devel/poxml
