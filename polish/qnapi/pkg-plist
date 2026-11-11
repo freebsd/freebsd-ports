@@ -1,8 +1,14 @@
 bin/qnapi
-share/applications/qnapi-download.desktop
-share/applications/qnapi-scan.desktop
+bin/qnapic
 share/applications/qnapi.desktop
-%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE-pl
+%%PORTDOCS%%%%DOCSDIR%%/qnapi-download.desktop
+%%PORTDOCS%%%%DOCSDIR%%/qnapi-download.schemas
+%%PORTDOCS%%%%DOCSDIR%%/qnapi-scan.desktop
+%%PORTDOCS%%%%DOCSDIR%%/qnapi-scan.schemas
 share/icons/hicolor/128x128/apps/qnapi.png
 share/icons/hicolor/16x16/apps/qnapi.png
 share/icons/hicolor/32x32/apps/qnapi.png
