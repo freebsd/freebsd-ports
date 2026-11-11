@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		ghostscript:x11,run gmake gnome pkgconfig tk:tea xorg
+USES=		ghostscript:x11,run gmake gnome pkgconfig tk:86,tea xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	RTimothyEdwards
 GH_PROJECT=	XCircuit
@@ -35,8 +35,8 @@ OPTIONS_SUB=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e '/test/s| == | = |g ; \
-		 s|TCL_LIB_NAME=.*$$|TCL_LIB_NAME="tcl${TCL_VER:S/.//}"|g ; \
-		 s|TK_LIB_NAME=.*$$|TK_LIB_NAME="tk${TK_VER:S/.//}"|g ; \
+		 s|TCL_LIB_NAME=.*$$|TCL_LIB_NAME="tcl${TCL_SHLIB_VER}"|g ; \
+		 s|TK_LIB_NAME=.*$$|TK_LIB_NAME="tk${TCL_SHLIB_VER}"|g ; \
 		 s|wish |${WISH:T} |g ; \
 		 s|-fpic|-fPIC|g' ${WRKSRC}/configure
 

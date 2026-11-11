@@ -25,8 +25,8 @@ INSTALL_TARGET=	install-tcl
 
 CPPFLAGS+=	-I${TCL_INCLUDEDIR} -DHAVE_TCL \
 		-I${TK_INCLUDEDIR} -DHAVE_TK
-LDFLAGS+=	-lX11 -ltcl${TCL_VER:S/.//} \
-		-ltk${TCL_VER:S/.//} -lm
+LDFLAGS+=	-lX11 -ltcl${TCL_SHLIB_VER} \
+		-ltk${TCL_SHLIB_VER} -lm
 
 PLIST_FILES=	bin/uuwish bin/xdeview share/man/man1/xdeview.1.gz
 PORTDOCS=	*

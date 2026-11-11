@@ -11,7 +11,7 @@ WWW=		http://opencircuitdesign.com/qrouter/ \
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-USES=		gmake localbase tar:tgz tk:87 xorg
+USES=		gmake localbase tar:tgz tk:86 xorg
 USE_XORG=	ice sm x11 xt
 
 GNU_CONFIGURE=	yes

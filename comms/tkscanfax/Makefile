@@ -12,7 +12,7 @@ WWW=		http://shino.pos.to/linux/tkscanfax_e.html
 WRKSRC=		${WRKDIR}/${PORTNAME}1
 
 NO_BUILD=	yes
-USES+=		tk:wrapper
+USES+=		tk:86,wrapper
 
 PLIST_SUB=	TKSCANFAXDIR="${TKSCANFAXDIR}"
 
