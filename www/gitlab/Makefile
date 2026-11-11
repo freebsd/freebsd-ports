@@ -284,7 +284,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-spamcheck>=1.3.3<1.4:net/rubygem-spamcheck \
 	rubygem-gitaly>=19.4<20:net/rubygem-gitaly \
 	rubygem-gitlab-kas-grpc>=${GITLAB_KAS_GRPC_VERSION}:net/rubygem-gitlab-kas-grpc \
-	rubygem-gitlab-orbit-proto>=0.137.0<0.138:net/rubygem-gitlab-orbit-proto \
+	rubygem-gitlab-orbit-proto>=0.156.0<0.157:net/rubygem-gitlab-orbit-proto \
 	rubygem-grpc-gitlab>=1.81.0<1.82:net/rubygem-grpc-gitlab \
 	rubygem-google-protobuf-gitlab>=4.36.0<5:devel/rubygem-google-protobuf-gitlab \
 	rubygem-toml-rb>=4.1<5:www/rubygem-toml-rb \
@@ -305,7 +305,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-jsonb_accessor>=1.4<2:www/rubygem-jsonb_accessor \
 	rubygem-json2>=2.21.2<2.22:devel/rubygem-json2 \
 	rubygem-json_schemer>=2.4.0<2.5:devel/rubygem-json_schemer \
-	rubygem-oj-gitlab>=3.17.6<3.18:devel/rubygem-oj-gitlab \
+	rubygem-oj-gitlab>=3.17.8<3.18:devel/rubygem-oj-gitlab \
 	rubygem-oj-introspect>=0.9<1:devel/rubygem-oj-introspect \
 	rubygem-multi_json-gitlab>=1.17.0<1.18:devel/rubygem-multi_json-gitlab \
 	rubygem-yajl-ruby>=1.4.3<1.5:devel/rubygem-yajl-ruby \
