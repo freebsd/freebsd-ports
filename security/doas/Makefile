@@ -1,5 +1,6 @@
 PORTNAME=	doas
 PORTVERSION=	6.4
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://codeberg.org/thejessesmith/doas/archive/${PORTVERSION}${EXTRACT_SUFX}?dummy=/
 

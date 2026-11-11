@@ -1,7 +1,7 @@
 @(,,4755) bin/doas
 bin/doasedit
 bin/vidoas
-@sample etc/doas.conf.sample
+etc/doas.conf.sample
 share/man/man1/doas.1.gz
 share/man/man5/doas.conf.5.gz
 share/man/man8/doasedit.8.gz
