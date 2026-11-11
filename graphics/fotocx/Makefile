@@ -1,5 +1,6 @@
 PORTNAME=	fotocx
 PORTVERSION=	26.6.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://kornelix.net/downloads/downloads/ \
 		https://fossies.org/linux/misc/ \
