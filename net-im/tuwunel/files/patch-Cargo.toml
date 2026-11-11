@@ -1,0 +1,47 @@
+--- Cargo.toml.orig	2026-11-10 18:46:57 UTC
++++ Cargo.toml
+@@ -654,37 +654,30 @@ default-features = false
+ # adds event for CTRL+\:
+ # https://github.com/girlbossceo/rustyline-async/commit/67d8c49aeac03a5ef4e818f663eaa94dd7bf339b
+ [patch.crates-io.rustyline-async]
+-git = "https://github.com/matrix-construct/rustyline-async"
+-rev = "879968ba99c2558ae234fd67a057b7ea6f761fd3"
++path = "../rustyline-async-879968ba99c2558ae234fd67a057b7ea6f761fd3"
+ 
+ # adds LIFO queue scheduling; this should be updated with PR progress.
+ [patch.crates-io.event-listener]
+-git = "https://github.com/matrix-construct/event-listener"
+-rev = "f2a3389999cbcb2bdda52dbf5493635a027e7d94"
++path = "../event-listener-f2a3389999cbcb2bdda52dbf5493635a027e7d94"
+ [patch.crates-io.async-channel]
+-git = "https://github.com/matrix-construct/async-channel"
+-rev = "debb93f14a20fa7c1989042c2f07f53654d75908"
++path = "../async-channel-debb93f14a20fa7c1989042c2f07f53654d75908"
+ 
+ # adds affinity masks for selecting more than one core at a time
+ [patch.crates-io.core_affinity]
+-git = "https://github.com/matrix-construct/core_affinity_rs"
+-rev = "ff148c2985cbaff3e6e953d45cda4d7696f38d75"
++path = "../core_affinity_rs-ff148c2985cbaff3e6e953d45cda4d7696f38d75"
+ 
+ # reverts hyperium#148 conflicting with our delicate federation resolver hooks
+ [patch.crates-io.hyper-util]
+-git = "https://github.com/matrix-construct/hyper-util"
+-rev = "0510e3a3cba7aedd504b4ee0d69fbf41e76a524f"
++path = "../hyper-util-0510e3a3cba7aedd504b4ee0d69fbf41e76a524f"
+ 
+ # allows no-aaaa option in resolv.conf
+ # bumps rust edition and toolchain to 1.86.0 and 2024
+ # use sat_add on line number errors
+ [patch.crates-io.resolv-conf]
+-git = "https://github.com/matrix-construct/resolv-conf"
+-rev = "ab5c3e44016bc76b8798ec837a5a9cf9d88bf233"
++path = "../resolv-conf-ab5c3e44016bc76b8798ec837a5a9cf9d88bf233"
+ 
+ [patch.crates-io.rustls-platform-verifier]
+-git = "https://github.com/matrix-construct/rustls-platform-verifier"
+-rev = "c68093b6ac7d739e6b3aefb809c646a5e0210306"
++path = "../rustls-platform-verifier-c68093b6ac7d739e6b3aefb809c646a5e0210306/rustls-platform-verifier"
+ 
+ #
+ # Our crates

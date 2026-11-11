@@ -1,0 +1,8 @@
+Tuwunel is a Matrix homeserver written in Rust and the official successor
+to conduwuit.  It serves the client-server and federation APIs from a
+single process and keeps its state in an embedded RocksDB database, so no
+separate database server is required.
+
+Supported features include end-to-end encryption, spaces, threads, media
+thumbnails, URL previews and an administration room for day to day
+operation.

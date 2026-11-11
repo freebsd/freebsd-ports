@@ -1,0 +1,12 @@
+[
+{ type: install
+  message: <<EOM
+Copy %%ETCDIR%%/tuwunel.toml.sample to %%ETCDIR%%/tuwunel.toml and set at
+least server_name before starting the service.  The database is kept in
+/var/db/tuwunel.
+
+Tuwunel speaks plain HTTP and expects a reverse proxy in front of it for
+TLS and for serving the .well-known delegation of your domain.
+EOM
+}
+]

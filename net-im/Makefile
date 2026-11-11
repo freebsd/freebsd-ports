@@ -169,6 +169,7 @@
     SUBDIR += toxic
     SUBDIR += toxins
     SUBDIR += tuba
+    SUBDIR += tuwunel
     SUBDIR += twirssi
     SUBDIR += uTox
     SUBDIR += vqcc-gtk

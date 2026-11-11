@@ -1,0 +1,40 @@
+#!/bin/sh
+
+# PROVIDE: tuwunel
+# REQUIRE: LOGIN NETWORKING
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable tuwunel:
+#
+# tuwunel_enable (bool):	Set to "NO" by default.
+#				Set to "YES" to enable tuwunel.
+# tuwunel_config (str):		Configuration file.
+#				Default: "%%ETCDIR%%/tuwunel.toml"
+# tuwunel_runas (str):		User to run tuwunel as.
+#				Default: "%%USER%%"
+
+. /etc/rc.subr
+
+name=tuwunel
+rcvar=tuwunel_enable
+
+load_rc_config $name
+
+: ${tuwunel_enable:="NO"}
+: ${tuwunel_config:="%%ETCDIR%%/tuwunel.toml"}
+: ${tuwunel_runas:="%%USER%%"}
+
+pidfile="/var/run/${name}/${name}.pid"
+procname="%%PREFIX%%/bin/tuwunel"
+command="/usr/sbin/daemon"
+command_args="-f -S -T ${name} -p ${pidfile} -u ${tuwunel_runas} \
+	${procname} -c ${tuwunel_config}"
+
+start_precmd=tuwunel_precmd
+
+tuwunel_precmd()
+{
+	install -d -o "${tuwunel_runas}" -m 755 "/var/run/${name}"
+}
+
+run_rc_command "$1"
