@@ -17,6 +17,7 @@ WWW=		https://www.chromium.org/Home
 LICENSE=	BSD3CLAUSE LGPL21 MPL11
 LICENSE_COMB=	multi
 
+EXTRACT_DEPENDS=	rpm2archive:archivers/rpm4
 RUN_DEPENDS=	linux-rl9-wget>0:ftp/linux-rl9-wget \
 		linux-rl9-gnupg2>0:security/linux-rl9-gnupg \
 		update-mime-database:misc/shared-mime-info
@@ -37,9 +38,13 @@ NO_WRKSUBDIR=	yes
 EXTRACT_SUFX_aarch64?=	.aarch64.rpm
 EXTRACT_SUFX_amd64?=	.x86_64.rpm
 
+EXTRACT_CMD=	${LOCALBASE}/bin/rpm2archive
+EXTRACT_BEFORE_ARGS=	-n - <
+EXTRACT_AFTER_ARGS=	| ${TAR} --no-same-owner --no-same-permissions -xf -
+
 REINPLACE_ARGS=	-i ""
 
-CHROME_VER?=	157.0.8103.38
+CHROME_VER?=	157.0.8103.50
 CHROME_BUILD?=	1
 
 DATADIR=	${PREFIX}/share/${PORTNAME}
