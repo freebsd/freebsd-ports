@@ -1,14 +1,7 @@
-commit a48a55cdc296a7439dde8c55719cedeb27ff7a9f
-Author: Christoph Moench-Tegeder <cmt@FreeBSD.org>
-
-    taskcluster-taskgraph not available, don't try to download
-
-diff --git python/sites/build.txt python/sites/build.txt
-index 8f28f1f85426..19d84fb462b8 100644
---- python/sites/build.txt
+--- python/sites/build.txt.orig	2026-11-04 21:25:27 UTC
 +++ python/sites/build.txt
-@@ -1,6 +1,6 @@
- requires-python:>=3.9
+@@ -1,6 +1,6 @@ pth:third_party/python/vsdownload
+ requires-python:>=3.10
  pth:third_party/python/vsdownload
 -pypi-optional:taskcluster-taskgraph==24.1.1:toolchain artifacts will not be bootstrapped
 +# pypi-optional:taskcluster-taskgraph==24.1.1:toolchain artifacts will not be bootstrapped
