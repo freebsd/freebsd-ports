@@ -1,0 +1,22 @@
+--- aeron-system-tests/CMakeLists.txt.orig	2026-11-11 08:08:19 UTC
++++ aeron-system-tests/CMakeLists.txt
+@@ -12,7 +12,9 @@ endif ()
+     set(CACHE{BUILD_JAVA_VERSION} TYPE STRING FORCE VALUE $ENV{BUILD_JAVA_VERSION})
+ endif ()
+ 
+-if (AERON_SYSTEM_TESTS)
++# On FreeBSD the gradle build does not reliably find a suitable JDK and the
++# Java client integration tests are not part of the C/C++ port's core coverage.
++if (AERON_SYSTEM_TESTS AND NOT "${CMAKE_SYSTEM_NAME}" STREQUAL "FreeBSD")
+     add_test(
+         NAME java_system_tests_c_media_driver
+         WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+@@ -36,7 +38,7 @@ endif ()
+     set_tests_properties(java_system_tests_c_media_driver PROPERTIES RUN_SERIAL TRUE)
+ endif ()
+ 
+-if (AERON_SLOW_SYSTEM_TESTS)
++if (AERON_SLOW_SYSTEM_TESTS AND NOT "${CMAKE_SYSTEM_NAME}" STREQUAL "FreeBSD")
+     add_test(
+         NAME java_slow_system_tests_c_media_driver
+         WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}

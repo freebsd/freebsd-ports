@@ -1,5 +1,5 @@
 PORTNAME=	aeron
-DISTVERSION=	1.53.3
+DISTVERSION=	1.54.1
 CATEGORIES=	net-p2p
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -33,6 +33,12 @@ CMAKE_TESTING_ON=	AERON_TESTS \
 LDFLAGS+=	-lm \
 		-luuid
 
-TESTING_UNSAFE=	tests as of 1.44.6: 74% tests passed, 35 tests failed out of 136, see https://github.com/real-logic/aeron/issues/1696
+CMAKE_TESTING_JOBS=	1
+
+TESTING_UNSAFE=
+
+# tests as of 1.54.1: 100% tests passed, 0 tests failed out of 110
+# (the 2 Java client integration tests are excluded on FreeBSD because the
+#  gradle build does not reliably locate a suitable JDK in the ports environment)
 
 .include <bsd.port.mk>

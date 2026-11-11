@@ -127,7 +127,6 @@ include/aeronmd/media/aeron_udp_transport_poller.h
 include/aeronmd/uri/aeron_driver_uri.h
 include/wrapper/Aeron.h
 include/wrapper/AeronCounters.h
-include/wrapper/BufferBuilder.h
 include/wrapper/ChannelUri.h
 include/wrapper/ChannelUriStringBuilder.h
 include/wrapper/ClientConductor.h
