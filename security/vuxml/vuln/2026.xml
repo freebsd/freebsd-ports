@@ -1,3 +1,33 @@
+  <vuln vid="f2904526-ddd3-11f1-8135-8447094a420f">
+    <topic>Apache httpd -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>apache24</name>
+	<range><lt>2.4.71</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Apache httpd project reports:</p>
+	<blockquote cite="https://httpd.apache.org/security/vulnerabilities_24.html">
+	  <p>CVE-2026-119618 (critical): mod_http2: heap corruption and RCE in assign_headers</p>
+	  <p>CVE-2026-106023 (important): mod_md NULL pointer dereference leads to child process crash</p>
+	  <p>CVE-2026-109163 (low): mod_vhost_alias 1 byte stack buffer overwrite (after CVE-2026-63292)</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-119618</cvename>
+      <cvename>CVE-2026-109163</cvename>
+      <cvename>CVE-2026-106023</cvename>
+      <url>https://httpd.apache.org/security/vulnerabilities_24.html</url>
+    </references>
+    <dates>
+      <discovery>2026-11-11</discovery>
+      <entry>2026-11-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9e2564aa-ddb8-11f1-adaa-3c7c3fba4204">
     <topic>Mbed TLS -- multiple vulnerabilities</topic>
     <affects>
