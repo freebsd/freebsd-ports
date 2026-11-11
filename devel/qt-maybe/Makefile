@@ -1,11 +1,14 @@
 PORTNAME=	qt-maybe
 PORTVERSION=	0.0.20151227
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Implementation of sum/option types using QVariant
 WWW=		https://github.com/robertknight/qt-maybe
+
+DEPRECATED=     Depends on unsupported Qt 5, no consumers left
+EXPIRATION_DATE=        2026-11-30
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
