@@ -1,3 +1,48 @@
+  <vuln vid="9e9c6e36-dd9f-11f1-bae2-3497f65b111b">
+    <topic>immich -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>immich</name>
+	<name>immich-cli</name>
+	<range><lt>3.4.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Immich project reports:</p>
+	<blockquote cite="https://github.com/immich-app/immich/security/advisories">
+	  <ul>
+	    <li>An attacker-chosen OAuth state cookie allows forced account
+	      linking and takeover of any account, bypassing the fix for
+	      CVE-2025-43856.</li>
+	    <li>A malicious or intercepted server can read, exfiltrate and
+	      delete arbitrary local files through the duplicate check of the
+	      command line client.</li>
+	    <li>A partner can read the metadata of the sharer's locked folder
+	      when a search request omits the visibility.</li>
+	    <li>Read-scoped API keys can reset cluster group people data.</li>
+	    <li>An unbounded motion photo offset causes memory and disk
+	      exhaustion.</li>
+	    <li>A share link with uploads disabled can be used to test whether
+	      the owner has a given file.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/immich-app/immich/security/advisories/GHSA-7j23-rprg-3g5q</url>
+      <url>https://github.com/immich-app/immich/security/advisories/GHSA-p632-vh57-j6x4</url>
+      <url>https://github.com/immich-app/immich/security/advisories/GHSA-v7v2-63g5-gwf7</url>
+      <url>https://github.com/immich-app/immich/security/advisories/GHSA-qcp2-7vph-gq64</url>
+      <url>https://github.com/immich-app/immich/security/advisories/GHSA-c9h4-ccvj-j2h2</url>
+      <url>https://github.com/immich-app/immich/security/advisories/GHSA-xm8q-2hq2-gpxg</url>
+    </references>
+    <dates>
+      <discovery>2026-11-10</discovery>
+      <entry>2026-11-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3047b511-dde7-11f1-8135-8447094a420f">
     <topic>LibreSSL -- Out of bounds read</topic>
     <affects>
