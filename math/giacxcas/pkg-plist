@@ -70,6 +70,7 @@ include/giac/permu.h
 include/giac/plot.h
 include/giac/plot3d.h
 include/giac/poly.h
+include/giac/proba.h
 include/giac/prog.h
 include/giac/qjsgiac.h
 include/giac/quater.h
@@ -4379,6 +4380,7 @@ share/applications/xcas.desktop
 %%DATADIR%%/doc/fr/html_mtt
 %%DATADIR%%/doc/fr/html_vall
 %%DATADIR%%/doc/fr/keywords
+%%DATADIR%%/doc/fr/stage_ettahri.pdf
 %%DATADIR%%/doc/fr/troussesurvie_fr.pdf
 %%DATADIR%%/doc/fr/tutoriel.html
 %%DATADIR%%/doc/fr/tutoriel.pdf
