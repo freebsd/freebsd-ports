@@ -1,6 +1,6 @@
 PORTNAME=	immich-cli
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.3.6
+DISTVERSION=	3.4.0
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/joneum/FreeBSD-Immich/releases/download/v${DISTVERSION}/:buildkit
 DISTFILES=	immich-freebsd-buildkit-${DISTVERSION}${EXTRACT_SUFX}:buildkit
@@ -15,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	the prebuilt dependency store holds x64 binaries only
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/npm:www/npm-node22
 
 USES=		cpe nodejs:22,build,run
 CPE_VENDOR=	futo
@@ -28,8 +27,8 @@ GH_PROJECT=	immich
 # Shares the buildkit distfile with www/immich, see the comment there on
 # how it is made.
 BUILDKIT=	${WRKDIR}/immich-freebsd-buildkit-${DISTVERSION}
-PNPM=		${WRKDIR}/pnpm-prefix/bin/pnpm
-PNPM_VERSION=	11.27.1
+PNPM=		${WRKDIR}/pnpm-prefix/pnpm
+PNPM_VERSION=	12.15.0
 
 MAKE_ENV=	CI=1 \
 		COREPACK_ENABLE_STRICT=0 \
@@ -41,9 +40,9 @@ SUB_LIST=	NODE=${LOCALBASE}/bin/node
 NO_ARCH=	yes
 
 pre-build:
-	cd ${WRKDIR} && ${SETENV} ${MAKE_ENV} PATH=${PATH} \
-		${LOCALBASE}/bin/npm install -g --prefix ${WRKDIR}/pnpm-prefix \
-		${BUILDKIT}/pnpm-${PNPM_VERSION}.tgz
+	@${MKDIR} ${WRKDIR}/pnpm-prefix
+	@${TAR} -xf ${BUILDKIT}/pnpm-exe.freebsd-x64-${PNPM_VERSION}.tgz \
+		-C ${WRKDIR}/pnpm-prefix --strip-components 1 package/pnpm
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
