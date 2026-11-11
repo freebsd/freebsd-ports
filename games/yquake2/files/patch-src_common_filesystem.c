@@ -5,8 +5,8 @@
  	// packages), but no systemwide game data.
  #ifdef SYSTEMWIDE
 -	FS_AddDirToRawPath(SYSTEMDIR, false, false);
-+	FS_AddDirToRawPath(SYSTEMDATADIR, false, false);
 +	FS_AddDirToRawPath(SYSTEMLIBDIR, false, false);
++	FS_AddDirToRawPath(SYSTEMDATADIR, false, false);
  #endif
  
  	// The CD must be the last directory of the path,
