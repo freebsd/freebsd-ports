@@ -74,6 +74,8 @@ share/gir-1.0/Geoclue-2.0.gir
 %%DOCS%%share/gtk-doc/html/libgeoclue/style.css
 %%DOCS%%share/gtk-doc/html/libgeoclue/up-insensitive.png
 %%DOCS%%share/gtk-doc/html/libgeoclue/up.png
+share/locale/ka/LC_MESSAGES/geoclue-2.0.mo
+share/locale/oc/LC_MESSAGES/geoclue-2.0.mo
 share/vala/vapi/libgeoclue-2.0.deps
 share/vala/vapi/libgeoclue-2.0.vapi
 @dir %%ETCDIR%%/conf.d
