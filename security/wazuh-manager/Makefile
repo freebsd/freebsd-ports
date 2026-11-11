@@ -1,6 +1,6 @@
 PORTNAME=	wazuh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.14.9
+DISTVERSION=	4.14.10
 CATEGORIES=	security
 MASTER_SITES=	https://packages.wazuh.com/deps/55/libraries/sources/:wazuh_sources \
 		LOCAL/acm/${PORTNAME}/:wazuh_cache
@@ -37,7 +37,7 @@ USES=		cpe dos2unix gmake perl5 python:3.11 readline shebangfix uidfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	alonsobsd
 GH_PROJECT=	wazuh-freebsd
-GH_TAGNAME=	9fbc25e4d88330cfe6e83a5889e105f648d4494c
+GH_TAGNAME=	181f5396a2709d0dd91d7cda6c145d161533bd5e
 
 USE_RC_SUBR=	${PORTNAME}${PKGNAMESUFFIX}
 
@@ -55,7 +55,7 @@ EXTERNAL_DISTFILES=	audit-userspace.tar.gz:wazuh_sources \
 			bzip2.tar.gz:wazuh_sources \
 			cJSON.tar.gz:wazuh_sources \
 			cpp-httplib.tar.gz:wazuh_sources \
-			cpython-3.11.17.tar.gz:wazuh_cache \
+			cpython-3.11.18.tar.gz:wazuh_cache \
 			curl.tar.gz:wazuh_sources \
 			flatbuffers.tar.gz:wazuh_sources \
 			googletest.tar.gz:wazuh_sources \
