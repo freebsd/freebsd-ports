@@ -1,6 +1,5 @@
 PORTNAME=	cloudflared
-DISTVERSION=	2026.2.0
-PORTREVISION=	11
+DISTVERSION=	2026.10.7
 CATEGORIES=	net www
 
 MAINTAINER=	egypcio@FreeBSD.org
@@ -12,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
 
-USES=		cpe go:modules
+USES=		cpe go:1.27+,modules
 CPE_VENDOR=	cloudflare
 USE_GITHUB=	yes
 GH_ACCOUNT=	cloudflare
@@ -24,4 +23,8 @@ GO_BUILDFLAGS=	-ldflags '-s -w -extldflags "-static" -X main.Version=${PORTVERSI
 
 PLIST_FILES=	bin/${PORTNAME}
 
+post-patch:
+	@${MKDIR} ${WRKSRC}/vendor && ${CP} ${FILESDIR}/modules.txt ${WRKSRC}/vendor
+
+.include "Makefile.gomod"
 .include <bsd.port.mk>
