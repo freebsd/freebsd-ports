@@ -5,6 +5,35 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20261111:
+  AFFECTS: users of net-mgmt/netbox
+  AUTHOR: kai@FreeBSD.org
+
+  1. The NetBox 4.7 release contains some breaking changes, so the following
+     items should be checked before upgrading:
+
+     * NetBox now requires PostgreSQL 15 or later: The upgrade script will
+       abort when connected to an earlier release.  (NetBox v4.6 reported
+       this as a warning.)
+
+     * The PostgreSQL database must support the "ltree" extension. This is a
+       trusted module which ships with the PostgreSQL contrib utilities
+       (e.g. postgresql-contrib18 for PostgreSQL 18) and does not require
+       superuser permission to activate.
+
+       The following command can be used to check whether the "ltree"
+       extension is available:
+
+       => SELECT * FROM pg_available_extensions WHERE name = 'ltree';
+
+     * Redis 5.x is no longer supported. NetBox now requires Redis 6.0 or
+       later.
+
+     * The py-netbox-secrets plugin v3.1.2 is not yet compatible with
+       NetBox 4.7 and can no longer be used after upgrading.
+
+  2. Please also check the pkg-message and the changelogs for further info.
+
 20261109:
   AFFECTS: users of chinese/gcin
   AUTHOR: vanilla@FreeBSD.org
