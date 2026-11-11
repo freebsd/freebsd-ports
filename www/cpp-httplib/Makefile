@@ -1,6 +1,6 @@
 PORTNAME=	cpp-httplib
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.65.0
+DISTVERSION=	0.66.0
 CATEGORIES=	www devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -45,8 +45,8 @@ SSL_CMAKE_BOOL=		HTTPLIB_REQUIRE_OPENSSL HTTPLIB_USE_OPENSSL_IF_AVAILABLE
 do-test:
 	@cd ${WRKSRC}/test && ${SETENV} ${MAKE_ENV} ${GMAKE} CXXFLAGS="${CXXFLAGS} -I${WRKSRC}/test" LDFLAGS="${LDFLAGS}"
 
-# tests as of 0.65.0:
-# [==========] 1126 tests from 222 test suites ran. (200487 ms total)
-# [  PASSED  ] 1126 tests.
+# tests as of 0.66.0:
+# [==========] 1127 tests from 222 test suites ran. (207998 ms total)
+# [  PASSED  ] 1127 tests.
 
 .include <bsd.port.mk>
