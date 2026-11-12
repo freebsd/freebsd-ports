@@ -1,5 +1,5 @@
 PORTNAME=	mixlib-shellout
-PORTVERSION=	3.3.9
+PORTVERSION=	3.4.10
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
