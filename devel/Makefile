@@ -6258,6 +6258,7 @@
     SUBDIR += py-selection
     SUBDIR += py-semantic-version
     SUBDIR += py-semver
+    SUBDIR += py-sentinels
     SUBDIR += py-sentry-sdk
     SUBDIR += py-serializable
     SUBDIR += py-session-info

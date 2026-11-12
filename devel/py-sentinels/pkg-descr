@@ -1,0 +1,4 @@
+Sentinels are objects with special meanings. They can be thought of as
+singletons, but they serve the need of having special values that have
+special meanings. This module provides the Sentinel class along with
+useful predefined instances.

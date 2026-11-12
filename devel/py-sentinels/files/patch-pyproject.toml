@@ -1,0 +1,8 @@
+--- pyproject.toml.orig	2026-11-10 02:59:01 UTC
++++ pyproject.toml
+@@ -35,4 +35,4 @@ source = "vcs"
+ source = "vcs"
+ 
+ [tool.pytest]
+-testpaths = "tests"
++testpaths = ["tests"]
