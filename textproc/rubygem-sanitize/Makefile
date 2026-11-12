@@ -1,5 +1,5 @@
 PORTNAME=	sanitize
-PORTVERSION=	7.0.1
+PORTVERSION=	7.0.2
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-crass>=1.0.8<1.1:www/rubygem-crass \
-		rubygem-nokogiri>=1.16.8:textproc/rubygem-nokogiri
+		rubygem-nokogiri>=1.19.7:textproc/rubygem-nokogiri
 
 USES=		cpe gem
 
