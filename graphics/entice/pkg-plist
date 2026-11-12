@@ -1,4 +1,6 @@
 bin/entice
+bin/entice_thumb_generator
+bin/entice_thumb_viewer
 share/applications/entice.desktop
 %%DATADIR%%/themes/default.edj
 share/icons/hicolor/128x128/apps/entice.png
