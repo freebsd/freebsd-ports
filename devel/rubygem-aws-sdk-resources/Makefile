@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.278.0
+PORTVERSION=	3.279.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessanalyzer \
 		rubygem-aws-sdk-account>=1<2:devel/rubygem-aws-sdk-account \
 		rubygem-aws-sdk-accountaccess>=1<2:devel/rubygem-aws-sdk-accountaccess \
+		rubygem-aws-sdk-accountaccessruntime>=1<2:devel/rubygem-aws-sdk-accountaccessruntime \
 		rubygem-aws-sdk-acm>=1<2:devel/rubygem-aws-sdk-acm \
 		rubygem-aws-sdk-acmpca>=1<2:devel/rubygem-aws-sdk-acmpca \
 		rubygem-aws-sdk-agentregistry>=1<2:devel/rubygem-aws-sdk-agentregistry \
