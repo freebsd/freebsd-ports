@@ -1,5 +1,5 @@
 PORTNAME=	rabl
-PORTVERSION=	0.17.0
+PORTVERSION=	0.19.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/nesquena/rabl
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-activesupport5>=2.3.14:devel/rubygem-activesupport5
+RUN_DEPENDS=	rubygem-activesupport81>=6.1:devel/rubygem-activesupport81
 
 USES=		gem
 
