@@ -1,4 +1,4 @@
-TIMESTAMP = 1794472491
+TIMESTAMP = 1794500662
 SHA256 (bazelbuild-bazel-central-registry-5df17720d4367282afb8e5ca27a35199ab7620e4_GH0.tar.gz) = 8e50f26b47e345a32aaff54d8477b4d9a277cab1cb7d4db6b7aa361191d55be4
 SIZE (bazelbuild-bazel-central-registry-5df17720d4367282afb8e5ca27a35199ab7620e4_GH0.tar.gz) = 14273558
 SHA256 (mongodb-forks-rules_poetry-917630033c736c188605cf0f558c34afc1eca540_GH0.tar.gz) = 48001b928488e78f03a47bcc712c56432a471fc6cdd90fe57c884efbfcd13696
@@ -49,7 +49,7 @@ SHA256 (eslint-9.19.0.tgz) = a9e854f87ba814572a3967e9a308380a2759d2e0a6a2d571887
 SIZE (eslint-9.19.0.tgz) = 616480
 SHA256 (prettier-3.4.2.tgz) = dbf7e35264a81347c9aa91989042201dd6371fb20465bcc7d138de635a828403
 SIZE (prettier-3.4.2.tgz) = 2020270
-SHA256 (mongodb-mongo-r8.0.34_GH0.tar.gz) = b86778267f530e430fc3013a37578e9698cf9b58aa185e93f0cf5c8e92465974
-SIZE (mongodb-mongo-r8.0.34_GH0.tar.gz) = 88892937
+SHA256 (mongodb-mongo-r8.0.38_GH0.tar.gz) = b117fc0d05b80a579f5d393b7d0f7e170752a4a7d68f1e120653e9f296bf6658
+SIZE (mongodb-mongo-r8.0.38_GH0.tar.gz) = 89030692
 SHA256 (mongodb-forks-spidermonkey-7aeaf7a44d420360bde75db8453636092c3e2f56_GH0.tar.gz) = 8ec7aa1399b6fb15b859c448ae6f361ab28cf48bd8fc4f0de2fb3776582e202f
 SIZE (mongodb-forks-spidermonkey-7aeaf7a44d420360bde75db8453636092c3e2f56_GH0.tar.gz) = 392664341
