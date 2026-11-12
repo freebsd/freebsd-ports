@@ -1,3 +1,3 @@
-TIMESTAMP = 1793587916
-SHA256 (google_cloud_compute-1.56.0.tar.gz) = ad6339cbae67979d6c9131fd795cbfacdeb9ec24c78c9c0072ca37cc385fae30
-SIZE (google_cloud_compute-1.56.0.tar.gz) = 5471103
+TIMESTAMP = 1794364494
+SHA256 (google_cloud_compute-1.57.0.tar.gz) = 772d1457652cf5824583d7996a9b885fd5f5726394c55490ca99c2eb78a0e09c
+SIZE (google_cloud_compute-1.57.0.tar.gz) = 5471688
