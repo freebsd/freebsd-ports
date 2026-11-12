@@ -1,6 +1,6 @@
 PORTNAME=	xdg-desktop-portal-wlr
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.5
+DISTVERSION=	0.9.0
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
