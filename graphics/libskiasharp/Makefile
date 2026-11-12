@@ -1,7 +1,6 @@
 PORTNAME=	libskiasharp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	116
-PORTREVISION=	3
+DISTVERSION=	119
 CATEGORIES=	graphics
 
 MAINTAINER=	bapt@FreeBSD.org
@@ -23,12 +22,12 @@ USES=		jpeg ninja python:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	mono
 GH_PROJECT=	skia
-GH_TAGNAME=	c16e913577083761d847146db7a04b8d3b3bf755
+GH_TAGNAME=	7dbfc07dd33181f84e0958afb7ee805c6c769f0b
 
 USE_LDCONFIG=	yes
 USE_BINUTILS=	yes
 
-SOVERSION=	116.0.0
+SOVERSION=	119.0.0
 
 GN_ARGS=	is_official_build=true \
 		skia_enable_tools=false \
