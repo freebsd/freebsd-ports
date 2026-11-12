@@ -3,7 +3,7 @@ DISTVERSION=	3.9
 CATEGORIES=	comms
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 
-MAINTAINER=	diizzy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple TTY terminal I/O application
 WWW=		https://tio.github.io
 

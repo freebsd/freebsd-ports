@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.15.1
 CATEGORIES=	audio multimedia
 
-MAINTAINER=	diizzy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	foobar2000 inspired audio player
 WWW=		https://github.com/fooyin/fooyin
 

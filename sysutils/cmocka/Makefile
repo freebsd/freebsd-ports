@@ -3,7 +3,7 @@ DISTVERSION=	2.0.2
 CATEGORIES=	sysutils
 MASTER_SITES=	https://cmocka.org/files/2.0/
 
-MAINTAINER=	diizzy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unit testing framework for C with support for mock objects
 WWW=		https://cmocka.org/
 

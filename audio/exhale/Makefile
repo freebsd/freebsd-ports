@@ -4,7 +4,7 @@ DISTVERSION=	1.2.2
 PORTREVISION=	3
 CATEGORIES=	audio
 
-MAINTAINER=	diizzy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source xHE-AAC (Extended HE-AAC/USAC) encoder
 WWW=		https://gitlab.com/ecodis/exhale
 

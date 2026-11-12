@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.2
 CATEGORIES=	multimedia
 
-MAINTAINER=	diizzy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple and portable single file AV1 OBU parser
 WWW=		https://github.com/dwbuiten/obuparse
 

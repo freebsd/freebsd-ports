@@ -4,7 +4,7 @@ DISTVERSION=	3.3.0
 PORTREVISION=	1
 CATEGORIES=	net multimedia
 
-MAINTAINER=	diizzy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Media server compatible with DLNA and UPnP
 WWW=		https://gerbera.io/
 

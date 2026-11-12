@@ -6,7 +6,7 @@ CATEGORIES=	multimedia net
 MASTER_SITES+=	https://github.com/video-dev/hls.js/releases/download/v1.7.3/:hlsjs
 DISTFILES+=	release.zip:hlsjs
 
-MAINTAINER=	diizzy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ready-to-use RTSP / RTMP / LL-HLS / WebRTC server and proxy that allows to read, publish and proxy video and audio streams
 WWW=		https://github.com/bluenviron/mediamtx
 

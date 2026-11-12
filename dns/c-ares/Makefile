@@ -3,7 +3,7 @@ DISTVERSION=	1.34.9
 CATEGORIES=	dns
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 
-MAINTAINER=	diizzy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Asynchronous DNS resolver library
 WWW=		https://c-ares.haxx.se/
 

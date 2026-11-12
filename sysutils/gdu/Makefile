@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	5.39.0
 CATEGORIES=	sysutils
 
-MAINTAINER=	diizzy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Disk usage analyzer with console interface written in Go
 WWW=		https://github.com/dundee/gdu
 

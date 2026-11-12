@@ -6,7 +6,7 @@ CATEGORIES=	audio
 #MASTER_SITES=	https://github.com/cyanreg/${PORTNAME}/releases/download/${DISTVERSIONFULL}/
 #DISTNAME=	${PORTNAME}-src-${DISTVERSIONFULL}
 
-MAINTAINER=	diizzy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Audio CD ripper with command-line interface and focus on accuracy
 WWW=		https://github.com/cyanreg/cyanrip
 

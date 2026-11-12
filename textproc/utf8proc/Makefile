@@ -10,7 +10,7 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 DIST_SUBDIR=	${PORTNAME}/${DISTVERSION}
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	diizzy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	UTF-8 processing library
 WWW=		https://juliastrings.github.io/utf8proc/
 

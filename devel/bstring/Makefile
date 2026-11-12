@@ -3,7 +3,7 @@ DISTVERSION=	1.1.1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/msteinert/${PORTNAME}/releases/download/v${DISTVERSION}/
 
-MAINTAINER=	diizzy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Improved string processing functionality for the C language
 WWW=		https://mike.steinert.ca/bstring/
 

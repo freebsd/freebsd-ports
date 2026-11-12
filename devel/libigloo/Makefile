@@ -3,7 +3,7 @@ DISTVERSION=	0.9.5
 CATEGORIES=	devel
 MASTER_SITES=	https://ftp.osuosl.org/pub/xiph/releases/igloo/
 
-MAINTAINER=	diizzy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic C framework developed and used by the Icecast project
 WWW=		https://gitlab.xiph.org/xiph/icecast-libigloo
 

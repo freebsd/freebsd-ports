@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.36.0
 CATEGORIES=	dns
 
-MAINTAINER=	diizzy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast and lightweight DNS proxy as ad-blocker
 WWW=		https://0xerr0r.github.io/blocky/
 

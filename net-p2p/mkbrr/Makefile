@@ -4,7 +4,7 @@ DISTVERSION=	1.27.0
 PORTREVISION=	3
 CATEGORIES=	net-p2p
 
-MAINTAINER=	diizzy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Commmand-line utility to create, modify and inspect torrent files written in Go
 WWW=		https://github.com/autobrr/mkbrr
 

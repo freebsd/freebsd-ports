@@ -4,7 +4,7 @@ CATEGORIES=	devel
 MASTER_SITES=	https://capnproto.org/
 DISTNAME=	${PORTNAME}-c++-${DISTVERSION}
 
-MAINTAINER=	diizzy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Serialization/RPC system
 WWW=		https://capnproto.org/
 
