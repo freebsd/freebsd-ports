@@ -1,5 +1,6 @@
 PORTNAME=	pg-safeupdate
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	databases
 PKGNAMEPREFIX=	postgresql${PGSQL_VER:S/.//}-
 

@@ -1,5 +1,6 @@
 PORTNAME=	pg_hashids
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	dmitry.wagin@ya.ru

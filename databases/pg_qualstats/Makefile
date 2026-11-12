@@ -1,5 +1,6 @@
 PORTNAME=	pg_qualstats
 PORTVERSION=	2.1.4
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	girgen@FreeBSD.org

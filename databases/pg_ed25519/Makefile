@@ -1,5 +1,6 @@
 PORTNAME=	pg_ed25519
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	dmitry.wagin@ya.ru

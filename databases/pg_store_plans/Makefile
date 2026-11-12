@@ -1,5 +1,6 @@
 PORTNAME=	pg_store_plans
 DISTVERSION=	1.8
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	joseph@2egos.de

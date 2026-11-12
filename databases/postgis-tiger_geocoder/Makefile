@@ -1,5 +1,6 @@
 PORTNAME=	postgis_tiger_geocoder
 DISTVERSION=	2025.2rc1
+PORTREVISION=	1
 CATEGORIES=	databases geography
 MASTER_SITES=	https://gitea.osgeo.org/postgis/postgis_tiger_geocoder/releases/download/${DISTVERSION}/
 

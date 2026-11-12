@@ -1,5 +1,5 @@
 PORTNAME=	netmagis
-PORTREVISION=	1
+PORTREVISION=	2
 PKGNAMESUFFIX=	-database
 
 COMMENT=	Utilities for the netmagis database server

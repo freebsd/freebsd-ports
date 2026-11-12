@@ -1,6 +1,6 @@
 PORTNAME=	prosearch
 PORTVERSION=	0.19.4
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	net www
 MASTER_SITES=	http://pro.setun.net/search/download/ SF/pro-search/pro-search/${PORTVERSION}
 

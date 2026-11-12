@@ -1,6 +1,7 @@
 PORTNAME=	repmgr
 DISTVERSIONPREFIX=	v
 DISTVERSION=	5.5.0
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://github.com/EnterpriseDB/repmgr/releases/download/${DISTVERSIONFULL}/
 PKGNAMEPREFIX=	postgresql${PGSQL_VER:S/.//}-

@@ -1,6 +1,6 @@
 PORTNAME=	cardano-db-sync
 PORTVERSION=	13.7.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-p2p databases
 MAKE_ENV+=	PKG_CONFIG_PATH=${LOCALBASE}/lmdb0/libdata/pkgconfig
 MASTER_SITES=	https://chap.intersectmbo.org/package/:chap

@@ -1,6 +1,7 @@
 PORTNAME=	pg_partman
 DISTVERSIONPREFIX=	v
 DISTVERSION=	5.2.2
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	lacey.leanne@gmail.com
