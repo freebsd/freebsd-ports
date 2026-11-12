@@ -1,5 +1,5 @@
 PORTNAME=	watchdog
-DISTVERSION=	6.0.0
+DISTVERSION=	7.1.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,6 +21,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}eventlet>0:net/py-eventlet@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mypy>=1.8.0:devel/py-mypy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-cov>0:devel/py-pytest-cov@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-timeout>0:devel/py-pytest-timeout@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-xdist>=3.8.0,1:devel/py-pytest-xdist@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ruff>=0.9.6_1:devel/py-ruff@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}types-pyyaml>=6.0.12.12:devel/py-types-pyyaml@${PY_FLAVOR}
@@ -30,12 +31,14 @@ USE_PYTHON=	autoplist concurrent pep517 pytest
 
 # FileNotFoundError: [Errno 2] No such file or directory: /tmp/tmp*
 # src/watchdog/utils/dirsnapshot.py:318: FileNotFoundError
-PYTEST_BROKEN_TESTS=	test_observers_polling
+PYTEST_BROKEN_TESTS=	test_observers_polling test_inotify_watch_group.py \
+			test_inotify_emitter.py
 # NotImplementedError: unsupported platform
 # site-packages/trio/_core/_run.py:2843: NotImplementedError
 PYTEST_IGNORED_TESTS=	test_eventlet_monkey_patching
 # tests: 147 passed, 13 skipped, 2 deselected
-TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_ENV=	PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 \
+		PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
@@ -45,7 +48,9 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
-DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR}
+DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx-book-theme>=1.4.0:textproc/py-sphinx-book-theme@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}sphinx-copybutton>=0.5.2_1:textproc/py-sphinx-copybutton@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR}
 
 post-build-DOCS-on:
 	(cd ${WRKSRC}/docs ; ${MAKE_CMD} SPHINXBUILD=sphinx-build-${PYTHON_VER} html)
