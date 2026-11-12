@@ -1,3 +1,3 @@
-TIMESTAMP = 1793588686
-SHA256 (rubygem/aws-sdk-s3tables-1.40.0.gem) = c65d792d91a2e5006649731fb877d317754d3a27b32616300921cac9a8218170
-SIZE (rubygem/aws-sdk-s3tables-1.40.0.gem) = 54272
+TIMESTAMP = 1794365212
+SHA256 (rubygem/aws-sdk-s3tables-1.42.0.gem) = 784835f5bfef11c7b310b4602a39175cc6ded2e5e842802ab7deec634acfdb92
+SIZE (rubygem/aws-sdk-s3tables-1.42.0.gem) = 72704
