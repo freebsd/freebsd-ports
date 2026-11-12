@@ -1,5 +1,5 @@
 PORTNAME=	meka
-DISTVERSION=	0.93.0
+DISTVERSION=	0.94.0
 CATEGORIES=	shells # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -69,6 +69,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		bitflags-2.13.2 \
 		block-buffer-0.10.4 \
 		block-buffer-0.12.1 \
+		block2-0.6.2 \
 		brotli-9.1.1 \
 		brotli-decompressor-6.3.1 \
 		bs58-0.5.1 \
@@ -301,11 +302,19 @@ CARGO_CRATES=	adler2-2.0.1 \
 		oauth2-5.0.0 \
 		objc2-0.6.5 \
 		objc2-app-kit-0.3.2 \
+		objc2-cloud-kit-0.3.2 \
+		objc2-core-data-0.3.2 \
 		objc2-core-foundation-0.3.2 \
 		objc2-core-graphics-0.3.2 \
+		objc2-core-image-0.3.2 \
+		objc2-core-location-0.3.2 \
+		objc2-core-text-0.3.2 \
 		objc2-encode-4.1.0 \
 		objc2-foundation-0.3.2 \
 		objc2-io-surface-0.3.2 \
+		objc2-quartz-core-0.3.2 \
+		objc2-ui-kit-0.3.2 \
+		objc2-user-notifications-0.3.2 \
 		object-0.39.1 \
 		once_cell-1.21.4 \
 		once_cell_polyfill-1.70.2 \
@@ -313,6 +322,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		openssl-probe-0.2.2 \
 		option-ext-0.2.0 \
 		ordered-float-4.6.0 \
+		os_info-3.15.0 \
 		os_pipe-1.2.3 \
 		palette-0.7.7 \
 		palette_derive-0.7.7 \
