@@ -1,5 +1,5 @@
 PORTNAME=	pdm
-PORTVERSION=	2.29.5
+PORTVERSION=	2.29.7
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}argcomplete>=3.6.3:devel/py-argcomplete@${PY
 		${PYTHON_PKGNAMEPREFIX}dep-logic>=0.5:devel/py-dep-logic@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}filelock>=3.13:sysutils/py-filelock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}findpython>=0.7.0<1.0.0:devel/py-findpython@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}hishel>=1.4.0:devel/py-hishel@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}hishel>=2.0.0:devel/py-hishel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httpx2>=2.9.1<3:www/py-httpx2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}id>=1.5.0:devel/py-id@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}installer>=1:devel/py-installer@${PY_FLAVOR} \
