@@ -9,7 +9,7 @@ DISTFILES=	go.mod:gomod \
 		${PORTNAME}-web-${DISTVERSIONFULL}.zip:webui
 EXTRACT_ONLY=	${DISTFILE_DEFAULT}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	daniel.engberg.lists@pyret.net
 COMMENT=	Dynamic DNS client (DDNS) with optional external reporting features
 WWW=		https://github.com/TimothyYe/godns
 

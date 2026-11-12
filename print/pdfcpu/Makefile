@@ -4,7 +4,7 @@ DISTVERSION=	0.16.4
 PORTREVISION=	1
 CATEGORIES=	print
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	daniel.engberg.lists@pyret.net
 COMMENT=	PDF processor written in Go
 WWW=		https://github.com/pdfcpu/pdfcpu
 
