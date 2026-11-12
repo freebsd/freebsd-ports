@@ -1,5 +1,5 @@
 PORTNAME=	cymysql
-PORTVERSION=	1.1.2
+PORTVERSION=	1.2.0
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,9 +22,14 @@ OPTIONS_DEFINE=	VECTOR ZSTD
 VECTOR_DESC=	VECTOR type support
 
 VECTOR_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR}
-ZSTD_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyzstd>=0:archivers/py-pyzstd@${PY_FLAVOR}
+
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 31400 && ${PORT_OPTIONS:MZSTD}
+_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyzstd>=0:archivers/py-pyzstd@${PY_FLAVOR}
+.endif
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
