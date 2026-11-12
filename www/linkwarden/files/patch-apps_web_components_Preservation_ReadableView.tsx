@@ -1,9 +1,9 @@
---- apps/web/components/Preservation/ReadableView.tsx.orig	2026-09-23 09:02:23 UTC
+--- apps/web/components/Preservation/ReadableView.tsx.orig	2026-11-10 18:23:37 UTC
 +++ apps/web/components/Preservation/ReadableView.tsx
-@@ -25,13 +25,18 @@
- } from "@linkwarden/router/highlights";
- import { Highlight } from "@linkwarden/prisma/client";
+@@ -27,13 +27,18 @@ import DangerousLinkWarningModal from "@/components/Mo
  import { useUser } from "@linkwarden/router/user";
+ import { handleLinkAnchorClick } from "@/lib/client/openLink";
+ import DangerousLinkWarningModal from "@/components/ModalContent/DangerousLinkWarningModal";
 -import { Caveat } from "next/font/google";
 -import { Bentham } from "next/font/google";
 +import localFont from "next/font/local";

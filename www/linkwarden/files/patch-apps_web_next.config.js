@@ -1,6 +1,6 @@
---- apps/web/next.config.js.orig	2026-09-22 11:09:01 UTC
+--- apps/web/next.config.js.orig	2026-11-10 18:23:37 UTC
 +++ apps/web/next.config.js
-@@ -4,6 +4,7 @@ const nextConfig = {
+@@ -5,6 +5,7 @@ const nextConfig = {
  
  const nextConfig = {
    i18n,

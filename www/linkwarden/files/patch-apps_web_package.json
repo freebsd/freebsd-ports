@@ -13,7 +13,7 @@
      "@linkwarden/prisma": "*",
      "@linkwarden/router": "*",
      "@linkwarden/types": "*",
-+    "@next/swc-wasm-nodejs": "15.5.21",
++    "@next/swc-wasm-nodejs": "15.5.29",
      "@phosphor-icons/core": "^2.1.1",
      "@phosphor-icons/react": "^2.1.7",
      "@radix-ui/react-checkbox": "^1.3.3",
