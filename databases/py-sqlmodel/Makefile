@@ -1,5 +1,5 @@
 PORTNAME=	sqlmodel
-DISTVERSION=	0.0.48
+DISTVERSION=	0.0.49
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,9 +23,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiosqlite>=0.17.0:databases/py-aiosqlite@${
 		${PYTHON_PKGNAMEPREFIX}fastapi>=0.128.0:www/py-fastapi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httpx>=0.28.1:www/py-httpx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.1.6:devel/py-Jinja2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}psycopg>=3.2.10:databases/py-psycopg@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pymysql>=1.1.1:databases/py-pymysql@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ruff>=0.15.6:devel/py-ruff@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ruff>=0.16.0:devel/py-ruff@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ty>=0.0.25:devel/py-ty@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typer>=0.26.1:devel/py-typer@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.15.0:devel/py-typing-extensions@${PY_FLAVOR}
