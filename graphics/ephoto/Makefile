@@ -1,11 +1,11 @@
 PORTNAME=	ephoto
 DISTVERSION=	1.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics enlightenment
 MASTER_SITES=	https://download.enlightenment.org/rel/apps/${PORTNAME}/
 DIST_SUBDIR=	enlightenment
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	enlightenment@FreeBSD.org
 COMMENT=	Comprehensive Image Viewer Using EFL
 WWW=		https://www.enlightenment.org/about-ephoto
 
