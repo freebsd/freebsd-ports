@@ -1,9 +1,11 @@
 PORTNAME=	pyrefly
-DISTVERSION=	1.4.0
+DISTVERSION=	1.4.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
+		meta-pyrefly-1.4.1_GH0${EXTRACT_SUFX}:GH
+EXTRACT_ONLY=	${DISTFILES:N*\:GH:C/:[^:]+$//}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Fast type checker and language server for Python
@@ -19,7 +21,14 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}maturin>=1.10.2<2.0:devel/py-maturin@${PY_
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 USES=		cargo python
+USE_GITHUB=	nodefault
 USE_PYTHON=	autoplist concurrent pep517
+
+GH_ACCOUNT=	meta
+GH_PROJECT=	pyrefly
+GH_TAGNAME=	1.4.1
+
+MASTER_SITES+=	https://codeload.github.com/${GH_ACCOUNT}/${GH_PROJECT}/tar.gz/${GH_TAGNAME}?dummy=/:GH
 
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
@@ -473,12 +482,34 @@ CARGO_CRATES=	addr2line-0.25.1 \
 
 CARGO_TEST=	no
 
+GH_FIXTURES_DISTFILE=	${GH_ACCOUNT}-${GH_PROJECT}-${GH_TAGNAME}_GH0${EXTRACT_SUFX}
+GH_FIXTURES_DIR=	${WRKDIR}/gh-fixtures
+
+# The PyPI sdist is missing the .cargo/config.toml that sets test fixture env
+# vars, and a few fixture directories that are only present in the upstream
+# GitHub tarball.  Extract that tarball and copy the missing pieces in.
+post-extract:
+	@${MKDIR} ${GH_FIXTURES_DIR}
+	@${TAR} -xf ${DISTDIR}/${GH_FIXTURES_DISTFILE} -C ${GH_FIXTURES_DIR} --strip-components=1
+	@${MKDIR} ${WRKSRC}/.cargo ${WRKSRC}/tensor-shapes ${WRKSRC}/website/docs ${WRKSRC}/scripts
+	@${CP} ${GH_FIXTURES_DIR}/.cargo/config.toml ${WRKSRC}/.cargo/
+	@${CP} -R ${GH_FIXTURES_DIR}/tensor-shapes/pyrefly-shape-extensions ${WRKSRC}/tensor-shapes/
+	@${CP} ${GH_FIXTURES_DIR}/website/docs/configuration.mdx ${WRKSRC}/website/docs/
+	@${CP} ${GH_FIXTURES_DIR}/website/docs/error-kinds.mdx ${WRKSRC}/website/docs/
+	@${CP} ${GH_FIXTURES_DIR}/scripts/error_presets.json ${WRKSRC}/scripts/
+
 MAKE_ENV=	${CARGO_ENV} CARGO_PROFILE_RELEASE_LTO=false CARGO_PROFILE_RELEASE_CODEGEN_UNITS=4
 
-do-test: # unclear how to run tests, see https://github.com/facebook/pyrefly/issues/5203
-	@${WRKSRC}/target/release/pyrefly --version
+TEST_TMPDIR=	${WRKDIR:H}/tmp-test
+TEST_ENV=	${MAKE_ENV} TMPDIR=${TEST_TMPDIR}
 
-# tests as of 1.1.1: upstream cargo test requires Buck-specific env vars and test
-# fixtures missing from the PyPI sdist; smoke test only.
+do-test:
+	@${MKDIR} ${TEST_TMPDIR}
+	cd ${WRKSRC} && ${SETENV} ${TEST_ENV} cargo test --workspace --jobs 1
+
+post-test:
+	@${RM} -r ${TEST_TMPDIR}
+
+# tests as of 1.4.1: 9196 passed; 0 failed; 3 ignored (cargo test --workspace --jobs 1)
 
 .include <bsd.port.mk>

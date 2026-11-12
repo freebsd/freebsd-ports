@@ -1,6 +1,8 @@
-TIMESTAMP = 1792779668
-SHA256 (pyrefly-1.4.0.tar.gz) = bb57c004a4842cfe93f93aebb5203ca6209a5f0c8bda47e8bc289e70940fd910
-SIZE (pyrefly-1.4.0.tar.gz) = 6962062
+TIMESTAMP = 1794436965
+SHA256 (pyrefly-1.4.1.tar.gz) = 1ef91afbaca15336482dd21292974f64a735268ce4990d59e87162d5a097106d
+SIZE (pyrefly-1.4.1.tar.gz) = 6970842
+SHA256 (meta-pyrefly-1.4.1_GH0.tar.gz) = 9ee9147892727ff0a28d5cfc18f13440f8d267fa018213bf5b97beff242db3e6
+SIZE (meta-pyrefly-1.4.1_GH0.tar.gz) = 31856585
 SHA256 (rust/crates/addr2line-0.25.1.crate) = 1b5d307320b3181d6d7954e663bd7c774a838b8220fe0593c86d9fb09f498b4b
 SIZE (rust/crates/addr2line-0.25.1.crate) = 43134
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
