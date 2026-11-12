@@ -1,15 +1,28 @@
+First hunk: backport of upstream Chromium 8fd8e6027af0 ("Add PPC64/S390x to
+the 64-bit pointers list"), which the pinned partition_alloc revision predates.
+
 --- third_party/partition_alloc/partition_alloc.gni.orig	1970-01-01 00:00:00 UTC
 +++ third_party/partition_alloc/partition_alloc.gni
-@@ -99,7 +99,7 @@ use_large_empty_slot_span_ring = true
+@@ -78,7 +78,8 @@ is_clang_or_gcc = is_clang || !is_win
+ # Whether 64-bit pointers are used.
+ # A static_assert in partition_alloc_config.h verifies that.
+ if (current_cpu == "x64" || current_cpu == "arm64" || current_cpu == "arm64e" ||
+-    current_cpu == "loong64" || current_cpu == "riscv64") {
++    current_cpu == "loong64" || current_cpu == "riscv64" ||
++    current_cpu == "ppc64" || current_cpu == "s390x") {
+   assert(current_cpu != "arm64e" || (is_ios && target_environment == "device"))
+   has_64_bit_pointers = true
+ } else if (current_cpu == "x86" || current_cpu == "arm" ||
+@@ -99,7 +100,7 @@ use_large_empty_slot_span_ring = true
  # TODO(crbug.com/329199197): Clean this up when experiments are complete.
  use_large_empty_slot_span_ring = true
- 
+
 -has_memory_tagging = current_cpu == "arm64" && is_clang && !is_asan &&
 +has_memory_tagging = current_cpu == "arm64" && !is_bsd && is_clang && !is_asan &&
                       !is_hwasan && (is_linux || is_android)
- 
+
  declare_args() {
-@@ -526,7 +526,7 @@ is_pkeys_available =
+@@ -526,7 +527,7 @@ is_pkeys_available =
  # dependencies that use partition_allocator are compiled in AOSP against a
  # version of glibc that does not include pkeys syscall numbers.
  is_pkeys_available =
