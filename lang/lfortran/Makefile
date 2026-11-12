@@ -1,6 +1,6 @@
 PORTNAME=	lfortran
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.68.0
+DISTVERSION=	0.69.0
 CATEGORIES=	lang
 
 MAINTAINER=	fortran@FreeBSD.org
@@ -21,6 +21,7 @@ LIB_DEPENDS=	libfmt.so:devel/libfmt	\
 		libunwind.so:devel/libunwind	\
 		libkokkoscore.so:devel/kokkos
 RUN_DEPENDS=	dwarfdump:devel/dwarfdump
+TEST_DEPENDS=	jupyter-console:devel/py-jupyter_console
 
 USE_GITHUB=	yes
 
