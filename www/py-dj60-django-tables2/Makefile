@@ -1,5 +1,5 @@
 PORTNAME=	django-tables2
-DISTVERSION=	2.8.0
+DISTVERSION=	3.0.1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj60-
@@ -13,7 +13,7 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django60>=4.2:www/py-django60@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django60>=5.2:www/py-django60@${PY_FLAVOR}
 
 USES=		python:3.12+
 USE_PYTHON=	autoplist pep517
@@ -21,11 +21,6 @@ USE_PYTHON=	autoplist pep517
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}*${PORTNAME}
 
 NO_ARCH=		yes
-
-# The 2.9.0 release was yanked and the 3.x release contains breaking changes.
-# Its only consumer, net-mgmt/netbox, won't be compatible with newer versions
-# until the upcoming 4.7.x release.
-PORTSCOUT=	limit:2\.8\.
 
 OPTIONS_DEFINE=		TABLIB
 
