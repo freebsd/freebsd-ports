@@ -1,5 +1,5 @@
 PORTNAME=	ipython
-PORTVERSION=	9.18.0
+PORTVERSION=	9.18.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,7 +26,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipython-pygments-lexers>=1.0.0:devel/py-ipyt
 		${PYTHON_PKGNAMEPREFIX}stack-data>=0.6.0:devel/py-stack-data@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}traitlets>=5.13.0:devel/py-traitlets@${PY_FLAVOR}
 
-USES=		cpe python:3.11+
+USES=		cpe python
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
