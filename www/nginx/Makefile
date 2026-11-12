@@ -1,7 +1,7 @@
 PORTNAME=	nginx
 PORTVERSION=	${NGINX_VERSION}
 .include "version.mk"
-PORTREVISION=	17
+PORTREVISION=	18
 PORTEPOCH=	3
 CATEGORIES=	www
 MASTER_SITES=	https://nginx.org/download/ \
