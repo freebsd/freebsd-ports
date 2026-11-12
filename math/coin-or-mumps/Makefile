@@ -1,7 +1,6 @@
 PORTNAME=	mumps
 DISTVERSIONPREFIX=	releases/
-DISTVERSION=	3.0.3
-PORTREVISION=	4
+DISTVERSION=	3.0.11
 CATEGORIES=	math
 MASTER_SITES=	http://coin-or-tools.github.io/ThirdParty-Mumps/:mumps
 PKGNAMEPREFIX=	coin-or-
@@ -30,7 +29,7 @@ MAKE_JOBS_UNSAFE=	yes # otherwise build doesn't find some *.mod files
 
 INSTALL_TARGET=	install-strip
 
-MUMPS_VERSION=	5.5.0 # from the script get.Mumps
+MUMPS_VERSION=	5.8.1 # from the script get.Mumps
 
 .include <bsd.port.pre.mk>
 
