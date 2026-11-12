@@ -1,5 +1,5 @@
 PORTNAME=	chef-utils
-PORTVERSION=	19.3.15
+PORTVERSION=	19.4.46
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/chef/chef/tree/main/chef-utils
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-concurrent-ruby>=0:devel/rubygem-concurrent-ruby
+RUN_DEPENDS=	rubygem-concurrent-ruby>=1.3.7:devel/rubygem-concurrent-ruby
 
 USES=		gem
 
