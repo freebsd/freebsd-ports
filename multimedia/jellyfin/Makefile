@@ -1,6 +1,5 @@
 PORTNAME=	jellyfin
-DISTVERSION=	10.11.11
-PORTREVISION=	1
+DISTVERSION=	12.4
 CATEGORIES=	multimedia
 EXTRACT_ONLY+=	${PORTNAME}-${PORTNAME}-${GH_TAGNAME}_GH0.tar.gz \
 		${PORTNAME}-${PORTNAME}-web-${GH_TAGNAME}_GH0.tar.gz
@@ -19,11 +18,11 @@ LIB_DEPENDS=	libSkiaSharp.so:graphics/libskiasharp \
 		libharfbuzz.so:print/harfbuzz
 RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss \
 		dejavu>0:x11-fonts/dejavu \
-		ffmpeg>0:multimedia/ffmpeg \
+		jellyfin-ffmpeg8:multimedia/jellyfin-ffmpeg \
 		icu>0:devel/icu \
 		krb5>0:security/krb5 \
 		libinotify>0:devel/libinotify \
-		libunwind>0:devel/libunwind \
+		libunwind-devel>0:devel/libunwind-devel \
 		mediainfo>0:multimedia/mediainfo
 TEST_DEPENDS=	npm:www/npm${NODEJS_SUFFIX} \
 		dotnet:lang/dotnet
@@ -83,7 +82,7 @@ ${DISTDIR}/$f:
 	${CP} -R ${FILESDIR}/packagejsons/* ${WRKDIR}/ui/node-modules-cache; \
 	cd ${WRKDIR}/ui/node-modules-cache && \
 	${SETENV} HOME=${WRKDIR} \
-		npm ci --ignore-scripts --no-progress --no-audit --no-fund --cpu=$c; \
+		npm ci --allow-remote=root --ignore-scripts --no-progress --no-audit --no-fund --cpu=$c; \
 	${FIND} ${WRKDIR}/ui/node-modules-cache -depth 1 -print | \
 		${GREP} -v node_modules | ${XARGS} ${RM} -r; \
 	${FIND} ${WRKDIR}/ui/node-modules-cache -type d -exec ${CHMOD} 755 {} ';'; \

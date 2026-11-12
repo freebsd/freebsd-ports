@@ -28,6 +28,25 @@ but is not perfect.
 EOM
 }
 { type: upgrade
+  maximum_version: "12.0"
+  message: <<EOM
+
+Upgrading from 10.11 to 12.x:
+
+This version migrates the database schema and the migration cannot be
+rolled back. Back up the data directory (/var/db/jellyfin by default)
+before starting the new version.
+
+Non built-in plugins should be removed before upgrading, most of them do
+not support the new database schema yet. They can be re-added afterwards.
+
+A full library scan is required after the upgrade: alternative versions of
+media which were resolved automatically are dropped during the migration
+and are restored by that scan.
+
+EOM
+}
+{ type: upgrade
   message: <<EOM
 
 Those upgrading, as a reminder:

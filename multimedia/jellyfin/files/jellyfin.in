@@ -10,7 +10,7 @@
 #  -w, --webdir              Path to the Jellyfin web UI resources. Defaults to ./jellyfin-web
 #  -c, --configdir           Path to use for configuration data (user settings and pictures).
 #  -l, --logdir              Path to use for writing log files. Defaults to $datadir/log
-#  --ffmpeg                  Path to external FFmpeg executable to use. Defaults to  PATH.
+#  --ffmpeg                  Path to external FFmpeg executable to use. Defaults to jellyfin_ffmpeg.
 #  --published-server-url    Jellyfin Server URL to publish via auto discover process
 #
 #
@@ -19,6 +19,10 @@
 #  jellyfin_data_dir     Path to use for the data folder (database files, etc.) Defaults to /var/db/jellyfin
 #  jellyfin_cache_dir    Path to use for caching. Defaults to /var/cache/jellyfin
 #  jellyfin_pid_dir      Path to use for the pid file. Defaults to /var/run/jellyfin
+#  jellyfin_ffmpeg       Path to the ffmpeg executable to use, jellyfin derives the
+#                        matching ffprobe from the same directory. Defaults to
+#                        %%LOCALBASE%%/lib/jellyfin-ffmpeg8/bin/ffmpeg, set it to an
+#                        empty string to let jellyfin look for ffmpeg in the PATH
 
 . /etc/rc.subr
 name=jellyfin
@@ -33,6 +37,7 @@ load_rc_config $name
 : ${jellyfin_data_dir:="/var/db/jellyfin"}
 : ${jellyfin_cache_dir:="/var/cache/jellyfin"}
 : ${jellyfin_pid_dir:="/var/run/jellyfin"}
+: ${jellyfin_ffmpeg:="%%LOCALBASE%%/lib/jellyfin-ffmpeg8/bin/ffmpeg"}
 
 pidfile="${jellyfin_pid_dir}/${name}_daemon.pid"
 pidfile_child="${jellyfin_pid_dir}/${name}_child.pid"
@@ -76,7 +81,7 @@ jellyfin_precmd() {
         export CLR_OPENSSL_VERSION_OVERRIDE=30
     fi
 
-    rc_flags="-r -f -p ${pidfile_child} -P ${pidfile} ${jellyfin_exec_dir}/jellyfin --datadir ${jellyfin_data_dir} --cachedir ${jellyfin_cache_dir} ${jellyfin_extraargs} >> /dev/null 2>&1 ${rc_flags}"
+    rc_flags="-r -f -p ${pidfile_child} -P ${pidfile} ${jellyfin_exec_dir}/jellyfin --datadir ${jellyfin_data_dir} --cachedir ${jellyfin_cache_dir} ${jellyfin_ffmpeg:+--ffmpeg ${jellyfin_ffmpeg}} ${jellyfin_extraargs} >> /dev/null 2>&1 ${rc_flags}"
 }
 
 run_rc_command "$1"
