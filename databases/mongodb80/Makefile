@@ -1,18 +1,59 @@
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
 DISTVERSION=	8.0.34
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases net
-MASTER_SITES+=	LOCAL/ronald:mongodb_bazel \
-		https://codeload.github.com/bazelbuild/bazel-central-registry/tar.gz/${BAZEL_REGISTRY_COMMIT}?dummy=/:bazel_registry \
+MASTER_SITES+=	https://codeload.github.com/bazelbuild/bazel-central-registry/tar.gz/${BAZEL_REGISTRY_COMMIT}?dummy=/:bazel_registry \
 		https://codeload.github.com/mongodb-forks/rules_poetry/tar.gz/${RULES_POETRY_COMMIT}?dummy=/:rules_poetry
 PKGNAMESUFFIX=	${DISTVERSION:R:S/.//}
-BAZEL_CACHE_DISTFILE=	${PORTNAME}-${DISTVERSIONFULL}-bazel-repository-cache.tar.gz
 BAZEL_REGISTRY_DISTFILE=	bazelbuild-bazel-central-registry-${BAZEL_REGISTRY_COMMIT}_GH0.tar.gz
 RULES_POETRY_DISTFILE=	mongodb-forks-rules_poetry-${RULES_POETRY_COMMIT}_GH0.tar.gz
-DISTFILES+=	${BAZEL_CACHE_DISTFILE}:mongodb_bazel \
-		${BAZEL_REGISTRY_DISTFILE}:bazel_registry \
+DISTFILES+=	${BAZEL_REGISTRY_DISTFILE}:bazel_registry \
 		${RULES_POETRY_DISTFILE}:rules_poetry
+
+# Archives downloaded by Bazel as "group site distfile". They are added to the
+# Bazel repository cache in pre-configure instead of being extracted. Most are
+# Bazel modules: the bazel-central-registry has their URLs in
+# modules/<name>/<version>/source.json. To regenerate the lists after an
+# update, run "make -f Makefile.bazel-cache".
+BAZEL_DISTFILES=	\
+	apple_support https://github.com/bazelbuild/apple_support/releases/download/1.23.1/ apple_support.1.23.1.tar.gz \
+	aspect_bazel_lib https://github.com/bazel-contrib/bazel-lib/releases/download/v2.13.0/ bazel-lib-v2.13.0.tar.gz \
+	aspect_rules_js https://github.com/aspect-build/rules_js/releases/download/v2.1.3/ rules_js-v2.1.3.tar.gz \
+	bats_core https://github.com/bats-core/bats-core/archive/v1.10.0.tar.gz?dummy=/ bats-core-1.10.0.tar.gz \
+	bazel_clang_tidy https://github.com/mongodb-forks/bazel_clang_tidy/archive/33c9013349b6178897598e67929201356b0ad5ea.tar.gz?dummy=/ bazel_clang_tidy-33c9013349b6178897598e67929201356b0ad5ea.tar.gz \
+	bazel_features https://github.com/bazel-contrib/bazel_features/releases/download/v1.37.0/ bazel_features-v1.37.0.tar.gz \
+	bazel_skylib https://github.com/bazelbuild/bazel-skylib/releases/download/1.7.1/ bazel-skylib-1.7.1.tar.gz \
+	buildifier_prebuilt https://github.com/keith/buildifier-prebuilt/archive/refs/tags/6.4.0.tar.gz?dummy=/ buildifier-prebuilt-6.4.0.tar.gz \
+	platforms https://github.com/bazelbuild/platforms/releases/download/0.0.9/ platforms-0.0.9.tar.gz \
+	protobuf https://github.com/protocolbuffers/protobuf/releases/download/v29.0-rc3/ protobuf-29.0-rc3.zip \
+	rules_cc https://github.com/bazelbuild/rules_cc/releases/download/0.0.16/ rules_cc-0.0.16.tar.gz \
+	rules_cc_0_0_9 https://github.com/bazelbuild/rules_cc/releases/download/0.0.9/ rules_cc-0.0.9.tar.gz \
+	rules_java https://github.com/bazelbuild/rules_java/releases/download/8.5.1/ rules_java-8.5.1.tar.gz \
+	rules_kotlin https://github.com/bazelbuild/rules_kotlin/releases/download/v1.9.6/ rules_kotlin-v1.9.6.tar.gz \
+	rules_license https://github.com/bazelbuild/rules_license/releases/download/1.0.0/ rules_license-1.0.0.tar.gz \
+	rules_multitool https://github.com/theoremlp/rules_multitool/releases/download/v0.4.0/ rules_multitool-0.4.0.tar.gz \
+	rules_nodejs https://github.com/bazel-contrib/rules_nodejs/releases/download/v6.3.0/ rules_nodejs-v6.3.0.tar.gz \
+	rules_pkg https://github.com/bazelbuild/rules_pkg/releases/download/1.2.0/ rules_pkg-1.2.0.tar.gz \
+	rules_proto https://github.com/bazelbuild/rules_proto/archive/refs/tags/5.3.0-21.7.tar.gz?dummy=/ rules_proto-5.3.0-21.7.tar.gz \
+	rules_python https://github.com/bazelbuild/rules_python/releases/download/1.0.0/ rules_python-1.0.0.tar.gz \
+	rules_shell https://github.com/bazelbuild/rules_shell/releases/download/v0.2.0/ rules_shell-v0.2.0.tar.gz
+# npm packages downloaded by rules_js, see ${WRKSRC}/pnpm-lock.yaml.
+BAZEL_NPM_DISTFILES=	\
+	npm_eslint https://registry.npmjs.org/eslint/-/ eslint-9.19.0.tgz \
+	npm_prettier https://registry.npmjs.org/prettier/-/ prettier-3.4.2.tgz
+
+.for group site distfile in ${BAZEL_DISTFILES} ${BAZEL_NPM_DISTFILES}
+MASTER_SITES+=	${site}:${group}
+DISTFILES+=	${distfile}:${group}
+_BAZEL_NOEXTRACT+=	N${distfile}
+.endfor
+.for group site distfile in ${BAZEL_DISTFILES}
+_BAZEL_CACHE_ARGS+=	${_DISTDIR}/${distfile}
+.endfor
+.for group site distfile in ${BAZEL_NPM_DISTFILES}
+_BAZEL_CACHE_ARGS+=	--npm ${_DISTDIR}/${distfile} ${site}${distfile}
+.endfor
 
 MAINTAINER=	ronald@FreeBSD.org
 COMMENT=	MongoDB Community Edition (8.0.x Branch)
@@ -103,6 +144,7 @@ BAZEL_ARGS=		--repository_cache=${BAZEL_REPOSITORY_CACHE} \
 			--action_env=AR=llvm-ar \
 			--action_env=CC=${CC} \
 			--action_env=CXX=${CXX} \
+			--repo_env=BAZEL_HTTP_RULES_URLS_AS_DEFAULT_CANONICAL_ID=0 \
 			--repo_env=CC=${CC} \
 			--repo_env=CXX=${CXX} \
 			--repo_env=LOCALBASE=${LOCALBASE} \
@@ -132,12 +174,18 @@ BAZEL_ARGS=		--repository_cache=${BAZEL_REPOSITORY_CACHE} \
 			--linkopt=-lexecinfo \
 			--linkopt=-lkvm \
 			--noexperimental_collect_system_network_usage
+# rules_java registers the @local_jdk toolchains, which Bazel loads even though
+# the build does not use Java. Without JAVA_HOME, @local_jdk takes the java home
+# from "which javac", which for the javavm wrapper is ${LOCALBASE}, and globs all
+# of it. A JAVA_HOME without bin/java gives stub toolchains instead.
+BAZEL_ARGS+=		--repo_env=JAVA_HOME=/nonexistent
 ALL_TARGET=		install-dist
 
 CONFLICTS_INSTALL=	mongodb[0-9][0-9]
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 EXTRACT_AFTER_ARGS=	--no-same-owner --no-same-permissions
+EXTRACT_ONLY=	${_DISTFILES:${_BAZEL_NOEXTRACT:ts:}}
 
 # This ports is only following the Major Release.
 # https://docs.mongodb.com/manual/reference/versioning/
@@ -192,12 +240,19 @@ post-extract:
 	${SH} -xc "test \"X`grep -E '^LIB_GIT_REVISION=' ${MOZJS_WRKSRC}/scripts/import.sh`\" = \"XLIB_GIT_REVISION=${MOZJS_TAG}\""
 	${PATCH} -d ${WRKDIR}/spidermonkey-${MOZJS_TAG} -p1 < ${PATCHDIR}/d497aa4f770ca02f6083e93b94996a8fe32c2ff4.patch
 
+post-patch:
+	${PATCH} -d ${RULES_POETRY_WRKSRC} -p0 < ${WRKSRC}/bazel/rules_poetry/rules_poetry.patch
+
 pre-configure:
 # Replacement of ${WRKSRC}/src/third_party/mozjs/scripts/import.sh
 	${LN} -sF ${WRKDIR}/spidermonkey-${MOZJS_TAG} ${MOZJS_WRKSRC}/mozilla-release
-
-post-patch:
-	${PATCH} -d ${RULES_POETRY_WRKSRC} -p0 < ${WRKSRC}/bazel/rules_poetry/rules_poetry.patch
+# Bazel finds the files it downloads in its repository cache by sha256, which
+# is also the checksum of a module in its source.json.
+# BAZEL_HTTP_RULES_URLS_AS_DEFAULT_CANONICAL_ID=0 makes Bazel find them without
+# the id- files of the download URLs. With downloads disabled, Bazel also reads
+# the files of the file:// registry from the cache.
+	${PYTHON_CMD} ${FILESDIR}/bazel-cache-add.py ${BAZEL_REPOSITORY_CACHE} \
+		${BAZEL_REGISTRY_WRKSRC} ${_BAZEL_CACHE_ARGS}
 
 do-build:
 	${MKDIR} ${BAZEL_REPOSITORY_CACHE}
