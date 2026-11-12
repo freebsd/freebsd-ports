@@ -3,7 +3,7 @@ bin/edi_build
 bin/edi_scm
 lib/libedi.so
 lib/libedi.so.0
-lib/libedi.so.0.8.0
+lib/libedi.so.%%PORTVERSION%%
 share/applications/edi.desktop
 %%DATADIR%%/examples/examples.edj
 %%DATADIR%%/icons/application-exit.png
@@ -48,11 +48,15 @@ share/applications/edi.desktop
 %%DATADIR%%/icons/window-new.png
 %%DATADIR%%/images/about.png
 %%DATADIR%%/images/welcome.png
+%%DATADIR%%/prompts/agent_prompt_suffix.txt
 %%DATADIR%%/templates/eflproject.tar.gz
 %%DATADIR%%/templates/eflproject_python.tar.gz
 %%DATADIR%%/templates/templates.edj
 %%DATADIR%%/themes/solarized.edj
 %%DATADIR%%/themes/solarized_dark.edj
 %%DATADIR%%/themes/white.edj
+share/locale/fr/LC_MESSAGES/edi.mo
+share/locale/it/LC_MESSAGES/edi.mo
+share/locale/ka/LC_MESSAGES/edi.mo
 share/icons/hicolor/256x256/apps/edi.png
 share/man/man1/edi.1.gz
