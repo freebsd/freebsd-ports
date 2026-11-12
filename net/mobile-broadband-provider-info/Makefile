@@ -1,5 +1,5 @@
 PORTNAME=	mobile-broadband-provider-info
-PORTVERSION=	20251101
+PORTVERSION=	20261111
 CATEGORIES=	net gnome
 
 MAINTAINER=	garga@FreeBSD.org
