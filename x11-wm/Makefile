@@ -42,6 +42,7 @@
     SUBDIR += epplets
     SUBDIR += euclid-wm
     SUBDIR += evilwm
+    SUBDIR += fastcompmgr
     SUBDIR += fbcmd
     SUBDIR += fluxbox
     SUBDIR += fluxter

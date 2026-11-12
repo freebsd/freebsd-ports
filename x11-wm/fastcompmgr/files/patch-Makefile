@@ -1,0 +1,22 @@
+--- Makefile.orig	2026-11-12 19:59:42 UTC
++++ Makefile
+@@ -4,7 +4,7 @@ PREFIX = /usr/local
+ CFLAGS ?= -O2 -flto -pipe
+ CFLAGS += -Wall -fno-plt
+ PREFIX = /usr/local
+-MANDIR = ${PREFIX}/share/man/man1
++MANDIR = ${DESTDIR}${PREFIX}/share/man/man1
+ 
+ OBJS=fastcompmgr.o comp_rect.o cm-root.o cm-global.o cm-util.o cm-window.o cm-event.o
+ 
+@@ -15,8 +15,8 @@ install: fastcompmgr
+ 	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(OBJS) $(LIBS)
+ 
+ install: fastcompmgr
+-	@mkdir -p "${PREFIX}/bin"
+-	@cp fastcompmgr "${PREFIX}/bin"
++	@mkdir -p "${DESTDIR}${PREFIX}/bin"
++	@cp fastcompmgr "${DESTDIR}${PREFIX}/bin"
+ 	@mkdir -p "${MANDIR}"
+ 	@cp fastcompmgr.1 "${MANDIR}"
+ 
