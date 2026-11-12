@@ -1,6 +1,6 @@
 PORTNAME=	primecount
 DISTVERSIONPREFIX=	v
-DISTVERSION=	8.8
+DISTVERSION=	9.0
 CATEGORIES=	math
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -9,7 +9,6 @@ WWW=		https://github.com/kimwalisch/primecount
 
 LICENSE=	BSD2CLAUSE
 
-BUILD_DEPENDS=	libdivide>0:math/libdivide
 LIB_DEPENDS=	libprimesieve.so:math/primesieve
 
 USE_GITHUB=	yes
