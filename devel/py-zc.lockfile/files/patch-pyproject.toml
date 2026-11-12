@@ -1,11 +1,20 @@
---- pyproject.toml.orig	2025-09-18 07:32:30 UTC
+--- pyproject.toml.orig	2026-11-05 07:36:05 UTC
 +++ pyproject.toml
-@@ -3,7 +3,7 @@ requires = [
- 
+@@ -2,7 +2,7 @@ requires = [
+ # https://github.com/zopefoundation/meta/tree/master/src/zope/meta/pure-python
  [build-system]
  requires = [
--    "setuptools == 78.1.1",
+-    "setuptools >= 78.1.1,< 82",
 +    "setuptools >= 61",
      "wheel",
  ]
  build-backend = "setuptools.build_meta"
+@@ -11,7 +11,7 @@ description = "Basic inter-process locks"
+ name = "zc.lockfile"
+ version = "4.1"
+ description = "Basic inter-process locks"
+-license = "ZPL-2.1"
++license = {text = "ZPL-2.1"}
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",
+     "Intended Audience :: Developers",
