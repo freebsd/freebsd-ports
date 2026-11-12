@@ -57,6 +57,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		azure_identity-1.0.0 \
 		azure_storage_blob-1.1.0 \
 		azure_storage_common-1.0.0 \
+		backon-1.6.0 \
 		base16ct-0.2.0 \
 		base64-0.13.1 \
 		base64-0.22.1 \
@@ -272,6 +273,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		jiff-0.2.37 \
 		jiff-core-0.1.1 \
 		jiff-static-0.2.37 \
+		jiff-tzdb-0.1.9 \
 		jni-0.22.4 \
 		jni-macros-0.22.4 \
 		jni-sys-0.4.1 \
@@ -404,7 +406,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rayon-cond-0.4.0 \
 		rayon-core-1.13.0 \
 		rcgen-0.14.10 \
-		redis-1.7.0 \
+		redis-1.8.0 \
 		redis-test-1.0.4 \
 		redox_syscall-0.5.18 \
 		ref-cast-1.0.27 \
@@ -415,7 +417,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		regex-lite-0.1.9 \
 		regex-syntax-0.8.11 \
 		relative-path-1.9.3 \
-		reqwest-0.12.28 \
 		reqwest-0.13.5 \
 		rfc6979-0.4.0 \
 		ring-0.17.14 \
@@ -608,7 +609,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		wasm-bindgen-macro-0.2.126 \
 		wasm-bindgen-macro-support-0.2.126 \
 		wasm-bindgen-shared-0.2.126 \
-		wasm-streams-0.4.2 \
 		wasm-streams-0.5.0 \
 		web-sys-0.3.103 \
 		web-time-1.1.0 \
