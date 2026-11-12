@@ -1,10 +1,10 @@
 PORTNAME=	zelta
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.0
+DISTVERSION=	1.2.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	daniel@belltech.it
-COMMENT=	ZFS tools used for data migration and backup management
+COMMENT=	Safe ZFS replication, backup, and recovery tools
 WWW=		https://github.com/bell-tower/zelta
 
 LICENSE=	BSD2CLAUSE
@@ -22,19 +22,19 @@ _ZELTA_CONF=	zelta.conf
 _ZELTA_ENV=	zelta.env
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/zelta ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/zelta ${WRKSRC}/bin/zprune ${STAGEDIR}${PREFIX}/bin
 	${RLN} ${STAGEDIR}${PREFIX}/bin/zelta ${STAGEDIR}${PREFIX}/bin/zeport
 	${RLN} ${STAGEDIR}${PREFIX}/bin/zelta ${STAGEDIR}${PREFIX}/bin/zmatch
 	${RLN} ${STAGEDIR}${PREFIX}/bin/zelta ${STAGEDIR}${PREFIX}/bin/zpull
 	${RLN} ${STAGEDIR}${PREFIX}/bin/zelta ${STAGEDIR}${PREFIX}/bin/zsync
-	${MKDIR} ${STAGEDIR}${ETCDIR}
+	${MKDIR} ${STAGEDIR}${ETCDIR} \
+		 ${STAGEDIR}${_ZELTA_SHARE} \
+		 ${STAGEDIR}${PREFIX}/share/man/man7 \
+		 ${STAGEDIR}${PREFIX}/share/man/man8
 	${INSTALL_DATA} ${WRKSRC}/${_ZELTA_ENV} ${STAGEDIR}${ETCDIR}/${_ZELTA_ENV}.sample
 	${INSTALL_DATA} ${WRKSRC}/${_ZELTA_CONF} ${STAGEDIR}${ETCDIR}/${_ZELTA_CONF}.sample
-	${MKDIR} ${STAGEDIR}${_ZELTA_SHARE}
 	${INSTALL_DATA} ${WRKSRC}/share/zelta/* ${STAGEDIR}${_ZELTA_SHARE}
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/man/man7
-	${INSTALL_MAN} ${WRKSRC}/doc/*.7 ${STAGEDIR}${PREFIX}/share/man/man7
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/man/man8
-	${INSTALL_MAN} ${WRKSRC}/doc/*.8 ${STAGEDIR}${PREFIX}/share/man/man8
+	${INSTALL_MAN} ${WRKSRC}/doc/man7/*.7 ${STAGEDIR}${PREFIX}/share/man/man7
+	${INSTALL_MAN} ${WRKSRC}/doc/man8/*.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>
