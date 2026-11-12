@@ -1,6 +1,6 @@
 PORTNAME=	lean-ctx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.12.2
+DISTVERSION=	3.12.3
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -129,9 +129,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		ctutils-0.4.6 \
 		curve25519-dalek-4.1.3 \
 		curve25519-dalek-derive-0.1.1 \
-		darling-0.23.0 \
-		darling_core-0.23.0 \
-		darling_macro-0.23.0 \
+		darling-0.24.1 \
+		darling_core-0.24.1 \
+		darling_macro-0.24.1 \
 		dashmap-6.2.1 \
 		data-encoding-2.11.1 \
 		dbus-0.9.12 \
@@ -206,7 +206,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		hashbrown-0.15.5 \
 		hashbrown-0.16.1 \
 		hashbrown-0.17.1 \
-		hashlink-0.11.1 \
+		hashlink-0.12.2 \
 		heapless-0.7.17 \
 		heck-0.5.0 \
 		hex-0.4.3 \
@@ -260,7 +260,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		libloading-0.9.0 \
 		libm-0.2.16 \
 		libredox-0.1.19 \
-		libsqlite3-sys-0.37.0 \
+		libsqlite3-sys-0.39.1 \
 		libyaml-rs-0.3.0 \
 		linux-raw-sys-0.12.1 \
 		litemap-0.8.2 \
@@ -339,7 +339,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		primefield-0.14.0 \
 		primeorder-0.14.0 \
 		proc-macro2-1.0.107 \
-		process-wrap-9.1.0 \
+		process-wrap-10.0.1 \
 		proptest-1.11.0 \
 		psl-types-2.0.11 \
 		publicsuffix-2.3.0 \
@@ -378,7 +378,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rpassword-7.5.4 \
 		rsqlite-vfs-0.1.1 \
 		rtoolbox-0.0.5 \
-		rusqlite-0.39.0 \
+		rusqlite-0.41.1 \
 		rustc-hash-2.1.3 \
 		rustc_version-0.4.1 \
 		rustix-1.1.4 \
@@ -527,6 +527,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		unicode-ident-1.0.24 \
 		unicode-normalization-0.1.25 \
 		unicode-properties-0.1.4 \
+		unicode-script-0.5.8 \
+		unicode-security-0.1.3 \
 		unicode-width-0.2.2 \
 		universal-hash-0.5.1 \
 		untrusted-0.9.0 \
