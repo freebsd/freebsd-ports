@@ -1,5 +1,5 @@
 PORTNAME=	chef
-PORTVERSION=	19.3.15
+PORTVERSION=	19.4.46
 CATEGORIES=	sysutils
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ WWW=		https://www.chef.io/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-addressable>=0:www/rubygem-addressable \
+RUN_DEPENDS=	rubygem-addressable>=2.9.0:www/rubygem-addressable \
 		rubygem-aws-sdk-s3>=1.91<2:devel/rubygem-aws-sdk-s3 \
 		rubygem-aws-sdk-secretsmanager>=1.46<2:devel/rubygem-aws-sdk-secretsmanager \
 		rubygem-bcrypt_pbkdf>=1.0<2:security/rubygem-bcrypt_pbkdf \
@@ -20,7 +20,7 @@ RUN_DEPENDS=	rubygem-addressable>=0:www/rubygem-addressable \
 		rubygem-chef-utils>=${PORTVERSION}<${PORTVERSION}_99:sysutils/rubygem-chef-utils \
 		rubygem-chef-vault>=0:sysutils/rubygem-chef-vault \
 		rubygem-chef-zero>=15.1.0<15.2:sysutils/rubygem-chef-zero \
-		rubygem-corefoundation>=0.3.4<0.4:devel/rubygem-corefoundation \
+		rubygem-corefoundation>=0.3.19<0.4:devel/rubygem-corefoundation \
 		rubygem-csv>=3.3.5<3.4:devel/rubygem-csv \
 		rubygem-diff-lcs>=1.6.0<1.7:textproc/rubygem-diff-lcs \
 		rubygem-ed25519>=1.2<2:security/rubygem-ed25519 \
@@ -29,7 +29,7 @@ RUN_DEPENDS=	rubygem-addressable>=0:www/rubygem-addressable \
 		rubygem-ffi-libarchive>=1.0.3<2:devel/rubygem-ffi-libarchive \
 		rubygem-ffi-yajl>=2.2<4.0:devel/rubygem-ffi-yajl \
 		rubygem-iniparse>=1.4<2:devel/rubygem-iniparse \
-		rubygem-inspec-core>=7.0.107<7.1:devel/rubygem-inspec-core \
+		rubygem-inspec-core>=7.2.1<7.3:devel/rubygem-inspec-core \
 		rubygem-license-acceptance>=1.0.5<3:sysutils/rubygem-license-acceptance \
 		rubygem-mixlib-archive>=0.4<2.0:devel/rubygem-mixlib-archive \
 		rubygem-mixlib-authentication>=2.1<4:devel/rubygem-mixlib-authentication \
