@@ -1,6 +1,6 @@
 PORTNAME=	xdrawchem
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.1
+DISTVERSION=	2.1.0
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,7 +19,7 @@ USE_GL=		gl
 USE_GITHUB=	yes
 GH_ACCOUNT=	bryanherger
 
-WRKSRC_SUBDIR=	xdrawchem-qt5
+WRKSRC_SUBDIR=	xdrawchem
 
 LDFLAGS+=	-lexecinfo
 
