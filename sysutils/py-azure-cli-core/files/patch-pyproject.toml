@@ -1,0 +1,38 @@
+--- pyproject.toml.orig	2026-10-27 11:33:29 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=78.1.1"]
++requires = ["setuptools>=61"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -8,8 +8,7 @@ requires-python = ">=3.10.0"
+ description = "Microsoft Azure Command-Line Tools Core Module"
+ readme = { file = "README.rst", content-type = "text/x-rst" }
+ requires-python = ">=3.10.0"
+-license = "MIT"
+-license-files = ["LICENSE.txt"]
++license = { text = "MIT" }
+ authors = [{ name = "Microsoft Corporation", email = "azpycli@microsoft.com" }]
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",
+@@ -24,9 +23,9 @@ dependencies = [
+     "Programming Language :: Python :: 3.14",
+ ]
+ dependencies = [
+-    'argcomplete~=3.5.2',
++    'argcomplete>=3.5.2',
+     'azure-cli-telemetry==1.1.0.*',
+-    'azure-core~=1.39.0',
++    'azure-core>=1.39.0',
+     'azure-mgmt-core>=1.2.0,<2',
+     'cryptography',
+     # On Linux, the distribution (Ubuntu, Debian, etc) and version are logged in telemetry
+@@ -63,4 +62,4 @@ exclude = ["*.tests", "*.tests.*", "tests.*", "tests",
+ exclude = ["*.tests", "*.tests.*", "tests.*", "tests", "azure", "azure.cli"]
+ 
+ [tool.setuptools.package-data]
+-"azure.cli.core" = ["auth/landing_pages/*.html", "commandIndex.latest.json", "helpIndex.latest.json"]
+\ No newline at end of file
++"azure.cli.core" = ["auth/landing_pages/*.html", "commandIndex.latest.json", "helpIndex.latest.json"]
