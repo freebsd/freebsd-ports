@@ -1697,6 +1697,7 @@ lib/node_modules/npm/node_modules/semver/internal/identifiers.js
 lib/node_modules/npm/node_modules/semver/internal/lrucache.js
 lib/node_modules/npm/node_modules/semver/internal/parse-options.js
 lib/node_modules/npm/node_modules/semver/internal/re.js
+lib/node_modules/npm/node_modules/semver/internal/trim-comparator-whitespace.js
 lib/node_modules/npm/node_modules/semver/package.json
 lib/node_modules/npm/node_modules/semver/preload.js
 lib/node_modules/npm/node_modules/semver/range.bnf
