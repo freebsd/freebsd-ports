@@ -1,5 +1,5 @@
 PORTNAME=	libaec
-PORTVERSION=	1.1.7
+PORTVERSION=	1.1.8
 CATEGORIES=	science
 MASTER_SITES=	https://github.com/Deutsches-Klimarechenzentrum/libaec/releases/download/v${PORTVERSION}/
 
