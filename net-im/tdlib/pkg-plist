@@ -311,6 +311,7 @@ include/td/telegram/OptionManager.h
 include/td/telegram/OrderInfo.h
 include/td/telegram/OrderInfo.hpp
 include/td/telegram/OrderedMessage.h
+include/td/telegram/OrderedTopics.h
 include/td/telegram/Outline.h
 include/td/telegram/PaidReactionType.h
 include/td/telegram/PaidReactionType.hpp
@@ -547,6 +548,7 @@ include/td/telegram/WebPageBlock.h
 include/td/telegram/WebPageId.h
 include/td/telegram/WebPagesManager.h
 include/td/telegram/WelcomeMessageManager.h
+include/td/telegram/WidgetManager.h
 include/td/telegram/files/FileBitmask.h
 include/td/telegram/files/FileData.h
 include/td/telegram/files/FileData.hpp

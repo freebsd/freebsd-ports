@@ -1,6 +1,6 @@
 PORTNAME=	tdlib
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8.69
+DISTVERSION=	1.8.70
 CATEGORIES=	net-im devel
 
 MAINTAINER=	fluffy@FreeBSD.org
@@ -11,11 +11,9 @@ LICENSE=	BSL
 
 USES=		cmake:testing compiler:c++14-lang gperf readline ssl
 
-CONFLICTS_INSTALL=	tde2e
-
 USE_GITHUB=	yes
 GH_PROJECT=	td
-GH_TAGNAME=	9d92b49 # 1.8.69 + IPv[46] reserved range fixes
+GH_TAGNAME=	c8828d5 # 1.8.70 + fixes
 
 CMAKE_ON=	TD_INSTALL_SHARED_LIBRARIES TD_INSTALL_STATIC_LIBRARIES \
 		BUILD_SHARED_LIBS
