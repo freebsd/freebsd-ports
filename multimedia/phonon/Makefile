@@ -1,6 +1,6 @@
 PORTNAME=	phonon
 DISTVERSION=	4.12.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}
 DIST_SUBDIR=	KDE/phonon
@@ -15,6 +15,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 FLAVORS=	qt6 qt5
 FLAVOR?=	${FLAVORS:[1]}
+
+.if ${FLAVOR:Mqt5}
+DEPRECATED=	Depends on unsupported Qt 5
+EXPIRATION_DATE=2026-11-30
+.endif
 
 USES=		cmake compiler:c++11-lang kde:${FLAVOR:S/qt//} pathfix \
 		qt:${FLAVOR:S/qt//} tar:xz
