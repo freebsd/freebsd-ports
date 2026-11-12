@@ -21,10 +21,13 @@ LIB_DEPENDS=	libonig.so:devel/oniguruma \
 USES=		cargo
 USE_RC_SUBR=	greptimedb
 
-GIT?=		git
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	GreptimeTeam
+
+SUBSTRAIT_COMMIT=	2aaae7c0d369a23b5b469badce0644097f1769a1
+SUBSTRAIT_VERSION=	0.85.0
+
+GH_TUPLE=	substrait-io:substrait:${SUBSTRAIT_COMMIT}:1
 
 LTO_UNSAFE=	yes # OOM with LTO on final binary linking
 
@@ -1369,54 +1372,40 @@ PLIST_SUB+=	USER=${USER} GROUP=${GROUP}
 
 PROGS=		greptime
 
-SUBSTRAIT_COMMIT=	2aaae7c0d369a23b5b469badce0644097f1769a1
-SUBSTRAIT_VERSION=	0.85.0
+# The object_store_opendal crate is referenced from greptimedb's workspace
+# Cargo.toml (src/object-store, bridge between object_store 0.13.x and opendal
+# 0.59.x) and is also listed as a cargo git source in CARGO_CRATES below:
+#   object_store_opendal@git+https://github.com/GreptimeTeam/opendal.git?rev=c03e568...
+# GitHub's auto-generated tarball for GreptimeTeam/opendal at that commit
+# excludes the integrations/object_store directory via .gitattributes
+# export-ignore, so GH_TUPLE cannot provide it.  The matching published
+# object_store_opendal crates on crates.io require opendal ^0.58 or object_store
+# ^0.14, neither of which matches GreptimeDB's pinned opendal 0.59.4 and
+# object_store 0.13.2, so the fork commit is the only usable source.
+#
+# To regenerate this distfile:
+#   git clone https://github.com/GreptimeTeam/opendal.git
+#   cd opendal
+#   git checkout c03e56802b47de3ccfc8fe028e59a459b278a0d2
+#   tar -czf opendal-object_store-c03e568.tar.gz \
+#       opendal-c03e56802b47de3ccfc8fe028e59a459b278a0d2/integrations/object_store
+# Then upload it with ssh-upload-file-to-freebsd-tarballs and update distinfo.
+MASTER_SITES+=	LOCAL/yuri/:object_store
+DISTFILES+=	opendal-object_store-c03e568.tar.gz:object_store
 
-DISTFILES+=	opendal-object_store-c03e568.tar.gz \
-		substrait-submodule-91ec978.tar.gz
-
-pre-fetch:
-	# GitHub's auto-generated tarball for GreptimeTeam/opendal excludes
-	# the integrations/ directory via .gitattributes export-ignore, but
-	# greptimedb's Cargo.toml patches object_store_opendal from that git
-	# revision.  Fetch the missing crate from the same revision and
-	# package it as an additional distfile.
-	@if [ ! -f ${DISTDIR}/opendal-object_store-c03e568.tar.gz ]; then \
-		${MKDIR} ${WRKDIR}/.opendal-fetch && \
-		cd ${WRKDIR}/.opendal-fetch && \
-		${GIT} clone --quiet --depth 1 \
-		    https://github.com/GreptimeTeam/opendal.git \
-		    opendal-c03e56802b47de3ccfc8fe028e59a459b278a0d2 && \
-		cd opendal-c03e56802b47de3ccfc8fe028e59a459b278a0d2 && \
-		${GIT} fetch --quiet --depth 1 origin c03e56802b47de3ccfc8fe028e59a459b278a0d2 && \
-		${GIT} checkout --quiet c03e56802b47de3ccfc8fe028e59a459b278a0d2 && \
-		cd .. && \
-		${TAR} -czf ${DISTDIR}/opendal-object_store-c03e568.tar.gz \
-		    opendal-c03e56802b47de3ccfc8fe028e59a459b278a0d2/integrations/object_store && \
-		${RM} -rf ${WRKDIR}/.opendal-fetch; \
-	fi
+post-extract:
 	# GitHub's auto-generated tarball for GreptimeTeam/substrait-rs excludes
-	# the substrait/ git submodule, but greptimedb's Cargo.toml patches
-	# substrait from that git revision.  Fetch the upstream commit as a plain
-	# archive (no .git directory), add the submodule files to a crate-shaped
-	# tree, and provide a version.in fallback so the build script can run
-	# without a git checkout.
-	@if [ ! -f ${DISTDIR}/substrait-submodule-91ec978.tar.gz ]; then \
-		${MKDIR} ${WRKDIR}/.substrait-fetch && \
-		cd ${WRKDIR}/.substrait-fetch && \
-		${FETCH_CMD} -o substrait-${SUBSTRAIT_COMMIT}.tar.gz \
-		    https://github.com/substrait-io/substrait/archive/${SUBSTRAIT_COMMIT}.tar.gz && \
-		${TAR} -xzf substrait-${SUBSTRAIT_COMMIT}.tar.gz && \
-		${MV} substrait-${SUBSTRAIT_COMMIT} substrait && \
-		${MKDIR} substrait-rs-91ec978b0649417ad3da8390e7a515baec723b1b && \
-		${MV} substrait substrait-rs-91ec978b0649417ad3da8390e7a515baec723b1b/substrait && \
-		${MKDIR} substrait-rs-91ec978b0649417ad3da8390e7a515baec723b1b/gen && \
-		${PRINTF} '%s' '${SUBSTRAIT_VERSION}' > substrait-rs-91ec978b0649417ad3da8390e7a515baec723b1b/gen/version && \
-		${CP} ${FILESDIR}/substrait-version.in substrait-rs-91ec978b0649417ad3da8390e7a515baec723b1b/gen/version.in && \
-		${TAR} -czf ${DISTDIR}/substrait-submodule-91ec978.tar.gz \
-		    substrait-rs-91ec978b0649417ad3da8390e7a515baec723b1b && \
-		${RM} -rf ${WRKDIR}/.substrait-fetch; \
-	fi
+	# the substrait/ git submodule.  Populate it from the GH_TUPLE-fetched
+	# substrait-io/substrait archive and provide the version fallback the
+	# substrait-rs build script expects when running outside a git checkout.
+	@${MKDIR} ${WRKDIR}/substrait-rs-91ec978b0649417ad3da8390e7a515baec723b1b/gen && \
+	${RM} -rf ${WRKDIR}/substrait-rs-91ec978b0649417ad3da8390e7a515baec723b1b/substrait && \
+	${MV} ${WRKDIR}/substrait-${SUBSTRAIT_COMMIT} \
+	    ${WRKDIR}/substrait-rs-91ec978b0649417ad3da8390e7a515baec723b1b/substrait && \
+	${PRINTF} '%s' '${SUBSTRAIT_VERSION}' > \
+	    ${WRKDIR}/substrait-rs-91ec978b0649417ad3da8390e7a515baec723b1b/gen/version && \
+	${CP} ${FILESDIR}/substrait-version.in \
+	    ${WRKDIR}/substrait-rs-91ec978b0649417ad3da8390e7a515baec723b1b/gen/version.in
 
 post-patch:
 	# setup mold linker wrapper to reduce memory during final linking
@@ -1443,7 +1432,7 @@ post-patch:
 		@${PATCH} -d ${WRKDIR}/otel-arrow-5da284414e9b14f678344b51e5292229e4b5f8d2 --forward -p0 -i ${FILESDIR}/extra-otel-arrow-rust-proto-compat
 	# fix: trim trailing whitespace from the substrait-rs fallback version file
 	@${PATCH} -d ${WRKDIR}/substrait-rs-91ec978b0649417ad3da8390e7a515baec723b1b --forward -p0 -i ${FILESDIR}/extra-substrait-rs-build.rs
-	# fix: remove any leftover submodule .git directory so the build script
+	# ensure no submodule .git directory is present so the build script
 	# uses the version.in fallback instead of trying to run git commands.
 	@${RM} -rf ${WRKDIR}/substrait-rs-91ec978b0649417ad3da8390e7a515baec723b1b/substrait/.git
 

@@ -1,8 +1,6 @@
-TIMESTAMP = 1793312455
-SHA256 (opendal-object_store-c03e568.tar.gz) = e29ae41eda8844927db725caac18a3067a0215cf48c9717382ede60e612f0769
-SIZE (opendal-object_store-c03e568.tar.gz) = 24356
-SHA256 (substrait-submodule-91ec978.tar.gz) = 7f3f6777acb132fd07424754c397a327b95d49a61a94febdf41ef954e5b6affa
-SIZE (substrait-submodule-91ec978.tar.gz) = 280977
+TIMESTAMP = 1794507202
+SHA256 (opendal-object_store-c03e568.tar.gz) = 445c4e66de59e57abef1e2db23df7c6f375ddabaa3ba651387237757fee4a0b9
+SIZE (opendal-object_store-c03e568.tar.gz) = 24461
 SHA256 (rust/crates/addr2line-0.24.2.crate) = dfbe277e56a376000877090da837660b4427aad530e3028d44e0bffe4f89a1c1
 SIZE (rust/crates/addr2line-0.24.2.crate) = 39015
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
@@ -2661,3 +2659,5 @@ SHA256 (tikv-pprof-rs-01cff82dbe6fe110a707bf2b38d8ebb1d14a18f8_GH0.tar.gz) = ded
 SIZE (tikv-pprof-rs-01cff82dbe6fe110a707bf2b38d8ebb1d14a18f8_GH0.tar.gz) = 50509
 SHA256 (GreptimeTeam-greptimedb-v1.3.0_GH0.tar.gz) = d1d22280afa76ca3cf9030a47abe6289e82a379587554eb6bb590c3d33310663
 SIZE (GreptimeTeam-greptimedb-v1.3.0_GH0.tar.gz) = 8908944
+SHA256 (substrait-io-substrait-2aaae7c0d369a23b5b469badce0644097f1769a1_GH0.tar.gz) = bbd63949503e3b244dbc0812a0d99042ec5d1d5744f126ee34098366a8193e4e
+SIZE (substrait-io-substrait-2aaae7c0d369a23b5b469badce0644097f1769a1_GH0.tar.gz) = 273818
