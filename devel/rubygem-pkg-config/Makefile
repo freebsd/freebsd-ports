@@ -1,5 +1,5 @@
 PORTNAME=	pkg-config
-PORTVERSION=	1.6.6
+PORTVERSION=	1.6.7
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
