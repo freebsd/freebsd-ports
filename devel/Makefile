@@ -6569,6 +6569,7 @@
     SUBDIR += py-widgetsnbextension
     SUBDIR += py-wimpy
     SUBDIR += py-wirerope
+    SUBDIR += py-wkb-wkt-converter
     SUBDIR += py-wlc
     SUBDIR += py-woops
     SUBDIR += py-worldmonitor-sdk

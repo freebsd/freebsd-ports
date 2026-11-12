@@ -1,0 +1,21 @@
+A high-performance, zero-dependency Rust library for streaming conversion
+between WKT/EWKT and WKB/EWKB geometry formats used in GIS systems (PostGIS,
+GDAL, etc.).
+
+Exposes both a Rust API and Python bindings (via PyO3/maturin).
+
+Features:
+- All 7 OGC geometry types: Point, LineString, Polygon, MultiPoint,
+  MultiLineString, MultiPolygon, GeometryCollection
+- All coordinate dimensions: XY, XYZ, M, ZM
+- Both EWKB (PostGIS flag-bit encoding) and ISO WKB (type+1000 offset encoding)
+  as input
+- SRID preservation (EWKT <-> EWKB); option to split SRID from geometry
+- Big-endian and little-endian WKB input; little-endian EWKB output for full
+  conversions, with simple header rewrites preserving input byte order
+- EMPTY geometry support
+- Per-member EMPTY support inside MULTI* geometries
+- Hex WKB convenience helpers
+- Memory-safe handling for malformed input: structurally invalid input returns
+  descriptive errors, while trusted-valid fast paths may pass through malformed
+  geometry bodies as invalid output bytes/text.
