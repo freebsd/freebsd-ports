@@ -1,5 +1,5 @@
 PORTNAME=	mycli
-PORTVERSION=	2.30.2
+PORTVERSION=	2.30.3
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -30,7 +30,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cli-helpers>=2.15.3<2.16:devel/py-cli-helper
 		${PYTHON_PKGNAMEPREFIX}sqlglot>=30.23.0:databases/py-sqlglot@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlglotc>=30.23.0:databases/py-sqlglotc@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlparse>=0.6.0<0.7:databases/py-sqlparse@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}wcwidth>=0.9.2<0.10:devel/py-wcwidth@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wcwidth>=0.9.4<0.10:devel/py-wcwidth@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaspin>=3.5.1<3.6:devel/py-yaspin@${PY_FLAVOR}
 
 USES=		cpe mysql python
