@@ -2140,6 +2140,7 @@
     SUBDIR += rubygem-toml
     SUBDIR += rubygem-tomlrb
     SUBDIR += rubygem-tomlrb1
+    SUBDIR += rubygem-tomlrb2
     SUBDIR += rubygem-truncato
     SUBDIR += rubygem-twitter-text
     SUBDIR += rubygem-twitter-text1
