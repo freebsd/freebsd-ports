@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2026-05-03 21:10:20 UTC
+--- pyproject.toml.orig	2026-10-31 19:22:26 UTC
 +++ pyproject.toml
 @@ -1,9 +1,8 @@ requires = [
  [build-system]
@@ -6,7 +6,7 @@
 -    "setuptools>=69.0.0",
 +    "setuptools>=61",
      "wheel",
-     "Cython>=0.29.32",
+     "Cython",
 -    "cmake",
      # Build against NumPy 2.x headers. Extensions compiled with NumPy 2.0+
      # are backward-compatible with NumPy >= 1.19 at runtime.
