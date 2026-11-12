@@ -1,5 +1,5 @@
 PORTNAME=	google-apis-core
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -16,8 +16,8 @@ RUN_DEPENDS=	rubygem-addressable>=2.9<3:www/rubygem-addressable \
 		rubygem-faraday-follow_redirects>=0.3<1:www/rubygem-faraday-follow_redirects \
 		rubygem-googleauth>=1.14<2:security/rubygem-googleauth \
 		rubygem-mini_mime>=1.1<2:mail/rubygem-mini_mime \
-		rubygem-multi_json>=1.11<2:devel/rubygem-multi_json \
-		rubygem-representable>=3.0<4:textproc/rubygem-representable \
+		rubygem-multi_json>=1.21.2<2:devel/rubygem-multi_json \
+		rubygem-representable>=3.3.1<4:textproc/rubygem-representable \
 		rubygem-retriable4>=3.1<5.0:devel/rubygem-retriable4
 
 USES=		gem
