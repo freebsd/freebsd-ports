@@ -1,5 +1,5 @@
 PORTNAME=	evisum
-PORTVERSION=	0.6.4
+PORTVERSION=	2.0.16
 CATEGORIES=	sysutils enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/apps/${PORTNAME}/
 
@@ -14,6 +14,6 @@ LIB_DEPENDS=	libefl.so:devel/efl
 DIST_SUBDIR=	enlightenment
 USES=		compiler:c11 desktop-file-utils meson pkgconfig tar:xz
 
-PLIST_FILES=	"@(root,kmem,2755) bin/evisum"
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 .include <bsd.port.mk>
