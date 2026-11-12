@@ -1,5 +1,5 @@
 PORTNAME=	translate-toolkit
-PORTVERSION=	3.20.1
+PORTVERSION=	3.20.4
 CATEGORIES=	textproc
 MASTER_SITES=	PYPI \
 		https://github.com/translate/translate/releases/download/${PORTVERSION}/
@@ -116,9 +116,9 @@ YAML_DESC=	YAML format support
 CHARDET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}charset-normalizer>=3.4.0<4.0:textproc/py-charset-normalizer@${PY_FLAVOR}
 FLUENT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fluent.syntax>=0.19.0<0.20:textproc/py-fluent.syntax@${PY_FLAVOR}
 FLUENT_VARS=		MANPAGES+="fluent2po"
-ICAL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}vobject>=0.9.6.1:deskutils/py-vobject@${PY_FLAVOR}
+ICAL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}vobject>=0.9.6.1<0.10:deskutils/py-vobject@${PY_FLAVOR}
 ICAL_VARS=		MANPAGES+="ical2po po2ical"
-INI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}iniparse>=0.5:devel/py-iniparse@${PY_FLAVOR}
+INI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}iniparse>=0.5<0.6:devel/py-iniparse@${PY_FLAVOR}
 INI_VARS=		MANPAGES+="ini2po po2ini"
 LEVENSHTEIN_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}rapidfuzz>=3.14.0:devel/py-rapidfuzz@${PY_FLAVOR}
 MARKDOWN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mistletoe>=1.4.0<1.7.0:textproc/py-mistletoe@${PY_FLAVOR}
@@ -127,7 +127,7 @@ PHP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}phply>=1.2.6<1.3:devel/py-phply@${PY_FLA
 PHP_VARS=		MANPAGES+="php2po po2php"
 RC_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}pyparsing>=3.2.0<3.4:devel/py-pyparsing@${PY_FLAVOR}
 RC_VARS=		MANPAGES+="po2rc rc2po"
-SPELLCHECK_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}enchant>=3.3.0:textproc/py-enchant@${PY_FLAVOR}
+SPELLCHECK_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}enchant>=3.3.0<3.4.0:textproc/py-enchant@${PY_FLAVOR}
 SUBTITLES_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aeidon>=1.15<2.1:textproc/py-aeidon@${PY_FLAVOR}
 TOML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tomlkit>=0.13.0<0.16.0:textproc/py-tomlkit@${PY_FLAVOR}
 TOML_VARS=		MANPAGES+="toml2po po2toml"

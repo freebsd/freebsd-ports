@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2026-07-31 14:58:51 UTC
+--- pyproject.toml.orig	2026-11-06 09:52:50 UTC
 +++ pyproject.toml
 @@ -1,7 +1,7 @@ requires = [
  [build-system]
@@ -9,7 +9,7 @@
  ]
  
  [dependency-groups]
-@@ -75,14 +75,7 @@ keywords = [
+@@ -78,14 +78,7 @@ keywords = [
  keywords = [
    "i18n l10n gettext translate"
  ]
@@ -25,25 +25,12 @@
  name = "translate-toolkit"
  requires-python = ">=3.11"
  
-@@ -97,10 +90,10 @@ ical = [
+@@ -100,7 +93,7 @@ ical = [
    "fluent.syntax>=0.19.0,<0.20"
  ]
  ical = [
--  "vobject==0.9.9"
-+  "vobject>=0.9.6.1"
+-  "vobject>=0.9.9,<0.10"
++  "vobject>=0.9.6.1,<0.10"
  ]
  ini = [
--  "iniparse==0.5"
-+  "iniparse>=0.5"
- ]
- levenshtein = [
-   "RapidFuzz>=3.14.0"
-@@ -115,7 +108,7 @@ spellcheck = [
-   "pyparsing>=3.2.0,<3.4"
- ]
- spellcheck = [
--  "pyenchant==3.3.0"
-+  "pyenchant>=3.3.0"
- ]
- subtitles = [
-   "aeidon>=1.15,<1.17"
+   "iniparse>=0.5,<0.6"
