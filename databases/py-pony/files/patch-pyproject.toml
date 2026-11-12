@@ -1,0 +1,19 @@
+--- pyproject.toml.orig	2026-08-09 12:17:12 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=77.0.3"]
++requires = ["setuptools>=63.1"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -8,8 +8,7 @@ requires-python = ">=3.10,<3.15"
+ description = "Pony Object-Relational Mapper"
+ readme = { file = "README.md", content-type = "text/markdown" }
+ requires-python = ">=3.10,<3.15"
+-license = "Apache-2.0"
+-license-files = ["LICENSE"]
++license = { text = "Apache-2.0" }
+ authors = [
+     { name = "Alexander Kozlovsky", email = "alexander.kozlovsky@gmail.com" },
+     { name = "Alexey Malashkevich", email = "alexey@ponyorm.org" },
