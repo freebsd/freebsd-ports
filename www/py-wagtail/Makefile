@@ -1,5 +1,5 @@
 PORTNAME=	wagtail
-PORTVERSION=	8.0.1
+PORTVERSION=	8.1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,7 +26,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anyascii>=0.1.5:textproc/py-anyascii@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}django-tasks>=0.9<0.13:www/py-django-tasks@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-treebeard>=4.8<6.0:www/py-django-treebeard@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}djangorestframework>=3.18.0,1<4.0,1:www/py-djangorestframework@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}draftjs-exporter>=7.1.0<8.0:www/py-draftjs-exporter@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}draftjs-exporter>=7.3.0<8.0:www/py-draftjs-exporter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}laces>=0.1<0.2:www/py-laces@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}modelsearch>=1.3.2<1.4:www/py-modelsearch@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openpyxl>=3.0.10<4.0:textproc/py-openpyxl@${PY_FLAVOR} \
