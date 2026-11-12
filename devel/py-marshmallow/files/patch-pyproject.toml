@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2026-11-04 00:08:30 UTC
++++ pyproject.toml
+@@ -55,7 +55,7 @@ exclude-newer = "1 week"
+ exclude-newer = "1 week"
+ 
+ [build-system]
+-requires = ["flit_core>=4,<5"]
++requires = ["flit_core>=3.12,<5"]
+ build-backend = "flit_core.buildapi"
+ 
+ [tool.flit.sdist]
