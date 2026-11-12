@@ -1,6 +1,6 @@
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION1}.${AOOVERSION2}.${TIMESTAMP}
-PORTREVISION=	2
+PORTREVISION=	0
 PORTEPOCH=	4
 CATEGORIES=	editors java
 MASTER_SITES=	https://dist.apache.org/repos/dist/dev/openoffice/${AOOVERSION}-${AOORC}-${TIMESTAMP}/source/ \
@@ -66,6 +66,7 @@ BUILD_DEPENDS=								\
 		${JAVALIBDIR}/commons-lang3.jar:java/apache-commons-lang3 \
 		${JAVALIBDIR}/junit.jar:java/junit			\
 		${JAVALIBDIR}/bsh.jar:lang/bsh				\
+		gawk:lang/gawk						\
 		bash:shells/bash					\
 		p5-XML-Parser>=0:textproc/p5-XML-Parser			\
 		p5-libwww>=0:www/p5-libwww				\
@@ -127,8 +128,8 @@ AOOVERSION2=	1
 AOOVERSION3=	0
 # From solenv/inc/minor.mk SOURCEREVISION LAST_MINOR BUILD
 AOOTAG=		AOO510m1\(Build:99000\)
-GITREVISION=	0bdb2dee20
-TIMESTAMP=	1793513194
+GITREVISION=	ab499276bc
+TIMESTAMP=	1794261407
 #AOORC=rc3
 #EXTSRC=		ApacheOpenOffice.ext_sources.${AOOVERSION1}.x.x.20150707.tar.gz
 EXTSRC=		ApacheOpenOffice.ext_sources.4.x.x.20150707.tar.gz
@@ -245,6 +246,7 @@ EXTRA_DISTFILES=	9dcd632441e4da04a461082ebbafd337-boost_1_84_0.tar.bz2 \
 			e3738abd0d3ce1870dc1fd1f22bba5b1-icu4c-4_2_1-src.tgz \
 			128cfc86ed5953e57fe0f5ae98b62c2e-libtextcat-2.2.tar.gz \
 			17960f35b2239654ba608cf1f3e256b3-lucene-2.9.4-src.tar.gz \
+			b98c6c3ec884277f253028abf91d257b-rhino-1.7.15.1.zip \
 			d62650a6f908e85643e557a236ea989c-vigra1.6.0.tar.gz
 
 .if ${CHOSEN_COMPILER_TYPE} == clang

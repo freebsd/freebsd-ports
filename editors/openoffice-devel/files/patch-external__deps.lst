@@ -1,0 +1,13 @@
+--- external_deps.lst.orig	2026-11-10 02:51:28 UTC
++++ external_deps.lst
+@@ -306,8 +306,8 @@ if (ENABLE_CATEGORY_B==YES && SOLAR_JAVA==TRUE && ENAB
+ 
+ if (ENABLE_CATEGORY_B==YES && SOLAR_JAVA==TRUE && ENABLE_JAVASCRIPT==YES)
+     MD5 = b98c6c3ec884277f253028abf91d257b
+-    name = rhino1_7_15_1.zip
+-    URL1 = https://github.com/mozilla/rhino/releases/download/Rhino1_7_15_1_Release/rhino-1.7.15.1.zip
++    name = rhino-1.7.15.1.zip
++    URL1 = https://github.com/mozilla/rhino/releases/download/Rhino1_7_15_1_Release/$(name)
+     URL2 = $(OOO_EXTRAS)$(MD5)-$(name)
+ 
+ if (ENABLE_CATEGORY_B==YES && ENABLE_NSS_MODULE==YES)
