@@ -1,4 +1,4 @@
---- inspec-core.gemspec.orig	2026-02-18 14:58:41 UTC
+--- inspec-core.gemspec.orig	2026-11-10 14:13:59 UTC
 +++ inspec-core.gemspec
 @@ -22,7 +22,7 @@ Gem::Specification.new do |s|
  
