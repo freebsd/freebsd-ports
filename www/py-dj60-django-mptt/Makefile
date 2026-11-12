@@ -1,5 +1,5 @@
 PORTNAME=	django-mptt
-DISTVERSION=	0.18.0
+DISTVERSION=	0.21.1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj60-
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django60>=4.2:www/py-django60@${PY_FLAVOR}\
-		${PYTHON_PKGNAMEPREFIX}dj60-django-js-asset>0:www/py-dj60-django-js-asset@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}dj60-django-js-asset>=4.0:www/py-dj60-django-js-asset@${PY_FLAVOR}
 
 USES=		python:3.12+
 USE_PYTHON=	autoplist pep517
@@ -22,9 +22,5 @@ USE_PYTHON=	autoplist pep517
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}*${PORTNAME}
 
 NO_ARCH=		yes
-
-# The only user is net-mgmt/netbox and its upstream recently pinned the
-# version to 0.18.0.
-PORTSCOUT=	limit:0\.18\.
 
 .include <bsd.port.mk>
