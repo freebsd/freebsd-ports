@@ -10,7 +10,6 @@ CARGO_CRATES=	ahash-0.8.12 \
 		anstyle-query-1.1.5 \
 		anstyle-wincon-3.0.11 \
 		anyhow-1.0.100 \
-		approx-0.5.1 \
 		arcref-0.2.0 \
 		arrayref-0.3.9 \
 		arrow-54.3.1 \
@@ -69,7 +68,6 @@ CARGO_CRATES=	ahash-0.8.12 \
 		cesu8-1.1.0 \
 		cexpr-0.6.0 \
 		cfg-if-1.0.4 \
-		cfg_aliases-0.2.2 \
 		chrono-0.4.42 \
 		clang-sys-1.8.1 \
 		clap-4.5.54 \
@@ -77,12 +75,7 @@ CARGO_CRATES=	ahash-0.8.12 \
 		clap_derive-4.5.49 \
 		clap_lex-0.7.6 \
 		cmake-0.1.57 \
-		codspeed-5.0.2 \
-		codspeed-divan-compat-5.0.2 \
-		codspeed-divan-compat-macros-5.0.2 \
-		codspeed-divan-compat-walltime-5.0.2 \
 		colorchoice-1.0.4 \
-		colored-3.1.1 \
 		combine-4.6.7 \
 		concurrent-queue-2.5.0 \
 		condtype-1.3.0 \
@@ -101,7 +94,8 @@ CARGO_CRATES=	ahash-0.8.12 \
 		csv-core-0.1.13 \
 		dashmap-6.1.0 \
 		displaydoc-0.2.5 \
-		divan-macros-0.1.17 \
+		divan-0.1.21 \
+		divan-macros-0.1.21 \
 		dtype_dispatch-0.1.1 \
 		dyn-hash-0.2.2 \
 		either-1.15.0 \
@@ -138,7 +132,6 @@ CARGO_CRATES=	ahash-0.8.12 \
 		futures-util-0.3.31 \
 		getrandom-0.2.16 \
 		getrandom-0.3.4 \
-		getrandom-0.4.3 \
 		glob-0.3.3 \
 		half-2.7.1 \
 		handle-1.0.2 \
@@ -164,7 +157,6 @@ CARGO_CRATES=	ahash-0.8.12 \
 		idna_adapter-1.2.1 \
 		indexmap-2.14.2 \
 		indicatif-0.17.11 \
-		indoc-2.0.7 \
 		integer-encoding-3.0.4 \
 		inventory-0.3.21 \
 		is_terminal_polyfill-1.70.2 \
@@ -202,7 +194,6 @@ CARGO_CRATES=	ahash-0.8.12 \
 		macro_rules_attribute-proc_macro-0.1.3 \
 		matrixmultiply-0.3.10 \
 		memchr-2.7.6 \
-		memoffset-0.9.1 \
 		minimal-lexical-0.2.1 \
 		mio-1.1.1 \
 		moka-0.12.12 \
@@ -210,7 +201,6 @@ CARGO_CRATES=	ahash-0.8.12 \
 		multiversion-macros-0.8.0 \
 		ndarray-0.17.1 \
 		never-say-never-6.6.666 \
-		nix-0.31.3 \
 		nom-7.1.3 \
 		nougat-0.2.4 \
 		nougat-proc_macros-0.2.4 \
@@ -224,7 +214,7 @@ CARGO_CRATES=	ahash-0.8.12 \
 		num_enum-0.7.5 \
 		num_enum_derive-0.7.5 \
 		number_prefix-0.4.0 \
-		numpy-0.27.1 \
+		numpy-0.30.0 \
 		once_cell-1.21.3 \
 		once_cell_polyfill-1.70.2 \
 		oneshot-0.1.11 \
@@ -251,22 +241,19 @@ CARGO_CRATES=	ahash-0.8.12 \
 		potential_utf-0.1.4 \
 		ppv-lite86-0.2.21 \
 		prettyplease-0.2.37 \
-		proc-macro-crate-3.5.0 \
 		proc-macro-error-attr2-2.0.0 \
 		proc-macro-error2-2.0.1 \
 		proc-macro2-1.0.105 \
 		prost-0.14.1 \
 		prost-derive-0.14.1 \
 		prost-types-0.14.1 \
-		pyo3-0.27.2 \
-		pyo3-build-config-0.27.2 \
-		pyo3-ffi-0.27.2 \
-		pyo3-macros-0.27.2 \
-		pyo3-macros-backend-0.27.2 \
-		python3-dll-a-0.2.14 \
+		pyo3-0.30.1 \
+		pyo3-build-config-0.30.1 \
+		pyo3-ffi-0.30.1 \
+		pyo3-macros-0.30.1 \
+		pyo3-macros-backend-0.30.1 \
 		quote-1.0.43 \
 		r-efi-5.3.0 \
-		r-efi-6.0.0 \
 		radium-0.7.0 \
 		rand-0.8.5 \
 		rand-0.9.2 \
@@ -300,7 +287,6 @@ CARGO_CRATES=	ahash-0.8.12 \
 		serde-value-0.7.0 \
 		serde_core-1.0.228 \
 		serde_derive-1.0.228 \
-		serde_json-1.0.151 \
 		serde_spanned-0.6.9 \
 		shlex-1.3.0 \
 		signal-hook-registry-1.4.8 \
@@ -315,10 +301,10 @@ CARGO_CRATES=	ahash-0.8.12 \
 		sprintz_sys-0.1.0 \
 		stable_deref_trait-1.2.1 \
 		static_assertions-1.1.0 \
-		statrs-0.18.0 \
 		strsim-0.11.1 \
 		syn-1.0.109 \
 		syn-2.0.113 \
+		syn-3.0.9 \
 		synstructure-0.13.2 \
 		tabled-0.18.0 \
 		tabled_derive-0.10.0 \
@@ -337,19 +323,15 @@ CARGO_CRATES=	ahash-0.8.12 \
 		tokio-macros-2.6.0 \
 		toml-0.8.23 \
 		toml_datetime-0.6.11 \
-		toml_datetime-1.1.1+spec-1.1.0 \
 		toml_edit-0.22.27 \
-		toml_edit-0.25.15+spec-1.1.0 \
-		toml_parser-1.1.3+spec-1.1.0 \
 		toml_write-0.1.2 \
 		tracing-0.1.44 \
 		tracing-attributes-0.1.31 \
 		tracing-core-0.1.36 \
-		turbo_pfor_sys-0.1.3 \
+		turbo_pfor_sys-0.1.4 \
 		twox-hash-1.6.3 \
 		unicode-ident-1.0.22 \
 		unicode-width-0.2.2 \
-		unindent-0.2.4 \
 		url-2.5.8 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
@@ -435,7 +417,6 @@ CARGO_CRATES=	ahash-0.8.12 \
 		windows_x86_64_msvc-0.52.6 \
 		windows_x86_64_msvc-0.53.1 \
 		winnow-0.7.14 \
-		winnow-1.0.4 \
 		wit-bindgen-0.46.0 \
 		witchcraft-metrics-1.0.1 \
 		writeable-0.6.2 \
@@ -450,7 +431,6 @@ CARGO_CRATES=	ahash-0.8.12 \
 		zerovec-0.11.5 \
 		zerovec-derive-0.11.2 \
 		zigzag-0.1.0 \
-		zmij-1.0.23 \
 		zstd-0.13.3 \
 		zstd-safe-7.2.4 \
 		zstd-sys-2.0.16+zstd.1.5.7
