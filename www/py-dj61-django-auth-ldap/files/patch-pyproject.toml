@@ -1,0 +1,13 @@
+Enable build with older versions of py-setuptools.
+
+--- pyproject.toml.orig	2026-10-26 16:19:19 UTC
++++ pyproject.toml
+@@ -9,7 +9,7 @@ maintainers = [
+ maintainers = [
+     { name="François Freitag", email="mail@franek.fr" },
+ ]
+-license = "BSD-3-Clause"
++license = { text="BSD" }
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",
+     "Environment :: Web Environment",
