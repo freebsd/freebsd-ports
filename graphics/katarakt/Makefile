@@ -1,6 +1,5 @@
 PORTNAME=	katarakt
-PORTVERSION=	0.2
-PORTREVISION=	34
+PORTVERSION=	0.3
 CATEGORIES=	graphics
 
 MAINTAINER=	kurt@kmk-computers.de
@@ -11,16 +10,16 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	a2x:textproc/asciidoc
-LIB_DEPENDS=	libpoppler-qt5.so:graphics/poppler-qt5
+LIB_DEPENDS=	libpoppler-qt6.so:graphics/poppler-qt6
 
-USES=		compiler:c++11-lang gl pkgconfig qmake qt:5
-USE_QT=		buildtools:build core gui xml dbus network widgets
+USES=		gl pkgconfig qmake qt:6
+USE_QT=		base
 USE_GL=		gl
 
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.cs.fau.de
 GL_ACCOUNT=	Qui_Sum
-GL_TAGNAME=	99735bc0b15b57d689b6c982d43b85ed1b40ef45
+GL_TAGNAME=	v0.3
 
 PLIST_FILES=	bin/katarakt \
 		share/man/man1/katarakt.1.gz
