@@ -1,7 +1,6 @@
 PORTNAME=	comentario
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.18.0
-PORTREVISION=	5
+DISTVERSION=	3.19.0
 CATEGORIES=	www
 
 MAINTAINER=	kbowling@FreeBSD.org
@@ -18,7 +17,7 @@ ONLY_FOR_ARCHS_REASON=	Frontend build dependencies include amd64-only native mod
 BUILD_DEPENDS=	openapi-generator:devel/openapi-generator \
 		swagger:devel/goswagger
 
-USES=		go:modules nodejs:24,build npm:yarn4
+USES=		go:1.27+,modules nodejs:24,build npm:yarn4
 USE_GITLAB=	yes
 
 USE_RC_SUBR=	comentario
@@ -30,6 +29,9 @@ GO_BUILDFLAGS+=	-ldflags="-s -w -X main.version=${DISTVERSION} -X main.date=${_B
 NPM_CACHE_SETUP_CMD=	${SH} -c \
 			"${NPM_CMDNAME} config set nodeLinker node-modules; ${NPM_CMDNAME} config set enableGlobalCache false; ${NPM_CMDNAME} config set cacheFolder './${NPM_MODULE_CACHE}'"
 NPM_PREFETCH_ARCHS=	amd64
+
+# The embedded Sass compiler has no FreeBSD executable.
+MAKE_ENV+=	NG_BUILD_SASS_EMBEDDED=0
 
 _BUILD_DATE=	$$(date -ur $$(${AWK} '/^TIMESTAMP/ {print $$3}' ${DISTINFO_FILE}) '+%FT%TZ')
 _SWAG_MOD=	github.com/go-openapi/swag@v0.23.0
@@ -77,7 +79,7 @@ pre-build:
 	@${ECHO_MSG} "===>  Generating frontend API client"
 	@${RM} -r ${WRKSRC}/frontend/generated-api
 	@openapi-generator generate \
-		--additional-properties=ngVersion=22.1.0 \
+		--additional-properties=ngVersion=22.2.3 \
 		-i ${WRKSRC}/resources/swagger/swagger.yml \
 		-g typescript-angular \
 		-o ${WRKSRC}/frontend/generated-api
