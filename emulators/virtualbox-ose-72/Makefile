@@ -130,9 +130,9 @@ PYTHON_USE=		PYTHON=distutils,noegginfo,noflavors
 PYTHON_CONFIGURE_OFF=	--disable-python
 PYTHON_VARS=		pydistutils_pkgname=vboxapi pydistutils_pkgversion=1.0
 QT6_IMPLIES=		X11
-QT6_USES=		gl qmake:no_env qt:6 xorg
+QT6_USES=		qmake:no_env qt:6 xorg
 QT6_USE=		QT=base,scxml,tools,translations \
-			XORG=xcb GL=gl
+			XORG=xcb
 QT6_CONFIGURE_OFF=	--disable-qt
 R0LOGGING_IMPLIES=	DEBUG
 TPM_LIB_DEPENDS=	libtpms.so:sysutils/libtpms
@@ -144,8 +144,9 @@ VDE_CONFIGURE_ON=	--enable-vde
 VNC_LIB_DEPENDS=	libvncserver.so:net/libvncserver
 VNC_CONFIGURE_ON=	--enable-vnc
 WEBSERVICE_BUILD_DEPENDS=	soapcpp2:devel/gsoap
-X11_USES=		sdl xorg
-X11_USE=		SDL=sdl XORG=x11,xcursor,xext,xinerama,xmu,xorgproto,xt
+X11_USES=		gl sdl xorg
+X11_USE=		GL=gl SDL=sdl \
+			XORG=x11,xcursor,xext,xinerama,xmu,xorgproto,xt
 X11_CONFIGURE_OFF=	--build-headless
 
 ENV=
