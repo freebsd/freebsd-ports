@@ -11,10 +11,7 @@ include/highs/io/HMPSIO.h
 include/highs/io/HMpsFF.h
 include/highs/io/HighsIO.h
 include/highs/io/LoadOptions.h
-include/highs/io/filereaderlp/builder.hpp
-include/highs/io/filereaderlp/def.hpp
-include/highs/io/filereaderlp/model.hpp
-include/highs/io/filereaderlp/reader.hpp
+include/highs/io/LpReader.h
 include/highs/ipm/IpxSolution.h
 include/highs/ipm/IpxWrapper.h
 include/highs/ipm/basiclu/basiclu.h
@@ -49,8 +46,10 @@ include/highs/ipm/hipo/factorhighs/CliqueStack.h
 include/highs/ipm/hipo/factorhighs/DataCollector.h
 include/highs/ipm/hipo/factorhighs/DenseFact.h
 include/highs/ipm/hipo/factorhighs/DgemmParallel.h
-include/highs/ipm/hipo/factorhighs/FactorHiGHS.h
-include/highs/ipm/hipo/factorhighs/FactorHiGHSSettings.h
+include/highs/ipm/hipo/factorhighs/FactorHighs.h
+include/highs/ipm/hipo/factorhighs/FactorHighsOptions.h
+include/highs/ipm/hipo/factorhighs/FactorHighsSettings.h
+include/highs/ipm/hipo/factorhighs/FactorHighs_c_api.h
 include/highs/ipm/hipo/factorhighs/Factorise.h
 include/highs/ipm/hipo/factorhighs/FormatHandler.h
 include/highs/ipm/hipo/factorhighs/HybridHybridFormatHandler.h
@@ -63,7 +62,7 @@ include/highs/ipm/hipo/factorhighs/Swaps.h
 include/highs/ipm/hipo/factorhighs/Symbolic.h
 include/highs/ipm/hipo/factorhighs/Timing.h
 include/highs/ipm/hipo/ipm/Control.h
-include/highs/ipm/hipo/ipm/FactorHiGHSSolver.h
+include/highs/ipm/hipo/ipm/FactorHighsSolver.h
 include/highs/ipm/hipo/ipm/Info.h
 include/highs/ipm/hipo/ipm/IpmData.h
 include/highs/ipm/hipo/ipm/Iterate.h
@@ -75,6 +74,7 @@ include/highs/ipm/hipo/ipm/Parameters.h
 include/highs/ipm/hipo/ipm/PreProcess.h
 include/highs/ipm/hipo/ipm/Solver.h
 include/highs/ipm/hipo/ipm/Status.h
+include/highs/ipm/hipo/ipm/UpLookingSolver.h
 include/highs/ipm/ipx/basiclu_kernel.h
 include/highs/ipm/ipx/basiclu_wrapper.h
 include/highs/ipm/ipx/basis.h
@@ -125,8 +125,10 @@ include/highs/lp_data/HighsInfoDebug.h
 include/highs/lp_data/HighsLp.h
 include/highs/lp_data/HighsLpSolverObject.h
 include/highs/lp_data/HighsLpUtils.h
+include/highs/lp_data/HighsMipSolverObject.h
 include/highs/lp_data/HighsModelUtils.h
 include/highs/lp_data/HighsOptions.h
+include/highs/lp_data/HighsQpSolverObject.h
 include/highs/lp_data/HighsRanging.h
 include/highs/lp_data/HighsRunData.h
 include/highs/lp_data/HighsSolution.h
@@ -145,6 +147,7 @@ include/highs/mip/HighsGFkSolve.h
 include/highs/mip/HighsImplications.h
 include/highs/mip/HighsLpAggregator.h
 include/highs/mip/HighsLpRelaxation.h
+include/highs/mip/HighsMachineSchedSeparator.h
 include/highs/mip/HighsMipSolver.h
 include/highs/mip/HighsMipSolverData.h
 include/highs/mip/HighsMipWorker.h
@@ -198,12 +201,17 @@ include/highs/pdlp/hipdlp/solver_results.hpp
 include/highs/pdqsort/pdqsort.h
 include/highs/presolve/HPresolve.h
 include/highs/presolve/HPresolveAnalysis.h
+include/highs/presolve/HPresolveCliqueTable.h
+include/highs/presolve/HPresolveInitialSweep.h
+include/highs/presolve/HPresolveUtils.h
 include/highs/presolve/HighsPostsolveStack.h
 include/highs/presolve/HighsSymmetry.h
 include/highs/presolve/ICrash.h
 include/highs/presolve/ICrashUtil.h
 include/highs/presolve/ICrashX.h
 include/highs/presolve/PresolveComponent.h
+include/highs/presolve/PresolveTimer.h
+include/highs/qpsolver/QpAsmWrapper.h
 include/highs/qpsolver/a_asm.hpp
 include/highs/qpsolver/a_quass.hpp
 include/highs/qpsolver/basis.hpp
@@ -216,7 +224,6 @@ include/highs/qpsolver/feasibility_highs.hpp
 include/highs/qpsolver/gradient.hpp
 include/highs/qpsolver/instance.hpp
 include/highs/qpsolver/matrix.hpp
-include/highs/qpsolver/perturbation.hpp
 include/highs/qpsolver/pricing.hpp
 include/highs/qpsolver/qpconst.hpp
 include/highs/qpsolver/qpvector.hpp
@@ -242,8 +249,6 @@ include/highs/simplex/HighsSimplexAnalysis.h
 include/highs/simplex/SimplexConst.h
 include/highs/simplex/SimplexStruct.h
 include/highs/simplex/SimplexTimer.h
-include/highs/test_kkt/DevKkt.h
-include/highs/test_kkt/KktCh2.h
 include/highs/util/FactorTimer.h
 include/highs/util/HFactor.h
 include/highs/util/HFactorConst.h
@@ -272,6 +277,7 @@ include/highs/util/HighsSparseMatrix.h
 include/highs/util/HighsSparseVectorSum.h
 include/highs/util/HighsSplay.h
 include/highs/util/HighsTimer.h
+include/highs/util/HighsType.h
 include/highs/util/HighsUtils.h
 include/highs/util/stringutil.h
 include/highs/zstr/strict_fstream.hpp
@@ -284,5 +290,6 @@ lib/cmake/highs/highs-targets.cmake
 lib/cmake/highs/highs-targets.cmake.bak
 lib/libhighs.so
 lib/libhighs.so.1
-lib/libhighs.so.1.15.1
+lib/libhighs.so.1.16.0
+lib/libhighs_extras.so
 libdata/pkgconfig/highs.pc
