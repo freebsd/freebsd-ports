@@ -1,3 +1,55 @@
+  <vuln vid="f8802557-dea7-11f1-bf46-901b0e13f1a0">
+    <topic>X.Org X server and Xwayland -- Multiple vulnerabilities</topic>
+    <affects>
+<package>
+<name>xorg-server</name>
+<name>xephyr</name>
+<name>xorg-vfbserver</name>
+<range><lt>21.1.26,1</lt></range>
+</package>
+<package>
+<name>xorg-nestserver</name>
+<range><lt>21.1.26,2</lt></range>
+</package>
+<package>
+<name>xwayland</name>
+<range><lt>24.1.15,1</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>X.Org reports:</p>
+	<blockquote cite="https://lists.x.org/archives/xorg-announce/2026-November/003759.html">
+	  <p>
+	    CVE-2026-109091: X.Org Server EDID DS_RANGES Out-Of-Bounds Write
+	    CVE-2026-109092: X.Org Server XvShmPutImage Shared-Memory Bounds Overflow
+	    CVE-2026-109093: X.Org Server XTestFakeInput Valuator Stack Out-Of-Bounds Write
+	    CVE-2026-109094: X.Org Server XRes QueryResourceBytes Swap Path Size Overflow
+	    CVE-2026-109095: X.Org Server glamor Xv Image Size Integer Overflow
+	    CVE-2026-109096: X.Org Server XvPutImage Negative Image Size Length Bypass
+	    CVE-2026-109903: X.Org Server XvQueryImageAttributes Negative Size Reply
+	    CVE-2026-109904: X.Org Server XRes QueryClientIds Request Size Overflow
+	  </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-109091</cvename>
+      <cvename>CVE-2026-109092</cvename>
+      <cvename>CVE-2026-109093</cvename>
+      <cvename>CVE-2026-109094</cvename>
+      <cvename>CVE-2026-109095</cvename>
+      <cvename>CVE-2026-109096</cvename>
+      <cvename>CVE-2026-109903</cvename>
+      <cvename>CVE-2026-109904</cvename>
+      <url>https://lists.x.org/archives/xorg-announce/2026-November/003759.html</url>
+    </references>
+    <dates>
+      <discovery>2026-11-10</discovery>
+      <entry>2026-11-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1a672925-de93-11f1-9824-6cc21735f730">
     <topic>PostgreSQL -- multiple vulnerabilities</topic>
     <affects>
