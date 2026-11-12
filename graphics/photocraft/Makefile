@@ -1,6 +1,6 @@
 PORTNAME=	photocraft
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.22.0
+DISTVERSION=	0.23.0
 CATEGORIES=	graphics
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -291,6 +291,7 @@ CARGO_CRATES=	accesskit-0.25.1 \
 		heic-rs-0.1.4 \
 		hermit-abi-0.5.3 \
 		hex-0.4.3 \
+		hmac-0.12.1 \
 		http-1.5.0 \
 		http-body-1.1.0 \
 		http-body-util-0.1.5 \
@@ -889,8 +890,9 @@ CARGO_CRATES=	accesskit-0.25.1 \
 		zvariant_derive-5.15.0 \
 		zvariant_utils-4.2.0 \
 		craft-winprint-gdi@git+https://github.com/storytold/winprint.rs?rev=64e7afd4d1483512385012c340ecaaaf0f3beb7f\#64e7afd4d1483512385012c340ecaaaf0f3beb7f \
-		winprint@git+https://github.com/storytold/winprint.rs?rev=51934db382f225454cf152a8657eb03789be63c4\#51934db382f225454cf152a8657eb03789be63c4 \
-		craft-docpath,craft-fonts-build,craft-i18n,craft-jpeg,craft-pdf,craft-print,craft-ui,craft-update,hayro,hayro-interpret,hayro-jbig2,hayro-syntax@git+https://github.com/storytold/craft-libs?rev=1b34eba41e62138fc2438d2734523b302840b45d\#1b34eba41e62138fc2438d2734523b302840b45d \
+		craft-docpath,craft-fonts-build,craft-i18n,craft-jpeg,craft-pdf,craft-print,craft-ui,craft-update,hayro,hayro-interpret,hayro-jbig2,hayro-syntax@git+https://github.com/storytold/craft-libs?rev=6e03f65bf45181db77ba6229716e6624db9eb25b\#6e03f65bf45181db77ba6229716e6624db9eb25b \
+		craft-heif@git+https://github.com/storytold/craft-libs?rev=081078bb1b44aeedfa5bef3d4f13d978dc77510a\#081078bb1b44aeedfa5bef3d4f13d978dc77510a \
+		winprint@git+https://github.com/storytold/winprint.rs?rev=bc06a7c48b768eb27a828c7986f6d2868b245ee0\#bc06a7c48b768eb27a828c7986f6d2868b245ee0 \
 		ecolor,eframe,egui,egui-wgpu,egui-winit,egui_extras,egui_glow,egui_kittest,emath,epaint,epaint_default_fonts@git+https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a\#6d518fc799681571963842f95b55a6b68431b15a \
 		craft-pcraft-format@git+https://github.com/storytold/craft-libs?rev=b8f7d93b00dfb8f172938f3d2d796ae62dcfe123\#b8f7d93b00dfb8f172938f3d2d796ae62dcfe123 \
 		winit@git+https://github.com/storytold/winit.git?rev=a517b3846ee8457d84ee4975110bfda6797c44dc\#a517b3846ee8457d84ee4975110bfda6797c44dc
@@ -911,7 +913,7 @@ AVIF_VARS=	CARGO_FEATURES+=photocraft-codecs/avif
 HEIF_VARS=	CARGO_FEATURES+=heif
 
 APP_ID=		ai.storyteller.photocraft
-RELEASE_DATE=	2026-11-09
+RELEASE_DATE=	2026-11-11
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|@VERSION@|${DISTVERSION}|; s|@DATE@|${RELEASE_DATE}|' \
