@@ -1,17 +1,8 @@
---- setup.py.orig	2024-12-11 14:48:27 UTC
+--- setup.py.orig	2026-11-03 15:12:20 UTC
 +++ setup.py
-@@ -2,7 +2,7 @@ from setuptools import setup
- 
- from setuptools import setup
- 
--VERSION = "0.5"
-+VERSION = "0.5.1"
- 
- setup(
-     name="iniparse",
-@@ -38,17 +38,4 @@ use.""",
-         "Topic :: Software Development :: Libraries :: Python Modules",
+@@ -37,17 +37,4 @@ use.""",
      ],
+     python_requires=">=3.9",
      packages=["iniparse"],
 -    data_files=[
 -        (

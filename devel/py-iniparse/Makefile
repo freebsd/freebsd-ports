@@ -1,7 +1,7 @@
 PORTNAME=	iniparse
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.3
 CATEGORIES=	devel python
-#MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -20,9 +20,5 @@ USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	candlepin
-GH_PROJECT=	python-iniparse
 
 .include <bsd.port.mk>
