@@ -5,7 +5,7 @@ DISTVERSION=	3.2.1.1
 # py-openimageio's PORTREVISION.
 # Also, just to be on the safe side, when resetting,
 # best keep PORTREVISION?=	0.
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES?=	graphics multimedia
 
 MAINTAINER?=	FreeBSD@Shaneware.biz
@@ -40,6 +40,11 @@ GH_ACCOUNT=	AcademySoftwareFoundation
 GH_PROJECT=	OpenImageIO
 
 CMAKE_ARGS=	-DCMAKE_CXX_STANDARD:INTEGER=17 # OpenVDB uses the C++17 STL
+# Limit SIMD to basic instruction set.
+# Set CPUTYPE for implicitly enable the all supported SIMD instructions.
+CMAKE_ARGS+=		${CMAKE_ARGS_${ARCH}}
+CMAKE_ARGS_amd64=	-DUSE_SIMD:STRING=sse2
+CMAKE_ARGS_i386=	-DUSE_SIMD:STRING=0
 # feature std::tuple_size_v; since the slave port py-openimageio excludes
 # options - this is a global line here
 CMAKE_ON=	BUILD_SHARED_LIBS USE_EXTERNAL_PUGIXML
