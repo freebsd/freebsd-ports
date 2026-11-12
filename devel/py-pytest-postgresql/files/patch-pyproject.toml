@@ -3,7 +3,7 @@
 @@ -1,6 +1,6 @@
  [build-system]
 -build-backend = "uv_build"
--requires = ["uv-build>=0.11,<0.13"]
+-requires = ["uv-build>=0.11,<0.14"]
 +requires = ["flit-core >= 3.12"]
 +build-backend = "flit_core.buildapi"
  
@@ -14,7 +14,7 @@
      "mirakuru>=2.6.0",
      "packaging",
 -    "port-for>=0.7.3",
-+    "port-for>=0.4",
++    "port-for>=0.6",
      "psycopg>=3.0.0",
-     "pytest>=8.2",
+     "pytest>=8.4",
  ]

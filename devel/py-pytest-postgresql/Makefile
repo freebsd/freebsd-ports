@@ -1,5 +1,5 @@
 PORTNAME=	pytest-postgresql
-PORTVERSION=	9.1.1
+PORTVERSION=	10.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.lesser
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>=3.12:devel/py-flit-core@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mirakuru>=2.6.0:devel/py-mirakuru@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=0:devel/py-packaging@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}port-for>=0.4:net/py-port-for@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}port-for>=0.6:net/py-port-for@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psycopg>=3.0.0:databases/py-psycopg@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest>=8.2,1:devel/py-pytest@${PY_FLAVOR}
 

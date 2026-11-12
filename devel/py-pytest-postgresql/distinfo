@@ -1,3 +1,3 @@
-TIMESTAMP = 1793587614
-SHA256 (pytest_postgresql-9.1.1.tar.gz) = 9a4673870bde284ed200a7efb496ad7a90024348231f0d5be0d72946423a220f
-SIZE (pytest_postgresql-9.1.1.tar.gz) = 46917
+TIMESTAMP = 1794364404
+SHA256 (pytest_postgresql-10.0.0.tar.gz) = fff4ccd1edd8131ae528fc6236eb11c3502678a2870624fb0ea304e6268dee8d
+SIZE (pytest_postgresql-10.0.0.tar.gz) = 48441
