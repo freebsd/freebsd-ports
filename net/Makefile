@@ -1595,6 +1595,7 @@
     SUBDIR += stc
     SUBDIR += stone
     SUBDIR += storj
+    SUBDIR += stu
     SUBDIR += stund
     SUBDIR += subnetcalc
     SUBDIR += suckblow
