@@ -1,11 +1,11 @@
 PORTNAME=	corefoundation
-PORTVERSION=	0.3.13
+PORTVERSION=	0.3.19
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Wrapper for macOS Core Foundation Framework
-WWW=		https://github.com/chef/cheffish
+WWW=		https://github.com/chef/corefoundation
 
 LICENSE=	MIT
 
