@@ -1,6 +1,6 @@
 PORTNAME=	license-acceptance
 PORTVERSION=	2.1.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-pastel>=0.7<1:devel/rubygem-pastel \
-		rubygem-tomlrb>=1.2<3.0:textproc/rubygem-tomlrb \
+		rubygem-tomlrb2>=1.2<3.0:textproc/rubygem-tomlrb2 \
 		rubygem-tty-box>=0.6<1:devel/rubygem-tty-box \
 		rubygem-tty-prompt>=0.20<1:devel/rubygem-tty-prompt
 
