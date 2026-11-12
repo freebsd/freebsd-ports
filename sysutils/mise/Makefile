@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2026.11.6
+DISTVERSION=	2026.11.7
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -88,16 +88,16 @@ CARGO_CRATES=	addr2line-0.27.1 \
 		aube-util-2.10.0 \
 		aube-workspace-2.10.0 \
 		autocfg-1.5.1 \
-		aws-config-1.13.1 \
+		aws-config-1.13.2 \
 		aws-credential-types-1.3.1 \
 		aws-lc-fips-sys-0.14.4 \
 		aws-lc-rs-1.19.0 \
 		aws-lc-sys-0.47.0 \
-		aws-runtime-1.10.3 \
-		aws-sdk-s3-1.158.0 \
-		aws-sdk-sso-1.120.0 \
-		aws-sdk-ssooidc-1.122.0 \
-		aws-sdk-sts-1.125.0 \
+		aws-runtime-1.10.4 \
+		aws-sdk-s3-1.159.0 \
+		aws-sdk-sso-1.121.0 \
+		aws-sdk-ssooidc-1.123.0 \
+		aws-sdk-sts-1.126.0 \
 		aws-sigv4-1.6.5 \
 		aws-smithy-async-1.3.1 \
 		aws-smithy-checksums-0.65.1 \
@@ -135,7 +135,7 @@ CARGO_CRATES=	addr2line-0.27.1 \
 		bit-set-0.11.1 \
 		bit-vec-0.8.0 \
 		bit-vec-0.9.1 \
-		bit-vec-0.10.1 \
+		bit-vec-0.10.2 \
 		bitfields-1.0.3 \
 		bitfields-impl-1.0.3 \
 		bitflags-1.3.2 \
@@ -214,7 +214,7 @@ CARGO_CRATES=	addr2line-0.27.1 \
 		console-0.16.6 \
 		const-hex-1.19.3 \
 		const-oid-0.9.6 \
-		const-oid-0.10.2 \
+		const-oid-0.10.3 \
 		constant_time_eq-0.4.2 \
 		constant_time_eq-0.6.1 \
 		contracts-0.6.11 \
@@ -717,7 +717,7 @@ CARGO_CRATES=	addr2line-0.27.1 \
 		pkcs1-0.7.5 \
 		pkcs8-0.10.2 \
 		pkg-config-0.3.34 \
-		platforms-4.2.1 \
+		platforms-4.3.0 \
 		plist-1.10.3 \
 		pluralizer-0.5.0 \
 		poly1305-0.8.0 \
@@ -740,8 +740,8 @@ CARGO_CRATES=	addr2line-0.27.1 \
 		proc-macro2-1.0.107 \
 		prodash-31.0.1 \
 		proptest-1.12.0 \
-		prost-0.14.4 \
-		prost-derive-0.14.4 \
+		prost-0.14.5 \
+		prost-derive-0.14.5 \
 		psm-0.1.32 \
 		ptr_meta-0.3.2 \
 		ptr_meta_derive-0.3.2 \
@@ -829,7 +829,7 @@ CARGO_CRATES=	addr2line-0.27.1 \
 		rustix-1.1.6 \
 		rustls-0.23.46 \
 		rustls-native-certs-0.8.5 \
-		rustls-pki-types-1.15.1 \
+		rustls-pki-types-1.16.0 \
 		rustls-platform-verifier-0.7.1 \
 		rustls-platform-verifier-android-0.2.0 \
 		rustls-webpki-0.103.16 \
@@ -1072,7 +1072,7 @@ CARGO_CRATES=	addr2line-0.27.1 \
 		wasmtimer-0.4.5 \
 		web-sys-0.3.107 \
 		web-time-1.1.0 \
-		webpki-root-certs-1.0.11 \
+		webpki-root-certs-1.0.12 \
 		which-8.0.6 \
 		widestring-1.2.1 \
 		winapi-0.3.9 \
@@ -1166,7 +1166,7 @@ CARGO_CRATES=	addr2line-0.27.1 \
 		zerotrie-0.2.5 \
 		zerovec-0.11.9 \
 		zerovec-derive-0.11.7 \
-		zip-9.5.0 \
+		zip-9.5.1 \
 		zipsign-api-0.2.2 \
 		zlib-rs-0.6.8 \
 		zmij-1.0.23 \
