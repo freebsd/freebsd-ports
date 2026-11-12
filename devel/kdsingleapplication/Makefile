@@ -3,7 +3,7 @@ DISTVERSION=	1.2.1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/KDAB/KDSingleApplication/releases/download/v${DISTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	k@FreeBSD.org
 COMMENT=	KDAB's helper class for single-instance policy applications
 WWW=		https://github.com/KDAB/KDSingleApplication
 
