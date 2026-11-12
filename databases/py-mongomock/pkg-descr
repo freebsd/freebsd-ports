@@ -1,0 +1,4 @@
+Mongomock is a small library to help testing Python code that interacts
+with MongoDB via Pymongo. It implements a fake in-memory MongoDB server
+and provides a subset of PyMongo's API, allowing tests to run without a
+running MongoDB instance.
