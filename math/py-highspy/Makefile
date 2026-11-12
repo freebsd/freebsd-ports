@@ -1,5 +1,5 @@
 PORTNAME=	highspy
-DISTVERSION=	1.15.1
+DISTVERSION=	1.16.0
 CATEGORIES=	math
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,12 +20,8 @@ USES=		cmake:indirect compiler:c++11-lang python
 USE_PYTHON=	pep517 autoplist pytest
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_ARGS=	--disable-plugin-autoload
 
-# tests as of 1.15.1: about failures see https://github.com/ERGO-Code/HiGHS/issues/3265
-# Results (1.33s):
-#       74 passed
-#        1 failed
-#          - highspy/tests/test_highspy.py:1312 TestHighsPy.test_user_interrupts
-#        1 error
+# tests as of 1.16.0: 77 passed, 2 skipped in 0.23s
 
 .include <bsd.port.mk>
