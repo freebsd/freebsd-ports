@@ -1,9 +1,26 @@
---- setup.py.orig	2026-09-29 06:56:52 UTC
-+++ setup.py
-@@ -51,117 +51,117 @@ DEPENDENCIES = [
- ]
+--- pyproject.toml.orig	2026-10-27 11:33:38 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=78.1.1"]
++requires = ["setuptools>=61"]
+ build-backend = "setuptools.build_meta"
  
- DEPENDENCIES = [
+ [project]
+@@ -8,8 +8,7 @@ requires-python = ">=3.10.0"
+ description = "Microsoft Azure Command-Line Tools"
+ readme = { file = "README.rst", content-type = "text/x-rst" }
+ requires-python = ">=3.10.0"
+-license = "MIT"
+-license-files = ["LICENSE.txt"]
++license = { text = "MIT" }
+ authors = [{ name = "Microsoft Corporation", email = "azpycli@microsoft.com" }]
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",
+@@ -24,117 +23,117 @@ dependencies = [
+     "Programming Language :: Python :: 3.14",
+ ]
+ dependencies = [
 -    "antlr4-python3-runtime~=4.13.1",
 -    'azure-appconfiguration==1.10.0b1',
 -    'azure-ai-projects~=1.0.0',
@@ -12,7 +29,7 @@
 +    'azure-appconfiguration>=1.10.0b1',
 +    'azure-ai-projects>=1.0.0',
 +    'azure-batch>=15.0.0b1',
-     'azure-cli-core=={}'.format(VERSION),
+     'azure-cli-core==2.92.0',
 -    'azure-cosmos~=3.0,>=3.0.2',
 -    'azure-data-tables==12.4.0',
 +    'azure-cosmos>=3.0.2',
@@ -34,12 +51,12 @@
 -    'azure-mgmt-billing==6.0.0',
 -    'azure-mgmt-botservice~=2.0.0b3',
 -    'azure-mgmt-cdn==12.0.0',
--    'azure-mgmt-cognitiveservices==15.0.0b4',  # 15.0.0b4 version supports compute operations which is in PrPr, pls don't remove it without consulting our team
+-    'azure-mgmt-cognitiveservices==15.0.0b6', # Supports compute and adapter deployment preview operations; consult the team before changing.
 -    'azure-mgmt-compute~=34.1.0',
 -    'azure-mgmt-containerinstance==10.2.0b1',
 -    'azure-mgmt-containerregistry==15.1.0b3',
 -    'azure-mgmt-containerregistrytasks==1.0.0b1',
--    'azure-mgmt-containerservice~=41.6.0',
+-    'azure-mgmt-containerservice~=41.8.0',
 -    'azure-mgmt-cosmosdb==10.0.0',
 -    'azure-mgmt-datalake-store~=1.1.0b1',
 -    'azure-mgmt-datamigration~=10.0.0',
@@ -62,7 +79,7 @@
 -    'azure-mgmt-msi~=7.1.0',
 -    'azure-mgmt-netapp~=10.1.0',
 -    'azure-mgmt-policyinsights==1.1.0b4',
--    'azure-mgmt-postgresqlflexibleservers==3.0.0b2',
+-    'azure-mgmt-postgresqlflexibleservers==3.0.0b3',
 -    'azure-mgmt-privatedns~=1.0.0',
 -    'azure-mgmt-rdbms==10.2.0b17',
 -    'azure-mgmt-mysqlflexibleservers==1.1.0b3',
@@ -117,12 +134,12 @@
 +    'azure-mgmt-billing>=6.0.0',
 +    'azure-mgmt-botservice>=2.0.0b3',
 +    'azure-mgmt-cdn>=12.0.0',
-+    'azure-mgmt-cognitiveservices>=15.0.0b4',  # 15.0.0b4 version supports compute operations which is in PrPr, pls don't remove it without consulting our team
++    'azure-mgmt-cognitiveservices>=15.0.0b6', # Supports compute and adapter deployment preview operations; consult the team before changing.
 +    'azure-mgmt-compute>=34.1.0',
 +    'azure-mgmt-containerinstance>=10.2.0b1',
 +    'azure-mgmt-containerregistry>=15.1.0b3',
 +    'azure-mgmt-containerregistrytasks>=1.0.0b1',
-+    'azure-mgmt-containerservice>=41.6.0',
++    'azure-mgmt-containerservice>=41.8.0',
 +    'azure-mgmt-cosmosdb>=10.0.0',
 +    'azure-mgmt-datalake-store>=1.1.0b1',
 +    'azure-mgmt-datamigration>=10.0.0',
@@ -200,7 +217,7 @@
 +    'PyNaCl>=1.5.0,<1.7',
 +    'scp>=0.13.2',
      'semver~=3.0',
-     'six>=1.10.0',  # six is still used by countless extensions
+     'six>=1.10.0', # six is still used by countless extensions
 -    'sshtunnel~=0.1.4',
 +    'sshtunnel>=0.1.4',
      # Even though knack already depends on tabulate, profile module directly uses it for interactive subscription
@@ -208,9 +225,16 @@
      'tabulate',
      'urllib3',
 -    'websocket-client~=1.8.0',
--    'xmltodict~=0.12'
+-    'xmltodict~=0.12',
 +    'websocket-client>=1.8.0',
-+    'xmltodict>=0.12'
++    'xmltodict>=0.12',
  ]
  
- with open('README.rst', 'r', encoding='utf-8') as f:
+ [project.urls]
+@@ -183,4 +182,4 @@ exclude = ["*.tests", "*.tests.*", "tests.*", "tests",
+ ]
+ 
+ [tool.setuptools.cmdclass]
+-build_py = "azure_cli_bdist_wheel.azure_cli_build_py"
+\ No newline at end of file
++build_py = "azure_cli_bdist_wheel.azure_cli_build_py"
