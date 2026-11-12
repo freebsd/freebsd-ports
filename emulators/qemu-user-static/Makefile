@@ -12,7 +12,7 @@ WWW=		https://www.qemu.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-ONLY_FOR_ARCHS=		amd64 powerpc powerpc64
+ONLY_FOR_ARCHS=		amd64 powerpc powerpc64 powerpc64le
 CONFLICTS_INSTALL=	qemu-user-static-devel
 
 USES=		bison compiler:c11 cpe elfctl gmake perl5 pkgconfig python:build
@@ -41,7 +41,7 @@ CONFIGURE_ARGS+=	--extra-cflags=-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--disable-libssh2
 
 QEMU_TARGETS=		i386-bsd-user sparc-bsd-user arm-bsd-user mips-bsd-user mipsel-bsd-user ppc-bsd-user
-.if ${ARCH} == "amd64" || ${ARCH} == "powerpc64"
+.if ${ARCH} == "amd64" || ${ARCH:Mpowerpc64*}
 QEMU_TARGETS+=		x86_64-bsd-user riscv64-bsd-user sparc64-bsd-user mips64-bsd-user mips64el-bsd-user ppc64-bsd-user aarch64-bsd-user
 PLIST_SUB+=	64BIT=""
 .else
@@ -68,7 +68,7 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX} --cc=${CC} --enable-docs \
 	--disable-capstone \
 	--extra-cflags=-I${WRKSRC}\ -I${LOCALBASE}/include\ -DPREFIX=\\\"\"${PREFIX}\\\"\"
 
-QEMU_ARCH=	${ARCH:C/amd64/x86_64/:C/powerpc/ppc/}
+QEMU_ARCH=	${ARCH:C/amd64/x86_64/:C/powerpc64.*/ppc64/:C/powerpc/ppc/}
 MAKE_ARGS+=	ARCH=${QEMU_ARCH}
 
 post-install:
