@@ -1,5 +1,5 @@
 PORTNAME=	nghttp3
-PORTVERSION=	1.18.0
+PORTVERSION=	1.19.0
 CATEGORIES=	www net
 MASTER_SITES=	https://github.com/ngtcp2/nghttp3/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	lib
