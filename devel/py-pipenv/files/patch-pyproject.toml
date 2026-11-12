@@ -1,24 +1,24 @@
---- pyproject.toml.orig	2026-10-28 22:12:13 UTC
+--- pyproject.toml.orig	2026-11-09 03:17:58 UTC
 +++ pyproject.toml
 @@ -1,7 +1,7 @@ requires = [
  [build-system]
  build-backend = "setuptools.build_meta"
  requires = [
--  "setuptools>=67",
+-  "setuptools>=84.1.0",
 +  "setuptools>=61",
  ]
  
  [project]
-@@ -31,7 +31,7 @@ dependencies = [
- dependencies = [
+@@ -32,7 +32,7 @@ dependencies = [
    "certifi",
+   "filelock>=4.2.1",
    "packaging>=22",
--  "setuptools>=67",
+-  "setuptools>=84.1.0",
 +  "setuptools>=61",
-   "virtualenv>=21.14.6",
+   "virtualenv>=21.14.9",
  ]
  optional-dependencies.completion = [
-@@ -64,7 +64,7 @@ where = [ "." ]
+@@ -65,7 +65,7 @@ where = [ "." ]
  
  [tool.setuptools.packages.find]
  where = [ "." ]
