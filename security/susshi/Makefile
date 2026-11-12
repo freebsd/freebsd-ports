@@ -1,6 +1,6 @@
 PORTNAME=	susshi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.25.4
+DISTVERSION=	1.0.0
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -92,7 +92,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		gethostname-1.1.0 \
 		getrandom-0.2.17 \
 		getrandom-0.4.1 \
-		granit-parser-2.0.0 \
+		granit-parser-2.1.0 \
 		hashbrown-0.15.5 \
 		hashbrown-0.16.1 \
 		hashbrown-0.17.1 \
@@ -116,10 +116,10 @@ CARGO_CRATES=	adler2-2.0.1 \
 		itoa-1.0.17 \
 		kasuari-0.4.11 \
 		leb128fmt-0.1.0 \
-		libc-0.2.189 \
+		libc-0.2.191 \
 		libm-0.2.16 \
 		libredox-0.1.12 \
-		libssh2-sys-0.3.3 \
+		libssh2-sys-0.3.4 \
 		libz-sys-1.1.32 \
 		line-clipping-0.3.5 \
 		linux-raw-sys-0.12.1 \
@@ -188,7 +188,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		self_cell-1.2.2 \
 		semver-1.0.27 \
 		serde-1.0.229 \
-		serde-saphyr-2.0.0 \
+		serde-saphyr-2.1.1 \
 		serde_core-1.0.229 \
 		serde_derive-1.0.229 \
 		serde_json-1.0.154 \
@@ -201,7 +201,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		simd-adler32-0.3.9 \
 		simdutf8-0.1.5 \
 		smallvec-1.15.1 \
-		ssh2-0.9.6 \
+		ssh2-0.9.7 \
 		static_assertions-1.1.0 \
 		strsim-0.11.1 \
 		strum-0.28.0 \
@@ -233,8 +233,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		unicode-width-0.2.2 \
 		unicode-xid-0.2.6 \
 		untrusted-0.9.0 \
-		ureq-3.4.2 \
-		ureq-proto-0.6.4 \
+		ureq-3.5.1 \
+		ureq-proto-0.7.1 \
 		utf8-zero-0.8.1 \
 		utf8parse-0.2.2 \
 		vcpkg-0.2.15 \
