@@ -1,6 +1,6 @@
 PORTNAME=	fooyin
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.14.1
+DISTVERSION=	0.15.1
 CATEGORIES=	audio multimedia
 
 MAINTAINER=	diizzy@FreeBSD.org
@@ -25,7 +25,7 @@ USES=		cmake compiler:c++23-lang desktop-file-utils gl libarchive \
 USE_GL=		opengl
 USE_QT=		base sqldriver-sqlite svg tools:build
 USE_SDL=	sdl2
-USE_XORG=	x11
+USE_XORG=	x11 xcb
 
 USE_GITHUB=	yes
 
