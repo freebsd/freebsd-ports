@@ -1,5 +1,5 @@
 PORTNAME=	Router-Simple
-PORTVERSION=	0.17
+PORTVERSION=	0.18
 CATEGORIES=	www net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TOKUHIROM
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Class-Accessor-Lite>=0.05:devel/p5-Class-Accessor-Lite
 
 USES=		perl5
-USE_PERL5=	modbuild
+USE_PERL5=	modbuildtiny
 
 NO_ARCH=	yes
 
