@@ -1,5 +1,6 @@
 PORTNAME=	premailer-rails
 PORTVERSION=	1.12.0
+PORTREVISION=	1
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails-gitlab
@@ -13,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-actionmailer-gitlab>=3:mail/rubygem-actionmailer-gitlab \
 		rubygem-net-smtp>=0:mail/rubygem-net-smtp \
-		rubygem-premailer>=1.7.9<2:mail/rubygem-premailer
+		rubygem-premailer-gitlab>=1.7.9<2:mail/rubygem-premailer-gitlab
 
 USES=		gem
 
