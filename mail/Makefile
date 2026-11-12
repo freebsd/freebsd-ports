@@ -646,6 +646,7 @@
     SUBDIR += rubygem-net-smtp
     SUBDIR += rubygem-pony
     SUBDIR += rubygem-premailer
+    SUBDIR += rubygem-premailer-gitlab
     SUBDIR += rubygem-premailer-rails
     SUBDIR += rubygem-premailer-rails-rails-gitlab
     SUBDIR += rubygem-premailer-rails-rails5
