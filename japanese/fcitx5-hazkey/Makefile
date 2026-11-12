@@ -5,6 +5,9 @@ CATEGORIES=	japanese textproc
 MASTER_SITES=	LOCAL/tagattie/${PORTNAME}:swiftpackages
 DISTFILES=	${PORTNAME}-${DISTVERSION}-swift-packages${EXTRACT_SUFX}:swiftpackages
 
+PATCH_SITES=	https://github.com/ggml-org/llama.cpp/commit/
+PATCHFILES=	2391506ace6abb56186def40c7107fdfa694ed55.patch?full_index=1:-p1
+
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Hazkey input method for fcitx5
 WWW=		https://hazkey.hiira.dev/
@@ -33,6 +36,8 @@ USE_GL=		gl opengl
 USE_QT=		base tools:build
 
 BINARY_ALIAS=	swift=${LOCALBASE}/swift6/usr/local/bin/swift
+
+PATCH_DIST_ARGS=	-d ${WRKSRC}/hazkey-server/llama.cpp
 
 post-extract:
 	@${MKDIR} ${WRKDIR}/.build/hazkey-server/swift-build
