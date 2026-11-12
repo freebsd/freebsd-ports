@@ -764,6 +764,7 @@
     SUBDIR += thunderbird
     SUBDIR += thunderbird-dictionaries
     SUBDIR += thunderbird-esr
+    SUBDIR += tidemail
     SUBDIR += tlb
     SUBDIR += tmpmail
     SUBDIR += tpop3d
