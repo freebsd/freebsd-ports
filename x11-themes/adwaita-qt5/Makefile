@@ -1,11 +1,15 @@
 PORTNAME=	adwaita-qt
 DISTVERSION=	1.4.2
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 PKGNAMESUFFIX=	${_qt_version}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adwaita theme for Qt applications
 WWW=		https://github.com/MartinBriza/adwaita-qt
+
+DEPRECATED=	Abandoned, upstream repo was archived
+EXPIRATION_DATE=	2026-11-30
 
 LICENSE=	GPLv2 LGPL20
 LICENSE_COMB=	multi
