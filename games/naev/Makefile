@@ -8,6 +8,9 @@ MASTER_SITES=	https://codeberg.org/naev/naev/releases/download/v${PORTVERSION}/:
 DISTFILES=	${PORTNAME}-${PORTVERSION}-source${EXTRACT_SUFX}:naev_source \
 		${PORTNAME}-cache-${PORTVERSION}.tar.gz:naev_cache
 
+PATCH_SITES=	https://github.com/vhspace/sdl3-rs/commit/
+PATCHFILES=	608c5b02e01e08e0616a35eed1d2eff343332c63.patch?full_index=1:-p1
+
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	2D action/RPG space game
 WWW=		https://naev.org/
@@ -58,6 +61,7 @@ MESON_ARGS=	-Ddocs_c=disabled -Ddocs_lua=disabled
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
+PATCH_DIST_ARGS=	-d ${WRKDIR}/cargo-home/registry/src/index.crates.io-1949cf8c6b5b557f/sdl3-0.16.4
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 post-patch:
