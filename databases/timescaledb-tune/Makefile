@@ -1,7 +1,6 @@
 PORTNAME=	timescaledb-tune
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.19.0
-PORTREVISION=	9
+DISTVERSION=	0.19.1
 CATEGORIES=	databases
 
 MAINTAINER=	kbowling@FreeBSD.org
@@ -11,7 +10,7 @@ WWW=		https://github.com/timescale/timescaledb-tune
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		go:1.27+,modules
 
 GO_MODULE=	github.com/timescale/timescaledb-tune
 GO_TARGET=	./cmd/${PORTNAME}
