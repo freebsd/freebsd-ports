@@ -1,5 +1,5 @@
 PORTNAME=	actionview
-PORTVERSION=	8.0.5.1
+PORTVERSION=	8.0.5.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	80
@@ -16,7 +16,7 @@ RUN_DEPENDS=	rubygem-activesupport80>=${PORTVERSION}<${PORTVERSION}_99:devel/rub
 		rubygem-builder>=3.1<4:devel/rubygem-builder \
 		rubygem-erubi>=1.11<2:www/rubygem-erubi \
 		rubygem-rails-dom-testing-rails80>=2.2<3:textproc/rubygem-rails-dom-testing-rails80 \
-		rubygem-rails-html-sanitizer>=1.6<2:textproc/rubygem-rails-html-sanitizer
+		rubygem-rails-html-sanitizer>=1.7.2<2:textproc/rubygem-rails-html-sanitizer
 
 USES=		cpe gem
 
