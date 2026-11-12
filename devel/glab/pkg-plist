@@ -100,11 +100,6 @@
 %%MANPAGES%%share/man/man1/glab-gpg-key-get.1.gz
 %%MANPAGES%%share/man/man1/glab-gpg-key-list.1.gz
 %%MANPAGES%%share/man/man1/glab-gpg-key.1.gz
-%%MANPAGES%%share/man/man1/glab-govern-audit-sync.1.gz
-%%MANPAGES%%share/man/man1/glab-govern-audit.1.gz
-%%MANPAGES%%share/man/man1/glab-govern-doctor.1.gz
-%%MANPAGES%%share/man/man1/glab-govern-setup.1.gz
-%%MANPAGES%%share/man/man1/glab-govern.1.gz
 %%MANPAGES%%share/man/man1/glab-incident-close.1.gz
 %%MANPAGES%%share/man/man1/glab-incident-list.1.gz
 %%MANPAGES%%share/man/man1/glab-incident-note.1.gz
@@ -143,6 +138,11 @@
 %%MANPAGES%%share/man/man1/glab-milestone-get.1.gz
 %%MANPAGES%%share/man/man1/glab-milestone-list.1.gz
 %%MANPAGES%%share/man/man1/glab-milestone.1.gz
+%%MANPAGES%%share/man/man1/glab-minder-audit-sync.1.gz
+%%MANPAGES%%share/man/man1/glab-minder-audit.1.gz
+%%MANPAGES%%share/man/man1/glab-minder-doctor.1.gz
+%%MANPAGES%%share/man/man1/glab-minder-setup.1.gz
+%%MANPAGES%%share/man/man1/glab-minder.1.gz
 %%MANPAGES%%share/man/man1/glab-mr-approve.1.gz
 %%MANPAGES%%share/man/man1/glab-mr-approvers.1.gz
 %%MANPAGES%%share/man/man1/glab-mr-checkout.1.gz
@@ -261,6 +261,12 @@
 %%MANPAGES%%share/man/man1/glab-security-config-status.1.gz
 %%MANPAGES%%share/man/man1/glab-security-config.1.gz
 %%MANPAGES%%share/man/man1/glab-security.1.gz
+%%MANPAGES%%share/man/man1/glab-service-account-create.1.gz
+%%MANPAGES%%share/man/man1/glab-service-account-delete.1.gz
+%%MANPAGES%%share/man/man1/glab-service-account-get.1.gz
+%%MANPAGES%%share/man/man1/glab-service-account-list.1.gz
+%%MANPAGES%%share/man/man1/glab-service-account-update.1.gz
+%%MANPAGES%%share/man/man1/glab-service-account.1.gz
 %%MANPAGES%%share/man/man1/glab-skills-get.1.gz
 %%MANPAGES%%share/man/man1/glab-skills-install.1.gz
 %%MANPAGES%%share/man/man1/glab-skills-list.1.gz
@@ -288,6 +294,8 @@
 %%MANPAGES%%share/man/man1/glab-stack-switch.1.gz
 %%MANPAGES%%share/man/man1/glab-stack-sync.1.gz
 %%MANPAGES%%share/man/man1/glab-stack.1.gz
+%%MANPAGES%%share/man/man1/glab-timelog-list.1.gz
+%%MANPAGES%%share/man/man1/glab-timelog.1.gz
 %%MANPAGES%%share/man/man1/glab-todo-done.1.gz
 %%MANPAGES%%share/man/man1/glab-todo-list.1.gz
 %%MANPAGES%%share/man/man1/glab-todo.1.gz
