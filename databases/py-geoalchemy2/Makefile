@@ -1,5 +1,5 @@
 PORTNAME=	geoalchemy2
-PORTVERSION=	0.20.0
+PORTVERSION=	0.21.0
 CATEGORIES=	databases geography python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,9 +23,11 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	SHAPELY
+OPTIONS_DEFINE=	SHAPELY WKB_WKT_CONVERTER
 SHAPELY_DESC=	Shapely integration
+WKB_WKT_CONVERTER_DESC=	WKB/EWKB and WKT/EWKT geometry formats converter
 
 SHAPELY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}shapely>=1.7:devel/py-shapely@${PY_FLAVOR}
+WKB_WKT_CONVERTER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wkb-wkt-converter>=0.6.3:devel/py-wkb-wkt-converter@${PY_FLAVOR}
 
 .include <bsd.port.mk>
