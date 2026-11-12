@@ -1,0 +1,11 @@
+--- src/bin/enigmatic/meson.build.orig	2026-11-11 01:32:12 UTC
++++ src/bin/enigmatic/meson.build
+@@ -66,7 +66,7 @@ if host_os == 'freebsd' or host_os == 'dragonfly'
+    install              : true)
+ 
+ if host_os == 'freebsd' or host_os == 'dragonfly'
+-   meson.add_install_script('perms.sh')
++
+ endif
+ 
+ subdir('client')
