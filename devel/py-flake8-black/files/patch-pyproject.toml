@@ -1,9 +1,18 @@
---- pyproject.toml.orig	2022-12-20 09:28:50 UTC
+--- pyproject.toml.orig	2026-11-03 11:57:20 UTC
 +++ pyproject.toml
-@@ -1,5 +1,5 @@
+@@ -1,13 +1,12 @@
  [build-system]
 -requires = ['pip>=21.3', 'setuptools>=61', 'wheel']
 +requires = ['setuptools>=61', 'wheel']
  build-backend = 'setuptools.build_meta'
  
  [project]
+ name = 'flake8-black'
+ description = 'flake8 plugin to call black as a code style validator'
+ keywords = ['black', 'formatting', 'style', 'flake8']
+-license = "MIT"
+-license-files = ["LICENSE.rst"]
++license = {text = 'MIT'}
+ readme = 'README.rst'
+ authors = [
+   {name = 'Peter J. A. Cock'}
