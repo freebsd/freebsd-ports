@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-instrumentation-all
-PORTVERSION=	0.99.0
+PORTVERSION=	0.100.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -34,7 +34,7 @@ RUN_DEPENDS=	rubygem-opentelemetry-instrumentation-active_model_serializers>=0.2
 		rubygem-opentelemetry-instrumentation-lmdb>=0.28.0<0.29:devel/rubygem-opentelemetry-instrumentation-lmdb \
 		rubygem-opentelemetry-instrumentation-mongo>=0.26.0<0.27:devel/rubygem-opentelemetry-instrumentation-mongo \
 		rubygem-opentelemetry-instrumentation-mysql2>=0.34.0<0.35:devel/rubygem-opentelemetry-instrumentation-mysql2 \
-		rubygem-opentelemetry-instrumentation-net_http>=0.29.0<0.30:devel/rubygem-opentelemetry-instrumentation-net_http \
+		rubygem-opentelemetry-instrumentation-net_http>=0.30.0<0.31:devel/rubygem-opentelemetry-instrumentation-net_http \
 		rubygem-opentelemetry-instrumentation-openai>=0.1.0<0.2:devel/rubygem-opentelemetry-instrumentation-openai \
 		rubygem-opentelemetry-instrumentation-pg>=0.37.0<0.38:devel/rubygem-opentelemetry-instrumentation-pg \
 		rubygem-opentelemetry-instrumentation-que>=0.13.0<0.14:devel/rubygem-opentelemetry-instrumentation-que \
