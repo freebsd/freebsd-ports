@@ -1,4 +1,4 @@
---- ngrep.c.orig	2025-11-07 06:35:47 UTC
+--- ngrep.c.orig	2026-02-08 03:34:00 UTC
 +++ ngrep.c
 @@ -93,10 +93,15 @@
  #include <sys/ioctl.h>
@@ -18,7 +18,7 @@
  #if USE_IPv6 && !defined(_WIN32) && !defined(_WIN64)
  #include <netinet/ip6.h>
  #include <netinet/icmp6.h>
-@@ -217,6 +222,10 @@ int main(int argc, char **argv) {
+@@ -225,6 +230,10 @@ int main(int argc, char **argv) {
      int32_t c;
      const char *extra = "";
  
@@ -29,7 +29,7 @@
      signal(SIGINT,   clean_exit);
      signal(SIGABRT,  clean_exit);
  
-@@ -461,6 +470,27 @@ int main(int argc, char **argv) {
+@@ -474,6 +483,27 @@ int main(int argc, char **argv) {
          free(filter);
      }
  
@@ -57,11 +57,10 @@
      /* Setup matcher */
  
      if (match_data) {
-@@ -491,6 +521,22 @@ int main(int argc, char **argv) {
- #if !defined(_WIN32) && !defined(_WIN64) && USE_DROPPRIVS
+@@ -516,6 +546,22 @@ int main(int argc, char **argv) {
      drop_privs();
  #endif
-+
+ 
 +#if USE_CAPSICUM
 +    tzset();
 +
@@ -77,6 +76,7 @@
 +        clean_exit(2);
 +    }
 +#endif /* USE_CAPSICUM */
- 
++
      while (pcap_loop(pd, -1, (pcap_handler)process, 0));
  
+     clean_exit(0);
