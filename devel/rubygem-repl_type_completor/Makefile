@@ -1,6 +1,5 @@
 PORTNAME=	repl_type_completor
-PORTVERSION=	0.1.16
-PORTREVISION=	1
+PORTVERSION=	0.1.17
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +10,7 @@ WWW=		https://github.com/ruby/repl_type_completor
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-prism1>=1.0<2:textproc/rubygem-prism1 \
+RUN_DEPENDS=	rubygem-prism>=1.0:textproc/rubygem-prism \
 		rubygem-rbs>=2.7.0:devel/rubygem-rbs
 
 USES=		gem
