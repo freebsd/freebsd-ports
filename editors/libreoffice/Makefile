@@ -1,4 +1,4 @@
-PORTREVISION=	2
+PORTREVISION=	0
 
 .include "${.CURDIR}/Makefile.common"
 
@@ -231,7 +231,7 @@ MMEDIA_USES=		gstreamer
 MMEDIA_CONFIGURE_ENABLE=	gstreamer-1-0
 
 PDFIUM_CONFIGURE_ENABLE=	pdfium
-PDFIUM_DISTFILES=	pdfium-7681.tar.bz2:src
+PDFIUM_DISTFILES=	pdfium-8073.tar.bz2:src
 PDFIUM_LIB_DEPENDS=	libabsl_strings.so:devel/abseil \
 			libopenjp2.so:graphics/openjpeg
 
