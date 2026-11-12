@@ -1,9 +1,18 @@
---- pyproject.toml.orig	2026-10-08 22:55:42 UTC
+--- pyproject.toml.orig	2026-11-02 19:24:47 UTC
 +++ pyproject.toml
 @@ -1,5 +1,5 @@
  [project]
 -name = "Flask-SocketIO"
 +name = "flask-socketio"
- version = "5.7.0"
+ version = "5.7.2"
  authors = [
      { name = "Miguel Grinberg", email = "miguel.grinberg@gmail.com" },
+@@ -11,7 +11,7 @@ classifiers = [
+     "Programming Language :: Python :: 3",
+     "Operating System :: OS Independent",
+ ]
+-license = "MIT"
++license = { text = "MIT" }
+ requires-python = ">=3.8"
+ dependencies = [
+     "blinker",
