@@ -8,7 +8,7 @@
 +license = { text = "Apache-2.0" }
  name = "asyncmy"
  readme = "README.md"
- requires-python = ">=3.9"
+ requires-python = ">=3.10"
 @@ -16,9 +16,6 @@ include = [
  
  [tool.poetry]
@@ -19,3 +19,12 @@
      # PEP 561: without these in the wheel the type information does not ship.
      { path = "asyncmy/py.typed", format = ["sdist", "wheel"] },
      { path = "asyncmy/*.pyi", format = ["sdist", "wheel"] },
+@@ -54,7 +51,7 @@ build-backend = "poetry.core.masonry.api"
+ 
+ [build-system]
+ build-backend = "poetry.core.masonry.api"
+-requires = ["poetry-core", "setuptools", "cython>=3.3"]  # Python 3.15 support
++requires = ["poetry-core", "setuptools", "cython>=3.2"]  # Python 3.15 support
+ 
+ [tool.pytest.ini_options]
+ asyncio_mode = 'auto'
