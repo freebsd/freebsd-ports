@@ -2,7 +2,7 @@ PORTNAME=	ebur128
 DISTVERSION=	0.1.11
 CATEGORIES=	audio
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	vishwin@FreeBSD.org
 COMMENT=	Library implementing the EBU R128 loudness standard
 WWW=		https://github.com/sdroege/ebur128
 
