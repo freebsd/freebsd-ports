@@ -1,5 +1,5 @@
 PORTNAME?=	postgresql
-DISTVERSION?=	19rc1
+DISTVERSION?=	19rc2
 # PORTREVISION must be ?= otherwise, all slave ports get this PORTREVISION and
 # not their own.  Probably best to keep it at ?=0 when reset here too.
 PORTREVISION?=	0
@@ -117,7 +117,7 @@ CONFIGURE_ARGS+=	--without-icu
 OPTIONS_DEFINE+=	NLS PAM GSSAPI OPTIMIZED_CFLAGS DEBUG DOCS SSL
 NLS_DESC=		Use internationalized messages
 PAM_DESC=		Build with PAM Support
-GSSAPI_DESC=		Build with GSSAPI from base (security/krb5)
+GSSAPI_DESC=		Build with GSSAPI from security/krb5
 OPTIMIZED_CFLAGS_DESC=	Builds with compiler optimizations (-O3)
 SSL_DESC=		Build with OpenSSL support
 

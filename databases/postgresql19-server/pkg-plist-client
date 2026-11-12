@@ -1308,7 +1308,7 @@ share/man/man7/WITH.7.gz
 %%NLS%%share/locale/es/LC_MESSAGES/pg_config-%%PG_VERSION%%.mo
 %%NLS%%share/locale/es/LC_MESSAGES/pg_dump-%%PG_VERSION%%.mo
 %%NLS%%share/locale/es/LC_MESSAGES/pgscripts-%%PG_VERSION%%.mo
-%%NLS%%share/locale/es/LC_MESSAGES/postgresql-regress-19.mo
+%%NLS%%share/locale/es/LC_MESSAGES/postgresql-regress-%%PG_VERSION%%.mo
 %%NLS%%share/locale/es/LC_MESSAGES/psql-%%PG_VERSION%%.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/ecpg-%%PG_VERSION%%.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/ecpglib6-%%PG_VERSION%%.mo
@@ -1366,7 +1366,7 @@ share/man/man7/WITH.7.gz
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/ecpg-%%PG_VERSION%%.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/ecpglib6-%%PG_VERSION%%.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/libpq5-%%PG_VERSION%%.mo
-%%NLS%%share/locale/pt_BR/LC_MESSAGES/pg_amcheck-19.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/pg_amcheck-%%PG_VERSION%%.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/pg_config-%%PG_VERSION%%.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/pg_dump-%%PG_VERSION%%.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/pgscripts-%%PG_VERSION%%.mo
@@ -1421,7 +1421,7 @@ share/man/man7/WITH.7.gz
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/pg_amcheck-%%PG_VERSION%%.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/pg_config-%%PG_VERSION%%.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/pg_dump-%%PG_VERSION%%.mo
-%%NLS%%share/locale/zh_TW/LC_MESSAGES/pgscripts-19.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/pgscripts-%%PG_VERSION%%.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/psql-%%PG_VERSION%%.mo
 %%DATADIR%%/postgres.bki
 %%DATADIR%%/system_constraints.sql
