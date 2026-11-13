@@ -1,7 +1,7 @@
 PORTNAME=	grpc
-PORTVERSION=	1.85.1
+PORTVERSION=	1.84.0
 DISTVERSIONPREFIX=	v
-PORTEPOCH=	2
+PORTEPOCH=	3
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -51,12 +51,12 @@ USE_LDCONFIG=	yes
 PLIST_SUB=	PORTVERSION=${PORTVERSION} \
 		SHLIB_VER=${PORTVERSION:R}
 
-CONFLICTS_INSTALL=	gprbuild
+CONFLICTS_INSTALL=	grpc[0-9][0-9][0-9] gprbuild-*
 
 USE_GITHUB=	yes
-GH_TUPLE=	envoyproxy:data-plane-api:e7ccb05:envoyproxy_data_plane_api/third_party/envoy-api \
-		googleapis:googleapis:a74d050:googleapis_googleapis/third_party/googleapis \
-		grpc:grpc-proto:2768528:grpc_grpc_proto/third_party/grpc-proto
+GH_TUPLE=	envoyproxy:data-plane-api:102e9b1:envoyproxy_data_plane_api/third_party/envoy-api \
+		googleapis:googleapis:0fad501:googleapis_googleapis/third_party/googleapis \
+		grpc:grpc-proto:dd549fc:grpc_grpc_proto/third_party/grpc-proto
 
 OPTIONS_DEFINE=	OPENTELEMETRY
 OPTIONS_SUB=	yes
