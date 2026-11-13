@@ -1,5 +1,5 @@
 PORTNAME=	passenger
-PORTVERSION=	6.2.1
+PORTVERSION=	6.2.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG \
 		https://github.com/phusion/passenger/releases/download/release-${PORTVERSION}/
