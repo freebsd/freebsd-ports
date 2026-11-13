@@ -27,6 +27,11 @@
 %%DATADIR%%/lib/prim/Agda/Builtin/Equality.agda
 %%DATADIR%%/lib/prim/Agda/Builtin/Equality/Erase.agda
 %%DATADIR%%/lib/prim/Agda/Builtin/Equality/Rewrite.agda
+%%DATADIR%%/lib/prim/Agda/Builtin/Erased/Box-cong.agda
+%%DATADIR%%/lib/prim/Agda/Builtin/Erased/Erased.agda
+%%DATADIR%%/lib/prim/Agda/Builtin/Erased/Funext.agda
+%%DATADIR%%/lib/prim/Agda/Builtin/Erased/Propext.agda
+%%DATADIR%%/lib/prim/Agda/Builtin/Erased/Quotient.agda
 %%DATADIR%%/lib/prim/Agda/Builtin/Float.agda
 %%DATADIR%%/lib/prim/Agda/Builtin/Float/Properties.agda
 %%DATADIR%%/lib/prim/Agda/Builtin/FromNat.agda
@@ -63,6 +68,11 @@
 %%DATADIR%%/lib/prim/_build/%%AGDA_VER%%/agda/Agda/Builtin/Equality.agdai
 %%DATADIR%%/lib/prim/_build/%%AGDA_VER%%/agda/Agda/Builtin/Equality/Erase.agdai
 %%DATADIR%%/lib/prim/_build/%%AGDA_VER%%/agda/Agda/Builtin/Equality/Rewrite.agdai
+%%DATADIR%%/lib/prim/_build/%%AGDA_VER%%/agda/Agda/Builtin/Erased/Box-cong.agdai
+%%DATADIR%%/lib/prim/_build/%%AGDA_VER%%/agda/Agda/Builtin/Erased/Erased.agdai
+%%DATADIR%%/lib/prim/_build/%%AGDA_VER%%/agda/Agda/Builtin/Erased/Funext.agdai
+%%DATADIR%%/lib/prim/_build/%%AGDA_VER%%/agda/Agda/Builtin/Erased/Propext.agdai
+%%DATADIR%%/lib/prim/_build/%%AGDA_VER%%/agda/Agda/Builtin/Erased/Quotient.agdai
 %%DATADIR%%/lib/prim/_build/%%AGDA_VER%%/agda/Agda/Builtin/Float.agdai
 %%DATADIR%%/lib/prim/_build/%%AGDA_VER%%/agda/Agda/Builtin/Float/Properties.agdai
 %%DATADIR%%/lib/prim/_build/%%AGDA_VER%%/agda/Agda/Builtin/FromNat.agdai

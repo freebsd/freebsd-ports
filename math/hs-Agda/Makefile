@@ -1,5 +1,5 @@
 PORTNAME=	Agda
-DISTVERSION=	2.8.0.2
+DISTVERSION=	2.9.0
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org
