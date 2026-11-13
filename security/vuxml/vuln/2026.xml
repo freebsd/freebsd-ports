@@ -1,3 +1,56 @@
+  <vuln vid="e8416dd1-df3e-11f1-8608-589cfc0f9aca">
+    <topic>MongoDB Server -- Pre-authentication use-after-free in replica set primary catch-up</topic>
+    <affects>
+      <package>
+	<name>mongodb70</name>
+	<range><lt>7.0.48</lt></range>
+      </package>
+      <package>
+	<name>mongodb80</name>
+	<range><lt>8.0.37</lt></range>
+      </package>
+      <package>
+	<name>mongodb90</name>
+	<range><lt>9.0.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>MongoDB reports:</p>
+	<blockquote cite="https://www.mongodb.com/community/forums/t/important-mongodb-security-update-available-action-required-november-10-2026/344843">
+	  <p>MongoDB identified and fixed an important vulnerability
+	    (CVE-2026-118383, CVSS 9.5) that could allow unauthorized access
+	    to the MongoDB Server. We found it internally through our
+	    proactive security program, and we are not aware of any attempts
+	    to take advantage of this vulnerability.</p>
+	</blockquote>
+	<p>https://jira.mongodb.org/browse/SERVER-138119 reports:</p>
+	<blockquote cite="https://jira.mongodb.org/browse/SERVER-138119">
+	  <p>A use-after-free in the replication component of MongoDB Server
+	    can occur when a newly elected replica set primary completes
+	    catch-up. The condition can be caused by requests that do not
+	    require authentication, and may result in the server terminating
+	    unexpectedly or, under certain conditions, arbitrary code
+	    execution in the context of the server process. Replica set
+	    members are affected, including the shard and config server
+	    replica set members of sharded clusters; standalone mongod
+	    instances are not.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-118383</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-118383</url>
+      <url>https://www.mongodb.com/community/forums/t/important-mongodb-security-update-available-action-required-november-10-2026/344843</url>
+      <url>https://jira.mongodb.org/browse/SERVER-138119</url>
+      <url>https://jira.mongodb.org/browse/SERVER-138175</url>
+    </references>
+    <dates>
+      <discovery>2026-11-10</discovery>
+      <entry>2026-11-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="52ed373b-df37-11f1-8135-8447094a420f">
     <topic>mod_http2 -- heap corruption and RCE in assign_headers</topic>
     <affects>
