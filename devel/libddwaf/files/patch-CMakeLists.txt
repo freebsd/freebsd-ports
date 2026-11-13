@@ -1,10 +1,17 @@
---- CMakeLists.txt.orig	2025-05-28 14:15:10 UTC
+--- CMakeLists.txt.orig	2026-11-10 13:50:03 UTC
 +++ CMakeLists.txt
-@@ -99,7 +99,6 @@ add_subdirectory(third_party EXCLUDE_FROM_ALL)
- 
- add_subdirectory(third_party EXCLUDE_FROM_ALL)
+@@ -107,12 +107,13 @@ target_include_directories(lib_rapidjson INTERFACE
+ target_include_directories(lib_rapidjson INTERFACE
+     "${libddwaf_SOURCE_DIR}/src/vendor/rapidjson/include")
  
 -set(LIBDDWAF_PRIVATE_LIBRARIES lib_rapidjson)
  if(NOT MSVC AND LIBDDWAF_TESTING AND LIBDDWAF_TEST_COVERAGE)
      list(APPEND LIBDDWAF_PRIVATE_LIBRARIES gcov)
  endif()
+ 
+ add_subdirectory(third_party EXCLUDE_FROM_ALL)
++
++list(APPEND LIBDDWAF_PRIVATE_LIBRARIES ac injection re2 utf8proc)
+ 
+ if (LIBDDWAF_ENABLE_LTO)
+     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -flto")
