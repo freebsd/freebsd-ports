@@ -17053,6 +17053,7 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/grib2/local.98.28.def
 %%DATADIR%%/definitions/grib2/local.98.30.def
 %%DATADIR%%/definitions/grib2/local.98.300.def
+%%DATADIR%%/definitions/grib2/local.98.32.def
 %%DATADIR%%/definitions/grib2/local.98.36.def
 %%DATADIR%%/definitions/grib2/local.98.37.def
 %%DATADIR%%/definitions/grib2/local.98.38.def
@@ -17141,6 +17142,7 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/grib2/localConcepts/ecmf/chemId.def
 %%DATADIR%%/definitions/grib2/localConcepts/ecmf/chemName.def
 %%DATADIR%%/definitions/grib2/localConcepts/ecmf/chemShortName.def
+%%DATADIR%%/definitions/grib2/localConcepts/ecmf/clusteringDomain.def
 %%DATADIR%%/definitions/grib2/localConcepts/ecmf/inputModelNameConcept.def
 %%DATADIR%%/definitions/grib2/localConcepts/ecmf/inputModelVersionConcept.def
 %%DATADIR%%/definitions/grib2/localConcepts/ecmf/marsLevtypeConcept.chemsplit.def
@@ -22413,6 +22415,7 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/grib2/tables/local/ecmf/1/4.233.table
 %%DATADIR%%/definitions/grib2/tables/local/ecmf/1/4.238.table
 %%DATADIR%%/definitions/grib2/tables/local/ecmf/1/4.5.table
+%%DATADIR%%/definitions/grib2/tables/local/ecmf/1/4.7.table
 %%DATADIR%%/definitions/grib2/tables/local/ecmf/1/curv.config.table
 %%DATADIR%%/definitions/grib2/tables/local/ecmf/obstat.1.0.table
 %%DATADIR%%/definitions/grib2/tables/local/ecmf/obstat.10.0.table
@@ -22427,6 +22430,7 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/grib2/tables/local/ecmf/obstat.9.0.table
 %%DATADIR%%/definitions/grib2/tables/local/ecmf/obstat.reporttype.table
 %%DATADIR%%/definitions/grib2/tables/local/ecmf/obstat.varno.table
+%%DATADIR%%/definitions/grib2/tables/local/ecmf/regimes.table
 %%DATADIR%%/definitions/grib2/tables/local/edzw/1.1.table
 %%DATADIR%%/definitions/grib2/tables/local/edzw/1/1.4.table
 %%DATADIR%%/definitions/grib2/tables/local/edzw/1/2.120.table
