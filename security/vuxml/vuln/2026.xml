@@ -1,3 +1,47 @@
+  <vuln vid="8d5589db-df3e-11f1-a4ad-74563cf85f9d">
+    <topic>dbus -- multiple denial-of-service vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>dbus</name>
+	<range><lt>1.16.4,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The dbus project reports:</p>
+	<blockquote cite="https://gitlab.freedesktop.org/dbus/dbus/-/blob/dbus-1.16.4/NEWS">
+	  <p>Prevent a denial-of-service vulnerability on the system bus:
+	    if a privileged user was running a monitor such as
+	    dbus-monitor --system or busctl monitor --system, then an
+	    unprivileged user could cause the dbus-daemon to crash by
+	    arranging for delivery of a broadcast signal from the
+	    dbus-daemon to be prevented, for example by filling up the
+	    outgoing message queue towards a client that subscribed to it.
+	    This vulnerability could be seen as an incomplete fix for
+	    CVE-2023-34969.  (CVE-2026-120749)</p>
+	  <p>Prevent a denial-of-service vulnerability on the system bus in
+	    which a client could cause a busy-loop by shutting down its
+	    socket while outgoing messages were pending.</p>
+	  <p>On platforms that implement struct cmsgcred (in practice this
+	    is believed to mean FreeBSD and DragonFlyBSD), prevent a
+	    denial-of-service in which a local AF_UNIX client could send
+	    unexpected file descriptors to the system bus, which would
+	    have been ignored but not closed.</p>
+	  <p>In servers listening on the nonce-tcp: transport, do not allow
+	    a client to make the server block for more than 1 second.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-120749</cvename>
+      <url>https://gitlab.freedesktop.org/dbus/dbus/-/blob/dbus-1.16.4/NEWS</url>
+    </references>
+    <dates>
+      <discovery>2026-11-12</discovery>
+      <entry>2026-11-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="890d1126-e36c-11f1-bae2-3497f65b111b">
     <topic>nginx -- multiple vulnerabilities</topic>
     <affects>
