@@ -1,5 +1,6 @@
 PORTNAME=	mod_http2
-DISTVERSION=	2.0.42
+PORTVERSION=	2.0.42
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/icing/mod_h2/releases/download/v${DISTVERSION}/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -10,6 +11,9 @@ WWW=		https://github.com/icing/mod_h2
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	Standalone mod_http2 project has been archived, use the module shipped with mod_http2
+EXPIRATION_DATE=2026-12-31
 
 LIB_DEPENDS=	libnghttp2.so:www/libnghttp2
 
