@@ -740,6 +740,8 @@ GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Universal.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/W-SU.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/WET.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Zulu.ics
+GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/zones.h
+GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/zones.tab
 GNUstep/Local/Library/Libraries/sogo/libGDLContentStore.so
 GNUstep/Local/Library/Libraries/sogo/libGDLContentStore.so.4.9
 GNUstep/Local/Library/Libraries/sogo/libGDLContentStore.so.4.9.0
