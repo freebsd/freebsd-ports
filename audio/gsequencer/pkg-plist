@@ -1,6 +1,7 @@
 bin/gsequencer
 bin/midi2xml
 include/ags/ags_api_config.h
+include/ags/audio/ags_abyss_synth_util.h
 include/ags/audio/ags_acceleration.h
 include/ags/audio/ags_amplifier10_util.h
 include/ags/audio/ags_amplifier_util.h
@@ -73,6 +74,7 @@ include/ags/audio/ags_recall_util.h
 include/ags/audio/ags_recycling.h
 include/ags/audio/ags_recycling_context.h
 include/ags/audio/ags_resample_util.h
+include/ags/audio/ags_ring_modulation_util.h
 include/ags/audio/ags_seq_synth_util.h
 include/ags/audio/ags_sequencer_util.h
 include/ags/audio/ags_sf2_synth_generator.h
@@ -129,6 +131,12 @@ include/ags/audio/file/ags_sfz_sample.h
 include/ags/audio/file/ags_sndfile.h
 include/ags/audio/file/ags_sound_container.h
 include/ags/audio/file/ags_sound_resource.h
+include/ags/audio/fx/ags_fx_abyss_synth_audio.h
+include/ags/audio/fx/ags_fx_abyss_synth_audio_processor.h
+include/ags/audio/fx/ags_fx_abyss_synth_audio_signal.h
+include/ags/audio/fx/ags_fx_abyss_synth_channel.h
+include/ags/audio/fx/ags_fx_abyss_synth_channel_processor.h
+include/ags/audio/fx/ags_fx_abyss_synth_recycling.h
 include/ags/audio/fx/ags_fx_analyse_audio.h
 include/ags/audio/fx/ags_fx_analyse_audio_processor.h
 include/ags/audio/fx/ags_fx_analyse_audio_signal.h
