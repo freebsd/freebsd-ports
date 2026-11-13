@@ -14,7 +14,6 @@ CARGO_CRATES=	ahash-0.8.12 \
 		boxcar-0.2.14 \
 		bstr-1.12.1 \
 		bytes-1.11.1 \
-		castaway-0.2.4 \
 		cc-1.2.62 \
 		cfg-if-1.0.4 \
 		clap-4.6.0 \
@@ -23,7 +22,6 @@ CARGO_CRATES=	ahash-0.8.12 \
 		clap_lex-1.1.0 \
 		cmake-0.1.58 \
 		colorchoice-1.0.5 \
-		compact_str-0.10.0 \
 		cpufeatures-0.2.17 \
 		crypto-common-0.1.7 \
 		deranged-0.5.8 \
@@ -107,7 +105,6 @@ CARGO_CRATES=	ahash-0.8.12 \
 		socket2-0.4.10 \
 		socket2-0.5.10 \
 		socket2-0.6.3 \
-		static_assertions-1.1.0 \
 		strsim-0.11.1 \
 		subtle-2.6.1 \
 		syn-2.0.117 \
