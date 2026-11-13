@@ -289,6 +289,7 @@
     SUBDIR += texworks
     SUBDIR += the
     SUBDIR += treeform
+    SUBDIR += ttt
     SUBDIR += turbo
     SUBDIR += tweak
     SUBDIR += uemacs
