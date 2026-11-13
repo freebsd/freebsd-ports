@@ -1,0 +1,21 @@
+--- pyproject.toml.orig	2026-11-09 11:37:09 UTC
++++ pyproject.toml
+@@ -7,7 +7,7 @@ requires = [
+ 
+ [build-system]
+ requires = [
+-  "setuptools >= 77.0.3",
++  "setuptools >= 61",
+   # "setuptools-scm>=8",
+ ]
+ build-backend = "setuptools.build_meta"
+@@ -18,8 +18,7 @@ readme = "README.rst"
+ name = "semver"
+ description = "Python helper for Semantic Versioning (https://semver.org)"
+ readme = "README.rst"
+-license = "BSD-3-Clause"
+-license-files = ["LICENSE.txt"]
++license = {text = "BSD-3-Clause"}
+ authors = [
+   {name = "Kostiantyn Rybnikov", email = "k-bx@k-bx.com"},
+   {name = "Tom Schraitle", email = "toms@suse.de"},
