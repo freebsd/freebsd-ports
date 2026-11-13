@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2026-09-24 04:37:07 UTC
+--- pyproject.toml.orig	2026-11-12 00:32:21 UTC
 +++ pyproject.toml
 @@ -1,14 +1,13 @@
  [build-system]
@@ -9,7 +9,7 @@
  [project]
 -name = "Send2Trash"
 +name = "send2trash"
- version = "2.1.0"
+ version = "2.2.0"
  description = "Send file to trash natively under Mac OS X, Windows and Linux"
  readme = "README.rst"
 -license = "BSD-3-Clause"
