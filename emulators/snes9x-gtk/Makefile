@@ -17,13 +17,12 @@ LICENSE_NAME=	Snes9x License
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
-LIB_DEPENDS=	libminizip.so:archivers/minizip \
-		libepoxy.so:graphics/libepoxy \
+LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
 		libpng.so:graphics/png \
 		libharfbuzz.so:print/harfbuzz
 
 USES=		cmake compiler:c++17-lang desktop-file-utils gettext \
-		gnome localbase:ldflags pkgconfig sdl xorg
+		gnome localbase:ldflags minizip pkgconfig sdl xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	snes9xgit
 GH_TUPLE=	KhronosGroup:SPIRV-Cross:bccaa94:spirv/../external/SPIRV-Cross \

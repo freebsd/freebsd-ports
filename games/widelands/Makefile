@@ -12,11 +12,10 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:graphics/png \
-		libicuuc.so:devel/icu \
-		libminizip.so:archivers/minizip
+		libicuuc.so:devel/icu
 BUILD_DEPENDS=	${PREFIX}/include/asio.hpp:net/asio
 
-USES=		cmake compiler:c++11-lib cpe gl pkgconfig \
+USES=		cmake compiler:c++11-lib cpe gl minizip pkgconfig \
 		python:build sdl
 USE_GITHUB=	yes
 USE_GL=		gl glew

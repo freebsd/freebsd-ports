@@ -1,0 +1,10 @@
+--- gtk/CMakeLists.txt.orig	2024-07-07 11:48:47 UTC
++++ gtk/CMakeLists.txt
+@@ -216,6 +216,7 @@ if(USE_SYSTEMZIP AND MINIZIP_FOUND)
+ 
+ pkg_check_modules(MINIZIP "minizip")
+ if(USE_SYSTEMZIP AND MINIZIP_FOUND)
++    add_compile_definitions(SYSTEM_ZIP)
+     list(APPEND DEFINES "SYSTEM_ZIP")
+     list(APPEND ARGS ${MINIZIP_CFLAGS})
+     list(APPEND LIBS ${MINIZIP_LIBRARIES})
