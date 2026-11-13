@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-instrumentation-all
-PORTVERSION=	0.100.0
+PORTVERSION=	0.101.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-opentelemetry-instrumentation-active_model_serializers>=0.25.0<0.26:devel/rubygem-opentelemetry-instrumentation-active_model_serializers \
-		rubygem-opentelemetry-instrumentation-anthropic>=0.5.0<0.6:devel/rubygem-opentelemetry-instrumentation-anthropic \
+		rubygem-opentelemetry-instrumentation-anthropic>=0.6.0<0.7:devel/rubygem-opentelemetry-instrumentation-anthropic \
 		rubygem-opentelemetry-instrumentation-aws_lambda>=0.7.0<0.8:devel/rubygem-opentelemetry-instrumentation-aws_lambda \
 		rubygem-opentelemetry-instrumentation-aws_sdk>=0.13.0<0.14:devel/rubygem-opentelemetry-instrumentation-aws_sdk \
 		rubygem-opentelemetry-instrumentation-bunny>=0.25.0<0.26:devel/rubygem-opentelemetry-instrumentation-bunny \
