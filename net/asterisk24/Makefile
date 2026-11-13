@@ -1,6 +1,5 @@
 PORTNAME=	asterisk
-DISTVERSION=	22.12.0
-PORTREVISION=	1
+DISTVERSION=	24.0.0
 CATEGORIES=	net
 MASTER_SITES=	https://downloads.asterisk.org/pub/telephony/%SUBDIR%/:DEFAULT,g729
 MASTER_SITE_SUBDIR=	asterisk/ \
@@ -55,7 +54,7 @@ MAKE_ENV=	ASTCFLAGS="${CFLAGS}" \
 
 LDFLAGS+=	-L. -Wl,--undefined-version
 
-CONFLICTS=		asterisk20 asterisk24 ossp-uuid
+CONFLICTS=		asterisk20 asterisk22 ossp-uuid
 CONFLICTS_BUILD=	linuxthreads
 
 USERS=	${ASTERISK_USER}

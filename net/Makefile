@@ -40,6 +40,7 @@
     SUBDIR += asterisk-g72x
     SUBDIR += asterisk20
     SUBDIR += asterisk22
+    SUBDIR += asterisk24
     SUBDIR += astron
     SUBDIR += avahi
     SUBDIR += avahi-app

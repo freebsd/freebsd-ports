@@ -66,6 +66,7 @@
 @sample %%ETCDIR%%/musiconhold.conf.sample
 @sample %%ETCDIR%%/ooh323.conf.sample
 @sample %%ETCDIR%%/phoneprov.conf.sample
+@sample %%ETCDIR%%/phoneprov_users.conf.sample
 @sample %%ETCDIR%%/pjproject.conf.sample
 @sample %%ETCDIR%%/pjsip.conf.sample
 @sample %%ETCDIR%%/pjsip_notify.conf.sample
@@ -100,7 +101,6 @@
 @sample %%ETCDIR%%/test_sorcery.conf.sample
 @sample %%ETCDIR%%/udptl.conf.sample
 @sample %%ETCDIR%%/unistim.conf.sample
-@sample %%ETCDIR%%/users.conf.sample
 @sample %%ETCDIR%%/voicemail.conf.sample
 @sample %%ETCDIR%%/websocket_client.conf.sample
 @sample %%ETCDIR%%/xmpp.conf.sample
@@ -345,15 +345,11 @@ include/asterisk/xmpp.h
 %%PJSIP%%lib/libasteriskpj.so.2
 lib/libasteriskssl.so
 lib/libasteriskssl.so.1
-share/man/man8/astdb2bdb.8.gz
-share/man/man8/astdb2sqlite3.8.gz
 share/man/man8/asterisk.8.gz
 share/man/man8/astgenkey.8.gz
 share/man/man8/autosupport.8.gz
 share/man/man8/safe_asterisk.8.gz
 sbin/astcanary
-sbin/astdb2bdb
-sbin/astdb2sqlite3
 sbin/asterisk
 sbin/astgenkey
 %%ASTVERSION%%sbin/astversion

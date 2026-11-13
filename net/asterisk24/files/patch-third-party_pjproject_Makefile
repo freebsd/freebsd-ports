@@ -1,6 +1,6 @@
---- third-party/pjproject/Makefile.orig	2022-02-03 12:25:09 UTC
+--- third-party/pjproject/Makefile.orig	2026-11-13 14:15:14 UTC
 +++ third-party/pjproject/Makefile
-@@ -98,15 +98,11 @@ SHELL_ECHO_PREFIX := echo '[pjproject] '
+@@ -99,15 +99,11 @@ _all: $(TARGETS)
  
  _all: $(TARGETS)
  

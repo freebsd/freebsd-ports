@@ -1,6 +1,6 @@
---- configure.orig	2025-02-06 17:18:25 UTC
+--- configure.orig	2026-11-05 13:20:21 UTC
 +++ configure
-@@ -5174,8 +5174,6 @@ case "${host_os}" in
+@@ -5165,8 +5165,6 @@ case "${host_os}" in
       ;;
       dragonfly*|freebsd*)
       ac_default_prefix=/usr/local
@@ -9,7 +9,7 @@
       ;;
       openbsd*)
       ac_default_prefix=/usr/local
-@@ -32338,8 +32336,6 @@ printf "%s\n" "yes" >&6; }
+@@ -32444,8 +32442,6 @@ printf "%s\n" "yes" >&6; }
    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: yes" >&5
  printf "%s\n" "yes" >&6; }
  
@@ -18,7 +18,7 @@
  else case e in #(
    e) { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no" >&5
  printf "%s\n" "no" >&6; }
-@@ -33982,6 +33978,8 @@ printf %s "checking for getifaddrs() support... " >&6;
+@@ -34137,6 +34133,8 @@ printf %s "checking for getifaddrs() support... " >&6;
  
  	cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
@@ -27,7 +27,7 @@
   #include <ifaddrs.h>
  int
  main (void)
-@@ -43641,6 +43639,8 @@ for ver in ${LUA_VERSIONS:-5.4 5.3 5.2 5.1}; do
+@@ -43634,6 +43632,8 @@ for ver in ${LUA_VERSIONS:-5.4 5.3 5.2 5.1}; do
  
  for ver in ${LUA_VERSIONS:-5.4 5.3 5.2 5.1}; do
  
@@ -36,7 +36,7 @@
  if test "x${PBX_LUA}" != "x1" -a "${USE_LUA}" != "no"; then
     pbxlibdir=""
     # if --with-LUA=DIR has been specified, use it.
-@@ -43655,14 +43655,14 @@ if test "x${PBX_LUA}" != "x1" -a "${USE_LUA}" != "no";
+@@ -43648,14 +43648,14 @@ if test "x${PBX_LUA}" != "x1" -a "${USE_LUA}" != "no";
        ast_ext_lib_check_save_CFLAGS="${CFLAGS}"
        CFLAGS="${CFLAGS} "
        as_ac_Lib=`printf "%s\n" "ac_cv_lib_lua${ver}""_luaL_newstate" | sed "$as_sed_sh"`
@@ -54,7 +54,7 @@
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -43712,7 +43712,7 @@ fi
+@@ -43705,7 +43705,7 @@ fi
  
     # now check for the header.
     if test "${AST_LUA_FOUND}" = "yes"; then
@@ -63,7 +63,7 @@
        # if --with-LUA=DIR has been specified, use it.
        if test "x${LUA_DIR}" != "x"; then
           LUA_INCLUDE="-I${LUA_DIR}/include"
-@@ -43722,8 +43722,8 @@ fi
+@@ -43715,8 +43715,8 @@ fi
           # check for the header
           ast_ext_lib_check_saved_CPPFLAGS="${CPPFLAGS}"
           CPPFLAGS="${CPPFLAGS} ${LUA_INCLUDE}"
@@ -74,7 +74,7 @@
  if eval test \"x\$"$as_ac_Header"\" = x"yes"
  then :
    LUA_HEADER_FOUND=1
-@@ -43751,9 +43751,9 @@ fi
+@@ -43744,9 +43744,9 @@ fi
  
  	if test "x${PBX_LUA}" = "x1" ; then
  		if test x"${LUA_DIR}" = x; then

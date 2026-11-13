@@ -1,4 +1,4 @@
---- third-party/pjproject/Makefile.rules.orig	2024-10-17 16:00:41 UTC
+--- third-party/pjproject/Makefile.rules.orig	2026-11-05 13:20:21 UTC
 +++ third-party/pjproject/Makefile.rules
 @@ -7,7 +7,7 @@ PACKAGE_URL ?= https://raw.githubusercontent.com/aster
  # PACKAGE_URL ?= http://www.pjsip.org/release/$(PJPROJECT_VERSION)
@@ -9,8 +9,8 @@
  
  # PJPROJECT_CONFIGURE_OPTS could come from the command line or could be
  # set/modified by configure.m4 if the build or host tuples aren't the same
-@@ -38,7 +38,7 @@ PJPROJECT_CONFIG_OPTS = $(PJPROJECT_CONFIGURE_OPTS) --
- 	--disable-libwebrtc \
+@@ -39,7 +39,7 @@ PJPROJECT_CONFIG_OPTS = $(PJPROJECT_CONFIGURE_OPTS) --
+ 	--disable-libsrtp \
  	--disable-upnp \
  	--without-external-pa \
 -	--without-external-srtp

@@ -1,6 +1,6 @@
---- Makefile.orig	2022-08-18 15:18:29 UTC
+--- Makefile.orig	2026-11-05 13:20:21 UTC
 +++ Makefile
-@@ -144,7 +144,7 @@ ASTTOPDIR:=$(subst $(space),\$(space),$(CURDIR))
+@@ -148,7 +148,7 @@ OVERWRITE=y
  OVERWRITE=y
  
  # Include debug and macro symbols in the executables (-g) and profiling info (-pg)
@@ -9,7 +9,7 @@
  
  # Asterisk.conf is located in ASTETCDIR or by using the -C flag
  # when starting Asterisk
-@@ -168,7 +168,7 @@ LINKER_SYMBOL_PREFIX=
+@@ -172,7 +172,7 @@ LINKER_SYMBOL_PREFIX=
  #_ASTCFLAGS+=-DOLD_DSP_ROUTINES
  
  # Default install directory for DAHDI hooks.
@@ -18,7 +18,7 @@
  
  # If the file .asterisk.makeopts is present in your home directory, you can
  # include all of your favorite menuselect options so that every time you download
-@@ -226,12 +226,6 @@ else ifneq ($(findstring BSD,$(OSARCH)),)
+@@ -230,12 +230,6 @@ endif
    _ASTCFLAGS+=-isystem /usr/local/include
  endif
  
@@ -31,7 +31,7 @@
  ifeq ($(OSARCH),NetBSD)
    _ASTCFLAGS+=-pthread -D__LIBPTHREAD_SOURCE__ -I/usr/pkg/include
  endif
-@@ -475,8 +469,12 @@ endif
+@@ -481,8 +475,12 @@ endif
  			$(INSTALL) -m 644 $$n "$(DESTDIR)$(ASTDATADIR)/static-http/docs" ; \
  		done \
  	fi
@@ -45,7 +45,7 @@
  	done
  	$(MAKE) -C sounds install
  	find rest-api -name "*.json" | while read x; do \
-@@ -545,7 +543,7 @@ INSTALLDIRS="$(ASTLIBDIR)" "$(ASTMODDIR)" "$(ASTSBINDI
+@@ -551,7 +549,7 @@ INSTALLDIRS="$(ASTLIBDIR)" "$(ASTMODDIR)" "$(ASTSBINDI
  	"$(ASTDATADIR)/firmware/iax" "$(ASTDATADIR)/images" "$(ASTDATADIR)/keys" \
  	"$(ASTDATADIR)/phoneprov" "$(ASTDATADIR)/rest-api" "$(ASTDATADIR)/static-http" \
  	"$(ASTDATADIR)/sounds" "$(ASTDATADIR)/moh" "$(ASTMANDIR)/man8" "$(AGI_DIR)" "$(ASTDBDIR)" \
@@ -54,7 +54,7 @@
  
  installdirs:
  	@for i in $(INSTALLDIRS); do \
-@@ -557,7 +555,7 @@ installdirs:
+@@ -563,7 +561,7 @@ main-bininstall:
  main-bininstall:
  	+@DESTDIR="$(DESTDIR)" ASTSBINDIR="$(ASTSBINDIR)" ASTLIBDIR="$(ASTLIBDIR)" $(SUBMAKE) -C main bininstall
  
@@ -63,7 +63,7 @@
  	$(INSTALL) -m 755 contrib/scripts/astversion "$(DESTDIR)$(ASTSBINDIR)/"
  	$(INSTALL) -m 755 contrib/scripts/astgenkey "$(DESTDIR)$(ASTSBINDIR)/"
  	$(INSTALL) -m 755 contrib/scripts/autosupport "$(DESTDIR)$(ASTSBINDIR)/"
-@@ -578,10 +576,10 @@ endif
+@@ -583,10 +581,10 @@ endif
  	if [ -f contrib/firmware/iax/iaxy.bin ] ; then \
  		$(INSTALL) -m 644 contrib/firmware/iax/iaxy.bin "$(DESTDIR)$(ASTDATADIR)/firmware/iax/iaxy.bin"; \
  	fi
@@ -78,7 +78,7 @@
  
  $(SUBDIRS_INSTALL):
  	+@DESTDIR="$(DESTDIR)" ASTSBINDIR="$(ASTSBINDIR)" ASTDATADIR="$(ASTDATADIR)" $(SUBMAKE) -C $(@:-install=) install
-@@ -706,7 +704,7 @@ ifeq ($(ASTERISKVERSION),UNKNOWN__git_check_fail)
+@@ -718,7 +716,7 @@ endif
  endif
  
  
@@ -87,7 +87,7 @@
  	@if [ -x /usr/sbin/asterisk-post-install ]; then \
  		/usr/sbin/asterisk-post-install "$(DESTDIR)" . ; \
  	fi
-@@ -751,23 +749,10 @@ upgrade: bininstall
+@@ -763,23 +761,10 @@ define INSTALL_CONFIGS
  #  (2) the extension to strip off
  define INSTALL_CONFIGS
  	@for x in $(1)/*$(2); do \
@@ -113,7 +113,7 @@
  		echo "Updating asterisk.conf" ; \
  		sed -e 's|^astcachedir.*$$|astcachedir => $(ASTCACHEDIR)|' \
  			-e 's|^astetcdir.*$$|astetcdir => $(ASTETCDIR)|' \
-@@ -781,8 +766,8 @@ define INSTALL_CONFIGS
+@@ -793,8 +778,8 @@ define INSTALL_CONFIGS
  			-e 's|^astrundir.*$$|astrundir => $(ASTVARRUNDIR)|' \
  			-e 's|^astlogdir.*$$|astlogdir => $(ASTLOGDIR)|' \
  			-e 's|^astsbindir.*$$|astsbindir => $(ASTSBINDIR)|' \
@@ -124,7 +124,7 @@
  		rm -f "$(DESTDIR)$(ASTCONFPATH).tmp" ; \
  	fi
  endef
-@@ -816,7 +801,7 @@ adsi:
+@@ -828,7 +813,7 @@ adsi:
  		else \
  			echo "Installing $$x" ; \
  		fi ; \

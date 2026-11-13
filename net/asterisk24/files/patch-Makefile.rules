@@ -1,6 +1,6 @@
---- Makefile.rules.orig	2023-01-12 11:42:40 UTC
+--- Makefile.rules.orig	2026-11-05 13:20:21 UTC
 +++ Makefile.rules
-@@ -107,6 +107,11 @@ ifeq ($(C_COMPILER_FAMILY),clang)
+@@ -114,6 +114,11 @@ ifeq ($(C_COMPILER_FAMILY),clang)
  # Clang -Werror warning suppressions
  ifeq ($(C_COMPILER_FAMILY),clang)
  	CC_CFLAGS+=-Wno-unused-value -Wno-parentheses-equality
@@ -12,7 +12,7 @@
  endif
  
  ifeq ($(GNU_LD),1)
-@@ -213,10 +218,10 @@ endif
+@@ -220,10 +225,10 @@ endif
  # extern const size_t _binary_abc_def_xml_size;
  %.o: %.xml
  	$(ECHO_PREFIX) echo "   [LD] $^ -> $@"

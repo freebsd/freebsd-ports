@@ -1,6 +1,6 @@
---- main/Makefile.orig	2022-08-18 15:18:29 UTC
+--- main/Makefile.orig	2026-11-05 13:20:21 UTC
 +++ main/Makefile
-@@ -79,9 +79,8 @@ else
+@@ -85,9 +85,8 @@ ifeq ($(OSARCH),FreeBSD)
  endif
  
  ifeq ($(OSARCH),FreeBSD)
