@@ -1,6 +1,5 @@
 PORTNAME=	rubocop-ast
-PORTVERSION=	1.50.0
-PORTREVISION=	1
+PORTVERSION=	1.51.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-parser>=3.3.7.2:devel/rubygem-parser \
-		rubygem-prism1>=1.7<2:textproc/rubygem-prism1
+		rubygem-prism>=1.7:textproc/rubygem-prism
 
 USES=		gem
 
