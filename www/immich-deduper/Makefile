@@ -1,6 +1,7 @@
 PORTNAME=	immich-deduper
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.6
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	joneum@FreeBSD.org
@@ -26,7 +27,7 @@ RUN_DEPENDS=	exiftool:graphics/p5-Image-ExifTool \
 		${PYTHON_PKGNAMEPREFIX}qdrant-client>=1.16.1<2:databases/py-qdrant-client@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.32.3<3:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}torchvision>=0.26<1:misc/py-torchvision@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}watchdog>=4.0.2<7:devel/py-watchdog@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}watchdog>=4.0.2<8:devel/py-watchdog@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}websockets>=17.1<18:devel/py-websockets@${PY_FLAVOR}
 
 USES=		python:3.12+,run
