@@ -1,5 +1,6 @@
 PORTNAME=	breeze-gtk
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11-themes kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -9,8 +10,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycairo>0:graphics/py-pycairo@${PY_FLAVOR}
 		sassc:textproc/sassc
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycairo>0:graphics/py-pycairo@${PY_FLAVOR}
 
-USES=		cmake gnome kde:6 python qt:6 tar:xz
-USE_GNOME=	gtk20
+USES=		cmake kde:6 python qt:6 tar:xz
 USE_KDE=	breeze \
 		ecm:build
 USE_QT=		base
