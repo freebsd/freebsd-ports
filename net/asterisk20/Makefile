@@ -5,7 +5,7 @@ MASTER_SITES=	https://downloads.asterisk.org/pub/telephony/%SUBDIR%/:DEFAULT,g72
 MASTER_SITE_SUBDIR=	asterisk/ \
 			asterisk/old-releases/ \
 			sounds/releases/:g729
-PKGNAMESUFFIX=	20
+PKGNAMESUFFIX=	${DISTVERSION:R:R}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${ASTERISK_CORE_G729_SOUNDS}:g729 \
 		${ASTERISK_MOH_G729_SOUNDS}:g729
@@ -54,9 +54,8 @@ MAKE_ENV=	ASTCFLAGS="${CFLAGS}" \
 
 LDFLAGS+=	-L. -Wl,--undefined-version
 
-CONFLICTS=		ossp-uuid
+CONFLICTS=		asterisk22 asterisk24 ossp-uuid
 CONFLICTS_BUILD=	linuxthreads
-CONFLICTS_INSTALL=	asterisk18
 
 USERS=	${ASTERISK_USER}
 GROUPS=	${ASTERISK_GROUP} dahdi
