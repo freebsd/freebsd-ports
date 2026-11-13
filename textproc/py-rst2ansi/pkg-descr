@@ -1,1 +1,5 @@
 rst2ansi is a library for rendering reStructuredText (RST) in a terminal.
+
+It converts RST documents to ANSI-escaped strings suitable for display in
+a console, and can be used as a Python module or as the rst2ansi
+command-line utility.
