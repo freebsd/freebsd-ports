@@ -1,7 +1,6 @@
 PORTNAME=	cli
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.0
-PORTREVISION=	1
+DISTVERSION=	2.3.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,5 +21,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	daniele77
 
 NO_ARCH=	yes
+
+# 100% tests passed, 0 tests failed out of 1
 
 .include <bsd.port.mk>
