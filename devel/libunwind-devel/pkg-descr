@@ -20,3 +20,10 @@ applications. Some examples include:
   With libunwind, it is possible to implement an extremely efficient version of
   setjmp(). Effectively, the only context that needs to be saved consists of the
   stack-pointer(s).
+
+This is a development snapshot of libunwind.  Its shared libraries have a
+different version than the ones of devel/libunwind, so both ports can be
+installed at the same time.  To make that possible the development files
+(headers, static libraries, pkg-config files and manual pages) are installed
+under /usr/local/libunwind11, while only the versioned shared libraries are
+installed in /usr/local/lib.
