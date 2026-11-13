@@ -1,5 +1,5 @@
 PORTNAME=	PHP_CodeCoverage
-PORTVERSION=	14.5.1
+PORTVERSION=	14.5.2
 CATEGORIES=	devel pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
