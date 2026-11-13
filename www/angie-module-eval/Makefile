@@ -1,6 +1,6 @@
 PORTNAME=	angie-module-eval
 MODULE_VERSION=	2016.06.10
-MODULE_PORTREVISION=	9
+MODULE_PORTREVISION=	10
 GH_TUPLE=	openresty:nginx-eval-module:${MODULE_VERSION}:module
 
 COMMENT=	Angie eval dynamic module
