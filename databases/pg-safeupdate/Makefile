@@ -1,13 +1,13 @@
 PORTNAME=	pg-safeupdate
-PORTVERSION=	1.5
-PORTREVISION=	1
+PORTVERSION=	1.7
 CATEGORIES=	databases
 PKGNAMEPREFIX=	postgresql${PGSQL_VER:S/.//}-
 
 MAINTAINER=	develuke@gmx.de
 COMMENT=	PostgreSQL extension to block unconditional UPDATE/DELETE
 
-LICENSE=	PostgreSQL
+LICENSE=	ISCL
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gmake pgsql
 WANT_PGSQL=	server
