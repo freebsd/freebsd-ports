@@ -1,6 +1,6 @@
 PORTNAME=	atuin
 DISTVERSIONPREFIX=	v
-DISTVERSION=	18.24.6
+DISTVERSION=	18.24.8
 CATEGORIES=	shells
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -64,15 +64,18 @@ CARGO_CRATES=	adler2-2.0.1 \
 		basic-toml-0.1.10 \
 		beef-0.5.2 \
 		bit-set-0.5.3 \
-		bit-set-0.8.0 \
+		bit-set-0.11.1 \
 		bit-vec-0.6.3 \
-		bit-vec-0.8.0 \
+		bit-vec-0.10.1 \
 		bitflags-1.3.2 \
 		bitflags-2.13.0 \
 		blake2-0.10.6 \
 		block-buffer-0.10.4 \
 		block-buffer-0.12.1 \
+		borsh-1.8.1 \
+		borsh-derive-1.8.1 \
 		bs58-0.5.1 \
+		bstr-1.13.1 \
 		bumpalo-3.20.3 \
 		by_address-1.2.1 \
 		bytemuck-1.25.0 \
@@ -117,6 +120,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		convert_case-0.10.0 \
 		core-foundation-0.10.1 \
 		core-foundation-sys-0.8.7 \
+		core_detect-1.0.0 \
 		cpufeatures-0.2.17 \
 		cpufeatures-0.3.0 \
 		crc-3.4.0 \
@@ -176,6 +180,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		encoding_rs-0.8.35 \
 		enum_dispatch-0.3.13 \
 		equivalent-1.0.2 \
+		erased-serde-0.4.11 \
 		errno-0.3.14 \
 		error-code-3.3.2 \
 		etcetera-0.11.0 \
@@ -285,6 +290,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		inotify-0.11.4 \
 		inotify-sys-0.1.8 \
 		inout-0.1.4 \
+		inquire-0.9.4 \
 		instability-0.3.12 \
 		interim-0.2.1 \
 		interval-heap-0.0.5 \
@@ -328,6 +334,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		logos-derive-0.15.1 \
 		lru-0.18.2 \
 		lsm-tree-3.1.10 \
+		luau0-src-0.22.0+luau740 \
 		lz4_flex-0.13.1 \
 		mac_address-1.1.8 \
 		matchers-0.2.0 \
@@ -349,6 +356,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		miniz_oxide-0.8.9 \
 		minspan-0.1.5 \
 		mio-1.2.1 \
+		mlua-0.12.2 \
+		mlua-sys-0.13.0 \
 		moxcms-0.8.1 \
 		multimap-0.10.1 \
 		native-tls-0.2.18 \
@@ -394,6 +403,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		opentelemetry-proto-0.32.0 \
 		opentelemetry_sdk-0.32.1 \
 		option-ext-0.2.0 \
+		ordered-float-2.10.1 \
 		ordered-float-4.6.0 \
 		os_pipe-1.2.3 \
 		palette-0.7.6 \
@@ -435,7 +445,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		proc-macro-error-attr3-3.1.1 \
 		proc-macro-error3-3.1.1 \
 		proc-macro2-1.0.107 \
-		proptest-1.11.0 \
+		proptest-1.12.0 \
 		prost-0.14.3 \
 		prost-build-0.14.3 \
 		prost-derive-0.14.3 \
@@ -463,7 +473,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rand_core-0.6.4 \
 		rand_core-0.9.5 \
 		rand_core-0.10.1 \
-		rand_xorshift-0.4.0 \
+		rand_xorshift-0.5.0 \
 		rand_xoshiro-0.7.0 \
 		ratatui-0.30.2 \
 		ratatui-core-0.1.2 \
@@ -500,7 +510,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rustc-hash-1.1.0 \
 		rustc-hash-2.1.3 \
 		rustc_version-0.4.1 \
-		rustix-1.1.5 \
+		rustix-1.1.6 \
 		rustls-pki-types-1.14.1 \
 		rustversion-1.0.22 \
 		rusty-fork-0.3.1 \
@@ -521,6 +531,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		self_cell-1.3.0 \
 		semver-1.0.28 \
 		serde-1.0.229 \
+		serde-value-0.7.0 \
 		serde_core-1.0.229 \
 		serde_derive-1.0.229 \
 		serde_derive_internals-0.29.1 \
@@ -562,6 +573,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		sqlx-mysql-0.9.0 \
 		sqlx-postgres-0.9.0 \
 		sqlx-sqlite-0.9.0 \
+		sse-stream-0.2.6 \
 		stable_deref_trait-1.2.1 \
 		static_assertions-1.1.0 \
 		streaming-iterator-0.1.9 \
@@ -638,6 +650,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		type-map-0.5.1 \
 		typed-builder-0.23.2 \
 		typed-builder-macro-0.23.2 \
+		typeid-1.0.3 \
 		typenum-1.20.1 \
 		ucd-trie-0.1.7 \
 		unarray-0.1.4 \
