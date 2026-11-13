@@ -1,5 +1,6 @@
 PORTNAME=	mu
 DISTVERSION=	1.14.3
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	https://github.com/djcb/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -34,9 +35,12 @@ CLD2_MESON_ENABLED=	cld2
 
 GUILE_USES=		guile:3.0
 GUILE_MESON_ENABLED=	scm
+GUILE_INFO=		mu-scm
 
 MANPAGES_BUILD_DEPENDS=	emacs:editors/emacs@nox
 
 MU4E_BUILD_DEPENDS=	emacs:editors/emacs@nox
+MU4E_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-meson.build
+MU4E_INFO=		mu4e
 
 .include <bsd.port.mk>

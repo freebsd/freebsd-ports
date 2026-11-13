@@ -1,0 +1,10 @@
+--- meson.build.orig	2026-09-05 07:07:19 UTC
++++ meson.build
+@@ -367,7 +367,6 @@ if emacs.found()
+ emacs=find_program([emacs_name], version: '>=' + emacs_min_version, required:false)
+ if emacs.found()
+   subdir('man')
+-  subdir('mu4e')
+ else
+   message('emacs not found; not pre-compiling mu4e / generating man-pages')
+ endif
