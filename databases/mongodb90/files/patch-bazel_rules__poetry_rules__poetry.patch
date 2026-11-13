@@ -1,14 +1,13 @@
 --- bazel/rules_poetry/rules_poetry.patch.orig
 +++ bazel/rules_poetry/rules_poetry.patch
-@@ -10,3 +10,167 @@ index 0000000..c09945f
- +
- +bazel_dep(name = "bazel_skylib", version = "1.5.0")
- +bazel_dep(name = "platforms", version = "0.0.8")
+@@ -172,3 +172,168 @@
+      attrs = {
+ +        "wheel_only_packages": attr.string_list(),
+          "pyproject": attr.label(
 +diff --git rules_poetry/defs.bzl rules_poetry/defs.bzl
-+index b3c070b..564e159 100644
 +--- rules_poetry/defs.bzl
 ++++ rules_poetry/defs.bzl
-+@@ -88,43 +88,18 @@ COMMON_ARGS = [
++@@ -96,46 +96,18 @@
 +     "--isolated",
 + ]
 + 
@@ -16,16 +15,19 @@
 +-
 +-    toolchain = ctx.toolchains["@bazel_tools//tools/python:toolchain_type"]
 +-    runtime = toolchain.py3_runtime
-+-    inputs = depset([requirements], transitive = [runtime.files])
++-    inputs = depset([requirements, ctx.file._environment_runner], transitive = [runtime.files])
 +-    tools = depset(direct = [runtime.interpreter], transitive = [runtime.files])
 +-
 +-    python = ctx.toolchains["@bazel_tools//tools/python:toolchain_type"].py3_runtime
 +-    destination = ctx.actions.declare_directory("wheels/%s" % ctx.attr.name)
 +-    args = ctx.actions.args()
-+-    args.add("-m")
++-    args.add(ctx.file._environment_runner)
 +-    args.add("pip")
 +-    args.add("wheel")
 +-    args.add_all(COMMON_ARGS)
++-    if ctx.attr.only_binary:
++-        args.add("--only-binary")
++-        args.add(":all:")
 +-    args.add("--require-hashes")
 +-    args.add("--wheel-dir")
 +-    args.add(destination.path)
@@ -62,14 +64,14 @@
 +     return destination
 + 
 + def _download_wheel_impl(ctx):
-+@@ -161,33 +136,7 @@ download_wheel = rule(
++@@ -178,33 +150,7 @@
 + def _install(ctx, wheel_info):
 +     
 +     installed_wheel = ctx.actions.declare_directory(wheel_info.pkg)
 +-    python = ctx.toolchains["@bazel_tools//tools/python:toolchain_type"].py3_runtime
 +-    
 +-    args = [
-+-        "-m",
++-        ctx.file._environment_runner.path,
 +-        "pip",
 +-        'install', 
 +-        '--force-reinstall',
@@ -86,7 +88,7 @@
 +-    ctx.actions.run(
 +-        executable = python.interpreter.path,
 +-        outputs = [installed_wheel],
-+-        inputs = depset(ctx.files.wheel, transitive = [python.files]),
++-        inputs = depset(ctx.files.wheel + [ctx.file._environment_runner], transitive = [python.files]),
 +-        arguments = args,
 +-        env = deterministic_env(),
 +-        progress_message = "Installing %s wheel" % wheel_info.pkg,
@@ -98,10 +100,9 @@
 + 
 + def _pip_install_impl(ctx):
 +diff --git rules_poetry/poetry.bzl rules_poetry/poetry.bzl
-+index 32991e2..3e27600 100644
 +--- rules_poetry/poetry.bzl
 ++++ rules_poetry/poetry.bzl
-+@@ -20,6 +20,26 @@ SUPPORTED_PLATFORMS = [
++@@ -20,6 +20,26 @@
 +     "win32!x86_64",
 + ]
 + 
@@ -128,7 +129,7 @@
 + def _clean_name(name):
 +     return name.lower().replace("-", "_").replace(".", "_")
 + 
-+@@ -68,18 +88,7 @@ def _resolve_python_interpreter(rctx):
++@@ -68,18 +88,7 @@
 + def _mapping(repository_ctx):
 +     python_interpreter = _resolve_python_interpreter(repository_ctx)
 +     result = repository_ctx.execute(
@@ -148,7 +149,7 @@
 +     )
 + 
 +     if result.return_code:
-+@@ -159,18 +168,7 @@ def _impl(repository_ctx):
++@@ -199,18 +208,7 @@
 +     mapping = _mapping(repository_ctx)
 + 
 +     result = repository_ctx.execute(

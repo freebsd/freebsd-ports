@@ -1,7 +1,6 @@
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
-DISTVERSION=	9.0.4
-PORTREVISION=	1
+DISTVERSION=	9.0.8
 CATEGORIES=	databases net
 MASTER_SITES+=	https://github.com/WebAssembly/wasi-sdk/releases/download/wasi-sdk-${WASI_SDK_VERSION:R}/:wasi_sdk \
 		https://codeload.github.com/bazelbuild/bazel-central-registry/tar.gz/${BAZEL_REGISTRY_COMMIT}?dummy=/:bazel_registry \
