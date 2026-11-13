@@ -1,5 +1,5 @@
 PORTNAME=	minitar
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 CATEGORIES=	archivers rubygems
 MASTER_SITES=	RG
 
@@ -9,8 +9,8 @@ WWW=		https://github.com/halostatue/minitar
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
-LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/docs/bsdl.txt
-LICENSE_FILE_RUBY=	${WRKSRC}/docs/ruby.txt
+LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/licenses/bsdl.txt
+LICENSE_FILE_RUBY=	${WRKSRC}/licenses/ruby.txt
 
 USES=		cpe gem
 
