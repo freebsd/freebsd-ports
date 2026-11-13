@@ -1,0 +1,11 @@
+--- build_tools/list_valid_installed_externals.orig	2026-11-05 13:20:21 UTC
++++ build_tools/list_valid_installed_externals
+@@ -6,7 +6,7 @@ ASTTOPDIR=${ASTTOPDIR:-.}
+ set -e
+ 
+ ASTTOPDIR=${ASTTOPDIR:-.}
+-export make=`sed -n -e "s/^MAKE\s*=\s*//gp" ${ASTTOPDIR}/makeopts`
++export make=`sed -n -e "s/^MAKE[[:space:]]*=[[:space:]]*//gp" ${ASTTOPDIR}/makeopts`
+ 
+ getvar() {
+ 	$make --quiet --no-print-directory -f- <<EOF
