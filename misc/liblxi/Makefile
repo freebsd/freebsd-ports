@@ -1,8 +1,7 @@
 PORTNAME=	liblxi
-DISTVERSIONPREFIX=	v
-DISTVERSION=	1.18
-PORTREVISION=	2
+DISTVERSION=	1.22
 CATEGORIES=	misc
+MASTER_SITES=	https://github.com/lxi-tools/liblxi/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for communicating with LXI compatible instruments
@@ -13,10 +12,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libavahi-client.so:net/avahi-app
 
-USES=		gnome meson pkgconfig
+USES=		gnome meson pkgconfig tar:xz
 USE_GNOME=	libxml2
-USE_GITHUB=	yes
-GH_ACCOUNT=	lxi-tools
 USE_LDCONFIG=	yes
 
 PORTDOCS=	README.md
