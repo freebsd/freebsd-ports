@@ -1,5 +1,5 @@
 PORTNAME=	xxhash
-PORTVERSION=	4.0.2
+PORTVERSION=	4.1.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/ifduyue/python-xxhash/releases/download/v${PORTVERSION}/
