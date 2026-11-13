@@ -80,9 +80,9 @@ _TEX_FEATURE_${var:C/=.*$//:tu}= ${var:C/.*=//:S/,/ /g}
 # default TeX distribution.  "texlive"
 TEX_DEFAULT?=	texlive
 
-.if ${TEX_DEFAULT} != texlive
+.  if ${TEX_DEFAULT} != texlive
 IGNORE=		Only 'texlive' is supported as value for TEX_DEFAULT
-.endif
+.  endif
 
 TEXMFDIR?=	share/texmf
 TEXMFDISTDIR?=	share/texmf-dist
@@ -95,9 +95,9 @@ TEXLIVE_YEAR?=	2026
 TEXLIVE_VERSION?=	${TEXLIVE_YEAR}0301
 DISTNAME_TEXMF=	texlive-${TEXLIVE_VERSION}-texmf
 
-.for V in TEXMFDIR TEXMFDISTDIR TEXMFLOCALDIR TEXMFVARDIR TEXMFCONFIGDIR FMTUTIL_CNF
+.  for V in TEXMFDIR TEXMFDISTDIR TEXMFLOCALDIR TEXMFVARDIR TEXMFCONFIGDIR FMTUTIL_CNF
 PLIST_SUB+=	$V="${$V}"
-.endfor
+.  endfor
 
 _USE_TEX_TEXMF_DEP=	${LOCALBASE}/${TEXMFDISTDIR}/README
 _USE_TEX_TEXMF_PORT=	print/${_USE_TEX_TEXMF_PKGNAME}
@@ -129,11 +129,11 @@ _USE_TEX_DVIPDFMX_PKGNAME=tex-dvipdfmx
 _USE_TEX_BASIC_DEP=	tex
 _USE_TEX_BASIC_PORT=	print/${_USE_TEX_BASIC_PKGNAME}
 _USE_TEX_BASIC_PKGNAME=	tex-basic-engines
-.for _L in TEX LATEX PDFTEX
+.  for _L in TEX LATEX PDFTEX
 _USE_TEX_${_L}_DEP=	${_USE_TEX_FORMATS_DEP}
 _USE_TEX_${_L}_PORT=	${_USE_TEX_FORMATS_PORT}
 _USE_TEX_${_L}_PKGNAME=	${_USE_TEX_FORMATS_PKGNAME}
-.endfor
+.  endfor
 _USE_TEX_JADETEX_DEP=	jadetex
 _USE_TEX_JADETEX_PORT=	print/${_USE_TEX_JADETEX_PKGNAME}
 _USE_TEX_JADETEX_PKGNAME=tex-jadetex
@@ -180,70 +180,70 @@ _USE_TEX_FULLLIST=	texmf>=${TEXLIVE_VERSION} base>=${TEXLIVE_VERSION} \
 		dvipsk dvipdfmx xdvik xpdfopen:run \
 		kpathsea:lib ptexenc:lib texlua:lib texluajit:lib synctex:lib
 
-.if !empty(USE_TEX:tu:MFULL)
+.  if !empty(USE_TEX:tu:MFULL)
 USE_TEX:=	${USE_TEX:tu:NFULL} ${_USE_TEX_FULLLIST:tu}
-.endif
+.  endif
 
-.for _UU in ${USE_TEX:tu}
+.  for _UU in ${USE_TEX:tu}
 _U:=	${_UU}	# ugly but necessary in for loop
 _VOP:=
-.  if !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MTEXMF) && empty(_U:M*[<>=]*)
+.    if !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MTEXMF) && empty(_U:M*[<>=]*)
 _U:=	${_U}>=${TEXLIVE_VERSION}
-.  endif
-.  if !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MBASE) && empty(_U:M*[<>=]*)
+.    endif
+.    if !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MBASE) && empty(_U:M*[<>=]*)
 _U:=	${_U}>=${TEXLIVE_VERSION}
-.  endif
-.  if !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MKPATHSEA) || \
+.    endif
+.    if !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MKPATHSEA) || \
      !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MPTEXENC) || \
      !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MTEXLUA) || \
      !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MTEXLUAJIT) || \
      !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MSYNCTEX)
 _U:=	${_U}:lib
-.  endif
-.  if !empty(_U:M*[<>=]*)
-_VOP:=	${_U:C/^[^<>=]*//:C/\:.*$//}
-.  endif
-.  if empty(_U:M*\:*)
-_C:=	BUILD RUN
-.  else
-_C:=	${_U:C/.*://:S/,/ /g:C/[<>=][^\:]*//g}
-.  endif
-.  for _CC in ${_C:tu}
-_V:=${_UU:C/[<>=][^\:]*//:C/\:.*$//}
-.    if defined(_USE_TEX_${_V}_PORT)
-.      if !empty(_VOP)
-.        for _T in ${_USE_TEX_${_V}_PKGNAME}${_VOP}:${_USE_TEX_${_V}_PORT}
-TEX_${_CC}_DEPENDS+=	${_T}
-.        endfor
-.      else
-.        for _T in ${_USE_TEX_${_V}_DEP}:${_USE_TEX_${_V}_PORT}
-TEX_${_CC}_DEPENDS+=	${_T}
-.        endfor
-.      endif
 .    endif
+.    if !empty(_U:M*[<>=]*)
+_VOP:=	${_U:C/^[^<>=]*//:C/\:.*$//}
+.    endif
+.    if empty(_U:M*\:*)
+_C:=	BUILD RUN
+.    else
+_C:=	${_U:C/.*://:S/,/ /g:C/[<>=][^\:]*//g}
+.    endif
+.    for _CC in ${_C:tu}
+_V:=${_UU:C/[<>=][^\:]*//:C/\:.*$//}
+.      if defined(_USE_TEX_${_V}_PORT)
+.        if !empty(_VOP)
+.          for _T in ${_USE_TEX_${_V}_PKGNAME}${_VOP}:${_USE_TEX_${_V}_PORT}
+TEX_${_CC}_DEPENDS+=	${_T}
+.          endfor
+.        else
+.          for _T in ${_USE_TEX_${_V}_DEP}:${_USE_TEX_${_V}_PORT}
+TEX_${_CC}_DEPENDS+=	${_T}
+.          endfor
+.        endif
+.      endif
+.    endfor
 .  endfor
-.endfor
 
-.for _C in EXTRACT BUILD LIB RUN TEST
+.  for _C in EXTRACT BUILD LIB RUN TEST
 ${_C}_DEPENDS+=	${TEX_${_C}_DEPENDS:O:u}
-.endfor
+.  endfor
 
 .ORDER: do-texhash do-fmtutil do-updmap
 
-.if !empty(USE_TEX:Mtexhash) || \
+.  if !empty(USE_TEX:Mtexhash) || \
     !empty(USE_TEX:Mtexhash-bootstrap) || \
     !empty(USE_TEX:Mfmtutil) || \
     !empty(USE_TEX:Mupdmap)
 .PHONY:	do-texhash
 do-texhash:
-.  if !empty(USE_TEX:Mtexhash-bootstrap)
+.    if !empty(USE_TEX:Mtexhash-bootstrap)
 	@${ECHO_CMD} "@postexec ${LOCALBASE}/bin/mktexlsr " \
 		"${TEXHASHDIRS:S,^,%D/,}" >> ${TMPPLIST}
 	@for D in ${TEXHASHDIRS}; do \
 		${ECHO_CMD} "@rmtry $$D/ls-R"; \
 		${ECHO_CMD} "@dir $$D"; \
 	done >> ${TMPPLIST}
-.  else
+.    else
 	@${ECHO_CMD} "@postexec for D in ${TEXHASHDIRS:S,^,${PREFIX}/,}; do " \
 		"if [ -r \$$D/ls-R ]; then " \
 			"${LOCALBASE}/bin/mktexlsr \$$D; " \
@@ -252,14 +252,14 @@ do-texhash:
 		"if [ -r \$$D/ls-R ]; then " \
 			"${LOCALBASE}/bin/mktexlsr \$$D; " \
 		"fi; done" >> ${TMPPLIST}
-.  endif
+.    endif
 
 post-install-script: do-texhash
-.endif
+.  endif
 
-.if !empty(USE_TEX:Mfmtutil)
+.  if !empty(USE_TEX:Mfmtutil)
 .PHONY:	do-fmtutil
-.  for F in ${TEX_FORMATS}
+.    for F in ${TEX_FORMATS}
 do-fmtutil: post-install-$F do-fmtutil-$F
 do-fmtutil-$F:
 	${TEST} -n '${TEX_FORMAT_${F:tu}}'
@@ -290,13 +290,13 @@ do-fmtutil-$F:
 _PLIST_FILES+=	${TEX_FORMAT_${F:tu}_FILES}
 _PLIST_DIRS+=${TEX_FORMAT_${F:tu}_DIRS}
 _PLIST_FILES+=	${TEX_FORMAT_${F:tu}_BIN}
-.  endfor
+.    endfor
 post-install-script: do-fmtutil
 PLIST_FILES=	${_PLIST_FILES:O:u}
 PLIST_DIRS=	${_PLIST_DIRS:O:u} ${TEXMFVARDIR}/web2c
-.endif
+.  endif
 
-.if !empty(USE_TEX:Mupdmap)
+.  if !empty(USE_TEX:Mupdmap)
 .PHONY:	do-updmap
 do-updmap:
 	@${ECHO_CMD} "@postexec ${SETENV} PATH=${PATH}:${LOCALBASE}/bin " \
@@ -307,7 +307,7 @@ do-updmap:
 		"${LOCALBASE}/bin/updmap-sys"  >> ${TMPPLIST}
 
 post-install-script: do-updmap
-.endif
+.  endif
 
 TEX_FORMAT_AMSTEX?= \
 	"amstex pdftex - -translate-file=cp227.tcx *amstex.ini"
