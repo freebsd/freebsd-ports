@@ -1,7 +1,7 @@
 PORTNAME=	hypermail
-DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.1
+DISTVERSION=	2.4.2
 CATEGORIES=	www mail
+MASTER_SITES=	https://github.com/hypermail-project/${PORTNAME}/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program to generate a cross-referenced HTML mail archive
@@ -14,9 +14,6 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libtrio.so:devel/trio
 
 USES=		desthack iconv localbase
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	hypermail-project
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-htmldir=${STAGEDIR}${PREFIX}/share/doc/hypermail \
