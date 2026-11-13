@@ -1,5 +1,5 @@
 PORTNAME=	mkdocs-git-revision-date-localized-plugin
-PORTVERSION=	1.6.3
+PORTVERSION=	1.7.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
