@@ -1,6 +1,6 @@
-TIMESTAMP = 1794446961
-SHA256 (litellm-1.109.0.tar.gz) = 267639caedf188b4b9417132c3778ec322e774f8a24b836d12d8843e5b2d5e14
-SIZE (litellm-1.109.0.tar.gz) = 25568741
+TIMESTAMP = 1794538700
+SHA256 (litellm-1.109.1.tar.gz) = 5b98ecccd93374b8ea1746ee98de16b505c0b5e6c0dfb7e8afec3d817d08d7c2
+SIZE (litellm-1.109.1.tar.gz) = 25570168
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
 SIZE (rust/crates/adler2-2.0.1.crate) = 13366
 SHA256 (rust/crates/ahash-0.8.12.crate) = 5a15f179cd60c4584b8a8c596927aadc462e27f2ca70c04e0071964a73ba7a75

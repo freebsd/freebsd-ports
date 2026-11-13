@@ -1,5 +1,5 @@
 PORTNAME=	litellm
-DISTVERSION=	1.109.0
+DISTVERSION=	1.109.1
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -86,7 +86,7 @@ PROXY_RUN_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}tomlkit>=0.13.3<1.0:textproc/py-tomlkit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}polars>=1.38.1<3.0:misc/py-polars@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}soundfile>=0.12.1<1.0:audio/py-SoundFile@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}expression>=5.6.0<6.0:devel/py-expression@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}expression>=5.6.0<7.0:devel/py-expression@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}backports.zstd>=1.0.0<2.0:devel/py-backports.zstd@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.32.0<3.0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}keyring>=25.6.0,1<26.0,1:security/py-keyring@${PY_FLAVOR} \
