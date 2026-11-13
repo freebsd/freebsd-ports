@@ -1,6 +1,6 @@
---- libpod/container_internal_common.go.orig	2025-06-18 16:07:27 UTC
+--- libpod/container_internal_common.go.orig	2026-09-29 13:04:58 UTC
 +++ libpod/container_internal_common.go
-@@ -192,7 +192,7 @@ func (c *Container) createInitRootfs() error {
+@@ -193,7 +193,7 @@ func (c *Container) createInitRootfs() error {
  	}
  
  	c.config.Rootfs = tmpDir
