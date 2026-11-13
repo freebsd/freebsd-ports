@@ -26,6 +26,9 @@ etc/newsyslog.conf.d/rspamd.newsyslog.conf
 %%ETCDIR%%/maps.d/maillist.inc
 %%ETCDIR%%/maps.d/mid.inc
 %%ETCDIR%%/maps.d/mime_types.inc
+%%ETCDIR%%/maps.d/phishing_rewrite_domains.inc
+%%ETCDIR%%/maps.d/phishing_rewrite_redirectors.inc
+%%ETCDIR%%/maps.d/phishing_trusted_redirectors.inc
 %%ETCDIR%%/maps.d/redirectors.inc
 %%ETCDIR%%/maps.d/spf_dkim_whitelist.inc
 %%ETCDIR%%/maps.d/surbl-whitelist.inc

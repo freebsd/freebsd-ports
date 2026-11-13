@@ -1,5 +1,5 @@
 PORTNAME=	rspamd
-PORTVERSION=	4.2.3
+PORTVERSION=	4.3.0
 CATEGORIES=	mail
 
 MAINTAINER=	vsevolod@FreeBSD.org
