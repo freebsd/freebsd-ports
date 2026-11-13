@@ -1,6 +1,6 @@
---- third_party/blink/renderer/modules/webaudio/audio_worklet_thread_test.cc.orig	2026-05-07 17:02:56 UTC
+--- third_party/blink/renderer/modules/webaudio/audio_worklet_thread_test.cc.orig	2026-11-11 14:44:17 UTC
 +++ third_party/blink/renderer/modules/webaudio/audio_worklet_thread_test.cc
-@@ -466,7 +466,7 @@ class AudioWorkletThreadPriorityTest
+@@ -464,7 +464,7 @@ class AudioWorkletThreadPriorityTest
      // acquire SCHED_RR, so the thread remains in SCHED_NORMAL. However,
      // ChromeOS applies specific optimizations (Nice -10 and uclamp boost)
      // that are not present on standard Linux.

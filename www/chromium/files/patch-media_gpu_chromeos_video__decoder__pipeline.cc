@@ -1,4 +1,4 @@
---- media/gpu/chromeos/video_decoder_pipeline.cc.orig	2026-10-18 13:29:39 UTC
+--- media/gpu/chromeos/video_decoder_pipeline.cc.orig	2026-11-11 14:44:17 UTC
 +++ media/gpu/chromeos/video_decoder_pipeline.cc
 @@ -720,7 +720,7 @@ void VideoDecoderPipeline::InitializeTask(const VideoD
        NOTREACHED();
@@ -18,7 +18,7 @@
    // Linux: behavior depends on which backend the decoder represents, signaled
    // by whether it supplied a custom allocator.
    if (allocator.has_value()) {
-@@ -1373,7 +1373,7 @@ VideoDecoderPipeline::PickDecoderOutputFormat(
+@@ -1374,7 +1374,7 @@ VideoDecoderPipeline::PickDecoderOutputFormat(
               << " VideoFrames";
      auxiliary_frame_pool_->set_parent_task_runner(decoder_task_runner_);
  

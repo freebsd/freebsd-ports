@@ -1,6 +1,6 @@
---- components/regional_capabilities/regional_capabilities_service.cc.orig	2026-09-25 15:26:43 UTC
+--- components/regional_capabilities/regional_capabilities_service.cc.orig	2026-11-11 14:44:17 UTC
 +++ components/regional_capabilities/regional_capabilities_service.cc
-@@ -445,7 +445,7 @@ bool RegionalCapabilitiesService::IsInAnySearchEngineC
+@@ -460,7 +460,7 @@ bool RegionalCapabilitiesService::IsInAnySearchEngineC
        .choice_screen_eligibility_config.has_value();
  }
  

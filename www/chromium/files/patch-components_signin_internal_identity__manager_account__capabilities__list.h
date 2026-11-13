@@ -1,6 +1,6 @@
---- components/signin/internal/identity_manager/account_capabilities_list.h.orig	2026-10-18 13:29:39 UTC
+--- components/signin/internal/identity_manager/account_capabilities_list.h.orig	2026-11-11 14:44:17 UTC
 +++ components/signin/internal/identity_manager/account_capabilities_list.h
-@@ -84,7 +84,7 @@ ACCOUNT_CAPABILITY(kCanSignInToChromeCapabilityName,
+@@ -78,7 +78,7 @@ ACCOUNT_CAPABILITY(kCanSignInToChromeCapabilityName,
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

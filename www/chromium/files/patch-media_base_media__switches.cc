@@ -1,6 +1,6 @@
---- media/base/media_switches.cc.orig	2026-10-18 13:29:39 UTC
+--- media/base/media_switches.cc.orig	2026-11-11 14:44:17 UTC
 +++ media/base/media_switches.cc
-@@ -20,7 +20,7 @@
+@@ -21,7 +21,7 @@
  #include "ui/gl/gl_features.h"
  #include "ui/gl/gl_utils.h"
  
@@ -18,7 +18,7 @@
  #if BUILDFLAG(USE_MPRIS)
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
-@@ -1129,7 +1129,7 @@ BASE_FEATURE(kFileDialogsTuckPictureInPicture,
+@@ -1120,7 +1120,7 @@ BASE_FEATURE(kFileDialogsTuckPictureInPicture,
  
  // If enabled, users can request Media Remoting without fullscreen-in-tab.
  BASE_FEATURE(kMediaRemotingWithoutFullscreen,
@@ -27,7 +27,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -1465,7 +1465,7 @@ BASE_FEATURE(kShowForceRespectUiGainsToggle, base::FEA
+@@ -1452,7 +1452,7 @@ BASE_FEATURE(kShowForceRespectUiGainsToggle, base::FEA
  
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
@@ -36,7 +36,7 @@
  // Reduces the number of buffers needed in the output video frame pool to
  // populate the Renderer pipeline for hardware accelerated VideoDecoder in
  // non-low latency scenarios.
-@@ -1492,7 +1492,7 @@ BASE_FEATURE(kFuchsiaMediacodecVideoEncoder, base::FEA
+@@ -1479,7 +1479,7 @@ BASE_FEATURE(kFuchsiaMediacodecVideoEncoder, base::FEA
  
  #endif  // BUILDFLAG(IS_FUCHSIA)
  
@@ -45,7 +45,7 @@
  // Enable vaapi/v4l2 video decoding on linux. This is already enabled by default
  // on chromeos, but needs an experiment on linux.
  BASE_FEATURE(kAcceleratedVideoDecodeLinux,
-@@ -1523,6 +1523,27 @@ BASE_FEATURE(kPulseaudioLoopbackForScreenShare,
+@@ -1510,6 +1510,27 @@ BASE_FEATURE(kPulseaudioLoopbackForScreenShare,
  // implementations.
  BASE_FEATURE(kVaapiIgnoreDriverChecks, base::FEATURE_DISABLED_BY_DEFAULT);
  
@@ -73,7 +73,7 @@
  #endif  // BUILDFLAG(IS_LINUX)
  
  #if BUILDFLAG(IS_MAC)
-@@ -1957,7 +1978,7 @@ bool IsSystemLoopbackCaptureSupported() {
+@@ -1951,7 +1972,7 @@ bool IsSystemLoopbackCaptureSupported() {
  #elif BUILDFLAG(IS_MAC)
    return (IsMacSckSystemLoopbackCaptureSupported() ||
            IsMacCatapSystemLoopbackCaptureSupported());

@@ -1,15 +1,6 @@
---- chrome/browser/password_manager/chrome_password_manager_client.cc.orig	2026-10-18 13:29:39 UTC
+--- chrome/browser/password_manager/chrome_password_manager_client.cc.orig	2026-11-11 14:44:17 UTC
 +++ chrome/browser/password_manager/chrome_password_manager_client.cc
-@@ -762,7 +762,7 @@ void ChromePasswordManagerClient::ContinueShowKeyboard
- bool ChromePasswordManagerClient::IsReauthBeforeFillingRequired(
-     device_reauth::DeviceAuthenticator* authenticator) {
- #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || \
--    BUILDFLAG(IS_CHROMEOS)
-+    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
-   if (!GetLocalStatePrefs() || !GetPrefs() || !authenticator) {
-     return false;
-   }
-@@ -1045,7 +1045,7 @@ void ChromePasswordManagerClient::NotifyUserCredential
+@@ -1027,7 +1027,7 @@ void ChromePasswordManagerClient::NotifyUserCredential
  }
  
  void ChromePasswordManagerClient::NotifyKeychainError() {
@@ -18,7 +9,16 @@
    PasswordsClientUIDelegate* manage_passwords_ui_controller =
        PasswordsClientUIDelegateFromWebContents(web_contents());
    if (manage_passwords_ui_controller) {
-@@ -2164,7 +2164,7 @@ void ChromePasswordManagerClient::HideFillingUI() {
+@@ -2024,7 +2024,7 @@ template <typename T>
+ bool ChromePasswordManagerClient::IsReauthBeforeFillingRequiredImpl(
+     T* availability_provider) {
+ #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || \
+-    BUILDFLAG(IS_CHROMEOS)
++    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+   if (!GetLocalStatePrefs() || !GetPrefs() || !availability_provider) {
+     return false;
+   }
+@@ -2186,7 +2186,7 @@ void ChromePasswordManagerClient::HideFillingUI() {
  bool ChromePasswordManagerClient::IsPasswordManagementEnabledForCurrentPage(
      const GURL& url) const {
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || \
@@ -27,7 +27,7 @@
    if (IsPasswordManagerForUrlDisallowedByPolicy(url)) {
      return false;
    }
-@@ -2203,7 +2203,7 @@ bool ChromePasswordManagerClient::IsPasswordManagement
+@@ -2225,7 +2225,7 @@ bool ChromePasswordManagerClient::IsPasswordManagement
  }
  
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || \

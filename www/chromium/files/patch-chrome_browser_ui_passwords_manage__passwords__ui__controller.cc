@@ -1,6 +1,6 @@
---- chrome/browser/ui/passwords/manage_passwords_ui_controller.cc.orig	2026-09-25 15:26:43 UTC
+--- chrome/browser/ui/passwords/manage_passwords_ui_controller.cc.orig	2026-11-11 14:44:17 UTC
 +++ chrome/browser/ui/passwords/manage_passwords_ui_controller.cc
-@@ -122,7 +122,7 @@ namespace {
+@@ -124,7 +124,7 @@ namespace {
  using Logger = autofill::SavePasswordProgressLogger;
  using enum password_manager::PasswordForm::Store;
  
@@ -9,7 +9,7 @@
  // Should be kept in sync with constant declared in
  // bubble_controllers/relaunch_chrome_bubble_controller.cc.
  constexpr int kMaxNumberOfTimesKeychainErrorBubbleIsShown = 3;
-@@ -632,7 +632,7 @@ void ManagePasswordsUIController::OnBiometricAuthBefor
+@@ -662,7 +662,7 @@ void ManagePasswordsUIController::OnBiometricAuthBefor
  }
  
  void ManagePasswordsUIController::OnKeychainError() {

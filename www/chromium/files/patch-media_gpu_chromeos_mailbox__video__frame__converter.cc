@@ -1,6 +1,6 @@
---- media/gpu/chromeos/mailbox_video_frame_converter.cc.orig	2026-10-18 13:29:39 UTC
+--- media/gpu/chromeos/mailbox_video_frame_converter.cc.orig	2026-11-11 14:44:17 UTC
 +++ media/gpu/chromeos/mailbox_video_frame_converter.cc
-@@ -231,7 +231,7 @@ MailboxVideoFrameConverter::GenerateSharedImage(
+@@ -229,7 +229,7 @@ MailboxVideoFrameConverter::GenerateSharedImage(
                             VideoPixelFormatToString(origin_frame->format()));
      return nullptr;
    }

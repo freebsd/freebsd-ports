@@ -1,6 +1,6 @@
---- net/http/http_auth_gssapi_posix.h.orig	2022-08-31 12:19:35 UTC
+--- net/http/http_auth_gssapi_posix.h.orig	2026-11-11 14:44:17 UTC
 +++ net/http/http_auth_gssapi_posix.h
-@@ -21,6 +21,9 @@
+@@ -22,6 +22,9 @@
  #if BUILDFLAG(IS_APPLE)
  #include <GSS/gssapi.h>
  #elif BUILDFLAG(IS_FREEBSD)

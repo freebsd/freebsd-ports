@@ -1,6 +1,5 @@
 PORTNAME=	chromium
-PORTVERSION=	156.0.8078.79
-PORTREVISION=	1
+PORTVERSION=	157.0.8103.78
 PULSEMV=	16
 PULSEV=		${PULSEMV}.1
 TSV=		7.0.2
@@ -16,7 +15,8 @@ DISTFILES=	${DISTNAME}-lite${EXTRACT_SUFX} \
 
 USE_GITHUB=	nodefault
 GH_TUPLE=	evanw:esbuild:v${_ESBUILD_VERSION:sh}:esbuild/esbuild \
-		microsoft:TypeScript:v${TSV}:typescript/typescript
+		microsoft:TypeScript:v${TSV}:typescript/typescript \
+		google:crubit:dcf92a1baf2c8a6561ed0361502cfec20e2f65f5:crubit/third_party/rust-toolchain/lib/third_party/crubit
 
 MAINTAINER=	chromium@FreeBSD.org
 COMMENT=	Google web browser based on WebKit
@@ -85,11 +85,22 @@ LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-core \
 RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		noto-basic>0:x11-fonts/noto-basic
 
-USES=		bison compiler:c++17-lang cpe desktop-file-utils gl gmake \
+USES=		bison cargo compiler:c++17-lang cpe desktop-file-utils gl gmake \
 		go:no_targets gnome iconv:wchar_t jpeg localbase:ldflags ninja perl5 \
 		pkgconfig python:build qt:5 shebangfix tar:xz xorg
 
 WITHOUT_FBSD10_FIX=	Yes
+
+LTO_UNSAFE=		Yes
+CARGO_CARGOTOML=	${WRKSRC}/third_party/rust-toolchain/lib/third_party/crubit/Cargo.toml
+CARGO_CARGOLOCK=	${WRKSRC}/third_party/rust-toolchain/lib/third_party/crubit/Cargo.lock
+CARGO_TARGET_DIR=	${WRKSRC}/third_party/rust-toolchain/lib/third_party/crubit/target
+CARGO_BUILD_ARGS+=	-p cc_bindings_from_rs
+CARGO_ENV+=		RUSTC_BOOTSTRAP=1 \
+
+CARGO_INSTALL=		No
+CARGO_BUILD=		No
+CARGO_TEST=		No
 
 _ESBUILD_VERSION=	${MAKE} -C ${PORTSDIR}/devel/esbuild -V DISTVERSION
 
@@ -286,7 +297,9 @@ MAKE_ENV+=	C_INCLUDE_PATH=${LOCALBASE}/include \
 # rust
 MAKE_ENV+=	RUSTC_BOOTSTRAP=1
 GN_ARGS+=	enable_rust=true \
-		rust_sysroot_absolute="${LOCALBASE}"
+		rust_sysroot_absolute="${LOCALBASE}" \
+		rust_crubit_root="//third_party/rust-toolchain" \
+		enable_rust_api_from_cpp=true
 
 # go
 MAKE_ENV+=	GOCACHE=${WRKDIR}/go-cache
@@ -337,6 +350,11 @@ pre-build:
 		${WRKSRC}/third_party/typescript/linux-amd64/src/lib/tsc
 
 do-configure:
+	@${CARGO_CARGO_RUN} build \
+		--manifest-path ${CARGO_CARGOTOML} \
+		--verbose \
+		--verbose \
+		${CARGO_BUILD_ARGS}
 	(cd ${WRKSRC}/esbuild && \
 		${LOCALBASE}/bin/node scripts/esbuild.js \
 		/usr/local/bin/esbuild --neutral && \
@@ -344,6 +362,15 @@ do-configure:
 		ln -sf ${WRKSRC}/esbuild/npm/esbuild \
 		${WRKSRC}/third_party/devtools-frontend/src/node_modules/esbuild \
 	)
+
+	# Setup rustc dependency
+	@${MKDIR} ${WRKSRC}/third_party/rust-toolchain/bin \
+		${WRKSRC}/third_party/rust-toolchain/bin \
+		${WRKSRC}/third_party/rust-toolchain/lib/third_party
+	${LN} -sf ${LOCALBASE}/bin/rustc ${WRKSRC}/third_party/rust-toolchain/bin/rustc
+	ln -sf ${LOCALBASE}/bin/rustfmt ${WRKSRC}/third_party/rust-toolchain/bin/rustfmt
+	ln -sf ${WRKSRC}/third_party/rust-toolchain/lib/third_party/crubit/target/release/cc_bindings_from_rs \
+		${WRKSRC}/third_party/rust-toolchain/bin/
 
 	# GN generator bootstrapping and generating ninja files
 	${LN} -sf ${WRKSRC}/out/${BUILDTYPE}/gn ${WRKSRC}/buildtools/linux64/gn
@@ -356,10 +383,6 @@ do-configure:
 	# Setup nodejs dependency
 	@${MKDIR} ${WRKSRC}/third_party/node/freebsd/node-freebsd/bin
 	${LN} -sf ${LOCALBASE}/bin/node ${WRKSRC}/third_party/node/freebsd/node-freebsd/bin/node
-
-	# Setup rustc dependency
-	@${MKDIR} ${WRKSRC}/third_party/rust-toolchain/bin
-	${LN} -sf ${LOCALBASE}/bin/rustc ${WRKSRC}/third_party/rust-toolchain/bin/rustc
 
 	# Setup esbuild dependency
 	${LN} -sf ${LOCALBASE}/bin/esbuild ${WRKSRC}/third_party/devtools-frontend/src/third_party/esbuild/esbuild
@@ -390,7 +413,7 @@ do-install:
 .for d in protoc mksnapshot
 	${INSTALL_PROGRAM} ${WRKSRC}/out/${BUILDTYPE}/${d} ${STAGEDIR}${DATADIR}
 .endfor
-.for d in snapshot_blob.bin v8_context_snapshot.bin
+.for d in snapshot_blob.bin
 	${INSTALL_DATA} ${WRKSRC}/out/${BUILDTYPE}/${d} ${STAGEDIR}${DATADIR}
 .endfor
 	${INSTALL_PROGRAM} ${WRKSRC}/out/${BUILDTYPE}/chrome \

@@ -1,4 +1,4 @@
---- base/allocator/partition_allocator/src/partition_alloc/stack/stack.cc.orig	2026-07-01 06:24:19 UTC
+--- base/allocator/partition_allocator/src/partition_alloc/stack/stack.cc.orig	2026-11-11 14:44:17 UTC
 +++ base/allocator/partition_allocator/src/partition_alloc/stack/stack.cc
 @@ -19,6 +19,10 @@
  #include <pthread.h>
@@ -11,28 +11,28 @@
  #if PA_BUILDFLAG(PA_LIBC_GLIBC)
  extern "C" void* __libc_stack_end;
  #endif
-@@ -49,6 +53,36 @@ void* GetStackTop() {
+@@ -49,6 +53,36 @@ uintptr_t GetStackTop() {
  
- void* GetStackTop() {
-   return pthread_get_stackaddr_np(pthread_self());
+ uintptr_t GetStackTop() {
+   return reinterpret_cast<uintptr_t>(pthread_get_stackaddr_np(pthread_self()));
 +}
 +
 +#elif PA_BUILDFLAG(IS_OPENBSD)
 +
-+void* GetStackTop() {
++uintptr_t GetStackTop() {
 +  stack_t ss;
 +  if (pthread_stackseg_np(pthread_self(), &ss) != 0)
-+    return nullptr;
-+  return reinterpret_cast<uint8_t*>(ss.ss_sp);
++    return 0;
++  return reinterpret_cast<uintptr_t>(ss.ss_sp);
 +}
 +
 +#elif PA_BUILDFLAG(IS_FREEBSD)
 +
-+void* GetStackTop() {
++uintptr_t GetStackTop() {
 +   pthread_attr_t attr;
 +   int error = pthread_attr_init(&attr);
 +   if (error) {
-+     return nullptr;
++     return 0;
 +   }
 +   error = pthread_attr_get_np(pthread_self(), &attr);
 +   if (!error) {
@@ -41,10 +41,10 @@
 +     error = pthread_attr_getstack(&attr, &base, &size);
 +     PA_CHECK(!error);
 +     pthread_attr_destroy(&attr);
-+     return reinterpret_cast<uint8_t*>(base) + size;
++     return reinterpret_cast<uintptr_t>(base) + size;
 +   }
 +  pthread_attr_destroy(&attr);
-+  return nullptr;
++  return 0;
  }
  
  #elif PA_BUILDFLAG(IS_POSIX) || PA_BUILDFLAG(IS_FUCHSIA)

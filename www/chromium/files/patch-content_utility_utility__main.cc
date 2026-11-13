@@ -1,4 +1,4 @@
---- content/utility/utility_main.cc.orig	2026-10-18 13:29:39 UTC
+--- content/utility/utility_main.cc.orig	2026-11-11 14:44:17 UTC
 +++ content/utility/utility_main.cc
 @@ -45,22 +45,31 @@
  #include "services/tracing/public/cpp/trace_startup.h"
@@ -80,9 +80,9 @@
  
    // Initializes the sandbox before any threads are created.
    // TODO(jorgelo): move this after GTK initialization when we enable a strict
-@@ -348,13 +360,13 @@ int UtilityMain(MainFunctionParams parameters) {
-       pre_sandbox_hook =
-           base::BindOnce(&speech::SpeechRecognitionPreSandboxHook);
+@@ -350,13 +362,13 @@ int UtilityMain(MainFunctionParams parameters) {
+                          parameters.command_line->GetSwitchValuePath(
+                              speech::GetSodaBinaryPathSwitch()));
        break;
 -#if BUILDFLAG(IS_LINUX) && BUILDFLAG(ENABLE_VR)
 +#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && BUILDFLAG(ENABLE_VR)
@@ -96,7 +96,7 @@
      case sandbox::mojom::Sandbox::kOnDeviceTranslation:
        pre_sandbox_hook = base::BindOnce(
            &on_device_translation::OnDeviceTranslationSandboxHook);
-@@ -371,7 +383,7 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -373,7 +385,7 @@ int UtilityMain(MainFunctionParams parameters) {
  #else
        NOTREACHED();
  #endif
@@ -105,7 +105,7 @@
      case sandbox::mojom::Sandbox::kShapeDetection:
        pre_sandbox_hook =
            base::BindOnce(&shape_detection::ShapeDetectionPreSandboxHook);
-@@ -400,6 +412,7 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -402,6 +414,7 @@ int UtilityMain(MainFunctionParams parameters) {
      default:
        break;
    }
@@ -113,7 +113,7 @@
    if (!sandbox::policy::IsUnsandboxedSandboxType(sandbox_type) &&
        (parameters.zygote_child || !pre_sandbox_hook.is_null())) {
      sandbox_options.use_amd_specific_policies =
-@@ -407,6 +420,11 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -409,6 +422,11 @@ int UtilityMain(MainFunctionParams parameters) {
      sandbox::policy::Sandbox::Initialize(
          sandbox_type, std::move(pre_sandbox_hook), sandbox_options);
    }

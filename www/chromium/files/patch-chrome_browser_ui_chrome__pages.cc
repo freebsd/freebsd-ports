@@ -1,6 +1,6 @@
---- chrome/browser/ui/chrome_pages.cc.orig	2026-10-18 13:29:39 UTC
+--- chrome/browser/ui/chrome_pages.cc.orig	2026-11-11 14:44:17 UTC
 +++ chrome/browser/ui/chrome_pages.cc
-@@ -259,7 +259,7 @@ bool SiteGURLIsValid(const GURL& url) {
+@@ -256,7 +256,7 @@ bool SiteGURLIsValid(const GURL& url) {
    return !site_origin.opaque() && (url.SchemeIsHTTPOrHTTPS() ||
                                     url.SchemeIs(extensions::kExtensionScheme)
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -9,7 +9,7 @@
                                     || url.SchemeIs(webapps::kIsolatedAppScheme)
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||
          // BUILDFLAG(IS_CHROMEOS)
-@@ -404,7 +404,7 @@ void ShowChromeTips(BrowserWindowInterface* browser) {
+@@ -401,7 +401,7 @@ void ShowChromeTips(BrowserWindowInterface* browser) {
    ShowSingletonTab(browser, GURL(kChromeTipsURL));
  }
  

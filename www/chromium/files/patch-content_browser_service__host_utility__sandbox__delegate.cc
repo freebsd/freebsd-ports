@@ -1,4 +1,4 @@
---- content/browser/service_host/utility_sandbox_delegate.cc.orig	2026-10-18 13:29:39 UTC
+--- content/browser/service_host/utility_sandbox_delegate.cc.orig	2026-11-11 14:44:17 UTC
 +++ content/browser/service_host/utility_sandbox_delegate.cc
 @@ -24,7 +24,7 @@
  #include "sandbox/policy/sandbox_type.h"
@@ -18,7 +18,7 @@
        sandbox_type_ == sandbox::mojom::Sandbox::kXrCompositing ||
  #endif
  #if BUILDFLAG(IS_WIN)
-@@ -77,10 +77,10 @@ UtilitySandboxedProcessLauncherDelegate::
+@@ -79,10 +79,10 @@ UtilitySandboxedProcessLauncherDelegate::
        sandbox_type_ == sandbox::mojom::Sandbox::kOnDeviceModelExecution ||
        sandbox_type_ == sandbox::mojom::Sandbox::kCdm ||
        sandbox_type_ == sandbox::mojom::Sandbox::kPrintCompositor ||
@@ -31,7 +31,7 @@
        sandbox_type_ == sandbox::mojom::Sandbox::kShapeDetection ||
  #if BUILDFLAG(ENABLE_OOP_VIDEO_DECODER)
        sandbox_type_ == sandbox::mojom::Sandbox::kHardwareVideoDecoding ||
-@@ -95,12 +95,12 @@ UtilitySandboxedProcessLauncherDelegate::
+@@ -97,12 +97,12 @@ UtilitySandboxedProcessLauncherDelegate::
        sandbox_type_ == sandbox::mojom::Sandbox::kNearby ||
  #endif  // BUILDFLAG(IS_CHROMEOS)
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
@@ -46,7 +46,7 @@
        sandbox_type_ == sandbox::mojom::Sandbox::kOnDeviceTranslation ||
  #endif
        sandbox_type_ == sandbox::mojom::Sandbox::kAudio ||
-@@ -159,22 +159,22 @@ ZygoteCommunication* UtilitySandboxedProcessLauncherDe
+@@ -161,22 +161,22 @@ ZygoteCommunication* UtilitySandboxedProcessLauncherDe
        sandbox_type_ == sandbox::mojom::Sandbox::kNearby ||
  #endif  // BUILDFLAG(IS_CHROMEOS)
        sandbox_type_ == sandbox::mojom::Sandbox::kAudio ||

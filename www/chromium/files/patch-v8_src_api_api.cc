@@ -1,6 +1,6 @@
---- v8/src/api/api.cc.orig	2026-10-18 13:29:39 UTC
+--- v8/src/api/api.cc.orig	2026-11-11 14:44:17 UTC
 +++ v8/src/api/api.cc
-@@ -175,7 +175,7 @@
+@@ -176,7 +176,7 @@
  
  #include "src/strings/string-hasher-inl.h"
  
@@ -9,7 +9,7 @@
  #include <signal.h>
  #include <unistd.h>
  
-@@ -6535,7 +6535,7 @@ bool v8::V8::Initialize(const int build_config) {
+@@ -6532,7 +6532,7 @@ bool v8::V8::Initialize(const int build_config) {
    return true;
  }
  

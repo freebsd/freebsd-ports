@@ -1,6 +1,6 @@
---- third_party/blink/renderer/platform/graphics/gpu/webgpu_shared_image_cache.cc.orig	2026-10-18 13:29:39 UTC
+--- third_party/blink/renderer/platform/graphics/gpu/webgpu_shared_image_cache.cc.orig	2026-11-11 14:44:17 UTC
 +++ third_party/blink/renderer/platform/graphics/gpu/webgpu_shared_image_cache.cc
-@@ -147,7 +147,7 @@ WebGpuSharedImageCache::LeaseSharedImage(viz::SharedIm
+@@ -148,7 +148,7 @@ WebGpuSharedImageCache::LeaseSharedImage(viz::SharedIm
        return nullptr;
      }
  

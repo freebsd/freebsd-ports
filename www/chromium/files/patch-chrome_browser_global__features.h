@@ -1,4 +1,4 @@
---- chrome/browser/global_features.h.orig	2026-10-18 13:29:39 UTC
+--- chrome/browser/global_features.h.orig	2026-11-11 14:44:17 UTC
 +++ chrome/browser/global_features.h
 @@ -26,7 +26,7 @@ class GlobalBrowserCollection;
  namespace system_permission_settings {
@@ -18,7 +18,7 @@
  namespace scheduled_restart {
  class ScheduledRestartBubbleController;
  class ScheduledRestartManager;
-@@ -167,7 +167,7 @@ class GlobalFeatures {
+@@ -170,7 +170,7 @@ class GlobalFeatures {
    system_permissions_platform_handle() {
      return system_permissions_platform_handle_.get();
    }
@@ -27,7 +27,7 @@
    whats_new::WhatsNewRegistry* whats_new_registry() {
      return whats_new_registry_.get();
    }
-@@ -240,7 +240,7 @@ class GlobalFeatures {
+@@ -243,7 +243,7 @@ class GlobalFeatures {
    }
  #endif  // !BUILDFLAG(IS_ANDROID)
  
@@ -36,7 +36,7 @@
    scheduled_restart::ScheduledRestartBubbleController*
    scheduled_restart_bubble_controller() {
      return scheduled_restart_bubble_controller_.get();
-@@ -270,12 +270,12 @@ class GlobalFeatures {
+@@ -279,12 +279,12 @@ class GlobalFeatures {
  
    virtual std::unique_ptr<system_permission_settings::PlatformHandle>
    CreateSystemPermissionsPlatformHandle();
@@ -51,7 +51,7 @@
    virtual std::unique_ptr<scheduled_restart::ScheduledRestartManager>
    CreateScheduledRestartManager();
  #endif
-@@ -294,7 +294,7 @@ class GlobalFeatures {
+@@ -307,7 +307,7 @@ class GlobalFeatures {
  
    std::unique_ptr<system_permission_settings::PlatformHandle>
        system_permissions_platform_handle_;
@@ -60,7 +60,7 @@
    std::unique_ptr<whats_new::WhatsNewRegistry> whats_new_registry_;
  
    std::unique_ptr<default_browser::DefaultBrowserManager>
-@@ -359,7 +359,7 @@ class GlobalFeatures {
+@@ -372,7 +372,7 @@ class GlobalFeatures {
    std::unique_ptr<smart_restart::SmartRestartManager> smart_restart_manager_;
  #endif  // !BUILDFLAG(IS_ANDROID)
  

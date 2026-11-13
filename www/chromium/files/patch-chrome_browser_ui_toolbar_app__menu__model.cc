@@ -1,6 +1,6 @@
---- chrome/browser/ui/toolbar/app_menu_model.cc.orig	2026-10-18 13:29:39 UTC
+--- chrome/browser/ui/toolbar/app_menu_model.cc.orig	2026-11-11 14:44:17 UTC
 +++ chrome/browser/ui/toolbar/app_menu_model.cc
-@@ -1226,7 +1226,7 @@ std::u16string AppMenuModel::GetUpgradeDialogTitleText
+@@ -1217,7 +1217,7 @@ std::u16string AppMenuModel::GetUpgradeDialogTitleText
      return l10n_util::GetStringUTF16(IDS_UPGRADE_BUBBLE_MENU_ITEM);
    }
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING) && \
@@ -9,7 +9,7 @@
    return l10n_util::GetStringUTF16(IDS_RELAUNCH_TO_UPDATE_ALT);
  #else
    return l10n_util::GetStringUTF16(IDS_RELAUNCH_TO_UPDATE);
-@@ -2420,7 +2420,7 @@ void AppMenuModel::Build() {
+@@ -2486,7 +2486,7 @@ void AppMenuModel::Build() {
  
      SetAccessibleNameAt(GetIndexOfCommandId(IDC_SHOW_MANAGEMENT_PAGE).value(),
                          GetManagedUiMenuItemTooltip(browser_->GetProfile()));

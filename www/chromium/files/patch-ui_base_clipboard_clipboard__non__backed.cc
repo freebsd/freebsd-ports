@@ -1,11 +1,11 @@
---- ui/base/clipboard/clipboard_non_backed.cc.orig	2026-04-09 06:05:42 UTC
+--- ui/base/clipboard/clipboard_non_backed.cc.orig	2026-11-11 14:44:17 UTC
 +++ ui/base/clipboard/clipboard_non_backed.cc
-@@ -459,7 +459,7 @@ ClipboardNonBacked::ClipboardNonBacked() {
+@@ -472,7 +472,7 @@ ClipboardNonBacked::ClipboardNonBacked() {
    // so create internal clipboards for platform supported clipboard buffers.
    constexpr ClipboardBuffer kClipboardBuffers[] = {
-     ClipboardBuffer::kCopyPaste,
+       ClipboardBuffer::kCopyPaste,
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_FUCHSIA)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
-     ClipboardBuffer::kSelection,
+       ClipboardBuffer::kSelection,
  #endif
  #if BUILDFLAG(IS_MAC)

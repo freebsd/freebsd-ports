@@ -1,6 +1,6 @@
---- components/autofill/core/browser/suggestions/payments/payments_suggestion_generator_util.cc.orig	2026-10-18 13:29:39 UTC
+--- components/autofill/core/browser/suggestions/payments/payments_suggestion_generator_util.cc.orig	2026-11-11 14:44:17 UTC
 +++ components/autofill/core/browser/suggestions/payments/payments_suggestion_generator_util.cc
-@@ -1351,7 +1351,7 @@ Suggestion CreateCreditCardSuggestion(
+@@ -1350,7 +1350,7 @@ Suggestion CreateCreditCardSuggestion(
    }
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

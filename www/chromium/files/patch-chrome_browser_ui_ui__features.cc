@@ -1,6 +1,6 @@
---- chrome/browser/ui/ui_features.cc.orig	2026-10-18 13:29:39 UTC
+--- chrome/browser/ui/ui_features.cc.orig	2026-11-11 14:44:17 UTC
 +++ chrome/browser/ui/ui_features.cc
-@@ -132,7 +132,7 @@ bool ShouldUseActionsForBrowserCommands() {
+@@ -139,7 +139,7 @@ bool ShouldUseActionsForBrowserCommands() {
           base::FeatureList::IsEnabled(kAppMenuGlowUp);
  }
  
@@ -9,7 +9,7 @@
  BASE_FEATURE(kDseIntegrity, base::FEATURE_ENABLED_BY_DEFAULT);
  
  // Enables the dialog shown when user feedback is disabled.
-@@ -373,7 +373,7 @@ BASE_FEATURE(kTabsFromOtherDevicesSidePanelPinnedByDef
+@@ -380,7 +380,7 @@ BASE_FEATURE(kByDateHistoryInSidePanel, base::FEATURE_
  
  BASE_FEATURE(kNonMilestoneUpdateToast, base::FEATURE_ENABLED_BY_DEFAULT);
  

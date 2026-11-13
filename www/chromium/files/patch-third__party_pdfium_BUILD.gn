@@ -1,0 +1,11 @@
+--- third_party/pdfium/BUILD.gn.orig	2026-11-11 14:44:17 UTC
++++ third_party/pdfium/BUILD.gn
+@@ -168,7 +168,7 @@ config("pdfium_core_config") {
+     "//build/config/compiler:noshadowing",
+   ]
+   defines = []
+-  if (is_clang) {
++  if (is_clang && !is_bsd) {
+     cflags += [
+       "-Wcovered-switch-default",
+       "-Wlifetime-safety-permissive",

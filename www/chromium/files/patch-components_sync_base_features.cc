@@ -1,6 +1,6 @@
---- components/sync/base/features.cc.orig	2026-09-25 15:26:43 UTC
+--- components/sync/base/features.cc.orig	2026-11-11 14:44:17 UTC
 +++ components/sync/base/features.cc
-@@ -81,7 +81,7 @@ BASE_FEATURE(kReplaceSyncPromosWithSignInPromos,
+@@ -80,7 +80,7 @@ BASE_FEATURE(kReplaceSyncPromosWithSignInPromos,
  );
  
  BASE_FEATURE(kReplaceSyncPromosWithSigninPromosNewSignin,

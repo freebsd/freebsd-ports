@@ -1,6 +1,6 @@
---- components/feature_engagement/public/tracker.h.orig	2026-08-12 09:02:10 UTC
+--- components/feature_engagement/public/tracker.h.orig	2026-11-11 14:44:17 UTC
 +++ components/feature_engagement/public/tracker.h
-@@ -260,7 +260,7 @@ class Tracker : public KeyedService, public base::Supp
+@@ -249,7 +249,7 @@ class Tracker : public KeyedService, public base::Supp
      Dismissed(feature);
    }
  

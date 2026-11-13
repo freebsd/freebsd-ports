@@ -1,6 +1,6 @@
---- ui/webui/webui_features.gni.orig	2026-10-18 13:29:39 UTC
+--- ui/webui/webui_features.gni.orig	2026-11-11 14:44:17 UTC
 +++ ui/webui/webui_features.gni
-@@ -45,12 +45,14 @@ if (enable_cast_receiver || is_cast_android || is_cast
+@@ -49,12 +49,14 @@ if (enable_cast_receiver || is_cast_android || is_cast
      # Enable the WebUI version of the History page.
      enable_webui_history =
          target_os == "win" || target_os == "mac" || target_os == "linux" ||

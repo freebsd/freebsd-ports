@@ -1,8 +1,8 @@
---- base/debug/elf_reader.cc.orig	2026-02-11 09:05:39 UTC
+--- base/debug/elf_reader.cc.orig	2026-11-11 14:44:17 UTC
 +++ base/debug/elf_reader.cc
-@@ -45,6 +45,10 @@ using Xword = Elf64_Xword;
- 
- constexpr char kGnuNoteName[] = "GNU";
+@@ -45,6 +45,10 @@ constexpr char kGnuNoteName[] = "GNU";
+ // Support up to 32 bytes (for blake3 & SHA256).
+ constexpr size_t kMaxBuildIdByteLength = 32;
  
 +#ifndef NT_GNU_BUILD_ID
 +#define NT_GNU_BUILD_ID 3

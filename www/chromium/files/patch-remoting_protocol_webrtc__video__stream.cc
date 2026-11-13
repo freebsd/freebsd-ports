@@ -1,6 +1,6 @@
---- remoting/protocol/webrtc_video_stream.cc.orig	2026-08-31 10:59:09 UTC
+--- remoting/protocol/webrtc_video_stream.cc.orig	2026-11-11 14:44:17 UTC
 +++ remoting/protocol/webrtc_video_stream.cc
-@@ -237,7 +237,7 @@ WebrtcVideoStream::WebrtcVideoStream(const SessionOpti
+@@ -218,7 +218,7 @@ WebrtcVideoStream::WebrtcVideoStream(const SessionOpti
      : session_options_(session_options) {
  // TODO: yuweih - Check if the other platforms can also be updated to run on a
  // dedicated thread.
