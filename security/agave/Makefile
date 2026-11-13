@@ -4,6 +4,9 @@ DISTVERSION=	4.4.1
 CATEGORIES=	security
 PKGNAMESUFFIX=	-blockchain
 
+PATCH_SITES=	https://github.com/zkcrypto/merlin/commit/
+PATCHFILES=	c4808f6a99bb074f120673c65eac31c0cba23cfa.patch?full_index=1:-p1
+
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Web-scale blockchain for decentralized apps and marketplaces
 WWW=		https://www.anza.xyz \
@@ -26,6 +29,8 @@ USES=		cargo llvm:22,lib gmake pkgconfig ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	anza-xyz
 GH_TUPLE=	anza-xyz:rocksdb:f4e6cd89d61b747834b1687485ca363ebe6b366e:rocksdb
+
+PATCH_DIST_ARGS=	-d ${WRKSRC}/cargo-crates/merlin-3.0.0
 
 CARGO_CRATES=	Inflector-0.11.4 \
 		adler2-2.0.1 \
@@ -978,6 +983,8 @@ post-extract:
 post-patch:
 	@${PATCH} -d ${WRKDIR}/rust-rocksdb-4dba80dfe9434e595a971f5b2985ff9ba4fb31e7/librocksdb-sys \
 		< ${FILESDIR}/librocksdb-sys-build.rs.patch
+	@${PATCH} -p0 -d ${WRKDIR}/blstrs-a1faffa3420bdaf4102425c43f00cdd815d4f145 \
+		< ${FILESDIR}/blstrs-big-endian.patch
 
 BINARY_ALIAS=	llvm-config=${LOCALBASE}/bin/${LLVM_CONFIG}
 
