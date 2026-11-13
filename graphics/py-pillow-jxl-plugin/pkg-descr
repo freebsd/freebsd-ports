@@ -1,0 +1,2 @@
+A Pillow plugin that adds reading and writing of JPEG XL images. The codec
+itself comes from libjxl, the plugin binds it through Rust.

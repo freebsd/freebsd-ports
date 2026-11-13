@@ -1,0 +1,14 @@
+-- Build against graphics/libjxl instead of compiling a copy of libjxl into
+-- the extension.
+
+--- pyproject.toml.orig	2026-11-13 05:48:23 UTC
++++ pyproject.toml
+@@ -40,7 +40,7 @@ dev = [
+ "Releases" = "https://github.com/Isotr0py/pillow-jpegxl-plugin/releases"
+ 
+ [tool.maturin]
+-features = ["pyo3/extension-module", "vendored"]
++features = ["pyo3/extension-module", "dynamic"]
+ 
+ [tool.ruff]
+ target-version = "py39"

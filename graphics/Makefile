@@ -1016,6 +1016,7 @@
     SUBDIR += py-piexif
     SUBDIR += py-pillow
     SUBDIR += py-pillow-heif
+    SUBDIR += py-pillow-jxl-plugin
     SUBDIR += py-pivy
     SUBDIR += py-plotly
     SUBDIR += py-png
