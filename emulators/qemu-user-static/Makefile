@@ -1,9 +1,12 @@
 PORTNAME=	qemu
 PORTVERSION=	3.1.0
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	emulators
 PKGNAMESUFFIX=	-user-static
 DIST_SUBDIR=	qemu/${PORTVERSION}
+
+PATCH_SITES=	https://github.com/qemu/qemu/commit/
+PATCHFILES=	5ca156cfde0f3821f15988619e51cf3cda99aaa6.patch:-p1
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	QEMU CPU Emulator (github bsd-user branch)
