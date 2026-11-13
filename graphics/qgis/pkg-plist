@@ -10625,4 +10625,4 @@ share/metainfo/org.qgis.qgis.appdata.xml
 %%DATADIR%%/svg/transport/transport_tram_stop.svg
 %%DATADIR%%/svg/wind_roses/WindRose_01.svg
 %%DATADIR%%/svg/wind_roses/WindRose_02.svg
-www/cgi-%%SERVER%%bin/qgis_mapserv.fcgi
+%%SERVER%%www/cgi-bin/qgis_mapserv.fcgi
