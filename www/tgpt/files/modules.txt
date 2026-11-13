@@ -193,6 +193,7 @@ github.com/spf13/cast
 ## explicit; go 1.17
 github.com/stretchr/testify/assert
 github.com/stretchr/testify/assert/yaml
+github.com/stretchr/testify/require
 # github.com/tam7t/hpkp v0.0.0-20160821193359-2b70b4024ed5
 ## explicit
 github.com/tam7t/hpkp
@@ -202,6 +203,9 @@ github.com/xo/terminfo
 # github.com/yosida95/uritemplate/v3 v3.0.2
 ## explicit; go 1.14
 github.com/yosida95/uritemplate/v3
+# golang.design/x/clipboard v0.8.0
+## explicit; go 1.24
+golang.design/x/clipboard
 # golang.design/x/x11 v0.2.0
 ## explicit; go 1.23
 golang.design/x/x11
