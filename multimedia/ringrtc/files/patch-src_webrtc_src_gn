@@ -1,0 +1,11 @@
+--- src/webrtc/src/.gn.orig	2026-11-06 09:48:28 UTC
++++ src/webrtc/src/.gn
+@@ -38,7 +38,7 @@ exec_script_allowlist = build_dotfile_settings.exec_sc
+ exec_script_allowlist = build_dotfile_settings.exec_script_allowlist +
+                         [ "//build_overrides/build.gni" ]
+ 
+-expand_directory_allowlist = build_dotfile_settings.expand_directory_allowlist
++#expand_directory_allowlist = build_dotfile_settings.expand_directory_allowlist
+ 
+ export_compile_commands = [ "*" ]
+ 

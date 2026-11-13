@@ -1,6 +1,6 @@
 PORTNAME=	ringrtc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.72.1
+DISTVERSION=	2.74.0
 CATEGORIES=	multimedia
 MASTER_SITES=	LOCAL/mikael/ringrtc/:boringssl \
 		LOCAL/mikael/ringrtc/:build \
@@ -62,27 +62,27 @@ GH_TUPLE=	signalapp:ringrtc:${DISTVERSIONPREFIX}${DISTVERSION} \
 		signalapp:webrtc:${WEBRTC_REV}:webrtc
 
 # sh net-im/signal-desktop/get_deps.sh
-WEBRTC_REV=	7871k
+WEBRTC_REV=	8037b
 
 # modify webrtc_fetch.sh, then sh webrtc_fetch.sh
-BORINGSSL_REV=		f91f1447397c6719f9774dfb8e67329378e1f3d3
-BUILD_REV=		d296a9fec6186f2c109758c7d3f93cbef936dfc3
-BUILDTOOLS_REV=		17495e454aae81b581e8b3caccbb53054509b280
-CATAPULT_REV=		2852bb7e91e4995502ffb72b7ed21412ee157914
-ICU_REV=		3859e64eed5d34544b27fbcab0ac1685ce83df3c
+BORINGSSL_REV=		d9cace2c916914c437a10bf987017ba7792c0d57
+BUILD_REV=		8a8d38839a9cfa81823701f32d67d66343d70876
+BUILDTOOLS_REV=		4277578aa9c45906e51ad33cac1a5a7ad5288010
+CATAPULT_REV=		1d18f6e11082de030c45fd55b556d15e3aa628a8
+ICU_REV=		8cc91d9b6ab9991802fd208ee03a69714fd0251c
 LIBCUBEB_VER=		0.38.0
 LIBJPEG_TURBO_REV=	640f254ad0fa03f6b1f29f89b7dd9366f2f6e533
 LIBSRTP_REV=		cd5d177bf1fde755ddb4c7f0d9ff7693f8b49e5e
-LIBVPX_REV=		31af37b1bd2774d11a932c1cd9a3849328375f64
-LIBYUV_REV=		de63bd90f4396313f864ad58b65279e7894451a9
+LIBVPX_REV=		5ae5478f99abbe42101906d955458b3c98b587dd
+LIBYUV_REV=		26e56be0f984af3dae4d0c0ab7a0bac8ac20e1b0
 NASM_REV=		525a09a813be0f75b646ee93fc2a31c27b87d722
 OPUS_REV=		212d66c20944d0a0db91132f826a27dd0d5edd5d
-PERFETTO_REV=		82ad4b69cbaf64e26c639061b1712756a9cc5e20
+PERFETTO_REV=		de794788d545dcf05aacece46a7fb5385b52ac77
 PROTOBUFJS_REV=		e6d763860001ba1a76a63adcff5efb12b1c96024
 RE2_REV=		972a15cedd008d846f1a39b2e88ce48d7f166cbd
-TESTING_REV=		5c19204b6395adfad25f83bbbd56439af9f86f7f
-THIRD_PARTY_REV=	7c92732938de0ef7e28f5da231994723f938f407
-TOOLS_REV=		8e4d26ef387bfa4c07e66dd1c7399c3d53ef1451
+TESTING_REV=		b96dbc743d8b46742aed1bedf3e015eaeb9b2b09
+THIRD_PARTY_REV=	8f1da83155caaa0d454042bffcbcdb7f1fcae844
+TOOLS_REV=		b4235c8a2ce2b9daf74657dbd3b869d23235e87a
 
 BINARY_ALIAS=	python3=${PYTHON_CMD} \
 		vpython3=${PYTHON_CMD} \
@@ -178,6 +178,16 @@ pre-build:
 	cd ${WEBRTCDIR} && \
 		${SETENV} ${CONFIGURE_ENV} gn gen out/release --args='${GN_ARGS}'
 
+# after:
+# https://github.com/signalapp/webrtc/commit/4d1a574afc3a286433ff14399dc5a4a2db6e6dc5
+# https://github.com/signalapp/ringrtc/commit/6ce85e90017b224d07bdc190ce2871ceaf5fcb5a
+# https://github.com/signalapp/webrtc/commit/37c2ad2fce0f776ce21714f71871befd0d349e63
+# the api folder was removed but ringrtc/rffi/api is still in use in various place
+# https://github.com/signalapp/webrtc/blob/8037a/rtc_base/logging.h#L72  
+
+	${MKDIR} ${WEBRTCDIR}/ringrtc/rffi/api
+	cd ${WRKSRC}/src/rust/src/webrtc_include && ${COPYTREE_SHARE} . ${WEBRTCDIR}/ringrtc/rffi/api
+	
 # build webrtc first, ringrtc needs libwebrtc.a
 	cd ${WEBRTCDIR} \
 		&& ${MAKE_ENV} CC=ccache CXX=ccache ninja -C out/release

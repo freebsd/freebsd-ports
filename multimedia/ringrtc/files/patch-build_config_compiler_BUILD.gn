@@ -1,4 +1,4 @@
---- src/webrtc/src/build/config/compiler/BUILD.gn.orig	2024-06-18 16:34:35 UTC
+--- src/webrtc/src/build/config/compiler/BUILD.gn.orig	2026-11-05 20:47:39 UTC
 +++ src/webrtc/src/build/config/compiler/BUILD.gn
 @@ -203,7 +203,7 @@ declare_args() {
    # This greatly reduces the size of debug builds, at the cost of
@@ -18,25 +18,16 @@
      is_clang && clang_warning_suppression_file != ""
  
  # default_include_dirs ---------------------------------------------------------
-@@ -302,13 +302,16 @@ config("no_unresolved_symbols") {
- # Compiler instrumentation can introduce dependencies in DSOs to symbols in
- # the executable they are loaded into, so they are unresolved at link-time.
+@@ -308,7 +308,7 @@ config("no_unresolved_symbols") {
+ # libclang_rt.asan-*-android.so), so all sanitizer symbols are resolved at link
+ # time and -Wl,-z,defs can safely remain enabled to catch missing symbols.
  config("no_unresolved_symbols") {
--  if (!using_sanitizer &&
-+  if (!using_sanitizer && !is_bsd &&
+-  if ((!using_sanitizer || is_android) &&
++  if (!is_bsd && (!using_sanitizer || is_android) &&
        (is_linux || is_chromeos || is_android || is_fuchsia)) {
      ldflags = [
        "-Wl,-z,defs",
-       "-Wl,--as-needed",
-     ]
-   }
-+  if (current_cpu == "x86" && is_openbsd) {
-+    ldflags = [ "-Wl,-z,notext", "-Wl,--strip-all" ]
-+  }
- }
- 
- # compiler ---------------------------------------------------------------------
-@@ -541,6 +544,10 @@ config("compiler") {
+@@ -551,6 +551,10 @@ config("compiler") {
      }
    }
  
@@ -47,19 +38,19 @@
    # Linux-specific compiler flags setup.
    # ------------------------------------
    if (is_linux || is_chromeos) {
-@@ -576,9 +583,9 @@ config("compiler") {
-   if (is_clang) {
+@@ -589,9 +593,9 @@ config("compiler") {
      # Flags for diagnostics.
      cflags += [ "-fcolor-diagnostics" ]
--    if (!is_win) {
-+    if (!is_win && !is_bsd) {
-       cflags += [ "-fdiagnostics-show-inlining-chain" ]
--    } else {
-+    } else if (!is_bsd) {
-       # Combine after https://github.com/llvm/llvm-project/pull/192241
-       cflags += [ "/clang:-fdiagnostics-show-inlining-chain" ]
-     }
-@@ -603,7 +610,7 @@ config("compiler") {
+     if (!is_wasm) {
+-      if (!is_win) {
++      if (!is_win && !is_bsd) {
+         cflags += [ "-fdiagnostics-show-inlining-chain" ]
+-      } else {
++      } else if (!is_bsd) {
+         # Combine after https://github.com/llvm/llvm-project/pull/192241
+         cflags += [ "/clang:-fdiagnostics-show-inlining-chain" ]
+       }
+@@ -617,7 +621,7 @@ config("compiler") {
      }
    }
  
@@ -68,7 +59,7 @@
      cflags += [ "-fcrash-diagnostics-dir=" + clang_diagnostic_dir ]
      if (save_reproducers_on_lld_crash && use_lld) {
        ldflags += [
-@@ -1458,7 +1465,7 @@ config("clang_revision") {
+@@ -1476,7 +1480,7 @@ config("clang_revision") {
  }
  
  config("clang_revision") {
@@ -77,7 +68,7 @@
        current_os != "zos") {
      _perform_consistency_checks = current_toolchain == default_toolchain
      if (llvm_force_head_revision) {
-@@ -1572,7 +1579,7 @@ ubsan_hardening("c_array_bounds") {
+@@ -1590,7 +1594,7 @@ ubsan_hardening("c_array_bounds") {
  # See also: https://crbug.com/40891132#comment10
  ubsan_hardening("c_array_bounds") {
    sanitizer = "array-bounds"
@@ -86,7 +77,7 @@
  
    # Because we've enabled array-bounds sanitizing we also want to suppress
    # the related warning about "unsafe-buffer-usage-in-static-sized-array",
-@@ -1586,6 +1593,7 @@ ubsan_hardening("return") {
+@@ -1604,6 +1608,7 @@ ubsan_hardening("return") {
  # `NOTREACHED()` at the end of such functions.
  ubsan_hardening("return") {
    sanitizer = "return"
@@ -94,7 +85,7 @@
  }
  
  config("rustc_revision") {
-@@ -1915,14 +1923,11 @@ config("default_warnings") {
+@@ -1949,14 +1954,14 @@ config("default_warnings") {
        # TODO(crbug.com/40284799): Fix and re-enable.
        "-Wno-thread-safety-reference-return",
  
@@ -102,18 +93,18 @@
 -      "-Wno-nontrivial-memcall",
 +#      # TODO(crbug.com/376641662): Fix and re-enable.
 +#      "-Wno-nontrivial-memcall",
- 
--      # TODO(crbug.com/432275627): Fix and re-enable.
--      "-Wno-uninitialized-const-pointer",
--
--      # TODO(crbug.com/495753203): Fix and re-enable.
--      "-Wno-unused-but-set-global",
-+#      # TODO(crbug.com/432275627): Fix and re-enable.
-+#      "-Wno-uninitialized-const-pointer",
      ]
  
-     cflags_cc += [
-@@ -2735,7 +2740,7 @@ config("afdo") {
+     if (!is_wasm) {
+       cflags += [
+-        # TODO(crbug.com/432275627): Fix and re-enable.
+-        "-Wno-uninitialized-const-pointer",
++#        # TODO(crbug.com/432275627): Fix and re-enable.
++#        "-Wno-uninitialized-const-pointer",
+ 
+         # TODO(crbug.com/495753203): Fix and re-enable.
+         "-Wno-unused-but-set-global",
+@@ -2790,7 +2795,7 @@ config("afdo") {
  # There are some targeted places that AFDO regresses, so we provide a separate
  # config to allow AFDO to be disabled per-target.
  config("afdo") {
@@ -122,7 +113,7 @@
      cflags = []
      if (clang_emit_debug_info_for_profiling) {
        # Add the following flags to generate debug info for profiling.
-@@ -2762,7 +2767,7 @@ config("afdo") {
+@@ -2817,7 +2822,7 @@ config("afdo") {
        cflags += [ "-Wno-backend-plugin" ]
        inputs = [ _clang_sample_profile ]
      }
@@ -131,7 +122,7 @@
      cflags = [ "-fauto-profile=${auto_profile_path}" ]
      inputs = [ auto_profile_path ]
    }
-@@ -2812,6 +2817,7 @@ config("split_dwarf") {
+@@ -2867,6 +2872,7 @@ config("split_dwarf") {
  
    # Split debug info with all thinlto builds except apple.
    # thinlto requires -gsplit-dwarf in ldflags.
