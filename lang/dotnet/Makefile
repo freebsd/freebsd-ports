@@ -28,7 +28,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 LIB_DEPENDS=	libbrotlienc.so:archivers/brotli \
 		libicuuc.so:devel/icu \
 		libinotify.so:devel/libinotify \
-		libunwind.so:devel/libunwind-devel
+		libunwind.so.11:devel/libunwind-devel
 RUN_DEPENDS=	terminfo-db>0:misc/terminfo-db \
 		dotnet:lang/dotnet-host
 
@@ -42,6 +42,13 @@ SHEBANG_FILES+=	src/diagnostics/src/Tools/dotnet-trace/*.sh
 
 BINARY_ALIAS=	grep=${LOCALBASE}/bin/ggrep
 DOTNET_ENV+=	PYTHON=${PYTHON_CMD}
+
+# devel/libunwind-devel keeps its development files outside of the default
+# paths so that it can be installed alongside devel/libunwind.  CPATH is used
+# for the headers because the build overrides the compiler flags.
+DOTNET_ENV+=	CMAKE_LIBRARY_PATH=${LOCALBASE}/libunwind11/lib \
+		CMAKE_INCLUDE_PATH=${LOCALBASE}/libunwind11/include \
+		CPATH=${LOCALBASE}/libunwind11/include
 
 BOOTSTRAP_DOTNETVERSION?=			10.0
 BOOTSTRAP_SDKVERSION?=				${BOOTSTRAP_DOTNETVERSION}.112
