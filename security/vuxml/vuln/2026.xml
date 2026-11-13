@@ -1,3 +1,88 @@
+  <vuln vid="a1ede43e-de8c-11f1-bae2-3497f65b111b">
+    <topic>angie -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>angie</name>
+	<range><lt>1.12.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Angie Software Team reports:</p>
+	<blockquote cite="https://en.angie.software/angie/docs/oss_changes/#angie-1-12-4">
+	  <p>When variables were used in the root or alias directives, or
+	    in the log file path of the access_log directive in the HTTP
+	    module or the access_log directive in the stream module, worker
+	    process memory corruption or a worker process crash could occur
+	    (CVE-2026-93479).</p>
+	  <p>When the ssl_session_cache directive was used with the shared
+	    parameter without the ssl_session_ticket_key directive, an
+	    attacker could forge a TLS session and bypass client certificate
+	    verification (CVE-2026-97629).</p>
+	  <p>When requests received over HTTP/3 were proxied, a part of an
+	    unknown frame might be treated as the request body, which might
+	    result in bypassing the client_max_body_size limit or injecting
+	    data into the proxied request (CVE-2026-95101).</p>
+	  <p>When the alias directive was used, if the request URI was
+	    changed by the rewrite directive and the $request_filename
+	    variable was evaluated afterwards, worker process memory
+	    corruption or a worker process crash could occur
+	    (CVE-2026-15176).</p>
+	  <p>When asynchronous file I/O (aio) was used in certain
+	    configurations, if an SSI page contained include virtual
+	    commands, worker process memory corruption or a worker process
+	    crash could occur (CVE-2026-97205).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-93479</cvename>
+      <cvename>CVE-2026-97629</cvename>
+      <cvename>CVE-2026-95101</cvename>
+      <cvename>CVE-2026-15176</cvename>
+      <cvename>CVE-2026-97205</cvename>
+      <url>https://en.angie.software/angie/docs/oss_changes/#angie-1-12-4</url>
+    </references>
+    <dates>
+      <discovery>2026-10-16</discovery>
+      <entry>2026-11-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a1ee2283-de8c-11f1-bae2-3497f65b111b">
+    <topic>angie-module-njs -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>angie-module-njs</name>
+	<range><lt>1.0.2,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The njs development team reports:</p>
+	<blockquote cite="https://nginx.org/en/docs/njs/changes.html#njs1.0.2">
+	  <p>Memory leak when parsing malformed XML in the njs engine
+	    (CVE-2026-101025).  Repeated malformed input could exhaust
+	    worker process memory.  Affects 0.7.10-1.0.1.</p>
+	  <p>Incomplete XML attribute values containing entity references
+	    (CVE-2026-101019).  JavaScript accessors could return values
+	    different from those used by XML canonicalization, affecting
+	    signed XML validation.  Affects 0.7.10-1.0.1.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-101025</cvename>
+      <cvename>CVE-2026-101019</cvename>
+      <url>https://nginx.org/en/docs/njs/changes.html#njs1.0.2</url>
+      <url>https://nginx.org/en/docs/njs/security.html#advisories</url>
+    </references>
+    <dates>
+      <discovery>2026-10-14</discovery>
+      <entry>2026-11-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f8802557-dea7-11f1-bf46-901b0e13f1a0">
     <topic>X.Org X server and Xwayland -- Multiple vulnerabilities</topic>
     <affects>
