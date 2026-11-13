@@ -5,7 +5,7 @@
      } else {
        const notification = new window.Notification(title, {
 -        body: OS.isLinux() ? filterNotificationBody(body) : body,
-+        body: (OS.isLinux() || OS.isFreeBSD()) ? filterNotificationText(body) : body,
++        body: (OS.isLinux() || OS.isFreeBSD()) ? filterNotificationBody(body) : body,
          icon: iconUrl ?? undefined,
          silent: true,
          tag: messageId,
