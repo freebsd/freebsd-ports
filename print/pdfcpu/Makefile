@@ -15,6 +15,8 @@ USES=		go:modules
 
 GO_MODULE=	github.com/${PORTNAME}/${PORTNAME}
 
+PIE_UNSAFE=	yes
+
 PLIST_FILES=	bin/pdfcpu
 
 CGO_ENABLED=	0
