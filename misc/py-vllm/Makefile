@@ -1,6 +1,6 @@
 PORTNAME=	vllm
 DISTVERSION=	0.20.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI \
 		https://github.com/uxlfoundation/oneDNN/archive/refs/tags/:onednn_src

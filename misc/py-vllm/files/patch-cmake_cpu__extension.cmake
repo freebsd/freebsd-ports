@@ -111,7 +111,42 @@
      endif()
      list(APPEND CXX_COMPILE_FLAGS "-mf16c")
      list(APPEND CXX_COMPILE_FLAGS_AVX512 ${CXX_COMPILE_FLAGS})
-@@ -446,9 +480,15 @@ if (ENABLE_X86_ISA)
+@@ -129,16 +163,17 @@ elseif (POWER9_FOUND OR POWER10_FOUND OR POWER11_FOUND
+ elseif (POWER9_FOUND OR POWER10_FOUND OR POWER11_FOUND)
+     message(STATUS "PowerPC detected")
+     if (POWER9_FOUND)
+-        list(APPEND CXX_COMPILE_FLAGS
++        set(POWER_ISA_FLAGS
+             "-mvsx"
+             "-mcpu=power9"
+             "-mtune=power9")
+     elseif (POWER10_FOUND OR POWER11_FOUND)
+-        list(APPEND CXX_COMPILE_FLAGS
++        set(POWER_ISA_FLAGS
+             "-mvsx"
+             "-mcpu=power10"
+             "-mtune=power10")
+     endif()
++    list(APPEND CXX_COMPILE_FLAGS ${POWER_ISA_FLAGS})
+ 
+ elseif (ASIMD_FOUND)
+     message(STATUS "ARMv8 or later architecture detected")
+@@ -319,6 +354,14 @@ if (ENABLE_X86_ISA OR (ASIMD_FOUND AND NOT APPLE_SILIC
+     set(ONEDNN_ENABLE_MAX_CPU_ISA "ON")
+     set(ONEDNN_ENABLE_CPU_ISA_HINTS "ON")
+     set(ONEDNN_VERBOSE "ON")
++    if (POWER9_FOUND OR POWER10_FOUND OR POWER11_FOUND)
++        # oneDNN builds its ppc64 kernels with -mcpu=native by default, i.e. for
++        # the build host rather than for the ISA selected above. Where the
++        # compiler cannot resolve "native" (FreeBSD) this even degrades to the
++        # VSX-less baseline and the kernels fail to compile. Build them for the
++        # same ISA as the rest of the extension instead.
++        list(JOIN POWER_ISA_FLAGS " " ONEDNN_ARCH_OPT_FLAGS)
++    endif()
+     set(CMAKE_POLICY_DEFAULT_CMP0077 NEW)
+ 
+     # TODO: Refactor this
+@@ -446,9 +489,15 @@ if (ENABLE_X86_ISA)
      message(STATUS "CPU extension (AVX512F) source files: ${VLLM_EXT_SRC_AVX512}")
      message(STATUS "CPU extension (AVX2) source files: ${VLLM_EXT_SRC_AVX2}")
  
