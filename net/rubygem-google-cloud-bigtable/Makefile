@@ -1,5 +1,5 @@
 PORTNAME=	google-cloud-bigtable
-PORTVERSION=	2.13.1
+PORTVERSION=	2.13.2
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
