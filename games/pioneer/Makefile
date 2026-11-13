@@ -1,6 +1,8 @@
 PORTNAME=	pioneer
 DISTVERSION=	20260203
 CATEGORIES=	games
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	dd4f50e9e669890ab5fa90979b3927d4bf79d570.patch?full_index=1:-p1
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Space adventure game set in the Milky Way galaxy
