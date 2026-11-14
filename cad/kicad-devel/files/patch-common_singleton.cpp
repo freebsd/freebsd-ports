@@ -1,6 +1,6 @@
---- common/singleton.cpp.orig	2026-06-23 12:53:54 UTC
+--- common/singleton.cpp.orig	2026-11-14 05:57:13 UTC
 +++ common/singleton.cpp
-@@ -59,13 +59,7 @@ void KICAD_SINGLETON::Init()
+@@ -64,13 +64,7 @@ void KICAD_SINGLETON::Init()
  {
      int num_threads = std::max( 0, ADVANCED_CFG::GetCfg().m_MaximumThreads );
  

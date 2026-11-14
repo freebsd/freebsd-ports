@@ -1,6 +1,6 @@
---- eeschema/sch_io/http_lib/sch_io_http_lib.cpp.orig	2026-10-01 19:47:08 UTC
+--- eeschema/sch_io/http_lib/sch_io_http_lib.cpp.orig	2026-11-14 05:57:13 UTC
 +++ eeschema/sch_io/http_lib/sch_io_http_lib.cpp
-@@ -96,7 +96,10 @@ void SCH_IO_HTTP_LIB::backgroundRefreshWorker()
+@@ -101,7 +101,10 @@ void SCH_IO_HTTP_LIB::backgroundRefreshWorker()
  
  void SCH_IO_HTTP_LIB::backgroundRefreshWorker()
  {

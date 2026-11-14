@@ -1,4 +1,4 @@
---- thirdparty/nanodbc/nanodbc/nanodbc.cpp.orig	2025-08-13 00:57:26 UTC
+--- thirdparty/nanodbc/nanodbc/nanodbc.cpp.orig	2026-11-14 05:57:13 UTC
 +++ thirdparty/nanodbc/nanodbc/nanodbc.cpp
 @@ -386,10 +386,19 @@ constexpr std::size_t size(const T (&array)[N]) noexce
  }
@@ -21,7 +21,7 @@
      NANODBC_ASSERT(n < N);
      return n < N ? n : N - 1;
  }
-@@ -3720,9 +3729,9 @@ std::list<datasource> list_datasources()
+@@ -3746,9 +3755,9 @@ std::list<datasource> list_datasources()
                  "incompatible SQLCHAR and string::value_type");
  
              datasource dsn;
@@ -33,7 +33,7 @@
  
              dsns.push_back(std::move(dsn));
              direction = SQL_FETCH_NEXT;
-@@ -3773,7 +3782,7 @@ std::list<driver> list_drivers()
+@@ -3799,7 +3808,7 @@ std::list<driver> list_drivers()
                  "incompatible SQLCHAR and string::value_type");
  
              driver drv;
