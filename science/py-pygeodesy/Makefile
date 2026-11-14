@@ -1,5 +1,5 @@
 PORTNAME=	pygeodesy
-PORTVERSION=	26.9.9
+PORTVERSION=	26.11.11
 CATEGORIES=	science python
 MASTER_SITES=	PYPI \
 		https://github.com/mrJean1/PyGeodesy/raw/master/dist/
