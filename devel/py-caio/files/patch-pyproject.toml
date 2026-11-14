@@ -1,7 +1,7 @@
 -- Use the version of setuptools available in FreeBSD ports instead of requiring setuptools>=77.
 -- Also remove SPDX license fields not supported by the available setuptools version.
 
---- pyproject.toml.orig	2026-10-11 17:34:52 UTC
+--- pyproject.toml.orig	2026-11-12 23:17:49 UTC
 +++ pyproject.toml
 @@ -1,12 +1,10 @@
  [build-system]
@@ -11,7 +11,7 @@
  
  [project]
  name = "caio"
- version = "0.12.9"
+ version = "0.12.10"
 -license = "Apache-2.0"
 -license-files = ["COPYING"]
  description = "Asynchronous file IO for Linux MacOS or Windows."

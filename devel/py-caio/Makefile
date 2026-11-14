@@ -1,5 +1,5 @@
 PORTNAME=	caio
-PORTVERSION=	0.12.9
+PORTVERSION=	0.12.10
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,8 +23,8 @@ USE_PYTHON=	pep517 autoplist pytest
 NO_ARCH=	yes
 
 TEST_ENV=	${MAKE_ENV}
-TEST_ARGS=	--asyncio-mode=auto -p no:aiomisc -p no:relaxed # aiomisc-based tests fail, see https://github.com/mosquito/caio/issues/67
+TEST_ARGS=	--disable-plugin-autoload -p asyncio -p timeout --asyncio-mode=auto # aiomisc-based tests fail, see https://github.com/mosquito/caio/issues/67
 
-# tests as of 0.12.9: 41 passed 164 skipped
+# tests as of 0.12.10: 41 passed, 164 skipped, 1 warning in 0.76s
 
 .include <bsd.port.mk>
