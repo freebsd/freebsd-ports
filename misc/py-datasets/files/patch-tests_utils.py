@@ -1,9 +1,9 @@
 -- This patch adds tests/utils.py which is missing from the PyPI source distribution.
--- The file is taken from the GitHub repository at the same version tag (4.8.5).
+-- The file is taken from the GitHub repository at the same version tag.
 -- Without this file, the test suite cannot be run.
 --- /dev/null
 +++ tests/utils.py
-@@ -0,0 +1,620 @@
+@@ -0,0 +1,659 @@
 +import asyncio
 +import importlib.metadata
 +import os
@@ -19,10 +19,10 @@
 +from pathlib import Path
 +from unittest.mock import Mock, patch
 +
-+import httpx
 +import pyarrow as pa
 +import pytest
-+import requests
++from huggingface_hub.hf_file_system import HfFileSystemResolvedRepositoryPath
++from huggingface_hub.utils import httpx
 +from packaging import version
 +
 +from datasets import config
@@ -74,22 +74,6 @@
 +    reason="test requires numpy < 2.0 on windows",
 +)
 +
-+IS_HF_HUB_1_x = config.HF_HUB_VERSION >= version.parse("0.99")  # clunky but works with pre-releases
-+
-+
-+def require_buckets_support_in_huggingface_hub(test_case):
-+    """
-+    Decorator marking a test that requires buckets support in huggingface_hub.
-+
-+    These tests are skipped when huggingface_hub's version doesn't support buckets.
-+
-+    """
-+    try:
-+        from huggingface_hub.utils import BucketNotFoundError  # noqa
-+    except ImportError:
-+        test_case = unittest.skip("test requires buckets support in huggingface_hub")(test_case)
-+    return test_case
-+
 +
 +def require_regex(test_case):
 +    """
@@ -130,6 +114,20 @@
 +        import sqlalchemy  # noqa
 +    except ImportError:
 +        test_case = unittest.skip("test requires sqlalchemy")(test_case)
++    return test_case
++
++
++def require_pyiceberg(test_case):
++    """
++    Decorator marking a test that requires PyIceberg.
++
++    These tests are skipped when PyIceberg isn't installed.
++
++    """
++    try:
++        import pyiceberg  # noqa F401
++    except ImportError:
++        test_case = unittest.skip("test requires pyiceberg")(test_case)
 +    return test_case
 +
 +
@@ -178,7 +176,7 @@
 +    These tests are skipped when TensorFlow isn't installed.
 +
 +    """
-+    if not config.TF_AVAILABLE or os.environ.get("DATASETS_TEST_SKIP_TF"):
++    if not config.TF_AVAILABLE:
 +        test_case = unittest.skip("test requires TensorFlow")(test_case)
 +    return test_case
 +
@@ -252,6 +250,18 @@
 +    """
 +    if not config.NIBABEL_AVAILABLE:
 +        test_case = unittest.skip("test requires nibabel")(test_case)
++    return test_case
++
++
++def require_trimesh(test_case):
++    """
++    Decorator marking a test that requires trimesh.
++
++    These tests are skipped when trimesh isn't installed.
++
++    """
++    if not config.TRIMESH_AVAILABLE:
++        test_case = unittest.skip("test requires trimesh")(test_case)
 +    return test_case
 +
 +
@@ -345,6 +355,21 @@
 +        return test_case
 +
 +
++def require_teich(test_case):
++    """
++    Decorator marking a test that requires teich.
++
++    These tests are skipped when teich isn't installed.
++
++    """
++    try:
++        import teich  # noqa F401
++    except ImportError:
++        return unittest.skip("test requires teich")(test_case)
++    else:
++        return test_case
++
++
 +def slow(test_case):
 +    """
 +    Decorator marking a test as slow.
@@ -428,8 +453,7 @@
 +    HF_HUB_OFFLINE_SET_TO_1: the HF_HUB_OFFLINE_SET_TO_1 environment variable is set to 1.
 +        This makes the http/ftp calls of the library instantly fail and raise an OfflineModeEnabled error.
 +
-+    The raised exceptions are either from the `requests` library (if `huggingface_hub<1.0.0`)
-+    or from the `httpx` library (if `huggingface_hub>=1.0.0`).
++    The raised exceptions come from the `httpx` library used by `huggingface_hub`.
 +    """
 +    # Enable offline mode
 +    if mode is OfflineSimulationMode.HF_HUB_OFFLINE_SET_TO_1:
@@ -441,13 +465,13 @@
 +
 +    def error_response(*args, **kwargs):
 +        if mode is OfflineSimulationMode.CONNECTION_FAILS:
-+            exc = httpx.ConnectError if IS_HF_HUB_1_x else requests.ConnectionError
++            exc = httpx.ConnectError
 +        elif mode is OfflineSimulationMode.CONNECTION_TIMES_OUT:
 +            if kwargs.get("timeout") is None:
 +                raise RequestWouldHangIndefinitelyError(
 +                    "Tried an HTTP call in offline mode with no timeout set. Please set a timeout."
 +                )
-+            exc = httpx.ReadTimeout if IS_HF_HUB_1_x else requests.ConnectTimeout
++            exc = httpx.ReadTimeout
 +        else:
 +            raise ValueError("Please use a value from the OfflineSimulationMode enum.")
 +        raise exc(f"Offline mode {mode}")
@@ -457,16 +481,15 @@
 +    for method in ["head", "get", "post", "put", "delete", "request", "stream"]:
 +        setattr(client_mock, method, Mock(side_effect=error_response))
 +
-+    # Patching is slightly different depending on hfh internals
-+    patch_target = (
-+        {"target": "huggingface_hub.utils._http._GLOBAL_CLIENT", "new": client_mock}
-+        if IS_HF_HUB_1_x
-+        else {
-+            "target": "huggingface_hub.utils._http._get_session_from_cache",
-+            "return_value": client_mock,
-+        }
-+    )
-+    with patch(**patch_target):
++    # Patching `_GLOBAL_CLIENT` alone is not enough: `_http_backoff` re-fetches the client on
++    # every attempt, and `close_session()` (called on `httpx.ConnectError`) resets the global to
++    # `None`. The first attempt would hit the mock, then the retry would rebuild a real client
++    # through the factory and reach the network. Patch the factory too so any client rebuilt
++    # mid-retry is the mock as well.
++    with (
++        patch("huggingface_hub.utils._http._GLOBAL_CLIENT", client_mock),
++        patch("huggingface_hub.utils._http._GLOBAL_CLIENT_FACTORY", lambda: client_mock),
++    ):
 +        yield
 +
 +
@@ -511,7 +534,7 @@
 +    def _wrapper(func, *args, **kwargs):
 +        try:
 +            return func(*args, **kwargs)
-+        except (requests.HTTPError, httpx.HTTPError) as err:
++        except httpx.HTTPError as err:
 +            if str(err).startswith("500") or str(err).startswith("502"):
 +                pytest.xfail(str(err))
 +            raise err
@@ -624,3 +647,19 @@
 +    port = 29500
 +    uniq_delta = pytest_xdist_worker_id()
 +    return port + uniq_delta
++
++
++def push_parquet_shards_offline(dataset, num_shards, num_proc=None, embed_external_files=False):
++    return dataset._push_parquet_shards_to_hub(
++        resolved_output_path=HfFileSystemResolvedRepositoryPath(
++            repo_type="dataset", repo_id="user/dataset", revision="main", path_in_repo=""
++        ),
++        data_dir="data",
++        split="train",
++        token=None,
++        create_pr=False,
++        max_shard_size=None,
++        num_shards=num_shards,
++        embed_external_files=embed_external_files,
++        num_proc=num_proc,
++    )

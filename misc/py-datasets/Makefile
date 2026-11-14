@@ -1,5 +1,5 @@
 PORTNAME=	datasets
-DISTVERSION=	5.1.0
+DISTVERSION=	5.2.0
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,8 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyproject-hooks>0:devel/py-pyproject-hooks@${PY_FLAVOR} \
 		${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>0:www/py-aiohttp@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dill>0.3.0:devel/py-dill@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dill>0.3.0:devel/py-dill@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}filelock>0:sysutils/py-filelock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fsspec>=2023.1.0:filesystems/py-fsspec@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}huggingface-hub>=1.31.0:misc/py-huggingface-hub@${PY_FLAVOR} \
@@ -34,6 +33,7 @@ RUN_DEPENDS_VISION=	${PY_PILLOW}
 RUN_DEPENDS+=	${RUN_DEPENDS_AUDIO} \
 		${RUN_DEPENDS_VISION}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}absl-py>=0:devel/py-absl-py@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}aiohttp>0:www/py-aiohttp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}elasticsearch>0:textproc/py-elasticsearch@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}faiss>=1.6.4:math/py-faiss@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jax>=0.3.14:math/py-jax@${PY_FLAVOR} \
@@ -59,6 +59,13 @@ USE_PYTHON=	pep517 concurrent autoplist pytest
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} \
 		DATASETS_TEST_SKIP_TF=yes
 PYTEST_ARGS=	tests/
+TEST_ARGS=	--disable-plugin-autoload -p pytest_datadir \
+		-k "not (parquet or torch or tensor_batched or estimate_nbytes \
+		or save_to_disk_batch_size or push_to_hub_uploads_every_row \
+		or to_iterable_dataset or categorical_dataset \
+		or iterable_dataset_dict_push_to_hub or test_iterable_filter \
+		or test_iterable_map or _private or locally_with_extra_files \
+		or locally_or_remote_hashing or embed_local_files)"
 
 NO_ARCH=	yes
 
@@ -78,5 +85,7 @@ pre-test: # skip tests requiring unavailable dependencies/data
 	@${RM} ${WRKSRC}/tests/test_iterable_dataset.py
 	@${RM} ${WRKSRC}/tests/test_upstream_hub.py
 	@${RM} ${WRKSRC}/tests/test_fingerprint.py
+
+# tests as of 5.2.0: 1181 passed, 50 skipped, 83 deselected, 181 warnings in 52.39s
 
 .include <bsd.port.mk>

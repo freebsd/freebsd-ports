@@ -3,7 +3,7 @@
 -- Without this file, the test suite cannot be run.
 --- /dev/null
 +++ tests/fixtures/files.py
-@@ -0,0 +1,630 @@
+@@ -0,0 +1,754 @@
 +import contextlib
 +import csv
 +import json
@@ -354,6 +354,26 @@
 +
 +
 +@pytest.fixture(scope="session")
++def multi_row_groups_parquet_path(tmp_path_factory):
++    num_row_groups = 4
++    path = str(tmp_path_factory.mktemp("data") / "multi_row_groups_dataset.parquet")
++    schema = pa.schema(
++        {
++            "col_1": pa.string(),
++            "col_2": pa.int64(),
++            "col_3": pa.float64(),
++        }
++    )
++    with open(path, "wb") as f:
++        writer = pq.ParquetWriter(f, schema=schema)
++        pa_table = pa.Table.from_pydict({k: [DATA[i][k] for i in range(len(DATA))] for k in DATA[0]}, schema=schema)
++        for _ in range(num_row_groups):
++            writer.write_table(pa_table)
++        writer.close()
++    return path
++
++
++@pytest.fixture(scope="session")
 +def geoparquet_path(tmp_path_factory):
 +    df = pd.read_parquet(path="https://github.com/opengeospatial/geoparquet/raw/v1.0.0/examples/example.parquet")
 +    path = str(tmp_path_factory.mktemp("data") / "dataset.geoparquet")
@@ -595,6 +615,16 @@
 +
 +
 +@pytest.fixture(scope="session")
++def pdb_file():
++    return os.path.join("tests", "features", "data", "test_protein.pdb")
++
++
++@pytest.fixture(scope="session")
++def cif_file():
++    return os.path.join("tests", "features", "data", "test_protein.cif")
++
++
++@pytest.fixture(scope="session")
 +def tensor_file(tmp_path_factory):
 +    import torch
 +
@@ -634,3 +664,97 @@
 +        f.write("bar\n" * 10)
 +
 +    return data_dir
++
++
++@pytest.fixture(scope="session")
++def mesh_file():
++    return os.path.join("tests", "features", "data", "test_mesh_glb.glb")
++
++
++@pytest.fixture(scope="session")
++def mesh_file_ply():
++    return os.path.join("tests", "features", "data", "test_mesh_ply.ply")
++
++
++@pytest.fixture(scope="session")
++def mesh_file_stl():
++    return os.path.join("tests", "features", "data", "test_mesh_stl.stl")
++
++
++# FASTA biological sequence files
++
++
++FASTA_CONTENT = """\
++>seq1 Example protein sequence
++MKWVTFISLLFLFSSAYSRGVFRRDTHKSEIAHRFKDLGEEHFKGLVLIAFSQYLQQCPF
++EDHVKLVNEVTEFAKTCVADESHAGCEKSLHTLFGDELCKVASLRETYGDMADCCEKQEP
++>seq2 Another sequence with multi-line
++MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSH
++GSAQVKGHGKKVADALTNAVAHVDDMPNALSALSDLHAHKLRVDPVNFKLL
++SHCLLVTLAAHLPAEFTPAVHASLDKFLASVSTVLTSKYR
++>seq3
++ATGCATGCATGCATGCATGCATGCATGC
++"""
++
++
++@pytest.fixture(scope="session")
++def fasta_path(tmp_path_factory):
++    path = str(tmp_path_factory.mktemp("data") / "sequences.fasta")
++    with open(path, "w") as f:
++        f.write(FASTA_CONTENT)
++    return path
++
++
++@pytest.fixture(scope="session")
++def fasta_path_fa(tmp_path_factory):
++    path = str(tmp_path_factory.mktemp("data") / "sequences.fa")
++    with open(path, "w") as f:
++        f.write(FASTA_CONTENT)
++    return path
++
++
++@pytest.fixture(scope="session")
++def fasta_gz_path(tmp_path_factory):
++    import gzip
++
++    path = str(tmp_path_factory.mktemp("data") / "sequences.fasta.gz")
++    with gzip.open(path, "wt", encoding="utf-8") as f:
++        f.write(FASTA_CONTENT)
++    return path
++
++
++@pytest.fixture(scope="session")
++def fasta_bz2_path(tmp_path_factory):
++    import bz2
++
++    path = str(tmp_path_factory.mktemp("data") / "sequences.fasta.bz2")
++    with bz2.open(path, "wt", encoding="utf-8") as f:
++        f.write(FASTA_CONTENT)
++    return path
++
++
++@pytest.fixture(scope="session")
++def fasta_xz_path(tmp_path_factory):
++    import lzma
++
++    path = str(tmp_path_factory.mktemp("data") / "sequences.fasta.xz")
++    with lzma.open(path, "wt", encoding="utf-8") as f:
++        f.write(FASTA_CONTENT)
++    return path
++
++
++FASTA_LONG_SEQUENCE = (
++    """\
++>long_seq Very long sequence for testing large_string type
++"""
++    + "ATGCATGCATGCATGC" * 1000
++    + "\n"
++)
++
++
++@pytest.fixture(scope="session")
++def fasta_long_sequence_path(tmp_path_factory):
++    path = str(tmp_path_factory.mktemp("data") / "long_sequence.fasta")
++    with open(path, "w") as f:
++        f.write(FASTA_LONG_SEQUENCE)
++    return path
