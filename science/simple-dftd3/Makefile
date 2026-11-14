@@ -26,6 +26,6 @@ CMAKE_ON=	BUILD_SHARED_LIBS
 post-patch: # see https://github.com/toml-f/toml-f/issues/51
 	@${REINPLACE_CMD} -e 's|$${CMAKE_Fortran_COMPILER_ID}-$${CMAKE_Fortran_COMPILER_VERSION}||' ${WRKSRC}/config/CMakeLists.txt
 
-# tests as of 1.7.0: 100% tests passed, 0 tests failed out of 7
+# tests as of 1.7.0: 100% tests passed, 0 tests failed out of 16
 
 .include <bsd.port.mk>
