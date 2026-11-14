@@ -1,3 +1,3 @@
-TIMESTAMP = 1755462500
-SHA256 (hf-doc-builder-0.5.0.tar.gz) = e557660f76d1d90ac79e96d7b17642eca83f16a0a89ceabde180f0437d28179b
-SIZE (hf-doc-builder-0.5.0.tar.gz) = 152415
+TIMESTAMP = 1794560930
+SHA256 (huggingface-doc-builder-v0.6.0_GH0.tar.gz) = ee4aa55f56ae8764e02cbca5900ddba0a61cf73b649f2536d0f21a661b32452a
+SIZE (huggingface-doc-builder-v0.6.0_GH0.tar.gz) = 665854
