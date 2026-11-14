@@ -1,6 +1,5 @@
 PORTNAME=	fury
-DISTVERSION=	0.12.0
-PORTREVISION=	6
+DISTVERSION=	2.1.0
 CATEGORIES=	graphics
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,25 +13,28 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-vcs>0:devel/py-hatch-vcs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=3.8.4:www/py-aiohttp@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>0:www/py-aiohttp@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}glfw>=2.7.0:graphics/py-glfw@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lazy_loader>=0.4:devel/py-lazy_loader@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}packaging>=17.0:devel/py-packaging@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pillow>=5.4.1:graphics/py-pillow@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pygltflib>=1.15.3:graphics/py-pygltflib@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}scipy>=1.0:science/py-scipy@${PY_FLAVOR} \
-		vtk${VTK_VER:R}>0:math/vtk${VTK_VER:R}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=1.5.3:math/py-matplotlib@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}numpy>=2.0,1:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}packaging>=23.0:devel/py-packaging@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pillow>=10.4.0:graphics/py-pillow@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}polyxios>=0.2.0:graphics/py-polyxios@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pygfx>=0.16.0:graphics/py-pygfx@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scipy>=1.13.0:science/py-scipy@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=3.9.0:math/py-matplotlib@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	pep517 autoplist pytest # tests fail with signal 10, see https://github.com/fury-gl/fury/issues/795
+USE_PYTHON=	pep517 autoplist pytest
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_ARGS=	--disable-plugin-autoload -p no:cacheprovider \
+		--ignore=fury/actor --ignore=fury/ui \
+		--ignore=fury/tests/test_convert.py --ignore=fury/tests/test_window.py \
+		--deselect fury/tests/test_io.py::test_load_image_as_wgpu_texture_view_uses_show_manager_device # tests that need a GPU with full WebGPU features are excluded
 
 NO_ARCH=	yes
 
-test-simple:
-	@${SETENV} ${TEST_ENV} ${PYTHON_CMD} ${FILESDIR}/test-earth_8k.py
+# tests as of 2.1.0: 263 passed, 9 skipped, 1 deselected, 1 warning in 5.23s
 
-.include <../../math/vtk9/Makefile.version>
 .include <bsd.port.mk>
