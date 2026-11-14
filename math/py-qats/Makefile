@@ -1,6 +1,6 @@
 PORTNAME=	qats
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.4.1
+DISTVERSION=	5.5.0
 CATEGORIES=	math
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -33,10 +33,10 @@ GH_ACCOUNT=	dnvgl
 
 NO_ARCH=	yes
 
-TEST_ENV=	${MAKE_ENV} PYTEST_ADDOPTS="-p no:black -p no:ruff -p no:mypy"
+TEST_ARGS=	--disable-plugin-autoload
 
 MAKE_ENV=	SETUPTOOLS_SCM_PRETEND_VERSION=${DISTVERSION}
 
-# tests as of 5.4.1: 143 passed, 7 skipped, 61 subtests passed in 11.80s
+# tests as of 5.5.0: 289 passed, 11 skipped, 18 warnings, 312 subtests passed in 27.01s
 
 .include <bsd.port.mk>
