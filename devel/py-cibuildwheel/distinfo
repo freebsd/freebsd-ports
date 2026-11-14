@@ -1,3 +1,3 @@
-TIMESTAMP = 1792337869
-SHA256 (cibuildwheel-4.3.1.tar.gz) = 69ee4cc0b9dd04ff3e32b3675fe429383ad3d5d98b20ac4ff217d83d2cf350af
-SIZE (cibuildwheel-4.3.1.tar.gz) = 462211
+TIMESTAMP = 1794504287
+SHA256 (cibuildwheel-4.3.5.tar.gz) = 43c30292b9ec8d08a8eb3873436e64d4d1434c5dcbc855fb0afbfc69732048f1
+SIZE (cibuildwheel-4.3.5.tar.gz) = 464371
