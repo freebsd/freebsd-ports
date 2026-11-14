@@ -1,0 +1,13 @@
+The object layer of the x gem: immutable, thread-safe resource classes for the X
+API with identity, references, hydration, cached pagination, and parallel batch
+lookups.
+
+It makes no HTTP requests itself: it asks a client to make them. Its one runtime
+dependency is x-core, for X::Error, the base class of every error the X gems
+raise, X::UnsupportedOperation, which it raises for what the API offers no way
+to do, X::UnsupportedFormat, which it raises for what Marshal wrote in a format
+it does not read, and X::Problem, which describes the partial errors of a
+response.
+
+Most applications should install x, which wires this gem to the HTTP client from
+x-core.

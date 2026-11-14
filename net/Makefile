@@ -1514,6 +1514,7 @@
     SUBDIR += rubygem-whois
     SUBDIR += rubygem-x
     SUBDIR += rubygem-x-core
+    SUBDIR += rubygem-x-resources
     SUBDIR += rubygem-xmlrpc
     SUBDIR += rude
     SUBDIR += rustconn
