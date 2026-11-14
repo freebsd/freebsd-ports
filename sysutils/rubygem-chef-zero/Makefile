@@ -1,5 +1,6 @@
 PORTNAME=	chef-zero
 PORTVERSION=	15.1.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	RG
 
@@ -11,7 +12,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-ffi-yajl>=2.2<4.0:devel/rubygem-ffi-yajl \
-		rubygem-hashie>=2.0<6.0:devel/rubygem-hashie \
+		rubygem-hashie5>=2.0<6.0:devel/rubygem-hashie5 \
 		rubygem-mixlib-log>=2.0<4.0:devel/rubygem-mixlib-log \
 		rubygem-rack>=3.1.16,3<4,3:www/rubygem-rack \
 		rubygem-rackup>=2.2.1<3:www/rubygem-rackup \
