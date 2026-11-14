@@ -1,12 +1,14 @@
 PORTNAME=	pkginfo
-PORTVERSION=	1.13
+PORTVERSION=	1.13.3
 CATEGORIES=	sysutils python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/tseaver/pkginfo/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Query metadatdata from sdists / bdists / installed packages
-WWW=		https://code.launchpad.net/pkginfo
+COMMENT=	Query metadata from sdists / bdists / installed packages
+WWW=		https://tseaver.github.io/pkginfo/ \
+		https://github.com/tseaver/pkginfo
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
