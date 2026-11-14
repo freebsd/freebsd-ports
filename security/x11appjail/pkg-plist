@@ -10,6 +10,7 @@ libexec/x11appjail/misc/simple-desktop-file-utils.sh
 libexec/x11appjail/print-display
 libexec/x11appjail/remove
 libexec/x11appjail/run-cmd
+libexec/x11appjail/run-xcmd
 libexec/x11appjail/sys-attr
 libexec/x11appjail/service.d/Notification/agent
 libexec/x11appjail/service.d/Notification/exec
