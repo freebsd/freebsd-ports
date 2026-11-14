@@ -67,6 +67,7 @@ include/cryptopp/elgamal.h
 include/cryptopp/emsa2.h
 include/cryptopp/eprecomp.h
 include/cryptopp/esign.h
+include/cryptopp/factory.h
 include/cryptopp/fhmqv.h
 include/cryptopp/files.h
 include/cryptopp/filters.h
@@ -189,6 +190,7 @@ include/cryptopp/vmac.h
 include/cryptopp/wake.h
 include/cryptopp/whrlpool.h
 include/cryptopp/words.h
+include/cryptopp/xaes_256_gcm.h
 include/cryptopp/xed25519.h
 include/cryptopp/xtr.h
 include/cryptopp/xtrcrypt.h
