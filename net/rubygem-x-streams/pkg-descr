@@ -1,0 +1,8 @@
+Streaming for the x gem, built on the HTTP client in x-core.
+- X::StreamingClient reads the sample and filtered streams of the X API, a post
+  at a time, and reconnects a stream that drops, backing off as X recommends.
+- It reads, adds, and deletes the rules of the filtered stream, each an
+  X::StreamRule.
+
+Its only dependency is x-core. Installing x installs this gem too, and require
+"x" gives every X::Client its streaming method.
