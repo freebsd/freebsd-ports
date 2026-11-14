@@ -1187,6 +1187,7 @@
     SUBDIR += py-tarsnapper
     SUBDIR += py-tldr
     SUBDIR += py-tmuxp
+    SUBDIR += py-truenas-api-client
     SUBDIR += py-uptime
     SUBDIR += py-zfsstat
     SUBDIR += qchroot

@@ -1,0 +1,3 @@
+The TrueNAS websocket client provides the command line tool midclt and
+the means to easily communicate with middleware using Python by making
+calls through the websocket API.
