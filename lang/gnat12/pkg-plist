@@ -3222,6 +3222,7 @@
 %%LIB32%%%%GNAT%%/lib/gcc/%%CONFTRGT%%/%%VER%%/32/adalib/unchdeal.ali
 %%LIB32%%%%GNAT%%/lib/gcc/%%CONFTRGT%%/%%VER%%/32/crtbegin.o
 %%LIB32%%%%GNAT%%/lib/gcc/%%CONFTRGT%%/%%VER%%/32/crtbeginS.o
+%%LIB32%%%%GNAT%%/lib/gcc/%%CONFTRGT%%/%%VER%%/32/crtbeginT.o
 %%LIB32%%%%GNAT%%/lib/gcc/%%CONFTRGT%%/%%VER%%/32/crtend.o
 %%LIB32%%%%GNAT%%/lib/gcc/%%CONFTRGT%%/%%VER%%/32/crtendS.o
 %%LIB32%%%%GNAT%%/lib/gcc/%%CONFTRGT%%/%%VER%%/32/libgcc.a
@@ -5695,6 +5696,7 @@
 %%GNAT%%/lib/gcc/%%CONFTRGT%%/%%VER%%/adalib/unchdeal.ali
 %%GNAT%%/lib/gcc/%%CONFTRGT%%/%%VER%%/crtbegin.o
 %%GNAT%%/lib/gcc/%%CONFTRGT%%/%%VER%%/crtbeginS.o
+%%GNAT%%/lib/gcc/%%CONFTRGT%%/%%VER%%/crtbeginT.o
 %%GNAT%%/lib/gcc/%%CONFTRGT%%/%%VER%%/crtend.o
 %%GNAT%%/lib/gcc/%%CONFTRGT%%/%%VER%%/crtendS.o
 %%GNAT%%/lib/gcc/%%CONFTRGT%%/%%VER%%/include-fixed/README
