@@ -4,7 +4,7 @@ CARGO_CRATES=	RustyXML-0.3.0 \
 		aead-0.5.2 \
 		aead-0.6.1 \
 		aes-0.8.4 \
-		aes-0.9.3 \
+		aes-0.9.4 \
 		aes-gcm-0.10.3 \
 		aes-gcm-0.11.1 \
 		aes-gcm-siv-0.12.1 \
@@ -18,7 +18,7 @@ CARGO_CRATES=	RustyXML-0.3.0 \
 		anstyle-query-1.1.5 \
 		anstyle-wincon-3.0.11 \
 		anyhow-1.0.104 \
-		arc-swap-1.9.3 \
+		arc-swap-1.9.5 \
 		arcstr-1.2.0 \
 		argon2-0.5.3 \
 		argon2-0.6.0 \
@@ -29,8 +29,8 @@ CARGO_CRATES=	RustyXML-0.3.0 \
 		asn1-rs-derive-0.6.0 \
 		asn1-rs-impl-0.2.0 \
 		async-channel-1.9.0 \
-		async-compression-0.4.51 \
-		async-lock-3.4.2 \
+		async-compression-0.4.52 \
+		async-lock-3.5.0 \
 		async-recursion-1.2.0 \
 		async-stream-0.3.6 \
 		async-stream-impl-0.3.6 \
@@ -39,8 +39,9 @@ CARGO_CRATES=	RustyXML-0.3.0 \
 		attohttpc-0.30.1 \
 		autocfg-1.5.1 \
 		aws-creds-0.40.0 \
-		aws-lc-rs-1.18.2 \
+		aws-lc-rs-1.19.0 \
 		aws-lc-sys-0.46.0 \
+		aws-lc-sys-0.47.0 \
 		aws-region-0.29.0 \
 		azure_core-0.21.0 \
 		azure_core-1.1.0 \
@@ -65,8 +66,7 @@ CARGO_CRATES=	RustyXML-0.3.0 \
 		bit-set-0.11.1 \
 		bit-vec-0.8.0 \
 		bit-vec-0.9.1 \
-		bit-vec-0.10.1 \
-		bitflags-1.3.2 \
+		bit-vec-0.10.2 \
 		bitflags-2.13.2 \
 		bitpacking-0.9.3 \
 		bitvec-1.1.1 \
@@ -99,7 +99,7 @@ CARGO_CRATES=	RustyXML-0.3.0 \
 		castaway-0.2.4 \
 		cbc-0.1.2 \
 		cbc-0.2.1 \
-		cc-1.10.0 \
+		cc-1.11.1 \
 		cedarwood-0.5.0 \
 		cexpr-0.6.0 \
 		cfb-0.14.0 \
@@ -124,11 +124,11 @@ CARGO_CRATES=	RustyXML-0.3.0 \
 		colorchoice-1.0.5 \
 		combine-4.6.9 \
 		compact_str-0.10.0 \
-		compression-codecs-0.4.46 \
+		compression-codecs-0.4.47 \
 		compression-core-0.4.34 \
 		concurrent-queue-2.5.0 \
 		const-oid-0.9.6 \
-		const-oid-0.10.2 \
+		const-oid-0.10.3 \
 		const-random-0.1.18 \
 		const-random-macro-0.1.16 \
 		constant_time_eq-0.4.2 \
@@ -142,7 +142,7 @@ CARGO_CRATES=	RustyXML-0.3.0 \
 		cpufeatures-0.3.1 \
 		crc-fast-1.10.0 \
 		crc16-0.4.0 \
-		crc32fast-1.5.3 \
+		crc32fast-1.5.5 \
 		critical-section-1.2.0 \
 		crossbeam-channel-0.5.17 \
 		crossbeam-deque-0.8.8 \
@@ -151,13 +151,13 @@ CARGO_CRATES=	RustyXML-0.3.0 \
 		crossbeam-utils-0.8.23 \
 		crunchy-0.2.4 \
 		crypto-bigint-0.5.5 \
-		crypto-bigint-0.7.8 \
+		crypto-bigint-0.7.11 \
 		crypto-common-0.1.7 \
 		crypto-common-0.2.2 \
 		crypto-mac-0.10.0 \
 		ctr-0.9.2 \
 		ctr-0.10.1 \
-		ctutils-0.4.5 \
+		ctutils-0.4.8 \
 		curve25519-dalek-4.1.3 \
 		curve25519-dalek-derive-0.1.1 \
 		cx448-0.1.1 \
@@ -176,11 +176,8 @@ CARGO_CRATES=	RustyXML-0.3.0 \
 		decancer-3.3.3 \
 		decancer-4.0.0 \
 		deflate64-0.1.12 \
-		defmt-1.2.0 \
-		defmt-macros-1.2.0 \
-		defmt-parser-1.1.0 \
 		der-0.7.10 \
-		der-0.8.2 \
+		der-0.8.3 \
 		der-parser-10.0.0 \
 		deranged-0.5.9 \
 		derive_builder-0.20.2 \
@@ -192,7 +189,7 @@ CARGO_CRATES=	RustyXML-0.3.0 \
 		digest-0.11.3 \
 		displaydoc-0.2.7 \
 		dlv-list-0.5.2 \
-		dns-update-0.6.0 \
+		dns-update-0.6.1 \
 		dsa-0.6.3 \
 		dunce-1.0.5 \
 		dyn-clone-1.0.20 \
@@ -208,7 +205,7 @@ CARGO_CRATES=	RustyXML-0.3.0 \
 		elliptic-curve-0.14.3 \
 		ena-0.14.4 \
 		encodify-1.0.2 \
-		encoding_rs-0.8.42 \
+		encoding_rs-0.8.44 \
 		equivalent-1.0.3 \
 		errno-0.3.14 \
 		event-listener-2.5.3 \
@@ -219,7 +216,7 @@ CARGO_CRATES=	RustyXML-0.3.0 \
 		fallible-streaming-iterator-0.1.9 \
 		fancy-regex-0.18.0 \
 		fancy-regex-0.19.2 \
-		fancy-regex-0.20.0 \
+		fancy-regex-0.20.1 \
 		farmhash-1.1.5 \
 		fastrand-1.9.0 \
 		fastrand-2.5.0 \
@@ -231,8 +228,8 @@ CARGO_CRATES=	RustyXML-0.3.0 \
 		fiat-crypto-0.3.0 \
 		find-msvc-tools-0.1.15 \
 		fixed_decimal-0.7.3 \
-		fixedbitset-0.5.7 \
-		flate2-1.1.10 \
+		fixedbitset-0.5.9 \
+		flate2-1.1.11 \
 		fnv-1.0.7 \
 		foldhash-0.1.5 \
 		foldhash-0.2.0 \
@@ -272,7 +269,7 @@ CARGO_CRATES=	RustyXML-0.3.0 \
 		hashbrown-0.16.1 \
 		hashbrown-0.17.1 \
 		hashify-0.2.9 \
-		hashify-0.3.1 \
+		hashify-0.3.2 \
 		hashlink-0.12.2 \
 		heck-0.5.0 \
 		hermit-abi-0.5.3 \
@@ -322,14 +319,14 @@ CARGO_CRATES=	RustyXML-0.3.0 \
 		idna-1.1.0 \
 		idna_adapter-1.2.2 \
 		imagesize-0.15.0 \
-		include-flate-0.3.4 \
-		include-flate-codegen-0.3.4 \
-		include-flate-compress-0.3.4 \
+		include-flate-0.3.5 \
+		include-flate-codegen-0.3.5 \
+		include-flate-compress-0.3.5 \
 		indexmap-2.14.2 \
 		infer-0.2.3 \
 		infer-0.22.0 \
 		inout-0.1.4 \
-		inout-0.2.5 \
+		inout-0.2.6 \
 		instant-0.1.13 \
 		ipconfig-0.3.4 \
 		ipnet-2.12.2 \
@@ -337,15 +334,15 @@ CARGO_CRATES=	RustyXML-0.3.0 \
 		itertools-0.13.0 \
 		itertools-0.14.0 \
 		itertools-0.15.0 \
-		itoa-1.0.18 \
+		itoa-1.0.19 \
 		ixdtf-0.6.7 \
 		jieba-macros-0.10.4 \
 		jieba-macros-0.11.0 \
 		jieba-rs-0.10.4 \
 		jieba-rs-0.11.0 \
-		jiff-0.2.38 \
-		jiff-core-0.1.1 \
-		jiff-static-0.2.38 \
+		jiff-0.2.42 \
+		jiff-core-0.1.4 \
+		jiff-static-0.2.42 \
 		jiff-tzdb-0.1.9 \
 		jiff-tzdb-platform-0.1.3 \
 		jmap-tools-0.1.8 \
@@ -354,7 +351,7 @@ CARGO_CRATES=	RustyXML-0.3.0 \
 		jni-sys-0.4.1 \
 		jni-sys-macros-0.4.1 \
 		jobserver-0.1.35 \
-		js-sys-0.3.106 \
+		js-sys-0.3.107 \
 		jsonwebtoken-11.1.0 \
 		keccak-0.1.6 \
 		keccak-0.2.2 \
@@ -365,7 +362,7 @@ CARGO_CRATES=	RustyXML-0.3.0 \
 		lazy_static-1.5.1 \
 		lber-0.5.1 \
 		ldap3-0.12.1 \
-		libbz2-rs-sys-0.2.5 \
+		libbz2-rs-sys-0.2.6 \
 		libc-0.2.191 \
 		libflate-2.3.2 \
 		libflate_lz77-2.3.0 \
@@ -373,27 +370,27 @@ CARGO_CRATES=	RustyXML-0.3.0 \
 		libm-0.2.16 \
 		libredox-0.1.25 \
 		libsqlite3-sys-0.39.1 \
-		libz-sys-1.1.30 \
+		libz-sys-1.1.33 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.12.1 \
 		litemap-0.8.3 \
 		lock_api-0.4.14 \
 		lock_api-0.5.0 \
-		log-0.4.34 \
+		log-0.4.35 \
 		lru-0.18.5 \
 		lru-cache-0.1.2 \
 		lru-slab-0.1.3 \
 		lz4-sys-1.11.1+lz4-1.10.0 \
 		lz4_flex-0.14.0 \
 		lzma-rust2-0.16.5 \
-		lzma-rust2-0.23.0 \
+		lzma-rust2-0.25.0 \
 		mail-auth-0.13.3 \
 		mail-auth-0.15.1 \
 		mail-builder-0.5.0 \
 		mail-builder-1.0.0 \
-		mail-builder-2.0.0 \
+		mail-builder-2.0.1 \
 		mail-parser-0.11.9 \
-		mail-parser-1.0.0 \
+		mail-parser-1.0.1 \
 		manyhow-0.11.4 \
 		manyhow-macros-0.11.4 \
 		maplit-1.0.2 \
@@ -408,9 +405,9 @@ CARGO_CRATES=	RustyXML-0.3.0 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.9.1 \
 		mio-1.2.4 \
-		ml-dsa-0.1.1 \
-		ml-kem-0.3.3 \
-		module-lattice-0.2.3 \
+		ml-dsa-0.1.2 \
+		ml-kem-0.3.4 \
+		module-lattice-0.2.4 \
 		moka-0.12.16 \
 		multiversion_no_op-1.0.0 \
 		munge-0.4.7 \
@@ -443,7 +440,7 @@ CARGO_CRATES=	RustyXML-0.3.0 \
 		once_cell-1.21.4 \
 		once_cell_polyfill-1.70.2 \
 		opaque-debug-0.3.1 \
-		openssl-probe-0.2.1 \
+		openssl-probe-0.2.2 \
 		ordered-multimap-0.7.3 \
 		p256-0.13.2 \
 		p256-0.14.0 \
@@ -493,7 +490,7 @@ CARGO_CRATES=	RustyXML-0.3.0 \
 		ppmd-rust-1.5.2 \
 		ppv-lite86-0.2.21 \
 		precomputed-hash-0.1.1 \
-		prefix-trie-0.10.1 \
+		prefix-trie-0.10.2 \
 		prettyplease-0.2.37 \
 		primefield-0.14.0 \
 		primeorder-0.13.6 \
@@ -506,7 +503,7 @@ CARGO_CRATES=	RustyXML-0.3.0 \
 		proc-macro2-1.0.107 \
 		prometheus-0.14.0 \
 		proxy-header-0.1.3 \
-		psl-2.1.245 \
+		psl-2.1.251 \
 		psl-types-2.0.11 \
 		ptr_meta-0.3.2 \
 		ptr_meta_derive-0.3.2 \
@@ -543,7 +540,7 @@ CARGO_CRATES=	RustyXML-0.3.0 \
 		rayon-1.12.0 \
 		rayon-core-1.13.0 \
 		rcgen-0.14.10 \
-		redis-1.8.0 \
+		redis-1.8.1 \
 		redox_syscall-0.5.18 \
 		redox_syscall-0.9.5 \
 		ref-cast-1.0.27 \
@@ -567,7 +564,7 @@ CARGO_CRATES=	RustyXML-0.3.0 \
 		rsa-0.9.10 \
 		rsqlite-vfs-0.2.0 \
 		rtrb-0.4.1 \
-		rusqlite-0.41.0 \
+		rusqlite-0.41.1 \
 		rust-ini-0.21.3 \
 		rust-s3-0.38.0 \
 		rust-stemmers-1.2.0 \
@@ -575,11 +572,11 @@ CARGO_CRATES=	RustyXML-0.3.0 \
 		rustc_version-0.4.1 \
 		rustflags-0.1.7 \
 		rusticata-macros-4.1.0 \
-		rustix-1.1.5 \
+		rustix-1.1.6 \
 		rustls-0.23.46 \
 		rustls-native-certs-0.8.5 \
 		rustls-pemfile-2.2.0 \
-		rustls-pki-types-1.15.1 \
+		rustls-pki-types-1.16.0 \
 		rustls-platform-verifier-0.7.1 \
 		rustls-platform-verifier-android-0.2.0 \
 		rustls-webpki-0.103.16 \
@@ -589,7 +586,7 @@ CARGO_CRATES=	RustyXML-0.3.0 \
 		same-file-1.0.6 \
 		saturating-0.1.0 \
 		schannel-0.1.30 \
-		scheduled-thread-pool-0.2.7 \
+		scheduled-thread-pool-0.2.8 \
 		scopeguard-1.2.0 \
 		scrypt-0.12.0 \
 		sd-notify-0.5.0 \
@@ -606,7 +603,7 @@ CARGO_CRATES=	RustyXML-0.3.0 \
 		serde_derive-1.0.229 \
 		serde_json-1.0.154 \
 		serde_qs-0.8.5 \
-		serde_spanned-1.1.2 \
+		serde_spanned-1.1.3 \
 		serde_urlencoded-0.7.1 \
 		serdect-0.2.0 \
 		serdect-0.4.3 \
@@ -636,7 +633,7 @@ CARGO_CRATES=	RustyXML-0.3.0 \
 		siphasher-1.0.4 \
 		slab-0.4.12 \
 		slh-dsa-0.0.3 \
-		smallvec-1.16.4 \
+		smallvec-1.16.5 \
 		smtp-proto-0.2.5 \
 		snafu-0.8.9 \
 		snafu-derive-0.8.9 \
@@ -649,7 +646,7 @@ CARGO_CRATES=	RustyXML-0.3.0 \
 		spki-0.7.3 \
 		spki-0.8.1 \
 		sponge-cursor-0.1.0 \
-		sqlite-wasm-rs-0.6.2 \
+		sqlite-wasm-rs-0.6.3 \
 		stable_deref_trait-1.2.1 \
 		static_assertions-1.1.0 \
 		string_cache-0.11.0 \
@@ -657,7 +654,7 @@ CARGO_CRATES=	RustyXML-0.3.0 \
 		strsim-0.11.1 \
 		subtle-2.6.1 \
 		syn-2.0.119 \
-		syn-3.0.9 \
+		syn-3.0.10 \
 		sync_wrapper-1.0.2 \
 		synstructure-0.13.2 \
 		synstructure-0.14.0 \
@@ -689,11 +686,11 @@ CARGO_CRATES=	RustyXML-0.3.0 \
 		tokio-stream-0.1.19 \
 		tokio-tungstenite-0.30.0 \
 		tokio-util-0.7.20 \
-		toml-1.1.8+spec-1.1.0 \
-		toml_datetime-1.1.2+spec-1.1.0 \
-		toml_edit-0.25.17+spec-1.1.0 \
+		toml-1.2.1+spec-1.1.0 \
+		toml_datetime-1.1.3+spec-1.1.0 \
+		toml_edit-0.25.19+spec-1.1.0 \
 		toml_parser-1.1.5+spec-1.1.0 \
-		toml_writer-1.1.3+spec-1.1.0 \
+		toml_writer-1.2.0+spec-1.1.0 \
 		totp-rs-6.0.0 \
 		tower-0.5.3 \
 		tower-http-0.6.11 \
@@ -710,7 +707,7 @@ CARGO_CRATES=	RustyXML-0.3.0 \
 		tungstenite-0.30.0 \
 		twofish-0.7.1 \
 		twox-hash-2.1.5 \
-		typed-path-0.12.3 \
+		typed-path-0.12.4 \
 		typed-path-0.13.0 \
 		typenum-1.20.1 \
 		typespec-1.1.0 \
@@ -720,9 +717,9 @@ CARGO_CRATES=	RustyXML-0.3.0 \
 		unicode-general-category-1.1.0 \
 		unicode-ident-1.0.27 \
 		unicode-normalization-0.1.26 \
-		unicode-properties-0.1.4 \
-		unicode-script-0.5.8 \
-		unicode-security-0.1.2 \
+		unicode-properties-0.1.5 \
+		unicode-script-0.5.9 \
+		unicode-security-0.1.3 \
 		unicode-xid-0.2.6 \
 		universal-hash-0.5.1 \
 		universal-hash-0.6.1 \
@@ -730,9 +727,10 @@ CARGO_CRATES=	RustyXML-0.3.0 \
 		untrusted-0.9.0 \
 		unty-0.0.4 \
 		url-2.5.8 \
-		utf8_iter-1.0.4 \
+		utf8_iter-1.1.0 \
 		utf8parse-0.2.2 \
-		uuid-1.29.0 \
+		utf_types-1.0.0 \
+		uuid-1.29.2 \
 		valuable-0.1.1 \
 		vcpkg-0.2.15 \
 		version_check-0.9.5 \
@@ -745,17 +743,17 @@ CARGO_CRATES=	RustyXML-0.3.0 \
 		wasi-0.14.7+wasi-0.2.4 \
 		wasip2-1.0.4+wasi-0.2.12 \
 		wasite-1.0.2 \
-		wasm-bindgen-0.2.129 \
-		wasm-bindgen-futures-0.4.79 \
-		wasm-bindgen-macro-0.2.129 \
-		wasm-bindgen-macro-support-0.2.129 \
-		wasm-bindgen-shared-0.2.129 \
+		wasm-bindgen-0.2.130 \
+		wasm-bindgen-futures-0.4.80 \
+		wasm-bindgen-macro-0.2.130 \
+		wasm-bindgen-macro-support-0.2.130 \
+		wasm-bindgen-shared-0.2.130 \
 		wasm-streams-0.4.2 \
 		wasm-streams-0.5.0 \
-		web-sys-0.3.106 \
+		web-sys-0.3.107 \
 		web-time-1.1.0 \
-		webpki-root-certs-1.0.11 \
-		webpki-roots-1.0.11 \
+		webpki-root-certs-1.0.12 \
+		webpki-roots-1.0.12 \
 		whatlang-0.18.0 \
 		whoami-2.1.3 \
 		widestring-1.2.1 \
@@ -790,7 +788,7 @@ CARGO_CRATES=	RustyXML-0.3.0 \
 		windows_x86_64_gnu-0.52.6 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.52.6 \
-		winnow-1.0.4 \
+		winnow-1.0.5 \
 		wit-bindgen-0.57.1 \
 		wnaf-0.14.1 \
 		writeable-0.6.4 \
@@ -816,13 +814,13 @@ CARGO_CRATES=	RustyXML-0.3.0 \
 		zerovec-0.11.9 \
 		zerovec-derive-0.11.7 \
 		zip-8.6.0 \
-		zip-9.1.0 \
+		zip-9.5.1 \
 		zlib-rs-0.6.8 \
 		zmij-1.0.23 \
 		zopfli-0.8.4 \
-		zstd-0.13.3 \
+		zstd-0.13.4 \
 		zstd-0.14.3 \
-		zstd-safe-7.3.0 \
+		zstd-safe-7.4.0 \
 		zstd-safe-8.2.0 \
 		zstd-sys-2.1.2+zstd.1.5.7 \
 		zxcvbn-3.1.1 \
