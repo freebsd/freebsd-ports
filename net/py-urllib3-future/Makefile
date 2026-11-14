@@ -23,11 +23,12 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	BROTLI QH3 RTLS SOCKS UTLS WS ZSTD
+OPTIONS_DEFINE=	BROTLI QH3 RTLS SOCKS UTLS WS WS_FAST ZSTD
 QH3_DESC=	QUIC and HTTP/3 support
 RTLS_DESC=	Rustls-backed TLS support
 UTLS_DESC=	BoringSSL-backed TLS support
-WS_DESC=	WebSockets support
+WS_DESC=	WebSockets support (ws:// and wss://)
+WS_FAST_DESC=	WebSockets support (ws+fast:// and wss+fast://)
 
 BROTLI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}brotli>=1.0.9:archivers/py-brotli@${PY_FLAVOR}
 SOCKS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-socks>=2.0<2.8.1_99:net/py-python-socks@${PY_FLAVOR}
@@ -36,6 +37,7 @@ RTLS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}rtls>=2026.9.21:security/py-rtls@${PY_F
 UTLS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}brotli>=1.2.0:archivers/py-brotli@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}utls>=2026.9.21:security/py-utls@${PY_FLAVOR}
 WS_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}wsproto>=1.2<2:net/py-wsproto@${PY_FLAVOR}
+WS_FAST_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}websockets>=15.0.1<18:devel/py-websockets@${PY_FLAVOR}
 
 .include <bsd.port.pre.mk>
 
