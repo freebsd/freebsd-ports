@@ -1,6 +1,6 @@
 PORTNAME=	json-repair
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.64.0
+DISTVERSION=	0.64.9
 CATEGORIES=	textproc python
 #MASTER_SITES=	PYPI # missing file for tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0.44.0:devel/py-wheel@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flask-cors>0:www/py-flask-cors@${PY_FLAVOR} \
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flask>=3:www/py-flask@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}flask-cors>=6:www/py-flask-cors@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-benchmark>0:devel/py-pytest-benchmark@${PY_FLAVOR}
 
 USES=		python
@@ -30,6 +31,6 @@ NO_ARCH=	yes
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} CI=1
 TEST_ARGS=	--disable-plugin-autoload -p benchmark
 
-# tests as of 0.64.0: 398 passed, 16 skipped (performance/timing tests skipped in CI mode)
+# tests as of 0.64.9: 548 passed, 25 skipped in 4.41s (performance/timing tests skipped in CI mode)
 
 .include <bsd.port.mk>
