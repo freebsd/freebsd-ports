@@ -1,6 +1,6 @@
---- content/common/features.h.orig	2026-08-24 20:59:34 UTC
+--- content/common/features.h.orig	2026-11-14 03:16:00 UTC
 +++ content/common/features.h
-@@ -86,7 +86,7 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE(kKillOnUnexpectedO
+@@ -88,7 +88,7 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE(kKillOnUnexpectedO
  #endif
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kEditContextSelectionSync);
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kKillOnUnexpectedOriginHeader);
@@ -9,7 +9,7 @@
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kEnableDevToolsJsErrorReporting);
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kEnforceGamepadPermissionsPolicy);
-@@ -116,8 +116,8 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE_PARAM(FontDataServ
+@@ -118,8 +118,8 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE_PARAM(FontDataServ
  CONTENT_EXPORT BASE_DECLARE_FEATURE_PARAM(FontDataServiceTypefaceType,
                                            kFontDataServiceTypefaceType);
  #endif  // BUILDFLAG(IS_WIN)
@@ -20,7 +20,7 @@
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kFontDataServiceLinux);
  #else
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kFontDataServiceChromeOS);
-@@ -132,7 +132,7 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE(kFontDataServiceFo
+@@ -134,7 +134,7 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE(kFontDataServiceFo
  
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kFontDataServiceForCSSLocalFonts);
  

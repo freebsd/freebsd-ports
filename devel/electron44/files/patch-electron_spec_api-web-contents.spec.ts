@@ -1,6 +1,6 @@
---- electron/spec/api-web-contents.spec.ts.orig	2026-10-30 06:33:33 UTC
+--- electron/spec/api-web-contents.spec.ts.orig	2026-11-12 19:29:28 UTC
 +++ electron/spec/api-web-contents.spec.ts
-@@ -1647,7 +1647,7 @@ describe('webContents module', () => {
+@@ -1647,7 +1647,7 @@ describe('webContents module', { retry: 0 }, () => {
      // back to OpenFolder() which does a blocking DirectoryExists() on the UI
      // thread (pre-existing behavior). Workspace-gating is covered by the test
      // above.
@@ -9,7 +9,7 @@
        'reveals paths under a registered workspace folder without executing them',
        // Opens a real Finder/Explorer window, which takes focus and stays open.
        { tags: ['serial'] },
-@@ -1673,7 +1673,7 @@ describe('webContents module', () => {
+@@ -1673,7 +1673,7 @@ describe('webContents module', { retry: 0 }, () => {
    // xdg-desktop-portal FileChooser that script/dbus_mock.py hosts on the fake
    // session bus.
    ifdescribe(
@@ -18,7 +18,7 @@
        process.arch !== 'ia32' &&
        !process.arch.startsWith('arm') &&
        !!process.env.DBUS_SESSION_BUS_ADDRESS
-@@ -5411,7 +5411,7 @@ describe('webContents module', () => {
+@@ -5400,7 +5400,7 @@ describe('webContents module', { retry: 0 }, () => {
      });
  
      // TODO(codebytere): OOPIF printing is disabled on Linux at the moment due to crashes.

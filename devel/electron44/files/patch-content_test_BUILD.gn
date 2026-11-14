@@ -1,0 +1,11 @@
+--- content/test/BUILD.gn.orig	2026-11-14 03:16:00 UTC
++++ content/test/BUILD.gn
+@@ -2202,7 +2202,7 @@ test("content_browsertests") {
+     ]
+   }
+ 
+-  if (is_linux || is_chromeos) {
++  if ((is_linux && !is_bsd) || is_chromeos) {
+     sources += [
+       "../browser/service_host/utility_process_sandbox_browsertest.cc",
+       "../browser/zygote_host/zygote_browsertest.cc",

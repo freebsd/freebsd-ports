@@ -1,4 +1,4 @@
---- electron/shell/browser/native_window_views.h.orig	2026-10-13 23:18:11 UTC
+--- electron/shell/browser/native_window_views.h.orig	2026-11-12 19:29:28 UTC
 +++ electron/shell/browser/native_window_views.h
 @@ -33,7 +33,7 @@ class Arguments;
  class Arguments;
@@ -27,7 +27,7 @@
    void SetIcon(const gfx::ImageSkia& icon);
  #endif
  
-@@ -208,7 +208,7 @@ class NativeWindowViews : public NativeWindow,
+@@ -212,7 +212,7 @@ class NativeWindowViews : public NativeWindow,
      return overlay_symbol_color_;
    }
  
@@ -36,7 +36,7 @@
    views::FrameViewLinux* GetFrameViewLinux() const;
    [[nodiscard]] bool ignore_mouse_events() const {
      return ignore_mouse_events_;
-@@ -306,7 +306,7 @@ class NativeWindowViews : public NativeWindow,
+@@ -298,7 +298,7 @@ class NativeWindowViews : public NativeWindow,
    // events from resizing the window.
    extensions::SizeConstraints old_size_constraints_;
  
@@ -45,7 +45,7 @@
    std::unique_ptr<GlobalMenuBarX11> global_menu_bar_;
  
    // Set while the window is disabled; running it re-enables event dispatch.
-@@ -325,7 +325,7 @@ class NativeWindowViews : public NativeWindow,
+@@ -317,7 +317,7 @@ class NativeWindowViews : public NativeWindow,
    // This value is determined when the window is created.
    bool rounded_corner_ = true;
  
