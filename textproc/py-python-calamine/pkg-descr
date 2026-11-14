@@ -1,0 +1,3 @@
+python-calamine is a Python binding for the Rust calamine library. It reads
+Excel (xls, xlsx, xlsm, xlsb) and OpenDocument spreadsheet (ods) files quickly
+and without external dependencies.
