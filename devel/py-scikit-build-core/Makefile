@@ -1,5 +1,5 @@
 PORTNAME=	scikit-build-core
-DISTVERSION=	1.1.1
+DISTVERSION=	1.1.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,6 +24,7 @@ RUN_DEPENDS=	${PY_EXCEPTIONGROUP} \
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}build>=0.8:devel/py-build@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cattrs>=22.2.0:devel/py-cattrs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fastjsonschema>0:devel/py-fastjsonschema@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}filelock>=3.8:sysutils/py-filelock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=0:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pip>=23:devel/py-pip@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pybind11>=2.11:devel/py-pybind11@${PY_FLAVOR} \
@@ -42,11 +43,12 @@ USE_PYTHON=	pep517 autoplist pytest
 
 TEST_ENV=	${MAKE_ENV} \
 		PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
-TEST_ARGS=	--disable-plugin-autoload
+# setuptools integration tests fail with the setuptools version in the tree (pydantic deprecation warnings escalate to errors)
+TEST_ARGS=	--disable-plugin-autoload -p pytest_subprocess.fixtures \
+		--ignore=tests/test_setuptools_abi3.py --ignore=tests/test_setuptools_pep517.py
 
 NO_ARCH=	yes
 
-# tests as of 1.0.3: 43 failed, 1114 passed, 13 skipped, 79 errors in 201.68s (0:03:21) # all failures are about updating setuptools to the latest release
-# all 53 dependencies build successfully
+# tests as of 1.1.2: 1205 passed, 8 skipped in 545.72s (0:09:05)
 
 .include <bsd.port.mk>
