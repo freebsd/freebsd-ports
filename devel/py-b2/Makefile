@@ -1,6 +1,6 @@
 PORTNAME=	b2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.7.1
+DISTVERSION=	5.0.3
 CATEGORIES=	devel
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -17,7 +17,8 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-vcs>.4:devel/py-hatch-vcs@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}tabulate>=0.9.0:devel/py-tabulate@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}argcomplete>=3.5.2:devel/py-argcomplete@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}arrow>=1.0.2:devel/py-arrow@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}b2sdk>=2.11.0:devel/py-b2sdk@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}b2sdk>=2.13.2:devel/py-b2sdk@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}certifi>=2026.10.19:security/py-certifi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}docutils>=0.18.1:textproc/py-docutils@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}platformdirs>=3.11.0:devel/py-platformdirs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rst2ansi>=0.1.5:textproc/py-rst2ansi@${PY_FLAVOR} \
