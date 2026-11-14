@@ -1,6 +1,6 @@
 PORTNAME=	google-genai
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.29.0
+DISTVERSION=	3.3.0
 CATEGORIES=	misc python # machine-learning
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,7 +22,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>=24.2:devel/py-packaging@${PY_FL
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anyio>=4.8.0:devel/py-anyio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}distro>=1.7.0:sysutils/py-distro@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}google-auth>=2.56.0:security/py-google-auth@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}httpx>=0.28.1:www/py-httpx@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}httpx2>=2.0.0:www/py-httpx2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.12.5:devel/py-pydantic2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.28.1:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sniffio>0:devel/py-sniffio@${PY_FLAVOR} \
@@ -34,7 +34,8 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}mcp>=1.14.0:misc/py-mcp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pillow>=11.0.0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}protobuf>0:devel/py-protobuf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sentencepiece>=0.2.0:textproc/py-sentencepiece@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-asyncio>=0.25.0:devel/py-pytest-asyncio@${PY_FLAVOR} \
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}httpx>=0.28.1:www/py-httpx@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-asyncio>=0.25.0:devel/py-pytest-asyncio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-cov>0:devel/py-pytest-cov@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-xdist>=3.8.0:devel/py-pytest-xdist@${PY_FLAVOR}
 
@@ -48,6 +49,39 @@ GH_PROJECT=	python-genai
 NO_ARCH=	yes
 
 TEST_ENV=	GOOGLE_GENAI_REPLAYS_DIRECTORY=${WRKDIR}/replays
-TEST_ARGS=	-p no:relaxed
+PYTEST_BROKEN_TESTS=	test_aiohttp_retries_failed_request_retries_unsuccessfully_mtls \
+			test_auto_detected_backend_selects_matching_ssl_ctx \
+			test_ensure_httpx2_ssl_ctx_default_uses_truststore \
+			test_python_decisions_async_create \
+			test_python_decisions_create_routes_through_google_genai_client \
+			test_single_injected_client_other_client_still_gets_sdk_ssl_ctx
+TEST_ARGS=	--disable-plugin-autoload -p asyncio \
+		google/genai/tests/afc \
+		google/genai/tests/chats \
+		google/genai/tests/client \
+		google/genai/tests/common \
+		google/genai/tests/errors \
+		google/genai/tests/gaos \
+		google/genai/tests/imports \
+		google/genai/tests/interactions \
+		google/genai/tests/live \
+		google/genai/tests/local_tokenizer \
+		google/genai/tests/mcp \
+		google/genai/tests/transformers \
+		google/genai/tests/types \
+		--ignore=google/genai/tests/afc/test_generate_content_stream_afc_thoughts.py \
+		--ignore=google/genai/tests/afc/test_should_disable_afc.py \
+		--ignore=google/genai/tests/chats/test_send_message.py \
+		--ignore=google/genai/tests/chats/test_send_message_continuation_token.py \
+		--ignore=google/genai/tests/interactions/test_paths.py \
+		--ignore=google/genai/tests/live/test_live.py \
+		--ignore=google/genai/tests/live/test_live_music.py \
+		--ignore=google/genai/tests/live/test_send_client_content.py \
+		--ignore=google/genai/tests/live/test_send_context_update.py \
+		--ignore=google/genai/tests/live/test_send_realtime_input.py \
+		--ignore=google/genai/tests/live/test_send_tool_response.py \
+		--ignore=google/genai/tests/types/test_bytes_internal.py # the rest of tests require network access or API replays
+
+# tests as of 3.3.0: 1204 passed, 7 skipped, 10 deselected, 47 warnings in 89.29s (0:01:29)
 
 .include <bsd.port.mk>

@@ -1,10 +1,13 @@
---- pyproject.toml.orig	2026-01-05 06:06:35 UTC
+-- Remove the SPDX license expression: devel/py-setuptools in the ports tree is too old to accept it
+-- (it requires a license table, not a string).
+
+--- pyproject.toml.orig	2026-11-13 06:48:11 UTC
 +++ pyproject.toml
 @@ -6,7 +6,6 @@ readme = "README.md"
- version = "1.56.0"
+ version = "3.3.0"
  description = "GenAI Python SDK"
  readme = "README.md"
 -license = "Apache-2.0"
- requires-python = ">=3.10"
+ requires-python = ">=3.11"
  authors = [
      { name = "Google LLC", email = "googleapis-packages@google.com" },
