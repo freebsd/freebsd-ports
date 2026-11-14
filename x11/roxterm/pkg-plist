@@ -33,6 +33,8 @@ share/locale/pt/LC_MESSAGES/roxterm.mo
 share/locale/pt_BR/LC_MESSAGES/roxterm.mo
 share/locale/ru/LC_MESSAGES/roxterm.mo
 share/locale/uk/LC_MESSAGES/roxterm.mo
+share/man/hu/man1/roxterm-config.1.gz
+share/man/hu/man1/roxterm.1.gz
 share/man/man1/roxterm-config.1.gz
 share/man/man1/roxterm.1.gz
 share/man/pt_BR/man1/roxterm-config.1.gz
