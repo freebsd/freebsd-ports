@@ -1,5 +1,5 @@
 PORTNAME=	liffile
-PORTVERSION=	2026.7.14
+PORTVERSION=	2026.11.12
 CATEGORIES=	graphics python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=2,1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=2.1,1:math/py-numpy@${PY_FLAVOR}
 
-USES=		python:3.12+
+USES=		dos2unix python:3.12+
 USE_PYTHON=	autoplist concurrent cython pep517
 
 NO_ARCH=	yes
