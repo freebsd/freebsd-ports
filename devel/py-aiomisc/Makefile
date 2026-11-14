@@ -1,5 +1,5 @@
 PORTNAME=	aiomisc
-DISTVERSION=	18.0.33
+DISTVERSION=	18.0.40
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -39,12 +39,14 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiomisc-pytest>=2.0.0:devel/py-aiomisc-pyte
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517 pytest
 
-TEST_ARGS=	--ignore=tests/test_carbon_service.py -p no:relaxed
+TEST_ARGS=	--disable-plugin-autoload \
+		-p aiomisc_pytest -p rerunfailures -p pytest_subtests \
+		--ignore=tests/test_carbon_service.py
 PYTEST_IGNORED_TESTS=	test_grpc_service test_initializer test_bad_initializer
 TEST_WRKDIR=	${WRKSRC}/tests
 
 NO_ARCH=	yes
 
-# tests as of 18.0.33: 502 passed 4 deselected
+# tests as of 18.0.40: 507 passed, 4 deselected, 15 warnings in 81.96s
 
 .include <bsd.port.mk>
