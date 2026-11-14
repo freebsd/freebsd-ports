@@ -1,5 +1,5 @@
 PORTNAME=	freeipa-server
-DISTVERSION=	4.13.4
+DISTVERSION=	4.13.5
 CATEGORIES=	net
 MASTER_SITES=	https://codeberg.org/freeipa/freeipa/releases/download/release-${DISTVERSION:S/./-/g}/
 DISTNAME=	freeipa-${DISTVERSION}
