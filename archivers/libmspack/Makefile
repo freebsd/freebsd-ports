@@ -1,7 +1,7 @@
 PORTNAME=	libmspack
-PORTVERSION=	0.11alpha
+PORTVERSION=	0.12alpha
 CATEGORIES=	archivers
-MASTER_SITES=	http://www.cabextract.org.uk/libmspack/
+MASTER_SITES=	https://www.cabextract.org.uk/libmspack/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for Microsoft compression formats
