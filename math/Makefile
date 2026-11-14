@@ -1131,6 +1131,7 @@
     SUBDIR += py-pygsl
     SUBDIR += py-pyhdfe
     SUBDIR += py-pyhull
+    SUBDIR += py-pylinalg
     SUBDIR += py-pymc3
     SUBDIR += py-pynauty
     SUBDIR += py-pyneqsys

@@ -1,0 +1,3 @@
+pylinalg provides linear algebra utilities for Python built on top of NumPy:
+vector, matrix, and quaternion operations commonly needed in 3D graphics, such
+as transforms, projections, and rotations. It is used by pygfx.
