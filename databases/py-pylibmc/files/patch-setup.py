@@ -1,8 +1,8 @@
---- setup.py.orig	2022-08-06 21:23:04 UTC
+--- setup.py.orig	2026-11-08 12:34:09 UTC
 +++ setup.py
-@@ -123,4 +123,5 @@ setup(
-         'Programming Language :: Python :: 3.10',
-         'Programming Language :: Python :: 3 :: Only',
+@@ -173,4 +173,5 @@ setup(
+         'Programming Language :: Python :: Implementation :: CPython',
+         'Programming Language :: Python :: Implementation :: PyPy',
      ],
 +    test_suite = 'nose.collector'
  )
