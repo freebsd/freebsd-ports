@@ -1,7 +1,8 @@
 PORTNAME=	Package-Stash-XS
-PORTVERSION=	0.30
+PORTVERSION=	0.32
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:ETHER
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -10,6 +11,7 @@ WWW=		https://metacpan.org/release/Package-Stash-XS
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE_GPLv1+ =	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	p5-Test-Fatal>=0:devel/p5-Test-Fatal \
 		p5-Test-Needs>=0:devel/p5-Test-Needs
