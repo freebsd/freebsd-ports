@@ -140,3 +140,4 @@ bin/overlord
 %%PYTHON_SITELIBDIR%%/overlord/version.py
 %%PYTHON_SITELIBDIR%%/overlord/vm.py
 %%DATADIR%%/files/pkgbase/base.conf
+%%DATADIR%%/files/pkgbase/ports.conf
