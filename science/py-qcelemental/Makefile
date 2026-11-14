@@ -1,5 +1,5 @@
 PORTNAME=	qcelemental
-DISTVERSION=	0.51.2
+DISTVERSION=	0.51.4
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -40,13 +40,8 @@ TEST_ARGS=	--disable-plugin-autoload
 NO_ARCH=	yes
 
 do-test:
-	@cd ${WRKSRC} && ${SETENV} ${TEST_ENV} pytest -rs --pyargs qcelemental
+	@cd ${WRKSRC} && ${SETENV} ${TEST_ENV} pytest ${TEST_ARGS} -rs --pyargs qcelemental
 
-# tests as of 0.51.2:
-# Results (44.04s):
-#       6772 passed
-#        132 skipped
-#          2 xpassed
-#         18 warnings
+# tests as of 0.51.4: 2027 passed, 276 skipped, 2 xpassed, 2 warnings in 15.51s
 
 .include <bsd.port.mk>
