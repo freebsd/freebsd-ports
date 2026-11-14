@@ -1,0 +1,27 @@
+--- pyproject.toml.orig	2026-11-13 11:25:49 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@ requires = [
+ [build-system]
+ requires = [
+-  "setuptools >= 77.0.3",
++  "setuptools >= 61",
+   "Cython >= 3.1",
+ ]
+ build-backend = "setuptools.build_meta"
+@@ -12,8 +12,7 @@ authors = [{ name = "Sebastian Ramacher", email = "seb
+ readme = "README.md"
+ requires-python = ">=3.11"
+ authors = [{ name = "Sebastian Ramacher", email = "sebastian@ramacher.at" }]
+-license = "MIT"
+-license-files = ["LICENSE"]
++license = { text = "MIT" }
+ classifiers = [
+   "Development Status :: 5 - Production/Stable",
+   "Intended Audience :: Developers",
+@@ -35,4 +34,4 @@ exclude = ["docs"]
+ exclude = ["docs"]
+ 
+ [tool.ruff.lint]
+-ignore = ["EXE001"]
+\ No newline at end of file
++ignore = ["EXE001"]
