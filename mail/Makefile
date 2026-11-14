@@ -493,13 +493,13 @@
     SUBDIR += popular
     SUBDIR += postfinger
     SUBDIR += postfix
-    SUBDIR += postfix_exporter
     SUBDIR += postfix-current
     SUBDIR += postfix-logwatch
     SUBDIR += postfix-policyd-sf
     SUBDIR += postfix-policyd-spf-perl
     SUBDIR += postfix-policyd-weight
     SUBDIR += postfix-postfwd
+    SUBDIR += postfix_exporter
     SUBDIR += postfixadmin
     SUBDIR += postfixadmin-lite
     SUBDIR += postfixadmin33
