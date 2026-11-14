@@ -1,5 +1,5 @@
 PORTNAME=	atom
-DISTVERSION=	0.13.0
+DISTVERSION=	0.14.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,6 +27,6 @@ TEST_ARGS=	--disable-plugin-autoload -p pytest_benchmark.plugin -p pytest_cov -p
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_WRKSRC=	${WRKSRC}/tests
 
-# tests as of 0.13.0: 932 passed, 1 skipped in 61.36s (0:01:01)
+# tests as of 0.14.1: 942 passed, 1 skipped in 53.25s
 
 .include <bsd.port.mk>
