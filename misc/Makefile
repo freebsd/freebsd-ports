@@ -474,6 +474,7 @@
     SUBDIR += py-cmap
     SUBDIR += py-codecarbon
     SUBDIR += py-cohere
+    SUBDIR += py-cohere-melody
     SUBDIR += py-colorbrewer
     SUBDIR += py-colored
     SUBDIR += py-colorzero

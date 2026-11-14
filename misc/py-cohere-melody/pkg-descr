@@ -1,0 +1,3 @@
+Melody is a Rust library from Cohere with Python bindings that renders chat
+prompts and parses the outputs of Cohere models, including tool calls,
+citations and reasoning content.
