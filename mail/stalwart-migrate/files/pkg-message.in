@@ -4,11 +4,15 @@
 stalwart-migrate must match the Stalwart v1 server that will open the
 migrated store:
 
-- Without the ENTERPRISE option (the default, as in mail/stalwart),
-  the tool writes a store that only a Stalwart server built without
-  the enterprise feature can open.
+- The stalwart-migrate package (default flavor, built without
+  upstream's enterprise feature) writes a store that only a Stalwart
+  server built without the enterprise feature can open.
 - The official Stalwart binaries, with or without an Enterprise
-  license, need a stalwart-migrate built with the ENTERPRISE option.
+  license, and Stalwart servers built with the enterprise feature
+  need the stalwart-migrate-enterprise package (enterprise flavor).
+  It contains code licensed under the Stalwart Enterprise License
+  (SELv2), installed in %%PREFIX%%/share/licenses/; use of the
+  enterprise features is subject to its terms.
 
 The source must run Stalwart v0.16.27; upgrade earlier 0.16 releases
 first. The target must run Stalwart v1.0.3 or later. The tool only

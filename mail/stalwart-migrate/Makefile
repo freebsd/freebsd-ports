@@ -12,7 +12,10 @@ LICENSE_COMB=		dual
 LICENSE_NAME_SELv2=	Stalwart Enterprise License 2.0
 LICENSE_FILE_AGPLv3=	${WRKSRC}/LICENSES/AGPL-3.0-only.txt
 LICENSE_FILE_SELv2=	${WRKSRC}/LICENSES/LicenseRef-SEL.txt
-LICENSE_PERMS_SELv2=	pkg-mirror auto-accept
+# Stalwart Labs permits the FreeBSD Project, its mirrors and users to
+# distribute stalwart-migrate free of charge, including builds with the
+# enterprise feature (e-mail to the maintainer, November 2026).
+LICENSE_PERMS_SELv2=	dist-mirror pkg-mirror auto-accept
 
 DEPRECATED=	Stalwart 0.16 is end-of-life; only needed while migrating to Stalwart 1.x
 EXPIRATION_DATE=	2027-11-02
@@ -23,6 +26,13 @@ BUILD_DEPENDS=	bindgen:devel/rust-bindgen-cli
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 # The test crates enable RocksDB regardless of the ROCKSDB option
 TEST_DEPENDS=	${LOCALBASE}/lib/librocksdb.so:databases/rocksdb
+
+# Upstream's enterprise feature changes the store format; the flavor must
+# match the Stalwart v1 server that opens the migrated store.
+FLAVORS=	default enterprise
+enterprise_PKGNAMESUFFIX=	-enterprise
+default_CONFLICTS_INSTALL=	stalwart-migrate-enterprise
+enterprise_CONFLICTS_INSTALL=	stalwart-migrate
 
 USES=		cargo llvm:build,noexport sqlite
 USE_GITHUB=	yes
@@ -41,7 +51,7 @@ CARGO_INSTALL_PATH=	crates/migrate
 PLIST_FILES=	bin/stalwart-migrate
 PORTDOCS=	CHANGELOG.md README.md SCHEMA_CHANGES.md
 
-OPTIONS_DEFINE=		CLI_PLAN DOCS ENTERPRISE
+OPTIONS_DEFINE=		CLI_PLAN DOCS
 OPTIONS_DEFAULT=	MYSQL POSTGRES REDIS ROCKSDB S3 SQLITE
 OPTIONS_MULTI=		BACKENDS
 OPTIONS_MULTI_BACKENDS=	AZURE MYSQL POSTGRES REDIS ROCKSDB S3 SQLITE
@@ -53,7 +63,6 @@ OPTIONS_EXCLUDE_powerpc=	ROCKSDB
 BACKENDS_DESC=		Database and storage backends
 AZURE_DESC=		Azure Blob Storage backend
 CLI_PLAN_DESC=		Script to convert stalwart-cli plans to the v1 schema
-ENTERPRISE_DESC=	Enterprise features (must match the Stalwart v1 build)
 MYSQL_DESC=		MySQL backend
 POSTGRES_DESC=		PostgreSQL backend
 REDIS_DESC=		Redis backend
@@ -72,7 +81,6 @@ CLI_PLAN_PLIST_FILES=	bin/stalwart-migrate-convert-plan \
 			${DATADIR_REL}/mapping/schema/v1.json.gz \
 			${DATADIR_REL}/mapping/schema/v1_oss.json.gz \
 			${DATADIR_REL}/mapping/v016_to_v1.toml
-ENTERPRISE_VARS=	CARGO_FEATURES+=enterprise
 MYSQL_VARS=		CARGO_FEATURES+=mysql
 POSTGRES_VARS=		CARGO_FEATURES+=postgres
 REDIS_VARS=		CARGO_FEATURES+=redis
@@ -81,14 +89,11 @@ ROCKSDB_VARS=		CARGO_FEATURES+=rocks
 S3_VARS=		CARGO_FEATURES+=s3
 SQLITE_VARS=		CARGO_FEATURES+=sqlite
 
-.include <bsd.port.options.mk>
-
 # The enterprise feature compiles code that is only available under the
-# SELv2, which grants no redistribution rights and requires acceptance.
-.if ${PORT_OPTIONS:MENTERPRISE}
+# SELv2, so both licenses apply to the enterprise flavor.
+.if ${FLAVOR:U} == enterprise
 LICENSE_COMB=		multi
-LICENSE_PERMS_SELv2=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell \
-			no-auto-accept
+CARGO_FEATURES+=	enterprise
 .endif
 
 # librocksdb-sys comes from a git snapshot without the bundled RocksDB
