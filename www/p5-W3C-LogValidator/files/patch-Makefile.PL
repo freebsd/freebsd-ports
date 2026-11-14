@@ -1,8 +1,8 @@
---- Makefile.PL.orig	Thu Feb 10 18:57:36 2005
-+++ Makefile.PL	Thu Feb 10 19:10:24 2005
-@@ -24,6 +24,17 @@
+--- Makefile.PL.orig	2017-08-24 10:47:40 UTC
++++ Makefile.PL
+@@ -23,6 +23,17 @@ WriteMakefile(
+ 			     'DB_File' => 0,
  			     'Mail::Sendmail' => 0,
- 			     'WebService::Validator::CSS::W3C' => 0
                             },
 +   'MAN3PODS'		=> {
 +			     'lib/W3C/LogValidator.pm' => 'blib/man3/W3C::LogValidator.3',
