@@ -1,6 +1,6 @@
 PORTNAME=	nextest
 DISTVERSIONPREFIX=	cargo-nextest-
-DISTVERSION=	0.9.151
+DISTVERSION=	0.9.152
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -64,6 +64,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		borsh-1.5.7 \
 		bstr-1.13.1 \
 		bumpalo-3.19.0 \
+		byte-wrapper-0.2.1 \
 		bytecount-0.6.9 \
 		bytemuck-1.24.0 \
 		byteorder-1.5.0 \
@@ -190,7 +191,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		getrandom-0.3.4 \
 		getrandom-0.4.2 \
 		gimli-0.31.1 \
-		globset-0.4.20 \
+		globset-0.4.21 \
 		globwalk-0.9.1 \
 		goblin-0.10.3 \
 		guppy-0.19.1 \
@@ -271,7 +272,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.8.9 \
 		mio-1.2.0 \
-		mukti-metadata-0.3.0 \
+		mukti-metadata-0.4.0 \
 		native-tls-0.2.14 \
 		nested-0.1.1 \
 		newtype-uuid-1.4.0 \
@@ -337,7 +338,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		prost-0.14.1 \
 		prost-derive-0.14.1 \
 		prost-types-0.14.1 \
-		pulldown-cmark-0.13.5 \
+		pulldown-cmark-0.13.6 \
 		quick-error-1.2.3 \
 		quick-junit-0.8.0 \
 		quick-xml-0.38.4 \
@@ -465,7 +466,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		time-macros-0.2.27 \
 		tinyvec-1.9.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.53.1 \
+		tokio-1.54.1 \
 		tokio-macros-2.7.0 \
 		tokio-rustls-0.26.4 \
 		tokio-stream-0.1.19 \
@@ -494,9 +495,9 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		unarray-0.1.4 \
 		unicase-2.9.0 \
 		unicode-general-category-1.1.0 \
-		unicode-ident-1.0.24 \
+		unicode-ident-1.0.27 \
 		unicode-linebreak-0.1.5 \
-		unicode-normalization-0.1.25 \
+		unicode-normalization-0.1.26 \
 		unicode-segmentation-1.12.0 \
 		unicode-width-0.1.14 \
 		unicode-width-0.2.2 \
