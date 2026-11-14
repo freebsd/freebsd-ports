@@ -1,13 +1,12 @@
 PORTNAME=	edi
-PORTVERSION=	0.8.0
-PORTREVISION=	1
+PORTVERSION=	0.9.0
 CATEGORIES=	devel enlightenment
-MASTER_SITES=	https://github.com/Enlightenment/edi/releases/download/v${PORTVERSION}/ # http://download.enlightenment.org/rel/apps/${PORTNAME}/
+MASTER_SITES=	http://download.enlightenment.org/rel/apps/${PORTNAME}/
 DIST_SUBDIR=	enlightenment
 
 MAINTAINER=	enlightenment@FreeBSD.org
 COMMENT=	EFL-based/focused IDE
-WWW=		https://phab.enlightenment.org/w/projects/edi/
+WWW=		https://www.enlightenment.org/about-edi
 
 LIB_DEPENDS=	libelementary.so:devel/efl
 
@@ -25,6 +24,8 @@ LIBCLANG_MESON_ON=	-Dlibclang-libdir=${LOCALBASE}/llvm${LLVM_VERSION}/lib \
 LIBCLANG_MESON_OFF=	-Dlibclang=false
 
 LLVM_VERSION?=	${LLVM_DEFAULT}
+
+PLIST_SUB+=     PORTVERSION=${PORTVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e '/input : join_paths/d' \
