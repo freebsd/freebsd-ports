@@ -1,5 +1,5 @@
 PORTNAME=	libwmf
-PORTVERSION=	0.2.16
+PORTVERSION=	0.2.17
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/caolanm/libwmf/releases/download/v${PORTVERSION}/
 
