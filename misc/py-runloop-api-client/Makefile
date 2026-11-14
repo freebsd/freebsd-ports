@@ -1,6 +1,6 @@
 PORTNAME=	runloop-api-client
 #DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.0
+DISTVERSION=	3.0.0
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -49,6 +49,6 @@ TEST_ARGS+=	-W ignore::ResourceWarning # prevent Python 3.12 socket/loop cleanup
 TEST_ARGS+=	--ignore=tests/api_resources # skip tests targeting external Prism mock servers
 TEST_ARGS+=	--ignore=tests/smoketests # skip live API key tests
 
-# tests as of 2.0.0: 962 passed, 2 skipped in 12.61s
+# tests as of 3.0.0: 936 passed, 2 skipped in 17.16s
 
 .include <bsd.port.mk>
