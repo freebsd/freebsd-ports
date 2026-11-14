@@ -3,11 +3,11 @@
 
 --- pyproject.toml.orig
 +++ pyproject.toml
-@@ -5,7 +5,6 @@ version = "1.43.110"
+@@ -5,7 +5,6 @@ version = "1.44.0"
  [project]
  name = "mypy-boto3-glue"
- version = "1.43.110"
+ version = "1.44.0"
 -license = "MIT"
  authors = [{ name = "Vlad Emelianov", email = "vlad.emelianov.nz@gmail.com" }]
- description = "Type annotations for boto3 Glue 1.43.110 service generated with mypy-boto3-builder 8.12.0"
+ description = "Type annotations for boto3 Glue 1.44.0 service generated with mypy-boto3-builder 8.12.0"
  readme = "README.md"
