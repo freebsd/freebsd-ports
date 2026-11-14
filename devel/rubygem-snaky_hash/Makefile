@@ -1,5 +1,6 @@
 PORTNAME=	snaky_hash
 PORTVERSION=	2.0.9
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +11,7 @@ WWW=		https://snaky-hash.galtzo.com/ \
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-hashie>=0.1.0<6:devel/rubygem-hashie \
+RUN_DEPENDS=	rubygem-hashie5>=0.1.0<6:devel/rubygem-hashie5 \
 		rubygem-version_gem>=1.1.16<2:devel/rubygem-version_gem
 
 USES=		gem
