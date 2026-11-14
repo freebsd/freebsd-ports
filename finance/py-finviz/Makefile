@@ -1,5 +1,5 @@
 PORTNAME=	finviz
-DISTVERSION=	2.0.0
+DISTVERSION=	2.1.0
 CATEGORIES=	finance python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,5 +28,7 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 do-test:
 	@${SETENV} ${TEST_ENV} ${PYTHON_CMD} ${FILESDIR}/test.py
+
+# tests as of 2.1.0: files/test.py smoke test (live screener query) ran OK, no pytest summary
 
 .include <bsd.port.mk>
