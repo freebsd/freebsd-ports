@@ -1,6 +1,6 @@
 PORTNAME=	hist
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.12.0
+DISTVERSION=	2.12.1
 CATEGORIES=	misc python
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,15 +16,17 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-vcs>0:devel/py-hatch-vcs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boost-histogram>=1.7:misc/py-boost-histogram@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}histoprint>=2.3.0:misc/py-histoprint@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.21.3:math/py-numpy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}packaging>=23:devel/py-packaging@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}histoprint>=2.3.0:misc/py-histoprint@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}packaging>=23:devel/py-packaging@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}awkward>=2.0.7:math/py-awkward@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dask>=2022:devel/py-dask@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dask-histogram>=2023.1:devel/py-dask-histogram@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}iminuit>=2.9.0:math/py-iminuit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>=3.10.7:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mplhep>=0.3.33:science/py-mplhep@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest-mpl>=0.12:devel/py-pytest-mpl@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pytest-mpl>=0.12:devel/py-pytest-mpl@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scipy>=1.7.0:science/py-scipy@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	pep517 autoplist pytest
@@ -46,6 +48,6 @@ TEST_ARGS=	--disable-plugin-autoload -p pytest_mpl \
 
 BINARY_ALIAS=	git=false
 
-# tests as of 2.12.0: 181 passed, 1 skipped in 1.60s
+# tests as of 2.12.1: 234 passed, 1 skipped in 2.42s
 
 .include <bsd.port.mk>
