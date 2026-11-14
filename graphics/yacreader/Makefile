@@ -1,6 +1,5 @@
 PORTNAME=	yacreader
-DISTVERSION=	10.4.0
-PORTREVISION=	1
+DISTVERSION=	10.5.1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/YACReader/${PORTNAME}/releases/download/${DISTVERSION}/
 EXTRACT_SUFX=	-src.tar.xz
@@ -21,6 +20,7 @@ USE_QT=		5compat base declarative multimedia speech svg tools:build
 
 CMAKE_OFF=	BUILD_TESTS
 CMAKE_TESTING_ON=	BUILD_TESTS
+TESTING_UNSAFE=	https://github.com/YACReader/yacreader/issues/650
 
 OPTIONS_DEFINE=	ARCHIVE POPPLER
 OPTIONS_DEFAULT=POPPLER

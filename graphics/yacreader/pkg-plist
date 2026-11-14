@@ -11,5 +11,9 @@ share/man/man1/YACReaderLibrary.1.gz
 %%DATADIR%%/server/docroot/css/webui.css
 %%DATADIR%%/server/docroot/images/webui/YACLibraryServer.svg
 %%DATADIR%%/server/docroot/images/webui/app-store-badge.svg
+%%DATADIR%%/server/docroot/images/webui/empty_label.svg
+%%DATADIR%%/server/docroot/images/webui/empty_reading_list.svg
 %%DATADIR%%/server/docroot/images/webui/google-play-badge.png
+%%DATADIR%%/server/docroot/images/webui/smart_list_card.svg
+%%DATADIR%%/server/docroot/images/webui/unavailableCover.svg
 %%DATADIR%%/server/docroot/js/webui.js

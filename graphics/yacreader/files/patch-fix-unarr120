@@ -1,8 +1,8 @@
 https://github.com/selmf/unarr/issues/40
 
---- YACReaderLibrary/db/comic_model.cpp.orig	2026-11-01 14:43:00 UTC
+--- YACReaderLibrary/db/comic_model.cpp.orig	2026-11-13 18:24:10 UTC
 +++ YACReaderLibrary/db/comic_model.cpp
-@@ -468,12 +468,10 @@ QVariant ComicModel::headerData(int section, Qt::Orien
+@@ -824,12 +824,10 @@ QVariant ComicModel::headerData(int section, Qt::Orien
              return QVariant(QIcon(":/images/zip.png"));
          else if (ext.compare("rar", Qt::CaseInsensitive) == 0)
              return QVariant(QIcon(":/images/rar.png"));
@@ -15,8 +15,7 @@ https://github.com/selmf/unarr/issues/40
          else if (ext.compare("cbt", Qt::CaseInsensitive) == 0)
              return QVariant(QIcon(":/images/comicTar.png"));
      }
-
---- common/comic.cpp.orig	2026-11-01 14:40:07 UTC
+--- common/comic.cpp.orig	2026-11-13 18:24:10 UTC
 +++ common/comic.cpp
 @@ -96,10 +96,8 @@ const QStringList ComicArchiveExtensions = QStringList
                                                           << "*.rar"
