@@ -1,5 +1,5 @@
 PORTNAME=	blessed
-DISTVERSION=	1.50.0
+DISTVERSION=	1.52.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>0:devel/py-flit-core@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jinxed>=2.1:devel/py-jinxed@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}wcwidth>=0.8.3:devel/py-wcwidth@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}wcwidth>=0.9.2:devel/py-wcwidth@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	pep517 autoplist pytest
@@ -24,8 +24,8 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 do-test:
 	@cd ${TEST_WRKSRC} && ${SETENVI} ${WRK_ENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest \
-		-p no:checkdocs -p no:xdist -v -rs -o addopts= -o filterwarnings=
+		--disable-plugin-autoload -v -rs -o addopts= -o filterwarnings=
 
-# tests as of 1.50.0: 1806 passed 169 skipped
+# tests as of 1.52.0: 1829 passed, 179 skipped in 27.25s
 
 .include <bsd.port.mk>
