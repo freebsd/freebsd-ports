@@ -1,6 +1,6 @@
 PORTNAME=	torchvision
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.29.1
+DISTVERSION=	0.29.2
 CATEGORIES=	misc # machine-learning
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -45,7 +45,8 @@ TEST_ARGS=	--disable-plugin-autoload \
 		--ignore=test/test_onnx.py \
 		--ignore=test/test_datasets_utils.py \
 		--ignore=test/test_image.py \
-		--ignore=test/test_datasets.py
+		--ignore=test/test_datasets.py \
+		--ignore=test/test_models.py # killed by OOM: memory accumulates across heavy model tests
 PYTEST_BROKEN_TESTS=	test_download_url_dispatch_download_from_google_drive \
 			test_detection_model_trainable_backbone_layers
 
@@ -71,6 +72,6 @@ post-install: # strip binaries
 		${STAGEDIR}${PYTHON_SITELIBDIR}/torchvision/_C_stable.so \
 		${STAGEDIR}${PYTHON_SITELIBDIR}/torchvision/image_stable.so
 
-# tests as of 0.29.1: 522 passed, 501 skipped, 14 deselected, 255 warnings in 272.47s (0:04:32)
+# tests as of 0.29.2: 388 passed, 370 skipped, 2 deselected, 7 warnings in 122.93s (0:02:02)
 
 .include <bsd.port.post.mk>

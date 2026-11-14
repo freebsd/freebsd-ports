@@ -4,7 +4,7 @@
 -- registration if the operator doesn't exist yet (likely during early test stages).
 -- Reference: RuntimeError: operator torchvision::nms does not exist
 
---- torchvision/_meta_registrations.py.orig	2026-05-17 04:31:17 UTC
+--- torchvision/_meta_registrations.py.orig	2026-10-28 11:19:32 UTC
 +++ torchvision/_meta_registrations.py
 @@ -160,18 +160,26 @@ def meta_ps_roi_pool_backward(
      return grad.new_empty((batch_size, channels, height, width))
@@ -44,4 +44,4 @@
 +_register_nms_fake()
  
  
- @register_meta("deform_conv2d")
+ @torch.library.register_fake("torchvision::qnms")
