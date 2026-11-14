@@ -1,6 +1,6 @@
 PORTNAME=	stringzilla
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.3.0
+DISTVERSION=	5.3.2
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -33,6 +33,6 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 CXXFLAGS+=	-g
 LDFLAGS+=	-lpthread
 
-# tests as of 5.3.0: 100% tests passed out of 6
+# tests as of 5.3.2: 100% tests passed, 0 tests failed out of 6
 
 .include <bsd.port.mk>
