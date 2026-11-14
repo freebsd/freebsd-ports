@@ -1,6 +1,5 @@
 PORTNAME=	mu
-DISTVERSION=	1.14.3
-PORTREVISION=	1
+DISTVERSION=	1.14.4
 CATEGORIES=	mail
 MASTER_SITES=	https://github.com/djcb/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -11,13 +10,14 @@ WWW=		https://www.djcbsoftware.nl/code/mu/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	cli11>0:devel/cli11
+BUILD_DEPENDS=	cli11>0:devel/cli11 \
+		tl-expected>0:devel/tl-expected
 LIB_DEPENDS=	libxapian.so:databases/xapian-core14 \
 		libfmt.so:devel/libfmt \
 		libgmime-3.0.so:mail/gmime30
 
-USES=		compiler:c++20-lang gnome meson pkgconfig python:build \
-		readline shebangfix tar:xz
+USES=		cmake:indirect compiler:c++20-lang gnome meson pkgconfig \
+		python:build readline shebangfix tar:xz
 USE_GNOME=	glib20
 SHEBANG_FILES=	build-aux/date.py
 MESON_ARGS=	-Dbash-completion=enabled -Dzsh-completion=enabled

@@ -56,6 +56,8 @@ share/bash-completion/completions/mu
 %%MU4E%%share/emacs/site-lisp/mu4e/mu4e-transient.el
 %%MU4E%%share/emacs/site-lisp/mu4e/mu4e-update.el
 %%MU4E%%share/emacs/site-lisp/mu4e/mu4e-vars.el
+%%MU4E%%share/emacs/site-lisp/mu4e/mu4e-view-html.el
+%%MU4E%%share/emacs/site-lisp/mu4e/mu4e-view-xwidget.el
 %%MU4E%%share/emacs/site-lisp/mu4e/mu4e-view.el
 %%MU4E%%share/emacs/site-lisp/mu4e/mu4e-window.el
 %%MU4E%%share/emacs/site-lisp/mu4e/mu4e.el
