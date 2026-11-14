@@ -4,9 +4,9 @@
 -- FreeBSD already provides math/cbc, so this port installs only the Python
 -- wrapper and points it at the system CBC binary.
 
---- setup.py.orig	2026-09-08 23:28:23 UTC
+--- setup.py.orig	2026-11-13 07:51:06 UTC
 +++ setup.py
-@@ -1,1109 +1,15 @@
+@@ -1,1169 +1,15 @@
 -import glob as _glob
 -import multiprocessing
  import os
@@ -58,9 +58,8 @@
 -SUITESPARSE_TAG = "v7.12.2"
 -OPENBLAS_TAG    = "v0.3.31"
 -
--# Development of the COIN-OR stack has moved to the "next" branch of each
--# repository (the "master" branch is now the last stable release line).
--COIN_OR_BRANCH  = "next"
+-# Build the COIN-OR stack from the master branch.
+-COIN_OR_BRANCH  = "master"
 -
 -# -ffp-contract=off disables the compiler's automatic fusion of separate
 -# multiply/add operations into a single FMA instruction. FMA computes the
@@ -155,7 +154,7 @@
 -    return platform.machine().lower() in ("x86_64", "amd64")
 -
 -
--def clone_if_missing(name, url, branch="master"):
+-def clone_if_missing(name, url, branch="master", *, update_existing_branch=False):
 -    dest = os.path.join(THIS_DIR, name)
 -    if not os.path.exists(dest):
 -        # Use native git directly — avoids routing through MSYS2 where git
@@ -165,6 +164,32 @@
 -            ["git", "clone", "--depth", "1", "--branch", branch, url, dest],
 -            check=True,
 -        )
+-    elif update_existing_branch:
+-        # Existing COIN-OR clones may still be on "next". Fetch the requested
+-        # branch and fast-forward it, without discarding local commits or edits.
+-        subprocess.run(
+-            ["git", "-C", dest, "fetch", "origin", branch],
+-            check=True,
+-        )
+-        branch_exists = subprocess.run(
+-            ["git", "-C", dest, "show-ref", "--verify", "--quiet",
+-             f"refs/heads/{branch}"],
+-            check=False,
+-        ).returncode == 0
+-        if branch_exists:
+-            subprocess.run(
+-                ["git", "-C", dest, "checkout", branch],
+-                check=True,
+-            )
+-            subprocess.run(
+-                ["git", "-C", dest, "merge", "--ff-only", "FETCH_HEAD"],
+-                check=True,
+-            )
+-        else:
+-            subprocess.run(
+-                ["git", "-C", dest, "checkout", "-b", branch, "FETCH_HEAD"],
+-                check=True,
+-            )
 -    else:
 -        # Pull the latest commits so that a stale shallow clone never causes
 -        # API-mismatch build failures (e.g. a new method added to Clp that
@@ -366,7 +391,9 @@
 -        bld_suffix = "_build_debug"
 -
 -    for name, url in COIN_REPOS:
--        src = clone_if_missing(name, url, COIN_OR_BRANCH)
+-        src = clone_if_missing(
+-            name, url, COIN_OR_BRANCH, update_existing_branch=True
+-        )
 -        bld = os.path.join(src, bld_suffix)
 -        os.makedirs(bld, exist_ok=True)
 -
@@ -985,6 +1012,35 @@
 -    _bundle_dist(DIST_DIR_DEBUG_AVX2)
 -
 -
+-def _adhoc_codesign(path: str) -> None:
+-    """Replace the signature install_name_tool invalidates.
+-
+-    Rewriting Mach-O load commands leaves the library with only the
+-    linker's signature (codesign flags 0x20002). Current macOS rejects
+-    that and kills the loading process with SIGKILL. An explicit ad-hoc
+-    signature (flags 0x2) is accepted. Must run after the last edit of *path*.
+-    install_name_tool and strip both invalidate the signature.
+-    """
+-    subprocess.run(["codesign", "--force", "--sign", "-", path], check=True)
+-
+-
+-def _adhoc_codesign_dist(dist_dir: str) -> None:
+-    """Ad-hoc sign every Mach-O file in a finished macOS distribution tree.
+-
+-    Called after bundling and stripping: both rewrite the binaries and
+-    leave them with a signature current macOS kills the process for.
+-    """
+-    if platform.system() != "Darwin" or not os.path.isdir(dist_dir):
+-        return
+-    for bin_name in (_cbc_exe, "clp"):
+-        bin_path = os.path.join(dist_dir, "bin", bin_name)
+-        if os.path.exists(bin_path):
+-            _adhoc_codesign(bin_path)
+-    for lib_path in _glob.glob(os.path.join(dist_dir, "lib", "*.dylib")):
+-        if not os.path.islink(lib_path):
+-            _adhoc_codesign(lib_path)
+-
+-
 -def _remove_static_libs(dist_dir: str) -> None:
 -    """Remove static (.a) and libtool (.la) files — not needed at runtime."""
 -    lib_dir = os.path.join(dist_dir, "lib")
@@ -1050,13 +1106,17 @@
 -# entire point (removing the -g symbols we just added for gdb backtraces).
 -if not _build_release_symbols:
 -    _strip_binaries(DIST_DIR)
+-_adhoc_codesign_dist(DIST_DIR)
 -if _build_avx2 and os.path.isdir(DIST_DIR_AVX2):
 -    _remove_static_libs(DIST_DIR_AVX2)
 -    _strip_binaries(DIST_DIR_AVX2)
+-    _adhoc_codesign_dist(DIST_DIR_AVX2)
 -if _build_debug and os.path.isdir(DIST_DIR_DEBUG) and not _keep_debug_static_libs:
 -    _remove_static_libs(DIST_DIR_DEBUG)
+-    _adhoc_codesign_dist(DIST_DIR_DEBUG)
 -if _build_debug_avx2 and os.path.isdir(DIST_DIR_DEBUG_AVX2) and not _keep_debug_static_libs:
 -    _remove_static_libs(DIST_DIR_DEBUG_AVX2)
+-    _adhoc_codesign_dist(DIST_DIR_DEBUG_AVX2)
 -
 -
 -# ── Package ───────────────────────────────────────────────────────────────────
@@ -1066,7 +1126,7 @@
 -    long_description = """\
 -**cbcbox** ships pre-built binaries of the
 -[CBC](https://github.com/coin-or/Cbc) MILP solver (COIN-OR Branch and Cut),
--built from the latest next branch of the COIN-OR repositories.
+-built from the latest master branch of the COIN-OR repositories.
 -
 -Built with:
 -- OpenBLAS for optimised BLAS/LAPACK routines

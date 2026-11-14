@@ -1,5 +1,5 @@
 PORTNAME=	cbcbox
-DISTVERSION=	2.935 # not tagged on GH
+DISTVERSION=	2.937 # not tagged on GH
 CATEGORIES=	math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -18,7 +18,7 @@ USE_PYTHON=	pep517 concurrent autoplist pytest
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	h-g-s
-GH_TAGNAME=	adf09a5ea6f3d697b9a0b38831d7ad711b0cfe7a # adequate commit for 2.935 release
+GH_TAGNAME=	e96fe7e0e2ea1b428dfea087ee54ccd543fe851b # adequate commit for 2.937 release
 
 NO_ARCH=	yes
 
@@ -28,6 +28,6 @@ TEST_ARGS=	--disable-plugin-autoload
 post-patch:
 	@${REINPLACE_CMD} -e 's|@LOCALBASE@|${LOCALBASE}|g' ${WRKSRC}/src/__init__.py
 
-# tests as of 2.935: 11 passed in 107.00s
+# tests as of 2.937: 33 passed, 1 skipped in 170.11s (0:02:50)
 
 .include <bsd.port.mk>
