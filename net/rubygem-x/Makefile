@@ -1,5 +1,5 @@
 PORTNAME=	x
-PORTVERSION=	0.19.0
+PORTVERSION=	1.0.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,10 @@ WWW=		https://sferik.github.io/x-ruby/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-base64>=0.2:converters/rubygem-base64
+RUN_DEPENDS=	rubygem-x-core>=${PORTVERSION}<${PORTVERSION}_99:net/rubygem-x-core \
+		rubygem-x-resources>=${PORTVERSION}<${PORTVERSION}_99:net/rubygem-x-resources \
+		rubygem-x-streams>=${PORTVERSION}<${PORTVERSION}_99:net/rubygem-x-streams \
+		rubygem-x-uploads>=${PORTVERSION}<${PORTVERSION}_99:net/rubygem-x-uploads
 
 USES=		gem
 
