@@ -1,25 +1,24 @@
 PORTNAME=	curl-impersonate
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.3
-PORTREVISION=	1
+DISTVERSION=	2.3.2
 CATEGORIES=	ftp
 MASTER_SITES=	https://github.com/google/boringssl/archive/:boringssl \
-		https://github.com/c-ares/c-ares/releases/download/v1.34.8/:cares \
+		https://github.com/c-ares/c-ares/releases/download/v1.34.9/:cares \
 		https://github.com/google/brotli/archive/refs/tags/:brotli \
 		https://github.com/curl/curl/archive/:curl \
 		https://github.com/nghttp2/nghttp2/releases/download/v1.63.0/:nghttp2 \
 		https://github.com/ngtcp2/ngtcp2/releases/download/v1.20.0/:ngtcp2 \
 		https://github.com/ngtcp2/nghttp3/releases/download/v1.15.0/:nghttp3 \
-		https://github.com/madler/zlib/releases/download/v1.3.1/:zlib \
+		https://github.com/madler/zlib/releases/download/v1.3.2/:zlib \
 		https://github.com/facebook/zstd/releases/download/v1.5.7/:zstd
 DISTFILES=	${BORING_SSL_COMMIT}.zip:boringssl \
-		c-ares-1.34.8.tar.gz:cares \
-		curl-8_22_0.tar.gz:curl \
-		v1.2.0.tar.gz:brotli \
+		c-ares-1.34.9.tar.gz:cares \
+		curl-8_23_0.tar.gz:curl \
+		v1.2.1.tar.gz:brotli \
 		nghttp2-1.63.0.tar.bz2:nghttp2 \
 		ngtcp2-1.20.0.tar.bz2:ngtcp2 \
 		nghttp3-1.15.0.tar.bz2:nghttp3 \
-		zlib-1.3.1.tar.gz:zlib \
+		zlib-1.3.2.tar.gz:zlib \
 		zstd-1.5.7.tar.gz:zstd
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -45,13 +44,13 @@ USE_LDCONFIG=	yes
 
 post-patch:
 	@${RLN} ${DISTDIR}/${DIST_SUBDIR}/${BORING_SSL_COMMIT}.zip ${WRKSRC}/${BORING_SSL_COMMIT}.zip
-	@${RLN} ${DISTDIR}/${DIST_SUBDIR}/c-ares-1.34.8.tar.gz ${WRKSRC}/c-ares-1.34.8.tar.gz
-	@${RLN} ${DISTDIR}/${DIST_SUBDIR}/v1.2.0.tar.gz ${WRKSRC}/brotli-1.2.0.tar.gz
-	@${RLN} ${DISTDIR}/${DIST_SUBDIR}/curl-8_22_0.tar.gz ${WRKSRC}/curl-8_22_0.tar.gz
+	@${RLN} ${DISTDIR}/${DIST_SUBDIR}/c-ares-1.34.9.tar.gz ${WRKSRC}/c-ares-1.34.9.tar.gz
+	@${RLN} ${DISTDIR}/${DIST_SUBDIR}/v1.2.1.tar.gz ${WRKSRC}/brotli-1.2.1.tar.gz
+	@${RLN} ${DISTDIR}/${DIST_SUBDIR}/curl-8_23_0.tar.gz ${WRKSRC}/curl-8_23_0.tar.gz
 	@${RLN} ${DISTDIR}/${DIST_SUBDIR}/nghttp2-1.63.0.tar.bz2 ${WRKSRC}/nghttp2-1.63.0.tar.bz2
 	@${RLN} ${DISTDIR}/${DIST_SUBDIR}/ngtcp2-1.20.0.tar.bz2 ${WRKSRC}/ngtcp2-1.20.0.tar.bz2
 	@${RLN} ${DISTDIR}/${DIST_SUBDIR}/nghttp3-1.15.0.tar.bz2 ${WRKSRC}/nghttp3-1.15.0.tar.bz2
-	@${RLN} ${DISTDIR}/${DIST_SUBDIR}/zlib-1.3.1.tar.gz ${WRKSRC}/zlib-1.3.1.tar.gz
+	@${RLN} ${DISTDIR}/${DIST_SUBDIR}/zlib-1.3.2.tar.gz ${WRKSRC}/zlib-1.3.2.tar.gz
 	@${RLN} ${DISTDIR}/${DIST_SUBDIR}/zstd-1.5.7.tar.gz ${WRKSRC}/zstd-1.5.7.tar.gz
 
 pre-configure:
@@ -71,6 +70,7 @@ post-install:
 	@${RM} -r ${STAGEDIR}${PREFIX}/lib/CMakeFiles
 	@${RM} ${STAGEDIR}${PREFIX}/LICENSE*
 	# move curl headers to include/curl-impersonate, before https://github.com/lexiforest/curl-impersonate/pull/300 lands
-	@${MV} ${STAGEDIR}${PREFIX}/include/curl ${STAGEDIR}${PREFIX}/include/curl-impersonate
+	@${MV} ${STAGEDIR}${PREFIX}/include/curl/*.h ${STAGEDIR}${PREFIX}/include/curl-impersonate
+	@${RMDIR} ${STAGEDIR}${PREFIX}/include/curl
 
 .include <bsd.port.mk>
