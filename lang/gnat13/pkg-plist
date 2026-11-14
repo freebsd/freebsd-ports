@@ -3230,6 +3230,7 @@
 %%64BITS%%%%32BITS%%%%GNAT%%/lib/gcc/%%CONFTRGT%%/%%VER%%/32/adalib/unchdeal.ali
 %%64BITS%%%%32BITS%%%%GNAT%%/lib/gcc/%%CONFTRGT%%/%%VER%%/32/crtbegin.o
 %%64BITS%%%%32BITS%%%%GNAT%%/lib/gcc/%%CONFTRGT%%/%%VER%%/32/crtbeginS.o
+%%64BITS%%%%32BITS%%%%GNAT%%/lib/gcc/%%CONFTRGT%%/%%VER%%/32/crtbeginT.o
 %%64BITS%%%%32BITS%%%%GNAT%%/lib/gcc/%%CONFTRGT%%/%%VER%%/32/crtend.o
 %%64BITS%%%%32BITS%%%%GNAT%%/lib/gcc/%%CONFTRGT%%/%%VER%%/32/crtendS.o
 %%64BITS%%%%32BITS%%%%GNAT%%/lib/gcc/%%CONFTRGT%%/%%VER%%/32/libgcc.a
@@ -5703,6 +5704,7 @@
 %%GNAT%%/lib/gcc/%%CONFTRGT%%/%%VER%%/adalib/unchdeal.ali
 %%GNAT%%/lib/gcc/%%CONFTRGT%%/%%VER%%/crtbegin.o
 %%GNAT%%/lib/gcc/%%CONFTRGT%%/%%VER%%/crtbeginS.o
+%%GNAT%%/lib/gcc/%%CONFTRGT%%/%%VER%%/crtbeginT.o
 %%GNAT%%/lib/gcc/%%CONFTRGT%%/%%VER%%/crtend.o
 %%GNAT%%/lib/gcc/%%CONFTRGT%%/%%VER%%/crtendS.o
 %%GNAT%%/lib/gcc/%%CONFTRGT%%/%%VER%%/include-fixed/README
