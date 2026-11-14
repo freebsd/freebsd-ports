@@ -1,7 +1,7 @@
 PORTNAME=	woob-qt
 DISTVERSION=	2.0-27
-PORTREVISION=	5
 DISTVERSIONSUFFIX=	-g958a79c2
+PORTREVISION=	5
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,16 +12,18 @@ WWW=		https://woob.tech/
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
+DEPRECATED=     Depends on EOL Qt5 and has not been updated in 3 years
+EXPIRATION_DATE=        2026-12-14
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}woob>=2.0:www/py-woob@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}woob>=2.0:www/py-woob@${PY_FLAVOR}
 
 USES=		gmake pyqt:5 python
-USE_PYQT=	pyqt5
-USE_PYTHON=	autoplist distutils
-
 USE_GITLAB=	yes
 GL_ACCOUNT=	woob
 GL_TAGNAME=	958a79c2e5de4698afe34f960fc1698cf2de8ca5
+USE_PYQT=	pyqt5
+USE_PYTHON=	autoplist distutils
 
 BINARY_ALIAS=	pyuic5=pyuic5-${PYTHON_VER}
 
