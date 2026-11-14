@@ -112,6 +112,7 @@ include/gwenhywfar5/gwenhywfar/plugin.h
 include/gwenhywfar5/gwenhywfar/plugindescr.h
 include/gwenhywfar5/gwenhywfar/portable_endian.h
 include/gwenhywfar5/gwenhywfar/process.h
+include/gwenhywfar5/gwenhywfar/quicksort.h
 include/gwenhywfar5/gwenhywfar/refptr.h
 include/gwenhywfar5/gwenhywfar/request.h
 include/gwenhywfar5/gwenhywfar/ringbuffer.h

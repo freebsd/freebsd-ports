@@ -1,15 +1,15 @@
 Deal with the infamous 'portable_endian.h' yet again. This file hasn't aged
 well, especially for *BSD, but various forms of it keep appearing in projects.
 
---- src/os/portable_endian.h.orig	2024-04-21 13:51:43 UTC
+--- src/os/portable_endian.h.orig	2026-01-10 18:01:35 UTC
 +++ src/os/portable_endian.h
 @@ -13,7 +13,8 @@
  
  #endif
  
--#if defined(__linux__) || defined(__CYGWIN__)
-+#if defined(__linux__) || defined(__CYGWIN__) || defined(__DragonFly__) || \
-+    defined(__FreeBSD__) && __FreeBSD_version >= 1400079 || defined(__NetBSD__) || defined(__OpenBSD__)
+-#if defined(__linux__) || defined(__CYGWIN__) || defined(__GNU__)
++#if defined(__linux__) || defined(__CYGWIN__) || defined(__GNU__) || \
++    defined(__DragonFly__) || defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
  
  #	include <endian.h>
  

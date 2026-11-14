@@ -4,9 +4,9 @@ Hunk 1: Avoid linking to unneeded Qt components (yet again) which were re-added
         Use pkgconf to define QT_LIBS. The other method produces the full path
         to the libraries which libtool seems to discard.
 
---- configure.orig	2025-07-06 17:51:09 UTC
+--- configure.orig	2026-11-10 08:23:13 UTC
 +++ configure
-@@ -26583,42 +26583,20 @@ win32 {
+@@ -26417,42 +26417,20 @@ win32 {
      CONFIG -= debug_and_release
      CONFIG += release
  }
