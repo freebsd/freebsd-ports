@@ -1,3 +1,43 @@
+  <vuln vid="4d2a90c7-df51-11f1-a655-3497f65b111b">
+    <topic>FreeIPA -- multiple vulnerabilities</topic>
+    <affects>
+	<package>
+	  <name>freeipa-server</name>
+	  <range><lt>4.13.5</lt></range>
+	</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The FreeIPA project reports:</p>
+	<blockquote cite="https://www.freeipa.org/release-notes/4-13-5.html">
+	  <p>CVE-2026-53683: client-side open redirect in reset_password.html.
+	    The page takes the url query parameter as a redirection target
+	    without validating or allow-listing it, so an attacker can send a
+	    user to an arbitrary site once the password reset completes. No
+	    authentication is required, and the link appears to come from the
+	    IdM domain, which makes it useful for phishing.</p>
+	  <p>CVE-2026-86593: unauthenticated denial of service in the session
+	    endpoints login_password, change_password and sync_token. They do
+	    not limit the size of the request body, so an attacker can tie up
+	    the WSGI worker pool. That pool serves the whole /ipa application,
+	    so exhausting it also denies the Kerberos authenticated paths such
+	    as the web interface and the admin RPC. This is the same root cause
+	    already fixed for i18n_messages and migration.py, whose fix covered
+	    only a single caller.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-53683</cvename>
+      <cvename>CVE-2026-86593</cvename>
+      <url>https://www.freeipa.org/release-notes/4-13-5.html</url>
+    </references>
+    <dates>
+      <discovery>2026-11-09</discovery>
+      <entry>2026-11-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e8416dd1-df3e-11f1-8608-589cfc0f9aca">
     <topic>MongoDB Server -- Pre-authentication use-after-free in replica set primary catch-up</topic>
     <affects>
