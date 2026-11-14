@@ -1,6 +1,6 @@
 PORTNAME=	serializable
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.1
+DISTVERSION=	1.4.0
 CATEGORIES=	devel python
 #MASTER_SITES=	PYPI # no test files
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,11 +21,12 @@ USE_PYTHON=	autoplist pep517 pytest
 USE_GITHUB=	yes
 GH_ACCOUNT=	openvax
 
+TEST_ARGS=	--disable-plugin-autoload
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_WRKDIR=	${WRKSRC}/tests
 
 NO_ARCH=	yes
 
-# tests as of 1.3.1: 100 passed, 2 warnings in 0.83s
+# tests as of 1.4.0: 113 passed, 1 warning in 0.08s
 
 .include <bsd.port.mk>
