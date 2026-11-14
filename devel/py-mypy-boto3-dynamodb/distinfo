@@ -1,3 +1,3 @@
-TIMESTAMP = 1792360936
-SHA256 (mypy_boto3_dynamodb-1.43.106.tar.gz) = b51472f27ab55c83d983269cff2e618dee923851c433b7c933d21a0f8b0e18be
-SIZE (mypy_boto3_dynamodb-1.43.106.tar.gz) = 50402
+TIMESTAMP = 1794505607
+SHA256 (mypy_boto3_dynamodb-1.44.0.tar.gz) = 3fd6198fa9eb698919c1cb666b3a9f314d2b6f2258c3921a84a2bef3d47f2dd9
+SIZE (mypy_boto3_dynamodb-1.44.0.tar.gz) = 52899
