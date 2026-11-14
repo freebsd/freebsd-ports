@@ -1,0 +1,33 @@
+--- pyproject.toml.orig	2026-11-12 23:30:21 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@ requires = [
+ [build-system]
+ requires = [
+-    "setuptools>=77.0.1",
++    "setuptools>=61",
+     "versioneer>=0.29",
+     "versioneer[toml] ; python_version < '3.11'",
+     # The upper bound should be 3 minor releases ahead of the current runtime version
+@@ -9,20 +9,13 @@ build-backend = "setuptools.build_meta"
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+-name = "Bottleneck"
++name = "bottleneck"
+ description = "Fast NumPy array functions written in C"
+ maintainers = [
+     { name = "Christopher Whelan" , email = "bottle-neck@googlegroups.com" },
+ ]
+ readme = { file = "README.rst" , content-type = "text/x-rst" }
+-license = "BSD-2-Clause"
+-license-files = [
+-    "LICENSE",
+-    "LICENSES/NUMPY_LICENSE",
+-    "LICENSES/PANDAS_LICENSE",
+-    "LICENSES/SCIPY_LICENSE",
+-    "LICENSES/SETUPTOOLS_LICENSE",
+-]
++license = { text = "BSD-2-Clause" }
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",
+     "Environment :: Console",
