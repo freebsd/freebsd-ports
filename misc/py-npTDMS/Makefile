@@ -1,5 +1,5 @@
 PORTNAME=	npTDMS
-DISTVERSION=	1.12.1
+DISTVERSION=	1.14.0
 CATEGORIES=	misc
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -32,6 +32,6 @@ TEST_ARGS=	--disable-plugin-autoload \
 
 NO_ARCH=	yes
 
-# tests as of 1.12.1: 541 passed, 8 warnings in 18.93s
+# tests as of 1.14.0: 687 passed, 8 warnings in 26.45s
 
 .include <bsd.port.mk>
