@@ -7,11 +7,6 @@ bin/bobbin
 %%DATADIR%%/examples/reverse
 %%DATADIR%%/examples/ribbon.bas
 %%DATADIR%%/examples/test.int
-%%DATADIR%%/images/ProDOS_2_0_3.dsk
-%%DATADIR%%/images/dos33init.dsk
-%%DATADIR%%/images/dos33primary.dsk
-%%DATADIR%%/images/dos33primary.nib
-%%DATADIR%%/images/prodos242.dsk
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/THANKS

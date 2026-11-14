@@ -20,6 +20,20 @@ If you do not have these files, see the bobbin repository page:
 
   https://github.com/micahcowan/bobbin
 
+Disk images are not installed either, for the same reason. bobbin runs
+fine without them; supply your own when you want to boot a DOS or
+ProDOS disk, and pass it with the --disk option (or copy it to
+%%DATADIR%%/images/). The images shipped in the upstream source
+tarball, which this package intentionally does not install, are:
+
+  %%DATADIR%%/images/dos33primary.dsk   (DOS 3.3 System Master)
+  %%DATADIR%%/images/dos33primary.nib   (same disk, nibble format)
+  %%DATADIR%%/images/dos33init.dsk      (DOS 3.3 boot/init sectors only)
+  %%DATADIR%%/images/ProDOS_2_0_3.dsk   (ProDOS 2.0.3)
+  %%DATADIR%%/images/prodos242.dsk      (ProDOS 2.4.2)
+
+These are copyrighted and cannot be redistributed.
+
 EOM
 }
 ]
