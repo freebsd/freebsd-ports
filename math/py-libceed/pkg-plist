@@ -107,4 +107,3 @@
 %%PYTHON_SITELIBDIR%%/libceed/include/ceed/types.h
 %%PYTHON_SITELIBDIR%%/libceed/include/ceedf.h
 %%PYTHON_SITELIBDIR%%/libceed/lib/libceed.so
-%%PYTHON_SITELIBDIR%%/libceed/lib/pkgconfig/ceed.pc

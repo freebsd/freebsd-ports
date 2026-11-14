@@ -1,12 +1,13 @@
 PORTNAME=	libceed
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.1
+DISTVERSION=	1.1.0
 CATEGORIES=	math # machine-learning
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	CEED Library: Code for Efficient Extensible Discretizations
-WWW=		https://libceed.org/en/latest/
+WWW=		https://libceed.org/en/latest/ \
+		https://github.com/ceed/libceed
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -27,12 +28,15 @@ GH_PROJECT=	libCEED
 CFLAGS+=	-fPIC # https://github.com/CEED/libCEED/issues/1706
 
 BINARY_ALIAS=	make=${GMAKE}
-#		python3=${PYTHON_CMD}
 
 post-install:
+	# strip
 	@${STRIP_CMD} \
 		${STAGEDIR}${PYTHON_SITELIBDIR}/_ceed_cffi.abi3.so \
 		${STAGEDIR}${PYTHON_SITELIBDIR}/libceed/lib/libceed.so
+	# rm stray pkgconfig file, workaround for https://github.com/CEED/libCEED/issues/2104
+	@${RM}		${STAGEDIR}${PYTHON_SITELIBDIR}/libceed/lib/pkgconfig/ceed.pc
+	@${RMDIR}	${STAGEDIR}${PYTHON_SITELIBDIR}/libceed/lib/pkgconfig
 
 do-test:
 	cd ${WRKSRC}/python/tests && \
@@ -40,6 +44,6 @@ do-test:
 
 # rebuilds and reinstalls the C library, see https://github.com/CEED/libCEED/issues/1707
 
-# tests as of 1.0.1: 64 passed in 17.96s
+# tests as of 1.1.0: 64 passed in 1.71s
 
 .include <bsd.port.mk>
