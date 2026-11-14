@@ -1,5 +1,5 @@
 PORTNAME=	curl-cffi
-PORTVERSION=	0.16.3
+PORTVERSION=	0.17.0
 CATEGORIES=	ftp python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,15 +13,16 @@ WWW=		https://curl-cffi.readthedocs.io/en/latest/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=2.0.0:devel/py-cffi@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=2.1.1:devel/py-cffi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 LIB_DEPENDS=	libcurl-impersonate.so:ftp/curl-impersonate
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}certifi>=2024.2.2:security/py-certifi@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cffi>=2.0.0:devel/py-cffi@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}certifi>=2026.10.19:security/py-certifi@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}cffi>=2.1.1:devel/py-cffi@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}charset-normalizer>=3.3.2:textproc/py-charset-normalizer@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cryptography>=46.0.4:security/py-cryptography@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httpx>=0.23.1:www/py-httpx@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jsonpath-ng>=1.7:devel/py-jsonpath-ng@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}litestar>=2.19.0:www/py-litestar@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}proxy.py>=2.4.3:www/py-proxy.py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-asyncio>=0.23.6:devel/py-pytest-asyncio@${PY_FLAVOR} \
@@ -48,6 +49,6 @@ TEST_ARGS=	--disable-plugin-autoload -p pytest_asyncio.plugin -p pytest_trio.plu
 post-install:
 	@${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
 
-# tests as of 0.16.3: 531 passed, 19 skipped, 34 warnings in 27.88s (presence of py312-orjson causes another 1 test to fail)
+# tests as of 0.17.0: 783 passed, 19 skipped, 10 warnings in 25.16s (presence of py312-orjson causes another 1 test to fail)
 
 .include <bsd.port.mk>

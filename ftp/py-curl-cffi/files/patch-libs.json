@@ -1,31 +1,48 @@
--- Add FreeBSD entries to libs.json so the build system reuses the
--- system-installed libcurl-impersonate (from ftp/curl-impersonate)
--- instead of trying to download a prebuilt binary for FreeBSD (which
--- does not exist upstream). link_type=dynamic and the system libdir
--- make download_libcurl() early-exit and get_curl_libraries() link
--- against the dynamic library automatically, with no changes needed
--- to scripts/build.py itself.
+-- Make the FreeBSD entries in libs.json use the system-installed
+-- libcurl-impersonate (from ftp/curl-impersonate) instead of downloading a
+-- prebuilt static binary from GitHub, which is not possible in a sandboxed
+-- build. link_type=dynamic with the system libdir makes download_libcurl()
+-- early-exit and get_curl_libraries() link against the shared library.
+-- Also add FreeBSD entries for architectures that upstream does not list.
 -- Note: FreeBSD/aarch64's platform.uname().machine reports "arm64",
--- not "aarch64", hence the "machine": "arm64" entry below.
+-- not "aarch64".
 
--- Upstreamed: https://github.com/lexiforest/curl_cffi/pull/870
-
---- libs.json.orig	2026-09-30 07:12:36 UTC
+--- libs.json.orig	2026-10-26 04:01:55 UTC
 +++ libs.json
-@@ -146,5 +146,55 @@
-         "libc": "gnu",
-         "obj_name": "libcurl-impersonate.a",
-         "arch": "loongarch64"
-+    },
-+    {
-+        "system": "FreeBSD",
-+        "machine": "amd64",
-+        "pointer_size": 64,
-+        "sysname": "freebsd",
+@@ -52,8 +52,9 @@
+         "machine": "amd64",
+         "pointer_size": 64,
+         "sysname": "freebsd",
+-        "link_type": "static",
+-        "obj_name": "libcurl-impersonate.a",
 +        "link_type": "dynamic",
 +        "libdir": "/usr/local/lib",
 +        "obj_name": "libcurl-impersonate.so",
-+        "arch": "amd64"
+         "arch": "x86_64"
+     },
+     {
+@@ -61,8 +62,9 @@
+         "machine": "arm64",
+         "pointer_size": 64,
+         "sysname": "freebsd",
+-        "link_type": "static",
+-        "obj_name": "libcurl-impersonate.a",
++        "link_type": "dynamic",
++        "libdir": "/usr/local/lib",
++        "obj_name": "libcurl-impersonate.so",
+         "arch": "aarch64"
+     },
+         {
+@@ -70,9 +72,40 @@
+         "machine": "riscv64",
+         "pointer_size": 64,
+         "sysname": "freebsd",
+-        "link_type": "static",
+-        "obj_name": "libcurl-impersonate.a",
++        "link_type": "dynamic",
++        "libdir": "/usr/local/lib",
++        "obj_name": "libcurl-impersonate.so",
+         "arch": "riscv64"
 +    },
 +    {
 +        "system": "FreeBSD",
@@ -36,16 +53,6 @@
 +        "libdir": "/usr/local/lib",
 +        "obj_name": "libcurl-impersonate.so",
 +        "arch": "i386"
-+    },
-+    {
-+        "system": "FreeBSD",
-+        "machine": "arm64",
-+        "pointer_size": 64,
-+        "sysname": "freebsd",
-+        "link_type": "dynamic",
-+        "libdir": "/usr/local/lib",
-+        "obj_name": "libcurl-impersonate.so",
-+        "arch": "aarch64"
 +    },
 +    {
 +        "system": "FreeBSD",
@@ -66,5 +73,6 @@
 +        "libdir": "/usr/local/lib",
 +        "obj_name": "libcurl-impersonate.so",
 +        "arch": "powerpc64"
-     }
- ]
+     },
+     {
+         "system": "OpenBSD",
