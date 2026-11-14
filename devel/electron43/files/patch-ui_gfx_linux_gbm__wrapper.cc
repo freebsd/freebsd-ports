@@ -1,6 +1,6 @@
---- ui/gfx/linux/gbm_wrapper.cc.orig	2025-10-21 20:19:54 UTC
+--- ui/gfx/linux/gbm_wrapper.cc.orig	2026-11-13 08:04:16 UTC
 +++ ui/gfx/linux/gbm_wrapper.cc
-@@ -341,7 +341,7 @@ class Device final : public ui::GbmDevice {
+@@ -350,7 +350,7 @@ class Device final : public ui::GbmDevice {
      // of 1x1 BOs which are destroyed before creating the final BO creation used
      // to instantiate the returned GbmBuffer.
      gfx::Size size_for_verification =

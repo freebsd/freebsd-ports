@@ -1,4 +1,4 @@
---- base/process/process_metrics_freebsd.cc.orig	2026-03-13 16:54:03 UTC
+--- base/process/process_metrics_freebsd.cc.orig	2026-08-17 18:32:36 UTC
 +++ base/process/process_metrics_freebsd.cc
 @@ -3,41 +3,92 @@
  // found in the LICENSE file.
@@ -104,7 +104,7 @@
  }
  
  size_t GetSystemCommitCharge() {
-@@ -65,5 +116,118 @@ size_t GetSystemCommitCharge() {
+@@ -65,5 +116,123 @@ size_t GetSystemCommitCharge() {
  
    return mem_total - (mem_free * pagesize) - (mem_inactive * pagesize);
  }
@@ -192,6 +192,11 @@
 +int ProcessMetrics::GetIdleWakeupsPerSecond() {
 +  NOTIMPLEMENTED();
 +  return 0;
++}
++
++ByteSize SystemMemoryInfo::GetAvailablePhysicalMemory() const {
++  NOTIMPLEMENTED();
++  return ByteSize(0);
 +}
 +
 +bool GetSystemDiskInfo(SystemDiskInfo* diskinfo) {

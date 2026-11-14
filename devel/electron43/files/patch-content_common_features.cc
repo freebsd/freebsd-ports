@@ -1,6 +1,6 @@
---- content/common/features.cc.orig	2026-06-23 23:37:18 UTC
+--- content/common/features.cc.orig	2026-11-13 08:04:15 UTC
 +++ content/common/features.cc
-@@ -204,7 +204,7 @@ BASE_FEATURE(kEmbeddingRequiresOptIn, base::FEATURE_DI
+@@ -211,7 +211,7 @@ BASE_FEATURE(kEmbeddingRequiresOptIn, base::FEATURE_DI
  BASE_FEATURE(kEmbeddingRequiresOptIn, base::FEATURE_DISABLED_BY_DEFAULT);
  
  // Enables error reporting for JS errors inside DevTools frontend host
@@ -9,7 +9,7 @@
  BASE_FEATURE(kEnableDevToolsJsErrorReporting,
               base::FEATURE_DISABLED_BY_DEFAULT);
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-@@ -308,12 +308,12 @@ BASE_FEATURE_ENUM_PARAM(FontDataServiceTypefaceType,
+@@ -315,12 +315,12 @@ BASE_FEATURE_ENUM_PARAM(FontDataServiceTypefaceType,
                          FontDataServiceTypefaceType::kDwrite,
                          &font_data_service_typeface);
  #endif  // BUILDFLAG(IS_WIN)
@@ -24,7 +24,7 @@
  BASE_FEATURE(kFontDataServiceLinux, base::FEATURE_ENABLED_BY_DEFAULT);
  BASE_FEATURE_ENUM_PARAM(FontDataServiceTypefaceType,
                          kFontDataServiceTypefaceType,
-@@ -332,11 +332,11 @@ BASE_FEATURE_ENUM_PARAM(FontDataServiceTypefaceType,
+@@ -339,11 +339,11 @@ BASE_FEATURE_ENUM_PARAM(FontDataServiceTypefaceType,
  #endif  // BUILDFLAG(IS_LINUX)
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  

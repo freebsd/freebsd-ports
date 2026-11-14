@@ -79,9 +79,9 @@ TEST_DEPENDS=	git:devel/git \
 		sentry-cli:devel/sentry-cli
 
 USES=		bison cargo compiler:c++17-lang cpe display:test gettext-tools \
-		gl gmake gnome iconv:wchar_t jpeg localbase:ldflags ninja \
-		nodejs:24,build npm:yarn4 pkgconfig python:build,test qt:5 \
-		shebangfix tar:xz xorg
+		gl gmake gnome iconv:wchar_t inotify jpeg localbase:ldflags \
+		ninja nodejs:24,build npm:yarn4 pkgconfig python:build,test \
+		qt:5 shebangfix tar:xz xorg
 
 CPE_VENDOR=	electronjs
 USE_GITHUB=	nodefault
@@ -117,6 +117,8 @@ ALL_TARGET=	electron electron:node_headers
 POST_BUILD_TARGETS=	licenses version
 POST_BUILD_DIST_TARGETS=electron_dist_zip electron_chromedriver_zip \
 			electron_mksnapshot_zip
+
+LDFLAGS+=	${INOTIFY_LIB}
 
 DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
 BINARY_ALIAS=	python3=${PYTHON_CMD}

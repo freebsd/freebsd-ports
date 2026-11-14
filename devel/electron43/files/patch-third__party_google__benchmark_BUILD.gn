@@ -1,0 +1,11 @@
+--- third_party/google_benchmark/BUILD.gn.orig	2026-08-17 18:32:36 UTC
++++ third_party/google_benchmark/BUILD.gn
+@@ -79,7 +79,7 @@ component("google_benchmark") {
+     "BENCHMARK_VERSION=\"1.9.0\"",
+   ]
+ 
+-  if (is_linux) {
++  if (is_linux && !is_bsd) {
+     # Include hardware performance counter support.
+     defines += [ "HAVE_LIBPFM=1" ]
+     deps = [ "//third_party/libpfm4" ]

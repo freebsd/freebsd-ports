@@ -1,6 +1,6 @@
---- chrome/browser/file_system_access/chrome_file_system_access_permission_context.h.orig	2026-10-31 06:09:43 UTC
+--- chrome/browser/file_system_access/chrome_file_system_access_permission_context.h.orig	2026-11-13 08:04:16 UTC
 +++ chrome/browser/file_system_access/chrome_file_system_access_permission_context.h
-@@ -686,7 +686,7 @@ class ChromeFileSystemAccessPermissionContext
+@@ -695,7 +695,7 @@ class ChromeFileSystemAccessPermissionContext
              FILE_PATH_LITERAL("Library/Mobile Documents/com~apple~CloudDocs"),
              BlockType::kDontBlockChildren),
    #endif

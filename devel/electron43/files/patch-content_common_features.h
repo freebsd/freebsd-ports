@@ -1,6 +1,6 @@
---- content/common/features.h.orig	2026-06-23 23:37:18 UTC
+--- content/common/features.h.orig	2026-11-13 08:04:15 UTC
 +++ content/common/features.h
-@@ -82,7 +82,7 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE(kKillOnUnexpectedO
+@@ -84,7 +84,7 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE(kKillOnUnexpectedO
      kDocumentIsolationPolicyWithoutSiteIsolation);
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kDocumentPolicyNegotiation);
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kKillOnUnexpectedOriginHeader);
@@ -9,7 +9,7 @@
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kEnableDevToolsJsErrorReporting);
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kEnforceSameDocumentOriginInvariants);
-@@ -120,8 +120,8 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE_PARAM(FontDataServ
+@@ -122,8 +122,8 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE_PARAM(FontDataServ
  CONTENT_EXPORT BASE_DECLARE_FEATURE_PARAM(FontDataServiceTypefaceType,
                                            kFontDataServiceTypefaceType);
  #endif  // BUILDFLAG(IS_WIN)
@@ -20,7 +20,7 @@
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kFontDataServiceLinux);
  #else
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kFontDataServiceChromeOS);
-@@ -134,7 +134,7 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE_PARAM(FontDataServ
+@@ -136,7 +136,7 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE_PARAM(FontDataServ
                                            kFontDataServiceTypefaceType);
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  
