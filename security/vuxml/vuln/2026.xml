@@ -1,3 +1,31 @@
+  <vuln vid="36f77a27-e080-11f1-bbb3-901b0e9408dc">
+    <topic>conduit -- event redaction vulnerability</topic>
+    <affects>
+      <package>
+	<name>matrix-conduit</name>
+	<range><lt>0.10.17</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Conduit team reports:</p>
+	<blockquote cite="https://gitlab.com/famedly/conduit/-/tags/v0.10.17">
+	  <p>Fixes a vulnerability where the redaction process didn't
+	  check if the event being redacted was from the same room as
+	  the redaction event.  It is recommended you upgrade
+	  ASAP.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://gitlab.com/famedly/conduit/-/tags/v0.10.17</url>
+    </references>
+    <dates>
+      <discovery>2026-11-14</discovery>
+      <entry>2026-11-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d6484a4c-e01c-11f1-8e2f-5404a68ad561">
     <topic>traefik -- Multiple vulnerabilities</topic>
     <affects>
