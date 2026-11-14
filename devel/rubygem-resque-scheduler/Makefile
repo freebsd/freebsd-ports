@@ -1,5 +1,5 @@
 PORTNAME=	resque-scheduler
-PORTVERSION=	4.11.0
+PORTVERSION=	5.1.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,10 +10,12 @@ WWW=		https://github.com/resque/resque-scheduler
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-mono_logger>=1.0<2:devel/rubygem-mono_logger \
-		rubygem-redis>=3.3:databases/rubygem-redis \
-		rubygem-resque>=1.27:devel/rubygem-resque \
-		rubygem-rufus-scheduler>=3.2<4:devel/rubygem-rufus-scheduler
+RUN_DEPENDS=	rubygem-base64>=0.1<1:converters/rubygem-base64 \
+		rubygem-logger>=0:devel/rubygem-logger \
+		rubygem-mono_logger>=1.0<2:devel/rubygem-mono_logger \
+		rubygem-redis>=4.0:databases/rubygem-redis \
+		rubygem-resque>=3.0:devel/rubygem-resque \
+		rubygem-rufus-scheduler>=3.9<4:devel/rubygem-rufus-scheduler
 
 USES=		gem
 
