@@ -1,9 +1,9 @@
 PORTNAME=	azure-keyvault-administration
-DISTVERSION=	4.8.0b3
+PORTVERSION=	4.8.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	azure_keyvault_administration-${DISTVERSION}
+DISTNAME=	azure_keyvault_administration-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Microsoft Corporation Key Vault Administration Client Library for Python
