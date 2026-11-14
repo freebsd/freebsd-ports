@@ -23,4 +23,11 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	HYPERCORN TWISTED
+HYPERCORN_DESC=	Serve Rolo components through Hypercorn
+TWISTED_DESC=	Serve Rolo components through Twisted
+
+HYPERCORN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hypercorn>=0:www/py-hypercorn@${PY_FLAVOR}
+TWISTED_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=24:devel/py-twisted@${PY_FLAVOR}
+
 .include <bsd.port.mk>
