@@ -22,4 +22,9 @@ USE_PYTHON=	distutils autoplist pytest
 
 NO_ARCH=	yes
 
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_ARGS=	--disable-plugin-autoload
+
+# tests as of 1.15.0: 159 passed, 40 skipped in 1.72s
+
 .include <bsd.port.mk>
