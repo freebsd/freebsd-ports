@@ -1,9 +1,9 @@
 PORTNAME=	azure-mgmt-containerinstance
-PORTVERSION=	10.2.0b2
+PORTVERSION=	11.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	azure_mgmt_containerinstance-${DISTVERSION}
+DISTNAME=	azure_mgmt_containerinstance-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Microsoft Azure Container Instance Client Library for Python

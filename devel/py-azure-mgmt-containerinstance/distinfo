@@ -1,3 +1,3 @@
-TIMESTAMP = 1782966278
-SHA256 (azure_mgmt_containerinstance-10.2.0b2.tar.gz) = 230eebb93575ffc672d8b108836ec8b1c2cc31b0ef51140f3893d1118bf0f6d2
-SIZE (azure_mgmt_containerinstance-10.2.0b2.tar.gz) = 111096
+TIMESTAMP = 1794588536
+SHA256 (azure_mgmt_containerinstance-11.0.0.tar.gz) = 9b3ccb0e4b4a2bbd05bbc333dce3a8295f46a46ed65b1637649b7fbaaf44bc86
+SIZE (azure_mgmt_containerinstance-11.0.0.tar.gz) = 139792
