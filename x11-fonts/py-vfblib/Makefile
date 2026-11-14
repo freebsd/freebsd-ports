@@ -1,5 +1,5 @@
 PORTNAME=	vfblib
-PORTVERSION=	0.12.2
+PORTVERSION=	0.12.3
 CATEGORIES=	x11-fonts python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,13 +13,13 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>=3.12:devel/py-flit-core@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fonttools>=4.66.1:print/py-fonttools@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fonttools>=4.66.1<4.69.0:print/py-fonttools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}orjson>=3.11.9<4:devel/py-orjson@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.16.0:devel/py-typing-extensions@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ufolib2>=0.18.1:print/py-ufolib2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ufolib2>=0.18.1<0.20.0:print/py-ufolib2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ufonormalizer>=0.6.3:x11-fonts/py-ufonormalizer@${PY_FLAVOR}
 
-USES=		python:3.11+
+USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
 MAKE_ENV=	SOURCE_DATE_EPOCH=315532800 # 1980-01-01 00:00:00 UTC

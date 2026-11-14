@@ -3,17 +3,17 @@
 @@ -23,7 +23,7 @@ dependencies = [
  requires-python = ">=3.11"
  dependencies = [
-     "fonttools[ufo] >= 4.66.1",
+     "fonttools[ufo] >= 4.66.1, < 4.69.0",
 -    "orjson >= 3.12.0, < 4",
 +    "orjson >= 3.11.9, < 4",
      "typing_extensions >= 4.16.0",
-     "ufoLib2[json] >= 0.18.1",
+     "ufoLib2[json] >= 0.18.1, < 0.20.0",
      "ufonormalizer >= 0.6.3",
 @@ -75,8 +75,8 @@ test = [
  ]
  
  [build-system]
--requires = ["uv_build>=0.12.23,<0.13"]
+-requires = ["uv_build>=0.13.7,<0.14"]
 -build-backend = "uv_build"
 +requires = ["flit-core >= 3.12"]
 +build-backend = "flit_core.buildapi"
