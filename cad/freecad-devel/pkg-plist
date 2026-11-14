@@ -329,6 +329,7 @@ FreeCAD/Mod/BIM/bimtests/TestArchSpace.py
 FreeCAD/Mod/BIM/bimtests/TestArchStairs.py
 FreeCAD/Mod/BIM/bimtests/TestArchStairsGui.py
 FreeCAD/Mod/BIM/bimtests/TestArchStructure.py
+FreeCAD/Mod/BIM/bimtests/TestArchStructureGui.py
 FreeCAD/Mod/BIM/bimtests/TestArchTruss.py
 FreeCAD/Mod/BIM/bimtests/TestArchWall.py
 FreeCAD/Mod/BIM/bimtests/TestArchWallGui.py
@@ -445,6 +446,7 @@ FreeCAD/Mod/CAM/CAMTests/TestPathDrillable.py
 FreeCAD/Mod/CAM/CAMTests/TestPathDrilling.py
 FreeCAD/Mod/CAM/CAMTests/TestPathEngrave.py
 FreeCAD/Mod/CAM/CAMTests/TestPathFacingGenerator.py
+FreeCAD/Mod/CAM/CAMTests/TestPathFeedRate.py
 FreeCAD/Mod/CAM/CAMTests/TestPathFlute.py
 FreeCAD/Mod/CAM/CAMTests/TestPathFollowWireGenerator.py
 FreeCAD/Mod/CAM/CAMTests/TestPathGeneratorDogboneII.py
@@ -847,6 +849,8 @@ FreeCAD/Mod/CAM/Path/Tool/shape/models/dovetail.py
 FreeCAD/Mod/CAM/Path/Tool/shape/models/drill.py
 FreeCAD/Mod/CAM/Path/Tool/shape/models/endmill.py
 FreeCAD/Mod/CAM/Path/Tool/shape/models/icon.py
+FreeCAD/Mod/CAM/Path/Tool/shape/models/keyway.py
+FreeCAD/Mod/CAM/Path/Tool/shape/models/lollipop.py
 FreeCAD/Mod/CAM/Path/Tool/shape/models/probe.py
 FreeCAD/Mod/CAM/Path/Tool/shape/models/radius.py
 FreeCAD/Mod/CAM/Path/Tool/shape/models/reamer.py
@@ -875,6 +879,8 @@ FreeCAD/Mod/CAM/Path/Tool/toolbit/models/custom.py
 FreeCAD/Mod/CAM/Path/Tool/toolbit/models/dovetail.py
 FreeCAD/Mod/CAM/Path/Tool/toolbit/models/drill.py
 FreeCAD/Mod/CAM/Path/Tool/toolbit/models/endmill.py
+FreeCAD/Mod/CAM/Path/Tool/toolbit/models/keyway.py
+FreeCAD/Mod/CAM/Path/Tool/toolbit/models/lollipop.py
 FreeCAD/Mod/CAM/Path/Tool/toolbit/models/probe.py
 FreeCAD/Mod/CAM/Path/Tool/toolbit/models/radius.py
 FreeCAD/Mod/CAM/Path/Tool/toolbit/models/reamer.py
@@ -911,9 +917,11 @@ FreeCAD/Mod/CAM/PathScripts/PathUtilsGui.py
 FreeCAD/Mod/CAM/PathScripts/__init__.py
 FreeCAD/Mod/CAM/TestCAMApp.py
 FreeCAD/Mod/CAM/TestCAMGui.py
+FreeCAD/Mod/CAM/Tools/Bit/250_Lollipop.fctb
 FreeCAD/Mod/CAM/Tools/Bit/3.175mm_Endmill.fctb
 FreeCAD/Mod/CAM/Tools/Bit/30degree_Vbit.fctb
 FreeCAD/Mod/CAM/Tools/Bit/375-16_Tap.fctb
+FreeCAD/Mod/CAM/Tools/Bit/375_Keyway.fctb
 FreeCAD/Mod/CAM/Tools/Bit/45degree_Vbit.fctb
 FreeCAD/Mod/CAM/Tools/Bit/45degree_chamfer.fctb
 FreeCAD/Mod/CAM/Tools/Bit/5mm-thread-cutter.fctb
@@ -940,6 +948,10 @@ FreeCAD/Mod/CAM/Tools/Shape/drill.fcstd
 FreeCAD/Mod/CAM/Tools/Shape/drill.svg
 FreeCAD/Mod/CAM/Tools/Shape/endmill.fcstd
 FreeCAD/Mod/CAM/Tools/Shape/endmill.svg
+FreeCAD/Mod/CAM/Tools/Shape/keyway.fcstd
+FreeCAD/Mod/CAM/Tools/Shape/keyway.svg
+FreeCAD/Mod/CAM/Tools/Shape/lollipop.fcstd
+FreeCAD/Mod/CAM/Tools/Shape/lollipop.svg
 FreeCAD/Mod/CAM/Tools/Shape/probe.fcstd
 FreeCAD/Mod/CAM/Tools/Shape/probe.svg
 FreeCAD/Mod/CAM/Tools/Shape/radius.fcstd
@@ -1040,6 +1052,7 @@ FreeCAD/Mod/Draft/draftguitools/gui_groups.py
 FreeCAD/Mod/Draft/draftguitools/gui_hatch.py
 FreeCAD/Mod/Draft/draftguitools/gui_heal.py
 FreeCAD/Mod/Draft/draftguitools/gui_hyperlink.py
+FreeCAD/Mod/Draft/draftguitools/gui_insertion_point.py
 FreeCAD/Mod/Draft/draftguitools/gui_join.py
 FreeCAD/Mod/Draft/draftguitools/gui_labels.py
 FreeCAD/Mod/Draft/draftguitools/gui_layers.py
@@ -1163,6 +1176,7 @@ FreeCAD/Mod/Draft/drafttests/test_grid_settings.py
 FreeCAD/Mod/Draft/drafttests/test_import.py
 FreeCAD/Mod/Draft/drafttests/test_import_gui.py
 FreeCAD/Mod/Draft/drafttests/test_import_tools.py
+FreeCAD/Mod/Draft/drafttests/test_insertion_point.py
 FreeCAD/Mod/Draft/drafttests/test_lines_gui.py
 FreeCAD/Mod/Draft/drafttests/test_manual_input_gui.py
 FreeCAD/Mod/Draft/drafttests/test_modification.py
@@ -2040,6 +2054,7 @@ FreeCAD/Mod/PartDesign/SprocketFeature.py
 FreeCAD/Mod/PartDesign/SprocketFeature.ui
 FreeCAD/Mod/PartDesign/TestPartDesignApp.py
 FreeCAD/Mod/PartDesign/TestPartDesignGui.py
+FreeCAD/Mod/PartDesign/TestPartDesignPatternLabelsGui.py
 FreeCAD/Mod/PartDesign/WizardShaft/SegmentFunction.py
 FreeCAD/Mod/PartDesign/WizardShaft/Shaft.py
 FreeCAD/Mod/PartDesign/WizardShaft/ShaftDiagram.py
@@ -2097,6 +2112,7 @@ FreeCAD/Mod/Sketcher/SketcherTests/TestCarbonCopyModelTreeDragging.py
 FreeCAD/Mod/Sketcher/SketcherTests/TestCoincidentCommandGui.py
 FreeCAD/Mod/Sketcher/SketcherTests/TestConstraintCommandsGui.py
 FreeCAD/Mod/Sketcher/SketcherTests/TestConstraintPreselectionGui.py
+FreeCAD/Mod/Sketcher/SketcherTests/TestConvertToNURBSGui.py
 FreeCAD/Mod/Sketcher/SketcherTests/TestDistanceLabelExtensionGui.py
 FreeCAD/Mod/Sketcher/SketcherTests/TestExternalFacePreselection.py
 FreeCAD/Mod/Sketcher/SketcherTests/TestOnViewParameterGui.py
@@ -2109,6 +2125,7 @@ FreeCAD/Mod/Sketcher/SketcherTests/TestSketchInternalFaces.py
 FreeCAD/Mod/Sketcher/SketcherTests/TestSketchValidateCoincidents.py
 FreeCAD/Mod/Sketcher/SketcherTests/TestSketcherEllipse.py
 FreeCAD/Mod/Sketcher/SketcherTests/TestSketcherSolver.py
+FreeCAD/Mod/Sketcher/SketcherTests/TestViewSectionGui.py
 FreeCAD/Mod/Sketcher/SketcherTests/TestVisualLayerListGui.py
 FreeCAD/Mod/Sketcher/SketcherTests/__init__.py
 FreeCAD/Mod/Sketcher/TestSketcherApp.py
@@ -3804,6 +3821,7 @@ bin/FreeCAD
 bin/FreeCADCmd
 %%PYTHON_SITELIBDIR%%/freecad/UiTools.py
 %%PYTHON_SITELIBDIR%%/freecad/__init__.py
+%%PYTHON_SITELIBDIR%%/freecad/content_provider.py
 %%PYTHON_SITELIBDIR%%/freecad/deprecation.py
 %%PYTHON_SITELIBDIR%%/freecad/freecad_doc.py
 %%PYTHON_SITELIBDIR%%/freecad/module_io.py
