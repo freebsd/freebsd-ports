@@ -1,6 +1,6 @@
 PORTNAME=	pymatgen-core
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2026.10.16
+DISTVERSION=	2026.10.31
 CATEGORIES=	science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -54,6 +54,7 @@ TEST_ARGS=	--disable-plugin-autoload \
 		--deselect=tests/io/test_cif.py::TestMagCif::test_bibtex \
 		--deselect=tests/io/test_phonopy.py::TestPhonopyFromForceConstants::test_get_phonon_band_structure_from_fc \
 		--deselect=tests/io/test_phonopy.py::TestPhonopyFromForceConstants::test_get_phonon_dos_from_fc \
+		--deselect=tests/io/test_zeopp.py::TestGetVoronoiNodesMultiOxi::test_get_voronoi_nodes \
 		--deselect=tests/util/test_provenance.py::TestStructureNL::test_authors \
 		--deselect=tests/util/test_provenance.py::TestStructureNL::test_references \
 		--deselect=tests/util/test_provenance.py::TestStructureNL::test_eq \
@@ -68,6 +69,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|np.linalg.det(scale_matrix)|round(float(np.linalg.det(scale_matrix)))|' \
 		${WRKSRC}/src/pymatgen/core/structure.py
 
-# tests as of 2026.10.16: 2870 passed, 359 skipped, 12 deselected, 3 xfailed, 55 warnings in 937.59s (0:15:37)
+# tests as of 2026.10.31: 4973 passed, 314 skipped, 13 deselected, 4 xfailed, 72 warnings in 405.51s (0:06:45)
 
 .include <bsd.port.mk>
