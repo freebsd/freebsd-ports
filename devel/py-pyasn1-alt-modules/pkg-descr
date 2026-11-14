@@ -1,0 +1,5 @@
+The pyasn1-alt-modules package contains a collection of ASN.1 data structures
+for the protocols and formats defined in IETF RFCs, expressed in Python terms
+using the pyasn1 data model. It is an alternative to pyasn1-modules that is
+actively maintained and covers newer RFCs, including those for post-quantum
+cryptography.

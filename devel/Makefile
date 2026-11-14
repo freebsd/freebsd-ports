@@ -5869,6 +5869,7 @@
     SUBDIR += py-pyairtable2
     SUBDIR += py-pyaml-env
     SUBDIR += py-pyasn1
+    SUBDIR += py-pyasn1-alt-modules
     SUBDIR += py-pyasn1-modules
     SUBDIR += py-pybase64
     SUBDIR += py-pybind11
