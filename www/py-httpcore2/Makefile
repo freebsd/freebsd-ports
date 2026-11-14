@@ -1,5 +1,5 @@
 PORTNAME=	httpcore2
-PORTVERSION=	2.14.0
+PORTVERSION=	2.16.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-fancy-pypi-readme>0:devel/py-hatch-fancy-pypi-readme@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}uv-dynamic-versioning>=0.8.0:devel/py-uv-dynamic-versioning@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}uv-dynamic-versioning>=0.14.1:devel/py-uv-dynamic-versioning@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}h11>=0.16:net/py-h11@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}truststore>=0.10:security/py-truststore@${PY_FLAVOR}
 
@@ -32,6 +32,6 @@ TRIO_DESC=		Asynchronous support via trio
 ASYNCIO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anyio>=4.5.0<5.0:devel/py-anyio@${PY_FLAVOR}
 HTTP2_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}h2>=3<5:www/py-h2@${PY_FLAVOR}
 SOCKS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}socksio>=1<2:net/py-socksio@${PY_FLAVOR}
-TRIO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}trio>=0.33.0:net/py-trio@${PY_FLAVOR}
+TRIO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}trio>=0.34.0:net/py-trio@${PY_FLAVOR}
 
 .include <bsd.port.mk>
