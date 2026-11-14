@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2025-09-03 19:09:13 UTC
+--- pyproject.toml.orig	2026-11-13 08:43:18 UTC
 +++ pyproject.toml
 @@ -1,5 +1,5 @@
  [build-system]
@@ -7,3 +7,13 @@
  build-backend = "setuptools.build_meta"
  
  [project]
+@@ -10,8 +10,7 @@ readme = "README.rst"
+ ]
+ description = "Integrated set of Django applications addressing authentication, registration, account management as well as 3rd party (social) account authentication."
+ readme = "README.rst"
+-license = "MIT"
+-license-files = ["LICENSE"]
++license = {text = "MIT"}
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",
+     "Intended Audience :: Developers",
