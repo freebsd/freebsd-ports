@@ -1,12 +1,12 @@
 PORTNAME=	preppy
-PORTVERSION=	5.2.1
+PORTVERSION=	5.2.3
 CATEGORIES=	print python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Preprocessor for Python
-WWW=		https://hg.reportlab.com/hg-public/preppy
+WWW=		https://github.com/rptlab/preppy
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
