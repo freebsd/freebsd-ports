@@ -1,6 +1,5 @@
 PORTNAME=	rpds-py
-PORTVERSION=	2026.6.3
-PORTREVISION=	1
+PORTVERSION=	2026.9.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/crate-py/rpds/releases/download/v${PORTVERSION}/
