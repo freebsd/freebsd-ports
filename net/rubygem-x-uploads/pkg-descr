@@ -1,0 +1,8 @@
+Media uploads for the x gem, built on the HTTP client in x-core.
+- X::Uploads::MediaUpload uploads images, GIFs, videos, and subtitles. Videos,
+  subtitles, and a GIF larger than a single request takes are split into chunks
+  that upload in parallel, with retries, and processing can be awaited.
+- X::Uploads::Account updates the authenticated user's profile image and banner
+  through the v1.1 API, at the host of the base URL of the client it is given.
+
+Installing x installs this gem too.
