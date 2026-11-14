@@ -1,5 +1,5 @@
 PORTNAME=	songrec
-DISTVERSION=	0.8.1
+DISTVERSION=	0.8.2
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -110,6 +110,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		field-offset-0.3.6 \
 		find-msvc-tools-0.1.15 \
 		flate2-1.1.10 \
+		fs_extra-1.3.0 \
 		futures-channel-0.3.34 \
 		futures-core-0.3.34 \
 		futures-executor-0.3.34 \
