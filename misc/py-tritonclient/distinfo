@@ -1,3 +1,3 @@
-TIMESTAMP = 1792336719
-SHA256 (tritonclient-2.73.0-py3-none-any.whl) = 1f5cec19b0568e037ec4d716ae702984b3ab93e35f72b8f72c5135374dd2be9a
-SIZE (tritonclient-2.73.0-py3-none-any.whl) = 108282
+TIMESTAMP = 1794505179
+SHA256 (tritonclient-2.74.0-py3-none-any.whl) = 0252de30581bf944ac36f12318ed2ca9d72dff9f6622afc9a37dcfd46f76f8ee
+SIZE (tritonclient-2.74.0-py3-none-any.whl) = 108283
