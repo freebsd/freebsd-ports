@@ -1,0 +1,5 @@
+pygfx is a render engine for Python built on WebGPU (via wgpu-py). It provides
+a high-level, scene-graph based API for 2D and 3D visualization: meshes, points,
+lines, images, volumes, text, cameras, lights, and PBR materials, with
+custom shaders. Rendering targets are supplied by rendercanvas (glfw, Qt,
+Jupyter, offscreen).

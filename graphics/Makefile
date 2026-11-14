@@ -1035,6 +1035,7 @@
     SUBDIR += py-pyganim
     SUBDIR += py-pygeoapi
     SUBDIR += py-pygeos
+    SUBDIR += py-pygfx
     SUBDIR += py-pyglet
     SUBDIR += py-pyglet1
     SUBDIR += py-pyglm
