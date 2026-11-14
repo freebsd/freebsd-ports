@@ -1,6 +1,7 @@
 PORTNAME=	vagrant
 PORTVERSION=	2.4.9
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	sysutils rubygems devel
 
 MAINTAINER=	ports@FreeBSD.org
@@ -31,7 +32,7 @@ RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
 		rubygem-net-ftp>=0.2<1:ftp/rubygem-net-ftp \
 		rubygem-net-scp>=4.0<5:security/rubygem-net-scp \
 		rubygem-net-sftp>=4.0<5:security/rubygem-net-sftp \
-		rubygem-net-ssh>=7.0,2<8,2:security/rubygem-net-ssh \
+		rubygem-net-ssh7>=7.0<8:security/rubygem-net-ssh7 \
 		rubygem-ostruct>=0.6.0<0.7:devel/rubygem-ostruct \
 		rubygem-rb-kqueue>=0.2.0<0.3:devel/rubygem-rb-kqueue \
 		rubygem-rexml>=3.2<4:textproc/rubygem-rexml \
