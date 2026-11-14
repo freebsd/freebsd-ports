@@ -1,3 +1,3 @@
-TIMESTAMP = 1788500272
-SHA256 (argon2_cffi_bindings-26.1.0.tar.gz) = 63505c71542a44b68b1e38060450fb006404170da375feb31af153e7f9c6205d
-SIZE (argon2_cffi_bindings-26.1.0.tar.gz) = 1790807
+TIMESTAMP = 1794588610
+SHA256 (argon2_cffi_bindings-26.2.0.tar.gz) = f21ab89bb9850f32b9ca038d9961424bb0d3669d579cbbbfed068cffa6fc0643
+SIZE (argon2_cffi_bindings-26.2.0.tar.gz) = 1792536

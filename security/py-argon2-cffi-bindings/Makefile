@@ -1,6 +1,5 @@
 PORTNAME=	argon2-cffi-bindings
-PORTVERSION=	26.1.0
-PORTREVISION=	1
+PORTVERSION=	26.2.0
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scikit-build-core>=1.0:devel/py-scikit-build-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=8:devel/py-setuptools-scm@${PY_FLAVOR}
 LIB_DEPENDS=	libargon2.so:security/libargon2
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=2:devel/py-cffi@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=2.1.1:devel/py-cffi@${PY_FLAVOR}
 
 USES=		cmake:indirect localbase python
 USE_PYTHON=	autoplist concurrent pep517 pytest
