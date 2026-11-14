@@ -195,7 +195,7 @@ you update your ports collection, before attempting any port upgrades.
   The default is lmdb0 for now.
 
   If you want/need to use lmdb1, you will need to build the package
-  with apropriate lmdb version selected.
+  with appropriate lmdb version selected.
 
 20261002:
   AFFECTS: users of www/nginx-devel
