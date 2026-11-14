@@ -1,5 +1,5 @@
 PORTNAME=	kornia
-DISTVERSION=	0.8.3
+DISTVERSION=	0.9.0
 CATEGORIES=	graphics python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,9 +13,9 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=1.0.0:devel/py-hatchling@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}kornia-rs>=0.1.9:graphics/py-kornia-rs@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytorch>=2.0.0:misc/py-pytorch@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}kornia-rs>=0.2.0:graphics/py-kornia-rs@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.21:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytorch>=2.5.1:misc/py-pytorch@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	pep517 autoplist
