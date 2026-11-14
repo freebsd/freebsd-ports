@@ -900,5 +900,5 @@ CARGO_CRATES=	RustyXML-0.3.0 \
 		zstd-safe-7.3.0 \
 		zstd-sys-2.1.1+zstd.1.5.7 \
 		zxcvbn-3.1.1 \
-		opentelemetry,opentelemetry-http,opentelemetry-otlp,opentelemetry-proto,opentelemetry-semantic-conventions,opentelemetry_sdk@git+https://github.com/stalwartlabs/opentelemetry-rust\#ae66e97b140f70e477ab710686aafce665cc2f8b \
+		opentelemetry,opentelemetry-http,opentelemetry-otlp,opentelemetry-proto,opentelemetry-semantic-conventions,opentelemetry_sdk@git+https://github.com/open-telemetry/opentelemetry-rust\#ae66e97b140f70e477ab710686aafce665cc2f8b \
 		hickory-net,hickory-proto,hickory-resolver@git+https://github.com/stalwartlabs/hickory-dns?branch=stalwart%2F0.26\#f8b92b17fa6c7d09a6959672592106ca1410937b

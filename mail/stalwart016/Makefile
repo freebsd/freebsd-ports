@@ -77,6 +77,12 @@ SQLITE_VARS=		CARGO_FEATURES+=sqlite
 USERS=	stalwart
 GROUPS=	stalwart
 
+# The stalwartlabs/opentelemetry-rust fork was deleted upstream; the pinned
+# commit is still available from the parent repository.
+post-patch:
+	@${REINPLACE_CMD} 's|stalwartlabs/opentelemetry-rust|open-telemetry/opentelemetry-rust|' \
+		${WRKSRC}/Cargo.lock ${WRKSRC}/crates/common/Cargo.toml
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
 	@${MKDIR} ${STAGEDIR}/var/db/stalwart

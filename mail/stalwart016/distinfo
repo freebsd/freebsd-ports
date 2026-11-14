@@ -1,4 +1,4 @@
-TIMESTAMP = 1792354354
+TIMESTAMP = 1794288165
 SHA256 (rust/crates/RustyXML-0.3.0.crate) = 8b5ace29ee3216de37c0546865ad08edef58b0f9e76838ed8959a84a990e58c5
 SIZE (rust/crates/RustyXML-0.3.0.crate) = 17517
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
@@ -1803,8 +1803,8 @@ SHA256 (rust/crates/zstd-sys-2.1.1+zstd.1.5.7.crate) = aeec9eaf2dffbbd09201e23bd
 SIZE (rust/crates/zstd-sys-2.1.1+zstd.1.5.7.crate) = 785210
 SHA256 (rust/crates/zxcvbn-3.1.1.crate) = f9eaee90f4a795d1eb4ba6c51e1c1721d4784d550e8efa7b2600f29c867365e0
 SIZE (rust/crates/zxcvbn-3.1.1.crate) = 436261
-SHA256 (stalwartlabs-opentelemetry-rust-ae66e97b140f70e477ab710686aafce665cc2f8b_GH0.tar.gz) = cc9d74ba518d6ee6812d5032e68a9f8d9f9355a20f192af73fb15b002f1ff121
-SIZE (stalwartlabs-opentelemetry-rust-ae66e97b140f70e477ab710686aafce665cc2f8b_GH0.tar.gz) = 818388
+SHA256 (open-telemetry-opentelemetry-rust-ae66e97b140f70e477ab710686aafce665cc2f8b_GH0.tar.gz) = cc9d74ba518d6ee6812d5032e68a9f8d9f9355a20f192af73fb15b002f1ff121
+SIZE (open-telemetry-opentelemetry-rust-ae66e97b140f70e477ab710686aafce665cc2f8b_GH0.tar.gz) = 818388
 SHA256 (stalwartlabs-hickory-dns-f8b92b17fa6c7d09a6959672592106ca1410937b_GH0.tar.gz) = 8547de14919de6ef6c8221f19affc6f216fa1a80ad1bcf2144830a3acbd9df96
 SIZE (stalwartlabs-hickory-dns-f8b92b17fa6c7d09a6959672592106ca1410937b_GH0.tar.gz) = 1684811
 SHA256 (stalwartlabs-stalwart-v0.16.27_GH0.tar.gz) = 24f7e8aa8e35cd985c1c66a74b7aaa072f773397293a8473159be78e7815321e
