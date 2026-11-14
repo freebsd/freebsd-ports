@@ -1,6 +1,6 @@
 PORTNAME=	stringzilla
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.3.0
+DISTVERSION=	5.3.2
 CATEGORIES=	devel python
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -36,13 +36,13 @@ PEP517_INSTALL_CMD_cpus=	${PYTHON_CMD} -m installer --destdir ${STAGEDIR} --pref
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
-TEST_WRKSRC=	${WRKSRC}/test
-TEST_ARGS=	--disable-plugin-autoload \
+TEST_ARGS=	--disable-plugin-autoload test/ \
 		-p repeat -p pytest_run_parallel \
-		--ignore=similarities.py \
-		--ignore=fingerprints.py \
-		--ignore=szs_helpers.py # ignored tests fail, see https://github.com/ashvardanian/StringZilla/issues/340
-TEST_ARGS+=	--ignore=stringzillas.py # fails: AttributeError: module 'stringzillas' has no attribute 'LevenshteinDistances'
+		--ignore=test/similarities.py \
+		--ignore=test/fingerprints.py \
+		--ignore=test/szs_helpers.py # ignored tests fail, see https://github.com/ashvardanian/StringZilla/issues/340
+TEST_ARGS+=	-k 'not 4gb_generator' # needs over 8GB of memory and gets killed
+TEST_ARGS+=	--ignore=test/stringzillas.py # fails: AttributeError: module 'stringzillas' has no attribute 'LevenshteinDistances'
 
 post-install: # build the second (stringzillas_cpus) module and install it using similar commands as in python.mk
 	# remove test files from the previous install of stringzilla module
@@ -60,6 +60,6 @@ post-install: # build the second (stringzillas_cpus) module and install it using
 	# remove test files from strngzillas_cpu module install
 	@${RM} -r ${STAGEDIR}${PYTHON_SITELIBDIR}/test
 
-# tests as of 5.3.0: 10595 passed, 73 skipped in 38.16s
+# tests as of 5.3.2: 10524 passed, 148 skipped, 1 deselected in 37.98s
 
 .include <bsd.port.mk>
