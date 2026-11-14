@@ -1,4 +1,4 @@
-TIMESTAMP = 1789444031
+TIMESTAMP = 1794818367
 SHA256 (gram-3.3.0.tar.gz) = eda5c167ed2c29ebd03310b236a06f3f29fd0007be3c58bd341992e52f765629
 SIZE (gram-3.3.0.tar.gz) = 12744029
 SHA256 (rust/crates/addr2line-0.25.1.crate) = 1b5d307320b3181d6d7954e663bd7c774a838b8220fe0593c86d9fb09f498b4b
@@ -2075,3 +2075,5 @@ SHA256 (WhatsApp-tree-sitter-erlang-2ace143dea47c872b334660956742dda4efa4ea3_GH0
 SIZE (WhatsApp-tree-sitter-erlang-2ace143dea47c872b334660956742dda4efa4ea3_GH0.tar.gz) = 193709
 SHA256 (zed-industries-calloop-eb6b4fd17b9af5ecc226546bdd04185391b3e265_GH0.tar.gz) = 8698ebc194a6c3ee377cde94f4fdff590f6a7973bc7987c880801fa7fd69e5c3
 SIZE (zed-industries-calloop-eb6b4fd17b9af5ecc226546bdd04185391b3e265_GH0.tar.gz) = 94768
+SHA256 (d77ce0972ae021460525fae2f60ee894e7aad31c.patch) = 6f3ed73f0339dad4f7609595b923584e2f6072bb21756006f1d9636d4f466f11
+SIZE (d77ce0972ae021460525fae2f60ee894e7aad31c.patch) = 1793

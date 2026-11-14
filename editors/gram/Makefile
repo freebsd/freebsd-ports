@@ -5,6 +5,8 @@ CATEGORIES=	editors
 MASTER_SITES=	https://codeberg.org/GramEditor/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/:main
 PKGNAMESUFFIX=	-text-editor
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:main
+PATCH_SITES=	https://codeberg.org/GramEditor/${PORTNAME}/commit/
+PATCHFILES=	d77ce0972ae021460525fae2f60ee894e7aad31c.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Fork of the Zed code editor without AI or telemetry
