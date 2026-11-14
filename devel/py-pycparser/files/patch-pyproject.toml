@@ -1,19 +1,19 @@
---- pyproject.toml.orig	2026-10-08 12:16:12 UTC
+--- pyproject.toml.orig	2026-10-22 13:32:36 UTC
 +++ pyproject.toml
 @@ -1,5 +1,5 @@
  [build-system]
--requires = ["setuptools>=69"]
+-requires = ["setuptools>=77.0.3"]
 +requires = ["setuptools>=61"]
  build-backend = "setuptools.build_meta"
  
  [project]
 @@ -7,8 +7,7 @@ readme = "README.rst"
- version = "3.01"
+ version = "3.12"
  description = "C parser in Python"
  readme = "README.rst"
 -license = "BSD-3-Clause"
 -license-files = ["LICENSE"]
 +license = { text = "BSD-3-Clause" }
- requires-python = ">=3.10"
+ requires-python = ">=3.11"
  authors = [{name = "Eli Bendersky", email = "eliben@gmail.com"}]
  maintainers = [{name = "Eli Bendersky", email = "eliben@gmail.com"}]
