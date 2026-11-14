@@ -1,9 +1,13 @@
 -- Relax uv-build upper bound for devel/py-uv-build 0.12.0 compatibility.
 
---- pyproject.toml.orig	2026-07-29 00:00:00 UTC
+--- pyproject.toml.orig	1970-01-01 00:00:00 UTC
 +++ pyproject.toml
-@@ -51,3 +51,3 @@
+@@ -51,7 +51,7 @@ dev = [
+ ]
+ 
  [build-system]
 -requires = ["uv_build>=0.11,<0.12"]
 +requires = ["uv_build>=0.11"]
  build-backend = "uv_build"
+ 
+ [tool.uv.build-backend]
