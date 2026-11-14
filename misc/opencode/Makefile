@@ -1,6 +1,6 @@
 PORTNAME=	opencode
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.5
+DISTVERSION=	2.3.0
 CATEGORIES=	misc
 
 # Upstream ships no FreeBSD builds of OpenTUI's Zig core, fff's Rust cdylib, the
@@ -12,14 +12,14 @@ CATEGORIES=	misc
 # OPENTUI_VERSION and FFF_VERSION must match the pinned @opentui/core and
 # @ff-labs/fff-bun releases (the root package.json catalog and
 # packages/core/package.json) or the native FFI ABI breaks.
-OPENTUI_VERSION=	0.8.0
+OPENTUI_VERSION=	0.8.4
 FFF_VERSION=	0.10.5
 #
 # opencode-pty is the persistent terminal daemon the client spawns.  It is built
 # from the same source tree as the client (packages/process-daemon), and
 # GHOSTTY_REVISION must match its ghostty-revision file, or the client rejects
 # the daemon as a protocol mismatch.
-GHOSTTY_REVISION=	ab0b9da9e88fcb4b0533a1854e84628f663930af
+GHOSTTY_REVISION=	83fb95624b0439ee660c2679b43b38c8b63769cd
 
 MASTER_SITES=	https://registry.npmjs.org/@ff-labs/fff-bun/-/:fffbun
 DISTFILES=	fff-bun-${FFF_VERSION}.tgz:fffbun
@@ -156,7 +156,7 @@ post-patch:
 	@${PATCH} -d ${OPENTUI_WRKSRC} -p0 --batch < ${FILESDIR}/opentui-build.zig.patch
 	@${PATCH} -d ${OPENTUI_WRKSRC} -p0 --batch < ${FILESDIR}/opentui-ghostty-vt-freebsd.patch
 	@${PATCH} -d ${OPENCODE_PTY_WRKSRC} -p1 --batch < ${FILESDIR}/opencode-pty-build.rs.patch
-	@${PATCH} -d ${GHOSTTY_WRKSRC} -p1 --batch < ${FILESDIR}/ghostty-zig-0.16-std.patch
+	@${PATCH} -d ${OPENCODE_PTY_WRKSRC} -p1 --batch < ${FILESDIR}/opencode-pty-ghostty-1.4.patch
 
 do-build:
 	@${ECHO_MSG} "===> Installing OpenCode dependencies (offline)"
