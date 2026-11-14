@@ -1,0 +1,22 @@
+-- Use the legacy license table and relax the setuptools requirement
+-- The tree's devel/py-setuptools (63.1.0) does not support PEP 639 license expressions nor setuptools>=77
+
+--- pyproject.toml.orig	2026-11-13 08:29:01 UTC
++++ pyproject.toml
+@@ -3,8 +3,7 @@ description = "Access dict values as attributes (works
+ dynamic = ["version"]
+ readme = "README.rst"
+ description = "Access dict values as attributes (works recursively)."
+-license = "LGPL-3.0-only"
+-license-files = ["LICENSE"]
++license = { text = "LGPL-3.0-only" }
+ authors = [
+     { name = "Mathieu Leplatre", email = "mathieu.leplatre@makina-corpus.com" },
+ ]
+@@ -31,5 +30,5 @@ packages = ["easydict"]
+ # presence enables setuptools_scm (version from git tags)
+ 
+ [build-system]
+-requires = ["setuptools>=77", "setuptools_scm>=8"]
++requires = ["setuptools>=63.1.0", "setuptools_scm>=8"]
+ build-backend = "setuptools.build_meta"
