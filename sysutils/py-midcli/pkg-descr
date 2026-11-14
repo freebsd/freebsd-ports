@@ -1,0 +1,5 @@
+NAS Command Line Interface.
+
+midcli provides the cli command, an interactive shell for the TrueNAS
+middleware with command completion.  It can connect to a remote TrueNAS
+system with the --url, --user and --password options.

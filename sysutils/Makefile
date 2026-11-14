@@ -1146,6 +1146,7 @@
     SUBDIR += py-leviathan
     SUBDIR += py-liquidctl
     SUBDIR += py-magika
+    SUBDIR += py-midcli
     SUBDIR += py-mitogen
     SUBDIR += py-mqttwarn
     SUBDIR += py-nagiosplugin
