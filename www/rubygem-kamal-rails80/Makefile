@@ -1,5 +1,6 @@
 PORTNAME=	kamal
 PORTVERSION=	2.12.0
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails80
@@ -19,7 +20,7 @@ RUN_DEPENDS=	kamal-proxy>=0.9.2:www/kamal-proxy \
 		rubygem-concurrent-ruby>=1.2<2:devel/rubygem-concurrent-ruby \
 		rubygem-dotenv>=3.1<4:misc/rubygem-dotenv \
 		rubygem-ed25519>=1.4<2:security/rubygem-ed25519 \
-		rubygem-net-ssh>=7.3,2<8,2:security/rubygem-net-ssh \
+		rubygem-net-ssh7>=7.3<8:security/rubygem-net-ssh7 \
 		rubygem-sshkit>=1.23.0<2.0:security/rubygem-sshkit \
 		rubygem-thor>=1.3<2:devel/rubygem-thor \
 		rubygem-zeitwerk>=2.6.18<3.0:devel/rubygem-zeitwerk
