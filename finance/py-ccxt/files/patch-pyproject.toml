@@ -2,7 +2,7 @@
 -- pycparser is a transitive dependency of cffi; the latest release is 2.23.
 -- Upstream: https://github.com/ccxt/ccxt/issues/29383
 
---- pyproject.toml.orig	2026-10-01 06:19:36 UTC
+--- pyproject.toml.orig	2026-11-04 15:18:30 UTC
 +++ pyproject.toml
 @@ -1,5 +1,5 @@
  [build-system]
@@ -12,7 +12,7 @@
  
  [project]
 @@ -7,7 +7,7 @@ readme = "python/README.md"
- version = "4.5.85"
+ version = "4.5.92"
  description = "A cryptocurrency trading API with more than 100 exchanges in JavaScript / TypeScript / Python / C# / PHP / Go"
  readme = "python/README.md"
 -license = "MIT"
@@ -20,12 +20,8 @@
  authors = [
      { name = "Igor Kroitor", email = "igor.kroitor@gmail.com" },
  ]
-@@ -43,20 +43,20 @@ dependencies = [
- # all dependencies are pinned to exact versions to protect against
- # malicious or vulnerable releases of downstream dependencies
- dependencies = [
--    "certifi==2026.6.17",
-+    "certifi>=2026.6.17",
+@@ -46,17 +46,17 @@ dependencies = [
+     "certifi>=2026.6.17",
      "requests>=2.32,<3",
      "cryptography>=50,<51",
 -    "typing_extensions==4.16.0",
@@ -50,7 +46,7 @@
      # wheel matrix on PyPI (CPython 3.10-3.14 only, no PyPy, no free-threaded builds).
      # NOTE: lowercase "arm64" matches macOS but intentionally NOT Windows "ARM64"
      # (marker `in` is a case-sensitive substring match; cp310 has no win_arm64 wheel)
--    "orjson==3.11.9; implementation_name == \"cpython\" and python_version < \"3.15\" and platform_machine in \"x86_64 AMD64 aarch64 arm64 armv7l i686 ppc64le s390x\"",
+-    "orjson>=3.11.9,<4; implementation_name == \"cpython\" and python_version < \"3.15\" and platform_machine in \"x86_64 AMD64 aarch64 arm64 armv7l i686 ppc64le s390x\"",
 +    "orjson>=3.11.9; implementation_name == \"cpython\" and python_version < \"3.15\" and platform_machine in \"x86_64 AMD64 aarch64 arm64 armv7l i686 ppc64le s390x\"",
      # fast secp256k1 signing (libsecp256k1), installed only where coincurve 21.0.0
      # ships a prebuilt wheel so that `pip install ccxt` never triggers a C source
@@ -66,13 +62,13 @@
 -    "aiosignal==1.4.0",
 -    "attrs==26.1.0",
 -    "frozenlist==1.8.0",
--    "multidict==6.7.1",
+-    "multidict==6.9.1",
 -    "propcache==0.5.2",
 +    "aiohappyeyeballs>=2.7.1",
 +    "aiosignal>=1.4.0",
 +    "attrs>=26.1.0",
 +    "frozenlist>=1.8.0",
-+    "multidict>=6.7.1",
++    "multidict>=6.9.1",
 +    "propcache>=0.5.2",
      # "aiodns==4.0.4",
      # # transitive dependencies of aiodns

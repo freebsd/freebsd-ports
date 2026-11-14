@@ -1,6 +1,6 @@
 PORTNAME=	ccxt
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.5.85
+DISTVERSION=	4.5.92
 CATEGORIES=	finance python
 #MASTER_SITES=	PYPI # missing file for tests, seee https://github.com/ccxt/ccxt/issues/30798
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -56,6 +56,6 @@ post-extract: # workaround for https://github.com/ccxt/ccxt/issues/16220
 post-install:
 	@${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR}/ccxt -type d \( -name '.benchmarks' -o -name '.pytest_cache' \) -exec ${RM} -rf {} + 2>/dev/null || true
 
-# tests as of 4.5.85: 1 failed, 192 passed, 7 warnings, 1 error in 17.39s, see https://github.com/ccxt/ccxt/issues/30799
+# tests as of 4.5.92: 110 passed, 7 warnings in 13.67s
 
 .include <bsd.port.mk>
