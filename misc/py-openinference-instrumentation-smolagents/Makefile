@@ -1,5 +1,5 @@
 PORTNAME=	openinference-instrumentation-smolagents
-PORTVERSION=	0.1.43
+PORTVERSION=	0.1.50
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,8 +13,8 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openinference-instrumentation>=0.1.71:misc/py-openinference-instrumentation@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}openinference-semantic-conventions>=0.1.41:misc/py-openinference-semantic-conventions@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openinference-instrumentation>=0.1.77:misc/py-openinference-instrumentation@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}openinference-semantic-conventions>=0.1.44:misc/py-openinference-semantic-conventions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}opentelemetry-api>0:devel/py-opentelemetry-api@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}opentelemetry-instrumentation>0:devel/py-opentelemetry-instrumentation@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}opentelemetry-semantic-conventions>0:devel/py-opentelemetry-semantic-conventions@${PY_FLAVOR} \
