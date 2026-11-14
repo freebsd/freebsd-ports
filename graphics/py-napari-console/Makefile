@@ -1,6 +1,5 @@
 PORTNAME=	napari-console
-DISTVERSION=	0.1.4
-PORTREVISION=	1
+DISTVERSION=	0.1.5
 CATEGORIES=	graphics python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,11 +13,11 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
-		${PYTHON_PKGNAMEPREFIX}setuptools-scm>0:devel/py-setuptools-scm@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=8.0:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipykernel>=5.2.0:devel/py-ipykernel@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipykernel>=7.1:devel/py-ipykernel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ipython>=7.7.0:devel/ipython@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}qtconsole>0:devel/py-qtconsole@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}qtconsole>=4.5.1:devel/py-qtconsole@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}QtPy>=1.7.0:devel/py-QtPy@${PY_FLAVOR}
 
 USES=		python
