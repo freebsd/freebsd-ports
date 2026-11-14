@@ -3,12 +3,15 @@ PORTVERSION=	1.5.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
-MAINTAINER=	ehaupt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nostalgia bucklespring keyboard sound
 WWW=		https://github.com/zevv/bucklespring
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN=		Unfetchable audio/alure dependency
+DEPRECATED=	Depends on deprecated and unfetchable audio/alure
 
 LIB_DEPENDS=	libalure.so:audio/alure
 
