@@ -1,0 +1,4 @@
+Apache TVM FFI is an open ABI and foreign function interface for machine
+learning systems. It provides a minimal, stable C ABI and a set of C++ and
+Python bindings that let ML compilers, frameworks and libraries interoperate
+by passing tensors and calling functions across language boundaries.
