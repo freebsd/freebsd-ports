@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2026-05-09 20:18:28 UTC
++++ pyproject.toml
+@@ -33,7 +33,7 @@ Source = "https://github.com/Knio/dominate"
+ 
+ 
+ [build-system]
+-requires = ["setuptools>=75"]
++requires = ["setuptools>=61"]
+ build-backend = "setuptools.build_meta"
+ 
+ [tool.setuptools]
