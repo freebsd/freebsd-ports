@@ -1,5 +1,6 @@
 bin/astyle
 %%PORTDOCS%%%%DOCSDIR%%/astyle.html
+%%PORTDOCS%%%%DOCSDIR%%/astyle512.png
 %%PORTDOCS%%%%DOCSDIR%%/development.html
 %%PORTDOCS%%%%DOCSDIR%%/favicon.ico
 %%PORTDOCS%%%%DOCSDIR%%/index.html
