@@ -1513,6 +1513,7 @@
     SUBDIR += rubygem-uri_template
     SUBDIR += rubygem-whois
     SUBDIR += rubygem-x
+    SUBDIR += rubygem-x-core
     SUBDIR += rubygem-xmlrpc
     SUBDIR += rude
     SUBDIR += rustconn

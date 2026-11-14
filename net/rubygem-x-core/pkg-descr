@@ -1,0 +1,16 @@
+The HTTP layer of the x gem: a small, dependency-light client for the X API that
+returns parsed JSON.
+
+It handles OAuth 1.0a, OAuth 2.0 with PKCE authorization and token refresh, and
+bearer tokens. It also handles redirects, proxies, timeouts, HTTP errors, and
+rate limits, and opens a GET whose body is read as it arrives, as a stream is.
+Its only dependency that is not a default gem is simple_oauth, which has no
+dependencies of its own; it also asks for net-http 0.9.1 or a later 0.x release,
+the default gem it sends its requests with, since the 0.6 that Ruby 3.4 ships
+cannot request a host named by an IPv6 literal, and on Ruby 4.0 an earlier
+net-http does not retry a connection that times out opening. Media uploads live
+in x-uploads, and the streams of the API, read a post at a time and reconnected
+as X recommends, in x-streams.
+
+Most applications should install x, which adds resource objects from
+x-resources. Install x-core alone when you only want raw JSON.
