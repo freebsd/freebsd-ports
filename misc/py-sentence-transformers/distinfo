@@ -1,3 +1,3 @@
-TIMESTAMP = 1791739710
-SHA256 (sentence_transformers-6.1.0.tar.gz) = 299025df51550dc1a38f05be27a9b0bf881c4e5e70542b3b7757d05e00aa3868
-SIZE (sentence_transformers-6.1.0.tar.gz) = 576566
+TIMESTAMP = 1794520419
+SHA256 (sentence_transformers-6.3.0.tar.gz) = a19acbf76a958817136ee4e89f90b483255d77f3dc9a7309814f7600592c450e
+SIZE (sentence_transformers-6.3.0.tar.gz) = 625203
