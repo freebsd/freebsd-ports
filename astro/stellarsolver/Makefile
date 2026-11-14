@@ -1,5 +1,5 @@
 PORTNAME=	stellarsolver
-DISTVERSION=	2.8
+DISTVERSION=	2.9
 CATEGORIES=	astro
 
 MAINTAINER=	acm@FreeBSD.org
