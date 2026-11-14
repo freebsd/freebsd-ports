@@ -1,6 +1,5 @@
 PORTNAME=	cabextract
-PORTVERSION=	1.11
-PORTREVISION=	1
+PORTVERSION=	1.12
 CATEGORIES=	archivers
 MASTER_SITES=	https://www.cabextract.org.uk/ \
 		LOCAL/sunpoet
