@@ -1,3 +1,3 @@
-TIMESTAMP = 1791759900
-SHA256 (databricks_sdk-0.151.0.tar.gz) = fadd9da86d5e4ba991f7507a90dc099ee4ca10dad2b36b594654dacdb2b34b63
-SIZE (databricks_sdk-0.151.0.tar.gz) = 1143960
+TIMESTAMP = 1794518354
+SHA256 (databricks_sdk-0.166.0.tar.gz) = 56dc99da1cf99a60d514cc4548d026ef623789762c311280cfa205e8f58a3093
+SIZE (databricks_sdk-0.166.0.tar.gz) = 1268887
