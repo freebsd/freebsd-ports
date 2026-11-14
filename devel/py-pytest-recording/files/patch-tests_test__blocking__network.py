@@ -1,7 +1,9 @@
+-- Remove the AF_NETLINK based test.
+-- FreeBSD has no AF_NETLINK, so the import of socket.AF_NETLINK in the tests fails.
 --- tests/test_blocking_network.py.orig	2020-02-02 00:00:00 UTC
 +++ tests/test_blocking_network.py
-@@ -10,11 +10,9 @@ from pytest_recording.network import blocking_context
- 
+@@ -13,11 +13,9 @@ from pytest_recording.network import blocking_context
+ from pytest_recording import network
  from pytest_recording.network import blocking_context
  
 -# Windows doesn’t have AF_NETLINK & AF_UNIX
@@ -13,7 +15,7 @@
      AF_UNIX = None  # type: ignore[assignment]
  
  
-@@ -28,7 +26,6 @@ except ImportError as exc:
+@@ -31,7 +29,6 @@ except ImportError as exc:
      pycurl = None  # type: ignore[assignment]
  
  
@@ -21,7 +23,7 @@
  skip_unix = pytest.mark.skipif(AF_UNIX is None, reason="AF_UNIX not available on this platform")
  
  
-@@ -174,13 +171,6 @@ def test_block_network_blocked_socket():
+@@ -177,13 +174,6 @@ def test_block_network_blocked_socket():
          call("./blocked_socket", AF_UNIX, SOCK_STREAM)
  
  
@@ -30,7 +32,7 @@
 -@skip_netlink
 -@pytest.mark.block_network(allowed_hosts=["./allowed_socket", "127.0.0.1", "0"])
 -def test_blocked():
--    with pytest.raises(RuntimeError, match=r"^Network is disabled$"):
+-    with pytest.raises(RuntimeError, match=r"^Network is disabled for host ''$"):
 -        call((0, 0), AF_NETLINK, SOCK_RAW)
  
  

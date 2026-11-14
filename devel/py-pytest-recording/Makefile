@@ -1,5 +1,5 @@
 PORTNAME=	pytest-recording
-DISTVERSION=	0.14.0
+DISTVERSION=	0.14.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,15 +17,18 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-httpbin>=0:devel/py-pytest-httpbin@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-mock>=0:devel/py-pytest-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}werkzeug>=3.1.3:www/py-werkzeug@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}werkzeug>=3.1.9:www/py-werkzeug@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	pep517 autoplist pytest
 
-TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} \
+		PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 \
+		PYTEST_PLUGINS=pytest_httpbin.plugin,pytest_mock,pytest_recording.plugin
+TEST_ARGS=	--disable-plugin-autoload
 
 NO_ARCH=	yes
 
-# tests as of 0.13.4: 63 passed, 8 skipped, 55 warnings in 23.68s
+# tests as of 0.14.1: 68 passed, 9 skipped in 19.19s
 
 .include <bsd.port.mk>
