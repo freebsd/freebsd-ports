@@ -1,6 +1,6 @@
---- odbcapi.c.orig	2017-02-03 13:05:10 UTC
+--- odbcapi.c.orig	2026-11-02 18:01:24 UTC
 +++ odbcapi.c
-@@ -913,11 +913,7 @@ RETCODE		SQL_API
+@@ -1049,11 +1049,7 @@ SQLExtendedFetch(HSTMT hstmt,
  SQLExtendedFetch(HSTMT hstmt,
  				 SQLUSMALLINT fFetchType,
  				 SQLLEN irow,
@@ -12,7 +12,7 @@
  				 SQLUSMALLINT *rgfRowStatus)
  {
  	RETCODE	ret;
-@@ -927,17 +923,7 @@ SQLExtendedFetch(HSTMT hstmt,
+@@ -1066,17 +1062,7 @@ SQLExtendedFetch(HSTMT hstmt,
  	ENTER_STMT_CS(stmt);
  	SC_clear_error(stmt);
  	StartRollbackState(stmt);

@@ -1,23 +1,25 @@
 PORTNAME=	postgresql
-PORTVERSION=	16.00.0000
+DISTVERSION=	18_00_0006
+DISTVERSIONPREFIX=REL-
 CATEGORIES=	databases
-MASTER_SITES=	PGSQL/odbc/versions/src
 PKGNAMESUFFIX=	-odbc
-DISTNAME=	psqlodbc-${PORTVERSION}
-DIST_SUBDIR=	postgresql
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	PostgreSQL ODBC driver
-WWW=		https://www.postgresql.org/ftp/odbc/versions/
+WWW=		https://github.com/postgresql-interfaces/psqlodbc/
 
 LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/license.txt
 
 LIB_DEPENDS=	libodbc.so:databases/unixODBC
 
-USES=		compiler:c11 libtool pgsql
+USES=		autoreconf compiler:c11 libtool pgsql
 USE_CSTD=	gnu11
 USE_LDCONFIG=	yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	postgresql-interfaces
+GH_PROJECT=	psqlodbc
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-unixodbc=${LOCALBASE}
