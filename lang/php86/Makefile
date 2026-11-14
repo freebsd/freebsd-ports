@@ -1,5 +1,5 @@
 PORTNAME=	php86
-DISTVERSION=	8.6.0RC5
+DISTVERSION=	8.6.0RC6
 CATEGORIES?=	lang devel www
 #MASTER_SITES=	PHP/distributions
 MASTER_SITES=	https://downloads.php.net/~mbeccati/ \
@@ -370,13 +370,7 @@ USES+=	ldap
 
 .  if ${PHP_MODNAME} == "mbstring"
 
-CONFIGURE_ARGS+=	--enable-mbstring
-
-OPTIONS_DEFINE=		REGEX
-
-REGEX_DESC=		Enable multibyte regex support
-REGEX_LIB_DEPENDS=	libonig.so:devel/oniguruma
-REGEX_CONFIGURE_OFF=	--disable-mbregex
+CONFIGURE_ARGS+=	--enable-mbstring --disable-mbregex
 
 PHP_HEADER_DIRS=	libmbfl libmbfl/filters libmbfl/mbfl libmbfl/nls
 .  endif
