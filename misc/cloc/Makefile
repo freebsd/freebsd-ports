@@ -1,5 +1,5 @@
 PORTNAME=	cloc
-PORTVERSION=	2.10
+PORTVERSION=	2.12
 DISTVERSIONPREFIX=	v
 CATEGORIES=	misc
 #MASTER_SITES=	https://github.com/AlDanial/cloc/releases/download/v${PORTVERSION}/
