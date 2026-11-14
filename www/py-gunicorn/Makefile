@@ -1,5 +1,5 @@
 PORTNAME=	gunicorn
-DISTVERSION=	26.2.0
+DISTVERSION=	27.0.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -35,7 +35,7 @@ GEVENT_DESC=	Greenlet worker
 PROCTITLE_DESC=	Custom process titles with setproctitle(3)
 TORNADO_DESC=	Tornado async worker
 
-GEVENT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gevent>=1.4.0:devel/py-gevent@${PY_FLAVOR} \
+GEVENT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gevent>=24.10.1:devel/py-gevent@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR}
 PROCTITLE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setproctitle>0:devel/py-setproctitle@${PY_FLAVOR}
 TORNADO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tornado>=6.5.7:www/py-tornado@${PY_FLAVOR}
