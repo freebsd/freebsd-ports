@@ -1,8 +1,7 @@
 PORTNAME=	unicodecsv
-PORTVERSION=	0.14.1
-PORTREVISION=	1
+PORTVERSION=	0.14.2
 CATEGORIES=	devel python
-MASTER_SITES=	PYPI
+#MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -18,5 +17,9 @@ USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	jdunck
+GH_PROJECT=	python-unicodecsv
 
 .include <bsd.port.mk>
