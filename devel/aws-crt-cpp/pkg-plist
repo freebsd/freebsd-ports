@@ -1,5 +1,7 @@
 include/aws/crt/Allocator.h
 include/aws/crt/Api.h
+include/aws/crt/BigDecimal.h
+include/aws/crt/BigInteger.h
 include/aws/crt/ByteBufUtils.h
 include/aws/crt/Config.h
 include/aws/crt/DateTime.h
