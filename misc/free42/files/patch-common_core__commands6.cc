@@ -1,6 +1,6 @@
---- common/core_commands6.cc.orig	2021-03-17 00:38:17 UTC
+--- common/core_commands6.cc.orig	2026-11-15 03:37:32 UTC
 +++ common/core_commands6.cc
-@@ -1096,8 +1096,8 @@ int docmd_stoflag(arg_struct *arg) {
+@@ -1013,8 +1013,8 @@ int docmd_stoflag(arg_struct *arg) {
          p <<= 1;
      }
  

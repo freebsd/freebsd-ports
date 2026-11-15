@@ -1,10 +1,10 @@
---- gtk/build-intel-lib.sh.orig	2021-11-07 11:36:24 UTC
+--- gtk/build-intel-lib.sh.orig	2026-11-15 03:38:37 UTC
 +++ gtk/build-intel-lib.sh
-@@ -41,8 +41,8 @@ else
+@@ -41,8 +41,8 @@ fi
    ENDIAN_ARG=
  fi
  
--tar xvfz ../inteldecimal/IntelRDFPMathLib20U1.tar.gz
+-tar xvfz ../decimal/IntelRDFPMathLib20U1.tar.gz
  cd IntelRDFPMathLib20U1
 +sed -i '' -e 's/\r//g' LIBRARY/src/bid_functions.h
  patch -p0 <../intel-lib-linux.patch

@@ -1,5 +1,5 @@
 PORTNAME=	free42
-DISTVERSION=	3.4.1
+DISTVERSION=	3.5.3
 CATEGORIES=	misc
 MASTER_SITES=	http://thomasokken.com/free42/upstream/
 DISTNAME=	${PORTNAME}-nologo-${DISTVERSION}
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 USES=		compiler dos2unix gmake gnome localbase pkgconfig tar:tgz xorg
 USE_GNOME=	atk cairo gdkpixbuf gtk30 pango
 USE_XORG=	x11 xmu
-DOS2UNIX_FILES=	gtk/IntelRDFPMathLib20U1/LIBRARY/float128/op_system.h \
+xDOS2UNIX_FILES=	gtk/IntelRDFPMathLib20U1/LIBRARY/float128/op_system.h \
 		gtk/IntelRDFPMathLib20U1/LIBRARY/float128/architecture.h \
 		gtk/IntelRDFPMathLib20U1/LIBRARY/src/bid_functions.h \
 		common/bid_functions.h \
@@ -36,7 +36,7 @@ PLIST_FILES+=	bin/${PORTNAME}${v}
 .endfor
 
 post-extract:
-	@cd ${BUILD_WRKSRC} && tar xfz ../inteldecimal/IntelRDFPMathLib20U1.tar.gz
+	@cd ${BUILD_WRKSRC} && tar xfz ../decimal/IntelRDFPMathLib20U1.tar.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|(free42dirname)|("${DATADIR}/skins")|' \
