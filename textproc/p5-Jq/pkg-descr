@@ -1,0 +1,8 @@
+Jq is a data language for querying and manipulating JSON data. It takes
+JSON as input, queries and manipulates it, and then prints JSON as
+output.
+
+Jq.pm is a Perl module binding to Jq. Its inputs and outputs are Perl
+data objects that can be represented as JSON.
+
+The current implementation invokes the local jq binary via IPC::Run.

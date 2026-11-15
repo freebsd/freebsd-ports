@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Jq.pm
+%%SITE_PERL%%/jq.pod
+%%PERL5_MAN3%%/jq.3.gz
