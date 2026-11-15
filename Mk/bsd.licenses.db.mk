@@ -38,9 +38,9 @@ Licenses_db_Include_MAINTAINER=         portmgr@FreeBSD.org
 # _LICENSE_LIST_GROUPS	- List of defined license groups
 #
 
-_LICENSE_LIST= 	BSL CDDL CPAL-1.0 ClArtistic EPL EU GFDL GMGPL \
-				ISCL MIT NCSA ODbL OFL10 OFL11 OWL OpenSSL PD PSFL PostgreSQL \
-				RUBY UNLICENSE WTFPL1 WTFPL ZLIB ZPL21
+_LICENSE_LIST= 	BSL CDDL EPL EU GFDL GMGPL \
+				ISCL ODbL OFL10 OFL11 OWL PD PSFL \
+				RUBY UNLICENSE WTFPL1 ZLIB ZPL21
 
 # EU family
 _LICENSE_LIST+= EUPL11 EUPL12
@@ -65,20 +65,95 @@ _LICENSE_LIST+= ART10 ARTPERL10 ART20
 # PHP family
 _LICENSE_LIST+= PHP202 PHP30 PHP301
 
-# Creative Commons family
-_LICENSE_LIST+=	CC0-1.0 \
-				CC-BY-1.0 CC-BY-2.0 CC-BY-2.5 CC-BY-3.0 CC-BY-4.0 \
-				CC-BY-ND-1.0 CC-BY-ND-2.0 CC-BY-ND-2.5 CC-BY-ND-3.0 CC-BY-ND-4.0 \
-				CC-BY-NC-1.0 CC-BY-NC-2.0 CC-BY-NC-2.5 CC-BY-NC-3.0 CC-BY-NC-4.0 \
-				CC-BY-NC-ND-1.0 CC-BY-NC-ND-2.0 CC-BY-NC-ND-2.5 CC-BY-NC-ND-3.0 CC-BY-NC-ND-4.0 \
-				CC-BY-NC-SA-1.0 CC-BY-NC-SA-2.0 CC-BY-NC-SA-2.5 CC-BY-NC-SA-3.0 CC-BY-NC-SA-4.0 \
-				CC-BY-SA-1.0 CC-BY-SA-2.0 CC-BY-SA-2.5 CC-BY-SA-3.0 CC-BY-SA-4.0
-
 # MPL family
 _LICENSE_LIST+= MPL10 MPL11 MPL20
 
 # Others
 _LICENSE_LIST+= NONE
+
+# ---------------------------------------------------------------------------
+# SPDX-spelled identifiers below, added via the portlicense SPDX-compliance
+# audit's undefined-licenses report: SPDX ids independently detected in the
+# tree with no _LICENSE_NAME_ entry to represent them.
+#
+# Deliberately excludes every id on that report which is itself a deprecated
+# SPDX id (e.g. GPL-2.0+, GPL-3.0+, LGPL-3.0, bare GPL-1.0/GPL-3.0/AGPL-3.0,
+# BSD-2-Clause-NetBSD, StandardML-NJ), only the modern replacement spelling
+# is registered (e.g. GPL-2.0-or-later, LGPL-3.0-or-later), never the
+# deprecated alias, so nothing here steers a new port toward a spelling SPDX
+# itself no longer recommends.
+#
+# 3 of these are SPDX *exceptions* (used as "<license> WITH <exception>" in
+# a real SPDX expression), not standalone licenses on their own;
+# GCC-exception-3.1, Independent-modules-exception, cryptsetup-OpenSSL-
+# exception. This framework has no WITH-expression support, so they are
+# registered here as plain standalone LICENSE= tokens like everything else;
+# flagged individually below so nobody mistakes one for a complete license
+# grant by itself.
+# ---------------------------------------------------------------------------
+
+# Pre-existing (already SPDX-spelled before this audit's additions below;
+# the entire Creative Commons family, plus CPAL-1.0/ClArtistic/MIT/NCSA/
+# OpenSSL/PostgreSQL/WTFPL, were all added correctly-spelled from day one).
+# Moved here, out of the legacy _LICENSE_LIST+= blocks above.
+_LICENSE_SPDX_LIST= \
+				CC0-1.0 CC-BY-1.0 CC-BY-2.0 CC-BY-2.5 \
+				CC-BY-3.0 CC-BY-4.0 CC-BY-ND-1.0 CC-BY-ND-2.0 \
+				CC-BY-ND-2.5 CC-BY-ND-3.0 CC-BY-ND-4.0 CC-BY-NC-1.0 \
+				CC-BY-NC-2.0 CC-BY-NC-2.5 CC-BY-NC-3.0 CC-BY-NC-4.0 \
+				CC-BY-NC-ND-1.0 CC-BY-NC-ND-2.0 CC-BY-NC-ND-2.5 CC-BY-NC-ND-3.0 \
+				CC-BY-NC-ND-4.0 CC-BY-NC-SA-1.0 CC-BY-NC-SA-2.0 CC-BY-NC-SA-2.5 \
+				CC-BY-NC-SA-3.0 CC-BY-NC-SA-4.0 CC-BY-SA-1.0 CC-BY-SA-2.0 \
+				CC-BY-SA-2.5 CC-BY-SA-3.0 CC-BY-SA-4.0 CPAL-1.0 \
+				ClArtistic MIT NCSA OpenSSL \
+				PostgreSQL WTFPL
+
+# GNU family (SPDX)
+_LICENSE_SPDX_LIST+= \
+				AGPL-1.0-only AGPL-3.0-or-later GPL-1.0-or-later GPL-2.0-or-later \
+				GPL-3.0-or-later LGPL-2.1-or-later LGPL-3.0-or-later GFDL-1.2-or-later \
+				GFDL-1.3-invariants-or-later GFDL-1.3-no-invariants-or-later GCC-exception-3.1
+
+# BSD family (SPDX variants)
+_LICENSE_SPDX_LIST+= \
+				BSD-1-Clause BSD-2-Clause-Darwin BSD-2-Clause-first-lines BSD-2-Clause-pos-unchanged \
+				BSD-2-Clause-Views BSD-3-Clause-Attribution BSD-3-Clause-Clear BSD-3-Clause-flex \
+				BSD-3-Clause-HP BSD-3-Clause-LBNL BSD-3-Clause-Modification BSD-3-Clause-No-Military-License \
+				BSD-3-Clause-No-Nuclear-License-2014 BSD-3-Clause-Open-MPI BSD-3-Clause-Sun BSD-3-Clause-Tso \
+				BSD-4-Clause-UC BSD-4.3TAHOE BSD-Attribution-HPND-disclaimer BSD-Inferno-Nettverk \
+				BSD-Mark-Modifications BSD-Source-beginning-file BSD-Systemics BSD-Systemics-W3Works
+
+# MIT / X11 / HPND family
+_LICENSE_SPDX_LIST+= \
+				MIT-0 MIT-advertising MIT-Festival MIT-Khronos-old \
+				MIT-Modern-Variant MIT-open-group MIT-STK MIT-testregex \
+				X11 X11-distribute-modifications-variant X11-swapped Xdebug-1.03 \
+				Xnet HPND-MIT-disclaimer HPND-Netrek HPND-sell-MIT-disclaimer-xserver \
+				HPND-sell-variant HPND-UC-export-US
+
+# Open-source / academic license family
+_LICENSE_SPDX_LIST+= \
+				AFL-2.1 CDDL-1.1 CECILL-2.0 CPL-1.0 \
+				CUA-OPL-1.0 ECL-2.0 Elastic-2.0 EPL-1.0 \
+				EPL-2.0 EUPL-1.1 EUPL-1.2 LPL-1.02 \
+				OSET-PL-2.1 OSL-2.1 SSPL-1.0 SUL-1.0 \
+				TGPPL-1.0 TPL-1.0 any-OSI
+
+# Vendor/project-specific named licenses
+_LICENSE_SPDX_LIST+= \
+				Adobe-Utopia Aladdin Artistic-dist bzip2-1.0.6 \
+				CC-PDDC CFITSIO checkmk CMU-Mach \
+				cryptsetup-OpenSSL-exception curl DocBook-XML dtoa \
+				GD HDF5 Hippocratic-2.1 ICU \
+				ImageMagick Independent-modules-exception Info-ZIP jove \
+				JSON Libpng Linux-OpenIB mplus \
+				MVT-1.1 NCL NRL NTP \
+				OLDAP-1.4 OSSP Pixar pkgconf \
+				Python-2.0.1 python-ldap Sendmail SHL-0.5 \
+				SHL-0.51 Sleepycat SMLNJ Spencer-94 \
+				SSLeay-standalone TCL WordNet
+
+_LICENSE_LIST+=	${_LICENSE_SPDX_LIST}
 
 # List of groups (only names must be present)
 
@@ -93,6 +168,280 @@ _LICENSE_NAME_OSI=	OSI Approved
 _LICENSE_NAME_COPYFREE= Complies with Copyfree Standard Definition
 
 _LICENSE_NAME_FONTS=	Font licenses
+
+# --- GNU family (SPDX) ---
+
+_LICENSE_NAME_AGPL-1.0-only= Affero General Public License v1.0 only
+
+_LICENSE_NAME_AGPL-3.0-or-later= GNU Affero General Public License v3.0 or later
+_LICENSE_GROUPS_AGPL-3.0-or-later= FSF OSI
+
+_LICENSE_NAME_GPL-1.0-or-later= GNU General Public License v1.0 or later
+
+_LICENSE_NAME_GPL-2.0-or-later= GNU General Public License v2.0 or later
+_LICENSE_GROUPS_GPL-2.0-or-later= FSF OSI
+
+_LICENSE_NAME_GPL-3.0-or-later= GNU General Public License v3.0 or later
+_LICENSE_GROUPS_GPL-3.0-or-later= FSF OSI
+
+_LICENSE_NAME_LGPL-2.1-or-later= GNU Lesser General Public License v2.1 or later
+_LICENSE_GROUPS_LGPL-2.1-or-later= FSF OSI
+
+_LICENSE_NAME_LGPL-3.0-or-later= GNU Lesser General Public License v3.0 or later
+_LICENSE_GROUPS_LGPL-3.0-or-later= FSF OSI
+
+_LICENSE_NAME_GFDL-1.2-or-later= GNU Free Documentation License v1.2 or later
+_LICENSE_GROUPS_GFDL-1.2-or-later= FSF
+
+_LICENSE_NAME_GFDL-1.3-invariants-or-later= GNU Free Documentation License v1.3 or later - invariants
+
+_LICENSE_NAME_GFDL-1.3-no-invariants-or-later= GNU Free Documentation License v1.3 or later - no invariants
+
+_LICENSE_NAME_GCC-exception-3.1= GCC Runtime Library exception 3.1  # SPDX exception, used as "<license> WITH ${this}"
+
+# --- BSD family (SPDX variants) ---
+
+_LICENSE_NAME_BSD-1-Clause= BSD 1-Clause License
+_LICENSE_GROUPS_BSD-1-Clause= OSI
+
+_LICENSE_NAME_BSD-2-Clause-Darwin= BSD 2-Clause - Ian Darwin variant
+
+_LICENSE_NAME_BSD-2-Clause-first-lines= BSD 2-Clause - first lines requirement
+
+_LICENSE_NAME_BSD-2-Clause-pos-unchanged= BSD 2-Clause - position unchanged variant
+
+_LICENSE_NAME_BSD-2-Clause-Views= BSD 2-Clause with views sentence
+
+_LICENSE_NAME_BSD-3-Clause-Attribution= BSD with attribution
+
+_LICENSE_NAME_BSD-3-Clause-Clear= BSD 3-Clause Clear License
+_LICENSE_GROUPS_BSD-3-Clause-Clear= FSF
+
+_LICENSE_NAME_BSD-3-Clause-flex= BSD 3-Clause Flex variant
+
+_LICENSE_NAME_BSD-3-Clause-HP= Hewlett-Packard BSD variant license
+
+_LICENSE_NAME_BSD-3-Clause-LBNL= Lawrence Berkeley National Labs BSD variant license
+_LICENSE_GROUPS_BSD-3-Clause-LBNL= OSI
+
+_LICENSE_NAME_BSD-3-Clause-Modification= BSD 3-Clause Modification
+
+_LICENSE_NAME_BSD-3-Clause-No-Military-License= BSD 3-Clause No Military License
+
+_LICENSE_NAME_BSD-3-Clause-No-Nuclear-License-2014= BSD 3-Clause No Nuclear License 2014
+
+_LICENSE_NAME_BSD-3-Clause-Open-MPI= BSD 3-Clause Open MPI variant
+_LICENSE_GROUPS_BSD-3-Clause-Open-MPI= OSI
+
+_LICENSE_NAME_BSD-3-Clause-Sun= BSD 3-Clause Sun Microsystems
+
+_LICENSE_NAME_BSD-3-Clause-Tso= BSD 3-Clause Tso variant
+
+_LICENSE_NAME_BSD-4-Clause-UC= BSD-4-Clause (University of California-Specific)
+
+_LICENSE_NAME_BSD-4.3TAHOE= BSD 4.3 TAHOE License
+
+_LICENSE_NAME_BSD-Attribution-HPND-disclaimer= BSD with Attribution and HPND disclaimer
+
+_LICENSE_NAME_BSD-Inferno-Nettverk= BSD-Inferno-Nettverk
+
+_LICENSE_NAME_BSD-Mark-Modifications= BSD Mark Modifications License
+
+_LICENSE_NAME_BSD-Source-beginning-file= BSD Source Code Attribution - beginning of file variant
+
+_LICENSE_NAME_BSD-Systemics= Systemics BSD variant license
+
+_LICENSE_NAME_BSD-Systemics-W3Works= Systemics W3Works BSD variant license
+
+# --- MIT / X11 / HPND family ---
+
+_LICENSE_NAME_MIT-0=	MIT No Attribution
+_LICENSE_GROUPS_MIT-0=	OSI
+
+_LICENSE_NAME_MIT-advertising= Enlightenment License (e16)
+
+_LICENSE_NAME_MIT-Festival= MIT Festival Variant
+
+_LICENSE_NAME_MIT-Khronos-old= MIT Khronos - old variant
+
+_LICENSE_NAME_MIT-Modern-Variant= MIT License Modern Variant
+_LICENSE_GROUPS_MIT-Modern-Variant= OSI
+
+_LICENSE_NAME_MIT-open-group= MIT Open Group variant
+
+_LICENSE_NAME_MIT-STK=	MIT-STK License
+
+_LICENSE_NAME_MIT-testregex= MIT testregex Variant
+
+_LICENSE_NAME_X11=	X11 License
+_LICENSE_GROUPS_X11=	FSF
+
+_LICENSE_NAME_X11-distribute-modifications-variant= X11 License Distribution Modification Variant
+
+_LICENSE_NAME_X11-swapped= X11 swapped final paragraphs
+
+_LICENSE_NAME_Xdebug-1.03= Xdebug License v 1.03
+
+_LICENSE_NAME_Xnet=	X.Net License
+_LICENSE_GROUPS_Xnet=	OSI
+
+_LICENSE_NAME_HPND-MIT-disclaimer= Historical Permission Notice and Disclaimer with MIT disclaimer
+
+_LICENSE_NAME_HPND-Netrek= Historical Permission Notice and Disclaimer - Netrek variant
+
+_LICENSE_NAME_HPND-sell-MIT-disclaimer-xserver= Historical Permission Notice and Disclaimer - sell xserver variant with MIT disclaimer
+
+_LICENSE_NAME_HPND-sell-variant= Historical Permission Notice and Disclaimer - sell variant
+
+_LICENSE_NAME_HPND-UC-export-US= Historical Permission Notice and Disclaimer - University of California, US export warning
+
+# --- Open-source / academic license family ---
+
+_LICENSE_NAME_AFL-2.1=	Academic Free License v2.1
+_LICENSE_GROUPS_AFL-2.1= FSF OSI
+
+_LICENSE_NAME_CDDL-1.1=	Common Development and Distribution License 1.1
+_LICENSE_GROUPS_CDDL-1.1= OSI
+
+_LICENSE_NAME_CECILL-2.0= CeCILL Free Software License Agreement v2.0
+_LICENSE_GROUPS_CECILL-2.0= FSF
+
+_LICENSE_NAME_CPL-1.0=	Common Public License 1.0
+_LICENSE_GROUPS_CPL-1.0= FSF OSI
+
+_LICENSE_NAME_CUA-OPL-1.0= CUA Office Public License v1.0
+_LICENSE_GROUPS_CUA-OPL-1.0= OSI
+
+_LICENSE_NAME_ECL-2.0=	Educational Community License v2.0
+_LICENSE_GROUPS_ECL-2.0= FSF OSI
+
+_LICENSE_NAME_Elastic-2.0= Elastic License 2.0
+
+_LICENSE_NAME_EPL-1.0=	Eclipse Public License 1.0
+_LICENSE_GROUPS_EPL-1.0= FSF OSI
+
+_LICENSE_NAME_EPL-2.0=	Eclipse Public License 2.0
+_LICENSE_GROUPS_EPL-2.0= FSF OSI
+
+_LICENSE_NAME_EUPL-1.1=	European Union Public License 1.1
+_LICENSE_GROUPS_EUPL-1.1= FSF OSI
+
+_LICENSE_NAME_EUPL-1.2=	European Union Public License 1.2
+_LICENSE_GROUPS_EUPL-1.2= FSF OSI
+
+_LICENSE_NAME_LPL-1.02=	Lucent Public License v1.02
+_LICENSE_GROUPS_LPL-1.02= FSF OSI
+
+_LICENSE_NAME_OSET-PL-2.1= OSET Public License version 2.1
+_LICENSE_GROUPS_OSET-PL-2.1= OSI
+
+_LICENSE_NAME_OSL-2.1=	Open Software License 2.1
+_LICENSE_GROUPS_OSL-2.1= FSF OSI
+
+_LICENSE_NAME_SSPL-1.0=	Server Side Public License, v 1
+
+_LICENSE_NAME_SUL-1.0=	Sustainable Use License v1.0
+
+_LICENSE_NAME_TGPPL-1.0= Transitive Grace Period Public Licence 1.0
+
+_LICENSE_NAME_TPL-1.0=	THOR Public License 1.0
+
+_LICENSE_NAME_any-OSI=	Any OSI License
+
+# --- Vendor/project-specific named licenses ---
+
+_LICENSE_NAME_Adobe-Utopia= Adobe Utopia Font License
+
+_LICENSE_NAME_Aladdin=	Aladdin Free Public License
+
+_LICENSE_NAME_Artistic-dist= Artistic License 1.0 (dist)
+
+_LICENSE_NAME_bzip2-1.0.6= bzip2 and libbzip2 License v1.0.6
+
+_LICENSE_NAME_CC-PDDC=	Creative Commons Public Domain Dedication and Certification
+
+_LICENSE_NAME_CFITSIO=	CFITSIO License
+
+_LICENSE_NAME_checkmk=	Checkmk License
+
+_LICENSE_NAME_CMU-Mach=	CMU Mach License
+
+_LICENSE_NAME_cryptsetup-OpenSSL-exception= cryptsetup OpenSSL exception  # SPDX exception, used as "<license> WITH ${this}"
+
+_LICENSE_NAME_curl=	curl License
+_LICENSE_GROUPS_curl=	OSI
+
+_LICENSE_NAME_DocBook-XML= DocBook XML License
+
+_LICENSE_NAME_dtoa=	David M. Gay dtoa License
+
+_LICENSE_NAME_GD=	GD License
+
+_LICENSE_NAME_HDF5=	HDF5 License
+
+_LICENSE_NAME_Hippocratic-2.1= Hippocratic License 2.1
+
+_LICENSE_NAME_ICU=	ICU License
+_LICENSE_GROUPS_ICU=	OSI
+
+_LICENSE_NAME_ImageMagick= ImageMagick License
+
+_LICENSE_NAME_Independent-modules-exception= Independent Module Linking exception  # SPDX exception, used as "<license> WITH ${this}"
+
+_LICENSE_NAME_Info-ZIP=	Info-ZIP License
+
+_LICENSE_NAME_jove=	Jove License
+
+_LICENSE_NAME_JSON=	JSON License
+
+_LICENSE_NAME_Libpng=	libpng License
+
+_LICENSE_NAME_Linux-OpenIB= Linux Kernel Variant of OpenIB.org license
+
+_LICENSE_NAME_mplus=	mplus Font License
+
+_LICENSE_NAME_MVT-1.1=	MVT License 1.1
+
+_LICENSE_NAME_NCL=	NCL Source Code License
+
+_LICENSE_NAME_NRL=	NRL License
+
+_LICENSE_NAME_NTP=	NTP License
+_LICENSE_GROUPS_NTP=	OSI
+
+_LICENSE_NAME_OLDAP-1.4= Open LDAP Public License v1.4
+
+_LICENSE_NAME_OSSP=	OSSP License
+
+_LICENSE_NAME_Pixar=	Pixar License
+
+_LICENSE_NAME_pkgconf=	pkgconf License
+
+_LICENSE_NAME_Python-2.0.1= Python License 2.0.1
+_LICENSE_GROUPS_Python-2.0.1= OSI
+
+_LICENSE_NAME_python-ldap= Python ldap License
+
+_LICENSE_NAME_Sendmail=	Sendmail License
+
+_LICENSE_NAME_SHL-0.5=	Solderpad Hardware License v0.5
+
+_LICENSE_NAME_SHL-0.51=	Solderpad Hardware License, Version 0.51
+
+_LICENSE_NAME_Sleepycat= Sleepycat License
+_LICENSE_GROUPS_Sleepycat= FSF OSI
+
+_LICENSE_NAME_SMLNJ=	Standard ML of New Jersey License
+_LICENSE_GROUPS_SMLNJ=	FSF
+
+_LICENSE_NAME_Spencer-94= Spencer License 94
+
+_LICENSE_NAME_SSLeay-standalone= SSLeay License - standalone
+
+_LICENSE_NAME_TCL=	TCL/TK License
+
+_LICENSE_NAME_WordNet=	WordNet License
+_LICENSE_GROUPS_WordNet= OSI
 
 # Default permissions for licenses here, if not defined
 
