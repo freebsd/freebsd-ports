@@ -1,6 +1,6 @@
---- swift/utils/swift_build_support/swift_build_support/products/llvm.py.orig	2026-09-13 22:35:30 UTC
+--- swift/utils/swift_build_support/swift_build_support/products/llvm.py.orig	2026-10-27 05:56:10 UTC
 +++ swift/utils/swift_build_support/swift_build_support/products/llvm.py
-@@ -247,7 +247,9 @@ class LLVM(cmake_product.CMakeProduct):
+@@ -233,7 +233,9 @@ class LLVM(cmake_product.CMakeProduct):
                  crosscompiling=self.is_cross_compile_target(host_target))
              llvm_cmake_options.define('CMAKE_TOOLCHAIN_FILE:PATH', toolchain_file)
  

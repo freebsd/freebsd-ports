@@ -1,6 +1,6 @@
 PORTNAME=	swift
 DISTVERSIONPREFIX=	swift-
-DISTVERSION=	6.4.1
+DISTVERSION=	6.4.2
 DISTVERSIONSUFFIX=	-RELEASE
 CATEGORIES=	lang
 PKGNAMESUFFIX=	6
@@ -22,7 +22,7 @@ _BOOTSTRAP_OSSUFX=	14
 .endif
 _BOOTSTRAP_OSSUFX?=	# empty
 
-OLD_SWIFT_VERSION=		6.4.0
+OLD_SWIFT_VERSION=		6.4.1
 .if !defined(BOOTSTRAP_MODE)
 BOOTSTRAP_SWIFT_VERSION=	${DISTVERSION}
 .else
@@ -75,7 +75,7 @@ GH_TUPLE=	\
 		apple:swift-atomics:1.3.1:swift_atomics/swift-atomics \
 		swiftlang:swift-build:${DISTVERSIONFULL}:swift_build/swift-build \
 		apple:swift-certificates:1.10.1:swift_certificates/swift-certificates \
-		apple:swift-collections:1.7.3:swift_collections/swift-collections \
+		apple:swift-collections:1.7.5:swift_collections/swift-collections \
 		swiftlang:swift-corelibs-blocksruntime:${DISTVERSIONFULL}:swift_corelibs_blocksruntime/swift-corelibs-blocksruntime \
 		swiftlang:swift-corelibs-foundation:${DISTVERSIONFULL}:swift_corelibs_foundation/swift-corelibs-foundation \
 		swiftlang:swift-corelibs-libdispatch:${DISTVERSIONFULL}:swift_corelibs_libdispatch/swift-corelibs-libdispatch \
@@ -103,7 +103,7 @@ GH_TUPLE=	\
 		swiftlang:swift-syntax:${DISTVERSIONFULL}:swift_syntax/swift-syntax \
 		apple:swift-system:1.8.1:swift_system/swift-system \
 		swiftlang:swift-testing:${DISTVERSIONFULL}:swift_testing/swift-testing \
-		swiftlang:swift-toolchain-sarif:7a26547:swift_toolchain_sarif/swift-toolchain-sarif \
+		swiftlang:swift-toolchain-sarif:5c3da54:swift_toolchain_sarif/swift-toolchain-sarif \
 		swiftlang:swift-toolchain-sqlite:1.0.13:swift_toolchain_sqlite/swift-toolchain-sqlite \
 		swiftlang:swift-tools-protocols:${DISTVERSIONFULL}:swift_tools_protocols/swift-tools-protocols \
 		swiftlang:swift-tools-support-core:${DISTVERSIONFULL}:swift_tools_support_core/swift-tools-support-core \

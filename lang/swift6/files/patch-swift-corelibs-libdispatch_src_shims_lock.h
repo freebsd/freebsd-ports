@@ -1,4 +1,4 @@
---- swift-corelibs-libdispatch/src/shims/lock.h.orig	2026-05-01 02:25:26 UTC
+--- swift-corelibs-libdispatch/src/shims/lock.h.orig	2026-10-23 02:00:16 UTC
 +++ swift-corelibs-libdispatch/src/shims/lock.h
 @@ -92,7 +92,15 @@ typedef uint32_t dispatch_lock;
  #define DLOCK_OWNER_MASK			((dispatch_lock)0xfffffffc)
@@ -14,6 +14,6 @@
 + */
 +#define DLOCK_TID_MAX				((dispatch_tid)(DLOCK_OWNER_MASK >> 2))
 +#define _dispatch_tid_self()			(((dispatch_tid)_dispatch_get_tsd_base()->tid) << 2)
-
+ 
  DISPATCH_ALWAYS_INLINE
  static inline dispatch_tid
