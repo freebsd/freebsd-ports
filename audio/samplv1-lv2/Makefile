@@ -1,5 +1,5 @@
 PORTNAME=	samplv1
-DISTVERSION=	1.5.1
+DISTVERSION=	1.5.2
 CATEGORIES=	audio
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-lv2
@@ -16,6 +16,8 @@ LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 		libfftw3f.so:math/fftw3-float \
 		libjack.so:audio/jack \
 		liblo.so:audio/liblo \
+		librubberband.so:audio/rubberband \
+		libsamplerate.so:audio/libsamplerate \
 		libsndfile.so:audio/libsndfile
 
 USES=		cmake compiler:c++17-lang desktop-file-utils gl localbase pkgconfig qt:6 \
