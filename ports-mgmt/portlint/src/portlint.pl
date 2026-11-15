@@ -534,7 +534,7 @@ sub checkdescr {
 		$tmp .= $_;
 		chomp || &perror("WARN", $file, -1, "lines should terminate with a ".
 			"newline (i.e. '\\n').");
-		if (/$/) {
+		if (/\r$/) {
 			&perror("WARN", $file, -1, "lines should not contain carriage ".
 				"returns.  Strip all carriage returns (e.g. run dos2unix) ".
 				"in $file.");
@@ -1100,7 +1100,7 @@ sub checkpatch {
 			"``java'' instead");
 	}
 
-	if ($whole =~ //) {
+	if ($whole =~ /\r/) {
 		my $lineno = &linenumber($`);
 		&perror("WARN", $file, $lineno, "patch contains ^M characters. ".
 			"Consider defining USES=dos2unix to remove DOS line endings ".
@@ -1113,6 +1113,127 @@ sub checkpatch {
 	}
 
 	close(IN);
+}
+
+my %dep_state_cache;
+my %dep_reported;
+
+# Verify that a dependency port is complete and fully committed to git.
+sub check_dep_port_state {
+	my ($path, $dir, $j, $file) = @_;
+
+	if (!defined $dep_state_cache{"$path|$j"}) {
+		my @errs;
+		my @ext;
+		if (! -f "$path/Makefile") {
+			push @errs, "dependency port $dir listed in $j has no Makefile.";
+		} else {
+			my @v = split(/\n/, `make -C '$path' BATCH=yes -V DESCR -V DISTINFO_FILE -V NO_FETCH -V DISTFILES 2>/dev/null`, -1);
+			my ($descr, $distinfo, $nofetch, $distfiles) = map { $_ // '' } @v[0..3];
+			if ($descr eq '') {
+				push @errs, "dependency port $dir listed in $j: cannot determine DESCR (broken Makefile?).";
+			} elsif (! -f $descr) {
+				push @errs, "dependency port $dir listed in $j has no pkg-descr ($descr).";
+			}
+			push @ext, ['pkg-descr', $descr] if ($descr ne '');
+			if ($nofetch eq '' && $distfiles =~ /\S/) {
+				if ($distinfo eq '') {
+					push @errs, "dependency port $dir listed in $j: cannot determine DISTINFO_FILE.";
+				} elsif (! -f $distinfo) {
+					push @errs, "dependency port $dir listed in $j has no distinfo ($distinfo).";
+				} else {
+					push @ext, ['distinfo', $distinfo];
+				}
+			}
+		}
+		if (-e "$portsdir/.git") {
+			my $rel = $dir;
+			$rel =~ s|/+$||;
+			my $g = "git -C '$portsdir'";
+			my $head = `$g ls-tree -r --name-only HEAD -- '$rel' 2>/dev/null`;
+			my $status = `$g status --porcelain --untracked-files=normal -- '$rel' 2>/dev/null`;
+			my (@untracked, @added, @changed);
+			foreach my $l (split(/\n/, $status)) {
+				my ($x, $y, $f) = $l =~ /^(.)(.) (.*)$/ or next;
+				if ($x eq '?') {
+					push @untracked, $f;
+				} elsif ($x eq 'A') {
+					push @added, $f;
+				} else {
+					push @changed, $f;
+				}
+			}
+			my $pre = "dependency port $dir listed in $j";
+			my $list = sub {
+				my @f = map { my $n = s|^\Q$rel\E/?||r; $n eq '' ? '.' : $n } @_;
+				my $more = @f > 5;
+				@f = @f[0..4] if ($more);
+				join(', ', @f).($more ? ', ...' : '');
+			};
+			if ($head eq '') {
+				if (@untracked && !@added) {
+					push @errs, "$pre is untracked in git (not added).";
+				} elsif (@added && !@untracked) {
+					push @errs, "$pre is added to git but not committed.";
+				} else {
+					push @errs, "$pre is only partially added to git and ".
+						"not committed (untracked: ".$list->(@untracked).
+						"; added but uncommitted: ".$list->(@added).").";
+				}
+			} elsif ($status ne '') {
+				my @d;
+				push @d, "untracked: ".$list->(@untracked) if (@untracked);
+				push @d, "added but uncommitted: ".$list->(@added) if (@added);
+				push @d, "modified/deleted/other: ".$list->(@changed) if (@changed);
+				push @errs, "$pre is committed but not fully: ".join('; ', @d).".";
+			}
+		}
+		# DESCR/DISTINFO_FILE may point outside the port directory
+		if (-e "$portsdir/.git") {
+			foreach my $e (@ext) {
+				my ($what, $f) = @$e;
+				next if ($f =~ m|^\Q$path\E/|);
+				my $g = "git -C '$portsdir'";
+				my $st = `$g status --porcelain --untracked-files=normal -- '$f' 2>/dev/null`;
+				my $in = `$g ls-tree --name-only HEAD -- '$f' 2>/dev/null`;
+				if ($in eq '' && $st =~ /^\?\?/) {
+					push @errs, "dependency port $dir listed in $j uses $what $f which is untracked in git.";
+				} elsif ($in eq '' && $st ne '') {
+					push @errs, "dependency port $dir listed in $j uses $what $f which is added to git but not committed.";
+				} elsif ($st ne '') {
+					push @errs, "dependency port $dir listed in $j uses $what $f which is committed but modified/changed.";
+				}
+			}
+		}
+		$dep_state_cache{"$path|$j"} = \@errs;
+	}
+	foreach my $e (@{$dep_state_cache{"$path|$j"}}) {
+		&perror("FATAL", $file, -1, $e) if (!$dep_reported{"$path|$j"}++);
+	}
+}
+
+# Check dependencies as expanded by make(1), which includes those added
+# by USES, USE_* and options and thus are not visible in the Makefile text.
+sub check_expanded_depends {
+	my $file = shift;
+	my @cats = map { $_.'DEPENDS' } ('', qw(PKG_ FETCH_ EXTRACT_ PATCH_ BUILD_ LIB_ RUN_ TEST_));
+	my @vals = split(/\n/, get_makevar(@cats), -1);
+
+	foreach my $i (0..$#cats) {
+		my $v = $vals[$i] // '';
+		$v =~ s/\0//g;
+		foreach my $dep (split(/\s+/, $v)) {
+			next if ($dep eq '');
+			my ($spec) = split(/\@/, $dep);
+			my @l = split(':', $spec);
+			next if (@l < 2);
+			my $dir = $l[1];
+			$dir =~ s|^\Q$portsdir\E/||;
+			next if ($dir =~ m|^/|);
+			next if (! -d "$portsdir/$dir");
+			&check_dep_port_state("$portsdir/$dir", $dir, $cats[$i], $file);
+		}
+	}
 }
 
 sub check_depends_syntax {
@@ -1331,15 +1452,16 @@ sub check_depends_syntax {
 						"libFOO.so (e.g., lib$m{'dep'}.so).");
 			}
 
-			# Check port dir existence
+			# Check port dir existence and git state
 			$k = $ENV{'PORTSDIR'}.'/'.$m{'dir'};
 			if (! -d $k) {
-				&perror("WARN", $file, -1, "no port directory $k ".
+				&perror("FATAL", $file, -1, "no port directory $k ".
 					"found, even though it is ".
 					"listed in $j.");
 			} else {
 				print "OK: port directory $k found.\n"
 					if ($verbose);
+				&check_dep_port_state($k, $m{'dir'}, $j, $file);
 			}
 
 			# Check for relative path
@@ -2142,7 +2264,7 @@ sub checkmakefile {
 	# whole file: DOS line endings
 	#
 	print "OK: checking for DOS line ending removal.\n" if ($verbose);
-	if ($whole =~ // || $whole =~ /:cntrl:/) {
+	if ($whole =~ /\r/ || $whole =~ /:cntrl:/) {
 		my $lineno = &linenumber($`);
 		&perror("WARN", $file, $lineno, "Possible manual removal of DOS ".
 			"line endings found.  Consider defining USES=dos2unix instead.");
@@ -3520,6 +3642,7 @@ TEST_DEPENDS FETCH_DEPENDS DEPENDS_TARGET
 	# Check depends that might be specified based on the WITH_/WITHOUT_
 	# arguments and other external variables.
 	check_depends_syntax($tmp, $file);
+	check_expanded_depends($file);
 
 	# check WRKSRC/NO_WRKSUBDIR
 	#
