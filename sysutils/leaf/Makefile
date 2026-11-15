@@ -1,10 +1,11 @@
 PORTNAME=	leaf
-DISTVERSION=	1.29.2
+DISTVERSION=	1.29.3
 CATEGORIES=	sysutils
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Terminal-based Markdown previewer with a GUI-like experience
-WWW=		https://leaf.rivolink.mg/
+WWW=		https://leaf.rivolink.mg/ \
+		https://github.com/RivoLink/leaf
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
