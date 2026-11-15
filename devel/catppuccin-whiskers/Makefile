@@ -1,13 +1,13 @@
 PORTNAME=	whiskers
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.9.0
-PORTREVISION=	5
+DISTVERSION=	2.10.0
 CATEGORIES=	devel
 PKGNAMEPREFIX=	catppuccin-
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Soothing port creation tool for the high-spirited!
-WWW=		https://whiskers.catppuccin.com/
+WWW=		https://whiskers.catppuccin.com/ \
+		https://github.com/catppuccin/whiskers
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
