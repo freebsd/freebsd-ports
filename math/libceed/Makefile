@@ -1,6 +1,6 @@
 PORTNAME=	libceed
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.1
+DISTVERSION=	1.1.0
 CATEGORIES=	math # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,5 +25,7 @@ BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libceed.so
+
+# tests fail to run, see https://github.com/CEED/libCEED/issues/2107
 
 .include <bsd.port.mk>
