@@ -1,5 +1,5 @@
 PORTNAME=	conky
-PORTVERSION=	1.25.4
+PORTVERSION=	1.26.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -16,16 +16,17 @@ LIB_DEPENDS=	libinotify.so:devel/libinotify
 
 USES=		cmake compiler:c++11-lib cpe gettext-runtime iconv \
 		localbase:ldflags lua:53 pkgconfig tar:bzip2
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	brndnmtthws
-GH_TAGNAME=	184d4e16a98a02d5f27acc5543b5ab37e9790e7d
 
 CMAKE_ARGS=	-DAPP_SED=${LOCALBASE}/bin/gsed \
 		-DBUILD_AUDACIOUS:BOOL=false \
 		-DBUILD_HDDTEMP:BOOL=false \
 		-DBUILD_IBM:BOOL=false \
 		-DBUILD_IOSTATS:BOOL=false \
-		-DBUILD_PORT_MONITORS:BOOL=false
+		-DBUILD_PORT_MONITORS:BOOL=false \
+		-DRELEASE:BOOL=true
 CONFLICTS?=	conky-awesome
 
 SLAVEDIRS=	sysutils/conky-awesome
