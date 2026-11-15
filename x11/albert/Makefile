@@ -20,7 +20,7 @@ RUN_DEPENDS=	play:audio/sox
 USES=	cmake compiler:c++23-lang gl libarchive localbase:ldflags pkgconfig python qt:6 xorg
 
 USE_GL=	gl opengl
-USE_QT=	base declarative scxml svg translations
+USE_QT=	base declarative scxml svg tools translations
 USE_XORG=x11 xext sm ice
 USE_LDCONFIG=	yes
 
