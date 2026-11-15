@@ -1,11 +1,8 @@
 PORTNAME=	sshfs
-DISTVERSION=	3.7.6
+DISTVERSION=	3.7.7
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	filesystems
 PKGNAMEPREFIX=	fusefs-
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	a73501f2159875aef082ab0a61731a8b7673d477.patch:-p1 # https://github.com/libfuse/sshfs/pull/212
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Mount remote directories over ssh
