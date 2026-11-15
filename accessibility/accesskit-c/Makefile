@@ -1,6 +1,5 @@
 PORTNAME=	accesskit-c
-DISTVERSION=	0.17.1
-PORTREVISION=	8
+DISTVERSION=	0.18.0
 CATEGORIES=	accessibility
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -30,9 +29,10 @@ MAKE_ENV=	${CARGO_ENV}
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 # Depends of API version found in x11-toolkits/gtk40
-PORTSCOUT=	limit:^0\.17\.
+PORTSCOUT=	limit:^0\.18\.
 
-PLIST_SUB=	API_VER=0.17
+PLIST_SUB=	DISTVERSION=${DISTVERSION} \
+		API_VER=${DISTVERSION:R}
 
 COMPILER_TYPE=	clang
 
