@@ -1,6 +1,6 @@
 PORTNAME=	koboldcpp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.123.1
+DISTVERSION=	1.124.2
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -81,9 +81,9 @@ do-install:
 	# embd files
 	@${MKDIR} ${STAGEDIR}${DATADIR}/embd_res
 .for embd in kcpp_docs.embd kcpp_sdui.embd klite.embd kokoro_ipa.embd lcpp.gz.embd \
-	     merges_utf8_c_str.embd qwen2_merges_utf8_c_str.embd rwkv_vocab.embd \
-	     rwkv_world_vocab.embd t5_tokenizer_json.embd taesd.embd taesd_3.embd \
-	     taesd_f.embd taesd_xl.embd umt5_tokenizer_json.embd
+	     merges_utf8_c_str.embd mistral2_merges_utf8_c_str.embd qwen2_merges_utf8_c_str.embd qwen3tts_voices_json.embd rwkv_vocab.embd \
+	     rwkv_world_vocab.embd t5_tokenizer_json.embd taesd.embd taesd_3.embd taesd_f.embd \
+	     taesd_f2.embd taesd_qi21.embd taesd_w21.embd taesd_xl.embd yue2_qwen_tiktoken.embd
 	${INSTALL_DATA} ${WRKSRC}/embd_res/${embd} ${STAGEDIR}${DATADIR}/embd_res/${embd}
 .endfor
 
