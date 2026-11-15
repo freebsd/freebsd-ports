@@ -1,6 +1,6 @@
 PORTNAME=	tuwunel
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.9.4
+DISTVERSION=	2.0.0
 CATEGORIES=	net-im
 
 MAINTAINER=	joneum@FreeBSD.org
@@ -33,12 +33,27 @@ CARGO_INSTALL_PATH=	src/main
 CARGO_ENV=	LIBCLANG_PATH=${LOCALBASE}/llvm${LLVM_DEFAULT}/lib
 CARGO_FEATURES=	--no-default-features \
 		brotli_compression \
+		bzip2_compression \
+		console \
+		cpu_affinity \
+		direct_tls \
 		element_hacks \
+		email \
+		gcs_storage \
 		gzip_compression \
 		jemalloc \
 		jemalloc_conf \
+		jwt_login \
+		ldap \
+		lz4_compression \
+		markdown \
+		mas \
 		media_thumbnail \
+		oidc \
 		release_max_log_level \
+		s3_storage \
+		sentry_telemetry \
+		synapse_admin \
 		url_preview \
 		zstd_compression
 

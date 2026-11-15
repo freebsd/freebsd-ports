@@ -7,6 +7,13 @@ least server_name before starting the service.  The database is kept in
 
 Tuwunel speaks plain HTTP and expects a reverse proxy in front of it for
 TLS and for serving the .well-known delegation of your domain.
+
+The database pool scales with the number of CPU cores and can exceed the
+default kern.threads.max_threads_per_proc of 1500 on larger hosts, which
+keeps the server from starting.  Lower max_workers under
+[global.database.pool] or raise that limit.
+
+On ZFS, set allow_fallocate = false under [global.rocksdb].
 EOM
 }
 ]
