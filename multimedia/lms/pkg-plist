@@ -48,6 +48,7 @@ etc/pam.d/lms
 %%DATADIR%%/default.service
 %%DATADIR%%/docroot/css/bootstrap.solar.min.css
 %%DATADIR%%/docroot/css/lms.css
+%%DATADIR%%/docroot/images/favicon.svg
 %%DATADIR%%/docroot/js/bootstrap.bundle.min.js
 %%DATADIR%%/docroot/js/mediaplayer.js
 %%DATADIR%%/lms
