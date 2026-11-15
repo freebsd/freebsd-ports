@@ -31983,6 +31983,8 @@ share/applications/usr_local_bin_qcadbin.desktop
 %%DATADIR%%/support/examples/transactionlistener/TransactionListenerPlugin.cpp
 %%DATADIR%%/support/examples/transactionlistener/TransactionListenerPlugin.h
 %%DATADIR%%/support/examples/transactionlistener/transactionlistener.pro
+%%DATADIR%%/support/logo/banner_w_1500x504.png
+%%DATADIR%%/support/logo/banner_w_1500x504_fb.png
 %%DATADIR%%/support/logo/favicon.ico
 %%DATADIR%%/support/logo/qcad.icon/Assets/glyph.svg
 %%DATADIR%%/support/logo/qcad.icon/icon.json
@@ -31997,7 +31999,6 @@ share/applications/usr_local_bin_qcadbin.desktop
 %%DATADIR%%/support/logo/qcad_icon_32.png
 %%DATADIR%%/support/logo/qcad_logo.png
 %%DATADIR%%/support/logo/qcad_manual.png
-%%DATADIR%%/support/splashscreen/splashscreen.svg
 %%DATADIR%%/support/support.pro
 %%DATADIR%%/themes/Coffee/icons/checkbox-checked-disabled.png
 %%DATADIR%%/themes/Coffee/icons/checkbox-checked-hover.png
