@@ -1,5 +1,5 @@
 PORTNAME=	xroar
-DISTVERSION=	1.12.1
+DISTVERSION=	1.13
 CATEGORIES=	emulators
 MASTER_SITES=	https://www.6809.org.uk/xroar/dl/
 MAINTAINER=	juhani@krekela.fi
@@ -19,7 +19,7 @@ USE_GL+=	gl
 USE_GNOME+=	gtk30
 USE_XORG+=	ice sm x11
 
-GNU_CONFIGURE=	yes
+GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--without-evdev \
 			--without-gtk2 \
 			--without-jack \
