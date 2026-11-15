@@ -1,6 +1,6 @@
-TIMESTAMP = 1782656964
-SHA256 (aws-session-manager-plugin-1.2.835.0_GH0.tar.gz) = 8f2e1e0772f28d659bc8be82a175c0b9389facb13b72e2bb5e02ab042b20203e
-SIZE (aws-session-manager-plugin-1.2.835.0_GH0.tar.gz) = 60870275
+TIMESTAMP = 1794736149
+SHA256 (aws-session-manager-plugin-1.2.896.0_GH0.tar.gz) = c44bcbd15736a63d513cc1c1d967f67641bd43bd9bc59f22f4c0e4af222b2afa
+SIZE (aws-session-manager-plugin-1.2.896.0_GH0.tar.gz) = 60874654
 SHA256 (aws-aws-sdk-go-v2-release-2026-03-09_GH0.tar.gz) = cc4800726f12e39c5f38d1322518fa7b82b7f4f934ed6811bd1c63c39f947bf7
 SIZE (aws-aws-sdk-go-v2-release-2026-03-09_GH0.tar.gz) = 58025688
 SHA256 (aws-smithy-go-v1.24.2_GH0.tar.gz) = 8daceebeeb30d1efe86fbed7068f47d924a179d1adb6aedf1c70de9ef58ea75e
