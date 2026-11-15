@@ -10,8 +10,6 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/compat/compat_utils.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/compat/imghdr.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/compat/shutil.py
-%%PYTHON_SITELIBDIR%%/yt_dlp/compat/urllib/__init__.py
-%%PYTHON_SITELIBDIR%%/yt_dlp/compat/urllib/request.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/cookies.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/dependencies/Cryptodome.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/dependencies/__init__.py
