@@ -1,6 +1,7 @@
 PORTNAME=	libmodplug
-PORTVERSION=	0.8.9.1.r461
+PORTVERSION=	0.8.9.2
 CATEGORIES=	audio
+MASTER_SITES=	SF/modplug-xmms/libmodplug/${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	ModPlug mod-like music shared libraries
@@ -11,9 +12,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cmake cpe
 CPE_VENDOR=	konstanty_bialkowski
-USE_GITHUB=	yes
-GH_ACCOUNT=	ShiftMediaProject
-GH_PROJECT=	modplug
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DBUILD_SHARED_LIBS:BOOL=ON \
