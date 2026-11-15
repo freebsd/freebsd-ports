@@ -1,6 +1,5 @@
 PORTNAME=	xray-16
-DISTVERSION=	2921-january-2025-rc1.20261001
-PORTREVISION=	2
+DISTVERSION=	2921-january-2025-rc1.20261115
 CATEGORIES=	games
 
 MAINTAINER=	freebsd@sysctl.cz
@@ -26,7 +25,7 @@ LIB_DEPENDS=	libogg.so:audio/libogg \
 USES=		cmake jpeg localbase:ldflags openal sdl
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenXRay
-GH_TAGNAME=	d4979c2
+GH_TAGNAME=	5c431a1
 GH_TUPLE=	GPUOpen-LibrariesAndSDKs:AGS_SDK:5d8812d:AGSSDK/Externals/AGS_SDK \
 		OpenXRay:GameSpy:eb1e41c:GameSpy/Externals/GameSpy \
 		OpenXRay:LuaJIT:5a5cd82:LuaJIT/Externals/LuaJIT \
@@ -34,7 +33,7 @@ GH_TUPLE=	GPUOpen-LibrariesAndSDKs:AGS_SDK:5d8812d:AGSSDK/Externals/AGS_SDK \
 		OpenXRay:luabind-deboostified:8da131b:luabind/Externals/luabind \
 		pattonkan:sse2rvv:f1ab916:sse2rvv/Externals/sse2rvv \
 		OpenXRay:xrLuaFix:0e89050:xrLuaFix/Externals/xrLuaFix \
-		OpenXRay:luafilesystem:314c0d0fe8f4676ef35ac8abf3731be8535812fb:luafilesystem/Externals/xrLuaFix/lfs \
+		OpenXRay:luafilesystem:146ab45:luafilesystem/Externals/xrLuaFix/lfs \
 		OpenXRay:lua-marshal:983a3bfd646486292daa9f2ec9b72409f86dc931:marsal/Externals/xrLuaFix/lua-marshal \
 		OpenXRay:lua-pack:c1e5a149b571cc31069e7e3146e881c203bdd052:pack/Externals/xrLuaFix/lua-pack
 USE_SDL=	sdl2
