@@ -51,6 +51,7 @@ share/mime/packages/org.rncbc.synthv1.xml
 %%DATADIR%%/preset/KickC2.synthv1
 %%DATADIR%%/preset/KickTecnoC1-TomG2.synthv1
 %%DATADIR%%/preset/LICENSE
+%%DATADIR%%/preset/Laser.synthv1
 %%DATADIR%%/preset/Lead_Bass.synthv1
 %%DATADIR%%/preset/Lead_Pulse.synthv1
 %%DATADIR%%/preset/Lead_Tau.synthv1
@@ -59,8 +60,10 @@ share/mime/packages/org.rncbc.synthv1.xml
 %%DATADIR%%/preset/MaracasAs4.synthv1
 %%DATADIR%%/preset/MellowP.synthv1
 %%DATADIR%%/preset/Modern_Organ.synthv1
+%%DATADIR%%/preset/MusixBox.synthv1
 %%DATADIR%%/preset/NoiseFlute.synthv1
 %%DATADIR%%/preset/Noises.synthv1
+%%DATADIR%%/preset/Noises_E-Guitar.synthv1
 %%DATADIR%%/preset/Ocean-WavesC3.synthv1
 %%DATADIR%%/preset/Old_Organ.synthv1
 %%DATADIR%%/preset/Overdrive-Open.synthv1
@@ -76,6 +79,8 @@ share/mime/packages/org.rncbc.synthv1.xml
 %%DATADIR%%/preset/Slow_Brass.synthv1
 %%DATADIR%%/preset/SnareD2.synthv1
 %%DATADIR%%/preset/SnareE2.synthv1
+%%DATADIR%%/preset/SnareLong.synthv1
+%%DATADIR%%/preset/SnareShort.synthv1
 %%DATADIR%%/preset/Static.synthv1
 %%DATADIR%%/preset/Steel_Guitar-Open.synthv1
 %%DATADIR%%/preset/Steel_Guitar.synthv1
