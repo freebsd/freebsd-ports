@@ -1,5 +1,5 @@
 PORTNAME=	lava
-DISTVERSION=	1.10
+DISTVERSION=	1.11
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -24,8 +24,10 @@ TEST_DEPENDS=	R-cran-geepack>0:math/R-cran-geepack \
 USES=		cran:auto-plist
 
 pre-test:
-# R-cran-mets package does not exist yet
-	@${LOCALBASE}/bin/Rscript -e 'install.packages("mets", \
+# Test depends not ported yet
+.for pkg in mets quarto
+	@${LOCALBASE}/bin/Rscript -e 'install.packages("${pkg}", \
 		repos = "https://cloud.r-project.org")'
+.endfor
 
 .include <bsd.port.mk>
