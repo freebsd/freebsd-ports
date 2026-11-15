@@ -1,0 +1,16 @@
+--- third_party/dawn/src/utils/BUILD.gn.orig	2026-10-19 21:50:55 UTC
++++ third_party/dawn/src/utils/BUILD.gn
+@@ -206,13 +206,6 @@ config("dawn_warnings") {
+       "-Wno-float-equal",
+       "-Wno-undefined-func-template",
+       "-Wno-unused-parameter",
+-
+-      # The lifetime-safety-* warnings are part of an experimental analysis.
+-      # Many individual diagnostics (like
+-      # -Wlifetime-safety-lifetimebound-violation) are not yet mapped to
+-      # toggleable warning flags, so we suppress the entire group and disable
+-      # the analysis pass.
+-      "-Wno-lifetime-safety-all",
+     ]
+ 
+     # P3. Checks that could be nice but probably don't help with hardening.

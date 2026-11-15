@@ -1,0 +1,11 @@
+--- third_party/ipcz/src/BUILD.gn.orig	2025-04-22 20:15:27 UTC
++++ third_party/ipcz/src/BUILD.gn
+@@ -7,7 +7,7 @@ import("//testing/test.gni")
+ import("//testing/libfuzzer/fuzzer_test.gni")
+ import("//testing/test.gni")
+ 
+-enable_multiprocess_tests = is_linux
++enable_multiprocess_tests = is_linux && !is_bsd
+ 
+ buildflag_header("test_buildflags") {
+   header = "test_buildflags.h"

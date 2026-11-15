@@ -1,0 +1,37 @@
+--- services/network/network_sandbox_hook_linux.cc.orig	2026-04-28 21:06:17 UTC
++++ services/network/network_sandbox_hook_linux.cc
+@@ -16,11 +16,14 @@
+ #include "sandbox/linux/syscall_broker/broker_file_permission.h"
+ #include "sandbox/policy/features.h"
+ 
++#if !BUILDFLAG(IS_BSD)
+ using sandbox::syscall_broker::BrokerFilePermission;
+ using sandbox::syscall_broker::MakeBrokerCommandSet;
++#endif
+ 
+ namespace network {
+ 
++#if !BUILDFLAG(IS_BSD)
+ sandbox::syscall_broker::BrokerCommandSet GetNetworkBrokerCommandSet() {
+   return MakeBrokerCommandSet({
+       sandbox::syscall_broker::COMMAND_ACCESS,
+@@ -104,9 +107,11 @@ void LoadNetworkLibraries() {
+   }
+ }
+ #endif  // BUILDFLAG(IS_CHROMEOS)
++#endif
+ 
+ bool NetworkPreSandboxHook(std::vector<std::string> network_context_parent_dirs,
+                            sandbox::policy::SandboxLinux::Options options) {
++#if !BUILDFLAG(IS_BSD)
+ #if BUILDFLAG(IS_CHROMEOS)
+   LoadNetworkLibraries();
+ #endif
+@@ -119,6 +124,7 @@ bool NetworkPreSandboxHook(std::vector<std::string> ne
+       GetNetworkBrokerCommandSet(),
+       GetNetworkFilePermissions(std::move(network_context_parent_dirs)),
+       options);
++#endif
+ 
+   return true;
+ }

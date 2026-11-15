@@ -1,0 +1,11 @@
+--- third_party/dawn/include/dawn/native/VulkanBackend.h.orig	2026-11-14 21:53:40 UTC
++++ third_party/dawn/include/dawn/native/VulkanBackend.h
+@@ -99,7 +99,7 @@ struct ExternalImageExportInfoVk : ExternalImageExport
+ };
+ 
+ // Can't use DAWN_PLATFORM_IS(LINUX) since header included in both Dawn and Chrome
+-#if defined(__linux__) || defined(__Fuchsia__)
++#if defined(__linux__) || defined(__Fuchsia__) || defined(__OpenBSD__) || defined(__FreeBSD__)
+ 
+ // Common properties of external images represented by FDs. On successful import the file
+ // descriptor's ownership is transferred to the Dawn implementation and they shouldn't be

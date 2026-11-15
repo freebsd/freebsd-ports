@@ -1,0 +1,70 @@
+--- electron/BUILD.gn.orig	2026-11-13 20:10:41 UTC
++++ electron/BUILD.gn
+@@ -631,7 +631,7 @@ source_set("electron_lib") {
+     defines += [ "GDK_DISABLE_DEPRECATION_WARNINGS" ]
+   }
+ 
+-  if (!is_mas_build) {
++  if (!is_mas_build && !is_bsd) {
+     deps += [
+       "//components/crash/core/app",
+       "//components/crash/core/browser",
+@@ -752,6 +752,12 @@ source_set("electron_lib") {
+       cflags_objcc = [ "-fobjc-weak" ]
+     }
+   }
++  if (is_bsd) {
++    sources -= [
++      "shell/common/crash_keys.cc",
++      "shell/common/crash_keys.h",
++    ]
++  }
+   if (is_linux) {
+     libs = [ "xshmfence" ]
+     deps += [
+@@ -1680,7 +1686,6 @@ if (is_mac) {
+     ":electron_app_manifest",
+     ":electron_lib",
+     ":electron_win32_resources",
+-    "//components/crash/core/app",
+     "//content:sandbox_helper_win",
+     "//electron/buildflags",
+     "//third_party/electron_node:libnode",
+@@ -1717,7 +1722,7 @@ if (is_mac) {
+     } else if (is_linux) {
+       sources = [
+         "shell/app/electron_main_linux.cc",
+-        "shell/app/environ_linux.cc",
++        # "shell/app/environ_linux.cc",
+         "shell/app/uv_stdio_fix.cc",
+         "shell/app/uv_stdio_fix.h",
+       ]
+@@ -1745,7 +1750,7 @@ if (is_mac) {
+       public_deps = [ "//tools/v8_context_snapshot" ]
+     }
+ 
+-    if (is_linux) {
++    if (is_linux && !is_bsd) {
+       data_deps += [ "//components/crash/core/app:chrome_crashpad_handler" ]
+     }
+ 
+@@ -1816,7 +1821,7 @@ if (is_mac) {
+         configs += [ "//build/config/gcc:rpath_for_built_shared_libraries" ]
+       }
+ 
+-      if (is_linux) {
++      if (is_linux && !is_bsd) {
+         deps += [ "//sandbox/linux:chrome_sandbox" ]
+       }
+     }
+@@ -1934,7 +1939,9 @@ dist_zip("electron_dist_zip") {
+       ]
+     }
+ 
+-    data_deps += [ "//sandbox/linux:chrome_sandbox" ]
++    if (!is_bsd) {
++      data_deps += [ "//sandbox/linux:chrome_sandbox" ]
++    }
+   }
+   deps = data_deps
+   if (electron_use_resource_allowlist) {

@@ -1,0 +1,11 @@
+--- content/test/BUILD.gn.orig	2026-11-14 21:53:39 UTC
++++ content/test/BUILD.gn
+@@ -3209,7 +3209,7 @@ test("content_unittests") {
+     ]
+   }
+ 
+-  if (is_linux || is_chromeos) {
++  if ((is_linux && !is_bsd) || is_chromeos) {
+     sources += [
+       "../browser/child_thread_type_switcher_linux_unittest.cc",
+       "../child/sandboxed_process_thread_type_handler_unittest.cc",

@@ -1,0 +1,12 @@
+--- extensions/common/api/runtime.json.orig	2026-10-19 21:50:55 UTC
++++ extensions/common/api/runtime.json
+@@ -104,7 +104,8 @@
+             {"name": "android", "description": "Specifies the Android operating system."},
+             {"name": "cros", "description": "Specifies the Chrome operating system."},
+             {"name": "linux", "description": "Specifies the Linux operating system."},
+-            {"name": "openbsd", "description": "Specifies the OpenBSD operating system."}
++            {"name": "openbsd", "description": "Specifies the OpenBSD operating system."},
++            {"name": "freebsd", "description": "Specifies the FreeBSD operating system."}
+         ]
+       },
+       {

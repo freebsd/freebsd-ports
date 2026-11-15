@@ -1,0 +1,10 @@
+--- build/config/clang/clang.gni.orig	2026-10-19 21:50:55 UTC
++++ build/config/clang/clang.gni
+@@ -42,6 +42,7 @@ clang_modules_platform_supported =
+   "x86",
+ ]
+ clang_modules_platform_supported =
++    !is_bsd &&
+     # s390x should work, but IBM doesn't want it enabled for that cpu arch.
+     (is_linux && current_cpu != "s390x") ||
+     (is_android &&

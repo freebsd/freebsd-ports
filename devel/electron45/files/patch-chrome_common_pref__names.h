@@ -1,0 +1,110 @@
+--- chrome/common/pref_names.h.orig	2026-10-19 21:50:55 UTC
++++ chrome/common/pref_names.h
+@@ -674,7 +674,7 @@ inline constexpr char kAllowedDomainsForApps[] =
+ inline constexpr char kAllowedDomainsForApps[] =
+     "settings.allowed_domains_for_apps";
+ 
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ // Linux specific preference on whether we should match the system theme.
+ inline constexpr char kSystemTheme[] = "extensions.theme.system_theme";
+ #endif
+@@ -855,7 +855,7 @@ inline constexpr char kShowUpdatePromotionInfoBar[] =
+     "browser.show_update_promotion_info_bar";
+ #endif
+ 
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ // Boolean that is false if we should show window manager decorations.  If
+ // true, we draw a custom chrome frame (thicker title bar and blue border).
+ inline constexpr char kUseCustomChromeFrame[] = "browser.custom_chrome_frame";
+@@ -1425,7 +1425,7 @@ inline constexpr char kPinInfoBarTimesShown[] =
+     "browser.pin_infobar_times_shown";
+ #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC)
+ 
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ 
+ // How many times the session restore infobar has been shown.
+ inline constexpr char kSessionRestoreInfoBarTimesShown[] =
+@@ -1476,7 +1476,7 @@ inline constexpr char kDownloadDirUpgraded[] = "downlo
+ inline constexpr char kDownloadDirUpgraded[] = "download.directory_upgrade";
+ 
+ #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
+-    BUILDFLAG(IS_MAC)
++    BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
+ inline constexpr char kOpenPdfDownloadInSystemReader[] =
+     "download.open_pdf_in_system_reader";
+ #endif
+@@ -1567,7 +1567,7 @@ inline constexpr char kRestartInBackgroundOnShutdown[]
+ inline constexpr char kRestartInBackgroundOnShutdown[] =
+     "restart.in.background.on.shutdown";
+ 
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ // Timestamp of when the scheduled restart nudge dialog was last shown
+ // to the user, used for nudge cooldown calculations.
+ inline constexpr char kScheduledRestartLastNudgeTime[] =
+@@ -1975,7 +1975,7 @@ inline constexpr char kMediaCdmOriginData[] = "media.c
+ inline constexpr char kMediaCdmOriginData[] = "media.cdm.origin_data";
+ #endif  // BUILDFLAG(IS_WIN)
+ 
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ // A boolean pref to determine whether or not the network service is running
+ // sandboxed.
+ inline constexpr char kNetworkServiceSandboxEnabled[] =
+@@ -1989,7 +1989,7 @@ inline constexpr char kNetworkServiceFailedLaunchMajor
+ inline constexpr char kNetworkServiceFailedLaunchMajorVersion[] =
+     "net.network_service_failed_launch_major_version";
+ 
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ // Records whether the user has seen an HTTP auth "negotiate" header.
+ inline constexpr char kReceivedHttpAuthNegotiateHeader[] =
+     "net.received_http_auth_negotiate_headers";
+@@ -2096,7 +2096,7 @@ inline constexpr char kIsolatedWebAppPendingInitializa
+ inline constexpr char kIsolatedWebAppPendingInitializationCount[] =
+     "profile.isolated_web_app.install.pending_initialization_count";
+ 
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+ // Boolean that specifies whether OK-AS-DELEGATE flag from KDC is respected
+ // along with kAuthNegotiateDelegateAllowlist.
+ inline constexpr char kAuthNegotiateDelegateByKdcPolicy[] =
+@@ -2361,7 +2361,7 @@ inline constexpr char kHardwareSecureDecryptionDisable
+ #endif  // BUILDFLAG(IS_WIN)
+ 
+ #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || \
+-    BUILDFLAG(IS_ANDROID)
++    BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_BSD)
+ // Defines administrator-set availability of Chrome for Testing.
+ inline constexpr char kChromeForTestingAllowed[] = "chrome_for_testing.allowed";
+ #endif
+@@ -2787,7 +2787,7 @@ inline constexpr char kSandboxExternalProtocolBlocked[
+ inline constexpr char kSandboxExternalProtocolBlocked[] =
+     "profile.sandbox_external_protocol_blocked";
+ 
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ // Boolean that indicates if system notifications are allowed to be used in
+ // place of Chrome notifications.
+ inline constexpr char kAllowSystemNotifications[] =
+@@ -2935,7 +2935,7 @@ inline constexpr char kLensDesktopNTPSearchEnabled[] =
+ inline constexpr char kLensDesktopNTPSearchEnabled[] =
+     "policy.lens_desktop_ntp_search_enabled";
+ 
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
+ // A dict mapping the edition name with the major version it was shown.
+ inline constexpr char kWhatsNewEditionUsed[] = "browser.whats_new.edition_used";
+ // A list containing the features of each module in order of when they
+@@ -3021,7 +3021,7 @@ inline constexpr char
+     kAccessControlAllowMethodsInCORSPreflightSpecConformant[] =
+         "access_control_allow_methods_in_cors_preflight_spec_conformant";
+ 
+-#if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ // If this exists and is true, Chrome may run system DNS resolution out of the
+ // network process. If false, Chrome will run system DNS resolution in the
+ // network process. If non-existent, Chrome will decide where to run system DNS

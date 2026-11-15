@@ -1,0 +1,132 @@
+--- build/config/compiler/BUILD.gn.orig	2026-10-30 11:54:04 UTC
++++ build/config/compiler/BUILD.gn
+@@ -203,7 +203,7 @@ declare_args() {
+   # This greatly reduces the size of debug builds, at the cost of
+   # debugging information which is required by some specialized
+   # debugging tools.
+-  simple_template_names = is_clang && !is_win && !is_apple
++  simple_template_names = is_clang && !is_win && !is_apple && !is_bsd
+ 
+   # This switch is used to enable -Wexit-time-destructors by default. This
+   # warning serves as a flip switch to allow a gradual migration of targets
+@@ -284,7 +284,7 @@ assert(is_bot ||
+ #
+ # Since this is referenced both when passing the file and when deciding which
+ # warnings to enable, store it in a separate variable here.
+-use_clang_warning_suppression_file =
++use_clang_warning_suppression_file = !is_bsd &&
+     is_clang && clang_warning_suppression_file != ""
+ 
+ # default_include_dirs ---------------------------------------------------------
+@@ -308,7 +308,7 @@ config("no_unresolved_symbols") {
+ # libclang_rt.asan-*-android.so), so all sanitizer symbols are resolved at link
+ # time and -Wl,-z,defs can safely remain enabled to catch missing symbols.
+ config("no_unresolved_symbols") {
+-  if ((!using_sanitizer || is_android) &&
++  if (!is_bsd && (!using_sanitizer || is_android) &&
+       (is_linux || is_chromeos || is_android || is_fuchsia)) {
+     ldflags = [
+       "-Wl,-z,defs",
+@@ -551,6 +551,10 @@ config("compiler") {
+     }
+   }
+ 
++  if (is_openbsd) {
++    ldflags += [ "-Wl,-z,wxneeded" ]
++  }
++
+   # Linux-specific compiler flags setup.
+   # ------------------------------------
+   if (is_linux || is_chromeos) {
+@@ -589,9 +593,9 @@ config("compiler") {
+     # Flags for diagnostics.
+     cflags += [ "-fcolor-diagnostics" ]
+     if (!is_wasm) {
+-      if (!is_win) {
++      if (!is_win && !is_bsd) {
+         cflags += [ "-fdiagnostics-show-inlining-chain" ]
+-      } else {
++      } else if (!is_bsd) {
+         # Combine after https://github.com/llvm/llvm-project/pull/192241
+         cflags += [ "/clang:-fdiagnostics-show-inlining-chain" ]
+       }
+@@ -617,7 +621,7 @@ config("compiler") {
+     }
+   }
+ 
+-  if (is_clang) {
++  if (is_clang && !is_bsd) {
+     cflags += [ "-fcrash-diagnostics-dir=" + clang_diagnostic_dir ]
+     if (save_reproducers_on_lld_crash && use_lld) {
+       ldflags += [
+@@ -1488,7 +1492,7 @@ config("clang_revision") {
+ }
+ 
+ config("clang_revision") {
+-  if (is_clang && clang_base_path == default_clang_base_path &&
++  if (is_clang && !is_bsd && clang_base_path == default_clang_base_path &&
+       current_os != "zos") {
+     _perform_consistency_checks = current_toolchain == default_toolchain
+     if (llvm_force_head_revision) {
+@@ -1635,7 +1639,7 @@ ubsan_hardening("c_array_bounds") {
+ # See also: https://crbug.com/40891132#comment10
+ ubsan_hardening("c_array_bounds") {
+   sanitizer = "array-bounds"
+-  condition = !(is_asan && target_cpu == "x86")
++  condition = !(is_asan && target_cpu == "x86") && !is_bsd
+ 
+   # Because we've enabled array-bounds sanitizing we also want to suppress
+   # the related warning about "unsafe-buffer-usage-in-static-sized-array",
+@@ -1649,6 +1653,7 @@ ubsan_hardening("return") {
+ # `NOTREACHED()` at the end of such functions.
+ ubsan_hardening("return") {
+   sanitizer = "return"
++  condition = !is_bsd
+ }
+ 
+ # Enable `-fsanitize=unreachable` to crash deterministically if control
+@@ -1660,7 +1665,7 @@ ubsan_hardening("unreachable") {
+   # 1.  `fuchsia-binary-size` tells us that web_engine and
+   #     chrome_fuchsia both grow 32768 bytes (10x that, uncompressed).
+   # 2.  `headless_shell_wpt_tests` fail on `mac-rel`.
+-  condition = is_debug || !(is_mac || is_fuchsia)
++  condition = is_debug || !(is_mac || is_fuchsia || is_bsd)
+ }
+ 
+ config("rustc_revision") {
+@@ -1977,7 +1982,7 @@ config("default_warnings") {
+       "-Wno-psabi",
+     ]
+ 
+-    if (!is_wasm) {
++    if (!is_wasm && !is_bsd) {
+       cflags += [
+         # TODO(crbug.com/526996813): Figure out what to do about this.
+         "-Wno-stringop-overread",
+@@ -2010,7 +2015,7 @@ config("default_warnings") {
+       "-Wno-nontrivial-memcall",
+     ]
+ 
+-    if (!is_wasm) {
++    if (!is_wasm && !is_bsd) {
+       cflags += [
+         # TODO(crbug.com/432275627): Fix and re-enable.
+         "-Wno-uninitialized-const-pointer",
+@@ -2842,7 +2847,7 @@ config("afdo") {
+ # There are some targeted places that AFDO regresses, so we provide a separate
+ # config to allow AFDO to be disabled per-target.
+ config("afdo") {
+-  if (is_clang) {
++  if (is_clang && !is_bsd) {
+     cflags = []
+     if (clang_emit_debug_info_for_profiling) {
+       # Add the following flags to generate debug info for profiling.
+@@ -2869,7 +2874,7 @@ config("afdo") {
+       cflags += [ "-Wno-backend-plugin" ]
+       inputs = [ _clang_sample_profile ]
+     }
+-  } else if (auto_profile_path != "" && is_a_target_toolchain) {
++  } else if (auto_profile_path != "" && is_a_target_toolchain && !is_bsd) {
+     cflags = [ "-fauto-profile=${auto_profile_path}" ]
+     inputs = [ auto_profile_path ]
+   }

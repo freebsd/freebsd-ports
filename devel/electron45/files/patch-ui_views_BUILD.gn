@@ -1,0 +1,10 @@
+--- ui/views/BUILD.gn.orig	2026-10-30 11:54:03 UTC
++++ ui/views/BUILD.gn
+@@ -904,7 +904,6 @@ component("views") {
+       "widget/window_reorderer.cc",
+     ]
+     deps += [
+-      "//components/crash/core/common:crash_key",
+       "//ui/aura",
+       "//ui/base/cursor/mojom:cursor_type_shared",
+       "//ui/events",
