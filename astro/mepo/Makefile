@@ -1,10 +1,11 @@
 PORTNAME=	mepo
 DISTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	astro geography wayland
 
 MAINTAINER=	kenrap@FreeBSD.org
 COMMENT=	Fast, simple, and hackable OSM map viewer
-WWW=		https://sr.ht/~mil/Mepo/
+WWW=		https://sr.ht/~mil/mepo/
 
 LICENSE=	GPLv3+ OFL11
 LICENSE_COMB=	multi
