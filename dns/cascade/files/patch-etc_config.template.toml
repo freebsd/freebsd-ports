@@ -1,4 +1,4 @@
---- etc/config.template.toml.orig	2026-09-11 14:51:05 UTC
+--- etc/config.template.toml.orig	2026-11-06 21:30:16 UTC
 +++ etc/config.template.toml
 @@ -3,14 +3,14 @@
  #
@@ -58,15 +58,16 @@
  
  # The directory storing rollover states and on-disk DNSSEC keys.
  #
-@@ -62,14 +62,14 @@ kmip-credentials-store-path = "/var/lib/cascade/kmip-c
+@@ -60,7 +60,7 @@ kmip-credentials-store-path = "/var/lib/cascade/kmip-c
+ # internal implementation details.  It should not be modified manually, but
+ # it can be backed up and restored in the event of filesystem corruption.
  # Carefully consider its security.
- #
- # TODO: Move rollover state files to a separate directory?
 -keys-dir = "/var/lib/cascade/keys"
 +keys-dir = "%%DBDIR%%/keys"
  
- # The path to the dnst binary Cascade should use.
+ # Directory where the remains of removed zones are stored.
  #
+@@ -74,7 +74,7 @@ attic-dir = "/var/lib/cascade/attic"
  # Cascade relies on the 'dnst' program (<https://github.com/NLnetLabs/dnst>) in
  # order to perform DNSSEC key rollovers.  You can specify an absolute path here,
  # or just 'dnst' if it is in $PATH.
@@ -75,7 +76,7 @@
  
  
  # Settings relevant to any daemon program.
-@@ -216,7 +216,7 @@ servers = ["127.0.0.1:4541", "[::1]:4541"]
+@@ -221,7 +221,7 @@ servers = ["127.0.0.1:4541", "[::1]:4541"]
  # How zones are published.
  [server]
  # Where to serve published zones.
