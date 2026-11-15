@@ -4548,6 +4548,7 @@ share/applications/julia.desktop
 %%DATADIR%%/test/llvmpasses/alloc-opt-pipeline.jl
 %%DATADIR%%/test/llvmpasses/alloc-opt-unsized.ll
 %%DATADIR%%/test/llvmpasses/atomic-modify.ll
+%%DATADIR%%/test/llvmpasses/codegen-alloc-zeroing.jl
 %%DATADIR%%/test/llvmpasses/cpu-features.ll
 %%DATADIR%%/test/llvmpasses/fastmath.jl
 %%DATADIR%%/test/llvmpasses/final-lower-gc-addrspaces.ll
@@ -4565,6 +4566,7 @@ share/applications/julia.desktop
 %%DATADIR%%/test/llvmpasses/julia-simdloop-memoryssa.ll
 %%DATADIR%%/test/llvmpasses/julia-simdloop.ll
 %%DATADIR%%/test/llvmpasses/late-lower-gc-addrspaces.ll
+%%DATADIR%%/test/llvmpasses/late-lower-gc-alloc-zeroing.ll
 %%DATADIR%%/test/llvmpasses/late-lower-gc-select-store.ll
 %%DATADIR%%/test/llvmpasses/late-lower-gc-sret.ll
 %%DATADIR%%/test/llvmpasses/late-lower-gc.ll

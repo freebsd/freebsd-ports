@@ -1,5 +1,5 @@
 PORTNAME=	julia
-DISTVERSION=	1.13.3
+DISTVERSION=	1.13.4
 DISTVERSIONSUFFIX=	-full
 CATEGORIES=	lang math science
 MASTER_SITES=	https://github.com/JuliaLang/${PORTNAME}/releases/download/v${DISTVERSION}/
@@ -121,7 +121,8 @@ MAKE_ARGS+=	JULIA_DEBUG=Documenter \
 		USE_SYSTEM_ZLIB=0 \
 		USE_SYSTEM_ZSTD=1 \
 		CC=${CC} \
-		CXX=${CXX}
+		CXX=${CXX} \
+		LLVM_SHLIB_SYMBOL_VERSION=LLVM_${LLVM_VERSION}
 ALL_TARGET=	default
 INSTALL_TARGET=	install
 TEST_TARGET=	test
@@ -224,7 +225,7 @@ DOCPKGDIR_registryinstances=	RegistryInstances
 DOCPKGDIR_structutils=	StructUtils
 DOCPKGDIR_transcodingstreams=	TranscodingStreams
 JPKGUUID=	23338594-aafe-5451-b93e-139f81909106
-JPKGSHA1=	1edcb1202670b2a845eca32c6b3b838a80785c8f
+JPKGSHA1=	74c06bb87bf55f1de007a9e61b53a3891d4f32e8
 ADIR_afexpat=	a764c804bdcc4e2d454b972688bf8b3b8f527ab0
 ADIR_afgit=	809f55a48211bb703df70cf2f348ea2b10253bb6
 ADIR_afgitlfs=	407b2d6a1112f15186d59fdebe33c77aa9c669ed
@@ -300,7 +301,7 @@ pre-configure:
 
 pre-install:
 	${MAKE} SHEBANG_GLOB="${LATE_SHEBANG_GLOB}" fix-shebang
-	${CP} ${WRKSRC}/deps/srccache/cacert-2026-10-20.pem ${WRKSRC}/usr/share/julia/cert.pem
+	${CP} ${WRKSRC}/deps/srccache/cacert-2026-11-05.pem ${WRKSRC}/usr/share/julia/cert.pem
 .for patch in ${LATE_PATCHES}
 	${PATCH} -d ${WRKSRC} -p0 < ${PATCHDIR}/${patch}
 .endfor
@@ -324,6 +325,11 @@ post-install:
 		\( -name *-debug.so.* -o -name *-debug.so \) \
 		-a -not -type l -exec ${STRIP_CMD} {} +
 .endfor
+	(cd ${STAGEDIR}${PREFIX}/lib/julia && \
+	for l in $$(find . -type l); do \
+		t=$$(readlink $$l); \
+		case $$t in ${WRKDIR}*) ${RM} $$l; ${INSTALL_LIB} $$t $$l;; esac; \
+	done)
 	(cd ${STAGEDIR}${PREFIX}/lib/julia &&	\
 	${LN} -fs libLLVM.so libLLVM-${LLVM_VERSION}jl.so)
 .for bin in lld dsymutil
