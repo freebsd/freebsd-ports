@@ -12,7 +12,7 @@ WWW=		https://github.com/icing/mod_h2
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-DEPRECATED=	Standalone mod_http2 project has been archived, use the module shipped with mod_http2
+DEPRECATED=	Standalone mod_http2 project has been archived, use the module shipped with www/apache24
 EXPIRATION_DATE=2026-12-31
 
 LIB_DEPENDS=	libnghttp2.so:www/libnghttp2
