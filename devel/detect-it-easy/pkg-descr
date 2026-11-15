@@ -1,0 +1,6 @@
+Detect It Easy is a program for determining file types and identifying
+compilers, packers, protectors and other properties of binary files.
+
+It includes graphical, console and lightweight interfaces, signature
+databases, PEiD signatures, YARA rules, format parsers, entropy analysis
+and disassembly-related functionality.
