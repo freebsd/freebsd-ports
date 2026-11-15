@@ -1,6 +1,6 @@
 PORTNAME=	redisearch
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.6.24
+DISTVERSION=	2.6.25
 CATEGORIES=	textproc
 PKGNAMESUFFIX=	${DISTVERSION:R:S/.//}
 
@@ -28,7 +28,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	RediSearch
 GH_PROJECT=	RediSearch
 GH_TUPLE=	RedisAI:VectorSimilarity:d784136:vectorsimilarity/deps/VectorSimilarity \
-			RedisLabsModules:readies:e67ded6:readies/deps/readies
+			RedisLabsModules:readies:c609278:readies/deps/readies
 
 CMAKE_ARGS=	-DGIT_DESCRIBE_VERSION:STRING=${PKGVERSION} \
 		-DOS=freebsd
