@@ -1,5 +1,5 @@
 PORTNAME=	collapse
-DISTVERSION=	2.1.8
+DISTVERSION=	2.1.9
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -10,8 +10,7 @@ WWW=		https://cran.r-project.org/package=collapse
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-CRAN_DEPENDS=	R-cran-Rcpp>=1.0.1:devel/R-cran-Rcpp
-RUN_DEPENDS=	${CRAN_DEPENDS}
+RUN_DEPENDS=	R-cran-Rcpp>=1.0.1:devel/R-cran-Rcpp
 TEST_DEPENDS=	R-cran-data.table>0:devel/R-cran-data.table \
 		R-cran-dplyr>0:math/R-cran-dplyr \
 		R-cran-kit>0:devel/R-cran-kit \
