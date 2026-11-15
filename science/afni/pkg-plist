@@ -16,6 +16,7 @@ bin/1dSVAR.R
 bin/1dTrdm
 bin/1dTsort
 bin/1dUpsample
+bin/1dXmatTool
 bin/1d_tool.py
 bin/1dcat
 bin/1ddot
@@ -140,6 +141,7 @@ bin/3dMSS.R
 bin/3dMVM
 bin/3dMVM.R
 bin/3dMVM_validator
+bin/3dMVPA
 bin/3dMannWhitney
 bin/3dMaskToASCII
 bin/3dMatch
@@ -178,6 +180,7 @@ bin/3dRetinoPhase
 bin/3dRowFillin
 bin/3dRprogDemo
 bin/3dRprogDemo.R
+bin/3dSRM
 bin/3dSeg
 bin/3dSetupGroupInCorr
 bin/3dSharpen
