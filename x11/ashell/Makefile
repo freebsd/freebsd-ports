@@ -1,11 +1,11 @@
 PORTNAME=	ashell
-DISTVERSION=	0.11.0
-PORTREVISION=	1
+DISTVERSION=	0.12.0
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Ready to go status bar for Wayland compositors
-WWW=		https://malpenzibo.github.io/ashell/
+WWW=		https://malpenzibo.github.io/ashell/ \
+		https://github.com/MalpenZibo/ashell
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -27,7 +27,7 @@ PORTDOCS=	CHANGELOG.md README.md
 
 OPTIONS_DEFINE=	DOCS
 
-# XXX Drop after FreeBSD 14.* EOL around 2028-11-30
+# XXX Drop after FreeBSD 14.4 EOL around 2026-12-31
 # https://cgit.freebsd.org/src/commit/?id=3965de642c29
 .if !exists(/usr/include/sys/inotify.h)
 LIB_DEPENDS+=	libinotify.so:devel/libinotify
