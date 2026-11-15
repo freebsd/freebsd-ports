@@ -133,7 +133,8 @@ _LICENSE_SPDX_LIST+= \
 
 # Open-source / academic license family
 _LICENSE_SPDX_LIST+= \
-				AFL-2.1 CDDL-1.1 CECILL-2.0 CPL-1.0 \
+				AFL-2.1 CDDL-1.1 CECILL-1.1 CECILL-2.0 \
+				CECILL-2.1 CECILL-B CECILL-C CPL-1.0 \
 				CUA-OPL-1.0 ECL-2.0 Elastic-2.0 EPL-1.0 \
 				EPL-2.0 EUPL-1.1 EUPL-1.2 LPL-1.02 \
 				OSET-PL-2.1 OSL-2.1 SSPL-1.0 SUL-1.0 \
@@ -303,8 +304,19 @@ _LICENSE_GROUPS_AFL-2.1= FSF OSI
 _LICENSE_NAME_CDDL-1.1=	Common Development and Distribution License 1.1
 _LICENSE_GROUPS_CDDL-1.1= OSI
 
+_LICENSE_NAME_CECILL-1.1= CeCILL Free Software License Agreement v1.1
+
 _LICENSE_NAME_CECILL-2.0= CeCILL Free Software License Agreement v2.0
 _LICENSE_GROUPS_CECILL-2.0= FSF
+
+_LICENSE_NAME_CECILL-2.1= CeCILL Free Software License Agreement v2.1
+_LICENSE_GROUPS_CECILL-2.1= OSI
+
+_LICENSE_NAME_CECILL-B=	CeCILL-B Free Software License Agreement
+_LICENSE_GROUPS_CECILL-B= FSF
+
+_LICENSE_NAME_CECILL-C=	CeCILL-C Free Software License Agreement
+_LICENSE_GROUPS_CECILL-C= FSF
 
 _LICENSE_NAME_CPL-1.0=	Common Public License 1.0
 _LICENSE_GROUPS_CPL-1.0= FSF OSI
