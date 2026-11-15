@@ -30,6 +30,8 @@ CONFIGURE_ENV+=	PYTHON=${PYTHON_CMD}
 
 MAKEFILE=	GNUmakefile
 
+LDFLAGS+=	-lpthread
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:S/-2//}
 
 PLIST_SUB+=		ABI_MAJOR_VER=${ABI_MAJOR_VER} \
@@ -44,7 +46,7 @@ STATIC_CONFIGURE_OFF=	--disable-static
 
 ABI_VER=		4
 ABI_MAJOR_VER=		3
-ABI_MINOR_VER=		4
+ABI_MINOR_VER=		5
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#-O2#${CFLAGS}#g' ${WRKSRC}/mk/beforeauto.mk.in
