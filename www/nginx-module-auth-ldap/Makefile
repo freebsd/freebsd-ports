@@ -1,6 +1,6 @@
 PORTNAME=	nginx-module-auth-ldap
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.4
+DISTVERSION=	0.3.0
 CATEGORIES=	www
 
 MAINTAINER=	joneum@FreeBSD.org
