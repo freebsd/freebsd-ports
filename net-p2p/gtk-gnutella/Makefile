@@ -62,6 +62,10 @@ CONFIGURE_ARGS+=	-ders
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.SH" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|@exit 0|@echo done|'
+# Use memory alignment constraints as in version 1.1.15 to unbreak the
+# build on 32-bit architectures
+	@${REINPLACE_CMD} -e 's,^#ifdef XMALLOC_IS_MALLOC,#if __SIZE_WIDTH__\
+		== 32,' ${WRKSRC}/src/lib/xmalloc.h
 
 post-patch-DEBUG-off:
 	@${REINPLACE_CMD} 's/(INSTALL) -c -m 555/(INSTALL) -c -s -m 555/g' \
