@@ -1701,4 +1701,3 @@ libdata/pkgconfig/mongoc2.pc
 %%PORTDOCS%%share/man/man3/mongoc_write_concern_set_wtimeout_int64.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_write_concern_t.3.gz
 %%PORTDOCS%%@dir %%DOCSDIR%%/mongo-c-driver/html/_sources
-%%PORTDOCS%%@dir %%DOCSDIR%%/mongo-c-driver/html/_sphinx_design_static
