@@ -1635,6 +1635,7 @@ lib/wine/i386-windows/bthprops.cpl
 lib/wine/i386-windows/cabarc.exe
 lib/wine/i386-windows/cabinet.dll
 lib/wine/i386-windows/cacls.exe
+lib/wine/i386-windows/capabilityaccessmanagerclient.dll
 lib/wine/i386-windows/cards.dll
 lib/wine/i386-windows/cdosys.dll
 lib/wine/i386-windows/certutil.exe
@@ -3014,6 +3015,7 @@ lib/wine/%%WINEARCH%%-windows/bthprops.cpl
 lib/wine/%%WINEARCH%%-windows/cabarc.exe
 lib/wine/%%WINEARCH%%-windows/cabinet.dll
 lib/wine/%%WINEARCH%%-windows/cacls.exe
+lib/wine/%%WINEARCH%%-windows/capabilityaccessmanagerclient.dll
 lib/wine/%%WINEARCH%%-windows/cards.dll
 lib/wine/%%WINEARCH%%-windows/cdosys.dll
 lib/wine/%%WINEARCH%%-windows/certutil.exe
