@@ -73,6 +73,7 @@ include/universal/internal/bitblock/bitblock_v2.hpp
 include/universal/internal/bitblock/exceptions.hpp
 include/universal/internal/bitblock/ubb.h
 include/universal/internal/blockbinary/blockbinary.hpp
+include/universal/internal/blockbinary/exceptions.hpp
 include/universal/internal/blockbinary/iostream.hpp
 include/universal/internal/blockbinary/manipulators.hpp
 include/universal/internal/blockbinary/to_decimal.hpp
@@ -81,6 +82,7 @@ include/universal/internal/blockdecimal/exceptions.hpp
 include/universal/internal/blockdecimal/iostream.hpp
 include/universal/internal/blockdecimal/manipulators.hpp
 include/universal/internal/blockdigit/blockdigit.hpp
+include/universal/internal/blockdigit/exceptions.hpp
 include/universal/internal/blockdigit/iostream.hpp
 include/universal/internal/blockdigit/manipulators.hpp
 include/universal/internal/blockfraction/blockfraction.hpp
@@ -103,16 +105,13 @@ include/universal/internal/blocktype/carry.hpp
 include/universal/internal/blocktype/limb_division.hpp
 include/universal/internal/blocktype/limb_multiplication.hpp
 include/universal/internal/expansion/expansion_ops.hpp
-include/universal/internal/f2s/README.md
-include/universal/internal/f2s/f2s.hpp
 include/universal/internal/floatcascade/floatcascade.hpp
 include/universal/internal/floatcascade/floatcascade_td.txt
 include/universal/internal/floatcascade/floatcascade_volatile_hardening.md
 include/universal/internal/floatcascade/iostream.hpp
 include/universal/internal/floatcascade/manipulators.hpp
 include/universal/internal/floatcascade/sincos_tables.hpp
-include/universal/internal/gfp/README.md
-include/universal/internal/gfp/gfp.hpp
+include/universal/internal/limbs/limb_kernels.hpp
 include/universal/internal/uint128/uint128.hpp
 include/universal/internal/value/value
 include/universal/internal/value/value.hpp
@@ -123,6 +122,7 @@ include/universal/math/complex/complex_functions_dd.hpp
 include/universal/math/complex/complex_functions_qd.hpp
 include/universal/math/complex/complex_impl.hpp
 include/universal/math/complex/complex_literals.hpp
+include/universal/math/complex/complex_native_real.hpp
 include/universal/math/complex/complex_operators.hpp
 include/universal/math/complex/complex_traits.hpp
 include/universal/mixedprecision/carry_analysis.hpp
@@ -281,7 +281,6 @@ include/universal/number/cfloat/math/functions/minmax.hpp
 include/universal/number/cfloat/math/functions/next.hpp
 include/universal/number/cfloat/math/functions/pow.hpp
 include/universal/number/cfloat/math/functions/sqrt.hpp
-include/universal/number/cfloat/math/functions/sqrt_tables.hpp
 include/universal/number/cfloat/math/functions/trigonometry.hpp
 include/universal/number/cfloat/math/functions/truncate.hpp
 include/universal/number/cfloat/mathext.hpp
@@ -373,6 +372,7 @@ include/universal/number/dfixpnt/dfixpnt_impl.hpp
 include/universal/number/dfixpnt/exceptions.hpp
 include/universal/number/dfixpnt/iostream.hpp
 include/universal/number/dfixpnt/manipulators.hpp
+include/universal/number/dfixpnt/math/cordic.hpp
 include/universal/number/dfixpnt/mathlib.hpp
 include/universal/number/dfixpnt/numeric_limits.hpp
 include/universal/number/dfloat/attributes.hpp
@@ -420,9 +420,12 @@ include/universal/number/edecimal/mathlib.hpp
 include/universal/number/edecimal/numeric_limits.hpp
 include/universal/number/efloat/attributes.hpp
 include/universal/number/efloat/core.hpp
+include/universal/number/efloat/double_math.hpp
 include/universal/number/efloat/efloat.hpp
+include/universal/number/efloat/efloat_constant.hpp
 include/universal/number/efloat/efloat_fwd.hpp
 include/universal/number/efloat/efloat_impl.hpp
+include/universal/number/efloat/efloat_limbs.hpp
 include/universal/number/efloat/exceptions.hpp
 include/universal/number/efloat/iostream.hpp
 include/universal/number/efloat/manipulators.hpp
@@ -443,6 +446,7 @@ include/universal/number/efloat/math/sqrt.hpp
 include/universal/number/efloat/math/trigonometry.hpp
 include/universal/number/efloat/math/truncate.hpp
 include/universal/number/efloat/mathlib.hpp
+include/universal/number/efloat/numeric_limits.hpp
 include/universal/number/einteger/core.hpp
 include/universal/number/einteger/debug.hpp
 include/universal/number/einteger/einteger.hpp
@@ -479,6 +483,7 @@ include/universal/number/elreal/online_divide.hpp
 include/universal/number/elreal/online_multiply.hpp
 include/universal/number/elreal/round.hpp
 include/universal/number/elreal/series.hpp
+include/universal/number/elreal/stream_utilities.hpp
 include/universal/number/elreal/sum.hpp
 include/universal/number/elreal/threeAdd.hpp
 include/universal/number/elreal/zbcl.hpp
@@ -529,7 +534,9 @@ include/universal/number/ereal/math/functions/logarithm.hpp
 include/universal/number/ereal/math/functions/minmax.hpp
 include/universal/number/ereal/math/functions/next.hpp
 include/universal/number/ereal/math/functions/numerics.hpp
+include/universal/number/ereal/math/functions/payne_hanek.hpp
 include/universal/number/ereal/math/functions/pow.hpp
+include/universal/number/ereal/math/functions/special_values.hpp
 include/universal/number/ereal/math/functions/sqrt.hpp
 include/universal/number/ereal/math/functions/trigonometry.hpp
 include/universal/number/ereal/math/functions/truncate.hpp
@@ -543,6 +550,19 @@ include/universal/number/faithful/faithful_impl.hpp
 include/universal/number/faithful/faithful_traits.hpp
 include/universal/number/faithful/iostream.hpp
 include/universal/number/faithful/manipulators.hpp
+include/universal/number/faithful/math/constants.hpp
+include/universal/number/faithful/math/functions/cbrt.hpp
+include/universal/number/faithful/math/functions/classify.hpp
+include/universal/number/faithful/math/functions/exponent.hpp
+include/universal/number/faithful/math/functions/fractional.hpp
+include/universal/number/faithful/math/functions/hyperbolic.hpp
+include/universal/number/faithful/math/functions/hypot.hpp
+include/universal/number/faithful/math/functions/logarithm.hpp
+include/universal/number/faithful/math/functions/minmax.hpp
+include/universal/number/faithful/math/functions/pow.hpp
+include/universal/number/faithful/math/functions/sqrt.hpp
+include/universal/number/faithful/math/functions/trigonometry.hpp
+include/universal/number/faithful/math/functions/truncate.hpp
 include/universal/number/faithful/mathlib.hpp
 include/universal/number/faithful/numeric_limits.hpp
 include/universal/number/fixpnt/attributes.hpp
@@ -556,6 +576,7 @@ include/universal/number/fixpnt/iostream.hpp
 include/universal/number/fixpnt/manipulators.hpp
 include/universal/number/fixpnt/math/classify.hpp
 include/universal/number/fixpnt/math/complex.hpp
+include/universal/number/fixpnt/math/cordic.hpp
 include/universal/number/fixpnt/math/error_and_gamma.hpp
 include/universal/number/fixpnt/math/exponent.hpp
 include/universal/number/fixpnt/math/fma.hpp
@@ -567,7 +588,6 @@ include/universal/number/fixpnt/math/minmax.hpp
 include/universal/number/fixpnt/math/next.hpp
 include/universal/number/fixpnt/math/pow.hpp
 include/universal/number/fixpnt/math/sqrt.hpp
-include/universal/number/fixpnt/math/sqrt_tables.hpp
 include/universal/number/fixpnt/math/trigonometry.hpp
 include/universal/number/fixpnt/math/truncate.hpp
 include/universal/number/fixpnt/mathlib.hpp
@@ -636,14 +656,19 @@ include/universal/number/lindex/lindex_impl.hpp
 include/universal/number/lindex/manipulators.hpp
 include/universal/number/lindex/math/classify.hpp
 include/universal/number/lindex/math/constants.hpp
+include/universal/number/lindex/math/error_and_gamma.hpp
 include/universal/number/lindex/math/exponent.hpp
+include/universal/number/lindex/math/fractional.hpp
+include/universal/number/lindex/math/hyperbolic.hpp
 include/universal/number/lindex/math/hypot.hpp
 include/universal/number/lindex/math/logarithm.hpp
 include/universal/number/lindex/math/minmax.hpp
 include/universal/number/lindex/math/next.hpp
 include/universal/number/lindex/math/pow.hpp
 include/universal/number/lindex/math/sqrt.hpp
+include/universal/number/lindex/math/trigonometry.hpp
 include/universal/number/lindex/math/truncate.hpp
+include/universal/number/lindex/math/value_domain.hpp
 include/universal/number/lindex/mathlib.hpp
 include/universal/number/lindex/numeric_limits.hpp
 include/universal/number/lindex/table.hpp
@@ -655,6 +680,7 @@ include/universal/number/lns/fdp.hpp
 include/universal/number/lns/iostream.hpp
 include/universal/number/lns/lns.hpp
 include/universal/number/lns/lns_addsub_algorithms.hpp
+include/universal/number/lns/lns_addsub_cordic_datapath.hpp
 include/universal/number/lns/lns_fwd.hpp
 include/universal/number/lns/lns_impl.hpp
 include/universal/number/lns/lns_traits.hpp
@@ -672,7 +698,6 @@ include/universal/number/lns/math/minmax.hpp
 include/universal/number/lns/math/next.hpp
 include/universal/number/lns/math/pow.hpp
 include/universal/number/lns/math/sqrt.hpp
-include/universal/number/lns/math/sqrt_tables.hpp
 include/universal/number/lns/math/trigonometry.hpp
 include/universal/number/lns/math/truncate.hpp
 include/universal/number/lns/math_functions.hpp
@@ -714,7 +739,9 @@ include/universal/number/posit/iostream.hpp
 include/universal/number/posit/manipulators.hpp
 include/universal/number/posit/math/classify.hpp
 include/universal/number/posit/math/complex.hpp
+include/universal/number/posit/math/efloat_bridge.hpp
 include/universal/number/posit/math/error_and_gamma.hpp
+include/universal/number/posit/math/evaluate.hpp
 include/universal/number/posit/math/exponent.hpp
 include/universal/number/posit/math/fractional.hpp
 include/universal/number/posit/math/hyperbolic.hpp
@@ -724,7 +751,6 @@ include/universal/number/posit/math/minmax.hpp
 include/universal/number/posit/math/next.hpp
 include/universal/number/posit/math/pow.hpp
 include/universal/number/posit/math/sqrt.hpp
-include/universal/number/posit/math/sqrt_tables.hpp
 include/universal/number/posit/math/trigonometry.hpp
 include/universal/number/posit/math/truncate.hpp
 include/universal/number/posit/mathlib.hpp
@@ -735,6 +761,7 @@ include/universal/number/posit/posit_fields_io.hpp
 include/universal/number/posit/posit_fraction.hpp
 include/universal/number/posit/posit_fwd.hpp
 include/universal/number/posit/posit_impl.hpp
+include/universal/number/posit/posit_limbs.hpp
 include/universal/number/posit/posit_regime.hpp
 include/universal/number/posit/posit_scale_helpers.hpp
 include/universal/number/posit/twoSum.hpp
@@ -989,6 +1016,7 @@ include/universal/number_systems.hpp
 include/universal/numerics/README.md
 include/universal/numerics/eft.hpp
 include/universal/numerics/error_free_ops.hpp
+include/universal/numerics/range_limit_add.hpp
 include/universal/numerics/twodiv.hpp
 include/universal/numerics/twoprod.hpp
 include/universal/numerics/twosum.hpp
@@ -1054,6 +1082,8 @@ include/universal/utility/directives.hpp
 include/universal/utility/error.hpp
 include/universal/utility/error_tracking_traits.hpp
 include/universal/utility/evaluate_closure_of_number_systems.hpp
+include/universal/utility/exceptions.hpp
+include/universal/utility/exceptions_check.hpp
 include/universal/utility/find_msb.hpp
 include/universal/utility/generateClosurePlots.hpp
 include/universal/utility/icf_array_bounds.hpp
@@ -1094,6 +1124,7 @@ include/universal/verification/cascade_exp_range_vectors.hpp
 include/universal/verification/cfloat_sqrt_vectors.hpp
 include/universal/verification/cfloat_test_suite.hpp
 include/universal/verification/cfloat_test_suite_mathlib.hpp
+include/universal/verification/correctly_rounded_reference.hpp
 include/universal/verification/dyadic_exact.hpp
 include/universal/verification/edecimal_sqrt_vectors.hpp
 include/universal/verification/efloat_exp_log_vectors.hpp
@@ -1103,6 +1134,7 @@ include/universal/verification/efloat_test_support.hpp
 include/universal/verification/elreal_oracle.hpp
 include/universal/verification/elreal_reference_digits.hpp
 include/universal/verification/erational_sqrt_vectors.hpp
+include/universal/verification/ereal_precision.hpp
 include/universal/verification/ereal_reference_digits.hpp
 include/universal/verification/ereal_test_support.hpp
 include/universal/verification/fixpnt_test_suite.hpp
@@ -1112,11 +1144,15 @@ include/universal/verification/interval_test_suite.hpp
 include/universal/verification/level_index_vectors.hpp
 include/universal/verification/lindex_arithmetic_vectors.hpp
 include/universal/verification/lindex_conversion_vectors.hpp
+include/universal/verification/lindex_math2_vectors.hpp
 include/universal/verification/lindex_math_vectors.hpp
 include/universal/verification/lns_test_suite.hpp
 include/universal/verification/lns_test_suite_mathlib.hpp
+include/universal/verification/multidouble_constant_tables.hpp
+include/universal/verification/multidouble_constants.hpp
 include/universal/verification/multidouble_core_path.hpp
 include/universal/verification/multidouble_math_errors.hpp
+include/universal/verification/multidouble_special_division.hpp
 include/universal/verification/multidouble_special_vectors.hpp
 include/universal/verification/multidouble_trig.hpp
 include/universal/verification/multidouble_trig_vectors.hpp
