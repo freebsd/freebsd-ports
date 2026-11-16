@@ -1,12 +1,12 @@
 PORTNAME=	colorize
-PORTVERSION=	0.3.4
+PORTVERSION=	0.3.5
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
 CATEGORIES=	sysutils
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Robust log colorizer
-WWW=		https://github.com/raszi/colorize
+WWW=		https://github.com/raszi/colorize \
+		https://github.com/solbu/colorize
 
 LICENSE=	GPLv2+
 
@@ -18,7 +18,7 @@ NO_BUILD=	yes
 SUB_FILES=	pkg-message
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	raszi
+GH_ACCOUNT=	solbu
 
 SHEBANG_FILES=	colorize
 
