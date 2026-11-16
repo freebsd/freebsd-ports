@@ -1,0 +1,12 @@
+A command-line interface for the X API.
+
+Features:
+- Full command tree with aliases and options
+- X API client library (x-api) for HTTP, auth, and retry primitives
+- OAuth 1.0a and OAuth 2.0 authentication
+- Automatic retry with backoff for transient API errors
+- V1.1 and V2 API support with automatic fallback
+- Streaming support for filtered and sampled streams
+- Column-aligned output formatting
+- YAML configuration file support
+- Bash completion support
