@@ -1,0 +1,8 @@
+The push_stream module delivers server push straight out of nginx: a
+message published into a channel over HTTP reaches whoever is subscribed,
+as long polling, as an EventSource stream or over a WebSocket.  The
+channels live in nginx's own shared memory, so there is no broker beside
+it and no backend holding a connection per subscriber.
+
+This port only installs the module sources.  The module itself is built by
+the nginx ports when their HTTP_PUSH_STREAM option is enabled.

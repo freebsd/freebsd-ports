@@ -579,6 +579,7 @@
     SUBDIR += nginx-module-otel
     SUBDIR += nginx-module-passenger
     SUBDIR += nginx-module-postgres
+    SUBDIR += nginx-module-push-stream
     SUBDIR += nginx-module-rds-csv
     SUBDIR += nginx-module-rds-json
     SUBDIR += nginx-module-redis
