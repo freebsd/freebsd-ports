@@ -11,6 +11,7 @@
 %%PLOTFILE_TOOLS%%bin/amrex_fvolumesum
 include/AMReX.H
 include/AMReX_ANSIEscCode.H
+%%LINEAR_SOLVERS%%include/AMReX_AlgMG.H
 %%LINEAR_SOLVERS%%include/AMReX_AlgPartition.H
 %%LINEAR_SOLVERS%%include/AMReX_AlgVecUtil.H
 %%LINEAR_SOLVERS%%include/AMReX_AlgVector.H
@@ -46,6 +47,8 @@ include/AMReX_BackgroundThread.H
 include/AMReX_BaseFab.H
 include/AMReX_BaseFabUtility.H
 include/AMReX_BaseFwd.H
+%%LINEAR_SOLVERS%%include/AMReX_BiCGStab.H
+%%LINEAR_SOLVERS%%include/AMReX_BiCGStab_MV.H
 %%PARTICLES%%include/AMReX_BinIterator.H
 include/AMReX_BndryData.H
 include/AMReX_BndryRegister.H
@@ -69,6 +72,8 @@ include/AMReX_Config.H
 include/AMReX_Config_3D.H
 include/AMReX_ConstexprFor.H
 include/AMReX_CoordSys.H
+%%LINEAR_SOLVERS%%include/AMReX_CrossProj.H
+include/AMReX_CrtReport.H
 include/AMReX_CudaGraph.H
 include/AMReX_DataAllocator.H
 %%AMRDATA%%include/AMReX_DataServices.H
@@ -132,6 +137,7 @@ include/AMReX_DistributionMapping.H
 %%EB%%include/AMReX_EB_Slopes_3D_K.H
 %%EB%%include/AMReX_EB_Slopes_K.H
 %%EB%%include/AMReX_EB_StateRedistSlopeLimiter_K.H
+%%EB%%include/AMReX_EB_StateRedistTracker_K.H
 %%EB%%include/AMReX_EB_chkpt_file.H
 %%EB%%include/AMReX_EB_triGeomOps_K.H
 %%EB%%include/AMReX_EB_utils.H
@@ -203,6 +209,8 @@ include/AMReX_GpuRange.H
 include/AMReX_GpuReduce.H
 include/AMReX_GpuTypes.H
 include/AMReX_GpuUtility.H
+%%LINEAR_SOLVERS%%include/AMReX_Habec_3D_K.H
+%%LINEAR_SOLVERS%%include/AMReX_Habec_K.H
 include/AMReX_IArrayBox.H
 include/AMReX_INT.H
 include/AMReX_IOFormat.H
@@ -223,6 +231,7 @@ include/AMReX_InterpFaceRegister.H
 include/AMReX_Interp_3D_C.H
 include/AMReX_Interp_C.H
 include/AMReX_Interpolater.H
+%%LINEAR_SOLVERS%%include/AMReX_KrylovMV.H
 include/AMReX_LOUtil_K.H
 include/AMReX_LO_BCTYPES.H
 include/AMReX_LUSolver.H
@@ -245,6 +254,7 @@ include/AMReX_MFParallelForG.H
 %%LINEAR_SOLVERS%%include/AMReX_MLALap_3D_K.H
 %%LINEAR_SOLVERS%%include/AMReX_MLALap_K.H
 %%LINEAR_SOLVERS%%include/AMReX_MLALaplacian.H
+%%LINEAR_SOLVERS%%include/AMReX_MLAlgMG.H
 %%LINEAR_SOLVERS%%include/AMReX_MLCGSolver.H
 %%LINEAR_SOLVERS%%include/AMReX_MLCellABecLap.H
 %%LINEAR_SOLVERS%%include/AMReX_MLCellABecLap_3D_K.H
@@ -281,6 +291,8 @@ include/AMReX_MFParallelForG.H
 %%LINEAR_SOLVERS%%include/AMReX_MLTensorOp.H
 %%LINEAR_SOLVERS%%include/AMReX_MLTensor_3D_K.H
 %%LINEAR_SOLVERS%%include/AMReX_MLTensor_K.H
+%%LINEAR_SOLVERS%%include/AMReX_MLTerrainPoisson.H
+%%LINEAR_SOLVERS%%include/AMReX_MLTerrainPoisson_K.H
 include/AMReX_MPMD.H
 include/AMReX_Machine.H
 %%PARTICLES%%include/AMReX_MakeParticle.H
@@ -313,7 +325,9 @@ include/AMReX_OpenMP.H
 include/AMReX_Order.H
 include/AMReX_Orientation.H
 include/AMReX_PArena.H
+%%LINEAR_SOLVERS%%include/AMReX_PCG.H
 %%LINEAR_SOLVERS%%include/AMReX_PCGSolver.H
+%%LINEAR_SOLVERS%%include/AMReX_PCG_MV.H
 include/AMReX_PCI.H
 include/AMReX_PODVector.H
 include/AMReX_PROB_AMR_F.H
@@ -326,6 +340,7 @@ include/AMReX_ParallelReduce.H
 include/AMReX_ParmParse.H
 include/AMReX_Parser.H
 include/AMReX_Parser_Exe.H
+include/AMReX_Parser_Exe_Body.H
 include/AMReX_Parser_Y.H
 %%PARTICLES%%include/AMReX_Particle.H
 %%PARTICLES%%include/AMReX_ParticleArray.H
@@ -367,11 +382,12 @@ include/AMReX_RungeKutta.H
 include/AMReX_SArena.H
 include/AMReX_SIMD.H
 include/AMReX_SPACE.H
-%%SUNDIALS%%include/AMReX_SUNMemory.H
 include/AMReX_Scan.H
+%%LINEAR_SOLVERS%%include/AMReX_SingleBoxCGSolver.H
 include/AMReX_Slopes_K.H
 include/AMReX_SmallMatrix.H
 %%LINEAR_SOLVERS%%include/AMReX_Smoother_MV.H
+%%LINEAR_SOLVERS%%include/AMReX_SpGEMM.H
 %%LINEAR_SOLVERS%%include/AMReX_SpMV.H
 %%LINEAR_SOLVERS%%include/AMReX_SpMatUtil.H
 %%LINEAR_SOLVERS%%include/AMReX_SpMatrix.H
@@ -387,9 +403,10 @@ include/AMReX_String.H
 include/AMReX_TableData.H
 include/AMReX_TagBox.H
 include/AMReX_TagParallelFor.H
+include/AMReX_ThirdPartyProfiling.H
 include/AMReX_TimeIntegrator.H
-%%PARTICLES%%include/AMReX_TracerParticles.H
 %%PARTICLES%%include/AMReX_TracerParticle_mod_K.H
+%%PARTICLES%%include/AMReX_TracerParticles.H
 include/AMReX_TrackedVector.H
 include/AMReX_Tuple.H
 include/AMReX_TypeList.H
@@ -422,8 +439,8 @@ include/amrex_iparser.tab.nolint.H
 include/amrex_parser.lex.nolint.H
 include/amrex_parser.tab.nolint.H
 lib/cmake/AMReX/AMReXCMakeModules/AMReXBuildInfo.cmake
-lib/cmake/AMReX/AMReXCMakeModules/AMReXCUDAOptions.cmake
 lib/cmake/AMReX/AMReXCMakeModules/AMReXCUDAArchs.cmake
+lib/cmake/AMReX/AMReXCMakeModules/AMReXCUDAOptions.cmake
 lib/cmake/AMReX/AMReXCMakeModules/AMReXClangTidy.cmake
 lib/cmake/AMReX/AMReXCMakeModules/AMReXConfig.cmake.in
 lib/cmake/AMReX/AMReXCMakeModules/AMReXFlagsTargets.cmake
