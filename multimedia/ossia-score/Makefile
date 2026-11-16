@@ -5,7 +5,7 @@ MASTER_SITES=	https://github.com/ossia/score/releases/download/v${DISTVERSION}/
 DISTFILES=	ossia.score-${DISTVERSION}-src${EXTRACT_SUFX}
 
 PATCH_SITES=	https://github.com/ossia/score/commit/
-PATCHFILES=	49b2f1a649e16167f36063bf0d18c9dd71f2f064.patch:-p1
+PATCHFILES=	49b2f1a649e16167f36063bf0d18c9dd71f2f064.patch:-p1 # https://github.com/ossia/score/pull/2400
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Interactive sequencer for the intermedia arts
