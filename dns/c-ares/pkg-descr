@@ -1,5 +1,10 @@
-This is c-ares, an asynchronous resolver library.  It is intended for
-applications which need to perform DNS queries without blocking, or
-need to perform multiple DNS queries in parallel.  The primary
-examples of such applications are servers which communicate with
-multiple clients and programs with graphical user interfaces.
+c-ares is a modern DNS (stub) resolver library, written in C. It provides
+interfaces for asynchronous queries while trying to abstract the intricacies of
+the underlying DNS protocol. It was originally intended for applications which
+need to perform DNS queries without blocking, or need to perform multiple DNS
+queries in parallel.
+
+One of the goals of c-ares is to be a better DNS resolver than is provided by
+your system, regardless of which system you use. We recommend using the c-ares
+library in all network applications even if the initial goal of asynchronous
+resolution is not necessary to your application.
