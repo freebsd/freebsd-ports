@@ -1,5 +1,5 @@
 PORTNAME=	draco
-DISTVERSION=	1.5.7
+DISTVERSION=	1.5.9
 CATEGORIES=	archivers
 PKGNAMESUFFIX=	-3d-compression
 
@@ -25,5 +25,11 @@ post-test:
 	@cd ${BUILD_WRKSRC} && \
 		./draco_tests && \
 		./draco_factory_tests
+
+# tests as of 1.5.9:
+# [==========] 204 tests from 41 test suites ran. (2869 ms total)
+# [  PASSED  ] 204 tests.
+# [==========] 4 tests from 2 test suites ran. (0 ms total)
+# [  PASSED  ] 4 tests.
 
 .include <bsd.port.mk>
