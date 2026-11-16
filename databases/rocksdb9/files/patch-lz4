@@ -1,0 +1,14 @@
+--- util/compression.h.orig	2025-03-29 21:42:01 UTC
++++ util/compression.h
+@@ -1301,7 +1301,11 @@ inline bool LZ4HC_Compress(const CompressionInfo& info
+   }
+ #if LZ4_VERSION_NUMBER >= 10400  // r124+
+   LZ4_streamHC_t* stream = LZ4_createStreamHC();
++#if LZ4_VERSION_NUMBER >= 10900
++  LZ4_resetStreamHC_fast(stream, level);
++#else
+   LZ4_resetStreamHC(stream, level);
++#endif
+   Slice compression_dict = info.dict().GetRawDict();
+   const char* compression_dict_data =
+       compression_dict.size() > 0 ? compression_dict.data() : nullptr;
