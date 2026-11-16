@@ -29,7 +29,6 @@ LICENSE=		APACHE20 ADOBE BSD3CLAUSE BSD4CLAUSE BSL ICU MIT MPL10 \
 			MPL11 PSFL TWAIN W3C
 LICENSE_COMB=		multi
 LICENSE_NAME_ADOBE=	Adobe Systems Incorporated license
-LICENSE_NAME_ICU=	ICU License
 LICENSE_NAME_TWAIN=	TWAIN Working Group license
 LICENSE_NAME_W3C=	W3C license
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE_ALv2
@@ -45,7 +44,6 @@ LICENSE_FILE_PSFL=	${WRKSRC}/LICENSE_PSFL
 LICENSE_FILE_TWAIN=	${WRKSRC}/LICENSE_TWAIN
 LICENSE_FILE_W3C=	${WRKSRC}/LICENSE_W3C
 LICENSE_PERMS_ADOBE=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
-LICENSE_PERMS_ICU=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_TWAIN=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_W3C=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
