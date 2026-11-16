@@ -1,6 +1,6 @@
 PORTNAME=	faketty
-DISTVERSION=	1.0.20
-PORTREVISION=	6
+DISTVERSION=	1.0.21
+PORTREVISION=	0
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,30 +16,30 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	dtolnay
 
-CARGO_CRATES=	anstream-0.6.21 \
-		anstyle-1.0.13 \
-		anstyle-parse-0.2.7 \
+CARGO_CRATES=	anstream-1.0.0 \
+		anstyle-1.0.14 \
+		anstyle-parse-1.0.0 \
 		anstyle-query-1.1.5 \
 		anstyle-wincon-3.0.11 \
-		bitflags-2.11.0 \
-		cfg-if-1.0.4 \
-		cfg_aliases-0.2.1 \
-		clap-4.5.60 \
-		clap_builder-4.5.60 \
-		clap_derive-4.5.55 \
-		clap_lex-1.0.0 \
-		colorchoice-1.0.4 \
+		bitflags-2.13.2 \
+		cfg-if-1.0.5 \
+		cfg_aliases-0.2.2 \
+		clap-4.6.7 \
+		clap_builder-4.6.7 \
+		clap_derive-4.6.7 \
+		clap_lex-1.1.1 \
+		colorchoice-1.0.5 \
 		heck-0.5.0 \
 		is_terminal_polyfill-1.70.2 \
-		libc-0.2.183 \
-		nix-0.31.2 \
+		libc-0.2.191 \
+		nix-0.32.0 \
 		once_cell_polyfill-1.70.2 \
-		proc-macro2-1.0.106 \
-		quote-1.0.45 \
+		proc-macro2-1.0.107 \
+		quote-1.0.47 \
 		scratch-1.0.9 \
 		strsim-0.11.1 \
-		syn-2.0.117 \
-		unicode-ident-1.0.24 \
+		syn-3.0.10 \
+		unicode-ident-1.0.27 \
 		utf8parse-0.2.2 \
 		windows-link-0.2.1 \
 		windows-sys-0.61.2
