@@ -5,7 +5,8 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Provides information on Google Cloud Platform hosting environment
-WWW=		https://github.com/googleapis/ruby-cloud-env
+WWW=		https://docs.cloud.google.com/ruby/docs/reference/google-cloud-env/latest \
+		https://github.com/googleapis/ruby-cloud-env
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
