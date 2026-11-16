@@ -1,6 +1,6 @@
---- autosetup/sqlite-config.tcl.orig	2026-01-19 17:01:34 UTC
+--- autosetup/sqlite-config.tcl.orig	2026-10-26 13:57:49 UTC
 +++ autosetup/sqlite-config.tcl
-@@ -884,12 +884,11 @@ proc sqlite-handle-soname {} {
+@@ -908,12 +908,11 @@ proc sqlite-handle-soname {} {
      none - "" { return 0 }
      legacy    { set soname libsqlite3.so.0 }
      default {

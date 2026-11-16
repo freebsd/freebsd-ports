@@ -1,6 +1,6 @@
---- main.mk.orig	2026-11-16 03:55:09 UTC
+--- main.mk.orig	2026-10-26 13:57:49 UTC
 +++ main.mk
-@@ -2251,7 +2251,7 @@ install-man1: $(install-dir.man1)
+@@ -2307,7 +2307,7 @@ install-man1: $(install-dir.man1)
  #install: install-rsync
  
  install-man1: $(install-dir.man1)
