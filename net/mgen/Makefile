@@ -8,8 +8,8 @@ MAINTAINER=	dnpowers@me.com
 COMMENT=	IP network performance tests and measurements
 WWW=		https://www.nrl.navy.mil/Our-Work/Areas-of-Research/Information-Technology/NCS/MGEN/
 
-LICENSE=	NRL
-LICENSE_NAME=	Naval Research Laboratory Open Source License
+LICENSE=	LicenseRef-NRL-Protolib
+LICENSE_NAME=	NRL Protolib License
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
