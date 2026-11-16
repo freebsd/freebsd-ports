@@ -10,15 +10,13 @@ MAINTAINER=	patrick@crandol.com
 COMMENT=	Dart programming language SDK
 WWW=		https://dart.dev/
 
-LICENSE=	APACHE20 BSD3CLAUSE ICU MIT ZLIB
+LICENSE=	APACHE20 BSD3CLAUSE Unicode-3.0 MIT ZLIB
 LICENSE_COMB=	multi
-LICENSE_NAME_ICU=	Unicode License V3
 LICENSE_FILE_APACHE20=	${WRKSRC}/third_party/perfetto/src/LICENSE
 LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/LICENSE
-LICENSE_FILE_ICU=	${WRKSRC}/third_party/icu/LICENSE
+LICENSE_FILE_Unicode-3.0=	${WRKSRC}/third_party/icu/LICENSE
 LICENSE_FILE_MIT=	${WRKSRC}/third_party/pkg/tar/LICENSE
 LICENSE_FILE_ZLIB=	${WRKSRC}/third_party/zlib/LICENSE
-LICENSE_PERMS_ICU=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 ONLY_FOR_ARCHS=	aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	no bootstrap SDK for other architectures yet
