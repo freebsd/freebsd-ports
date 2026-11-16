@@ -11,6 +11,8 @@ WWW=		https://taskwarrior.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Fails to build with CMake 4
+
 LIB_DEPENDS=	libgnutls.so:security/gnutls
 RUN_DEPENDS=	bash:shells/bash
 
