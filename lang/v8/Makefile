@@ -4,7 +4,7 @@
 # Browse current stable branch: https://chromium.googlesource.com/v8/v8/+/refs/heads/15.7-lkgr
 
 PORTNAME=	v8
-PORTVERSION=	15.7.112.23
+PORTVERSION=	15.7.112.43
 CATEGORIES=	lang
 
 MAINTAINER=	delphij@FreeBSD.org
