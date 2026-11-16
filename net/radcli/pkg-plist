@@ -102,6 +102,7 @@ share/man/man3/radcli_request_free.3.gz
 share/man/man3/radcli_request_new.3.gz
 share/man/man3/radcli_request_perform.3.gz
 share/man/man3/radcli_request_server.3.gz
+share/man/man3/radcli_request_set_timeout.3.gz
 share/man/man3/rc_aaa.3.gz
 share/man/man3/rc_aaa_ctx.3.gz
 share/man/man3/rc_aaa_ctx_free.3.gz
