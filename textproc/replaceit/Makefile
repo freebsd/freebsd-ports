@@ -7,8 +7,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Light replacement to the combination of sed/awk/grep/head/tail
 WWW=		https://pldaniels.com/replaceit/
 
-LICENSE=	Sendmail
-LICENSE_NAME=	Sendmail License
+LICENSE=	LicenseRef-Sendmail-ReplaceIt
+LICENSE_NAME=	ReplaceIT License (Sendmail Derived)
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
