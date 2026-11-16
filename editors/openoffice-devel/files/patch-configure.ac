@@ -1,0 +1,14 @@
+--- configure.ac.orig	2026-11-10 02:51:28 UTC
++++ configure.ac
+@@ -2834,6 +2834,11 @@ if test "$_os" = "FreeBSD"; then
+ 	if test "$rpath" != "/usr/lib" ; then
+             FBSD_GCC_RPATH="-Wl,-rpath=$rpath"
+ 	fi
++    elif test -n "$enable_sanitizer" && test "$enable_sanitizer" != "no" && test "$COM" = "CLANG"; then
++        # asan library
++        rpath=`$CC -print-resource-dir`/lib/freebsd
++        rpath=`realpath $rpath`
++        FBSD_GCC_RPATH="-Wl,-rpath=$rpath"
+     fi
+     AC_SUBST(FBSD_GCC_RPATH)
+ fi
