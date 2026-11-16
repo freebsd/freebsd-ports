@@ -1,6 +1,6 @@
---- .gn.orig	2026-09-30 03:53:08 UTC
+--- .gn.orig	2026-11-11 10:23:20 UTC
 +++ .gn
-@@ -9,11 +9,7 @@ buildconfig = "//build/config/BUILDCONFIG.gn"
+@@ -10,11 +10,7 @@ buildconfig = "//build/config/BUILDCONFIG.gn"
  
  # The hermetic Python interpreter to use by default. Platforms without a
  # hermetic CPython CIPD package fallback to the system python3 on $PATH.

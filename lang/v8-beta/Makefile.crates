@@ -22,16 +22,16 @@ CARGO_CRATES=	autocfg-1.5.1 \
 		serde-1.0.229 \
 		serde_core-1.0.229 \
 		serde_derive-1.0.229 \
-		smallvec-1.16.2 \
+		smallvec-1.16.3 \
 		stable_deref_trait-1.2.1 \
 		strck-1.0.0 \
-		syn-3.0.6 \
+		syn-3.0.9 \
 		synstructure-0.14.0 \
 		temporal_capi-0.2.6 \
 		temporal_rs-0.2.6 \
 		timezone_provider-0.2.6 \
 		tinystr-0.8.5 \
-		unicode-ident-1.0.26 \
+		unicode-ident-1.0.27 \
 		writeable-0.6.4 \
 		yoke-0.8.4 \
 		yoke-derive-0.8.4 \

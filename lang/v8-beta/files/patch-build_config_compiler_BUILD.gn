@@ -1,4 +1,4 @@
---- build/config/compiler/BUILD.gn.orig	2026-10-25 05:06:27 UTC
+--- build/config/compiler/BUILD.gn.orig	2026-11-06 22:35:01 UTC
 +++ build/config/compiler/BUILD.gn
 @@ -594,7 +594,7 @@ config("compiler") {
    if (is_clang) {
@@ -18,7 +18,7 @@
        cflags += [ "-fno-lifetime-dse" ]
      }
  
-@@ -2929,8 +2929,9 @@ config("split_dwarf") {
+@@ -2947,8 +2947,9 @@ config("split_dwarf") {
    # thinlto requires -gsplit-dwarf in ldflags.
    if (use_thin_lto && !is_apple) {
      ldflags = split_dwarf_flags

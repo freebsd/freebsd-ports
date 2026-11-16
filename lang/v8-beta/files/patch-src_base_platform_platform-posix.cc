@@ -1,6 +1,6 @@
---- src/base/platform/platform-posix.cc.orig	2026-11-02 14:07:25 UTC
+--- src/base/platform/platform-posix.cc.orig	2026-11-11 10:23:20 UTC
 +++ src/base/platform/platform-posix.cc
-@@ -783,7 +783,7 @@ bool OS::HasLazyCommits() {
+@@ -784,7 +784,7 @@ bool OS::HasLazyCommits() {
  #if !V8_OS_ZOS
  // static
  bool OS::HasLazyCommits() {
@@ -9,7 +9,7 @@
    return true;
  #else
    // TODO(bbudge) Return true for all POSIX platforms.
-@@ -934,6 +934,12 @@ int OS::GetCurrentThreadIdInternal() {
+@@ -935,6 +935,12 @@ int OS::GetCurrentThreadIdInternal() {
    return static_cast<int>(syscall(__NR_gettid));
  #elif V8_OS_ANDROID
    return static_cast<int>(gettid());

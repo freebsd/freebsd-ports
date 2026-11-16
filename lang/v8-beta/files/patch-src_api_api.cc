@@ -1,6 +1,6 @@
---- src/api/api.cc.orig	2026-11-02 14:07:25 UTC
+--- src/api/api.cc.orig	2026-11-11 10:23:20 UTC
 +++ src/api/api.cc
-@@ -6579,7 +6579,7 @@ bool v8::V8::Initialize(const int build_config) {
+@@ -6599,7 +6599,7 @@ bool v8::V8::Initialize(const int build_config) {
    return true;
  }
  

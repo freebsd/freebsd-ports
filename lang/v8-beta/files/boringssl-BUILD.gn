@@ -1,0 +1,14 @@
+# Replaces //third_party/boringssl/BUILD.gn, which builds BoringSSL from
+# source.  V8 only uses the SHA-256 functions of libcrypto, which OpenSSL
+# provides as well, so link the OpenSSL selected by USES=ssl instead, as
+# Node.js does.
+
+import("//build/config/linux/pkg_config.gni")
+
+pkg_config("system_libcrypto") {
+  packages = [ "libcrypto" ]
+}
+
+group("boringssl") {
+  public_configs = [ ":system_libcrypto" ]
+}
