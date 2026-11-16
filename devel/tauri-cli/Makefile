@@ -1,7 +1,6 @@
 PORTNAME=	tauri-cli
 DISTVERSIONPREFIX=	tauri-v
-DISTVERSION=	2.12.4
-PORTREVISION=	0
+DISTVERSION=	2.12.5
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -99,7 +98,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		bstr-1.11.3 \
 		buffer-redux-1.0.2 \
 		built-0.8.1 \
-		bumpalo-3.16.0 \
+		bumpalo-3.20.3 \
 		bytecount-0.6.8 \
 		bytemuck-1.25.0 \
 		byteorder-1.5.0 \
@@ -160,7 +159,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		cpufeatures-0.2.16 \
 		cpufeatures-0.3.0 \
 		crc24-0.1.6 \
-		crc32fast-1.5.0 \
+		crc32fast-1.5.2 \
 		crossbeam-channel-0.5.15 \
 		crossbeam-deque-0.8.6 \
 		crossbeam-epoch-0.9.20 \
@@ -240,7 +239,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		enum-primitive-derive-0.3.0 \
 		env_filter-0.1.3 \
 		env_filter-2.0.0 \
-		env_home-0.1.0 \
 		env_logger-0.8.4 \
 		env_logger-0.11.11 \
 		equator-0.4.2 \
@@ -347,7 +345,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		hyper-util-0.1.19 \
 		iana-time-zone-0.1.61 \
 		iana-time-zone-haiku-0.1.2 \
-		ico-0.5.0 \
+		ico-0.6.0 \
 		icu_collections-2.1.1 \
 		icu_locale_core-2.1.1 \
 		icu_normalizer-2.1.1 \
@@ -433,7 +431,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		litemap-0.8.2 \
 		local-ip-address-0.6.13 \
 		lock_api-0.4.12 \
-		lockfree-object-pool-0.1.6 \
 		log-0.4.34 \
 		loop9-0.1.5 \
 		mac-0.1.1 \
@@ -447,7 +444,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		maybe-rayon-0.1.1 \
 		md-5-0.10.6 \
 		md5-0.8.0 \
-		memchr-2.8.2 \
+		memchr-2.8.3 \
 		memmap2-0.9.11 \
 		memoffset-0.9.1 \
 		micromap-0.3.0 \
@@ -473,6 +470,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		neli-proc-macros-0.2.2 \
 		new_debug_unreachable-1.0.6 \
 		nix-0.29.0 \
+		nix-0.31.3 \
 		no_std_io2-0.9.4 \
 		nodrop-0.1.14 \
 		nohash-hasher-0.2.0 \
@@ -641,7 +639,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		rand-0.7.3 \
 		rand-0.8.6 \
 		rand-0.9.4 \
-		rand-0.10.2 \
+		rand-0.10.3 \
 		rand_chacha-0.2.2 \
 		rand_chacha-0.3.1 \
 		rand_chacha-0.9.0 \
@@ -690,7 +688,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		rustls-pki-types-1.13.2 \
 		rustls-platform-verifier-0.6.2 \
 		rustls-platform-verifier-android-0.1.1 \
-		rustls-webpki-0.103.15 \
+		rustls-webpki-0.103.16 \
 		rustversion-1.0.19 \
 		rusty-fork-0.3.0 \
 		rustybuzz-0.20.1 \
@@ -711,15 +709,15 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		selectors-0.38.0 \
 		semver-1.0.28 \
 		seq-macro-0.3.6 \
-		serde-1.0.228 \
+		serde-1.0.229 \
 		serde-untagged-0.1.6 \
 		serde-value-0.7.0 \
 		serde-wasm-bindgen-0.6.5 \
-		serde_core-1.0.228 \
-		serde_derive-1.0.228 \
+		serde_core-1.0.229 \
+		serde_derive-1.0.229 \
 		serde_derive_internals-0.29.1 \
 		serde_fmt-1.0.3 \
-		serde_json-1.0.145 \
+		serde_json-1.0.154 \
 		serde_path_to_error-0.1.16 \
 		serde_repr-0.1.19 \
 		serde_spanned-0.6.8 \
@@ -742,7 +740,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		sha2-0.10.8 \
 		sha2-0.11.0 \
 		sha3-0.10.8 \
-		shared_child-1.1.1 \
+		shared_child-1.1.2 \
 		shared_thread-0.2.0 \
 		shell-words-1.1.0 \
 		shlex-1.3.0 \
@@ -752,7 +750,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		signal-hook-registry-1.4.2 \
 		signal-hook-tokio-0.4.0 \
 		signature-2.2.0 \
-		simd-adler32-0.3.7 \
+		simd-adler32-0.3.10 \
 		simd_helpers-0.1.0 \
 		similar-2.6.0 \
 		simplecss-0.2.2 \
@@ -854,7 +852,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		toml_edit-0.25.4+spec-1.1.0 \
 		toml_parser-1.0.9+spec-1.1.0 \
 		toml_writer-1.0.6+spec-1.1.0 \
-		tower-0.5.2 \
+		tower-0.5.3 \
 		tower-http-0.6.8 \
 		tower-layer-0.3.3 \
 		tower-service-0.3.3 \
@@ -926,13 +924,13 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		web_atoms-0.2.3 \
 		webkit2gtk-2.0.2 \
 		webkit2gtk-sys-2.0.2 \
-		webpki-root-certs-1.0.5 \
-		webpki-roots-1.0.5 \
+		webpki-root-certs-1.0.10 \
+		webpki-roots-1.0.10 \
 		webview2-com-0.39.1 \
 		webview2-com-macros-0.8.1 \
 		webview2-com-sys-0.39.1 \
 		weezl-0.1.12 \
-		which-8.0.0 \
+		which-8.0.6 \
 		win32job-2.0.0 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
@@ -1005,7 +1003,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		winnow-0.5.40 \
 		winnow-0.7.14 \
 		winreg-0.55.0 \
-		winsafe-0.0.19 \
 		wit-bindgen-0.57.1 \
 		worker-0.8.5 \
 		worker-macros-0.8.5 \
@@ -1033,9 +1030,10 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		zerotrie-0.2.3 \
 		zerovec-0.11.5 \
 		zerovec-derive-0.11.3 \
-		zip-8.0.0 \
+		zip-9.0.5 \
 		zlib-rs-0.5.0 \
-		zopfli-0.8.1 \
+		zmij-1.0.23 \
+		zopfli-0.8.4 \
 		zstd-0.14.2 \
 		zstd-safe-8.1.0 \
 		zstd-sys-2.1.1+zstd.1.5.7 \
