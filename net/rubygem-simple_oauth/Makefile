@@ -1,5 +1,5 @@
 PORTNAME=	simple_oauth
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.4
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
