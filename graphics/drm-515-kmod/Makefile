@@ -12,7 +12,7 @@ WWW=		https://github.com/freebsd/drm-kmod/
 LICENSE=	BSD2CLAUSE MIT GPLv2
 LICENSE_COMB=	multi
 
-ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
+ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	the new KMS components are only supported on amd64 and powerpc64
 
 CONFLICTS_INSTALL=	drm-latest-kmod \
