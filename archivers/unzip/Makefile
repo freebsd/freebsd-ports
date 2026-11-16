@@ -12,9 +12,7 @@ COMMENT=	List, test, and extract compressed files from a ZIP archive
 WWW=		https://infozip.sourceforge.net/UnZip.html
 
 LICENSE=	Info-ZIP
-LICENSE_NAME=	Info-ZIP license
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		cpe
 CPE_VENDOR=	unzip_project
