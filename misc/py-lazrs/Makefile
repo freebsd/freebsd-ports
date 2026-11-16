@@ -1,6 +1,5 @@
 PORTNAME=	lazrs
-DISTVERSION=	0.8.2
-PORTREVISION=	2
+DISTVERSION=	0.9.0
 CATEGORIES=	misc
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -22,28 +21,28 @@ GH_PROJECT=	laz-rs-python
 
 CARGO_CRATES=	autocfg-1.5.1 \
 		byteorder-1.5.0 \
-		crossbeam-deque-0.8.7 \
-		crossbeam-epoch-0.9.20 \
-		crossbeam-utils-0.8.22 \
-		either-1.17.0 \
+		crossbeam-deque-0.8.8 \
+		crossbeam-epoch-0.9.21 \
+		crossbeam-utils-0.8.23 \
+		either-1.19.0 \
 		heck-0.5.0 \
-		laz-0.12.2 \
-		libc-0.2.189 \
+		laz-0.14.0 \
+		libc-0.2.191 \
 		num-traits-0.2.19 \
 		once_cell-1.21.4 \
-		portable-atomic-1.14.0 \
+		portable-atomic-1.15.0 \
 		proc-macro2-1.0.107 \
-		pyo3-0.29.0 \
-		pyo3-build-config-0.29.0 \
-		pyo3-ffi-0.29.0 \
-		pyo3-macros-0.29.0 \
-		pyo3-macros-backend-0.29.0 \
+		pyo3-0.29.3 \
+		pyo3-build-config-0.29.3 \
+		pyo3-ffi-0.29.3 \
+		pyo3-macros-0.29.3 \
+		pyo3-macros-backend-0.29.3 \
 		quote-1.0.47 \
 		rayon-1.12.0 \
 		rayon-core-1.13.0 \
 		syn-2.0.119 \
-		target-lexicon-0.13.5 \
-		unicode-ident-1.0.24
+		target-lexicon-0.13.6 \
+		unicode-ident-1.0.27
 
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
