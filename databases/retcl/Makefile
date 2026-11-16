@@ -1,5 +1,5 @@
 PORTNAME=	retcl
-PORTVERSION=	0.6.0
+PORTVERSION=	0.7.1
 CATEGORIES=	databases
 
 MAINTAINER=	gahr@FreeBSD.org
