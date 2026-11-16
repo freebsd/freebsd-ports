@@ -1,6 +1,6 @@
---- os.hpp.orig	2026-06-27 11:35:31 UTC
+--- os.hpp.orig	2026-10-27 08:48:33 UTC
 +++ os.hpp
-@@ -162,10 +162,13 @@
+@@ -166,10 +166,13 @@
  
  #if defined(__aarch64__) && (defined(__ARM_FEATURE_CRYPTO) || defined(__ARM_FEATURE_CRC32))
  #include <arm_neon.h>
@@ -15,7 +15,7 @@
  #ifdef __ARM_FEATURE_CRYPTO
  #define USE_NEON_AES
  #endif
-@@ -173,6 +176,10 @@
+@@ -177,6 +180,10 @@
  #define USE_NEON_CRC32
  #endif
  #endif
@@ -24,5 +24,5 @@
 +#include <openssl/evp.h>
 +#endif // OPENSSL_AES
  
- #ifdef  S_IFLNK
- #define SAVE_LINKS
+ #if defined(__linux) || defined(__FreeBSD__)
+ #include <sys/time.h>

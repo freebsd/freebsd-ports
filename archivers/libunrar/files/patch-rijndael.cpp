@@ -1,4 +1,4 @@
---- rijndael.cpp.orig	2026-06-27 11:35:32 UTC
+--- rijndael.cpp.orig	2026-10-27 08:48:33 UTC
 +++ rijndael.cpp
 @@ -3,6 +3,7 @@
   **************************************************************************/
@@ -16,13 +16,17 @@
  
  
  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-@@ -82,16 +84,20 @@ Rijndael::Rijndael()
+@@ -82,20 +84,24 @@ Rijndael::Rijndael()
  
  Rijndael::Rijndael()
  {
 +#if !defined(OPENSSL_AES)
-   if (S5[0]==0)
+   static bool TablesInitialized=false;
+   if (!TablesInitialized)
+   {
      GenerateTables();
+     TablesInitialized=true;
+   }
 +#endif // OPENSSL_AES
    m_uRounds = 0;
    CBCMode = true; // Always true for RAR.
@@ -37,7 +41,7 @@
  }
  
  
-@@ -104,6 +110,31 @@ void Rijndael::Init(bool Encrypt,const byte *key,uint 
+@@ -108,6 +114,31 @@ void Rijndael::Init(bool Encrypt,const byte *key,uint 
  
  void Rijndael::Init(bool Encrypt,const byte *key,uint keyLen,const byte * initVector)
  {
@@ -69,16 +73,7 @@
    // Check SIMD here instead of constructor, so if object is a part of some
    // structure memset'ed before use, these variables are not lost.
  #if defined(USE_SSE)
-@@ -123,7 +154,7 @@ void Rijndael::Init(bool Encrypt,const byte *key,uint 
- #endif
- 
- #elif defined(USE_NEON_AES)
--  #ifdef _APPLE
-+  #if defined(_APPLE)
-     // getauxval isn't available in OS X
-     uint Value=0;
-     size_t Size=sizeof(Value);
-@@ -133,6 +164,12 @@ void Rijndael::Init(bool Encrypt,const byte *key,uint 
+@@ -139,6 +170,12 @@ void Rijndael::Init(bool Encrypt,const byte *key,uint 
      // because "hw.optional.arm.FEAT_AES" was missing in OS X 11, but AES
      // still was supported by Neon.
      AES_Neon=RetCode!=0 || Value!=0;
@@ -91,7 +86,7 @@
    #else
      AES_Neon=(getauxval(AT_HWCAP) & HWCAP_AES)!=0;
    #endif
-@@ -173,6 +210,7 @@ void Rijndael::Init(bool Encrypt,const byte *key,uint 
+@@ -179,6 +216,7 @@ void Rijndael::Init(bool Encrypt,const byte *key,uint 
  
    if(!Encrypt)
      keyEncToDec();
@@ -99,7 +94,7 @@
  }
  
  
-@@ -181,6 +219,15 @@ void Rijndael::blockEncrypt(const byte *input,size_t i
+@@ -187,6 +225,15 @@ void Rijndael::blockEncrypt(const byte *input,size_t i
    if (inputLen <= 0)
      return;
  
@@ -115,7 +110,7 @@
    size_t numBlocks = inputLen/16;
  #if defined(USE_SSE)
    if (AES_NI)
-@@ -245,9 +292,11 @@ void Rijndael::blockEncrypt(const byte *input,size_t i
+@@ -251,9 +298,11 @@ void Rijndael::blockEncrypt(const byte *input,size_t i
      input += 16;
    }
    Copy128(m_initVector,prevBlock);
@@ -127,7 +122,7 @@
  #ifdef USE_SSE
  void Rijndael::blockEncryptSSE(const byte *input,size_t numBlocks,byte *outBuffer)
  {
-@@ -313,6 +362,7 @@ void Rijndael::blockEncryptNeon(const byte *input,size
+@@ -319,6 +368,7 @@ void Rijndael::blockEncryptNeon(const byte *input,size
    return;
  }
  #endif
@@ -135,7 +130,7 @@
  
    
  void Rijndael::blockDecrypt(const byte *input, size_t inputLen, byte *outBuffer)
-@@ -320,6 +370,15 @@ void Rijndael::blockDecrypt(const byte *input, size_t 
+@@ -326,6 +376,15 @@ void Rijndael::blockDecrypt(const byte *input, size_t 
    if (inputLen <= 0)
      return;
  
@@ -151,7 +146,7 @@
    size_t numBlocks=inputLen/16;
  #if defined(USE_SSE)
    if (AES_NI)
-@@ -388,9 +447,11 @@ void Rijndael::blockDecrypt(const byte *input, size_t 
+@@ -394,9 +453,11 @@ void Rijndael::blockDecrypt(const byte *input, size_t 
    }
  
    memcpy(m_initVector,iv,16);
@@ -163,7 +158,7 @@
  #ifdef USE_SSE
  void Rijndael::blockDecryptSSE(const byte *input, size_t numBlocks, byte *outBuffer)
  {
-@@ -457,8 +518,10 @@ void Rijndael::blockDecryptNeon(const byte *input, siz
+@@ -463,8 +524,10 @@ void Rijndael::blockDecryptNeon(const byte *input, siz
    memcpy(m_initVector,iv,16);
  }
  #endif
@@ -174,7 +169,7 @@
  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
  // ALGORITHM
  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-@@ -587,6 +650,7 @@ void Rijndael::GenerateTables()
+@@ -593,6 +656,7 @@ void Rijndael::GenerateTables()
      U1[b][0]=U2[b][1]=U3[b][2]=U4[b][3]=T5[I][0]=T6[I][1]=T7[I][2]=T8[I][3]=gmul(b,0xe);
    }
  }

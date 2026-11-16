@@ -1,13 +1,6 @@
---- crc.cpp.orig	2025-02-12 14:05:26 UTC
+--- crc.cpp.orig	2026-10-27 08:48:32 UTC
 +++ crc.cpp
-@@ -42,12 +42,18 @@ void InitCRC32(uint *CRCTab)
-   }
- 
- #ifdef USE_NEON_CRC32
--  #ifdef _APPLE
-+  #if defined(_APPLE)
-     // getauxval isn't available in OS X
-     uint Value=0;
+@@ -50,6 +50,12 @@ void InitCRC32(uint *CRCTab)
      size_t Size=sizeof(Value);
      int RetCode=sysctlbyname("hw.optional.armv8_crc32",&Value,&Size,NULL,0);
      CRC_Neon=RetCode==0 && Value!=0;
