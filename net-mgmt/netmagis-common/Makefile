@@ -10,9 +10,7 @@ COMMENT?=	Netmagis common infrastructure
 WWW=		http://www.netmagis.org/
 
 LICENSE=	CECILL-B
-LICENSE_NAME=	CeCILL-B Free Software License Agreement
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 RUN_DEPENDS+=	dtplite:devel/tcllib
 
