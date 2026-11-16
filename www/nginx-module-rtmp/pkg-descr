@@ -1,0 +1,8 @@
+The RTMP modules turn nginx into a streaming server: they take a live
+stream in over RTMP, relay it to other servers, record it, and serve it
+again as HLS or MPEG-DASH.  A statistics and a control endpoint are
+served over HTTP, and an external program such as ffmpeg can be run per
+stream to transcode it.
+
+This port only installs the module sources.  The modules themselves are
+built by the nginx ports when their RTMP option is enabled.
