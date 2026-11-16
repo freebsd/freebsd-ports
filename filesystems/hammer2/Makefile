@@ -10,6 +10,8 @@ WWW=		https://github.com/kusumi/freebsd_hammer2
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
+BROKEN_FreeBSD_16=	fails to build: hammer2_vnops.c: call to undeclared function 'VREF'
+
 USES=		kmod uidfix
 
 USE_GITHUB=	yes
