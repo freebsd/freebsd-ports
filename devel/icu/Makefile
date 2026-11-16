@@ -11,10 +11,9 @@ COMMENT?=	International Components for Unicode (from IBM)
 WWW=		https://icu.unicode.org/ \
 		https://github.com/unicode-org/icu
 
-LICENSE=	ICU
-LICENSE_NAME=	ICU license
+LICENSE=	BSD-3-Clause Unicode-3.0
+LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/../LICENSE
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES+=		compiler:c++11-lib cpe gmake python:build tar:tgz
 
