@@ -1,3 +1,42 @@
+  <vuln vid="05eaad8b-e202-11f1-85bb-1c697a616631">
+    <topic>Emacs -- Arbitrary code execution via .dir-locals.el</topic>
+    <affects>
+      <package>
+	<name>emacs</name>
+	<name>emacs-canna</name>
+	<name>emacs-nox</name>
+	<name>emacs-wayland</name>
+	<range><lt>31.1_4,3</lt></range>
+      </package>
+      <package>
+	<name>emacs-devel</name>
+	<name>emacs-devel-nox</name>
+	<range><lt>32.0.50.20261115,3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	  <h1>Problem Description</h1>
+	  <p>Emacs validates the major modes named in the auto-mode-alist of a
+	  .dir-locals.el before calling them.  Functions in entries of the form
+	  (REGEXP FUNCTION t) were called without this validation.</p>
+	  <h1>Impact</h1>
+	  <p>Visiting a file in a directory tree containing a crafted
+	  .dir-locals.el can execute arbitrary Lisp code with the privileges of
+	  the user running Emacs.</p>
+	</body>
+    </description>
+    <references>
+      <url>https://www.openwall.com/lists/oss-security/2026/11/11/7</url>
+      <url>https://debbugs.gnu.org/82213</url>
+      <url>https://git.savannah.gnu.org/cgit/emacs.git/commit/?id=205ae0b0583dbfe09e258164adbc49e130645221</url>
+    </references>
+    <dates>
+      <discovery>2026-11-10</discovery>
+      <entry>2026-11-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9282c386-b630-4303-82df-027ae4600015">
     <topic>chromium -- security fixes</topic>
     <affects>
