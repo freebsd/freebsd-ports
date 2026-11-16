@@ -17,7 +17,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	CEED
 GH_PROJECT=	libCEED
 
-CFLAGS+=	-fPIC # https://github.com/CEED/libCEED/issues/1706
+CFLAGS+=	-fPIC # the project expects this
+CXXFLAGS+=	-fPIC # the project expects this
 FFLAGS+=	-cpp # needed for the Fortran tests that use the SOURCE_DIR macro
 
 TEST_TARGET=	test
