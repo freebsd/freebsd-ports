@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2026-09-17 19:22:40 UTC
++++ pyproject.toml
+@@ -22,7 +22,7 @@ dependencies = [
+ ]
+ dynamic = []
+ dependencies = [
+-    "jbpy>=0.5.1, <0.7",
++    "jbpy>=0.5.1, <0.8",
+     "lxml>=5.1.0",
+     "numpy>=2.0.0",
+     "shapely>=2.0.6",
