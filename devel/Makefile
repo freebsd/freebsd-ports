@@ -624,8 +624,8 @@
     SUBDIR += derelict-util
     SUBDIR += desed
     SUBDIR += desktop-file-utils
-    SUBDIR += dev86
     SUBDIR += detect-it-easy
+    SUBDIR += dev86
     SUBDIR += devtodo
     SUBDIR += dfuzzer
     SUBDIR += dia2code
