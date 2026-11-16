@@ -82,6 +82,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/search/oktavia-jquery-ui.js
 %%PORTDOCS%%%%DOCSDIR%%/search/searchindex.js
 bin/h2o
+bin/h2o-httpclient
 bin/h2olog
 include/h2o.h
 include/h2o/absprio.h
@@ -158,6 +159,12 @@ include/quicly/remote_cid.h
 include/quicly/sendstate.h
 include/quicly/sentmap.h
 include/quicly/streambuf.h
+lib/libh2o-evloop.so
+lib/libh2o-evloop.so.0.16
+lib/libh2o-evloop.so.0.16.0
+lib/libh2o.so
+lib/libh2o.so.0.16
+lib/libh2o.so.0.16.0
 libdata/pkgconfig/libh2o-evloop.pc
 libdata/pkgconfig/libh2o.pc
 share/man/man5/h2o.conf.5.gz
