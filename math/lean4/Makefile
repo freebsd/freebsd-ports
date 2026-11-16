@@ -1,6 +1,6 @@
 PORTNAME=	lean4
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.35.0
+DISTVERSION=	4.36.0
 CATEGORIES=	math lang devel # lean4 is primarily a math theorem prover, but it is also a language and a development environment
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,12 +16,10 @@ BROKEN_armv7=	compilation fails: ../../.build/stage1/lib/temp/Init/Coe.depend: N
 BROKEN_i386=	linking fails: INTERNAL PANIC: out of memory (during: Linking runLinter)
 
 BUILD_DEPENDS=	bash:shells/bash \
-		cadical:math/cadical \
 		leantar:math/leangz
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libuv.so:devel/libuv
-RUN_DEPENDS=	cadical:math/cadical \
-		leantar:math/leangz
+RUN_DEPENDS=	leantar:math/leangz
 TEST_DEPENDS=	bash:shells/bash \
 		git:devel/git \
 		gtail:sysutils/coreutils
@@ -31,7 +29,8 @@ USES=		cmake:noninja,testing compiler:c++14-lang gmake pkgconfig python:build # 
 USE_GITHUB=	yes
 GH_ACCOUNT=	leanprover
 GH_TUPLE=	microsoft:mimalloc:v3.4.5:mimalloc/cmake/mimalloc/src/mimalloc \
-		Kha:lean4lean:lean4-bundle-4.35:lean4lean/ext/lean4lean
+		Kha:lean4lean:lean4-bundle-4.35:lean4lean/ext/lean4lean \
+		arminbiere:cadical:rel-2.1.2:cadical/cadical
 
 CFLAGS+=	-fPIC
 CXXFLAGS+=	-fPIC
@@ -51,6 +50,7 @@ CMAKE_ARGS+=	-DLEANTAR=${LOCALBASE}/bin/leantar
 CMAKE_TESTING_JOBS=	8 # not respected, see https://github.com/leanprover/lean4/issues/15334 (workaround: run tests with 'cpuset -l 0-7' to limit parallelism)
 
 CONFLICTS_BUILD=	gsed # this should be CONFLICTS_TEST but it isn't defined; pesence of gsed for some reason makes several tests fail
+CONFLICTS_INSTALL=	cadical # lean4 ships its own bin/cadical built from the bundled source
 
 OPTIONS_DEFINE=		MIMALLOC
 OPTIONS_DEFAULT=	#MIMALLOC
@@ -87,7 +87,7 @@ pre-everything::
 post-patch:
 	# Disable git downloads of optional checkers (not built by default)
 	@${REINPLACE_CMD} -E \
-		-e 's|GIT_REPOSITORY https://github.com/(ammkrn/nanoda_lib\|leanprover/con-leche\|leanprover/con-ron)|DOWNLOAD_COMMAND ""|' \
+		-e 's|GIT_REPOSITORY https://github.com/(ammkrn/nanoda_lib\|leanprover/con-leche\|leanprover/con-ron\|leanprover/lean-beam)|DOWNLOAD_COMMAND ""|' \
 		-e '/GIT_TAG [0-9a-f]{40}/d' \
 		-e '/GIT_SUBMODULES ""/d' \
 		${WRKSRC}/src/CMakeLists.txt ${WRKSRC}/stage0/src/CMakeLists.txt
@@ -109,8 +109,6 @@ post-install:
 	@${FIND} ${STAGEDIR}${DATADIR} -type d -empty -delete
 	# remove stray files
 	@${RM} ${STAGEDIR}${PREFIX}/LICENSE*
-	# remove bin/cadical, workaround for https://github.com/leanprover/lean4/issues/5603
-	@${RM} ${STAGEDIR}${PREFIX}/bin/cadical
 	# remove bin/leantar (we use the one from math/leangz)
 	@${RM} ${STAGEDIR}${PREFIX}/bin/leantar
 	# strip binaries
@@ -129,5 +127,6 @@ post-install:
 # tests as of 4.34.0: 100% tests pass (individual testsuite runs have intermittent failures with different tests, but all individual tests pass when run separately)
 # tests as of 4.34.1: 99% tests passed, 1 tests failed out of 4068: the 2 months old test cacheTransfer/test.sh fails, see https://github.com/leanprover/lean4/issues/15335
 # tests as of 4.35.0: 99% tests passed, 2 tests failed out of 4218: same cacheTransfer/test.sh failure, pkg/float failure
+# tests as of 4.36.0: 99% tests passed, 2 tests failed out of 4568: cacheTransfer/test.sh, ltarStable/test.sh fail
 
 .include <bsd.port.mk>
