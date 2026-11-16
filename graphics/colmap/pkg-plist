@@ -434,8 +434,6 @@ share/applications/COLMAP.desktop
 %%PORTDOCS%%%%DOCSDIR%%/_sources/rigs.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/tutorial.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/viewer.rst.txt
-%%PORTDOCS%%%%DOCSDIR%%/_sphinx_design_static/design-tabs.js
-%%PORTDOCS%%%%DOCSDIR%%/_sphinx_design_static/sphinx-design.min.css
 %%PORTDOCS%%%%DOCSDIR%%/_static/base-stemmer.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/basic.css
 %%PORTDOCS%%%%DOCSDIR%%/_static/colmap-logo-dark.svg
