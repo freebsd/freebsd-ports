@@ -1,1 +1,7 @@
 Library with the goal to seamlessly blend Django and Bootstrap 4.
+
+django-bootstrap4 provides template tags and settings to render Django
+forms, form fields, formsets, messages, pagination and buttons with
+Bootstrap 4 markup, and to include the Bootstrap CSS and JavaScript in
+templates.  The project is in maintenance mode, superseded by
+django-bootstrap5.
