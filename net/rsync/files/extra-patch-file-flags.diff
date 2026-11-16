@@ -1,3 +1,10 @@
+Add support for preserving BSD file flags
+
+Original patch by Rolf Grossmann <grossman@progtech.net>
+Rsync 3.4.4 port by Dag-Erling Smørgrav <des@FreeBSD.org>
+Rsync 3.5.0 port by Rodrigo Osorio <rodrigo@FreeBSD.org>, reviewed by Claude Code
+Rsync 3.5.2 updated by Rodrigo Osorio <rodrigo@FreeBSD.org>, fix delay-symlinks test when used with fileflags patch
+
 --- backup.c.orig
 +++ backup.c
 @@ -246,7 +246,7 @@
@@ -697,8 +704,8 @@
  #ifdef SUPPORT_HARD_LINKS
  	if (preserve_hard_links && !inc_recurse)
  		match_hard_links(first_flist);
---- options.c.orig
-+++ options.c
+--- options.c.orig	2026-11-16 17:27:28.373867000 +0000
++++ options.c	2026-11-16 18:30:51.983732000 +0000
 @@ -57,6 +57,7 @@
  int preserve_acls = 0;
  int preserve_xattrs = 0;
@@ -715,7 +722,7 @@
  int io_timeout = 0;
  int prune_empty_dirs = 0;
  int use_qsort = 0;
-@@ -642,6 +644,10 @@
+@@ -643,6 +645,10 @@
    {"perms",           'p', POPT_ARG_VAL,    &preserve_perms, 1, 0, 0 },
    {"no-perms",         0,  POPT_ARG_VAL,    &preserve_perms, 0, 0, 0 },
    {"no-p",             0,  POPT_ARG_VAL,    &preserve_perms, 0, 0, 0 },
@@ -726,7 +733,7 @@
    {"executability",   'E', POPT_ARG_NONE,   &preserve_executability, 0, 0, 0 },
    {"acls",            'A', POPT_ARG_NONE,   0, 'A', 0, 0 },
    {"no-acls",          0,  POPT_ARG_VAL,    &preserve_acls, 0, 0, 0 },
-@@ -745,6 +751,12 @@
+@@ -746,6 +752,12 @@
    {"remove-source-files",0,POPT_ARG_VAL,    &remove_source_files, 1, 0, 0 },
    {"force",            0,  POPT_ARG_VAL,    &force_delete, 1, 0, 0 },
    {"no-force",         0,  POPT_ARG_VAL,    &force_delete, 0, 0, 0 },
@@ -739,48 +746,49 @@
    {"ignore-errors",    0,  POPT_ARG_VAL,    &ignore_errors, 1, 0, 0 },
    {"no-ignore-errors", 0,  POPT_ARG_VAL,    &ignore_errors, 0, 0, 0 },
    {"max-delete",       0,  POPT_ARG_INT,    &max_delete, 0, 0, 0 },
-@@ -1105,6 +1117,15 @@
+@@ -1122,7 +1134,16 @@
+ #endif
  #ifndef SUPPORT_CRTIMES
  	parse_one_refuse_match(0, "crtimes", list_end);
- #endif
-+#ifndef SUPPORT_FILE_FLAGS
-+	parse_one_refuse_match(0, "file-flags", list_end);
-+	parse_one_refuse_match(0, "fileflags", list_end);
 +#endif
++#ifndef SUPPORT_FILE_FLAGS
++       parse_one_refuse_match(0, "file-flags", list_end);
++       parse_one_refuse_match(0, "fileflags", list_end);
+ #endif
 +#ifndef SUPPORT_FORCE_CHANGE
-+	parse_one_refuse_match(0, "force-change", list_end);
-+	parse_one_refuse_match(0, "force-uchange", list_end);
-+	parse_one_refuse_match(0, "force-schange", list_end);
++       parse_one_refuse_match(0, "force-change", list_end);
++       parse_one_refuse_match(0, "force-uchange", list_end);
++       parse_one_refuse_match(0, "force-schange", list_end);
 +#endif
  
  	/* Now we use the descrip values to actually mark the options for refusal. */
  	for (op = long_options; op != list_end; op++) {
-@@ -2918,6 +2939,9 @@
+@@ -2992,6 +3013,9 @@
+ 	 * sans -r because the --no-r option was added at the same time. */
  	if (xfer_dirs && !recurse && delete_mode && am_sender)
- 		args[ac++] = "--no-r";
- 
-+	if (preserve_file_flags)
-+		args[ac++] = "--fileflags";
+ 		ADD_SERVER_ARG("--no-r");
 +
++       if (preserve_file_flags)
++               ADD_SERVER_ARG("--fileflags");
+ 
  	if (do_compression && do_compression_level != CLVL_NOT_SPECIFIED) {
  		if (asprintf(&arg, "--compress-level=%d", do_compression_level) < 0)
- 			goto oom;
-@@ -3013,6 +3037,16 @@
- 			args[ac++] = "--delete-excluded";
+@@ -3088,6 +3112,16 @@
+ 			ADD_SERVER_ARG("--delete-excluded");
  		if (force_delete)
- 			args[ac++] = "--force";
+ 			ADD_SERVER_ARG("--force");
 +#ifdef SUPPORT_FORCE_CHANGE
 +		if (force_change) {
 +			if (force_change == ALL_IMMUTABLE)
-+				args[ac++] = "--force-change";
++				ADD_SERVER_ARG("--force-change");
 +			else if (force_change == USR_IMMUTABLE)
-+				args[ac++] = "--force-uchange";
++				ADD_SERVER_ARG("--force-uchange");
 +			else if (force_change == SYS_IMMUTABLE)
-+				args[ac++] = "--force-schange";
++				ADD_SERVER_ARG("--force-schange");
 +		}
 +#endif
  		if (write_batch < 0)
- 			args[ac++] = "--only-write-batch=X";
+ 			ADD_SERVER_ARG("--only-write-batch=X");
  		if (am_root > 1)
 --- receiver.c.orig
 +++ receiver.c
@@ -1878,6 +1886,31 @@
 +	return -1;
 +}
 +#endif
+--- testsuite/delay-symlinks_test.py.orig	2026-11-16 20:24:45.986101000 +0000
++++ testsuite/delay-symlinks_test.py	2026-11-16 20:35:14.138945000 +0000
+@@ -154,8 +154,9 @@
+         rmtree(probe)
+     return False
+ 
+-
+-itemized_link = f'cL+++++++++ {LINK} -> {LINK_TARGET}'
++# A new symlink itemizes as 'cL' and then only '+'s.  Don't hardcode how many:
++# builds that add itemize columns (e.g. the fileflags patch) print more.
++itemized_suffix = f' {LINK} -> {LINK_TARGET}'
+ can_fail_link = readonly_dirs_enforced()
+ 
+ # Control: without the option the symlink exists, and dangles, at the pause.
+@@ -198,7 +199,9 @@
+         test_fail(f"{label}: transfer exited {rc}:\n{err}")
+     assert_is_symlink(TODIR / LINK, target=LINK_TARGET, label=label)
+     assert_same(TODIR / TARGET, FROMDIR / TARGET, label=label)
+-    if itemized_link not in out.splitlines():
++    if not any(line.startswith('cL') and line.endswith(itemized_suffix)
++            and set(line[2:-len(itemized_suffix)]) == {'+'}
++            for line in out.splitlines()):
+         test_fail(f"{label}: the created symlink wasn't itemized:\n{out}")
+ 
+     # An existing link that changes keeps pointing at its old target until the
 --- usage.c.orig
 +++ usage.c
 @@ -156,6 +156,11 @@
