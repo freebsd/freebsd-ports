@@ -120,12 +120,14 @@ include/quic/fizz/client/handshake/FizzClientHandshake.h
 include/quic/fizz/client/handshake/FizzClientQuicHandshakeContext.h
 include/quic/fizz/client/handshake/QuicPskCache.h
 include/quic/fizz/client/handshake/QuicTokenCache.h
+include/quic/fizz/handshake/ContiguousAead.h
 include/quic/fizz/handshake/FizzBridge.h
 include/quic/fizz/handshake/FizzCryptoFactory.h
 include/quic/fizz/handshake/FizzOpenSSLPacketNumberCipher.h
 include/quic/fizz/handshake/FizzPacketNumberCipher.h
 include/quic/fizz/handshake/FizzRetryIntegrityTagGenerator.h
 include/quic/fizz/handshake/FizzTransportParameters.h
+include/quic/fizz/handshake/HaberdasheryAead.h
 include/quic/fizz/handshake/QuicFizzFactory.h
 include/quic/fizz/server/handshake/AppToken.h
 include/quic/fizz/server/handshake/FizzServerHandshake.h
