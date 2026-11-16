@@ -1,0 +1,28 @@
+Description: Do not install the reversion_compare_project demo project as a
+  top-level package, nor its reversion_compare_project console script.
+Issue ID: none
+Changeset: none
+TODO: FreeBSD-specific packaging choice, not for upstream.
+
+--- pyproject.toml.orig	2020-02-02 00:00:00 UTC
++++ pyproject.toml
+@@ -60,10 +60,6 @@ Documentation = "https://codeberg.org/je
+ Source = "https://codeberg.org/jedie/django-reversion-compare"
+ 
+ 
+-[project.scripts]
+-# Must be set in ./manage.py and PROJECT_SHELL_SCRIPT:
+-reversion_compare_project = "reversion_compare_project.__main__:main"
+-
+ [manage_django_project]
+ module_name="reversion_compare_project"
+ 
+@@ -82,7 +78,7 @@ requires = ["hatchling"]
+ build-backend = "hatchling.build"
+ 
+ [tool.hatch.build.targets.wheel]
+-packages = ["reversion_compare", "reversion_compare_project"]
++packages = ["reversion_compare"]
+ 
+ [tool.hatch.version]
+ path = "reversion_compare/__init__.py"
