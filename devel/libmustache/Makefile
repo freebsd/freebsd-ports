@@ -36,7 +36,7 @@ YAML_LIB_DEPENDS=	libyaml.so:textproc/libyaml
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH:Mpowerpc64*}
+.if ${ARCH} == i386 || ${ARCH:Mpowerpc64*}
 # TSan is not supported on FreeBSD/powerpc64*
 CONFIGURE_ARGS+=	--disable-thread-sanitizer
 .endif
