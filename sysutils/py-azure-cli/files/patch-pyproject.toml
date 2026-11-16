@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2026-10-27 11:33:38 UTC
+--- pyproject.toml.orig	2026-11-11 01:43:53 UTC
 +++ pyproject.toml
 @@ -1,5 +1,5 @@
  [build-system]
@@ -17,7 +17,7 @@
  authors = [{ name = "Microsoft Corporation", email = "azpycli@microsoft.com" }]
  classifiers = [
      "Development Status :: 5 - Production/Stable",
-@@ -24,117 +23,117 @@ dependencies = [
+@@ -24,118 +23,118 @@ dependencies = [
      "Programming Language :: Python :: 3.14",
  ]
  dependencies = [
@@ -29,7 +29,7 @@
 +    'azure-appconfiguration>=1.10.0b1',
 +    'azure-ai-projects>=1.0.0',
 +    'azure-batch>=15.0.0b1',
-     'azure-cli-core==2.92.0',
+     'azure-cli-core==2.93.0',
 -    'azure-cosmos~=3.0,>=3.0.2',
 -    'azure-data-tables==12.4.0',
 +    'azure-cosmos>=3.0.2',
@@ -69,7 +69,7 @@
 -    'azure-mgmt-iotcentral~=10.0.0b1',
 -    'azure-mgmt-iothub==5.0.0b1',
 -    'azure-mgmt-iothubprovisioningservices==1.1.0',
--    'azure-mgmt-keyvault==14.0.1',
+-    'azure-mgmt-keyvault==14.1.0',
 -    'azure-mgmt-loganalytics==13.0.0b4',
 -    'azure-mgmt-managementgroups~=1.0.0',
 -    'azure-mgmt-maps~=2.0.0',
@@ -83,7 +83,7 @@
 -    'azure-mgmt-privatedns~=1.0.0',
 -    'azure-mgmt-rdbms==10.2.0b17',
 -    'azure-mgmt-mysqlflexibleservers==1.1.0b3',
--    'azure-mgmt-recoveryservicesbackup~=11.1.0',
+-    'azure-mgmt-recoveryservicesbackup~=11.2.0',
 -    'azure-mgmt-recoveryservicesbackup-passivestamp==1.0.0b1',
 -    'azure-mgmt-recoveryservices~=4.2.0',
 -    'azure-mgmt-redhatopenshift~=3.0.0',
@@ -101,23 +101,6 @@
 -    'azure-mgmt-servicefabric~=2.1.0',
 -    'azure-mgmt-signalr==2.0.0b2',
 -    'azure-mgmt-sqlvirtualmachine==1.0.0b5',
--    'azure-mgmt-sql==4.0.0b22',
--    'azure-mgmt-storage==25.0.0',
--    'azure-mgmt-synapse==2.1.0b5',
--    'azure-mgmt-trafficmanager~=1.0.0',
--    'azure-mgmt-web==11.0.0',
--    'azure-monitor-query==1.2.0',
--    'azure-storage-common~=1.4',
--    'azure-storage-blob==12.29.0b1',
--    'azure-storage-file-datalake==12.24.0b1',
--    'azure-storage-file-share==12.25.0b1',
--    'azure-storage-queue==12.16.0b1',
--    'azure-synapse-accesscontrol~=0.5.0',
--    'azure-synapse-artifacts~=0.22.0',
--    'azure-synapse-managedprivateendpoints~=0.4.0',
--    'azure-synapse-spark~=0.7.0',
--    'chardet~=5.2.0',
--    'colorama~=0.4.4',
 +    'azure-keyvault-administration>=4.8.0b2',
 +    'azure-keyvault-certificates>=4.7.0',
 +    'azure-keyvault-keys>=4.12.0b2',
@@ -152,7 +135,7 @@
 +    'azure-mgmt-iotcentral>=10.0.0b1',
 +    'azure-mgmt-iothub>=5.0.0b1',
 +    'azure-mgmt-iothubprovisioningservices>=1.1.0',
-+    'azure-mgmt-keyvault>=14.0.1',
++    'azure-mgmt-keyvault>=14.1.0',
 +    'azure-mgmt-loganalytics>=13.0.0b4',
 +    'azure-mgmt-managementgroups>=1.0.0',
 +    'azure-mgmt-maps>=2.0.0',
@@ -166,7 +149,7 @@
 +    'azure-mgmt-privatedns>=1.0.0',
 +    'azure-mgmt-rdbms>=10.2.0b17',
 +    'azure-mgmt-mysqlflexibleservers>=1.1.0b3',
-+    'azure-mgmt-recoveryservicesbackup>=11.1.0',
++    'azure-mgmt-recoveryservicesbackup>=11.2.0',
 +    'azure-mgmt-recoveryservicesbackup-passivestamp>=1.0.0b1',
 +    'azure-mgmt-recoveryservices>=4.2.0',
 +    'azure-mgmt-redhatopenshift>=3.0.0',
@@ -184,8 +167,26 @@
 +    'azure-mgmt-servicefabric>=2.1.0',
 +    'azure-mgmt-signalr>=2.0.0b2',
 +    'azure-mgmt-sqlvirtualmachine>=1.0.0b5',
-+    'azure-mgmt-sql>=4.0.0b22',
-+    'azure-mgmt-storage>=25.0.0',
+     # SQL's TypeSpec model adapters and operation signatures target this SDK version.
+-    'azure-mgmt-sql==5.0.0b2',
+-    'azure-mgmt-storage==25.3.0',
+-    'azure-mgmt-synapse==2.1.0b5',
+-    'azure-mgmt-trafficmanager~=1.0.0',
+-    'azure-mgmt-web==11.0.0',
+-    'azure-monitor-query==1.2.0',
+-    'azure-storage-common~=1.4',
+-    'azure-storage-blob==12.29.0b1',
+-    'azure-storage-file-datalake==12.24.0b1',
+-    'azure-storage-file-share==12.25.0b1',
+-    'azure-storage-queue==12.16.0b1',
+-    'azure-synapse-accesscontrol~=0.5.0',
+-    'azure-synapse-artifacts~=0.22.0',
+-    'azure-synapse-managedprivateendpoints~=0.4.0',
+-    'azure-synapse-spark~=0.7.0',
+-    'chardet~=5.2.0',
+-    'colorama~=0.4.4',
++    'azure-mgmt-sql>=5.0.0b2',
++    'azure-mgmt-storage>=25.3.0',
 +    'azure-mgmt-synapse>=2.1.0b5',
 +    'azure-mgmt-trafficmanager>=1.0.0',
 +    'azure-mgmt-web>=11.0.0',
@@ -231,7 +232,7 @@
  ]
  
  [project.urls]
-@@ -183,4 +182,4 @@ exclude = ["*.tests", "*.tests.*", "tests.*", "tests",
+@@ -184,4 +183,4 @@ exclude = ["*.tests", "*.tests.*", "tests.*", "tests",
  ]
  
  [tool.setuptools.cmdclass]
