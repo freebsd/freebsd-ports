@@ -9,10 +9,8 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Library providing Sendmail Mail Filter API
 WWW=		https://www.sendmail.com/sm/open_source/milter/
 
-LICENSE=	Sendmail
-LICENSE_NAME=	Sendmail License
+LICENSE=	Sendmail-8.23
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 MILTER_SOVER?=	7
 
