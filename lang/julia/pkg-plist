@@ -108,9 +108,9 @@ lib/julia/libz.so.1.3.2
 %%NO_DEBUG%%lib/libjulia.so
 %%DEBUG%%lib/libjulia-debug.so
 %%NO_DEBUG%%lib/libjulia.so.%%MINOR%%
-%%DEBUG%%lib/libjulia-debug..so.%%MINOR%%
-%%NO_DEBUG%%lib/libjulia.so.%%VERSION%%
 %%DEBUG%%lib/libjulia-debug.so.%%MINOR%%
+%%NO_DEBUG%%lib/libjulia.so.%%VERSION%%
+%%DEBUG%%lib/libjulia-debug.so.%%VERSION%%
 libexec/julia/7z
 libexec/julia/dsymutil
 libexec/julia/lld
