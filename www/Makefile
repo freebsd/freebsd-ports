@@ -573,6 +573,7 @@
     SUBDIR += nginx-module-lua-stream
     SUBDIR += nginx-module-memc
     SUBDIR += nginx-module-modsecurity3
+    SUBDIR += nginx-module-mogilefs
     SUBDIR += nginx-module-ndk
     SUBDIR += nginx-module-njs
     SUBDIR += nginx-module-otel

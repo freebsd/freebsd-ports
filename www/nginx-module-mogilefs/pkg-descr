@@ -1,0 +1,9 @@
+The mogilefs module turns nginx into a MogileFS client: it asks a tracker
+where a key lives and hands the answer to proxy_pass, so nginx serves the
+file straight from the storage node that holds it.  Writing and deleting
+through the tracker work as well, and the copies a tracker names beyond
+the first are available as variables, so a configuration can fall back to
+another storage node itself.
+
+This port only installs the module sources.  The module itself is built by
+the nginx ports when their HTTP_MOGILEFS option is enabled.
