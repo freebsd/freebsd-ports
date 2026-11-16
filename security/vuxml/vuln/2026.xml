@@ -1,3 +1,201 @@
+  <vuln vid="9282c386-b630-4303-82df-027ae4600015">
+    <topic>chromium -- security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>157.0.8103.78</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>157.0.8103.78</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_01744469280.html">
+	 <p>This update includes 83 security fixes:</p>
+	 <ul>
+	    <li></li>
+	    <li>Critical CVE-2026-126885: Use after free in ServiceWorker.</li>
+	    <li>Critical CVE-2026-126895: Use after free in CSS.</li>
+	    <li>Critical CVE-2026-126879: Use after free in Layout.</li>
+	    <li>Critical CVE-2026-126846: Use after free in Skia.</li>
+	    <li>Critical CVE-2026-126911: Use after free in ccessibility.</li>
+	    <li>High CVE-2026-126864: Use after free in V8.</li>
+	    <li>High CVE-2026-126889: Off-by-one error in V8.</li>
+	    <li>High CVE-2026-126859: Link following in FileSystem.</li>
+	    <li>High CVE-2026-126886: Use after free in Frames.</li>
+	    <li>High CVE-2026-126887: Use after free in nimation.</li>
+	    <li>High CVE-2026-126870: Uninitialized resource in GLE.</li>
+	    <li>High CVE-2026-126912: Buffer overflow in Skia.</li>
+	    <li>High CVE-2026-126919: Use after free in BrowserTag.</li>
+	    <li>High CVE-2026-126878: Information leak in Core.</li>
+	    <li>High CVE-2026-126909: Use after free in Passwords.</li>
+	    <li>High CVE-2026-126847: Type confusion in V8.</li>
+	    <li>High CVE-2026-126853: Uninitialized resource in Skia.</li>
+	    <li>High CVE-2026-126865: Use after free in DOM.</li>
+	    <li>High CVE-2026-126916: Integer overflow in V8.</li>
+	    <li>High CVE-2026-126903: Improper state validation in GLE.</li>
+	    <li>High CVE-2026-126910: Type confusion in V8.</li>
+	    <li>High CVE-2026-126842: Use after free in GLE.</li>
+	    <li>High CVE-2026-126898: Uninitialized resource in Skia.</li>
+	    <li>High CVE-2026-126871: Out of bounds read in Skia.</li>
+	    <li>High CVE-2026-126875: Missing authorization in V8.</li>
+	    <li>High CVE-2026-126862: Improper input validation in Core.</li>
+	    <li>High CVE-2026-126900: Use after free in CSS.</li>
+	    <li>High CVE-2026-126904: Use after free in Compositing.</li>
+	    <li>High CVE-2026-126907: Uninitialized resource in Media.</li>
+	    <li>High CVE-2026-126851: Use after free in ccessibility.</li>
+	    <li>High CVE-2026-126845: Uninitialized resource in GPU.</li>
+	    <li>High CVE-2026-126881: Improper initialization in Media.</li>
+	    <li>High CVE-2026-126867: Use after free in Browser.</li>
+	    <li>High CVE-2026-126863: Use after free in HTML.</li>
+	    <li>High CVE-2026-126896: Missing authorization in V8.</li>
+	    <li>High CVE-2026-126869: Use after free in Frames.</li>
+	    <li>High CVE-2026-126858: Uninitialized resource in GLE.</li>
+	    <li>High CVE-2026-126891: Use after free in V8.</li>
+	    <li>High CVE-2026-126874: Type confusion in V8.</li>
+	    <li>High CVE-2026-126876: Integer overflow in Skia.</li>
+	    <li>High CVE-2026-126918: Use after free in Layout.</li>
+	    <li>High CVE-2026-126866: Incorrect authorization in Extensions.</li>
+	    <li>High CVE-2026-126844: Uninitialized resource in Skia.</li>
+	    <li>High CVE-2026-126884: Out of bounds read in Skia.</li>
+	    <li>High CVE-2026-126894: Out of bounds read in Skia.</li>
+	    <li>High CVE-2026-126861: Use after free in Media.</li>
+	    <li>High CVE-2026-126917: Memory corruption in V8.</li>
+	    <li>High CVE-2026-126856: Incomplete cleanup in Cache.</li>
+	    <li>High CVE-2026-126905: Incomplete cleanup in V8.</li>
+	    <li>High CVE-2026-126873: Use after free in Extensions.</li>
+	    <li>High CVE-2026-126922: Out of bounds read in Skia.</li>
+	    <li>High CVE-2026-126914: Uninitialized resource in Skia.</li>
+	    <li>High CVE-2026-126880: Type confusion in V8.</li>
+	    <li>High CVE-2026-126872: Incorrect authorization in FileSystem.</li>
+	    <li>High CVE-2026-126877: Use after free in Dawn.</li>
+	    <li>High CVE-2026-126888: Buffer overflow in Turbolev.</li>
+	    <li>High CVE-2026-126843: Type confusion in Turbolev.</li>
+	    <li>High CVE-2026-126854: Incorrect authorization in Layout.</li>
+	    <li>High CVE-2026-126892: Use after free in MediaStream.</li>
+	    <li>High CVE-2026-126897: Type confusion in V8.</li>
+	    <li>High CVE-2026-126857: Out of bounds read in Skia.</li>
+	    <li>High CVE-2026-126883: Use after free in Core.</li>
+	    <li>High CVE-2026-126840: Out of bounds write in etwork.</li>
+	    <li>High CVE-2026-126848: Uninitialized resource in Skia.</li>
+	    <li>High CVE-2026-126882: Information leak in Skia.</li>
+	    <li>High CVE-2026-126906: Race condition in Extensions.</li>
+	    <li>High CVE-2026-126915: Use of uninitialized variable in Skia.</li>
+	    <li>High CVE-2026-126893: Out of bounds write in V8.</li>
+	    <li>High CVE-2026-126855: Missing authorization in ImageCapture.</li>
+	    <li>High CVE-2026-126908: Type confusion in V8.</li>
+	    <li>High CVE-2026-126849: Type confusion in V8.</li>
+	    <li>High CVE-2026-126901: Use after free in PDF.</li>
+	    <li>High CVE-2026-126852: Use after free in MediaStream.</li>
+	    <li>High CVE-2026-126850: Incorrect authorization in SiteIsolation.</li>
+	    <li>High CVE-2026-126841: Out of bounds read in Skia.</li>
+	    <li>High CVE-2026-126902: Incorrect reference resolution in Browser.</li>
+	    <li>High CVE-2026-126868: Type confusion in V8.</li>
+	    <li>High CVE-2026-126921: Use after free in ccessibility.</li>
+	    <li>High CVE-2026-126913: Out of bounds read in Compositing.</li>
+	    <li>High CVE-2026-126890: Out of bounds read in Media.</li>
+	    <li>High CVE-2026-126860: Incorrect authorization in FileSystem.</li>
+	    <li>High CVE-2026-126920: Information leak in Skia.</li>
+	    <li>High CVE-2026-126899: Use after free in Elements.</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-126885</cvename>
+      <cvename>CVE-2026-126895</cvename>
+      <cvename>CVE-2026-126879</cvename>
+      <cvename>CVE-2026-126846</cvename>
+      <cvename>CVE-2026-126911</cvename>
+      <cvename>CVE-2026-126864</cvename>
+      <cvename>CVE-2026-126889</cvename>
+      <cvename>CVE-2026-126859</cvename>
+      <cvename>CVE-2026-126886</cvename>
+      <cvename>CVE-2026-126887</cvename>
+      <cvename>CVE-2026-126870</cvename>
+      <cvename>CVE-2026-126912</cvename>
+      <cvename>CVE-2026-126919</cvename>
+      <cvename>CVE-2026-126878</cvename>
+      <cvename>CVE-2026-126909</cvename>
+      <cvename>CVE-2026-126847</cvename>
+      <cvename>CVE-2026-126853</cvename>
+      <cvename>CVE-2026-126865</cvename>
+      <cvename>CVE-2026-126916</cvename>
+      <cvename>CVE-2026-126903</cvename>
+      <cvename>CVE-2026-126910</cvename>
+      <cvename>CVE-2026-126842</cvename>
+      <cvename>CVE-2026-126898</cvename>
+      <cvename>CVE-2026-126871</cvename>
+      <cvename>CVE-2026-126875</cvename>
+      <cvename>CVE-2026-126862</cvename>
+      <cvename>CVE-2026-126900</cvename>
+      <cvename>CVE-2026-126904</cvename>
+      <cvename>CVE-2026-126907</cvename>
+      <cvename>CVE-2026-126851</cvename>
+      <cvename>CVE-2026-126845</cvename>
+      <cvename>CVE-2026-126881</cvename>
+      <cvename>CVE-2026-126867</cvename>
+      <cvename>CVE-2026-126863</cvename>
+      <cvename>CVE-2026-126896</cvename>
+      <cvename>CVE-2026-126869</cvename>
+      <cvename>CVE-2026-126858</cvename>
+      <cvename>CVE-2026-126891</cvename>
+      <cvename>CVE-2026-126874</cvename>
+      <cvename>CVE-2026-126876</cvename>
+      <cvename>CVE-2026-126918</cvename>
+      <cvename>CVE-2026-126866</cvename>
+      <cvename>CVE-2026-126844</cvename>
+      <cvename>CVE-2026-126884</cvename>
+      <cvename>CVE-2026-126894</cvename>
+      <cvename>CVE-2026-126861</cvename>
+      <cvename>CVE-2026-126917</cvename>
+      <cvename>CVE-2026-126856</cvename>
+      <cvename>CVE-2026-126905</cvename>
+      <cvename>CVE-2026-126873</cvename>
+      <cvename>CVE-2026-126922</cvename>
+      <cvename>CVE-2026-126914</cvename>
+      <cvename>CVE-2026-126880</cvename>
+      <cvename>CVE-2026-126872</cvename>
+      <cvename>CVE-2026-126877</cvename>
+      <cvename>CVE-2026-126888</cvename>
+      <cvename>CVE-2026-126843</cvename>
+      <cvename>CVE-2026-126854</cvename>
+      <cvename>CVE-2026-126892</cvename>
+      <cvename>CVE-2026-126897</cvename>
+      <cvename>CVE-2026-126857</cvename>
+      <cvename>CVE-2026-126883</cvename>
+      <cvename>CVE-2026-126840</cvename>
+      <cvename>CVE-2026-126848</cvename>
+      <cvename>CVE-2026-126882</cvename>
+      <cvename>CVE-2026-126906</cvename>
+      <cvename>CVE-2026-126915</cvename>
+      <cvename>CVE-2026-126893</cvename>
+      <cvename>CVE-2026-126855</cvename>
+      <cvename>CVE-2026-126908</cvename>
+      <cvename>CVE-2026-126849</cvename>
+      <cvename>CVE-2026-126901</cvename>
+      <cvename>CVE-2026-126852</cvename>
+      <cvename>CVE-2026-126850</cvename>
+      <cvename>CVE-2026-126841</cvename>
+      <cvename>CVE-2026-126902</cvename>
+      <cvename>CVE-2026-126868</cvename>
+      <cvename>CVE-2026-126921</cvename>
+      <cvename>CVE-2026-126913</cvename>
+      <cvename>CVE-2026-126890</cvename>
+      <cvename>CVE-2026-126860</cvename>
+      <cvename>CVE-2026-126920</cvename>
+      <cvename>CVE-2026-126899</cvename>
+      <url>https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_01744469280.html</url>
+    </references>
+    <dates>
+      <discovery>2026-11-11</discovery>
+      <entry>2026-11-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="36f77a27-e080-11f1-bbb3-901b0e9408dc">
     <topic>conduit -- event redaction vulnerability</topic>
     <affects>
