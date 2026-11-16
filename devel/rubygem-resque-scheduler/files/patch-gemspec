@@ -1,0 +1,11 @@
+--- resque-scheduler.gemspec.orig	2026-11-16 13:38:51 UTC
++++ resque-scheduler.gemspec
+@@ -43,7 +43,7 @@ Gem::Specification.new do |s|
+   s.add_runtime_dependency(%q<logger>.freeze, [">= 0".freeze])
+   s.add_runtime_dependency(%q<mono_logger>.freeze, ["~> 1.0".freeze])
+   s.add_runtime_dependency(%q<redis>.freeze, [">= 4.0".freeze])
+-  s.add_runtime_dependency(%q<resque>.freeze, [">= 3.0".freeze])
++  s.add_runtime_dependency(%q<resque>.freeze, [">= 2.7".freeze])
+   s.add_runtime_dependency(%q<rufus-scheduler>.freeze, ["~> 3.9".freeze])
+ end
+ 

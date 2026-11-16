@@ -14,7 +14,7 @@ RUN_DEPENDS=	rubygem-base64>=0.1<1:converters/rubygem-base64 \
 		rubygem-logger>=0:devel/rubygem-logger \
 		rubygem-mono_logger>=1.0<2:devel/rubygem-mono_logger \
 		rubygem-redis>=4.0:databases/rubygem-redis \
-		rubygem-resque>=3.0:devel/rubygem-resque \
+		rubygem-resque>=2.7:devel/rubygem-resque \
 		rubygem-rufus-scheduler>=3.9<4:devel/rubygem-rufus-scheduler
 
 USES=		gem
