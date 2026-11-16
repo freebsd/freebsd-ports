@@ -13,6 +13,8 @@ WWW=		https://cf-xarray.readthedocs.io/en/latest/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_aarch64=	ImportError: /usr/local/lib/gcc14/libgcc_s.so.1: version GCC_4.6.0 required by /usr/local/lib/python3.12/lib-dynload/_ctypes.cpython-312.so not found
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=45:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=6.2:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR} \
