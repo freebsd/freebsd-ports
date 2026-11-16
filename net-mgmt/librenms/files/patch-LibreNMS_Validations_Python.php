@@ -1,15 +1,11 @@
---- LibreNMS/Validations/Python.php.orig	2020-07-10 19:56:16 UTC
+--- LibreNMS/Validations/Python.php.orig	2026-11-16 16:05:23 UTC
 +++ LibreNMS/Validations/Python.php
-@@ -50,8 +50,10 @@ class Python extends BaseValidation
-         }
+@@ -55,7 +55,7 @@ class Python extends BaseValidation
  
-         $this->checkVersion($validator, $version);
--        $this->checkPipVersion($validator, $version);
--        $this->checkExtensions($validator);
-+# We've installed from a FreeBSD package.
-+# We aren't using pip
-+#       $this->checkPipVersion($validator, $version);
-+#       $this->checkExtensions($validator);
-     }
- 
-     private function checkVersion(Validator $validator, $version)
+         $pip_output = (string) `pip3 --version 2>/dev/null`;
+         if (empty($pip_output)) {
+-            $validator->warn('pip3 is not available');
++            $validator->warn('pip3 is not available - it is not neeed when installing from package/port');
+         } else {
+             $this->checkPipVersion($validator, $pip_output, $version);
+             $this->checkExtensions($validator);

@@ -1,7 +1,6 @@
 PORTNAME=	librenms
-PORTVERSION=	26.10.2
+PORTVERSION=	26.11.0
 PORTEPOCH=	1
-PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	LOCAL/dvl:vendor
 DISTFILES=	${PORTNAME}-vendor-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}${EXTRACT_SUFX}:vendor
@@ -25,7 +24,7 @@ USES=		cpe php python shebangfix
 USE_GITHUB=	yes
 # php hash/json/openssl extension is required but it's statically linked in default php
 USE_PHP=	ctype curl dom fileinfo filter gd iconv ldap mbstring mysqli \
-		pdo pdo_mysql phar posix readline session simplexml snmp \
+		pcntl pdo pdo_mysql phar posix readline session simplexml snmp \
 		sockets tokenizer xml xmlwriter zip zlib
 USE_RC_SUBR=	librenms
 
@@ -56,7 +55,7 @@ SHEBANG_FILES=	../librenms-vendor-${PORTVERSION}/bin/carbon \
 		scripts/composer_wrapper.php \
 		scripts/dynamic_check_requirements.py scripts/gen_rancid.php \
 		scripts/gen_smokeping.php scripts/git-pre-commit-hook.sh \
-		scripts/github-remove scripts/ifAlias scripts/json-app-tool.php \
+		scripts/github-remove scripts/ifAlias \
 		scripts/Migration/Standard_Conversion/convert_no_xml.sh \
 		scripts/Migration/Standard_Conversion/destwork_no_xml.sh \
 		scripts/Migration/Standard_Conversion/mkdir.sh \
