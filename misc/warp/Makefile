@@ -1,7 +1,6 @@
 PORTNAME=	warp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2026.06.03.09.49.stable_00
-PORTREVISION=	3
+PORTVERSION=	0.2026.11.11.14.46
 CATEGORIES=	misc devel x11
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -39,20 +38,21 @@ USE_GL=		egl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	warpdotdev
+GH_TAGNAME=	2b2ed236f087b47b463f1cd55598485dd7965338
 
 SHEBANG_FILES=	script/prepare_bundled_resources
 SHEBANG_REGEX=	./resources/bundled/.*/.*.py
 
 CARGO_FEATURES=		release_bundle \
 			gui \
-			nld_classifier_v2 \
+			nld_classifier_v3 \
 			nld_heuristic_v2
 CARGO_BUILD_ARGS=	--package warp \
 			--bin warp-oss
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
-PORTDOCS=	CONTRIBUTING.md README.md SECURITY.md WARP.md
+PORTDOCS=	CONTRIBUTING.md FAQ.md README.md SECURITY.md
 
 OPTIONS_DEFINE=	COMPLETIONS DOCS
 OPTIONS_DEFAULT=COMPLETIONS
@@ -71,8 +71,9 @@ do-install:
 		${STAGEDIR}${PREFIX}/bin/${BINNAME}
 	cd ${WRKSRC} && \
 	${SETENV} ${MAKE_ENV} ${CARGO_ENV} \
+		SETTINGS_SCHEMA_EXECUTABLE=${STAGEDIR}${WARP_PREFIX}/bin/${BINNAME} \
 		./script/prepare_bundled_resources \
-		${STAGEDIR}${WARP_PREFIX}/resources oss release
+		${STAGEDIR}${WARP_PREFIX}/resources stable
 	${INSTALL_DATA} ${WRKSRC}/app/channels/oss/dev.warp.WarpOss.desktop \
 		${STAGEDIR}${DESKTOPDIR}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/512x512/apps
@@ -101,14 +102,6 @@ do-test:
 		--manifest-path ${CARGO_CARGOTOML} \
 		--verbose \
 		--no-fail-fast \
-		--workspace \
-		--exclude command-signatures-v2
-	cd ${WRKSRC} && \
-	${SETENV} ${MAKE_ENV} ${CARGO_ENV} ${TEST_ENV} \
-		${CARGO} nextest run \
-		--manifest-path ${CARGO_CARGOTOML} \
-		--verbose \
-		--package warp_completer \
-		--features v2
+		--workspace
 
 .include <bsd.port.mk>
