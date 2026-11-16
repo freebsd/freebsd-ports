@@ -8,7 +8,7 @@ MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Ruby binding for zstd
 WWW=		https://github.com/SpringMT/zstd-ruby
 
-LICENSE=	MIT
+LICENSE=	BSD-3-Clause
 
 USES=		gem
 
