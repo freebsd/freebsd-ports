@@ -12,10 +12,6 @@ COMMENT=	Compiler and tools for Standard ML (SML '97)
 WWW=		https://www.smlnj.org/
 
 LICENSE=	SMLNJ
-LICENSE_NAME=	Standard ML of New Jersey License
-LICENSE_TEXT=	The text of the license can be obtained from the following URL:\
-		http://www.smlnj.org/license.html
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 ONLY_FOR_ARCHS=	amd64 i386
 
