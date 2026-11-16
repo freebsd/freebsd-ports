@@ -1545,7 +1545,7 @@
     SUBDIR += u-boot-bhyve-riscv
     SUBDIR += u-boot-chip
     SUBDIR += u-boot-clearfog
-    SUBDIR += u-boot-cm3588
+    SUBDIR += u-boot-cm3588-nas
     SUBDIR += u-boot-cubieboard
     SUBDIR += u-boot-cubieboard2
     SUBDIR += u-boot-cubox-hummingboard
