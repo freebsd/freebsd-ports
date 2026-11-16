@@ -5,18 +5,15 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF/lib${PORTNAME}/lib${PORTNAME}16/${DISTVERSION}/
 #PATCH_SITES=	SF/lib${PORTNAME}-apng/lib${PORTNAME}16/${DISTVERSION}/
 PATCH_SITES=	SF/lib${PORTNAME}-apng/lib${PORTNAME}16/1.6.58/
-# Keep this because you normally need to keep patch version in sync with release 
+# Keep this because you normally need to keep patch version in sync with release
 DISTNAME=	lib${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Library for manipulating PNG images
 WWW=		http://www.libpng.org/pub/png/libpng.html
 
-LICENSE=	Libpng
-LICENSE_GROUPS=	FSF GPL OSI
-LICENSE_NAME=	libpng License
+LICENSE=	libpng-2.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		cmake:testing cpe pathfix tar:xz
 CPE_PRODUCT=	libpng
