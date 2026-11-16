@@ -1,11 +1,15 @@
 PORTNAME=	brotli
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	archivers devel
 MASTER_SITES+=	https://github.com/google/${PORTNAME}/releases/download/${DISTVERSIONFULL}/
 DISTFILES+=	testdata.txz
 DIST_SUBDIR=	${PORTNAME}/${DISTVERSION}
+
+PATCH_SITES=	https://github.com/google/brotli/commit/
+PATCHFILES=	e230f474b87134e8c6c85b630084c612057f253e.patch:-p1
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Generic-purpose lossless compression algorithm
