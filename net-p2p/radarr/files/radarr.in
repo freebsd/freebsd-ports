@@ -50,9 +50,9 @@ start_precmd=${name}_precmd
 
     USERLAND_VERSION=`uname -U`
     if [ ${USERLAND_VERSION} -ge 1500068 ]; then
-        export CLR_OPENSSL_VERSION_OVERRIDE=35
+        export DOTNET_OPENSSL_VERSION_OVERRIDE=35
     elif [ ${USERLAND_VERSION} -ge 1400092 ]; then
-        export CLR_OPENSSL_VERSION_OVERRIDE=30
+        export DOTNET_OPENSSL_VERSION_OVERRIDE=30
     fi
 
     # Set path so pre and post import scripts work with 3rd party binaries
