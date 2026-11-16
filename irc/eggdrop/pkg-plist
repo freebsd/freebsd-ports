@@ -10,12 +10,15 @@ lib/eggdrop/console.so
 lib/eggdrop/ctcp.so
 lib/eggdrop/dns.so
 lib/eggdrop/filesys.so
+lib/eggdrop/ident.so
 lib/eggdrop/irc.so
 lib/eggdrop/notes.so
+lib/eggdrop/pbkdf2.so
 lib/eggdrop/seen.so
 lib/eggdrop/server.so
 lib/eggdrop/share.so
 lib/eggdrop/transfer.so
+lib/eggdrop/twitch.so
 lib/eggdrop/uptime.so
 %%PORTDOCS%%%%DOCSDIR%%/ABOUT
 %%PORTDOCS%%%%DOCSDIR%%/ACCOUNTS
