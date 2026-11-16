@@ -1,0 +1,12 @@
+--- pyproject.toml.orig	2026-10-29 00:41:00 UTC
++++ pyproject.toml
+@@ -7,8 +7,7 @@ readme = "README.md"
+ requires-python = ">=3.10"  # Oldest non-EOL Python here
+ description = "Developer tool for scientific Python libraries"
+ readme = "README.md"
+-license = "BSD-3-Clause"
+-license-files = ["LICENSE"]
++license = {file = "LICENSE"}
+ maintainers = [
+   {name = "Scientific Python", email = "spin@discuss.scientific-python.org"}
+ ]
