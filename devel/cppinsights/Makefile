@@ -1,6 +1,6 @@
 PORTNAME=	cppinsights
 DISTVERSIONPREFIX=	v_
-DISTVERSION=	20.1
+DISTVERSION=	23.1
 CATEGORIES=	devel
 
 MAINTAINER=	freebsd@sysctl.cz
@@ -10,12 +10,18 @@ WWW=		https://github.com/andreasfertig/cppinsights
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake llvm:min=20,lib
+USES=		cmake llvm:min=23,lib
 USE_GITHUB=	yes
 GH_ACCOUNT=	andreasfertig
 
 CMAKE_ARGS=	-DLLVM_CONFIG_PATH="${LOCALBASE}/llvm${LLVM_VERSION}/bin/llvm-config"
 
-PLIST_FILES=	bin/insights
+CXXFLAGS=	-pthread
+LDFLAGS=	-pthread
+
+PLIST_FILES=	bin/insights \
+		share/bash-completion/completions/insights \
+		share/fish/vendor_completions.d/insights.fish \
+		share/zsh/site-functions/_insights
 
 .include <bsd.port.mk>
