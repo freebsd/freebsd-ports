@@ -1,0 +1,13 @@
+The upstream_check module adds active health checks to nginx upstreams:
+nginx probes each backend on a timer and takes a failing one out of the
+balancer before a request lands on it, instead of discovering the failure
+with somebody's request.
+
+Unlike the other nginx module ports this one also ships the patches for
+nginx itself, one per server flavour.  The check state has to reach every
+balancer, and stock nginx offers a module no way in, so round robin,
+hash, ip_hash and least_conn are hooked by patch.  The nginx ports apply
+the one that fits and build the module into the binary when their
+HTTP_UPSTREAM_CHECK option is enabled.
+
+This port only installs the sources and those patches.

@@ -1,0 +1,16 @@
+[
+{ type: install
+  message: <<EOM
+This package contains the sources of the upstream_check module and the
+patch it needs for nginx itself.  It does not install a loadable module,
+and this one cannot be made into one: the check state is wired into
+nginx's own peer selection by patch, so the module is built into the
+binary.
+
+The module itself is built by the nginx ports.  To use it, build
+www/nginx, www/nginx-devel or www/freenginx with the HTTP_UPSTREAM_CHECK
+option enabled.  Those ports take the sources and the patch from
+%%PREFIX%%/share/nginx/modules/nginx-module-upstream-check.
+EOM
+}
+]
