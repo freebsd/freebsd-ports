@@ -117,7 +117,7 @@ _LICENSE_SPDX_LIST+= \
 # BSD family (SPDX variants)
 _LICENSE_SPDX_LIST+= \
 				BSD-1-Clause BSD-2-Clause-Darwin BSD-2-Clause-first-lines BSD-2-Clause-pos-unchanged \
-				BSD-2-Clause-Views BSD-3-Clause-Attribution BSD-3-Clause-Clear BSD-3-Clause-flex \
+				BSD-2-Clause-Views BSD-3-Clause BSD-3-Clause-Attribution BSD-3-Clause-Clear BSD-3-Clause-flex \
 				BSD-3-Clause-HP BSD-3-Clause-LBNL BSD-3-Clause-Modification BSD-3-Clause-No-Military-License \
 				BSD-3-Clause-No-Nuclear-License-2014 BSD-3-Clause-Open-MPI BSD-3-Clause-Sun BSD-3-Clause-Tso \
 				BSD-4-Clause-UC BSD-4.3TAHOE BSD-Attribution-HPND-disclaimer BSD-Inferno-Nettverk \
@@ -147,12 +147,12 @@ _LICENSE_SPDX_LIST+= \
 				cryptsetup-OpenSSL-exception curl DocBook-XML dtoa \
 				GD HDF5 Hippocratic-2.1 ICU \
 				ImageMagick Independent-modules-exception Info-ZIP jove \
-				JSON Libpng Linux-OpenIB mplus \
+				JSON libpng-2.0 Linux-OpenIB mplus \
 				MVT-1.1 NCL NRL NTP \
 				OLDAP-1.4 OSSP Pixar pkgconf \
 				Python-2.0.1 python-ldap Sendmail SHL-0.5 \
 				SHL-0.51 Sleepycat SMLNJ Spencer-94 \
-				SSLeay-standalone TCL WordNet
+				SSLeay-standalone TCL Unicode-3.0 WordNet
 
 _LICENSE_LIST+=	${_LICENSE_SPDX_LIST}
 
@@ -173,11 +173,13 @@ _LICENSE_NAME_FONTS=	Font licenses
 # --- GNU family (SPDX) ---
 
 _LICENSE_NAME_AGPL-1.0-only= Affero General Public License v1.0 only
+_LICENSE_GROUPS_AGPL-1.0-only= # empty
 
 _LICENSE_NAME_AGPL-3.0-or-later= GNU Affero General Public License v3.0 or later
 _LICENSE_GROUPS_AGPL-3.0-or-later= FSF OSI
 
 _LICENSE_NAME_GPL-1.0-or-later= GNU General Public License v1.0 or later
+_LICENSE_GROUPS_GPL-1.0-or-later= # empty
 
 _LICENSE_NAME_GPL-2.0-or-later= GNU General Public License v2.0 or later
 _LICENSE_GROUPS_GPL-2.0-or-later= FSF OSI
@@ -195,10 +197,13 @@ _LICENSE_NAME_GFDL-1.2-or-later= GNU Free Documentation License v1.2 or later
 _LICENSE_GROUPS_GFDL-1.2-or-later= FSF
 
 _LICENSE_NAME_GFDL-1.3-invariants-or-later= GNU Free Documentation License v1.3 or later - invariants
+_LICENSE_GROUPS_GFDL-1.3-invariants-or-later= # empty
 
 _LICENSE_NAME_GFDL-1.3-no-invariants-or-later= GNU Free Documentation License v1.3 or later - no invariants
+_LICENSE_GROUPS_GFDL-1.3-no-invariants-or-later= # empty
 
 _LICENSE_NAME_GCC-exception-3.1= GCC Runtime Library exception 3.1  # SPDX exception, used as "<license> WITH ${this}"
+_LICENSE_GROUPS_GCC-exception-3.1= # empty
 
 # --- BSD family (SPDX variants) ---
 
@@ -206,53 +211,76 @@ _LICENSE_NAME_BSD-1-Clause= BSD 1-Clause License
 _LICENSE_GROUPS_BSD-1-Clause= OSI
 
 _LICENSE_NAME_BSD-2-Clause-Darwin= BSD 2-Clause - Ian Darwin variant
+_LICENSE_GROUPS_BSD-2-Clause-Darwin= # empty
 
 _LICENSE_NAME_BSD-2-Clause-first-lines= BSD 2-Clause - first lines requirement
+_LICENSE_GROUPS_BSD-2-Clause-first-lines= # empty
 
 _LICENSE_NAME_BSD-2-Clause-pos-unchanged= BSD 2-Clause - position unchanged variant
+_LICENSE_GROUPS_BSD-2-Clause-pos-unchanged= # empty
 
 _LICENSE_NAME_BSD-2-Clause-Views= BSD 2-Clause with views sentence
+_LICENSE_GROUPS_BSD-2-Clause-Views= # empty
+
+_LICENSE_NAME_BSD-3-Clause= BSD 3-clause "New" or "Revised" License
+_LICENSE_GROUPS_BSD-3-Clause= FSF OSI COPYFREE
 
 _LICENSE_NAME_BSD-3-Clause-Attribution= BSD with attribution
+_LICENSE_GROUPS_BSD-3-Clause-Attribution= # empty
 
 _LICENSE_NAME_BSD-3-Clause-Clear= BSD 3-Clause Clear License
 _LICENSE_GROUPS_BSD-3-Clause-Clear= FSF
 
 _LICENSE_NAME_BSD-3-Clause-flex= BSD 3-Clause Flex variant
+_LICENSE_GROUPS_BSD-3-Clause-flex= # empty
 
 _LICENSE_NAME_BSD-3-Clause-HP= Hewlett-Packard BSD variant license
+_LICENSE_GROUPS_BSD-3-Clause-HP= # empty
 
 _LICENSE_NAME_BSD-3-Clause-LBNL= Lawrence Berkeley National Labs BSD variant license
 _LICENSE_GROUPS_BSD-3-Clause-LBNL= OSI
 
 _LICENSE_NAME_BSD-3-Clause-Modification= BSD 3-Clause Modification
+_LICENSE_GROUPS_BSD-3-Clause-Modification= # empty
 
 _LICENSE_NAME_BSD-3-Clause-No-Military-License= BSD 3-Clause No Military License
+_LICENSE_GROUPS_BSD-3-Clause-No-Military-License= # empty
 
 _LICENSE_NAME_BSD-3-Clause-No-Nuclear-License-2014= BSD 3-Clause No Nuclear License 2014
+_LICENSE_GROUPS_BSD-3-Clause-No-Nuclear-License-2014= # empty
 
 _LICENSE_NAME_BSD-3-Clause-Open-MPI= BSD 3-Clause Open MPI variant
 _LICENSE_GROUPS_BSD-3-Clause-Open-MPI= OSI
 
 _LICENSE_NAME_BSD-3-Clause-Sun= BSD 3-Clause Sun Microsystems
+_LICENSE_GROUPS_BSD-3-Clause-Sun= # empty
 
 _LICENSE_NAME_BSD-3-Clause-Tso= BSD 3-Clause Tso variant
+_LICENSE_GROUPS_BSD-3-Clause-Tso= # empty
 
 _LICENSE_NAME_BSD-4-Clause-UC= BSD-4-Clause (University of California-Specific)
+_LICENSE_GROUPS_BSD-4-Clause-UC= # empty
 
 _LICENSE_NAME_BSD-4.3TAHOE= BSD 4.3 TAHOE License
+_LICENSE_GROUPS_BSD-4.3TAHOE= # empty
 
 _LICENSE_NAME_BSD-Attribution-HPND-disclaimer= BSD with Attribution and HPND disclaimer
+_LICENSE_GROUPS_BSD-Attribution-HPND-disclaimer= # empty
 
 _LICENSE_NAME_BSD-Inferno-Nettverk= BSD-Inferno-Nettverk
+_LICENSE_GROUPS_BSD-Inferno-Nettverk= # empty
 
 _LICENSE_NAME_BSD-Mark-Modifications= BSD Mark Modifications License
+_LICENSE_GROUPS_BSD-Mark-Modifications= # empty
 
 _LICENSE_NAME_BSD-Source-beginning-file= BSD Source Code Attribution - beginning of file variant
+_LICENSE_GROUPS_BSD-Source-beginning-file= # empty
 
 _LICENSE_NAME_BSD-Systemics= Systemics BSD variant license
+_LICENSE_GROUPS_BSD-Systemics= # empty
 
 _LICENSE_NAME_BSD-Systemics-W3Works= Systemics W3Works BSD variant license
+_LICENSE_GROUPS_BSD-Systemics-W3Works= # empty
 
 # --- MIT / X11 / HPND family ---
 
@@ -260,41 +288,55 @@ _LICENSE_NAME_MIT-0=	MIT No Attribution
 _LICENSE_GROUPS_MIT-0=	OSI
 
 _LICENSE_NAME_MIT-advertising= Enlightenment License (e16)
+_LICENSE_GROUPS_MIT-advertising= # empty
 
 _LICENSE_NAME_MIT-Festival= MIT Festival Variant
+_LICENSE_GROUPS_MIT-Festival= # empty
 
 _LICENSE_NAME_MIT-Khronos-old= MIT Khronos - old variant
+_LICENSE_GROUPS_MIT-Khronos-old= # empty
 
 _LICENSE_NAME_MIT-Modern-Variant= MIT License Modern Variant
 _LICENSE_GROUPS_MIT-Modern-Variant= OSI
 
 _LICENSE_NAME_MIT-open-group= MIT Open Group variant
+_LICENSE_GROUPS_MIT-open-group= # empty
 
 _LICENSE_NAME_MIT-STK=	MIT-STK License
+_LICENSE_GROUPS_MIT-STK= # empty
 
 _LICENSE_NAME_MIT-testregex= MIT testregex Variant
+_LICENSE_GROUPS_MIT-testregex= # empty
 
 _LICENSE_NAME_X11=	X11 License
 _LICENSE_GROUPS_X11=	FSF
 
 _LICENSE_NAME_X11-distribute-modifications-variant= X11 License Distribution Modification Variant
+_LICENSE_GROUPS_X11-distribute-modifications-variant= # empty
 
 _LICENSE_NAME_X11-swapped= X11 swapped final paragraphs
+_LICENSE_GROUPS_X11-swapped= # empty
 
 _LICENSE_NAME_Xdebug-1.03= Xdebug License v 1.03
+_LICENSE_GROUPS_Xdebug-1.03= # empty
 
 _LICENSE_NAME_Xnet=	X.Net License
 _LICENSE_GROUPS_Xnet=	OSI
 
 _LICENSE_NAME_HPND-MIT-disclaimer= Historical Permission Notice and Disclaimer with MIT disclaimer
+_LICENSE_GROUPS_HPND-MIT-disclaimer= # empty
 
 _LICENSE_NAME_HPND-Netrek= Historical Permission Notice and Disclaimer - Netrek variant
+_LICENSE_GROUPS_HPND-Netrek= # empty
 
 _LICENSE_NAME_HPND-sell-MIT-disclaimer-xserver= Historical Permission Notice and Disclaimer - sell xserver variant with MIT disclaimer
+_LICENSE_GROUPS_HPND-sell-MIT-disclaimer-xserver= # empty
 
 _LICENSE_NAME_HPND-sell-variant= Historical Permission Notice and Disclaimer - sell variant
+_LICENSE_GROUPS_HPND-sell-variant= # empty
 
 _LICENSE_NAME_HPND-UC-export-US= Historical Permission Notice and Disclaimer - University of California, US export warning
+_LICENSE_GROUPS_HPND-UC-export-US= # empty
 
 # --- Open-source / academic license family ---
 
@@ -305,6 +347,7 @@ _LICENSE_NAME_CDDL-1.1=	Common Development and Distribution License 1.1
 _LICENSE_GROUPS_CDDL-1.1= OSI
 
 _LICENSE_NAME_CECILL-1.1= CeCILL Free Software License Agreement v1.1
+_LICENSE_GROUPS_CECILL-1.1= # empty
 
 _LICENSE_NAME_CECILL-2.0= CeCILL Free Software License Agreement v2.0
 _LICENSE_GROUPS_CECILL-2.0= FSF
@@ -328,6 +371,7 @@ _LICENSE_NAME_ECL-2.0=	Educational Community License v2.0
 _LICENSE_GROUPS_ECL-2.0= FSF OSI
 
 _LICENSE_NAME_Elastic-2.0= Elastic License 2.0
+_LICENSE_GROUPS_Elastic-2.0= # empty
 
 _LICENSE_NAME_EPL-1.0=	Eclipse Public License 1.0
 _LICENSE_GROUPS_EPL-1.0= FSF OSI
@@ -351,94 +395,132 @@ _LICENSE_NAME_OSL-2.1=	Open Software License 2.1
 _LICENSE_GROUPS_OSL-2.1= FSF OSI
 
 _LICENSE_NAME_SSPL-1.0=	Server Side Public License, v 1
+_LICENSE_GROUPS_SSPL-1.0= # empty
 
 _LICENSE_NAME_SUL-1.0=	Sustainable Use License v1.0
+_LICENSE_GROUPS_SUL-1.0= # empty
 
 _LICENSE_NAME_TGPPL-1.0= Transitive Grace Period Public Licence 1.0
+_LICENSE_GROUPS_TGPPL-1.0= # empty
 
 _LICENSE_NAME_TPL-1.0=	THOR Public License 1.0
+_LICENSE_GROUPS_TPL-1.0= # empty
 
 _LICENSE_NAME_any-OSI=	Any OSI License
+_LICENSE_GROUPS_any-OSI= # empty
 
 # --- Vendor/project-specific named licenses ---
 
 _LICENSE_NAME_Adobe-Utopia= Adobe Utopia Font License
+_LICENSE_GROUPS_Adobe-Utopia= # empty
 
 _LICENSE_NAME_Aladdin=	Aladdin Free Public License
+_LICENSE_GROUPS_Aladdin= # empty
 
 _LICENSE_NAME_Artistic-dist= Artistic License 1.0 (dist)
+_LICENSE_GROUPS_Artistic-dist= # empty
 
 _LICENSE_NAME_bzip2-1.0.6= bzip2 and libbzip2 License v1.0.6
+_LICENSE_GROUPS_bzip2-1.0.6= # empty
 
 _LICENSE_NAME_CC-PDDC=	Creative Commons Public Domain Dedication and Certification
+_LICENSE_GROUPS_CC-PDDC= # empty
 
 _LICENSE_NAME_CFITSIO=	CFITSIO License
+_LICENSE_GROUPS_CFITSIO= # empty
 
 _LICENSE_NAME_checkmk=	Checkmk License
+_LICENSE_GROUPS_checkmk= # empty
 
 _LICENSE_NAME_CMU-Mach=	CMU Mach License
+_LICENSE_GROUPS_CMU-Mach= # empty
 
 _LICENSE_NAME_cryptsetup-OpenSSL-exception= cryptsetup OpenSSL exception  # SPDX exception, used as "<license> WITH ${this}"
+_LICENSE_GROUPS_cryptsetup-OpenSSL-exception= # empty
 
 _LICENSE_NAME_curl=	curl License
 _LICENSE_GROUPS_curl=	OSI
 
 _LICENSE_NAME_DocBook-XML= DocBook XML License
+_LICENSE_GROUPS_DocBook-XML= # empty
 
 _LICENSE_NAME_dtoa=	David M. Gay dtoa License
+_LICENSE_GROUPS_dtoa=	# empty
 
 _LICENSE_NAME_GD=	GD License
+_LICENSE_GROUPS_GD=	# empty
 
 _LICENSE_NAME_HDF5=	HDF5 License
+_LICENSE_GROUPS_HDF5=	# empty
 
 _LICENSE_NAME_Hippocratic-2.1= Hippocratic License 2.1
+_LICENSE_GROUPS_Hippocratic-2.1= # empty
 
 _LICENSE_NAME_ICU=	ICU License
 _LICENSE_GROUPS_ICU=	OSI
 
 _LICENSE_NAME_ImageMagick= ImageMagick License
+_LICENSE_GROUPS_ImageMagick= # empty
 
 _LICENSE_NAME_Independent-modules-exception= Independent Module Linking exception  # SPDX exception, used as "<license> WITH ${this}"
+_LICENSE_GROUPS_Independent-modules-exception= # empty
 
 _LICENSE_NAME_Info-ZIP=	Info-ZIP License
+_LICENSE_GROUPS_Info-ZIP= # empty
 
 _LICENSE_NAME_jove=	Jove License
+_LICENSE_GROUPS_jove=	# empty
 
 _LICENSE_NAME_JSON=	JSON License
+_LICENSE_GROUPS_JSON=	# empty
 
-_LICENSE_NAME_Libpng=	libpng License
+_LICENSE_NAME_libpng-2.0= PNG Reference Library version 2
+_LICENSE_GROUPS_libpng-2.0= # empty
 
 _LICENSE_NAME_Linux-OpenIB= Linux Kernel Variant of OpenIB.org license
+_LICENSE_GROUPS_Linux-OpenIB= # empty
 
 _LICENSE_NAME_mplus=	mplus Font License
+_LICENSE_GROUPS_mplus=	# empty
 
 _LICENSE_NAME_MVT-1.1=	MVT License 1.1
+_LICENSE_GROUPS_MVT-1.1= # empty
 
 _LICENSE_NAME_NCL=	NCL Source Code License
+_LICENSE_GROUPS_NCL=	# empty
 
 _LICENSE_NAME_NRL=	NRL License
+_LICENSE_GROUPS_NRL=	# empty
 
 _LICENSE_NAME_NTP=	NTP License
 _LICENSE_GROUPS_NTP=	OSI
 
 _LICENSE_NAME_OLDAP-1.4= Open LDAP Public License v1.4
+_LICENSE_GROUPS_OLDAP-1.4= # empty
 
 _LICENSE_NAME_OSSP=	OSSP License
+_LICENSE_GROUPS_OSSP=	# empty
 
 _LICENSE_NAME_Pixar=	Pixar License
+_LICENSE_GROUPS_Pixar=	# empty
 
 _LICENSE_NAME_pkgconf=	pkgconf License
+_LICENSE_GROUPS_pkgconf= # empty
 
 _LICENSE_NAME_Python-2.0.1= Python License 2.0.1
 _LICENSE_GROUPS_Python-2.0.1= OSI
 
 _LICENSE_NAME_python-ldap= Python ldap License
+_LICENSE_GROUPS_python-ldap= # empty
 
 _LICENSE_NAME_Sendmail=	Sendmail License
+_LICENSE_GROUPS_Sendmail= # empty
 
 _LICENSE_NAME_SHL-0.5=	Solderpad Hardware License v0.5
+_LICENSE_GROUPS_SHL-0.5= # empty
 
 _LICENSE_NAME_SHL-0.51=	Solderpad Hardware License, Version 0.51
+_LICENSE_GROUPS_SHL-0.51= # empty
 
 _LICENSE_NAME_Sleepycat= Sleepycat License
 _LICENSE_GROUPS_Sleepycat= FSF OSI
@@ -447,10 +529,16 @@ _LICENSE_NAME_SMLNJ=	Standard ML of New Jersey License
 _LICENSE_GROUPS_SMLNJ=	FSF
 
 _LICENSE_NAME_Spencer-94= Spencer License 94
+_LICENSE_GROUPS_Spencer-94= # empty
 
 _LICENSE_NAME_SSLeay-standalone= SSLeay License - standalone
+_LICENSE_GROUPS_SSLeay-standalone= # empty
 
 _LICENSE_NAME_TCL=	TCL/TK License
+_LICENSE_GROUPS_TCL=	# empty
+
+_LICENSE_NAME_Unicode-3.0= Unicode License v3
+_LICENSE_GROUPS_Unicode-3.0= OSI
 
 _LICENSE_NAME_WordNet=	WordNet License
 _LICENSE_GROUPS_WordNet= OSI
