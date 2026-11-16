@@ -1,6 +1,6 @@
 PORTNAME=	gcc
 DISTVERSION=	14.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	GCC
 PKGNAMEPREFIX=	${TARGETARCH}-
@@ -64,7 +64,6 @@ CONFIGURE_ARGS+=--with-abi=elfv2
 CPPFLAGS+=	-DLIBCXXABI=NULL
 CPPFLAGS+=	-D__USE_ISOC11
 
-ALL_TARGET=	all-gcc
 INSTALL_TARGET=	install-gcc
 
 .include <bsd.port.pre.mk>
@@ -73,6 +72,8 @@ INSTALL_TARGET=	install-gcc
 TARGET_ABI=	gnueabi
 BU_FLAVOR=	arm_${TARGET_ABI}
 BU_PREFIX=	arm-${TARGET_ABI}-${OPSYS:tl}${OSREL}
+MAKE_ARGS+=	AR_FOR_TARGET=${BU_PREFIX}-ar \
+		RANLIB_FOR_TARGET=${BU_PREFIX}-ranlib
 .else
 TARGET_ABI=	unknown
 BU_FLAVOR=	${TARGETARCH}
@@ -86,6 +87,8 @@ post-patch:
 
 .if ${TARGETARCH} == "amd64" || ${TARGETARCH} == "powerpc64"
 CONFIGURE_ARGS+=--enable-multilib
+.else
+CONFIGURE_ARGS+=--disable-multilib
 .endif
 
 .if ${ARCH} == "aarch64"
@@ -110,6 +113,11 @@ PLIST+=		${.CURDIR}/pkg-plist.arm
 PLIST+=		${.CURDIR}/pkg-plist.i386
 .endif
 
+do-build:
+	cd ${BUILD_WRKSRC} && ${DO_MAKE_BUILD} all-gcc
+	cd ${BUILD_WRKSRC} && ${DO_MAKE_BUILD} configure-target-libgcc
+	cd ${BUILD_WRKSRC}/${GCC_TARGET}/libgcc && ${DO_MAKE_BUILD} libgcov.a
+
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/bin/${GCC_TARGET}-${GCC_TARGET}-*
 	${RM} ${STAGEDIR}${PREFIX}/share/info/*
@@ -122,5 +130,7 @@ post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/toolchains/
 	${INSTALL_DATA} ${WRKDIR}/xtoolchain.mk \
 		${STAGEDIR}${PREFIX}/share/toolchains/${TARGETARCH}-gcc${SUFFIX}.mk
+	${INSTALL_DATA} ${BUILD_WRKSRC}/${GCC_TARGET}/libgcc/libgcov.a \
+		${STAGEDIR}${PREFIX}/lib/gcc/${GCC_TARGET}/${DISTVERSION}/libgcov.a
 
 .include <bsd.port.post.mk>
