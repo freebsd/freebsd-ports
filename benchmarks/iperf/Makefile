@@ -1,5 +1,5 @@
 PORTNAME=	iperf
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.2
 CATEGORIES=	benchmarks
 MASTER_SITES=	SF/iperf2 \
 		LOCAL/sunpoet
