@@ -22,6 +22,7 @@
     SUBDIR += cmios9
     SUBDIR += cocot
     SUBDIR += convmv
+    SUBDIR += dejapdf
     SUBDIR += dos2ansi
     SUBDIR += dos2unix
     SUBDIR += dosunix
