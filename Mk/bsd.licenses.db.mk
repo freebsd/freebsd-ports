@@ -148,10 +148,10 @@ _LICENSE_SPDX_LIST+= \
 				GD HDF5 Hippocratic-2.1 ICU \
 				ImageMagick Independent-modules-exception Info-ZIP jove \
 				JSON libpng-2.0 Linux-OpenIB mplus \
-				MVT-1.1 NCL NRL NTP \
+				Multics MVT-1.1 NCL NRL NTP \
 				OLDAP-1.4 OSSP Pixar pkgconf \
-				Python-2.0.1 python-ldap Sendmail SHL-0.5 \
-				SHL-0.51 Sleepycat SMLNJ Spencer-94 \
+				Python-2.0.1 python-ldap Sendmail Sendmail-8.23 \
+				SHL-0.5 SHL-0.51 Sleepycat SMLNJ Spencer-94 \
 				SSLeay-standalone TCL Unicode-3.0 WordNet
 
 _LICENSE_LIST+=	${_LICENSE_SPDX_LIST}
@@ -483,6 +483,9 @@ _LICENSE_GROUPS_Linux-OpenIB= # empty
 _LICENSE_NAME_mplus=	mplus Font License
 _LICENSE_GROUPS_mplus=	# empty
 
+_LICENSE_NAME_Multics=	Multics License
+_LICENSE_GROUPS_Multics=	# empty
+
 _LICENSE_NAME_MVT-1.1=	MVT License 1.1
 _LICENSE_GROUPS_MVT-1.1= # empty
 
@@ -515,6 +518,9 @@ _LICENSE_GROUPS_python-ldap= # empty
 
 _LICENSE_NAME_Sendmail=	Sendmail License
 _LICENSE_GROUPS_Sendmail= # empty
+
+_LICENSE_NAME_Sendmail-8.23=	Sendmail License 8.23
+_LICENSE_GROUPS_Sendmail-8.23= # empty
 
 _LICENSE_NAME_SHL-0.5=	Solderpad Hardware License v0.5
 _LICENSE_GROUPS_SHL-0.5= # empty
