@@ -1,4 +1,3 @@
-etc/rc.d/iodined
 sbin/iodine
 sbin/iodined
 share/man/man8/iodine.8.gz
