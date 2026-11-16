@@ -1,0 +1,10 @@
+--- sqlite3.pc.in.orig	2026-11-16 03:30:46 UTC
++++ sqlite3.pc.in
+@@ -8,6 +8,6 @@ Version: @PACKAGE_VERSION@
+ Name: SQLite
+ Description: SQL database engine
+ Version: @PACKAGE_VERSION@
+-Libs: -L${libdir} -lsqlite3
++Libs: -L${libdir} -lsqlcipher
+ Libs.private: @LDFLAGS_MATH@ @LDFLAGS_ZLIB@ @LDFLAGS_DLOPEN@ @LDFLAGS_PTHREAD@ @LDFLAGS_ICU@
+ Cflags: -I${includedir}
