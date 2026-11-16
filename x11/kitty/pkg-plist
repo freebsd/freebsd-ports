@@ -170,8 +170,6 @@ share/applications/kitty.desktop
 %%PORTDOCS%%%%DOCSDIR%%/_sources/underlines.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/unscroll.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/wide-gamut-colors.rst.txt
-%%PORTDOCS%%%%DOCSDIR%%/_sphinx_design_static/design-tabs.js
-%%PORTDOCS%%%%DOCSDIR%%/_sphinx_design_static/sphinx-design.min.css
 %%PORTDOCS%%%%DOCSDIR%%/_static/base-stemmer.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/basic.css
 %%PORTDOCS%%%%DOCSDIR%%/_static/check-solid.svg
