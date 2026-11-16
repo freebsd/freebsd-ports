@@ -14,9 +14,7 @@ WWW=		https://heasarc.gsfc.nasa.gov/fitsio/ \
 		https://github.com/HEASARC/cfitsio
 
 LICENSE=	CFITSIO
-LICENSE_NAME=	CFITSIO License
 LICENSE_FILE=	${WRKSRC}/licenses/License.txt
-LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
