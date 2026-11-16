@@ -5812,3 +5812,4 @@ games/polyglot||2026-11-10|Has expired: Obsolete software, original master site 
 devel/p5-Device-USB||2026-11-10|Has expired: Upstream advises it as deprecated and noo longer suitable for use
 sysutils/mapchan||2026-11-10|Has expired: Incomplete implementation and does not work as intended anymore
 lang/php80-legacy||2026-11-15|No longer required in the cluster
+devel/rubygem-io-wait01|devel/rubygem-io-wait|2026-11-16|Use devel/rubygem-io-wait instead
