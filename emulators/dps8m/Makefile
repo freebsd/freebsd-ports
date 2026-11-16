@@ -10,10 +10,9 @@ WWW=		https://dps8m.gitlab.io/dps8m/ \
 		https://gitlab.com/dps8m/dps8m/ \
 		https://multics-wiki.swenson.org/index.php/Main_Page
 
-LICENSE=	ICU
-LICENSE_NAME=	ICU license
+LICENSE=	ICU Multics
+LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le riscv64
 ONLY_FOR_ARCHS_REASON=	__uint128_t is only implemented on 64-bit platforms
