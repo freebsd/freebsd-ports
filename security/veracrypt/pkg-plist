@@ -262,6 +262,8 @@ share/applications/veracrypt.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/Cascades.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/Changing Passwords and Keyfiles.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/Choosing Passwords and Keyfiles.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ru/Command Line Usage for Unix.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ru/Command Line Usage for Windows.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/Command Line Usage.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/CompilingGuidelineLinux.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/CompilingGuidelineWin.html
@@ -481,6 +483,8 @@ share/applications/veracrypt.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/Cascades.html
 %%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/Changing Passwords and Keyfiles.html
 %%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/Choosing Passwords and Keyfiles.html
+%%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/Command Line Usage for Unix.html
+%%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/Command Line Usage for Windows.html
 %%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/Command Line Usage.html
 %%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/CompilingGuidelineLinux.html
 %%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/CompilingGuidelineWin.html
