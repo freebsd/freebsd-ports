@@ -7,7 +7,7 @@ MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Implements a variant of Set
 WWW=		https://github.com/knu/sorted_set
 
-LICENSE=	MIT
+LICENSE=	BSD-2-Clause
 
 RUN_DEPENDS=	rubygem-rbtree>=0:devel/rubygem-rbtree \
 		rubygem-set>=1.0<2:devel/rubygem-set
