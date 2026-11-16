@@ -1,8 +1,8 @@
 PORTNAME=	IO-Any
-PORTVERSION=	0.09
-PORTREVISION=	2
+PORTVERSION=	0.10
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:JKUTEJ
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -15,8 +15,7 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-AnyEvent>=0,1:devel/p5-AnyEvent \
 		p5-IO-String>=0:devel/p5-IO-String \
-		p5-IO-Stringy>=0:devel/p5-IO-Stringy \
-		p5-List-MoreUtils>=0:lang/p5-List-MoreUtils
+		p5-IO-Stringy>=0:devel/p5-IO-Stringy
 TEST_DEPENDS=	p5-File-Slurp>=0:devel/p5-File-Slurp \
 		p5-Test-Differences>=0:devel/p5-Test-Differences \
 		p5-Test-Distribution>=0:devel/p5-Test-Distribution \
