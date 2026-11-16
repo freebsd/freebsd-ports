@@ -9,6 +9,10 @@
        <name>ungoogled-chromium</name>
        <range><lt>157.0.8103.78</lt></range>
       </package>
+      <package>
+       <name>linux-chrome</name>
+       <range><lt>157.0.8103.78</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -16,18 +20,17 @@
        <blockquote cite="https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_01744469280.html">
 	 <p>This update includes 83 security fixes:</p>
 	 <ul>
-	    <li></li>
 	    <li>Critical CVE-2026-126885: Use after free in ServiceWorker.</li>
 	    <li>Critical CVE-2026-126895: Use after free in CSS.</li>
 	    <li>Critical CVE-2026-126879: Use after free in Layout.</li>
 	    <li>Critical CVE-2026-126846: Use after free in Skia.</li>
-	    <li>Critical CVE-2026-126911: Use after free in ccessibility.</li>
+	    <li>Critical CVE-2026-126911: Use after free in Accessibility.</li>
 	    <li>High CVE-2026-126864: Use after free in V8.</li>
 	    <li>High CVE-2026-126889: Off-by-one error in V8.</li>
 	    <li>High CVE-2026-126859: Link following in FileSystem.</li>
 	    <li>High CVE-2026-126886: Use after free in Frames.</li>
-	    <li>High CVE-2026-126887: Use after free in nimation.</li>
-	    <li>High CVE-2026-126870: Uninitialized resource in GLE.</li>
+	    <li>High CVE-2026-126887: Use after free in Animation.</li>
+	    <li>High CVE-2026-126870: Uninitialized resource in ANGLE.</li>
 	    <li>High CVE-2026-126912: Buffer overflow in Skia.</li>
 	    <li>High CVE-2026-126919: Use after free in BrowserTag.</li>
 	    <li>High CVE-2026-126878: Information leak in Core.</li>
@@ -36,9 +39,9 @@
 	    <li>High CVE-2026-126853: Uninitialized resource in Skia.</li>
 	    <li>High CVE-2026-126865: Use after free in DOM.</li>
 	    <li>High CVE-2026-126916: Integer overflow in V8.</li>
-	    <li>High CVE-2026-126903: Improper state validation in GLE.</li>
+	    <li>High CVE-2026-126903: Improper state validation in ANGLE.</li>
 	    <li>High CVE-2026-126910: Type confusion in V8.</li>
-	    <li>High CVE-2026-126842: Use after free in GLE.</li>
+	    <li>High CVE-2026-126842: Use after free in ANGLE.</li>
 	    <li>High CVE-2026-126898: Uninitialized resource in Skia.</li>
 	    <li>High CVE-2026-126871: Out of bounds read in Skia.</li>
 	    <li>High CVE-2026-126875: Missing authorization in V8.</li>
@@ -46,14 +49,14 @@
 	    <li>High CVE-2026-126900: Use after free in CSS.</li>
 	    <li>High CVE-2026-126904: Use after free in Compositing.</li>
 	    <li>High CVE-2026-126907: Uninitialized resource in Media.</li>
-	    <li>High CVE-2026-126851: Use after free in ccessibility.</li>
+	    <li>High CVE-2026-126851: Use after free in Accessibility.</li>
 	    <li>High CVE-2026-126845: Uninitialized resource in GPU.</li>
 	    <li>High CVE-2026-126881: Improper initialization in Media.</li>
 	    <li>High CVE-2026-126867: Use after free in Browser.</li>
 	    <li>High CVE-2026-126863: Use after free in HTML.</li>
 	    <li>High CVE-2026-126896: Missing authorization in V8.</li>
 	    <li>High CVE-2026-126869: Use after free in Frames.</li>
-	    <li>High CVE-2026-126858: Uninitialized resource in GLE.</li>
+	    <li>High CVE-2026-126858: Uninitialized resource in ANGLE.</li>
 	    <li>High CVE-2026-126891: Use after free in V8.</li>
 	    <li>High CVE-2026-126874: Type confusion in V8.</li>
 	    <li>High CVE-2026-126876: Integer overflow in Skia.</li>
@@ -79,7 +82,7 @@
 	    <li>High CVE-2026-126897: Type confusion in V8.</li>
 	    <li>High CVE-2026-126857: Out of bounds read in Skia.</li>
 	    <li>High CVE-2026-126883: Use after free in Core.</li>
-	    <li>High CVE-2026-126840: Out of bounds write in etwork.</li>
+	    <li>High CVE-2026-126840: Out of bounds write in Network.</li>
 	    <li>High CVE-2026-126848: Uninitialized resource in Skia.</li>
 	    <li>High CVE-2026-126882: Information leak in Skia.</li>
 	    <li>High CVE-2026-126906: Race condition in Extensions.</li>
@@ -94,7 +97,7 @@
 	    <li>High CVE-2026-126841: Out of bounds read in Skia.</li>
 	    <li>High CVE-2026-126902: Incorrect reference resolution in Browser.</li>
 	    <li>High CVE-2026-126868: Type confusion in V8.</li>
-	    <li>High CVE-2026-126921: Use after free in ccessibility.</li>
+	    <li>High CVE-2026-126921: Use after free in Accessibility.</li>
 	    <li>High CVE-2026-126913: Out of bounds read in Compositing.</li>
 	    <li>High CVE-2026-126890: Out of bounds read in Media.</li>
 	    <li>High CVE-2026-126860: Incorrect authorization in FileSystem.</li>
@@ -193,6 +196,7 @@
     <dates>
       <discovery>2026-11-11</discovery>
       <entry>2026-11-16</entry>
+      <modified>2026-11-16</modified>
     </dates>
   </vuln>
 
