@@ -1,7 +1,7 @@
 PORTNAME=	libceed
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1.0
-CATEGORIES=	math # machine-learning
+CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	CEED Library: Code for Efficient Extensible Discretizations
@@ -18,14 +18,15 @@ GH_ACCOUNT=	CEED
 GH_PROJECT=	libCEED
 
 CFLAGS+=	-fPIC # https://github.com/CEED/libCEED/issues/1706
+FFLAGS+=	-cpp # needed for the Fortran tests that use the SOURCE_DIR macro
 
-TEST_TARGET=	test # tests fail, see https://github.com/CEED/libCEED/issues/1705
+TEST_TARGET=	test
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libceed.so
 
-# tests fail to run, see https://github.com/CEED/libCEED/issues/2107
+# tests as of 1.1.0: ok
 
 .include <bsd.port.mk>
