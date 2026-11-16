@@ -1,10 +1,13 @@
 PORTNAME=	emacs
 DISTVERSION=	31.1
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	3
 CATEGORIES=	editors
 MASTER_SITES=	GNU
 
+PATCH_SITES=	https://github.com/emacs-mirror/emacs/commit/
+PATCHFILES=	205ae0b0583dbfe09e258164adbc49e130645221.patch?full_index=1:-p1 \
+		5bf385dad6e5a2c2a9584252b99484cdbfeae66b.patch?full_index=1:-p1
 .if ${FLAVOR:U} == canna
 PATCH_SITES+=	https://www.gentei.org/~yuuji/software/emacs31canna/:canna
 PATCHFILES+=	emacs31.1canna-20260824.diff.gz:-p1:canna
