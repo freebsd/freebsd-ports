@@ -14,6 +14,8 @@ WWW=		https://www.h5py.org/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/licenses/license.txt
 
+BROKEN_aarch64=	ImportError: /usr/local/lib/gcc14/libgcc_s.so.1: version GCC_4.6.0 required by /usr/local/lib/python3.12/lib-dynload/_ctypes.cpython-312.so not found
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.25.0,1<3,1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=23.0:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pkgconfig>=1.5.5,1:devel/py-pkgconfig@${PY_FLAVOR} \
