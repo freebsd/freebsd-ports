@@ -8,7 +8,7 @@ MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Amazon Simple Email Service as an ActionMailer delivery method
 WWW=		https://github.com/aws/aws-actionmailer-ses-ruby
 
-LICENSE=	MIT
+LICENSE=	Apache-2.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-actionmailer-gitlab>=7.1.0:mail/rubygem-actionmailer-gitlab \
