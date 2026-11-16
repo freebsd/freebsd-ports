@@ -1,0 +1,16 @@
+[
+{ type: install
+  message: <<EOM
+Copy %%ETCDIR%%/continuwuity.toml.sample to %%ETCDIR%%/continuwuity.toml and
+set at least server_name before starting the service.  The database is kept
+in /var/db/continuwuity.
+
+The first account has to be registered with the single-use token the server
+writes to its log on startup.  A registration_token set in the configuration
+file only takes effect once that first account exists.
+
+Continuwuity speaks plain HTTP and expects a reverse proxy in front of it for
+TLS and for serving the .well-known delegation of your domain.
+EOM
+}
+]

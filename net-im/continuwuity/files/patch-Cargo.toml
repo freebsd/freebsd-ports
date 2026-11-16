@@ -1,0 +1,100 @@
+--- Cargo.toml.orig	2026-11-16 10:30:46 UTC
++++ Cargo.toml
+@@ -387,8 +387,7 @@ features = [
+ ]
+ 
+ [workspace.dependencies.rust-rocksdb]
+-git = "https://forgejo.ellis.link/continuwuation/rust-rocksdb-zaidoon1"
+-rev = "0a25ff92f7c09b55eec496b9c192c7d5136ab2b8"
++path = "../rust-rocksdb-zaidoon1"
+ default-features = false
+ features = [
+     "multi-threaded-cf",
+@@ -452,24 +451,21 @@ version = "0.48.0"
+ 
+ # jemalloc usage
+ [workspace.dependencies.tikv-jemalloc-sys]
+-git = "https://forgejo.ellis.link/continuwuation/jemallocator"
+-rev = "df86ff89d4b1e223b9f7d2dd2fbb7f202da7f554"
++path = "../jemallocator/jemalloc-sys"
+ default-features = false
+ features = [
+     "background_threads_runtime_support",
+     "unprefixed_malloc_on_supported_platforms",
+ ]
+ [workspace.dependencies.tikv-jemallocator]
+-git = "https://forgejo.ellis.link/continuwuation/jemallocator"
+-rev = "df86ff89d4b1e223b9f7d2dd2fbb7f202da7f554"
++path = "../jemallocator/jemallocator"
+ default-features = false
+ features = [
+     "background_threads_runtime_support",
+     "unprefixed_malloc_on_supported_platforms",
+ ]
+ [workspace.dependencies.tikv-jemalloc-ctl]
+-git = "https://forgejo.ellis.link/continuwuation/jemallocator"
+-rev = "df86ff89d4b1e223b9f7d2dd2fbb7f202da7f554"
++path = "../jemallocator/jemalloc-ctl"
+ default-features = false
+ features = ["use_std"]
+ 
+@@ -583,26 +579,21 @@ version = "0.7.1"
+ # adds a tab completion callback: https://forgejo.ellis.link/continuwuation/rustyline-async/src/branch/main/.patchy/0002-add-tab-completion-callback.patch
+ # adds event for CTRL+\: https://forgejo.ellis.link/continuwuation/rustyline-async/src/branch/main/.patchy/0001-add-event-for-ctrl.patch
+ [patch.crates-io.rustyline-async]
+-git = "https://forgejo.ellis.link/continuwuation/rustyline-async"
+-rev = "b13aca2cc08d5f78303746cd192d9a03d73e768e"
++path = "../rustyline-async"
+ 
+ # adds LIFO queue scheduling; this should be updated with PR progress.
+ [patch.crates-io.event-listener]
+-git = "https://forgejo.ellis.link/continuwuation/event-listener"
+-rev = "b2c19bcaf5a0a69c38c034e417bda04a9b991529"
++path = "../event-listener"
+ [patch.crates-io.async-channel]
+-git = "https://forgejo.ellis.link/continuwuation/async-channel"
+-rev = "e990f0006b68dc9bace7a3c95fc90b5c4e44948d"
++path = "../async-channel"
+ 
+ # adds affinity masks for selecting more than one core at a time
+ [patch.crates-io.core_affinity]
+-git = "https://forgejo.ellis.link/continuwuation/core_affinity_rs"
+-rev = "7c7a9dea35382743a63837cdd1d977efdb8f1b8a"
++path = "../core_affinity_rs"
+ 
+ # reverts hyperium#148 conflicting with our delicate federation resolver hooks
+ [patch.crates-io.hyper-util]
+-git = "https://forgejo.ellis.link/continuwuation/hyper-util"
+-rev = "09fcd3bf4656c81a8ad573bee410ab2b57f60b86"
++path = "../hyper-util"
+ 
+ #
+ # Our crates
+@@ -988,3 +979,27 @@ ignored = ["const-str", "ctor", "dtor"]
+ 
+ [workspace.metadata.cargo-shear]
+ ignored = ["const-str", "ctor", "dtor"]
++
++[patch."https://forgejo.ellis.link/continuwuation/rust-rocksdb-zaidoon1"]
++rust-rocksdb = { path = "../rust-rocksdb-zaidoon1" }
++rust-librocksdb-sys = { path = "../rust-rocksdb-zaidoon1/librocksdb-sys" }
++
++[patch."https://forgejo.ellis.link/continuwuation/jemallocator"]
++tikv-jemalloc-sys = { path = "../jemallocator/jemalloc-sys" }
++tikv-jemallocator = { path = "../jemallocator/jemallocator" }
++tikv-jemalloc-ctl = { path = "../jemallocator/jemalloc-ctl" }
++
++[patch."https://forgejo.ellis.link/continuwuation/rustyline-async"]
++rustyline-async = { path = "../rustyline-async" }
++
++[patch."https://forgejo.ellis.link/continuwuation/event-listener"]
++event-listener = { path = "../event-listener" }
++
++[patch."https://forgejo.ellis.link/continuwuation/async-channel"]
++async-channel = { path = "../async-channel" }
++
++[patch."https://forgejo.ellis.link/continuwuation/core_affinity_rs"]
++core_affinity = { path = "../core_affinity_rs" }
++
++[patch."https://forgejo.ellis.link/continuwuation/hyper-util"]
++hyper-util = { path = "../hyper-util" }

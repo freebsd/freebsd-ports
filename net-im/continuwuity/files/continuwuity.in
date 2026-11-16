@@ -1,0 +1,44 @@
+#!/bin/sh
+
+# PROVIDE: continuwuity
+# REQUIRE: LOGIN NETWORKING
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable continuwuity:
+#
+# continuwuity_enable (bool):	Set to "NO" by default.
+#				Set to "YES" to enable continuwuity.
+# continuwuity_config (str):	Configuration file.
+#				Default: "%%ETCDIR%%/continuwuity.toml"
+# continuwuity_user (str):	User to run continuwuity as.
+#				Default: "%%USER%%"
+# continuwuity_group (str):	Group to run continuwuity as.
+#				Default: "%%GROUP%%"
+
+. /etc/rc.subr
+
+name=continuwuity
+rcvar=continuwuity_enable
+
+load_rc_config $name
+
+: ${continuwuity_enable:="NO"}
+: ${continuwuity_config:="%%ETCDIR%%/continuwuity.toml"}
+: ${continuwuity_user:="%%USER%%"}
+: ${continuwuity_group:="%%GROUP%%"}
+
+pidfile="/var/run/${name}/${name}.pid"
+procname="%%PREFIX%%/bin/continuwuity"
+command="/usr/sbin/daemon"
+command_args="-f -S -T ${name} -p ${pidfile} \
+	${procname} -c ${continuwuity_config}"
+
+start_precmd=continuwuity_precmd
+
+continuwuity_precmd()
+{
+	install -d -o "${continuwuity_user}" -g "${continuwuity_group}" -m 755 \
+		"/var/run/${name}"
+}
+
+run_rc_command "$1"

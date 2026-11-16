@@ -1,0 +1,8 @@
+Continuwuity is a Matrix homeserver written in Rust and one of the two
+projects continuing conduwuit.  It serves the client-server and federation
+APIs from a single process and stores its state in RocksDB, so no separate
+database server is required.
+
+Besides the usual homeserver features it offers single-use registration
+tokens, an email registration stage, policy server integration and the
+ability to suspend users.

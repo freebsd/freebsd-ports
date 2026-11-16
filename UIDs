@@ -353,7 +353,7 @@ spectrumknx:*:401:401::0:0:SpectrumKNX Daemon:/var/db/spectrumknx:/usr/sbin/nolo
 svn:*:404:404::0:0:Subversion daemon:/var/db/svn:/usr/sbin/nologin
 rustfs:*:405:405::0:0:RustFS Daemon:/var/db/rustfs:/usr/sbin/nologin
 tuwunel:*:406:406::0:0:Tuwunel Matrix Homeserver:/var/db/tuwunel:/usr/sbin/nologin
-# free: 407
+continuwuity:*:407:407::0:0:Continuwuity Matrix Homeserver:/nonexistent:/usr/sbin/nologin
 # free: 408
 # free: 409
 # free: 410
