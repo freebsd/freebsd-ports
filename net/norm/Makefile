@@ -9,10 +9,10 @@ MAINTAINER=	alven@FreeBSD.org
 COMMENT=	NACK-Oriented Reliable Multicast (NORM)
 WWW=		https://www.nrl.navy.mil/Our-Work/Areas-of-Research/Information-Technology/NCS/NORM/
 
-LICENSE=	NRL
-LICENSE_NAME=	NRL License
+LICENSE=	LicenseRef-NRL-Protolib
+LICENSE_NAME=	NRL Protolib License
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		libtool waf
 USE_CXXSTD=	gnu++98
