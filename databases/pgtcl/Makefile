@@ -20,7 +20,7 @@ USES=		pgsql:${PGTCL_SLAVE}
 USES=		pgsql
 .endif
 
-USES+=		tcl:tea
+USES+=		tcl:tea,86
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
 USE_LDCONFIG=	${LIBDIR}
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}

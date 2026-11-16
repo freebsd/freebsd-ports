@@ -15,7 +15,7 @@ LIB_DEPENDS=	libtclx8.4.so:lang/tclX \
 		libboost_graph.so:devel/boost-libs
 RUN_DEPENDS=	${LOCALBASE}/lib/tcllib/ncgi/ncgi.tcl:devel/tcllib
 
-USES=		autoreconf tcl:tea
+USES=		autoreconf tcl:tea,86
 CONFIGURE_ARGS=	--with-boost=${LOCALBASE}
 MAKE_ENV=	TCLSH=${TCLSH}
 TEST_TARGET=	test

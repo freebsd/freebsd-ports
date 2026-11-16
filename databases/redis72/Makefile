@@ -11,7 +11,7 @@ WWW=		https://redis.io/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler:c11 cpe gmake pkgconfig tcl:test
+USES=		compiler:c11 cpe gmake pkgconfig tcl:test,86
 CPE_VENDOR=	redislabs
 USE_RC_SUBR=	redis sentinel
 
