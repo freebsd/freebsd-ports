@@ -11,9 +11,6 @@ COMMENT=	Unicode emoji data files
 WWW=		https://home.unicode.org/emoji/
 
 LICENSE=	Unicode-3.0
-LICENSE_NAME=	Unicode Licence v3
-LICENSE_TEXT=	See https://www.unicode.org/copyright.html#License
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 NO_BUILD=	yes
 NO_ARCH=	yes
