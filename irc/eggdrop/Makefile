@@ -1,5 +1,6 @@
 PORTNAME=	eggdrop
 DISTVERSION=	1.10.2
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	https://github.com/eggheads/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -35,8 +36,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/eggdrop.conf ${STAGEDIR}${ETCDIR}/eggdrop.conf.sample
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/eggdrop
 .for f in assoc.so blowfish.so channels.so compress.so console.so ctcp.so dns.so \
-	filesys.so irc.so notes.so seen.so server.so share.so transfer.so \
-	uptime.so
+	filesys.so ident.so irc.so notes.so pbkdf2.so seen.so server.so share.so \
+	transfer.so twitch.so uptime.so
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/lib/eggdrop
 .endfor
 	@${MKDIR} ${STAGEDIR}${DATADIR}/help
