@@ -10,7 +10,7 @@ COMMENT=	TonieBox content management tool
 WWW=		https://github.com/TonieToolbox/TonieToolbox \
 		https://github.com/Quentendo64/TonieToolbox
 
-LICENSE=	GPLv3+
+LICENSE=	GPL-3.0-only
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 # get from pyproject.toml
