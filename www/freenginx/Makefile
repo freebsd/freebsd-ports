@@ -1,7 +1,7 @@
 PORTNAME=	freenginx
 PORTVERSION=	${NGINX_VERSION}
 .include "version.mk"
-PORTREVISION?=	9
+PORTREVISION?=	10
 CATEGORIES=	www
 MASTER_SITES=	https://freenginx.org/download/ \
 		LOCAL/joneum
@@ -311,9 +311,6 @@ pre-configure-HTTP_IP2LOCATION-on:
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-ip2location ${WRKSRC_ip2location}
 	@${CHMOD} -R u+w ${WRKSRC_ip2location}
 
-post-patch-HTTP_TARANTOOL-on:
-	@${REINPLACE_CMD} 's!%%PREFIX%%!${LOCALBASE}!g' ${WRKSRC_nginx_tarantool}/config
-
 pre-configure-SMALL_LIGHT-on:
 	( cd ${WRKSRC_small_light} && ./setup )
 
@@ -422,6 +419,11 @@ pre-configure-HTTP_REDIS-on:
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-redis ${WRKSRC_redis}
 	@${CHMOD} -R u+w ${WRKSRC_redis}
 
+pre-configure-HTTP_UPSTREAM_CHECK-on:
+	@${RM} -rf ${WRKSRC_upstreamcheck}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-upstream-check ${WRKSRC_upstreamcheck}
+	@${CHMOD} -R u+w ${WRKSRC_upstreamcheck}
+
 pre-configure-LINK-on:
 	@${RM} -rf ${WRKSRC_link}
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-link ${WRKSRC_link}
@@ -442,6 +444,18 @@ pre-configure-HTTP_JSON_STATUS-on:
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-json-status \
 		${WRKSRC_json_status}
 	@${CHMOD} -R u+w ${WRKSRC_json_status}
+
+pre-configure-HTTP_MOGILEFS-on:
+	@${RM} -rf ${WRKSRC_mogilefs}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-mogilefs \
+		${WRKSRC_mogilefs}
+	@${CHMOD} -R u+w ${WRKSRC_mogilefs}
+
+pre-configure-HTTP_PUSH_STREAM-on:
+	@${RM} -rf ${WRKSRC_pushstream}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-push-stream \
+		${WRKSRC_pushstream}
+	@${CHMOD} -R u+w ${WRKSRC_pushstream}
 
 pre-configure-MEMC-on:
 	@${RM} -rf ${WRKSRC_memc}
@@ -529,6 +543,12 @@ pre-configure-REDIS2-on:
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-redis2 ${WRKSRC_redis2}
 	@${CHMOD} -R u+w ${WRKSRC_redis2}
 
+pre-configure-RTMP-on:
+	@${RM} -rf ${WRKSRC_rtmp}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-rtmp \
+		${WRKSRC_rtmp}
+	@${CHMOD} -R u+w ${WRKSRC_rtmp}
+
 pre-configure-SET_MISC-on:
 	@${RM} -rf ${WRKSRC_setmisc}
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-set-misc ${WRKSRC_setmisc}
@@ -566,6 +586,12 @@ pre-configure-STS-on:
 	@${RM} -rf ${WRKSRC_sts}
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-sts ${WRKSRC_sts}
 	@${CHMOD} -R u+w ${WRKSRC_sts}
+
+pre-configure-HTTP_TARANTOOL-on:
+	@${RM} -rf ${WRKSRC_nginx_tarantool}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-tarantool \
+		${WRKSRC_nginx_tarantool}
+	@${CHMOD} -R u+w ${WRKSRC_nginx_tarantool}
 
 pre-configure-SYSLOG5424-on:
 	@${RM} -rf ${WRKSRC_syslog5424}
