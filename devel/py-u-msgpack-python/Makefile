@@ -1,9 +1,9 @@
 PORTNAME=	u-msgpack-python
-PORTVERSION=	2.8.0
-PORTREVISION=	1
+PORTVERSION=	2.9.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	u_msgpack_python-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Portable, lightweight MessagePack (de)serializer
