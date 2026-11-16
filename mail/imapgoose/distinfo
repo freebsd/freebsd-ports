@@ -1,8 +1,8 @@
-TIMESTAMP = 1788371506
+TIMESTAMP = 1794810281
 SHA256 (ImapGoose-v0.5.5.tar.gz) = 9f87ecdde549a64b10eedfa8e37fb939edf69d67b14acc889a70f5432568557e
 SIZE (ImapGoose-v0.5.5.tar.gz) = 74915
-SHA256 (emersion-go-scfg-v0.1.0_CODEBERG0.tar.gz) = 59d15804c08e685cfb57d0322799420ea5ee3be917a7c0bdc961b4bcbc1a153d
-SIZE (emersion-go-scfg-v0.1.0_CODEBERG0.tar.gz) = 9149
+SHA256 (emersion-go-scfg-v0.1.0_FJ0.tar.gz) = 59d15804c08e685cfb57d0322799420ea5ee3be917a7c0bdc961b4bcbc1a153d
+SIZE (emersion-go-scfg-v0.1.0_FJ0.tar.gz) = 9149
 SHA256 (emersion-go-message-v0.18.2_GH0.tar.gz) = 9e37b922775a3bbad413a8269542ec3ebdf5195165b1640a4e6433bc41c28413
 SIZE (emersion-go-message-v0.18.2_GH0.tar.gz) = 48158
 SHA256 (emersion-go-sasl-b788ff22d5a6_GH0.tar.gz) = 83dcf546c520708cf53dca5df3730c71b51901f08a52282c3515fd01d0ecbc75

@@ -15,6 +15,9 @@ LICENSE_FILE=	${WRKSRC}/LICENCE
 
 USES=		go:modules
 
+USE_FORGEJO=	nodefault
+FJ_TUPLE=	emersion:go-scfg:v0.1.0:emersion_go_scfg/vendor/codeberg.org/emersion/go-scfg
+
 USE_GITHUB=	nodefault
 GH_TUPLE=	emersion:go-message:v0.18.2:emersion_go_message/vendor/github.com/emersion/go-message \
 		emersion:go-sasl:b788ff22d5a6:emersion_go_sasl/vendor/github.com/emersion/go-sasl \
@@ -25,21 +28,13 @@ GH_TUPLE=	emersion:go-message:v0.18.2:emersion_go_message/vendor/github.com/emer
 		mattn:go-sqlite3:v1.14.24:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
 		whynothugo:go-imap:cfb5560bc8dc:whynothugo_go_imap_v2/vendor/github.com/emersion/go-imap/v2
 
-# Patterned on _SRHT_TUPLE in mail/aerc
-_CODEBERG_TUPLE=	emersion:go-scfg:v0.1.0:vendor/codeberg.org/emersion/go-scfg
-
-.for account project tag subdir in ${_CODEBERG_TUPLE:S/:/ /g}
-MASTER_SITES+=	https://codeberg.org/${account}/${project}/archive/${tag}${EXTRACT_SUFX}?dummy=/:${account}_${project:S/-/_/g}
-DISTFILES+=	${account}-${project}-${tag}_CODEBERG0${EXTRACT_SUFX}:${account}_${project:S/-/_/g}
-.endfor
-
 GO_TARGET=	./cmd/imapgoose
 
-post-extract:
-.for account project tag subdir in ${_CODEBERG_TUPLE:S/:/ /g}
-	@${MKDIR} ${WRKSRC}/${subdir:H}
-	@${MV} ${WRKDIR}/${project} ${WRKSRC}/${subdir}
-.endfor
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${ARCH} == "i386"
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-i386-internal_watcher_backend__bsd.go
+.endif
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/imapgoose.1 ${STAGEDIR}${PREFIX}/share/man/man1/
