@@ -593,6 +593,7 @@
     SUBDIR += nginx-module-sts
     SUBDIR += nginx-module-subs-filter
     SUBDIR += nginx-module-syslog5424
+    SUBDIR += nginx-module-tarantool
     SUBDIR += nginx-module-upload
     SUBDIR += nginx-module-upstream-check
     SUBDIR += nginx-module-vod

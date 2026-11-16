@@ -1,0 +1,8 @@
+The tarantool module talks to a Tarantool database over its own binary
+protocol and exposes it as a REST or JSON-RPC endpoint.  nginx translates
+between JSON on the HTTP side and msgpack on the database side, so a
+stored procedure can be called without a layer in between, and the spaces
+and indexes a client may name can be restricted by configuration.
+
+This port only installs the module sources.  The module itself is built by
+the nginx ports when their HTTP_TARANTOOL option is enabled.
