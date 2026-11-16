@@ -1,40 +1,37 @@
 PORTNAME=	utf8proc
 DISTVERSION=	2.12.0
 CATEGORIES=	textproc devel
-MASTER_SITES=	https://github.com/JuliaStrings/${PORTNAME}/releases/download/v${DISTVERSION}/ \
-		https://www.unicode.org/Public/18.0.0/ucd/:testfiles1 \
-		https://www.unicode.org/Public/18.0.0/ucd/auxiliary/:testfiles2
-DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
-		NormalizationTest.txt:testfiles1 \
-		GraphemeBreakTest.txt:testfiles2
-DIST_SUBDIR=	${PORTNAME}/${DISTVERSION}
-EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
+MASTER_SITES=	https://github.com/JuliaStrings/utf8proc/releases/download/v${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	UTF-8 processing library
-WWW=		https://juliastrings.github.io/utf8proc/
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Clean C library for processing UTF-8 Unicode data
+WWW=		https://juliastrings.github.io/utf8proc/ \
+		https://github.com/JuliaStrings/utf8proc
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=		cmake:testing pathfix
+TEST_DEPENDS=	UCD>=0:textproc/UCD
+
+USES=		cmake:testing
+
+CMAKE_OFF=	LIB_FUZZING_ENGINE \
+		UTF8PROC_ENABLE_TESTING
+CMAKE_ON=	BUILD_SHARED_LIBS
+CMAKE_TESTING_ON=	UTF8PROC_ENABLE_TESTING
 USE_LDCONFIG=	yes
 
 PORTDOCS=	NEWS.md README.md
 
-CMAKE_TESTING_ON=	UTF8PROC_ENABLE_TESTING
-
-CMAKE_ON=	BUILD_SHARED_LIBS
-
 OPTIONS_DEFINE=	DOCS
 
 post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && \
-	    ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 pre-test:
-	${MKDIR} ${BUILD_WRKSRC}/data
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/*.txt ${BUILD_WRKSRC}/data
+	${MKDIR} ${TEST_WRKSRC}/data
+	${LN} -fs ${LOCALBASE}/share/unicode/ucd/NormalizationTest.txt ${TEST_WRKSRC}/data/NormalizationTest.txt
+	${LN} -fs ${LOCALBASE}/share/unicode/ucd/auxiliary/GraphemeBreakTest.txt ${TEST_WRKSRC}/data/GraphemeBreakTest.txt
 
 .include <bsd.port.mk>
