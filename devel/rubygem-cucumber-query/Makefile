@@ -1,5 +1,5 @@
 PORTNAME=	cucumber-query
-PORTVERSION=	16.3.0
+PORTVERSION=	16.4.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
