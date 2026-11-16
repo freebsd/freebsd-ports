@@ -23,6 +23,9 @@ USE_PYTHON=	autoplist concurrent pep517
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
 CARGO_TEST=	no
+# Remove these after 14.5 EoL
+CFLAGS_i386=	-DOPENSSL_NO_ASM
+CXXFLAGS_i386=	-DOPENSSL_NO_ASM
 # BoringSSL ships no PowerPC assembly, so use the portable C implementations.
 CFLAGS_powerpc64le=	-DOPENSSL_NO_ASM
 CXXFLAGS_powerpc64le=	-DOPENSSL_NO_ASM

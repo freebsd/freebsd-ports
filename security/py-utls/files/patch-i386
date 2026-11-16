@@ -1,0 +1,10 @@
+--- ../boring-45512aac61eba490da88133d545a05419cc62d91/boring-sys/build/main.rs.orig	2026-09-30 18:30:00 UTC
++++ ../boring-45512aac61eba490da88133d545a05419cc62d91/boring-sys/build/main.rs
+@@ -792,6 +792,7 @@ fn generate_bindings(config: &Config) -> Result<PathBu
+         .merge_extern_blocks(true)
+         .prepend_enum_name(true)
+         .blocklist_type("max_align_t") // Not supported by bindgen on all targets, not used by BoringSSL
++        .blocklist_type("__max_align_t")
+         .clang_args(get_extra_clang_args_for_bindgen(config))
+         .clang_arg("-I")
+         .clang_arg(include_path.display().to_string());
