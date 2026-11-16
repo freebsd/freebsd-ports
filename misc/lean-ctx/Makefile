@@ -1,6 +1,6 @@
 PORTNAME=	lean-ctx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.12.4
+DISTVERSION=	3.12.6
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -346,7 +346,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		quick-error-1.2.3 \
 		quinn-0.11.11 \
 		quinn-proto-0.11.19 \
-		quinn-udp-0.5.15 \
+		quinn-udp-0.5.16 \
 		quote-1.0.47 \
 		r-efi-5.3.0 \
 		r-efi-6.0.0 \
