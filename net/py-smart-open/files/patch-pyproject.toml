@@ -1,10 +1,19 @@
---- pyproject.toml.orig	2026-06-27 16:27:48 UTC
+--- pyproject.toml.orig	2026-11-14 11:32:33 UTC
 +++ pyproject.toml
 @@ -1,6 +1,6 @@ build-backend = "setuptools.build_meta"
  [build-system]
  build-backend = "setuptools.build_meta"
--requires = ["setuptools>=64", "setuptools_scm>=8"]
+-requires = ["setuptools>=77", "setuptools_scm>=8"]
 +requires = ["setuptools>=61", "setuptools_scm>=8"]
  
  [project]
  authors = [{name = "Radim Rehurek", email = "me@radimrehurek.com"}]
+@@ -23,7 +23,7 @@ dynamic = ["version"]
+ dependencies = ["wrapt"]
+ description = "Utils for streaming large files (S3, HDFS, GCS, SFTP, Azure Blob Storage, gzip, bz2, zst...)"
+ dynamic = ["version"]
+-license = "MIT"
++license = {text = "MIT"}
+ name = "smart_open"
+ readme = "README.md"
+ requires-python = ">=3.10,<4.0" # sync with classifiers above
