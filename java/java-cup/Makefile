@@ -11,10 +11,10 @@ COMMENT=	LALR parser generator in Java
 WWW=		http://www2.cs.tum.edu/projects/cup/
 
 LICENSE=	SMLNJ
-LICENSE_NAME=	Standard ML of New Jersey License
-LICENSE_TEXT=	The text of the license can be obtained from the following URL:\
-		http://www2.cs.tum.edu/projects/cup/licence.php
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+#LICENSE_NAME=	Standard ML of New Jersey License
+#LICENSE_TEXT=	The text of the license can be obtained from the following URL:\
+#		http://www2.cs.tum.edu/projects/cup/licence.php
+#LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 DEPRECATE=	Upstream no longer exists including LICENSE site
 EXPIRATION_DATE=	2026-12-16
