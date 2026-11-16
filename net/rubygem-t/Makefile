@@ -11,6 +11,10 @@ WWW=		https://sferik.github.io/x-cli/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
+BROKEN=		Use rubygem-x 0.x API
+DEPRECATED=	Upstream moved to rust implementation. Use net/x-cli instead
+EXPIRATION_DATE=2026-11-30
+
 RUN_DEPENDS=	rubygem-cgi>=0.2:www/rubygem-cgi \
 		rubygem-geokit>=1.14<2:graphics/rubygem-geokit \
 		rubygem-htmlentities>=4.3<5:textproc/rubygem-htmlentities \
