@@ -9,6 +9,8 @@ WWW=		https://github.com/jnielsendotnet/isboot
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN_FreeBSD_15=	fails to build: sys/vnode.h requires the generated vnode_if.h
+BROKEN_FreeBSD_16=	fails to build: sys/vnode.h requires the generated vnode_if.h
 ONLY_FOR_ARCHS=	amd64 i386
 CONFLICTS_INSTALL= isboot-kmod
 
