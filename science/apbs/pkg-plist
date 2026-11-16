@@ -559,6 +559,8 @@ lib/libvf2c.so
 %%DATADIR%%/tests/apbs_check_results.py
 %%DATADIR%%/tests/apbs_logger.py
 %%DATADIR%%/tests/apbs_tester.py
+%%DATADIR%%/tests/test_atom_potentials.py
+%%DATADIR%%/tests/test_born_regression.py
 %%DATADIR%%/tests/test_cases.cfg
 %%DATADIR%%/tools/CMakeLists.txt
 %%DATADIR%%/tools/README.md
@@ -632,6 +634,7 @@ lib/libvf2c.so
 %%DATADIR%%/tools/python/ion.pqr
 %%DATADIR%%/tools/python/main.py
 %%DATADIR%%/tools/python/noinput.py
+%%DATADIR%%/tools/python/test_bindings.py
 %%DATADIR%%/tools/python/vgrid/Makefile
 %%DATADIR%%/tools/python/vgrid/Makefile.am
 %%DATADIR%%/tools/python/vgrid/Makefile.in
@@ -642,6 +645,10 @@ lib/libvf2c.so
 %%DATADIR%%/tools/python/vgrid/vgrid.i
 %%DATADIR%%/tools/python/vgrid/vgrid.py
 %%DATADIR%%/tools/python/vgrid/vgridlib.c
+%%DATADIR%%/tools/spack/README.md
+%%DATADIR%%/tools/spack/packages/apbs/package.py
+%%DATADIR%%/tools/spack/packages/py-pdb2pqr/package.py
+%%DATADIR%%/tools/spack/packages/py-propka/package.py
 %%DATADIR%%/tools/visualization/opendx/multipot.cfg
 %%DATADIR%%/tools/visualization/opendx/multipot.net
 %%DATADIR%%/tools/visualization/opendx/pot.cfg
