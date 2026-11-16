@@ -1,9 +1,11 @@
 PORTNAME=	ossia-score # uses -mcx16
-DISTVERSION=	3.8.2
-PORTREVISION=	1
+DISTVERSION=	3.9.0
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/ossia/score/releases/download/v${DISTVERSION}/
 DISTFILES=	ossia.score-${DISTVERSION}-src${EXTRACT_SUFX}
+
+PATCH_SITES=	https://github.com/ossia/score/commit/
+PATCHFILES=	49b2f1a649e16167f36063bf0d18c9dd71f2f064.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Interactive sequencer for the intermedia arts
@@ -52,6 +54,7 @@ CMAKE_ARGS=	-DSCORE_DISABLED_PLUGINS="score-plugin-pd;score-plugin-vst3" \
 #CMAKE_ARGS+=	-DCMAKE_MODULE_PATH=${LLVM_PREFIX}/lib/cmake/clang # JIT plugin fails to build, see https://github.com/ossia/score/issues/1721
 
 CXXFLAGS+=	-fexperimental-library # to fix libossia/src/ossia/detail/jthread.hpp:10:8: error: Rebuild with -fexperimental-library, clang 18 ships headers which are incompatible with this file but hides half of them behind that flag
+LDFLAGS+=	-lexecinfo # for backtrace
 
 .include <bsd.port.pre.mk>
 
