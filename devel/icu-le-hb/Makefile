@@ -7,9 +7,7 @@ COMMENT=	ICU Layout Engine API on top of HarfBuzz shaping library
 WWW=		https://www.freedesktop.org/wiki/Software/HarfBuzz/
 
 LICENSE=	ICU
-LICENSE_NAME=	ICU license
 LICENSE_FILE=	${WRKSRC}/COPYING
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libicuuc.so:devel/icu \
 		libharfbuzz.so:print/harfbuzz
