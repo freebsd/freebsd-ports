@@ -1,6 +1,6 @@
---- setup.py.orig	2026-04-07 17:26:12 UTC
+--- setup.py.orig	2026-11-02 08:07:03 UTC
 +++ setup.py
-@@ -42,7 +42,11 @@ if sys.platform.startswith("darwin") and VLLM_TARGET_D
+@@ -99,7 +99,11 @@ if sys.platform.startswith("darwin") and VLLM_TARGET_D
  if sys.platform.startswith("darwin") and VLLM_TARGET_DEVICE != "cpu":
      logger.warning("VLLM_TARGET_DEVICE automatically set to `cpu` due to macOS")
      VLLM_TARGET_DEVICE = "cpu"

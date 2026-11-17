@@ -1,15 +1,6 @@
---- cmake/cpu_extension.cmake.orig	2026-05-10 07:34:36 UTC
+--- cmake/cpu_extension.cmake.orig	2026-11-02 08:07:03 UTC
 +++ cmake/cpu_extension.cmake
-@@ -1,7 +1,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
- include(FetchContent)
- 
- set(CMAKE_CXX_STANDARD_REQUIRED ON)
--set(CMAKE_CXX_STANDARD 17)
-+set(CMAKE_CXX_STANDARD 20)
- set(CMAKE_CXX_EXTENSIONS ON)
- set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
- 
-@@ -20,6 +20,11 @@ set (ENABLE_NUMA TRUE)
+@@ -23,6 +23,11 @@ set (ENABLE_NUMA TRUE)
  
  set (ENABLE_NUMA TRUE)
  
@@ -21,40 +12,23 @@
  #
  # Check the compile flags
  #
-@@ -31,16 +36,23 @@ else()
-         "-fopenmp"
+@@ -32,6 +37,15 @@ if(MACOSX_FOUND)
+     list(APPEND CXX_COMPILE_FLAGS
+         "-Xpreprocessor" "-fopenmp"
          "-DVLLM_CPU_EXTENSION")
- 
--    # locate PyTorch's libgomp (e.g. site-packages/torch.libs/libgomp-947d5fa1.so.1.0.0)
--    # and create a local shim dir with it
--    vllm_prepare_torch_gomp_shim(VLLM_TORCH_GOMP_SHIM_DIR)
-+    if (CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
-+        find_library(OPEN_MP
-+            NAMES omp
-+            REQUIRED
-+        )
-+    else()
-+        # locate PyTorch's libgomp (e.g. site-packages/torch.libs/libgomp-947d5fa1.so.1.0.0)
-+        # and create a local shim dir with it
-+        vllm_prepare_torch_gomp_shim(VLLM_TORCH_GOMP_SHIM_DIR)
- 
--    find_library(OPEN_MP
--        NAMES gomp
--        PATHS ${VLLM_TORCH_GOMP_SHIM_DIR}
--        NO_DEFAULT_PATH
--        REQUIRED
--    )
-+        find_library(OPEN_MP
-+            NAMES gomp
-+            PATHS ${VLLM_TORCH_GOMP_SHIM_DIR}
-+            NO_DEFAULT_PATH
-+            REQUIRED
-+        )
-+    endif()
-     # Set LD_LIBRARY_PATH to include the shim dir at build time to use the same libgomp as PyTorch
-     if (OPEN_MP)
-         set(ENV{LD_LIBRARY_PATH} "${VLLM_TORCH_GOMP_SHIM_DIR}:$ENV{LD_LIBRARY_PATH}")
-@@ -48,12 +60,26 @@ if (NOT MACOSX_FOUND)
++elseif(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
++    list(APPEND CXX_COMPILE_FLAGS
++        "-fopenmp"
++        "-DVLLM_CPU_EXTENSION")
++
++    find_library(OPEN_MP
++        NAMES omp
++        REQUIRED
++    )
+ else()
+     list(APPEND CXX_COMPILE_FLAGS
+         "-fopenmp"
+@@ -59,12 +73,26 @@ if (NOT MACOSX_FOUND)
  endif()
  
  if (NOT MACOSX_FOUND)
@@ -86,10 +60,11 @@
  endif()
  
  
-@@ -102,13 +128,21 @@ else()
-         set(ARM_BF16_FOUND ON)
-         message(STATUS "ARM BF16 support enabled via VLLM_CPU_ARM_BF16 environment variable")
+@@ -127,13 +155,22 @@ else()
+         set(RVV_BF16_FOUND ON)
+         message(STATUS "RVV BF16 support enabled via VLLM_CPU_RVV_BF16 environment variable")
      endif()
++
 +    # Override ISA based on CMAKE_SYSTEM_PROCESSOR when cpuinfo not available
 +    if(_USE_SYSPROCESSOR_ISA)
 +        if(CMAKE_SYSTEM_PROCESSOR MATCHES "powerpc64le|powerpc64|powerpc")
@@ -109,9 +84,9 @@
 +            (CMAKE_CXX_COMPILER_ID STREQUAL "Clang" AND CMAKE_CXX_COMPILER_VERSION VERSION_GREATER_EQUAL 15.0)))
 +        message(FATAL_ERROR "X86 backend requires gcc/g++ >= 12.3 or clang >= 15.0")
      endif()
-     list(APPEND CXX_COMPILE_FLAGS "-mf16c")
-     list(APPEND CXX_COMPILE_FLAGS_AVX512 ${CXX_COMPILE_FLAGS})
-@@ -129,16 +163,17 @@ elseif (POWER9_FOUND OR POWER10_FOUND OR POWER11_FOUND
+     # Work around a GCC 15 optimizer crash in oneDNN (tree-ssa-pre pass).
+     # Keep this scoped to GCC 15+ so older toolchains are unaffected.
+@@ -190,16 +227,17 @@ elseif (POWER9_FOUND OR POWER10_FOUND OR POWER11_FOUND
  elseif (POWER9_FOUND OR POWER10_FOUND OR POWER11_FOUND)
      message(STATUS "PowerPC detected")
      if (POWER9_FOUND)
@@ -131,7 +106,7 @@
  
  elseif (ASIMD_FOUND)
      message(STATUS "ARMv8 or later architecture detected")
-@@ -319,6 +354,14 @@ if (ENABLE_X86_ISA OR (ASIMD_FOUND AND NOT APPLE_SILIC
+@@ -401,6 +439,14 @@ if (ENABLE_X86_ISA OR (ASIMD_FOUND AND NOT APPLE_SILIC
      set(ONEDNN_ENABLE_MAX_CPU_ISA "ON")
      set(ONEDNN_ENABLE_CPU_ISA_HINTS "ON")
      set(ONEDNN_VERBOSE "ON")
@@ -145,23 +120,17 @@
 +    endif()
      set(CMAKE_POLICY_DEFAULT_CMP0077 NEW)
  
-     # TODO: Refactor this
-@@ -446,9 +489,15 @@ if (ENABLE_X86_ISA)
+     set(VLLM_BUILD_TYPE ${CMAKE_BUILD_TYPE})
+@@ -626,9 +672,9 @@ if (ENABLE_X86_ISA)
      message(STATUS "CPU extension (AVX512F) source files: ${VLLM_EXT_SRC_AVX512}")
      message(STATUS "CPU extension (AVX2) source files: ${VLLM_EXT_SRC_AVX2}")
  
 -    set(_C_LIBS numa dnnl_ext)
 -    set(_C_AVX512_LIBS numa dnnl_ext)
--    set(_C_AVX2_LIBS numa)
-+    if(ENABLE_NUMA)
-+        set(_C_LIBS numa dnnl_ext)
-+        set(_C_AVX512_LIBS numa dnnl_ext)
-+        set(_C_AVX2_LIBS numa)
-+    else()
-+        set(_C_LIBS dnnl_ext)
-+        set(_C_AVX512_LIBS dnnl_ext)
-+        set(_C_AVX2_LIBS "")
-+    endif()
+-    set(_C_AVX2_LIBS numa dnnl_ext)
++    set(_C_LIBS dnnl_ext)
++    set(_C_AVX512_LIBS dnnl_ext)
++    set(_C_AVX2_LIBS dnnl_ext)
  
      # AMX + AVX512F + AVX512BF16 + AVX512VNNI
      define_extension_target(

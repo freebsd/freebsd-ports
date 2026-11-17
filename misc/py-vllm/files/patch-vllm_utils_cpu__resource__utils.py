@@ -1,10 +1,16 @@
---- vllm/utils/cpu_resource_utils.py.orig	2026-05-11 06:13:38 UTC
+-- Recognize FreeBSD using sys.platform.startswith() instead of an exact match.
+-- sys.platform on FreeBSD includes the OS version (e.g. "freebsd15"), so
+-- the previous check "sys.platform in (... 'freebsd')" never matched and
+-- vLLM fell through to Linux-only code paths such as lscpu and /proc.
+-- This is a FreeBSD port-specific workaround.
+
+--- vllm/utils/cpu_resource_utils.py.orig	2026-11-02 08:07:03 UTC
 +++ vllm/utils/cpu_resource_utils.py
-@@ -51,14 +51,19 @@ def get_memory_affinity(pid: int = 0) -> list[int]:
- 
- 
+@@ -160,14 +160,19 @@ def get_memory_affinity(pid: int = 0) -> list[int]:
+
+
  def get_memory_affinity(pid: int = 0) -> list[int]:
-+    if platform.system() != "Linux":
++    if sys.platform != "linux":
 +        return []
      pid = os.getpid() if pid == 0 else pid
      path = f"/proc/{pid}/status"
@@ -24,36 +30,36 @@
 +    except FileNotFoundError:
 +        pass
      return []
- 
- 
-@@ -78,8 +83,8 @@ def get_memory_node_info(node_id: int = 0) -> MemoryNo
- 
- 
+
+
+@@ -187,8 +192,8 @@ def get_memory_node_info(node_id: int = 0) -> MemoryNo
+
+
  def get_memory_node_info(node_id: int = 0) -> MemoryNodeInfo:
--    if platform.system() == "Darwin":
+-    if sys.platform == "darwin":
 -        # MacOS has no memory node
-+    if platform.system() in ("Darwin", "FreeBSD"):
++    if sys.platform.startswith(("darwin", "freebsd")):
 +        # MacOS/FreeBSD has no memory node
          return MemoryNodeInfo(
              total_memory=psutil.virtual_memory().total,
              available_memory=psutil.virtual_memory().available,
-@@ -132,7 +137,7 @@ def get_visible_memory_node() -> list[int]:
- 
- 
- def get_visible_memory_node() -> list[int]:
--    if platform.system() == "Darwin":
-+    if platform.system() in ("Darwin", "FreeBSD"):
+@@ -256,7 +261,7 @@ def get_visible_memory_node(assigned_node_ids: list[in
+     parallel_config.assigned_physical_gpu_ids. It takes priority over the
+     CPU_VISIBLE_MEMORY_NODES env var, which still applies when it is None.
+     """
+-    if sys.platform == "darwin":
++    if sys.platform.startswith(("darwin", "freebsd")):
          return [0]
- 
+
      allowed_memory_node_list = get_memory_affinity()
-@@ -163,8 +168,8 @@ def _get_cpu_list() -> list[LogicalCPUInfo]:
- 
- 
+@@ -289,8 +294,8 @@ def _get_cpu_list() -> list[LogicalCPUInfo]:
+
+
  def _get_cpu_list() -> list[LogicalCPUInfo]:
--    if platform.system() == "Darwin":
+-    if sys.platform == "darwin":
 -        # For MacOS, no user-level CPU affinity and SMT, return all CPUs
-+    if platform.system() in ("Darwin", "FreeBSD"):
++    if sys.platform.startswith(("darwin", "freebsd")):
 +        # For MacOS/FreeBSD, no user-level CPU affinity and SMT, return all CPUs
          return _synthesize_cpu_list()
- 
-     lscpu_output = subprocess.check_output(
+
+     if platform.machine() == "s390x":
