@@ -16,7 +16,7 @@ LICENSE=	SMLNJ
 #		http://www2.cs.tum.edu/projects/cup/licence.php
 #LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-DEPRECATE=	Upstream no longer exists including LICENSE site
+DEPRECATED=	Upstream no longer exists including LICENSE site
 EXPIRATION_DATE=	2026-12-16
 
 USES=		java
