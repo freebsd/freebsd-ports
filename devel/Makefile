@@ -5205,6 +5205,7 @@
     SUBDIR += py-graphene2
     SUBDIR += py-graphql-core
     SUBDIR += py-graphql-core2
+    SUBDIR += py-graphql-core32
     SUBDIR += py-graphql-relay
     SUBDIR += py-graphql-relay2
     SUBDIR += py-great-tables
