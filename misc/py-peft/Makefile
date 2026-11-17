@@ -1,5 +1,5 @@
 PORTNAME=	peft
-DISTVERSION=	0.21.2
+DISTVERSION=	0.21.3
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,26 +28,29 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}datasets>0:misc/py-datasets@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}protobuf>0:devel/py-protobuf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-cov>0:devel/py-pytest-cov@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-xdist>0:devel/py-pytest-xdist@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scikit-learn>0:science/py-scikit-learn@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sentencepiece>0:textproc/py-sentencepiece@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}sentencepiece>0:textproc/py-sentencepiece@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}torchvision>0:misc/py-torchvision@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist pytest
 
-TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+# importing torch fails with 'No space available for static Thread Local Storage' unless libc10 is preloaded
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} \
+		LD_PRELOAD=${PYTHON_SITELIBDIR}/torch/lib/libc10.so OMP_NUM_THREADS=1
+# Adamss tests abort the interpreter with 'Too many args to microtask: 32!' from libomp;
+# GptOss merge tests exceed numerical tolerances with the installed transformers
 TEST_ARGS=	--disable-plugin-autoload \
-		-p no:relaxed
+		-p no:relaxed -p xdist -n 8 \
+		-W ignore::DeprecationWarning -W ignore::FutureWarning \
+		-k 'not Adamss and not (test_merge_layers and GptOss)'
 
 post-patch:
 	@${TOUCH} ${WRKSRC}/tests/__init__.py
 
 NO_ARCH=	yes
 
-# tests as of 0.19.0:
-# Results (885.15s):
-#      70278 passed
-#       3362 skipped
-#         10 xfailed
-#      18751 warnings
+# tests as of 0.21.3: 31073 passed, 5713 skipped, 6 xfailed, 26465 warnings in 493.76s (0:08:13)
 
 .include <bsd.port.mk>
