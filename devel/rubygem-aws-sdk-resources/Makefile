@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.279.0
+PORTVERSION=	3.280.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -122,6 +122,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-connectcontactlens>=1<2:devel/rubygem-aws-sdk-connectcontactlens \
 		rubygem-aws-sdk-connecthealth>=1<2:devel/rubygem-aws-sdk-connecthealth \
 		rubygem-aws-sdk-connectparticipant>=1<2:devel/rubygem-aws-sdk-connectparticipant \
+		rubygem-aws-sdk-connectscheduling>=1<2:devel/rubygem-aws-sdk-connectscheduling \
 		rubygem-aws-sdk-connectwisdomservice>=1<2:devel/rubygem-aws-sdk-connectwisdomservice \
 		rubygem-aws-sdk-continuum>=1<2:devel/rubygem-aws-sdk-continuum \
 		rubygem-aws-sdk-controlcatalog>=1<2:devel/rubygem-aws-sdk-controlcatalog \
@@ -305,6 +306,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-observabilityadmin>=1<2:devel/rubygem-aws-sdk-observabilityadmin \
 		rubygem-aws-sdk-odb>=1<2:devel/rubygem-aws-sdk-odb \
 		rubygem-aws-sdk-omics>=1<2:devel/rubygem-aws-sdk-omics \
+		rubygem-aws-sdk-opensearchmemory>=1<2:devel/rubygem-aws-sdk-opensearchmemory \
 		rubygem-aws-sdk-opensearchserverless>=1<2:devel/rubygem-aws-sdk-opensearchserverless \
 		rubygem-aws-sdk-opensearchservice>=1<2:devel/rubygem-aws-sdk-opensearchservice \
 		rubygem-aws-sdk-organizations>=1<2:devel/rubygem-aws-sdk-organizations \
@@ -372,6 +374,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-sagemakeredgemanager>=1<2:devel/rubygem-aws-sdk-sagemakeredgemanager \
 		rubygem-aws-sdk-sagemakerfeaturestoreruntime>=1<2:devel/rubygem-aws-sdk-sagemakerfeaturestoreruntime \
 		rubygem-aws-sdk-sagemakergeospatial>=1<2:devel/rubygem-aws-sdk-sagemakergeospatial \
+		rubygem-aws-sdk-sagemakerinferencerouterruntime>=1<2:devel/rubygem-aws-sdk-sagemakerinferencerouterruntime \
 		rubygem-aws-sdk-sagemakerjobruntime>=1<2:devel/rubygem-aws-sdk-sagemakerjobruntime \
 		rubygem-aws-sdk-sagemakermetrics>=1<2:devel/rubygem-aws-sdk-sagemakermetrics \
 		rubygem-aws-sdk-sagemakerruntime>=1<2:devel/rubygem-aws-sdk-sagemakerruntime \
