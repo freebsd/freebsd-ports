@@ -1,3 +1,42 @@
+  <vuln vid="142f0839-e259-11f1-ab7d-10ffe07f9334">
+    <topic>mailpit -- Unauthenticated SMTP message crashes Mailpit</topic>
+    <affects>
+      <package>
+	<name>mailpit</name>
+	<range>
+	  <ge>1.33.1</ge>
+	  <lt>1.34.0</lt>
+	</range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mailpit author  reports:</p>
+	<blockquote cite="https://github.com/axllent/mailpit/security/advisories/GHSA-v887-64wg-qqc9">
+	  <p>internal/mimeparser/mimeparser.go:40 writes decoded
+	  RFC 2231 parameters into the map returned by enmime's
+	  tolerant mediatype.Parse. That parser can legally return
+	  a nil map with a nil error, and ParseMediaType only checks
+	  the error, not params == nil. A message part whose
+	  Content-Type media type is a single non-ASCII whitespace
+	  character (U+00A0) and that carries an extended parameter
+	  such as a*=iso-8859-1''%E9 reaches the loop, the assignment
+	  panics, and the panic runs inside the per-connection SMTP
+	  goroutine, which has no recover.  One anonymous SMTP
+	  message kills the whole process: SMTP, web UI and REST
+	  API together.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/axllent/mailpit/security/advisories/GHSA-v887-64wg-qqc9</url>
+    </references>
+    <dates>
+      <discovery>2026-11-17</discovery>
+      <entry>2026-11-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="05eaad8b-e202-11f1-85bb-1c697a616631">
     <topic>Emacs -- Arbitrary code execution via .dir-locals.el</topic>
     <affects>
