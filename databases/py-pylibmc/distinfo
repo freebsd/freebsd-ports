@@ -1,3 +1,3 @@
-TIMESTAMP = 1794699853
-SHA256 (pylibmc-1.7.0.tar.gz) = f1ff4236a8d11c8d16913f08871a744c19dd7cf88fd01d689ceac3adbc9f3ca4
-SIZE (pylibmc-1.7.0.tar.gz) = 86760
+TIMESTAMP = 1794919459
+SHA256 (pylibmc-1.7.1.tar.gz) = c6efee7a072cf21a92c29efdb3d01605b7c7984c602b9d41e0efd34cfb98cd02
+SIZE (pylibmc-1.7.1.tar.gz) = 87174
