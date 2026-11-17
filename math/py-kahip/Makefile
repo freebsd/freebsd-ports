@@ -1,6 +1,6 @@
 PORTNAME=	kahip
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.25
+DISTVERSION=	3.27
 CATEGORIES=	math
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -38,5 +38,7 @@ do-test:
 	@cd ${WRKSRC} && \
 		${SETENV} ${TEST_ENV} ${PYTHON_CMD} ${WRKSRC}/misc/pymodule/callkahipfrompython.py && \
 		${ECHO} "Tests succeeded."
+
+# tests as of 3.27: Tests succeeded.
 
 .include <bsd.port.mk>
