@@ -18,7 +18,7 @@ TEST_DEPENDS=	ctest:devel/cmake-core
 USES=		blaslapack:openblas fortran gmake localbase:ldflags python shebangfix
 SHEBANG_FILES=	./src/run_miss3d ./scripts/run_miss3d_test ./scripts/run_miss3d
 
-ONLY_FOR_ARCHS=			amd64
+ONLY_FOR_ARCHS=			amd64 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=		Upstream only targets amd64 for Code_Aster
 NOT_FOR_ARCHS_REASON_arm64=	gfortran14: error: unrecognized argument in option '-mcmodel=medium'
 NOT_FOR_ARCHS_REASON_i386=	code model 'medium' not supported in the 32 bit mode
