@@ -1,5 +1,5 @@
 PORTNAME=	flatten-dict
-DISTVERSION=	0.5.0
+DISTVERSION=	0.6.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,11 +21,10 @@ WRKSRC=		${WRKDIR}/flatten_dict-${DISTVERSION}
 
 MAKE_ENV=	GIT_DIR=${WRKSRC} # workaround for the Poetry bug
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_ARGS=	--disable-plugin-autoload
 
 NO_ARCH=	yes
 
-# tests as of 0.5.0:
-# Results (0.20s):
-#        153 passed
+# tests as of 0.6.0: 65 passed in 0.04s
 
 .include <bsd.port.mk>

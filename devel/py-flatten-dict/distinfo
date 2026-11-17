@@ -1,3 +1,3 @@
-TIMESTAMP = 1778738445
-SHA256 (flatten_dict-0.5.0.tar.gz) = ca89664d0bc9552d525ee756726b5a755c17f65b5bf23d0a1f07841f181428b7
-SIZE (flatten_dict-0.5.0.tar.gz) = 9476
+TIMESTAMP = 1794852225
+SHA256 (flatten_dict-0.6.0.tar.gz) = e7a9cdf79ff30ccf2ee5c9f583c02d140a802e90496898a2ca46b4ed12006a16
+SIZE (flatten_dict-0.6.0.tar.gz) = 10751
