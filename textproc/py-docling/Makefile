@@ -1,5 +1,5 @@
 PORTNAME=	docling
-DISTVERSION=	2.145.0
+DISTVERSION=	2.150.1
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,10 +14,10 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}accelerate>=1.0.0:misc/py-accelerate@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}beautifulsoup4>=4.12.3:www/py-beautifulsoup4@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}defusedxml>=0.7.1:devel/py-defusedxml@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}docling-core>=2.103.1:textproc/py-docling-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}docling-core>=2.106.0:textproc/py-docling-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}docling-ibm-models>=4.0.2:textproc/py-docling-ibm-models@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}docling-parse>=7.22.2:textproc/py-docling-parse@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}docling-slim>=2.145.0:textproc/py-docling-slim@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}docling-slim>=2.150.1:textproc/py-docling-slim@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httpx>=0.28:www/py-httpx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}huggingface-hub>=0.23:misc/py-huggingface-hub@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mail-parser>=4.1.4:mail/py-mail-parser@${PY_FLAVOR} \
