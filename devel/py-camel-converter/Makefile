@@ -1,5 +1,5 @@
 PORTNAME=	camel-converter
-DISTVERSION=	6.0.0
+DISTVERSION=	6.0.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,6 +22,6 @@ TEST_ARGS=	--disable-plugin-autoload
 
 NO_ARCH=	yes
 
-# tests as of 6.0.0: 76 passed, 2 skipped in 0.10s
+# tests as of 6.0.1: 86 passed, 2 skipped in 0.24s
 
 .include <bsd.port.mk>
