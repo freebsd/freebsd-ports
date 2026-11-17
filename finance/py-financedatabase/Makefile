@@ -1,5 +1,5 @@
 PORTNAME=	financedatabase
-DISTVERSION=	2.5.0
+DISTVERSION=	2.5.2
 CATEGORIES=	finance python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,5 +26,7 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 do-test:
 	@${SETENV} ${TEST_ENV} ${PYTHON_CMD} ${FILESDIR}/test.py
+
+# tests as of 2.5.2: smoke script files/test.py passed (requires network access)
 
 .include <bsd.port.mk>
