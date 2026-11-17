@@ -11,7 +11,7 @@ MAINTAINER=	pi@FreeBSD.org
 COMMENT=	TCP/UDP network testing tool
 WWW=		https://nuttcp.net/
 
-LICENSE=	GPLv2
+LICENSE=	GPL-2.0-only
 
 NO_WRKSUBDIR=	yes
 USES=		shebangfix
