@@ -1,5 +1,5 @@
 PORTNAME=	snakemake
-DISTVERSION=	9.27.1
+DISTVERSION=	9.27.2
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 
@@ -60,6 +60,6 @@ do-test:
 
 NO_ARCH=	yes
 
-# tests as of 9.27.1: 30 passed in 1.51s
+# tests as of 9.27.2: 30 passed in 1.33s
 
 .include <bsd.port.mk>
