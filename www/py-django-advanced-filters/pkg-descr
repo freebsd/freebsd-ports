@@ -1,1 +1,6 @@
-A django ModelAdmin mixin which adds advanced filtering abilities to the admin.
+A django ModelAdmin mixin which adds advanced filtering abilities to the
+admin.
+
+It mimics the advanced search feature in VTiger: users create filters in
+the admin from combinations of field queries, save them, and reuse or
+share them with other users and groups.
