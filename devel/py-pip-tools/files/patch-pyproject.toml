@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2026-10-07 03:59:16 UTC
+--- pyproject.toml.orig	2026-11-16 04:24:11 UTC
 +++ pyproject.toml
 @@ -10,8 +10,7 @@ authors = [{ "name" = "Vincent Driessen", "email" = "m
  description = "pip-tools keeps your pinned dependencies fresh."
@@ -10,3 +10,12 @@
  classifiers = [
    "Development Status :: 5 - Production/Stable",
    "Environment :: Console",
+@@ -40,7 +39,7 @@ dependencies = [
+   # direct dependencies
+   "build >= 1.0.0",
+   "click >= 8",
+-  "pip >= 26.2.2",
++  "pip >= 22.2",
+   "pyproject_hooks",
+   "typing_extensions >= 4.6.0; python_version < '3.11'",
+   "tomli; python_version < '3.11'",

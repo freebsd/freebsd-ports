@@ -1,5 +1,5 @@
 PORTNAME=	pip-tools
-PORTVERSION=	7.6.2
+PORTVERSION=	7.7.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -7,7 +7,8 @@ DISTNAME=	pip_tools-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Keep your pinned dependencies fresh
-WWW=		https://github.com/jazzband/pip-tools
+WWW=		https://pip-tools.pypa.io/en/stable/ \
+		https://github.com/pypa/pip-tools
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
