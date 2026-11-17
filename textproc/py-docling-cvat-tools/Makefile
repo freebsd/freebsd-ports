@@ -25,10 +25,19 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cvat-sdk>=2.40.0:misc/py-cvat-sdk@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}tqdm>=4.67.1:misc/py-tqdm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typer>=0.16.0:devel/py-typer@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xlsxwriter>=3.1.0:textproc/py-xlsxwriter@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-dependency>=0.6:devel/py-pytest-dependency@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist concurrent pep517
+USE_PYTHON=	autoplist concurrent pep517 pytest
 
 NO_ARCH=	yes
+
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+# sdist lacks tests/data samples
+TEST_ARGS=	--disable-plugin-autoload -p dependency \
+		--deselect tests/test_cvat_to_docling_converter.py::test_case_02_specific_sample \
+		--deselect tests/test_cvat_to_docling_converter.py::test_cvat_to_docling_conversion
+
+# tests as of 0.1.0: 5 passed, 2 deselected in 1.23s
 
 .include <bsd.port.mk>
