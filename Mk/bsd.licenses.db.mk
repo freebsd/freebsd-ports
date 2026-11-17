@@ -110,17 +110,20 @@ _LICENSE_SPDX_LIST= \
 
 # GNU family (SPDX)
 _LICENSE_SPDX_LIST+= \
-				AGPL-1.0-only AGPL-3.0-or-later GPL-1.0-or-later GPL-2.0-or-later \
-				GPL-3.0-or-later LGPL-2.1-or-later LGPL-3.0-or-later GFDL-1.2-or-later \
-				GFDL-1.3-invariants-or-later GFDL-1.3-no-invariants-or-later GCC-exception-3.1
+				AGPL-1.0-only AGPL-3.0-only AGPL-3.0-or-later GPL-1.0-only GPL-1.0-or-later \
+				GPL-2.0-only GPL-2.0-or-later GPL-3.0-only GPL-3.0-or-later LGPL-2.0-or-later \
+				LGPL-2.0-only LGPL-2.1-only LGPL-2.1-or-later LGPL-3.0-only LGPL-3.0-or-later \
+				GFDL-1.2-or-later GFDL-1.3-invariants-or-later GFDL-1.3-no-invariants-or-later \
+				GCC-exception-3.1
 
 # BSD family (SPDX variants)
 _LICENSE_SPDX_LIST+= \
-				BSD-1-Clause BSD-2-Clause-Darwin BSD-2-Clause-first-lines BSD-2-Clause-pos-unchanged \
-				BSD-2-Clause-Views BSD-3-Clause BSD-3-Clause-Attribution BSD-3-Clause-Clear BSD-3-Clause-flex \
-				BSD-3-Clause-HP BSD-3-Clause-LBNL BSD-3-Clause-Modification BSD-3-Clause-No-Military-License \
+				0BSD BSD-1-Clause BSD-2-Clause BSD-2-Clause-Darwin BSD-2-Clause-first-lines \
+				BSD-2-Clause-pos-unchanged BSD-2-Clause-Views BSD-3-Clause BSD-3-Clause-Attribution \
+				BSD-3-Clause-Clear BSD-3-Clause-flex BSD-3-Clause-HP BSD-3-Clause-LBNL \
+				BSD-3-Clause-Modification BSD-3-Clause-No-Military-License \
 				BSD-3-Clause-No-Nuclear-License-2014 BSD-3-Clause-Open-MPI BSD-3-Clause-Sun BSD-3-Clause-Tso \
-				BSD-4-Clause-UC BSD-4.3TAHOE BSD-Attribution-HPND-disclaimer BSD-Inferno-Nettverk \
+				BSD-4-Clause BSD-4-Clause-UC BSD-4.3TAHOE BSD-Attribution-HPND-disclaimer BSD-Inferno-Nettverk \
 				BSD-Mark-Modifications BSD-Source-beginning-file BSD-Systemics BSD-Systemics-W3Works
 
 # MIT / X11 / HPND family
@@ -131,14 +134,34 @@ _LICENSE_SPDX_LIST+= \
 				Xnet HPND-MIT-disclaimer HPND-Netrek HPND-sell-MIT-disclaimer-xserver \
 				HPND-sell-variant HPND-UC-export-US
 
+# Artistic family (SPDX)
+_LICENSE_SPDX_LIST+= \
+				Artistic-1.0 Artistic-1.0-Perl Artistic-2.0
+
+# Apache family
+_LICENSE_SPDX_LIST+= \
+				Apache-1.0 Apache-1.1 Apache-2.0
+
+# MPL family (SPDX)
+_LICENSE_SPDX_LIST+= \
+				MPL-1.0 MPL-1.1 MPL-2.0
+
+# LaTeX family (SPDX)
+_LICENSE_SPDX_LIST+= \
+				LPPL-1.0 LPPL-1.1 LPPL-1.2 LPPL-1.3a LPPL-1.3c
+
+# PHP family (SPDX)
+_LICENSE_SPDX_LIST+= \
+				PHP-3.0 PHP-3.01
+
 # Open-source / academic license family
 _LICENSE_SPDX_LIST+= \
-				AFL-2.1 CDDL-1.1 CECILL-1.1 CECILL-2.0 \
+				AFL-2.1 BSL-1.0 CDDL-1.0 CDDL-1.1 CECILL-1.1 CECILL-2.0 \
 				CECILL-2.1 CECILL-B CECILL-C CPL-1.0 \
 				CUA-OPL-1.0 ECL-2.0 Elastic-2.0 EPL-1.0 \
-				EPL-2.0 EUPL-1.1 EUPL-1.2 LPL-1.02 \
-				OSET-PL-2.1 OSL-2.1 SSPL-1.0 SUL-1.0 \
-				TGPPL-1.0 TPL-1.0 any-OSI
+				EPL-2.0 EUPL-1.1 EUPL-1.2 ISC LPL-1.02 ODbL-1.0 \
+				OFL-1.0 OFL-1.1 OSET-PL-2.1 OSL-2.1 PSF-2.0 Ruby SSPL-1.0 SUL-1.0 \
+				TGPPL-1.0 TPL-1.0 Unlicense ZPL-2.1 Zlib any-OSI
 
 # Vendor/project-specific named licenses
 _LICENSE_SPDX_LIST+= \
@@ -175,20 +198,44 @@ _LICENSE_NAME_FONTS=	Font licenses
 _LICENSE_NAME_AGPL-1.0-only= Affero General Public License v1.0 only
 _LICENSE_GROUPS_AGPL-1.0-only= # empty
 
+_LICENSE_NAME_AGPL-3.0-only= GNU Affero General Public License v3.0 only
+_LICENSE_GROUPS_AGPL-3.0-only= FSF OSI
+
 _LICENSE_NAME_AGPL-3.0-or-later= GNU Affero General Public License v3.0 or later
 _LICENSE_GROUPS_AGPL-3.0-or-later= FSF OSI
+
+_LICENSE_NAME_GPL-1.0-only= GNU General Public License v1.0 only
+_LICENSE_GROUPS_GPL-1.0-only= # empty
 
 _LICENSE_NAME_GPL-1.0-or-later= GNU General Public License v1.0 or later
 _LICENSE_GROUPS_GPL-1.0-or-later= # empty
 
+_LICENSE_NAME_GPL-2.0-only= GNU General Public License v2.0 only
+_LICENSE_GROUPS_GPL-2.0-only= FSF OSI
+
 _LICENSE_NAME_GPL-2.0-or-later= GNU General Public License v2.0 or later
 _LICENSE_GROUPS_GPL-2.0-or-later= FSF OSI
+
+_LICENSE_NAME_GPL-3.0-only= GNU General Public License v3.0 only
+_LICENSE_GROUPS_GPL-3.0-only= FSF OSI
 
 _LICENSE_NAME_GPL-3.0-or-later= GNU General Public License v3.0 or later
 _LICENSE_GROUPS_GPL-3.0-or-later= FSF OSI
 
+_LICENSE_NAME_LGPL-2.0-only= GNU Library General Public License v2 only
+_LICENSE_GROUPS_LGPL-2.0-only= OSI
+
+_LICENSE_NAME_LGPL-2.0-or-later= GNU Library General Public License v2 or later
+_LICENSE_GROUPS_LGPL-2.0-or-later= OSI
+
+_LICENSE_NAME_LGPL-2.1-only= GNU Lesser General Public License v2.1 only
+_LICENSE_GROUPS_LGPL-2.1-only= FSF OSI
+
 _LICENSE_NAME_LGPL-2.1-or-later= GNU Lesser General Public License v2.1 or later
 _LICENSE_GROUPS_LGPL-2.1-or-later= FSF OSI
+
+_LICENSE_NAME_LGPL-3.0-only= GNU Lesser General Public License v3.0 only
+_LICENSE_GROUPS_LGPL-3.0-only= FSF OSI
 
 _LICENSE_NAME_LGPL-3.0-or-later= GNU Lesser General Public License v3.0 or later
 _LICENSE_GROUPS_LGPL-3.0-or-later= FSF OSI
@@ -207,8 +254,14 @@ _LICENSE_GROUPS_GCC-exception-3.1= # empty
 
 # --- BSD family (SPDX variants) ---
 
+_LICENSE_NAME_0BSD=	BSD Zero Clause License
+_LICENSE_GROUPS_0BSD=	OSI
+
 _LICENSE_NAME_BSD-1-Clause= BSD 1-Clause License
 _LICENSE_GROUPS_BSD-1-Clause= OSI
+
+_LICENSE_NAME_BSD-2-Clause= BSD 2-Clause "Simplified" License
+_LICENSE_GROUPS_BSD-2-Clause= FSF OSI
 
 _LICENSE_NAME_BSD-2-Clause-Darwin= BSD 2-Clause - Ian Darwin variant
 _LICENSE_GROUPS_BSD-2-Clause-Darwin= # empty
@@ -257,6 +310,9 @@ _LICENSE_GROUPS_BSD-3-Clause-Sun= # empty
 
 _LICENSE_NAME_BSD-3-Clause-Tso= BSD 3-Clause Tso variant
 _LICENSE_GROUPS_BSD-3-Clause-Tso= # empty
+
+_LICENSE_NAME_BSD-4-Clause= BSD 4-Clause "Original" or "Old" License
+_LICENSE_GROUPS_BSD-4-Clause= FSF
 
 _LICENSE_NAME_BSD-4-Clause-UC= BSD-4-Clause (University of California-Specific)
 _LICENSE_GROUPS_BSD-4-Clause-UC= # empty
@@ -338,10 +394,66 @@ _LICENSE_GROUPS_HPND-sell-variant= # empty
 _LICENSE_NAME_HPND-UC-export-US= Historical Permission Notice and Disclaimer - University of California, US export warning
 _LICENSE_GROUPS_HPND-UC-export-US= # empty
 
+# --- Artistic family (SPDX) ---
+
+_LICENSE_NAME_Artistic-1.0=	Artistic License 1.0
+_LICENSE_GROUPS_Artistic-1.0=	OSI
+
+_LICENSE_NAME_Artistic-1.0-Perl=	Artistic License 1.0 (Perl)
+_LICENSE_GROUPS_Artistic-1.0-Perl=	OSI
+
+_LICENSE_NAME_Artistic-2.0=	Artistic License 2.0
+_LICENSE_GROUPS_Artistic-2.0=	FSF OSI
+
 # --- Open-source / academic license family ---
 
 _LICENSE_NAME_AFL-2.1=	Academic Free License v2.1
 _LICENSE_GROUPS_AFL-2.1= FSF OSI
+
+_LICENSE_NAME_Apache-1.0=	Apache License 1.0
+_LICENSE_GROUPS_Apache-1.0= FSF
+
+_LICENSE_NAME_Apache-1.1=	Apache License 1.1
+_LICENSE_GROUPS_Apache-1.1= FSF OSI
+
+_LICENSE_NAME_Apache-2.0=	Apache License 2.0
+_LICENSE_GROUPS_Apache-2.0= FSF OSI
+
+# --- MPL family (SPDX) ---
+
+_LICENSE_NAME_MPL-1.0=	Mozilla Public License 1.0
+_LICENSE_GROUPS_MPL-1.0=	OSI
+
+_LICENSE_NAME_MPL-1.1=	Mozilla Public License 1.1
+_LICENSE_GROUPS_MPL-1.1=	FSF OSI
+
+_LICENSE_NAME_MPL-2.0=	Mozilla Public License 2.0
+_LICENSE_GROUPS_MPL-2.0=	FSF OSI
+
+# --- LaTeX family (SPDX) ---
+
+_LICENSE_NAME_LPPL-1.0=	LaTeX Project Public License v1.0
+_LICENSE_GROUPS_LPPL-1.0=	# empty
+
+_LICENSE_NAME_LPPL-1.1=	LaTeX Project Public License v1.1
+_LICENSE_GROUPS_LPPL-1.1=	# empty
+
+_LICENSE_NAME_LPPL-1.2=	LaTeX Project Public License v1.2
+_LICENSE_GROUPS_LPPL-1.2=	FSF
+
+_LICENSE_NAME_LPPL-1.3a=	LaTeX Project Public License v1.3a
+_LICENSE_GROUPS_LPPL-1.3a=	FSF
+
+_LICENSE_NAME_LPPL-1.3c=	LaTeX Project Public License v1.3c
+_LICENSE_GROUPS_LPPL-1.3c=	OSI
+
+# --- PHP family (SPDX) ---
+
+_LICENSE_NAME_PHP-3.0=	PHP License v3.0
+_LICENSE_GROUPS_PHP-3.0=	OSI
+
+_LICENSE_NAME_PHP-3.01=	PHP License v3.01
+_LICENSE_GROUPS_PHP-3.01=	FSF OSI
 
 _LICENSE_NAME_CDDL-1.1=	Common Development and Distribution License 1.1
 _LICENSE_GROUPS_CDDL-1.1= OSI
@@ -405,6 +517,39 @@ _LICENSE_GROUPS_TGPPL-1.0= # empty
 
 _LICENSE_NAME_TPL-1.0=	THOR Public License 1.0
 _LICENSE_GROUPS_TPL-1.0= # empty
+
+_LICENSE_NAME_BSL-1.0=	Boost Software License 1.0
+_LICENSE_GROUPS_BSL-1.0= FSF OSI
+
+_LICENSE_NAME_CDDL-1.0=	Common Development and Distribution License 1.0
+_LICENSE_GROUPS_CDDL-1.0= FSF OSI
+
+_LICENSE_NAME_ISC=	ISC License
+_LICENSE_GROUPS_ISC=	FSF OSI
+
+_LICENSE_NAME_ODbL-1.0=	Open Data Commons Open Database License v1.0
+_LICENSE_GROUPS_ODbL-1.0= FSF
+
+_LICENSE_NAME_OFL-1.0=	SIL Open Font License 1.0
+_LICENSE_GROUPS_OFL-1.0= FSF
+
+_LICENSE_NAME_OFL-1.1=	SIL Open Font License 1.1
+_LICENSE_GROUPS_OFL-1.1= FSF OSI
+
+_LICENSE_NAME_PSF-2.0=	Python Software Foundation License 2.0
+_LICENSE_GROUPS_PSF-2.0= # empty
+
+_LICENSE_NAME_Ruby=	Ruby License
+_LICENSE_GROUPS_Ruby=	FSF
+
+_LICENSE_NAME_Unlicense=	The Unlicense
+_LICENSE_GROUPS_Unlicense= FSF OSI
+
+_LICENSE_NAME_ZPL-2.1=	Zope Public License 2.1
+_LICENSE_GROUPS_ZPL-2.1= FSF OSI
+
+_LICENSE_NAME_Zlib=	zlib License
+_LICENSE_GROUPS_Zlib=	FSF OSI
 
 _LICENSE_NAME_any-OSI=	Any OSI License
 _LICENSE_GROUPS_any-OSI= # empty
