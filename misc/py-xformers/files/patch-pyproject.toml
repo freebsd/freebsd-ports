@@ -1,10 +1,14 @@
---- pyproject.toml.orig	2026-06-05 17:00:34 UTC
+-- Drop the torch build requirement and the setuptools>=64 constraint.
+-- torch is not needed to build the pure Python package, and devel/py-setuptools is older than 64.
+
+--- pyproject.toml.orig	2026-11-13 15:45:57 UTC
 +++ pyproject.toml
-@@ -1,6 +1,6 @@
- [build-system]
- # XXX: If your project needs other packages to build properly, add them to this list.
+@@ -3,7 +3,7 @@
+ # torch is not needed to build the open-source (pure Python) package, but it is
+ # needed to build the fairinternal kernels. Keep it, so that building those from
+ # source does not require --no-build-isolation.
 -requires = ["setuptools >= 64", "torch >= 2.10"]
-+requires = ["setuptools", "torch >= 2.10"]
++requires = ["setuptools"]
  build-backend = "setuptools.build_meta"
  
  [tool.black]

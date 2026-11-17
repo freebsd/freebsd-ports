@@ -1,7 +1,7 @@
 PORTNAME=	xformers
-DISTVERSION=	0.0.35
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.0.36
 CATEGORIES=	misc python # machine-learning
-MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,23 +12,30 @@ WWW=		https://facebookresearch.github.io/xformers/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	pybind11>0:devel/pybind11 \
-		${PYTHON_PKGNAMEPREFIX}pytorch>=2.10:misc/py-pytorch@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytorch>=2.10:misc/py-pytorch@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mslk>0:misc/py-mslk@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytorch>=2.10:misc/py-pytorch@${PY_FLAVOR}
 
-USES=		compiler:c++17-lang localbase python
-USE_PYTHON=	pep517 autoplist pytest # tests fail, see https://github.com/facebookresearch/xformers/issues/1003
+USES=		python
+USE_PYTHON=	pep517 autoplist pytest
 
-.include <bsd.port.pre.mk>
+USE_GITHUB=	yes
+GH_ACCOUNT=	facebookresearch
+# The PyPI sdist for xformers 0.0.36 is incomplete:
+# it is missing tests/__init__.py, tests/utils.py, tests/multiprocessing_utils.py, and the entire xformers/components/ tree, so
+# pytest cannot collect the test suite. I switched the port to the GitHub source tarball, which includes those files.
 
-.if ${ARCH} == "aarch64"
-MAKE_ENV=	LD_STATIC_TLS_EXTRA=4096 # see pkg-message in misc/py-pytorch
-.endif
+TEST_ARGS=	--disable-plugin-autoload \
+		--ignore=tests/test_mem_eff_attention.py \
+		--ignore=tests/test_multiprocessing_utils.py \
+		--deselect tests/test_mslk_compat.py::test_reexports_exist_in_mslk[xformers.ops.fmha._triton.splitk_kernels]
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_WRKDIR=	${WRKSRC}/tests
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/xformers/_C.so
+NO_ARCH=	yes
 
-.include <bsd.port.post.mk>
+# tests as of 0.0.36: 257 passed, 1035 skipped, 1 deselected, 51 warnings in 7.83s
+
+.include <bsd.port.mk>
