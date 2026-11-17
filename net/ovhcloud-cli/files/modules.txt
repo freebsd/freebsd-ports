@@ -1,10 +1,10 @@
-# code.cloudfoundry.org/bytefmt v0.90.0
+# code.cloudfoundry.org/bytefmt v0.95.0
 ## explicit; go 1.26.0
 code.cloudfoundry.org/bytefmt
 # dario.cat/mergo v1.0.2
 ## explicit; go 1.13
 dario.cat/mergo
-# github.com/NimbleMarkets/ntcharts v0.5.1
+# github.com/NimbleMarkets/ntcharts v0.5.2
 ## explicit; go 1.22.0
 github.com/NimbleMarkets/ntcharts/canvas
 github.com/NimbleMarkets/ntcharts/canvas/buffer
@@ -72,14 +72,14 @@ github.com/charmbracelet/glamour/styles
 ## explicit; go 1.18
 github.com/charmbracelet/lipgloss
 github.com/charmbracelet/lipgloss/table
-# github.com/charmbracelet/x/ansi v0.11.8
+# github.com/charmbracelet/x/ansi v0.11.9
 ## explicit; go 1.24.2
 github.com/charmbracelet/x/ansi
 github.com/charmbracelet/x/ansi/parser
 # github.com/charmbracelet/x/cellbuf v0.0.15
 ## explicit; go 1.24.2
 github.com/charmbracelet/x/cellbuf
-# github.com/charmbracelet/x/exp/slice v0.0.0-20260920004010-53e2afe73ae5
+# github.com/charmbracelet/x/exp/slice v0.1.0
 ## explicit; go 1.24.0
 github.com/charmbracelet/x/exp/slice
 # github.com/charmbracelet/x/term v0.2.2
@@ -94,7 +94,9 @@ github.com/clipperhouse/uax29/v2/graphemes
 # github.com/cpuguy83/go-md2man/v2 v2.0.7
 ## explicit; go 1.12
 github.com/cpuguy83/go-md2man/v2/md2man
-# github.com/dlclark/regexp2/v2 v2.8.0
+# github.com/dlclark/regexp2 v1.12.0
+## explicit; go 1.13
+# github.com/dlclark/regexp2/v2 v2.9.1
 ## explicit; go 1.25
 github.com/dlclark/regexp2/v2
 github.com/dlclark/regexp2/v2/helpers
@@ -108,7 +110,7 @@ github.com/getkin/kin-openapi/openapi3
 # github.com/ghodss/yaml v1.0.0
 ## explicit
 github.com/ghodss/yaml
-# github.com/go-openapi/jsonpointer v1.0.1
+# github.com/go-openapi/jsonpointer v1.0.2
 ## explicit; go 1.26.0
 github.com/go-openapi/jsonpointer
 github.com/go-openapi/jsonpointer/jsonname
@@ -125,7 +127,7 @@ github.com/inconshreveable/mousetrap
 ## explicit; go 1.18
 github.com/jarcoal/httpmock
 github.com/jarcoal/httpmock/internal
-# github.com/kr/pretty v0.3.0
+# github.com/kr/pretty v0.3.1
 ## explicit; go 1.12
 # github.com/lrstanley/bubblezone v1.0.0
 ## explicit; go 1.23.0
@@ -139,10 +141,10 @@ github.com/mattn/go-isatty
 # github.com/mattn/go-localereader v0.0.1
 ## explicit
 github.com/mattn/go-localereader
-# github.com/mattn/go-runewidth v0.0.30
+# github.com/mattn/go-runewidth v0.0.31
 ## explicit; go 1.23
 github.com/mattn/go-runewidth
-# github.com/mattn/go-shellwords v1.0.15
+# github.com/mattn/go-shellwords v1.0.16
 ## explicit; go 1.13
 github.com/mattn/go-shellwords
 # github.com/maxatome/go-testdeep v1.16.0
@@ -201,6 +203,8 @@ github.com/ovh/go-ovh/ovh
 # github.com/rivo/uniseg v0.4.7
 ## explicit; go 1.18
 github.com/rivo/uniseg
+# github.com/rogpeppe/go-internal v1.16.0
+## explicit; go 1.25
 # github.com/russross/blackfriday/v2 v2.1.0
 ## explicit
 github.com/russross/blackfriday/v2
@@ -211,7 +215,7 @@ github.com/sahilm/fuzzy
 ## explicit; go 1.21
 github.com/santhosh-tekuri/jsonschema/v6
 github.com/santhosh-tekuri/jsonschema/v6/kind
-# github.com/shopspring/decimal v1.4.0
+# github.com/shopspring/decimal v1.6.0
 ## explicit; go 1.10
 github.com/shopspring/decimal
 # github.com/spf13/cobra v1.10.2
@@ -243,10 +247,10 @@ github.com/yuin/goldmark-emoji/definition
 # go.yaml.in/yaml/v3 v3.0.5
 ## explicit; go 1.16
 go.yaml.in/yaml/v3
-# golang.org/x/exp v0.0.0-20260908205506-85c1c2202aba
+# golang.org/x/exp v0.0.0-20261014143641-f0251eb4aa3e
 ## explicit; go 1.26.0
 golang.org/x/exp/slices
-# golang.org/x/net v0.59.0
+# golang.org/x/net v0.61.0
 ## explicit; go 1.26.0
 golang.org/x/net/html
 golang.org/x/net/html/atom
@@ -255,19 +259,19 @@ golang.org/x/net/html/atom
 golang.org/x/oauth2
 golang.org/x/oauth2/clientcredentials
 golang.org/x/oauth2/internal
-# golang.org/x/sync v0.23.0
+# golang.org/x/sync v0.24.0
 ## explicit; go 1.26.0
 golang.org/x/sync/errgroup
 golang.org/x/sync/semaphore
-# golang.org/x/sys v0.48.0
+# golang.org/x/sys v0.49.0
 ## explicit; go 1.26.0
 golang.org/x/sys/plan9
 golang.org/x/sys/unix
 golang.org/x/sys/windows
-# golang.org/x/term v0.46.0
+# golang.org/x/term v0.47.0
 ## explicit; go 1.26.0
 golang.org/x/term
-# golang.org/x/text v0.42.0
+# golang.org/x/text v0.43.0
 ## explicit; go 1.26.0
 golang.org/x/text/cases
 golang.org/x/text/feature/plural
