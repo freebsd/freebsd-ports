@@ -1,6 +1,6 @@
 PORTNAME=	comfyui
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.44.1
+DISTVERSION=	0.45.4
 CATEGORIES=	misc python # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,10 +17,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=3.11.8:www/py-aiohttp@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}av>=17.0.0:multimedia/py-av@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}blake3>0:security/py-blake3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}comfy-aimdo>=0.6.0:misc/py-comfy-aimdo@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}comfy-kitchen>=0.2.40:misc/py-comfy-kitchen@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}comfy-kitchen>=0.2.41:misc/py-comfy-kitchen@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}comfyui-embedded-docs>=0.5.16:misc/py-comfyui-embedded-docs@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}comfyui-frontend-package>=1.57.6:misc/py-comfyui-frontend-package@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}comfyui-workflow-templates>=0.11.103:misc/py-comfyui-workflow-templates@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}comfyui-frontend-package>=1.58.5:misc/py-comfyui-frontend-package@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}comfyui-workflow-templates>=0.11.109:misc/py-comfyui-workflow-templates@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}einops>0:misc/py-einops@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}filelock>=3.32.5:sysutils/py-filelock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}glfw>0:graphics/py-glfw@${PY_FLAVOR} \
@@ -97,7 +97,5 @@ do-install:
 	${MKDIR} ${STAGEDIR}${WRITABLE_DIR}/output
 	${RM} -r ${STAGEDIR}${COMFYUI_DIR}/output
 	${RLN} ${STAGEDIR}${WRITABLE_DIR}/output ${STAGEDIR}${COMFYUI_DIR}/output
-
-# tests as of 0.44.1: not run - the upstream unit tests require py-transformers (no package built) and a working py-av
 
 .include <bsd.port.mk>

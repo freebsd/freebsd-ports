@@ -1,4 +1,3 @@
-bin/comfyui
 %%DATADIR%%/.spectral.yaml
 %%DATADIR%%/AGENTS.md
 %%DATADIR%%/CODEOWNERS
@@ -378,6 +377,7 @@ bin/comfyui
 %%DATADIR%%/comfy/ldm/minimax/controlnet.py
 %%DATADIR%%/comfy/ldm/minimax/latent_upscaler.py
 %%DATADIR%%/comfy/ldm/minimax/model.py
+%%DATADIR%%/comfy/ldm/minimax/sampling.py
 %%DATADIR%%/comfy/ldm/minimax/vae.py
 %%DATADIR%%/comfy/ldm/minimax_music/__init__.py
 %%DATADIR%%/comfy/ldm/minimax_music/ar.py
@@ -459,6 +459,7 @@ bin/comfyui
 %%DATADIR%%/comfy/ldm/wan/model_animate.py
 %%DATADIR%%/comfy/ldm/wan/model_animate2.py
 %%DATADIR%%/comfy/ldm/wan/model_multitalk.py
+%%DATADIR%%/comfy/ldm/wan/model_vsr.py
 %%DATADIR%%/comfy/ldm/wan/model_wandancer.py
 %%DATADIR%%/comfy/ldm/wan/uni3c.py
 %%DATADIR%%/comfy/ldm/wan/vae.py
@@ -584,6 +585,7 @@ bin/comfyui
 %%DATADIR%%/comfy/text_encoders/umt5_config_base.json
 %%DATADIR%%/comfy/text_encoders/umt5_config_xxl.json
 %%DATADIR%%/comfy/text_encoders/wan.py
+%%DATADIR%%/comfy/text_encoders/wevisone.py
 %%DATADIR%%/comfy/text_encoders/yue2.py
 %%DATADIR%%/comfy/text_encoders/z_image.py
 %%DATADIR%%/comfy/utils.py
@@ -640,6 +642,7 @@ bin/comfyui
 %%DATADIR%%/comfy_api_nodes/apis/anthropic.py
 %%DATADIR%%/comfy_api_nodes/apis/beeble.py
 %%DATADIR%%/comfy_api_nodes/apis/bfl.py
+%%DATADIR%%/comfy_api_nodes/apis/breezeblue.py
 %%DATADIR%%/comfy_api_nodes/apis/bria.py
 %%DATADIR%%/comfy_api_nodes/apis/bytedance.py
 %%DATADIR%%/comfy_api_nodes/apis/bytedance_llm.py
@@ -688,6 +691,7 @@ bin/comfyui
 %%DATADIR%%/comfy_api_nodes/nodes_anthropic.py
 %%DATADIR%%/comfy_api_nodes/nodes_beeble.py
 %%DATADIR%%/comfy_api_nodes/nodes_bfl.py
+%%DATADIR%%/comfy_api_nodes/nodes_breezeblue.py
 %%DATADIR%%/comfy_api_nodes/nodes_bria.py
 %%DATADIR%%/comfy_api_nodes/nodes_bytedance.py
 %%DATADIR%%/comfy_api_nodes/nodes_bytedance_llm.py
@@ -907,6 +911,7 @@ bin/comfyui
 %%DATADIR%%/comfy_extras/nodes_train.py
 %%DATADIR%%/comfy_extras/nodes_trellis2.py
 %%DATADIR%%/comfy_extras/nodes_triposplat.py
+%%DATADIR%%/comfy_extras/nodes_ultratex.py
 %%DATADIR%%/comfy_extras/nodes_upscale_model.py
 %%DATADIR%%/comfy_extras/nodes_video.py
 %%DATADIR%%/comfy_extras/nodes_video_model.py
@@ -915,6 +920,7 @@ bin/comfyui
 %%DATADIR%%/comfy_extras/nodes_wandancer.py
 %%DATADIR%%/comfy_extras/nodes_wanmove.py
 %%DATADIR%%/comfy_extras/nodes_webcam.py
+%%DATADIR%%/comfy_extras/nodes_wevisone.py
 %%DATADIR%%/comfy_extras/nodes_yue2.py
 %%DATADIR%%/comfy_extras/nodes_zimage.py
 %%DATADIR%%/comfy_extras/pose/keypoint_draw.py
@@ -993,6 +999,7 @@ bin/comfyui
 %%DATADIR%%/server.py
 %%DATADIR%%/temp
 %%DATADIR%%/tests-unit/README.md
+%%DATADIR%%/tests-unit/agent_requirements_test.py
 %%DATADIR%%/tests-unit/app_test/__init__.py
 %%DATADIR%%/tests-unit/app_test/agent_host_test.py
 %%DATADIR%%/tests-unit/app_test/custom_node_manager_test.py
@@ -1138,6 +1145,7 @@ bin/comfyui
 %%DATADIR%%/tests-unit/comfy_api_test/resolution_preview_serialization_test.py
 %%DATADIR%%/tests-unit/comfy_api_test/video_accumulation_test.py
 %%DATADIR%%/tests-unit/comfy_api_test/video_bit_depth_test.py
+%%DATADIR%%/tests-unit/comfy_api_test/video_frame_buffer_test.py
 %%DATADIR%%/tests-unit/comfy_api_test/video_types_test.py
 %%DATADIR%%/tests-unit/comfy_extras_test/__init__.py
 %%DATADIR%%/tests-unit/comfy_extras_test/camera_angle_test.py
@@ -1175,6 +1183,7 @@ bin/comfyui
 %%DATADIR%%/tests-unit/comfy_extras_test/upscale_model_alpha_test.py
 %%DATADIR%%/tests-unit/comfy_quant/test_mixed_precision.py
 %%DATADIR%%/tests-unit/comfy_test/anonymous_file_test.py
+%%DATADIR%%/tests-unit/comfy_test/combined_linear_test.py
 %%DATADIR%%/tests-unit/comfy_test/folder_path_test.py
 %%DATADIR%%/tests-unit/comfy_test/gemma4_template_test.py
 %%DATADIR%%/tests-unit/comfy_test/image_invert_test.py
@@ -1287,7 +1296,9 @@ bin/comfyui
 %%DATADIR%%/utils/json_util.py
 %%DATADIR%%/utils/mime_types.py
 /var/db/comfyui/input/example.png
+@dir /var/db/comfyui
 @dir /var/db/comfyui/input
+@dir /var/db/comfyui/models
 @dir /var/db/comfyui/models/audio_encoders
 @dir /var/db/comfyui/models/checkpoints
 @dir /var/db/comfyui/models/clip
@@ -1308,9 +1319,8 @@ bin/comfyui
 @dir /var/db/comfyui/models/upscale_models
 @dir /var/db/comfyui/models/vae
 @dir /var/db/comfyui/models/vae_approx
-@dir /var/db/comfyui/models
 @dir /var/db/comfyui/output
 @dir /var/db/comfyui/temp
-@dir /var/db/comfyui/user/default
 @dir /var/db/comfyui/user
-@dir /var/db/comfyui
+@dir /var/db/comfyui/user/default
+bin/comfyui
