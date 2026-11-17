@@ -1,7 +1,6 @@
 PORTNAME=	Image-ExifTool
-DISTVERSION=	13.63
+DISTVERSION=	13.64
 CATEGORIES=	graphics perl5
-MASTER_SITES=	SF/exiftool
 PKGNAMEPREFIX=	p5-
 PKGNAMESUFFIX=	-devel
 
@@ -13,6 +12,9 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 USES=		perl5
+USE_GITHUB=	yes
+GH_ACCOUNT=	exiftool
+GH_PROJECT=	exiftool
 USE_PERL5=	configure
 
 CONFLICTS=	p5-Image-ExifTool
