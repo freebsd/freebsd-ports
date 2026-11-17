@@ -7,7 +7,7 @@ MAINTAINER=	nxjoseph@FreeBSD.org
 COMMENT=	Domain Availability Research Tool
 WWW=		https://github.com/brandonyoungdev/tldx
 
-LICENSE=	APACHE20
+LICENSE=	Apache-2.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules

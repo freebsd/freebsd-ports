@@ -10,7 +10,7 @@ COMMENT=	Interact with the Mastodon social network from the command line
 WWW=		https://github.com/ihabunek/toot \
 		https://pypi.org/project/toot
 
-LICENSE=	GPLv3
+LICENSE=	GPL-3.0-only
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup4>=4.5.0<5.0:www/py-beautifulsoup4@${PY_FLAVOR} \

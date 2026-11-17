@@ -6,7 +6,7 @@ MAINTAINER=	nxjoseph@FreeBSD.org
 COMMENT=	Generate XDG menus for various window managers
 WWW=		https://github.com/gapan/xdgmenumaker
 
-LICENSE=	GPLv3
+LICENSE=	GPL-3.0-only
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	txt2tags:textproc/txt2tags

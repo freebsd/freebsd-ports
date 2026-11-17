@@ -10,7 +10,7 @@ COMMENT=	Use nmap and access scan results from Python3
 WWW=		https://pypi.org/project/python-nmap/ \
 		http://xael.org/pages/python-nmap-en.html
 
-LICENSE=	GPLv3+
+LICENSE=	GPL-3.0-or-later
 LICENSE_FILE=	${WRKSRC}/gpl-3.0.txt
 
 RUN_DEPENDS=	nmap:security/nmap

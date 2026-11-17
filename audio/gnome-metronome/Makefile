@@ -9,7 +9,7 @@ MAINTAINER=	nxjoseph@FreeBSD.org
 COMMENT=	Keep the tempo
 WWW=		https://gitlab.gnome.org/World/metronome
 
-LICENSE=	GPLv3+
+LICENSE=	GPL-3.0-or-later
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgraphene-1.0.so:graphics/graphene

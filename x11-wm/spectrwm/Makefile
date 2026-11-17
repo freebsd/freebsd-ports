@@ -7,7 +7,7 @@ MAINTAINER=	nxjoseph@FreeBSD.org
 COMMENT=	Small, dynamic tiling window manager for X11
 WWW=		https://github.com/conformal/spectrwm
 
-LICENSE=	ISCL
+LICENSE=	ISC
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 LIB_DEPENDS+=	libfontconfig.so:x11-fonts/fontconfig \

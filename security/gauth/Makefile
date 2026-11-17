@@ -9,7 +9,7 @@ COMMENT=	Google Authenticator in your terminal
 WWW=		https://github.com/pcarrier/gauth \
 		https://pkg.go.dev/github.com/pcarrier/gauth
 
-LICENSE=	ISCL
+LICENSE=	ISC
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules

@@ -9,7 +9,7 @@ COMMENT=	Browse the Fediverse
 WWW=		https://codeberg.org/GeopJr/Tuba \
 		https://tuba.geopjr.dev
 
-LICENSE=	GPLv3+
+LICENSE=	GPL-3.0-or-later
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libgee-0.8.so:devel/libgee \

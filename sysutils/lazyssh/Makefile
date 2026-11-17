@@ -9,7 +9,7 @@ COMMENT=	Terminal-based interactive SSH Manager to manage your servers
 WWW=		https://github.com/Adembc/lazyssh \
 		https://pkg.go.dev/github.com/Adembc/lazyssh
 
-LICENSE=	APACHE20
+LICENSE=	Apache-2.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules

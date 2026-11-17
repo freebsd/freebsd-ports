@@ -9,7 +9,7 @@ COMMENT=	Free collaborative editor
 WWW=		https://gobby.github.io/ \
 		https://github.com/gobby/gobby
 
-LICENSE=	ISCL
+LICENSE=	ISC
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	itstool:textproc/itstool

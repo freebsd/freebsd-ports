@@ -8,7 +8,7 @@ MAINTAINER=	nxjoseph@FreeBSD.org
 COMMENT=	Collaborative editing library
 WWW=		https://github.com/gobby/libinfinity
 
-LICENSE=	LGPL21
+LICENSE=	LGPL-2.1-only
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	gtkdocize:textproc/gtk-doc

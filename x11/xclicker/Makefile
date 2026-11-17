@@ -7,7 +7,7 @@ MAINTAINER=	nxjoseph@FreeBSD.org
 COMMENT=	Fast gui autoclicker for x11 desktops
 WWW=		https://github.com/robiot/xclicker
 
-LICENSE=	GPLv3
+LICENSE=	GPL-3.0-only
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		desktop-file-utils gnome meson motif pkgconfig xorg

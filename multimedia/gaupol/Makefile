@@ -6,7 +6,7 @@ MAINTAINER=	nxjoseph@FreeBSD.org
 COMMENT=	Subtitle editor
 WWW=		https://otsaloma.io/gaupol/
 
-LICENSE=	GPLv3+
+LICENSE=	GPL-3.0-or-later
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}charset-normalizer>=2.0:textproc/py-charset-normalizer@${PY_FLAVOR} \
