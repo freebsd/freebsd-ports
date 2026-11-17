@@ -633,6 +633,7 @@
     SUBDIR += py-openvdb
     SUBDIR += py-optimum
     SUBDIR += py-optuna
+    SUBDIR += py-oss-harmony
     SUBDIR += py-oterm
     SUBDIR += py-paddlepaddle
     SUBDIR += py-palettable

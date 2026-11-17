@@ -1,0 +1,4 @@
+oss-harmony is a response format library for the gpt-oss open-weight model
+series.
+It is a fork of openai-harmony, providing Pydantic-validated response schemas
+for OpenAI-compatible LLM APIs.
