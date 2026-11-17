@@ -1,4 +1,5 @@
 share/pear/VStelmakh/UrlHighlight/Format.php
+share/pear/VStelmakh/UrlHighlight/Highlighter/Anchor.php
 share/pear/VStelmakh/UrlHighlight/Highlighter/CallbackHighlighter.php
 share/pear/VStelmakh/UrlHighlight/Highlighter/Highlighter.php
 share/pear/VStelmakh/UrlHighlight/Highlighter/SimpleHighlighter.php
