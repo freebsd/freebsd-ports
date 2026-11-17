@@ -22,12 +22,20 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docling-metrics-core>=0.0.1:textproc/py-docl
 		${PYTHON_PKGNAMEPREFIX}pydantic2>0:devel/py-pydantic2@${PY_FLAVOR}
 
 USES=		cmake:indirect python localbase pkgconfig
-USE_PYTHON=	autoplist concurrent pep517
+USE_PYTHON=	autoplist concurrent pep517 pytest
 
 CMAKE_ARGS=	-DUSE_SYSTEM_DEPS=ON
+
+# tests download the evaluate metric modules from the network
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} \
+		REQUESTS_CA_BUNDLE=/etc/ssl/cert.pem SSL_CERT_FILE=/etc/ssl/cert.pem
+TEST_WRKSRC=	${WRKSRC}/tests
+TEST_ARGS=	--disable-plugin-autoload
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/cpp/include
 	@${CP} ${FILESDIR}/cpp_include/*.h ${WRKSRC}/cpp/include/
+
+# tests as of 0.19.0: 3 passed in 13.57s
 
 .include <bsd.port.mk>
