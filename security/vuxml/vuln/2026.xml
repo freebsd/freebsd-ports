@@ -1,3 +1,53 @@
+  <vuln vid="297e3635-e276-11f1-8135-8447094a420f">
+    <topic>OpenSSL -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<range><lt>3.5.10,1</lt></range>
+      </package>
+      <package>
+	<name>openssl30</name>
+	<range><lt>3.0.24</lt></range>
+      </package>
+      <package>
+	<name>openssl34</name>
+	<range><lt>3.4.8_2</lt></range>
+      </package>
+      <package>
+	<name>openssl36</name>
+	<range><lt>3.6.6</lt></range>
+      </package>
+      <package>
+	<name>openssl40</name>
+	<range><lt>4.0.4</lt></range>
+      </package>
+      <package>
+	<name>openssl41</name>
+	<range><lt>4.1.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenSSL project reports:</p>
+	<blockquote cite="https://openssl-library.org/news/secadv/20261117.txt">
+	  <ul><li>Out-of-Bounds Read in TLS 1.3 Key-Share Processing with Suite B Certificate Flag (CVE-2026-35190) (Low)</li>
+	  <li>Use-After-Free in PEM_X509_INFO_read_bio_ex() When Appending to a Caller-Supplied Stack Fails (CVE-2026-107493) (Low)</li>
+	  <li>Unbounded Memory Retention in QUIC Server for Rejected Streams (CVE-2026-124709) (Low)</li></ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-35190</cvename>
+      <cvename>CVE-2026-107493</cvename>
+      <cvename>CVE-2026-124709</cvename>
+      <url>https://openssl-library.org/news/secadv/20261117.txt</url>
+    </references>
+    <dates>
+      <discovery>2026-11-17</discovery>
+      <entry>2026-11-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="142f0839-e259-11f1-ab7d-10ffe07f9334">
     <topic>mailpit -- Unauthenticated SMTP message crashes Mailpit</topic>
     <affects>
