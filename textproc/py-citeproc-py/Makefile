@@ -1,5 +1,5 @@
 PORTNAME=	citeproc-py
-DISTVERSION=	0.12.1
+DISTVERSION=	0.12.3
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,7 +20,14 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	pep517 concurrent autoplist
+USE_PYTHON=	pep517 concurrent autoplist pytest
+
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_ARGS=	--disable-plugin-autoload \
+		tests
+
 NO_ARCH=	yes
+
+# tests as of 0.12.3: 21 passed, 2 skipped, 2 warnings in 0.77s
 
 .include <bsd.port.mk>
