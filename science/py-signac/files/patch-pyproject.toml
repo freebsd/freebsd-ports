@@ -1,8 +1,9 @@
--- Relax the setuptools build requirement to match the ports tree version.
+-- Relax the setuptools build requirement to match the ports tree version and
+-- use the legacy license declaration (PEP 639 is not supported by that setuptools).
 
---- pyproject.toml.orig	2023-05-04 06:58:21 UTC
+--- pyproject.toml.orig	2026-11-13 14:12:06 UTC
 +++ pyproject.toml
-@@ -3,7 +3,7 @@
+@@ -3,7 +3,7 @@ build-backend = "setuptools.build_meta"
  # This software is licensed under the BSD 3-Clause License.
  [build-system]
  build-backend = "setuptools.build_meta"
@@ -11,3 +12,13 @@
  
  [project]
  name = "signac"
+@@ -13,8 +13,7 @@ requires-python = ">=3.11"
+ # Supported versions are determined according to NEP 29.
+ # https://numpy.org/neps/nep-0029-deprecation_policy.html
+ requires-python = ">=3.11"
+-license = "BSD-3-Clause"
+-license-files = ["LICENSE.txt"]
++license = {text = "BSD-3-Clause"}
+ maintainers = [{ name = "signac Developers", email = "signac-support@umich.edu" }]
+ authors = [{ name = "Carl Simon Adorf et al.", email = "csadorf@umich.edu" }]
+ keywords = ["simulation", "database", "index", "collaboration", "workflow"]

@@ -1,6 +1,6 @@
 PORTNAME=	signac
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.1
+DISTVERSION=	2.4.2
 CATEGORIES=	science # physics
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -20,7 +20,10 @@ BUILD_DEPENDS=	${PY_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PY_DEPENDS}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zarr>0:devel/py-zarr@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pandas>0:math/py-pandas@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tables>0:devel/py-tables@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zarr>0:devel/py-zarr@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	pep517 autoplist pytest # some tests fail because of https://github.com/zarr-developers/zarr-python/issues/1407
@@ -28,10 +31,13 @@ USE_PYTHON=	pep517 autoplist pytest # some tests fail because of https://github.
 USE_GITHUB=	yes
 GH_ACCOUNT=	glotzerlab
 
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_ARGS=	--disable-plugin-autoload
+
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
 NO_ARCH=	yes
 
-# tests as of 2.4.1: 946 passed, 141 skipped, 11 subtests passed in 71.56s
+# tests as of 2.4.2: 1074 passed, 13 skipped, 11 subtests passed in 25.12s
 
 .include <bsd.port.mk>
