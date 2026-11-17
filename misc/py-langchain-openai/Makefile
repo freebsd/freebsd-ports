@@ -1,5 +1,5 @@
 PORTNAME=	langchain-openai
-DISTVERSION=	1.7.4
+DISTVERSION=	1.8.0
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}certifi>=2024.6.2:security/py-certifi@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}langchain-core>=1.7.5:misc/py-langchain-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}langchain-core>=1.8.0:misc/py-langchain-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openai>=2.45.0:misc/py-openai@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tiktoken>=0.7.0:textproc/py-tiktoken@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}freezegun>=1.2.2:devel/py-freezegun@${PY_FLAVOR} \
@@ -31,7 +31,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}freezegun>=1.2.2:devel/py-freezegun@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}pytest-watcher>=0.3.4:devel/py-pytest-watcher@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-xdist>=3.6.1:devel/py-pytest-xdist@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}syrupy>=5.0.0:devel/py-syrupy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}vcrpy>=8.0.0:devel/py-vcrpy@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}vcrpy>=8.2.0:devel/py-vcrpy@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	pep517 autoplist pytest
@@ -39,8 +39,17 @@ USE_PYTHON=	pep517 autoplist pytest
 NO_ARCH=	yes
 
 # Integration tests need an OpenAI API key and network access.
-TEST_ARGS=	--ignore=${WRKSRC}/tests/integration_tests
+TEST_ARGS=	--disable-plugin-autoload \
+		-p pytest_asyncio.plugin \
+		-p pytest_benchmark.plugin \
+		-p pytest_cov \
+		-p pytest_mock \
+		-p pytest_recording.plugin \
+		-p pytest_retry \
+		-p pytest_socket \
+		-p syrupy \
+		--ignore=${WRKSRC}/tests/integration_tests
 
-# tests as of 1.7.4: 807 passed, 1 skipped, 5 xpassed, 10 warnings
+# tests as of 1.8.0: 832 passed, 1 skipped, 5 xpassed, 11 warnings
 
 .include <bsd.port.mk>
