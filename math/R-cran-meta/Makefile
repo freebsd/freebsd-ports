@@ -1,11 +1,10 @@
 PORTNAME=	meta
-DISTVERSION=	8.5-0
+DISTVERSION=	9.0-0
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	longros@FreeBSD.org
 COMMENT=	General package for meta-analysis
-WWW=		https://cran.r-project.org/package=meta
 
 LICENSE=	GPLv2+
 
@@ -24,6 +23,8 @@ RUN_DEPENDS=	R-cran-cli>0:devel/R-cran-cli \
 		R-cran-stringr>0:textproc/R-cran-stringr \
 		R-cran-tibble>0:devel/R-cran-tibble \
 		R-cran-xml2>0:textproc/R-cran-xml2
+TEST_DEPENDS=	R-cran-metadat>0:math/R-cran-metadat \
+		R-cran-testthat>0:devel/R-cran-testthat
 
 USES=		cran:auto-plist
 
