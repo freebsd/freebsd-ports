@@ -1,11 +1,10 @@
 PORTNAME=	mlflow-skinny
-PORTVERSION=	3.17.1
+PORTVERSION=	3.18.0
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	mlflow_skinny-${PORTVERSION}
-DISTFILES=	mlflow_skinny-${PORTVERSION}.tar.gz \
-		mlflow_tracing-${PORTVERSION}.tar.gz
+DISTFILES=	mlflow_skinny-${PORTVERSION}.tar.gz
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Lightweight MLflow package with minimal dependencies
@@ -33,6 +32,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anyio>=3.6.2:devel/py-anyio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}protobuf>=3.12.0:devel/py-protobuf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.0.0:devel/py-pydantic2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-dotenv>=0.19.0:www/py-python-dotenv@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}python-multipart>=0.0.18:www/py-python-multipart@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=5.1:devel/py-pyyaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.17.3:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlparse>=0.4.0:databases/py-sqlparse@${PY_FLAVOR} \
@@ -43,25 +43,17 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anyio>=3.6.2:devel/py-anyio@${PY_FLAVOR} \
 USES=		python shebangfix
 USE_PYTHON=	pep517 autoplist concurrent
 
-SHEBANG_FILES=	mlflow/assistant/skills/agent-evaluation/scripts/validate_tracing_runtime.py \
-		mlflow/assistant/skills/hooks/mlflow-suggest-hook.py \
-		mlflow/assistant/skills/querying-mlflow-metrics/scripts/fetch_metrics.py \
-		mlflow/assistant/skills/sagemaker-mlflow/scripts/discover_arns.py \
-		mlflow/assistant/skills/sagemaker-mlflow/scripts/verify_connection.py \
+SHEBANG_FILES=	mlflow/assistant/skills/hooks/mlflow-suggest-hook.py \
+		mlflow/assistant/skills/mlflow-sagemaker/scripts/discover_arns.py \
+		mlflow/assistant/skills/mlflow-sagemaker/scripts/verify_connection.py \
+		mlflow/assistant/skills/mlflow-trace-metrics/scripts/fetch_metrics.py \
 		mlflow/assistant/skills/tests/run_judges.py \
 		mlflow/assistant/skills/tests/scripts/setup_agent_debug_trace_first.py \
 		mlflow/assistant/skills/tests/scripts/setup_agent_eval.py \
 		mlflow/assistant/skills/tests/scripts/setup_langgraph_autolog_guidance.py \
-		mlflow/assistant/skills/tests/scripts/setup_tracing_test.py \
+		mlflow/assistant/skills/tests/scripts/setup_trace_cases.py \
 		mlflow/assistant/skills/tests/test_skill.py
 
 NO_ARCH=	yes
-
-post-extract:
-	@${TAR} -xzf ${DISTDIR}/mlflow_tracing-${PORTVERSION}.tar.gz -C ${WRKDIR}
-
-post-install:
-	@cd ${WRKDIR}/mlflow_tracing-${PORTVERSION} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} -m pip install --no-deps --no-compile --no-build-isolation --ignore-installed --root ${STAGEDIR} --prefix ${PREFIX} .
-	@${RM} -r ${STAGEDIR}${PYTHON_SITELIBDIR}/mlflow_tracing-${PORTVERSION}.dist-info
 
 .include <bsd.port.mk>
