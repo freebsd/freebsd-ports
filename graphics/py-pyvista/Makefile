@@ -1,6 +1,5 @@
 PORTNAME=	pyvista
-DISTVERSION=	0.49.1
-PORTREVISION=	1
+DISTVERSION=	0.49.2
 CATEGORIES=	graphics python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,16 +18,18 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cyclopts>=4.0.0:devel/py-cyclopts@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.21.0:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pooch>0:devel/py-pooch@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyvista-validation>=0.2.2:graphics/py-pyvista-validation@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scooby>=0.5.1:devel/py-scooby@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.10:devel/py-typing-extensions@${PY_FLAVOR} \
 		vtk${VTK_VER:R}>0:math/vtk${VTK_VER:R}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-mock>0:devel/py-pytest-mock@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	pep517 autoplist pytest
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} MPLBACKEND=agg
 TEST_WRKSRC=	${WRKSRC}
-TEST_ARGS=	-o filterwarnings=default -p no:cov -p no:black -p no:mypy -p no:benchmark \
+TEST_ARGS=	--disable-plugin-autoload -p pytest_mock -o filterwarnings=default -p no:cov -p no:black -p no:mypy -p no:benchmark \
 		tests/test_meta.py tests/test_warn_external.py
 PYTEST_IGNORED_TESTS=	test_plotting_attribute_cached test_pyvista_oo_flag test_plotting_getattr_called_once
 
@@ -36,7 +37,7 @@ PYTEST_IGNORED_TESTS=	test_plotting_attribute_cached test_pyvista_oo_flag test_p
 # helper which is not yet packaged for FreeBSD. Only a small set of safe tests is
 # run. The skipped tests fail because the math/vtk9 package does not include the
 # vtkRenderingMatplotlib module.
-# tests as of 0.49.1: 3 passed in ~1s (test_init.py removed: imports tests.vtk_backend_divergence which no longer exists)
+# tests as of 0.49.2: 3 passed, 1 warning in 0.17s (test_init.py removed: imports tests.vtk_backend_divergence which no longer exists)
 
 NO_ARCH=	yes
 
