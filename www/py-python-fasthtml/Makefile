@@ -1,5 +1,5 @@
 PORTNAME=	python-fasthtml
-DISTVERSION=	0.14.17
+DISTVERSION=	0.14.23
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,11 +24,18 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup4>0:www/py-beautifulsoup4@${PY_
 		${PYTHON_PKGNAMEPREFIX}python-dateutil>0:devel/py-python-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-multipart>0:www/py-python-multipart@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}starlette>=1.0.1:www/py-starlette@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}uvicorn>=0.30:www/py-uvicorn@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}uvicorn>=0.30:www/py-uvicorn@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}websockets>=14:devel/py-websockets@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-asyncio>0:devel/py-pytest-asyncio@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	pep517 autoplist
+USE_PYTHON=	pep517 autoplist pytest
+
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_ARGS=	--disable-plugin-autoload -p asyncio tests
 
 NO_ARCH=	yes
+
+# tests as of 0.14.23: 2 passed, 1 warning in 0.53s
 
 .include <bsd.port.mk>
