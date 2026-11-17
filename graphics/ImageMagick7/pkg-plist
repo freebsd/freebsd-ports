@@ -656,6 +656,7 @@ share/man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-7/www/image/wizard.jpg
 %%PORTDOCS%%%%DOCSDIR%%-7/www/image/wizard.png
 %%PORTDOCS%%%%DOCSDIR%%-7/www/import/index.html
+%%PORTDOCS%%%%DOCSDIR%%-7/www/index-2.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/index.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/install-source/index.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/jp2/index.html
