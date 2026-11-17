@@ -1,5 +1,5 @@
 PORTNAME=	langgraph
-DISTVERSION=	1.2.20
+DISTVERSION=	1.2.22
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,9 +23,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}langchain-core>=1.4.7:misc/py-langchain-core
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}httpx>=0:www/py-httpx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}langchain-core>=1.4.7:misc/py-langchain-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}langgraph-checkpoint>=4.3.0:misc/py-langgraph-checkpoint@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}langgraph-checkpoint-postgres>=0:misc/py-langgraph-checkpoint-postgres@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}langgraph-checkpoint-sqlite>=0:misc/py-langgraph-checkpoint-sqlite@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}langgraph-prebuilt>=1.1.0:misc/py-langgraph-prebuilt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}langgraph-sdk>=0.4.6:misc/py-langgraph-sdk@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}psycopg>=0:databases/py-psycopg@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pycryptodome>=0:security/py-pycryptodome@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyperf>=0:devel/py-pyperf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-cov>=0:devel/py-pytest-cov@${PY_FLAVOR} \
@@ -39,11 +41,24 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}httpx>=0:www/py-httpx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}uvloop>=0:devel/py-uvloop@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	pep517 autoplist
+USE_PYTHON=	pep517 autoplist pytest
 
 NO_ARCH=	yes
 
-# tests as of 1.2.20: not run - langgraph-checkpoint-postgres, langgraph-cli and
-# psycopg-binary are not ported
+# The deselected tests compare streamed message metadata which differs with the installed langchain-core.
+# Docker-based checkpointers/stores (Postgres, Redis) are disabled with NO_DOCKER.
+TEST_ENV=	${MAKE_ENV} NO_DOCKER=true PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_ARGS=	--disable-plugin-autoload \
+		-p anyio.pytest_plugin \
+		-p pytest_mock \
+		-p syrupy \
+		--deselect=tests/test_large_cases.py::test_prebuilt_tool_chat \
+		--deselect=tests/test_large_cases.py::test_weather_subgraph \
+		--deselect=tests/test_large_cases_async.py::test_prebuilt_tool_chat \
+		--deselect=tests/test_large_cases_async.py::test_weather_subgraph \
+		--deselect=tests/test_pregel.py::test_tags_stream_mode_messages \
+		--deselect=tests/test_pregel_async.py::test_tags_stream_mode_messages
+
+# tests as of 1.2.22: 2932 passed, 43 skipped, 9 deselected, 179 warnings
 
 .include <bsd.port.mk>
