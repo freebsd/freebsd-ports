@@ -146,6 +146,7 @@ etc/libmap.d/Prowlarr.conf
 %%DATADIR%%/bin/Microsoft.AspNetCore.SignalR.Core.dll
 %%DATADIR%%/bin/Microsoft.AspNetCore.SignalR.Protocols.Json.dll
 %%DATADIR%%/bin/Microsoft.AspNetCore.SignalR.dll
+%%DATADIR%%/bin/Microsoft.AspNetCore.StaticAssets.dll
 %%DATADIR%%/bin/Microsoft.AspNetCore.StaticFiles.dll
 %%DATADIR%%/bin/Microsoft.AspNetCore.WebSockets.dll
 %%DATADIR%%/bin/Microsoft.AspNetCore.WebUtilities.dll
@@ -197,6 +198,7 @@ etc/libmap.d/Prowlarr.conf
 %%DATADIR%%/bin/Microsoft.Extensions.Options.DataAnnotations.dll
 %%DATADIR%%/bin/Microsoft.Extensions.Options.dll
 %%DATADIR%%/bin/Microsoft.Extensions.Primitives.dll
+%%DATADIR%%/bin/Microsoft.Extensions.Validation.dll
 %%DATADIR%%/bin/Microsoft.Extensions.WebEncoders.dll
 %%DATADIR%%/bin/Microsoft.JSInterop.dll
 %%DATADIR%%/bin/Microsoft.Net.Http.Headers.dll
@@ -205,10 +207,8 @@ etc/libmap.d/Prowlarr.conf
 %%DATADIR%%/bin/Microsoft.VisualBasic.dll
 %%DATADIR%%/bin/Microsoft.Win32.Primitives.dll
 %%DATADIR%%/bin/Microsoft.Win32.Registry.dll
-%%DATADIR%%/bin/Microsoft.Win32.SystemEvents.dll
 %%DATADIR%%/bin/MimeKit.dll
 %%DATADIR%%/bin/Mono.Nat.dll
-%%DATADIR%%/bin/Mono.Posix.NETStandard.dll
 %%DATADIR%%/bin/MonoTorrent.BEncoding.dll
 %%DATADIR%%/bin/MonoTorrent.Client.dll
 %%DATADIR%%/bin/MonoTorrent.Connections.dll
@@ -226,6 +226,7 @@ etc/libmap.d/Prowlarr.conf
 %%DATADIR%%/bin/NLog.dll
 %%DATADIR%%/bin/Newtonsoft.Json.dll
 %%DATADIR%%/bin/Npgsql.dll
+%%DATADIR%%/bin/Openur.Mono.Unix.dll
 %%DATADIR%%/bin/Polly.Contrib.WaitAndRetry.dll
 %%DATADIR%%/bin/Polly.Core.dll
 %%DATADIR%%/bin/Polly.dll
@@ -245,6 +246,7 @@ etc/libmap.d/Prowlarr.conf
 %%DATADIR%%/bin/Prowlarr.Host.deps.json
 %%DATADIR%%/bin/Prowlarr.Host.dll
 %%DATADIR%%/bin/Prowlarr.Host.pdb
+%%DATADIR%%/bin/Prowlarr.Host.staticwebassets.endpoints.json
 %%DATADIR%%/bin/Prowlarr.Host.xml
 %%DATADIR%%/bin/Prowlarr.Http.deps.json
 %%DATADIR%%/bin/Prowlarr.Http.dll
@@ -257,6 +259,7 @@ etc/libmap.d/Prowlarr.conf
 %%DATADIR%%/bin/Prowlarr.SignalR.deps.json
 %%DATADIR%%/bin/Prowlarr.SignalR.dll
 %%DATADIR%%/bin/Prowlarr.SignalR.pdb
+%%DATADIR%%/bin/Prowlarr.SignalR.staticwebassets.endpoints.json
 %%DATADIR%%/bin/Prowlarr.SignalR.xml
 %%DATADIR%%/bin/Prowlarr.deps.json
 %%DATADIR%%/bin/Prowlarr.dll
@@ -300,11 +303,11 @@ etc/libmap.d/Prowlarr.conf
 %%DATADIR%%/bin/System.Diagnostics.Tools.dll
 %%DATADIR%%/bin/System.Diagnostics.TraceSource.dll
 %%DATADIR%%/bin/System.Diagnostics.Tracing.dll
-%%DATADIR%%/bin/System.Drawing.Common.dll
 %%DATADIR%%/bin/System.Drawing.Primitives.dll
 %%DATADIR%%/bin/System.Drawing.dll
 %%DATADIR%%/bin/System.Dynamic.Runtime.dll
 %%DATADIR%%/bin/System.Formats.Asn1.dll
+%%DATADIR%%/bin/System.Formats.Cbor.dll
 %%DATADIR%%/bin/System.Formats.Tar.dll
 %%DATADIR%%/bin/System.Globalization.Calendars.dll
 %%DATADIR%%/bin/System.Globalization.Extensions.dll
@@ -325,6 +328,7 @@ etc/libmap.d/Prowlarr.conf
 %%DATADIR%%/bin/System.IO.Pipes.dll
 %%DATADIR%%/bin/System.IO.UnmanagedMemoryStream.dll
 %%DATADIR%%/bin/System.IO.dll
+%%DATADIR%%/bin/System.Linq.AsyncEnumerable.dll
 %%DATADIR%%/bin/System.Linq.Expressions.dll
 %%DATADIR%%/bin/System.Linq.Parallel.dll
 %%DATADIR%%/bin/System.Linq.Queryable.dll
@@ -341,6 +345,7 @@ etc/libmap.d/Prowlarr.conf
 %%DATADIR%%/bin/System.Net.Quic.dll
 %%DATADIR%%/bin/System.Net.Requests.dll
 %%DATADIR%%/bin/System.Net.Security.dll
+%%DATADIR%%/bin/System.Net.ServerSentEvents.dll
 %%DATADIR%%/bin/System.Net.ServicePoint.dll
 %%DATADIR%%/bin/System.Net.Sockets.dll
 %%DATADIR%%/bin/System.Net.WebClient.dll
@@ -410,6 +415,7 @@ etc/libmap.d/Prowlarr.conf
 %%DATADIR%%/bin/System.Text.Encodings.Web.dll
 %%DATADIR%%/bin/System.Text.Json.dll
 %%DATADIR%%/bin/System.Text.RegularExpressions.dll
+%%DATADIR%%/bin/System.Threading.AccessControl.dll
 %%DATADIR%%/bin/System.Threading.Channels.dll
 %%DATADIR%%/bin/System.Threading.Overlapped.dll
 %%DATADIR%%/bin/System.Threading.RateLimiting.dll
@@ -439,9 +445,9 @@ etc/libmap.d/Prowlarr.conf
 %%DATADIR%%/bin/System.dll
 %%DATADIR%%/bin/UI/152-d06ea3411b5d664ed72a.js
 %%DATADIR%%/bin/UI/152-d06ea3411b5d664ed72a.js.map
-%%DATADIR%%/bin/UI/791-b9de37c88cf78f46369d.js
-%%DATADIR%%/bin/UI/791-b9de37c88cf78f46369d.js.LICENSE.txt
-%%DATADIR%%/bin/UI/791-b9de37c88cf78f46369d.js.map
+%%DATADIR%%/bin/UI/791-fa8a6e5d726e89640d0a.js
+%%DATADIR%%/bin/UI/791-fa8a6e5d726e89640d0a.js.LICENSE.txt
+%%DATADIR%%/bin/UI/791-fa8a6e5d726e89640d0a.js.map
 %%DATADIR%%/bin/UI/Content/152-9b4899863909cbd1f632.css
 %%DATADIR%%/bin/UI/Content/152-9b4899863909cbd1f632.css.map
 %%DATADIR%%/bin/UI/Content/Fonts/Roboto-Light.ttf
@@ -485,21 +491,22 @@ etc/libmap.d/Prowlarr.conf
 %%DATADIR%%/bin/UI/Content/robots.txt
 %%DATADIR%%/bin/UI/Content/styles.css
 %%DATADIR%%/bin/UI/Content/styles.css.map
-%%DATADIR%%/bin/UI/index-e830f1ffa371aa17da0c.js
-%%DATADIR%%/bin/UI/index-e830f1ffa371aa17da0c.js.map
+%%DATADIR%%/bin/UI/index-d544db047b1c672f284c.js
+%%DATADIR%%/bin/UI/index-d544db047b1c672f284c.js.map
 %%DATADIR%%/bin/UI/index.html
 %%DATADIR%%/bin/UI/login.html
 %%DATADIR%%/bin/UI/oauth.html
 %%DATADIR%%/bin/WindowsBase.dll
 %%DATADIR%%/bin/YamlDotNet.dll
 %%DATADIR%%/bin/de-DE/FluentMigrator.Abstractions.resources.dll
-%%DATADIR%%/bin/libMonoPosixHelper.so
+%%DATADIR%%/bin/libMono.Unix.so
 %%DATADIR%%/bin/libSystem.Globalization.Native.so
 %%DATADIR%%/bin/libSystem.IO.Compression.Native.so
 %%DATADIR%%/bin/libSystem.Native.so
 %%DATADIR%%/bin/libSystem.Net.Security.Native.so
 %%DATADIR%%/bin/libSystem.Security.Cryptography.Native.OpenSsl.so
 %%DATADIR%%/bin/libclrgc.so
+%%DATADIR%%/bin/libclrgcexp.so
 %%DATADIR%%/bin/libclrjit.so
 %%DATADIR%%/bin/libcoreclr.so
 %%DATADIR%%/bin/libhostfxr.so
