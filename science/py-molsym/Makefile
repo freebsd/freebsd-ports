@@ -1,5 +1,5 @@
 PORTNAME=	molsym
-DISTVERSION=	1.3.0
+DISTVERSION=	1.3.1
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,6 +25,6 @@ TEST_ARGS=	--disable-plugin-autoload
 
 NO_ARCH=	yes
 
-# tests as of 1.3.0: 392 passed, 4 skipped, 29 warnings in 13.22s
+# tests as of 1.3.1: 412 passed, 4 skipped, 29 warnings in 11.00s
 
 .include <bsd.port.mk>
