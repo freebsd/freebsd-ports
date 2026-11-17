@@ -1,5 +1,5 @@
 PORTNAME=	python-slugify
-PORTVERSION=	9.1.3
+PORTVERSION=	9.2.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,6 +11,8 @@ WWW=		https://github.com/un33k/python-slugify
 
 LICENSE=	MIT
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}text-unidecode>=1.3:converters/py-text-unidecode@${PY_FLAVOR}
 
 ### Can optionally require:
@@ -18,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}text-unidecode>=1.3:converters/py-text-unide
 ###     ${PYTHON_PKGNAMEPREFIX}anyascii>=0.3.2:textproc/py-anyascii@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	pep517 autoplist
 
 NO_ARCH=	yes
 
