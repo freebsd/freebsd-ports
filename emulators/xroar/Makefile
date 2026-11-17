@@ -1,5 +1,5 @@
 PORTNAME=	xroar
-DISTVERSION=	1.13
+DISTVERSION=	1.13.1
 CATEGORIES=	emulators
 MASTER_SITES=	https://www.6809.org.uk/xroar/dl/
 MAINTAINER=	juhani@krekela.fi
