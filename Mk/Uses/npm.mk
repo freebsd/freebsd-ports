@@ -433,7 +433,7 @@ npm-archive-node-modules:
 		done; \
 		sqlite3 $${output_db} "REINDEX; VACUUM;"; \
 		sqlite3 $${output_db} ".dump" | ${SED} -e "s/x'/X'/" > $${output_db_dump}; \
-		${RM} -r $${input_db} $${storedir}/tmp; \
+		${RM} -r $${input_db} $${storedir}/projects $${storedir}/tmp; \
 	fi
 .        else
 	@if [ ! -f ${DISTDIR}/${DIST_SUBDIR}/${_DISTFILE_prefetch} ] && [ -d ${WRKDIR}/node-modules-cache ]; then \
