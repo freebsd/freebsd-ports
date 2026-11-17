@@ -1,6 +1,6 @@
 PORTNAME=	docling-core
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.105.0
+DISTVERSION=	2.107.0
 CATEGORIES=	textproc python
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}defusedxml>=0.7.1:devel/py-defusedxml@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}doclang>=0.8:textproc/py-doclang@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}doclang>=0.9:textproc/py-doclang@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonref>=1.1.0:devel/py-jsonref@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonschema>=4.16.0:devel/py-jsonschema@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}latex2mathml>=3.77.0:textproc/py-latex2mathml@${PY_FLAVOR} \
@@ -28,12 +28,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}defusedxml>=0.7.1:devel/py-defusedxml@${PY_F
 		${PYTHON_PKGNAMEPREFIX}tabulate>=0.9.0:devel/py-tabulate@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typer>=0.12.5:devel/py-typer@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.12.2:devel/py-typing-extensions@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gitpython>=0:devel/py-gitpython@${PY_FLAVOR}
-		#${PYTHON_PKGNAMEPREFIX}universal-pathlib>=0.3.10:filesystems/py-universal-pathlib@${PY_FLAVOR} # missing
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gitpython>=0:devel/py-gitpython@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}universal-pathlib>=0.3.10:filesystems/py-universal-pathlib@${PY_FLAVOR}
 
 # optional dependencies are used during normal use of this library
 DCLQ_DEPENDS=	\
-		${PYTHON_PKGNAMEPREFIX}doclang>=0.8:textproc/py-doclang@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}doclang>=0.9:textproc/py-doclang@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lxml>=6.0.2:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typer>=0.26.0:devel/py-typer@${PY_FLAVOR}
 CHUNKING_DEPENDS=	\
@@ -75,6 +75,6 @@ TEST_ARGS=	--disable-plugin-autoload --ignore=packages/dclq \
 
 NO_ARCH=	yes
 
-# tests as of 2.105.0: 797 passed, 10 skipped, 1 xfailed, 1 warning in 36.82s
+# tests as of 2.107.0: 1178 passed, 16 skipped, 1 xfailed, 1 warning in 22.25s
 
 .include <bsd.port.mk>
