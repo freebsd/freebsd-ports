@@ -1,0 +1,4 @@
+bin/filedialogs
+include/apifiledialogs/filedialogs.hpp
+lib/libfiledialogs.a
+lib/libfiledialogs.so

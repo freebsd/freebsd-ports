@@ -8736,6 +8736,7 @@
     SUBDIR += sdl20
     SUBDIR += sdl2pp
     SUBDIR += sdl3
+    SUBDIR += sdl3-imgui-filedialogs
     SUBDIR += sdl_console
     SUBDIR += sdlmm
     SUBDIR += sdlskk

@@ -1,0 +1,7 @@
+Library based on ImFileDialog by dfranx with many bugs/crashes fixed and
+improvements:
+- The 'Quick Access' sidebar remembers what favorites were previously saved to
+  it from previous runs of your application by saving the settings.
+- It allows for full localization among many other good things you'll find
+  useful.
+- Most of the dialog is customizable via environment variables.
