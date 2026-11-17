@@ -241,7 +241,6 @@ etc/newsyslog.conf.d/lyrionmusicserver.conf
 %%SLIMDIR%%/CPAN/IO/Interface/Simple.pm
 %%SLIMDIR%%/CPAN/IO/Socket/Socks.pm
 %%SLIMDIR%%/CPAN/IO/String.pm
-%%SLIMDIR%%/CPAN/Image/Scale.pm
 %%SLIMDIR%%/CPAN/JSON/XS.pm
 %%SLIMDIR%%/CPAN/JSON/XS/Boolean.pm
 %%SLIMDIR%%/CPAN/JSON/XS/VersionOneAndTwo.pm
@@ -835,7 +834,6 @@ etc/newsyslog.conf.d/lyrionmusicserver.conf
 %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/HTML/TokeParser.pm
 %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/IO/Interface.pm
 %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/IO/Interface/Simple.pm
-%%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/Image/Scale.pm
 %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/JSON/XS.pm
 %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/JSON/XS/Boolean.pm
 %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/MP3/Cut/Gapless.pm
@@ -935,8 +933,6 @@ etc/newsyslog.conf.d/lyrionmusicserver.conf
 %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/Template/Tutorial/Web.pod
 %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/Template/VMethods.pm
 %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/Template/View.pm
-%%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/Test/NoWarnings.pm
-%%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/Test/NoWarnings/Warning.pm
 %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/Test/Warn.pm
 %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/Tree/DAG_Node.pm
 %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/Win32/DBIODBC.pm
@@ -993,7 +989,6 @@ etc/newsyslog.conf.d/lyrionmusicserver.conf
 %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/auto/HTML/Parser/Parser.so
 %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/auto/IO/Interface/Interface.so
 %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/auto/IO/Interface/autosplit.ix
-%%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/auto/Image/Scale/Scale.so
 %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/auto/JSON/XS/XS.so
 %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/auto/MP3/Cut/Gapless/Gapless.so
 %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/auto/Sub/Name/Name.so
@@ -1078,7 +1073,6 @@ etc/newsyslog.conf.d/lyrionmusicserver.conf
 %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/ExtUtils/CBuilder/Platform/dec_osf.pm
 %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/ExtUtils/CBuilder/Platform/os2.pm
 %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/HTML/Tagset.pm
-%%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/Image/Scale.pm
 %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/JSON/XS.pm
 %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/JSON/XS/Boolean.pm
 %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/Module/Build.pm
@@ -1112,8 +1106,6 @@ etc/newsyslog.conf.d/lyrionmusicserver.conf
 %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/Module/Build/YAML.pm
 %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/Sub/Uplevel.pm
 %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/Sub/Uplevel.pod
-%%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/Test/NoWarnings.pm
-%%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/Test/NoWarnings/Warning.pm
 %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/Test/Warn.pm
 %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/Tree/DAG_Node.pm
 %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/YAML/LibYAML.pm
@@ -2598,7 +2590,6 @@ etc/newsyslog.conf.d/lyrionmusicserver.conf
 @dir %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/auto/HTML/Tagset
 @dir %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/auto/Module/Build
 @dir %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/auto/Sub/Uplevel
-@dir %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/auto/Test/NoWarnings
 @dir %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/auto/Test/Warn
 @dir %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/auto/Tree/DAG_Node
 @dir %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/auto/YAML/LibYAML
