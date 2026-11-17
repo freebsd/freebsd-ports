@@ -25,7 +25,7 @@ SHEBANG_FILES=	src/MEDLoader/Swig/ConvertMEDFileTo30.py	\
 		src/MEDLoader/Swig/case2med src/MEDLoader/Swig/med2case	\
 		v8_work/medcoup7to8.py
 
-ONLY_FOR_ARCHS=			amd64
+ONLY_FOR_ARCHS=			amd64 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=		Upstream only targets amd64 for Code_Aster
 NOT_FOR_ARCHS_REASON_arm64=	-Wc++11-narrowing
 NOT_FOR_ARCHS_REASON_i386=	incompatible pointer types Int64 / long long
