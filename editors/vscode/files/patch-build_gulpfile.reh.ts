@@ -1,6 +1,6 @@
---- build/gulpfile.reh.ts.orig	2026-09-30 08:38:38 UTC
+--- build/gulpfile.reh.ts.orig	2026-11-10 19:27:51 UTC
 +++ build/gulpfile.reh.ts
-@@ -341,6 +341,7 @@ function packageTask(type: string, platform: string, a
+@@ -335,6 +335,7 @@ function packageTask(type: string, platform: string, a
  						json.agentSdks = agentSdks;
  					}
  				}

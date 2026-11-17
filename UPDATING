@@ -5,6 +5,32 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20261117:
+  AFFECTS: users of editors/vscode
+  AUTHOR: tagattie@FreeBSD.org
+
+  GitHub Copilot chat and other agent-related features require
+  additional settings to operate. Users who wish to continue using
+  those features should add the following settings via settings UI or
+  directly editing settings.json.
+  {
+    "chat.defaultToCopilotHarness": false,
+    "chat.editor.preferCopilotHarness": false
+  }
+
+  VSCode has migrated its agent harness implementation from the Local
+  harness to the Copilot harness. The latter depends on Copilot
+  SDK/CLI, which is closed source and does not support FreeBSD
+  (yet). The settings above make it switch back to use the Local
+  harness. Please be advised that the Local harness is deprecated and
+  will be removed by Feb 2027.
+
+  For more details on agent harnesses and the deprecation of the Local
+  harness, please visit the following URLs:
+
+  https://code.visualstudio.com/docs/agents/run/agent-harnesses
+  https://code.visualstudio.com/updates/v1_146#_copilot-harness-and-deprecation-of-the-local-harness
+
 20261111:
   AFFECTS: users of net-mgmt/netbox
   AUTHOR: kai@FreeBSD.org

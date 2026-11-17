@@ -1,0 +1,33 @@
+{
+  "name": "vscode-html-languageserver",
+  "description": "HTML language server",
+  "version": "10.0.0",
+  "author": "Microsoft Corporation",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": "*"
+  },
+  "main": "./out/node/htmlServerMain",
+  "dependencies": {
+    "@vscode/l10n": "^0.0.18",
+    "vscode-css-languageservice": "^7.0.0-next.2",
+    "vscode-html-languageservice": "^6.0.0-next.2",
+    "vscode-languageserver": "^10.1.1",
+    "vscode-languageserver-textdocument": "^1.0.14",
+    "vscode-uri": "^3.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "24.x",
+    "glob": "^5.0.13"
+  },
+  "scripts": {
+    "compile": "pnpm exec gulp compile-extension:html-language-features-server",
+    "watch": "pnpm exec gulp watch-extension:html-language-features-server",
+    "install-service-next": "pnpm add vscode-css-languageservice@next && pnpm add vscode-html-languageservice@next",
+    "install-service-local": "pnpm add vscode-css-languageservice && pnpm add vscode-html-languageservice",
+    "install-server-next": "pnpm add vscode-languageserver@next",
+    "install-server-local": "pnpm add vscode-languageserver",
+    "test": "pnpm run compile && node ./test/index.js"
+  }
+}

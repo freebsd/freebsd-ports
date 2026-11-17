@@ -1,32 +1,11 @@
 PORTNAME=	vscode
 DISTVERSION=	${VSCODE_VERSION}
-PORTREVISION=	1
 CATEGORIES=	editors
-MASTER_SITES=	https://github.com/tagattie/FreeBSD-VSCode/releases/download/${DISTVERSION}/:node_modules
-DISTFILES=	vscode-marketplace-exts-${DISTVERSION}${EXTRACT_SUFX}:node_modules
+MASTER_SITES=	https://github.com/tagattie/FreeBSD-VSCode/releases/download/${DISTVERSION}/:node_modules \
+		https://registry.npmjs.org/@github/copilot-linux-${ELECTRON_ARCH}/-/:copilot_cli_${ELECTRON_ARCH}
+DISTFILES=	vscode-marketplace-exts-${DISTVERSION}${EXTRACT_SUFX}:node_modules \
+		copilot-linux-${ELECTRON_ARCH}-${COPILOT_CLI_VERSION}.tgz:copilot_cli_${ELECTRON_ARCH}
 DIST_SUBDIR=	${PORTNAME}
-
-ONLY_FOR_ARCHS=	aarch64 amd64
-
-.if make(makesum)
-.   for arch in ${ONLY_FOR_ARCHS:S/aarch64/arm64/:S/amd64/x64/}
-MASTER_SITES+=	https://registry.npmjs.org/@github/copilot-linux-${arch}/-/:copilot_cli_${arch} \
-		https://registry.npmjs.org/@github/copilot-sdk-linux-${arch}/-/:copilot_sdk_${arch} \
-		https://registry.npmjs.org/@vscode/os-proxy-resolver-linux-${arch}-gnu/-/:os_proxy_resolver_${arch}
-DISTFILES+=	vscode-node-modules-${DISTVERSION}-${arch}${EXTRACT_SUFX}:node_modules \
-		copilot-linux-${arch}-${COPILOT_CLI_VERSION}.tgz:copilot_cli_${arch} \
-		copilot-sdk-linux-${arch}-${COPILOT_SDK_VERSION}.tgz:copilot_sdk_${arch} \
-		os-proxy-resolver-linux-${arch}-gnu-${OS_PROXY_RESOLVER_VERSION}.tgz:os_proxy_resolver_${arch}
-.   endfor
-.else
-MASTER_SITES+=	https://registry.npmjs.org/@github/copilot-linux-${ELECTRON_ARCH}/-/:copilot_cli_${ELECTRON_ARCH} \
-		https://registry.npmjs.org/@github/copilot-sdk-linux-${ELECTRON_ARCH}/-/:copilot_sdk_${ELECTRON_ARCH} \
-		https://registry.npmjs.org/@vscode/os-proxy-resolver-linux-${ELECTRON_ARCH}-gnu/-/:os_proxy_resolver_${ELECTRON_ARCH}
-DISTFILES+=	vscode-node-modules-${DISTVERSION}-${ELECTRON_ARCH}${EXTRACT_SUFX}:node_modules \
-		copilot-linux-${ELECTRON_ARCH}-${COPILOT_CLI_VERSION}.tgz:copilot_cli_${ELECTRON_ARCH} \
-		copilot-sdk-linux-${ELECTRON_ARCH}-${COPILOT_SDK_VERSION}.tgz:copilot_sdk_${ELECTRON_ARCH} \
-		os-proxy-resolver-linux-${ELECTRON_ARCH}-gnu-${OS_PROXY_RESOLVER_VERSION}.tgz:os_proxy_resolver_${ELECTRON_ARCH}
-.endif
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Visual Studio Code - Open Source ("Code - OSS")
@@ -35,12 +14,14 @@ WWW=		https://code.visualstudio.com/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-EXTRACT_DEPENDS=jq:textproc/jq \
-		node${NODEJS_VERSION}>0:www/node${NODEJS_VERSION}
+ONLY_FOR_ARCHS=	amd64
+
+PATCH_DEPENDS=	jq:textproc/jq
 BUILD_DEPENDS=	zip:archivers/zip \
 		jq:textproc/jq \
 		rg:textproc/ripgrep \
 		tgrep:textproc/tgrep \
+		npm${NODEJS_SUFFIX}>0:www/npm${NODEJS_SUFFIX} \
 		wasm2c:www/wabt
 LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-core \
 		libatspi.so:accessibility/at-spi2-core \
@@ -81,13 +62,22 @@ TEST_DEPENDS=	bash:shells/bash
 
 USES=		cargo desktop-file-utils display:build,test \
 		electron:43,build,test gl gmake gnome gssapi:mit iconv:wchar_t \
-		jpeg localbase:ldflags nodejs:24,build npm:npm pkgconfig \
+		jpeg localbase:ldflags nodejs:24,build npm:pnpm pkgconfig \
 		python:build shebangfix xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
 GH_TUPLE=	web-infra-dev:rspack:v${RSPACK_VERSION}:rspack/rspack \
 		microsoft:os-proxy-resolver:v${OS_PROXY_RESOLVER_VERSION}:os_proxy_resolver/os-proxy-resolver
+
+USE_CXXSTD=	c++20
+USE_XORG=	x11 xcb xcomposite xcursor xdamage xext xfixes xi xkbfile \
+		xrandr xrender xscrnsaver xtst
+USE_GL=		gbm gl glesv2
+USE_GNOME=	atk cairo pango gdkpixbuf gtk30 libxml2 libxslt
+
+SHEBANG_REGEX=	./(extensions|node_modules|resources|scripts|src)/.*(\.(pl|py|sh)|makeBlacker|makeFF)$$
+PATHFIX_FILES=	src/vs/workbench/contrib/debug/node/terminals.ts
 
 CARGO_CARGOTOML=	${WRKSRC}/rspack/Cargo.toml
 CARGO_CARGOTOML_RSPACK=	${WRKSRC}/rspack/Cargo.toml
@@ -99,23 +89,6 @@ CARGO_BUILD=	no
 CARGO_INSTALL=	no
 CARGO_TEST=	no
 
-CFLAGS+=	-Wno-error=implicit-function-declaration
-
-BINARY_ALIAS=	python=${PYTHON_CMD}
-
-USE_CXXSTD=	c++20
-USE_XORG=	x11 xcb xcomposite xcursor xdamage xext xfixes xi xkbfile \
-		xrandr xrender xscrnsaver xtst
-USE_GL=		gbm gl glesv2
-USE_GNOME=	atk cairo pango gdkpixbuf gtk30 libxml2 libxslt
-
-SHEBANG_REGEX=	./(extensions|node_modules|resources|scripts|src)/.*(\.(pl|py|sh)|makeBlacker|makeFF)$$
-PATHFIX_FILES=	src/vs/workbench/contrib/debug/node/terminals.ts
-
-DATADIR=	${PREFIX}/share/code-oss
-TMPDIR=		${WRKDIR}
-BUNDLE_LIBS=	yes
-
 MAKE_ENV+=	BUILD_SOURCEVERSION=${SOURCE_COMMIT_HASH} \
 		VSCODE_QUALITY=stable \
 		NODE_OPTIONS="--max-old-space-size=8192"
@@ -125,15 +98,23 @@ MAKE_ENV+=	PYTHONDONTWRITEBYTECODE=1
 TEST_ENV=	${MAKE_ENV:C/TMPDIR=.*//} \
 		VSCODE_SKIP_PRELAUNCH=1
 
+CFLAGS+=	-Wno-error=implicit-function-declaration
+
+DATADIR=	${PREFIX}/share/code-oss
+TMPDIR=		${WRKDIR}
+BINARY_ALIAS=	python=${PYTHON_CMD}
+BUNDLE_LIBS=	yes
+# These patches are only required for vscode editor, not for REH
+EXTRA_PATCHES=	${PATCHDIR}/patches-os-proxy-resolver
+
+NPM_FETCH_CMD=		${NPM_CMDNAME} install
+NPM_FETCH_FLAGS+=	--os freebsd \
+			--os linux
+MAKE_ENV+=		pnpm_config_store_dir=${WRKDIR}/node-modules-cache/${NPM_MODULE_CACHE}
 UPSTREAM_ELECTRON_VER=	${ELECTRON_VER}
 
 .include "Makefile.version"
 .include <bsd.port.pre.mk>
-
-# These patches are only required for vscode editor, not for REH
-EXTRA_PATCHES=	${PATCHDIR}/patches-os-proxy-resolver-${ARCH}
-
-PLIST=		${.CURDIR}/pkg-plist.${ARCH}
 
 NODEJS_DIR=	${.CURDIR:H:H}/www/node${NODEJS_VERSION}
 .include "${NODEJS_DIR}/Makefile.version"
@@ -150,53 +131,38 @@ pre-everything::
 post-extract:
 	@${CP} ${WRKSRC}/build/.moduleignore.linux \
 		${WRKSRC}/build/.moduleignore.freebsd
-	@${ECHO_MSG} "===>  Installing node modules in ${WRKSRC}"
-	@${TAR} -xzf ${WRKDIR}/vscode-.-node-modules${EXTRACT_SUFX} -C ${WRKSRC}
-	@for dir in `node --input-type=module -e "console.log(JSON.stringify((await import('${WRKSRC}/build/npm/dirs.ts')).dirs))" | jq -r '.[]'`; do \
-		if [ -f ${WRKDIR}/vscode-`echo $${dir} | tr _ __ | tr / _`-node-modules${EXTRACT_SUFX} ]; then \
-			${ECHO_MSG} "===>  Installing node modules in ${WRKSRC}/$${dir}"; \
-			${TAR} -xzf ${WRKDIR}/vscode-`echo $${dir} | tr _ __ | tr / _`-node-modules${EXTRACT_SUFX} -C ${WRKSRC}/$${dir}; \
-		fi; \
-	done
-	# extract contents of @github/copilot-linux-x64
+	# copy contents of @github/copilot-linux-x64
 	# note: this is just for the build process to pass. GitHub Copilot CLI
 	# is a closed-source product and not usable on FreeBSD without Linuxulator
-	@${MKDIR} ${WRKSRC}/extensions/copilot/node_modules/@github/copilot-freebsd-${ELECTRON_ARCH}
-	@(DISTFILE_copilot=${DISTDIR}/${DIST_SUBDIR}/copilot-linux-${ELECTRON_ARCH}-${COPILOT_CLI_VERSION}.tgz; \
-	${TAR} -xzf $${DISTFILE_copilot} \
-		--strip-components 1 -C ${WRKSRC}/extensions/copilot/node_modules/@github/copilot-freebsd-${ELECTRON_ARCH})
-	# extract contents of @github/copilot-sdk-linux-x64
+	${CP} -R ${WRKSRC}/extensions/copilot/node_modules/@github/copilot-linux-${ELECTRON_ARCH} \
+		${WRKSRC}/extensions/copilot/node_modules/@github/copilot-freebsd-${ELECTRON_ARCH}
+	# copy contents of @github/copilot-sdk-linux-x64
 	# note: again, this is just for the build process to pass
-	@${MKDIR} ${WRKSRC}/node_modules/@github/copilot-sdk-linux-${ELECTRON_ARCH}
-	@(DISTFILE_copilot_sdk=${DISTDIR}/${DIST_SUBDIR}/copilot-sdk-linux-${ELECTRON_ARCH}-${COPILOT_SDK_VERSION}.tgz; \
-	${TAR} -xzf $${DISTFILE_copilot_sdk} \
-		--strip-components 1 -C ${WRKSRC}/node_modules/@github/copilot-sdk-linux-${ELECTRON_ARCH})
+	${CP} -R ${WRKSRC}/node_modules/@github/copilot-sdk-linux-${ELECTRON_ARCH} \
+		${WRKSRC}/node_modules/@github/copilot-sdk-freebsd-${ELECTRON_ARCH}
 	# extract contents of @vscode/os-proxy-resolver-linux-x64-gnu into
 	# linux and freebsd directories
-	@${MKDIR} ${WRKSRC}/node_modules/@vscode/os-proxy-resolver-linux-${ELECTRON_ARCH}-gnu \
+	${CP} -R ${WRKSRC}/node_modules/@vscode/os-proxy-resolver-linux-${ELECTRON_ARCH}-gnu \
 		${WRKSRC}/node_modules/@vscode/os-proxy-resolver-freebsd-${ELECTRON_ARCH}
-	@(DISTFILE_os_proxy_resolver=${DISTDIR}/${DIST_SUBDIR}/os-proxy-resolver-linux-${ELECTRON_ARCH}-gnu-${OS_PROXY_RESOLVER_VERSION}.tgz; \
-	${TAR} -xzf $${DISTFILE_os_proxy_resolver} \
-		--strip-components 1 -C ${WRKSRC}/node_modules/@vscode/os-proxy-resolver-linux-${ELECTRON_ARCH}-gnu; \
-	${TAR} -xzf $${DISTFILE_os_proxy_resolver} \
-		--strip-components 1 -C ${WRKSRC}/node_modules/@vscode/os-proxy-resolver-freebsd-${ELECTRON_ARCH})
 
 post-patch:
-	@${REINPLACE_CMD} -E 's|^(target=").*(")$$|\1${ELECTRON_VER}\2|' \
-		${WRKSRC}/.npmrc
+	@jq -r '.nativeBuild.target="${ELECTRON_VER}"' ${WRKSRC}/package.json > \
+		${WRKSRC}/package.json.jq && \
+		${MV} ${WRKSRC}/package.json.jq ${WRKSRC}/package.json
 	@${REINPLACE_CMD} -E "/const electronVersion/s/'[0-9]+\.[0-9]+\.[0-9]+'/'${ELECTRON_VER}'/" \
 		${WRKSRC}/build/lib/electron.ts
-	@${REINPLACE_CMD} -E 's|^(target=").*(")$$|\1${NODEJS_PORTVERSION}\2|' \
-		${WRKSRC}/remote/.npmrc
+	@jq -r '.nativeBuild.target="${NODEJS_PORTVERSION}"' ${WRKSRC}/remote/package.json > \
+		${WRKSRC}/remote/package.json.jq && \
+		${MV} ${WRKSRC}/remote/package.json.jq ${WRKSRC}/remote/package.json
 	@${REINPLACE_CMD} -e 's/%%DISTVERSION%%/${DISTVERSION}/g' \
 		${WRKSRC}/build/gulpfile.reh.ts \
 		${WRKSRC}/build/gulpfile.vscode.ts
 	@(cd ${WRKSRC} && \
-		${FIND} -E . -type f -iregex '${SHEBANG_REGEX}' \
-			-exec ${SED} -i '' -e "s|/usr/bin/pgrep|/bin/pgrep|g" {} ';')
+	${FIND} -E . -type f -iregex '${SHEBANG_REGEX}' \
+		-exec ${SED} -i '' -e "s|/usr/bin/pgrep|/bin/pgrep|g" {} +)
 	@(cd ${WRKSRC} && \
-		${FIND} ${PATHFIX_FILES} -type f \
-			-exec ${SED} -i '' -e "s|/usr/bin/pgrep|/bin/pgrep|g" {} ';')
+	${FIND} ${PATHFIX_FILES} -type f \
+		-exec ${SED} -i '' -e "s|/usr/bin/pgrep|/bin/pgrep|g" {} +)
 	@${REINPLACE_CMD} -e 's/@@NAME_LONG@@/Code - OSS/; \
 			s/@@NAME_SHORT@@/Code - OSS/; \
 			s/@@PRODNAME@@/Code - OSS/; \
@@ -214,9 +180,9 @@ post-patch:
 		${WRKSRC}/resources/linux/code.desktop \
 		${WRKSRC}/resources/linux/code-url-handler.desktop
 	@(cd ${WRKDIR}/builtInExtensions && \
-		${FIND} . -type f -name '*.sh' \
-			-exec ${SED} -i '' -e "s|/usr/bin/pgrep|/bin/pgrep|g" \
-					-e 's|#!/bin/bash|#!${LOCALBASE}/bin/bash|' {} ';')
+	${FIND} . -type f -name '*.sh' \
+		-exec ${SED} -i '' -e "s|/usr/bin/pgrep|/bin/pgrep|g" \
+				-e 's|#!/bin/bash|#!${LOCALBASE}/bin/bash|' {} +)
 	@${SETENV} FILESDIR=${FILESDIR} \
 		${SH} ${FILESDIR}/update-product-json.sh ${WRKSRC}
 
@@ -244,69 +210,54 @@ pre-build:
 	@${MKDIR} ${WRKSRC}/.build/typings
 	${CP} ${LOCALBASE}/share/electron${ELECTRON_VER_MAJOR}/gen/electron/tsc/typings/electron.d.ts \
 		${WRKSRC}/.build/typings
-# rebuild native node modules in top directory
-	@for subdir in `${FIND} ${WRKSRC}/node_modules -type f -name binding.gyp -exec ${DIRNAME} {} ';'`; do \
-		${ECHO_MSG} "===>   Rebuilding native modules in $${subdir}"; \
-		cd $${subdir} && \
-		npm_env="npm_config_runtime=electron \
-			npm_config_target=${ELECTRON_VER} \
-			npm_config_nodedir=${LOCALBASE}/share/electron${ELECTRON_VER_MAJOR}/node_headers" && \
-		${SETENV} ${MAKE_ENV} $${npm_env} \
-			npm --userconfig=${WRKSRC}/.npmrc run install --if-present && \
-		${SETENV} ${MAKE_ENV} $${npm_env} \
-			node-gyp --userconfig=${WRKSRC}/.npmrc \
-			--jobs ${MAKE_JOBS_NUMBER} rebuild; \
-	done
-# rebuild native node modules in subdirectories
-	@for dir in `node --input-type=module -e "console.log(JSON.stringify((await import('${WRKSRC}/build/npm/dirs.ts')).dirs))" | jq -r '.[]'`; do \
-		for subdir in `${FIND} ${WRKSRC}/$${dir}/node_modules -type f -name binding.gyp -exec ${DIRNAME} {} ';' 2> /dev/null`; do \
-			${ECHO_MSG} "===>   Rebuilding native modules in $${subdir}"; \
-			if [ "`${ECHO_CMD} $${subdir} | ${GREP} /build/`" ]; then \
-				cd $${subdir} && \
+# rebuild native node modules
+	@for dir in `node --input-type=module -e "console.log(JSON.stringify((await import('${WRKSRC}/build/npm/dirs.ts')).dirs))" | jq -r '.[]' | ${SED} -e 's/^$$/./'`; do \
+		if [ "$${dir}" = "." ]; then \
+			subdir=""; \
+		else \
+			subdir="$${dir}/"; \
+		fi; \
+		for moddir in `${FIND} ${WRKSRC}/$${subdir}node_modules -type f -name binding.gyp -exec ${DIRNAME} {} ';' 2> /dev/null`; do \
+			${ECHO_MSG} "===>   Rebuilding native modules in $${moddir}"; \
+			if ${ECHO_CMD} $${moddir} | ${GREP} -Eqe '/build/(.+/)*node_modules/' || \
+				${ECHO_CMD} $${moddir} | ${GREP} -Eqe '/remote/(.+/)*node_modules/'; then \
+				cd $${moddir} && \
 				npm_env="npm_config_runtime=node \
 					npm_config_target=${NODEJS_PORTVERSION} \
 					npm_config_nodedir=${LOCALBASE}" && \
 				${SETENV} ${MAKE_ENV} $${npm_env} \
-					npm --userconfig=${WRKSRC}/build/.npmrc run install --if-present && \
+					npm run --if-present install && \
 				${SETENV} ${MAKE_ENV} $${npm_env} \
-					node-gyp --userconfig=${WRKSRC}/build/.npmrc \
-					--jobs ${MAKE_JOBS_NUMBER} rebuild; \
-			elif [ "`${ECHO_CMD} $${subdir} | ${GREP} /remote/`" ]; then \
-				cd $${subdir} && \
-				npm_env="npm_config_runtime=node \
-					npm_config_target=${NODEJS_PORTVERSION} \
-					npm_config_nodedir=${LOCALBASE}" && \
-				${SETENV} ${MAKE_ENV} $${npm_env} \
-					npm --userconfig=${WRKSRC}/remote/.npmrc run install --if-present && \
-				${SETENV} ${MAKE_ENV} $${npm_env} \
-					node-gyp --userconfig=${WRKSRC}/remote/.npmrc \
-					--jobs ${MAKE_JOBS_NUMBER} rebuild; \
+					npm exec node-gyp -- --jobs ${MAKE_JOBS_NUMBER} rebuild; \
 			else \
-				cd $${subdir} && \
+				cd $${moddir} && \
 				npm_env="npm_config_runtime=electron \
 					npm_config_target=${ELECTRON_VER} \
 					npm_config_nodedir=${LOCALBASE}/share/electron${ELECTRON_VER_MAJOR}/node_headers" && \
 				${SETENV} ${MAKE_ENV} $${npm_env} \
-					npm --userconfig=${WRKSRC}/.npmrc run install --if-present && \
+					npm run --if-present install && \
 				${SETENV} ${MAKE_ENV} $${npm_env} \
-					node-gyp --userconfig=${WRKSRC}/.npmrc \
-					--jobs ${MAKE_JOBS_NUMBER} rebuild; \
+					npm exec node-gyp -- --jobs ${MAKE_JOBS_NUMBER} rebuild; \
 			fi; \
 		done; \
 	done
 # copy rg binary file
-	@${MKDIR} ${WRKSRC}/node_modules/@vscode/ripgrep/bin \
+	@${MKDIR} ${WRKSRC}/node_modules/@github/copilot-sdk-freebsd-${ELECTRON_ARCH}/ripgrep/bin/freebsd-${ELECTRON_ARCH} \
+		${WRKSRC}/node_modules/@vscode/ripgrep/bin \
 		${WRKSRC}/node_modules/@vscode/ripgrep-universal/bin/freebsd-${ELECTRON_ARCH} \
 		${WRKSRC}/build/node_modules/@vscode/ripgrep-universal/bin/freebsd-${ELECTRON_ARCH} \
 		${WRKSRC}/remote/node_modules/@vscode/ripgrep-universal/bin/freebsd-${ELECTRON_ARCH} \
 		${WRKSRC}/extensions/copilot/node_modules/@github/copilot-freebsd-${ELECTRON_ARCH}/ripgrep/bin/freebsd-${ELECTRON_ARCH}
+	${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/node_modules/@github/copilot-sdk-freebsd-${ELECTRON_ARCH}/ripgrep/bin/freebsd-${ELECTRON_ARCH}
 	${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/node_modules/@vscode/ripgrep/bin
 	${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/node_modules/@vscode/ripgrep-universal/bin/freebsd-${ELECTRON_ARCH}
 	${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/build/node_modules/@vscode/ripgrep-universal/bin/freebsd-${ELECTRON_ARCH}
 	${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/remote/node_modules/@vscode/ripgrep-universal/bin/freebsd-${ELECTRON_ARCH}
 	${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/extensions/copilot/node_modules/@github/copilot-freebsd-${ELECTRON_ARCH}/ripgrep/bin/freebsd-${ELECTRON_ARCH}
 # copy tgrep binary file
-	@${MKDIR} ${WRKSRC}/extensions/copilot/node_modules/@github/copilot-freebsd-${ELECTRON_ARCH}/tgrep/bin/freebsd-${ELECTRON_ARCH}
+	@${MKDIR} ${WRKSRC}/node_modules/@github/copilot-sdk-freebsd-${ELECTRON_ARCH}/tgrep/bin/freebsd-${ELECTRON_ARCH} \
+		${WRKSRC}/extensions/copilot/node_modules/@github/copilot-freebsd-${ELECTRON_ARCH}/tgrep/bin/freebsd-${ELECTRON_ARCH}
+	${CP} ${LOCALBASE}/bin/tgrep ${WRKSRC}/node_modules/@github/copilot-sdk-freebsd-${ELECTRON_ARCH}/tgrep/bin/freebsd-${ELECTRON_ARCH}
 	${CP} ${LOCALBASE}/bin/tgrep ${WRKSRC}/extensions/copilot/node_modules/@github/copilot-freebsd-${ELECTRON_ARCH}/tgrep/bin/freebsd-${ELECTRON_ARCH}
 
 do-build:
@@ -321,13 +272,17 @@ do-build:
 	@${CHMOD} +x ${WRKDIR}/.bin/npm
 # build and package vscode
 	cd ${WRKSRC} && \
-	npm_env="npm_config_runtime=electron \
-		npm_config_target=${ELECTRON_VER} \
-		npm_config_nodedir=${LOCALBASE}/share/electron${ELECTRON_VER_MAJOR}/node_headers" && \
-	${SETENV} ${MAKE_ENV} $${npm_env} \
-		npm --userconfig=${WRKSRC}/.npmrc run compile && \
-	${SETENV} ${MAKE_ENV} $${npm_env} \
-		npm --userconfig=${WRKSRC}/.npmrc run gulp vscode-linux-${ELECTRON_ARCH}-min
+	pnpm_env="pnpm_config_runtime=electron \
+		pnpm_config_target=${ELECTRON_VER} \
+		pnpm_config_nodedir=${LOCALBASE}/share/electron${ELECTRON_VER_MAJOR}/node_headers" && \
+	${SETENV} ${MAKE_ENV} $${pnpm_env} \
+		pnpm run compile && \
+	${SETENV} ${MAKE_ENV} $${pnpm_env} \
+		pnpm run gulp vscode-linux-${ELECTRON_ARCH}-min
+# manually copy copilot-sdk-freebsd-x64 module to app resources directory
+	@${MKDIR} ${WRKDIR}/VSCode-linux-${ELECTRON_ARCH}/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-freebsd-${ELECTRON_ARCH}
+	${TAR} -cf - -C ${WRKSRC}/node_modules/@github/copilot-sdk-freebsd-${ELECTRON_ARCH} . | \
+		${TAR} -xf - -C ${WRKDIR}/VSCode-linux-${ELECTRON_ARCH}/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-freebsd-${ELECTRON_ARCH}
 # move marketplace extensions
 	@${MV} ${WRKDIR}/builtInExtensions/* ${WRKDIR}/VSCode-linux-${ELECTRON_ARCH}/resources/app/extensions
 
@@ -359,6 +314,8 @@ do-install:
 .endfor
 	@${RM} -r ${STAGEDIR}${DATADIR}/gen
 	@${RM} -r ${STAGEDIR}${DATADIR}/node_headers
+	@${RM} -r ${STAGEDIR}${DATADIR}/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-${ELECTRON_ARCH}
+	@${RM} -r ${STAGEDIR}${DATADIR}/resources/app/node_modules.asar.unpacked/@vscode/os-proxy-resolver-linux-${ELECTRON_ARCH}-gnu
 	@${RM} -r ${STAGEDIR}${DATADIR}/resources/completions
 	${RLN} ${STAGEDIR}${DATADIR}/bin/code-oss ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${FILESDIR}/vscode-wrapper.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
@@ -380,35 +337,32 @@ do-test:
 	${SETENV} ${TEST_ENV} DBUS_SESSION_BUS_ADDRESS=$${DBUS_SESSION_BUS_ADDRESS} \
 		npm run smoketest
 
-### targets for port maintainer(s)
-patch-package-json: extract
-# add node module for signature verification of extensions from Open VSX Registry
-.for patch in patch-package.json patch-remote_package.json
-	@${PATCH} -s -p0 -d ${WRKSRC} < ${PATCHDIR}/${patch}
-.endfor
+# targets for port maintainer(s)
+update-package-jsons:
+	@${RM} -r ${WRKDIR}
+	@${MKDIR} ${WRKDIR}
+	cd ${WRKDIR} && \
+	${SETENV} ${EXTRACT_ENV} \
+	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
+		${DISTDIR}/${DIST_SUBDIR}/${DISTFILE_DEFAULT} ${EXTRACT_AFTER_ARGS}
+	${SETENV} ${MAKE_ENV} corepack pnpm add \
+		--dir ${WRKSRC} --save-prod --lockfile-only --workspace-root \
+		node-ovsx-sign
+	${SETENV} ${MAKE_ENV} corepack pnpm add \
+		--dir ${WRKSRC}/remote --save-prod --lockfile-only \
+		node-ovsx-sign
 
-make-node-modules-archive: extract patch-package-json
-	@${ECHO_MSG} "===>  Fetching and installing node modules in ${WRKSRC}"
-	@cd ${WRKSRC} && \
-	${SETENV} ${MAKE_ENV} npm install \
-		--ignore-scripts --no-progress --no-audit --no-fund --no-update-notifier && \
-	${TAR} -czf ${WRKDIR}/vscode-.-node-modules${EXTRACT_SUFX} node_modules
-	@for dir in `node --input-type=module -e "console.log(JSON.stringify((await import('${WRKSRC}/build/npm/dirs.ts')).dirs))" | jq -r '.[]'`; do \
-		cd ${WRKSRC}/$${dir} && \
-		${ECHO_MSG} "===>  Fetching and installing node modules in ${WRKSRC}/$${dir}" && \
-		${SETENV} ${MAKE_ENV} npm install \
-			--ignore-scripts --no-progress --no-audit --no-fund --no-update-notifier && \
-		if [ -d node_modules ]; then \
-			${TAR} -czf ${WRKDIR}/vscode-`echo $${dir} | tr _ __ | tr / _`-node-modules${EXTRACT_SUFX} node_modules; \
-		fi; \
-	done
-	@cd ${WRKDIR} && \
-	${TAR} -czf vscode-node-modules-${DISTVERSION}-${ELECTRON_ARCH}${EXTRACT_SUFX} vscode-*-node-modules.tar.gz
+copy-package-jsons:
+	@${RM} -r ${PKGJSONSDIR}
+	@${MKDIR} ${PKGJSONSDIR}
+	cd ${WRKSRC} && \
+	${TAR} -cf - `${FIND} . -type f \( -name package.json -o -name pnpm-lock.yaml -o -name pnpm-workspace.yaml -o -name .pnpmfile.mjs \) -print` ./build/npm/patches ./build/npm/pnpm | \
+		${TAR} -xf - -C ${PKGJSONSDIR}
 
 make-marketplace-exts-archive: extract
 	@${RM} -r ${WRKSRC}/.build/builtInExtensions
 	@cd ${WRKSRC} && \
-	${SETENV} ${MAKE_ENV} npm run download-builtin-extensions
+	${SETENV} ${MAKE_ENV} pnpm run download-builtin-extensions
 	@${TAR} -czf ${WRKDIR}/vscode-marketplace-exts-${DISTVERSION}${EXTRACT_SUFX} -C ${WRKSRC}/.build builtInExtensions
 
 cargo-crates-from-multiple-lockfiles: extract

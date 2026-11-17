@@ -20,7 +20,6 @@ Supported combination of local and remote hosts is as follows:
 Local            Remote
 ---------------  ---------------
 FreeBSD amd64    FreeBSD amd64
-FreeBSD aarch64  FreeBSD aarch64
                  Linux x86_64
                  Linux arm64
 
