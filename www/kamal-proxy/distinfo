@@ -1,5 +1,5 @@
-TIMESTAMP = 1793587116
-SHA256 (go/www_kamal-proxy/kamal-proxy-v0.10.2/v0.10.2.mod) = 906fec38582efddc0df39a27fa44a279c375724e1dad70126bad5beb4932a5c9
-SIZE (go/www_kamal-proxy/kamal-proxy-v0.10.2/v0.10.2.mod) = 965
-SHA256 (go/www_kamal-proxy/kamal-proxy-v0.10.2/v0.10.2.zip) = b129da824f18cd47ec1ea727f3172a1b118727ab755dce15d0b2730588ea9a67
-SIZE (go/www_kamal-proxy/kamal-proxy-v0.10.2/v0.10.2.zip) = 137279
+TIMESTAMP = 1794888878
+SHA256 (go/www_kamal-proxy/kamal-proxy-v0.10.3/v0.10.3.mod) = 66a832cd08982ec160a41667f1285503541617abdfea61b11721319b64f56999
+SIZE (go/www_kamal-proxy/kamal-proxy-v0.10.3/v0.10.3.mod) = 1012
+SHA256 (go/www_kamal-proxy/kamal-proxy-v0.10.3/v0.10.3.zip) = ceed311fae96daeae9f3e725d433020b33089e2dc87c2c0a5e80bbcd3907e66c
+SIZE (go/www_kamal-proxy/kamal-proxy-v0.10.3/v0.10.3.zip) = 137378
