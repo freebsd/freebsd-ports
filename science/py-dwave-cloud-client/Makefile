@@ -1,5 +1,5 @@
 PORTNAME=	dwave-cloud-client
-DISTVERSION=	0.14.8
+DISTVERSION=	0.14.9
 CATEGORIES=	science python www # quantum-computing
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,8 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}authlib>=1.2:security/py-authlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click>=8.2:devel/py-click@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}python-dateutil>=2.7:devel/py-python-dateutil@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}diskcache>=5.2.1:devel/py-diskcache@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}diskcache-community>=5.8.5:devel/py-diskcache-community@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}homebase>=1.0:devel/py-homebase@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}http-sf>=1.2.1:www/py-http-sf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}importlib-metadata>=5.0.0:devel/py-importlib-metadata@${PY_FLAVOR} \
@@ -50,6 +49,6 @@ TEST_ENV=	${MAKE_ENV} \
 		XDG_CACHE_HOME=${WRKDIR}/.cache \
 		XDG_CONFIG_HOME=${WRKDIR}/.config
 
-# tests as of 0.14.8: 1721 tests, OK (skipped=323) in 73.041s
+# tests as of 0.14.9: 1774 tests, OK (skipped=323) in 14.888s
 
 .include <bsd.port.mk>
