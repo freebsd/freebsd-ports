@@ -1,7 +1,7 @@
 PORTNAME=	awslim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.1
-PORTREVISION=	4
+DISTVERSION=	0.9.0
+PORTREVISION=	0
 CATEGORIES=	sysutils
 
 MAINTAINER=	nork@FreeBSD.org
@@ -21,9 +21,8 @@ USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	fujiwara
 GH_TUPLE=	alecthomas:kong:v1.16.1:alecthomas_kong/vendor/github.com/alecthomas/kong \
-		aws:aws-sdk-go-v2:v1.45.1:aws_aws_sdk_go_v2/vendor/github.com/aws/aws-sdk-go-v2 \
-		aws:smithy-go:v1.28.1:aws_smithy_go/vendor/github.com/aws/smithy-go \
-		yaml:go-yaml:v2.4.4:yaml_go_yaml/vendor/go.yaml.in/yaml/v2 \
+		aws:aws-sdk-go-v2:v1.47.4:aws_aws_sdk_go_v2/vendor/github.com/aws/aws-sdk-go-v2 \
+		aws:smithy-go:v1.28.9:aws_smithy_go/vendor/github.com/aws/smithy-go \
 		goccy:go-yaml:v1.19.2:goccy_go_yaml/vendor/github.com/goccy/go-yaml \
 		golang:crypto:v0.55.0:golang_crypto/vendor/golang.org/x/crypto \
 		golang:sys:v0.47.0:golang_sys/vendor/golang.org/x/sys \
@@ -31,7 +30,8 @@ GH_TUPLE=	alecthomas:kong:v1.16.1:alecthomas_kong/vendor/github.com/alecthomas/k
 		google:go-jsonnet:v0.22.0:google_go_jsonnet/vendor/github.com/google/go-jsonnet \
 		jmespath:go-jmespath:v0.4.0:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
 		kubernetes-sigs:yaml:v1.6.0:kubernetes_sigs_yaml/vendor/sigs.k8s.io/yaml \
-		mattn:go-shellwords:v1.0.14:mattn_go_shellwords/vendor/github.com/mattn/go-shellwords
+		mattn:go-shellwords:v1.0.16:mattn_go_shellwords/vendor/github.com/mattn/go-shellwords \
+		yaml:go-yaml:v2.4.4:yaml_go_yaml/vendor/go.yaml.in/yaml/v2
 
 GO_ENV+=	GO_CMD="${GO_CMD}"
 GO_TARGET=	./cmd/awslim/main.go:awslim
