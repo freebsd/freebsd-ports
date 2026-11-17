@@ -1,0 +1,9 @@
+--- src/CMakeLists.txt.orig	2018-03-25 21:49:15 UTC
++++ src/CMakeLists.txt
+@@ -233,5 +233,5 @@ install(CODE "
+         set(BU_CHMOD_BUNDLE_ITEMS on)
+     endif()
+     fixup_bundle(\"${APPS}\" \"${additionalLib}\" \"${libSearchDirs}\")
+-    " DESTINATION . COMPONENT App
++    " COMPONENT App
+ )
