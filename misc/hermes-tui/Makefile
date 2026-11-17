@@ -30,11 +30,15 @@ PLIST_FILES=	${HERMES_TUIDIR:S,^${PREFIX}/,,}/entry.js \
 
 # Upstream ships no prebuilt TUI.  The distfile is the esbuild bundle of
 # ui-tui/: pure JS (node builtins only), so NO_ARCH-safe.  Regenerate it on
-# every bump from the hermes-agent source tarball (amd64, node 24+, npm 11.17+):
+# every bump from the hermes-agent source tarball (amd64, node 24+; the
+# repo is a pnpm workspace since 0.23.2, pnpm version pinned in pm/lock.json):
 #
 #   tar xzf ${DISTDIR}/NousResearch-hermes-agent-${PORTVERSION}-v${PORTVERSION}_GH0.tar.gz
 #   cd hermes-agent-${PORTVERSION}
-#   npm ci --ignore-scripts --no-audit --no-fund --engine-strict=false -w ui-tui
+#   npm install --prefix /tmp/pnpm12 pnpm@12.15.0
+#   export PATH=/tmp/pnpm12/node_modules/.bin:$PATH
+#   pnpm_config_engine_strict=false \
+#       node scripts/build/node-deps.mjs --source . --workspace ui-tui
 #   node scripts/build/tui.mjs --source . --out /tmp/tui
 #   mkdir /tmp/${DISTNAME}
 #   cp -a /tmp/tui/dist/. /tmp/tui/package.json /tmp/${DISTNAME}/
