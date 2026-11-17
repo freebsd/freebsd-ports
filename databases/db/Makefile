@@ -1,5 +1,5 @@
 PORTNAME=	db
-PORTVERSION=	1.27
+PORTVERSION=	1.28
 PORTEPOCH=	2
 CATEGORIES=	databases
 MASTER_SITES=	https://ftp.netbsd.org/pub/NetBSD/NetBSD-current/src/usr.bin/db/
