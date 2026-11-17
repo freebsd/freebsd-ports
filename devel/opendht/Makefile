@@ -1,6 +1,6 @@
 PORTNAME=	opendht
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.4.1
+DISTVERSION=	4.4.2
 CATEGORIES=	devel net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -57,7 +57,7 @@ DOCS_CMAKE_BOOL=		OPENDHT_DOCUMENTATION
 
 PORTDOCS=	*
 
-# tests as of 4.4.1: 91% tests passed, 1 tests failed out of 11 (test_dhtrunner testListen fails on loopback UDP
-# put loss, same as with 4.4.0 on this host; test_http and test_dhtproxy are disabled, see CMAKE_TESTING_ON)
+# tests as of 4.4.2: 92% tests passed, 1 tests failed out of 12 (test_dhtrunner testListen and testListenLotOfBytes fail on loopback UDP
+# put loss, same as with 4.4.1 on this host; test_http and test_dhtproxy are disabled, see CMAKE_TESTING_ON)
 
 .include <bsd.port.mk>
