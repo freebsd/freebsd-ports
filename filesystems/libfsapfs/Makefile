@@ -10,7 +10,7 @@ COMMENT=	Library and tools to access the Apple File System (APFS)
 WWW=		https://github.com/libyal/libfsapfs
 
 LICENSE=	LGPL3+
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 LIB_DEPENDS=	libcaes.so:security/libcaes
 BUILD_DEPENDS=	${PY_SETUPTOOLS}

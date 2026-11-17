@@ -10,7 +10,7 @@ COMMENT=	Library for support of the Expert Witness Compression Format (EWF)
 WWW=		https://github.com/libyal/libewf-legacy
 
 LICENSE=	LGPL3+
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 LIB_DEPENDS=	libsmdev.so:devel/libsmdev \
 		libsmraw.so:devel/libsmraw \

@@ -10,7 +10,7 @@ COMMENT=	Library to access the Windows Shell Item format
 WWW=		https://github.com/libyal/libfwsi
 
 LICENSE=	LGPL3+
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS}
 

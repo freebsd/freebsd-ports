@@ -9,7 +9,7 @@ COMMENT=	Library to access to storage media devices
 WWW=		https://github.com/libyal/libsmdev
 
 LICENSE=	LGPL3+
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS}
 

@@ -9,7 +9,7 @@ COMMENT=	Library and tooling to access the Windows XML Event Log (EVTX) format
 WWW=		https://github.com/libyal/libevtx
 
 LICENSE=	LGPL3+
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 LIB_DEPENDS=	libfwnt.so:devel/libfwnt \
 		libregf.so:devel/libregf

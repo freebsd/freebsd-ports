@@ -10,7 +10,7 @@ COMMENT=	Library for Windows NT data types
 WWW=		https://github.com/libyal/libfwnt
 
 LICENSE=	LGPL3+
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS}
 

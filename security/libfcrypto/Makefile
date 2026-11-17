@@ -9,7 +9,7 @@ COMMENT=	Library for encryption formats
 WWW=		https://github.com/libyal/libfcrypto
 
 LICENSE=	LGPL3+
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS}
 

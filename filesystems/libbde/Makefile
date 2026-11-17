@@ -9,7 +9,7 @@ COMMENT=	Library and tools to access the BitLocker Drive Encryption volumes
 WWW=		https://github.com/libyal/libbde
 
 LICENSE=	LGPL3+
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 LIB_DEPENDS=	libcaes.so:security/libcaes
 BUILD_DEPENDS=	${PY_SETUPTOOLS}

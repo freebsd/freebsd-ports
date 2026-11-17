@@ -9,7 +9,7 @@ COMMENT=	Library and tools to support the Windows NT Registry File format
 WWW=		https://github.com/libyal/libregf
 
 LICENSE=	LGPL3+
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 LIB_DEPENDS=	libfwnt.so:devel/libfwnt
 BUILD_DEPENDS=	${PY_SETUPTOOLS}

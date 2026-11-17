@@ -9,7 +9,7 @@ COMMENT=	Library and tooling to access the QEMU Copy-On-Write image format
 WWW=		https://github.com/libyal/libqcow
 
 LICENSE=	LGPL3+
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 LIB_DEPENDS=	libcaes.so:security/libcaes
 BUILD_DEPENDS=	${PY_SETUPTOOLS}

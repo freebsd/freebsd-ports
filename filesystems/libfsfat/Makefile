@@ -10,7 +10,7 @@ COMMENT=	Library and tools to access the File Allocation Table File System
 WWW=		https://github.com/libyal/libfsfat
 
 LICENSE=	LGPL3+
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS}
 

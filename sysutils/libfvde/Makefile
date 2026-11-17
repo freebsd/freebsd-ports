@@ -10,7 +10,7 @@ COMMENT=	Library and tools for reading FileVault (FVDE) encrypted volumes
 WWW=		https://github.com/libyal/libfvde
 
 LICENSE=	LGPL3+
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 LIB_DEPENDS=	libcaes.so:security/libcaes
 BUILD_DEPENDS=	${PY_SETUPTOOLS}

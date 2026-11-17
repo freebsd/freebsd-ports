@@ -9,7 +9,7 @@ COMMENT=	Library to support cross-platform AES encryption
 WWW=		https://github.com/libyal/libcaes
 
 LICENSE=	LGPL3+
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS}
 

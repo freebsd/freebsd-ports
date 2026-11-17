@@ -10,7 +10,7 @@ COMMENT=	Library and tools to access the SGI X File System
 WWW=		https://github.com/libyal/libfsxfs
 
 LICENSE=	LGPL3+
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS}
 

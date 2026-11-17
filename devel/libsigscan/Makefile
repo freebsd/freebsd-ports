@@ -10,7 +10,7 @@ COMMENT=	Library for binary signature scanning
 WWW=		https://github.com/libyal/libsigscan
 
 LICENSE=	LGPL3+
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS}
 

@@ -10,7 +10,7 @@ COMMENT=	Library and tools to access the Virtual Hard Disk image format
 WWW=		https://github.com/libyal/libvhdi
 
 LICENSE=	LGPL3+
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS}
 

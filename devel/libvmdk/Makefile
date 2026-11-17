@@ -10,7 +10,7 @@ COMMENT=	Library and tools to access the VMware Virtual Disk (VMDK) format
 WWW=		https://github.com/libyal/libvmdk
 
 LICENSE=	LGPL3+
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS}
 

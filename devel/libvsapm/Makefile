@@ -10,7 +10,7 @@ COMMENT=	Library and tools to access the APM volume system format
 WWW=		https://github.com/libyal/libvsapm
 
 LICENSE=	LGPL3+
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS}
 

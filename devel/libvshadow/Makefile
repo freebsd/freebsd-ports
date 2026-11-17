@@ -10,7 +10,7 @@ COMMENT=	Library to support the Volume Service Snapshot (VSS) format
 WWW=		https://github.com/libyal/libvshadow
 
 LICENSE=	LGPL3
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS}
 

@@ -9,7 +9,7 @@ COMMENT=	Library and tools to access the Windows 9x/Me Registry File format
 WWW=		https://github.com/libyal/libcreg
 
 LICENSE=	LGPL3+
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS}
 

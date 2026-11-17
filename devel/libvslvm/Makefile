@@ -10,7 +10,7 @@ COMMENT=	Library and tools to access the LVM volume system format
 WWW=		https://github.com/libyal/libvslvm
 
 LICENSE=	LGPL3+
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS}
 

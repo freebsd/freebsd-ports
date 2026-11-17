@@ -9,7 +9,7 @@ COMMENT=	Library and tools to access the MSIE index.dat files
 WWW=		https://github.com/libyal/libmsiecf
 
 LICENSE=	LGPL3+
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS}
 

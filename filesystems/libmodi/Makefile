@@ -10,7 +10,7 @@ COMMENT=	Library and tools to access the Mac OS disk image formats
 WWW=		https://github.com/libyal/libmodi
 
 LICENSE=	LGPL3+
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 LIB_DEPENDS=	libcaes.so:security/libcaes
 BUILD_DEPENDS=	${PY_SETUPTOOLS}

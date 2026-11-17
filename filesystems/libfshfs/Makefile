@@ -10,7 +10,7 @@ COMMENT=	Library and tools to access the Mac OS Hierarchical File System (HFS)
 WWW=		https://github.com/libyal/libfshfs
 
 LICENSE=	LGPL3+
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS}
 

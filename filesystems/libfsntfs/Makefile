@@ -10,7 +10,7 @@ COMMENT=	Library and tools to access the New Technology File System (NTFS)
 WWW=		https://github.com/libyal/libfsntfs
 
 LICENSE=	LGPL3+
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 LIB_DEPENDS=	libfwnt.so:devel/libfwnt
 BUILD_DEPENDS=	${PY_SETUPTOOLS}

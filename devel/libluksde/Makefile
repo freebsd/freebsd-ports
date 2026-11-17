@@ -10,7 +10,7 @@ COMMENT=	Library and tools to access LUKS Disk Encryption encrypted volumes
 WWW=		https://github.com/libyal/libluksde
 
 LICENSE=	LGPL3+
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 LIB_DEPENDS=	libcaes.so:security/libcaes \
 		libfcrypto.so:security/libfcrypto

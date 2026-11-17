@@ -10,7 +10,7 @@ COMMENT=	Library and tools to access the Windows shortcut file (LNK) format
 WWW=		https://github.com/libyal/liblnk
 
 LICENSE=	LGPL3+
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 LIB_DEPENDS=	libfwsi.so:devel/libfwsi
 BUILD_DEPENDS=	${PY_SETUPTOOLS}
