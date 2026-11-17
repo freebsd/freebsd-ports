@@ -1,5 +1,5 @@
 PORTNAME=	libjwt
-PORTVERSION=	3.6.2
+PORTVERSION=	3.6.3
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/benmcollins/libjwt/releases/download/v${PORTVERSION}/
 PKGNAMESUFFIX=	3
