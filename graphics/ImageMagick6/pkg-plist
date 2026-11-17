@@ -643,7 +643,6 @@ share/man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-6/www/script/mogrify.php/index.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/script/montage.php/index.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/script/motion-picture.php/index.html
-%%PORTDOCS%%%%DOCSDIR%%-6/www/script/news.php/_88af.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/script/news.php/index.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/script/opencl.php/index.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/script/openmp.php/index.html
@@ -653,7 +652,6 @@ share/man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-6/www/script/privacy-policy.php/index.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/script/quantize.php/index.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/script/resources.php/index.html
-%%PORTDOCS%%%%DOCSDIR%%-6/www/script/search.php/index4840.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/script/security-policy.php/index.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/script/sitemap.php/index.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/script/stream.php/index.html
