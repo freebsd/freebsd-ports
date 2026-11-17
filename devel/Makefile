@@ -5006,6 +5006,7 @@
     SUBDIR += py-dirspec
     SUBDIR += py-dirty-equals
     SUBDIR += py-diskcache
+    SUBDIR += py-diskcache-community
     SUBDIR += py-distlib
     SUBDIR += py-distributed
     SUBDIR += py-dj60-django-rq

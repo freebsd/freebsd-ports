@@ -1,0 +1,22 @@
+-- Adapt to the setuptools version in the ports tree (<77): drop PEP 639 license fields
+-- Not upstreamable, only needed because of the older setuptools
+
+--- pyproject.toml.orig	2026-11-16 21:50:44 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=77"]
++requires = ["setuptools"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -8,8 +8,7 @@ requires-python = ">=3.8"
+ description = "Disk Cache - Disk and file backed persistent cache."
+ readme = "README.md"
+ requires-python = ">=3.8"
+-license = "Apache-2.0"
+-license-files = ["LICENSE"]
++license = {text = "Apache-2.0"}
+ authors = [{ name = "August V." }]
+ maintainers = [{ name = "August V." }]
+ classifiers = [
