@@ -1,13 +1,13 @@
 PORTNAME=	certificate_maker
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.10.0
+DISTVERSION=	1.10.1
 CATEGORIES=	security
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Certificate creation utility for Fulcio
 WWW=		https://www.sigstore.dev/
 
-LICENSE=	APACHE20
+LICENSE=	Apache-2.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:1.27+,modules
