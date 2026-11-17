@@ -1,5 +1,5 @@
 PORTNAME=	websocket-driver
-PORTVERSION=	0.8.2
+PORTVERSION=	0.9.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	rubygem-base64>=0:converters/rubygem-base64 \
-		rubygem-websocket-extensions>=0.1.0:www/rubygem-websocket-extensions
+		rubygem-websocket-extensions>=0.2.0:www/rubygem-websocket-extensions
 
 USES=		gem
 
