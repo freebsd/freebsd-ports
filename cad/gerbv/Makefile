@@ -8,7 +8,7 @@ MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Gerber file viewer
 WWW=		https://gerbv.github.io/
 
-LICENSE=	GPLv2+
+LICENSE=	GPL-2.0-or-later
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	bash:shells/bash
