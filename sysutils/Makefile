@@ -828,6 +828,7 @@
     SUBDIR += nix
     SUBDIR += nmdaemon
     SUBDIR += nmrpflash
+    SUBDIR += noct
     SUBDIR += node_exporter
     SUBDIR += nomad
     SUBDIR += nomad-driver-podman
