@@ -1,5 +1,6 @@
 PORTNAME=	apache-tvm-ffi
 DISTVERSION=	0.1.16
+PORTREVISION=	1
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,6 +27,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ml-dtypes>0:math/py-ml-dtypes@${PY_FLAVOR} 
 
 USES=		cmake:indirect python
 USE_PYTHON=	pep517 autoplist pytest
+USE_LDCONFIG=	${PYTHON_SITELIBDIR}/tvm_ffi/lib # workaround for https://github.com/freebsd/pkg/issues/2785
 
 MAKE_ENV=	SETUPTOOLS_SCM_PRETEND_VERSION=${DISTVERSION}
 
