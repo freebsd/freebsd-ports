@@ -7019,6 +7019,7 @@
     SUBDIR += rubygem-aws-sdk-connectcontactlens
     SUBDIR += rubygem-aws-sdk-connecthealth
     SUBDIR += rubygem-aws-sdk-connectparticipant
+    SUBDIR += rubygem-aws-sdk-connectscheduling
     SUBDIR += rubygem-aws-sdk-connectwisdomservice
     SUBDIR += rubygem-aws-sdk-continuum
     SUBDIR += rubygem-aws-sdk-controlcatalog
