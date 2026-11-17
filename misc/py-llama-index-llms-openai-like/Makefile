@@ -1,5 +1,5 @@
 PORTNAME=	llama-index-llms-openai-like
-PORTVERSION=	0.8.1
+PORTVERSION=	0.9.0
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
