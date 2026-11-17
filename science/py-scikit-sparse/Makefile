@@ -1,6 +1,6 @@
 PORTNAME=	scikit-sparse
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.0
+DISTVERSION=	0.5.1
 CATEGORIES=	science python
 #MASTER_SITES=	PYPI # missing files under tests/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -37,11 +37,11 @@ MAKE_ENV=	SUITESPARSE_INCLUDE_DIR=${LOCALBASE}/include/suitesparse \
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_WRKSRC=	${WRKSRC}
-TEST_ARGS=	-p no:cov -p no:xdist
+TEST_ARGS=	--disable-plugin-autoload
 
 post-install:
 	@${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/sksparse -name "*.so" | ${XARGS} ${STRIP_CMD}
 
-# tests as of 0.5.0: 9285 passed, 3 xfailed in 24.82s
+# tests as of 0.5.1: 9316 passed, 3 xfailed, 17 warnings in 55.32s
 
 .include <bsd.port.mk>
