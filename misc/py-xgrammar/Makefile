@@ -1,5 +1,6 @@
 PORTNAME=	xgrammar
 DISTVERSION=	0.2.9
+PORTREVISION=	1
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -30,6 +31,9 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cohere-melody>=0.13.0:misc/py-cohere-melody
 
 USES=		cmake:indirect python
 USE_PYTHON=	pep517 autoplist pytest
+
+# hard-link the shared lib libxgrammar_bindings.so to the shared lib libtvm_ffi.so installed by misc/py-apache-tvm-ffi
+LDFLAGS+=	-Wl,-rpath,${PYTHON_SITELIBDIR}/tvm_ffi/lib
 
 # LD_PRELOAD avoids 'No space available for static Thread Local Storage' when torch is imported after tvm_ffi
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} \
