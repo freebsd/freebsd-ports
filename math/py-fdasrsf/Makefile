@@ -1,5 +1,5 @@
 PORTNAME=	fdasrsf
-DISTVERSION=	2.7.3
+DISTVERSION=	2.7.4
 CATEGORIES=	math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -41,6 +41,6 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_WRKSRC=	${WRKSRC}
 TEST_ARGS=	--disable-plugin-autoload tests/
 
-# tests as of 2.7.3: 162 passed in 329.98s (0:05:29)
+# tests as of 2.7.4: 177 passed, 5 warnings in 25.48s
 
 .include <bsd.port.mk>
