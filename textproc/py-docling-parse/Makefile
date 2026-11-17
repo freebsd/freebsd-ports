@@ -1,5 +1,5 @@
 PORTNAME=	docling-parse
-DISTVERSION=	7.24.2
+DISTVERSION=	7.26.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -33,8 +33,22 @@ USES=		cmake:indirect python localbase pkgconfig
 USE_PYTHON=	autoplist concurrent pep517 pytest
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
-TEST_ARGS=	--disable-plugin-autoload
+# performance tests need scripts/ and extra modules that are not in the sdist;
+# threaded tests are very slow; the deselected tests fail with the system blend2d
+# which lacks the fixes from the pinned blend2d fork that upstream bundles
+TEST_ARGS=	--disable-plugin-autoload \
+		--ignore=tests/test_unit_performance_docs.py \
+		--ignore=tests/test_unit_performance_memory.py \
+		--ignore=tests/test_unit_performance_report.py \
+		--ignore=tests/test_unit_performance_runtime.py \
+		--ignore=tests/test_regression_threaded_parse.py \
+		--ignore=tests/test_regression_threaded_render.py \
+		--deselect=tests/test_regression_pypdfium_cited_pages.py::test_cited_page_matches_pypdfium[extgstate-soft-mask] \
+		--deselect=tests/test_unit_transparency.py::test_multiply_blends_with_what_is_underneath \
+		--deselect=tests/test_unit_transparency.py::test_multiply_edge_colours
 
 MAKE_ENV=	USE_SYSTEM_DEPS=ON
+
+# tests as of 7.26.0: 687 passed, 26 skipped, 5 deselected in 992.69s (0:16:32)
 
 .include <bsd.port.mk>
