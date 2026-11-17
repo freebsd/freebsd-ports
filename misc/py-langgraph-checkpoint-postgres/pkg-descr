@@ -1,0 +1,4 @@
+Library with a Postgres implementation of LangGraph checkpoint saver.
+
+This package provides PostgreSQL-backed checkpoint and storage implementations
+for LangGraph, including both synchronous and asynchronous APIs.

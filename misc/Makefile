@@ -569,6 +569,7 @@
     SUBDIR += py-langgraph
     SUBDIR += py-langgraph-checkpoint
     SUBDIR += py-langgraph-checkpoint-conformance
+    SUBDIR += py-langgraph-checkpoint-postgres
     SUBDIR += py-langgraph-checkpoint-sqlite
     SUBDIR += py-langgraph-prebuilt
     SUBDIR += py-langgraph-sdk
