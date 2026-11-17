@@ -1,7 +1,6 @@
 PORTNAME=	heyoka
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.13.0
-PORTREVISION=	1
+DISTVERSION=	7.14.0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,7 +23,7 @@ LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs \
 TEST_DEPENDS=	xtensor>0:math/xtensor \
 		xtensor-blas>0:math/xtensor-blas
 
-USES=		cmake:testing compiler:c++20-lang llvm:min=18,build,run sqlite ssl
+USES=		cmake:testing compiler:c++20-lang llvm:min=19,build,run sqlite ssl
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
