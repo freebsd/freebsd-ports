@@ -19,8 +19,17 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>=8.0.0:graphics/py-pillow@${PY_FLAVOR
 		${PYTHON_PKGNAMEPREFIX}transformers>=4.15.0:misc/py-transformers@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist concurrent pep517
+USE_PYTHON=	autoplist concurrent pep517 pytest
 
 NO_ARCH=	yes
+
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} \
+		LD_PRELOAD=${PYTHON_SITELIBDIR}/torch/lib/libc10.so
+# TestSmolDoclingExtractor patches a nonexistent module attribute, and
+# test_batch_process depends on os.listdir() order: both are upstream test bugs
+TEST_ARGS=	--disable-plugin-autoload \
+		-k 'not TestSmolDoclingExtractor and not (test_batch_process and not test_batch_process_)'
+
+# tests as of 0.1.0: 5 passed, 9 deselected, 1 warning in 0.62s
 
 .include <bsd.port.mk>
