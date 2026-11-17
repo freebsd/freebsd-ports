@@ -1,5 +1,5 @@
 PORTNAME=	fast-depends
-DISTVERSION=	3.0.10
+DISTVERSION=	3.0.11
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -30,6 +30,6 @@ GH_PROJECT=	FastDepends
 
 NO_ARCH=	yes
 
-# tests as of 3.0.10: 231 passed, 9 skipped, 1 warning in 0.46s
+# tests as of 3.0.11: 232 passed, 9 skipped in 0.58s
 
 .include <bsd.port.mk>
