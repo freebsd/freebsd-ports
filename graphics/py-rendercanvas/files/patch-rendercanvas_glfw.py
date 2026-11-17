@@ -3,9 +3,9 @@
 -- Not reported upstream yet.
 -- upstreamed: https://github.com/pygfx/rendercanvas/pull/259
 
---- rendercanvas/glfw.py.orig	2026-10-19 13:05:15 UTC
+--- rendercanvas/glfw.py.orig	2026-11-05 09:37:19 UTC
 +++ rendercanvas/glfw.py
-@@ -125,7 +125,7 @@ def get_glfw_present_info(window):
+@@ -124,7 +124,7 @@ def get_glfw_present_info(window):
              "window": int(glfw.get_cocoa_window(window)),
          }
  
