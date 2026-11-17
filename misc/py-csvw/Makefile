@@ -1,6 +1,6 @@
 PORTNAME=	csvw
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.1.1
+DISTVERSION=	4.2.0
 CATEGORIES=	misc python
 #MASTER_SITES=	PYPI # tests are broken there
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -42,6 +42,6 @@ TEST_WRKSRC=	${WRKSRC}/tests
 TEST_ARGS=	--disable-plugin-autoload \
 		-p pytest_cov -p pytest_mock -p requests_mock
 
-# tests as of 4.1.1: 825 passed, 16 xfailed in 2.59s
+# tests as of 4.2.0: 844 passed, 16 xfailed in 4.73s
 
 .include <bsd.port.mk>
