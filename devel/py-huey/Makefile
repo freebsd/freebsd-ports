@@ -1,5 +1,5 @@
 PORTNAME=	huey
-DISTVERSION=	3.5.3
+DISTVERSION=	3.5.4
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,6 +26,6 @@ NO_ARCH=	yes
 pre-test:
 	@${RM} -rf ${WRKSRC}/build
 
-# tests as of 3.5.3: 292 passed, 137 skipped, 2 warnings in 24.58s
+# tests as of 3.5.4: 293 passed, 136 skipped, 2 warnings in 10.95s
 
 .include <bsd.port.mk>
