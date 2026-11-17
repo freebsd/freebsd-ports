@@ -1,6 +1,6 @@
 PORTNAME=	sse-starlette
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.6.0
+DISTVERSION=	3.7.0
 CATEGORIES=	www python
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -34,8 +34,8 @@ GH_ACCOUNT=	sysid
 
 NO_ARCH=	yes
 
-TEST_ARGS=	-p no:pytest-qt -p no:aiomisc -p no:flask -p no:flaky --ignore=tests/integration --ignore=tests/experimentation
+TEST_ARGS=	--disable-plugin-autoload -p asyncio -p pytest_cov --ignore=tests/integration --ignore=tests/experimentation
 
-# tests as of 3.5.0: 92 passed in 29.69s
+# tests as of 3.7.0: 140 passed, 18 warnings in 29.25s
 
 .include <bsd.port.mk>

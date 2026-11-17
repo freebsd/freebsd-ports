@@ -1,7 +1,7 @@
---- pyproject.toml.orig	2026-10-25 20:31:14 UTC
+--- pyproject.toml.orig	2026-11-07 11:15:14 UTC
 +++ pyproject.toml
 @@ -3,7 +3,6 @@ readme = "README.md"
- version = "3.6.0"
+ version = "3.7.0"
  description = "SSE plugin for Starlette"
  readme = "README.md"
 -license = "BSD-3-Clause"
