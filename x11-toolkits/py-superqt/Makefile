@@ -1,5 +1,5 @@
 PORTNAME=	superqt
-DISTVERSION=	0.9.0
+DISTVERSION=	0.9.2
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -33,6 +33,6 @@ TEST_ARGS=	--disable-plugin-autoload -p pytestqt.plugin \
 		--deselect=tests/test_iconify.py::test_qiconify
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} QT_API=pyside6 QT_QPA_PLATFORM=offscreen
 
-# tests as of 0.9.0: 424 passed, 50 skipped, 1 deselected, 1 xfailed in 6.00s
+# tests as of 0.9.2: 430 passed, 50 skipped, 1 deselected, 1 xfailed in 5.19s
 
 .include <bsd.port.mk>
