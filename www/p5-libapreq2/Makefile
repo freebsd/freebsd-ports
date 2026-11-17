@@ -9,7 +9,7 @@ MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Perl binding for the Generic Apache2 Request Library
 WWW=		https://metacpan.org/dist/libapreq2
 
-LICENSE=	APACHE20
+LICENSE=	Apache-2.0
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-apache2-apxs=${APXS} \
