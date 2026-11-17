@@ -1,6 +1,6 @@
 PORTNAME=	pyTooling
 DISTVERSIONPREFIX=	v
-DISTVERSION=	10.1.1
+DISTVERSION=	10.3.0
 CATEGORIES=	devel
 #MASTER_SITES=	PYPI # requirements.txt is missing
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,10 +17,16 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0.40.0:devel/py-wheel@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=3.12:www/py-aiohttp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}colorama>=0.4.6:devel/py-colorama@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}idna>=3.20:dns/py-idna@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jsonschema>=4.26:devel/py-jsonschema@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}matplotlib>=3.10:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=25.0:devel/py-packaging@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}plotly>=6.0:graphics/py-plotly@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest>=9.1:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.32:www/py-requests@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ruamel.yaml>=0.19.1:devel/py-ruamel.yaml@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}ruamel.yaml>=0.19.1:devel/py-ruamel.yaml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}trove-classifiers>=2025.1:devel/py-trove-classifiers@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}xmlschema>=4.3:textproc/py-xmlschema@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	pep517 autoplist
@@ -34,6 +40,6 @@ TEST_WRKSRC=	${WRKSRC}
 do-test:
 	@cd ${TEST_WRKSRC} && ${PYTHON_CMD} -m pytest ${TEST_ARGS} tests/unit -k 'not ExplicitPathsOnWindows and not ExplicitPathsOnLinux and not ExplicitBinaryDirectoryOnWindows and not ExplicitBinaryDirectoryOnLinux and not Packaging and not test_TypeConvertToInt and not test_LineTerminal' --ignore=tests/unit/Testing/Markers.py -v
 
-# tests as of 10.1.1: 3463 passed, 19 skipped, 64 deselected, 3 xfailed, 1317 subtests passed in 56.28s
+# tests as of 10.3.0: 5653 passed, 19 skipped, 64 deselected, 3 xfailed, 2 warnings, 1360 subtests passed in 37.65s
 
 .include <bsd.port.mk>
