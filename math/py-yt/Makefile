@@ -1,6 +1,6 @@
 PORTNAME=	yt
 DISTVERSIONPREFIX=	yt-
-DISTVERSION=	4.4.3
+DISTVERSION=	4.4.4
 CATEGORIES=	math astro python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -43,11 +43,13 @@ TEST_ARGS=	--disable-plugin-autoload
 do-test:
 	@cd ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} && \
 		${SETENV} ${TEST_ENV} pytest yt/tests \
-		--deselect=yt/data_objects/tests/test_data_containers.py::TestDataContainers::test_to_astropy_table
+		--deselect=yt/data_objects/tests/test_data_containers.py::TestDataContainers::test_to_astropy_table \
+		--deselect=yt/tests/test_load_sample.py
 
-# tests as of 4.4.3:
-#       136 passed
-#        10 skipped
-#         1 xfailed
+# test_load_sample.py is deselected because it needs network access
+# tests as of 4.4.4:
+#        34 passed
+#         6 skipped
+#        12 deselected
 
 .include <bsd.port.mk>
