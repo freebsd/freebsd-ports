@@ -1,5 +1,5 @@
 PORTNAME=	dwave-gate
-DISTVERSION=	0.6.0
+DISTVERSION=	0.7.0
 CATEGORIES=	science python # quantum-computing
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -30,6 +30,6 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_ARGS=	--disable-plugin-autoload \
 		-p pytest_mock
 
-# tests as of 0.6.0: 353 passed in 1.60s
+# tests as of 0.7.0: 456 passed, 1 warning in 2.07s
 
 .include <bsd.port.mk>
