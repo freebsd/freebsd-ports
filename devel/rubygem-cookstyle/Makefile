@@ -1,5 +1,5 @@
 PORTNAME=	cookstyle
-PORTVERSION=	9.0.0
+PORTVERSION=	9.0.9
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ WWW=		https://docs.chef.io/workstation/cookstyle/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-rubocop>=1.90.0:devel/rubygem-rubocop
+RUN_DEPENDS=	rubygem-rubocop>=1.91.0:devel/rubygem-rubocop
 
 USES=		gem
 

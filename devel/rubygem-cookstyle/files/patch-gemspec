@@ -1,10 +1,10 @@
---- cookstyle.gemspec.orig	2026-02-18 15:04:07 UTC
+--- cookstyle.gemspec.orig	2026-11-17 06:28:37 UTC
 +++ cookstyle.gemspec
 @@ -21,6 +21,6 @@ Gem::Specification.new do |s|
  
    s.specification_version = 4
  
--  s.add_runtime_dependency(%q<rubocop>.freeze, ["= 1.90.0".freeze])
-+  s.add_runtime_dependency(%q<rubocop>.freeze, [">= 1.90.0".freeze])
+-  s.add_runtime_dependency(%q<rubocop>.freeze, ["= 1.91.0".freeze])
++  s.add_runtime_dependency(%q<rubocop>.freeze, [">= 1.91.0".freeze])
  end
  
