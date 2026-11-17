@@ -1,8 +1,8 @@
 Set DATADIR url to Help pages
 
---- gui-wx/wxhelp.cpp.orig	2025-07-07 22:49:26 UTC
+--- gui-wx/wxhelp.cpp.orig	2026-04-28 00:17:47 UTC
 +++ gui-wx/wxhelp.cpp
-@@ -177,7 +177,7 @@ long whenactive;              // when help window beca
+@@ -165,7 +165,7 @@ long whenactive;              // when help window beca
  
  long whenactive;              // when help window became active (elapsed millisecs)
  
@@ -11,7 +11,7 @@ Set DATADIR url to Help pages
  wxString currhelp = helphome;                      // current help file
  const wxString lexicon_name = _("lexicon");        // name of lexicon layer
  
-@@ -1338,7 +1338,7 @@ void ShowAboutBox()
+@@ -1250,7 +1250,7 @@ void ShowAboutBox()
  #ifdef __WXMAC__
      html->SetFontSizes(13); // must be a fixed size (not helpfontsize)
  #endif
