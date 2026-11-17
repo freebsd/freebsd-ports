@@ -1,5 +1,5 @@
 PORTNAME=	librosa
-DISTVERSION=	1.0.0
+DISTVERSION=	1.0.1
 CATEGORIES=	audio python
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -46,11 +46,17 @@ TEST_ENV=	${MAKE_ENV} \
 		DISPLAY=${DISPLAY} \
 		XAUTHORITY=${XAUTHORITY}
 
+TEST_ARGS=	--disable-plugin-autoload -p pytest_cov -p pytest_mpl
+
 NO_ARCH=	yes
 
 PYTEST_IGNORED_TESTS=	test_beat[44100-None-100.0-None-120-True-True] \
-			test_rqa_edge
+			test_rqa_edge \
+			test_softmask[False-50] \
+			test_softmask[False-100] \
+			test_softmask[True-50] \
+			test_softmask[True-100] # pow(0, y) raises FloatingPointError on this host
 
-# tests as of 1.0.0: 10840 passed, 2 skipped, 17 deselected, 556 xfailed, 9 xpassed, 142 warnings in 1950.11s (0:32:30)
+# tests as of 1.0.1: 10978 passed, 2 skipped, 21 deselected, 556 xfailed, 9 xpassed, 33 warnings in 148s (0:02:28) -- run with REQUESTS_CA_BUNDLE=/etc/ssl/cert.pem; xdist is unsafe (numba cache races)
 
 .include <bsd.port.mk>
