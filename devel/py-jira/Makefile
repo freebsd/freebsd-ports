@@ -1,5 +1,5 @@
 PORTNAME=	jira
-DISTVERSION=	3.10.4
+DISTVERSION=	3.10.5
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -8,8 +8,10 @@ MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Library to ease use of the JIRA 5 REST APIs
 WWW=		https://github.com/pycontribs/jira
 
-LICENSE=	BSD2CLAUSE
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE=	BSD-2-Clause BSD-3-Clause
+LICENSE_COMB=	multi
+LICENSE_FILE_BSD-2-Clause=	${WRKSRC}/LICENSE
+LICENSE_FILE_BSD-3-Clause=	${WRKSRC}/jira/utils/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-scm>=1.15.0:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools_scm_git_archive>=1.0:devel/py-setuptools_scm_git_archive@${PY_FLAVOR} \
@@ -36,7 +38,6 @@ OPTIONS_DEFINE=		MAGIC SHELL
 OPTIONS_DEFAULT=	MAGIC SHELL
 
 MAGIC_DESC=	Enable Content-Type Auto-detection
-PARALLEL_DESC=	Enable asyrequests
 SHELL_DESC=	Enable interactive shell
 
 MAGIC_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}filemagic>=1.6:devel/py-filemagic@${PY_FLAVOR}
