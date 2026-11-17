@@ -1,0 +1,2 @@
+Test utilities for OpenTelemetry unit tests.
+This package is used by the unit tests of the OpenTelemetry Python projects.
