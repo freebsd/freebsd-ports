@@ -1,6 +1,6 @@
---- pm/install.py.orig	2026-11-06 16:56:46 UTC
+--- pm/install.py.orig	2026-11-16 19:28:45 UTC
 +++ pm/install.py
-@@ -192,7 +192,10 @@ def lazy_installs_allowed() -> bool:
+@@ -199,7 +199,10 @@ def lazy_installs_allowed() -> bool:
          # The normal loader falls back to defaults on invalid YAML. A broken
          # security policy must not grant permission to acquire dependencies.
          require_readable_config_before_write()

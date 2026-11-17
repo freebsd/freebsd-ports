@@ -1,6 +1,5 @@
 PORTNAME=	hermes-agent
 PORTVERSION=	${HERMES_VERSION}
-PORTREVISION=	1
 CATEGORIES=	misc python
 MASTER_SITES+=	LOCAL/olivier:webdist
 DISTFILES+=	${PORTNAME}-web-dist-${PORTVERSION}${EXTRACT_SUFX}:webdist
@@ -106,23 +105,23 @@ PLIST_SUB+=	HERMES_LIBDIR=${HERMES_LIBDIR:S,^${PREFIX}/,,}
 # ${HERMES_LIBDIR}/hermes_cli/web_dist at runtime.
 #
 # How to (re)generate ${PORTNAME}-web-dist-${PORTVERSION}.tar.gz on every
-# PORTVERSION bump (run on an amd64 host with npm 10+ and node 20+):
+# PORTVERSION bump (run on an amd64 host with node 24+):
 #
 #   1. Extract the upstream source tarball:
 #        tar xzf ${DISTDIR}/NousResearch-${PORTNAME}-${PORTVERSION}-${GH_TAGNAME}_GH0.tar.gz
-#        cd ${PORTNAME}-*/web
-#   2. Install deps and build the SPA (the repo root is an npm-workspaces
-#      monorepo as of 0.22.5; --ignore-scripts skips the ui-tui node-pty and
-#      electron downloads that the dashboard does not need -- bun works too:
-#      `bun install --ignore-scripts` + `(cd web && bun run build)` with a
-#      node->bun PATH shim, since the build script spawns node):
-#        npm install --ignore-scripts --no-audit --no-fund --engine-strict=false
-#        npm run build -w web --engine-strict=false
-#      This writes the bundle to ../hermes_cli/web_dist/.
-#      (0.23.0 pins engines.node >=26 with engine-strict in .npmrc; the pin
-#      is policy only, node 24 builds the same bundle.)
+#        cd ${PORTNAME}-*
+#   2. Install deps and build the SPA.  Since 0.23.2 the repo is a pnpm
+#      workspace and refuses npm; upstream's provider requires the exact pnpm
+#      pinned in pm/lock.json (12.15.0 here):
+#        npm install --prefix /tmp/pnpm12 pnpm@12.15.0
+#        export PATH=/tmp/pnpm12/node_modules/.bin:$PATH
+#        pnpm_config_engine_strict=false \
+#            node scripts/build/node-deps.mjs --source . --workspace web
+#        node scripts/build/web.mjs
+#      This writes the bundle to hermes_cli/web_dist/.  engines.node >=26
+#      is policy only, node 24 builds the same bundle.
 #   3. Repackage with a top-level dir whose name matches the distfile:
-#        cp -a ../hermes_cli/web_dist /tmp/${PORTNAME}-web-dist-${PORTVERSION}
+#        cp -a hermes_cli/web_dist /tmp/${PORTNAME}-web-dist-${PORTVERSION}
 #        cd /tmp && tar --no-acls --no-xattrs --no-fflags --uid=0 --gid=0 \
 #            -czf ${PORTNAME}-web-dist-${PORTVERSION}.tar.gz \
 #            ${PORTNAME}-web-dist-${PORTVERSION}
@@ -143,11 +142,12 @@ PLIST_SUB+=	HERMES_LIBDIR=${HERMES_LIBDIR:S,^${PREFIX}/,,}
 # This list has the same hazard and no glob to save it: a package added
 # upstream must be added here or the app dies at import.  On every bump,
 # diff the top-level dirs holding __init__.py against this list (0.22.5
-# added pm, upstream's uv-backed dependency manager; it replaces the retired
-# tools/lazy_deps.py pip path).  evals/ and tests/ are dev-only,
+# added pm, upstream's uv-backed dependency manager; 0.23.2 added
+# hermes_agent, the module-move compat shims, and turned utils.py into
+# utils/).  evals/ and tests/ are dev-only,
 # deliberately excluded.
-HERMES_PKGS=	acp_adapter agent cron gateway hermes_cli hermes_platform \
-		plugins pm providers tools tui_gateway
+HERMES_PKGS=	acp_adapter agent cron gateway hermes_agent hermes_cli \
+		hermes_platform plugins pm providers tools tui_gateway utils
 
 SHEBANG_FILES=	*.py
 

@@ -1,6 +1,6 @@
---- agent/anthropic_adapter.py.orig	2026-11-06 16:56:46 UTC
+--- agent/anthropic_adapter.py.orig	2026-11-16 19:28:45 UTC
 +++ agent/anthropic_adapter.py
-@@ -375,9 +375,37 @@ def _attribution_headers() -> dict[str, str]:
+@@ -376,9 +376,37 @@ def _attribution_headers() -> dict[str, str]:
      }
  
  
@@ -40,7 +40,7 @@
      read = timeout if (isinstance(timeout, (int, float)) and timeout > 0) else 900.0
      return Timeout(timeout=float(read), connect=10.0)
  
-@@ -414,7 +442,7 @@ def _build_anthropic_client_with_bearer_hook(
+@@ -415,7 +443,7 @@ def _build_anthropic_client_with_bearer_hook(
      # auth header follows each mint, the OAuth identity below the first one: a key_cmd switching
      # between OAuth and a Console key mid-session needs a client rebuild.
      kwargs["http_client"] = build_bearer_http_client(
