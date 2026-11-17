@@ -3064,8 +3064,6 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-adb.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-androidsu.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-androidsu.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-archive.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-archive.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-cache.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-cache.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-cmds.el.gz
