@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.0.0
 CATEGORIES=	devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	josephvenable@verizon.net
 COMMENT=	SDL3 ImGui File Dialogs Library
 WWW=		https://github.com/samuelvenable/SDL3-ImGui-FileDialogs
 
