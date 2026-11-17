@@ -2,7 +2,7 @@ PORTNAME=	range-v3
 DISTVERSION=	0.12.0
 CATEGORIES=	devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Experimental range library for C++11/14/17
 WWW=		https://github.com/ericniebler/range-v3
 
