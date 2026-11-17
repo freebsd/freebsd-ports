@@ -1,0 +1,6 @@
+MSLK (Meta Superintelligence Labs Kernels) is a collection of PyTorch GPU
+operator libraries that are designed and optimized for GenAI training and
+inference, such as FP8 row-wise quantization and collective communications.
+
+This package is built in the Python-only mode, without the native CUDA/ROCm
+kernels. It is used by xformers.

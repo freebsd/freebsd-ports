@@ -610,6 +610,7 @@
     SUBDIR += py-modelscope
     SUBDIR += py-modelscope-hub
     SUBDIR += py-molequeue
+    SUBDIR += py-mslk
     SUBDIR += py-napari
     SUBDIR += py-napari-resources
     SUBDIR += py-napari-svg
