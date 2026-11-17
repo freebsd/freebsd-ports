@@ -1,6 +1,6 @@
 PORTNAME=	onnxruntime
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.31.1
+DISTVERSION=	1.32.0
 CATEGORIES=	misc # machine-learning
 DIST_SUBDIR=	${PORTNAME}
 
@@ -21,9 +21,9 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
-GH_TUPLE=	emscripten-core:emsdk:0742117:emsdk/cmake/external/emsdk \
-		google:libprotobuf-mutator:7a2ed51a6b682a83e345ff49fc4cfd7ca47550db:libprotobuf_mutator/cmake/external/libprotobuf-mutator \
-		onnx:onnx:2bb50465112feca9003e1ed654d77f01ff1415ca:onnx/cmake/external/onnx
+GH_TUPLE=	emscripten-core:emsdk:c0bb220cb6e6f4e0fabb6f6db9efd53390ef5e56:emsdk/cmake/external/emsdk \
+		google:libprotobuf-mutator:4373c81cd7d50a65f7fbd8dc3779c0c3b1dc9d72:libprotobuf_mutator/cmake/external/libprotobuf-mutator \
+		onnx:onnx:e1ac8e74b620bbdc7ba07f0440806bd93f651a28:onnx/cmake/external/onnx
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/cmake
 CMAKE_ON=	onnxruntime_BUILD_SHARED_LIB \
@@ -79,7 +79,7 @@ test-quick: install do-test-quick
 post-install: do-test-quick
 	@${DO_NADA}
 
-# tests as of 1.31.0: 100% tests passed out of 15
+# tests as of 1.32.0: 94% tests passed, 1 tests failed out of 17 (onnxruntime_cpuinfo_refcount_test: cpuinfo does not support FreeBSD on the aarch64 architecture)
 
 # The main executable onnxruntime_test_all internally contains thousands of
 # individual GoogleTest cases; the previous 1.21.1 note counted those directly

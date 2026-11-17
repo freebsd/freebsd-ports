@@ -1,7 +1,6 @@
 PORTNAME=	onnxruntime
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.31.1
-PORTREVISION=	1
+DISTVERSION=	1.32.0
 CATEGORIES=	misc # machine-learning
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	${PORTNAME}
@@ -51,9 +50,9 @@ do-build:
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
-GH_TUPLE=	emscripten-core:emsdk:0742117:emsdk/cmake/external/emsdk \
-		google:libprotobuf-mutator:7a2ed51a6b682a83e345ff49fc4cfd7ca47550db:libprotobuf_mutator/cmake/external/libprotobuf-mutator \
-		onnx:onnx:2bb50465112feca9003e1ed654d77f01ff1415ca:onnx/cmake/external/onnx
+GH_TUPLE=	emscripten-core:emsdk:c0bb220cb6e6f4e0fabb6f6db9efd53390ef5e56:emsdk/cmake/external/emsdk \
+		google:libprotobuf-mutator:4373c81cd7d50a65f7fbd8dc3779c0c3b1dc9d72:libprotobuf_mutator/cmake/external/libprotobuf-mutator \
+		onnx:onnx:e1ac8e74b620bbdc7ba07f0440806bd93f651a28:onnx/cmake/external/onnx
 
 CXXFLAGS+=	-Wno-array-bounds # workaround for https://github.com/microsoft/onnxruntime/issues/23410
 CXXFLAGS+=	-I${WRKSRC}/include/onnxruntime/core/common/logging # otherwise logging.h isn't found
@@ -85,7 +84,6 @@ do-test:
 	@${ECHO_MSG} "===> Running Python smoke test"
 	${SETENV} ${TEST_ENV} ${PYTHON_CMD} ${FILESDIR}/test-smoke.py ${FILESDIR}/example.onnx
 
-# tests as of 1.30.0 (make test):
 # Python smoke test passed: loads example.onnx and runs inference.
 
 .include <Makefile.MASTER_SITES>

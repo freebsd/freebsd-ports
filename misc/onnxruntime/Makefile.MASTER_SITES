@@ -4,7 +4,7 @@ MASTER_SITES=	\
 		https://github.com/jarro2783/cxxopts/archive/:cxxopts \
 		https://github.com/HowardHinnant/date/archive/refs/tags/:date \
 		https://github.com/dmlc/dlpack/archive/:dlpack \
-		https://github.com/eigen-mirror/eigen/archive/1d8b82b0740839c0de7f1242a3585e3390ff5f33/:eigen \
+		https://github.com/eigen-mirror/eigen/archive/bc3b39870ecb690a623a3f49149a358b95c5781d/:eigen \
 		https://github.com/google/flatbuffers/archive/refs/tags/:flatbuffers \
 		https://github.com/Maratyszcza/FP16/archive/:fp16 \
 		https://github.com/Maratyszcza/FXdiv/archive/:fxdiv \
@@ -33,7 +33,6 @@ MASTER_SITES=	\
 		https://github.com/dcleblanc/SafeInt/archive/refs/tags/:safeint \
 		https://github.com/tensorflow/tensorboard/archive/:tensorboard \
 		https://github.com/NVIDIA/cutlass/archive/refs/tags/:cutlass \
-		https://github.com/deepseek-ai/DeepGEMM/archive/:deep_gemm \
 		https://github.com/microsoft/onnxruntime-extensions/archive/:extensions \
 		https://github.com/microsoft/DirectX-Headers/archive/refs/tags/:directx_headers \
 		https://github.com/NVIDIA/cudnn-frontend/archive/refs/tags/:cudnn_frontend \
@@ -41,7 +40,6 @@ MASTER_SITES=	\
 		https://www.nuget.org/api/v2/package/Microsoft.Direct3D.D3D12/:dawn_agility_sdk \
 		https://github.com/ARM-software/kleidiai/archive/refs/tags/:kleidiai \
 		https://github.com/qualcomm/kleidiai/archive/:kleidiai_qmx \
-		https://codeload.github.com/KhronosGroup/Vulkan-Headers/tar.gz/refs/tags/:vulkan_headers \
 		https://github.com/microsoft/cpp_client_telemetry/archive/refs/tags/:cpp_client_telemetry \
 		https://github.com/curl/curl/releases/download/curl-8_21_0/:curl \
 		https://github.com/Mbed-TLS/mbedtls/releases/download/mbedtls-3.6.7/:mbedtls \

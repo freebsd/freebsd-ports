@@ -10,7 +10,8 @@ echo "MASTER_SITES=	\\" > Makefile.MASTER_SITES
 echo "DISTFILES=	\\" > Makefile.DISTFILES
 
 # loop
-cat $deps_file | grep -v "^#" | (while read -r line; do
+# deep_gemm is only used by CUDA builds
+cat $deps_file | grep -v "^#" | grep -v "^deep_gemm;" | (while read -r line; do
 	line=$(echo $line | sed -e 's|;| |g')
 	#echo "LINE $line"
 
