@@ -1,6 +1,6 @@
---- chrome/browser/notifications/notification_platform_bridge_linux.cc.orig	2026-10-31 12:09:36 UTC
+--- chrome/browser/notifications/notification_platform_bridge_linux.cc.orig	2026-11-17 11:49:09 UTC
 +++ chrome/browser/notifications/notification_platform_bridge_linux.cc
-@@ -368,6 +368,8 @@ NotificationResources WriteNotificationResourceFiles(
+@@ -366,6 +366,8 @@ NotificationResources WriteNotificationResourceFiles(
    result.has_logo = WriteImageFile(logo, dir_path.Append("logo.png"));
    result.has_icon = WriteImageFile(icon, dir_path.Append("icon.png"));
    result.has_image = WriteImageFile(image, dir_path.Append("image.png"));
@@ -9,7 +9,7 @@
    if (result.has_icon) {
      result.icon_bytes = icon;
      if (icon && icon->size() > 0) {
-@@ -386,6 +388,7 @@ NotificationResources WriteNotificationResourceFiles(
+@@ -384,6 +386,7 @@ NotificationResources WriteNotificationResourceFiles(
        }
      }
    }

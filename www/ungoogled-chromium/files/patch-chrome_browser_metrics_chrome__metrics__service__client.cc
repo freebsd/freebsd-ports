@@ -1,6 +1,6 @@
---- chrome/browser/metrics/chrome_metrics_service_client.cc.orig	2026-10-31 12:09:36 UTC
+--- chrome/browser/metrics/chrome_metrics_service_client.cc.orig	2026-11-17 11:49:09 UTC
 +++ chrome/browser/metrics/chrome_metrics_service_client.cc
-@@ -207,7 +207,7 @@
+@@ -206,7 +206,7 @@
  #include "chrome/browser/metrics/task_info_metrics_provider_mac.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "components/metrics/motherboard_metrics_provider.h"
  #endif
  
-@@ -219,7 +219,7 @@
+@@ -218,7 +218,7 @@
  #include "chrome/browser/metrics/bluetooth_metrics_provider.h"
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  
@@ -18,7 +18,7 @@
  #include "chrome/browser/updates/update_metrics_provider.h"
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
-@@ -575,7 +575,7 @@ void ChromeMetricsServiceClient::RegisterPrefs(PrefReg
+@@ -574,7 +574,7 @@ void ChromeMetricsServiceClient::RegisterPrefs(PrefReg
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -27,7 +27,7 @@
    metrics::structured::StructuredMetricsService::RegisterPrefs(registry);
  
  #if !BUILDFLAG(IS_CHROMEOS)
-@@ -779,7 +779,7 @@ void ChromeMetricsServiceClient::Initialize() {
+@@ -778,7 +778,7 @@ void ChromeMetricsServiceClient::Initialize() {
          this, local_state);
    }
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
@@ -36,7 +36,7 @@
    metrics::structured::Recorder::GetInstance()->SetUiTaskRunner(
        base::SequencedTaskRunner::GetCurrentDefault());
  #endif
-@@ -839,7 +839,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
+@@ -838,7 +838,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
    metrics_service_->RegisterMetricsProvider(
        std::make_unique<metrics::CPUMetricsProvider>());
  
@@ -45,7 +45,7 @@
    metrics_service_->RegisterMetricsProvider(
        std::make_unique<metrics::MotherboardMetricsProvider>());
  #endif
-@@ -939,7 +939,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
+@@ -938,7 +938,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
    }
  #endif
  
@@ -54,7 +54,7 @@
    metrics_service_->RegisterMetricsProvider(
        std::make_unique<DesktopPlatformFeaturesMetricsProvider>());
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
-@@ -1047,7 +1047,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
+@@ -1046,7 +1046,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
        std::make_unique<PowerMetricsProvider>());
  #endif
  
@@ -63,7 +63,7 @@
    metrics_service_->RegisterMetricsProvider(
        metrics::CreateDesktopSessionMetricsProvider());
    metrics_service_->RegisterMetricsProvider(
-@@ -1260,7 +1260,7 @@ bool ChromeMetricsServiceClient::RegisterForProfileEve
+@@ -1256,7 +1256,7 @@ bool ChromeMetricsServiceClient::RegisterForProfileEve
    }
  #endif
  
@@ -72,7 +72,7 @@
    // This creates the DesktopProfileSessionDurationsServices if it didn't exist
    // already.
    metrics::DesktopProfileSessionDurationsServiceFactory::GetForBrowserContext(
-@@ -1654,7 +1654,7 @@ void ChromeMetricsServiceClient::CreateStructuredMetri
+@@ -1651,7 +1651,7 @@ void ChromeMetricsServiceClient::CreateStructuredMetri
    recorder =
        std::make_unique<metrics::structured::AshStructuredMetricsRecorder>(
            cros_system_profile_provider_.get());

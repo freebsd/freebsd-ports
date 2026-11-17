@@ -1,4 +1,4 @@
---- chrome/renderer/chrome_content_renderer_client.cc.orig	2026-10-31 12:09:36 UTC
+--- chrome/renderer/chrome_content_renderer_client.cc.orig	2026-11-17 11:49:09 UTC
 +++ chrome/renderer/chrome_content_renderer_client.cc
 @@ -191,7 +191,7 @@
  #include "v8/include/v8-isolate.h"
@@ -9,7 +9,7 @@
  #include "components/webapps/isolated_web_apps/scheme.h"
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||
          // BUILDFLAG(IS_CHROMEOS)
-@@ -468,7 +468,7 @@ void ChromeContentRendererClient::RenderThreadStarted(
+@@ -470,7 +470,7 @@ void ChromeContentRendererClient::RenderThreadStarted(
    WebSecurityPolicy::RegisterURLSchemeAsExtension(
        WebString::FromAscii(extensions::kExtensionScheme));
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

@@ -1,6 +1,6 @@
---- remoting/host/peer_session_impl.cc.orig	2026-10-31 12:09:36 UTC
+--- remoting/host/peer_session_impl.cc.orig	2026-11-17 11:49:09 UTC
 +++ remoting/host/peer_session_impl.cc
-@@ -155,7 +155,7 @@ PeerSessionImpl::PeerSessionImpl(
+@@ -194,7 +194,7 @@ PeerSessionImpl::PeerSessionImpl(
    // LocalMouseInputMonitorMac filter out an echo of the injected input before
    // it reaches `remote_input_filter_`.
    input_pipeline_.remote_input_filter()->SetExpectLocalEcho(false);
@@ -9,7 +9,7 @@
    // LocalMouseInputMonitorX11 filters out XTest-injected input before it
    // reaches `remote_input_filter_`. On Wayland, PipewireLocalInputMonitor
    // observes global cursor positions from PipeWire and still relies on echo
-@@ -260,7 +260,7 @@ void PeerSessionImpl::NotifyClientResolution(
+@@ -299,7 +299,7 @@ void PeerSessionImpl::NotifyClientResolution(
    if (effective_policies_.curtain_required.value_or(false)) {
      dpi_vector.set(resolution.x_dpi(), resolution.y_dpi());
    }

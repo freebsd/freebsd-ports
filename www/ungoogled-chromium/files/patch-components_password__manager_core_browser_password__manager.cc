@@ -1,6 +1,6 @@
---- components/password_manager/core/browser/password_manager.cc.orig	2026-10-31 12:09:36 UTC
+--- components/password_manager/core/browser/password_manager.cc.orig	2026-11-17 11:49:09 UTC
 +++ components/password_manager/core/browser/password_manager.cc
-@@ -615,12 +615,12 @@ void PasswordManager::RegisterProfilePrefs(
+@@ -613,12 +613,12 @@ void PasswordManager::RegisterProfilePrefs(
    registry->RegisterListPref(prefs::kPasswordManagerPromoCardsList);
  #endif  // BUILDFLAG(IS_ANDROID) && !BUILDFLAG(IS_IOS)
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || \
@@ -15,7 +15,7 @@
    registry->RegisterIntegerPref(prefs::kRelaunchChromeBubbleDismissedCounter,
                                  0);
  #endif
-@@ -633,7 +633,7 @@ void PasswordManager::RegisterProfilePrefs(
+@@ -631,7 +631,7 @@ void PasswordManager::RegisterProfilePrefs(
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -24,7 +24,7 @@
    registry->RegisterBooleanPref(prefs::kDeletingUndecryptablePasswordsEnabled,
                                  true);
  #endif
-@@ -663,7 +663,7 @@ void PasswordManager::RegisterLocalPrefs(PrefRegistryS
+@@ -661,7 +661,7 @@ void PasswordManager::RegisterLocalPrefs(PrefRegistryS
    registry->RegisterBooleanPref(prefs::kOsPasswordBlank, false);
    registry->RegisterBooleanPref(prefs::kIsBiometricAvailable, false);
  #endif  // BUILDFLAG(IS_WIN)

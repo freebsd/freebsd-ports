@@ -1,4 +1,4 @@
---- remoting/base/passwd_utils.h.orig	2026-10-31 12:09:36 UTC
+--- remoting/base/passwd_utils.h.orig	2026-11-17 11:49:09 UTC
 +++ remoting/base/passwd_utils.h
 @@ -23,7 +23,7 @@ struct PasswdUserInfo {
    uid_t uid;
@@ -7,5 +7,5 @@
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    std::vector<gid_t> supplementary_gids;
- #endif
- };
+   // The login shell. May be empty.
+   base::FilePath shell;

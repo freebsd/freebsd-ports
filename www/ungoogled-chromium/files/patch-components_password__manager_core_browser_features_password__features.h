@@ -1,6 +1,6 @@
---- components/password_manager/core/browser/features/password_features.h.orig	2026-10-31 12:09:36 UTC
+--- components/password_manager/core/browser/features/password_features.h.orig	2026-11-17 11:49:09 UTC
 +++ components/password_manager/core/browser/features/password_features.h
-@@ -206,7 +206,7 @@ BASE_DECLARE_FEATURE(kPreventPasswordManagerOnFederate
+@@ -211,7 +211,7 @@ BASE_DECLARE_FEATURE(kPreventPasswordManagerOnFederate
  // vault passphrase type.
  BASE_DECLARE_FEATURE(kRecordPasswordReadiness);
  

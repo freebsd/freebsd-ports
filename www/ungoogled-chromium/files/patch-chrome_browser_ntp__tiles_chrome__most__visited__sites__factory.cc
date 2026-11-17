@@ -1,6 +1,6 @@
---- chrome/browser/ntp_tiles/chrome_most_visited_sites_factory.cc.orig	2026-05-09 18:09:27 UTC
+--- chrome/browser/ntp_tiles/chrome_most_visited_sites_factory.cc.orig	2026-11-17 11:49:09 UTC
 +++ chrome/browser/ntp_tiles/chrome_most_visited_sites_factory.cc
-@@ -48,7 +48,7 @@ bool ShouldCreateCustomLinksManager() {
+@@ -60,7 +60,7 @@ bool ShouldCreateCustomLinksManager() {
  
  bool ShouldCreateEnterpriseShortcutsManager() {
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || \

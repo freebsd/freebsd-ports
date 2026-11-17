@@ -1,6 +1,6 @@
---- chrome/browser/ui/webui/side_panel/read_anything/read_anything_untrusted_page_handler.cc.orig	2026-10-31 12:09:36 UTC
+--- chrome/browser/ui/webui/side_panel/read_anything/read_anything_untrusted_page_handler.cc.orig	2026-11-17 11:49:09 UTC
 +++ chrome/browser/ui/webui/side_panel/read_anything/read_anything_untrusted_page_handler.cc
-@@ -188,7 +188,7 @@ constexpr int PDF_LOAD_DELAY_MS = 1000;
+@@ -189,7 +189,7 @@ constexpr int PDF_LOAD_DELAY_MS = 1000;
  // Prefix definition for logging.
  constexpr char kReadAnythingPrefix[] = "Read Anything";
  
@@ -9,7 +9,7 @@
  // chrome://whats-new renders its content in a single https://www.9oo91e.qjz9zk
  // child frame (see the frame-src CSP in WhatsNewUI). Reading mode distills that
  // frame directly.
-@@ -327,7 +327,7 @@ bool IsSameOriginSubframe(content::RenderFrameHost* rf
+@@ -328,7 +328,7 @@ bool IsSameOriginSubframe(content::RenderFrameHost* rf
  // chrome://whats-new only exists on Windows, Mac and Linux.
  bool IsWhatsNewEmbeddedContentFrame(content::RenderFrameHost* rfh,
                                      content::RenderFrameHost* main_frame) {

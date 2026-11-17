@@ -1,6 +1,6 @@
---- components/signin/public/identity_manager/account_capabilities.h.orig	2026-10-31 12:09:36 UTC
+--- components/signin/public/identity_manager/account_capabilities.h.orig	2026-11-17 11:49:09 UTC
 +++ components/signin/public/identity_manager/account_capabilities.h
-@@ -96,7 +96,7 @@ class AccountCapabilities {
+@@ -91,7 +91,7 @@ class AccountCapabilities {
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

@@ -1,6 +1,6 @@
---- skia/ext/SkMemory_new_handler.cpp.orig	2026-08-13 07:41:05 UTC
+--- skia/ext/SkMemory_new_handler.cpp.orig	2026-11-17 11:49:09 UTC
 +++ skia/ext/SkMemory_new_handler.cpp
-@@ -21,7 +21,7 @@
+@@ -30,7 +30,7 @@
  #include <windows.h>
  #elif BUILDFLAG(IS_APPLE)
  #include <malloc/malloc.h>
@@ -9,7 +9,16 @@
  #include <malloc.h>
  #endif
  
-@@ -107,7 +107,7 @@ static void* malloc_nothrow(size_t size, int debug_sen
+@@ -87,7 +87,7 @@ void* sk_realloc_throw(void* addr, size_t size) {
+       old_size = _msize(addr);
+ #elif BUILDFLAG(IS_APPLE)
+       old_size = malloc_size(addr);
+-#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID)
++#elif (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID)) && !BUILDFLAG(IS_OPENBSD)
+       old_size = malloc_usable_size(addr);
+ #endif
+     }
+@@ -125,7 +125,7 @@ static void* malloc_nothrow(size_t size, int debug_sen
    // TODO(b.kelemen): we should always use UncheckedMalloc but currently it
    // doesn't work as intended everywhere.
    void* result;

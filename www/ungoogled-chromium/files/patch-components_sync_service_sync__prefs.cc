@@ -1,4 +1,4 @@
---- components/sync/service/sync_prefs.cc.orig	2026-10-31 12:09:36 UTC
+--- components/sync/service/sync_prefs.cc.orig	2026-11-17 11:49:09 UTC
 +++ components/sync/service/sync_prefs.cc
 @@ -161,7 +161,7 @@ void SyncPrefs::RegisterProfilePrefs(PrefRegistrySimpl
        prefs::internal::kMigrateExtensionsFromLocalToAccount, false);
@@ -9,7 +9,7 @@
    registry->RegisterBooleanPref(
        prefs::internal::kReadingListPrefMigratedToAccount, false);
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
-@@ -838,7 +838,7 @@ bool SyncPrefs::MaybeMigratePrefsForSyncToSigninPart1(
+@@ -842,7 +842,7 @@ bool SyncPrefs::MaybeMigratePrefsForSyncToSigninPart1(
            update_selected_types_dict->EnsureDict(
                signin::GaiaIdHash::FromGaiaId(gaia_id).ToBase64());
  
@@ -18,7 +18,7 @@
        // Preserve the user's existing enabled state for Bookmarks, Reading List,
        // and Preferences. Otherwise, use the default value, which will be true
        // after `kReplaceSyncPromosWithSignInPromos`.
-@@ -1031,7 +1031,7 @@ void SyncPrefs::MigrateGlobalDataTypePrefsToAccount(Pr
+@@ -1035,7 +1035,7 @@ void SyncPrefs::MigrateGlobalDataTypePrefsToAccount(Pr
                          saved_tab_groups_enabled);
    account_settings->Set(GetPrefNameForType(UserSelectableType::kExtensions),
                          extensions_enabled);

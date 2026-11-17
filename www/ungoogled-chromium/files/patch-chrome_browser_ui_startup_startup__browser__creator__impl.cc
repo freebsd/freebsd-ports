@@ -1,4 +1,4 @@
---- chrome/browser/ui/startup/startup_browser_creator_impl.cc.orig	2026-10-31 12:09:36 UTC
+--- chrome/browser/ui/startup/startup_browser_creator_impl.cc.orig	2026-11-17 11:49:09 UTC
 +++ chrome/browser/ui/startup/startup_browser_creator_impl.cc
 @@ -73,7 +73,7 @@
  #include "ui/base/window_open_disposition.h"
@@ -45,7 +45,7 @@
    std::string startup_id =
        command_line_->GetSwitchValueASCII(base::nix::kXdgActivationTokenSwitch);
    if (startup_id.empty()) {
-@@ -342,7 +342,7 @@ BrowserWindowInterface* StartupBrowserCreatorImpl::Ope
+@@ -349,7 +349,7 @@ BrowserWindowInterface* StartupBrowserCreatorImpl::Ope
      BrowserWindowCreateParams params(profile_, false);
      params.creation_source =
          BrowserWindowCreateParams::CreationSource::kStartupCreator;
@@ -54,7 +54,7 @@
      params.startup_id = startup_id;
  #endif
      if (command_line_->HasSwitch(switches::kWindowName)) {
-@@ -379,7 +379,7 @@ BrowserWindowInterface* StartupBrowserCreatorImpl::Ope
+@@ -386,7 +386,7 @@ BrowserWindowInterface* StartupBrowserCreatorImpl::Ope
        continue;
      }
  
@@ -63,7 +63,7 @@
      // Start the What's New fetch but don't add the tab at this point. The tab
      // will open as the foreground tab only if the remote content can be
      // retrieved successfully. This prevents needing to automatically close the
-@@ -467,7 +467,7 @@ BrowserWindowInterface* StartupBrowserCreatorImpl::Ope
+@@ -478,7 +478,7 @@ BrowserWindowInterface* StartupBrowserCreatorImpl::Ope
      }
    }
  

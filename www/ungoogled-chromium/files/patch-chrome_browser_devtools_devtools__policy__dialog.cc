@@ -1,6 +1,6 @@
---- chrome/browser/devtools/devtools_policy_dialog.cc.orig	2026-08-13 07:41:05 UTC
+--- chrome/browser/devtools/devtools_policy_dialog.cc.orig	2026-11-17 11:49:09 UTC
 +++ chrome/browser/devtools/devtools_policy_dialog.cc
-@@ -33,7 +33,7 @@
+@@ -38,7 +38,7 @@
  
  namespace {
  

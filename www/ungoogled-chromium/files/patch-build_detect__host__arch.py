@@ -1,6 +1,6 @@
---- build/detect_host_arch.py.orig	2026-10-31 12:09:36 UTC
+--- build/detect_host_arch.py.orig	2026-11-17 11:49:09 UTC
 +++ build/detect_host_arch.py
-@@ -23,6 +23,8 @@ def HostArch():
+@@ -22,6 +22,8 @@ def HostArch():
          host_arch = 'arm'
      elif host_arch.startswith('aarch64'):
          host_arch = 'arm64'

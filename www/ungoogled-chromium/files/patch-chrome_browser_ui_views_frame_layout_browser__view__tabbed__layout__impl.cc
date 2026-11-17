@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/frame/layout/browser_view_tabbed_layout_impl.cc.orig	2026-10-31 12:09:36 UTC
+--- chrome/browser/ui/views/frame/layout/browser_view_tabbed_layout_impl.cc.orig	2026-11-17 11:49:09 UTC
 +++ chrome/browser/ui/views/frame/layout/browser_view_tabbed_layout_impl.cc
-@@ -334,7 +334,7 @@ int BrowserViewTabbedLayoutImpl::GetHorizontalTabStrip
+@@ -380,7 +380,7 @@ int BrowserViewTabbedLayoutImpl::GetHorizontalTabStrip
  }
  
  int BrowserViewTabbedLayoutImpl::GetVerticalTabStripContentOverlap() const {

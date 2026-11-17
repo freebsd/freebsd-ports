@@ -1,6 +1,6 @@
---- ui/base/ui_base_features.h.orig	2026-10-31 12:09:36 UTC
+--- ui/base/ui_base_features.h.orig	2026-11-17 11:49:09 UTC
 +++ ui/base/ui_base_features.h
-@@ -155,7 +155,7 @@ COMPONENT_EXPORT(UI_BASE_FEATURES)
+@@ -159,7 +159,7 @@ COMPONENT_EXPORT(UI_BASE_FEATURES)
  BASE_DECLARE_FEATURE(kWaylandExternalBeginFrameSource);
  #endif  // BUILDFLAG(IS_OZONE)
  
@@ -9,7 +9,7 @@
  COMPONENT_EXPORT(UI_BASE_FEATURES)
  BASE_DECLARE_FEATURE(kGlobalShortcutsPortalPreferredTrigger);
  #endif
-@@ -347,7 +347,7 @@ BASE_DECLARE_FEATURE(kChromeDarkNeutrals26);
+@@ -353,7 +353,7 @@ BASE_DECLARE_FEATURE(kChromeDarkNeutrals26);
  COMPONENT_EXPORT(UI_BASE_FEATURES)
  BASE_DECLARE_FEATURE(kDarkModeSurfaceTokens);
  

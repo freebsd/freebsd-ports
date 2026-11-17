@@ -1,4 +1,4 @@
---- chrome/browser/global_features.cc.orig	2026-10-31 12:09:36 UTC
+--- chrome/browser/global_features.cc.orig	2026-11-17 11:49:09 UTC
 +++ chrome/browser/global_features.cc
 @@ -46,7 +46,7 @@
  #include "chrome/browser/ui/tabs/tab_drag_api/desktop_tab_drag_impl/tab_drag_session_desktop_injector.h"
@@ -27,7 +27,7 @@
  #include "chrome/browser/lifetime/scheduled_restart_manager.h"
  #include "chrome/browser/ui/views/scheduled_restart/scheduled_restart_bubble_controller.h"
  #endif
-@@ -193,7 +193,7 @@ void GlobalFeatures::PostBrowserProcessInit() {
+@@ -196,7 +196,7 @@ void GlobalFeatures::PostBrowserProcessInit() {
    }
  #endif  // !BUILDFLAG(IS_ANDROID)
  
@@ -36,7 +36,7 @@
    if (base::FeatureList::IsEnabled(features::kScheduledRestart)) {
      scheduled_restart_manager_ = CreateScheduledRestartManager();
      scheduled_restart_bubble_controller_ =
-@@ -219,7 +219,7 @@ void GlobalFeatures::PostBrowserProcessInitCore() {
+@@ -222,7 +222,7 @@ void GlobalFeatures::PostBrowserProcessInitCore() {
    }
  #endif
    system_permissions_platform_handle_ = CreateSystemPermissionsPlatformHandle();
@@ -45,7 +45,7 @@
    // TODO(crbug.com/463742800): Migrate WhatsNewRegistry (and other non-core
    // features) to Init().
    whats_new_registry_ = CreateWhatsNewRegistry();
-@@ -297,7 +297,7 @@ void GlobalFeatures::PostMainMessageLoopRun() {
+@@ -303,7 +303,7 @@ void GlobalFeatures::PostMainMessageLoopRun() {
    profile_launch_observer_.reset();
  #endif  // !BUILDFLAG(IS_ANDROID)
  
@@ -54,8 +54,8 @@
    scheduled_restart_bubble_controller_.reset();
    scheduled_restart_manager_.reset();
  #endif
-@@ -326,7 +326,7 @@ void GlobalFeatures::PostMainMessageLoopRun() {
-   chrome_companero_host_.reset();
+@@ -335,7 +335,7 @@ void GlobalFeatures::PostMainMessageLoopRun() {
+ #endif
  #endif
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
@@ -63,7 +63,7 @@
    DefaultBrowserPromptManager::GetInstance()->CloseAllPrompts(
        DefaultBrowserPromptManager::CloseReason::kDismiss);
  #endif
-@@ -345,7 +345,7 @@ GlobalFeatures::CreateSystemPermissionsPlatformHandle(
+@@ -354,7 +354,7 @@ GlobalFeatures::CreateSystemPermissionsPlatformHandle(
    return system_permission_settings::PlatformHandle::Create();
  }
  
@@ -72,7 +72,7 @@
  std::unique_ptr<whats_new::WhatsNewRegistry>
  GlobalFeatures::CreateWhatsNewRegistry() {
    return whats_new::CreateWhatsNewRegistry();
-@@ -357,7 +357,7 @@ GlobalFeatures::CreateGlobalBrowserCollection() {
+@@ -366,7 +366,7 @@ GlobalFeatures::CreateGlobalBrowserCollection() {
    return std::make_unique<GlobalBrowserCollection>();
  }
  

@@ -1,6 +1,6 @@
---- ui/native_theme/features/native_theme_features.cc.orig	2026-10-31 12:09:36 UTC
+--- ui/native_theme/features/native_theme_features.cc.orig	2026-11-17 11:49:09 UTC
 +++ ui/native_theme/features/native_theme_features.cc
-@@ -67,7 +67,7 @@ bool IsFluentOverlayScrollbarEnabled() {
+@@ -62,7 +62,7 @@ bool IsFluentOverlayScrollbarEnabled() {
  
  bool IsFluentScrollbarEnabled() {
  // Fluent scrollbars are only used for some OSes due to UI design guidelines.

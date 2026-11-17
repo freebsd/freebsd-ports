@@ -1,6 +1,6 @@
---- services/network/network_service.h.orig	2026-10-31 12:09:36 UTC
+--- services/network/network_service.h.orig	2026-11-17 11:49:09 UTC
 +++ services/network/network_service.h
-@@ -239,7 +239,7 @@ class COMPONENT_EXPORT(NETWORK_SERVICE) NetworkService
+@@ -245,7 +245,7 @@ class COMPONENT_EXPORT(NETWORK_SERVICE) NetworkService
        mojo::PendingReceiver<mojom::NetworkServiceTest> receiver) override;
  
    void SetExplicitlyAllowedPorts(const std::vector<uint16_t>& ports) override;
@@ -9,7 +9,7 @@
    void SetGssapiLibraryLoadObserver(
        mojo::PendingRemote<mojom::GssapiLibraryLoadObserver>
            gssapi_library_load_observer) override;
-@@ -309,7 +309,7 @@ class COMPONENT_EXPORT(NETWORK_SERVICE) NetworkService
+@@ -315,7 +315,7 @@ class COMPONENT_EXPORT(NETWORK_SERVICE) NetworkService
    std::unique_ptr<net::HttpAuthHandlerFactory> CreateHttpAuthHandlerFactory(
        NetworkContext* network_context);
  
@@ -18,7 +18,7 @@
    // This is called just before a GSSAPI library may be loaded.
    void OnBeforeGssapiLibraryLoad();
  #endif  // BUILDFLAG(IS_LINUX)
-@@ -587,7 +587,7 @@ class COMPONENT_EXPORT(NETWORK_SERVICE) NetworkService
+@@ -597,7 +597,7 @@ class COMPONENT_EXPORT(NETWORK_SERVICE) NetworkService
    // leaking stale listeners between tests.
    std::unique_ptr<net::NetworkChangeNotifier> mock_network_change_notifier_;
  

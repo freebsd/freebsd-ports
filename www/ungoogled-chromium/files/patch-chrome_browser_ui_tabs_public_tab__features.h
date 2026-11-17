@@ -1,15 +1,14 @@
---- chrome/browser/ui/tabs/public/tab_features.h.orig	2026-10-31 12:09:36 UTC
+--- chrome/browser/ui/tabs/public/tab_features.h.orig	2026-11-17 11:49:09 UTC
 +++ chrome/browser/ui/tabs/public/tab_features.h
-@@ -255,14 +255,14 @@ namespace lens {
- class TabContextualizationController;
- }  // namespace lens
+@@ -315,13 +315,13 @@ class TabContextualizationController;
  
+ namespace metrics {
+ class MetricsServicesWebContentsObserver;
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
- namespace metrics {
  class DesktopSessionDurationObserver;
- }  // namespace metrics
  #endif
+ }  // namespace metrics
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS)
@@ -17,7 +16,7 @@
  namespace wallet {
  class ChromeWalletablePassClient;
  }  // namespace wallet
-@@ -766,20 +766,20 @@ class TabFeatures {
+@@ -846,7 +846,7 @@ class TabFeatures {
        page_context_eligibility_helper_;
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -26,8 +25,9 @@
    std::unique_ptr<wallet::ChromeWalletablePassClient> walletable_pass_client_;
  #endif
  
-   std::unique_ptr<contextual_tasks::ContextualTasksTabVisitTracker>
-       contextual_tasks_tab_visit_tracker_;
+@@ -857,13 +857,13 @@ class TabFeatures {
+   std::unique_ptr<contextual_tasks::SearchJourneyTabFeature>
+       search_journey_tab_feature_;
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)

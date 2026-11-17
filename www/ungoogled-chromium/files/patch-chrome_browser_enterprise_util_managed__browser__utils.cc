@@ -1,6 +1,6 @@
---- chrome/browser/enterprise/util/managed_browser_utils.cc.orig	2026-10-31 12:09:36 UTC
+--- chrome/browser/enterprise/util/managed_browser_utils.cc.orig	2026-11-17 11:49:09 UTC
 +++ chrome/browser/enterprise/util/managed_browser_utils.cc
-@@ -320,7 +320,7 @@ void SetUserAcceptedAccountManagement(Profile* profile
+@@ -319,7 +319,7 @@ void SetUserAcceptedAccountManagement(Profile* profile
    // The updated consent screen also ask the user for consent to share device
    // signals.
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -9,7 +9,7 @@
    profile->GetPrefs()->SetBoolean(
        device_signals::prefs::kDeviceSignalsPermanentConsentReceived, accepted);
  #endif
-@@ -329,7 +329,7 @@ void SetUserAcceptedAccountManagement(Profile* profile
+@@ -328,7 +328,7 @@ void SetUserAcceptedAccountManagement(Profile* profile
        profile_manager->GetProfileAttributesStorage()
            .GetProfileAttributesWithPath(profile->GetPath());
    if (entry) {
@@ -18,7 +18,7 @@
      SetEnterpriseProfileLabel(profile);
  #endif
      entry->SetUserAcceptedAccountManagement(accepted);
-@@ -415,7 +415,7 @@ bool CanShowEnterpriseProfileUI(Profile* profile) {
+@@ -414,7 +414,7 @@ bool CanShowEnterpriseProfileUI(Profile* profile) {
  }
  
  bool CanShowEnterpriseBadgingForNTPFooter(Profile* profile) {
@@ -27,7 +27,7 @@
    BrowserManagementNoticeState management_notice_state =
        GetManagementNoticeStateForNTPFooter(profile);
    switch (management_notice_state) {
-@@ -433,7 +433,7 @@ bool CanShowEnterpriseBadgingForNTPFooter(Profile* pro
+@@ -432,7 +432,7 @@ bool CanShowEnterpriseBadgingForNTPFooter(Profile* pro
  
  BrowserManagementNoticeState GetManagementNoticeStateForNTPFooter(
      Profile* profile) {

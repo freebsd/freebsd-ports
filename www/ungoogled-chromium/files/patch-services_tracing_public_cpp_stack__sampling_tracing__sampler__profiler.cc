@@ -1,4 +1,4 @@
---- services/tracing/public/cpp/stack_sampling/tracing_sampler_profiler.cc.orig	2026-10-31 12:09:36 UTC
+--- services/tracing/public/cpp/stack_sampling/tracing_sampler_profiler.cc.orig	2026-11-17 11:49:09 UTC
 +++ services/tracing/public/cpp/stack_sampling/tracing_sampler_profiler.cc
 @@ -43,7 +43,7 @@
  #include "third_party/perfetto/protos/perfetto/trace/track_event/process_descriptor.pbzero.h"
@@ -9,7 +9,7 @@
  #include "base/profiler/thread_delegate_posix.h"
  #define INITIALIZE_THREAD_DELEGATE_POSIX 1
  #else  // BUILDFLAG(IS_POSIX) && !BUILDFLAG(IS_APPLE)
-@@ -267,7 +267,7 @@ struct FrameDetails {
+@@ -264,7 +264,7 @@ struct FrameDetails {
      ANDROID_ARM64_UNWINDING_SUPPORTED || ANDROID_CFI_UNWINDING_SUPPORTED || \
      (BUILDFLAG(IS_CHROMEOS) &&                                              \
       (defined(ARCH_CPU_X86_64) || defined(ARCH_CPU_ARM64))) ||              \
@@ -18,7 +18,7 @@
  // Returns whether stack sampling is supported on the current platform.
  bool IsStackSamplingSupported() {
    return base::StackSamplingProfiler::IsSupportedForCurrentPlatform();
-@@ -500,7 +500,7 @@ void TracingSamplerProfiler::TracingProfileBuilder::Wr
+@@ -497,7 +497,7 @@ void TracingSamplerProfiler::TracingProfileBuilder::Wr
      thread_descriptor->set_reference_timestamp_us(
          last_timestamp_.since_origin().InMicroseconds());
  
@@ -27,7 +27,7 @@
      if (base::GetCurrentProcId() != perfetto::Platform::GetCurrentProcessId()) {
        auto* chrome_thread = track_descriptor->set_chrome_thread();
        chrome_thread->set_is_sandboxed_tid(true);
-@@ -763,7 +763,7 @@ bool TracingSamplerProfiler::IsStackUnwindingSupported
+@@ -760,7 +760,7 @@ bool TracingSamplerProfiler::IsStackUnwindingSupported
      ANDROID_ARM64_UNWINDING_SUPPORTED || ANDROID_CFI_UNWINDING_SUPPORTED || \
      (BUILDFLAG(IS_CHROMEOS) &&                                              \
       (defined(ARCH_CPU_X86_64) || defined(ARCH_CPU_ARM64))) ||              \

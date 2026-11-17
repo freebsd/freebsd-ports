@@ -1,6 +1,6 @@
---- components/feature_engagement/public/feature_list.h.orig	2026-10-31 12:09:36 UTC
+--- components/feature_engagement/public/feature_list.h.orig	2026-11-17 11:49:09 UTC
 +++ components/feature_engagement/public/feature_list.h
-@@ -404,7 +404,7 @@ DEFINE_VARIATION_PARAM(kIPHiOSPinMostVisitedSiteFeatur
+@@ -399,7 +399,7 @@ DEFINE_VARIATION_PARAM(kIPHiOSPinMostVisitedSiteFeatur
  #endif  // BUILDFLAG(IS_IOS)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
@@ -9,7 +9,7 @@
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
  DEFINE_VARIATION_PARAM(kEsbDownloadRowPromoFeature, "EsbDownloadRowPromo");
  #endif
-@@ -562,7 +562,7 @@ DEFINE_VARIATION_PARAM(kIPHTabGroupsSharedTabFeedbackF
+@@ -563,7 +563,7 @@ DEFINE_VARIATION_PARAM(kIPHTabGroupsSharedTabFeedbackF
          // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
@@ -18,7 +18,7 @@
  DEFINE_VARIATION_PARAM(kIPHAutofillAccountNameEmailSuggestionFeature,
                         "IPH_AutofillAccountNameEmailSuggestion");
  DEFINE_VARIATION_PARAM(kIPHAutofillAiValuablesFeature,
-@@ -608,7 +608,7 @@ DEFINE_VARIATION_PARAM(kIPHLauncherSearchHelpUiFeature
+@@ -609,7 +609,7 @@ DEFINE_VARIATION_PARAM(kIPHLauncherSearchHelpUiFeature
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -27,7 +27,7 @@
  DEFINE_VARIATION_PARAM(kIPHDesktopPWAsLinkCapturingLaunch,
                         "IPH_DesktopPWAsLinkCapturingLaunch");
  DEFINE_VARIATION_PARAM(kIPHDesktopPWAsLinkCapturingLaunchAppInTab,
-@@ -616,7 +616,7 @@ DEFINE_VARIATION_PARAM(kIPHDesktopPWAsLinkCapturingLau
+@@ -617,7 +617,7 @@ DEFINE_VARIATION_PARAM(kIPHDesktopPWAsLinkCapturingLau
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
          // BUILDFLAG(IS_CHROMEOS)
  
@@ -36,7 +36,7 @@
  DEFINE_VARIATION_PARAM(kIPHSignInBenefitsFeature, "IPH_SignInBenefits");
  DEFINE_VARIATION_PARAM(kIPHSupervisedUserProfileSigninFeature,
                         "IPH_SupervisedUserProfileSignin");
-@@ -864,7 +864,7 @@ inline constexpr flags_ui::FeatureEntry::FeatureVariat
+@@ -861,7 +861,7 @@ inline constexpr flags_ui::FeatureEntry::FeatureVariat
          VARIATION_ENTRY(kIPHWhatsNewUpdatedFeature),
  // keep-sorted end
  #elif BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -45,7 +45,7 @@
  #if BUILDFLAG(ENABLE_EXTENSIONS_CORE)
          VARIATION_ENTRY(kIPHExtensionsMenuFeature),
          VARIATION_ENTRY(kIPHExtensionsRequestAccessButtonFeature),
-@@ -944,7 +944,7 @@ inline constexpr flags_ui::FeatureEntry::FeatureVariat
+@@ -945,7 +945,7 @@ inline constexpr flags_ui::FeatureEntry::FeatureVariat
          // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
@@ -54,7 +54,7 @@
  // keep-sorted start case=no
          VARIATION_ENTRY(kIPHAutofillAccountNameEmailSuggestionFeature),
          VARIATION_ENTRY(kIPHAutofillAiValuablesFeature),
-@@ -971,13 +971,13 @@ inline constexpr flags_ui::FeatureEntry::FeatureVariat
+@@ -972,13 +972,13 @@ inline constexpr flags_ui::FeatureEntry::FeatureVariat
          VARIATION_ENTRY(kIPHLauncherSearchHelpUiFeature),
  #endif  // BUILDFLAG(IS_CHROMEOS)
  

@@ -1,6 +1,6 @@
---- chrome/browser/BUILD.gn.orig	2026-10-31 12:09:36 UTC
+--- chrome/browser/BUILD.gn.orig	2026-11-17 11:49:09 UTC
 +++ chrome/browser/BUILD.gn
-@@ -2005,6 +2005,10 @@ source_set("core") {
+@@ -2183,6 +2183,10 @@ source_set("core") {
  
    if (is_chrome_for_testing) {
      deps += [ "//chrome/browser/chrome_for_testing:browser" ]
@@ -11,7 +11,7 @@
    }
  
    if (safe_browsing_mode == 1) {
-@@ -3279,10 +3283,6 @@ source_set("browser") {
+@@ -3586,10 +3590,6 @@ source_set("browser") {
        # ... get modularized.
        "//chrome/browser/ui/extensions:impl",
      ]

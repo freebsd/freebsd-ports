@@ -1,6 +1,6 @@
---- components/viz/service/gl/gpu_service_impl.cc.orig	2026-10-31 12:09:36 UTC
+--- components/viz/service/gl/gpu_service_impl.cc.orig	2026-11-17 11:49:09 UTC
 +++ components/viz/service/gl/gpu_service_impl.cc
-@@ -506,7 +506,7 @@ void GpuServiceImpl::InitializeWithHostInternal(
+@@ -505,7 +505,7 @@ void GpuServiceImpl::InitializeWithHostInternal(
  
    mojo::Remote<mojom::GpuHost> gpu_host(std::move(pending_gpu_host));
  

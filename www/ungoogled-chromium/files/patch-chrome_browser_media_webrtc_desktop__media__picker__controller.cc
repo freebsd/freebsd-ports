@@ -1,6 +1,6 @@
---- chrome/browser/media/webrtc/desktop_media_picker_controller.cc.orig	2026-10-31 12:09:36 UTC
+--- chrome/browser/media/webrtc/desktop_media_picker_controller.cc.orig	2026-11-17 11:49:09 UTC
 +++ chrome/browser/media/webrtc/desktop_media_picker_controller.cc
-@@ -112,7 +112,7 @@ bool DesktopMediaPickerController::IsSystemAudioCaptur
+@@ -113,7 +113,7 @@ bool DesktopMediaPickerController::IsSystemAudioCaptur
    } else {
      return media::IsMacCatapSystemLoopbackCaptureSupported();
    }

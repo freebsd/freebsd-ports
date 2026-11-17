@@ -1,4 +1,4 @@
---- ui/base/x/x11_cursor_loader.cc.orig	2026-10-31 12:09:36 UTC
+--- ui/base/x/x11_cursor_loader.cc.orig	2026-11-17 11:49:09 UTC
 +++ ui/base/x/x11_cursor_loader.cc
 @@ -39,7 +39,7 @@
  #include "ui/gfx/x/connection.h"
@@ -21,7 +21,7 @@
    if (!lib)
      return "";
  
-@@ -234,7 +238,7 @@ scoped_refptr<base::RefCountedMemory> ReadCursorFile(
+@@ -236,7 +240,7 @@ scoped_refptr<base::RefCountedMemory> ReadCursorFile(
      const std::string& rm_xcursor_theme) {
    constexpr const char kDefaultTheme[] = "default";
    std::string themes[] = {

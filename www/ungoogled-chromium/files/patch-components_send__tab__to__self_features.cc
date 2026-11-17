@@ -1,6 +1,6 @@
---- components/send_tab_to_self/features.cc.orig	2026-10-31 12:09:36 UTC
+--- components/send_tab_to_self/features.cc.orig	2026-11-17 11:49:09 UTC
 +++ components/send_tab_to_self/features.cc
-@@ -49,7 +49,7 @@ BASE_FEATURE(kSendTabToSelfPostSendToast, base::FEATUR
+@@ -46,7 +46,7 @@ BASE_FEATURE(kSendTabToSelfPostSendToast, base::FEATUR
  
  BASE_FEATURE(kSendTabToSelfExtraEntryPoints, base::FEATURE_ENABLED_BY_DEFAULT);
  

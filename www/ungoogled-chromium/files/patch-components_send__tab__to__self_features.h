@@ -1,6 +1,6 @@
---- components/send_tab_to_self/features.h.orig	2026-10-31 12:09:36 UTC
+--- components/send_tab_to_self/features.h.orig	2026-11-17 11:49:09 UTC
 +++ components/send_tab_to_self/features.h
-@@ -59,7 +59,7 @@ BASE_DECLARE_FEATURE(kSendTabToSelfPostSendToast);
+@@ -55,7 +55,7 @@ BASE_DECLARE_FEATURE(kSendTabToSelfPostSendToast);
  // to the Omnibox context menu.
  BASE_DECLARE_FEATURE(kSendTabToSelfExtraEntryPoints);
  

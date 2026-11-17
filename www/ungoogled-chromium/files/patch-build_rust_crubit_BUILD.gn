@@ -1,0 +1,22 @@
+--- build/rust/crubit/BUILD.gn.orig	2026-11-17 11:49:09 UTC
++++ build/rust/crubit/BUILD.gn
+@@ -10,9 +10,7 @@ group("crubit") {
+   public_deps = [
+     "$crubit_src_dir/support:support_cpp",
+     "$crubit_src_dir/support/rs_std:rs_std_cpp",
+-    "//build/rust/std/rules:alloc_bindings",
+-    "//build/rust/std/rules:core_bindings",
+-    "//build/rust/std/rules:std_bindings",
++    "//build/rust/std:std_bindings",
+   ]
+ }
+ 
+@@ -22,7 +20,7 @@ config("public_config") {
+   # `include_dirs` below help ensure that Chromium can use the same
+   # `#include` paths as other Crubit clients like google3 - e.g.
+   # `#include "third_party/crubit/support/rs_std/slice_ref.h"`.
+-  include_dirs = [ "//third_party/rust-toolchain/lib" ]
++  include_dirs = [ "${rust_crubit_root}/lib" ]
+ }
+ 
+ # The `cref` crate provides `CRef<T>` and `CMut<T>` - Rust types that represent

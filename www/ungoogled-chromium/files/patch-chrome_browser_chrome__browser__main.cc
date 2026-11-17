@@ -1,4 +1,4 @@
---- chrome/browser/chrome_browser_main.cc.orig	2026-10-31 12:09:36 UTC
+--- chrome/browser/chrome_browser_main.cc.orig	2026-11-17 11:49:09 UTC
 +++ chrome/browser/chrome_browser_main.cc
 @@ -172,7 +172,7 @@
  #endif
@@ -132,7 +132,7 @@
    if (headless::IsHeadlessMode()) {
      headless::ReportHeadlessActionMetrics();
    }
-@@ -1781,7 +1781,7 @@ int ChromeBrowserMainParts::PreMainMessageLoopRunImpl(
+@@ -1779,7 +1779,7 @@ int ChromeBrowserMainParts::PreMainMessageLoopRunImpl(
  #endif
  
    // Should be done before starting metrics recording.
@@ -141,7 +141,7 @@
    // On Linux, the EULA dialog requires Views, so it is shown here rather than
    // when applying the first-run prefs.
    if (first_run::IsChromeFirstRun() && master_prefs_->eula_required &&
-@@ -1817,7 +1817,7 @@ int ChromeBrowserMainParts::PreMainMessageLoopRunImpl(
+@@ -1815,7 +1815,7 @@ int ChromeBrowserMainParts::PreMainMessageLoopRunImpl(
    // In headless mode provide alternate SelectFileDialog factory overriding
    // any platform specific SelectFileDialog implementation that may have been
    // set.
@@ -150,7 +150,7 @@
    if (headless::IsHeadlessMode()) {
      headless::HeadlessSelectFileDialogFactory::SetUp();
    }
-@@ -2109,7 +2109,7 @@ int ChromeBrowserMainParts::PreMainMessageLoopRunImpl(
+@@ -2107,7 +2107,7 @@ int ChromeBrowserMainParts::PreMainMessageLoopRunImpl(
      browser_process_->StartAutoupdateTimer();
  #endif
  

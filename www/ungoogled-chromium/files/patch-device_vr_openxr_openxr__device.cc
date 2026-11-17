@@ -1,4 +1,4 @@
---- device/vr/openxr/openxr_device.cc.orig	2026-10-31 12:09:36 UTC
+--- device/vr/openxr/openxr_device.cc.orig	2026-11-17 11:49:09 UTC
 +++ device/vr/openxr/openxr_device.cc
 @@ -90,7 +90,7 @@ OpenXrDevice::OpenXrDevice(
  
@@ -9,3 +9,12 @@
    if (base::FeatureList::IsEnabled(features::kWebXRWebGPUBinding)) {
      device_data.supported_features.emplace_back(
          mojom::XRSessionFeature::WEBGPU);
+@@ -234,7 +234,7 @@ void OpenXrDevice::OnRequestSessionResult(
+   session_result->session = std::move(session);
+   session_result->controller =
+       exclusive_controller_receiver_.BindNewPipeAndPassRemote();
+-#if !BUILDFLAG(IS_LINUX)
++#if !BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_BSD)
+   // The in-headset overlay UI is not implemented on Linux; leaving the overlay
+   // unset tells the browser to skip the VrUiHost.
+   session_result->overlay = std::move(overlay);

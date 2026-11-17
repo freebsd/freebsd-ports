@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/tabs/dragging/tab_drag_controller.cc.orig	2026-10-31 12:09:36 UTC
+--- chrome/browser/ui/views/tabs/dragging/tab_drag_controller.cc.orig	2026-11-17 11:49:09 UTC
 +++ chrome/browser/ui/views/tabs/dragging/tab_drag_controller.cc
 @@ -109,7 +109,7 @@
  #include "ui/wm/core/window_modality_controller.h"  // nogncheck
@@ -45,7 +45,7 @@
      const bool is_dragging_all_tabs =
          source_context_ && drag_data_.num_dragging_tabs() ==
                                 source_context_->GetTabStripModel()->count();
-@@ -1603,7 +1603,7 @@ void TabDragController::AttachToNewContext(
+@@ -1605,7 +1605,7 @@ void TabDragController::AttachToNewContext(
  }
  
  void TabDragController::HideDeferredEmptyBrowsers() {
@@ -54,7 +54,7 @@
    // `Browser::TabStripEmpty()` normally closes the window, which hides it
    // immediately. Since the close is deferred until the drag ends, hide the
    // window here so it doesn't linger on screen tabless for the rest of the
-@@ -1902,7 +1902,7 @@ TabDragController::DetachIntoNewBrowserAndRunMoveLoop(
+@@ -1904,7 +1904,7 @@ TabDragController::DetachIntoNewBrowserAndRunMoveLoop(
        current_state_ = DragState::kWaitingForWindowToShow;
        VisibilityWaiter waiter(dragged_widget);
  
@@ -63,7 +63,7 @@
        // VisibilityWaiter runs a kNestableTasksAllowed loop while the user holds
        // the pointer button, before the move loop's own suppression scope is
        // established; suppress data drags for its duration as well.
-@@ -2556,7 +2556,7 @@ void TabDragController::CompleteDrag() {
+@@ -2558,7 +2558,7 @@ void TabDragController::CompleteDrag() {
      }
  
      // If source window was maximized - maximize the new window as well.

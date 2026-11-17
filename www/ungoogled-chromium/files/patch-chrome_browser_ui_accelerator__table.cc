@@ -1,6 +1,6 @@
---- chrome/browser/ui/accelerator_table.cc.orig	2026-10-31 12:09:36 UTC
+--- chrome/browser/ui/accelerator_table.cc.orig	2026-11-17 11:49:09 UTC
 +++ chrome/browser/ui/accelerator_table.cc
-@@ -81,11 +81,11 @@ const AcceleratorMapping kAcceleratorMap[] = {
+@@ -75,11 +75,11 @@ const AcceleratorMapping kAcceleratorMap[] = {
      {ui::VKEY_S, ui::EF_PLATFORM_ACCELERATOR, IDC_SAVE_PAGE},
      {ui::VKEY_9, ui::EF_PLATFORM_ACCELERATOR, IDC_SELECT_LAST_TAB},
      {ui::VKEY_NUMPAD9, ui::EF_PLATFORM_ACCELERATOR, IDC_SELECT_LAST_TAB},
@@ -14,7 +14,7 @@
      {ui::VKEY_NEXT, ui::EF_CONTROL_DOWN | ui::EF_SHIFT_DOWN, IDC_MOVE_TAB_NEXT},
      {ui::VKEY_PRIOR, ui::EF_CONTROL_DOWN | ui::EF_SHIFT_DOWN,
       IDC_MOVE_TAB_PREVIOUS},
-@@ -113,7 +113,7 @@ const AcceleratorMapping kAcceleratorMap[] = {
+@@ -107,7 +107,7 @@ const AcceleratorMapping kAcceleratorMap[] = {
      {ui::VKEY_NUMPAD7, ui::EF_PLATFORM_ACCELERATOR, IDC_SELECT_TAB_6},
      {ui::VKEY_8, ui::EF_PLATFORM_ACCELERATOR, IDC_SELECT_TAB_7},
      {ui::VKEY_NUMPAD8, ui::EF_PLATFORM_ACCELERATOR, IDC_SELECT_TAB_7},
@@ -23,7 +23,7 @@
      {ui::VKEY_1, ui::EF_ALT_DOWN, IDC_SELECT_TAB_0},
      {ui::VKEY_NUMPAD1, ui::EF_ALT_DOWN, IDC_SELECT_TAB_0},
      {ui::VKEY_2, ui::EF_ALT_DOWN, IDC_SELECT_TAB_1},
-@@ -166,7 +166,7 @@ const AcceleratorMapping kAcceleratorMap[] = {
+@@ -160,7 +160,7 @@ const AcceleratorMapping kAcceleratorMap[] = {
       IDC_TOGGLE_VERTICAL_TABS_COLLAPSE},
  
  // Platform-specific key maps.
@@ -32,7 +32,7 @@
      {ui::VKEY_BROWSER_BACK, ui::EF_NONE, IDC_BACK},
      {ui::VKEY_BROWSER_FORWARD, ui::EF_NONE, IDC_FORWARD},
      {ui::VKEY_BROWSER_HOME, ui::EF_NONE, IDC_HOME},
-@@ -324,7 +324,7 @@ std::vector<AcceleratorMapping> GetAcceleratorList() {
+@@ -317,7 +317,7 @@ std::vector<AcceleratorMapping> GetAcceleratorList() {
                           std::begin(kDevToolsAcceleratorMap),
                           std::end(kDevToolsAcceleratorMap));
  

@@ -1,6 +1,5 @@
 PORTNAME=	ungoogled-chromium
-PORTVERSION=	156.0.8078.79
-PORTREVISION=	1
+PORTVERSION=	157.0.8103.78
 PULSEMV=	16
 PULSEV=		${PULSEMV}.1
 UGVERSION=	${DISTVERSION}-1
@@ -16,7 +15,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	ungoogled-software
 GH_TAGNAME=	${UGVERSION}
 
-GH_TUPLE=	microsoft:TypeScript:v${TSV}:typescript/typescript
+GH_TUPLE=	microsoft:TypeScript:v${TSV}:typescript/typescript \
+		google:crubit:dcf92a1baf2c8a6561ed0361502cfec20e2f65f5:crubit/third_party/rust-toolchain/lib/third_party/crubit
 
 MAINTAINER=	chromium@FreeBSD.org
 COMMENT=	Google web browser based on WebKit sans integration with Google
@@ -88,9 +88,20 @@ LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-core \
 RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		noto-basic>0:x11-fonts/noto-basic
 
-USES=		bison compiler:c++17-lang cpe desktop-file-utils gl go:no_targets \
+USES=		bison cargo compiler:c++17-lang cpe desktop-file-utils gl go:no_targets \
 		gmake gnome iconv:wchar_t jpeg localbase:ldflags ninja perl5 \
 		pkgconfig python:build qt:5 shebangfix tar:xz xorg
+
+LTO_UNSAFE=		Yes
+CARGO_CARGOTOML=	${WRKSRC}/third_party/rust-toolchain/lib/third_party/crubit/Cargo.toml
+CARGO_CARGOLOCK=	${WRKSRC}/third_party/rust-toolchain/lib/third_party/crubit/Cargo.lock
+CARGO_TARGET_DIR=	${WRKSRC}/third_party/rust-toolchain/lib/third_party/crubit/target
+CARGO_BUILD_ARGS+=	-p cc_bindings_from_rs
+CARGO_ENV+=		RUSTC_BOOTSTRAP=1
+
+CARGO_INSTALL=		No
+CARGO_BUILD=		No
+CARGO_TEST=		No
 
 CPE_VENDOR=	google
 CPE_PRODUCT=	chrome
@@ -295,7 +306,9 @@ WRKSRC=		${WRKDIR}/chromium-${DISTVERSION}
 # rust
 MAKE_ENV+=	RUSTC_BOOTSTRAP=1
 GN_ARGS+=	enable_rust=true \
-		rust_sysroot_absolute="${LOCALBASE}"
+		rust_sysroot_absolute="${LOCALBASE}" \
+		rust_crubit_root="//third_party/rust-toolchain" \
+		enable_rust_api_from_cpp=true
 
 # go
 MAKE_ENV+=	GOCACHE=${WRKDIR}/go-cache
@@ -309,7 +322,8 @@ pre-everything::
 	@${ECHO_MSG}
 
 pre-patch:
-	${REINPLACE_CMD} -e "s#'third_party/typescript/linux-amd64/',##g" \
+	${REINPLACE_CMD} -e "s#'third_party/typescript/linux-amd64/',##g; \
+		 s#'third_party/rust-toolchain/',##g" \
 		${WRKDIR}/ungoogled-chromium-${UGVERSION}/utils/prune_binaries.py
 	cd ${WRKDIR}/ungoogled-chromium-${UGVERSION} && ${PYTHON_CMD} \
 		utils/prune_binaries.py ${WRKSRC} pruning.list
@@ -355,6 +369,21 @@ pre-build:
 		${WRKSRC}/third_party/typescript/linux-amd64/src/lib/tsc
 
 do-configure:
+	@${CARGO_CARGO_RUN} build \
+		--manifest-path ${CARGO_CARGOTOML} \
+		--verbose \
+		--verbose \
+		${CARGO_BUILD_ARGS}
+
+	# Setup rustc dependency
+	@${MKDIR} ${WRKSRC}/third_party/rust-toolchain/bin \
+		${WRKSRC}/third_party/rust-toolchain/bin \
+		${WRKSRC}/third_party/rust-toolchain/lib/third_party
+	${LN} -sf ${LOCALBASE}/bin/rustc ${WRKSRC}/third_party/rust-toolchain/bin/rustc
+	ln -sf ${LOCALBASE}/bin/rustfmt ${WRKSRC}/third_party/rust-toolchain/bin/rustfmt
+	ln -sf ${WRKSRC}/third_party/rust-toolchain/lib/third_party/crubit/target/release/cc_bindings_from_rs \
+		${WRKSRC}/third_party/rust-toolchain/bin/
+
 	# GN generator bootstrapping and generating ninja files
 	${LN} -sf ${WRKSRC}/out/${BUILDTYPE}/gn ${WRKSRC}/buildtools/linux64/gn
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} CC=${CC} CXX=${CXX} LD=${CXX} \
@@ -366,10 +395,6 @@ do-configure:
 	# Setup nodejs dependency
 	@${MKDIR} ${WRKSRC}/third_party/node/freebsd/node-freebsd/bin
 	${LN} -sf ${LOCALBASE}/bin/node ${WRKSRC}/third_party/node/freebsd/node-freebsd/bin/node
-
-	# Setup rustc dependency
-	@${MKDIR} ${WRKSRC}/third_party/rust-toolchain/bin
-	${LN} -sf ${LOCALBASE}/bin/rustc ${WRKSRC}/third_party/rust-toolchain/bin/rustc
 
 	# Setup esbuild dependency
 	${LN} -sf ${LOCALBASE}/bin/esbuild ${WRKSRC}/third_party/devtools-frontend/src/third_party/esbuild/esbuild
@@ -401,7 +426,7 @@ do-install:
 .for d in protoc mksnapshot
 	${INSTALL_PROGRAM} ${WRKSRC}/out/${BUILDTYPE}/${d} ${STAGEDIR}${DATADIR}
 .endfor
-.for d in snapshot_blob.bin v8_context_snapshot.bin
+.for d in snapshot_blob.bin
 	${INSTALL_DATA} ${WRKSRC}/out/${BUILDTYPE}/${d} ${STAGEDIR}${DATADIR}
 .endfor
 	${INSTALL_PROGRAM} ${WRKSRC}/out/${BUILDTYPE}/chrome \

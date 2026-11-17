@@ -1,6 +1,6 @@
---- chrome/browser/extensions/api/messaging/launch_context_posix.cc.orig	2024-11-16 12:20:41 UTC
+--- chrome/browser/extensions/api/messaging/launch_context_posix.cc.orig	2026-11-17 11:49:09 UTC
 +++ chrome/browser/extensions/api/messaging/launch_context_posix.cc
-@@ -84,7 +84,7 @@ std::optional<LaunchContext::ProcessState> LaunchConte
+@@ -85,7 +85,7 @@ std::optional<LaunchContext::ProcessState> LaunchConte
  
    options.current_directory = command_line.GetProgram().DirName();
  
