@@ -1,5 +1,5 @@
 PORTNAME=	trimesh
-DISTVERSION=	5.1.1
+DISTVERSION=	5.2.1
 CATEGORIES=	graphics python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -51,6 +51,6 @@ TEST_ARGS=	--disable-plugin-autoload \
 		--deselect=tests/test_splines.py::SplineTests::test_bezier_example
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
-# tests as of 5.1.1: 742 passed, 3 skipped, 292 warnings in 252.21s
+# tests as of 5.2.1: 926 passed, 3 skipped, 310 warnings in 65.25s
 
 .include <bsd.port.mk>
