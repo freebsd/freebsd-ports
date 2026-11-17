@@ -1,0 +1,5 @@
+qga-guest-exec is a utility that executes commands inside a virtual machine
+guest through the QEMU Guest Agent Protocol. It connects to the guest agent
+socket and requests command execution, supporting both synchronous mode with
+output capture and polling, and asynchronous mode that launches the process
+and exits immediately.
