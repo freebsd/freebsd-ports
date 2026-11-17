@@ -1,0 +1,7 @@
+Woodpecker is a CI/CD engine: pipelines are YAML files in the repository,
+run on every push, pull request, tag or schedule from a Git forge
+(Forgejo, Gitea, GitHub, GitLab or Bitbucket).
+
+This package is the agent, which takes pipelines from a Woodpecker
+server (devel/woodpecker) and runs them. On FreeBSD it uses the local
+backend: steps run directly on the host, with the tools installed there.

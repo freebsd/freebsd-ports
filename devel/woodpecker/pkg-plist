@@ -1,0 +1,4 @@
+bin/woodpecker-cli
+bin/woodpecker-server
+@sample(root,woodpecker,640) %%ETCDIR%%/server.env.sample
+@dir(woodpecker,woodpecker,750) /var/db/woodpecker

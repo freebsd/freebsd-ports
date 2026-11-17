@@ -354,7 +354,7 @@ svn:*:404:404::0:0:Subversion daemon:/var/db/svn:/usr/sbin/nologin
 rustfs:*:405:405::0:0:RustFS Daemon:/var/db/rustfs:/usr/sbin/nologin
 tuwunel:*:406:406::0:0:Tuwunel Matrix Homeserver:/var/db/tuwunel:/usr/sbin/nologin
 continuwuity:*:407:407::0:0:Continuwuity Matrix Homeserver:/nonexistent:/usr/sbin/nologin
-# free: 408
+woodpecker:*:408:408::0:0:Woodpecker CI:/var/db/woodpecker:/usr/sbin/nologin
 # free: 409
 # free: 410
 uhub:*:411:411::0:0:uHub ADC Daemon:/nonexistent:/usr/sbin/nologin

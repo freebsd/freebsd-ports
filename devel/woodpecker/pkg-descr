@@ -1,0 +1,7 @@
+Woodpecker is a CI/CD engine: pipelines are YAML files in the repository,
+run on every push, pull request, tag or schedule from a Git forge
+(Forgejo, Gitea, GitHub, GitLab or Bitbucket).
+
+This package is the server, which serves the web UI and API and hands
+work to agents, and woodpecker-cli, which drives it from the command
+line. Pipelines run on agents: devel/woodpecker-agent.

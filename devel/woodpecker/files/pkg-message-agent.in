@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+Point the agent at its server in %%ETCDIR%%/agent.env, then:
+
+  sysrc woodpecker_agent_enable=YES
+  service woodpecker_agent start
+
+The agent uses the local backend: pipeline steps run on this host as the
+%%WOODPECKER_USER%% user, with the tools installed here. A step's "image:"
+names the shell its commands run in (sh, bash) or, for a plugin, the
+binary to run. Install what pipelines need (gmake, node, ...) as packages.
+EOM
+}
+]

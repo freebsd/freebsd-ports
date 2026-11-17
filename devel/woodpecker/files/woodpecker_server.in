@@ -1,0 +1,40 @@
+#!/bin/sh
+
+# PROVIDE: woodpecker_server
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable woodpecker_server:
+#
+# woodpecker_server_enable (bool):	Set to "YES" to enable.
+#				Default: "NO"
+# woodpecker_server_env_file (str):	Its configuration, as environment
+#				variables.
+#				Default: "%%ETCDIR%%/server.env"
+# woodpecker_server_user (str):	Default: "%%WOODPECKER_USER%%"
+
+. /etc/rc.subr
+
+name=woodpecker_server
+rcvar=woodpecker_server_enable
+
+load_rc_config $name
+
+: ${woodpecker_server_enable:="NO"}
+: ${woodpecker_server_env_file:="%%ETCDIR%%/server.env"}
+: ${woodpecker_server_user:="%%WOODPECKER_USER%%"}
+: ${woodpecker_server_chdir:="/var/db/woodpecker"}
+
+pidfile="/var/run/woodpecker/server.pid"
+procname="%%PREFIX%%/bin/woodpecker-server"
+command="/usr/sbin/daemon"
+command_args="-c -p ${pidfile} -S -T ${name} ${procname}"
+start_precmd="${name}_precmd"
+
+woodpecker_server_precmd()
+{
+	install -d -o ${woodpecker_server_user} -m 755 /var/run/woodpecker
+	export HOME=/var/db/woodpecker
+}
+
+run_rc_command "$1"

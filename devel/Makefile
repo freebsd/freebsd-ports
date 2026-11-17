@@ -9031,6 +9031,9 @@
     SUBDIR += wizardkit
     SUBDIR += wizer
     SUBDIR += woff2
+    SUBDIR += woodpecker
+    SUBDIR += woodpecker-agent
+    SUBDIR += woodpecker-plugin-git
     SUBDIR += wxformbuilder
     SUBDIR += xa65
     SUBDIR += xbyak

@@ -1,0 +1,3 @@
+bin/woodpecker-agent
+@sample(root,woodpecker,640) %%ETCDIR%%/agent.env.sample
+@dir(woodpecker,woodpecker,750) /var/db/woodpecker

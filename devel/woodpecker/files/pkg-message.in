@@ -1,0 +1,13 @@
+[
+{ type: install
+  message: <<EOM
+Configure the server in %%ETCDIR%%/server.env, then:
+
+  sysrc woodpecker_server_enable=YES
+  service woodpecker_server start
+
+Pipelines run on agents: install devel/woodpecker-agent here or on
+another host, with the same WOODPECKER_AGENT_SECRET.
+EOM
+}
+]
