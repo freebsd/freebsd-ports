@@ -1,5 +1,5 @@
 PORTNAME=	websocket-extensions
-PORTVERSION=	0.1.5
+PORTVERSION=	0.2.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
