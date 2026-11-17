@@ -1,5 +1,5 @@
 PORTNAME=	langchain
-DISTVERSION=	1.4.9
+DISTVERSION=	1.5.0
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ LICENSE=	MIT
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}langchain-core>=1.7.5:misc/py-langchain-core@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}langchain-core>=1.8.0:misc/py-langchain-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}langgraph>=1.2.12:misc/py-langgraph@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.7.4:devel/py-pydantic2@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}blockbuster>=1.5.26:devel/py-blockbuster@${PY_FLAVOR} \
@@ -39,7 +39,15 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 # full shell environment that is not available during package builds.
 # The deselected graph snapshot tests fail because current langgraph renders
 # extra tool annotations in its mermaid output.
-TEST_ARGS=	--ignore=${WRKSRC}/tests/integration_tests \
+TEST_ARGS=	--disable-plugin-autoload \
+		-p pytest_asyncio.plugin \
+		-p pytest_benchmark.plugin \
+		-p pytest_mock \
+		-p pytest_recording.plugin \
+		-p pytest_socket \
+		-p syrupy \
+		--asyncio-mode=auto \
+		--ignore=${WRKSRC}/tests/integration_tests \
 		--ignore=${WRKSRC}/tests/unit_tests/agents/middleware/implementations/test_shell_tool.py \
 		--ignore=${WRKSRC}/tests/unit_tests/mcp \
 		--ignore=${WRKSRC}/tests/unit_tests/test_imports.py \
@@ -51,6 +59,6 @@ TEST_ARGS=	--ignore=${WRKSRC}/tests/integration_tests \
 		--deselect=tests/unit_tests/agents/test_return_direct_graph.py \
 		--snapshot-warn-unused
 
-# tests as of 1.4.9: 1174 passed, 12 skipped, 7 deselected, 7 warnings
+# tests as of 1.5.0: 1202 passed, 12 skipped, 7 deselected, 17 warnings
 
 .include <bsd.port.mk>
