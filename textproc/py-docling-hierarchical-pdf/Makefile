@@ -19,8 +19,16 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docling>=2.53.0:textproc/py-docling@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}scikit-learn>=1.6.0:science/py-scikit-learn@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist concurrent pep517
+USE_PYTHON=	autoplist concurrent pep517 pytest
 
 NO_ARCH=	yes
+
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} \
+		LD_PRELOAD=${PYTHON_SITELIBDIR}/torch/lib/libc10.so
+# test_result_postprocessor_textpdf_http downloads a sample from the network
+TEST_ARGS=	--disable-plugin-autoload \
+		--deselect tests/test_postprocessing.py::test_result_postprocessor_textpdf_http
+
+# tests as of 0.2.0: 25 passed, 5 skipped, 1 deselected, 17 warnings in 21.16s
 
 .include <bsd.port.mk>
