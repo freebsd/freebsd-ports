@@ -47,12 +47,13 @@ USE_PYTHON=	autoplist concurrent pep517 pytest
 
 NO_ARCH=	yes
 
-TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} \
+		LD_PRELOAD=${PYTHON_SITELIBDIR}/torch/lib/libc10.so
 TEST_WRKDIR=	${WRKSRC}/tests
 
-# tests as of 1.28.0: test_ray_metrics_collector.py is ignored because the
-# devel/py-ray port only ships a cp311 manylinux wheel and is not usable with
-# the default python3.12 flavor.
+# test_ray_metrics_collector.py is ignored because the devel/py-ray port only
+# ships a cp311 manylinux wheel and is not usable with the default python3.12
+# flavor.
 # Several other test files are ignored because they require network access,
 # local PDF files, machine-learning models, or a pytest-asyncio version newer
 # than the one currently available in the Ports tree.
@@ -81,6 +82,6 @@ TEST_ARGS=	--disable-plugin-autoload \
 		--ignore=${WRKSRC}/tests/test_rq_plugin_policy.py \
 		--ignore=${WRKSRC}/tests/test_rq_worker_metrics.py
 
-# tests as of 1.36.0: 144 passed, 298 warnings in 7.39s
+# tests as of 1.38.2: 172 passed, 446 warnings in 13.16s
 
 .include <bsd.port.mk>
