@@ -1,0 +1,3 @@
+cython-cmake provides CMake helpers for building Cython modules: the
+FindCython.cmake and UseCython.cmake modules, which are registered through
+the "cmake.module" entry point so that they are found by scikit-build-core.
