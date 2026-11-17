@@ -1,6 +1,6 @@
---- src/chrome/browser/chrome_browser_main_extra_parts_ozone.cc.orig	2025-04-04 08:52:13 UTC
+--- src/chrome/browser/chrome_browser_main_extra_parts_ozone.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/chrome_browser_main_extra_parts_ozone.cc
-@@ -28,7 +28,7 @@ void ChromeBrowserMainExtraPartsOzone::PostCreateMainM
+@@ -28,7 +28,7 @@ void ChromeBrowserMainExtraPartsOzone::P
  }
  
  void ChromeBrowserMainExtraPartsOzone::PostMainMessageLoopRun() {

@@ -1,6 +1,6 @@
---- src/ui/gtk/gtk_compat.cc.orig	2026-01-14 08:33:23 UTC
+--- src/ui/gtk/gtk_compat.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/ui/gtk/gtk_compat.cc
-@@ -74,27 +74,47 @@ auto DlSym(void* library, const char* name) {
+@@ -74,27 +74,47 @@ auto DlSym(void* library, const char* na
  }
  
  void* GetLibGio() {

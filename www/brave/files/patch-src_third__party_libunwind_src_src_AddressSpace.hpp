@@ -1,4 +1,4 @@
---- src/third_party/libunwind/src/src/AddressSpace.hpp.orig	2026-02-11 09:05:39 UTC
+--- src/third_party/libunwind/src/src/AddressSpace.hpp.orig	2026-10-18 18:43:23 UTC
 +++ src/third_party/libunwind/src/src/AddressSpace.hpp
 @@ -16,6 +16,7 @@
  #include <stdio.h>
@@ -8,13 +8,13 @@
  
  #include "libunwind.h"
  #include "config.h"
-@@ -157,7 +158,63 @@ struct UnwindInfoSections {
+@@ -157,6 +158,62 @@ struct UnwindInfoSections {
  #endif
  };
  
 +class UnwindInfoSectionsCache {
 +public:
- 
++
 +  struct CacheItem {
 +    CacheItem(UnwindInfoSections &uis, uintptr_t pc)
 +      : m_uis(uis), m_pc(pc) {
@@ -68,18 +68,17 @@
 +  RB_HEAD(CacheTree, CacheItem) m_head;
 +  RB_GENERATE(CacheTree, CacheItem, entry, CacheCmp);
 +};
-+
+ 
  /// LocalAddressSpace is used as a template parameter to UnwindCursor when
  /// unwinding a thread in the same process.  The wrappers compile away,
- /// making local unwinds fast.
-@@ -283,6 +340,10 @@ LocalAddressSpace::getEncodedP(pint_t &addr, pint_t en
-   pint_t startAddr = addr;
+@@ -284,6 +341,10 @@ LocalAddressSpace::getEncodedP(pint_t &a
    const uint8_t *p = (uint8_t *)addr;
    pint_t result;
-+
+ 
 +  if (encoding == DW_EH_PE_omit) {
 +    return (pint_t)NULL;
 +  }
- 
++
    // first get value
    switch (encoding & 0x0F) {
+   case DW_EH_PE_ptr:

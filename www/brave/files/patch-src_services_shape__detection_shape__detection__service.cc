@@ -1,4 +1,4 @@
---- src/services/shape_detection/shape_detection_service.cc.orig	2025-10-02 04:28:32 UTC
+--- src/services/shape_detection/shape_detection_service.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/services/shape_detection/shape_detection_service.cc
 @@ -22,7 +22,7 @@
  #elif BUILDFLAG(IS_ANDROID)
@@ -9,7 +9,7 @@
  #include "services/shape_detection/barcode_detection_provider_chrome.h"
  #else
  #include "services/shape_detection/barcode_detection_provider_impl.h"
-@@ -56,7 +56,7 @@ void ShapeDetectionService::BindBarcodeDetectionProvid
+@@ -56,7 +56,7 @@ void ShapeDetectionService::BindBarcodeD
  #elif BUILDFLAG(IS_MAC)
    BarcodeDetectionProviderMac::Create(std::move(receiver));
  #elif BUILDFLAG(GOOGLE_CHROME_BRANDING) && \

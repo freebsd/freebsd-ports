@@ -1,4 +1,4 @@
---- src/chrome/browser/task_manager/sampling/task_group.cc.orig	2026-02-11 09:05:39 UTC
+--- src/chrome/browser/task_manager/sampling/task_group.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/task_manager/sampling/task_group.cc
 @@ -34,7 +34,7 @@ const int kBackgroundRefreshTypesMask =
  #if BUILDFLAG(IS_WIN)
@@ -18,7 +18,7 @@
          base::BindRepeating(&TaskGroup::OnOpenFdCountRefreshDone,
                              weak_ptr_factory_.GetWeakPtr()),
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC)
-@@ -237,7 +237,7 @@ void TaskGroup::RefreshWindowsHandles() {
+@@ -237,7 +237,7 @@ void TaskGroup::RefreshWindowsHandles()
  #endif  // BUILDFLAG(IS_WIN)
  }
  

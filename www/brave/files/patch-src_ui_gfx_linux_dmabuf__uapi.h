@@ -1,4 +1,4 @@
---- src/ui/gfx/linux/dmabuf_uapi.h.orig	2023-10-12 11:15:05 UTC
+--- src/ui/gfx/linux/dmabuf_uapi.h.orig	2026-10-18 18:43:23 UTC
 +++ src/ui/gfx/linux/dmabuf_uapi.h
 @@ -5,12 +5,11 @@
  #ifndef UI_GFX_LINUX_DMABUF_UAPI_H_
@@ -17,7 +17,7 @@
  
  struct dma_buf_sync {
    __u64 flags;
-@@ -26,9 +25,7 @@ constexpr __u64 DMA_BUF_SYNC_END = 1 << 2;
+@@ -26,9 +25,7 @@ constexpr __u64 DMA_BUF_SYNC_END = 1 <<
  constexpr char DMA_BUF_BASE = 'b';
  constexpr unsigned long DMA_BUF_IOCTL_SYNC =
      _IOW(DMA_BUF_BASE, 0, struct dma_buf_sync);
@@ -27,7 +27,7 @@
  struct dma_buf_export_sync_file {
    __u32 flags;
    __s32 fd;
-@@ -43,6 +40,5 @@ constexpr unsigned long DMA_BUF_IOCTL_EXPORT_SYNC_FILE
+@@ -43,6 +40,5 @@ constexpr unsigned long DMA_BUF_IOCTL_EX
      _IOWR(DMA_BUF_BASE, 2, struct dma_buf_export_sync_file);
  constexpr unsigned long DMA_BUF_IOCTL_IMPORT_SYNC_FILE =
      _IOW(DMA_BUF_BASE, 3, struct dma_buf_import_sync_file);

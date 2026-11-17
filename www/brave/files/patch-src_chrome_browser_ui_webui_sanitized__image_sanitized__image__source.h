@@ -1,6 +1,6 @@
---- src/chrome/browser/ui/webui/sanitized_image/sanitized_image_source.h.orig	2026-05-07 17:02:56 UTC
+--- src/chrome/browser/ui/webui/sanitized_image/sanitized_image_source.h.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/ui/webui/sanitized_image/sanitized_image_source.h
-@@ -124,7 +124,7 @@ class SanitizedImageSource : public content::URLDataSo
+@@ -124,7 +124,7 @@ class SanitizedImageSource : public cont
      ~RequestAttributes();
  
      GURL image_url = GURL();

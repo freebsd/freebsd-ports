@@ -1,4 +1,4 @@
---- src/media/gpu/sandbox/hardware_video_encoding_sandbox_hook_linux.cc.orig	2026-08-31 10:59:09 UTC
+--- src/media/gpu/sandbox/hardware_video_encoding_sandbox_hook_linux.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/media/gpu/sandbox/hardware_video_encoding_sandbox_hook_linux.cc
 @@ -18,12 +18,15 @@
  #include "media/gpu/v4l2/v4l2_device.h"
@@ -16,11 +16,11 @@
    sandbox::syscall_broker::BrokerCommandSet command_set;
    std::vector<BrokerFilePermission> permissions;
  
-@@ -140,6 +143,7 @@ bool HardwareVideoEncodingPreSandboxHook(
-     dlopen("libvulkan.so.1", kDlopenFlags);
+@@ -141,6 +144,7 @@ bool HardwareVideoEncodingPreSandboxHook
      dlopen("libvulkan_radeon.so", kDlopenFlags);
    }
-+#endif
  #endif
++#endif
    return true;
  }
+ 

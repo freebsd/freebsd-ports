@@ -1,6 +1,6 @@
---- src/chrome/common/chrome_switches.h.orig	2026-09-25 15:26:43 UTC
+--- src/chrome/common/chrome_switches.h.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/common/chrome_switches.h
-@@ -976,7 +976,7 @@ inline constexpr char kDebugPrint[] = "debug-print";
+@@ -1022,7 +1022,7 @@ inline constexpr char kDebugPrint[] = "d
  #endif
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \
@@ -9,7 +9,7 @@
  // Causes the browser to launch directly in guest mode.
  inline constexpr char kGuest[] = "guest";
  
-@@ -1044,7 +1044,7 @@ inline constexpr char kGlicGuestUrlPresetPreprod[] =
+@@ -1090,7 +1090,7 @@ inline constexpr char kGlicGuestUrlPrese
  
  inline constexpr char kGlicGuestUrlPresetProd[] = "glic-guest-url-preset-prod";
  

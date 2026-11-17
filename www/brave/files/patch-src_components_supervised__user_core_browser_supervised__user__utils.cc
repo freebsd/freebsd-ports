@@ -1,6 +1,6 @@
---- src/components/supervised_user/core/browser/supervised_user_utils.cc.orig	2026-06-04 10:12:25 UTC
+--- src/components/supervised_user/core/browser/supervised_user_utils.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/components/supervised_user/core/browser/supervised_user_utils.cc
-@@ -42,7 +42,7 @@ constexpr char kParentAccessResultQueryParameter[] = "
+@@ -42,7 +42,7 @@ constexpr char kParentAccessResultQueryP
  constexpr char kPacpOriginUrlHost[] = "families.google.com";
  
  #if BUILDFLAG(IS_IOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \

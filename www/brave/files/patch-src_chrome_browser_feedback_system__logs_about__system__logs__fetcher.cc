@@ -1,4 +1,4 @@
---- src/chrome/browser/feedback/system_logs/about_system_logs_fetcher.cc.orig	2025-07-02 06:08:04 UTC
+--- src/chrome/browser/feedback/system_logs/about_system_logs_fetcher.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/feedback/system_logs/about_system_logs_fetcher.cc
 @@ -38,7 +38,7 @@
  #include "chrome/browser/ash/system_logs/ui_hierarchy_log_source.h"
@@ -9,7 +9,7 @@
  #include "chrome/browser/feedback/system_logs/log_sources/ozone_platform_state_dump_source.h"
  #endif
  
-@@ -85,7 +85,7 @@ SystemLogsFetcher* BuildAboutSystemLogsFetcher(content
+@@ -85,7 +85,7 @@ SystemLogsFetcher* BuildAboutSystemLogsF
    fetcher->AddSource(std::make_unique<KeyboardInfoLogSource>());
  #endif
  

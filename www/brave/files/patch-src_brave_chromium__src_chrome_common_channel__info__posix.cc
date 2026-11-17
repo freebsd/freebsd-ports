@@ -1,6 +1,6 @@
---- src/brave/chromium_src/chrome/common/channel_info_posix.cc.orig	2026-06-01 00:00:00 UTC
+--- src/brave/chromium_src/chrome/common/channel_info_posix.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/brave/chromium_src/chrome/common/channel_info_posix.cc
-@@ -27,7 +27,7 @@
+@@ -27,7 +27,7 @@ std::string GetChannelSuffixForDataDir()
    return std::string();
  }
  
@@ -9,7 +9,7 @@
  std::string GetChannelSuffixForExtraFlagsEnvVarName() {
  #if defined(OFFICIAL_BUILD)
    version_info::Channel product_channel(chrome::GetChannel());
-@@ -51,9 +51,9 @@
+@@ -51,9 +51,9 @@ std::string GetChannelSuffixForExtraFlag
               : std::string();
  #endif  // defined(OFFICIAL_BUILD)
  }
@@ -21,7 +21,7 @@
  std::string GetDesktopName(base::Environment* env) {
    if (auto brave_snap = env->GetVar("BRAVE_SNAP");
        brave_snap && *brave_snap == "1") {
-@@ -95,7 +95,7 @@
+@@ -95,7 +95,7 @@ std::string GetDesktopName(base::Environ
    return "brave-browser.desktop";
  #endif
  }

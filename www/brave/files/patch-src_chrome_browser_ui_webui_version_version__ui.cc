@@ -1,6 +1,6 @@
---- src/chrome/browser/ui/webui/version/version_ui.cc.orig	2026-08-12 09:02:10 UTC
+--- src/chrome/browser/ui/webui/version/version_ui.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/ui/webui/version/version_ui.cc
-@@ -209,7 +209,7 @@ int VersionUI::VersionProcessorVariation() {
+@@ -209,7 +209,7 @@ int VersionUI::VersionProcessorVariation
    return IDS_VERSION_UI_64BIT;
  #endif  // defined(ARCH_CPU_X86)
  #endif  // defined(ARCH_CPU_ARM64)

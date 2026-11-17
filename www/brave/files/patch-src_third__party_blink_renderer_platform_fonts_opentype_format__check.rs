@@ -1,4 +1,4 @@
---- src/third_party/blink/renderer/platform/fonts/opentype/format_check.rs.orig	2026-09-25 15:26:43 UTC
+--- src/third_party/blink/renderer/platform/fonts/opentype/format_check.rs.orig	2026-10-18 18:43:23 UTC
 +++ src/third_party/blink/renderer/platform/fonts/opentype/format_check.rs
 @@ -23,7 +23,7 @@ pub struct FontFormatInfo {
      format_flags: Option<FontFormatFlags>,
@@ -9,7 +9,7 @@
      let file_ref = make_font_ref_internal(font_bytes, 0);
  
      match file_ref {
-@@ -32,11 +32,11 @@ pub fn get_font_format_info(font_bytes: &[u8]) -> Font
+@@ -32,11 +32,11 @@ pub fn get_font_format_info(font_bytes:
                  font.table_directory().table_records().iter().map(|e| e.tag()).collect();
              let color_version = get_colr_version(&font);
              let avar_version = get_avar_version(&font);
@@ -24,7 +24,7 @@
      }
  }
  
-@@ -44,10 +44,10 @@ fn get_colr_version(font_ref: &FontRef) -> Option<u16>
+@@ -44,10 +44,10 @@ fn get_colr_version(font_ref: &FontRef)
      Some(font_ref.colr().ok()?.version())
  }
  
@@ -37,7 +37,7 @@
      matches!(&format_info.format_flags, Some(FontFormatFlags { color_version: Some(0), .. }),)
  }
  
-@@ -56,7 +56,7 @@ fn get_avar_version(font_ref: &FontRef) -> Option<(u16
+@@ -56,7 +56,7 @@ fn get_avar_version(font_ref: &FontRef)
      Some((version.major, version.minor))
  }
  
@@ -46,7 +46,7 @@
      matches!(&format_info.format_flags, Some(FontFormatFlags { avar_version: Some((2, _)), .. }),)
  }
  
-@@ -69,22 +69,39 @@ fn has_tags(format_info: &FontFormatInfo, query: &[Tag
+@@ -69,22 +69,39 @@ fn has_tags(format_info: &FontFormatInfo
      }
  }
  
@@ -73,7 +73,7 @@
 -pub fn is_cff2(format_info: &FontFormatInfo) -> bool {
 +fn is_cff2(format_info: &FontFormatInfo) -> bool {
      has_tags(format_info, &[Tag::new(b"CFF2")])
-+}
+ }
 +
 +#[cxx::bridge(namespace = "font_format_check")]
 +pub mod ffi {
@@ -90,4 +90,4 @@
 +        fn is_cff2(format_info: &FontFormatInfo) -> bool;
 +        fn is_avar2(format_info: &FontFormatInfo) -> bool;
 +    }
- }
++}

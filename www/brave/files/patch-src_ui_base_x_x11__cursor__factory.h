@@ -1,4 +1,4 @@
---- src/ui/base/x/x11_cursor_factory.h.orig	2023-11-03 10:09:45 UTC
+--- src/ui/base/x/x11_cursor_factory.h.orig	2026-10-18 18:43:23 UTC
 +++ src/ui/base/x/x11_cursor_factory.h
 @@ -20,7 +20,7 @@ namespace ui {
  class X11Cursor;
@@ -9,7 +9,7 @@
  class LinuxUi;
  #endif
  
-@@ -62,7 +62,7 @@ class COMPONENT_EXPORT(UI_BASE_X) X11CursorFactory
+@@ -62,7 +62,7 @@ class COMPONENT_EXPORT(UI_BASE_X) X11Cur
    // initializing `cursor_loader_` will modify `default_cursors_`.
    std::unique_ptr<XCursorLoader> cursor_loader_;
  

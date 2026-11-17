@@ -1,4 +1,4 @@
---- src/remoting/host/setup/me2me_native_messaging_host_main.cc.orig	2026-08-12 09:02:10 UTC
+--- src/remoting/host/setup/me2me_native_messaging_host_main.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/remoting/host/setup/me2me_native_messaging_host_main.cc
 @@ -42,7 +42,7 @@
  #include "base/apple/scoped_nsautorelease_pool.h"
@@ -9,7 +9,7 @@
  #include "remoting/base/crash/crash_reporting_crashpad.h"
  #include "remoting/base/file_path_util_linux.h"
  #include "remoting/host/pairing_registry_delegate_linux.h"
-@@ -105,7 +105,7 @@ int Me2MeNativeMessagingHostMain(int argc, char** argv
+@@ -105,7 +105,7 @@ int Me2MeNativeMessagingHostMain(int arg
    // needs to be initialized first, so that the preference for crash-reporting
    // can be looked up in the config file.
    if (IsUsageStatsAllowed()) {
@@ -18,7 +18,7 @@
      InitializeCrashpadReporting();
  #elif BUILDFLAG(IS_WIN)
      InitializeBreakpadReporting();
-@@ -273,7 +273,7 @@ int Me2MeNativeMessagingHostMain(int argc, char** argv
+@@ -273,7 +273,7 @@ int Me2MeNativeMessagingHostMain(int arg
  
    pairing_registry =
        new PairingRegistry(io_thread.task_runner(), std::move(delegate));

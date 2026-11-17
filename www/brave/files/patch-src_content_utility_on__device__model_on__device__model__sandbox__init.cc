@@ -1,4 +1,4 @@
---- src/content/utility/on_device_model/on_device_model_sandbox_init.cc.orig	2026-03-13 06:02:14 UTC
+--- src/content/utility/on_device_model/on_device_model_sandbox_init.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/content/utility/on_device_model/on_device_model_sandbox_init.cc
 @@ -18,16 +18,20 @@
  #include "services/on_device_model/ml/gpu_blocklist.h"  // nogncheck
@@ -74,7 +74,7 @@
  void AddSandboxLinuxOptions(sandbox::policy::SandboxLinux::Options& options) {
    // Make sure any necessary vendor-specific options are set.
    gpu::GPUInfo info;
-@@ -166,6 +170,7 @@ void AddSandboxLinuxOptions(sandbox::policy::SandboxLi
+@@ -166,6 +170,7 @@ void AddSandboxLinuxOptions(sandbox::pol
  }
  
  bool PreSandboxHook(sandbox::policy::SandboxLinux::Options options) {
@@ -82,7 +82,7 @@
    std::vector<sandbox::syscall_broker::BrokerFilePermission> file_permissions =
        content::FilePermissionsForGpu(options);
    file_permissions.push_back(
-@@ -174,6 +179,7 @@ bool PreSandboxHook(sandbox::policy::SandboxLinux::Opt
+@@ -174,6 +179,7 @@ bool PreSandboxHook(sandbox::policy::San
  
    sandbox::policy::SandboxLinux::GetInstance()->StartBrokerProcess(
        content::CommandSetForGPU(options), file_permissions, options);

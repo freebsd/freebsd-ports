@@ -1,4 +1,4 @@
---- src/remoting/base/branding.cc.orig	2026-04-09 06:05:42 UTC
+--- src/remoting/base/branding.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/remoting/base/branding.cc
 @@ -10,7 +10,7 @@
  #include "base/path_service.h"
@@ -9,7 +9,7 @@
  #include <unistd.h>
  
  #include "remoting/base/file_path_util_linux.h"
-@@ -34,12 +34,12 @@ const base::FilePath::CharType kConfigDir[] = FILE_PAT
+@@ -34,12 +34,12 @@ const base::FilePath::CharType kConfigDi
  #elif BUILDFLAG(IS_APPLE)
  const base::FilePath::CharType kConfigDir[] =
      FILE_PATH_LITERAL("Chrome Remote Desktop");
@@ -24,7 +24,7 @@
  base::FilePath GetConfigDirWithPrefix(int prefix_path_key) {
    base::FilePath app_data_dir;
    base::PathService::Get(prefix_path_key, &app_data_dir);
-@@ -60,7 +60,7 @@ const wchar_t kWindowsServiceName[] = L"chromoting";
+@@ -60,7 +60,7 @@ const wchar_t kWindowsServiceName[] = L"
  #endif
  
  base::FilePath GetConfigDir() {

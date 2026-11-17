@@ -1,6 +1,6 @@
---- src/third_party/blink/renderer/modules/webgl/webgl_rendering_context_base.cc.orig	2026-09-25 15:26:43 UTC
+--- src/third_party/blink/renderer/modules/webgl/webgl_rendering_context_base.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/third_party/blink/renderer/modules/webgl/webgl_rendering_context_base.cc
-@@ -6696,7 +6696,7 @@ void WebGLRenderingContextBase::TexImageHelperMediaVid
+@@ -6733,7 +6733,7 @@ void WebGLRenderingContextBase::TexImage
    // unmultiply has been requested or we need to never premultiply for Image
    // creation from a VideoFrame.
  

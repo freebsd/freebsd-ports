@@ -1,6 +1,6 @@
---- src/third_party/blink/renderer/platform/wtf/stack_util.cc.orig	2026-03-13 06:02:14 UTC
+--- src/third_party/blink/renderer/platform/wtf/stack_util.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/third_party/blink/renderer/platform/wtf/stack_util.cc
-@@ -22,6 +22,11 @@ extern "C" void* __libc_stack_end;  // NOLINT
+@@ -22,6 +22,11 @@ extern "C" void* __libc_stack_end;  // N
  #include <sanitizer/asan_interface.h>
  #endif
  

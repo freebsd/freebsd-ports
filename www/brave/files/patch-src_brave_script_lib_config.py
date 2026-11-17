@@ -1,6 +1,6 @@
---- src/brave/script/lib/config.py.orig	2026-06-01 00:00:00 UTC
+--- src/brave/script/lib/config.py.orig	2026-10-18 18:43:23 UTC
 +++ src/brave/script/lib/config.py
-@@ -5,13 +5,18 @@
+@@ -5,13 +5,18 @@ import json
  import os
  import sys
  

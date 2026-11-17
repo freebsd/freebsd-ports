@@ -1,4 +1,4 @@
---- src/remoting/host/host_main.cc.orig	2026-09-25 15:26:43 UTC
+--- src/remoting/host/host_main.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/remoting/host/host_main.cc
 @@ -24,7 +24,7 @@
  #include "remoting/base/crash/crash_reporting_crashpad.h"
@@ -25,7 +25,7 @@
  void EnsureVarLibDirectory() {
    if (getuid() != 0) {
      // Only do this in the daemon process, which is always run as root.
-@@ -113,7 +113,7 @@ void Usage(const base::FilePath& program_name) {
+@@ -113,7 +113,7 @@ void Usage(const base::FilePath& program
        "\n"
        "Options:\n"
  
@@ -34,7 +34,7 @@
        "  --audio-pipe-name=<pipe> - Sets the pipe name to capture audio on "
        "Linux.\n"
  #endif  // BUILDFLAG(IS_LINUX)
-@@ -209,7 +209,7 @@ MainRoutineFn SelectMainRoutine(const std::string& pro
+@@ -209,7 +209,7 @@ MainRoutineFn SelectMainRoutine(const st
    } else if (process_type == kProcessTypeUrlForwarderConfigurator) {
      main_routine = &UrlForwarderConfiguratorMain;
  #endif  // BUILDFLAG(IS_WIN)

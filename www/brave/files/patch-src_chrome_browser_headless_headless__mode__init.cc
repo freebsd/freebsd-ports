@@ -1,4 +1,4 @@
---- src/chrome/browser/headless/headless_mode_init.cc.orig	2026-08-12 09:02:10 UTC
+--- src/chrome/browser/headless/headless_mode_init.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/headless/headless_mode_init.cc
 @@ -11,7 +11,7 @@
  // New headless mode is available on Linux, Windows and Mac platforms.
@@ -18,7 +18,7 @@
  #include "ui/gl/gl_switches.h"               // nogncheck
  #include "ui/ozone/public/ozone_switches.h"  // nogncheck
  #endif
-@@ -93,7 +93,7 @@ class HeadlessModeHandleImpl : public HeadlessModeHand
+@@ -93,7 +93,7 @@ class HeadlessModeHandleImpl : public He
        command_line.AppendSwitchPath(switches::kUserDataDir, user_data_dir);
      }
  

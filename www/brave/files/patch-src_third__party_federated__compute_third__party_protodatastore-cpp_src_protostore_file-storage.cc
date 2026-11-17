@@ -1,6 +1,6 @@
---- src/third_party/federated_compute/third_party/protodatastore-cpp/src/protostore/file-storage.cc.orig	2026-08-12 09:02:10 UTC
+--- src/third_party/federated_compute/third_party/protodatastore-cpp/src/protostore/file-storage.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/third_party/federated_compute/third_party/protodatastore-cpp/src/protostore/file-storage.cc
-@@ -130,7 +130,7 @@ absl::Status IOError(absl::string_view context) {
+@@ -130,7 +130,7 @@ absl::Status IOError(absl::string_view c
      case ENETUNREACH:   // Network unreachable
      case ENOLCK:        // No locks available
      case ENOLINK:       // Link has been severed

@@ -1,6 +1,6 @@
---- src/content/browser/theme_helper.cc.orig	2025-10-02 04:28:32 UTC
+--- src/content/browser/theme_helper.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/content/browser/theme_helper.cc
-@@ -27,7 +27,7 @@ mojom::UpdateSystemColorInfoParamsPtr MakeUpdateSystem
+@@ -27,7 +27,7 @@ mojom::UpdateSystemColorInfoParamsPtr Ma
      ui::NativeTheme* native_theme) {
    mojom::UpdateSystemColorInfoParamsPtr params =
        mojom::UpdateSystemColorInfoParams::New();

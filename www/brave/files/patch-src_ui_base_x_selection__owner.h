@@ -1,4 +1,4 @@
---- src/ui/base/x/selection_owner.h.orig	2026-05-07 17:02:56 UTC
+--- src/ui/base/x/selection_owner.h.orig	2026-10-18 18:43:23 UTC
 +++ src/ui/base/x/selection_owner.h
 @@ -19,7 +19,7 @@
  #include "ui/gfx/x/connection.h"
@@ -9,7 +9,7 @@
  #include "base/memory/weak_ptr.h"
  #endif
  
-@@ -136,7 +136,7 @@ class COMPONENT_EXPORT(UI_BASE_X) SelectionOwner {
+@@ -136,7 +136,7 @@ class COMPONENT_EXPORT(UI_BASE_X) Select
    std::vector<IncrementalTransfer>::iterator FindIncrementalTransferForEvent(
        const x11::PropertyNotifyEvent& event);
  
@@ -18,7 +18,7 @@
    void OnPortalPathsRegistered(x11::SelectionRequestEvent request,
                                 std::string key);
  #endif
-@@ -160,7 +160,7 @@ class COMPONENT_EXPORT(UI_BASE_X) SelectionOwner {
+@@ -160,7 +160,7 @@ class COMPONENT_EXPORT(UI_BASE_X) Select
    // Used to abort stale incremental data transfers.
    base::RepeatingTimer incremental_transfer_abort_timer_;
  

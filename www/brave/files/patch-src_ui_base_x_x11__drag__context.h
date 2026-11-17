@@ -1,4 +1,4 @@
---- src/ui/base/x/x11_drag_context.h.orig	2026-05-07 17:02:56 UTC
+--- src/ui/base/x/x11_drag_context.h.orig	2026-10-18 18:43:23 UTC
 +++ src/ui/base/x/x11_drag_context.h
 @@ -17,7 +17,7 @@
  #include "ui/gfx/x/event.h"
@@ -9,7 +9,7 @@
  #include "base/memory/weak_ptr.h"
  #endif
  
-@@ -71,7 +71,7 @@ class COMPONENT_EXPORT(UI_BASE_X) XDragContext {
+@@ -71,7 +71,7 @@ class COMPONENT_EXPORT(UI_BASE_X) XDragC
    // position handling if all targets have been fetched.
    void RequestNextTargetOrComplete();
  
@@ -18,7 +18,7 @@
    void OnPortalPathsExtracted(std::vector<std::string> paths);
  #endif
  
-@@ -114,7 +114,7 @@ class COMPONENT_EXPORT(UI_BASE_X) XDragContext {
+@@ -114,7 +114,7 @@ class COMPONENT_EXPORT(UI_BASE_X) XDragC
    // Possible actions.
    std::vector<x11::Atom> actions_;
  

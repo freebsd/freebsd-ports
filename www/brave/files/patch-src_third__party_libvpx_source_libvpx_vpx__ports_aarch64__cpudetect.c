@@ -1,6 +1,6 @@
---- src/third_party/libvpx/source/libvpx/vpx_ports/aarch64_cpudetect.c.orig	2024-11-14 07:57:23 UTC
+--- src/third_party/libvpx/source/libvpx/vpx_ports/aarch64_cpudetect.c.orig	2026-10-18 18:43:23 UTC
 +++ src/third_party/libvpx/source/libvpx/vpx_ports/aarch64_cpudetect.c
-@@ -120,9 +120,23 @@ static int arm_get_cpu_caps(void) {
+@@ -120,10 +120,24 @@ static int arm_get_cpu_caps(void) {
    return flags;
  }
  
@@ -8,7 +8,7 @@
 +#elif defined(__linux__) || defined(__FreeBSD__)  // end defined(VPX_USE_ANDROID_CPU_FEATURES)
  
  #include <sys/auxv.h>
-+
+ 
 +#if defined(__FreeBSD__)
 +static unsigned long getauxval(unsigned long type)
 +{
@@ -22,6 +22,7 @@
 +    return ret;
 +}
 +#endif
- 
++
  // Define hwcap values ourselves: building with an old auxv header where these
  // hwcap values are not defined should not prevent features from being enabled.
+ #define VPX_AARCH64_HWCAP_ASIMDDP (1 << 20)

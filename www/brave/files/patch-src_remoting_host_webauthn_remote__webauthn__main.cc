@@ -1,4 +1,4 @@
---- src/remoting/host/webauthn/remote_webauthn_main.cc.orig	2026-07-01 06:24:19 UTC
+--- src/remoting/host/webauthn/remote_webauthn_main.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/remoting/host/webauthn/remote_webauthn_main.cc
 @@ -26,7 +26,7 @@
  #include "remoting/host/webauthn/remote_webauthn_caller_security_utils.h"
@@ -9,7 +9,7 @@
  #include "remoting/base/crash/crash_reporting_crashpad.h"
  #endif  // BUILDFLAG(IS_LINUX)
  
-@@ -49,7 +49,7 @@ int RemoteWebAuthnMain(int argc, char** argv) {
+@@ -49,7 +49,7 @@ int RemoteWebAuthnMain(int argc, char**
  
  #if defined(REMOTING_ENABLE_CRASH_REPORTING)
    if (IsUsageStatsAllowed()) {

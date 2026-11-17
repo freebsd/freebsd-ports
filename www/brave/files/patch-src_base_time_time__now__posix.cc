@@ -1,6 +1,6 @@
---- src/base/time/time_now_posix.cc.orig	2025-09-06 10:01:20 UTC
+--- src/base/time/time_now_posix.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/base/time/time_now_posix.cc
-@@ -110,7 +110,11 @@ std::optional<TimeTicks> MaybeTimeTicksNowIgnoringOver
+@@ -110,7 +110,11 @@ std::optional<TimeTicks> MaybeTimeTicksN
  }
  
  TimeTicks TimeTicksLowResolutionNowIgnoringOverride() {

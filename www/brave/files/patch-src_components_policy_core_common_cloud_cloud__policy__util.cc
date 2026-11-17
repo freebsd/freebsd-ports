@@ -1,4 +1,4 @@
---- src/components/policy/core/common/cloud/cloud_policy_util.cc.orig	2026-03-13 06:02:14 UTC
+--- src/components/policy/core/common/cloud/cloud_policy_util.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/components/policy/core/common/cloud/cloud_policy_util.cc
 @@ -24,7 +24,7 @@
  #include "base/win/wincred_shim.h"
@@ -26,7 +26,7 @@
  #include <algorithm>
  #include <utility>
  
-@@ -93,7 +98,7 @@ const int kMinimumVersionForExtensionInstallPolicy = 1
+@@ -93,7 +98,7 @@ const int kMinimumVersionForExtensionIns
  }  // namespace
  
  std::string GetMachineName() {

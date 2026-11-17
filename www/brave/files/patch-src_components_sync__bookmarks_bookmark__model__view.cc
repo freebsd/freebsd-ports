@@ -1,4 +1,4 @@
---- src/components/sync_bookmarks/bookmark_model_view.cc.orig	2025-12-05 10:12:50 UTC
+--- src/components/sync_bookmarks/bookmark_model_view.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/components/sync_bookmarks/bookmark_model_view.cc
 @@ -9,7 +9,7 @@
  #include "components/bookmarks/browser/bookmark_model.h"
@@ -9,7 +9,7 @@
  #include "base/metrics/histogram_base.h"
  #include "base/metrics/histogram_functions.h"
  #include "base/time/time.h"
-@@ -253,7 +253,7 @@ void BookmarkModelViewUsingAccountNodes::RemoveAllSync
+@@ -253,7 +253,7 @@ void BookmarkModelViewUsingAccountNodes:
  
  void BookmarkModelViewUsingAccountNodes::
      MaybeRemoveUnderlyingModelDuplicatesUponInitialSync() {

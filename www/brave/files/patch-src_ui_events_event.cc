@@ -1,6 +1,6 @@
---- src/ui/events/event.cc.orig	2026-07-01 06:24:19 UTC
+--- src/ui/events/event.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/ui/events/event.cc
-@@ -408,7 +408,7 @@ std::string LocatedEvent::ToString() const {
+@@ -408,7 +408,7 @@ std::string LocatedEvent::ToString() con
  MouseEvent::MouseEvent(const PlatformEvent& native_event)
      : LocatedEvent(native_event),
        changed_button_flags_(GetChangedMouseButtonFlagsFromNative(native_event)),
@@ -9,7 +9,7 @@
        movement_(GetMouseMovementFromNative(native_event)),
  #endif
        pointer_details_(GetMousePointerDetailsFromNative(native_event)) {
-@@ -664,7 +664,7 @@ std::unique_ptr<Event> MouseWheelEvent::Clone() const 
+@@ -664,7 +664,7 @@ std::unique_ptr<Event> MouseWheelEvent::
    return std::make_unique<MouseWheelEvent>(*this);
  }
  

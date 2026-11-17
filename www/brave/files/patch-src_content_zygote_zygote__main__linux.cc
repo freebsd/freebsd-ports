@@ -1,4 +1,4 @@
---- src/content/zygote/zygote_main_linux.cc.orig	2026-02-11 09:05:39 UTC
+--- src/content/zygote/zygote_main_linux.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/content/zygote/zygote_main_linux.cc
 @@ -11,7 +11,9 @@
  #include <stddef.h>
@@ -34,7 +34,7 @@
  
  base::OnceClosure ClosureFromTwoClosures(base::OnceClosure one,
                                           base::OnceClosure two) {
-@@ -158,9 +164,11 @@ static void EnterLayerOneSandbox(sandbox::policy::Sand
+@@ -158,9 +164,11 @@ static void EnterLayerOneSandbox(sandbox
      CHECK(!using_layer1_sandbox);
    }
  }

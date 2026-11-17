@@ -1,6 +1,6 @@
---- src/media/audio/BUILD.gn.orig	2026-08-12 09:02:10 UTC
+--- src/media/audio/BUILD.gn.orig	2026-10-18 18:43:23 UTC
 +++ src/media/audio/BUILD.gn
-@@ -290,9 +290,23 @@ source_set("audio") {
+@@ -290,10 +290,24 @@ source_set("audio") {
      deps += [ "//media/base/android:media_jni_headers" ]
    }
  
@@ -8,7 +8,7 @@
 +  if ((is_linux || is_chromeos) && !is_bsd) {
      sources += [ "linux/audio_manager_linux.cc" ]
    }
-+
+ 
 +  if (is_bsd) {
 +    sources += [ "sndio/audio_manager_sndio.cc" ]
 +  }
@@ -22,6 +22,7 @@
 +      "sndio/sndio_output.h"
 +    ]
 +   }
- 
++
    if (use_alsa) {
      libs += [ "asound" ]
+     sources += [

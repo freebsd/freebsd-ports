@@ -1,6 +1,6 @@
---- src/third_party/dawn/tools/python/cipd_deps.py.orig	2026-08-12 09:02:10 UTC
+--- src/third_party/dawn/tools/python/cipd_deps.py.orig	2026-10-18 18:43:23 UTC
 +++ src/third_party/dawn/tools/python/cipd_deps.py
-@@ -49,7 +49,7 @@ def get_cipd_compatible_current_os() -> str:
+@@ -49,7 +49,7 @@ def get_cipd_compatible_current_os() ->
      The returned string is compatible with CIPD's package naming scheme.
      """
      current_platform = sys.platform

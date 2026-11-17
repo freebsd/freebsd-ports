@@ -1,6 +1,6 @@
---- src/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_constants.h.orig	2026-09-25 15:26:43 UTC
+--- src/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_constants.h.orig	2026-10-18 18:43:23 UTC
 +++ src/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_constants.h
-@@ -327,7 +327,7 @@ PA_DEFINE_OPERATORS_FOR_FLAGS(PoolHandleMask);
+@@ -327,7 +327,7 @@ PA_DEFINE_OPERATORS_FOR_FLAGS(PoolHandle
  // 8GB for each of the glued pools).
  #if PA_BUILDFLAG(HAS_64_BIT_POINTERS)
  #if PA_BUILDFLAG(IS_ANDROID) || PA_BUILDFLAG(IS_IOS) || \
@@ -9,7 +9,7 @@
  constexpr size_t kPoolMaxSize = 8 * kGiB;
  #else
  constexpr size_t kPoolMaxSize = 16 * kGiB;
-@@ -400,7 +400,7 @@ constexpr size_t kMinDirectMappedDownsize =
+@@ -400,7 +400,7 @@ constexpr size_t kMinDirectMappedDownsiz
  // TODO(casey.smalley@arm.com): under 64k pages we can end up in a situation
  // where a normal slot span will be large enough to contain multiple items,
  // but the address will go over the final partition page after being aligned.

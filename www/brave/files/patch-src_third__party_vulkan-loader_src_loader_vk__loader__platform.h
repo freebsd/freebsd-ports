@@ -1,4 +1,4 @@
---- src/third_party/vulkan-loader/src/loader/vk_loader_platform.h.orig	2026-09-25 15:26:43 UTC
+--- src/third_party/vulkan-loader/src/loader/vk_loader_platform.h.orig	2026-10-18 18:43:23 UTC
 +++ src/third_party/vulkan-loader/src/loader/vk_loader_platform.h
 @@ -29,6 +29,7 @@
  #if defined(__FreeBSD__) || defined(__OpenBSD__)
@@ -8,7 +8,7 @@
  #endif
  
  #include <assert.h>
-@@ -361,7 +362,23 @@ static inline char *loader_platform_executable_path(ch
+@@ -361,7 +362,23 @@ static inline char *loader_platform_exec
  
      return buffer;
  }

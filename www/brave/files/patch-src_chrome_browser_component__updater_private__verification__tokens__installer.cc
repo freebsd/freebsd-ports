@@ -1,6 +1,6 @@
---- src/chrome/browser/component_updater/private_verification_tokens_installer.cc.orig	2026-09-25 15:26:43 UTC
+--- src/chrome/browser/component_updater/private_verification_tokens_installer.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/component_updater/private_verification_tokens_installer.cc
-@@ -30,6 +30,10 @@ void RegisterPrivateVerificationTokensComponentIfEnabl
+@@ -30,6 +30,10 @@ void RegisterPrivateVerificationTokensCo
      return;
    }
  
@@ -11,7 +11,7 @@
    auto installer = base::MakeRefCounted<ComponentInstaller>(
        std::make_unique<PrivateVerificationTokensInstallerPolicy>(
            base::BindRepeating(
-@@ -51,6 +55,7 @@ void RegisterPrivateVerificationTokensComponentIfEnabl
+@@ -51,6 +55,7 @@ void RegisterPrivateVerificationTokensCo
                })));
  
    installer->Register(cus, base::OnceClosure());

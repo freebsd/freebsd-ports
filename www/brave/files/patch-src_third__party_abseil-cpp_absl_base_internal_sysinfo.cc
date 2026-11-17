@@ -1,4 +1,4 @@
---- src/third_party/abseil-cpp/absl/base/internal/sysinfo.cc.orig	2026-09-25 15:26:43 UTC
+--- src/third_party/abseil-cpp/absl/base/internal/sysinfo.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/third_party/abseil-cpp/absl/base/internal/sysinfo.cc
 @@ -49,7 +49,7 @@
  #include <sys/syscall.h>
@@ -17,7 +17,7 @@
  // Helper function for reading a long from a file. Returns true if successful
  // and the memory location pointed to by value is set to the value read.
  static bool ReadLongFromFile(const char *file, long *value) {
-@@ -229,6 +230,7 @@ static bool ReadLongFromFile(const char *file, long *v
+@@ -229,6 +230,7 @@ static bool ReadLongFromFile(const char
    }
    return ret;
  }

@@ -1,4 +1,4 @@
---- src/chrome/browser/enterprise/connectors/reporting/realtime_reporting_client.h.orig	2026-09-25 15:26:43 UTC
+--- src/chrome/browser/enterprise/connectors/reporting/realtime_reporting_client.h.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/enterprise/connectors/reporting/realtime_reporting_client.h
 @@ -19,7 +19,7 @@
  #include "components/keyed_service/core/keyed_service.h"
@@ -9,7 +9,7 @@
  #include "components/device_signals/core/browser/signals_types.h"
  #endif
  
-@@ -95,7 +95,7 @@ class RealtimeReportingClient : public RealtimeReporti
+@@ -95,7 +95,7 @@ class RealtimeReportingClient : public R
        const std::string& dm_token) override;
  #endif
  
@@ -18,7 +18,7 @@
    void MaybeCollectDeviceSignalsAndReportEvent(
        ::chrome::cros::reporting::proto::Event event,
        policy::CloudPolicyClient* client,
-@@ -126,7 +126,7 @@ class RealtimeReportingClient : public RealtimeReporti
+@@ -126,7 +126,7 @@ class RealtimeReportingClient : public R
    base::WeakPtrFactory<RealtimeReportingClient> weak_ptr_factory_{this};
  };
  

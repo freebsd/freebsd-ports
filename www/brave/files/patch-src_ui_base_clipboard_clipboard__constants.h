@@ -1,6 +1,6 @@
---- src/ui/base/clipboard/clipboard_constants.h.orig	2026-09-25 15:26:43 UTC
+--- src/ui/base/clipboard/clipboard_constants.h.orig	2026-10-18 18:43:23 UTC
 +++ src/ui/base/clipboard/clipboard_constants.h
-@@ -46,7 +46,7 @@ inline constexpr char kMimeTypeWindowDrag[] = "chromiu
+@@ -46,7 +46,7 @@ inline constexpr char kMimeTypeWindowDra
  
  // ----- LINUX & CHROMEOS & FUCHSIA MIME TYPES -----
  
@@ -9,7 +9,7 @@
  inline constexpr char kMimeTypeLinuxUtf8String[] = "UTF8_STRING";
  inline constexpr char kMimeTypeLinuxString[] = "STRING";
  inline constexpr char kMimeTypeLinuxText[] = "TEXT";
-@@ -59,7 +59,7 @@ inline constexpr char kMimeTypePortalFiles[] = "applic
+@@ -59,7 +59,7 @@ inline constexpr char kMimeTypePortalFil
          // BUILDFLAG(IS_FUCHSIA)
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA) || \

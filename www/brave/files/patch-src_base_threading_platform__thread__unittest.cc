@@ -1,6 +1,6 @@
---- src/base/threading/platform_thread_unittest.cc.orig	2026-04-09 06:05:42 UTC
+--- src/base/threading/platform_thread_unittest.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/base/threading/platform_thread_unittest.cc
-@@ -67,7 +67,7 @@ std::ostream& operator<<(std::ostream& os, MessagePump
+@@ -67,7 +67,7 @@ std::ostream& operator<<(std::ostream& o
  #include "base/time/time.h"
  #endif
  

@@ -1,4 +1,4 @@
---- src/chrome/browser/ui/webui/connectors_internals/device_trust_utils.cc.orig	2026-04-09 06:05:42 UTC
+--- src/chrome/browser/ui/webui/connectors_internals/device_trust_utils.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/ui/webui/connectors_internals/device_trust_utils.cc
 @@ -9,7 +9,7 @@
  #include "components/enterprise/connectors/core/connectors_internals_utils.h"
@@ -18,7 +18,7 @@
  
  connectors_internals::mojom::KeyTrustLevel ParseTrustLevel(
      BPKUR::KeyTrustLevel trust_level) {
-@@ -74,7 +74,7 @@ connectors_internals::mojom::KeyManagerPermanentFailur
+@@ -74,7 +74,7 @@ connectors_internals::mojom::KeyManagerP
  
  connectors_internals::mojom::KeyInfoPtr GetKeyInfo() {
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || \

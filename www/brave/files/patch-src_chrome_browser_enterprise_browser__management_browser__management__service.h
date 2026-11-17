@@ -1,4 +1,4 @@
---- src/chrome/browser/enterprise/browser_management/browser_management_service.h.orig	2026-06-04 10:12:25 UTC
+--- src/chrome/browser/enterprise/browser_management/browser_management_service.h.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/enterprise/browser_management/browser_management_service.h
 @@ -17,7 +17,7 @@
  #include "components/prefs/pref_change_registrar.h"
@@ -9,7 +9,7 @@
  #include "chrome/browser/policy/status_provider/user_cloud_policy_status_provider.h"  // nogncheck crbug.com/40147906
  #endif
  
-@@ -45,7 +45,7 @@ class BrowserManagementService : public ManagementServ
+@@ -45,7 +45,7 @@ class BrowserManagementService : public
  
    void TriggerPolicyStatusChangedForTesting() override;
  
@@ -18,7 +18,7 @@
    void SetBrowserManagementIconForTesting(
        const gfx::Image& management_icon) override;
  #endif
-@@ -54,7 +54,7 @@ class BrowserManagementService : public ManagementServ
+@@ -54,7 +54,7 @@ class BrowserManagementService : public
    // PolicyStatusProvider::Observer:
    void OnPolicyStatusChanged() override;
  

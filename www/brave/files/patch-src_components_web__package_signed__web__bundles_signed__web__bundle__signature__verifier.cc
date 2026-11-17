@@ -1,4 +1,4 @@
---- src/components/web_package/signed_web_bundles/signed_web_bundle_signature_verifier.cc.orig	2026-09-25 15:26:43 UTC
+--- src/components/web_package/signed_web_bundles/signed_web_bundle_signature_verifier.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/components/web_package/signed_web_bundles/signed_web_bundle_signature_verifier.cc
 @@ -20,14 +20,17 @@
  #include "base/task/thread_pool.h"
@@ -56,7 +56,7 @@
  }
  
  base::expected<void, SignedWebBundleSignatureVerifier::Error>
-@@ -104,7 +129,7 @@ SignedWebBundleSignatureVerifier::CalculateHashOfUnsig
+@@ -104,7 +129,7 @@ SignedWebBundleSignatureVerifier::Calcul
      return base::unexpected(base::File::ErrorToString(file.GetLastFileError()));
    }
  
@@ -65,7 +65,7 @@
  
    // Calculate the hash of the Signed Web Bundle excluding its integrity block.
    // The file might be too big to read it into memory all at once, which is why
-@@ -121,14 +146,15 @@ SignedWebBundleSignatureVerifier::CalculateHashOfUnsig
+@@ -121,14 +146,15 @@ SignedWebBundleSignatureVerifier::Calcul
            base::File::ErrorToString(file.GetLastFileError()));
      }
      data.resize(*bytes_read);

@@ -1,4 +1,4 @@
---- src/base/process/process_iterator_openbsd.cc.orig	2025-02-19 07:43:18 UTC
+--- src/base/process/process_iterator_openbsd.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/base/process/process_iterator_openbsd.cc
 @@ -6,6 +6,9 @@
  
@@ -26,7 +26,7 @@
  
    do {
      size_t len = 0;
-@@ -31,7 +35,7 @@ ProcessIterator::ProcessIterator(const ProcessFilter* 
+@@ -31,7 +35,7 @@ ProcessIterator::ProcessIterator(const P
        kinfo_procs_.resize(0);
        done = true;
      } else {
@@ -35,7 +35,7 @@
        // Leave some spare room for process table growth (more could show up
        // between when we check and now)
        num_of_kinfo_proc += 16;
-@@ -47,7 +51,7 @@ ProcessIterator::ProcessIterator(const ProcessFilter* 
+@@ -47,7 +51,7 @@ ProcessIterator::ProcessIterator(const P
          }
        } else {
          // Got the list, just make sure we're sized exactly right

@@ -1,4 +1,4 @@
---- src/base/message_loop/message_pump_glib.cc.orig	2026-08-12 09:02:10 UTC
+--- src/base/message_loop/message_pump_glib.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/base/message_loop/message_pump_glib.cc
 @@ -7,6 +7,11 @@
  #include <fcntl.h>
@@ -12,7 +12,7 @@
  #include "base/logging.h"
  #include "base/memory/raw_ptr.h"
  #include "base/message_loop/io_watcher.h"
-@@ -58,9 +63,13 @@ int GetTimeIntervalMilliseconds(TimeTicks next_task_ti
+@@ -58,9 +63,13 @@ int GetTimeIntervalMilliseconds(TimeTick
  }
  
  bool RunningOnMainThread() {

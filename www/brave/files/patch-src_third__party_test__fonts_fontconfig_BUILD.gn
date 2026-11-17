@@ -1,6 +1,6 @@
---- src/third_party/test_fonts/fontconfig/BUILD.gn.orig	2026-09-25 15:26:43 UTC
+--- src/third_party/test_fonts/fontconfig/BUILD.gn.orig	2026-10-18 18:43:23 UTC
 +++ src/third_party/test_fonts/fontconfig/BUILD.gn
-@@ -26,7 +26,11 @@
+@@ -26,7 +26,11 @@ if (is_linux || is_chromeos) {
  
    copy("fonts_conf") {
      sources = [ "fonts.conf" ]
@@ -13,7 +13,7 @@
    }
  
    if (current_toolchain == host_toolchain) {
-@@ -50,7 +54,11 @@
+@@ -50,7 +54,11 @@ if (is_linux || is_chromeos) {
          "//third_party/test_fonts",
        ]
        args = []

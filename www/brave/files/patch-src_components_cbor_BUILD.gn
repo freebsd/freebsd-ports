@@ -1,4 +1,4 @@
---- src/components/cbor/BUILD.gn.orig	2026-09-25 15:26:43 UTC
+--- src/components/cbor/BUILD.gn.orig	2026-10-19 06:05:22 UTC
 +++ src/components/cbor/BUILD.gn
 @@ -12,7 +12,7 @@ buildflag_header("buildflags") {
    # TODO(crbug.com/535682335): Remove `USE_CBOR_RUST` buildflag entirely,
@@ -28,3 +28,13 @@
  }
  
  source_set("unit_tests") {
+@@ -62,7 +62,8 @@ source_set("unit_tests") {
+     "//testing/gtest",
+     "//third_party/fuzztest",
+   ]
+-  if (!is_cronet_build) {
++  # XXX crubit
++  if (!is_cronet_build && !is_bsd) {
+     deps += [
+       "//components/cbor/rust:cbor_rust_bindings",
+       "//components/cbor/rust:cbor_rust_unittests",

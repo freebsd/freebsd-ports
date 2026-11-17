@@ -1,6 +1,6 @@
---- src/components/enterprise/connectors/core/analysis_service_settings_base.cc.orig	2026-09-25 15:26:43 UTC
+--- src/components/enterprise/connectors/core/analysis_service_settings_base.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/components/enterprise/connectors/core/analysis_service_settings_base.cc
-@@ -283,7 +283,7 @@ void AnalysisServiceSettingsBase::ParseVerificationSig
+@@ -283,7 +283,7 @@ void AnalysisServiceSettingsBase::ParseV
    const char* verification_key = kKeyWindowsVerification;
  #elif BUILDFLAG(IS_MAC)
    const char* verification_key = kKeyMacVerification;

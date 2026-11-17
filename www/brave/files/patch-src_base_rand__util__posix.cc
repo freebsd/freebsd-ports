@@ -1,4 +1,4 @@
---- src/base/rand_util_posix.cc.orig	2026-09-25 15:26:43 UTC
+--- src/base/rand_util_posix.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/base/rand_util_posix.cc
 @@ -31,7 +31,7 @@
  #include "base/system/sys_info.h"
@@ -34,7 +34,7 @@
    // The BoringSSL experiment takes priority over everything else.
    if (!avoid_allocation && internal::UseBoringSSLForRandBytes()) {
      // BoringSSL's RAND_bytes always returns 1. Any error aborts the program.
-@@ -151,8 +153,10 @@ void RandBytesInternal(span<uint8_t> output, bool avoi
+@@ -151,8 +153,10 @@ void RandBytesInternal(span<uint8_t> out
    const bool success = ReadFromFD(urandom_fd, as_writable_chars(output));
    CHECK(success);
  #endif  // BUILDFLAG(IS_MAC)

@@ -1,4 +1,4 @@
---- src/ui/ozone/platform/x11/x11_screen_ozone.h.orig	2026-09-25 15:26:43 UTC
+--- src/ui/ozone/platform/x11/x11_screen_ozone.h.orig	2026-10-18 18:43:23 UTC
 +++ src/ui/ozone/platform/x11/x11_screen_ozone.h
 @@ -16,7 +16,7 @@
  #include "ui/gfx/x/event.h"
@@ -18,7 +18,7 @@
      ,
                         public DeviceScaleFactorObserver
  #endif
-@@ -106,7 +106,7 @@ class X11ScreenOzone : public PlatformScreen,
+@@ -106,7 +106,7 @@ class X11ScreenOzone : public PlatformSc
    // ui::XDisplayManager::Delegate:
    void OnXDisplayListUpdated() override;
  
@@ -27,7 +27,7 @@
    // DeviceScaleFactorObserver:
    void OnDeviceScaleFactorChanged() override;
  #endif
-@@ -118,7 +118,7 @@ class X11ScreenOzone : public PlatformScreen,
+@@ -118,7 +118,7 @@ class X11ScreenOzone : public PlatformSc
    // Indicates that |this| is initialized.
    bool initialized_ = false;
  

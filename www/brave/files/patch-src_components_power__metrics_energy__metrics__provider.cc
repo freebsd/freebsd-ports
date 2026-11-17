@@ -1,4 +1,4 @@
---- src/components/power_metrics/energy_metrics_provider.cc.orig	2026-09-25 15:26:43 UTC
+--- src/components/power_metrics/energy_metrics_provider.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/components/power_metrics/energy_metrics_provider.cc
 @@ -7,7 +7,7 @@
  #include "build/build_config.h"
@@ -9,7 +9,7 @@
  #include "components/power_metrics/energy_metrics_provider_linux.h"
  #endif  // BUILDFLAG(IS_WIN)
  
-@@ -20,7 +20,7 @@ EnergyMetricsProvider::~EnergyMetricsProvider() = defa
+@@ -20,7 +20,7 @@ EnergyMetricsProvider::~EnergyMetricsPro
  std::unique_ptr<EnergyMetricsProvider> EnergyMetricsProvider::Create() {
  #if BUILDFLAG(IS_WIN)
    return EnergyMetricsProviderWin::Create();

@@ -1,6 +1,6 @@
---- src/third_party/blink/renderer/platform/scheduler/common/thread.cc.orig	2025-07-02 06:08:04 UTC
+--- src/third_party/blink/renderer/platform/scheduler/common/thread.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/third_party/blink/renderer/platform/scheduler/common/thread.cc
-@@ -95,7 +95,7 @@ void Thread::CreateAndSetCompositorThread() {
+@@ -95,7 +95,7 @@ void Thread::CreateAndSetCompositorThrea
            // the program's lifetime once assigned.
            base::Unretained(compositor_thread.get())));
  

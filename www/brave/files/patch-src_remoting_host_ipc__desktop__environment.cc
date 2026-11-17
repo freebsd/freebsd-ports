@@ -1,6 +1,6 @@
---- src/remoting/host/ipc_desktop_environment.cc.orig	2026-09-25 15:26:43 UTC
+--- src/remoting/host/ipc_desktop_environment.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/remoting/host/ipc_desktop_environment.cc
-@@ -180,7 +180,7 @@ class IpcDesktopEnvironmentFactory::Core : public mojo
+@@ -181,7 +181,7 @@ class IpcDesktopEnvironmentFactory::Core
                                ErrorCode error_code,
                                const std::string& error_details,
                                const SourceLocation& error_location);
@@ -9,7 +9,7 @@
    void OnSessionServicesClientConnected(
        int terminal_id,
        mojo::PendingReceiver<mojom::ChromotingSessionServices> receiver);
-@@ -192,7 +192,7 @@ class IpcDesktopEnvironmentFactory::Core : public mojo
+@@ -193,7 +193,7 @@ class IpcDesktopEnvironmentFactory::Core
    void OnTerminalDisconnected(ErrorCode error_code,
                                const std::string& error_details,
                                const SourceLocation& error_location) override;
@@ -18,7 +18,7 @@
    void OnSessionServicesClientConnected(
        mojo::PendingReceiver<mojom::ChromotingSessionServices> receiver)
        override;
-@@ -351,7 +351,7 @@ void IpcDesktopEnvironmentFactory::Core::OnTerminalDis
+@@ -352,7 +352,7 @@ void IpcDesktopEnvironmentFactory::Core:
                           error_details, error_location);
  }
  
@@ -27,7 +27,7 @@
  void IpcDesktopEnvironmentFactory::Core::OnSessionServicesClientConnected(
      mojo::PendingReceiver<mojom::ChromotingSessionServices> receiver) {
    OnSessionServicesClientConnected(GetEventsReceivers().current_context(),
-@@ -397,7 +397,7 @@ void IpcDesktopEnvironmentFactory::Core::OnTerminalDis
+@@ -398,7 +398,7 @@ void IpcDesktopEnvironmentFactory::Core:
    }
  }
  
@@ -36,7 +36,7 @@
  void IpcDesktopEnvironmentFactory::Core::OnSessionServicesClientConnected(
      int terminal_id,
      mojo::PendingReceiver<mojom::ChromotingSessionServices> receiver) {
-@@ -511,7 +511,7 @@ void IpcDesktopEnvironmentFactory::OnTerminalDisconnec
+@@ -512,7 +512,7 @@ void IpcDesktopEnvironmentFactory::OnTer
                                  error_location);
  }
  

@@ -1,4 +1,4 @@
---- src/chrome/browser/regional_capabilities/regional_capabilities_service_factory.cc.orig	2026-04-09 06:05:42 UTC
+--- src/chrome/browser/regional_capabilities/regional_capabilities_service_factory.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/regional_capabilities/regional_capabilities_service_factory.cc
 @@ -21,7 +21,7 @@
  #include "chrome/browser/regional_capabilities/regional_capabilities_service_client_chromeos.h"
@@ -9,7 +9,7 @@
  #include "chrome/browser/regional_capabilities/regional_capabilities_service_client_linux.h"
  #endif
  
-@@ -36,7 +36,7 @@ CreateRegionalCapabilitiesServiceClient() {
+@@ -36,7 +36,7 @@ CreateRegionalCapabilitiesServiceClient(
  #elif BUILDFLAG(IS_CHROMEOS)
    return std::make_unique<RegionalCapabilitiesServiceClientChromeOS>(
        g_browser_process->variations_service());
@@ -18,7 +18,7 @@
    return std::make_unique<RegionalCapabilitiesServiceClientLinux>(
        g_browser_process->variations_service());
  #else
-@@ -61,7 +61,7 @@ RegionalCapabilitiesServiceFactory::GetInstance() {
+@@ -61,7 +61,7 @@ RegionalCapabilitiesServiceFactory::GetI
    return instance.get();
  }
  

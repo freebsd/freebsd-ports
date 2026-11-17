@@ -1,4 +1,4 @@
---- src/v8/src/base/platform/platform-posix.cc.orig	2026-09-25 15:26:43 UTC
+--- src/v8/src/base/platform/platform-posix.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/v8/src/base/platform/platform-posix.cc
 @@ -78,7 +78,7 @@
  #include <sys/syscall.h>
@@ -9,7 +9,7 @@
  #define MAP_ANONYMOUS MAP_ANON
  #endif
  
-@@ -359,6 +359,13 @@
+@@ -359,6 +359,13 @@ void OS::SetRandomMmapSeed(int64_t seed)
    }
  }
  
@@ -23,7 +23,7 @@
  // static
  void* OS::GetRandomMmapAddr() {
    uintptr_t raw_addr;
-@@ -457,6 +464,7 @@
+@@ -457,6 +464,7 @@ void* OS::GetRandomMmapAddr() {
  #endif
    return reinterpret_cast<void*>(raw_addr);
  }
@@ -31,7 +31,7 @@
  
  // TODO(bbudge) Move Cygwin and Fuchsia stuff into platform-specific files.
  #if !V8_OS_CYGWIN && !V8_OS_FUCHSIA
-@@ -772,7 +780,7 @@
+@@ -772,7 +780,7 @@ void OS::DestroySharedMemoryHandle(Share
  #if !V8_OS_ZOS
  // static
  bool OS::HasLazyCommits() {
@@ -40,7 +40,7 @@
    return true;
  #else
    // TODO(bbudge) Return true for all POSIX platforms.
-@@ -1422,9 +1430,6 @@
+@@ -1422,9 +1430,6 @@ void Thread::SetThreadLocal(LocalStorage
  // pthread_getattr_np used below is non portable (hence the _np suffix). We
  // keep this version in POSIX as most Linux-compatible derivatives will
  // support it. MacOS and FreeBSD are different here.
@@ -50,7 +50,7 @@
  namespace {
  #if DEBUG
  bool MainThreadIsCurrentThread() {
-@@ -1440,6 +1445,9 @@
+@@ -1440,6 +1445,9 @@ bool MainThreadIsCurrentThread() {
  #endif  // DEBUG
  }  // namespace
  
@@ -60,7 +60,7 @@
  // static
  Stack::StackSlot Stack::ObtainCurrentThreadStackStart() {
  #if V8_OS_ZOS
-@@ -1485,19 +1493,13 @@
+@@ -1485,19 +1493,13 @@ Stack::StackSlot Stack::ObtainCurrentThr
    return stack_start;
  #endif  // V8_OS_ZOS
  }
@@ -82,7 +82,7 @@
  #else
  // For most libcs, pthread_getattr_np() returns the the stack reserved
  // limit on the main thread, but musl only returns the current high-water
-@@ -1508,7 +1510,11 @@
+@@ -1508,7 +1510,11 @@ Stack::StackSlot Stack::ObtainCurrentThr
    if (syscall(__NR_gettid) == getpid()) return nullptr;
  #endif
    pthread_attr_t attr;
@@ -94,7 +94,7 @@
    if (error) {
      DCHECK(MainThreadIsCurrentThread());
      return nullptr;
-@@ -1522,10 +1528,6 @@
+@@ -1522,10 +1528,6 @@ Stack::StackSlot Stack::ObtainCurrentThr
  #endif  // V8_OS_ZOS
  }
  

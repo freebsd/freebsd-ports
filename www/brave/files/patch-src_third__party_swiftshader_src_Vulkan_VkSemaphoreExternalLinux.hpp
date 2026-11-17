@@ -1,6 +1,6 @@
---- src/third_party/swiftshader/src/Vulkan/VkSemaphoreExternalLinux.hpp.orig	2026-01-14 08:33:23 UTC
+--- src/third_party/swiftshader/src/Vulkan/VkSemaphoreExternalLinux.hpp.orig	2026-10-18 18:43:23 UTC
 +++ src/third_party/swiftshader/src/Vulkan/VkSemaphoreExternalLinux.hpp
-@@ -50,13 +50,17 @@ class SharedSemaphore (public)
+@@ -50,13 +50,17 @@ public:
  	{
  		pthread_mutexattr_t mattr;
  		pthread_mutexattr_init(&mattr);

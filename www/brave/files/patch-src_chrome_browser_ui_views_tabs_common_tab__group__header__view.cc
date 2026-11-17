@@ -1,6 +1,6 @@
---- src/chrome/browser/ui/views/tabs/common/tab_group_header_view.cc.orig	2026-09-25 15:26:43 UTC
+--- src/chrome/browser/ui/views/tabs/common/tab_group_header_view.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/ui/views/tabs/common/tab_group_header_view.cc
-@@ -392,7 +392,7 @@ void TabGroupHeaderView::OnMouseEntered(const ui::Mous
+@@ -394,7 +394,7 @@ void TabGroupHeaderView::OnMouseEntered(
  }
  
  void TabGroupHeaderView::OnMouseExited(const ui::MouseEvent& event) {

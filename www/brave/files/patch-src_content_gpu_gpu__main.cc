@@ -1,4 +1,4 @@
---- src/content/gpu/gpu_main.cc.orig	2026-08-31 10:59:09 UTC
+--- src/content/gpu/gpu_main.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/content/gpu/gpu_main.cc
 @@ -112,14 +112,18 @@
  #include "sandbox/win/src/sandbox.h"
@@ -30,16 +30,16 @@
  bool StartSandboxLinux(gpu::GpuWatchdogThread*,
                         const gpu::GPUInfo*,
                         const gpu::GpuPreferences&);
-@@ -194,7 +198,7 @@ class ContentSandboxHelper : public gpu::GpuSandboxHel
+@@ -194,7 +198,7 @@ class ContentSandboxHelper : public gpu:
  #if BUILDFLAG(IS_WIN)
      media::PreSandboxMediaFoundationInitialization();
  #endif
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-     webnn::PreSandboxWebNNInitialization();
+     webnn::PreSandboxWebNNInitialization(/*is_gpu_process=*/true);
  #endif
  
-@@ -207,7 +211,7 @@ class ContentSandboxHelper : public gpu::GpuSandboxHel
+@@ -207,7 +211,7 @@ class ContentSandboxHelper : public gpu:
                                  const gpu::GPUInfo* gpu_info,
                                  const gpu::GpuPreferences& gpu_prefs) override {
      TRACE_EVENT("gpu,startup", "gpu_main::EnsureSandboxInitialized");
@@ -48,7 +48,7 @@
      return StartSandboxLinux(watchdog_thread, gpu_info, gpu_prefs);
  #elif BUILDFLAG(IS_WIN)
      return StartSandboxWindows(sandbox_info_);
-@@ -323,7 +327,7 @@ int GpuMain(MainFunctionParams parameters) {
+@@ -323,7 +327,7 @@ int GpuMain(MainFunctionParams parameter
            std::make_unique<base::SingleThreadTaskExecutor>(
                gpu_preferences.message_pump_type, /*is_main_thread=*/true);
      }
@@ -57,7 +57,7 @@
  #error "Unsupported Linux platform."
  #elif BUILDFLAG(IS_MAC)
      // Cross-process CoreAnimation requires a CFRunLoop to function at all, and
-@@ -350,7 +354,8 @@ int GpuMain(MainFunctionParams parameters) {
+@@ -350,7 +354,8 @@ int GpuMain(MainFunctionParams parameter
    base::MessagePumpWakeupCounter::InitializeForCurrentThread("GpuMain");
    base::LockMetricsRecorder::EnableRecordingOnCurrentThread("CrGpuMain");
  
@@ -67,7 +67,7 @@
    // Thread type delegate of the process should be registered before
    // thread type change below for the main thread and for thread pool in
    // ChildProcess constructor.
-@@ -502,7 +507,7 @@ int GpuMain(MainFunctionParams parameters) {
+@@ -502,7 +507,7 @@ int GpuMain(MainFunctionParams parameter
  
  namespace {
  
@@ -76,7 +76,7 @@
  bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdog_thread,
                         const gpu::GPUInfo* gpu_info,
                         const gpu::GpuPreferences& gpu_prefs) {
-@@ -550,7 +555,7 @@ bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdo
+@@ -550,7 +555,7 @@ bool StartSandboxLinux(gpu::GpuWatchdogT
    sandbox_options.accelerated_video_encode_enabled =
        !gpu_prefs.disable_accelerated_video_encode;
  

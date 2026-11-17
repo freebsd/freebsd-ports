@@ -1,4 +1,4 @@
---- src/components/metrics/drive_metrics_provider.cc.orig	2026-06-04 10:12:25 UTC
+--- src/components/metrics/drive_metrics_provider.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/components/metrics/drive_metrics_provider.cc
 @@ -23,7 +23,7 @@
  namespace metrics {
@@ -9,7 +9,7 @@
  // These values are persisted to logs. Entries should not be renumbered and
  // numeric values should never be reused.
  // LINT.IfChange(OptionalBoolRecord)
-@@ -135,7 +135,7 @@ void DriveMetricsProvider::FillDriveMetrics(
+@@ -135,7 +135,7 @@ void DriveMetricsProvider::FillDriveMetr
      drive->set_has_seek_penalty(local_state_->GetBoolean(pref_name));
    }
  

@@ -1,6 +1,6 @@
---- src/components/proxy_config/proxy_config_pref_names.h.orig	2026-08-31 10:59:09 UTC
+--- src/components/proxy_config/proxy_config_pref_names.h.orig	2026-10-18 18:43:23 UTC
 +++ src/components/proxy_config/proxy_config_pref_names.h
-@@ -19,7 +19,7 @@ inline constexpr char kUseSharedProxies[] = "settings.
+@@ -19,7 +19,7 @@ inline constexpr char kUseSharedProxies[
  // Preference to store the value of the "ProxyOverrideRules" policy.
  inline constexpr char kProxyOverrideRules[] = "proxy_override_rules";
  

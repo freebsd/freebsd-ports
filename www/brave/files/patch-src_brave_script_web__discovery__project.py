@@ -1,6 +1,6 @@
---- src/brave/script/web_discovery_project.py.orig	2026-06-01 00:00:00 UTC
+--- src/brave/script/web_discovery_project.py.orig	2026-10-18 18:43:23 UTC
 +++ src/brave/script/web_discovery_project.py
-@@ -16,16 +16,73 @@
+@@ -16,16 +16,73 @@ WEB_DISCOVERY_DIR = os.path.join(
      SOURCE_ROOT, 'vendor', 'web-discovery-project')
  
  

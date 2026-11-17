@@ -1,6 +1,6 @@
---- src/chrome/test/supervised_user/google_auth_state_waiter_mixin.cc.orig	2026-09-25 15:26:43 UTC
+--- src/chrome/test/supervised_user/google_auth_state_waiter_mixin.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/test/supervised_user/google_auth_state_waiter_mixin.cc
-@@ -23,7 +23,7 @@ GoogleAuthStateWaiterMixin::GoogleAuthStateWaiterMixin
+@@ -23,7 +23,7 @@ GoogleAuthStateWaiterMixin::GoogleAuthSt
  GoogleAuthStateWaiterMixin::~GoogleAuthStateWaiterMixin() = default;
  
  void GoogleAuthStateWaiterMixin::SetUpOnMainThread() {

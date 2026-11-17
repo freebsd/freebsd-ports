@@ -1,6 +1,6 @@
---- src/v8/src/base/macros.h.orig	2026-05-07 17:02:56 UTC
+--- src/v8/src/base/macros.h.orig	2026-10-18 18:43:23 UTC
 +++ src/v8/src/base/macros.h
-@@ -224,7 +224,7 @@ V8_INLINE constexpr Dest bit_cast(Source const& source
+@@ -224,7 +224,7 @@ V8_INLINE constexpr Dest bit_cast(Source
  
  // Define V8_USE_UNDEFINED_BEHAVIOR_SANITIZER macro.
  #if defined(__has_feature)

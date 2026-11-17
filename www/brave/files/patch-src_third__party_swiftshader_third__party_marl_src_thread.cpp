@@ -1,6 +1,6 @@
---- src/third_party/swiftshader/third_party/marl/src/thread.cpp.orig	2023-08-17 07:33:31 UTC
+--- src/third_party/swiftshader/third_party/marl/src/thread.cpp.orig	2026-10-18 18:43:23 UTC
 +++ src/third_party/swiftshader/third_party/marl/src/thread.cpp
-@@ -444,7 +444,7 @@ void Thread::setName(const char* fmt, ...) {
+@@ -444,7 +444,7 @@ void Thread::setName(const char* fmt, ..
    pthread_setname_np(name);
  #elif defined(__FreeBSD__)
    pthread_set_name_np(pthread_self(), name);

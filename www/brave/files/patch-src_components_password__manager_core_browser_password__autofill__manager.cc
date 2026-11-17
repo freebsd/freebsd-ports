@@ -1,6 +1,6 @@
---- src/components/password_manager/core/browser/password_autofill_manager.cc.orig	2026-09-25 15:26:43 UTC
+--- src/components/password_manager/core/browser/password_autofill_manager.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/components/password_manager/core/browser/password_autofill_manager.cc
-@@ -409,7 +409,7 @@ void PasswordAutofillManager::DidAcceptSuggestion(
+@@ -409,7 +409,7 @@ void PasswordAutofillManager::DidAcceptS
                           weak_ptr_factory_.GetWeakPtr(), payload);
        if (payload.is_cross_domain) {
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS) || \
@@ -9,7 +9,7 @@
          cross_domain_confirmation_controller_ =
              password_client_->ShowCrossDomainConfirmationPopup(
                  last_popup_open_args_.element_bounds,
-@@ -460,7 +460,7 @@ void PasswordAutofillManager::DidAcceptSuggestion(
+@@ -460,7 +460,7 @@ void PasswordAutofillManager::DidAcceptS
                           weak_ptr_factory_.GetWeakPtr(), *password_credential);
        if (password_credential->is_grouped_affiliation) {
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS) || \
@@ -18,7 +18,7 @@
          cross_domain_confirmation_controller_ =
              password_client_->ShowCrossDomainConfirmationPopup(
                  last_popup_open_args_.element_bounds,
-@@ -729,7 +729,7 @@ void PasswordAutofillManager::DidNavigateMainFrame() {
+@@ -737,7 +737,7 @@ void PasswordAutofillManager::DidNavigat
    manual_fallback_metrics_recorder_ =
        std::make_unique<PasswordManualFallbackMetricsRecorder>();
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS) || \

@@ -1,6 +1,6 @@
---- src/third_party/blink/renderer/bindings/scripts/bind_gen/style_format.py.orig	2024-06-17 12:56:06 UTC
+--- src/third_party/blink/renderer/bindings/scripts/bind_gen/style_format.py.orig	2026-10-18 18:43:23 UTC
 +++ src/third_party/blink/renderer/bindings/scripts/bind_gen/style_format.py
-@@ -30,7 +30,7 @@ def init(root_src_dir, enable_style_format=True):
+@@ -30,7 +30,7 @@ def init(root_src_dir, enable_style_form
  
      # Determine //buildtools/<platform>/ directory
      new_path_platform_suffix = ""

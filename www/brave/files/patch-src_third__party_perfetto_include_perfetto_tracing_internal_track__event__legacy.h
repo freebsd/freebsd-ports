@@ -1,6 +1,6 @@
---- src/third_party/perfetto/include/perfetto/tracing/internal/track_event_legacy.h.orig	2025-10-30 15:44:36 UTC
+--- src/third_party/perfetto/include/perfetto/tracing/internal/track_event_legacy.h.orig	2026-10-18 18:43:23 UTC
 +++ src/third_party/perfetto/include/perfetto/tracing/internal/track_event_legacy.h
-@@ -253,7 +253,7 @@ class PERFETTO_EXPORT_COMPONENT LegacyTraceId {
+@@ -253,7 +253,7 @@ class PERFETTO_EXPORT_COMPONENT LegacyTr
  // are different. E.g. on Mac size_t is considered a different type from
  // uint64_t even though it has the same size and signedness.
  // Below we add overloads for those types that are known to cause ambiguity.

@@ -1,4 +1,4 @@
---- src/base/threading/platform_thread_posix.cc.orig	2026-08-31 10:59:09 UTC
+--- src/base/threading/platform_thread_posix.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/base/threading/platform_thread_posix.cc
 @@ -6,6 +6,9 @@
  
@@ -26,7 +26,7 @@
    }
  
    ThreadIdNameManager::GetInstance()->RegisterThread(
-@@ -270,6 +275,10 @@ PlatformThreadId PlatformThreadBase::CurrentId() {
+@@ -270,6 +275,10 @@ PlatformThreadId PlatformThreadBase::Cur
  
  #elif BUILDFLAG(IS_POSIX) && BUILDFLAG(IS_AIX)
    return PlatformThreadId(pthread_self());
@@ -37,7 +37,7 @@
  #elif BUILDFLAG(IS_POSIX) && !BUILDFLAG(IS_AIX)
    return PlatformThreadId(reinterpret_cast<int64_t>(pthread_self()));
  #endif
-@@ -363,6 +372,9 @@ void PlatformThreadBase::Detach(PlatformThreadHandle t
+@@ -363,6 +372,9 @@ void PlatformThreadBase::Detach(Platform
  
  // static
  bool PlatformThreadBase::CanChangeThreadType(ThreadType from, ThreadType to) {
@@ -47,7 +47,7 @@
    if (from >= to) {
      // Decreasing thread priority on POSIX is always allowed.
      return true;
-@@ -372,10 +384,15 @@ bool PlatformThreadBase::CanChangeThreadType(ThreadTyp
+@@ -372,10 +384,15 @@ bool PlatformThreadBase::CanChangeThread
    }
  
    return internal::CanLowerNiceTo(internal::ThreadTypeToNiceValue(to));
@@ -63,7 +63,7 @@
    // Mirrors SetCurrentThreadPriority()'s implementation.
    auto platform_specific_priority =
        internal::GetCurrentEffectiveThreadTypeForPlatformForTest();  // IN-TEST
-@@ -386,6 +403,7 @@ ThreadType PlatformThreadBase::GetCurrentEffectiveThre
+@@ -386,6 +403,7 @@ ThreadType PlatformThreadBase::GetCurren
    int nice_value = internal::GetCurrentThreadNiceValue();
  
    return internal::NiceValueToThreadTypeForTest(nice_value);  // IN-TEST

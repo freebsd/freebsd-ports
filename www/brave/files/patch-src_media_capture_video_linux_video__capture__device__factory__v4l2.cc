@@ -1,6 +1,6 @@
---- src/media/capture/video/linux/video_capture_device_factory_v4l2.cc.orig	2026-07-01 06:24:19 UTC
+--- src/media/capture/video/linux/video_capture_device_factory_v4l2.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/media/capture/video/linux/video_capture_device_factory_v4l2.cc
-@@ -43,6 +43,7 @@ bool CompareCaptureDevices(const VideoCaptureDeviceInf
+@@ -43,6 +43,7 @@ bool CompareCaptureDevices(const VideoCa
    return a.descriptor < b.descriptor;
  }
  
@@ -8,7 +8,7 @@
  // USB VID and PID are both 4 bytes long.
  const size_t kVidPidSize = 4;
  const size_t kMaxInterfaceNameSize = 256;
-@@ -72,11 +73,24 @@ std::string ExtractFileNameFromDeviceId(const std::str
+@@ -72,11 +73,24 @@ std::string ExtractFileNameFromDeviceId(
    DCHECK(base::StartsWith(device_id, kDevDir, base::CompareCase::SENSITIVE));
    return device_id.substr(kDevDir.length());
  }
@@ -69,7 +69,7 @@
    }
  };
  
-@@ -221,7 +244,7 @@ void VideoCaptureDeviceFactoryV4L2::GetDevicesInfo(
+@@ -221,7 +244,7 @@ void VideoCaptureDeviceFactoryV4L2::GetD
    std::move(callback).Run(std::move(devices_info));
  }
  

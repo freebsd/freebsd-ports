@@ -1,7 +1,6 @@
 PORTNAME=	brave
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.96.61
-PORTREVISION=	3
+DISTVERSION=	1.97.59
 TSV=		7.0.2
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/chromium-linux-tarballs/chromium-tarballs/releases/download/${CHROME_VERSION}/:chromium \
@@ -37,21 +36,18 @@ ONLY_FOR_ARCHS=	aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	the Chromium build is only supported on amd64 and aarch64
 
 # Chromium release the pinned brave-core revision is built against, see
-# "config.projects.chrome.tag" in src/brave/package.json.  Brave 1.96.61 is
-# the current release; www/chromium is on the same branch (154.0.8037.57 there),
-# so that port's FreeBSD patches apply to this tree as well.
-#
-# Brave 1.96.61 pins 154.0.8037.98, but Google has published no tarball for it
-# (nor for .97), so this takes .97, the closest one there is, from the same
-# chromium-linux-tarballs project www/chromium 154 fetches from.  Every
-# brave-core 1.96.61 patch and every patch in files/ applies to it without
-# fuzz.  Move to .98 once its tarball appears.
-CHROME_VERSION=	154.0.8037.97
+# "config.projects.chrome.tag" in src/brave/package.json.  Brave 1.97.59 pins
+# 155.0.8059.85, but no tarball has been published for it, so this takes .84,
+# the closest one there is, from the same chromium-linux-tarballs project
+# www/chromium fetches from.  Every brave-core 1.97.59 patch and every patch in
+# files/ applies to it without fuzz.  Move to .85 once its tarball appears.
+CHROME_VERSION=	155.0.8059.84
 
-# The FreeBSD patches for the Chromium tree in files/ are the ones from
-# www/chromium 154.0.8037.57, rewritten for the src/ prefix this port unpacks
-# Chromium into.  The few that overlap with a brave-core patch, or that the
-# redirect_cc build below needs, are regenerated against the patched tree.
+# The FreeBSD patches for the Chromium tree in files/ started out as the ones
+# from www/chromium 154.0.8037.57, rewritten for the src/ prefix this port
+# unpacks Chromium into.  www/chromium has not moved to 155 yet, so they have
+# been carried forward to 155 here and regenerated against the tree as
+# brave-core patches it.
 #
 # This port builds natively: depot_tools, gclient, cipd, siso and reclient are
 # not used at all.  Everything is taken from a Chromium release tarball
@@ -66,7 +62,7 @@ GH_PROJECT=	brave-browser
 GH_TUPLE=	brave:brave-core:v${DISTVERSION}:core/src/brave \
 		brave-intl:bat-native-tweetnacl:8b424ccf29957fe01c88c36076fd32006a357887:tweetnacl/src/brave/vendor/bat-native-tweetnacl \
 		brave:gn-project-generators:b76e14b162aa0ce40f11920ec94bfc12da29e5d0:gnprojgen/src/brave/vendor/gn-project-generators \
-		brave:web-discovery-project:eac9e31daef742bdcd557e6031f8659f247282b2:wdp/src/brave/vendor/web-discovery-project \
+		brave:web-discovery-project:4b07a24d03ee1a266230d2ffb78fd390e35e262a:wdp/src/brave/vendor/web-discovery-project \
 		brave-intl:bat-native-bip39wally-core:547a7810333d821e29b8f55126aba031aa0d5fcd:bip39wally/src/brave/third_party/bip39wally-core-native \
 		chfast:ethash:e4a15c3d76dc09392c7efd3e30d84ee3b871e9ce:ethash/src/brave/third_party/ethash/src \
 		bitcoin:bitcoin:8105bce5b384c72cf08b25b7c5343622754e7337:bitcoincore/src/brave/third_party/bitcoin-core/src \
@@ -74,13 +70,12 @@ GH_TUPLE=	brave:brave-core:v${DISTVERSION}:core/src/brave \
 		brave:playlist-component:673d40f017a1559bb685a15cf608ad1d4a94f8fb:playlist/src/brave/third_party/playlist_component/src \
 		brave-intl:futures-retry:2aaaafbc3d394661534d4dbd14159d164243c20e:futuresretry/src/brave/third_party/rust/futures_retry/v0_5/crate \
 		brave:librustzcash:f01f50d64214278552edbe4a34b9049244ce03c1:librustzcash/src/brave/components/brave_wallet/browser/zcash/rust/librustzcash/src \
-		rollup:rollup:v4.60.4:rollup/src/rollup \
 		evanw:esbuild:v${_ESBUILD_VERSION:sh}:esbuild/src/esbuild
 
-# Chromium builds devtools-frontend with rollup and esbuild.  Neither ships a
-# FreeBSD binary, so the rollup native binding is built from source (like
-# www/chromium does, hence the shared Makefile.crates) and esbuild is taken
-# from ports.
+# Chromium builds devtools-frontend with esbuild, which ships no FreeBSD
+# binary, so it is taken from ports.  (Up to 154 devtools-frontend also
+# bundled with rollup, whose native binding had to be built from source; 155
+# uses esbuild alone, and the WebUI bundles take @rollup/wasm-node.)
 #
 # Since 154 devtools-frontend also compiles its TypeScript with tsgo, the
 # native TypeScript compiler, which Chromium gets from CIPD as a Linux binary
@@ -150,21 +145,10 @@ LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-core \
 RUN_DEPENDS=	noto-basic>0:x11-fonts/noto-basic \
 		xdg-open:devel/xdg-utils
 
-USES=		bison cargo compiler:c++20-lang cpe desktop-file-utils gl gmake \
+USES=		bison compiler:c++20-lang cpe desktop-file-utils gl gmake \
 		gnome go:no_targets iconv:wchar_t jpeg localbase:ldflags ninja \
 		nodejs:24,build perl5 pkgconfig python:build shebangfix tar:xz \
 		xorg
-
-CARGO_CARGOTOML=	${WRKSRC}/src/rollup/rust/Cargo.toml
-CARGO_CARGOLOCK=	${WRKSRC}/src/rollup/rust/Cargo.lock
-CARGO_TARGET_DIR=	${WRKSRC}/src/rollup/rust/target
-CARGO_INSTALL=		No
-CARGO_BUILD=		No
-CARGO_TEST=		No
-# MAKE_ENV carries DESTDIR=${STAGEDIR}; the cmake install run by the
-# libmimalloc-sys2 build script honours it and would drop its OUT_DIR
-# (headers, libmimalloc.a, cmake/pkgconfig files) into the stage directory.
-CARGO_ENV+=		DESTDIR=
 
 CPE_VENDOR=	brave
 CPE_PRODUCT=	brave
@@ -194,11 +178,12 @@ BRAVE_VERSION_BUILD=	${DISTVERSION:E}
 GN=			${BUILD_WRKSRC}/out/${BUILDTYPE}/gn
 GN_BOOTSTRAP_FLAGS=	--no-clean --no-rebuild --skip-generate-buildfiles
 
-# Brave overrides Chromium sources through chromium_src/, which only works when
-# the compiler is invoked through redirect_cc as a cc_wrapper.  Without siso
-# (which is fetched with CIPD and does not exist for FreeBSD) redirect_cc has to
-# be built first, into its own output directory.
-REDIRECT_CC_DIR=	${BUILD_WRKSRC}/out/redirect_cc
+# Brave overrides Chromium sources through chromium_src/: a compile whose
+# source has a counterpart there is handed that file instead.  Since 1.97 siso
+# does this by itself (brave/build/config/siso/brave_siso_config.star), and
+# siso is fetched with CIPD and does not exist for FreeBSD, so the compiler is
+# run through files/redirect_cc.c as a cc_wrapper, which does the same.
+REDIRECT_CC=	${WRKDIR}/redirect_cc
 
 _LEO=		${WRKSRC}/src/brave/node_modules/@brave/leo
 
@@ -221,10 +206,10 @@ _PNPM_INSTALL=	${MKDIR} ${BINARY_LINKDIR} && \
 		cd ${WRKSRC}/src/brave && ${SETENV} ${CONFIGURE_ENV} \
 		    ${BINARY_LINKDIR}/pnpm install --frozen-lockfile
 
-# Arguments that describe the platform and the toolchain.  Both output
-# directories need them: without them the small redirect_cc build falls back to
-# the Chromium defaults and pulls in things FreeBSD cannot build, such as the
-# allocator shim, whose malloc overrides clash with the declarations in libc.
+# Arguments that describe the platform and the toolchain.  Without them the
+# build falls back to the Chromium defaults and pulls in things FreeBSD cannot
+# build, such as the allocator shim, whose malloc overrides clash with the
+# declarations in libc.
 GN_BASE_ARGS=	target_os="freebsd" target_cpu="${GN_CPU}" \
 		clang_use_chrome_plugins=false \
 		enable_backup_ref_ptr_support=false enable_rust=true \
@@ -278,6 +263,12 @@ SERVICE_KEY_STT=
 SERVICE_API_STATS=	fe033168-0ff8-4af6-9a7f-95e2cbfc9f4f
 SERVER_URL=		https://variations.brave.com/seed
 
+# Since 155 V8 generates its instance-types.h with metagen, which parses the
+# V8 headers through libclang: the prebuilt libclang and its Python bindings
+# come from CIPD (third_party/llvm-libclang), and the clang builtin headers
+# are looked up in Chromium's own toolchain (third_party/llvm-build), neither
+# of which exists here.  v8_use_metagen_instance_types=false takes the header
+# Torque emits instead, which V8 still generates either way.
 GN_ARGS+=	${GN_BASE_ARGS} \
 		import("//brave/build/args/brave_defaults.gni") \
 		import("//brave/build/args/blink_platform_defaults.gni") \
@@ -285,7 +276,7 @@ GN_ARGS+=	${GN_BASE_ARGS} \
 		import("//brave/build/args/desktop_defaults.gni") \
 		brave_channel="" \
 		brave_services_key="${BRAVE_SERVICES_KEY}" \
-		cc_wrapper="${REDIRECT_CC_DIR}/redirect_cc" \
+		cc_wrapper="${REDIRECT_CC}" \
 		chrome_pgo_phase=0 \
 		dcheck_always_on=false \
 		enable_cdm_host_verification=false \
@@ -313,17 +304,10 @@ GN_ARGS+=	${GN_BASE_ARGS} \
 		use_system_libffi=true \
 		use_system_libjpeg=true \
 		use_typescript_go=false \
+		v8_use_metagen_instance_types=false \
 		ffmpeg_branding="${FFMPEG_BRAND}" \
 		brave_google_api_key="AIzaSyAREPLACEWITHYOUROWNGOOGLEAPIKEY2Q" \
 		brave_google_api_endpoint="https://www.googleapis.com/geolocation/v1/geolocate?key="
-
-# redirect_cc is a small host tool, it must not be wrapped by itself.  Its
-# rewrapper_buildflags target bakes the path in unconditionally, so it needs a
-# non-empty real_rewrapper even with RBE off, exactly like Brave's own build
-# driver passes it.
-GN_REDIRECT_CC_ARGS=	import("//brave/tools/redirect_cc/args.gni") \
-			real_rewrapper="${BUILD_WRKSRC}/buildtools/reclient/rewrapper" \
-			${GN_BASE_ARGS}
 
 OPTIONS_DEFINE=		CODECS CUPS DEBUG KERBEROS LTO NODEMODS PIPEWIRE QT6 \
 			WIDEVINE
@@ -441,8 +425,6 @@ post-install-QT6-on:
 SUB_FILES=	brave brave-browser.desktop pkg-message
 SUB_LIST=	COMMENT="${COMMENT}"
 
-.include "Makefile.crates"
-
 .include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 
@@ -484,7 +466,7 @@ FFMPEG_CONFIGS=	config.h config_components.h \
 FFMPEG_CONFIGS+=	config.asm config_components.asm
 .endif
 
-# brave-core patches 41 of Chromium's python build scripts to end in an import
+# brave-core patches 40 of Chromium's python build scripts to end in an import
 # of brave_chromium_utils, which is how it hooks chromium_src/ overrides into
 # them.  That module lives in //brave/script and is only importable because
 # Brave's build driver puts it on PYTHONPATH; driving ninja directly, as this
@@ -672,15 +654,6 @@ pre-build:
 		${SETENV} ${MAKE_ENV} go build -v -p ${MAKE_JOBS_NUMBER} -mod=vendor ./cmd/tsgo && \
 		${LN} -sf ${BUILD_WRKSRC}/typescript/tsc/tsgo \
 		${BUILD_WRKSRC}/third_party/typescript/linux-amd64/src/lib/tsc
-# The rollup plugin devtools-frontend loads is a native node module
-	@${CARGO_CARGO_RUN} build --manifest-path ${CARGO_CARGOTOML} \
-		${CARGO_BUILD_ARGS}
-	(cd ${BUILD_WRKSRC}/third_party/devtools-frontend/src/node_modules/@rollup && \
-		${MKDIR} rollup-freebsd && \
-		${CP} ${CARGO_TARGET_DIR}/release/libbindings_napi.so \
-			rollup-freebsd/rollup.freebsd.node && \
-		${ECHO_CMD} '{ "main": "./rollup.freebsd.node" }' \
-			> rollup-freebsd/package.json)
 
 do-configure:
 	(cd ${WRKSRC}/src/esbuild && \
@@ -718,11 +691,7 @@ do-configure:
 	${LN} -sf /usr/bin/strip ${BUILD_WRKSRC}/buildtools/freebsd/strip
 
 # chromium_src/ overrides only take effect through redirect_cc
-	cd ${BUILD_WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${GN} gen \
-		--root-target=//brave/tools/redirect_cc \
-		--args='${GN_REDIRECT_CC_ARGS}' out/redirect_cc
-	cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${NINJA_CMD} \
-		-j${MAKE_JOBS_NUMBER} -C out/redirect_cc brave/tools/redirect_cc
+	${CC} ${CFLAGS} -o ${REDIRECT_CC} ${FILESDIR}/redirect_cc.c
 
 	cd ${BUILD_WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${GN} gen \
 		--args='${GN_ARGS}' out/${BUILDTYPE}

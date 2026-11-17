@@ -1,4 +1,4 @@
---- src/remoting/host/it2me/it2me_native_messaging_host_main.cc.orig	2026-09-25 15:26:43 UTC
+--- src/remoting/host/it2me/it2me_native_messaging_host_main.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/remoting/host/it2me/it2me_native_messaging_host_main.cc
 @@ -30,7 +30,7 @@
  #include "remoting/host/resources.h"
@@ -18,7 +18,7 @@
  #include "remoting/base/crash/crash_reporting_crashpad.h"
  #endif  // BUILDFLAG(IS_LINUX)
  
-@@ -83,7 +83,7 @@ int It2MeNativeMessagingHostMain(int argc, char** argv
+@@ -83,7 +83,7 @@ int It2MeNativeMessagingHostMain(int arg
    base::ScopedMemoryConsumerRegistry<base::DummyMemoryConsumerRegistry>
        memory_consumer_registry;
  
@@ -27,7 +27,7 @@
    // Initialize Xlib for multi-threaded use, allowing non-Chromium code to
    // use X11 safely (such as the WebRTC capturer, GTK ...)
    x11::InitXlib();
-@@ -108,7 +108,7 @@ int It2MeNativeMessagingHostMain(int argc, char** argv
+@@ -108,7 +108,7 @@ int It2MeNativeMessagingHostMain(int arg
    // needs to be initialized first, so that the preference for crash-reporting
    // can be looked up in the config file.
    if (IsUsageStatsAllowed()) {
@@ -36,7 +36,7 @@
      InitializeCrashpadReporting();
  #elif BUILDFLAG(IS_WIN)
      InitializeBreakpadReporting();
-@@ -133,7 +133,7 @@ int It2MeNativeMessagingHostMain(int argc, char** argv
+@@ -133,7 +133,7 @@ int It2MeNativeMessagingHostMain(int arg
  
    remoting::LoadResources("");
  
@@ -45,7 +45,7 @@
    // Required for any calls into GTK functions, such as the Disconnect and
    // Continue windows. Calling with nullptr arguments because we don't have
    // any command line arguments for gtk to consume.
-@@ -262,7 +262,7 @@ int It2MeNativeMessagingHostMain(int argc, char** argv
+@@ -262,7 +262,7 @@ int It2MeNativeMessagingHostMain(int arg
        PolicyWatcher::CreateWithTaskRunner(context->file_task_runner(),
                                            context->management_service());
  
@@ -54,7 +54,7 @@
    scoped_refptr<AutoThreadTaskRunner> input_task_runner;
    // Create an X11EventSource on all UI threads, so the global X11 connection
    // (x11::Connection::Get()) can dispatch X events.
-@@ -286,7 +286,7 @@ int It2MeNativeMessagingHostMain(int argc, char** argv
+@@ -286,7 +286,7 @@ int It2MeNativeMessagingHostMain(int arg
    // Run the loop until channel is alive.
    run_loop.Run();
  

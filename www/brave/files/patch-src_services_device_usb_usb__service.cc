@@ -1,4 +1,4 @@
---- src/services/device/usb/usb_service.cc.orig	2026-02-11 09:05:39 UTC
+--- src/services/device/usb/usb_service.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/services/device/usb/usb_service.cc
 @@ -19,12 +19,16 @@
  
@@ -18,7 +18,7 @@
  #endif
  
  namespace device {
-@@ -47,11 +51,13 @@ constexpr base::TaskTraits UsbService::kBlockingTaskTr
+@@ -47,12 +51,14 @@ constexpr base::TaskTraits UsbService::k
  std::unique_ptr<UsbService> UsbService::Create() {
  #if BUILDFLAG(IS_ANDROID)
    return base::WrapUnique(new UsbServiceAndroid());
@@ -28,8 +28,9 @@
  #elif BUILDFLAG(IS_WIN)
    return base::WrapUnique(new UsbServiceWin());
  #elif BUILDFLAG(IS_MAC)
-+  return base::WrapUnique(new UsbServiceImpl());
-+#elif BUILDFLAG(IS_BSD)
    return base::WrapUnique(new UsbServiceImpl());
++#elif BUILDFLAG(IS_BSD)
++  return base::WrapUnique(new UsbServiceImpl());
  #else
    return nullptr;
+ #endif

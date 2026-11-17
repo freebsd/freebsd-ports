@@ -1,4 +1,4 @@
---- src/chrome/browser/ui/views/profiles/profile_picker_widget.cc.orig	2026-08-12 09:02:10 UTC
+--- src/chrome/browser/ui/views/profiles/profile_picker_widget.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/ui/views/profiles/profile_picker_widget.cc
 @@ -11,7 +11,7 @@
  #include "chrome/browser/ui/views/profiles/profile_picker_view.h"
@@ -9,7 +9,7 @@
  #include "chrome/browser/shell_integration_linux.h"
  #endif
  
-@@ -20,7 +20,7 @@ ProfilePickerWidget::ProfilePickerWidget(ProfilePicker
+@@ -20,7 +20,7 @@ ProfilePickerWidget::ProfilePickerWidget
    views::Widget::InitParams params(
        views::Widget::InitParams::NATIVE_WIDGET_OWNS_WIDGET);
    params.delegate = profile_picker_view;

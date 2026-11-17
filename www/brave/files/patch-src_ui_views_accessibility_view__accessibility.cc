@@ -1,4 +1,4 @@
---- src/ui/views/accessibility/view_accessibility.cc.orig	2026-08-31 10:59:09 UTC
+--- src/ui/views/accessibility/view_accessibility.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/ui/views/accessibility/view_accessibility.cc
 @@ -37,7 +37,7 @@
  #include "ui/views/accessibility/view_ax_platform_node_delegate_win.h"
@@ -9,7 +9,7 @@
  #include "ui/views/accessibility/view_ax_platform_node_delegate_auralinux.h"
  #endif
  
-@@ -107,7 +107,7 @@ std::unique_ptr<ViewAccessibility> ViewAccessibility::
+@@ -107,7 +107,7 @@ std::unique_ptr<ViewAccessibility> ViewA
    return ViewAXPlatformNodeDelegateWin::CreatePlatformSpecific(view);
  #elif BUILDFLAG(IS_MAC)
    return ViewAXPlatformNodeDelegateMac::CreatePlatformSpecific(view);

@@ -1,6 +1,6 @@
---- src/ui/views/controls/prefix_selector.h.orig	2025-01-15 09:18:26 UTC
+--- src/ui/views/controls/prefix_selector.h.orig	2026-10-18 18:43:23 UTC
 +++ src/ui/views/controls/prefix_selector.h
-@@ -91,7 +91,7 @@ class VIEWS_EXPORT PrefixSelector : public ui::TextInp
+@@ -91,7 +91,7 @@ class VIEWS_EXPORT PrefixSelector : publ
    ukm::SourceId GetClientSourceForMetrics() const override;
    bool ShouldDoLearning() override;
  

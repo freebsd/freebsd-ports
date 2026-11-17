@@ -1,4 +1,4 @@
---- src/third_party/crashpad/crashpad/util/misc/capture_context.h.orig	2025-07-02 06:08:04 UTC
+--- src/third_party/crashpad/crashpad/util/misc/capture_context.h.orig	2026-10-18 18:43:23 UTC
 +++ src/third_party/crashpad/crashpad/util/misc/capture_context.h
 @@ -21,8 +21,11 @@
  #include <mach/mach.h>
@@ -13,7 +13,7 @@
  #endif  // BUILDFLAG(IS_APPLE)
  
  namespace crashpad {
-@@ -35,7 +38,8 @@ using NativeCPUContext = arm_unified_thread_state;
+@@ -35,7 +38,8 @@ using NativeCPUContext = arm_unified_thr
  #endif
  #elif BUILDFLAG(IS_WIN)
  using NativeCPUContext = CONTEXT;

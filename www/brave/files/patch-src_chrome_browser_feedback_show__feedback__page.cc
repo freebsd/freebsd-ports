@@ -1,6 +1,6 @@
---- src/chrome/browser/feedback/show_feedback_page.cc.orig	2026-09-25 15:26:43 UTC
+--- src/chrome/browser/feedback/show_feedback_page.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/feedback/show_feedback_page.cc
-@@ -255,7 +255,7 @@ bool CanShowFeedback(const Profile* profile) {
+@@ -255,7 +255,7 @@ bool CanShowFeedback(const Profile* prof
      return false;
    }
  

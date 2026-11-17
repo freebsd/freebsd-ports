@@ -1,4 +1,4 @@
---- src/v8/src/snapshot/embedded/platform-embedded-file-writer-generic.cc.orig	2026-01-14 08:33:23 UTC
+--- src/v8/src/snapshot/embedded/platform-embedded-file-writer-generic.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/v8/src/snapshot/embedded/platform-embedded-file-writer-generic.cc
 @@ -9,6 +9,10 @@
  
@@ -11,7 +11,7 @@
  namespace v8 {
  namespace internal {
  
-@@ -35,6 +39,10 @@ const char* DirectiveAsString(DataDirective directive)
+@@ -35,6 +39,10 @@ const char* DirectiveAsString(DataDirect
  void PlatformEmbeddedFileWriterGeneric::SectionText() {
    if (target_os_ == EmbeddedTargetOs::kChromeOS) {
      fprintf(fp_, ".section .text.hot.embedded\n");
@@ -22,7 +22,7 @@
    } else {
      fprintf(fp_, ".section .text\n");
    }
-@@ -75,6 +83,8 @@ void PlatformEmbeddedFileWriterGeneric::AlignToCodeAli
+@@ -75,6 +83,8 @@ void PlatformEmbeddedFileWriterGeneric::
  #else
    fprintf(fp_, ".balign 4096\n");
  #endif
@@ -31,7 +31,7 @@
  #else
    fprintf(fp_, ".balign %d\n", static_cast<int>(kCodeAlignment));
  #endif
-@@ -92,6 +102,8 @@ void PlatformEmbeddedFileWriterGeneric::AlignToPageSiz
+@@ -92,6 +102,8 @@ void PlatformEmbeddedFileWriterGeneric::
  #else
    fprintf(fp_, ".balign 4096\n");
  #endif

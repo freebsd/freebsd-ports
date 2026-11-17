@@ -1,6 +1,6 @@
---- src/ui/base/dragdrop/os_exchange_data_provider_non_backed.cc.orig	2026-07-01 06:24:19 UTC
+--- src/ui/base/dragdrop/os_exchange_data_provider_non_backed.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/ui/base/dragdrop/os_exchange_data_provider_non_backed.cc
-@@ -105,7 +105,7 @@ void OSExchangeDataProviderNonBacked::SetPickledData(
+@@ -105,7 +105,7 @@ void OSExchangeDataProviderNonBacked::Se
  
  std::optional<std::u16string> OSExchangeDataProviderNonBacked::GetString()
      const {

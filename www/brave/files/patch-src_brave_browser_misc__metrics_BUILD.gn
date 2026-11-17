@@ -1,10 +1,10 @@
---- src/brave/browser/misc_metrics/BUILD.gn.orig	2026-06-01 00:00:00 UTC
+--- src/brave/browser/misc_metrics/BUILD.gn.orig	2026-10-18 18:43:23 UTC
 +++ src/brave/browser/misc_metrics/BUILD.gn
-@@ -80,6 +80,7 @@
+@@ -85,6 +85,7 @@ static_library("misc_metrics_impl") {
      "//mojo/public/cpp/bindings",
      "//services/media_session/public/mojom",
      "//third_party/blink/public/common",
 +    "//third_party/widevine/cdm:buildflags",
      "//ui/base",
      "//ui/gfx/geometry",
-   ]
+     "//url",

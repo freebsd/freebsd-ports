@@ -1,4 +1,4 @@
---- src/ipc/ipc_channel.cc.orig	2026-09-25 15:26:43 UTC
+--- src/ipc/ipc_channel.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/ipc/ipc_channel.cc
 @@ -34,7 +34,7 @@ namespace IPC {
  
@@ -9,7 +9,7 @@
  
  int g_global_pid = 0;
  
-@@ -76,7 +76,7 @@ class ThreadSafeChannelProxy : public mojo::ThreadSafe
+@@ -76,7 +76,7 @@ class ThreadSafeChannelProxy : public mo
  };
  
  base::ProcessId GetSelfPID() {
@@ -18,7 +18,7 @@
    if (int global_pid = Channel::GetGlobalPid()) {
      return global_pid;
    }
-@@ -97,7 +97,7 @@ std::unique_ptr<Channel> Channel::Create(
+@@ -97,7 +97,7 @@ std::unique_ptr<Channel> Channel::Create
                                        ipc_task_runner, proxy_task_runner));
  }
  

@@ -1,6 +1,6 @@
---- src/ui/events/event_switches.cc.orig	2022-06-17 14:20:10 UTC
+--- src/ui/events/event_switches.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/ui/events/event_switches.cc
-@@ -21,7 +21,7 @@ const char kCompensateForUnstablePinchZoom[] =
+@@ -21,7 +21,7 @@ const char kCompensateForUnstablePinchZo
  // value is a floating point number that is interpreted as a distance in pixels.
  const char kTouchSlopDistance[] = "touch-slop-distance";
  

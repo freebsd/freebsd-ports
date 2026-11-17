@@ -1,4 +1,4 @@
---- src/third_party/blink/renderer/core/exported/web_view_impl.cc.orig	2026-09-25 15:26:43 UTC
+--- src/third_party/blink/renderer/core/exported/web_view_impl.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/third_party/blink/renderer/core/exported/web_view_impl.cc
 @@ -197,7 +197,7 @@
  #include "ui/gfx/geometry/skia_conversions.h"
@@ -9,7 +9,7 @@
  #include "ui/native_theme/native_theme.h"
  #endif
  
-@@ -403,7 +403,7 @@ void RecordPrerenderActivationSignalDelay(const String
+@@ -403,7 +403,7 @@ void RecordPrerenderActivationSignalDela
  #if !BUILDFLAG(IS_MAC) && !BUILDFLAG(IS_WIN)
  SkFontHinting RendererPreferencesToSkiaHinting(
      const blink::RendererPreferences& prefs) {
@@ -18,7 +18,7 @@
    if (!prefs.should_antialias_text) {
      // When anti-aliasing is off, GTK maps all non-zero hinting settings to
      // 'Normal' hinting so we do the same. Otherwise, folks who have 'Slight'
-@@ -463,7 +463,7 @@ void MaybePreloadSystemFonts(Page* page) {
+@@ -463,7 +463,7 @@ void MaybePreloadSystemFonts(Page* page)
  }
  
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
@@ -27,7 +27,7 @@
  void UpdateUseOverlayScrollbar(bool use_overlay_scrollbar) {
    ui::NativeTheme::GetInstanceForWeb()->set_use_overlay_scrollbar(
        use_overlay_scrollbar);
-@@ -3696,7 +3696,7 @@ void WebViewImpl::UpdateFontRenderingFromRendererPrefs
+@@ -3712,7 +3712,7 @@ void WebViewImpl::UpdateFontRenderingFro
        gfx::FontRenderParams::SUBPIXEL_RENDERING_NONE);
    WebFontRenderStyle::SetSubpixelPositioning(
        renderer_preferences_.use_subpixel_positioning);
@@ -36,7 +36,7 @@
    if (!renderer_preferences_.system_font_family_name.empty()) {
      WebFontRenderStyle::SetSystemFontFamily(blink::WebString::FromUtf8(
          renderer_preferences_.system_font_family_name));
-@@ -3840,7 +3840,7 @@ void WebViewImpl::UpdateRendererPreferences(
+@@ -3856,7 +3856,7 @@ void WebViewImpl::UpdateRendererPreferen
        renderer_preferences_.selection_clipboard_buffer_available);
  #endif  // BUILDFLAG(IS_OZONE)
  
@@ -45,7 +45,7 @@
    GetSettings()->SetMiddleClickPasteAllowed(
        renderer_preferences_.middle_click_paste_allowed);
  #endif  // BUILDFLAG(IS_LINUX)
-@@ -3849,7 +3849,7 @@ void WebViewImpl::UpdateRendererPreferences(
+@@ -3865,7 +3865,7 @@ void WebViewImpl::UpdateRendererPreferen
        renderer_preferences_.explicitly_allowed_network_ports);
  
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \

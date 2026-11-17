@@ -1,6 +1,6 @@
---- src/chrome/browser/private_verification_tokens/BUILD.gn.orig	2026-09-25 15:26:43 UTC
+--- src/chrome/browser/private_verification_tokens/BUILD.gn.orig	2026-10-19 06:05:22 UTC
 +++ src/chrome/browser/private_verification_tokens/BUILD.gn
-@@ -26,7 +26,7 @@ static_library("private_verification_tokens") {
+@@ -26,7 +26,7 @@ static_library("private_verification_tok
      "//chrome/browser/profiles:profile",
      "//components/content_settings/core/browser",
      "//components/keyed_service/core",
@@ -9,21 +9,21 @@
      "//components/private_verification_tokens/common:private_verification_tokens_fetcher",
      "//components/private_verification_tokens/common:private_verification_tokens_issuer_config",
      "//components/private_verification_tokens/common:private_verification_tokens_parameters",
-@@ -49,7 +49,7 @@ source_set("browser_tests") {
-     "//chrome/browser/content_settings:content_settings_factory",
-     "//chrome/test:test_support",
-     "//components/content_settings/core/common",
--    "//components/private_verification_tokens/common:athm_test_issuer",
-+    # XXX cbor "//components/private_verification_tokens/common:athm_test_issuer",
+@@ -52,7 +52,7 @@ source_set("browser_tests") {
      "//components/private_verification_tokens/common:private_verification_tokens_database",
      "//components/private_verification_tokens/common:private_verification_tokens_issuer_config",
+     "//components/private_verification_tokens/common:test_support",
+-    "//components/private_verification_tokens/common/athm_ffi:athm_ffi_bindings",
++    # XXX crubit "//components/private_verification_tokens/common/athm_ffi:athm_ffi_bindings",
      "//net:test_support",
-@@ -72,7 +72,7 @@ source_set("unit_tests") {
-     "//chrome/test:test_support",
-     "//components/content_settings/core/browser",
-     "//components/content_settings/core/common",
--    "//components/private_verification_tokens/common:athm_test_issuer",
-+    # XXX cbor "//components/private_verification_tokens/common:athm_test_issuer",
-     "//components/private_verification_tokens/common:private_verification_tokens_database",
+     "//services/network:test_support",
+     "//url",
+@@ -77,7 +77,7 @@ source_set("unit_tests") {
      "//components/private_verification_tokens/common:private_verification_tokens_issuer_config",
      "//components/private_verification_tokens/common:private_verification_tokens_parameters",
+     "//components/private_verification_tokens/common:test_support",
+-    "//components/private_verification_tokens/common/athm_ffi:athm_ffi_bindings",
++    # XXX crubit "//components/private_verification_tokens/common/athm_ffi:athm_ffi_bindings",
+     "//content/test:test_support",
+     "//net",
+     "//services/network:test_support",

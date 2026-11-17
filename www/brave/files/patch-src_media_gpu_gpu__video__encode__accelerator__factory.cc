@@ -1,6 +1,6 @@
---- src/media/gpu/gpu_video_encode_accelerator_factory.cc.orig	2026-08-31 10:59:09 UTC
+--- src/media/gpu/gpu_video_encode_accelerator_factory.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/media/gpu/gpu_video_encode_accelerator_factory.cc
-@@ -71,7 +71,7 @@ std::unique_ptr<VideoEncodeAccelerator> CreateV4L2VEA(
+@@ -71,7 +71,7 @@ std::unique_ptr<VideoEncodeAccelerator>
  
  #if BUILDFLAG(USE_VAAPI)
  std::unique_ptr<VideoEncodeAccelerator> CreateVaapiVEA() {

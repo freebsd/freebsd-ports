@@ -1,6 +1,6 @@
---- src/components/autofill/core/browser/payments/amount_extraction_manager.cc.orig	2026-09-25 15:26:43 UTC
+--- src/components/autofill/core/browser/payments/amount_extraction_manager.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/components/autofill/core/browser/payments/amount_extraction_manager.cc
-@@ -318,7 +318,7 @@ void AmountExtractionManager::OnCheckoutAmountReceived
+@@ -318,7 +318,7 @@ void AmountExtractionManager::OnCheckout
        .Run(parsed_extracted_amount,
             /*timeout_reached=*/false);
    if constexpr (BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||
@@ -9,7 +9,7 @@
      if (base::FeatureList::IsEnabled(
              features::kAutofillEnableAmountExtractionTesting)) {
        VLOG(3) << "The result of amount extraction on domain "
-@@ -388,7 +388,7 @@ void AmountExtractionManager::OnTimeoutReached(
+@@ -388,7 +388,7 @@ void AmountExtractionManager::OnTimeoutR
    }
  
    if constexpr (BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||
@@ -18,7 +18,7 @@
      if (base::FeatureList::IsEnabled(
              features::kAutofillEnableAmountExtractionTesting)) {
        VLOG(3) << "The amount extraction on domain "
-@@ -413,7 +413,7 @@ void AmountExtractionManager::OnTimeoutReachedWithAi(
+@@ -413,7 +413,7 @@ void AmountExtractionManager::OnTimeoutR
    std::move(callback).Run(std::move(result));
  
    if constexpr (BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||
@@ -27,7 +27,7 @@
      if (base::FeatureList::IsEnabled(
              features::kAutofillEnableAmountExtractionTesting)) {
        VLOG(3) << "The amount extraction on domain "
-@@ -433,7 +433,7 @@ AmountExtractionManager::CheckEligibilityForFeaturesRe
+@@ -433,7 +433,7 @@ AmountExtractionManager::CheckEligibilit
  
    // Check eligibility of BNPL feature.
    if constexpr (BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||

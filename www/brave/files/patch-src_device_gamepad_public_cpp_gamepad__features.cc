@@ -1,6 +1,6 @@
---- src/device/gamepad/public/cpp/gamepad_features.cc.orig	2026-05-07 17:02:56 UTC
+--- src/device/gamepad/public/cpp/gamepad_features.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/device/gamepad/public/cpp/gamepad_features.cc
-@@ -34,7 +34,7 @@ BASE_FEATURE(kClaimDuplicateGamepadsProductIdentifier,
+@@ -41,7 +41,7 @@ BASE_FEATURE(kAndroidUnknownGamepadExtra
  BASE_FEATURE(kIgnorePS5GamepadsInWgi, base::FEATURE_ENABLED_BY_DEFAULT);
  #endif  // BUILDFLAG(IS_WIN)
  

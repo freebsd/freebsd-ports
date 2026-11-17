@@ -1,6 +1,6 @@
---- src/ui/message_center/views/message_popup_view.cc.orig	2025-08-07 06:57:29 UTC
+--- src/ui/message_center/views/message_popup_view.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/ui/message_center/views/message_popup_view.cc
-@@ -164,7 +164,7 @@ std::unique_ptr<views::Widget> MessagePopupView::Show(
+@@ -164,7 +164,7 @@ std::unique_ptr<views::Widget> MessagePo
        views::Widget::InitParams::CLIENT_OWNS_WIDGET,
        views::Widget::InitParams::TYPE_POPUP);
    params.z_order = ui::ZOrderLevel::kFloatingWindow;

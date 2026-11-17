@@ -1,6 +1,6 @@
---- src/chrome/browser/ui/views/frame/contents_web_view.h.orig	2026-07-01 06:24:19 UTC
+--- src/chrome/browser/ui/views/frame/contents_web_view.h.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/ui/views/frame/contents_web_view.h
-@@ -68,7 +68,7 @@ class ContentsWebView : public views::WebView,
+@@ -68,7 +68,7 @@ class ContentsWebView : public views::We
    // This allows the browser to force focus synchronization in split view even
    // when native OS focus gets stuck on a different window (like a permission
    // prompt).

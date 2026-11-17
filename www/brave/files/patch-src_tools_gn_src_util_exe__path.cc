@@ -1,4 +1,4 @@
---- src/tools/gn/src/util/exe_path.cc.orig	2026-09-25 15:26:43 UTC
+--- src/tools/gn/src/util/exe_path.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/tools/gn/src/util/exe_path.cc
 @@ -15,7 +15,7 @@
  #include <windows.h>
@@ -20,12 +20,10 @@
  #if defined(OS_MACOSX)
  
  base::FilePath GetExePath() {
-@@ -102,6 +106,20 @@ base::FilePath GetExePath() {
-     return base::FilePath();
-   }
+@@ -104,6 +108,20 @@ base::FilePath GetExePath() {
    return base::FilePath(raw);
-+}
-+
+ }
+ 
 +#elif defined(OS_OPENBSD)
 +
 +base::FilePath GetExePath() {
@@ -38,6 +36,8 @@
 +#else
 +  return base::FilePath();
 +#endif
- }
- 
++}
++
  #elif defined(OS_ZOS)
+ 
+ base::FilePath GetExePath() {

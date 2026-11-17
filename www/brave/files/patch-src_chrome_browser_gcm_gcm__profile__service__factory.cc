@@ -1,6 +1,6 @@
---- src/chrome/browser/gcm/gcm_profile_service_factory.cc.orig	2025-10-30 15:44:36 UTC
+--- src/chrome/browser/gcm/gcm_profile_service_factory.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/gcm/gcm_profile_service_factory.cc
-@@ -109,7 +109,7 @@ GCMProfileServiceFactory::ScopedTestingFactoryInstalle
+@@ -109,7 +109,7 @@ GCMProfileServiceFactory::ScopedTestingF
  // static
  GCMProfileService* GCMProfileServiceFactory::GetForProfile(
      content::BrowserContext* profile) {

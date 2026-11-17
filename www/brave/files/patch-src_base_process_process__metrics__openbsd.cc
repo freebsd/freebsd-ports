@@ -1,4 +1,4 @@
---- src/base/process/process_metrics_openbsd.cc.orig	2026-09-25 15:26:43 UTC
+--- src/base/process/process_metrics_openbsd.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/base/process/process_metrics_openbsd.cc
 @@ -6,73 +6,83 @@
  
@@ -31,15 +31,15 @@
  
 -  if (sysctl(mib, std::size(mib), NULL, &length, NULL, 0) < 0) {
 -    return base::unexpected(ProcessCPUUsageError::kSystemError);
+-  }
 +  int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, process_,
 +                sizeof(struct kinfo_proc), 1 };
-+
-+  if (process_ == 0) {
-+    return base::unexpected(ProcessUsageError::kSystemError);
-   }
  
 -  mib[5] = (length / sizeof(struct kinfo_proc));
--
++  if (process_ == 0) {
++    return base::unexpected(ProcessUsageError::kSystemError);
++  }
+ 
    if (sysctl(mib, std::size(mib), &info, &length, NULL, 0) < 0) {
 -    return base::unexpected(ProcessCPUUsageError::kSystemError);
 +    return base::unexpected(ProcessUsageError::kSystemError);
@@ -91,28 +91,28 @@
  
 -  last_cpu_time_ = time;
 -  return base::ok(double{cpu.value()} / FSCALE * 100.0);
+-}
 +  if (length == 0) {
 +    return base::unexpected(ProcessCPUUsageError::kProcessNotFound);
 +  }
-+
+ 
+-base::expected<TimeDelta, ProcessCPUUsageError>
+-ProcessMetrics::GetCumulativeCPUUsage() {
+-  NOTREACHED();
 +  tv.tv_sec = info.p_rtime_sec;
 +  tv.tv_usec = info.p_rtime_usec;
 +
 +  return base::ok(Microseconds(TimeValToMicroseconds(tv)));
  }
  
--base::expected<TimeDelta, ProcessCPUUsageError>
--ProcessMetrics::GetCumulativeCPUUsage() {
--  NOTREACHED();
+-ProcessMetrics::ProcessMetrics(ProcessHandle process)
+-    : process_(process), last_cpu_(0) {}
 +// static
 +std::unique_ptr<ProcessMetrics> ProcessMetrics::CreateProcessMetrics(
 +    ProcessHandle process) {
 +  return WrapUnique(new ProcessMetrics(process));
- }
++}
  
--ProcessMetrics::ProcessMetrics(ProcessHandle process)
--    : process_(process), last_cpu_(0) {}
--
  size_t GetSystemCommitCharge() {
    int mib[] = {CTL_VM, VM_METER};
 -  int pagesize;
@@ -129,7 +129,7 @@
  
    return mem_total - (mem_free * pagesize) - (mem_inactive * pagesize);
  }
-+
+ 
 +int ProcessMetrics::GetOpenFdCount() const {
 +  return (process_ == getpid()) ? getdtablecount() : -1;
 +}
@@ -180,5 +180,5 @@
 +SystemDiskInfo::SystemDiskInfo(const SystemDiskInfo&) = default;
 +
 +SystemDiskInfo& SystemDiskInfo::operator=(const SystemDiskInfo&) = default;
- 
++
  }  // namespace base

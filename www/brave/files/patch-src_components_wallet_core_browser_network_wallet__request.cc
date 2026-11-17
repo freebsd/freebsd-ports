@@ -1,6 +1,6 @@
---- src/components/wallet/core/browser/network/wallet_request.cc.orig	2026-05-07 17:02:56 UTC
+--- src/components/wallet/core/browser/network/wallet_request.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/components/wallet/core/browser/network/wallet_request.cc
-@@ -19,7 +19,7 @@ ClientInfo::ChromeClientInfo::Platform GetPlatform() {
+@@ -19,7 +19,7 @@ ClientInfo::ChromeClientInfo::Platform G
    return ClientInfo::ChromeClientInfo::PLATFORM_MACOS;
  #elif BUILDFLAG(IS_CHROMEOS)
    return ClientInfo::ChromeClientInfo::PLATFORM_CHROMEOS;

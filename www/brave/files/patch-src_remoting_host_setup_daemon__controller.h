@@ -1,6 +1,6 @@
---- src/remoting/host/setup/daemon_controller.h.orig	2026-06-04 10:12:25 UTC
+--- src/remoting/host/setup/daemon_controller.h.orig	2026-10-18 18:43:23 UTC
 +++ src/remoting/host/setup/daemon_controller.h
-@@ -152,13 +152,13 @@ class DaemonController : public base::RefCountedThread
+@@ -152,13 +152,13 @@ class DaemonController : public base::Re
      // unprivileged.
      virtual bool is_privileged() const = 0;
  
@@ -16,7 +16,7 @@
    // Set the host type. If nullptr is passed (the default), the host type will
    // be automatically determined by checking which host type is running. If none
    // is running, HostType::GetDefaultHostType() will be used.
-@@ -227,7 +227,7 @@ class DaemonController : public base::RefCountedThread
+@@ -227,7 +227,7 @@ class DaemonController : public base::Re
    // unprivileged.
    bool is_privileged() const;
  

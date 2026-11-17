@@ -1,4 +1,4 @@
---- src/base/posix/unix_domain_socket.cc.orig	2026-03-13 06:02:14 UTC
+--- src/base/posix/unix_domain_socket.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/base/posix/unix_domain_socket.cc
 @@ -16,6 +16,7 @@
  #include "base/files/scoped_file.h"
@@ -8,7 +8,7 @@
  #include "base/numerics/safe_conversions.h"
  #include "base/pickle.h"
  #include "base/posix/eintr_wrapper.h"
-@@ -43,7 +44,7 @@ bool CreateSocketPair(ScopedFD* one, ScopedFD* two) {
+@@ -43,7 +44,7 @@ bool CreateSocketPair(ScopedFD* one, Sco
  
  // static
  bool UnixDomainSocket::EnableReceiveProcessId(int fd) {
@@ -35,7 +35,7 @@
      cmsg->cmsg_len = checked_cast<u_int>(CMSG_LEN(sizeof(int) * fds.size()));
  #else
      cmsg->cmsg_len = CMSG_LEN(sizeof(int) * fds.size());
-@@ -127,7 +128,7 @@ ssize_t UnixDomainSocket::RecvMsgWithFlags(int fd,
+@@ -127,7 +128,7 @@ ssize_t UnixDomainSocket::RecvMsgWithFla
  
    const size_t kControlBufferSize =
        CMSG_SPACE(sizeof(int) * kMaxFileDescriptors)
@@ -44,7 +44,7 @@
        // macOS does not support ucred.
        // macOS supports xucred, but this structure is insufficient.
        + CMSG_SPACE(sizeof(struct ucred))
-@@ -157,7 +158,7 @@ ssize_t UnixDomainSocket::RecvMsgWithFlags(int fd,
+@@ -157,7 +158,7 @@ ssize_t UnixDomainSocket::RecvMsgWithFla
          wire_fds = reinterpret_cast<int*>(UNSAFE_TODO(CMSG_DATA(cmsg)));
          wire_fds_len = payload_len / sizeof(int);
        }
@@ -53,7 +53,7 @@
        // macOS does not support SCM_CREDENTIALS.
        if (cmsg->cmsg_level == SOL_SOCKET &&
            cmsg->cmsg_type == SCM_CREDENTIALS) {
-@@ -195,6 +196,9 @@ ssize_t UnixDomainSocket::RecvMsgWithFlags(int fd,
+@@ -195,6 +196,9 @@ ssize_t UnixDomainSocket::RecvMsgWithFla
      if (getsockopt(fd, SOL_LOCAL, LOCAL_PEERPID, &pid, &pid_size) != 0) {
        pid = -1;
      }

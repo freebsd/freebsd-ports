@@ -1,4 +1,4 @@
---- src/third_party/angle/src/common/system_utils_linux.cpp.orig	2026-09-25 15:26:43 UTC
+--- src/third_party/angle/src/common/system_utils_linux.cpp.orig	2026-10-18 18:43:23 UTC
 +++ src/third_party/angle/src/common/system_utils_linux.cpp
 @@ -16,10 +16,19 @@
  #include <sys/types.h>
@@ -28,7 +28,7 @@
  
  std::string GetExecutableDirectory()
  {
-@@ -67,6 +77,10 @@ void SetCurrentThreadName(const char *name)
+@@ -67,6 +77,10 @@ void SetCurrentThreadName(const char *na
      // There's a 15-character (16 including '\0') limit.  If the name is too big (and ERANGE is
      // returned), name will be ignored.
      ASSERT(strlen(name) < 16);

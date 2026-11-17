@@ -1,6 +1,6 @@
---- src/chrome/browser/ui/views/tabs/vertical/vertical_tab_strip_focus_swipe_controller.h.orig	2026-09-25 15:26:43 UTC
+--- src/chrome/browser/ui/views/tabs/vertical/vertical_tab_strip_focus_swipe_controller.h.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/ui/views/tabs/vertical/vertical_tab_strip_focus_swipe_controller.h
-@@ -31,7 +31,7 @@ class VerticalTabStripFocusSwipeController : public ui
+@@ -31,7 +31,7 @@ class VerticalTabStripFocusSwipeControll
    ~VerticalTabStripFocusSwipeController() override;
  
    // ui::EventHandler:

@@ -1,4 +1,4 @@
---- src/components/power_metrics/energy_metrics_provider_linux.cc.orig	2026-09-25 15:26:43 UTC
+--- src/components/power_metrics/energy_metrics_provider_linux.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/components/power_metrics/energy_metrics_provider_linux.cc
 @@ -5,8 +5,10 @@
  
@@ -19,7 +19,7 @@
  // Existing metrics that can be read via perf event.
  constexpr std::array<const char*, 5> kMetrics{
      "energy-pkg", "energy-cores", "energy-gpu", "energy-ram", "energy-psys"};
-@@ -84,6 +87,7 @@ void SetEnergyMetric(const std::string& metric_type,
+@@ -84,6 +87,7 @@ void SetEnergyMetric(const std::string&
      energy_metrics.psys_nanojoules = absolute_energy;
    }
  }
@@ -27,7 +27,7 @@
  
  }  // namespace
  
-@@ -115,6 +119,7 @@ EnergyMetricsProviderLinux::CaptureMetrics() {
+@@ -115,6 +119,7 @@ EnergyMetricsProviderLinux::CaptureMetri
    }
  
    EnergyMetrics energy_metrics = {0};
@@ -35,7 +35,7 @@
    for (const auto& event : events_) {
      uint64_t absolute_energy;
      if (!base::ReadFromFD(
-@@ -126,6 +131,7 @@ EnergyMetricsProviderLinux::CaptureMetrics() {
+@@ -126,6 +131,7 @@ EnergyMetricsProviderLinux::CaptureMetri
      SetEnergyMetric(event.metric_type, energy_metrics,
                      static_cast<uint64_t>(event.scale * absolute_energy));
    }
@@ -43,7 +43,7 @@
    return energy_metrics;
  }
  
-@@ -145,6 +151,7 @@ bool EnergyMetricsProviderLinux::Initialize() {
+@@ -145,6 +151,7 @@ bool EnergyMetricsProviderLinux::Initial
      return false;
    }
  
@@ -51,7 +51,7 @@
    // Check if perf_event_paranoid is set to 0 as required.
    uint64_t perf_event_paranoid;
    if (!ReadUint64FromFile(
-@@ -208,6 +215,7 @@ bool EnergyMetricsProviderLinux::Initialize() {
+@@ -208,6 +215,7 @@ bool EnergyMetricsProviderLinux::Initial
      }
      events_.push_back({metric, scale, std::move(fd)});
    }

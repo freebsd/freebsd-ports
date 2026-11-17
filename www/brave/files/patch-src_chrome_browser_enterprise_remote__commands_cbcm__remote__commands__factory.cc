@@ -1,4 +1,4 @@
---- src/chrome/browser/enterprise/remote_commands/cbcm_remote_commands_factory.cc.orig	2026-08-31 10:59:09 UTC
+--- src/chrome/browser/enterprise/remote_commands/cbcm_remote_commands_factory.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/enterprise/remote_commands/cbcm_remote_commands_factory.cc
 @@ -12,7 +12,7 @@
  #include "chrome/browser/profiles/profile_manager.h"
@@ -9,7 +9,7 @@
  #include "chrome/browser/enterprise/remote_commands/rotate_attestation_credential_job.h"
  #include "chrome/browser/policy/chrome_browser_policy_connector.h"
  #include "components/enterprise/browser/controller/chrome_browser_cloud_management_controller.h"
-@@ -31,7 +31,7 @@ CBCMRemoteCommandsFactory::BuildJobForType(
+@@ -31,7 +31,7 @@ CBCMRemoteCommandsFactory::BuildJobForTy
          g_browser_process->profile_manager());
    }
  

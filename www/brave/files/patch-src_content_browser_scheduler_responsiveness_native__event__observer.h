@@ -1,4 +1,4 @@
---- src/content/browser/scheduler/responsiveness/native_event_observer.h.orig	2026-05-07 17:02:56 UTC
+--- src/content/browser/scheduler/responsiveness/native_event_observer.h.orig	2026-10-18 18:43:23 UTC
 +++ src/content/browser/scheduler/responsiveness/native_event_observer.h
 @@ -18,7 +18,7 @@
  #include "content/public/browser/native_event_processor_observer_mac.h"
@@ -18,7 +18,7 @@
      : public ui::PlatformEventObserver
  #elif BUILDFLAG(IS_WIN)
      : public base::MessagePumpForUI::NativeEventObserver
-@@ -60,7 +60,7 @@ class CONTENT_EXPORT BrowserUINativeEventObserver
+@@ -60,7 +60,7 @@ class CONTENT_EXPORT BrowserUINativeEven
    BrowserUINativeEventObserver(WillRunEventCallback will_run_event_callback,
                                 DidRunEventCallback did_run_event_callback);
  
@@ -27,7 +27,7 @@
  
    BrowserUINativeEventObserver(const BrowserUINativeEventObserver&) = delete;
    BrowserUINativeEventObserver& operator=(const BrowserUINativeEventObserver&) =
-@@ -72,7 +72,7 @@ class CONTENT_EXPORT BrowserUINativeEventObserver
+@@ -72,7 +72,7 @@ class CONTENT_EXPORT BrowserUINativeEven
  #endif
  
   protected:
@@ -36,7 +36,7 @@
    // ui::PlatformEventObserver overrides:
    void WillProcessEvent(const ui::PlatformEvent& event) override;
    void DidProcessEvent(const ui::PlatformEvent& event) override;
-@@ -88,7 +88,7 @@ class CONTENT_EXPORT BrowserUINativeEventObserver
+@@ -88,7 +88,7 @@ class CONTENT_EXPORT BrowserUINativeEven
    void RegisterObserver();
    void UnregisterObserver();
  

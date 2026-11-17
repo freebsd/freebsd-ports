@@ -1,4 +1,4 @@
---- src/third_party/perfetto/src/base/periodic_task.cc.orig	2026-01-14 08:33:23 UTC
+--- src/third_party/perfetto/src/base/periodic_task.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/third_party/perfetto/src/base/periodic_task.cc
 @@ -24,9 +24,10 @@
  #include "perfetto/base/time.h"
@@ -13,7 +13,7 @@
  #include <sys/timerfd.h>
  #endif
  
-@@ -45,9 +46,10 @@ uint32_t GetNextDelayMs(const TimeMillis& now_ms,
+@@ -45,9 +46,10 @@ uint32_t GetNextDelayMs(const TimeMillis
  }
  
  ScopedPlatformHandle CreateTimerFd(const PeriodicTask::Args& args) {

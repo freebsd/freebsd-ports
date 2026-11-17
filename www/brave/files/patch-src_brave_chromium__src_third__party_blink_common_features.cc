@@ -1,6 +1,6 @@
---- src/brave/chromium_src/third_party/blink/common/features.cc.orig	2026-06-01 00:00:00 UTC
+--- src/brave/chromium_src/third_party/blink/common/features.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/brave/chromium_src/third_party/blink/common/features.cc
-@@ -44,7 +44,7 @@
+@@ -21,7 +21,7 @@ BASE_FEATURE(kRestrictWebSocketsPool, ba
  
  // Enables protection against fingerprinting on screen dimensions.
  BASE_FEATURE(kBraveBlockScreenFingerprinting,
@@ -9,7 +9,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -71,16 +71,16 @@
+@@ -48,16 +48,16 @@ BASE_FEATURE(kRestrictEventSourcePool,
  #endif
  );
  

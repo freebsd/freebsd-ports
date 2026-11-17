@@ -1,4 +1,4 @@
---- src/v8/src/wasm/stacks.cc.orig	2026-09-25 15:26:43 UTC
+--- src/v8/src/wasm/stacks.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/v8/src/wasm/stacks.cc
 @@ -4,6 +4,10 @@
  
@@ -11,7 +11,7 @@
  #include "src/base/platform/platform.h"
  #include "src/execution/frames.h"
  #include "src/execution/simulator.h"
-@@ -137,6 +141,13 @@ StackMemory::StackSegment::StackSegment(size_t pages) 
+@@ -137,6 +141,13 @@ StackMemory::StackSegment::StackSegment(
                                  "StackMemory::StackSegment::StackSegment");
    }
    limit_ += page_size;

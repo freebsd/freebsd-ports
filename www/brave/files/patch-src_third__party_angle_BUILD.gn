@@ -1,4 +1,4 @@
---- src/third_party/angle/BUILD.gn.orig	2026-09-25 15:26:43 UTC
+--- src/third_party/angle/BUILD.gn.orig	2026-10-18 18:43:23 UTC
 +++ src/third_party/angle/BUILD.gn
 @@ -386,7 +386,6 @@ config("extra_warnings") {
        "-Wtautological-type-limit-compare",
@@ -17,7 +17,7 @@
        libs = [ "dl" ]
      }
  
-@@ -748,6 +747,9 @@ angle_static_library("angle_gpu_info_util") {
+@@ -750,6 +749,9 @@ angle_static_library("angle_gpu_info_uti
          "Xi",
          "Xext",
        ]

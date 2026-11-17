@@ -1,6 +1,6 @@
---- src/chrome/browser/ui/webui_browser/webui_browser_window.cc.orig	2026-09-25 15:26:43 UTC
+--- src/chrome/browser/ui/webui_browser/webui_browser_window.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/ui/webui_browser/webui_browser_window.cc
-@@ -76,7 +76,7 @@ const char* const kWebUIBrowserWindowKey = "__WEBUI_BR
+@@ -78,7 +78,7 @@ const char* const kWebUIBrowserWindowKey
  
  // Copied from chrome/browser/ui/views/frame/browser_widget.cc.
  bool IsUsingLinuxSystemTheme(Profile* profile) {

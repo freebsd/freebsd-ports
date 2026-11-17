@@ -1,6 +1,6 @@
---- src/chrome/browser/regional_capabilities/regional_capabilities_service_factory.h.orig	2026-04-09 06:05:42 UTC
+--- src/chrome/browser/regional_capabilities/regional_capabilities_service_factory.h.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/regional_capabilities/regional_capabilities_service_factory.h
-@@ -31,7 +31,7 @@ class RegionalCapabilitiesServiceFactory : public Prof
+@@ -31,7 +31,7 @@ class RegionalCapabilitiesServiceFactory
  
    static RegionalCapabilitiesServiceFactory* GetInstance();
  

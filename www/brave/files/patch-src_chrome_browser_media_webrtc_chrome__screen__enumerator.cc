@@ -1,4 +1,4 @@
---- src/chrome/browser/media/webrtc/chrome_screen_enumerator.cc.orig	2025-08-07 06:57:29 UTC
+--- src/chrome/browser/media/webrtc/chrome_screen_enumerator.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/media/webrtc/chrome_screen_enumerator.cc
 @@ -21,7 +21,7 @@
  #if BUILDFLAG(IS_CHROMEOS)
@@ -9,7 +9,7 @@
  #include "base/functional/callback.h"
  #include "content/public/browser/desktop_capture.h"
  #endif
-@@ -32,7 +32,7 @@ base::LazyInstance<std::vector<raw_ptr<aura::Window, V
+@@ -32,7 +32,7 @@ base::LazyInstance<std::vector<raw_ptr<a
      DestructorAtExit root_windows_for_testing_ = LAZY_INSTANCE_INITIALIZER;
  }  // namespace
  
@@ -18,7 +18,7 @@
  namespace {
  base::LazyInstance<std::unique_ptr<webrtc::DesktopCapturer>>::DestructorAtExit
      g_desktop_capturer_for_testing = LAZY_INSTANCE_INITIALIZER;
-@@ -79,7 +79,7 @@ blink::mojom::StreamDevicesSetPtr EnumerateScreens(
+@@ -79,7 +79,7 @@ blink::mojom::StreamDevicesSetPtr Enumer
    return stream_devices_set;
  }
  
@@ -27,7 +27,7 @@
  blink::mojom::StreamDevicesSetPtr EnumerateScreens(
      blink::mojom::MediaStreamType stream_type) {
    DCHECK_CURRENTLY_ON(content::BrowserThread::UI);
-@@ -132,7 +132,7 @@ void ChromeScreenEnumerator::SetRootWindowsForTesting(
+@@ -132,7 +132,7 @@ void ChromeScreenEnumerator::SetRootWind
    root_windows_for_testing_.Get() = std::move(root_windows);
  }
  
@@ -36,7 +36,7 @@
  void ChromeScreenEnumerator::SetDesktopCapturerForTesting(
      std::unique_ptr<webrtc::DesktopCapturer> capturer) {
    g_desktop_capturer_for_testing.Get() = std::move(capturer);
-@@ -145,7 +145,7 @@ void ChromeScreenEnumerator::EnumerateScreens(
+@@ -145,7 +145,7 @@ void ChromeScreenEnumerator::EnumerateSc
      ScreensCallback screens_callback) const {
    DCHECK_CURRENTLY_ON(content::BrowserThread::IO);
  

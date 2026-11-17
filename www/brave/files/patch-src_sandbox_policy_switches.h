@@ -1,6 +1,6 @@
---- src/sandbox/policy/switches.h.orig	2026-08-31 10:59:09 UTC
+--- src/sandbox/policy/switches.h.orig	2026-10-18 18:43:23 UTC
 +++ src/sandbox/policy/switches.h
-@@ -25,7 +25,8 @@ SANDBOX_POLICY_EXPORT extern const char kDisableWebNNC
+@@ -25,7 +25,8 @@ SANDBOX_POLICY_EXPORT extern const char
  SANDBOX_POLICY_EXPORT extern const char kGpuSandboxAllowSysVShm[];
  SANDBOX_POLICY_EXPORT extern const char kGpuSandboxFailuresFatal[];
  SANDBOX_POLICY_EXPORT extern const char kNoSandbox[];

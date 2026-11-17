@@ -1,6 +1,6 @@
---- src/chrome/browser/web_applications/commands/set_user_display_mode_command.cc.orig	2026-03-13 06:02:14 UTC
+--- src/chrome/browser/web_applications/commands/set_user_display_mode_command.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/web_applications/commands/set_user_display_mode_command.cc
-@@ -60,7 +60,7 @@ void SetUserDisplayModeCommand::StartWithLock(
+@@ -60,7 +60,7 @@ void SetUserDisplayModeCommand::StartWit
      // OsIntegrationTestOverride can use the xdg install command to detect
      // install.
      SynchronizeOsOptions options;

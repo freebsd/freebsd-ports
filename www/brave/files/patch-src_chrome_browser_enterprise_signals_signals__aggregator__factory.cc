@@ -1,4 +1,4 @@
---- src/chrome/browser/enterprise/signals/signals_aggregator_factory.cc.orig	2026-08-31 10:59:09 UTC
+--- src/chrome/browser/enterprise/signals/signals_aggregator_factory.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/enterprise/signals/signals_aggregator_factory.cc
 @@ -63,7 +63,7 @@
  #include "components/device_signals/core/browser/settings_client.h"
@@ -9,7 +9,7 @@
  #include "components/device_signals/core/browser/agent_signals_collector.h"
  #include "components/device_signals/core/browser/crowdstrike_client.h"
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
-@@ -103,7 +103,7 @@ SignalsAggregatorFactory::SignalsAggregatorFactory()
+@@ -103,7 +103,7 @@ SignalsAggregatorFactory::SignalsAggrega
    DependsOn(UserPermissionServiceFactory::GetInstance());
    DependsOn(enterprise::ProfileIdServiceFactory::GetInstance());
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -18,7 +18,7 @@
    DependsOn(ProfileNetworkContextServiceFactory::GetInstance());
  #endif
  }
-@@ -131,7 +131,7 @@ SignalsAggregatorFactory::BuildServiceInstanceForBrows
+@@ -131,7 +131,7 @@ SignalsAggregatorFactory::BuildServiceIn
            service_host));
  #endif  // !BUILDFLAG(IS_ANDROID)
  
@@ -27,7 +27,7 @@
    collectors.push_back(std::make_unique<device_signals::AgentSignalsCollector>(
        device_signals::CrowdStrikeClient::Create()));
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
-@@ -143,7 +143,7 @@ SignalsAggregatorFactory::BuildServiceInstanceForBrows
+@@ -143,7 +143,7 @@ SignalsAggregatorFactory::BuildServiceIn
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

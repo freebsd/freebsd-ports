@@ -1,4 +1,4 @@
---- src/base/allocator/partition_allocator/src/partition_alloc/stack/stack.cc.orig	2026-07-01 06:24:19 UTC
+--- src/base/allocator/partition_allocator/src/partition_alloc/stack/stack.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/base/allocator/partition_allocator/src/partition_alloc/stack/stack.cc
 @@ -19,6 +19,10 @@
  #include <pthread.h>
@@ -11,12 +11,10 @@
  #if PA_BUILDFLAG(PA_LIBC_GLIBC)
  extern "C" void* __libc_stack_end;
  #endif
-@@ -49,6 +53,36 @@ void* GetStackTop() {
- 
- void* GetStackTop() {
+@@ -51,6 +55,36 @@ void* GetStackTop() {
    return pthread_get_stackaddr_np(pthread_self());
-+}
-+
+ }
+ 
 +#elif PA_BUILDFLAG(IS_OPENBSD)
 +
 +void* GetStackTop() {
@@ -45,6 +43,8 @@
 +   }
 +  pthread_attr_destroy(&attr);
 +  return nullptr;
- }
- 
++}
++
  #elif PA_BUILDFLAG(IS_POSIX) || PA_BUILDFLAG(IS_FUCHSIA)
+ 
+ void* GetStackTop() {

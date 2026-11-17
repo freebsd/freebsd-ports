@@ -1,6 +1,6 @@
---- src/components/device_signals/core/common/linux/platform_utils_linux.cc.orig	2026-09-25 15:26:43 UTC
+--- src/components/device_signals/core/common/linux/platform_utils_linux.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/components/device_signals/core/common/linux/platform_utils_linux.cc
-@@ -4,12 +4,23 @@
+@@ -4,11 +4,22 @@
  
  #include "components/device_signals/core/common/platform_utils.h"
  
@@ -13,17 +13,16 @@
 +#if !BUILDFLAG(IS_BSD)
  #include <sys/sysmacros.h>
 +#endif
- 
++
 +#if BUILDFLAG(IS_BSD)
 +#include <sys/types.h>
 +#include <sys/socket.h>
 +#include <ifaddrs.h>
 +#include <net/if_dl.h>
 +#endif
-+
+ 
  #include <algorithm>
  #include <optional>
- #include <string>
 @@ -129,6 +140,7 @@ SettingValue GetDiskEncrypted() {
    // ChromeOS user partitions are always encrypted via cryptohome.
    return SettingValue::ENABLED;
@@ -69,7 +68,7 @@
    base::DirReaderPosix reader("/sys/class/net");
    if (!reader.IsValid()) {
      return result;
-@@ -181,6 +217,7 @@ std::vector<std::string> internal::GetMacAddressesImpl
+@@ -181,6 +217,7 @@ std::vector<std::string> internal::GetMa
                                &address);
      result.push_back(address);
    }

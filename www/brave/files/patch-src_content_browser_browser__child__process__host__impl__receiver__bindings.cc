@@ -1,4 +1,4 @@
---- src/content/browser/browser_child_process_host_impl_receiver_bindings.cc.orig	2026-08-12 09:02:10 UTC
+--- src/content/browser/browser_child_process_host_impl_receiver_bindings.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/content/browser/browser_child_process_host_impl_receiver_bindings.cc
 @@ -38,7 +38,7 @@
  #include "content/public/common/font_cache_win.mojom.h"
@@ -9,7 +9,7 @@
  #include "components/services/font_data/font_data_service_impl.h"
  #endif
  
-@@ -69,7 +69,7 @@ void BrowserChildProcessHostImpl::BindHostReceiver(
+@@ -69,7 +69,7 @@ void BrowserChildProcessHostImpl::BindHo
      }
    }
  
@@ -18,7 +18,7 @@
    if (auto r = receiver.As<mojom::ThreadTypeSwitcher>()) {
      child_thread_type_switcher_.Bind(std::move(r));
      return;
-@@ -120,7 +120,7 @@ void BrowserChildProcessHostImpl::BindHostReceiver(
+@@ -120,7 +120,7 @@ void BrowserChildProcessHostImpl::BindHo
    }
  #endif
  

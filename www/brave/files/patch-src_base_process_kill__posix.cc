@@ -1,6 +1,6 @@
---- src/base/process/kill_posix.cc.orig	2026-08-12 09:02:10 UTC
+--- src/base/process/kill_posix.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/base/process/kill_posix.cc
-@@ -169,7 +169,7 @@ void EnsureProcessTerminated(Process process) {
+@@ -169,7 +169,7 @@ void EnsureProcessTerminated(Process pro
        0, MakeSelfDeleting<BackgroundReaper>(std::move(process), Seconds(2)));
  }
  

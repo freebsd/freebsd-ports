@@ -1,4 +1,4 @@
---- src/components/web_package/signed_web_bundles/integrity_block_parser.cc.orig	2026-09-25 15:26:43 UTC
+--- src/components/web_package/signed_web_bundles/integrity_block_parser.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/components/web_package/signed_web_bundles/integrity_block_parser.cc
 @@ -4,17 +4,19 @@
  
@@ -80,7 +80,7 @@
  IntegrityBlockParser::IntegrityBlockParser(
      mojom::BundleDataSource& data_source,
      WebBundleParser::ParseIntegrityBlockCallback callback)
-@@ -103,37 +60,103 @@ void IntegrityBlockParser::OnIntegrityBlockRead(
+@@ -103,37 +60,103 @@ void IntegrityBlockParser::OnIntegrityBl
      RunErrorCallback("Error reading the integrity block.");
      return;
    }
@@ -207,7 +207,7 @@
    }
  
    std::move(complete_callback_)
-@@ -141,13 +164,74 @@ void IntegrityBlockParser::OnIntegrityBlockRead(
+@@ -141,13 +164,74 @@ void IntegrityBlockParser::OnIntegrityBl
                            std::move(integrity_block), nullptr));
  }
  

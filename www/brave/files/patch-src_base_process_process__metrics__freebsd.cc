@@ -1,6 +1,6 @@
---- src/base/process/process_metrics_freebsd.cc.orig	2026-02-12 08:43:57 UTC
+--- src/base/process/process_metrics_freebsd.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/base/process/process_metrics_freebsd.cc
-@@ -3,41 +3,92 @@
+@@ -3,18 +3,37 @@
  // found in the LICENSE file.
  
  #include "base/process/process_metrics.h"
@@ -31,16 +31,16 @@
 +    pageshift++;
 +    pagesize >>= 1;
 +  }
- 
++
 +  return pageshift;
 +}
 +}
 +
 +ProcessMetrics::ProcessMetrics(ProcessHandle process) : process_(process) {}
-+
+ 
  // static
  std::unique_ptr<ProcessMetrics> ProcessMetrics::CreateProcessMetrics(
-     ProcessHandle process) {
+@@ -22,22 +41,54 @@ std::unique_ptr<ProcessMetrics> ProcessM
    return WrapUnique(new ProcessMetrics(process));
  }
  
@@ -104,11 +104,10 @@
  }
  
  size_t GetSystemCommitCharge() {
-@@ -65,5 +116,118 @@ size_t GetSystemCommitCharge() {
- 
+@@ -66,4 +117,117 @@ size_t GetSystemCommitCharge() {
    return mem_total - (mem_free * pagesize) - (mem_inactive * pagesize);
  }
-+
+ 
 +int64_t GetNumberOfThreads(ProcessHandle process) {
 +  // Taken from FreeBSD top (usr.bin/top/machine.c)
 +
@@ -221,5 +220,5 @@
 +SystemDiskInfo::SystemDiskInfo(const SystemDiskInfo& other) = default;
 +
 +SystemDiskInfo& SystemDiskInfo::operator=(const SystemDiskInfo&) = default;
- 
++
  }  // namespace base

@@ -1,4 +1,4 @@
---- src/ui/events/keycodes/dom/keycode_converter.cc.orig	2026-06-04 10:12:25 UTC
+--- src/ui/events/keycodes/dom/keycode_converter.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/ui/events/keycodes/dom/keycode_converter.cc
 @@ -15,7 +15,7 @@
  #include "ui/events/keycodes/dom/dom_code.h"
@@ -27,7 +27,7 @@
  
  // The offset between XKB Keycode and evdev code.
  constexpr int kXkbKeycodeOffset = 8;
-@@ -188,7 +188,7 @@ int KeycodeConverter::DomCodeToNativeKeycode(DomCode c
+@@ -188,7 +188,7 @@ int KeycodeConverter::DomCodeToNativeKey
    return UsbKeycodeToNativeKeycode(static_cast<uint32_t>(code));
  }
  

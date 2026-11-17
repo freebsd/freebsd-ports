@@ -1,4 +1,4 @@
---- src/third_party/webrtc/rtc_base/platform_thread_types.cc.orig	2025-09-06 10:01:20 UTC
+--- src/third_party/webrtc/rtc_base/platform_thread_types.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/third_party/webrtc/rtc_base/platform_thread_types.cc
 @@ -12,11 +12,13 @@
  
@@ -24,7 +24,7 @@
  #elif defined(WEBRTC_LINUX)
    return syscall(__NR_gettid);
  #elif defined(__EMSCRIPTEN__)
-@@ -80,6 +84,7 @@ bool IsThreadRefEqual(const PlatformThreadRef& a, cons
+@@ -80,6 +84,7 @@ bool IsThreadRefEqual(const PlatformThre
  }
  
  void SetCurrentThreadName(const char* name) {
@@ -32,11 +32,11 @@
  #if defined(WEBRTC_WIN)
    // The SetThreadDescription API works even if no debugger is attached.
    // The names set with this API also show up in ETW traces. Very handy.
-@@ -126,6 +131,7 @@ void SetCurrentThreadName(const char* name) {
-   zx_status_t status = zx_object_set_property(zx_thread_self(), ZX_PROP_NAME,
+@@ -127,6 +132,7 @@ void SetCurrentThreadName(const char* na
                                                name, strlen(name));
    RTC_DCHECK_EQ(status, ZX_OK);
-+#endif
  #endif
++#endif
  }
  
+ }  // namespace webrtc

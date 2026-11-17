@@ -1,6 +1,6 @@
---- src/components/sync_device_info/local_device_info_util.cc.orig	2026-08-12 09:02:10 UTC
+--- src/components/sync_device_info/local_device_info_util.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/components/sync_device_info/local_device_info_util.cc
-@@ -91,7 +91,7 @@ void OnMachineStatisticsLoaded(LocalDeviceNameInfo* na
+@@ -91,7 +91,7 @@ void OnMachineStatisticsLoaded(LocalDevi
  DeviceInfo::DeviceType GetLocalDeviceType() {
  #if BUILDFLAG(IS_CHROMEOS)
    return DeviceInfo::DeviceType::kChromeOS;
@@ -9,7 +9,7 @@
    return DeviceInfo::DeviceType::kLinux;
  #elif BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_IOS)
    switch (ui::GetDeviceFormFactor()) {
-@@ -114,7 +114,7 @@ DeviceInfo::DeviceType GetLocalDeviceType() {
+@@ -114,7 +114,7 @@ DeviceInfo::DeviceType GetLocalDeviceTyp
  DeviceInfo::OsType GetLocalDeviceOSType() {
  #if BUILDFLAG(IS_CHROMEOS)
    return DeviceInfo::OsType::kChromeOsAsh;

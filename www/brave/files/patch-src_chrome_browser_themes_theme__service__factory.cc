@@ -1,4 +1,4 @@
---- src/chrome/browser/themes/theme_service_factory.cc.orig	2026-09-25 15:26:43 UTC
+--- src/chrome/browser/themes/theme_service_factory.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/themes/theme_service_factory.cc
 @@ -23,7 +23,7 @@
  #include "chrome/browser/themes/theme_helper_win.h"
@@ -9,7 +9,7 @@
  #include "chrome/browser/themes/theme_service_aura_linux.h"
  #endif
  
-@@ -99,7 +99,7 @@
+@@ -99,7 +99,7 @@ std::unique_ptr<KeyedService>
  ThemeServiceFactory::BuildServiceInstanceForBrowserContext(
      content::BrowserContext* profile) const {
    BRAVE_THEMESERVICEFACTORY_BUILDSERVICEINSTANCEFOR

@@ -1,4 +1,4 @@
---- src/content/browser/web_contents/slow_web_preference_cache.cc.orig	2025-02-19 07:43:18 UTC
+--- src/content/browser/web_contents/slow_web_preference_cache.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/content/browser/web_contents/slow_web_preference_cache.cc
 @@ -17,7 +17,7 @@
  
@@ -9,8 +9,8 @@
  #include "ui/events/devices/device_data_manager.h"
  #elif BUILDFLAG(IS_ANDROID)
  #include "ui/base/device_form_factor.h"
-@@ -57,7 +57,7 @@ SlowWebPreferenceCache::SlowWebPreferenceCache() {
- 
+@@ -55,7 +55,7 @@ SlowWebPreferenceCacheObserver::~SlowWeb
+ SlowWebPreferenceCache::SlowWebPreferenceCache() {
  #if BUILDFLAG(IS_WIN)
    ui::InputDeviceObserverWin::GetInstance()->AddObserver(this);
 -#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
@@ -18,7 +18,7 @@
    ui::DeviceDataManager::GetInstance()->AddObserver(this);
  #elif BUILDFLAG(IS_ANDROID)
    ui::InputDeviceObserverAndroid::GetInstance()->AddObserver(this);
-@@ -69,7 +69,7 @@ SlowWebPreferenceCache::SlowWebPreferenceCache() {
+@@ -67,7 +67,7 @@ SlowWebPreferenceCache::SlowWebPreferenc
  SlowWebPreferenceCache::~SlowWebPreferenceCache() {
  #if BUILDFLAG(IS_WIN)
    ui::InputDeviceObserverWin::GetInstance()->RemoveObserver(this);

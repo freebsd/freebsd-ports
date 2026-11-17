@@ -1,4 +1,4 @@
---- src/base/process/process_metrics.h.orig	2026-02-11 09:05:39 UTC
+--- src/base/process/process_metrics.h.orig	2026-10-18 18:43:23 UTC
 +++ src/base/process/process_metrics.h
 @@ -40,7 +40,7 @@
  #endif
@@ -69,7 +69,7 @@
    // Same thing for idle wakeups.
    TimeTicks last_idle_wakeups_time_;
    uint64_t last_absolute_idle_wakeups_;
-@@ -311,7 +311,7 @@ BASE_EXPORT void IncreaseFdLimitTo(unsigned int max_de
+@@ -311,7 +311,7 @@ BASE_EXPORT void IncreaseFdLimitTo(unsig
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) ||      \
      BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_AIX) || \
@@ -96,7 +96,7 @@
    ByteSize buffers;
    ByteSize cached;
    ByteSize active_anon;
-@@ -403,7 +403,7 @@ BASE_EXPORT bool GetSystemMemoryInfo(SystemMemoryInfo*
+@@ -403,7 +403,7 @@ BASE_EXPORT bool GetSystemMemoryInfo(Sys
          // BUILDFLAG(IS_FUCHSIA)
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || \

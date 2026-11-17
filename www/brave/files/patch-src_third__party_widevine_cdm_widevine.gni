@@ -1,6 +1,6 @@
---- src/third_party/widevine/cdm/widevine.gni.orig	2026-08-31 10:59:09 UTC
+--- src/third_party/widevine/cdm/widevine.gni.orig	2026-10-18 18:43:23 UTC
 +++ src/third_party/widevine/cdm/widevine.gni
-@@ -26,6 +26,8 @@ if (is_chromeos && !is_chromeos_device) {
+@@ -26,6 +26,8 @@ if (is_chromeos && !is_chromeos_device)
  library_widevine_cdm_available =
      (is_chromeos && (target_cpu == "x64" || target_cpu == "arm64")) ||
      (target_os == "linux" && (target_cpu == "x64" || target_cpu == "arm64")) ||

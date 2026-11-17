@@ -1,4 +1,4 @@
---- src/base/process/process_handle_openbsd.cc.orig	2026-09-25 15:26:43 UTC
+--- src/base/process/process_handle_openbsd.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/base/process/process_handle_openbsd.cc
 @@ -3,8 +3,13 @@
  // found in the LICENSE file.
@@ -25,7 +25,7 @@
    int mib[] = {
        CTL_KERN, KERN_PROC, KERN_PROC_PID, process, sizeof(struct kinfo_proc),
        0};
-@@ -22,37 +28,39 @@ ProcessId GetParentProcessId(ProcessHandle process) {
+@@ -22,37 +28,39 @@ ProcessId GetParentProcessId(ProcessHand
      return -1;
    }
  
@@ -57,6 +57,13 @@
 -      0};
 -
 -  if (sysctl(mib, std::size(mib), NULL, &len, NULL, 0) == -1) {
+-    return FilePath();
+-  }
+-  mib[5] = (len / sizeof(struct kinfo_proc));
+-  if (sysctl(mib, std::size(mib), &kp, &len, NULL, 0) < 0) {
+-    return FilePath();
+-  }
+-  if ((kp.p_flag & P_SYSTEM) != 0) {
 +  FilePath result;
 +#if (OpenBSD >= 202610)
 +  char execpath[PATH_MAX];
@@ -71,13 +78,6 @@
 +  } else {
 +    result = FilePath("/usr/local/chrome/chrome");
    }
--  mib[5] = (len / sizeof(struct kinfo_proc));
--  if (sysctl(mib, std::size(mib), &kp, &len, NULL, 0) < 0) {
--    return FilePath();
--  }
--  if ((kp.p_flag & P_SYSTEM) != 0) {
--    return FilePath();
--  }
 -  if (strcmp(kp.p_comm, "chrome") == 0) {
 -    return FilePath(kp.p_comm);
 -  }

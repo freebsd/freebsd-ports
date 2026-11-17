@@ -1,6 +1,6 @@
---- src/third_party/libvpx/source/config/linux/arm64-highbd/vpx_dsp_rtcd.h.orig	2026-06-04 10:12:25 UTC
+--- src/third_party/libvpx/source/config/linux/arm64-highbd/vpx_dsp_rtcd.h.orig	2026-10-18 18:43:23 UTC
 +++ src/third_party/libvpx/source/config/linux/arm64-highbd/vpx_dsp_rtcd.h
-@@ -2174,32 +2174,26 @@ uint32_t vpx_sub_pixel_avg_variance8x8_neon(const uint
+@@ -2174,32 +2174,26 @@ uint32_t vpx_sub_pixel_avg_variance8x8_n
  
  uint32_t vpx_sub_pixel_variance16x16_c(const uint8_t *src_ptr, int src_stride, int x_offset, int y_offset, const uint8_t *ref_ptr, int ref_stride, uint32_t *sse);
  uint32_t vpx_sub_pixel_variance16x16_neon(const uint8_t *src_ptr, int src_stride, int x_offset, int y_offset, const uint8_t *ref_ptr, int ref_stride, uint32_t *sse);
@@ -33,7 +33,7 @@
  RTCD_EXTERN uint32_t (*vpx_sub_pixel_variance32x64)(const uint8_t *src_ptr, int src_stride, int x_offset, int y_offset, const uint8_t *ref_ptr, int ref_stride, uint32_t *sse);
  
  uint32_t vpx_sub_pixel_variance4x4_c(const uint8_t *src_ptr, int src_stride, int x_offset, int y_offset, const uint8_t *ref_ptr, int ref_stride, uint32_t *sse);
-@@ -2208,32 +2202,26 @@ uint32_t vpx_sub_pixel_variance4x4_neon(const uint8_t 
+@@ -2208,32 +2202,26 @@ uint32_t vpx_sub_pixel_variance4x4_neon(
  
  uint32_t vpx_sub_pixel_variance4x8_c(const uint8_t *src_ptr, int src_stride, int x_offset, int y_offset, const uint8_t *ref_ptr, int ref_stride, uint32_t *sse);
  uint32_t vpx_sub_pixel_variance4x8_neon(const uint8_t *src_ptr, int src_stride, int x_offset, int y_offset, const uint8_t *ref_ptr, int ref_stride, uint32_t *sse);

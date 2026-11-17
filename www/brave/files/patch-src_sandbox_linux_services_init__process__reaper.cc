@@ -1,4 +1,4 @@
---- src/sandbox/linux/services/init_process_reaper.cc.orig	2025-10-02 04:28:32 UTC
+--- src/sandbox/linux/services/init_process_reaper.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/sandbox/linux/services/init_process_reaper.cc
 @@ -2,6 +2,7 @@
  // Use of this source code is governed by a BSD-style license that can be
@@ -8,7 +8,7 @@
  #include "sandbox/linux/services/init_process_reaper.h"
  
  #include <signal.h>
-@@ -100,3 +101,4 @@ bool CreateInitProcessReaper(base::OnceClosure post_fo
+@@ -100,3 +101,4 @@ bool CreateInitProcessReaper(base::OnceC
  }
  
  }  // namespace sandbox.

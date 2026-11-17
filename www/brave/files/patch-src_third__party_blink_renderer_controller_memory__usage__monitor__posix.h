@@ -1,4 +1,4 @@
---- src/third_party/blink/renderer/controller/memory_usage_monitor_posix.h.orig	2022-02-28 16:54:41 UTC
+--- src/third_party/blink/renderer/controller/memory_usage_monitor_posix.h.orig	2026-10-18 18:43:23 UTC
 +++ src/third_party/blink/renderer/controller/memory_usage_monitor_posix.h
 @@ -13,7 +13,7 @@
  #include "third_party/blink/renderer/controller/controller_export.h"
@@ -18,7 +18,7 @@
      ,
        public mojom::blink::MemoryUsageMonitorLinux
  #endif
-@@ -30,7 +30,7 @@ class CONTROLLER_EXPORT MemoryUsageMonitorPosix
+@@ -30,7 +30,7 @@ class CONTROLLER_EXPORT MemoryUsageMonit
   public:
    MemoryUsageMonitorPosix() = default;
  
@@ -27,7 +27,7 @@
    static void Bind(
        mojo::PendingReceiver<mojom::blink::MemoryUsageMonitorLinux> receiver);
  #endif
-@@ -48,7 +48,7 @@ class CONTROLLER_EXPORT MemoryUsageMonitorPosix
+@@ -48,7 +48,7 @@ class CONTROLLER_EXPORT MemoryUsageMonit
                                                uint64_t* vm_size,
                                                uint64_t* vm_hwm_size);
  
@@ -36,7 +36,7 @@
    // mojom::MemoryUsageMonitorLinux implementations:
    void SetProcFiles(base::File statm_file, base::File status_file) override;
  #endif
-@@ -66,7 +66,7 @@ class CONTROLLER_EXPORT MemoryUsageMonitorPosix
+@@ -66,7 +66,7 @@ class CONTROLLER_EXPORT MemoryUsageMonit
    base::ScopedFD statm_fd_;
    base::ScopedFD status_fd_;
  

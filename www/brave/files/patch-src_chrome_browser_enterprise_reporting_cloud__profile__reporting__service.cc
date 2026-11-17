@@ -1,4 +1,4 @@
---- src/chrome/browser/enterprise/reporting/cloud_profile_reporting_service.cc.orig	2026-09-25 15:26:43 UTC
+--- src/chrome/browser/enterprise/reporting/cloud_profile_reporting_service.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/enterprise/reporting/cloud_profile_reporting_service.cc
 @@ -39,7 +39,7 @@
  #include "chrome/browser/enterprise/reporting/reporting_delegate_factory_desktop.h"
@@ -9,7 +9,7 @@
  #include "chrome/browser/enterprise/reporting/browser_launch/browser_launch_event_controller_factory_desktop.h"
  #endif  // BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
  
-@@ -126,7 +126,7 @@ void CloudProfileReportingService::CreateReportSchedul
+@@ -126,7 +126,7 @@ void CloudProfileReportingService::Creat
          "profile", saas_usage_reporting_delegate_factory.get());
    }
  

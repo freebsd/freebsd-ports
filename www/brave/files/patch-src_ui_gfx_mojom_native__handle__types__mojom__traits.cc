@@ -1,4 +1,4 @@
---- src/ui/gfx/mojom/native_handle_types_mojom_traits.cc.orig	2025-08-07 06:57:29 UTC
+--- src/ui/gfx/mojom/native_handle_types_mojom_traits.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/ui/gfx/mojom/native_handle_types_mojom_traits.cc
 @@ -14,7 +14,7 @@
  #include "ui/gfx/mac/io_surface.h"
@@ -9,7 +9,7 @@
  #include "ui/gfx/native_pixmap_handle.h"
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_OZONE)
  
-@@ -80,11 +80,11 @@ bool StructTraits<gfx::mojom::AHardwareBufferHandleDat
+@@ -80,11 +80,11 @@ bool StructTraits<gfx::mojom::AHardwareB
  }
  #endif  // BUILDFLAG(IS_ANDROID)
  
@@ -41,7 +41,7 @@
    out->modifier = data.modifier();
    out->supports_zero_copy_webgpu_import =
        data.supports_zero_copy_webgpu_import();
-@@ -211,7 +211,7 @@ gfx::mojom::GpuMemoryBufferPlatformHandleDataView::Tag
+@@ -211,7 +211,7 @@ gfx::mojom::GpuMemoryBufferPlatformHandl
      case gfx::IO_SURFACE_BUFFER:
        return Tag::kIoSurfaceHandle;
  #endif  // BUILDFLAG(IS_APPLE)
@@ -50,7 +50,7 @@
      case gfx::NATIVE_PIXMAP:
        return Tag::kNativePixmapHandle;
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_OZONE)
-@@ -292,7 +292,7 @@ bool UnionTraits<gfx::mojom::GpuMemoryBufferPlatformHa
+@@ -292,7 +292,7 @@ bool UnionTraits<gfx::mojom::GpuMemoryBu
  #endif
        return true;
  #endif  // BUILDFLAG(IS_APPLE)

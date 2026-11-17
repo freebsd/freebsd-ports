@@ -1,6 +1,6 @@
---- src/chrome/browser/private_verification_tokens/private_verification_tokens_service_factory.cc.orig	2026-09-25 15:26:43 UTC
+--- src/chrome/browser/private_verification_tokens/private_verification_tokens_service_factory.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/private_verification_tokens/private_verification_tokens_service_factory.cc
-@@ -102,6 +102,10 @@ PrivateVerificationTokensServiceFactory::BuildServiceI
+@@ -108,6 +108,10 @@ PrivateVerificationTokensServiceFactory:
            net::features::kEnablePrivateVerificationTokens)) {
      return nullptr;
    }
@@ -11,7 +11,7 @@
    Profile* profile = Profile::FromBrowserContext(context);
    CHECK(profile);
    auto service = PrivateVerificationTokensService::Create(
-@@ -113,6 +117,7 @@ PrivateVerificationTokensServiceFactory::BuildServiceI
+@@ -119,6 +123,7 @@ PrivateVerificationTokensServiceFactory:
      }
    }
    return service;

@@ -1,6 +1,6 @@
---- src/google_apis/gcm/engine/heartbeat_manager.cc.orig	2025-04-04 08:52:13 UTC
+--- src/google_apis/gcm/engine/heartbeat_manager.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/google_apis/gcm/engine/heartbeat_manager.cc
-@@ -31,7 +31,7 @@ const int kMinClientHeartbeatIntervalMs = 1000 * 30;  
+@@ -31,7 +31,7 @@ const int kMinClientHeartbeatIntervalMs
  // Minimum time spent sleeping before we force a new heartbeat.
  const int kMinSuspendTimeMs = 1000 * 10; // 10 seconds.
  
@@ -18,7 +18,7 @@
    // Windows, Mac, Android, iOS, and Chrome OS all provide a way to be notified
    // when the system is suspending or resuming.  The only one that does not is
    // Linux so we need to poll to check for missed heartbeats.
-@@ -213,7 +213,7 @@ void HeartbeatManager::CheckForMissedHeartbeat() {
+@@ -213,7 +213,7 @@ void HeartbeatManager::CheckForMissedHea
      return;
    }
  

@@ -1,6 +1,6 @@
---- src/remoting/host/host_power_save_blocker.cc.orig	2025-10-30 15:44:36 UTC
+--- src/remoting/host/host_power_save_blocker.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/remoting/host/host_power_save_blocker.cc
-@@ -29,7 +29,7 @@ HostPowerSaveBlocker::~HostPowerSaveBlocker() {
+@@ -29,7 +29,7 @@ HostPowerSaveBlocker::~HostPowerSaveBloc
  
  void HostPowerSaveBlocker::OnClientConnected(const std::string& jid) {
    // TODO(447203893): Re-enable this on Linux once the bug is fixed.

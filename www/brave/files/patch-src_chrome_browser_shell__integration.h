@@ -1,6 +1,6 @@
---- src/chrome/browser/shell_integration.h.orig	2026-02-11 09:05:39 UTC
+--- src/chrome/browser/shell_integration.h.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/shell_integration.h
-@@ -188,7 +188,7 @@ std::u16string GetAppShortcutsSubdirName();
+@@ -188,7 +188,7 @@ std::u16string GetAppShortcutsSubdirName
  #endif
  
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \

@@ -1,4 +1,4 @@
---- src/printing/sandbox/print_backend_sandbox_hook_linux.cc.orig	2024-04-19 13:02:56 UTC
+--- src/printing/sandbox/print_backend_sandbox_hook_linux.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/printing/sandbox/print_backend_sandbox_hook_linux.cc
 @@ -10,20 +10,27 @@
  #include "base/path_service.h"
@@ -28,7 +28,7 @@
  namespace {
  
  sandbox::syscall_broker::BrokerCommandSet GetPrintBackendBrokerCommandSet() {
-@@ -76,9 +83,11 @@ std::vector<BrokerFilePermission> GetPrintBackendFileP
+@@ -76,9 +83,11 @@ std::vector<BrokerFilePermission> GetPri
  }
  
  }  // namespace

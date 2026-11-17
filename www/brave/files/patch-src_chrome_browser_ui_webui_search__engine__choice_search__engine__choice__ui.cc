@@ -1,6 +1,6 @@
---- src/chrome/browser/ui/webui/search_engine_choice/search_engine_choice_ui.cc.orig	2026-08-31 10:59:09 UTC
+--- src/chrome/browser/ui/webui/search_engine_choice/search_engine_choice_ui.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/ui/webui/search_engine_choice/search_engine_choice_ui.cc
-@@ -140,7 +140,7 @@ SearchEngineChoiceUI::SearchEngineChoiceUI(content::We
+@@ -140,7 +140,7 @@ SearchEngineChoiceUI::SearchEngineChoice
        search_engine_choice_service->IsDsePropagationAllowedForGuest());
  
    const bool is_first_run_desktop_refresh_enabled =

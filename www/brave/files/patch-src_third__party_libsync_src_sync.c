@@ -1,4 +1,4 @@
---- src/third_party/libsync/src/sync.c.orig	2026-05-07 17:02:56 UTC
+--- src/third_party/libsync/src/sync.c.orig	2026-10-18 18:43:23 UTC
 +++ src/third_party/libsync/src/sync.c
 @@ -18,7 +18,11 @@
  
@@ -31,7 +31,7 @@
      struct sync_legacy_merge_data data;
      int ret;
  
-@@ -162,10 +171,14 @@ static int legacy_sync_merge(const char *name, int fd1
+@@ -162,10 +171,14 @@ static int legacy_sync_merge(const char
      if (ret < 0)
          return ret;
      return data.fence;
@@ -46,7 +46,7 @@
      struct sync_merge_data data;
      int ret;
  
-@@ -178,10 +191,14 @@ static int modern_sync_merge(const char *name, int fd1
+@@ -178,10 +191,14 @@ static int modern_sync_merge(const char
      if (ret < 0)
          return ret;
      return data.fence;
@@ -61,7 +61,7 @@
      int uapi;
      int ret;
  
-@@ -204,10 +221,14 @@ int sync_merge(const char *name, int fd1, int fd2)
+@@ -204,10 +221,14 @@ int sync_merge(const char *name, int fd1
                                memory_order_release);
      }
      return ret;
@@ -76,7 +76,7 @@
      struct sync_fence_info_data *legacy_info;
      struct sync_pt_info *legacy_pt_info;
      int err;
-@@ -223,10 +244,14 @@ static struct sync_fence_info_data *legacy_sync_fence_
+@@ -223,10 +244,14 @@ static struct sync_fence_info_data *lega
          return NULL;
      }
      return legacy_info;
@@ -91,7 +91,7 @@
      struct sync_file_info local_info;
      struct sync_file_info *info;
      int err;
-@@ -251,11 +276,15 @@ static struct sync_file_info *modern_sync_file_info(in
+@@ -251,11 +276,15 @@ static struct sync_file_info *modern_syn
      }
  
      return info;
@@ -107,7 +107,7 @@
      struct sync_fence_info_data *legacy_info;
      struct sync_pt_info *legacy_pt_info;
      const struct sync_fence_info *fence_info = sync_get_fence_info(info);
-@@ -281,11 +310,15 @@ static struct sync_fence_info_data *sync_file_info_to_
+@@ -281,11 +310,15 @@ static struct sync_fence_info_data *sync
      }
  
      return legacy_info;
@@ -123,7 +123,7 @@
      struct sync_file_info *info;
      struct sync_pt_info *pt;
      struct sync_fence_info *fence;
-@@ -320,10 +353,14 @@ static struct sync_file_info* legacy_fence_info_to_syn
+@@ -320,10 +353,14 @@ static struct sync_file_info* legacy_fen
      }
  
      return info;
@@ -138,7 +138,7 @@
      struct sync_fence_info_data *legacy_info;
      int uapi;
  
-@@ -351,10 +388,14 @@ struct sync_fence_info_data *sync_fence_info(int fd)
+@@ -351,10 +388,14 @@ struct sync_fence_info_data *sync_fence_
      legacy_info = sync_file_info_to_legacy_fence_info(file_info);
      sync_file_info_free(file_info);
      return legacy_info;
@@ -153,7 +153,7 @@
      struct sync_file_info *info;
      int uapi;
  
-@@ -382,11 +423,15 @@ struct sync_file_info* sync_file_info(int32_t fd)
+@@ -382,11 +423,15 @@ struct sync_file_info* sync_file_info(in
      info = legacy_fence_info_to_sync_file_info(legacy_info);
      sync_fence_info_free(legacy_info);
      return info;
@@ -169,7 +169,7 @@
      if (itr == NULL)
          itr = (struct sync_pt_info *) info->pt_info;
      else
-@@ -396,6 +441,9 @@ struct sync_pt_info *sync_pt_info(struct sync_fence_in
+@@ -396,6 +441,9 @@ struct sync_pt_info *sync_pt_info(struct
          return NULL;
  
      return itr;

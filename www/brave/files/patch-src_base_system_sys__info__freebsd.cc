@@ -1,6 +1,6 @@
---- src/base/system/sys_info_freebsd.cc.orig	2026-05-30 09:39:35 UTC
+--- src/base/system/sys_info_freebsd.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/base/system/sys_info_freebsd.cc
-@@ -10,21 +10,73 @@
+@@ -10,20 +10,72 @@
  
  #include "base/notreached.h"
  #include "base/numerics/safe_conversions.h"
@@ -61,7 +61,7 @@
 +  return ByteSize((pgfree + pginact) * checked_cast<unsigned>(page_size));
 +}
 +
- // static
++// static
 +std::string SysInfo::CPUModelName() {
 +  int mib[] = { CTL_HW, HW_MODEL };
 +  char name[256];
@@ -74,16 +74,13 @@
 +  return std::string();
 +}
 +
-+// static
+ // static
  uint64_t SysInfo::MaxSharedMemorySize() {
    size_t limit;
-   size_t size = sizeof(limit);
-@@ -32,6 +84,18 @@ uint64_t SysInfo::MaxSharedMemorySize() {
-     NOTREACHED();
-   }
+@@ -34,4 +86,16 @@ uint64_t SysInfo::MaxSharedMemorySize()
    return static_cast<uint64_t>(limit);
-+}
-+
+ }
+ 
 +SysInfo::HardwareInfo SysInfo::GetHardwareInfoSync() {
 +  HardwareInfo info;
 +
@@ -94,6 +91,6 @@
 +  DCHECK(IsStringUTF8(info.model));
 +
 +  return info;
- }
- 
++}
++
  }  // namespace base

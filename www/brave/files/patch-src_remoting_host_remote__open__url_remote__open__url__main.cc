@@ -1,4 +1,4 @@
---- src/remoting/host/remote_open_url/remote_open_url_main.cc.orig	2026-07-01 06:24:19 UTC
+--- src/remoting/host/remote_open_url/remote_open_url_main.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/remoting/host/remote_open_url/remote_open_url_main.cc
 @@ -22,7 +22,7 @@
  #include "remoting/host/usage_stats_consent.h"
@@ -9,7 +9,7 @@
  #include "remoting/base/crash/crash_reporting_crashpad.h"
  #endif  // BUILDFLAG(IS_LINUX)
  
-@@ -46,7 +46,7 @@ int RemoteOpenUrlMain(int argc, char** argv) {
+@@ -46,7 +46,7 @@ int RemoteOpenUrlMain(int argc, char** a
  
  #if defined(REMOTING_ENABLE_CRASH_REPORTING)
    if (IsUsageStatsAllowed()) {

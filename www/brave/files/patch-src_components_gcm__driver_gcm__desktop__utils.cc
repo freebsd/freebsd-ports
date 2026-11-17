@@ -1,6 +1,6 @@
---- src/components/gcm_driver/gcm_desktop_utils.cc.orig	2025-02-19 07:43:18 UTC
+--- src/components/gcm_driver/gcm_desktop_utils.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/components/gcm_driver/gcm_desktop_utils.cc
-@@ -32,7 +32,7 @@ GCMClient::ChromePlatform GetPlatform() {
+@@ -32,7 +32,7 @@ GCMClient::ChromePlatform GetPlatform()
    return GCMClient::PLATFORM_ANDROID;
  #elif BUILDFLAG(IS_CHROMEOS)
    return GCMClient::PLATFORM_CROS;

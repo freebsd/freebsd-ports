@@ -1,4 +1,4 @@
---- src/chrome/browser/enterprise/connectors/reporting/realtime_reporting_client.cc.orig	2026-09-25 15:26:43 UTC
+--- src/chrome/browser/enterprise/connectors/reporting/realtime_reporting_client.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/enterprise/connectors/reporting/realtime_reporting_client.cc
 @@ -53,7 +53,7 @@
  #include "base/strings/utf_string_conversions.h"
@@ -18,7 +18,7 @@
  using Event = ::chrome::cros::reporting::proto::Event;
  #endif
  
-@@ -144,7 +144,7 @@ RealtimeReportingClient::GetReportingSettings() {
+@@ -144,7 +144,7 @@ RealtimeReportingClient::GetReportingSet
  }
  
  
@@ -27,7 +27,7 @@
  
  
  void AddCrowdstrikeSignalsToEvent(
-@@ -248,7 +248,7 @@ std::string RealtimeReportingClient::GetProfileUserNam
+@@ -248,7 +248,7 @@ std::string RealtimeReportingClient::Get
    username_ =
        identity_manager_ ? GetProfileEmail(identity_manager_) : std::string();
  
@@ -36,7 +36,7 @@
    if (username_.empty()) {
      username_ = Profile::FromBrowserContext(context_)->GetPrefs()->GetString(
          enterprise_signin::prefs::kProfileUserEmail);
-@@ -305,7 +305,7 @@ std::string RealtimeReportingClient::GetBrowserClientI
+@@ -305,7 +305,7 @@ std::string RealtimeReportingClient::Get
    return client_id;
  }
  

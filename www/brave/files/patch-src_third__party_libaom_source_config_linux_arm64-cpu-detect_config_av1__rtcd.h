@@ -1,6 +1,6 @@
---- src/third_party/libaom/source/config/linux/arm64-cpu-detect/config/av1_rtcd.h.orig	2026-07-01 06:24:19 UTC
+--- src/third_party/libaom/source/config/linux/arm64-cpu-detect/config/av1_rtcd.h.orig	2026-10-18 18:43:23 UTC
 +++ src/third_party/libaom/source/config/linux/arm64-cpu-detect/config/av1_rtcd.h
-@@ -194,8 +194,10 @@ RTCD_EXTERN void (*av1_dist_wtd_convolve_x)(const uint
+@@ -194,8 +194,10 @@ RTCD_EXTERN void (*av1_dist_wtd_convolve
  
  void av1_dist_wtd_convolve_y_c(const uint8_t *src, int src_stride, uint8_t *dst, int dst_stride, int w, int h, const InterpFilterParams *filter_params_y, const int subpel_y_qn, ConvolveParams *conv_params);
  void av1_dist_wtd_convolve_y_neon(const uint8_t *src, int src_stride, uint8_t *dst, int dst_stride, int w, int h, const InterpFilterParams *filter_params_y, const int subpel_y_qn, ConvolveParams *conv_params);

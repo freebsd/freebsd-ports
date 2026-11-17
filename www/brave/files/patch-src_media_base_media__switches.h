@@ -1,6 +1,6 @@
---- src/media/base/media_switches.h.orig	2026-09-25 15:26:43 UTC
+--- src/media/base/media_switches.h.orig	2026-10-18 18:43:23 UTC
 +++ src/media/base/media_switches.h
-@@ -446,7 +446,7 @@ MEDIA_EXPORT BASE_DECLARE_FEATURE(kIgnoreUiGains);
+@@ -441,7 +441,7 @@ MEDIA_EXPORT BASE_DECLARE_FEATURE(kIgnor
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kShowForceRespectUiGainsToggle);
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
@@ -9,7 +9,7 @@
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kReduceHardwareVideoDecoderBuffers);
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kUseOutOfProcessVideoEncoding);
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kV4L2H264TemporalLayerHWEncoding);
-@@ -457,7 +457,7 @@ MEDIA_EXPORT BASE_DECLARE_FEATURE(kFuchsiaCdmStoragePa
+@@ -452,7 +452,7 @@ MEDIA_EXPORT BASE_DECLARE_FEATURE(kFuchs
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kFuchsiaMediacodecVideoEncoder);
  #endif  // BUILDFLAG(IS_FUCHSIA)
  
@@ -18,7 +18,7 @@
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kAcceleratedVideoDecodeLinux);
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kAcceleratedVideoDecodeLinuxGL);
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kAcceleratedVideoEncodeLinux);
-@@ -468,6 +468,18 @@ MEDIA_EXPORT BASE_DECLARE_FEATURE(kPreferV4L2VideoAcce
+@@ -463,6 +463,18 @@ MEDIA_EXPORT BASE_DECLARE_FEATURE(kPrefe
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kPulseaudioLoopbackForCast);
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kPulseaudioLoopbackForScreenShare);
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kVaapiIgnoreDriverChecks);

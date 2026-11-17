@@ -1,6 +1,6 @@
---- src/remoting/base/security_key_socket_name.cc.orig	2026-05-07 17:02:56 UTC
+--- src/remoting/base/security_key_socket_name.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/remoting/base/security_key_socket_name.cc
-@@ -25,7 +25,7 @@ base::FilePath GetDefaultSecurityKeySocketName() {
+@@ -25,7 +25,7 @@ base::FilePath GetDefaultSecurityKeySock
    if (!GetSocketNameOverride().empty()) {
      return GetSocketNameOverride();
    }

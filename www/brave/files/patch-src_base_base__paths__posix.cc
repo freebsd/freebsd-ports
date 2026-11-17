@@ -1,4 +1,4 @@
---- src/base/base_paths_posix.cc.orig	2026-09-25 15:26:43 UTC
+--- src/base/base_paths_posix.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/base/base_paths_posix.cc
 @@ -26,7 +26,7 @@
  #include "base/process/process_metrics.h"
@@ -9,7 +9,7 @@
  #include <sys/param.h>
  #include <sys/sysctl.h>
  #elif BUILDFLAG(IS_SOLARIS) || BUILDFLAG(IS_AIX)
-@@ -47,8 +47,7 @@ bool PathProviderPosix(int key, FilePath* result) {
+@@ -47,8 +47,7 @@ bool PathProviderPosix(int key, FilePath
        *result = bin_dir;
        return true;
  #elif BUILDFLAG(IS_FREEBSD)
@@ -19,7 +19,7 @@
        if (!bin_dir.has_value() || bin_dir.value().length() <= 1) {
          NOTREACHED() << "Unable to resolve path.";
        }
-@@ -61,7 +60,14 @@ bool PathProviderPosix(int key, FilePath* result) {
+@@ -61,7 +60,14 @@ bool PathProviderPosix(int key, FilePath
        }
        *result = FilePath(bin_dir);
        return true;

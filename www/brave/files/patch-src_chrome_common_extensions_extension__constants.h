@@ -1,6 +1,6 @@
---- src/chrome/common/extensions/extension_constants.h.orig	2026-09-25 15:26:43 UTC
+--- src/chrome/common/extensions/extension_constants.h.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/common/extensions/extension_constants.h
-@@ -202,7 +202,7 @@ inline constexpr char kReadingModeGDocsHelperExtension
+@@ -209,7 +209,7 @@ inline constexpr base::FilePath::CharTyp
  inline constexpr base::FilePath::CharType
      kReadingModeGDocsHelperManifestFilename[] =
          FILE_PATH_LITERAL("reading_mode_gdocs_helper_manifest.json");
@@ -9,7 +9,7 @@
  // The extension id of the google tts engine extension to use on-device natural
  // Google voices.
  inline constexpr char kTTSEngineExtensionId[] =
-@@ -253,7 +253,7 @@ inline constexpr auto kBuiltInFirstPartyExtensionIds =
+@@ -260,7 +260,7 @@ inline constexpr auto kBuiltInFirstParty
          kGoogleSpeechSynthesisExtensionId,
  #endif  // BUILDFLAG(IS_CHROMEOS)
          kReadingModeGDocsHelperExtensionId,

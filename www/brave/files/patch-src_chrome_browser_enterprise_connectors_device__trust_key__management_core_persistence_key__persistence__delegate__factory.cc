@@ -1,4 +1,4 @@
---- src/chrome/browser/enterprise/connectors/device_trust/key_management/core/persistence/key_persistence_delegate_factory.cc.orig	2025-01-15 09:18:26 UTC
+--- src/chrome/browser/enterprise/connectors/device_trust/key_management/core/persistence/key_persistence_delegate_factory.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/enterprise/connectors/device_trust/key_management/core/persistence/key_persistence_delegate_factory.cc
 @@ -13,7 +13,7 @@
  #include "chrome/browser/enterprise/connectors/device_trust/key_management/core/persistence/win_key_persistence_delegate.h"
@@ -9,7 +9,7 @@
  #include "chrome/browser/enterprise/connectors/device_trust/key_management/core/persistence/linux_key_persistence_delegate.h"
  #endif
  
-@@ -45,7 +45,7 @@ KeyPersistenceDelegateFactory::CreateKeyPersistenceDel
+@@ -45,7 +45,7 @@ KeyPersistenceDelegateFactory::CreateKey
    return std::make_unique<WinKeyPersistenceDelegate>();
  #elif BUILDFLAG(IS_MAC)
    return std::make_unique<MacKeyPersistenceDelegate>();

@@ -1,4 +1,4 @@
---- src/third_party/blink/renderer/platform/fonts/opentype/font_format_check.cc.orig	2026-09-25 15:26:43 UTC
+--- src/third_party/blink/renderer/platform/fonts/opentype/font_format_check.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/third_party/blink/renderer/platform/fonts/opentype/font_format_check.cc
 @@ -7,6 +7,7 @@
  #include "base/containers/span.h"
@@ -54,7 +54,7 @@
  }
  
  bool FontFormatCheck::IsVariableColrV0Font() const {
-@@ -58,7 +57,7 @@ bool FontFormatCheck::IsColorFont() const {
+@@ -58,7 +57,7 @@ bool FontFormatCheck::IsColorFont() cons
  
  bool FontFormatCheck::IsAvar2Font() const {
    return RuntimeEnabledFeatures::FontFormatAvar2Enabled() &&

@@ -1,6 +1,6 @@
---- src/components/device_signals/core/browser/signals_aggregator.h.orig	2023-07-16 15:47:57 UTC
+--- src/components/device_signals/core/browser/signals_aggregator.h.orig	2026-10-18 18:43:23 UTC
 +++ src/components/device_signals/core/browser/signals_aggregator.h
-@@ -22,7 +22,7 @@ class SignalsAggregator : public KeyedService {
+@@ -22,7 +22,7 @@ class SignalsAggregator : public KeyedSe
  
    ~SignalsAggregator() override = default;
  

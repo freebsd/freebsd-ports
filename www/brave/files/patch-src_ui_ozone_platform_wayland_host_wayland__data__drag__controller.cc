@@ -1,4 +1,4 @@
---- src/ui/ozone/platform/wayland/host/wayland_data_drag_controller.cc.orig	2026-05-07 17:02:56 UTC
+--- src/ui/ozone/platform/wayland/host/wayland_data_drag_controller.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/ui/ozone/platform/wayland/host/wayland_data_drag_controller.cc
 @@ -48,7 +48,7 @@
  #include "ui/ozone/platform/wayland/host/wayland_window.h"
@@ -18,7 +18,7 @@
    return mime_type == kMimeTypePortalFileTransfer ||
           mime_type == kMimeTypePortalFiles;
  #else
-@@ -205,7 +205,7 @@ void WaylandDataDragController::StartSessionInternal(
+@@ -205,7 +205,7 @@ void WaylandDataDragController::StartSes
    }
  
    auto mime_types = GetOfferedExchangeDataProvider()->BuildMimeTypesList();
@@ -27,7 +27,7 @@
    if (GetOfferedExchangeDataProvider()->HasFile()) {
      mime_types.push_back(kMimeTypePortalFileTransfer);
      mime_types.push_back(kMimeTypePortalFiles);
-@@ -623,7 +623,7 @@ void WaylandDataDragController::OnDataSourceSend(
+@@ -623,7 +623,7 @@ void WaylandDataDragController::OnDataSo
    CHECK_EQ(data_source_.get(), source);
    VLOG(1) << __FUNCTION__ << " mime=" << mime_type;
  
@@ -36,7 +36,7 @@
    if (mime_type == kMimeTypePortalFileTransfer ||
        mime_type == kMimeTypePortalFiles) {
      std::optional<std::vector<FileInfo>> filenames =
-@@ -745,7 +745,7 @@ void WaylandDataDragController::OnDataFetched(
+@@ -745,7 +745,7 @@ void WaylandDataDragController::OnDataFe
      return;
    }
  

@@ -1,4 +1,4 @@
---- src/ui/base/accelerators/global_accelerator_listener/global_accelerator_listener_ozone.cc.orig	2026-09-25 15:26:43 UTC
+--- src/ui/base/accelerators/global_accelerator_listener/global_accelerator_listener_ozone.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/ui/base/accelerators/global_accelerator_listener/global_accelerator_listener_ozone.cc
 @@ -13,7 +13,7 @@
  
@@ -18,7 +18,7 @@
  BASE_FEATURE(kGlobalShortcutsPortal, base::FEATURE_ENABLED_BY_DEFAULT);
  
  constexpr char kSessionSuffix[] = "_global_shortcuts";
-@@ -51,7 +51,7 @@ GlobalAcceleratorListener* GlobalAcceleratorListener::
+@@ -51,7 +51,7 @@ GlobalAcceleratorListener* GlobalAcceler
    static const base::NoDestructor<std::unique_ptr<GlobalAcceleratorListener>>
        chromeos_instance(GlobalAcceleratorListenerChromeOS::Create());
    return chromeos_instance->get();

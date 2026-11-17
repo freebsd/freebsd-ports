@@ -1,6 +1,6 @@
---- src/chrome/browser/updater/updater.cc.orig	2026-03-13 06:02:14 UTC
+--- src/chrome/browser/updater/updater.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/updater/updater.cc
-@@ -53,7 +53,7 @@ std::optional<mojom::AppState> GetLastKnownUpdaterRegi
+@@ -53,7 +53,7 @@ std::optional<mojom::AppState> GetLastKn
    return GetLastKnownUpdaterRegistrationStorage();
  }
  

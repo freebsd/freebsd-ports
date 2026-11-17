@@ -1,6 +1,6 @@
---- src/remoting/host/config_file_watcher.cc.orig	2026-06-04 10:12:25 UTC
+--- src/remoting/host/config_file_watcher.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/remoting/host/config_file_watcher.cc
-@@ -27,7 +27,7 @@ const char kHostConfigSwitchName[] = "host-config";
+@@ -27,7 +27,7 @@ const char kHostConfigSwitchName[] = "ho
  const base::FilePath::CharType kDefaultHostConfigFile[] =
      FILE_PATH_LITERAL("host.json");
  

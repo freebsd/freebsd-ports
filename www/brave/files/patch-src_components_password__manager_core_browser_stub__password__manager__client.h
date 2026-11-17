@@ -1,6 +1,6 @@
---- src/components/password_manager/core/browser/stub_password_manager_client.h.orig	2026-08-12 09:02:10 UTC
+--- src/components/password_manager/core/browser/stub_password_manager_client.h.orig	2026-10-18 18:43:23 UTC
 +++ src/components/password_manager/core/browser/stub_password_manager_client.h
-@@ -92,7 +92,7 @@ class StubPasswordManagerClient : public PasswordManag
+@@ -92,7 +92,7 @@ class StubPasswordManagerClient : public
    MockPasswordFeatureManager* GetPasswordFeatureManager();
    version_info::Channel GetChannel() const override;
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \

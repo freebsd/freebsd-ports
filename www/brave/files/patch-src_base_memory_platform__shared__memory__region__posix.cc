@@ -1,7 +1,7 @@
---- src/base/memory/platform_shared_memory_region_posix.cc.orig	2026-09-25 15:26:43 UTC
+--- src/base/memory/platform_shared_memory_region_posix.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/base/memory/platform_shared_memory_region_posix.cc
-@@ -12,6 +12,14 @@
- #include <atomic>
+@@ -13,6 +13,14 @@
+ #include <limits>
  #include <optional>
  
 +#if BUILDFLAG(IS_FREEBSD)
@@ -15,7 +15,7 @@
  #include "base/check_op.h"
  #include "base/files/file.h"
  #include "base/files/file_util.h"
-@@ -148,6 +156,84 @@
+@@ -149,6 +157,84 @@ ScopedFDPair CreateAnonymousRegion(Platf
  
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  
@@ -100,7 +100,7 @@
  }  // namespace
  
  // static
-@@ -263,7 +349,7 @@
+@@ -281,7 +367,7 @@ PlatformSharedMemoryRegion PlatformShare
  // static
  PlatformSharedMemoryRegion PlatformSharedMemoryRegion::Create(Mode mode,
                                                                size_t size
@@ -109,7 +109,7 @@
                                                                ,
                                                                bool executable
  #endif
-@@ -295,11 +381,25 @@
+@@ -313,11 +399,25 @@ PlatformSharedMemoryRegion PlatformShare
    // and be deleted before they ever make it out to disk.
    ScopedAllowBlocking scoped_allow_blocking;
  

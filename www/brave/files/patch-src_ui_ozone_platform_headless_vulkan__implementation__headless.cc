@@ -1,6 +1,6 @@
---- src/ui/ozone/platform/headless/vulkan_implementation_headless.cc.orig	2025-08-07 06:57:29 UTC
+--- src/ui/ozone/platform/headless/vulkan_implementation_headless.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/ui/ozone/platform/headless/vulkan_implementation_headless.cc
-@@ -117,7 +117,7 @@ VulkanImplementationHeadless::ExportVkFenceToGpuFence(
+@@ -117,7 +117,7 @@ VulkanImplementationHeadless::ExportVkFe
  
  VkExternalSemaphoreHandleTypeFlagBits
  VulkanImplementationHeadless::GetExternalSemaphoreHandleType() {
@@ -9,7 +9,7 @@
    return VK_EXTERNAL_SEMAPHORE_HANDLE_TYPE_SYNC_FD_BIT;
  #else
    return VK_EXTERNAL_SEMAPHORE_HANDLE_TYPE_OPAQUE_FD_BIT;
-@@ -127,7 +127,7 @@ VulkanImplementationHeadless::GetExternalSemaphoreHand
+@@ -127,7 +127,7 @@ VulkanImplementationHeadless::GetExterna
  bool VulkanImplementationHeadless::CanImportGpuMemoryBuffer(
      gpu::VulkanDeviceQueue* device_queue,
      gfx::GpuMemoryBufferType memory_buffer_type) {
@@ -18,7 +18,7 @@
    const auto& enabled_extensions = device_queue->enabled_extensions();
    return gfx::HasExtension(enabled_extensions,
                             VK_EXT_EXTERNAL_MEMORY_DMA_BUF_EXTENSION_NAME) &&
-@@ -150,7 +150,7 @@ VulkanImplementationHeadless::CreateImageFromGpuMemory
+@@ -150,7 +150,7 @@ VulkanImplementationHeadless::CreateImag
        VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT | VK_IMAGE_USAGE_SAMPLED_BIT |
        VK_IMAGE_USAGE_TRANSFER_DST_BIT | VK_IMAGE_USAGE_TRANSFER_SRC_BIT;
    auto tiling = VK_IMAGE_TILING_OPTIMAL;

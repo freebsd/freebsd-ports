@@ -1,4 +1,4 @@
---- src/base/profiler/sampling_profiler_thread_token.cc.orig	2025-04-04 08:52:13 UTC
+--- src/base/profiler/sampling_profiler_thread_token.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/base/profiler/sampling_profiler_thread_token.cc
 @@ -6,7 +6,7 @@
  
@@ -9,7 +9,7 @@
  #include <pthread.h>
  
  #include "base/profiler/stack_base_address_posix.h"
-@@ -18,7 +18,7 @@ SamplingProfilerThreadToken GetSamplingProfilerCurrent
+@@ -18,7 +18,7 @@ SamplingProfilerThreadToken GetSamplingP
    PlatformThreadId id = PlatformThread::CurrentId();
  #if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_APPLE)
    return {id, pthread_self()};

@@ -1,6 +1,6 @@
---- src/chrome/browser/ui/views/profiles/avatar_toolbar_button_state_manager.cc.orig	2026-09-25 15:26:43 UTC
+--- src/chrome/browser/ui/views/profiles/avatar_toolbar_button_state_manager.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/ui/views/profiles/avatar_toolbar_button_state_manager.cc
-@@ -2679,7 +2679,7 @@ void AvatarToolbarButtonStateManager::MaybeShowProfile
+@@ -2675,7 +2675,7 @@ void AvatarToolbarButtonStateManager::Ma
    }
  }
  

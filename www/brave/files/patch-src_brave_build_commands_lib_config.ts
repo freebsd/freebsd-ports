@@ -1,6 +1,6 @@
---- src/brave/build/commands/lib/config.ts.orig	2026-06-01 00:00:00 UTC
+--- src/brave/build/commands/lib/config.ts.orig	2026-10-18 18:43:23 UTC
 +++ src/brave/build/commands/lib/config.ts
-@@ -32,7 +32,14 @@
+@@ -32,7 +32,14 @@ type UpdateOptions = buildOptions.BuildD
      gclient_verbose?: boolean | undefined
    }
  
@@ -16,21 +16,7 @@
  type TargetOS = (typeof validTargetOSValues)[number]
  
  const braveCoreDir = path.join(rootDir, 'src', 'brave')
-@@ -264,7 +271,12 @@
-     this.braveAndroidPkcs11Alias = ''
-     this.nativeRedirectCCDir = path.join(this.srcDir, 'out', 'redirect_cc')
-     this.useRemoteExec = envConfig.getBoolean(['use_remoteexec'], false)
--    this.useSiso = envConfig.getBoolean(['use_siso'], true)
-+    // siso is fetched with CIPD via depot_tools, which is not used on
-+    // FreeBSD: build with ninja from ports instead.
-+    this.useSiso = envConfig.getBoolean(
-+      ['use_siso'],
-+      process.platform !== 'freebsd',
-+    )
-     this.useReclient = envConfig.getBoolean(
-       ['use_reclient'],
-       this.useRemoteExec && !this.useSiso,
-@@ -340,7 +352,7 @@
+@@ -329,7 +336,7 @@ export class Config {
    enableCDMHostVerification() {
      const enable =
        this.buildConfig === 'Release'
@@ -39,7 +25,7 @@
        && this.sign_widevine_cert !== ''
        && this.sign_widevine_key !== ''
        && this.sign_widevine_passwd !== ''
-@@ -737,22 +749,30 @@
+@@ -726,22 +733,30 @@ export class Config {
  
    get defaultOptions(): ExecOptions {
      let env = Object.assign({}, process.env)
@@ -81,7 +67,7 @@
      if (this.targetOS === 'mac' && process.platform !== 'darwin') {
        const crossCompilePath = path.join(
          this.srcDir,
-@@ -968,6 +988,8 @@
+@@ -956,6 +971,8 @@ export class Config {
          return 'mac'
        case 'linux':
          return 'linux'

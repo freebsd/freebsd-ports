@@ -1,6 +1,6 @@
---- src/third_party/blink/renderer/core/editing/editing_behavior.cc.orig	2026-06-04 10:12:25 UTC
+--- src/third_party/blink/renderer/core/editing/editing_behavior.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/third_party/blink/renderer/core/editing/editing_behavior.cc
-@@ -144,7 +144,7 @@ const KeyboardCodeKeyDownEntry kKeyboardCodeKeyDownEnt
+@@ -144,7 +144,7 @@ const KeyboardCodeKeyDownEntry kKeyboard
      {VKEY_DELETE, 0, "DeleteForward"},
      {VKEY_BACK, OPTION_OR_CTRL_KEY, "DeleteWordBackward"},
      {VKEY_DELETE, OPTION_OR_CTRL_KEY, "DeleteWordForward"},
@@ -9,7 +9,7 @@
      {VKEY_BACK, kCtrlKey | kShiftKey, "DeleteToBeginningOfLine"},
  #endif
  #if BUILDFLAG(IS_MAC)
-@@ -313,7 +313,7 @@ bool EditingBehavior::ShouldInsertCharacter(const Keyb
+@@ -313,7 +313,7 @@ bool EditingBehavior::ShouldInsertCharac
    // unexpected behaviour
    if (ch < ' ')
      return false;

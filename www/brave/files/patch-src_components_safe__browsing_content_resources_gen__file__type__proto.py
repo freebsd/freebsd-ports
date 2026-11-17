@@ -1,4 +1,4 @@
---- src/components/safe_browsing/content/resources/gen_file_type_proto.py.orig	2024-08-26 12:06:38 UTC
+--- src/components/safe_browsing/content/resources/gen_file_type_proto.py.orig	2026-10-18 18:43:23 UTC
 +++ src/components/safe_browsing/content/resources/gen_file_type_proto.py
 @@ -37,6 +37,8 @@ def PlatformTypes():
          "chromeos":
@@ -9,7 +9,7 @@
          "mac": download_file_types_pb2.DownloadFileType.PLATFORM_TYPE_MAC,
          "win": download_file_types_pb2.DownloadFileType.PLATFORM_TYPE_WINDOWS,
          # LINT.ThenChange(BUILD.gn:PlatformTypes)
-@@ -179,7 +181,7 @@ class DownloadFileTypeProtoGenerator(BinaryProtoGenera
+@@ -179,7 +181,7 @@ class DownloadFileTypeProtoGenerator(Bin
              '-t',
              '--type',
              help='The platform type. One of android, chromeos, ' +

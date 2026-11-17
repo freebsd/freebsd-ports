@@ -1,6 +1,6 @@
---- src/remoting/host/peer_session_impl.cc.orig	2026-09-25 15:26:43 UTC
+--- src/remoting/host/peer_session_impl.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/remoting/host/peer_session_impl.cc
-@@ -250,7 +250,7 @@ void PeerSessionImpl::NotifyClientResolution(
+@@ -251,7 +251,7 @@ void PeerSessionImpl::NotifyClientResolu
    if (effective_policies_.curtain_required.value_or(false)) {
      dpi_vector.set(resolution.x_dpi(), resolution.y_dpi());
    }

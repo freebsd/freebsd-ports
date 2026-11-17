@@ -1,4 +1,4 @@
---- src/chrome/browser/ui/views/eye_dropper/eye_dropper_aura.cc.orig	2026-09-25 15:26:43 UTC
+--- src/chrome/browser/ui/views/eye_dropper/eye_dropper_aura.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/ui/views/eye_dropper/eye_dropper_aura.cc
 @@ -13,7 +13,7 @@
  #include "content/public/browser/web_contents.h"
@@ -9,7 +9,7 @@
  #include "base/environment.h"
  #include "base/nix/xdg_util.h"
  #if BUILDFLAG(USE_DBUS)
-@@ -33,7 +33,7 @@ std::unique_ptr<content::EyeDropper> ShowEyeDropper(
+@@ -33,7 +33,7 @@ std::unique_ptr<content::EyeDropper> Sho
      return nullptr;
    }
  

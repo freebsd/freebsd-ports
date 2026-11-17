@@ -1,4 +1,4 @@
---- src/services/device/device_service.cc.orig	2026-08-31 10:59:09 UTC
+--- src/services/device/device_service.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/services/device/device_service.cc
 @@ -6,6 +6,8 @@
  
@@ -9,7 +9,7 @@
  #include "base/functional/bind.h"
  #include "base/memory/weak_ptr.h"
  #include "base/task/single_thread_task_runner.h"
-@@ -308,7 +310,7 @@ void DeviceService::BindSerialPortManager(
+@@ -308,7 +310,7 @@ void DeviceService::BindSerialPortManage
    serial_port_manager_.AsyncCall(&SerialPortManagerImpl::Bind, FROM_HERE)
        .WithArgs(std::move(receiver));
  #else   // defined(IS_SERIAL_ENABLED_PLATFORM)

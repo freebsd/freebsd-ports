@@ -1,6 +1,6 @@
---- src/chrome/browser/first_run/first_run.h.orig	2026-09-25 15:26:43 UTC
+--- src/chrome/browser/first_run/first_run.h.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/first_run/first_run.h
-@@ -73,7 +73,7 @@
+@@ -73,7 +73,7 @@ struct MasterPrefs {
  #if BUILDFLAG(IS_MAC)
    bool confirm_to_quit;
  #endif
@@ -9,7 +9,7 @@
    bool eula_required = false;
  #endif
  };
-@@ -145,7 +145,7 @@
+@@ -145,7 +145,7 @@ ProcessInitialPreferencesResult ProcessI
      std::unique_ptr<installer::InitialPreferences> initial_prefs,
      MasterPrefs* out_prefs);
  

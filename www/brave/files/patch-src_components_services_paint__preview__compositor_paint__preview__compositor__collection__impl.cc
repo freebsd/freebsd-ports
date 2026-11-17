@@ -1,4 +1,4 @@
---- src/components/services/paint_preview_compositor/paint_preview_compositor_collection_impl.cc.orig	2026-03-13 06:02:14 UTC
+--- src/components/services/paint_preview_compositor/paint_preview_compositor_collection_impl.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/components/services/paint_preview_compositor/paint_preview_compositor_collection_impl.cc
 @@ -22,7 +22,7 @@
  
@@ -9,7 +9,7 @@
  #include "components/services/font/public/cpp/font_loader.h"
  #endif
  
-@@ -79,7 +79,7 @@ PaintPreviewCompositorCollectionImpl::PaintPreviewComp
+@@ -79,7 +79,7 @@ PaintPreviewCompositorCollectionImpl::Pa
      // Initialize font access for Skia.
  #if BUILDFLAG(IS_WIN)
    content::InitializeFontIntegration();

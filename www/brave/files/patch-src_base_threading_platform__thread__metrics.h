@@ -1,6 +1,6 @@
---- src/base/threading/platform_thread_metrics.h.orig	2025-10-02 04:28:32 UTC
+--- src/base/threading/platform_thread_metrics.h.orig	2026-10-18 18:43:23 UTC
 +++ src/base/threading/platform_thread_metrics.h
-@@ -67,7 +67,7 @@ class BASE_EXPORT PlatformThreadMetrics {
+@@ -67,7 +67,7 @@ class BASE_EXPORT PlatformThreadMetrics
        PlatformThreadHandle handle);
  #endif
  
@@ -9,7 +9,7 @@
      BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)
    static std::unique_ptr<PlatformThreadMetrics> CreateFromId(
        PlatformThreadId tid);
-@@ -109,7 +109,7 @@ class BASE_EXPORT PlatformThreadMetrics {
+@@ -109,7 +109,7 @@ class BASE_EXPORT PlatformThreadMetrics
  
    PlatformThreadHandle handle_;
  #elif BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_CHROMEOS) || \

@@ -1,6 +1,6 @@
---- src/brave/components/brave_shields/core/browser/filter_list_catalog_entry.cc.orig	2026-06-01 00:00:00 UTC
+--- src/brave/components/brave_shields/core/browser/filter_list_catalog_entry.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/brave/components/brave_shields/core/browser/filter_list_catalog_entry.cc
-@@ -85,7 +85,12 @@
+@@ -85,7 +85,12 @@ bool GetUint8(const base::Value* value,
    }
  }
  

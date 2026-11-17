@@ -1,6 +1,6 @@
---- src/net/disk_cache/simple/simple_file_tracker.cc.orig	2025-10-02 04:28:32 UTC
+--- src/net/disk_cache/simple/simple_file_tracker.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/net/disk_cache/simple/simple_file_tracker.cc
-@@ -36,7 +36,17 @@ bool SimpleFileTracker::TrackedFiles::InLRUList() cons
+@@ -36,7 +36,17 @@ bool SimpleFileTracker::TrackedFiles::In
  }
  
  SimpleFileTracker::SimpleFileTracker(int file_limit)

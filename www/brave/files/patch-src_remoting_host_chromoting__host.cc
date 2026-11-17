@@ -1,6 +1,6 @@
---- src/remoting/host/chromoting_host.cc.orig	2026-09-25 15:26:43 UTC
+--- src/remoting/host/chromoting_host.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/remoting/host/chromoting_host.cc
-@@ -143,7 +143,7 @@ void ChromotingHost::Start(const std::string& host_own
+@@ -143,7 +143,7 @@ void ChromotingHost::Start(const std::st
    }
  }
  
@@ -9,7 +9,7 @@
  void ChromotingHost::StartChromotingHostServices() {
    DCHECK_CALLED_ON_VALID_SEQUENCE(sequence_checker_);
    DCHECK(!ipc_server_);
-@@ -162,7 +162,7 @@ void ChromotingHost::BindChromotingHostServicesForServ
+@@ -162,7 +162,7 @@ void ChromotingHost::BindChromotingHostS
  }
  #endif
  
@@ -18,7 +18,7 @@
  void ChromotingHost::BindChromotingHostServices(
      mojo::PendingReceiver<mojom::ChromotingHostServices> receiver) {
    DCHECK_CALLED_ON_VALID_SEQUENCE(sequence_checker_);
-@@ -297,7 +297,7 @@ std::optional<ErrorCode> ChromotingHost::OnSessionPoli
+@@ -297,7 +297,7 @@ std::optional<ErrorCode> ChromotingHost:
    return per_session_policies_validator_.Run(policies);
  }
  

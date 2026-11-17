@@ -1,4 +1,4 @@
---- src/third_party/angle/src/gpu_info_util/SystemInfo_libpci.cpp.orig	2026-02-11 09:05:39 UTC
+--- src/third_party/angle/src/gpu_info_util/SystemInfo_libpci.cpp.orig	2026-10-18 18:43:23 UTC
 +++ src/third_party/angle/src/gpu_info_util/SystemInfo_libpci.cpp
 @@ -13,6 +13,11 @@
  #include <unistd.h>
@@ -12,11 +12,10 @@
  #include "common/angleutils.h"
  #include "common/debug.h"
  
-@@ -106,6 +111,75 @@ struct LibPCI : private angle::NonCopyable
- };
+@@ -107,6 +112,75 @@ struct LibPCI : private angle::NonCopyab
  
  }  // anonymous namespace
-+
+ 
 +#if defined(__FreeBSD__)
 +// Adds an entry per PCI GPU found and fills the device and vendor ID.
 +bool GetPCIDevicesFreeBSD(std::vector<GPUDeviceInfo> *devices)
@@ -85,6 +84,7 @@
 +    return true;
 +}
 +#endif
- 
++
  // Adds an entry per PCI GPU found and fills the device and vendor ID.
  bool GetPCIDevicesWithLibPCI(std::vector<GPUDeviceInfo> *devices)
+ {

@@ -1,4 +1,4 @@
---- src/base/process/process_posix.cc.orig	2026-03-13 06:02:14 UTC
+--- src/base/process/process_posix.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/base/process/process_posix.cc
 @@ -25,10 +25,15 @@
  #include "base/trace_event/trace_event.h"
@@ -17,7 +17,7 @@
  #if BUILDFLAG(CLANG_PROFILING)
  #include "base/test/clang_profiling.h"
  #endif
-@@ -104,7 +109,7 @@ bool WaitpidWithTimeout(base::ProcessHandle handle,
+@@ -104,7 +109,7 @@ bool WaitpidWithTimeout(base::ProcessHan
  }
  #endif
  
@@ -26,7 +26,7 @@
  // Using kqueue on Mac so that we can wait on non-child processes.
  // We can't use kqueues on child processes because we need to reap
  // our own children using wait.
-@@ -370,7 +375,7 @@ bool Process::WaitForExitWithTimeoutImpl(base::Process
+@@ -369,7 +374,7 @@ bool Process::WaitForExitWithTimeoutImpl
    const bool exited = (parent_pid < 0);
  
    if (!exited && parent_pid != our_pid) {
@@ -35,7 +35,7 @@
      // On Mac we can wait on non child processes.
      return WaitForSingleNonChildProcess(handle, timeout);
  #else
-@@ -403,7 +408,56 @@ void Process::Exited(int exit_code) const {}
+@@ -400,7 +405,56 @@ bool Process::WaitForExitWithTimeoutImpl
  
  int Process::GetOSPriority() const {
    DCHECK(IsValid());
@@ -45,7 +45,7 @@
 +#else
    return getpriority(PRIO_PROCESS, static_cast<id_t>(process_));
 +#endif
- }
++}
 +
 +Time Process::CreationTime() const {
 +// avoid ps pledge in the network process
@@ -80,8 +80,8 @@
 +#if BUILDFLAG(IS_BSD)
 +Process::Priority Process::GetPriority() const {
 +  return Priority::kUserBlocking;
-+}
-+
+ }
+ 
 +bool Process::SetPriority(Priority priority) {
 +  return false;
 +}
@@ -90,5 +90,5 @@
 +  return false;
 +}
 +#endif
- 
++
  }  // namespace base

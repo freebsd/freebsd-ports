@@ -1,4 +1,4 @@
---- src/chrome/browser/ui/webui/certificate_manager/client_cert_sources.cc.orig	2026-09-25 15:26:43 UTC
+--- src/chrome/browser/ui/webui/certificate_manager/client_cert_sources.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/ui/webui/certificate_manager/client_cert_sources.cc
 @@ -54,7 +54,7 @@
  #include "net/ssl/client_cert_store_mac.h"
@@ -18,7 +18,7 @@
  class ClientCertStoreFactoryNSS : public ClientCertStoreFactory {
   public:
    std::unique_ptr<net::ClientCertStore> CreateClientCertStore() override {
-@@ -154,7 +154,7 @@ class ClientCertStoreFactoryMac : public ClientCertSto
+@@ -154,7 +154,7 @@ class ClientCertStoreFactoryMac : public
  };
  #endif
  
@@ -27,7 +27,7 @@
  std::unique_ptr<ClientCertStoreLoader> CreatePlatformClientCertLoader(
      Profile* profile) {
  #if BUILDFLAG(IS_WIN)
-@@ -169,7 +169,7 @@ std::unique_ptr<ClientCertStoreLoader> CreatePlatformC
+@@ -169,7 +169,7 @@ std::unique_ptr<ClientCertStoreLoader> C
  }
  #endif
  
@@ -36,7 +36,7 @@
  class ClientCertStoreFactoryProvisioned : public ClientCertStoreFactory {
   public:
    explicit ClientCertStoreFactoryProvisioned(
-@@ -325,7 +325,7 @@ class ClientCertSource : public CertificateManagerPage
+@@ -325,7 +325,7 @@ class ClientCertSource : public Certific
    std::optional<net::CertificateList> certs_;
  };
  
@@ -63,7 +63,7 @@
  std::unique_ptr<CertificateManagerPageHandler::CertSource>
  CreateProvisionedClientCertSource(Profile* profile) {
    return std::make_unique<ClientCertSource>(
-@@ -1105,7 +1105,7 @@ bool ClientCertManagementAccessControls::IsChangeAllow
+@@ -1105,7 +1105,7 @@ bool ClientCertManagementAccessControls:
  
    return client_cert_policy_ == ClientCertificateManagementPermission::kAll;
  }

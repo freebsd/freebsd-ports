@@ -1,6 +1,6 @@
---- src/chrome/browser/screen_ai/screen_ai_service_handler_base.cc.orig	2026-05-07 17:02:56 UTC
+--- src/chrome/browser/screen_ai/screen_ai_service_handler_base.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/screen_ai/screen_ai_service_handler_base.cc
-@@ -253,7 +253,7 @@ void ScreenAIServiceHandlerBase::LaunchIfNotRunning() 
+@@ -253,7 +253,7 @@ void ScreenAIServiceHandlerBase::LaunchI
    base::FilePath binary_path = state_instance->get_component_binary_path();
  #if BUILDFLAG(IS_WIN)
    std::vector<base::FilePath> preload_libraries = {binary_path};
@@ -9,7 +9,7 @@
    std::vector<std::string> extra_switches = {
        base::StringPrintf("--%s=%s", screen_ai::GetBinaryPathSwitch(),
                           binary_path.MaybeAsASCII().c_str())};
-@@ -268,7 +268,7 @@ void ScreenAIServiceHandlerBase::LaunchIfNotRunning() 
+@@ -268,7 +268,7 @@ void ScreenAIServiceHandlerBase::LaunchI
            .WithPreloadedLibraries(
                preload_libraries,
                content::ServiceProcessHostPreloadLibraries::GetPassKey())

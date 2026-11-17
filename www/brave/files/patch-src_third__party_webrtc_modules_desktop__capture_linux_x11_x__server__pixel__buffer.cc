@@ -1,4 +1,4 @@
---- src/third_party/webrtc/modules/desktop_capture/linux/x11/x_server_pixel_buffer.cc.orig	2026-06-04 10:12:25 UTC
+--- src/third_party/webrtc/modules/desktop_capture/linux/x11/x_server_pixel_buffer.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/third_party/webrtc/modules/desktop_capture/linux/x11/x_server_pixel_buffer.cc
 @@ -17,6 +17,13 @@
  #include <sys/ipc.h>
@@ -14,7 +14,7 @@
  #include <cstdint>
  #include <vector>
  
-@@ -170,13 +177,25 @@ void XServerPixelBuffer::ReleaseSharedMemorySegment() 
+@@ -170,13 +177,25 @@ void XServerPixelBuffer::ReleaseSharedMe
    if (!shm_segment_info_)
      return;
    if (xshm_attached_) {
@@ -40,7 +40,7 @@
    delete shm_segment_info_;
    shm_segment_info_ = nullptr;
  }
-@@ -224,21 +243,55 @@ void XServerPixelBuffer::InitShm(const XWindowAttribut
+@@ -224,21 +243,55 @@ void XServerPixelBuffer::InitShm(const X
    shm_segment_info_->shmid = -1;
    shm_segment_info_->shmaddr = nullptr;
    shm_segment_info_->readOnly = False;
@@ -96,7 +96,7 @@
          XSync(display_, False);
          if (error_trap.GetLastErrorAndDisable() != 0)
            xshm_attached_ = false;
-@@ -263,7 +316,9 @@ void XServerPixelBuffer::InitShm(const XWindowAttribut
+@@ -263,7 +316,9 @@ void XServerPixelBuffer::InitShm(const X
    if (have_pixmaps)
      have_pixmaps = InitPixmaps(default_depth);
  

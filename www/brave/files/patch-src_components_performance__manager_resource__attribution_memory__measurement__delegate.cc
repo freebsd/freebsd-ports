@@ -1,6 +1,6 @@
---- src/components/performance_manager/resource_attribution/memory_measurement_delegate.cc.orig	2026-09-25 15:26:43 UTC
+--- src/components/performance_manager/resource_attribution/memory_measurement_delegate.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/components/performance_manager/resource_attribution/memory_measurement_delegate.cc
-@@ -100,7 +100,7 @@ void MemoryMeasurementDelegateImpl::OnMemorySummary(
+@@ -100,7 +100,7 @@ void MemoryMeasurementDelegateImpl::OnMe
                  base::KiB(process_dump.os_dump().resident_set_kb),
              .private_footprint =
                  base::KiB(process_dump.os_dump().private_footprint_kb),

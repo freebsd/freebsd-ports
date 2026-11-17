@@ -1,4 +1,4 @@
---- src/components/web_package/signed_web_bundles/ecdsa_p256_sha256_signature.cc.orig	2026-09-25 15:26:43 UTC
+--- src/components/web_package/signed_web_bundles/ecdsa_p256_sha256_signature.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/components/web_package/signed_web_bundles/ecdsa_p256_sha256_signature.cc
 @@ -9,7 +9,8 @@
  #include "base/strings/stringprintf.h"
@@ -10,7 +10,7 @@
  
  namespace web_package {
  
-@@ -50,8 +51,9 @@ EcdsaP256SHA256Signature::EcdsaP256SHA256Signature(std
+@@ -50,8 +51,9 @@ EcdsaP256SHA256Signature::EcdsaP256SHA25
  [[nodiscard]] bool EcdsaP256SHA256Signature::Verify(
      base::span<const uint8_t> message,
      const EcdsaP256PublicKey& public_key) const {

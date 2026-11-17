@@ -1,4 +1,4 @@
---- src/base/system/sys_info_openbsd.cc.orig	2026-02-11 09:05:39 UTC
+--- src/base/system/sys_info_openbsd.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/base/system/sys_info_openbsd.cc
 @@ -13,6 +13,7 @@
  #include "base/notreached.h"
@@ -8,7 +8,7 @@
  
  namespace base {
  
-@@ -29,9 +30,14 @@ ByteSize AmountOfMemory(int pages_name) {
+@@ -29,9 +30,14 @@ ByteSize AmountOfMemory(int pages_name)
  
  }  // namespace
  
@@ -50,7 +50,7 @@
  }
  
  // static
-@@ -57,15 +79,27 @@ uint64_t SysInfo::MaxSharedMemorySize() {
+@@ -57,15 +79,27 @@ uint64_t SysInfo::MaxSharedMemorySize()
    int mib[] = {CTL_KERN, KERN_SHMINFO, KERN_SHMINFO_SHMMAX};
    size_t limit;
    size_t size = sizeof(limit);

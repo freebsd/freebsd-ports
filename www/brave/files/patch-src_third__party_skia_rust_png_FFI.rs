@@ -1,4 +1,4 @@
---- src/third_party/skia/rust/png/FFI.rs.orig	2026-09-25 15:26:43 UTC
+--- src/third_party/skia/rust/png/FFI.rs.orig	2026-10-18 18:43:23 UTC
 +++ src/third_party/skia/rust/png/FFI.rs
 @@ -244,6 +244,7 @@ mod ffi {
          type StreamWriter;
@@ -8,11 +8,10 @@
      }
  }
  
-@@ -1184,4 +1185,12 @@ fn new_writer(
- /// See also https://docs.rs/png/latest/png/struct.StreamWriter.html#method.finish
+@@ -1185,3 +1186,11 @@ fn new_writer(
  fn finish_encoding(stream_writer: Box<StreamWriter>) -> ffi::EncodingResult {
      stream_writer.0.finish().as_ref().err().into()
-+}
+ }
 +
 +#[allow(unused_variables)]
 +fn initialize_cpudetect() {
@@ -20,4 +19,4 @@
 +    let a = std::arch::is_aarch64_feature_detected!("crc");
 +    #[cfg(any(target_arch = "x86", target_arch = "x86_64"))]
 +    let a = std::arch::is_x86_feature_detected!("sse2");
- }
++}

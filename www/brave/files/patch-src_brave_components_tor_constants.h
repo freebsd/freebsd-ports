@@ -1,6 +1,6 @@
---- src/brave/components/tor/constants.h.orig	2026-06-01 00:00:00 UTC
+--- src/brave/components/tor/constants.h.orig	2026-10-18 18:43:23 UTC
 +++ src/brave/components/tor/constants.h
-@@ -39,7 +39,11 @@
+@@ -39,7 +39,11 @@ inline constexpr char kTorClientComponen
      "jKVAy1hc9mApZSyt4oGvUu4SJZnxlYMrY4Ze+OWbDesi2JGy+6dA1ddL9IdnwCb3"
      "9CBOMNjaHeCVz0MKxdCWGPieQM0R7S1KvDCVqAkss6NAbLB6AVM0JulqxC9b+hr/"
      "xwIDAQAB";

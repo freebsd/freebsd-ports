@@ -1,6 +1,6 @@
---- src/chrome/browser/ui/webui/password_manager/notification_cards_handler.h.orig	2026-09-25 15:26:43 UTC
+--- src/chrome/browser/ui/webui/password_manager/notification_cards_handler.h.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/ui/webui/password_manager/notification_cards_handler.h
-@@ -56,7 +56,7 @@ class NotificationCardsHandler : public content::WebUI
+@@ -56,7 +56,7 @@ class NotificationCardsHandler : public
  
    PasswordNotificationCardBase* GetNotificationCardToShowAndUpdatePref();
  
@@ -9,7 +9,7 @@
    void OnEncryptorReceived(base::Value callback_id,
                             scoped_refptr<os_crypt_async::Encryptor> encryptor);
  #endif  // BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
-@@ -65,7 +65,7 @@ class NotificationCardsHandler : public content::WebUI
+@@ -65,7 +65,7 @@ class NotificationCardsHandler : public
  
    std::vector<std::unique_ptr<PasswordNotificationCardBase>>
        notification_cards_;

@@ -1,6 +1,6 @@
---- src/chrome/browser/web_applications/os_integration/web_app_shortcut.cc.orig	2026-09-25 15:26:43 UTC
+--- src/chrome/browser/web_applications/os_integration/web_app_shortcut.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/web_applications/os_integration/web_app_shortcut.cc
-@@ -228,7 +228,7 @@ std::unique_ptr<ShortcutInfo> BuildShortcutInfoWithout
+@@ -228,7 +228,7 @@ std::unique_ptr<ShortcutInfo> BuildShort
  
  // TODO(crbug.com/40257107): Implement tests on Linux for using shortcuts_menu
  // actions.
@@ -9,7 +9,7 @@
    const std::vector<WebAppShortcutsMenuItemInfo>& shortcuts_menu_item_infos =
        CreateShortcutsMenuItemInfos(state.shortcut_menus());
    DCHECK_LE(shortcuts_menu_item_infos.size(), kMaxApplicationDockMenuItems);
-@@ -404,7 +404,7 @@ base::span<const int> GetDesiredIconSizesForShortcut()
+@@ -404,7 +404,7 @@ base::span<const int> GetDesiredIconSize
  #if BUILDFLAG(IS_MAC)
    static constexpr int kDesiredIconSizesForShortcut[] = {16, 32, 128, 256, 512};
    return kDesiredIconSizesForShortcut;

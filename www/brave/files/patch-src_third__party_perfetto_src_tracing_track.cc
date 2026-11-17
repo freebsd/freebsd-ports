@@ -1,6 +1,6 @@
---- src/third_party/perfetto/src/tracing/track.cc.orig	2026-08-12 09:02:10 UTC
+--- src/third_party/perfetto/src/tracing/track.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/third_party/perfetto/src/tracing/track.cc
-@@ -60,8 +60,9 @@ protos::gen::TrackDescriptor ProcessTrack::Serialize()
+@@ -60,8 +60,9 @@ protos::gen::TrackDescriptor ProcessTrac
    auto desc = Track::Serialize();
    auto pd = desc.mutable_process();
    pd->set_pid(static_cast<int32_t>(pid));

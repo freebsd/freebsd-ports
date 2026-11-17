@@ -1,6 +1,6 @@
---- src/components/webapps/browser/web_app_url_config.cc.orig	2026-05-07 17:02:56 UTC
+--- src/components/webapps/browser/web_app_url_config.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/components/webapps/browser/web_app_url_config.cc
-@@ -35,7 +35,7 @@ bool IsUrlEligibleForWebApp(const GURL& url) {
+@@ -35,7 +35,7 @@ bool IsUrlEligibleForWebApp(const GURL&
    }
  
    bool allow_extension_apps = true;

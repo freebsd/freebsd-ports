@@ -1,6 +1,6 @@
---- src/brave/build/commands/lib/buildArgs.ts.orig	2026-06-01 00:00:00 UTC
+--- src/brave/build/commands/lib/buildArgs.ts.orig	2026-10-18 18:43:23 UTC
 +++ src/brave/build/commands/lib/buildArgs.ts
-@@ -36,6 +36,13 @@
+@@ -35,6 +35,13 @@ const FORWARD_ENV_CONFIG_VARS_TO_GN_ARGS
    'is_brave_origin_branded',
  ]
  
@@ -14,7 +14,7 @@
  export function getBuildArgs(config: Config) {
    let args: Record<string, any> = {
      'import("//brave/build/args/brave_defaults.gni")': null,
-@@ -178,7 +185,7 @@
+@@ -167,7 +174,7 @@ export function getBuildArgs(config: Con
    // 3. On Android Release x64/arm64, debug sections exceed 4GiB causing
    //    "relocation R_X86_64_32 out of range" linker errors.
    if (
@@ -23,17 +23,17 @@
        && (config.targetArch === 'x86'
          || (!config.isDebug()
            && !config.isComponentBuild()
-@@ -199,7 +206,7 @@
+@@ -187,7 +194,7 @@ export function getBuildArgs(config: Con
+ 
    // For Linux Release builds, upstream doesn't want to use symbol_level = 2
-   // unless use_debug_fission is set. However, they don't set it when a
-   // cc_wrapper is used. Since we use cc_wrapper we need to set it manually.
+   // unless use_debug_fission is set.
 -  if (config.targetOS === 'linux' && config.isReleaseBuild()) {
 +  if (isLinuxLike(config.targetOS) && config.isReleaseBuild()) {
      // use_debug_fission requires symbol_level >= 1
      args.symbol_level = 1
      args.use_debug_fission = true
-@@ -231,6 +238,21 @@
-     }
+@@ -209,6 +216,21 @@ export function getBuildArgs(config: Con
+     args.use_system_xcode = false
    }
  
 +  if (config.targetOS === 'freebsd') {
@@ -51,6 +51,6 @@
 +    args.fatal_linker_warnings = false
 +  }
 +
-   // Devtools: Now we patch devtools frontend, so it is useful to see
-   // if something goes wrong on CI builds.
-   if (config.targetOS !== 'android' && config.targetOS !== 'ios' && isCI) {
+   if (config.targetOS === 'linux') {
+     if (config.targetArch !== 'x86') {
+       // Include vaapi support

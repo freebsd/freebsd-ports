@@ -1,4 +1,4 @@
---- src/chrome/browser/signin/signin_hats_util.cc.orig	2026-09-25 15:26:43 UTC
+--- src/chrome/browser/signin/signin_hats_util.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/signin/signin_hats_util.cc
 @@ -45,7 +45,7 @@
  
@@ -18,7 +18,7 @@
    if (!profile || profile->IsOffTheRecord() ||
        !IsSurveyEnabledForHatsTrigger(trigger)) {
      return;
-@@ -285,7 +285,7 @@ void LaunchHatsSurveyForProfile(const std::string& tri
+@@ -285,7 +285,7 @@ void LaunchHatsSurveyForProfile(const st
                                      access_point_for_data_type_promo) {
    LaunchHatsSurveyForProfileInternal(
        trigger, profile, defer_if_no_browser,

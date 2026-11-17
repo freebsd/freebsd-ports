@@ -1,6 +1,6 @@
---- src/device/vr/openxr/openxr_swapchain_info.cc.orig	2026-09-25 15:26:43 UTC
+--- src/device/vr/openxr/openxr_swapchain_info.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/device/vr/openxr/openxr_swapchain_info.cc
-@@ -17,7 +17,7 @@ OpenXrSwapchainInfo::OpenXrSwapchainInfo(ID3D11Texture
+@@ -17,7 +17,7 @@ OpenXrSwapchainInfo::OpenXrSwapchainInfo
  #elif BUILDFLAG(IS_ANDROID)
  OpenXrSwapchainInfo::OpenXrSwapchainInfo(uint32_t texture)
      : openxr_texture(texture) {}

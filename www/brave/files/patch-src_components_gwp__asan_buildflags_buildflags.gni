@@ -1,6 +1,6 @@
---- src/components/gwp_asan/buildflags/buildflags.gni.orig	2025-10-30 15:44:36 UTC
+--- src/components/gwp_asan/buildflags/buildflags.gni.orig	2026-10-18 18:43:23 UTC
 +++ src/components/gwp_asan/buildflags/buildflags.gni
-@@ -11,10 +11,10 @@ import("//build/config/compiler/compiler.gni")
+@@ -11,10 +11,10 @@ import("//build/config/compiler/compiler
  # Android requires frame pointers for unwinding, unwind tables aren't shipped in
  # official builds.
  # iOS is disabled when !use_partition_alloc due to https://crbug.com/446856826

@@ -1,4 +1,4 @@
---- src/media/gpu/gpu_video_decode_accelerator_factory.cc.orig	2025-05-05 10:57:53 UTC
+--- src/media/gpu/gpu_video_decode_accelerator_factory.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/media/gpu/gpu_video_decode_accelerator_factory.cc
 @@ -13,7 +13,7 @@
  #include "media/gpu/media_gpu_export.h"
@@ -9,7 +9,7 @@
  #include "media/gpu/v4l2/legacy/v4l2_video_decode_accelerator.h"
  #include "media/gpu/v4l2/v4l2_device.h"
  #endif
-@@ -29,7 +29,7 @@ GpuVideoDecodeAcceleratorFactory::CreateVDA(
+@@ -29,7 +29,7 @@ GpuVideoDecodeAcceleratorFactory::Create
    if (gpu_preferences.disable_accelerated_video_decode)
      return nullptr;
  

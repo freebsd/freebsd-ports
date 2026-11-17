@@ -1,4 +1,4 @@
---- src/ui/gfx/font_render_params.h.orig	2026-08-12 09:02:10 UTC
+--- src/ui/gfx/font_render_params.h.orig	2026-10-18 18:43:23 UTC
 +++ src/ui/gfx/font_render_params.h
 @@ -115,12 +115,12 @@ COMPONENT_EXPORT(GFX)
  FontRenderParams GetFontRenderParams(const FontRenderParamsQuery& query,
@@ -15,7 +15,7 @@
  // TODO(crbug.com/517630459) Return this to `ForTesting()` after per display
  // subpixel rendering is implemented.
  COMPONENT_EXPORT(GFX) bool GetFontRenderParamsSubpixelRenderingEnabled();
-@@ -130,7 +130,7 @@ COMPONENT_EXPORT(GFX) bool GetFontRenderParamsSubpixel
+@@ -130,7 +130,7 @@ COMPONENT_EXPORT(GFX) bool GetFontRender
  COMPONENT_EXPORT(GFX) float GetFontRenderParamsDeviceScaleFactor();
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \

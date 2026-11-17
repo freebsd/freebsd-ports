@@ -1,6 +1,6 @@
---- src/components/proxy_config/proxy_prefs_utils.cc.orig	2026-08-31 10:59:09 UTC
+--- src/components/proxy_config/proxy_prefs_utils.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/components/proxy_config/proxy_prefs_utils.cc
-@@ -64,7 +64,7 @@ net::ProxyChain ProxyOverrideRuleProxyFromString(std::
+@@ -64,7 +64,7 @@ net::ProxyChain ProxyOverrideRuleProxyFr
  bool ProxyOverrideRulesAllowed(const PrefService* pref_service,
                                 policy::PolicyService* policy_service) {
    CHECK(pref_service);

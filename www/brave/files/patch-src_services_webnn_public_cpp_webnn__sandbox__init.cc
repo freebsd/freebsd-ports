@@ -1,20 +1,20 @@
---- src/services/webnn/public/cpp/webnn_sandbox_init.cc.orig	2026-09-25 15:26:43 UTC
+--- src/services/webnn/public/cpp/webnn_sandbox_init.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/services/webnn/public/cpp/webnn_sandbox_init.cc
-@@ -10,7 +10,7 @@
- #include "build/build_config.h"
+@@ -12,7 +12,7 @@
  #include "services/webnn/public/cpp/webnn_buildflags.h"
+ #include "services/webnn/public/mojom/features.mojom-features.h"
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  #include <dlfcn.h>
  #endif
  
-@@ -22,7 +22,7 @@ void PreSandboxWebNNInitialization() {
+@@ -34,7 +34,7 @@ void PreSandboxWebNNInitialization(bool
    base::FilePath library_path(
        FILE_PATH_LITERAL("libLiteRtWebGpuAccelerator.dll"));
    base::LoadNativeLibrary(library_path, nullptr);
 -#elif BUILDFLAG(IS_LINUX)
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   base::FilePath library_path;
-   if (base::PathService::Get(base::DIR_MODULE, &library_path)) {
-     library_path =
+   // On Linux, the library is preloaded once in the Zygote process during
+   // PreSandboxInit(), allowing all forked renderers to share the library
+   // pages via copy-on-write without repeating initialization. The Zygote

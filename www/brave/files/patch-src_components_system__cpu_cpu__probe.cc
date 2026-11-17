@@ -1,4 +1,4 @@
---- src/components/system_cpu/cpu_probe.cc.orig	2025-08-07 06:57:29 UTC
+--- src/components/system_cpu/cpu_probe.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/components/system_cpu/cpu_probe.cc
 @@ -20,6 +20,10 @@
  #include "components/system_cpu/cpu_probe_mac.h"
@@ -11,7 +11,7 @@
  namespace system_cpu {
  
  // static
-@@ -30,6 +34,9 @@ std::unique_ptr<CpuProbe> CpuProbe::Create() {
+@@ -30,6 +34,9 @@ std::unique_ptr<CpuProbe> CpuProbe::Crea
    return CpuProbeWin::Create();
  #elif BUILDFLAG(IS_MAC)
    return CpuProbeMac::Create();

@@ -1,6 +1,6 @@
---- src/remoting/host/setup/me2me_native_messaging_host.cc.orig	2026-07-01 06:24:19 UTC
+--- src/remoting/host/setup/me2me_native_messaging_host.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/remoting/host/setup/me2me_native_messaging_host.cc
-@@ -331,7 +331,7 @@ void Me2MeNativeMessagingHost::ProcessStartDaemon(base
+@@ -331,7 +331,7 @@ void Me2MeNativeMessagingHost::ProcessSt
                                                    base::DictValue response) {
    DCHECK(task_runner()->BelongsToCurrentThread());
  

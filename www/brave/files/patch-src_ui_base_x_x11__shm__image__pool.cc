@@ -1,4 +1,4 @@
---- src/ui/base/x/x11_shm_image_pool.cc.orig	2026-08-12 09:02:10 UTC
+--- src/ui/base/x/x11_shm_image_pool.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/ui/base/x/x11_shm_image_pool.cc
 @@ -16,6 +16,7 @@
  #include "base/functional/callback.h"
@@ -8,7 +8,7 @@
  #include "build/build_config.h"
  #include "net/base/url_util.h"
  #include "ui/events/platform/platform_event_dispatcher.h"
-@@ -44,10 +45,14 @@ constexpr float kShmResizeShrinkThreshold =
+@@ -44,10 +45,14 @@ constexpr float kShmResizeShrinkThreshol
      1.0f / (kShmResizeThreshold * kShmResizeThreshold);
  
  std::size_t MaxShmSegmentSizeImpl() {
@@ -43,7 +43,7 @@
    // MIT-SHM may be available on remote connetions, but it will be unusable.  Do
    // a best-effort check to see if the host is remote to disable the SHM
    // codepath.  It may be possible in contrived cases for there to be a
-@@ -92,6 +102,7 @@ bool ShouldUseMitShm(x11::Connection* connection) {
+@@ -92,6 +102,7 @@ bool ShouldUseMitShm(x11::Connection* co
      return false;
  
    return true;
@@ -51,7 +51,7 @@
  }
  #endif  // !BUILDFLAG(IS_CHROMEOS)
  
-@@ -191,7 +202,7 @@ bool XShmImagePool::Resize(const gfx::Size& pixel_size
+@@ -191,7 +202,7 @@ bool XShmImagePool::Resize(const gfx::Si
          shmctl(state.shmid, IPC_RMID, nullptr);
          return false;
        }
@@ -60,7 +60,7 @@
        // On Linux, a shmid can still be attached after IPC_RMID if otherwise
        // kept alive.  Detach before XShmAttach to prevent a memory leak in case
        // the process dies.
-@@ -210,7 +221,7 @@ bool XShmImagePool::Resize(const gfx::Size& pixel_size
+@@ -210,7 +221,7 @@ bool XShmImagePool::Resize(const gfx::Si
          return false;
        state.shmseg = shmseg;
        state.shmem_attached_to_server = true;

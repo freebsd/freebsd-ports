@@ -1,4 +1,4 @@
---- src/third_party/swiftshader/src/System/Linux/MemFd.cpp.orig	2023-09-13 18:23:44 UTC
+--- src/third_party/swiftshader/src/System/Linux/MemFd.cpp.orig	2026-10-18 18:43:23 UTC
 +++ src/third_party/swiftshader/src/System/Linux/MemFd.cpp
 @@ -25,6 +25,7 @@
  #	define MFD_CLOEXEC 0x0001U
@@ -16,7 +16,7 @@
  
  LinuxMemFd::~LinuxMemFd()
  {
-@@ -63,13 +65,17 @@ bool LinuxMemFd::allocate(const char *name, size_t siz
+@@ -63,13 +65,17 @@ bool LinuxMemFd::allocate(const char *na
  {
  	close();
  

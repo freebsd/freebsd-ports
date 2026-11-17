@@ -1,6 +1,6 @@
---- src/third_party/blink/renderer/platform/widget/compositing/blink_categorized_worker_pool_delegate.cc.orig	2023-05-31 08:12:17 UTC
+--- src/third_party/blink/renderer/platform/widget/compositing/blink_categorized_worker_pool_delegate.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/third_party/blink/renderer/platform/widget/compositing/blink_categorized_worker_pool_delegate.cc
-@@ -27,7 +27,7 @@ BlinkCategorizedWorkerPoolDelegate& BlinkCategorizedWo
+@@ -27,7 +27,7 @@ BlinkCategorizedWorkerPoolDelegate& Blin
  
  void BlinkCategorizedWorkerPoolDelegate::NotifyThreadWillRun(
      base::PlatformThreadId tid) {

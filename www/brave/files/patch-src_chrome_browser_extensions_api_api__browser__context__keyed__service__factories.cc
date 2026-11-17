@@ -1,4 +1,4 @@
---- src/chrome/browser/extensions/api/api_browser_context_keyed_service_factories.cc.orig	2026-08-31 10:59:09 UTC
+--- src/chrome/browser/extensions/api/api_browser_context_keyed_service_factories.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/extensions/api/api_browser_context_keyed_service_factories.cc
 @@ -55,7 +55,7 @@
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/extensions/api/web_authentication_proxy/web_authentication_proxy_api.h"
  #include "chrome/browser/extensions/api/web_authentication_proxy/web_authentication_proxy_service.h"
  #endif
-@@ -150,7 +150,7 @@ void EnsureApiBrowserContextKeyedServiceFactoriesBuilt
+@@ -150,7 +150,7 @@ void EnsureApiBrowserContextKeyedService
  #endif  // BUILDFLAG(ENABLE_EXTENSIONS)
  
    // These APIs are intentionally not supported on desktop Android.

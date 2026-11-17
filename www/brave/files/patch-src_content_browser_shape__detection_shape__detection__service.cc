@@ -1,4 +1,4 @@
---- src/content/browser/shape_detection/shape_detection_service.cc.orig	2025-12-05 10:12:50 UTC
+--- src/content/browser/shape_detection/shape_detection_service.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/content/browser/shape_detection/shape_detection_service.cc
 @@ -15,7 +15,7 @@
  #endif
@@ -9,7 +9,7 @@
  #include "content/public/browser/service_process_host.h"
  #else
  #include "content/browser/gpu/gpu_process_host.h"
-@@ -29,7 +29,7 @@ shape_detection::mojom::ShapeDetectionService* GetShap
+@@ -29,7 +29,7 @@ shape_detection::mojom::ShapeDetectionSe
        remote;
    if (!*remote) {
  #if BUILDFLAG(IS_WIN) || (BUILDFLAG(GOOGLE_CHROME_BRANDING) && \

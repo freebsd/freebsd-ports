@@ -1,4 +1,4 @@
---- src/third_party/webrtc/rtc_base/physical_socket_server.cc.orig	2026-06-04 10:12:25 UTC
+--- src/third_party/webrtc/rtc_base/physical_socket_server.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/third_party/webrtc/rtc_base/physical_socket_server.cc
 @@ -63,7 +63,7 @@
  #undef SetPort
@@ -9,7 +9,7 @@
  #include <asm-generic/socket.h>
  #include <sys/epoll.h>
  #endif
-@@ -381,7 +381,7 @@ int PhysicalSocket::GetOption(Option opt, int* value) 
+@@ -381,7 +381,7 @@ int PhysicalSocket::GetOption(Option opt
      return -1;
    }
    if (opt == OPT_DONTFRAGMENT) {
@@ -18,7 +18,7 @@
      *value = (*value != IP_PMTUDISC_DONT) ? 1 : 0;
  #endif
    } else if (opt == OPT_DSCP) {
-@@ -410,7 +410,7 @@ int PhysicalSocket::SetOption(Option opt, int value) {
+@@ -410,7 +410,7 @@ int PhysicalSocket::SetOption(Option opt
    if (TranslateOption(opt, &slevel, &sopt) == -1)
      return -1;
    if (opt == OPT_DONTFRAGMENT) {
@@ -27,7 +27,7 @@
      value = (value) ? IP_PMTUDISC_DO : IP_PMTUDISC_DONT;
  #endif
    } else if (opt == OPT_DSCP) {
-@@ -445,7 +445,7 @@ int PhysicalSocket::SetOption(Option opt, int value) {
+@@ -445,7 +445,7 @@ int PhysicalSocket::SetOption(Option opt
  int PhysicalSocket::Send(const void* pv, size_t cb) {
    int sent = DoSend(
        s_, reinterpret_cast<const char*>(pv), static_cast<int>(cb),
@@ -36,7 +36,7 @@
        // Suppress SIGPIPE. Without this, attempting to send on a socket whose
        // other end is closed will result in a SIGPIPE signal being raised to
        // our process, which by default will terminate the process, which we
-@@ -474,7 +474,7 @@ int PhysicalSocket::SendTo(const void* buffer,
+@@ -474,7 +474,7 @@ int PhysicalSocket::SendTo(const void* b
    size_t len = addr.ToSockAddrStorage(&saddr);
    int sent =
        DoSendTo(s_, static_cast<const char*>(buffer), static_cast<int>(length),
@@ -45,7 +45,7 @@
                 // Suppress SIGPIPE. See above for explanation.
                 MSG_NOSIGNAL,
  #else
-@@ -756,7 +756,7 @@ int PhysicalSocket::TranslateOption(Option opt, int* s
+@@ -756,7 +756,7 @@ int PhysicalSocket::TranslateOption(Opti
        *slevel = IPPROTO_IP;
        *sopt = IP_DONTFRAGMENT;
        break;
@@ -54,7 +54,7 @@
        RTC_LOG(LS_WARNING) << "Socket::OPT_DONTFRAGMENT not supported.";
        return -1;
  #elif defined(WEBRTC_POSIX)
-@@ -805,7 +805,7 @@ int PhysicalSocket::TranslateOption(Option opt, int* s
+@@ -805,7 +805,7 @@ int PhysicalSocket::TranslateOption(Opti
        return -1;
  #endif
      case OPT_RECV_ECN:
@@ -63,7 +63,7 @@
        if (family_ == AF_INET6) {
          *slevel = IPPROTO_IPV6;
          *sopt = IPV6_RECVTCLASS;
-@@ -825,10 +825,19 @@ int PhysicalSocket::TranslateOption(Option opt, int* s
+@@ -825,10 +825,19 @@ int PhysicalSocket::TranslateOption(Opti
        *sopt = SO_KEEPALIVE;
        break;
      case OPT_TCP_KEEPCNT:
@@ -83,7 +83,7 @@
        *slevel = IPPROTO_TCP;
  #if !defined(WEBRTC_MAC)
        *sopt = TCP_KEEPIDLE;
-@@ -836,12 +845,18 @@ int PhysicalSocket::TranslateOption(Option opt, int* s
+@@ -836,12 +845,18 @@ int PhysicalSocket::TranslateOption(Opti
        *sopt = TCP_KEEPALIVE;
  #endif
        break;

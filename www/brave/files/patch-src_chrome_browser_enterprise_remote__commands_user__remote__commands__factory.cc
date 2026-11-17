@@ -1,6 +1,6 @@
---- src/chrome/browser/enterprise/remote_commands/user_remote_commands_factory.cc.orig	2026-07-01 06:24:19 UTC
+--- src/chrome/browser/enterprise/remote_commands/user_remote_commands_factory.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/enterprise/remote_commands/user_remote_commands_factory.cc
-@@ -22,7 +22,7 @@ UserRemoteCommandsFactory::BuildJobForType(
+@@ -22,7 +22,7 @@ UserRemoteCommandsFactory::BuildJobForTy
    switch (type) {
      case enterprise_management::RemoteCommand_Type_BROWSER_CLEAR_BROWSING_DATA:
        return std::make_unique<ClearBrowsingDataJob>(profile_);

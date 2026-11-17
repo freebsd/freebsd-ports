@@ -1,4 +1,4 @@
---- src/content/utility/speech/speech_recognition_sandbox_hook_linux.cc.orig	2026-06-04 10:12:25 UTC
+--- src/content/utility/speech/speech_recognition_sandbox_hook_linux.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/content/utility/speech/speech_recognition_sandbox_hook_linux.cc
 @@ -12,11 +12,14 @@
  #include "sandbox/linux/syscall_broker/broker_command.h"
@@ -15,7 +15,7 @@
  namespace {
  
  // Gets the file permissions required by the Speech On-Device API (SODA).
-@@ -50,9 +53,11 @@ std::vector<BrokerFilePermission> GetSodaFilePermissio
+@@ -50,9 +53,11 @@ std::vector<BrokerFilePermission> GetSod
  }
  
  }  // namespace

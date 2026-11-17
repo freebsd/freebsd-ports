@@ -1,4 +1,4 @@
---- src/ui/ozone/platform/x11/x11_clipboard_ozone.cc.orig	2026-09-25 15:26:43 UTC
+--- src/ui/ozone/platform/x11/x11_clipboard_ozone.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/ui/ozone/platform/x11/x11_clipboard_ozone.cc
 @@ -14,7 +14,7 @@
  #include "ui/base/clipboard/clipboard_constants.h"
@@ -9,7 +9,7 @@
  #include "base/strings/string_view_util.h"
  #include "ui/base/clipboard/clipboard_util_linux.h"
  #include "ui/gfx/x/atom_cache.h"
-@@ -54,7 +54,7 @@ void X11ClipboardOzone::RequestClipboardData(
+@@ -54,7 +54,7 @@ void X11ClipboardOzone::RequestClipboard
      PlatformClipboard::RequestDataClosure callback) {
    DCHECK(!callback.is_null());
  
@@ -18,7 +18,7 @@
    if (mime_type == kMimeTypeUriList) {
      auto uri_list_atoms = helper_->GetAtomsForFormat(
          ClipboardFormatType::CustomPlatformType(kMimeTypeUriList));
-@@ -85,7 +85,7 @@ void X11ClipboardOzone::RequestClipboardData(
+@@ -85,7 +85,7 @@ void X11ClipboardOzone::RequestClipboard
                           std::move(callback)));
  }
  
@@ -27,7 +27,7 @@
  void X11ClipboardOzone::OnPortalKeyRead(
      PlatformClipboard::RequestDataClosure callback,
      SelectionData selection_data) {
-@@ -145,7 +145,7 @@ void X11ClipboardOzone::OnSelectionChanged(ClipboardBu
+@@ -145,7 +145,7 @@ void X11ClipboardOzone::OnSelectionChang
      clipboard_changed_callback_.Run(buffer);
  }
  

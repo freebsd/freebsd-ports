@@ -1,4 +1,4 @@
---- src/printing/backend/cups_helper.cc.orig	2026-07-01 06:24:19 UTC
+--- src/printing/backend/cups_helper.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/printing/backend/cups_helper.cc
 @@ -8,7 +8,7 @@
  #include "base/time/time.h"
@@ -41,7 +41,7 @@
  // Helper wrapper around http_t structure, with connection and cleanup
  // functionality.
  HttpConnectionCUPS::HttpConnectionCUPS(const GURL& print_server_url,
-@@ -970,7 +970,7 @@ ScopedHttpPtr HttpConnect2(const char* host,
+@@ -970,7 +970,7 @@ ScopedHttpPtr HttpConnect2(const char* h
                             int blocking,
                             int msec,
                             int* cancel) {

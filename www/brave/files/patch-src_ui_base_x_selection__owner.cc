@@ -1,4 +1,4 @@
---- src/ui/base/x/selection_owner.cc.orig	2026-08-12 09:02:10 UTC
+--- src/ui/base/x/selection_owner.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/ui/base/x/selection_owner.cc
 @@ -19,7 +19,7 @@
  #include "ui/gfx/x/window_event_manager.h"
@@ -9,7 +9,7 @@
  #include "base/strings/string_view_util.h"
  #include "ui/base/clipboard/clipboard_constants.h"
  #include "ui/base/clipboard/clipboard_util_linux.h"
-@@ -118,7 +118,7 @@ void SelectionOwner::RetrieveTargets(std::vector<x11::
+@@ -118,7 +118,7 @@ void SelectionOwner::RetrieveTargets(std
  
    add_if_present(GetURIListAtomsFrom());
  

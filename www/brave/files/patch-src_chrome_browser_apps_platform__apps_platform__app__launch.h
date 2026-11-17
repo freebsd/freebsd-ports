@@ -1,6 +1,6 @@
---- src/chrome/browser/apps/platform_apps/platform_app_launch.h.orig	2024-06-17 12:56:06 UTC
+--- src/chrome/browser/apps/platform_apps/platform_app_launch.h.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/apps/platform_apps/platform_app_launch.h
-@@ -38,7 +38,7 @@ bool OpenExtensionApplicationWindow(Profile* profile,
+@@ -38,7 +38,7 @@ bool OpenExtensionApplicationWindow(Prof
  content::WebContents* OpenExtensionApplicationTab(Profile* profile,
                                                    const std::string& app_id);
  

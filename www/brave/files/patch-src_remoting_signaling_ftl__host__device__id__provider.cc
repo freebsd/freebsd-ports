@@ -1,6 +1,6 @@
---- src/remoting/signaling/ftl_host_device_id_provider.cc.orig	2025-03-05 08:14:56 UTC
+--- src/remoting/signaling/ftl_host_device_id_provider.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/remoting/signaling/ftl_host_device_id_provider.cc
-@@ -16,7 +16,7 @@ constexpr char kDeviceIdPrefix[] = "crd-win-host-";
+@@ -16,7 +16,7 @@ constexpr char kDeviceIdPrefix[] = "crd-
  constexpr char kDeviceIdPrefix[] = "crd-mac-host-";
  #elif BUILDFLAG(IS_CHROMEOS)
  constexpr char kDeviceIdPrefix[] = "crd-cros-host-";

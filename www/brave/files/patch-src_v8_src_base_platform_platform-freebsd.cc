@@ -1,6 +1,6 @@
---- src/v8/src/base/platform/platform-freebsd.cc.orig	2022-02-07 13:39:41 UTC
+--- src/v8/src/base/platform/platform-freebsd.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/v8/src/base/platform/platform-freebsd.cc
-@@ -43,14 +43,10 @@ TimezoneCache* OS::CreateTimezoneCache() {
+@@ -43,14 +43,10 @@ TimezoneCache* OS::CreateTimezoneCache()
    return new PosixDefaultTimezoneCache();
  }
  
@@ -16,7 +16,7 @@
    size_t buffer_size;
    if (sysctl(mib, miblen, nullptr, &buffer_size, nullptr, 0) == 0) {
      // Overallocate the buffer by 1/3 to account for concurrent
-@@ -82,8 +78,13 @@ std::vector<OS::SharedLibraryAddress> OS::GetSharedLib
+@@ -82,8 +78,13 @@ std::vector<OS::SharedLibraryAddress> OS
              lib_name = std::string(path);
            }
            result.push_back(SharedLibraryAddress(

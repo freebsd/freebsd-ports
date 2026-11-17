@@ -1,4 +1,4 @@
---- src/components/web_package/signed_web_bundles/integrity_block_parser.h.orig	2026-09-25 15:26:43 UTC
+--- src/components/web_package/signed_web_bundles/integrity_block_parser.h.orig	2026-10-18 18:43:23 UTC
 +++ src/components/web_package/signed_web_bundles/integrity_block_parser.h
 @@ -5,13 +5,8 @@
  #ifndef COMPONENTS_WEB_PACKAGE_SIGNED_WEB_BUNDLES_INTEGRITY_BLOCK_PARSER_H_
@@ -24,7 +24,7 @@
        WebBundleParser::ParseIntegrityBlockCallback callback);
  
    IntegrityBlockParser(const IntegrityBlockParser&) = delete;
-@@ -35,7 +30,10 @@ class IntegrityBlockParser : public WebBundleParser::W
+@@ -35,7 +30,10 @@ class IntegrityBlockParser : public WebB
   private:
    void OnIntegrityBlockRead(const std::optional<BinaryData>& data);
  

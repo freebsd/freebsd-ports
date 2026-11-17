@@ -1,4 +1,4 @@
---- src/chrome/enterprise_companion/lock.cc.orig	2026-06-04 10:12:25 UTC
+--- src/chrome/enterprise_companion/lock.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/enterprise_companion/lock.cc
 @@ -18,7 +18,7 @@
  
@@ -9,7 +9,7 @@
  constexpr char kLockName[] = "/" PRODUCT_FULLNAME_STRING ".lock";
  #elif BUILDFLAG(IS_MAC)
  constexpr char kLockName[] = MAC_BUNDLE_IDENTIFIER_STRING ".lock";
-@@ -42,7 +42,7 @@ base::win::SecurityDescriptor GetAdminDaclSecurityDesc
+@@ -42,7 +42,7 @@ base::win::SecurityDescriptor GetAdminDa
  namespace enterprise_companion {
  
  std::unique_ptr<ScopedLock> CreateScopedLock(base::TimeDelta timeout) {

@@ -1,6 +1,6 @@
---- src/ui/gl/gl_context.cc.orig	2026-02-11 09:05:39 UTC
+--- src/ui/gl/gl_context.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/ui/gl/gl_context.cc
-@@ -153,7 +153,7 @@ bool GLContext::MakeCurrent(GLSurface* surface) {
+@@ -153,7 +153,7 @@ bool GLContext::MakeCurrent(GLSurface* s
      recorded_max_gles_version_if_feasible = true;
    }
  #elif (BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \

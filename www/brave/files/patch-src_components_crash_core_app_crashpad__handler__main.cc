@@ -1,4 +1,4 @@
---- src/components/crash/core/app/crashpad_handler_main.cc.orig	2024-01-30 07:53:34 UTC
+--- src/components/crash/core/app/crashpad_handler_main.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/components/crash/core/app/crashpad_handler_main.cc
 @@ -10,7 +10,7 @@
  #include "third_party/crashpad/crashpad/handler/handler_main.h"
@@ -9,7 +9,7 @@
  #include "components/stability_report/user_stream_data_source_posix.h"
  #endif
  
-@@ -31,7 +31,7 @@ __attribute__((visibility("default"), used)) int Crash
+@@ -31,7 +31,7 @@ __attribute__((visibility("default"), us
      char* argv[]) {
    crashpad::UserStreamDataSources user_stream_data_sources;
  

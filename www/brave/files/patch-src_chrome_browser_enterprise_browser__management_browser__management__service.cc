@@ -1,6 +1,6 @@
---- src/chrome/browser/enterprise/browser_management/browser_management_service.cc.orig	2026-07-01 06:24:19 UTC
+--- src/chrome/browser/enterprise/browser_management/browser_management_service.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/enterprise/browser_management/browser_management_service.cc
-@@ -61,7 +61,7 @@ BrowserManagementService::BrowserManagementService(Pro
+@@ -61,7 +61,7 @@ BrowserManagementService::BrowserManagem
        management_status_providers().end(),
        [](const auto& provider) { return provider->RequiresCache(); }));
  
@@ -9,7 +9,7 @@
    base::SequencedTaskRunner::GetCurrentDefault()->PostTask(
        FROM_HERE,
        base::BindOnce(&BrowserManagementService::UpdateManagementIconForProfile,
-@@ -85,7 +85,7 @@ BrowserManagementService::BrowserManagementService(Pro
+@@ -85,7 +85,7 @@ BrowserManagementService::BrowserManagem
  }
  
  ui::ImageModel* BrowserManagementService::GetManagementIconForProfile() {
@@ -18,7 +18,7 @@
    return management_icon_for_profile_.IsEmpty() ? nullptr
                                                  : &management_icon_for_profile_;
  #else
-@@ -94,7 +94,7 @@ ui::ImageModel* BrowserManagementService::GetManagemen
+@@ -94,7 +94,7 @@ ui::ImageModel* BrowserManagementService
  }
  
  gfx::Image* BrowserManagementService::GetManagementIconForBrowser() {
@@ -27,7 +27,7 @@
    return management_icon_for_browser_.IsEmpty() ? nullptr
                                                  : &management_icon_for_browser_;
  #else
-@@ -107,7 +107,7 @@ void BrowserManagementService::TriggerPolicyStatusChan
+@@ -107,7 +107,7 @@ void BrowserManagementService::TriggerPo
    OnPolicyStatusChanged();
  }
  
@@ -36,7 +36,7 @@
  void BrowserManagementService::SetBrowserManagementIconForTesting(
      const gfx::Image& management_icon) {
    CHECK_IS_TEST();
-@@ -196,7 +196,7 @@ void BrowserManagementService::SetManagementIconForBro
+@@ -196,7 +196,7 @@ void BrowserManagementService::SetManage
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
  void BrowserManagementService::OnPolicyStatusChanged() {

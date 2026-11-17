@@ -1,6 +1,6 @@
---- src/components/proxy_config/proxy_override_rules_policy_handler.h.orig	2026-02-11 09:05:39 UTC
+--- src/components/proxy_config/proxy_override_rules_policy_handler.h.orig	2026-10-18 18:43:23 UTC
 +++ src/components/proxy_config/proxy_override_rules_policy_handler.h
-@@ -53,7 +53,7 @@ class PROXY_CONFIG_EXPORT ProxyOverrideRulesPolicyHand
+@@ -53,7 +53,7 @@ class PROXY_CONFIG_EXPORT ProxyOverrideR
                  policy::PolicyErrorPath error_path,
                  policy::PolicyErrorMap* errors);
  

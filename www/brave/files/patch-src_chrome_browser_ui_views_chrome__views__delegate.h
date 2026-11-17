@@ -1,6 +1,6 @@
---- src/chrome/browser/ui/views/chrome_views_delegate.h.orig	2025-01-15 09:18:26 UTC
+--- src/chrome/browser/ui/views/chrome_views_delegate.h.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/ui/views/chrome_views_delegate.h
-@@ -52,7 +52,7 @@ class ChromeViewsDelegate : public views::ViewsDelegat
+@@ -52,7 +52,7 @@ class ChromeViewsDelegate : public views
                               base::OnceClosure callback) override;
  #endif
  

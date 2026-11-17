@@ -1,6 +1,6 @@
---- src/base/threading/hang_watcher.cc.orig	2026-05-07 17:02:56 UTC
+--- src/base/threading/hang_watcher.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/base/threading/hang_watcher.cc
-@@ -236,7 +236,7 @@ bool ThreadTypeLoggingLevelGreaterOrEqual(HangWatcher:
+@@ -236,7 +236,7 @@ bool ThreadTypeLoggingLevelGreaterOrEqua
  
  constexpr base::FeatureState HangWatcherFeatureDefault() {
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_CHROMEOS) || \

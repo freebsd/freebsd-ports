@@ -1,4 +1,4 @@
---- src/chrome/browser/media/audio_service_util.cc.orig	2025-04-04 08:52:13 UTC
+--- src/chrome/browser/media/audio_service_util.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/media/audio_service_util.cc
 @@ -20,7 +20,7 @@
  
@@ -9,7 +9,7 @@
  const base::Value* GetPolicy(const char* policy_name) {
    const policy::PolicyMap& policies =
        g_browser_process->browser_policy_connector()
-@@ -39,7 +39,7 @@ bool GetPolicyOrFeature(const char* policy_name, const
+@@ -39,7 +39,7 @@ bool GetPolicyOrFeature(const char* poli
  }  // namespace
  
  bool IsAudioServiceSandboxEnabled() {

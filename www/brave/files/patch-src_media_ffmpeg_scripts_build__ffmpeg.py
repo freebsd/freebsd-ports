@@ -1,4 +1,4 @@
---- src/media/ffmpeg/scripts/build_ffmpeg.py.orig	2026-09-25 15:26:43 UTC
+--- src/media/ffmpeg/scripts/build_ffmpeg.py.orig	2026-10-18 18:43:23 UTC
 +++ src/media/ffmpeg/scripts/build_ffmpeg.py
 @@ -33,7 +33,7 @@ NDK_ROOT_DIR = os.path.abspath(
  SUCCESS_TOKEN = 'THIS_BUILD_WORKED'
@@ -18,7 +18,7 @@
      'mac': ['x64', 'arm64'],
      'win': ['ia32', 'x64', 'arm64'],
  }
-@@ -124,7 +126,7 @@ def PrintAndCheckCall(argv, *args, **kwargs):
+@@ -124,7 +126,7 @@ def PrintAndCheckCall(argv, *args, **kwa
  
  
  def GetDsoName(target_os, dso_name, dso_version):
@@ -27,7 +27,7 @@
          return 'lib%s.so.%s' % (dso_name, dso_version)
      elif target_os == 'mac':
          return 'lib%s.%s.dylib' % (dso_name, dso_version)
-@@ -475,7 +477,7 @@ def BuildFFmpeg(target_os, target_arch, host_os, host_
+@@ -475,7 +477,7 @@ def BuildFFmpeg(target_os, target_arch,
      # removing <sys/sysctl.h> soon, so this is needed to silence a deprecation
      # #warning which will be converted to an error via -Werror.
      # There is also no prctl.h
@@ -45,7 +45,7 @@
          parser.print_help()
          return 1
  
-@@ -686,7 +688,6 @@ def ConfigureAndBuild(target_arch, target_os, host_os,
+@@ -686,7 +688,6 @@ def ConfigureAndBuild(target_arch, targe
          '--disable-faan',
          '--disable-alsa',
          '--disable-iamf',
@@ -53,7 +53,7 @@
  
  
          # Disable automatically detected external libraries. This prevents
-@@ -728,7 +729,7 @@ def ConfigureAndBuild(target_arch, target_os, host_os,
+@@ -728,7 +729,7 @@ def ConfigureAndBuild(target_arch, targe
              '--optflags="-O2"',
          ])
  
@@ -62,7 +62,7 @@
          if target_arch == 'x64':
              if target_os == 'android':
                  configure_flags['Common'].extend([
-@@ -824,9 +825,6 @@ def ConfigureAndBuild(target_arch, target_os, host_os,
+@@ -824,9 +825,6 @@ def ConfigureAndBuild(target_arch, targe
  
                  configure_flags['Common'].extend([
                      '--target-os=linux',

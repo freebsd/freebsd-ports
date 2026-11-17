@@ -1,4 +1,4 @@
---- src/brave/browser/brave_ads/device_id/device_id_impl_linux.cc.orig	2026-06-01 00:00:00 UTC
+--- src/brave/browser/brave_ads/device_id/device_id_impl_linux.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/brave/browser/brave_ads/device_id/device_id_impl_linux.cc
 @@ -12,6 +12,13 @@
  #include <sys/ioctl.h>
@@ -14,7 +14,7 @@
  #include <array>
  #include <map>
  #include <string>
-@@ -119,6 +126,36 @@
+@@ -119,6 +126,36 @@ class MacAddressProcessor {
    bool ProcessInterface(struct ifaddrs* ifaddr) {
      bool keep_going = true;
  
@@ -51,7 +51,7 @@
      struct ifreq ifinfo = {};
      UNSAFE_TODO(strncpy(ifinfo.ifr_name, ifaddr->ifa_name,
                          sizeof(ifinfo.ifr_name) - 1));
-@@ -131,7 +168,6 @@
+@@ -131,7 +168,6 @@ class MacAddressProcessor {
        return keep_going;
      }
  
@@ -59,7 +59,7 @@
      auto mac_address_bytes =
          base::as_byte_span(ifinfo.ifr_hwaddr.sa_data).first<kMacLength>();
      if (!is_valid_mac_address_callback_.Run(mac_address_bytes)) {
-@@ -141,6 +177,7 @@
+@@ -141,6 +177,7 @@ class MacAddressProcessor {
      if (!IsValidPrefix(ifinfo.ifr_name)) {
        return keep_going;
      }

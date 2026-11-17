@@ -1,6 +1,6 @@
---- src/components/viz/test/mock_display_client.h.orig	2026-03-13 06:02:14 UTC
+--- src/components/viz/test/mock_display_client.h.orig	2026-10-18 18:43:23 UTC
 +++ src/components/viz/test/mock_display_client.h
-@@ -45,7 +45,7 @@ class MockDisplayClient : public mojom::DisplayClient 
+@@ -45,7 +45,7 @@ class MockDisplayClient : public mojom::
  #if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_CHROMEOS)
    MOCK_METHOD1(SetPreferredRefreshRate, void(float refresh_rate));
  #endif  // BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_CHROMEOS)

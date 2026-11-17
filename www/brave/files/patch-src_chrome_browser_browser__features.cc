@@ -1,6 +1,6 @@
---- src/chrome/browser/browser_features.cc.orig	2026-09-25 15:26:43 UTC
+--- src/chrome/browser/browser_features.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/browser_features.cc
-@@ -58,7 +58,7 @@
+@@ -59,7 +59,7 @@ BASE_FEATURE(kCertVerificationNetworkTim
  BASE_FEATURE(kClearUserDataUponProfileDestruction,
               base::FEATURE_ENABLED_BY_DEFAULT);
  
@@ -9,7 +9,7 @@
  // Enables usage of os_crypt_async::SecretPortalKeyProvider.  Once
  // `kSecretPortalKeyProviderUseForEncryption` is enabled, this flag cannot be
  // disabled without losing data.
-@@ -149,7 +149,7 @@
+@@ -150,7 +150,7 @@ BASE_FEATURE(kSandboxExternalProtocolBlo
  BASE_FEATURE(kSandboxExternalProtocolBlockedWarning,
               base::FEATURE_ENABLED_BY_DEFAULT);
  

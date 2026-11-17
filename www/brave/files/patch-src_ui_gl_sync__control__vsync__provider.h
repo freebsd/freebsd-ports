@@ -1,6 +1,6 @@
---- src/ui/gl/sync_control_vsync_provider.h.orig	2022-05-19 14:06:27 UTC
+--- src/ui/gl/sync_control_vsync_provider.h.orig	2026-10-18 18:43:23 UTC
 +++ src/ui/gl/sync_control_vsync_provider.h
-@@ -31,7 +31,7 @@ class SyncControlVSyncProvider : public gfx::VSyncProv
+@@ -31,7 +31,7 @@ class SyncControlVSyncProvider : public
    bool SupportGetVSyncParametersIfAvailable() const override;
  
    static constexpr bool IsSupported() {
@@ -9,7 +9,7 @@
      return true;
  #else
      return false;
-@@ -46,7 +46,7 @@ class SyncControlVSyncProvider : public gfx::VSyncProv
+@@ -46,7 +46,7 @@ class SyncControlVSyncProvider : public
    virtual bool GetMscRate(int32_t* numerator, int32_t* denominator) = 0;
  
   private:

@@ -1,6 +1,6 @@
---- src/third_party/blink/renderer/platform/graphics/gpu/webgpu_shared_image_wrapper_cache.cc.orig	2026-09-25 15:26:43 UTC
-+++ src/third_party/blink/renderer/platform/graphics/gpu/webgpu_shared_image_wrapper_cache.cc
-@@ -398,7 +398,7 @@ WebGpuSharedImageWrapperCache::LeaseWebGpuSharedImageW
+--- src/third_party/blink/renderer/platform/graphics/gpu/webgpu_shared_image_cache.cc.orig	2026-10-18 18:43:23 UTC
++++ src/third_party/blink/renderer/platform/graphics/gpu/webgpu_shared_image_cache.cc
+@@ -323,7 +323,7 @@ WebGpuSharedImageCache::LeaseSharedImage
        return nullptr;
      }
  

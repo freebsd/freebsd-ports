@@ -1,6 +1,6 @@
---- src/services/tracing/public/cpp/system_metrics_sampler.cc.orig	2026-05-07 17:02:56 UTC
+--- src/services/tracing/public/cpp/system_metrics_sampler.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/services/tracing/public/cpp/system_metrics_sampler.cc
-@@ -177,8 +177,8 @@ void SystemMetricsSampler::ProcessSampler::SampleProce
+@@ -177,8 +177,8 @@ void SystemMetricsSampler::ProcessSample
      TRACE_COUNTER(TRACE_DISABLED_BY_DEFAULT("system_metrics"),
                    "PhysicalMemoryFootprint",
                    memory_info->physical_footprint_bytes);

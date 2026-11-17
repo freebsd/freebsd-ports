@@ -1,4 +1,4 @@
---- src/skia/ext/SkMemory_new_handler.cpp.orig	2026-08-12 09:02:10 UTC
+--- src/skia/ext/SkMemory_new_handler.cpp.orig	2026-10-18 18:43:23 UTC
 +++ src/skia/ext/SkMemory_new_handler.cpp
 @@ -21,7 +21,7 @@
  #include <windows.h>
@@ -9,7 +9,7 @@
  #include <malloc.h>
  #endif
  
-@@ -107,7 +107,7 @@ static void* malloc_nothrow(size_t size, int debug_sen
+@@ -107,7 +107,7 @@ static void* malloc_nothrow(size_t size,
    // TODO(b.kelemen): we should always use UncheckedMalloc but currently it
    // doesn't work as intended everywhere.
    void* result;

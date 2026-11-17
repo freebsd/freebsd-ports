@@ -1,4 +1,4 @@
---- src/third_party/swiftshader/third_party/llvm-10.0/configs/linux/include/llvm/Config/config.h.orig	2022-05-19 14:06:27 UTC
+--- src/third_party/swiftshader/third_party/llvm-10.0/configs/linux/include/llvm/Config/config.h.orig	2026-10-18 18:43:23 UTC
 +++ src/third_party/swiftshader/third_party/llvm-10.0/configs/linux/include/llvm/Config/config.h
 @@ -29,7 +29,7 @@
  
@@ -162,13 +162,13 @@
  
  /* Define to the vendor of this package. */
  /* #undef PACKAGE_VENDOR */
-@@ -361,9 +339,6 @@
- 
+@@ -362,9 +340,6 @@
  /* Whether GlobalISel rule coverage is being collected */
  #define LLVM_GISEL_COV_ENABLED 0
--
+ 
 -/* Define if we have z3 and want to build it */
 -#define LLVM_WITH_Z3 1
- 
+-
  /* Define to the default GlobalISel coverage file prefix */
  /* #undef LLVM_GISEL_COV_PREFIX */
+ 

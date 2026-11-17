@@ -1,4 +1,4 @@
---- src/chrome/browser/extensions/api/enterprise_reporting_private/enterprise_reporting_private_api.h.orig	2026-07-01 06:24:19 UTC
+--- src/chrome/browser/extensions/api/enterprise_reporting_private/enterprise_reporting_private_api.h.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/extensions/api/enterprise_reporting_private/enterprise_reporting_private_api.h
 @@ -16,7 +16,7 @@
  #include "chrome/browser/extensions/api/enterprise_reporting_private/chrome_desktop_report_request_helper.h"
@@ -9,7 +9,7 @@
  #include "base/time/time.h"
  #include "components/device_signals/core/browser/signals_types.h"
  #endif
-@@ -52,7 +52,7 @@ class EnterpriseReportingPrivateGetDeviceIdFunction : 
+@@ -52,7 +52,7 @@ class EnterpriseReportingPrivateGetDevic
    ~EnterpriseReportingPrivateGetDeviceIdFunction() override;
  };
  
@@ -18,7 +18,7 @@
  
  class EnterpriseReportingPrivateGetPersistentSecretFunction
      : public ExtensionFunction {
-@@ -211,7 +211,7 @@ class EnterpriseReportingPrivateGetCertificateFunction
+@@ -211,7 +211,7 @@ class EnterpriseReportingPrivateGetCerti
        client_cert_fetcher_;
  };
  

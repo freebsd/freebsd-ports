@@ -1,4 +1,4 @@
---- src/third_party/pdfium/core/fxge/linux/fx_linux_impl.cpp.orig	2026-08-31 10:59:09 UTC
+--- src/third_party/pdfium/core/fxge/linux/fx_linux_impl.cpp.orig	2026-10-18 18:43:23 UTC
 +++ src/third_party/pdfium/core/fxge/linux/fx_linux_impl.cpp
 @@ -18,7 +18,7 @@
  #include "core/fxge/fx_font.h"
@@ -9,7 +9,7 @@
  #error "Included on the wrong platform"
  #endif
  
-@@ -170,9 +170,8 @@ class CLinuxPlatform : public CFX_GEModule::PlatformIf
+@@ -170,9 +170,8 @@ class CLinuxPlatform : public CFX_GEModu
          pInfo->AddPath(path);
        }
      } else {

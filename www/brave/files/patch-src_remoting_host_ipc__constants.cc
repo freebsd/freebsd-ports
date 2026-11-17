@@ -1,4 +1,4 @@
---- src/remoting/host/ipc_constants.cc.orig	2026-05-07 17:02:56 UTC
+--- src/remoting/host/ipc_constants.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/remoting/host/ipc_constants.cc
 @@ -13,7 +13,7 @@
  #include "mojo/public/cpp/platform/named_platform_channel.h"
@@ -9,7 +9,7 @@
  #include "base/nix/xdg_util.h"
  #include "remoting/base/file_path_util_linux.h"
  #endif
-@@ -46,7 +46,7 @@ constexpr char kAgentProcessBrokerIpcName[] =
+@@ -46,7 +46,7 @@ constexpr char kAgentProcessBrokerIpcNam
  
  #endif
  
@@ -18,7 +18,7 @@
  
  #if !defined(NDEBUG)
  constexpr char kLoginSessionReporterIpcName[] =
-@@ -63,7 +63,7 @@ constexpr char kLoginSessionServerIpcName[] =
+@@ -63,7 +63,7 @@ constexpr char kLoginSessionServerIpcNam
  #endif
  
  mojo::NamedPlatformChannel::ServerName GetServerName(std::string_view name) {

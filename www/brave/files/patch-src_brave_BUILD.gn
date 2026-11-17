@@ -1,6 +1,6 @@
---- src/brave/BUILD.gn.orig	2026-06-01 00:00:00 UTC
+--- src/brave/BUILD.gn.orig	2026-10-18 18:43:23 UTC
 +++ src/brave/BUILD.gn
-@@ -18,6 +18,19 @@
+@@ -18,6 +18,19 @@ import("//tools/grit/repack.gni")
  import("//tools/v8_context_snapshot/v8_context_snapshot.gni")
  import("//ui/base/ui_features.gni")
  
@@ -20,7 +20,7 @@
  if (enable_brave_vpn_v1) {
    import(
        "//brave/browser/brave_vpn/win/brave_vpn_wireguard_service/allowlist.gni")
-@@ -280,7 +293,7 @@
+@@ -309,7 +322,7 @@ if (is_win) {
  }
  
  group("brave") {
@@ -29,7 +29,7 @@
    if (!is_android && !is_ios) {
      deps += [
        "//brave/components/version_info:generate_version",
-@@ -472,8 +485,12 @@
+@@ -501,8 +514,12 @@ group("create_dist") {
      deps += [
        ":theme_files",
        "//brave/app/linux:dist_resources",
@@ -43,7 +43,7 @@
    }
  }
  
-@@ -528,7 +545,7 @@
+@@ -557,7 +574,7 @@ if (!is_android && !is_ios) {
        ":brave",
        ":brave_license_dist_resources",
        ":packed_resources",
@@ -52,7 +52,7 @@
        "//brave/components/version_info:generate_version",
        "//chrome:packed_resources",
        "//third_party/icu:icudata",
-@@ -611,7 +628,7 @@
+@@ -641,7 +658,7 @@ if (should_generate_symbols) {
        output = "$brave_dist_dir/$brave_dist_name-v$brave_version-$brave_platform-$target_arch-symbols.zip"
      }
  
@@ -61,7 +61,7 @@
  
      if (is_win) {
        dir_inputs = [ "$brave_product_name.syms" ]
-@@ -636,7 +653,7 @@
+@@ -666,7 +683,7 @@ if (should_generate_symbols) {
  group("create_symbols_dist") {
    # Currently on some platforms (Android, Linux) this target generate more
    # than just symbols, so always depend on it.
@@ -70,7 +70,7 @@
  
    if (should_generate_symbols) {
      public_deps += [
-@@ -670,7 +687,7 @@
+@@ -700,7 +717,7 @@ action("create_dist_zips") {
      script = "//brave/script/create-dist.py"
  
      inputs = []

@@ -1,4 +1,4 @@
---- src/chrome/common/media/cdm_registration.cc.orig	2026-09-25 15:26:43 UTC
+--- src/chrome/common/media/cdm_registration.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/common/media/cdm_registration.cc
 @@ -33,7 +33,7 @@
  #if BUILDFLAG(ENABLE_WIDEVINE)
@@ -9,7 +9,7 @@
  #include "base/native_library.h"
  #include "chrome/common/chrome_paths.h"
  #include "chrome/common/media/component_widevine_cdm_hint_file_linux.h"
-@@ -62,7 +62,7 @@
+@@ -62,7 +62,7 @@ using Robustness = content::CdmInfo::Rob
  #if BUILDFLAG(ENABLE_WIDEVINE)
  #if (BUILDFLAG(BUNDLE_WIDEVINE_CDM) ||            \
       BUILDFLAG(ENABLE_WIDEVINE_CDM_COMPONENT)) && \
@@ -18,7 +18,7 @@
  // Create a CdmInfo for a Widevine CDM, using |version|, |cdm_library_path|, and
  // |capability|.
  std::unique_ptr<content::CdmInfo> CreateWidevineCdmInfo(
-@@ -103,8 +103,13 @@
+@@ -103,8 +103,13 @@ std::unique_ptr<content::CdmInfo> Create
          // BUILDFLAG(ENABLE_WIDEVINE_CDM_COMPONENT)) && (BUILDFLAG(IS_LINUX) ||
          // BUILDFLAG(IS_CHROMEOS))
  
@@ -34,7 +34,7 @@
  // On Linux/ChromeOS we have to preload the CDM since it uses the zygote
  // sandbox. On Windows and Mac, CDM registration is handled by Component
  // Update (as the CDM can be loaded only when needed).
-@@ -128,7 +133,7 @@
+@@ -128,7 +133,7 @@ std::unique_ptr<content::CdmInfo> GetBun
          // (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS))
  
  #if (BUILDFLAG(ENABLE_WIDEVINE_CDM_COMPONENT) && \
@@ -43,7 +43,7 @@
  // This code checks to see if Component Updater picked a version of the Widevine
  // CDM to be used last time it ran. (Component Updater may choose the bundled
  // CDM if there is not a new version available for download.) If there is one
-@@ -170,7 +175,7 @@
+@@ -170,7 +175,7 @@ void AddSoftwareSecureWidevine(std::vect
        /*supports_sub_key_systems=*/false, kWidevineCdmDisplayName,
        kWidevineCdmType, base::FilePath());
  
@@ -52,7 +52,7 @@
    // The Widevine CDM on Linux/ChromeOS needs to be registered (and loaded)
    // before the zygote is locked down. The CDM can be found from the version
    // bundled with Chrome (if BUNDLE_WIDEVINE_CDM = true) and/or the version
-@@ -197,7 +202,7 @@
+@@ -197,7 +202,7 @@ void AddSoftwareSecureWidevine(std::vect
    // We should still use the version selected by Component Update (except for
    // case #3 above).
    std::unique_ptr<content::CdmInfo> bundled_widevine = nullptr;
@@ -61,7 +61,7 @@
    bundled_widevine = GetBundledWidevine();
  #endif
  
-@@ -434,7 +439,7 @@
+@@ -434,7 +439,7 @@ void RegisterCdmInfo(std::vector<content
  }
  
  #if BUILDFLAG(ENABLE_WIDEVINE) && \

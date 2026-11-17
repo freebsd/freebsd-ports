@@ -1,6 +1,6 @@
---- src/gpu/command_buffer/client/test_shared_image_interface.h.orig	2026-09-25 15:26:43 UTC
+--- src/gpu/command_buffer/client/test_shared_image_interface.h.orig	2026-10-18 18:43:23 UTC
 +++ src/gpu/command_buffer/client/test_shared_image_interface.h
-@@ -138,7 +138,7 @@ class TestSharedImageInterface : public SharedImageInt
+@@ -138,7 +138,7 @@ class TestSharedImageInterface : public
        bool premapped,
        const ClientSharedImage::AsyncMapInvokedCallback& callback);
  

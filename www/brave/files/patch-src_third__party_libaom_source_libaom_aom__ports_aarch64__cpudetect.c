@@ -1,6 +1,6 @@
---- src/third_party/libaom/source/libaom/aom_ports/aarch64_cpudetect.c.orig	2026-02-19 10:23:43 UTC
+--- src/third_party/libaom/source/libaom/aom_ports/aarch64_cpudetect.c.orig	2026-10-18 18:43:23 UTC
 +++ src/third_party/libaom/source/libaom/aom_ports/aarch64_cpudetect.c
-@@ -127,9 +127,45 @@ static int arm_get_cpu_caps(void) {
+@@ -127,10 +127,46 @@ static int arm_get_cpu_caps(void) {
    return flags;
  }
  
@@ -9,7 +9,7 @@
 +#include <sys/sysctl.h>
 +#include <machine/cpu.h>
 +#include <machine/armreg.h>
- 
++
 +static int arm_get_cpu_caps(void) {
 +  int flags = 0;
 +  int isar0_mib[] = { CTL_MACHDEP, CPU_ID_AA64ISAR0 };
@@ -28,9 +28,9 @@
 +}
 +
 +#elif defined(__linux__) || defined(__FreeBSD__)  // end defined(AOM_USE_ANDROID_CPU_FEATURES)
-+
+ 
  #include <sys/auxv.h>
-+
+ 
 +#if defined(__FreeBSD__)
 +static unsigned long getauxval(unsigned long type)
 +{
@@ -44,6 +44,7 @@
 +    return ret;
 +}
 +#endif
- 
++
  // Define hwcap values ourselves: building with an old auxv header where these
  // hwcap values are not defined should not prevent features from being enabled.
+ #define AOM_AARCH64_HWCAP_CRC32 (1 << 7)

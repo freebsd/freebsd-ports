@@ -1,4 +1,4 @@
---- src/base/debug/stack_trace_posix.cc.orig	2026-07-01 06:24:19 UTC
+--- src/base/debug/stack_trace_posix.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/base/debug/stack_trace_posix.cc
 @@ -48,7 +48,7 @@
  // execinfo.h and backtrace(3) are really only present in glibc and in macOS
@@ -30,7 +30,7 @@
  void AlarmSignalHandler(int signal, siginfo_t* info, void* void_context) {
    // We have seen rare cases on AMD linux where the default signal handler
    // either does not run or a thread (Probably an AMD driver thread) prevents
-@@ -341,7 +343,11 @@ void AlarmSignalHandler(int signal, siginfo_t* info, v
+@@ -341,7 +343,11 @@ void AlarmSignalHandler(int signal, sigi
        "Warning: Default signal handler failed to terminate process.\n");
    PrintToStderr("Calling exit_group() directly to prevent timeout.\n");
    // See: https://man7.org/linux/man-pages/man2/exit_group.2.html
@@ -42,7 +42,7 @@
  }
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_ANDROID) ||
          // BUILDFLAG(IS_CHROMEOS)
-@@ -545,7 +551,7 @@ void StackDumpSignalHandler(int signal, siginfo_t* inf
+@@ -545,7 +551,7 @@ void StackDumpSignalHandler(int signal,
      _exit(EXIT_FAILURE);
    }
  
@@ -51,7 +51,7 @@
    // Set an alarm to trigger in case the default handler does not terminate
    // the process. See 'AlarmSignalHandler' for more details.
    struct sigaction action;
-@@ -570,6 +576,7 @@ void StackDumpSignalHandler(int signal, siginfo_t* inf
+@@ -570,6 +576,7 @@ void StackDumpSignalHandler(int signal,
    // signals that do not re-raise autonomously), such as signals delivered via
    // kill() and asynchronous hardware faults such as SEGV_MTEAERR, which would
    // otherwise be lost when re-raising the signal via raise().
@@ -59,7 +59,7 @@
    long retval = syscall(SYS_rt_tgsigqueueinfo, getpid(), syscall(SYS_gettid),
                          info->si_signo, info);
    if (retval == 0) {
-@@ -584,6 +591,7 @@ void StackDumpSignalHandler(int signal, siginfo_t* inf
+@@ -584,6 +591,7 @@ void StackDumpSignalHandler(int signal,
    if (errno != EPERM) {
      _exit(EXIT_FAILURE);
    }

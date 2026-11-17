@@ -1,4 +1,4 @@
---- src/remoting/base/crash/crashpad_database_manager.cc.orig	2026-09-25 15:26:43 UTC
+--- src/remoting/base/crash/crashpad_database_manager.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/remoting/base/crash/crashpad_database_manager.cc
 @@ -24,7 +24,7 @@
  #if BUILDFLAG(IS_WIN)
@@ -27,7 +27,7 @@
  inline base::FilePath GetUnifiedCrashpadDatabasePath() {
    return GetVarLibDir().Append("crashpad");
  }
-@@ -79,7 +79,7 @@ base::FilePath GetCrashpadDatabasePath() {
+@@ -79,7 +79,7 @@ base::FilePath GetCrashpadDatabasePath()
      base::FilePath path;
      base::PathService::Get(base::BasePathKey::DIR_ASSETS, &path);
      return path.Append(kChromotingCrashpadDatabasePath);

@@ -1,6 +1,6 @@
---- src/content/shell/browser/shell_platform_delegate_views.cc.orig	2026-05-07 17:02:56 UTC
+--- src/content/shell/browser/shell_platform_delegate_views.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/content/shell/browser/shell_platform_delegate_views.cc
-@@ -374,7 +374,7 @@ void ShellPlatformDelegate::CreatePlatformWindow(
+@@ -374,7 +374,7 @@ void ShellPlatformDelegate::CreatePlatfo
        views::Widget::InitParams::NATIVE_WIDGET_OWNS_WIDGET);
    params.bounds = gfx::Rect(initial_size);
    params.delegate = delegate.release();

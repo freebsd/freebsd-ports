@@ -1,6 +1,6 @@
---- src/chrome/browser/browser_features.h.orig	2026-08-12 09:02:10 UTC
+--- src/chrome/browser/browser_features.h.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/browser_features.h
-@@ -40,7 +40,7 @@ BASE_DECLARE_FEATURE(kCertificateTransparencyAskBefore
+@@ -40,7 +40,7 @@ BASE_DECLARE_FEATURE(kCertificateTranspa
  BASE_DECLARE_FEATURE(kCertVerificationNetworkTime);
  BASE_DECLARE_FEATURE(kClearUserDataUponProfileDestruction);
  
@@ -9,7 +9,7 @@
  BASE_DECLARE_FEATURE(kDbusSecretPortal);
  #endif
  
-@@ -84,7 +84,7 @@ BASE_DECLARE_FEATURE(kRestartNetworkServiceUnsandboxed
+@@ -84,7 +84,7 @@ BASE_DECLARE_FEATURE(kRestartNetworkServ
  BASE_DECLARE_FEATURE(kSandboxExternalProtocolBlocked);
  BASE_DECLARE_FEATURE(kSandboxExternalProtocolBlockedWarning);
  

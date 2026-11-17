@@ -1,6 +1,6 @@
---- src/ui/gfx/gpu_extra_info.h.orig	2026-01-14 08:33:23 UTC
+--- src/ui/gfx/gpu_extra_info.h.orig	2026-10-18 18:43:23 UTC
 +++ src/ui/gfx/gpu_extra_info.h
-@@ -47,7 +47,7 @@ struct COMPONENT_EXPORT(GFX) GpuExtraInfo {
+@@ -47,7 +47,7 @@ struct COMPONENT_EXPORT(GFX) GpuExtraInf
    // applicable.
    ANGLEFeatures angle_features;
  

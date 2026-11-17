@@ -1,6 +1,6 @@
---- src/brave/build/node_bin.gni.orig	2026-06-01 00:00:00 UTC
+--- src/brave/build/node_bin.gni.orig	2026-10-18 18:43:23 UTC
 +++ src/brave/build/node_bin.gni
-@@ -14,6 +14,10 @@
+@@ -14,6 +14,10 @@ if (host_os == "win") {
    }
  } else if (host_os == "linux") {
    node_bin = "//third_party/node/linux/node-linux-x64/bin/node"

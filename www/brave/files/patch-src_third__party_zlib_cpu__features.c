@@ -1,6 +1,6 @@
---- src/third_party/zlib/cpu_features.c.orig	2024-06-03 12:51:57 UTC
+--- src/third_party/zlib/cpu_features.c.orig	2026-10-18 18:43:23 UTC
 +++ src/third_party/zlib/cpu_features.c
-@@ -39,7 +39,8 @@ int ZLIB_INTERNAL riscv_cpu_enable_vclmul = 0;
+@@ -39,7 +39,8 @@ int ZLIB_INTERNAL riscv_cpu_enable_vclmu
  #ifndef CPU_NO_SIMD
  
  #if defined(ARMV8_OS_ANDROID) || defined(ARMV8_OS_LINUX) || \
@@ -10,7 +10,7 @@
  #include <pthread.h>
  #endif
  
-@@ -56,6 +57,10 @@ int ZLIB_INTERNAL riscv_cpu_enable_vclmul = 0;
+@@ -56,6 +57,10 @@ int ZLIB_INTERNAL riscv_cpu_enable_vclmu
  #include <windows.h>
  #elif defined(ARMV8_OS_IOS)
  #include <sys/sysctl.h>

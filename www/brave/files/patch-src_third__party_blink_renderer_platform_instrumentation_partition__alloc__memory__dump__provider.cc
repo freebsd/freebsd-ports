@@ -1,4 +1,4 @@
---- src/third_party/blink/renderer/platform/instrumentation/partition_alloc_memory_dump_provider.cc.orig	2025-09-06 10:01:20 UTC
+--- src/third_party/blink/renderer/platform/instrumentation/partition_alloc_memory_dump_provider.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/third_party/blink/renderer/platform/instrumentation/partition_alloc_memory_dump_provider.cc
 @@ -14,7 +14,9 @@
  
@@ -10,7 +10,7 @@
  
  PartitionAllocMemoryDumpProvider* PartitionAllocMemoryDumpProvider::Instance() {
    DEFINE_STATIC_LOCAL(PartitionAllocMemoryDumpProvider, instance, ());
-@@ -24,6 +26,7 @@ PartitionAllocMemoryDumpProvider* PartitionAllocMemory
+@@ -24,6 +26,7 @@ PartitionAllocMemoryDumpProvider* Partit
  bool PartitionAllocMemoryDumpProvider::OnMemoryDump(
      const base::trace_event::MemoryDumpArgs& args,
      base::trace_event::ProcessMemoryDump* memory_dump) {
@@ -18,7 +18,7 @@
    using base::trace_event::MemoryDumpLevelOfDetail;
  
    MemoryDumpLevelOfDetail level_of_detail = args.level_of_detail;
-@@ -48,6 +51,7 @@ bool PartitionAllocMemoryDumpProvider::OnMemoryDump(
+@@ -48,6 +51,7 @@ bool PartitionAllocMemoryDumpProvider::O
        "size", "bytes", partition_stats_dumper.total_active_bytes());
    memory_dump->AddOwnershipEdge(allocated_objects_dump->guid(),
                                  partitions_dump->guid());

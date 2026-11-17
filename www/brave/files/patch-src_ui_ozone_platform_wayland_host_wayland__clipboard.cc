@@ -1,4 +1,4 @@
---- src/ui/ozone/platform/wayland/host/wayland_clipboard.cc.orig	2026-05-07 17:02:56 UTC
+--- src/ui/ozone/platform/wayland/host/wayland_clipboard.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/ui/ozone/platform/wayland/host/wayland_clipboard.cc
 @@ -34,7 +34,7 @@
  #include "ui/ozone/platform/wayland/host/zwp_primary_selection_device_manager.h"
@@ -9,7 +9,7 @@
  #include "base/strings/string_util.h"
  #include "ui/base/clipboard/clipboard_util_linux.h"
  #include "ui/ozone/platform/wayland/host/wayland_exchange_data_provider.h"
-@@ -106,7 +106,7 @@ class ClipboardImpl final : public Clipboard, public D
+@@ -106,7 +106,7 @@ class ClipboardImpl final : public Clipb
  
    void ReadFileTransfer(
        ui::PlatformClipboard::RequestDataClosure callback) final {
@@ -18,7 +18,7 @@
      // Prefer portal types
      std::string mime_type;
      auto available_types = GetDevice()->GetAvailableMimeTypes();
-@@ -185,7 +185,7 @@ class ClipboardImpl final : public Clipboard, public D
+@@ -185,7 +185,7 @@ class ClipboardImpl final : public Clipb
        }
      }
  
@@ -27,7 +27,7 @@
      if (offered_data_.contains(ui::kMimeTypeUriList)) {
        if (!offered_data_.contains(ui::kMimeTypePortalFileTransfer)) {
          mime_types.push_back(ui::kMimeTypePortalFileTransfer);
-@@ -220,7 +220,7 @@ class ClipboardImpl final : public Clipboard, public D
+@@ -220,7 +220,7 @@ class ClipboardImpl final : public Clipb
      NotifyClipboardChanged();
    }
  
@@ -36,7 +36,7 @@
    void OnPortalKeyRead(ui::PlatformClipboard::RequestDataClosure callback,
                         const ui::PlatformClipboard::Data& data) {
      if (!data) {
-@@ -282,7 +282,7 @@ class ClipboardImpl final : public Clipboard, public D
+@@ -282,7 +282,7 @@ class ClipboardImpl final : public Clipb
        DataSource* source,
        const std::string& mime_type,
        typename DataSource::Delegate::ContentCallback callback) override {

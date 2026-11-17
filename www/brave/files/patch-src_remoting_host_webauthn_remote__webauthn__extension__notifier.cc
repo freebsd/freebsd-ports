@@ -1,4 +1,4 @@
---- src/remoting/host/webauthn/remote_webauthn_extension_notifier.cc.orig	2026-05-07 17:02:56 UTC
+--- src/remoting/host/webauthn/remote_webauthn_extension_notifier.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/remoting/host/webauthn/remote_webauthn_extension_notifier.cc
 @@ -27,7 +27,7 @@
  #include "base/task/thread_pool.h"
@@ -9,7 +9,7 @@
  #include "base/environment.h"
  #include "base/nix/xdg_util.h"
  #include "base/strings/string_util.h"
-@@ -114,18 +114,18 @@ RemoteWebAuthnExtensionNotifier::RemoteStateChangeCont
+@@ -114,18 +114,18 @@ RemoteWebAuthnExtensionNotifier::RemoteS
  // directory only exists if the corresponding Chrome version is installed.
  RemoteWebAuthnExtensionNotifier::RemoteStateChangeContext
  RemoteWebAuthnExtensionNotifier::GetRemoteStateChangeContext() {

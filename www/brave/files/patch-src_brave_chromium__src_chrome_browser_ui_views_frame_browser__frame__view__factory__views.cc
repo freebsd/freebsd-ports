@@ -1,4 +1,4 @@
---- src/brave/chromium_src/chrome/browser/ui/views/frame/browser_frame_view_factory_views.cc.orig	2026-06-01 00:00:00 UTC
+--- src/brave/chromium_src/chrome/browser/ui/views/frame/browser_frame_view_factory_views.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/brave/chromium_src/chrome/browser/ui/views/frame/browser_frame_view_factory_views.cc
 @@ -18,16 +18,16 @@
  #include "chrome/browser/ui/views/frame/browser_frame_view_linux.h"
@@ -20,7 +20,7 @@
  #undef BrowserFrameViewLinuxNative
  
  // A sanity check for our macro
-@@ -39,7 +39,7 @@
+@@ -39,7 +39,7 @@ static_assert(
                         BrowserView*>>,
      "CreateOpaqueBrowserFrameViewLinux is not returning "
      "BraveOpaqueBrowserFrameView");

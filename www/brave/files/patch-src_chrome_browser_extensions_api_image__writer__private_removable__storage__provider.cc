@@ -1,4 +1,4 @@
---- src/chrome/browser/extensions/api/image_writer_private/removable_storage_provider.cc.orig	2025-08-07 06:57:29 UTC
+--- src/chrome/browser/extensions/api/image_writer_private/removable_storage_provider.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/extensions/api/image_writer_private/removable_storage_provider.cc
 @@ -9,6 +9,8 @@
  #include "base/task/thread_pool.h"
@@ -9,7 +9,7 @@
  namespace extensions {
  
  // A device list to be returned when testing.
-@@ -20,6 +22,7 @@ static base::LazyInstance<scoped_refptr<StorageDeviceL
+@@ -20,6 +22,7 @@ static base::LazyInstance<scoped_refptr<
  
  void RemovableStorageProvider::GetAllDevices(DeviceListReadyCallback callback) {
    DCHECK_CURRENTLY_ON(content::BrowserThread::UI);
@@ -17,7 +17,7 @@
    if (g_test_device_list.Get().get() != nullptr) {
      base::SingleThreadTaskRunner::GetCurrentDefault()->PostTask(
          FROM_HERE,
-@@ -33,6 +36,9 @@ void RemovableStorageProvider::GetAllDevices(DeviceLis
+@@ -33,6 +36,9 @@ void RemovableStorageProvider::GetAllDev
         base::TaskShutdownBehavior::SKIP_ON_SHUTDOWN},
        base::BindOnce(&RemovableStorageProvider::PopulateDeviceList),
        std::move(callback));

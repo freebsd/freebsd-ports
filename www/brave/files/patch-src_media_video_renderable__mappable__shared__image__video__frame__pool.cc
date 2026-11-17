@@ -1,6 +1,6 @@
---- src/media/video/renderable_mappable_shared_image_video_frame_pool.cc.orig	2026-05-07 17:02:56 UTC
+--- src/media/video/renderable_mappable_shared_image_video_frame_pool.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/media/video/renderable_mappable_shared_image_video_frame_pool.cc
-@@ -199,7 +199,7 @@ bool FrameResources::Initialize(VideoPixelFormat forma
+@@ -199,7 +199,7 @@ bool FrameResources::Initialize(VideoPix
  
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_CHROMEOS)
    buffer_usage = gfx::BufferUsage::SCANOUT_VEA_CPU_READ;

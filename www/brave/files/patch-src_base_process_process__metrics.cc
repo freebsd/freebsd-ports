@@ -1,4 +1,4 @@
---- src/base/process/process_metrics.cc.orig	2026-08-12 09:02:10 UTC
+--- src/base/process/process_metrics.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/base/process/process_metrics.cc
 @@ -17,7 +17,7 @@ namespace base {
  namespace {
@@ -18,7 +18,7 @@
    GetSystemMemoryInfo(&system_metrics.memory_info_);
    GetVmStatInfo(&system_metrics.vmstat_info_);
    GetSystemDiskInfo(&system_metrics.disk_info_);
-@@ -81,7 +81,7 @@ std::unique_ptr<ProcessMetrics> ProcessMetrics::Create
+@@ -81,7 +81,7 @@ std::unique_ptr<ProcessMetrics> ProcessM
  #endif  // !BUILDFLAG(IS_MAC)
  }
  
@@ -27,7 +27,7 @@
  double ProcessMetrics::GetPlatformIndependentCPUUsage(
      TimeDelta cumulative_cpu) {
    TimeTicks time = TimeTicks::Now();
-@@ -114,7 +114,7 @@ ProcessMetrics::GetPlatformIndependentCPUUsage() {
+@@ -114,7 +114,7 @@ ProcessMetrics::GetPlatformIndependentCP
  #endif
  
  #if BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \

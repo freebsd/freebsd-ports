@@ -1,6 +1,6 @@
---- src/brave/build/commands/lib/util.js.orig	2026-06-01 00:00:00 UTC
+--- src/brave/build/commands/lib/util.js.orig	2026-10-18 18:43:23 UTC
 +++ src/brave/build/commands/lib/util.js
-@@ -186,7 +186,7 @@
+@@ -140,7 +140,7 @@ const getAdditionalGenLocation = () => {
        return 'android_clang_x86'
      }
    } else if (
@@ -9,7 +9,7 @@
      && config.targetArch === 'arm64'
    ) {
      return 'clang_x64_v8_arm64'
-@@ -809,7 +809,10 @@
+@@ -713,7 +713,10 @@ const util = {
          }, 10 * 1000)
        }
  

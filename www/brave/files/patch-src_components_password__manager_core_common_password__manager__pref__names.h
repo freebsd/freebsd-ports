@@ -1,6 +1,6 @@
---- src/components/password_manager/core/common/password_manager_pref_names.h.orig	2026-09-25 15:26:43 UTC
+--- src/components/password_manager/core/common/password_manager_pref_names.h.orig	2026-10-18 18:43:23 UTC
 +++ src/components/password_manager/core/common/password_manager_pref_names.h
-@@ -63,7 +63,7 @@ inline constexpr char kCredentialProviderEnabledOnStar
+@@ -63,7 +63,7 @@ inline constexpr char kCredentialProvide
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -9,7 +9,7 @@
  // Boolean pref controlled by the DeletingUndecryptablePasswordsEnabled policy.
  // If set to false it blocks deleting undecryptable passwords, otherwise the
  // deletion can happen.
-@@ -221,7 +221,7 @@ inline constexpr char kProfileStoreDateLastUsedForFill
+@@ -239,7 +239,7 @@ inline constexpr char kProfileStoreDateL
  inline constexpr char kAccountStoreDateLastUsedForFilling[] =
      "password_manager.account_store_date_last_used_for_filling";
  
@@ -18,7 +18,7 @@
  // Integer indicating how many times user saw biometric authentication before
  // filling promo.
  inline constexpr char kBiometricAuthBeforeFillingPromoShownCounter[] =
-@@ -262,7 +262,7 @@ inline constexpr char kPasswordChangeWithPrivateInfere
+@@ -280,7 +280,7 @@ inline constexpr char kPasswordChangeWit
  inline constexpr char kPasswordSharingEnabled[] =
      "password_manager.password_sharing_enabled";
  
@@ -27,7 +27,7 @@
  // Integer pref indicating how many times relaunch Chrome bubble was dismissed.
  inline constexpr char kRelaunchChromeBubbleDismissedCounter[] =
      "password_manager.relaunch_chrome_bubble_dismissed_counter";
-@@ -295,7 +295,7 @@ inline constexpr char kLastNegativePasswordChangeTimes
+@@ -311,7 +311,7 @@ inline constexpr char kLastNegativePassw
      "password_manager.last_negative_password_change_timestamp";
  
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || \

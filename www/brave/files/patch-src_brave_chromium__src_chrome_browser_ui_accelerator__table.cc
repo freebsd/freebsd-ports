@@ -1,6 +1,6 @@
---- src/brave/chromium_src/chrome/browser/ui/accelerator_table.cc.orig	2026-06-01 00:00:00 UTC
+--- src/brave/chromium_src/chrome/browser/ui/accelerator_table.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/brave/chromium_src/chrome/browser/ui/accelerator_table.cc
-@@ -47,7 +47,7 @@
+@@ -50,7 +50,7 @@ std::vector<AcceleratorMapping> GetAccel
    // Remove the upstream accelerator for new split tab on Windows and Linux, as
    // it conflicts with our existing Tor shortcut (see `kBraveAcceleratorMap`
    // above)

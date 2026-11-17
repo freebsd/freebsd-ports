@@ -1,6 +1,6 @@
---- src/components/live_caption/caption_util.cc.orig	2026-09-25 15:26:43 UTC
+--- src/components/live_caption/caption_util.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/components/live_caption/caption_util.cc
-@@ -142,7 +142,7 @@ bool IsHeadlessCaptionFeatureSupported() {
+@@ -142,7 +142,7 @@ bool IsHeadlessCaptionFeatureSupported()
  std::string GetCaptionSettingsUrl() {
  #if BUILDFLAG(IS_CHROMEOS)
    return "chrome://os-settings/audioAndCaptions";

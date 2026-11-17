@@ -1,4 +1,4 @@
---- src/brave/chromium_src/chrome/browser/ui/startup/startup_browser_creator.cc.orig	2026-06-01 00:00:00 UTC
+--- src/brave/chromium_src/chrome/browser/ui/startup/startup_browser_creator.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/brave/chromium_src/chrome/browser/ui/startup/startup_browser_creator.cc
 @@ -23,7 +23,7 @@
  #include "chrome/browser/platform_util.h"
@@ -9,7 +9,7 @@
  #include "chrome/browser/shell_integration_linux.h"
  #endif
  #if BUILDFLAG(IS_MAC)
-@@ -136,7 +136,7 @@
+@@ -136,7 +136,7 @@ class StartupDialogDelegate : public Bra
          std::move(callback));
    }
  

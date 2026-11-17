@@ -1,4 +1,4 @@
---- src/ui/platform_window/platform_window_init_properties.h.orig	2025-05-05 10:57:53 UTC
+--- src/ui/platform_window/platform_window_init_properties.h.orig	2026-10-18 18:43:23 UTC
 +++ src/ui/platform_window/platform_window_init_properties.h
 @@ -56,7 +56,7 @@ class WorkspaceExtensionDelegate;
  class ScenicWindowDelegate;
@@ -9,7 +9,7 @@
  class X11ExtensionDelegate;
  #endif
  
-@@ -120,7 +120,7 @@ struct COMPONENT_EXPORT(PLATFORM_WINDOW) PlatformWindo
+@@ -120,7 +120,7 @@ struct COMPONENT_EXPORT(PLATFORM_WINDOW)
  
    PlatformWindowShadowType shadow_type = PlatformWindowShadowType::kDefault;
  

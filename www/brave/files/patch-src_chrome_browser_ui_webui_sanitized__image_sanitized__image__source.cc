@@ -1,6 +1,6 @@
---- src/chrome/browser/ui/webui/sanitized_image/sanitized_image_source.cc.orig	2026-07-01 06:24:19 UTC
+--- src/chrome/browser/ui/webui/sanitized_image/sanitized_image_source.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/ui/webui/sanitized_image/sanitized_image_source.cc
-@@ -350,7 +350,7 @@ void SanitizedImageSource::OnAnimationDecoded(
+@@ -350,7 +350,7 @@ void SanitizedImageSource::OnAnimationDe
    }
  
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || \

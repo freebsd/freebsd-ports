@@ -1,4 +1,4 @@
---- src/components/named_system_lock/lock_unittest.cc.orig	2026-06-04 10:12:25 UTC
+--- src/components/named_system_lock/lock_unittest.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/components/named_system_lock/lock_unittest.cc
 @@ -18,7 +18,7 @@
  #include "build/build_config.h"
@@ -9,7 +9,7 @@
  #include <fcntl.h>
  #include <sys/mman.h>
  
-@@ -44,7 +44,7 @@ class NamedSystemLockTest : public ::testing::Test {
+@@ -44,7 +44,7 @@ class NamedSystemLockTest : public ::tes
    const std::string lock_name_ = base::UnguessableToken::Create().ToString();
  
    std::unique_ptr<ScopedLock> CreateLock() {
@@ -18,7 +18,7 @@
      return ScopedLock::Create(lock_name_, base::Seconds(0));
  #else
      SECURITY_ATTRIBUTES sa = {sizeof(SECURITY_ATTRIBUTES), nullptr, FALSE};
-@@ -94,7 +94,7 @@ TEST_F(NamedSystemLockTest, TryLockInThreadSuccess) {
+@@ -94,7 +94,7 @@ TEST_F(NamedSystemLockTest, TryLockInThr
    EXPECT_TRUE(CreateLock());
  }
  

@@ -1,4 +1,4 @@
---- src/base/process/memory_linux.cc.orig	2025-10-30 15:44:36 UTC
+--- src/base/process/memory_linux.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/base/process/memory_linux.cc
 @@ -29,6 +29,7 @@ void* __libc_calloc(size_t, size_t);
  
@@ -34,7 +34,7 @@
  // ScopedAllowBlocking() has private constructor and it can only be used in
  // friend classes/functions. Declaring a class is easier in this situation to
  // avoid adding more dependency to thread_restrictions.h because of the
-@@ -112,6 +117,7 @@ bool AdjustOOMScoreHelper::AdjustOOMScore(ProcessId pr
+@@ -112,6 +117,7 @@ bool AdjustOOMScoreHelper::AdjustOOMScor
  bool AdjustOOMScore(ProcessId process, int score) {
    return AdjustOOMScoreHelper::AdjustOOMScore(process, score);
  }

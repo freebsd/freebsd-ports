@@ -1,6 +1,6 @@
---- src/third_party/cpuinfo/BUILD.gn.orig	2026-07-01 06:24:19 UTC
+--- src/third_party/cpuinfo/BUILD.gn.orig	2026-10-18 18:43:23 UTC
 +++ src/third_party/cpuinfo/BUILD.gn
-@@ -87,7 +87,7 @@ target(_cpuinfo_target_type, "cpuinfo") {
+@@ -87,7 +87,7 @@ target(_cpuinfo_target_type, "cpuinfo")
  }
  
  source_set("os_specific") {

@@ -1,6 +1,6 @@
---- src/ui/views/views_delegate.cc.orig	2026-03-13 06:02:14 UTC
+--- src/ui/views/views_delegate.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/ui/views/views_delegate.cc
-@@ -92,7 +92,7 @@ bool ViewsDelegate::IsWindowInMetro(gfx::NativeWindow 
+@@ -92,7 +92,7 @@ bool ViewsDelegate::IsWindowInMetro(gfx:
    return false;
  }
  #elif BUILDFLAG(ENABLE_DESKTOP_AURA) && \

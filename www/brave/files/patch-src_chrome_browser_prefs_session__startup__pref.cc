@@ -1,6 +1,6 @@
---- src/chrome/browser/prefs/session_startup_pref.cc.orig	2026-09-25 15:26:43 UTC
+--- src/chrome/browser/prefs/session_startup_pref.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/prefs/session_startup_pref.cc
-@@ -66,7 +66,7 @@ SessionStartupPref::Type SessionStartupPref::GetDefaul
+@@ -66,7 +66,7 @@ SessionStartupPref::Type SessionStartupP
  #if BUILDFLAG(IS_CHROMEOS)
    return SessionStartupPref::LAST;
  #else

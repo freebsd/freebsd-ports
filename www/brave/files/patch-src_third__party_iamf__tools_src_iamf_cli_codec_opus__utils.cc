@@ -1,6 +1,6 @@
---- src/third_party/iamf_tools/src/iamf/cli/codec/opus_utils.cc.orig	2026-09-25 15:26:43 UTC
+--- src/third_party/iamf_tools/src/iamf/cli/codec/opus_utils.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/third_party/iamf_tools/src/iamf/cli/codec/opus_utils.cc
-@@ -3,7 +3,7 @@
+@@ -14,7 +14,7 @@
  #include "absl/status/status.h"
  #include "absl/strings/str_cat.h"
  #include "absl/strings/string_view.h"

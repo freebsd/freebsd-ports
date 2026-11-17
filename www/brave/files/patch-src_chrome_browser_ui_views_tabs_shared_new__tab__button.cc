@@ -1,6 +1,6 @@
---- src/chrome/browser/ui/views/tabs/shared/new_tab_button.cc.orig	2026-09-25 15:26:43 UTC
+--- src/chrome/browser/ui/views/tabs/shared/new_tab_button.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/ui/views/tabs/shared/new_tab_button.cc
-@@ -45,7 +45,7 @@ NewTabButton::NewTabButton(BrowserWindowInterface* bro
+@@ -45,7 +45,7 @@ NewTabButton::NewTabButton(BrowserWindow
  
    set_context_menu_controller(this);
  
@@ -9,7 +9,7 @@
    // On Linux, middle-clicking the New Tab Button triggers
    // paste and navigate, either to URLs or to search queries.
    SetTriggerableEventFlags(GetTriggerableEventFlags() |
-@@ -116,7 +116,7 @@ void NewTabButton::SetMiddleClickCallbackForTesting(
+@@ -116,7 +116,7 @@ void NewTabButton::SetMiddleClickCallbac
  }
  
  void NewTabButton::NotifyClick(const ui::Event& event) {

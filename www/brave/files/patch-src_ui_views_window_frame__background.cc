@@ -1,6 +1,6 @@
---- src/ui/views/window/frame_background.cc.orig	2023-10-11 18:22:24 UTC
+--- src/ui/views/window/frame_background.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/ui/views/window/frame_background.cc
-@@ -110,7 +110,7 @@ void FrameBackground::PaintMaximized(gfx::Canvas* canv
+@@ -110,7 +110,7 @@ void FrameBackground::PaintMaximized(gfx
                                       int width) const {
  // Fill the top with the frame color first so we have a constant background
  // for areas not covered by the theme image.

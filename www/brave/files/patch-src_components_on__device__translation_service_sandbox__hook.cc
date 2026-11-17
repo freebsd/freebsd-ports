@@ -1,4 +1,4 @@
---- src/components/on_device_translation/service/sandbox_hook.cc.orig	2026-02-11 09:05:39 UTC
+--- src/components/on_device_translation/service/sandbox_hook.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/components/on_device_translation/service/sandbox_hook.cc
 @@ -7,12 +7,15 @@
  #include "components/on_device_translation/service/translate_kit_client.h"
@@ -16,7 +16,7 @@
  // Gets the file permissions required by the TranslateKit
  std::vector<BrokerFilePermission> GetOnDeviceTranslationFilePermissions() {
    std::vector<BrokerFilePermission> permissions{
-@@ -21,6 +24,7 @@ std::vector<BrokerFilePermission> GetOnDeviceTranslati
+@@ -21,6 +24,7 @@ std::vector<BrokerFilePermission> GetOnD
    };
    return permissions;
  }

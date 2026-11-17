@@ -1,6 +1,6 @@
---- src/third_party/angle/src/gpu_info_util/SystemInfo_linux.cpp.orig	2026-02-11 09:05:39 UTC
+--- src/third_party/angle/src/gpu_info_util/SystemInfo_linux.cpp.orig	2026-10-18 18:43:23 UTC
 +++ src/third_party/angle/src/gpu_info_util/SystemInfo_linux.cpp
-@@ -71,6 +71,24 @@ bool GetPCIDevicesWithLibPCI(std::vector<GPUDeviceInfo
+@@ -71,6 +71,24 @@ bool GetPCIDevicesWithLibPCI(std::vector
  
  bool GetSystemInfo(SystemInfo *info)
  {

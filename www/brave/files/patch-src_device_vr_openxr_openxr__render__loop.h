@@ -1,4 +1,4 @@
---- src/device/vr/openxr/openxr_render_loop.h.orig	2026-09-25 15:26:43 UTC
+--- src/device/vr/openxr/openxr_render_loop.h.orig	2026-10-18 18:43:23 UTC
 +++ src/device/vr/openxr/openxr_render_loop.h
 @@ -38,7 +38,7 @@
  #include "third_party/openxr/src/include/openxr/openxr.h"
@@ -9,7 +9,7 @@
  #include "base/threading/thread.h"
  #endif
  
-@@ -65,7 +65,7 @@ class XRThread : public base::android::JavaHandlerThre
+@@ -65,7 +65,7 @@ class XRThread : public base::android::J
        : base::android::JavaHandlerThread(name) {}
    ~XRThread() override = default;
  };

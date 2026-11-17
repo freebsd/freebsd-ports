@@ -1,6 +1,6 @@
---- src/brave/build/linux/BUILD.gn.orig	2026-06-01 00:00:00 UTC
+--- src/brave/build/linux/BUILD.gn.orig	2026-10-18 18:43:23 UTC
 +++ src/brave/build/linux/BUILD.gn
-@@ -8,10 +8,13 @@
+@@ -8,10 +8,13 @@ import("//brave/build/linux/channels.gni
  assert(is_linux)
  
  group("brave") {

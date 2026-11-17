@@ -1,6 +1,6 @@
---- src/printing/print_settings.cc.orig	2025-05-28 14:55:43 UTC
+--- src/printing/print_settings.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/printing/print_settings.cc
-@@ -319,7 +319,7 @@ PrintSettings& PrintSettings::operator=(const PrintSet
+@@ -319,7 +319,7 @@ PrintSettings& PrintSettings::operator=(
  #endif
    is_modifiable_ = settings.is_modifiable_;
    pages_per_sheet_ = settings.pages_per_sheet_;
@@ -9,7 +9,7 @@
    for (const auto& item : settings.advanced_settings_)
      advanced_settings_.emplace(item.first, item.second.Clone());
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-@@ -349,7 +349,7 @@ bool PrintSettings::operator==(const PrintSettings& ot
+@@ -349,7 +349,7 @@ bool PrintSettings::operator==(const Pri
  #endif
                    is_modifiable_, requested_custom_margins_in_microns_,
                    pages_per_sheet_
@@ -18,7 +18,7 @@
                    ,
                    advanced_settings_
  #endif
-@@ -373,7 +373,7 @@ bool PrintSettings::operator==(const PrintSettings& ot
+@@ -373,7 +373,7 @@ bool PrintSettings::operator==(const Pri
                    other.is_modifiable_,
                    other.requested_custom_margins_in_microns_,
                    other.pages_per_sheet_

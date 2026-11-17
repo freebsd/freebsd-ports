@@ -1,4 +1,4 @@
---- src/components/proxy_config/proxy_override_rules_policy_handler.cc.orig	2026-08-31 10:59:09 UTC
+--- src/components/proxy_config/proxy_override_rules_policy_handler.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/components/proxy_config/proxy_override_rules_policy_handler.cc
 @@ -28,7 +28,7 @@ policy::PolicyErrorPath CreateNewPath(
    return path;
@@ -9,7 +9,7 @@
  bool UnaffiliatedPolicyAllowed(const policy::PolicyMap& policies) {
    const base::Value* enable_for_all_users_value =
        policies.GetValue(policy::key::kEnableProxyOverrideRulesForAllUsers,
-@@ -49,7 +49,7 @@ ProxyOverrideRulesPolicyHandler::ProxyOverrideRulesPol
+@@ -49,7 +49,7 @@ ProxyOverrideRulesPolicyHandler::ProxyOv
            policy::key::kProxyOverrideRules,
            schema.GetKnownProperty(policy::key::kProxyOverrideRules),
            policy::SchemaOnErrorStrategy::SCHEMA_ALLOW_UNKNOWN)
@@ -18,7 +18,7 @@
        ,
        enabled_for_all_users_handler_(
            policy::key::kEnableProxyOverrideRulesForAllUsers,
-@@ -66,7 +66,7 @@ ProxyOverrideRulesPolicyHandler::~ProxyOverrideRulesPo
+@@ -66,7 +66,7 @@ ProxyOverrideRulesPolicyHandler::~ProxyO
  bool ProxyOverrideRulesPolicyHandler::CheckPolicySettings(
      const policy::PolicyMap& policies,
      policy::PolicyErrorMap* errors) {
@@ -27,7 +27,7 @@
    // This code should run to set errors for
    // `kEnableProxyOverrideRulesForAllUsers`, but the regular proxy override
    // rules policy might still be valid so we ignore the returned boolean.
-@@ -78,7 +78,7 @@ bool ProxyOverrideRulesPolicyHandler::CheckPolicySetti
+@@ -78,7 +78,7 @@ bool ProxyOverrideRulesPolicyHandler::Ch
      return false;
    }
  
@@ -36,7 +36,7 @@
    const policy::PolicyMap::Entry* proxy_override_rules_policy =
        policies.Get(policy_name());
    if (proxy_override_rules_policy &&
-@@ -129,7 +129,7 @@ void ProxyOverrideRulesPolicyHandler::ApplyPolicySetti
+@@ -129,7 +129,7 @@ void ProxyOverrideRulesPolicyHandler::Ap
    prefs->SetValue(proxy_config::prefs::kProxyOverrideRules,
                    policy_value->Clone());
  

@@ -1,4 +1,4 @@
---- src/remoting/host/host_attributes.cc.orig	2026-05-07 17:02:56 UTC
+--- src/remoting/host/host_attributes.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/remoting/host/host_attributes.cc
 @@ -18,7 +18,7 @@
  #include "remoting/host/win/evaluate_d3d.h"
@@ -9,7 +9,7 @@
  #include "remoting/base/username.h"
  #endif
  
-@@ -70,7 +70,7 @@ inline constexpr bool IsNonOfficialBuild() {
+@@ -70,7 +70,7 @@ inline constexpr bool IsNonOfficialBuild
  bool IsMultiProcessHost() {
  #if BUILDFLAG(IS_WIN)
    return true;

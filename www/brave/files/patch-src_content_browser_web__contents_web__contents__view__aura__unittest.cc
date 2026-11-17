@@ -1,4 +1,4 @@
---- src/content/browser/web_contents/web_contents_view_aura_unittest.cc.orig	2026-09-25 15:26:43 UTC
+--- src/content/browser/web_contents/web_contents_view_aura_unittest.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/content/browser/web_contents/web_contents_view_aura_unittest.cc
 @@ -55,7 +55,7 @@
  #include "ui/base/dragdrop/os_exchange_data_provider_non_backed.h"
@@ -9,7 +9,7 @@
  #include "ui/base/x/selection_utils.h"
  #include "ui/base/x/x11_os_exchange_data_provider.h"
  #include "ui/gfx/x/atom_cache.h"
-@@ -113,7 +113,7 @@ class TestDragDropClient : public aura::client::DragDr
+@@ -113,7 +113,7 @@ class TestDragDropClient : public aura::
      last_source_ = source;
      return DragOperation::kCopy;
    }
@@ -18,7 +18,7 @@
    void UpdateDragImage(const gfx::ImageSkia& image,
                         const gfx::Vector2d& offset) override {}
  #endif
-@@ -300,7 +300,7 @@ TEST_F(WebContentsViewAuraTest, WebContentsDestroyedDu
+@@ -300,7 +300,7 @@ TEST_F(WebContentsViewAuraTest, WebConte
                               ui::EF_LEFT_MOUSE_BUTTON, 0);
    ui::EventHandler* event_handler = GetView();
    event_handler->OnMouseEvent(&mouse_event);
@@ -27,7 +27,7 @@
    // The web-content is not activated during mouse-press on Linux.
    // See comment in WebContentsViewAura::OnMouseEvent() for more details.
    EXPECT_NE(web_contents(), nullptr);
-@@ -366,7 +366,7 @@ TEST_F(WebContentsViewAuraTest, MAYBE_DragDropFiles) {
+@@ -366,7 +366,7 @@ TEST_F(WebContentsViewAuraTest, MAYBE_Dr
    view->OnDragEntered(event);
    ASSERT_NE(nullptr, view->current_drag_data_);
  
@@ -36,7 +36,7 @@
    // By design, Linux implementations return an empty string if file data
    // is also present.
    EXPECT_TRUE(!view->current_drag_data_->text ||
-@@ -406,7 +406,7 @@ TEST_F(WebContentsViewAuraTest, MAYBE_DragDropFiles) {
+@@ -406,7 +406,7 @@ TEST_F(WebContentsViewAuraTest, MAYBE_Dr
  
    CheckDropData(view);
  
@@ -45,7 +45,7 @@
    // By design, Linux implementations returns an empty string if file data
    // is also present.
    EXPECT_TRUE(!drop_complete_data_->drop_data.text ||
-@@ -464,7 +464,7 @@ TEST_F(WebContentsViewAuraTest, MAYBE_DragDropFilesOri
+@@ -464,7 +464,7 @@ TEST_F(WebContentsViewAuraTest, MAYBE_Dr
    view->OnDragEntered(event);
    ASSERT_NE(nullptr, view->current_drag_data_);
  
@@ -54,7 +54,7 @@
    // By design, Linux implementations return an empty string if file data
    // is also present.
    EXPECT_TRUE(!view->current_drag_data_->text ||
-@@ -496,7 +496,7 @@ TEST_F(WebContentsViewAuraTest, MAYBE_DragDropFilesOri
+@@ -496,7 +496,7 @@ TEST_F(WebContentsViewAuraTest, MAYBE_Dr
  
    CheckDropData(view);
  
@@ -63,7 +63,7 @@
    // By design, Linux implementations returns an empty string if file data is
    // also present.
    EXPECT_TRUE(!drop_complete_data_->drop_data.text ||
-@@ -528,7 +528,7 @@ TEST_F(WebContentsViewAuraTest, MAYBE_DragDropImageFro
+@@ -528,7 +528,7 @@ TEST_F(WebContentsViewAuraTest, MAYBE_Dr
  
    auto data = std::make_unique<ui::OSExchangeData>();
  

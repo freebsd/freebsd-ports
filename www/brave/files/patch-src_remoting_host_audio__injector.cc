@@ -1,4 +1,4 @@
---- src/remoting/host/audio_injector.cc.orig	2026-07-01 06:24:19 UTC
+--- src/remoting/host/audio_injector.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/remoting/host/audio_injector.cc
 @@ -7,7 +7,7 @@
  #include "build/build_config.h"
@@ -9,7 +9,7 @@
  #include "remoting/host/linux/pipewire_audio_injector.h"
  #endif
  
-@@ -19,7 +19,7 @@ AudioInjector::~AudioInjector() = default;
+@@ -19,7 +19,7 @@ AudioInjector::~AudioInjector() = defaul
  
  // static
  bool AudioInjector::IsSupported() {

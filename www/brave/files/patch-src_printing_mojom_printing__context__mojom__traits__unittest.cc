@@ -1,6 +1,6 @@
---- src/printing/mojom/printing_context_mojom_traits_unittest.cc.orig	2026-06-04 10:12:25 UTC
+--- src/printing/mojom/printing_context_mojom_traits_unittest.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/printing/mojom/printing_context_mojom_traits_unittest.cc
-@@ -80,7 +80,7 @@ base::DictValue GenerateSampleSystemPrintDialogData(
+@@ -80,7 +80,7 @@ base::DictValue GenerateSampleSystemPrin
               "file:///foo/bar.pdf");
    }
  
@@ -9,7 +9,7 @@
    data.Set(kLinuxSystemPrintDialogDataPrinter, "printer-name");
    data.Set(kLinuxSystemPrintDialogDataPrintSettings, "print-settings-foo");
    data.Set(kLinuxSystemPrintDialogDataPageSetup, "page-setup-bar");
-@@ -92,7 +92,7 @@ base::DictValue GenerateSampleSystemPrintDialogData(
+@@ -92,7 +92,7 @@ base::DictValue GenerateSampleSystemPrin
    return data;
  }
  
@@ -18,7 +18,7 @@
  base::DictValue GenerateSampleSystemPrintDialogDataPortal() {
    base::DictValue data;
    data.Set(kLinuxSystemPrintDialogDataPrintSettingsBin,
-@@ -131,7 +131,7 @@ const PageMargins kPrintSettingsCustomMarginsInMicrons
+@@ -131,7 +131,7 @@ const PageMargins kPrintSettingsCustomMa
                                                         /*top=*/10583,
                                                         /*bottom=*/12347);
  
@@ -27,7 +27,7 @@
  PrintSettings::AdvancedSettings GenerateSampleAdvancedSettings() {
    PrintSettings::AdvancedSettings advanced_settings;
    advanced_settings.emplace("advanced-setting-A", base::Value("setting-A"));
-@@ -224,7 +224,7 @@ PrintSettings GenerateSamplePrintSettingsCommon() {
+@@ -224,7 +224,7 @@ PrintSettings GenerateSamplePrintSetting
    settings.set_device_name(kPrintSettingsDeviceName);
    settings.set_requested_media(kPrintSettingsRequestedMedia);
  

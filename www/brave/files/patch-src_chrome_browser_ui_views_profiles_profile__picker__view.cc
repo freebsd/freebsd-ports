@@ -1,6 +1,6 @@
---- src/chrome/browser/ui/views/profiles/profile_picker_view.cc.orig	2026-09-25 15:26:43 UTC
+--- src/chrome/browser/ui/views/profiles/profile_picker_view.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/ui/views/profiles/profile_picker_view.cc
-@@ -90,7 +90,7 @@
+@@ -93,7 +93,7 @@
  #include "chrome/browser/renderer_host/chrome_render_widget_host_view_mac_history_swiping_control.h"
  #endif
  

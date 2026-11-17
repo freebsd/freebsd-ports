@@ -1,6 +1,6 @@
---- src/gpu/command_buffer/client/internal/mappable_buffer_native_pixmap.cc.orig	2026-08-12 09:02:10 UTC
+--- src/gpu/command_buffer/client/internal/mappable_buffer_native_pixmap.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/gpu/command_buffer/client/internal/mappable_buffer_native_pixmap.cc
-@@ -64,7 +64,7 @@ MappableBufferNativePixmap::CreateFromHandle(
+@@ -64,7 +64,7 @@ MappableBufferNativePixmap::CreateFromHa
      viz::SharedImageFormat format,
      gfx::BufferUsage usage) {
    const bool supports_zero_copy_webgpu_import =

@@ -1,6 +1,6 @@
---- src/third_party/openscreen/src/cast/common/channel/message_util.cc.orig	2026-09-25 15:26:43 UTC
+--- src/third_party/openscreen/src/cast/common/channel/message_util.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/third_party/openscreen/src/cast/common/channel/message_util.cc
-@@ -59,7 +59,7 @@ constexpr VirtualConnectPlatformValue GetVirtualConnec
+@@ -59,7 +59,7 @@ constexpr VirtualConnectPlatformValue Ge
    return kMacOSX;
  #elif BUILDFLAG(IS_CHROMEOS)
    return kChromeOS;

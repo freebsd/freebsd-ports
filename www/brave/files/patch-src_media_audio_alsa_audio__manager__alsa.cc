@@ -1,6 +1,6 @@
---- src/media/audio/alsa/audio_manager_alsa.cc.orig	2026-08-12 15:23:09 UTC
+--- src/media/audio/alsa/audio_manager_alsa.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/media/audio/alsa/audio_manager_alsa.cc
-@@ -106,7 +106,9 @@ bool AudioManagerAlsa::GetAlsaAudioDevices(StreamType 
+@@ -106,7 +106,9 @@ bool AudioManagerAlsa::GetAlsaAudioDevic
    // Loop through the physical sound cards to get ALSA device hints.
    bool had_error = false;
    int card_next_result = 0;
@@ -10,7 +10,7 @@
      void** hints = nullptr;
      int hint_result = wrapper_->DeviceNameHint(card, kPcmInterfaceName, &hints);
      if (!hint_result) {
-@@ -119,7 +121,9 @@ bool AudioManagerAlsa::GetAlsaAudioDevices(StreamType 
+@@ -119,7 +121,9 @@ bool AudioManagerAlsa::GetAlsaAudioDevic
        DLOG(WARNING) << "GetAlsaAudioDevices: unable to get device hints: "
                      << wrapper_->StrError(hint_result);
      }
@@ -20,7 +20,7 @@
  
    if (card_next_result != 0) {
      had_error = true;
-@@ -211,7 +215,11 @@ bool AudioManagerAlsa::IsAlsaDeviceAvailable(AudioMana
+@@ -211,7 +215,11 @@ bool AudioManagerAlsa::IsAlsaDeviceAvail
    // goes through software conversion if needed (e.g. incompatible
    // sample rate).
    // TODO(joi): Should we prefer "hw" instead?
@@ -32,7 +32,7 @@
    return device_name.starts_with(kDeviceTypeDesired);
  }
  
-@@ -262,7 +270,9 @@ bool AudioManagerAlsa::HasAnyAlsaAudioDevice(
+@@ -262,7 +270,9 @@ bool AudioManagerAlsa::HasAnyAlsaAudioDe
    // Loop through the sound cards.
    // Don't use snd_device_name_hint(-1,..) since there is an access violation
    // inside this ALSA API with libasound.so.2.0.0.
@@ -42,7 +42,7 @@
      int error = wrapper_->DeviceNameHint(card, kPcmInterfaceName, &hints);
      if (!error) {
        const std::string_view unwanted_type =
-@@ -291,7 +301,9 @@ bool AudioManagerAlsa::HasAnyAlsaAudioDevice(
+@@ -291,7 +301,9 @@ bool AudioManagerAlsa::HasAnyAlsaAudioDe
        DLOG(WARNING) << "HasAnyAudioDevice: unable to get device hints: "
                      << wrapper_->StrError(error);
      }

@@ -1,4 +1,4 @@
---- src/third_party/angle/src/gpu_info_util/SystemInfo_x11.cpp.orig	2022-02-23 20:48:53 UTC
+--- src/third_party/angle/src/gpu_info_util/SystemInfo_x11.cpp.orig	2026-10-18 18:43:23 UTC
 +++ src/third_party/angle/src/gpu_info_util/SystemInfo_x11.cpp
 @@ -8,6 +8,10 @@
  
@@ -11,7 +11,7 @@
  #include <X11/Xlib.h>
  
  #include "common/debug.h"
-@@ -18,8 +22,46 @@
+@@ -18,9 +22,47 @@
  #    error SystemInfo_x11.cpp compiled without GPU_INFO_USE_X11
  #endif
  
@@ -22,7 +22,7 @@
 +
  namespace angle
  {
-+
+ 
 +#if defined(__OpenBSD__) || defined(__FreeBSD__)
 +bool CollectMesaCardInfo(std::vector<GPUDeviceInfo> *devices)
 +{
@@ -55,6 +55,7 @@
 +    return true;
 +}
 +#endif
- 
++
  bool GetNvidiaDriverVersionWithXNVCtrl(std::string *version)
  {
+     *version = "";

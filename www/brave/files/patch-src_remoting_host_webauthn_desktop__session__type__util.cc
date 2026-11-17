@@ -1,4 +1,4 @@
---- src/remoting/host/webauthn/desktop_session_type_util.cc.orig	2025-05-28 14:55:43 UTC
+--- src/remoting/host/webauthn/desktop_session_type_util.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/remoting/host/webauthn/desktop_session_type_util.cc
 @@ -11,7 +11,7 @@
  namespace remoting {
@@ -9,7 +9,7 @@
  DesktopSessionType GetDesktopSessionTypeInternal(
      std::unique_ptr<base::Environment> environment) {
    // Currently on Linux, a desktop session is either remote-only or local-only.
-@@ -29,7 +29,7 @@ DesktopSessionType GetDesktopSessionTypeInternal(
+@@ -29,7 +29,7 @@ DesktopSessionType GetDesktopSessionType
  }  // namespace
  
  DesktopSessionType GetDesktopSessionType() {

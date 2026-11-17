@@ -1,6 +1,6 @@
---- src/chrome/browser/ui/views/tabs/vertical/vertical_tab_strip_focus_swipe_controller.cc.orig	2026-09-25 15:26:43 UTC
+--- src/chrome/browser/ui/views/tabs/vertical/vertical_tab_strip_focus_swipe_controller.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/ui/views/tabs/vertical/vertical_tab_strip_focus_swipe_controller.cc
-@@ -25,7 +25,7 @@ VerticalTabStripFocusSwipeController::~VerticalTabStri
+@@ -25,7 +25,7 @@ VerticalTabStripFocusSwipeController::~V
    region_view_->RemovePreTargetHandler(this);
  }
  

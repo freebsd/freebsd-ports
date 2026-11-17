@@ -1,4 +1,4 @@
---- src/content/utility/utility_blink_platform_with_sandbox_support_impl.cc.orig	2025-03-05 08:14:56 UTC
+--- src/content/utility/utility_blink_platform_with_sandbox_support_impl.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/content/utility/utility_blink_platform_with_sandbox_support_impl.cc
 @@ -9,7 +9,7 @@
  
@@ -18,7 +18,7 @@
    mojo::PendingRemote<font_service::mojom::FontService> font_service;
    UtilityThread::Get()->BindHostReceiver(
        font_service.InitWithNewPipeAndPassReceiver());
-@@ -40,7 +40,7 @@ UtilityBlinkPlatformWithSandboxSupportImpl::
+@@ -40,7 +40,7 @@ UtilityBlinkPlatformWithSandboxSupportIm
  blink::WebSandboxSupport*
  UtilityBlinkPlatformWithSandboxSupportImpl::GetSandboxSupport() {
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \

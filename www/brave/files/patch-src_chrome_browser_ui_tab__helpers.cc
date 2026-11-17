@@ -1,4 +1,4 @@
---- src/chrome/browser/ui/tab_helpers.cc.orig	2026-09-25 15:26:43 UTC
+--- src/chrome/browser/ui/tab_helpers.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/ui/tab_helpers.cc
 @@ -210,7 +210,7 @@
  #endif
@@ -9,7 +9,7 @@
  #include "chrome/browser/ui/hats/hats_helper.h"
  #include "chrome/browser/ui/performance_controls/performance_controls_hats_service_factory.h"
  #include "chrome/browser/ui/shared_highlighting/shared_highlighting_promo.h"
-@@ -769,12 +769,12 @@ void TabHelpers::AttachTabHelpers(WebContents* web_con
+@@ -765,12 +765,12 @@ void TabHelpers::AttachTabHelpers(WebCon
    webapps::PreRedirectionURLObserver::CreateForWebContents(web_contents);
  #endif
  

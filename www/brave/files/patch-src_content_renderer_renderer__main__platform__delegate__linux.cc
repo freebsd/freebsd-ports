@@ -1,6 +1,6 @@
---- src/content/renderer/renderer_main_platform_delegate_linux.cc.orig	2023-09-13 12:11:42 UTC
+--- src/content/renderer/renderer_main_platform_delegate_linux.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/content/renderer/renderer_main_platform_delegate_linux.cc
-@@ -44,6 +44,7 @@ bool RendererMainPlatformDelegate::EnableSandbox() {
+@@ -44,6 +44,7 @@ bool RendererMainPlatformDelegate::Enabl
    // any renderer has been started.
    // Here, we test that the status of SeccompBpf in the renderer is consistent
    // with what SandboxLinux::GetStatus() said we would do.
@@ -8,7 +8,7 @@
    auto* linux_sandbox = sandbox::policy::SandboxLinux::GetInstance();
    if (linux_sandbox->GetStatus() & sandbox::policy::SandboxLinux::kSeccompBPF) {
      CHECK(linux_sandbox->seccomp_bpf_started());
-@@ -65,6 +66,7 @@ bool RendererMainPlatformDelegate::EnableSandbox() {
+@@ -65,6 +66,7 @@ bool RendererMainPlatformDelegate::Enabl
      CHECK_EQ(errno, EPERM);
    }
  #endif  // __x86_64__

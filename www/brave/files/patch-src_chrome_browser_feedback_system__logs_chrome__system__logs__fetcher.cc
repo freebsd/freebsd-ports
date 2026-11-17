@@ -1,4 +1,4 @@
---- src/chrome/browser/feedback/system_logs/chrome_system_logs_fetcher.cc.orig	2026-04-09 06:05:42 UTC
+--- src/chrome/browser/feedback/system_logs/chrome_system_logs_fetcher.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/feedback/system_logs/chrome_system_logs_fetcher.cc
 @@ -46,7 +46,7 @@
  #include "services/network/public/cpp/shared_url_loader_factory.h"
@@ -9,7 +9,7 @@
  #include "chrome/browser/feedback/system_logs/log_sources/ozone_platform_state_dump_source.h"
  #endif
  
-@@ -103,7 +103,7 @@ SystemLogsFetcher* BuildChromeSystemLogsFetcher(Profil
+@@ -103,7 +103,7 @@ SystemLogsFetcher* BuildChromeSystemLogs
    fetcher->AddSource(std::make_unique<UiHierarchyLogSource>(scrub_data));
  #endif
  

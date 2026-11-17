@@ -1,6 +1,6 @@
---- src/components/crash/core/common/BUILD.gn.orig	2025-12-05 10:12:50 UTC
+--- src/components/crash/core/common/BUILD.gn.orig	2026-10-18 18:43:23 UTC
 +++ src/components/crash/core/common/BUILD.gn
-@@ -8,7 +8,7 @@ import("//components/gwp_asan/buildflags/buildflags.gn
+@@ -8,7 +8,7 @@ import("//components/gwp_asan/buildflags
  
  declare_args() {
    # If set to true, this will stub out and disable the entire crash key system.

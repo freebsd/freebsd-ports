@@ -1,6 +1,6 @@
---- src/media/video/mappable_shared_image_video_frame_pool.cc.orig	2026-09-25 15:26:43 UTC
+--- src/media/video/mappable_shared_image_video_frame_pool.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/media/video/mappable_shared_image_video_frame_pool.cc
-@@ -685,7 +685,7 @@ void MappableSharedImageVideoFramePool::PoolImpl::Crea
+@@ -684,7 +684,7 @@ void MappableSharedImageVideoFramePool::
    }
  
    bool is_software_backed_video_frame = !video_frame->HasSharedImage();

@@ -1,4 +1,4 @@
---- src/content/browser/scheduler/responsiveness/native_event_observer.cc.orig	2026-05-07 17:02:56 UTC
+--- src/content/browser/scheduler/responsiveness/native_event_observer.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/content/browser/scheduler/responsiveness/native_event_observer.cc
 @@ -15,7 +15,7 @@
  
@@ -9,7 +9,7 @@
  #include "ui/events/platform/platform_event_source.h"
  #endif
  
-@@ -38,7 +38,7 @@ BrowserUINativeEventObserver::~BrowserUINativeEventObs
+@@ -38,7 +38,7 @@ BrowserUINativeEventObserver::~BrowserUI
    UnregisterObserver();
  }
  

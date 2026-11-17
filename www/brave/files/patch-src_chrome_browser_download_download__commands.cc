@@ -1,4 +1,4 @@
---- src/chrome/browser/download/download_commands.cc.orig	2026-08-31 10:59:09 UTC
+--- src/chrome/browser/download/download_commands.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/download/download_commands.cc
 @@ -27,7 +27,7 @@
  #include "ui/base/clipboard/scoped_clipboard_writer.h"
@@ -9,7 +9,7 @@
  #include "chrome/browser/ui/scoped_tabbed_browser_displayer.h"
  #endif
  
-@@ -172,7 +172,7 @@ void DownloadCommands::ExecuteCommand(Command command)
+@@ -172,7 +172,7 @@ void DownloadCommands::ExecuteCommand(Co
  }
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

@@ -1,4 +1,4 @@
---- src/content/shell/browser/shell_browser_main_parts.cc.orig	2025-04-04 08:52:13 UTC
+--- src/content/shell/browser/shell_browser_main_parts.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/content/shell/browser/shell_browser_main_parts.cc
 @@ -50,7 +50,7 @@
  #include "net/base/network_change_notifier.h"
@@ -18,7 +18,7 @@
  #include "device/bluetooth/dbus/dbus_bluez_manager_wrapper_linux.h"
  #include "ui/linux/linux_ui.h"          // nogncheck
  #include "ui/linux/linux_ui_factory.h"  // nogncheck
-@@ -128,7 +128,7 @@ void ShellBrowserMainParts::PostCreateMainMessageLoop(
+@@ -128,7 +128,7 @@ void ShellBrowserMainParts::PostCreateMa
  }
  
  int ShellBrowserMainParts::PreEarlyInitialization() {
@@ -27,7 +27,7 @@
    ui::InitializeInputMethodForTesting();
  #elif BUILDFLAG(IS_ANDROID)
    net::NetworkChangeNotifier::SetFactory(
-@@ -156,7 +156,7 @@ void ShellBrowserMainParts::ToolkitInitialized() {
+@@ -156,7 +156,7 @@ void ShellBrowserMainParts::ToolkitIniti
    if (switches::IsRunWebTestsSwitchPresent())
      return;
  
@@ -36,7 +36,7 @@
    ui::LinuxUi::SetInstance(ui::GetDefaultLinuxUi());
  #endif
  }
-@@ -203,7 +203,7 @@ void ShellBrowserMainParts::PostMainMessageLoopRun() {
+@@ -204,7 +204,7 @@ void ShellBrowserMainParts::PostMainMess
    ShellDevToolsManagerDelegate::StopHttpHandler();
    browser_context_.reset();
    off_the_record_browser_context_.reset();

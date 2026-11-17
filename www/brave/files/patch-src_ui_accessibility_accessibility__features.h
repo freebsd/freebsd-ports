@@ -1,6 +1,6 @@
---- src/ui/accessibility/accessibility_features.h.orig	2026-09-25 15:26:43 UTC
+--- src/ui/accessibility/accessibility_features.h.orig	2026-10-18 18:43:23 UTC
 +++ src/ui/accessibility/accessibility_features.h
-@@ -405,7 +405,7 @@ AX_BASE_EXPORT bool IsScreenAIOCREnabled();
+@@ -382,7 +382,7 @@ AX_BASE_EXPORT bool IsScreenAIOCREnabled
  AX_BASE_EXPORT BASE_DECLARE_FEATURE(kScreenAITestMode);
  AX_BASE_EXPORT bool IsScreenAITestModeEnabled();
  
@@ -9,7 +9,7 @@
  // Enables advanced partition allocation checks in ScreenAI service.
  // TODO(crbug.com/418199684): Remove when the bug is fixed.
  AX_BASE_EXPORT BASE_DECLARE_FEATURE(
-@@ -437,7 +437,7 @@ AX_BASE_EXPORT BASE_DECLARE_FEATURE(kMacAccessibilityT
+@@ -414,7 +414,7 @@ AX_BASE_EXPORT BASE_DECLARE_FEATURE(kMac
  AX_BASE_EXPORT bool IsMacAccessibilityTextOperationEnabled();
  #endif  // BUILDFLAG(IS_MAC)
  

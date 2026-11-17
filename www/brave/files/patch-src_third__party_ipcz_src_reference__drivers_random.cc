@@ -1,6 +1,6 @@
---- src/third_party/ipcz/src/reference_drivers/random.cc.orig	2025-09-06 10:01:20 UTC
+--- src/third_party/ipcz/src/reference_drivers/random.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/third_party/ipcz/src/reference_drivers/random.cc
-@@ -53,7 +53,7 @@ decltype(&ProcessPrng) GetProcessPrng() {
+@@ -53,7 +53,7 @@ decltype(&ProcessPrng) GetProcessPrng()
  }
  #endif
  
@@ -9,7 +9,7 @@
  void RandomBytesFromDevUrandom(absl::Span<uint8_t> destination) {
    static int urandom_fd = [] {
      for (;;) {
-@@ -97,7 +97,7 @@ void RandomBytes(absl::Span<uint8_t> destination) {
+@@ -97,7 +97,7 @@ void RandomBytes(absl::Span<uint8_t> des
        return;
      }
    }

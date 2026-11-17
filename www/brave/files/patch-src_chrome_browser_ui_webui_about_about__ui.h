@@ -1,6 +1,6 @@
---- src/chrome/browser/ui/webui/about/about_ui.h.orig	2025-07-02 06:08:04 UTC
+--- src/chrome/browser/ui/webui/about/about_ui.h.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/ui/webui/about/about_ui.h
-@@ -43,7 +43,7 @@ class TermsUIConfig : public AboutUIConfigBase {
+@@ -43,7 +43,7 @@ class TermsUIConfig : public AboutUIConf
  };
  #endif
  

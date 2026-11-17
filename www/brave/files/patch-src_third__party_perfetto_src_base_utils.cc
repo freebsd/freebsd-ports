@@ -1,4 +1,4 @@
---- src/third_party/perfetto/src/base/utils.cc.orig	2026-09-25 15:26:43 UTC
+--- src/third_party/perfetto/src/base/utils.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/third_party/perfetto/src/base/utils.cc
 @@ -47,7 +47,12 @@
  #include <sys/sysctl.h>
@@ -14,7 +14,7 @@
      PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID)
  #include <sys/prctl.h>
  
-@@ -244,14 +249,29 @@ void Daemonize(std::function<int(pid_t)> parent_cb) {
+@@ -244,14 +249,29 @@ void Daemonize(std::function<int(pid_t)>
  
  std::string GetCurExecutablePath() {
    std::string self_path;

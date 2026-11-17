@@ -1,6 +1,6 @@
---- src/content/common/features.cc.orig	2026-09-25 15:26:43 UTC
+--- src/content/common/features.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/content/common/features.cc
-@@ -223,7 +223,7 @@ BASE_FEATURE(kKillOnUnexpectedOriginHeader, base::FEAT
+@@ -233,7 +233,7 @@ BASE_FEATURE(kKillOnUnexpectedOriginHead
  BASE_FEATURE(kEmbeddingRequiresOptIn, base::FEATURE_DISABLED_BY_DEFAULT);
  
  // Enables error reporting for JS errors inside DevTools frontend host
@@ -9,7 +9,7 @@
  BASE_FEATURE(kEnableDevToolsJsErrorReporting,
               base::FEATURE_DISABLED_BY_DEFAULT);
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-@@ -286,12 +286,12 @@ BASE_FEATURE(kFocusRenderWidgetHostViewAndroidOnMouseD
+@@ -296,12 +296,12 @@ BASE_FEATURE(kFocusRenderWidgetHostViewA
  // fetch fonts from the Browser's FontDataService. It is currently scoped to
  // Linux and ChromeOS. See
  // crbug.com/335680565.
@@ -24,7 +24,7 @@
  BASE_FEATURE(kFontDataServiceLinux, base::FEATURE_ENABLED_BY_DEFAULT);
  BASE_FEATURE_ENUM_PARAM(FontDataServiceTypefaceType,
                          kFontDataServiceTypefaceType,
-@@ -317,11 +317,11 @@ BASE_FEATURE(kFontDataManagerPrewarming, base::FEATURE
+@@ -327,11 +327,11 @@ BASE_FEATURE(kFontDataManagerPrewarming,
  BASE_FEATURE(kFontDataServiceForCSSLocalFonts,
               base::FEATURE_DISABLED_BY_DEFAULT);
  
@@ -38,7 +38,7 @@
    return base::FeatureList::IsEnabled(features::kFontDataServiceLinux);
  #elif BUILDFLAG(IS_CHROMEOS)
    return base::FeatureList::IsEnabled(features::kFontDataServiceChromeOS);
-@@ -831,7 +831,7 @@ BASE_FEATURE(kStrictHighRankProcessLRU, base::FEATURE_
+@@ -849,7 +849,7 @@ BASE_FEATURE(kStrictHighRankProcessLRU,
  // is handled at a different level and not through the interpretation of scroll
  // events.
  BASE_FEATURE(kTouchpadOverscrollHistoryNavigation,

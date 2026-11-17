@@ -1,6 +1,6 @@
---- src/chrome/browser/enterprise/browser_management/management_identity.cc.orig	2026-04-09 06:05:42 UTC
+--- src/chrome/browser/enterprise/browser_management/management_identity.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/enterprise/browser_management/management_identity.cc
-@@ -86,7 +86,7 @@ std::optional<std::string> GetDeviceManagerIdentity() 
+@@ -86,7 +86,7 @@ std::optional<std::string> GetDeviceMana
        g_browser_process->platform_part()->browser_policy_connector_ash();
    return connector->GetEnterpriseDomainManager();
  #else
@@ -9,7 +9,7 @@
    if (base::FeatureList::IsEnabled(
            features::kEnterpriseManagementDisclaimerUsesCustomLabel)) {
      std::string custom_management_label =
-@@ -116,7 +116,7 @@ std::optional<std::string> GetAccountManagerIdentity(P
+@@ -116,7 +116,7 @@ std::optional<std::string> GetAccountMan
      return std::nullopt;
    }
  

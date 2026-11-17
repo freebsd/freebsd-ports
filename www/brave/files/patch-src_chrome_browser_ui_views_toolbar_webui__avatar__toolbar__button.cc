@@ -1,6 +1,6 @@
---- src/chrome/browser/ui/views/toolbar/webui_avatar_toolbar_button.cc.orig	2026-09-25 15:26:43 UTC
+--- src/chrome/browser/ui/views/toolbar/webui_avatar_toolbar_button.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/ui/views/toolbar/webui_avatar_toolbar_button.cc
-@@ -223,7 +223,7 @@ void WebUIAvatarToolbarButton::MaybeShowProfileSwitchI
+@@ -223,7 +223,7 @@ void WebUIAvatarToolbarButton::MaybeShow
    }
  }
  

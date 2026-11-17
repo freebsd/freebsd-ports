@@ -1,6 +1,6 @@
---- src/content/browser/media/media_keys_listener_manager_impl.cc.orig	2026-08-12 09:02:10 UTC
+--- src/content/browser/media/media_keys_listener_manager_impl.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/content/browser/media/media_keys_listener_manager_impl.cc
-@@ -326,7 +326,7 @@ void MediaKeysListenerManagerImpl::StartListeningForMe
+@@ -326,7 +326,7 @@ void MediaKeysListenerManagerImpl::Start
      return;
    }
  

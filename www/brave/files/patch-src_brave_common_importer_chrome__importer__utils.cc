@@ -1,6 +1,6 @@
---- src/brave/common/importer/chrome_importer_utils.cc.orig	2026-06-01 00:00:00 UTC
+--- src/brave/common/importer/chrome_importer_utils.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/brave/common/importer/chrome_importer_utils.cc
-@@ -142,8 +142,9 @@
+@@ -142,8 +142,9 @@ bool CanImportPasswordsForType(user_data
    }
  
    // We can import password from Whale only on macOS. Decryption fails on

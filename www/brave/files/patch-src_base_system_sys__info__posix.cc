@@ -1,4 +1,4 @@
---- src/base/system/sys_info_posix.cc.orig	2026-06-04 10:12:25 UTC
+--- src/base/system/sys_info_posix.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/base/system/sys_info_posix.cc
 @@ -59,7 +59,11 @@ base::ByteSize AmountOfVirtualMemory() {
    if (result != 0) {
@@ -12,7 +12,7 @@
  }
  using LazyVirtualMemory =
      base::internal::LazySysInfoValue<base::ByteSize, AmountOfVirtualMemory>;
-@@ -110,7 +114,7 @@ void GetKernelVersionNumbers(int32_t* major_version,
+@@ -110,7 +114,7 @@ void GetKernelVersionNumbers(int32_t* ma
  
  namespace base {
  
@@ -30,7 +30,7 @@
  
  // static
  ByteSize SysInfo::AmountOfVirtualMemory() {
-@@ -275,6 +279,8 @@ std::string SysInfo::OperatingSystemArchitecture() {
+@@ -275,6 +279,8 @@ std::string SysInfo::OperatingSystemArch
      arch = "x86";
    } else if (arch == "amd64") {
      arch = "x86_64";

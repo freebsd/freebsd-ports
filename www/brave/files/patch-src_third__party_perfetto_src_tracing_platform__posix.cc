@@ -1,6 +1,6 @@
---- src/third_party/perfetto/src/tracing/platform_posix.cc.orig	2026-01-14 08:33:23 UTC
+--- src/third_party/perfetto/src/tracing/platform_posix.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/third_party/perfetto/src/tracing/platform_posix.cc
-@@ -111,13 +111,15 @@ std::unique_ptr<base::TaskRunner> PlatformPosix::Creat
+@@ -111,13 +111,15 @@ std::unique_ptr<base::TaskRunner> Platfo
  }
  
  std::string PlatformPosix::GetCurrentProcessName() {

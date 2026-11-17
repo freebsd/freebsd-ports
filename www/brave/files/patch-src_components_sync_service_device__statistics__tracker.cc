@@ -1,6 +1,6 @@
---- src/components/sync/service/device_statistics_tracker.cc.orig	2026-06-04 10:12:25 UTC
+--- src/components/sync/service/device_statistics_tracker.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/components/sync/service/device_statistics_tracker.cc
-@@ -139,7 +139,7 @@ std::optional<DeviceStatisticsTracker::Platform> GetLo
+@@ -139,7 +139,7 @@ std::optional<DeviceStatisticsTracker::P
    return DeviceStatisticsTracker::Platform::kWindows;
  #elif BUILDFLAG(IS_MAC)
    return DeviceStatisticsTracker::Platform::kMac;

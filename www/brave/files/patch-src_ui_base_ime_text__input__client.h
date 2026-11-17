@@ -1,6 +1,6 @@
---- src/ui/base/ime/text_input_client.h.orig	2026-07-01 06:24:19 UTC
+--- src/ui/base/ime/text_input_client.h.orig	2026-10-18 18:43:23 UTC
 +++ src/ui/base/ime/text_input_client.h
-@@ -342,7 +342,7 @@ class COMPONENT_EXPORT(UI_BASE_IME) TextInputClient {
+@@ -342,7 +342,7 @@ class COMPONENT_EXPORT(UI_BASE_IME) Text
    virtual bool SupportsAutoFill() const;
  #endif
  

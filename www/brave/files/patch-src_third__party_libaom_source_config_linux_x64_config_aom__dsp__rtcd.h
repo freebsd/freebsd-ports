@@ -1,6 +1,6 @@
---- src/third_party/libaom/source/config/linux/x64/config/aom_dsp_rtcd.h.orig	2026-09-25 15:26:43 UTC
+--- src/third_party/libaom/source/config/linux/x64/config/aom_dsp_rtcd.h.orig	2026-10-18 18:43:23 UTC
 +++ src/third_party/libaom/source/config/linux/x64/config/aom_dsp_rtcd.h
-@@ -59,8 +59,6 @@ void aom_blend_a64_vmask_c(uint8_t *dst, uint32_t dst_
+@@ -59,8 +59,6 @@ void aom_blend_a64_vmask_c(uint8_t *dst,
  void aom_blend_a64_vmask_sse4_1(uint8_t *dst, uint32_t dst_stride, const uint8_t *src0, uint32_t src0_stride, const uint8_t *src1, uint32_t src1_stride, const uint8_t *mask, int w, int h);
  RTCD_EXTERN void (*aom_blend_a64_vmask)(uint8_t *dst, uint32_t dst_stride, const uint8_t *src0, uint32_t src0_stride, const uint8_t *src1, uint32_t src1_stride, const uint8_t *mask, int w, int h);
  

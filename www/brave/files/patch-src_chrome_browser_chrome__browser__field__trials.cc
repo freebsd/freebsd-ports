@@ -1,4 +1,4 @@
---- src/chrome/browser/chrome_browser_field_trials.cc.orig	2026-09-25 15:26:43 UTC
+--- src/chrome/browser/chrome_browser_field_trials.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/chrome_browser_field_trials.cc
 @@ -60,7 +60,7 @@
  #include "chromeos/ash/services/multidevice_setup/public/cpp/first_run_field_trial.h"
@@ -9,7 +9,7 @@
  #include "base/check_deref.h"
  #include "chrome/browser/first_run/first_run.h"
  #include "chrome/browser/signin/first_run_desktop_refresh_field_trial.h"
-@@ -96,7 +96,7 @@ void ChromeBrowserFieldTrials::SetUpClientSideFieldTri
+@@ -96,7 +96,7 @@ void ChromeBrowserFieldTrials::SetUpClie
    }
  #endif
  

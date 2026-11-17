@@ -1,6 +1,6 @@
---- src/brave/browser/misc_metrics/process_misc_metrics.cc.orig	2026-06-01 00:00:00 UTC
+--- src/brave/browser/misc_metrics/process_misc_metrics.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/brave/browser/misc_metrics/process_misc_metrics.cc
-@@ -14,6 +14,7 @@
+@@ -18,6 +18,7 @@
  #include "components/prefs/pref_change_registrar.h"
  #include "components/prefs/pref_registry_simple.h"
  #include "components/prefs/pref_service.h"
@@ -8,7 +8,7 @@
  #if !BUILDFLAG(IS_ANDROID)
  #include "brave/browser/misc_metrics/default_browser_monitor_delegate_impl.h"
  #include "brave/browser/misc_metrics/vertical_tab_metrics.h"
-@@ -30,10 +31,17 @@
+@@ -34,10 +35,17 @@ namespace misc_metrics {
  ProcessMiscMetrics::ProcessMiscMetrics(PrefService* local_state)
      : local_state_(local_state) {
    pref_change_registrar_.Init(local_state);
@@ -26,7 +26,7 @@
  
  #if !BUILDFLAG(IS_ANDROID)
    menu_metrics_ = std::make_unique<MenuMetrics>(local_state);
-@@ -101,8 +109,10 @@
+@@ -118,8 +126,10 @@ Web3Metrics& ProcessMiscMetrics::web3_me
  }
  
  void ProcessMiscMetrics::ReportSimpleMetrics() {

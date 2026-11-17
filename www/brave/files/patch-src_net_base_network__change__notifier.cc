@@ -1,4 +1,4 @@
---- src/net/base/network_change_notifier.cc.orig	2026-09-25 15:26:43 UTC
+--- src/net/base/network_change_notifier.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/net/base/network_change_notifier.cc
 @@ -38,7 +38,7 @@
  #include "third_party/abseil-cpp/absl/container/flat_hash_set.h"
@@ -9,7 +9,7 @@
  #include "net/base/network_change_notifier_passive.h"
  #elif BUILDFLAG(IS_FUCHSIA)
  #include "net/base/network_change_notifier_fuchsia.h"
-@@ -313,6 +313,9 @@ std::unique_ptr<NetworkChangeNotifier> NetworkChangeNo
+@@ -313,6 +313,9 @@ std::unique_ptr<NetworkChangeNotifier> N
  #elif BUILDFLAG(IS_FUCHSIA)
    return std::make_unique<NetworkChangeNotifierFuchsia>(
        /*require_wlan=*/false);

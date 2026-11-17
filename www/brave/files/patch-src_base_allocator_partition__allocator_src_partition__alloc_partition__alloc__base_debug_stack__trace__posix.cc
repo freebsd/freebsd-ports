@@ -1,4 +1,4 @@
---- src/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/debug/stack_trace_posix.cc.orig	2026-09-25 15:26:43 UTC
+--- src/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/debug/stack_trace_posix.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/debug/stack_trace_posix.cc
 @@ -15,11 +15,11 @@
  #include "partition_alloc/partition_alloc_base/posix/eintr_wrapper.h"
@@ -14,7 +14,7 @@
  #include <dlfcn.h>
  #endif
  
-@@ -27,7 +27,7 @@ namespace partition_alloc::internal::base::debug {
+@@ -27,7 +27,7 @@ namespace partition_alloc::internal::bas
  
  namespace {
  
@@ -23,7 +23,7 @@
  
  // On Android the 'open' function has two versions:
  // int open(const char *pathname, int flags);
-@@ -375,7 +375,7 @@ void PrintStackTraceInternal(const void** trace, size_
+@@ -375,7 +375,7 @@ void PrintStackTraceInternal(const void*
  }
  #endif  // !PA_BUILDFLAG(IS_APPLE)
  

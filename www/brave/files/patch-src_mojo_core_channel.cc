@@ -1,6 +1,6 @@
---- src/mojo/core/channel.cc.orig	2026-09-25 15:26:43 UTC
+--- src/mojo/core/channel.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/mojo/core/channel.cc
-@@ -69,7 +69,11 @@ const size_t kMaxUnusedReadBufferCapacity = 4096;
+@@ -69,7 +69,11 @@ const size_t kMaxUnusedReadBufferCapacit
  // Limit on the number of handles that may be received per Mojo message.
  const size_t kMaxAttachedHandles = 256;
  
@@ -12,7 +12,7 @@
  Channel::AlignedBuffer MakeAlignedBuffer(size_t size) {
    // Generic allocators (such as malloc) return a pointer that is suitably
    // aligned for storing any type of object with a fundamental alignment
-@@ -263,7 +267,7 @@ bool ShouldRecordSubsampledHistograms() {
+@@ -263,7 +267,7 @@ bool ShouldRecordSubsampledHistograms()
  }  // namespace
  
  #if BUILDFLAG(IS_ANDROID) || \
@@ -21,7 +21,7 @@
  
  namespace {
  
-@@ -1305,7 +1309,7 @@ bool Channel::OnControlMessage(Message::MessageType me
+@@ -1305,7 +1309,7 @@ bool Channel::OnControlMessage(Message::
  }
  
  // Currently only CrOs, Linux, and Android support upgrades.

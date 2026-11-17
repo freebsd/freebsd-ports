@@ -1,4 +1,4 @@
---- src/base/trace_event/process_memory_dump.cc.orig	2026-09-25 15:26:43 UTC
+--- src/base/trace_event/process_memory_dump.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/base/trace_event/process_memory_dump.cc
 @@ -43,7 +43,7 @@
  #include <Psapi.h>
@@ -9,7 +9,7 @@
  #include <tuple>
  
  #include "base/notreached.h"
-@@ -119,7 +119,7 @@ std::optional<size_t> ProcessMemoryDump::CountResident
+@@ -119,7 +119,7 @@ std::optional<size_t> ProcessMemoryDump:
  #if BUILDFLAG(IS_WIN)
    auto vec = base::HeapArray<PSAPI_WORKING_SET_EX_INFORMATION>::WithSize(
        max_page_count);
@@ -18,7 +18,7 @@
    auto vec = base::HeapArray<char>::WithSize(max_page_count);
  #elif BUILDFLAG(IS_POSIX) || BUILDFLAG(IS_FUCHSIA)
    auto vec = base::HeapArray<unsigned char>::WithSize(max_page_count);
-@@ -161,7 +161,7 @@ std::optional<size_t> ProcessMemoryDump::CountResident
+@@ -161,7 +161,7 @@ std::optional<size_t> ProcessMemoryDump:
      for (size_t i = 0; i < page_count; i++) {
        accumulate_page_if_resident(i, vec[i].VirtualAttributes.Valid);
      }

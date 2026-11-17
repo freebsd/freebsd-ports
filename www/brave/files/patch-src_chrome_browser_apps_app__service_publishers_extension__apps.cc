@@ -1,6 +1,6 @@
---- src/chrome/browser/apps/app_service/publishers/extension_apps.cc.orig	2024-04-19 13:02:56 UTC
+--- src/chrome/browser/apps/app_service/publishers/extension_apps.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/apps/app_service/publishers/extension_apps.cc
-@@ -23,7 +23,7 @@ ExtensionApps::ExtensionApps(AppServiceProxy* proxy)
+@@ -23,7 +23,7 @@ ExtensionApps::ExtensionApps(AppServiceP
  ExtensionApps::~ExtensionApps() = default;
  
  bool ExtensionApps::Accepts(const extensions::Extension* extension) {

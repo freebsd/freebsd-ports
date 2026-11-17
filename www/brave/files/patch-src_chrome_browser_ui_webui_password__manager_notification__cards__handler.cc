@@ -1,4 +1,4 @@
---- src/chrome/browser/ui/webui/password_manager/notification_cards_handler.cc.orig	2026-09-25 15:26:43 UTC
+--- src/chrome/browser/ui/webui/password_manager/notification_cards_handler.cc.orig	2026-10-18 18:43:23 UTC
 +++ src/chrome/browser/ui/webui/password_manager/notification_cards_handler.cc
 @@ -33,7 +33,7 @@
  #endif
@@ -9,7 +9,7 @@
  #include "base/memory/scoped_refptr.h"
  #include "chrome/browser/browser_process.h"
  #include "chrome/browser/ui/webui/password_manager/notification_cards/relaunch_chrome_banner.h"
-@@ -190,7 +190,7 @@ NotificationCardsHandler::NotificationCardsHandler(Pro
+@@ -190,7 +190,7 @@ NotificationCardsHandler::NotificationCa
        webauthn::PasskeyUnlockManagerFactory::GetForProfile(profile)));
  #endif  // BUILDFLAG(GOOGLE_CHROME_BRANDING)
  
@@ -18,7 +18,7 @@
    auto relaunch_banner = std::make_unique<RelaunchChromeBanner>();
    relaunch_chrome_banner_ = relaunch_banner.get();
    notification_cards_.push_back(std::move(relaunch_banner));
-@@ -233,7 +233,7 @@ void NotificationCardsHandler::HandleGetAvailableNotif
+@@ -233,7 +233,7 @@ void NotificationCardsHandler::HandleGet
    CHECK_EQ(1U, args.size());
    const base::Value& callback_id = args[0];
  
@@ -27,7 +27,7 @@
    if (relaunch_chrome_banner_ &&
        !relaunch_chrome_banner_->is_encryption_available().has_value()) {
      g_browser_process->os_crypt_async()->GetInstance(
-@@ -296,7 +296,7 @@ NotificationCardsHandler::GetNotificationCardToShowAnd
+@@ -296,7 +296,7 @@ NotificationCardsHandler::GetNotificatio
    return card_to_show;
  }
  
