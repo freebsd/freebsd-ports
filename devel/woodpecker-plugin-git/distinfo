@@ -1,0 +1,5 @@
+TIMESTAMP = 1794907563
+SHA256 (go/devel_woodpecker-plugin-git/woodpecker-ci-plugin-git-2.12.1_GH0/go.mod) = 1ba495623e626685ceb79c6e3a60676561a3d68ab70e9eed757c5b7f7d6bf06c
+SIZE (go/devel_woodpecker-plugin-git/woodpecker-ci-plugin-git-2.12.1_GH0/go.mod) = 152
+SHA256 (go/devel_woodpecker-plugin-git/woodpecker-ci-plugin-git-2.12.1_GH0/woodpecker-ci-plugin-git-2.12.1_GH0.tar.gz) = 4e48b94a9679ae7bfba4e2168b96eb42755e03bf325554c1dced6e6e0d95201f
+SIZE (go/devel_woodpecker-plugin-git/woodpecker-ci-plugin-git-2.12.1_GH0/woodpecker-ci-plugin-git-2.12.1_GH0.tar.gz) = 35656

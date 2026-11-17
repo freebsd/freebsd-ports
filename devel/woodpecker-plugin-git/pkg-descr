@@ -1,0 +1,4 @@
+plugin-git clones the repository at the start of a Woodpecker CI
+pipeline. With the local backend, which runs steps directly on the host
+instead of in containers, woodpecker-agent runs it as a plain binary
+from PATH.
