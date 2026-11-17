@@ -1,6 +1,6 @@
 PORTNAME=	hoomd-blue
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.2.1
+DISTVERSION=	7.2.2
 CATEGORIES=	science # physics
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -27,7 +27,7 @@ GH_TUPLE=	glotzerlab:upp11:0c1fb8dfb4bcdc1c5c4eff9165539b15e70c4360:glotzerlab_u
 		glotzerlab:hipCUB:64d8adf32bd48d8723cc7df9e5c970169e2845b5:glotzerlab_hipCUB/hoomd/extern/hipCUB \
 		mphowardlab:neighbor:ba0f06869b766066a7068852fa3b8c5fa746f71f:mphowardlab_neighbor/hoomd/extern/neighbor \
 		glotzerlab:hipper:076059b9be58e5dd49f0f65a49ca48f703efa37a:glotzerlab_hipper/hoomd/extern/hipper \
-		glotzerlab:hoomd-examples:37066e712ba37a43d76e26f8e1ae829359c06bc5:glotzerlab_hoomd_examples/sphinx-doc/tutorial \
+		glotzerlab:hoomd-examples:9491e86b66d41c318c670bbfbdd2cd6c23bbfff9:glotzerlab_hoomd_examples/sphinx-doc/tutorial \
 		glotzerlab:OpenRAND:92dc12a23dff2d0aa3545f749d1c013677b9a87e:glotzerlab_OpenRAND/hoomd/extern/OpenRAND
 
 SHEBANG_GLOB=	*.sh
@@ -58,11 +58,6 @@ TBB_DESC=		Enable support for Threading Building Blocks (TBB)
 TBB_CMAKE_BOOL=		ENABLE_TBB
 TBB_LIB_DEPENDS=	libtbb.so:devel/onetbb
 
-# tests as of 7.0.1: 97% tests passed, 2 tests failed out of 67
-# The following tests FAILED:
-#          18 - mpi-test_load_balancer (Failed)
-#          35 - mpi-test_communication (Failed)
-
 .include <bsd.port.pre.mk>
 
 post-patch:
@@ -70,5 +65,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|std::unary_function|std::__unary_function|' \
 		${WRKSRC}/hoomd/ParticleData.cc
 .endif
+
+# tests as of 7.2.2: 100% tests passed, 0 tests failed out of 67
 
 .include <bsd.port.post.mk>
