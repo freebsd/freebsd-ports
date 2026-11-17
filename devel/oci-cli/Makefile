@@ -1,6 +1,6 @@
 PORTNAME=	oci-cli
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.95.1
+DISTVERSION=	3.96.3
 CATEGORIES=	devel
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -19,10 +19,10 @@ LICENSE_PERMS_UPL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}arrow>=1.0.0:devel/py-arrow@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}certifi>0:security/py-certifi@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}certifi>2026.10.19:security/py-certifi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click>=8.1.2:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jmespath>=0.10.0:devel/py-jmespath@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}oci>=2.189.0:devel/py-oci@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}oci>=2.192.0:devel/py-oci@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyopenssl>=22.1.0:security/py-pyopenssl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}prompt-toolkit>=3.0.29:devel/py-prompt-toolkit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-dateutil>=2.5.3:devel/py-python-dateutil@${PY_FLAVOR} \
