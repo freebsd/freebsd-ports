@@ -1,6 +1,6 @@
 PORTNAME=	spiceypy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	8.3.0
+DISTVERSION=	8.4.0
 CATEGORIES=	astro python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -27,10 +27,11 @@ GH_PROJECT=	SpiceyPy
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_WRKSRC=	${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
-TEST_ARGS=	spiceypy
+TEST_ARGS=	--disable-plugin-autoload -p pytest_benchmark spiceypy
 
 PYTEST_IGNORED_TESTS=	test_wrapper test_context_manager test_gettestkernels test_cyice \
-		test_no_loaded_files_exception test_no_loaded_files_exception_cyice
+		test_no_loaded_files_exception test_no_loaded_files_exception_cyice \
+		test_spiceerrors
 
 post-patch: # pin the version and remove scikit-build-core dynamic-metadata that requires project.dynamic
 	@${REINPLACE_CMD} -e 's|^name = "spiceypy"|name = "spiceypy"\nversion = "${DISTVERSION}"|' \
@@ -41,6 +42,6 @@ post-patch: # pin the version and remove scikit-build-core dynamic-metadata that
 # Tests as of 8.2.0: tests requiring SPICE kernels downloaded at runtime are ignored.
 # The remaining tests run against the installed package so the compiled cyice extension is found.
 # See https://github.com/AndrewAnnex/SpiceyPy for details
-# tests as of 8.3.0: 42 passed, 1132 deselected
+# tests as of 8.4.0: 30 passed, 1256 deselected in 1.10s
 
 .include <bsd.port.mk>
