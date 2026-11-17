@@ -24,8 +24,14 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}apted>0:math/py-apted@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rapidfuzz>=0:devel/py-rapidfuzz@${PY_FLAVOR}
 
 USES=		cmake:indirect python localbase pkgconfig
-USE_PYTHON=	autoplist concurrent pep517
+USE_PYTHON=	autoplist concurrent pep517 pytest
 
 CMAKE_ARGS=	-DUSE_SYSTEM_DEPS=ON
+
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_WRKSRC=	${WRKSRC}/tests
+TEST_ARGS=	--disable-plugin-autoload
+
+# tests as of 0.18.0: 39 passed in 2.09s
 
 .include <bsd.port.mk>
