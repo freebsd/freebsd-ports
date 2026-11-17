@@ -1,5 +1,5 @@
 PORTNAME=	conllu
-DISTVERSION=	6.0.0
+DISTVERSION=	6.1.1
 CATEGORIES=	textproc python # machine-learning
 #MASTER_SITES=	PYPI # incomplete tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,14 +21,11 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	EmilStenstrom
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
-TEST_WRKSRC=	${WRKSRC}/tests
+TEST_ARGS=	--disable-plugin-autoload \
+		tests
 
 NO_ARCH=	yes
 
-# tests as of 6.0.0 are incomplete
-# Results (0.65s):
-#      138 passed
-#        1 failed
-#          - tests/test_readme.py:30 test_readme
+# tests as of 6.1.1: 147 passed in 0.06s
 
 .include <bsd.port.mk>
