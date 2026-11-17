@@ -1,5 +1,5 @@
 PORTNAME=	langgraph-checkpoint
-DISTVERSION=	4.3.1
+DISTVERSION=	4.3.2
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -33,11 +33,12 @@ USE_PYTHON=	pep517 autoplist pytest
 NO_ARCH=	yes
 
 # Pandas serialization cases fail due to pandas version differences.
-TEST_ARGS=	--deselect=tests/test_jsonplus.py::test_serde_jsonplus_pandas_dataframe[df8] \
+TEST_ARGS=	--disable-plugin-autoload -p pytest_asyncio.plugin -p pytest_mock \
+		--deselect=tests/test_jsonplus.py::test_serde_jsonplus_pandas_dataframe[df8] \
 		--deselect=tests/test_jsonplus.py::test_serde_jsonplus_pandas_dataframe[df14] \
 		--deselect=tests/test_jsonplus.py::test_serde_jsonplus_pandas_dataframe[df16] \
 		--deselect=tests/test_jsonplus.py::test_serde_jsonplus_pandas_series[series9]
 
-# tests as of 4.3.1: 248 passed, 16 skipped, 4 deselected
+# tests as of 4.3.2: 251 passed, 16 skipped, 4 deselected
 
 .include <bsd.port.mk>
