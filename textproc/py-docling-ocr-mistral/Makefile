@@ -19,8 +19,15 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docling>=2.107.0:textproc/py-docling@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}requests>=2.32.2:www/py-requests@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist concurrent pep517
+USE_PYTHON=	autoplist concurrent pep517 pytest
 
 NO_ARCH=	yes
+
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} \
+		LD_PRELOAD=${PYTHON_SITELIBDIR}/torch/lib/libc10.so
+TEST_WRKSRC=	${WRKSRC}/tests
+TEST_ARGS=	--disable-plugin-autoload
+
+# tests as of 0.1.1: 4 passed, 1 warning in 2.72s
 
 .include <bsd.port.mk>
