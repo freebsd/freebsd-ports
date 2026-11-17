@@ -1,5 +1,5 @@
 PORTNAME=	comfyui-workflow-templates-media-assets-02
-DISTVERSION=	0.1.29
+DISTVERSION=	0.1.33
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,6 +19,6 @@ USE_PYTHON=	pep517 autoplist
 
 NO_ARCH=	yes
 
-# tests as of 0.1.29: no tests defined
+# tests as of 0.1.33: no tests defined
 
 .include <bsd.port.mk>
