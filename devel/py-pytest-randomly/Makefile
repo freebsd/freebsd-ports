@@ -1,5 +1,5 @@
 PORTNAME=	pytest-randomly
-DISTVERSION=	5.0.0
+DISTVERSION=	5.1.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -9,7 +9,7 @@ MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Pytest plugin to randomly order tests and control random.seed
 WWW=		https://github.com/pytest-dev/pytest-randomly
 
-LICENSE=	BSD3CLAUSE
+LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}uv-build>=0.12.1:devel/py-uv-build@${PY_FLAVOR}
