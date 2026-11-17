@@ -1,11 +1,13 @@
 include/frei0r.h
 include/frei0r.hpp
 include/frei0r/blur.h
+include/frei0r/bundle.h
 include/frei0r/cairo.h
 include/frei0r/cfc.h
 include/frei0r/colorspace.h
 include/frei0r/math.h
 lib/frei0r-1/3dflippo.so
+lib/frei0r-1/3dperspective.so
 lib/frei0r-1/B.so
 lib/frei0r-1/G.so
 lib/frei0r-1/IIRblur.so
@@ -63,6 +65,7 @@ lib/frei0r-1/emboss.so
 lib/frei0r-1/equaliz0r.so
 lib/frei0r-1/euclid_eraser.so
 lib/frei0r-1/filmgrain.so
+lib/frei0r-1/flarefx.so
 lib/frei0r-1/flippo.so
 lib/frei0r-1/gamma.so
 lib/frei0r-1/gateweave.so
@@ -71,6 +74,7 @@ lib/frei0r-1/glow.so
 lib/frei0r-1/grain_extract.so
 lib/frei0r-1/grain_merge.so
 lib/frei0r-1/hardlight.so
+lib/frei0r-1/harris0r.so
 lib/frei0r-1/heatmap0r.so
 lib/frei0r-1/hue.so
 lib/frei0r-1/hueshift0r.so
@@ -89,6 +93,7 @@ lib/frei0r-1/mask0mate.so
 lib/frei0r-1/measure_pr0be.so
 lib/frei0r-1/measure_pr0file.so
 lib/frei0r-1/medians.so
+lib/frei0r-1/motiondiff0r.so
 lib/frei0r-1/multiply.so
 lib/frei0r-1/ndvi.so
 lib/frei0r-1/nervous.so
@@ -132,12 +137,14 @@ lib/frei0r-1/sleid0r_wipe-left.so
 lib/frei0r-1/sleid0r_wipe-rect.so
 lib/frei0r-1/sleid0r_wipe-right.so
 lib/frei0r-1/sleid0r_wipe-up.so
+lib/frei0r-1/slitscan0r.so
 lib/frei0r-1/sobel.so
 lib/frei0r-1/softglow.so
 lib/frei0r-1/softlight.so
 lib/frei0r-1/sopsat.so
 lib/frei0r-1/spillsupress.so
 lib/frei0r-1/squareblur.so
+lib/frei0r-1/squigglevision.so
 lib/frei0r-1/subtract.so
 lib/frei0r-1/tehroxx0r.so
 lib/frei0r-1/test_pat_B.so
@@ -158,5 +165,6 @@ lib/frei0r-1/value.so
 lib/frei0r-1/vertigo.so
 lib/frei0r-1/vignette.so
 lib/frei0r-1/water.so
+lib/frei0r-1/whirlpinch0r.so
 lib/frei0r-1/xfade0r.so
 libdata/pkgconfig/frei0r.pc

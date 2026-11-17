@@ -1,6 +1,6 @@
 - Add logic so extra plugins can build without installing base components.
 
---- src/mixer2/CMakeLists.txt.orig	2025-09-03 14:34:34 UTC
+--- src/mixer2/CMakeLists.txt.orig	2026-11-12 09:33:52 UTC
 +++ src/mixer2/CMakeLists.txt
 @@ -3,6 +3,7 @@ endif (${Cairo_FOUND})
  add_subdirectory (cairoblend)
@@ -14,4 +14,4 @@
  add_subdirectory (value)
  add_subdirectory (xfade0r)
  add_subdirectory (sleid0r)
-+endif ()
++endif (NOT BUILD_EXTRA_PLUGINS)
