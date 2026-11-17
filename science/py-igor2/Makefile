@@ -1,5 +1,5 @@
 PORTNAME=	igor2
-DISTVERSION=	0.5.14
+DISTVERSION=	0.5.16
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,8 +19,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR}
 USES=		python
 USE_PYTHON=	pep517 concurrent autoplist pytest
 
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_ARGS=	--disable-plugin-autoload
+
 NO_ARCH=	yes
 
-# tests as of 0.5.14: 18 passed in ~1s
+# tests as of 0.5.16: 28 passed in 1.75s
 
 .include <bsd.port.mk>
