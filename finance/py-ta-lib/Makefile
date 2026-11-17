@@ -1,6 +1,6 @@
 PORTNAME=	ta-lib # provides Python namespace 'talib'
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.2
+DISTVERSION=	0.8.3
 CATEGORIES=	finance python
 #MASTER_SITES=	PYPI # tests fail whe PYPI is used, see https://github.com/TA-Lib/ta-lib-python/issues/663
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,6 +26,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	TA-Lib
 GH_PROJECT=	ta-lib-python
 
+MAKE_ENV=	TA_INCLUDE_PATH=${LOCALBASE}/include TA_LIBRARY_PATH=${LOCALBASE}/lib
+
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_WRKSRC=	${WRKSRC}/tests
 TEST_ARGS=	--disable-plugin-autoload
@@ -33,6 +35,6 @@ TEST_ARGS=	--disable-plugin-autoload
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/talib/_ta_lib${PYTHON_TAG}.so
 
-# tests as of 0.8.2: 1711 passed, 1 skipped in 39.03s
+# tests as of 0.8.3: 2033 passed, 1 skipped in 7.22s
 
 .include <bsd.port.mk>

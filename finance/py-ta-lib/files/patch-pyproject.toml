@@ -1,7 +1,7 @@
 -- remove license lines
 -- change package name case to lowercase
 
---- pyproject.toml.orig	2026-10-26 03:42:37 UTC
+--- pyproject.toml.orig	2026-11-16 18:31:26 UTC
 +++ pyproject.toml
 @@ -3,11 +3,10 @@ build-backend = "setuptools.build_meta"
  build-backend = "setuptools.build_meta"
@@ -9,7 +9,7 @@
  [project]
 -name = "TA-Lib"
 +name = "ta-lib"
- version = "0.8.2"
+ version = "0.8.3"
  description = "Python wrapper for TA-Lib"
  readme = "README.md"
 -license-files = ["LICENSE"]
