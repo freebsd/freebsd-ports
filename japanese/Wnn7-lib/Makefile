@@ -10,6 +10,9 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Wnn7 client library
 WWW=		https://www.omron.com/digital/product_text/
 
+DEPRECATED=	Obsolete commercial software
+EXPIRATION_DATE=	2026-12-25
+
 LICENSE=	Wnn7_Client_Library
 LICENSE_NAME=	Wnn7 Client Library
 LICENSE_FILE=	${WRKSRC}/README
@@ -25,7 +28,7 @@ OPTIONS_DEFINE=	DOCS
 .include <bsd.port.options.mk>
 
 .if ${OPSYS} == FreeBSD
-USES+=	llvm:max=14
+USES+=	llvm:max=14,build
 .endif
 
 post-patch:
