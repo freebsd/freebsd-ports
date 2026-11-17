@@ -1,6 +1,6 @@
 PORTNAME=	graphene-django
 PORTVERSION=	3.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django52>=3.2:www/py-django52@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}graphene>=3.0<4:devel/py-graphene@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}graphql-core>=3.1.0<4:devel/py-graphql-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}graphql-core32>=3.1.0<4:devel/py-graphql-core32@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}graphql-relay>=3.1.1<4:devel/py-graphql-relay@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}promise>=2.1:devel/py-promise@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}text-unidecode>=0:converters/py-text-unidecode@${PY_FLAVOR}
