@@ -1,7 +1,6 @@
 PORTNAME=	glances
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.3.1
-PORTREVISION=	2
+DISTVERSION=	4.5.9
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,29 +11,28 @@ WWW=		https://nicolargo.github.io/glances/
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=63.1.0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}defusedxml>=0:devel/py-defusedxml@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}future>=0.15.2:devel/py-future@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=0:devel/py-packaging@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}psutil>=5.3.0:sysutils/py-psutil@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ujson>=0:devel/py-ujson@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>=0.15.2:devel/py-coverage@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}psutil>=5.6.7:sysutils/py-psutil@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}shtab>=0:devel/py-shtab@${PY_FLAVOR}
 
 USES=		python
 USE_GITHUB=	yes
 GH_ACCOUNT=	nicolargo
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
-PLIST_FILES=	${ETCDIR}/${PORTNAME}.conf.sample \
-		share/man/man1/${PORTNAME}.1.gz
+PLIST_FILES=	${ETCDIR}/${PORTNAME}.conf.sample
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/conf/${PORTNAME}.conf ${STAGEDIR}${ETCDIR}/${PORTNAME}.conf.sample
-	${INSTALL_MAN} ${WRKSRC}/docs/man/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 do-test:
-	@(cd ${WRKSRC} && ${SETENV} coverage-${PYTHON_VER} run --source=${PORTNAME} unitest.py)
+	@(cd ${WRKSRC} && ${PYTHON_CMD} -m unittest -v tests/test_core.py)
 
 .include <bsd.port.mk>

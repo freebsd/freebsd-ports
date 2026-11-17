@@ -1,0 +1,27 @@
+The ports tree has setuptools 63.1.0. It accepts neither the SPDX string in
+project.license nor the upstream setuptools>=68 requirement. It also keeps
+the capital G of the project name in the wheel name, but Mk/Uses/python.mk
+looks for ${PORTNAME}.
+
+--- pyproject.toml.orig	2026-11-07 10:24:56 UTC
++++ pyproject.toml
+@@ -28,8 +28,8 @@ keywords = ["cli", "curses", "monitoring", "system"]
+ description = "An all-in-one system monitoring tool"
+ dynamic = ["version"]
+ keywords = ["cli", "curses", "monitoring", "system"]
+-license = "LGPL-3.0-only"
+-name = "Glances"
++license = { file = "COPYING" }
++name = "glances"
+ readme = "README-pypi.rst"
+ requires-python = ">=3.10"
+ urls.Homepage = "https://github.com/nicolargo/glances"
+@@ -252,7 +252,7 @@ build-backend = "setuptools.build_meta"
+ 
+ [build-system]
+ build-backend = "setuptools.build_meta"
+-requires = ["setuptools>=68"]
++requires = ["setuptools>=63.1.0"]
+ 
+ [tool.pytest.ini_options]
+ # Set to true to display live message during tests
