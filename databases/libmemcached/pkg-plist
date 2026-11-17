@@ -47,6 +47,7 @@ include/libmemcached-1.0/exist.h
 include/libmemcached-1.0/fetch.h
 include/libmemcached-1.0/flush.h
 include/libmemcached-1.0/flush_buffers.h
+include/libmemcached-1.0/gat.h
 include/libmemcached-1.0/get.h
 include/libmemcached-1.0/hash.h
 include/libmemcached-1.0/limits.h
@@ -138,6 +139,7 @@ share/aclocal/ax_libmemcached.m4
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog-0.md
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog-1.0.md
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog-1.1.md
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog-1.2.md
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.md
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README.md
@@ -242,7 +244,7 @@ share/aclocal/ax_libmemcached.m4
 %%MANPAGES%%share/man/man3/memcached_pool_fetch.3.gz
 %%MANPAGES%%share/man/man3/memcached_pool_pop.3.gz
 %%MANPAGES%%share/man/man3/memcached_pool_push.3.gz
-%%MANPAGES%%share/man/man3/memcached_pool_%%CMAKE_BUILD_TYPE%%.3.gz
+%%MANPAGES%%share/man/man3/memcached_pool_release.3.gz
 %%MANPAGES%%share/man/man3/memcached_pool_st.3.gz
 %%MANPAGES%%share/man/man3/memcached_prepend.3.gz
 %%MANPAGES%%share/man/man3/memcached_prepend_by_key.3.gz
