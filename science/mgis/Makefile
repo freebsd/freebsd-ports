@@ -15,7 +15,7 @@ BUILD_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 
 USES=		cmake compiler:c++20-lang fortran localbase python
 
-ONLY_FOR_ARCHS=			amd64
+ONLY_FOR_ARCHS=			amd64 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=		Upstream only targets amd64 for Code_Aster
 NOT_FOR_ARCHS_REASON_arm64=	Cannot find an intrinsic module named 'ieee_arithmetic'
 NOT_FOR_ARCHS_REASON_i386=	pandoc not available
