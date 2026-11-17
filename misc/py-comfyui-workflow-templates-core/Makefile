@@ -1,5 +1,5 @@
 PORTNAME=	comfyui-workflow-templates-core
-DISTVERSION=	0.3.394
+DISTVERSION=	0.3.400
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,6 +19,6 @@ USE_PYTHON=	pep517 autoplist
 
 NO_ARCH=	yes
 
-# tests as of 0.3.394: not run - the tests require scripts from the upstream repository that are missing from the sdist
+# tests as of 0.3.400: not run - the tests require scripts from the upstream repository that are missing from the sdist
 
 .include <bsd.port.mk>
