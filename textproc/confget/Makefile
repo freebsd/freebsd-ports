@@ -1,5 +1,5 @@
 PORTNAME=	confget
-PORTVERSION=	5.1.2
+PORTVERSION=	5.1.3
 CATEGORIES=	textproc
 MASTER_SITES=	https://devel.ringlet.net/files/textproc/confget/
 
