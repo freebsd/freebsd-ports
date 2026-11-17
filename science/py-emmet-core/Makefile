@@ -1,5 +1,5 @@
 PORTNAME=	emmet-core
-DISTVERSION=	0.88.0
+DISTVERSION=	0.88.3
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -31,7 +31,7 @@ USE_PYTHON=	pep517 autoplist
 
 NO_ARCH=	yes
 
-# tests as of 0.87.2: not enabled because the sdist is missing the upstream
+# tests as of 0.88.3: not enabled because the sdist is missing the upstream
 # test_files/ fixture directory used by the majority of the test suite.
 
 .include <bsd.port.mk>
