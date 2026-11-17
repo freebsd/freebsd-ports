@@ -1,6 +1,6 @@
 PORTNAME=	pyprecice
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.4.0
+DISTVERSION=	3.5.0
 CATEGORIES=	science # physics
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -31,12 +31,12 @@ post-install:
 TEST_ENV=	${MAKE_ENV} \
 		PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} \
 		PYPRECICE_MOCKED=1 \
-		PYTEST_ADDOPTS="-p no:black -p no:ruff -p no:mypy -p no:flake8 -p no:cov -p no:benchmark -p no:inline-snapshot -p no:xdist -p no:randomly"
+		PYTEST_ADDOPTS="--disable-plugin-autoload"
 
 do-test:
 	@cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} ${PYSETUP} build_ext --inplace --force && \
 		${SETENV} ${TEST_ENV} pytest ${WRKSRC}/test
 
-# tests as of 3.4.0: 65 passed in 0.74s (using PYPRECICE_MOCKED=1)
+# tests as of 3.5.0: 65 passed in 0.10s (using PYPRECICE_MOCKED=1)
 
 .include <bsd.port.mk>

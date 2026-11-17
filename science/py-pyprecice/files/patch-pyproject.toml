@@ -12,7 +12,7 @@
  [project]
  name = "pyprecice"
 -dynamic = [ "version" ]
-+version = "3.4.0"
++version = "3.5.0"
  readme = "README.md"
  description="Python language bindings for the preCICE coupling library"
 -license = "LGPL-3.0"
