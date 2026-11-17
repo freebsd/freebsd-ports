@@ -1,0 +1,125 @@
+#!/bin/sh
+
+# PROVIDE: opencloud
+# REQUIRE: LOGIN NETWORKING
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable opencloud:
+#
+# opencloud_enable (bool):	Set to YES to enable the service.
+#				Default: NO
+# opencloud_user (str):		User the service runs as.
+#				Default: opencloud
+# opencloud_envfile (str):	File with VAR=value settings (sh syntax, quote
+#				values containing spaces). It is read before the
+#				service starts, so a long list of OC_* variables
+#				does not have to live in rc.conf.
+#				Default: %%PREFIX%%/etc/opencloud/opencloud.env
+# opencloud_env (str):		Optional extra VAR=value pairs, applied by rc.subr.
+#				Default: ""
+# opencloud_logfile (str):	Where stdout/stderr of the service go.
+#				Default: /var/log/opencloud.log
+#
+# The data directory (%%OC_DBDIR%%) and the config directory
+# (%%PREFIX%%/etc/opencloud) are compiled into the binary, so HOME,
+# OC_BASE_DATA_PATH and OC_CONFIG_DIR do not need to be set.
+#
+# First run: "service opencloud init" creates the initial configuration.
+# After an upgrade or a change of the OC_* variables:
+#   service opencloud diffconfig   show what "init" would change in opencloud.yaml
+#                                  (existing secrets are kept, a patch is
+#                                  written to opencloud.config.patch)
+#   service opencloud reconfig     regenerate opencloud.yaml. "opencloud init"
+#                                  first saves the old file as
+#                                  opencloud.yaml.<date>.backup. WARNING: the
+#                                  new file contains NEW secrets and passwords;
+#                                  on an instance that already holds data this
+#                                  can lock out the internal services.
+
+. /etc/rc.subr
+
+name="opencloud"
+rcvar="opencloud_enable"
+
+load_rc_config ${name}
+
+: ${opencloud_enable:="NO"}
+: ${opencloud_user:="opencloud"}
+: ${opencloud_envfile:="%%PREFIX%%/etc/opencloud/opencloud.env"}
+: ${opencloud_logfile:="/var/log/opencloud.log"}
+
+pidfile="/var/run/${name}.pid"
+
+# When ${name}_user is set, rc.subr starts the command as that user via su(1).
+# Here daemon(8) drops the privileges itself (-u), which lets it create the
+# pidfile in /var/run as root first. Keep the configured user in a private
+# variable and make rc.subr run the command as root.
+_opencloud_user="${opencloud_user}"
+opencloud_user="root"
+
+# The environment file is sourced by a shell that already runs as the service
+# user. It lives in a directory owned by that user, so it must never be
+# sourced by a root shell.
+_opencloud_loadenv="set -a; [ -r '${opencloud_envfile}' ] && . '${opencloud_envfile}'; set +a;"
+
+command="/usr/sbin/daemon"
+# -H: reopen the log file on SIGHUP (sent by newsyslog(8) after rotation).
+command_args="-H -r -R 10 -P ${pidfile} -u ${_opencloud_user} -o ${opencloud_logfile} -t ${name} \
+    /bin/sh -c \"${_opencloud_loadenv} exec %%PREFIX%%/bin/opencloud server\""
+
+extra_commands="init diffconfig reconfig"
+start_precmd="opencloud_prestart"
+init_cmd="opencloud_init"
+diffconfig_cmd="opencloud_diffconfig"
+reconfig_cmd="opencloud_reconfig"
+
+opencloud_prestart()
+{
+	if [ ! -f "%%PREFIX%%/etc/opencloud/opencloud.yaml" ]; then
+		warn "no configuration found, run 'service ${name} init' first"
+		return 1
+	fi
+
+	# The log file must be writable by the service user and not readable
+	# by others.
+	if [ ! -f "${opencloud_logfile}" ]; then
+		install -o ${_opencloud_user} -g ${_opencloud_user} -m 640 \
+		    /dev/null "${opencloud_logfile}"
+	fi
+}
+
+# Run "opencloud init" with the settings of the environment file. Without
+# OC_INSECURE the command asks a question on stdin and loops forever when
+# there is no terminal, so default to "no" (certificate checking stays on).
+# Set OC_INSECURE=true in the environment file to configure OpenCloud for
+# self-signed certificates.
+opencloud_initrun()
+{
+	env SHELL=/bin/sh su -m "${_opencloud_user}" -c \
+	    "umask 077; ${_opencloud_loadenv} OC_INSECURE=\${OC_INSECURE:-no}; export OC_INSECURE; $1"
+}
+
+opencloud_init()
+{
+	opencloud_initrun "%%PREFIX%%/bin/opencloud init"
+}
+
+opencloud_diffconfig()
+{
+	opencloud_initrun "%%PREFIX%%/bin/opencloud init --diff"
+}
+
+opencloud_reconfig()
+{
+	local cfg="%%PREFIX%%/etc/opencloud/opencloud.yaml"
+
+	if [ ! -f "${cfg}" ]; then
+		warn "${cfg} does not exist, run 'service ${name} init' instead"
+		return 1
+	fi
+
+	# "opencloud init" saves the old file itself before overwriting it.
+	opencloud_initrun "%%PREFIX%%/bin/opencloud init --force-overwrite"
+}
+
+run_rc_command "$1"

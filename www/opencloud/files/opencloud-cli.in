@@ -1,0 +1,31 @@
+#!/bin/sh
+#
+# opencloud-cli - run an opencloud command as the service user, with the
+# settings from the environment file of the service.
+#
+# Running "opencloud" directly as root would create files owned by root in
+# the data directory and would ignore the OC_* variables of the service.
+#
+# Usage: opencloud-cli <opencloud arguments>
+#   e.g. opencloud-cli version
+#        opencloud-cli posixfs consistency /var/db/opencloud/storage/users
+
+user="%%OC_USER%%"
+envfile="%%ETCDIR%%/opencloud.env"
+
+if [ "$(id -u)" -ne 0 ]; then
+	echo "opencloud-cli: must be run as root" >&2
+	exit 1
+fi
+
+# Quote every argument for the shell that su(1) starts, so that arguments
+# containing spaces or quote characters arrive unchanged.
+# The environment file is sourced by the shell of the service user, never by
+# the root shell, because the user owns the directory it lives in.
+cmd="umask 077; set -a; [ -r '${envfile}' ] && . '${envfile}'; set +a; exec %%PREFIX%%/bin/opencloud"
+for arg in "$@"; do
+	quoted=$(printf '%s' "${arg}" | sed "s/'/'\\\\''/g")
+	cmd="${cmd} '${quoted}'"
+done
+
+SHELL=/bin/sh exec su -m "${user}" -c "${cmd}"

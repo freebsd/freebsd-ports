@@ -1,0 +1,233 @@
+OpenCloud on FreeBSD
+====================
+
+This file describes the FreeBSD specific parts of running OpenCloud. For
+everything else see the upstream documentation: https://docs.opencloud.eu/
+
+Paths used by this port:
+
+  binary                /usr/local/bin/opencloud
+  configuration         /usr/local/etc/opencloud/
+  environment file      /usr/local/etc/opencloud/opencloud.env
+  data directory        /var/db/opencloud/
+  log file              /var/log/opencloud.log
+  log rotation          /usr/local/etc/newsyslog.conf.d/opencloud.conf
+  service user          opencloud
+
+The data and configuration directories are compiled into the binary. Do not
+set HOME, OC_BASE_DATA_PATH or OC_CONFIG_DIR unless you want to move them.
+
+
+1. First start
+--------------
+
+  # service opencloud init
+
+This creates the initial configuration and prints the password of the
+"admin" user once. Write it down.
+
+The package installs /usr/local/etc/opencloud/opencloud.env from the sample
+file opencloud.env.sample if it does not exist yet. Edit it and adjust at
+least OC_URL, then enable and start the service:
+
+  # sysrc opencloud_enable=YES
+  # service opencloud start
+
+OC_URL must be the exact public URL users will type, including the scheme.
+Use https.
+
+
+2. Storage
+----------
+
+The user data is stored below /var/db/opencloud/storage/users. The default
+storage driver ("posix") keeps all metadata in extended attributes of the
+files themselves, there is no database. Requirements from upstream:
+
+  * The filesystem must support extended attributes.
+  * The whole tree below storage/users must be on ONE filesystem. Moving
+    files between filesystems is not supported.
+  * All files and directories must belong to the service user (opencloud).
+  * Nothing but OpenCloud may modify the tree while the service runs.
+    Stop the service before changing anything from the outside.
+
+Because of this it is recommended to give the data its own filesystem
+(on ZFS: its own dataset), so that snapshots, quotas and the properties
+below apply to the OpenCloud data only. On ZFS create the dataset with
+system attributes enabled BEFORE the first start of the service:
+
+  # zfs create -o mountpoint=/var/db/opencloud <pool>/opencloud
+  # zfs set xattr=sa <pool>/opencloud
+
+If the dataset was created before the package was installed, make sure the
+service user owns it:
+
+  # chown opencloud:opencloud /var/db/opencloud
+  # chmod 0750 /var/db/opencloud
+
+Upstream documentation:
+  https://docs.opencloud.eu/docs/admin/getting-started/requirements/
+  https://docs.opencloud.eu/docs/admin/configuration/storage/storage-posix/
+
+
+3. Running behind a reverse proxy
+---------------------------------
+
+OpenCloud has a built-in HTTP(S) proxy that serves the web interface, the
+WebDAV and the API endpoints on one port (9200 by default). It is meant to
+sit behind a web server that terminates TLS and serves one dedicated
+host name, for example cloud.example.com, so the examples below use a
+dedicated sub-domain.
+
+Settings in /usr/local/etc/opencloud/opencloud.env when the web server runs
+on the same host and terminates TLS:
+
+  # The public URL, must match the host name of the virtual host below.
+  OC_URL=https://cloud.example.com
+
+  # Listen on the loopback interface only, the web server is the only client.
+  PROXY_HTTP_ADDR=127.0.0.1:9200
+
+  # TLS is terminated by the web server. Without this OpenCloud expects
+  # TLS and a certificate on its own port.
+  PROXY_TLS=false
+
+Restart the service after changes:  # service opencloud restart
+
+Make sure that port 9200 is not reachable from the outside (firewall or the
+loopback address above). Basic authentication should stay disabled in
+production, leave PROXY_ENABLE_BASIC_AUTH unset unless a client needs it.
+
+3.1 Caddy (www/caddy)
+~~~~~~~~~~~~~~~~~~~~~
+
+Caddy obtains and renews the certificate by itself (the host name must
+resolve to the server and ports 80 and 443 must be reachable).
+/usr/local/etc/caddy/Caddyfile:
+
+  cloud.example.com {
+    reverse_proxy 127.0.0.1:9200
+  }
+
+  # sysrc caddy_enable=YES
+  # service caddy start
+
+Caddy passes the Host header and sets the X-Forwarded-* headers itself and
+does not limit the size of uploads.
+
+3.2 Apache (www/apache24)
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Load the modules in httpd.conf (most are already there, check for
+duplicates):
+
+  LoadModule socache_shmcb_module libexec/apache24/mod_socache_shmcb.so
+  LoadModule ssl_module           libexec/apache24/mod_ssl.so
+  LoadModule headers_module       libexec/apache24/mod_headers.so
+  LoadModule proxy_module         libexec/apache24/mod_proxy.so
+  LoadModule proxy_http_module    libexec/apache24/mod_proxy_http.so
+
+A virtual host, for example in /usr/local/etc/apache24/Includes/cloud.conf:
+
+  <VirtualHost *:80>
+    ServerName cloud.example.com
+    Redirect permanent / https://cloud.example.com/
+  </VirtualHost>
+
+  <VirtualHost *:443>
+    ServerName cloud.example.com
+
+    SSLEngine on
+    SSLCertificateFile    /usr/local/etc/ssl/cloud.example.com/fullchain.pem
+    SSLCertificateKeyFile /usr/local/etc/ssl/cloud.example.com/privkey.pem
+
+    # OC_URL must match the host name the client used.
+    ProxyPreserveHost On
+    RequestHeader set X-Forwarded-Proto "https"
+
+    # Keep encoded characters in WebDAV paths intact.
+    AllowEncodedSlashes NoDecode
+    ProxyPass        / http://127.0.0.1:9200/ nocanon
+    ProxyPassReverse / http://127.0.0.1:9200/
+  </VirtualHost>
+
+  # service apache24 configtest
+  # service apache24 reload
+
+If OpenCloud keeps its own TLS (PROXY_TLS left at its default) use
+"SSLProxyEngine on" and https://127.0.0.1:9200/ instead. The certificate of
+OpenCloud is self-signed in that case, so Apache has to be told not to
+verify it, which is why terminating TLS only in Apache is preferred.
+
+
+4. Upgrades and configuration changes
+-------------------------------------
+
+Part of the settings (secrets, service passwords, the layout of the
+internal services) is kept in /usr/local/etc/opencloud/opencloud.yaml, which
+is created once by "service opencloud init". A new release may need
+additional entries. After an upgrade, or after changing OC_* variables in
+opencloud.env, check it:
+
+  # service opencloud diffconfig
+
+This runs "opencloud init --diff" as the service user. The existing
+secrets, passwords and IDs are kept, so only new or removed settings show up
+as differences. opencloud.yaml is not changed. If there are differences they
+are printed and also written to
+/usr/local/etc/opencloud/opencloud.config.patch; otherwise it prints "no
+changes, your config is up to date". After reviewing the patch it can be
+applied as the service user, so that the file keeps its owner:
+
+  # cd /usr/local/etc/opencloud
+  # su -m opencloud -c 'patch -b opencloud.yaml opencloud.config.patch'
+  # service opencloud restart
+
+  # service opencloud reconfig
+
+runs "opencloud init --force-overwrite". OpenCloud saves the old file as
+opencloud.yaml.<date>.backup first. WARNING: the new file contains NEW
+secrets and service passwords, and the internal services of an existing
+instance were set up with the old ones, so this can lock them out. Use it on
+a fresh instance, or after wiping the data directory. To go back, restore
+the backup and restart the service.
+
+
+5. Log rotation
+---------------
+
+The service writes its output to /var/log/opencloud.log. The package
+installs /usr/local/etc/newsyslog.conf.d/opencloud.conf, which keeps seven
+compressed files and rotates daily at midnight. The service is started with
+daemon -H, so it reopens the log file when newsyslog sends it SIGHUP; no
+restart is needed. Adjust the file for another schedule, or set
+opencloud_logfile in rc.conf and change the name in both places.
+
+OC_LOG_LEVEL in opencloud.env controls how much is logged (default in the
+sample file: error).
+
+
+6. Running opencloud commands (option CLI)
+------------------------------------------
+
+The opencloud binary is also the administration tool (opencloud version,
+opencloud posixfs consistency, opencloud shares cleanup, ...). Running it as
+root creates files owned by root in the data directory, which the posix
+storage driver does not support, and ignores the variables from
+opencloud.env.
+
+If the port was built with the CLI option (off by default) the script
+
+  # opencloud-cli <arguments>
+
+runs opencloud as the service user with the settings from opencloud.env,
+for example:
+
+  # opencloud-cli version
+  # opencloud-cli posixfs consistency /var/db/opencloud/storage/users
+
+Without the option, load the environment file in a Bourne shell and use
+su(8), which keeps the environment with -m:
+
+  # set -a; . /usr/local/etc/opencloud/opencloud.env; set +a
+  # su -m opencloud -c '/usr/local/bin/opencloud version'

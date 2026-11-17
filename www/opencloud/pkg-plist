@@ -1,0 +1,7 @@
+bin/opencloud
+%%CLI%%sbin/opencloud-cli
+@sample etc/newsyslog.conf.d/opencloud.conf.sample
+@sample %%ETCDIR%%/opencloud.env.sample
+@dir(opencloud,opencloud,0750) %%ETCDIR%%
+@dir(opencloud,opencloud,0750) %%OC_DBDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD

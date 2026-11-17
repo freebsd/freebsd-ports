@@ -1,0 +1,6 @@
+# Rotation of the OpenCloud log file, see newsyslog.conf(5).
+# The rc.d script starts daemon(8) with -H, so SIGHUP sent to the pid file
+# below makes it reopen the log after rotation.
+#
+# logfilename           [owner:group]        mode count size when  flags [/pid_file]            [sig_num]
+/var/log/opencloud.log  opencloud:opencloud  640  7     *    @T00  CZ    /var/run/opencloud.pid

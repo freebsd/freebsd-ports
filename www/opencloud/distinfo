@@ -1,0 +1,7 @@
+TIMESTAMP = 1794934458
+SHA256 (opencloud/9.2.0/web.tar.gz) = 2ebb26299739c918b643e03acf592621fe0d712405089e56f2f2a57be9ec3cc7
+SIZE (opencloud/9.2.0/web.tar.gz) = 3563019
+SHA256 (opencloud/9.2.0/opencloud-idp-assets-9.2.0.tar.gz) = e7c20412b1b271340a14213588647abad16b437772429cb588e70f735006ecfd
+SIZE (opencloud/9.2.0/opencloud-idp-assets-9.2.0.tar.gz) = 843069
+SHA256 (opencloud/9.2.0/opencloud-eu-opencloud-v9.2.0_GH0.tar.gz) = 16fd02d2b0b11ff09d7d10fcf512aa2676a4cfc42e8578a1c875059a2ea3053f
+SIZE (opencloud/9.2.0/opencloud-eu-opencloud-v9.2.0_GH0.tar.gz) = 32370042

@@ -1,0 +1,49 @@
+[
+{ type: install
+  message: <<EOM
+To get started with OpenCloud:
+
+  STORAGE (ZFS):
+  OpenCloud relies heavily on filesystem extended attributes (xattr).
+  On ZFS it is recommended to create a dedicated dataset with system
+  attributes enabled BEFORE the first start, mounted at %%OC_DBDIR%%:
+
+    zfs create -o mountpoint=%%OC_DBDIR%% <your_pool>/opencloud
+    zfs set xattr=sa <your_pool>/opencloud
+
+  If the dataset was created before the package was installed, make sure
+  the service user owns it:
+
+    chown %%OC_USER%%:%%OC_USER%% %%OC_DBDIR%%
+    chmod 0750 %%OC_DBDIR%%
+
+  1. Enable the service:
+       sysrc opencloud_enable=YES
+
+  2. Create the initial configuration (prints the admin password once):
+       service opencloud init
+
+  3. Put your settings into %%ETCDIR%%/opencloud.env
+     (see opencloud.env.sample next to it), then start the service:
+       service opencloud start
+
+Data lives in %%OC_DBDIR%%, configuration in %%ETCDIR%%.
+The server logs to /var/log/opencloud.log, rotated by newsyslog(8)
+(%%PREFIX%%/etc/newsyslog.conf.d/opencloud.conf).
+
+Running behind Caddy or Apache on a sub-domain is described in
+%%DOCSDIR%%/README.FreeBSD (installed with the DOCS option).
+EOM
+}
+{ type: upgrade
+  message: <<EOM
+After upgrading OpenCloud check whether opencloud.yaml needs changes:
+
+  service opencloud diffconfig
+
+It only shows the differences, nothing is changed. Read the section on
+upgrades in %%DOCSDIR%%/README.FreeBSD before using "service opencloud
+reconfig", which creates new secrets and passwords.
+EOM
+}
+]

@@ -1,0 +1,4 @@
+OpenCloud is an open-source platform for file management, sharing, and
+collaboration. The server is a single Go binary that bundles the web UI,
+WebDAV and Graph APIs, an embedded OpenID Connect identity provider, and
+storage services. It does not require an external database.

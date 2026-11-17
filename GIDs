@@ -772,7 +772,7 @@ statsd:*:826:
 _tuptime:*:827:
 cirrus:*:828:
 # free: 829
-# free: 830
+opencloud:*:830:
 telemt:*:831:
 beehive:*:832:
 bhyvemgrd:*:833:
