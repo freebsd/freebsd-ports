@@ -1,8 +1,11 @@
 PORTNAME=	gnustep-base
 DISTVERSION=	1.31.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang devel gnustep
 MASTER_SITES=	https://github.com/gnustep/libs-base/releases/download/base-${DISTVERSION:S,.,_,g}/
+
+PATCH_SITES=	https://github.com/gnustep/libs-base/commit/
+PATCHFILES=	c75898d83bbc3e25cb5778a6bf6fb1d18218b719.patch?full_index=1:-p1
 
 MAINTAINER=	joe.maloney@icloud.com
 COMMENT=	GNUstep Foundation library
