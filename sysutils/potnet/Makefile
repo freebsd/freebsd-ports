@@ -3,7 +3,7 @@ DISTVERSION=	0.5.0
 PORTREVISION=	26
 CATEGORIES=	sysutils
 
-MAINTAINER=	pizzamig@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Utility to help sysutils/pot to manage the internal network
 WWW=		https://github.com/bsdpot/potnet
 

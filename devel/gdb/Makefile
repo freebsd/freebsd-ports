@@ -4,7 +4,7 @@ PORTREVISION=	7
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
-MAINTAINER=	pizzamig@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	GNU Project Debugger
 WWW=		https://www.gnu.org/software/gdb/
 

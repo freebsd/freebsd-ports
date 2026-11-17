@@ -4,7 +4,7 @@ DISTVERSION=	0.10.0
 PORTREVISION=	24
 CATEGORIES=	sysutils
 
-MAINTAINER=	pizzamig@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Nomad driver to support pot jails
 WWW=		https://www.nomadproject.io
 

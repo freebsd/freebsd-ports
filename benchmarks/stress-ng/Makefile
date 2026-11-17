@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	V
 DISTVERSION=	0.20.00
 CATEGORIES=	benchmarks
 
-MAINTAINER=	pizzamig@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Stress test benchmarks
 WWW=		https://github.com/ColinIanKing/stress-ng
 

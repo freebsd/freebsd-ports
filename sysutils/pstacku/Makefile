@@ -2,7 +2,7 @@ PORTNAME=	pstacku
 PORTVERSION=	0.10.0
 CATEGORIES=	sysutils devel
 
-MAINTAINER=	pizzamig@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Retrieve process stack traces
 WWW=		https://github.com/kostikbel/pstacku
 

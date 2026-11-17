@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	pizzamig@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Python cli to interact with HP iLO management interface
 WWW=		https://github.com/seveas/python-hpilo
 

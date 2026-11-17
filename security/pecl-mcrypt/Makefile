@@ -3,7 +3,7 @@ PORTVERSION=	1.0.7
 PORTREVISION=	0
 CATEGORIES=	security pear
 
-MAINTAINER=	pizzamig@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	PHP extension for mcrypt, removed in PHP 7.2
 WWW=		https://pecl.php.net/package/mcrypt
 

@@ -5,7 +5,7 @@ DISTVERSIONSUFFIX=	-g6705203
 PORTREVISION=	2
 CATEGORIES=	benchmarks
 
-MAINTAINER=	pizzamig@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	BYTE magazine's Public Domain benchmark for UNIX
 WWW=		https://github.com/kdlucas/byte-unixbench
 

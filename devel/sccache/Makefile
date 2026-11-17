@@ -5,7 +5,7 @@ PORTREVISION=	11
 PORTEPOCH=	1
 CATEGORIES=	devel
 
-MAINTAINER=	pizzamig@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Like ccache with cloud storage support
 WWW=		https://github.com/mozilla/sccache
 

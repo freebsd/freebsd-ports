@@ -4,7 +4,7 @@ CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.math.utah.edu/~mayer/linux/
 DISTNAME=	${PORTNAME}-byte-${PORTVERSION}
 
-MAINTAINER=	pizzamig@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	BYTE Magazine's native benchmarks
 WWW=		https://www.math.utah.edu/~mayer/linux/bmark.html
 

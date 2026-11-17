@@ -2,7 +2,7 @@ PORTNAME=	cccc
 DISTVERSION=	3.2.0
 CATEGORIES=	devel textproc www
 
-MAINTAINER=	pizzamig@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	C and C++ Code Counter
 WWW=		https://cccc.sourceforge.net/
 

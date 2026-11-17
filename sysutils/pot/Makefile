@@ -3,7 +3,7 @@ DISTVERSION=	0.16.2
 CATEGORIES=	sysutils
 MASTER_SITES=	https://codeberg.org/bsdpot/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
-MAINTAINER=	pizzamig@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Container framework for FreeBSD
 WWW=		https://codeberg.org/bsdpot/pot
 

@@ -4,7 +4,7 @@ DISTVERSION=	0.14.0
 PORTREVISION=	12
 CATEGORIES=	net-mgmt
 
-MAINTAINER=	pizzamig@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	OpenBMP Server Collector
 WWW=		https://github.com/OpenBMP/openbmp
 

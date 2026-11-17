@@ -5,7 +5,7 @@ PORTREVISION=	1
 CATEGORIES=	net-mgmt python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	pizzamig@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Official Python client for Prometheus
 WWW=		https://github.com/prometheus/client_python
 

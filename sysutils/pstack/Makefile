@@ -3,7 +3,7 @@ PORTVERSION=	1.3
 PORTREVISION=	2
 CATEGORIES=	sysutils
 
-MAINTAINER=	pizzamig@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Retrieve process/core file stack traces
 WWW=		https://sourceforge.net/projects/bsd-pstack/
 

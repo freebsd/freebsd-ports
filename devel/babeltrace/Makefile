@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	2
 CATEGORIES=	devel
 
-MAINTAINER=	pizzamig@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Tool and library to read, write and convert execution traces
 WWW=		https://www.efficios.com/babeltrace
 

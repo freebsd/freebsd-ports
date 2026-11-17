@@ -3,7 +3,7 @@ PORTVERSION=	7.2.0
 CATEGORIES=	devel
 MASTER_SITES=	https://icl.utk.edu/projects/papi/downloads/
 
-MAINTAINER=	pizzamig@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	API to access the performance counter hw in the microprocessor
 WWW=		https://icl.utk.edu/papi/
 

@@ -2,7 +2,7 @@ PORTNAME=	devctl-jail-kmod
 DISTVERSION=	g20190521
 CATEGORIES=	sysutils
 
-MAINTAINER=	pizzamig@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Module to expose jail lifecycle events
 
 LICENSE=	BSD3CLAUSE

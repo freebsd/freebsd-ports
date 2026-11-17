@@ -3,7 +3,7 @@ PORTVERSION=	0.2.5
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/bsdpot/minipot/releases/download/${DISTVERSION}/
 
-MAINTAINER=	pizzamig@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Mono-server installation of pot, nomad and consul
 WWW=		https://github.com/bsdpot/minipot
 

@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	2.16.0
 CATEGORIES=	net
 
-MAINTAINER=	pizzamig@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Apache Kafka C/C++ library
 WWW=		https://github.com/confluentinc/librdkafka/
 

@@ -5,7 +5,7 @@ PORTREVISION=	2
 CATEGORIES=	benchmarks
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
-MAINTAINER=	pizzamig@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Phoronix Benchmarking Suite
 WWW=		https://www.phoronix-test-suite.com
 
