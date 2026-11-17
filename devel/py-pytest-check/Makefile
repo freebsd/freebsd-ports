@@ -1,5 +1,5 @@
 PORTNAME=	pytest-check
-DISTVERSION=	2.9.1
+DISTVERSION=	3.0.3
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,7 +26,9 @@ TEST_ENV=	${MAKE_ENV} \
 		PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} \
 		PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 \
 		PYTEST_PLUGINS=pytest_check.plugin
+# this test fails when pytest-run-parallel is installed (it is not skipped) but its plugin is not loaded due to disabled autoload
+TEST_ARGS=	--deselect tests/test_parallel_threads.py::test_check_failures_leak_across_parallel_threads
 
-# tests as of 2.9.1: 105 passed, 1 skipped in 1.29s
+# tests as of 3.0.3: 119 passed, 3 skipped, 1 deselected in 1.48s
 
 .include <bsd.port.mk>
