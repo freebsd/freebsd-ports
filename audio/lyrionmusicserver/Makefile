@@ -1,5 +1,5 @@
 PORTNAME=	lyrionmusicserver
-DISTVERSION=	9.1.0
+DISTVERSION=	9.1.1
 CATEGORIES=	audio
 
 MAINTAINER=	trueos@norwegianrockcat.com
@@ -17,13 +17,14 @@ BUILD_DEPENDS=	nasm:devel/nasm \
 		bash:shells/bash \
 		rsync:net/rsync
 RUN_DEPENDS=	p5-EV>0:devel/p5-EV \
-		p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL
+		p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL \
+		p5-Image-Scale>0:graphics/p5-Image-Scale
 
 USES=		gmake perl5 shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	LMS-Community
 GH_PROJECT=	slimserver
-GH_TUPLE=	LMS-Community:slimserver-vendor:b62107b:vendor
+GH_TUPLE=	LMS-Community:slimserver-vendor:4786e19:vendor
 USE_RC_SUBR=	lyrionmusicserver
 SHEBANG_FILES=	Bin/darwin/check-update.pl \
 		CPAN/Log/Log4perl/Layout/PatternLayout/Multiline.pm \
@@ -39,6 +40,8 @@ SHEBANG_FILES=	Bin/darwin/check-update.pl \
 EXTRACT_AFTER_ARGS=	--exclude .devcontainer \
 			--exclude DEVCONTAINERS.md \
 			--exclude CPAN/EV.pm \
+			--exclude CPAN/Image \
+			--exclude CPAN/arch/${PERL_VER}/Image \
 			--no-same-owner --no-same-permissions
 
 PORTSCOUT=	skipv:10.0.3,10.0.4,release-10.0.0.0
