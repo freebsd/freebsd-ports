@@ -2,7 +2,7 @@
 -- tool.setuptools.packages format for compatibility with setuptools 63.x.
 -- FreeBSD ports ship setuptools 63.x which does not support the modern
 -- SPDX license format or the 'packages' key in [tool.setuptools].
---- pyproject.toml.orig	2026-10-22 08:31:32 UTC
+--- pyproject.toml.orig	2026-11-16 18:23:03 UTC
 +++ pyproject.toml
 @@ -1,12 +1,10 @@ build-backend = "setuptools.build_meta"
  [build-system]
@@ -12,7 +12,7 @@
  
  [project]
  name = "types-python-dateutil"
- version = "2.9.0.20261021"
+ version = "2.9.0.20261104"
 -license = "Apache-2.0"
 -license-files = ["LICENSE"]
  description = "Typing stubs for python-dateutil"
