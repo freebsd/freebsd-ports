@@ -1,5 +1,5 @@
 PORTNAME=	langgraph-prebuilt
-DISTVERSION=	1.1.1
+DISTVERSION=	1.1.2
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}langchain-core>=1.3.1:misc/py-langchain-core
 		${PYTHON_PKGNAMEPREFIX}langgraph-checkpoint>=2.1.0:misc/py-langgraph-checkpoint@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}langchain-core>=0:misc/py-langchain-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}langgraph-checkpoint>=0:misc/py-langgraph-checkpoint@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}langgraph-checkpoint-postgres>=0:misc/py-langgraph-checkpoint-postgres@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}langgraph-checkpoint-sqlite>=0:misc/py-langgraph-checkpoint-sqlite@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}langgraph>=0:misc/py-langgraph@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}psycopg>=0:databases/py-psycopg@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-asyncio>=0:devel/py-pytest-asyncio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-mock>=0:devel/py-pytest-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-watcher>=0:devel/py-pytest-watcher@${PY_FLAVOR} \
@@ -29,7 +32,8 @@ USE_PYTHON=	pep517 autoplist pytest
 
 NO_ARCH=	yes
 
-# tests as of 1.1.1: not run - fails with ModuleNotFoundError: langgraph.checkpoint.postgres
-# (langgraph-checkpoint-sqlite, langgraph-checkpoint-postgres and psycopg-binary are not ported)
+TEST_ARGS=	--disable-plugin-autoload -p pytest_asyncio.plugin -p pytest_mock -p syrupy
+
+# tests as of 1.1.2: 260 passed, 142 warnings
 
 .include <bsd.port.mk>
