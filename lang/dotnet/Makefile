@@ -25,7 +25,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 		ggrep:textproc/gnugrep \
 		terminfo-db>0:misc/terminfo-db \
 		${LOCALBASE}/lib/compat/libssl.so.111:misc/compat13x
-LIB_DEPENDS=	libbrotlienc.so:archivers/brotli \
+LIB_DEPENDS?=	libbrotlienc.so:archivers/brotli \
 		libicuuc.so:devel/icu \
 		libinotify.so:devel/libinotify \
 		libunwind.so.11:devel/libunwind-devel

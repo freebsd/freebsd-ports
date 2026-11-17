@@ -1,6 +1,11 @@
 DISTVERSION=	${DOTNETVERSION}.27
 PKGNAMESUFFIX=	8
 
+LIB_DEPENDS=	libbrotlienc.so:archivers/brotli \
+		libicuuc.so:devel/icu \
+		libinotify.so:devel/libinotify \
+		libunwind.so.8:devel/libunwind
+
 SHEBANG_FILES=	src/source-build-externals/src/azure-activedirectory-identitymodel-extensions-for-dotnet/updateAssemblyInfo.sh
 
 DOTNET_ENV=	PATH=${PATH}:${LLVM_PREFIX}/bin
