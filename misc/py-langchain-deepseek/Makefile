@@ -1,5 +1,5 @@
 PORTNAME=	langchain-deepseek
-DISTVERSION=	1.1.1
+DISTVERSION=	1.2.0
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -33,6 +33,6 @@ NO_ARCH=	yes
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_WRKSRC=	${WRKSRC}/tests/unit_tests
 
-# tests as of 1.1.1: 39 passed, 1 skipped in 2.38s
+# tests as of 1.2.0: 43 passed, 1 skipped in 12.97s
 
 .include <bsd.port.mk>
