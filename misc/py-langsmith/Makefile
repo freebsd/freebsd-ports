@@ -1,5 +1,5 @@
 PORTNAME=	langsmith
-DISTVERSION=	0.14.17
+DISTVERSION=	0.15.0
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -83,15 +83,20 @@ TEST_ARGS=	-p no:flaky \
 		--ignore=tests/unit_tests/wrappers/test_voice_helpers.py \
 		--ignore=bench
 
-# Skip flaky performance test that depends on timing/background thread throughput
-# and tests that use @pytest.mark.flaky kwargs incompatible with pytest-rerunfailures.
+# Skip flaky performance/timing tests and tests that use @pytest.mark.flaky kwargs
+# incompatible with pytest-rerunfailures.
 PYTEST_IGNORED_TESTS=	test_client_gc_after_autoscale \
 			test_traceable_input_attachments \
 			test_async_create_feedback_retries_on_not_found \
 			test_create_feedback_retries_on_not_found \
 			test_arequest_with_retries_retries_on_502 \
-			test_langchain_tool_attributes_reach_otel_spans
+			test_langchain_tool_attributes_reach_otel_spans \
+			test_late_discovery_never_posts_refresh_token \
+			test_ensure_write_replicas_with_none \
+			test_replicas_sharing_auth_share_one_frame \
+			test_refresh_error_tracking \
+			test_refresh_loop_continues_after_500_errors
 
-# tests as of 0.14.17: 1817 passed, 2239 skipped, 4 deselected, 1 xfailed, 105 warnings, 6 subtests passed
+# tests as of 0.15.0: 1845 passed, 2813 skipped, 6 deselected, 1 xfailed, 106 warnings, 6 subtests passed
 
 .include <bsd.port.mk>
