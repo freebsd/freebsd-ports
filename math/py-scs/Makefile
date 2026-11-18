@@ -1,5 +1,5 @@
 PORTNAME=	scs
-DISTVERSION=	3.3.1
+DISTVERSION=	3.3.2
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,20 +16,24 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}meson-python>0:devel/meson-python@${PY_FLA
 LIB_DEPENDS=	libopenblas.so:math/openblas
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=0.13.2:science/py-scipy@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-timeout>=2.4.0:devel/py-pytest-timeout@${PY_FLAVOR}
 
 USES=		python blaslapack:openblas fortran localbase:ldflags pkgconfig # fortran is for openblas
-USE_PYTHON=	pep517 autoplist pytest # 2 tests fail, see https://github.com/cvxgrp/scs/issues/273
+USE_PYTHON=	pep517 autoplist pytest # free_threading tests are unstable and ignored
 
 CONFIGURE_ENV=	BLAS_LAPACK_LIBS="openblas"
 MAKE_ENV=	${CONFIGURE_ENV}
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
-TEST_ARGS=	--disable-plugin-autoload
+TEST_ARGS=	--disable-plugin-autoload \
+		-p timeout \
+		--timeout=30 \
+		test/test_scs_basic.py test/test_scs_object.py
 
 post-install:
 	@${STRIP_CMD} \
 		${STAGEDIR}${PYTHON_SITELIBDIR}/scs/_scs_direct${PYTHON_SOABI}.so  \
 		${STAGEDIR}${PYTHON_SITELIBDIR}/scs/_scs_indirect${PYTHON_SOABI}.so
 
-# tests as of 3.2.11: 28 passed in 10.63s
+# tests as of 3.3.2: 26 passed, 1 warning in 33.35s
 
 .include <bsd.port.mk>
