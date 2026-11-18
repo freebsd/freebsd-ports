@@ -1,3 +1,94 @@
+  <vuln vid="890d1126-e36c-11f1-bae2-3497f65b111b">
+    <topic>nginx -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+       <name>nginx</name>
+       <name>nginx-full</name>
+       <name>nginx-lite</name>
+       <name>nginx-naxsi</name>
+       <range><lt>1.30.7,3</lt></range>
+      </package>
+      <package>
+       <name>nginx-devel</name>
+       <range><lt>1.31.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>The nginx developers report:</p>
+       <blockquote cite="https://nginx.org/en/security_advisories.html">
+       <p>
+       A buffer overflow might occur in a worker process when using the
+       "try_files" and "alias" directives in certain configurations
+       (CVE-2026-125283).
+       </p>
+       <p>
+       A flow control window overflow in HTTP/2 might allow an attacker to
+       cause a segmentation fault in a worker process, or might have
+       potential other impact (CVE-2026-123007).
+       </p>
+       <p>
+       use-after-free might occur in a worker process when using HTTP/2 if
+       worker_connections were not enough (CVE-2026-123633).
+       </p>
+       <p>
+       use-after-free might occur in a worker process when using HTTP/3 if
+       worker_connections were not enough (CVE-2026-121810).
+       </p>
+       <p>
+       use-after-free condition might occur if the "resolver" directive was
+       used and the same name was simultaneously resolved in subrequests,
+       allowing an attacker who is able to trigger name resolution to cause
+       segmentation fault in a worker process, or might have potential other
+       impact (CVE-2026-123634).
+       </p>
+       <p>
+       use-after-free might occur in a worker process in the mail proxy
+       server (CVE-2026-113425).
+       </p>
+       <p>
+       In the stream module, an attacker who is able to complete the SSL
+       handshake synchronously might cause client SSL certificates to be
+       verified using the configuration of the default server rather than
+       the virtual server selected by SNI (CVE-2026-120967).
+       </p>
+       <p>
+       A segmentation fault might occur in a worker process when using PROXY
+       protocol version 2 with dynamic SSL certificate loading
+       (CVE-2026-120993).
+       </p>
+       <p>
+       The ngx_stream_ssl_preread_module might interpret malformed
+       ClientHello messages differently than other TLS implementations,
+       which might result in bypassing security restrictions
+       (CVE-2026-123640).
+       </p>
+       <p>
+       Worker processes might get caught in an endless loop while reading
+       the request body over SSL (CVE-2026-118899).
+       </p>
+      </blockquote>
+     </body>
+    </description>
+    <references>
+      <url>https://nginx.org/en/security_advisories.html</url>
+      <cvename>CVE-2026-113425</cvename>
+      <cvename>CVE-2026-118899</cvename>
+      <cvename>CVE-2026-120967</cvename>
+      <cvename>CVE-2026-120993</cvename>
+      <cvename>CVE-2026-121810</cvename>
+      <cvename>CVE-2026-123007</cvename>
+      <cvename>CVE-2026-123633</cvename>
+      <cvename>CVE-2026-123634</cvename>
+      <cvename>CVE-2026-123640</cvename>
+      <cvename>CVE-2026-125283</cvename>
+    </references>
+    <dates>
+      <discovery>2026-11-18</discovery>
+      <entry>2026-11-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b2317a60-e358-11f1-b3a2-2cf05da270f3">
     <topic>Gitlab -- Vulnerabilities</topic>
     <affects>
