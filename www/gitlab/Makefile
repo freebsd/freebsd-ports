@@ -89,7 +89,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-invisible_captcha>=2.3.0<2.4:graphics/rubygem-invisible_captcha \
 	rubygem-devise-two-factor-rails-gitlab>=6.4.0<6.5:security/rubygem-devise-two-factor-rails-gitlab \
 	rubygem-rqrcode-gitlab>=2.2.0<3:www/rubygem-rqrcode-gitlab \
-	rubygem-webauthn>=3.0<4:security/rubygem-webauthn \
+	rubygem-webauthn>=3.4.4<4:security/rubygem-webauthn \
 	rubygem-attr_encrypted>=4.2<5:security/rubygem-attr_encrypted \
 	rubygem-validates_hostname-gitlab>=1.0.13<1.1.0:dns/rubygem-validates_hostname-gitlab \
 	rubygem-rubyzip-gitlab>=2.4.1<2.5:archivers/rubygem-rubyzip-gitlab \
