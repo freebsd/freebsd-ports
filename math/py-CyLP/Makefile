@@ -1,6 +1,6 @@
 PORTNAME=	CyLP
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.94.1
+DISTVERSION=	0.94.3
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -46,6 +46,6 @@ do-test:
 		--ignore=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/cylp/py/test_PySolve.py \
 		-k 'not test_removeVar2'
 
-# tests as of 0.94.1: 12 passed, 1 deselected, 36 warnings in 0.17s
+# tests as of 0.94.3: 12 passed, 1 deselected in 0.78s
 
 .include <bsd.port.mk>
