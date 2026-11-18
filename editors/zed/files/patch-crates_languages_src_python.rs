@@ -1,6 +1,6 @@
---- crates/languages/src/python.rs.orig	2026-11-02 11:27:47 UTC
+--- crates/languages/src/python.rs.orig	2026-11-11 16:34:27 UTC
 +++ crates/languages/src/python.rs
-@@ -2740,6 +2740,12 @@ impl PyreflyLspAdapter {
+@@ -2744,6 +2744,12 @@ impl PyreflyLspAdapter {
      const ARCH_SERVER_NAME: &str = "linux";
  }
  

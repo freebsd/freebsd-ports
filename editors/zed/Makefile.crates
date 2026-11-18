@@ -9,9 +9,9 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		adler2-2.0.1 \
 		adler32-1.2.0 \
 		aes-0.8.4 \
-		agent-client-protocol-3.6.0 \
-		agent-client-protocol-derive-3.6.0 \
-		agent-client-protocol-schema-1.13.0 \
+		agent-client-protocol-5.0.0 \
+		agent-client-protocol-derive-5.0.0 \
+		agent-client-protocol-schema-1.15.1 \
 		ahash-0.8.12 \
 		aho-corasick-1.1.3 \
 		aliasable-0.1.3 \
@@ -152,9 +152,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		bytes-0.4.12 \
 		bytes-1.11.1 \
 		bytes-utils-0.1.4 \
-		bzip2-0.4.4 \
 		bzip2-0.6.1 \
-		bzip2-sys-0.1.13+1.0.8 \
 		c-enum-0.2.3 \
 		cached-0.56.0 \
 		cached_proc_macro-0.25.0 \
@@ -206,7 +204,6 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		const-random-macro-0.1.16 \
 		const_format-0.2.35 \
 		const_format_proc_macros-0.2.34 \
-		constant_time_eq-0.1.5 \
 		convert_case-0.10.0 \
 		convert_case-0.11.0 \
 		core-foundation-0.9.4 \
@@ -497,6 +494,8 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		icu_properties-2.3.0 \
 		icu_properties_data-2.3.0 \
 		icu_provider-2.3.0 \
+		icu_segmenter-2.3.0 \
+		icu_segmenter_data-2.3.0 \
 		id-arena-2.3.0 \
 		ident_case-1.0.1 \
 		idna-1.1.0 \
@@ -655,6 +654,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		nested-0.1.1 \
 		new_debug_unreachable-1.0.6 \
 		nix-0.30.1 \
+		nix-0.31.3 \
 		no_std_io2-0.9.4 \
 		nom-7.1.3 \
 		nom-8.0.0 \
@@ -740,7 +740,6 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		parking_lot_core-0.9.12 \
 		parse_int-0.9.0 \
 		partial-json-fixer-0.5.3 \
-		password-hash-0.4.2 \
 		paste-1.0.15 \
 		pastey-0.1.1 \
 		pastey-0.2.3 \
@@ -750,7 +749,6 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		pbjson-0.9.0 \
 		pbjson-build-0.9.0 \
 		pbjson-types-0.9.0 \
-		pbkdf2-0.11.0 \
 		pbkdf2-0.12.2 \
 		pciid-parser-0.8.0 \
 		peg-0.8.5 \
@@ -1160,6 +1158,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		ttf-parser-0.25.1 \
 		tungstenite-0.20.1 \
 		tungstenite-0.28.0 \
+		typed-path-0.13.0 \
 		typeid-1.0.3 \
 		typenum-1.19.0 \
 		ucd-trie-0.1.7 \
@@ -1420,11 +1419,10 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		zerotrie-0.2.5 \
 		zerovec-0.11.8 \
 		zerovec-derive-0.11.5 \
-		zip-0.6.6 \
+		zip-9.1.3 \
+		zlib-rs-0.5.5 \
 		zmij-1.0.23 \
-		zstd-0.11.2+zstd.1.5.2 \
 		zstd-0.13.3 \
-		zstd-safe-5.0.2+zstd.1.5.2 \
 		zstd-safe-7.3.0 \
 		zstd-sys-2.0.16+zstd.1.5.7 \
 		zune-core-0.5.1 \
@@ -1436,11 +1434,11 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		async-task@git+https://github.com/zed-industries/async-task.git?rev=015845a19fc31752c02367567d3b8900a406f9da\#015845a19fc31752c02367567d3b8900a406f9da \
 		rodio@git+https://github.com/RustAudio/rodio?rev=3ee9745862279ce1d18db593155016e7ce024aeb\#3ee9745862279ce1d18db593155016e7ce024aeb \
 		windows-capture@git+https://github.com/zed-industries/windows-capture.git?rev=f0d6c1b6691db75461b732f6d5ff56eed002eeb9\#f0d6c1b6691db75461b732f6d5ff56eed002eeb9 \
+		libwebrtc,livekit,livekit-api,livekit-protocol,livekit-runtime,webrtc-sys,webrtc-sys-build@git+https://github.com/zed-industries/livekit-rust-sdks?rev=fbda05eb278b4a7c5be8fc9b2a92e9b62e732236\#fbda05eb278b4a7c5be8fc9b2a92e9b62e732236 \
 		khronos-egl@git+https://github.com/zed-industries/khronos-egl?rev=42214b36347b108fd9630ca6254b96dde59e04fe\#42214b36347b108fd9630ca6254b96dde59e04fe \
 		tree-sitter,tree-sitter-language@git+https://github.com/tree-sitter/tree-sitter?rev=803c6ebaac27d69e1808b45058482e868d073ceb\#803c6ebaac27d69e1808b45058482e868d073ceb \
 		oo7@git+https://github.com/zed-industries/oo7?rev=731c1215edb6905876c6137ab300428c7b8d7c13\#731c1215edb6905876c6137ab300428c7b8d7c13 \
 		notify,notify-types@git+https://github.com/zed-industries/notify?rev=d842f16b2716bd60f09caf3ae3a894237ab38f54\#d842f16b2716bd60f09caf3ae3a894237ab38f54 \
-		libwebrtc,livekit,livekit-api,livekit-protocol,livekit-runtime,webrtc-sys,webrtc-sys-build@git+https://github.com/zed-industries/livekit-rust-sdks?rev=0a1c519cfce9b365229026b55de9b9dbdb6fed3c\#0a1c519cfce9b365229026b55de9b9dbdb6fed3c \
 		tree-sitter-gomod@git+https://github.com/camdencheek/tree-sitter-go-mod?rev=2e886870578eeba1927a2dc4bd2e2b3f598c5f9a\#2e886870578eeba1927a2dc4bd2e2b3f598c5f9a \
 		async-tar@git+https://github.com/zed-industries/async-tar?rev=bd3ad6f89df9a9da7a8535958756d6bf465936a0\#bd3ad6f89df9a9da7a8535958756d6bf465936a0 \
 		crash-context@git+https://github.com/rust-minidump/minidump-writer?rev=911b04e09b79b736cc15cbe712e83e2d3f348bb9\#911b04e09b79b736cc15cbe712e83e2d3f348bb9 \

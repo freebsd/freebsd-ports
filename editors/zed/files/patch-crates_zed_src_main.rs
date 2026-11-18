@@ -1,4 +1,4 @@
---- crates/zed/src/main.rs.orig	2026-10-14 15:50:18 UTC
+--- crates/zed/src/main.rs.orig	2026-11-11 16:34:27 UTC
 +++ crates/zed/src/main.rs
 @@ -22,6 +22,7 @@ use collections::HashMap;
  use client::{Client, ProxySettings, RefreshLlmTokenListener, UserStore, parse_zed_link};
@@ -27,7 +27,7 @@
      if let Some(socket) = &args.crash_handler {
          crashes::crash_server(socket.as_path(), paths::logs_dir().clone());
          return;
-@@ -386,6 +391,7 @@ fn main() {
+@@ -387,6 +392,7 @@ fn main() {
      let should_install_crash_handler =
          client::telemetry::should_install_crash_handler(*release_channel::RELEASE_CHANNEL);
  
@@ -35,7 +35,7 @@
      let crash_handler = if should_install_crash_handler {
          Some(
              app.background_executor().spawn(crashes::init(
-@@ -608,6 +614,7 @@ fn main() {
+@@ -609,6 +615,7 @@ fn main() {
              let telemetry = telemetry.clone();
              move |_, evt: &client::user::Event, cx| match evt {
                  client::user::Event::PrivateUserInfoUpdated => {
@@ -43,7 +43,7 @@
                      if let Some(crash_client) = cx.try_global::<CrashHandler>() {
                          crashes::set_user_info(
                              &crash_client.0,
-@@ -658,6 +665,7 @@ fn main() {
+@@ -659,6 +666,7 @@ fn main() {
          auto_update::init(client.clone(), cx);
          dap_adapters::init(cx);
          auto_update_ui::init(cx);
@@ -51,7 +51,7 @@
          reliability::init(client.clone(), app_state.workspace_store.clone(), cx);
          extension_host::init(
              extension_host_proxy.clone(),
-@@ -725,7 +733,7 @@ fn main() {
+@@ -726,7 +734,7 @@ fn main() {
          dev_container::init(cx);
  
          load_embedded_fonts(cx);
@@ -60,7 +60,7 @@
          prewarm_fonts(cx);
  
          editor::init(cx);
-@@ -854,6 +862,7 @@ fn main() {
+@@ -855,6 +863,7 @@ fn main() {
          let menus = app_menus(cx);
          cx.set_menus(menus);
  
@@ -68,7 +68,7 @@
          if let Some(mut crash_handler) = crash_handler {
              let crash_handler2 = block_on(poll_once(&mut crash_handler));
              match crash_handler2 {
-@@ -1847,7 +1856,7 @@ fn load_embedded_fonts(cx: &App) {
+@@ -1853,7 +1862,7 @@ fn load_embedded_fonts(cx: &App) {
          .unwrap();
  }
  

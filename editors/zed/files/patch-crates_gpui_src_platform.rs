@@ -1,4 +1,4 @@
---- crates/gpui/src/platform.rs.orig	2026-11-04 15:12:45 UTC
+--- crates/gpui/src/platform.rs.orig	2026-11-11 16:34:27 UTC
 +++ crates/gpui/src/platform.rs
 @@ -3,7 +3,7 @@ mod platform_info;
  mod keystroke;
@@ -27,7 +27,7 @@
      fn set_exclusive_edge(&self, _edge: layer_shell::Anchor) {}
      fn set_input_region(&self, _region: Option<&[Bounds<Pixels>]>) {}
      fn window_decorations(&self) -> Decorations {
-@@ -2841,7 +2841,7 @@ pub enum WindowKind {
+@@ -2857,7 +2857,7 @@ pub enum WindowKind {
  
      /// A Wayland LayerShell window, used to draw overlays or backgrounds for applications such as
      /// docks, notifications or wallpapers.
