@@ -1,5 +1,7 @@
 %%FONTSDIR%%/NordwandMono-Bold.ttf
 %%FONTSDIR%%/NordwandMono-BoldItalic.ttf
+%%FONTSDIR%%/NordwandMono-Book.ttf
+%%FONTSDIR%%/NordwandMono-BookItalic.ttf
 %%FONTSDIR%%/NordwandMono-ExtraLight.ttf
 %%FONTSDIR%%/NordwandMono-ExtraLightItalic.ttf
 %%FONTSDIR%%/NordwandMono-Italic.ttf
@@ -8,6 +10,8 @@
 %%FONTSDIR%%/NordwandMono-Medium.ttf
 %%FONTSDIR%%/NordwandMono-MediumItalic.ttf
 %%FONTSDIR%%/NordwandMono-Regular.ttf
+%%FONTSDIR%%/NordwandMono-Retina.ttf
+%%FONTSDIR%%/NordwandMono-RetinaItalic.ttf
 %%FONTSDIR%%/NordwandMono-SemiBold.ttf
 %%FONTSDIR%%/NordwandMono-SemiBoldItalic.ttf
 %%FONTSDIR%%/NordwandMono-Thin.ttf

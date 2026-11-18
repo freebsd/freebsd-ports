@@ -1,5 +1,5 @@
 PORTNAME=	nordwand-mono-ttf
-DISTVERSION=	1.3.3
+DISTVERSION=	1.6.0
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/tywr/Nordwand-Mono/releases/download/${DISTVERSION}/
 DISTNAME=	NordwandMono-TTF
