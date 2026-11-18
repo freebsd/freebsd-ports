@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Zoraxy has been installed.
 
 To enable Zoraxy at boot, add the following to /etc/rc.conf:
@@ -24,3 +27,6 @@ Optional rc.conf settings:
   zoraxy_user="zoraxy"
   zoraxy_group="zoraxy"
   zoraxy_port=":8000"
+EOM
+}
+]
