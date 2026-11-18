@@ -6,7 +6,7 @@
 --    tarball.
 --
 -- 2. Relax exact version requirement for distlib to allow using newer versions.
---- pyproject.toml.orig	2026-10-12 07:12:01 UTC
+--- pyproject.toml.orig	2026-11-18 08:15:08 UTC
 +++ pyproject.toml
 @@ -24,12 +24,12 @@ requires = [
      # Note: after upgrading to grpcio-tools, we must bump protobuf to >=5.0.
@@ -21,8 +21,8 @@
 +    # "grpcio-tools==1.78.0; python_version >= '3.14'",  # Not needed for building
 +    # "mypy-protobuf==3.5.0",  # Not needed for building
      # Avoid https://github.com/pypa/virtualenv/issues/2006
--    "distlib==0.4.3",
-+    "distlib>=0.4.3",
+-    "distlib==0.4.4",
++    "distlib>=0.4.4",
      # Numpy headers
-     "numpy>=1.14.3,<2.5.0", # Update setup.py as well.
-     # having cython here will create wheels that are platform dependent.
+     "numpy>=1.23.2,<2.6.0; python_version >= '3.12'", # Update setup.py as well.
+     "numpy>=1.23.2,<2.5.0; python_version < '3.12'",

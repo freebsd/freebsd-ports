@@ -1,3 +1,3 @@
-TIMESTAMP = 1791788640
-SHA256 (apache_beam-2.77.0.tar.gz) = 67ec5cf4610b28cc235957d7ed8890acd2dccd58f256b90c1565cbb57b32e461
-SIZE (apache_beam-2.77.0.tar.gz) = 3245023
+TIMESTAMP = 1794977071
+SHA256 (apache_beam-2.78.0.tar.gz) = 88c7a003d6cd89c15320c46f33b73e59ef71c6794be78e70aed158a3ca2db9c6
+SIZE (apache_beam-2.78.0.tar.gz) = 3376573

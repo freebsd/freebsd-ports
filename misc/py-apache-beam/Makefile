@@ -1,5 +1,5 @@
 PORTNAME=	apache-beam
-DISTVERSION=	2.77.0
+DISTVERSION=	2.78.0
 CATEGORIES=	misc
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -47,12 +47,12 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}freezegun>=0.3.12:devel/py-freezegun@${PY_F
 		${PYTHON_PKGNAMEPREFIX}pandas>0:math/py-pandas@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}parameterized>=0.7.1:devel/py-parameterized@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydot>=1.2.0:graphics/py-pydot@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyhamcrest>=1.9:textproc/py-pyhamcrest@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}PyHamcrest>=1.9:textproc/py-pyhamcrest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-timeout>=2.1.0:devel/py-pytest-timeout@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-xdist>=2.5.0:devel/py-pytest-xdist@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests-mock>=1.7:www/py-requests-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scikit-learn>=0.20.0:science/py-scikit-learn@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sqlalchemy14>=1.3:databases/py-sqlalchemy14@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sqlalchemy20>=1.3:databases/py-sqlalchemy20@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tenacity>=8.0.0:devel/py-tenacity@${PY_FLAVOR}
 
 USES=		python
