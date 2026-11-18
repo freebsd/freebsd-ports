@@ -1,6 +1,6 @@
 PORTNAME=	pyscf
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.15.0
+DISTVERSION=	2.15.1
 CATEGORIES=	science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -25,7 +25,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}h5py>=2.7:science/py-h5py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.13:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.6.0:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR}
-
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-timeout>0:devel/py-pytest-timeout@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-xdist>0:devel/py-pytest-xdist@${PY_FLAVOR}
 
@@ -96,6 +95,6 @@ post-test:
 	@${ECHO} "==> simple test ..."
 	@${SETENV} ${TEST_ENV} ${PYTHON_CMD} ${FILESDIR}/test.py
 
-# tests as of 2.15.0: 17 failed, 2136 passed, 240 skipped, 89 warnings, 417 subtests passed in 130.83s (0:02:10), for 17 failures see https://github.com/pyscf/pyscf/issues/3621
+# tests as of 2.15.1: 17 failed, 2153 passed, 243 skipped, 89 warnings, 426 subtests passed in 1075.96s (0:17:55), for 17 failures see https://github.com/pyscf/pyscf/issues/3621
 
 .include <bsd.port.mk>
