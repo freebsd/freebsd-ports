@@ -1,4 +1,4 @@
-TIMESTAMP = 1794714737
+TIMESTAMP = 1794955258
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
 SIZE (rust/crates/adler2-2.0.1.crate) = 13366
 SHA256 (rust/crates/ahash-0.4.8.crate) = 0453232ace82dee0dd0b4c87a59bd90f7b53b314f3e0f61fe2ee7c8a16482289
@@ -1191,5 +1191,5 @@ SHA256 (romanstingler-hyprland-rs-next-7d5efed08c7ba28f134d31ff5fe57dba54ea6477_
 SIZE (romanstingler-hyprland-rs-next-7d5efed08c7ba28f134d31ff5fe57dba54ea6477_GH0.tar.gz) = 102641
 SHA256 (MalpenZibo-softbuffer-8791db4844f58036bd25934f8133e11c31877933_GH0.tar.gz) = d127d407e02620afaaae4b289f6a70a97250ae4410f05be5752443bed3cfdfba
 SIZE (MalpenZibo-softbuffer-8791db4844f58036bd25934f8133e11c31877933_GH0.tar.gz) = 176110
-SHA256 (MalpenZibo-ashell-0.12.0_GH0.tar.gz) = 394fad2faf11f57fd7b27e29f317f14cb9af21da3240afe952c6ccf96e8ce228
-SIZE (MalpenZibo-ashell-0.12.0_GH0.tar.gz) = 9307747
+SHA256 (MalpenZibo-ashell-0.12.1_GH0.tar.gz) = 092c09555c06711a03d9cc9324eacce08257e14862d8f2dc3a528041bec08b41
+SIZE (MalpenZibo-ashell-0.12.1_GH0.tar.gz) = 9356824

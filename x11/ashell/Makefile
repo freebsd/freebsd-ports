@@ -1,5 +1,5 @@
 PORTNAME=	ashell
-DISTVERSION=	0.12.0
+DISTVERSION=	0.12.1
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	tagattie@FreeBSD.org
