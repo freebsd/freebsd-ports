@@ -8,8 +8,10 @@ share/applications/ibus-setup-table.desktop
 %%DATADIR%%/data/pinyin_table.txt.bz2
 %%DATADIR%%/engine/chinese_variants.py
 %%DATADIR%%/engine/factory.py
+%%DATADIR%%/engine/g_compat_helpers.py
 %%DATADIR%%/engine/ibus_table_location.py
 %%DATADIR%%/engine/it_active_window.py
+%%DATADIR%%/engine/it_gtk.py
 %%DATADIR%%/engine/it_sound.py
 %%DATADIR%%/engine/it_util.py
 %%DATADIR%%/engine/main.py
