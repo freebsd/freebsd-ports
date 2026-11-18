@@ -1,27 +1,24 @@
 PORTNAME=	ngrep
-DISTVERSION=	1.48.3
-PORTREVISION=	1
+DISTVERSION=	1.49.0
 CATEGORIES=	net security
-MASTER_SITES=	SF/${PORTNAME}/v${DISTVERSION}/
-DISTNAME=	v${DISTVERSION}%20source%20code
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fabio.tleitao@gmail.com
 COMMENT=	Network grep
-WWW=		https://ngrep.sourceforge.net/ \
-		https://github.com/jpr5/ngrep/
+WWW=		https://github.com/jpr5/ngrep/
 
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		autoreconf gmake
+USE_GITHUB=	yes
+GH_ACCOUNT=	jpr5
+GH_TAGNAME=	v${DISTVERSION}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-pcap-restart
 
 MAKE_JOBS_UNSAFE=	yes
-
-WRKSRC=		${WRKDIR}/jpr5-${PORTNAME}-c3d586c
 
 PLIST_FILES=	bin/ngrep share/man/man8/ngrep.8.gz
 PORTDOCS=	CREDITS EXAMPLES.md INSTALL README.md
