@@ -107,6 +107,7 @@ include/dns/validator.h
 include/dns/view.h
 include/dns/xfrin.h
 include/dns/zone.h
+include/dns/zoneaddr.h
 include/dns/zonefetch.h
 include/dns/zonemgr.h
 include/dns/zoneproperties.h
@@ -175,6 +176,7 @@ include/isc/pause.h
 include/isc/portset.h
 include/isc/proxy2.h
 include/isc/queue.h
+include/isc/quic.h
 include/isc/quota.h
 include/isc/radix.h
 include/isc/random.h
@@ -225,10 +227,12 @@ include/isccc/util.h
 include/isccfg/aclconf.h
 include/isccfg/cfg.h
 include/isccfg/check.h
+include/isccfg/clause.h
 include/isccfg/duration.h
 include/isccfg/grammar.h
 include/isccfg/kaspconf.h
 include/isccfg/namedconf.h
+include/isccfg/tokens.h
 include/ns/client.h
 include/ns/hooks.h
 include/ns/interfacemgr.h
@@ -243,11 +247,11 @@ include/ns/xfrout.h
 lib/bind/filter-a.so
 lib/bind/filter-aaaa.so
 lib/bind/synthrecord.so
-lib/libdns-9.21.27.so
-lib/libisc-9.21.27.so
-lib/libisccc-9.21.27.so
-lib/libisccfg-9.21.27.so
-lib/libns-9.21.27.so
+lib/libdns-9.21.28.so
+lib/libisc-9.21.28.so
+lib/libisccc-9.21.28.so
+lib/libisccfg-9.21.28.so
+lib/libns-9.21.28.so
 @comment share/man/man1/arpaname.1.gz
 @comment share/man/man1/delv.1.gz
 @comment share/man/man1/dig.1.gz
