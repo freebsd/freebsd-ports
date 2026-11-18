@@ -1,5 +1,5 @@
-TIMESTAMP = 1794851138
+TIMESTAMP = 1794974241
 SHA256 (rust/crates/libc-0.2.183.crate) = b5b646652bf6661599e1da8901b3b9522896f01e736bad5f723fe7a3a27f899d
 SIZE (rust/crates/libc-0.2.183.crate) = 816918
-SHA256 (inotify-tools-inotify-tools-4.26.282_GH0.tar.gz) = 19e8db0825186e116c37401fafc63dee3f251a98a9697817c7a8ba75c8ff54aa
-SIZE (inotify-tools-inotify-tools-4.26.282_GH0.tar.gz) = 110916
+SHA256 (inotify-tools-inotify-tools-4.26.287_GH0.tar.gz) = d25b7229bccc915db55695a11c9d3a0c3aa6aa385c261297404fffa911e3fd68
+SIZE (inotify-tools-inotify-tools-4.26.287_GH0.tar.gz) = 112358

@@ -1,5 +1,5 @@
 PORTNAME=	inotify-tools
-DISTVERSION=	4.26.282
+DISTVERSION=	4.26.287
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -57,7 +57,7 @@ do-test:
 # missing files, chown to the current owner) that do not hold on FreeBSD.
 # The unit-test target provides 480076 cross-platform tests.
 
-# tests as of 4.26.270:
-# Unit tests: Out of 480076 tests, 480076 succeeded and 0 failed.
+# tests as of 4.26.287:
+# Unit tests: Out of 480124 tests, 480124 succeeded and 0 failed.
 
 .include <bsd.port.mk>
