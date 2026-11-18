@@ -1,10 +1,10 @@
-TIMESTAMP = 1794747115
+TIMESTAMP = 1795018960
 SHA256 (nginx-acme-0.4.2.tar.gz) = 60973cf002764fa0c01730068a8d14c2d469781a60902d8e74a8fb59593ffb35
 SIZE (nginx-acme-0.4.2.tar.gz) = 108196
-SHA256 (nginx-1.30.6.tar.gz) = 3cf46f5ed7504d460125866b7bea99fb357f31d887e2e63b35503310e9b8b6c8
-SIZE (nginx-1.30.6.tar.gz) = 1331698
-SHA256 (nginx-1.31.8.tar.gz) = 0652b760b3b772d2ec17b47c2fc15d9a95e6fe35cd5b877eadc1a62d9bc75af1
-SIZE (nginx-1.31.8.tar.gz) = 1385338
+SHA256 (nginx-1.30.7.tar.gz) = 2565b5c837050e958f70fb0f73c48e2bca4542ad349fd356f46fb0c72610bc6e
+SIZE (nginx-1.30.7.tar.gz) = 1333178
+SHA256 (nginx-1.31.9.tar.gz) = a11c5eeee2e257f4478f0e649f84b0040787d277d2d3e5233952aa6b6dcb80ad
+SIZE (nginx-1.31.9.tar.gz) = 1388470
 SHA256 (rust/crates/aho-corasick-1.1.5.crate) = c982642fa9e8606056828ee9a8505737230110bb1099153c79efe865c59d12ba
 SIZE (rust/crates/aho-corasick-1.1.5.crate) = 184315
 SHA256 (rust/crates/allocator-api2-0.3.1.crate) = c583acf993cf4245c4acb0a2cc2ab1f9cc097de73411bb6d3647ff6af2b1013d
