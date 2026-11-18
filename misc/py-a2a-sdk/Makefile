@@ -1,6 +1,6 @@
 PORTNAME=	a2a-sdk
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.0
+DISTVERSION=	1.3.1
 CATEGORIES=	misc python # machine-learning
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -74,6 +74,6 @@ TEST_ARGS=	--disable-plugin-autoload \
 
 NO_ARCH=	yes
 
-# tests as of 1.3.0: 2371 passed, 199 skipped, 4 xfailed, 1 xpassed, 204 warnings
+# tests as of 1.3.1: 2617 passed, 215 skipped, 4 xfailed, 1 xpassed, 208 warnings
 
 .include <bsd.port.mk>
