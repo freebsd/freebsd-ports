@@ -1,5 +1,5 @@
-TIMESTAMP = 1792016829
-SHA256 (nginx-1.30.6.tar.gz) = 3cf46f5ed7504d460125866b7bea99fb357f31d887e2e63b35503310e9b8b6c8
-SIZE (nginx-1.30.6.tar.gz) = 1331698
+TIMESTAMP = 1795018963
+SHA256 (nginx-1.30.7.tar.gz) = 2565b5c837050e958f70fb0f73c48e2bca4542ad349fd356f46fb0c72610bc6e
+SIZE (nginx-1.30.7.tar.gz) = 1333178
 SHA256 (owasp-modsecurity-ModSecurity-nginx-b7cf44e_GH0.tar.gz) = 357d608de60b00ca5cb5a86dcd3b8bc398dd0922c3024b8ed8112185ad3e6024
 SIZE (owasp-modsecurity-ModSecurity-nginx-b7cf44e_GH0.tar.gz) = 1162451
