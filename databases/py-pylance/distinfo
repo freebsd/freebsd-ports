@@ -1,4 +1,4 @@
-TIMESTAMP = 1793409386
+TIMESTAMP = 1794977068
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
 SIZE (rust/crates/adler2-2.0.1.crate) = 13366
 SHA256 (rust/crates/aes-0.8.4.crate) = b169f7a6d4742236a0a00c541b845991d0ac43e546831af1249753ab4c3aa3a0
@@ -1577,5 +1577,5 @@ SHA256 (rust/crates/zstd-safe-8.2.0.crate) = ded520f16b29e1a9b771c722221b2b0a039
 SIZE (rust/crates/zstd-safe-8.2.0.crate) = 46799
 SHA256 (rust/crates/zstd-sys-2.1.2+zstd.1.5.7.crate) = 481ada9c543b2323cbb7bbdbb5249177fbf0188ed959ed2c15e4b22421c84ed3
 SIZE (rust/crates/zstd-sys-2.1.2+zstd.1.5.7.crate) = 785774
-SHA256 (lancedb-lance-v14.0.2_GH0.tar.gz) = 91228e11ded856254fcfb389c965ae57bfffc43365bbf72fccd1971feb7a8d31
-SIZE (lancedb-lance-v14.0.2_GH0.tar.gz) = 22440437
+SHA256 (lancedb-lance-v14.0.3_GH0.tar.gz) = b04f172dd509f7f266d0adc3725874a5e8baf1a504440df5eb0da33f4bc11618
+SIZE (lancedb-lance-v14.0.3_GH0.tar.gz) = 22442829
