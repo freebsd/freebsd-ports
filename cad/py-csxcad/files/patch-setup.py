@@ -1,9 +1,10 @@
---- setup.py.orig	2021-08-20 05:54:02 UTC
+--- setup.py.orig	2026-10-09 15:41:16 UTC
 +++ setup.py
-@@ -33,5 +33,5 @@ setup(
-   url = 'http://openEMS.de',
+@@ -222,7 +222,6 @@ setup(
+   ),
    packages=["CSXCAD", ],
    package_data={'CSXCAD': ['*.pxd']},
--  ext_modules = cythonize(extensions)
-+  ext_modules = cythonize(extensions, language_level=3)
-  )
+-  # DO NOT add any new build-time dependency in setup_requires.
+   # We should use pyproject.toml exclusively. The only item
+   # "cython" is meant to activate auto-Cython feature in
+   # setuptools 18.
