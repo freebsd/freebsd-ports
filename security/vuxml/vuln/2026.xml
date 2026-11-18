@@ -1,3 +1,104 @@
+  <vuln vid="b2317a60-e358-11f1-b3a2-2cf05da270f3">
+    <topic>Gitlab -- Vulnerabilities</topic>
+    <affects>
+<package>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>19.5.0</ge><lt>19.5.6</lt></range>
+	<range><ge>19.4.0</ge><lt>19.4.8</lt></range>
+	<range><ge>7.0.0</ge><lt>19.3.9</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-5-6-released/?nav=19.5.6">
+	  <p>Cross-site Scripting issue in wiki pages impacts GitLab CE/EE</p>
+	  <p>Cross-site Scripting issue in Error Tracking impacts GitLab CE/EE</p>
+	  <p>Incorrect Authorization issue in CI/CD pipeline jobs impacts GitLab CE/EE</p>
+	  <p>Incorrect Authorization issue in workspaces impacts GitLab CE/EE</p>
+	  <p>NULL Pointer Dereference issue in GitLab agent server impacts GitLab CE/EE</p>
+	  <p>Incorrect Authorization issue in scheduled pipeline execution policies impacts GitLab EE</p>
+	  <p>Acceptance of Extraneous Untrusted Data With Trusted Data issue in Maven virtual registry impacts GitLab EE</p>
+	  <p>Path Traversal issue in GitLab Pages impacts GitLab CE/EE</p>
+	  <p>Cross-site Scripting issue in Confluence integration impacts GitLab CE/EE</p>
+	  <p>Missing Authorization issue in merge request discussions impacts GitLab CE/EE</p>
+	  <p>Missing Authorization issue in job artifacts impacts GitLab CE/EE</p>
+	  <p>Incorrect Authorization issue in Package Registry impacts GitLab CE/EE</p>
+	  <p>Incorrect Authorization issue in GitLab agent for Kubernetes impacts GitLab CE/EE</p>
+	  <p>Authorization Bypass Through User-Controlled Key issue in GitLab Duo Agent Platform impacts GitLab EE</p>
+	  <p>Missing Authorization issue in NuGet package registry impacts GitLab CE/EE</p>
+	  <p>Authorization Bypass Through User-Controlled Key issue in GitLab Duo seat management impacts GitLab EE</p>
+	  <p>Missing Authorization issue in snippets impacts GitLab CE/EE</p>
+	  <p>Missing Authorization issue in CI/CD templates impacts GitLab CE/EE</p>
+	  <p>Incorrect Authorization issue in Git LFS impacts GitLab CE/EE</p>
+	  <p>Missing Authorization issue in iterations impacts GitLab EE</p>
+	  <p>Missing Authorization issue in issues impacts GitLab CE/EE</p>
+	  <p>Improper Validation of Specified Quantity in Input issue in GitLab Duo usage analytics impacts GitLab EE</p>
+	  <p>Missing Authorization issue in project import impacts GitLab CE/EE</p>
+	  <p>Incorrect Authorization issue in GitLab Duo Agent Platform impacts GitLab EE</p>
+	  <p>Insufficient Granularity of Access Control issue in merge request scheduling impacts GitLab CE/EE</p>
+	  <p>Incorrect Authorization issue in GitLab MCP server impacts GitLab CE/EE</p>
+	  <p>Missing Authorization issue in GitLab Duo group settings impacts GitLab EE</p>
+	  <p>Incorrect Authorization issue in GitLab Duo Agent Platform flows impacts GitLab EE</p>
+	  <p>Reliance on Untrusted Inputs in a Security Decision issue in GitLab Duo with Amazon Q impacts GitLab EE</p>
+	  <p>Authentication Bypass by Spoofing issue in group import member email mapping impacts GitLab CE/EE</p>
+	  <p>Use of Incorrectly-Resolved Name or Reference issue in merge request diffs impacts GitLab CE/EE</p>
+	  <p>Server-Side Request Forgery issue in repository import impacts GitLab CE/EE</p>
+	  <p>Incorrect Authorization issue in pipeline execution policies impacts GitLab EE</p>
+	  <p>Incorrect Authorization issue in GitLab Duo Code Review impacts GitLab EE</p>
+	  <p>Insertion of Sensitive Information into Log File issue in GraphQL logging impacts GitLab CE/EE</p>
+	  <p>Improper Cleanup on Thrown Exception issue in GitLab Duo access rules impacts GitLab EE</p>
+	  <p>Missing Authorization issue in Git LFS impacts GitLab CE/EE</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-105739</cvename>
+      <cvename>CVE-2026-108153</cvename>
+      <cvename>CVE-2026-18241</cvename>
+      <cvename>CVE-2026-97187</cvename>
+      <cvename>CVE-2026-115428</cvename>
+      <cvename>CVE-2026-85778</cvename>
+      <cvename>CVE-2026-112203</cvename>
+      <cvename>CVE-2026-11768</cvename>
+      <cvename>CVE-2026-16609</cvename>
+      <cvename>CVE-2026-118961</cvename>
+      <cvename>CVE-2026-121533</cvename>
+      <cvename>CVE-2026-16545</cvename>
+      <cvename>CVE-2026-18491</cvename>
+      <cvename>CVE-2026-115736</cvename>
+      <cvename>CVE-2026-115218</cvename>
+      <cvename>CVE-2026-104902</cvename>
+      <cvename>CVE-2026-104934</cvename>
+      <cvename>CVE-2026-108150</cvename>
+      <cvename>CVE-2026-108155</cvename>
+      <cvename>CVE-2026-104717</cvename>
+      <cvename>CVE-2026-102907</cvename>
+      <cvename>CVE-2026-125920</cvename>
+      <cvename>CVE-2026-108154</cvename>
+      <cvename>CVE-2026-129253</cvename>
+      <cvename>CVE-2026-129321</cvename>
+      <cvename>CVE-2026-123142</cvename>
+      <cvename>CVE-2026-122045</cvename>
+      <cvename>CVE-2026-128849</cvename>
+      <cvename>CVE-2026-115219</cvename>
+      <cvename>CVE-2026-129252</cvename>
+      <cvename>CVE-2026-111747</cvename>
+      <cvename>CVE-2026-126141</cvename>
+      <cvename>CVE-2026-101358</cvename>
+      <cvename>CVE-2026-121948</cvename>
+      <cvename>CVE-2026-110990</cvename>
+      <cvename>CVE-2026-122226</cvename>
+      <cvename>CVE-2026-110750</cvename>
+      <url>https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-5-6-released/?nav=19.5.6</url>
+    </references>
+    <dates>
+      <discovery>2026-11-16</discovery>
+      <entry>2026-11-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c0ecba9d-e313-11f1-a3e1-bc241121aa0a">
     <topic>FreeBSD -- tmpfs(4) fails to clear set-group-ID bit on new files</topic>
     <affects>
