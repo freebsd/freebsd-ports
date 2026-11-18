@@ -1,0 +1,14 @@
+U-Boot loader and related files for the Banana Pi BPI-R3, for booting
+from the SD card (SW1 set to SD boot).
+
+The boot ROM loads bl2.img from the GPT partition marked as legacy BIOS
+bootable. BL2 then loads u-boot.fip, which holds BL31 and U-Boot, from
+the GPT partition named "fip". U-Boot keeps its environment in the GPT
+partition named "ubootenv".
+
+To install this bootloader on an SD card where these partitions are
+named "bl2" and "fip" just do:
+
+cd /usr/local/share/u-boot/u-boot-bananapi-r3
+dd if=bl2.img of=/dev/gpt/bl2 bs=512 conv=sync
+dd if=u-boot.fip of=/dev/gpt/fip bs=512 conv=sync

@@ -129,6 +129,11 @@ UBOOT_METADATA_ARMADA38X_RAW_BS=	512
 # Override for QEMU family
 UBOOT_PLIST_QEMU=	u-boot.bin
 
+# Override for MT7986 family
+UBOOT_PLIST_MT7986=	bl2.img u-boot.fip
+UBOOT_ARCH_MT7986=	aarch64
+UBOOT_MOVE_MT7986=	${MT7986_ATF}/bl2.img
+
 # Uboot variables
 .if !defined(UBOOT_VERSION) && defined(UBOOT_VERSION_${FAMILY:tu})
 UBOOT_VERSION=${UBOOT_VERSION_${FAMILY:tu}}
@@ -225,6 +230,13 @@ MAKE_ENV+=	BL31=${LOCALBASE}/share/rkbin/rk35/rk3588_bl31_v1.56.elf \
 		ROCKCHIP_TPL=${LOCALBASE}/share/rkbin/rk35/rk3588_ddr_lp4_2112MHz_lp5_2400MHz_v1.24.bin
 .endif
 
+.if defined(FAMILY) && ${FAMILY} == mt7986
+MT7986_BOOT_DEVICE?=	sdmmc
+MT7986_ATF=	${LOCALBASE}/share/atf-mt7986/${MT7986_BOOT_DEVICE}-ddr4
+BUILD_DEPENDS+=	${MT7986_ATF}/bl31.bin:sysutils/atf-mt7986 \
+		fiptool:sysutils/fiptool
+.endif
+
 # Each u-boot family has different files to include, bring them in.
 .for i in ${UBOOT_PLIST}
 PLIST_FILES+=	${UBOOT_DIR}/${i}
@@ -286,6 +298,10 @@ post-build:
 .for i in ${UBOOT_EXTRA_TARGETS}
 	(cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${i})
 .endfor
+.endif
+.if defined(FAMILY) && ${FAMILY} == mt7986
+	${LOCALBASE}/bin/fiptool create --soc-fw ${MT7986_ATF}/bl31.bin \
+		--nt-fw ${WRKSRC}/u-boot.bin ${WRKSRC}/u-boot.fip
 .endif
 # If we need to put anything into WRKSRC, do so now so we can build the PLIST
 # in do-install
