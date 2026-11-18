@@ -1,5 +1,5 @@
 PORTNAME=	filelock
-DISTVERSION=	4.2.10
+DISTVERSION=	4.2.12
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -109,6 +109,6 @@ PYTEST_BROKEN_TESTS=	test_soft_windows_unlink_gives_up_after_every_attempt_is_de
 			test_stale_take_over_keeps_the_lock_when_a_rename_replaces_its_marker \
 			test_unparseable_lock_evicted_when_old
 
-# tests as of 4.2.10: 2710 passed, 206 skipped, 117 deselected in 219.85s
+# tests as of 4.2.12: 2715 passed, 206 skipped, 117 deselected in 207.13s
 
 .include <bsd.port.mk>
