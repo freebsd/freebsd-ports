@@ -1,5 +1,5 @@
 PORTNAME=	css-parser
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -8,10 +8,10 @@ MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	CSS related utilities (parsing, serialization, etc) for python
 WWW=		https://github.com/ebook-utils/css-parser
 
-LICENSE=	GPLv3 LGPL3
-LICENSE_COMB=	dual
-LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING
-LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING.LESSER
+LICENSE=	GPL-3.0-only LGPL-3.0-only
+LICENSE_COMB=	multi
+LICENSE_FILE_GPL-3.0-only=	${WRKSRC}/COPYING
+LICENSE_FILE_LGPL-3.0-only=	${WRKSRC}/COPYING.LESSER
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61.0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
