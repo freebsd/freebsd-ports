@@ -1,6 +1,6 @@
---- pkg/keychain/helper_freebsd.go.orig	2026-07-26 08:22:36 UTC
+--- pkg/keychain/helper_freebsd.go.orig	2026-11-18 07:33:48 UTC
 +++ pkg/keychain/helper_freebsd.go
-@@ -0,0 +1,80 @@
+@@ -0,0 +1,105 @@
 +// Copyright (c) 2026 Proton AG
 +//
 +// This file is part of Proton Mail Bridge.
@@ -21,6 +21,8 @@
 +package keychain
 +
 +import (
++	"os"
++
 +	"github.com/docker/docker-credential-helpers/credentials"
 +	"github.com/docker/docker-credential-helpers/pass"
 +	"github.com/docker/docker-credential-helpers/secretservice"
@@ -34,6 +36,29 @@
 +	SecretServiceDBus = "secret-service-dbus"
 +)
 +
++var oo7DaemonPaths = []string{ //nolint:gochecknoglobals
++	"/usr/libexec/oo7-daemon",
++	"/usr/lib/oo7-daemon",
++}
++
++func isSecretServiceProviderInstalled() bool {
++	if _, err := execabs.LookPath("gnome-keyring"); err == nil {
++		logrus.WithField("keychain", "SecretService").Info("Found gnome-keyring")
++		return true
++	}
++
++	// There's nothing in PATH that indicates existence of the oo7 daemon.
++	// So we need to look up explicit file-paths.
++	for _, path := range oo7DaemonPaths {
++		if _, err := os.Stat(path); err == nil {
++			logrus.WithField("keychain", "SecretService").Info("Found oo7-daemon")
++			return true
++		}
++	}
++
++	return false
++}
++
 +func listHelpers() (Helpers, string) {
 +	helpers := make(Helpers)
 +
@@ -44,7 +69,7 @@
 +		logrus.WithField("keychain", "SecretServiceDBus").Debug("Keychain is not available.")
 +	}
 +
-+	if _, err := execabs.LookPath("gnome-keyring"); err == nil && isUsable(newSecretServiceHelper("")) {
++	if isSecretServiceProviderInstalled() && isUsable(newSecretServiceHelper("")) {
 +		helpers[SecretService] = newSecretServiceHelper
 +		logrus.WithField("keychain", "SecretService").Info("Keychain is usable.")
 +	} else {
