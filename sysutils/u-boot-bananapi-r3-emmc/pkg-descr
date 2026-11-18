@@ -1,0 +1,7 @@
+U-Boot loader and related files for the Banana Pi BPI-R3, for booting
+from the onboard eMMC (SW1 set to eMMC boot).
+
+The boot ROM loads bl2.img from the eMMC boot0 hardware partition. BL2
+then loads u-boot.fip, which holds BL31 and U-Boot, from the GPT
+partition named "fip" in the eMMC user area. U-Boot keeps its
+environment in the GPT partition named "ubootenv".
