@@ -1,3 +1,754 @@
+  <vuln vid="c0ecba9d-e313-11f1-a3e1-bc241121aa0a">
+    <topic>FreeBSD -- tmpfs(4) fails to clear set-group-ID bit on new files</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.1</ge><lt>15.1_7</lt></range>
+	<range><ge>14.5</ge><lt>14.5_4</lt></range>
+	<range><ge>14.4</ge><lt>14.4_13</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>tmpfs(4) did not clear the set-group-ID bit when a file was
+	  created by a user who was not a member of the file's group.</p>
+	<h1>Impact:</h1>
+	  <p>An unprivileged local user with write access to a tmpfs(4)
+	  directory owned by a group they do not belong to can create a
+	  set-group-ID executable for that group, and so gain that group's
+	  privileges.  For example, where /tmp is a tmpfs(4) mount, any local
+	  user can obtain the privileges of the wheel group, which owns
+	  /tmp.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-127749</cvename>
+      <freebsdsa>SA-26:94.tmpfs</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-11-17</discovery>
+      <entry>2026-11-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a55d3c3a-e313-11f1-a3e1-bc241121aa0a">
+    <topic>FreeBSD -- Local privilege escalation via TCP MSG_OOB handling</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.1</ge><lt>15.1_7</lt></range>
+	<range><ge>14.5</ge><lt>14.5_4</lt></range>
+	<range><ge>14.4</ge><lt>14.4_13</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>When a segment carrying urgent data was received, tcp_pulloutofband()
+	  removed the urgent byte by modifying the received data in place,
+	  without checking whether the underlying buffer was writable.  For
+	  example, when a local sender used sendfile(2), the data could
+	  reference the cached pages of the file being sent.</p>
+	<h1>Impact:</h1>
+	  <p>An unprivileged local user can exploit this to modify the cached
+	  contents of files they are only permitted to read, and thereby
+	  obtain superuser privileges.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-127748</cvename>
+      <freebsdsa>SA-26:93.tcp</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-11-17</discovery>
+      <entry>2026-11-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="8aedf1a9-e313-11f1-a3e1-bc241121aa0a">
+    <topic>FreeBSD -- Directory permission bypass via open(2)</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.1</ge><lt>15.1_7</lt></range>
+	<range><ge>14.5</ge><lt>14.5_4</lt></range>
+	<range><ge>14.4</ge><lt>14.4_13</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>open(2) omits permission checks when it has just created the
+	  file being opened.  When called with both O_CREAT and O_DIRECTORY
+	  on an existing directory, open(2) did not create anything, but still
+	  omitted the checks.  As a result, a user could open a directory for
+	  reading or searching without the corresponding permission.</p>
+	<h1>Impact:</h1>
+	  <p>An unprivileged local user can list the contents of directories
+	  they are not permitted to read, and access files within directories
+	  they are not permitted to search, subject to the permissions of
+	  those files and of the directory's ancestors.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-127746</cvename>
+      <freebsdsa>SA-26:92.vfs</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-11-17</discovery>
+      <entry>2026-11-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="694ec2f0-e313-11f1-a3e1-bc241121aa0a">
+    <topic>FreeBSD -- Privilege escalation via missing fdescfs(4) access checks</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.1</ge><lt>15.1_7</lt></range>
+	<range><ge>14.5</ge><lt>14.5_4</lt></range>
+	<range><ge>14.4</ge><lt>14.4_13</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>fdescfs(4) did not implement access checks for its files, and
+	  did not verify that a descriptor was open for writing before changing
+	  the size of the underlying file.  As a result, truncate(2) on
+	  /dev/fd/N succeeded even when descriptor N was open read-only.
+	  fdescfs(4) also checked the wrong Capsicum rights on the descriptor
+	  when changing file attributes.</p>
+	<h1>Impact:</h1>
+	  <p>An unprivileged local user can truncate or extend any file which
+	  they are able to open for reading, including system files owned by
+	  root.  This may allow privilege escalation or a Denial of Service
+	  (DoS).</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-127745</cvename>
+      <freebsdsa>SA-26:91.fdescfs</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-11-17</discovery>
+      <entry>2026-11-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="272af53f-e313-11f1-a3e1-bc241121aa0a">
+    <topic>FreeBSD -- Privilege escalation via prefaulting on largepage mappings</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.1</ge><lt>15.1_7</lt></range>
+	<range><ge>14.5</ge><lt>14.5_4</lt></range>
+	<range><ge>14.4</ge><lt>14.4_13</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>The kernel's prefaulting code was not aware of large page
+	  mappings, and entered their constituent base pages into the page
+	  tables individually.  As a result, a process could obtain a mapping
+	  of a page belonging to a large page object after the object had
+	  been freed.</p>
+	<h1>Impact:</h1>
+	  <p>An unprivileged local user can exploit this to access freed
+	  physical memory and escalate privileges.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-127744</cvename>
+      <freebsdsa>SA-26:90.vm</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-11-17</discovery>
+      <entry>2026-11-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ecd494c5-e312-11f1-a3e1-bc241121aa0a">
+    <topic>FreeBSD -- Multiple vulnerabilities in bsnmpd(1)</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.1</ge><lt>15.1_7</lt></range>
+	<range><ge>14.5</ge><lt>14.5_4</lt></range>
+	<range><ge>14.4</ge><lt>14.4_13</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>bsnmpd(1) skips USM authentication and VACM checks for SNMPv3
+	  discovery requests, which should elicit only a Report.  However,
+	  it executed any variable bindings carried by a discovery request,
+	  so GET and SET requests could be processed without authentication
+	  or access control.  This was possible even when the USM and VACM
+	  modules were not loaded, as in the default configuration.  Related
+	  flaws allowed a client to mark an ordinary request as a discovery
+	  request, or to use a discovery request to read the agent's USM and
+	  VACM configuration.  (CVE-2026-127742)</p>
+	  <p>The VACM module did not reject vacmViewTreeFamilyMask values longer
+	  than 16 bytes, resulting in a heap buffer overflow.  (CVE-2026-127743)</p>
+	<h1>Impact:</h1>
+	  <p>An unauthenticated remote attacker able to send SNMPv3 messages
+	  to bsnmpd(1) can read and modify any object managed by the agent,
+	  including objects which reconfigure the agent itself.  Where the
+	  VACM module is loaded, the attacker can also trigger the heap
+	  overflow in bsnmpd(1), which runs as root, potentially leading to
+	  remote code execution.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-127742</cvename>
+      <cvename>CVE-2026-127743</cvename>
+      <freebsdsa>SA-26:89.bsnmp</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-11-17</discovery>
+      <entry>2026-11-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ac524394-e312-11f1-a3e1-bc241121aa0a">
+    <topic>FreeBSD -- Privilege escalation via sound software buffer resizing</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.1</ge><lt>15.1_7</lt></range>
+	<range><ge>14.5</ge><lt>14.5_4</lt></range>
+	<range><ge>14.4</ge><lt>14.4_13</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>When reading from or writing to an audio channel, the sound(4)
+	  driver dropped the channel lock while copying data between the
+	  channel's software buffer and userspace.  The buffer resize path
+	  did not account for this, so a concurrent resize could free the
+	  buffer while the copy was in progress.</p>
+	<h1>Impact:</h1>
+	  <p>An unprivileged local user with access to a /dev/dsp* sound
+	  device can exploit this race to trigger a use-after-free in the
+	  kernel and escalate privileges.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-127741</cvename>
+      <freebsdsa>SA-26:88.sound</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-11-17</discovery>
+      <entry>2026-11-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="8ff9bae6-e312-11f1-a3e1-bc241121aa0a">
+    <topic>FreeBSD -- Privilege escalation via socket unsplice timeout</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.1</ge><lt>15.1_7</lt></range>
+	<range><ge>14.5</ge><lt>14.5_4</lt></range>
+	<range><ge>14.4</ge><lt>14.4_13</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>When a splice's idle timeout expired, the kernel unspliced the
+	  source socket without verifying that the socket still belonged to
+	  that splice.  If another thread had meanwhile unspliced the socket
+	  and spliced it again, the timeout handler could tear down the new
+	  splice instead, resulting in a use-after-free.  Concurrent teardowns
+	  of a splice after an error were similarly unserialized.</p>
+	<h1>Impact:</h1>
+	  <p>An unprivileged local user may be able to exploit the use-after-free
+	  to escalate privileges.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-127740</cvename>
+      <freebsdsa>SA-26:87.socket</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-11-17</discovery>
+      <entry>2026-11-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="707d112d-e312-11f1-a3e1-bc241121aa0a">
+    <topic>FreeBSD -- Privilege escalation via compat32 recvmsg(2) control messages</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.1</ge><lt>15.1_7</lt></range>
+	<range><ge>14.5</ge><lt>14.5_4</lt></range>
+	<range><ge>14.4</ge><lt>14.4_13</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>When copying received control messages out to a 32-bit process,
+	  compat32 temporarily modified the length field of each message
+	  header in place.  When a large control message was read with the
+	  MSG_PEEK flag, its storage remained shared with the socket buffer,
+	  so this modification could race with concurrent operations on the
+	  same socket and corrupt the socket's queue of messages.</p>
+	<h1>Impact:</h1>
+	  <p>An unprivileged local user can exploit the resulting memory
+	  corruption to escalate privileges.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-101321</cvename>
+      <freebsdsa>SA-26:86.freebsd32</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-11-17</discovery>
+      <entry>2026-11-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="42294611-e312-11f1-a3e1-bc241121aa0a">
+    <topic>FreeBSD -- Multiple vulnerabilities in kevent(2)</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.1</ge><lt>15.1_7</lt></range>
+	<range><ge>14.5</ge><lt>14.5_4</lt></range>
+	<range><ge>14.4</ge><lt>14.4_13</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>When an EVFILT_TIMER event was removed, the kernel failed to
+	  wait for a concurrently firing timer callback if the owning process
+	  had been stopped and continued by signals.  The callback could then
+	  run after the event's memory was freed.  (CVE-2026-101320)</p>
+	  <p>When copying a KQUEUE_CPONFORK kqueue during fork(2), the kernel
+	  temporarily dropped the kqueue lock while iterating over its lists
+	  of events.  If another thread registered an event in the meantime,
+	  the array holding these lists could be reallocated, and the copy
+	  loop would then modify the freed array.  This bug does not affect
+	  FreeBSD 14.  (CVE-2026-127750)</p>
+	<h1>Impact:</h1>
+	  <p>An unprivileged local user can exploit the EVFILT_TIMER race
+	  to obtain superuser privileges.  The KQUEUE_CPONFORK race also
+	  corrupts kernel memory and may likewise be exploitable.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-101320</cvename>
+      <cvename>CVE-2026-127750</cvename>
+      <freebsdsa>SA-26:85.kqueue</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-11-17</discovery>
+      <entry>2026-11-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="21b00ba9-e312-11f1-a3e1-bc241121aa0a">
+    <topic>FreeBSD -- bhyve guests can panic the host on Intel CPUs</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.1</ge><lt>15.1_7</lt></range>
+	<range><ge>14.5</ge><lt>14.5_4</lt></range>
+	<range><ge>14.4</ge><lt>14.4_13</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>vmm(4) did not reject guest writes to IA32_TSC_AUX which set
+	  the MSR's reserved upper 32 bits.  Loading such a value into the
+	  physical MSR raises a general protection fault in the host kernel.</p>
+	<h1>Impact:</h1>
+	  <p>Malicious, privileged software running in a guest can cause the
+	  host to panic, resulting in a Denial of Service (DoS) for the host
+	  and all of its guests.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-101319</cvename>
+      <freebsdsa>SA-26:84.vmm</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-11-17</discovery>
+      <entry>2026-11-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f783a9ba-e311-11f1-a3e1-bc241121aa0a">
+    <topic>FreeBSD -- Privilege escalation via shutdown(2) race on unix sockets</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.1</ge><lt>15.1_7</lt></range>
+	<range><ge>14.5</ge><lt>14.5_4</lt></range>
+	<range><ge>14.4</ge><lt>14.4_13</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>shutdown(2) on a unix socket checked whether the socket was
+	  listening, then dropped the socket lock before operating on the
+	  socket's data buffers.  A concurrent call to listen(2) could convert
+	  the socket in the meantime, causing shutdown(2) to operate on the
+	  connection queue as if it were a data buffer.</p>
+	<h1>Impact:</h1>
+	  <p>An unprivileged local user may be able to exploit the resulting
+	  memory corruption to escalate privileges.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-127751</cvename>
+      <freebsdsa>SA-26:83.unix</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-11-17</discovery>
+      <entry>2026-11-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d57900fc-e311-11f1-a3e1-bc241121aa0a">
+    <topic>FreeBSD -- IPsec stream cipher counter reuse</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.1</ge><lt>15.1_7</lt></range>
+	<range><ge>14.5</ge><lt>14.5_4</lt></range>
+	<range><ge>14.4</ge><lt>14.4_13</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>esp_output() incremented the IV counter while holding the SA
+	  lock in shared mode, so packets transmitted concurrently on different
+	  CPUs could be assigned the same counter value.  As a result, multiple
+	  packets could be encrypted with the same IV and key.</p>
+	<h1>Impact:</h1>
+	  <p>An on-path attacker may be able to modify intercepted packets
+	  without detection, and potentially recover the plaintext of packets
+	  which share an IV.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-101318</cvename>
+      <freebsdsa>SA-26:82.ipsec</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-11-17</discovery>
+      <entry>2026-11-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b1803084-e311-11f1-a3e1-bc241121aa0a">
+    <topic>FreeBSD -- Capsicum and O_RESOLVE_BENEATH bypass at mount roots</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.1</ge><lt>15.1_7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>To resolve ".." from the root of a mounted file system, the
+	  kernel first steps to the directory on which that file system is
+	  mounted, then looks up ".." there.  The check for leaving the
+	  starting directory compared against the mount point rather than the
+	  root of the mounted file system.  If the starting directory was
+	  itself the root of a mounted file system, the check never matched,
+	  and the lookup escaped to the parent of the mount point.</p>
+	<h1>Impact:</h1>
+	  <p>A sandboxed process, or a program relying on O_RESOLVE_BENEATH
+	  or AT_RESOLVE_BENEATH, whose starting directory is the root of a
+	  mounted file system can access any file under its root directory.
+	  The descriptor's rights and normal file system permissions still
+	  apply.  Lookups that start in any other directory are not affected.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-101312</cvename>
+      <freebsdsa>SA-26:81.vfs</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-11-17</discovery>
+      <entry>2026-11-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="35d11826-e311-11f1-a3e1-bc241121aa0a">
+    <topic>FreeBSD -- Privilege escalation via inotify watch descriptor wraparound</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.1</ge><lt>15.1_7</lt></range>
+	<range><ge>14.5</ge><lt>14.5_4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>When automatically removing a watch, inotify_log_one() checked
+	  only that a watch with the same watch descriptor was still registered,
+	  not that it was the same watch.  Watch descriptors are allocated
+	  from a 32-bit counter, so by forcing the counter to wrap around, a
+	  user could cause a new watch to reuse the descriptor of one being
+	  removed concurrently.  The kernel could then free a watch which was
+	  still in use, resulting in a use-after-free.</p>
+	<h1>Impact:</h1>
+	  <p>An unprivileged local user may be able to exploit the bug to
+	  escalate privileges, potentially gaining full control of the affected
+	  system.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-101316</cvename>
+      <freebsdsa>SA-26:80.vfs</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-11-17</discovery>
+      <entry>2026-11-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="07d484a7-e311-11f1-a3e1-bc241121aa0a">
+    <topic>FreeBSD -- NFSv4 server remote code execution via stateid type confusion</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.1</ge><lt>15.1_7</lt></range>
+	<range><ge>14.5</ge><lt>14.5_4</lt></range>
+	<range><ge>14.4</ge><lt>14.4_13</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>When processing a DELEGRETURN operation, the NFSv4 server did
+	  not verify that the supplied stateid referred to a delegation.  A
+	  client could supply an open or lock stateid instead, causing the
+	  server to free that state while it was still referenced, resulting
+	  in a use-after-free.</p>
+	<h1>Impact:</h1>
+	  <p>A remote NFSv4 client which is able to open a file on an exported
+	  file system can corrupt kernel memory on the server, causing a
+	  kernel panic or potentially executing arbitrary code in the kernel.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-101317</cvename>
+      <freebsdsa>SA-26:79.nfs</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-11-17</discovery>
+      <entry>2026-11-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e58b4598-e310-11f1-a3e1-bc241121aa0a">
+    <topic>FreeBSD -- gssd maps unrecognized Kerberos principals to UID 0</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.1</ge><lt>15.1_7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>When gssd(8) could not map a principal to a local user, it
+	  failed to set the user ID of the resulting credentials, leaving it
+	  as zero.  The NFS server does not apply the exports(5) -maproot and
+	  -mapall options to Kerberos-authenticated requests, so the principal
+	  was granted superuser access.</p>
+	<h1>Impact:</h1>
+	  <p>A remote user holding valid Kerberos credentials for a principal
+	  that does not map to a local user on the NFS server can read and
+	  modify any file on file systems exported with Kerberos security.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-101315</cvename>
+      <freebsdsa>SA-26:78.gssd</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-11-17</discovery>
+      <entry>2026-11-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="baab8eb5-e310-11f1-a3e1-bc241121aa0a">
+    <topic>FreeBSD -- Local privilege escalation via netlink heap buffer overflow</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.1</ge><lt>15.1_7</lt></range>
+	<range><ge>14.5</ge><lt>14.5_4</lt></range>
+	<range><ge>14.4</ge><lt>14.4_13</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>When a reply message outgrew its buffer, _nlmsg_refill_buffer()
+	  allocated a larger one and copied the partially written message
+	  into it.  The new buffer was sized for the data being added but not
+	  for the part of the message already written, so the kernel could
+	  write past its end.</p>
+	<h1>Impact:</h1>
+	  <p>An unprivileged local user, including one in a jail, can overflow
+	  a kernel heap buffer, potentially escalating privileges and gaining
+	  full control of the affected system.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-127747</cvename>
+      <freebsdsa>SA-26:77.netlink</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-11-17</discovery>
+      <entry>2026-11-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6a6aaf64-e310-11f1-a3e1-bc241121aa0a">
+    <topic>FreeBSD -- Multiple vulnerabilities in the ocs_fc(4) driver</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.1</ge><lt>15.1_7</lt></range>
+	<range><ge>14.5</ge><lt>14.5_4</lt></range>
+	<range><ge>14.4</ge><lt>14.4_13</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>Several vulnerabilities were found in the ocs_fc(4) driver.</p>
+	  <p>The driver's ioctl(2) interface, which members of the operator group
+	  can access, did not require superuser privileges and did not
+	  adequately validate requests.  Among other problems, it failed to
+	  bound user-supplied buffer sizes and PCI configuration space offsets,
+	  and could issue adapter commands referencing freed memory.
+	  (CVE-2026-127752)</p>
+	  <p>The driver did not adequately validate the length of FCP command
+	  frames received from initiators, and did not range check exchange
+	  identifiers reported by the adapter, potentially leading to
+	  out-of-bounds memory accesses.  (CVE-2026-127753)</p>
+	  <p>When rejecting a Process Login (PRLI) request with an unsupported
+	  FC-4 type, the driver sent a second response for the same exchange,
+	  resulting in a use-after-free.  Any port which had completed a Port
+	  Login (PLOGI) could trigger this with a single PRLI.  Additionally,
+	  formatting the adapter's active profile ID could overflow a stack
+	  buffer.  (CVE-2026-127754)</p>
+	<h1>Impact:</h1>
+	  <p>A local user in the operator group can use the ioctl(2) interface
+	  to corrupt kernel memory or reprogram the adapter, potentially
+	  gaining full control of the system.  A remote port on the same Fibre
+	  Channel fabric can trigger a use-after-free or out-of-bounds memory
+	  access in the kernel, resulting in a Denial of Service (DoS) or
+	  potentially arbitrary code execution in the kernel.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-127752</cvename>
+      <cvename>CVE-2026-127753</cvename>
+      <cvename>CVE-2026-127754</cvename>
+      <freebsdsa>SA-26:76.ocs_fc</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-11-17</discovery>
+      <entry>2026-11-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="41f92d57-e310-11f1-a3e1-bc241121aa0a">
+    <topic>FreeBSD -- Kernel memory disclosure via Linuxulator extattr syscalls</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.1</ge><lt>15.1_7</lt></range>
+	<range><ge>14.5</ge><lt>14.5_4</lt></range>
+	<range><ge>14.4</ge><lt>14.4_13</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>The Linuxulator's listxattr() implementation sized its kernel
+	  buffer using min(), which truncates its arguments to 32 bits.  A
+	  64-bit Linux process could pass a size which yielded a small buffer
+	  while later bounds checks used the full size.  The code parsing the
+	  attribute list then read past the end of the buffer and copied
+	  adjacent kernel memory to userspace.</p>
+	<h1>Impact:</h1>
+	  <p>An unprivileged local user can read kernel memory, which may
+	  contain sensitive information, or trigger a kernel panic, resulting
+	  in a Denial of Service (DoS).</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-101314</cvename>
+      <freebsdsa>SA-26:75.linux</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-11-17</discovery>
+      <entry>2026-11-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="8f936426-e30f-11f1-a3e1-bc241121aa0a">
+    <topic>FreeBSD -- Kernel memory disclosure via KTLS control messages</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.1</ge><lt>15.1_7</lt></range>
+	<range><ge>14.5</ge><lt>14.5_4</lt></range>
+	<range><ge>14.4</ge><lt>14.4_13</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>The code in sosend_generic() which parses TLS_SET_RECORD_TYPE
+	  control messages failed to verify that the message was large enough
+	  to hold its one-byte payload.  A control message containing only a
+	  cmsghdr would pass the size check, causing the kernel to read one
+	  byte past the end of the message and use it as the TLS record
+	  type.</p>
+	<h1>Impact:</h1>
+	  <p>A local user with a KTLS-enabled socket can send a crafted
+	  TLS_SET_RECORD_TYPE control message to cause the kernel to read one
+	  byte of uninitialized kernel memory and use it as the TLS record
+	  type in an outgoing TLS record.  For TLS 1.2 connections, the record
+	  type is visible in the plaintext record header, constituting a
+	  kernel information disclosure.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-101313</cvename>
+      <freebsdsa>SA-26:74.ktls</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-11-17</discovery>
+      <entry>2026-11-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c26f4a22-e2f6-11f1-97f8-589cfc10a683">
     <topic>libXfont2 -- Multiple vulnerabilities</topic>
     <affects>
