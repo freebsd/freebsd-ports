@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	4.2.2
 CATEGORIES=	devel
 
-MAINTAINER=	henry.hu.sh@gmail.com
+MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Guidelines Support Library
 WWW=		https://github.com/microsoft/GSL
 
