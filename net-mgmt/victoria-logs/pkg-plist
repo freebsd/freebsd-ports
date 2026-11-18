@@ -68,6 +68,7 @@ bin/vlagent
 %%PORTDOCS%%%%DOCSDIR%%/quick-start-vmui.webp
 %%PORTDOCS%%%%DOCSDIR%%/integrations/logchef-dashboard.webp
 %%PORTDOCS%%%%DOCSDIR%%/integrations/logchef.md
+%%PORTDOCS%%%%DOCSDIR%%/LTS-releases.md
 @dir(%%VICTORIA_USER%%,%%VICTORIA_GROUP%%,750) %%VICTORIA_DATA%%
 @dir(%%VICTORIA_USER%%,%%VICTORIA_GROUP%%,750) %%VICTORIA_LOGS%%
 @dir(%%VICTORIA_USER%%,%%VICTORIA_GROUP%%,750) %%VICTORIA_RUN%%
