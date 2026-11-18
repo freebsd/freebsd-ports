@@ -1,0 +1,12 @@
+-- Drop the PyPI cmake and ninja build requirements.
+-- FreeBSD builds without build isolation and provides cmake and ninja as
+-- system packages (devel/cmake-core, devel/ninja), not as Python packages.
+--- pyproject.toml.orig	2026-11-18 20:34:42 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["scikit-build-core>=0.11", "cmake>=3.26", "ninja"]
++requires = ["scikit-build-core>=0.11"]
+ build-backend = "scikit_build_core.build"
+ 
+ [project]

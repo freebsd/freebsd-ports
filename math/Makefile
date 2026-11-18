@@ -1082,6 +1082,7 @@
     SUBDIR += py-mip
     SUBDIR += py-mixsimulator
     SUBDIR += py-ml-dtypes
+    SUBDIR += py-mlc-z3-static
     SUBDIR += py-mnnpy
     SUBDIR += py-moarchiving
     SUBDIR += py-modin

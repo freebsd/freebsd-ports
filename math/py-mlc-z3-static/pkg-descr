@@ -1,0 +1,7 @@
+Native Z3 development artifacts (C and C++ headers, a position-independent
+static libz3, and relocatable CMake and pkg-config metadata) packaged as a
+Python distribution for use by build systems. It does not provide Z3 Python
+bindings.
+
+The mlc_z3_static module reports the locations of the packaged artifacts, e.g.
+mlc_z3_static.get_cmake_dir() and mlc_z3_static.get_static_library_path().
