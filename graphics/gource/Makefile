@@ -1,6 +1,5 @@
 PORTNAME=	gource
-PORTVERSION=	0.55
-PORTREVISION=	2
+PORTVERSION=	0.56
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/acaudwell/Gource/releases/download/${PORTNAME}-${PORTVERSION}/
 
@@ -13,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/include/glm/glm.hpp:math/glm
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
-		libpcre.so:devel/pcre \
+		libpcre2-8.so:devel/pcre2 \
 		libboost_filesystem.so:devel/boost-libs \
 		libpng.so:graphics/png
 RUN_DEPENDS=	${LOCALBASE}/include/glm/glm.hpp:math/glm
