@@ -1,11 +1,11 @@
---- chrome/browser/ui/window_sizer/window_sizer.cc.orig	2026-08-13 16:48:13 UTC
+--- chrome/browser/ui/window_sizer/window_sizer.cc.orig	2026-11-17 21:17:00 UTC
 +++ chrome/browser/ui/window_sizer/window_sizer.cc
-@@ -223,7 +223,7 @@ void WindowSizer::GetBrowserWindowBoundsAndShowState(
+@@ -225,7 +225,7 @@ void WindowSizer::GetBrowserWindowBoundsAndShowState(
        browser, window_bounds, show_state);
  }
  
 -#if !BUILDFLAG(IS_LINUX)
-+#if !BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
++#if !BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_BSD)
  // Linux has its own implementation, see WindowSizerLinux.
  // static
  void WindowSizer::GetBrowserWindowBoundsAndShowState(

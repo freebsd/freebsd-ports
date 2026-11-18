@@ -1,4 +1,4 @@
---- ui/ozone/platform/x11/x11_clipboard_ozone.h.orig	2026-05-11 13:57:04 UTC
+--- ui/ozone/platform/x11/x11_clipboard_ozone.h.orig	2026-11-17 21:17:00 UTC
 +++ ui/ozone/platform/x11/x11_clipboard_ozone.h
 @@ -14,7 +14,7 @@
  #include "ui/base/x/selection_utils.h"
@@ -9,7 +9,7 @@
  #include "base/memory/weak_ptr.h"
  #endif
  
-@@ -56,7 +56,7 @@ class X11ClipboardOzone : public PlatformClipboard {
+@@ -58,7 +58,7 @@ class X11ClipboardOzone : public PlatformClipboard {
   private:
    void OnSelectionChanged(ClipboardBuffer buffer);
  
@@ -18,7 +18,7 @@
    void OnPortalKeyRead(PlatformClipboard::RequestDataClosure callback,
                         SelectionData selection_data);
    void OnPathsExtracted(PlatformClipboard::RequestDataClosure callback,
-@@ -73,7 +73,7 @@ class X11ClipboardOzone : public PlatformClipboard {
+@@ -75,7 +75,7 @@ class X11ClipboardOzone : public PlatformClipboard {
  
    ClipboardDataChangedCallback clipboard_changed_callback_;
  

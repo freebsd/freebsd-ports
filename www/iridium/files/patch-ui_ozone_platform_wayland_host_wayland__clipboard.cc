@@ -1,6 +1,6 @@
---- ui/ozone/platform/wayland/host/wayland_clipboard.cc.orig	2026-05-11 13:57:04 UTC
+--- ui/ozone/platform/wayland/host/wayland_clipboard.cc.orig	2026-11-17 21:17:00 UTC
 +++ ui/ozone/platform/wayland/host/wayland_clipboard.cc
-@@ -34,7 +34,7 @@
+@@ -35,7 +35,7 @@
  #include "ui/ozone/platform/wayland/host/zwp_primary_selection_device_manager.h"
  #include "ui/ozone/public/platform_clipboard.h"
  
@@ -9,7 +9,7 @@
  #include "base/strings/string_util.h"
  #include "ui/base/clipboard/clipboard_util_linux.h"
  #include "ui/ozone/platform/wayland/host/wayland_exchange_data_provider.h"
-@@ -106,7 +106,7 @@ class ClipboardImpl final : public Clipboard, public D
+@@ -107,7 +107,7 @@ class ClipboardImpl final : public Clipboard, public D
  
    void ReadFileTransfer(
        ui::PlatformClipboard::RequestDataClosure callback) final {
@@ -18,7 +18,7 @@
      // Prefer portal types
      std::string mime_type;
      auto available_types = GetDevice()->GetAvailableMimeTypes();
-@@ -185,7 +185,7 @@ class ClipboardImpl final : public Clipboard, public D
+@@ -186,7 +186,7 @@ class ClipboardImpl final : public Clipboard, public D
        }
      }
  
@@ -27,7 +27,7 @@
      if (offered_data_.contains(ui::kMimeTypeUriList)) {
        if (!offered_data_.contains(ui::kMimeTypePortalFileTransfer)) {
          mime_types.push_back(ui::kMimeTypePortalFileTransfer);
-@@ -220,7 +220,7 @@ class ClipboardImpl final : public Clipboard, public D
+@@ -221,7 +221,7 @@ class ClipboardImpl final : public Clipboard, public D
      NotifyClipboardChanged();
    }
  
@@ -36,7 +36,7 @@
    void OnPortalKeyRead(ui::PlatformClipboard::RequestDataClosure callback,
                         const ui::PlatformClipboard::Data& data) {
      if (!data) {
-@@ -282,7 +282,7 @@ class ClipboardImpl final : public Clipboard, public D
+@@ -283,7 +283,7 @@ class ClipboardImpl final : public Clipboard, public D
        DataSource* source,
        const std::string& mime_type,
        typename DataSource::Delegate::ContentCallback callback) override {

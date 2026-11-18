@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/frame/browser_widget.cc.orig	2026-08-13 16:48:13 UTC
+--- chrome/browser/ui/views/frame/browser_widget.cc.orig	2026-11-17 21:17:00 UTC
 +++ chrome/browser/ui/views/frame/browser_widget.cc
-@@ -56,7 +56,7 @@
+@@ -51,7 +51,7 @@
  #include "ui/aura/window.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "ui/linux/linux_ui.h"
  #endif
  
-@@ -90,7 +90,7 @@ class ThemeChangedObserver : public views::WidgetObser
+@@ -88,7 +88,7 @@ class ThemeChangedObserver : public views::WidgetObser
  };
  
  bool IsUsingLinuxSystemTheme(Profile* profile) {
@@ -18,7 +18,16 @@
    return ThemeServiceFactory::GetForProfile(profile)->UsingSystemTheme();
  #else
    return false;
-@@ -207,7 +207,7 @@ void BrowserWidget::InitBrowserWidget() {
+@@ -167,7 +167,7 @@ void BrowserWidget::InitBrowserWidget() {
+ #endif
+   }
+ 
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   params.startup_id =
+       BrowserInitState::From(browser)->create_params().startup_id;
+ #endif
+@@ -219,7 +219,7 @@ void BrowserWidget::InitBrowserWidget() {
  
    Init(std::move(params));
  
@@ -27,16 +36,16 @@
    SelectNativeTheme();
  #else
    SetNativeTheme(ui::NativeTheme::GetInstanceForNativeUi());
-@@ -490,7 +490,7 @@ void BrowserWidget::OnMenuClosed() {
+@@ -529,7 +529,7 @@ void BrowserWidget::OnMenuClosed() {
  }
  
  void BrowserWidget::SelectNativeTheme() {
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   // Use the regular NativeTheme instance if running incognito mode, regardless
-   // of system theme (gtk, qt etc).
+   // Use the regular NativeTheme instance if running incognito mode or
+   // enterprise isolated mode, regardless of system theme (gtk, qt etc).
    ui::NativeTheme* native_theme = ui::NativeTheme::GetInstanceForNativeUi();
-@@ -531,7 +531,7 @@ void BrowserWidget::OnTouchUiChanged() {
+@@ -570,7 +570,7 @@ void BrowserWidget::OnTouchUiChanged() {
  bool BrowserWidget::RegenerateFrameOnThemeChange(
      BrowserThemeChangeType theme_change_type) {
    bool need_regenerate = false;

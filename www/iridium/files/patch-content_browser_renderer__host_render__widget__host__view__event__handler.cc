@@ -1,6 +1,6 @@
---- content/browser/renderer_host/render_widget_host_view_event_handler.cc.orig	2026-08-13 16:48:13 UTC
+--- content/browser/renderer_host/render_widget_host_view_event_handler.cc.orig	2026-11-17 21:17:00 UTC
 +++ content/browser/renderer_host/render_widget_host_view_event_handler.cc
-@@ -630,7 +630,7 @@ bool RenderWidgetHostViewEventHandler::CanRendererHand
+@@ -651,7 +651,7 @@ bool RenderWidgetHostViewEventHandler::CanRendererHand
    if (event->type() == ui::EventType::kMouseExited) {
      if (mouse_locked || selection_popup)
        return false;

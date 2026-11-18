@@ -1,4 +1,4 @@
---- chrome/common/media/cdm_registration.cc.orig	2026-06-10 12:51:34 UTC
+--- chrome/common/media/cdm_registration.cc.orig	2026-11-17 21:17:00 UTC
 +++ chrome/common/media/cdm_registration.cc
 @@ -33,7 +33,7 @@
  #if BUILDFLAG(ENABLE_WIDEVINE)
@@ -45,7 +45,7 @@
    // The Widevine CDM on Linux/ChromeOS needs to be registered (and loaded)
    // before the zygote is locked down. The CDM can be found from the version
    // bundled with Chrome (if BUNDLE_WIDEVINE_CDM = true) and/or the version
-@@ -437,7 +437,7 @@ void RegisterCdmInfo(std::vector<content::CdmInfo>* cd
+@@ -434,7 +434,7 @@ void RegisterCdmInfo(std::vector<content::CdmInfo>* cd
  }
  
  #if BUILDFLAG(ENABLE_WIDEVINE) && \

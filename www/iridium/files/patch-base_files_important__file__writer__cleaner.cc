@@ -1,6 +1,6 @@
---- base/files/important_file_writer_cleaner.cc.orig	2025-12-10 15:04:57 UTC
+--- base/files/important_file_writer_cleaner.cc.orig	2026-11-17 21:17:00 UTC
 +++ base/files/important_file_writer_cleaner.cc
-@@ -25,7 +25,8 @@ namespace base {
+@@ -27,7 +27,8 @@ namespace base {
  namespace {
  
  base::Time GetUpperBoundTime() {

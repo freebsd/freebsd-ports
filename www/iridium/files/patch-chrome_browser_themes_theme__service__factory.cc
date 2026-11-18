@@ -1,6 +1,6 @@
---- chrome/browser/themes/theme_service_factory.cc.orig	2026-03-24 16:59:08 UTC
+--- chrome/browser/themes/theme_service_factory.cc.orig	2026-11-17 21:17:00 UTC
 +++ chrome/browser/themes/theme_service_factory.cc
-@@ -23,7 +23,7 @@
+@@ -28,7 +28,7 @@
  #include "chrome/browser/themes/theme_helper_win.h"
  #endif
  
@@ -9,12 +9,12 @@
  #include "chrome/browser/themes/theme_service_aura_linux.h"
  #endif
  
-@@ -98,7 +98,7 @@ ThemeServiceFactory::~ThemeServiceFactory() = default;
+@@ -111,7 +111,7 @@ ThemeServiceFactory::~ThemeServiceFactory() = default;
  std::unique_ptr<KeyedService>
  ThemeServiceFactory::BuildServiceInstanceForBrowserContext(
      content::BrowserContext* profile) const {
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    using ThemeService = ThemeServiceAuraLinux;
- #endif
- 
+ #elif BUILDFLAG(IS_ANDROID)
+   using ThemeService = ThemeServiceAndroid;

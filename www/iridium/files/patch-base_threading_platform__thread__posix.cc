@@ -1,4 +1,4 @@
---- base/threading/platform_thread_posix.cc.orig	2026-05-11 13:57:04 UTC
+--- base/threading/platform_thread_posix.cc.orig	2026-11-17 21:17:00 UTC
 +++ base/threading/platform_thread_posix.cc
 @@ -6,6 +6,9 @@
  
@@ -21,7 +21,7 @@
 @@ -93,6 +97,7 @@ void* ThreadFunc(void* params) {
      // where they were created. This explicitly sets the priority of all new
      // threads.
-     PlatformThread::SetCurrentThreadType(thread_params->thread_type);
+     PlatformThread::SetDefaultThreadType(thread_params->thread_type);
 +#endif
    }
  

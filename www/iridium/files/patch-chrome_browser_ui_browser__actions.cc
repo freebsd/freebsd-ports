@@ -1,15 +1,15 @@
---- chrome/browser/ui/browser_actions.cc.orig	2026-08-13 16:48:13 UTC
+--- chrome/browser/ui/browser_actions.cc.orig	2026-11-17 21:17:00 UTC
 +++ chrome/browser/ui/browser_actions.cc
-@@ -223,7 +223,7 @@
+@@ -257,7 +257,7 @@
  #include "chrome/browser/ui/views/download/bubble/download_toolbar_ui_controller.h"
  #endif
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ #include "chrome/browser/enterprise/util/managed_browser_utils.h"
  #include "chrome/common/pref_names.h"
  #include "components/prefs/pref_service.h"
- #endif
-@@ -2197,7 +2197,7 @@ void BrowserActions::InitializeToolbarAndMiscActions()
+@@ -2767,7 +2767,7 @@ void BrowserActions::InitializeToolbarAndMiscActions()
            .Build());
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
@@ -18,8 +18,8 @@
    root_action_item_->AddChild(
        actions::ActionItem::Builder(
            base::BindRepeating(
-@@ -2292,7 +2292,7 @@ void BrowserActions::InitializeToolbarAndMiscActions()
-           .SetActionId(kActionExit)
+@@ -2926,7 +2926,7 @@ void BrowserActions::InitializeToolbarAndMiscActions()
+           .SetAccelerator(GetAcceleratorForCommandId(IDC_EXIT))
            .Build());
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)
@@ -27,16 +27,25 @@
    root_action_item_->AddChild(
        actions::ActionItem::Builder(
            base::BindRepeating(
-@@ -3226,7 +3226,7 @@ void BrowserActions::InitializeToolbarAndMiscActions()
-           base::BindRepeating(
+@@ -3895,7 +3895,7 @@ void BrowserActions::InitializeToolbarAndMiscActions()
                [](BrowserWindowInterface* bwi, actions::ActionItem* item,
                   actions::ActionInvocationContext context) {
+                 base::RecordAction(base::UserMetricsAction("CreateShortcut"));
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-                 chrome::CreateDesktopShortcutForActiveWebContents(
-                     bwi->GetBrowserForMigrationOnly());
+                 chrome::CreateDesktopShortcutForActiveWebContents(bwi);
  #else
-@@ -3867,7 +3867,7 @@ void BrowserActions::InitializeToolbarAndMiscActions()
+                 web_app::CreateWebAppFromCurrentWebContents(
+@@ -4854,7 +4854,7 @@ void BrowserActions::InitializeToolbarAndMiscActions()
+           IDS_CHROME_ENTERPRISE_RELEASE_NOTES,
+           IDS_CHROME_ENTERPRISE_RELEASE_NOTES, omnibox::kChromeProductIcon,
+           /*is_pinnable=*/false)
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+           .SetVisible(
+               enterprise_util::IsBrowserManaged(profile) &&
+               base::FeatureList::IsEnabled(features::kEnterpriseReleaseNotes))
+@@ -4982,7 +4982,7 @@ void BrowserActions::InitializeToolbarAndMiscActions()
  #endif
  
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING) && \

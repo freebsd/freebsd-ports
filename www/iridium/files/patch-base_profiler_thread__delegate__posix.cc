@@ -1,4 +1,4 @@
---- base/profiler/thread_delegate_posix.cc.orig	2026-06-10 12:51:34 UTC
+--- base/profiler/thread_delegate_posix.cc.orig	2026-11-17 21:17:00 UTC
 +++ base/profiler/thread_delegate_posix.cc
 @@ -16,7 +16,7 @@
  #include "base/process/process_handle.h"
@@ -11,7 +11,7 @@
  
 @@ -25,7 +25,7 @@ namespace base {
  std::unique_ptr<ThreadDelegatePosix> ThreadDelegatePosix::Create(
-     SamplingProfilerThreadToken thread_token) {
+     const SamplingProfilerThreadToken& thread_token) {
    std::optional<uintptr_t> base_address;
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)

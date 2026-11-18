@@ -1,6 +1,11 @@
---- content/gpu/gpu_main.cc.orig	2026-08-13 16:48:13 UTC
+--- content/gpu/gpu_main.cc.orig	2026-11-17 21:17:00 UTC
 +++ content/gpu/gpu_main.cc
-@@ -112,10 +112,14 @@
+@@ -111,14 +111,18 @@
+ #include "sandbox/win/src/sandbox.h"
+ #endif
+ 
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  #include "services/webnn/public/cpp/webnn_sandbox_init.h"
  #endif
  
@@ -16,7 +21,7 @@
  #include "sandbox/policy/sandbox_type.h"
  #endif
  
-@@ -133,7 +137,7 @@ namespace content {
+@@ -136,7 +140,7 @@ namespace content {
  
  namespace {
  
@@ -25,7 +30,16 @@
  bool StartSandboxLinux(gpu::GpuWatchdogThread*,
                         const gpu::GPUInfo*,
                         const gpu::GpuPreferences&);
-@@ -201,7 +205,7 @@ class ContentSandboxHelper : public gpu::GpuSandboxHel
+@@ -193,7 +197,7 @@ class ContentSandboxHelper : public gpu::GpuSandboxHel
+ #if BUILDFLAG(IS_WIN)
+     media::PreSandboxMediaFoundationInitialization();
+ #endif
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+     webnn::PreSandboxWebNNInitialization(/*is_gpu_process=*/true);
+ #endif
+ 
+@@ -206,7 +210,7 @@ class ContentSandboxHelper : public gpu::GpuSandboxHel
                                  const gpu::GPUInfo* gpu_info,
                                  const gpu::GpuPreferences& gpu_prefs) override {
      TRACE_EVENT("gpu,startup", "gpu_main::EnsureSandboxInitialized");
@@ -34,7 +48,7 @@
      return StartSandboxLinux(watchdog_thread, gpu_info, gpu_prefs);
  #elif BUILDFLAG(IS_WIN)
      return StartSandboxWindows(sandbox_info_);
-@@ -317,7 +321,7 @@ int GpuMain(MainFunctionParams parameters) {
+@@ -322,7 +326,7 @@ int GpuMain(MainFunctionParams parameters) {
            std::make_unique<base::SingleThreadTaskExecutor>(
                gpu_preferences.message_pump_type, /*is_main_thread=*/true);
      }
@@ -43,9 +57,9 @@
  #error "Unsupported Linux platform."
  #elif BUILDFLAG(IS_MAC)
      // Cross-process CoreAnimation requires a CFRunLoop to function at all, and
-@@ -343,7 +347,8 @@ int GpuMain(MainFunctionParams parameters) {
-   mojo::InterfaceEndpointClient::SetThreadNameSuffixForMetrics("GpuMain");
+@@ -349,7 +353,8 @@ int GpuMain(MainFunctionParams parameters) {
    base::MessagePumpWakeupCounter::InitializeForCurrentThread("GpuMain");
+   base::LockMetricsRecorder::EnableRecordingOnCurrentThread("CrGpuMain");
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +// XXX BSD
@@ -53,7 +67,7 @@
    // Thread type delegate of the process should be registered before
    // thread type change below for the main thread and for thread pool in
    // ChildProcess constructor.
-@@ -495,7 +500,7 @@ int GpuMain(MainFunctionParams parameters) {
+@@ -503,7 +508,7 @@ int GpuMain(MainFunctionParams parameters) {
  
  namespace {
  
@@ -62,7 +76,7 @@
  bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdog_thread,
                         const gpu::GPUInfo* gpu_info,
                         const gpu::GpuPreferences& gpu_prefs) {
-@@ -543,7 +548,7 @@ bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdo
+@@ -551,7 +556,7 @@ bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdo
    sandbox_options.accelerated_video_encode_enabled =
        !gpu_prefs.disable_accelerated_video_encode;
  

@@ -1,6 +1,6 @@
---- printing/backend/cups_weak_functions.h.orig	2025-12-10 15:04:57 UTC
+--- printing/backend/cups_weak_functions.h.orig	2026-11-17 21:17:00 UTC
 +++ printing/backend/cups_weak_functions.h
-@@ -6,7 +6,7 @@
+@@ -9,7 +9,7 @@
  
  #include "build/build_config.h"
  

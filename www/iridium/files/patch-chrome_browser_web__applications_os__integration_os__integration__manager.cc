@@ -1,6 +1,6 @@
---- chrome/browser/web_applications/os_integration/os_integration_manager.cc.orig	2026-08-13 16:48:13 UTC
+--- chrome/browser/web_applications/os_integration/os_integration_manager.cc.orig	2026-11-17 21:17:00 UTC
 +++ chrome/browser/web_applications/os_integration/os_integration_manager.cc
-@@ -673,7 +673,7 @@ std::unique_ptr<ShortcutInfo> OsIntegrationManager::Bu
+@@ -687,7 +687,7 @@ std::unique_ptr<ShortcutInfo> OsIntegrationManager::Bu
      }
    }
  

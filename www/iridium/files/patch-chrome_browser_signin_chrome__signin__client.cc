@@ -1,6 +1,6 @@
---- chrome/browser/signin/chrome_signin_client.cc.orig	2026-08-13 16:48:13 UTC
+--- chrome/browser/signin/chrome_signin_client.cc.orig	2026-11-17 21:17:00 UTC
 +++ chrome/browser/signin/chrome_signin_client.cc
-@@ -159,7 +159,7 @@ signin_metrics::ProfileSignout kAlwaysAllowedSignoutSo
+@@ -167,7 +167,7 @@ signin_metrics::ProfileSignout kAlwaysAllowedSignoutSo
  std::string HatsSurveyTriggerForAccessPoint(
      signin_metrics::AccessPoint access_point) {
    switch (access_point) {
@@ -8,4 +8,4 @@
 +#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
      case signin_metrics::AccessPoint::kAddressBubble:
        return kHatsSurveyTriggerIdentityAddressBubbleSignin;
-     case signin_metrics::AccessPoint::kAvatarBubbleSignIn:
+     case signin_metrics::AccessPoint::kProfileMenuPrimaryButton:

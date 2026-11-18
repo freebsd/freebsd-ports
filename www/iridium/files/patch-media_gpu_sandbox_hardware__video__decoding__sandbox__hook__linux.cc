@@ -1,4 +1,4 @@
---- media/gpu/sandbox/hardware_video_decoding_sandbox_hook_linux.cc.orig	2026-08-13 16:48:13 UTC
+--- media/gpu/sandbox/hardware_video_decoding_sandbox_hook_linux.cc.orig	2026-11-17 21:17:00 UTC
 +++ media/gpu/sandbox/hardware_video_decoding_sandbox_hook_linux.cc
 @@ -17,7 +17,9 @@
  #include "media/gpu/vaapi/vaapi_wrapper.h"
@@ -34,7 +34,7 @@
    using HardwareVideoDecodingProcessPolicy =
        sandbox::policy::HardwareVideoDecodingProcessPolicy;
    using PolicyType =
-@@ -267,6 +272,7 @@ bool HardwareVideoDecodingPreSandboxHook(
+@@ -287,6 +292,7 @@ bool HardwareVideoDecodingPreSandboxHook(
    // |permissions| is empty?
    sandbox::policy::SandboxLinux::GetInstance()->StartBrokerProcess(
        command_set, permissions, options);

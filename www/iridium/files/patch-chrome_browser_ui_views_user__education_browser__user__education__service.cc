@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/user_education/browser_user_education_service.cc.orig	2026-08-13 16:48:13 UTC
+--- chrome/browser/ui/views/user_education/browser_user_education_service.cc.orig	2026-11-17 21:17:00 UTC
 +++ chrome/browser/ui/views/user_education/browser_user_education_service.cc
-@@ -289,7 +289,7 @@ CreateNavigationAction(GURL target) {
+@@ -388,7 +388,7 @@ CreateNavigationAction(GURL target) {
  }
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -9,7 +9,7 @@
  void NavigateToSettingsPage(ContextPtr ctx,
                              user_education::FeaturePromoHandle promo_handle) {
    BrowserWindowInterface* const browser = GetBrowser(ctx);
-@@ -1447,7 +1447,7 @@ void MaybeRegisterChromeFeaturePromos(
+@@ -1632,7 +1632,7 @@ void MaybeRegisterChromeFeaturePromos(
                  "Triggered when a shared tab becomes the active tab.")));
    }
  
@@ -18,8 +18,8 @@
    // kIPHSupervisedUserProfileSigninFeature:
    registry.RegisterFeature(std::move(
        FeaturePromoSpecification::CreateForCustomAction(
-@@ -1740,7 +1740,7 @@ void MaybeRegisterChromeFeaturePromos(
-                        "new translate screen feature on the Lens Overlay.")));
+@@ -1961,7 +1961,7 @@ void MaybeRegisterChromeFeaturePromos(
+               "Omnibox Everywhere.")));
  
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || \
 -    BUILDFLAG(IS_CHROMEOS)
@@ -27,9 +27,9 @@
    // kIPHDesktopPWAsLinkCapturingLaunch:
    registry.RegisterFeature(std::move(
        FeaturePromoSpecification::CreateForCustomAction(
-@@ -2473,7 +2473,7 @@ void MaybeRegisterChromeNewBadges(user_education::NewB
-           151, "mtatarski@google.com",
-           "Show the new badge on Send to Your Devices context menu items.")));
+@@ -2876,7 +2876,7 @@ void MaybeRegisterChromeNewBadges(user_education::NewB
+           157, "nguyenbryan@google.com",
+           "Shown on Ask Google about this page in context and app menus.")));
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)

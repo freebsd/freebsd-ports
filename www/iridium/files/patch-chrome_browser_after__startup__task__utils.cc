@@ -1,8 +1,8 @@
---- chrome/browser/after_startup_task_utils.cc.orig	2025-12-10 15:04:57 UTC
+--- chrome/browser/after_startup_task_utils.cc.orig	2026-11-17 21:17:00 UTC
 +++ chrome/browser/after_startup_task_utils.cc
-@@ -112,7 +112,7 @@ void SetBrowserStartupIsComplete() {
-                        TRACE_EVENT_SCOPE_GLOBAL, "BrowserCount", browser_count);
+@@ -125,7 +125,7 @@ void SetBrowserStartupIsComplete(StartupIsCompleteReas
    GetStartupCompleteFlag().Set();
+   base::UmaHistogramEnumeration("Startup.BrowserStartupCompleteReason", reason);
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS)
 +    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)

@@ -1,29 +1,20 @@
---- chrome/browser/ui/ui_features.cc.orig	2026-08-13 16:48:13 UTC
+--- chrome/browser/ui/ui_features.cc.orig	2026-11-17 21:17:00 UTC
 +++ chrome/browser/ui/ui_features.cc
-@@ -102,7 +102,7 @@ bool IsWebuiRefresh2026Enabled() {
-          base::FeatureList::IsEnabled(kWebuiRefresh2026);
+@@ -139,7 +139,7 @@ bool ShouldUseActionsForBrowserCommands() {
+          base::FeatureList::IsEnabled(kAppMenuGlowUp);
  }
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  BASE_FEATURE(kDseIntegrity, base::FEATURE_ENABLED_BY_DEFAULT);
- // Enables the feature to remove the last confirmation dialog when relaunching
- // to update Chrome.
-@@ -325,7 +325,7 @@ BASE_FEATURE(kManagedProfileRequiredInterstitial,
- BASE_FEATURE(kViewsJSAppModalDialog, base::FEATURE_DISABLED_BY_DEFAULT);
- #endif
  
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
- BASE_FEATURE(kUsePortalAccentColor, base::FEATURE_ENABLED_BY_DEFAULT);
- #endif
+ // Enables the dialog shown when user feedback is disabled.
+@@ -380,7 +380,7 @@ BASE_FEATURE(kByDateHistoryInSidePanel, base::FEATURE_
  
-@@ -433,7 +433,7 @@ bool IsBookmarkTabGroupConversionEnabled() {
-   return base::FeatureList::IsEnabled(kBookmarkTabGroupConversion);
- }
+ BASE_FEATURE(kNonMilestoneUpdateToast, base::FEATURE_ENABLED_BY_DEFAULT);
  
 -#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
- BASE_FEATURE(kSessionRestoreInfobar, base::FEATURE_DISABLED_BY_DEFAULT);
+ BASE_FEATURE(kRespectShouldTriggerSessionRestoreOnDesktop,
+              base::FEATURE_ENABLED_BY_DEFAULT);
  
- BASE_FEATURE_PARAM(bool,

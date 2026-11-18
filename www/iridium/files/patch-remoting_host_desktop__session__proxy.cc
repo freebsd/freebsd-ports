@@ -1,6 +1,6 @@
---- remoting/host/desktop_session_proxy.cc.orig	2026-08-13 16:48:13 UTC
+--- remoting/host/desktop_session_proxy.cc.orig	2026-11-17 21:17:00 UTC
 +++ remoting/host/desktop_session_proxy.cc
-@@ -169,7 +169,7 @@ DesktopSessionProxy::CreateRemoteWebAuthnStateChangeNo
+@@ -166,7 +166,7 @@ DesktopSessionProxy::CreateRemoteWebAuthnStateChangeNo
        base::BindRepeating(&DesktopSessionProxy::SignalWebAuthnExtension, this));
  }
  
@@ -9,7 +9,7 @@
  void DesktopSessionProxy::OnSessionServicesClientConnected(
      mojo::PendingReceiver<mojom::ChromotingSessionServices> receiver) {
    DCHECK_CALLED_ON_VALID_SEQUENCE(sequence_checker_);
-@@ -209,7 +209,7 @@ std::string DesktopSessionProxy::GetCapabilities() con
+@@ -206,7 +206,7 @@ std::string DesktopSessionProxy::GetCapabilities() con
      result += protocol::kRemoteWebAuthnCapability;
    }
  

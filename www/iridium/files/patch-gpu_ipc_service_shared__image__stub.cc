@@ -1,6 +1,6 @@
---- gpu/ipc/service/shared_image_stub.cc.orig	2026-03-24 16:59:08 UTC
+--- gpu/ipc/service/shared_image_stub.cc.orig	2026-11-17 21:17:00 UTC
 +++ gpu/ipc/service/shared_image_stub.cc
-@@ -48,7 +48,7 @@ SharedImageStub::SharedImageStub(GpuChannel* channel, 
+@@ -49,7 +49,7 @@ SharedImageStub::SharedImageStub(GpuChannel* channel, 
        command_buffer_id_(
            CommandBufferIdFromChannelAndRoute(channel->client_id(), route_id)),
        sequence_(channel->scheduler()->CreateSequence(

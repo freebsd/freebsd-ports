@@ -1,6 +1,6 @@
---- components/supervised_user/core/common/pref_names.h.orig	2025-12-10 15:04:57 UTC
+--- components/supervised_user/core/common/pref_names.h.orig	2026-11-17 21:17:00 UTC
 +++ components/supervised_user/core/common/pref_names.h
-@@ -129,7 +129,7 @@ inline constexpr char kDefaultSupervisedUserFilteringB
+@@ -126,7 +126,7 @@ inline constexpr char kDefaultSupervisedUserFilteringB
      "profile.managed.default_filtering_behavior";
  
  #if BUILDFLAG(ENABLE_EXTENSIONS_CORE)

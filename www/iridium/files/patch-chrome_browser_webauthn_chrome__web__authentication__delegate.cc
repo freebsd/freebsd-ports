@@ -1,6 +1,6 @@
---- chrome/browser/webauthn/chrome_web_authentication_delegate.cc.orig	2026-08-13 16:48:13 UTC
+--- chrome/browser/webauthn/chrome_web_authentication_delegate.cc.orig	2026-11-17 21:17:00 UTC
 +++ chrome/browser/webauthn/chrome_web_authentication_delegate.cc
-@@ -69,7 +69,7 @@
+@@ -70,7 +70,7 @@
  #include "url/url_constants.h"
  #include "url/url_util.h"
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/extensions/api/web_authentication_proxy/web_authentication_proxy_service.h"
  #endif
  
-@@ -379,7 +379,7 @@ content::WebAuthenticationRequestProxy*
+@@ -324,7 +324,7 @@ content::WebAuthenticationRequestProxy*
  ChromeWebAuthenticationDelegate::MaybeGetRequestProxy(
      content::BrowserContext* browser_context,
      const url::Origin& caller_origin) {

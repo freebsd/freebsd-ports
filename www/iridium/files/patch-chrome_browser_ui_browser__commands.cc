@@ -1,6 +1,6 @@
---- chrome/browser/ui/browser_commands.cc.orig	2026-08-13 16:48:13 UTC
+--- chrome/browser/ui/browser_commands.cc.orig	2026-11-17 21:17:00 UTC
 +++ chrome/browser/ui/browser_commands.cc
-@@ -2578,7 +2578,7 @@ void OpenUpdateChromeDialog(BrowserWindowInterface* br
+@@ -2861,7 +2861,7 @@ void OpenUpdateChromeDialog(BrowserWindowInterface* br
      ShowOutdatedUpgradeBubble(browser, browser,
                                /*auto_update_enabled=*/false);
    } else {

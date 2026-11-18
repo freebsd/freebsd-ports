@@ -1,6 +1,25 @@
---- build/config/rust.gni.orig	2026-03-24 16:59:08 UTC
+--- build/config/rust.gni.orig	2026-11-17 21:17:00 UTC
 +++ build/config/rust.gni
-@@ -67,7 +67,8 @@ declare_args() {
+@@ -63,11 +63,27 @@ declare_args() {
+   # the bindgen exectuable).
+   rust_bindgen_root = "//third_party/rust-toolchain"
+ 
++  # Directory under which to find Crubit tools and support libraries:
++  # * `bin/cc_bindings_from_rs` and `bin/rs_bindings_from_cc`
++  # * `lib/third_party/crubit` (support libraries and their `BUILD.gn` files)
++  #
++  # Unlike `rust_bindgen_root` we don't set `rust_crubit_root` to
++  # `"//third_party/rust-toolchain"` by default, because `cc_bindings_from_rs`
++  # has to be built from the same Rust compiler sources as `rustc` (see
++  # https://github.com/google/crubit/blob/89417b58802e20a6a11db7fea7c31692fef25276/docs/design/design.md?plain=1#L599-L602).
++  # Because of the above `rust_crubit_root` has to be explicitly set when using
++  # a custom toolchain via `rust_sysroot_absolute`.  OTOH, when
++  # `use_chromium_rust_toolchain` is set then defaulting to
++  # `"//third_party/rust-toolchain"` is ok (see the `if (rust_crubit_root...
++  # use_chromium_rust_toolchain` code below).
++  rust_crubit_root = ""
++
+   # If you're using a Rust toolchain as specified by rust_sysroot_absolute,
    # set this to the output of `rustc -V`. Changing this string will cause all
    # Rust targets to be rebuilt, which allows you to update your toolchain and
    # not break incremental builds.
@@ -10,7 +29,7 @@
  
    # Whether artifacts produced by the Rust compiler can participate in ThinLTO.
    #
-@@ -180,6 +181,24 @@ if (enable_rust) {
+@@ -169,6 +185,24 @@ if (enable_rust) {
    } else {
      toolchain_has_rust = custom_toolchain_supports_platform
      rustc_revision = rustc_version
@@ -35,7 +54,26 @@
    }
  }
  
-@@ -355,7 +374,11 @@ if (is_linux || is_chromeos) {
+@@ -188,6 +222,18 @@ if (enable_rust) {
+   }
+ }
+ 
++if (rust_crubit_root == "" && use_chromium_rust_toolchain) {
++  rust_crubit_root = "//third_party/rust-toolchain"
++}
++
++# Message for `assert(rust_crubit_root != "", rust_crubit_root_missing_message)`
++# in places that need Crubit.
++rust_crubit_root_missing_message =
++    "Crubit is required, but `rust_crubit_root` GN arg is not set.  It has " +
++    "to be set when using a custom Rust toolchain via " +
++    "`rust_sysroot_absolute`.  See `rust_crubit_root` in " +
++    "//build/config/rust.gni for more details."
++
+ # Figure out the Rust target triple (aka 'rust_abi_target')
+ #
+ # This is here rather than in the toolchain files because it's used also by
+@@ -344,7 +390,11 @@ if (is_linux || is_chromeos) {
    }
  }
  
@@ -48,3 +86,13 @@
    assert(rust_abi_target != "")
  
    _known_rust_target_triples_filepath = "//build/rust/known-target-triples.txt"
+@@ -422,8 +472,7 @@ rust_prebuilt_stdlib =
+ #
+ # See the `assert` comments in `cpp_api_from_rust.gni` for explanation of
+ # the conditions used here.
+-enable_cpp_api_from_rust = enable_rust && use_chromium_rust_toolchain &&
+-                           !rust_prebuilt_stdlib && build_with_chromium
++enable_cpp_api_from_rust = enable_rust && build_with_chromium
+ 
+ declare_args() {
+   # Whether it is okay to use `rust_api_from_cpp.gni`.  The default is `false`,

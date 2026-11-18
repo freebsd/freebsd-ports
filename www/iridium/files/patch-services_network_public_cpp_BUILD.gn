@@ -1,6 +1,6 @@
---- services/network/public/cpp/BUILD.gn.orig	2026-08-13 16:48:13 UTC
+--- services/network/public/cpp/BUILD.gn.orig	2026-11-17 21:17:00 UTC
 +++ services/network/public/cpp/BUILD.gn
-@@ -758,7 +758,7 @@ component("cpp_base") {
+@@ -744,7 +744,7 @@ component("cpp_base") {
      sources += [ "transferable_directory_fuchsia.cc" ]
    }
  

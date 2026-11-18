@@ -1,4 +1,4 @@
---- chrome/browser/ui/webui/app_home/app_home_page_handler.h.orig	2025-12-10 15:04:57 UTC
+--- chrome/browser/ui/webui/app_home/app_home_page_handler.h.orig	2026-11-17 21:17:00 UTC
 +++ chrome/browser/ui/webui/app_home/app_home_page_handler.h
 @@ -23,7 +23,7 @@
  #include "mojo/public/cpp/bindings/receiver.h"
@@ -7,5 +7,5 @@
 -static_assert(BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX));
 +static_assert(BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD));
  
- class Browser;
+ class BrowserWindowInterface;
  class ExtensionEnableFlow;

@@ -1,4 +1,4 @@
---- remoting/host/base/switches.h.orig	2026-08-13 16:48:13 UTC
+--- remoting/host/base/switches.h.orig	2026-11-17 21:17:00 UTC
 +++ remoting/host/base/switches.h
 @@ -37,13 +37,13 @@ extern const char kProcessTypeRdpDesktopSession[];
  extern const char kProcessTypeEvaluateCapability[];
@@ -15,4 +15,4 @@
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  // Used to record client sessions to wtmpd.
  extern const char kEnableWtmpdb[];
- #endif
+ 

@@ -1,6 +1,6 @@
---- content/browser/browser_url_handler_impl.cc.orig	2026-08-13 16:48:13 UTC
+--- content/browser/browser_url_handler_impl.cc.orig	2026-11-17 21:17:00 UTC
 +++ content/browser/browser_url_handler_impl.cc
-@@ -13,6 +13,7 @@
+@@ -14,6 +14,7 @@
  #include "content/browser/webui/web_ui_impl.h"
  #include "content/public/browser/content_browser_client.h"
  #include "content/public/common/content_client.h"
@@ -8,7 +8,7 @@
  #include "content/public/common/url_constants.h"
  #include "content/public/common/url_utils.h"
  #include "third_party/blink/public/common/chrome_debug_urls.h"
-@@ -270,6 +271,10 @@ namespace iridium {
+@@ -272,6 +273,10 @@ namespace iridium {
  
  static void gfxlog_request2(const std::string &caller, const GURL &url)
  {

@@ -1,4 +1,4 @@
---- media/capture/video/linux/video_capture_device_factory_v4l2.cc.orig	2026-08-13 16:48:13 UTC
+--- media/capture/video/linux/video_capture_device_factory_v4l2.cc.orig	2026-11-17 21:17:00 UTC
 +++ media/capture/video/linux/video_capture_device_factory_v4l2.cc
 @@ -43,6 +43,7 @@ bool CompareCaptureDevices(const VideoCaptureDeviceInf
    return a.descriptor < b.descriptor;
@@ -9,7 +9,7 @@
  const size_t kVidPidSize = 4;
  const size_t kMaxInterfaceNameSize = 256;
 @@ -72,11 +73,24 @@ std::string ExtractFileNameFromDeviceId(const std::str
-   DCHECK(base::StartsWith(device_id, kDevDir, base::CompareCase::SENSITIVE));
+   DCHECK(device_id.starts_with(kDevDir));
    return device_id.substr(kDevDir.length());
  }
 +#endif

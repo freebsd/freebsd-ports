@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/chrome_views_delegate_linux.cc.orig	2025-12-10 15:04:57 UTC
+--- chrome/browser/ui/views/chrome_views_delegate_linux.cc.orig	2026-11-17 21:17:00 UTC
 +++ chrome/browser/ui/views/chrome_views_delegate_linux.cc
-@@ -27,7 +27,7 @@ bool IsDesktopEnvironmentUnity() {
+@@ -44,7 +44,7 @@ bool WindowManagerDrawsTitleBarOverMaximizedWindows() 
    return desktop_env == base::nix::DESKTOP_ENVIRONMENT_UNITY;
  }
  
@@ -9,7 +9,7 @@
  int GetWindowIconResourceId() {
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
    switch (chrome::GetChannel()) {
-@@ -85,7 +85,7 @@ views::NativeWidget* ChromeViewsDelegate::CreateNative
+@@ -102,7 +102,7 @@ views::NativeWidget* ChromeViewsDelegate::CreateNative
                                delegate);
  }
  

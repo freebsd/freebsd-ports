@@ -1,0 +1,10 @@
+--- components/webapps/isolated_web_apps/BUILD.gn.orig	2026-11-17 21:17:00 UTC
++++ components/webapps/isolated_web_apps/BUILD.gn
+@@ -8,7 +8,6 @@ assert(is_chromeos || is_win || is_mac || is_linux,
+ component("isolated_web_apps") {
+   defines = [ "IS_ISOLATED_WEB_APPS_IMPL" ]
+   public_deps = [ ":sources" ]
+-  assert_no_deps = [ "//chrome/*" ]
+ }
+ 
+ group("sources") {

@@ -1,8 +1,8 @@
---- remoting/host/webauthn/remote_webauthn_extension_notifier.cc.orig	2026-05-11 13:57:04 UTC
+--- remoting/host/webauthn/remote_webauthn_extension_notifier.cc.orig	2026-11-17 21:17:00 UTC
 +++ remoting/host/webauthn/remote_webauthn_extension_notifier.cc
 @@ -27,7 +27,7 @@
- #include "base/task/thread_pool.h"
  #include "build/build_config.h"
+ #include "remoting/host/webauthn/remote_webauthn_constants.h"
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)

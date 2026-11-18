@@ -1,6 +1,6 @@
---- third_party/webrtc/modules/desktop_capture/BUILD.gn.orig	2026-08-13 16:48:13 UTC
+--- third_party/webrtc/modules/desktop_capture/BUILD.gn.orig	2026-11-17 21:17:00 UTC
 +++ third_party/webrtc/modules/desktop_capture/BUILD.gn
-@@ -712,6 +712,8 @@ rtc_library("desktop_capture") {
+@@ -746,6 +746,8 @@ rtc_library("desktop_capture") {
  
        "Xrender",
        "Xtst",

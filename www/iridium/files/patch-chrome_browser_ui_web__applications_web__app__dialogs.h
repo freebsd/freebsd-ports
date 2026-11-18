@@ -1,4 +1,4 @@
---- chrome/browser/ui/web_applications/web_app_dialogs.h.orig	2025-12-10 15:04:57 UTC
+--- chrome/browser/ui/web_applications/web_app_dialogs.h.orig	2026-11-17 21:17:00 UTC
 +++ chrome/browser/ui/web_applications/web_app_dialogs.h
 @@ -25,7 +25,7 @@
  #include "ui/gfx/native_ui_types.h"
@@ -7,5 +7,5 @@
 -              BUILDFLAG(IS_CHROMEOS));
 +              BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD));
  
+ class BrowserWindowInterface;
  class GURL;
- class Profile;

@@ -1,6 +1,6 @@
---- chrome/browser/ui/omnibox/omnibox_pedal_implementations.cc.orig	2026-08-13 16:48:13 UTC
+--- chrome/browser/ui/omnibox/omnibox_pedal_implementations.cc.orig	2026-11-17 21:17:00 UTC
 +++ chrome/browser/ui/omnibox/omnibox_pedal_implementations.cc
-@@ -2009,7 +2009,7 @@ const gfx::VectorIcon& GetSharingHubVectorIcon() {
+@@ -2024,7 +2024,7 @@ const gfx::VectorIcon& GetSharingHubVectorIcon() {
    return features::IsRoundedIconsEnabled()
               ? omnibox::kShareWindowsIcon
               : omnibox::kShareWinChromeRefreshOldIcon;

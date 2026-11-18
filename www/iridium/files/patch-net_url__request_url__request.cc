@@ -1,4 +1,4 @@
---- net/url_request/url_request.cc.orig	2026-05-11 13:57:04 UTC
+--- net/url_request/url_request.cc.orig	2026-11-17 21:17:00 UTC
 +++ net/url_request/url_request.cc
 @@ -10,6 +10,7 @@
  #	include <unistd.h>
@@ -24,7 +24,7 @@
 +	base::CommandLine* command_line = base::CommandLine::ForCurrentProcess();
 +	if (!command_line->HasSwitch(switches::kTrk))
 +		return;
-+#ifdef __unix__
++#ifdef __unix__  
  	bool tty = isatty(fileno(stderr));
  #else
  	bool tty = false;

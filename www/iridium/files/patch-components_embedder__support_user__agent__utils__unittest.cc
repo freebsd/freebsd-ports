@@ -1,15 +1,6 @@
---- components/embedder_support/user_agent_utils_unittest.cc.orig	2026-08-13 16:48:13 UTC
+--- components/embedder_support/user_agent_utils_unittest.cc.orig	2026-11-17 21:17:00 UTC
 +++ components/embedder_support/user_agent_utils_unittest.cc
-@@ -152,7 +152,7 @@ void CheckUserAgentStringOrdering(bool mobile_device) 
-   ASSERT_EQ("CrOS", pieces[0]);
-   ASSERT_EQ("x86_64", pieces[1]);
-   ASSERT_EQ("14541.0.0", pieces[2]);
--#elif BUILDFLAG(IS_LINUX)
-+#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   // Post-UA Reduction there is a single <unifiedPlatform> value for Linux:
-   // X11; Linux x86_64
-   ASSERT_EQ(2u, pieces.size());
-@@ -334,7 +334,7 @@ class UserAgentUtilsTest : public testing::Test,
+@@ -155,7 +155,7 @@ class UserAgentUtilsTest : public testing::Test {
          "X11; CrOS x86_64 14541.0.0";
  #elif BUILDFLAG(IS_FUCHSIA)
          "Fuchsia";
@@ -18,7 +9,16 @@
          "X11; Linux x86_64";
  #elif BUILDFLAG(IS_MAC)
          "Macintosh; Intel Mac OS X 10_15_7";
-@@ -659,7 +659,7 @@ TEST_F(UserAgentUtilsTest, UserAgentMetadata) {
+@@ -334,7 +334,7 @@ TEST_F(UserAgentUtilsTest, UserAgentMetadata) {
+ 
+ #if BUILDFLAG(IS_WIN)
+   VerifyWinPlatformVersion(metadata.platform_version);
+-#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_FUCHSIA)
++#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
+   EXPECT_EQ(metadata.platform_version, "");
+ #else
+   int32_t major, minor, bugfix = 0;
+@@ -361,7 +361,7 @@ TEST_F(UserAgentUtilsTest, UserAgentMetadata) {
  #endif
  #elif BUILDFLAG(IS_ANDROID)
    EXPECT_EQ(metadata.platform, "Android");

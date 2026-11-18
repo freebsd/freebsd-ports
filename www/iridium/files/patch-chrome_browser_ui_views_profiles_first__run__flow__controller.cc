@@ -1,15 +1,15 @@
---- chrome/browser/ui/views/profiles/first_run_flow_controller.cc.orig	2026-08-13 16:48:13 UTC
+--- chrome/browser/ui/views/profiles/first_run_flow_controller.cc.orig	2026-11-17 21:17:00 UTC
 +++ chrome/browser/ui/views/profiles/first_run_flow_controller.cc
-@@ -87,7 +87,7 @@
+@@ -86,7 +86,7 @@
  #include "chrome/installer/util/shell_util.h"
  #endif
  
 -#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  #include "base/check_deref.h"
+ #include "base/i18n/language_tag.h"
  #include "chrome/browser/browser_process.h"
- #include "chrome/browser/global_features.h"
-@@ -1164,7 +1164,7 @@ bool FirstRunFlowController::AreEffectsEnabled() const
+@@ -1199,7 +1199,7 @@ bool FirstRunFlowController::AreEffectsEnabled() const
  }
  
  void FirstRunFlowController::MaybeTriggerHatsSurvey() {

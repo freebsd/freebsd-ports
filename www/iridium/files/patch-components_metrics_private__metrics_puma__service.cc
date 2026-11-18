@@ -1,6 +1,6 @@
---- components/metrics/private_metrics/puma_service.cc.orig	2026-01-16 14:21:21 UTC
+--- components/metrics/private_metrics/puma_service.cc.orig	2026-11-17 21:17:00 UTC
 +++ components/metrics/private_metrics/puma_service.cc
-@@ -71,7 +71,7 @@ Platform GetCurrentPlatform() {
+@@ -72,7 +72,7 @@ Platform GetCurrentPlatform() {
    return Platform::PLATFORM_WINDOWS;
  #elif BUILDFLAG(IS_MAC)
    return Platform::PLATFORM_MACOS;

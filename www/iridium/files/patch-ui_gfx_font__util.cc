@@ -1,4 +1,4 @@
---- ui/gfx/font_util.cc.orig	2026-03-24 16:59:08 UTC
+--- ui/gfx/font_util.cc.orig	2026-11-17 21:17:00 UTC
 +++ ui/gfx/font_util.cc
 @@ -7,7 +7,7 @@
  #include "build/build_config.h"
@@ -7,14 +7,14 @@
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  #include <fontconfig/fontconfig.h>
- #include "ui/gfx/linux/fontconfig_util.h"
- #endif
-@@ -25,7 +25,7 @@ void InitializeFonts() {
+ 
+ #include "base/check.h"
+@@ -29,7 +29,7 @@ void InitializeFonts() {
    // background (resources have not yet been granted to cast) since it prevents
    // the long delay the user would have seen on first rendering.
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
-   // Early initialize FontConfig.
-   InitializeGlobalFontConfigAsync();
- #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
+   if (base::FeatureList::IsEnabled(features::kAsyncFontconfigInitialization)) {
+     // Early initialize FontConfig.
+     InitializeGlobalFontConfigAsync();

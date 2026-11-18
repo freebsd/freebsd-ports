@@ -1,6 +1,6 @@
---- third_party/libunwind/src/src/DwarfInstructions.hpp.orig	2026-02-16 10:45:29 UTC
+--- third_party/libunwind/src/src/DwarfInstructions.hpp.orig	2026-11-17 21:17:00 UTC
 +++ third_party/libunwind/src/src/DwarfInstructions.hpp
-@@ -396,6 +396,23 @@ int DwarfInstructions<A, R>::stepWithDwarf(
+@@ -408,6 +408,23 @@ int DwarfInstructions<A, R>::stepWithDwarf(
        if (R::getArch() == REGISTERS_PPC64 && returnAddress != 0) {
          pint_t sp = newRegisters.getRegister(UNW_REG_SP);
          pint_t r2 = 0;
@@ -24,7 +24,7 @@
          switch (addressSpace.get32(returnAddress)) {
          case PPC64_ELFV1_R2_LOAD_INST_ENCODING:
            r2 = addressSpace.get64(sp + PPC64_ELFV1_R2_OFFSET);
-@@ -404,6 +421,7 @@ int DwarfInstructions<A, R>::stepWithDwarf(
+@@ -416,6 +433,7 @@ int DwarfInstructions<A, R>::stepWithDwarf(
            r2 = addressSpace.get64(sp + PPC64_ELFV2_R2_OFFSET);
            break;
          }

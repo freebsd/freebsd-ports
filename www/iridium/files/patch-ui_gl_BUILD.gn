@@ -1,6 +1,6 @@
---- ui/gl/BUILD.gn.orig	2026-08-13 16:48:13 UTC
+--- ui/gl/BUILD.gn.orig	2026-11-17 21:17:00 UTC
 +++ ui/gl/BUILD.gn
-@@ -429,7 +429,7 @@ component("gl") {
+@@ -434,7 +434,7 @@ component("gl") {
      ]
    }
  

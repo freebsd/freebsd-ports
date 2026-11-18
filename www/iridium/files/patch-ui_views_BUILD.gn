@@ -1,7 +1,7 @@
---- ui/views/BUILD.gn.orig	2026-08-13 16:48:13 UTC
+--- ui/views/BUILD.gn.orig	2026-11-17 21:17:00 UTC
 +++ ui/views/BUILD.gn
-@@ -897,7 +897,6 @@ component("views") {
-       "windows_stationarity_monitor_aura.cc",
+@@ -904,7 +904,6 @@ component("views") {
+       "widget/window_reorderer.cc",
      ]
      deps += [
 -      "//components/crash/core/common:crash_key",

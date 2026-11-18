@@ -1,6 +1,6 @@
---- base/i18n/icu_util.cc.orig	2026-08-13 16:48:13 UTC
+--- base/i18n/icu_util.cc.orig	2026-11-17 21:17:00 UTC
 +++ base/i18n/icu_util.cc
-@@ -54,7 +54,7 @@
+@@ -63,7 +63,7 @@
  #include "third_party/icu/source/common/unicode/unistr.h"
  #endif
  
@@ -9,7 +9,7 @@
      BUILDFLAG(IS_CHROMEOS) || (BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CASTOS))
  #include "third_party/icu/source/i18n/unicode/timezone.h"
  #endif
-@@ -326,7 +326,7 @@ void InitializeIcuTimeZone() {
+@@ -337,7 +337,7 @@ void InitializeIcuTimeZone() {
        FuchsiaIntlProfileWatcher::GetPrimaryTimeZoneIdForIcuInitialization();
    icu::TimeZone::adoptDefault(
        icu::TimeZone::createTimeZone(icu::UnicodeString::fromUTF8(zone_id)));

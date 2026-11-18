@@ -1,16 +1,32 @@
---- third_party/vulkan-loader/src/loader/vk_loader_platform.h.orig	2025-12-10 15:04:57 UTC
+--- third_party/vulkan-loader/src/loader/vk_loader_platform.h.orig	2026-11-17 21:17:00 UTC
 +++ third_party/vulkan-loader/src/loader/vk_loader_platform.h
-@@ -357,7 +357,15 @@ static inline char *loader_platform_executable_path(ch
+@@ -29,6 +29,7 @@
+ #if defined(__FreeBSD__) || defined(__OpenBSD__)
+ #include <sys/types.h>
+ #include <sys/select.h>
++#include <sys/param.h>
+ #endif
+ 
+ #include <assert.h>
+@@ -361,7 +362,23 @@ static inline char *loader_platform_executable_path(ch
  
      return buffer;
  }
 -#elif defined(__Fuchsia__) || defined(__OpenBSD__)
 +#elif defined(__OpenBSD__)
 +static inline char *loader_platform_executable_path(char *buffer, size_t size) {
++#if (OpenBSD >= 202610)
++    char execpath[PATH_MAX];
++    if (getexecpath(execpath, sizeof(execpath)) != 0) {
++        return NULL;
++    }
++    *buffer = execpath;
++#else
 +    if ((buffer = getenv("IRIDIUM_EXE_PATH")) != NULL)
 +        return buffer;
 +    else
 +        buffer = "/usr/local/iridium/iridium";
++#endif
 +  return buffer;
 +}
 +#elif defined(__Fuchsia__)

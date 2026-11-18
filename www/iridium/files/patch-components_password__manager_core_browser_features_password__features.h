@@ -1,8 +1,8 @@
---- components/password_manager/core/browser/features/password_features.h.orig	2026-08-13 16:48:13 UTC
+--- components/password_manager/core/browser/features/password_features.h.orig	2026-11-17 21:17:00 UTC
 +++ components/password_manager/core/browser/features/password_features.h
-@@ -194,7 +194,7 @@ BASE_DECLARE_FEATURE(kPreventAPCOnFederatedLogin);
- // Prevents password manager from showing save/update UI on federated login.
- BASE_DECLARE_FEATURE(kPreventPasswordManagerOnFederatedLogin);
+@@ -211,7 +211,7 @@ BASE_DECLARE_FEATURE(kPreventPasswordManagerOnFederate
+ // vault passphrase type.
+ BASE_DECLARE_FEATURE(kRecordPasswordReadiness);
  
 -#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)

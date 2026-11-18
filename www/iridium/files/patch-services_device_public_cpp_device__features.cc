@@ -1,6 +1,6 @@
---- services/device/public/cpp/device_features.cc.orig	2026-08-13 16:48:13 UTC
+--- services/device/public/cpp/device_features.cc.orig	2026-11-17 21:17:00 UTC
 +++ services/device/public/cpp/device_features.cc
-@@ -174,11 +174,11 @@ bool IsOsLevelGeolocationPermissionSupportEnabled() {
+@@ -228,11 +228,11 @@ device::mojom::LocationProviderManagerMode GetLocation
  // a USB interface is busy.
  #if BUILDFLAG(IS_ANDROID)
  BASE_FEATURE(kAutomaticUsbDetach, base::FEATURE_ENABLED_BY_DEFAULT);
