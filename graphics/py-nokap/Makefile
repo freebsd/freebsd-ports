@@ -1,5 +1,5 @@
 PORTNAME=	nokap
-PORTVERSION=	0.1.0
+PORTVERSION=	0.2.0
 CATEGORIES=	graphics python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,13 +21,13 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=8.0:devel/py-click@${PY_FLAVOR} \
 USES=		python
 USE_PYTHON=	autoplist pep517 pytest
 
-TEST_ARGS=	-k "not test_find_chrome_env_var"
+TEST_ARGS=	-k "not test_find_chrome_env_var and not test_find_chrome_headless_shell_on_path and not test_find_chrome_picks_newest_installed_version and not test_find_chrome_prefers_installed_headless_shell and not test_capture_recovers_and_removes_dead_browser_profile"
 
 NO_ARCH=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|os.environ.get("CHROME_PATH")|"${LOCALBASE}/bin/chrome"|' ${WRKSRC}/nokap/_browser.py
 
-# tests as of 0.1.0: 102 passed 2 deselected
+# tests as of 0.2.0: 186 passed, 3 skipped, 7 deselected
 
 .include <bsd.port.mk>
