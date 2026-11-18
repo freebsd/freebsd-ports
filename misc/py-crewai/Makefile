@@ -1,5 +1,5 @@
 PORTNAME=	crewai
-PORTVERSION=	1.15.34
+PORTVERSION=	1.15.41
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,8 +19,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiofiles>=24.1.0:devel/py-aiofiles@${PY_FLAV
 		${PYTHON_PKGNAMEPREFIX}cel-python>=0.5.0:devel/py-cel-python@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}chromadb>=1.5.9:databases/py-chromadb@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click>=8.1.7:devel/py-click@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}crewai-cli==1.15.34:misc/py-crewai-cli@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}crewai-core==1.15.34:misc/py-crewai-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}crewai-cli>=1.15.41:misc/py-crewai-cli@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}crewai-core>=1.15.41:misc/py-crewai-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httpx>=0.28.1:www/py-httpx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}instructor>=1.3.3:misc/py-instructor@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}json-repair>=0.60.1:textproc/py-json-repair@${PY_FLAVOR} \
