@@ -190,6 +190,59 @@
     </dates>
   </vuln>
 
+  <vuln vid="654410f6-e37f-11f1-b58b-8447094a420f">
+    <topic>MariaDB -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mariadb123-server</name>
+	<range><lt>12.3.4</lt></range>
+      </package>
+      <package>
+	<name>mariadb118-server</name>
+	<range><lt>11.8.10</lt></range>
+      </package>
+      <package>
+	<name>mariadb114-server</name>
+	<range><lt>11.4.14</lt></range>
+      </package>
+      <package>
+	<name>mariadb1011-server</name>
+	<range><lt>10.11.20</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>MariaDB reports:</p>
+	<blockquote cite="https://mariadb.com/docs/release-notes/community-server/12.3/12.3.4">
+	  <p>No further detail provided by MariaDB.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-101802</cvename>
+      <cvename>CVE-2026-101796</cvename>
+      <cvename>CVE-2026-101794</cvename>
+      <cvename>CVE-2026-101775</cvename>
+      <cvename>CVE-2026-101747</cvename>
+      <cvename>CVE-2026-101725</cvename>
+      <cvename>CVE-2026-101679</cvename>
+      <cvename>CVE-2026-101619</cvename>
+      <cvename>CVE-2026-101618</cvename>
+      <cvename>CVE-2026-101617</cvename>
+      <cvename>CVE-2026-101615</cvename>
+      <cvename>CVE-2026-101614</cvename>
+      <cvename>CVE-2026-101608</cvename>
+      <url>https://mariadb.com/docs/release-notes/community-server/12.3/12.3.4</url>
+      <url>https://mariadb.com/docs/release-notes/community-server/11.8/11.8.10</url>
+      <url>https://mariadb.com/docs/release-notes/community-server/11.4/11.4.14</url>
+      <url>https://mariadb.com/docs/release-notes/community-server/10.11/10.11.20</url>
+    </references>
+    <dates>
+      <discovery>2026-11-16</discovery>
+      <entry>2026-11-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c0ecba9d-e313-11f1-a3e1-bc241121aa0a">
     <topic>FreeBSD -- tmpfs(4) fails to clear set-group-ID bit on new files</topic>
     <affects>
