@@ -1,5 +1,5 @@
 PORTNAME=	kimi-code
-DISTVERSION=	2.6.2
+DISTVERSION=	2.6.3
 CATEGORIES=	misc
 
 MAINTAINER=	joneum@FreeBSD.org
