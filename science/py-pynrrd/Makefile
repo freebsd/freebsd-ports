@@ -1,7 +1,6 @@
 PORTNAME=	pynrrd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.3
-PORTREVISION=	2
+DISTVERSION=	1.1.4
 CATEGORIES=	science python
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,6 +26,6 @@ GH_ACCOUNT=	mhe
 
 NO_ARCH=	yes
 
-# tests as of 1.1.3: 159 passed in 3.03s
+# tests as of 1.1.4: 171 passed, 64 subtests passed in 5.97s
 
 .include <bsd.port.mk>
