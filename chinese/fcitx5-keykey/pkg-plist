@@ -21,6 +21,7 @@ share/chichi77-keykey/data/associated-phrases/phrase.ai-data-science.tsv
 share/chichi77-keykey/data/associated-phrases/phrase.anime.tsv
 share/chichi77-keykey/data/associated-phrases/phrase.biotech-pharma.tsv
 share/chichi77-keykey/data/associated-phrases/phrase.business.tsv
+share/chichi77-keykey/data/associated-phrases/phrase.china.tsv
 share/chichi77-keykey/data/associated-phrases/phrase.chinese.tsv
 share/chichi77-keykey/data/associated-phrases/phrase.civil-engineering.tsv
 share/chichi77-keykey/data/associated-phrases/phrase.education.tsv
@@ -28,8 +29,10 @@ share/chichi77-keykey/data/associated-phrases/phrase.electronics.tsv
 share/chichi77-keykey/data/associated-phrases/phrase.energy-environment.tsv
 share/chichi77-keykey/data/associated-phrases/phrase.finance.tsv
 share/chichi77-keykey/data/associated-phrases/phrase.general.tsv
+share/chichi77-keykey/data/associated-phrases/phrase.given-names.tsv
 share/chichi77-keykey/data/associated-phrases/phrase.government.tsv
 share/chichi77-keykey/data/associated-phrases/phrase.history.tsv
+share/chichi77-keykey/data/associated-phrases/phrase.hongkong-macao.tsv
 share/chichi77-keykey/data/associated-phrases/phrase.industrial-engineering.tsv
 share/chichi77-keykey/data/associated-phrases/phrase.law.tsv
 share/chichi77-keykey/data/associated-phrases/phrase.manufacturing.tsv
@@ -44,6 +47,7 @@ share/chichi77-keykey/data/associated-phrases/phrase.psychology-society.tsv
 share/chichi77-keykey/data/associated-phrases/phrase.science.tsv
 share/chichi77-keykey/data/associated-phrases/phrase.semiconductor.tsv
 share/chichi77-keykey/data/associated-phrases/phrase.software.tsv
+share/chichi77-keykey/data/associated-phrases/phrase.taiwan.tsv
 share/chichi77-keykey/data/associated-phrases/phrase.transport-logistics.tsv
 share/chichi77-keykey/data/bpmf-ext.cin
 share/chichi77-keykey/data/bpmf-punctuations.cin
