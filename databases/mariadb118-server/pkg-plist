@@ -65,14 +65,12 @@ bin/test-connect-t
 @comment %%ETCDIR%%/my.cnf
 @comment %%ETCDIR%%/conf.d/client.cnf
 @sample %%ETCDIR%%/user_map.conf.sample
-include/mysql/server/big_endian.h
 include/mysql/server/decimal.h
 include/mysql/server/errmsg.h
 include/mysql/server/handler_ername.h
 include/mysql/server/handler_state.h
 include/mysql/server/json_lib.h
 include/mysql/server/keycache.h
-include/mysql/server/little_endian.h
 include/mysql/server/m_ctype.h
 include/mysql/server/m_string.h
 include/mysql/server/ma_dyncol.h
@@ -204,6 +202,8 @@ lib/mysql/plugin/locales.so
 lib/mysql/plugin/metadata_lock_info.so
 @comment lib/mysql/plugin/parsec.so
 lib/mysql/plugin/password_reuse_check.so
+lib/mysql/plugin/plugin_name_ascii.so
+lib/mysql/plugin/plugin_name_non_ascii.so
 lib/mysql/plugin/provider_bzip2.so
 lib/mysql/plugin/provider_lz4.so
 lib/mysql/plugin/provider_lzma.so
@@ -217,7 +217,6 @@ lib/mysql/plugin/query_response_time.so
 lib/mysql/plugin/server_audit.so
 lib/mysql/plugin/simple_password_check.so
 lib/mysql/plugin/sql_errlog.so
-lib/mysql/plugin/test_pam_modules/pam_mariadb_mtr.so
 lib/mysql/plugin/test_sql_service.so
 lib/mysql/plugin/test_versioning.so
 lib/mysql/plugin/type_mysql_json.so
@@ -226,6 +225,10 @@ lib/mysql/plugin/type_test.so
 %%WSREP%%lib/mysql/plugin/wsrep_info.so
 libexec/mariadbd
 libexec/mysqld
+share/cmake/mariadb-plugin/mariadb-plugin-config.cmake
+share/cmake/mariadb-plugin/mariadb-plugin-defines.cmake
+share/cmake/mariadb-plugin/mariadb-plugin-targets-release.cmake
+share/cmake/mariadb-plugin/mariadb-plugin-targets.cmake
 @comment %%S3%%share/man/man1/aria_s3_copy.1.gz
 share/man/man1/aria_chk.1.gz
 share/man/man1/aria_dump_log.1.gz
