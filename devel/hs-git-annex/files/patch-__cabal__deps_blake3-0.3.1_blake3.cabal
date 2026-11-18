@@ -1,0 +1,50 @@
+--- _cabal_deps/blake3-0.3.1/blake3.cabal.orig	2001-09-09 01:46:40 UTC
++++ _cabal_deps/blake3-0.3.1/blake3.cabal
+@@ -66,8 +66,10 @@ library
+       asm-sources: cbits/blake3_avx512_x86-64_unix.S
+     elif arch(x86_64) && os(windows)
+       asm-sources: cbits/blake3_avx512_x86-64_windows_gnu.S
+-    else
++    elif arch(x86_64) || arch(i386)
+       c-sources: cbits/blake3_avx512.c
++    else
++      cc-options: -DBLAKE3_NO_AVX512
+   else
+     cc-options: -DBLAKE3_NO_AVX512
+ 
+@@ -77,8 +79,10 @@ library
+       asm-sources: cbits/blake3_avx2_x86-64_unix.S
+     elif arch(x86_64) && os(windows)
+       asm-sources: cbits/blake3_avx2_x86-64_windows_gnu.S
+-    else
++    elif arch(x86_64) || arch(i386)
+       c-sources: cbits/blake3_avx2.c
++    else
++      cc-options: -DBLAKE3_NO_AVX2
+   else
+     cc-options: -DBLAKE3_NO_AVX2
+ 
+@@ -88,8 +92,10 @@ library
+       asm-sources: cbits/blake3_sse41_x86-64_unix.S
+     elif arch(x86_64) && os(windows)
+       asm-sources: cbits/blake3_sse41_x86-64_windows_gnu.S
+-    else
++    elif arch(x86_64) || arch(i386)
+       c-sources: cbits/blake3_sse41.c
++    else
++      cc-options: -DBLAKE3_NO_SSE41
+   else
+     cc-options: -DBLAKE3_NO_SSE41
+ 
+@@ -99,8 +105,10 @@ library
+       asm-sources: cbits/blake3_sse2_x86-64_unix.S
+     elif arch(x86_64) && os(windows)
+       asm-sources: cbits/blake3_sse2_x86-64_windows_gnu.S
+-    else
++    elif arch(x86_64) || arch(i386)
+       c-sources: cbits/blake3_sse2.c
++    else
++      cc-options: -DBLAKE3_NO_SSE2
+   else
+     cc-options: -DBLAKE3_NO_SSE2
+ 
