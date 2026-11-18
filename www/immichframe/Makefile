@@ -1,6 +1,6 @@
 PORTNAME=	immichframe
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.39.0
+DISTVERSION=	1.0.40.0
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/joneum/FreeBSD-Immich/releases/download/immichframe-v${DISTVERSION}/:buildkit
 DISTFILES=	immichframe-freebsd-buildkit-${DISTVERSION}${EXTRACT_SUFX}:buildkit \
@@ -18,10 +18,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 ONLY_FOR_ARCHS=		amd64
 ONLY_FOR_ARCHS_REASON=	only amd64 is built and tested
 
-BUILD_DEPENDS=	dotnet8>0:lang/dotnet8 \
+BUILD_DEPENDS=	dotnet>=10.0:lang/dotnet \
 		dotnet:lang/dotnet-host \
 		${LOCALBASE}/bin/npm:www/npm-node22
-RUN_DEPENDS=	dotnet8>0:lang/dotnet8 \
+RUN_DEPENDS=	dotnet>=10.0:lang/dotnet \
 		dotnet:lang/dotnet-host
 
 USES=		nodejs:22,build sqlite
@@ -36,7 +36,8 @@ USERS=		immich
 GROUPS=		immich
 
 DBDIR=		/var/db/${PORTNAME}
-DOTNET_RID=	freebsd-x64
+DOTNET_ARCH=	${ARCH:S/amd64/x64/:S/aarch64/arm64/}
+DOTNET_RID=	freebsd.${_OSVERSION_MAJOR}-${DOTNET_ARCH}
 
 MAKE_ENV=	CI=1 \
 		DOTNET_CLI_TELEMETRY_OPTOUT=1 \
