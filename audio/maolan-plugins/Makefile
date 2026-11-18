@@ -1,5 +1,5 @@
 PORTNAME=	maolan-plugins
-DISTVERSION=	0.1.3
+DISTVERSION=	0.1.4
 CATEGORIES=	audio
 
 MAINTAINER=	meka@sys.it.com
