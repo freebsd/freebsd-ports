@@ -207,6 +207,8 @@ lib/mysql/plugin/handlersocket.so
 lib/mysql/plugin/locales.so
 lib/mysql/plugin/metadata_lock_info.so
 lib/mysql/plugin/password_reuse_check.so
+lib/mysql/plugin/plugin_name_ascii.so
+lib/mysql/plugin/plugin_name_non_ascii.so
 lib/mysql/plugin/provider_bzip2.so
 lib/mysql/plugin/provider_lz4.so
 lib/mysql/plugin/provider_lzma.so
@@ -220,7 +222,6 @@ lib/mysql/plugin/query_response_time.so
 lib/mysql/plugin/server_audit.so
 lib/mysql/plugin/simple_password_check.so
 lib/mysql/plugin/sql_errlog.so
-lib/mysql/plugin/test_pam_modules/pam_mariadb_mtr.so
 lib/mysql/plugin/test_sql_service.so
 lib/mysql/plugin/test_versioning.so
 lib/mysql/plugin/type_mysql_json.so
