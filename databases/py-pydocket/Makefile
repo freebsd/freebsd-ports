@@ -1,5 +1,5 @@
 PORTNAME=	pydocket
-DISTVERSION=	0.28.0
+DISTVERSION=	0.29.0
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}burner-redis>=0.1.7:databases/py-burner-redis@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cloudpickle>=3.1.1:devel/py-cloudpickle@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cronsim>=2.6:devel/py-cronsim@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}opentelemetry-api>0:devel/py-opentelemetry-api@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}opentelemetry-api>=1.45.1:devel/py-opentelemetry-api@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}prometheus-client>=0.21.1:net-mgmt/py-prometheus-client@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}py-key-value-aio>=0.3.0:devel/py-py-key-value-aio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-json-logger>=2.0.7:devel/py-python-json-logger@${PY_FLAVOR} \
