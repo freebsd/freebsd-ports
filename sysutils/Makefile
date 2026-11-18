@@ -65,6 +65,7 @@
     SUBDIR += async
     SUBDIR += atf-fvp
     SUBDIR += atf-master
+    SUBDIR += atf-mt7986
     SUBDIR += atf-rk3328
     SUBDIR += atf-rk3399
     SUBDIR += atf-sun50i_a64
