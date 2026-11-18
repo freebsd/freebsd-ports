@@ -1,3 +1,3 @@
-TIMESTAMP = 1784049993
-SHA256 (langchain_groq-1.1.3.tar.gz) = 890c099a55526bceafc3e696d123cb9d36464c6664a3ead34ae6e09e0d50caeb
-SIZE (langchain_groq-1.1.3.tar.gz) = 192228
+TIMESTAMP = 1794977082
+SHA256 (langchain_groq-1.2.0.tar.gz) = b87117d16a16f68c9c2ca0f31820b46f7064c19563baca848893fcb0bcb41a97
+SIZE (langchain_groq-1.2.0.tar.gz) = 192627

@@ -1,5 +1,5 @@
 PORTNAME=	langchain-groq
-DISTVERSION=	1.1.3
+DISTVERSION=	1.2.0
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -33,6 +33,8 @@ NO_ARCH=	yes
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_WRKSRC=	${WRKSRC}/tests/unit_tests
 
-# tests as of 1.1.3: 56 passed, 1 skipped, 1 xpassed, 27 warnings in 6.63s
+PYTEST_IGNORED_TESTS=	test_serdes
+
+# tests as of 1.2.0: 73 passed, 1 skipped, 1 deselected in 11.95s
 
 .include <bsd.port.mk>
