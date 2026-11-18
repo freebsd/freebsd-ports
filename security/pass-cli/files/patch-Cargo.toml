@@ -1,6 +1,6 @@
---- Cargo.toml.orig	2026-10-21 02:29:55 UTC
+--- Cargo.toml.orig	2026-11-16 07:26:38 UTC
 +++ Cargo.toml
-@@ -8,8 +8,6 @@ default-members = [
+@@ -6,8 +6,6 @@ default-members = [
      "pass-fs",
      "pass",
      "pass-derive",

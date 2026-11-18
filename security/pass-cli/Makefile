@@ -1,5 +1,5 @@
 PORTNAME=	pass-cli
-DISTVERSION=	2.7.0
+DISTVERSION=	2.7.1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITES_PROTON_ME}
 PKGNAMEPREFIX=	proton-
@@ -36,18 +36,19 @@ DISTFILES_PROTON_ME_TEMPLATE=	\
 		${CARGO_DIST_SUBDIR}/protom.me/%%NAME%%-%%VERSION%%${CARGO_CRATE_EXT}:%%INDEX%%
 # tomlq -r '.package[] | select(.source == "sparse+https://rust-registry.proton.me/index/") | "\(.name):\(.version)"' ${WRKSRC}/Cargo.lock
 CRATES_PROTON_ME_TUPLE=	\
-		gopenpgp-sys:0.3.9 \
-		muon:5.0.2 \
+		gopenpgp-sys:0.3.10 \
+		muon:6.0.1 \
 		muon-proc:0.6.0 \
 		muon-proc:0.7.0 \
 		muon-rest:0.1.0 \
-		muon-test:5.0.0 \
-		muon-test-server:0.1.3 \
-		proton-crypto:0.14.1 \
-		proton-crypto-account:0.20.1 \
-		proton-os-interface:0.3.5 \
-		proton-rpgp:0.9.0 \
-		proton-srp:0.8.4
+		muon-test:6.0.0 \
+		muon-test-server:0.1.4 \
+		proton-crypto:0.15.0 \
+		proton-crypto-account:0.20.2 \
+		proton-os-interface:0.3.6 \
+		proton-rpgp:0.10.0 \
+		proton-srp:0.8.4 \
+		proton-srp:0.9.0
 CRATES_PROTON_ME=	${CRATES_PROTON_ME_TUPLE:S/:/-/}
 .for name version in ${CRATES_PROTON_ME_TUPLE:S/:/ /}
 MASTER_SITES_PROTON_ME:=	\
