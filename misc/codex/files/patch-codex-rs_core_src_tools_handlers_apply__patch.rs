@@ -1,4 +1,4 @@
---- codex-rs/core/src/tools/handlers/apply_patch.rs.orig	1970-01-01 00:00:00 UTC
+--- codex-rs/core/src/tools/handlers/apply_patch.rs.orig	2026-11-18 02:28:28 UTC
 +++ codex-rs/core/src/tools/handlers/apply_patch.rs
 @@ -48,6 +48,7 @@ use codex_exec_server::ExecutorFileSystem;
  use codex_apply_patch::Hunk;
@@ -17,7 +17,7 @@
 +    sandbox: Option<&'a FileSystemSandboxContext>,
 +) -> Option<&'a FileSystemSandboxContext> {
 +    if cfg!(any(target_os = "openbsd", target_os = "freebsd"))
-+        && !environment.environment.is_remote()
++        && !environment.environment().is_remote()
 +        && environment
 +            .permission_profile_with_workspace_roots()
 +            .file_system_sandbox_policy()
@@ -32,9 +32,9 @@
  /// Handles freeform `apply_patch` requests and routes verified patches to the
  /// selected environment filesystem.
  #[derive(Default)]
-@@ -433,7 +451,8 @@ pub(crate) async fn intercept_apply_patch(
-     tool_name: &str,
- ) -> Result<Option<FunctionToolOutput>, FunctionCallError> {
+@@ -456,7 +474,8 @@ pub(crate) async fn prepare_intercepted_patch(
+     step_context: &StepContext,
+ ) -> Result<Option<ApplyPatchRequest>, FunctionCallError> {
      let sandbox = turn_environment.sandbox_context(/*additional_permissions*/ None);
 -    match codex_apply_patch::maybe_parse_apply_patch_verified(command, cwd, fs, Some(&sandbox))
 +    let verification_sandbox = apply_patch_file_system_sandbox(&turn_environment, Some(&sandbox));
@@ -42,9 +42,9 @@
          .await
      {
          codex_apply_patch::MaybeApplyPatchVerified::Body(changes) => {
-@@ -476,11 +495,13 @@ pub(crate) async fn prepare_patch_request(
+@@ -490,11 +509,13 @@ pub(crate) async fn prepare_patch_request(
      };
-     let fs = turn_environment.environment.get_filesystem();
+     let fs = turn_environment.environment().get_filesystem();
      let sandbox = turn_environment.sandbox_context(/*additional_permissions*/ None);
 +    let verification_sandbox =
 +        apply_patch_file_system_sandbox(turn_environment, Some(&sandbox));

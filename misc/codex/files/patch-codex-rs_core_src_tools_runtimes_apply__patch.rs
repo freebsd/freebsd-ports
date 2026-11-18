@@ -1,4 +1,4 @@
---- codex-rs/core/src/tools/runtimes/apply_patch.rs.orig	1970-01-01 00:00:00 UTC
+--- codex-rs/core/src/tools/runtimes/apply_patch.rs.orig	2026-11-18 02:28:28 UTC
 +++ codex-rs/core/src/tools/runtimes/apply_patch.rs
 @@ -5,6 +5,7 @@ use crate::session::turn_context::TurnEnvironment;
  //! sandboxing enforced by the explicit filesystem sandbox context.
@@ -10,7 +10,7 @@
  use crate::tools::sandboxing::ExecApprovalRequirement;
 @@ -178,6 +179,7 @@ impl ToolRuntime<ApplyPatchRequest, ApplyPatchRuntimeO
          let started_at = Instant::now();
-         let fs = req.turn_environment.environment.get_filesystem();
+         let fs = req.turn_environment.environment().get_filesystem();
          let sandbox = Self::file_system_sandbox_context_for_attempt(req, attempt);
 +        let sandbox = apply_patch_file_system_sandbox(&req.turn_environment, sandbox.as_ref());
          let mut stdout = Vec::new();

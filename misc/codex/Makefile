@@ -1,6 +1,6 @@
 PORTNAME=	codex
 DISTVERSIONPREFIX=	rust-v
-DISTVERSION=	0.167.0
+DISTVERSION=	0.170.0
 CATEGORIES=	misc devel
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTFILE_DEFAULT} \
@@ -87,9 +87,9 @@ COMPLETIONS_PLIST_FILES=etc/bash_completion.d/${PORTNAME} \
 			share/fish/completions/${PORTNAME}.fish \
 			share/zsh/site-functions/_${PORTNAME}
 
-V8_GH_ACCOUNT=		seanh-oai
+V8_GH_ACCOUNT=		openai-oss-forks
 V8_GH_PROJECT=		rusty_v8
-V8_GH_TAGNAME=		350c5a859a9b3c84ab8701b3ad51e3b7699b30c0
+V8_GH_TAGNAME=		90a65f887a0c0f048f3784afbcb320b373c8a2e0
 V8_SUBMODULES_TUPLE=	\
 		https://github.com/denoland/chromium_build 2c779f961da7f5632d6836113112179e67938868 build build-2c779f961da7f5632d6836113112179e67938868.tar.gz \
 		https://chromium.googlesource.com/chromium/src/buildtools 0d8a204ff274ee12fa9ace5e3ffd8e5fbcb54926 buildtools buildtools-0d8a204ff274ee12fa9ace5e3ffd8e5fbcb54926.tar.gz \
