@@ -61,7 +61,7 @@ OPTIONS_DEFAULT=PROXY
 PROXY_DESC=	Enable LiteLLM proxy server support
 
 PROXY_RUN_DEPENDS=	\
-		${PYTHON_PKGNAMEPREFIX}gunicorn>=23.0.0<27.0:www/py-gunicorn@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}gunicorn>=23.0.0:www/py-gunicorn@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}uvicorn>=0.33.0<1.0:www/py-uvicorn@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}granian>=2.7.4<3.0:www/py-granian@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}uvloop>=0.22.1<1.0:devel/py-uvloop@${PY_FLAVOR} \
