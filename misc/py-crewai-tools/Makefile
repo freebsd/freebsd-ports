@@ -1,5 +1,5 @@
 PORTNAME=	crewai-tools
-DISTVERSION=	1.15.34
+DISTVERSION=	1.15.41
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ LICENSE=	MIT
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup4>=4.13.4:www/py-beautifulsoup4@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}crewai==1.15.34:misc/py-crewai@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}crewai>=1.15.41:misc/py-crewai@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pymupdf>=1.26.6:print/py-PyMuPDF@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-docx>=1.2.0:textproc/py-python-docx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytube>=15.0.0:multimedia/py-pytube@${PY_FLAVOR} \
