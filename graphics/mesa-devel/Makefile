@@ -1,6 +1,6 @@
 PORTNAME=	mesa
-DISTVERSION=	26.3-branchpoint-1934
-DISTVERSIONSUFFIX=	-g6d4d60f15c9
+DISTVERSION=	26.3-branchpoint-2662
+DISTVERSIONSUFFIX=	-g48776e71f59
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	-devel
 
@@ -108,8 +108,14 @@ OPENCL_BUILD_DEPENDS=	bindgen:devel/rust-bindgen-cli \
 			rustc:lang/${RUST_DEFAULT}
 OPENCL_LIB_DEPENDS=	libLLVMSPIRVLib.so.${OPENCL_SOVERSION}:devel/spirv-llvm-translator@${LLVM_PORT:T}
 OPENCL_RUN_DEPENDS=	libclc-${LLVM_PORT:T}>0:devel/libclc@${LLVM_PORT:T}
+OPENCL_USE=		GITHUB=nodefault
+OPENCL_GH_TUPLE=	dtolnay:proc-macro2:1.0.86:proc_macro2_rs \
+			dtolnay:quote:1.0.35:quote_rs \
+			dtolnay:syn:2.0.87:syn_rs \
+			dtolnay:unicode-ident:1.0.12:unicode_ident_rs
 OPENCL_SOVERSION=	${LLVM_VERSION}${${LLVM_VERSION}>=18:?.1:}
-OPENCL_CONFIGURE_ENV=	PKG_CONFIG_PATH="${LLVM_PREFIX}/libdata/pkgconfig"
+OPENCL_CONFIGURE_ENV=	PKG_CONFIG_PATH="${LLVM_PREFIX}/libdata/pkgconfig" \
+			MESON_PACKAGE_CACHE_DIR="${WRKDIR}"
 OPENCL_MESON_FALSE=	b_lundef # environ
 OPENCL_MESON_TRUE=	gallium-rusticl
 OPENCL_IMPLIES=		LLVM ${"${PORT_OPTIONS:Miris}":?iris:radeonsi} # any from OPTIONS_GROUP_GALLIUM

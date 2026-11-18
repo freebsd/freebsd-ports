@@ -1,0 +1,57 @@
+Temporarily revert https://gitlab.freedesktop.org/mesa/mesa/-/commit/3b5d7f1f1887
+until graphics/wayland-protocols >= 1.50 update
+
+--- meson.build.orig	2026-11-18 22:24:03 UTC
++++ meson.build
+@@ -2282,7 +2282,7 @@ if with_platform_wayland
+ 
+ with_wayland_bind_display = with_platform_wayland and get_option('legacy-wayland').contains('bind-wayland-display')
+ if with_platform_wayland
+-  dep_wl_protocols = dependency('wayland-protocols', version : '>= 1.50', default_options: [ 'tests=false' ])
++  dep_wl_protocols = dependency('wayland-protocols', version : '>= 1.49', default_options: [ 'tests=false' ])
+   dep_wayland_client = dependency('wayland-client', version : '>=1.18')
+   dep_wayland_server = dependency('wayland-server', version : '>=1.18')
+   if with_egl
+--- src/vulkan/wsi/wsi_common_wayland.c.orig	2026-11-18 22:24:03 UTC
++++ src/vulkan/wsi/wsi_common_wayland.c
+@@ -1497,6 +1497,12 @@ static const struct wp_presentation_listener presentat
+ #define MESA_WL_FIXES_VERSION 1
+ #endif
+ 
++#if defined(WP_PRESENTATION_FEEDBACK_KIND_FIXED_RATE_SINCE_VERSION)
++#define MESA_WP_PRESENTATION_VERSION 3
++#else
++#define MESA_WP_PRESENTATION_VERSION 2
++#endif
++
+ static void
+ registry_handle_global(void *data, struct wl_registry *registry,
+                        uint32_t name, const char *interface, uint32_t version)
+@@ -1529,7 +1535,7 @@ registry_handle_global(void *data, struct wl_registry 
+    if (strcmp(interface, wp_presentation_interface.name) == 0) {
+       display->wp_presentation_notwrapped =
+          wl_registry_bind(registry, name, &wp_presentation_interface,
+-                          MIN2(version, WP_PRESENTATION_FEEDBACK_KIND_FIXED_RATE_SINCE_VERSION));
++                          MIN2(version, MESA_WP_PRESENTATION_VERSION));
+       wp_presentation_add_listener(display->wp_presentation_notwrapped, &presentation_listener, display);
+    } else if (strcmp(interface, wp_tearing_control_manager_v1_interface.name) == 0) {
+       display->tearing_control_manager =
+@@ -3113,6 +3119,7 @@ presentation_handle_presented(void *data,
+    struct wsi_wl_swapchain *chain = id->chain;
+    uint64_t target_time = id->target_time;
+ 
++#if MESA_WP_PRESENTATION_VERSION >= 3
+    if (wp_presentation_get_version(chain->wsi_wl_surface->display->wp_presentation_notwrapped) >= 3) {
+       if (flags & WP_PRESENTATION_FEEDBACK_KIND_FIXED_RATE) {
+          wsi_swapchain_present_timing_update_refresh_rate(&chain->base, refresh, refresh, 1000);
+@@ -3122,7 +3129,9 @@ presentation_handle_presented(void *data,
+          /* Just report Unknown if compositor doesn't tell us what kind of refresh rate we're running at. */
+          wsi_swapchain_present_timing_update_refresh_rate(&chain->base, refresh, 0, 0);
+       }
+-   } else {
++   } else
++#endif
++   {
+       /* Prior to v3 of presentation time, we can't know if we're running VRR
+        * or FRR so just report "Unknown" instead. */
+       wsi_swapchain_present_timing_update_refresh_rate(&chain->base, refresh, 0, 0);
