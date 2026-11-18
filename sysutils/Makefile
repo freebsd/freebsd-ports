@@ -414,6 +414,7 @@
     SUBDIR += filetype
     SUBDIR += filewatcherd
     SUBDIR += finfo
+    SUBDIR += fiptool
     SUBDIR += firstboot-cloudsetup
     SUBDIR += firstboot-freebsd-update
     SUBDIR += firstboot-pkg-upgrade

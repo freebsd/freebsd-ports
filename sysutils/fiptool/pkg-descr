@@ -1,0 +1,3 @@
+fiptool creates, inspects and updates Firmware Image Packages (FIP), the
+container format of Arm Trusted Firmware-A. Boot loaders on several Arm
+platforms read the next boot stages (such as BL31 and U-Boot) from a FIP.

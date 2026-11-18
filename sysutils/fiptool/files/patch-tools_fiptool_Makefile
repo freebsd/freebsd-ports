@@ -1,0 +1,12 @@
+--- tools/fiptool/Makefile.orig	2026-10-16 07:05:43 UTC
++++ tools/fiptool/Makefile
+@@ -15,7 +15,8 @@ FIPTOOL_DEFINES += _GNU_SOURCE _XOPEN_SOURCE=700
+ STATIC ?= 0
+ 
+ FIPTOOL_DEFINES += _GNU_SOURCE _XOPEN_SOURCE=700
+-FIPTOOL_CFLAGS := -Wall -Werror -pedantic -std=c99
++FIPTOOL_CFLAGS := -Wall -pedantic -std=c99
++FIPTOOL_CPPFLAGS := ${CPPFLAGS}
+ ifeq (${DEBUG},1)
+   FIPTOOL_CFLAGS += -g -O0 -DDEBUG
+ else
