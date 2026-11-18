@@ -9,3 +9,6 @@ kernel=u-boot.bin
 [pi4]
 hdmi_safe=1
 armstub=armstub8-gic.bin
+
+[pi5]
+device_tree_address=
