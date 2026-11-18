@@ -1,7 +1,7 @@
 # pkg-help formatted with fmt 59 63
 
 PORTNAME=	bind
-DISTVERSION=	9.21.27
+DISTVERSION=	9.21.28
 .if defined(BIND_TOOLS_SLAVE)
 # dns/bind-tools here
 PORTREVISION=	0
@@ -87,7 +87,7 @@ SUB_FILES=	named.conf pkg-message
 PORTDOCS=	*
 .endif # BIND_TOOLS_SLAVE
 
-OPTIONS_DEFINE=		DNSTAP DOCS GEOIP IDN OVERRIDECACHE QUERYTRACE \
+OPTIONS_DEFINE=		DNSTAP DOCS GEOIP IDN QUERYTRACE \
 			START_LATE
 OPTIONS_DEFAULT=	DNSTAP ${${OSREL:R} < 15:?GSSAPI_NONE:GSSAPI_BASE} IDN \
 			STATS_JSON STATS_XML
@@ -99,7 +99,7 @@ OPTIONS_SINGLE=		GSSAPI
 OPTIONS_SINGLE_GSSAPI=	GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT GSSAPI_NONE
 
 .if defined(BIND_TOOLS_SLAVE)
-OPTIONS_EXCLUDE=	DOCS GEOIP OVERRIDECACHE QUERYTRACE START_LATE \
+OPTIONS_EXCLUDE=	DOCS GEOIP QUERYTRACE START_LATE \
 			STATS_JSON STATS_XML
 .endif # BIND_TOOLS_SLAVE
 
@@ -110,7 +110,6 @@ GSSAPI_BASE_DESC=	Using ${${OSREL:R} < 15:?Heimdal in base (nsupdate is broken):
 GSSAPI_HEIMDAL_DESC=	Using security/heimdal (nsupdate is broken)
 GSSAPI_MIT_DESC=	Using security/krb5
 GSSAPI_NONE_DESC=	Disable
-OVERRIDECACHE_DESC=	Use the override-cache patch
 QUERYTRACE_DESC=	Enable the very verbose query tracelogging
 START_LATE_DESC=	Start BIND late in the boot process (see help)
 STATS_DESC=		Statistics channels
@@ -150,8 +149,6 @@ GSSAPI_NONE_MESON_ON=	-Dgssapi=disabled
 IDN_LIB_DEPENDS=	libidn2.so:dns/libidn2
 IDN_USES=		iconv
 IDN_MESON_ENABLED=	idn
-
-OVERRIDECACHE_EXTRA_PATCHES=	${FILESDIR}/extrapatch-bind-min-override-ttl
 
 QUERYTRACE_MESON_ON=	-Dtrace-logging=query
 
@@ -193,9 +190,7 @@ SUB_LIST+=	ENGINES=${LOCALBASE}/lib/engines
 regen-patches:
 	cd ${.CURDIR} ; \
 		make clean ; \
-		mv files/extrapatch-bind-min-override-ttl files/patch-bind-min-override-ttl ; \
-		make extract do-patch makepatch BATCH= NO_IGNORE= PATCH_DEBUG=yes EXTRA_PATCHES= || : ; \
-		mv files/patch-bind-min-override-ttl files/extrapatch-bind-min-override-ttl
+		make extract do-patch makepatch BATCH= NO_IGNORE= PATCH_DEBUG=yes EXTRA_PATCHES= || : ;
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/mtree
