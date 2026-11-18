@@ -1,5 +1,5 @@
 #
-# NOTE: This port exits to support a small number of ports:
+# NOTE: This port exists to support a small number of ports:
 #  - cad/calculix - Extremely non-modern code, requires clang 15 or less
 #  - emulators/libretro-kronos - Building with reasonable amounts of RAM
 #
