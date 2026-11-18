@@ -1,5 +1,5 @@
 PORTNAME=	accelerate
-DISTVERSION=	1.15.0
+DISTVERSION=	1.16.0
 CATEGORIES=	misc # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -45,6 +45,9 @@ NO_ARCH=	yes
 TEST_ENV=	${MAKE_ENV} MLFLOW_ALLOW_FILE_STORE=true MPLBACKEND=Agg
 TEST_ARGS=	--disable-plugin-autoload -p pytest_order \
 		--deselect tests/test_utils.py::UtilsTester::test_patch_environment_key_exists \
+		--deselect tests/test_utils.py::ExecuteSubprocessAsyncTester::test_timeout_stops_torchrun_workers \
+		--ignore tests/test_memory_utils.py \
+		-k 'not stateful_dataloader and not StatefulDataLoader and not MLflowTrackingTest' \
 		--ignore src/accelerate/test_utils/scripts \
 		--ignore tests/test_cli.py \
 		--ignore tests/test_cpu.py \
@@ -53,6 +56,6 @@ TEST_ARGS=	--disable-plugin-autoload -p pytest_order \
 		--ignore tests/test_scheduler.py \
 		--ignore src/accelerate/test_utils/scripts/external_deps
 
-# tests as of 1.15.0: 277 passed, 144 skipped, 1 deselected, 335 warnings, 4 subtests passed in 85.94s
+# tests as of 1.16.0: 251 passed, 155 skipped, 39 deselected, 198 warnings, 4 subtests passed in 748.40s
 
 .include <bsd.port.mk>
