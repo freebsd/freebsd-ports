@@ -1,0 +1,21 @@
+--- pyproject.toml.orig	2026-11-17 00:00:00 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@
+ [build-system]
+-requires = ["uv_build>=0.9.6,<0.14.0"]
+-build-backend = "uv_build"
++requires = ["flit-core>=3.11"]
++build-backend = "flit_core.buildapi"
+
+ [tool.uv.build-backend]
+ source-include = ["tests/**"]
+@@ -8,6 +8,9 @@
+ module-name = "cachecontrol"
+ module-root = ""
+
++[tool.flit.module]
++name = "cachecontrol"
++
+ [tool.mypy]
+ show_error_codes = true
+ strict = true
