@@ -1,0 +1,19 @@
+--- pyproject.toml.orig	2026-11-17 00:00:00 UTC
++++ pyproject.toml
+@@ -1,13 +1,12 @@
+ [build-system]
+-requires = ["uv_build>=0.13.8,<0.14"]
+-build-backend = "uv_build"
++requires = ["setuptools>=61.0"]
++build-backend = "setuptools.build_meta"
+
+ [project]
+ name = "janus"
+ version = "2.1.1"
+ description = "Mixed sync-async queue to interoperate between asyncio tasks and classic threads"
+-license = "Apache-2.0"
+-license-files = ["LICENSE"]
++license = {text = "Apache-2.0"}
+ requires-python = ">=3.11"
+ keywords = [
+     "janus",
