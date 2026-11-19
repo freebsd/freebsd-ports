@@ -107,7 +107,6 @@
     SUBDIR += innotop
     SUBDIR += iowow
     SUBDIR += ip4r
-    SUBDIR += ipa_sdb
     SUBDIR += iplike
     SUBDIR += jdb
     SUBDIR += jetbrains-datagrip
