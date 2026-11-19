@@ -1,4 +1,4 @@
---- media/base/media_switches.cc.orig	2026-06-23 23:37:18 UTC
+--- media/base/media_switches.cc.orig	2026-11-19 08:31:38 UTC
 +++ media/base/media_switches.cc
 @@ -20,7 +20,7 @@
  #include "ui/gl/gl_features.h"
@@ -100,7 +100,7 @@
  // Reduces the number of buffers needed in the output video frame pool to
  // populate the Renderer pipeline for hardware accelerated VideoDecoder in
  // non-low latency scenarios.
-@@ -1768,7 +1790,7 @@ bool IsSystemLoopbackCaptureSupported() {
+@@ -1776,7 +1798,7 @@ bool IsSystemLoopbackCaptureSupported() {
  #elif BUILDFLAG(IS_MAC)
    return (IsMacSckSystemLoopbackCaptureSupported() ||
            IsMacCatapSystemLoopbackCaptureSupported());
