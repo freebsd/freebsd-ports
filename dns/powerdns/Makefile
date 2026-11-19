@@ -1,8 +1,12 @@
 PORTNAME=	powerdns
 DISTVERSION=	5.1.5
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	https://downloads.powerdns.com/releases/
 DISTNAME=	pdns-${DISTVERSION}
+
+PATCH_SITES=	https://patch-diff.githubusercontent.com/raw/PowerDNS/pdns/pull/
+PATCHFILES=		18278.diff:-p1 18330.diff:-p1
 
 MAINTAINER=	tremere@cainites.net
 COMMENT=	Advanced DNS server with multiple backends including SQL
