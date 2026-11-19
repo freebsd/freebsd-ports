@@ -1,8 +1,8 @@
 PORTNAME=	otelcol-contrib
-PORTVERSION=	0.138.0
+PORTVERSION=	0.165.0
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/open-telemetry/opentelemetry-collector-releases/releases/download/v${PORTVERSION}/
-DISTFILES_amd64=	${PORTNAME}_${DISTVERSION}_linux_amd64.tar.gz
+DISTNAME=	${PORTNAME}_${DISTVERSION}_linux_${ARCH}
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	OpenTelemetry Collector Contrib
@@ -10,7 +10,7 @@ WWW=		https://github.com/open-telemetry/opentelemetry-collector-contrib/
 
 LICENSE=	APACHE20
 
-ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=	amd64 arm64
 
 USES=		linux:rl9
 
@@ -20,6 +20,12 @@ NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/otelcol-contrib \
 		%%DATADIR%%/README.md \
 		%%DATADIR%%/config.yaml
+
+.if make(makesum)
+.  for arch in ${ONLY_FOR_ARCHS}
+DISTFILES+=	${PORTNAME}_${DISTVERSION}_linux_${arch}${EXTRACT_SUFX}
+.  endfor
+.endif
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
