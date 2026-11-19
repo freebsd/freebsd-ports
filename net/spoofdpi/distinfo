@@ -1,6 +1,6 @@
-TIMESTAMP = 1794991770
-SHA256 (xvzc-spoofdpi-v1.5.6_GH0.tar.gz) = 30b1bc3e2cb3b32de9240fde660643601bea41735d1286acc7f279fd2fc6b2da
-SIZE (xvzc-spoofdpi-v1.5.6_GH0.tar.gz) = 2019630
+TIMESTAMP = 1795079432
+SHA256 (xvzc-spoofdpi-v1.6.0_GH0.tar.gz) = ef7c51bf734fc98437a97859627d10c81c5d231dbca885761badda51df4beed7
+SIZE (xvzc-spoofdpi-v1.6.0_GH0.tar.gz) = 2021748
 SHA256 (BurntSushi-toml-v1.5.0_GH0.tar.gz) = 723ede1a61ca8311046f840020e485dec3ceb2e614d1a539cd154375bdd7b8cb
 SIZE (BurntSushi-toml-v1.5.0_GH0.tar.gz) = 118644
 SHA256 (aymanbagabas-go-osc52-v2.0.1_GH0.tar.gz) = dad92f43db3cd17e7395db59533283b5888c2780fa1b2cb67344a9feaa3291e0
