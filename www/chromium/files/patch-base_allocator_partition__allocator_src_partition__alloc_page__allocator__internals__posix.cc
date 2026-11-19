@@ -1,4 +1,4 @@
---- base/allocator/partition_allocator/src/partition_alloc/page_allocator_internals_posix.cc.orig	2026-10-18 13:29:39 UTC
+--- base/allocator/partition_allocator/src/partition_alloc/page_allocator_internals_posix.cc.orig	2026-11-19 12:25:27 UTC
 +++ base/allocator/partition_allocator/src/partition_alloc/page_allocator_internals_posix.cc
 @@ -45,7 +45,7 @@ uint32_t SecTaskGetCodeSignStatus(SecTaskRef task) API
  
@@ -9,12 +9,12 @@
  struct __ifunc_arg_t;
  
  #include "partition_alloc/aarch64_support.h"
-@@ -232,7 +232,7 @@ size_t GetZeroSegmentSizeFromOS() {
-   return static_cast<size_t>(address);
+@@ -273,7 +273,7 @@ WellKnownReadOnlyRegions GetWellKnownReadOnlyRegions(u
  }
  
--#elif PA_BUILDFLAG(IS_LINUX) || PA_BUILDFLAG(IS_CHROMEOS)
-+#elif PA_BUILDFLAG(IS_LINUX) || PA_BUILDFLAG(IS_CHROMEOS) || PA_BUILDFLAG(IS_BSD)
+ #elif PA_BUILDFLAG(IS_LINUX) || PA_BUILDFLAG(IS_CHROMEOS) || \
+-    PA_BUILDFLAG(IS_ANDROID)
++    PA_BUILDFLAG(IS_ANDROID) || PA_BUILDFLAG(IS_BSD)
  
- size_t GetZeroSegmentSizeFromOS() {
+ WellKnownReadOnlyRegions GetWellKnownReadOnlyRegions(uintptr_t address_limit) {
    // TODO(40925855): Support larger `mmap_min_addr`.

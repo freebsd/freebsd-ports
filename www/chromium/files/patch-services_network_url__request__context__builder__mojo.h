@@ -1,4 +1,4 @@
---- services/network/url_request_context_builder_mojo.h.orig	2026-11-11 14:44:17 UTC
+--- services/network/url_request_context_builder_mojo.h.orig	2026-11-19 12:25:27 UTC
 +++ services/network/url_request_context_builder_mojo.h
 @@ -14,7 +14,7 @@
  #include "services/network/url_request_context_owner.h"
@@ -18,7 +18,7 @@
    void SetMojoSystemProxyResolver(
        mojo::PendingRemote<proxy_resolver::mojom::SystemProxyResolver>
            mojo_system_proxy_resolver);
-@@ -92,7 +92,7 @@ class COMPONENT_EXPORT(NETWORK_SERVICE) URLRequestCont
+@@ -101,7 +101,7 @@ class COMPONENT_EXPORT(NETWORK_SERVICE) URLRequestCont
    mojo::PendingRemote<proxy_resolver::mojom::ProxyResolverFactory>
        mojo_proxy_resolver_factory_;
  

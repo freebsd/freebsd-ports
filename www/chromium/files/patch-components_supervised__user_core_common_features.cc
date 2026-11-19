@@ -1,4 +1,4 @@
---- components/supervised_user/core/common/features.cc.orig	2026-10-18 13:29:39 UTC
+--- components/supervised_user/core/common/features.cc.orig	2026-11-19 12:25:27 UTC
 +++ components/supervised_user/core/common/features.cc
 @@ -30,7 +30,7 @@ BASE_FEATURE(kAllowSubframeLocalWebApprovals,
  #endif
@@ -9,7 +9,7 @@
  const int kLocalWebApprovalBottomSheetLoadTimeoutDefaultValueMs = 5000;
  
  const base::FeatureParam<int> kLocalWebApprovalBottomSheetLoadTimeoutMs{
-@@ -69,7 +69,7 @@ BASE_FEATURE(kSupervisedUserVerificationPageOnAndroid,
+@@ -71,7 +71,7 @@ BASE_FEATURE(kSupervisedUserVerificationPageOnAndroid,
               base::FEATURE_DISABLED_BY_DEFAULT);
  #endif
  

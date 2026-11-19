@@ -1,6 +1,6 @@
---- components/sync/base/pref_names.h.orig	2026-10-18 13:29:39 UTC
+--- components/sync/base/pref_names.h.orig	2026-11-19 12:25:27 UTC
 +++ components/sync/base/pref_names.h
-@@ -146,7 +146,7 @@ inline constexpr char kMigrateExtensionsFromLocalToAcc
+@@ -141,7 +141,7 @@ inline constexpr char kMigrateExtensionsFromLocalToAcc
  inline constexpr char kMigrateThemeFromLocalToAccount[] =
      "sync.migrate_theme_from_local_to_account";
  

@@ -1,6 +1,6 @@
---- v8/src/execution/isolate.cc.orig	2026-11-16 10:30:55 UTC
+--- v8/src/execution/isolate.cc.orig	2026-11-19 12:25:27 UTC
 +++ v8/src/execution/isolate.cc
-@@ -181,6 +181,10 @@
+@@ -180,6 +180,10 @@
  #include "src/execution/simulator-base.h"
  #endif
  

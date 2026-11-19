@@ -1,4 +1,4 @@
---- device/vr/openxr/openxr_render_loop.h.orig	2026-11-11 14:44:17 UTC
+--- device/vr/openxr/openxr_render_loop.h.orig	2026-11-19 12:25:27 UTC
 +++ device/vr/openxr/openxr_render_loop.h
 @@ -38,7 +38,7 @@
  #include "third_party/openxr/src/include/openxr/openxr.h"
@@ -18,7 +18,7 @@
  class XRThread : public base::Thread {
   public:
    explicit XRThread(const char* name) : base::Thread(name) {}
-@@ -282,7 +282,7 @@ class OpenXrRenderLoop : public XRThread,
+@@ -284,7 +284,7 @@ class OpenXrRenderLoop : public XRThread,
    void OnWebXrTokenSignaled(int16_t frame_index,
                              std::vector<LayerId> updated_layers,
                              std::unique_ptr<gfx::GpuFence> gpu_fence);

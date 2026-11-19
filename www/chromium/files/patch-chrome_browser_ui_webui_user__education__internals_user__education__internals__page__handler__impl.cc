@@ -1,4 +1,4 @@
---- chrome/browser/ui/webui/user_education_internals/user_education_internals_page_handler_impl.cc.orig	2026-10-18 13:29:39 UTC
+--- chrome/browser/ui/webui/user_education_internals/user_education_internals_page_handler_impl.cc.orig	2026-11-19 12:25:27 UTC
 +++ chrome/browser/ui/webui/user_education_internals/user_education_internals_page_handler_impl.cc
 @@ -52,7 +52,7 @@
  #include "ui/base/webui/resource_path.h"
@@ -18,7 +18,7 @@
    return g_browser_process->GetFeatures()->whats_new_registry();
  #else
    return nullptr;
-@@ -940,7 +940,7 @@ void UserEducationInternalsPageHandlerImpl::ClearWhats
+@@ -967,7 +967,7 @@ void UserEducationInternalsPageHandlerImpl::ClearWhats
  }
  
  void UserEducationInternalsPageHandlerImpl::LaunchWhatsNewStaging() {

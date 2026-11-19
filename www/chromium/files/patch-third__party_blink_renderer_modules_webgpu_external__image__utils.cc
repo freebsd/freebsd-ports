@@ -1,6 +1,6 @@
---- third_party/blink/renderer/modules/webgpu/external_image_utils.cc.orig	2026-10-18 13:29:39 UTC
+--- third_party/blink/renderer/modules/webgpu/external_image_utils.cc.orig	2026-11-19 12:25:27 UTC
 +++ third_party/blink/renderer/modules/webgpu/external_image_utils.cc
-@@ -423,7 +423,7 @@ bool CopyStaticImageBitmapToWGPUTexture(
+@@ -424,7 +424,7 @@ bool CopyStaticImageBitmapToWGPUTexture(
  // on linux platform.
  // TODO(crbug.com/1424119): using a webgpu mailbox texture on the OpenGLES
  // backend is failing for unknown reasons.

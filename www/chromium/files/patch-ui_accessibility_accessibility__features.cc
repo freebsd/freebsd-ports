@@ -1,15 +1,6 @@
---- ui/accessibility/accessibility_features.cc.orig	2026-11-11 14:44:17 UTC
+--- ui/accessibility/accessibility_features.cc.orig	2026-11-19 12:25:27 UTC
 +++ ui/accessibility/accessibility_features.cc
-@@ -456,7 +456,7 @@ bool IsScreenAITestModeEnabled() {
-   return base::FeatureList::IsEnabled(::features::kScreenAITestMode);
- }
- 
--#if BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
- BASE_FEATURE(kScreenAIPartitionAllocAdvancedChecksEnabled,
-              base::FEATURE_DISABLED_BY_DEFAULT);
- #endif
-@@ -497,7 +497,7 @@ bool IsMacAccessibilityTextOperationEnabled() {
+@@ -467,7 +467,7 @@ bool IsMacAccessibilityTextOperationEnabled() {
  }
  #endif  // BUILDFLAG(IS_MAC)
  

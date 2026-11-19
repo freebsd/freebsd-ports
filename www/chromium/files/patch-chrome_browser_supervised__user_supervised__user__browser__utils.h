@@ -1,7 +1,7 @@
---- chrome/browser/supervised_user/supervised_user_browser_utils.h.orig	2026-10-18 13:29:39 UTC
+--- chrome/browser/supervised_user/supervised_user_browser_utils.h.orig	2026-11-19 12:25:27 UTC
 +++ chrome/browser/supervised_user/supervised_user_browser_utils.h
-@@ -53,14 +53,14 @@ std::string GetAccountGivenName(Profile& profile);
- void AssertChildStatusOfTheUser(Profile* profile, bool is_child);
+@@ -47,14 +47,14 @@ ProfileSelections BuildProfileSelectionsForRegularAndG
+ std::string GetAccountGivenName(Profile& profile);
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || \
 -    BUILDFLAG(IS_ANDROID)

@@ -1,4 +1,4 @@
---- chrome/browser/ui/web_applications/web_app_ui_manager_impl.cc.orig	2026-11-11 14:44:17 UTC
+--- chrome/browser/ui/web_applications/web_app_ui_manager_impl.cc.orig	2026-11-19 12:25:27 UTC
 +++ chrome/browser/ui/web_applications/web_app_ui_manager_impl.cc
 @@ -463,7 +463,7 @@ bool WebAppUiManagerImpl::IsAppMigrationDialogShowing(
      return false;
@@ -9,7 +9,7 @@
    BrowserView* browser_view = BrowserView::GetBrowserViewForBrowser(window);
    return browser_view &&
           browser_view->GetProperty(kIsPwaUpdateDialogShowingKey) &&
-@@ -1200,7 +1200,7 @@ void WebAppUiManagerImpl::ClearWebAppSiteDataIfNeeded(
+@@ -1201,7 +1201,7 @@ void WebAppUiManagerImpl::ClearWebAppSiteDataIfNeeded(
  }
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

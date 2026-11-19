@@ -1,4 +1,4 @@
---- gpu/command_buffer/service/shared_context_state.cc.orig	2026-10-18 13:29:39 UTC
+--- gpu/command_buffer/service/shared_context_state.cc.orig	2026-11-19 12:25:27 UTC
 +++ gpu/command_buffer/service/shared_context_state.cc
 @@ -68,7 +68,7 @@
  #include "gpu/vulkan/vulkan_implementation.h"
@@ -18,7 +18,7 @@
        external_semaphore_pool_ = std::make_unique<ExternalSemaphorePool>(this);
  #endif
      }
-@@ -347,7 +347,7 @@ SharedContextState::~SharedContextState() {
+@@ -349,7 +349,7 @@ SharedContextState::~SharedContextState() {
      UnbindCacheFromCurrentOpenGLContext();
    }
  

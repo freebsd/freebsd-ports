@@ -1,4 +1,4 @@
---- gpu/command_buffer/service/shared_context_state.h.orig	2026-11-11 14:44:17 UTC
+--- gpu/command_buffer/service/shared_context_state.h.orig	2026-11-19 12:25:27 UTC
 +++ gpu/command_buffer/service/shared_context_state.h
 @@ -274,7 +274,7 @@ class GPU_GLES2_EXPORT SharedContextState
    gpu::MemoryTypeTracker* memory_type_tracker() {
@@ -9,7 +9,7 @@
    ExternalSemaphorePool* external_semaphore_pool() {
      return external_semaphore_pool_.get();
    }
-@@ -445,7 +445,7 @@ class GPU_GLES2_EXPORT SharedContextState
+@@ -446,7 +446,7 @@ class GPU_GLES2_EXPORT SharedContextState
    base::Time last_gl_check_graphics_reset_status_;
    bool disable_check_reset_status_throttling_for_test_ = false;
  

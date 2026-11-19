@@ -1,6 +1,6 @@
---- third_party/angle/src/common/system_utils.cpp.orig	2024-01-30 07:53:34 UTC
+--- third_party/angle/src/common/system_utils.cpp.orig	2026-11-19 12:25:27 UTC
 +++ third_party/angle/src/common/system_utils.cpp
-@@ -25,7 +25,7 @@ namespace angle
+@@ -22,7 +22,7 @@ namespace angle
  {
  std::string GetExecutableName()
  {

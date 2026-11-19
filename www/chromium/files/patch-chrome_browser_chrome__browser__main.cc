@@ -1,6 +1,6 @@
---- chrome/browser/chrome_browser_main.cc.orig	2026-11-11 14:44:17 UTC
+--- chrome/browser/chrome_browser_main.cc.orig	2026-11-19 12:25:27 UTC
 +++ chrome/browser/chrome_browser_main.cc
-@@ -172,7 +172,7 @@
+@@ -175,7 +175,7 @@
  #endif
  
  #if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || \
@@ -9,7 +9,7 @@
  #include "sql/database.h"
  #endif
  
-@@ -198,12 +198,12 @@
+@@ -201,12 +201,12 @@
  #include "components/enterprise/browser/controller/chrome_browser_cloud_management_controller.h"
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
@@ -24,7 +24,7 @@
  #include "chrome/browser/headless/headless_mode_metrics.h"  // nogncheck
  #include "chrome/browser/headless/headless_mode_util.h"     // nogncheck
  #include "chrome/browser/metrics/desktop_session_duration/desktop_session_duration_tracker.h"
-@@ -214,7 +214,7 @@
+@@ -217,7 +217,7 @@
  #include "ui/gfx/switches.h"
  #endif
  
@@ -33,7 +33,7 @@
  #include "chrome/browser/first_run/upgrade_util.h"
  #endif
  
-@@ -330,7 +330,7 @@
+@@ -333,7 +333,7 @@
  #include "chrome/browser/chrome_browser_main_mac.h"
  #elif BUILDFLAG(IS_CHROMEOS)
  #include "chrome/browser/ash/main_parts/chrome_browser_main_parts_ash.h"
@@ -42,7 +42,7 @@
  #include "chrome/browser/chrome_browser_main_linux.h"
  #elif BUILDFLAG(IS_ANDROID)
  #include "chrome/browser/chrome_browser_main_android.h"
-@@ -338,7 +338,7 @@
+@@ -341,7 +341,7 @@
  #include "chrome/browser/chrome_browser_main_posix.h"
  #endif
  
@@ -60,7 +60,7 @@
  constexpr base::FilePath::CharType kMediaHistoryDatabaseName[] =
      FILE_PATH_LITERAL("Media History");
  
-@@ -615,7 +615,7 @@ bool ProcessSingletonNotificationCallback(
+@@ -616,7 +616,7 @@ bool ProcessSingletonNotificationCallback(
  
    // Drop the request if headless mode is in effect or the request is from
    // a headless Chrome process.
@@ -69,7 +69,7 @@
    if (headless::IsHeadlessMode() ||
        command_line.HasSwitch(switches::kHeadless)) {
      return false;
-@@ -781,7 +781,7 @@ std::unique_ptr<content::BrowserMainParts> ChromeBrows
+@@ -782,7 +782,7 @@ std::unique_ptr<content::BrowserMainParts> ChromeBrows
  #elif BUILDFLAG(IS_CHROMEOS)
    main_parts = std::make_unique<ash::ChromeBrowserMainPartsAsh>(
        is_integration_test, startup_data);
@@ -78,7 +78,7 @@
    main_parts = std::make_unique<ChromeBrowserMainPartsLinux>(
        is_integration_test, startup_data);
  #elif BUILDFLAG(IS_ANDROID)
-@@ -811,7 +811,7 @@ std::unique_ptr<content::BrowserMainParts> ChromeBrows
+@@ -812,7 +812,7 @@ std::unique_ptr<content::BrowserMainParts> ChromeBrows
    // Construct additional browser parts. Stages are called in the order in
    // which they are added.
  #if defined(TOOLKIT_VIEWS)
@@ -87,7 +87,7 @@
    main_parts->AddParts(
        std::make_unique<ChromeBrowserMainExtraPartsViewsLinux>());
  #else
-@@ -828,7 +828,7 @@ std::unique_ptr<content::BrowserMainParts> ChromeBrows
+@@ -829,7 +829,7 @@ std::unique_ptr<content::BrowserMainParts> ChromeBrows
    main_parts->AddParts(std::make_unique<ChromeBrowserMainExtraPartsAsh>());
  #endif
  
@@ -96,7 +96,7 @@
    main_parts->AddParts(std::make_unique<ChromeBrowserMainExtraPartsLinux>());
  #elif BUILDFLAG(IS_OZONE)
    main_parts->AddParts(std::make_unique<ChromeBrowserMainExtraPartsOzone>());
-@@ -1338,7 +1338,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
+@@ -1347,7 +1347,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
  
  #if BUILDFLAG(ENABLE_EXTENSIONS_CORE) &&                                   \
      (BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
@@ -105,7 +105,7 @@
    // Create directory for user-level Native Messaging manifest files. This
    // makes it less likely that the directory will be created by third-party
    // software with incorrect owner or permission. See crbug.com/41321051 .
-@@ -1382,7 +1382,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
+@@ -1391,7 +1391,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
  
  #endif  // BUILDFLAG(IS_MAC)
  
@@ -132,7 +132,7 @@
    if (headless::IsHeadlessMode()) {
      headless::ReportHeadlessActionMetrics();
    }
-@@ -1778,7 +1778,7 @@ int ChromeBrowserMainParts::PreMainMessageLoopRunImpl(
+@@ -1782,7 +1782,7 @@ int ChromeBrowserMainParts::PreMainMessageLoopRunImpl(
  #endif
  
    // Should be done before starting metrics recording.
@@ -141,7 +141,7 @@
    // On Linux, the EULA dialog requires Views, so it is shown here rather than
    // when applying the first-run prefs.
    if (first_run::IsChromeFirstRun() && master_prefs_->eula_required &&
-@@ -1814,7 +1814,7 @@ int ChromeBrowserMainParts::PreMainMessageLoopRunImpl(
+@@ -1818,7 +1818,7 @@ int ChromeBrowserMainParts::PreMainMessageLoopRunImpl(
    // In headless mode provide alternate SelectFileDialog factory overriding
    // any platform specific SelectFileDialog implementation that may have been
    // set.
@@ -150,7 +150,7 @@
    if (headless::IsHeadlessMode()) {
      headless::HeadlessSelectFileDialogFactory::SetUp();
    }
-@@ -2130,7 +2130,7 @@ int ChromeBrowserMainParts::PreMainMessageLoopRunImpl(
+@@ -2135,7 +2135,7 @@ int ChromeBrowserMainParts::PreMainMessageLoopRunImpl(
      browser_process_->StartAutoupdateTimer();
  #endif
  

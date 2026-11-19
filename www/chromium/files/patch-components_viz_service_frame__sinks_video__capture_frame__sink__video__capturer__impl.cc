@@ -1,6 +1,6 @@
---- components/viz/service/frame_sinks/video_capture/frame_sink_video_capturer_impl.cc.orig	2026-11-11 14:44:17 UTC
+--- components/viz/service/frame_sinks/video_capture/frame_sink_video_capturer_impl.cc.orig	2026-11-19 12:25:27 UTC
 +++ components/viz/service/frame_sinks/video_capture/frame_sink_video_capturer_impl.cc
-@@ -1159,7 +1159,7 @@ void FrameSinkVideoCapturerImpl::MaybeCaptureFrame(
+@@ -1161,7 +1161,7 @@ void FrameSinkVideoCapturerImpl::MaybeCaptureFrame(
    const bool prefer_mappable_shared_image =
        buffer_format_preference_ ==
        mojom::BufferFormatPreference::kPreferMappableSharedImage;
@@ -9,7 +9,7 @@
    const bool prefer_shared_image =
        prefer_mappable_shared_image ||
        buffer_format_preference_ ==
-@@ -1394,7 +1394,7 @@ void FrameSinkVideoCapturerImpl::DidCopyFrame(
+@@ -1403,7 +1403,7 @@ void FrameSinkVideoCapturerImpl::DidCopyFrame(
          frame_capture.CaptureFailed(CaptureResult::kARGBReadbackFailed);
        }
      } else {

@@ -1,6 +1,6 @@
---- components/webui/flags/flags_state.cc.orig	2026-09-25 15:26:43 UTC
+--- components/webui/flags/flags_state.cc.orig	2026-11-19 12:25:27 UTC
 +++ components/webui/flags/flags_state.cc
-@@ -793,7 +793,7 @@ unsigned short FlagsState::GetCurrentPlatform() {
+@@ -794,7 +794,7 @@ unsigned short FlagsState::GetCurrentPlatform() {
    return kOsWin;
  #elif BUILDFLAG(IS_CHROMEOS)
    return kOsCrOS;

@@ -1,4 +1,4 @@
---- services/network/url_request_context_builder_mojo.cc.orig	2026-11-11 14:44:17 UTC
+--- services/network/url_request_context_builder_mojo.cc.orig	2026-11-19 12:25:27 UTC
 +++ services/network/url_request_context_builder_mojo.cc
 @@ -19,7 +19,7 @@
  #elif BUILDFLAG(IS_MAC)
@@ -18,9 +18,9 @@
  void URLRequestContextBuilderMojo::SetMojoSystemProxyResolver(
      mojo::PendingRemote<proxy_resolver::mojom::SystemProxyResolver>
          mojo_system_proxy_resolver) {
-@@ -102,7 +102,7 @@ URLRequestContextBuilderMojo::CreateProxyResolutionSer
-       return proxy_resolution_service;
-     }
+@@ -106,7 +106,7 @@ URLRequestContextBuilderMojo::CreateProxyResolutionSer
+   if (auto system_service = CreateSystemProxyResolutionService(net_log)) {
+     return system_service;
    }
 -#elif BUILDFLAG(IS_LINUX)
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)

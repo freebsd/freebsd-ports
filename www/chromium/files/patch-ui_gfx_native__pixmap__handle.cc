@@ -1,4 +1,4 @@
---- ui/gfx/native_pixmap_handle.cc.orig	2026-06-04 10:12:25 UTC
+--- ui/gfx/native_pixmap_handle.cc.orig	2026-11-19 12:25:27 UTC
 +++ ui/gfx/native_pixmap_handle.cc
 @@ -11,7 +11,7 @@
  #include "components/viz/common/resources/shared_image_format_utils.h"
@@ -24,7 +24,7 @@
  static_assert(NativePixmapHandle::kNoModifier == DRM_FORMAT_MOD_INVALID,
                "gfx::NativePixmapHandle::kNoModifier should be an alias for"
                "DRM_FORMAT_MOD_INVALID");
-@@ -36,7 +40,7 @@ NativePixmapPlane::NativePixmapPlane() : stride(0), of
+@@ -40,7 +44,7 @@ NativePixmapPlane::NativePixmapPlane() : stride(0), of
  NativePixmapPlane::NativePixmapPlane(uint32_t stride,
                                       uint64_t offset,
                                       uint64_t size
@@ -33,7 +33,7 @@
                                       ,
                                       base::ScopedFD fd
  #elif BUILDFLAG(IS_FUCHSIA)
-@@ -47,7 +51,7 @@ NativePixmapPlane::NativePixmapPlane(uint32_t stride,
+@@ -51,7 +55,7 @@ NativePixmapPlane::NativePixmapPlane(uint32_t stride,
      : stride(stride),
        offset(offset),
        size(size)
@@ -42,7 +42,7 @@
        ,
        fd(std::move(fd))
  #elif BUILDFLAG(IS_FUCHSIA)
-@@ -75,7 +79,7 @@ NativePixmapHandle& NativePixmapHandle::operator=(Nati
+@@ -79,7 +83,7 @@ NativePixmapHandle& NativePixmapHandle::operator=(Nati
  NativePixmapHandle CloneHandleForIPC(const NativePixmapHandle& handle) {
    NativePixmapHandle clone;
    for (auto& plane : handle.planes) {
@@ -51,7 +51,7 @@
      DCHECK(plane.fd.is_valid());
      // Combining the HANDLE_EINTR and ScopedFD's constructor causes the compiler
      // to emit some very strange assembly that tends to cause FD ownership
-@@ -113,7 +117,7 @@ NativePixmapHandle CloneHandleForIPC(const NativePixma
+@@ -117,7 +121,7 @@ NativePixmapHandle CloneHandleForIPC(const NativePixma
  #endif
    }
  

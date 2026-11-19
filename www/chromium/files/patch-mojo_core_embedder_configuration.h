@@ -1,6 +1,6 @@
---- mojo/core/embedder/configuration.h.orig	2026-10-18 13:29:39 UTC
+--- mojo/core/embedder/configuration.h.orig	2026-11-19 12:25:27 UTC
 +++ mojo/core/embedder/configuration.h
-@@ -33,7 +33,7 @@ struct Configuration {
+@@ -30,7 +30,7 @@ struct Configuration {
    // objects.
    bool force_direct_shared_memory_allocation = false;
  

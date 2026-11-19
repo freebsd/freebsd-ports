@@ -1,6 +1,6 @@
---- chrome/browser/sync/device_info_sync_client_impl.cc.orig	2026-10-22 09:04:01 UTC
+--- chrome/browser/sync/device_info_sync_client_impl.cc.orig	2026-11-19 12:25:27 UTC
 +++ chrome/browser/sync/device_info_sync_client_impl.cc
-@@ -42,7 +42,7 @@ DeviceInfoSyncClientImpl::~DeviceInfoSyncClientImpl() 
+@@ -40,7 +40,7 @@ DeviceInfoSyncClientImpl::~DeviceInfoSyncClientImpl() 
  std::string DeviceInfoSyncClientImpl::GetSigninScopedDeviceId() const {
  // Since the local sync backend is currently only supported on Windows, Mac and
  // Linux don't even check the pref on other os-es.

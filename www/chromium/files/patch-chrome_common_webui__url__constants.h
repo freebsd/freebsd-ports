@@ -1,6 +1,6 @@
---- chrome/common/webui_url_constants.h.orig	2026-10-18 13:29:39 UTC
+--- chrome/common/webui_url_constants.h.orig	2026-11-19 12:25:27 UTC
 +++ chrome/common/webui_url_constants.h
-@@ -452,12 +452,12 @@ bool IsSystemWebUIHost(std::string_view host);
+@@ -456,12 +456,12 @@ bool IsSystemWebUIHost(std::string_view host);
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -15,7 +15,7 @@
  inline constexpr char kChromeUIDefaultBrowserModalURL[] =
      "chrome://default-browser-modal/";
  inline constexpr char kChromeUIDefaultBrowserModalHost[] =
-@@ -480,11 +480,11 @@ inline constexpr char kChromeUILinuxProxyConfigHost[] 
+@@ -484,11 +484,11 @@ inline constexpr char kChromeUILinuxProxyConfigHost[] 
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \

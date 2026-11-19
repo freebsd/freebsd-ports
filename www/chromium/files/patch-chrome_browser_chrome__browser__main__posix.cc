@@ -1,6 +1,6 @@
---- chrome/browser/chrome_browser_main_posix.cc.orig	2026-10-18 13:29:39 UTC
+--- chrome/browser/chrome_browser_main_posix.cc.orig	2026-11-19 12:25:27 UTC
 +++ chrome/browser/chrome_browser_main_posix.cc
-@@ -87,7 +87,7 @@ void ExitHandler::ExitWhenPossibleOnUIThread(int signa
+@@ -91,7 +91,7 @@ void ExitHandler::ExitWhenPossibleOnUIThread(int signa
      // ExitHandler takes care of deleting itself.
      new ExitHandler();
    } else {

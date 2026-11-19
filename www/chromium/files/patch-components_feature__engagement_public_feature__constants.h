@@ -1,6 +1,6 @@
---- components/feature_engagement/public/feature_constants.h.orig	2026-11-11 14:44:17 UTC
+--- components/feature_engagement/public/feature_constants.h.orig	2026-11-19 12:25:27 UTC
 +++ components/feature_engagement/public/feature_constants.h
-@@ -32,7 +32,7 @@ FEATURE_CONSTANTS_DECLARE_FEATURE(kIPHDemoMode);
+@@ -34,7 +34,7 @@ FEATURE_CONSTANTS_DECLARE_FEATURE(kIPHDemoMode);
  FEATURE_CONSTANTS_DECLARE_FEATURE(kIPHDummyFeature);
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
@@ -9,7 +9,7 @@
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
  FEATURE_CONSTANTS_DECLARE_FEATURE(kEsbDownloadRowPromoFeature);
  #endif
-@@ -455,7 +455,7 @@ FEATURE_CONSTANTS_DECLARE_FEATURE(kIPHiOSActiveDaysTra
+@@ -472,7 +472,7 @@ FEATURE_CONSTANTS_DECLARE_FEATURE(kIPHiOSActiveDaysTra
  #endif  // BUILDFLAG(IS_IOS)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
@@ -18,7 +18,7 @@
  FEATURE_CONSTANTS_DECLARE_FEATURE(kIPHAutofillAtMemoryFeature);
  FEATURE_CONSTANTS_DECLARE_FEATURE(kIPHAutofillBnplAffirmOrZipSuggestionFeature);
  FEATURE_CONSTANTS_DECLARE_FEATURE(
-@@ -489,13 +489,13 @@ FEATURE_CONSTANTS_DECLARE_FEATURE(kIPHLauncherSearchHe
+@@ -506,13 +506,13 @@ FEATURE_CONSTANTS_DECLARE_FEATURE(kIPHGoogleOneOfferNo
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

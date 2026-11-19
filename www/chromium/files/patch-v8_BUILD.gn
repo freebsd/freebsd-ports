@@ -1,6 +1,6 @@
---- v8/BUILD.gn.orig	2026-11-11 14:44:17 UTC
+--- v8/BUILD.gn.orig	2026-11-19 12:25:27 UTC
 +++ v8/BUILD.gn
-@@ -1135,6 +1135,8 @@ external_v8_defines = [
+@@ -1151,6 +1151,8 @@ external_v8_defines = [
    "V8_TARGET_OS_MACOS",
    "V8_TARGET_OS_WIN",
    "V8_TARGET_OS_CHROMEOS",
@@ -9,7 +9,7 @@
    "V8_TARGET_ARCH_ARM64",
    "V8_TARGET_ARCH_PPC64",
    "V8_TARGET_ARCH_MIPS64",
-@@ -1227,6 +1229,12 @@ if (target_os == "android") {
+@@ -1244,6 +1246,12 @@ if (target_os == "android") {
  } else if (target_os == "chromeos") {
    enabled_external_v8_defines += [ "V8_HAVE_TARGET_OS" ]
    enabled_external_v8_defines += [ "V8_TARGET_OS_CHROMEOS" ]
@@ -22,7 +22,7 @@
  }
  
  # Some V8_TARGET_ARCH_ defines that affect Api constants (see usages of
-@@ -1923,7 +1931,7 @@ config("toolchain") {
+@@ -1949,7 +1957,7 @@ config("toolchain") {
      # don't block compiler updates in Chromium. We'll resolve these when
      # rolling the compiler update into V8 instead.
      if (!build_with_chromium && v8_current_cpu != "ppc64" &&
@@ -31,7 +31,7 @@
        cflags += [ "-Wlifetime-safety-permissive" ]
      }
  
-@@ -2511,7 +2519,7 @@ if (v8_use_metagen) {
+@@ -2536,7 +2544,7 @@ if (v8_use_metagen) {
  
    # The clang toolchain's resource dir contains builting headers
    # include/{stddef.h,stdarg.h,...}.
@@ -40,7 +40,7 @@
  
    # The headers are parsed with v8_base_without_compiler's flags.
    _metagen_flags_target = ":v8_base_without_compiler"
-@@ -2574,7 +2582,6 @@ if (v8_use_metagen) {
+@@ -2599,7 +2607,6 @@ if (v8_use_metagen) {
                 # Proxy for the whole builtin-header directory, which has no
                 # GN glob: a toolchain roll rewrites stddef.h along with the
                 # rest, and Metagen cannot parse without it.
@@ -48,7 +48,7 @@
               ] + _metagen_libclang_files
  
      # Write-if-changed on each output. Dependents only re-run if needed.
-@@ -3195,6 +3202,12 @@ template("run_mksnapshot") {
+@@ -3347,6 +3354,12 @@ template("run_mksnapshot") {
        if (!v8_enable_builtins_profiling && v8_enable_builtins_reordering) {
          args += [ "--reorder-builtins" ]
        }
@@ -61,7 +61,7 @@
      }
  
      # This is needed to distinguish between generating code for the simulator
-@@ -7718,7 +7731,7 @@ v8_component("v8_libbase") {
+@@ -7882,7 +7895,7 @@ v8_component("v8_libbase") {
      }
    }
  
@@ -70,7 +70,7 @@
      sources += [
        "src/base/debug/stack_trace_posix.cc",
        "src/base/platform/platform-linux.cc",
-@@ -7729,6 +7742,18 @@ v8_component("v8_libbase") {
+@@ -7893,6 +7906,18 @@ v8_component("v8_libbase") {
        "dl",
        "rt",
      ]

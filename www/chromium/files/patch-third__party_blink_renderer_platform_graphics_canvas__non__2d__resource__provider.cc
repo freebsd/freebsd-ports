@@ -1,6 +1,6 @@
---- third_party/blink/renderer/platform/graphics/canvas_non_2d_resource_provider.cc.orig	2026-10-18 13:29:39 UTC
+--- third_party/blink/renderer/platform/graphics/canvas_non_2d_resource_provider.cc.orig	2026-11-19 12:25:27 UTC
 +++ third_party/blink/renderer/platform/graphics/canvas_non_2d_resource_provider.cc
-@@ -95,7 +95,7 @@ CanvasNon2DResourceProvider::Create(
+@@ -96,7 +96,7 @@ CanvasNon2DResourceProvider::Create(
            gpu::SHARED_IMAGE_USAGE_CONCURRENT_READ_WRITE);
  #endif
  

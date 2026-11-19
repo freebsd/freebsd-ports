@@ -1,4 +1,4 @@
---- components/startup_metric_utils/browser/startup_metric_utils.cc.orig	2026-10-18 13:29:39 UTC
+--- components/startup_metric_utils/browser/startup_metric_utils.cc.orig	2026-11-19 12:25:27 UTC
 +++ components/startup_metric_utils/browser/startup_metric_utils.cc
 @@ -36,11 +36,11 @@
  #elif BUILDFLAG(IS_MAC)
@@ -23,7 +23,7 @@
  std::optional<uint32_t>
  BrowserStartupMetricRecorder::GetHardFaultCountForCurrentProcess() {
    struct rusage usage;
-@@ -603,7 +603,7 @@ void BrowserStartupMetricRecorder::RecordBrowserWindow
+@@ -616,7 +616,7 @@ void BrowserStartupMetricRecorder::RecordBrowserWindow
    }
    is_first_call = false;
    RecordBrowserWindowFirstPaintTicks(ticks);
@@ -32,7 +32,7 @@
    // Mirror Startup.BrowserMessageLoopStartHardFault{Count,Bytes} at the first
    // paint checkpoint (using a higher 1M cap for Count to avoid saturation).
    // We record this unconditionally (even if ShouldLogStartupHistogram() is
-@@ -641,7 +641,7 @@ void BrowserStartupMetricRecorder::RecordFirstRunSenti
+@@ -654,7 +654,7 @@ void BrowserStartupMetricRecorder::RecordFirstRunSenti
  }
  
  void BrowserStartupMetricRecorder::RecordHardFaultHistogram() {

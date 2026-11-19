@@ -1,4 +1,4 @@
---- chrome/browser/ui/startup/startup_browser_creator_impl.cc.orig	2026-11-11 14:44:17 UTC
+--- chrome/browser/ui/startup/startup_browser_creator_impl.cc.orig	2026-11-19 12:25:27 UTC
 +++ chrome/browser/ui/startup/startup_browser_creator_impl.cc
 @@ -73,7 +73,7 @@
  #include "ui/base/window_open_disposition.h"
@@ -28,7 +28,7 @@
        process_startup == chrome::startup::IsProcessStartup::kYes;
    display::Screen* const screen = display::Screen::Get();
 @@ -254,7 +254,7 @@ void StartupBrowserCreatorImpl::Launch(
-   DCHECK(profile);
+   CHECK(profile, base::NotFatalUntil::M162);
    profile_ = profile;
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
@@ -36,16 +36,16 @@
    // Check for DSE integrity if flag is enabled.
    if (base::FeatureList::IsEnabled(features::kDseIntegrity)) {
      if (auto* search_integrity_service =
-@@ -308,7 +308,7 @@ BrowserWindowInterface* StartupBrowserCreatorImpl::Ope
+@@ -310,7 +310,7 @@ BrowserWindowInterface* StartupBrowserCreatorImpl::Ope
      profile_ = browser->GetProfile();
    }
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   std::string startup_id =
-       command_line_->GetSwitchValueASCII(base::nix::kXdgActivationTokenSwitch);
-   if (startup_id.empty()) {
-@@ -349,7 +349,7 @@ BrowserWindowInterface* StartupBrowserCreatorImpl::Ope
+   auto token = base::nix::GetXdgActivationTokenFromCommandLine(*command_line_);
+   if (!token) {
+     token = base::nix::TakeXdgActivationToken();
+@@ -346,7 +346,7 @@ BrowserWindowInterface* StartupBrowserCreatorImpl::Ope
      BrowserWindowCreateParams params(profile_, false);
      params.creation_source =
          BrowserWindowCreateParams::CreationSource::kStartupCreator;
@@ -54,7 +54,7 @@
      params.startup_id = startup_id;
  #endif
      if (command_line_->HasSwitch(switches::kWindowName)) {
-@@ -386,7 +386,7 @@ BrowserWindowInterface* StartupBrowserCreatorImpl::Ope
+@@ -383,7 +383,7 @@ BrowserWindowInterface* StartupBrowserCreatorImpl::Ope
        continue;
      }
  
@@ -63,7 +63,7 @@
      // Start the What's New fetch but don't add the tab at this point. The tab
      // will open as the foreground tab only if the remote content can be
      // retrieved successfully. This prevents needing to automatically close the
-@@ -478,7 +478,7 @@ BrowserWindowInterface* StartupBrowserCreatorImpl::Ope
+@@ -475,7 +475,7 @@ BrowserWindowInterface* StartupBrowserCreatorImpl::Ope
      }
    }
  

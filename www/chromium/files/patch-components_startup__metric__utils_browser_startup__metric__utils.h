@@ -1,6 +1,6 @@
---- components/startup_metric_utils/browser/startup_metric_utils.h.orig	2026-10-18 13:29:39 UTC
+--- components/startup_metric_utils/browser/startup_metric_utils.h.orig	2026-11-19 12:25:27 UTC
 +++ components/startup_metric_utils/browser/startup_metric_utils.h
-@@ -205,7 +205,7 @@ class COMPONENT_EXPORT(STARTUP_METRIC_UTILS)
+@@ -206,7 +206,7 @@ class COMPONENT_EXPORT(STARTUP_METRIC_UTILS)
    // Only permit construction from within GetBrowser().
    BrowserStartupMetricRecorder();
  

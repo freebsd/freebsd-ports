@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/scheduled_restart/scheduled_restart_bubble_controller.cc.orig	2026-10-18 13:29:39 UTC
+--- chrome/browser/ui/views/scheduled_restart/scheduled_restart_bubble_controller.cc.orig	2026-11-19 12:25:27 UTC
 +++ chrome/browser/ui/views/scheduled_restart/scheduled_restart_bubble_controller.cc
-@@ -164,7 +164,7 @@ ScheduledRestartBubbleController::GetScheduledRestartM
+@@ -193,7 +193,7 @@ ScheduledRestartBubbleController::GetScheduledRestartM
    if (scheduled_restart_manager_for_testing_) {
      return scheduled_restart_manager_for_testing_;
    }

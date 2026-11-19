@@ -1,4 +1,4 @@
---- chrome/browser/chrome_browser_main_linux.cc.orig	2026-11-11 14:44:17 UTC
+--- chrome/browser/chrome_browser_main_linux.cc.orig	2026-11-19 12:25:27 UTC
 +++ chrome/browser/chrome_browser_main_linux.cc
 @@ -24,7 +24,7 @@
  #include "device/bluetooth/dbus/bluez_dbus_manager.h"
@@ -6,10 +6,10 @@
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
- #include "ui/ozone/public/ozone_platform.h"
- #if BUILDFLAG(USE_DBUS)
- #include "components/dbus/thread_linux/dbus_thread_linux.h"
-@@ -82,8 +82,10 @@ void ChromeBrowserMainPartsLinux::PostCreateMainMessag
+ #include "base/containers/to_vector.h"
+ #include "chrome/browser/profiles/profile_attributes_entry.h"
+ #include "chrome/browser/profiles/profile_attributes_storage.h"
+@@ -88,8 +88,10 @@ void ChromeBrowserMainPartsLinux::PostCreateMainMessag
  
  #if !BUILDFLAG(IS_CHROMEOS)
  #if BUILDFLAG(USE_DBUS)
@@ -20,7 +20,7 @@
    session_end_listener_ = SessionEndListenerLinux::Create();
  #endif  // BUILDFLAG(USE_DBUS)
  #endif  // !BUILDFLAG(IS_CHROMEOS)
-@@ -91,7 +93,7 @@ void ChromeBrowserMainPartsLinux::PostCreateMainMessag
+@@ -97,7 +99,7 @@ void ChromeBrowserMainPartsLinux::PostCreateMainMessag
    ChromeBrowserMainPartsPosix::PostCreateMainMessageLoop();
  }
  
@@ -29,7 +29,16 @@
  void ChromeBrowserMainPartsLinux::PostMainMessageLoopRun() {
    ChromeBrowserMainPartsPosix::PostMainMessageLoopRun();
    ui::OzonePlatform::GetInstance()->PostMainMessageLoopRun();
-@@ -131,7 +133,9 @@ void ChromeBrowserMainPartsLinux::PostDestroyThreads()
+@@ -114,7 +116,7 @@ void ChromeBrowserMainPartsLinux::PreProfileInit() {
+       base::BindOnce(base::IgnoreResult(&base::GetLinuxDistro)));
+ #endif
+ 
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   // Browser windows pick their WM_CLASS / app_id when they are created, so
+   // find out which profiles have a per-profile desktop entry before the first
+   // window is opened. This is a handful of stat() calls for profiles other
+@@ -151,7 +153,9 @@ void ChromeBrowserMainPartsLinux::PostDestroyThreads()
  #if BUILDFLAG(USE_DBUS)
    session_end_listener_.reset();
  #endif

@@ -1,4 +1,4 @@
---- third_party/webrtc/rtc_base/physical_socket_server.cc.orig	2026-06-04 10:12:25 UTC
+--- third_party/webrtc/rtc_base/physical_socket_server.cc.orig	2026-11-19 12:25:27 UTC
 +++ third_party/webrtc/rtc_base/physical_socket_server.cc
 @@ -63,7 +63,7 @@
  #undef SetPort
@@ -45,7 +45,7 @@
                 // Suppress SIGPIPE. See above for explanation.
                 MSG_NOSIGNAL,
  #else
-@@ -756,7 +756,7 @@ int PhysicalSocket::TranslateOption(Option opt, int* s
+@@ -765,7 +765,7 @@ int PhysicalSocket::TranslateOption(Option opt, int* s
        *slevel = IPPROTO_IP;
        *sopt = IP_DONTFRAGMENT;
        break;
@@ -54,7 +54,7 @@
        RTC_LOG(LS_WARNING) << "Socket::OPT_DONTFRAGMENT not supported.";
        return -1;
  #elif defined(WEBRTC_POSIX)
-@@ -805,7 +805,7 @@ int PhysicalSocket::TranslateOption(Option opt, int* s
+@@ -814,7 +814,7 @@ int PhysicalSocket::TranslateOption(Option opt, int* s
        return -1;
  #endif
      case OPT_RECV_ECN:
@@ -63,7 +63,7 @@
        if (family_ == AF_INET6) {
          *slevel = IPPROTO_IPV6;
          *sopt = IPV6_RECVTCLASS;
-@@ -825,10 +825,19 @@ int PhysicalSocket::TranslateOption(Option opt, int* s
+@@ -834,10 +834,19 @@ int PhysicalSocket::TranslateOption(Option opt, int* s
        *sopt = SO_KEEPALIVE;
        break;
      case OPT_TCP_KEEPCNT:
@@ -83,7 +83,7 @@
        *slevel = IPPROTO_TCP;
  #if !defined(WEBRTC_MAC)
        *sopt = TCP_KEEPIDLE;
-@@ -836,12 +845,18 @@ int PhysicalSocket::TranslateOption(Option opt, int* s
+@@ -845,12 +854,18 @@ int PhysicalSocket::TranslateOption(Option opt, int* s
        *sopt = TCP_KEEPALIVE;
  #endif
        break;

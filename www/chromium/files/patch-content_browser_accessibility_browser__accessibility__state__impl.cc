@@ -1,6 +1,6 @@
---- content/browser/accessibility/browser_accessibility_state_impl.cc.orig	2026-08-12 09:02:10 UTC
+--- content/browser/accessibility/browser_accessibility_state_impl.cc.orig	2026-11-19 12:25:27 UTC
 +++ content/browser/accessibility/browser_accessibility_state_impl.cc
-@@ -295,7 +295,7 @@ BrowserAccessibilityStateImpl* BrowserAccessibilitySta
+@@ -277,7 +277,7 @@ BrowserAccessibilityStateImpl* BrowserAccessibilitySta
  
  // On Android, Mac, Windows and Linux there are platform-specific subclasses.
  #if !BUILDFLAG(IS_ANDROID) && !BUILDFLAG(IS_WIN) && !BUILDFLAG(IS_MAC) && \

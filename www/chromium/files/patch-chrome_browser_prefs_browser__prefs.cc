@@ -1,4 +1,4 @@
---- chrome/browser/prefs/browser_prefs.cc.orig	2026-11-11 14:44:17 UTC
+--- chrome/browser/prefs/browser_prefs.cc.orig	2026-11-19 12:25:27 UTC
 +++ chrome/browser/prefs/browser_prefs.cc
 @@ -352,7 +352,7 @@
  #include "chrome/browser/devtools/devtools_window.h"
@@ -9,7 +9,7 @@
  #include "chrome/browser/ui/webui/whats_new/whats_new_ui.h"
  #endif
  
-@@ -537,7 +537,7 @@
+@@ -535,7 +535,7 @@
  #include "chrome/browser/enterprise/platform_auth/platform_auth_policy_observer.h"
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_ANDROID)
  
@@ -18,7 +18,7 @@
  #include "chrome/browser/browser_switcher/browser_switcher_prefs.h"
  #include "chrome/browser/enterprise/signin/enterprise_signin_prefs.h"
  #include "chrome/browser/lifetime/scheduled_restart_manager.h"
-@@ -566,7 +566,7 @@
+@@ -564,7 +564,7 @@
  #include "chrome/browser/sessions/session_service_log.h"
  #endif
  
@@ -27,7 +27,7 @@
  #include "ui/color/system_theme.h"
  #endif
  
-@@ -883,7 +883,7 @@ inline constexpr char kPendingMetricsReportingLevel[] 
+@@ -878,7 +878,7 @@ inline constexpr char kPendingMetricsReportingLevel[] 
  // Deprecated 07/2026.
  inline constexpr char kObsoleteMetricsReportingLevel[] =
      "user_experience_metrics.reporting_level";
@@ -36,7 +36,7 @@
  inline constexpr char kProxyOverrideRulesAffiliation[] =
      "proxy_override_rules_affiliation";
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
-@@ -1232,7 +1232,7 @@ void RegisterLocalStatePrefsForMigration(PrefRegistryS
+@@ -1261,7 +1261,7 @@ void RegisterLocalStatePrefsForMigration(PrefRegistryS
  
    // Deprecated 07/2026.
    registry->RegisterIntegerPref(kObsoleteMetricsReportingLevel, 0);
@@ -45,7 +45,7 @@
    registry->RegisterBooleanPref(kProxyOverrideRulesAffiliation, true);
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
    registry->RegisterBooleanPref(kMetricsReportingMigrationDone, false);
-@@ -1419,7 +1419,7 @@ void RegisterProfilePrefsForMigration(
+@@ -1453,7 +1453,7 @@ void RegisterProfilePrefsForMigration(
    registry->RegisterIntegerPref(kMetricsUserReportingLevel, 0);
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
@@ -54,7 +54,7 @@
    // Deprecated 07/2026.
    registry->RegisterBooleanPref(kProxyOverrideRulesAffiliation, true);
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
-@@ -1793,7 +1793,7 @@ void RegisterLocalState(PrefRegistrySimple* registry) 
+@@ -1849,7 +1849,7 @@ void RegisterLocalState(PrefRegistrySimple* registry) 
    on_device_translation::RegisterLocalStatePrefs(registry);
  #endif  // BUILDFLAG(ENABLE_ON_DEVICE_TRANSLATION)
  
@@ -63,7 +63,7 @@
    scheduled_restart::ScheduledRestartManager::RegisterLocalStatePrefs(registry);
    WhatsNewUI::RegisterLocalStatePrefs(registry);
  #endif
-@@ -1962,7 +1962,7 @@ void RegisterLocalState(PrefRegistrySimple* registry) 
+@@ -2018,7 +2018,7 @@ void RegisterLocalState(PrefRegistrySimple* registry) 
  #endif  // BUILDFLAG(ENABLE_PDF_SAVE_TO_DRIVE)
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || \
@@ -72,7 +72,7 @@
    registry->RegisterBooleanPref(prefs::kChromeForTestingAllowed, true);
  #endif
  
-@@ -2091,7 +2091,7 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
+@@ -2148,7 +2148,7 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
    registry->RegisterIntegerPref(prefs::kVoiceTypingSettings, 0);
    registry->RegisterBooleanPref(prefs::kPrefDictationOnboardingCompleted,
                                  false);
@@ -81,7 +81,7 @@
    registry->RegisterStringPref(prefs::kVoiceTypingHotkey, "Ctrl+Space");
  #else
    registry->RegisterStringPref(prefs::kVoiceTypingHotkey, "Alt+Space");
-@@ -2401,12 +2401,12 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
+@@ -2463,12 +2463,12 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -96,7 +96,7 @@
    browser_switcher::BrowserSwitcherPrefs::RegisterProfilePrefs(registry);
    enterprise_signin::RegisterProfilePrefs(registry);
  #endif
-@@ -2670,7 +2670,7 @@ void MigrateObsoleteLocalStatePrefs(PrefService* local
+@@ -2728,7 +2728,7 @@ void MigrateObsoleteLocalStatePrefs(PrefService* local
  
    // Added 07/2026.
    local_state->ClearPref(kObsoleteMetricsReportingLevel);
@@ -105,7 +105,7 @@
    // Added 07/2026.
    local_state->ClearPref(kProxyOverrideRulesAffiliation);
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
-@@ -2882,7 +2882,7 @@ void MigrateObsoleteProfilePrefs(PrefService* profile_
+@@ -2940,7 +2940,7 @@ void MigrateObsoleteProfilePrefs(PrefService* profile_
    syncer::ClearAccountKeyedPrefValue(
        profile_prefs, autofill::prefs::kAutofillAiOptInStatus, {});
  

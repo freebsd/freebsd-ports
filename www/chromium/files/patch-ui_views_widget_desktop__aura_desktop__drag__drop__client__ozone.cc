@@ -1,6 +1,6 @@
---- ui/views/widget/desktop_aura/desktop_drag_drop_client_ozone.cc.orig	2026-10-18 13:29:39 UTC
+--- ui/views/widget/desktop_aura/desktop_drag_drop_client_ozone.cc.orig	2026-11-19 12:25:27 UTC
 +++ ui/views/widget/desktop_aura/desktop_drag_drop_client_ozone.cc
-@@ -243,7 +243,7 @@ DragOperation DesktopDragDropClientOzone::StartDragAnd
+@@ -259,7 +259,7 @@ DragOperation DesktopDragDropClientOzone::StartDragAnd
    return selected_operation_;
  }
  

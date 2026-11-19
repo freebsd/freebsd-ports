@@ -1,4 +1,4 @@
---- base/process/process_metrics.h.orig	2026-02-11 09:05:39 UTC
+--- base/process/process_metrics.h.orig	2026-11-19 12:25:27 UTC
 +++ base/process/process_metrics.h
 @@ -40,7 +40,7 @@
  #endif
@@ -78,7 +78,7 @@
  // Data about system-wide memory consumption. Available on Windows, Mac, Linux,
  // Android and Chrome OS.
  //
-@@ -346,7 +346,7 @@ struct BASE_EXPORT SystemMemoryInfo {
+@@ -347,7 +347,7 @@ struct BASE_EXPORT SystemMemoryInfo {
  #endif
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || \
@@ -87,7 +87,7 @@
    // This provides an estimate of available memory as described here:
    // https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=34e431b0ae398fc54ea69ff85ec700722c9da773
    // NOTE: this is ONLY valid in kernels 3.14 and up.  Its value will always
-@@ -361,7 +361,7 @@ struct BASE_EXPORT SystemMemoryInfo {
+@@ -362,7 +362,7 @@ struct BASE_EXPORT SystemMemoryInfo {
  #endif
  
  #if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -96,7 +96,7 @@
    ByteSize buffers;
    ByteSize cached;
    ByteSize active_anon;
-@@ -403,7 +403,7 @@ BASE_EXPORT bool GetSystemMemoryInfo(SystemMemoryInfo*
+@@ -420,7 +420,7 @@ BASE_EXPORT bool GetSystemMemoryInfo(SystemMemoryInfo*
          // BUILDFLAG(IS_FUCHSIA)
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || \
@@ -105,7 +105,7 @@
  // Parse the data found in /proc/<pid>/stat and return the sum of the
  // CPU-related ticks.  Returns -1 on parse error.
  // Exposed for testing.
-@@ -579,7 +579,7 @@ class BASE_EXPORT SystemMetrics {
+@@ -596,7 +596,7 @@ class BASE_EXPORT SystemMetrics {
    FRIEND_TEST_ALL_PREFIXES(SystemMetricsTest, SystemMetrics);
  
    size_t committed_memory_;

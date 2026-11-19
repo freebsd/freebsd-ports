@@ -1,9 +1,9 @@
---- third_party/blink/renderer/core/page/context_menu_controller.cc.orig	2026-10-18 13:29:39 UTC
+--- third_party/blink/renderer/core/page/context_menu_controller.cc.orig	2026-11-19 12:25:27 UTC
 +++ third_party/blink/renderer/core/page/context_menu_controller.cc
-@@ -721,7 +721,7 @@ bool ContextMenuController::ShowContextMenu(
-     if (potential_image_node != nullptr &&
-         IsA<HTMLCanvasElement>(potential_image_node)) {
+@@ -723,7 +723,7 @@ bool ContextMenuController::ShowContextMenu(
        data.media_type = mojom::blink::ContextMenuDataMediaType::kCanvas;
+       const auto* canvas = To<HTMLCanvasElement>(potential_image_node);
+       data.has_image_contents = canvas->OriginClean();
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
        // TODO(crbug.com/40902474): Support reading from the WebGPU front buffer

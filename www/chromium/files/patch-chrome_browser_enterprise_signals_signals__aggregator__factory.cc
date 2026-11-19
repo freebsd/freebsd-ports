@@ -1,4 +1,4 @@
---- chrome/browser/enterprise/signals/signals_aggregator_factory.cc.orig	2026-08-31 10:59:09 UTC
+--- chrome/browser/enterprise/signals/signals_aggregator_factory.cc.orig	2026-11-19 12:25:27 UTC
 +++ chrome/browser/enterprise/signals/signals_aggregator_factory.cc
 @@ -63,7 +63,7 @@
  #include "components/device_signals/core/browser/settings_client.h"
@@ -33,6 +33,6 @@
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS)
 +    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
-   if (enterprise_signals::features::IsCertificateCollectionEnabled()) {
-     auto* profile_network_service =
-         ProfileNetworkContextServiceFactory::GetForContext(profile);
+   if (enterprise_signals::features::IsCertificateCollectionEnabled() &&
+       ProfileNetworkContextServiceFactory::GetForContext(profile)) {
+     // The client certificate store is only created when certificates are

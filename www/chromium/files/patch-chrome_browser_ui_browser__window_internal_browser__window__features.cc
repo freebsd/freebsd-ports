@@ -1,4 +1,4 @@
---- chrome/browser/ui/browser_window/internal/browser_window_features.cc.orig	2026-11-11 14:44:17 UTC
+--- chrome/browser/ui/browser_window/internal/browser_window_features.cc.orig	2026-11-19 12:25:27 UTC
 +++ chrome/browser/ui/browser_window/internal/browser_window_features.cc
 @@ -221,7 +221,7 @@
  #include "chrome/browser/ui/startup/default_browser_prompt/pin_infobar/pin_infobar_controller.h"
@@ -9,7 +9,7 @@
  #include "chrome/browser/ui/views/session_restore_infobar/session_restore_infobar_controller.h"
  #endif
  
-@@ -501,7 +501,7 @@ void BrowserWindowFeatures::Init(BrowserWindowInterfac
+@@ -485,7 +485,7 @@ void BrowserWindowFeatures::Init(BrowserWindowInterfac
                                                                   browser);
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC)
  

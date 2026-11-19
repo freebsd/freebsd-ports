@@ -1,4 +1,4 @@
---- ui/base/ui_base_features.h.orig	2026-11-11 14:44:17 UTC
+--- ui/base/ui_base_features.h.orig	2026-11-19 12:25:27 UTC
 +++ ui/base/ui_base_features.h
 @@ -159,7 +159,7 @@ COMPONENT_EXPORT(UI_BASE_FEATURES)
  BASE_DECLARE_FEATURE(kWaylandExternalBeginFrameSource);
@@ -9,7 +9,7 @@
  COMPONENT_EXPORT(UI_BASE_FEATURES)
  BASE_DECLARE_FEATURE(kGlobalShortcutsPortalPreferredTrigger);
  #endif
-@@ -353,7 +353,7 @@ BASE_DECLARE_FEATURE(kChromeDarkNeutrals26);
+@@ -347,7 +347,7 @@ BASE_DECLARE_FEATURE(kChromeDarkNeutrals26);
  COMPONENT_EXPORT(UI_BASE_FEATURES)
  BASE_DECLARE_FEATURE(kDarkModeSurfaceTokens);
  

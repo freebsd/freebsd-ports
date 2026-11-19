@@ -1,6 +1,6 @@
---- chrome/browser/ui/browser_window/public/create_browser_window.h.orig	2026-10-18 13:29:39 UTC
+--- chrome/browser/ui/browser_window/public/create_browser_window.h.orig	2026-11-19 12:25:27 UTC
 +++ chrome/browser/ui/browser_window/public/create_browser_window.h
-@@ -180,7 +180,7 @@ struct BrowserWindowCreateParams {
+@@ -185,7 +185,7 @@ struct BrowserWindowCreateParams {
    std::optional<int64_t> display_id;
  #endif
  

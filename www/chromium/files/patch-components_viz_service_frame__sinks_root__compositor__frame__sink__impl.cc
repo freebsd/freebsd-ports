@@ -1,6 +1,6 @@
---- components/viz/service/frame_sinks/root_compositor_frame_sink_impl.cc.orig	2026-11-11 14:44:17 UTC
+--- components/viz/service/frame_sinks/root_compositor_frame_sink_impl.cc.orig	2026-11-19 12:25:27 UTC
 +++ components/viz/service/frame_sinks/root_compositor_frame_sink_impl.cc
-@@ -142,7 +142,7 @@ RootCompositorFrameSinkImpl::Create(
+@@ -144,7 +144,7 @@ RootCompositorFrameSinkImpl::Create(
    output_surface->SetNeedsSwapSizeNotifications(
        params->send_swap_size_notifications);
  
@@ -9,7 +9,7 @@
    // For X11, we need notify client about swap completion after resizing, so the
    // client can use it for synchronize with X11 WM.
    output_surface->SetNeedsSwapSizeNotifications(true);
-@@ -962,7 +962,7 @@ void RootCompositorFrameSinkImpl::DisplayDidCompleteSw
+@@ -978,7 +978,7 @@ void RootCompositorFrameSinkImpl::DisplayDidCompleteSw
    if (display_client_ && enable_swap_completion_callback_) {
      display_client_->DidCompleteSwapWithSize(pixel_size);
    }

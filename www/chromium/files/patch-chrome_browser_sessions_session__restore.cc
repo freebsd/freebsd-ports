@@ -1,4 +1,4 @@
---- chrome/browser/sessions/session_restore.cc.orig	2026-11-11 14:44:17 UTC
+--- chrome/browser/sessions/session_restore.cc.orig	2026-11-19 12:25:27 UTC
 +++ chrome/browser/sessions/session_restore.cc
 @@ -136,7 +136,7 @@
  #include "ui/aura/window_occlusion_tracker.h"
@@ -9,7 +9,7 @@
  #include "chrome/browser/ui/webui/whats_new/whats_new_fetcher.h"
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
-@@ -1423,7 +1423,7 @@ class SessionRestoreImpl : public BrowserCollectionObs
+@@ -1430,7 +1430,7 @@ class SessionRestoreImpl : public BrowserCollectionObs
      bool is_first_tab = true;
      for (const auto& startup_tab : startup_tabs) {
        const GURL& url = startup_tab.url;

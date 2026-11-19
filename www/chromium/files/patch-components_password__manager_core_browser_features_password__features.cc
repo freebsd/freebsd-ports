@@ -1,6 +1,6 @@
---- components/password_manager/core/browser/features/password_features.cc.orig	2026-11-11 14:44:17 UTC
+--- components/password_manager/core/browser/features/password_features.cc.orig	2026-11-19 12:25:27 UTC
 +++ components/password_manager/core/browser/features/password_features.cc
-@@ -81,7 +81,7 @@ BASE_FEATURE(kClearUndecryptablePasswords,
+@@ -66,7 +66,7 @@ BASE_FEATURE(kClearUndecryptablePasswords,
  BASE_FEATURE(kClearUndecryptablePasswordsOnSync,
               "ClearUndecryptablePasswordsInSync",
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_IOS) || \
@@ -9,7 +9,16 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -199,7 +199,7 @@ BASE_FEATURE(kPreventPasswordManagerOnFederatedLogin,
+@@ -173,7 +173,7 @@ BASE_FEATURE(kPasswordSaveInContextErrorResolution,
+              base::FEATURE_DISABLED_BY_DEFAULT);
+ 
+ #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
+-    BUILDFLAG(IS_CHROMEOS)
++    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+ BASE_FEATURE(kPasswordSignInInContextErrorResolution,
+              base::FEATURE_DISABLED_BY_DEFAULT);
+ #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||
+@@ -188,7 +188,7 @@ BASE_FEATURE(kPreventPasswordManagerOnFederatedLogin,
  // Remove in or after M155.
  BASE_FEATURE(kRecordPasswordReadiness, base::FEATURE_ENABLED_BY_DEFAULT);
  

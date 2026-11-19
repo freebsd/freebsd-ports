@@ -1,6 +1,6 @@
---- third_party/openscreen/src/platform/impl/udp_socket_posix.cc.orig	2026-11-11 14:44:17 UTC
+--- third_party/openscreen/src/platform/impl/udp_socket_posix.cc.orig	2026-11-19 12:25:27 UTC
 +++ third_party/openscreen/src/platform/impl/udp_socket_posix.cc
-@@ -402,7 +402,7 @@ ErrorOr<UdpPacket> ReceiveMessageInternal(int fd) {
+@@ -405,7 +405,7 @@ ErrorOr<UdpPacket> ReceiveMessageInternal(int fd) {
    // it's not a fatal error, we will just allocate kMaxUdpBufferSize
    // and shrink-to-fit below.
    int upper_bound_bytes = -1;
@@ -9,7 +9,7 @@
    // Returns the exact size of the datagram, or -1 on error.
    upper_bound_bytes = recv(fd, nullptr, 0, MSG_PEEK | MSG_TRUNC);
  #elif BUILDFLAG(IS_APPLE)
-@@ -432,7 +432,7 @@ ErrorOr<UdpPacket> ReceiveMessageInternal(int fd) {
+@@ -435,7 +435,7 @@ ErrorOr<UdpPacket> ReceiveMessageInternal(int fd) {
  
    // Although we don't do anything with the control buffer, on Linux
    // it is required for the message to be properly read.

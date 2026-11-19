@@ -1,8 +1,8 @@
---- components/send_tab_to_self/features.cc.orig	2026-11-11 14:44:17 UTC
+--- components/send_tab_to_self/features.cc.orig	2026-11-19 12:25:27 UTC
 +++ components/send_tab_to_self/features.cc
-@@ -46,7 +46,7 @@ BASE_FEATURE(kSendTabToSelfPostSendToast, base::FEATUR
- 
- BASE_FEATURE(kSendTabToSelfExtraEntryPoints, base::FEATURE_ENABLED_BY_DEFAULT);
+@@ -29,7 +29,7 @@ BASE_FEATURE(kSendTabToSelfSupportAutoOpenInTabGrid,
+              base::FEATURE_DISABLED_BY_DEFAULT);
+ #endif  // BUILDFLAG(IS_IOS) || BUILDFLAG(IS_ANDROID)
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)

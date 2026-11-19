@@ -1,6 +1,6 @@
---- chrome/browser/extensions/component_extensions_allowlist/allowlist.cc.orig	2026-11-11 14:44:17 UTC
+--- chrome/browser/extensions/component_extensions_allowlist/allowlist.cc.orig	2026-11-19 12:25:27 UTC
 +++ chrome/browser/extensions/component_extensions_allowlist/allowlist.cc
-@@ -55,7 +55,7 @@ bool IsComponentExtensionAllowlisted(const std::string
+@@ -63,7 +63,7 @@ bool IsComponentExtensionAllowlisted(const std::string
        extension_misc::kQuickOfficeComponentExtensionId,
  #endif  // BUILDFLAG(GOOGLE_CHROME_BRANDING)
  #endif  // BUILDFLAG(IS_CHROMEOS)

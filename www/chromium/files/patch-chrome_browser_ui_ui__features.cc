@@ -1,6 +1,15 @@
---- chrome/browser/ui/ui_features.cc.orig	2026-11-11 14:44:17 UTC
+--- chrome/browser/ui/ui_features.cc.orig	2026-11-19 12:25:27 UTC
 +++ chrome/browser/ui/ui_features.cc
-@@ -139,7 +139,7 @@ bool ShouldUseActionsForBrowserCommands() {
+@@ -56,7 +56,7 @@ BASE_FEATURE(kInfoBarQueuedCountPill, base::FEATURE_DI
+ BASE_FEATURE(kKeyboardLockHeldEscExitsTabFullscreen,
+              base::FEATURE_ENABLED_BY_DEFAULT);
+ 
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ // Gives browser windows of non-default profiles their own identity for the
+ // desktop environment: the X11 WM_CLASS res_name and the Wayland app_id are set
+ // to a per-profile desktop entry ID (e.g. "google-chrome-Profile_1"), so the
+@@ -166,7 +166,7 @@ bool ShouldUseActionsForBrowserCommands() {
           base::FeatureList::IsEnabled(kAppMenuGlowUp);
  }
  
@@ -9,7 +18,7 @@
  BASE_FEATURE(kDseIntegrity, base::FEATURE_ENABLED_BY_DEFAULT);
  
  // Enables the dialog shown when user feedback is disabled.
-@@ -380,7 +380,7 @@ BASE_FEATURE(kByDateHistoryInSidePanel, base::FEATURE_
+@@ -385,7 +385,7 @@ BASE_FEATURE(kTabsFromOtherDevicesSidePanelPinnedByDef
  
  BASE_FEATURE(kNonMilestoneUpdateToast, base::FEATURE_ENABLED_BY_DEFAULT);
  

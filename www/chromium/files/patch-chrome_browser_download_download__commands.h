@@ -1,6 +1,6 @@
---- chrome/browser/download/download_commands.h.orig	2026-08-31 10:59:09 UTC
+--- chrome/browser/download/download_commands.h.orig	2026-11-19 12:25:27 UTC
 +++ chrome/browser/download/download_commands.h
-@@ -66,7 +66,7 @@ class DownloadCommands {
+@@ -69,7 +69,7 @@ class DownloadCommands {
    void ExecuteCommand(Command command);
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \

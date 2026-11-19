@@ -1,4 +1,4 @@
---- extensions/common/api/_permission_features.json.orig	2026-11-11 14:44:17 UTC
+--- extensions/common/api/_permission_features.json.orig	2026-11-19 12:25:27 UTC
 +++ extensions/common/api/_permission_features.json
 @@ -61,7 +61,7 @@
      "channel": "stable",
@@ -94,7 +94,7 @@
      "allowlist": [
        // DO NOT ADD ANY MORE ENTRIES HERE.
        // networkingPrivate is being migrated to networking.onc.
-@@ -630,7 +630,7 @@
+@@ -622,7 +622,7 @@
      "channel": "stable",
      "extension_types": ["extension", "platform_app" ],
      // "desktop_android" is not supported.
@@ -103,7 +103,7 @@
    },
    "proxy": [{
      "channel": "stable",
-@@ -662,7 +662,7 @@
+@@ -654,7 +654,7 @@
      "channel": "stable",
      "extension_types": ["platform_app"],
      // "desktop_android" is not supported.
@@ -112,7 +112,7 @@
    },
    "storage": [
      {
-@@ -759,7 +759,7 @@
+@@ -751,7 +751,7 @@
      "channel": "stable",
      "extension_types": ["extension", "legacy_packaged_app", "platform_app"],
      // "desktop_android" is not supported.

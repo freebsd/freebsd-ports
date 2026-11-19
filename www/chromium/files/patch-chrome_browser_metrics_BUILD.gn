@@ -1,4 +1,4 @@
---- chrome/browser/metrics/BUILD.gn.orig	2026-10-18 13:29:39 UTC
+--- chrome/browser/metrics/BUILD.gn.orig	2026-11-19 12:25:27 UTC
 +++ chrome/browser/metrics/BUILD.gn
 @@ -216,7 +216,7 @@ source_set("metrics") {
      ]
@@ -18,7 +18,7 @@
      public += [ "chrome_metrics_service_crash_reporter.h" ]
    }
  
-@@ -492,7 +492,7 @@ source_set("impl") {
+@@ -497,7 +497,7 @@ source_set("impl") {
      sources += [ "structured/chrome_structured_metrics_delegate.cc" ]
    }
  
@@ -27,8 +27,8 @@
      sources += [ "bluetooth_metrics_provider.cc" ]
    }
  
-@@ -507,7 +507,7 @@ source_set("impl") {
-     deps += [ "//chrome/browser/updates:update_metrics" ]
+@@ -516,7 +516,7 @@ source_set("impl") {
+     deps += [ "//chrome/browser/default_browser:startup_metrics" ]
    }
  
 -  if (is_win || is_android || is_linux) {

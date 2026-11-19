@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/profiles/signin_view_controller_delegate_views.cc.orig	2026-11-11 14:44:17 UTC
+--- chrome/browser/ui/views/profiles/signin_view_controller_delegate_views.cc.orig	2026-11-19 12:25:27 UTC
 +++ chrome/browser/ui/views/profiles/signin_view_controller_delegate_views.cc
 @@ -64,7 +64,7 @@
  #include "chrome/browser/ui/webui/signin/signout_confirmation/signout_confirmation_ui.h"
@@ -36,7 +36,7 @@
  // static
  std::unique_ptr<views::WebView>
  SigninViewControllerDelegateViews::CreateManagedUserNoticeConfirmationWebView(
-@@ -438,7 +438,7 @@ SigninViewControllerDelegateViews::SigninViewControlle
+@@ -423,7 +423,7 @@ SigninViewControllerDelegateViews::SigninViewControlle
  
    SetButtons(static_cast<int>(ui::mojom::DialogButton::kNone));
  
@@ -45,7 +45,7 @@
    // On the local profile creation dialog, cancelling the dialog (for instance
    // through the VKEY_ESCAPE accelerator) should delete the profile.
    if (delete_profile_on_cancel) {
-@@ -557,7 +557,7 @@ void SigninViewControllerDelegateViews::DetachFromWebC
+@@ -550,7 +550,7 @@ void SigninViewControllerDelegateViews::DetachFromWebC
    }
  }
  
@@ -54,7 +54,7 @@
  void SigninViewControllerDelegateViews::DeleteProfileOnCancel() {
    ProfileAttributesEntry* entry =
        g_browser_process->profile_manager()
-@@ -595,7 +595,7 @@ SigninViewControllerDelegate::CreateSyncConfirmationDe
+@@ -588,7 +588,7 @@ SigninViewControllerDelegate::CreateSyncConfirmationDe
        /*animate_on_resize=*/true);
  }
  
@@ -63,7 +63,7 @@
  // static
  SigninViewControllerDelegate*
  SigninViewControllerDelegate::CreateSyncHistoryOptInDelegate(
-@@ -658,7 +658,7 @@ SigninViewControllerDelegate::CreateSignoutConfirmatio
+@@ -651,7 +651,7 @@ SigninViewControllerDelegate::CreateSignoutConfirmatio
  }
  #endif  // BUILDFLAG(ENABLE_DICE_SUPPORT)
  

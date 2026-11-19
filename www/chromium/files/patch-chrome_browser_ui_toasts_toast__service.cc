@@ -1,6 +1,6 @@
---- chrome/browser/ui/toasts/toast_service.cc.orig	2026-11-11 14:44:17 UTC
+--- chrome/browser/ui/toasts/toast_service.cc.orig	2026-11-19 12:25:27 UTC
 +++ chrome/browser/ui/toasts/toast_service.cc
-@@ -143,7 +143,7 @@ void ToastService::RegisterToasts() {
+@@ -142,7 +142,7 @@ void ToastService::RegisterToasts() {
                                    IDS_CLEAR_BROWSING_DATA_TOAST_BODY)
            .Build());
  

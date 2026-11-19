@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/profiles/signin_view_controller_delegate_views.h.orig	2026-10-18 13:29:39 UTC
+--- chrome/browser/ui/views/profiles/signin_view_controller_delegate_views.h.orig	2026-11-19 12:25:27 UTC
 +++ chrome/browser/ui/views/profiles/signin_view_controller_delegate_views.h
 @@ -59,7 +59,7 @@ class SigninViewControllerDelegateViews
        SyncConfirmationStyle style,
@@ -18,7 +18,7 @@
    static std::unique_ptr<views::WebView>
    CreateManagedUserNoticeConfirmationWebView(
        BrowserWindowInterface& browser,
-@@ -157,7 +157,7 @@ class SigninViewControllerDelegateViews
+@@ -155,7 +155,7 @@ class SigninViewControllerDelegateViews
        std::optional<int> dialog_width,
        InitializeSigninWebDialogUI initialize_signin_web_dialog_ui);
  

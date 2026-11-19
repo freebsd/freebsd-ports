@@ -1,4 +1,4 @@
---- content/common/features.cc.orig	2026-11-11 14:44:17 UTC
+--- content/common/features.cc.orig	2026-11-19 12:25:27 UTC
 +++ content/common/features.cc
 @@ -241,7 +241,7 @@ BASE_FEATURE(kKillOnUnexpectedOriginHeader, base::FEAT
  BASE_FEATURE(kEmbeddingRequiresOptIn, base::FEATURE_DISABLED_BY_DEFAULT);
@@ -38,7 +38,7 @@
    return base::FeatureList::IsEnabled(features::kFontDataServiceLinux);
  #elif BUILDFLAG(IS_CHROMEOS)
    return base::FeatureList::IsEnabled(features::kFontDataServiceChromeOS);
-@@ -860,7 +860,7 @@ BASE_FEATURE(kStrictHighRankProcessLRU, base::FEATURE_
+@@ -876,7 +876,7 @@ BASE_FEATURE(kStrictHighRankProcessLRU, base::FEATURE_
  // is handled at a different level and not through the interpretation of scroll
  // events.
  BASE_FEATURE(kTouchpadOverscrollHistoryNavigation,

@@ -1,6 +1,6 @@
---- ui/qt/BUILD.gn.orig	2024-01-30 07:53:34 UTC
+--- ui/qt/BUILD.gn.orig	2026-11-19 12:25:27 UTC
 +++ ui/qt/BUILD.gn
-@@ -20,7 +20,7 @@ config("qt_internal_config") {
+@@ -22,7 +22,7 @@ config("qt_internal_config") {
  
    # It's OK to depend on the system libstdc++ since it's a dependency of QT, so
    # it will get loaded into the process anyway.
