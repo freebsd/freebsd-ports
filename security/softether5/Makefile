@@ -1,6 +1,5 @@
 PORTNAME=	softether
-DISTVERSION=	5.02.5185
-PORTREVISION=	2
+DISTVERSION=	5.2.5190
 PORTEPOCH=	2
 CATEGORIES=	security net-vpn
 PKGNAMESUFFIX=	5
@@ -8,12 +7,10 @@ DIST_SUBDIR=	${PORTNAME}
 
 # Some patches are managed in my GitHub fork
 PATCH_SITES=	https://github.com/metalefty/${GH_PROJECT}/commit/
-PATCHFILES=	0cc81bd8.patch:-p1 \
-		a461121b.patch:-p1 \
-		0d974cb2.patch:-p1 \
-		7ae4b614.patch:-p1 \
-		effb160a.patch:-p1 \
-		0938b91c.patch:-p1
+PATCHFILES=	d462b58.patch:-p1 \
+		7a7afe2.patch:-p1 \
+		7a026ca.patch:-p1 \
+		04ba4cd.patch:-p1
 
 MAINTAINER=	meta@FreeBSD.org
 COMMENT=	SoftEther VPN 5 (Developer Edition)
@@ -35,7 +32,10 @@ GH_ACCOUNT=	SoftEtherVPN
 GH_PROJECT=	SoftEtherVPN
 GH_TUPLE=	BLAKE2:BLAKE2:b52178a3:blake2/3rdparty/BLAKE2 \
 		cxong:tinydir:ec6bff20:tinydir/3rdparty/tinydir \
-		SoftEtherVPN:libhamcore:2951ae5b:libhamcore/src/libhamcore
+		google:cpu_features:ba4bffa8:cpu_features/src/Mayaqua/3rdparty/cpu_features \
+		open-quantum-safe:liboqs:94b421eb:liboqs/src/Mayaqua/3rdparty/liboqs \
+		open-quantum-safe:oqs-provider:7b8df261:oqsprovider/src/Mayaqua/3rdparty/oqs-provider \
+		SoftEtherVPN:libhamcore:fb8d4978:libhamcore/src/libhamcore
 
 CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE=RelWithDebInfo \
 		-DSE_DBDIR="${SE_DBDIR}" \
