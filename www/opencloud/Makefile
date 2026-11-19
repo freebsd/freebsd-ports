@@ -26,7 +26,6 @@ USE_RC_SUBR=	${PORTNAME}
 
 GO_TARGET=	./opencloud/cmd/${PORTNAME}:${PORTNAME}
 GO_BUILDFLAGS=	-tags disable_crypt -ldflags '${OC_LDFLAGS}'
-CGO_ENABLED=	0
 
 SUB_FILES=	pkg-message
 SUB_LIST=	OC_DBDIR=${OC_DBDIR} \
@@ -78,5 +77,15 @@ post-install-CLI-on:
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${FILESDIR}/README.FreeBSD ${STAGEDIR}${DOCSDIR}/
+
+.include <bsd.port.options.mk>
+
+# nats-server (vendored) has a cgo-free implementation of its FreeBSD process
+# stats code (server/pse) only on some architectures; the others need cgo
+.if ${ARCH} == amd64 || ${ARCH} == aarch64
+CGO_ENABLED=	0
+.else
+CGO_ENABLED=	1
+.endif
 
 .include <bsd.port.mk>
