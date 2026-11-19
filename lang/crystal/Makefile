@@ -1,8 +1,8 @@
 PORTNAME=	crystal
 DISTVERSION=	1.22.2
+PORTREVISION=	1
 CATEGORIES=	lang
-MASTER_SITES=	https://github.com/dmgk/crystal-bootstrap/releases/download/${_BOOTSTRAP_VERSION}/:bootstrap \
-		LOCAL/dmgk/crystal:bootstrap
+MASTER_SITES=	LOCAL/dch/crystal:bootstrap
 DISTFILES=	${_BOOTSTRAP_NAME}.tar.xz:bootstrap
 DIST_SUBDIR=	${PORTNAME}
 
@@ -16,15 +16,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 ONLY_FOR_ARCHS=	aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	requires prebuilt bootstrap compiler
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/llvm-config${_BOOTSTRAP_LLVM_VERSION}:devel/llvm${_BOOTSTRAP_LLVM_VERSION} \
-		asciidoctor:textproc/rubygem-asciidoctor \
+BUILD_DEPENDS=	asciidoctor:textproc/rubygem-asciidoctor \
 		git:devel/git
 LIB_DEPENDS=	libevent.so:devel/libevent \
 		libLLVM-${_LLVM_VERSION}.so:devel/llvm${_LLVM_VERSION} \
 		libffi.so:devel/libffi \
 		libgc-threaded.so:devel/boehm-gc-threaded \
 		libgmp.so:math/gmp \
-		libpcre.so:devel/pcre \
 		libpcre2-8.so:devel/pcre2 \
 		libyaml.so:textproc/libyaml
 RUN_DEPENDS=	pkg-config:devel/pkgconf
@@ -35,9 +33,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	crystal-lang
 USE_GNOME=	libxml2
 
-_BOOTSTRAP_LLVM_VERSION=	14
+_BOOTSTRAP_LLVM_VERSION=	20
 _BOOTSTRAP_NAME=		crystal-${_BOOTSTRAP_VERSION}-${ARCH}-llvm${_BOOTSTRAP_LLVM_VERSION}
-_BOOTSTRAP_VERSION=		1.5.1
+_BOOTSTRAP_VERSION=		1.22.2
 _COMMIT_ID=			84f389ac5424
 _LLVM_VERSION?=			20
 
@@ -67,6 +65,10 @@ INTERPRETER_MAKE_ARGS=	interpreter=1
 
 .if ${OPSYS} != FreeBSD
 IGNORE=		not supported on anything but FreeBSD
+.endif
+
+.if ${_LLVM_VERSION} != ${_BOOTSTRAP_LLVM_VERSION}
+BUILD_DEPENDS+=	libLLVM-${_BOOTSTRAP_LLVM_VERSION}.so:devel/llvm${_BOOTSTRAP_LLVM_VERSION}
 .endif
 
 post-extract:
@@ -124,5 +126,64 @@ makesum:
 	${AWK} '!seen[$$0]++' ${DISTINFO_FILE}.tmp > ${DISTINFO_FILE}
 	${RM} ${DISTINFO_FILE}.tmp
 .endif
+
+# maintainer flow for a new bootstrap compiler, on each arch in ONLY_FOR_ARCHS
+# set _BOOTSTRAP_VERSION to DISTVERSION & pkg install crystal, it builds the new one
+# make _tarball                     # build this arch's bootstrap into _DISTDIR
+# make _upload                      # push every arch found in _DISTDIR to freefall
+# make makesum                      # once all arches are published
+
+_BOOTSTRAP_WRKDIR=	${WRKDIR}/bootstrap
+_BOOTSTRAP_SRC=		${_BOOTSTRAP_WRKDIR}/${GH_PROJECT}-${DISTVERSION}
+
+_tarball: build-depends
+	@if [ "${_BOOTSTRAP_VERSION}" != "${DISTVERSION}" ]; then \
+		${ECHO_CMD} "===> set _BOOTSTRAP_VERSION=${DISTVERSION} first"; \
+		exit 1; \
+		fi
+	@if [ -f ${_DISTDIR}/${_BOOTSTRAP_NAME}.tar.xz ]; then \
+		${ECHO_CMD} "===> ${_BOOTSTRAP_NAME}.tar.xz already exists;"; \
+		${ECHO_CMD} "===> a published bootstrap must not be rebuilt"; \
+		exit 1; \
+		fi
+	@if [ ! -x ${LOCALBASE}/bin/crystal ]; then \
+		${ECHO_CMD} "===> pkg install crystal first, it compiles the bootstrap"; \
+		exit 1; \
+		fi
+	cd ${.CURDIR} && \
+		${MAKE} fetch DISTFILES=${DISTNAME}${EXTRACT_SUFX}
+	${RM} -r ${_BOOTSTRAP_WRKDIR}
+	${MKDIR} ${_BOOTSTRAP_WRKDIR}
+	${TAR} -xf ${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX} -C ${_BOOTSTRAP_WRKDIR}
+.for d in aarch64-freebsd aarch64-portbld-freebsd aarch64-unknown-freebsd
+	${RLN} x86_64-freebsd ${_BOOTSTRAP_SRC}/src/lib_c/${d}
+.endfor
+# a minimal compiler: no docs (libxml2), no interpreter, pcre2 only
+	(cd ${_BOOTSTRAP_SRC} && \
+		${SETENV} -u USE_PCRE1 PATH=${LOCALBASE}/bin:${PATH} \
+		${MAKE_CMD} CRYSTAL_CACHE_DIR=${_BOOTSTRAP_WRKDIR}/cache \
+		FLAGS="--progress --threads ${MAKE_JOBS_NUMBER} --release --no-debug" \
+		LLVM_CONFIG=${LOCALBASE}/bin/llvm-config${_BOOTSTRAP_LLVM_VERSION} \
+		crystal)
+	@ldd ${_BOOTSTRAP_SRC}/.build/crystal > ${_BOOTSTRAP_WRKDIR}/ldd.txt
+	@${GREP} -q 'libLLVM.*\.so\.${_BOOTSTRAP_LLVM_VERSION}\.' ${_BOOTSTRAP_WRKDIR}/ldd.txt || \
+		{ ${ECHO_CMD} "===> not linked to LLVM ${_BOOTSTRAP_LLVM_VERSION}"; exit 1; }
+	@${GREP} -q 'libpcre2-8\.so' ${_BOOTSTRAP_WRKDIR}/ldd.txt || \
+		{ ${ECHO_CMD} "===> not linked to pcre2"; exit 1; }
+	@! ${GREP} -q 'libpcre\.so' ${_BOOTSTRAP_WRKDIR}/ldd.txt || \
+		{ ${ECHO_CMD} "===> linked to pcre1"; exit 1; }
+	${_BOOTSTRAP_SRC}/.build/crystal --version
+	${CHMOD} -R u=rwX,go=rX ${_BOOTSTRAP_SRC}/.build
+	${TAR} -cJf ${_DISTDIR}/${_BOOTSTRAP_NAME}.tar.xz -C ${_BOOTSTRAP_SRC} \
+		--uid 0 --gid 0 --uname root --gname wheel ./.build
+	${CHMOD} 644 ${_DISTDIR}/${_BOOTSTRAP_NAME}.tar.xz
+	@${ECHO_MSG} "===> ${_BOOTSTRAP_NAME}.tar.xz built; run \"make _upload\" to publish"
+
+# copy the other arch's tarball into _DISTDIR first to upload both at once
+_upload:
+	(cd ${_DISTDIR} && \
+		rsync -Phriv --times --chmod=F644 \
+		$$(${LS} ${ONLY_FOR_ARCHS:@a@crystal-${_BOOTSTRAP_VERSION}-${a}-llvm${_BOOTSTRAP_LLVM_VERSION}.tar.xz@} 2>/dev/null) \
+		freefall.freebsd.org:public_distfiles/${PORTNAME}/)
 
 .include <bsd.port.mk>

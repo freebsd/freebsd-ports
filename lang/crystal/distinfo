@@ -1,7 +1,7 @@
-TIMESTAMP = 1793881940
-SHA256 (crystal/crystal-1.5.1-aarch64-llvm14.tar.xz) = 62617bf7a6d38d5a980672559b680818bf35803252f69bb6ecfb33377c3b2a88
-SIZE (crystal/crystal-1.5.1-aarch64-llvm14.tar.xz) = 2085460
+TIMESTAMP = 1793963250
+SHA256 (crystal/crystal-1.22.2-aarch64-llvm20.tar.xz) = 0ab53e9d57292974a6dc242008a119d6689d5fd4d08e4750d9e63a5e5060bb2a
+SIZE (crystal/crystal-1.22.2-aarch64-llvm20.tar.xz) = 2671736
 SHA256 (crystal/crystal-lang-crystal-1.22.2_GH0.tar.gz) = fd07dfa5e798b43cdf351494365e039c07fee15326d175c10490ae12e5f69edc
 SIZE (crystal/crystal-lang-crystal-1.22.2_GH0.tar.gz) = 4369406
-SHA256 (crystal/crystal-1.5.1-amd64-llvm14.tar.xz) = abd7cd2a798b9184d6cbb600fde29a55e196a03974c164ceac1713be264fb7ac
-SIZE (crystal/crystal-1.5.1-amd64-llvm14.tar.xz) = 2608988
+SHA256 (crystal/crystal-1.22.2-amd64-llvm20.tar.xz) = 745e3c18ea9c6a8bb3d60bd5c99e9284933a84849f6b0e11c7782f1b31e697f5
+SIZE (crystal/crystal-1.22.2-amd64-llvm20.tar.xz) = 3189140
