@@ -36,7 +36,7 @@ lib/libgnutls-openssl.so.27
 lib/libgnutls-openssl.so.27.0.2
 lib/libgnutls.so
 lib/libgnutls.so.30
-lib/libgnutls.so.30.42.0
+lib/libgnutls.so.30.43.0
 lib/libgnutlsxx.so
 lib/libgnutlsxx.so.30
 lib/libgnutlsxx.so.30.0.0
@@ -88,6 +88,7 @@ share/info/pkcs11-vision.png
 %%NLS%%share/locale/fr/LC_MESSAGES/gnutls.mo
 %%NLS%%share/locale/it/LC_MESSAGES/gnutls.mo
 %%NLS%%share/locale/ka/LC_MESSAGES/gnutls.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/gnutls.mo
 %%NLS%%share/locale/ms/LC_MESSAGES/gnutls.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/gnutls.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/gnutls.mo
@@ -98,6 +99,7 @@ share/info/pkcs11-vision.png
 %%NLS%%share/locale/uk/LC_MESSAGES/gnutls.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/gnutls.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gnutls.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/gnutls.mo
 share/man/man1/certtool.1.gz
 %%DANE%%share/man/man1/danetool.1.gz
 share/man/man1/gnutls-cli-debug.1.gz
@@ -413,6 +415,8 @@ share/man/man1/tpmtool.1.gz
 %%MAN3%%share/man/man3/gnutls_hpke_derive_keypair.3.gz
 %%MAN3%%share/man/man3/gnutls_hpke_encap.3.gz
 %%MAN3%%share/man/man3/gnutls_hpke_export.3.gz
+%%MAN3%%share/man/man3/gnutls_hpke_export_pubkey.3.gz
+%%MAN3%%share/man/man3/gnutls_hpke_import_pubkey.3.gz
 %%MAN3%%share/man/man3/gnutls_hpke_init.3.gz
 %%MAN3%%share/man/man3/gnutls_hpke_open.3.gz
 %%MAN3%%share/man/man3/gnutls_hpke_seal.3.gz
@@ -744,6 +748,7 @@ share/man/man1/tpmtool.1.gz
 %%MAN3%%share/man/man3/gnutls_pubkey_export_ecc_raw2.3.gz
 %%MAN3%%share/man/man3/gnutls_pubkey_export_ecc_x962.3.gz
 %%MAN3%%share/man/man3/gnutls_pubkey_export_gost_raw2.3.gz
+%%MAN3%%share/man/man3/gnutls_pubkey_export_mldsa_raw.3.gz
 %%MAN3%%share/man/man3/gnutls_pubkey_export_rsa_raw.3.gz
 %%MAN3%%share/man/man3/gnutls_pubkey_export_rsa_raw2.3.gz
 %%MAN3%%share/man/man3/gnutls_pubkey_get_key_id.3.gz
@@ -758,6 +763,7 @@ share/man/man1/tpmtool.1.gz
 %%MAN3%%share/man/man3/gnutls_pubkey_import_ecc_raw.3.gz
 %%MAN3%%share/man/man3/gnutls_pubkey_import_ecc_x962.3.gz
 %%MAN3%%share/man/man3/gnutls_pubkey_import_gost_raw.3.gz
+%%MAN3%%share/man/man3/gnutls_pubkey_import_mldsa_raw.3.gz
 %%MAN3%%share/man/man3/gnutls_pubkey_import_openpgp.3.gz
 %%MAN3%%share/man/man3/gnutls_pubkey_import_openpgp_raw.3.gz
 %%MAN3%%share/man/man3/gnutls_pubkey_import_pkcs11.3.gz
