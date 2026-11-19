@@ -228,7 +228,6 @@
     SUBDIR += img2xterm
     SUBDIR += ini_file_manager
     SUBDIR += inplace
-    SUBDIR += ipa_conv
     SUBDIR += ipbt
     SUBDIR += ironscanner
     SUBDIR += iselect
