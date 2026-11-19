@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2022-07-21 21:46:05 UTC
+--- CMakeLists.txt.orig	2026-09-25 03:01:11 UTC
 +++ CMakeLists.txt
-@@ -656,7 +656,7 @@ endif()
+@@ -700,7 +700,7 @@ set(TVM_TEST_LIBRARY_NAME tvm_compiler)
  
  # Create the `cpptest` target if we can find GTest.  If not, we create dummy
  # targets that give the user an informative error message.

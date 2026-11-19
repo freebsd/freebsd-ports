@@ -1,0 +1,13 @@
+-- prevent build failures due to libbacktrace - need to investigate the reason but this isn't urgent
+
+--- 3rdparty/tvm-ffi/CMakeLists.txt.orig	2026-11-18 18:42:03 UTC
++++ 3rdparty/tvm-ffi/CMakeLists.txt
+@@ -19,7 +19,7 @@ project(tvm_ffi LANGUAGES CXX C)
+ 
+ project(tvm_ffi LANGUAGES CXX C)
+ 
+-option(TVM_FFI_USE_LIBBACKTRACE "Enable libbacktrace" ON)
++option(TVM_FFI_USE_LIBBACKTRACE "Enable libbacktrace" OFF)
+ option(TVM_FFI_USE_EXTRA_CXX_API "Enable extra CXX API in shared lib" ON)
+ option(TVM_FFI_USE_THREADS "Link against threads in shared lib" ON)
+ option(TVM_FFI_USE_DL_LIBS "Link against dl libs in shared lib" ON)
