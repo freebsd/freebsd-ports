@@ -5813,3 +5813,4 @@ devel/p5-Device-USB||2026-11-10|Has expired: Upstream advises it as deprecated a
 sysutils/mapchan||2026-11-10|Has expired: Incomplete implementation and does not work as intended anymore
 lang/php80-legacy||2026-11-15|No longer required in the cluster
 devel/rubygem-io-wait01|devel/rubygem-io-wait|2026-11-16|Use devel/rubygem-io-wait instead
+sysutils/kvmclock-kmod||2026-11-19|Removed, not required on any supported FreeBSD version
