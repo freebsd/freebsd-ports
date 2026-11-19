@@ -1,0 +1,42 @@
+#!/usr/local/bin/bash
+# Copyright (c) 2013 The Chromium Embedded Framework Authors. All rights
+# reserved. Use of this source code is governed by a BSD-style license
+# that can be found in the LICENSE file.
+
+# Determine the absolute path to the current directory.
+DIR="$( cd "$( dirname "$0" )" && pwd )"
+LIB_PATH="%%PREFIX%%/lib/jcef"
+
+if [ -z "$1" ]; then
+  EXAMPLE="detailed"
+else
+  EXAMPLE="$1"
+fi
+
+# Necessary for libjcef.so to find libjawt.so.
+JAVA_PATH="%%JAVA_HOME%%"
+JAVA_LIB_PATH="%%JAVA_HOME%%/lib"
+if [ ! -d "$JAVA_LIB_PATH" ]; then
+  echo "ERROR: Java lib path does not exist"
+  exit 1
+fi
+
+# Without $LOCALBASE/lib JCEF won’t find the jogamp-jogl libraries
+LIB_PATH="${LIB_PATH}:${JAVA_LIB_PATH}:%%LOCALBASE%%/lib"
+
+# Necessary for jcef_helper to find libcef.so.
+if [ -n "$LD_LIBRARY_PATH" ]; then
+  LD_LIBRARY_PATH="$LIB_PATH:${LD_LIBRARY_PATH}"
+else
+  LD_LIBRARY_PATH="$LIB_PATH"
+fi
+export LD_LIBRARY_PATH
+
+# Preload libcef.so to avoid crashes.
+LD_PRELOAD=%%PREFIX%%/lib/jcef/libcef.so	\
+%%JAVA%% --enable-native-access=ALL-UNNAMED	\
+    --add-exports java.desktop/sun.awt=ALL-UNNAMED \
+    --add-exports java.desktop/sun.java2d=ALL-UNNAMED \
+    --add-exports java.base/java.lang=ALL-UNNAMED \
+    -cp "%%DATADIR%%/jcef-tests.jar:%%JAVAJARDIR%%/jcef.jar:%%JAVAJARDIR%%/jogl2.jar:%%JAVAJARDIR%%/gluegen2-rt.jar" \
+    -Djava.library.path="$LIB_PATH" tests.${EXAMPLE}.MainFrame

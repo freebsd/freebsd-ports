@@ -1,0 +1,20 @@
+--- native/CMakeLists.txt.orig	2026-09-08 14:07:06 UTC
++++ native/CMakeLists.txt
+@@ -207,7 +207,7 @@ endif()
+   set(JCEF_HELPER_TARGET "jcef_helper")
+ endif()
+ 
+-if(OS_LINUX OR OS_WINDOWS)
++if(OS_LINUX OR OS_WINDOWS OR OS_FREEBSD)
+   # Logical target used to link the libcef library on Linux and Windows.
+   # On macOS the CEF framework is loaded dynamically at startup.
+   ADD_LOGICAL_TARGET("libcef_lib" "${CEF_LIB_DEBUG}" "${CEF_LIB_RELEASE}")
+@@ -221,7 +221,7 @@ SET_CEF_TARGET_OUT_DIR()
+ # Linux configuration.
+ #
+ 
+-if(OS_LINUX)
++if(OS_LINUX OR OS_FREEBSD)
+   # Helper executable target.
+   add_executable(${JCEF_HELPER_TARGET} ${JCEF_HELPER_SRCS})
+   SET_EXECUTABLE_TARGET_PROPERTIES(${JCEF_HELPER_TARGET})

@@ -1,0 +1,11 @@
+Important: to use this port, you have to pass
+-Djava.library.path="%%LOCALBASE%%/lib"
+for JCEF to find the jogamp-jogl libraries.
+
+It is also important to pass these parameters:
+    --add-exports java.desktop/sun.awt=ALL-UNNAMED
+    --add-exports java.desktop/sun.java2d=ALL-UNNAMED
+    --add-exports java.base/java.lang=ALL-UNNAMED
+because sun.awt is required.
+
+As an example see %%DATADIR%%/run.sh.

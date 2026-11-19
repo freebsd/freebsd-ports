@@ -1,0 +1,66 @@
+--- CMakeLists.txt.orig	2026-09-08 14:07:06 UTC
++++ CMakeLists.txt
+@@ -145,6 +145,8 @@ if("${CMAKE_SYSTEM_NAME}" STREQUAL "Darwin")
+     set(PROJECT_ARCH "x86_64")
+     set(CEF_PLATFORM "macosx64")
+   endif()
++elseif("${CMAKE_SYSTEM_NAME}" STREQUAL "FreeBSD")
++  set(CEF_PLATFORM "freebsd")
+ elseif("${CMAKE_SYSTEM_NAME}" STREQUAL "Linux")
+   if(CMAKE_SIZEOF_VOID_P MATCHES 8)
+     set(CEF_PLATFORM "linux64")
+@@ -163,11 +165,11 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CU
+ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+ 
+ # Download and extract the CEF binary distribution (executes DownloadCEF.cmake).
+-include(DownloadCEF)
+-DownloadCEF("${CEF_PLATFORM}" "${CEF_VERSION}" "${CMAKE_SOURCE_DIR}/third_party/cef")
++#include(DownloadCEF)
++#DownloadCEF("${CEF_PLATFORM}" "${CEF_VERSION}" "${CMAKE_SOURCE_DIR}/third_party/cef")
+ 
+ # Add the CEF binary distribution's cmake/ directory to the module path.
+-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CEF_ROOT}/cmake")
++#set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CEF_ROOT}/cmake")
+ 
+ # Load the CEF configuration (executes FindCEF.cmake).
+ find_package(CEF REQUIRED)
+@@ -278,22 +280,23 @@ endif()
+   set(GS_OUTPATH "linux64/clang-format")
+ endif()
+ 
+-message(STATUS "Downloading clang-format from Google Storage...")
+-execute_process(
+-  COMMAND "${PYTHON_EXECUTABLE}"
+-          "tools/buildtools/download_from_google_storage.py"
+-          "--no_resume"
+-          "--platform=${GS_PLATFORM}"
+-          "--no_auth"
+-          "--bucket" "chromium-clang-format"
+-          "-s" "tools/buildtools/${GS_HASHPATH}"
+-          "-o" "tools/buildtools/${GS_OUTPATH}"
+-  WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+-  RESULT_VARIABLE EXECUTE_RV
+-  )
+-if(NOT EXECUTE_RV STREQUAL "0")
+-  message(FATAL_ERROR "Execution failed with unexpected result: ${EXECUTE_RV}")
+-endif()
++# If needed clang-format will be provided by ${LOCALBASE}/llvm${LLVM_VERSION}/bin/clang-format
++#message(STATUS "Downloading clang-format from Google Storage...")
++#execute_process(
++#  COMMAND "${PYTHON_EXECUTABLE}"
++#          "tools/buildtools/download_from_google_storage.py"
++#          "--no_resume"
++#          "--platform=${GS_PLATFORM}"
++#          "--no_auth"
++#          "--bucket" "chromium-clang-format"
++#          "-s" "tools/buildtools/${GS_HASHPATH}"
++#          "-o" "tools/buildtools/${GS_OUTPATH}"
++#  WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
++#  RESULT_VARIABLE EXECUTE_RV
++#  )
++#if(NOT EXECUTE_RV STREQUAL "0")
++#  message(FATAL_ERROR "Execution failed with unexpected result: ${EXECUTE_RV}")
++#endif()
+ 
+ 
+ #
