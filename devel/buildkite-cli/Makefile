@@ -1,7 +1,6 @@
 PORTNAME=	buildkite-cli
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.64.2
-PORTREVISION=	1
+DISTVERSION=	3.67.0
 CATEGORIES=	devel sysutils
 
 MAINTAINER=	dch@FreeBSD.org
@@ -12,9 +11,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 USES=		go:modules
-USE_GITHUB=	yes
-GH_ACCOUNT=	buildkite
-GH_PROJECT=	cli
 
 GO_MODULE=	github.com/buildkite/cli/v3
 GO_ENV+=	GOTOOLCHAIN=local+path
