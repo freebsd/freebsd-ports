@@ -88,7 +88,6 @@ include/h2o.h
 include/h2o/absprio.h
 include/h2o/balancer.h
 include/h2o/cache.h
-include/h2o/cache_digests.h
 include/h2o/configurator.h
 include/h2o/file.h
 include/h2o/filecache.h
@@ -142,6 +141,7 @@ include/picotls/openssl.h
 include/picotls/pembase64.h
 include/picotls/ptlsbcrypt.h
 include/quicly.h
+include/quicly/bplus_ranges.h
 include/quicly/cc.h
 include/quicly/cid.h
 include/quicly/constants.h

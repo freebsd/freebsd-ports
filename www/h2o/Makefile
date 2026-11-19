@@ -1,5 +1,5 @@
 PORTNAME=	h2o
-DISTVERSION=	20261006
+DISTVERSION=	20261109
 CATEGORIES=	www
 
 MAINTAINER=	dch@FreeBSD.org
@@ -14,12 +14,13 @@ BROKEN_armv7=	fails to compile: asm_arm.inc:139:36: '.syntax divided' arm assemb
 
 LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
 		libhiredis.so:databases/hiredis \
+		libuv.so:devel/libuv \
 		libyaml.so:textproc/libyaml
 
 USES=		cmake compiler:c11 cpe pathfix perl5 pkgconfig shebangfix ssl
 CPE_VENDOR=	dena
 USE_GITHUB=	yes
-GH_TAGNAME=	5da5054
+GH_TAGNAME=	436163489f65be5cf0d08f1c14fa07ae4f9b8b88
 USE_LDCONFIG=	YES
 USE_RC_SUBR=	${PORTNAME}
 
