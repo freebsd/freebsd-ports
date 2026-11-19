@@ -14,7 +14,7 @@ LIB_DEPENDS=	libKUnifiedPush.so:devel/kunifiedpush \
 		libQCoro6Core.so:devel/qcoro \
 		libQuotientQt6.so:net-im/libquotient \
 		libcmark.so:textproc/cmark \
-		libqt6keychain.so:security/qtkeychain@qt6 \
+		libqt6keychain.so:security/qtkeychain \
 		libdbus-1.so:devel/dbus \
 		libolm.so:security/olm
 RUN_DEPENDS=	kquickimageeditor-qt6>=0.2.0:graphics/kquickimageeditor

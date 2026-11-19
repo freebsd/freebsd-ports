@@ -9,7 +9,7 @@ WWW=		https://www.kde.org/
 
 LIB_DEPENDS=	libgpg-error.so:security/libgpg-error \
 		libgpgme.so:security/gpgme \
-		libqt6keychain.so:security/qtkeychain@qt6
+		libqt6keychain.so:security/qtkeychain
 
 USES=		cmake gettext-tools kde:6 qt:6 tar:xz
 # KDE Frameworks

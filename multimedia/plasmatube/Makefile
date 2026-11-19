@@ -8,7 +8,7 @@ WWW=		https://apps.kde.org/plasmatube/
 
 LIB_DEPENDS=	libmpv.so:multimedia/mpv \
 		libMpvQt.so:multimedia/mpvqt \
-		libqt6keychain.so:security/qtkeychain@qt6
+		libqt6keychain.so:security/qtkeychain
 
 USES=		cmake gettext kde:6 localbase:ldflags pkgconfig qt:6 tar:xz
 USE_KDE=	config coreaddons dbusaddons i18n kirigami-addons kirigami2 \

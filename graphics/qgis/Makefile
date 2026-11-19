@@ -53,7 +53,7 @@ LIB_DEPENDS=	libabsl_log_internal_check_op.so:devel/abseil \
 		libprotobuf-lite.so:devel/protobuf \
 		libqca-qt6.so:devel/qca@qt6 \
 		libqscintilla2_qt6.so:devel/qscintilla2@qt6 \
-		libqt6keychain.so:security/qtkeychain@qt6 \
+		libqt6keychain.so:security/qtkeychain \
 		libqwt.so:x11-toolkits/qwt6@qt6 \
 		librttopo.so:devel/librttopo \
 		libSFCGAL.so:databases/sfcgal \

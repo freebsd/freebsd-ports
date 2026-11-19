@@ -7,7 +7,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE mail account wizard
 WWW=		https://www.kde.org/
 
-LIB_DEPENDS=	libqt6keychain.so:security/qtkeychain@qt6
+LIB_DEPENDS=	libqt6keychain.so:security/qtkeychain
 
 USES=		cmake gettext-tools gl kde:6 \
 		qt:6 tar:xz

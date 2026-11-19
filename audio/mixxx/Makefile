@@ -86,7 +86,7 @@ OPUS_CMAKE_BOOL=	OPUS
 
 QTKEYCHAIN_DESC=	Secure credentials storage for Live Broadcasting profiles
 QTKEYCHAIN_CMAKE_BOOL=	QTKEYCHAIN
-QTKEYCHAIN_LIB_DEPENDS=	libqt6keychain.so:security/qtkeychain@qt6
+QTKEYCHAIN_LIB_DEPENDS=	libqt6keychain.so:security/qtkeychain
 
 WAVPACK_LIB_DEPENDS=	libwavpack.so:audio/wavpack
 WAVPACK_CMAKE_BOOL=	WAVPACK

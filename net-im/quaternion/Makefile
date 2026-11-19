@@ -11,7 +11,7 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSES/GPL-3.0-or-later.txt
 
 LIB_DEPENDS=	libQuotientQt6.so:net-im/libquotient \
-		libqt6keychain.so:security/qtkeychain@qt6 \
+		libqt6keychain.so:security/qtkeychain \
 		libsecret-1.so:security/libsecret \
 		libolm.so:security/olm
 

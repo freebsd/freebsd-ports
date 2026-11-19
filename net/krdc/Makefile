@@ -10,7 +10,7 @@ LIB_DEPENDS=	libvncclient.so:net/libvncserver \
 		libxkbcommon.so:x11/libxkbcommon \
 		libwayland-client.so:graphics/wayland \
 		libwayland-cursor.so:graphics/wayland \
-		libqt6keychain.so:security/qtkeychain@qt6 \
+		libqt6keychain.so:security/qtkeychain \
 		libssh.so:security/libssh
 
 USES=		cmake compiler:c++11-lang desktop-file-utils gettext gl kde:6 \

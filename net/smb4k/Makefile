@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSES/GPL-2.0-or-later.txt
 
 LIB_DEPENDS=	libKDSoapWSDiscoveryClient.so:www/kdsoap-ws-discovery-client \
 		libkdsoap-qt6.so:www/kdsoap \
-		libqt6keychain.so:security/qtkeychain@qt6
+		libqt6keychain.so:security/qtkeychain
 RUN_DEPENDS=	rsync:net/rsync
 
 USES=		cmake compiler:c++17-lang cpe gettext-tools gl kde:6 qt:6 \

@@ -10,7 +10,7 @@ WWW=		https://apps.kde.org/ruqola/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libqt6keychain.so:security/qtkeychain@qt6
+LIB_DEPENDS=	libqt6keychain.so:security/qtkeychain
 
 USES=		cmake kde:6 gettext qt:6 tar:xz
 USE_KDE=	archive codecs colorscheme config coreaddons crash \

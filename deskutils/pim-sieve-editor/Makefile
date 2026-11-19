@@ -7,7 +7,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Mail sieve editor
 WWW=		https://invent.kde.org/pim/pim-sieve-editor
 
-LIB_DEPENDS=	libqt6keychain.so:security/qtkeychain@qt6
+LIB_DEPENDS=	libqt6keychain.so:security/qtkeychain
 
 USES=		cmake gettext-tools kde:6 qt:6 tar:xz
 # KDE Frameworks

@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSES/GPL-2.0-or-later.txt
 LIB_DEPENDS=	libalkimia6.so:finance/alkimia \
 		libKChart6.so:graphics/kdiagram-qt6 \
 		libmpir.so:math/mpir \
-		libqt6keychain.so:security/qtkeychain@qt6
+		libqt6keychain.so:security/qtkeychain
 
 USES=		cmake compiler:c++17-lang desktop-file-utils \
 		gettext-runtime:build gettext-tools kde:6 \

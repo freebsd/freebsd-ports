@@ -9,7 +9,7 @@ WWW=		https://www.kde.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libqt6keychain.so:security/qtkeychain@qt6 \
+LIB_DEPENDS=	libqt6keychain.so:security/qtkeychain \
 		libaccounts-qt6.so:net-im/libaccounts-qt \
 		libkaccounts6.so:net-im/kaccounts-integration
 RUN_DEPENDS=	kaccounts-providers>=0:net-im/kaccounts-providers

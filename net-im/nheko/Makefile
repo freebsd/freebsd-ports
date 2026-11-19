@@ -28,7 +28,7 @@ LIB_DEPENDS=	\
 		liblmdb0.so:databases/lmdb0 \
 		libmatrix_client.so:net-im/mtxclient \
 		libolm.so:security/olm \
-		libqt6keychain.so:security/qtkeychain@qt6
+		libqt6keychain.so:security/qtkeychain
 
 USES=		cmake compiler:c++20-lang desktop-file-utils \
 		localbase:ldflags pkgconfig qt:6 ssl tar:xz

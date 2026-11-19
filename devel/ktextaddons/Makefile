@@ -9,7 +9,7 @@ WWW=		https://invent.kde.org/libraries/ktextaddons/
 
 LICENSE=	LGPL20+
 
-LIB_DEPENDS=	libqt6keychain.so:security/qtkeychain@qt6
+LIB_DEPENDS=	libqt6keychain.so:security/qtkeychain
 
 USES=		gettext cmake kde:6 python:run qt:6 shebangfix tar:xz xorg
 USE_KDE=	archive colorscheme coreaddons i18n iconthemes \

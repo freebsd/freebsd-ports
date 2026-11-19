@@ -13,7 +13,7 @@ LIB_DEPENDS=	libgpg-error.so:security/libgpg-error \
 		libgpgme.so:security/gpgme \
 		libgpgmepp.so:security/gpgmepp \
 		libqgpgmeqt6.so:security/qgpgme@qt6 \
-		libqt6keychain.so:security/qtkeychain@qt6
+		libqt6keychain.so:security/qtkeychain
 
 RUN_DEPENDS=	accountwizard:deskutils/kmail-account-wizard \
 		akonadiimportwizard:deskutils/akonadi-import-wizard \

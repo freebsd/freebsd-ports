@@ -9,7 +9,7 @@ WWW=		https://apps.kde.org/en/itinerary
 LIB_DEPENDS=	libKOSM.so:astro/kosmindoormap \
 		libQCoro6Core.so:devel/qcoro \
 		libQuotientQt6.so:net-im/libquotient \
-		libqt6keychain.so:security/qtkeychain@qt6
+		libqt6keychain.so:security/qtkeychain
 
 USES=		cmake compiler:c++20-lang desktop-file-utils gettext kde:6 \
 		qt:6 tar:xz xorg

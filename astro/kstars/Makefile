@@ -16,7 +16,7 @@ IGNORE_i386=	fails to build on i386
 
 LIB_DEPENDS=	libXISF.so:graphics/libxisf \
 		libcfitsio.so:astro/cfitsio \
-		libqt6keychain.so:security/qtkeychain@qt6 \
+		libqt6keychain.so:security/qtkeychain \
 		libraw.so:graphics/libraw \
 		libgsl.so:math/gsl \
 		libindiclient.so:devel/indi \

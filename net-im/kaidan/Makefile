@@ -15,7 +15,7 @@ BUILD_DEPENDS=	kquickimageeditor-qt6>0:graphics/kquickimageeditor
 LIB_DEPENDS=	libQXmppQt6.so:net-im/qxmpp \
 		libicuuc.so:devel/icu \
 		libkdsingleapplication-qt6.so:devel/kdsingleapplication \
-		libqt6keychain.so:security/qtkeychain@qt6 \
+		libqt6keychain.so:security/qtkeychain \
 		libxkbcommon.so:x11/libxkbcommon
 RUN_DEPENDS=	kquickimageeditor-qt6>0:graphics/kquickimageeditor
 

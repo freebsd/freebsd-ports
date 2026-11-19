@@ -5,7 +5,7 @@ CATEGORIES=	security kde kde-plasma
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	ssh-add helper that uses QtKeychain and KPasswordDialog
 
-LIB_DEPENDS=	libqt6keychain.so:security/qtkeychain@qt6
+LIB_DEPENDS=	libqt6keychain.so:security/qtkeychain
 
 USES=		cmake gettext gl kde:6 qt:6 tar:xz
 USE_KDE=	config coreaddons i18n widgetsaddons \

@@ -11,7 +11,7 @@ LICENSE=	LGPL21
 
 LIB_DEPENDS=	libqca-qt6.so:devel/qca@qt6 \
 		libsasl2.so:security/cyrus-sasl2 \
-		libqt6keychain.so:security/qtkeychain@qt6
+		libqt6keychain.so:security/qtkeychain
 
 USES=		cmake:noninja compiler gettext-tools kde:6 qt:6 \
 		shared-mime-info tar:xz

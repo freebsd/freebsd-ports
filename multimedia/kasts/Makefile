@@ -8,7 +8,7 @@ WWW=		https://apps.kde.org/kasts/
 
 LICENSE=	GPLv2+
 
-LIB_DEPENDS=	libqt6keychain.so:security/qtkeychain@qt6 \
+LIB_DEPENDS=	libqt6keychain.so:security/qtkeychain \
 		libtag.so:audio/taglib
 
 USES=		cmake desktop-file-utils gettext gettext-runtime gnome \

@@ -10,7 +10,7 @@ WWW=		https://www.kde.org/
 LICENSE=	LGPL21
 
 LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2 \
-		libqt6keychain.so:security/qtkeychain@qt6
+		libqt6keychain.so:security/qtkeychain
 
 USES=		cmake gettext-tools kde:6 ldap qt:6 tar:xz
 # KDE Frameworks
