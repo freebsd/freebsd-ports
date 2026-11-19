@@ -175,7 +175,8 @@ _LICENSE_SPDX_LIST+= \
 				OLDAP-1.4 OSSP Pixar pkgconf \
 				Python-2.0.1 python-ldap Sendmail Sendmail-8.23 \
 				SHL-0.5 SHL-0.51 Sleepycat SMLNJ Spencer-94 \
-				SSLeay-standalone TCL Unicode-3.0 WordNet
+				SSLeay-standalone TCL Unicode-3.0 Unicode-DFS-2016 \
+				WordNet
 
 _LICENSE_LIST+=	${_LICENSE_SPDX_LIST}
 
@@ -690,6 +691,9 @@ _LICENSE_GROUPS_TCL=	# empty
 
 _LICENSE_NAME_Unicode-3.0= Unicode License v3
 _LICENSE_GROUPS_Unicode-3.0= OSI
+
+_LICENSE_NAME_Unicode-DFS-2016= Unicode License Agreement - Data Files and Software (2016)
+_LICENSE_GROUPS_Unicode-DFS-2016= OSI
 
 _LICENSE_NAME_WordNet=	WordNet License
 _LICENSE_GROUPS_WordNet= OSI
