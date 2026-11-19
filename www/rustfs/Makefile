@@ -1,5 +1,5 @@
 PORTNAME=	rustfs
-DISTVERSION=	1.0.5
+DISTVERSION=	1.0.6
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/rustfs/console/releases/download/v${CONSOLE_VERSION}/:console
 DISTFILES=	rustfs-console-v${CONSOLE_VERSION}.zip:console
