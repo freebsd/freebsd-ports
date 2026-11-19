@@ -1,0 +1,13 @@
+yardstick is a tidymodels package for measuring how well a model
+performs, built on tidy data principles. Metrics take a data frame
+and column names, use a dplyr-like syntax, and return the results
+as a data frame.
+
+It covers metrics for classification, such as accuracy and kappa,
+based on confusion matrices, summaries of class probability
+predictions, such as ROC AUC along with ROC, precision-recall and
+gain curves, metrics for regression, such as RMSE and MAE, and
+metrics for survival analysis. Classification metrics extend to
+multiclass problems with several averaging methods. Metrics are
+computed per group on grouped data, and several metrics can be
+combined into one function with metric_set().

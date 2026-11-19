@@ -167,6 +167,7 @@
     SUBDIR += R-cran-uroot
     SUBDIR += R-cran-wk
     SUBDIR += R-cran-xts
+    SUBDIR += R-cran-yardstick
     SUBDIR += R-cran-zoo
     SUBDIR += SCIP
     SUBDIR += SoPlex
