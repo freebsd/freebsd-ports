@@ -1,5 +1,5 @@
 PORTNAME=	enlightenment
-PORTVERSION=	0.27.1
+PORTVERSION=	0.28.0
 PORTEPOCH=	2
 CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/apps/${PORTNAME}/
@@ -43,6 +43,8 @@ MIXER_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 
 MOUNT_RUN_DEPENDS=	bsdisks:sysutils/bsdisks
 
+.include <bsd.port.options.mk>
+
 # MESON normalizes ${ARCH} so we cannot use it 'AS IS' without conversion
 CURRENT_ARCH=	${ARCH}
 .if ${CURRENT_ARCH} == amd64
@@ -60,6 +62,6 @@ ENLIGHTENMENT_ARCH=	${OPSYS:tl}-${CURRENT_ARCH}
 .endif
 
 ENLIGHTENMENT_VERSION=	${PORTVERSION}
-PLIST_SUB=              ENLIGHTENMENT_ARCH=${ENLIGHTENMENT_ARCH}-${ENLIGHTENMENT_VERSION}
+PLIST_SUB+=              ENLIGHTENMENT_ARCH=${ENLIGHTENMENT_ARCH}-${ENLIGHTENMENT_VERSION}
 
 .include <bsd.port.mk>

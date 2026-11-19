@@ -1,11 +1,12 @@
 PORTNAME=	entice
-PORTVERSION=	g20240127
+PORTVERSION=	0.1.0
 CATEGORIES=	graphics enlightenment
+MASTER_SITES=   http://download.enlightenment.org/rel/apps/${PORTNAME}/
 DIST_SUBDIR=	enlightenment
 
-MAINTAINER=	peter@flytrace.com
+MAINTAINER=	enlightenment@FreeBSD.org
 COMMENT=	Simple Image Viewer Using EFL
-WWW=		https://github.com/vtorri/entice
+WWW=		https://www.enlightenment.org/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -13,11 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libefl.so:devel/efl \
 		libexif.so:graphics/libexif
 
-USES=		compiler:c11 desktop-file-utils meson pkgconfig
-USE_GITHUB=	yes
-GH_ACCOUNT=	vtorri
-GH_PROJECT=	entice
-GH_TAGNAME=	5122896
+USES=		compiler:c11 desktop-file-utils meson localbase:ldflags pkgconfig tar:xz
 
 OPTIONS_DEFINE=		NLS
 OPTIONS_DEFAULT=	NLS
