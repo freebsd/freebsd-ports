@@ -1,0 +1,9 @@
+include/dragonbox/dragonbox.h
+include/dragonbox/dragonbox_to_chars.h
+lib/cmake/dragonbox/dragonboxConfig.cmake
+lib/cmake/dragonbox/dragonboxConfigVersion.cmake
+lib/cmake/dragonbox/dragonboxTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/dragonbox/dragonboxTargets.cmake
+lib/libdragonbox_to_chars.so
+lib/libdragonbox_to_chars.so.1
+lib/libdragonbox_to_chars.so.%%PORTVERSION%%

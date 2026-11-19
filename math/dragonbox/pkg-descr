@@ -1,0 +1,8 @@
+Dragonbox is a float-to-string conversion algorithm: it finds the
+shortest decimal representation of a binary floating-point number which
+still rounds back to the same number.  It is based on Schubfach, by
+Raffaello Giulietti, and also inspired by Grisu and Grisu-Exact.
+
+This port installs the header-only dragonbox library, along with
+dragonbox_to_chars, a shared library converting float and double values
+into strings, and CMake package files for find_package(dragonbox).

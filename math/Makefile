@@ -299,6 +299,7 @@
     SUBDIR += dionysus
     SUBDIR += disco
     SUBDIR += dqfun
+    SUBDIR += dragonbox
     SUBDIR += drgeo
     SUBDIR += dsdp
     SUBDIR += dsfmt

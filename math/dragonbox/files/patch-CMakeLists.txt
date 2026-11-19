@@ -1,0 +1,36 @@
+--- CMakeLists.txt.orig	2022-06-17 23:48:12 UTC
++++ CMakeLists.txt
+@@ -39,10 +39,13 @@ set(dragonbox_to_chars_sources source/dragonbox_to_cha
+ 
+ set(dragonbox_to_chars_sources source/dragonbox_to_chars.cpp)
+ 
+-add_library(dragonbox_to_chars STATIC
++add_library(dragonbox_to_chars
+         ${dragonbox_to_chars_headers}
+         ${dragonbox_to_chars_sources})
+ add_library(dragonbox::dragonbox_to_chars ALIAS dragonbox_to_chars)
++set_target_properties(dragonbox_to_chars PROPERTIES
++        VERSION ${PROJECT_VERSION}
++        SOVERSION ${PROJECT_VERSION_MAJOR})
+ 
+ target_include_directories(dragonbox_to_chars
+         ${dragonbox_warning_guard}
+@@ -57,8 +60,8 @@ option(DRAGONBOX_INSTALL_TO_CHARS
+         "When invoked with --install, dragonbox_to_chars.h/.cpp are installed along with dragonbox.h"
+         On)
+ 
+-set(dragonbox_directory "dragonbox-${PROJECT_VERSION}")
+-set(dragonbox_include_directory "${CMAKE_INSTALL_INCLUDEDIR}/${dragonbox_directory}")
++set(dragonbox_directory "dragonbox")
++set(dragonbox_include_directory "${CMAKE_INSTALL_INCLUDEDIR}")
+ set(dragonbox_install_targets "dragonbox")
+ 
+ if (DRAGONBOX_INSTALL_TO_CHARS)
+@@ -103,6 +106,7 @@ if (DRAGONBOX_ENABLE_SUBPROJECT)
+ option(DRAGONBOX_ENABLE_SUBPROJECT "Build subproject as well" OFF)
+ 
+ if (DRAGONBOX_ENABLE_SUBPROJECT)
++    enable_testing()
+     add_subdirectory("subproject/benchmark")
+     add_subdirectory("subproject/meta")
+     add_subdirectory("subproject/test")
