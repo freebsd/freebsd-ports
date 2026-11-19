@@ -1,6 +1,6 @@
 PORTNAME=	nginx-module-headers-more
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.41
+DISTVERSION=	0.42
 CATEGORIES=	www
 
 MAINTAINER=	joneum@FreeBSD.org
