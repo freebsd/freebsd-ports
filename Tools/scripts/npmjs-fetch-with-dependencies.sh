@@ -87,6 +87,8 @@ rm -rf ${BUILD_DIR}
 mkdir ${BUILD_DIR}
 cd ${BUILD_DIR}
 
+# Both paths must archive the same installer manifest, including its newline.
+echo "{\"name\":\"${PACKAGE_NAME}-installer\",\"version\":\"1.0.0\",\"dependencies\":{\"${PACKAGE_NAME}\":\"${PACKAGE_VERSION}\"}}" > package.json
 # either just fetch, or regenarate package-lock.json and fetch
 if [ -f $PACKAGE_LOCK_JSON ]; then
 	# fail if package-lock.json does not contain the requested package and version
@@ -98,7 +100,6 @@ if [ -f $PACKAGE_LOCK_JSON ]; then
 	fi
 
 	# fetch dependencies
-	echo "{\"name\":\"${PACKAGE_NAME}-installer\",\"version\":\"1.0.0\",\"dependencies\":{\"${PACKAGE_NAME}\":\"${PACKAGE_VERSION}\"}}" > package.json
 	cp $PACKAGE_LOCK_JSON package-lock.json
 	HOME=${TMPDIR} NODE_EXTRA_CA_CERTS=${LOCALBASE}/share/certs/ca-root-nss.crt npm ci --ignore-scripts --global-style --legacy-peer-deps --omit=dev
 else
@@ -106,8 +107,7 @@ else
 	echo "INFO: the file $PACKAGE_LOCK_JSON does not exist, we will attempt to generate it"
 
 	# generate package-lock.json
-	echo "{\"name\":\"${PACKAGE_NAME}-installer\",\"version\":\"1.0.0\"}" > package.json
-	npm install --package-lock-only --global-style --legacy-peer-deps ${PACKAGE_NAME}@${PACKAGE_VERSION}
+	npm install --package-lock-only --global-style --legacy-peer-deps
 
 	# copy generated package-lock.json to the expected location
 	cp package-lock.json ${PACKAGE_LOCK_JSON}
