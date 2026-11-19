@@ -1,9 +1,7 @@
 PORTNAME=	php86
-DISTVERSION=	8.6.0RC7
+DISTVERSION=	8.6.0
 CATEGORIES?=	lang devel www
-#MASTER_SITES=	PHP/distributions
-MASTER_SITES=	https://downloads.php.net/~mbeccati/ \
-		https://downloads.php.net/~svpernova09/
+MASTER_SITES=	PHP/distributions
 DISTNAME=	php-${DISTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
