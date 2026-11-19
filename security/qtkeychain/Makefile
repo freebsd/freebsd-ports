@@ -1,8 +1,6 @@
 PORTNAME=	qtkeychain
-DISTVERSION=	0.17.0
-PORTREVISION=	1
+DISTVERSION=	0.18.0
 CATEGORIES=	security
-PKGNAMESUFFIX=	-${FLAVOR}
 
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	Platform independent Qt API for storing passwords
@@ -11,28 +9,16 @@ WWW=		https://github.com/frankosterfeld/qtkeychain
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-FLAVORS=	qt6 qt5
-FLAVOR?=	qt6
-
-.if ${FLAVOR:Mqt5}
-DEPRECATED=	Depends on deprecated Qt 5
-EXPIRATION_DATE=	2026-10-31
-.endif
-
-USES=		cmake compiler:c++11-lang localbase:ldflags pkgconfig qt:${FLAVOR:S/qt//}
-_WITH_QT5_qt5=	ON
-_WITH_QT5_qt6=	OFF
-CMAKE_ARGS=	-DBUILD_WITH_QT5=${_WITH_QT5_${FLAVOR}} \
+USES=		cmake compiler:c++11-lang localbase:ldflags pkgconfig qt:6
+CMAKE_ARGS=	-DBUILD_WITH_QT5=OFF \
 		-DQT_MKSPECDIR_REL=${QT_MKSPECDIR_REL}
 USE_GITHUB=	yes
-_USE_QT_qt5=	core dbus buildtools:build qmake:build testlib:build
-_USE_QT_qt6=	base
-USE_QT=		${_USE_QT_${FLAVOR}}
+USE_QT=		base
 GH_ACCOUNT=	frankosterfeld
 USE_LDCONFIG=	yes
 OPTIONS_SUB=	yes
 PLIST_SUB=	VERSION=${PORTVERSION} \
-		QT_VER=${FLAVOR:S/qt//}
+		QT_VER=6
 
 OPTIONS_DEFINE=		LIBSECRET NLS
 OPTIONS_DEFAULT=	LIBSECRET NLS
@@ -41,9 +27,7 @@ LIBSECRET_DESC=		Enable libsecret backend
 LIBSECRET_LIB_DEPENDS=	libsecret-1.so:security/libsecret
 LIBSECRET_CMAKE_BOOL=	LIBSECRET_SUPPORT
 
-_QT_LINGUIST_qt5=	linguisttools:build
-_QT_LINGUIST_qt6=	tools:build
-NLS_USE=		qt=${_QT_LINGUIST_${FLAVOR}}
+NLS_USE=		qt=tools:build
 NLS_CMAKE_BOOL=		BUILD_TRANSLATIONS
 
 .include <bsd.port.mk>
