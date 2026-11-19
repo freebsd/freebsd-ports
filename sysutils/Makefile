@@ -1528,6 +1528,7 @@
     SUBDIR += treemd
     SUBDIR += treetop
     SUBDIR += triton
+    SUBDIR += truenas-mcp
     SUBDIR += trueos-libqt5
     SUBDIR += try-rs
     SUBDIR += ts

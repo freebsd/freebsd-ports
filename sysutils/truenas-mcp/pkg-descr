@@ -1,0 +1,12 @@
+truenas-mcp is a Model Context Protocol (MCP) server for TrueNAS.  It
+runs on the local machine, connects to the TrueNAS API over a websocket
+and lets an AI assistant query and manage the system.
+
+It covers monitoring (system information, alerts, jobs, metrics),
+storage (pools, datasets, snapshots, SMB and NFS shares), data
+protection tasks, apps, system updates, boot environments, directory
+services and virtual machine status.
+
+The --read-only flag hides every tool that changes the system.
+Destructive actions require explicit confirmation.  TrueNAS 25.10 or
+later is required.
