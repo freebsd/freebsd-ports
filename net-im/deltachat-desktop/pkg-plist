@@ -297,6 +297,8 @@ share/applications/deltachat.desktop
 %%DATADIR%%/html-dist/images/icons/download.svg
 %%DATADIR%%/html-dist/images/icons/edit.svg
 %%DATADIR%%/html-dist/images/icons/email.svg
+%%DATADIR%%/html-dist/images/icons/eye-off.svg
+%%DATADIR%%/html-dist/images/icons/eye-open.svg
 %%DATADIR%%/html-dist/images/icons/favorite.svg
 %%DATADIR%%/html-dist/images/icons/forum.svg
 %%DATADIR%%/html-dist/images/icons/image.svg

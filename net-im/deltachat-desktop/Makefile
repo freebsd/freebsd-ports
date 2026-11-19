@@ -1,6 +1,6 @@
 PORTNAME=	deltachat-desktop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.65.0
+DISTVERSION=	2.69.0
 PORTREVISION=	0
 CATEGORIES=	net-im
 
@@ -12,7 +12,7 @@ LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 # Important to keep the RPC server core in sync with the Desktop release
-RUN_DEPENDS=	deltachat-rpc-server>=2.65<2.66:net/deltachat-rpc-server
+RUN_DEPENDS=	deltachat-rpc-server>=2.69<2.70:net/deltachat-rpc-server
 USES=		electron:42,build,run desktop-file-utils nodejs:22,build \
 		npm:pnpm pkgconfig
 
@@ -32,10 +32,17 @@ GH_PROJECT=	deltachat-desktop
 MAKE_ENV+=	ELECTRON_SKIP_BINARY_DOWNLOAD=1 \
 		VERSION_INFO_GIT_REF=${GH_TAGNAME}
 
+REVERSE_ELECTRON44="${FILESDIR}/a557da6e6852e9dc9979e013e77bd6cef38f3d7a.patch"
+
 .include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/packages/target-electron/src/deltachat/controller.ts
+	# This patch reverses changes required when upgrading to Electron44 and should be removed
+	# the package builders target electron44 as default.
+	# This will require regenerating the node-module distfile and recreating the FILESDIR/packagejsons/ files
+	@${ECHO} "===>  Applying patch to restore electron42 support (${REVERSE_ELECTRON44})"
+	@${PATCH} -d ${WRKSRC} --forward --quiet -E -p1 -V simple --suffix .orig -R -i ${REVERSE_ELECTRON44}
 
 do-build:
 	cd ${WRKSRC} && \

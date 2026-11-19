@@ -4,11 +4,13 @@
   "type": "module",
   "license": "GPL-3.0-or-later",
   "devDependencies": {
-    "@playwright/test": "^1.57.0",
+    "@playwright/test": "^1.64.1",
     "@types/node": "^20.14.13"
   },
   "scripts": {
     "e2e": "pnpm exec playwright test",
-    "e2e:report": "pnpm exec playwright show-report"
+    "e2e:report": "pnpm exec playwright show-report",
+    "e2e:electron": "pnpm exec playwright test -c playwright.electron.config.ts",
+    "e2e:electron:report": "pnpm exec playwright show-report playwright-report-electron"
   }
 }

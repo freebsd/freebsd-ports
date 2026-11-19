@@ -2,7 +2,7 @@
   "private": "true",
   "name": "deltachat-desktop",
   "type": "module",
-  "version": "2.65.0",
+  "version": "2.69.0",
   "scripts": {
     "check": "pnpm check:types && pnpm check:lint && pnpm check:format && pnpm check:target-versions",
     "check:types": "pnpm -r --no-bail check:types",
@@ -30,6 +30,7 @@
     "test": "pnpm -r --no-bail test",
     "test-and-check": "pnpm test && pnpm check",
     "e2e": "pnpm build:browser && pnpm --filter=e2e-tests e2e",
+    "e2e:electron": "pnpm build:electron && pnpm --filter=e2e-tests e2e:electron",
     "reset:node_modules": "rm -rf node_modules && rm -rf packages/*/node_modules || true && pnpm i"
   },
   "engineStrict": true,

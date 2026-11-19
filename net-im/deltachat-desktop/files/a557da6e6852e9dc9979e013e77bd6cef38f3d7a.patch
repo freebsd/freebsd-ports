@@ -1,0 +1,144 @@
+This patch has been modified to remove changes to package.json and pnpm-lock.yaml which
+are already integrated into our FILESDIR/packagejsons/ versions of those files which are required
+to generate the correct node-modules distfile.
+
+diff --git a/packages/e2e-tests/electron-helper.ts b/packages/e2e-tests/electron-helper.ts
+index 79e02c7d20..340be046b2 100644
+--- a/packages/e2e-tests/electron-helper.ts
++++ b/packages/e2e-tests/electron-helper.ts
+@@ -144,8 +144,8 @@ export class DeltaChatElectron {
+    * (the main window blocks `page.evaluate`), so write via the main process.
+    */
+   async setClipboard(text: string) {
+-    await this.app.evaluate(({ clipboard }, text) => {
+-      clipboard.writeText(text)
++    await this.app.evaluate(async ({ clipboard }, text) => {
++      await clipboard.writeText(text)
+     }, text)
+   }
+ 
+diff --git a/packages/target-electron/src/deltachat/link-clicks.ts b/packages/target-electron/src/deltachat/link-clicks.ts
+index 15657baac6..7afadc8946 100644
+--- a/packages/target-electron/src/deltachat/link-clicks.ts
++++ b/packages/target-electron/src/deltachat/link-clicks.ts
+@@ -73,9 +73,9 @@ async function promptToCopy(win: BrowserWindow, url: string) {
+       buttons: [tx('no'), tx('menu_copy_link_to_clipboard')],
+       message: tx('ask_copy_unopenable_link_to_clipboard', url),
+     })
+-    .then(({ response }) => {
++    .then(async ({ response }) => {
+       if (response == 1) {
+-        clipboard.writeText(url)
++        await clipboard.writeText(url)
+       }
+     })
+ }
+diff --git a/packages/target-electron/src/electron-context-menu.ts b/packages/target-electron/src/electron-context-menu.ts
+index 5c185c46d5..91b9bc5a41 100644
+--- a/packages/target-electron/src/electron-context-menu.ts
++++ b/packages/target-electron/src/electron-context-menu.ts
+@@ -116,11 +116,8 @@ const create = (win: BrowserWindow) => {
+         id: 'copyLink',
+         label: tx('menu_copy_link_to_clipboard'),
+         visible: props.linkURL.length !== 0 && props.mediaType === 'none',
+-        click() {
+-          electron.clipboard.write({
+-            bookmark: props.linkText,
+-            text: props.linkURL,
+-          })
++        async click() {
++          await electron.clipboard.writeText(props.linkURL)
+         },
+       }),
+       copyImage: () => ({
+diff --git a/packages/target-electron/src/index.ts b/packages/target-electron/src/index.ts
+index ce82d3a1f2..5c560ab8ca 100644
+--- a/packages/target-electron/src/index.ts
++++ b/packages/target-electron/src/index.ts
+@@ -561,7 +561,7 @@ app.on('web-contents-created', (_ev, contents) => {
+           userCancelledDialogAtLeastOnce = true
+           return
+         case 1: {
+-          clipboard.writeText(asciiUrl)
++          await clipboard.writeText(asciiUrl)
+           break
+         }
+         case 2: {
+diff --git a/packages/target-electron/src/ipc.ts b/packages/target-electron/src/ipc.ts
+index 7fc68e8adf..3f45171419 100644
+--- a/packages/target-electron/src/ipc.ts
++++ b/packages/target-electron/src/ipc.ts
+@@ -2,6 +2,7 @@ import { copyFile, writeFile, mkdir, rm, readFile } from 'fs/promises'
+ import {
+   app as rawApp,
+   clipboard,
++  ClipboardItem,
+   dialog,
+   nativeImage,
+   shell,
+@@ -492,23 +493,36 @@ export function init(
+   ipc.handle('electron.clipboard.readText', () => {
+     return clipboard.readText()
+   })
+-  ipc.handle('electron.clipboard.readImage', () => {
+-    const image = clipboard.readImage()
+-
+-    // Electron just returns an empty base64 string (for example
+-    // 'data:image/png;base64,' when no image was in the clipboard),
+-    // we check that here and more conveniently return null instead
+-    if (image.isEmpty()) {
+-      return null
+-    }
++  ipc.handle('electron.clipboard.readImage', async () => {
++    for (const item of await clipboard.read()) {
++      const type = item.types.find(t => t.startsWith('image/'))
++      if (type == undefined) {
++        continue
++      }
+ 
+-    return image.toDataURL()
++      const blob = await item.getType(type)
++      if (!(blob instanceof Blob)) {
++        log.warn(
++          `clipboard item "${type}" is not a Blob, ignoring this item and proceeding`
++        )
++        continue
++      }
++
++      const base64 = Buffer.from(await blob.arrayBuffer()).toString('base64')
++      return `data:${type};base64,${base64}`
++    }
++    return null
+   })
+   ipc.handle('electron.clipboard.writeText', (_ev, text) => {
+     return clipboard.writeText(text)
+   })
+   ipc.handle('electron.clipboard.writeImage', (_ev, path) => {
+-    return clipboard.writeImage(nativeImage.createFromPath(path))
++    const png = nativeImage.createFromPath(path).toPNG()
++    return clipboard.write([
++      new ClipboardItem({
++        'image/png': new Blob([new Uint8Array(png)], { type: 'image/png' }),
++      }),
++    ])
+   })
+ 
+   ipc.handle(
+diff --git a/packages/target-electron/src/windows/html_email.ts b/packages/target-electron/src/windows/html_email.ts
+index 4b0378c19c..e2be99de3a 100644
+--- a/packages/target-electron/src/windows/html_email.ts
++++ b/packages/target-electron/src/windows/html_email.ts
+@@ -604,11 +604,8 @@ const createContextMenu = (win: BrowserWindow, webContents: WebContents) => {
+         new MenuItem({
+           id: 'copyLink',
+           label: tx('menu_copy_link_to_clipboard'),
+-          click() {
+-            electron.clipboard.write({
+-              bookmark: props.linkText,
+-              text: props.linkURL,
+-            })
++          async click() {
++            await electron.clipboard.writeText(props.linkURL)
+           },
+         })
+       )
