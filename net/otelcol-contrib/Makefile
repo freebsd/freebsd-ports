@@ -1,5 +1,6 @@
 PORTNAME=	otelcol-contrib
 PORTVERSION=	0.165.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/open-telemetry/opentelemetry-collector-releases/releases/download/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}_${DISTVERSION}_linux_${ARCH}
@@ -10,7 +11,7 @@ WWW=		https://github.com/open-telemetry/opentelemetry-collector-contrib/
 
 LICENSE=	APACHE20
 
-ONLY_FOR_ARCHS=	amd64 arm64
+ONLY_FOR_ARCHS=	aarch64 amd64
 
 USES=		linux:rl9
 
@@ -23,7 +24,7 @@ PLIST_FILES=	bin/otelcol-contrib \
 
 .if make(makesum)
 .  for arch in ${ONLY_FOR_ARCHS}
-DISTFILES+=	${PORTNAME}_${DISTVERSION}_linux_${arch}${EXTRACT_SUFX}
+DISTFILES+=	${PORTNAME}_${DISTVERSION}_linux_${arch:S/aarch64/arm64/}${EXTRACT_SUFX}
 .  endfor
 .endif
 
