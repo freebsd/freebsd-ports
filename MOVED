@@ -5814,3 +5814,4 @@ sysutils/mapchan||2026-11-10|Has expired: Incomplete implementation and does not
 lang/php80-legacy||2026-11-15|No longer required in the cluster
 devel/rubygem-io-wait01|devel/rubygem-io-wait|2026-11-16|Use devel/rubygem-io-wait instead
 sysutils/kvmclock-kmod||2026-11-19|Removed, not required on any supported FreeBSD version
+net-im/spectral||2026-11-19|Depends on removed qtkeychain-qt5
