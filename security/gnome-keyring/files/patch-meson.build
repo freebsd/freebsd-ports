@@ -1,0 +1,10 @@
+--- meson.build.orig	2025-03-18 08:38:44 UTC
++++ meson.build
+@@ -104,6 +104,7 @@ conf.set('DOTLOCK_USE_PTHREAD', true)
+ conf.set('DOTLOCK_GLIB_LOGGING', true)
+ conf.set('DOTLOCK_EXT_SYM_PREFIX', '_gkm_')
+ conf.set('HAVE_SOCKLEN_T', have_socklen_t)
++conf.set('HAVE_CMSGCRED', have_struct_cmsgcred)
+ conf.set('HAVE_GETPEERUCRED', cc.has_function('getpeerucred'))
+ conf.set('HAVE_GETPEEREID', cc.has_function('getpeereid'))
+ conf.set('HAVE_FLOCK', cc.has_function('flock'))
