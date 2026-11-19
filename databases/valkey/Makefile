@@ -1,8 +1,8 @@
 PORTNAME=	valkey
-DISTVERSION=	9.1.3
+DISTVERSION=	9.1.4
 CATEGORIES=	databases
 
-MAINTAINER=	bofh@freebsd.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	High-performance data structure server that primarily serves key/value workloads
 WWW=		https://valkey.io/
 
