@@ -11,6 +11,8 @@ WWW=		https://github.com/siemens/embb
 LICENSE=	BSD2CLAUSE BSD3CLAUSE
 LICENSE_COMB=	multi
 
+BROKEN=		Fails to build with CMake 4
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	siemens
 

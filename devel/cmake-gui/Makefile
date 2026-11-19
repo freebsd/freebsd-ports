@@ -8,7 +8,7 @@ COMMENT=	Qt-based GUI for CMake
 WWW=		https://www.cmake.org
 
 LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKSRC}/Copyright.txt
+LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
 BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx@${PY_FLAVOR}
 LIB_DEPENDS=	libcurl.so:ftp/curl \

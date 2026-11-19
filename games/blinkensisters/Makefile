@@ -11,6 +11,7 @@ WWW=		https://sourceforge.net/projects/blinkensisters/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/DOC/LICENSE
 
+BROKEN=		Fails to build with CMake 4
 DEPRECATED=	Abandoned upstream, does not build with CMake 4
 EXPIRATION_DATE=2026-11-30
 

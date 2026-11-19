@@ -14,6 +14,7 @@ WWW=		https://github.com/YukiWorkshop/libuInputPlus
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		Fails to build with CMake 4
 DEPRECATED=	Abandoned upstream, does not build with CMake 4
 EXPIRATION_DATE=2026-11-30
 

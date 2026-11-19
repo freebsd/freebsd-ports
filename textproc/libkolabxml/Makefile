@@ -14,6 +14,7 @@ WWW=		https://kolab.org/
 # are considered LGPL3-licensed, though.
 LICENSE=	LGPL3+
 
+BROKEN=		Fails to build with CMake 4
 DEPRECATED=	Has no consumers in Ports, does not build with CMake 4
 EXPIRATION_DATE=2026-11-30
 

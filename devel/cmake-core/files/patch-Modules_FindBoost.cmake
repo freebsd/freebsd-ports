@@ -1,6 +1,6 @@
---- Modules/FindBoost.cmake.orig	2024-11-06 13:41:37 UTC
+--- Modules/FindBoost.cmake.orig	2026-08-23 04:05:48 UTC
 +++ Modules/FindBoost.cmake
-@@ -140,6 +140,9 @@ This module reads hints about search locations from va
+@@ -141,6 +141,9 @@ This module reads hints about search locations from va
  ``BOOST_LIBRARYDIR``
    Preferred library directory e.g. ``<prefix>/lib``.
  
@@ -10,17 +10,7 @@
  ``Boost_NO_SYSTEM_PATHS``
    Set to ``ON`` to disable searching in locations not
    specified by these hint variables. Default is ``OFF``.
-@@ -574,6 +577,9 @@ endfunction()
-   endif()
- endfunction()
- 
-+# https://gitlab.kitware.com/cmake/cmake/issues/18865
-+set(Boost_NO_BOOST_CMAKE ON CACHE BOOL "Disable the search for boost-cmake")
-+
- #-------------------------------------------------------------------------------
- # Before we go searching, check whether a boost cmake package is available, unless
- # the user specifically asked NOT to search for one.
-@@ -2170,7 +2177,7 @@ if(Boost_VERSION_STRING AND Boost_FIND_COMPONENTS)
+@@ -2187,7 +2190,7 @@ if(Boost_VERSION_STRING AND Boost_FIND_COMPONENTS)
  # On versions < 1.35, remove the System library from the considered list
  # since it wasn't added until 1.35.
  if(Boost_VERSION_STRING AND Boost_FIND_COMPONENTS)
@@ -29,7 +19,7 @@
      list(REMOVE_ITEM Boost_FIND_COMPONENTS system)
    endif()
  endif()
-@@ -2196,10 +2202,10 @@ foreach(COMPONENT ${Boost_FIND_COMPONENTS})
+@@ -2242,10 +2245,10 @@ foreach(COMPONENT ${Boost_FIND_COMPONENTS})
    # Handle Python version suffixes
    unset(COMPONENT_PYTHON_VERSION_MAJOR)
    unset(COMPONENT_PYTHON_VERSION_MINOR)

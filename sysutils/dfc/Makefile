@@ -10,6 +10,8 @@ WWW=		https://github.com/rolinh/dfc
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		Fails to build with CMake 4
+
 USES=		cmake
 
 USE_GITHUB=	yes
