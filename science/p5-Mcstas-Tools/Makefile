@@ -13,6 +13,8 @@ WWW=		https://www.mcstas.org
 
 LICENSE=	GPLv2
 
+BROKEN=		Fails to build with CMake 4
+
 RUN_DEPENDS=	mcstas:science/mcstas \
 		p5-PDL>0:math/p5-PDL \
 		p5-PGPLOT>=2.21:graphics/p5-PGPLOT \
