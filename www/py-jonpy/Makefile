@@ -1,6 +1,6 @@
 PORTNAME=	jonpy
 DISTVERSION=	0.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www python
 MASTER_SITES=	https://github.com/jribbens/${PORTNAME}/releases/download/rel-0-14/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,6 +10,9 @@ COMMENT=	Python FastCGI interface library
 WWW=		https://github.com/jribbens/jonpy
 
 LICENSE=	MIT
+
+DEPRECATED=	jon.cgi fails under Python 3 (missing io import) and unmaintained CGI framework
+EXPIRATION_DATE=	2026-12-19
 
 USES=		python
 USE_PYTHON=	autoplist distutils
