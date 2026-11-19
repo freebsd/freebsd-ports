@@ -6,13 +6,15 @@ GDM is installed.
 Do _NOT_ use /etc/ttys to start gdm at boot time.  This will result in gdm
 hanging or restarting constantly. Instead, add gdm_enable="YES" to
 /etc/rc.conf. GDM will be started automatic on the next reboot.
+
+The gdm port requires that x11/gnome-shell be installed in order to function.
 EOM
 },
 { type: remove
   message: <<EOM
 
 To really remove the gdm port, please remove the following
-directories manualy:
+directories manually:
 
 /var/cache/gdm /var/log/gdm and /var/run/gdm
 

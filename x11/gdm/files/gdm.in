@@ -30,6 +30,12 @@ gdm_start()
     if ! checkyesno gdm_enable ; then
 	return 0
     fi
+    # This can't be done with RUN_DEPENDS because that would
+    # create an illegal dependency loop.
+    if [ ! -f %%LOCALBASE%%/bin/gnome-shell ] ; then
+	err 1 "gdm requires that x11/gnome-shell be installed"
+    fi
+        
     echo "Starting ${name}."
 
     # we need to remove locking files under /var/cache/gdm/.cache/gnome-shell/

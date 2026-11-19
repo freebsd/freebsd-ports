@@ -12,8 +12,6 @@ WWW=		https://gitlab.gnome.org/GNOME/gdm
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-PORTSCOUT=	limit:^47\.
-
 BUILD_DEPENDS=	iso-codes>0:misc/iso-codes \
 		xorg-server>0:x11-servers/xorg-server \
 		itstool:textproc/itstool
@@ -35,20 +33,19 @@ RUN_DEPENDS+=	setxkbmap:x11/setxkbmap \
 		xterm:x11/xterm \
 		zenity:x11/zenity
 
-USERS=		gdm
-GROUPS=		gdm video
-
 USES=		cpe gettext gnome localbase:ldflags meson pathfix \
 		pkgconfig tar:xz xorg
 CPE_VENDOR=	gnome
 CPE_PRODUCT=	gnome_display_manager
 USE_GNOME=	atk dconf gdkpixbuf glib20 gtk30 introspection:build
-USE_LDCONFIG=	yes
-USE_XORG=	x11 xau xcb xdmcp xorgproto
-USE_RC_SUBR=	gdm
 USE_GNOME_SUBR=	yes
 GLIB_SCHEMAS=	org.gnome.login-screen.gschema.xml \
 		15_org.gnome.login-screen.gschema.override
+GDMDIR?=	${PREFIX}/etc/gdm
+GNOME_LOCALSTATEDIR=	/var
+USE_LDCONFIG=	yes
+USE_RC_SUBR=	gdm
+USE_XORG=	x11 xau xcb xdmcp xorgproto
 MESON_ARGS=	-Dat-spi-registryd-dir=${PREFIX}/libexec \
 		-Dcustom-conf=${PREFIX}/etc/gdm/custom.conf \
 		-Ddefault-pam-config=none \
@@ -72,12 +69,13 @@ MESON_ARGS=	-Dat-spi-registryd-dir=${PREFIX}/libexec \
 # this is a hack until we can get our own pam dir and dir in order.
 CPPFLAGS+=	-DHAS_SA_LEN -DWITH_CONSOLE_KIT=1
 
+PORTSCOUT=	limit:^47\.
+
 SUB_FILES+=	gdm-autologin gdm-launch-environment gdm-password \
 		locale.conf
 
-GDMDIR?=	${PREFIX}/etc/gdm
-
-GNOME_LOCALSTATEDIR=	/var
+USERS=		gdm
+GROUPS=		gdm video
 
 OPTIONS_DEFINE=	IPV6
 
