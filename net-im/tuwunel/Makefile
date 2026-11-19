@@ -1,7 +1,11 @@
 PORTNAME=	tuwunel
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	net-im
+
+PATCH_SITES=	https://github.com/matrix-construct/${PORTNAME}/commit/
+PATCHFILES=	4c4925dc48a086f54e0a0134e7627b047af21bca.diff?full_index=1:-p1
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	High performance Matrix homeserver written in Rust
@@ -10,7 +14,7 @@ WWW=		https://tuwunel.chat/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	aarch64 amd64
+ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	upstream supports aarch64 and amd64 only
 
 BUILD_DEPENDS=	${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/libclang.so:devel/llvm${LLVM_DEFAULT}
