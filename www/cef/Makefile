@@ -1,6 +1,6 @@
 PORTNAME=	cef
-DISTVERSION=	152.0.6
-PORTREVISION=	2
+DISTVERSION=	152.0.6	# To be upgraded with www/jcef
+PORTREVISION=	3
 CATEGORIES=	www devel
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/:chromium
 DISTFILES=	chromium-${CHROMIUM_VERSION}-lite${EXTRACT_SUFX}:chromium
