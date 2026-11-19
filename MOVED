@@ -5817,3 +5817,4 @@ sysutils/kvmclock-kmod||2026-11-19|Removed, not required on any supported FreeBS
 net-im/spectral||2026-11-19|Depends on removed qtkeychain-qt5
 databases/ipa_sdb||2026-11-19|Requested by upstream
 misc/ipa_conv||2026-11-19|Requested by upstream
+sysutils/ipa||2026-11-19|Requested by upstream
