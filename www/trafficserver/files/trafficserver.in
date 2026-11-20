@@ -3,16 +3,49 @@
 # PROVIDE: trafficserver
 # REQUIRE: LOGIN
 # KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable trafficserver:
+#
+# trafficserver_enable (bool):		Set to "YES" to enable trafficserver.
+#					Default: "NO"
+# trafficserver_logfile (str):		File receiving traffic_server
+#					stdout/stderr.
+#					Default: "/var/log/trafficserver/traffic.out"
+# trafficserver_accf_enable (bool):	Set to "YES" to load the accf_data(9)
+#					kernel module on start-up, required by
+#					proxy.config.net.defer_accept.
+#					Default: "NO"
 
 . /etc/rc.subr
 
+name=trafficserver
+desc="Apache Traffic Server caching proxy"
 rcvar=trafficserver_enable
-name="trafficserver"
-trafficserver_enable=${trafficserver_enable:-"NO"}
-pidfile="/var/run/trafficserver/traffic_server.pid"
-command=/usr/sbin/daemon
-command_args="-f -p ${pidfile} %%PREFIX%%/bin/traffic_server"
-procname="%%PREFIX%%/bin/traffic_server"
 
-load_rc_config "$name"
+load_rc_config $name
+
+: ${trafficserver_enable:=NO}
+: ${trafficserver_logfile=/var/log/trafficserver/traffic.out}
+: ${trafficserver_accf_enable:=NO}
+
+pidfile=/var/run/trafficserver/traffic_server.pid
+procname=%%PREFIX%%/bin/traffic_server
+command=/usr/sbin/daemon
+command_args="-f -p ${pidfile} ${procname} \
+	--bind_stdout ${trafficserver_logfile} \
+	--bind_stderr ${trafficserver_logfile}"
+
+extra_commands=reload
+start_precmd=trafficserver_prestart
+reload_cmd="%%PREFIX%%/bin/traffic_ctl config reload"
+
+trafficserver_prestart()
+{
+	if checkyesno trafficserver_accf_enable; then
+		required_modules="${required_modules} accf_data"
+	fi
+	/usr/bin/install -d -o %%WWWOWN%% -g %%WWWGRP%% -m 0755 \
+		/var/run/trafficserver
+}
+
 run_rc_command "$1"

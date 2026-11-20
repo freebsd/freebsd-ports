@@ -1,5 +1,5 @@
 PORTNAME=	trafficserver
-DISTVERSION=	10.1.5
+DISTVERSION=	10.2.1
 CATEGORIES=	www
 MASTER_SITES=	APACHE/${PORTNAME}
 
@@ -26,6 +26,8 @@ CPE_PRODUCT=	traffic_server
 USE_LDCONFIG=	yes
 USE_PERL5=	build run
 USE_RC_SUBR=	${PORTNAME}
+SUB_FILES=	pkg-message
+SUB_LIST=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
 CMAKE_BUILD_TYPE=	release
 CMAKE_ARGS+=	-DENABLE_EVENT_TRACKER=1 \
@@ -48,6 +50,7 @@ OPTIONS_DEFINE=	GEOIP IMAGEMAGICK MIMALLOC X11
 OPTIONS_SUB=	yes
 
 IMAGEMAGICK_DESC=		Enable ats-magick & webp convert plugin
+IMAGEMAGICK_CMAKE_ON=	-DENABLE_MAGICK=ON
 IMAGEMAGICK_CMAKE_OFF=	-DENABLE_MAGICK=OFF
 GEOIP_DESC=			Enable MaxMindDB-based GeoIP geolocation support
 MIMALLOC_DESC=			Use mimalloc
@@ -61,11 +64,15 @@ MIMALLOC_CMAKE_ON=	-DENABLE_MIMALLOC=1
 
 .if ${PORT_OPTIONS:MIMAGEMAGICK}
 .if ${PORT_OPTIONS:MX11}
-USES+=		magick:run
+USES+=		magick
 .else
-USES+=		magick:run,nox11
+USES+=		magick:nox11
 .endif
 .endif
+
+post-patch:
+	${REINPLACE_CMD} -e 's|^set(rel_cachedir var/trafficserver)|set(rel_cachedir /var/cache/trafficserver)|' \
+		${WRKSRC}/CMakeLists.txt
 
 post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}/snapshots

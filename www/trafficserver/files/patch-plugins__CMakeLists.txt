@@ -1,6 +1,6 @@
---- plugins/CMakeLists.txt.orig	2025-02-22 14:01:34 UTC
+--- plugins/CMakeLists.txt.orig	2026-11-10 02:47:40 UTC
 +++ plugins/CMakeLists.txt
-@@ -69,7 +69,9 @@ if(TARGET ImageMagick::Magick++)
+@@ -70,7 +70,9 @@ if(TARGET ImageMagick::Magick++)
  endif()
  
  if(TARGET ImageMagick::Magick++)

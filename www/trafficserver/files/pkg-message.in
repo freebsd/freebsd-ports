@@ -1,0 +1,22 @@
+[
+{ type: install
+  message: <<EOM
+Traffic Server enables proxy.config.net.defer_accept by default. On
+FreeBSD this requires the accf_data(9) kernel module. Either let the
+rc script load it on start-up:
+
+  sysrc trafficserver_enable=YES
+  sysrc trafficserver_accf_enable=YES
+  service trafficserver start
+
+or disable defer_accept in %%ETCDIR%%/records.yaml:
+
+  records:
+    net:
+      defer_accept: 0
+
+Otherwise traffic_server logs "Ignored defer_accept config" errors to
+/var/log/trafficserver/diags.log on every start.
+EOM
+}
+]
