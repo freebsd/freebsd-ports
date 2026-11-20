@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-instrumentation-aws_sdk
-PORTVERSION=	0.11.0
+PORTVERSION=	0.14.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-gitlab
