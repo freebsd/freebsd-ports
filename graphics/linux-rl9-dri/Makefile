@@ -1,6 +1,6 @@
 PORTNAME=	dri
-PORTVERSION=	25.2.7
-DISTVERSIONSUFFIX=	-4.el9
+PORTVERSION=	26.1.1
+DISTVERSIONSUFFIX=	-1.el9
 CATEGORIES=	graphics linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -13,8 +13,8 @@ USE_LINUX_RPM=	yes
 WANT_LINUX32=	yes
 
 LIB_DISTNAMES=	freeglut-3.2.1-10.el9 \
-		mesa-compat-libOSMesa-25.0.7-2.el9.0.1 \
-		mesa-compat-libxatracker-25.0.7-2.el9.0.1 \
+		mesa-compat-libOSMesa-25.0.7-3.el9 \
+		mesa-compat-libxatracker-25.0.7-3.el9 \
 		mesa-dri-drivers-${DISTVERSIONFULL} \
 		mesa-libEGL-${DISTVERSIONFULL} \
 		mesa-libGL-${DISTVERSIONFULL} \
@@ -27,7 +27,7 @@ LIB_DISTNAMES_amd64=	m/mesa-vulkan-drivers-${DISTVERSIONFULL}
 
 SRC_DISTFILES=	freeglut-3.2.1-10.el9${SRC_SUFX}:SOURCE \
 		mesa-${DISTVERSIONFULL}${SRC_SUFX}:SOURCE \
-		mesa-compat-25.0.7-2.el9.0.1${SRC_SUFX}:SOURCE \
+		mesa-compat-25.0.7-3.el9${SRC_SUFX}:SOURCE \
 		mesa-libGLU-9.0.1-6.el9${SRC_SUFX}:SOURCE \
 		mesa-libGLw-8.0.0-23.el9${SRC_SUFX}:SOURCE
 
