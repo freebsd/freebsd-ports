@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-instrumentation-base
-PORTVERSION=	0.25.0
+PORTVERSION=	0.27.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-gitlab
@@ -13,8 +13,10 @@ WWW=		https://opentelemetry.io/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-opentelemetry-api-gitlab>=1.h<2:devel/rubygem-opentelemetry-api-gitlab \
+RUN_DEPENDS=	rubygem-opentelemetry-api-gitlab>=1.7<2:devel/rubygem-opentelemetry-api-gitlab \
 		rubygem-opentelemetry-common-gitlab>=0.21<1:devel/rubygem-opentelemetry-common-gitlab \
+		rubygem-opentelemetry-logs-api-gitlab>=0.6<1:devel/rubygem-opentelemetry-logs-api-gitlab \
+		rubygem-opentelemetry-metrics-api-gitlab>=0.9<1:devel/rubygem-opentelemetry-metrics-api-gitlab \
 		rubygem-opentelemetry-registry-gitlab>=0.1<1:devel/rubygem-opentelemetry-registry-gitlab
 
 USES=		gem
