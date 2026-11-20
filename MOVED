@@ -5817,3 +5817,4 @@ net-im/spectral||2026-11-19|Depends on removed qtkeychain-qt5
 databases/ipa_sdb||2026-11-19|Requested by upstream
 misc/ipa_conv||2026-11-19|Requested by upstream
 sysutils/ipa||2026-11-19|Requested by upstream
+lang/cim||2026-11-20|Has expired: Upstream website is no longer available

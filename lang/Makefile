@@ -34,7 +34,6 @@
     SUBDIR += chez-scheme
     SUBDIR += chibi-scheme
     SUBDIR += chicken
-    SUBDIR += cim
     SUBDIR += cjs
     SUBDIR += cling
     SUBDIR += clips
