@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-api
-PORTVERSION=	1.10.1
+PORTVERSION=	1.11.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-gitlab
@@ -12,6 +12,8 @@ WWW=		https://opentelemetry.io/ \
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	rubygem-logger-gitlab>=0:devel/rubygem-logger-gitlab
 
 USES=		gem
 
