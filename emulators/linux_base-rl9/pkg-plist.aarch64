@@ -613,10 +613,10 @@ usr/lib64/krb5/plugins/tls/k5tls.so
 usr/lib64/libBrokenLocale.so.1
 usr/lib64/libSegFault.so
 usr/lib64/libacl.so.1
-usr/lib64/libacl.so.1.1.2301
+usr/lib64/libacl.so.1.2.2400
 usr/lib64/libanl.so.1
 usr/lib64/libattr.so.1
-usr/lib64/libattr.so.1.1.2501
+usr/lib64/libattr.so.1.1.2600
 usr/lib64/libblkid.so.1
 usr/lib64/libblkid.so.1.1.0
 usr/lib64/libbrotlicommon.so.1
@@ -636,7 +636,7 @@ usr/lib64/libcom_err.so.2.1
 usr/lib64/libcrypt.so.2
 usr/lib64/libcrypt.so.2.0.0
 usr/lib64/libcrypto.so.3
-usr/lib64/libcrypto.so.3.5.5
+usr/lib64/libcrypto.so.3.5.9
 usr/lib64/libdatrie.so.1
 usr/lib64/libdatrie.so.1.4.0
 usr/lib64/libdb-5.3.so
@@ -775,7 +775,7 @@ usr/lib64/libsoup-gnome-2.4.so.1.11.0
 usr/lib64/libsqlite3.so.0
 usr/lib64/libsqlite3.so.0.8.6
 usr/lib64/libssl.so.3
-usr/lib64/libssl.so.3.5.5
+usr/lib64/libssl.so.3.5.9
 usr/lib64/libstdc++.so.6
 usr/lib64/libstdc++.so.6.0.29
 usr/lib64/libthread_db.so.1
