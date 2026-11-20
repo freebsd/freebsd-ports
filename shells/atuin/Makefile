@@ -1,6 +1,6 @@
 PORTNAME=	atuin
 DISTVERSIONPREFIX=	v
-DISTVERSION=	18.24.8
+DISTVERSION=	18.25.0
 CATEGORIES=	shells
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -93,7 +93,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		chacha20-0.9.1 \
 		chacha20-0.10.2 \
 		chrono-0.4.45 \
-		chrono-humanize-0.2.3 \
 		cipher-0.4.4 \
 		clap-4.6.7 \
 		clap-couture-0.1.1 \
@@ -186,9 +185,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		etcetera-0.11.0 \
 		euclid-0.22.13 \
 		event-listener-5.4.2 \
-		eventsource-stream-0.2.3 \
-		eye_declare-0.7.1 \
-		eye_declare_engine-0.7.1 \
 		eyre-0.6.14 \
 		fallible-iterator-0.3.0 \
 		fallible-streaming-iterator-0.1.9 \
@@ -303,10 +299,15 @@ CARGO_CRATES=	adler2-2.0.1 \
 		itertools-0.15.0 \
 		itoa-1.0.18 \
 		jiff-0.2.38 \
+		jiff-1.0.1 \
 		jiff-core-0.1.1 \
+		jiff-core-1.0.1 \
 		jiff-static-0.2.38 \
+		jiff-static-1.0.1 \
 		jiff-tzdb-0.1.9 \
+		jiff-tzdb-1.0.0 \
 		jiff-tzdb-platform-0.1.3 \
+		jiff-tzdb-platform-1.0.0 \
 		jobserver-0.1.35 \
 		js-sys-0.3.100 \
 		kasuari-0.4.12 \
@@ -535,6 +536,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		serde_core-1.0.229 \
 		serde_derive-1.0.229 \
 		serde_derive_internals-0.29.1 \
+		serde_ignored-0.1.14 \
 		serde_json-1.0.154 \
 		serde_path_to_error-0.1.20 \
 		serde_regex-1.2.0 \
@@ -645,7 +647,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		tree-sitter-powershell-0.26.4 \
 		tree_magic_mini-3.2.2 \
 		try-lock-0.2.5 \
-		tui-textarea-2-0.13.2 \
 		twox-hash-2.1.4 \
 		type-map-0.5.1 \
 		typed-builder-0.23.2 \
@@ -677,7 +678,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		varint-rs-2.2.1 \
 		vcpkg-0.2.15 \
 		version_check-0.9.5 \
-		vte-0.15.0 \
 		vtparse-0.6.2 \
 		wait-timeout-0.2.1 \
 		walkdir-2.5.0 \
