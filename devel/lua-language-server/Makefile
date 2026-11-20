@@ -1,5 +1,5 @@
 PORTNAME=	lua-language-server
-DISTVERSION=	3.19.1
+DISTVERSION=	3.19.2
 PORTEPOCH=	1
 CATEGORIES=	devel
 
