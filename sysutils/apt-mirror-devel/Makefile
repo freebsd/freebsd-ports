@@ -9,7 +9,7 @@ MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Debian/Ubuntu apt sources mirroring tool
 WWW=		https://apt-mirror.github.io/
 
-LICENSE=	GPLv2
+LICENSE=	GPL-2.0-only
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	apt-mirror
