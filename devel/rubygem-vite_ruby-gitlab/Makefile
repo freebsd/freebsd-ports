@@ -1,6 +1,5 @@
 PORTNAME=	vite_ruby
-PORTVERSION=	3.10.2
-PORTREVISION=	1
+PORTVERSION=	3.10.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-gitlab
@@ -15,14 +14,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-dry-cli>=0.7<2:devel/rubygem-dry-cli \
 		rubygem-logger-gitlab>=1.6<2:devel/rubygem-logger-gitlab \
 		rubygem-mutex_m>=0:devel/rubygem-mutex_m \
-		rubygem-rack-proxy0>=0.6.1<1.0:www/rubygem-rack-proxy0 \
+		rubygem-rack-proxy-gitlab>=0.6.1<1.0:www/rubygem-rack-proxy-gitlab \
 		rubygem-zeitwerk>=2.2<3:devel/rubygem-zeitwerk
 
 USES=		gem
 
 NO_ARCH=	yes
-
-PORTSCOUT=	limit:^3\.3\.
 
 PLIST_FILES=	bin/vite
 
