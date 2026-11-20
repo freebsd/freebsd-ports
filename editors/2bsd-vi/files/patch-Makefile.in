@@ -1,0 +1,27 @@
+--- Makefile.in.orig	2026-07-04 19:14:43 UTC
++++ Makefile.in
+@@ -265,7 +265,7 @@ SRC7	= mapmalloc.c malloc.c
+ .SUFFIXES: .o .c
+ .c.o: ; $(CC) $(CCFLAGS) -c $<
+ 
+-all: exrecover expreserve ex wvi.out
++all: exrecover expreserve ex
+ 
+ ex: $(OBJS) $(RETGT) $(TLIB)
+ 	$(CC) -o ex $(LDFLAGS) $(DEFINES) $(OBJS) $(LDADD) $(WARN) $(TERMLIB) \
+@@ -316,7 +316,6 @@ install-man:
+ 	ln -s ex.1 $(DESTDIR)$(MANDIR)/man1/edit.1
+ 	ln -s vi.1 $(DESTDIR)$(MANDIR)/man1/vedit.1
+ 	ln -s vi.1 $(DESTDIR)$(MANDIR)/man1/view.1
+-	$(INSTALL) -m 644 wvi.1 $(DESTDIR)$(MANDIR)/man1/
+ 
+ install: all install-man
+ 	rm -f $(DESTDIR)$(BINDIR)/ex $(DESTDIR)$(BINDIR)/edit \
+@@ -339,7 +338,6 @@ install: all install-man
+ 	ln -s ex $(DESTDIR)$(BINDIR)/vedit
+ 	ln -s ex $(DESTDIR)$(BINDIR)/vi
+ 	ln -s ex $(DESTDIR)$(BINDIR)/view
+-	$(INSTALL) wvi.out $(DESTDIR)$(BINDIR)/wvi
+ 	test -d $(DESTDIR)$(PRESERVEDIR) || mkdir -p $(DESTDIR)$(PRESERVEDIR)
+ 	-chmod 1777 $(DESTDIR)$(PRESERVEDIR)
+ 
