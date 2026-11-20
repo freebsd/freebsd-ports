@@ -59,9 +59,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		bytemuck_derive-1.12.1 \
 		byteorder-1.5.0 \
 		bytes-1.12.1 \
-		cached-2.0.2 \
-		cached_proc_macro-2.0.0 \
-		cached_proc_macro_types-1.0.0 \
 		candle-core-0.9.2 \
 		caseless-0.2.2 \
 		cast-0.3.0 \
