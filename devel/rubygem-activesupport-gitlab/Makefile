@@ -1,6 +1,5 @@
 PORTNAME=	activesupport
 PORTVERSION=	${RAILS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-gitlab
@@ -21,17 +20,16 @@ RUN_DEPENDS=	rubygem-base64>=0:converters/rubygem-base64 \
 		rubygem-drb-gitlab>=0:devel/rubygem-drb-gitlab \
 		rubygem-i18n>=1.6,2<2,2:devel/rubygem-i18n \
 		rubygem-logger-gitlab>=1.4.2:devel/rubygem-logger-gitlab \
-		rubygem-minitest>=5.1<6:devel/rubygem-minitest \
+		rubygem-minitest>=5.1:devel/rubygem-minitest \
 		rubygem-securerandom>=0.3:security/rubygem-securerandom \
-		rubygem-tzinfo>=2.0.5<3:devel/rubygem-tzinfo
+		rubygem-tzinfo>=2.0.5<3:devel/rubygem-tzinfo \
+		rubygem-uri-gitlab>=0.13.1:net/rubygem-uri-gitlab
 
 USES=		cpe gem
 
 CPE_VENDOR=	activesupport_project
 
 NO_ARCH=	yes
-
-PORTSCOUT=	limit:^7\.2\.
 
 .include "${.CURDIR}/../../www/gitlab/Makefile.common"
 .include <bsd.port.mk>
