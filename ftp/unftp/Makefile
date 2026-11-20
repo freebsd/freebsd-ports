@@ -1,6 +1,6 @@
 PORTNAME=	unftp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.16.0
+DISTVERSION=	0.17.0
 CATEGORIES=	ftp
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -28,8 +28,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		anstyle-parse-1.0.0 \
 		anstyle-query-1.1.5 \
 		anstyle-wincon-3.0.11 \
-		anyhow-1.0.100 \
-		arc-swap-1.8.0 \
+		anyhow-1.0.104 \
+		arc-swap-1.9.5 \
 		arcstr-1.2.0 \
 		asn1-rs-0.7.2 \
 		asn1-rs-derive-0.6.0 \
@@ -38,8 +38,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		asyncband-0.7.4 \
 		atomic-waker-1.1.2 \
 		autocfg-1.5.1 \
-		aws-lc-rs-1.18.2 \
-		aws-lc-sys-0.46.0 \
+		aws-lc-rs-1.19.0 \
+		aws-lc-sys-0.47.0 \
 		axum-0.8.8 \
 		axum-core-0.5.5 \
 		backon-1.6.0 \
@@ -55,20 +55,20 @@ CARGO_CRATES=	adler2-2.0.1 \
 		built-0.8.1 \
 		bumpalo-3.20.3 \
 		byteorder-1.5.0 \
-		bytes-1.12.1 \
-		cap-primitives-4.0.0 \
-		cap-std-4.0.0 \
+		bytes-1.12.2 \
+		cap-primitives-4.0.3 \
+		cap-std-4.0.3 \
 		cargo-lock-11.1.0 \
 		cbc-0.1.2 \
-		cc-1.10.0 \
+		cc-1.11.2 \
 		cdfs-0.2.3 \
 		cfg-if-1.0.5 \
-		cfg_aliases-0.2.1 \
+		cfg_aliases-0.2.2 \
 		chrono-0.4.45 \
 		cipher-0.4.4 \
-		clap-4.6.7 \
+		clap-4.6.8 \
 		clap_builder-4.6.7 \
-		clap_derive-4.6.7 \
+		clap_derive-4.6.8 \
 		clap_lex-1.1.1 \
 		cmake-0.1.58 \
 		cmov-0.5.4 \
@@ -77,17 +77,17 @@ CARGO_CRATES=	adler2-2.0.1 \
 		console-api-0.9.0 \
 		console-subscriber-0.5.0 \
 		const-oid-0.9.6 \
-		const-oid-0.10.2 \
+		const-oid-0.10.3 \
 		convert_case-0.10.0 \
 		core-foundation-0.9.4 \
 		core-foundation-0.10.1 \
 		core-foundation-sys-0.8.7 \
 		cpufeatures-0.2.16 \
 		cpufeatures-0.3.1 \
-		crc32fast-1.5.0 \
-		crossbeam-channel-0.5.15 \
+		crc32fast-1.5.3 \
+		crossbeam-channel-0.5.17 \
 		crossbeam-epoch-0.9.21 \
-		crossbeam-utils-0.8.21 \
+		crossbeam-utils-0.8.23 \
 		crypto-common-0.1.7 \
 		crypto-common-0.2.2 \
 		ctor-1.0.13 \
@@ -110,17 +110,17 @@ CARGO_CRATES=	adler2-2.0.1 \
 		displaydoc-0.2.7 \
 		doc-comment-0.3.4 \
 		dunce-1.0.5 \
-		either-1.15.0 \
+		either-1.19.0 \
 		encoding_rs-0.8.35 \
 		equivalent-1.0.3 \
 		erased-serde-0.3.31 \
-		errno-0.3.14 \
+		errno-0.3.15 \
 		fastrand-2.3.0 \
 		find-msvc-tools-0.1.15 \
-		flate2-1.1.10 \
+		flate2-1.1.11 \
 		fnv-1.0.7 \
 		form_urlencoded-1.2.2 \
-		fs-set-times-0.20.2 \
+		fs-set-times-0.20.3 \
 		fs_extra-1.3.0 \
 		fuser-0.13.0 \
 		futures-0.3.34 \
@@ -201,29 +201,27 @@ CARGO_CRATES=	adler2-2.0.1 \
 		libc-0.2.191 \
 		libgit2-sys-0.18.8+1.9.7 \
 		libm-0.2.16 \
-		libunftp-0.24.0 \
+		libunftp-0.25.1 \
 		libz-sys-1.1.30 \
 		link-section-0.19.3 \
 		linktime-proc-macro-0.2.3 \
 		linux-raw-sys-0.4.15 \
-		linux-raw-sys-0.11.0 \
+		linux-raw-sys-0.12.1 \
 		litemap-0.8.3 \
 		lock_api-0.4.14 \
-		log-0.4.34 \
+		log-0.4.35 \
 		lru-slab-0.1.2 \
 		matchers-0.2.0 \
 		matchit-0.8.4 \
 		maybe-owned-0.3.4 \
-		md-5-0.10.6 \
 		md-5-0.11.0 \
-		mea-0.6.3 \
 		memchr-2.8.3 \
-		mime-0.3.17 \
+		mime-0.3.18 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.9.1 \
-		mio-1.2.4 \
+		mio-1.2.5 \
 		moka-0.12.16 \
-		nix-0.31.3 \
+		nix-0.31.4 \
 		nom-7.1.3 \
 		num-bigint-0.4.8 \
 		num-bigint-0.5.1 \
@@ -236,14 +234,15 @@ CARGO_CRATES=	adler2-2.0.1 \
 		oid-registry-0.8.1 \
 		once_cell-1.21.4 \
 		once_cell_polyfill-1.70.2 \
-		opendal-0.57.0 \
-		opendal-core-0.57.0 \
-		opendal-layer-concurrent-limit-0.57.0 \
-		opendal-layer-logging-0.57.0 \
-		opendal-layer-retry-0.57.0 \
-		opendal-layer-timeout-0.57.0 \
-		opendal-service-azblob-0.57.0 \
-		opendal-service-azure-common-0.57.0 \
+		opendal-0.59.5 \
+		opendal-core-0.59.5 \
+		opendal-http-transport-reqwest-0.59.5 \
+		opendal-layer-concurrent-limit-0.59.5 \
+		opendal-layer-logging-0.59.5 \
+		opendal-layer-retry-0.59.5 \
+		opendal-layer-timeout-0.59.5 \
+		opendal-service-azblob-0.59.5 \
+		opendal-service-azure-common-0.59.5 \
 		openssl-probe-0.2.1 \
 		page_size-0.5.0 \
 		pam-0.7.0 \
@@ -261,7 +260,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		pkcs5-0.7.1 \
 		pkcs8-0.10.2 \
 		pkg-config-0.3.34 \
-		portable-atomic-1.12.0 \
+		portable-atomic-1.15.0 \
 		portable-atomic-util-0.2.5 \
 		potential_utf-0.1.6 \
 		powerfmt-0.2.1 \
@@ -276,7 +275,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		protobuf-3.7.2 \
 		protobuf-support-3.7.2 \
 		proxy-protocol-0.5.0 \
-		quick-xml-0.39.4 \
+		quick-xml-0.42.0 \
 		quinn-0.11.9 \
 		quinn-proto-0.11.13 \
 		quinn-udp-0.5.14 \
@@ -290,7 +289,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rand_chacha-0.9.0 \
 		rand_core-0.6.4 \
 		rand_core-0.9.3 \
-		redis-1.8.1 \
+		redis-1.8.2 \
 		redox_syscall-0.5.18 \
 		regex-1.13.1 \
 		regex-automata-0.4.18 \
@@ -305,14 +304,14 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rustc_version-0.4.1 \
 		rusticata-macros-4.1.0 \
 		rustix-0.38.44 \
-		rustix-1.1.3 \
+		rustix-1.1.6 \
 		rustix-linux-procfs-0.1.1 \
 		rustls-0.23.46 \
 		rustls-native-certs-0.8.5 \
-		rustls-pki-types-1.15.1 \
+		rustls-pki-types-1.16.0 \
 		rustls-platform-verifier-0.7.1 \
 		rustls-platform-verifier-android-0.2.0 \
-		rustls-webpki-0.103.16 \
+		rustls-webpki-0.103.17 \
 		rustversion-1.0.23 \
 		ryu-1.0.23 \
 		salsa20-0.10.2 \
@@ -347,10 +346,10 @@ CARGO_CRATES=	adler2-2.0.1 \
 		slab-0.4.12 \
 		slog-2.8.2 \
 		slog-async-2.8.0 \
-		slog-scope-4.4.0 \
+		slog-scope-4.4.1 \
 		slog-stdlog-4.1.1 \
 		slog-term-2.9.2 \
-		smallvec-1.16.4 \
+		smallvec-1.16.5 \
 		snafu-0.6.10 \
 		snafu-derive-0.6.10 \
 		socket2-0.6.5 \
@@ -363,7 +362,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		subtle-2.6.1 \
 		syn-1.0.109 \
 		syn-2.0.119 \
-		syn-3.0.9 \
+		syn-3.0.10 \
 		sync_wrapper-1.0.2 \
 		synstructure-0.13.2 \
 		synstructure-0.14.0 \
@@ -386,7 +385,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		tokio-1.54.1 \
 		tokio-macros-2.7.2 \
 		tokio-rustls-0.26.6 \
-		tokio-stream-0.1.18 \
+		tokio-stream-0.1.19 \
 		tokio-util-0.7.20 \
 		toml-1.1.2+spec-1.1.0 \
 		toml_datetime-1.1.2+spec-1.1.0 \
@@ -404,16 +403,16 @@ CARGO_CRATES=	adler2-2.0.1 \
 		tracing-subscriber-0.3.22 \
 		try-lock-0.2.5 \
 		typenum-1.20.1 \
-		unftp-auth-jsonfile-0.4.0 \
-		unftp-auth-pam-0.3.0 \
-		unftp-auth-rest-0.3.1 \
-		unftp-core-0.1.0 \
-		unftp-sbe-fs-0.4.0 \
-		unftp-sbe-gcs-0.3.1 \
-		unftp-sbe-iso-0.2.0 \
-		unftp-sbe-opendal-0.4.2 \
-		unftp-sbe-restrict-0.1.5 \
-		unftp-sbe-rooter-0.3.0 \
+		unftp-auth-jsonfile-0.4.1 \
+		unftp-auth-pam-0.3.1 \
+		unftp-auth-rest-0.3.2 \
+		unftp-core-0.1.1 \
+		unftp-sbe-fs-0.4.1 \
+		unftp-sbe-gcs-0.3.2 \
+		unftp-sbe-iso-0.2.1 \
+		unftp-sbe-opendal-0.4.11 \
+		unftp-sbe-restrict-0.1.6 \
+		unftp-sbe-rooter-0.3.1 \
 		unicode-ident-1.0.27 \
 		unicode-segmentation-1.13.3 \
 		unicode-xid-0.2.6 \
@@ -422,7 +421,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		users-0.8.1 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
-		uuid-1.29.0 \
+		uuid-1.29.3 \
 		valid-0.3.1 \
 		valuable-0.1.1 \
 		vcpkg-0.2.15 \
@@ -497,7 +496,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		zerocopy-derive-0.8.31 \
 		zerofrom-0.1.8 \
 		zerofrom-derive-0.1.8 \
-		zeroize-1.9.1 \
+		zeroize-1.9.2 \
 		zerotrie-0.2.5 \
 		zerovec-0.11.9 \
 		zerovec-derive-0.11.7 \
