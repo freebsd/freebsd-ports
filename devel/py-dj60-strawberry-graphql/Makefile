@@ -2,7 +2,7 @@ PORTNAME=	strawberry-graphql
 # Upstream releases updates relatively frequently, so this port is usually
 # updated along with its py-strawberry-graphql counterpart whenever a new
 # version of net-mgmt/netbox is released.
-DISTVERSION=	0.327.7
+DISTVERSION=	0.341.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj60-
@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}uv-build>=0.11:devel/py-uv-build@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cross-web>=0.6.0:www/py-cross-web@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}graphql-core>=3.2.0<3.4.0:devel/py-graphql-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}graphql-core>=3.3.0<3.4.0:devel/py-graphql-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=23:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-dateutil>=2.7.0:devel/py-python-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.14.0:devel/py-typing-extensions@${PY_FLAVOR}
@@ -71,11 +71,6 @@ FLASK_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}flask>=1.1:www/py-flask@${PY_FLAVOR}
 OPENTELEMETRY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}opentelemetry-api<2:devel/py-opentelemetry-api@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}opentelemetry-sdk<2:devel/py-opentelemetry-sdk@${PY_FLAVOR}
 PYDANTIC_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}pydantic2>1.6.1:devel/py-pydantic2@${PY_FLAVOR}
-
-# Vendored pre-3.10 dataclasses __init__ helper: unused (strawberry needs
-# Python 3.10+ and uses kw_only) and it imports names removed in 3.13
-post-patch:
-	@${RM} ${WRKSRC}/strawberry/ext/dataclasses/dataclasses.py
 
 # The strawberry command needs the CLI option dependencies
 post-install-CLI-off:
