@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-helpers-sql-processor
-PORTVERSION=	0.4.0
+PORTVERSION=	0.5.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-gitlab
