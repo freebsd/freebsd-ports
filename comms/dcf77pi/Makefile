@@ -8,7 +8,7 @@ FJ_ACCOUNT=	rene0
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	DCF77 receiver/logger/analyzer and library for the Raspberry Pi
 
-LICENSE=	BSD2CLAUSE
+LICENSE=	BSD-2-Clause
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 DEPRECATED=	No development for years, consider using misc/radio_datetime_analyzer instead
