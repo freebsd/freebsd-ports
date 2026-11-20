@@ -1,6 +1,5 @@
 PORTNAME=	actionpack
 PORTVERSION=	${RAILS_VERSION}
-PORTREVISION=	2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-gitlab
@@ -15,10 +14,8 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-actionview-gitlab>=${PORTVERSION}<${PORTVERSION}_99:devel/rubygem-actionview-gitlab \
 		rubygem-activesupport-gitlab>=${PORTVERSION}<${PORTVERSION}_99:devel/rubygem-activesupport-gitlab \
-		rubygem-cgi>=0:www/rubygem-cgi \
 		rubygem-nokogiri>=1.8.5:textproc/rubygem-nokogiri \
-		rubygem-racc>=0:devel/rubygem-racc \
-		rubygem-rack-gitlab>=2.2.4<3.3:www/rubygem-rack-gitlab \
+		rubygem-rack-gitlab>=2.2.4:www/rubygem-rack-gitlab \
 		rubygem-rack-session-gitlab>=1.0.1:www/rubygem-rack-session-gitlab \
 		rubygem-rack-test-gitlab>=0.6.3:www/rubygem-rack-test-gitlab \
 		rubygem-rails-dom-testing-rails-gitlab>=2.2<3:textproc/rubygem-rails-dom-testing-rails-gitlab \
@@ -28,8 +25,6 @@ RUN_DEPENDS=	rubygem-actionview-gitlab>=${PORTVERSION}<${PORTVERSION}_99:devel/r
 USES=		gem
 
 NO_ARCH=	yes
-
-PORTSCOUT=	limit:^7\.2\.
 
 .include "${.CURDIR}/../../www/gitlab/Makefile.common"
 .include <bsd.port.mk>
