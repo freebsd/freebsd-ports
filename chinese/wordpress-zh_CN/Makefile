@@ -1,4 +1,3 @@
-IGNORE=		localized distfile not yet available upstream
 CATEGORIES=	chinese
 MASTER_SITES=	https://cn.wordpress.org/
 
