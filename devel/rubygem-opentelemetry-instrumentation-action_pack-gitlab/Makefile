@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-instrumentation-action_pack
-PORTVERSION=	0.16.0
+PORTVERSION=	0.19.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-gitlab
