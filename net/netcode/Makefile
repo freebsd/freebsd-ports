@@ -1,6 +1,6 @@
 PORTNAME=	netcode
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.3
+DISTVERSION=	1.5.0
 CATEGORIES=	net
 
 MAINTAINER=	glenn@mas-bandwidth.com
@@ -24,6 +24,10 @@ CMAKE_OFF=	NETCODE_BUILD_TESTS
 CMAKE_TESTING_ON=	NETCODE_BUILD_TESTS
 
 PLIST_FILES=	include/netcode.h \
+		lib/cmake/netcode/netcodeConfig.cmake \
+		lib/cmake/netcode/netcodeConfigVersion.cmake \
+		lib/cmake/netcode/netcodeTargets-%%CMAKE_BUILD_TYPE%%.cmake \
+		lib/cmake/netcode/netcodeTargets.cmake \
 		lib/libnetcode.so \
 		lib/libnetcode.so.1 \
 		lib/libnetcode.so.${DISTVERSION}
