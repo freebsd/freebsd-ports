@@ -1,5 +1,5 @@
 usr/lib64/libseccomp.so.2
-usr/lib64/libseccomp.so.2.5.2
+usr/lib64/libseccomp.so.2.5.6
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTING.md
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
