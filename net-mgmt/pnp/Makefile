@@ -64,7 +64,7 @@ CONFIGURE_ARGS+=	--datadir=${WWWDIR} \
 # Get rid of INSTALL_OPTS that are set by configure --
 # we want the things to be installed with root:wheel and
 # NAGIOSUSER:NAGIOSGROUP are going to the configuration files.
-MAKE_ARGS=	INSTALL_OPTS=
+MAKE_ARGS?=	INSTALL_OPTS=
 INSTALL_TARGET=	install
 
 PLIST_SUB+=	NAGIOSDIR=${NAGIOSDIR} \
