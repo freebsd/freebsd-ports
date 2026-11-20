@@ -1,6 +1,6 @@
 PORTNAME=	crush
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.101.0
+DISTVERSION=	0.102.0
 CATEGORIES=	misc devel
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -24,7 +24,6 @@ OPTIONS_DEFINE=		COMPLETIONS DOCS MANPAGES
 OPTIONS_DEFAULT=	COMPLETIONS MANPAGES
 
 COMPLETIONS_DESC=		Build and/or install shell completions
-DISABLE_COMMAND_BLOCKING_DESC=	Support for disabling dangerous command blocking
 
 COMPLETIONS_PLIST_FILES=etc/bash_completion.d/${PORTNAME} \
 			share/fish/completions/${PORTNAME}.fish \
