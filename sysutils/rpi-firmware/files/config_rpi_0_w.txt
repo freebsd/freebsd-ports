@@ -4,3 +4,4 @@ kernel=u-boot.bin
 kernel7=u-boot.bin
 dtoverlay=mmc
 dtoverlay=disable-bt
+framebuffer_swap=0
