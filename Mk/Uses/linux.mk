@@ -37,7 +37,7 @@ linux_ARGS=		${LINUX_DEFAULT}
 .  if ${linux_ARGS} == c7
 LINUX_DIST_VER?=	7.9.2009
 .  elif ${linux_ARGS} == rl9
-LINUX_DIST_VER?=	9.8
+LINUX_DIST_VER?=	9.9
 .  else
 ERROR+=			"Invalid Linux distribution: ${linux_ARGS}"
 .  endif
@@ -251,7 +251,7 @@ DEPRECATED=		CentOS Linux 7 reached end of life (EOL) on June 30, 2024
 .    elif ${linux_ARGS} == rl9
 .      ifndef MASTER_SITES
 MASTER_SITES=		${MASTER_SITE_ROCKY_LINUX}
-MASTER_SITE_SUBDIR=	${LINUX_DIST_VER}/BaseOS/aarch64/os/Packages/:DEFAULT,aarch64 \
+MASTER_SITE_SUBDIR+=	${LINUX_DIST_VER}/BaseOS/aarch64/os/Packages/:DEFAULT,aarch64 \
 			${LINUX_DIST_VER}/AppStream/aarch64/os/Packages/:DEFAULT,aarch64 \
 			${LINUX_DIST_VER}/BaseOS/x86_64/os/Packages/:DEFAULT,amd64 \
 			${LINUX_DIST_VER}/CRB/aarch64/os/Packages/:DEFAULT,aarch64 \
