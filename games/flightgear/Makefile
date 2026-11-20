@@ -1,6 +1,6 @@
 PORTNAME=	flightgear
 PORTVERSION=	2024.1.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 
 MAINTAINER=	martymac@FreeBSD.org
@@ -45,16 +45,16 @@ CMAKE_ARGS+=	-DSYSTEM_SQLITE:BOOL=ON \
 LDFLAGS+=	-L${LOCALBASE}/lib
 LDFLAGS_i386=	-Wl,-znotext
 
-OPTIONS_DEFINE=	DBUS QT5
-OPTIONS_DEFAULT=	DBUS QT5
+OPTIONS_DEFINE=	DBUS QT6
+OPTIONS_DEFAULT=	DBUS QT6
 DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 DBUS_USES=	pkgconfig
 DBUS_CMAKE_ON=	-DUSE_DBUS:BOOL=ON
 DBUS_CMAKE_OFF=	-DUSE_DBUS:BOOL=OFF
-QT5_CMAKE_ON=	-DENABLE_QT:BOOL=ON -DCHECK_FOR_QT6:BOOL=OFF
-QT5_CMAKE_OFF=	-DENABLE_QT:BOOL=OFF
-QT5_USES=	qt:5
-QT5_USE=	QT=core,buildtools,linguisttools,gui,declarative,network,qmake,widgets,svg
+QT6_CMAKE_ON=	-DENABLE_QT:BOOL=ON -DCHECK_FOR_QT5:BOOL=OFF
+QT6_CMAKE_OFF=	-DENABLE_QT:BOOL=OFF
+QT6_USES=	qt:6
+QT6_USE=	QT=base,declarative,svg,tools:build
 
 post-patch:
 # Avoid conflict with C++20 <version> - used version file is flightgear-version
