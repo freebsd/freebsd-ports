@@ -1,5 +1,5 @@
 PORTNAME=	cargo-deny
-DISTVERSION=	0.21.0
+DISTVERSION=	0.22.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -34,16 +34,16 @@ CARGO_CRATES=	adler2-2.0.1 \
 		bitvec-1.1.1 \
 		block-buffer-0.12.1 \
 		borsh-1.8.1 \
-		bstr-1.13.1 \
-		bytes-1.12.1 \
+		bstr-1.14.0 \
+		bytes-1.12.2 \
 		camino-1.2.6 \
-		cc-1.11.1 \
-		cfg-expr-0.20.10 \
+		cc-1.11.2 \
+		cfg-expr-0.20.11 \
 		cfg-if-1.0.5 \
 		cfg_aliases-0.2.2 \
-		clap-4.6.7 \
+		clap-4.6.8 \
 		clap_builder-4.6.7 \
-		clap_lex-1.1.1 \
+		clap_lex-1.1.2 \
 		codespan-0.13.1 \
 		codespan-reporting-0.13.1 \
 		colorchoice-1.0.5 \
@@ -94,15 +94,15 @@ CARGO_CRATES=	adler2-2.0.1 \
 		insta-1.49.0 \
 		is_terminal_polyfill-1.70.2 \
 		itoa-1.0.19 \
-		jiff-0.2.43 \
-		jiff-core-0.1.5 \
-		jiff-static-0.2.43 \
+		jiff-1.0.1 \
+		jiff-core-1.0.1 \
+		jiff-static-1.0.1 \
 		jobserver-0.1.35 \
 		krates-0.22.0 \
 		libc-0.2.191 \
 		linux-raw-sys-0.12.1 \
 		litemap-0.8.3 \
-		lock_api-0.4.14 \
+		lock_api-0.5.0 \
 		log-0.4.35 \
 		memchr-2.8.3 \
 		memmap2-0.9.12 \
@@ -110,8 +110,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		nu-ansi-term-0.50.3 \
 		once_cell-1.21.4 \
 		once_cell_polyfill-1.70.2 \
-		parking_lot-0.12.5 \
-		parking_lot_core-0.9.12 \
+		parking_lot-0.13.0 \
+		parking_lot_core-0.10.0 \
 		percent-encoding-2.3.2 \
 		petgraph-0.8.3 \
 		pkg-config-0.3.34 \
@@ -125,16 +125,16 @@ CARGO_CRATES=	adler2-2.0.1 \
 		radium-0.7.0 \
 		rayon-1.12.0 \
 		rayon-core-1.13.0 \
-		redox_syscall-0.5.18 \
-		regex-1.13.1 \
-		regex-automata-0.4.18 \
-		regex-syntax-0.8.11 \
+		redox_syscall-0.9.5 \
+		regex-1.13.2 \
+		regex-automata-0.4.19 \
+		regex-syntax-0.8.12 \
 		ring-0.17.14 \
 		rustc-stable-hash-0.1.2 \
 		rustix-1.1.6 \
 		rustls-0.23.46 \
 		rustls-pki-types-1.16.0 \
-		rustls-webpki-0.103.16 \
+		rustls-webpki-0.103.17 \
 		same-file-1.0.6 \
 		scopeguard-1.2.0 \
 		scroll-0.13.0 \
@@ -148,13 +148,12 @@ CARGO_CRATES=	adler2-2.0.1 \
 		shlex-2.0.1 \
 		simd-adler32-0.3.10 \
 		similar-2.7.0 \
-		smallvec-1.16.5 \
+		smallvec-1.16.6 \
 		smol_str-0.3.7 \
 		spdx-0.13.6 \
 		stable_deref_trait-1.2.1 \
 		strsim-0.11.1 \
 		subtle-2.6.1 \
-		syn-2.0.119 \
 		syn-3.0.10 \
 		synstructure-0.14.0 \
 		tame-index-0.27.2 \
@@ -171,7 +170,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		unicode-normalization-0.1.26 \
 		unicode-width-0.2.3 \
 		untrusted-0.9.0 \
-		ureq-3.5.1 \
+		ureq-3.5.2 \
 		ureq-proto-0.7.1 \
 		url-2.5.8 \
 		utf8-zero-0.8.1 \
@@ -200,15 +199,15 @@ CARGO_CRATES=	adler2-2.0.1 \
 		yoke-derive-0.8.4 \
 		zerofrom-0.1.8 \
 		zerofrom-derive-0.1.8 \
-		zeroize-1.9.1 \
+		zeroize-1.9.2 \
 		zerotrie-0.2.5 \
 		zerovec-0.11.9 \
 		zerovec-derive-0.11.7 \
 		zlib-rs-0.6.8 \
 		zmij-1.0.23 \
-		zstd-0.13.4 \
-		zstd-safe-7.4.0 \
-		zstd-sys-2.1.2+zstd.1.5.7
+		zstd-0.13.5 \
+		zstd-safe-7.4.1 \
+		zstd-sys-2.1.3+zstd.1.5.7
 
 PLIST_FILES=	bin/${PORTNAME}
 
