@@ -1,6 +1,5 @@
 PORTNAME=	opentelemetry-exporter-otlp
-PORTVERSION=	0.31.1
-PORTREVISION=	1
+PORTVERSION=	0.37.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-gitlab
@@ -18,6 +17,7 @@ RUN_DEPENDS=	rubygem-googleapis-common-protos-types-gitlab>=1.3<2:devel/rubygem-
 		rubygem-google-protobuf-gitlab>=3.18:devel/rubygem-google-protobuf-gitlab \
 		rubygem-opentelemetry-api-gitlab>=1.1<2:devel/rubygem-opentelemetry-api-gitlab \
 		rubygem-opentelemetry-common-gitlab>=0.20<1:devel/rubygem-opentelemetry-common-gitlab \
+		rubygem-opentelemetry-exporter-otlp-common-gitlab>=0.2<1:devel/rubygem-opentelemetry-exporter-otlp-common-gitlab \
 		rubygem-opentelemetry-sdk-gitlab>=1.10<2:devel/rubygem-opentelemetry-sdk-gitlab \
 		rubygem-opentelemetry-semantic_conventions-gitlab>=0:devel/rubygem-opentelemetry-semantic_conventions-gitlab
 
