@@ -1,6 +1,5 @@
 PORTNAME=	railties
 PORTVERSION=	${RAILS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-gitlab
@@ -30,8 +29,6 @@ SHEBANG_FILES=	lib/rails/generators/rails/app/templates/docker-entrypoint.tt
 CONFLICTS_INSTALL=	rubygem-railties[0-9] rubygem-railties[0-9][0-9]
 
 NO_ARCH=	yes
-
-PORTSCOUT=	limit:^7\.2\.
 
 PLIST_FILES=	bin/rails
 
