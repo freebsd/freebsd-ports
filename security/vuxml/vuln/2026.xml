@@ -1,3 +1,61 @@
+  <vuln vid="d12eeeb9-a7f0-49fe-83aa-699fe44378f6">
+    <topic>netcode -- multiple AEAD nonce-reuse vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>netcode</name>
+	<range><lt>1.5.0</lt></range>
+      </package>
+      <package>
+	<name>yojimbo</name>
+	<range><lt>1.16.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Glenn Fiedler reports:</p>
+	<blockquote cite="https://github.com/mas-bandwidth/netcode/security/advisories/GHSA-8mrq-q9c6-h23v">
+	  <p>netcode uses the 64-bit packet sequence number directly as the
+	    ChaCha20-Poly1305 AEAD nonce. Across releases prior to 1.5.0,
+	    three lifecycle paths permitted a (key, nonce) pair to repeat
+	    under a connect token's static keys, voiding confidentiality and
+	    integrity for affected packets:</p>
+	  <ul>
+	    <li>CVE-2026-104096 (GHSA-3x95-24j9-7448, fixed in netcode 1.4.0
+	      and yojimbo 1.7.0): the server's global packet sequence was
+	      seeded only at creation rather than on start, so an in-process
+	      server restart could re-emit global packets at already-used
+	      sequence numbers.</li>
+	    <li>GHSA-v29p-3vj4-vg4f (fixed in netcode 1.4.5 and yojimbo
+	      1.12.1): connect-token history did not distinguish an active
+	      handshake from a closed session, allowing an unexpired connect
+	      token reused from the same address after disconnect to reset
+	      per-session nonces to zero under the same keys.</li>
+	    <li>GHSA-8mrq-q9c6-h23v (fixed in netcode 1.5.0 and yojimbo
+	      1.16.0): retried unfinished handshakes and multi-server connect
+	      tokens could reuse nonces under static connect-token keys. Fixed
+	      by upgrading the wire protocol to NETCODE 1.03 with
+	      per-connection HChaCha20 key derivation.</li>
+	  </ul>
+	</blockquote>
+	<p>Upstream yojimbo vendors netcode by default; the FreeBSD yojimbo
+	  port builds with YOJIMBO_SYSTEM_DEPS=ON and dynamically links the
+	  system netcode library (requiring netcode 1.5.0 or later from
+	  yojimbo 1.16.0 onward).</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-104096</cvename>
+      <url>https://github.com/mas-bandwidth/netcode/security/advisories/GHSA-8mrq-q9c6-h23v</url>
+      <url>https://github.com/mas-bandwidth/netcode/security/advisories/GHSA-v29p-3vj4-vg4f</url>
+      <url>https://github.com/mas-bandwidth/netcode/security/advisories/GHSA-3x95-24j9-7448</url>
+      <url>https://github.com/mas-bandwidth/yojimbo/security/advisories/GHSA-hqp3-fj6v-hrpc</url>
+    </references>
+    <dates>
+      <discovery>2026-07-12</discovery>
+      <entry>2026-11-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a66ea137-7d48-4991-953d-73cfdaf1da76">
     <topic>clamav -- Multiple vulnerabilities</topic>
     <affects>
