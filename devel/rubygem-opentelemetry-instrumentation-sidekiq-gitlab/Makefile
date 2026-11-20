@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-instrumentation-sidekiq
-PORTVERSION=	0.28.1
+PORTVERSION=	0.29.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-gitlab
