@@ -275,7 +275,6 @@
     SUBDIR += combblas
     SUBDIR += conauto
     SUBDIR += concorde
-    SUBDIR += convertall
     SUBDIR += coq
     SUBDIR += cosma
     SUBDIR += costa
