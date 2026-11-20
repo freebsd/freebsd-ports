@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-instrumentation-action_mailer
-PORTVERSION=	0.6.1
+PORTVERSION=	0.8.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-gitlab
