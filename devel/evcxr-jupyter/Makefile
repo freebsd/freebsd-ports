@@ -1,6 +1,6 @@
 PORTNAME=	evcxr
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.22.0
+DISTVERSION=	0.23.0
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-jupyter
 
@@ -41,6 +41,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		block2-0.6.2 \
 		borsh-1.6.1 \
 		boxcar-0.2.14 \
+		buffer-redux-1.1.0 \
 		bumpalo-3.20.2 \
 		bytemuck-1.25.0 \
 		byteorder-lite-0.1.0 \
@@ -52,9 +53,9 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.2.1 \
 		chrono-0.4.45 \
-		clap-4.6.6 \
-		clap_builder-4.6.6 \
-		clap_derive-4.6.4 \
+		clap-4.6.7 \
+		clap_builder-4.6.7 \
+		clap_derive-4.6.7 \
 		clap_lex-1.1.0 \
 		clipboard-win-5.4.1 \
 		cmov-0.5.4 \
@@ -65,7 +66,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		cov-mark-2.2.0 \
 		cpufeatures-0.3.0 \
 		crc32fast-1.5.0 \
-		crossbeam-channel-0.5.16 \
+		crossbeam-channel-0.5.17 \
 		crossbeam-deque-0.8.6 \
 		crossbeam-epoch-0.9.18 \
 		crossbeam-queue-0.3.12 \
@@ -77,7 +78,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		deranged-0.5.8 \
 		derive-where-1.6.1 \
 		digest-0.11.3 \
-		dirs-6.0.0 \
+		dirs-7.0.0 \
 		dirs-sys-0.5.0 \
 		dispatch2-0.3.1 \
 		displaydoc-0.2.5 \
@@ -152,7 +153,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		la-arena-0.3.1 \
 		lazy_static-1.5.0 \
 		leb128fmt-0.1.0 \
-		libc-0.2.189 \
+		libc-0.2.191 \
 		libloading-0.9.0 \
 		libmimalloc-sys-0.1.49 \
 		libredox-0.1.16 \
@@ -217,36 +218,36 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		ra-ap-rustc_pattern_analysis-0.166.0 \
 		ra-ap-rustc_type_ir-0.166.0 \
 		ra-ap-rustc_type_ir_macros-0.166.0 \
-		ra_ap_base_db-0.0.347 \
-		ra_ap_cfg-0.0.347 \
-		ra_ap_edition-0.0.347 \
-		ra_ap_hir-0.0.347 \
-		ra_ap_hir_def-0.0.347 \
-		ra_ap_hir_expand-0.0.347 \
-		ra_ap_hir_ty-0.0.347 \
-		ra_ap_ide-0.0.347 \
-		ra_ap_ide_assists-0.0.347 \
-		ra_ap_ide_completion-0.0.347 \
-		ra_ap_ide_db-0.0.347 \
-		ra_ap_ide_diagnostics-0.0.347 \
-		ra_ap_ide_ssr-0.0.347 \
-		ra_ap_intern-0.0.347 \
-		ra_ap_macros-0.0.347 \
-		ra_ap_mbe-0.0.347 \
-		ra_ap_parser-0.0.347 \
-		ra_ap_paths-0.0.347 \
-		ra_ap_profile-0.0.347 \
-		ra_ap_project_model-0.0.347 \
-		ra_ap_span-0.0.347 \
-		ra_ap_stdx-0.0.347 \
-		ra_ap_syntax-0.0.347 \
-		ra_ap_syntax-bridge-0.0.347 \
-		ra_ap_test_fixture-0.0.347 \
-		ra_ap_test_utils-0.0.347 \
-		ra_ap_toolchain-0.0.347 \
-		ra_ap_tt-0.0.347 \
-		ra_ap_vfs-0.0.347 \
-		ra_ap_vfs-notify-0.0.347 \
+		ra_ap_base_db-0.0.358 \
+		ra_ap_cfg-0.0.358 \
+		ra_ap_edition-0.0.358 \
+		ra_ap_hir-0.0.358 \
+		ra_ap_hir_def-0.0.358 \
+		ra_ap_hir_expand-0.0.358 \
+		ra_ap_hir_ty-0.0.358 \
+		ra_ap_ide-0.0.358 \
+		ra_ap_ide_assists-0.0.358 \
+		ra_ap_ide_completion-0.0.358 \
+		ra_ap_ide_db-0.0.358 \
+		ra_ap_ide_diagnostics-0.0.358 \
+		ra_ap_ide_ssr-0.0.358 \
+		ra_ap_intern-0.0.358 \
+		ra_ap_macros-0.0.358 \
+		ra_ap_mbe-0.0.358 \
+		ra_ap_parser-0.0.358 \
+		ra_ap_paths-0.0.358 \
+		ra_ap_profile-0.0.358 \
+		ra_ap_project_model-0.0.358 \
+		ra_ap_span-0.0.358 \
+		ra_ap_stdx-0.0.358 \
+		ra_ap_syntax-0.0.358 \
+		ra_ap_syntax-bridge-0.0.358 \
+		ra_ap_test_fixture-0.0.358 \
+		ra_ap_test_utils-0.0.358 \
+		ra_ap_toolchain-0.0.358 \
+		ra_ap_tt-0.0.358 \
+		ra_ap_vfs-0.0.358 \
+		ra_ap_vfs-notify-0.0.358 \
 		radix_trie-0.3.0 \
 		rand-0.9.4 \
 		rand_chacha-0.9.0 \
@@ -267,11 +268,11 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		rustc_apfloat-0.2.3+llvm-462a31f5a5ab \
 		rustix-1.1.4 \
 		rustversion-1.0.22 \
-		rustyline-18.0.1 \
+		rustyline-19.0.0 \
 		saa-5.6.0 \
-		salsa-0.28.2 \
-		salsa-macro-rules-0.28.2 \
-		salsa-macros-0.28.2 \
+		salsa-0.28.5 \
+		salsa-macro-rules-0.28.5 \
+		salsa-macros-0.28.5 \
 		same-file-1.0.6 \
 		scc-3.7.1 \
 		scopeguard-1.2.0 \
@@ -280,9 +281,9 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		serde-1.0.229 \
 		serde_core-1.0.229 \
 		serde_derive-1.0.229 \
-		serde_json-1.0.151 \
-		serde_spanned-1.1.1 \
-		sha2-0.11.0 \
+		serde_json-1.0.154 \
+		serde_spanned-1.1.2 \
+		sha2-0.11.1 \
 		sharded-slab-0.1.7 \
 		shlex-1.3.0 \
 		sig-1.0.0 \
@@ -297,7 +298,6 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		syn-2.0.117 \
 		syn-3.0.2 \
 		synstructure-0.13.2 \
-		temp-dir-0.2.0 \
 		tempfile-3.27.0 \
 		text-size-1.1.1 \
 		thin-vec-0.2.18 \
@@ -310,20 +310,20 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		time-core-0.1.8 \
 		time-macros-0.2.27 \
 		tinystr-0.8.3 \
-		tokio-1.53.1 \
+		tokio-1.53.3 \
 		tokio-macros-2.7.0 \
-		tokio-util-0.7.19 \
-		toml-1.1.4+spec-1.1.0 \
-		toml_datetime-1.1.1+spec-1.1.0 \
-		toml_parser-1.1.3+spec-1.1.0 \
-		toml_writer-1.1.2+spec-1.1.0 \
+		tokio-util-0.7.20 \
+		toml-1.1.8+spec-1.1.0 \
+		toml_datetime-1.1.2+spec-1.1.0 \
+		toml_parser-1.1.5+spec-1.1.0 \
+		toml_writer-1.1.3+spec-1.1.0 \
 		tracing-0.1.44 \
 		tracing-attributes-0.1.31 \
 		tracing-core-0.1.36 \
 		tracing-log-0.2.0 \
 		tracing-subscriber-0.3.23 \
 		tracing-tree-0.4.1 \
-		triomphe-0.1.16 \
+		triomphe-0.1.17 \
 		typed-arena-2.0.2 \
 		typeid-1.0.3 \
 		typenum-1.20.0 \
@@ -336,7 +336,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		url-2.5.8 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
-		uuid-1.24.0 \
+		uuid-1.28.0 \
 		valuable-0.1.1 \
 		walkdir-2.5.0 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
@@ -349,7 +349,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		wasm-encoder-0.244.0 \
 		wasm-metadata-0.244.0 \
 		wasmparser-0.244.0 \
-		which-8.0.5 \
+		which-8.0.6 \
 		winapi-util-0.1.11 \
 		windows-core-0.62.2 \
 		windows-implement-0.60.2 \
