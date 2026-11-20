@@ -1,10 +1,6 @@
 PORTNAME=	encrypted-dns-server
-DISTVERSION=	0.9.21
-PORTREVISION=	3
+DISTVERSION=	0.9.22
 CATEGORIES=	dns
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
-PATCHFILES=	68ac68fbbb17e4fa0c258f272ed10b6b8d81e32e.patch:-p1
 
 MAINTAINER=	ea@uoga.net
 COMMENT=	High-performance, zero maintenance encrypted DNS proxy
@@ -19,6 +15,10 @@ GH_ACCOUNT=	jedisct1
 USE_RC_SUBR=	encrypted_dns
 
 CARGO_FEATURES=	--no-default-features
+
+ETCDIR=		${PREFIX}/etc/encrypted-dns
+
+SUB_FILES=	pkg-message
 
 USERS=		_encrypted-dns
 GROUPS=		_encrypted-dns
