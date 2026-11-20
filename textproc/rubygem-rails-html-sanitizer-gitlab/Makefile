@@ -1,5 +1,5 @@
 PORTNAME=	rails-html-sanitizer
-PORTVERSION=	1.6.2
+PORTVERSION=	1.7.2
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-gitlab
@@ -11,8 +11,8 @@ WWW=		https://github.com/rails/rails-html-sanitizer
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-loofah-gitlab>=2.21<3:textproc/rubygem-loofah-gitlab \
-		rubygem-nokogiri>=1.15.7<2:textproc/rubygem-nokogiri
+RUN_DEPENDS=	rubygem-loofah-gitlab>=2.25.3<3:textproc/rubygem-loofah-gitlab \
+		rubygem-nokogiri>=1.19.5<2:textproc/rubygem-nokogiri
 
 USES=		cpe gem
 
