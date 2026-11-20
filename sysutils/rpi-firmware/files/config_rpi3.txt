@@ -5,3 +5,4 @@ dtoverlay=pwm
 dtoverlay=disable-bt
 device_tree_address=0x4000
 kernel=u-boot.bin
+framebuffer_swap=0
