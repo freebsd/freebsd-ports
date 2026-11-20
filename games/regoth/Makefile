@@ -1,7 +1,7 @@
 PORTNAME=	regoth
 DISTVERSIONPREFIX=	nightly-
 DISTVERSION=	0.4.189
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
@@ -11,6 +11,8 @@ WWW=		https://github.com/REGoth-project/REGoth
 LICENSE=	GPLv3
 
 BROKEN_riscv64=			fails to build: mmintrin.h:33:5: error: use of undeclared identifier '__builtin_ia32_emms'; did you mean '__builtin_isless'?
+DEPRECATED=			Last release 8 years ago, does not build with CMake 4
+EXPIRATION_DATE=		2026-12-31
 
 LIB_DEPENDS=	libsndfile.so:audio/libsndfile
 
