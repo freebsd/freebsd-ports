@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-instrumentation-anthropic
-PORTVERSION=	0.3.0
+PORTVERSION=	0.6.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-gitlab
