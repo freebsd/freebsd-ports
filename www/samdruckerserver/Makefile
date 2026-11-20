@@ -1,5 +1,5 @@
 PORTNAME=	samdrucker
-DISTVERSION=	0.3.0beta7
+DISTVERSION=	0.3.0
 CATEGORIES=	www
 PKGNAMESUFFIX=	server-dev
 

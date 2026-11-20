@@ -7,7 +7,6 @@
 %%DATADIR%%/PostgreSQL/procedures.sql
 %%DATADIR%%/PostgreSQL/test-multiple-repos.sql
 %%DATADIR%%/PostgreSQL/updates-2020.08.28.sql
-%%DATADIR%%/PostgreSQL/updates-2026.11.19-multiple-repos.sql
-%%DATADIR%%/PostgreSQL/updates-2026.11.19-reconcile.sql
+%%DATADIR%%/PostgreSQL/updates-2026.11.19.sql
+%%DATADIR%%/PostgreSQL/updates-website.sql
 %%WWWDIR%%/samdrucker.php
-
