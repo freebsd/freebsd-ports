@@ -1,3 +1,69 @@
+  <vuln vid="a66ea137-7d48-4991-953d-73cfdaf1da76">
+    <topic>clamav -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>clamav</name>
+	<range><lt>1.5.5,1</lt></range>
+      </package>
+      <package>
+	<name>clamav-lts</name>
+	<range><lt>1.4.7,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The ClamAV project reports:</p>
+	<blockquote cite="https://blog.clamav.net/2026/11/clamav-155-147-security-patch-release.html">
+	  <ul>
+	    <li>CVE-2026-76422: Rust-to-C logging passed rendered messages
+	      as C format strings, so crafted input could cause a crash,
+	      disclose process memory, or corrupt memory.</li>
+	    <li>CVE-2026-76411: URL canonicalization length accounting could
+	      write beyond a stack buffer while scanning a crafted email
+	      with full-hash phishing database entries loaded.</li>
+	    <li>CVE-2026-76415: yC executable unpacker offset validation
+	      could underflow and read beyond a heap buffer.</li>
+	    <li>CVE-2026-76414: cyclic CHM directory data could cause an
+	      infinite scan loop and denial of service.</li>
+	    <li>CVE-2026-76416: malformed InstallShield archives could pin a
+	      scan worker.</li>
+	    <li>CVE-2026-76417: deeply nested OLE2 property traversal could
+	      exhaust the process stack.</li>
+	    <li>CVE-2026-76421: unvalidated LZX match offsets in a malformed
+	      CHM archive could cause an out-of-bounds heap write.</li>
+	    <li>CVE-2026-76430: UPX decompression and PE rebuilding of
+	      malformed packed executables could cause out-of-bounds heap
+	      writes.</li>
+	    <li>CVE-2026-76516: crafted XAR archives could exhaust temporary
+	      storage because file-count and scan-size limits were not
+	      enforced before extraction.</li>
+	    <li>CVE-2026-76515: crafted OLE2 documents could cause excessive
+	      CPU use through unbounded directory-chain traversal.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-76422</cvename>
+      <cvename>CVE-2026-76411</cvename>
+      <cvename>CVE-2026-76415</cvename>
+      <cvename>CVE-2026-76414</cvename>
+      <cvename>CVE-2026-76416</cvename>
+      <cvename>CVE-2026-76417</cvename>
+      <cvename>CVE-2026-76421</cvename>
+      <cvename>CVE-2026-76430</cvename>
+      <cvename>CVE-2026-76516</cvename>
+      <cvename>CVE-2026-76515</cvename>
+      <url>https://blog.clamav.net/2026/11/clamav-155-147-security-patch-release.html</url>
+      <url>https://github.com/Cisco-Talos/clamav/releases/tag/clamav-1.5.5</url>
+      <url>https://github.com/Cisco-Talos/clamav/releases/tag/clamav-1.4.7</url>
+    </references>
+    <dates>
+      <discovery>2026-11-18</discovery>
+      <entry>2026-11-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="69dda898-e4b4-11f1-aff8-901b0edee044">
     <topic>py-mkdocs-material -- Path traversal in the privacy plugin allows arbitrary file writes during builds</topic>
     <affects>
