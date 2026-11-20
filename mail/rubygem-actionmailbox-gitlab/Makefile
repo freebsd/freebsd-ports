@@ -1,6 +1,5 @@
 PORTNAME=	actionmailbox
 PORTVERSION=	${RAILS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-gitlab
@@ -23,8 +22,6 @@ RUN_DEPENDS=	rubygem-actionpack-gitlab>=${PORTVERSION}<${PORTVERSION}_99:www/rub
 USES=		gem
 
 NO_ARCH=	yes
-
-PORTSCOUT=	limit:^7\.2\.
 
 .include "${.CURDIR}/../../www/gitlab/Makefile.common"
 .include <bsd.port.mk>
