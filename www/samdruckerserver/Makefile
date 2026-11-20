@@ -1,7 +1,7 @@
 PORTNAME=	samdrucker
-PORTVERSION=	0.2.7
+DISTVERSION=	0.3.0beta7
 CATEGORIES=	www
-PKGNAMESUFFIX=	server
+PKGNAMESUFFIX=	server-dev
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Installs the server side of SamDrucker

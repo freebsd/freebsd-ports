@@ -5,6 +5,37 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20261120:
+  AFFECTS: users of www/samdruckerserver and sysutils/samdruckerclientshell
+  AUTHOR: dvl@FreeBSD.org
+
+  SamDrucker 0.3.0 records every pkg repository a host uses, as with
+  pkgbase, and which repository each package came from. This changes
+  the database.
+
+  Upgrade the server first. After installing the new
+  www/samdruckerserver, back up the database, then run these scripts,
+  in this order, as the owner of the tables (replace samdrucker with
+  the name of your database):
+
+    # cd /usr/local/share/samdrucker/PostgreSQL
+    # psql samdrucker -f updates-2026.11.19.sql
+    # psql samdrucker -f procedures.sql
+
+  If you are upgrading from a release before 0.2.4, run
+  updates-2020.08.28.sql first.
+
+  Until this is done, check-ins from 0.3.0 clients are still accepted,
+  but their repositories are not recorded.
+
+  The 0.3.0 client, sysutils/samdruckerclientshell, now reports failed
+  check-ins on stderr and to syslog. To do this it needs the server's
+  reply, so it ignores any --output in CURL_OPTIONS in
+  /usr/local/etc/samdrucker/samdrucker.conf. You can remove
+  "--output /dev/null" from that file. The client now requires
+  /usr/libexec/flua, which is in the base system; on pkgbase hosts it
+  is in the FreeBSD-flua package.
+
 20261117:
   AFFECTS: users of editors/vscode
   AUTHOR: tagattie@FreeBSD.org
