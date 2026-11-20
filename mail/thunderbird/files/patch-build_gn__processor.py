@@ -1,21 +1,29 @@
-commit f45598b3294cc98c4b1f446aebbe0bdb1e5f5d75
+commit 31d12ac8ef344f0ffe2942787a9884fb2ad7c19e
 Author: Christoph Moench-Tegeder <cmt@FreeBSD.org>
 
     FreeBSD workings for webrtc configure (gn_processor.py)
 
 diff --git build/gn_processor.py build/gn_processor.py
-index 9d04c760f1e9..e091524a3fa2 100644
+index c2d98c299082..64b286f5425e 100644
 --- build/gn_processor.py
 +++ build/gn_processor.py
-@@ -215,6 +215,7 @@ def filter_gn_config(path, gn_result, sandbox_vars, input_vars, gn_target):
+@@ -227,6 +227,7 @@ def filter_gn_config(path, gn_result, sandbox_vars, input_vars, gn_target):
      }
-     oses = {
+     os_targets = {
          "android": "Android",
 +        "freebsd": "FreeBSD",
          "linux": "Linux",
          "mac": "Darwin",
          "ios": "Darwin",
-@@ -1063,17 +1064,17 @@ def generate_gn_configs(topsrcdir, config):
+@@ -237,6 +238,7 @@ def filter_gn_config(path, gn_result, sandbox_vars, input_vars, gn_target):
+     # macOS and iOS (which both have OS_TARGET == "Darwin").
+     target_oses = {
+         "android": "Android",
++        "freebsd": "FreeBSD",
+         "linux": "GNU",
+         "mac": "OSX",
+         "ios": "iOS",
+@@ -1154,17 +1156,17 @@ def generate_gn_configs(topsrcdir, config):
  
      vars_set = []
      for is_debug in (True, False):
@@ -38,7 +46,7 @@ index 9d04c760f1e9..e091524a3fa2 100644
                  target_cpus.extend(["loong64", "ppc64", "mipsel", "mips64el"])
              for target_cpu in target_cpus:
                  vars = {
-@@ -1087,7 +1088,7 @@ def generate_gn_configs(topsrcdir, config):
+@@ -1178,7 +1180,7 @@ def generate_gn_configs(topsrcdir, config):
                  vars.update(config_args.get("*", {}))
                  vars.update(config_args.get(target_os, {}))
  
