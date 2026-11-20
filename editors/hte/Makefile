@@ -7,7 +7,7 @@ MAINTAINER=	rene@FreeBSD.org
 COMMENT=	File editor/viewer/analyzer for executables
 WWW=		https://hte.sourceforge.net/
 
-LICENSE=	GPLv2
+LICENSE=	GPL-2.0-only
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		autoreconf compiler:c++14-lang makeinfo ncurses tar:bzip2
