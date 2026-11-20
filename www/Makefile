@@ -2662,6 +2662,7 @@
     SUBDIR += s
     SUBDIR += sabredav
     SUBDIR += samdruckerserver
+    SUBDIR += samdruckerweb
     SUBDIR += sarg
     SUBDIR += sblg
     SUBDIR += scloader

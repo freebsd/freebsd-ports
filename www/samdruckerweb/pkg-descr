@@ -1,0 +1,11 @@
+SamDrucker is a collection of small components which create a centralized list
+of all packages on all hosts.
+
+This port installs the reporting website: a small, read-only PHP site for
+browsing that list. It shows every host and when it last checked in, the
+packages and repositories on each host, which hosts have a given package and
+in which version, and every repository in use. Every result table can be
+downloaded as CSV or JSON.
+
+The website lists the exact package versions on every host, so serve it on
+an internal network only.

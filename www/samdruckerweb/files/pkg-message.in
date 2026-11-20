@@ -1,0 +1,48 @@
+[
+{ type: install
+  message: <<EOM
+To finish installing the SamDrucker website:
+
+1. Let the reporting role read the package tables, and create a login
+   for the website in that role. Both are in:
+
+     %%DATADIR%%/updates-website.sql
+
+   Run it as the owner of the SamDrucker tables. Allow the new login
+   from this host in pg_hba.conf.
+
+2. Put that login's details in:
+
+     %%ETCDIR%%/samdruckerweb.conf
+
+   That file must be readable by www and no one else.
+
+3. Point your web server at %%WWWDIR%%/www
+   and nowhere above it. There is a sample nginx configuration in:
+
+     %%DATADIR%%/nginx-config.conf
+
+   It requires a password. Create the password file before reloading
+   nginx, or every request gets a 500 error:
+
+     sudo install -m 640 -o root -g www /dev/null \
+         %%PREFIX%%/etc/nginx/samdruckerweb.htpasswd
+     printf 'dan:%s\n' "$(openssl passwd -6)" | \
+         sudo tee -a %%PREFIX%%/etc/nginx/samdruckerweb.htpasswd > /dev/null
+
+   It also gives the website access and error logs of its own, named
+   after its hostname. They are rotated by:
+
+     %%PREFIX%%/etc/newsyslog.conf.d/samdruckerweb.conf
+
+   which matches /var/log/nginx/samdruckerweb*.log; edit it if your
+   hostname does not start with samdruckerweb.
+
+The website lists the exact package versions on every host, which tells
+anyone who can read it what each host is vulnerable to. Serve it on an
+internal network only, behind the password.
+
+More detail: %%DATADIR%%/README.md
+EOM
+}
+]

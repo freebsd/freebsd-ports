@@ -1,0 +1,13 @@
+@sample(root,www,640) %%ETCDIR%%/samdruckerweb.conf.sample
+@sample etc/newsyslog.conf.d/samdruckerweb.conf.sample
+%%DATADIR%%/README.md
+%%DATADIR%%/nginx-config.conf
+%%DATADIR%%/updates-website.sql
+%%WWWDIR%%/include/common.php
+%%WWWDIR%%/www/host.php
+%%WWWDIR%%/www/index.php
+%%WWWDIR%%/www/package.php
+%%WWWDIR%%/www/packages.php
+%%WWWDIR%%/www/repos.php
+%%WWWDIR%%/www/samdrucker.css
+%%WWWDIR%%/www/samdrucker.js
