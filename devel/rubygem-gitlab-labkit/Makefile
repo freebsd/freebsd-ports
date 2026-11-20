@@ -1,5 +1,5 @@
 PORTNAME=	gitlab-labkit
-PORTVERSION=	5.5.0
+PORTVERSION=	5.8.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -17,8 +17,8 @@ RUN_DEPENDS=	rubygem-actionpack-gitlab>=5<8.2:www/rubygem-actionpack-gitlab \
 		rubygem-jaeger-client>=1.1.0<1.2:devel/rubygem-jaeger-client \
 		rubygem-json_schemer>=2.3.0<3:devel/rubygem-json_schemer \
 		rubygem-openssl3>=3.3.2<5:security/rubygem-openssl3 \
-		rubygem-opentelemetry-exporter-otlp-gitlab>=0.31.1<1:devel/rubygem-opentelemetry-exporter-otlp-gitlab \
-		rubygem-opentelemetry-instrumentation-all-gitlab>=0.89.1<1:devel/rubygem-opentelemetry-instrumentation-all-gitlab \
+		rubygem-opentelemetry-exporter-otlp-gitlab>=0.37.0<1:devel/rubygem-opentelemetry-exporter-otlp-gitlab \
+		rubygem-opentelemetry-instrumentation-all-gitlab>=0.102.0<1:devel/rubygem-opentelemetry-instrumentation-all-gitlab \
 		rubygem-opentelemetry-sdk-gitlab>=1.10<2:devel/rubygem-opentelemetry-sdk-gitlab \
 		rubygem-opentracing>=0.4<1:devel/rubygem-opentracing \
 		rubygem-pg_query>=6.1.0<7:databases/rubygem-pg_query \
