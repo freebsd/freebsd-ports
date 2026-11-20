@@ -1,5 +1,5 @@
 PORTNAME=	doorkeeper
-PORTVERSION=	5.9.0
+PORTVERSION=	5.9.9
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails-gitlab
