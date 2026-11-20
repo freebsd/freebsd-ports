@@ -1,0 +1,27 @@
+[
+{ type: install
+  message: <<EOM
+The shipped configuration enables chroot(), so every path in
+%%ETCDIR%%/encrypted-dns.toml is resolved relative to the chroot
+setting in that file (default: %%ETCDIR%%) - state_file and the
+[filtering] lists included.
+
+Enable and start the service with:
+  service encrypted_dns enable
+  service encrypted_dns start
+EOM
+}
+{ type: upgrade
+  maximum_version: "0.9.22"
+  message: <<EOM
+The configuration directory moved to %%ETCDIR%% to match the chroot()
+path of the shipped sample configuration.  An existing configuration
+is not moved automatically:
+
+  mv %%PREFIX%%/etc/encrypted-dns-server/encrypted-dns.toml %%ETCDIR%%/
+  chown _encrypted-dns:_encrypted-dns %%ETCDIR%%
+
+Without this the service restarts on the default configuration.
+EOM
+}
+]
