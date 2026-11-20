@@ -8,6 +8,7 @@ include/nspr/md/_netbsd.cfg
 include/nspr/md/_nto.cfg
 include/nspr/md/_openbsd.cfg
 include/nspr/md/_qnx.cfg
+include/nspr/md/_redox.cfg
 include/nspr/md/_riscos.cfg
 include/nspr/md/_solaris.cfg
 include/nspr/md/_win95.cfg
