@@ -1,0 +1,5 @@
+The OpenAI instrumentation is a community-maintained instrumentation for the
+OpenAI gem.
+
+Attributes and events follow the OpenTelemetry Semantic Conventions for
+Generative AI, pinned to core semantic conventions.

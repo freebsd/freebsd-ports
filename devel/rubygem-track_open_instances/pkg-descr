@@ -1,0 +1,3 @@
+A mixin to track instances of Ruby classes that require explicit cleanup,
+helping to identify potential resource leaks. It maintains a list of created
+instances and allows checking for any that remain unclosed.
