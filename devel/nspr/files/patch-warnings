@@ -1,65 +1,79 @@
---- pr/include/prcountr.h.orig	2024-10-27 01:59:53.601575000 +0200
-+++ pr/include/prcountr.h	2024-10-27 02:00:39.833268000 +0200
-@@ -394,7 +394,7 @@
- #define PR_GET_COUNTER(counter,handle)\
-     (counter) = PR_GetCounter((handle))
+commit 89cb5f06af845627a5425af16d783a67936979c4
+Author: Christoph Moench-Tegeder <cmt@burggraben.net>
+Date:   Thu Nov 19 21:36:48 2026 +0100
+
+    chase various compiler warnings
+
+diff --git pr/include/prcountr.h pr/include/prcountr.h
+index 722f9047..b87843ea 100644
+--- pr/include/prcountr.h
++++ pr/include/prcountr.h
+@@ -361,7 +361,7 @@ PR_SubtractFromCounter(PRCounterHandle handle, PRUint32 value);
+ #if defined(DEBUG) || defined(FORCE_NSPR_COUNTERS)
+ #define PR_GET_COUNTER(counter, handle) (counter) = PR_GetCounter((handle))
  #else
--#define PR_GET_COUNTER(counter,handle) 0
-+#define PR_GET_COUNTER(counter,handle)
+-#define PR_GET_COUNTER(counter, handle) 0
++#define PR_GET_COUNTER(counter, handle)
  #endif
  
  NSPR_API(PRUint32)
-@@ -468,7 +468,7 @@
- #define PR_FIND_NEXT_COUNTER_QNAME(next,handle)\
+@@ -429,7 +429,7 @@ PR_SetCounter(PRCounterHandle handle, PRUint32 value);
+ #define PR_FIND_NEXT_COUNTER_QNAME(next, handle) \
      (next) = PR_FindNextCounterQname((handle))
  #else
--#define PR_FIND_NEXT_COUNTER_QNAME(next,handle) NULL
-+#define PR_FIND_NEXT_COUNTER_QNAME(next,handle)
+-#define PR_FIND_NEXT_COUNTER_QNAME(next, handle) NULL
++#define PR_FIND_NEXT_COUNTER_QNAME(next, handle)
  #endif
  
  NSPR_API(PRCounterHandle)
---- pr/src/misc/pralarm.c.orig	2024-10-27 02:01:01.288692000 +0200
-+++ pr/src/misc/pralarm.c	2024-10-27 02:01:33.448421000 +0200
-@@ -94,7 +94,7 @@
-   enum { notify, abort, scan } why = scan;
+diff --git pr/src/misc/pralarm.c pr/src/misc/pralarm.c
+index ab84fc97..98c4f3b1 100644
+--- pr/src/misc/pralarm.c
++++ pr/src/misc/pralarm.c
+@@ -102,7 +102,7 @@ pr_alarmNotifier(void* arg)
+            scan } why = scan;
  
-   while (why != abort) {
--    PRIntervalTime pause;
-+    PRIntervalTime pause = 0;
+     while (why != abort) {
+-        PRIntervalTime pause;
++        PRIntervalTime pause = 0;
  
-     PR_Lock(alarm->lock);
-     while (why == scan) {
---- pr/src/misc/prdtoa.c.orig	2024-10-27 02:01:55.919817000 +0200
-+++ pr/src/misc/prdtoa.c	2024-10-27 02:03:06.231244000 +0200
-@@ -2835,8 +2835,8 @@
-      to hold the suppressed trailing zeros.
-   */
+         PR_Lock(alarm->lock);
+         while (why == scan) {
+diff --git pr/src/misc/prdtoa.c pr/src/misc/prdtoa.c
+index 7c037902..d7d477fa 100644
+--- pr/src/misc/prdtoa.c
++++ pr/src/misc/prdtoa.c
+@@ -2848,7 +2848,7 @@ char** rve;
+        to hold the suppressed trailing zeros.
+     */
  
--  int bbits, b2, b5, be, dig, i, ieps, ilim, ilim0, ilim1, j, j1, k, k0,
--      k_check, leftright, m2, m5, s2, s5, spec_case, try_quick;
-+  int bbits, b2, b5, be, dig, i, ieps, ilim = -1, ilim0, ilim1 = -1,
-+      j, j1, k, k0, k_check, leftright, m2, m5, s2, s5, spec_case, try_quick;
-   Long L;
+-    int bbits, b2, b5, be, dig, i, ieps, ilim, ilim0, ilim1, j, j1, k, k0,
++    int bbits, b2, b5, be, dig, i, ieps, ilim = -1, ilim0, ilim1 = -1, j, j1, k, k0,
+         k_check, leftright, m2, m5, s2, s5, spec_case, try_quick;
+     Long L;
  #ifndef Sudden_Underflow
-   int denorm;
---- pr/src/pthreads/ptio.c.orig	2024-10-27 02:03:27.854520000 +0200
-+++ pr/src/pthreads/ptio.c	2024-10-27 02:04:19.446319000 +0200
-@@ -4818,6 +4818,7 @@
+diff --git pr/src/pthreads/ptio.c pr/src/pthreads/ptio.c
+index 6d03f797..e7784540 100644
+--- pr/src/pthreads/ptio.c
++++ pr/src/pthreads/ptio.c
+@@ -4624,6 +4624,7 @@ PR_Select(PRInt32 unused, PR_fd_set* pr_rd, PR_fd_set* pr_wr, PR_fd_set* pr_ex,
  
-   if (timeout == PR_INTERVAL_NO_TIMEOUT) {
-     tvp = NULL;
-+    start = 0; /* Not needed, but shuts down a warning */
-   } else {
-     tv.tv_sec = (PRInt32)PR_IntervalToSeconds(timeout);
-     tv.tv_usec = (PRInt32)PR_IntervalToMicroseconds(
---- pr/src/pthreads/ptsynch.c.orig	2024-10-27 02:04:43.045339000 +0200
-+++ pr/src/pthreads/ptsynch.c	2024-10-27 02:05:06.901438000 +0200
-@@ -25,7 +25,7 @@
+     if (timeout == PR_INTERVAL_NO_TIMEOUT) {
+         tvp = NULL;
++        start = 0; /* Not needed, but shuts down a warning */
+     } else {
+         tv.tv_sec = (PRInt32)PR_IntervalToSeconds(timeout);
+         tv.tv_usec = (PRInt32)PR_IntervalToMicroseconds(
+diff --git pr/src/pthreads/ptsynch.c pr/src/pthreads/ptsynch.c
+index 17d1ed0b..5ac6ba05 100644
+--- pr/src/pthreads/ptsynch.c
++++ pr/src/pthreads/ptsynch.c
+@@ -24,7 +24,7 @@ static pthread_condattr_t _pt_cvar_attr;
  extern PTDebug pt_debug; /* this is shared between several modules */
- #  endif                 /* defined(DEBUG) */
+ #endif                   /* defined(DEBUG) */
  
--#  if defined(FREEBSD)
-+#  if defined(FREEBSD) && (defined(DEBUG) || defined(FORCE_PR_ASSERT))
+-#if defined(FREEBSD)
++#if defined(FREEBSD) && (defined(DEBUG) || defined(FORCE_PR_ASSERT))
  /*
   * On older versions of FreeBSD, pthread_mutex_trylock returns EDEADLK.
   * Newer versions return EBUSY.  We still need to support both.
