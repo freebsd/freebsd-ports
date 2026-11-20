@@ -6,8 +6,14 @@ usr/bin/lldb-dap
 usr/bin/lldb-dap-%%BINVERSION%%
 usr/bin/lldb-instr
 usr/bin/lldb-instr-%%BINVERSION%%
+usr/bin/lldb-mcp
+usr/bin/lldb-mcp-%%BINVERSION%%
 usr/bin/lldb-server
 usr/bin/lldb-server-%%BINVERSION%%
+usr/bin/lldb-tblgen
+usr/bin/lldb-tblgen-%%BINVERSION%%
+usr/bin/yaml2macho-core
+usr/bin/yaml2macho-core-%%BINVERSION%%
 usr/include/lldb/API/LLDB.h
 usr/include/lldb/API/SBAddress.h
 usr/include/lldb/API/SBAddressRange.h
@@ -37,6 +43,7 @@ usr/include/lldb/API/SBFileSpec.h
 usr/include/lldb/API/SBFileSpecList.h
 usr/include/lldb/API/SBFormat.h
 usr/include/lldb/API/SBFrame.h
+usr/include/lldb/API/SBFrameList.h
 usr/include/lldb/API/SBFunction.h
 usr/include/lldb/API/SBHostOS.h
 usr/include/lldb/API/SBInstruction.h
@@ -253,6 +260,7 @@ usr/include/lldb/Host/XML.h
 usr/include/lldb/Host/aix/HostInfoAIX.h
 usr/include/lldb/Host/aix/Support.h
 usr/include/lldb/Host/android/HostInfoAndroid.h
+usr/include/lldb/Host/common/DiagnosticsRendering.h
 usr/include/lldb/Host/common/GetOptInc.h
 usr/include/lldb/Host/common/NativeBreakpointList.h
 usr/include/lldb/Host/common/NativeProcessProtocol.h
@@ -293,6 +301,7 @@ usr/include/lldb/Host/windows/MainLoopWindows.h
 usr/include/lldb/Host/windows/PipeWindows.h
 usr/include/lldb/Host/windows/PosixApi.h
 usr/include/lldb/Host/windows/ProcessLauncherWindows.h
+usr/include/lldb/Host/windows/PseudoConsole.h
 usr/include/lldb/Host/windows/windows.h
 usr/include/lldb/Initialization/SystemInitializer.h
 usr/include/lldb/Initialization/SystemInitializerCommon.h
@@ -307,6 +316,9 @@ usr/include/lldb/Interpreter/CommandOptionArgumentTable.h
 usr/include/lldb/Interpreter/CommandOptionValidators.h
 usr/include/lldb/Interpreter/CommandReturnObject.h
 usr/include/lldb/Interpreter/Interfaces/OperatingSystemInterface.h
+usr/include/lldb/Interpreter/Interfaces/ScriptedBreakpointInterface.h
+usr/include/lldb/Interpreter/Interfaces/ScriptedFrameInterface.h
+usr/include/lldb/Interpreter/Interfaces/ScriptedFrameProviderInterface.h
 usr/include/lldb/Interpreter/Interfaces/ScriptedInterface.h
 usr/include/lldb/Interpreter/Interfaces/ScriptedInterfaceUsages.h
 usr/include/lldb/Interpreter/Interfaces/ScriptedPlatformInterface.h
@@ -355,6 +367,12 @@ usr/include/lldb/Interpreter/Options.h
 usr/include/lldb/Interpreter/Property.h
 usr/include/lldb/Interpreter/ScriptInterpreter.h
 usr/include/lldb/Interpreter/ScriptObject.h
+usr/include/lldb/Protocol/MCP/MCPError.h
+usr/include/lldb/Protocol/MCP/Protocol.h
+usr/include/lldb/Protocol/MCP/Resource.h
+usr/include/lldb/Protocol/MCP/Server.h
+usr/include/lldb/Protocol/MCP/Tool.h
+usr/include/lldb/Protocol/MCP/Transport.h
 usr/include/lldb/Symbol/ArmUnwindInfo.h
 usr/include/lldb/Symbol/Block.h
 usr/include/lldb/Symbol/CallFrameInfo.h
@@ -397,6 +415,7 @@ usr/include/lldb/Symbol/VariableList.h
 usr/include/lldb/Target/ABI.h
 usr/include/lldb/Target/AppleArm64ExceptionClass.h
 usr/include/lldb/Target/AssertFrameRecognizer.h
+usr/include/lldb/Target/BorrowedStackFrame.h
 usr/include/lldb/Target/CoreFileMemoryRanges.h
 usr/include/lldb/Target/DynamicLoader.h
 usr/include/lldb/Target/DynamicRegisterInfo.h
@@ -442,6 +461,7 @@ usr/include/lldb/Target/StackID.h
 usr/include/lldb/Target/Statistics.h
 usr/include/lldb/Target/StopInfo.h
 usr/include/lldb/Target/StructuredDataPlugin.h
+usr/include/lldb/Target/SyntheticFrameProvider.h
 usr/include/lldb/Target/SystemRuntime.h
 usr/include/lldb/Target/Target.h
 usr/include/lldb/Target/TargetList.h
@@ -477,7 +497,6 @@ usr/include/lldb/Target/UnixSignals.h
 usr/include/lldb/Target/Unwind.h
 usr/include/lldb/Target/UnwindAssembly.h
 usr/include/lldb/Target/UnwindLLDB.h
-usr/include/lldb/Target/VerboseTrapFrameRecognizer.h
 usr/include/lldb/Utility/AddressableBits.h
 usr/include/lldb/Utility/AnsiTerminal.h
 usr/include/lldb/Utility/AppleUuidCompatibility.h
@@ -496,7 +515,6 @@ usr/include/lldb/Utility/DataBufferLLVM.h
 usr/include/lldb/Utility/DataEncoder.h
 usr/include/lldb/Utility/DataExtractor.h
 usr/include/lldb/Utility/Diagnostics.h
-usr/include/lldb/Utility/DiagnosticsRendering.h
 usr/include/lldb/Utility/Endian.h
 usr/include/lldb/Utility/Environment.h
 usr/include/lldb/Utility/ErrorMessages.h
@@ -513,6 +531,7 @@ usr/include/lldb/Utility/LLDBLog.h
 usr/include/lldb/Utility/Listener.h
 usr/include/lldb/Utility/Log.h
 usr/include/lldb/Utility/NameMatches.h
+usr/include/lldb/Utility/NonNullSharedPtr.h
 usr/include/lldb/Utility/OptionDefinition.h
 usr/include/lldb/Utility/Predicate.h
 usr/include/lldb/Utility/ProcessInfo.h
@@ -532,7 +551,6 @@ usr/include/lldb/Utility/StreamString.h
 usr/include/lldb/Utility/StreamTee.h
 usr/include/lldb/Utility/StringExtractor.h
 usr/include/lldb/Utility/StringExtractorGDBRemote.h
-usr/include/lldb/Utility/StringLexer.h
 usr/include/lldb/Utility/StringList.h
 usr/include/lldb/Utility/StructuredData.h
 usr/include/lldb/Utility/SupportFile.h
@@ -549,6 +567,7 @@ usr/include/lldb/Utility/UserID.h
 usr/include/lldb/Utility/UserIDResolver.h
 usr/include/lldb/Utility/VASPrintf.h
 usr/include/lldb/Utility/VMRange.h
+usr/include/lldb/Utility/VirtualDataExtractor.h
 usr/include/lldb/Utility/XcodeSDK.h
 usr/include/lldb/Utility/ZipFile.h
 usr/include/lldb/ValueObject/DILAST.h
@@ -582,6 +601,8 @@ usr/include/lldb/lldb-private.h
 usr/include/lldb/lldb-public.h
 usr/include/lldb/lldb-types.h
 usr/include/lldb/lldb-versioning.h
+usr/lib/llvm%%BINVERSION%%/bin/lldb-tblgen
+usr/lib/llvm%%BINVERSION%%/bin/yaml2macho-core
 usr/lib/llvm%%BINVERSION%%/include/lldb/API/LLDB.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/API/SBAddress.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/API/SBAddressRange.h
@@ -611,6 +632,7 @@ usr/lib/llvm%%BINVERSION%%/include/lldb/API/SBFileSpec.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/API/SBFileSpecList.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/API/SBFormat.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/API/SBFrame.h
+usr/lib/llvm%%BINVERSION%%/include/lldb/API/SBFrameList.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/API/SBFunction.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/API/SBHostOS.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/API/SBInstruction.h
@@ -826,6 +848,7 @@ usr/lib/llvm%%BINVERSION%%/include/lldb/Host/XML.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Host/aix/HostInfoAIX.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Host/aix/Support.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Host/android/HostInfoAndroid.h
+usr/lib/llvm%%BINVERSION%%/include/lldb/Host/common/DiagnosticsRendering.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Host/common/GetOptInc.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Host/common/NativeBreakpointList.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Host/common/NativeProcessProtocol.h
@@ -866,6 +889,7 @@ usr/lib/llvm%%BINVERSION%%/include/lldb/Host/windows/MainLoopWindows.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Host/windows/PipeWindows.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Host/windows/PosixApi.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Host/windows/ProcessLauncherWindows.h
+usr/lib/llvm%%BINVERSION%%/include/lldb/Host/windows/PseudoConsole.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Host/windows/windows.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Initialization/SystemInitializer.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Initialization/SystemInitializerCommon.h
@@ -880,6 +904,9 @@ usr/lib/llvm%%BINVERSION%%/include/lldb/Interpreter/CommandOptionArgumentTable.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Interpreter/CommandOptionValidators.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Interpreter/CommandReturnObject.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Interpreter/Interfaces/OperatingSystemInterface.h
+usr/lib/llvm%%BINVERSION%%/include/lldb/Interpreter/Interfaces/ScriptedBreakpointInterface.h
+usr/lib/llvm%%BINVERSION%%/include/lldb/Interpreter/Interfaces/ScriptedFrameInterface.h
+usr/lib/llvm%%BINVERSION%%/include/lldb/Interpreter/Interfaces/ScriptedFrameProviderInterface.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Interpreter/Interfaces/ScriptedInterface.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Interpreter/Interfaces/ScriptedInterfaceUsages.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Interpreter/Interfaces/ScriptedPlatformInterface.h
@@ -928,6 +955,12 @@ usr/lib/llvm%%BINVERSION%%/include/lldb/Interpreter/Options.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Interpreter/Property.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Interpreter/ScriptInterpreter.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Interpreter/ScriptObject.h
+usr/lib/llvm%%BINVERSION%%/include/lldb/Protocol/MCP/MCPError.h
+usr/lib/llvm%%BINVERSION%%/include/lldb/Protocol/MCP/Protocol.h
+usr/lib/llvm%%BINVERSION%%/include/lldb/Protocol/MCP/Resource.h
+usr/lib/llvm%%BINVERSION%%/include/lldb/Protocol/MCP/Server.h
+usr/lib/llvm%%BINVERSION%%/include/lldb/Protocol/MCP/Tool.h
+usr/lib/llvm%%BINVERSION%%/include/lldb/Protocol/MCP/Transport.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Symbol/ArmUnwindInfo.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Symbol/Block.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Symbol/CallFrameInfo.h
@@ -970,6 +1003,7 @@ usr/lib/llvm%%BINVERSION%%/include/lldb/Symbol/VariableList.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Target/ABI.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Target/AppleArm64ExceptionClass.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Target/AssertFrameRecognizer.h
+usr/lib/llvm%%BINVERSION%%/include/lldb/Target/BorrowedStackFrame.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Target/CoreFileMemoryRanges.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Target/DynamicLoader.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Target/DynamicRegisterInfo.h
@@ -1015,6 +1049,7 @@ usr/lib/llvm%%BINVERSION%%/include/lldb/Target/StackID.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Target/Statistics.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Target/StopInfo.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Target/StructuredDataPlugin.h
+usr/lib/llvm%%BINVERSION%%/include/lldb/Target/SyntheticFrameProvider.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Target/SystemRuntime.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Target/Target.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Target/TargetList.h
@@ -1050,7 +1085,6 @@ usr/lib/llvm%%BINVERSION%%/include/lldb/Target/UnixSignals.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Target/Unwind.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Target/UnwindAssembly.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Target/UnwindLLDB.h
-usr/lib/llvm%%BINVERSION%%/include/lldb/Target/VerboseTrapFrameRecognizer.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Utility/AddressableBits.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Utility/AnsiTerminal.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Utility/AppleUuidCompatibility.h
@@ -1069,7 +1103,6 @@ usr/lib/llvm%%BINVERSION%%/include/lldb/Utility/DataBufferLLVM.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Utility/DataEncoder.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Utility/DataExtractor.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Utility/Diagnostics.h
-usr/lib/llvm%%BINVERSION%%/include/lldb/Utility/DiagnosticsRendering.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Utility/Endian.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Utility/Environment.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Utility/ErrorMessages.h
@@ -1086,6 +1119,7 @@ usr/lib/llvm%%BINVERSION%%/include/lldb/Utility/LLDBLog.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Utility/Listener.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Utility/Log.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Utility/NameMatches.h
+usr/lib/llvm%%BINVERSION%%/include/lldb/Utility/NonNullSharedPtr.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Utility/OptionDefinition.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Utility/Predicate.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Utility/ProcessInfo.h
@@ -1105,7 +1139,6 @@ usr/lib/llvm%%BINVERSION%%/include/lldb/Utility/StreamString.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Utility/StreamTee.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Utility/StringExtractor.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Utility/StringExtractorGDBRemote.h
-usr/lib/llvm%%BINVERSION%%/include/lldb/Utility/StringLexer.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Utility/StringList.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Utility/StructuredData.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Utility/SupportFile.h
@@ -1122,6 +1155,7 @@ usr/lib/llvm%%BINVERSION%%/include/lldb/Utility/UserID.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Utility/UserIDResolver.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Utility/VASPrintf.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Utility/VMRange.h
+usr/lib/llvm%%BINVERSION%%/include/lldb/Utility/VirtualDataExtractor.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Utility/XcodeSDK.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/Utility/ZipFile.h
 usr/lib/llvm%%BINVERSION%%/include/lldb/ValueObject/DILAST.h
@@ -1164,7 +1198,10 @@ usr/lib64/llvm%%BINVERSION%%/bin/lldb
 usr/lib64/llvm%%BINVERSION%%/bin/lldb-argdumper
 usr/lib64/llvm%%BINVERSION%%/bin/lldb-dap
 usr/lib64/llvm%%BINVERSION%%/bin/lldb-instr
+usr/lib64/llvm%%BINVERSION%%/bin/lldb-mcp
 usr/lib64/llvm%%BINVERSION%%/bin/lldb-server
+usr/lib64/llvm%%BINVERSION%%/bin/lldb-tblgen
+usr/lib64/llvm%%BINVERSION%%/bin/yaml2macho-core
 usr/lib64/llvm%%BINVERSION%%/include/lldb/API/LLDB.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/API/SBAddress.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/API/SBAddressRange.h
@@ -1194,6 +1231,7 @@ usr/lib64/llvm%%BINVERSION%%/include/lldb/API/SBFileSpec.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/API/SBFileSpecList.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/API/SBFormat.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/API/SBFrame.h
+usr/lib64/llvm%%BINVERSION%%/include/lldb/API/SBFrameList.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/API/SBFunction.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/API/SBHostOS.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/API/SBInstruction.h
@@ -1409,6 +1447,7 @@ usr/lib64/llvm%%BINVERSION%%/include/lldb/Host/XML.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Host/aix/HostInfoAIX.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Host/aix/Support.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Host/android/HostInfoAndroid.h
+usr/lib64/llvm%%BINVERSION%%/include/lldb/Host/common/DiagnosticsRendering.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Host/common/GetOptInc.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Host/common/NativeBreakpointList.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Host/common/NativeProcessProtocol.h
@@ -1449,6 +1488,7 @@ usr/lib64/llvm%%BINVERSION%%/include/lldb/Host/windows/MainLoopWindows.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Host/windows/PipeWindows.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Host/windows/PosixApi.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Host/windows/ProcessLauncherWindows.h
+usr/lib64/llvm%%BINVERSION%%/include/lldb/Host/windows/PseudoConsole.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Host/windows/windows.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Initialization/SystemInitializer.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Initialization/SystemInitializerCommon.h
@@ -1463,6 +1503,9 @@ usr/lib64/llvm%%BINVERSION%%/include/lldb/Interpreter/CommandOptionArgumentTable
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Interpreter/CommandOptionValidators.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Interpreter/CommandReturnObject.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Interpreter/Interfaces/OperatingSystemInterface.h
+usr/lib64/llvm%%BINVERSION%%/include/lldb/Interpreter/Interfaces/ScriptedBreakpointInterface.h
+usr/lib64/llvm%%BINVERSION%%/include/lldb/Interpreter/Interfaces/ScriptedFrameInterface.h
+usr/lib64/llvm%%BINVERSION%%/include/lldb/Interpreter/Interfaces/ScriptedFrameProviderInterface.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Interpreter/Interfaces/ScriptedInterface.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Interpreter/Interfaces/ScriptedInterfaceUsages.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Interpreter/Interfaces/ScriptedPlatformInterface.h
@@ -1511,6 +1554,12 @@ usr/lib64/llvm%%BINVERSION%%/include/lldb/Interpreter/Options.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Interpreter/Property.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Interpreter/ScriptInterpreter.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Interpreter/ScriptObject.h
+usr/lib64/llvm%%BINVERSION%%/include/lldb/Protocol/MCP/MCPError.h
+usr/lib64/llvm%%BINVERSION%%/include/lldb/Protocol/MCP/Protocol.h
+usr/lib64/llvm%%BINVERSION%%/include/lldb/Protocol/MCP/Resource.h
+usr/lib64/llvm%%BINVERSION%%/include/lldb/Protocol/MCP/Server.h
+usr/lib64/llvm%%BINVERSION%%/include/lldb/Protocol/MCP/Tool.h
+usr/lib64/llvm%%BINVERSION%%/include/lldb/Protocol/MCP/Transport.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Symbol/ArmUnwindInfo.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Symbol/Block.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Symbol/CallFrameInfo.h
@@ -1553,6 +1602,7 @@ usr/lib64/llvm%%BINVERSION%%/include/lldb/Symbol/VariableList.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Target/ABI.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Target/AppleArm64ExceptionClass.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Target/AssertFrameRecognizer.h
+usr/lib64/llvm%%BINVERSION%%/include/lldb/Target/BorrowedStackFrame.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Target/CoreFileMemoryRanges.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Target/DynamicLoader.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Target/DynamicRegisterInfo.h
@@ -1598,6 +1648,7 @@ usr/lib64/llvm%%BINVERSION%%/include/lldb/Target/StackID.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Target/Statistics.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Target/StopInfo.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Target/StructuredDataPlugin.h
+usr/lib64/llvm%%BINVERSION%%/include/lldb/Target/SyntheticFrameProvider.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Target/SystemRuntime.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Target/Target.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Target/TargetList.h
@@ -1633,7 +1684,6 @@ usr/lib64/llvm%%BINVERSION%%/include/lldb/Target/UnixSignals.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Target/Unwind.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Target/UnwindAssembly.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Target/UnwindLLDB.h
-usr/lib64/llvm%%BINVERSION%%/include/lldb/Target/VerboseTrapFrameRecognizer.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Utility/AddressableBits.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Utility/AnsiTerminal.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Utility/AppleUuidCompatibility.h
@@ -1652,7 +1702,6 @@ usr/lib64/llvm%%BINVERSION%%/include/lldb/Utility/DataBufferLLVM.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Utility/DataEncoder.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Utility/DataExtractor.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Utility/Diagnostics.h
-usr/lib64/llvm%%BINVERSION%%/include/lldb/Utility/DiagnosticsRendering.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Utility/Endian.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Utility/Environment.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Utility/ErrorMessages.h
@@ -1669,6 +1718,7 @@ usr/lib64/llvm%%BINVERSION%%/include/lldb/Utility/LLDBLog.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Utility/Listener.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Utility/Log.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Utility/NameMatches.h
+usr/lib64/llvm%%BINVERSION%%/include/lldb/Utility/NonNullSharedPtr.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Utility/OptionDefinition.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Utility/Predicate.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Utility/ProcessInfo.h
@@ -1688,7 +1738,6 @@ usr/lib64/llvm%%BINVERSION%%/include/lldb/Utility/StreamString.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Utility/StreamTee.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Utility/StringExtractor.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Utility/StringExtractorGDBRemote.h
-usr/lib64/llvm%%BINVERSION%%/include/lldb/Utility/StringLexer.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Utility/StringList.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Utility/StructuredData.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Utility/SupportFile.h
@@ -1705,6 +1754,7 @@ usr/lib64/llvm%%BINVERSION%%/include/lldb/Utility/UserID.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Utility/UserIDResolver.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Utility/VASPrintf.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Utility/VMRange.h
+usr/lib64/llvm%%BINVERSION%%/include/lldb/Utility/VirtualDataExtractor.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Utility/XcodeSDK.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/Utility/ZipFile.h
 usr/lib64/llvm%%BINVERSION%%/include/lldb/ValueObject/DILAST.h
