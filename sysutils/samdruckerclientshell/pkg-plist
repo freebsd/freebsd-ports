@@ -1,4 +1,5 @@
 bin/samdrucker.sh
+bin/samdrucker.repo-to-json.stdin
 etc/periodic/daily/999-samdrucker-client
 @sample(,,0640) etc/samdrucker/samdrucker.conf.sample
 
