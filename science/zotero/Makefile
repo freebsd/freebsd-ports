@@ -1,5 +1,5 @@
 PORTNAME=	zotero
-DISTVERSION=	9.0.4
+DISTVERSION=	10.0.8
 CATEGORIES=	science deskutils
 MASTER_SITES=	LOCAL/mikael
 DISTFILES=	Zotero-${DISTVERSION}_FreeBSD-${ARCH}${EXTRACT_SUFX}
@@ -14,31 +14,30 @@ LICENSE=	AGPLv3
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	uses FreeBSD 14.x precompiled binaries
 
-LIB_DEPENDS=	libasound.so:audio/alsa-lib \
-		libatk-bridge-2.0.so:accessibility/at-spi2-core \
-		libatspi.so:accessibility/at-spi2-core \
-		libdbus-1.so:devel/dbus \
-		libepoll-shim.so:devel/libepoll-shim \
-		libepoxy.so:graphics/libepoxy \
-		libevent.so:devel/libevent \
-		libexpat.so:textproc/expat2 \
-		libffi.so:devel/libffi \
-		libfontconfig.so:x11-fonts/fontconfig \
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
-		libfribidi.so:converters/fribidi \
-		libGLdispatch.so:graphics/libglvnd \
-		libgraphite2.so:graphics/graphite2 \
-		libharfbuzz.so:print/harfbuzz \
-		libhunspell-1.7.so:textproc/hunspell \
+		libaom.so:multimedia/aom \
+		libdav1d.so:multimedia/dav1d \
+		libevent.so:devel/libevent \
+		libffi.so:devel/libffi \
+		libnspr4.so:devel/nspr \
 		libnss3.so:security/nss \
-		libpcre.so:devel/pcre \
-		libplc4.so:devel/nspr \
-		libpng16.so:graphics/png \
-		libwayland-client.so:graphics/wayland \
-		libxkbcommon.so:x11/libxkbcommon \
+		libpng.so:graphics/png \
+		libpixman-1.so:x11/pixman \
+		libvpx.so:multimedia/libvpx \
+		libwebp.so:graphics/webp \
+		libdbus-1.so:devel/dbus \
+		libatk-1.0.so:accessibility/at-spi2-core \
+		libcairo.so:graphics/cairo \
+		libgdk_pixbuf-2.0.so:graphics/gdk-pixbuf2 \
+		libglib-2.0.so:devel/glib20 \
+		libgtk-3.so:x11-toolkits/gtk30 \
+		libharfbuzz.so:print/harfbuzz \
+		libpango-1.0.so:x11-toolkits/pango \
+		libjpeg.so:graphics/jpeg-turbo \
 		libutil.so.9:misc/compat14x
 
-USES=		desktop-file-utils gettext-runtime gl iconv jpeg gnome sqlite tar:xz xorg
+USES=		desktop-file-utils gettext-runtime gl iconv jpeg gnome tar:xz xorg
 USE_GL=		egl
 USE_GNOME=	atk cairo gdkpixbuf glib20 gtk20 gtk30 pango
 USE_XORG=	ice pixman sm x11 xau xcb xcomposite xcursor xdamage xdmcp xext \
