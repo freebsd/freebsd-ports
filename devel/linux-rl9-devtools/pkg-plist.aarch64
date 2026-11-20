@@ -1167,6 +1167,7 @@ usr/include/drm/drm.h
 usr/include/drm/drm_fourcc.h
 usr/include/drm/drm_mode.h
 usr/include/drm/drm_sarea.h
+usr/include/drm/ethosu_accel.h
 usr/include/drm/etnaviv_drm.h
 usr/include/drm/exynos_drm.h
 usr/include/drm/habanalabs_accel.h
@@ -1922,6 +1923,7 @@ usr/include/linux/usb/ch11.h
 usr/include/linux/usb/ch9.h
 usr/include/linux/usb/charger.h
 usr/include/linux/usb/functionfs.h
+usr/include/linux/usb/g_hid.h
 usr/include/linux/usb/g_printer.h
 usr/include/linux/usb/g_uvc.h
 usr/include/linux/usb/gadgetfs.h
