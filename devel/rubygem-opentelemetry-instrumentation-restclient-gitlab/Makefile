@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-instrumentation-restclient
-PORTVERSION=	0.26.0
+PORTVERSION=	0.28.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-gitlab
