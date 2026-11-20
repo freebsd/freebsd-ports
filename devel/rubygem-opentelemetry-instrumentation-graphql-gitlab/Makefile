@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-instrumentation-graphql
-PORTVERSION=	0.31.2
+PORTVERSION=	0.32.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-gitlab
