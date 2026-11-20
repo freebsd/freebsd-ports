@@ -1,6 +1,6 @@
 PORTNAME=	bitwarden-cli
 DISTVERSIONPREFIX=	cli-v
-DISTVERSION=	2026.10.1
+DISTVERSION=	2026.11.0
 CATEGORIES=	security
 MASTER_SITES=	https://nodejs.org/dist/v${PKG_NODE_VER}/:node
 DISTFILES=	node-v${PKG_NODE_VER}${EXTRACT_SUFX}:node
@@ -102,14 +102,14 @@ pre-build:
 			npm_config_runtime=node \
 			npm_config_target=${PKG_NODE_VER} \
 			npm_config_nodedir=${WRKDIR}/node-v${PKG_NODE_VER} \
-			node-gyp rebuild; \
+			npm exec node-gyp rebuild; \
 	done
 
 do-build:
 	cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} \
 		npm run build:bit:prod
 	cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} \
-		npx pkg . --targets node${NODEJS_VERSION}-freebsd-${NODE_ARCH} --output ./dist/bw
+		npm exec -- pkg . --targets node${NODEJS_VERSION}-freebsd-${NODE_ARCH} --output ./dist/bw
 	cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} \
 		./dist/bw completion --shell zsh > _bw
 
