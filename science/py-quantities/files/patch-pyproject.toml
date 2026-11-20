@@ -1,9 +1,9 @@
---- pyproject.toml.orig	2026-01-17 07:40:21 UTC
+--- pyproject.toml.orig	2026-11-19 10:46:55 UTC
 +++ pyproject.toml
-@@ -3,7 +3,6 @@ requires-python = ">=3.10"
+@@ -3,7 +3,6 @@ requires-python = ">=3.11"
  description = "Support for physical quantities with units, based on numpy"
  readme = "README.rst"
- requires-python = ">=3.10"
+ requires-python = ">=3.11"
 -license-files = ["doc/user/license.rst"]
  authors = [
    {name = "Darren Dale", email = "dsdale24@gmail.com"}

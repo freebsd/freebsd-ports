@@ -1,6 +1,5 @@
 PORTNAME=	quantities
-DISTVERSION=	0.16.4
-PORTREVISION=	2
+DISTVERSION=	0.17.0
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,9 +17,10 @@ USE_PYTHON=	distutils autoplist pytest # tests fail to run, see https://github.c
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_WRKSRC=	${WRKSRC}/quantities/tests
+TEST_ARGS=	--disable-plugin-autoload
 
 NO_ARCH=	yes
 
-# tests as of 0.16.4: 179 passed, 3 xfailed in 3.23s
+# tests as of 0.17.0: 1 failed, 220 passed, 3 xfailed, 475 subtests passed in 1.01s
 
 .include <bsd.port.mk>
