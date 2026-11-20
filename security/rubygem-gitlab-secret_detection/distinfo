@@ -1,3 +1,3 @@
-TIMESTAMP = 1789632243
-SHA256 (rubygem/gitlab-secret_detection-0.45.0.gem) = 61413bac4fb68085318d1ba0362f504a449d95886447be87eea90974b48159fc
-SIZE (rubygem/gitlab-secret_detection-0.45.0.gem) = 56832
+TIMESTAMP = 1795172143
+SHA256 (rubygem/gitlab-secret_detection-0.47.0.gem) = 7e6cae7a677a2641f78120efe372a7c16135a79de5c45cefb8a18e5a46dd5361
+SIZE (rubygem/gitlab-secret_detection-0.47.0.gem) = 64512
