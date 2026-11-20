@@ -635,6 +635,7 @@
     SUBDIR += rubygem-email_validator
     SUBDIR += rubygem-exception_notification
     SUBDIR += rubygem-extended_email_reply_parser
+    SUBDIR += rubygem-gitlab-email_handler
     SUBDIR += rubygem-gitlab-mail_room
     SUBDIR += rubygem-mail
     SUBDIR += rubygem-mail-gitlab

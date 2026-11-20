@@ -1,0 +1,5 @@
+The opentelemetry-exporter-otlp-common gem provides a common set of utilities
+for the OTLP exporters in OpenTelemetry Ruby.
+
+This gem was initially extracted from opentelemetry-exporter-otlp. Refer to its
+changelog for additional history.

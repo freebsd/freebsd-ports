@@ -1,0 +1,4 @@
+ProcessExecuter provides a simple API for running commands in a subprocess, with
+options for capturing output, handling timeouts, logging, and more. It also
+provides the MonitoredPipe class which expands the output redirection
+capabilities of Ruby's Process.spawn.

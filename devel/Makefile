@@ -7822,6 +7822,7 @@
     SUBDIR += rubygem-gibbler
     SUBDIR += rubygem-gio2
     SUBDIR += rubygem-git
+    SUBDIR += rubygem-git-gitlab
     SUBDIR += rubygem-git-version-bump
     SUBDIR += rubygem-github_api
     SUBDIR += rubygem-gitlab
@@ -8126,6 +8127,7 @@
     SUBDIR += rubygem-opentelemetry-common-gitlab
     SUBDIR += rubygem-opentelemetry-exporter-otlp
     SUBDIR += rubygem-opentelemetry-exporter-otlp-common
+    SUBDIR += rubygem-opentelemetry-exporter-otlp-common-gitlab
     SUBDIR += rubygem-opentelemetry-exporter-otlp-gitlab
     SUBDIR += rubygem-opentelemetry-exporter-otlp-logs
     SUBDIR += rubygem-opentelemetry-exporter-otlp-metrics
@@ -8201,6 +8203,7 @@
     SUBDIR += rubygem-opentelemetry-instrumentation-net_http
     SUBDIR += rubygem-opentelemetry-instrumentation-net_http-gitlab
     SUBDIR += rubygem-opentelemetry-instrumentation-openai
+    SUBDIR += rubygem-opentelemetry-instrumentation-openai-gitlab
     SUBDIR += rubygem-opentelemetry-instrumentation-pg
     SUBDIR += rubygem-opentelemetry-instrumentation-pg-gitlab
     SUBDIR += rubygem-opentelemetry-instrumentation-que
@@ -8230,8 +8233,10 @@
     SUBDIR += rubygem-opentelemetry-instrumentation-trilogy
     SUBDIR += rubygem-opentelemetry-instrumentation-trilogy-gitlab
     SUBDIR += rubygem-opentelemetry-logs-api
+    SUBDIR += rubygem-opentelemetry-logs-api-gitlab
     SUBDIR += rubygem-opentelemetry-logs-sdk
     SUBDIR += rubygem-opentelemetry-metrics-api
+    SUBDIR += rubygem-opentelemetry-metrics-api-gitlab
     SUBDIR += rubygem-opentelemetry-metrics-sdk
     SUBDIR += rubygem-opentelemetry-registry
     SUBDIR += rubygem-opentelemetry-registry-gitlab
@@ -8290,6 +8295,7 @@
     SUBDIR += rubygem-pqueue
     SUBDIR += rubygem-prettier_print
     SUBDIR += rubygem-prettyprint
+    SUBDIR += rubygem-process_executer
     SUBDIR += rubygem-profile
     SUBDIR += rubygem-progressbar
     SUBDIR += rubygem-prometheus-client-mmap
@@ -8600,6 +8606,7 @@
     SUBDIR += rubygem-tool
     SUBDIR += rubygem-tracer
     SUBDIR += rubygem-traces
+    SUBDIR += rubygem-track_open_instances
     SUBDIR += rubygem-trailblazer-option
     SUBDIR += rubygem-transaction-simple
     SUBDIR += rubygem-travis
