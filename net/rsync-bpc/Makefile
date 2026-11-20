@@ -1,5 +1,5 @@
 PORTNAME=	rsync-bpc
-PORTVERSION=	3.1.3.2
+PORTVERSION=	3.1.3.3
 CATEGORIES=	net
 
 MAINTAINER=	moiseev@mezonplus.ru
