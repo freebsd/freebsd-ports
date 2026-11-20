@@ -193,6 +193,19 @@ domoticz/dzVents/runtime/xmlhandler/tree.lua
 domoticz/plugins/AwoxSMP/lib/__init__.py
 domoticz/plugins/AwoxSMP/lib/pySmartPlugSmpB16.py
 domoticz/plugins/AwoxSMP/plugin.py
+domoticz/plugins/EpexPredictor/EpexPredictor.html
+domoticz/plugins/EpexPredictor/README.md
+domoticz/plugins/EpexPredictor/epex_api.py
+domoticz/plugins/EpexPredictor/epex_ledger.py
+domoticz/plugins/EpexPredictor/epex_logic.py
+domoticz/plugins/EpexPredictor/plugin.py
+domoticz/plugins/EpexPredictor/tests/test_epex.py
+domoticz/plugins/Joulo/Joulo.html
+domoticz/plugins/Joulo/README.md
+domoticz/plugins/Joulo/joulo_api.py
+domoticz/plugins/Joulo/joulo_logic.py
+domoticz/plugins/Joulo/plugin.py
+domoticz/plugins/Joulo/tests/test_joulo.py
 domoticz/plugins/examples/BaseTemplate.py
 domoticz/plugins/examples/CalibrationTest/plugin.py
 domoticz/plugins/examples/DenonMarantz.py
@@ -292,6 +305,7 @@ domoticz/www/app/DeviceLightEdit.js
 domoticz/www/app/DummyController.js
 domoticz/www/app/EasterEggs.js
 domoticz/www/app/EnergyDashboardController.js
+domoticz/www/app/EnergyWeatherController.js
 domoticz/www/app/FloorplanController.js
 domoticz/www/app/FloorplanEditController.js
 domoticz/www/app/ForecastController.js
@@ -359,6 +373,7 @@ domoticz/www/app/dashboardDynamic/widgets/ddDzRoom.widget.js
 domoticz/www/app/dashboardDynamic/widgets/ddDzScene.widget.js
 domoticz/www/app/dashboardDynamic/widgets/ddEnergyChart.widget.js
 domoticz/www/app/dashboardDynamic/widgets/ddEnergyDashboard.widget.js
+domoticz/www/app/dashboardDynamic/widgets/ddEnergyWeather.widget.js
 domoticz/www/app/dashboardDynamic/widgets/ddGasSummary.widget.js
 domoticz/www/app/dashboardDynamic/widgets/ddGauge.widget.js
 domoticz/www/app/dashboardDynamic/widgets/ddGoogleCalendar.widget.js
@@ -394,6 +409,7 @@ domoticz/www/app/devices/Devices.js
 domoticz/www/app/devices/deviceFactory.js
 domoticz/www/app/domoticz.api.js
 domoticz/www/app/dzPicker.directive.js
+domoticz/www/app/energyWeather.service.js
 domoticz/www/app/events/AutomationWizard.html
 domoticz/www/app/events/AutomationWizard.js
 domoticz/www/app/events/CurrentStates.html
@@ -442,6 +458,7 @@ domoticz/www/app/hardware/setup/WakeOnLan.html
 domoticz/www/app/hardware/setup/WakeOnLan.js
 domoticz/www/app/hardware/setup/ZWave.html
 domoticz/www/app/hardware/setup/ZWave.js
+domoticz/www/app/houseBalance.service.js
 domoticz/www/app/iconLibraries.js
 domoticz/www/app/icons/dzDeviceIcon.js
 domoticz/www/app/icons/dzIconPicker.js
@@ -551,6 +568,7 @@ domoticz/www/css/fonts/Oswald-Regular.eot
 domoticz/www/css/fonts/Oswald-Regular.ttf
 domoticz/www/css/fonts/Satisfy.eot
 domoticz/www/css/fonts/Satisfy.ttf
+domoticz/www/css/gridstack-24.css
 domoticz/www/css/gridstack.min.css
 domoticz/www/css/icons-chrome.css
 domoticz/www/css/images/bg-track.png
@@ -1325,6 +1343,7 @@ domoticz/www/views/dashboardDynamic/widgets/dz-room.html
 domoticz/www/views/dashboardDynamic/widgets/dz-scene.html
 domoticz/www/views/dashboardDynamic/widgets/energy-chart.html
 domoticz/www/views/dashboardDynamic/widgets/energy-dashboard.html
+domoticz/www/views/dashboardDynamic/widgets/energy-weather.html
 domoticz/www/views/dashboardDynamic/widgets/gas-summary.html
 domoticz/www/views/dashboardDynamic/widgets/gauge.html
 domoticz/www/views/dashboardDynamic/widgets/google-calendar.html
@@ -1362,6 +1381,7 @@ domoticz/www/views/dphttp.html
 domoticz/www/views/dpinflux.html
 domoticz/www/views/dpmqtt.html
 domoticz/www/views/energy_dashboard.html
+domoticz/www/views/energy_weather.html
 domoticz/www/views/floorplanedit.html
 domoticz/www/views/floorplans.html
 domoticz/www/views/forecast.html
