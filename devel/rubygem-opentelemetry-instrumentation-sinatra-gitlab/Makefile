@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-instrumentation-sinatra
-PORTVERSION=	0.28.0
+PORTVERSION=	0.31.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-gitlab
