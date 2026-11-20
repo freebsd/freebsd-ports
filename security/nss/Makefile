@@ -1,5 +1,5 @@
 PORTNAME=	nss
-DISTVERSION=	3.133
+DISTVERSION=	3.134
 CATEGORIES=	security
 MASTER_SITES=	MOZILLA/security/${PORTNAME}/releases/${DISTNAME:tu:C/[-.]/_/g}_RTM/src
 
@@ -38,7 +38,7 @@ EXTRACT_AFTER_ARGS=--exclude */lib/zlib --exclude */lib/dbm --exclude */lib/sqli
 
 INSTALL_BINS=	certutil cmsutil crlutil derdump makepqg \
 		mangle modutil ocspclnt oidcalc p7content p7env p7sign \
-		p7verify pk12util rsaperf shlibsign signtool signver \
+		p7verify pk12util rsaperf shlibsign signver \
 		ssltap strsclnt symkeyutil vfychain vfyserv
 
 OPTIONS_DEFINE=	DEBUG
