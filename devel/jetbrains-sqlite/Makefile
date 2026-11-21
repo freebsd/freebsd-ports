@@ -1,6 +1,5 @@
 PORTNAME=	sqlite
-PORTVERSION=	242.23726.38
-PORTREVISION=	3
+PORTVERSION=	261.27258.136
 CATEGORIES=	devel
 PKGNAMEPREFIX=	jetbrains-
 DIST_SUBDIR=	jetbrains
@@ -14,18 +13,30 @@ LICENSE_FILE=	${WRKSRC}/../../LICENSE.txt
 
 ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64le
 
-BUILD_DEPENDS=	bash:shells/bash
+BUILD_DEPENDS=	bash:shells/bash \
+	${NONEXISTENT}:databases/sqlite3:build \
+	${NONEXISTENT}:databases/sqlite-jdbc:build
 
 USES=		java:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	JetBrains
 GH_PROJECT=	intellij-community
-GH_TAGNAME=	idea/242.23726.38
-JAVA_VERSION=	17 21
+GH_TAGNAME=	idea/261.27258.136
+JAVA_VERSION=	25
 
 DATADIR=	${PREFIX}/share/jetbrains/${PORTNAME}
 WRKSRC_SUBDIR=	platform/sqlite
 PLIST_FILES=	share/jetbrains/${PORTNAME}/${ARCH}/libsqliteij.so
+
+EXTRACT_AFTER_ARGS= --include='*/platform/sqlite*' --include='intellij-community-idea-${PORTVERSION}/LICENSE.txt'
+
+pre-build:
+	@${MKDIR} ${WRKSRC}/sqlite
+	cd `${MAKE} -V WRKSRC -C ${PORTSDIR}/databases/sqlite3` \
+		&& ${CP} -p ./sqlite3.c ./sqlite3.h ${WRKSRC}/sqlite/
+	
+	cd `${MAKE} -V WRKSRC -C ${PORTSDIR}/databases/sqlite-jdbc` \
+		&& ${CP} -p ./src/main/java/org/sqlite/core/NativeDB.c ./target/common-lib/NativeDB.h ${WRKSRC}/sqlite/
 
 do-build:
 	(cd ${WRKSRC} && \
