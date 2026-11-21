@@ -1,4 +1,4 @@
---- content/gpu/gpu_main.cc.orig	2026-09-01 23:50:56 UTC
+--- content/gpu/gpu_main.cc.orig	2026-10-14 18:20:05 UTC
 +++ content/gpu/gpu_main.cc
 @@ -112,14 +112,18 @@
  #include "sandbox/win/src/sandbox.h"
@@ -48,7 +48,7 @@
      return StartSandboxLinux(watchdog_thread, gpu_info, gpu_prefs);
  #elif BUILDFLAG(IS_WIN)
      return StartSandboxWindows(sandbox_info_);
-@@ -327,7 +331,7 @@ int GpuMain(MainFunctionParams parameters) {
+@@ -323,7 +327,7 @@ int GpuMain(MainFunctionParams parameters) {
            std::make_unique<base::SingleThreadTaskExecutor>(
                gpu_preferences.message_pump_type, /*is_main_thread=*/true);
      }
@@ -57,7 +57,7 @@
  #error "Unsupported Linux platform."
  #elif BUILDFLAG(IS_MAC)
      // Cross-process CoreAnimation requires a CFRunLoop to function at all, and
-@@ -354,7 +358,8 @@ int GpuMain(MainFunctionParams parameters) {
+@@ -350,7 +354,8 @@ int GpuMain(MainFunctionParams parameters) {
    base::MessagePumpWakeupCounter::InitializeForCurrentThread("GpuMain");
    base::LockMetricsRecorder::EnableRecordingOnCurrentThread("CrGpuMain");
  
@@ -67,7 +67,7 @@
    // Thread type delegate of the process should be registered before
    // thread type change below for the main thread and for thread pool in
    // ChildProcess constructor.
-@@ -505,7 +510,7 @@ namespace {
+@@ -502,7 +507,7 @@ namespace {
  
  namespace {
  
@@ -76,7 +76,7 @@
  bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdog_thread,
                         const gpu::GPUInfo* gpu_info,
                         const gpu::GpuPreferences& gpu_prefs) {
-@@ -553,7 +558,7 @@ bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdo
+@@ -550,7 +555,7 @@ bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdo
    sandbox_options.accelerated_video_encode_enabled =
        !gpu_prefs.disable_accelerated_video_encode;
  

@@ -1,6 +1,6 @@
---- electron/shell/common/api/electron_api_testing.cc.orig	2026-10-21 01:38:15 UTC
+--- electron/shell/common/api/electron_api_testing.cc.orig	2026-11-18 22:25:18 UTC
 +++ electron/shell/common/api/electron_api_testing.cc
-@@ -36,7 +36,7 @@
+@@ -41,7 +41,7 @@
  #include "ui/accessibility/platform/ax_platform.h"
  #include "v8/include/v8.h"
  
@@ -9,7 +9,7 @@
  #include <glib.h>
  #elif BUILDFLAG(IS_MAC)
  #include <CoreFoundation/CoreFoundation.h>
-@@ -280,7 +280,7 @@ struct SettleOutsideTask {
+@@ -296,7 +296,7 @@ struct SettleOutsideTask {
                                                   std::move(self->after_settle));
    }
  
@@ -18,7 +18,7 @@
    static gboolean OnIdle(gpointer data) {
      Run(base::WrapUnique(static_cast<SettleOutsideTask*>(data)));
      return G_SOURCE_REMOVE;
-@@ -310,7 +310,7 @@ v8::Local<v8::Promise> SettlePromiseOutsideTask(
+@@ -326,7 +326,7 @@ v8::Local<v8::Promise> SettlePromiseOutsideTask(
    auto state = std::make_unique<SettleOutsideTask>(SettleOutsideTask{
        gin_helper::Promise<void>(isolate), std::move(after_settle)});
    v8::Local<v8::Promise> handle = state->promise.GetHandle();

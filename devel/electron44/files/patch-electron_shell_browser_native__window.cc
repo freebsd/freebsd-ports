@@ -1,6 +1,6 @@
---- electron/shell/browser/native_window.cc.orig	2026-08-31 00:54:19 UTC
+--- electron/shell/browser/native_window.cc.orig	2026-11-18 22:25:18 UTC
 +++ electron/shell/browser/native_window.cc
-@@ -42,7 +42,7 @@
+@@ -45,7 +45,7 @@
  
  #if BUILDFLAG(IS_WIN)
  #include "shell/browser/ui/views/frameless_view.h"
@@ -9,7 +9,7 @@
  #include "shell/browser/ui/views/electron_frame_view_linux.h"
  #endif
  
-@@ -235,7 +235,7 @@ void NativeWindow::InitFromOptions(const gin_helper::D
+@@ -238,7 +238,7 @@ void NativeWindow::InitFromOptions(const gin_helper::D
    } else if (bool center; options.Get(options::kCenter, &center) && center) {
      Center();
    }
