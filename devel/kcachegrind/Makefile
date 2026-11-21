@@ -6,14 +6,15 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Profiler frontend for KDE
 WWW=		https://www.kde.org
 
-USES=		cmake compiler:c++11-lang desktop-file-utils gettext kde:6 \
+USES=		cmake compiler:c++11-lang desktop-file-utils gettext-tools gl kde:6 \
 		qt:6 shebangfix tar:xz xorg \
 		python:run
-USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
-		coreaddons dbusaddons i18n itemviews jobwidgets kio service \
-		solid widgetsaddons windowsystem xmlgui \
+USE_GL=		gl opengl
+USE_KDE=	archive config coreaddons dbusaddons i18n kio \
+		widgetsaddons xmlgui \
 		ecm:build
-USE_QT=		base
+USE_QT=		base \
+		declarative:build tools:build
 USE_XORG=	x11
 
 SHEBANG_FILES=	converters/dprof2calltree \
