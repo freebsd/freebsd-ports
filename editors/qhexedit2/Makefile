@@ -20,7 +20,7 @@ USE_QT=		base tools:build
 
 QMAKE_SOURCE_PATH=	src/qhexedit.pro
 
-PORTSCOUT=	limit:^[0-9].*$$
+PORTSCOUT=	limit:^v[0-9].*$$
 
 post-build:
 	cd ${WRKSRC}/example && ${QMAKE} qhexedit.pro && ${MAKE_CMD}
