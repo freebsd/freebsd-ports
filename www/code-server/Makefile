@@ -1,6 +1,6 @@
 PORTNAME=	code-server
 DISTVERSION=	4.145.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/joneum/FreeBSD-CodeServer/releases/download/code-server-${DISTVERSION}/:code_server \
 		https://github.com/github/copilot-cli/releases/download/v${COPILOT_CLI_VERSION}/:copilot_cli \
@@ -28,6 +28,7 @@ BUILD_DEPENDS=	npm-node24>0:www/npm-node24 \
 		rg:textproc/ripgrep \
 		tgrep:textproc/tgrep
 LIB_DEPENDS=	libinotify.so:devel/libinotify \
+		libpcre2-8.so:devel/pcre2 \
 		libsecret-1.so:security/libsecret \
 		libuv.so:devel/libuv \
 		libxkbfile.so:x11/libxkbfile \

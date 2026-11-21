@@ -3455,7 +3455,7 @@
 %%DATADIR%%/lib/vscode/node_modules/@vscode/proxy-agent/out/index.js
 %%DATADIR%%/lib/vscode/node_modules/@vscode/proxy-agent/package.json
 %%DATADIR%%/lib/vscode/node_modules/@vscode/proxy-agent/SECURITY.md
-%%DATADIR%%/lib/vscode/node_modules/@vscode/ripgrep-universal/bin/linux-x64/rg
+%%DATADIR%%/lib/vscode/node_modules/@vscode/ripgrep-universal/bin/freebsd-x64/rg
 %%DATADIR%%/lib/vscode/node_modules/@vscode/ripgrep-universal/lib/index.js
 %%DATADIR%%/lib/vscode/node_modules/@vscode/ripgrep-universal/LICENSE
 %%DATADIR%%/lib/vscode/node_modules/@vscode/ripgrep-universal/package.json

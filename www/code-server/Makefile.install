@@ -10,6 +10,7 @@ do-install:
 	${CHMOD} 755 ${STAGEDIR}${DATADIR}/lib/vscode/bin/code-server-oss
 	${CHMOD} 755 ${STAGEDIR}${DATADIR}/lib/vscode/bin/helpers/*.sh
 	${CHMOD} 755 ${STAGEDIR}${DATADIR}/lib/vscode/bin/remote-cli/code-server
+	${CHMOD} 755 ${STAGEDIR}${DATADIR}/lib/vscode/node_modules/@vscode/ripgrep-universal/bin/freebsd-x64/rg
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

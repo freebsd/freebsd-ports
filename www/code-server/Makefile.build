@@ -90,11 +90,14 @@ do-build:
 # names are kept as-is (Copilot resolves them by that label); only the
 # binary contents are swapped so no Linux ELF binaries ship in the package.
 .for _rg in extensions/copilot/node_modules/@github/copilot/sdk/ripgrep/bin/linux-x64/rg \
-		node_modules/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/rg \
-		node_modules/@vscode/ripgrep-universal/bin/linux-x64/rg
+		node_modules/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/rg
 	${CP} ${LOCALBASE}/bin/rg \
 		${WRKSRC}/lib/vscode-reh-web-linux-x64/${_rg}
 .endfor
+	${MKDIR} ${WRKSRC}/lib/vscode-reh-web-linux-x64/node_modules/@vscode/ripgrep-universal/bin/freebsd-x64
+	${CP} ${LOCALBASE}/bin/rg \
+		${WRKSRC}/lib/vscode-reh-web-linux-x64/node_modules/@vscode/ripgrep-universal/bin/freebsd-x64/rg
+	${RM} ${WRKSRC}/lib/vscode-reh-web-linux-x64/node_modules/@vscode/ripgrep-universal/bin/linux-x64/rg
 .for _tgrep in extensions/copilot/node_modules/@github/copilot/tgrep/bin/linux-x64/tgrep \
 		extensions/copilot/node_modules/@github/copilot/sdk/tgrep/bin/linux-x64/tgrep \
 		node_modules/@github/copilot-sdk-linux-x64/tgrep/bin/linux-x64/tgrep
