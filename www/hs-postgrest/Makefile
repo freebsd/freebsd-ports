@@ -1,6 +1,6 @@
 PORTNAME=	postgrest
 DISTVERSIONPREFIX=	v
-DISTVERSION=	16.4
+DISTVERSION=	16.6
 CATEGORIES=	www databases haskell
 
 MAINTAINER=	haskell@FreeBSD.org
