@@ -1,5 +1,5 @@
 PORTNAME=	weltschmerz
-DISTVERSION=	1.10.0
+DISTVERSION=	1.11.0
 CATEGORIES=	x11
 MASTER_SITES=	https://git.oriole.systems/weltschmerz/snapshot/
 
