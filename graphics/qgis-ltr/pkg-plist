@@ -3862,9 +3862,11 @@ share/metainfo/org.qgis.qgis.appdata.xml
 %%DATADIR%%/i18n/qgis_is.qm
 %%DATADIR%%/i18n/qgis_it.qm
 %%DATADIR%%/i18n/qgis_ja.qm
+%%DATADIR%%/i18n/qgis_kk.qm
 %%DATADIR%%/i18n/qgis_ko.qm
 %%DATADIR%%/i18n/qgis_lt.qm
 %%DATADIR%%/i18n/qgis_lv.qm
+%%DATADIR%%/i18n/qgis_mg.qm
 %%DATADIR%%/i18n/qgis_nb.qm
 %%DATADIR%%/i18n/qgis_nl.qm
 %%DATADIR%%/i18n/qgis_pl.qm
