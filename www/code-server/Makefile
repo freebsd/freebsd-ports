@@ -1,18 +1,19 @@
 PORTNAME=	code-server
-DISTVERSION=	4.145.2
-PORTREVISION=	2
+DISTVERSION=	4.146.0
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/joneum/FreeBSD-CodeServer/releases/download/code-server-${DISTVERSION}/:code_server \
 		https://github.com/github/copilot-cli/releases/download/v${COPILOT_CLI_VERSION}/:copilot_cli \
-		https://registry.npmjs.org/@github/copilot-sdk-linux-x64/-/:copilot_sdk
+		https://registry.npmjs.org/@github/copilot-sdk-linux-x64/-/:copilot_sdk \
+		https://registry.npmjs.org/@pnpm/exe.freebsd-x64/-/:pnpm_exe
 DISTFILES=	vscode-node-modules-${VSCODE_VERSION}${EXTRACT_SUFX}:code_server \
 		vscode-reh-web-linux-x64-${DISTVERSION}${EXTRACT_SUFX}:code_server \
+		exe.freebsd-x64-${PNPM_VERSION}.tgz:pnpm_exe \
 		github-copilot-${COPILOT_CLI_VERSION}-linux-x64.tgz:copilot_cli \
 		copilot-sdk-linux-x64-${COPILOT_SDK_VERSION}.tgz:copilot_sdk
 .if !defined(BOOTSTRAP_NODE_MODULES)
 DISTFILES+=	code-server-node-modules-${DISTVERSION}${EXTRACT_SUFX}:code_server
 .endif
-EXTRACT_ONLY=	${DISTFILES:Ncopilot-sdk-linux-x64*:C/:[^:]+$//}
+EXTRACT_ONLY=	${DISTFILES:Ncopilot-sdk-linux-x64*:Nvscode-node-modules*:Nvscode-reh-web*:Ncode-server-node-modules*:Nexe.freebsd-x64*:C/:[^:]+$//}
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Run VS Code on a remote server and access it through a browser
@@ -57,16 +58,17 @@ PORTDOCS=	README.md EXTENSIONS.md
 
 NO_CCACHE=	yes
 
-VSCODE_VERSION=		1.145.2
+VSCODE_VERSION=		1.146.0
 # Copilot CLI SDK, only needed so the VS Code extension build passes.
 # GitHub Copilot is closed-source and not usable on FreeBSD.
 COPILOT_CLI_VERSION=	1.0.73
-COPILOT_SDK_VERSION=	1.0.27-unstable.41379698026.g3219c66
+COPILOT_SDK_VERSION=	1.0.30-preview.0
+PNPM_VERSION=		12.16.0
 
 MAKE_ENV+=	NODE_OPTIONS=--max-old-space-size=6144 \
-		ESBUILD_WORKER_THREADS=1
+		ESBUILD_WORKER_THREADS=1 \
+		PATH=${WRKDIR}/bin:${PATH}
 
-.include "${.CURDIR}/Makefile.vscode"
 .include "${.CURDIR}/Makefile.build"
 .include "${.CURDIR}/Makefile.install"
 

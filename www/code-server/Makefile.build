@@ -5,17 +5,17 @@ post-extract:
 	${TAR} -xzf ${DISTDIR}/code-server-node-modules-${DISTVERSION}${EXTRACT_SUFX} \
 		-C ${WRKSRC}
 .endif
+	${TAR} -xzf ${DISTDIR}/vscode-node-modules-${VSCODE_VERSION}${EXTRACT_SUFX} \
+		-C ${WRKSRC}/lib/vscode
 	${TAR} -xzf ${DISTDIR}/vscode-reh-web-linux-x64-${DISTVERSION}${EXTRACT_SUFX} \
 		-C ${WRKSRC}
+	@${MKDIR} ${WRKDIR}/pnpm ${WRKDIR}/bin
+	${TAR} -xzf ${DISTDIR}/exe.freebsd-x64-${PNPM_VERSION}.tgz -C ${WRKDIR}/pnpm
+	${LN} -s ${WRKDIR}/pnpm/package/pnpm ${WRKDIR}/bin/pnpm
 # Provide Copilot CLI SDK so the copilot extension postinstall passes.
 # GitHub Copilot is closed-source and not usable on FreeBSD.
 	${MKDIR} ${WRKSRC}/lib/vscode/extensions/copilot/node_modules/@github/copilot-freebsd-x64
 	${CP} -R ${WRKDIR}/package/ ${WRKSRC}/lib/vscode/extensions/copilot/node_modules/@github/copilot-freebsd-x64
-.for dir in ${VSCODE_NODE_MODULES}
-	${MKDIR} ${WRKSRC}/lib/vscode/${dir}
-	${TAR} -xzf ${WRKDIR}/vscode-${dir:S|/|_|g}-node-modules${EXTRACT_SUFX} \
-		-C ${WRKSRC}/lib/vscode/${dir}
-.endfor
 	${MKDIR} ${WRKSRC}/lib/vscode/remote/node_modules/@github/copilot-linux-x64
 	${CP} -R ${WRKDIR}/package/ ${WRKSRC}/lib/vscode/remote/node_modules/@github/copilot-linux-x64
 	${MKDIR} ${WRKDIR}/copilot-sdk
@@ -43,7 +43,7 @@ post-patch:
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
-		npm run build
+		pnpm run build
 	cd ${WRKSRC}/lib/vscode/node_modules/node-pty && \
 		${SETENV} ${MAKE_ENV} PYTHON=${PYTHON_CMD} \
 		node ${LOCALBASE}/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js \
@@ -65,13 +65,6 @@ do-build:
 		CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		node ${LOCALBASE}/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js \
 		rebuild --nodedir=${LOCALBASE}
-	${RM} -r ${WRKSRC}/lib/vscode/node_modules/keytar/node_modules/node-addon-api
-	${CP} -R ${WRKSRC}/lib/vscode/node_modules/@vscode/sqlite3/node_modules/node-addon-api \
-		${WRKSRC}/lib/vscode/node_modules/keytar/node_modules/node-addon-api
-	cd ${WRKSRC}/lib/vscode/node_modules/keytar && \
-		${SETENV} ${MAKE_ENV} PYTHON=${PYTHON_CMD} \
-		node ${LOCALBASE}/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js \
-		rebuild --nodedir=${LOCALBASE} --napi_build_version=3
 	cd ${WRKSRC}/lib/vscode && \
 		VSCODE_NODE_VERSION=$$(${AWK} \
 			'/node-v[0-9.]+-linux-x64\.tar\.gz/ { \
@@ -84,7 +77,7 @@ do-build:
 		${CP} ${LOCALBASE}/bin/node \
 			.build/node/v$${VSCODE_NODE_VERSION}/linux-x64/node
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} VERSION=${DISTVERSION} \
-		npm run build:vscode
+		pnpm run build:vscode
 # Replace bundled Copilot Linux rg/tgrep binaries with native FreeBSD
 # versions from textproc/ripgrep and textproc/tgrep. The linux-x64 path
 # names are kept as-is (Copilot resolves them by that label); only the
@@ -122,16 +115,12 @@ do-build:
 	${MKDIR} ${WRKSRC}/lib/vscode-reh-web-linux-x64/node_modules/@vscode/sqlite3/build/Release
 	${CP} ${WRKSRC}/lib/vscode/node_modules/@vscode/sqlite3/build/Release/vscode-sqlite3.node \
 		${WRKSRC}/lib/vscode-reh-web-linux-x64/node_modules/@vscode/sqlite3/build/Release/vscode-sqlite3.node
-	${MKDIR} ${WRKSRC}/lib/vscode-reh-web-linux-x64/node_modules/keytar/build/Release
-	${CP} ${WRKSRC}/lib/vscode/node_modules/keytar/build/Release/keytar.node \
-		${WRKSRC}/lib/vscode-reh-web-linux-x64/node_modules/keytar/build/Release/keytar.node
 	${RM} ${WRKSRC}/lib/vscode-reh-web-linux-x64/node
 
 make-node-modules-archive:
 	${MAKE} BOOTSTRAP_NODE_MODULES=yes clean extract
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
-		npm ci --ignore-scripts --no-progress --no-audit \
-		--no-fund --no-update-notifier
+		pnpm install --ignore-scripts --frozen-lockfile
 	cd ${WRKSRC} && ${TAR} -czf \
 		${WRKDIR}/code-server-node-modules-${DISTVERSION}${EXTRACT_SUFX} \
 		node_modules

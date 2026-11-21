@@ -1,6 +1,6 @@
 --- ci/build/build-vscode.sh.orig
 +++ ci/build/build-vscode.sh
-@@ -7,7 +7,7 @@
+@@ -7,7 +7,7 @@ fix-bin-script() {
  MINIFY=${MINIFY-true}
  
  fix-bin-script() {
@@ -9,7 +9,7 @@
    sed -i.bak "s/@@VERSION@@/$(vscode_version)/g" "$script"
    sed -i.bak "s/@@COMMIT@@/$BUILD_SOURCEVERSION/g" "$script"
    sed -i.bak "s/@@APPNAME@@/code-server/g" "$script"
-@@ -30,7 +30,7 @@
+@@ -31,7 +31,7 @@ copy-bin-script() {
  }
  
  copy-bin-script() {
@@ -18,7 +18,7 @@
    fix-bin-script "$1"
  }
  
-@@ -47,7 +47,7 @@
+@@ -48,7 +48,7 @@ main() {
    # not update when only our patch files change, and that will cause caching
    # issues where the browser keeps using outdated code.
    export BUILD_SOURCEVERSION
@@ -27,7 +27,7 @@
  
    pushd lib/vscode
  
-@@ -64,13 +64,13 @@
+@@ -72,13 +72,13 @@ main() {
    #
    # This needs to be done before building as Code will read this file and embed
    # it into the client-side code.
@@ -42,16 +42,16 @@
      "codeServerVersion": "$VERSION",
      "nameShort": "code-server",
      "nameLong": "code-server",
-@@ -111,16 +111,24 @@
-   VSCODE_QUALITY=stable npm run gulp compile-copilot-extension-full-build
+@@ -122,16 +122,24 @@ EOF
+   VSCODE_QUALITY=stable pnpm run gulp compile-copilot-extension-full-build
  
-   npm run gulp core-ci
--  npm run gulp "vscode-reh-web-$VSCODE_TARGET${MINIFY:+-min}-ci"
+   pnpm run gulp core-ci
+-  pnpm run gulp "vscode-reh-web-$VSCODE_TARGET${MINIFY:+-min}-ci"
 +  GULP_VSCODE_TARGET="$VSCODE_TARGET"
 +  if [[ "$GULP_VSCODE_TARGET" == freebsd-* ]]; then
 +    GULP_VSCODE_TARGET="linux-${GULP_VSCODE_TARGET#freebsd-}"
 +  fi
-+  npm run gulp "vscode-reh-web-$GULP_VSCODE_TARGET${MINIFY:+-min}-ci"
++  pnpm run gulp "vscode-reh-web-$GULP_VSCODE_TARGET${MINIFY:+-min}-ci"
  
 +  pushd "../vscode-reh-web-$GULP_VSCODE_TARGET"
 +  cp product.json product.original.json
