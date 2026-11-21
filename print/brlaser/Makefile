@@ -7,7 +7,7 @@ MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Brother laser printer driver
 WWW=		https://github.com/Owl-Maintain/brlaser
 
-LICENSE=	GPLv2+
+LICENSE=	GPL-2.0-or-later
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcups.so:print/cups
