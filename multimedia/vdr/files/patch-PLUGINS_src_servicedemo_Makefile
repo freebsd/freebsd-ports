@@ -1,0 +1,14 @@
+--- PLUGINS/src/servicedemo/Makefile.orig	2026-06-01 16:59:58 UTC
++++ PLUGINS/src/servicedemo/Makefile
+@@ -82,8 +82,9 @@ libvdr-$(PLUGIN2).so: $(PLUGIN2).o
+ 	$(Q)$(CXX) $(CXXFLAGS) $(LDFLAGS) -shared $(PLUGIN2).o -o $@
+ 
+ install-lib: libvdr-$(PLUGIN1).so libvdr-$(PLUGIN2).so
+-	install -D libvdr-$(PLUGIN1).so $(DESTDIR)$(LIBDIR)/libvdr-$(PLUGIN1).so.$(APIVERSION)
+-	install -D libvdr-$(PLUGIN2).so $(DESTDIR)$(LIBDIR)/libvdr-$(PLUGIN2).so.$(APIVERSION)
++	@mkdir -p $(DESTDIR)$(LIBDIR)
++	install libvdr-$(PLUGIN1).so $(DESTDIR)$(LIBDIR)/libvdr-$(PLUGIN1).so.$(APIVERSION)
++	install libvdr-$(PLUGIN2).so $(DESTDIR)$(LIBDIR)/libvdr-$(PLUGIN2).so.$(APIVERSION)
+ 
+ install: install-lib
+ 

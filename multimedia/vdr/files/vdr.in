@@ -1,0 +1,49 @@
+#!/bin/sh
+
+# PROVIDE: vdr
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf[.local] to enable vdr:
+#
+# vdr_enable (bool):	Set to "NO" by default.
+#			Set it to "YES" to enable vdr.
+# vdr_flags (str):	Additional command line options, e.g. plugins and
+#			their parameters (quote a plugin together with
+#			its own options):
+#			vdr_flags="-Pepgtableid0 '-Ppictures -d /pictures'"
+# vdr_chdir (str):	Working directory, default: "%%VIDEODIR%%".
+#			Created on startup if it does not exist.
+# vdr_waitdvb (bool):	Set to "YES" by default.
+#			Wait up to 60 seconds for /dev/dvb devices to
+#			appear before starting vdr.
+
+. /etc/rc.subr
+
+name=vdr
+rcvar=vdr_enable
+
+load_rc_config ${name}
+: ${vdr_enable="NO"}
+: ${vdr_chdir="%%VIDEODIR%%"}
+: ${vdr_waitdvb="YES"}
+
+command="%%PREFIX%%/bin/vdr"
+procname="$command"
+command_args="-d"
+
+start_precmd="${name}_prestart"
+
+vdr_prestart()
+{
+	if [ ! -d "${vdr_chdir}" ]; then
+		install -d -o %%VDR_USER%% -g %%VDR_GROUP%% -m 0755 \
+		    "${vdr_chdir}" || return 1
+	fi
+	if checkyesno "${name}_waitdvb"; then
+		command="/usr/sbin/daemon"
+		rc_flags="-f %%PREFIX%%/bin/vdr-waitdvb $rc_flags"
+	fi
+}
+
+run_rc_command "$1"

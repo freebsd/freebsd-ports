@@ -1,0 +1,15 @@
+The Video Disk Recorder (VDR) turns a computer with one or more DVB
+devices into a digital video recorder and set-top box.
+
+Main features:
+* Records one or more programs at the same time, also while watching
+  live TV.
+* Time-shifting: pause live TV, or start watching a recording before it
+  has finished.
+* On-screen display (OSD) menus, completely controllable with a remote
+  control (LIRC) or keyboard.
+* Electronic program guide (EPG) and timer-based recordings.
+* SVDRP network protocol for remote control and integration with other
+  software.
+* Plugin interface. This package includes the skincurses, pictures and
+  epgtableid0 plugins as well as the upstream example plugins.

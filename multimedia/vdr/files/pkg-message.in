@@ -1,0 +1,29 @@
+[
+{ type: install
+  message: <<EOM
+To start VDR at boot:
+
+  # sysrc vdr_enable=YES
+
+Plugins and other command line options go into vdr_flags, e.g.:
+
+  # sysrc vdr_flags="-Pskincurses"
+
+See %%PREFIX%%/etc/rc.d/vdr for the other rc.conf variables.
+
+Recordings are stored in %%VIDEODIR%%. The rc script creates this
+directory on first start if it does not exist.
+
+DVB devices are provided by multimedia/webcamd. VDR starts as root and
+then drops its privileges to the "%%VDR_USER%%" user, which needs access
+to the DVB device nodes:
+
+  # pw groupmod webcamd -m %%VDR_USER%%
+
+As VDR does not run as root:
+- it cannot set the system clock from the broadcast time
+  (Setup > EPG > "Set system time"), use ntpd(8) instead.
+- it does not write core dumps unless kern.sugid_coredump=1 is set.
+EOM
+}
+]

@@ -1,0 +1,22 @@
+--- PLUGINS/src/pictures/Makefile.orig	2026-06-01 16:59:58 UTC
++++ PLUGINS/src/pictures/Makefile
+@@ -97,7 +97,8 @@ $(I18Npot): $(wildcard *.c)
+ 	@touch $@
+ 
+ $(I18Nmsgs): $(DESTDIR)$(LOCDIR)/%/LC_MESSAGES/vdr-$(PLUGIN).mo: $(PODIR)/%.mo
+-	install -D -m644 $< $@
++	@mkdir -p $(dir $@)
++	install -m644 $< $@
+ 
+ .PHONY: i18n
+ i18n: $(I18Nmo) $(I18Npot)
+@@ -111,7 +112,8 @@ $(SOFILE): $(OBJS)
+ 	$(Q)$(CXX) $(CXXFLAGS) $(LDFLAGS) -shared $(OBJS) -o $@
+ 
+ install-lib: $(SOFILE)
+-	install -D $^ $(DESTDIR)$(LIBDIR)/$^.$(APIVERSION)
++	@mkdir -p $(DESTDIR)$(LIBDIR)
++	install $^ $(DESTDIR)$(LIBDIR)/$^.$(APIVERSION)
+ 
+ install: install-lib install-i18n
+ 

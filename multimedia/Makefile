@@ -395,6 +395,7 @@
     SUBDIR += vcdgear
     SUBDIR += vcdimager
     SUBDIR += vdpauinfo
+    SUBDIR += vdr
     SUBDIR += vid.stab
     SUBDIR += video-trimmer
     SUBDIR += vlc

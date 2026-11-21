@@ -1,0 +1,12 @@
+--- PLUGINS/src/svdrpdemo/Makefile.orig	2026-06-01 16:59:58 UTC
++++ PLUGINS/src/svdrpdemo/Makefile
+@@ -81,7 +81,8 @@ $(SOFILE): $(OBJS)
+ 	$(Q)$(CXX) $(CXXFLAGS) $(LDFLAGS) -shared $(OBJS) -o $@
+ 
+ install-lib: $(SOFILE)
+-	install -D $^ $(DESTDIR)$(LIBDIR)/$^.$(APIVERSION)
++	@mkdir -p $(DESTDIR)$(LIBDIR)
++	install $^ $(DESTDIR)$(LIBDIR)/$^.$(APIVERSION)
+ 
+ install: install-lib
+ 

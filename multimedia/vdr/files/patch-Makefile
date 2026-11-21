@@ -1,0 +1,66 @@
+--- Makefile.orig	2026-10-27 18:57:48 UTC
++++ Makefile
+@@ -22,7 +22,12 @@ CXXFLAGS += $(CPPFLAGS)
+ CDEFINES  = -D_GNU_SOURCE
+ CDEFINES += -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE
+ 
+-LIBS      = -ljpeg -lpthread -ldl -lcap -lrt $(shell $(PKG_CONFIG) --libs freetype2 fontconfig)
++LIBS     += -ljpeg -lpthread -ldl -lrt $(shell $(PKG_CONFIG) --libs freetype2 fontconfig)
++ifeq ($(shell uname -s),FreeBSD)
++LIBS     += -lintl -lexecinfo
++else
++LIBS     += -lcap
++endif
+ INCLUDES ?= $(shell $(PKG_CONFIG) --cflags freetype2 fontconfig)
+ 
+ # Directories:
+@@ -217,7 +222,8 @@ $(I18Npot): $(wildcard *.c)
+ 
+ $(I18Nmsgs): $(LOCALEDIR)/%/LC_MESSAGES/vdr.mo: $(PODIR)/%.mo
+ 	@echo IN $@
+-	$(Q)install -D -m644 $< $@
++	@mkdir -p $(dir $@)
++	$(Q)install -m644 $< $@
+ 
+ .PHONY: i18n
+ i18n: $(I18Nmsgs)
+@@ -259,10 +265,11 @@ plugins: include-dir vdr.pc
+ 	    INCLUDES="-I$(CWD)/include"\
+ 	    $(MAKE) --no-print-directory -C "$(PLUGINDIR)/src/$$i" VDRDIR="$(CWD)" || failed="$$failed $$i";\
+ 	    if [ -n "$(LCLBLD)" ] ; then\
+-	       (cd $(PLUGINDIR)/src/$$i; for l in `find -name "libvdr-*.so" -o -name "lib$$i-*.so"`; do install -D $$l $(LIBDIR)/`basename $$l`.$(APIVERSION); done);\
++	       (cd $(PLUGINDIR)/src/$$i; mkdir -p $(LIBDIR); for l in `find . -name "libvdr-*.so" -o -name "lib$$i-*.so"`; do install $$l $(LIBDIR)/`basename $$l`.$(APIVERSION); done);\
+ 	       if [ -d $(PLUGINDIR)/src/$$i/po ]; then\
+ 	          for l in `ls $(PLUGINDIR)/src/$$i/po/*.mo`; do\
+-	              install -D -m644 $$l $(LOCDIR)/`basename $$l | cut -d. -f1`/LC_MESSAGES/vdr-$$i.mo;\
++	              mkdir -p $(LOCDIR)/`basename $$l | cut -d. -f1`/LC_MESSAGES;\
++	              install -m644 $$l $(LOCDIR)/`basename $$l | cut -d. -f1`/LC_MESSAGES/vdr-$$i.mo;\
+ 	              done;\
+ 	          fi;\
+ 	       if [ -d $(PLUGINDIR)/src/$$i/resources ]; then\
+@@ -296,12 +303,12 @@ install: install-pc install-bin install-
+ 
+ install-bin: vdr
+ 	@mkdir -p $(DESTDIR)$(BINDIR)
+-	@cp --remove-destination vdr svdrpsend $(DESTDIR)$(BINDIR)
++	@rm -f $(DESTDIR)$(BINDIR)/vdr $(DESTDIR)$(BINDIR)/svdrpsend
++	@cp vdr svdrpsend $(DESTDIR)$(BINDIR)
+ 
+ # Configuration files:
+ 
+ install-dirs:
+-	@mkdir -p $(DESTDIR)$(VIDEODIR)
+ 	@mkdir -p $(DESTDIR)$(CONFDIR)
+ 	@mkdir -p $(DESTDIR)$(ARGSDIR)
+ 	@mkdir -p $(DESTDIR)$(CACHEDIR)
+@@ -332,8 +339,9 @@ install-plugins: plugins
+ 	      $(MAKE) --no-print-directory -C "$(PLUGINDIR)/src/$$i" VDRDIR=$(CWD) DESTDIR=$(DESTDIR) install;\
+ 	      done
+ 	@if [ -d $(PLUGINDIR)/lib ] ; then\
++	    mkdir -p $(DESTDIR)$(LIBDIR);\
+ 	    for i in `find $(PLUGINDIR)/lib -name 'lib*-*.so.$(APIVERSION)'`; do\
+-	        install -D $$i $(DESTDIR)$(LIBDIR);\
++	        install $$i $(DESTDIR)$(LIBDIR);\
+ 	        done;\
+ 	    fi
+ 
