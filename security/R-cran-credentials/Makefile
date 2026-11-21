@@ -1,5 +1,5 @@
 PORTNAME=	credentials
-DISTVERSION=	2.0.1
+DISTVERSION=	2.0.3
 CATEGORIES=	security
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -16,6 +16,7 @@ CRAN_DEPENDS=	R-cran-askpass>0:security/R-cran-askpass \
 		R-cran-openssl>=1.3:security/R-cran-openssl \
 		R-cran-sys>=2.1:devel/R-cran-sys
 RUN_DEPENDS=	${CRAN_DEPENDS}
+TEST_DEPENDS=	R-cran-knitr>0:print/R-cran-knitr
 
 USES=		cran:auto-plist
 
