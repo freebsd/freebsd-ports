@@ -2,61 +2,66 @@ PORTNAME=	smstools
 PORTVERSION=	3.1.21
 PORTREVISION=	1
 CATEGORIES=	comms
-MASTER_SITES=	http://smstools3.kekekasvi.com/packages/
+MASTER_SITES=	https://smstools3.kekekasvi.com/packages/
 DISTNAME=	smstools3-${PORTVERSION}
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	SMS Gateway software for GSM modems and mobile phones
-WWW=		http://smstools3.kekekasvi.com
+WWW=		https://smstools3.kekekasvi.com/
 
-LICENSE=	GPLv2
+LICENSE=	GPL-2.0-or-later
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libinotify.so:devel/libinotify
 
 USES=		gmake localbase:ldflags shebangfix
-CONFLICTS_INSTALL=	gnokii sendsms # bin/sendsms
-WRKSRC=		${WRKDIR}/smstools3
-SHEBANG_FILES=	scripts/eventhandler_report \
-		scripts/hex2bin \
-		scripts/hex2dec \
-		scripts/load_balancing.sh \
-		scripts/regular_run \
-		scripts/sendsms \
-		scripts/sms2html \
-		scripts/sms2unicode \
-		scripts/unicode2sms
+USE_RC_SUBR=	smsd
+
+SHEBANG_FILES=	scripts/eventhandler_report scripts/hex2bin scripts/hex2dec \
+		scripts/load_balancing.sh scripts/regular_run scripts/sendsms \
+		scripts/sms2html scripts/sms2unicode scripts/unicode2sms
 SHEBANG_LANG=	awk
 awk_OLD_CMD=	/bin/gawk
 awk_CMD=	${LOCALBASE}/bin/awk
-USE_RC_SUBR=	smsd
+
+CFLAGS+=	-fcommon
+LDFLAGS+=	-linotify
+
+CONFLICTS_INSTALL=	gnokii sendsms # bin/sendsms
+
 SPOOLDIR?=	/var/spool/sms
 LOGDIR?=	/var/log/smsd
 PIDDIR?=	/var/run/smsd
 SMSD_USER?=	uucp
 SMSD_GROUP?=	dialer
-SUB_LIST+=	SPOOLDIR="${SPOOLDIR}" LOGDIR="${LOGDIR}" PIDDIR="${PIDDIR}" \
-		SMSD_USER="${SMSD_USER}" SMSD_GROUP="${SMSD_GROUP}"
-PLIST_SUB+=	SPOOLDIR="${SPOOLDIR}" LOGDIR="${LOGDIR}" PIDDIR="${PIDDIR}" \
-		SMSD_USER="${SMSD_USER}" SMSD_GROUP="${SMSD_GROUP}"
+
 SUB_FILES=	pkg-message
+SUB_LIST+=	LOGDIR="${LOGDIR}" \
+		PIDDIR="${PIDDIR}" \
+		SMSD_GROUP="${SMSD_GROUP}" \
+		SMSD_USER="${SMSD_USER}" \
+		SPOOLDIR="${SPOOLDIR}"
 
-CFLAGS+=	-fcommon
-LDFLAGS+=	-linotify
+WRKSRC=		${WRKDIR}/smstools3
 
+PLIST_SUB+=	LOGDIR="${LOGDIR}" \
+		PIDDIR="${PIDDIR}" \
+		SMSD_GROUP="${SMSD_GROUP}" \
+		SMSD_USER="${SMSD_USER}" \
+		SPOOLDIR="${SPOOLDIR}"
 PORTDOCS=	*
-PORTEXAMPLES=	.procmailrc .qmailrc *
+PORTEXAMPLES=	* .procmailrc .qmailrc
 
-OPTIONS_DEFINE=	STATS UTF8 EXAMPLES DOCS
+OPTIONS_DEFINE=		DOCS EXAMPLES STATS UTF8
 OPTIONS_DEFAULT=	STATS UTF8
 
-STATS_DESC=	Build status and statistics support
+STATS_DESC=		Build status and statistics support
 STATS_LIB_DEPENDS=	libmm.so:devel/mm
 STATS_CFLAGS_OFF=	-DNOSTATS
 
-UTF8_USES=		iconv
-UTF8_LDFLAGS=		-L${ICONV_PREFIX}/lib ${ICONV_LIB}
-UTF8_CFLAGS=		-DUSE_ICONV
+UTF8_USES=	iconv
+UTF8_CFLAGS=	-DUSE_ICONV
+UTF8_LDFLAGS=	-L${ICONV_PREFIX}/lib ${ICONV_LIB}
 
 SMSTOOLS_DEFAULT_COMPORT?=	/dev/cuau0
 
