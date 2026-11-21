@@ -1,6 +1,7 @@
 PORTNAME=	codex
 DISTVERSIONPREFIX=	rust-v
 DISTVERSION=	0.170.0
+PORTREVISION=	1
 CATEGORIES=	misc devel
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTFILE_DEFAULT} \
@@ -49,6 +50,18 @@ SHEBANG_FILES=	\
 		codex-rs/vendor/bubblewrap/tests/use-as-subproject/assert-correct-rpath.py \
 		codex-rs/windows-sandbox-rs/sandbox_smoketests.py
 
+# files/patch-codex-rs_Cargo.toml and files/patch-codex-rs_Cargo.lock pin
+# notify to 9.0.0-rc.9 from crates.io.  With the notify 8.2.0 that Codex
+# requires, codex leaks file descriptors on FreeBSD until the process (or the
+# host) runs out: the kqueue backend holds one descriptor per watched file,
+# and it treats every write in a watched directory as a new entry, adding a
+# recursive watch on the first entry it does not yet watch.  Codex watches
+# ~/.agents/skills, or $HOME when that is missing, so every write in $HOME
+# pulls in another top-level tree.  notify 9.0.0-rc.5 and later carry both
+# fixes: the kqueue backend no longer adds watches for writes in
+# non-recursively watched directories, and native builds on FreeBSD 14.5 and
+# later use the inotify backend.  Keep the pin until Codex itself depends on
+# a notify release with both changes.
 CARGO_CARGOTOML=	${BUILD_WRKSRC}/Cargo.toml
 CARGO_CARGOLOCK=	${BUILD_WRKSRC}/Cargo.lock
 CARGO_BUILD_ARGS=	--bin ${PORTNAME} \
