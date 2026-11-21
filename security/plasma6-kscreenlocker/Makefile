@@ -10,14 +10,16 @@ RUN_DEPENDS=	ck-list-sessions:sysutils/consolekit2 \
 		dbus-send:devel/dbus \
 		unix-selfauth-helper>=1.0:security/unix-selfauth-helper
 
-USES=		cmake gettext gl kde:6 pkgconfig qt:6 tar:xz
-USE_KDE=	colorscheme config configwidgets coreaddons crash globalaccel \
-		i18n idletime kcmutils kio layer-shell-qt libkscreen libplasma \
-		notifications package solid svg widgetsaddons windowsystem \
-		xmlgui \
+USES=		cmake gettext-tools gl kde:6 pkgconfig qt:6 tar:xz xorg
+USE_GL=		opengl
+USE_KDE=	crash globalaccel i18n idletime kcmutils kio \
+		notifications solid svg windowsystem xmlgui \
 		ecm:build
-USE_GL=		gl opengl
-USE_QT=		base declarative
+# KDE Plasma
+USE_KDE+=	layer-shell-qt libkscreen libplasma
+USE_QT=		base declarative \
+		tools:build
+USE_XORG=	x11
 
 SUB_FILES=	kde.pam
 
