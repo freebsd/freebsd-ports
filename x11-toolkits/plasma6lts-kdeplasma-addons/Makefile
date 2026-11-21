@@ -7,17 +7,19 @@ COMMENT=	All kind of add-ons to improve your Plasma experience
 
 LIB_DEPENDS=	libicuuc.so:devel/icu
 
-USES=		cmake gettext gl kde:6 qt:6 tar:xz xorg
-USE_GL=		gl opengl
-USE_KDE=	colorscheme completion config configwidgets coreaddons \
-		globalaccel holidays i18n jobwidgets kcmutils kdeclarative kio \
-		libplasma newstuff notifications package runner \
-		service solid sonnet unitconversion widgetsaddons windowsystem \
+USES=		cmake gettext-tools gl kde:6 qt:6 tar:xz xorg
+USE_GL=		opengl
+USE_KDE=	auth config coreaddons dbusaddons globalaccel holidays \
+		i18n jobwidgets kcmutils kdeclarative kio newstuff \
+		notifications runner service sonnet svg unitconversion \
 		xmlgui \
 		ecm:build \
 		itemmodels:run kirigami-addons:run
+# KDE Plasma
+USE_KDE+=	libplasma
 USE_QT=		base declarative webchannel webengine \
+		tools:build \
 		quick3d:run
-USE_XORG= x11
+USE_XORG=	x11
 
 .include <bsd.port.mk>
