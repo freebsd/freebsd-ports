@@ -1,0 +1,11 @@
+--- kcms/soundtheme/CMakeLists.txt.orig	2026-10-16 08:55:43 UTC
++++ kcms/soundtheme/CMakeLists.txt
+@@ -26,7 +26,7 @@ target_link_libraries(kcm_soundtheme PRIVATE
+ )
+ 
+ target_link_libraries(kcm_soundtheme PRIVATE
+-    KF6::KCMUtils
++    KF6::KCMUtils Qt6::Qml
+     KF6::I18n
+     KF6::KCMUtilsQuick
+     PW::LibNotificationManager

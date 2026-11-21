@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2026-10-16 08:55:43 UTC
++++ CMakeLists.txt
+@@ -52,7 +52,7 @@ find_package(Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED COM
+ option(BUILD_CAMERAINDICATOR "Build the camera indicator Plasma applet" ${BUILD_CAMERAINDICATOR_DEFAULT})
+ 
+ find_package(Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
+-                    Concurrent DBus Location Network Positioning Quick QuickWidgets
++                    Concurrent DBus Location Network Positioning Qml Quick QuickWidgets
+                     ShaderTools Sql Svg Widgets)
+ 
+ if (Qt6Gui_VERSION VERSION_GREATER_EQUAL "6.10.0")

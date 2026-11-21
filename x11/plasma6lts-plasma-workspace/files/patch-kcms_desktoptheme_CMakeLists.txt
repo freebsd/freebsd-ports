@@ -1,0 +1,20 @@
+--- kcms/desktoptheme/CMakeLists.txt.orig	2026-10-16 08:55:43 UTC
++++ kcms/desktoptheme/CMakeLists.txt
+@@ -21,7 +21,7 @@ target_link_libraries(kcm_desktoptheme PRIVATE
+ target_link_libraries(kcm_desktoptheme PRIVATE
+   Qt::Quick
+   KF6::CoreAddons
+-  KF6::KCMUtils
++  KF6::KCMUtils Qt6::Qml
+   KF6::KIOCore
+   KF6::KIOWidgets
+   KF6::I18n
+@@ -38,7 +38,7 @@ target_link_libraries(plasma-apply-desktoptheme
+ )
+ target_link_libraries(plasma-apply-desktoptheme
+     KF6::CoreAddons
+-    KF6::KCMUtils
++    KF6::KCMUtils Qt6::Qml
+     KF6::I18n
+     KF6::ColorScheme
+     Plasma::Plasma

@@ -1,0 +1,11 @@
+--- kcms/icons/CMakeLists.txt.orig	2026-10-16 08:55:43 UTC
++++ kcms/icons/CMakeLists.txt
+@@ -16,7 +16,7 @@ target_link_libraries(kcm_icons PRIVATE
+     Qt::Svg
+     Qt::Quick
+     Qt::DBus
+-    KF6::KCMUtils
++    KF6::KCMUtils Qt6::Qml
+     KF6::I18n
+     KF6::IconThemes
+     KF6::Archive

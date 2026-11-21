@@ -1,0 +1,11 @@
+--- kcms/kfontinst/kcmfontinst/CMakeLists.txt.orig	2026-10-16 08:55:43 UTC
++++ kcms/kfontinst/kcmfontinst/CMakeLists.txt
+@@ -8,7 +8,7 @@ target_link_libraries(kcm_fontinst
+ 
+ target_link_libraries(kcm_fontinst
+     KF6::Archive
+-    KF6::KCMUtils
++    KF6::KCMUtils Qt6::Qml
+     KF6::IconThemes
+     KF6::KIOCore
+     KF6::KIOWidgets

@@ -1,0 +1,10 @@
+--- kcms/componentchooser/CMakeLists.txt.orig	2026-10-16 08:55:43 UTC
++++ kcms/componentchooser/CMakeLists.txt
+@@ -31,6 +31,6 @@ target_link_libraries(kcm_componentchooser PRIVATE
+     KF6::Service
+     KF6::KIOWidgets
+     KF6::ConfigGui
+-    KF6::KCMUtils
++    KF6::KCMUtils Qt6::Qml
+ )
+ 

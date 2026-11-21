@@ -1,0 +1,20 @@
+--- kcms/cursortheme/CMakeLists.txt.orig	2026-10-16 08:55:43 UTC
++++ kcms/cursortheme/CMakeLists.txt
+@@ -30,7 +30,7 @@ target_link_libraries(kcm_cursortheme PRIVATE
+     Qt::DBus
+     Qt::Quick
+     KF6::Archive
+-    KF6::KCMUtils
++    KF6::KCMUtils Qt6::Qml
+     KF6::DBusAddons
+     KF6::I18n
+     KF6::GuiAddons
+@@ -65,7 +65,7 @@ target_link_libraries(plasma-apply-cursortheme
+     KF6::DBusAddons
+     KF6::GuiAddons
+     KF6::I18n
+-    KF6::KCMUtils
++    KF6::KCMUtils Qt6::Qml
+     KF6::WindowSystem
+ )
+ 

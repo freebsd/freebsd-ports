@@ -1,0 +1,11 @@
+--- kcms/lookandfeel/CMakeLists.txt.orig	2026-10-16 08:55:43 UTC
++++ kcms/lookandfeel/CMakeLists.txt
+@@ -14,7 +14,7 @@ target_link_libraries(kcm_lookandfeel PRIVATE
+     Qt6::DBus
+     KF6::ConfigGui
+     KF6::I18n
+-    KF6::KCMUtils
++    KF6::KCMUtils Qt6::Qml
+     KF6::KCMUtilsQuick
+     KF6::NewStuffCore
+     PW::KLookAndFeel

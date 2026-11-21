@@ -1,0 +1,11 @@
+--- kcms/style/CMakeLists.txt.orig	2026-10-16 08:55:43 UTC
++++ kcms/style/CMakeLists.txt
+@@ -41,7 +41,7 @@ target_link_libraries(kcm_style PRIVATE
+ target_compile_definitions(kcm_style PUBLIC CMAKE_INSTALL_FULL_LIBEXECDIR="${CMAKE_INSTALL_FULL_LIBEXECDIR}")
+ target_link_libraries(kcm_style PRIVATE
+     Qt::Quick
+-    KF6::KCMUtils
++    KF6::KCMUtils Qt6::Qml
+     KF6::I18n
+     KF6::KIOCore
+     KF6::KCMUtilsQuick
