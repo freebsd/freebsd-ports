@@ -53,4 +53,24 @@ full pathname.
 
 EOM
 }
+{ type: upgrade
+  maximum_version: "0.31.0"
+  message: <<EOM
+BREAKING CHANGES in snmp_exporter 0.31.0:
+
+The generator now maps enum lookup columns to human-readable string labels by
+default, for example "ioMemory" instead of "2".  Upstream's default snmp.yml
+has been regenerated this way.  Dashboards, alerts and recording rules that
+match numeric enum label values may need updating.  To keep numeric values
+when generating a configuration, set the lookup's type to gauge in
+generator.yml.
+
+The generator also drops tables whose index type cannot be rendered as a
+label, and fails if a chained lookup would use such a type as an index.
+
+For details, see:
+
+    https://github.com/prometheus/snmp_exporter/releases/tag/v0.31.0
+EOM
+}
 ]

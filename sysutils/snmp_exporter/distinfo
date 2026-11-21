@@ -1,5 +1,5 @@
-TIMESTAMP = 1745392309
-SHA256 (go/sysutils_snmp_exporter/snmp_exporter-v0.29.0/v0.29.0.mod) = 79409f35e6ffb558b9d82027d956da8167673ed5a0ba38fca020f396bd882957
-SIZE (go/sysutils_snmp_exporter/snmp_exporter-v0.29.0/v0.29.0.mod) = 1374
-SHA256 (go/sysutils_snmp_exporter/snmp_exporter-v0.29.0/v0.29.0.zip) = 119db6eb7c6af40dd62e51091183b92dfbc18ad675bc34c56578a3cd0d42046a
-SIZE (go/sysutils_snmp_exporter/snmp_exporter-v0.29.0/v0.29.0.zip) = 274412
+TIMESTAMP = 1795253317
+SHA256 (go/sysutils_snmp_exporter/snmp_exporter-v0.31.0/v0.31.0.mod) = 85cad346dbcc9c2e7cce534eb74f35146f9296f07e43a3820b94e08f816c3ed8
+SIZE (go/sysutils_snmp_exporter/snmp_exporter-v0.31.0/v0.31.0.mod) = 1436
+SHA256 (go/sysutils_snmp_exporter/snmp_exporter-v0.31.0/v0.31.0.zip) = 8c4093871ab4c28606d6c6abe70a1f2a3f741d1a7daa3364f228e460b524f9dc
+SIZE (go/sysutils_snmp_exporter/snmp_exporter-v0.31.0/v0.31.0.zip) = 346329
