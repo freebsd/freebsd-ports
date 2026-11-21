@@ -8,22 +8,25 @@ MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Lightweight GTK2-based systray for UNIX desktop
 WWW=		https://github.com/sargon/trayer-srg
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		iconv gmake gnome pkgconfig xorg
-USE_GNOME=	atk cairo gdkpixbuf glib20 gtk20 pango
+USES=		gmake gnome iconv pkgconfig xorg
 USE_GITHUB=	yes
+GH_ACCOUNT=	sargon
+GH_PROJECT=	${PORTNAME}-srg
+USE_GNOME=	atk cairo gdkpixbuf glib20 gtk20 pango
 USE_XORG=	x11 xmu
+
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix="${PREFIX}"
 
-GH_ACCOUNT=	sargon
-GH_PROJECT=	${PORTNAME}-srg
-
-PORTDOCS=	README CREDITS CHANGELOG
-
-PLIST_FILES=	bin/trayer share/man/man1/trayer.1.gz
+PLIST_FILES=	bin/trayer \
+		share/man/man1/trayer.1.gz
+PORTDOCS=	CHANGELOG CREDITS README
 
 OPTIONS_DEFINE=	DOCS
 
