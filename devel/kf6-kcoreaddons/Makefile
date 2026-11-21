@@ -17,7 +17,7 @@ OPTIONS_DEFINE=		INOTIFY
 OPTIONS_DEFAULT=	INOTIFY
 
 INOTIFY_DESC=		Filesystem alteration notifications using inotify
-INOTIFY_LIB_DEPENDS=	libinotify.so:devel/libinotify
+INOTIFY_USES=		inotify
 INOTIFY_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_INOTIFY
 
 .include <bsd.port.mk>
