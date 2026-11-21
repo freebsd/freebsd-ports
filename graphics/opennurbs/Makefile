@@ -1,5 +1,5 @@
 PORTNAME=	opennurbs
-PORTVERSION=	8.35.26251.13001
+PORTVERSION=	9.1.26314.09001
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	graphics
@@ -27,6 +27,15 @@ CFLAGS+=	-DON_COMPILER_CLANG	\
 
 OPTIONS_DEFINE=	EXAMPLES
 
+OPTIONS_SINGLE=		LIBTYPE
+OPTIONS_SINGLE_LIBTYPE=	SHARED STATIC
+OPTIONS_DEFAULT=	SHARED
+
+SHARED_DESC=		Build shared library (.so)
+STATIC_DESC=		Build static library (.a)
+
+STATIC_CMAKE_BOOL=	OPENNURBS_BUILD_STATIC
+
 .include <bsd.port.pre.mk>
 
 do-install-EXAMPLES-on:
@@ -39,7 +48,7 @@ do-install-EXAMPLES-on:
 	cd ${WRKSRC}/example_${i} && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/example_${i} "-name *\.cpp -or -name *\.h"
 .endfor
 
-post-install:
+post-install-SHARED-on:
 	${INSTALL_DATA} ${WRKSRC}/opennurbs_cpp_base.h ${STAGEDIR}${PREFIX}/include/OpenNURBS/
 	${MV} ${STAGEDIR}${PREFIX}/lib/libOpenNURBS.so ${STAGEDIR}${PREFIX}/lib/libOpenNURBS.so.0
 	${LN} -sf libOpenNURBS.so.0 ${STAGEDIR}${PREFIX}/lib/libOpenNURBS.so
