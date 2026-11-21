@@ -21,7 +21,8 @@ USE_KDE=	bookmarks colorscheme completion configwidgets \
 		crash dbusaddons i18n itemviews kio parts service \
 		widgetsaddons xmlgui \
 		doctools:build ecm:build
-USE_QT=		5compat base declarative
+USE_QT=		5compat base declarative \
+		tools:build
 USE_LDCONFIG=	yes
 
 KDE_INVENT=	09e8c273159bc303ac7e7195e43b241c0474ccce utilities
