@@ -1,6 +1,6 @@
 PORTNAME=	zine-ssg
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.14.0
+DISTVERSION=	0.14.1
 CATEGORIES=	www
 
 MAINTAINER=	dave@freedave.net
@@ -9,8 +9,6 @@ WWW=		https://zine-ssg.io
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-IGNORE_FreeBSD_14=	fails to build on FreeBSD 14
 
 # This is needed to run `make test`.
 TEST_DEPENDS=	git:devel/git

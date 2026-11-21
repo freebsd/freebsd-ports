@@ -1,5 +1,5 @@
---- zine-0.14.0/build.zig.orig	2026-09-03 11:17:42 UTC
-+++ zine-0.14.0/build.zig
+--- zine-0.14.1/build.zig.orig	2026-10-30 15:14:15 UTC
++++ zine-0.14.1/build.zig
 @@ -148,17 +148,11 @@ pub fn build(b: *std.Build) !void {
      const target = b.standardTargetOptions(.{});
      const optimize = b.standardOptimizeOption(.{});
@@ -15,7 +15,7 @@
          "version",
          "Override the Zine version, use with care!",
 -    ) orelse getVersion(b, no_git_version);
-+    ) orelse "%%DISTVERSION%%";
++    ) orelse "%%DISTVERSION%%-dev"; // requires "-dev" for `make test`
  
      const preview = b.option(bool, "preview", "Allow creating release builds of a '-dev' version") orelse false;
  
@@ -24,7 +24,7 @@
          .freebsd => {
              // only required for FreeBSD < 15
 -            // zine_exe.linkSystemLibrary("inotify");
-+            %INOTIFY_GUARD%zine_exe.linkSystemLibrary("inotify");
++            %INOTIFY_GUARD%zine_exe.root_module.linkSystemLibrary("inotify", .{});
          },
          .windows => {},
          .macos => {
@@ -48,7 +48,7 @@
              .freebsd => {
                  // only required for FreeBSD < 15
 -                // zine_exe_release.linkSystemLibrary("inotify");
-+                %INOTIFY_GUARD%zine_exe_release.linkSystemLibrary("inotify");
++                %INOTIFY_GUARD%zine_exe_release.root_module.linkSystemLibrary("inotify", .{});
              },
              .windows => {},
              .macos => {

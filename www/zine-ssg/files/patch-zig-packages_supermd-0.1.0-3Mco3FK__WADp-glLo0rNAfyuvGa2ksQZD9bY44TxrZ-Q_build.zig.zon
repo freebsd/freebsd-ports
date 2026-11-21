@@ -1,0 +1,13 @@
+--- zig-packages/supermd-0.1.0-3Mco3FK_WADp-glLo0rNAfyuvGa2ksQZD9bY44TxrZ-Q/build.zig.zon.orig	2026-11-18 13:55:22 UTC
++++ zig-packages/supermd-0.1.0-3Mco3FK_WADp-glLo0rNAfyuvGa2ksQZD9bY44TxrZ-Q/build.zig.zon
+@@ -25,8 +25,8 @@
+             .hash = "superhtml-0.7.1-Y7MdPL6bJgC9-jD4-EKen7iR9BOO6PGeWNQVlpWa-8Xx",
+         },
+         .translate_c = .{
+-            .url = "git+https://codeberg.org/ziglang/translate-c?ref=zig-0.17.x#cfac21f3199b2b02ce3fd7db652aa456421fe4ab",
+-            .hash = "translate_c-2.0.2-Q_BUWvBNBwDnyehSiuAJmdFcMYHYGA-Jc3KiYdrV2Dqx",
++            .url = "git+https://codeberg.org/ziglang/translate-c#5c31f38abf3aba28535ea545a2f393716c553d2c",
++            .hash = "translate_c-0.0.0-Q_BUWo5NBwB68fI9lsRU6WtgtSy9jS5M3hCFAjSrnY78",
+         },
+     },
+     .paths = .{"."},
