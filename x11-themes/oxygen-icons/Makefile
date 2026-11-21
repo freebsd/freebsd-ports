@@ -13,4 +13,7 @@ USE_QT=		tools:build
 
 NO_ARCH=	yes
 
+post-extract:
+	${RM} ${WRKSRC}/applets/22x22/.AI-SVG-icon-cleanup-instructions.md
+
 .include <bsd.port.mk>

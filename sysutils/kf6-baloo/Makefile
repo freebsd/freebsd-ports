@@ -1,7 +1,6 @@
 PORTNAME=	baloo
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	sysutils kde kde-frameworks
-PORTREVISION=	2
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	File indexing and file search framework for KDE Plasma
