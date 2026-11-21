@@ -14,7 +14,8 @@ LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 USES=		cmake compiler:c++11-lang eigen:3 gl kde:6 qt:6 tar:xz
 USE_GL=		glu
 USE_KDE=	ecm:build
-USE_QT=		5compat base svg
+USE_QT=		5compat base svg \
+		tools:build
 USE_LDCONFIG=	yes
 
 SHLIB_VER=	9.0.0
