@@ -1,0 +1,10 @@
+--- package.json.orig	2026-11-21 07:15:21 UTC
++++ package.json
+@@ -281,6 +281,7 @@
+     "@gitlab/stylelint-config": "6.3.0",
+     "@graphql-eslint/eslint-plugin": "4.4.1",
+     "@pinia/testing": "^0.1.5",
++    "@rspack/binding-wasm32-wasi": "2.3.2",
+     "@rspack/dev-server": "^2.2.2",
+     "@testing-library/dom": "^9.3.4",
+     "@testing-library/vue": "5",
