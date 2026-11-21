@@ -7,7 +7,8 @@ MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Snowball stemmer library for C
 WWW=		https://snowballstem.org/
 
-LICENSE=	BSD3CLAUSE
+LICENSE=	BSD-3-Clause
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake perl5
 USE_PERL5=	build
