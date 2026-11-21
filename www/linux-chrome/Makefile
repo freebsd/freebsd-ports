@@ -44,7 +44,7 @@ EXTRACT_AFTER_ARGS=	| ${TAR} --no-same-owner --no-same-permissions -xf -
 
 REINPLACE_ARGS=	-i ""
 
-CHROME_VER?=	157.0.8103.78
+CHROME_VER?=	158.0.8127.36
 CHROME_BUILD?=	1
 
 DATADIR=	${PREFIX}/share/${PORTNAME}
