@@ -7,38 +7,40 @@ MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Adjust the color temperature of your screen
 WWW=		https://gitlab.com/chinstrap/gammastep
 
-LICENSE=	GPLv3
+LICENSE=	GPL-3.0-or-later
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libdrm.so:graphics/libdrm
 
-USES=			autoreconf gettext-tools gmake gnome libtool \
-			localbase pkgconfig shebangfix tar:bzip2
-USE_GITLAB=		yes
-GL_ACCOUNT=		chinstrap
-USE_GNOME=		intltool
-GNU_CONFIGURE=		yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-SHEBANG_FILES=		src/gammastep_indicator/gammastep-indicator.in
+USES=		autoreconf gettext-tools gmake gnome libtool localbase \
+		pkgconfig shebangfix tar:bzip2
+USE_GITLAB=	yes
+GL_ACCOUNT=	chinstrap
+USE_GNOME=	intltool
+
+SHEBANG_FILES=	src/gammastep_indicator/gammastep-indicator.in
+
+GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 OPTIONS_DEFINE=		GEO GUI NLS RANDR VIDMODE WAYLAND
 OPTIONS_DEFAULT=	GEO RANDR WAYLAND
 OPTIONS_SUB=		yes
 
-GEO_DESC=		Use geoclue (requires dbus)
-GUI_DESC=		Tray icon
-RANDR_DESC=		Support RANDR for changing colors
-VIDMODE_DESC=		Support VIDMODE for changing colors (NVIDIA)
-WAYLAND_DESC=		Support Wayland (wlroots) for changing colors
+GEO_DESC=	Use geoclue (requires dbus)
+GUI_DESC=	Tray icon
+RANDR_DESC=	Support RANDR for changing colors
+VIDMODE_DESC=	Support VIDMODE for changing colors (NVIDIA)
+WAYLAND_DESC=	Support Wayland (wlroots) for changing colors
 
 GEO_BUILD_DEPENDS=	geoclue>=0:net/geoclue
 GEO_RUN_DEPENDS=	geoclue>=0:net/geoclue
-GEO_USE=		gnome=glib20
+GEO_USE=		GNOME=glib20
 GEO_CONFIGURE_ENABLE=	geoclue2
 
 GUI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyxdg>0:devel/py-pyxdg@${PY_FLAVOR}
 GUI_USES=		python
-GUI_USE=		gnome=pygobject3:run
+GUI_USE=		GNOME=pygobject3:run
 GUI_CONFIGURE_ENABLE=	gui
 
 NLS_USES=		gettext-runtime iconv
