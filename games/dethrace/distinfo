@@ -1,5 +1,5 @@
-TIMESTAMP = 1782682202
-SHA256 (dethrace-labs-dethrace-v0.10.1_GH0.tar.gz) = 05040a0e3b40b82ca0e2856648969816bca846880d4ea0cb02446d91a5a12985
-SIZE (dethrace-labs-dethrace-v0.10.1_GH0.tar.gz) = 2227244
-SHA256 (dethrace-labs-BRender-v1.3.2-44d27ffa026a0a3ea4dc0642315913bf5bc27e25_GH0.tar.gz) = 40f2291104a4503c4a6dea8db1c75c0101bdcc2545775f483a6ab38d64e592a4
-SIZE (dethrace-labs-BRender-v1.3.2-44d27ffa026a0a3ea4dc0642315913bf5bc27e25_GH0.tar.gz) = 2386439
+TIMESTAMP = 1795303866
+SHA256 (dethrace-labs-dethrace-v0.11.0_GH0.tar.gz) = 027d22f18438280cd8cc267b84f4cf44ffab34bac57ebd66c33afeaa1c7142c0
+SIZE (dethrace-labs-dethrace-v0.11.0_GH0.tar.gz) = 2231826
+SHA256 (dethrace-labs-BRender-v1.3.2-d874c6f7946ba7aaf492928b212e022c4cece1a4_GH0.tar.gz) = b525bf73d86af0489934b5f7a4f114fffcecf18453bbb76aa6b95ffbc4065f7a
+SIZE (dethrace-labs-BRender-v1.3.2-d874c6f7946ba7aaf492928b212e022c4cece1a4_GH0.tar.gz) = 2387375
