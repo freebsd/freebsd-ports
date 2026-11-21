@@ -38,7 +38,7 @@ load_rc_config $name
 pidfile=/var/run/snmp_exporter.pid
 command="/usr/sbin/daemon"
 procname="%%PREFIX%%/bin/snmp_exporter"
-command_args="-p ${pidfile} -T ${name} \
+command_args="-f -p ${pidfile} -t ${name} -T ${name} \
     /usr/bin/env ${procname} \
     --web.listen-address=${snmp_exporter_listen_address} \
     --config.file=${snmp_exporter_config_file} \
