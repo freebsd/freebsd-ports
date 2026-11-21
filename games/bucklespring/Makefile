@@ -22,6 +22,6 @@ MAKE_ENV+=	PATH_AUDIO=${DATADIR}/wav
 
 LDFLAGS_i386=	-Wl,-znotext
 
-PORTSCOUT=	skipv:2.0.1-1
+PORTSCOUT=	ignore:1
 
 .include <bsd.port.mk>
