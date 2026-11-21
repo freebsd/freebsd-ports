@@ -1,6 +1,6 @@
 PORTNAME=	wine-proton
 DISTVERSION=	11.0-2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 PKGNAMESUFFIX=	${FLAVOR:N${FLAVORS:[1]}:C/.+/-${FLAVOR}/}
 
@@ -17,6 +17,15 @@ ONLY_FOR_ARCHS=	amd64
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex \
 		${LOCALBASE}/ffmpeg4/include/libavformat/avformat.h:multimedia/ffmpeg4 \
 		${LOCALBASE}/include/linux/input.h:devel/evdev-proto
+
+.if exists(/usr/include/dev/ntsync/ntsync.h)
+HAS_NTSYNC=	yes
+.endif
+
+.if defined(HAS_NTSYNC)
+BUILD_DEPENDS+=	${LOCALBASE}/include/linuxapi/linux/ntsync.h:devel/linuxapi
+PKGMESSAGE+=	${FILESDIR}/pkg-message.ntsync
+.endif
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
@@ -112,6 +121,9 @@ CONFIGURE_ENV=	CPPBIN="false" CPPFLAGS="" FLEX="${LOCALBASE}/bin/flex" \
 
 CFLAGS+=	-D__NR_futex="-1" -Werror=implicit-function-declaration -Wno-int-conversion
 CFLAGS_i386+=	-mpreferred-stack-boundary=4 -mstackrealign
+.if defined(HAS_NTSYNC)
+CFLAGS+=	-I${WRKDIR}/include/linuxapi
+.endif
 PIE_UNSAFE=	yes
 
 CONFLICTS_INSTALL=	${PORTNAME}*
@@ -135,6 +147,12 @@ PLIST_SUB+=		WINEARCH="x86_64"
 .endif
 
 pre-configure:
+.if defined(HAS_NTSYNC)
+	@${MKDIR} ${WRKDIR}/include/linuxapi/linux
+	@${CP} ${LOCALBASE}/include/linuxapi/linux/ntsync.h ${WRKDIR}/include/linuxapi/linux/
+	@${CP} ${LOCALBASE}/include/linuxapi/linux/types.h ${WRKDIR}/include/linuxapi/linux/
+	@${CP} ${LOCALBASE}/include/linuxapi/linux/stddef.h ${WRKDIR}/include/linuxapi/linux/
+.endif
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} \
 		dlls/winevulkan/make_vulkan --xml vk.xml --video-xml video.xml
 	cd ${WRKSRC} && ${PERL5} tools/make_specfiles

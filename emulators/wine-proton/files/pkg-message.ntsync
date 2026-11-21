@@ -1,0 +1,12 @@
+[
+{ type: install
+  message: <<EOM
+Wine uses the ntsync(4) driver for Windows synchronization objects when
+/dev/ntsync exists; otherwise it silently falls back to the slower
+wineserver round-trips. To load the driver now and at every boot:
+
+	kldload ntsync
+	sysrc kld_list+=ntsync
+EOM
+}
+]
