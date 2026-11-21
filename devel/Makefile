@@ -896,6 +896,7 @@
     SUBDIR += git-workspace
     SUBDIR += gitaly
     SUBDIR += gitea-act_runner
+    SUBDIR += gitea-cli
     SUBDIR += gitg
     SUBDIR += github-act-runner
     SUBDIR += github-backup-utils

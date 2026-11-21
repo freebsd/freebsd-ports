@@ -1,0 +1,5 @@
+gitea-cli manages repositories, issues, pull requests, releases, and other
+Gitea resources with explicit commands suitable for local development and
+CI. The binary is called gt.
+
+gt requires Gitea 28 or newer.
