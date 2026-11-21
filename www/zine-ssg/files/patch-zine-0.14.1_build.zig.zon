@@ -1,0 +1,13 @@
+--- zine-0.14.1/build.zig.zon.orig	2026-10-30 15:14:15 UTC
++++ zine-0.14.1/build.zig.zon
+@@ -46,8 +46,8 @@
+             .hash = "supermd-0.1.0-3Mco3FK_WADp-glLo0rNAfyuvGa2ksQZD9bY44TxrZ-Q",
+         },
+         .translate_c = .{
+-            .url = "git+https://codeberg.org/ziglang/translate-c?ref=zig-0.17.x#cfac21f3199b2b02ce3fd7db652aa456421fe4ab",
+-            .hash = "translate_c-2.0.2-Q_BUWvBNBwDnyehSiuAJmdFcMYHYGA-Jc3KiYdrV2Dqx",
++            .url = "git+https://codeberg.org/ziglang/translate-c#5c31f38abf3aba28535ea545a2f393716c553d2c",
++            .hash = "translate_c-0.0.0-Q_BUWo5NBwB68fI9lsRU6WtgtSy9jS5M3hCFAjSrnY78",
+         },
+     },
+     .paths = .{
