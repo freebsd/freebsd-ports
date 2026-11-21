@@ -1,0 +1,11 @@
+--- kcms/touchscreen/CMakeLists.txt.orig	2026-10-16 08:53:46 UTC
++++ kcms/touchscreen/CMakeLists.txt
+@@ -25,7 +25,7 @@ target_link_libraries(kcm_touchscreen PRIVATE
+     KF6::CoreAddons
+     KF6::ConfigCore
+     KF6::I18n
+-    KF6::KCMUtilsQuick
++    KF6::KCMUtilsQuick Qt::Qml
+ 
+     Qt::Gui
+     Qt::DBus

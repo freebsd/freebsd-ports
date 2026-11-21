@@ -1,0 +1,10 @@
+--- kcms/qtquicksettings/CMakeLists.txt.orig	2026-10-16 08:53:46 UTC
++++ kcms/qtquicksettings/CMakeLists.txt
+@@ -10,6 +10,6 @@ target_link_libraries(kcm_qtquicksettings
+ target_link_libraries(kcm_qtquicksettings
+     Qt::Widgets
+     KF6::WidgetsAddons
+-    KF6::KCMUtils
++    KF6::KCMUtils Qt6::Qml
+     KF6::I18n
+ )

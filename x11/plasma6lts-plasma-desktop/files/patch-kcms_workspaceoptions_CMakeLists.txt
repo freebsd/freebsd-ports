@@ -1,0 +1,11 @@
+--- kcms/workspaceoptions/CMakeLists.txt.orig	2026-10-16 08:53:46 UTC
++++ kcms/workspaceoptions/CMakeLists.txt
+@@ -15,7 +15,7 @@ target_link_libraries(kcm_workspace PRIVATE
+ kconfig_add_kcfg_files(kcm_workspace workspaceoptions_kwinsettings.kcfgc GENERATE_MOC)
+ 
+ target_link_libraries(kcm_workspace PRIVATE
+-    KF6::KCMUtilsQuick
++    KF6::KCMUtilsQuick Qt::Qml
+     KF6::I18n
+     KF6::ConfigGui
+     Qt::DBus

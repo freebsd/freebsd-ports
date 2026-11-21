@@ -1,0 +1,11 @@
+--- kcms/runners/plasmasearch/CMakeLists.txt.orig	2026-10-16 08:53:46 UTC
++++ kcms/runners/plasmasearch/CMakeLists.txt
+@@ -4,7 +4,7 @@ target_link_libraries(kcm_plasmasearch PRIVATE
+ kcmutils_add_qml_kcm(kcm_plasmasearch SOURCES kcm.cpp)
+ target_link_libraries(kcm_plasmasearch PRIVATE
+   KF6::CoreAddons
+-  KF6::KCMUtils
++  KF6::KCMUtils Qt6::Qml
+   KF6::KCMUtilsQuick
+   KF6::Runner
+   KF6::I18n

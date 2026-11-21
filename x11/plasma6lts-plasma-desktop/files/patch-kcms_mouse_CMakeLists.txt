@@ -1,0 +1,11 @@
+--- kcms/mouse/CMakeLists.txt.orig	2026-10-16 08:53:46 UTC
++++ kcms/mouse/CMakeLists.txt
+@@ -70,7 +70,7 @@ target_link_libraries(kcm_mouse PRIVATE
+ 
+ target_link_libraries(kcm_mouse PRIVATE
+     KF6::I18n
+-    KF6::KCMUtilsQuick
++    KF6::KCMUtilsQuick Qt::Qml
+     KF6::KIOCore
+     KF6::KIOWidgets
+     KF6::WindowSystem

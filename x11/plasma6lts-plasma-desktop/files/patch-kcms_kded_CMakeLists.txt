@@ -1,0 +1,8 @@
+--- kcms/kded/CMakeLists.txt.orig	2026-10-16 08:53:46 UTC
++++ kcms/kded/CMakeLists.txt
+@@ -23,4 +23,4 @@ kcmutils_add_qml_kcm(kcm_kded SOURCES ${kcm_kded_SRCS}
+ )
+ 
+ kcmutils_add_qml_kcm(kcm_kded SOURCES ${kcm_kded_SRCS})
+-target_link_libraries(kcm_kded PRIVATE KF6::KCMUtilsQuick KF6::I18n Qt::DBus)
++target_link_libraries(kcm_kded PRIVATE KF6::KCMUtilsQuick KF6::I18n Qt::DBus Qt::Qml)

@@ -1,0 +1,10 @@
+--- CMakeLists.txt.orig	2026-10-16 08:53:46 UTC
++++ CMakeLists.txt
+@@ -44,6 +44,7 @@ find_package(Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED COM
+ option(BUILD_KCM_TABLET "Build the Tablet KCM" ON)
+ 
+ find_package(Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
++    Qml
+     Quick
+     QuickWidgets
+     DBus

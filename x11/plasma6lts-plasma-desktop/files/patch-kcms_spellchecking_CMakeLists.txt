@@ -1,0 +1,11 @@
+--- kcms/spellchecking/CMakeLists.txt.orig	2026-10-16 08:53:46 UTC
++++ kcms/spellchecking/CMakeLists.txt
+@@ -8,7 +8,7 @@ target_link_libraries(kcmspellchecking
+ kcmutils_generate_desktop_file(kcmspellchecking)
+ 
+ target_link_libraries(kcmspellchecking
+-                      KF6::KCMUtils
++                      KF6::KCMUtils Qt6::Qml
+                       KF6::SonnetCore
+                       KF6::SonnetUi
+                      )

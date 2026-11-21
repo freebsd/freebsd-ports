@@ -1,0 +1,11 @@
+--- kcms/desktoppaths/CMakeLists.txt.orig	2026-10-16 08:53:46 UTC
++++ kcms/desktoppaths/CMakeLists.txt
+@@ -19,7 +19,7 @@ target_link_libraries(kcm_desktoppaths PRIVATE
+     KF6::ConfigCore
+     KF6::KCMUtilsQuick
+     KF6::I18n
+-    KF6::KCMUtils
++    KF6::KCMUtils Qt6::Qml
+     KF6::KIOCore
+     KF6::KIOWidgets
+     KF6::KIOFileWidgets

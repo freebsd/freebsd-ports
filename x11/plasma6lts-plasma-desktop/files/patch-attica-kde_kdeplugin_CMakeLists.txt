@@ -1,0 +1,11 @@
+--- attica-kde/kdeplugin/CMakeLists.txt.orig	2026-10-16 08:53:46 UTC
++++ attica-kde/kdeplugin/CMakeLists.txt
+@@ -13,7 +13,7 @@ target_link_libraries(attica_kde
+         Qt::Widgets
+         Qt::Xml
+         KF6::KIOWidgets
+-        KF6::KCMUtils
++        KF6::KCMUtils Qt6::Qml
+         KF6::Attica
+         KF6::I18n
+         KF6::Service

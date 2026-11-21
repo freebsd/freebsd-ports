@@ -1,0 +1,11 @@
+--- kcms/activities/CMakeLists.txt.orig	2026-10-16 08:53:46 UTC
++++ kcms/activities/CMakeLists.txt
+@@ -12,7 +12,7 @@ target_link_libraries (kcm_activities PRIVATE
+    Qt::Qml
+    Qt::DBus
+    KF6::CoreAddons
+-   KF6::KCMUtils
++   KF6::KCMUtils Qt6::Qml
+    KF6::I18n
+    KF6::Service
+    KF6::XmlGui

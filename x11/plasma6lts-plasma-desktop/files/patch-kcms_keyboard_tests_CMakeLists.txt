@@ -1,0 +1,20 @@
+--- kcms/keyboard/tests/CMakeLists.txt.orig	2026-10-16 08:53:46 UTC
++++ kcms/keyboard/tests/CMakeLists.txt
+@@ -30,7 +30,7 @@ target_link_libraries(flags_test
+                       Qt::DBus
+                       Qt::Widgets
+                       KF6::GuiAddons
+-                      KF6::KCMUtils
++                      KF6::KCMUtils Qt6::Qml
+                       KF6::I18n
+                       Plasma::Plasma
+                       KF6::WindowSystem
+@@ -69,7 +69,7 @@ if( X11_XTest_FOUND )
+                          Qt::Test
+                          KF6::ConfigCore
+                          KF6::CoreAddons
+-                         KF6::KCMUtils
++                         KF6::KCMUtils Qt6::Qml
+                          KF6::DBusAddons
+                          KF6::GuiAddons
+                          KF6::I18n

@@ -1,0 +1,11 @@
+--- solid-device-automounter/kcm/CMakeLists.txt.orig	2026-10-16 08:53:46 UTC
++++ solid-device-automounter/kcm/CMakeLists.txt
+@@ -26,7 +26,7 @@ target_link_libraries(kcm_device_automounter
+ target_link_libraries(kcm_device_automounter
+                       Qt::DBus
+                       KF6::CoreAddons
+-                      KF6::KCMUtils
++                      KF6::KCMUtils Qt6::Qml
+                       KF6::Service
+                       KF6::I18n
+                       KF6::Solid)

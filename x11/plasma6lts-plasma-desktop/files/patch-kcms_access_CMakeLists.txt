@@ -1,0 +1,11 @@
+--- kcms/access/CMakeLists.txt.orig	2026-10-16 08:53:46 UTC
++++ kcms/access/CMakeLists.txt
+@@ -100,7 +100,7 @@ target_link_libraries(kcm_access PRIVATE
+     Qt::DBus
+     Qt::Quick
+     Qt::GuiPrivate
+-    KF6::KCMUtils
++    KF6::KCMUtils Qt6::Qml
+     KF6::CoreAddons
+     KF6::GlobalAccel
+     KF6::GuiAddons
