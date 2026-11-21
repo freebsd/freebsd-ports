@@ -1,6 +1,6 @@
 PORTNAME=	stalwart-proxy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.5
+DISTVERSION=	2.0.0
 CATEGORIES=	mail
 
 MAINTAINER=	jsi@jules.de
@@ -19,10 +19,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	stalwartlabs
 GH_PROJECT=	proxy
 USE_RC_SUBR=	stalwart_proxy
-
-# These tests start Redis/PostgreSQL containers through testcontainers
-CARGO_TEST_AFTER_ARGS=	--skip tests::redis_store:: \
-			--skip tests::sql_store::
 
 SUB_FILES=	pkg-message
 SUB_LIST=	USERS=${USERS} \
@@ -45,10 +41,11 @@ post-patch:
 
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/bin/proxy ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	${MKDIR} ${STAGEDIR}${ETCDIR}/tls
+	${MKDIR} ${STAGEDIR}${ETCDIR}/certs ${STAGEDIR}${ETCDIR}/mappings
 	${INSTALL_DATA} ${WRKSRC}/resources/config.sample.toml \
 		${STAGEDIR}${ETCDIR}/config.toml.sample
-	${INSTALL_DATA} ${FILESDIR}/mappings.tsv.sample ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${FILESDIR}/mappings.tsv.sample \
+		${STAGEDIR}${ETCDIR}/mappings
 
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

@@ -3,16 +3,29 @@
   message: <<EOM
 Stalwart Proxy has been installed as %%PREFIX%%/bin/stalwart-proxy.
 
-1. Edit %%ETCDIR%%/config.toml (destinations, listeners,
-   TLS certificates) and %%ETCDIR%%/mappings.tsv.
+1. Either edit %%ETCDIR%%/config.toml (destinations, listeners,
+   TLS certificates in %%ETCDIR%%/certs) and
+   %%ETCDIR%%/mappings/mappings.tsv.
    Additional example configurations are available in
    %%EXAMPLESDIR%%.
 
-2. Create the admin API token referenced by [admin].bearer_token_file:
+   Then create the admin API token referenced by
+   [admin].bearer_token_file:
 
      umask 027
-     openssl rand -hex 32 > %%ETCDIR%%/admin.token
-     chgrp %%GROUPS%% %%ETCDIR%%/admin.token
+     openssl rand -hex 32 > %%ETCDIR%%/admin-token
+     chgrp %%GROUPS%% %%ETCDIR%%/admin-token
+
+   Or let the proxy generate a minimal configuration, admin token and
+   self-signed admin certificate, and configure everything else from
+   the management WebUI at https://127.0.0.1:9443/ui/:
+
+     rm %%ETCDIR%%/config.toml
+     su -m %%USERS%% -c '%%PREFIX%%/bin/stalwart-proxy init %%ETCDIR%%'
+
+2. The WebUI can only change the configuration when [admin].config_write
+   is set to true. "stalwart-proxy init" enables it, the sample
+   configuration does not.
 
 3. The proxy runs as the unprivileged user "%%USERS%%" but the
    sample configuration listens on privileged ports (< 1024).
