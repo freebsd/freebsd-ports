@@ -1,3 +1,9 @@
-TIMESTAMP = 1794576301
-SHA256 (qcad-qcadjsapi-v27.0.5.0_GH0.tar.gz) = d27cc5a4e1e97e80926eaa5c51d586fba67ae8205aebe86094648f6f2a2a7f21
-SIZE (qcad-qcadjsapi-v27.0.5.0_GH0.tar.gz) = 3798355
+TIMESTAMP = 1795260621
+SHA256 (qcad-qcadjsapi-v27.0.6.0_GH0.tar.gz) = b48b102f46aaee3139e8c4fa0d5ec6190feb257b52601c00e88517c1258a2079
+SIZE (qcad-qcadjsapi-v27.0.6.0_GH0.tar.gz) = 3798395
+SHA256 (qcad-qcadjsapi-v27.0.6.0_GH0.tar.gz) = b48b102f46aaee3139e8c4fa0d5ec6190feb257b52601c00e88517c1258a2079
+SIZE (qcad-qcadjsapi-v27.0.6.0_GH0.tar.gz) = 3798395
+SHA256 (qcad-qcad-v27.0.6.0_GH0.tar.gz) = 55c3f8ea237cab66dbd5e70114703c1c870245b792aa4864cbaa54db4e51c555
+SIZE (qcad-qcad-v27.0.6.0_GH0.tar.gz) = 74348961
+SHA256 (qcad-qtjsapi-v27.0.6.0_GH0.tar.gz) = 8f295ac0b3eecfa783ca3ee3322eb070ef73cdf5fd40e036cddba66ddd2cf7e7
+SIZE (qcad-qtjsapi-v27.0.6.0_GH0.tar.gz) = 4207917

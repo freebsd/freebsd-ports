@@ -1,6 +1,7 @@
 PORTNAME=	qcadjsapi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	27.0.5.0
+DISTVERSION=	27.0.6.0
+#PORTREVISION=	1
 CATEGORIES=	cad
 
 MAINTAINER=	mr@FreeBSD.org
@@ -9,17 +10,19 @@ WWW=		https://www.ribbonsoft.com/qcad.html
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${NONEXISTENT}:cad/qcad:build	\
-		${NONEXISTENT}:cad/qtjsapi:build
+#BUILD_DEPENDS=	${NONEXISTENT}:cad/qcad:build	\
+#		${NONEXISTENT}:cad/qtjsapi:build
 LIB_DEPENDS=	libOpenNURBS.so:graphics/opennurbs	\
+		libqcadcore.so:cad/qcad	\
 		libqtjsapi.so:cad/qtjsapi	\
 		libcups.so:print/cups
-RUN_DEPENDS=	qcad>0:cad/qcad
 
 USES=		compiler:c++17-lang cmake gl localbase:ldflags qt:6
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	qcad
+GH_PROJECT=	qcadjsapi:qcadjsapi qcad:qcad qtjsapi:qtjsapi
+GH_SUBDIR=	qcad:qcad qtjsapi:qtjsapi
 
 CFLAGS+=	-DON_SIZEOF_WCHAR_T=4 -fPIC
 
@@ -37,8 +40,8 @@ CFLAGS+=	-DON_BIG_ENDIAN
 .endif
 
 post-extract:
-	${LN} -sf `${MAKE} -C ${.CURDIR}/../../cad/qcad/ -V WRKSRC` ${WRKDIR}/qcad
-	${LN} -sf `${MAKE} -C ${.CURDIR}/../../cad/qtjsapi/ -V WRKSRC` ${WRKDIR}/qtjsapi
+	${LN} -sf ${WRKSRC}/qcad ${WRKDIR}/qcad
+	${LN} -sf ${WRKSRC}/qtjsapi ${WRKDIR}/qtjsapi
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/qcad/plugins
