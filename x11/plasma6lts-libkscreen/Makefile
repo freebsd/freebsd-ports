@@ -10,10 +10,10 @@ LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
 RUN_DEPENDS=	${LOCALBASE}/share/hwdata/pnp.ids:misc/hwdata
 
 USES=		cmake compiler:c++11-lib gl kde:6 pkgconfig qt:6 tar:xz xorg
-USE_GL=		gl opengl
-USE_KDE=	config \
-		ecm:build plasma-wayland-protocols:build
-USE_QT=		base wayland
+USE_GL=		opengl
+USE_KDE=	ecm:build plasma-wayland-protocols:build
+USE_QT=		base \
+		tools:build
 USE_XORG=	xcb
 
 post-patch:
