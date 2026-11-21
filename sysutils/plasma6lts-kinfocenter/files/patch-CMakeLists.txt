@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2026-10-16 08:50:54 UTC
++++ CMakeLists.txt
+@@ -26,7 +26,7 @@ option(BUILD_DOC "Whether to build the documentation" 
+ 
+ option(BUILD_DOC "Whether to build the documentation" ON)
+ 
+-find_package(Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS Core Gui Widgets)
++find_package(Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS Core Gui Qml Widgets)
+ 
+ find_package(KF6 ${KF6_MIN_VERSION} REQUIRED COMPONENTS
+     Config

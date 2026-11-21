@@ -1,0 +1,11 @@
+--- kcms/samba/CMakeLists.txt.orig	2026-10-16 08:50:54 UTC
++++ kcms/samba/CMakeLists.txt
+@@ -17,7 +17,7 @@ target_link_libraries(kcm_samba_static
+     KF6::KIOCore
+     KF6::Solid
+     KF6::I18n
+-    KF6::KCMUtils
++    KF6::KCMUtils Qt6::Qml
+     KF6::KIOWidgets
+ )
+ 
