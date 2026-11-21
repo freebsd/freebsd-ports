@@ -1,7 +1,7 @@
 PORTNAME=	snmp_exporter
 DISTVERSIONPREFIX=v
 DISTVERSION=	0.29.0
-PORTREVISION=	26
+PORTREVISION=	27
 CATEGORIES=	sysutils
 
 MAINTAINER=	ivy@FreeBSD.org
@@ -18,6 +18,7 @@ USE_RC_SUBR=	snmp_exporter
 GO_MODULE=	github.com/prometheus/snmp_exporter
 GO_TARGET=	. \
 		./generator:snmp_exporter_generator
+GO_LDFLAGS=	-X github.com/prometheus/common/version.Version=${DISTVERSION}
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/snmp_exporter/
