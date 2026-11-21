@@ -1,5 +1,5 @@
 PORTNAME=	proxychains-ng
-DISTVERSION=	4.17
+DISTVERSION=	4.18
 CATEGORIES=	net security
 MASTER_SITES=	https://github.com/rofl0r/${PORTNAME}/releases/download/v${DISTVERSION}/ \
 		http://ftp.barfooze.de/pub/sabotage/tarballs/
