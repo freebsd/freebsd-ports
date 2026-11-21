@@ -1,7 +1,7 @@
 PORTNAME=	prometheus-postgres-exporter
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.19.1
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	databases
 
 MAINTAINER=	ivy@FreeBSD.org
@@ -15,6 +15,7 @@ USES=		go:modules
 USE_RC_SUBR=	postgres_exporter
 GO_MODULE=	github.com/prometheus-community/postgres_exporter
 GO_TARGET=	./cmd/postgres_exporter:${PREFIX}/bin/postgres_exporter
+GO_LDFLAGS=	-X github.com/prometheus/common/version.Version=${DISTVERSION}
 
 SUB_FILES=	pkg-message
 
