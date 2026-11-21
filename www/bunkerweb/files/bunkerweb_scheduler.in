@@ -69,6 +69,8 @@ bunkerweb_scheduler_precmd()
 	# FreeBSD does not use, so do it here before the scheduler starts.
 	env PYTHONPATH="${_bunkerweb_pythonpath}" DATABASE_URI="${bunkerweb_scheduler_database_uri}" \
 		%%PREFIX%%/bin/%%PYTHON_VERSION%% /usr/local/share/bunkerweb/common/db/freebsd-migrate.py
+
+	chown -R www:www /var/lib/bunkerweb
 }
 
 start_precmd="bunkerweb_scheduler_precmd"

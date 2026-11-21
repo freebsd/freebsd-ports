@@ -27,10 +27,23 @@ extra_commands="reload"
 
 bunkerweb_prestart()
 {
-	install -d -m 0755 "${bunkerweb_prefix}"
+	install -d -m 0750 -o www -g www "${bunkerweb_prefix}"
 	install -d -m 0755 "${bunkerweb_logdir}"
 	install -d -m 0755 /var/run/bunkerweb
 	install -d -m 0750 -o www -g www /var/tmp/bunkerweb
+
+	if [ ! -f "${bunkerweb_conf}" ]; then
+		_bunkerweb_datadir=/usr/local/share/bunkerweb
+		PYTHONPATH="${_bunkerweb_datadir}/common/gen:${_bunkerweb_datadir}/common/utils:${_bunkerweb_datadir}/common/db:${_bunkerweb_datadir}/common/api:${_bunkerweb_datadir}/deps/python" \
+		DATABASE_URI="${bunkerweb_scheduler_database_uri:-sqlite:////var/lib/bunkerweb/db.sqlite3}" \
+		su -m www -c "%%PREFIX%%/bin/%%PYTHON_VERSION%% ${_bunkerweb_datadir}/common/gen/main.py \
+			--settings ${_bunkerweb_datadir}/common/settings.json \
+			--core ${_bunkerweb_datadir}/common/core \
+			--plugins %%PREFIX%%/etc/bunkerweb/plugins \
+			--pro-plugins %%PREFIX%%/etc/bunkerweb/pro/plugins \
+			--templates ${_bunkerweb_datadir}/common/confs \
+			--output ${bunkerweb_prefix}" >> "${bunkerweb_logdir}/generator.log" 2>&1
+	fi
 
 	if [ ! -f "${bunkerweb_conf}" ]; then
 		warn "${bunkerweb_conf} does not exist yet. Start bunkerweb_scheduler and wait for it to generate the configuration."

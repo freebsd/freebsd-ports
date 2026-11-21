@@ -1,6 +1,6 @@
---- src/common/core/modsecurity/confs/server-http/modsecurity-rules.conf.modsec.orig	2026-09-21 08:05:39 UTC
+--- src/common/core/modsecurity/confs/server-http/modsecurity-rules.conf.modsec.orig	2026-11-20 19:02:21 UTC
 +++ src/common/core/modsecurity/confs/server-http/modsecurity-rules.conf.modsec
-@@ -137,18 +137,18 @@
+@@ -140,18 +140,18 @@ SecAuditLog {{ MODSECURITY_SEC_AUDIT_LOG }}
    {% if USE_MODSECURITY_CRS == "yes" -%}
  # include OWASP CRS configurations
      {% if effective_crs_version == "3" %}
@@ -25,7 +25,7 @@
        {% endif %}
        {% if is_custom_conf("/etc/nginx/crs-plugins-before") %}
  include /etc/nginx/crs-plugins-before/*.conf
-@@ -184,11 +184,11 @@
+@@ -187,11 +187,11 @@ include {{ before_file }}
      {% endif %}
  
  # custom CRS configurations before loading rules (e.g. exclusions)
@@ -41,7 +41,7 @@
      {% endif %}
      {% if is_custom_conf("/etc/nginx/modsec-crs") %}
  include /etc/nginx/modsec-crs/*.conf
-@@ -213,18 +213,18 @@
+@@ -216,18 +216,18 @@ SecRule ENV:is_whitelisted "yes" "id:9800000,phase:1,a
  
  # include OWASP CRS rules
      {% if effective_crs_version == "3" %}
@@ -54,11 +54,11 @@
  
      {% if USE_MODSECURITY_CRS_PLUGINS == "yes" and effective_crs_version != "3" %}
  # custom CRS plugins configurations after loading plugins
--      {%- if is_custom_conf("/etc/bunkerweb/configs/crs-plugins-after") %}
+-      {% if is_custom_conf("/etc/bunkerweb/configs/crs-plugins-after") %}
 -include /etc/bunkerweb/configs/crs-plugins-after/*.conf
-+      {%- if is_custom_conf("/usr/local/etc/bunkerweb/configs/crs-plugins-after") %}
++      {% if is_custom_conf("/usr/local/etc/bunkerweb/configs/crs-plugins-after") %}
 +include /usr/local/etc/bunkerweb/configs/crs-plugins-after/*.conf
-       {%- endif %}
+       {% endif %}
 -      {% if MULTISITE == "yes" and is_custom_conf("/etc/bunkerweb/configs/crs-plugins-after/" + service_id) %}
 -include /etc/bunkerweb/configs/crs-plugins-after/{{ service_id }}/*.conf
 +      {% if MULTISITE == "yes" and is_custom_conf("/usr/local/etc/bunkerweb/configs/crs-plugins-after/" + service_id) %}
@@ -66,7 +66,7 @@
        {% endif %}
        {% if is_custom_conf("/etc/nginx/crs-plugins-after") %}
  include /etc/nginx/crs-plugins-after/*.conf
-@@ -256,11 +256,11 @@
+@@ -259,11 +259,11 @@ include {{ after_file }}
    {% endif +%}
  
  # custom rules after loading the CRS

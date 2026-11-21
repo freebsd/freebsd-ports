@@ -1,4 +1,4 @@
---- src/api/utils/gunicorn.conf.py.orig	2026-05-28 20:12:40 UTC
+--- src/api/utils/gunicorn.conf.py.orig	2026-11-21 20:50:20 UTC
 +++ src/api/utils/gunicorn.conf.py
 @@ -10,7 +10,7 @@ from traceback import format_exc
  from time import sleep
@@ -9,7 +9,7 @@
      if deps_path not in sys_path:
          sys_path.append(deps_path)
  
-@@ -94,7 +94,7 @@ daemon = False
+@@ -106,7 +106,7 @@ daemon = False
  limit_request_field_size = 0
  reuse_port = False
  daemon = False
@@ -18,7 +18,7 @@
  umask = 0x027
  pidfile = PID_FILE.as_posix()
  control_socket_disable = True
-@@ -108,7 +108,7 @@ forwarded_allow_ips = FORWARDED_ALLOW_IPS
+@@ -120,7 +120,7 @@ forwarded_allow_ips = FORWARDED_ALLOW_IPS
      "X-FORWARDED-SSL": "on",
  }
  forwarded_allow_ips = FORWARDED_ALLOW_IPS
@@ -27,7 +27,16 @@
  proxy_allow_ips = PROXY_ALLOW_IPS
  casefold_http_method = True
  workers = MAX_WORKERS
-@@ -128,7 +128,7 @@ if DEBUG:
+@@ -130,7 +130,7 @@ graceful_timeout = 30
+ max_requests = int(getenv("API_MAX_REQUESTS", getenv("MAX_REQUESTS", "1000")))
+ max_requests_jitter = min(50, max_requests // 10)
+ graceful_timeout = 30
+-http_protocols = "h3,h2,h1"
++http_protocols = "h1"
+ 
+ DEBUG = getenv_bool("DEBUG")
+ 
+@@ -140,7 +140,7 @@ if DEBUG:
      reload = True
      reload_extra_files = [
          file.as_posix()
