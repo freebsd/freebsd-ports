@@ -1,5 +1,5 @@
 PORTNAME=	calcurse
-DISTVERSION=	4.9.0
+DISTVERSION=	4.9.1
 CATEGORIES=	deskutils
 MASTER_SITES=	https://calcurse.org/files/ \
 		https://fossies.org/linux/privat/
@@ -31,7 +31,6 @@ CALDAV_USES=		python
 CALDAV_USES_OFF=	python:env
 CALDAV_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}httplib2>=0:www/py-httplib2@${PY_FLAVOR}
 
-DOCS_USES=		gmake
 DOCS_CONFIGURE_ENABLE=	docs
 
 NLS_USES=		gettext
