@@ -851,6 +851,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%ARCH_LIB%%/CORE/perl_langinfo.h
 %%ARCH_LIB%%/CORE/perl_lock_definitions.h
 %%ARCH_LIB%%/CORE/perl_siphash.h
+%%ARCH_LIB%%/CORE/perl_util.h
 %%ARCH_LIB%%/CORE/perlapi.h
 %%DTRACE%%%%ARCH_LIB%%/CORE/perldtrace.h
 %%ARCH_LIB%%/CORE/perlio.h
@@ -883,7 +884,6 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%ARCH_LIB%%/CORE/unixish.h
 %%ARCH_LIB%%/CORE/utf8.h
 %%ARCH_LIB%%/CORE/utfebcdic.h
-%%ARCH_LIB%%/CORE/util.h
 %%ARCH_LIB%%/CORE/uudmap.h
 %%ARCH_LIB%%/CORE/vutil.h
 %%ARCH_LIB%%/CORE/warnings.h
@@ -1143,6 +1143,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN1%%/perl5452delta.1.gz
 %%MAN1%%/perl5453delta.1.gz
 %%MAN1%%/perl5454delta.1.gz
+%%MAN1%%/perl5455delta.1.gz
 %%MAN1%%/perl561delta.1.gz
 %%MAN1%%/perl56delta.1.gz
 %%MAN1%%/perl581delta.1.gz
@@ -2107,6 +2108,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/pod/perl5452delta.pod
 %%PRIV_LIB%%/pod/perl5453delta.pod
 %%PRIV_LIB%%/pod/perl5454delta.pod
+%%PRIV_LIB%%/pod/perl5455delta.pod
 %%PRIV_LIB%%/pod/perl561delta.pod
 %%PRIV_LIB%%/pod/perl56delta.pod
 %%PRIV_LIB%%/pod/perl581delta.pod

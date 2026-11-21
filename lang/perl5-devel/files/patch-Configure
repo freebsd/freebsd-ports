@@ -2,7 +2,7 @@
 - ?
 - ?
 
---- Configure.orig	2026-10-21 11:39:20 UTC
+--- Configure.orig	2026-11-18 16:17:44 UTC
 +++ Configure
 @@ -3928,7 +3928,10 @@ esac
  . ./posthint.sh
@@ -25,7 +25,7 @@
  		case " $libpth " in
  		*" $xxx "*) ;;
  		*) libpth="$libpth $xxx";;
-@@ -9625,8 +9628,7 @@ case "$sitescript" in
+@@ -9632,8 +9635,7 @@ case "$sitescript" in
  
  : determine where add-on public executable scripts go
  case "$sitescript" in
