@@ -7,7 +7,7 @@ MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Graphical certification authority
 WWW=		https://hohnstaedt.de/xca
 
-LICENSE=	BSD3CLAUSE
+LICENSE=	BSD-3-Clause
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 FLAVORS=		qt5 qt6
@@ -23,8 +23,8 @@ USES=		cmake compiler:c++17-lang desktop-file-utils localbase \
 
 .if ${FLAVOR} == qt5
 USES+=		qt:5
-USE_QT=		buildtools:build core gui help linguist:build qmake sql \
-		testlib:build widgets
+USE_QT=		core gui help qmake sql widgets buildtools:build linguist:build \
+		testlib:build
 CMAKE_ARGS=	-DQTFIXEDVERSION:STRING=Qt5
 .else
 USES+=		gl qt:6
