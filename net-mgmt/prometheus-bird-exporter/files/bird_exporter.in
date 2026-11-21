@@ -17,6 +17,8 @@
 #               Default is "-bird.v2 -format.new".
 # bird_exporter_listen_address (string):Set ip:port that bird_exporter will listen on
 #               Default is "localhost:9324".
+# bird_exporter_socket (string):        Set the path of BIRD's control socket
+#               Default is "/var/run/bird.ctl".
 
 . /etc/rc.subr
 
@@ -38,6 +40,7 @@ procname="%%PREFIX%%/bin/bird_exporter"
 command_args="-f -p ${pidfile} -t ${name} \
     /usr/bin/env ${procname} \
     -web.listen-address=${bird_exporter_listen_address} \
+    -bird.socket=${bird_exporter_socket} \
     ${bird_exporter_args}"
 
 start_precmd=bird_exporter_startprecmd
