@@ -1,6 +1,6 @@
 PORTNAME=	kiwix-tools
 DISTVERSION=	3.7.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	https://download.kiwix.org/release/kiwix-tools/
 
@@ -15,6 +15,8 @@ LIB_DEPENDS=	libkiwix.so.13:devel/libkiwix13 \
 		libzim.so:devel/libzim
 
 USES=		compiler:c++17-lang meson pkgconfig tar:xz
+
+USE_RC_SUBR=	kiwix_serve
 
 CXXFLAGS_gcc=	-Wno-error=maybe-uninitialized
 CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
