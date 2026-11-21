@@ -7,7 +7,7 @@ MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Lightweight and versatile audio player
 WWW=		https://audacious-media-player.org/
 
-LICENSE=	BSD2CLAUSE BSD3CLAUSE
+LICENSE=	BSD-2-Clause BSD-3-Clause CC-BY-SA-4.0
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
 
