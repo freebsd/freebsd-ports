@@ -1,3 +1,108 @@
+  <vuln vid="a8f3c2d4-e5a1-11f1-bae2-3497f65b111b">
+    <topic>angie -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>angie</name>
+	<range><lt>1.12.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Angie Software Team reports:</p>
+	<blockquote cite="https://en.angie.software/angie/docs/oss_changes/#angie-1-12-5">
+	  <p>When the try_files directive with values containing variables
+	    was used in a location with the alias directive, a buffer overflow
+	    might occur in certain configurations, allowing an attacker to
+	    corrupt the worker process memory or cause its crash
+	    (CVE-2026-125283).</p>
+	  <p>When HTTP/2 was used, processing of specially crafted messages
+	    from a client while a response was being sent to it might result
+	    in worker process memory corruption or a worker process crash,
+	    or might have potential other impact (CVE-2026-123007).</p>
+	  <p>When HTTP/2 was used, if processing a request required an
+	    outgoing connection and free connections were not enough, an
+	    HTTP/2 connection could be mistakenly closed while a request was
+	    still being processed in it; as a result, worker process memory
+	    corruption or a worker process crash could occur
+	    (CVE-2026-123633).</p>
+	  <p>When HTTP/3 was used, if processing a request required an
+	    outgoing connection and free connections were not enough, a QUIC
+	    connection could be mistakenly closed while a request was still
+	    being processed in it; as a result, worker process memory
+	    corruption or a worker process crash could occur
+	    (CVE-2026-121810).</p>
+	  <p>When the resolver directive was used to resolve proxied server
+	    names while processing a request, and the same name was
+	    simultaneously resolved in a subrequest, an attacker able to
+	    trigger name resolution might corrupt worker process memory or
+	    cause a worker process crash; the issue might also have potential
+	    other impact (CVE-2026-123634).</p>
+	  <p>In the mail proxy module, closing the connection or writing data
+	    by a client while the server was connecting to a proxied server,
+	    resolving a client name, or waiting for a response from the
+	    authentication server could lead to worker process memory
+	    corruption or a worker process crash (CVE-2026-113425).</p>
+	  <p>In the stream module, if virtual servers were selected by SNI
+	    and client SSL certificate verification was configured more
+	    strictly in the server selected by SNI than in the default
+	    server, the verification could be performed using the
+	    configuration of the default server, allowing an attacker to
+	    bypass it (CVE-2026-120967).</p>
+	  <p>When the ssl_preread directive was used, malformed ClientHello
+	    messages might be interpreted differently than in other TLS
+	    implementations, which might result in bypassing security
+	    restrictions based on the $ssl_preread_server_name and
+	    $ssl_preread_alpn_protocols variables (CVE-2026-123640).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-125283</cvename>
+      <cvename>CVE-2026-123007</cvename>
+      <cvename>CVE-2026-123633</cvename>
+      <cvename>CVE-2026-121810</cvename>
+      <cvename>CVE-2026-123634</cvename>
+      <cvename>CVE-2026-113425</cvename>
+      <cvename>CVE-2026-120967</cvename>
+      <cvename>CVE-2026-123640</cvename>
+      <url>https://en.angie.software/angie/docs/oss_changes/#angie-1-12-5</url>
+    </references>
+    <dates>
+      <discovery>2026-11-18</discovery>
+      <entry>2026-11-21</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a8f3c2d5-e5a1-11f1-bae2-3497f65b111b">
+    <topic>angie-module-cache-purge -- symlink traversal when walking cache trees</topic>
+    <affects>
+      <package>
+	<name>angie-module-cache-purge</name>
+	<range><lt>3.0.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The ngx_cache_purge developers report:</p>
+	<blockquote cite="https://github.com/nginx-modules/ngx_cache_purge/releases/tag/3.0.4">
+	  <p>Fixed a symlink traversal vulnerability during cache tree
+	    traversal.  An attacker with the ability to create symbolic
+	    links inside the cache directory could potentially cause cache
+	    purge operations to delete arbitrary files accessible to the
+	    worker process (CVE-2026-108981).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-108981</cvename>
+      <url>https://github.com/nginx-modules/ngx_cache_purge/releases/tag/3.0.4</url>
+    </references>
+    <dates>
+      <discovery>2026-10-11</discovery>
+      <entry>2026-11-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a66ea137-7d48-4991-953d-73cfdaf1da76">
     <topic>clamav -- Multiple vulnerabilities</topic>
     <affects>
