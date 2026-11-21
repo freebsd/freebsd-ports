@@ -41,4 +41,52 @@ includes the full path to the source file. The level field now exposes the log
 level in capital letters.
 EOM
 }
+{ type: upgrade
+  maximum_version: "0.20.0"
+  message: <<EOM
+BREAKING CHANGES in postgres_exporter 0.20.0:
+
+The replication_slot collector has been renamed to replication_slots.  Replace
+--collector.replication_slot and --no-collector.replication_slot with
+--collector.replication_slots and --no-collector.replication_slots.  Its
+metrics have been renamed from pg_replication_slot_* to pg_replication_slots_*.
+
+The --disable-settings-metrics flag has been removed.  Use
+--no-collector.settings instead.
+
+The settings, stat_activity, stat_archiver, stat_replication and
+replication_slots metrics now come from standalone collectors.  They no longer
+honour --metric-prefix or constantLabels, and --disable-default-metrics no
+longer disables them.
+
+For details, see:
+
+    https://github.com/prometheus-community/postgres_exporter/releases/tag/v0.20.0
+EOM
+}
+{ type: upgrade
+  maximum_version: "0.21.0"
+  message: <<EOM
+BREAKING CHANGES in postgres_exporter 0.21.0:
+
+Non-negative 64-bit counters are now wrapped at 2^53.  For counters above that
+value, the first scrape after upgrading can show a one-time false spike in
+rate() and increase().  Use --no-wrap-large-counters to keep the previous
+behaviour.
+
+Concurrent scrapes are now limited by --web.max-requests, which defaults to 40.
+Requests over the limit receive HTTP 503.  Use --web.max-requests=0 to remove
+the limit.
+
+The DATA_SOURCE_URI, DATA_SOURCE_URI_FILE, DATA_SOURCE_USER_FILE,
+DATA_SOURCE_PASS_FILE and PG_EXPORTER_* environment variables are deprecated,
+and will be removed in 0.22.0.  Use the equivalent flags, such as
+--datasource.uri, in postgres_exporter_args instead.  DATA_SOURCE_NAME,
+DATA_SOURCE_USER and DATA_SOURCE_PASS are not deprecated.
+
+For details, see:
+
+    https://github.com/prometheus-community/postgres_exporter/releases/tag/v0.21.0
+EOM
+}
 ]
