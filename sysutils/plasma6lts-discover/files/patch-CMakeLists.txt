@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2026-10-16 08:49:52 UTC
++++ CMakeLists.txt
+@@ -28,7 +28,7 @@ include(ECMSourceVersionControl)
+ include(ECMDeprecationSettings)
+ include(ECMSourceVersionControl)
+ 
+-find_package(Qt6 ${QT_MIN_VERSION} REQUIRED CONFIG COMPONENTS Widgets Test Network Concurrent DBus Quick QuickControls2)
++find_package(Qt6 ${QT_MIN_VERSION} REQUIRED CONFIG COMPONENTS Widgets Test Network Concurrent DBus Qml Quick QuickControls2)
+ find_package(Qt6 ${QT_MIN_VERSION} CONFIG OPTIONAL_COMPONENTS WebView)
+ 
+ find_package(PkgConfig REQUIRED)

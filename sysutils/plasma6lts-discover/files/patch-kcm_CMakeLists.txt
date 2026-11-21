@@ -1,0 +1,10 @@
+--- kcm/CMakeLists.txt.orig	2026-10-16 08:49:52 UTC
++++ kcm/CMakeLists.txt
+@@ -21,6 +21,7 @@ target_link_libraries(kcm_updates PRIVATE
+ kconfig_add_kcfg_files(kcm_updates discoversettings.kcfgc GENERATE_MOC)
+ 
+ target_link_libraries(kcm_updates PRIVATE
++    Qt6::Qml
+     KF6::I18n
+     KF6::ConfigGui
+     KF6::KCMUtilsQuick
