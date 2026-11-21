@@ -1,6 +1,6 @@
---- scripts/afterpack.js.orig	2026-09-03 16:52:25 UTC
+--- scripts/afterpack.js.orig	2026-11-15 10:01:49 UTC
 +++ scripts/afterpack.js
-@@ -15,7 +15,7 @@ function getAppFileName(context) {
+@@ -16,7 +16,7 @@ function getAppFileName(context) {
        return `${productFileName}.app`;
      case "mas":
        return `${productFileName}.app`;
@@ -9,7 +9,7 @@
        return context.packager.executableName;
      default:
        return "";
-@@ -25,7 +25,7 @@ exports.default = async function afterPack(context) {
+@@ -26,7 +26,7 @@ exports.default = async function afterPack(context) {
  exports.default = async function afterPack(context) {
    try {
      // Ensure release info is generated for Linux publishing
