@@ -325,7 +325,7 @@ npm-fetch-node-modules:
 		${ECHO_MSG} "===>  Prefetching node modules"; \
 		for dir in `${FIND} ${WRKDIR}/node-modules-cache -type f -name ${NPM_LOCKFILE} -exec ${DIRNAME} {} ';'`; do \
 			cd $${dir} && \
-			${SETENV} ${MAKE_ENV} ${NPM_FETCH_CMD} ${NPM_FETCH_FLAGS}; \
+			${SETENV} ${FETCH_ENV} ${MAKE_ENV} ${NPM_FETCH_CMD} ${NPM_FETCH_FLAGS}; \
 			${RM} $${dir}/${NPM_MODULE_CACHE}/.gitignore; \
 		done; \
 	fi
