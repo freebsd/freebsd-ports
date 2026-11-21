@@ -1,0 +1,10 @@
+[
+{
+  type: install
+  message: Install devel/kf6-kfilemetadata-plugins for additional file formats.
+}
+{
+  type: upgrade
+  message: Install devel/kf6-kfilemetadata-plugins for additional file formats.
+}
+]

@@ -1226,6 +1226,7 @@
     SUBDIR += kf6-kdeclarative
     SUBDIR += kf6-kdoctools
     SUBDIR += kf6-kfilemetadata
+    SUBDIR += kf6-kfilemetadata-plugins
     SUBDIR += kf6-ki18n
     SUBDIR += kf6-kidletime
     SUBDIR += kf6-kio
