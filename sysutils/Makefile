@@ -666,6 +666,7 @@
     SUBDIR += leaf
     SUBDIR += leaves
     SUBDIR += ledit
+    SUBDIR += legion
     SUBDIR += less
     SUBDIR += lfm
     SUBDIR += libcdio

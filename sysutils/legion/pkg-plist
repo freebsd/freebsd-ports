@@ -1,0 +1,10 @@
+bin/legion
+share/man/man1/legion.1.gz
+etc/newsyslog.conf.d/legion.conf
+etc/rc.d/legion
+@dir libexec/legion/volume
+@dir libexec/legion
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/volume-plugins/README.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/volume-plugins/hostpath
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/volume-plugins/rclone
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/volume-plugins/sshfs

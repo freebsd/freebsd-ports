@@ -1,0 +1,9 @@
+Legion runs containers on FreeBSD hosts as a cluster, with the model of
+Docker Swarm and the parts of Kubernetes that teams sharing a cluster
+need. Containers are jails, images and volumes live on ZFS, services are
+balanced by pf, and nodes are joined by a WireGuard mesh. One binary is
+the daemon on every node, manager or worker, and the command line.
+
+Without a cluster, the same binary builds OCI images of FreeBSD jails from
+a Containerfile, runs them on one host and pushes them to a registry,
+signed and with an SBOM (legion build, legion local).
