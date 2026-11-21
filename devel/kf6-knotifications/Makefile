@@ -7,12 +7,11 @@ COMMENT=	Cross-platform library for creating popup notifications
 
 LIB_DEPENDS=	libcanberra.so:audio/libcanberra
 
-USES=		cmake gl kde:6 qt:6 tar:xz xorg
-USE_GL=		gl opengl
-USE_KDE=	config coreaddons windowsystem \
+USES=		cmake gl kde:6 qt:6 tar:xz
+USE_GL=		opengl
+USE_KDE=	config \
 		ecm:build
 USE_QT=		base declarative
-USE_XORG=	x11 xtst
 
 # Requires PySide and Shiboken.
 CMAKE_OFF=	BUILD_PYTHON_BINDINGS

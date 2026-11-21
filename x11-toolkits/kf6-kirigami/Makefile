@@ -8,8 +8,9 @@ COMMENT=	QtQuick components for building adaptable UIs
 LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon
 
 USES=		cmake gl kde:6 qt:6 tar:xz
-USE_GL=		gl opengl
+USE_GL=		opengl
 USE_KDE=	ecm:build
-USE_QT=		base declarative shadertools svg tools
+USE_QT=		base declarative shadertools svg \
+		tools:build
 
 .include <bsd.port.mk>

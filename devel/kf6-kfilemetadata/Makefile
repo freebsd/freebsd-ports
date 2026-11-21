@@ -12,11 +12,12 @@ LIB_DEPENDS=	libavutil.so:multimedia/ffmpeg \
 		libpoppler-qt6.so:graphics/poppler-qt6 \
 		libtag.so:audio/taglib
 
-USES=		cmake gettext gl kde:6 pkgconfig qt:6 tar:xz
-USE_GL=		gl opengl
-USE_KDE=	archive config coreaddons i18n codecs\
+USES=		cmake gettext-tools gl kde:6 pkgconfig qt:6 tar:xz
+USE_GL=		opengl
+USE_KDE=	archive codecs config coreaddons i18n \
 		ecm:build
-USE_QT=		base
+USE_QT=		base \
+		declarative:build
 
 OPTIONS_DEFINE=	MOBIPOCKET
 OPTIONS_DEFAULT=	MOBIPOCKET

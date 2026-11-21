@@ -7,6 +7,6 @@ COMMENT=	Open Collaboration Service client library
 
 USES=		cmake kde:6 qt:6 tar:xz
 USE_KDE=	ecm:build
-USE_QT=		base tools:build
+USE_QT=		base
 
 .include <bsd.port.mk>

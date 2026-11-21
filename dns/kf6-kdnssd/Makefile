@@ -5,9 +5,11 @@ CATEGORIES=	dns kde kde-frameworks
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Network service discovery using Zeroconf
 
-USES=		cmake kde:6 qt:6 tar:xz
+USES=		cmake gl kde:6 qt:6 tar:xz
+USE_GL=		opengl
 USE_KDE=	ecm:build
-USE_QT=		base tools
+USE_QT=		base \
+		tools:build
 
 OPTIONS_DEFAULT=	AVAHI
 OPTIONS_RADIO=		ZEROCONF

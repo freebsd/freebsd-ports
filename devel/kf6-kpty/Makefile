@@ -5,7 +5,7 @@ CATEGORIES=	devel kde kde-frameworks
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Interfacing with pseudo terminal devices
 
-USES=		cmake gettext kde:6 qt:6 tar:xz
+USES=		cmake gettext-tools kde:6 qt:6 tar:xz
 USE_KDE=	coreaddons i18n \
 		ecm:build
 USE_QT=		base

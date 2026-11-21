@@ -7,6 +7,7 @@ COMMENT=	Dates for holidays and other special events
 
 USES=		bison cmake kde:6 qt:6 tar:xz
 USE_KDE=	ecm:build
-USE_QT=		base declarative tools
+USE_QT=		base declarative \
+		tools:build
 
 .include <bsd.port.mk>

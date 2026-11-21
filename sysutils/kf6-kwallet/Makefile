@@ -12,12 +12,13 @@ LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libgpgmepp.so:security/gpgmepp \
 		libqca-qt6.so:devel/qca@qt6
 
-USES=		cmake gettext-tools gl kde:6 pkgconfig qt:6 tar:xz xorg
-USE_GL=		gl opengl
+USES=		cmake gettext gl kde:6 pkgconfig qt:6 tar:xz xorg
+USE_GL=		opengl
 USE_KDE=	colorscheme config coreaddons crash dbusaddons i18n \
 		notifications widgetsaddons windowsystem \
-		ecm:build doctools:build
-USE_QT=		base
+		doctools:build ecm:build
+USE_QT=		base \
+		declarative:build
 USE_XORG=	x11
 
 .include <bsd.port.mk>

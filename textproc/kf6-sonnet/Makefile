@@ -9,9 +9,10 @@ LIB_DEPENDS=	libaspell.so:textproc/aspell \
 		libhunspell-1.7.so:textproc/hunspell
 
 USES=		cmake gl kde:6 pkgconfig qt:6 tar:xz
-USE_GL=		gl opengl
+USE_GL=		opengl
 USE_KDE=	ecm:build
-USE_QT=		base declarative tools
+USE_QT=		base declarative \
+		tools:build
 
 # Hsplell can be enabled, Voikko is not ported.
 CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_HSPELL \

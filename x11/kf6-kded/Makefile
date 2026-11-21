@@ -6,9 +6,10 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Central daemon of KDE work spaces
 
 USES=		cmake gl kde:6 qt:6 tar:xz
-USE_GL=		gl opengl
+USE_GL=		opengl
 USE_KDE=	config coreaddons crash dbusaddons service \
-		ecm:build
-USE_QT=		base
+		doctools:build ecm:build
+USE_QT=		base \
+		declarative:build
 
 .include <bsd.port.mk>

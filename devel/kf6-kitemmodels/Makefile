@@ -7,6 +7,6 @@ COMMENT=	Set of item models extending the Qt model-view framework
 
 USES=		cmake kde:6 qt:6 tar:xz
 USE_KDE=	ecm:build
-USE_QT=		base declarative tools:build
+USE_QT=		base declarative
 
 .include <bsd.port.mk>

@@ -5,10 +5,12 @@ CATEGORIES=	security kde kde-frameworks
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	User interface for running shell commands with root privileges
 
-USES=		cmake gettext kde:6 qt:6 tar:xz xorg
+USES=		cmake gettext-tools gl kde:6 qt:6 tar:xz xorg
+USE_GL=		opengl
 USE_KDE=	config coreaddons i18n pty \
 		ecm:build
-USE_QT=		base
+USE_QT=		base \
+		declarative:build
 USE_XORG=	ice sm x11 xext
 
 OPTIONS_DEFAULT=	SU

@@ -8,8 +8,9 @@ COMMENT=	Advanced internationalization framework
 BUILD_DEPENDS=	iso-codes>=0:misc/iso-codes
 RUN_DEPENDS=	iso-codes>=0:misc/iso-codes
 
-USES=		cmake gettext kde:6 pkgconfig qt:6 tar:xz
+USES=		cmake gettext gl kde:6 pkgconfig qt:6 tar:xz
+USE_GL=		opengl
 USE_KDE=	ecm:build
-USE_QT=		base declarative tools:build
+USE_QT=		base declarative
 
 .include <bsd.port.mk>

@@ -8,10 +8,11 @@ COMMENT=	Widgets for showing progress of asynchronous jobs
 LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon
 
 USES=		cmake gl kde:6 qt:6 tar:xz
-USE_GL=		gl opengl
+USE_GL=		opengl
 USE_KDE=	coreaddons notifications widgetsaddons \
 		ecm:build
-USE_QT=		base
+USE_QT=		base \
+		tools:build
 
 CMAKE_OFF=	BUILD_PYTHON_BINDINGS
 

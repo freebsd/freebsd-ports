@@ -6,7 +6,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Scripts and data for building API documentation (dox)
 
 USES=		kde:6 python qt:6 tar:xz
-USE_KDE=	ecm:build
+USE_KDE=	#
 USE_PYTHON=	distutils noflavors py3kplist
 
 NO_ARCH=	yes

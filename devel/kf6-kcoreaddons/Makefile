@@ -5,10 +5,12 @@ CATEGORIES=	devel kde kde-frameworks
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt addon library with a collection of non-GUI utilities
 
-USES=		cmake cpe kde:6 qt:6 shared-mime-info tar:xz
+USES=		cmake cpe gl kde:6 qt:6 shared-mime-info tar:xz
 CPE_VENDOR=	kde
+USE_GL=		opengl
 USE_KDE=	ecm:build
-USE_QT=		base declarative tools
+USE_QT=		base declarative \
+		tools:build
 
 # Requires PySide and Shiboken.
 CMAKE_OFF=	BUILD_PYTHON_BINDINGS

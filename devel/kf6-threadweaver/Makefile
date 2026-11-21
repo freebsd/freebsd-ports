@@ -5,8 +5,9 @@ CATEGORIES=	devel kde kde-frameworks
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Helper for multithreaded programming
 
-USES=		cmake kde:6 qt:6 tar:xz
+USES=		cmake gl kde:6 qt:6 tar:xz
+USE_GL=		opengl
 USE_KDE=	ecm:build
-USE_QT=		base tools:build
+USE_QT=		base
 
 .include <bsd.port.mk>

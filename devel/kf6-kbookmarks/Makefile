@@ -6,9 +6,10 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Bookmarks management library
 
 USES=		cmake gl kde:6 qt:6 tar:xz
-USE_GL=		gl opengl
-USE_KDE=	colorscheme config configwidgets coreaddons widgetsaddons \
+USE_GL=		opengl
+USE_KDE=	config coreaddons widgetsaddons \
 		ecm:build
-USE_QT=		base
+USE_QT=		base \
+		declarative:build tools:build
 
 .include <bsd.port.mk>

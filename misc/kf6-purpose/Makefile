@@ -9,12 +9,13 @@ BUILD_DEPENDS=	accounts-qml-module>=0.7_5:sysutils/accounts-qml-module
 LIB_DEPENDS=	libkaccounts6.so:net-im/kaccounts-integration
 RUN_DEPENDS=	accounts-qml-module>=0.7_5:sysutils/accounts-qml-module
 
-USES=		cmake gettext gl gnome kde:6 qt:6 tar:xz
-USE_GL=		gl opengl
+USES=		cmake gettext-tools gl gnome kde:6 qt:6 tar:xz xorg
+USE_GL=		opengl
 USE_GNOME=	intltool
-USE_KDE=	config coreaddons i18n itemmodels kio kirigami2 \
+USE_KDE=	config coreaddons i18n itemmodels kcmutils kio kirigami2 \
 		notifications prison service \
 		ecm:build
 USE_QT=		base declarative
+USE_XORG=	x11
 
 .include <bsd.port.mk>

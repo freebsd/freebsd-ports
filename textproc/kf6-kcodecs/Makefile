@@ -7,6 +7,7 @@ COMMENT=	String encoding library
 
 USES=		cmake gperf kde:6 qt:6 tar:xz
 USE_KDE=	ecm:build
-USE_QT=		base tools
+USE_QT=		base \
+		tools:build
 
 .include <bsd.port.mk>

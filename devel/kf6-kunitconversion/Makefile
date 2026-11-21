@@ -5,10 +5,10 @@ CATEGORIES=	devel kde kde-frameworks
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Converting physical units
 
-USES=		cmake gettext kde:6 qt:6 tar:xz
+USES=		cmake gettext-tools kde:6 qt:6 tar:xz
 USE_KDE=	i18n \
 		ecm:build
-USE_QT=		base tools:build
+USE_QT=		base
 
 CMAKE_OFF=	BUILD_PYTHON_BINDINGS
 

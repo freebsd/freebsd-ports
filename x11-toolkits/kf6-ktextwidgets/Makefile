@@ -5,11 +5,11 @@ CATEGORIES=	x11-toolkits kde kde-frameworks
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Text editing widgets
 
-USES=		cmake gettext gl kde:6 qt:6 tar:xz
-USE_GL=		gl opengl
-USE_KDE=	colorscheme completion config configwidgets i18n sonnet \
-		widgetsaddons \
+USES=		cmake gettext-tools gl kde:6 qt:6 tar:xz
+USE_GL=		opengl
+USE_KDE=	completion config i18n sonnet widgetsaddons \
 		ecm:build
-USE_QT=		base speech multimedia
+USE_QT=		base multimedia speech \
+		declarative:build tools:build
 
 .include <bsd.port.mk>

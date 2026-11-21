@@ -7,6 +7,6 @@ COMMENT=	Library to separate the structure of documents from the data
 
 USES=		cmake kde:6 qt:6 tar:xz
 USE_KDE=	ecm:build
-USE_QT=		base declarative tools:build
+USE_QT=		base declarative
 
 .include <bsd.port.mk>

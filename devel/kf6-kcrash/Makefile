@@ -6,7 +6,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Graceful handling of application crashes
 
 USES=		cmake gl kde:6 qt:6 tar:xz xorg
-USE_GL=		gl opengl
+USE_GL=		opengl
 USE_KDE=	coreaddons \
 		ecm:build
 USE_QT=		base

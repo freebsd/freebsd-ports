@@ -7,11 +7,12 @@ COMMENT=	Configuration system for KNotify
 
 LIB_DEPENDS=	libcanberra.so:audio/libcanberra
 
-USES=		cmake gettext gl kde:6 qt:6 tar:xz
-USE_GL=		gl opengl
-USE_KDE=	completion config coreaddons i18n jobwidgets kio notifications \
-		service solid widgetsaddons xmlgui \
+USES=		cmake gettext-tools gl kde:6 qt:6 tar:xz xorg
+USE_GL=		opengl
+USE_KDE=	completion config i18n kio \
 		ecm:build
-USE_QT=		base
+USE_QT=		base \
+		declarative:build
+USE_XORG=	x11
 
 .include <bsd.port.mk>

@@ -7,7 +7,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plugins to allow QImage to support extra file formats
 
 USES=		cmake gl kde:6 pkgconfig qt:6 tar:xz
-USE_GL=		gl opengl
+USE_GL=		opengl
 USE_KDE=	archive ecm:build
 USE_QT=		base
 

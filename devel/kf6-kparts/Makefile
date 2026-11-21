@@ -5,11 +5,13 @@ CATEGORIES=	devel kde kde-frameworks
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plugin framework for user interface components
 
-USES=		cmake gettext gl kde:6 qt:6 tar:xz
-USE_GL=		gl opengl
-USE_KDE=	colorscheme completion config configwidgets coreaddons i18n \
-		jobwidgets kio service solid widgetsaddons xmlgui \
+USES=		cmake gettext-tools gl kde:6 qt:6 tar:xz xorg
+USE_GL=		opengl
+USE_KDE=	config coreaddons i18n jobwidgets kio service \
+		widgetsaddons xmlgui \
 		ecm:build
-USE_QT=		base
+USE_QT=		base \
+		declarative:build
+USE_XORG=	x11
 
 .include <bsd.port.mk>

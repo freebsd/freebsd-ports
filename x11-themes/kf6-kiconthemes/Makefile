@@ -7,10 +7,11 @@ COMMENT=	Icon GUI utilities
 
 LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon
 
-USES=		cmake gettext gl kde:6 qt:6 tar:xz
-USE_GL=		gl opengl
-USE_KDE=	archive breeze-icons colorscheme config configwidgets i18n widgetsaddons \
+USES=		cmake gettext-tools gl kde:6 qt:6 tar:xz
+USE_GL=		opengl
+USE_KDE=	archive breeze-icons colorscheme config i18n widgetsaddons \
 		ecm:build
-USE_QT=		base declarative svg
+USE_QT=		base declarative svg \
+		tools:build
 
 .include <bsd.port.mk>

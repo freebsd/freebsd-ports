@@ -11,7 +11,7 @@ BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-
 RUN_DEPENDS=	${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-xsl \
 		docbook-xml>0:textproc/docbook-xml
 
-USES=		cmake gettext gnome kde:6 qt:6 tar:xz
+USES=		cmake gettext-tools gnome kde:6 qt:6 tar:xz
 USE_GNOME=	libxml2 libxslt
 USE_KDE=	archive i18n \
 		ecm:build
