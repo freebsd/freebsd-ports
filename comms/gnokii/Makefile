@@ -3,79 +3,95 @@ PORTVERSION=	0.6.31
 PORTREVISION=	16
 PORTEPOCH=	1
 CATEGORIES=	comms
-MASTER_SITES=	http://www.gnokii.org/download/gnokii/ \
-		http://www.gnokii.org/download/gnokii/0.6.x/
+MASTER_SITES=	https://download.samba.org/pub/gnokii/gnokii/
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Tools to talk to GSM cellular phones
 WWW=		https://www.gnokii.org/
 
-LICENSE=	GPLv2
+LICENSE=	GPL-2.0-or-later
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser
 
-GROUPS=		${PORTNAME}
-USES=		gettext gmake gnome iconv libtool localbase pkgconfig \
-		readline shebangfix tar:bzip2
-USE_LDCONFIG=	yes
+USES=		gettext gmake gnome iconv libtool localbase pkgconfig readline \
+		shebangfix tar:bzip2
 USE_CSTD=	gnu89
 USE_GNOME=	glib20 intltool
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-security
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
+USE_LDCONFIG=	yes
+
 SHEBANG_FILES=	smsd/action
 
-SUB_FILES=	pkg-message
-PORTDOCS=	*
+GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
+CONFIGURE_ARGS=	--enable-security
 
-CONFLICTS=	smstools sendsms
+CONFLICTS=	sendsms smstools
+
+SUB_FILES=	pkg-message
+
+GROUPS=		${PORTNAME}
+
+PORTDOCS=	*
 
 FIXPREFIX=	Docs/README common/cfgreader.c
 
-OPTIONS_DEFINE=	DOCS ICAL PCSC SMSD USB X11
-OPTIONS_GROUP=	SMSDDB
-OPTIONS_GROUP_SMSDDB=	MYSQL PGSQL SQLITE
+OPTIONS_DEFINE=		DOCS ICAL PCSC SMSD USB X11
 OPTIONS_DEFAULT=	X11
+OPTIONS_GROUP=		SMSDDB
+OPTIONS_GROUP_SMSDDB=	MYSQL PGSQL SQLITE
 
 ICAL_DESC=	Build with IETF iCal support
-USB_DESC=	Build with libusb support
 PCSC_DESC=	Build with PC/SC-Lite support
-SMSD_DESC=	Enable smsd daemon (includes "file" backend)
 SMSDDB_DESC=	Enable database support in smsd (select one or more)
+SMSD_DESC=	Enable smsd daemon (includes "file" backend)
+USB_DESC=	Build with libusb support
 X11_DESC=	Build graphical version (xgnokii)
 
-ICAL_CONFIGURE_ENABLE=	libical
 ICAL_LIB_DEPENDS=	libical.so:devel/libical
-USB_CONFIGURE_ENABLE=	libusb
-PCSC_CONFIGURE_ENABLE=	libpcsclite
-PCSC_LIB_DEPENDS=	libpcsclite.so:devel/pcsc-lite
+ICAL_CONFIGURE_ENABLE=	libical
+
 MYSQL_IMPLIES=		SMSD
-PGSQL_IMPLIES=		SMSD
-SQLITE_IMPLIES=		SMSD
-SMSD_PLIST_SUB=		SMSD=''
-SMSD_PLIST_SUB_OFF=	SMSD='@comment ' MSM='@comment ' PGM='@comment ' SQLT='@comment '
-SMSD_CONFIGURE_OFF=	--disable-smsd
 MYSQL_USES=		mysql ssl
+MYSQL_CONFIGURE_OFF=	--disable-mysql
 MYSQL_PLIST_SUB=	MSM=''
 MYSQL_PLIST_SUB_OFF=	MSM='@comment '
-MYSQL_CONFIGURE_OFF=	--disable-mysql
 MYSQL_VARS=		IGNORE_WITH_MYSQL="80 81"
+
+PCSC_LIB_DEPENDS=	libpcsclite.so:devel/pcsc-lite
+PCSC_CONFIGURE_ENABLE=	libpcsclite
+
+PGSQL_IMPLIES=		SMSD
 PGSQL_USES=		pgsql
+PGSQL_CONFIGURE_OFF=	--disable-postgres
 PGSQL_PLIST_SUB=	PGM=''
 PGSQL_PLIST_SUB_OFF=	PGM='@comment '
-PGSQL_CONFIGURE_OFF=	--disable-postgres
+
+SMSD_CONFIGURE_OFF=	--disable-smsd
+SMSD_PLIST_SUB=		SMSD=''
+SMSD_PLIST_SUB_OFF=	MSM='@comment ' \
+			PGM='@comment ' \
+			SMSD='@comment ' \
+			SQLT='@comment '
+
+SQLITE_IMPLIES=		SMSD
 SQLITE_USES=		sqlite
+SQLITE_CONFIGURE_OFF=	--disable-sqlite
 SQLITE_PLIST_SUB=	SQLT=''
 SQLITE_PLIST_SUB_OFF=	SQLT='@comment '
-SQLITE_CONFIGURE_OFF=	--disable-sqlite
-X11_CONFIGURE_WITH=	x
+
+USB_CONFIGURE_ENABLE=	libusb
+
 X11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 			libfreetype.so:print/freetype2 \
 			libharfbuzz.so:print/harfbuzz
 X11_USES=		xorg
-X11_USE=		XORG=x11 XORG=xpm \
-			GNOME=cairo GNOME=gdkpixbuf GNOME=gtk20
+X11_USE=		GNOME=cairo \
+			GNOME=gdkpixbuf \
+			GNOME=gtk20 \
+			XORG=x11 \
+			XORG=xpm
+X11_CONFIGURE_WITH=	x
 X11_PLIST_SUB=		X11=''
 X11_PLIST_SUB_OFF=	X11='@comment '
 
@@ -102,13 +118,6 @@ post-install-DOCS-on:
 post-install-DOCS-off:
 	${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install -C ${WRKSRC}/Docs/man
 
-post-install-SMSD-on:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/smsd
-	@cd ${WRKSRC}/smsd && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install
-	${INSTALL_SCRIPT} ${WRKSRC}/smsd/action ${STAGEDIR}${PREFIX}/share/smsd
-	${INSTALL_DATA} ${WRKSRC}/smsd/README ${STAGEDIR}${PREFIX}/share/smsd
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/smsd/*.so
-
 post-install-MYSQL-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/smsd
 	${INSTALL_DATA} ${WRKSRC}/smsd/sms.tables.mysql.sql ${STAGEDIR}${PREFIX}/share/smsd
@@ -116,5 +125,12 @@ post-install-MYSQL-on:
 post-install-PGSQL-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/smsd
 	${INSTALL_DATA} ${WRKSRC}/smsd/sms.tables.pq.sql ${STAGEDIR}${PREFIX}/share/smsd
+
+post-install-SMSD-on:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/smsd
+	@cd ${WRKSRC}/smsd && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install
+	${INSTALL_SCRIPT} ${WRKSRC}/smsd/action ${STAGEDIR}${PREFIX}/share/smsd
+	${INSTALL_DATA} ${WRKSRC}/smsd/README ${STAGEDIR}${PREFIX}/share/smsd
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/smsd/*.so
 
 .include <bsd.port.mk>
