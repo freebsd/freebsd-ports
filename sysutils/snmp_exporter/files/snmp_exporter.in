@@ -45,12 +45,20 @@ command_args="-f -p ${pidfile} -t ${name} -T ${name} \
     ${snmp_exporter_args}"
 
 start_precmd=snmp_exporter_startprecmd
+stop_postcmd=snmp_exporter_stoppostcmd
 
 snmp_exporter_startprecmd()
 {
     if [ ! -e ${pidfile} ]; then
         install -o ${snmp_exporter_user} -g ${snmp_exporter_group} /dev/null ${pidfile};
     fi
+}
+
+# daemon(8) runs as snmp_exporter_user, so it usually cannot remove its
+# pidfile from /var/run.  Remove it here once the exporter has stopped.
+snmp_exporter_stoppostcmd()
+{
+    rm -f ${pidfile}
 }
 
 load_rc_config $name
