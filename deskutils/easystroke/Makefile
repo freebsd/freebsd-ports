@@ -1,34 +1,33 @@
 PORTNAME=	easystroke
 DISTVERSION=	0.6.0-9
-PORTREVISION=	14
 DISTVERSIONSUFFIX=	-gf7c1614
+PORTREVISION=	14
 CATEGORIES=	deskutils
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Gesture-recognition application for X11
 WWW=		https://github.com/thjaeger/easystroke
 
-LICENSE=	ISCL
+LICENSE=	ISC
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	help2man:misc/help2man \
-		${LOCALBASE}/include/xorg/xserver-properties.h:x11-servers/xorg-server
-LIB_DEPENDS=	libdbus-1.so:devel/dbus \
-		libdbus-glib-1.so:devel/dbus-glib \
-		libboost_serialization.so:devel/boost-libs
+BUILD_DEPENDS=	${LOCALBASE}/include/xorg/xserver-properties.h:x11-servers/xorg-server \
+		help2man:misc/help2man
+LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs \
+		libdbus-1.so:devel/dbus \
+		libdbus-glib-1.so:devel/dbus-glib
 
 USES=		compiler:c++11-lang gettext-tools gmake gnome pkgconfig xorg
-USE_GNOME=	gtkmm30 intltool
-USE_XORG=	x11 xext xfixes xi xtst
 USE_CXXSTD=	c++11
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	thjaeger
+USE_GNOME=	gtkmm30 intltool
+USE_XORG=	x11 xext xfixes xi xtst
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
-NLS_USES=	gettext-runtime
+NLS_USES=		gettext-runtime
 NLS_ALL_TARGET=		easystroke.desktop all man
 # This builds easystroke without translations
 NLS_ALL_TARGET_OFF=	man
