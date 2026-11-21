@@ -1,5 +1,5 @@
 PORTNAME=	nbd-client
-DISTVERSION=	g20251201
+DISTVERSION=	g20261115
 CATEGORIES=	filesystems
 PKGNAMESUFFIX=	-kmod
 
@@ -12,15 +12,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_i386=	format specifies type 'unsigned long' but the argument has type 'uint64_t' (aka 'unsigned long long')
 
-BROKEN_FreeBSD_16=	Fails to build
-
 ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
 
 USES=		kmod ssl uidfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	ryan-moeller
 GH_PROJECT=	kernel-nbd-client
-GH_TAGNAME=	bb633716de4de2d228cc69bea1e7fa21e3dfcb8f
+GH_TAGNAME=	3cefe3ef9e9ef35f4bbf48c9360891cd56e4bb66
 USE_RC_SUBR=	gnbd
 
 MAKE_ENV=	GEOM_CLASS_DIR="${PREFIX}/lib/geom" \
