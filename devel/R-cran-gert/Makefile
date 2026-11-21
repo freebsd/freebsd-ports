@@ -1,6 +1,5 @@
 PORTNAME=	gert
-DISTVERSION=	2.1.0
-PORTREVISION=	3
+DISTVERSION=	2.5.0
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -19,6 +18,7 @@ CRAN_DEPENDS=	R-cran-askpass>0:security/R-cran-askpass \
 		R-cran-zip>=2.1.0:archivers/R-cran-zip
 LIB_DEPENDS=	libgit2.so:devel/libgit2
 RUN_DEPENDS=	${CRAN_DEPENDS}
+TEST_DEPENDS=	R-cran-testthat>0:devel/R-cran-testthat
 
 USES=		cran:auto-plist,compiles
 
