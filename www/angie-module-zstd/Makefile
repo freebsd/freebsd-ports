@@ -1,10 +1,10 @@
 PORTNAME=	angie-module-zstd
-MODULE_VERSION=	0.1.1
-MODULE_PORTREVISION=	10
-GH_TUPLE=	tokers:zstd-nginx-module:${MODULE_VERSION}:module
+MODULE_VERSION=	0.90.9
+MODULE_PORTREVISION=	0
+GH_TUPLE=	myguard-labs:nginx-zstd-module:${MODULE_VERSION}:module
 
 COMMENT=	Angie zstd dynamic module
-WWW=		https://github.com/tokers/zstd-nginx-module/
+WWW=		https://github.com/myguard-labs/nginx-zstd-module/
 
 LICENSE=	BSD2CLAUSE
 

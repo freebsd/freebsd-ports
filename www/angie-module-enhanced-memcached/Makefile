@@ -1,6 +1,6 @@
 PORTNAME=	angie-module-enhanced-memcached
 MODULE_VERSION=	0.3
-MODULE_PORTREVISION=	10
+MODULE_PORTREVISION=	11
 GH_TUPLE=	bpaquet:ngx_http_enhanced_memcached_module:v${MODULE_VERSION}:module
 
 COMMENT=	Angie enhanced memcached dynamic module
