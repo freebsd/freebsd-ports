@@ -20,7 +20,8 @@ GH_ACCOUNT=	Sonic-DE
 USE_GL=		gl opengl
 USE_KDE=	config \
 		ecm:build
-USE_QT=		base
+USE_QT=		base \
+		tools:build
 USE_XORG=	xcb
 
 post-patch:
