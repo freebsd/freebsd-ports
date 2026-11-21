@@ -1,6 +1,6 @@
 PORTNAME=	monitoring-plugins
 PORTVERSION=	3.0.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://www.monitoring-plugins.org/download/ \
 		LOCAL/mat/${PORTNAME}
@@ -118,7 +118,7 @@ QSTAT_RUN_DEPENDS=	qstat:games/qstat
 QSTAT_CONFIGURE_OFF=	ac_cv_path_PATH_TO_QSTAT= \
 			ac_cv_path_PATH_TO_QUAKESTAT=
 
-RADIUS_LIB_DEPENDS=	libradiusclient-ng.so:net/radiusclient
+RADIUS_LIB_DEPENDS=	libradcli.so:net/radcli
 RADIUS_CONFIGURE_WITH=	radius
 
 SSH_PORTABLE_BUILD_DEPENDS=	${LOCALBASE}/bin/ssh:security/openssh-portable
