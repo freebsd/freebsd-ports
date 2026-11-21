@@ -1,4 +1,4 @@
---- content/browser/web_contents/web_contents_impl.cc.orig	2026-11-05 12:23:53 UTC
+--- content/browser/web_contents/web_contents_impl.cc.orig	2026-11-20 12:09:56 UTC
 +++ content/browser/web_contents/web_contents_impl.cc
 @@ -1490,7 +1490,7 @@ WebContentsImpl::WebContentsImpl(BrowserContext* brows
    renderer_preferences_.caret_blink_interval =
@@ -9,7 +9,7 @@
    renderer_preferences_.use_overlay_scrollbar =
        native_theme->use_overlay_scrollbar();
  #endif
-@@ -13003,7 +13003,7 @@ void WebContentsImpl::OnNativeThemeUpdated(ui::NativeT
+@@ -13001,7 +13001,7 @@ void WebContentsImpl::OnNativeThemeUpdated(ui::NativeT
  
    const auto caret_blink_interval = observed_theme->caret_blink_interval();
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
@@ -18,7 +18,7 @@
    const auto use_overlay_scrollbar = observed_theme->use_overlay_scrollbar();
  #endif
    bool renderer_preference_changed = false;
-@@ -13012,7 +13012,7 @@ void WebContentsImpl::OnNativeThemeUpdated(ui::NativeT
+@@ -13010,7 +13010,7 @@ void WebContentsImpl::OnNativeThemeUpdated(ui::NativeT
      renderer_preference_changed = true;
    }
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \

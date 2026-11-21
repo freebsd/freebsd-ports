@@ -1,4 +1,4 @@
---- third_party/blink/renderer/core/exported/web_view_impl.cc.orig	2026-10-30 11:54:04 UTC
+--- third_party/blink/renderer/core/exported/web_view_impl.cc.orig	2026-11-20 12:09:56 UTC
 +++ third_party/blink/renderer/core/exported/web_view_impl.cc
 @@ -197,7 +197,7 @@
  #include "ui/gfx/geometry/skia_conversions.h"
@@ -27,7 +27,7 @@
  void UpdateUseOverlayScrollbar(bool use_overlay_scrollbar) {
    ui::NativeTheme::GetInstanceForWeb()->set_use_overlay_scrollbar(
        use_overlay_scrollbar);
-@@ -3729,7 +3729,7 @@ void WebViewImpl::UpdateFontRenderingFromRendererPrefs
+@@ -3733,7 +3733,7 @@ void WebViewImpl::UpdateFontRenderingFromRendererPrefs
        gfx::FontRenderParams::SUBPIXEL_RENDERING_NONE);
    WebFontRenderStyle::SetSubpixelPositioning(
        renderer_preferences_.use_subpixel_positioning);
@@ -36,7 +36,7 @@
    if (!renderer_preferences_.system_font_family_name.empty()) {
      WebFontRenderStyle::SetSystemFontFamily(blink::WebString::FromUtf8(
          renderer_preferences_.system_font_family_name));
-@@ -3873,7 +3873,7 @@ void WebViewImpl::UpdateRendererPreferences(
+@@ -3877,7 +3877,7 @@ void WebViewImpl::UpdateRendererPreferences(
        renderer_preferences_.selection_clipboard_buffer_available);
  #endif  // BUILDFLAG(IS_OZONE)
  
@@ -45,7 +45,7 @@
    GetSettings()->SetMiddleClickPasteAllowed(
        renderer_preferences_.middle_click_paste_allowed);
  #endif  // BUILDFLAG(IS_LINUX)
-@@ -3882,7 +3882,7 @@ void WebViewImpl::UpdateRendererPreferences(
+@@ -3886,7 +3886,7 @@ void WebViewImpl::UpdateRendererPreferences(
        renderer_preferences_.explicitly_allowed_network_ports);
  
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \

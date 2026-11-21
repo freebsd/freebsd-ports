@@ -308,6 +308,18 @@ MAKE_ENV+=	GOCACHE=${WRKDIR}/go-cache
 # This is a workaround to avoid filesystem violations during poudriere build
 MAKE_ENV+=	PYTHONDONTWRITEBYTECODE=1
 
+# v8
+# electron release tarball does not contain v8/..electron-patch-fingerprint.json
+# generate fingerprint locally from electron and FreeBSD ports v8 patches
+V8_FINGERPRINT_CMD=	\
+		${CAT} ${WRKSRC}/electron/patches/v8/.patches \
+			${WRKSRC}/electron/patches/v8/*.patch \
+			${PATCHDIR}/patch-v8_* 2>/dev/null | \
+		${SHA256} | ${CUT} -c 1-16
+V8_EMBEDDER_STRING=	-electron.${V8_FINGERPRINT_CMD:sh}
+CONFIGURE_ENV+=	ELECTRON_V8_EMBEDDER_STRING=${V8_EMBEDDER_STRING}
+MAKE_ENV+=	ELECTRON_V8_EMBEDDER_STRING=${V8_EMBEDDER_STRING}
+
 TEST_ENV+=	${MAKE_ENV} \
 		ELECTRON_OUT_DIR=${BUILDTYPE} \
 		LOCAL_GIT_DIRECTORY=${LOCALBASE} \

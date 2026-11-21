@@ -1,4 +1,4 @@
---- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2026-11-14 21:53:39 UTC
+--- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2026-11-20 12:09:56 UTC
 +++ third_party/blink/renderer/platform/runtime_enabled_features.json5
 @@ -480,7 +480,7 @@
          "default": "",
@@ -90,7 +90,7 @@
        public: true,
        base_feature_status: "enabled",
        copied_from_base_feature_if: "overridden",
-@@ -6714,7 +6714,7 @@
+@@ -6732,7 +6732,7 @@
        name: "UnrestrictedSharedArrayBuffer",
        base_feature: "none",
        origin_trial_feature_name: "UnrestrictedSharedArrayBuffer",
@@ -99,7 +99,7 @@
      },
      // Enables using policy-controlled feature "usb-unrestricted" to allow
      // isolated context to access protected USB interface classes and to
-@@ -6914,7 +6914,7 @@
+@@ -6939,7 +6939,7 @@
        name: "WebAppInstallation",
        status: {"Android": "", "default": "test"},
        origin_trial_feature_name: "WebAppInstallation",
@@ -108,7 +108,7 @@
        public: true,
        base_feature_status: "enabled",
        copied_from_base_feature_if: "overridden",
-@@ -6928,7 +6928,7 @@
+@@ -6953,7 +6953,7 @@
      {
        name: "WebAppScopeExtensions",
        origin_trial_feature_name: "WebAppScopeExtensions",
