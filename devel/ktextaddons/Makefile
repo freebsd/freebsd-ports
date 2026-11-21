@@ -16,7 +16,8 @@ USE_KDE=	archive colorscheme coreaddons i18n iconthemes \
 		itemviews kio service sonnet \
 		syntaxhighlighting textwidgets widgetsaddons \
 		ecm:build
-USE_QT=		base multimedia speech
+USE_QT=		base multimedia speech \
+		declarative:build tools:build
 USE_XORG=	x11
 
 SHEBANG_FILES=	textedittexttospeech/kokoroinstall/scripts/kokoro_helper.py \
