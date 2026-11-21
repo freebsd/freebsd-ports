@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	3.4.0
 CATEGORIES=	devel
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TOML config parser and serializer for C++
 WWW=		https://marzer.github.io/tomlplusplus/
 
