@@ -10,17 +10,18 @@ LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libqca-qt6.so:devel/qca@qt6
 
-USES=		cmake compiler:c++11-lang cpe desktop-file-utils gettext kde:6 \
-		qt:6 shebangfix tar:xz xorg \
+USES=		cmake compiler:c++11-lang cpe desktop-file-utils gettext gl \
+		kde:6 qt:6 shebangfix tar:xz xorg \
 		python:run
-USE_KDE=	archive attica auth bookmarks codecs completion config \
-		configwidgets coreaddons crash dbusaddons doctools globalaccel \
-		i18n iconthemes idletime itemviews jobwidgets kio newstuff \
-		notifications notifyconfig parts service solid sonnet \
+USE_GL=		opengl
+USE_KDE=	archive bookmarks codecs config configwidgets \
+		coreaddons crash dbusaddons globalaccel i18n idletime \
+		itemviews kio newstuff notifications notifyconfig parts \
 		statusnotifieritem textwidgets wallet widgetsaddons \
-		windowsystem xmlgui \
+		windowsystem \
 		ecm:build
-USE_QT=		base
+USE_QT=		5compat base multimedia \
+		declarative:build tools:build
 USE_XORG=	x11
 
 SHEBANG_FILES=	data/scripts/bug \
