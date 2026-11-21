@@ -1,0 +1,38 @@
+From 2db62f91e03ff7199b52049082d0e5a6ba1c7085 Mon Sep 17 00:00:00 2001
+From: Jakob Petsovits <jpetso@petsovits.com>
+Date: Mon, 7 Sep 2026 22:19:57 -0400
+Subject: [PATCH] Add missing Qt::Qml link
+
+---
+ CMakeLists.txt     | 2 +-
+ src/CMakeLists.txt | 1 +
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 54123ac..81af578 100644
+--- ./CMakeLists.txt
++++ ./CMakeLists.txt
+@@ -19,7 +19,7 @@ include(FeatureSummary)
+ include(KDEGitCommitHooks)
+ include(ECMDeprecationSettings)
+ 
+-find_package(Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS Core Gui Widgets Quick QuickWidgets DBus)
++find_package(Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS Core Gui Widgets Qml Quick QuickWidgets DBus)
+ 
+ find_package(KF6 ${KF6_MIN_VERSION} REQUIRED COMPONENTS
+     CoreAddons
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index ee18ab4..0bd1f51 100644
+--- ./src/CMakeLists.txt
++++ ./src/CMakeLists.txt
+@@ -23,6 +23,7 @@ kconfig_add_kcfg_files(kcm_sddm sddmsettings.kcfgc GENERATE_MOC)
+ 
+ target_compile_definitions(kcm_sddm PRIVATE -DPROJECT_VERSION="${PROJECT_VERSION}")
+ target_link_libraries(kcm_sddm PRIVATE
++    Qt6::Qml
+     KF6::I18n
+     KF6::AuthCore
+     KF6::KCMUtils
+-- 
+GitLab
+
