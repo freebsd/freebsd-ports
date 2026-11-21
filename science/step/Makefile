@@ -6,20 +6,18 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE interactive physics simulator
 WWW=		https://edu.kde.org/step
 
-LIB_DEPENDS=	libcln.so:math/cln \
-		libgsl.so:math/gsl \
+LIB_DEPENDS=	libgsl.so:math/gsl \
 		libqalculate.so:math/libqalculate
 
-USES=		cmake compiler:c++11-lang desktop-file-utils eigen:3 gettext \
+USES=		cmake compiler:c++11-lang desktop-file-utils eigen:3 gettext-tools gl \
 		kde:6 pkgconfig python qt:6 shared-mime-info shebangfix tar:xz \
 		xorg
-USE_KDE=	attica auth bookmarks codecs completion config configwidgets \
-		coreaddons crash doctools guiaddons i18n iconthemes itemmodels \
-		itemviews jobwidgets kio newstuff notifications parts plotting \
-		service solid sonnet textwidgets unitconversion widgetsaddons \
-		windowsystem xmlgui \
+USE_GL=		opengl
+USE_KDE=	config crash i18n iconthemes kio newstuff plotting \
+		textwidgets xmlgui \
 		ecm:build
-USE_QT=		base
+USE_QT=		base svg \
+		declarative:build tools:build
 USE_XORG=	x11
 
 SHEBANG_FILES=	step/data/extractxml
