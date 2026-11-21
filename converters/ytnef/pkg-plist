@@ -7,8 +7,10 @@ include/mapitags.h
 include/tnef-errors.h
 include/tnef-types.h
 include/ytnef.h
-lib/libytnef.a
 lib/libytnef.so
 lib/libytnef.so.0
 lib/libytnef.so.0.0.0
 libdata/pkgconfig/libytnef.pc
+share/man/man1/ytnef.1.gz
+share/man/man1/ytnefprint.1.gz
+share/man/man1/ytnefprocess.1.gz
