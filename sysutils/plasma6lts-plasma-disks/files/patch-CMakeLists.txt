@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2026-10-16 08:54:09 UTC
++++ CMakeLists.txt
+@@ -25,7 +25,7 @@ include(ECMDeprecationSettings)
+ include(KDEGitCommitHooks)
+ include(ECMDeprecationSettings)
+ 
+-find_package(Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS Gui Core)
++find_package(Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS Gui Core Qml)
+ find_package(KF6 ${KF6_MIN_VERSION} REQUIRED COMPONENTS
+     CoreAddons
+     DBusAddons

@@ -1,0 +1,9 @@
+--- src/kcm/CMakeLists.txt.orig	2026-10-16 08:54:09 UTC
++++ src/kcm/CMakeLists.txt
+@@ -34,5 +34,6 @@ target_link_libraries(kcm_disks PRIVATE
+     KF6::I18n
+     KF6::KCMUtilsQuick
+     Qt6::DBus
++    Qt6::Qml
+     KF6::Solid
+ )
