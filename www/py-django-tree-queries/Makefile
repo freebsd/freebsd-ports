@@ -1,5 +1,5 @@
 PORTNAME=	django-tree-queries
-DISTVERSION=	0.28.0
+DISTVERSION=	0.29.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -9,7 +9,7 @@ MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Tree queries with explicit opt-in, without configurability
 WWW=		https://github.com/feincms/django-tree-queries
 
-LICENSE=	BSD3CLAUSE
+LICENSE=	BSD-3-Clause
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
