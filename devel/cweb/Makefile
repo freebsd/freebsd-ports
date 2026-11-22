@@ -1,15 +1,15 @@
 PORTNAME=	cweb
-PORTVERSION=	3.64a.a
-PORTREVISION=	1
+PORTVERSION=	4.12.2
 CATEGORIES=	devel
-MASTER_SITES=	TEX/web/c_cpp/cweb
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/.([a-z])$/\1/}
+MASTER_SITES=	https://github.com/ascherer/${PORTNAME}/releases/download/${PORTNAME}-${PORTVERSION}/
 
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	Literate programming tools for the C language
+WWW=		https://ctan.org/tex-archive/web/c_cpp/cweb
 
 NO_WRKSUBDIR=	yes
 
+MAKE_JOBS_UNSAFE=	yes
 MAKE_ARGS=	CWEBINPUTS="${DATADIR}" \
 		CFLAGS="${CFLAGS}" \
 		LINKFLAGS="" \
