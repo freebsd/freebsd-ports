@@ -1,0 +1,8 @@
+The zip module assembles a ZIP archive on the fly from files that nginx
+fetches itself.  An upstream answers a request with a list of files, their
+sizes and checksums, and the module streams the archive to the client
+without ever writing it to disk.  Ranges and resumed downloads work as long
+as the upstream keeps the list stable.
+
+This port only installs the module sources.  The module itself is built by
+the nginx ports when their HTTP_ZIP option is enabled.

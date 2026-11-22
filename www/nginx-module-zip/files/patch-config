@@ -1,0 +1,11 @@
+--- config.orig	2026-11-09 01:58:10 UTC
++++ config
+@@ -46,7 +46,7 @@ ngx_feature_name="NGX_ZIP_MULTI_HEADERS_LINKED_LISTS"
+ 
+ ngx_feature="multi-value headers are linked lists (nginx 1.23.0+)"
+ ngx_feature_name="NGX_ZIP_MULTI_HEADERS_LINKED_LISTS"
+-ngx_feature_run=yes
++ngx_feature_run=no
+ ngx_feature_incs="#include \"nginx.h\""
+ ngx_feature_path="src/core"
+ ngx_feature_test="

@@ -600,6 +600,7 @@
     SUBDIR += nginx-module-vts
     SUBDIR += nginx-module-websockify
     SUBDIR += nginx-module-xss
+    SUBDIR += nginx-module-zip
     SUBDIR += nginx-module-zstd
     SUBDIR += nginx-naxsi
     SUBDIR += nginx-prometheus-exporter
