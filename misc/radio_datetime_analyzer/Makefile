@@ -7,7 +7,7 @@ FJ_ACCOUNT=	rene0
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Analyzer for DCF77 and MSF log files
 
-LICENSE=	APACHE20 MIT
+LICENSE=	Apache-2.0 MIT
 LICENSE_COMB=	dual
 
 USES=		cargo
