@@ -1,0 +1,4 @@
+bin/emfor
+bin/emfor-check
+@sample etc/emfor/emfor.toml.sample
+@dir(emfor,emfor,0755) /var/db/emfor

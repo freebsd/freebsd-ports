@@ -1,0 +1,6 @@
+emfor is a health-check daemon that runs on every application host. It
+checks the backends of your services (TCP, HTTP, scripts, and plugins for
+redis, MySQL, PostgreSQL and LDAP) and publishes their health in a local
+LMDB state store. Applications ask a small client library for a healthy
+backend; the answer comes from a local file, so a lookup sends nothing
+over the network. An optional DNS server serves programs without a client.

@@ -1,0 +1,110 @@
+#!/bin/sh
+#
+# FreeBSD rc.d script for the emfor daemon, installed by the port in
+# packages/freebsd as %%PREFIX%%/etc/rc.d/emfor. To use it without the port,
+# fill in the prefix as the port does ("FreeBSD" in
+# docs/manual/04-installing.md shows the command), install it with mode
+# 0555, create the emfor user (or set emfor_user), and enable it with:
+#
+#   sysrc emfor_enable=YES
+#
+# Settings in /etc/rc.conf:
+#   emfor_enable  YES to start at boot (default NO)
+#   emfor_config  config file (default %%PREFIX%%/etc/emfor/emfor.toml)
+#                 Build emfor with EMFOR_PREFIX=%%PREFIX%% to make this the
+#                 binary's own default too, so "emfor status" and
+#                 "emfor check-config" need no --config
+#                 (see docs/deploy/daemon.md).
+#   emfor_user    user to run as (default emfor, which the port creates).
+#                 It needs write access to the directory of [store] path and
+#                 nothing else, since the default DNS port 5300 is unprivileged.
+#                 "service emfor configtest" (also run before start) checks
+#                 the config as this user too, so plugins never run as root.
+#                 rc.subr runs the whole command as this user, the daemon(8)
+#                 supervisor included, so its pid files live in
+#                 /var/run/emfor, which start creates owned by this user.
+#
+# "service emfor reload" checks the config first and fails without touching
+# the daemon if it is invalid; otherwise it sends SIGHUP and the daemon
+# applies the config if it is fully valid. [store], [dns] listen and
+# [metrics] listen changes need "service emfor restart".
+#
+# daemon(8) supervises emfor and starts it again 2 seconds after it exits,
+# like Restart=on-failure in the systemd unit. "service emfor stop" stops
+# the supervisor, which stops emfor. Unlike systemd, daemon(8) also
+# restarts after exit status 1 (a listen address in use, the store held by
+# another emfor); the configtest before start catches an invalid config.
+#
+# Checked on FreeBSD 15.1-RELEASE (arm64) with tests/resolver/freebsd.sh,
+# which exercises start, reload and stop (also the optional CI freebsd job).
+
+# PROVIDE: emfor
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="emfor"
+rcvar="emfor_enable"
+load_rc_config "$name"
+
+: "${emfor_enable:=NO}"
+: "${emfor_config:=%%PREFIX%%/etc/emfor/emfor.toml}"
+: "${emfor_user:=emfor}"
+
+emfor_bin="%%PREFIX%%/bin/emfor"
+# pidfile: the daemon(8) supervisor, which rc.subr checks, stops and waits
+# for. emfor_pidfile: emfor itself, which reload signals. rc.subr starts
+# daemon(8) as emfor_user (it does that for any ${name}_user), so both live
+# in a directory that user can write: /var/run itself is root's.
+emfor_rundir="/var/run/${name}"
+pidfile="${emfor_rundir}/${name}.pid"
+emfor_pidfile="${emfor_rundir}/${name}.child.pid"
+command="/usr/sbin/daemon"
+# -f: stdin, stdout and stderr of daemon(8) and emfor go to /dev/null (then
+#     -S sends emfor's output to syslog), so neither keeps the terminal or
+#     the SSH session that ran "service emfor start" open.
+# -P/-p: pid files of the supervisor and of emfor.
+# -R 2: start emfor again 2 seconds after it exits.
+# -S -T: send emfor's log output (stderr) to syslog with tag "emfor".
+# No -u: daemon(8) already runs as emfor_user, and -u needs root.
+command_args="-f -P ${pidfile} -p ${emfor_pidfile} -R 2 -S -T ${name} ${emfor_bin} server --config ${emfor_config}"
+required_files="${emfor_config}"
+extra_commands="reload configtest"
+start_precmd="emfor_precmd"
+reload_cmd="emfor_reload"
+configtest_cmd="emfor_configtest"
+
+emfor_configtest()
+{
+	# As emfor_user, like the daemon: check-config starts the plugins the
+	# config declares, and they must not run as root when the daemon does
+	# not. su -m keeps the shell, since emfor_user may have no login shell.
+	if [ "${emfor_user}" = root ]; then
+		"${emfor_bin}" check-config --config "${emfor_config}"
+	else
+		su -m "${emfor_user}" -c \
+		    "\"${emfor_bin}\" check-config --config \"${emfor_config}\""
+	fi
+}
+
+emfor_reload()
+{
+	# Check first, so an invalid config never reaches the daemon; errors go
+	# to stderr. Then signal emfor itself, not the daemon(8) supervisor.
+	emfor_configtest >/dev/null || return 1
+	if ! pkill -HUP -F "${emfor_pidfile}" emfor; then
+		echo "${name} is not running." >&2
+		return 1
+	fi
+}
+
+emfor_precmd()
+{
+	# Refuse to start with an invalid config; errors go to stderr.
+	emfor_configtest >/dev/null || return 1
+	# The pid file directory, writable by the user daemon(8) runs as.
+	install -d -o "${emfor_user}" -m 0755 "${emfor_rundir}"
+}
+
+run_rc_command "$1"

@@ -68,6 +68,7 @@
     SUBDIR += docsis
     SUBDIR += driftnet
     SUBDIR += ehnt
+    SUBDIR += emfor
     SUBDIR += etherape
     SUBDIR += ettercap
     SUBDIR += fastnetmon
