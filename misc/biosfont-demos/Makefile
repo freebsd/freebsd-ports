@@ -8,7 +8,8 @@ FJ_PROJECT=	biosfont
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Demos for the biosfont kernel module
 
-LICENSE=	BSD2CLAUSE
+LICENSE=	BSD-2-Clause
+LICENSE_FILE=	${WRKDIR}/biosfont/LICENSE
 
 DEPRECATED=	No development in years
 EXPIRATION_DATE=2026-12-31
