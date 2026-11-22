@@ -18,7 +18,4 @@ NIGHTLY_DATE=		2026-11-10
 BOOTSTRAPS_DATE=	2026-09-29
 RUST_BOOTSTRAP_VERSION=	beta
 
-post-extract:
-	@${FIND} -d ${WRKSRC} -name .github -exec ${RM} -r {} \;
-
 .include "${MASTERDIR}/Makefile"
