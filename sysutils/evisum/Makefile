@@ -14,6 +14,7 @@ LIB_DEPENDS=	libefl.so:devel/efl
 DIST_SUBDIR=	enlightenment
 USES=		compiler:c11 desktop-file-utils meson pkgconfig tar:xz
 
+PLIST_FILES=    "@(root,kmem,2755) bin/enigmatic"
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 .include <bsd.port.mk>
