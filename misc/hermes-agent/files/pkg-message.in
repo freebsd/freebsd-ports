@@ -21,6 +21,11 @@ sysrc hermes_dashboard_user="<account whose ~/.hermes is used>"
 See %%PREFIX%%/etc/rc.d/hermes_gateway and hermes_dashboard for all
 tunables (host, port, profile, extra flags).
 
+Hermes runs from a private Python virtualenv under
+%%PREFIX%%/lib/hermes-agent/venv, not the base interpreter directly.
+After upgrading the base interpreter (lang/python3XX), reinstall
+hermes-agent to recreate the venv.
+
 `hermes --tui` and the dashboard Chat tab need the terminal UI, packaged
 separately because it requires Node.js:
 

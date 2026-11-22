@@ -68,7 +68,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}agent-client-protocol>=0.9.0:devel/py-agent-
 		${PYTHON_PKGNAMEPREFIX}watchfiles>=0.20:devel/py-watchfiles@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}websockets>=15.0.1:devel/py-websockets@${PY_FLAVOR}
 
-USES=		python:3.11+ shebangfix
+USES=		gettext-runtime python:3.11+ shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	NousResearch
 GH_PROJECT=	hermes-agent
@@ -78,7 +78,6 @@ USE_RC_SUBR=	hermes_dashboard hermes_gateway
 
 SUB_FILES=	pkg-message
 
-NO_ARCH=	yes
 NO_BUILD=	yes
 
 # Hermes is an application, not a Python library.  Upstream's Dockerfile,
@@ -91,6 +90,23 @@ NO_BUILD=	yes
 # create thin wrapper scripts in ${PREFIX}/bin that inject HERMES_LIBDIR
 # into sys.path before calling each entry point.
 HERMES_LIBDIR=	${PREFIX}/lib/${PORTNAME}
+# The wrapper must not run the base interpreter directly.  hermes-agent's
+# runtime self-protection guard (agent/runtime_self_protection.py) protects
+# the whole sys.prefix of the interpreter it runs from, and the base
+# interpreter's prefix is ${PREFIX} itself -- so a base-interpreter wrapper
+# would leave the agent unable to write anywhere under ${PREFIX} (its ports
+# tree, its own install tree, ...).  A private virtualenv narrows the guard
+# to the venv dir and the base interpreter's location.
+#
+# --system-site-packages: the runtime dependencies stay ports-tree packages
+# in the base site-packages (see RUN_DEPENDS); the venv only provides its
+# own sys.prefix.
+# --copies: venv's bin/python* are symlinks by default, but this port's
+# plist generation (post-install) only enumerates -type f / -type d, so a
+# symlinked interpreter would go un-packaged.
+# --without-pip: hermes uses upstream's pm (lazy installs off), not pip.
+HERMES_VENV=	${HERMES_LIBDIR}/venv
+HERMES_VENV_PYTHON=	${HERMES_VENV}/bin/python3
 
 PLIST_SUB+=	HERMES_LIBDIR=${HERMES_LIBDIR:S,^${PREFIX}/,,}
 
@@ -176,6 +192,18 @@ post-patch:
 
 do-install:
 	${MKDIR} ${STAGEDIR}${HERMES_LIBDIR}
+	${PYTHON_CMD} -m venv --copies --system-site-packages \
+		--without-pip ${STAGEDIR}${HERMES_VENV}
+	# Strip the venv's activation scripts and the pyvenv.cfg 'command'
+	# line: both hardcode the build-time venv location, and stage-qa
+	# rejects files that reference the staging directory.  The
+	# wrapper invokes the venv interpreter directly, so neither is
+	# ever needed.
+	${RM} -f ${STAGEDIR}${HERMES_VENV}/bin/Activate.ps1 \
+		${STAGEDIR}${HERMES_VENV}/bin/activate \
+		${STAGEDIR}${HERMES_VENV}/bin/activate.csh \
+		${STAGEDIR}${HERMES_VENV}/bin/activate.fish
+	${SED} -i '' '/^command = /d' ${STAGEDIR}${HERMES_VENV}/pyvenv.cfg
 .for d in ${HERMES_PKGS}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${HERMES_LIBDIR} \
 		"! -name __pycache__ ! -name *.pyc"
@@ -188,21 +216,21 @@ do-install:
 	${SED} -e 's|%%HERMES_LIBDIR%%|${HERMES_LIBDIR}|g' \
 		-e 's|%%DATADIR%%|${DATADIR}|g' \
 		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-		-e 's|%%PYTHON_CMD%%|${PYTHON_CMD}|g' \
+		-e 's|%%HERMES_VENV_PYTHON%%|${HERMES_VENV_PYTHON}|g' \
 		-e 's|%%ENTRY_MODULE%%|hermes_cli.main|g' \
 		-e 's|%%ENTRY_FUNC%%|main|g' \
 		${FILESDIR}/wrapper.in > ${STAGEDIR}${PREFIX}/bin/hermes
 	${SED} -e 's|%%HERMES_LIBDIR%%|${HERMES_LIBDIR}|g' \
 		-e 's|%%DATADIR%%|${DATADIR}|g' \
 		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-		-e 's|%%PYTHON_CMD%%|${PYTHON_CMD}|g' \
+		-e 's|%%HERMES_VENV_PYTHON%%|${HERMES_VENV_PYTHON}|g' \
 		-e 's|%%ENTRY_MODULE%%|run_agent|g' \
 		-e 's|%%ENTRY_FUNC%%|main|g' \
 		${FILESDIR}/wrapper.in > ${STAGEDIR}${PREFIX}/bin/hermes-agent
 	${SED} -e 's|%%HERMES_LIBDIR%%|${HERMES_LIBDIR}|g' \
 		-e 's|%%DATADIR%%|${DATADIR}|g' \
 		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-		-e 's|%%PYTHON_CMD%%|${PYTHON_CMD}|g' \
+		-e 's|%%HERMES_VENV_PYTHON%%|${HERMES_VENV_PYTHON}|g' \
 		-e 's|%%ENTRY_MODULE%%|acp_adapter.entry|g' \
 		-e 's|%%ENTRY_FUNC%%|main|g' \
 		${FILESDIR}/wrapper.in > ${STAGEDIR}${PREFIX}/bin/hermes-acp

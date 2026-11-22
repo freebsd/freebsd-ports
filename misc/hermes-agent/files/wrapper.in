@@ -1,5 +1,9 @@
-#!%%PYTHON_CMD%%
+#!%%HERMES_VENV_PYTHON%%
 # Wrapper installed by FreeBSD ports — see misc/hermes-agent.
+# Runs from the port's private virtualenv (HERMES_VENV in the Makefile),
+# not the base interpreter: its sys.prefix is ${PREFIX} itself, and
+# hermes-agent's runtime self-protection guard would then protect all
+# of ${PREFIX} from agent writes.
 # Hermes is installed under %%HERMES_LIBDIR%% (not site-packages) because
 # upstream ships top-level packages with generic names (tools, agent,
 # gateway, plugins, ...) that would collide with other Python packages.
