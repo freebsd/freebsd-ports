@@ -53,7 +53,7 @@ $portdir = '.';
 
 # version variables
 my $major = 2;
-my $minor = 25;
+my $minor = 26;
 my $micro = 0;
 
 # default setting - for FreeBSD
@@ -352,6 +352,8 @@ if ($committer) {
 			&perror("FATAL", $fullname, -1, "empty file and should be removed. ".
 				    "If it still needs to be there, put a dummy comment ".
 					"to state that the file is intentionally left empty.");
+		} elsif (-d && /^__pycache__$/) {
+			&perror("FATAL", $fullname, -1, "Python object cache directory should be removed.");
 		} elsif (-d && scalar(my @x = <$_/{*,.?*}>) <= 1) {
 			&perror("FATAL", $fullname, -1, "empty directory should be removed.") unless ($fullname =~ /^\.git/);
 		} elsif (/^\./) {
@@ -534,7 +536,8 @@ sub checkdescr {
 		$tmp .= $_;
 		chomp || &perror("WARN", $file, -1, "lines should terminate with a ".
 			"newline (i.e. '\\n').");
-		if (/\r$/) {
+		if (/
+$/) {
 			&perror("WARN", $file, -1, "lines should not contain carriage ".
 				"returns.  Strip all carriage returns (e.g. run dos2unix) ".
 				"in $file.");
@@ -935,10 +938,10 @@ sub checkplist {
 	}
 
 	if ($makevar{USE_LDCONFIG}) {
-		if ($makevar{USE_LDCONFIG} && $makevar{USE_LDCONFIG} ne "$makevar{PREFIX}/lib" && !$found_so) {
+		if ($makevar{USE_LDCONFIG} && $makevar{USE_LDCONFIG} !~ m|$makevar{PREFIX}/lib\b| && !$found_so) {
 			&perror("WARN", $file, -1, "You have defined USE_LDCONFIG, but this ".
 				"port does not install any shared objects.");
-		} elsif ($makevar{USE_LDCONFIG} eq "$makevar{PREFIX}/lib" && !$found_prefix_so) {
+		} elsif ($makevar{USE_LDCONFIG} =~ m|$makevar{PREFIX}/lib\n| && !$found_prefix_so) {
 			&perror("WARN", $file, -1, "You have defined USE_LDCONFIG, but this ".
 				"port does not install any shared objects into \${PREFIX}/lib.");
 		}
@@ -1100,7 +1103,8 @@ sub checkpatch {
 			"``java'' instead");
 	}
 
-	if ($whole =~ /\r/) {
+	if ($whole =~ /
+/) {
 		my $lineno = &linenumber($`);
 		&perror("WARN", $file, $lineno, "patch contains ^M characters. ".
 			"Consider defining USES=dos2unix to remove DOS line endings ".
@@ -1243,8 +1247,8 @@ sub check_depends_syntax {
 
 	$ENV{'PORTSDIR'} //= $portsdir;
 
-	foreach my $i (grep(/^(PATCH_|EXTRACT_|LIB_|BUILD_|RUN_|TEST_|FETCH_)*DEPENDS[?+]?=/, split(/\n/, $tmp))) {
-		$i =~ s/^((PATCH_|EXTRACT_|LIB_|BUILD_|RUN_|TEST_|FETCH_)*DEPENDS)[?+]?=[ \t]*//;
+	foreach my $i (grep(/^(PATCH_|EXTRACT_|LIB_|BUILD_|RUN_|TEST_|FETCH_|PKG_)*DEPENDS[?+]?=/, split(/\n/, $tmp))) {
+		$i =~ s/^((PATCH_|EXTRACT_|LIB_|BUILD_|RUN_|TEST_|FETCH_|PKG_)*DEPENDS)[?+]?=[ \t]*//;
 		$j = $1;
 		$seen_depends{$j}++;
 		if ($j ne 'DEPENDS' &&
@@ -1279,12 +1283,17 @@ sub check_depends_syntax {
 				next;
 			}
 			my ($tmp_depends, $fl) = split(/\@/, $k);
-			$tmp_depends =~ s/\$\{[^}]+}//g;
+			while ($tmp_depends =~ /\$\{([^\}]+)\}/g) {
+				my $emb_var = $1;
+				my $emb_var_val = &get_makevar($emb_var);
+				$tmp_depends =~ s/\$\{$emb_var\}/$emb_var_val/;
+			}
+			#$tmp_depends =~ s/\$\{[^}]+}//g;
 			my @l = split(':', $tmp_depends);
 
 			print "OK: checking dependency value for $j.\n"
 				if ($verbose);
-			if ($ok =~ /\$\{((PATCH_|EXTRACT_|LIB_|BUILD_|RUN_|TEST_|FETCH_)*DEPENDS)}/) {
+			if ($ok =~ /\$\{((PATCH_|EXTRACT_|LIB_|BUILD_|RUN_|TEST_|FETCH_|PKG_)*DEPENDS)}/) {
 				&perror("WARN", $file, -1, "do not set $j to $ok. ".
 					"Instead, explicity list out required $j dependencies.");
 			}
@@ -1452,6 +1461,27 @@ sub check_depends_syntax {
 						"libFOO.so (e.g., lib$m{'dep'}.so).");
 			}
 
+			# Check we have a valid package name.
+			if ($m{'dep'} =~ /[<>=]/) {
+				my $dep_pkg = $m{'dep'};
+				$dep_pkg =~ s/[<>=]+.+$//;
+				my $makeenv_save = $makeenv;
+				if ($m{'fla'} ne '') {
+					my $res_fla = $m{'fla'};
+					if ($m{'fla'} =~ /\$\{([^\}]+)\}/) {
+						$res_fla = &get_makevar($1);
+					}
+					$makeenv = $makeenv_save . " FLAVOR=$res_fla";
+				}
+				my $actual_pkg = &get_makevar_dir("$portsdir/$m{'dir'}", 'PKGBASE');
+				$makeenv = $makeenv_save;
+
+				if ($actual_pkg ne $dep_pkg) {
+					&perror("FATAL", $file, -1, "package name $dep_pkg does not match ".
+						"actual package name $actual_pkg.");
+				}
+			}
+
 			# Check port dir existence and git state
 			$k = $ENV{'PORTSDIR'}.'/'.$m{'dir'};
 			if (! -d $k) {
@@ -1461,7 +1491,7 @@ sub check_depends_syntax {
 			} else {
 				print "OK: port directory $k found.\n"
 					if ($verbose);
-				&check_dep_port_state($k, $m{'dir'}, $j, $file);
+				&check_dep_port_state($k, $m{'dir'}, $j, $file) if $committer;
 			}
 
 			# Check for relative path
@@ -1939,6 +1969,16 @@ sub checkmakefile {
 						last;
 					}
 				}
+				MOPT: foreach my $oarg ('MESON', 'CMAKE') {
+					foreach my $toggle ('OFF', 'ON') {
+						my $oarg_var = &get_makevar("${i}_${oarg}_${toggle}");
+						if ($oarg_var ne "") {
+							$found_opt_use = 1;
+							last MOPT;
+						}
+					}
+				}
+
 				if (!$found_opt_use) {
 					if (!$slaveport) {
 						&perror("WARN", $file, -1, "$i is listed in ".
@@ -2264,7 +2304,8 @@ sub checkmakefile {
 	# whole file: DOS line endings
 	#
 	print "OK: checking for DOS line ending removal.\n" if ($verbose);
-	if ($whole =~ /\r/ || $whole =~ /:cntrl:/) {
+	if ($whole =~ /
+/ || $whole =~ /:cntrl:/) {
 		my $lineno = &linenumber($`);
 		&perror("WARN", $file, $lineno, "Possible manual removal of DOS ".
 			"line endings found.  Consider defining USES=dos2unix instead.");
@@ -3534,10 +3575,12 @@ NOT_FOR_ARCHS NOT_FOR_ARCHS_REASON(_\w+)? LEGAL_TEXT
 
 	@linestocheck = qw(
 EXTRACT_DEPENDS LIB_DEPENDS PATCH_DEPENDS BUILD_DEPENDS RUN_DEPENDS
-TEST_DEPENDS FETCH_DEPENDS DEPENDS_TARGET
+TEST_DEPENDS FETCH_DEPENDS PKG_DEPENDS DEPENDS_TARGET
 	);
+	&checkorder('DEPENDS', $tmp, $file, qw(FETCH_DEPENDS EXTRACT_DEPENDS PATCH_DEPENDS
+BUILD_DEPENDS LIB_DEPENDS RUN_DEPENDS TEST_DEPENDS PKG_DEPENDS));
 
-	if ($tmp =~ /^([\w\d]+_)?(PATCH_|EXTRACT_|LIB_|BUILD_|RUN_|TEST_|FETCH_)DEPENDS/m) {
+	if ($tmp =~ /^([\w\d]+_)?(PATCH_|EXTRACT_|LIB_|BUILD_|RUN_|TEST_|FETCH_|PKG_)DEPENDS/m) {
 		&checkearlier($file, $tmp, @varnames);
 
 		check_depends_syntax($tmp, $file);
@@ -3642,7 +3685,7 @@ TEST_DEPENDS FETCH_DEPENDS DEPENDS_TARGET
 	# Check depends that might be specified based on the WITH_/WITHOUT_
 	# arguments and other external variables.
 	check_depends_syntax($tmp, $file);
-	check_expanded_depends($file);
+	check_expanded_depends($file) if $committer;
 
 	# check WRKSRC/NO_WRKSUBDIR
 	#
@@ -4129,6 +4172,30 @@ sub get_makevar {
 	$result =~ s/^\0$//;
 
 	return $result;
+}
+
+sub get_makevar_dir {
+	my $dir = shift;
+	my($cmd, $result);
+
+	$cmd = join(' -V ', "make -C $dir $makeenv MASTER_SITE_BACKUP=''", map { "'$_'" } @_);
+	$result = `$cmd`;
+	chomp $result;
+
+	# This bit of magic is interesting and repeated in the get_make* functions.
+    # It will ensure that all empty values for macros are replaced with a '\0' character
+    # to preserve their "place in line" for future parsing.  This is only needed when passing
+    # multiple variables to these functions.
+    no warnings 'uninitialized';
+    $result =~ s/(?:^|(?<=\n))(?=\n|$)/$1\0$3/g;
+    if (${^CHILD_ERROR_NATIVE} != 0) {
+        die "\nFATAL ERROR: make(1) died with status ${^CHILD_ERROR_NATIVE} and returned '$result'";
+    }
+
+    # If the final value is just a '\0' strip it out.
+    $result =~ s/^\0$//;
+
+    return $result;
 }
 
 sub get_makevar_shallow {
