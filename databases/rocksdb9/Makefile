@@ -5,13 +5,13 @@ PORTREVISION=	1
 CATEGORIES=	databases
 PKGNAMESUFFIX=	9
 
-PATCH_SITES=	https://github.com/facebook/rocksdb/commit/
+PATCH_SITES=	https://github.com/meta/rocksdb/commit/
 PATCHFILES=	496eebaee891c5f132d1ec1d9293a9c7f59b1e46.patch:-p1
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Persistent key-value store for fast storage environments
 WWW=		https://rocksdb.org/ \
-		https://github.com/facebook/rocksdb
+		https://github.com/meta/rocksdb
 
 LICENSE=	APACHE20 GPLv2
 LICENSE_COMB=	dual
@@ -43,7 +43,7 @@ TEST_TARGET=	check
 PLIST_SUB=	PORTVERSION=${PORTVERSION} SHLIB_VER=${PORTVERSION:R}
 PORTDATA=	make_config.mk
 
-GH_ACCOUNT=	facebook
+GH_ACCOUNT=	meta
 USE_GITHUB=	yes
 
 CONFLICTS_INSTALL=	rocksdb-lite
