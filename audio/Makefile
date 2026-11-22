@@ -764,6 +764,7 @@
     SUBDIR += sonivox
     SUBDIR += sonivox-eas
     SUBDIR += sorcer-lv2
+    SUBDIR += sound-firmware-cirrus
     SUBDIR += sound-juicer
     SUBDIR += soundgrab
     SUBDIR += soundtouch

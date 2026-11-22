@@ -1,0 +1,8 @@
+Firmware for the Cirrus Logic smart speaker amplifiers found behind the
+HDA codec of some laptops: the DSP program (wmfw) and the per-amplifier
+tuning files (bin) that the snd_cs35l54(4) driver downloads at attach.
+The files come from linux-firmware and are installed as raw files under
+/boot/firmware/cirrus/, where firmware(9) loads them on demand.
+
+Flavors are per chip.  The cs35l54 flavor covers the CS35L54 platforms
+listed in linux-firmware, such as the HP ZBook Ultra G1a.
