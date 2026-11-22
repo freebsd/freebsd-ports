@@ -1,12 +1,11 @@
 PORTNAME=	skkinput
 PORTVERSION=	2.06.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	japanese x11
-MASTER_SITES=	OSDN/skkinput2
+MASTER_SITES=	https://ftp.iij.ad.jp/pub/sourceforge.jp/skkinput2/6273/
 
-MAINTAINER=	koma2@lovepeers.org
+MAINTAINER=	mce@FreeBSD.org
 COMMENT=	SKK-like Japanese input method for X11
-WWW=		http://skkinput2.sourceforge.jp/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/GPL
@@ -21,12 +20,14 @@ PORTDOCS=	*.jis ChangeLog skkinputlisp.doc dot.skkinput
 OPTIONS_DEFINE=			DOCS
 OPTIONS_DEFAULT=		SKK9
 OPTIONS_RADIO=			SKKSERVER
-OPTIONS_RADIO_SKKSERVER=	DBSKKD SKK9
+OPTIONS_RADIO_SKKSERVER=	DBSKKD MULTISKKSERV SKK9
 DBSKKD_DESC=			Use ja-dbskkd-cdb as skkserver
+MULTISKKSERV_DESC=		Use ja-multiskkserv as skkserver
 SKK9_DESC=			Use ja-skkserv as skkserver
 SKKSERVER_DESC=			Skkserver selection
 
 DBSKKD_RUN_DEPENDS=		${LOCALBASE}/libexec/dbskkd-cdb:japanese/dbskkd-cdb
+MULTISKKSERV_RUN_DEPENDS=	${LOCALBASE}/sbin/multiskkserv:japanese/multiskkserv
 SKK9_RUN_DEPENDS=		${LOCALBASE}/sbin/skkserv:japanese/skkserv
 
 post-install-DOCS-on:
