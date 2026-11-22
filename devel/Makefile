@@ -7295,6 +7295,7 @@
     SUBDIR += rubygem-aws-sdk-sagemaker
     SUBDIR += rubygem-aws-sdk-sagemakeredgemanager
     SUBDIR += rubygem-aws-sdk-sagemakerfeaturestoreruntime
+    SUBDIR += rubygem-aws-sdk-sagemakergatewayruntime
     SUBDIR += rubygem-aws-sdk-sagemakergeospatial
     SUBDIR += rubygem-aws-sdk-sagemakerinferencerouterruntime
     SUBDIR += rubygem-aws-sdk-sagemakerjobruntime
