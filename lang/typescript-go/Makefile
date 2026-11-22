@@ -22,6 +22,8 @@ GO_MOD_DIST=	https://raw.githubusercontent.com/${GH_ACCOUNT}/${GH_PROJECT}/${GH_
 GO_MODULE=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
 GO_TARGET=	./cmd/tsgo
 
+CONFLICTS_INSTALL=	typescript-devel
+
 PLIST_FILES=	bin/tsc
 PORTDOCS=	CHANGES.md CONTRIBUTING.md README.md SECURITY.md SUPPORT.md
 
