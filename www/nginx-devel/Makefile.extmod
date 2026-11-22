@@ -213,9 +213,9 @@ HTTP_VIDEO_THUMBEXTRACTOR_GH_TUPLE=	wandenberg:nginx-video-thumbextractor-module
 HTTP_VIDEO_THUMBEXTRACTOR_VARS=		DSO_EXTMODS+=vte
 HTTP_VIDEO_THUMBEXTRACTOR_EXTRA_PATCHES=${PATCHDIR}/extra-patch-nginx-thumbextractor-module-config
 
-HTTP_ZIP_GH_TUPLE=	evanmiller:mod_zip:a9f9afa:mod_zip
+HTTP_ZIP_BUILD_DEPENDS=	nginx-module-zip>0:www/nginx-module-zip
+WRKSRC_mod_zip=		${WRKDIR}/nginx-module-zip
 HTTP_ZIP_VARS=		DSO_EXTMODS+=mod_zip
-HTTP_ZIP_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-mod_zip
 
 ICONV_IMPLIES=		DEVEL_KIT
 ICONV_USES=		iconv
@@ -345,7 +345,8 @@ SFLOW_BUILD_DEPENDS=	nginx-module-sflow>0:www/nginx-module-sflow
 WRKSRC_sflow=		${WRKDIR}/nginx-sflow-module
 SFLOW_VARS=		DSO_EXTMODS+=sflow
 
-SHIBBOLETH_GH_TUPLE=	nginx-shib:nginx-http-shibboleth:629ae1f:shibboleth
+SHIBBOLETH_BUILD_DEPENDS=	nginx-module-shibboleth>0:www/nginx-module-shibboleth
+WRKSRC_shibboleth=	${WRKDIR}/nginx-module-shibboleth
 SHIBBOLETH_VARS=	DSO_EXTMODS+=shibboleth
 
 SLOWFS_CACHE_BUILD_DEPENDS=	nginx-module-slowfs-cache>0:www/nginx-module-slowfs-cache
@@ -377,7 +378,8 @@ VOD_BUILD_DEPENDS=	nginx-module-vod>0:www/nginx-module-vod
 WRKSRC_vod=		${WRKDIR}/nginx-vod-module
 VOD_VARS=		DSO_EXTMODS+=vod
 
-VTS_GH_TUPLE=		vozlt:nginx-module-vts:c382342:vts
+VTS_BUILD_DEPENDS=	nginx-module-vts>0:www/nginx-module-vts
+WRKSRC_vts=		${WRKDIR}/nginx-module-vts
 VTS_VARS=		DSO_EXTMODS+=vts
 
 XSS_BUILD_DEPENDS=	nginx-module-xss>0:www/nginx-module-xss

@@ -1,7 +1,7 @@
 PORTNAME=	freenginx
 PORTVERSION=	${NGINX_VERSION}
 .include "version.mk"
-PORTREVISION?=	12
+PORTREVISION?=	13
 CATEGORIES=	www
 MASTER_SITES=	https://freenginx.org/download/ \
 		LOCAL/joneum
@@ -429,6 +429,11 @@ pre-configure-LINK-on:
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-link ${WRKSRC_link}
 	@${CHMOD} -R u+w ${WRKSRC_link}
 
+pre-configure-HTTP_ZIP-on:
+	@${RM} -rf ${WRKSRC_mod_zip}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-zip ${WRKSRC_mod_zip}
+	@${CHMOD} -R u+w ${WRKSRC_mod_zip}
+
 pre-configure-ICONV-on:
 	@${RM} -rf ${WRKSRC_iconv}
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-iconv ${WRKSRC_iconv}
@@ -561,6 +566,11 @@ pre-configure-SFLOW-on:
 	@${REINPLACE_CMD} 's!"/etc/hsflowd.auto"!"${LOCALBASE}/etc/hsflowd.auto"!' \
 		${WRKSRC_sflow}/src/ngx_http_sflow_config.h
 
+pre-configure-SHIBBOLETH-on:
+	@${RM} -rf ${WRKSRC_shibboleth}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-shibboleth ${WRKSRC_shibboleth}
+	@${CHMOD} -R u+w ${WRKSRC_shibboleth}
+
 pre-configure-SLOWFS_CACHE-on:
 	@${RM} -rf ${WRKSRC_slowfs_cache}
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-slowfs-cache ${WRKSRC_slowfs_cache}
@@ -602,6 +612,11 @@ pre-configure-VOD-on:
 	@${RM} -rf ${WRKSRC_vod}
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-vod ${WRKSRC_vod}
 	@${CHMOD} -R u+w ${WRKSRC_vod}
+
+pre-configure-VTS-on:
+	@${RM} -rf ${WRKSRC_vts}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-vts ${WRKSRC_vts}
+	@${CHMOD} -R u+w ${WRKSRC_vts}
 
 pre-configure-WEBSOCKIFY-on:
 	@${RM} -rf ${WRKSRC_websockify}
