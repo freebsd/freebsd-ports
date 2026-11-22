@@ -1,7 +1,7 @@
 PORTNAME=	rocksdb
 PORTVERSION=	11.1.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -20,27 +20,33 @@ BROKEN_armv7=	does not build: /nxb-bin/usr/bin/ld: undefined reference to symbol
 
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libgflags.so:devel/gflags \
-		libtbb.so:devel/onetbb \
-		libgtest.so:devel/googletest \
 		libsnappy.so:archivers/snappy
 
 USES=		compiler:c++20-lang gmake localbase:ldflags perl5
 USE_PERL5=	build
 
-ALL_TARGET=	shared_lib static_lib all
+ALL_TARGET=	benchmarks shared_lib static_lib stress_lib tools tools_lib
 CFLAGS+=	-DOS_FREEBSD
 CONFIGURE_ARGS=	make_config.mk
-CONFIGURE_ENV=	PORTABLE=0 ROCKSDB_DISABLE_PG=1 ROCKSDB_ROOT=${WRKSRC}
+CONFIGURE_ENV=	PORTABLE=0 \
+		ROCKSDB_DISABLE_PG=1 \
+		ROCKSDB_DISABLE_TBB=1 \
+		ROCKSDB_ROOT=${WRKSRC}
 CONFIGURE_SCRIPT=	build_tools/build_detect_platform
 HAS_CONFIGURE=	yes
-MAKE_ENV=	CXX=${CXX} INSTALL_PATH=${STAGEDIR}${PREFIX} USE_RTTI=1 V=1 \
-		DISABLE_WARNING_AS_ERROR=yes
+MAKE_ENV=	CXX=${CXX} \
+		DISABLE_WARNING_AS_ERROR=yes \
+		INSTALL_PATH=${STAGEDIR}${PREFIX} \
+		USE_RTTI=1 \
+		V=1
 USE_CXXSTD=	c++20
 USE_LDCONFIG=	yes
 TEST_TARGET=	check
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION} SHLIB_VER=${PORTVERSION:R}
 PORTDATA=	make_config.mk
+SUB_FILES=	RocksDBTargets-release.cmake
+SUB_LIST=	PORTVERSION=${PORTVERSION} MAJOR_VER=${PORTVERSION:R:R}
 
 GH_ACCOUNT=	facebook
 USE_GITHUB=	yes
@@ -71,20 +77,13 @@ post-patch:
 	@${REINPLACE_CMD} -e 's| -march=native||' ${WRKSRC}/build_tools/build_detect_platform
 .endif
 
-post-stage:
-	# To be removed when this ports uses cmake
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/cmake/rocksdb/modules
-	${INSTALL_DATA} ${WRKSRC}/cmake/RocksDBConfig.cmake.in	\
-		${STAGEDIR}${PREFIX}/lib/cmake/rocksdb/RocksDBConfig.cmake
-	${INSTALL_DATA} ${FILESDIR}/RocksDBTargets.cmake	\
-		${STAGEDIR}${PREFIX}/lib/cmake/rocksdb/
-	${SED} -e 's|%%VERSION%%|${PORTVERSION}|;s|%%VER%%|${PORTVERSION:R:R}|' \
-		${FILESDIR}/RocksDBTargets-release.cmake.in > ${STAGEDIR}${PREFIX}/lib/cmake/rocksdb/RocksDBTargets-release.cmake
-	${INSTALL_DATA} ${WRKSRC}/cmake/modules/* ${STAGEDIR}${PREFIX}/lib/cmake/rocksdb/modules/
-
 post-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}/
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/cmake/rocksdb/modules/ ${STAGEDIR}${DATADIR}/
 	cd ${WRKSRC}/ && ${INSTALL_PROGRAM} ${BENCHMARKS} ${TOOLS} ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_DATA} ${WRKSRC}/cmake/RocksDBConfig.cmake.in ${STAGEDIR}${PREFIX}/lib/cmake/rocksdb/RocksDBConfig.cmake
+	${INSTALL_DATA} ${FILESDIR}/RocksDBTargets.cmake ${STAGEDIR}${PREFIX}/lib/cmake/rocksdb/
+	${INSTALL_DATA} ${WRKDIR}/RocksDBTargets-release.cmake ${STAGEDIR}${PREFIX}/lib/cmake/rocksdb/RocksDBTargets-release.cmake
+	${INSTALL_DATA} ${WRKSRC}/cmake/modules/* ${STAGEDIR}${PREFIX}/lib/cmake/rocksdb/modules/
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librocksdb.so
 	${INSTALL_LIB} ${WRKSRC}/librocksdb_test.so ${WRKSRC}/librocksdb_tools.so ${STAGEDIR}${PREFIX}/lib/
 	${INSTALL_DATA} ${WRKSRC}/make_config.mk ${STAGEDIR}${DATADIR}/

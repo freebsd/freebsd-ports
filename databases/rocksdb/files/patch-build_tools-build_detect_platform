@@ -45,7 +45,7 @@ Remove -fno-builtin-memcmp and -ltcmalloc
 -        COMMON_FLAGS="$COMMON_FLAGS -fno-builtin-memcmp -D_REENTRANT -DOS_FREEBSD"
 -        PLATFORM_LDFLAGS="$PLATFORM_LDFLAGS -lpthread"
 +        COMMON_FLAGS="$COMMON_FLAGS -D_REENTRANT -DOS_FREEBSD"
-+        PLATFORM_LDFLAGS="$PLATFORM_LDFLAGS -lgtest -lpthread"
++        PLATFORM_LDFLAGS="$PLATFORM_LDFLAGS -lpthread"
          # PORT_FILES=port/freebsd/freebsd_specific.cc
          ;;
      GNU/kFreeBSD)

@@ -18,12 +18,12 @@ list(APPEND _cmake_import_check_files_for_RocksDB::rocksdb "${_IMPORT_PREFIX}/li
 # Import target "RocksDB::rocksdb-shared" for configuration "Release"
 set_property(TARGET RocksDB::rocksdb-shared APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
 set_target_properties(RocksDB::rocksdb-shared PROPERTIES
-  IMPORTED_LOCATION_RELEASE "${_IMPORT_PREFIX}/lib/librocksdb.so.%%VERSION%%"
-  IMPORTED_SONAME_RELEASE "librocksdb.so.%%VER%%"
+  IMPORTED_LOCATION_RELEASE "${_IMPORT_PREFIX}/lib/librocksdb.so.%%PORTVERSION%%"
+  IMPORTED_SONAME_RELEASE "librocksdb.so.%%MAJOR_VER%%"
   )
 
 list(APPEND _cmake_import_check_targets RocksDB::rocksdb-shared )
-list(APPEND _cmake_import_check_files_for_RocksDB::rocksdb-shared "${_IMPORT_PREFIX}/lib/librocksdb.so.%%VERSION%%" )
+list(APPEND _cmake_import_check_files_for_RocksDB::rocksdb-shared "${_IMPORT_PREFIX}/lib/librocksdb.so.%%PORTVERSION%%" )
 
 # Commands beyond this point should not need to know the version.
 set(CMAKE_IMPORT_FILE_VERSION)
