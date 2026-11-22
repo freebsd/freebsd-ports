@@ -1,0 +1,10 @@
+The shibboleth module lets nginx delegate authentication to a Shibboleth
+service provider.  It turns the answer of an authorization subrequest into
+the request headers that the protected application expects, so a FastCGI
+backend sees the same attributes it would see behind Apache.
+
+A running shibd and its FastCGI responders are needed separately; the module
+only speaks to them.
+
+This port only installs the module sources.  The module itself is built by
+the nginx ports when their SHIBBOLETH option is enabled.
