@@ -21,7 +21,4 @@ RUN_DEPENDS=	wget:ftp/wget
 
 NO_ARCH=	yes
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/Makefile
-
 .include <bsd.port.mk>
