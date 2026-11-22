@@ -1,5 +1,6 @@
 PORTNAME=	cweb
 PORTVERSION=	4.12.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/ascherer/${PORTNAME}/releases/download/${PORTNAME}-${PORTVERSION}/
 
