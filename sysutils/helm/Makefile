@@ -1,7 +1,6 @@
 PORTNAME=	helm
-PORTVERSION=	3.22.0
+PORTVERSION=	3.22.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
 CATEGORIES=	sysutils
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -17,7 +16,7 @@ USES=		cpe go:modules tar:xz
 GO_MODULE=	github.com/${PORTNAME}/${PORTNAME}/v3
 GO_PKGNAME=	k8s.io/helm
 GO_BUILDFLAGS=	-ldflags="-X helm.sh/helm/v3/internal/version.version=v${PORTVERSION} \
-		-X helm.sh/helm/v3/internal/version.gitCommit=144ca65f8501953fa8b41cd1d37c7223051c85b7"
+		-X helm.sh/helm/v3/internal/version.gitCommit=d6c1a0e4027caa6abc7892e7ea9f0cda7447baa3"
 GO_TARGET=	./cmd/${PORTNAME}
 
 PLIST_FILES=	${GO_TARGET:C/.\/cmd/bin/}
