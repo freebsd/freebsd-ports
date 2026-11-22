@@ -1,5 +1,6 @@
 PORTNAME=	pnp
 PORTVERSION=	0.6.27.5
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER?=	ports@FreeBSD.org
@@ -10,8 +11,12 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/rrdtool:databases/rrdtool
-RUN_DEPENDS?=	${LOCALBASE}/bin/rrdtool:databases/rrdtool \
-		nagios:net-mgmt/nagios4
+RUN_DEPENDS?=	${LOCALBASE}/bin/rrdtool:databases/rrdtool
+
+FLAVORS?=	default nagios4
+FLAVOR?=	${FLAVORS:[1]}
+
+nagios4_PKGNAMESUFFIX=	-nagios4
 
 USES=		dos2unix perl5 php:web tar:tgz
 USE_GITHUB=	yes
@@ -21,6 +26,8 @@ GH_TAGNAME=	8c97c7d
 
 MAKE_JOBS_UNSAFE=	yes
 
+CONFLICTS_INSTALL?=	${FLAVORS:N${FLAVOR}:S/^/pnp-/} pnp-icinga2
+
 OPTIONS_DEFINE=		EXAMPLES PDF
 OPTIONS_DEFAULT=	PDF
 PDF_DESC=		Use built-in fpdf library to produce PDF views
@@ -28,6 +35,12 @@ PDF_DESC=		Use built-in fpdf library to produce PDF views
 PDF_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-disable-pdf
 
 .include <bsd.port.options.mk>
+
+.if ${FLAVOR} == nagios4
+RUN_DEPENDS+=	nagios:net-mgmt/nagios4
+.elif ${FLAVOR} == default
+RUN_DEPENDS+=	nagios:net-mgmt/nagios
+.endif
 
 USE_PHP=	gd iconv session simplexml sockets xml zlib
 

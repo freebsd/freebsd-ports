@@ -1,4 +1,4 @@
-PORTREVISION=	0
+PORTREVISION=	1
 PKGNAMESUFFIX=	-icinga2
 
 MAINTAINER=	ports@FreeBSD.org
@@ -17,5 +17,9 @@ NAGIOSDIR?=	/var/spool/icinga2
 NAGIOSHTMURL?=	/icingaweb2
 NAGIOSUSER?=	icinga
 NAGIOSGROUP?=	icinga
+
+CONFLICTS_INSTALL=	pnp pnp-nagios4
+
+FLAVORS=
 
 .include "${MASTERDIR}/Makefile"
