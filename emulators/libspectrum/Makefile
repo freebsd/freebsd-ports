@@ -8,6 +8,7 @@ COMMENT=	Handling of ZX-Spectrum emulator files formats
 WWW=		https://fuse-emulator.sourceforge.net/libspectrum.php
 
 LICENSE=	GPL-2.0-only
+LICENSE_FILE=	${WKRSRC}/COPYING
 
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
 
