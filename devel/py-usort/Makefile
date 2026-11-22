@@ -7,7 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Small, safe import sorter
 WWW=		https://usort.readthedocs.io/en/stable/ \
-		https://github.com/facebook/usort
+		https://github.com/meta/usort
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
