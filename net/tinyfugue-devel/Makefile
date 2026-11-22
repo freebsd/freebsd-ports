@@ -1,5 +1,5 @@
 PORTNAME=	tinyfugue
-PORTVERSION=	5.2.3
+PORTVERSION=	5.2.4
 PORTREVISION=	0
 CATEGORIES=	net games
 PKGNAMESUFFIX=	-devel${PKGNAMESUFFIX2}
@@ -18,7 +18,7 @@ GH_ACCOUNT=	ingwarsw
 
 USES=		ssl
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-manpage --enable-version --enable-symlink=no \
+CONFIGURE_ARGS=	--enable-version --enable-symlink=no \
 		--exec-prefix=${PREFIX} \
 		--bindir=${PREFIX}/bin \
 		--mandir=${PREFIX}/share/man \
