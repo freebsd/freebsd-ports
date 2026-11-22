@@ -7,7 +7,8 @@ FJ_ACCOUNT=	rene0
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Kernel module to retrieve bitmap fonts from BIOS memory
 
-LICENSE=	BSD2CLAUSE
+LICENSE=	BSD-2-Clause
+LICENSE_FILE=	${WRKDIR}/biosfont/LICENSE
 
 DEPRECATED=	No development in years, does not work properly on modern systems
 EXPIRATION_DATE=2026-12-31
