@@ -1,3 +1,62 @@
+  <vuln vid="15b98472-e624-11f1-9eae-18cf5efc6bb4">
+    <topic>openvoxdb -- An authenticated node can write another node's factset through the PuppetDB facts terminus</topic>
+    <affects>
+      <package>
+	<name>openvoxdb-terminus8</name>
+	<range><lt>8.18.1</lt></range>
+      </package>
+      <package>
+	<name>openvoxdb-terminus9</name>
+	<range><lt>9.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenVoxProject reports:</p>
+	<blockquote cite="https://voxpupuli.org/blog/2026/11/19/openvoxdb-factset-overwrite/">
+	<p>Let’s do a quick refresher on the lifecycle of OpenVox facts.</p>
+	<p>
+	  When the agent starts a run, it generates facts and sends them to
+	  the server along with the catalog request. The server combines
+	  them with trusted information from the agent’s SSL certificate and
+	  uses them during compilation. It also caches these facts in
+	  OpenVoxDB where they can be used for other purposes; dashboards,
+	  OpenBolt target lists, puppetdb_query() calls, etc.
+	</p>
+	<p>
+	  Outside of regular catalog compilation, agents can update their
+	  own cached facts using the /puppet/v3/facts endpoint. The flaw
+	  fixed in this release is that OpenVoxDB was not validating that
+	  the factset being stored with this endpoint actually represented
+	  the agent submitting the facts!
+	</p>
+	<p>
+	  Now, to be clear, this doesn’t directly affect classification or
+	  Hiera lookups. Those will always use the fresh factset submitted
+	  by the agent. What is affected is any classification using or
+	  gated behind puppetdb_query() calls or any OpenBolt plans that use
+	  a puppetdb_query() or OpenBolt tasks that use PQL to select a list
+	  of targets. This would also affect any custom administration
+	  tooling that used facts from OpenVoxDB.
+	</p>
+	<p>
+	  In particular, this could lead to administrative actions intended
+	  for one node actually executing on another node, which a skilled
+	  attacker could leverage via social engineering to achieve
+	  privilege escalation.
+	</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/OpenVoxProject/openvoxdb/security/advisories/GHSA-859m-7qpm-85p7</url>
+    </references>
+    <dates>
+      <discovery>2026-11-19</discovery>
+      <entry>2026-11-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a8f3c2d4-e5a1-11f1-bae2-3497f65b111b">
     <topic>angie -- multiple vulnerabilities</topic>
     <affects>
