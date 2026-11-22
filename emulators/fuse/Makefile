@@ -7,7 +7,13 @@ MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Free Unix (Sinclair ZX-)Spectrum Emulator
 WWW=		https://fuse-emulator.sourceforge.net
 
-LICENSE=	GPLv2
+# The included ROM files have various licenses and conditions
+LICENSE=	GPL-2.0-only LGPL-2.1-or-later
+LICENSE_COMB=	multi
+LICENSE_FILE_GPL_2.0-only=	${WRKSRC}/COPYING
+# This file has its license in a comment block, so the license of this port
+# would change depening on the GTK3 option being set or not?
+LICENSE_FILE_LGPL-2.1-or-later=	${WRKSRC}/ui/gtk3/resources.c
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libgcrypt.so:security/libgcrypt \
