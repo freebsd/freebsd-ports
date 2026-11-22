@@ -1,5 +1,5 @@
 PORTNAME=	srell
-DISTVERSION=	2026.08
+DISTVERSION=	2026.11
 CATEGORIES=	devel
 MASTER_SITES=	https://www.akenotsuki.com/misc/${PORTNAME}/releases/
 DISTNAME=	${PORTNAME}${DISTVERSION:S/./_/}
@@ -8,8 +8,10 @@ MAINTAINER=	alven@FreeBSD.org
 COMMENT=	Std::regex-like regular expression template library for C++
 WWW=		https://www.akenotsuki.com/misc/srell/en/
 
-LICENSE=	BSD2CLAUSE
-LICENSE_FILE=	${WRKSRC}/license.txt
+LICENSE=	BSD-2-Clause Unicode-3.0
+LICENSE_COMB=	multi
+LICENSE_FILE_BSD-2-Clause=	${WRKSRC}/license.txt
+LICENSE_FILE_Unicode-3.0=	${WRKSRC}/license-unicode.txt
 
 USES=		compiler:c++11-lang zip
 
@@ -19,17 +21,14 @@ PORTSCOUT=	limit:^202[0-9]\.(0[1-9]\|1[0-2])$$
 
 NO_WRKSUBDIR=	yes
 
-OPTIONS_DEFINE=	DOCS
+PLIST_FILES=	include/srell/srell.hpp \
+		include/srell/srell_ucfdata2.h \
+		include/srell/srell_updata3.h
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME}
-	cd ${WRKSRC} && \
-		${INSTALL_DATA} srell.hpp srell_*.h \
+	cd ${WRKSRC} && ${INSTALL_DATA} *.h *.hpp \
 		${STAGEDIR}${PREFIX}/include/${PORTNAME}
-
-post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/readme_*.txt ${STAGEDIR}${DOCSDIR}
 
 do-test:
 	@cd ${WRKSRC}/misc && \
