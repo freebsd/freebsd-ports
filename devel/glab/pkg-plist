@@ -71,6 +71,9 @@
 %%MANPAGES%%share/man/man1/glab-dependency-firewall-gem.1.gz
 %%MANPAGES%%share/man/man1/glab-dependency-firewall-gradle.1.gz
 %%MANPAGES%%share/man/man1/glab-dependency-firewall-go.1.gz
+%%MANPAGES%%share/man/man1/glab-dependency-firewall-job-proxy-start.1.gz
+%%MANPAGES%%share/man/man1/glab-dependency-firewall-job-proxy-stop.1.gz
+%%MANPAGES%%share/man/man1/glab-dependency-firewall-job-proxy.1.gz
 %%MANPAGES%%share/man/man1/glab-dependency-firewall-maven.1.gz
 %%MANPAGES%%share/man/man1/glab-dependency-firewall-npm.1.gz
 %%MANPAGES%%share/man/man1/glab-dependency-firewall-package.1.gz
@@ -265,6 +268,11 @@
 %%MANPAGES%%share/man/man1/glab-service-account-delete.1.gz
 %%MANPAGES%%share/man/man1/glab-service-account-get.1.gz
 %%MANPAGES%%share/man/man1/glab-service-account-list.1.gz
+%%MANPAGES%%share/man/man1/glab-service-account-token-create.1.gz
+%%MANPAGES%%share/man/man1/glab-service-account-token-list.1.gz
+%%MANPAGES%%share/man/man1/glab-service-account-token-revoke.1.gz
+%%MANPAGES%%share/man/man1/glab-service-account-token-rotate.1.gz
+%%MANPAGES%%share/man/man1/glab-service-account-token.1.gz
 %%MANPAGES%%share/man/man1/glab-service-account-update.1.gz
 %%MANPAGES%%share/man/man1/glab-service-account.1.gz
 %%MANPAGES%%share/man/man1/glab-skills-get.1.gz
