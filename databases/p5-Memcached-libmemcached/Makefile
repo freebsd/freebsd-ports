@@ -1,6 +1,6 @@
 PORTNAME=	Memcached-libmemcached
 PORTVERSION=	1.001801
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -24,10 +24,11 @@ USE_LDCONFIG=	yes
 CFLAGS+=       -Wno-error=int-conversion
 .endif
 
-post-extract:
-	@${RM} -r ${WRKDIR}/src
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/Makefile.PL
+	@${RM} -r ${WRKDIR}/src
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Memcached/libmemcached/libmemcached.so
 
 .include <bsd.port.post.mk>
