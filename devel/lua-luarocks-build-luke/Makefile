@@ -19,6 +19,8 @@ NO_BUILD=	yes
 
 PLIST_FILES=	${LUA_MODSHAREDIR}/luarocks/build/luke.lua
 
+PORTSCOUT=	skipv:0.5,0.6,0.7,0.8,0.9,0.10
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	gvvaughan
 GH_PROJECT=	luke
