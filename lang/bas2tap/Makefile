@@ -8,7 +8,8 @@ MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Convert 48k/128k ZX Spectrum BASIC text files to TAP files
 WWW=		https://worldofspectrum.net/utilities/
 
-LICENSE=	GPLv2
+LICENSE=	GPL-2.0-or-later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		zip
 
