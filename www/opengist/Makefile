@@ -1,7 +1,6 @@
 PORTNAME=	opengist
-PORTVERSION=	1.15.2
+PORTVERSION=	1.16.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
 CATEGORIES=	www textproc
 
 # prebuilt frontend assets published upstream (see upstream PR #768)
