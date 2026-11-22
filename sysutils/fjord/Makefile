@@ -1,5 +1,5 @@
 PORTNAME=	fjord
-DISTVERSION=	0.4.3
+DISTVERSION=	0.4.5
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/daemonless/${PORTNAME}/releases/download/v${DISTVERSION}/
 
