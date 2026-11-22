@@ -1,1 +1,2 @@
 %%DATADIR%%/gerrit.war
+@dir(%%GERRIT_USER%%,%%GERRIT_GROUP%%,750) %%GERRIT_HOME%%

@@ -5,6 +5,22 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20261122:
+  AFFECTS: users of devel/gerrit
+  AUTHOR: delphij@FreeBSD.org
+
+  Gerrit 3.15 requires Java 25 and needs a schema migration and a
+  changes index rebuild.  If gerrit_java_home is set in rc.conf, point
+  it at a Java 25 runtime, then run:
+
+    # service gerrit stop
+    # su -m gerrit -c "/usr/local/openjdk25/bin/java -jar /usr/local/share/gerrit/gerrit.war init --batch -d /var/db/gerrit --no-auto-start"
+    # su -m gerrit -c "/usr/local/openjdk25/bin/java -jar /usr/local/share/gerrit/gerrit.war reindex --index changes -d /var/db/gerrit"
+    # service gerrit start
+
+  The rc.d script now keeps its pidfile in /var/run/gerrit.  A stale
+  /var/db/gerrit/logs/gerrit.pid from an earlier version can be removed.
+
 20261120:
   AFFECTS: users of www/samdruckerserver and sysutils/samdruckerclientshell
   AUTHOR: dvl@FreeBSD.org

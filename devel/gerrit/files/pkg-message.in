@@ -1,11 +1,12 @@
 [
 { type: install
   message: <<EOM
-To initialize a new Gerrit site, run:
+To initialize a new Gerrit site, run as the %%GERRIT_USER%% user:
 
-  java -jar %%DATADIR%%/gerrit.war init -d %%GERRIT_HOME%%
+  su -m %%GERRIT_USER%% -c "%%JAVA_HOME%%/bin/java -jar %%DATADIR%%/gerrit.war init -d %%GERRIT_HOME%% --no-auto-start"
 
-Then enable and start the service:
+The --no-auto-start flag keeps init from launching Gerrit outside of
+rc(8). Then enable and start the service:
 
   sysrc gerrit_enable=YES
   service gerrit start
@@ -13,6 +14,21 @@ Then enable and start the service:
 Gerrit defaults to listening on http://*:8080 for HTTP and port 29418 for SSH.
 
 More information: https://gerrit-documentation.storage.googleapis.com/Documentation/%%PORTVERSION%%/install.html
+EOM
+}
+{ type: upgrade
+  maximum_version: "3.15.0"
+  message: <<EOM
+Gerrit 3.15 requires Java 25 and migrates the site schema and the
+changes index.  Before starting the service, run:
+
+  service gerrit stop
+  su -m %%GERRIT_USER%% -c "%%JAVA_HOME%%/bin/java -jar %%DATADIR%%/gerrit.war init --batch -d %%GERRIT_HOME%% --no-auto-start"
+  su -m %%GERRIT_USER%% -c "%%JAVA_HOME%%/bin/java -jar %%DATADIR%%/gerrit.war reindex --index changes -d %%GERRIT_HOME%%"
+  service gerrit start
+
+If gerrit_java_home is set in rc.conf, point it at a Java 25 runtime.
+See https://www.gerritcodereview.com/3.15.html for behavior changes.
 EOM
 }
 ]
