@@ -1,5 +1,5 @@
 PORTNAME=	solarus-quest-editor
-PORTVERSION=	2.0.4
+PORTVERSION=	2.1.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
@@ -25,7 +25,7 @@ GL_ACCOUNT=	solarus-games
 GL_PROJECT=	solarus
 
 USE_GL=		opengl
-USE_QT=		base svg tools:build
+USE_QT=		base svg tools:build translations
 USE_SDL=	sdl2 ttf2 image2
 
 CMAKE_ARGS+=	-DSOLARUS_FETCHCONTENT=OFF \

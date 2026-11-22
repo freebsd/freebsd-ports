@@ -518,7 +518,14 @@ share/pixmaps/org.solarus-games.solarus-editor.png
 %%DATADIR%%/assets/initial_quest/data/tilesets/oceanset_outside.tiles.png
 %%DATADIR%%/assets/initial_quest/data/tilesets/outside.dat
 %%DATADIR%%/assets/initial_quest/data/tilesets/outside.tiles.png
+%%DATADIR%%/translations/qtbase_es.qm
+%%DATADIR%%/translations/qtbase_fr.qm
+%%DATADIR%%/translations/qtbase_pt_BR.qm
+%%DATADIR%%/translations/qtbase_zh_CN.qm
+%%DATADIR%%/translations/qtbase_zh_TW.qm
+%%DATADIR%%/translations/solarus_editor_de.qm
 %%DATADIR%%/translations/solarus_editor_es.qm
 %%DATADIR%%/translations/solarus_editor_fr.qm
+%%DATADIR%%/translations/solarus_editor_pt_BR.qm
 %%DATADIR%%/translations/solarus_editor_zh_CN.qm
 %%DATADIR%%/translations/solarus_editor_zh_TW.qm
