@@ -35,6 +35,7 @@ INSTALL_TARGET=
 
 BINARY_ALIAS=	jar=${JAR}	\
 		javac=${JAVAC}	\
+		git=true	\
 		clang-format=${LOCALBASE}/llvm${LLVM_VERSION}/bin/clang-format
 
 SUB_FILES=	pkg-message run.sh
