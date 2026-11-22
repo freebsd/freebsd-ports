@@ -1,6 +1,6 @@
 PORTNAME=	blocky
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.36.0
+DISTVERSION=	0.37.0
 CATEGORIES=	dns
 
 MAINTAINER=	daniel.engberg.lists@pyret.net
@@ -10,7 +10,7 @@ WWW=		https://0xerr0r.github.io/blocky/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		go:1.27+,modules
 
 USE_RC_SUBR=	blocky
 
