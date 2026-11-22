@@ -42,7 +42,7 @@ stirlingpdf_prestart()
 
 stirlingpdf_start()
 {
-	su -m ${stirlingpdf_user} -c "cd ${stirlingpdf_home} && exec ${command} ${command_args}"
+	su -m ${stirlingpdf_user} -c "cd ${stirlingpdf_home} && export PATH=/sbin:/bin:/usr/sbin:/usr/bin:%%LOCALBASE%%/sbin:%%LOCALBASE%%/bin && exec ${command} ${command_args}"
 }
 
 pidfile=/var/run/${name}/${name}.pid
