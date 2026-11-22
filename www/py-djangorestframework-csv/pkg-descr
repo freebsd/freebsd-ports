@@ -1,1 +1,6 @@
-CSV Tools for Django REST Framework
+CSV Tools for Django REST Framework.
+
+djangorestframework-csv provides a CSVRenderer that outputs API responses,
+including nested data, as CSV, with control over field ordering and
+header labels, and a CSVParser that accepts CSV request bodies.  A
+streaming renderer is included for large responses.
