@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.280.0
+PORTVERSION=	3.283.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,12 +10,14 @@ WWW=		https://github.com/aws/aws-sdk-ruby/tree/version-3/gems/aws-sdk-resources
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessanalyzer \
+RUN_DEPENDS=	rubygem-aws-sdk-abusesignal>=1<2:devel/rubygem-aws-sdk-abusesignal \
+		rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessanalyzer \
 		rubygem-aws-sdk-account>=1<2:devel/rubygem-aws-sdk-account \
 		rubygem-aws-sdk-accountaccess>=1<2:devel/rubygem-aws-sdk-accountaccess \
 		rubygem-aws-sdk-accountaccessruntime>=1<2:devel/rubygem-aws-sdk-accountaccessruntime \
 		rubygem-aws-sdk-acm>=1<2:devel/rubygem-aws-sdk-acm \
 		rubygem-aws-sdk-acmpca>=1<2:devel/rubygem-aws-sdk-acmpca \
+		rubygem-aws-sdk-agentdiscovery>=1<2:devel/rubygem-aws-sdk-agentdiscovery \
 		rubygem-aws-sdk-agentregistry>=1<2:devel/rubygem-aws-sdk-agentregistry \
 		rubygem-aws-sdk-agentregistrycontrol>=1<2:devel/rubygem-aws-sdk-agentregistrycontrol \
 		rubygem-aws-sdk-aiops>=1<2:devel/rubygem-aws-sdk-aiops \
@@ -25,6 +27,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-apigateway>=1<2:devel/rubygem-aws-sdk-apigateway \
 		rubygem-aws-sdk-apigatewaymanagementapi>=1<2:devel/rubygem-aws-sdk-apigatewaymanagementapi \
 		rubygem-aws-sdk-apigatewayv2>=1<2:devel/rubygem-aws-sdk-apigatewayv2 \
+		rubygem-aws-sdk-apiportal>=1<2:devel/rubygem-aws-sdk-apiportal \
 		rubygem-aws-sdk-appconfig>=1<2:devel/rubygem-aws-sdk-appconfig \
 		rubygem-aws-sdk-appconfigdata>=1<2:devel/rubygem-aws-sdk-appconfigdata \
 		rubygem-aws-sdk-appfabric>=1<2:devel/rubygem-aws-sdk-appfabric \
@@ -315,10 +318,12 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-partnercentralaccount>=1<2:devel/rubygem-aws-sdk-partnercentralaccount \
 		rubygem-aws-sdk-partnercentralbenefits>=1<2:devel/rubygem-aws-sdk-partnercentralbenefits \
 		rubygem-aws-sdk-partnercentralchannel>=1<2:devel/rubygem-aws-sdk-partnercentralchannel \
+		rubygem-aws-sdk-partnercentralmarketing>=1<2:devel/rubygem-aws-sdk-partnercentralmarketing \
 		rubygem-aws-sdk-partnercentralrevenuemeasurement>=1<2:devel/rubygem-aws-sdk-partnercentralrevenuemeasurement \
 		rubygem-aws-sdk-partnercentralselling>=1<2:devel/rubygem-aws-sdk-partnercentralselling \
 		rubygem-aws-sdk-paymentcryptography>=1<2:devel/rubygem-aws-sdk-paymentcryptography \
 		rubygem-aws-sdk-paymentcryptographydata>=1<2:devel/rubygem-aws-sdk-paymentcryptographydata \
+		rubygem-aws-sdk-payments>=1<2:devel/rubygem-aws-sdk-payments \
 		rubygem-aws-sdk-pcaconnectorad>=1<2:devel/rubygem-aws-sdk-pcaconnectorad \
 		rubygem-aws-sdk-pcaconnectorscep>=1<2:devel/rubygem-aws-sdk-pcaconnectorscep \
 		rubygem-aws-sdk-pcs>=1<2:devel/rubygem-aws-sdk-pcs \
@@ -373,6 +378,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-sagemaker>=1<2:devel/rubygem-aws-sdk-sagemaker \
 		rubygem-aws-sdk-sagemakeredgemanager>=1<2:devel/rubygem-aws-sdk-sagemakeredgemanager \
 		rubygem-aws-sdk-sagemakerfeaturestoreruntime>=1<2:devel/rubygem-aws-sdk-sagemakerfeaturestoreruntime \
+		rubygem-aws-sdk-sagemakergatewayruntime>=1<2:devel/rubygem-aws-sdk-sagemakergatewayruntime \
 		rubygem-aws-sdk-sagemakergeospatial>=1<2:devel/rubygem-aws-sdk-sagemakergeospatial \
 		rubygem-aws-sdk-sagemakerinferencerouterruntime>=1<2:devel/rubygem-aws-sdk-sagemakerinferencerouterruntime \
 		rubygem-aws-sdk-sagemakerjobruntime>=1<2:devel/rubygem-aws-sdk-sagemakerjobruntime \
