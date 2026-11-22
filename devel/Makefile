@@ -6919,6 +6919,7 @@
     SUBDIR += rubygem-aws-sdk-accountaccessruntime
     SUBDIR += rubygem-aws-sdk-acm
     SUBDIR += rubygem-aws-sdk-acmpca
+    SUBDIR += rubygem-aws-sdk-agentdiscovery
     SUBDIR += rubygem-aws-sdk-agentregistry
     SUBDIR += rubygem-aws-sdk-agentregistrycontrol
     SUBDIR += rubygem-aws-sdk-aiops
