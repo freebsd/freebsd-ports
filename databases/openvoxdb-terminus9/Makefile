@@ -1,5 +1,5 @@
 PORTNAME=	openvoxdb-terminus
-DISTVERSION=	9.2.0
+DISTVERSION=	9.2.1
 CATEGORIES=	databases ruby
 MASTER_SITES=	https://artifacts.voxpupuli.org/openvoxdb/${DISTVERSION:S/-/~/}/
 PKGNAMESUFFIX=	9
