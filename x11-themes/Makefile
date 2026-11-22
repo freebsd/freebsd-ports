@@ -164,7 +164,9 @@
     SUBDIR += qtcurve
     SUBDIR += qtcurve-gtk2
     SUBDIR += qtcurve-kf5
+    SUBDIR += qtcurve-kf6
     SUBDIR += qtcurve-qt5
+    SUBDIR += qtcurve-qt6
     SUBDIR += qtcurve-utils
     SUBDIR += sawfish-themes
     SUBDIR += sddm-freebsd-black-theme

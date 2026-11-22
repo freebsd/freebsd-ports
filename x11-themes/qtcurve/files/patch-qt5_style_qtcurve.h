@@ -1,6 +1,6 @@
---- qt5/style/qtcurve.h.orig	2020-05-21 12:41:50 UTC
+--- qt5/style/qtcurve.h.orig	2026-11-19 03:08:23 UTC
 +++ qt5/style/qtcurve.h
-@@ -34,6 +34,7 @@
+@@ -36,6 +36,7 @@
  #include <QStyleOption>
  #include <QtGlobal>
  #include <QCommonStyle>

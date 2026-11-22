@@ -1,10 +1,9 @@
-PORTNAME=	qtcurve
-PORTREVISION=	1
+PORTREVISION=	0
 
 COMMENT=	QtCurve KDE Frameworks 5 widget style and window decoration
 
-QTCURVE_SLAVE=	kf5
+QTCURVE_STYLE=	kf5
 
-MASTERDIR=	${.CURDIR}/../qtcurve
+MASTERDIR=	${.CURDIR:H}/qtcurve
 
 .include "${MASTERDIR}/Makefile"

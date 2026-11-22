@@ -1,0 +1,20 @@
+--- CMakeLists.txt.orig	2026-11-19 03:08:23 UTC
++++ CMakeLists.txt
+@@ -227,7 +227,7 @@ cmake_c_include_fix_path()
+ add_definitions("-D_GNU_SOURCE -pthread")
+ 
+ cmake_c_include_fix_path()
+-if(ENABLE_QT4 OR ENABLE_QT5 OR ENABLE_QT6 OR ENABLE_GTK2)
++if(ENABLE_QT4 OR ENABLE_QT5 OR ENABLE_QT6 OR ENABLE_GTK2 OR QTC_ENABLE_UTILS)
+   add_subdirectory(lib)
+   add_subdirectory(tools)
+ endif()
+@@ -265,6 +265,8 @@ if(QTC_INSTALL_PO)
+     set(KF_MAJOR_VERSION 6)
+   elseif (ENABLE_QT5)
+     set(KF_MAJOR_VERSION 5)
++  elseif (QTC_ENABLE_UTILS)
++    set(KF_MAJOR_VERSION 6)
+   endif()
+   find_package(KF${KF_MAJOR_VERSION} REQUIRED COMPONENTS
+     I18n)

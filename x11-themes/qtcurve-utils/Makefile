@@ -1,10 +1,9 @@
-PORTNAME=	qtcurve
 PORTREVISION=	0
 
 COMMENT=	QtCurve common files and libraries
 
-QTCURVE_SLAVE=	utils
+QTCURVE_STYLE=	utils
 
-MASTERDIR=	${.CURDIR}/../qtcurve
+MASTERDIR=	${.CURDIR:H}/qtcurve
 
 .include "${MASTERDIR}/Makefile"
