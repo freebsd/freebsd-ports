@@ -28,6 +28,7 @@ bin/rnano
 %%NLS%%share/locale/ka/LC_MESSAGES/nano.mo
 %%NLS%%share/locale/kk/LC_MESSAGES/nano.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/nano.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/nano.mo
 %%NLS%%share/locale/ms/LC_MESSAGES/nano.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/nano.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/nano.mo
