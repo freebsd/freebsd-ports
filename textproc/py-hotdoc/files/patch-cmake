@@ -1,0 +1,40 @@
+Obtained from:	https://github.com/MathieuDuponchelle/cmark/commit/bd78193dbff98c3860e77629b5c7bfee6169d1da
+
+--- cmark/CMakeLists.txt.orig	2019-08-17 22:54:31 UTC
++++ cmark/CMakeLists.txt
+@@ -1,25 +1,12 @@
+-cmake_minimum_required(VERSION 2.8.9)
++cmake_minimum_required(VERSION 3.10)
+ 
+-# prevent ugly developer warnings because version is set directly, not through project()
+-# it should be redone properly by using VERSION in project() if on CMake 3.x
+-if(CMAKE_MAJOR_VERSION GREATER 2)
+-    cmake_policy(SET CMP0048 OLD)
+-endif()
++project(cmark VERSION 0.28.3)
+ 
+-project(cmark)
+-
+ include("FindAsan.cmake")
+ 
+ if("${CMAKE_SOURCE_DIR}" STREQUAL "${CMAKE_BINARY_DIR}")
+     message(FATAL_ERROR "Do not build in-source.\nPlease remove CMakeCache.txt and the CMakeFiles/ directory.\nThen: mkdir build ; cd build ; cmake .. ; make")
+ endif()
+-
+-set(PROJECT_NAME "cmark")
+-
+-set(PROJECT_VERSION_MAJOR 0)
+-set(PROJECT_VERSION_MINOR 28)
+-set(PROJECT_VERSION_PATCH 3)
+-set(PROJECT_VERSION ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}.${PROJECT_VERSION_PATCH} )
+ 
+ option(CMARK_TESTS "Build cmark tests and enable testing" ON)
+ option(CMARK_STATIC "Build static libcmark library" ON)
+--- cmark/extensions/CMakeLists.txt.orig	2019-08-17 22:54:31 UTC
++++ cmark/extensions/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8)
++cmake_minimum_required(VERSION 3.10)
+ set(LIBRARY "cmarkextensions")
+ set(LIBRARY_SOURCES
+     core-extensions.c
