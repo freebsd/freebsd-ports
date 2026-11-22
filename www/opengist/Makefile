@@ -1,42 +1,38 @@
 PORTNAME=	opengist
-PORTVERSION=	1.16.0
 DISTVERSIONPREFIX=	v
+DISTVERSION=	1.16.0
+PORTREVISION=	1
 CATEGORIES=	www textproc
-
-# prebuilt frontend assets published upstream (see upstream PR #768)
-MASTER_SITES+=	https://github.com/thomiceli/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/:webdist
+MASTER_SITES+=	https://github.com/thomiceli/${PORTNAME}/releases/download/${DISTVERSIONFULL}/:webdist
 DISTFILES+=	${PORTNAME}${DISTVERSION}-webdist.tar.gz:webdist
+EXTRACT_ONLY=	${GO_DISTFILE}
 
 MAINTAINER=	fox@FreeBSD.org
 COMMENT=	Self-hosted pastebin powered by Git, open-source alternative to Github Gist
 WWW=		https://opengist.io/
 
 LICENSE=	AGPLv3
-
-BROKEN_i386=	fails to build
-ONLY_FOR_ARCHS=	aarch64 amd64
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	git:devel/git
 
-USES=		go:modules
+USES=		go:1.27+,modules
 
+CGO_ENABLED=	0
 GO_MODULE=	github.com/thomiceli/opengist
-GO_ENV+=	GOTOOLCHAIN=local+path
+GO_LDFLAGS=	-X github.com/thomiceli/opengist/internal/config.OpengistVersion=${DISTVERSIONFULL}
+GO_BUILDFLAGS=	-tags fs_embed
 GO_TARGET=	.
-GO_BUILDFLAGS=	-tags fs_embed \
-		-ldflags="-X github.com/thomiceli/opengist/internal/config.OpengistVersion=v${DISTVERSION}"
 
 USE_RC_SUBR=	opengist
 
 GROUPS=		opengist
 USERS=		opengist
 
-# The go:modules source zip extracts to WRKSRC; unpack prebuilt web assets
-# there.  The tarball wraps everything in a top-level opengist-webdist/
-# directory, so strip it to land .vite/ and assets/ directly under public/.
 post-extract:
-	@${TAR} -xzf ${_DISTDIR}/${PORTNAME}${DISTVERSION}-webdist.tar.gz \
-		--strip-components=1 -C ${WRKSRC}/public
+	@if [ ! -d ${WRKSRC}/public/assets ]; then \
+	    (${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${_DISTFILES:M*webdist*} --strip-components=1 -C ${WRKSRC}/public ${EXTRACT_AFTER_ARGS}) ;\
+	fi
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|opengist.db|file:/var/db/${PORTNAME}/opengist.db|g' \
