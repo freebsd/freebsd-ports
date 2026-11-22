@@ -20,3 +20,12 @@
  endif()
  
  function( ExportStatic name install )
+@@ -813,7 +813,7 @@ if ( SINGLE_CONFIG )
+     if ( BUILD_TOOLS_INTERNAL )
+         set( VDB_COPY_DIR ${CMAKE_SOURCE_DIR}/tools/internal/vdb-copy )
+     endif()
+-    install( SCRIPT CODE
++    install( CODE
+         "execute_process( COMMAND /bin/sh -c        \
+             \"${CMAKE_SOURCE_DIR}/build/install.sh  \
+                 ${VDB_INCDIR}/kfg/ncbi              \
