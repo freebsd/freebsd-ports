@@ -1,7 +1,6 @@
 PORTNAME=	witr
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.3
-PORTREVISION=	7
+DISTVERSION=	0.3.4
 CATEGORIES=	sysutils
 
 MAINTAINER=	gaod@hychen.org
@@ -16,9 +15,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	pranshuparmar
 GH_PROJECT=	witr
 
-GH_TUPLE=	\
-		atotto:clipboard:v0.1.4:atotto_clipboard/vendor/github.com/atotto/clipboard \
-		aymanbagabas:go-osc52:v2.0.1:aymanbagabas_go_osc52_v2/vendor/github.com/aymanbagabas/go-osc52/v2 \
+GH_TUPLE=	aymanbagabas:go-osc52:v2.0.1:aymanbagabas_go_osc52_v2/vendor/github.com/aymanbagabas/go-osc52/v2 \
 		charmbracelet:bubbles:v1.0.0:charmbracelet_bubbles/vendor/github.com/charmbracelet/bubbles \
 		charmbracelet:bubbletea:v1.3.10:charmbracelet_bubbletea/vendor/github.com/charmbracelet/bubbletea \
 		charmbracelet:colorprofile:v0.4.1:charmbracelet_colorprofile/vendor/github.com/charmbracelet/colorprofile \
@@ -33,7 +30,7 @@ GH_TUPLE=	\
 		cpuguy83:go-md2man:v2.0.7:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
 		erikgeiser:coninput:1c3628e74d0f:erikgeiser_coninput/vendor/github.com/erikgeiser/coninput \
 		godbus:dbus:v5.1.0:godbus_dbus_v5/vendor/github.com/godbus/dbus/v5 \
-		golang:sys:v0.38.0:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:v0.47.0:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.8:golang_text/vendor/golang.org/x/text \
 		inconshreveable:mousetrap:v1.1.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
 		lucasb-eyer:go-colorful:v1.3.0:lucasb_eyer_go_colorful/vendor/github.com/lucasb-eyer/go-colorful \
@@ -59,10 +56,10 @@ PLIST_FILES=	bin/witr \
 		share/man/man1/witr.1.gz
 
 post-extract:
-		@${RM} -r ${WRKSRC}/vendor/github.com/charmbracelet/x/ansi
-		@${RLN} ${WRKSRC_charmbracelet_x_ansi}/ansi ${WRKSRC}/vendor/github.com/charmbracelet/x/ansi
-		@${RM} -r ${WRKSRC}/vendor/github.com/charmbracelet/x/cellbuf
-		@${RLN} ${WRKSRC_charmbracelet_x_cellbuf}/cellbuf ${WRKSRC}/vendor/github.com/charmbracelet/x/cellbuf
+	@${RM} -r ${WRKSRC}/vendor/github.com/charmbracelet/x/ansi
+	@${RLN} ${WRKSRC_charmbracelet_x_ansi}/ansi ${WRKSRC}/vendor/github.com/charmbracelet/x/ansi
+	@${RM} -r ${WRKSRC}/vendor/github.com/charmbracelet/x/cellbuf
+	@${RLN} ${WRKSRC_charmbracelet_x_cellbuf}/cellbuf ${WRKSRC}/vendor/github.com/charmbracelet/x/cellbuf
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKDIR}/bin/witr ${STAGEDIR}${PREFIX}/bin/
