@@ -1,3 +1,55 @@
+  <vuln vid="0da120f6-e687-11f1-aceb-3c7c3fba4204">
+    <topic>Blocky -- multiple vulnerabilities</topic>
+    <affects>
+	<package>
+	  <name>blocky</name>
+	  <range><lt>0.37.0</lt></range>
+	</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Blocky Project reports:</p>
+	<blockquote cite="https://github.com/0xERR0R/blocky/releases/tag/v0.37.0">
+	  <p>Thanks to <a href="https://github.com/kevinpark1217">@kevinpark1217</a> for reporting these seven
+	     findings, fixing them, and contributing regression tests. If you use Blocky’s built-in validator
+	     (dnssec.validate: true), upgrade to v0.37.0. Six fixes affect earlier releases; the seventh hardens
+	     code introduced during development of v0.37.0.</p>
+	  <ul>
+	    <li>Chain of trust (GHSA-rfc7-q64c-hj2f): DS and DNSKEY records must belong to the zone being validated.
+		If Blocky cannot complete validation beneath a trust anchor, it returns SERVFAIL rather than serving
+		unchecked data.</li>
+	    <li>Complete answers (GHSA-8mfq-h5hh-mqf2): Blocky checks that the answer matches the question and response
+		code. A signed alias leading to unsigned data no longer marks the whole answer as authenticated (AD).</li>
+	    <li>Authority for negative answers (GHSA-6fgw-qmpq-vwxp): Proof that a name or record does not exist must
+		come from the zone responsible for it. A signature from another zone is not sufficient.</li>
+	    <li>Wildcard and denial proofs (GHSA-mv8x-2h8p-g3wh): Blocky now requires complete proofs for wildcard answers,
+		nonexistent names (NXDOMAIN), and missing record types (NODATA), including checking for aliases where required.</li>
+	    <li>NSEC3 Opt-Out (GHSA-583r-m4vv-q43p): Blocky requires a complete proof from the parent before treating a delegation
+		as unsigned.</li>
+	    <li>RSA signature failures (GHSA-g35c-mff8-4w2w): A failed signature under a supported algorithm is rejected rather than
+		treated as evidence that the data is unsigned.</li>
+	    <li>Validation work limits (development builds only; GHSA-vgm3-vqcv-4hv6): Blocky bounds RSA exponent size and
+		signature-verification work per query. No prior release shipped the large-exponent fallback affected by this finding.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/0xERR0R/blocky/releases/tag/v0.37.0</url>
+      <url>https://github.com/0xERR0R/blocky/security/advisories/GHSA-rfc7-q64c-hj2f</url>
+      <url>https://github.com/0xERR0R/blocky/security/advisories/GHSA-8mfq-h5hh-mqf2</url>
+      <url>https://github.com/0xERR0R/blocky/security/advisories/GHSA-6fgw-qmpq-vwxp</url>
+      <url>https://github.com/0xERR0R/blocky/security/advisories/GHSA-mv8x-2h8p-g3wh</url>
+      <url>https://github.com/0xERR0R/blocky/security/advisories/GHSA-583r-m4vv-q43p</url>
+      <url>https://github.com/0xERR0R/blocky/security/advisories/GHSA-g35c-mff8-4w2w</url>
+      <url>https://github.com/0xERR0R/blocky/security/advisories/GHSA-vgm3-vqcv-4hv6</url>
+    </references>
+    <dates>
+      <discovery>2026-11-21</discovery>
+      <entry>2026-11-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="15b98472-e624-11f1-9eae-18cf5efc6bb4">
     <topic>openvoxdb -- An authenticated node can write another node's factset through the PuppetDB facts terminus</topic>
     <affects>
