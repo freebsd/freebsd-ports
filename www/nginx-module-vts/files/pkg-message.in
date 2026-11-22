@@ -1,0 +1,14 @@
+[
+{ type: install
+  message: <<EOM
+This package contains the sources of the vts module only.  It does not
+install a loadable module.
+
+The module itself is built by the nginx ports.  To use vts, build
+www/nginx, www/nginx-devel or www/freenginx with the VTS option enabled.
+Those ports pick the sources up from
+%%PREFIX%%/share/nginx/modules/nginx-module-vts and produce
+ngx_http_vhost_traffic_status_module.so.
+EOM
+}
+]

@@ -597,6 +597,7 @@
     SUBDIR += nginx-module-upload
     SUBDIR += nginx-module-upstream-check
     SUBDIR += nginx-module-vod
+    SUBDIR += nginx-module-vts
     SUBDIR += nginx-module-websockify
     SUBDIR += nginx-module-xss
     SUBDIR += nginx-module-zstd

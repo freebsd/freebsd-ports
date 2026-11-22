@@ -1,0 +1,8 @@
+The vts module counts what goes through nginx -- per server, per upstream,
+per cache zone, per filter -- and serves the counters as JSON, as a
+Prometheus exposition or as an HTML page.  Counters live in shared memory,
+so every worker contributes to the same numbers, and a control interface
+resets or deletes single zones without a reload.
+
+This port only installs the module sources.  The module itself is built by
+the nginx ports when their VTS option is enabled.
