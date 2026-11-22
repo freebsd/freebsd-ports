@@ -15,7 +15,6 @@ cd "${CURDIR}/openscad-repo"
 GIT_SRC_HASH=`git log -n 1 --pretty=format:"%H"`;
 GIT_SRC_DATE=`git log -n 1 --date=iso-local -n 1 --pretty=format:"%cd" --date=format-local:'%Y.%m.%d' | \
     cut -c '1-19' | sed -e 's,-,,g' -e 's,:,,g' -e 's, ,,g'`
-GIT_MCAD_HASH=`git ls-tree HEAD libraries/MCAD/ | awk '{print $3}'`
 GIT_CLIPPER2_HASH=`git ls-tree HEAD submodules/Clipper2/ | awk '{print $3}'`
 GIT_OPENCSG_HASH=`git ls-tree HEAD submodules/OpenCSG/ | awk '{print $3}'`
 GIT_MANIFOLD_HASH=`git ls-tree HEAD submodules/manifold/ | awk '{print $3}'`
@@ -25,7 +24,6 @@ GIT_SANITIZERSCMAKE_HASH=`git ls-tree HEAD submodules/sanitizers-cmake/ | awk '{
 echo "$GIT_SRC_HASH, $GIT_SRC_DATE"
 echo "GIT_SRC_HASH=  ${GIT_SRC_HASH}"    > ${CURDIR}/Makefile.git_rev
 echo "GIT_SRC_DATE=  ${GIT_SRC_DATE}"   >> ${CURDIR}/Makefile.git_rev
-echo "GIT_MCAD_HASH= ${GIT_MCAD_HASH}"   >> ${CURDIR}/Makefile.git_rev
 echo "GIT_CLIPPER2_HASH= ${GIT_CLIPPER2_HASH}"   >> ${CURDIR}/Makefile.git_rev
 echo "GIT_OPENCSG_HASH= ${GIT_OPENCSG_HASH}"   >> ${CURDIR}/Makefile.git_rev
 echo "GIT_MANIFOLD_HASH= ${GIT_MANIFOLD_HASH}"   >> ${CURDIR}/Makefile.git_rev

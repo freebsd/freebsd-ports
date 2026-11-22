@@ -44,19 +44,20 @@ USE_QT=		base 5compat multimedia svg tools
 USE_XORG=	x11
 GH_ACCOUNT=	microsoft:mimalloc elalish:manifold arsenm:sanitizerscmake \
 		openscad:opencsg AngusJohnson:clipper2
-GH_PROJECT=	MCAD:mcad mimalloc:mimalloc manifold:manifold sanitizers-cmake:sanitizerscmake \
-		OpenCSG:opencsg Clipper2:clipper2
-GH_TAGNAME=	${GIT_SRC_HASH} ${GIT_MCAD_HASH}:mcad \
+GH_PROJECT=	mimalloc:mimalloc manifold:manifold sanitizers-cmake:sanitizerscmake \
+		MCAD:mcad OpenCSG:opencsg Clipper2:clipper2
+GH_TAGNAME=	${GIT_SRC_HASH} \
 		${GIT_CLIPPER2_HASH}:clipper2 ${GIT_OPENCSG_HASH}:opencsg \
 		${GIT_MANIFOLD_HASH}:manifold ${GIT_MIMALLOC_HASH}:mimalloc \
-		${GIT_SANITIZERSCMAKE_HASH}:sanitizerscmake
-GH_SUBDIR=	libraries/MCAD:mcad submodules/mimalloc:mimalloc submodules/manifold:manifold \
+		${MCAD_TAG}:mcad ${GIT_SANITIZERSCMAKE_HASH}:sanitizerscmake
+GH_SUBDIR=	submodules/mimalloc:mimalloc submodules/manifold:manifold \
 		submodules/sanitizers-cmake:sanitizerscmake submodules/OpenCSG:opencsg \
-		submodules/Clipper2:clipper2
+		MCAD:mcad submodules/Clipper2:clipper2
 # Avoid overlinking: kvm, procstat, boost(thread, system), Qt5(concurrent, network, printsupport)
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-Wl,--as-needed -L${LOCALBASE}/lib
 CMAKE_ARGS+=	-DEXPERIMENTAL="1" -DUSE_QT6="ON" -DUSE_MIMALLOC="OFF" -DENABLE_CGAL="ON" -DUSE_BUILTIN_OPENCSG="ON" -DENABLE_GLX="ON" -DCMAKE_BUILD_TYPE=Debug
+MCAD_TAG=	2026.11
 
 .include "Makefile.git_rev"
 
@@ -68,8 +69,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|bash|/bin/sh|; s|python3 |${PYTHON_CMD} |' \
 		${WRKSRC}/scripts/translation-update.sh
 
-
 do-install:
 	${CMAKE_BIN} --install ${BUILD_WRKSRC} --prefix ${STAGEDIR}${PREFIX}
+	${CP} -R ${WRKSRC}/MCAD ${STAGEDIR}${DATADIR}/libraries/MCAD
 
 .include <bsd.port.post.mk>
