@@ -1,5 +1,5 @@
 PORTNAME=	libsigsegv
-DISTVERSION=	2.15
+DISTVERSION=	2.16
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -21,6 +21,6 @@ PLIST_FILES=	include/sigsegv.h \
 		lib/libsigsegv.a \
 		lib/libsigsegv.so \
 		lib/libsigsegv.so.2 \
-		lib/libsigsegv.so.2.0.8
+		lib/libsigsegv.so.2.0.9
 
 .include <bsd.port.mk>
