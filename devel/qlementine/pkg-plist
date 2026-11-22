@@ -3,6 +3,7 @@ include/oclero/qlementine/Common.hpp
 include/oclero/qlementine/animation/WidgetAnimation.hpp
 include/oclero/qlementine/animation/WidgetAnimationManager.hpp
 include/oclero/qlementine/animation/WidgetAnimator.hpp
+include/oclero/qlementine/qlementine_export.h
 include/oclero/qlementine/resources/ResourceInitialization.hpp
 include/oclero/qlementine/style/Delegates.hpp
 include/oclero/qlementine/style/QlementineStyle.hpp
@@ -32,7 +33,6 @@ include/oclero/qlementine/widgets/ColorButton.hpp
 include/oclero/qlementine/widgets/ColorEditor.hpp
 include/oclero/qlementine/widgets/CommandLinkButton.hpp
 include/oclero/qlementine/widgets/Expander.hpp
-include/oclero/qlementine/widgets/FramelessWindow.hpp
 include/oclero/qlementine/widgets/IconWidget.hpp
 include/oclero/qlementine/widgets/Label.hpp
 include/oclero/qlementine/widgets/LineEdit.hpp
@@ -53,4 +53,6 @@ lib/cmake/qlementine/qlementineTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/qlementine/qlementineTargets.cmake
 lib/libqlementine.so
 lib/libqlementine.so.1
-lib/libqlementine.so.1.4
+lib/libqlementine.so.1.5
+%%QT_PLUGINDIR%%/styles/libqlementinestyleplugin.so
+libdata/pkgconfig/qlementine.pc
