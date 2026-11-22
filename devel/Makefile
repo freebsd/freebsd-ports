@@ -7237,6 +7237,7 @@
     SUBDIR += rubygem-aws-sdk-partnercentralselling
     SUBDIR += rubygem-aws-sdk-paymentcryptography
     SUBDIR += rubygem-aws-sdk-paymentcryptographydata
+    SUBDIR += rubygem-aws-sdk-payments
     SUBDIR += rubygem-aws-sdk-pcaconnectorad
     SUBDIR += rubygem-aws-sdk-pcaconnectorscep
     SUBDIR += rubygem-aws-sdk-pcs
