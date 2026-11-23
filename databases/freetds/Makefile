@@ -1,5 +1,5 @@
 PORTNAME=	freetds
-DISTVERSION=	1.5.21
+DISTVERSION=	1.5.22
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://www.freetds.org/files/stable/ \
@@ -9,7 +9,8 @@ MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Sybase/Microsoft TDS protocol library
 WWW=		http://www.freetds.org/
 
-LICENSE=	GPLv2
+LICENSE=	LGPL-2.0-only
+LICENSE_FILE=	${WRKSRC}/COPYING_LIB.txt
 
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
 
