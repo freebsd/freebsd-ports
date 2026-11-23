@@ -13,6 +13,5 @@ RUN_DEPENDS=	hwdata>0:misc/hwdata
 
 USES=		xorg-cat:lib,meson
 USE_LDCONFIG=	yes
-INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
