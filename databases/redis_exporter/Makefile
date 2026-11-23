@@ -1,7 +1,6 @@
 PORTNAME=	redis_exporter
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.96.0
-PORTREVISION=	1
+DISTVERSION=	1.98.0
 CATEGORIES=	databases
 
 MAINTAINER=	arcade@b1t.name
@@ -19,7 +18,7 @@ GO_MODULE=	github.com/oliver006/${PORTNAME}
 GO_BUILDFLAGS=	-v -ldflags "${GO_LD_FLAGS:S|^|-X main.Build|}"
 GO_LD_FLAGS=	Version=${DISTVERSION} \
 		Date=${:!date -Iseconds -zUTC!} \
-		CommitSha=9f6a2d1
+		CommitSha=74c09b2
 
 TESTING_UNSAFE=	yes
 
