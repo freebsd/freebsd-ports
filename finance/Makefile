@@ -58,6 +58,7 @@
     SUBDIR += odoo16
     SUBDIR += odoo17
     SUBDIR += odoo18
+    SUBDIR += odoo19
     SUBDIR += ord
     SUBDIR += p5-Business-CreditCard
     SUBDIR += p5-Business-MaxMind-CreditCardFraudDetection
