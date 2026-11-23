@@ -1,6 +1,7 @@
     COMMENT = File systems and related utilities
 
     SUBDIR += R-cran-fs
+    SUBDIR += R-cran-watcher
     SUBDIR += acfgfs
     SUBDIR += afuse
     SUBDIR += amazon-efs-utils

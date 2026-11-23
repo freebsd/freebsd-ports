@@ -1,0 +1,12 @@
+watcher is an R package for watching files, or directories recursively,
+for changes. It is a binding to the libfswatch library, which uses
+the native event-driven API of each platform (kqueue on FreeBSD),
+so monitoring runs asynchronously in the background without blocking
+the R session.
+
+Each change event can be logged to standard output, or passed to
+an R function as a character vector of the changed paths. Callbacks
+are run through the 'later' package, either when R is idle at the
+top level or inside an event loop such as Shiny's. A configurable
+latency groups bursts of events, so each callback reports every
+changed path only once.
