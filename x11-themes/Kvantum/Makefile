@@ -14,7 +14,8 @@ USES=		cmake gl kde:6 qt:6 tar:xz xorg
 USE_GL=		opengl
 USE_KDE=	windowsystem
 USE_LDCONFIG=	yes
-USE_QT=		base svg
+USE_QT=		base svg \
+		tools:build
 USE_XORG=	ice sm x11 xext
 
 WRKSRC_SUBDIR=	${PORTNAME}
