@@ -1,5 +1,5 @@
-TIMESTAMP = 1795142444
-SHA256 (go/misc_fabric/fabric-v1.4.578/v1.4.578.mod) = 54416b4ac16d9e0a41babf41db2dbecc24c48a45d83d7dd1478958f718eb3bed
-SIZE (go/misc_fabric/fabric-v1.4.578/v1.4.578.mod) = 8135
-SHA256 (go/misc_fabric/fabric-v1.4.578/v1.4.578.zip) = 2c25c808f29bd799a0d8fd8cc0a0da79a5ec8006780208f127566e5d43b536c3
-SIZE (go/misc_fabric/fabric-v1.4.578/v1.4.578.zip) = 21905883
+TIMESTAMP = 1795414049
+SHA256 (go/misc_fabric/fabric-v1.4.581/v1.4.581.mod) = 54416b4ac16d9e0a41babf41db2dbecc24c48a45d83d7dd1478958f718eb3bed
+SIZE (go/misc_fabric/fabric-v1.4.581/v1.4.581.mod) = 8135
+SHA256 (go/misc_fabric/fabric-v1.4.581/v1.4.581.zip) = 802ed83753712f943f8e67bbf511487d528342af7f524da3a70ad4211ec7225f
+SIZE (go/misc_fabric/fabric-v1.4.581/v1.4.581.zip) = 21915370
