@@ -1,3 +1,41 @@
+  <vuln vid="16776118-a5b5-4295-807e-17b62c83bcc5">
+    <topic>rubygem-activestorage -- arbitrary file write and read</topic>
+    <affects>
+      <package>
+	<name>rubygem-activestorage81</name>
+	<range><ge>8.1</ge><lt>8.1.4.1</lt></range>
+      </package>
+      <package>
+	<name>rubygem-activestorage80</name>
+	<range><lt>8.0.5.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	  <p>flavorjones reports:</p>
+	  <blockquote cite="https://github.com/rails/rails/security/advisories/GHSA-f3w6-w445-fwh9">
+	  <p>A Rails application that processes attachments with
+	  ImageMagick may allow an unauthenticated attacker to write
+	  arbitrary files on the server and, when attachments are
+	  stored with the Disk service, to read arbitrary files
+	  readable by the application process. Those files typically
+	  include secret_key_base and credentials for external
+	  systems, which may in turn allow escalation to remote
+	  code execution or lateral movement to those systems.</p>
+	  </blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-122006</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-122006</url>
+      <url>https://github.com/rails/rails/security/advisories/GHSA-f3w6-w445-fwh9</url>
+    </references>
+    <dates>
+      <discovery>2026-11-03</discovery>
+      <entry>2026-11-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b8fc42ea-e738-11f1-b58b-8447094a420f">
     <topic>Roundcube mail -- Multiple vulnerabilities</topic>
     <affects>
