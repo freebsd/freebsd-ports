@@ -1,3 +1,32 @@
+  <vuln vid="b8fc42ea-e738-11f1-b58b-8447094a420f">
+    <topic>Roundcube mail -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>roundcube-php82</name>
+	<name>roundcube-php83</name>
+	<name>roundcube-php84</name>
+	<name>roundcube-php85</name>
+	<name>roundcube-php85</name>
+	<range><lt>1.7.7,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Roundcube mail project reports:</p>
+	<blockquote cite="https://roundcube.net/news/2026/11/23/security-updates-1.6.22-and-1.7.7">
+	  <p>Check link for details.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://roundcube.net/news/2026/11/23/security-updates-1.6.22-and-1.7.7</url>
+    </references>
+    <dates>
+      <discovery>2026-11-23</discovery>
+      <entry>2026-11-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9d113e97-e6db-11f1-8ead-93299b7f89e8">
     <topic>gpgme -- double free vulnerability</topic>
     <affects>
