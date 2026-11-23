@@ -1,12 +1,12 @@
 PORTNAME=	carapace
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8.2
-PORTREVISION=	1
+DISTVERSION=	1.8.4
 CATEGORIES=	shells
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Multi-shell multi-command argument completer
-WWW=		https://carapace.sh/
+WWW=		https://carapace.sh/ \
+		https://github.com/carapace-sh/carapace-bin
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
