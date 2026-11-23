@@ -1,0 +1,9 @@
+TUIOS (Terminal UI OS) is a terminal window manager and multiplexer in
+the spirit of tmux and screen. It offers a vim-style modal interface,
+tiling panes, nine workspaces and daemon-backed sessions that survive
+detaching and restarts.
+
+It can also serve sessions over SSH, with each connection getting its
+own isolated instance, and the companion tuios-web program provides a
+browser-based terminal. An inbox tracks the state of coding agents
+running inside its panes.

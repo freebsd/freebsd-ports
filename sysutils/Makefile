@@ -1536,6 +1536,7 @@
     SUBDIR += ttyd
     SUBDIR += ttyload
     SUBDIR += tuckr
+    SUBDIR += tuios
     SUBDIR += tuptime
     SUBDIR += turbostat
     SUBDIR += tvterm
