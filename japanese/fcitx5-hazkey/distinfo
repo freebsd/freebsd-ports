@@ -1,4 +1,4 @@
-TIMESTAMP = 1794494342
+TIMESTAMP = 1795425042
 SHA256 (fcitx5-hazkey-0.2.1-swift-packages.tar.gz) = 610d1f4fa9821a9ed989d822c205f62be8c6176c419342ea4b9b316f79139fff
 SIZE (fcitx5-hazkey-0.2.1-swift-packages.tar.gz) = 274255278
 SHA256 (7ka-Hiira-hazkey-0.2.1_GH0.tar.gz) = bd257a9ab3b3f490e61c31b174b6396715445c11b93b04fcd30f96fd94d6f1dd
@@ -11,3 +11,5 @@ SHA256 (7ka-hiira-llama.cpp-10295c26a2a18c3c48863b179c5e6bf34a4057d1_GH0.tar.gz)
 SIZE (7ka-hiira-llama.cpp-10295c26a2a18c3c48863b179c5e6bf34a4057d1_GH0.tar.gz) = 20827982
 SHA256 (2391506ace6abb56186def40c7107fdfa694ed55.patch?full_index=1) = d9cd8923710e41d5d2bcd2449dff2e7ff02dc971ed69d765c81171339849e7cd
 SIZE (2391506ace6abb56186def40c7107fdfa694ed55.patch?full_index=1) = 1348
+SHA256 (31f7803bc4e7c0dcc279ee04c2ecfb76b2afdd3e.patch?full_index=1) = d83d24ae61b08452084013bb13218a7b9a63a3cde544cac58cb64e8f90e99cc3
+SIZE (31f7803bc4e7c0dcc279ee04c2ecfb76b2afdd3e.patch?full_index=1) = 856
