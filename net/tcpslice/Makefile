@@ -1,5 +1,5 @@
 PORTNAME=	tcpslice
-DISTVERSION=	1.8
+DISTVERSION=	1.9
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	https://www.tcpdump.org/release/
