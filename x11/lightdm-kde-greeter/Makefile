@@ -22,7 +22,8 @@ USE_KDE=	auth colorscheme config configwidgets coreaddons i18n \
 		iconthemes kcmutils libplasma networkmanagerqt package \
 		widgetsaddons \
 		ecm:build
-USE_QT=		5compat base declarative
+USE_QT=		5compat base declarative \
+		shadertools:build tools:build
 USE_XORG=	x11 xcb xext xrandr xrender
 
 KDE_INVENT=	v${PORTVERSION} plasma
