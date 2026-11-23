@@ -27,7 +27,7 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 
 USES=		cmake:testing compiler:c++11-lib desktop-file-utils gettext gl openal:soft pkgconfig qt:6
 USE_GL=		opengl
-USE_QT=		base sqldriver-sqlite:run svg
+USE_QT=		base sqldriver-sqlite:run svg tools:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	TokTok
