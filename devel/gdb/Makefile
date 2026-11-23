@@ -1,6 +1,5 @@
 PORTNAME=	gdb
-DISTVERSION=	15.1
-PORTREVISION=	7
+DISTVERSION=	15.2
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -8,8 +7,14 @@ MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	GNU Project Debugger
 WWW=		https://www.gnu.org/software/gdb/
 
-LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/COPYING3
+LICENSE=	GPL-3.0-or-later BSD-2-Clause BSD-3-Clause \
+		GFDL-1.3-invariants-or-later NCSA
+LICENSE_COMB=	multi
+LICENSE_FILE_GPL-3.0-or-later=	${WRKSRC}/COPYING3
+LICENSE_FILE_BSD-2-Clause=	${FILESDIR}/kgdb/kgdb-main.c
+LICENSE_FILE_BSD-3-Clause=	${WRKSRC}/libbacktrace/backtrace.h
+LICENSE_FILE_GFDL-1.3-invariants-or-later=	${WRKSRC}/gdb/doc/fdl.texi
+LICENSE_FILE_NCSA=	${FILESDIR}/LICENSE.libcxx-gdbpy
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libgmp.so:math/gmp \
@@ -18,13 +23,10 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 TEST_DEPENDS=	runtest:misc/dejagnu
 
 USES=		compiler:c++17-lang cpe gmake libtool makeinfo pkgconfig tar:xz
+CPE_VENDOR=	gnu
 USE_PYTHON=	flavors py3kplist
 
-TEST_TARGET=	check
-
-CPE_VENDOR=	gnu
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CONFIGURED_M4=m4 CONFIGURED_BISON=byacc
 CONFIGURE_ARGS=	--program-suffix=${VER} \
 		--disable-sim \
 		--enable-targets=all --enable-64-bit-bfd \
@@ -32,63 +34,65 @@ CONFIGURE_ARGS=	--program-suffix=${VER} \
 		--with-additional-debug-dirs=${LOCALBASE}/lib/debug \
 		${ICONV_CONFIGURE_ARG} \
 		--without-libunwind-ia64
+CONFIGURE_ENV=	CONFIGURED_M4=m4 CONFIGURED_BISON=byacc
 CONFIGURE_OUTSOURCE=	yes
+
+ALL_TARGET=	all-gdb
+TEST_TARGET=	check
+
 CFLAGS:=	${CFLAGS:C/ +$//}	# blanks at EOL creep in sometimes
 CFLAGS+=	-DRL_NO_COMPAT
-EXCLUDE=	dejagnu expect texinfo intl
+
 EXTRACT_AFTER_ARGS=	${EXCLUDE:S/^/--exclude /}
 
-VER=		${DISTVERSION:S/.//g}
 PLIST_SUB=	VER=${VER}
 
 OPTIONS_DEFINE=	DEBUGINFOD GDB_LINK GUILE KGDB NLS PYTHON \
 		SOURCE_HIGHLIGHT TUI XXHASH
 OPTIONS_DEFAULT=	GDB_LINK KGDB NLS PYTHON SOURCE_HIGHLIGHT \
-			TUI XXHASH
-OPTIONS_DEFAULT+=	PORT_READLINE PORT_ICONV SYSTEM_ZLIB
-
+			TUI XXHASH PORT_READLINE PORT_ICONV SYSTEM_ZLIB
 OPTIONS_SINGLE=	READLINE ICONV ZLIB
-OPTIONS_SINGLE_READLINE=	BUNDLED_READLINE PORT_READLINE
 OPTIONS_SINGLE_ICONV=	PORT_ICONV SYSTEM_ICONV
+OPTIONS_SINGLE_READLINE=	BUNDLED_READLINE PORT_READLINE
 OPTIONS_SINGLE_ZLIB=	BUNDLED_ZLIB SYSTEM_ZLIB
+OPTIONS_SUB=	yes
 
+BUNDLED_READLINE_DESC=	from gdb distfile
+BUNDLED_ZLIB_DESC=	from gdb distfile
 DEBUGINFOD_DESC=	Build gdb with debuginfod server support
 GDB_LINK_DESC=		Create ${PREFIX}/bin/gdb symlink
 KGDB_DESC=		Kernel debugging support
-BUNDLED_READLINE_DESC=	from gdb distfile
-BUNDLED_ZLIB_DESC=	from gdb distfile
-PORT_READLINE_DESC=	from devel/readline port
 PORT_ICONV_DESC=	use libiconv, with wider charset support
+PORT_READLINE_DESC=	from devel/readline port
 SOURCE_HIGHLIGHT_DESC=	Syntax highlighting support
 SYSTEM_ICONV_DESC=	use libc iconv, with no wchar support
 SYSTEM_ZLIB_DESC=	use system zlib
 TUI_DESC=		Text User Interface support
 XXHASH_DESC=		Use xxHash for hashing (faster)
 
-OPTIONS_SUB=	yes
-
 BUNDLED_READLINE_CONFIGURE_OFF=	--with-system-readline
-DEBUGINFOD_CONFIGURE_WITH=	debuginfod
 DEBUGINFOD_LIB_DEPENDS=	libdebuginfod.so:devel/elfutils
-GUILE_CONFIGURE_WITH=	guile=guile-${GUILE_VER}
+DEBUGINFOD_CONFIGURE_WITH=	debuginfod
 GUILE_USES=		guile:2.2,3.0
+GUILE_CONFIGURE_WITH=	guile=guile-${GUILE_VER}
 NLS_USES=	gettext-runtime
-PORT_READLINE_USES=	readline
 PORT_ICONV_USES=	iconv:wchar_t
+PORT_READLINE_USES=	readline
+PYTHON_USES=		python
 PYTHON_CONFIGURE_ON=	--with-python=${PYTHON_CMD}
 PYTHON_CONFIGURE_OFF=	--without-python
-PYTHON_USES=		python
-SOURCE_HIGHLIGHT_CONFIGURE_ENABLE=	source-highlight
 SOURCE_HIGHLIGHT_LIB_DEPENDS=	\
 	libboost_regex.so:devel/boost-libs \
 	libsource-highlight.so:textproc/source-highlight
+SOURCE_HIGHLIGHT_CONFIGURE_ENABLE=	source-highlight
 SYSTEM_ICONV_USES=	iconv
 SYSTEM_ZLIB_CONFIGURE_WITH=	system-zlib
 TUI_CONFIGURE_ENABLE=	tui
-XXHASH_CONFIGURE_OFF=	--with-xxhash=no
 XXHASH_LIB_DEPENDS=	libxxhash.so:devel/xxhash
+XXHASH_CONFIGURE_OFF=	--with-xxhash=no
 
-ALL_TARGET=	all-gdb
+EXCLUDE=	dejagnu expect texinfo intl
+VER=		${DISTVERSION:S/.//g}
 
 .include <bsd.port.pre.mk>
 
