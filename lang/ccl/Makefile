@@ -1,7 +1,6 @@
 PORTNAME=	ccl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.13
-PORTREVISION=	1
+DISTVERSION=	1.14
 CATEGORIES=	lang lisp
 MASTER_SITES+=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${PORTVERSION}/:bootstrap
 DISTFILES=	freebsdx86.tar.gz:bootstrap
@@ -16,8 +15,10 @@ LICENSE=	APACHE20
 
 ONLY_FOR_ARCHS=	amd64
 
+BUILD_DEPENDS+=	as:devel/binutils
 RUN_DEPENDS=	cl-freebsd-asdf-init>=0:devel/cl-freebsd-asdf-init
 
+USES=		cl
 USE_GITHUB=	yes
 GH_ACCOUNT=	Clozure
 
@@ -25,18 +26,12 @@ CCL_DIRECTORY=	${PREFIX}/lib/ccl
 # the following files will not be installed
 EXCLUDE=	cocoa-ide lisp-kernel scripts fx86cl fx86cl.image
 
-USES=		cl
-
-CONFLICTS_INSTALL=	cclive # bin/ccl
-
-BUILD_DEPENDS+=	as:devel/binutils
-
 LISP_ARCH=	x8664
 FX86CL=		fx86cl64
 
+SUB_FILES=	ccl.sh
 SUB_LIST+=	CCL_DIRECTORY="${CCL_DIRECTORY}" \
 		FX86CL="${FX86CL}"
-SUB_FILES=	ccl.sh
 
 post-extract:
 	@cd ${WRKSRC} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/freebsdx86.tar.gz
