@@ -1,6 +1,6 @@
 PORTNAME=	lean-ctx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.12.6
+DISTVERSION=	3.12.7
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -40,7 +40,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		aho-corasick-1.1.5 \
 		alloca-0.4.0 \
 		allocator-api2-0.2.21 \
-		android_system_properties-0.1.6 \
 		anes-0.1.6 \
 		anstream-1.0.0 \
 		anstyle-1.0.14 \
@@ -86,7 +85,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		chacha20-0.9.1 \
 		chacha20-0.10.2 \
 		chacha20poly1305-0.10.1 \
-		chrono-0.4.45 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
@@ -179,7 +177,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		foldhash-0.2.0 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
-		form_urlencoded-1.2.2 \
+		form_urlencoded-1.2.3 \
 		fraction-0.15.4 \
 		fs2-0.4.3 \
 		fs_extra-1.3.0 \
@@ -221,8 +219,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		hyper-1.11.0 \
 		hyper-rustls-0.27.9 \
 		hyper-util-0.1.20 \
-		iana-time-zone-0.1.65 \
-		iana-time-zone-haiku-0.1.2 \
 		icu_collections-2.1.1 \
 		icu_locale_core-2.1.1 \
 		icu_normalizer-2.1.1 \
@@ -242,6 +238,11 @@ CARGO_CRATES=	adler2-2.0.1 \
 		is_terminal_polyfill-1.70.2 \
 		itertools-0.13.0 \
 		itoa-1.0.18 \
+		jiff-0.2.43 \
+		jiff-core-0.1.5 \
+		jiff-static-0.2.43 \
+		jiff-tzdb-0.1.9 \
+		jiff-tzdb-platform-0.1.3 \
 		jni-0.22.4 \
 		jni-macros-0.22.4 \
 		jni-sys-0.4.1 \
@@ -296,7 +297,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		num-iter-0.1.46 \
 		num-rational-0.4.2 \
 		num-traits-0.2.19 \
-		oauth2-5.0.0 \
 		once_cell-1.21.4 \
 		once_cell_polyfill-1.70.2 \
 		oorandom-11.1.5 \
@@ -381,7 +381,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rusqlite-0.41.1 \
 		rustc-hash-2.1.3 \
 		rustc_version-0.4.1 \
-		rustix-1.1.4 \
+		rustix-1.1.6 \
 		rustls-0.23.46 \
 		rustls-native-certs-0.8.4 \
 		rustls-pki-types-1.15.1 \
@@ -534,7 +534,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		untrusted-0.9.0 \
 		ureq-3.4.0 \
 		ureq-proto-0.6.1 \
-		url-2.5.8 \
+		url-2.5.9 \
 		urlencoding-2.1.3 \
 		utf8-zero-0.8.1 \
 		utf8_iter-1.0.4 \
