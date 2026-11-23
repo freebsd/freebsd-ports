@@ -1464,8 +1464,10 @@
 %%DATADIR%%/xbrz/shaders/4xbrz.glsl
 %%DATADIR%%/xbrz/shaders/5xbrz.glsl
 %%DATADIR%%/xbrz/shaders/6xbrz.glsl
+%%DATADIR%%/xbrz/shaders/xbrz-freescale-multipass/xbrz-crisp-pass0.glsl
 %%DATADIR%%/xbrz/shaders/xbrz-freescale-multipass/xbrz-freescale-pass0.glsl
 %%DATADIR%%/xbrz/shaders/xbrz-freescale-multipass/xbrz-freescale-pass1.glsl
+%%DATADIR%%/xbrz/shaders/xbrz-freescale-multipass/xbrz-freescale-resolve.glsl
 %%DATADIR%%/xbrz/shaders/xbrz-freescale.glsl
 %%DATADIR%%/xbrz/xbrz-crisp.glslp
 %%DATADIR%%/xbrz/xbrz-freescale-multipass.glslp
