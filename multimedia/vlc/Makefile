@@ -1,5 +1,6 @@
 PORTNAME=	vlc
 DISTVERSION=	3.0.24
+PORTREVISION=	1
 PORTEPOCH=	4
 CATEGORIES=	multimedia audio net www
 MASTER_SITES=	https://get.videolan.org/${PORTNAME}/${DISTVERSION:S/a$//}/ \
@@ -90,7 +91,7 @@ OPTIONS_RADIO=		QTVER
 OPTIONS_RADIO_QTVER=	QT5 QT6
 
 OPTIONS_DEFAULT=ASS AVAHI CHROMECAST DAV1D DBUS DVDNAV DVDREAD FRIBIDI GNUTLS HARFBUZZ \
-		JPEG LIVEMEDIA LUA OGG OPTIMIZED_CFLAGS OPUS PNG QT QT5 SAMPLERATE \
+		JPEG LIVEMEDIA LUA OGG OPTIMIZED_CFLAGS OPUS PNG QT QT6 SAMPLERATE \
 		SKINS SPEEX STREAM TAGLIB THEORA TWOLAME UPNP V4L VAAPI VCD \
 		VDPAU VORBIS WAYLAND X11
 OPTIONS_DEFAULT_powerpc=	ALTIVEC
@@ -116,7 +117,7 @@ LIBSSH2_DESC=		SCP/SFTP support via libssh2
 MFX_DESC=		Intel MediaSDK (aka Quick Sync Video)
 OGGSPOTS_DESC=		Experimental OggSpots codec
 QT_DESC=		Qt toolkit support (requires either QT5 or QT6)
-QT6_DESC=		Qt 6 toolkit support (experimental)
+QT5_DESC=		Qt 5 toolkit support (deprecated)
 QTVER_DESC=		Select Qt GUI engine version
 REALRTSP_DESC=		Real RTSP access module
 RUNROOT_DESC=		Enable running as root
@@ -402,6 +403,10 @@ WITH_DVD_DEVICE?=/dev/cd0
 .if ${PORT_OPTIONS:MQT}
 .  if empty(PORT_OPTIONS:MQT5) && empty(PORT_OPTIONS:MQT6)
 IGNORE=		cannot be installed: QT option requires either QT5 or QT6
+.  endif
+.  if ${PORT_OPTIONS:MQT5}
+DEPRECATED=		Depends on EOLed Qt 5
+EXPIRATION_DATE=	2026-12-31
 .  endif
 .endif
 
