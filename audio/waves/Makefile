@@ -1,14 +1,14 @@
 PORTNAME=	waves
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.50
-PORTREVISION=	3
+DISTVERSION=	0.1.51
+PORTREVISION=	0
 CATEGORIES=	audio
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Terminal music player with MusicBrainz tagging, and Last.fm scrobbling
 WWW=		https://github.com/llehouerou/waves
 
-LICENSE=	GPLv3
+LICENSE=	GPL-3.0-only
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_i386=	does not compile

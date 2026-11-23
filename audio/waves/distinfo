@@ -1,5 +1,5 @@
-TIMESTAMP = 1790025518
-SHA256 (go/audio_waves/waves-v0.1.50/v0.1.50.mod) = d2f81068c56b6bbaa4bd1a9c616f0fb694281426237c4eb998c09f6b9158d17a
-SIZE (go/audio_waves/waves-v0.1.50/v0.1.50.mod) = 3491
-SHA256 (go/audio_waves/waves-v0.1.50/v0.1.50.zip) = 374a8212fcd6cc41c11fc6123e92f04cf82fc22b30d9697b5bcff5d25b9a6c40
-SIZE (go/audio_waves/waves-v0.1.50/v0.1.50.zip) = 1964167
+TIMESTAMP = 1795429447
+SHA256 (go/audio_waves/waves-v0.1.51/v0.1.51.mod) = d155f4b4982249888162842815fb108bc519460d66a0449bb7c3ba7fd6341e81
+SIZE (go/audio_waves/waves-v0.1.51/v0.1.51.mod) = 3495
+SHA256 (go/audio_waves/waves-v0.1.51/v0.1.51.zip) = 7eccd3cd16b55e3363cd24599035f3e3fffd285611b7b2d7f644a30b7b029f1b
+SIZE (go/audio_waves/waves-v0.1.51/v0.1.51.zip) = 2518626
