@@ -1,6 +1,6 @@
---- codex-rs/core/src/tools/runtimes/apply_patch_tests.rs.orig	2026-10-27 18:19:19 UTC
+--- codex-rs/core/src/tools/runtimes/apply_patch_tests.rs.orig	2026-11-19 23:07:36 UTC
 +++ codex-rs/core/src/tools/runtimes/apply_patch_tests.rs
-@@ -50,6 +50,15 @@ fn test_turn_environment(environment_id: &str) -> crat
+@@ -51,6 +51,15 @@ fn test_turn_environment(environment_id: &str) -> crat
      )
  }
  
