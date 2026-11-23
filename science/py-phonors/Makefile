@@ -1,5 +1,5 @@
 PORTNAME=	phonors
-DISTVERSION=	0.8.0
+DISTVERSION=	0.9.0
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -98,18 +98,18 @@ CARGO_CRATES=	autocfg-1.5.1 \
 		seq-macro-0.3.6 \
 		syn-1.0.109 \
 		syn-2.0.119 \
-		syn-3.0.9 \
+		syn-3.0.10 \
 		sysctl-0.6.0 \
-		target-lexicon-0.13.5 \
+		target-lexicon-0.13.6 \
 		thiserror-1.0.69 \
 		thiserror-impl-1.0.69 \
 		unicode-ident-1.0.27 \
 		version_check-0.9.5 \
-		walkdir-2.5.0 \
+		walkdir-2.5.1 \
 		winapi-util-0.1.11 \
 		windows-link-0.2.1 \
 		windows-sys-0.61.2 \
-		zerocopy-0.8.63 \
-		zerocopy-derive-0.8.63
+		zerocopy-0.8.64 \
+		zerocopy-derive-0.8.64
 
 .include <bsd.port.mk>
