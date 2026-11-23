@@ -1,6 +1,5 @@
 PORTNAME=	bttf
-DISTVERSION=	0.1.4
-PORTREVISION=	4
+DISTVERSION=	0.2.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -16,117 +15,100 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	BurntSushi
 
-CARGO_CRATES=	aho-corasick-1.1.4 \
+CARGO_CRATES=	aho-corasick-1.1.5 \
 		anstyle-1.0.14 \
-		anyhow-1.0.102 \
-		bitflags-2.11.1 \
-		bstr-1.12.1 \
+		anyhow-1.0.104 \
+		bitflags-2.13.2 \
+		bstr-1.14.0 \
 		calendrical_calculations-0.2.4 \
-		cfg-if-1.0.4 \
-		console-0.16.3 \
+		cfg-if-1.0.5 \
+		console-0.16.6 \
 		core_maths-0.1.1 \
-		displaydoc-0.2.6 \
-		either-1.16.0 \
+		displaydoc-0.2.7 \
+		either-1.19.0 \
 		encode_unicode-1.0.0 \
-		equivalent-1.0.2 \
-		errno-0.3.14 \
-		fastrand-2.4.1 \
-		fixed_decimal-0.7.2 \
+		errno-0.3.15 \
+		fastrand-2.5.0 \
+		fixed_decimal-0.7.3 \
 		flume-0.12.0 \
-		foldhash-0.1.5 \
-		getrandom-0.4.2 \
-		hashbrown-0.15.5 \
-		hashbrown-0.17.1 \
-		heck-0.5.0 \
-		icu_calendar-2.2.1 \
-		icu_calendar_data-2.2.0 \
-		icu_collections-2.2.0 \
-		icu_datetime-2.2.0 \
-		icu_datetime_data-2.2.0 \
-		icu_decimal-2.2.0 \
-		icu_decimal_data-2.2.0 \
-		icu_locale-2.2.0 \
-		icu_locale_core-2.2.0 \
-		icu_locale_data-2.2.0 \
-		icu_pattern-0.4.2 \
-		icu_plurals-2.2.0 \
-		icu_plurals_data-2.2.0 \
-		icu_provider-2.2.0 \
-		icu_time-2.2.0 \
-		icu_time_data-2.2.0 \
-		id-arena-2.3.0 \
-		indexmap-2.14.0 \
-		insta-1.47.2 \
-		itoa-1.0.18 \
-		ixdtf-0.6.5 \
-		jiff-0.2.27 \
-		jiff-icu-0.2.2 \
-		jiff-static-0.2.27 \
-		jiff-tzdb-0.1.6 \
-		jiff-tzdb-platform-0.1.3 \
-		leb128fmt-0.1.0 \
+		getrandom-0.4.3 \
+		icu_calendar-2.4.0 \
+		icu_calendar_data-2.4.0 \
+		icu_collections-2.4.0 \
+		icu_datetime-2.4.0 \
+		icu_datetime_data-2.4.0 \
+		icu_decimal-2.4.0 \
+		icu_decimal_data-2.4.0 \
+		icu_locale-2.4.0 \
+		icu_locale_core-2.4.0 \
+		icu_locale_data-2.4.0 \
+		icu_locale_fallback-2.4.0 \
+		icu_locale_fallback_data-2.4.0 \
+		icu_pattern-0.5.1 \
+		icu_plurals-2.4.0 \
+		icu_plurals_data-2.4.0 \
+		icu_provider-2.4.0 \
+		icu_time-2.4.0 \
+		icu_time_data-2.4.0 \
+		insta-1.49.0 \
+		itoa-1.0.19 \
+		ixdtf-0.6.7 \
+		jiff-1.0.2 \
+		jiff-core-1.0.1 \
+		jiff-icu-1.0.0 \
+		jiff-static-1.0.2 \
+		jiff-tzdb-1.0.0 \
+		jiff-tzdb-platform-1.0.0 \
 		lexopt-0.3.2 \
-		libc-0.2.186 \
+		libc-0.2.191 \
 		libm-0.2.16 \
 		linux-raw-sys-0.12.1 \
-		litemap-0.8.2 \
+		litemap-0.8.3 \
 		lock_api-0.4.14 \
-		log-0.4.30 \
-		memchr-2.8.1 \
-		memmap2-0.9.10 \
+		log-0.4.35 \
+		memchr-2.8.3 \
+		memmap2-0.9.12 \
 		once_cell-1.21.4 \
-		portable-atomic-1.13.1 \
-		portable-atomic-util-0.2.7 \
-		potential_utf-0.1.5 \
-		prettyplease-0.2.37 \
-		proc-macro2-1.0.106 \
-		quote-1.0.45 \
+		portable-atomic-1.15.0 \
+		portable-atomic-util-0.2.8 \
+		potential_utf-0.1.6 \
+		proc-macro2-1.0.107 \
+		quote-1.0.47 \
 		r-efi-6.0.0 \
-		regex-1.12.3 \
-		regex-automata-0.4.14 \
-		regex-syntax-0.8.10 \
-		rustix-1.1.4 \
+		regex-1.13.2 \
+		regex-automata-0.4.19 \
+		regex-syntax-0.8.12 \
+		rustix-1.1.6 \
 		scopeguard-1.2.0 \
-		semver-1.0.28 \
-		serde-1.0.228 \
-		serde_core-1.0.228 \
-		serde_derive-1.0.228 \
-		serde_json-1.0.150 \
+		serde-1.0.229 \
+		serde_core-1.0.229 \
+		serde_derive-1.0.229 \
+		serde_json-1.0.154 \
 		similar-2.7.0 \
-		smallvec-1.15.1 \
-		spin-0.9.8 \
+		smallvec-1.16.6 \
+		spin-0.9.9 \
 		stable_deref_trait-1.2.1 \
-		syn-2.0.117 \
-		synstructure-0.13.2 \
+		strip-ansi-escapes-0.2.1 \
+		syn-3.0.10 \
+		synstructure-0.14.0 \
 		tempfile-3.27.0 \
-		textwrap-0.16.2 \
-		tinystr-0.8.3 \
-		unicode-ident-1.0.24 \
-		unicode-xid-0.2.6 \
-		utf8_iter-1.0.4 \
-		wasip2-1.0.3+wasi-0.2.9 \
-		wasip3-0.4.0+wasi-0.3.0-rc-2026-01-06 \
-		wasm-encoder-0.244.0 \
-		wasm-metadata-0.244.0 \
-		wasmparser-0.244.0 \
+		textwrap-0.16.4 \
+		tinystr-0.8.5 \
+		unicode-ident-1.0.27 \
+		utf8_iter-1.1.0 \
+		utf_types-1.0.0 \
+		vte-0.14.1 \
 		windows-link-0.2.1 \
 		windows-sys-0.61.2 \
-		wit-bindgen-0.51.0 \
-		wit-bindgen-0.57.1 \
-		wit-bindgen-core-0.51.0 \
-		wit-bindgen-rust-0.51.0 \
-		wit-bindgen-rust-macro-0.51.0 \
-		wit-component-0.244.0 \
-		wit-parser-0.244.0 \
-		writeable-0.6.3 \
-		yoke-0.8.2 \
-		yoke-derive-0.8.2 \
+		writeable-0.6.4 \
+		yoke-0.8.4 \
+		yoke-derive-0.8.4 \
 		zerofrom-0.1.8 \
-		zerofrom-derive-0.1.7 \
-		zerotrie-0.2.4 \
-		zerovec-0.11.6 \
-		zerovec-derive-0.11.3 \
-		zmij-1.0.21
+		zerofrom-derive-0.1.8 \
+		zerotrie-0.2.5 \
+		zerovec-0.11.9 \
+		zerovec-derive-0.11.7 \
+		zmij-1.0.23
 
 PLIST_FILES=	bin/${PORTNAME}
 
