@@ -1,12 +1,12 @@
 PORTNAME=	qrcp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.7
-PORTREVISION=	3
+DISTVERSION=	0.12.0
 CATEGORIES=	net
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Transfer files over wifi by scanning a QR code
-WWW=		https://qrcp.sh/
+WWW=		https://qrcp.sh/ \
+		https://github.com/claudiodangelis/qrcp
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -15,9 +15,9 @@ USES=		go:modules
 
 GO_MODULE=	github.com/claudiodangelis/qrcp
 GO_LDFLAGS=	-w \
-		-X github.com/claudiodangelis/qrcp/version.version=${DISTVERSION} \
-		-X github.com/claudiodangelis/qrcp/version.date=${RELEASE_DATE}
-RELEASE_DATE=	2026-09-30
+		-X ${GO_MODULE}/version.version=${DISTVERSION} \
+		-X ${GO_MODULE}/version.date=${RELEASE_DATE}
+RELEASE_DATE=	2026-11-21
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	README.md SECURITY.md

@@ -1,5 +1,5 @@
-TIMESTAMP = 1791161267
-SHA256 (go/net_qrcp/qrcp-v0.11.7/v0.11.7.mod) = 886066c38c96850d0d455a341aec619d2fbc87a62c8eacec8e2afe929d2102ae
-SIZE (go/net_qrcp/qrcp-v0.11.7/v0.11.7.mod) = 1492
-SHA256 (go/net_qrcp/qrcp-v0.11.7/v0.11.7.zip) = 7630427a1f1ee8ae079d369364b1c8561ba6baa074a2417ed4f8a7e645277fc1
-SIZE (go/net_qrcp/qrcp-v0.11.7/v0.11.7.zip) = 13331437
+TIMESTAMP = 1795395164
+SHA256 (go/net_qrcp/qrcp-v0.12.0/v0.12.0.mod) = dfb4027a9ada46f246b9b967a8e8ef667efaa6fcdef1b3577c61c00b17fc9b90
+SIZE (go/net_qrcp/qrcp-v0.12.0/v0.12.0.mod) = 1528
+SHA256 (go/net_qrcp/qrcp-v0.12.0/v0.12.0.zip) = cf6a42272deac17699dc690bdf9b8fbc88f838f64f7559abcd40110994a4f3fa
+SIZE (go/net_qrcp/qrcp-v0.12.0/v0.12.0.zip) = 13357464
