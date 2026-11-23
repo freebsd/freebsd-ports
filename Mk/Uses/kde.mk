@@ -5,7 +5,7 @@
 #
 # 5:		Depend on KDE Frameworks 5 components and variables.
 # 6:		Depend on KDE Frameworks 6 components and variables.
-#		The version may be omitted when all required components are
+#		The version should be omitted when all required components are
 #		indifferent to the Frameworks version, e.g. ecm or breeze-icons.
 #
 # Variables that can be set by a port:
