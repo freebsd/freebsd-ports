@@ -21,7 +21,8 @@ USES=		cmake:testing compiler:c++23-lang desktop-file-utils \
 
 USE_GL=		opengl
 USE_KDE=	widgetsaddons windowsystem
-USE_QT=		base
+USE_QT=		base \
+		tools:build
 USE_XORG=	x11
 
 CMAKE_ARGS=		-DTREMOTESF_WITH_HTTPLIB=system
