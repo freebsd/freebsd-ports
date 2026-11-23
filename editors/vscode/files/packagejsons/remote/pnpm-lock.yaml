@@ -1,3 +1,161 @@
+---
+lockfileVersion: '9.0'
+
+importers:
+
+  .:
+    configDependencies: {}
+    packageManagerDependencies:
+      pnpm:
+        specifier: 12.16.0
+        version: 12.16.0
+
+packages:
+
+  '@pnpm/exe.android-arm64@12.16.0':
+    resolution: {integrity: sha512-Air4kk1RA4C8PGkkIH91eme/ERTV6xEmPfJS+OO1UMMzx7ZDeM44WGfcizGPnQbWiqfJ0l7TSttzYzQ0FvRLIA==}
+    cpu: [arm64]
+    os: [android]
+
+  '@pnpm/exe.android-x64@12.16.0':
+    resolution: {integrity: sha512-MHQdX7J3b12gsBbKSV4phbGZaIAYxhIbXRS2E56XgVXpcL9R+HiQ/Aq9PDkJtNVaOaGfrFR9kzGMLF4PXk6jRw==}
+    cpu: [x64]
+    os: [android]
+
+  '@pnpm/exe.darwin-arm64@12.16.0':
+    resolution: {integrity: sha512-0kMENoYlVTxiCPWf7fXEF3EtYXUySilIC+UAe5Z7kC8keY8+ul8ddhuHjSU0e85qlKDIJfIxDYACse/Lx8It/Q==}
+    cpu: [arm64]
+    os: [darwin]
+
+  '@pnpm/exe.darwin-x64@12.16.0':
+    resolution: {integrity: sha512-jsS6Q5gTjRD4TOyyFazO/3ctRHfigGtLatfV2ZxCGd0/ZD/m/9RIT8P38oyo+r3ARHhgL7YPT8dXmj5UGd9iSA==}
+    cpu: [x64]
+    os: [darwin]
+
+  '@pnpm/exe.freebsd-x64@12.16.0':
+    resolution: {integrity: sha512-Rs8pV7jAhRnAzKdJWU20ECeRB4KUdV5xChUvmXyaHq+60+UfUhYVJjL0btApxX/AIBscrK/+tjP3w6RTb9RDCA==}
+    cpu: [x64]
+    os: [freebsd]
+
+  '@pnpm/exe.linux-arm64-musl@12.16.0':
+    resolution: {integrity: sha512-1p8s61byKqiaDi+TatmMoxFVFPXpLwrHBI4CZBJlH2A58hi3EfqfDgWB5w2IutciGrBQ5DxVFE8VsbITnpqfUQ==}
+    cpu: [arm64]
+    os: [linux]
+    libc: [musl]
+
+  '@pnpm/exe.linux-arm64@12.16.0':
+    resolution: {integrity: sha512-6vwpzcLhopnnz/x537ET62PBFh8QxWsE9miRT8lhHXYuq0WVXxT6L6W0BcjZNVEQyp1WggdHq4qt8LXrdk2RFQ==}
+    cpu: [arm64]
+    os: [linux]
+    libc: [glibc]
+
+  '@pnpm/exe.linux-ppc64@12.16.0':
+    resolution: {integrity: sha512-58n7z+x7M/gWK+lhoRrABp0X2dYvUGhdjKb1S0UCm1I7v1KwltEvAIlWgYSyq9/jOqTp/uCtZE9dU1sP/fqs3Q==}
+    cpu: [ppc64]
+    os: [linux]
+    libc: [glibc]
+
+  '@pnpm/exe.linux-riscv64@12.16.0':
+    resolution: {integrity: sha512-N81hKRql41PisaxO0EJcmBVvGjQ+aY8vgprPhB6DFaCzohuT0EAfsc5icM/NZkdFLLaglYja8zAk3E59ToNUaA==}
+    cpu: [riscv64]
+    os: [linux]
+    libc: [glibc]
+
+  '@pnpm/exe.linux-s390x@12.16.0':
+    resolution: {integrity: sha512-8UfyGGA9o8IqdoPtCg9c/t7Ht/ArO+T318Yomlp36WvImnBj3etnO0GKh0CPOp7fG+AvNcspxCXIr5vNjYo84w==}
+    cpu: [s390x]
+    os: [linux]
+    libc: [glibc]
+
+  '@pnpm/exe.linux-x64-musl@12.16.0':
+    resolution: {integrity: sha512-BCp9UPPqS9wyZmfB1CeX8ODpUaY3icHPNQvnlutDUymexM0frPxgd1Qf1iWfC+IhvszevGnVlkUqEITSMowHNw==}
+    cpu: [x64]
+    os: [linux]
+    libc: [musl]
+
+  '@pnpm/exe.linux-x64@12.16.0':
+    resolution: {integrity: sha512-NSZrQRBatoGG4C14DBYyQHnUGQA1fejrwoiKRnqyzFFXPFbydK8avYcLu3evb9Nry8iGIQujRnwysdCNmSFBlg==}
+    cpu: [x64]
+    os: [linux]
+    libc: [glibc]
+
+  '@pnpm/exe.win32-arm64@12.16.0':
+    resolution: {integrity: sha512-RsPE7hktWUn+oCi5IlnpMGBBMO+Lgf+VUUgiqrBHsdmdpTk3KDOM9TA0xOgK+xwvQdLtvc28JwigR4HmGMNyIQ==}
+    cpu: [arm64]
+    os: [win32]
+
+  '@pnpm/exe.win32-x64@12.16.0':
+    resolution: {integrity: sha512-mphDCqBvSu7o8j3DqnVDkpCf0HKaKJjEdlN6ymfpxh4VUYw5SW4zQLGmvjdxUUZZb6nuU/R8bTn2rAdJdYCk5w==}
+    cpu: [x64]
+    os: [win32]
+
+  pnpm@12.16.0:
+    resolution: {integrity: sha512-6czJGguNUtopfBaEH57gXz3dYxvXV+8mohFofUo43mU8YURTZJKUQ4xYvnTCumLVPmM6ThU3CMASKW0PPuJ7Ng==}
+    engines: {node: '>=18'}
+    hasBin: true
+
+snapshots:
+
+  '@pnpm/exe.android-arm64@12.16.0':
+    optional: true
+
+  '@pnpm/exe.android-x64@12.16.0':
+    optional: true
+
+  '@pnpm/exe.darwin-arm64@12.16.0':
+    optional: true
+
+  '@pnpm/exe.darwin-x64@12.16.0':
+    optional: true
+
+  '@pnpm/exe.freebsd-x64@12.16.0':
+    optional: true
+
+  '@pnpm/exe.linux-arm64-musl@12.16.0':
+    optional: true
+
+  '@pnpm/exe.linux-arm64@12.16.0':
+    optional: true
+
+  '@pnpm/exe.linux-ppc64@12.16.0':
+    optional: true
+
+  '@pnpm/exe.linux-riscv64@12.16.0':
+    optional: true
+
+  '@pnpm/exe.linux-s390x@12.16.0':
+    optional: true
+
+  '@pnpm/exe.linux-x64-musl@12.16.0':
+    optional: true
+
+  '@pnpm/exe.linux-x64@12.16.0':
+    optional: true
+
+  '@pnpm/exe.win32-arm64@12.16.0':
+    optional: true
+
+  '@pnpm/exe.win32-x64@12.16.0':
+    optional: true
+
+  pnpm@12.16.0:
+    optionalDependencies:
+      '@pnpm/exe.android-arm64': 12.16.0
+      '@pnpm/exe.android-x64': 12.16.0
+      '@pnpm/exe.darwin-arm64': 12.16.0
+      '@pnpm/exe.darwin-x64': 12.16.0
+      '@pnpm/exe.freebsd-x64': 12.16.0
+      '@pnpm/exe.linux-arm64': 12.16.0
+      '@pnpm/exe.linux-arm64-musl': 12.16.0
+      '@pnpm/exe.linux-ppc64': 12.16.0
+      '@pnpm/exe.linux-riscv64': 12.16.0
+      '@pnpm/exe.linux-s390x': 12.16.0
+      '@pnpm/exe.linux-x64': 12.16.0
+      '@pnpm/exe.linux-x64-musl': 12.16.0
+      '@pnpm/exe.win32-arm64': 12.16.0
+      '@pnpm/exe.win32-x64': 12.16.0
+
+---
 lockfileVersion: '9.0'
 
 settings:
@@ -20,8 +178,8 @@ importers:
         specifier: 0.88.0
         version: 0.88.0
       '@github/copilot-sdk':
-        specifier: 1.0.30-preview.0
-        version: 1.0.30-preview.0
+        specifier: 1.0.33-preview.0
+        version: 1.0.33-preview.0
       '@hpke/core':
         specifier: ^1.9.0
         version: 1.9.0
@@ -40,6 +198,9 @@ importers:
       '@vscode/deviceid':
         specifier: ^0.1.1
         version: 0.1.5
+      '@vscode/diff':
+        specifier: 0.0.2-128
+        version: 0.0.2-128
       '@vscode/fs-copyfile':
         specifier: 2.0.0
         version: 2.0.0
@@ -77,35 +238,35 @@ importers:
         specifier: ^1.3.0
         version: 1.3.0
       '@xterm/addon-clipboard':
-        specifier: ^0.3.0-beta.303
-        version: 0.3.0-beta.303(@xterm/xterm@6.1.0-beta.304)
+        specifier: ^0.3.0-beta.335
+        version: 0.3.0-beta.335(@xterm/xterm@6.1.0-beta.337)
       '@xterm/addon-image':
-        specifier: ^0.10.0-beta.301
-        version: 0.10.0-beta.301(@xterm/xterm@6.1.0-beta.304)
+        specifier: ^0.10.0-beta.332
+        version: 0.10.0-beta.332(@xterm/xterm@6.1.0-beta.337)
       '@xterm/addon-ligatures':
-        specifier: ^0.11.0-beta.301
-        version: 0.11.0-beta.301(@xterm/xterm@6.1.0-beta.304)
+        specifier: ^0.11.0-beta.331
+        version: 0.11.0-beta.331(@xterm/xterm@6.1.0-beta.337)
       '@xterm/addon-progress':
-        specifier: ^0.3.0-beta.301
-        version: 0.3.0-beta.301(@xterm/xterm@6.1.0-beta.304)
+        specifier: ^0.3.0-beta.331
+        version: 0.3.0-beta.331(@xterm/xterm@6.1.0-beta.337)
       '@xterm/addon-search':
-        specifier: ^0.17.0-beta.301
-        version: 0.17.0-beta.301(@xterm/xterm@6.1.0-beta.304)
+        specifier: ^0.17.0-beta.331
+        version: 0.17.0-beta.331(@xterm/xterm@6.1.0-beta.337)
       '@xterm/addon-serialize':
-        specifier: ^0.15.0-beta.301
-        version: 0.15.0-beta.301(@xterm/xterm@6.1.0-beta.304)
+        specifier: ^0.15.0-beta.331
+        version: 0.15.0-beta.331(@xterm/xterm@6.1.0-beta.337)
       '@xterm/addon-unicode11':
-        specifier: ^0.10.0-beta.301
-        version: 0.10.0-beta.301(@xterm/xterm@6.1.0-beta.304)
+        specifier: ^0.10.0-beta.331
+        version: 0.10.0-beta.331(@xterm/xterm@6.1.0-beta.337)
       '@xterm/addon-webgl':
-        specifier: ^0.20.0-beta.300
-        version: 0.20.0-beta.300(@xterm/xterm@6.1.0-beta.304)
+        specifier: ^0.20.0-beta.330
+        version: 0.20.0-beta.330(@xterm/xterm@6.1.0-beta.337)
       '@xterm/headless':
-        specifier: ^6.1.0-beta.303
-        version: 6.1.0-beta.303
+        specifier: ^6.1.0-beta.335
+        version: 6.1.0-beta.335
       '@xterm/xterm':
-        specifier: ^6.1.0-beta.304
-        version: 6.1.0-beta.304
+        specifier: ^6.1.0-beta.337
+        version: 6.1.0-beta.337
       cookie:
         specifier: ^0.7.0
         version: 0.7.2
@@ -133,9 +294,6 @@ importers:
       minimist:
         specifier: ^1.2.8
         version: 1.2.8
-      node-addon-api:
-        specifier: ^6.0.0
-        version: 6.1.0
       node-ovsx-sign:
         specifier: ^1.2.0
         version: 1.2.0(kerberos@2.1.1)
@@ -182,8 +340,11 @@ importers:
         specifier: ^3.2.13
         version: 3.2.13
       '@vscode/codicons':
-        specifier: ^0.0.46-49
-        version: 0.0.46-49
+        specifier: ^0.0.46-51
+        version: 0.0.46-51
+      '@vscode/diff':
+        specifier: 0.0.2-128
+        version: 0.0.2-128
       '@vscode/iconv-lite-umd':
         specifier: 0.7.1
         version: 0.7.1
@@ -194,32 +355,32 @@ importers:
         specifier: 1.0.23
         version: 1.0.23
       '@xterm/addon-clipboard':
-        specifier: ^0.3.0-beta.303
-        version: 0.3.0-beta.303(@xterm/xterm@6.1.0-beta.304)
+        specifier: ^0.3.0-beta.335
+        version: 0.3.0-beta.335(@xterm/xterm@6.1.0-beta.337)
       '@xterm/addon-image':
-        specifier: ^0.10.0-beta.301
-        version: 0.10.0-beta.301(@xterm/xterm@6.1.0-beta.304)
+        specifier: ^0.10.0-beta.332
+        version: 0.10.0-beta.332(@xterm/xterm@6.1.0-beta.337)
       '@xterm/addon-ligatures':
-        specifier: ^0.11.0-beta.301
-        version: 0.11.0-beta.301(@xterm/xterm@6.1.0-beta.304)
+        specifier: ^0.11.0-beta.331
+        version: 0.11.0-beta.331(@xterm/xterm@6.1.0-beta.337)
       '@xterm/addon-progress':
-        specifier: ^0.3.0-beta.301
-        version: 0.3.0-beta.301(@xterm/xterm@6.1.0-beta.304)
+        specifier: ^0.3.0-beta.331
+        version: 0.3.0-beta.331(@xterm/xterm@6.1.0-beta.337)
       '@xterm/addon-search':
-        specifier: ^0.17.0-beta.301
-        version: 0.17.0-beta.301(@xterm/xterm@6.1.0-beta.304)
+        specifier: ^0.17.0-beta.331
+        version: 0.17.0-beta.331(@xterm/xterm@6.1.0-beta.337)
       '@xterm/addon-serialize':
-        specifier: ^0.15.0-beta.301
-        version: 0.15.0-beta.301(@xterm/xterm@6.1.0-beta.304)
+        specifier: ^0.15.0-beta.331
+        version: 0.15.0-beta.331(@xterm/xterm@6.1.0-beta.337)
       '@xterm/addon-unicode11':
-        specifier: ^0.10.0-beta.301
-        version: 0.10.0-beta.301(@xterm/xterm@6.1.0-beta.304)
+        specifier: ^0.10.0-beta.331
+        version: 0.10.0-beta.331(@xterm/xterm@6.1.0-beta.337)
       '@xterm/addon-webgl':
-        specifier: ^0.20.0-beta.300
-        version: 0.20.0-beta.300(@xterm/xterm@6.1.0-beta.304)
+        specifier: ^0.20.0-beta.330
+        version: 0.20.0-beta.330(@xterm/xterm@6.1.0-beta.337)
       '@xterm/xterm':
-        specifier: ^6.1.0-beta.304
-        version: 6.1.0-beta.304
+        specifier: ^6.1.0-beta.337
+        version: 6.1.0-beta.337
       jschardet:
         specifier: 3.1.4
         version: 3.1.4
@@ -274,16 +435,16 @@ packages:
     resolution: {integrity: sha512-rbAE25KUfjU/s3XHUdJgceoCP5dEOpMx85J04kF+QMdta73XkuG9JGHHinch+XIoKpBdqljin+KqURpJriSzLA==}
     engines: {node: '>=22.0.0'}
 
-  '@azure/msal-browser@5.29.0':
-    resolution: {integrity: sha512-Ko/Ovw6h+Gu33mp8f0FUyddr/KDWzbGzcgR8HKZaT4wgTYljLPKJP1rcDu0RHj7pkd4CR2hCHK51XFzgvq/Q5Q==}
+  '@azure/msal-browser@5.29.1':
+    resolution: {integrity: sha512-+TMoU/4h3KYUvQKZH+p1/9/iDaepDlVJQ7UMUAB6q8prPsMfsOoqA9m2alpPqLUQ48Bp7sXqN2wdhA9rOg9q1A==}
     engines: {node: '>=0.8.0'}
 
-  '@azure/msal-common@16.16.1':
-    resolution: {integrity: sha512-dSKdL9h/iercb4GumsKFh+wVvLe1ohuDPiviklgnQVHnY2FYNUlbQJ3E1Qd37vkof9CfraK9BQpCW1hoOg0znQ==}
+  '@azure/msal-common@16.16.2':
+    resolution: {integrity: sha512-IVoPgAup0hnpzwC8esxPxrrnDDVe0n3mmK+UU3JRmKWySKxBQrl+a30tTP3okmJ9Wc7dh+IgoNaUXkCxb2DBSg==}
     engines: {node: '>=0.8.0'}
 
-  '@azure/msal-node@7.2.1':
-    resolution: {integrity: sha512-6mntsfCNq7H1eAPSZik74jT3C5at4nRqiVk7OC+D5Hy3Pe3s76uwE4+J0xvDvlVPmoX2kasf3mSwUmzeq9rW/A==}
+  '@azure/msal-node@7.2.2':
+    resolution: {integrity: sha512-MjsAHC+KUSXYYC8P57lVXy5IgSeO+PraXzLLHZI6hcX7nx/hCokY6gTPm2JcKLI3W88mu7ozjObBVGKExZUhww==}
     engines: {node: '>=20'}
 
   '@devcontainers/cli@0.88.0':
@@ -291,52 +452,52 @@ packages:
     engines: {node: '>=20.0.0'}
     hasBin: true
 
-  '@github/copilot-sdk-darwin-arm64@1.0.30-preview.0':
-    resolution: {integrity: sha512-mk2Eo2CAqWNx1MfXe86PRAXIZn1jPQ+Nn9wWKLv1caUrZx6MgDAZje3RsjzBFt1z6cPRdNvGuR+5qx5ed4fm7g==}
+  '@github/copilot-sdk-darwin-arm64@1.0.33-preview.0':
+    resolution: {integrity: sha512-RR4RrOKleNmo+n90FMT/jNQuvOzrjwtruBHzElR9dEik4uacQ7bOGrKTpZk/u9RMVRtfVHyu0pVLtZVjD7UHkQ==}
     cpu: [arm64]
     os: [darwin]
 
-  '@github/copilot-sdk-darwin-x64@1.0.30-preview.0':
-    resolution: {integrity: sha512-Hp8HUQBln7cA/GUOjSnAn7fNI0oUh3eqXj27Jk2ejYf7bf7CNDduZviXMPZVDFU4L/0APEA32SH7UzzuouB1Yw==}
+  '@github/copilot-sdk-darwin-x64@1.0.33-preview.0':
+    resolution: {integrity: sha512-/CmMuyAXl/6JpzTB9HeDDzCQXlIw+pVvj4N/tQcg+bhbLN/xvJcewtvJ1EGyejyUWImjdBai1pQxr+d6oxabQA==}
     cpu: [x64]
     os: [darwin]
 
-  '@github/copilot-sdk-linux-arm64@1.0.30-preview.0':
-    resolution: {integrity: sha512-Gbg8nKJOVJeXKPgv0rzv0cB6I8ZHeTBbFqEWRT/WrxwiS2a4vubsIWK5gHAMx+cOVUyl8Cmc0yLfAzuQcOfnEA==}
+  '@github/copilot-sdk-linux-arm64@1.0.33-preview.0':
+    resolution: {integrity: sha512-ho/QH+L/FiFUEjfA0/iBTuUR7IE6B6DEIDwRt7ywPxMYuCPbNIC6dpPONheL6xir+BpEZB0ChQnbO6bvhMUC+A==}
     cpu: [arm64]
     os: [linux]
     libc: [glibc]
 
-  '@github/copilot-sdk-linux-x64@1.0.30-preview.0':
-    resolution: {integrity: sha512-43aFjCby/R6acOEbLLnvysUvKX9POTsDbY4kZAcaSrHkiVrnVOLNiEgbvVchXjbZBVsLlFP94EN/ibheCzRHeA==}
+  '@github/copilot-sdk-linux-x64@1.0.33-preview.0':
+    resolution: {integrity: sha512-Q/8P9P6y+MhuV/c36i8Uu7pg1xnntL5hokIzpcORWaRAhYdiYaVeakp2+huMtjL43qSMdLqfmT1g3ivMD7OEVg==}
     cpu: [x64]
     os: [linux]
     libc: [glibc]
 
-  '@github/copilot-sdk-linuxmusl-arm64@1.0.30-preview.0':
-    resolution: {integrity: sha512-TKVl1Ts80+rKmG2keG035fZt9BPtRkuVIMjq2Z/l7cpt00J33qQRkI0qms4eiuId+jZxes0gX7zQHT85IVftxA==}
+  '@github/copilot-sdk-linuxmusl-arm64@1.0.33-preview.0':
+    resolution: {integrity: sha512-CMnJlH90HXfuz6LivbBEOD2P7agzccFqEZmYYcwZToJHSEeQLOcub+6gqB25vXUQjAzFibAaklIMLGy64Y95Kg==}
     cpu: [arm64]
     os: [linux]
     libc: [musl]
 
-  '@github/copilot-sdk-linuxmusl-x64@1.0.30-preview.0':
-    resolution: {integrity: sha512-KwgkOL7BSasVTJwg297uTpYAhcMsS4DGj+Ty3DiRkW7F576ONW4pJOaJz8/4+EpNKYmhFYaFsNoHIaFQ76posQ==}
+  '@github/copilot-sdk-linuxmusl-x64@1.0.33-preview.0':
+    resolution: {integrity: sha512-N/kcKAiqKI/j46qNoKT06vlPEEzyvnzTZ0cxgTWr/si0tQx/2UQuVyTlRRBn1QtzvJJTpBclK4+4NwI2RsCFaw==}
     cpu: [x64]
     os: [linux]
     libc: [musl]
 
-  '@github/copilot-sdk-win32-arm64@1.0.30-preview.0':
-    resolution: {integrity: sha512-AlF+jOYYSkm/Mls4EE5myJ0qUQxVBHEtBFvdPkZ+uqdY3R4mHO1ReeJWsX5dFlsY85kUVF6zS1CuhtXokfgyHQ==}
+  '@github/copilot-sdk-win32-arm64@1.0.33-preview.0':
+    resolution: {integrity: sha512-3gv/SYtdaVEAc6mpMkt0mKloPk1gHGdtY6IMykb+lkb6RCtC+bFmCst1L1f67tx8rNBQ5IGu96X5xfz+uPAhnw==}
     cpu: [arm64]
     os: [win32]
 
-  '@github/copilot-sdk-win32-x64@1.0.30-preview.0':
-    resolution: {integrity: sha512-9Jij2EEH2r6gk0ekKhHq/SQzZgDGe3W3VY3+SKs6KmUq6ZG6vzfj9sEN2QDA/ywqqJf7RMesGKTD0A0Y5xTIKw==}
+  '@github/copilot-sdk-win32-x64@1.0.33-preview.0':
+    resolution: {integrity: sha512-n3bJbIKlOagcdrZtj8vhUs/5ArJk5Qtv/dbvgWgBhEObWBYbOjTls4q3rVE/8QC5hGEeli+c8eTaZEwXF8ThSA==}
     cpu: [x64]
     os: [win32]
 
-  '@github/copilot-sdk@1.0.30-preview.0':
-    resolution: {integrity: sha512-V2A//9ikl8yygwqb8zffH/Jmmqg2Ra8nOsgjui3VIxp8pSSh/ljpsOF7iH5RKXlCDx/b2YtF+jWa3zRQAHIECg==}
+  '@github/copilot-sdk@1.0.33-preview.0':
+    resolution: {integrity: sha512-7vNdfXrLlhmaoLEJoLc8P9EivPApXmR93PrsE9TCvvIVUl3e4y7ZiSpJHm0b1UTwPFWuD72+i/NnbTzQgoHP3w==}
     engines: {node: ^20.19.0 || >=22.12.0}
 
   '@hpke/common@1.10.1':
@@ -480,15 +641,23 @@ packages:
   '@typespec/ts-http-runtime@0.3.10':
     resolution: {integrity: sha512-vddvvtZ7sejSlCv+OIkn2ztjB1O31Fc2JsxI/YK725r3elXXlF/J3o3lbXJFRhoeWRWK1tjdZ+GTi6Fdtrp+EA==}
     engines: {node: '>=22.0.0'}
+    deprecated: A newer version 0.3.11 has been published.
 
-  '@vscode/codicons@0.0.46-49':
-    resolution: {integrity: sha512-0McyVlyRjenut3PBwULxuaC5YoKPF8qkNHf9DhS6UOXUmLr31Ga6vECnNx70SSIZnI4ULLOEktcIkRqiwFvkbg==}
+  '@typespec/ts-http-runtime@0.3.9':
+    resolution: {integrity: sha512-edSdeAqkdxBVzA1yL1LrLCml1YjyCVvPMtMqJpbF+6K609tHe8V6sQUzFQSGcYNhcuhOceZtjvN32+mpIth30A==}
+    engines: {node: '>=22.0.0'}
+
+  '@vscode/codicons@0.0.46-51':
+    resolution: {integrity: sha512-TqjsO8e2miThsSriFpEulLriv8cFJui9ZFP6kGD/Hagx7LgEw8YkU5Cspqd+Om1WfXz/aJMWGfXkNq3VRQXgoQ==}
 
   '@vscode/copilot-api@0.5.2':
     resolution: {integrity: sha512-U+2jyi0/Hpum2ZnED47cVFKgx5+p+thRhOPDKc1+t2PVAzsKlr3aJPKxMeMLOIXGWyLuQcng5BuFvj1vxD1d8w==}
 
   '@vscode/deviceid@0.1.5':
     resolution: {integrity: sha512-D0be67wWo7WyyBqHnRkL2bK7lp7CDH/EMN4kMV6INoKc7kxRL3nsTtngt9JZrOcZdnW59gquGRk+6KFIDyD3QA==}
+
+  '@vscode/diff@0.0.2-128':
+    resolution: {integrity: sha512-8Dk0Co0mU6gph7ZgthkeDCbHFuWLvMsS8RItCGL13hAGNVnd01KMCBVAYQDLhxFUh/VJ+as5arOMwtqL8YvKGA==}
 
   '@vscode/fs-copyfile@2.0.0':
     resolution: {integrity: sha512-ARb4+9rN905WjJtQ2mSBG/q4pjJkSRun/MkfCeRkk7h/5J8w4vd18NCePFJ/ZucIwXx/7mr9T6nz9Vtt1tk7hg==}
@@ -588,52 +757,52 @@ packages:
   '@vscode/windows-registry@1.3.0':
     resolution: {integrity: sha512-HGzILM/WfT/iFQs58q5+sj7bn+MfYD2pvTwbd9U11Faup9G/ZVAdYNi/d5Mmw0NKKupEHOpiyx/Ld92NkiYTaw==}
 
-  '@xterm/addon-clipboard@0.3.0-beta.303':
-    resolution: {integrity: sha512-AVw9y9f50uVcI1/LIzp4vkQzPXiRad8SFHjqo33kg7wWL4jes+Z/08jWDBLGvNfYNGhmElp9H2cg/ITErex55g==}
+  '@xterm/addon-clipboard@0.3.0-beta.335':
+    resolution: {integrity: sha512-LVuJcdUTMxzT9oWj5IrAaVe33pveD04izzIM5g3ny4pgbz0Csffn6qVmZ5SnwfJ08fp/0wDxRwnpcsd7cTpZBA==}
     peerDependencies:
-      '@xterm/xterm': ^6.1.0-beta.304
+      '@xterm/xterm': ^6.1.0-beta.337
 
-  '@xterm/addon-image@0.10.0-beta.301':
-    resolution: {integrity: sha512-PJZL4GlQ1ReIgbffFMaOAFxc3wOit21/G2UEM82RpH3hNHjn6MH8ilz3ToDeBjYuOqU7ienBaeIuMbNktX4/HA==}
+  '@xterm/addon-image@0.10.0-beta.332':
+    resolution: {integrity: sha512-9Ny3X2w41hTnr4pTraV0PkwhS4rEtUR6UkbBWJCu22pngzoSb7RdLDDi221aacsIKiKtQwQCIDVq3m6wGhw9Mg==}
     peerDependencies:
-      '@xterm/xterm': ^6.1.0-beta.304
+      '@xterm/xterm': ^6.1.0-beta.337
 
-  '@xterm/addon-ligatures@0.11.0-beta.301':
-    resolution: {integrity: sha512-8F3D/DHbi3W+ool0xIV90paDGJYqUU/SQ9Pdltgx2nw9QFFgjtq+OscXANhrNhDzIU80p2GCnwV0jW+a6Dal0w==}
+  '@xterm/addon-ligatures@0.11.0-beta.331':
+    resolution: {integrity: sha512-RZjGMHwraIB/fZEZOrhtUYxvJobGQGBEY3ao/hbi5oxwGfQoUlX6PaFTUN3KCX+zFBDgpvq70kK53wyTzcnXVQ==}
     engines: {node: '>8.0.0'}
     peerDependencies:
-      '@xterm/xterm': ^6.1.0-beta.304
+      '@xterm/xterm': ^6.1.0-beta.337
 
-  '@xterm/addon-progress@0.3.0-beta.301':
-    resolution: {integrity: sha512-9V04P0yncSSOZTgNvlEo6D3xiaHxALqoxEgQqgGhf20mj2eOQE0sfVPRMtO6wJwi4uI2viORUkBuiYBObvif3g==}
+  '@xterm/addon-progress@0.3.0-beta.331':
+    resolution: {integrity: sha512-4PylaZeZnBeJmTLFZ76DAF/hmUW8kk0igYhDvgeVpLV5no/ud+hmtXXOFAC7BrtE5ltkW9fFjItm+cHXTj13+A==}
     peerDependencies:
-      '@xterm/xterm': ^6.1.0-beta.304
+      '@xterm/xterm': ^6.1.0-beta.337
 
-  '@xterm/addon-search@0.17.0-beta.301':
-    resolution: {integrity: sha512-Dj8q+p2/5c4fcS4hag6QaXngxstnc4DdzREN/IhpGxz5a1JpW/3FnF9/JE1P1wvNLp9fApgGmZqBMW4xCF6HKg==}
+  '@xterm/addon-search@0.17.0-beta.331':
+    resolution: {integrity: sha512-oYdFS2BXVXzwosRJ9kf9niHABDaLBBk2YgAmCyYz3gQgqXb5omgQH2NcBESc1qqf0G5SzJRWTcFaNWE7aakd6A==}
     peerDependencies:
-      '@xterm/xterm': ^6.1.0-beta.304
+      '@xterm/xterm': ^6.1.0-beta.337
 
-  '@xterm/addon-serialize@0.15.0-beta.301':
-    resolution: {integrity: sha512-zWT0Sy5GCSTnarAXRiicu3XYHgam8DPtpkWfSLPME+A3s7U1A6Jy+ZATt8vMkatyeVOPI0GICYRuQJLZVgnVow==}
+  '@xterm/addon-serialize@0.15.0-beta.331':
+    resolution: {integrity: sha512-UQL26TFwWulbhrvdLE21hx32hju5B6B9tTihqvd1XwfB7Fbje459/gC2Eha2Dane7YU+SZ+PIcsloA5zd4AwnQ==}
     peerDependencies:
-      '@xterm/xterm': ^6.1.0-beta.304
+      '@xterm/xterm': ^6.1.0-beta.337
 
-  '@xterm/addon-unicode11@0.10.0-beta.301':
-    resolution: {integrity: sha512-SS5BzfbvfFIikE4xZFAtHu6n0Kl5R1ZCPx41RL2WULLSE+HFo/WmYee53tMxNK/QUjpcQWepeVB7HebCPhHnig==}
+  '@xterm/addon-unicode11@0.10.0-beta.331':
+    resolution: {integrity: sha512-GW2EOP+4+ZXQS/KfTgriP2QxDOSMe9ffnEkq7tgIwAfiTUcE3X/oxn6wBNdyxuM/5mLyK7wzi1O8ycV83yAYPw==}
     peerDependencies:
-      '@xterm/xterm': ^6.1.0-beta.304
+      '@xterm/xterm': ^6.1.0-beta.337
 
-  '@xterm/addon-webgl@0.20.0-beta.300':
-    resolution: {integrity: sha512-BJQiOx8I+zz2woe+/E9nWprRRPevo9slPgyOd43E8o18aG307ccsyaTJoIbSu99uqfDoVLWDRLTy91ZXTFsdig==}
+  '@xterm/addon-webgl@0.20.0-beta.330':
+    resolution: {integrity: sha512-gcxemutOlpGCEnxZckSwR8oZ/twZXrcQw6N3aRcDVrPguIMr9YvrzegfllCo4WxRnOc4gWkHhjD1toX3emug3A==}
     peerDependencies:
-      '@xterm/xterm': ^6.1.0-beta.304
+      '@xterm/xterm': ^6.1.0-beta.337
 
-  '@xterm/headless@6.1.0-beta.303':
-    resolution: {integrity: sha512-FjPRg5OF0UdloypPRZcUdtpxaxYKk7FdNArgpOaedoj7UWzinB+THZyEY7t6QHRR5bjcbz7B7s4vX0Zo5LT6aw==}
+  '@xterm/headless@6.1.0-beta.335':
+    resolution: {integrity: sha512-3/hfyBw8B67K1x0yy7R6H8oodJgleTxCpuc57Ulwb5YLNc7kF6yMJF8ig/tk4vZilRzdSmoh1xFvwbBjgnU6hg==}
 
-  '@xterm/xterm@6.1.0-beta.304':
-    resolution: {integrity: sha512-Wq9d4qFYslYQBIan+riXotdyurtREc6v+HWdAwV6Y2JSDI9eJ1dkWm/fzYb2rCGgGnM3baiYuSK4Z6OLNKLzDw==}
+  '@xterm/xterm@6.1.0-beta.337':
+    resolution: {integrity: sha512-zstczNBAT/FaaWzCCoLx3DavRcAW0ndK7g/Y0893nPvZwWmjMU8WeuqJYqMRVommGwv1KRoxdlOOt0KukxHadA==}
 
   abort-controller@3.0.0:
     resolution: {integrity: sha512-h8lQ8tacZYnR3vNQTgibj+tODHI5/+l06Au2Pcriv/Gmet0eaj4TwWH41sO9wnHDiQsEj19q0drzdWdeAHtweg==}
@@ -701,8 +870,8 @@ packages:
   balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
 
-  bare-buffer@3.7.1:
-    resolution: {integrity: sha512-cIjZnSO+y89ykVX9x96OVnA6tGORBn7vGJ/e3PCbBHMEyfMNG/ixzOS0lLa6saMlWcs69bSKjxFyDwjK152OMg==}
+  bare-buffer@3.7.2:
+    resolution: {integrity: sha512-kI35SYpVg0JCk+a+gkUEJZY39mt+g71y1NRwBrEj7SbxLnwngYYMf0T/kouYIujlJwelvPZ9TTbBCbCSPw059Q==}
     engines: {bare: '>=1.20.0'}
 
   bare-events@2.9.2:
@@ -722,8 +891,8 @@ packages:
       bare-buffer:
         optional: true
 
-  bare-path@3.1.2:
-    resolution: {integrity: sha512-ZyKbsuuqK6Ag0K8pX6V5Txq6XeJRvY+wXucnFGRjiyVYP9YWDpIQugk/b+enRYrEYBJaqLzghRQpXPMR7341Nw==}
+  bare-path@3.1.3:
+    resolution: {integrity: sha512-8r+FVU/o4zcFmpCDqbqAYhHHbtXPP+cyZKo7DRGRWc7OLlNs4TMaSQEpXL/sIdzyEG0M7RHw4B7xYMGrTc+qrg==}
 
   bare-stream@2.13.4:
     resolution: {integrity: sha512-PcrQ8lVLbiJscNm1Kez+Yp4Gy4AHGcN1lzwjvf5NybWen7VvEgUfyfnXYJ2zNqWnzOfCb1Abq6lH8ti0syQszA==}
@@ -739,8 +908,8 @@ packages:
       bare-events:
         optional: true
 
-  bare-url@2.5.6:
-    resolution: {integrity: sha512-iqkXHkW65De+BT14nHLiBFbNuJ/DdMrZaVNJ1IXPctpK6b1olUJ5Qmy8QBvwROajTiGztso2n82kFEvCsNG7Rg==}
+  bare-url@2.5.7:
+    resolution: {integrity: sha512-pWAiECRdNYPJAXYKVOb4HuTQedQyRjtGBUu86kO/vOt4GM7e45PghHXQ/Erm5NumaDSWNBzehIfpc768esW7gA==}
 
   base64-js@1.5.1:
     resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
@@ -764,11 +933,11 @@ packages:
   boolbase@1.0.0:
     resolution: {integrity: sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww==}
 
-  brace-expansion@1.1.21:
-    resolution: {integrity: sha512-9zeA+KLZNNzglF2TPKRQEDyx6Yby7daAkuy8MiPzpXPsYDWi/DRM8jmwUDxokQjYqBpv5DgPiwD4h4ZZSy1Ujw==}
+  brace-expansion@1.1.22:
+    resolution: {integrity: sha512-CKLDTuSsN0+r1ThM0WkzzBI7dnPI6xEGfa/JnVYIK9JNBA1N1NyPwXVHor//NKD/y3sDxp764sZdLhFK7pH8XQ==}
 
-  brace-expansion@2.1.7:
-    resolution: {integrity: sha512-uZbew1NqdmPDTMJ8ah1y+b+9QEJrfkXFk3RcTQw3X0jW/xRUvFKsg1CfQdSYGdTbXZWExtU3J3ccxtnfw1Fi0g==}
+  brace-expansion@2.1.8:
+    resolution: {integrity: sha512-BnlDzDYQoplTsZSvPi86CNzmbcb07X8ufR8fk1zivaiEJlXJkiq1MQyDCVmlWcsWbj6aWXqHnrwwevbrm/Saig==}
 
   buffer-crc32@0.2.13:
     resolution: {integrity: sha512-VO9Ht/+p3SN7SKWqcrgEzjGbRSJYTx+Q1pTQC0wrWqHx0vpJraQ6GtHx8tvcg1rlK1byhU5gccxgOgj7B0TDkQ==}
@@ -1257,6 +1426,9 @@ packages:
   lodash@4.18.1:
     resolution: {integrity: sha512-dMInicTPVE8d1e5otfwmmjlxkZoUpiVLwyeTdUsi/Caj/gfzzblBcCE5sRHV/AsjuCmxWrte2TNGSYuCeCq+0Q==}
 
+  lossless-json@4.3.3:
+    resolution: {integrity: sha512-FGFrGArHsv7BRiYOf37ZRieT9HlKw+Kpu9HvtpYjcoOEo8lqNkjny8A2YAfWNWWQC+9pcLIrLZ+IviKJhaHwGQ==}
+
   lru-cache@10.4.3:
     resolution: {integrity: sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==}
 
@@ -1348,9 +1520,6 @@ packages:
 
   node-addon-api@4.3.0:
     resolution: {integrity: sha512-73sE9+3UaLYYFmDsFZnqCInzPyh3MqIwZO9cw58yIqAZhONrrabrYyYe3TuIqtIiOuTXVhsGau8hcrhhwSsDIQ==}
-
-  node-addon-api@6.1.0:
-    resolution: {integrity: sha512-+eawOlIgy680F0kBzPUNFhMZGtJ1YmqM6l4+Crf4IkImjYrO/mqPwRMh352g23uIaQKFItcQ64I7KMaJxHgAVA==}
 
   node-addon-api@7.1.0:
     resolution: {integrity: sha512-mNcltoe1R8o7STTegSOHdnJNN7s5EUvhoS7ShnTHDyOSd+8H+UdWODq6qSv67PjC8Zc5JRT8+oLAMCr0SIXw7g==}
@@ -1788,23 +1957,22 @@ snapshots:
     dependencies:
       tslib: 2.9.1
 
-  '@azure/core-auth@1.11.0(kerberos@2.1.1)':
+  '@azure/core-auth@1.11.0':
     dependencies:
       '@azure/abort-controller': 2.2.0
-      '@azure/core-util': 1.14.0(kerberos@2.1.1)
+      '@azure/core-util': 1.14.0
       tslib: 2.9.1
     transitivePeerDependencies:
-      - kerberos
       - supports-color
 
   '@azure/core-client@1.11.2(kerberos@2.1.1)':
     dependencies:
       '@azure/abort-controller': 2.2.0
-      '@azure/core-auth': 1.11.0(kerberos@2.1.1)
+      '@azure/core-auth': 1.11.0
       '@azure/core-rest-pipeline': 1.25.1(kerberos@2.1.1)
       '@azure/core-tracing': 1.4.0
-      '@azure/core-util': 1.14.0(kerberos@2.1.1)
-      '@azure/logger': 1.4.0(kerberos@2.1.1)
+      '@azure/core-util': 1.14.0
+      '@azure/logger': 1.4.0
       tslib: 2.9.1
     transitivePeerDependencies:
       - kerberos
@@ -1815,10 +1983,10 @@ snapshots:
   '@azure/core-rest-pipeline@1.25.1(kerberos@2.1.1)':
     dependencies:
       '@azure/abort-controller': 2.2.0
-      '@azure/core-auth': 1.11.0(kerberos@2.1.1)
+      '@azure/core-auth': 1.11.0
       '@azure/core-tracing': 1.4.0
-      '@azure/core-util': 1.14.0(kerberos@2.1.1)
-      '@azure/logger': 1.4.0(kerberos@2.1.1)
+      '@azure/core-util': 1.14.0
+      '@azure/logger': 1.4.0
       '@typespec/ts-http-runtime': 0.3.10(kerberos@2.1.1)
       tslib: 2.9.1
     transitivePeerDependencies:
@@ -1829,92 +1997,91 @@ snapshots:
     dependencies:
       tslib: 2.9.1
 
-  '@azure/core-util@1.14.0(kerberos@2.1.1)':
+  '@azure/core-util@1.14.0':
     dependencies:
       '@azure/abort-controller': 2.2.0
-      '@typespec/ts-http-runtime': 0.3.10(kerberos@2.1.1)
+      '@typespec/ts-http-runtime': 0.3.9
       tslib: 2.9.1
     transitivePeerDependencies:
-      - kerberos
       - supports-color
 
   '@azure/identity@4.14.1(kerberos@2.1.1)':
     dependencies:
       '@azure/abort-controller': 2.2.0
-      '@azure/core-auth': 1.11.0(kerberos@2.1.1)
+      '@azure/core-auth': 1.11.0
       '@azure/core-client': 1.11.2(kerberos@2.1.1)
       '@azure/core-process': 1.0.0
       '@azure/core-rest-pipeline': 1.25.1(kerberos@2.1.1)
       '@azure/core-tracing': 1.4.0
-      '@azure/core-util': 1.14.0(kerberos@2.1.1)
-      '@azure/logger': 1.4.0(kerberos@2.1.1)
-      '@azure/msal-browser': 5.29.0
-      '@azure/msal-node': 7.2.1
+      '@azure/core-util': 1.14.0
+      '@azure/logger': 1.4.0
+      '@azure/msal-browser': 5.29.1
+      '@azure/msal-node': 7.2.2
       open: 11.0.4
       tslib: 2.9.1
     transitivePeerDependencies:
       - kerberos
       - supports-color
 
-  '@azure/logger@1.4.0(kerberos@2.1.1)':
+  '@azure/logger@1.4.0':
     dependencies:
-      '@typespec/ts-http-runtime': 0.3.10(kerberos@2.1.1)
+      '@typespec/ts-http-runtime': 0.3.9
       tslib: 2.9.1
     transitivePeerDependencies:
-      - kerberos
       - supports-color
 
-  '@azure/msal-browser@5.29.0':
+  '@azure/msal-browser@5.29.1':
     dependencies:
-      '@azure/msal-common': 16.16.1
+      '@azure/msal-common': 16.16.2
 
-  '@azure/msal-common@16.16.1': {}
+  '@azure/msal-common@16.16.2': {}
 
-  '@azure/msal-node@7.2.1':
+  '@azure/msal-node@7.2.2':
     dependencies:
-      '@azure/msal-common': 16.16.1
+      '@azure/msal-common': 16.16.2
       jsonwebtoken: 9.0.3
 
   '@devcontainers/cli@0.88.0': {}
 
-  '@github/copilot-sdk-darwin-arm64@1.0.30-preview.0':
+  '@github/copilot-sdk-darwin-arm64@1.0.33-preview.0':
     optional: true
 
-  '@github/copilot-sdk-darwin-x64@1.0.30-preview.0':
+  '@github/copilot-sdk-darwin-x64@1.0.33-preview.0':
     optional: true
 
-  '@github/copilot-sdk-linux-arm64@1.0.30-preview.0':
+  '@github/copilot-sdk-linux-arm64@1.0.33-preview.0':
     optional: true
 
-  '@github/copilot-sdk-linux-x64@1.0.30-preview.0':
+  '@github/copilot-sdk-linux-x64@1.0.33-preview.0':
     optional: true
 
-  '@github/copilot-sdk-linuxmusl-arm64@1.0.30-preview.0':
+  '@github/copilot-sdk-linuxmusl-arm64@1.0.33-preview.0':
     optional: true
 
-  '@github/copilot-sdk-linuxmusl-x64@1.0.30-preview.0':
+  '@github/copilot-sdk-linuxmusl-x64@1.0.33-preview.0':
     optional: true
 
-  '@github/copilot-sdk-win32-arm64@1.0.30-preview.0':
+  '@github/copilot-sdk-win32-arm64@1.0.33-preview.0':
     optional: true
 
-  '@github/copilot-sdk-win32-x64@1.0.30-preview.0':
+  '@github/copilot-sdk-win32-x64@1.0.33-preview.0':
     optional: true
 
-  '@github/copilot-sdk@1.0.30-preview.0':
+  '@github/copilot-sdk@1.0.33-preview.0':
     dependencies:
       koffi: 3.2.1
+      lossless-json: 4.3.3
       vscode-jsonrpc: 10.0.0
       zod: 4.6.7
     optionalDependencies:
-      '@github/copilot-sdk-darwin-arm64': 1.0.30-preview.0
-      '@github/copilot-sdk-darwin-x64': 1.0.30-preview.0
-      '@github/copilot-sdk-linux-arm64': 1.0.30-preview.0
-      '@github/copilot-sdk-linux-x64': 1.0.30-preview.0
-      '@github/copilot-sdk-linuxmusl-arm64': 1.0.30-preview.0
-      '@github/copilot-sdk-linuxmusl-x64': 1.0.30-preview.0
-      '@github/copilot-sdk-win32-arm64': 1.0.30-preview.0
-      '@github/copilot-sdk-win32-x64': 1.0.30-preview.0
+      '@github/copilot-sdk-darwin-arm64': 1.0.33-preview.0
+      '@github/copilot-sdk-darwin-x64': 1.0.33-preview.0
+      '@github/copilot-sdk-linux-arm64': 1.0.33-preview.0
+      '@github/copilot-sdk-linux-x64': 1.0.33-preview.0
+      '@github/copilot-sdk-linuxmusl-arm64': 1.0.33-preview.0
+      '@github/copilot-sdk-linuxmusl-x64': 1.0.33-preview.0
+      '@github/copilot-sdk-win32-arm64': 1.0.33-preview.0
+      '@github/copilot-sdk-win32-x64': 1.0.33-preview.0
 
   '@hpke/common@1.10.1': {}
 
@@ -2037,7 +2204,15 @@ snapshots:
       - kerberos
       - supports-color
 
-  '@vscode/codicons@0.0.46-49': {}
+  '@typespec/ts-http-runtime@0.3.9':
+    dependencies:
+      http-proxy-agent: 7.0.0
+      https-proxy-agent: 7.0.2
+      tslib: 2.9.1
+    transitivePeerDependencies:
+      - supports-color
+
+  '@vscode/codicons@0.0.46-51': {}
 
   '@vscode/copilot-api@0.5.2': {}
 
@@ -2045,6 +2220,8 @@ snapshots:
     dependencies:
       fs-extra: 11.2.0
       uuid: 14.0.0
+
+  '@vscode/diff@0.0.2-128': {}
 
   '@vscode/fs-copyfile@2.0.0':
     dependencies:
@@ -2174,43 +2351,43 @@ snapshots:
 
   '@vscode/windows-registry@1.3.0': {}
 
-  '@xterm/addon-clipboard@0.3.0-beta.303(@xterm/xterm@6.1.0-beta.304)':
+  '@xterm/addon-clipboard@0.3.0-beta.335(@xterm/xterm@6.1.0-beta.337)':
     dependencies:
-      '@xterm/xterm': 6.1.0-beta.304
+      '@xterm/xterm': 6.1.0-beta.337
 
-  '@xterm/addon-image@0.10.0-beta.301(@xterm/xterm@6.1.0-beta.304)':
+  '@xterm/addon-image@0.10.0-beta.332(@xterm/xterm@6.1.0-beta.337)':
     dependencies:
-      '@xterm/xterm': 6.1.0-beta.304
+      '@xterm/xterm': 6.1.0-beta.337
 
-  '@xterm/addon-ligatures@0.11.0-beta.301(@xterm/xterm@6.1.0-beta.304)':
+  '@xterm/addon-ligatures@0.11.0-beta.331(@xterm/xterm@6.1.0-beta.337)':
     dependencies:
-      '@xterm/xterm': 6.1.0-beta.304
+      '@xterm/xterm': 6.1.0-beta.337
       lru-cache: 11.5.1
       opentype.js: 2.0.0
 
-  '@xterm/addon-progress@0.3.0-beta.301(@xterm/xterm@6.1.0-beta.304)':
+  '@xterm/addon-progress@0.3.0-beta.331(@xterm/xterm@6.1.0-beta.337)':
     dependencies:
-      '@xterm/xterm': 6.1.0-beta.304
+      '@xterm/xterm': 6.1.0-beta.337
 
-  '@xterm/addon-search@0.17.0-beta.301(@xterm/xterm@6.1.0-beta.304)':
+  '@xterm/addon-search@0.17.0-beta.331(@xterm/xterm@6.1.0-beta.337)':
     dependencies:
-      '@xterm/xterm': 6.1.0-beta.304
+      '@xterm/xterm': 6.1.0-beta.337
 
-  '@xterm/addon-serialize@0.15.0-beta.301(@xterm/xterm@6.1.0-beta.304)':
+  '@xterm/addon-serialize@0.15.0-beta.331(@xterm/xterm@6.1.0-beta.337)':
     dependencies:
-      '@xterm/xterm': 6.1.0-beta.304
+      '@xterm/xterm': 6.1.0-beta.337
 
-  '@xterm/addon-unicode11@0.10.0-beta.301(@xterm/xterm@6.1.0-beta.304)':
+  '@xterm/addon-unicode11@0.10.0-beta.331(@xterm/xterm@6.1.0-beta.337)':
     dependencies:
-      '@xterm/xterm': 6.1.0-beta.304
+      '@xterm/xterm': 6.1.0-beta.337
 
-  '@xterm/addon-webgl@0.20.0-beta.300(@xterm/xterm@6.1.0-beta.304)':
+  '@xterm/addon-webgl@0.20.0-beta.330(@xterm/xterm@6.1.0-beta.337)':
     dependencies:
-      '@xterm/xterm': 6.1.0-beta.304
+      '@xterm/xterm': 6.1.0-beta.337
 
-  '@xterm/headless@6.1.0-beta.303': {}
+  '@xterm/headless@6.1.0-beta.335': {}
 
-  '@xterm/xterm@6.1.0-beta.304': {}
+  '@xterm/xterm@6.1.0-beta.337': {}
 
   abort-controller@3.0.0:
     dependencies:
@@ -2281,22 +2458,22 @@ snapshots:
 
   balanced-match@1.0.2: {}
 
-  bare-buffer@3.7.1: {}
+  bare-buffer@3.7.2: {}
 
   bare-events@2.9.2: {}
 
   bare-fs@4.8.4:
     dependencies:
       bare-events: 2.9.2
-      bare-path: 3.1.2
+      bare-path: 3.1.3
       bare-stream: 2.13.4(bare-events@2.9.2)
-      bare-url: 2.5.6
+      bare-url: 2.5.7
       fast-fifo: 1.3.2
     transitivePeerDependencies:
       - bare-abort-controller
       - react-native-b4a
 
-  bare-path@3.1.2: {}
+  bare-path@3.1.3: {}
 
   bare-stream@2.13.4(bare-events@2.9.2):
     dependencies:
@@ -2308,10 +2485,10 @@ snapshots:
     transitivePeerDependencies:
       - react-native-b4a
 
-  bare-url@2.5.6:
+  bare-url@2.5.7:
     dependencies:
-      bare-buffer: 3.7.1
-      bare-path: 3.1.2
+      bare-buffer: 3.7.2
+      bare-path: 3.1.3
 
   base64-js@1.5.1: {}
 
@@ -2335,12 +2512,12 @@ snapshots:
 
   boolbase@1.0.0: {}
 
-  brace-expansion@1.1.21:
+  brace-expansion@1.1.22:
     dependencies:
       balanced-match: 1.0.2
       concat-map: 0.0.1
 
-  brace-expansion@2.1.7:
+  brace-expansion@2.1.8:
     dependencies:
       balanced-match: 1.0.2
 
@@ -2871,6 +3048,8 @@ snapshots:
 
   lodash@4.18.1: {}
 
+  lossless-json@4.3.3: {}
+
   lru-cache@10.4.3: {}
 
   lru-cache@11.5.1: {}
@@ -2903,15 +3082,15 @@ snapshots:
 
   minimatch@3.1.5:
     dependencies:
-      brace-expansion: 1.1.21
+      brace-expansion: 1.1.22
 
   minimatch@5.1.9:
     dependencies:
-      brace-expansion: 2.1.7
+      brace-expansion: 2.1.8
 
   minimatch@9.0.9:
     dependencies:
-      brace-expansion: 2.1.7
+      brace-expansion: 2.1.8
 
   minimist@1.2.8: {}
 
@@ -2944,8 +3123,6 @@ snapshots:
 
   node-addon-api@4.3.0:
     optional: true
-
-  node-addon-api@6.1.0: {}
 
   node-addon-api@7.1.0: {}
 

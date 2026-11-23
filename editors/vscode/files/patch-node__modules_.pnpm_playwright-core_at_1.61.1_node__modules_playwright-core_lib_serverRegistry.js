@@ -1,5 +1,5 @@
---- node_modules/playwright/node_modules/playwright-core/lib/serverRegistry.js.orig	2026-07-09 12:37:40 UTC
-+++ node_modules/playwright/node_modules/playwright-core/lib/serverRegistry.js
+--- node_modules/.pnpm/playwright-core@1.61.1/node_modules/playwright-core/lib/serverRegistry.js.orig	1971-12-10 00:00:00 UTC
++++ node_modules/.pnpm/playwright-core@1.61.1/node_modules/playwright-core/lib/serverRegistry.js
 @@ -7277,7 +7277,7 @@ var defaultCacheDirectory = (() => {
    });
  }

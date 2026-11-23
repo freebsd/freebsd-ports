@@ -1,5 +1,5 @@
---- node_modules/kerberos/src/kerberos_common.h.orig	2023-08-06 02:45:18 UTC
-+++ node_modules/kerberos/src/kerberos_common.h
+--- node_modules/.pnpm/kerberos@2.1.1/node_modules/kerberos/src/kerberos_common.h.orig	2026-11-22 04:33:50 UTC
++++ node_modules/.pnpm/kerberos@2.1.1/node_modules/kerberos/src/kerberos_common.h
 @@ -1,7 +1,7 @@
  #ifndef KERBEROS_COMMON_H
  #define KERBEROS_COMMON_H

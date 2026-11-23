@@ -1,5 +1,5 @@
---- remote/node_modules/kerberos/binding.gyp.orig	2025-06-26 20:01:28 UTC
-+++ remote/node_modules/kerberos/binding.gyp
+--- remote/node_modules/.pnpm/kerberos@2.1.1/node_modules/kerberos/binding.gyp.orig	2026-11-22 04:33:47 UTC
++++ remote/node_modules/.pnpm/kerberos@2.1.1/node_modules/kerberos/binding.gyp
 @@ -54,14 +54,14 @@
              ]
            }

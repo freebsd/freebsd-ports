@@ -1,6 +1,6 @@
---- build/lib/nodeCompileCache.ts.orig	2026-11-03 05:42:49 UTC
+--- build/lib/nodeCompileCache.ts.orig	2026-11-17 02:46:11 UTC
 +++ build/lib/nodeCompileCache.ts
-@@ -29,7 +29,9 @@ export function shouldGenerateNodeCompileCache(platfor
+@@ -32,7 +32,9 @@ export function shouldGenerateNodeCompileCache(platfor
  		return false;
  	}
  

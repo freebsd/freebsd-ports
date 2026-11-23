@@ -1,8 +1,6 @@
 PORTNAME=	vscode
 DISTVERSION=	${VSCODE_VERSION}
 CATEGORIES=	editors
-MASTER_SITES=	https://registry.npmjs.org/@github/copilot-linux-${NODEJS_ARCH}/-/:copilot_cli
-DISTFILES=	copilot-linux-${NODEJS_ARCH}-${COPILOT_CLI_VERSION}.tgz:copilot_cli
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -15,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 ONLY_FOR_ARCHS=	amd64
 
 PATCH_DEPENDS=	jq:textproc/jq
-BUILD_DEPENDS=	jq:textproc/jq \
+BUILD_DEPENDS=	typescript-devel>=7.1.0.d.20261105.1:lang/typescript-devel \
+		jq:textproc/jq \
 		rg:textproc/ripgrep \
 		tgrep:textproc/tgrep \
 		npm${NODEJS_SUFFIX}>0:www/npm${NODEJS_SUFFIX}
@@ -32,24 +31,16 @@ LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
 		libsqlite3.so:databases/sqlite3 \
 		libsecret-1.so:security/libsecret
 
-USES=		cargo gssapi:mit localbase:ldflags nodejs:24,build npm:pnpm \
+USES=		gssapi:mit localbase:ldflags nodejs:24,build npm:pnpm \
 		pkgconfig python:build shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
-GH_TUPLE=	web-infra-dev:rspack:v${RSPACK_VERSION}:rspack/rspack
 
 USE_CXXSTD=	c++20
 
 SHEBANG_REGEX=	./(extensions|node_modules|resources|scripts|src)/.*(\.(pl|py|sh)|makeBlacker|makeFF)$$
 PATHFIX_FILES=	src/vs/workbench/contrib/debug/node/terminals.ts
-
-CARGO_CARGOTOML=${WRKSRC}/rspack/Cargo.toml
-CARGO_CARGOLOCK=${WRKSRC}/rspack/Cargo.lock
-CARGO_BUILDDEP=	any-version
-CARGO_BUILD=	no
-CARGO_INSTALL=	no
-CARGO_TEST=	no
 
 MAKE_ENV=	BUILD_SOURCEVERSION=${SOURCE_COMMIT_HASH} \
 		VSCODE_QUALITY=stable \
@@ -62,7 +53,10 @@ BINARY_ALIAS=	python=${PYTHON_CMD}
 NPM_FETCH_CMD=		${NPM_CMDNAME} install
 NPM_FETCH_FLAGS+=	--os freebsd \
 			--os linux
-MAKE_ENV+=		pnpm_config_store_dir=${WRKDIR}/node-modules-cache/${NPM_MODULE_CACHE}
+MAKE_ENV+=		pnpm_config_store_dir=${WRKDIR}/node-modules-cache/${NPM_MODULE_CACHE} \
+			pnpm_config_supported_architectures='{"os":["linux","freebsd"]}'
+
+VSCODE_REH_OUT_DIR=	${WRKDIR}/vscode-reh-linux-${NODEJS_ARCH}
 
 .include "Makefile.version"
 .include <bsd.port.pre.mk>
@@ -87,16 +81,8 @@ post-extract:
 	@${MKDIR} ${WRKSRC}/.build/typings
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/electron.d.ts-${ELECTRON_VER} \
 		${WRKSRC}/.build/typings/electron.d.ts
-	# copy contents of @github/copilot-linux-x64
-	# note: this is just for the build process to pass. GitHub Copilot CLI
-	# is a closed-source product and not usable on FreeBSD without Linuxulator
-	${CP} -R ${WRKSRC}/extensions/copilot/node_modules/@github/copilot-linux-${NODEJS_ARCH} \
-		${WRKSRC}/extensions/copilot/node_modules/@github/copilot-freebsd-${NODEJS_ARCH}
-	# extract contents of @github/copilot-sdk-linux-x64
-	# note: again, this is just for the build process to pass
-	${CP} -R ${WRKSRC}/remote/node_modules/@github/copilot-sdk-linux-${NODEJS_ARCH} \
-		${WRKSRC}/remote/node_modules/@github/copilot-sdk-freebsd-${NODEJS_ARCH}
 
+.ifndef MAINTAINER_MODE
 post-patch:
 	@jq -r '.nativeBuild.target="${NODEJS_PORTVERSION}"' ${WRKSRC}/remote/package.json > \
 		${WRKSRC}/remote/package.json.jq && \
@@ -104,6 +90,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/%%DISTVERSION%%/${DISTVERSION}/g' \
 		${WRKSRC}/build/gulpfile.reh.ts \
 		${WRKSRC}/build/gulpfile.vscode.ts
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+		${WRKSRC}/node_modules/.pnpm/typescript@${TYPESCRIPT_VERSION}/node_modules/typescript/lib/getExePath.js
 	@(cd ${WRKSRC} && \
 	${FIND} -E . -type f -iregex '${SHEBANG_REGEX}' \
 		-exec ${SED} -i '' -e "s|/usr/bin/pgrep|/bin/pgrep|g" {} +)
@@ -112,15 +100,9 @@ post-patch:
 		-exec ${SED} -i '' -e "s|/usr/bin/pgrep|/bin/pgrep|g" {} +)
 	@${SETENV} FILESDIR=${FILESDIR} \
 		${SH} ${FILESDIR}/update-product-json.sh ${WRKSRC}
+.endif
 
 pre-build:
-# # build native node module for @rspack/binding
-#	@${CARGO_CARGO_RUN} build \
-#		--manifest-path ${CARGO_CARGOTOML_RSPACK} \
-#		--verbose --verbose \
-#		${CARGO_BUILD_ARGS}
-#	${CP} ${CARGO_TARGET_DIR}/*/librspack.so \
-#		${WRKSRC}/build/rspack/node_modules/@rspack/binding/rspack.freebsd-${NODEJS_ARCH}.node
 # rebuild native node modules
 	@for dir in `node --input-type=module -e "console.log(JSON.stringify((await import('${WRKSRC}/build/npm/dirs.ts')).dirs))" | jq -r '.[]' | ${SED} -e 's/^$$/./'`; do \
 		if [ "$${dir}" = "." ]; then \
@@ -129,9 +111,9 @@ pre-build:
 			subdir="$${dir}/"; \
 		fi; \
 		for moddir in `${FIND} ${WRKSRC}/$${subdir}node_modules -type f -name binding.gyp -exec ${DIRNAME} {} ';' 2> /dev/null`; do \
-			${ECHO_MSG} "===>   Rebuilding native modules in $${moddir}"; \
 			if ${ECHO_CMD} $${moddir} | ${GREP} -Eqe '/build/(.+/)*node_modules/' || \
 				${ECHO_CMD} $${moddir} | ${GREP} -Eqe '/remote/(.+/)*node_modules/'; then \
+				${ECHO_MSG} "===>   Rebuilding native modules in $${moddir}"; \
 				cd $${moddir} && \
 				npm_env="npm_config_runtime=node \
 					npm_config_target=${NODEJS_PORTVERSION} \
@@ -143,16 +125,6 @@ pre-build:
 			fi; \
 		done; \
 	done
-# copy rg binary file
-	@${MKDIR} ${WRKSRC}/build/node_modules/@vscode/ripgrep-universal/bin/freebsd-${NODEJS_ARCH} \
-		${WRKSRC}/remote/node_modules/@vscode/ripgrep-universal/bin/freebsd-${NODEJS_ARCH} \
-		${WRKSRC}/extensions/copilot/node_modules/@github/copilot-freebsd-${NODEJS_ARCH}/ripgrep/bin/freebsd-${NODEJS_ARCH}
-	${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/build/node_modules/@vscode/ripgrep-universal/bin/freebsd-${NODEJS_ARCH}
-	${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/remote/node_modules/@vscode/ripgrep-universal/bin/freebsd-${NODEJS_ARCH}
-	${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/extensions/copilot/node_modules/@github/copilot-freebsd-${NODEJS_ARCH}/ripgrep/bin/freebsd-${NODEJS_ARCH}
-# copy tgrep binary file
-	@${MKDIR} ${WRKSRC}/extensions/copilot/node_modules/@github/copilot-freebsd-${NODEJS_ARCH}/tgrep/bin/freebsd-${NODEJS_ARCH}
-	${CP} ${LOCALBASE}/bin/tgrep ${WRKSRC}/extensions/copilot/node_modules/@github/copilot-freebsd-${NODEJS_ARCH}/tgrep/bin/freebsd-${NODEJS_ARCH}
 
 do-build:
 # setup download cache for node
@@ -178,10 +150,32 @@ do-build:
 		fi; \
 		${ECHO_MSG} "Build failed, retrying... (attempt $${count})"; \
 	done
-	@${MKDIR} ${WRKDIR}/vscode-reh-linux-${NODEJS_ARCH}/node_modules/@github/copilot-sdk-freebsd-${NODEJS_ARCH}
-	${TAR} -cf - -C ${WRKSRC}/remote/node_modules/@github/copilot-sdk-freebsd-${NODEJS_ARCH} . | \
-		${TAR} -xf - -C ${WRKDIR}/vscode-reh-linux-${NODEJS_ARCH}/node_modules/@github/copilot-sdk-freebsd-${NODEJS_ARCH}
-	@${RM} -r ${WRKDIR}/vscode-reh-linux-${NODEJS_ARCH}/node_modules/@github/copilot-sdk-linux-${NODEJS_ARCH}
+
+post-build:
+# @github/copilot-sdk-linux-<arch> -> @github/copilot-sdk-freebsd-<arch>
+	@${MKDIR} ${VSCODE_REH_OUT_DIR}/node_modules/@github/copilot-sdk-freebsd-${NODEJS_ARCH}
+	${TAR} -cf - -C ${VSCODE_REH_OUT_DIR}/node_modules/@github/copilot-sdk-linux-${NODEJS_ARCH} . | \
+		${TAR} -xf - -C ${VSCODE_REH_OUT_DIR}/node_modules/@github/copilot-sdk-freebsd-${NODEJS_ARCH}
+	@${MKDIR} ${VSCODE_REH_OUT_DIR}/node_modules/@github/copilot-sdk-freebsd-${NODEJS_ARCH}/ripgrep/bin/freebsd-${NODEJS_ARCH}
+	${CP} ${LOCALBASE}/bin/rg ${VSCODE_REH_OUT_DIR}/node_modules/@github/copilot-sdk-freebsd-${NODEJS_ARCH}/ripgrep/bin/freebsd-${NODEJS_ARCH}
+	@${MKDIR} ${VSCODE_REH_OUT_DIR}/node_modules/@github/copilot-sdk-freebsd-${NODEJS_ARCH}/tgrep/bin/freebsd-${NODEJS_ARCH}
+	${CP} ${LOCALBASE}/bin/tgrep ${VSCODE_REH_OUT_DIR}/node_modules/@github/copilot-sdk-freebsd-${NODEJS_ARCH}/tgrep/bin/freebsd-${NODEJS_ARCH}
+# @vscode/ripgrep-universal
+	@${MKDIR} ${VSCODE_REH_OUT_DIR}/node_modules/@vscode/ripgrep-universal/bin/freebsd-${NODEJS_ARCH}
+	${CP} ${LOCALBASE}/bin/rg ${VSCODE_REH_OUT_DIR}/node_modules/@vscode/ripgrep-universal/bin/freebsd-${NODEJS_ARCH}
+# @github/copilot in extensions
+	@${MKDIR} ${VSCODE_REH_OUT_DIR}/extensions/copilot/node_modules/@github/copilot/sdk/ripgrep/bin/freebsd-${NODEJS_ARCH}
+	${CP} ${LOCALBASE}/bin/rg ${VSCODE_REH_OUT_DIR}/extensions/copilot/node_modules/@github/copilot/sdk/ripgrep/bin/freebsd-${NODEJS_ARCH}
+	@${MKDIR} ${VSCODE_REH_OUT_DIR}/extensions/copilot/node_modules/@github/copilot/sdk/tgrep/bin/freebsd-${NODEJS_ARCH} \
+		${VSCODE_REH_OUT_DIR}/extensions/copilot/node_modules/@github/copilot/tgrep/bin/freebsd-${NODEJS_ARCH}
+	${CP} ${LOCALBASE}/bin/tgrep ${VSCODE_REH_OUT_DIR}/extensions/copilot/node_modules/@github/copilot/sdk/tgrep/bin/freebsd-${NODEJS_ARCH}
+	${CP} ${LOCALBASE}/bin/tgrep ${VSCODE_REH_OUT_DIR}/extensions/copilot/node_modules/@github/copilot/tgrep/bin/freebsd-${NODEJS_ARCH}
+# remove directories containing linux-specific binaries
+	@${FIND} ${VSCODE_REH_OUT_DIR} \
+		-type d \( -name linux-arm64 -o -name linux-x64 \) -exec ${RM} -r {} +
+	@${FIND} ${VSCODE_REH_OUT_DIR} \
+		-type d -empty -delete
+	@${RM} -r ${VSCODE_REH_OUT_DIR}/node_modules/@github/copilot-sdk-linux-${NODEJS_ARCH}
 # strip native node modules
 	@${FIND} ${WRKDIR}/vscode-reh-linux-${NODEJS_ARCH} -type f -exec ${FILE} {} + | \
 		${GREP} 'ELF.*FreeBSD' | ${AWK} -F ': ' '{print $$1}' | ${XARGS} ${STRIP_CMD}

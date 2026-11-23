@@ -1,5 +1,5 @@
---- node_modules/ssh2/lib/protocol/crypto/src/binding.cc.orig	2026-04-11 09:21:27 UTC
-+++ node_modules/ssh2/lib/protocol/crypto/src/binding.cc
+--- node_modules/.pnpm/ssh2@1.17.0/node_modules/ssh2/lib/protocol/crypto/src/binding.cc.orig	2026-11-22 04:33:50 UTC
++++ node_modules/.pnpm/ssh2@1.17.0/node_modules/ssh2/lib/protocol/crypto/src/binding.cc
 @@ -86,7 +86,7 @@ class ChaChaPolyCipher : public ObjectWrap {
  
      Local<Function> func = Nan::GetFunction(tpl).ToLocalChecked();

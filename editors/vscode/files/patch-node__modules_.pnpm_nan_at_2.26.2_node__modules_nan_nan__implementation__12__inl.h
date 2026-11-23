@@ -1,5 +1,5 @@
---- node_modules/nan/nan_implementation_12_inl.h.orig	2026-06-04 08:39:31 UTC
-+++ node_modules/nan/nan_implementation_12_inl.h
+--- node_modules/.pnpm/nan@2.26.2/node_modules/nan/nan_implementation_12_inl.h.orig	1971-12-10 00:00:00 UTC
++++ node_modules/.pnpm/nan@2.26.2/node_modules/nan/nan_implementation_12_inl.h
 @@ -14,6 +14,22 @@ namespace imp {
  
  namespace imp {

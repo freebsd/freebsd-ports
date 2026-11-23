@@ -1,5 +1,5 @@
---- node_modules/kerberos/src/unix/kerberos_gss.cc.orig	2025-06-26 20:14:32 UTC
-+++ node_modules/kerberos/src/unix/kerberos_gss.cc
+--- node_modules/.pnpm/kerberos@2.1.1/node_modules/kerberos/src/unix/kerberos_gss.cc.orig	2026-11-22 04:33:50 UTC
++++ node_modules/.pnpm/kerberos@2.1.1/node_modules/kerberos/src/unix/kerberos_gss.cc
 @@ -65,10 +65,17 @@ struct DLOpenHandle {
    DLOpenHandle& operator=(DLOpenHandle&) = delete;
  };

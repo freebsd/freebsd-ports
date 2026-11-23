@@ -1,5 +1,5 @@
---- remote/node_modules/nan/nan_callbacks_12_inl.h.orig	2026-06-04 08:41:57 UTC
-+++ remote/node_modules/nan/nan_callbacks_12_inl.h
+--- node_modules/.pnpm/nan@2.26.2/node_modules/nan/nan_callbacks_12_inl.h.orig	1971-12-10 00:00:00 UTC
++++ node_modules/.pnpm/nan@2.26.2/node_modules/nan/nan_callbacks_12_inl.h
 @@ -178,14 +178,27 @@ class PropertyCallbackInfo {
    NAN_DISALLOW_ASSIGN_COPY_MOVE(PropertyCallbackInfo)
  };
