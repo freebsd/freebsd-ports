@@ -1,5 +1,5 @@
 PORTNAME=	meka
-DISTVERSION=	0.95.0
+DISTVERSION=	0.96.2
 CATEGORIES=	shells # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -172,7 +172,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		fnv-1.0.7 \
 		foldhash-0.1.5 \
 		foldhash-0.2.0 \
-		form_urlencoded-1.2.2 \
+		form_urlencoded-1.2.3 \
 		fs_extra-1.3.0 \
 		futures-0.3.34 \
 		futures-channel-0.3.34 \
@@ -523,7 +523,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		unicode-xid-0.2.6 \
 		untrusted-0.7.1 \
 		untrusted-0.9.0 \
-		url-2.5.8 \
+		url-2.5.9 \
 		utf8_iter-1.1.0 \
 		utf8parse-0.2.2 \
 		utf_types-1.0.0 \
