@@ -1,6 +1,6 @@
 PORTNAME=	django-mezzanine-filebrowser
-PORTVERSION=	1.1.1
-PORTREVISION=	1
+DISTVERSION=	1.1.1
+PORTREVISION=	2
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,6 +12,9 @@ WWW=		https://github.com/stephenmcd/filebrowser-safe
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	Mezzanine-specific fork; Mezzanine was removed from the tree in 2021
+EXPIRATION_DATE=	2026-12-23
 
 USES=		gettext python
 USE_PYTHON=	autoplist concurrent distutils
