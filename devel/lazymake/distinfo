@@ -1,5 +1,5 @@
-TIMESTAMP = 1777021930
-SHA256 (go/devel_lazymake/lazymake-v0.4.1/v0.4.1.mod) = d34b3df781dd502983cf9b7914e792c5f6c47a1aaf1a1eb489e20c529d17e505
-SIZE (go/devel_lazymake/lazymake-v0.4.1/v0.4.1.mod) = 2104
-SHA256 (go/devel_lazymake/lazymake-v0.4.1/v0.4.1.zip) = 953784ffb145c6521593c94597d3cf2a6baf639bc6b0e1eedbb40ae1c602ebf6
-SIZE (go/devel_lazymake/lazymake-v0.4.1/v0.4.1.zip) = 28396233
+TIMESTAMP = 1795441451
+SHA256 (go/devel_lazymake/lazymake-v0.5.0/v0.5.0.mod) = d34b3df781dd502983cf9b7914e792c5f6c47a1aaf1a1eb489e20c529d17e505
+SIZE (go/devel_lazymake/lazymake-v0.5.0/v0.5.0.mod) = 2104
+SHA256 (go/devel_lazymake/lazymake-v0.5.0/v0.5.0.zip) = c796c8dc2091ffb0ed5fafedf4258a2bd5bf64813e3af869ef9d5d1422be4c61
+SIZE (go/devel_lazymake/lazymake-v0.5.0/v0.5.0.zip) = 29352037
