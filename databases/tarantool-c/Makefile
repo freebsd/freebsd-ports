@@ -1,6 +1,5 @@
 PORTNAME=	tarantool-c
-PORTVERSION=	1.0.1
-PORTREVISION=	5
+PORTVERSION=	1.1.0
 CATEGORIES=	databases
 
 MAINTAINER=	balaev@tarantool.org

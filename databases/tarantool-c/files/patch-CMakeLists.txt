@@ -1,6 +1,29 @@
+https://github.com/tarantool/tarantool-c/commit/2664a8f6941b64fc1a731f9bd55bd51ba8d622ab
+
 --- CMakeLists.txt.orig	2021-11-26 15:16:51 UTC
 +++ CMakeLists.txt
-@@ -46,7 +46,7 @@ if (NOT ENABLE_BUNDLED_MSGPUCK)
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8)
++cmake_minimum_required(VERSION 2.8...4.0)
+ 
+ project(LIBTNT)
+ 
+@@ -7,14 +7,6 @@ set(CMAKE_INCLUDE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cm
+ set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake" ${CMAKE_MODULE_PATH})
+ set(CMAKE_INCLUDE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake" ${CMAKE_INCLUDE_PATH})
+ 
+-if(POLICY CMP0037)
+-    cmake_policy(SET CMP0037 OLD) # don't blame custom target names
+-endif(POLICY CMP0037)
+-
+-if(POLICY CMP0002)
+-    cmake_policy(SET CMP0002 OLD) # allow submodules with same target names
+-endif(POLICY CMP0002)
+-
+ if (CMAKE_C_COMPILER_ID STREQUAL Clang)
+     set(CMAKE_COMPILER_IS_CLANG  ON)
+     set(CMAKE_COMPILER_IS_GNUCC  OFF)
+@@ -46,7 +38,7 @@ if (NOT ENABLE_BUNDLED_MSGPUCK)
      set (MSGPUCK_REQUIRED ON)
      include (cmake/FindMsgPuck.cmake)
      include_directories(${MSGPUCK_INCLUDE_DIR})
