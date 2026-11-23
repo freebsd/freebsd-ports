@@ -1,5 +1,5 @@
-TIMESTAMP = 1794509122
-SHA256 (go/mail_tidemail/tidemail-v1.9.1/v1.9.1.mod) = f30198aeafa6e9364bfa2979a00067151720d6c2b15a36c583fbf23e1c1e303a
-SIZE (go/mail_tidemail/tidemail-v1.9.1/v1.9.1.mod) = 2953
-SHA256 (go/mail_tidemail/tidemail-v1.9.1/v1.9.1.zip) = 203bd1174e1c239cc381115223953c9ab1dc4dec5631b952cc899c6705857491
-SIZE (go/mail_tidemail/tidemail-v1.9.1/v1.9.1.zip) = 12767610
+TIMESTAMP = 1795403251
+SHA256 (go/mail_tidemail/tidemail-v1.10.1/v1.10.1.mod) = dd9ceefdd479dd50dd629f9f0f1e9d14897447a751cc1b3699d9a216cb156b99
+SIZE (go/mail_tidemail/tidemail-v1.10.1/v1.10.1.mod) = 2987
+SHA256 (go/mail_tidemail/tidemail-v1.10.1/v1.10.1.zip) = c046f2f9346e51269ec20edce327f4038df1998faec46e8dd652ac20d9322086
+SIZE (go/mail_tidemail/tidemail-v1.10.1/v1.10.1.zip) = 12908366
