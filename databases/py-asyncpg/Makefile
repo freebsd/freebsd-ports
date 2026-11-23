@@ -1,6 +1,5 @@
 PORTNAME=	asyncpg
-PORTVERSION=	0.31.0
-PORTREVISION=	1
+PORTVERSION=	0.32.0
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,23 +11,25 @@ WWW=		https://github.com/MagicStack/asyncpg/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>=24.0:devel/py-packaging@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 
 USES=		cpe pgsql:11+ python
 CPE_VENDOR=	magic
 USE_PYTHON=	autoplist concurrent cython pep517
 
-OPTIONS_DEFINE=	DOCS
 PORTDOCS=	PKG-INFO README.rst
+
+OPTIONS_DEFINE=	DOCS
 
 post-extract:
 	@${RM} ${WRKSRC}/asyncpg/pgproto/*.c
 	@${RM} ${WRKSRC}/asyncpg/protocol/*.c
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/asyncpg/protocol/protocol*.so
-	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/asyncpg/pgproto/pgproto*.so
+	@${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/asyncpg -name '*.so' \
+		-exec ${STRIP_CMD} {} +
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
