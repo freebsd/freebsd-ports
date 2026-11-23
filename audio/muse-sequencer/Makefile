@@ -29,7 +29,7 @@ LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 		libsndfile.so:audio/libsndfile \
 		libsord-0.so:devel/sord
 
-USES=		cmake compiler:c++11-lib desktop-file-utils gl gnome kde:5 localbase:ldflags qt:5 pkgconfig python shared-mime-info shebangfix
+USES=		cmake compiler:c++11-lib desktop-file-utils gl gnome kde localbase:ldflags qt:5 pkgconfig python shared-mime-info shebangfix
 USE_GL=		gl
 USE_QT=		core gui svg xml widgets buildtools:build linguisttools:build qmake:build uitools:build
 USE_KDE=	ecm:build
