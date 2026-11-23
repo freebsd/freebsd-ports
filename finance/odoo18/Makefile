@@ -1,5 +1,5 @@
 PORTNAME=	odoo
-PORTVERSION=	18.0.20260618
+PORTVERSION=	18.0.20261123
 CATEGORIES=	finance www
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	18
@@ -10,9 +10,8 @@ WWW=		https://www.odoo.com
 
 LICENSE=	LGPL3
 
-USE_GITHUB=	yes
-GH_TAGNAME=	dd517451445f921866a229352f504573464b0406
-
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 LIB_DEPENDS=	libxslt.so:textproc/libxslt \
 		libevent.so:devel/libevent \
 		libsasl2.so:security/cyrus-sasl2
@@ -68,30 +67,33 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=1.3:devel/py-babel@${PY_FLAVOR} \
 		${PY_SETUPTOOLS}
 
 USES=		cpe gnome ldap python pgsql shebangfix
+USE_GITHUB=	yes
+GH_TAGNAME=	4e4300d80c7a5654f0bc8f9aea9d5f3b1049393f
 USE_GNOME=	libxml2
-USE_PYTHON=	cryptography distutils
+USE_PYTHON=	autoplist cryptography pep517
+USE_RC_SUBR=	${PORTNAME}
 
-NO_ARCH=	yes
-
-SHEBANG_LANG=	python
 SHEBANG_FILES=	${WRKSRC}/${PORTNAME}/addons/web/tooling/*.sh \
 		${WRKSRC}/${PORTNAME}/addons/web/tooling/hooks/pre-commit \
 		${WRKSRC}/${PORTNAME}/addons/mail/static/scripts/odoo-mailgate.py \
 		${WRKSRC}/${PORTNAME}-bin
 
-USERS=		odoo
-GROUPS=		${USERS}
-
-USE_RC_SUBR=	${PORTNAME}
-SUB_FILES=	pkg-message
-
-CONFLICTS=	odoo16 odoo17 odoo
+CONFLICTS=	odoo16 odoo17 odoo19 odoo
 
 ETCDIR=		${PREFIX}/etc/odoo
+NO_ARCH=	yes
+SUB_FILES=	odoo.conf pkg-message
+
+USERS=		odoo
+GROUPS=		${USERS}
 
 post-patch:
 	@${REINPLACE_CMD} -i "" -e 's|(index !== |(index == |g' \
 		${WRKSRC}/odoo/addons/web/static/src/core/network/download.js
+# release.py's version is 18.0; name the wheel after PORTVERSION so it
+# matches the pep517 install glob (the runtime version is unchanged)
+	@${REINPLACE_CMD} -i "" -e "s|^    version=version,$$|    version='${PORTVERSION}',|" \
+		${WRKSRC}/setup.py
 
 post-extract:
 	@cd ${WRKSRC}/addons/ && ${MV} * ${WRKSRC}/odoo/addons/
@@ -100,6 +102,6 @@ pre-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
 
 post-install:
-	@${INSTALL_SCRIPT} ${FILESDIR}/odoo.conf ${STAGEDIR}${ETCDIR}/odoo.conf.sample
+	@${INSTALL_DATA} ${WRKDIR}/odoo.conf ${STAGEDIR}${ETCDIR}/odoo.conf.sample
 
 .include <bsd.port.mk>
