@@ -1,6 +1,6 @@
 PORTNAME=	trunk
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.22.1
+DISTVERSION=	0.22.2
 CATEGORIES=	www devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,7 +23,7 @@ GH_ACCOUNT=	thedodd
 RUSTFLAGS=	${ARCH:S/i386/YES/:C/^[a-z].*//:S/YES/-C target-feature=+sse,+sse2/} # add sse sse2 target-features only on i386
 
 CARGO_CRATES=	adler2-2.0.1 \
-		aes-0.9.3 \
+		aes-0.9.4 \
 		ahash-0.7.8 \
 		ahash-0.8.12 \
 		aho-corasick-1.1.5 \
@@ -34,21 +34,21 @@ CARGO_CRATES=	adler2-2.0.1 \
 		anstyle-query-1.1.5 \
 		anstyle-wincon-3.0.11 \
 		anyhow-1.0.104 \
-		ar_archive_writer-0.5.3 \
-		arc-swap-1.9.3 \
+		ar_archive_writer-0.5.5 \
+		arc-swap-1.9.5 \
 		arrayvec-0.7.8 \
 		ascii-1.1.0 \
 		ast_node-7.0.0 \
-		async-compression-0.4.51 \
+		async-compression-0.4.52 \
 		async-tar-0.6.1 \
 		async-trait-0.1.92 \
 		atomic-waker-1.1.2 \
 		autocfg-1.5.1 \
-		aws-lc-rs-1.18.2 \
-		aws-lc-sys-0.46.0 \
+		aws-lc-rs-1.19.0 \
+		aws-lc-sys-0.47.0 \
 		axum-0.8.9 \
 		axum-core-0.5.6 \
-		axum-server-0.8.0 \
+		axum-server-0.9.2 \
 		backon-1.6.0 \
 		base64-0.22.1 \
 		base64-0.23.1 \
@@ -66,7 +66,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		bytecheck_derive-0.6.12 \
 		bytemuck-1.25.2 \
 		byteorder-1.5.0 \
-		bytes-1.12.1 \
+		bytes-1.12.2 \
 		bytes-str-0.2.9 \
 		bzip2-0.6.1 \
 		camino-1.2.6 \
@@ -74,16 +74,16 @@ CARGO_CRATES=	adler2-2.0.1 \
 		cargo-platform-0.3.3 \
 		cargo_metadata-0.23.1 \
 		castaway-0.2.4 \
-		cc-1.10.0 \
+		cc-1.11.2 \
 		cfg-if-1.0.5 \
 		cfg_aliases-0.2.2 \
 		chacha20-0.10.2 \
 		cipher-0.5.2 \
-		clap-4.6.7 \
+		clap-4.6.8 \
 		clap_builder-4.6.7 \
-		clap_complete-4.6.11 \
-		clap_derive-4.6.7 \
-		clap_lex-1.1.1 \
+		clap_complete-4.6.12 \
+		clap_derive-4.6.8 \
+		clap_lex-1.1.2 \
 		cmake-0.1.58 \
 		cmov-0.5.4 \
 		cobs-0.3.0 \
@@ -91,11 +91,11 @@ CARGO_CRATES=	adler2-2.0.1 \
 		combine-4.6.9 \
 		compact_str-0.7.1 \
 		compact_str-0.9.1 \
-		compression-codecs-0.4.46 \
+		compression-codecs-0.4.47 \
 		compression-core-0.4.34 \
 		console-0.16.6 \
 		const-oid-0.9.6 \
-		const-oid-0.10.2 \
+		const-oid-0.10.3 \
 		const-str-1.1.0 \
 		constant_time_eq-0.6.1 \
 		convert_case-0.6.0 \
@@ -107,7 +107,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		cpubits-0.1.1 \
 		cpufeatures-0.2.17 \
 		cpufeatures-0.3.1 \
-		crc32fast-1.5.3 \
+		crc32fast-1.5.5 \
 		critical-section-1.2.0 \
 		crossbeam-channel-0.5.17 \
 		crossbeam-deque-0.8.8 \
@@ -120,7 +120,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		cssparser-color-0.5.0 \
 		cssparser-macros-0.6.1 \
 		cssparser-macros-0.7.1 \
-		ctutils-0.4.6 \
+		ctutils-0.4.8 \
 		darling-0.20.11 \
 		darling_core-0.20.11 \
 		darling_macro-0.20.11 \
@@ -152,18 +152,18 @@ CARGO_CRATES=	adler2-2.0.1 \
 		embedded-io-0.4.0 \
 		embedded-io-0.6.1 \
 		encode_unicode-1.0.0 \
-		encoding_rs-0.8.42 \
+		encoding_rs-0.8.44 \
 		env_filter-2.0.0 \
 		env_logger-0.11.11 \
 		equivalent-1.0.3 \
-		errno-0.3.14 \
+		errno-0.3.15 \
 		escape-simd-0.1.1 \
 		fastrand-2.5.0 \
 		file-id-0.2.3 \
-		filetime-0.2.29 \
+		filetime-0.2.30 \
 		find-msvc-tools-0.1.15 \
-		fixedbitset-0.5.7 \
-		flate2-1.1.10 \
+		fixedbitset-0.5.9 \
+		flate2-1.1.11 \
 		fnv-1.0.7 \
 		foldhash-0.2.0 \
 		foreign-types-0.3.2 \
@@ -187,7 +187,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		getrandom-0.4.3 \
 		getset-0.1.7 \
 		glob-0.3.4 \
-		globset-0.4.20 \
+		globset-0.4.21 \
 		gloo-timers-0.3.0 \
 		h2-0.4.20 \
 		hashbrown-0.12.3 \
@@ -233,7 +233,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		indexmap-2.14.2 \
 		inotify-0.11.5 \
 		inotify-sys-0.1.8 \
-		inout-0.2.5 \
+		inout-0.2.6 \
 		ipconfig-0.3.4 \
 		ipnet-2.12.2 \
 		is-docker-0.2.0 \
@@ -242,18 +242,18 @@ CARGO_CRATES=	adler2-2.0.1 \
 		is_terminal_polyfill-1.70.2 \
 		itertools-0.10.5 \
 		itertools-0.14.0 \
-		itoa-1.0.18 \
+		itoa-1.0.19 \
 		jni-0.22.4 \
 		jni-macros-0.22.4 \
 		jni-sys-0.4.1 \
 		jni-sys-macros-0.4.1 \
 		jobserver-0.1.35 \
-		js-sys-0.3.106 \
+		js-sys-0.3.107 \
 		json-escape-simd-3.1.3 \
 		kqueue-1.2.1 \
 		kqueue-sys-1.1.2 \
 		lazy_static-1.5.1 \
-		libbz2-rs-sys-0.2.5 \
+		libbz2-rs-sys-0.2.6 \
 		libc-0.2.191 \
 		libdeflate-sys-1.26.1 \
 		libdeflater-1.26.1 \
@@ -265,19 +265,19 @@ CARGO_CRATES=	adler2-2.0.1 \
 		litemap-0.8.3 \
 		local-ip-address-0.6.13 \
 		lock_api-0.4.14 \
-		log-0.4.34 \
-		lol_html-3.0.2 \
-		lzma-rust2-0.23.0 \
+		log-0.4.35 \
+		lol_html-3.0.3 \
+		lzma-rust2-0.25.0 \
 		matchers-0.2.0 \
 		matches-0.1.10 \
 		matchit-0.8.4 \
 		memchr-2.8.3 \
-		mime-0.3.17 \
+		mime-0.3.18 \
 		mime_guess-2.0.5 \
 		minify-html-0.18.1 \
 		minify-html-common-0.0.3 \
 		miniz_oxide-0.9.1 \
-		mio-1.2.4 \
+		mio-1.2.5 \
 		moka-0.12.16 \
 		multiversion_no_op-1.0.0 \
 		native-tls-0.2.18 \
@@ -285,11 +285,11 @@ CARGO_CRATES=	adler2-2.0.1 \
 		neli-0.7.5 \
 		neli-proc-macros-0.2.2 \
 		new_debug_unreachable-1.0.6 \
-		nix-0.31.3 \
+		nix-0.32.0 \
 		nonmax-0.5.5 \
-		notify-8.2.1 \
+		notify-8.2.2 \
 		notify-debouncer-full-0.7.0 \
-		notify-types-2.1.0 \
+		notify-types-2.3.1 \
 		nu-ansi-term-0.50.3 \
 		num-bigint-0.4.8 \
 		num-conv-0.2.2 \
@@ -302,11 +302,11 @@ CARGO_CRATES=	adler2-2.0.1 \
 		once_cell-1.21.4 \
 		once_cell_polyfill-1.70.2 \
 		open-5.4.5 \
-		openssl-0.10.81 \
+		openssl-0.10.82 \
 		openssl-macros-0.1.1 \
-		openssl-probe-0.2.1 \
+		openssl-probe-0.2.2 \
 		openssl-src-300.6.1+3.6.3 \
-		openssl-sys-0.9.117 \
+		openssl-sys-0.9.118 \
 		option-ext-0.2.0 \
 		outref-0.1.0 \
 		outref-0.5.2 \
@@ -338,7 +338,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		par-core-2.0.0 \
 		par-iter-2.0.0 \
 		parcel_selectors-0.28.3 \
-		parcel_sourcemap-2.1.1 \
+		parcel_sourcemap-2.1.2 \
 		parking_lot-0.12.5 \
 		parking_lot_core-0.9.12 \
 		parse-size-1.1.0 \
@@ -381,7 +381,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		radix_fmt-1.0.0 \
 		rand-0.8.8 \
 		rand-0.9.5 \
-		rand-0.10.3 \
+		rand-0.10.4 \
 		rand_chacha-0.9.0 \
 		rand_core-0.6.4 \
 		rand_core-0.9.5 \
@@ -393,9 +393,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		redox_users-0.5.3 \
 		ref-cast-1.0.27 \
 		ref-cast-impl-1.0.27 \
-		regex-1.13.1 \
-		regex-automata-0.4.18 \
-		regex-syntax-0.8.11 \
+		regex-1.13.2 \
+		regex-automata-0.4.19 \
+		regex-syntax-0.8.12 \
 		regress-0.11.1 \
 		relative-path-1.9.3 \
 		rend-0.4.2 \
@@ -405,17 +405,17 @@ CARGO_CRATES=	adler2-2.0.1 \
 		ring-0.17.14 \
 		rkyv-0.7.46 \
 		rkyv_derive-0.7.46 \
-		rstest-0.27.0 \
-		rstest_macros-0.27.0 \
+		rstest-0.28.0 \
+		rstest_macros-0.28.0 \
 		rustc-hash-2.1.3 \
 		rustc_version-0.4.1 \
-		rustix-1.1.5 \
+		rustix-1.1.6 \
 		rustls-0.23.46 \
 		rustls-native-certs-0.8.5 \
-		rustls-pki-types-1.15.1 \
+		rustls-pki-types-1.16.0 \
 		rustls-platform-verifier-0.7.1 \
 		rustls-platform-verifier-android-0.2.0 \
-		rustls-webpki-0.103.16 \
+		rustls-webpki-0.103.17 \
 		rustversion-1.0.23 \
 		ryu-1.0.23 \
 		ryu-js-1.0.3 \
@@ -439,7 +439,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		serde_derive_internals-0.30.0 \
 		serde_json-1.0.154 \
 		serde_path_to_error-0.1.20 \
-		serde_spanned-1.1.2 \
+		serde_spanned-1.1.3 \
 		serde_urlencoded-0.7.1 \
 		servo_arc-0.4.3 \
 		sha1-0.10.7 \
@@ -455,7 +455,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		siphasher-0.3.11 \
 		siphasher-1.0.4 \
 		slab-0.4.12 \
-		smallvec-1.16.4 \
+		smallvec-1.16.6 \
 		smawk-0.3.3 \
 		socket2-0.6.5 \
 		spki-0.7.3 \
@@ -467,8 +467,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		strum-0.28.0 \
 		strum_macros-0.28.0 \
 		subtle-2.6.1 \
-		swc_allocator-5.0.0 \
-		swc_atoms-10.0.0 \
+		swc_allocator-5.0.1 \
+		swc_atoms-10.0.1 \
 		swc_common-26.0.0 \
 		swc_config-6.0.1 \
 		swc_config_macro-1.0.1 \
@@ -484,11 +484,11 @@ CARGO_CRATES=	adler2-2.0.1 \
 		swc_ecma_visit-29.0.0 \
 		swc_eq_ignore_macros-1.0.1 \
 		swc_macros_common-1.0.1 \
-		swc_sourcemap-10.0.2 \
+		swc_sourcemap-10.0.3 \
 		swc_visit-2.0.2 \
 		syn-1.0.109 \
 		syn-2.0.119 \
-		syn-3.0.9 \
+		syn-3.0.10 \
 		sync_wrapper-1.0.2 \
 		synstructure-0.14.0 \
 		system-configuration-0.7.0 \
@@ -515,11 +515,11 @@ CARGO_CRATES=	adler2-2.0.1 \
 		tokio-tungstenite-0.29.0 \
 		tokio-tungstenite-0.30.0 \
 		tokio-util-0.7.20 \
-		toml-1.1.8+spec-1.1.0 \
-		toml_datetime-1.1.2+spec-1.1.0 \
-		toml_edit-0.25.17+spec-1.1.0 \
+		toml-1.2.1+spec-1.1.0 \
+		toml_datetime-1.1.3+spec-1.1.0 \
+		toml_edit-0.25.19+spec-1.1.0 \
 		toml_parser-1.1.5+spec-1.1.0 \
-		toml_writer-1.1.3+spec-1.1.0 \
+		toml_writer-1.2.0+spec-1.1.0 \
 		tower-0.5.3 \
 		tower-http-0.6.11 \
 		tower-http-0.7.1 \
@@ -540,12 +540,13 @@ CARGO_CRATES=	adler2-2.0.1 \
 		unicode-id-start-1.5.0 \
 		unicode-ident-1.0.27 \
 		unicode-segmentation-1.13.3 \
-		unicode-width-0.2.2 \
+		unicode-width-0.2.3 \
 		untrusted-0.9.0 \
 		url-2.5.8 \
-		utf8_iter-1.0.4 \
+		utf8_iter-1.1.0 \
 		utf8parse-0.2.2 \
-		uuid-1.29.0 \
+		utf_types-1.0.0 \
+		uuid-1.29.3 \
 		valuable-0.1.1 \
 		vcpkg-0.2.15 \
 		version_check-0.9.5 \
@@ -555,14 +556,14 @@ CARGO_CRATES=	adler2-2.0.1 \
 		want-0.3.2 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
 		wasip2-1.0.4+wasi-0.2.12 \
-		wasm-bindgen-0.2.129 \
-		wasm-bindgen-futures-0.4.79 \
-		wasm-bindgen-macro-0.2.129 \
-		wasm-bindgen-macro-support-0.2.129 \
-		wasm-bindgen-shared-0.2.129 \
+		wasm-bindgen-0.2.130 \
+		wasm-bindgen-futures-0.4.80 \
+		wasm-bindgen-macro-0.2.130 \
+		wasm-bindgen-macro-support-0.2.130 \
+		wasm-bindgen-shared-0.2.130 \
 		wasm-streams-0.5.0 \
-		web-sys-0.3.106 \
-		webpki-root-certs-1.0.11 \
+		web-sys-0.3.107 \
+		webpki-root-certs-1.0.12 \
 		which-8.0.6 \
 		widestring-1.2.1 \
 		winapi-util-0.1.11 \
@@ -591,11 +592,11 @@ CARGO_CRATES=	adler2-2.0.1 \
 		windows_x86_64_gnullvm-0.53.1 \
 		windows_x86_64_msvc-0.52.6 \
 		windows_x86_64_msvc-0.53.1 \
-		winnow-1.0.4 \
+		winnow-1.0.5 \
 		wit-bindgen-0.57.1 \
 		writeable-0.6.4 \
 		wyz-0.5.1 \
-		xattr-1.6.1 \
+		xattr-1.7.0 \
 		yaml_serde-0.10.7 \
 		yoke-0.8.4 \
 		yoke-derive-0.8.4 \
@@ -603,17 +604,18 @@ CARGO_CRATES=	adler2-2.0.1 \
 		zerocopy-derive-0.8.63 \
 		zerofrom-0.1.8 \
 		zerofrom-derive-0.1.8 \
-		zeroize-1.9.1 \
+		zeroize-1.9.2 \
+		zeroize_derive-1.5.0 \
 		zerotrie-0.2.5 \
 		zerovec-0.11.9 \
 		zerovec-derive-0.11.7 \
-		zip-9.1.1 \
+		zip-9.7.0 \
 		zlib-rs-0.6.8 \
 		zmij-1.0.23 \
 		zopfli-0.8.3 \
-		zstd-0.14.3 \
-		zstd-safe-8.2.0 \
-		zstd-sys-2.1.2+zstd.1.5.7
+		zstd-0.14.4 \
+		zstd-safe-8.3.0 \
+		zstd-sys-2.1.3+zstd.1.5.7
 
 OPENSSLINC=	/usr/include
 OPENSSLLIB=	/usr/lib
