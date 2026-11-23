@@ -1,5 +1,5 @@
 PORTNAME=	odoo
-PORTVERSION=	16.0.20261023
+PORTVERSION=	16.0.20261119
 CATEGORIES=	finance www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	16
@@ -69,7 +69,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=1.3:devel/py-babel@${PY_FLAVOR} \
 
 USES=		cpe gnome ldap pgsql python shebangfix
 USE_GITHUB=	yes
-GH_TAGNAME=	dd8c4a0b9e7054c2cc8b4ca5624923429dfce540
+GH_TAGNAME=	e75d5826d089e0bec0752766a04737c3edcdf97d
 USE_GNOME=	libxml2
 USE_PYTHON=	cryptography distutils pep517
 USE_RC_SUBR=	${PORTNAME}
@@ -82,7 +82,7 @@ SHEBANG_FILES=	${WRKSRC}/${PORTNAME}-bin \
 		${WRKSRC}/${PORTNAME}/addons/web/tooling/*.sh \
 		${WRKSRC}/${PORTNAME}/addons/point_of_sale/tools/posbox/overwrite_before_init/etc/init.d/odoo
 
-CONFLICTS=	odoo odoo17 odoo18
+CONFLICTS=	odoo odoo17 odoo18 odoo19
 
 ETCDIR=		${PREFIX}/etc/odoo
 NO_ARCH=	yes
