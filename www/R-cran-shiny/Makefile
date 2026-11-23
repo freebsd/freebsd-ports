@@ -1,5 +1,5 @@
 PORTNAME=	shiny
-PORTVERSION=	1.14.0
+PORTVERSION=	1.15.0
 CATEGORIES=	www
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -27,6 +27,7 @@ RUN_DEPENDS=	R-cran-bslib>=0.6.0:www/R-cran-bslib \
 		R-cran-R6>=2.0:devel/R-cran-R6 \
 		R-cran-rlang>=0.4.10:devel/R-cran-rlang \
 		R-cran-sourcetools>0:devel/R-cran-sourcetools \
+		R-cran-watcher>=0.2.0:filesystems/R-cran-watcher \
 		R-cran-withr>0:devel/R-cran-withr \
 		R-cran-xtable>0:textproc/R-cran-xtable
 
