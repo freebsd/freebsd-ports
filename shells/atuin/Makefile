@@ -1,6 +1,6 @@
 PORTNAME=	atuin
 DISTVERSIONPREFIX=	v
-DISTVERSION=	18.25.0
+DISTVERSION=	18.25.1
 CATEGORIES=	shells
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -496,7 +496,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		reqwest-0.13.4 \
 		reqwest-middleware-0.5.2 \
 		ring-0.17.14 \
-		rmcp-3.9.0 \
+		rmcp-3.11.0 \
 		rmp-0.8.15 \
 		rmp-serde-1.3.1 \
 		rpassword-7.5.4 \
@@ -595,6 +595,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		sysinfo-0.39.6 \
 		tempfile-3.27.0 \
 		termina-0.3.3 \
+		terminal-colorsaurus-1.0.3 \
+		terminal-trx-0.2.6 \
 		terminfo-0.9.0 \
 		termios-0.3.3 \
 		termwiz-0.23.3 \
@@ -621,9 +623,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		toml_edit-0.25.12+spec-1.1.0 \
 		toml_parser-1.1.2+spec-1.1.0 \
 		toml_writer-1.1.1+spec-1.1.0 \
-		tonic-0.14.6 \
+		tonic-0.14.9 \
 		tonic-build-0.14.6 \
-		tonic-prost-0.14.6 \
+		tonic-prost-0.14.9 \
 		tonic-prost-build-0.14.6 \
 		tonic-types-0.14.6 \
 		tower-0.5.3 \
@@ -659,6 +661,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		unic-langid-impl-0.9.6 \
 		unicase-2.9.0 \
 		unicode-bidi-0.3.18 \
+		unicode-general-category-1.1.0 \
 		unicode-ident-1.0.24 \
 		unicode-normalization-0.1.26 \
 		unicode-properties-0.1.4 \
@@ -763,6 +766,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		x11rb-0.13.2 \
 		x11rb-protocol-0.13.2 \
 		xml-rs-0.8.29 \
+		xterm-color-1.0.2 \
 		xxhash-rust-0.8.19 \
 		yaml-rust2-0.11.1 \
 		yansi-1.0.1 \
