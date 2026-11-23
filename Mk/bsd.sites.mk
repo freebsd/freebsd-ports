@@ -803,10 +803,10 @@ MASTER_SITE_GNU+= \
 # List: https://gnupg.org/download/mirrors.html (contains stale information)
 .if !defined(IGNORE_MASTER_SITE_GNUPG)
 MASTER_SITE_GNUPG+= \
+	https://gnupg.org/ftp/gcrypt/%SUBDIR%/ \
 	https://mirrors.dotsrc.org/gcrypt/%SUBDIR%/ \
 	https://www.mirrorservice.org/sites/ftp.gnupg.org/gcrypt/%SUBDIR%/ \
-	http://www.ring.gr.jp/pub/net/gnupg/%SUBDIR%/ \
-	https://gnupg.org/ftp/gcrypt/%SUBDIR%/
+	http://www.ring.gr.jp/pub/net/gnupg/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_GNUSTEP)
