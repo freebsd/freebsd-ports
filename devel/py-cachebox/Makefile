@@ -1,5 +1,5 @@
 PORTNAME=	cachebox
-DISTVERSION=	6.2.10
+DISTVERSION=	6.2.11
 PORTREVISION=	0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
@@ -25,8 +25,8 @@ CARGO_CRATES=	allocator-api2-0.4.0 \
 		android_system_properties-0.1.6 \
 		autocfg-1.5.1 \
 		bitflags-2.13.2 \
-		bumpalo-3.20.3 \
-		cc-1.9.0 \
+		bumpalo-3.20.4 \
+		cc-1.11.2 \
 		cfg-if-1.0.5 \
 		chrono-0.4.45 \
 		core-foundation-sys-0.8.7 \
@@ -38,10 +38,10 @@ CARGO_CRATES=	allocator-api2-0.4.0 \
 		heck-0.5.0 \
 		iana-time-zone-0.1.65 \
 		iana-time-zone-haiku-0.1.2 \
-		js-sys-0.3.106 \
+		js-sys-0.3.107 \
 		libc-0.2.191 \
 		lock_api-0.4.14 \
-		log-0.4.34 \
+		log-0.4.35 \
 		num-traits-0.2.19 \
 		once_cell-1.21.4 \
 		parking_lot-0.12.5 \
@@ -60,15 +60,15 @@ CARGO_CRATES=	allocator-api2-0.4.0 \
 		scopeguard-1.2.0 \
 		shlex-2.0.1 \
 		slab-0.4.12 \
-		smallvec-1.16.3 \
+		smallvec-1.16.6 \
 		syn-2.0.119 \
-		syn-3.0.9 \
-		target-lexicon-0.13.5 \
+		syn-3.0.10 \
+		target-lexicon-0.13.6 \
 		unicode-ident-1.0.27 \
-		wasm-bindgen-0.2.129 \
-		wasm-bindgen-macro-0.2.129 \
-		wasm-bindgen-macro-support-0.2.129 \
-		wasm-bindgen-shared-0.2.129 \
+		wasm-bindgen-0.2.130 \
+		wasm-bindgen-macro-0.2.130 \
+		wasm-bindgen-macro-support-0.2.130 \
+		wasm-bindgen-shared-0.2.130 \
 		windows-core-0.62.2 \
 		windows-implement-0.60.2 \
 		windows-interface-0.59.3 \
