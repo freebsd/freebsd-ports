@@ -35,6 +35,7 @@ GH_ACCOUNT=	wwmm
 USE_KDE=	breeze-icons \
 		colorscheme \
 		config \
+		configwidgets \
 		coreaddons \
 		i18n \
 		iconthemes \
