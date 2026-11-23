@@ -1,12 +1,12 @@
 PORTNAME=	valkey
-DISTVERSION=	9.1.4
+DISTVERSION=	9.2.0
 CATEGORIES=	databases
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	High-performance data structure server that primarily serves key/value workloads
 WWW=		https://valkey.io/
 
-LICENSE=	BSD3CLAUSE
+LICENSE=	BSD-3-Clause
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cpe gmake pkgconfig tcl:test
