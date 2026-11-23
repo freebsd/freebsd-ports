@@ -1,3 +1,79 @@
+  <vuln vid="cb0b8278-b308-4b8d-82b3-4e8235a7aaa2">
+    <topic>ruby -- heap-based buffer overflow</topic>
+    <affects>
+      <package>
+	<name>ruby33</name>
+	<range><ge>3.3,1</ge><lt>3.3.14,1</lt></range>
+      </package>
+      <package>
+	<name>ruby34</name>
+	<range><ge>3.4.0,1</ge><lt>3.4.13,1</lt></range>
+      </package>
+      <package>
+	<name>ruby40</name>
+	<range><ge>4.0.0,1</ge><lt>4.0.10,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>CVE-2026-132825: Ruby before 3.3.14, 3.4.13, and 4.0.10 has a heap-
+	  based buffer overflow during case conversion. One byte can be
+	  written outside a buffer for, for example, ISO-8859-1 or
+	  Windows-1252.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-132825</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-132825</url>
+    </references>
+    <dates>
+      <discovery>2026-11-19</discovery>
+      <entry>2026-11-23</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f3974045-b3af-403d-b169-b3c830a93fc4">
+    <topic>ruby -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>ruby33</name>
+	<range><lt>3.3.13,1</lt></range>
+      </package>
+      <package>
+	<name>ruby34</name>
+	<range><lt>3.4.12,1</lt></range>
+      </package>
+      <package>
+	<name>ruby40</name>
+	<range><lt>4.0.9,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	  <p>k0kubun reports:</p>
+	  <blockquote cite="https://www.ruby-lang.org/en/news/2026/10/23/regexp-fixes-for-gitlab-cves/">
+	  <ul>
+	    <li>CVE-2026-89078: Double Free issue in Regular Expression Parser</li>
+	    <li>CVE-2026-93577: Integer Overflow issue in Regular Expression Compiler</li>
+	    <li>CVE-2026-97229: Integer Overflow issue in CI/CD Regular Expression Compiler</li>
+	    <li>CVE-2026-110264: Integer Overflow issue in Regular Expression Compiler</li>
+	  </ul>
+	  </blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-89078</cvename>
+      <cvename>CVE-2026-93577</cvename>
+      <cvename>CVE-2026-97229</cvename>
+      <cvename>CVE-2026-110264</cvename>
+      <url>https://www.ruby-lang.org/en/news/2026/10/23/regexp-fixes-for-gitlab-cves/</url>
+    </references>
+    <dates>
+      <discovery>2026-10-23</discovery>
+      <entry>2026-11-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="16776118-a5b5-4295-807e-17b62c83bcc5">
     <topic>rubygem-activestorage -- arbitrary file write and read</topic>
     <affects>
