@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2026-05-06 22:31:54 UTC
+--- CMakeLists.txt.orig	2026-11-21 22:23:39 UTC
 +++ CMakeLists.txt
-@@ -977,6 +977,8 @@ OCCT_INCLUDE_CMAKE_FILE ("adm/cmake/occt_defs_flags")
+@@ -975,6 +975,8 @@ OCCT_INCLUDE_CMAKE_FILE ("adm/cmake/occt_defs_flags")
  # include original list of definitions and flags
  OCCT_INCLUDE_CMAKE_FILE ("adm/cmake/occt_defs_flags")
  
@@ -9,7 +9,7 @@
  foreach (OCCT_3RDPARTY_LIST ${OCCT_3RDPARTY_CMAKE_LIST})
    OCCT_INCLUDE_CMAKE_FILE (${OCCT_3RDPARTY_LIST})
  endforeach()
-@@ -1143,7 +1145,7 @@ endif()
+@@ -1141,7 +1143,7 @@ endif()
  endif()
  
  # validating custom.bat/sh for changes
@@ -18,7 +18,7 @@
    file (READ "${INSTALL_DIR}/${INSTALL_DIR_SCRIPT}/custom.${SCRIPT_EXT}" CUSTOM_CONTENT)
    string(FIND "${CUSTOM_CONTENT}" "${ADDITIONAL_CUSTOM_CONTENT}" pos)
    if (pos EQUAL -1)
-@@ -1219,13 +1221,13 @@ else()
+@@ -1217,13 +1219,13 @@ else()
      set \"CSF_OCCTTestsPath=%CASROOT%/${INSTALL_DIR_TESTS}\"
      set \"CSF_OCCTDocPath=%CASROOT%/${INSTALL_DIR_DOC}\"")
    else()
@@ -39,12 +39,3 @@
    endif()
  endif()
  
-@@ -1427,7 +1429,7 @@ install (CODE "string (TOLOWER \"\${CMAKE_INSTALL_CONF
- endforeach()
- # install OpenCASCADE config file with compile definitions and C/C++ flags ONLY for current configuration
- install (CODE "string (TOLOWER \"\${CMAKE_INSTALL_CONFIG_NAME}\" CMAKE_INSTALL_CONFIG_NAME_LOWER)")
--install (CODE "file(INSTALL FILES \"${CMAKE_BINARY_DIR}/OpenCASCADECompileDefinitionsAndFlags-\${CMAKE_INSTALL_CONFIG_NAME_LOWER}.cmake\" DESTINATION \"${INSTALL_DIR}/${INSTALL_DIR_CMAKE}/\" TYPE FILE)")
-+install (CODE "file(INSTALL FILES \"${CMAKE_BINARY_DIR}/OpenCASCADECompileDefinitionsAndFlags-\${CMAKE_INSTALL_CONFIG_NAME_LOWER}.cmake\" DESTINATION \"${INSTALL_DIR_CMAKE}/\" TYPE FILE)")
- 
- foreach (OCCT_MODULE ${OCCT_MODULES})
-   if (BUILD_MODULE_${OCCT_MODULE})
