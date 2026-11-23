@@ -100,9 +100,9 @@ PORTSCOUT=		limit:^6\.6\.
 .  elif ${CATEGORIES:Mkde-plasma}
 _PLASMA_VER=		6
 CONFLICTS_INSTALL+=	plasma6lts-${PORTNAME}-6.*
-.     if ${KDE_PLASMA_DEFAULT} != 6 && empty(_USE_PLASMA_LATEST:M${PORTNAME})
+.    if ${KDE_PLASMA_DEFAULT} != 6 && empty(_USE_PLASMA_LATEST:M${PORTNAME})
 IGNORE=		cannot be installed: Plasma 6 LTS is set a as default distribution
-.     endif
+.    endif
 .  endif
 
 .  if !${_PLASMA_SUPPORTED:M${_PLASMA_VER}}
