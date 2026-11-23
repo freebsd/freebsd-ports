@@ -1,6 +1,5 @@
 PORTNAME=	qgis
-DISTVERSION=	4.2.3
-PORTREVISION=	4
+DISTVERSION=	4.4.0
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://qgis.org/downloads/
 
@@ -12,7 +11,6 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 
 BUILD_DEPENDS=	gpsbabel>=1.7.0:astro/gpsbabel \
-		opencl>=0:devel/opencl \
 		${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}cycler>=0.11.0:devel/py-cycler@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-dateutil>=2.8.2:devel/py-python-dateutil@${PY_FLAVOR} \
@@ -59,11 +57,11 @@ LIB_DEPENDS=	libabsl_log_internal_check_op.so:devel/abseil \
 		libSFCGAL.so:databases/sfcgal \
 		libspatialite.so:databases/spatialite \
 		libsz.so:science/libaec \
+		libtbb.so:devel/onetbb \
 		libxerces-c.so:textproc/xerces-c3 \
 		libzip.so:archivers/libzip \
 		libzstd.so:archivers/zstd
 RUN_DEPENDS=	astyle:devel/astyle \
-		opencl>=0:devel/opencl \
 		${PYTHON_PKGNAMEPREFIX}black>=22.10:devel/py-black@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cycler>=0.11.0:devel/py-cycler@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-dateutil>=2.8.2:devel/py-python-dateutil@${PY_FLAVOR} \
@@ -97,6 +95,7 @@ RUN_DEPENDS=	astyle:devel/astyle \
 		${PYTHON_PKGNAMEPREFIX}pyproj>=3.4.0:graphics/py-pyproj@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyrsgis>=0.4.1:graphics/py-pyrsgis@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytz>=2020.5:devel/py-pytz@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}qt6-qscintilla2>=2.14.1:devel/py-qt6-qscintilla2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rasterio>=1.3.2:graphics/py-rasterio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.28.0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scikit-image>=0.19.3:graphics/py-scikit-image@${PY_FLAVOR} \
@@ -138,9 +137,9 @@ CMAKE_ON=	USE_OPENCL WITH_3D WITH_ANALYSIS WITH_AUTH \
 		WITH_GEOGRAPHICLIB WITH_PDAL WITH_POSTGRESQL WITH_PYTHON \
 		WITH_QSPATIALITE WITH_QUICK WITH_SFCGAL \
 		WITH_SPATIALITE WITH_STAGED_PLUGINS
-CMAKE_ON+=	WITH_PDF4QT 
+CMAKE_ON+=	WITH_PDF4QT WITH_TBB
 CMAKE_OFF=	ENABLE_TESTS USE_CCACHE PDF4QT_INSTALL_TO_USR
-#CMAKE_OFF+=	WITH_QSPATIALITE WITH_QWTPOLAR
+#CMAKE_OFF+=	WITH_QWTPOLAR
 
 CONFLICTS_INSTALL=	qgis-ltr
 
@@ -150,8 +149,8 @@ PLIST_SUB=	DISTVERSION=${PORTVERSION}
 CMAKE_ARGS+=	-Wno-dev
 .endif
 
-OPTIONS_DEFINE=		SERVER GRASS WEBENGINE
-OPTIONS_DEFAULT=	SERVER GRASS
+OPTIONS_DEFINE=		SERVER GRASS WAYLAND WEBENGINE
+OPTIONS_DEFAULT=	SERVER GRASS WAYLAND
 OPTIONS_DEFAULT_aarch64=	WEBENGINE
 OPTIONS_DEFAULT_amd64=		WEBENGINE
 OPTIONS_DEFAULT_armv7=		WEBENGINE
@@ -167,8 +166,13 @@ WEBENGINE_DESC=		Documentation panel and QgsWebEnginePage API (requires QtWebEng
 GRASS_BUILD_DEPENDS=	grass8:databases/grass8
 GRASS_RUN_DEPENDS=	${GRASS_BUILD_DEPENDS}
 GRASS_CMAKE_BOOL=	WITH_GRASS8
+
 SERVER_LIB_DEPENDS=	libfcgi.so:www/fcgi
 SERVER_CMAKE_BOOL=	WITH_SERVER WITH_SERVER_PLUGINS WITH_QSPATIALITE
+
+WAYLAND_BUILD_DEPENDS=	wayland-protocols>=1.15:graphics/wayland-protocols \
+			wayland>=1.12:graphics/wayland
+WAYLAND_LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon
 
 WEBENGINE_USE=		QT=webengine PYQT=webengine
 WEBENGINE_CMAKE_BOOL=	WITH_QTWEBENGINE
