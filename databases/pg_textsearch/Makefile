@@ -1,7 +1,6 @@
 PORTNAME=	pg_textsearch
-PORTVERSION=	1.5.1
+PORTVERSION=	1.6.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	kbowling@FreeBSD.org
@@ -13,7 +12,7 @@ LICENSE=	PostgreSQL
 NOT_FOR_ARCHS=		i386
 NOT_FOR_ARCHS_REASON=	metapage layout assumes 8-byte alignment of uint64 (offsetof asserts fail)
 
-USES=		gmake pgsql:17-18
+USES=		gmake pgsql:17-19
 
 WANT_PGSQL=	server
 USE_GITHUB=	yes
