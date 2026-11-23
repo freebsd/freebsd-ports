@@ -1,3 +1,45 @@
+  <vuln vid="9d113e97-e6db-11f1-8ead-93299b7f89e8">
+    <topic>gpgme -- double free vulnerability</topic>
+    <affects>
+      <package>
+	<name>gpgme</name>
+	<range><lt>2.3.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>GnuPG reports:</p>
+	<blockquote cite="https://static.dev.gnupg.org/T8557">
+	  <p>By using an OpenPGP key containing a crafted very long user id it
+	    is possible to trigger a double free. This double free can be used
+	    exfiltrate data from applications by sending for example signed
+	    data. Exploiting this bug to mount an Remote Code Execution attack
+	    (RCE) can't be ruled out.</p>
+	  <p>The root cause for this bug are two GPGME internal functions to
+	    read the status lines and key listings from gpg. Initially a buffer
+	    of 1024 bytes is allocated which is reallocated if more space is
+	    required. When reallocating the pointer to the new buffer, it is used
+	    by the function, but it is only assigned back to the context object
+	    at the end of the function. Thus if the function returns early due
+	    to a read error or other events, the context is not updated and
+	    keeps the stale pointer to the freed memory. Eventually, the context
+	    is released and the memory is freed a second time. Due to other
+	    allocations in between the common double free checks of memory
+	    allocators may not be triggered.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-129975</cvename>
+      <url>https://static.dev.gnupg.org/T8557</url>
+      <url>https://lists.gnupg.org/pipermail/gnupg-announce/2026q4/000517.html</url>
+    </references>
+    <dates>
+      <discovery>2026-11-20</discovery>
+      <entry>2026-11-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0da120f6-e687-11f1-aceb-3c7c3fba4204">
     <topic>Blocky -- multiple vulnerabilities</topic>
     <affects>
