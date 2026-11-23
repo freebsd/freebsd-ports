@@ -6,10 +6,10 @@ CARGO_CRATES=	adler2-2.0.1 \
 		anstyle-parse-1.0.0 \
 		anstyle-query-1.1.5 \
 		anstyle-wincon-3.0.11 \
-		anyhow-1.0.102 \
+		anyhow-1.0.104 \
 		anymap2-0.13.0 \
 		approx-0.5.1 \
-		arboard-3.6.1 \
+		arboard-3.7.0 \
 		atomic-0.6.1 \
 		autocfg-1.5.0 \
 		base64-0.22.1 \
@@ -24,17 +24,16 @@ CARGO_CRATES=	adler2-2.0.1 \
 		bytemuck-1.25.0 \
 		byteorder-lite-0.1.0 \
 		castaway-0.2.4 \
-		cfg-if-1.0.4 \
+		cfg-if-1.0.5 \
 		cfg_aliases-0.2.1 \
-		clap-4.6.1 \
-		clap_builder-4.6.0 \
-		clap_derive-4.6.1 \
+		clap-4.6.7 \
+		clap_builder-4.6.7 \
+		clap_derive-4.6.7 \
 		clap_lex-1.1.0 \
 		clipboard-win-5.4.1 \
 		colorchoice-1.0.5 \
 		compact_str-0.9.0 \
 		console-0.16.3 \
-		convert_case-0.4.0 \
 		convert_case-0.10.0 \
 		cpufeatures-0.2.17 \
 		crc32fast-1.5.0 \
@@ -49,22 +48,24 @@ CARGO_CRATES=	adler2-2.0.1 \
 		darling_macro-0.23.0 \
 		deltae-0.3.2 \
 		deranged-0.5.8 \
-		derive_more-0.99.20 \
 		derive_more-2.1.1 \
 		derive_more-impl-2.1.1 \
 		digest-0.10.7 \
 		dirs-6.0.0 \
+		dirs-7.0.0 \
 		dirs-sys-0.5.0 \
 		dispatch2-0.3.1 \
 		document-features-0.2.12 \
-		editor-types-0.0.2 \
-		editor-types-macros-0.0.2 \
-		editor-types-parser-0.0.2 \
+		editor-types-0.0.7 \
+		editor-types-macros-0.0.7 \
+		editor-types-parser-0.0.7 \
 		either-1.15.0 \
 		encode_unicode-1.0.0 \
-		endian-type-0.1.2 \
-		env_filter-1.0.1 \
-		env_logger-0.11.10 \
+		endian-type-0.2.0 \
+		enum-map-2.7.3 \
+		enum-map-derive-0.17.0 \
+		env_filter-2.0.0 \
+		env_logger-0.11.11 \
 		equivalent-1.0.2 \
 		errno-0.3.14 \
 		error-code-3.4.0 \
@@ -108,7 +109,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		jiff-static-0.2.23 \
 		js-sys-0.3.91 \
 		kasuari-0.4.12 \
-		keybindings-0.0.2 \
+		keybindings-0.0.4 \
 		lab-0.11.0 \
 		lazy_static-1.5.0 \
 		leb128fmt-0.1.0 \
@@ -119,7 +120,10 @@ CARGO_CRATES=	adler2-2.0.1 \
 		linux-raw-sys-0.12.1 \
 		litrs-1.0.0 \
 		lock_api-0.4.14 \
-		log-0.4.33 \
+		log-0.4.35 \
+		logos-0.16.1 \
+		logos-codegen-0.16.1 \
+		logos-derive-0.16.1 \
 		lru-0.18.0 \
 		mac_address-1.1.8 \
 		memchr-2.8.0 \
@@ -128,11 +132,12 @@ CARGO_CRATES=	adler2-2.0.1 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.8.9 \
 		mio-1.1.1 \
-		modalkit-0.0.25 \
+		modalkit-0.0.32 \
 		moxcms-0.8.1 \
 		nibble_vec-0.1.0 \
 		nix-0.29.0 \
 		nom-7.1.3 \
+		nom-8.0.0 \
 		num-conv-0.2.1 \
 		num-derive-0.4.2 \
 		num-traits-0.2.19 \
@@ -163,6 +168,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		phf_macros-0.11.3 \
 		phf_shared-0.11.3 \
 		png-0.18.1 \
+		pomelo-0.2.3 \
+		pomelo-impl-0.2.3 \
 		portable-atomic-1.13.1 \
 		portable-atomic-util-0.2.6 \
 		powerfmt-0.2.0 \
@@ -173,7 +180,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		quote-1.0.45 \
 		r-efi-5.3.0 \
 		r-efi-6.0.0 \
-		radix_trie-0.2.1 \
+		radix_trie-0.3.0 \
 		rand-0.8.6 \
 		rand_core-0.6.4 \
 		ratatui-0.30.2 \
@@ -185,8 +192,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		ratatui-widgets-0.3.2 \
 		redox_syscall-0.5.18 \
 		redox_users-0.5.2 \
-		regex-1.12.4 \
-		regex-automata-0.4.14 \
+		regex-1.13.1 \
+		regex-automata-0.4.18 \
 		regex-syntax-0.8.11 \
 		ropey-1.6.1 \
 		rustc_version-0.4.1 \
@@ -195,18 +202,19 @@ CARGO_CRATES=	adler2-2.0.1 \
 		ryu-1.0.23 \
 		scopeguard-1.2.0 \
 		semver-1.0.27 \
-		serde-1.0.228 \
-		serde_core-1.0.228 \
-		serde_derive-1.0.228 \
+		serde-1.0.229 \
+		serde_core-1.0.229 \
+		serde_derive-1.0.229 \
 		serde_json-1.0.149 \
-		serde_spanned-1.1.1 \
+		serde_spanned-1.1.3 \
 		sha2-0.10.9 \
+		shellexpand-3.1.2 \
 		signal-hook-0.3.18 \
 		signal-hook-mio-0.2.5 \
 		signal-hook-registry-1.4.8 \
 		simd-adler32-0.3.10 \
 		similar-2.7.0 \
-		similar-3.1.1 \
+		similar-3.2.1 \
 		siphasher-1.0.2 \
 		smallvec-1.15.1 \
 		smawk-0.3.3 \
@@ -217,6 +225,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		strum_macros-0.28.0 \
 		syn-1.0.109 \
 		syn-2.0.117 \
+		syn-3.0.9 \
 		tempfile-3.27.0 \
 		termina-0.3.3 \
 		terminfo-0.9.0 \
@@ -230,19 +239,19 @@ CARGO_CRATES=	adler2-2.0.1 \
 		tiff-0.11.3 \
 		time-0.3.47 \
 		time-core-0.1.8 \
-		toml-1.1.2+spec-1.1.0 \
-		toml_datetime-1.1.1+spec-1.1.0 \
-		toml_parser-1.1.2+spec-1.1.0 \
-		toml_writer-1.1.1+spec-1.1.0 \
-		tui-input-0.15.3 \
+		toml-1.2.1+spec-1.1.0 \
+		toml_datetime-1.1.3+spec-1.1.0 \
+		toml_parser-1.1.5+spec-1.1.0 \
+		toml_writer-1.2.0+spec-1.1.0 \
+		tui-input-0.15.5 \
 		typenum-1.19.0 \
 		ucd-trie-0.1.7 \
+		unescape_zero_copy-2.4.0 \
 		unicode-ident-1.0.24 \
 		unicode-linebreak-0.1.5 \
 		unicode-segmentation-1.13.2 \
 		unicode-truncate-2.0.1 \
-		unicode-width-0.1.14 \
-		unicode-width-0.2.2 \
+		unicode-width-0.2.3 \
 		unicode-xid-0.2.6 \
 		utf8parse-0.2.2 \
 		uuid-1.22.0 \
@@ -269,17 +278,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-link-0.2.1 \
-		windows-sys-0.60.2 \
 		windows-sys-0.61.2 \
-		windows-targets-0.53.5 \
-		windows_aarch64_gnullvm-0.53.1 \
-		windows_aarch64_msvc-0.53.1 \
-		windows_i686_gnu-0.53.1 \
-		windows_i686_gnullvm-0.53.1 \
-		windows_i686_msvc-0.53.1 \
-		windows_x86_64_gnu-0.53.1 \
-		windows_x86_64_gnullvm-0.53.1 \
-		windows_x86_64_msvc-0.53.1 \
 		winnow-1.0.2 \
 		wit-bindgen-0.51.0 \
 		wit-bindgen-core-0.51.0 \
