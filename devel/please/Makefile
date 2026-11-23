@@ -1,6 +1,6 @@
 PORTNAME=	please
 DISTVERSIONPREFIX=	v
-DISTVERSION=	17.35.1
+DISTVERSION=	17.35.2
 CATEGORIES=	devel
 MASTER_SITES=	https://raw.githubusercontent.com/thought-machine/please/${DISTVERSIONFULL}/
 DISTFILES=	go.mod
@@ -10,8 +10,14 @@ MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	High-performance extensible build system for reproducible builds
 WWW=		https://please.build/
 
-LICENSE=	APACHE20
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE=	Apache-2.0 BSD-2-Clause BSD-3-Clause CC0-1.0 MIT MPL-2.0
+LICENSE_COMB=	multi
+LICENSE_FILE_Apache-2.0=	${WRKSRC}/LICENSE
+LICENSE_FILE_BSD-2-Clause=	${WRKSRC}/vendor/github.com/ulikunitz/xz/LICENSE
+LICENSE_FILE_BSD-3-Clause=	${WRKSRC}/vendor/google.golang.org/protobuf/LICENSE
+LICENSE_FILE_CC0-1.0=	${WRKSRC}/vendor/github.com/zeebo/blake3/LICENSE
+LICENSE_FILE_MIT=	${WRKSRC}/vendor/github.com/klauspost/cpuid/v2/LICENSE
+LICENSE_FILE_MPL-2.0=	${WRKSRC}/vendor/github.com/hashicorp/go-retryablehttp/LICENSE
 
 NOT_FOR_ARCHS=	armv7 i386
 NOT_FOR_ARCHS_REASON=	Build crashes with integer overflow
