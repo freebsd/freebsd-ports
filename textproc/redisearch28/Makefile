@@ -1,6 +1,6 @@
 PORTNAME=	redisearch
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.8.24
+DISTVERSION=	2.8.25
 CATEGORIES=	textproc
 PKGNAMESUFFIX=	${DISTVERSION:R:S/.//}
 
@@ -8,15 +8,13 @@ MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Full-text search over Redis (2.8.X)
 WWW=		https://github.com/RediSearch/RediSearch/
 
-LICENSE=	RSALv2 SSPLv1
+LICENSE=	LicenseRef-RSALv2-Redis SSPL-1.0
 LICENSE_COMB=	dual
-LICENSE_NAME_RSALv2=	Redis Source Available License v2
-LICENSE_NAME_SSPLv1=	Server Side Public License v1
+LICENSE_NAME_LicenseRef-RSALv2-Redis=	Redis Source Available License v2
+LICENSE_FILE_LicenseRef-RSALv2-Redis=	${WRKSRC}/licenses/RSALv2.txt
+LICENSE_FILE_SSPL-1.0= ${WRKSRC}/licenses/SSPLv1.txt
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
-LICENSE_FILE_RSALv2=	${WRKSRC}/licenses/RSALv2.txt
-LICENSE_FILE_SSPLv1=	${WRKSRC}/licenses/SSPLv1.txt
-LICENSE_PERMS_RSALv2=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
-LICENSE_PERMS_SSPLv1=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_PERMS_LicenseRef-RSALv2-Redis= dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 NOT_FOR_ARCHS=	i386
 NOT_FOR_ARCHS_REASON=	requires 64-bit architecture
