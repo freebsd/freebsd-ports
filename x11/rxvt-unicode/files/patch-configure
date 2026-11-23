@@ -1,7 +1,7 @@
---- configure.orig	2021-05-14 13:50:48 UTC
+--- configure.orig	2026-11-10 05:43:48 UTC
 +++ configure
-@@ -4886,43 +4886,6 @@ if test "$ac_prog_cxx_stdcxx" != cxx11; then
- fi
+@@ -4817,44 +4817,6 @@ LINKER="$CXX"
+ 
  
  LINKER="$CXX"
 -if test x$GCC = xyes && test x$GXX = xyes; then
@@ -28,13 +28,14 @@
 -  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: ok" >&5
 -printf "%s\n" "ok" >&6; }
 -       LINKER="$CC"
--else $as_nop
--
+-else case e in #(
+-  e)
 -         { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no, making everything bigger and slower" >&5
 -printf "%s\n" "no, making everything bigger and slower" >&6; }
 -         LIBS="$save_LIBS"
 -
--
+-    ;;
+-esac
 -fi
 -rm -f core conftest.err conftest.$ac_objext conftest.beam \
 -    conftest$ac_exeext conftest.$ac_ext

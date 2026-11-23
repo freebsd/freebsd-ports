@@ -1,13 +1,12 @@
 PORTNAME=	rxvt-unicode
-PORTVERSION=	9.31
-PORTREVISION=	2
+PORTVERSION=	9.32
 CATEGORIES=	x11
-MASTER_SITES=	http://dist.schmorp.de/rxvt-unicode/%SUBDIR%/
+MASTER_SITES=	https://dist.schmorp.de/rxvt-unicode/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. Attic
 
-MAINTAINER=	thierry@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clone of the terminal emulator rxvt modified to support Unicode
-WWW=		http://software.schmorp.de/pkg/rxvt-unicode.html
+WWW=		https://software.schmorp.de/pkg/rxvt-unicode.html
 
 LICENSE=	GPLv2
 
