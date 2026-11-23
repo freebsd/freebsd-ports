@@ -1,4 +1,4 @@
---- build/config/BUILDCONFIG.gn.orig	2026-10-12 03:47:41 UTC
+--- build/config/BUILDCONFIG.gn.orig	2026-10-25 05:06:27 UTC
 +++ build/config/BUILDCONFIG.gn
 @@ -224,8 +224,8 @@ if (host_toolchain == "") {
    # TODO(dpranke): Add some sort of assert here that verifies that
@@ -34,7 +34,7 @@
  
  is_apple = is_ios || is_mac || is_watchos
  is_posix = !is_win && !is_fuchsia
-@@ -631,6 +632,8 @@ foreach(_target_type,
+@@ -632,6 +633,8 @@ foreach(_target_type,
            check_includes_strict = false
          }
        }
@@ -43,7 +43,7 @@
  
        if (use_libcxx_modules && is_clang) {
          if (strict_deps) {
-@@ -643,6 +646,7 @@ foreach(_target_type,
+@@ -644,6 +647,7 @@ foreach(_target_type,
        if (!defined(generate_modulemap)) {
          generate_modulemap = default_modulemap_mode
        }
@@ -51,7 +51,7 @@
  
        if (use_libcxx_modules) {
          # Add a dependency needed for Clang modules builds.
-@@ -776,6 +780,8 @@ foreach(_target_type,
+@@ -782,6 +786,8 @@ foreach(_target_type,
            check_includes_strict = false
          }
        }
@@ -60,7 +60,7 @@
  
        if (use_libcxx_modules && is_clang) {
          if (strict_deps) {
-@@ -788,6 +794,7 @@ foreach(_target_type,
+@@ -794,6 +800,7 @@ foreach(_target_type,
        if (!defined(generate_modulemap)) {
          generate_modulemap = default_modulemap_mode
        }

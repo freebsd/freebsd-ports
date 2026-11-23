@@ -1,4 +1,4 @@
---- third_party/partition_alloc/src/partition_alloc/page_allocator_internals_posix.cc.orig	2026-09-18 16:27:42 UTC
+--- third_party/partition_alloc/src/partition_alloc/page_allocator_internals_posix.cc.orig	2026-10-24 04:22:31 UTC
 +++ third_party/partition_alloc/src/partition_alloc/page_allocator_internals_posix.cc
 @@ -12,6 +12,10 @@
  #include "partition_alloc/page_allocator.h"
@@ -11,15 +11,15 @@
  #if PA_BUILDFLAG(IS_APPLE)
  #include "partition_alloc/partition_alloc_base/apple/foundation_util.h"
  #if PA_BUILDFLAG(IS_IOS)
-@@ -237,6 +241,21 @@ size_t GetZeroSegmentSizeFromOS() {
- size_t GetZeroSegmentSizeFromOS() {
-   // TODO(40925855): Support larger `mmap_min_addr`.
-   return 0x10000;  // 64KB
+@@ -283,6 +287,26 @@ WellKnownReadOnlyRegions GetWellKnownReadOnlyRegions(u
+       }},
+       .count = 1,
+   };
 +}
 +
 +#elif PA_BUILDFLAG(IS_FREEBSD)
 +
-+size_t GetZeroSegmentSizeFromOS() {
++WellKnownReadOnlyRegions GetWellKnownReadOnlyRegions(uintptr_t address_limit) {
 +  // Unless security.bsd.map_at_zero is set, the first page is below the
 +  // minimum address of the process' address space and mapping it fails with
 +  // EINVAL. Otherwise it can be mapped, so reserve it here.
@@ -27,9 +27,14 @@
 +  if (mmap(nullptr, page_size, PROT_NONE, MAP_GUARD | MAP_FIXED | MAP_EXCL, -1,
 +           0) != MAP_FAILED ||
 +      errno == EINVAL) {
-+    return page_size;
++    return WellKnownReadOnlyRegions{
++        .regions = {{
++            {0, page_size},
++        }},
++        .count = 1,
++    };
 +  }
-+  return 0;
++  return WellKnownReadOnlyRegions{};
  }
  
  #else
