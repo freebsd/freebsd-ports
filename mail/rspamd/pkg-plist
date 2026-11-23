@@ -203,6 +203,11 @@ share/man/man8/rspamd.8.gz
 %%DATADIR%%/lualib/lua_crypto_addresses.lua
 %%DATADIR%%/lualib/lua_cta.lua
 %%DATADIR%%/lualib/lua_dkim_tools.lua
+%%DATADIR%%/lualib/lua_dynconf.lua
+%%DATADIR%%/lualib/lua_dynconf/file.lua
+%%DATADIR%%/lualib/lua_dynconf/json.lua
+%%DATADIR%%/lualib/lua_dynconf/legacy.lua
+%%DATADIR%%/lualib/lua_dynconf/redis.lua
 %%DATADIR%%/lualib/lua_extras.lua
 %%DATADIR%%/lualib/lua_feedback_parsers.lua
 %%DATADIR%%/lualib/lua_ffi/common.lua
@@ -262,6 +267,7 @@ share/man/man8/rspamd.8.gz
 %%DATADIR%%/lualib/lua_shape/registry.lua
 %%DATADIR%%/lualib/lua_smtp.lua
 %%DATADIR%%/lualib/lua_stat.lua
+%%DATADIR%%/lualib/lua_task_profile.lua
 %%DATADIR%%/lualib/lua_tcp_sync.lua
 %%DATADIR%%/lualib/lua_url_filter.lua
 %%DATADIR%%/lualib/lua_urls_compose.lua
@@ -382,6 +388,7 @@ share/man/man8/rspamd.8.gz
 %%DATADIR%%/rules/archives.lua
 %%DATADIR%%/rules/bounce.lua
 %%DATADIR%%/rules/content.lua
+%%DATADIR%%/rules/controller/dynconf.lua
 %%DATADIR%%/rules/controller/fuzzy.lua
 %%DATADIR%%/rules/controller/init.lua
 %%DATADIR%%/rules/controller/maps.lua
