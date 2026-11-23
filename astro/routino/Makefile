@@ -1,5 +1,5 @@
 PORTNAME=	routino
-DISTVERSION=	3.4.4
+DISTVERSION=	3.5
 CATEGORIES=	astro
 MASTER_SITES=	http://www.routino.org/download/
 
@@ -7,9 +7,10 @@ MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Router for OpenStreetMap Data
 WWW=		https://www.routino.org/
 
-LICENSE=	AGPLv3
+LICENSE=	AGPL-3.0-or-later
+LICENSE_FILE=	${WRKSRC}/agpl-3.0.txt
 
-USES=		compiler gmake perl5 tar:tgz
+USES=		compiler gmake python:run tar:tgz
 USE_LDCONFIG=	yes
 
 CONFLICTS_INSTALL=	jabberd # bin/router
