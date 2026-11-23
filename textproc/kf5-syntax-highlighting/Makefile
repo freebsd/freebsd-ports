@@ -1,5 +1,6 @@
 PORTNAME=	syntax-highlighting
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	textproc kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org

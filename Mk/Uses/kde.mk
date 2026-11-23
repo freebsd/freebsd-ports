@@ -259,6 +259,9 @@ MASTER_SITES?=		KDE/${KDE_FRAMEWORKS_BRANCH}/frameworks/${KDE_FRAMEWORKS_VERSION
 .        endif
 DIST_SUBDIR?=		KDE/frameworks/${KDE_FRAMEWORKS_VERSION}
 PORTSCOUT=		limit:^5\.
+# https://bugs.freebsd.org/299313
+DEPRECATED=		Depends on unsupported Qt 5
+EXPIRATION_DATE=	2026-12-31
 .      else # KDE Frameworks 6
 MASTER_SITES?=		KDE/${KDE_FRAMEWORKS_BRANCH}/frameworks/${KDE_FRAMEWORKS_VERSION:R}
 DIST_SUBDIR=		KDE/frameworks/${KDE_FRAMEWORKS_VERSION:R}
