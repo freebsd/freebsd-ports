@@ -5820,3 +5820,4 @@ sysutils/ipa||2026-11-19|Requested by upstream
 lang/cim||2026-11-20|Has expired: Upstream website is no longer available
 math/convertall||2026-11-20|Has expired: Newer versions use Dart/Flutter not ported to FreeBSD and Qt5 is no longer supported
 devel/ros-wstool||2026-11-23|Has expired: Upstream repo archived on June 25, 2020
+devel/ros-vcstools||2026-11-23|Has expired: Upstream repo archived on June 26, 2020
