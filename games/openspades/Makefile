@@ -1,6 +1,6 @@
 PORTNAME=	openspades
 PORTVERSION=	0.1.3
-PORTREVISION=	6
+PORTREVISION=	7
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/yvt/openspades-paks/releases/download/r33/:data
@@ -15,6 +15,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	bundles non-portable AngelScript
+
+DEPRECATED=	Last release years ago, does not build with CMake 4
+EXPIRATION_DATE=2026-12-31
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libopusfile.so:audio/opusfile
