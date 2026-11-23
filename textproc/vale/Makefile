@@ -1,17 +1,23 @@
 PORTNAME=	vale
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.27.0
+DISTVERSION=	3.28.0
 CATEGORIES=	textproc
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Command-line tool that brings editorial style guide to life
 WWW=		https://vale.sh/
 
-LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE=	Apache-2.0 BSD-2-Clause BSD-3-Clause LicenseRef-SCOWL-Atkinson MIT
+LICENSE_COMB=	multi
+LICENSE_NAME_LicenseRef-SCOWL-Atkinson=	SCOWL (Spell Checker Oriented Word Lists) License
+LICENSE_FILE_MIT=	${WRKSRC}/LICENSE
+LICENSE_FILE_Apache-2.0=	${WRKSRC}/vendor/github.com/tetratelabs/wazero/LICENSE
+LICENSE_FILE_BSD-2-Clause=	${WRKSRC}/vendor/github.com/andybalholm/cascadia/LICENSE
+LICENSE_FILE_BSD-3-Clause=	${WRKSRC}/vendor/golang.org/x/text/LICENSE
+LICENSE_FILE_LicenseRef-SCOWL-Atkinson=	${FILESDIR}/LICENSE.SCOWL
+LICENSE_PERMS_LicenseRef-SCOWL-Atkinson=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		go:modules
-
 GO_MODULE=	github.com/errata-ai/${PORTNAME}/v3
 GO_TARGET=	./cmd/vale
 
