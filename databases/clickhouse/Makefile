@@ -1,6 +1,6 @@
 PORTNAME=	clickhouse
 DISTVERSIONPREFIX=	v
-DISTVERSION=	26.8.13.2
+DISTVERSION=	26.8.14.3
 DISTVERSIONSUFFIX=-lts
 CATEGORIES=	databases
 DIST_SUBDIR=	${PORTNAME}
@@ -78,6 +78,9 @@ TEST_CMAKE_BOOL=	ENABLE_TESTS
 
 BINARY_ALIAS=	find=${LOCALBASE}/bin/gfind \
 		grep=${LOCALBASE}/bin/ggrep
+
+# Required by StringZilla when used from outside the StringZilla build
+CFLAGS_aarch64+=-DSZ_USE_NEON=1
 
 .include <bsd.port.options.mk>
 
