@@ -1,0 +1,41 @@
+From bf4be29e466f9ec8b413478ecf806a84315fa0aa Mon Sep 17 00:00:00 2001
+From: Jieyou Xu <jieyouxu@outlook.com>
+Date: Tue, 24 Nov 2026 14:32:18 +0800
+Subject: [PATCH] bootstrap: fix FreeBSD `getpriority` difference
+
+Since FreeBSD/DragonFly seemingly use `int` rather than POSIX's `id_t`
+for their `getpriority`'s `who` parameter.
+
+See:
+
+- https://pubs.opengroup.org/onlinepubs/009604599/functions/getpriority.html
+- https://cgit.freebsd.org/src/tree/sys/sys/_types.h#n144
+- https://github.com/rust-lang/rust/issues/166425#issuecomment-7123767854
+---
+ src/bootstrap/src/utils/job.rs | 7 +++++--
+ 1 file changed, 5 insertions(+), 2 deletions(-)
+
+diff --git a/src/bootstrap/src/utils/job.rs b/src/bootstrap/src/utils/job.rs
+index b370bed36006b..a3322dcacedd2 100644
+--- src/bootstrap/src/utils/job.rs
++++ src/bootstrap/src/utils/job.rs
+@@ -19,14 +19,17 @@ mod for_unix {
+         // Per `getpriority`'s docs, clear `errno` beforehand and check it afterward regardless of
+         // return value.
+         errno::set_errno(errno::Errno(0));
++        // Note: for $reasons on some FreeBSD-like targets, `who` isn't an `id_t` and is an `int`.
++        // To workaround this, we just cast to the target type. For our purposes truncation doesn't
++        // matter.
+         // SAFETY: empty safety contract
+-        let nice = unsafe { libc::getpriority(which as _, who) };
++        let nice = unsafe { libc::getpriority(which as _, who as _) };
+         let new_errno = errno::errno().0;
+         if new_errno == 0 { Ok(nice) } else { Err(io::Error::from_raw_os_error(new_errno)) }
+     }
+     fn set_priority(which: c_int, who: id_t, prio: c_int) -> io::Result<()> {
+         // SAFETY: empty safety contract
+-        if unsafe { libc::setpriority(which as _, who, prio) != -1 } {
++        if unsafe { libc::setpriority(which as _, who as _, prio) != -1 } {
+             Ok(())
+         } else {
+             Err(io::Error::last_os_error())
