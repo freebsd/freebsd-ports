@@ -1,6 +1,7 @@
 PORTNAME=	qhotkey
 DISTVERSION=	1.5.0-7
 DISTVERSIONSUFFIX=	-gcd72a01
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +11,7 @@ WWW=		https://github.com/Skycoder42/QHotkey
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-FLAVORS=	qt5 qt6
+FLAVORS=	qt6 qt5
 FLAVOR?=	${FLAVORS:[1]}
 qt5_PKGNAMESUFFIX=	-qt5
 qt6_PKGNAMESUFFIX=	-qt6
@@ -27,6 +28,9 @@ GH_PROJECT=	QHotkey
 CMAKE_ON=	BUILD_SHARED_LIBS
 
 .if ${FLAVOR} == qt5
+DEPRECATED=		Depends on unsupported Qt 5
+EXPIRATION_DATE=	2027-01-01
+
 USES+=		qt:5
 USE_QT=		core gui x11extras qmake:build buildtools:build
 CMAKE_ARGS=	-DQT_DEFAULT_MAJOR_VERSION=5
