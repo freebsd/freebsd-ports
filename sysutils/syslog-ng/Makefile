@@ -1,6 +1,5 @@
 PORTNAME=	syslog-ng
-DISTVERSION=	4.12.0
-PORTREVISION=	6
+DISTVERSION=	4.13.0
 CATEGORIES=	sysutils
 # official master site:
 MASTER_SITES=	https://github.com/balabit/syslog-ng/releases/download/syslog-ng-${DISTVERSION}/
@@ -16,8 +15,7 @@ LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpcre2-8.so:devel/pcre2 \
-		libuuid.so:misc/libuuid \
-		libivykis.so:devel/ivykis
+		libuuid.so:misc/libuuid
 
 USES=		autoreconf:build compiler:c11 cpe gettext-runtime gmake gnome \
 		libtool pathfix pkgconfig python:build shebangfix ssl
@@ -30,8 +28,8 @@ CONFLICTS?=	syslog-ng syslog-ng[0-9] \
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 MAKE_JOBS_UNSAFE=	yes
-OPTIONS_DEFINE=	TCP_WRAPPERS SQL SPOOF IPV6 SMTP JSON GEOIP2 DOCS REDIS JAVA PYTHON PYTHON_MOD MONGO CURL JAVA_MOD AMQP RIEMANN KAFKA SNMPDEST GRPC MQTT
-OPTIONS_DEFAULT=	CURL JSON
+OPTIONS_DEFINE=	TCP_WRAPPERS SQL SPOOF IPV6 SMTP JSON GEOIP2 DOCS REDIS JAVA PYTHON PYTHON_MOD MONGO CURL JAVA_MOD AMQP RIEMANN KAFKA SNMPDEST GRPC MQTT IVYKIS_PORTS
+OPTIONS_DEFAULT=	CURL JSON IVYKIS_PORTS
 TCP_WRAPPERS_DESC=	Build with TCP Wrappers
 SQL_DESC=		Build with database (libdbi) support
 SPOOF_DESC=		Build with spoof source support
@@ -50,6 +48,9 @@ KAFKA_DESC=		Build with Kafka (librdkafka) support
 SNMPDEST_DESC=		Build with SNMP destination (net-snmp) support
 GRPC_DESC=		Build with experimental GRPC-based modules (OpenTelemetry, Loki, etc.)
 MQTT_DESC=		Build with MQTT support
+IVYKIS_PORTS_DESC=	Build with ivykis from ports instead of bundled
+# Note: using ivykis from ports is default, but using bundled version
+# might resolve some problems
 
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	syslog-ng
@@ -63,7 +64,7 @@ INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc --localstatedir=/var/db \
 		--enable-dynamic-linking --disable-manpages-install \
 		--disable-linux-caps \
-		--datadir=${PREFIX}/share/ --with-ivykis=system \
+		--datadir=${PREFIX}/share/ \
 		--with-python=${PYTHON_VER} --with-python-packages=none
 
 CONFIGURE_ENV+=		OPENSSL_CFLAGS="-I${OPENSSLINC}" \
@@ -269,7 +270,11 @@ MQTT_CONFIGURE_OFF=		--disable-mqtt
 MQTT_LIB_DEPENDS=		libpaho-mqtt3cs.so:net/libpaho-mqtt3
 MQTT_PLIST_FILES=		lib/syslog-ng/libmqtt.so
 
-
+IVYKIS_PORTS_CONFIGURE_OFF=	--with-ivykis=internal
+IVYKIS_PORTS_CONFIGURE_ON=	--with-ivykis=system
+IVYKIS_PORTS_PLIST_SUB=		IVYKIS="@comment "
+IVYKIS_PORTS_PLIST_SUB_OFF=	IVYKIS=""
+IVYKIS_PORTS_LIB_DEPENDS=	libivykis.so:devel/ivykis
 
 .include <bsd.port.pre.mk>
 
