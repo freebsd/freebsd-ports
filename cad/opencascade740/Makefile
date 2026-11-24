@@ -1,6 +1,6 @@
 PORTNAME=	opencascade
 PORTVERSION=	7.4.0 # resurrected because science/chrono only builds with opencascade-7.4.0, see https://github.com/projectchrono/chrono/issues/359#issuecomment-1023478083
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	cad science
 PKGNAMESUFFIX=	740
 
@@ -12,6 +12,9 @@ LICENSE=	OCTPL
 LICENSE_NAME=	LGPL21 with exception
 LICENSE_FILE=	${WRKSRC}/OCCT_LGPL_EXCEPTION.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
+DEPRECATED=	Depends on unsupported Qt5
+EXPIRATION_DATE=	2027-01-01
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/qt5/bin/qmake:devel/qt5-qmake	\
 		${LOCALBASE}/lib/qt5/bin/moc:devel/qt5-buildtools
