@@ -1,5 +1,6 @@
 PORTNAME=	qwt
 PORTVERSION=	6.3.0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	6-${FLAVOR}
@@ -8,8 +9,8 @@ MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Qt Widgets for Technical Applications
 WWW=		http://qwt.sourceforge.net/
 
-FLAVORS=	qt5 qt6
-FLAVOR?=	qt5
+FLAVORS=	qt6 qt5
+FLAVOR?=	${FLAVORS:[1]}
 
 USES=		compiler:c++11-lang gl gmake qmake qt:${FLAVOR:S/qt//} tar:bzip2
 USE_GL=		gl
