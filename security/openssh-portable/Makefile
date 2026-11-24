@@ -29,6 +29,8 @@ CONFIGURE_ARGS=		--prefix=${PREFIX} \
 ETCOLD=			${PREFIX}/etc
 
 CPE_VENDOR=		openbsd
+CPE_VERSION=		${DISTVERSION:C/p[0-9]+$//}
+CPE_UPDATE=		${DISTVERSION:C/^[0-9.]+//}
 
 FLAVORS=			default hpn gssapi
 default_CONFLICTS_INSTALL=	openssh-portable-hpn openssh-portable-gssapi \
