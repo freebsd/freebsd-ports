@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 
 USES=		cpe php:web shebangfix zip
 CPE_VENDOR=	${PORTNAME}
-CPE_PRODUCT=	${PORTNAME}\!
+CPE_PRODUCT=	${PORTNAME}!
 
 CONFLICTS_INSTALL=	joomla4 joomla6
 
