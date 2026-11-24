@@ -1,48 +1,53 @@
-CARGO_CRATES=	aho-corasick-1.1.4 \
-		anyhow-1.0.103 \
-		arbitrary-1.4.2 \
-		bstr-1.13.0 \
-		cc-1.2.67 \
-		cfg-if-1.0.4 \
-		crossbeam-channel-0.5.16 \
-		crossbeam-deque-0.8.7 \
-		crossbeam-epoch-0.9.20 \
-		crossbeam-utils-0.8.22 \
-		derive_arbitrary-1.4.2 \
-		encoding_rs-0.8.35 \
-		encoding_rs_io-0.1.7 \
-		find-msvc-tools-0.1.9 \
+CARGO_CRATES=	aho-corasick-1.1.5 \
+		anyhow-1.0.104 \
+		arbitrary-1.5.0 \
+		bstr-1.14.0 \
+		cc-1.11.3 \
+		cfg-if-1.0.5 \
+		core_detect-1.0.0 \
+		crossbeam-channel-0.5.17 \
+		crossbeam-deque-0.8.8 \
+		crossbeam-epoch-0.9.21 \
+		crossbeam-utils-0.8.23 \
+		derive_arbitrary-1.5.0 \
+		encoding_rs-0.8.44 \
+		encoding_rs_io-0.1.8 \
+		find-msvc-tools-0.1.15 \
 		getrandom-0.4.3 \
-		glob-0.3.3 \
-		itoa-1.0.18 \
+		glob-0.3.4 \
+		itoa-1.0.19 \
 		jobserver-0.1.35 \
 		lexopt-0.3.2 \
-		libc-0.2.186 \
-		log-0.4.33 \
+		libc-0.2.191 \
+		log-0.4.35 \
 		memchr-2.8.3 \
-		memmap2-0.9.11 \
+		memmap2-0.9.12 \
+		multiversion_no_op-1.0.0 \
 		pcre2-0.2.11 \
 		pcre2-sys-0.2.10 \
-		pkg-config-0.3.33 \
-		proc-macro2-1.0.106 \
-		quote-1.0.46 \
+		pkg-config-0.3.34 \
+		proc-macro2-1.0.107 \
+		quote-1.0.47 \
 		r-efi-6.0.0 \
-		regex-1.13.0 \
-		regex-automata-0.4.15 \
-		regex-syntax-0.8.11 \
+		regex-1.13.2 \
+		regex-automata-0.4.19 \
+		regex-syntax-0.8.12 \
+		rustversion-1.0.23 \
 		same-file-1.0.6 \
-		serde-1.0.228 \
-		serde_core-1.0.228 \
-		serde_derive-1.0.228 \
-		serde_json-1.0.150 \
+		scopeguard-1.2.0 \
+		serde-1.0.229 \
+		serde_core-1.0.229 \
+		serde_derive-1.0.229 \
+		serde_json-1.0.154 \
 		shlex-2.0.1 \
-		syn-2.0.119 \
+		simdutf8-0.1.5 \
+		syn-3.0.10 \
 		termcolor-1.4.1 \
-		textwrap-0.16.2 \
+		textwrap-0.16.4 \
 		tikv-jemalloc-sys-0.7.1+5.3.1-0-g81034ce1f1373e37dc865038e1bc8eeecf559ce8 \
 		tikv-jemallocator-0.7.0 \
-		unicode-ident-1.0.24 \
-		walkdir-2.5.0 \
+		unicode-ident-1.0.27 \
+		walkdir-2.5.1 \
 		winapi-util-0.1.11 \
 		windows-link-0.2.1 \
 		windows-sys-0.61.2 \
