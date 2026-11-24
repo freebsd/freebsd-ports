@@ -1,5 +1,6 @@
 PORTNAME=	designerplugin
 PORTVERSION=	${QSCI2_VERSION}
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITES_QSCI2}
@@ -16,8 +17,13 @@ LICENSE_FILE=	${WRKSRC:H}/LICENSE
 
 LIB_DEPENDS=	libqscintilla2_${FLAVOR}.so:devel/qscintilla2@${FLAVOR}
 
-FLAVORS=	qt5 qt6
-FLAVOR?=	qt5
+FLAVORS=	qt6 qt5
+FLAVOR?=	${FLAVORS:[1]}
+
+.if ${FLAVOR} == qt5
+DEPRECATED=		Depends on unsupported Qt 5
+EXPIRATION_DATE=	2027-01-01
+.endif
 
 USES=		compiler:c++11-lang gl pyqt:5 qmake qt:${FLAVOR:S/qt//}
 _USE_GL_qt5=	gl
