@@ -1,6 +1,6 @@
 PORTNAME=	x2goclient
 PORTVERSION=	4.1.2.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	http://code.x2go.org/releases/source/x2goclient/
 
@@ -10,6 +10,9 @@ WWW=		https://www.x2go.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	Depends on unsupported Qt5
+EXPIRATION_DATE=	2027-01-01
 
 # Avoid clash with libssh from base
 BUILD_DEPENDS=	${LOCALBASE}/lib/libssh.so:security/libssh
