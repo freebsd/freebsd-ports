@@ -1,3 +1,33 @@
+  <vuln vid="b0aa74b4-e7d8-11f1-b097-3c7c3fba4204">
+    <topic>OpenEXR -- 3.4.19 fixes two vulnerabilities</topic>
+    <affects>
+	<package>
+	  <name>openexr</name>
+	  <range><lt>3.4.19</lt></range>
+	</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Cary Phillips reports:</p>
+	<blockquote cite="https://github.com/AcademySoftwareFoundation/openexr/releases/tag/v3.4.19">
+	  <ul>
+	    <li>CVE Pending (GHSA-HJW7-CQX6-RWQ5): Integer overflow in CompositeDeepScanLine pixel index causes heap out-of-bounds access.</li>
+	    <li>CVE Pending (GHSA-HRP4-XJP5-CQ7J): Misaligned pointer store in ht_undo_impl() (HTJ2K decode, internal_ht.cpp).</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/AcademySoftwareFoundation/openexr/releases/tag/v3.4.19</url>
+      <url>https://github.com/AcademySoftwareFoundation/openexr/security/advisories/GHSA-HJW7-CQX6-RWQ5</url>
+      <url>https://github.com/AcademySoftwareFoundation/openexr/security/advisories/GHSA-HRP4-XJP5-CQ7J</url>
+    </references>
+    <dates>
+      <discovery>2026-11-22</discovery>
+      <entry>2026-11-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="cb0b8278-b308-4b8d-82b3-4e8235a7aaa2">
     <topic>ruby -- heap-based buffer overflow</topic>
     <affects>
