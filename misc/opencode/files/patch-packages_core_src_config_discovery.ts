@@ -9,7 +9,7 @@ Upstream PR: https://github.com/anomalyco/opencode/pull/58347
 
 --- packages/core/src/config/discovery.ts.orig
 +++ packages/core/src/config/discovery.ts
-@@ -28,6 +28,7 @@
+@@ -29,6 +29,7 @@
  export function systemDirectory(platform: NodeJS.Platform = process.platform, env: NodeJS.ProcessEnv = process.env) {
    if (platform === "darwin") return AbsolutePath.make("/Library/Application Support/opencode")
    if (platform === "win32") return AbsolutePath.make(path.join(env.ProgramData || "C:\\ProgramData", "opencode"))
