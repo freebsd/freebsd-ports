@@ -1,6 +1,6 @@
 PORTNAME=	tkabber
 PORTVERSION=	1.1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im tcl tk
 MASTER_SITES=	http://files.jabber.ru/tkabber/
 

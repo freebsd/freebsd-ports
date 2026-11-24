@@ -1,6 +1,7 @@
 PORTNAME=	jitsi
 PORTVERSION=	1.0.9008
 DISTVERSIONPREFIX=	meet-
+PORTREVISION=	1
 CATEGORIES=	www net-im
 MASTER_SITES=	https://download.jitsi.org/jitsi-meet/src/
 PKGNAMESUFFIX=	-meet

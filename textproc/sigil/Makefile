@@ -1,5 +1,6 @@
 PORTNAME=	sigil
 DISTVERSION=	2.8.6
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	jonc@chen.org.nz

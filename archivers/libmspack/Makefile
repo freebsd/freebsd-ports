@@ -1,5 +1,6 @@
 PORTNAME=	libmspack
 PORTVERSION=	0.12alpha
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	https://www.cabextract.org.uk/libmspack/
 

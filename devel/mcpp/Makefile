@@ -1,5 +1,6 @@
 PORTNAME=	mcpp
 DISTVERSION=	2.7.2.1
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	kmatsui@t3.rim.or.jp

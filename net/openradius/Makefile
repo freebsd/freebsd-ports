@@ -1,5 +1,6 @@
 PORTNAME=	openradius
 DISTVERSION=	0.9.14
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://codeberg.org/BSDforge/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 

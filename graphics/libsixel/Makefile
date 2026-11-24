@@ -1,5 +1,6 @@
 PORTNAME=	sixel
 DISTVERSION=	1.8.7-r2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/saitoha/libsixel/releases/download/v${DISTVERSION}/

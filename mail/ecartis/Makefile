@@ -1,6 +1,6 @@
 PORTNAME=	ecartis
 DISTVERSION=	1.0.0-snap20060813
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.ecartis.net/pub/ecartis/ \

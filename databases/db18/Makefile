@@ -1,6 +1,6 @@
 PORTNAME=	db18
 PORTVERSION=	18.1.40
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases java
 MASTER_SITES=	https://github.com/yasuhirokimura/${PORTNAME}/releases/download/${PORTVERSION}/
 PKGNAMEPREFIX?=

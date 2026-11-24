@@ -1,5 +1,6 @@
 PORTNAME=	cgiirc
 PORTVERSION=	0.5.12
+PORTREVISION=	1
 CATEGORIES=	irc www perl5
 MASTER_SITES=	http://cgiirc.org/releases/ \
 		SF/${PORTNAME}/cgi-irc/${PORTVERSION}

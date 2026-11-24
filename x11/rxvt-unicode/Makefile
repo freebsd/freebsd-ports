@@ -1,5 +1,6 @@
 PORTNAME=	rxvt-unicode
 PORTVERSION=	9.32
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	https://dist.schmorp.de/rxvt-unicode/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. Attic

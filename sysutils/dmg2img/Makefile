@@ -1,5 +1,6 @@
 PORTNAME=	dmg2img
 PORTVERSION=	1.6.7
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://vu1tur.eu.org/tools/ \
 		LOCAL/sunpoet

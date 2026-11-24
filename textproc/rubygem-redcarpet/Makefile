@@ -1,5 +1,6 @@
 PORTNAME=	redcarpet
 PORTVERSION=	3.6.1
+PORTREVISION=	1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 

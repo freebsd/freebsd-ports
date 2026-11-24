@@ -1,6 +1,6 @@
 PORTNAME=	zoom
 DISTVERSION=	5.3.465578.0920
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im net-p2p
 MASTER_SITES=	https://zoom.us/client/${DISTVERSION}/
 PKGNAMESUFFIX=	-video-conferencing-client

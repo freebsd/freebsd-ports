@@ -1,5 +1,6 @@
 PORTNAME=	chrome
 PORTVERSION=	${CHROME_VER}
+PORTREVISION=	1
 CATEGORIES=	www linux
 MASTER_SITES=	https://dl.google.com/linux/chrome/rpm/stable/%SUBDIR%/:DEFAULT,aarch64,amd64
 MASTER_SITE_SUBDIR+=	aarch64/:DEFAULT,aarch64 \

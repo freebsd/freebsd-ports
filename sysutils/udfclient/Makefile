@@ -1,5 +1,6 @@
 PORTNAME=	udfclient
 PORTVERSION=	0.8.11
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.13thmonkey.org/udfclient/releases/
 DISTFILES=	UDFclient.${PORTVERSION}.tgz

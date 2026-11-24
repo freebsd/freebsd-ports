@@ -1,5 +1,6 @@
 PORTNAME=	libwww
 PORTVERSION=	5.4.2
+PORTREVISION=	1
 CATEGORIES=	www devel
 MASTER_SITES=	https://www.w3.org/Library/Distribution/ \
 		https://www.w3.org/Library/Distribution/old/

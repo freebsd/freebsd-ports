@@ -1,6 +1,6 @@
 PORTNAME=	mysql-shell
 DISTVERSION=	9.7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MYSQL_DISTVERSION=	9.7.4
 MASTER_SITES=	https://downloads.mysql.com/archives/get/p/43/file/:shell \

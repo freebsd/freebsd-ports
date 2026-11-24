@@ -1,5 +1,6 @@
 PORTNAME=	nanosvg
 DISTVERSION=	20241219 # use date because this tiny library is unlikely to ever have releases
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org

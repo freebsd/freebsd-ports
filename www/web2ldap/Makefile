@@ -1,6 +1,6 @@
 PORTNAME=	web2ldap
 PORTVERSION=	1.8.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www python
 MASTER_SITES=	PYPI \
 		https://www.web2ldap.de/download/

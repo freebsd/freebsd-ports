@@ -1,6 +1,6 @@
 PORTNAME=	tcpreen
 PORTVERSION=	1.4.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	http://www.remlab.net/files/tcpreen/
 

@@ -1,6 +1,6 @@
 PORTNAME=	unarj
 PORTVERSION=	2.65
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	archivers
 MASTER_SITES=	https://aklv.github.io/distfiles/
 

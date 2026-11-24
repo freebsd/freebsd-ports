@@ -1,5 +1,6 @@
 PORTNAME=	tesseract
 PORTVERSION=	5.5.4
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	pkubaj@FreeBSD.org

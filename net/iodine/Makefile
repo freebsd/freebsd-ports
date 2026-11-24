@@ -1,5 +1,6 @@
 PORTNAME=	iodine
 DISTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://code.kryo.se/iodine/
 

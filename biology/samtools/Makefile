@@ -1,5 +1,6 @@
 PORTNAME=	samtools
 DISTVERSION=	1.24
+PORTREVISION=	1
 CATEGORIES=	biology
 
 MAINTAINER=	ports@FreeBSD.org

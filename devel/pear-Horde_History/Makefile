@@ -1,5 +1,6 @@
 PORTNAME=	Horde_History
 PORTVERSION=	2.3.6
+PORTREVISION=	1
 CATEGORIES=	devel www pear
 
 MAINTAINER=	horde@FreeBSD.org

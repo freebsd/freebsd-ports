@@ -1,6 +1,6 @@
 PORTNAME=	cgit
 DISTVERSION=	1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel www
 MASTER_SITES=	http://git.zx2c4.com/cgit/snapshot/:cgit \
 		KERNEL_ORG/software/scm/git:git

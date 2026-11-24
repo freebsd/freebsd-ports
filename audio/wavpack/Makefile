@@ -1,5 +1,6 @@
 PORTNAME=	wavpack
 DISTVERSION=	5.9.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/dbry/WavPack/releases/download/${DISTVERSION}/ \
 		http://www.wavpack.com/

@@ -1,6 +1,6 @@
 PORTNAME=	libimobiledevice
 DISTVERSION=	1.4.0
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	comms
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 

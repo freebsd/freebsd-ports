@@ -1,5 +1,6 @@
 PORTNAME=	7-zip
 DISTVERSION=	26.06
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	https://github.com/ip7z/7zip/releases/download/${DISTVERSION}/
 DISTNAME=	7z${DISTVERSION:S/.//}-src

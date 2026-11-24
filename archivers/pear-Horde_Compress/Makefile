@@ -1,5 +1,6 @@
 PORTNAME=	Horde_Compress
 PORTVERSION=	2.2.4
+PORTREVISION=	1
 CATEGORIES=	archivers www pear
 
 MAINTAINER=	horde@FreeBSD.org

@@ -1,5 +1,6 @@
 PORTNAME=	ircii
 PORTVERSION=	20240111
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	https://ircii.warped.com/
 

@@ -1,5 +1,6 @@
 PORTNAME=	fossology
 PORTVERSION=	4.2.1
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-nomos-standalone
 

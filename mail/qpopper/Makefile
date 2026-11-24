@@ -1,6 +1,6 @@
 PORTNAME=	qpopper
 PORTVERSION=	4.1.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	mail
 MASTER_SITES=	http://core.ring.gr.jp/archives/net/mail/qpopper/ \
 		http://ftp.osuosl.org/.1/blfs/7.7/q/ \

@@ -1,6 +1,6 @@
 PORTNAME=	t1utils
 PORTVERSION=	1.32
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	http://www.lcdf.org/type/
 

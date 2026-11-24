@@ -1,5 +1,6 @@
 PORTNAME=	mediawiki
 PORTVERSION=	1.43.12		# LTS
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://releases.wikimedia.org/mediawiki/${PORTVERSION:R}/ \
 		LOCAL/wen

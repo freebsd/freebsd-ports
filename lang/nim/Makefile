@@ -1,6 +1,6 @@
 PORTNAME=	nim
 DISTVERSION=	2.2.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	https://nim-lang.org/download/
 # e97b0bb541ee: semfold folded shr wrongly on big-endian hosts

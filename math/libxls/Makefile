@@ -1,5 +1,6 @@
 PORTNAME=	libxls
 PORTVERSION=	1.6.3
+PORTREVISION=	1
 CATEGORIES=	math devel
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${PORTVERSION}/
 

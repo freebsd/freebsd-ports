@@ -1,6 +1,6 @@
 PORTNAME=	emil
 PORTVERSION=	2.1b9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.uu.se/pub/unix/networking/mail/emil/ \
 		ftp://ftp.gwdg.de/pub/misc/emil/ \

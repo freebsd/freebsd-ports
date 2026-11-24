@@ -1,6 +1,7 @@
 PORTNAME=	linkwarden
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.17.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/feld:buildkit
 DISTFILES=	linkwarden-freebsd-buildkit-${DISTVERSION}${EXTRACT_SUFX}:buildkit

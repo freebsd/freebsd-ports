@@ -1,6 +1,6 @@
 PORTNAME=	mini_httpd
 PORTVERSION=	1.30
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	https://www.acme.com/software/mini_httpd/
 

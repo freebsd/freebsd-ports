@@ -1,5 +1,6 @@
 PORTNAME=	loganalyzer
 PORTVERSION=	4.1.13
+PORTREVISION=	1
 CATEGORIES=	sysutils www
 MASTER_SITES=	http://download.adiscon.com/loganalyzer/
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}

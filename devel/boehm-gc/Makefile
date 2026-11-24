@@ -1,5 +1,6 @@
 PORTNAME=	gc
 DISTVERSION=	8.2.10
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://www.hboehm.info/gc/gc_source/ \
 		https://github.com/bdwgc/bdwgc/releases/download/v${PORTVERSION}/

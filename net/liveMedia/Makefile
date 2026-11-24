@@ -1,5 +1,6 @@
 PORTNAME=	liveMedia
 DISTVERSION=	2026.11.08
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	net devel
 MASTER_SITES=	https://download.live555.com/ \

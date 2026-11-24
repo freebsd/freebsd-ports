@@ -1,5 +1,6 @@
 PORTNAME=	dropbear
 PORTVERSION=	2026.94
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://matt.ucc.asn.au/dropbear/releases/
 

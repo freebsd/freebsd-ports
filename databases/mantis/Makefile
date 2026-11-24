@@ -1,5 +1,6 @@
 PORTNAME=	mantis
 PORTVERSION=	2.26.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	databases www
 MASTER_SITES=	SF/mantisbt/mantis-stable/${PORTVERSION}

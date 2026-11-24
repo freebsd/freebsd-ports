@@ -1,5 +1,6 @@
 PORTNAME=	duplicity
 DISTVERSION=	3.2.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	eduardo@FreeBSD.org

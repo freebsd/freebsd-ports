@@ -1,5 +1,6 @@
 PORTNAME=	Horde_Imsp
 DISTVERSION=	2.0.10
+PORTREVISION=	1
 CATEGORIES=	databases www pear
 
 MAINTAINER=	horde@FreeBSD.org

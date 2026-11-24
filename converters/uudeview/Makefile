@@ -1,6 +1,6 @@
 PORTNAME=	uudeview
 PORTVERSION=	0.5.20
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	converters
 MASTER_SITES=	http://www.fpx.de/fp/Software/UUDeview/download/
 

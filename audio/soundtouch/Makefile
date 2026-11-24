@@ -1,5 +1,6 @@
 PORTNAME=	soundtouch
 DISTVERSION=	2.4.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://www.surina.net/${PORTNAME}/
 

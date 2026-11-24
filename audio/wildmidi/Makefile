@@ -1,5 +1,6 @@
 PORTNAME=	wildmidi
 DISTVERSION=	0.4.6
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/Mindwerks/${PORTNAME}/releases/download/${PORTNAME}-${DISTVERSION}/
 

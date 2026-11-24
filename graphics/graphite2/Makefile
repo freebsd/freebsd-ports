@@ -1,6 +1,6 @@
 PORTNAME=	graphite2
 DISTVERSION=	1.3.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics print
 MASTER_SITES=	https://github.com/silnrsi/graphite/releases/download/${DISTVERSION}/
 

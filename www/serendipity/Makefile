@@ -1,5 +1,6 @@
 PORTNAME=	serendipity
 PORTVERSION=	2.6.1
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	ports@FreeBSD.org

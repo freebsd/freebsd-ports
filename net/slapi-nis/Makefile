@@ -1,5 +1,6 @@
 PORTNAME=	slapi-nis
 DISTVERSION=	0.70.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://codeberg.org/freeipa/slapi-nis/archive/
 

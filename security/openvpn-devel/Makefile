@@ -1,5 +1,6 @@
 PORTNAME=	openvpn
 DISTVERSION=	g20260907
+PORTREVISION=	1
 #PORTREVISION=	0  # leave in even if 0 to avoid accidental PORTEPOCH bumps
 PORTEPOCH=	2
 CATEGORIES=	security net net-vpn

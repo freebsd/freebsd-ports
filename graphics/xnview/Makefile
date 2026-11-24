@@ -1,6 +1,6 @@
 PORTNAME=	xnview
 PORTVERSION=	1.70
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.xnview.com/
 DISTFILES=	XnView-x86-unknown-FreeBSD5.x-static.tgz

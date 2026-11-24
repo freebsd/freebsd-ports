@@ -1,5 +1,6 @@
 PORTNAME=	logrotate
 DISTVERSION=	3.22.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 

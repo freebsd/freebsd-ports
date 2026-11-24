@@ -1,6 +1,6 @@
 PORTNAME=	liquibase
 PORTVERSION=	4.3.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases java
 MASTER_SITES=	https://github.com/liquibase/liquibase/releases/download/v${PORTVERSION}/
 

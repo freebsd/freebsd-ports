@@ -1,5 +1,6 @@
 PORTNAME=	rtpproxy
 PORTVERSION=	3.1.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/sippy/${PORTNAME}/releases/download/v${DISTVERSION}/
 

@@ -1,6 +1,7 @@
 PORTNAME=	dosfstools
 PORTVERSION=	3.0.20
 DISTVERSIONSUFFIX=	-10.el7
+PORTREVISION=	1
 CATEGORIES=	filesystems sysutils linux
 
 MAINTAINER=	emulation@FreeBSD.org

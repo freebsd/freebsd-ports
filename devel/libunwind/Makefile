@@ -1,5 +1,6 @@
 PORTNAME=	libunwind
 PORTVERSION=	20250904	# This is the release date on https://github.com/libunwind/libunwind/releases
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libunwind/libunwind/releases/download/v${LIBUNWIND_VERSION}/
 DISTNAME=	libunwind-${LIBUNWIND_VERSION}

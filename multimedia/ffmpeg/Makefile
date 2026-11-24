@@ -1,6 +1,6 @@
 PORTNAME=	ffmpeg
 DISTVERSION=	9.0.2
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio net
 MASTER_SITES=	https://ffmpeg.org/releases/

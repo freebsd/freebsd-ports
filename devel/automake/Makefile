@@ -1,6 +1,7 @@
 # Also update Templates/config.(guess|sub) if necessary.
 PORTNAME=	automake
 DISTVERSION=	1.20
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 

@@ -1,5 +1,6 @@
 PORTNAME=	Horde_Service_Twitter
 DISTVERSION=	2.1.6
+PORTREVISION=	1
 CATEGORIES=	www pear
 
 MAINTAINER=	horde@FreeBSD.org

@@ -1,6 +1,6 @@
 PORTNAME=	aubio
 DISTVERSION=	0.4.9
-PORTREVISION?=	7
+PORTREVISION?=	8
 CATEGORIES?=	audio
 MASTER_SITES=	https://aubio.org/pub/
 

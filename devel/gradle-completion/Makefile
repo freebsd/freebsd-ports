@@ -1,6 +1,7 @@
 PORTNAME=	gradle-completion
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.1
+PORTREVISION=	1
 CATEGORIES=	devel java
 
 MAINTAINER=	ports@FreeBSD.org

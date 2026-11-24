@@ -1,5 +1,6 @@
 PORTNAME=	cracklib
 PORTVERSION=	2.10.3
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/cracklib/cracklib/releases/download/v${PORTVERSION}/ \
 		LOCAL/cy

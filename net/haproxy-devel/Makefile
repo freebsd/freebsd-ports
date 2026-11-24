@@ -1,5 +1,6 @@
 PORTNAME=	haproxy
 DISTVERSION=	3.5-dev8
+PORTREVISION=	1
 CATEGORIES=	net www
 MASTER_SITES=	http://www.haproxy.org/download/3.5/src/devel/
 PKGNAMESUFFIX=	-devel

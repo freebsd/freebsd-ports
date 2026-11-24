@@ -1,5 +1,6 @@
 PORTNAME=	prrte
 DISTVERSION=	3.0.14
+PORTREVISION=	1
 CATEGORIES=	net parallel sysutils
 MASTER_SITES=	https://github.com/openpmix/prrte/releases/download/v${DISTVERSION}/
 

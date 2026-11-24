@@ -1,5 +1,6 @@
 PORTNAME=	samurai
 DISTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/michaelforney/${PORTNAME}/releases/download/${DISTVERSION}/
 

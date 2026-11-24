@@ -1,5 +1,6 @@
 PORTNAME=	nmealib
 PORTVERSION=	0.5.3
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	SF/nmea/NmeaLib/nmea-0.5.x
 

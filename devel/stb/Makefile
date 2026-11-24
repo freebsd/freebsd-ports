@@ -1,5 +1,6 @@
 PORTNAME=	stb
 DISTVERSION=	g20251026 # the upstream has no intension to have repo tagging
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 

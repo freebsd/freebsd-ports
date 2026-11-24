@@ -1,5 +1,6 @@
 PORTNAME=	hivex
 PORTVERSION=	1.3.25
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://download.libguestfs.org/hivex/
 

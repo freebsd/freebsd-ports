@@ -1,6 +1,6 @@
 PORTNAME=	rlpr
 PORTVERSION=	2.06
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	print net
 MASTER_SITES=	http://fossies.org/unix/misc/old/	\
 		http://linuxfocus.org/~guido/	\

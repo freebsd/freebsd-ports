@@ -1,5 +1,6 @@
 PORTNAME=	simple_form
 PORTVERSION=	4.0.0
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

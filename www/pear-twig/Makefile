@@ -1,5 +1,6 @@
 PORTNAME=	twig
 PORTVERSION=	1.29.0
+PORTREVISION=	1
 CATEGORIES=	www pear
 MASTER_SITES=	http://pear.twig-project.org/get/
 DISTNAME=	Twig-${PORTVERSION}

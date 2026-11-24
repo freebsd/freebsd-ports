@@ -1,6 +1,6 @@
 PORTNAME=	libconfuse
 PORTVERSION=	3.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libconfuse/libconfuse/releases/download/v${PORTVERSION}/
 DISTNAME=	confuse-${PORTVERSION}

@@ -1,5 +1,6 @@
 PORTNAME=	adns
 PORTVERSION=	1.6.2
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://www.chiark.greenend.org.uk/~ian/adns/ftp/
 

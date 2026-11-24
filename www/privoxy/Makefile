@@ -1,5 +1,6 @@
 PORTNAME=	privoxy
 DISTVERSION=	4.2.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://www.privoxy.org/sf-download-mirror/Sources/${DISTVERSION}%20(stable)/ \
 		SF/ijbswa/Sources/${DISTVERSION}%20%28stable%29

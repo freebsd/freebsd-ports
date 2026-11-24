@@ -1,6 +1,6 @@
 PORTNAME=	procmail
 PORTVERSION=	3.22
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	mail
 MASTER_SITES=	https://github.com/apple-oss-distributions/procmail/raw/refs/heads/main/ \
 		https://ftp.osuosl.org/pub/blfs/conglomeration/procmail/ \

@@ -1,7 +1,7 @@
 # devel/hadoop2 needs version 2.5.0
 PORTNAME=	protobuf
 PORTVERSION=	2.5.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel
 MASTER_SITES=	http://pkgs.fedoraproject.org/repo/pkgs/protobuf/protobuf-2.5.0.tar.bz2/a72001a9067a4c2c4e0e836d0f92ece4/
 PKGNAMESUFFIX=	25

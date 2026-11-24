@@ -1,5 +1,6 @@
 PORTNAME=	libsass
 DISTVERSION=	3.6.6
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	nivit@FreeBSD.org

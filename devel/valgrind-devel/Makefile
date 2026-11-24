@@ -1,6 +1,7 @@
 PORTNAME=	valgrind
 DISTVERSIONPREFIX=	freebsd-
 DISTVERSION=	3.26.0.g20250819
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://snapshots.sourceware.org/valgrind/trunk/2025-08-18_19-19_1755544741/

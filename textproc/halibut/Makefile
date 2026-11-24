@@ -1,5 +1,6 @@
 PORTNAME=	halibut
 DISTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	https://www.chiark.greenend.org.uk/~sgtatham/halibut/halibut-${DISTVERSION}/
 

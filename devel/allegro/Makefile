@@ -1,6 +1,6 @@
 PORTNAME=	allegro
 DISTVERSION=	4.4.3.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/liballeg/allegro5/releases/download/${DISTVERSION}/
 

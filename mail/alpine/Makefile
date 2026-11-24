@@ -1,6 +1,6 @@
 PORTNAME?=	alpine
 DISTVERSION=	2.26
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES?=	mail news
 MASTER_SITES=	https://repo.or.cz/alpine.git/snapshot/${GIT_COMMIT}${EXTRACT_SUFX}?dummy=/
 

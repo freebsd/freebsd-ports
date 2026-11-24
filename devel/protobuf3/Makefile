@@ -1,6 +1,7 @@
 PORTNAME=	protobuf
 PORTVERSION=	3.21.12
 DISTVERSIONPREFIX=	cpp-
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/protocolbuffers/protobuf/releases/download/v${PORTVERSION:R:E}.${PORTVERSION:E}/
 PKGNAMESUFFIX=	3

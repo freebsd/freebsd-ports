@@ -1,6 +1,6 @@
 PORTNAME=	aircrack-ng
 DISTVERSION=	1.5.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://download.aircrack-ng.org/
 

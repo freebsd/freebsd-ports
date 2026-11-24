@@ -1,5 +1,6 @@
 PORTNAME=	opencl
 DISTVERSION=	3.1.1
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	ohartmann@walstatt.org

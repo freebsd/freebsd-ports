@@ -1,5 +1,6 @@
 PORTNAME=	nagvis
 PORTVERSION=	1.9.36
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.nagvis.org/share/
 

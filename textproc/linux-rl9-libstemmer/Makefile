@@ -1,6 +1,7 @@
 PORTNAME=	libstemmer
 PORTVERSION=	0
 DISTVERSIONSUFFIX=	-18.585svn.el9
+PORTREVISION=	1
 CATEGORIES=	textproc linux
 
 MAINTAINER=	emulation@FreeBSD.org

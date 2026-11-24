@@ -1,5 +1,6 @@
 PORTNAME=	mkvalidator
 PORTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/matroska/${PORTNAME}/
 

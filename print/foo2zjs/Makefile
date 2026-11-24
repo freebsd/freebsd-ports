@@ -1,6 +1,6 @@
 PORTNAME=	foo2zjs
 PORTVERSION=	20161203
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	LOCAL/bsam/${PORTNAME} \
 		ftp://ftp.wart.ru/pub/FreeBSD/ports/distfiles/

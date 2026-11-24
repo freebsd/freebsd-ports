@@ -1,6 +1,6 @@
 PORTNAME=	hardlink
 PORTVERSION=	0.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://jak-linux.org/projects/hardlink/ \
 		DEBIAN

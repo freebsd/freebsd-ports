@@ -1,5 +1,6 @@
 PORTNAME=	memtester
 PORTVERSION=	4.7.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://pyropus.ca/software/${PORTNAME}/old-versions/
 

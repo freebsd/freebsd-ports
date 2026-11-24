@@ -1,5 +1,6 @@
 PORTNAME=	pugixml
 DISTVERSION=	1.16
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/zeux/pugixml/releases/download/v${DISTVERSION}/
 

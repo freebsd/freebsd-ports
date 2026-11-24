@@ -1,5 +1,6 @@
 PORTNAME=	libnjs
 DISTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	devel www
 
 MAINTAINER=	joneum@FreeBSD.org

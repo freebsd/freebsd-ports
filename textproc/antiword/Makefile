@@ -1,6 +1,6 @@
 PORTNAME=	antiword
 PORTVERSION=	0.37
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	textproc
 MASTER_SITES=	https://web.archive.org/web/20221207132720/http://www.winfield.demon.nl/linux/
 

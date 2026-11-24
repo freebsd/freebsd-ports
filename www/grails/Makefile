@@ -1,6 +1,6 @@
 PORTNAME=	grails
 DISTVERSION=	1.3.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www java
 MASTER_SITES=	http://dist.codehaus.org/grails/ \
 		http://dist.springframework.org.s3.amazonaws.com/release/GRAILS/

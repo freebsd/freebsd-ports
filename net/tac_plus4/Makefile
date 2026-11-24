@@ -1,6 +1,6 @@
 PORTNAME=	tac_plus
 PORTVERSION=	F4.0.4.32
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net security
 MASTER_SITES=	https://shrubbery.net/pub/${PORTNAME}/
 DISTNAME=	tacacs-${PORTVERSION}

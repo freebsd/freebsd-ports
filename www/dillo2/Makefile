@@ -1,6 +1,6 @@
 PORTNAME=	dillo
 DISTVERSION=	3.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/dillo-browser/dillo/releases/download/v${DISTVERSION}/ \
 		LOCAL/bf/dillo/ \

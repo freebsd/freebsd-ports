@@ -1,6 +1,6 @@
 PORTNAME=	zoo
 PORTVERSION=	2.10.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/arcers/ \
 		LOCAL/ehaupt

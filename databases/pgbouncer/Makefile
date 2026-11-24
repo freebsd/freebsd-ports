@@ -1,6 +1,6 @@
 PORTNAME=	pgbouncer
 DISTVERSION=	1.25.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	https://www.pgbouncer.org/downloads/files/${DISTVERSION}/
 

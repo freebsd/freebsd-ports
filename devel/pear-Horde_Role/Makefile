@@ -1,5 +1,6 @@
 PORTNAME=	Horde_Role
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	devel www pear
 
 MAINTAINER=	horde@FreeBSD.org

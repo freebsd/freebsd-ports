@@ -1,5 +1,6 @@
 PORTNAME=	libyaml
 PORTVERSION=	0.2.5
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	https://pyyaml.org/download/libyaml/
 DISTNAME=	yaml-${PORTVERSION}

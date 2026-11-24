@@ -1,6 +1,7 @@
 PORTNAME=	civetweb
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.15
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	maintainer.freebsd@xpoundit.com

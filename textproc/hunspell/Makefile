@@ -1,6 +1,6 @@
 PORTNAME=	hunspell
 PORTVERSION=	1.7.2
-PORTREVISION=	1
+PORTREVISION=	2
 MASTER_SITES=	https://github.com/hunspell/hunspell/releases/download/v${PORTVERSION}/
 CATEGORIES=	textproc
 DIST_SUBDIR=	${PORTNAME}

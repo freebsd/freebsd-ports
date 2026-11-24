@@ -1,5 +1,6 @@
 PORTNAME=	lib3mf
 DISTVERSION=	2.5.0
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	https://github.com/3MFConsortium/${PORTNAME}/releases/download/v${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-source-with-submodules

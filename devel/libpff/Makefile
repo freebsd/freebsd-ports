@@ -1,6 +1,7 @@
 PORTNAME=	libpff
 DISTVERSIONPREFIX=	alpha-
 DISTVERSION=	20231205
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libpff/releases/download/${DISTVERSION}/ \
 		LOCAL/antoine

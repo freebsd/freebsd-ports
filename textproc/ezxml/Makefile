@@ -1,5 +1,6 @@
 PORTNAME=	ezxml
 PORTVERSION=	0.8.6
+PORTREVISION=	1
 CATEGORIES=	textproc devel
 MASTER_SITES=	SF/${PORTNAME}/ezXML/ezXML%20${PORTVERSION} \
 		http://www.yazzy.org/ports/ezxml/

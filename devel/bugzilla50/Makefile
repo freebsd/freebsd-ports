@@ -1,5 +1,6 @@
 PORTNAME=	bugzilla
 PORTVERSION=	5.0.4.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	MOZILLA/webtools/bugzilla/5.0-branch
 

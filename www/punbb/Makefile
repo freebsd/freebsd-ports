@@ -1,5 +1,6 @@
 PORTNAME=	punbb
 PORTVERSION=	1.4.6
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://punbb.informer.com/download/ \
 		http://punbb.informer.com/download/plugins/:plugins \

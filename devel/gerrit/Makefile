@@ -1,5 +1,6 @@
 PORTNAME=	gerrit
 PORTVERSION=	3.15.0
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	https://gerrit-releases.storage.googleapis.com/
 EXTRACT_SUFX=	.war

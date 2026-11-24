@@ -1,5 +1,6 @@
 PORTNAME=	Horde_Group
 PORTVERSION=	2.1.1
+PORTREVISION=	1
 CATEGORIES=	security www pear
 
 MAINTAINER=	horde@FreeBSD.org

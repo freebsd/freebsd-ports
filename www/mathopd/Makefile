@@ -1,6 +1,6 @@
 PORTNAME=	mathopd
 PORTVERSION=	1.5p8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://www.mathopd.org/dist/
 

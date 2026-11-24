@@ -1,5 +1,6 @@
 PORTNAME=	opensc
 DISTVERSION=	0.27.0
+PORTREVISION=	1
 CATEGORIES=	security devel
 
 MAINTAINER=	ale@FreeBSD.org

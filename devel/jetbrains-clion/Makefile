@@ -1,5 +1,6 @@
 PORTNAME=	clion
 DISTVERSION=	2026.1.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://download-cdn.jetbrains.com/cpp/ \
 		https://packages.jetbrains.team/files/p/clion/ports/2025.2/freebsd/clang/:clang

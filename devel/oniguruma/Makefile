@@ -1,5 +1,6 @@
 PORTNAME=	oniguruma # archived upstream but there are many consumers
 DISTVERSION=	6.9.10
+PORTREVISION=	1
 CATEGORIES=	devel textproc
 MASTER_SITES=	https://github.com/kkos/${PORTNAME}/releases/download/v${DISTVERSION}/
 DISTNAME=	onig-${DISTVERSION}

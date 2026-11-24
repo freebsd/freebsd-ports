@@ -1,5 +1,6 @@
 PORTNAME=	will_paginate
 PORTVERSION=	4.0.1
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

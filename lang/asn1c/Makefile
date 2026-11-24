@@ -1,5 +1,6 @@
 PORTNAME=	asn1c
 DISTVERSION=	0.9.28
+PORTREVISION=	1
 CATEGORIES=	lang converters security
 MASTER_SITES=	https://github.com/vlm/${PORTNAME}/releases/download/v${DISTVERSION}/
 

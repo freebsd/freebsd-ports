@@ -1,5 +1,6 @@
 PORTNAME=	jackson-core
 DISTVERSION=	2.23.0
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	https://repo1.maven.org/maven2/com/fasterxml/jackson/core/${PORTNAME}/${DISTVERSION}/
 EXTRACT_SUFX=	.jar

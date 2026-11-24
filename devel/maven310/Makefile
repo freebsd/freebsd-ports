@@ -1,5 +1,6 @@
 PORTNAME=	maven
 DISTVERSION=	3.10.0
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	APACHE/maven/maven-3/${DISTVERSION}/binaries
 .if !defined(MASTERDIR)

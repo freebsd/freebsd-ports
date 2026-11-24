@@ -1,5 +1,6 @@
 PORTNAME=		krb5
 PORTVERSION=		1.23.${MIT_COMMIT_DATE}
+PORTREVISION=	1
 CATEGORIES=		security
 .if !defined(MASTERDIR)
 PKGNAME_X=		-${FLAVOR:S/default//}-devel

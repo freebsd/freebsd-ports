@@ -1,6 +1,6 @@
 PORTNAME=	calife
 DISTVERSION=	3.0.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	https://assets.keltia.net/calife/ \
 		https://github.com/keltia/calife/releases/${DISTVERSION}/

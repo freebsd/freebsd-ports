@@ -1,5 +1,6 @@
 PORTNAME=	Horde_Support
 PORTVERSION=	2.2.2
+PORTREVISION=	1
 CATEGORIES=	devel www pear
 
 MAINTAINER=	horde@FreeBSD.org

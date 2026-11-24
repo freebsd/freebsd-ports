@@ -1,5 +1,6 @@
 PORTNAME=	libmongocrypt
 DISTVERSION=	1.21.1
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	hiroo.ono+freebsd@gmail.com

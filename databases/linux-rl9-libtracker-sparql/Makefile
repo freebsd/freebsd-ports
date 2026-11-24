@@ -1,7 +1,7 @@
 PORTNAME=	libtracker-sparql
 PORTVERSION=	3.1.2
 DISTVERSIONSUFFIX=	-3.el9_1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases linux
 
 MAINTAINER=	emulation@FreeBSD.org

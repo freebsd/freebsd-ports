@@ -1,6 +1,6 @@
 PORTNAME=	ledgersmb
 PORTVERSION=	1.2.26
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	finance perl5
 MASTER_SITES=	http://download.ledgersmb.org/f/Releases/archives/${PORTVERSION:R}/${PORTVERSION}/
 

@@ -1,5 +1,6 @@
 PORTNAME=	ncurses
 DISTVERSION=	6.6
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://invisible-mirror.net/archives/ncurses/
 DIST_SUBDIR=	${PORTNAME}

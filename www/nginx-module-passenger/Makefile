@@ -1,5 +1,6 @@
 PORTNAME=	nginx-module-passenger
 DISTVERSION=	6.2.0
+PORTREVISION=	1
 CATEGORIES=	www ruby
 MASTER_SITES=	https://github.com/phusion/passenger/releases/download/release-${DISTVERSION}/ \
 		https://s3.amazonaws.com/phusion-passenger/releases/

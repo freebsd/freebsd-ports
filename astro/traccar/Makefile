@@ -1,5 +1,6 @@
 PORTNAME=	traccar
 PORTVERSION=	6.17.0
+PORTREVISION=	1
 CATEGORIES=	astro java
 MASTER_SITES=	https://github.com/traccar/traccar/releases/download/v${DISTVERSION}/
 DISTNAME=	${PORTNAME}-other-${DISTVERSION}

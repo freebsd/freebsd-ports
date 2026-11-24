@@ -1,5 +1,6 @@
 PORTNAME=	minicom
 DISTVERSION=	2.10
+PORTREVISION=	1
 CATEGORIES=	comms
 
 MAINTAINER=	jailbird@fdf.net

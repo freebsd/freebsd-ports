@@ -1,5 +1,5 @@
 PORTNAME=	mod_sql_mysql
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases ftp
 PKGNAMEPREFIX=	proftpd-
 

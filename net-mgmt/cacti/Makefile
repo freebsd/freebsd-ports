@@ -1,5 +1,6 @@
 PORTNAME=	cacti
 DISTVERSION=	1.2.31
+PORTREVISION=	1
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	http://www.cacti.net/downloads/ \
 		ftp://ftpmirror.uk/freebsd-ports/cacti/

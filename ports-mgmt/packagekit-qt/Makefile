@@ -1,5 +1,6 @@
 PORTNAME=	PackageKit-Qt
 PORTVERSION=	1.1.4
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt sysutils
 MASTER_SITES=	https://www.freedesktop.org/software/PackageKit/releases/
 

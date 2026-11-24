@@ -1,5 +1,6 @@
 PORTNAME=	openttd
 DISTVERSION=	15.3
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	https://cdn.openttd.org/openttd-releases/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-source

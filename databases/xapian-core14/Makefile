@@ -1,5 +1,6 @@
 PORTNAME=	xapian-core
 PORTVERSION=	1.4.32
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://oligarchy.co.uk/xapian/${PORTVERSION}/ \
 		LOCAL/sunpoet

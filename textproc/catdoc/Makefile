@@ -1,6 +1,6 @@
 PORTNAME=	catdoc
 PORTVERSION=	0.95
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://ftp.wagner.pp.ru/pub/catdoc/ \
 		https://mirror.amdmi3.ru/distfiles/

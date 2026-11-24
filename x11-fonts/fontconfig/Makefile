@@ -1,5 +1,6 @@
 PORTNAME=	fontconfig
 DISTVERSION=	2.18.3
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://gitlab.freedesktop.org/api/v4/projects/890/packages/generic/${PORTNAME}/${DISTVERSION}/

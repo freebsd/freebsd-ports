@@ -1,5 +1,6 @@
 PORTNAME=	worldmonitor-cli
 DISTVERSION=	0.2.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://registry.npmjs.org/worldmonitor/-/
 DISTNAME=	worldmonitor-${DISTVERSION}

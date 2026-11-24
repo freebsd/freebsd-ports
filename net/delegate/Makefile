@@ -1,6 +1,6 @@
 PORTNAME=	delegate
 PORTVERSION=	9.9.13
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net www
 MASTER_SITES=	https://www.cpsec.aist.go.jp/achievements/AIST-DeleGate/dist/delegate9/ \
 		https://its-more.jp/delegate/ftp/pub/DeleGate/

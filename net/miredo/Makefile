@@ -1,6 +1,6 @@
 PORTNAME=	miredo
 PORTVERSION=	1.2.6
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	net
 MASTER_SITES=	http://www.remlab.net/files/miredo/archive/
 

@@ -1,5 +1,6 @@
 PORTNAME=	openvox-agent
 DISTVERSION=	9.5.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=   https://forge.puppet.com/v3/files/:forge
 PKGNAMESUFFIX=	9

@@ -1,5 +1,6 @@
 PORTNAME=	libmodplug
 PORTVERSION=	0.8.9.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/modplug-xmms/libmodplug/${PORTVERSION}
 

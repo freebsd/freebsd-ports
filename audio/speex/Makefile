@@ -1,6 +1,6 @@
 PORTNAME=	speex
 DISTVERSION=	1.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.us.xiph.org/releases/speex/

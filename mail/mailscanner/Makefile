@@ -1,6 +1,6 @@
 PORTNAME=	MailScanner
 DISTVERSION=	5.3.4-3
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSIONSUFFIX=	.nix
 CATEGORIES=	mail
 MASTER_SITES=	https://github.com/MailScanner/v5/releases/download/${DISTVERSION}/

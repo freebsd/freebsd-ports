@@ -1,6 +1,6 @@
 PORTNAME=	denyhosts
 PORTVERSION=	3.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 MASTER_SITES=	https://github.com/denyhosts/denyhosts/releases/download/v${PORTVERSION:R}/

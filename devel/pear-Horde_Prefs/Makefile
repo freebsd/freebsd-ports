@@ -1,5 +1,6 @@
 PORTNAME=	Horde_Prefs
 DISTVERSION=	2.9.0
+PORTREVISION=	1
 CATEGORIES=	devel www pear
 
 MAINTAINER=	horde@FreeBSD.org

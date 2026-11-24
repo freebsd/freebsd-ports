@@ -1,5 +1,6 @@
 PORTNAME=	doorkeeper
 PORTVERSION=	5.9.3
+PORTREVISION=	1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX?=	# empty for base port

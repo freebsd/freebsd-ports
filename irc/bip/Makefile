@@ -1,5 +1,6 @@
 PORTNAME=	bip
 DISTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	https://projects.duckcorp.org/attachments/download/103/
 

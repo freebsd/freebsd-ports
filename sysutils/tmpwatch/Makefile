@@ -1,6 +1,6 @@
 PORTNAME=	tmpwatch
 PORTVERSION=	2.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	https://releases.pagure.org/tmpwatch/
 

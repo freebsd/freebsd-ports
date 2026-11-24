@@ -1,5 +1,6 @@
 PORTNAME=	werkzeug
 PORTVERSION=	2.3.8
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI \
 		https://github.com/pallets/werkzeug/releases/download/${PORTVERSION}/

@@ -1,5 +1,6 @@
 PORTNAME=	libnet
 PORTVERSION=	1.3
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/libnet/libnet/releases/download/v${PORTVERSION}/

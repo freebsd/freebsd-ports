@@ -1,5 +1,6 @@
 PORTNAME=	message_bus
 PORTVERSION=	5.0.0
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

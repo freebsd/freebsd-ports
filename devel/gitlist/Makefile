@@ -1,5 +1,6 @@
 PORTNAME=	gitlist
 DISTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	devel www
 MASTER_SITES=	https://github.com/klaussilveira/gitlist/releases/download/${DISTVERSION}/ \
 		https://freebsd.ark-ict.nl/ports/

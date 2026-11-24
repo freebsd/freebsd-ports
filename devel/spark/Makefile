@@ -1,5 +1,6 @@
 PORTNAME=	spark
 DISTVERSION=	4.2.0
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	https://archive.apache.org/dist/${PORTNAME}/${PORTNAME}-${DISTVERSION}/ \
 		https://github.com/protocolbuffers/protobuf/releases/download/v${PROTOBUF_VERSION}/:protobuf \

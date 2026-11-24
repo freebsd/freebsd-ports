@@ -1,5 +1,6 @@
 PORTNAME=	omada6
 PORTVERSION=	6.3.0.111
+PORTREVISION=	1
 CATEGORIES=	net-mgmt java
 MASTER_SITES=	https://static.tp-link.com/upload/software/${OMADAY}/${OMADAY}${OMADAM}/${OMADAY}${OMADAM}${OMADAD}/
 DISTNAME=	Omada_Network_Application_v${PORTVERSION}_linux_x64_${OMADA_REL}

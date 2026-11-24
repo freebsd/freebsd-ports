@@ -1,6 +1,6 @@
 PORTNAME=	jpegoptim
 DISTVERSION=	1.5.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=   https://github.com/tjko/${PORTNAME}/releases/download/v${DISTVERSION}/
 

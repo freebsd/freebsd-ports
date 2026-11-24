@@ -1,5 +1,6 @@
 PORTNAME=	bazel
 DISTVERSION=	7.7.1
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	https://github.com/bazelbuild/${PORTNAME}/releases/download/${DISTVERSION}/
 PKGNAMESUFFIX=	7

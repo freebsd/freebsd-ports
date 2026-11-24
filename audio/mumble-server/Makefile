@@ -1,5 +1,6 @@
 PORTNAME=	mumble
 DISTVERSION=	1.5.939
+PORTREVISION=	1
 CATEGORIES=	audio net
 MASTER_SITES=	https://github.com/${PORTNAME}-voip/${PORTNAME}/releases/download/v${DISTVERSION}/
 PKGNAMESUFFIX=	-server

@@ -1,5 +1,6 @@
 PORTNAME=	elinks
 DISTVERSION=	0.20.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/rkd77/${PORTNAME}/releases/download/v${DISTVERSION}/
 

@@ -1,5 +1,6 @@
 PORTNAME=	webtrees
 DISTVERSION=	2.2.6
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/fisharebest/${PORTNAME}/releases/download/${PORTVERSION}/
 PKGNAMESUFFIX=	22${PHP_PKGNAMESUFFIX}

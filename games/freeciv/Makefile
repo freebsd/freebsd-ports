@@ -1,6 +1,6 @@
 PORTNAME=	freeciv
 PORTVERSION=	3.2.7
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/freeciv/Freeciv%20${PORTVERSION:R}/${PORTVERSION} \
 		http://files.freeciv.org/stable/

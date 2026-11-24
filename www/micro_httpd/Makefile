@@ -1,6 +1,6 @@
 PORTNAME=	micro_httpd
 PORTVERSION=	2014.08.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://www.acme.com/software/micro_httpd/
 DISTNAME=	${PORTNAME}_14Aug2014

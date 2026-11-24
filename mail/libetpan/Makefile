@@ -1,7 +1,7 @@
 PORTNAME=	libetpan
 PORTVERSION=	1.10.1
 CATEGORIES=	mail
-PORTREVISION=	1
+PORTREVISION=	2
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Mail framework for C language

@@ -1,6 +1,7 @@
 PORTNAME=	at-spi2-atk
 PORTVERSION=	2.26.2
 DISTVERSIONSUFFIX=	-1.el7
+PORTREVISION=	1
 CATEGORIES=	accessibility linux
 
 MAINTAINER=	emulation@FreeBSD.org

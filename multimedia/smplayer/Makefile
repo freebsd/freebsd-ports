@@ -1,5 +1,6 @@
 PORTNAME=	smplayer
 DISTVERSION=	26.8.29
+PORTREVISION=	1
 CATEGORIES=	multimedia audio kde
 MASTER_SITES=	https://github.com/${PORTNAME}-dev/${PORTNAME}/releases/download/v${DISTVERSION}/
 

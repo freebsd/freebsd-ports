@@ -1,5 +1,6 @@
 PORTNAME=	Horde_Routes
 PORTVERSION=	2.0.5
+PORTREVISION=	1
 CATEGORIES=	www pear
 MASTER_SITES=	http://pear.horde.org/get/
 

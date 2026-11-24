@@ -1,6 +1,6 @@
 PORTNAME=	tmux
 DISTVERSION=	2.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/tmux/tmux/releases/download/${PORTVERSION}/
 PKGNAMESUFFIX=	23

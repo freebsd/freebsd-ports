@@ -1,6 +1,6 @@
 PORTNAME=	libplist
 PORTVERSION=	2.7.0
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libimobiledevice/${PORTNAME}/releases/download/${PORTVERSION}/
 

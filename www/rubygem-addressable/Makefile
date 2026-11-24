@@ -1,5 +1,6 @@
 PORTNAME=	addressable
 PORTVERSION=	2.9.2
+PORTREVISION=	1
 CATEGORIES=	www devel rubygems
 MASTER_SITES=	RG
 

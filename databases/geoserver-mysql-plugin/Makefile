@@ -1,5 +1,6 @@
 PORTNAME=	geoserver
 DISTVERSION=	3.0.0
+PORTREVISION=	1
 CATEGORIES=	databases geography java
 MASTER_SITES=	SF/${PORTNAME}/GeoServer/${PORTVERSION}/extensions
 PKGNAMESUFFIX=	-mysql-plugin

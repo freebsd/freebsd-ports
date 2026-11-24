@@ -1,5 +1,6 @@
 PORTNAME=	Horde_Http
 PORTVERSION=	2.1.7
+PORTREVISION=	1
 CATEGORIES=	www pear
 
 MAINTAINER=	horde@FreeBSD.org

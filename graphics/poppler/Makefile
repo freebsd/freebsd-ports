@@ -1,6 +1,6 @@
 PORTNAME=	poppler
 DISTVERSION=	26.04.0
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	graphics print
 MASTER_SITES=	https://poppler.freedesktop.org/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}

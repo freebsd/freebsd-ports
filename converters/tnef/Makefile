@@ -1,5 +1,6 @@
 PORTNAME=	tnef
 DISTVERSION=	1.4.18
+PORTREVISION=	1
 CATEGORIES=	converters mail
 
 MAINTAINER=	garga@FreeBSD.org

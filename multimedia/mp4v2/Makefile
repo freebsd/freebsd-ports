@@ -1,6 +1,6 @@
 PORTNAME=	mp4v2
 PORTVERSION=	2.1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/enzo1982/mp4v2/releases/download/v${PORTVERSION}/
 

@@ -1,5 +1,6 @@
 PORTNAME=	cfengine-masterfiles
 DISTVERSION=	3.29.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://cfengine-package-repos.s3.amazonaws.com/tarballs/
 

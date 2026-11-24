@@ -1,6 +1,6 @@
 PORTNAME=	collectd
 DISTVERSION=	5.12.0
-PORTREVISION=	26
+PORTREVISION=	27
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://storage.googleapis.com/collectd-tarballs/
 PKGNAMESUFFIX=	5

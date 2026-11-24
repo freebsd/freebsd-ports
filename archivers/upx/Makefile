@@ -3,6 +3,7 @@ PORTVERSION=	5.3.0
 MASTER_SITES=	https://github.com/upx/upx/releases/download/v${PORTVERSION}/
 CATEGORIES=	archivers
 DISTVERSIONSUFFIX=	-src
+PORTREVISION=	1
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ultimate Packer for eXecutables

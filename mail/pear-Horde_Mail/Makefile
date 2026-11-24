@@ -1,5 +1,6 @@
 PORTNAME=	Horde_Mail
 PORTVERSION=	2.6.6
+PORTREVISION=	1
 CATEGORIES=	mail www pear
 
 MAINTAINER=	horde@FreeBSD.org

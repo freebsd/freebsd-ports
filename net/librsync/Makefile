@@ -1,5 +1,6 @@
 PORTNAME=	librsync
 PORTVERSION=	2.3.4
+PORTREVISION=	1
 CATEGORIES=	net devel
 MASTER_SITES=	https://github.com/librsync/librsync/releases/download/v${PORTVERSION}/
 

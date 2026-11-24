@@ -1,5 +1,6 @@
 PORTNAME=	taler-merchant
 DISTVERSION=	1.5.9
+PORTREVISION=	1
 CATEGORIES=	finance
 MASTER_SITES=	http://ftpmirror.gnu.org/taler/
 

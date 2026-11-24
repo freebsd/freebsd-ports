@@ -1,6 +1,6 @@
 PORTNAME=	brlcad
 PORTVERSION=	7.32.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	cad
 MASTER_SITES=	https://github.com/BRL-CAD/brlcad/releases/download/rel-${PORTVERSION:S/./-/g}/
 

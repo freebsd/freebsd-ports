@@ -1,5 +1,6 @@
 PORTNAME=	Horde_Token
 PORTVERSION=	2.0.9
+PORTREVISION=	1
 CATEGORIES=	devel www pear
 
 MAINTAINER=	horde@FreeBSD.org

@@ -1,5 +1,6 @@
 PORTNAME=	gdk-pixbuf-extra
 DISTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 DIST_SUBDIR=	gnome
 

@@ -1,6 +1,6 @@
 PORTNAME=	json-c
 PORTVERSION=	0.19
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 #MASTER_SITES=	https://s3.amazonaws.com/json-c_releases/releases/
 

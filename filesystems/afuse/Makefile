@@ -1,7 +1,7 @@
 PORTNAME=	afuse
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	filesystems
 MASTER_SITES=	https://BSDforge.com/projects/source/sysutils/afuse/
 PKGNAMEPREFIX=	fusefs-

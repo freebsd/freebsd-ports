@@ -1,6 +1,6 @@
 PORTNAME=	unalz
 DISTVERSION=	0.66
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers
 MASTER_SITES=	https://BSDforge.com/projects/source/archivers/unalz/
 

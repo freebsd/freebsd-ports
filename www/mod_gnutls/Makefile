@@ -1,5 +1,6 @@
 PORTNAME=	mod_gnutls
 DISTVERSION=	0.13.0
+PORTREVISION=	1
 CATEGORIES=	www security
 MASTER_SITES=	https://github.com/airtower-luna/${PORTNAME}/releases/download/${PORTNAME}/${DISTVERSION}/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}

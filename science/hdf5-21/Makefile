@@ -1,5 +1,6 @@
 PORTNAME=	hdf5
 PORTVERSION=	2.1.1
+PORTREVISION=	1
 CATEGORIES=	science archivers graphics
 PKGNAMESUFFIX=	-21
 
