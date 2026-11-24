@@ -23,7 +23,6 @@
     SUBDIR += dictd-database
     SUBDIR += elffont
     SUBDIR += enscript
-    SUBDIR += fandol
     SUBDIR += fcitx
     SUBDIR += fcitx-chewing
     SUBDIR += fcitx-cloudpinyin
