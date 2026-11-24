@@ -1,6 +1,6 @@
---- development/Makefile.am.orig	2024-11-01 01:12:44.160674000 +0000
-+++ development/Makefile.am	2024-11-01 01:13:03.544363000 +0000
-@@ -1,13 +1,5 @@
+--- development/Makefile.am	2026-09-07 18:54:34 UTC
++++ development/Makefile.am
+@@ -1,13 +1,5 @@ include $(top_srcdir)/config/common.am
  include $(top_srcdir)/config/common.am
  
 -if INSTALL_MACOSX

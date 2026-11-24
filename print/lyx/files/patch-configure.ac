@@ -1,4 +1,4 @@
---- configure.ac.orig	2026-08-05 06:09:00 UTC
+--- configure.ac	2026-08-05 06:09:00 UTC
 +++ configure.ac
 @@ -318,24 +318,10 @@ AC_CONFIG_FILES([Makefile \
  

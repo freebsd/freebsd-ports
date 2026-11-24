@@ -1,4 +1,4 @@
---- Makefile.am.orig	2019-11-23 15:26:28 UTC
+--- Makefile.am	2019-11-23 15:26:28 UTC
 +++ Makefile.am
 @@ -5,14 +5,14 @@ ACLOCAL_AMFLAGS = -I m4 -I config
  MAINTAINERCLEANFILES += $(srcdir)/aclocal.m4 $(srcdir)/configure \

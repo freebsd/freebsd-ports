@@ -1,6 +1,5 @@
 PORTNAME=	lyx
-PORTVERSION=	${MAJOR_VERSION}.1
-PORTREVISION=	1
+PORTVERSION=	${MAJOR_VERSION}.3
 CATEGORIES=	print editors
 MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/${MAJOR_VERSION}.x/ \
 		http://www-ftp.lip6.fr/ftp/pub/lyx/stable/${MAJOR_VERSION}.x/ \
@@ -14,23 +13,33 @@ WWW=		https://www.lyx.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
-		libmythes-1.2.so:textproc/mythes
+LIB_DEPENDS=	libmythes-1.2.so:textproc/mythes
+
+FLAVORS=	qt5 qt6
+FLAVOR?=	${FLAVORS:[1]}
+qt6_PKGNAMESUFFIX=	-qt6
+
+CONFLICTS_INSTALL=	lyx lyx-qt6
 
 MAJOR_VERSION=	2.5
 
 USES=		autoreconf compiler:c++11-lang desktop-file-utils gmake iconv \
-		pkgconfig perl5 python:build qt:5 shebangfix tar:xz xorg
-USE_QT=		core concurrent gui svg widgets x11extras buildtools:build qmake:build
+		pkgconfig perl5 python:build qt:${FLAVOR:S/qt//} shebangfix \
+		tar:xz xorg
+_USE_QT_qt5=	core concurrent gui svg widgets x11extras buildtools:build \
+		qmake:build
+_USE_QT_qt6=	base svg
+USE_QT=		${_USE_QT_${FLAVOR}}
 USE_XORG=	xcb
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
-CONFIGURE_ARGS=	--without-included-boost \
+CONFIGURE_ARGS=	--${FLAVOR:S/qt5/disable/:S/qt6/enable/}-qt6 \
 		--without-included-mythes \
-		--with-qt-dir=${LOCALBASE}/lib/qt5 \
+		--with-qt-dir=${LOCALBASE}/lib/${FLAVOR} \
 		${ICONV_CONFIGURE_ARG} \
 		--with-extra-prefix=${LOCALBASE}
 EXTRACT_AFTER_ARGS=	--no-same-owner --no-same-permissions	\
+		--exclude '3rdparty/[!n]*'	\
 		--exclude cygwin	\
 		--exclude MacOSX	\
 		--exclude Win32
@@ -43,7 +52,10 @@ SHEBANG_FILES=	lib/configure.py \
 		lib/scripts/svg2pdftex.py \
 		lib/scripts/svg2pstex.py
 
+LDFLAGS+=	-Wl,--as-needed
 LIBS+=		-lexecinfo
+
+TEST_TARGET=	check
 
 OPTIONS_DEFINE=		ASPELL ENCHANT HUNSPELL NLS
 OPTIONS_DEFAULT=	HUNSPELL
@@ -58,6 +70,7 @@ HUNSPELL_CONFIGURE_OFF=	--without-hunspell
 HUNSPELL_LIB_DEPENDS=	libhunspell-1.7.so:textproc/hunspell
 NLS_CONFIGURE_OFF=	--disable-nls
 NLS_USES=		gettext
+NLS_VARS_OFF=		AUTORECONF_ARGS+=--exclude=autopoint
 
 post-patch:
 	@${GREP} -rl "python -tt" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -i '' 's|python -tt|${PYTHON_CMD} -tt|'

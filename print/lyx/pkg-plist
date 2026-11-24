@@ -476,6 +476,8 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/examples/Articles/Astronomy_%26_Astrophysics.lyx
 %%DATADIR%%/examples/Articles/Chess/Game_1.lyx
 %%DATADIR%%/examples/Articles/Chess/Game_2.lyx
+%%DATADIR%%/examples/Articles/Elsevier_CAS_%28Double_Column%29.lyx
+%%DATADIR%%/examples/Articles/Elsevier_CAS_%28Single_Column%29.lyx
 %%DATADIR%%/examples/Articles/Springer_Nature_Journals.lyx
 %%DATADIR%%/examples/Books/American_Mathematical_Society_%28AMS%29.lyx
 %%DATADIR%%/examples/Books/KOMA-Script_Book.lyx
@@ -3059,6 +3061,9 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/layouts/bxjsbook.layout
 %%DATADIR%%/layouts/bxjsreport.layout
 %%DATADIR%%/layouts/bxjsslide.layout
+%%DATADIR%%/layouts/cas-common.inc
+%%DATADIR%%/layouts/cas-dc.layout
+%%DATADIR%%/layouts/cas-sc.layout
 %%DATADIR%%/layouts/chess.layout
 %%DATADIR%%/layouts/chessboard.module
 %%DATADIR%%/layouts/cl2emult.layout
