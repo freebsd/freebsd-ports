@@ -1,3 +1,44 @@
+  <vuln vid="8c970d0a-e7ef-11f1-b097-3c7c3fba4204">
+    <topic>py-py7zr -- multiple vulnerabilities</topic>
+    <affects>
+	<package>
+	  <name>py311-py7zr</name>
+	  <name>py312-py7zr</name>
+	  <name>py313-py7zr</name>
+	  <name>py313t-py7zr</name>
+	  <name>py314-py7zr</name>
+	  <name>py314t-py7zr</name>
+	  <name>py315-py7zr</name>
+	  <range><lt>1.1.4</lt></range>
+	</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Py7zr Project reports:</p>
+	<blockquote cite="https://py7zr.readthedocs.io/en/v1.1.4/Changelog.html">
+	  <ul>
+	    <li>CVE-2026-23879: Arbitrary File Write Vulnerability in py7zr (high severity).</li>
+	    <li>CVE-2026-55206: O(n^2) algorithmic complexity DoS in PackInfo._read() in py7zr.</li>
+	    <li>CVE-2026-55195: Decompression bomb (zip bomb) denial of service via unchecked extraction size.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-23879</cvename>
+      <cvename>CVE-2026-55206</cvename>
+      <cvename>CVE-2026-55195</cvename>
+      <url>https://py7zr.readthedocs.io/en/v1.1.4/Changelog.html</url>
+      <url>https://www.cve.org/CVERecord?id=CVE-2026-23879</url>
+      <url>https://www.cve.org/CVERecord?id=CVE-2026-55206</url>
+      <url>https://www.cve.org/CVERecord?id=CVE-2026-55195</url>
+    </references>
+    <dates>
+      <discovery>2026-10-13</discovery>
+      <entry>2026-11-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="17f4929d-e7e8-11f1-b58b-8447094a420f">
     <topic>mod_perl -- Multiple vulnerabilities</topic>
     <affects>
