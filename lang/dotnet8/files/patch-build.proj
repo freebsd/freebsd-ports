@@ -24,7 +24,7 @@
 -                            SdkSymbolsLayoutPath="$(SdkSymbolsLayout)"
 -                            FailOnMissingPDBs="true" />
 -
--    <Exec Command="tar --numeric-owner -czf $(SdkSymbolsTarball) *"
+-    <Exec Command="tar --numeric-owner --owner=2001 --group=2001 -czf $(SdkSymbolsTarball) *"
 -          WorkingDirectory="$(SdkSymbolsLayout)" />
 -
 -    <Message Importance="High" Text="Packaged sdk symbols in '$(SdkSymbolsTarball)'" />
