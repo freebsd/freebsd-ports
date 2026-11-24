@@ -1,7 +1,7 @@
 PORTNAME=	virtual_oss_ctl
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 
 MAINTAINER=	ports@FreeBSD.org
@@ -9,6 +9,9 @@ COMMENT=	Graphical control panel for the virtual OSS daemon
 WWW=		https://github.com/hselasky/virtual_oss_ctl
 
 LICENSE=	BSD2CLAUSE
+
+DEPRECATED=	Depends on unsupported Qt5
+EXPIRATION_DATE=	2027-01-01
 
 LIB_DEPENDS=	libfftw3.so:math/fftw3
 
