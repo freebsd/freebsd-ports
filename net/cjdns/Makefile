@@ -1,7 +1,6 @@
 PORTNAME=	cjdns
 DISTVERSIONPREFIX=	cjdns-v
-DISTVERSION=	22.3
-PORTREVISION=	1
+DISTVERSION=	22.4
 CATEGORIES=	net security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -43,6 +42,8 @@ post-patch:
 		${BORINGTUN_WRKSRC}/src/lib.rs
 	@${REINPLACE_CMD} -e 's|throw new Error("Unable to find a path to libsodium headers");|builder.config.includeDirs.push("${LOCALBASE}/include"); foundSodium = true;|' \
 		${WRKSRC}/node_build/make.js
+	@${REINPLACE_CMD} -e 's/(.git|build_.\*|node_build|contrib|target)/(.git|build_.*|node_build|contrib|target|cargo-crates)/' \
+		${WRKSRC}/node_build/CjdnsTest.js
 	@${REINPLACE_CMD} -e "s|builder.config.includeDirs.push('node_build/dependencies/libuv/src/');|builder.config.includeDirs.push('node_build/dependencies/libuv/src/');\\n        builder.config.includeDirs.push('cargo-crates/ring-0.16.20/include');|" \
 		${WRKSRC}/node_build/make.js
 
@@ -60,6 +61,6 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/man/cjdroute.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/man/cjdroute.conf.5 ${STAGEDIR}${PREFIX}/share/man/man5
 
-# tests as of 22.3: cjdns_sys: 15 passed, 0 failed, 5 ignored; cjdnstool: 2 passed, 0 failed, 0 ignored; doc-tests: 1 ignored
+# tests as of 22.4: cjdns_sys: 15 passed, 0 failed, 5 ignored; cjdnstool: 2 passed, 0 failed, 0 ignored; doc-tests: 1 ignored
 
 .include <bsd.port.mk>
