@@ -1,4 +1,4 @@
---- crates/zed/src/main.rs.orig	2026-11-11 16:34:27 UTC
+--- crates/zed/src/main.rs.orig	2026-11-20 15:11:38 UTC
 +++ crates/zed/src/main.rs
 @@ -22,6 +22,7 @@ use collections::HashMap;
  use client::{Client, ProxySettings, RefreshLlmTokenListener, UserStore, parse_zed_link};
@@ -60,7 +60,7 @@
          prewarm_fonts(cx);
  
          editor::init(cx);
-@@ -855,6 +863,7 @@ fn main() {
+@@ -856,6 +864,7 @@ fn main() {
          let menus = app_menus(cx);
          cx.set_menus(menus);
  
