@@ -1,3 +1,41 @@
+  <vuln vid="17f4929d-e7e8-11f1-b58b-8447094a420f">
+    <topic>mod_perl -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>ap24-mod_perl</name>
+	<range><lt>2.0.14,3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Apache mod_perl project reports:</p>
+	<blockquote cite="https://lists.apache.org/thread.html/rlkm5t9fd8z81w9o4c4srn6mx3tsg3w9">
+	  <ul><li>CVE-2026-116799: Apache Perl: OOB read</li>
+	  <li>CVE-2026-116772: Apache Perl: OOB read</li>
+	  <li>CVE-2026-116043: Apache Perl: NULL-pointer dereference</li>
+	  <li>CVE-2026-116032: Apache Perl: Stack buffer overflow</li>
+	  <li>CVE-2026-116005: Apache Perl: Fixed-size stack buffer overflow</li></ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-116799</cvename>
+      <cvename>CVE-2026-116772</cvename>
+      <cvename>CVE-2026-116043</cvename>
+      <cvename>CVE-2026-116032</cvename>
+      <cvename>CVE-2026-116005</cvename>
+      <url>https://lists.apache.org/thread.html/rlkm5t9fd8z81w9o4c4srn6mx3tsg3w9</url>
+      <url>https://lists.apache.org/thread.html/3dwhhrhb2dgf0cv04kohkxbwrzdv7xf5</url>
+      <url>https://lists.apache.org/thread.html/vxwygm9hzt1hodz7pt73lvbmrwxl16z7</url>
+      <url>https://lists.apache.org/thread.html/zkbvtt0y3tz04qhrbdhdvn4jttptxsvj</url>
+      <url>https://lists.apache.org/thread.html/r4z6cylvypbv2tc4ty4h964poyfj14g8</url>
+    </references>
+    <dates>
+      <discovery>2026-11-23</discovery>
+      <entry>2026-11-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="cee7773d-e7dd-11f1-9b74-3497f65b111b">
     <topic>nginx -- excessive CPU usage with TLS 1.3 early data</topic>
     <affects>
