@@ -1,6 +1,6 @@
---- packages/app-desktop/gui/MainScreen.tsx.orig	2026-09-07 07:35:35 UTC
+--- packages/app-desktop/gui/MainScreen.tsx.orig	2026-11-19 16:09:35 UTC
 +++ packages/app-desktop/gui/MainScreen.tsx
-@@ -637,7 +637,7 @@ class MainScreenComponent extends React.Component<Prop
+@@ -668,7 +668,7 @@ class MainScreenComponent extends React.Component<Prop
  						this.props.syncTargetAppMinVersion,
  					),
  				);
