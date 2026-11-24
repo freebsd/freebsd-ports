@@ -1,12 +1,15 @@
 PORTNAME=	tarsnap-gui
 PORTVERSION=	1.0.2
-PORTREVISION=	4
 DISTVERSIONPREFIX=	v
+PORTREVISION=	5
 CATEGORIES=	sysutils
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross platform GUI for the Tarsnap command line client
 WWW=		https://github.com/Tarsnap/tarsnap-gui/wiki
+
+DEPRECATED=	Depends on unsupported Qt5
+EXPIRATION_DATE=	2027-01-01
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Tarsnap
