@@ -1,6 +1,17 @@
 --- Makefile.in.orig	2026-07-04 19:14:43 UTC
 +++ Makefile.in
-@@ -265,7 +265,7 @@ SRC7	= mapmalloc.c malloc.c
+@@ -161,9 +161,7 @@ FEATURES	= -DLISPCODE -DCHDIR -DFASTTAG -DUCVISUAL -DM
+ # (wchar.h, wctype.h, btowc() etc.) which is not provided by older
+ # compilation environments.
+ #
+-REINC	= -I./libuxre -DUXRE
+-RELIB	= -L./libuxre -luxre
+-RETGT	= libuxre/libuxre.a
++REINC	= -DUXRE -DREG_ANGLES=0 -DNO_BE_BACKSLASH
+ 
+ #
+ # VMUNIX should be correct for any modern Unix.
+@@ -265,7 +263,7 @@ SRC7	= mapmalloc.c malloc.c
  .SUFFIXES: .o .c
  .c.o: ; $(CC) $(CCFLAGS) -c $<
  
@@ -9,7 +20,7 @@
  
  ex: $(OBJS) $(RETGT) $(TLIB)
  	$(CC) -o ex $(LDFLAGS) $(DEFINES) $(OBJS) $(LDADD) $(WARN) $(TERMLIB) \
-@@ -316,7 +316,6 @@ install-man:
+@@ -316,7 +314,6 @@ install-man:
  	ln -s ex.1 $(DESTDIR)$(MANDIR)/man1/edit.1
  	ln -s vi.1 $(DESTDIR)$(MANDIR)/man1/vedit.1
  	ln -s vi.1 $(DESTDIR)$(MANDIR)/man1/view.1
@@ -17,7 +28,16 @@
  
  install: all install-man
  	rm -f $(DESTDIR)$(BINDIR)/ex $(DESTDIR)$(BINDIR)/edit \
-@@ -339,7 +338,6 @@ install: all install-man
+@@ -331,7 +328,7 @@ install: all install-man
+ 		mv $(DESTDIR)$(BINDIR)/ex $(DESTDIR)$(BINDIR)/ex.old.$$$$; \
+ 		rm -f $(DESTDIR)$(BINDIR)/ex.old.$$$$; \
+ 	fi
+-	$(INSTALL) -c $(STRIP) -m 1755 ex $(DESTDIR)$(BINDIR)/ex
++	$(INSTALL) -c $(STRIP) -m 755 ex $(DESTDIR)$(BINDIR)/ex
+ 	test -d $(DESTDIR)$(LIBEXECDIR) || mkdir -p $(DESTDIR)$(LIBEXECDIR)
+ 	$(INSTALL) -c $(STRIP) exrecover $(DESTDIR)$(LIBEXECDIR)/exrecover
+ 	$(INSTALL) -c $(STRIP) expreserve $(DESTDIR)$(LIBEXECDIR)/expreserve
+@@ -339,7 +336,6 @@ install: all install-man
  	ln -s ex $(DESTDIR)$(BINDIR)/vedit
  	ln -s ex $(DESTDIR)$(BINDIR)/vi
  	ln -s ex $(DESTDIR)$(BINDIR)/view

@@ -1,5 +1,6 @@
 PORTNAME=	vi
 DISTVERSION=	4.1.3
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	editors
 PKGNAMEPREFIX=	2bsd-
@@ -20,6 +21,9 @@ HAS_CONFIGURE=	yes
 
 PRESERVEDIR=	/var/preserve/${PKGBASE}
 PLIST_SUB=	PRESERVEDIR="${PRESERVEDIR}"
+
+post-extract:
+	@${RM} -r ${WRKSRC}/libuxre ${WRKSRC}/regexp.h
 
 post-patch:
 	${REINPLACE_CMD} -e '/^PREFIX/s,/usr/local,${PREFIX},' \
