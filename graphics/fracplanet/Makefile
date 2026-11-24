@@ -1,6 +1,6 @@
 PORTNAME=	fracplanet
 PORTVERSION=	0.5.1
-PORTREVISION=	27
+PORTREVISION=	28
 CATEGORIES=	graphics
 MASTER_SITES=	SF \
 		SF/nemysisfreebsdp/:icons
@@ -13,6 +13,9 @@ WWW=		https://sourceforge.net/projects/fracplanet/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	Depends on unsupported Qt5
+EXPIRATION_DATE=	2027-01-01
 
 LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs
 
