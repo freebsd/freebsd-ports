@@ -1,5 +1,6 @@
 PORTNAME=	xpdf
 PORTVERSION=	4.06
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics print
 MASTER_SITES=	https://dl.xpdfreader.com/
@@ -17,7 +18,7 @@ CONFLICTS_INSTALL+=	xpdf3 xpdf
 CONFLICTS_INSTALL+=	xpdf3 xpdf4
 .endif
 
-FLAVORS=	qt5 qt6
+FLAVORS=	qt6 qt5
 FLAVOR?=	${FLAVORS:[1]}
 .if !defined(MASTERDIR)
 qt5_PKGNAMESUFFIX=	4
@@ -64,6 +65,9 @@ GUI_DESC=		GUI interface
 GUI_USES=		desktop-file-utils
 
 .if ${FLAVOR} == qt5
+DEPRECATED=		Depends on unsupported Qt 5
+EXPIRATION_DATE=	2027-01-01
+
 USES+=		qt:5
 GUI_USE=	QT=buildtools:build,qmake:build,concurrent,core,gui,network,printsupport,svg,widgets
 CMAKE_ARGS+=	-DCMAKE_DISABLE_FIND_PACKAGE_Qt5Widgets:BOOL=FALSE \
