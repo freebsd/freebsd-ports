@@ -58,7 +58,7 @@ CARGO_INSTALL=	no
 
 CARGO_TARGET_DIR=	${WRKSRC}/out/rust
 
-NPM_PREFETCH_ARCHS=	amd64 aarch64
+NPM_PREFETCH_ARCHS=	amd64 aarch64 powerpc64le
 
 # Variables used by the "runner" build system
 MAKE_ENV+=	NODE_BINARY=${LOCALBASE}/bin/node \
@@ -113,8 +113,9 @@ EXTRACT_ONLY=	${_DISTFILES:Nesbuild-wasm-*:Nwasm-node-*}
 .endif
 
 .if ${ARCH} == powerpc64le
-# Resolve the platform-specific node modules for amd64, as the prefetched
-# archive in distinfo was created there.  They are not used.
+# Resolve the platform-specific node modules for amd64 (they are not used),
+# so that the archive is identical to the amd64 one.  To update distinfo,
+# copy the amd64 archive to the powerpc64le name before running makesum.
 NPM_CACHE_SETUP_CMD=	${SH} -c "${NPM_CMDNAME} config set enableGlobalCache false; \
 			${NPM_CMDNAME} config set cacheFolder \"./${NPM_MODULE_CACHE}\"; \
 			${NPM_CMDNAME} config set supportedArchitectures.cpu --json '[\"x64\"]'"
