@@ -1,0 +1,30 @@
+-- Upstream places the FreeBSD-excluded [target] table in the middle of
+-- [dependencies], so all following dependencies became non-FreeBSD only.
+--- crates/kernel-executor/Cargo.toml.orig	2026-11-23 00:00:00 UTC
++++ crates/kernel-executor/Cargo.toml	2026-11-23 00:00:00 UTC
+@@ -19,12 +19,6 @@
+     "default-engine-base",
+ ] }
+ 
+-# `vendored-protoc` ships a protoc binary via `protoc-bin-vendored`, which has
+-# no FreeBSD build. On FreeBSD, skip it and use the system `protoc` (or set
+-# `PROTOC`). See https://github.com/delta-io/delta-rs/issues/5073
+-[target.'cfg(not(target_os = "freebsd"))'.dependencies]
+-delta_kernel = { workspace = true, features = ["vendored-protoc"] }
+-
+ # The storage / file-format handlers wrap the default engine's object_store
+ # based handlers, one per object store registered in the DataFusion session.
+ delta_kernel_default_engine = { workspace = true }
+@@ -52,6 +46,12 @@
+ futures = { workspace = true }
+ tokio = { workspace = true, features = ["rt", "sync"] }
+ 
++# `vendored-protoc` ships a protoc binary via `protoc-bin-vendored`, which has
++# no FreeBSD build. On FreeBSD, skip it and use the system `protoc` (or set
++# `PROTOC`). See https://github.com/delta-io/delta-rs/issues/5073
++[target.'cfg(not(target_os = "freebsd"))'.dependencies]
++delta_kernel = { workspace = true, features = ["vendored-protoc"] }
++
+ [dev-dependencies]
+ arrow-array = { workspace = true }
+ deltalake-dat = { path = "../dat" }
