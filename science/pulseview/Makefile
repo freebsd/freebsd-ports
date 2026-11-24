@@ -1,6 +1,6 @@
 PORTNAME=	pulseview
 PORTVERSION=	0.4.2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	science cad
 MASTER_SITES=	http://sigrok.org/download/source/pulseview/
 
@@ -14,6 +14,9 @@ WWW=		https://sigrok.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	Depends on unsupported Qt5
+EXPIRATION_DATE=	2027-01-01
 
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libsigrok.so:devel/libsigrok \
