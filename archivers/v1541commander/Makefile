@@ -1,11 +1,15 @@
 PORTNAME=	v1541commander
 PORTVERSION=	1.1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	archivers emulators
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Virtual 1541 disk commander
 WWW=		https://github.com/excess-c64/v1541commander
+
+DEPRECATED=		Abandoned, depends on unsupported Qt5
+EXPIRATION_DATE=	2027-01-01
 
 LICENSE=	BSD2CLAUSE STYLEFONT
 LICENSE_COMB=	multi
