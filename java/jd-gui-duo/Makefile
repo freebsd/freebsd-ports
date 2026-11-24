@@ -1,5 +1,5 @@
 PORTNAME=	jd-gui-duo
-DISTVERSION=	2.0.117
+DISTVERSION=	2.0.118
 CATEGORIES=	java devel
 MASTER_SITES=	https://github.com/nbauma109/${PORTNAME}/releases/download/${DISTVERSION}/ \
 		https://raw.githubusercontent.com/nbauma109/${PORTNAME}/refs/tags/${DISTVERSION}/src/launch4j/resources/images/:ico

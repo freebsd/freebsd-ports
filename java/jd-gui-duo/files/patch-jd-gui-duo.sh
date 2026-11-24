@@ -1,9 +1,9 @@
---- jd-gui-duo.sh.orig	2026-07-25 16:26:55 UTC
+--- jd-gui-duo.sh.orig	2026-11-24 05:14:09 UTC
 +++ jd-gui-duo.sh
 @@ -1,9 +1,11 @@
 -#!/bin/bash
 -DIR="$(dirname "$0")"
--"$DIR/jre/bin/java" -ea \
+-exec "$DIR/jre/bin/java" -ea \
 +#!/bin/sh
 +if [ -z "${JAVA_HOME}" ]; then
 +  JAVA_HOME="%%JAVA_HOME%%"
