@@ -5822,3 +5822,4 @@ math/convertall||2026-11-20|Has expired: Newer versions use Dart/Flutter not por
 devel/ros-wstool||2026-11-23|Has expired: Upstream repo archived on June 25, 2020
 devel/ros-vcstools||2026-11-23|Has expired: Upstream repo archived on June 26, 2020
 chinese/fandol||2026-11-23|Declared obsolete by upstream
+security/openssl36||2026-11-24|Has expired: Please use security/openssl (LTS)
