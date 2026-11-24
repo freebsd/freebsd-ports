@@ -2210,6 +2210,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Enumerator/Lazy/_enumerable_collect_concat-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Enumerator/Lazy/_enumerable_drop-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Enumerator/Lazy/_enumerable_drop_while-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Enumerator/Lazy/_enumerable_each_with_index-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Enumerator/Lazy/_enumerable_filter-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Enumerator/Lazy/_enumerable_filter_map-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Enumerator/Lazy/_enumerable_find_all-i.ri
@@ -2232,6 +2233,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Enumerator/Lazy/compact-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Enumerator/Lazy/drop-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Enumerator/Lazy/drop_while-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Enumerator/Lazy/each_with_index-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Enumerator/Lazy/eager-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Enumerator/Lazy/enum_for-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Enumerator/Lazy/filter-i.ri
