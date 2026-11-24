@@ -1,0 +1,20 @@
+--- pyproject.toml.orig	2026-11-24 00:04:58 UTC
++++ pyproject.toml
+@@ -3,7 +3,7 @@ readme = "README.rst"
+ requires-python = ">=3.10"
+ description = "Pure python 7-zip library"
+ readme = "README.rst"
+-license = "LGPL-2.1-or-later"
++license = { text = "LGPL-2.1-or-later" }
+ authors = [
+     {name = "Hiroshi Miura", email = "miurahr@linux.com"},
+ ]
+@@ -95,7 +95,7 @@ Changelog = "https://py7zr.readthedocs.io/en/latest/Ch
+ Changelog = "https://py7zr.readthedocs.io/en/latest/Changelog.html"
+ 
+ [build-system]
+-requires = ["setuptools>=80", "setuptools_scm[toml]>=9.2.0"]
++requires = ["setuptools>=63", "setuptools_scm[toml]>=9.2.0"]
+ build-backend = "setuptools.build_meta"
+ 
+ [tool.setuptools_scm]
