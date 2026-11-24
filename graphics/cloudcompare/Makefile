@@ -1,7 +1,7 @@
 PORTNAME=	cloudcompare
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.13.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics
 MASTER_SITES=	https://raw.githubusercontent.com/${GH_ACCOUNT}/${GH_PROJECT}/refs/tags/v2.12.4/snap/gui/:icons
 DISTFILES=	ccViewer.png:icons cloudcompare.png:icons
@@ -18,6 +18,9 @@ WWW=		https://www.cloudcompare.org/ \
 
 LICENSE=	GPLv2+ LGPL20+
 LICENSE_COMB=	multi
+
+DEPRECATED=	Depends on unsupported Qt5
+EXPIRATION_DATE=	2027-01-01
 
 USES=		cmake gl qt:5
 
