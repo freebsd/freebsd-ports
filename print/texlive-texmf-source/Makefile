@@ -15,6 +15,8 @@ USES=		cpe perl5 python:build tar:xz tex
 CPE_VENDOR=	tug
 USE_PERL5=	build
 
+python_CMD=	${SETENV} python3
+
 CONFLICTS_INSTALL=	texlive-base-202[0-9]*
 
 NO_BUILD=	yes
@@ -28,6 +30,10 @@ do-install:
 	${TAR} -Jxf ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX} \
 		-C ${STAGEDIR}${PREFIX}/share \
 		--strip-components 1 --no-same-permission --no-same-owner
+	${FIND} ${STAGEDIR}${PREFIX}/share/texmf-dist -type f -perm +111 \
+		-exec ${GREP} -l --null '^#!/usr/bin/env python3' {} + | \
+		${XARGS} -0 ${REINPLACE_CMD} -i '' \
+		-e '1s|^#!/usr/bin/env python3|#!${PYTHON_CMD}|'
 	${FIND} -s ${STAGEDIR}${PREFIX}/share/texmf-dist -not -type d | ${SORT} | \
 		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
 	${FIND} -s ${STAGEDIR}${PREFIX}/share/texmf-dist -type d -empty | ${SORT} -r | \

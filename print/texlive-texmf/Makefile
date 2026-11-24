@@ -13,9 +13,11 @@ COMMENT=	TeX Live Typesetting System, texmf Tree
 WWW=		https://tug.org/texlive/
 
 # Reduce DEPENDS temporarily
-USES=		cpe tar:xz tex
+USES=		cpe python:env shebangfix tar:xz tex
 CPE_VENDOR=	tug
 USE_TEX=	texhash tlmgr:run
+
+python_CMD=	${SETENV} python3
 
 NO_ARCH=	yes
 NO_BUILD=	yes
@@ -29,10 +31,10 @@ do-install:
 	${TAR} -Jxf ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX} \
 		-C ${STAGEDIR}${PREFIX}/share \
 		--strip-components 1 --no-same-permission --no-same-owner
-	@${REINPLACE_CMD} -i '' -E -e '1s|/bin/python3|${python_CMD}|' \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/tex/latex/prettytok/prettytok-decode-8bit.py
-	${REINPLACE_CMD} -i '' -e '1s|/usr/bin/perl|${perl_CMD}|' \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/scripts/eolang/eolang.pl
+	${FIND} ${STAGEDIR}${PREFIX}/share/texmf-dist -type f -perm +111 \
+		-exec ${GREP} -l --null '^#!/usr/bin/env python3' {} + | \
+		${XARGS} -0 ${REINPLACE_CMD} -i '' \
+		-e '1s|^#!/usr/bin/env python3|#!${PYTHON_CMD}|'
 	# https://ctan.org/ctan-ann/id/mailman.9290.1717583628.3764.ctan-ann@ctan.org
 	${REINPLACE_CMD} -e 's|IfInstanceExistTF|IfInstanceExistsTF|g' \
 		${STAGEDIR}${PREFIX}/share/texmf-dist/tex/latex/xfrac/xfrac.sty
@@ -126,12 +128,11 @@ _maintainer-patch: _maintainer-extract
 		${WRKSRC}/texmf-dist/tex/generic/config/language.dat \
 		${WRKSRC}/texmf-dist/tex/generic/config/language.def
 	${FIND} ${WRKSRC} -type f | \
-		${XARGS} ${REINPLACE_CMD} -i '' -E -e '1s|/bin/bash|${bash_CMD}|; \
-		1s|/usr/bin/perl|${perl_CMD}|; \
-		1s|/usr/bin/env python[23]?|${python_CMD}|; \
-		1s|/usr/bin/python|${python_CMD}|; \
-		1s|/bin/python3|${python_CMD}|; \
-		1s|/usr/bin/luatex|${LOCALBASE}/bin/luatex|'
+		${XARGS} ${REINPLACE_CMD} -i '' -E -e '1s|^#![[:space:]]*(/usr)?/bin/bash|#!${bash_CMD}|; \
+		1s|^#![[:space:]]*/usr/bin/perl|#!${perl_CMD}|; \
+		1s|^#![[:space:]]*/usr/bin/env python[23]?|#!${python_CMD}|; \
+		1s|^#![[:space:]]*(/usr)?/bin/python[23]?|#!${python_CMD}|; \
+		1s|^#![[:space:]]*/usr/bin/luatex|#!${LOCALBASE}/bin/luatex|'
 
 _maintainer-dist: _maintainer-patch
 	${TAR} --options xz:compression-level=9 -Jcvf \
