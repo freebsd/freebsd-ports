@@ -1,3 +1,46 @@
+  <vuln vid="cee7773d-e7dd-11f1-9b74-3497f65b111b">
+    <topic>nginx -- excessive CPU usage with TLS 1.3 early data</topic>
+    <affects>
+      <package>
+       <name>nginx</name>
+       <name>nginx-full</name>
+       <name>nginx-lite</name>
+       <name>nginx-naxsi</name>
+       <range><lt>1.30.8,3</lt></range>
+      </package>
+      <package>
+       <name>nginx-devel</name>
+       <range><lt>1.31.10</lt></range>
+      </package>
+      <package>
+       <name>freenginx</name>
+       <range><lt>1.30.2_14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>The nginx developers report:</p>
+       <blockquote cite="https://nginx.org/en/security_advisories.html">
+       <p>
+       When using the "ssl_early_data" directive, a client might cause
+       excessive CPU usage (CVE-2026-132779).
+       </p>
+       </blockquote>
+       <p>
+       freenginx shares the affected code; the port carries the fix.
+       </p>
+     </body>
+    </description>
+    <references>
+      <url>https://nginx.org/en/security_advisories.html</url>
+      <cvename>CVE-2026-132779</cvename>
+    </references>
+    <dates>
+      <discovery>2026-11-23</discovery>
+      <entry>2026-11-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b0aa74b4-e7d8-11f1-b097-3c7c3fba4204">
     <topic>OpenEXR -- 3.4.19 fixes two vulnerabilities</topic>
     <affects>
