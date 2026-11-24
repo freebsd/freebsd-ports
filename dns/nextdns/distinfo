@@ -1,5 +1,5 @@
-TIMESTAMP = 1772144211
-SHA256 (go/dns_nextdns/nextdns-v1.47.1/v1.47.1.mod) = 9e41dcbc9bfc49d26fbde17478ed1e40410f88de4bcd0d132491c30d4ed9de44
-SIZE (go/dns_nextdns/nextdns-v1.47.1/v1.47.1.mod) = 367
-SHA256 (go/dns_nextdns/nextdns-v1.47.1/v1.47.1.zip) = ae6a7f3db30b731d354de5ac798a45434d6896c89887fe7f9732f8b9f4cecb50
-SIZE (go/dns_nextdns/nextdns-v1.47.1/v1.47.1.zip) = 365396
+TIMESTAMP = 1795478094
+SHA256 (go/dns_nextdns/nextdns-v1.50.2/v1.50.2.mod) = 9cc39f9ce614cb403069289e25ff90a4055c4ea71c987119eea217a70b81e2d9
+SIZE (go/dns_nextdns/nextdns-v1.50.2/v1.50.2.mod) = 367
+SHA256 (go/dns_nextdns/nextdns-v1.50.2/v1.50.2.zip) = 03777cf6f10ad2661b0fdc5368e742fd9c15e48882e1184637c6decf543394d5
+SIZE (go/dns_nextdns/nextdns-v1.50.2/v1.50.2.zip) = 433036

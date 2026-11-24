@@ -1,10 +1,9 @@
 PORTNAME=	nextdns
-PORTVERSION=	1.47.1
+PORTVERSION=	1.50.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	11
 CATEGORIES=	dns security
 
-MAINTAINER=	rs@nextdns.io
+MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	NextDNS DNS53 to DNS over HTTPS proxy
 WWW=		https://github.com/nextdns/nextdns
 
@@ -14,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go:modules
 GO_MODULE=	github.com/${PORTNAME}/${PORTNAME}
 GO_TARGET=	.:${PREFIX}/sbin/${PORTNAME}
+GO_BUILDFLAGS=	-ldflags "-X main.version=${PORTVERSION}"
 
 SUB_FILES=	pkg-message
 

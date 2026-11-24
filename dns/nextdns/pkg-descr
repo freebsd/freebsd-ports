@@ -1,1 +1,6 @@
-NextDNS DNS53 to DNS over HTTPS proxy
+NextDNS DNS53 to DNS over HTTPS proxy.
+
+The NextDNS CLI client forwards plain DNS queries to the NextDNS
+DNS over HTTPS resolvers. It supports conditional forwarding, client
+reporting and discovery of local client names, and can install itself
+as an rc.d service.
