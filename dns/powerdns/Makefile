@@ -134,8 +134,8 @@ ZEROMQ_MESON_TRUE=	module-remote-zeromq
 
 .if ${PORT_OPTIONS:MLMDB}
 . if ${PORT_OPTIONS:MLMDB0}
-LIB_DEPENDS+=	liblmdb0.so:databases/lmdb0
-CONFIGURE_ENV+=	PKG_CONFIG_PATH=${LOCALBASE}/lmdb0/libdata/pkgconfig
+LIB_DEPENDS+=	liblmdb.so:databases/lmdb0
+#CONFIGURE_ENV+=	PKG_CONFIG_PATH=${LOCALBASE}/lmdb0/libdata/pkgconfig
 .	else
 LIB_DEPENDS+=	liblmdb.so:databases/lmdb
 . endif
