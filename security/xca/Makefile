@@ -1,5 +1,6 @@
 PORTNAME=	xca
 PORTVERSION=	2.9.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/chris2511/xca/releases/download/RELEASE.${PORTVERSION}/
 
@@ -10,7 +11,7 @@ WWW=		https://hohnstaedt.de/xca
 LICENSE=	BSD-3-Clause
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-FLAVORS=		qt5 qt6
+FLAVORS=		qt6 qt5
 FLAVOR?=		${FLAVORS:[1]}
 FLAVORS_SUB=		yes
 qt5_PKGNAMESUFFIX=
@@ -22,6 +23,9 @@ USES=		cmake compiler:c++17-lang desktop-file-utils localbase \
 		pkgconfig shared-mime-info ssl
 
 .if ${FLAVOR} == qt5
+DEPRECATED=		Depends on unsupported Qt 5
+EXPIRATION_DATE=	2027-01-01
+
 USES+=		qt:5
 USE_QT=		core gui help qmake sql widgets buildtools:build linguist:build \
 		testlib:build
