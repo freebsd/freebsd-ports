@@ -1,5 +1,6 @@
 PORTNAME=	polkit-qt-1
 DISTVERSION=	0.201.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	KDE/stable/${PORTNAME}/
 PKGNAMESUFFIX=	-${FLAVOR}
@@ -10,8 +11,13 @@ WWW=		https://projects.kde.org/projects/kdesupport/polkit-qt-1
 
 LICENSE=	LGPL21
 
-FLAVORS=	qt5 qt6
-FLAVOR?=	qt5
+FLAVORS=	qt6 qt5
+FLAVOR?=	qt6
+
+.if ${FLAVOR} == qt5
+DEPRECATED=		Depends on unsupported Qt 5
+EXPIRATION_DATE=	2027-01-01
+.endif
 
 LIB_DEPENDS=	libpolkit-agent-1.so:sysutils/polkit
 
