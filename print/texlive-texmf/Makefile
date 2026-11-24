@@ -1,6 +1,6 @@
 PORTNAME=	texlive
 DISTVERSION=	${TEXLIVE_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	LOCAL/tex
 PKGNAMESUFFIX=	-texmf
@@ -49,6 +49,7 @@ EXCLUDE_FILES=		\*/doc/man ls-R doc dvipdfm dvipdfmx dvips \
 			fonts/cmap/dvipdfmx fonts/cmap/uptex fonts/enc/dvips \
 			fonts/map/dvipdfm fonts/map/dvipdfmx fonts/map/dvips \
 			fonts/map/luatex fonts/misc/xetex fonts/source/ptex \
+			fonts/opentype/public/fandol \
 			fonts/tfm/ptex fonts/ofm/public/japanese-otf tex/jadetex \
 			tex/lambda fonts/ovp/public/japanese-otf-uptex source \
 			fonts/tfm/public/japanese-otf fonts/vf/ptex xdvi \
@@ -136,10 +137,9 @@ _maintainer-patch: _maintainer-extract
 
 _maintainer-dist: _maintainer-patch
 	${TAR} --options xz:compression-level=9 -Jcvf \
-		${WRKDIR}/texlive-${TEXLIVE_VERSION}-texmf-freebsd.tar.xz \
-		-C ${WRKDIR} ${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
-	scp ${WRKDIR}/texlive-${TEXLIVE_VERSION}-texmf-freebsd.tar.xz \
-		bofh@freefall.freebsd.org://home/tex/public_distfiles/
+		${WRKDIR}/${DISTNAME}${EXTRACT_SUFX} -C ${WRKDIR} ${WRKSRC:T}
+	scp ${WRKDIR}/${DISTNAME}${EXTRACT_SUFX} \
+		freefall.freebsd.org:/home/tex/public_distfiles/
 
 .endif
 

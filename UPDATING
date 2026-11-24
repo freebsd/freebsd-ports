@@ -5,6 +5,22 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20261124:
+  AFFECTS: users of print/texlive-texmf
+  AUTHOR: jrm@FreeBSD.org
+
+  The Fandol Chinese fonts have been removed from print/texlive-texmf.
+
+  On FreeBSD, ctex (ctexart, ctexbook, etc.) uses Fandol unless a font set
+  is selected, and xeCJK falls back to Fandol when no CJK font is set.
+  XeLaTeX and LuaLaTeX users can install replacement fonts:
+
+    # pkg install noto-sc zh-arphicttf
+
+  and select them with \documentclass[fontset=ubuntu]{ctexart}, or set
+  fonts directly with \setCJKmainfont and related commands.  upLaTeX and
+  dvipdfmx users must configure CJK fonts manually.
+
 20261122:
   AFFECTS: users of devel/gerrit
   AUTHOR: delphij@FreeBSD.org
