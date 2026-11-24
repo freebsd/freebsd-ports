@@ -1,5 +1,6 @@
 PORTNAME=	qscintilla2
 PORTVERSION=	${QSCI2_VERSION}
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITES_QSCI2}
@@ -13,8 +14,13 @@ WWW=		https://riverbankcomputing.com/software/qscintilla/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-FLAVORS=	qt5 qt6
-FLAVOR?=	qt5
+FLAVORS=	qt6 qt5
+FLAVOR?=	${FLAVORS:[1]}
+
+.if ${FLAVOR} == qt5
+DEPRECATED=		Depends on unsupported Qt 5
+EXPIRATION_DATE=	2027-01-01
+.endif
 
 USES=		compiler:c++11-lang gl qmake pyqt:5 qt:${FLAVOR:S/qt//}
 _USE_GL_qt5=	gl
