@@ -1,7 +1,6 @@
 PORTNAME=	wandb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.31.0
-PORTREVISION=	2
+DISTVERSION=	0.31.2
 CATEGORIES=	misc # machine-learning
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -117,6 +116,8 @@ TEST_ARGS=	--disable-plugin-autoload \
 # test_convert_plots: matplotlib test times out (>60s) on this platform
 # test_launch_browser: fails when DISPLAY is set in the build environment
 # test_box3d_always_box: hypothesis deadline/timing flake (DeadlineExceeded) on this platform
+# test_*_does_not_load: requests/opentelemetry.sdk.metrics are imported by installed plugins in the test env
+# test_profiler_without_init: depends on torch, which is installed but unusable in the test env
 PYTEST_BROKEN_TESTS=	TestProgressCallback \
 			TestAzure \
 			test_registry_from_uri \
@@ -124,7 +125,10 @@ PYTEST_BROKEN_TESTS=	TestProgressCallback \
 			test_convert_plots \
 			test_launch_browser \
 			test_box3d_always_box \
-			test_agent_subprocess_with_import_readline
+			test_agent_subprocess_with_import_readline \
+			test_import_wandb_does_not_load \
+			test_cli_does_not_load \
+			test_profiler_without_init
 
 SHEBANG_GLOB=	*.py
 
@@ -148,6 +152,6 @@ post-install:
 		${MV} ${STAGEDIR}${PREFIX}/bin/wb-${PYTHON_VER} ${STAGEDIR}${PREFIX}/bin/wb; \
 	fi
 
-# tests as of 0.31.0: 3393 passed, 241 skipped, 15 deselected, 4 xfailed, 2 xpassed in 98.05s (0:01:38)
+# tests as of 0.31.2: 3518 passed, 281 skipped, 26 deselected, 4 xfailed, 2 xpassed in 85.13s (0:01:25)
 
 .include <bsd.port.mk>
