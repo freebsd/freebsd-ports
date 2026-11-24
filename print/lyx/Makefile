@@ -1,5 +1,6 @@
 PORTNAME=	lyx
 PORTVERSION=	${MAJOR_VERSION}.3
+PORTREVISION=	1
 CATEGORIES=	print editors
 MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/${MAJOR_VERSION}.x/ \
 		http://www-ftp.lip6.fr/ftp/pub/lyx/stable/${MAJOR_VERSION}.x/ \
@@ -15,11 +16,16 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libmythes-1.2.so:textproc/mythes
 
-FLAVORS=	qt5 qt6
+FLAVORS=	qt6 qt5
 FLAVOR?=	${FLAVORS:[1]}
-qt6_PKGNAMESUFFIX=	-qt6
+qt5_PKGNAMESUFFIX=	-qt5
 
-CONFLICTS_INSTALL=	lyx lyx-qt6
+.if ${FLAVOR} == qt5
+DEPRECATED=		Depends on unsupported Qt 5
+EXPIRATION_DATE=	2026-12-31
+.endif
+
+CONFLICTS_INSTALL=	lyx lyx-qt5
 
 MAJOR_VERSION=	2.5
 
