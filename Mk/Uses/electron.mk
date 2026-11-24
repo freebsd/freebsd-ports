@@ -375,13 +375,15 @@ electron-rebuild-native-node-modules-for-electron:
 			[ -f "$${path}/binding.gyp" ] || [ -f "$${path}/CMakeLists.txt" ] || [ -d "$${path}/prebuilds" ] && echo "$${name}"; \
 		done | \
 		${SORT} -u | ${TR} '\n' ' ' | ${SED} -e 's/ $$//'`; \
-	${ECHO_MSG} "===>  Rebuilding native node modules for electron"; \
-	${ECHO_MSG} "===>  ($${candidate_modules})"; \
-	cd ${ELECTRON_REBUILD_WRKSRC_ELECTRON} && \
-	${SETENV} ${MAKE_ENV} ${ELECTRON_REBUILD_ENV} \
-		${NPM_REBUILD_CMD} ${NPM_REBUILD_FLAGS} \
-			--store-dir=${WRKDIR}/node-modules-cache/${NPM_MODULE_CACHE} \
-			$${candidate_modules}
+	if [ -n "$${candidate_modules}" ]; then \
+		${ECHO_MSG} "===>  Rebuilding native node modules for electron"; \
+		${ECHO_MSG} "===>  ($${candidate_modules})"; \
+		cd ${ELECTRON_REBUILD_WRKSRC_ELECTRON} && \
+		${SETENV} ${MAKE_ENV} ${ELECTRON_REBUILD_ENV} \
+			${NPM_REBUILD_CMD} ${NPM_REBUILD_FLAGS} \
+				--store-dir=${WRKDIR}/node-modules-cache/${NPM_MODULE_CACHE} \
+				$${candidate_modules}; \
+	fi
 .      else
 	@for dir in `app-builder node-dep-tree --dir ${ELECTRON_REBUILD_WRKSRC_ELECTRON} | ${JQ_CMD} -r '.[] | { dir: .dir, name: .deps[].name } | .dir + "/" + .name'`; do \
 		for subdir in `${FIND} $${dir} -type f -name binding.gyp -exec ${DIRNAME} {} ';' 2> /dev/null`; do \
