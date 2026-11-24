@@ -1,6 +1,6 @@
-TIMESTAMP = 1795018956
-SHA256 (nginx-1.31.9.tar.gz) = a11c5eeee2e257f4478f0e649f84b0040787d277d2d3e5233952aa6b6dcb80ad
-SIZE (nginx-1.31.9.tar.gz) = 1388470
+TIMESTAMP = 1795507406
+SHA256 (nginx-1.31.10.tar.gz) = a9b690957fca84abdae8a9b52d66b1bb459282d7f01fe4b94b498ed8e977bdb3
+SIZE (nginx-1.31.10.tar.gz) = 1388715
 SHA256 (TeslaGov-ngx-http-auth-jwt-module-2.3.1_GH0.tar.gz) = a3865859a1476bd5e8a1468d9dee23d46c716b6b932649fde04238748eafe6d5
 SIZE (TeslaGov-ngx-http-auth-jwt-module-2.3.1_GH0.tar.gz) = 32459
 SHA256 (ip2location-ip2proxy-nginx-f3e7e7d_GH0.tar.gz) = 90dc4a10dd8fc4af3ffdd2cf451368eca1d3b90261ec1944ad629b2302932638
