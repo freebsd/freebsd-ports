@@ -1,9 +1,9 @@
 PORTNAME=	maki
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.4
+DISTVERSION=	0.7.3
 CATEGORIES=	devel
 
-MAINTAINER=	lbartoletti@FreeBSD.org
+MAINTAINER=	ghislain.potier@gpotier.org
 COMMENT=	Efficient AI coding agent
 WWW=		https://maki.sh
 
