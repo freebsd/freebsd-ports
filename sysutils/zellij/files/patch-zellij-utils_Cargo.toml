@@ -1,6 +1,6 @@
---- zellij-utils/Cargo.toml.orig	2026-04-05 17:50:47 UTC
+--- zellij-utils/Cargo.toml.orig	2026-11-24 06:52:44 UTC
 +++ zellij-utils/Cargo.toml
-@@ -46,7 +46,7 @@ interprocess = { workspace = true }
+@@ -49,7 +49,7 @@ interprocess = { workspace = true }
  tokio-util = { version = "0.7", default-features = false, features = ["compat", "io"] }
  log4rs = { version = "1.2.0", default-features = false, features = ["pattern_encoder", "rolling_file_appender", "compound_policy", "fixed_window_roller", "size_trigger"] }
  interprocess = { workspace = true }

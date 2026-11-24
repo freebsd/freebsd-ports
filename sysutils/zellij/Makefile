@@ -1,7 +1,6 @@
 PORTNAME=	zellij
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.45.1
-PORTREVISION=	1
+DISTVERSION=	0.46.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -24,6 +23,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	zellij-org
 CARGO_ENV=	LIBSQLITE3_SYS_USE_PKG_CONFIG=yes
 
-PLIST_FILES=	bin/zellij
+PLIST_FILES=	bin/zellij bin/zellij-terminal
+
+post-patch:
+	${REINPLACE_CMD} -e 's/, "vendored_curl"//' ${WRKSRC}/Cargo.toml
 
 .include <bsd.port.mk>

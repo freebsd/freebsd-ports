@@ -1,6 +1,6 @@
---- Cargo.lock.orig	2026-05-13 07:48:47 UTC
+--- Cargo.lock.orig	2026-11-24 06:52:44 UTC
 +++ Cargo.lock
-@@ -2325,15 +2325,6 @@ checksum = "7c87def4c32ab89d880effc9e097653c8da5d6ef28
+@@ -3448,15 +3448,6 @@ checksum = "7c87def4c32ab89d880effc9e097653c8da5d6ef28
  checksum = "7c87def4c32ab89d880effc9e097653c8da5d6ef28e6b539d313baaacfbafcbe"
  
  [[package]]
@@ -14,9 +14,9 @@
 -
 -[[package]]
  name = "openssl-sys"
- version = "0.9.111"
+ version = "0.9.118"
  source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -2341,7 +2332,6 @@ dependencies = [
+@@ -3464,7 +3455,6 @@ dependencies = [
  dependencies = [
   "cc",
   "libc",
