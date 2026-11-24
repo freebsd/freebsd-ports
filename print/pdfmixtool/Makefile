@@ -1,6 +1,6 @@
 PORTNAME=	pdfmixtool
 DISTVERSION=	1.1.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	print graphics editors
 PKGNAMESUFFIX=	-${FLAVOR}
 
@@ -14,12 +14,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libqpdf.so:print/qpdf
 qt6_BUILD_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers
 
-FLAVORS=	qt5 qt6
+FLAVORS=	qt6 qt5
 FLAVOR?=	${FLAVORS:[1]}
 
 USES=		cmake compiler:c++11-lang desktop-file-utils magick pkgconfig
 
 .if ${FLAVOR} == qt5
+DEPRECATED=		Depends on unsupported Qt 5
+EXPIRATION_DATE=	2027-01-01
+
 USES+=		qt:5
 USE_QT=		buildtools:build core gui linguisttools:build qmake:build \
 		svg widgets xml
