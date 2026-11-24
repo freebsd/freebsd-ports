@@ -1,4 +1,4 @@
-PORTREVISION=	0
+PORTREVISION=	1
 
 COMMENT=	Backup archiving recovery open sourced (traymonitor)
 
@@ -8,7 +8,7 @@ CONFLICTS=	bareos24-traymonitor bareos-traymonitor
 
 USES=		desktop-file-utils gettext-runtime pkgconfig
 
-FLAVORS=	qt5 qt6
+FLAVORS=	qt6 qt5
 FLAVOR?=	${FLAVORS:[1]}
 
 CFLAGS+=	-Wno-unused-parameter
@@ -23,6 +23,9 @@ USES+=		qt:6
 USE_QT=		base:run declarative:build tools:build
 CMAKE_ARGS+=	-Dbat-qt6=yes
 .else
+DEPRECATED=		Depends on unsupported Qt 5
+EXPIRATION_DATE=	2027-01-01
+
 PKGNAMESUFFIX=	23-traymonitor-qt5
 
 LIB_DEPENDS+=	libqwt5-qt5.so:x11-toolkits/qwt5-qt5
