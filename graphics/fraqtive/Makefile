@@ -1,7 +1,7 @@
 PORTNAME=	fraqtive
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.8.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 
 MAINTAINER=	ports@FreeBSD.org
@@ -10,6 +10,9 @@ WWW=		https://fraqtive.mimec.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	Depends on unsupported Qt5
+EXPIRATION_DATE=	2027-01-01
 
 USES=		compiler:c++11-lang dos2unix gl qmake qt:5
 USE_QT=		core gui opengl widgets xml buildtools:build
