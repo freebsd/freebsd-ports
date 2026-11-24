@@ -6,6 +6,7 @@ share/applications/io.github.totoshko88.RustConn.desktop
 share/icons/hicolor/128x128/apps/io.github.totoshko88.RustConn.png
 share/icons/hicolor/256x256/apps/io.github.totoshko88.RustConn.png
 share/icons/hicolor/scalable/apps/io.github.totoshko88.RustConn.svg
+%%NLS%%share/locale/az/LC_MESSAGES/rustconn.mo
 %%NLS%%share/locale/be/LC_MESSAGES/rustconn.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/rustconn.mo
 %%NLS%%share/locale/da/LC_MESSAGES/rustconn.mo

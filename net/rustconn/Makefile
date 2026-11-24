@@ -1,6 +1,6 @@
 PORTNAME=	rustconn
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.24.8
+DISTVERSION=	0.26.3
 PORTREVISION=	0
 CATEGORIES=	net
 
@@ -8,15 +8,13 @@ MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Modern connection manager with GTK4/Wayland-native interface
 WWW=		https://github.com/totoshko88/RustConn
 
-LICENSE=	APACHE20 BSD0CLAUSE BSD2CLAUSE BSD3CLAUSE BSL CC0-1.0 CDLA20 \
-		GPLv3 ISCL MIT MPL20 OpenSSL UNICODE UNLICENSE ZLIB
+LICENSE=	0BSD Apache-2.0 BSD-2-Clause BSD-3-Clause BSL-1.0 CC0-1.0 \
+		CDLA20 GPL-3.0-only ISCL MIT MPL-2.0 OpenSSL Unicode-3.0 \
+		Unlicense Zlib
 LICENSE_COMB=	multi
 LICENSE_NAME_CDLA20=	Community Data License Agreement – Permissive, Version 2.0
-LICENSE_NAME_UNICODE=	UNICODE, INC. LICENSE AGREEMENT - DATA FILES AND SOFTWARE
 LICENSE_TEXT_CDLA20=	See https://cdla.dev/permissive-2-0/
-LICENSE_TEXT_UNICODE=	See https://www.unicode.org/copyright.html
 LICENSE_PERMS_CDLA20=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
-LICENSE_PERMS_UNICODE=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BROKEN_i386=	does not compile
 
