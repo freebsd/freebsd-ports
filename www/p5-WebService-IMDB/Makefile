@@ -1,6 +1,6 @@
 PORTNAME=	WebService-IMDB
-PORTVERSION=	0.05
-PORTREVISION=	1
+DISTVERSION=	0.05
+PORTREVISION=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,6 +11,9 @@ WWW=		https://metacpan.org/release/WebService-IMDB
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+
+DEPRECATED=	Relies on IMDb's retired app.imdb.com API
+EXPIRATION_DATE=	2026-12-24
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Cache-Cache>=0:devel/p5-Cache-Cache \
