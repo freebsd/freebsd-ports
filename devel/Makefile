@@ -6689,7 +6689,7 @@
     SUBDIR += pylyzer
     SUBDIR += pymsteams
     SUBDIR += pyobfuscate
-    SUBDIR += pyotherside-qt5
+    SUBDIR += pyotherside
     SUBDIR += pyside6
     SUBDIR += pyside6-tools
     SUBDIR += pystring

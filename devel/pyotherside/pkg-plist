@@ -1,4 +1,3 @@
 %%QT_QMLDIR%%/io/thp/pyotherside/libpyothersideplugin.so
 %%QT_QMLDIR%%/io/thp/pyotherside/pyotherside.qmltypes
 %%QT_QMLDIR%%/io/thp/pyotherside/qmldir
-%%QT_TESTDIR%%/qtquicktests/qtquicktests

@@ -1,0 +1,7 @@
+PyOtherSide is a QML Plugin for Qt 5 and Qt 6 that provides access
+to a Python 3 interpreter from QML, allowing to create asynchronous
+mobile and Desktop UIs with Python.
+
+At its core, PyOtherSide is basically a simple layer that converts
+Qt (QML) objects to Python objects and vice versa, with focus on
+asynchronous events and continuation-passing style function calls.

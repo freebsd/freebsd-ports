@@ -5822,3 +5822,4 @@ devel/ros-vcstools||2026-11-23|Has expired: Upstream repo archived on June 26, 2
 chinese/fandol||2026-11-23|Declared obsolete by upstream
 security/openssl36||2026-11-24|Has expired: Please use security/openssl (LTS)
 security/pecl-mcrypt|security/php-mcrypt|2026-11-27|Converted to standard extension from pecl extension
+devel/pyotherside-qt5|devel/pyotherside|2026-11-28|Qt5 is deprecated, please use devel/pyotherside
