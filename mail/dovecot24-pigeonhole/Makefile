@@ -1,5 +1,6 @@
 PORTNAME=	pigeonhole
 DISTVERSION=	2.4.5
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	https://pigeonhole.dovecot.org/releases/2.4/
 PKGNAMEPREFIX=	dovecot24-

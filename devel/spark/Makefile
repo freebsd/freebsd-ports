@@ -1,6 +1,6 @@
 PORTNAME=	spark
 DISTVERSION=	3.3.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel java
 MASTER_SITES=	https://archive.apache.org/dist/${PORTNAME}/${PORTNAME}-${DISTVERSION}/ \
 		LOCAL/vvd:deps

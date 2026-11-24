@@ -1,5 +1,6 @@
 PORTNAME=		frontaccounting
 DISTVERSION=		2.4.20
+PORTREVISION=	1
 CATEGORIES=		finance www
 MASTER_SITES=		SF/${DIST_SUBDIR}/FrontAccounting%202.4/${DISTVERSION}
 DIST_SUBDIR=		frontaccounting

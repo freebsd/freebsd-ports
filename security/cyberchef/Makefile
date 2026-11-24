@@ -1,5 +1,6 @@
 PORTNAME=	cyberchef
 DISTVERSION=	11.5.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/gchq/CyberChef/releases/download/v${DISTVERSION}/
 DISTNAME=	CyberChef_8cd426dd4f40f1423912d5fad91b578a86a65112

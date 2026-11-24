@@ -1,6 +1,6 @@
 PORTNAME=	apachetop
 DISTVERSION=	0.23.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/tessus/${PORTNAME}/releases/download/${DISTVERSION}/
 

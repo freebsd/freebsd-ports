@@ -1,6 +1,6 @@
 PORTNAME=	php86
 DISTVERSION=	8.6.0RC3
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	lang devel www
 #MASTER_SITES=	PHP/distributions
 MASTER_SITES=	https://downloads.php.net/~mbeccati/ \

@@ -1,5 +1,6 @@
 PORTNAME=	repeater
 PORTVERSION=	0.17
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://freebsd.newestvision.com/ports/distfiles/
 DISTNAME=	repeater${PORTVERSION:C/\.//}

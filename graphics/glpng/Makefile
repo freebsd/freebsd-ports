@@ -1,5 +1,6 @@
 PORTNAME=	glpng
 PORTVERSION=	1.47
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://repo.or.cz/glpng.git/snapshot/
 DISTNAME=	2266ea17d0df15619e6c6e21611aa7a34f5f6833

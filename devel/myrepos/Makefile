@@ -1,5 +1,6 @@
 PORTNAME=	myrepos
 PORTVERSION=	1.20180726
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://git.joeyh.name/index.cgi/mr.git/snapshot/ \
 		https://git.kitenet.net/index.cgi/mr.git/snapshot/

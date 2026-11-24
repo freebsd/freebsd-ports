@@ -1,5 +1,6 @@
 PORTNAME=	dnstracer
 DISTVERSION=	1.10
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://www.mavetju.org/download/
 

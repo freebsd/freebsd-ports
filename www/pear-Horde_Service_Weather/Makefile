@@ -1,5 +1,6 @@
 PORTNAME=	Horde_Service_Weather
 PORTVERSION=	2.5.6
+PORTREVISION=	1
 CATEGORIES=	www pear
 
 MAINTAINER=	horde@FreeBSD.org

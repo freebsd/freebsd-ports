@@ -1,5 +1,6 @@
 PORTNAME=	Horde_Service_UrlShortener
 DISTVERSION=	2.0.3
+PORTREVISION=	1
 CATEGORIES=	www pear
 
 MAINTAINER=	horde@FreeBSD.org

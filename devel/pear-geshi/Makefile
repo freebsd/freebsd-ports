@@ -1,5 +1,6 @@
 PORTNAME=	geshi
 PORTVERSION=	1.0.9.1
+PORTREVISION=	1
 CATEGORIES=	devel pear www
 MASTER_SITES=	http://pear.geshi.org/get/
 DISTNAME=	${PORTNAME}-1.0.9.0

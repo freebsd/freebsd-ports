@@ -1,6 +1,6 @@
 PORTNAME=	pngwriter
 PORTVERSION=	0.7.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics devel
 
 MAINTAINER=	ports@FreeBSD.org

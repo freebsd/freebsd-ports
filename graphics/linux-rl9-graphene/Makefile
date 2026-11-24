@@ -1,6 +1,7 @@
 PORTNAME=	graphene
 PORTVERSION=	1.10.6
 DISTVERSIONSUFFIX=	-2.el9
+PORTREVISION=	1
 CATEGORIES=	graphics linux
 
 MAINTAINER=	emulation@FreeBSD.org

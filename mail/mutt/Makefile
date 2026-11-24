@@ -1,5 +1,6 @@
 PORTNAME=	mutt
 DISTVERSION=	2.4.3
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://ftp.mutt.org/pub/mutt/ \
 		ftp://ftp.mutt.org/pub/mutt/

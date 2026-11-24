@@ -1,6 +1,6 @@
 PORTNAME=	unrar
 PORTVERSION=	7.23
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	6
 CATEGORIES=	archivers
 MASTER_SITES=	https://www.rarlab.com/rar/

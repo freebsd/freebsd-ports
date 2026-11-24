@@ -1,5 +1,6 @@
 PORTNAME=	jhead
 PORTVERSION=	3.08
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	sunpoet@FreeBSD.org

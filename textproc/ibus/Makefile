@@ -1,6 +1,6 @@
 PORTNAME=	ibus
 DISTVERSION=	1.5.34
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 

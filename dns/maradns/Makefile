@@ -1,5 +1,6 @@
 PORTNAME=	maradns
 PORTVERSION=	3.5.0036
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	https://maradns.samiam.org/download/3.5/${PORTVERSION}/
 

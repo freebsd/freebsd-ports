@@ -1,6 +1,6 @@
 PORTNAME=	libestr
 PORTVERSION=	0.1.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	https://libestr.adiscon.com/files/download/
 

@@ -1,5 +1,6 @@
 PORTNAME=	lzma
 PORTVERSION=	26.05
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	SF/sevenzip/LZMA%20SDK/ \
 		https://www.7-zip.org/a/

@@ -1,6 +1,6 @@
 PORTNAME=	wpa_supplicant
 PORTVERSION=	2.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security net
 MASTER_SITES=	https://w1.fi/releases/
 

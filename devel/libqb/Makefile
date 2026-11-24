@@ -1,5 +1,6 @@
 PORTNAME=	libqb
 DISTVERSION=	2.0.10
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/ClusterLabs/${PORTNAME}/releases/download/v${DISTVERSION}/
 

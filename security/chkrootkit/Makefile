@@ -1,5 +1,6 @@
 PORTNAME=	chkrootkit
 PORTVERSION=	0.59
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.chkrootkit.org/pub/seg/pac/
 

@@ -1,5 +1,6 @@
 PORTNAME=	ezstream
 DISTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://downloads.xiph.org/releases/ezstream/ \
 		https://ftp.osuosl.org/pub/xiph/releases/ezstream/

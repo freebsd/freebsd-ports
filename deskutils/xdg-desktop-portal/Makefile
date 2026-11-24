@@ -1,5 +1,6 @@
 PORTNAME=	xdg-desktop-portal
 DISTVERSION=	1.22.1
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	arrowd@FreeBSD.org

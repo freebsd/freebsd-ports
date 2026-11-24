@@ -1,6 +1,6 @@
 PORTNAME=	dash
 PORTVERSION=	0.5.13.5
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	shells
 MASTER_SITES=	http://gondor.apana.org.au/~herbert/dash/files/
 

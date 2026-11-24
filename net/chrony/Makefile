@@ -1,6 +1,6 @@
 PORTNAME=	chrony
 DISTVERSION=	4.9
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://chrony-project.org/releases/
 # the signature file has pattern https://chrony-project.org/releases/chrony-${DISTVERSION}-tar-gz-asc.txt

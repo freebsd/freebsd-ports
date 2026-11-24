@@ -1,6 +1,6 @@
 PORTNAME=	wwwoffle
 PORTVERSION=	2.9j
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://www.gedanken.org.uk/software/wwwoffle/download/
 

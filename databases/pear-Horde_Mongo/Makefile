@@ -1,5 +1,6 @@
 PORTNAME=	Horde_Mongo
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	databases www pear
 
 MAINTAINER=	horde@FreeBSD.org

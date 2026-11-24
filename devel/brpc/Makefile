@@ -1,5 +1,6 @@
 PORTNAME=	brpc
 DISTVERSION=	1.16.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	daniel@morante.net

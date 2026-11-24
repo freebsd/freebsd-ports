@@ -1,5 +1,6 @@
 PORTNAME=	miniupnpd
 DISTVERSION=	2.3.11
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	http://miniupnp.free.fr/files/ \

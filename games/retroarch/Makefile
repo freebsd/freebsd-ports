@@ -1,7 +1,7 @@
 PORTNAME=	RetroArch
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.22.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games emulators
 MASTER_SITES=	https://github.com/libretro/${PORTNAME}/releases/download/v${DISTVERSION}/
 DISTNAME=	${PORTNAME:tl}-sourceonly-${DISTVERSION}

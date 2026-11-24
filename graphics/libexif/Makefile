@@ -1,5 +1,6 @@
 PORTNAME=	libexif
 PORTVERSION=	0.6.26
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/libexif/libexif/releases/download/v${PORTVERSION}/
 

@@ -1,5 +1,6 @@
 PORTNAME=	fusionpbx
 PORTVERSION=	5.3.0
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	richard2891@gmail.com

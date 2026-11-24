@@ -1,5 +1,6 @@
 PORTNAME=	pmwiki
 DISTVERSION=	2.7.3
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.pmwiki.org/pub/pmwiki/

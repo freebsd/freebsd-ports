@@ -1,5 +1,6 @@
 PORTNAME=	Horde_Autoloader
 PORTVERSION=	2.1.2
+PORTREVISION=	1
 CATEGORIES=	devel www pear
 
 MAINTAINER=	horde@FreeBSD.org

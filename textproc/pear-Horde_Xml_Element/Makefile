@@ -1,5 +1,6 @@
 PORTNAME=	Horde_Xml_Element
 PORTVERSION=	2.0.4
+PORTREVISION=	1
 CATEGORIES=	textproc www pear
 
 MAINTAINER=	horde@FreeBSD.org

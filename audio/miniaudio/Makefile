@@ -1,5 +1,6 @@
 PORTNAME=	miniaudio
 DISTVERSION=	0.11.24 # upstream sometimes doesn't tag the repository
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	audio devel
 

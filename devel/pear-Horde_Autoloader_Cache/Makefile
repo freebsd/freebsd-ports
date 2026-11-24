@@ -1,5 +1,6 @@
 PORTNAME=	Horde_Autoloader_Cache
 DISTVERSION=	2.1.4
+PORTREVISION=	1
 CATEGORIES=	devel www pear
 
 MAINTAINER=	horde@FreeBSD.org

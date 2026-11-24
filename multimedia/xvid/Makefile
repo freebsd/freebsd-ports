@@ -1,5 +1,6 @@
 PORTNAME=	xvid
 PORTVERSION=	1.3.7
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://downloads.xvid.com/downloads/

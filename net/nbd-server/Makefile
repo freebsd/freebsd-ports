@@ -1,5 +1,6 @@
 PORTNAME=	nbd
 DISTVERSION=	3.27.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/NetworkBlockDevice/${PORTNAME}/releases/download/${PORTNAME}-${DISTVERSION}/

@@ -1,6 +1,6 @@
 PORTNAME=	msgpuck
 PORTVERSION=	2.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel
 
 MAINTAINER=	balaev@tarantool.org

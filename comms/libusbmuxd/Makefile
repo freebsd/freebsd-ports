@@ -1,5 +1,6 @@
 PORTNAME=	libusbmuxd
 PORTVERSION=	2.1.1
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	https://github.com/libimobiledevice/${PORTNAME}/releases/download/${PORTVERSION}/
 

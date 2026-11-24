@@ -1,5 +1,6 @@
 PORTNAME=	yaws
 PORTVERSION=	2.3.1
+PORTREVISION=	1
 CATEGORIES=	www devel
 MASTER_SITES=	https://codeload.github.com/erlyaws/yaws/tar.gz/refs/tags/${DISTNAME}?dummy=/
 

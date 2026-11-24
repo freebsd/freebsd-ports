@@ -1,5 +1,6 @@
 PORTNAME=	view_component
 PORTVERSION=	4.12.0
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails-gitlab

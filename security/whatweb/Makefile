@@ -1,6 +1,6 @@
 PORTNAME=	whatweb
 DISTVERSION=	0.5.5-${GH_TAGNAME}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security www
 
 MAINTAINER=	jamie@catflap.org

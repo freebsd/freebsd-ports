@@ -1,6 +1,6 @@
 PORTNAME=	phpMyAdmin
 DISTVERSION=	5.2.3
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	databases www
 MASTER_SITES=	https://files.phpmyadmin.net/${PORTNAME}/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-all-languages

@@ -1,6 +1,7 @@
 PORTNAME=	liblnk
 PORTVERSION=	20240423
 DISTVERSIONPREFIX=	alpha-
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/liblnk/releases/download/${PORTVERSION}/ \
 		LOCAL/antoine

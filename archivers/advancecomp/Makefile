@@ -1,6 +1,6 @@
 PORTNAME=	advancecomp
 DISTVERSION=	2.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers
 MASTER_SITES=	https://github.com/amadvance/advancecomp/releases/download/v${DISTVERSION}/
 

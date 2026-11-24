@@ -1,5 +1,6 @@
 PORTNAME=	taler-exchange
 DISTVERSION=	1.5.2
+PORTREVISION=	1
 CATEGORIES=	finance
 MASTER_SITES=	http://ftpmirror.gnu.org/taler/
 

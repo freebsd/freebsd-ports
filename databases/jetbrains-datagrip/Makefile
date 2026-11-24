@@ -1,5 +1,6 @@
 PORTNAME=	datagrip
 DISTVERSION=	2026.1.3
+PORTREVISION=	1
 CATEGORIES=	databases java
 MASTER_SITES=	https://download-cdn.jetbrains.com/datagrip/
 PKGNAMEPREFIX=	jetbrains-

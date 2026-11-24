@@ -1,5 +1,6 @@
 PORTNAME=	MathJax
 DISTVERSION=	2.7.9
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	marko.cupac@mimar.rs

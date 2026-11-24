@@ -1,5 +1,6 @@
 PORTNAME=	opus
 DISTVERSION=	1.6.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://downloads.xiph.org/releases/opus/
 

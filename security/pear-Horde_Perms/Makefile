@@ -1,5 +1,6 @@
 PORTNAME=	Horde_Perms
 PORTVERSION=	2.1.8
+PORTREVISION=	1
 CATEGORIES=	security www pear
 
 MAINTAINER=	horde@FreeBSD.org

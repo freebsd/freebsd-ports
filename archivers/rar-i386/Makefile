@@ -1,5 +1,6 @@
 PORTNAME=	rar
 PORTVERSION=	7.01
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	https://www.rarlab.com/rar/
 DISTNAME=	rarbsd-x32-${PORTVERSION:R}${PORTVERSION:E}

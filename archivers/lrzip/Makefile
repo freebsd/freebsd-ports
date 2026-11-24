@@ -1,5 +1,6 @@
 PORTNAME=	lrzip
 DISTVERSION=	0.7.3
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	archivers
 MASTER_SITES=	https://github.com/ckolivas/${PORTNAME}/releases/download/v${DISTVERSION}/

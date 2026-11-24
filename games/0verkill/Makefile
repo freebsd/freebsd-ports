@@ -1,6 +1,6 @@
 PORTNAME=	0verkill
 PORTVERSION=	0.16
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://artax.karlin.mff.cuni.cz/~brain/0verkill/release/
 

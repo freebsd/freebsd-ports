@@ -1,6 +1,6 @@
 PORTNAME=	bchunk
 DISTVERSION=	1.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://he.fi/bchunk/
 

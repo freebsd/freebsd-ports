@@ -1,5 +1,6 @@
 PORTNAME=	libvterm
 PORTVERSION=	0.3.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://launchpad.net/libvterm/trunk/v0.3/+download/
 

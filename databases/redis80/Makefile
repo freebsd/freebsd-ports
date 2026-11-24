@@ -1,6 +1,6 @@
 PORTNAME=	redis
 DISTVERSION=	8.0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	https://download.redis.io/releases/
 PKGNAMESUFFIX=	80

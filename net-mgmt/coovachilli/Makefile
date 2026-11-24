@@ -1,6 +1,6 @@
 PORTNAME=	coovachilli
 PORTVERSION=	1.0.12
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://ap.coova.org/chilli/ \
 		http://www.geeklan.co.uk/files/ \

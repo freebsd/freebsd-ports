@@ -1,5 +1,6 @@
 PORTNAME=	dzip
 PORTVERSION=	2.9
+PORTREVISION=	1
 CATEGORIES=	archivers games
 MASTER_SITES=	http://speeddemosarchive.com/dzip/
 DISTNAME=	dz${PORTVERSION:S/.//g}src

@@ -1,6 +1,6 @@
 PORTNAME=	libast
 PORTVERSION=	0.7
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	devel
 MASTER_SITES=	http://www.eterm.org/download/ \
 		LOCAL/ehaupt

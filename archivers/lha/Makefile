@@ -1,6 +1,6 @@
 PORTNAME=	lha
 PORTVERSION=	1.14i
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/ \
 		https://ftp.dinoex.de/pub/FreeBSD/distfiles/

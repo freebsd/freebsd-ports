@@ -1,5 +1,6 @@
 PORTNAME=	ytnef
 DISTVERSION=	2.1.4
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	converters mail
 MASTER_SITES=	https://github.com/Yeraze/ytnef/releases/download/v${DISTVERSION}/

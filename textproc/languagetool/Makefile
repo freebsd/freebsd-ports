@@ -1,6 +1,7 @@
 PORTNAME=	languagetool
 DISTVERSION=	20260925
 DISTVERSIONSUFFIX=	-snapshot
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	textproc java
 MASTER_SITES=	https://languagetool.org/download/snapshots/

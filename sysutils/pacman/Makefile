@@ -1,5 +1,6 @@
 PORTNAME=	pacman
 DISTVERSION=	7.1.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://gitlab.archlinux.org/${PORTNAME}/${PORTNAME}/-/releases/v${DISTVERSION}/downloads/
 

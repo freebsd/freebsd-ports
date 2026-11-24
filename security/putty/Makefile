@@ -1,7 +1,7 @@
 PORTNAME=		putty
 # https://tartarus.org/~simon/putty-prerel-snapshots/putty-0.83~pre20250105.1e45199.tar.gz
 DISTVERSION=		0.85
-PORTREVISION=		0
+PORTREVISION=		1
 #DISTVERSIONSUFFIX=	.ec158a2
 CATEGORIES=		security
 MASTER_SITES=		http://the.earth.li/~sgtatham/putty/${PORTVERSION}/ \

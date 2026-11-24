@@ -1,6 +1,7 @@
 PORTNAME=	poco
 DISTVERSION=	1.13.3
 DISTVERSIONSUFFIX=	-all
+PORTREVISION=	1
 CATEGORIES=	devel net
 MASTER_SITES=	https://pocoproject.org/releases/${PORTNAME}-${PORTVERSION}/
 

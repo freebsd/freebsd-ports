@@ -1,5 +1,6 @@
 PORTNAME=	rar
 PORTVERSION=	7.23
+PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	archivers
 MASTER_SITES=	https://www.rarlab.com/rar/

@@ -1,5 +1,6 @@
 PORTNAME=	exempi
 DISTVERSION=	2.6.6
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	https://libopenraw.freedesktop.org/download/
 

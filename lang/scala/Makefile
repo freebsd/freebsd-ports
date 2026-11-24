@@ -1,6 +1,6 @@
 PORTNAME=	scala
 DISTVERSION=	3.3.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang java
 MASTER_SITES=	https://github.com/scala/scala3/releases/download/${DISTVERSION}/
 DISTNAME=	scala3-${DISTVERSION}

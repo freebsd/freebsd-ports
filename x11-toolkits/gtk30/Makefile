@@ -1,5 +1,6 @@
 PORTNAME=	gtk
 DISTVERSION=	3.24.52 # sync with x11-themes: gnome-themes-standard and mate-themes
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	3

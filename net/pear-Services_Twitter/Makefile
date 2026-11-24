@@ -1,5 +1,6 @@
 PORTNAME=	Services_Twitter
 PORTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	net www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org

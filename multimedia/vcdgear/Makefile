@@ -1,5 +1,6 @@
 PORTNAME=	vcdgear
 PORTVERSION=	1.6d
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.vcdgear.com/files/
 DISTNAME=	${PORTNAME}16d_i386_freebsd42

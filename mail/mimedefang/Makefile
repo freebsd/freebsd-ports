@@ -1,6 +1,6 @@
 PORTNAME=	mimedefang
 PORTVERSION=	2.86
-PORTREVISION=	1
+PORTREVISION=	2
 
 CATEGORIES=	mail
 MASTER_SITES=	https://mimedefang.org/releases/

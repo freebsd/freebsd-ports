@@ -1,6 +1,7 @@
 PORTNAME=	resteasy
 DISTVERSION=	3.15.6
 DISTVERSIONSUFFIX=	.Final
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	https://repo1.maven.org/maven2/org/jboss/resteasy/resteasy-jaxrs/${DISTVERSIONFULL}/:jaxrs
 MASTER_SITES+=	https://repo1.maven.org/maven2/org/jboss/resteasy/resteasy-jackson2-provider/${DISTVERSIONFULL}/:jackson2

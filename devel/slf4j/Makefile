@@ -1,6 +1,6 @@
 PORTNAME=	slf4j
 DISTVERSION=	1.7.36
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel java
 MASTER_SITES=	https://repo1.maven.org/maven2/org/:source1
 JARFILES=	integration jcl-over-slf4j jul-to-slf4j log4j-over-slf4j \

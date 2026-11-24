@@ -1,5 +1,6 @@
 PORTNAME=	libnsgif
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.netsurf-browser.org/libs/releases/
 EXTRACT_SUFX=	-src.tar.gz

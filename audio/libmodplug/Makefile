@@ -1,5 +1,6 @@
 PORTNAME=	libmodplug
 PORTVERSION=	0.8.9.1.r461
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org

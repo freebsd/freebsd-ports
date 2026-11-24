@@ -1,6 +1,6 @@
 PORTNAME=	bcwipe
 PORTVERSION=	1.9.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.jetico.com/linux/
 DISTNAME=	BCWipe-${PORTVERSION:S/./-/g:S/-/./}

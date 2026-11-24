@@ -1,5 +1,6 @@
 PORTNAME=	libmicrodns
 DISTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	https://github.com/videolabs/${PORTNAME}/releases/download/${DISTVERSION}/
 DISTNAME=	microdns-${DISTVERSION}

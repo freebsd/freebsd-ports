@@ -1,5 +1,6 @@
 PORTNAME=	mldonkey
 DISTVERSION=	3.1.7-2
+PORTREVISION=	1
 CATEGORIES+=	net-p2p
 MASTER_SITES=	https://github.com/ygrek/${PORTNAME}/releases/download/release-3-1-7-2/
 

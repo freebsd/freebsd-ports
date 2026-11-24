@@ -1,5 +1,6 @@
 PORTNAME=	lasso
 DISTVERSION=	2.9.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://dev.entrouvert.org/releases/lasso/
 

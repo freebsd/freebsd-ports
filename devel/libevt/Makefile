@@ -1,5 +1,6 @@
 PORTNAME=	libevt
 DISTVERSION=	alpha-20240421
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libevt/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine

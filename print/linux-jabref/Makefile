@@ -1,6 +1,7 @@
 PORTNAME=	jabref
 DISTVERSIONPREFIX=	v
 DISTVERSION=	5.3
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	print education java editors linux
 MASTER_SITES=	https://github.com/JabRef/jabref/releases/download/v${DISTVERSION}/ \

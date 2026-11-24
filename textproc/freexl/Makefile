@@ -1,5 +1,6 @@
 PORTNAME=	freexl
 DISTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	https://www.gaia-gis.it/gaia-sins/freexl-sources/
 

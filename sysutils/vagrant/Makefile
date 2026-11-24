@@ -1,6 +1,7 @@
 PORTNAME=	vagrant
 PORTVERSION=	2.4.9
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	sysutils rubygems devel
 
 MAINTAINER=	ports@FreeBSD.org

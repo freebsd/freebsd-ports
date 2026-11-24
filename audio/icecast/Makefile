@@ -1,5 +1,6 @@
 PORTNAME=	icecast
 PORTVERSION=	2.5.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	audio net
 MASTER_SITES=	https://downloads.xiph.org/releases/icecast/:source \

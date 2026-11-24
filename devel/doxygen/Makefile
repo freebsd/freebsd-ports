@@ -1,6 +1,7 @@
 PORTNAME=	doxygen
 DISTVERSIONPREFIX=	Release_
 DISTVERSION=	1.18.0
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/Release_${DISTVERSION:C/\./_/g}/ \

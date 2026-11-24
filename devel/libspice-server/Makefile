@@ -1,5 +1,6 @@
 PORTNAME=	libspice-server
 DISTVERSION=	0.16.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://www.spice-space.org/download/releases/spice-server/
 DISTNAME=	spice-${PORTVERSION}

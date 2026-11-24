@@ -1,6 +1,6 @@
 PORTNAME=	pdftohtml
 PORTVERSION=	0.40a
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/Experimental%20Versions/${PORTNAME}%20${PORTVERSION:S|a||} \
 		http://fossies.org/linux/www/

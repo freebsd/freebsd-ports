@@ -1,5 +1,6 @@
 PORTNAME=	activeresource
 PORTVERSION=	6.2.0
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 

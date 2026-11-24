@@ -1,5 +1,6 @@
 PORTNAME=	virglrenderer
 DISTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	monwarez@mailoo.org

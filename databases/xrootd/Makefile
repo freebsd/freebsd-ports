@@ -1,6 +1,6 @@
 PORTNAME=	xrootd
 DISTVERSION=	5.6.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	https://xrootd.slac.stanford.edu/download/v${DISTVERSION}/
 

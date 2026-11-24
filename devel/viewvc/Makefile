@@ -1,5 +1,6 @@
 PORTNAME=	viewvc
 DISTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	https://www.viewvc.org/downloads/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

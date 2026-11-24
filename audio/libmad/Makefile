@@ -1,5 +1,6 @@
 PORTNAME=	libmad
 PORTVERSION=	0.16.4
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://codeberg.org/tenacityteam/libmad/releases/download/${PORTVERSION}/
 

@@ -1,6 +1,6 @@
 PORTNAME=	qdbm
 PORTVERSION=	1.8.78
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	databases
 MASTER_SITES=	https://dbmx.net/qdbm/
 

@@ -1,6 +1,6 @@
 PORTNAME=	bouncycastle
 DISTVERSION=	1.83
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java security
 MASTER_SITES=	https://github.com/bcgit/bc-java/archive/refs/tags/
 DISTNAME=	r${DVERSION1}rv${DVERSION2}

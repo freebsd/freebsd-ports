@@ -1,5 +1,6 @@
 PORTNAME=	xpdf
 PORTVERSION=	4.02
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	https://xpdfreader-dl.s3.amazonaws.com/
 PKGNAMESUFFIX=	-jafont

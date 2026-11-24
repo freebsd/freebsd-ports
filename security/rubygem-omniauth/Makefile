@@ -1,5 +1,6 @@
 PORTNAME=	omniauth
 PORTVERSION=	2.1.4
+PORTREVISION=	1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 

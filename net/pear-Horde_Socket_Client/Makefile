@@ -1,5 +1,6 @@
 PORTNAME=	Horde_Socket_Client
 DISTVERSION=	2.1.4
+PORTREVISION=	1
 CATEGORIES=	net www pear
 
 MAINTAINER=	horde@FreeBSD.org

@@ -1,5 +1,6 @@
 PORTNAME=	multi_xml
 PORTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 

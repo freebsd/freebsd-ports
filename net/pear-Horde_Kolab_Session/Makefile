@@ -1,5 +1,6 @@
 PORTNAME=	Horde_Kolab_Session
 DISTVERSION=	2.0.3
+PORTREVISION=	1
 CATEGORIES=	net www pear
 
 MAINTAINER=	horde@FreeBSD.org

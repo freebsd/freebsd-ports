@@ -1,5 +1,6 @@
 PORTNAME=	burp
 PORTVERSION=	3.3.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/grke/burp/releases/download/${PORTVERSION}/
 

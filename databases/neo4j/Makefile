@@ -1,5 +1,6 @@
 PORTNAME=	neo4j
 DISTVERSION=	4.4.48
+PORTREVISION=	1
 CATEGORIES=	databases java
 MASTER_SITES=	http://dist.neo4j.org/
 DISTNAME=	${PORTNAME}-community-${DISTVERSION}-unix

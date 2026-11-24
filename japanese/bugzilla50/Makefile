@@ -1,5 +1,6 @@
 PORTNAME=	bugzilla
 PORTVERSION=	5.0.2
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://bug-ja.org/releases/5.0/ \
 		LOCAL/tota/bugzilla-ja

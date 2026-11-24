@@ -1,5 +1,6 @@
 PORTNAME=	Horde_Queue
 PORTVERSION=	1.1.5
+PORTREVISION=	1
 CATEGORIES=	devel www pear
 
 MAINTAINER=	horde@FreeBSD.org

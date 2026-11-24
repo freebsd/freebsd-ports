@@ -1,6 +1,6 @@
 PORTNAME=	mime-support
 PORTVERSION=	3.66
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	DEBIAN
 MASTER_SITE_SUBDIR=	pool/main/m/mailcap pool/main/m/media-types

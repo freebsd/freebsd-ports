@@ -1,5 +1,6 @@
 PORTNAME=	stunnel
 DISTVERSION=	5.82
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	https://www.stunnel.org/downloads/archive/5.x/ \

@@ -1,5 +1,6 @@
 PORTNAME=	libde265
 DISTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/strukturag/${PORTNAME}/releases/download/v${DISTVERSION}/
 

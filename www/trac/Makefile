@@ -1,6 +1,6 @@
 PORTNAME=	trac
 DISTVERSION=	1.6
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www devel python
 MASTER_SITES=	http://ftp.edgewall.com/pub/trac/ \
 		ftp://ftp.edgewall.com/pub/trac/

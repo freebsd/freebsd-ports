@@ -1,5 +1,6 @@
 PORTNAME=	unshield
 PORTVERSION=	1.6.2
+PORTREVISION=	1
 CATEGORIES=	archivers
 
 MAINTAINER=	sunpoet@FreeBSD.org

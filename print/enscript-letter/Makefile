@@ -1,6 +1,6 @@
 PORTNAME=	enscript
 PORTVERSION=	1.6.6
-PORTREVISION?=	4	# ?= for chinese/enscript
+PORTREVISION?=	5	# ?= for chinese/enscript
 CATEGORIES+=	print
 MASTER_SITES=	GNU
 PKGNAMESUFFIX=	-${PAPERSIZE}

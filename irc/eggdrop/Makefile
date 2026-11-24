@@ -1,6 +1,6 @@
 PORTNAME=	eggdrop
 DISTVERSION=	1.10.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc
 MASTER_SITES=	https://github.com/eggheads/${PORTNAME}/releases/download/v${DISTVERSION}/
 

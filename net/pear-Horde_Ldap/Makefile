@@ -1,5 +1,6 @@
 PORTNAME=	Horde_Ldap
 DISTVERSION=	2.4.2
+PORTREVISION=	1
 CATEGORIES=	net www pear
 
 MAINTAINER=	horde@FreeBSD.org

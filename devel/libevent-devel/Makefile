@@ -1,7 +1,7 @@
 PORTNAME=	libevent
 DISTVERSION=	2.2.1
 DISTVERSIONSUFFIX=	-alpha-dev
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/release-${DISTVERSION}-alpha/
 PKGNAMESUFFIX=	-devel

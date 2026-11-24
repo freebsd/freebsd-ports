@@ -1,5 +1,6 @@
 PORTNAME=	globalid
 PORTVERSION=	0.4.2
+PORTREVISION=	1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 

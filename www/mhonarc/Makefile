@@ -1,6 +1,6 @@
 PORTNAME=	mhonarc
 PORTVERSION=	2.6.24
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www mail
 
 MAINTAINER=	kerndtr@kerndt.com

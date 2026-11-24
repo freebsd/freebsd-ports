@@ -1,5 +1,6 @@
 PORTNAME=	libsndfile
 DISTVERSION=	1.2.2.20251216
+PORTREVISION=	1
 CATEGORIES=	audio
 #MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 

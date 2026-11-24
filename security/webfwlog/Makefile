@@ -1,5 +1,6 @@
 PORTNAME=	webfwlog
 DISTVERSION=	1.1.3
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/ \
 		http://devel.webfwlog.net/download/v1.1.x/

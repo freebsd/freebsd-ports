@@ -1,6 +1,6 @@
 PORTNAME=	augeas
 DISTVERSION=	1.14.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/hercules-team/augeas/releases/download/release-${DISTVERSION}/
 

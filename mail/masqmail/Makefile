@@ -1,6 +1,6 @@
 PORTNAME=	masqmail
 DISTVERSION=	0.3.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	http://marmaro.de/prog/masqmail/files/
 

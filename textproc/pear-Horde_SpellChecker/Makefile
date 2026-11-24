@@ -1,5 +1,6 @@
 PORTNAME=	Horde_SpellChecker
 PORTVERSION=	2.1.3
+PORTREVISION=	1
 CATEGORIES=	textproc www pear
 
 MAINTAINER=	horde@FreeBSD.org

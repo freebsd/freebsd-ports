@@ -1,5 +1,6 @@
 PORTNAME=	argyllcms
 PORTVERSION=	3.5.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://www.argyllcms.com/
 DISTNAME=	Argyll_V${PORTVERSION}_src

@@ -1,5 +1,6 @@
 PORTNAME=	django
 DISTVERSION=	6.1.3
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI \
 		https://media.djangoproject.com/releases/${PORTVERSION:R}/

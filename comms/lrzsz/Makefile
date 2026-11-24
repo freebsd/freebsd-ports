@@ -1,6 +1,6 @@
 PORTNAME=	lrzsz
 PORTVERSION=	0.12.20
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	comms
 MASTER_SITES=	http://ohse.de/uwe/releases/
 

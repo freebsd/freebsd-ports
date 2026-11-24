@@ -1,6 +1,6 @@
 PORTNAME=	yabb
 PORTVERSION=	2.6.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://www.yabbforum.com/downloads/release/
 DISTNAME=	YaBB_${PORTVERSION}

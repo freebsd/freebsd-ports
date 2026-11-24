@@ -1,6 +1,6 @@
 PORTNAME=	omniauth
 PORTVERSION=	2.1.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 # this port is a replacement for rubygem-omniauth which fixes depedency conflicts

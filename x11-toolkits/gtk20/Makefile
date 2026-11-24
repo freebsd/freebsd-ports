@@ -1,6 +1,6 @@
 PORTNAME=	gtk
 PORTVERSION=	2.24.33		# sync with graphics/gtk-update-icon-cache
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	2

@@ -1,5 +1,6 @@
 PORTNAME=	fvwm
 PORTVERSION=	2.7.0
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://github.com/fvwmorg/fvwm/releases/download/${PORTVERSION}/ \
 		http://fvwm.sourceforge.net/generated/icon_download/ \

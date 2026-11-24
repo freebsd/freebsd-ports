@@ -1,5 +1,6 @@
 PORTNAME=	redis
 DISTVERSION=	6.2.24
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://download.redis.io/releases/
 PKGNAMESUFFIX=	62

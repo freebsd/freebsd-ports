@@ -1,6 +1,7 @@
 PORTNAME=	fossil
 DISTVERSIONPREFIX=	src-
 DISTVERSION=	2.28
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	devel www
 MASTER_SITES=	https://fossil-scm.org/home/tarball/version-${DISTVERSION}/

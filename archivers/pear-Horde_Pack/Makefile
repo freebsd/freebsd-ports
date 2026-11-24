@@ -1,5 +1,6 @@
 PORTNAME=	Horde_Pack
 PORTVERSION=	1.0.7
+PORTREVISION=	1
 CATEGORIES=	archivers www pear
 
 MAINTAINER=	horde@FreeBSD.org

@@ -1,6 +1,6 @@
 PORTNAME=	libcaca
 DISTVERSION=	0.99.beta20
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/cacalabs/${PORTNAME}/releases/download/v${DISTVERSION}/
 

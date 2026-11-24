@@ -1,5 +1,6 @@
 PORTNAME=	faust
 DISTVERSION=	2.88.0
+PORTREVISION=	1
 CATEGORIES=	audio devel
 MASTER_SITES=	https://github.com/grame-cncm/faust/releases/download/${DISTVERSION}/
 

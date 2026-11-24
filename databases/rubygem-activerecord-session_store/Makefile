@@ -1,5 +1,6 @@
 PORTNAME=	activerecord-session_store
 PORTVERSION=	2.3.0
+PORTREVISION=	1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 

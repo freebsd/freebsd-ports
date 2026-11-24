@@ -1,5 +1,6 @@
 PORTNAME=	minitar
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	archivers rubygems
 MASTER_SITES=	RG
 

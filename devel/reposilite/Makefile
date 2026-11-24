@@ -1,6 +1,7 @@
 PORTNAME=	reposilite
 DISTVERSION=	3.6.3
 DISTVERSIONSUFFIX=	-all
+PORTREVISION=	1
 CATEGORIES=	devel www java
 MASTER_SITES=	https://maven.reposilite.com/releases/com/reposilite/reposilite/${DISTVERSION}/
 EXTRACT_SUFX=	.jar

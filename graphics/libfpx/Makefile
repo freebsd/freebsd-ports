@@ -1,6 +1,6 @@
 PORTNAME=	libfpx
 DISTVERSION=	1.3.1-10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	https://www.imagemagick.org/download/delegates/	\
 		https://mirror.aarnet.edu.au/pub/imagemagick/delegates/ \

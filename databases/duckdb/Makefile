@@ -1,6 +1,7 @@
 PORTNAME=	duckdb
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.5.6
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://github.com/postgres/postgres/archive/refs/tags/:postgres_sources
 DISTFILES=	REL_15_13.tar.gz:postgres_sources

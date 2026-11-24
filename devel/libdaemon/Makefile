@@ -1,6 +1,6 @@
 PORTNAME=	libdaemon
 PORTVERSION=	0.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://0pointer.de/lennart/projects/${PORTNAME}/
 

@@ -1,6 +1,6 @@
 PORTNAME=	lynx
 DISTVERSION=	2.8.9.1
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	https://invisible-mirror.net/archives/lynx/tarballs/ \

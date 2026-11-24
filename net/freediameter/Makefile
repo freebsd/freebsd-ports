@@ -1,5 +1,6 @@
 PORTNAME=	freediameter
 PORTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	ports@FreeBSD.org

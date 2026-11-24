@@ -1,5 +1,6 @@
 PORTNAME=	Horde_Stream_Filter
 PORTVERSION=	2.0.5
+PORTREVISION=	1
 CATEGORIES=	devel www pear
 
 MAINTAINER=	horde@FreeBSD.org

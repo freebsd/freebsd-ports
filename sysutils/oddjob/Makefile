@@ -1,5 +1,6 @@
 PORTNAME=	oddjob
 DISTVERSION=	0.34.7
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://codeberg.org/freeipa/oddjob/archive/
 

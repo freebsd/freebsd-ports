@@ -1,6 +1,7 @@
 PORTNAME=	audacity
 DISTVERSIONPREFIX=	Audacity-
 DISTVERSION=	3.7.9
+PORTREVISION=	1
 CATEGORIES=	audio
 MANVERSION=	${DISTVERSION}
 MASTER_SITES+=	https://github.com/${PORTNAME}/${PORTNAME}-manual/releases/download/v${MANVERSION}/:manual

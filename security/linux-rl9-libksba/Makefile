@@ -1,6 +1,7 @@
 PORTNAME=	libksba
 PORTVERSION=	1.5.1
 DISTVERSIONSUFFIX=	-7.el9
+PORTREVISION=	1
 CATEGORIES=	security linux
 
 MAINTAINER=	emulation@FreeBSD.org

@@ -1,5 +1,6 @@
 PORTNAME=	munge
 DISTVERSION=	0.5.18
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/dun/${PORTNAME}/releases/download/${PORTNAME}-${DISTVERSION}/
 

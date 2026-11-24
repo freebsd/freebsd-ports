@@ -1,6 +1,6 @@
 PORTNAME=	pam_ldap
 PORTVERSION=	186
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security net
 MASTER_SITES=	http://www.padl.com/download/ \
 		ftp://ftp.padl.com/pub/

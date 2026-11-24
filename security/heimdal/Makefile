@@ -1,6 +1,6 @@
 PORTNAME=	heimdal
 PORTVERSION=	7.8.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/heimdal/heimdal/releases/download/${DISTNAME}/
 

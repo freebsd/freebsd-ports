@@ -1,6 +1,6 @@
 PORTNAME=	freedroidrpg
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	https://ftp.osuosl.org/pub/freedroid/freedroidRPG-${PORTVERSION}/
 DISTNAME=	freedroidRPG-${PORTVERSION}

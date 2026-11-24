@@ -1,5 +1,6 @@
 PORTNAME=	Horde_HashTable
 PORTVERSION=	1.2.6
+PORTREVISION=	1
 CATEGORIES=	databases www pear
 
 MAINTAINER=	horde@FreeBSD.org

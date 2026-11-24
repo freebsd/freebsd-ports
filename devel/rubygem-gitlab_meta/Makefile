@@ -1,5 +1,6 @@
 PORTNAME=	gitlab_meta
 PORTVERSION=	7.0
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

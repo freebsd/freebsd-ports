@@ -1,5 +1,6 @@
 PORTNAME=	libdwarf
 PORTVERSION=	20161124
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://www.prevanders.net/	\
 		http://pkgs.fedoraproject.org/repo/pkgs/libdwarf/

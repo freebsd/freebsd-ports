@@ -1,5 +1,6 @@
 PORTNAME=	lucene
 PORTVERSION=	9.12.2	# Java 21+ required for Lucene 10.*
+PORTREVISION=	1
 CATEGORIES=	textproc java devel
 MASTER_SITES=	https://archive.apache.org/dist/${PORTNAME}/java/${PORTVERSION}/
 PKGNAMESUFFIX=	9

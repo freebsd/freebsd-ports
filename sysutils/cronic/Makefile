@@ -1,5 +1,6 @@
 PORTNAME=	cronic
 PORTVERSION=	3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://habilis.net/cronic/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}

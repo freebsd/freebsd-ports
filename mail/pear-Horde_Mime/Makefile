@@ -1,5 +1,6 @@
 PORTNAME=	Horde_Mime
 DISTVERSION=	2.11.2
+PORTREVISION=	1
 CATEGORIES=	mail www pear
 
 MAINTAINER=	horde@FreeBSD.org

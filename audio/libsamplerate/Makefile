@@ -1,6 +1,6 @@
 PORTNAME=	libsamplerate
 DISTVERSION=	0.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/libsndfile/${PORTNAME}/releases/download/${DISTVERSION}/
 

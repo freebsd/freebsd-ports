@@ -1,5 +1,6 @@
 PORTNAME=	pjsip
 DISTVERSION=	2.14.1
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	oliver.epper@gmail.com

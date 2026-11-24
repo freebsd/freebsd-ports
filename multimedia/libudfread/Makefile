@@ -1,5 +1,6 @@
 PORTNAME=	libudfread
 DISTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://get.videolan.org/${PORTNAME}/ \
 		https://download.videolan.org/pub/videolan/${PORTNAME}/

@@ -1,5 +1,6 @@
 PORTNAME=	x265
 PORTVERSION=	4.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://bitbucket.org/multicoreware/x265_git/downloads/ \
 		http://ftp.videolan.org/pub/videolan/x265/

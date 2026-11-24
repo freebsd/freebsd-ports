@@ -1,5 +1,6 @@
 PORTNAME=	matio
 PORTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/tbeu/matio/releases/download/v${PORTVERSION}/
 

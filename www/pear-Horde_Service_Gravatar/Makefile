@@ -1,5 +1,6 @@
 PORTNAME=	Horde_Service_Gravatar
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	www pear
 
 MAINTAINER=	horde@FreeBSD.org

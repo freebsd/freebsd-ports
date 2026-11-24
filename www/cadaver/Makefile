@@ -1,5 +1,6 @@
 PORTNAME=	cadaver
 DISTVERSION=	0.28
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://notroj.github.io/cadaver/
 

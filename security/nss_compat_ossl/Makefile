@@ -1,6 +1,6 @@
 PORTNAME=	nss_compat_ossl
 PORTVERSION=	0.9.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security devel
 MASTER_SITES=	http://rcritten.fedorapeople.org/
 

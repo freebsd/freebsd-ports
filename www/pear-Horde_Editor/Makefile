@@ -1,5 +1,6 @@
 PORTNAME=	Horde_Editor
 PORTVERSION=	2.0.5
+PORTREVISION=	1
 CATEGORIES=	www pear
 
 MAINTAINER=	horde@FreeBSD.org

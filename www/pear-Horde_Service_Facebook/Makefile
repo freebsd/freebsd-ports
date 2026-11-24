@@ -1,5 +1,6 @@
 PORTNAME=	Horde_Service_Facebook
 DISTVERSION=	2.0.10
+PORTREVISION=	1
 CATEGORIES=	www pear
 
 MAINTAINER=	horde@FreeBSD.org

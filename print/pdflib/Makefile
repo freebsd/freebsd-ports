@@ -1,6 +1,6 @@
 PORTNAME=	pdflib
 PORTVERSION=	7.0.5
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	print perl5 java
 MASTER_SITES=	LOCAL/ale:src	\
 		LOCAL/crees:license

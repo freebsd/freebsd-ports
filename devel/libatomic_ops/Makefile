@@ -1,5 +1,6 @@
 PORTNAME=	libatomic_ops
 DISTVERSION=	7.10.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/bdwgc/${PORTNAME}/releases/download/v${DISTVERSION}/
 

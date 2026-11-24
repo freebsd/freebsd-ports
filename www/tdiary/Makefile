@@ -1,5 +1,6 @@
 PORTNAME=	tdiary
 DISTVERSION=	5.4.0
+PORTREVISION=	1
 CATEGORIES?=	www ruby
 MASTER_SITES=	https://github.com/tdiary/tdiary-core/releases/download/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-full-v${PORTVERSION}

@@ -1,6 +1,6 @@
 PORTNAME=	engrampa
 DISTVERSION=	1.28.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers mate
 MASTER_SITES=	https://github.com/mate-desktop/${PORTNAME}/releases/download/v${DISTVERSION}/
 DIST_SUBDIR=	mate

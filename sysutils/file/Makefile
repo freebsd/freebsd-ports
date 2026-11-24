@@ -1,5 +1,6 @@
 PORTNAME=	file
 DISTVERSION=	5.46
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://astron.com/pub/file/ \
 		https://www.nic.funet.fi/pub/mirrors/ftp.astron.com/pub/file/ \

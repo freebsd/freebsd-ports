@@ -1,5 +1,6 @@
 PORTNAME=	nasm
 PORTVERSION=	2.16.03
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	devel lang
 MASTER_SITES=	https://www.nasm.us/pub/nasm/releasebuilds/${PORTVERSION}/ \

@@ -1,6 +1,7 @@
 PORTNAME=	usbmuxd
 DISTVERSION=	1.1.1-69
 DISTVERSIONSUFFIX=	-g523f700
+PORTREVISION=	1
 CATEGORIES=	comms
 #MASTER_SITES=	https://github.com/libimobiledevice/${PORTNAME}/releases/download/${DISTVERSION}/
 

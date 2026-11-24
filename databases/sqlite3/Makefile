@@ -1,5 +1,6 @@
 PORTNAME=	sqlite
 PORTVERSION=	3.54.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://sqlite.org/2026/ \

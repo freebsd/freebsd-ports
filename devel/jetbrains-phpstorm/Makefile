@@ -1,6 +1,6 @@
 PORTNAME=	phpstorm
 DISTVERSION=	2025.2.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	https://download-cdn.jetbrains.com/webide/
 PKGNAMEPREFIX=	jetbrains-

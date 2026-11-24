@@ -1,5 +1,6 @@
 PORTNAME=	discount
 PORTVERSION=	3.0.2.0
+PORTREVISION=	1
 CATEGORIES=	textproc devel
 MASTER_SITES=	https://www.pell.portland.or.us/~orc/Code/discount/
 
