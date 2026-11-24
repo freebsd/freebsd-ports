@@ -1,0 +1,9 @@
+bin/autopulse
+@owner autopulse
+@group autopulse
+@mode 0600
+@sample etc/autopulse.yml.sample
+@owner root
+@group wheel
+@mode 0644
+@sample etc/newsyslog.conf.d/autopulse.conf.sample

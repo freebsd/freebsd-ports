@@ -1,22 +1,232 @@
+# autopulse configuration
+#
+# Installed as /usr/local/etc/autopulse.yml.sample. Copy it to
+# /usr/local/etc/autopulse.yml and edit. The service does not start when the
+# file named by autopulse_config (default /usr/local/etc/autopulse.yml) is
+# missing.
+#
+# Any key can be overridden with an environment variable named
+# AUTOPULSE__<SECTION>__<KEY>, for example AUTOPULSE__APP__PORT=3000. Append
+# __FILE to read the value from a file instead:
+# AUTOPULSE__AUTH__PASSWORD__FILE=/usr/local/etc/autopulse.pw
+#
+# Without --config, autopulse looks for config.yml, config.yaml, config.toml
+# or config.json in the working directory. YAML, TOML and JSON are supported.
+
 app:
+  # Address and port of the web UI and API.
   hostname: 0.0.0.0
   port: 2875
+
+  # SQLite, the default build. The directory must exist and be writable by
+  # the autopulse user; the rc script creates /var/db/autopulse.
   database_url: sqlite:///var/db/autopulse/autopulse.db
+  # PostgreSQL, when the port is built with the POSTGRES option:
+  # database_url: postgres://autopulse:autopulse@localhost:5432/autopulse
+
+  # trace, debug, info, warn or error.
   log_level: info
 
+  # Log every API request at info level.
+  api_logging: false
+
+  # Reverse proxy prefix, for example /autopulse. Empty serves from /.
+  base_path: ""
+
+  # Set to true when the UI is served over HTTPS.
+  secure_cookies: false
+
+  # Proxy addresses whose X-Forwarded-For header is trusted.
+  trusted_proxies: []
+  #  - 127.0.0.1
+
+# Web UI and API credentials.
 auth:
+  enabled: true
   username: admin
+  # Change this before exposing the web UI.
   password: password
 
+# Global processing options.
 opts:
+  # Skip events whose path does not exist on this host.
   check_path: false
+
+  # Attempts per target before an event is marked failed.
   max_retries: 5
-  default_timer_wait: 300
+
+  # Seconds to wait before an event is processed.
+  default_timer_wait: 60
+
+  # Days after which not_found events are pruned from the database.
   cleanup_days: 10
 
+  # Leave log_file unset. The rc script runs autopulse under daemon(8) with
+  # -o /var/log/autopulse.log and newsyslog rotates that file.
+  # log_file: /var/log/autopulse.log
+  # log_file_rollover: daily    # never (default), minutely, hourly, daily
+
+  # Webhook delivery tuning.
+  webhook_retries: 3
+  webhook_timeout: 10
+  webhook_interval: 10
+
+# Paths that must exist before events are processed. While an anchor is
+# missing, events are held instead of failing against every target.
+anchors: []
+#  - /mnt/media
+
+# Triggers ------------------------------------------------------------------
+#
+# The trigger name is part of the URL the calling application uses:
+# /triggers/<name>. Keys common to every trigger:
+#
+#   rewrite:       from/to regex path rewrite, or a list of them
+#   timer:         wait: <seconds> before processing
+#   excludes:      target names to skip for this trigger
+#   filter:        include/exclude regex lists applied to the path
+#   event_timers:  extra wait per event type (arr triggers only)
+
 triggers:
+  # Always enabled. POST /triggers/manual?path=/path/to/file
   manual:
     type: manual
 
-targets: {}
-webhooks: {}
+  # Compatibility endpoint for autoscan clients. Point the autoscan trigger
+  # in the *arr application at http://autopulse:2875/triggers/autoscan
+  # autoscan:
+  #   type: autoscan
+  #   rewrite:
+  #     from: /downloads
+  #     to: /media
+
+  # sonarr:
+  #   type: sonarr
+  #   rewrite:
+  #     from: /downloads/tv
+  #     to: /media/tv
+  #   timer:
+  #     wait: 30
+  #   excludes: [ "jellyfin" ]
+  #   filter:
+  #     include: [ '\.mkv$', '\.mp4$' ]
+  #     exclude: [ '/sample/' ]
+  #   event_timers:
+  #     download:
+  #       wait: 10
+
+  # radarr:
+  #   type: radarr
+  # lidarr:
+  #   type: lidarr
+  # readarr:
+  #   type: readarr
+
+  # Bazarr calls the manual endpoint; declare it to apply its own rewrite.
+  # bazarr:
+  #   type: bazarr
+
+  # Watch directories for new or changed files.
+  # notify:
+  #   type: notify
+  #   paths:
+  #     - /media/tv
+  #     - /media/movies
+  #   recursive: true
+  #   backend: recommended    # recommended or polling (for rclone/nfs mounts)
+  #   filters: [ '\.mkv$' ]   # optional path regex allowlist
+  #   debounce: 5
+  #   excludes: [ "plex" ]
+
+# Targets -------------------------------------------------------------------
+#
+# Keys common to every target:
+#
+#   rewrite:  from/to regex path rewrite, or a list of them
+#   filter:   include/exclude regex lists applied to the path
+#   request:
+#     insecure: false       # skip TLS certificate verification
+#     timeout: 10           # seconds
+#     headers: { X-Custom: value }
+
+# targets:
+#   plex:
+#     type: plex
+#     url: http://127.0.0.1:32400
+#     token: your-plex-token
+#     refresh: true
+#     analyze: false
+
+#   jellyfin:
+#     type: jellyfin
+#     url: http://127.0.0.1:8096
+#     token: your-jellyfin-token
+
+#   emby:
+#     type: emby
+#     url: http://127.0.0.1:8096
+#     token: your-emby-token
+#     refresh_metadata: true
+#     metadata_refresh_mode: full_refresh   # none, validation_only, default, full_refresh
+#     path_match: case_sensitive            # case_sensitive or case_insensitive
+
+#   sonarr:
+#     type: sonarr
+#     url: http://127.0.0.1:8989
+#     token: your-sonarr-token
+
+#   radarr:
+#     type: radarr
+#     url: http://127.0.0.1:7878
+#     token: your-radarr-token
+
+#   fileflows:
+#     type: fileflows
+#     url: http://127.0.0.1:19200
+
+#   audiobookshelf:
+#     type: audiobookshelf
+#     url: http://127.0.0.1:13378
+#     token: your-abs-token
+
+#   tdarr:
+#     type: tdarr
+#     url: http://127.0.0.1:8265
+#     db_id: your-library-id
+
+#   # Chain to another autopulse instance.
+#   autopulse:
+#     type: autopulse
+#     url: http://other-host:2875
+#     trigger: manual
+#     auth:
+#       username: admin
+#       password: password
+
+#   # Run a script. With path, the file path is passed as the first argument.
+#   script:
+#     type: command
+#     path: /usr/local/bin/rescan.sh
+#     timeout: 30
+
+#   # Or run a shell command; FILE_PATH holds the file path.
+#   shell:
+#     type: command
+#     raw: "/usr/local/bin/rescan.sh $FILE_PATH"
+
+# Webhooks ------------------------------------------------------------------
+# webhooks:
+#   discord:
+#     type: discord
+#     url: https://discord.com/api/webhooks/...
+#     username: autopulse
+#     avatar_url: https://example.com/avatar.png
+
+#   hookshot:
+#     type: hookshot
+#     url: https://matrix.example.com/_matrix/hookshot/webhook/...
+#     username: autopulse
+
+#   json:
+#     type: json
+#     url: https://example.com/webhooks/autopulse

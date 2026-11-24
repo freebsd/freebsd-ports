@@ -1,11 +1,18 @@
---- Cargo.toml.orig	2026-01-30 17:21:33 UTC
-+++ Cargo.toml
-@@ -8,7 +8,7 @@ version = "1.5.0"
- version = "1.5.0"
+--- Cargo.toml.orig	2026-06-05 15:03:35 UTC
++++ Cargo.toml	2026-06-05 15:03:35 UTC
+@@ -8,15 +8,12 @@
+ version = "2.0.0"
  
  [features]
--vendored = ["autopulse-service/vendored", "autopulse-database/vendored"]
-+vendored = ["autopulse-database/vendored"]
- sqlite = ["autopulse-database/sqlite"]
- postgres = ["autopulse-database/postgres"]
+-vendored = ["autopulse-service/vendored", "postgres-vendored", "sqlite-vendored"]
+ sqlite = ["autopulse-database/sqlite", "autopulse-server/sqlite", "autopulse-service/sqlite"]
+ postgres = [
+     "autopulse-database/postgres",
+     "autopulse-server/postgres",
+     "autopulse-service/postgres",
+ ]
+-sqlite-vendored = ["sqlite", "autopulse-database/sqlite-vendored"]
+-postgres-vendored = ["postgres", "autopulse-database/postgres-vendored"]
  default = ["sqlite", "postgres"]
+ 
+ [dependencies]

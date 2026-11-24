@@ -1,0 +1,11 @@
+--- crates/database/Cargo.toml.orig	2026-06-05 15:03:35 UTC
++++ crates/database/Cargo.toml	2026-06-05 15:03:35 UTC
+@@ -13,7 +13,7 @@
+     "diesel_migrations/sqlite",
+     "dep:libsqlite3-sys",
+ ]
+-postgres-vendored = ["postgres", "pq-sys/bundled", "openssl-sys/vendored"]
++postgres-vendored = ["postgres", "pq-sys/bundled"]
+ sqlite-vendored = ["sqlite", "libsqlite3-sys/bundled"]
+ vendored = ["postgres-vendored", "sqlite-vendored"]
+ 

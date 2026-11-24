@@ -1,7 +1,6 @@
 PORTNAME=	autopulse
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.0
-PORTREVISION=	7
+DISTVERSION=	2.0.0
 CATEGORIES=	net-p2p
 
 MAINTAINER=	michiel@vanbaak.eu
@@ -10,9 +9,7 @@ WWW=		https://github.com/dan-online/autopulse
 
 LICENSE=	MIT
 
-LIB_DEPENDS+=	libzstd.so:archivers/zstd
-
-USES=		cargo ssl
+USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	dan-online
 USE_RC_SUBR=	autopulse
@@ -25,22 +22,23 @@ SUB_LIST=	GROUPS=${GROUPS} \
 USERS=		autopulse
 GROUPS=		autopulse
 
-PLIST_FILES=	bin/autopulse \
-		"@sample etc/autopulse.yml.sample"
-
-OPTIONS_DEFINE=	SQLITE POSTGRES
+OPTIONS_DEFINE=		POSTGRES SQLITE
 OPTIONS_DEFAULT=	SQLITE
 
 POSTGRES_DESC=	postgresql database support
-POSTGRES_USES=	pgsql
-POSTGRES_VARS=	WANT_PGSQL=client CARGO_FEATURES+=postgres
-
 SQLITE_DESC=	sqlite3 database support
+
+POSTGRES_USES=	pgsql
+POSTGRES_VARS=	CARGO_FEATURES+=postgres \
+		WANT_PGSQL=client
 SQLITE_USES=	sqlite:3
 SQLITE_VARS=	CARGO_FEATURES+=sqlite
 
 post-stage:
 	${INSTALL_DATA} ${FILESDIR}/autopulse.yml.sample \
 		${STAGEDIR}${PREFIX}/etc/autopulse.yml.sample
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d
+	${INSTALL_DATA} ${FILESDIR}/autopulse.newsyslog \
+		${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d/autopulse.conf.sample
 
 .include <bsd.port.mk>

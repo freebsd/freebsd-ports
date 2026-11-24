@@ -8,16 +8,16 @@
 
 # Add the following lines to /etc/rc.conf to enable autopulse:
 # autopulse_enable:   Set to NO by default. Set it to YES to enable it.
-# autopulse_user:     The user account autopulse daemon runs as what
-#                    you want it to be. Default: autopulse
-# autopulse_group:    The user group autopulse daemon runs as what
-#                    you want it to be. Default: autopulse
+# autopulse_user:     The user account autopulse daemon runs as.
+#                     Default: autopulse
+# autopulse_group:    The group autopulse daemon runs as.
+#                     Default: autopulse
 # autopulse_config:   Configuration file for autopulse.
-#                    Default: /usr/local/etc/autopulse.yml
+#                     Default: /usr/local/etc/autopulse.yml
 # autopulse_datadir:  Directory where autopulse user data lives.
-#                    Default: /var/db/autopulse
-# autopulse_log:      File to write logrecords to
-#                    Default: /var/log/autopulse.log
+#                     Default: /var/db/autopulse
+# autopulse_log:      File to write log records to.
+#                     Default: /var/log/autopulse.log
 
 . /etc/rc.subr
 
@@ -34,16 +34,30 @@ load_rc_config ${name}
 : ${autopulse_datadir:="/var/db/autopulse"}
 
 pidfile="/var/run/${name}/${name}.pid"
+required_files="${autopulse_config}"
 
 autopulse_command="%%PREFIX%%/bin/autopulse"
 autopulse_args="-c ${autopulse_config}"
 
 command="/usr/sbin/daemon"
-command_args="-P ${pidfile} -r -f -o ${autopulse_log} ${autopulse_command} ${autopulse_args}"
+# rc.subr already runs ${command} as ${autopulse_user} via su(1); passing
+# -u here drops privileges a second time and fails with EPERM.
+command_args="-P ${pidfile} -r -f -H -M 0640 -o ${autopulse_log} ${autopulse_command} ${autopulse_args}"
 start_precmd=autopulse_precmd
 
 autopulse_precmd()
 {
+    # Command targets shell out; a service PATH does not include LOCALBASE.
+    export PATH="%%LOCALBASE%%/bin:%%LOCALBASE%%/sbin:/bin:/usr/bin:/sbin:/usr/sbin"
+
+    # 1.5.x ran as root and left its state root-owned; hand it over once.
+    for _path in "${autopulse_datadir}" "${autopulse_config}" "${autopulse_log}"; do
+        [ -e "${_path}" ] || continue
+        [ "$(stat -f %Su "${_path}")" = "${autopulse_user}" ] && continue
+        chown -R "${autopulse_user}:${autopulse_group}" "${_path}" &&
+            echo "Handed ${_path} over to ${autopulse_user}"
+    done
+
     if [ ! -d "/var/run/${name}" ]; then
         install -d -m 0750 -o ${autopulse_user} -g ${autopulse_group} "/var/run/${name}"
     fi
@@ -53,7 +67,7 @@ autopulse_precmd()
     fi
 
     if [ ! -f "${autopulse_log}" ]; then
-        install -m 644 -o ${autopulse_user} -g ${autopulse_group} /dev/null "${autopulse_log}"
+        install -m 0640 -o ${autopulse_user} -g ${autopulse_group} /dev/null "${autopulse_log}"
     fi
 }
 
