@@ -1,5 +1,6 @@
 PORTNAME=	qca
 DISTVERSION=	2.3.12
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	KDE/stable/qca/${PORTVERSION}
 PKGNAMESUFFIX=	-${FLAVOR}
@@ -14,8 +15,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
-FLAVORS=	qt5 qt6
-FLAVOR?=	qt5
+FLAVORS=	qt6 qt5
+FLAVOR?=	${FLAVORS:[1]}
+
+.if ${FLAVOR} == qt5
+DEPRECATED=		Depends on unsupported Qt 5
+EXPIRATION_DATE=	2027-01-01
+.endif
 
 USES=		cmake:testing compiler:c++20-lang localbase:ldflags pkgconfig \
 		qt:${FLAVOR:S/qt//} tar:xz
