@@ -1,6 +1,6 @@
-TIMESTAMP = 1795018930
-SHA256 (nginx-1.30.7.tar.gz) = 2565b5c837050e958f70fb0f73c48e2bca4542ad349fd356f46fb0c72610bc6e
-SIZE (nginx-1.30.7.tar.gz) = 1333178
+TIMESTAMP = 1795507406
+SHA256 (nginx-1.30.8.tar.gz) = f867314ada32e717b949930859656c48a72dc6657aec598db58af2f98a40e1c1
+SIZE (nginx-1.30.8.tar.gz) = 1333387
 SHA256 (ip2location-ip2proxy-nginx-02ce447_GH0.tar.gz) = edbafe23087f019364f9d1c1c615fdbc5116ec727c49bf442e3e4b39441fc4cc
 SIZE (ip2location-ip2proxy-nginx-02ce447_GH0.tar.gz) = 5177
 SHA256 (kr-nginx-notice-3c95966_GH0.tar.gz) = e829fc94178cc8c91fef15a1fc44ee7ac162c13eddc0bba4c9427aaa23386885
