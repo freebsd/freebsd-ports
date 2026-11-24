@@ -35,7 +35,7 @@ DEPS_CACHE_DIR=		${WRKSRC}
 .if (${DEV_UPDATE_MODE} == "yes")
 NPM_ARGS=	install
 post-patch:
-	@${RM} ${WKRSRC}/package-lock.json
+	@${RM} ${WRKSRC}/package-lock.json
 
 post-build:
 	@cd ${DEPS_CACHE_DIR} && ${TAR} czf ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-cache-${ARCH}-${DISTVERSION}${EXTRACT_SUFX} node_modules
