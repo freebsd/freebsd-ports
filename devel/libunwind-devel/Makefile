@@ -4,6 +4,11 @@ PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-devel
 
+PATCH_SITES=	https://github.com/libunwind/libunwind/commit/
+PATCHFILES=	7bae8433c97aa3a1438cfe06ada4818dcbd2f9b0.patch?full_index=1:-p1 \
+		57ba263fbb51ffef1a46a43e8c82e2783159069f.patch?full_index=1:-p1 \
+		a99915a4e7ffc87f78f08583f53a195958d4a4c6.patch?full_index=1:-p1
+
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	Generic stack unwinding library (development version)
 WWW=		https://github.com/libunwind/libunwind \
@@ -40,7 +45,8 @@ CPE_VENDOR=	libunwind_project
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH:Mpowerpc*}
+.if ${ARCH} == powerpc
+CONFIGURE_ARGS+=	--disable-coredump
 PLIST_SUB+=	COREDUMP="@comment "
 .else
 PLIST_SUB+=	COREDUMP=""
