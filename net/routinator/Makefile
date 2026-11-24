@@ -1,7 +1,6 @@
 PORTNAME=	routinator
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.16.0
-PORTREVISION=	1
+DISTVERSION=	0.16.2
 CATEGORIES=	net
 
 MAINTAINER=	jaap@NLnetLabs.nl
@@ -40,10 +39,9 @@ RUSTFLAGS+=	-C target-feature=+sse2
 .endif
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/doc/routinator.1 \
-		${STAGEDIR}${PREFIX}/share/man/man1/
-	@${MKDIR} ${STAGEDIR}/${PREFIX}/etc/routinator
-	${INSTALL_DATA} ${WRKSRC}/etc/routinator.conf.example \
-		${STAGEDIR}${PREFIX}/etc/routinator/routinator.conf.example
+	${INSTALL_MAN} ${WRKSRC}/doc/routinator.1 ${STAGEDIR}${PREFIX}/share/man/man1/
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${WRKSRC}/etc/routinator.conf.example ${STAGEDIR}${ETCDIR}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
