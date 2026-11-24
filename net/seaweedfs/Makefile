@@ -1,5 +1,5 @@
 PORTNAME=	seaweedfs
-DISTVERSION=	4.53
+DISTVERSION=	4.55
 CATEGORIES=	net sysutils
 
 MAINTAINER=	drtr0jan@yandex.ru
@@ -13,7 +13,7 @@ USES=		cpe go:modules
 
 USE_RC_SUBR=	seaweedfs
 
-GO_MODULE=	github.com/seaweedfs/seaweedfs@v0.0.0-20261108181033-4ab66fb76da8
+GO_MODULE=	github.com/seaweedfs/seaweedfs@v0.0.0-20261123030105-a98c9e27185c
 GO_TARGET=	./weed
 GO_BUILDFLAGS=	-ldflags "-s -w -X github.com/seaweedfs/seaweedfs/weed/util/version.COMMIT=${GO_MODULE:C/.*-//}"
 CGO_CFLAGS=	-I.
