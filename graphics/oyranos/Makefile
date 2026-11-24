@@ -1,6 +1,6 @@
 PORTNAME=	oyranos
 PORTVERSION=	0.9.6
-PORTREVISION=	21
+PORTREVISION=	22
 CATEGORIES=	graphics
 
 MAINTAINER=	ports@FreeBSD.org
@@ -8,6 +8,9 @@ COMMENT=	Colour Management System (CMS)
 WWW=		http://www.oyranos.org/
 
 LICENSE=	BSD3CLAUSE
+
+DEPRECATED=	Depends on unsupported Qt5
+EXPIRATION_DATE=	2027-01-01
 
 RUN_DEPENDS=	${LOCALBASE}/share/color/icc/OpenICC/sRGB.icc:graphics/icc-profiles-openicc \
 		${LOCALBASE}/share/color/icc/basICColor/ISOcoated_v2_300_bas.ICC:graphics/icc-profiles-basiccolor \
