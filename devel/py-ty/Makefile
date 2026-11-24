@@ -1,5 +1,5 @@
 PORTNAME=	ty
-DISTVERSION=	0.0.107
+DISTVERSION=	0.0.109
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,6 +11,8 @@ WWW=		https://github.com/astral-sh/ty
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN_i386=	rustc-LLVM ERROR: out of memory
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}maturin>=1.0<2.0:devel/py-maturin@${PY_FLAVOR}
 LIB_DEPENDS=	libzstd.so:archivers/zstd
