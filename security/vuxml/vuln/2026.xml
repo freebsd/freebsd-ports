@@ -1,3 +1,33 @@
+  <vuln vid="99846c9e-e81a-11f1-b58b-8447094a420f">
+    <topic>zstd -- Information disclosure vulnerability</topic>
+    <affects>
+      <package>
+	<name>zstd</name>
+	<range><ge>1.5.1</ge><le>1.5.7_2</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>CVE-2026-124851: An information disclosure vulnerability in Zstandard
+	  versions 1.5.1 through 1.5.7 allows specially crafted compressed data
+	  to expose the contents of an internal buffer through decompressed
+	  output. The buffer is 64 KiB in the default configuration and may
+	  contain uninitialized memory or literals from earlier decompressions
+	  performed using the same decompression context. An attacker who can
+	  submit compressed data and observe the resulting output can recover
+	  the buffer's contents.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-124851</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-124851</url>
+    </references>
+    <dates>
+      <discovery>2026-11-23</discovery>
+      <entry>2026-11-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8ece53f2-e818-11f1-b58b-8447094a420f">
     <topic>OpenSSL -- Multiple vulnerabilities</topic>
     <affects>
