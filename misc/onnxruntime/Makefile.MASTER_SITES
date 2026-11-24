@@ -1,4 +1,4 @@
-MASTER_SITES=	\
+#MASTER_SITES=	\
 		https://github.com/abseil/abseil-cpp/archive/refs/tags/:abseil_cpp \
 		https://github.com/apple/coremltools/archive/refs/tags/:coremltools \
 		https://github.com/jarro2783/cxxopts/archive/:cxxopts \

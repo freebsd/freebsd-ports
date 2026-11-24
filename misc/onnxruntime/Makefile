@@ -1,5 +1,5 @@
 PORTNAME=	onnxruntime
-DISTVERSIONPREFIX=	v
+#DISTVERSIONPREFIX=	v
 DISTVERSION=	1.32.0
 CATEGORIES=	misc # machine-learning
 DIST_SUBDIR=	${PORTNAME}
@@ -19,8 +19,8 @@ BUILD_DEPENDS=	gpatch:devel/patch
 USES=		cmake:testing compiler:c++11-lang python:build
 USE_LDCONFIG=	yes
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	microsoft
+USE_GITHUB=	nodefault
+#GH_ACCOUNT=	microsoft
 GH_TUPLE=	emscripten-core:emsdk:c0bb220cb6e6f4e0fabb6f6db9efd53390ef5e56:emsdk/cmake/external/emsdk \
 		google:libprotobuf-mutator:4373c81cd7d50a65f7fbd8dc3779c0c3b1dc9d72:libprotobuf_mutator/cmake/external/libprotobuf-mutator \
 		onnx:onnx:e1ac8e74b620bbdc7ba07f0440806bd93f651a28:onnx/cmake/external/onnx
@@ -88,4 +88,6 @@ post-install: do-test-quick
 
 .include <Makefile.MASTER_SITES>
 .include <Makefile.DISTFILES>
+MASTER_SITES+=	LOCAL/yuri/
+DISTFILES+=	microsoft-onnxruntime-v1.32.0_GH0.tar.gz
 .include <bsd.port.mk>

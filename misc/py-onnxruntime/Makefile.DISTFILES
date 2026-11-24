@@ -1,4 +1,4 @@
-DISTFILES=	\
+DISTFILES_ORIG=	\
 		20250814.0.zip:abseil_cpp \
 		9.0.zip:coremltools \
 		3c73d91c0b04e2b59462f0a741be8c07024c1bc0.zip:cxxopts \
@@ -43,3 +43,5 @@ DISTFILES=	\
 		v3.10.309.1.zip:cpp_client_telemetry \
 		curl-8.21.0.tar.xz:curl \
 		mbedtls-3.6.7.tar.bz2:mbedtls \
+
+DISTFILES=	${DISTFILES_ORIG:C/:.*//}
