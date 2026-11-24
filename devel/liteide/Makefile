@@ -1,7 +1,7 @@
 PORTNAME=	liteide
 DISTVERSIONPREFIX=	x
 DISTVERSION=	38.4
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=	devel editors
 .ifmake makesum
 MASTER_SITES=	https://go.googlesource.com/sync/+archive/refs/tags/:errgroup
@@ -16,6 +16,9 @@ WWW=		https://github.com/visualfc/liteide
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE.LGPL
+
+DEPRECATED=	Depends on unsupported Qt5
+EXPIRATION_DATE=	2027-01-01
 
 USES=		dos2unix gl go:modules,no_targets,run qmake qt:5
 
