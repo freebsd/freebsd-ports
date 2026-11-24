@@ -1,4 +1,5 @@
 PORTNAME=	xxdiff
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -9,7 +10,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 FLAVOR?=	${FLAVORS:[1]}
-FLAVORS=	qt5 qt6
+FLAVORS=	qt6 qt5
 qt5_PKGNAMEPREFIX=	qt5-
 qt6_PKGNAMEPREFIX=	qt6-
 
@@ -17,6 +18,9 @@ USES=		bison gl gmake
 USE_GL=		gl
 
 .if ${FLAVOR} == qt5
+DEPRECATED=		Depends on unsupported Qt 5
+EXPIRATION_DATE=	2027-01-01
+
 USES+=		qt:5
 USE_QT=		core gui buildtools:build qmake:build widgets
 .else
