@@ -1,6 +1,6 @@
 PORTNAME=	qcustomplot
 DISTVERSION=	2.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	https://www.qcustomplot.com/release/${PORTVERSION}/
 PKGNAMESUFFIX=	-${FLAVOR}
@@ -14,8 +14,8 @@ WWW=		https://www.qcustomplot.com
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/GPL.txt
 
-FLAVORS=	qt5 qt6
-FLAVOR?=	qt5
+FLAVORS=	qt6 qt5
+FLAVOR?=	${FLAVORS:[1]}
 
 USES=		cmake compiler:c++11-lang qt:${FLAVOR:S/qt//}
 USE_QT=		${_USE_QT_${FLAVOR}}
