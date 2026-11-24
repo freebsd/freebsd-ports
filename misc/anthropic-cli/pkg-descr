@@ -1,0 +1,6 @@
+ant is the official command line tool for the Claude Platform.  It puts
+the Claude API in your terminal: send messages, manage agents and
+sessions, upload files, and script against every API endpoint.
+
+It can sign in with a Claude Console account, optionally bound to a
+workspace, and keeps named profiles that other Anthropic tools can use.
