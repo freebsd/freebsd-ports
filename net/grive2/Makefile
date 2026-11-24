@@ -11,6 +11,8 @@ WWW=		https://github.com/vitalif/grive2
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Fails to build with CMake 4
+
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 		libcurl.so:ftp/curl \
 		libexpat.so:textproc/expat2 \

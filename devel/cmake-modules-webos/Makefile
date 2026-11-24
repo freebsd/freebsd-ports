@@ -8,6 +8,8 @@ WWW=		https://freewebos.github.io/
 
 LICENSE=	APACHE20
 
+BROKEN=		Fails to build with CMake 4
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	FreeWebOS
 GH_TAGNAME=	submissions/19

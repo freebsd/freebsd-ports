@@ -10,6 +10,8 @@ WWW=		https://github.com/SGL-UT/GPSTk
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
 
+BROKEN=		Fails to build with CMake 4
+
 USES=		cmake compiler:c++11-lang
 USE_CXXSTD=	c++14
 USE_GITHUB=	yes

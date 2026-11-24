@@ -10,6 +10,7 @@ WWW=		https://github.com/keithfancher/Bomns-for-Linux
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Fails to build with CMake 4
 DEPRECATED=	Ancient software, unmaintained upstream, does not build with CMake 4
 EXPIRATION_DATE=2026-11-30
 

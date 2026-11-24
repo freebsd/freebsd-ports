@@ -12,6 +12,7 @@ WWW=		https://github.com/eiskaltdcpp/eiskaltdcpp
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		Fails to build with CMake 4
 DEPRECATED=	Last release 5 years ago, uses Qt 5, does not build with CMake 4
 EXPIRATION_DATE=2026-11-30
 
