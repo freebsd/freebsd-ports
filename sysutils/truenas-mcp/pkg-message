@@ -1,0 +1,10 @@
+[
+{ type: install
+  message: <<EOM
+This project is in early access.  Destructive operations require
+explicit confirmation, but tools, arguments and outputs may still
+change between releases.  Review each confirmation carefully and use
+caution in production environments.
+EOM
+}
+]
