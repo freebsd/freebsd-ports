@@ -23,7 +23,6 @@ include/plplot/plstrm.h
 include/plplot/plxwd.h
 include/plplot/qsastime.h
 include/plplot/qsastimedll.h
-%%QT5%%include/plplot/qt.h
 %%TCLTK%%include/plplot/tclMatrix.h
 %%WXGTK%%include/plplot/wxPLplot_nanosec.h
 %%WXGTK%%include/plplot/wxPLplotstream.h
@@ -58,8 +57,6 @@ lib/cmake/plplot/export_plplotcxx.cmake
 %%FORTRAN%%lib/cmake/plplot/export_plplotfortran.cmake
 %%LUA%%lib/cmake/plplot/export_plplotluac-release.cmake
 %%LUA%%lib/cmake/plplot/export_plplotluac.cmake
-%%QT5%%lib/cmake/plplot/export_plplotqt-release.cmake
-%%QT5%%lib/cmake/plplot/export_plplotqt.cmake
 %%TCLTK%%lib/cmake/plplot/export_plplottcltk-release.cmake
 %%TCLTK%%lib/cmake/plplot/export_plplottcltk.cmake
 %%TCLTK%%lib/cmake/plplot/export_plplottcltk_Main-release.cmake
@@ -76,8 +73,6 @@ lib/cmake/plplot/export_psttf-release.cmake
 lib/cmake/plplot/export_psttf.cmake
 lib/cmake/plplot/export_qsastime-release.cmake
 lib/cmake/plplot/export_qsastime.cmake
-%%QT5%%lib/cmake/plplot/export_qt-release.cmake
-%%QT5%%lib/cmake/plplot/export_qt.cmake
 lib/cmake/plplot/export_svg-release.cmake
 lib/cmake/plplot/export_svg.cmake
 %%TCLTK%%lib/cmake/plplot/export_tclmatrix-release.cmake
@@ -120,9 +115,6 @@ lib/libplplotcxx.so.15.0.0
 %%FORTRAN%%lib/libplplotfortran.so
 %%FORTRAN%%lib/libplplotfortran.so.0
 %%FORTRAN%%lib/libplplotfortran.so.0.2.0
-%%QT5%%lib/libplplotqt.so
-%%QT5%%lib/libplplotqt.so.2
-%%QT5%%lib/libplplotqt.so.2.0.3
 %%TCLTK%%lib/libplplottcltk.so
 %%TCLTK%%lib/libplplottcltk.so.14
 %%TCLTK%%lib/libplplottcltk.so.14.1.0
@@ -153,8 +145,6 @@ lib/plplot%%PLPLOT_VERSION%%/drivers/ps.driver_info
 lib/plplot%%PLPLOT_VERSION%%/drivers/ps.so
 lib/plplot%%PLPLOT_VERSION%%/drivers/psttf.driver_info
 lib/plplot%%PLPLOT_VERSION%%/drivers/psttf.so
-%%QT5%%lib/plplot%%PLPLOT_VERSION%%/drivers/qt.driver_info
-%%QT5%%lib/plplot%%PLPLOT_VERSION%%/drivers/qt.so
 lib/plplot%%PLPLOT_VERSION%%/drivers/svg.driver_info
 lib/plplot%%PLPLOT_VERSION%%/drivers/svg.so
 %%TCLTK%%lib/plplot%%PLPLOT_VERSION%%/drivers/tk.driver_info
@@ -169,7 +159,6 @@ lib/plplot%%PLPLOT_VERSION%%/drivers/xfig.so
 %%X11%%lib/plplot%%PLPLOT_VERSION%%/drivers/xwin.so
 libdata/pkgconfig/plplot-c++.pc
 %%FORTRAN%%libdata/pkgconfig/plplot-fortran.pc
-%%QT5%%libdata/pkgconfig/plplot-qt.pc
 %%TCLTK%%libdata/pkgconfig/plplot-tcl.pc
 %%TCLTK%%libdata/pkgconfig/plplot-tcl_Main.pc
 %%WXGTK%%libdata/pkgconfig/plplot-wxwidgets.pc
@@ -210,11 +199,7 @@ libdata/pkgconfig/plplot.pc
 %%DATADIR%%/examples/README.Chloe
 %%DATADIR%%/examples/c++/CMakeLists.txt
 %%DATADIR%%/examples/c++/Makefile
-%%QT5%%%%DATADIR%%/examples/c++/README.qt_example
 %%DATADIR%%/examples/c++/plc++demos.h
-%%QT5%%%%DATADIR%%/examples/c++/qt_PlotWindow.cpp
-%%QT5%%%%DATADIR%%/examples/c++/qt_PlotWindow.h
-%%QT5%%%%DATADIR%%/examples/c++/qt_example.cpp
 %%WXGTK%%%%DATADIR%%/examples/c++/wxPLplotDemo.cpp
 %%DATADIR%%/examples/c++/x00.cc
 %%DATADIR%%/examples/c++/x01.cc
@@ -295,7 +280,6 @@ libdata/pkgconfig/plplot.pc
 %%DATADIR%%/examples/c/x33c.c
 %%DATADIR%%/examples/c/x34c.c
 %%DATADIR%%/examples/cmake/modules/language_support.cmake
-%%QT5%%%%DATADIR%%/examples/cmake/modules/ndp_UseQt4.cmake
 %%DATADIR%%/examples/cmake/modules/pkg-config.cmake
 %%DATADIR%%/examples/cmake/modules/plplot_configure.cmake
 %%DATADIR%%/examples/cmake/modules/plplot_functions.cmake
