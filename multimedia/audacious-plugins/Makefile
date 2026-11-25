@@ -10,7 +10,7 @@ WWW=		https://audacious-media-player.org/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-FLAVORS=	qt6 qt5 gtk2 gtk3
+FLAVORS=	qt6 gtk3 qt5 gtk2
 FLAVOR?=	${FLAVORS:[1]}
 
 gtk2_PKGNAMESUFFIX=	-gtk2
@@ -48,6 +48,9 @@ MESON_ARGS=	-Dcoreaudio=false \
 MAKE_ENV=	LIBRARY_PATH="${LOCALBASE}/lib"
 
 .if ${FLAVOR} == qt5
+DEPRECATED=		Depends on unsupported Qt 5
+EXPIRATION_DATE=	2027-01-01
+
 MESON_ARGS+=	-Dgtk2=false \
 		-Dgtk=false \
 		-Dqt5=true \
