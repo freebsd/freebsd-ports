@@ -1,3 +1,144 @@
+  <vuln vid="2014ba8f-e818-11f1-ae3c-4c526214c986">
+    <topic>Erlang/OTP -- multiple vulnerabilities in erts, inets, snmp and xmerl</topic>
+    <affects>
+      <package>
+	<name>erlang</name>
+	<range><lt>28.5.0.9,4</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime27</name>
+	<range><lt>27.3.4.20</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime28</name>
+	<range><lt>28.5.0.9</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime29</name>
+	<range><lt>29.1.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Erlang/OTP project reports:</p>
+	<blockquote cite="https://github.com/erlang/otp/security/advisories">
+	  <p>OTP 29.1.3, 28.5.0.9 and 27.3.4.20 fix the following
+	  issues:</p>
+	  <ul>
+	    <li>CVE-2026-116293: binary_to_term of a reference
+	    encoded with NEW_REFERENCE_EXT or NEWER_REFERENCE_EXT and
+	    a zero length field could abort the VM, or return data
+	    read past the end of the input buffer.</li>
+	    <li>CVE-2026-117642: binary_to_term of incorrectly
+	    encoded funs (NEW_FUN_EXT, EXPORT_EXT) could exhaust the
+	    runtime stack and abort the VM.</li>
+	    <li>CVE-2026-120961: binary_to_term of an old FLOAT_EXT
+	    without a terminating zero byte could overrun the heap
+	    and abort the VM.</li>
+	    <li>CVE-2026-115747: the AArch64 JIT misused a CPU
+	    register in some chained comparisons, so crafted input
+	    (for example an oversized numeric character reference
+	    passed to xmerl_sax_parser) could crash the runtime
+	    system.  x86-64 and interpreter builds are not
+	    affected.</li>
+	    <li>CVE-2026-116382: an inets httpd server serving ESI
+	    scripts created a new atom from the name of each client
+	    request header, so an unauthenticated client could grow
+	    the atom table until the VM aborted.</li>
+	    <li>CVE-2026-116295: httpc did not neutralize CR, LF or
+	    NUL characters in request header names and values,
+	    allowing header injection and request splitting when
+	    header data comes from an untrusted source.</li>
+	    <li>CVE-2026-116225: the snmp BER decoder did not bound
+	    the length of OBJECT IDENTIFIER sub-identifiers, so an
+	    unauthenticated attacker could keep the agent or manager
+	    busy with quadratic decoding time.</li>
+	    <li>CVE-2026-119443: xmerl_scan fetched and parsed the
+	    external DTD named by an untrusted document by default,
+	    so a document pointing at a file such as /dev/zero could
+	    exhaust memory.  External DTDs are no longer fetched
+	    unless the new fetch_external_DTD option is set.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-115747</cvename>
+      <cvename>CVE-2026-116225</cvename>
+      <cvename>CVE-2026-116293</cvename>
+      <cvename>CVE-2026-116295</cvename>
+      <cvename>CVE-2026-116382</cvename>
+      <cvename>CVE-2026-117642</cvename>
+      <cvename>CVE-2026-119443</cvename>
+      <cvename>CVE-2026-120961</cvename>
+      <url>https://github.com/erlang/otp/security/advisories/GHSA-6qhv-446c-985v</url>
+      <url>https://github.com/erlang/otp/security/advisories/GHSA-8575-6vgw-5v3c</url>
+      <url>https://github.com/erlang/otp/security/advisories/GHSA-r7pf-rpq8-5pf4</url>
+      <url>https://github.com/erlang/otp/security/advisories/GHSA-7fjc-wcvc-vp96</url>
+      <url>https://github.com/erlang/otp/security/advisories/GHSA-84cc-vh37-jqpf</url>
+      <url>https://github.com/erlang/otp/security/advisories/GHSA-9p2q-5p4x-rhpq</url>
+      <url>https://github.com/erlang/otp/security/advisories/GHSA-j6vp-frc3-9g33</url>
+      <url>https://github.com/erlang/otp/releases/tag/OTP-29.1.3</url>
+      <url>https://github.com/erlang/otp/releases/tag/OTP-28.5.0.9</url>
+      <url>https://github.com/erlang/otp/releases/tag/OTP-27.3.4.20</url>
+    </references>
+    <dates>
+      <discovery>2026-11-24</discovery>
+      <entry>2026-11-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="2014dc89-e818-11f1-ae3c-4c526214c986">
+    <topic>Erlang/OTP -- TLS 1.2 client completes handshake without a server certificate</topic>
+    <affects>
+      <package>
+	<name>erlang</name>
+	<range><lt>28.5.0.9,4</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime27</name>
+	<range><lt>27.3.4.14</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime28</name>
+	<range><lt>28.5.0.9</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime29</name>
+	<range><lt>29.0.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://github.com/erlang/otp/security/advisories/GHSA-7mff-v332-665j reports:</p>
+	<blockquote cite="https://github.com/erlang/otp/security/advisories/GHSA-7mff-v332-665j">
+	  <p>An Erlang/OTP TLS client configured with full server
+	  authentication completes a TLS 1.2 handshake, for example
+	  for an ECDHE_RSA cipher suite, when a malicious server
+	  sends no Certificate message and an unsigned
+	  ServerKeyExchange.  An attacker in a man-in-the-middle
+	  position can therefore impersonate any TLS server to an
+	  affected client, and read and modify all traffic, even
+	  when the client is configured for full server
+	  authentication.  TLS 1.3 connections and servers are not
+	  affected.</p>
+	</blockquote>
+	<p>The hardening that fixes this went into OTP 29.0.3 and
+	27.3.4.14 but was missed on the OTP 28 track until
+	28.5.0.9.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-124286</cvename>
+      <url>https://github.com/erlang/otp/security/advisories/GHSA-7mff-v332-665j</url>
+      <url>https://github.com/erlang/otp/releases/tag/OTP-28.5.0.9</url>
+    </references>
+    <dates>
+      <discovery>2026-11-24</discovery>
+      <entry>2026-11-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="99846c9e-e81a-11f1-b58b-8447094a420f">
     <topic>zstd -- Information disclosure vulnerability</topic>
     <affects>
