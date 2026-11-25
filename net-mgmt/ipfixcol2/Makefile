@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	2.9.0
 CATEGORIES=	net-mgmt
 
-MAINTAINER=	zarychtam@plan-b.pwste.edu.pl
+MAINTAINER=	mzar@freebsd.org
 COMMENT=	NetFlow v5/v9 and IPFIX flow (RFC 7011) data collector
 WWW=		https://github.com/CESNET/ipfixcol2
 

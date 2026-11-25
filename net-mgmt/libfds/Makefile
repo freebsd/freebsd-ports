@@ -4,7 +4,7 @@ DISTVERSION=	0.6.0
 PORTREVISION=	1
 CATEGORIES=		net-mgmt
 
-MAINTAINER=	zarychtam@plan-b.pwste.edu.pl
+MAINTAINER=	mzar@freebsd.org
 COMMENT=	Flow Data Storage library for IPFIX messages
 WWW=		https://github.com/CESNET/libfds
 

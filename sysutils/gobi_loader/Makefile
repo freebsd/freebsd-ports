@@ -2,7 +2,7 @@ PORTNAME=	gobi_loader
 DISTVERSION=	g20191227
 CATEGORIES=	sysutils net
 
-MAINTAINER=	zarychtam@plan-b.pwste.edu.pl
+MAINTAINER=	mzar@freebsd.org
 COMMENT=	Firmware Loader for Qualcomm Gobi USB Chipsets
 WWW=		https://github.com/kicer/gobi_loader
 

@@ -5,7 +5,7 @@ PORTREVISION=	1
 CATEGORIES=	comms python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	zarychtam@plan-b.pwste.edu.pl
+MAINTAINER=	mzar@freebsd.org
 COMMENT=	Python library for calculating various types of CRC
 WWW=		https://github.com/hex-in/libscrc
 

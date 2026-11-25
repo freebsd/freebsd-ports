@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	4.13.0
 CATEGORIES=	audio devel
 
-MAINTAINER=	zarychtam@plan-b.pwste.edu.pl
+MAINTAINER=	mzar@freebsd.org
 COMMENT=	Library for real-time comms with async IO support
 WWW=		https://github.com/baresip/re
 

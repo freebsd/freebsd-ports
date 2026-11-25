@@ -6,7 +6,7 @@ CATEGORIES=	net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	zarychtam@plan-b.pwste.edu.pl
+MAINTAINER=	mzar@freebsd.org
 COMMENT=	Official command-line client for RIPE Atlas
 WWW=		https://github.com/RIPE-NCC/ripe-atlas-tools
 
