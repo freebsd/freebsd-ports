@@ -1,6 +1,6 @@
 PORTNAME=	ffs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.3.1
+DISTVERSION=	3.3.2
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,6 +25,6 @@ SHEBANG_FILES=	ffs-config.in
 
 CMAKE_TESTING_JOBS=	1 # context_output_unique depends on output of other tests and fails when tests run in parallel
 
-# tests as of 3.3.1: 100% tests passed, 0 tests failed out of 89
+# tests as of 3.3.2: 100% tests passed, 0 tests failed out of 89
 
 .include <bsd.port.mk>
