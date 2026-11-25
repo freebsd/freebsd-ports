@@ -37,7 +37,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}APScheduler>=0:devel/py-apscheduler@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}urllib3>=0:net/py-urllib3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wand>=0:graphics/py-wand@${PY_FLAVOR}
 
-USES=		python ssl
+USES=		cpe python ssl
+CPE_VENDOR=	janeczku
+CPE_PRODUCT=	calibre-web
 USE_PYTHON=	autoplist cryptography pep517
 USE_RC_SUBR=	${PORTNAME}
 
