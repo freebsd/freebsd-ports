@@ -1,5 +1,5 @@
-TIMESTAMP = 1790877245
-SHA256 (go/net-mgmt_harica/harica-v1.12.2/v1.12.2.mod) = 12dc3aa8f51209bd7eba77cbdd90f09f7afd85bf4f355b121758ce0741d95705
-SIZE (go/net-mgmt_harica/harica-v1.12.2/v1.12.2.mod) = 1456
-SHA256 (go/net-mgmt_harica/harica-v1.12.2/v1.12.2.zip) = ebfb844ce7d3e065b91d560b798902408dd470c15cec5bfebfa0511e1612935e
-SIZE (go/net-mgmt_harica/harica-v1.12.2/v1.12.2.zip) = 44069
+TIMESTAMP = 1795624496
+SHA256 (go/net-mgmt_harica/harica-v1.13.0/v1.13.0.mod) = fe50c050b166e0be78922abb5de4fd06a1b548a0b6609bb9b532726e97ec5a29
+SIZE (go/net-mgmt_harica/harica-v1.13.0/v1.13.0.mod) = 1456
+SHA256 (go/net-mgmt_harica/harica-v1.13.0/v1.13.0.zip) = 79aa75525440a8980a431a34a6bc3a011e921c90a80c7a294c2a4536de35dbf0
+SIZE (go/net-mgmt_harica/harica-v1.13.0/v1.13.0.zip) = 45277
