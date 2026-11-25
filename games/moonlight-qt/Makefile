@@ -1,6 +1,6 @@
 PORTNAME=	moonlight
 DISTVERSION=	6.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/moonlight-stream/moonlight-qt/releases/download/v${DISTVERSION}/
 PKGNAMESUFFIX=	-qt
@@ -23,8 +23,9 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libwayland-client.so:graphics/wayland
 
 USES=		desktop-file-utils gl localbase:ldflags pkgconfig \
-		qmake:outsource sdl ssl xorg
+		qmake:outsource qt:6 sdl ssl xorg
 USE_GL=		egl
+USE_QT=		base declarative svg
 USE_SDL=	sdl2 ttf2
 USE_XORG=	x11
 
@@ -34,14 +35,6 @@ PLIST_FILES=	bin/moonlight-qt \
 		share/applications/com.moonlight_stream.Moonlight.desktop \
 		share/icons/hicolor/scalable/apps/moonlight.svg \
 		share/metainfo/com.moonlight_stream.Moonlight.appdata.xml
-
-OPTIONS_DEFAULT=	QT6
-OPTIONS_SINGLE=		QT
-OPTIONS_SINGLE_QT=	QT5 QT6
-QT5_USES=		qt:5
-QT5_USE=		QT=core,declarative,gui,network,quickcontrols2,svg,widgets,buildtools:build
-QT6_USES=		qt:6
-QT6_USE=		QT=base,declarative,svg
 
 post-patch:
 	@${REINPLACE_CMD} -e 's@Exec=moonlight.*@Exec=moonlight-qt@' \
