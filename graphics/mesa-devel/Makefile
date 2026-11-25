@@ -35,6 +35,7 @@ BINARY_ALIAS=	python=${PYTHON_CMD}
 SHEBANG_FILES=	src/vulkan/*/*control.py
 MESON_DISABLED=	android-libbacktrace gallium-mediafoundation \
 		libunwind lmsensors microsoft-clc valgrind
+MESON_FALSE=	panfrost-rust # no Valhall in kernel
 MESON_TRUE=	unversion-libgallium
 MESON_ARGS=	-Dplatforms=${PLATFORMS:O:[-1..1]:ts,} -Dvideo-codecs=all
 LDFLAGS+=	-Wl,--undefined-version # https://gitlab.freedesktop.org/mesa/mesa/-/issues/8003
