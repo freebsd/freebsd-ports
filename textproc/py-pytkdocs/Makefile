@@ -1,6 +1,6 @@
 PORTNAME=	pytkdocs
 DISTVERSION=	0.16.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,6 +11,9 @@ WWW=		https://github.com/mkdocstrings/pytkdocs
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	Upstream repo archived on 20th October 2026. Please use textproc/py-griffe instead
+EXPIRATION_DATE=2026-12-31
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pdm-backend>0:devel/py-pdm-backend@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django52>0:www/py-django52@${PY_FLAVOR} \
