@@ -1,3 +1,51 @@
+  <vuln vid="d6298f47-e90c-11f1-90f4-589cfc0dc9a2">
+    <topic>Prosody XMPP server advisory 2026-11-25</topic>
+    <affects>
+	<package>
+	  <name>prosody</name>
+	  <range><lt>13.0.8</lt></range>
+	</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Prosody team reports:</p>
+	<blockquote cite="https://prosody.im/security/advisory_2026_8112eaa9/">
+	  <ul>
+	    <li>Cross-host confusion in stanza processing.</li>
+	    <li>Stream reset did not discard all pending data.</li>
+	    <li>Invitation reuse.</li>
+	    <li>Invitation username restrictions not enforced.</li>
+	    <li>Password-protected MUC exposure.</li>
+	    <li>Non-moderators may modify state and cause occupants to be kicked from MUCs.</li>
+	    <li>Insufficient filtering of muc-user namespace in MUC.</li>
+	    <li>Mixed-case HTTPS scheme results in unencrypted HTTP request.</li>
+	    <li>mod_http_file_share header injection</li>
+	    <li>Doubled responses to certain HTTP requests.</li>
+	    <li>Insufficient validation of archive query limits.</li>
+	    <li>Server-to-Server Policy Bypass.</li>
+	    <li>mod_auth_ldap does not reject empty password.</li>
+	    <li>OAuth role not applied via SASL authentication.</li>
+	    <li>Potential storage policy bypass.</li>
+	    <li>PEP broadcasts include explicit subscriptions after roster removal.</li>
+	    <li>MUC mediated invites and declines relay arbitrary message children.</li>
+	    <li>Memory Exhaustion via Aborted HTTP Requests.</li>
+	    <li>mod_http_file_share unrestricted upload size.</li>
+	    <li>Stanza child elements limit bypass.</li>
+	    <li>Completed stanzas bypass byte-size limit when they fit in a single feed.</li>
+	    <li>mod_bosh and mod_component don’t apply child element limit.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://prosody.im/security/advisory_2026_8112eaa9/</url>
+    </references>
+    <dates>
+      <discovery>2026-11-25</discovery>
+      <entry>2026-11-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="aa7e7798-a716-4e2f-807d-019f9c61af91">
     <topic>PyMySQL -- SQL injection via sequence parameters with NO_BACKSLASH_ESCAPES</topic>
     <affects>
