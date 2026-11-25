@@ -1,0 +1,3 @@
+maolan-generate is a Rust-based music generation tool that provides a CLI for
+prompt-driven audio creation. It handles the runtime generation and decoding
+of music using text or lyrics prompts with optional style tags.
