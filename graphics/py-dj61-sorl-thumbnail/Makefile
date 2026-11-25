@@ -1,5 +1,5 @@
 PORTNAME=	sorl-thumbnail
-DISTVERSION=	13.4.0
+DISTVERSION=	13.5.0
 CATEGORIES=	graphics python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj61-
@@ -7,7 +7,7 @@ DISTNAME=	sorl_thumbnail-${DISTVERSION}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Sorl-thumbnail provides an easy way to generate image thumbnails
-WWW=		https://github.com/jazzband/sorl-thumbnail
+WWW=		https://github.com/mariocesar/sorl-thumbnail
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -1,6 +1,6 @@
-Relax version requirements.
+Relax version requirements and enable build for older versions py-setuptools.
 
---- pyproject.toml.orig	2026-10-25 18:28:34 UTC
+--- pyproject.toml.orig	2026-11-15 00:02:32 UTC
 +++ pyproject.toml
 @@ -1,5 +1,5 @@
  [build-system]
@@ -14,7 +14,7 @@ Relax version requirements.
  description = "Thumbnails for Django, made in the template on first use with Pillow, libvips or ImageMagick, stored on any Django storage"
  readme = "README.rst"
 -license = "BSD-3-Clause"
-+license = { text="BSD-3-Clause" }
- keywords = ["django", "thumbnail", "sorl"]
++license = {text="BSD-3-Clause"}
+ keywords = ["django", "thumbnail", "thumbnails", "images", "resize", "crop", "pillow",
+             "libvips", "imagemagick", "s3", "django-storages", "sorl"]
  authors = [
-   {name = "Mikko Hellsing", email = "mikko@aino.se"},
