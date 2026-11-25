@@ -23,7 +23,7 @@ procname="%%LOCALBASE%%/bin/stalwart"
 start_cmd="stalwart_start"
 start_precmd="stalwart_prestart"
 
-stalwart_env="STALWART_PATH=${stalwart_path} RUN_AS_USER=${stalwart_user} RUN_AS_GROUP=${stalwart_group}"
+stalwart_env="STALWART_PATH=${stalwart_path} RUN_AS_USER=${stalwart_user} RUN_AS_GROUP=${stalwart_group} ${stalwart_env}"
 
 stalwart_prestart() {
     if [ ! -f "${stalwart_log}" ]; then
