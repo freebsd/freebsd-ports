@@ -1,4 +1,4 @@
---- src/core/ngx_output_chain.c.orig	2026-10-27 15:05:09 UTC
+--- src/core/ngx_output_chain.c.orig	2026-11-24 14:28:00 UTC
 +++ src/core/ngx_output_chain.c
 @@ -658,7 +658,7 @@ ngx_chain_writer(void *data, ngx_chain_t *in)
  {

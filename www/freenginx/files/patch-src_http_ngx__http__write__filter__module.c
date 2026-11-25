@@ -1,4 +1,4 @@
---- src/http/ngx_http_write_filter_module.c.orig	2026-10-27 15:05:09 UTC
+--- src/http/ngx_http_write_filter_module.c.orig	2026-11-24 14:28:00 UTC
 +++ src/http/ngx_http_write_filter_module.c
 @@ -336,7 +336,7 @@ ngx_http_write_filter(ngx_http_request_t *r, ngx_chain
          }

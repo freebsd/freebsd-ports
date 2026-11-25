@@ -1,8 +1,6 @@
 PORTNAME=	freenginx
 PORTVERSION=	${NGINX_VERSION}
-PORTREVISION=	1
 .include "version.mk"
-PORTREVISION?=	14
 CATEGORIES=	www
 MASTER_SITES=	https://freenginx.org/download/ \
 		LOCAL/joneum
