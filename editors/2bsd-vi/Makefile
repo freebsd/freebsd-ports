@@ -6,11 +6,13 @@ CATEGORIES=	editors
 PKGNAMEPREFIX=	2bsd-
 
 MAINTAINER=	mce@FreeBSD.org
-COMMENT=	The original vi editor, updated to run on modern OSes
+COMMENT=	Traditional vi editor, updated to run on modern OSes
 WWW=		https://github.com/n-t-roff/heirloom-ex-vi/
 
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN_aarch64=	ld: error: undefined symbol: sbrk
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	n-t-roff
