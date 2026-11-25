@@ -1,5 +1,6 @@
-Task queues are used as a mechanism to distribute work across threads or
-machines.
+Celery Progress provides drop in, configurable, dependency-free progress
+bars for Django/Celery applications.
 
-Celery communicates via messages, usually using a broker to mediate between
-clients and workers.
+A task reports its progress through a ProgressRecorder; a Django view and a
+small JavaScript helper poll (or, with Django Channels, receive over a
+websocket) that progress and render it as a progress bar.
