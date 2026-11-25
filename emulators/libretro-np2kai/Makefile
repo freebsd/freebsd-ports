@@ -11,7 +11,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		dos2unix gmake
-DOS2UNIX_FILES=	sdl/Makefile.common
+DOS2UNIX_FILES=	i386c/ia32/paging.c i386c/ia32/paging.h \
+		sdl/Makefile.common
 USE_GITHUB=	yes
 GH_ACCOUNT=	AZO234
 GH_PROJECT=	NP2kai
