@@ -14,6 +14,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 FLAVORS=	qt6 qt5
 FLAVOR?=	qt6
 
+.if ${FLAVOR} == qt5
+DEPRECATED=		Depends on unsupported Qt 5, no consumers left
+EXPIRATION_DATE=	2027-01-01
+.endif
+
 QT_VER=		${FLAVOR:S/qt//}
 
 USES=		cmake compiler:c++11-lang dos2unix gl qt:${QT_VER}
