@@ -5,6 +5,12 @@ PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	databases
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+# https://github.com/qdrant/qdrant/pull/11321
+# "fix: build for targets that enable no target features (ppc64le, s390x)"
+PATCHFILES+=	e1d8c216ce5b2cb75f0aa5378fbfecd5976e63f0.patch:-p1 \
+		b54ddb8d0338547aa21c73d416ec9fbbcbe9c76a.patch:-p1
+
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Vector search engine and database for the next gen AI applications
 WWW=		https://qdrant.tech \
