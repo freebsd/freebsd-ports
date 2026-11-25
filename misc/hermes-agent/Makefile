@@ -194,15 +194,19 @@ do-install:
 	${MKDIR} ${STAGEDIR}${HERMES_LIBDIR}
 	${PYTHON_CMD} -m venv --copies --system-site-packages \
 		--without-pip ${STAGEDIR}${HERMES_VENV}
-	# Strip the venv's activation scripts and the pyvenv.cfg 'command'
-	# line: both hardcode the build-time venv location, and stage-qa
-	# rejects files that reference the staging directory.  The
-	# wrapper invokes the venv interpreter directly, so neither is
-	# ever needed.
+	# Strip the venv's activation scripts, the pyvenv.cfg 'command'
+	# line, and the lib64 compatibility symlink: the first two hardcode
+	# the build-time venv location (stage-qa rejects files that
+	# reference the staging directory), and lib64 (a symlink to lib
+	# that CPython's venv creates on 64-bit) is unneeded -- the wrapper
+	# invokes the venv interpreter directly and the stdlib resolves to
+	# lib -- while leaving it in place breaks plist generation, since
+	# `find -type d` never enumerates a symlinked directory.
 	${RM} -f ${STAGEDIR}${HERMES_VENV}/bin/Activate.ps1 \
 		${STAGEDIR}${HERMES_VENV}/bin/activate \
 		${STAGEDIR}${HERMES_VENV}/bin/activate.csh \
-		${STAGEDIR}${HERMES_VENV}/bin/activate.fish
+		${STAGEDIR}${HERMES_VENV}/bin/activate.fish \
+		${STAGEDIR}${HERMES_VENV}/lib64
 	${SED} -i '' '/^command = /d' ${STAGEDIR}${HERMES_VENV}/pyvenv.cfg
 .for d in ${HERMES_PKGS}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${HERMES_LIBDIR} \
