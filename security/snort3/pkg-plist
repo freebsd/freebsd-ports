@@ -89,8 +89,8 @@ include/snort/helpers/boyer_moore_search.h
 include/snort/helpers/buffer_data.h
 include/snort/helpers/challenge_response_auth.h
 include/snort/helpers/event_gen.h
-include/snort/helpers/hyper_scratch_allocator.h
-include/snort/helpers/hyper_search.h
+%%HYPERSCAN%%include/snort/helpers/hyper_scratch_allocator.h
+%%HYPERSCAN%%include/snort/helpers/hyper_search.h
 include/snort/helpers/infractions.h
 include/snort/helpers/json_stream.h
 include/snort/helpers/literal_search.h
