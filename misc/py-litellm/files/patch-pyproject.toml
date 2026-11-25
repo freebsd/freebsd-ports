@@ -1,11 +1,11 @@
 --- pyproject.toml.orig	2006-07-24 01:21:28 UTC
 +++ pyproject.toml
-@@ -327,7 +327,7 @@ benchmarks = [
+@@ -329,7 +329,7 @@ benchmarks = [
  ]
  
  [build-system]
 -requires = ["maturin==1.15.0"]
 +requires = ["maturin>=1.15.0"]
- build-backend = "maturin"
+ build-backend = "build_backend"
+ backend-path = [".github/packaging"]
  
- [tool.maturin]

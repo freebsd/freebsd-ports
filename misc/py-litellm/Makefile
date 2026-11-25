@@ -1,5 +1,5 @@
 PORTNAME=	litellm
-DISTVERSION=	1.110.2
+DISTVERSION=	1.111.0
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}maturin>=1.15.0:devel/py-maturin@${PY_FLAVOR}
 LIB_DEPENDS=	libonig.so:devel/oniguruma
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fastuuid>=0.14.0<1.0:devel/py-fastuuid@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}filelock>=3.16.1<5.0:sysutils/py-filelock@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}filelock>=3.16.1<5:sysutils/py-filelock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httpx>=0.28.0<1.0:www/py-httpx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openai>=2.20.0<4.0.0:misc/py-openai@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-dotenv>=1.0.0<2.0:www/py-python-dotenv@${PY_FLAVOR} \
@@ -36,22 +36,16 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fastuuid>=0.14.0<1.0:devel/py-fastuuid@${PY_
 		${PYTHON_PKGNAMEPREFIX}certifi>=2026.10.19:security/py-certifi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.13.0<5.0:devel/py-typing-extensions@${PY_FLAVOR}
 
-USES=		cargo python shebangfix
+USES=		cargo python
 USE_PYTHON=	autoplist concurrent pep517 pytest
 
-SHEBANG_FILES=	litellm/proxy/start.sh
-bash_CMD=	${SH}
-
-CARGO_CARGOTOML=${WRKSRC}/litellm-rust/Cargo.toml
-CARGO_CARGOLOCK=${WRKSRC}/litellm-rust/Cargo.lock
+CARGO_CARGOTOML=${WRKSRC}/litellm/rust/Cargo.toml
+CARGO_CARGOLOCK=${WRKSRC}/litellm/rust/Cargo.lock
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
 CARGO_TEST=	no
 
 MAKE_ENV=	${CARGO_ENV}
-
-BINARY_ALIAS=	python3=${PYTHON_CMD}
-REINPLACE_ARGS=	-i ''
 
 PORTDOCS=	README.md
 
@@ -72,6 +66,7 @@ PROXY_RUN_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}orjson>=3.11.6<4.0:devel/py-orjson@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hiredis>=3.0.0<4.0:databases/py-hiredis@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}APScheduler>=3.11.2<4.0:devel/py-apscheduler@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tzdata>=2024.1:devel/py-tzdata@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fastapi-sso>=0.19.0<1.0:www/py-fastapi-sso@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyjwt>=2.13.0<3.0:www/py-pyjwt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-multipart>=0.0.27<1.0:www/py-python-multipart@${PY_FLAVOR} \
@@ -79,9 +74,9 @@ PROXY_RUN_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}websockets>=15.0.1<18.0:devel/py-websockets@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-identity>=1.25.2<2.0:devel/py-azure-identity@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-storage-blob>=12.28.0<13.0:devel/py-azure-storage-blob@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}mcp>=2.3.0<3.0:misc/py-mcp@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mcp>=2.3.0<3:misc/py-mcp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httpx2>=2.10.0<3:www/py-httpx2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}litellm-proxy-extras>=0.4.114:misc/py-litellm-proxy-extras@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}litellm-proxy-extras>=0.4.118:misc/py-litellm-proxy-extras@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rich>=13.9.4<16.0:textproc/py-rich@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tomlkit>=0.13.3<1.0:textproc/py-tomlkit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}polars>=1.38.1<3.0:misc/py-polars@${PY_FLAVOR} \
@@ -101,10 +96,6 @@ PROXY_RUN_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}a2a-sdk>=1.1.0<2.0:misc/py-a2a-sdk@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}email-validator>0:mail/py-email-validator@${PY_FLAVOR}
 PROXY_USE=	python=cryptography
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|python3|${PYTHON_CMD}|' \
-		${WRKSRC}/litellm/proxy/start.sh
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
