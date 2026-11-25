@@ -1,0 +1,19 @@
+--- pyproject.toml.orig	2026-11-26 00:00:00 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=77"]
++requires = ["setuptools>=61"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -8,8 +8,7 @@
+ description = "Multi key dictionary implementation"
+ readme = {file = "README.txt", content-type = "text/x-rst"}
+ authors = [{name = "Lukasz Forynski", email = "lukasz.forynski@gmail.com"}]
+-license = "MIT"
+-license-files = ["LICENSE"]
++license = {text = "MIT"}
+ requires-python = ">=3.6"
+ classifiers = [
+     "Programming Language :: Python",
