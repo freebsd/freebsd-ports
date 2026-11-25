@@ -1,6 +1,7 @@
 PORTNAME=	wxlauncher
 PORTVERSION=	0.10.1
 DISTVERSIONPREFIX=	release-
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
@@ -9,6 +10,9 @@ WWW=		https://github.com/scp-fs2open/wxLauncher
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/GPLv2.txt
+
+DEPRECATED=	No releases in 10 years, does not build with CMake 4
+EXPIRATION_DATE=2026-12-31
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}markdown>0:textproc/py-markdown@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
