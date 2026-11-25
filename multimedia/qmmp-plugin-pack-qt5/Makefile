@@ -1,5 +1,6 @@
 PORTNAME=	qmmp-plugin-pack
 PORTVERSION=	1.7.3
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://qmmp.ylsoftware.com/files/${PORTNAME}/${PORTVERSION:R}/ \
 	SF/qmmp-dev/${PORTNAME}/${PORTVERSION:R}/
@@ -11,6 +12,9 @@ WWW=		https://qmmp.ylsoftware.com/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	Depends on unsupported Qt5
+EXPIRATION_DATE=	2027-01-01
 
 LIB_DEPENDS=	libqmmpui-1.so:multimedia/qmmp-qt5
 BUILD_DEPENDS=	qmmp-qt5>=1.7:multimedia/qmmp-qt5
