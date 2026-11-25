@@ -1,12 +1,12 @@
 PORTNAME=	gifsicle
-PORTVERSION=	1.98
-PORTREVISION=	1
+DISTVERSION=	1.99
 CATEGORIES=	graphics
 MASTER_SITES=	https://www.lcdf.org/gifsicle/
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Manipulates GIF images and animations
-WWW=		https://www.lcdf.org/gifsicle/
+WWW=		https://www.lcdf.org/gifsicle/ \
+		https://github.com/kohler/gifsicle
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
