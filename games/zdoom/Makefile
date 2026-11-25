@@ -1,6 +1,6 @@
 PORTNAME=	zdoom
 PORTVERSION=	2.8.1
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	games
 
 MAINTAINER=	kevans@FreeBSD.org
@@ -11,6 +11,9 @@ LICENSE=	DOOM
 LICENSE_NAME=	Limited Use Software License Agreement
 LICENSE_FILE=	${WRKSRC}/docs/doomlic.txt
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
+
+DEPRECATED=	Last release years ago, does not build with CMake 4
+EXPIRATION_DATE=2026-12-31
 
 BUILD_DEPENDS=	zip:archivers/zip
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
