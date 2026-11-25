@@ -12,9 +12,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSES/Apache-2.0.txt
 
 BUILD_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers
 
-USES=		cmake compiler:c++11-lib localbase
+USES=		cmake compiler:c++11-lib localbase python:env shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	KhronosGroup
 GH_PROJECT=	Vulkan-Utility-Libraries
+
+SHEBANG_FILES=	scripts/validate_json_schema.py
 
 .include <bsd.port.mk>
