@@ -1,5 +1,6 @@
 PORTNAME=	qmmp
 PORTVERSION=	1.7.11
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://qmmp.ylsoftware.com/files/${PORTNAME}/${DISTVERSION:R}/ \
 		SF/qmmp-dev/${PORTNAME}/${DISTVERSION:R}/
@@ -11,6 +12,9 @@ WWW=		https://qmmp.ylsoftware.com/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	Depends on unsupported Qt5, use multimedia/qmmp-qt6 instead
+EXPIRATION_DATE=	2027-01-01
 
 USES=		cmake desktop-file-utils gl gnome iconv:wchar_t pathfix \
 		pkgconfig qt:5 tar:bzip2 xorg
