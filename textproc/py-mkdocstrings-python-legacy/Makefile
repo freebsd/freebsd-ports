@@ -1,5 +1,6 @@
 PORTNAME=	mkdocstrings-python-legacy
 DISTVERSION=	0.2.7
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,6 +12,9 @@ WWW=		https://github.com/mkdocstrings/python-legacy
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	Upstream repo archived on 29th September 2026. Please use textproc/py-mkdocstrings instead
+EXPIRATION_DATE=2026-12-31
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pdm-backend>0:devel/py-pdm-backend@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mkdocs-autorefs>=1.1:textproc/py-mkdocs-autorefs@${PY_FLAVOR} \
