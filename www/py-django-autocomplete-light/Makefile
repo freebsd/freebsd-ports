@@ -1,9 +1,9 @@
 PORTNAME=	django-autocomplete-light
-PORTVERSION=	3.8.2
-PORTREVISION=	1
-CATEGORIES=	www
+DISTVERSION=	5.0.0
+CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	${PORTNAME:S/-/_/g}-${DISTVERSION}
 
 MAINTAINER=	gettoknowmi@yahoo.com
 COMMENT=	Fresh approach to autocomplete implementations
@@ -12,8 +12,12 @@ WWW=		https://github.com/yourlabs/django-autocomplete-light
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django52>=5.2:www/py-django52@${PY_FLAVOR}
+
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 

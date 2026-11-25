@@ -1,0 +1,15 @@
+Description: Accept setuptools >= 61 as build requirement for the ports tree's
+  setuptools 63.
+Issue ID: none
+Changeset: none
+TODO: FreeBSD-specific (old setuptools in ports), not for upstream.
+
+--- pyproject.toml.orig	2026-06-18 01:44:17 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=65.5.1", "wheel"]
++requires = ["setuptools>=61", "wheel"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
