@@ -1,9 +1,12 @@
-PORTREVISION=	2	# don't delete, reset to 0
+PORTREVISION=	3	# don't delete, reset to 0
 CATEGORIES=	net
 PKGNAMESUFFIX=	-qt5
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Qt 5 bindings to the Avahi mDNS system
+
+DEPRECATED=	Depends on unsupported Qt5
+EXPIRATION_DATE=	2027-01-01
 
 LIB_DEPENDS=	libavahi-common.so:net/avahi-app
 
