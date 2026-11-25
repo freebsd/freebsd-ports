@@ -1,3 +1,37 @@
+  <vuln vid="aa7e7798-a716-4e2f-807d-019f9c61af91">
+    <topic>PyMySQL -- SQL injection via sequence parameters with NO_BACKSLASH_ESCAPES</topic>
+    <affects>
+      <package>
+	<name>py310-pymysql</name>
+	<name>py311-pymysql</name>
+	<name>py312-pymysql</name>
+	<name>py313-pymysql</name>
+	<name>py313t-pymysql</name>
+	<name>py314-pymysql</name>
+	<name>py314t-pymysql</name>
+	<range><lt>1.2.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The PyMySQL project reports:</p>
+	<blockquote cite="https://github.com/PyMySQL/PyMySQL/blob/main/CHANGELOG.md#v124-security-fix">
+	  <p>Fixed a SQL injection vulnerability caused by incorrect escaping
+	    of string values inside <code>tuple</code>, <code>list</code>,
+	    <code>set</code>, or <code>frozenset</code> query parameters when
+	    the <code>NO_BACKSLASH_ESCAPES</code> SQL mode is enabled.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/PyMySQL/PyMySQL/blob/main/CHANGELOG.md#v124-security-fix</url>
+    </references>
+    <dates>
+      <discovery>2026-11-09</discovery>
+      <entry>2026-11-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5734413b-e8a5-11f1-9b74-3497f65b111b">
     <topic>freenginx -- multiple vulnerabilities</topic>
     <affects>
