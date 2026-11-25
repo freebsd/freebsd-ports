@@ -1,7 +1,7 @@
 PORTNAME=	python-poppler-qt5
 DISTVERSIONPREFIX=	v
 DISTVERSION=	21.3.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,6 +11,9 @@ WWW=		https://pypi.org/project/python-poppler-qt5/
 
 LICENSE=	LGPL21 LGPL3
 LICENSE_COMB=	dual
+
+DEPRECATED=	Depends on unsupported Qt5
+EXPIRATION_DATE=	2027-01-01
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS}
 LIB_DEPENDS=	libpoppler-qt5.so:graphics/poppler-qt5
