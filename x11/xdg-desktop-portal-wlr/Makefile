@@ -1,6 +1,7 @@
 PORTNAME=	xdg-desktop-portal-wlr
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.0
+PORTREVISION=	1
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -30,8 +31,11 @@ PLIST_FILES=	libexec/${PORTNAME} \
 		share/dbus-1/services/org.freedesktop.impl.portal.desktop.wlr.service \
 		share/xdg-desktop-portal/portals/wlr.portal
 
-OPTIONS_DEFINE=	MANPAGES
-OPTIONS_DEFAULT=MANPAGES
+OPTIONS_DEFINE=	FUZZEL MANPAGES
+OPTIONS_DEFAULT=FUZZEL MANPAGES
+
+FUZZEL_DESC=		Fallback window (dmenu) output chooser
+FUZZEL_RUN_DEPENDS=	fuzzel:x11/fuzzel
 
 MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
 MANPAGES_MESON_ENABLED=	man-pages
