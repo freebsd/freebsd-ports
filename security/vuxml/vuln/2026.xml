@@ -1,3 +1,99 @@
+  <vuln vid="5734413b-e8a5-11f1-9b74-3497f65b111b">
+    <topic>freenginx -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+       <name>freenginx</name>
+       <range><lt>1.30.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>The freenginx project reports:</p>
+       <blockquote cite="https://freenginx.org/en/CHANGES-1.30">
+       <p>
+       a flow control window overflow might cause memory corruption in a
+       worker process when using HTTP/2, potentially resulting in arbitrary
+       code execution (CVE-2026-123007).
+       </p>
+       <p>
+       use-after-free might occur when using HTTP/2, potentially resulting
+       in arbitrary code execution (CVE-2026-123633).
+       </p>
+       <p>
+       use-after-free might occur when using HTTP/3, potentially resulting
+       in arbitrary code execution (CVE-2026-121810).
+       </p>
+       <p>
+       use-after-free might occur when using the mail proxy module,
+       potentially resulting in arbitrary code execution (CVE-2026-113425).
+       </p>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://freenginx.org/en/CHANGES-1.30</url>
+      <cvename>CVE-2026-113425</cvename>
+      <cvename>CVE-2026-121810</cvename>
+      <cvename>CVE-2026-123007</cvename>
+      <cvename>CVE-2026-123633</cvename>
+    </references>
+    <dates>
+      <discovery>2026-11-24</discovery>
+      <entry>2026-11-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="573460ab-e8a5-11f1-9b74-3497f65b111b">
+    <topic>OpenResty -- multiple vulnerabilities in the bundled nginx core</topic>
+    <affects>
+      <package>
+       <name>openresty</name>
+       <range><lt>1.31.9.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>The OpenResty developers report:</p>
+       <blockquote cite="https://openresty.org/en/changelog-1031009.html">
+       <p>
+       The nginx core was upgraded from nginx 1.31.8 to 1.31.9, which
+       incorporates 10 CVE fixes: a buffer overflow involving try_files
+       and alias (CVE-2026-125283), a flow control window overflow and a
+       use-after-free when using HTTP/2 (CVE-2026-123007,
+       CVE-2026-123633), a use-after-free when using HTTP/3
+       (CVE-2026-121810), a use-after-free in the resolver
+       (CVE-2026-123634), a use-after-free in the mail proxy server
+       (CVE-2026-113425), client SSL certificate verification performed
+       using the configuration of the default server in the stream module
+       (CVE-2026-120967), a segmentation fault with PROXY protocol version
+       2 and dynamic SSL certificate loading (CVE-2026-120993), malformed
+       ClientHello messages interpreted differently by the
+       ngx_stream_ssl_preread_module (CVE-2026-123640), and an endless
+       loop while reading the request body over SSL (CVE-2026-118899).
+       </p>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://openresty.org/en/changelog-1031009.html</url>
+      <url>https://nginx.org/en/security_advisories.html</url>
+      <cvename>CVE-2026-113425</cvename>
+      <cvename>CVE-2026-118899</cvename>
+      <cvename>CVE-2026-120967</cvename>
+      <cvename>CVE-2026-120993</cvename>
+      <cvename>CVE-2026-121810</cvename>
+      <cvename>CVE-2026-123007</cvename>
+      <cvename>CVE-2026-123633</cvename>
+      <cvename>CVE-2026-123634</cvename>
+      <cvename>CVE-2026-123640</cvename>
+      <cvename>CVE-2026-125283</cvename>
+    </references>
+    <dates>
+      <discovery>2026-11-23</discovery>
+      <entry>2026-11-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2014ba8f-e818-11f1-ae3c-4c526214c986">
     <topic>Erlang/OTP -- multiple vulnerabilities in erts, inets, snmp and xmerl</topic>
     <affects>
@@ -316,6 +412,10 @@
        <name>freenginx</name>
        <range><lt>1.30.2_14</lt></range>
       </package>
+      <package>
+       <name>openresty</name>
+       <range><lt>1.31.9.1</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -327,7 +427,8 @@
        </p>
        </blockquote>
        <p>
-       freenginx shares the affected code; the port carries the fix.
+       freenginx and OpenResty share the affected code; the ports carry
+       the fix.
        </p>
      </body>
     </description>
