@@ -21,11 +21,10 @@ USES=		cmake:testing compiler:c++23-lang desktop-file-utils \
 
 USE_GL=		opengl
 USE_KDE=	widgetsaddons windowsystem
-USE_QT=		base \
-		tools:build
+USE_QT=		base tools:build
 USE_XORG=	x11
 
-CMAKE_ARGS=		-DTREMOTESF_WITH_HTTPLIB=system
+CMAKE_ARGS=	-DTREMOTESF_WITH_HTTPLIB=system
 EXTRACT_AFTER_ARGS=	--exclude ${DISTNAME}/src/3rdparty/cpp-httplib \
 			--no-same-owner --no-same-permissions
 
