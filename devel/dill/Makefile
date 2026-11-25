@@ -1,6 +1,6 @@
 PORTNAME=	dill
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.5.0
+DISTVERSION=	4.0.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,6 +24,6 @@ SHEBANG_FILES=	dill-config.in
 CMAKE_OFF=		BUILD_TESTING
 CMAKE_TESTING_ON=	BUILD_TESTING
 
-# tests as of 3.5.0: 100% tests passed, 0 tests failed out of 18
+# tests as of 4.0.0: 100% tests passed, 0 tests failed out of 19
 
 .include <bsd.port.mk>

@@ -8,6 +8,6 @@ lib/cmake/dill/dill-config.cmake
 lib/cmake/dill/dill-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/dill/dill-targets.cmake
 lib/libdill.so
-lib/libdill.so.3
-lib/libdill.so.3.5.0
+lib/libdill.so.4
+lib/libdill.so.4.0.0
 libdata/pkgconfig/dill.pc
