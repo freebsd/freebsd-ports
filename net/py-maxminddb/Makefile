@@ -1,5 +1,5 @@
 PORTNAME=	maxminddb
-PORTVERSION=	2.8.2
+PORTVERSION=	3.3.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net python geography
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=0:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 
-USES=		compiler:c11 localbase python
+USES=		compiler:c11 localbase python:3.10+
 USE_GITHUB=	yes
 GH_ACCOUNT=	maxmind
 GH_PROJECT=	MaxMind-DB-Reader-python
@@ -24,5 +24,10 @@ GH_PROJECT=	MaxMind-DB-Reader-python
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
+
+# setuptools.command.bdist_wheel needs setuptools>=70.1
+post-patch:
+	@${REINPLACE_CMD} 's|^from setuptools.command.bdist_wheel import|from wheel.bdist_wheel import|' \
+		${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
