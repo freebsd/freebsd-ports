@@ -1,6 +1,6 @@
-TIMESTAMP = 1793611512
-SHA256 (freenginx-1.30.2.tar.gz) = 3166632fe3c74892e3fb216ed36d36e1bcaafa46a54d28c00d575998bc7ea927
-SIZE (freenginx-1.30.2.tar.gz) = 1253050
+TIMESTAMP = 1795593011
+SHA256 (freenginx-1.30.3.tar.gz) = 8fa1008c132b6669f3609465afdcd37bc6eda39228d9f0965784770f230d3a6a
+SIZE (freenginx-1.30.3.tar.gz) = 1253828
 SHA256 (grahamedgecombe-nginx-ct-93e9884_GH0.tar.gz) = 72fdd125b9207cdda135f368095f85b943a78a4ff004d1cd217972e12b1571b2
 SIZE (grahamedgecombe-nginx-ct-93e9884_GH0.tar.gz) = 7224
 SHA256 (atomx-nginx-http-auth-digest-274490c_GH0.tar.gz) = 0839c33c2f8d519f92daae274f62cf87eb68415d562c6500ee3e3721ce80557c
