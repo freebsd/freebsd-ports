@@ -1,5 +1,5 @@
 PORTNAME=	unarr
-DISTVERSION=	1.2.0
+DISTVERSION=	1.2.1
 CATEGORIES=	archivers
 MASTER_SITES=	https://github.com/selmf/unarr/releases/download/v${DISTVERSION}/
 
