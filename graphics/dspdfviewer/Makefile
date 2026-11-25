@@ -1,7 +1,7 @@
 PORTNAME=	dspdfviewer
 PORTVERSION=	1.15.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	79
+PORTREVISION=	80
 CATEGORIES=	graphics
 
 MAINTAINER=	fox@FreeBSD.org
@@ -10,6 +10,9 @@ WWW=		https://github.com/dannyedel/dspdfviewer
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	Abandoned, depends on unsupported Qt5
+EXPIRATION_DATE=	2027-01-01
 
 LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs \
 		libpoppler-qt5.so:graphics/poppler-qt5
