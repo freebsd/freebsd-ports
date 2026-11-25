@@ -1,6 +1,6 @@
 PORTNAME=	klatexformula
 PORTVERSION=	4.0.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -9,6 +9,9 @@ COMMENT=	Convert LaTeX formula to image
 WWW=		https://klatexformula.sourceforge.io
 
 LICENSE=	GPLv2
+
+DEPRECATED=	Depends on unsupported Qt5
+EXPIRATION_DATE=	2027-01-01
 
 BUILD_DEPENDS=	help2man:misc/help2man
 
