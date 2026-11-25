@@ -1,5 +1,5 @@
 PORTNAME=	ripe.atlas.cousteau
-DISTVERSION=	2.3.0
+DISTVERSION=	2.3.1
 DISTNAME=	ripe_atlas_cousteau-${DISTVERSION}
 
 CATEGORIES=	net python
