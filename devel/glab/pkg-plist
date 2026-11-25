@@ -145,6 +145,7 @@
 %%MANPAGES%%share/man/man1/glab-minder-audit.1.gz
 %%MANPAGES%%share/man/man1/glab-minder-doctor.1.gz
 %%MANPAGES%%share/man/man1/glab-minder-setup.1.gz
+%%MANPAGES%%share/man/man1/glab-minder-update.1.gz
 %%MANPAGES%%share/man/man1/glab-minder.1.gz
 %%MANPAGES%%share/man/man1/glab-mr-approve.1.gz
 %%MANPAGES%%share/man/man1/glab-mr-approvers.1.gz
