@@ -17,8 +17,7 @@ as devel/libccid) and that pcscd is running (add pcscd_enable="YES" to
 
 To use your eID card in Firefox you must have the "eID Belgium" extension
 installed.  Normally this happens automatically.  If not, you can find it
-at https://addons.mozilla.org/en-US/firefox/addon/belgium-eid/.  The eID card
-must be inserted before starting Firefox.
+at https://addons.mozilla.org/en-US/firefox/addon/belgium-eid/.
 EOM
 }
 ]
