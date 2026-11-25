@@ -1,6 +1,6 @@
---- src/runtime/src/coreclr/gc/unix/gcenv.unix.cpp.orig	2023-11-01 21:55:24 UTC
+--- src/runtime/src/coreclr/gc/unix/gcenv.unix.cpp.orig	2026-10-29 18:33:34 UTC
 +++ src/runtime/src/coreclr/gc/unix/gcenv.unix.cpp
-@@ -1171,7 +1171,34 @@ uint64_t GetAvailablePhysicalMemory()
+@@ -1178,7 +1178,34 @@ uint64_t GetAvailablePhysicalMemory()
      uint64_t available = 0;
  
      // Get the physical memory available.
@@ -36,7 +36,7 @@
      static volatile bool tryReadMemInfo = true;
  
      if (tryReadMemInfo)
-@@ -1187,22 +1214,7 @@ uint64_t GetAvailablePhysicalMemory()
+@@ -1194,22 +1221,7 @@ uint64_t GetAvailablePhysicalMemory()
          // Fall back to getting the available pages using sysconf.
          available = sysconf(SYSCONF_PAGES) * sysconf(_SC_PAGE_SIZE);
      }

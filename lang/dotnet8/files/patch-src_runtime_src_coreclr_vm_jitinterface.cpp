@@ -1,8 +1,8 @@
---- src/runtime/src/coreclr/vm/jitinterface.cpp.orig	2024-01-30 14:43:23.896193000 +0000
-+++ src/runtime/src/coreclr/vm/jitinterface.cpp	2024-01-30 14:44:17.447492000 +0000
-@@ -1597,6 +1597,10 @@
-                 optimizeThreadStaticAccess = GetTlsIndexObjectAddress() != nullptr;
- #endif // !TARGET_OSX && TARGET_UNIX && TARGET_AMD64
+--- src/runtime/src/coreclr/vm/jitinterface.cpp.orig	2026-10-29 18:33:34 UTC
++++ src/runtime/src/coreclr/vm/jitinterface.cpp
+@@ -1623,6 +1623,10 @@ void CEEInfo::getFieldInfo (CORINFO_RESOLVED_TOKEN * p
+                     optimizeThreadStaticAccess = false;
+                 }
  
 +#if defined(TARGET_ARM64) && defined(TARGET_FREEBSD)
 +		optimizeThreadStaticAccess = false;
