@@ -11,7 +11,7 @@ MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Wiki compiler
 WWW=		https://ikiwiki.info/
 
-LICENSE=	GPLv2
+LICENSE=	GPL-2.0-only
 
 BUILD_DEPENDS=	p5-CGI-FormBuilder>=0:www/p5-CGI-FormBuilder \
 		p5-CGI-Session>=0:www/p5-CGI-Session \

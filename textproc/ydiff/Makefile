@@ -9,7 +9,7 @@ MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Diff readability enhancer for color terminals
 WWW=		https://github.com/ymattw/ydiff
 
-LICENSE=	BSD3CLAUSE
+LICENSE=	BSD-3-Clause
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		python

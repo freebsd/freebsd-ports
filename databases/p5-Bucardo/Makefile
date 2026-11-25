@@ -9,7 +9,7 @@ MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Asynchronous PostgreSQL replication system
 WWW=		https://bucardo.org/Bucardo/
 
-LICENSE=	BSD2CLAUSE
+LICENSE=	BSD-2-Clause
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}

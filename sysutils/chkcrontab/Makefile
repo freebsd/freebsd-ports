@@ -8,7 +8,7 @@ MAINTAINER=	mat@FreeBSD.org
 COMMENT=	system and user crontab linter
 WWW=		https://gitlab.com/mat813/chkcrontab
 
-LICENSE=	APACHE20 MIT
+LICENSE=	Apache-2.0 MIT
 LICENSE_COMB=	dual
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT

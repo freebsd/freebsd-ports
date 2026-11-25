@@ -33,7 +33,7 @@ WWW=		https://www.isc.org/bind/
 # DEPRECATED=	End of life, please migrate to a newer version of BIND9
 # EXPIRATION_DATE=	XXX-12-31
 
-LICENSE=	MPL20
+LICENSE=	MPL-2.0
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 LIB_DEPENDS=	liblmdb0.so:databases/lmdb0 \

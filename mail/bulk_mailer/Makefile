@@ -8,7 +8,7 @@ MASTER_SITES=	ftp://ftp.cs.utk.edu/pub/moore/bulk_mailer/ \
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Speeds delivery to mailing lists by sorting & batching addresses
 
-LICENSE=	GPLv3
+LICENSE=	GPL-3.0-only
 
 GNU_CONFIGURE=	YES
 

@@ -10,7 +10,7 @@ MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Practical Extraction and Report Language
 WWW=		https://www.perl.org/
 
-LICENSE=	ART10 GPLv1+
+LICENSE=	Artistic-dist GPL-1.0-only
 LICENSE_COMB=	dual
 LICENSE_FILE_ART10=	${WRKSRC}/Artistic
 LICENSE_FILE_GPLv1+ =	${WRKSRC}/Copying
