@@ -1,6 +1,6 @@
 PORTNAME=	wv2
 PORTVERSION=	0.4.2
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	textproc
 MASTER_SITES=	SF/wvware/
 
@@ -10,6 +10,9 @@ WWW=		https://wvware.sourceforge.net/
 
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
+
+DEPRECATED=	No consumers in Ports, does not build with CMake 4
+EXPIRATION_DATE=2026-12-31
 
 USES=		cmake gnome iconv libtool pkgconfig tar:bzip2
 USE_CXXSTD=	c++14
