@@ -21,7 +21,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	insilmaril
 
 USE_GL=		opengl
-USE_QT=		base declarative svg translations
+USE_QT=		base declarative svg translations tools:build
 
 SHEBANG_FILES=	scripts/vivym scripts/vym-addmail.rb
 
