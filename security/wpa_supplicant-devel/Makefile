@@ -1,6 +1,5 @@
 PORTNAME=	wpa_supplicant
 PORTVERSION=	${COMMIT_DATE}
-PORTREVISION=	5
 CATEGORIES=	security net
 PKGNAMESUFFIX=	-devel
 
@@ -11,8 +10,8 @@ WWW=		https://w1.fi/wpa_supplicant/
 USE_GITHUB=	yes
 GH_ACCOUNT=	cschuber
 GH_PROJECT=	hostap
-GH_TAGNAME=	4bd12dcff7
-COMMIT_DATE=	2026.10.28
+GH_TAGNAME=	f7f2017ef
+COMMIT_DATE=	2026.11.23
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/README
@@ -27,6 +26,7 @@ CFLAGS+=	${CPPFLAGS} # USES=readline only augments CPPFLAGS and LDFLAGS
 CFLAGS+=	-Wno-undefined-internal
 CFLAGS+=	-I${OPENSSLINC}
 CFLAGS+=	-Wno-deprecated-declarations -Wno-c23-extensions
+CFLAGS+=	-Wno-unused-result
 LDFLAGS+=	-L${OPENSSLLIB} -lutil
 MAKE_ENV=	V=1
 ALL_TARGET+=	all
@@ -158,9 +158,11 @@ post-patch:
 	@${CP} ${FILESDIR}/Packet32.[ch] ${FILESDIR}/ntddndis.h \
 		${WRKSRC}/src/utils
 	# Set driver(s)
-	# SAE and ENC_ASSOC are always required.
+	# Below options are always required.
 	@${ECHO_CMD} CONFIG_SAE=y >> ${CFG}
 	@${ECHO_CMD} CONFIG_ENC_ASSOC=y >> ${CFG}
+	@${ECHO_CMD} CONFIG_TESTING_OPTIONS=y >> ${CFG}
+	@${ECHO_CMD} CONFIG_TLS_ENGINE_TRUSTED_PATH=y >> ${CFG}
 .for item in BSD NDIS WIRED ROBOSWITCH TEST NONE
 .  if ${PORT_OPTIONS:M${item}}
 	@${ECHO_CMD} CONFIG_DRIVER_${item}=y >> ${CFG}
@@ -229,6 +231,7 @@ post-patch:
 	@${ECHO_CMD} CONFIG_BACKEND=file >> ${CFG}
 	@${ECHO_CMD} CONFIG_L2_PACKET=freebsd >> ${CFG}
 	@${ECHO_CMD} CONFIG_TLS=openssl >> ${CFG}
+	# @${REINPLACE_CMD} 's/^/\#define /; s/=/ /' ${CFG}
 
 do-install:
 	(cd ${BUILD_WRKSRC} && ${INSTALL_PROGRAM} wpa_supplicant wpa_cli \
