@@ -1,6 +1,5 @@
 PORTNAME=	openresty
-PORTVERSION=	1.31.8.1
-PORTREVISION=	1
+PORTVERSION=	1.31.9.1
 CATEGORIES=	www
 MASTER_SITES=	https://openresty.org/download/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -18,7 +17,7 @@ LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty \
 
 USES=		cpe gmake perl5 ssl
 
-CORE_VER=	0.1.35rc2
+CORE_VER=	0.1.35rc3
 PLIST_SUB=	CORE_VER=${CORE_VER}
 
 HAS_CONFIGURE=	yes
