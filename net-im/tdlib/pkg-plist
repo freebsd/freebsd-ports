@@ -24,6 +24,8 @@ include/td/telegram/AffectedHistory.h
 include/td/telegram/AffiliateType.h
 include/td/telegram/AgeVerificationParameters.h
 include/td/telegram/AgeVerificationParameters.hpp
+include/td/telegram/AiComposeStyle.h
+include/td/telegram/AiComposeStyle.hpp
 include/td/telegram/AiComposeTone.h
 include/td/telegram/AiComposeTone.hpp
 include/td/telegram/AiComposeToneExample.h
@@ -621,6 +623,7 @@ include/td/telegram/td_json_client.h
 include/td/telegram/td_log.h
 include/td/telegram/tdjson_export.h
 include/td/tl/TlObject.h
+include/td/utils/Action.h
 include/td/utils/AesCtrByteFlow.h
 include/td/utils/AsyncFileLog.h
 include/td/utils/AtomicRead.h
