@@ -401,6 +401,7 @@
 %%DATADIR%%/docs/administration/repairing-hierarchical-paths.md
 %%DATADIR%%/docs/administration/replicating-netbox.md
 %%DATADIR%%/docs/best-practices/modeling-pluggable-transceivers.md
+%%DATADIR%%/docs/best-practices/modeling-servers.md
 %%DATADIR%%/docs/best-practices/performance-handbook.md
 %%DATADIR%%/docs/configuration/data-validation.md
 %%DATADIR%%/docs/configuration/default-values.md
@@ -1040,6 +1041,7 @@
 %%DATADIR%%/netbox/forms/search.py
 %%DATADIR%%/netbox/graphql/__init__.py
 %%DATADIR%%/netbox/graphql/enums.py
+%%DATADIR%%/netbox/graphql/extensions.py
 %%DATADIR%%/netbox/graphql/filter_lookups.py
 %%DATADIR%%/netbox/graphql/filter_mixins.py
 %%DATADIR%%/netbox/graphql/filters.py
@@ -1496,6 +1498,7 @@
 %%DATADIR%%/templates/django/forms/widgets/select.html
 %%DATADIR%%/templates/django/forms/widgets/textarea.html
 %%DATADIR%%/templates/exceptions/import_error.html
+%%DATADIR%%/templates/exceptions/maintenance_mode.html
 %%DATADIR%%/templates/exceptions/permission_error.html
 %%DATADIR%%/templates/exceptions/programming_error.html
 %%DATADIR%%/templates/extras/configtemplate/attrs/data_file.html

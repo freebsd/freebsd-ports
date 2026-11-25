@@ -1,14 +1,13 @@
 PORTNAME=	netbox
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.7.5
-PORTREVISION=	1
+DISTVERSION=	4.7.6
 CATEGORIES=	net-mgmt python
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	IP address management tool
 WWW=		https://github.com/netbox-community/netbox
 
-LICENSE=	APACHE20
+LICENSE=	Apache-2.0
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 # NetBox has fixed Python package dependencies listed in "requirements.txt"
@@ -42,24 +41,24 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django61>=6.1.3<6.2:www/py-django61@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}dj61-drf-spectacular>=0.30.0<1:www/py-dj61-drf-spectacular@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj61-drf-spectacular-sidecar>=2026.10.1:www/py-dj61-drf-spectacular-sidecar@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj61-social-auth-app-django>=6.1.0<7:www/py-dj61-social-auth-app-django@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj61-sorl-thumbnail>=13.4.0<14:graphics/py-dj61-sorl-thumbnail@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj61-strawberry-graphql>=0.327.1<1:devel/py-dj61-strawberry-graphql@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj61-strawberry-graphql-django>=0.88.0<1:www/py-dj61-strawberry-graphql-django@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj61-sorl-thumbnail>=13.5.0<14:graphics/py-dj61-sorl-thumbnail@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj61-strawberry-graphql>=0.341.2<1:devel/py-dj61-strawberry-graphql@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj61-strawberry-graphql-django>=0.96.3<1:www/py-dj61-strawberry-graphql-django@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}colorama>=0.4.6<1:devel/py-colorama@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-pgware>=1.0.0<2:databases/py-django-pgware@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}feedparser>=6.0.12<7:textproc/py-feedparser@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}gunicorn>=26.2.0:www/py-gunicorn@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}gunicorn>=27.0.1:www/py-gunicorn@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.1.6<4:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonschema>=4.26.0<5:devel/py-jsonschema@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}markdown>=3.11.2<4:textproc/py-markdown@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}markdown>=3.11.3<4:textproc/py-markdown@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mkdocs>=1.6.1<2:textproc/py-mkdocs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mkdocstrings>=1.0.8<2:textproc/py-mkdocstrings@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}mkdocstrings-python>=2.0.10:textproc/py-mkdocstrings-python@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mkdocstrings-python>=2.0.11:textproc/py-mkdocstrings-python@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}netaddr>=1.3.0<2:net/py-netaddr@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}nh3>=0.3.7<1:www/py-nh3@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}nh3>=0.3.8<1:www/py-nh3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pillow>=13.0.0:graphics/py-pillow@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}psycopg>=3.3.6<4:databases/py-psycopg@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}psycopg-c>=3.3.6<4:databases/py-psycopg-c@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}psycopg>=3.3.9<4:databases/py-psycopg@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}psycopg-c>=3.3.9<4:databases/py-psycopg-c@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psycopg-pool>=3.3.3<4:databases/py-psycopg-pool@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pymdown-extensions>=12.1<14:textproc/py-pymdown-extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=6.0.3<7:devel/py-pyyaml@${PY_FLAVOR} \
@@ -70,7 +69,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django61>=6.1.3<6.2:www/py-django61@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}svgwrite>=1.4.3<2:graphics/py-svgwrite@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tablib>=3.10.0<4:textproc/py-tablib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tzdata>=2026.6:devel/py-tzdata@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}zensical>=0.1.0<1:textproc/py-zensical@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}zensical>=0.1.3<1:textproc/py-zensical@${PY_FLAVOR}
 
 USES=		cpe pgsql:15+ python:3.12+
 CPE_VENDOR=	netbox

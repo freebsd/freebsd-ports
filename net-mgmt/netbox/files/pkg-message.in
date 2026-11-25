@@ -417,4 +417,39 @@ https://netboxlabs.com/docs/netbox/release-notes/version-4.7#breaking-changes
 
 EOD
 }
+{ type: upgrade
+  maximum_version: 4.7.6
+  message: <<EOD
+The 4.7.6 release also includes two fixes for tracing cable paths:
+
+  * Fix cable tracing from a multi-position front port whose rear ports
+    converge on the same remote endpoint, which was reported as a split
+    path with no connected_endpoints
+
+  * Fix cable tracing through a partially connected profiled cable (e.g.
+    a 1C4P:4C1P breakout with fewer than four legs connected), which was
+    reported as a split path with no endpoints
+
+The two fixes listed above don't update cable paths which have already been
+recorded and remain marked as split until one of their cables is saved again.
+
+To retrace them, run the following command after upgrading:
+
+# cd %%DATADIR%%
+# python%%PYTHON_VER%% manage.py trace_paths --force
+
+On large installations, the split paths can be fixed using "nbshell":
+
+# cd %%DATADIR%%
+# python%%PYTHON_VER%% manage.py nbshell
+
+>>> from dcim.models import CablePath
+>>> CablePath.objects.filter(is_split=True).delete()
+
+Then run following command:
+
+# python%%PYTHON_VER%% manage.py trace_paths
+
+EOD
+}
 ]
