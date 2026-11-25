@@ -15,7 +15,7 @@ ONLY_FOR_ARCHS_REASON=	Requires a 64-bit processor
 USES=		cmake
 USE_GITHUB=	yes
 
-CMAKE_ARGS=	-DCOMPILATION_ARCH=${CPUTYPE:UOFF}
+CMAKE_OFF=	COMPILATION_ARCH
 
 CXXFLAGS+=	-Wno-unqualified-std-cast-call
 
