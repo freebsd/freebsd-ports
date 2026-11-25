@@ -1,6 +1,5 @@
 PORTNAME=	telegram-desktop
-DISTVERSION=	7.4.2
-PORTREVISION=	1
+DISTVERSION=	7.4.6
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
 DISTNAME=	tdesktop-${DISTVERSION}-full
@@ -31,12 +30,12 @@ BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
 		${LOCALBASE}/lib/libtlottie.a:graphics/tlottie \
 		${LOCALBASE}/lib/libwallet_engine.a:net-p2p/wallet-engine
 LIB_DEPENDS=	libabsl_base.so:devel/abseil \
-		libada.so:devel/libada \
 		libavformat.so:multimedia/ffmpeg \
 		libcrc32c.so:devel/crc32c \
 		libdbus-1.so:devel/dbus \
 		libdispatch.so:devel/libdispatch \
 		libfido2.so:security/libfido2 \
+		libfontconfig.so:x11-fonts/fontconfig \
 		libfmt.so:devel/libfmt \
 		libheif.so:graphics/libheif \
 		libhunspell-1.7.so:textproc/hunspell \
@@ -63,7 +62,7 @@ USE_QT=		5compat base declarative imageformats lottie shadertools svg tools:buil
 USE_KDE=	coreaddons kimageformats
 
 USE_GL=		gl
-USE_GNOME=	glib20 glibmm26 introspection
+USE_GNOME=	cairo glib20 glibmm26 introspection pango
 
 CMAKE_ARGS=	-DTDESKTOP_API_ID=${TELEGRAM_API_ID} -DTDESKTOP_API_HASH=${TELEGRAM_API_HASH} \
 		-DQT_VERSION_MAJOR=6
