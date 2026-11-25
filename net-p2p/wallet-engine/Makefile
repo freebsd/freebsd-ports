@@ -1,7 +1,7 @@
 PORTNAME=	wallet-engine
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-p2p
 
 MAINTAINER=	fluffy@FreeBSD.org
@@ -16,8 +16,7 @@ USES=		cargo
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	i582
-
-BINDINGS_FILES=	${WRKSRC}/*.el ${WRKSRC}/extensions/*.el
+GH_TAGNAME=	e59e0d8
 
 # generate C++ bindings required by telegram-desktop
 post-build:
