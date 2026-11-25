@@ -1,6 +1,6 @@
 PORTNAME=	lumina-pdf
 DISTVERSION=	1.6.2
-PORTREVISION=	25
+PORTREVISION=	26
 CATEGORIES=	deskutils
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -8,6 +8,9 @@ COMMENT=	PDF viewer from the Lumina Desktop
 WWW=		https://github.com/lumina-desktop/lumina
 
 LICENSE=	BSD3CLAUSE
+
+DEPRECATED=	Depends on unsupported Qt5
+EXPIRATION_DATE=	2027-01-01
 
 USES=		compiler:c++11-lang desktop-file-utils gl qmake qt:5
 USE_QT=		buildtools:build concurrent core gui \
