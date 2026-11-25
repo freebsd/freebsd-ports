@@ -1,17 +1,30 @@
-Remove scripts because these contain additional, undocumented dependencies and
-are not required as the package is used only as a library.
+* Enable build for older version of py-setuptools.
 
---- pyproject.toml.orig	2026-07-01 11:42:17 UTC
+* Remove scripts because these contain additional, undocumented dependencies
+  and are not required as the package is used only as a library.
+
+--- pyproject.toml.orig	2026-11-24 07:56:20 UTC
 +++ pyproject.toml
-@@ -36,11 +36,6 @@ packages = [
- packages = [
-     "openstackdocstheme"
+@@ -9,7 +9,7 @@ readme = {file = "README.rst", content-type = "text/x-
+     {name = "OpenStack", email = "openstack-discuss@lists.openstack.org"},
  ]
+ readme = {file = "README.rst", content-type = "text/x-rst"}
+-license = "Apache-2.0"
++license = {text="Apache-2.0"}
+ dynamic = ["version"]
+ requires-python = ">=3.11"
+ classifiers = [
+@@ -46,13 +46,6 @@ Repository = "https://opendev.org/openstack/openstackd
+ [project.urls]
+ Homepage = "https://docs.openstack.org/openstackdocstheme"
+ Repository = "https://opendev.org/openstack/openstackdocstheme"
+-
+-[tool.setuptools]
 -script-files = [
 -    "bin/docstheme-build-translated.sh",
 -    "bin/docstheme-lang-display-name.py",
 -    "bin/docstheme-build-pdf",
 -]
  
- [tool.mypy]
- python_version = "3.10"
+ [tool.setuptools.packages.find]
+ include = ["openstackdocstheme*"]
