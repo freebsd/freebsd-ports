@@ -1,4 +1,4 @@
-commit f9ad12bb5d1ccb40c048732400d07cb56521840b
+commit 8ec88f9e65842f94415297f2e9aa6b1e124b7b13
 Author: Christoph Moench-Tegeder <cmt@FreeBSD.org>
 
     Avoid Linuxisms
@@ -9,16 +9,19 @@ Author: Christoph Moench-Tegeder <cmt@FreeBSD.org>
        I think), but not everywhere
 
 diff --git src/qmaptool/setup/CAppSetupLinux.cpp src/qmaptool/setup/CAppSetupLinux.cpp
-index d3e353fa..ca36a2f3 100644
+index 10d2030a8..5d1edc506 100644
 --- src/qmaptool/setup/CAppSetupLinux.cpp
 +++ src/qmaptool/setup/CAppSetupLinux.cpp
-@@ -30,10 +30,15 @@
+@@ -25,6 +25,7 @@
  #include <stdlib.h>
  #include <string.h>
  #include <unistd.h>
 +#include <sys/stat.h>
  
- #include "config.h"
+ #include <QMessageBox>
+ #include <QWindow>
+@@ -33,6 +34,10 @@
+ #include "setup/CAppSetupLinux.h"
  #include "version.h"
  
 +#if defined(Q_OS_FREEBSD)

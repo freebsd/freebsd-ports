@@ -1,7 +1,6 @@
 PORTNAME=	qmapshack
 DISTVERSIONPREFIX=	V_
-DISTVERSION=	1.21.1
-PORTREVISION=	1
+DISTVERSION=	1.22.0
 CATEGORIES=	astro
 
 MAINTAINER=	cmt@FreeBSD.org
@@ -24,7 +23,7 @@ USES=		cmake desktop-file-utils gl jpeg qt:6
 USE_GITHUB=	yes
 GH_ACCOUNT=	Maproom
 USE_GL=	gl
-USE_QT=		5compat base declarative positioning tools webchannel \
+USE_QT=		5compat base declarative positioning svg tools webchannel \
 		webengine
 
 OPTIONS_DEFINE=	DOCS
