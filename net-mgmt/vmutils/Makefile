@@ -1,5 +1,4 @@
 PORTNAME=	vmutils
-PORTREVISION=	5
 
 COMMENT=	Ancillary utilities and agent for VictoriaMetrics
 
@@ -14,7 +13,7 @@ SUB_LIST+=	VMAGENT_DATA=${VMAGENT_DATA}
 PLIST_SUB+=	VMAGENT_DATA=${VMAGENT_DATA}
 
 do-install:
-.for p in agent alert auth backup ctl restore
+.for p in agent alert alert-tool auth backup ctl restore
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/vm${p}-pure \
 		${STAGEDIR}${PREFIX}/bin/vm${p}
 .endfor
