@@ -70,11 +70,14 @@ MYSQL${v}m_LIBVER=	3
 
 # Setting/finding MySQL version we want.
 .  if exists(${LOCALBASE}/bin/mariadb)
-_MARIADB!=      ${LOCALBASE}/bin/mariadb --version | ${GREP} MariaDB | wc -l
+_MYSQL!=	${LOCALBASE}/bin/mysql_config --version | ${SED} -e 's/\([0-9]\{1,2\}\)\.\([0-9]*\).*/\1\2/'
+_MARIADB!=	${LOCALBASE}/bin/mariadb --version | ${GREP} MariaDB | wc -l
 .  elif exists(${LOCALBASE}/bin/mysql)
 _MYSQL!=	${LOCALBASE}/bin/mysql_config --version | ${SED} -e 's/\([0-9]\{1,2\}\)\.\([0-9]*\).*/\1\2/'
 _MARIADB!=	${LOCALBASE}/bin/mysql --version | ${GREP} MariaDB | wc -l
+.  endif
 
+.  if defined(_MYSQL)
 .    if ${_MARIADB} == 1
 _MYSQL_VER=	${_MYSQL}m
 _MYSQL_FLAVOUR=	mariadb
