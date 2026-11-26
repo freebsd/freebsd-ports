@@ -1,3 +1,4 @@
+include/tlsf.h
 include/yojimbo.h
 include/yojimbo_adapter.h
 include/yojimbo_address.h
@@ -23,6 +24,13 @@ include/yojimbo_server.h
 include/yojimbo_server_interface.h
 include/yojimbo_unreliable_unordered_channel.h
 include/yojimbo_utils.h
+lib/cmake/Yojimbo/YojimboConfig.cmake
+lib/cmake/Yojimbo/YojimboConfigVersion.cmake
+lib/cmake/Yojimbo/YojimboDependencies.cmake
+lib/cmake/Yojimbo/YojimboSystemDeps.cmake
+lib/cmake/Yojimbo/YojimboTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/Yojimbo/YojimboTargets.cmake
+lib/cmake/Yojimbo/dependencies.manifest
 lib/libyojimbo.so
 lib/libyojimbo.so.1
-lib/libyojimbo.so.1.6.3
+lib/libyojimbo.so.1.16.1
