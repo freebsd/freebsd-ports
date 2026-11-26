@@ -1,9 +1,9 @@
 PORTNAME?=		mysql
-PORTVERSION=		26.10.0
-PORTREVISION=	1
+PORTVERSION=		26.10.0.1
 CATEGORIES=		databases
 MASTER_SITES=		MYSQL/MySQL-26.10
 PKGNAMESUFFIX?=		2610-server
+PORTSCOUT=		limit:^26\.10\.
 
 MAINTAINER=		joneum@FreeBSD.org
 COMMENT?=		Multithreaded SQL database (server)
