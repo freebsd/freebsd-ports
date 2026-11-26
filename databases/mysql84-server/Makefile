@@ -1,9 +1,9 @@
 PORTNAME?=		mysql
-PORTVERSION=		8.4.13
-PORTREVISION=	1
+PORTVERSION=		8.4.13.1
 CATEGORIES=		databases
 MASTER_SITES=		MYSQL/MySQL-8.4
 PKGNAMESUFFIX?=		84-server
+PORTSCOUT=		limit:^8\.4\.
 
 MAINTAINER=		joneum@FreeBSD.org
 COMMENT?=		Multithreaded SQL database (server)
