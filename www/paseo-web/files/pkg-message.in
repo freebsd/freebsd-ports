@@ -1,0 +1,18 @@
+[
+{ type: install
+  message: <<EOM
+The Paseo web app is in %%WWWDIR%%.
+It is a single-page app, so answer unknown paths with index.html.  For nginx:
+
+    root %%WWWDIR%%;
+    gzip_static on;
+    location / { try_files $uri /index.html; }
+
+Serve it over HTTPS (except from localhost), or browsers block wss://,
+the microphone, and the clipboard.  To make a daemon's pairing links
+point here, set in its config.json:
+
+    "app": { "baseUrl": "https://paseo.example.org" }
+EOM
+}
+]

@@ -1,0 +1,5 @@
+The web app of Paseo, the agentic development environment, as static
+files: the same app served at app.paseo.sh.  Serve it with any web server
+to use your own copy of the web app, without running a Paseo daemon
+(misc/paseo) on that host.  It works with pairing links from any daemon,
+and with a self-hosted relay (net/paseo-relay).
