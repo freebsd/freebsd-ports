@@ -7,7 +7,7 @@ Type:
 
  sudo kldload fusefs.ko
  sudo service clamav-freshclam onestart
- sudo service clamav-daemon onestart
+ sudo service clamav-clamd onestart
 
 For more info please visit:
  https://github.com/burghardt/clamfs#additional-configuration-steps-for-freebsd
