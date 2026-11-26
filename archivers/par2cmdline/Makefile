@@ -1,5 +1,5 @@
 PORTNAME=	par2cmdline
-PORTVERSION=	1.4.0
+PORTVERSION=	2.0.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	archivers
 
@@ -9,19 +9,15 @@ WWW=		https://github.com/Parchive/par2cmdline
 
 LICENSE=	GPLv2
 
-USES=		autoreconf compiler:c++11-lang
-GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+USES=		cmake:testing compiler:c++14-lang
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Parchive
 
-PORTDOCS=	README
+PORTDOCS=	README.md
 CONFLICTS=	par2cmdline-turbo
 
 OPTIONS_DEFINE=	DOCS
-
-TEST_TARGET=	check
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR} && \
