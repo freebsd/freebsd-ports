@@ -1,3 +1,45 @@
+  <vuln vid="a22c60b3-e987-11f1-97dc-40b034429ecf">
+    <topic>p5-CGI-PSGI -- multiple vulnerabilities</topic>
+    <affects>
+<package>
+<name>p5-CGI-PSGI</name>
+<range><lt>0.16</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>CGI-PSGI project reports:</p>
+	<blockquote cite="https://metacpan.org/dist/CGI-PSGI/changes">
+	  <p>Multiple vulnerabilities:</p>
+      <ul>
+	<li>Never read the process's @ARGV as request parameters
+	  (CVE-2026-120637 on CGI.pm &lt; 5.02, and envs with no REQUEST_METHOD)</li>
+	<li>header and redirect values are no longer HTML unescaped, which
+	  allowed header injection via &#13;
+ (CVE-2026-120639) and
+	  open redirects via /&amp;#47evil.example/ (CVE-2026-120638)</li>
+	<li>quotes and backslashes in the -attachment filename are escaped
+	    (CVE-2026-120647)</li>
+      </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-120637</cvename>
+      <cvename>CVE-2026-120638</cvename>
+      <cvename>CVE-2026-120639</cvename>
+      <cvename>CVE-2026-120647</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/cve-2026-120637</url>
+      <url>https://nvd.nist.gov/vuln/detail/cve-2026-120638</url>
+      <url>https://nvd.nist.gov/vuln/detail/cve-2026-120639</url>
+      <url>https://nvd.nist.gov/vuln/detail/cve-2026-120647</url>
+    </references>
+    <dates>
+      <discovery>2026-11-04</discovery>
+      <entry>2026-11-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a454f42d-e904-11f1-9b74-3497f65b111b">
     <topic>MySQL -- multiple vulnerabilities</topic>
     <affects>
