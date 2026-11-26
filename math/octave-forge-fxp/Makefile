@@ -1,5 +1,5 @@
 PORTNAME=	octave-forge-fxp
-DISTVERSION=	3.1.1
+DISTVERSION=	3.2.0
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
