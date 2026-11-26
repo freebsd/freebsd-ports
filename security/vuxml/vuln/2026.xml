@@ -9766,7 +9766,8 @@ privileges.</p>
     <affects>
       <package>
 	<name>powerdns-recursor</name>
-	<range><lt>5.4.8</lt></range>
+	<range><lt>5.3.12</lt></range>
+	<range><ge>5.4.0</ge><lt>5.4.8</lt></range>
       </package>
     </affects>
     <description>
@@ -9796,8 +9797,9 @@ privileges.</p>
       <url>https://doc.powerdns.com/recursor/security-advisories/powerdns-advisory-2026-12.html</url>
     </references>
     <dates>
-      <discovery>2026-10-21</discovery>
+      <discovery>2026-07-10</discovery>
       <entry>2026-10-21</entry>
+      <modified>2026-11-28</modified>
     </dates>
   </vuln>
 
