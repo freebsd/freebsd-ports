@@ -1,4 +1,4 @@
---- electron/spec/chromium.spec.ts.orig	2026-11-18 22:25:18 UTC
+--- electron/spec/chromium.spec.ts.orig	2026-11-24 16:27:54 UTC
 +++ electron/spec/chromium.spec.ts
 @@ -614,15 +614,15 @@ describe('command line switches', () => {
        testLocale('asdfkl', `${currentLocale}|${currentSystemLocale}|${currentPreferredLanguages}`));
@@ -29,7 +29,16 @@
        process.arch !== 'ia32' &&
        !process.arch.startsWith('arm') &&
        !!process.env.DBUS_SESSION_BUS_ADDRESS
-@@ -4523,12 +4523,12 @@ describe('font fallback', () => {
+@@ -2271,7 +2271,7 @@ describe('chromium features', () => {
+   // fake session bus. A pick succeeds with the URIs queued through
+   // QueueResponse; with nothing queued the mock cancels it.
+   ifdescribe(
+-    process.platform === 'linux' &&
++    (process.platform === 'linux' || process.platform === 'freebsd') &&
+       process.arch !== 'ia32' &&
+       !process.arch.startsWith('arm') &&
+       !!process.env.DBUS_SESSION_BUS_ADDRESS
+@@ -4795,12 +4795,12 @@ describe('font fallback', () => {
        expect(fonts[0].familyName).toBe('Arial');
      } else if (process.platform === 'darwin') {
        expect(fonts[0].familyName).toBe('Helvetica');
@@ -44,7 +53,7 @@
      const html = `
      <html lang="ja-JP">
        <head>
-@@ -5246,7 +5246,7 @@ describe('paste execCommand', { tags: ['serial'] }, ()
+@@ -5649,7 +5649,7 @@ describe('paste execCommand', { tags: ['serial'] }, ()
    });
  });
  
