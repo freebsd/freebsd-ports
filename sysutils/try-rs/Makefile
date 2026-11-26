@@ -1,6 +1,6 @@
 PORTNAME=	try-rs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.15
+DISTVERSION=	1.7.17
 CATEGORIES=	sysutils
 
 MAINTAINER=	adamw@FreeBSD.org
@@ -10,7 +10,8 @@ WWW=		https://try-rs.org
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	git-tiny>=0:devel/git@tiny
+TEST_DEPENDS=	bash:shells/bash \
+		git-tiny>=0:devel/git@tiny
 
 USES=		cargo
 USE_GITHUB=	yes
