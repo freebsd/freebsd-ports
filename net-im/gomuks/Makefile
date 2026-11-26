@@ -1,6 +1,5 @@
 PORTNAME=	gomuks
-DISTVERSION=	26.10
-PORTREVISION=	2
+DISTVERSION=	26.11.1
 CATEGORIES=	net-im
 
 MAINTAINER=	dereks@lifeofadishwasher.com
@@ -17,7 +16,7 @@ RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg
 
 USES=		go:modules nodejs:build npm:npm
 
-GO_MODULE_VER=	0.${DISTVERSION:C/\.//}.0
+GO_MODULE_VER=	0.${DISTVERSION:S/.//}
 GO_MODULE=	go.mau.fi/gomuks@v${GO_MODULE_VER}
 
 MAKE_ENV+=	CGO_CFLAGS="-I${LOCALBASE}/include" \
@@ -47,7 +46,7 @@ do-build:
 	CGO_ENABLED=0 \
 	${GO_CMD} build \
 	-o src/api/wasm/_gomuks.wasm \
-	-tags "goolm sqlite_fts5" \
+	-tags "sqlite_fts5" \
 	../cmd/wasmuks \
 		&& \
 	${SETENV} ${MAKE_ENV} \
