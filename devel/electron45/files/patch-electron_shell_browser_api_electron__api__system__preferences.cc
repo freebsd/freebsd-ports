@@ -1,4 +1,4 @@
---- electron/shell/browser/api/electron_api_system_preferences.cc.orig	2026-10-26 21:12:45 UTC
+--- electron/shell/browser/api/electron_api_system_preferences.cc.orig	2026-11-24 16:37:09 UTC
 +++ electron/shell/browser/api/electron_api_system_preferences.cc
 @@ -16,7 +16,7 @@
  #include "v8/include/cppgc/allocation.h"
@@ -27,7 +27,7 @@
  void SystemPreferences::Dispose() {
    ui_theme_->RemoveObserver(this);
    weak_factory_.Invalidate();
-@@ -74,7 +74,7 @@ v8::Local<v8::Value> SystemPreferences::GetAnimationSe
+@@ -81,7 +81,7 @@ v8::Local<v8::Value> SystemPreferences::GetAnimationSe
    return dict.GetHandle();
  }
  
@@ -36,7 +36,7 @@
  std::string SystemPreferences::GetAccentColor() {
    auto const color = ui_theme_->user_color();
    if (!color.has_value())
-@@ -174,7 +174,7 @@ void SystemPreferences::Trace(cppgc::Visitor* visitor)
+@@ -181,7 +181,7 @@ void SystemPreferences::Trace(cppgc::Visitor* visitor)
  
  void SystemPreferences::Trace(cppgc::Visitor* visitor) const {
    gin::Wrappable<SystemPreferences>::Trace(visitor);

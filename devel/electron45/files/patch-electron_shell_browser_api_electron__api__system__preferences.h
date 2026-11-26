@@ -1,4 +1,4 @@
---- electron/shell/browser/api/electron_api_system_preferences.h.orig	2026-10-26 21:12:45 UTC
+--- electron/shell/browser/api/electron_api_system_preferences.h.orig	2026-11-24 16:37:09 UTC
 +++ electron/shell/browser/api/electron_api_system_preferences.h
 @@ -18,7 +18,7 @@
  #include "shell/browser/browser.h"
@@ -27,7 +27,7 @@
    // ui::NativeThemeObserver:
    void OnNativeThemeUpdated(ui::NativeTheme* theme) override;
  #endif
-@@ -165,13 +165,13 @@ class SystemPreferences final
+@@ -171,13 +171,13 @@ class SystemPreferences final
    base::CallbackListSubscription hwnd_subscription_;
    base::CallbackListSubscription accent_color_subscription_;
  #endif

@@ -1,4 +1,4 @@
---- chrome/browser/file_system_access/chrome_file_system_access_permission_context_unittest.cc.orig	2026-11-10 20:19:00 UTC
+--- chrome/browser/file_system_access/chrome_file_system_access_permission_context_unittest.cc.orig	2026-11-17 01:38:52 UTC
 +++ chrome/browser/file_system_access/chrome_file_system_access_permission_context_unittest.cc
 @@ -711,7 +711,7 @@ TEST_F(ChromeFileSystemAccessPermissionContextTest,
        IsOpenAbort(app_data_dir.AppendASCII("foo"), HandleType::kDirectory));
@@ -63,7 +63,7 @@
  #elif BUILDFLAG(IS_WIN)
    EXPECT_EQ(ConfirmSensitiveEntryAccessSync(
                  permission_context(),
-@@ -2366,7 +2366,7 @@ TEST_F(ChromeFileSystemAccessPermissionContextTest,
+@@ -2702,7 +2702,7 @@ TEST_F(ChromeFileSystemAccessPermissionContextTest,
         false},
  #endif
  

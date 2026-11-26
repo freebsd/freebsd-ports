@@ -1,6 +1,6 @@
---- electron/build/args/all.gn.orig	2026-11-18 23:46:22 UTC
+--- electron/build/args/all.gn.orig	2026-11-24 16:37:09 UTC
 +++ electron/build/args/all.gn
-@@ -47,8 +47,8 @@ enable_cdm_host_verification = false
+@@ -50,8 +50,8 @@ enable_cdm_host_verification = false
  v8_enable_javascript_promise_hooks = true
  
  enable_cdm_host_verification = false
