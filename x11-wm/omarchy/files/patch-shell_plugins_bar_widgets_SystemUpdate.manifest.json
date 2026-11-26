@@ -1,0 +1,26 @@
+--- shell/plugins/bar/widgets/SystemUpdate.manifest.json.orig
++++ shell/plugins/bar/widgets/SystemUpdate.manifest.json
+@@ -1,10 +1,10 @@
+ {
+   "schemaVersion": 1,
+   "id": "omarchy.system-update",
+-  "name": "Omarchy update",
++  "name": "System update",
+   "version": "1.0.0",
+   "author": "Omarchy",
+-  "description": "Indicates available Omarchy updates",
++  "description": "Indicates available system updates",
+   "kinds": [
+     "bar-widget"
+   ],
+@@ -12,8 +12,8 @@
+     "barWidget": "SystemUpdate.qml"
+   },
+   "barWidget": {
+-    "displayName": "Omarchy update",
+-    "description": "Indicates available Omarchy updates",
++    "displayName": "System update",
++    "description": "Indicates available system updates",
+     "category": "System",
+     "allowMultiple": false
+   }

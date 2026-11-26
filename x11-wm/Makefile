@@ -25,6 +25,7 @@
     SUBDIR += cosmic-comp
     SUBDIR += ctwm
     SUBDIR += cwm
+    SUBDIR += daemonarchy
     SUBDIR += deforaos-panel
     SUBDIR += devilspie
     SUBDIR += devilspie2
@@ -86,6 +87,7 @@
     SUBDIR += obconf
     SUBDIR += obconf-qt
     SUBDIR += obpager
+    SUBDIR += omarchy
     SUBDIR += openbox
     SUBDIR += oroborus
     SUBDIR += peksystray

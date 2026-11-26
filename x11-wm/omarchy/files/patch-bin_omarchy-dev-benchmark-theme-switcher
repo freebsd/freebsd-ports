@@ -1,0 +1,11 @@
+--- bin/omarchy-dev-benchmark-theme-switcher.orig	2026-10-02 14:42:09 UTC
++++ bin/omarchy-dev-benchmark-theme-switcher
+@@ -116,7 +116,7 @@ cat >"$stub_bin/omarchy-menu-images" <<'EOF'
+ trap cleanup EXIT
+ 
+ cat >"$stub_bin/omarchy-menu-images" <<'EOF'
+-#!/bin/bash
++#!%%LOCALBASE%%/bin/bash
+ exit 0
+ EOF
+ chmod +x "$stub_bin/omarchy-menu-images"
