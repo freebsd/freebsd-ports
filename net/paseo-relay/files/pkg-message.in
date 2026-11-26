@@ -1,0 +1,25 @@
+[
+{ type: install
+  message: <<EOM
+To start the relay, set paseo_relay_enable="YES" and run "service
+paseo_relay start".  It listens on 127.0.0.1:4000 (paseo_relay_host,
+paseo_relay_port) over plain HTTP.  Clients need TLS with a publicly
+trusted certificate, so put a reverse proxy in front of it that forwards
+/ws with WebSocket upgrades, and do not expose /metrics.
+
+The relay has no authentication: anyone who can reach it can use it, and
+anyone who knows a daemon's server ID can disconnect it.
+
+To use it from a Paseo daemon (misc/paseo), set in its config.json:
+
+    "daemon": { "relay": {
+        "enabled": true,
+        "endpoint": "127.0.0.1:4000", "useTls": false,
+        "publicEndpoint": "relay.example.org:443", "publicUseTls": true
+    } }
+
+useTls defaults to false for endpoints other than relay.paseo.sh.  Pair
+clients again after changing the relay.
+EOM
+}
+]

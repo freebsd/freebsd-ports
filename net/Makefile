@@ -947,6 +947,7 @@
     SUBDIR += packetdrill
     SUBDIR += packter-agent
     SUBDIR += parpd
+    SUBDIR += paseo-relay
     SUBDIR += pathneck
     SUBDIR += pbnc
     SUBDIR += pear-Auth_RADIUS

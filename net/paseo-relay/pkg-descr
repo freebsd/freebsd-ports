@@ -1,0 +1,10 @@
+Paseo Relay is the relay server for Paseo, the agentic development
+environment (misc/paseo).  It forwards traffic between a Paseo daemon and
+its remote clients, such as the Paseo mobile app, so that the daemon needs
+no open inbound port: the daemon connects out to the relay and clients
+meet it there.  Traffic is end-to-end encrypted between the daemon and each
+client, so the relay sees only addresses, timing, message sizes, and
+session IDs.
+
+This is the relay that runs relay.paseo.sh, for people who want to run
+their own.

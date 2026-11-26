@@ -1,0 +1,17 @@
+TIMESTAMP = 1795707646
+SHA256 (paseo-relay/cowboy-2.21.0.tar) = 90b4d6fe91806054538349dbeabcac86315a3fdaec4eb491f5445259668398f6
+SIZE (paseo-relay/cowboy-2.21.0.tar) = 168960
+SHA256 (paseo-relay/cowlib-2.22.0.tar) = b1ea5995d8f1ab5086ae7afe710c2075c7872c7e1acaf45dd0db7595e900c0fc
+SIZE (paseo-relay/cowlib-2.22.0.tar) = 238592
+SHA256 (paseo-relay/dns_cluster-0.2.0.tar) = ba6f1893411c69c01b9e8e8f772062535a4cf70f3f35bcc964a324078d8c8240
+SIZE (paseo-relay/dns_cluster-0.2.0.tar) = 9728
+SHA256 (paseo-relay/jason-1.4.5.tar) = b0c823996102bcd0239b3c2444eb00409b72f6a140c1950bc8b457d836b30684
+SIZE (paseo-relay/jason-1.4.5.tar) = 26112
+SHA256 (paseo-relay/ranch-2.4.0.tar) = 64d98b8c61d39b7b9a2e2cf92ae659b8623a69766f415ae13dc726864ec04ab9
+SIZE (paseo-relay/ranch-2.4.0.tar) = 86528
+SHA256 (paseo-relay/syn-3.4.2.tar) = 7b6967c80e16422255ebf3a362cafcccd55a1dff20c9eb94f4cd4ddb086452a0
+SIZE (paseo-relay/syn-3.4.2.tar) = 29184
+SHA256 (paseo-relay/hex-2.7.0-otp-29.ez) = 6de1e1fef70462e2d77a5e7206e2c58fb7b8863161dae545080e87dc324861e3
+SIZE (paseo-relay/hex-2.7.0-otp-29.ez) = 1310067
+SHA256 (paseo-relay/getpaseo-paseo-relay-g20261125-74de39d04985_GH0.tar.gz) = f1c1b5a91b654140d998d7caa75a19e8b552aff2679c1e8e775f4b1e32a5b34b
+SIZE (paseo-relay/getpaseo-paseo-relay-g20261125-74de39d04985_GH0.tar.gz) = 109901

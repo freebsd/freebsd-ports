@@ -1,0 +1,59 @@
+#!/bin/sh
+
+# PROVIDE: paseo_relay
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable the Paseo relay:
+#
+# paseo_relay_enable (bool):	Set to "YES" to enable paseo_relay.
+#				Default: "NO"
+# paseo_relay_host (str):	IP address to listen on.  The relay speaks
+#				plain HTTP; put a TLS reverse proxy in front
+#				of it.
+#				Default: "127.0.0.1"
+# paseo_relay_port (int):	TCP port to listen on.
+#				Default: "4000"
+# paseo_relay_user (str):	User to run the relay as.
+#				Default: "paseo-relay"
+# paseo_relay_env (str):	Extra environment variables, for example
+#				"PASEO_RELAY_MEMORY_WATERMARK_BYTES=...".
+#				Default: ""
+
+. /etc/rc.subr
+
+name=paseo_relay
+rcvar=paseo_relay_enable
+desc="Paseo relay server"
+
+load_rc_config $name
+
+: ${paseo_relay_enable:=NO}
+: ${paseo_relay_host=127.0.0.1}
+: ${paseo_relay_port=4000}
+: ${paseo_relay_user:=paseo-relay}
+: ${paseo_relay_svcj_options=net_basic}
+
+# Let daemon(8) -u switch users rather than rc.subr, which would run
+# daemon(8) itself through "su -m" (and break stop with svcj).
+_paseo_relay_user=${paseo_relay_user}
+unset paseo_relay_user
+
+_paseo_relay_rundir=/var/run/${name}
+pidfile=/var/run/${name}.pid
+command=/usr/sbin/daemon
+procname=/usr/sbin/daemon
+start_precmd="install -d -m 0750 -o ${_paseo_relay_user} ${_paseo_relay_rundir}"
+
+# Single node: no Erlang distribution, and a fresh random cookie.
+# Set at the top level: rc.subr skips start_precmd in a service jail.
+command_args="-f -S -T ${name} -P ${pidfile} -u ${_paseo_relay_user} \
+    /usr/bin/env LANG=C.UTF-8 RELEASE_DISTRIBUTION=none \
+    RELEASE_COOKIE=$(/usr/bin/openssl rand -hex 32) \
+    RELEASE_TMP=${_paseo_relay_rundir} \
+    ERL_CRASH_DUMP=${_paseo_relay_rundir}/erl_crash.dump \
+    PASEO_RELAY_HOST=${paseo_relay_host} \
+    PASEO_RELAY_PORT=${paseo_relay_port} \
+    %%PREFIX%%/libexec/paseo_relay/bin/paseo_relay start"
+
+run_rc_command "$1"

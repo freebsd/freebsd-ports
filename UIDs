@@ -358,7 +358,7 @@ woodpecker:*:408:408::0:0:Woodpecker CI:/var/db/woodpecker:/usr/sbin/nologin
 emfor:*:409:409::0:0:Emfor Daemon:/var/db/emfor:/usr/sbin/nologin
 # free: 410
 uhub:*:411:411::0:0:uHub ADC Daemon:/nonexistent:/usr/sbin/nologin
-# free: 412
+paseo-relay:*:412:412::0:0:Paseo relay:/nonexistent:/usr/sbin/nologin
 # free: 413
 # free: 414
 # free: 415
