@@ -25,10 +25,10 @@ load_rc_config $name
 : ${tuwunel_runas:="%%USER%%"}
 
 pidfile="/var/run/${name}/${name}.pid"
-procname="%%PREFIX%%/bin/tuwunel"
-command="/usr/sbin/daemon"
-command_args="-f -S -T ${name} -p ${pidfile} -u ${tuwunel_runas} \
-	${procname} -c ${tuwunel_config}"
+procname="/usr/sbin/daemon"
+command="${procname}"
+command_args="-f -S -T ${name} -P ${pidfile} -u ${tuwunel_runas} \
+	%%PREFIX%%/bin/${name} -c ${tuwunel_config}"
 
 start_precmd=tuwunel_precmd
 

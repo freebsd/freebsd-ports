@@ -1,6 +1,6 @@
---- Cargo.toml.orig	2026-11-14 23:08:38 UTC
+--- Cargo.toml.orig	2026-11-25 16:37:21 UTC
 +++ Cargo.toml
-@@ -656,37 +656,30 @@ features = ["Win32_Storage_FileSystem"]
+@@ -659,37 +659,30 @@ features = ["Win32_Storage_FileSystem"]
  # adds event for CTRL+\:
  # https://github.com/girlbossceo/rustyline-async/commit/67d8c49aeac03a5ef4e818f663eaa94dd7bf339b
  [patch.crates-io.rustyline-async]
