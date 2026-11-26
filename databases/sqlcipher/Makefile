@@ -21,7 +21,7 @@ CONFIGURE_ARGS=	--disable-readline \
 		--dll-basename=libsqlcipher \
 		--enable-fts5 \
 		--includedir=${PREFIX}/include/sqlcipher \
-		--soname=libsqlcipher.so.0 \
+		--soname=legacy \
 		--with-tempstore=yes
 
 CFLAGS+=	-DOMIT_MEMLOCK \
@@ -49,8 +49,8 @@ post-install:
 		${STAGEDIR}${PREFIX}/lib/libsqlcipher.a
 	${MV}   ${STAGEDIR}${PREFIX}/libdata/pkgconfig/sqlite3.pc \
 		${STAGEDIR}${PREFIX}/libdata/pkgconfig/sqlcipher.pc
-	@cd ${STAGEDIR}${PREFIX} && \
-		${STRIP_CMD} bin/* lib/*.so lib/*.so.${SOVERSION}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/sqlcipher \
+		${STAGEDIR}${PREFIX}/lib/libsqlcipher.so.${SOVERSION}
 
 post-install-TEST-on:
 	@${RM} -r ${STAGEDIR}${TCL_LIBDIR}
