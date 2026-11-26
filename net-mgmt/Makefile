@@ -413,6 +413,7 @@
     SUBDIR += thanos
     SUBDIR += torrus
     SUBDIR += triton-guesttools
+    SUBDIR += ubgpsuite
     SUBDIR += unbound_exporter
     SUBDIR += unifi10
     SUBDIR += unifi9

@@ -1,0 +1,6 @@
+ubgpsuite, the Micro BGP Suite and Utility library, is a project
+aiming to provide a low level library and utilities for high-performance
+and flexible network analysis, with special focus on the Border
+Gateway Protocol (BGP). The purpose of this suite is establishing
+a friendly environment for research and experimentation of useful
+data study techniques to improve network health.
