@@ -1,0 +1,120 @@
+#!/bin/sh
+#
+# nuget2tuple - Generate NUGET_NUPKGS list for FreeBSD ports from .NET projects
+#
+# Usage: nuget2tuple [WRKSRC] [RID]
+#
+# This tool analyzes a .NET project and generates a NUGET_NUPKGS list
+# suitable for inclusion in a FreeBSD port Makefile.
+#
+# The tool:
+# 1. Finds all .csproj/.fsproj files in WRKSRC
+# 2. Runs dotnet restore with a custom packages directory
+# 3. Extracts all NuGet package names and versions
+# 4. Automatically detects and adds runtime packages for self-contained builds
+# 5. Outputs them in the format: Package.Name:version
+#
+# Arguments:
+#   WRKSRC - Source directory (default: current directory)
+#   RID    - Runtime Identifier (default: linux-x64)
+#
+# MAINTAINER: ports@FreeBSD.org
+
+set -e
+
+WRKSRC="${1:-.}"
+RID="${2:-linux-x64}"
+
+if [ ! -d "$WRKSRC" ]; then
+    echo "Error: Directory $WRKSRC does not exist" >&2
+    exit 1
+fi
+
+# Check if dotnet is available
+if ! command -v dotnet >/dev/null 2>&1; then
+    echo "Error: dotnet command not found. Please install lang/dotnet" >&2
+    exit 1
+fi
+
+# Find all project files
+PROJECT_FILES=$(find "$WRKSRC" -maxdepth 3 \( -name "*.csproj" -o -name "*.fsproj" \) | head -1)
+
+if [ -z "$PROJECT_FILES" ]; then
+    echo "Error: No .csproj or .fsproj files found in $WRKSRC" >&2
+    exit 1
+fi
+
+# Create temporary directory for packages
+TEMP_PACKAGES=$(mktemp -d)
+trap "rm -rf $TEMP_PACKAGES" EXIT
+
+echo "===> Restoring NuGet packages to temporary directory..." >&2
+
+# Restore packages to temporary directory
+for proj in $PROJECT_FILES; do
+    dotnet restore "$proj" --packages "$TEMP_PACKAGES" >/dev/null 2>&1 || true
+done
+
+# Extract package names and versions
+PACKAGES=$(find "$TEMP_PACKAGES" -mindepth 2 -maxdepth 2 -type d | \
+    sed "s|$TEMP_PACKAGES/||" | \
+    sed 's|/|:|' | \
+    sort -u)
+
+if [ -z "$PACKAGES" ]; then
+    echo "Error: No NuGet packages found" >&2
+    exit 1
+fi
+
+# Detect .NET runtime version for self-contained builds
+echo "===> Detecting .NET runtime version..." >&2
+DOTNET_VERSION=$(dotnet --list-runtimes 2>/dev/null | grep "Microsoft.NETCore.App" | head -1 | awk '{print $2}')
+
+if [ -z "$DOTNET_VERSION" ]; then
+    echo "Warning: Could not detect .NET runtime version, skipping runtime packages" >&2
+else
+    echo "===> Detected .NET runtime version: $DOTNET_VERSION" >&2
+    echo "===> Adding runtime packages for RID: $RID" >&2
+
+    # Add runtime packages needed for self-contained builds
+    RUNTIME_PACKAGES="Microsoft.NETCore.App.Runtime.$RID:$DOTNET_VERSION
+Microsoft.AspNetCore.App.Runtime.$RID:$DOTNET_VERSION
+Microsoft.NETCore.App.Host.$RID:$DOTNET_VERSION"
+
+    # Append runtime packages to the list
+    PACKAGES="$PACKAGES
+$RUNTIME_PACKAGES"
+fi
+
+echo "===> Generating NUGET_NUPKGS list..." >&2
+echo ""
+
+# Output in Makefile format
+echo "NUGET_GROUPS=	NUGET"
+echo "NUGET_NUPKGS=	\\"
+
+# Convert to proper format with line continuations
+FIRST=1
+for pkg in $PACKAGES; do
+    NAME=$(echo "$pkg" | cut -d: -f1)
+    VERSION=$(echo "$pkg" | cut -d: -f2)
+
+    # Skip empty entries
+    if [ -z "$NAME" ] || [ -z "$VERSION" ]; then
+        continue
+    fi
+
+    if [ "$FIRST" -eq 1 ]; then
+        printf "\t\t%s:%s" "$NAME" "$VERSION"
+        FIRST=0
+    else
+        printf " \\\\\n\t\t%s:%s" "$NAME" "$VERSION"
+    fi
+done
+echo ""
+
+echo "" >&2
+TOTAL_COUNT=$(echo "$PACKAGES" | grep -v '^$' | wc -l | tr -d ' ')
+echo "===> Total packages found: $TOTAL_COUNT" >&2
+echo "===> Includes 3 runtime packages for $RID" >&2
+echo "===> Copy the output above to your Makefile.nuget" >&2
