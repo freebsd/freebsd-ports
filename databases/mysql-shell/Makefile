@@ -1,16 +1,15 @@
 PORTNAME=	mysql-shell
-DISTVERSION=	9.7.1
-PORTREVISION=	2
+DISTVERSION=	26.10.0.1
 CATEGORIES=	databases
-MYSQL_DISTVERSION=	9.7.4
+MYSQL_DISTVERSION=	26.10.0.1
 MASTER_SITES=	https://downloads.mysql.com/archives/get/p/43/file/:shell \
-		MYSQL/MySQL-9.7:server
+		MYSQL/MySQL-26.10:server
 DISTFILES=	mysql-shell-${DISTVERSION}-src.tar.gz:shell \
 		mysql-${MYSQL_DISTVERSION}.tar.gz:server
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Advanced client and code editor for MySQL
-WWW=		https://dev.mysql.com/doc/mysql-shell/9.7/en/
+WWW=		https://dev.mysql.com/doc/mysql-shell/26.10/en/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -40,8 +39,7 @@ USES=		bison:build cmake:noninja cpe pkgconfig python:3.12+ shebangfix ssl
 CPE_VENDOR=	oracle
 CPE_PRODUCT=	mysql_shell
 
-SHEBANG_FILES=	${WRKSRC}/plugins/external/migration_plugin/scripts/build.sh \
-		${WRKSRC}/plugins/external/mrs_plugin/scripts/*sh \
+SHEBANG_FILES=	${WRKSRC}/plugins/external/mrs_plugin/scripts/*sh \
 		${WRKSRC}/plugins/external/util_plugin/visual/explain.py
 
 CMAKE_ARGS=	-DBUNDLED_ANTLR_DIR=${LOCALBASE} \
@@ -53,7 +51,11 @@ CMAKE_BUILD_TYPE=	Release
 WRKSRC=		${WRKDIR}/mysql-shell-${DISTVERSION}-src
 
 post-patch:
-	@cd ${WRKDIR}/mysql-${MYSQL_DISTVERSION} && ${PATCH} -s < ${FILESDIR}/mysql-server.patch
+	@cd ${WRKDIR}/mysql-${MYSQL_DISTVERSION} && \
+		for p in ${PORTSDIR}/databases/mysql2610-server/files/patch-*; do \
+			case $$p in *CMakeLists.txt|*.cmake) continue;; esac; \
+			${PATCH} -s -p0 < $$p || exit 1; \
+		done
 
 pre-configure:
 	@${MKDIR} ${WRKDIR}/mysql-${MYSQL_DISTVERSION}/build
