@@ -11,7 +11,7 @@ WWW=		https://www.zetetic.net/sqlcipher/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=		cpe libtool localbase:ldflags ssl
+USES=		cpe libtool ssl
 CPE_VENDOR=	zetetic
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
@@ -24,23 +24,23 @@ CONFIGURE_ARGS=	--disable-readline \
 		--soname=libsqlcipher.so.0 \
 		--with-tempstore=yes
 
-CFLAGS+=	-I${OPENSSLINC}
-CPPFLAGS+=	-DOMIT_MEMLOCK \
+CFLAGS+=	-DOMIT_MEMLOCK \
 		-DSQLITE_ENABLE_COLUMN_METADATA=1 \
 		-DSQLITE_ENABLE_UNLOCK_NOTIFY \
 		-DSQLITE_EXTRA_INIT=sqlcipher_extra_init \
 		-DSQLITE_EXTRA_SHUTDOWN=sqlcipher_extra_shutdown \
-		-DSQLITE_HAS_CODEC
+		-DSQLITE_HAS_CODEC \
+		-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB} -lcrypto
 
 SOVERSION=	3.54.1
 PLIST_SUB=	SOVERSION=${SOVERSION}
 
 OPTIONS_DEFINE=		TEST
-TEST_USES=		tcl:86,build,test
-TEST_CONFIGURE_ON=	--with-tcl=${TCL_LIBDIR}
+TEST_USES=		tcl:91,build,test
+TEST_CONFIGURE_ON=	--with-tcl=${TCL_LIBDIR} --with-tclsh=${TCLSH}
 TEST_CONFIGURE_OFF=	--disable-tcl
-TEST_CPPFLAGS=		-DSQLCIPHER_TEST
+TEST_CFLAGS=		-DSQLCIPHER_TEST
 
 post-install:
 	${MV}   ${STAGEDIR}${PREFIX}/bin/sqlite3 \
