@@ -1,5 +1,5 @@
 PORTNAME=	anope
-DISTVERSION=	2.0.18
+DISTVERSION=	2.0.21
 CATEGORIES=	irc
 
 MAINTAINER=	devnull@apt322.org
@@ -9,7 +9,7 @@ WWW=		https://www.anope.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/docs/COPYING
 
-USES=		cmake localbase:ldflags shebangfix
+USES=		cmake cpe gettext-runtime localbase:ldflags shebangfix
 USE_GITHUB=	yes
 USE_RC_SUBR=	anope
 SHEBANG_FILES=	${WRKSRC}/src/tools/*.sh
@@ -36,7 +36,7 @@ LDAP_USES=	ldap
 MYSQL_USES=	mysql
 MYSQL_CMAKE_ON=	-DEXTRA_LIBS:STRING="${LOCALBASE}/lib/mysql/"
 
-NLS_USES=	gettext
+NLS_USES=	gettext-tools
 
 OPENSSL_USES=	ssl
 
