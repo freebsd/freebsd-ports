@@ -1,0 +1,11 @@
+#!/bin/sh
+
+export ELECTRON_FORCE_IS_PACKAGED=true
+export ELECTRON_OZONE_PLATFORM_HINT="${ELECTRON_OZONE_PLATFORM_HINT:-auto}"
+
+# workaround Chromium bug https://bugs.chromium.org/p/chromium/issues/detail?id=918234
+if [ -z "${DBUS_SESSION_BUS_ADDRESS}" ]; then
+	export DBUS_SESSION_BUS_ADDRESS="autolaunch:"
+fi
+
+exec %%LOCALBASE%%/bin/electron%%ELECTRON_VER_MAJOR%% %%DATADIR%% "$@"

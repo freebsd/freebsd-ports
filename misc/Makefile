@@ -421,6 +421,7 @@
     SUBDIR += p5-asterisk-perl
     SUBDIR += parley
     SUBDIR += paseo
+    SUBDIR += paseo-desktop
     SUBDIR += pastebinit
     SUBDIR += patchutils
     SUBDIR += pauker

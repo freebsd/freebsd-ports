@@ -1,0 +1,7 @@
+Paseo is the agentic development environment: one interface to run Claude
+Code, Codex, Copilot, OpenCode, and other coding agents, and to orchestrate
+them from the desktop, a browser, or a phone.
+
+This port installs the Electron desktop app.  It starts and talks to the
+Paseo daemon from misc/paseo, which it shares with the "paseo" command-line
+client, and opens paseo:// links to agents.

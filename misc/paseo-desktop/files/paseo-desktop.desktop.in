@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Paseo
+GenericName=Agentic Development Environment
+Comment=Agentic development environment
+Exec=%%PREFIX%%/bin/paseo-desktop %U
+Icon=paseo-desktop
+Terminal=false
+Categories=Development;
+StartupWMClass=Paseo
+MimeType=x-scheme-handler/paseo;

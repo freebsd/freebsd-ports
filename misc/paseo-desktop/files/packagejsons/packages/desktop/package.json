@@ -1,0 +1,50 @@
+{
+  "name": "@getpaseo/desktop",
+  "version": "0.17.5",
+  "private": true,
+  "description": "Paseo desktop app (Electron wrapper)",
+  "homepage": "https://paseo.sh",
+  "license": "Apache-2.0",
+  "author": {
+    "name": "Mohamed Boudra",
+    "email": "hello@moboudra.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/getpaseo/paseo.git"
+  },
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "npm --prefix ../.. run build:server:clean && npm run build:main && electron-builder --config electron-builder.yml",
+    "build:main": "tsc -p tsconfig.json",
+    "capture-harness": "npm run build:main && ./capture-harness/run.sh",
+    "dev": "./scripts/dev.sh",
+    "dev:win": "powershell ./scripts/dev.ps1",
+    "test:e2e:renderer": "cross-env E2E_DESKTOP_RUNTIME=1 playwright test --config=playwright.config.ts --project=desktop",
+    "test:e2e:browser-tabs": "npm run build:main && node ./e2e/browser-tabs.e2e.mjs",
+    "verify:electron-cdp": "node ./scripts/verify-electron-cdp.mjs",
+    "test": "install-electron && vitest run --exclude \"e2e/**\"",
+    "typecheck": "tsgo --noEmit -p tsconfig.json",
+    "test:e2e:lifecycle": "npm run build:main && node ./e2e/daemon-lifecycle.e2e.mjs",
+    "test:e2e:window-startup": "npm run build:main && node ./e2e/window-startup.e2e.mjs"
+  },
+  "dependencies": {
+    "@getpaseo/cli": "*",
+    "@getpaseo/server": "*",
+    "electron-log": "^5.4.3",
+    "electron-updater": "^6.6.2",
+    "ws": "^8.14.2",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@electron/asar": "3.4.1",
+    "@types/node": "24.6.0",
+    "@types/ws": "^8.5.14",
+    "electron": "44.2.0",
+    "typescript": "5.9.3",
+    "unzip-crx-3": "^0.2.0",
+    "vitest": "^4.1.6",
+    "wait-on": "8.0.5"
+  },
+  "desktopName": "Paseo.desktop"
+}
