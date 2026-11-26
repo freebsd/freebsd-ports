@@ -1,3 +1,64 @@
+  <vuln vid="a454f42d-e904-11f1-9b74-3497f65b111b">
+    <topic>MySQL -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mysql2610-client</name>
+	<name>mysql2610-server</name>
+	<range><lt>26.10.0.1</lt></range>
+      </package>
+      <package>
+	<name>mysql84-client</name>
+	<name>mysql84-server</name>
+	<range><lt>8.4.13.1</lt></range>
+      </package>
+      <package>
+	<name>mysql97-client</name>
+	<name>mysql97-server</name>
+	<range><lt>9.7.4.1</lt></range>
+      </package>
+      <package>
+	<name>mysql-shell</name>
+	<range><lt>26.10.0.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Oracle reports:</p>
+	<blockquote cite="https://www.oracle.com/security-alerts/cspunov2026.html">
+	  <p>This Critical Security Patch Update contains 655 new security
+	    patches across the product families listed below.</p>
+	  <p>MySQL Server, versions 8.4.0-8.4.13, 9.7.0-9.7.4, 26.10;
+	    MySQL Shell, version 26.10.0.</p>
+	</blockquote>
+	<p>Six of the server issues apply to these ports, in the client
+	  programs, the optimizer, the logging code, the GIS code and
+	  replication. The most severe, in the client programs, scores 9.1
+	  and can be exploited over a network without authentication. The
+	  shell issue, in the Python core client, scores 9.8 and is likewise
+	  remotely exploitable without authentication; the 9.7 shell series
+	  has been discontinued upstream and receives no fix, so the port
+	  moves to the current series.</p>
+	<p>A seventh server issue in the advisory concerns the curl library
+	  bundled in the Oracle tarball. These ports build against the
+	  system curl and are not affected by it.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-114949</cvename>
+      <cvename>CVE-2026-114950</cvename>
+      <cvename>CVE-2026-114951</cvename>
+      <cvename>CVE-2026-114952</cvename>
+      <cvename>CVE-2026-114953</cvename>
+      <cvename>CVE-2026-115557</cvename>
+      <cvename>CVE-2026-127428</cvename>
+      <url>https://www.oracle.com/security-alerts/cspunov2026.html</url>
+    </references>
+    <dates>
+      <discovery>2026-11-24</discovery>
+      <entry>2026-11-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="aec2b759-e98b-11f1-b3a2-2cf05da270f3">
     <topic>Gitlab -- Vulnerabilities</topic>
     <affects>
