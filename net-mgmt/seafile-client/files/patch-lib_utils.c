@@ -1,4 +1,4 @@
---- lib/utils.c.orig	2026-06-18 08:15:42 UTC
+--- lib/utils.c.orig	2026-10-10 03:01:50 UTC
 +++ lib/utils.c
 @@ -62,6 +62,16 @@
  
@@ -17,7 +17,7 @@
  #include "log.h"
  
  
-@@ -2120,14 +2130,19 @@ wchar_from_utf8 (const char *utf8)
+@@ -2160,14 +2170,19 @@ wchar_from_utf8 (const char *utf8)
  
  #endif  /* ifdef WIN32 */
  
@@ -38,7 +38,7 @@
          return -1;
      }
  
-@@ -2151,7 +2166,8 @@ find_process_in_dirent(struct dirent *dir, const char 
+@@ -2191,7 +2206,8 @@ find_process_in_dirent(struct dirent *dir, const char 
  }
  
  /* read the /proc fs to determine whether some process is running */
@@ -48,7 +48,7 @@
  {
      DIR *proc_dir = opendir("/proc");
      if (!proc_dir) {
-@@ -2176,7 +2192,8 @@ gboolean process_is_running (const char *process_name)
+@@ -2216,7 +2232,8 @@ gboolean process_is_running (const char *process_name)
      return FALSE;
  }
  
@@ -58,7 +58,7 @@
  {
      int count = 0;
      DIR *proc_dir = opendir("/proc");
-@@ -2200,6 +2217,14 @@ int count_process(const char *process_name)
+@@ -2240,6 +2257,14 @@ int count_process(const char *process_name)
      return count;
  }
  
@@ -73,14 +73,14 @@
  #endif
  
  #ifdef __APPLE__
-@@ -2210,6 +2235,119 @@ gboolean process_is_running (const char *process_name)
+@@ -2250,6 +2275,119 @@ gboolean process_is_running (const char *process_name)
  }
  #endif
  
 +#if defined(__FreeBSD__) || defined(__DragonFly__) || defined(__NetBSD__) || defined(__OpenBSD__)
 +#if defined(__FreeBSD__)
 +#define PSKIP(kp) ((kp)->ki_pid == mypid ||               \
-+                   (!kthreads && ((kp)->ki_flag & P_KTHREAD) != 0))
++                   (!kthreads && ((kp)->ki_flag & P_KPROC) != 0))
 +#define KVM_OPENFILES(exec, coref, buf) \
 +		kvm_openfiles(exec, coref, NULL, O_RDONLY, buf)
 +#define KVM_GETPROCS(kd, plist, nproc) \
@@ -193,7 +193,7 @@
  char*
  ccnet_object_type_from_id (const char *object_id)
  {
-@@ -2838,10 +2976,16 @@ seaf_removexattr (const char *path, const char *name)
+@@ -2878,10 +3016,16 @@ seaf_removexattr (const char *path, const char *name)
      return ret;
  #else
  
