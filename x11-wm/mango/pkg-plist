@@ -17,6 +17,7 @@ lib/systemd/user/mango-session.target
 %%PORTDOCS%%%%DOCSDIR%%/configuration/toml.md
 %%PORTDOCS%%%%DOCSDIR%%/configuration/xdg-portals.md
 %%PORTDOCS%%%%DOCSDIR%%/faq.md
+%%PORTDOCS%%%%DOCSDIR%%/game-suggestion.md
 %%PORTDOCS%%%%DOCSDIR%%/index.md
 %%PORTDOCS%%%%DOCSDIR%%/installation.md
 %%PORTDOCS%%%%DOCSDIR%%/ipc.md
