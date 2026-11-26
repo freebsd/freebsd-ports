@@ -3,20 +3,6 @@ https://bugzilla.mozilla.org/attachment.cgi?id=9028600
 Rough progress patch
 
 
-diff --git gfx/2d/DrawTargetSkia.cpp gfx/2d/DrawTargetSkia.cpp
-index 050d9ae44e13..6f9bc7a88317 100644
---- gfx/2d/DrawTargetSkia.cpp
-+++ gfx/2d/DrawTargetSkia.cpp
-@@ -166,8 +166,7 @@ static IntRect CalculateSurfaceBounds(const IntSize& aSize, const Rect* aBounds,
-   return surfaceBounds.Intersect(bounds);
- }
- 
--static const int kARGBAlphaOffset =
--    SurfaceFormat::A8R8G8B8_UINT32 == SurfaceFormat::B8G8R8A8 ? 3 : 0;
-+static const int kARGBAlphaOffset = 0;
- 
- static bool VerifyRGBXFormat(uint8_t* aData, const IntSize& aSize,
-                              const int32_t aStride, SurfaceFormat aFormat) {
 diff --git gfx/skia/skia/modules/skcms/skcms.cc gfx/skia/skia/modules/skcms/skcms.cc
 index 00b19eca7ed3..e6426c296df9 100644
 --- gfx/skia/skia/modules/skcms/skcms.cc
