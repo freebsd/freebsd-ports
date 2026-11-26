@@ -1,6 +1,6 @@
 PORTNAME=	serialize
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.3
+DISTVERSION=	2.1.5
 CATEGORIES=	devel
 
 MAINTAINER=	glenn@mas-bandwidth.com
@@ -22,7 +22,8 @@ CMAKE_TESTING_ON=	SERIALIZE_BUILD_TESTS
 NO_ARCH=	yes
 
 PLIST_FILES=	include/serialize.h \
- 		lib/cmake/serialize/serialize-config-version.cmake \
+		include/serialize_utf.h \
+		lib/cmake/serialize/serialize-config-version.cmake \
 		lib/cmake/serialize/serialize-config.cmake
 
 .include <bsd.port.mk>
