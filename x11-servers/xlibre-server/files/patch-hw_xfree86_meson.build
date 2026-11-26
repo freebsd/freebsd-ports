@@ -1,6 +1,14 @@
---- hw/xfree86/meson.build.orig	2022-06-29 14:37:28.042085000 +0000
-+++ hw/xfree86/meson.build	2022-06-29 14:37:36.259147000 +0000
-@@ -152,7 +152,7 @@ if get_option('suid_wrapper')
+--- hw/xfree86/meson.build.orig	2026-10-30 19:07:39.000000000 -0700
++++ hw/xfree86/meson.build	2026-11-26 01:06:06.470650000 -0800
+@@ -58,7 +58,6 @@
+ xorg_link = [
+     libxserver,
+     libglxvnd,
+-    libxserver_glx,
+     xorg_common,
+     xorg_compat,
+     xorg_loader,
+@@ -156,7 +155,7 @@
          c_args: xorg_c_args,
          install: true,
          install_dir: get_option('libexecdir'),

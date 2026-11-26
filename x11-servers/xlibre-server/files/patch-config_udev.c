@@ -54,3 +54,22 @@
      input_options = input_option_new(input_options, "config_info", config_info);
  
      /* Default setting needed for non-seat0 seats */
+* [PATCH 2/2] config: udev: fix const issue in strrstr()
+* 
+* ../config/udev.c: In function ‘strrstr’:
+* ../config/udev.c:485:10: error: assignment discards ‘const’ qualifier from pointer target type [-Werror=discarded-qualifiers]
+*   485 |     prev = strstr(haystack, needle);
+*       |          ^
+* 
+* Signed-off-by: Enrico Weigelt, metux IT consult <info@metux.net>
+--- config/udev.c
++++ config/udev.c
+@@ -480,7 +480,7 @@ config_udev_fini(void)
+ /* Find the last occurrence of the needle in haystack */
+ static char *strrstr(const char *haystack, const char *needle)
+ {
+-    char *prev, *last, *tmp;
++    const char *prev, *last, *tmp;
+ 
+     prev = strstr(haystack, needle);
+     if (!prev)
