@@ -14,6 +14,8 @@ lib/liferea/plugins/gnome-keyring.plugin
 lib/liferea/plugins/gnome-keyring.py
 lib/liferea/plugins/libnotify.plugin
 lib/liferea/plugins/libnotify.py
+lib/liferea/plugins/open-website.plugin
+lib/liferea/plugins/open-website.py
 lib/liferea/plugins/pc.py
 lib/liferea/plugins/python-console.plugin
 lib/liferea/plugins/python-console.py
