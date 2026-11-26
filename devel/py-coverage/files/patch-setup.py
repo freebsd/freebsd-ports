@@ -1,6 +1,6 @@
---- setup.py.orig	2026-08-21 20:04:07 UTC
+--- setup.py.orig	2026-01-01 00:00:00 UTC
 +++ setup.py
-@@ -19,7 +19,12 @@ from setuptools.command.build_ext import build_ext
+@@ -18,7 +18,12 @@
  
  from setuptools import Extension, errors, setup
  from setuptools.command.build_ext import build_ext
@@ -14,17 +14,17 @@
  
  
  def get_version_data() -> dict[str, Any]:
-@@ -187,9 +192,6 @@ setup_args = dict(
+@@ -177,9 +182,6 @@
          "console_scripts": [
              # Install a script as "coverage".
              "coverage = coverage.cmdline:main",
 -            # And as "coverage3", and as "coverage-3.7" (or whatever), but deprecated.
--            "coverage%d = coverage.cmdline:main_deprecated" % sys.version_info[:1],
--            "coverage-%d.%d = coverage.cmdline:main_deprecated" % sys.version_info[:2],
+-            f"coverage{py_major} = coverage.cmdline:main_deprecated",
+-            f"coverage-{py_major}.{py_minor} = coverage.cmdline:main_deprecated",
          ],
      },
      extras_require={
-@@ -198,7 +200,6 @@ setup_args = dict(
+@@ -190,7 +192,6 @@
      },
      cmdclass={
          "build_ext": ve_build_ext,
