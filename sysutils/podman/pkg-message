@@ -19,7 +19,7 @@ It is possible to run many Linux container images using FreeBSD's Linux emulatio
 
 $ sudo sysrc linux_enable=YES
 $ sudo service linux start
-$ sudo podman run --rm --os=linux alpine cat /etc/os-release | head -1
+$ sudo podman run --rm --os=linux docker.io/library/alpine cat /etc/os-release | head -1
 NAME="Alpine Linux"
 EOM
 }
