@@ -1,5 +1,5 @@
-TIMESTAMP = 1791111057
-SHA256 (go/sysutils_chezmoi/twpayne-chezmoi-v2.73.0_GH0/go.mod) = 1ba0e9e829b5b3888c4d18669ad4a6f5f24eff7205a9012846ab7c75e9a53ee7
-SIZE (go/sysutils_chezmoi/twpayne-chezmoi-v2.73.0_GH0/go.mod) = 11269
-SHA256 (go/sysutils_chezmoi/twpayne-chezmoi-v2.73.0_GH0/twpayne-chezmoi-v2.73.0_GH0.tar.gz) = f6fba40bec4662d5438eecce5cd5c1bcad0bcae5ec34a547fdcf66fb58535764
-SIZE (go/sysutils_chezmoi/twpayne-chezmoi-v2.73.0_GH0/twpayne-chezmoi-v2.73.0_GH0.tar.gz) = 2604301
+TIMESTAMP = 1795717393
+SHA256 (go/sysutils_chezmoi/twpayne-chezmoi-v2.74.2_GH0/go.mod) = cb5902a188ca3b59dbf95574788146e472c5e72a17e6aa231be762418ede9c38
+SIZE (go/sysutils_chezmoi/twpayne-chezmoi-v2.74.2_GH0/go.mod) = 11531
+SHA256 (go/sysutils_chezmoi/twpayne-chezmoi-v2.74.2_GH0/twpayne-chezmoi-v2.74.2_GH0.tar.gz) = 2e300922c65411f90b1749bb59c70814a5d8b376818a2e8ad727ddd75816ddbb
+SIZE (go/sysutils_chezmoi/twpayne-chezmoi-v2.74.2_GH0/twpayne-chezmoi-v2.74.2_GH0.tar.gz) = 2611746
