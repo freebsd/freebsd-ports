@@ -1,6 +1,5 @@
 PORTNAME=	dnsdist
-DISTVERSION=	2.1.3
-PORTREVISION=	1
+DISTVERSION=	2.1.4
 CATEGORIES=	dns net
 MASTER_SITES=	https://downloads.powerdns.com/releases/
 DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}
