@@ -1,3 +1,56 @@
+  <vuln vid="aec2b759-e98b-11f1-b3a2-2cf05da270f3">
+    <topic>Gitlab -- Vulnerabilities</topic>
+    <affects>
+<package>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>19.6.0</ge><lt>19.6.2</lt></range>
+	<range><ge>19.5.0</ge><lt>19.5.9</lt></range>
+	<range><ge>11.7.0</ge><lt>19.4.11</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-6-2-released/?nav=19.6.2">
+	  <p>Exposure of Sensitive Information issue in dependency proxy authentication impacts GitLab CE/EE</p>
+	  <p>Improper Validation of Specified Quantity in Input issue in on-call rotation length API impacts GitLab EE</p>
+	  <p>Allocation of Resources Without Limits or Throttling issue in Sentry error tracking client impacts GitLab CE/EE</p>
+	  <p>Improper Neutralization of Special Elements issue in Service Desk quick action redaction impacts GitLab CE/EE</p>
+	  <p>Exposure of Sensitive Information issue in Work Item REST API CI job token scope validation impacts GitLab CE/EE</p>
+	  <p>Server-Side Request Forgery issue in MCP server OAuth token endpoint handler impacts GitLab EE</p>
+	  <p>Use of Weak Hash issue in merge request approval reset mechanism impacts GitLab CE/EE</p>
+	  <p>Inefficient Regular Expression Complexity issue in dependency proxy route matching middleware impacts GitLab CE/EE</p>
+	  <p>Server-Side Request Forgery issue in cluster agent URL configuration validator impacts GitLab EE</p>
+	  <p>Incorrect Authorization issue in merge request approval policy enforcement impacts GitLab EE</p>
+	  <p>Incorrect Authorization issue in work items API impacts GitLab CE/EE</p>
+	  <p>Incorrect Authorization issue in batch suggestion apply API impacts GitLab CE/EE</p>
+	  <p>Server-Side Request Forgery (SSRF) issue in remote Git endpoint validation impacts GitLab CE/EE</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-119452</cvename>
+      <cvename>CVE-2026-132156</cvename>
+      <cvename>CVE-2026-132822</cvename>
+      <cvename>CVE-2026-81336</cvename>
+      <cvename>CVE-2026-131867</cvename>
+      <cvename>CVE-2026-135221</cvename>
+      <cvename>CVE-2026-17194</cvename>
+      <cvename>CVE-2026-132102</cvename>
+      <cvename>CVE-2026-16744</cvename>
+      <cvename>CVE-2026-107633</cvename>
+      <cvename>CVE-2026-132794</cvename>
+      <cvename>CVE-2026-129982</cvename>
+      <cvename>CVE-2026-135636</cvename>
+      <url>https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-6-2-released/?nav=19.6.2</url>
+    </references>
+    <dates>
+      <discovery>2026-11-25</discovery>
+      <entry>2026-11-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d6298f47-e90c-11f1-90f4-589cfc0dc9a2">
     <topic>Prosody XMPP server advisory 2026-11-25</topic>
     <affects>
