@@ -1,0 +1,19 @@
+bin/crashmail
+bin/crashedit
+bin/crashexport
+bin/crashgetnode
+bin/crashlist
+bin/crashlistout
+bin/crashmaint
+bin/crashstats
+bin/crashwrite
+share/man/man1/crashmail.1.gz
+share/man/man1/crashedit.1.gz
+share/man/man1/crashexport.1.gz
+share/man/man1/crashgetnode.1.gz
+share/man/man1/crashlist.1.gz
+share/man/man1/crashlistout.1.gz
+share/man/man1/crashmaint.1.gz
+share/man/man1/crashstats.1.gz
+share/man/man1/crashwrite.1.gz
+@sample etc/crashedit.conf.sample
