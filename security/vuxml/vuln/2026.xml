@@ -1,3 +1,58 @@
+  <vuln vid="dff8fa28-e9eb-11f1-a071-a0369ff35ee6">
+    <topic>DNSdist -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>dnsdist</name>
+	<range><lt>2.1.4</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PowerDNS Security Advisory 2026-15 reports for DNSdist:</p>
+	<blockquote cite="https://dnsdist.org/security-advisories/powerdns-advisory-for-dnsdist-2026-15.html">
+	  <p>Affects: PowerDNS DNSdist up to and including 2.1.3 and 2.0.11.<br/>
+	     Not affected: PowerDNS DNSdist 2.1.4, 2.0.12.</p>
+	  <ul>
+	    <li>CVE-2026-85561: Wrong remote DoH client IP passed to proxy-protocol-enabled backend (Low)</li>
+	    <li>CVE-2026-85562: Duplicate X-Forwarded-For DNS over HTTPS headers are not properly handled (Medium)</li>
+	    <li>CVE-2026-85563: HTTP body should not be processed on DNS over HTTPS GET queries (Low)</li>
+	    <li>CVE-2026-85564: Finished QUIC streams should not linger around (Low)</li>
+	    <li>CVE-2026-85565: Denial of service via oversized DoH query (Low)</li>
+	    <li>CVE-2026-85566: EDNS option or DNS record smuggling (Medium)</li>
+	    <li>CVE-2026-85567: Empty API key should disable the API (Low)</li>
+	    <li>CVE-2026-123755: Crafted zone transfer can freeze an outgoing TCP connection (Low)</li>
+	    <li>CVE-2026-123756: Insufficient input validation of internal webserver (Low)</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-85561</cvename>
+      <cvename>CVE-2026-85562</cvename>
+      <cvename>CVE-2026-85563</cvename>
+      <cvename>CVE-2026-85564</cvename>
+      <cvename>CVE-2026-85565</cvename>
+      <cvename>CVE-2026-85566</cvename>
+      <cvename>CVE-2026-85567</cvename>
+      <cvename>CVE-2026-123755</cvename>
+      <cvename>CVE-2026-123756</cvename>
+      <url>https://dnsdist.org/security-advisories/powerdns-advisory-for-dnsdist-2026-15.html</url>
+      <url>https://nvd.nist.gov/vuln/detail/cve-2026-85561</url>
+      <url>https://nvd.nist.gov/vuln/detail/cve-2026-85562</url>
+      <url>https://nvd.nist.gov/vuln/detail/cve-2026-85563</url>
+      <url>https://nvd.nist.gov/vuln/detail/cve-2026-85564</url>
+      <url>https://nvd.nist.gov/vuln/detail/cve-2026-85565</url>
+      <url>https://nvd.nist.gov/vuln/detail/cve-2026-85566</url>
+      <url>https://nvd.nist.gov/vuln/detail/cve-2026-85567</url>
+      <url>https://nvd.nist.gov/vuln/detail/cve-2026-123755</url>
+      <url>https://nvd.nist.gov/vuln/detail/cve-2026-123756</url>
+    </references>
+    <dates>
+      <discovery>2026-09-04</discovery>
+      <entry>2026-11-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2090e695-eb15-11f1-9e78-04421a04139e">
     <topic>librelp -- GnuTLS "certvalid" authentication mode accepts any certificate</topic>
       <affects>
