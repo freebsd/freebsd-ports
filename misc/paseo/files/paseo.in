@@ -1,0 +1,66 @@
+#!/bin/sh
+
+# PROVIDE: paseo
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable the Paseo daemon:
+#
+# paseo_enable (bool):	Set to "YES" to enable paseo.
+#			Default: "NO"
+# paseo_user (str):	User the daemon, and every agent it starts, runs as.
+#			Agents use this user's Claude Code, Codex, git, and
+#			SSH credentials.  Required; there is no default.
+# paseo_home (str):	Paseo home directory.
+#			Default: "~${paseo_user}/.paseo"
+# paseo_path (str):	PATH for the daemon and the agents it starts.  The
+#			agent CLIs (claude, codex, ...) and git are looked
+#			up here.
+#			Default: "~${paseo_user}/.local/bin:~${paseo_user}/bin:
+#			/sbin:/bin:/usr/sbin:/usr/bin:%%LOCALBASE%%/sbin:
+#			%%LOCALBASE%%/bin"
+# paseo_env (str):	Environment for the daemon, for example
+#			"PASEO_LISTEN=0.0.0.0:6767 PASEO_WEB_UI_ENABLED=true".
+#			Default: ""
+
+. /etc/rc.subr
+
+name=paseo
+rcvar=paseo_enable
+desc="Paseo coding agent daemon"
+
+load_rc_config $name
+
+: ${paseo_enable:=NO}
+: ${paseo_home=$(eval echo ~$paseo_user)/.paseo}
+# daemon(8) -u resets PATH from login.conf, without ~/.local/bin
+# (Claude Code's native installer).
+: ${paseo_path=$(eval echo ~$paseo_user)/.local/bin:$(eval echo ~$paseo_user)/bin:/sbin:/bin:/usr/sbin:/usr/bin:%%LOCALBASE%%/sbin:%%LOCALBASE%%/bin}
+: ${paseo_svcj_options=net_basic}
+
+# Let daemon(8) -u switch users rather than rc.subr, which would run
+# daemon(8) itself through "su -m" (and break stop with svcj).
+# daemon(8) -u also sets HOME, USER, and SHELL for the agents.
+_paseo_user=${paseo_user}
+unset paseo_user
+
+pidfile=/var/run/${name}.pid
+command=/usr/sbin/daemon
+procname=/usr/sbin/daemon
+start_precmd="${name}_prestart"
+
+# Set at the top level, not in start_precmd, which rc.subr skips inside a
+# service jail (paseo_svcj).
+# "daemon run" is the foreground mode; it honors PASEO_* in paseo_env.
+command_args="-f -S -T ${name} -P ${pidfile} -u ${_paseo_user} \
+    /usr/bin/env PATH=${paseo_path} \
+    %%PREFIX%%/bin/paseo daemon run --home ${paseo_home}"
+
+paseo_prestart()
+{
+	if [ -z "${_paseo_user}" ]; then
+		err 1 "paseo_user must be set in rc.conf"
+	fi
+}
+
+run_rc_command "$1"

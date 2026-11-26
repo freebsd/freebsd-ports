@@ -1,0 +1,19 @@
+[
+{ type: install
+  message: <<EOM
+Paseo drives agent CLIs that are installed separately, for example
+misc/claude-code, misc/codex, or misc/opencode; log in to each one as the
+user that will run Paseo.  To start the daemon at boot:
+
+  sysrc paseo_enable=YES paseo_user=<user>
+  service paseo start
+
+or run "paseo daemon start" as that user.  Other settings are in
+%%PREFIX%%/etc/rc.d/paseo.
+
+Dictation is off by default: on-device speech needs sherpa-onnx, which is
+not available on FreeBSD.  The OpenAI speech provider works instead; see
+https://paseo.sh/docs/voice
+EOM
+}
+]

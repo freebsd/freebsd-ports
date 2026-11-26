@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# Use the node that node-pty was built against, not the first on PATH.
+# DEP0040: a dependency still loads the deprecated punycode module.
+exec %%LOCALBASE%%/bin/node --disable-warning=DEP0040 \
+	%%APPDIR%%/node_modules/@getpaseo/cli/bin/paseo "$@"

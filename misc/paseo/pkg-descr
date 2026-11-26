@@ -1,0 +1,9 @@
+Paseo is the agentic development environment: one interface to run Claude
+Code, Codex, Copilot, OpenCode, and other coding agents, each in its own git
+worktree if needed, and to orchestrate them from the desktop, a browser, or
+a phone.
+
+This port installs the Paseo daemon, which runs the agents, and the "paseo"
+command-line client.  The daemon can also serve a browser web UI, and the
+Paseo desktop and mobile apps connect to it over the network or through an
+end-to-end encrypted relay.

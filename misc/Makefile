@@ -420,6 +420,7 @@
     SUBDIR += p5-Zen-Koans
     SUBDIR += p5-asterisk-perl
     SUBDIR += parley
+    SUBDIR += paseo
     SUBDIR += pastebinit
     SUBDIR += patchutils
     SUBDIR += pauker
