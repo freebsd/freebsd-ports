@@ -1,6 +1,6 @@
 PORTNAME=	xlibre-xf86-input-libinput
 PORTVERSION=	25.0.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	xlibre@FreeBSD.org
@@ -10,7 +10,9 @@ WWW=		https://github.com/X11Libre/xf86-input-libinput/
 LICENSE=	MIT # various styles
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		pathfix tar:xz xlibre-cat:driver
+USES=		pathfix xlibre-cat:driver
+
+GH_TAGNAME=	c79ac4b
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto
 LIB_DEPENDS=	libinput.so:x11/libinput
