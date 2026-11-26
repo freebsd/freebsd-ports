@@ -1,0 +1,60 @@
+#!/bin/sh
+
+# PROVIDE: paseo_hub
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable Paseo Hub:
+#
+# paseo_hub_enable (bool):	Set to "YES" to enable paseo_hub.
+#				Default: "NO"
+# paseo_hub_bind (str):		IP address to listen on.
+#				Default: "127.0.0.1"
+# paseo_hub_port (int):		TCP port to listen on.
+#				Default: "3000"
+# paseo_hub_url (str):		Origin Hub is reached at, used in links and
+#				callback URLs.
+#				Default: "http://${paseo_hub_bind}:${paseo_hub_port}"
+# paseo_hub_datadir (str):	Directory of the embedded database.
+#				Default: "/var/db/paseo-hub"
+# paseo_hub_user (str):		User to run Hub as.
+#				Default: "paseo-hub"
+# paseo_hub_env (str):		Extra environment variables, for example
+#				"DATABASE_URL=postgres://...".
+#				Default: ""
+
+. /etc/rc.subr
+
+name=paseo_hub
+rcvar=paseo_hub_enable
+desc="Paseo Hub automation server"
+
+load_rc_config $name
+
+: ${paseo_hub_enable:=NO}
+: ${paseo_hub_bind=127.0.0.1}
+: ${paseo_hub_port=3000}
+: ${paseo_hub_url=http://$paseo_hub_bind:$paseo_hub_port}
+: ${paseo_hub_datadir=/var/db/paseo-hub}
+: ${paseo_hub_user:=paseo-hub}
+: ${paseo_hub_svcj_options=net_basic}
+
+# Let daemon(8) -u switch users rather than rc.subr, which would run
+# daemon(8) itself through "su -m" (and break stop with svcj).
+_paseo_hub_user=${paseo_hub_user}
+unset paseo_hub_user
+
+pidfile=/var/run/${name}.pid
+command=/usr/sbin/daemon
+procname=/usr/sbin/daemon
+start_precmd="install -d -m 0750 -o ${_paseo_hub_user} ${paseo_hub_datadir}"
+
+# Set at the top level, not in start_precmd, which rc.subr skips inside a
+# service jail (paseo_hub_svcj).
+command_args="-f -S -T ${name} -P ${pidfile} -u ${_paseo_hub_user} \
+    /usr/bin/env NO_COLOR=1 PASEO_HUB_BIND=${paseo_hub_bind} \
+    PORT=${paseo_hub_port} PASEO_HUB_APP_URL=${paseo_hub_url} \
+    PASEO_HUB_DATA_DIR=${paseo_hub_datadir} \
+    %%PREFIX%%/bin/paseo-hub"
+
+run_rc_command "$1"

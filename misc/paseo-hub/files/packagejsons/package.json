@@ -1,0 +1,9 @@
+{
+  "name": "paseo-hub-deps",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@getpaseo/hub": "0.12.0",
+    "bare-compat-napi": "1.4.2"
+  }
+}

@@ -1,0 +1,21 @@
+[
+{ type: install
+  message: <<EOM
+Paseo Hub is in early development: expect breaking changes, and back up
+its data directory before each upgrade.
+
+To start Hub, set paseo_hub_enable="YES" and run "service paseo_hub
+start".  It listens on 127.0.0.1:3000 (paseo_hub_bind, paseo_hub_port)
+and keeps an embedded database in /var/db/paseo-hub (paseo_hub_datadir);
+set paseo_hub_env="DATABASE_URL=postgres://..." to use PostgreSQL.
+
+Put Hub behind an HTTPS reverse proxy and set paseo_hub_url to its public
+origin.  GitHub and Linear webhooks and Slack's webhook mode need it;
+Slack Socket Mode does not.
+
+Open that origin to create the operator account, then connect each Paseo
+daemon (misc/paseo) from its machine with "paseo hub login <origin>".
+Hub runs agents only with the Claude Code, Codex, and OpenCode providers.
+EOM
+}
+]

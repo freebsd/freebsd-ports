@@ -1,0 +1,7 @@
+Paseo Hub is the self-hosted automation layer for Paseo, the agentic
+development environment (misc/paseo).  It starts coding agents on your own
+Paseo daemons from GitHub, Linear, Slack, and Discord events, schedules,
+webhooks, or manual runs, and keeps an audit trail of every event,
+configuration revision, execution, and result.
+
+Hub runs with an embedded PGlite database or with PostgreSQL.

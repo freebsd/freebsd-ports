@@ -422,6 +422,7 @@
     SUBDIR += parley
     SUBDIR += paseo
     SUBDIR += paseo-desktop
+    SUBDIR += paseo-hub
     SUBDIR += pastebinit
     SUBDIR += patchutils
     SUBDIR += pauker

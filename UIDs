@@ -359,7 +359,7 @@ emfor:*:409:409::0:0:Emfor Daemon:/var/db/emfor:/usr/sbin/nologin
 # free: 410
 uhub:*:411:411::0:0:uHub ADC Daemon:/nonexistent:/usr/sbin/nologin
 paseo-relay:*:412:412::0:0:Paseo relay:/nonexistent:/usr/sbin/nologin
-# free: 413
+paseo-hub:*:413:413::0:0:Paseo Hub:/nonexistent:/usr/sbin/nologin
 # free: 414
 # free: 415
 # free: 416
