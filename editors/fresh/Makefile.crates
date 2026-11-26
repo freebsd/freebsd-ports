@@ -9,8 +9,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		android-properties-0.2.2 \
 		android_system_properties-0.1.5 \
 		anstyle-1.0.14 \
-		anyhow-1.0.102 \
-		arbitrary-1.4.2 \
+		anyhow-1.0.104 \
 		arboard-3.6.1 \
 		arrayref-0.3.9 \
 		arrayvec-0.7.6 \
@@ -63,7 +62,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		clap_builder-4.6.0 \
 		clap_derive-4.6.1 \
 		clap_lex-1.1.0 \
-		clipboard-win-5.4.1 \
+		clipboard-win-5.4.3 \
 		cobs-0.3.0 \
 		codespan-reporting-0.12.0 \
 		combine-4.6.7 \
@@ -87,7 +86,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		crc32fast-1.5.0 \
 		crossbeam-channel-0.5.15 \
 		crossbeam-deque-0.8.6 \
-		crossbeam-epoch-0.9.18 \
+		crossbeam-epoch-0.9.21 \
 		crossbeam-utils-0.8.21 \
 		crossterm-0.29.0 \
 		crossterm_winapi-0.9.1 \
@@ -103,7 +102,6 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		darling_macro-0.23.0 \
 		deltae-0.3.2 \
 		deranged-0.5.8 \
-		derive_arbitrary-1.4.2 \
 		derive_more-2.1.1 \
 		derive_more-impl-2.1.1 \
 		digest-0.10.7 \
@@ -112,7 +110,6 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		dirs-sys-0.5.0 \
 		dispatch-0.2.0 \
 		dispatch2-0.3.1 \
-		displaydoc-0.2.6 \
 		dlib-0.5.3 \
 		doctest-file-1.1.1 \
 		document-features-0.2.12 \
@@ -228,7 +225,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		jni-sys-macros-0.4.1 \
 		jobserver-0.1.34 \
 		js-sys-0.3.97 \
-		jsonc-parser-0.32.3 \
+		jsonc-parser-0.34.0 \
 		kasuari-0.4.12 \
 		keyboard-types-0.7.0 \
 		khronos-egl-6.0.0 \
@@ -240,7 +237,6 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		leb128fmt-0.1.0 \
 		libc-0.2.186 \
 		libloading-0.8.9 \
-		libloading-0.9.0 \
 		libm-0.2.16 \
 		libredox-0.1.16 \
 		libxdo-0.6.0 \
@@ -275,7 +271,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		ndk-sys-0.6.0+11769913 \
 		nix-0.28.0 \
 		nix-0.29.0 \
-		nix-0.31.2 \
+		nix-0.31.3 \
 		nom-7.1.3 \
 		nom-8.0.0 \
 		nonmax-0.5.5 \
@@ -395,9 +391,9 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		proc-macro2-1.0.106 \
 		profiling-1.0.18 \
 		proptest-1.11.0 \
-		pulldown-cmark-0.13.3 \
+		pulldown-cmark-0.13.6 \
 		quick-error-1.2.3 \
-		quick-xml-0.39.3 \
+		quick-xml-0.39.4 \
 		quote-1.0.45 \
 		r-efi-5.3.0 \
 		r-efi-6.0.0 \
@@ -442,12 +438,12 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		rustix-0.38.44 \
 		rustix-1.1.4 \
 		rustix-openpty-0.2.0 \
-		rustls-0.23.40 \
+		rustls-0.23.46 \
 		rustls-native-certs-0.8.3 \
 		rustls-pki-types-1.14.1 \
 		rustls-platform-verifier-0.6.2 \
 		rustls-platform-verifier-android-0.1.1 \
-		rustls-webpki-0.103.13 \
+		rustls-webpki-0.103.16 \
 		rustversion-1.0.22 \
 		rusty-fork-0.3.1 \
 		rustybuzz-0.20.1 \
@@ -529,7 +525,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		tiny-skia-0.11.4 \
 		tiny-skia-path-0.11.4 \
 		tiny_http-0.12.0 \
-		tokio-1.52.2 \
+		tokio-1.54.1 \
 		tokio-macros-2.7.0 \
 		toml-0.8.23 \
 		toml-1.1.2+spec-1.1.0 \
@@ -561,6 +557,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		ts-rs-macros-12.0.1 \
 		ttf-parser-0.25.1 \
 		typed-arena-2.0.2 \
+		typed-path-0.12.3 \
 		typenum-1.20.0 \
 		ucd-trie-0.1.7 \
 		unarray-0.1.4 \
@@ -615,7 +612,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		web-sys-0.3.97 \
 		web-time-1.1.0 \
 		webpki-root-certs-1.0.7 \
-		webpki-roots-1.0.7 \
+		webpki-roots-1.0.10 \
 		wezterm-bidi-0.2.3 \
 		wezterm-blob-leases-0.1.1 \
 		wezterm-color-types-0.3.0 \
@@ -629,7 +626,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		wgpu-core-deps-windows-linux-android-28.0.0 \
 		wgpu-hal-28.0.1 \
 		wgpu-types-28.0.0 \
-		which-6.0.3 \
+		which-8.0.6 \
 		widestring-1.2.1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
@@ -688,7 +685,6 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		winnow-1.0.2 \
 		winreg-0.10.1 \
 		winresource-0.1.31 \
-		winsafe-0.0.19 \
 		wit-bindgen-0.51.0 \
 		wit-bindgen-0.57.1 \
 		wit-bindgen-core-0.51.0 \
@@ -712,6 +708,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		zerocopy-0.8.48 \
 		zerocopy-derive-0.8.48 \
 		zeroize-1.8.2 \
-		zip-2.4.2 \
+		zip-9.0.3 \
+		zlib-rs-0.6.8 \
 		zmij-1.0.21 \
 		zopfli-0.8.3
