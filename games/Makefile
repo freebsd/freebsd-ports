@@ -993,6 +993,7 @@
     SUBDIR += trojka
     SUBDIR += trx
     SUBDIR += tsito
+    SUBDIR += tshock
     SUBDIR += tt
     SUBDIR += ttt
     SUBDIR += tty-solitaire
