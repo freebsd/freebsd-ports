@@ -31,7 +31,8 @@ LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libprotobuf.so:devel/protobuf \
 		libsleef.so:math/sleef
 
-USES=		compiler:c++20-lang cmake:noninja gmake localbase:ldflags python # requires python even with PYTHON=off
+USES=		compiler:c++20-lang cmake:noninja cpe gmake localbase:ldflags python # requires python even with PYTHON=off
+CPE_VENDOR=	linuxfoundation
 
 CMAKE_OFF=	BUILD_CUSTOM_PROTOBUF USE_CUDA USE_ROCM  USE_NNPACK USE_QNNPACK USE_PYTORCH_QNNPACK \
 		USE_FBGEMM # workaround recommended by the upstream here: https://github.com/pytorch/pytorch/issues/28337

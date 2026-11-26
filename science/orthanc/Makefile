@@ -25,7 +25,9 @@ LIB_DEPENDS=	libboost_atomic.so:devel/boost-libs \
 		libpugixml.so:textproc/pugixml \
 		libuuid.so:misc/libuuid
 
-USES=		cmake gnome iconv jpeg lua python:build sqlite ssl
+USES=		cmake cpe gnome iconv jpeg lua python:build sqlite ssl
+
+CPE_VENDOR=	orthanc-server
 
 USE_RC_SUBR=	orthanc
 

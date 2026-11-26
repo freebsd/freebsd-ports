@@ -11,8 +11,10 @@ WWW=		https://github.com/go-shiori/shiori
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		cpe go:modules
 USE_RC_SUBR=	${PORTNAME}
+
+CPE_VENDOR=	go-shiori
 
 GO_MODULE=	github.com/go-shiori/shiori
 

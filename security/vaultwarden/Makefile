@@ -17,7 +17,9 @@ LIB_DEPENDS+=	libcapnp.so:devel/capnproto \
 		libnettle.so:security/nettle \
 		libzstd.so:archivers/zstd
 
-USES=		cargo ssl
+USES=		cargo cpe ssl
+
+CPE_VENDOR=	dani-garcia
 
 # make makeplist > pkg-plist #One has to edit/review the generated plist
 # make generate-plist && make check-plist

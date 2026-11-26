@@ -35,8 +35,10 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}CouchDB>=1.1:databases/py-couchdb@${PY_FLAV
 		${PYTHON_PKGNAMEPREFIX}webtest>=2.0:www/py-webtest@${PY_FLAVOR} \
 		mercurial>=0:devel/mercurial
 
-USES=		python
+USES=		cpe python
 USE_PYTHON=	distutils autoplist
+
+CPE_VENDOR=	wsgidav_project
 
 NO_ARCH=	yes
 

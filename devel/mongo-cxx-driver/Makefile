@@ -18,9 +18,12 @@ LIB_DEPENDS=	libmongoc2.so:devel/mongo-c-driver \
 		libutf8proc.so:textproc/utf8proc
 RUN_DEPENDS=	mongo-c-driver>=2.3.3:devel/mongo-c-driver
 
-USES=		cmake compiler:c++17-lang pkgconfig ssl
+USES=		cmake compiler:c++17-lang cpe pkgconfig ssl
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	mongodb
+CPE_PRODUCT=	c++_driver
 
 GH_ACCOUNT=	mongodb
 

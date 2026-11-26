@@ -18,8 +18,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}botocore>=1.31.35:devel/py-botocore@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}s3transfer>=0.6.0:net/py-s3transfer@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=3.10:devel/py-pyyaml@${PY_FLAVOR}
 
-USES=		python
+USES=		cpe python
 USE_PYTHON=	autoplist concurrent distutils
+
+CPE_VENDOR=	amazon
+CPE_PRODUCT=	aws_command_line_interface
 
 NO_ARCH=	yes
 SUB_FILES=	pkg-message

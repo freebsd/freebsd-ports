@@ -27,7 +27,7 @@ RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss \
 TEST_DEPENDS=	npm:www/npm${NODEJS_SUFFIX} \
 		dotnet:lang/dotnet
 
-USES=		nodejs:24,build sqlite:3 ssl elfctl
+USES=		cpe nodejs:24,build sqlite:3 ssl elfctl
 
 USE_GITHUB=	nodefault
 GH_ACCOUNT=	jellyfin:server,ui

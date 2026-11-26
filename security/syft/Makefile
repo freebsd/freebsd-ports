@@ -15,10 +15,12 @@ ONLY_FOR_ARCHS_REASON=  module modernc.org/sqlite only supported on aarch64 and 
 
 GO_WRKSRC=	${WRKSRC}
 
-USES=		go:modules
+USES=		cpe go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	anchore
 USE_GITLAB=	nodefault
+
+CPE_VENDOR=	anchore
 
 GO_TARGET=	./cmd/syft
 GO_BUILDFLAGS=	-ldflags="-s -w -X main.version=${DISTVERSION}"

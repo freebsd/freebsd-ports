@@ -12,8 +12,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USE_GITHUB=	yes
 GH_ACCOUNT=	unicorn-engine
 
-USES=		cmake:testing pkgconfig
+USES=		cmake:testing cpe pkgconfig
 USE_LDCONFIG=	yes
 CMAKE_TESTING_ON=	UNICORN_BUILD_TESTS
+
+CPE_VENDOR=	unicorn-engine
+CPE_PRODUCT=	unicorn_engine
 
 .include <bsd.port.mk>

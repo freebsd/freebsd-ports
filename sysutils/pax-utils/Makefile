@@ -13,9 +13,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	xmlto:textproc/xmlto
 
-USES=		gmake tar:xz
+USES=		cpe gmake tar:xz
 USE_GITHUB=	yes
 GH_ACCOUNT=	gentoo
+
+CPE_VENDOR=	gentoo
 
 PLIST_FILES=	bin/dumpelf \
 		bin/pspax \

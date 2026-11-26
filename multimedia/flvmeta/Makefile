@@ -11,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 LIB_DEPENDS=	libyaml.so:textproc/libyaml
 
-USES=		cmake
+USES=		cmake cpe
 USE_GITHUB=	yes
 GH_ACCOUNT=	noirotm
 GH_TAGNAME=	f412a33

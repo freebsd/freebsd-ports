@@ -17,9 +17,11 @@ LICENSE=	AGPLv3
 ONLY_FOR_ARCHS=	aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	module modernc.org/sqlite only supported on aarch64 and amd64
 
-USES=		go:modules
+USES=		cpe go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	sysadminsmedia
+
+CPE_VENDOR=	sysadminsmedia
 
 USE_RC_SUBR=	${PORTNAME}
 

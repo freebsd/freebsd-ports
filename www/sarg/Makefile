@@ -17,7 +17,7 @@ OPTIONS_SUB=	yes
 
 PHP_DESC=	Install PHP for reporting generating
 
-USES=		autoreconf gmake
+USES=		autoreconf cpe gmake
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--sysconfdir="${ETCDIR}" \
@@ -26,6 +26,9 @@ CONFIGURE_ARGS=	--sysconfdir="${ETCDIR}" \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 CFLAGS+=	-fcommon
+
+CPE_VENDOR=	squid_analysis_report_generator_project
+CPE_PRODUCT=	squid_analysis_report_generator
 
 NLS_USES=		gettext
 NLS_USES_OFF=		gettext-tools

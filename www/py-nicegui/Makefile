@@ -43,8 +43,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiofiles>=0:devel/py-aiofiles@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}vbuild>=0:textproc/py-vbuild@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}watchfiles>=0:devel/py-watchfiles@${PY_FLAVOR}
 
-USES=		python shebangfix
+USES=		cpe python shebangfix
 USE_PYTHON=	autoplist pep517
+
+CPE_VENDOR=	zauberzeug
 
 SHEBANG_FILES=	nicegui/scripts/pack.py
 

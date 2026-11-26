@@ -18,10 +18,13 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src_diffviewer_ydiff.c
 RUN_DEPENDS+=	gdiff:textproc/diffutils
 .endif
 
-USES=		gmake gnome libtool perl5 pkgconfig python:run tar:xz
+USES=		cpe gmake gnome libtool perl5 pkgconfig python:run tar:xz
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ZIP=${LOCALBASE}/bin/zip UNZIP=${UNZIP_NATIVE_CMD}
+
+CPE_VENDOR=	midnight-commander
+CPE_PRODUCT=	midnight_commander
 
 CONFLICTS_INSTALL=	${PORTNAME}6
 

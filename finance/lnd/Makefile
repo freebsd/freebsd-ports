@@ -11,7 +11,12 @@ WWW=		https://github.com/lightningnetwork/lnd
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		cpe go:modules
+
+CPE_VENDOR=	lightning_network_daemon_project
+CPE_PRODUCT=	lightning_network_daemon
+CPE_VERSION=	${DISTVERSION:C/-.*//}
+CPE_UPDATE=	${DISTVERSION:C/^[^-]*-//:S/-/_/g}
 
 GO_MODULE=	github.com/lightningnetwork/lnd
 GO_TARGET=	./cmd/lnd \

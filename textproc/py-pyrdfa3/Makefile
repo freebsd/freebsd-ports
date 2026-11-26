@@ -20,8 +20,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}rdflib>=7.0.0:textproc/py-rdflib@${PY_FLAVOR
 		${PYTHON_PKGNAMEPREFIX}html5lib>=1.1:www/py-html5lib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.32.3:www/py-requests@${PY_FLAVOR}
 
-USES=		python
+USES=		cpe python
 USE_PYTHON=	pep517 autoplist
+
+CPE_VENDOR=	pyrdfa3_project
 
 NO_ARCH=	yes
 

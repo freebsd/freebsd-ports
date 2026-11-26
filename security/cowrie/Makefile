@@ -26,7 +26,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}treq>=22.2.0:www/py-treq@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}twisted>=25.5.0:devel/py-twisted@${PY_FLAVOR}
 
-USES=		python
+USES=		cpe python
 USE_GITHUB=	yes
 USE_PYTHON=	pep517 autoplist noflavors
 

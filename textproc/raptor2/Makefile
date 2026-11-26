@@ -22,9 +22,12 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 
 CONFLICTS=	raptor-1.4.1[0-9]* raptor-1.4.21
 
-USES=		gnome libtool:keepla localbase pathfix pkgconfig
+USES=		cpe gnome libtool:keepla localbase pathfix pkgconfig
 USE_GNOME=	libxml2 libxslt
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	librdf
+CPE_PRODUCT=	raptor_rdf_syntax_library
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share

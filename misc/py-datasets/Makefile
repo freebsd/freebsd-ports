@@ -53,8 +53,10 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}absl-py>=0:devel/py-absl-py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zstandard>=0:archivers/py-zstandard@${PY_FLAVOR}
 # missing TEST_DEPENDS: jaxlib, joblibspark, py7zr, pyspark, tensorflow, transformers
 
-USES=		python
+USES=		cpe python
 USE_PYTHON=	pep517 concurrent autoplist pytest
+
+CPE_VENDOR=	huggingface
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} \
 		DATASETS_TEST_SKIP_TF=yes

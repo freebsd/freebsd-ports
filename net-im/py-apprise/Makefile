@@ -28,8 +28,9 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gntp>0:net/py-gntp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}slixmpp>=0:net-im/py-slixmpp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}smpplib>=0:net-im/py-smpplib@${PY_FLAVOR}
 
-USES=		pytest python
+USES=		cpe pytest python
 USE_PYTHON=	autoplist concurrent cryptography_test pep517
+CPE_VENDOR=	nuxref
 
 NO_ARCH=	yes
 

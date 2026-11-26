@@ -13,7 +13,9 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/bmc-device:sysutils/freeipmi \
 		rubygem-logger>=0:devel/rubygem-logger \
 		rubygem-observer>=0.1.0<0.2:devel/rubygem-observer
 
-USES=		gem
+USES=		cpe gem
+
+CPE_VENDOR=	logicminds
 
 NO_ARCH=	yes
 

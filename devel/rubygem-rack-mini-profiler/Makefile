@@ -12,7 +12,9 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-rack>=1.2.0,3:www/rubygem-rack
 
-USES=		gem
+USES=		cpe gem
+
+CPE_VENDOR=	miniprofiler
 
 NO_ARCH=	yes
 

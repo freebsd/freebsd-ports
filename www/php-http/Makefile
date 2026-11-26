@@ -18,12 +18,15 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libicudata.so:devel/icu
 RUN_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/raphf.so:devel/php-raphf@${PHP_FLAVOR}
 
-USES=		php:ext
+USES=		cpe php:ext
 USE_GITHUB=	yes
 GH_ACCOUNT=	m6w6
 GH_PROJECT=	ext-${PORTNAME}
 USE_PHP=	iconv:build zlib:build
 IGNORE_WITH_PHP=	86
+
+CPE_VENDOR=	php
+CPE_PRODUCT=	ext-http
 
 CONFIGURE_SHELL=	${LOCALBASE}/bin/bash
 

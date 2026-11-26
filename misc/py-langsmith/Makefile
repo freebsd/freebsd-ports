@@ -49,8 +49,10 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cachetools>=5.0.0:devel/py-cachetools@${PY_
 		${PYTHON_PKGNAMEPREFIX}rich>=13.7.1:textproc/py-rich@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}vcrpy>=7.0.0:devel/py-vcrpy@${PY_FLAVOR}
 
-USES=		python
+USES=		cpe python
 USE_PYTHON=	pep517 autoplist pytest
+
+CPE_VENDOR=	langchain
 
 NO_ARCH=	yes
 

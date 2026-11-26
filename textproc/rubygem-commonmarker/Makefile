@@ -14,7 +14,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-rb_sys>=0.9<1:lang/rubygem-rb_sys
 
-USES=		cargo gem gmake llvm
+USES=		cargo cpe gem gmake llvm
+
+CPE_VENDOR=	gjtorikian
 
 CARGO_BUILD=	no
 CARGO_INSTALL=	no

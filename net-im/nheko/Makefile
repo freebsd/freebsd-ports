@@ -30,13 +30,15 @@ LIB_DEPENDS=	\
 		libolm.so:security/olm \
 		libqt6keychain.so:security/qtkeychain
 
-USES=		cmake compiler:c++20-lang desktop-file-utils \
+USES=		cmake compiler:c++20-lang cpe desktop-file-utils \
 		localbase:ldflags pkgconfig qt:6 ssl tar:xz
 USE_GITHUB=	yes
 GH_ACCOUNT=	Nheko-Reborn
 GH_TUPLE=	hoytech:lmdbxx:029fb681213af3020f5e3a86045445552bd024c5:lmdb/deps/lmdb
 USE_QT=		base declarative multimedia svg \
 		tools:build translations:build
+
+CPE_VENDOR=	nheko-reborn
 
 # There is one external dependency: lmdb++
 #  - lmdb++ is a single header file, it just needs to be included

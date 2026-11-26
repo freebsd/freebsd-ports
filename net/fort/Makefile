@@ -16,9 +16,12 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libmicrohttpd.so:www/libmicrohttpd
 RUN_DEPENDS=	${LOCALBASE}/bin/rsync:net/rsync
 
-USES=		gnome localbase:ldflags pkgconfig ssl
+USES=		cpe gnome localbase:ldflags pkgconfig ssl
 USE_GNOME=	libxml2
 USE_RC_SUBR=	fort
+
+CPE_VENDOR=	nicmx
+CPE_PRODUCT=	fort_validator
 
 GNU_CONFIGURE=	yes
 

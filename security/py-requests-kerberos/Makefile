@@ -16,8 +16,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>1.1.0:www/py-requests@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}kerberos>1.1.1:security/py-kerberos@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyspnego>0:security/py-pyspnego@${PY_FLAVOR}
 
-USES=		python
+USES=		cpe python
 USE_PYTHON=	distutils autoplist
+
+CPE_VENDOR=	requests-kerberos_project
 
 NO_ARCH=	yes
 

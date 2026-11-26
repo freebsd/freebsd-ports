@@ -14,6 +14,11 @@ RUN_DEPENDS=	zsh:shells/zsh
 USE_GITHUB=	yes
 GH_TAGNAME=	69a6359f7cf8978d464573fb7b023ee3cd00181a
 
+USES=		cpe
+
+CPE_VENDOR=	planetargon
+CPE_PRODUCT=	oh_my_zsh
+
 NO_ARCH=	yes
 NO_BUILD=	yes
 

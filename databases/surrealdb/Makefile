@@ -20,7 +20,7 @@ BROKEN_i386=	compilation fails: memory allocation of 109051908 bytes failed
 BUILD_DEPENDS=	gmake:devel/gmake
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
-USES=		cargo llvm
+USES=		cargo cpe llvm
 USE_RC_SUBR=	surrealdb
 USE_GITHUB=	yes
 

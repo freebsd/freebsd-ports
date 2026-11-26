@@ -62,9 +62,11 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		bash:shells/bash
 TEST_DEPENDS=	bash:shells/bash
 
-USES=		cargo desktop-file-utils display:test electron:43,build,test \
+USES=		cargo cpe desktop-file-utils display:test electron:43,build,test \
 		gl gmake gnome gssapi:mit iconv:wchar_t jpeg localbase:ldflags \
 		nodejs:24,build npm:pnpm pkgconfig python:build shebangfix xorg
+CPE_VENDOR=	microsoft
+CPE_PRODUCT=	visual_studio_code
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft

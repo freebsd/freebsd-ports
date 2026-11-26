@@ -11,7 +11,9 @@ WWW=		https://github.com/nats-io/nkeys
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		cpe go:modules
+
+CPE_VENDOR=	nats
 
 GO_MODULE=	github.com/nats-io/nkeys
 GO_TARGET=	./nk

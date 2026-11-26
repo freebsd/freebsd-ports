@@ -21,6 +21,11 @@ PORTDOCS=	fasm.txt readme.txt whatsnew.txt
 
 CONFLICTS_INSTALL=	fasm-fpga SASM # bin/fasm
 
+USES=		cpe
+
+CPE_VENDOR=	flatassembler
+CPE_PRODUCT=	flat_assembler
+
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>

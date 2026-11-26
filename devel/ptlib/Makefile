@@ -12,11 +12,14 @@ LICENSE=	MPL10
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
-USES=		autoreconf:build bison:wrapper compiler:c11 gmake localbase:ldflags \
+USES=		autoreconf:build bison:wrapper compiler:c11 cpe gmake localbase:ldflags \
 		pathfix pkgconfig ssl tar:xz
 BROKEN_SSL=	openssl openssl31
 BROKEN_SSL_REASON=	Uses OpenSSL 3.0.0 deprecated BIO_s_file_internal
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	opalvoip
+CPE_PRODUCT=	portable_tool_library
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-bsdvideo \

@@ -12,7 +12,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-json_schemer>=2.4:devel/rubygem-json_schemer
 
-USES=		gem
+USES=		cpe gem
+
+CPE_VENDOR=	lfprojects
+CPE_PRODUCT=	mcp_ruby_sdk
 
 NO_ARCH=	yes
 

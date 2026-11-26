@@ -14,7 +14,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-mini_magick${PKGNAMESUFFIX}>=4.9.5<6:graphics/rubygem-mini_magick \
 		rubygem-ruby-vips${PKGNAMESUFFIX}>=2.0.17<3:graphics/rubygem-ruby-vips
 
-USES=		gem
+USES=		cpe gem
+
+CPE_VENDOR=	image_processing_project
 
 NO_ARCH=	yes
 

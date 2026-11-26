@@ -25,7 +25,9 @@ BUILD_DEPENDS=	zip:archivers/zip \
 		${PY_DEPENDS}
 RUN_DEPENDS=	${PY_DEPENDS}
 
-USES=		gmake python shebangfix
+USES=		cpe gmake python shebangfix
+
+CPE_VENDOR=	yt-dlp_project
 
 SHEBANG_GLOB=	devscripts/*.py
 

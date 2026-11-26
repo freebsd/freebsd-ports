@@ -13,7 +13,10 @@ BROKEN_i386=	linking fails: mapping output file failed: cannot allocate memory
 
 BUILD_DEPENDS=	go-bindata:devel/go-bindata
 
-USES=		go:modules
+USES=		cpe go:modules
+
+CPE_VENDOR=	kubernetes
+CPE_PRODUCT=	operations
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	kubernetes

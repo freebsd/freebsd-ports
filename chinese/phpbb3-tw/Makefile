@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/docs/COPYING
 
 CONFLICTS_INSTALL=	phpbb phpbb3 zh-phpbb-tw # share/doc/phpbb/AUTHORS share/doc/phpbb/CHANGELOG.html
 
-USES=		zip
+USES=		cpe zip
 
 # The phpBB3 port supports a number of variables that may be tweaked at build
 # time.  Perform a "make options" to see more information on these variables.

@@ -15,10 +15,12 @@ LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libuv.so:devel/libuv \
 		libwebsockets.so:net/libwebsockets
 
-USES=		cmake pkgconfig ssl
+USES=		cmake cpe pkgconfig ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	tsl0922
 USE_RC_SUBR=	${PORTNAME}
+
+CPE_VENDOR=	ttyd_project
 
 CMAKE_ARGS=	-DCMAKE_DISABLE_FIND_PACKAGE_Git:BOOL=True
 

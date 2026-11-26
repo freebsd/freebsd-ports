@@ -13,8 +13,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	jq:textproc/jq
 LIB_DEPENDS=	libjansson.so:devel/jansson
 
-USES=		compiler:c11 meson pkgconfig ssl tar:xz
+USES=		compiler:c11 cpe meson pkgconfig ssl tar:xz
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	latchset
 
 OPTIONS_DEFINE=	MANPAGES
 OPTIONS_DEFAULT=MANPAGES

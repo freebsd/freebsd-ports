@@ -22,8 +22,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cross-web>=0.6.0:www/py-cross-web@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}python-dateutil>=2.7.0:devel/py-python-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.14.0:devel/py-typing-extensions@${PY_FLAVOR}
 
-USES=		python:3.12+
+USES=		cpe python:3.12+
 USE_PYTHON=	autoplist concurrent pep517
+
+CPE_VENDOR=	strawberry
+CPE_PRODUCT=	${PORTNAME:tl:S/-/_/g}
 
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}*${PORTNAME}
 

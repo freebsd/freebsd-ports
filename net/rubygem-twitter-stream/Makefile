@@ -15,7 +15,9 @@ RUN_DEPENDS=	rubygem-eventmachine>=0.12.8:devel/rubygem-eventmachine \
 		rubygem-http_parser.rb>=0.5.1:net/rubygem-http_parser.rb \
 		rubygem-simple_oauth>=0.1.4:net/rubygem-simple_oauth
 
-USES=		gem
+USES=		cpe gem
+
+CPE_VENDOR=	twitter-stream_project
 
 NO_ARCH=	yes
 

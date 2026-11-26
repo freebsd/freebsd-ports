@@ -13,11 +13,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libuchardet.so:textproc/uchardet \
 		libxkbcommon.so:x11/libxkbcommon
 
-USES=		cmake desktop-file-utils gl localbase:ldflags qt:6 xorg
+USES=		cmake cpe desktop-file-utils gl localbase:ldflags qt:6 xorg
 USE_GL=		gl opengl
 USE_QT=		base 5compat tools:build
 USE_GL=		gl
 USE_XORG=	xcb
+
+CPE_VENDOR=	dail8859
+CPE_PRODUCT=	notepad_next
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dail8859

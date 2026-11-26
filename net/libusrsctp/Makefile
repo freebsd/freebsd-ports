@@ -9,8 +9,11 @@ WWW=		https://github.com/sctplab/usrsctp
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=		cmake
+USES=		cmake cpe
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	usrsctp_project
+CPE_PRODUCT=	usrsctp
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	sctplab

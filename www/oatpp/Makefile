@@ -10,7 +10,10 @@ WWW=		https://oatpp.io/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:testing compiler:c++11-lang
+USES=		cmake:testing compiler:c++11-lang cpe
+
+CPE_VENDOR=	${PORTNAME:tl}
+CPE_PRODUCT=	oat++
 
 CMAKE_OFF=	OATPP_BUILD_TESTS \
 		OATPP_COMPAT_BUILD_NO_SET_AFFINITY \

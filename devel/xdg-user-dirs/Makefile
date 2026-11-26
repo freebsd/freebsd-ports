@@ -13,9 +13,11 @@ LICENSE_FILE_GPLv2+=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-xsl
 
-USES=		gettext gnome iconv localbase:ldflags meson tar:xz
+USES=		cpe gettext gnome iconv localbase:ldflags meson tar:xz
 USE_GNOME=	libxslt:build
 LDFLAGS+=	${ICONV_LIB}
+
+CPE_VENDOR=	freedesktop
 
 post-patch:
 	${REINPLACE_CMD} -e "s|get_option('sysconfdir')|'${PREFIX}/etc'|g" \

@@ -12,7 +12,7 @@ WWW=		https://github.com/net-ssh/net-ssh
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		gem shebangfix
+USES=		cpe gem shebangfix
 
 OPTIONS_DEFINE=	PROMPT_PASSPHRASES
 OPTIONS_DEFAULT=PROMPT_PASSPHRASES

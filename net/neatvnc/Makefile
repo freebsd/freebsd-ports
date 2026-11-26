@@ -13,10 +13,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${LOCALBASE}/include/libdrm/drm_fourcc.h:graphics/libdrm
 LIB_DEPENDS=	libaml.so:devel/aml
 
-USES=		compiler:c11 meson pkgconfig xorg
+USES=		compiler:c11 cpe meson pkgconfig xorg
 USE_GITHUB=	yes
 USE_XORG=	pixman
 USE_LDCONFIG=	yes
+CPE_VENDOR=	any1
 GH_ACCOUNT=	any1
 PLIST_SUB=	VERSION=${PORTVERSION}
 

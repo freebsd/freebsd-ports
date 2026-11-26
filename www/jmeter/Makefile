@@ -69,8 +69,11 @@ RUN_DEPENDS=	\
 		${JAVALIBDIR}/xmlgraphics-commons.jar:graphics/xmlgraphics-commons \
 		${JAVALIBDIR}/xstream.jar:textproc/xstream
 
-USES=		java tar:tgz
+USES=		cpe java tar:tgz
 JAVA_VERSION=	17+
+
+CPE_VENDOR=	apache
+CPE_PRODUCT=	jmeter
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 # Do not even extract the MS-DOS files nor the JARs,

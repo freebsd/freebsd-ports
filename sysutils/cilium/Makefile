@@ -11,7 +11,10 @@ WWW=		https://github.com/cilium/cilium-cli
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		cpe go:modules
+
+CPE_VENDOR=	${PORTNAME:tl}
+CPE_PRODUCT=	cilium-cli
 
 GO_MODULE=	github.com/cilium/cilium-cli
 GO_BUILDFLAGS=	-ldflags="\

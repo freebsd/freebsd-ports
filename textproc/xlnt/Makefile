@@ -16,7 +16,9 @@ FETCH_DEPENDS=	ca_root_nss>0:security/ca_root_nss \
 BUILD_DEPENDS=	fast_float>0:math/fast_float
 LIB_DEPENDS=	libfmt.so:devel/libfmt
 
-USES=		cmake:testing compiler:c++14-lang localbase
+USES=		cmake:testing compiler:c++14-lang cpe localbase
+
+CPE_VENDOR=	xlnt-community
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	xlnt-community

@@ -17,8 +17,10 @@ LICENSE_FILE=	${WRKSRC}/AUTHORS
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libneon.so:www/neon
 
-USES=		gmake iconv ssl
+USES=		cpe gmake iconv ssl
 GNU_CONFIGURE=	yes
+
+CPE_VENDOR=	werner_baumann
 
 USERS=		${PORTNAME}
 GROUPS=		${PORTNAME}

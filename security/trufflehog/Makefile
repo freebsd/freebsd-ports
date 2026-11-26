@@ -14,7 +14,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN_armv7=	compilation fails see details here: https://github.com/trufflesecurity/trufflehog/issues/3791
 BROKEN_i386=	compilation fails see details here: https://github.com/trufflesecurity/trufflehog/issues/3791
 
-USES=		go:modules
+USES=		cpe go:modules
+
+CPE_VENDOR=	trufflesecurity
 
 GO_MODULE=	github.com/trufflesecurity/trufflehog/v3
 

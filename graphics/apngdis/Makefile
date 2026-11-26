@@ -14,8 +14,11 @@ OPTIONS_DEFINE=	DOCS STATIC
 
 NO_WRKSUBDIR=	yes
 
-USES=		dos2unix gmake zip
+USES=		cpe dos2unix gmake zip
 LDFLAGS+=	-lz
+
+CPE_VENDOR=	apng_disassembler_project
+CPE_PRODUCT=	apng_disassembler
 
 PORTDOCS=	readme.txt
 PLIST_FILES=	bin/${PORTNAME}

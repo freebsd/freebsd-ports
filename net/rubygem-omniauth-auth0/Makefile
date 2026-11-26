@@ -12,7 +12,9 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-omniauth>=2.0<3:security/rubygem-omniauth \
 		rubygem-omniauth-oauth2>=1.4<2:net/rubygem-omniauth-oauth2
 
-USES=		gem
+USES=		cpe gem
+
+CPE_VENDOR=	auth0
 
 NO_ARCH=	yes
 

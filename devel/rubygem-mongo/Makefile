@@ -13,7 +13,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-base64>=0:converters/rubygem-base64 \
 		rubygem-bson>=4.14.1<6.0.0:devel/rubygem-bson
 
-USES=		gem
+USES=		cpe gem
+
+CPE_VENDOR=	mongodb
+CPE_PRODUCT=	ruby_driver
 
 NO_ARCH=	yes
 

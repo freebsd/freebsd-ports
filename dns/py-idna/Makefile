@@ -14,8 +14,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>=3.11<5:devel/py-flit-core@${PY_FLAVOR}
 
-USES=		python
+USES=		cpe python
 USE_PYTHON=	autoplist concurrent pep517 unittest
+
+CPE_VENDOR=	kjd
+CPE_PRODUCT=	internationalized_domain_names_in_applications
 
 NO_ARCH=	yes
 

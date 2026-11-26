@@ -19,7 +19,9 @@ RUN_DEPENDS=	rubygem-gemojione>=4.1<5:graphics/rubygem-gemojione \
 		rubygem-rouge3>=3.1<4:textproc/rubygem-rouge3 \
 		rubygem-twitter-text1>=1.14.7<1.14.8:textproc/rubygem-twitter-text1
 
-USES=		gem
+USES=		cpe gem
+
+CPE_VENDOR=	gollum_project
 
 NO_ARCH=	yes
 

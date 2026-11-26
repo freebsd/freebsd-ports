@@ -11,9 +11,12 @@ WWW=		https://oskt.secure-endpoints.com/knc.html
 LICENSE=	BSD2CLAUSE MIT
 LICENSE_COMB=	multi
 
-USES=		libtool
+USES=		cpe libtool
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+
+CPE_VENDOR=	secure-endpoints
+CPE_PRODUCT=	kerberised_netcat
 
 PLIST_FILES=	bin/knc \
 		share/man/man1/knc.1.gz

@@ -9,7 +9,7 @@ WWW=		https://www.anope.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/docs/COPYING
 
-USES=		cmake localbase:ldflags shebangfix
+USES=		cmake cpe localbase:ldflags shebangfix
 USE_GITHUB=	yes
 USE_RC_SUBR=	anope
 SHEBANG_FILES=	${WRKSRC}/src/tools/*.sh

@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}joblib>=1.3.0:devel/py-joblib@${PY_FLAVOR}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}meson-python>=0.17.1:devel/meson-python@${PY_FLAVOR}
 
-USES=		fortran python localbase shebangfix
+USES=		cpe fortran python localbase shebangfix
 USE_PYTHON=	autoplist cython pep517 pytest
 
 TEST_ARGS=	sklearn

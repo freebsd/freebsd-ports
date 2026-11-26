@@ -21,9 +21,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}discid>=1.0:audio/py-discid@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}markdown>=3.2:textproc/py-markdown@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyjwt>=2.0:www/py-pyjwt@${PY_FLAVOR}
 
-USES=		desktop-file-utils gettext-tools pyqt:5 python
+USES=		cpe desktop-file-utils gettext-tools pyqt:5 python
 USE_PYQT=	pyqt5:run
 USE_PYTHON=	autoplist noflavors pep517 unittest
+
+CPE_VENDOR=	metabrainz
+CPE_PRODUCT=	musicbrainz_picard
 
 CONFLICTS_INSTALL=	picard-tools py*-python-picard # bin/picard
 

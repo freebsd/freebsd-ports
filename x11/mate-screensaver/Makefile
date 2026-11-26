@@ -19,7 +19,7 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libnotify.so:devel/libnotify \
 		libstartup-notification-1.so:x11/startup-notification
 
-USES=		gettext gl gmake gnome localbase mate pathfix pkgconfig tar:xz \
+USES=		cpe gettext gl gmake gnome localbase mate pathfix pkgconfig tar:xz \
 		xorg
 USE_GL=		gl
 USE_MATE=	desktop libmatekbd menus session:run
@@ -30,6 +30,8 @@ GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-console-kit=yes \
 		--with-systemd=no
+
+CPE_VENDOR=	mate-desktop
 
 GLIB_SCHEMAS=	org.mate.screensaver.gschema.xml
 

@@ -17,9 +17,11 @@ WWW=		https://github.com/baszoetekouw/pinfo
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf gettext-tools libtool localbase makeinfo ncurses
+USES=		autoreconf cpe gettext-tools libtool localbase makeinfo ncurses
 USE_GITHUB=	yes
 GH_ACCOUNT=	baszoetekouw
+
+CPE_VENDOR=	surf
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share

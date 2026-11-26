@@ -17,8 +17,11 @@ BUILD_DEPENDS=	${JAVALIBDIR}/commons-logging.jar:java/apache-commons-logging \
 RUN_DEPENDS=	${JAVALIBDIR}/commons-logging.jar:java/apache-commons-logging \
 		${JAVALIBDIR}/commons-collections.jar:java/apache-commons-collections
 
-USES=		dos2unix java:ant,run
+USES=		cpe dos2unix java:ant,run
 DOS2UNIX_FILES=	build.xml
+
+CPE_VENDOR=	apache
+CPE_PRODUCT=	${PORTNAME:tl:S/-/_/g}
 
 MAKE_ARGS+=	-Dcommons-collections.jar=${JAVALIBDIR}/commons-collections.jar \
 		-Dcommons-logging.jar=${JAVALIBDIR}/commons-logging.jar

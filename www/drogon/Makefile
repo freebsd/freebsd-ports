@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libjsoncpp.so:devel/jsoncpp \
 		libtrantor.so:net/trantor
 
-USES=		cmake ssl
+USES=		cmake cpe ssl
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	drogonframework

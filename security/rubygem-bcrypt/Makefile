@@ -10,6 +10,9 @@ WWW=		https://github.com/bcrypt-ruby/bcrypt-ruby
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gem
+USES=		cpe gem
+
+CPE_VENDOR=	bcrypt-ruby_project
+CPE_PRODUCT=	bcrypt-ruby
 
 .include <bsd.port.mk>

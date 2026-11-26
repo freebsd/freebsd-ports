@@ -11,8 +11,11 @@ WWW=		https://github.com/latchset/pkcs11-provider
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSES/Apache-2.0.txt
 
-USES=		meson ssl
+USES=		cpe meson ssl
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	latchset
+CPE_PRODUCT=	pkcs11-provider
 
 TEST_ENVIRONMENT=	OPENSSL_INSTALL=${LOCALBASE}/bin/openssl
 

@@ -15,8 +15,11 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAV
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django60>=4.2:www/py-django60@${PY_FLAVOR}
 
-USES=		python:3.12+
+USES=		cpe python:3.12+
 USE_PYTHON=	autoplist pep517
+
+CPE_VENDOR=	django-rest-framework
+CPE_PRODUCT=	django_rest_framework
 
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}*${PORTNAME}
 

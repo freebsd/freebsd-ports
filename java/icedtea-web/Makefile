@@ -19,7 +19,7 @@ RUN_DEPENDS=	bash:shells/bash
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-USES=		autoreconf compiler:c++11-lang desktop-file-utils gmake java \
+USES=		autoreconf compiler:c++11-lang cpe desktop-file-utils gmake java \
 		pkgconfig shebangfix xorg
 JAVA_VERSION=	8
 JAVA_OS=	native
@@ -29,6 +29,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	AdoptOpenJDK
 GH_PROJECT=	IcedTea-Web
 SHEBANG_FILES=	jrunscript.in shell-launcher/launchers.sh.in
+
+CPE_VENDOR=	icedtea-web_project
 
 CONFIGURE_ARGS=		--with-hamcrest="${HAMCREST_JAR}"
 CONFIGURE_ARGS+=	--with-jdk-home="${JAVA_HOME}"

@@ -11,7 +11,10 @@ WWW=		https://google.github.io/googletest/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:testing compiler:c++17-lang python:test
+USES=		cmake:testing compiler:c++17-lang cpe python:test
+
+CPE_VENDOR=	google
+CPE_PRODUCT=	google_test
 
 CMAKE_OFF=	GTEST_HAS_ABSL \
 		gmock_build_tests \

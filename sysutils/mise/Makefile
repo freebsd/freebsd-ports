@@ -20,7 +20,9 @@ LIB_DEPENDS=	libgit2.so:devel/libgit2 \
 		libzstd.so:archivers/zstd
 RUN_DEPENDS=	${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/libclang.so:devel/llvm${LLVM_DEFAULT}
 
-USES=		cargo localbase:ldflags pkgconfig ssl
+USES=		cargo cpe localbase:ldflags pkgconfig ssl
+
+CPE_VENDOR=	jdx
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jdx

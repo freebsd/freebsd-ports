@@ -11,7 +11,10 @@ WWW=		https://ruby-concurrency.github.io/concurrent-ruby/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		gem
+USES=		cpe gem
+
+CPE_VENDOR=	rubyconcurrency
+CPE_PRODUCT=	${PORTNAME:tl:S/-/_/g}
 
 NO_ARCH=	yes
 

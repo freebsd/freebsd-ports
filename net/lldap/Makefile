@@ -16,7 +16,7 @@ BUILD_DEPENDS=	gzip:archivers/gzip \
 		wasm-bindgen:www/wasm-bindgen-cli
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
-USES=		cargo
+USES=		cargo cpe
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	inejge:ldap3

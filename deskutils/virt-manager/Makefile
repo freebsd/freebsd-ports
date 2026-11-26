@@ -22,9 +22,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.2:devel/py-dbus@${PY_FLAVOR} \
 		spice-gtk>=0.26:deskutils/spice-gtk \
 		ssh-askpass:security/openssh-askpass
 
-USES=		desktop-file-utils gettext gnome meson tar:xz python
+USES=		cpe desktop-file-utils gettext gnome meson tar:xz python
 USE_GNOME=	gtksourceview4 introspection:run intltool librsvg2 pygobject3
 GLIB_SCHEMAS=	org.virt-manager.virt-manager.gschema.xml
+
+CPE_VENDOR=	redhat
 
 MESON_ARGS=	-Dtests=disabled
 

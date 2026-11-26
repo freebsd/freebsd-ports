@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-redis-gitlab>=4<6:databases/rubygem-redis-gitlab
 
-USES=		gem
+USES=		cpe gem
 
 NO_ARCH=	yes
 

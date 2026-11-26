@@ -23,6 +23,8 @@ GH_PROJECT=	CImg
 
 BUILD_WRKSRC=	${WRKSRC}/examples
 
+USES=		cpe
+
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .include <bsd.port.options.mk>

@@ -13,11 +13,14 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv3=	${WRKSRC}/LICENSE
 LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/highlight.js/LICENSE
 
-USES=		php
+USES=		cpe php
 USE_PHP=	dom pdo xml
 USE_GITHUB=	yes
 GH_ACCOUNT=	techsneeze
 GH_TAGNAME=	4730985
+
+CPE_VENDOR=	techsneeze
+CPE_PRODUCT=	dmarc_report
 
 NO_ARCH=	yes
 NO_BUILD=	yes

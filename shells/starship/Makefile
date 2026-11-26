@@ -17,7 +17,7 @@ BROKEN_i386=	cargo crashes on shells/starship on i386, see https://bugs.freebsd.
 LIB_DEPENDS=	libgit2.so:devel/libgit2 \
 		libssh2.so:security/libssh2
 
-USES=		cargo ssl
+USES=		cargo cpe ssl
 
 CARGO_CRATES=	aho-corasick-1.1.5 \
 		allocator-api2-0.2.21 \

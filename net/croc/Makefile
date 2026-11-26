@@ -10,8 +10,10 @@ WWW=		https://github.com/schollz/croc
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		cpe go:modules
 USE_RC_SUBR=	croc
+
+CPE_VENDOR=	schollz
 
 GO_MODULE=	github.com/schollz/croc/v11
 

@@ -20,10 +20,12 @@ LICENSE_NAME=	OPENDOAS
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	auto-accept dist-mirror pkg-mirror
 
-USES=		gmake
+USES=		cpe gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	Duncaen
 GH_PROJECT=	OpenDoas
+
+CPE_VENDOR=	opendoas_project
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc \

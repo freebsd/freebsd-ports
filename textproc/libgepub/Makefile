@@ -14,9 +14,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libsoup-3.0.so:devel/libsoup3
 
-USES=		compiler:c11 gettext-runtime gnome libarchive meson \
+USES=		compiler:c11 cpe gettext-runtime gnome libarchive meson \
 		pkgconfig tar:xz
 USE_GNOME=	glib20 introspection:build libxml2
+
+CPE_VENDOR=	gnome
 
 MESON_ARGS=	-Dwidget=false
 

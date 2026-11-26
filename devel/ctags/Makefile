@@ -10,7 +10,10 @@ WWW=		https://ctags.sourceforge.net/
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-macro-patterns --with-readlib
-USES=	desthack
+USES=	cpe desthack
+
+CPE_VENDOR=	exuberant_ctags_project
+CPE_PRODUCT=	exuberant_ctags
 
 SUB_FILES+=	pkg-message
 

@@ -27,10 +27,13 @@ LIB_DEPENDS=	libgnutls.so:security/gnutls \
 		libzscanner.so:dns/knot3
 RUN_DEPENDS=	${LUA_FLAVOR}-cqueues>=20200726_1:devel/lua-cqueues@${LUA_FLAVOR}
 
-USES=		cmake:indirect compiler:c11 lua:build,run luajit meson ncurses \
+USES=		cmake:indirect compiler:c11 cpe lua:build,run luajit meson ncurses \
 		ninja pkgconfig python:build tar:xz
 USE_CXXSTD=	c++11
 USE_RC_SUBR=	krescachegc kresd
+
+CPE_VENDOR=	nic
+CPE_PRODUCT=	${PORTNAME:tl:S/-/_/g}
 
 CMAKE_ARGS+=	-DCLANG_TIDY=${LOCALBASE}/bin/clang-tidy${COMPILER_VERSION:C/.$//} \
 		-DRUN_CLANG_TIDY=${LOCALBASE}/llvm${COMPILER_VERSION:C/.$//}/bin/run-clang-tidy

@@ -15,7 +15,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-nokogiri>=1.13.10:textproc/rubygem-nokogiri \
 		rubygem-rexml>=0:textproc/rubygem-rexml
 
-USES=		gem
+USES=		cpe gem
+
+CPE_VENDOR=	onelogin
 
 NO_ARCH=	yes
 

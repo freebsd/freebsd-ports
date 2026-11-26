@@ -9,7 +9,9 @@ WWW=		https://github.com/projectdiscovery/interactsh
 
 LICENSE=	MIT
 
-USES=		go:modules
+USES=		cpe go:modules
+
+CPE_VENDOR=	projectdiscovery
 
 GO_MODULE=	github.com/projectdiscovery/${PORTNAME}
 GO_TARGET=	./cmd/${PORTNAME}-server ./cmd/${PORTNAME}-client

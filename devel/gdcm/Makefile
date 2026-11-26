@@ -13,8 +13,11 @@ LICENSE=	BSD3CLAUSE
 LIB_DEPENDS=	libopenjp2.so:graphics/openjpeg \
 		libexpat.so:textproc/expat2
 
-USES=		cmake compiler:c++11-lang pkgconfig python:build tar:bzip2 ssl
+USES=		cmake compiler:c++11-lang cpe pkgconfig python:build tar:bzip2 ssl
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	malaterre
+CPE_PRODUCT=	grassroots_dicom
 
 OPTIONS_DEFINE=		VTK
 OPTIONS_SUB=		yes

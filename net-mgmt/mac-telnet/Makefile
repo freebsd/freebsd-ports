@@ -9,8 +9,10 @@ WWW=		https://github.com/haakonnessjoen/MAC-Telnet
 
 LICENSE=	GPLv2
 
-USES=		autoreconf libtool pkgconfig gettext ssl
+USES=		autoreconf cpe libtool pkgconfig gettext ssl
 USE_GITHUB=	yes
+
+CPE_VENDOR=	mac-telnet_project
 
 GH_ACCOUNT=	haakonnessjoen
 GH_PROJECT=	MAC-Telnet

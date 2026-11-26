@@ -11,7 +11,9 @@ WWW=		https://github.com/grafana/alloy
 LICENSE=	MIT
 
 # no_targets: we supply do-build/do-install for the collector submodule.
-USES=		go:modules,no_targets
+USES=		cpe go:modules,no_targets
+
+CPE_VENDOR=	grafana
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	grafana

@@ -12,8 +12,11 @@ WWW=		https://metacpan.org/release/Perl-Tidy \
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		perl5
+USES=		cpe perl5
 USE_PERL5=	configure
+
+CPE_VENDOR=	perltidy_project
+CPE_PRODUCT=	${PORTNAME:tl:S/-//g}
 
 NO_ARCH=	yes
 

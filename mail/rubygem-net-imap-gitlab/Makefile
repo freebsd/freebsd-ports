@@ -15,7 +15,10 @@ LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-date>=0:devel/rubygem-date \
 		rubygem-net-protocol>=0:net/rubygem-net-protocol
 
-USES=		gem
+USES=		cpe gem
+
+CPE_VENDOR=	ruby-lang
+CPE_PRODUCT=	net::imap
 
 NO_ARCH=	yes
 

@@ -10,7 +10,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SSLv3/TLS network protocol analyzer
 WWW=		https://sourceforge.net/projects/ssldump/
 
-USES=	ssl
+USES=	cpe ssl
+
+CPE_VENDOR=	rtfm
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-openssl=${OPENSSLBASE} \

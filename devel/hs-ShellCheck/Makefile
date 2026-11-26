@@ -10,7 +10,9 @@ WWW=		https://www.shellcheck.net/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cabal
+USES=		cabal cpe
+
+CPE_VENDOR=	vidarholen
 
 USE_CABAL=	Diff-1.0.2 \
 		OneTuple-0.4.2_1 \

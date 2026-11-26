@@ -29,8 +29,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}futurist>=1.2.0:devel/py-futurist@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}retrying>=1.2.3:devel/py-retrying@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}stevedore>=1.20.0:devel/py-stevedore@${PY_FLAVOR}
 
-USES=		python shebangfix
+USES=		cpe python shebangfix
 USE_PYTHON=	autoplist concurrent pep517
+
+CPE_VENDOR=	openstack
+CPE_PRODUCT=	${PORTNAME:tl:S/-/_/g}
 
 NO_ARCH=	yes
 

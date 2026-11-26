@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=4.3.0:devel/py-lxml@${PY_FLAVOR} \
 		ffprobe:multimedia/ffmpeg \
 		unrar:archivers/unrar
 
-USES=		python zip
+USES=		cpe python zip
 
 USE_RC_SUBR=	bazarr
 

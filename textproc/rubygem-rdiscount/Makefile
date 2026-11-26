@@ -11,7 +11,9 @@ WWW=		https://dafoster.net/projects/rdiscount/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gem
+USES=		cpe gem
+
+CPE_VENDOR=	dafoster
 
 PLIST_FILES=	bin/rdiscount
 

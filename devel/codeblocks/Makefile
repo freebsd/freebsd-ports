@@ -19,7 +19,7 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libhunspell-1.7.so:textproc/hunspell \
 		libtinyxml.so:textproc/tinyxml
 
-USES=		autoreconf compiler:c++11-lang desktop-file-utils \
+USES=		autoreconf compiler:c++11-lang cpe desktop-file-utils \
 		gettext-runtime gnome libtool localbase \
 		pathfix pkgconfig shared-mime-info tar:xz xorg
 USE_CXXSTD=	c++11
@@ -27,6 +27,9 @@ USE_GNOME=	gtk30 cairo
 USE_LDCONFIG=	yes
 USE_WX=		3.0+
 USE_XORG=	x11
+
+CPE_VENDOR=	${PORTNAME:tl}
+CPE_PRODUCT=	code::blocks
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share

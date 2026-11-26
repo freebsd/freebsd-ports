@@ -11,7 +11,10 @@ WWW=		https://github.com/docker/distribution/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go
+USES=		cpe go
+
+CPE_VENDOR=	docker
+CPE_PRODUCT=	registry
 
 USE_RC_SUBR=	docker_registry
 USE_GITHUB=	yes

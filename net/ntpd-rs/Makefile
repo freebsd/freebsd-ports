@@ -16,7 +16,9 @@ LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 NOT_FOR_ARCHS=	i386
 NOT_FOR_ARCHS_REASON=	the ring crate requires SSE2 instruction on intel cpu
 
-USES=		cargo
+USES=		cargo cpe
+
+CPE_VENDOR=	tweedegolf
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	pendulum-project

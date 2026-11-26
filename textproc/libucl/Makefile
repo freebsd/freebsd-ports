@@ -10,10 +10,12 @@ WWW=		https://github.com/vstakhov/libucl
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf gmake libtool pathfix pkgconfig
+USES=		autoreconf cpe gmake libtool pathfix pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	vstakhov
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	vstakhov
 
 GNU_CONFIGURE=	yes
 

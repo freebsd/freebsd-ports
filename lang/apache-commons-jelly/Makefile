@@ -11,7 +11,10 @@ WWW=		https://commons.apache.org/proper/commons-jelly/index.html
 
 LICENSE=	APACHE20
 
-USES=		java
+USES=		cpe java
+
+CPE_VENDOR=	apache
+CPE_PRODUCT=	${PORTNAME:tl:S/-/_/g}
 
 NO_BUILD=	yes
 

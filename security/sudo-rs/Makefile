@@ -13,9 +13,12 @@ LICENSE_COMB=	dual
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 
-USES=		cargo
+USES=		cargo cpe
 USE_GITHUB=	yes
 GH_ACCOUNT=	trifectatechfoundation
+
+CPE_VENDOR=	trifectatech
+CPE_PRODUCT=	sudo
 
 FLAVORS=		default coexist
 FLAVOR?=		${FLAVORS:[1]}

@@ -10,7 +10,9 @@ WWW=		http://www.jgroups.org/
 
 LICENSE=	LGPL21
 
-USES=		java:ant,run
+USES=		cpe java:ant,run
+
+CPE_VENDOR=	redhat
 
 OPTIONS_DEFINE=	DOCS
 

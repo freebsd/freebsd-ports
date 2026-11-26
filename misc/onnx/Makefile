@@ -15,7 +15,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libprotobuf.so:devel/protobuf
 
-USES=		cmake:testing compiler:c++17-lang python:build
+USES=		cmake:testing compiler:c++17-lang cpe python:build
+
+CPE_VENDOR=	linuxfoundation
 
 USE_GITHUB=	yes
 

@@ -13,7 +13,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libminizip.so:archivers/minizip
 
-USES=		cmake tar:xz
+USES=		cmake cpe tar:xz
+
+CPE_VENDOR=	xlsxio_project
 
 CMAKE_OFF=	BUILD_DOCUMENTATION \
 		BUILD_EXAMPLES \

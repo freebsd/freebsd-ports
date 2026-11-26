@@ -17,7 +17,9 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libhdf5.so:science/hdf5 \
 		libzstd.so:archivers/zstd
 
-USES=		gmake libtool localbase ncurses pkgconfig:run
+USES=		cpe gmake libtool localbase ncurses pkgconfig:run
+
+CPE_VENDOR=	unidata
 
 CONFIGURE_ARGS=	--disable-filter-testing --disable-libxml2 \
 		--enable-byterange --enable-curl --enable-dap --enable-hdf5 --enable-logging

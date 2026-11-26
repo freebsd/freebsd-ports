@@ -43,7 +43,7 @@ RUN_DEPENDS=	ksh93:shells/ksh			\
 		sessreg:x11/sessreg
 LIB_DEPENDS=	liblmdb0.so:databases/lmdb0
 
-USES=		autoreconf:build iconv gmake jpeg libtool motif perl5 \
+USES=		autoreconf:build cpe iconv gmake jpeg libtool motif perl5 \
 		pkgconfig shebangfix tcl:86 xorg
 SHEBANG_LANG=	pl
 SHEBANG_FILES=	programs/dtinfo/tools/bin/ccdate \
@@ -52,6 +52,9 @@ DT_PREFIX=	${PREFIX}/dt
 USE_LDCONFIG=	${DT_PREFIX}/lib
 USE_RC_SUBR=	dtcms dtlogin
 USE_XORG=	ice sm x11 xau xdmcp xext xinerama xmu xscrnsaver xt
+
+CPE_VENDOR=	common_desktop_environment_project
+CPE_PRODUCT=	_common_desktop_environment
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_PREFIX=	${DT_PREFIX}

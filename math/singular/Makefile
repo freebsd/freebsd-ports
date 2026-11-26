@@ -19,7 +19,7 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		autoreconf gmake libtool ncurses perl5 pkgconfig readline shebangfix
+USES=		autoreconf cpe gmake libtool ncurses perl5 pkgconfig readline shebangfix
 USE_CXXSTD=	c++14
 USE_LDCONFIG=	yes
 USE_PERL5=	build

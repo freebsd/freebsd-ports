@@ -20,7 +20,7 @@ LIB_DEPENDS=	libuuid.so:misc/libuuid
 RUN_DEPENDS=	libgcrypt>0:security/libgcrypt \
 		gnutls>0:security/gnutls
 
-USES=		autoreconf:build bison:build compiler:c++11-lang gmake \
+USES=		autoreconf:build bison:build compiler:c++11-lang cpe gmake \
 		libtool perl5 pkgconfig python:build ssl
 USE_CSTD=	gnu11
 USE_PERL5=	build

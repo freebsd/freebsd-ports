@@ -15,7 +15,9 @@ WWW=		https://perfetto.dev/
 
 BUILD_DEPENDS=	gn:devel/gn
 
-USES=		compiler:c++17-lang ninja python:build
+USES=		compiler:c++17-lang cpe ninja python:build
+
+CPE_VENDOR=	google
 
 BROKEN_i386=	fails to configure: clang++: error: clang frontend command failed with exit code 139
 

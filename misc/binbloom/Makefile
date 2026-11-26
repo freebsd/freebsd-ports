@@ -10,7 +10,9 @@ WWW=		https://github.com/quarkslab/binbloom
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		autoreconf gmake
+USES=		autoreconf cpe gmake
+
+CPE_VENDOR=	quarkslab
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	quarkslab

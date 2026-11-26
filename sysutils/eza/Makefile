@@ -13,7 +13,9 @@ WWW=		https://eza.rocks/
 LICENSE=	EUPL12
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		cargo
+USES=		cargo cpe
+
+CPE_VENDOR=	eza.rocks
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	eza-community

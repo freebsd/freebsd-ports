@@ -14,7 +14,7 @@ LICENSE=	EPL
 RUN_DEPENDS=	bash:shells/bash \
 		rlwrap:devel/rlwrap
 
-USES=		java
+USES=		cpe java
 
 NO_ARCH=	yes
 NO_BUILD=	yes

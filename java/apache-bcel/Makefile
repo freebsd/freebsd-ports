@@ -12,7 +12,10 @@ WWW=		https://commons.apache.org/proper/commons-bcel/
 
 LICENSE=	APACHE20
 
-USES=		java
+USES=		cpe java
+
+CPE_VENDOR=	apache
+CPE_PRODUCT=	commons_bcel
 
 NO_BUILD=	yes
 

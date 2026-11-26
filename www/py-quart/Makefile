@@ -22,8 +22,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiofiles>=0:devel/py-aiofiles@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}markupsafe>=0:textproc/py-markupsafe@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}werkzeug>=3.0:www/py-werkzeug@${PY_FLAVOR}
 
-USES=		python:3.12+
+USES=		cpe python:3.12+
 USE_PYTHON=	autoplist concurrent pep517
+
+CPE_VENDOR=	palletsprojects
 
 NO_ARCH=	yes
 

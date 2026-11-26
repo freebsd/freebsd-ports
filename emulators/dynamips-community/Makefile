@@ -19,8 +19,10 @@ CFLAGS+=	-I${PREFIX}/include/libelf
 
 CONFLICTS=	dynamips dynamips-devel
 
-USES=		cmake:insource
+USES=		cmake:insource cpe
 USE_GITHUB=	yes
+
+CPE_VENDOR=	solarwinds
 
 OPTIONS_DEFINE=	DOCS
 

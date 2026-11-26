@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/libclang.so:devel/llvm${LLVM
 LIB_DEPENDS=	librocksdb.so:databases/rocksdb
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
-USES=		cargo gmake
+USES=		cargo cpe gmake
 USE_RC_SUBR=	${PORTNAME}
 USERS=		${PORTNAME}
 GROUPS=		${USERS}

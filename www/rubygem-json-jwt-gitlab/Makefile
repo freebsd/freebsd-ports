@@ -19,7 +19,9 @@ RUN_DEPENDS=	rubygem-activesupport-gitlab>=4.2:devel/rubygem-activesupport-gitla
 		rubygem-faraday-gitlab>=2.0<3:www/rubygem-faraday-gitlab \
 		rubygem-faraday-follow_redirects-gitlab>=0:www/rubygem-faraday-follow_redirects-gitlab
 
-USES=		gem
+USES=		cpe gem
+
+CPE_VENDOR=	json-jwt_project
 
 NO_ARCH=	yes
 

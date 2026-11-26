@@ -16,7 +16,9 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flask>0:www/py-flask@${PY_FLAVOR}
 
 NO_ARCH=	yes
-USES=		python
+USES=		cpe python
 USE_PYTHON=	autoplist pep517
+
+CPE_VENDOR=	miguelgrinberg
 
 .include <bsd.port.mk>

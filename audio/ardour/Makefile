@@ -45,7 +45,7 @@ LIB_DEPENDS=	libserd-0.so:devel/serd \
 		libFLAC.so:audio/flac \
 		libwebsockets.so:net/libwebsockets
 
-USES=		compiler:c++14-lang desktop-file-utils gettext gnome \
+USES=		compiler:c++14-lang cpe desktop-file-utils gettext gnome \
 		libarchive pkgconfig python:build readline ssl tar:bzip2 \
 		waf xorg shared-mime-info
 USE_CXXSTD=	c++14

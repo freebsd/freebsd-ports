@@ -16,7 +16,11 @@ LICENSE=	APACHE20
 
 BUILD_DEPENDS=	xcaddy:www/xcaddy
 
-USES=		go:no_targets
+USES=		cpe go:no_targets
+
+CPE_VENDOR=	caddyserver
+CPE_PRODUCT=	caddy
+CPE_VERSION=	${CADDY_VERSION}
 
 NO_PACKAGE=	Requires network access (see pkg-descr)
 

@@ -11,7 +11,7 @@ WWW=		http://minisat.se/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake
+USES=		cpe gmake
 USE_LDCONFIG=	yes
 MAKE_ENV=	prefix=${PREFIX} CFLAGS="-std=gnu++98"
 

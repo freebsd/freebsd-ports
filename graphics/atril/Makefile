@@ -23,7 +23,7 @@ LIB_DEPENDS=	libpoppler-glib.so:graphics/poppler-glib \
 		libtiff.so:graphics/tiff \
 		libspectre.so:print/libspectre
 
-USES=		compiler:c11 desktop-file-utils gettext gmake gnome libarchive \
+USES=		compiler:c11 cpe desktop-file-utils gettext gmake gnome libarchive \
 		libtool mate pathfix pkgconfig tar:xz xorg
 USE_MATE=	icontheme desktop:build
 USE_XORG=	ice sm x11
@@ -32,6 +32,8 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 PORTSCOUT=	site:https://github.com/mate-desktop/atril/releases/ limitw:1,even
+
+CPE_VENDOR=	mate-desktop
 
 SLAVEPORT?=	no
 CONFIGURE_ARGS=	--disable-static \

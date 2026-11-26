@@ -13,9 +13,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${LOCALBASE}/bin/composer:devel/php-composer@${PHP_FLAVOR}
 
-USES=		php:flavors,web
+USES=		cpe php:flavors,web
 USE_GITHUB=	yes
 USE_PHP=	dom gd gettext posix session simplexml tokenizer xml xmlwriter
+
+CPE_VENDOR=	bacula
 
 NO_ARCH=	yes
 NO_BUILD=	yes

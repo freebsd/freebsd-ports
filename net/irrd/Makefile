@@ -45,12 +45,15 @@ TEST_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}pytest-cov>=2.12.1:devel/py-pytest-cov@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}twisted>=21.7.0:devel/py-twisted@${PY_FLAVOR}
 
-USES=		python
+USES=		cpe python
 USE_GITHUB=	yes
 GH_ACCOUNT=	irrdnet
 GH_PROJECT=	${PORTNAME}
 USE_PYTHON=	autoplist concurrent distutils pytest
 USE_RC_SUBR=	irrd4
+
+CPE_VENDOR=	internet_routing_registry_daemon_project
+CPE_PRODUCT=	internet_routing_registry_daemon
 
 NO_ARCH=	yes
 SUB_FILES=	pkg-message

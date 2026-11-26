@@ -13,7 +13,7 @@ LICENSE=	GPLv3
 LIB_DEPENDS=	libwolfssl.so:security/wolfssl
 TEST_DEPENDS=	bash:shells/bash
 
-USES=		libtool localbase shebangfix
+USES=		cpe libtool localbase shebangfix
 
 CONFIGURE_ARGS=	--disable-smallstack \
 		--enable-agent \

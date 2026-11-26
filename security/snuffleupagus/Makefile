@@ -13,10 +13,12 @@ LICENSE_FILE=	${WRKSRC}/../LICENSE
 
 LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 
-USES=		localbase:ldflags php:ext
+USES=		cpe localbase:ldflags php:ext
 USE_GITHUB=	yes
 GH_ACCOUNT=	jvoisin
 USE_PHP=	session:build
+
+CPE_VENDOR=	jvoisin
 
 CONFIGURE_ARGS=	--enable-snuffleupagus
 

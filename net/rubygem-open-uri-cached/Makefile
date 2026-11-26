@@ -10,7 +10,9 @@ WWW=		https://github.com/tigris/open-uri-cached
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gem
+USES=		cpe gem
+
+CPE_VENDOR=	open-uri-cached_project
 
 NO_ARCH=	yes
 

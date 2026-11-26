@@ -16,7 +16,7 @@ RUN_DEPENDS=	rubygem-faraday>=2.0.1<3.0.0:www/rubygem-faraday \
 		rubygem-faraday-multipart>=1.0.4<2:www/rubygem-faraday-multipart \
 		rubygem-ostruct>=0:devel/rubygem-ostruct
 
-USES=		gem
+USES=		cpe gem
 
 NO_ARCH=	yes
 

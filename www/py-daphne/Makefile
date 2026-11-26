@@ -17,8 +17,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asgiref>=3.5.2<4:www/py-asgiref@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}autobahn>=22.4.2:www/py-autobahn@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}twisted>=22.4:devel/py-twisted@${PY_FLAVOR}
 
-USES=		python
+USES=		cpe python
 USE_PYTHON=	autoplist concurrent pep517
+
+CPE_VENDOR=	djangoproject
 
 NO_ARCH=	yes
 

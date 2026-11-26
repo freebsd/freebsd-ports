@@ -25,8 +25,10 @@ RUN_DEPENDS=	bash:shells/bash \
 BUILD_DEPENDS=	${LOCALBASE}/share/dcw-gmt/dcw-gmt.nc:graphics/gmt-dcw \
 		${LOCALBASE}/share/gshhg-gmt/binned_GSHHS_c.nc:graphics/gmt-gshhg
 
-USES=		blaslapack cmake ghostscript:run shebangfix tar:xz
+USES=		blaslapack cmake cpe ghostscript:run shebangfix tar:xz
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	generic-mapping-tools
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 

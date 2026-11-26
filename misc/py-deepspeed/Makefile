@@ -26,8 +26,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}einops>0:misc/py-einops@${PY_FLAVOR} \
 		bash:shells/bash
 		# many extras exist in setup.py
 
-USES=		python shebangfix
+USES=		cpe python shebangfix
 USE_PYTHON=	distutils autoplist pytest # some tests fail, tests consume gigabytes of disk space
+
+CPE_VENDOR=	microsoft
 
 SHEBANG_FILES=	bin/ds_ssh
 

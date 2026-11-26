@@ -9,7 +9,10 @@ WWW=		http://james.newtonking.com/json
 
 LICENSE=	MIT
 
-USES=		mono
+USES=		cpe mono
+
+CPE_VENDOR=	newtonsoft
+CPE_PRODUCT=	json.net
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	JamesNK

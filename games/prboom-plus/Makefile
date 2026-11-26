@@ -17,9 +17,11 @@ LIB_DEPENDS=	libsmpeg.so:multimedia/smpeg \
 		libfluidsynth.so:audio/fluidsynth \
 		libvorbisfile.so:audio/libvorbis
 
-USES=		gmake localbase sdl
+USES=		cpe gmake localbase sdl
 USE_GL=		gl
 USE_SDL=	image mixer net sdl
+
+CPE_VENDOR=	prboom-plus_project
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share

@@ -13,12 +13,15 @@ ONLY_FOR_ARCHS=	amd64 armv7 i386 powerpc powerpc64 powerpc64le
 
 LIB_DEPENDS=	libutf8proc.so:textproc/utf8proc
 
-USES=			autoreconf compiler:c++11-lib desktop-file-utils \
+USES=			autoreconf compiler:c++11-lib cpe desktop-file-utils \
 			localbase pkgconfig python xorg
 USE_GITHUB=		yes
 USE_XORG=		x11 xext xv
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--without-sdl12
+
+CPE_VENDOR=	${PORTNAME:tl}
+CPE_PRODUCT=	schism_tracker
 
 PLIST_FILES=	bin/schismtracker \
 		share/applications/schism.desktop \

@@ -10,8 +10,10 @@ WWW=		http://squirrel-lang.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-USES=		cmake compiler:c++11-lang
+USES=		cmake compiler:c++11-lang cpe
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	squirrel-lang
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	albertodemichelis

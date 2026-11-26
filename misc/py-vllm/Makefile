@@ -103,7 +103,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}datasets>=3.3.0:misc/py-datasets@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}pytest-asyncio>=1.3.0:devel/py-pytest-asyncio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tblib>=3.2.2:devel/py-tblib@${PY_FLAVOR}
 
-USES=		cmake:indirect python
+USES=		cmake:indirect cpe python
 USE_PYTHON=	pep517 autoplist pytest
 
 # Build the CPU extension using clang (same ABI as PyTorch on FreeBSD).

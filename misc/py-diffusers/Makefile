@@ -25,8 +25,10 @@ RUN_DEPENDS=	${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}safetensors>0:misc/py-safetensors@${PY_FLAVOR}
 
-USES=		python
+USES=		cpe python
 USE_PYTHON=	pep517 concurrent autoplist
+
+CPE_VENDOR=	huggingface
 
 NO_ARCH=	yes
 

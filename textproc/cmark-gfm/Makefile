@@ -9,7 +9,10 @@ WWW=		https://github.com/github/cmark-gfm
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake:testing pathfix python:test
+USES=		cmake:testing cpe pathfix python:test
+
+CPE_VENDOR=	github
+CPE_VERSION=	${DISTVERSION}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	github

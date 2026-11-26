@@ -24,7 +24,9 @@ LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
 		libabsl_base.so:devel/abseil \
 		libhiredis.so:databases/hiredis
 
-USES=		cmake compiler:c++20-lang localbase:ldflags pkgconfig ssl
+USES=		cmake compiler:c++20-lang cpe localbase:ldflags pkgconfig ssl
+
+CPE_VENDOR=	pavel-odintsov
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	pavel-odintsov

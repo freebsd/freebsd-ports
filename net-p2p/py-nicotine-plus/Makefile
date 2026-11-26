@@ -15,8 +15,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gdbm>=3.6:databases/py-gdbm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mutagen>=1.42:audio/py-mutagen@${PY_FLAVOR}
 
-USES=		gettext-tools gnome python
+USES=		cpe gettext-tools gnome python
 USE_GNOME=	gtk30 pygobject3:run
 USE_PYTHON=	autoplist concurrent distutils unittest
+
+CPE_VENDOR=	${PORTNAME:tl}
+CPE_PRODUCT=	nicotine+
 
 .include <bsd.port.mk>

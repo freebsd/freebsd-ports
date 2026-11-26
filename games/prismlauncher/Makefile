@@ -22,13 +22,16 @@ RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
 		lwjgl3>0:games/lwjgl3 \
 		xrandr:x11/xrandr
 
-USES=		cmake compiler:c++20-lang desktop-file-utils gl java kde:6 \
+USES=		cmake compiler:c++20-lang cpe desktop-file-utils gl java kde:6 \
 		pkgconfig qt:6 sdl shared-mime-info
 USE_GITHUB=	nodefault
 USE_GL=		opengl
 USE_KDE=	ecm:build
 USE_QT=		base networkauth
 USE_SDL=	sdl3
+
+CPE_VENDOR=	${PORTNAME:tl}
+CPE_PRODUCT=	prism_launcher
 
 CMAKE_ARGS=	-DJAVA_HOME=${JAVA_HOME} \
 		-DJava_JAVAC_EXECUTABLE=${JAVAC} \

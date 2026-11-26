@@ -10,10 +10,13 @@ WWW=		https://www.mongodb.com/docs/database-tools/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=		compiler:c++14-lang go localbase
+USES=		compiler:c++14-lang cpe go localbase
 USE_GITHUB=	yes
 GH_ACCOUNT=	mongodb
 GH_PROJECT=	mongo-tools
+
+CPE_VENDOR=	mongodb
+CPE_PRODUCT=	database_tools
 
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
 GO_BUILDFLAGS=	-tags "${USE_MY_TAGS}"

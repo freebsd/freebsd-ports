@@ -29,8 +29,11 @@ EXPIRATION_DATE=2026-12-31
 BUILD_DEPENDS=	task:devel/task
 LIB_DEPENDS=	libvips.so:graphics/vips
 
-USES=		cargo electron:41 gmake go:modules,no_targets \
+USES=		cargo cpe electron:41 gmake go:modules,no_targets \
 		nodejs:24,build npm:npm python:build
+
+CPE_VENDOR=	${PORTNAME:tl}
+CPE_PRODUCT=	wave_terminal
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	wavetermdev

@@ -12,7 +12,7 @@ WWW=		https://chaiscript.com/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake localbase:ldflags readline
+USES=		cmake cpe localbase:ldflags readline
 USE_GITHUB=	yes
 USE_LDCONFIG=	${PREFIX}/lib/chaiscript
 

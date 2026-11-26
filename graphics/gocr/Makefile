@@ -12,11 +12,14 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libnetpbm.so:graphics/netpbm
 
-USES=		gmake
+USES=		cpe gmake
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-netpbm=${LOCALBASE}
 MAKE_ARGS=	prefix=${PREFIX} exec_prefix=${PREFIX}
+
+CPE_VENDOR=	optical_character_recognition_project
+CPE_PRODUCT=	optical_character_recognition
 
 PLIST_FILES=	bin/gocr \
 		share/man/man1/gocr.1.gz

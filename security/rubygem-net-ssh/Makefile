@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-logger>=0:devel/rubygem-logger \
 		rubygem-openssl>=3.2.0:security/rubygem-openssl
 
-USES=		gem
+USES=		cpe gem
 
 NO_ARCH=	yes
 

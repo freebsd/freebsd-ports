@@ -10,8 +10,10 @@ WWW=		https://github.com/projectdiscovery/nuclei
 
 LICENSE=	MIT
 
-USES=		go:modules
+USES=		cpe go:modules
 GO_MODULE=	github.com/projectdiscovery/nuclei/v3
+
+CPE_VENDOR=	projectdiscovery
 
 GO_TARGET=	./cmd/${PORTNAME}
 

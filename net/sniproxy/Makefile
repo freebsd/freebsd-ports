@@ -14,7 +14,9 @@ LIB_DEPENDS=	libev.so:devel/libev \
 		libpcre2-8.so:devel/pcre2 \
 		libudns.so:dns/udns
 
-USES=		autoreconf localbase pkgconfig
+USES=		autoreconf cpe localbase pkgconfig
+
+CPE_VENDOR=	sniproxy_project
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dlundquist

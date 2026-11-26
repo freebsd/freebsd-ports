@@ -15,9 +15,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BROKEN_armv7=	error: use of undeclared identifier '_URC_NO_REASON', see https://github.com/gperftools/gperftools/issues/1360
 BROKEN_riscv64=	error: Cannot calculate stack trace: will need to write for your environment, see https://github.com/gperftools/gperftools/issues/1359
 
-USES=		compiler:c11 gmake libtool localbase:ldflags perl5 # tests also require c++17 compiler
+USES=		compiler:c11 cpe gmake libtool localbase:ldflags perl5 # tests also require c++17 compiler
 USE_LDCONFIG=	yes
 USE_PERL5=	test
+
+CPE_VENDOR=	gperftools_project
+CPE_PRODUCT=	gperftools
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share

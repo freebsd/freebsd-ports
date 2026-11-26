@@ -28,8 +28,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}comm>=0:devel/py-comm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.1.1:devel/py-typing-extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}werkzeug>=0<3.2:www/py-werkzeug@${PY_FLAVOR}
 
-USES=		python
+USES=		cpe python
 USE_PYTHON=	autoplist concurrent pep517
+
+CPE_VENDOR=	plotly
 
 NO_ARCH=	yes
 

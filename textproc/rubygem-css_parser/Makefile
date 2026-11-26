@@ -14,7 +14,9 @@ RUN_DEPENDS=	rubygem-addressable>=0:www/rubygem-addressable \
 		rubygem-base64>=0:converters/rubygem-base64 \
 		rubygem-ssrf_filter>=1.2<2:security/rubygem-ssrf_filter
 
-USES=		gem
+USES=		cpe gem
+
+CPE_VENDOR=	premailer
 
 NO_ARCH=	yes
 

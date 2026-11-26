@@ -18,11 +18,13 @@ ONLY_FOR_ARCHS_REASON=	dependency modernc.org/sqlite suppoorterd only on amd64 a
 
 BUILD_DEPENDS=	npm>0:www/npm
 
-USES=		go:modules tar:zstd
+USES=		cpe go:modules tar:zstd
 USE_RC_SUBR=	mailpit
 GO_MODULE=	github.com/axllent/mailpit
 GO_BUILDFLAGS=	-ldflags="-s -w -X \"github.com/axllent/mailpit/config.Version=${DISTVERSIONPREFIX}${DISTVERSION}\""
 MAKE_ENV=	npm_config_offline=true
+
+CPE_VENDOR=	axllent
 
 SUB_FILES=	pkg-message
 PLIST_FILES=	bin/${PORTNAME}

@@ -12,12 +12,14 @@ LICENSE_NAME=	LibTPMS
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		autoreconf gmake libtool pathfix pkgconfig ssl
+USES=		autoreconf cpe gmake libtool pathfix pkgconfig ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	stefanberger
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 PLIST_SUB=	DISTVERSION=${DISTVERSION}
+
+CPE_VENDOR=	libtpms_project
 
 .include <bsd.port.mk>

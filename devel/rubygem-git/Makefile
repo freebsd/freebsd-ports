@@ -14,7 +14,10 @@ RUN_DEPENDS=	git>=1.6:devel/git \
 		rubygem-addressable>=2.8<3:www/rubygem-addressable \
 		rubygem-rchardet>=1.8<2:textproc/rubygem-rchardet
 
-USES=		gem
+USES=		cpe gem
+
+CPE_VENDOR=	ruby-git_project
+CPE_PRODUCT=	ruby-git
 
 NO_ARCH=	yes
 

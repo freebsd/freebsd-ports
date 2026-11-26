@@ -21,8 +21,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django-otp>=1.7.0:www/py-django-otp@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}six>=1.14.0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wagtail>=7.0:www/py-wagtail@${PY_FLAVOR}
 
-USES=		python
+USES=		cpe python
 USE_PYTHON=	autoplist concurrent pep517
+
+CPE_VENDOR=	labdigital
 
 NO_ARCH=	yes
 

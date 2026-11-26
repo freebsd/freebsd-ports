@@ -17,8 +17,10 @@ RUN_DEPENDS=	p5-HTML-Parser>=3.47:www/p5-HTML-Parser
 TEST_DEPENDS=	p5-Test-Differences>=0:devel/p5-Test-Differences \
 		p5-Test-Memory-Cycle>=0:devel/p5-Test-Memory-Cycle
 
-USES=		perl5
+USES=		cpe perl5
 USE_PERL5=	configure
+
+CPE_VENDOR=	html-scrubber_project
 
 NO_ARCH=	yes
 

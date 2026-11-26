@@ -14,7 +14,7 @@ LICENSE_NAME=	As_Is
 LICENSE_FILE=	${WRKSRC}/license.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		dos2unix php tar:tgz
+USES=		cpe dos2unix php tar:tgz
 USE_PHP=	zlib
 NO_BUILD=	yes
 NO_ARCH=	yes

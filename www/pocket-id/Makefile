@@ -16,9 +16,12 @@ LICENSE=	BSD2CLAUSE
 ONLY_FOR_ARCHS=	aarch64 amd64                                                                                   
 ONLY_FOR_ARCHS_REASON=	module modernc.org/sqlite only supported on aarch64 and amd64   
 
-USES=		go:modules
+USES=		cpe go:modules
 USE_GITHUB=	yes
 USE_RC_SUBR=	${PORTNAME}
+
+CPE_VENDOR=	${PORTNAME:tl}
+CPE_PRODUCT=	${PORTNAME:tl:S/-/_/g}
 
 GO_MOD_DIST=	github
 GO_MODULE=	https://github.com/pocket-id/${PORTNAME}

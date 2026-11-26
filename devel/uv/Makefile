@@ -15,8 +15,10 @@ LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
-USES=		cargo gmake localbase perl5 pkgconfig
+USES=		cargo cpe gmake localbase perl5 pkgconfig
 USE_PERL5=	build
+
+CPE_VENDOR=	astral
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	astral-sh

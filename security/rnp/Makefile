@@ -22,9 +22,11 @@ LIB_DEPENDS=	libbotan-3.so:security/botan3 \
 TEST_DEPENDS=	googletest>0:devel/googletest \
 		gpgme>0:security/gpgme
 
-USES=		cmake:testing compiler:c++20-lang pathfix pkgconfig \
+USES=		cmake:testing compiler:c++20-lang cpe pathfix pkgconfig \
 		python:env,test shebangfix
 PATHFIX_WRKSRC=	${WRKSRC}/src/lib
+
+CPE_VENDOR=	ribose
 
 USE_LDCONFIG=	yes
 

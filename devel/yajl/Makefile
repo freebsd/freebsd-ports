@@ -14,7 +14,9 @@ GH_ACCOUNT=	lloyd
 CFLAGS+=	-g -O0
 
 USE_LDCONFIG=	yes
-USES=		cmake
+USES=		cmake cpe
+
+CPE_VENDOR=	yajl_project
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 

@@ -21,7 +21,7 @@ LIB_DEPENDS=	libssh2.so:security/libssh2 \
 RUN_DEPENDS=	tree-sitter-grammars>0:textproc/tree-sitter-grammars \
 		xdg-desktop-portal>0:deskutils/xdg-desktop-portal
 
-USES=		cargo desktop-file-utils dos2unix gmake localbase:ldflags perl5 pkgconfig ssl xorg
+USES=		cargo cpe desktop-file-utils dos2unix gmake localbase:ldflags perl5 pkgconfig ssl xorg
 USE_GITHUB=	yes
 USE_XORG=	xcb
 

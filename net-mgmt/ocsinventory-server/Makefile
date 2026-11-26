@@ -23,7 +23,7 @@ RUN_DEPENDS=	p5-XML-Simple>=2.12:textproc/p5-XML-Simple \
 		p5-Switch>=0:lang/p5-Switch \
 		p5-Plack>=0:www/p5-Plack
 
-USES=		apache:run mysql perl5
+USES=		apache:run cpe mysql perl5
 NO_ARCH=	yes
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
@@ -31,6 +31,9 @@ USE_GITHUB=	YES
 GH_TAGNAME=	7aff9af5d91a98fd6897afc2ea4b979464a88452
 GH_ACCOUNT=	OCSInventory-NG
 GH_PROJECT=	OCSInventory-Server
+
+CPE_VENDOR=	ocsinventory-ng
+CPE_PRODUCT=	ocs_inventory_server
 
 OPTIONS_DEFINE=	DOCS OCSREPORTS
 OPTIONS_DEFAULT=	OCSREPORTS

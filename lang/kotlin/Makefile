@@ -13,7 +13,9 @@ LICENSE_FILE=	${WRKSRC}/license/LICENSE.txt
 
 RUN_DEPENDS=	bash:shells/bash
 
-USES=	java zip
+USES=	cpe java zip
+
+CPE_VENDOR=	jetbrains
 
 CONFLICTS=	kotlin22
 

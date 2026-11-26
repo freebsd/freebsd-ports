@@ -15,11 +15,13 @@ LIB_DEPENDS=	libgnutls.so:security/gnutls \
 		libgpg-error.so:security/libgpg-error \
 		libsasl2.so:security/cyrus-sasl2
 
-USES=		gettext gnome localbase meson perl5 pkgconfig python \
+USES=		cpe gettext gnome localbase meson perl5 pkgconfig python \
 		tar:xz vala:build xorg
 USE_GNOME=	cairo gdkpixbuf gtk30 introspection:build
 USE_XORG=	x11
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	gnome
 
 OPTIONS_DEFINE=	DOCS PULSEAUDIO
 OPTIONS_DEFAULT=PULSEAUDIO

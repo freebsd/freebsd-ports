@@ -125,8 +125,11 @@ RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}websocket-client>=1.8.0:www/py-websocket-client@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xmltodict>=0.12:devel/py-xmltodict@${PY_FLAVOR}
 
-USES=		python
+USES=		cpe python
 USE_PYTHON=	autoplist concurrent cryptography pep517
+
+CPE_VENDOR=	microsoft
+CPE_PRODUCT=	azure_command-line_interface
 
 NO_ARCH=	yes
 

@@ -30,7 +30,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 		${LOCALBASE}/include/stb/stb_image.h:devel/stb \
 		patchelf:sysutils/patchelf
 
-USES=		cmake:indirect go:modules localbase pkgconfig
+USES=		cmake:indirect cpe go:modules localbase pkgconfig
 USE_RC_SUBR=	ollama
 
 USE_GITHUB=	nodefault

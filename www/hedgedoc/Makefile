@@ -18,7 +18,7 @@ BROKEN_i386=	fails to build: no i386 sqlite3.node file found
 BUILD_DEPENDS=	${LOCALBASE}/include/uv.h:devel/libuv \
 		${PY_SETUPTOOLS}
 
-USES=		gmake localbase nodejs:24,build,run python:build shebangfix
+USES=		cpe gmake localbase nodejs:24,build,run python:build shebangfix
 USE_RC_SUBR=	${PORTNAME}
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}

@@ -14,7 +14,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	googletest>=0:devel/googletest
 
-USES=		cmake:testing compiler:c++17-lang pathfix shebangfix
+USES=		cmake:testing compiler:c++17-lang cpe pathfix shebangfix
+
+CPE_VENDOR=	srtalliance
+CPE_PRODUCT=	secure_reliable_transport
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Haivision

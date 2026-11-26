@@ -30,8 +30,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=8.0<9:devel/py-click \
 BUILD_DEPENDS:=	${RUN_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}uv-build>=0.8.3:devel/py-uv-build@${PY_FLAVOR}
 
-USES=		python
+USES=		cpe python
 USE_PYTHON=	autoplist noflavors pep517
+
+CPE_VENDOR=	coreweave
 
 post-patch:
 	${REINPLACE_CMD} '/jedi/s|>=.*"|"|' ${WRKSRC}/pyproject.toml

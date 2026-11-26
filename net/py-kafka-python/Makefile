@@ -12,7 +12,9 @@ WWW=		https://github.com/dpkp/kafka-python
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python
+USES=		cpe python
+
+CPE_VENDOR=	dpkp
 
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes

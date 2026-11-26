@@ -30,9 +30,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docstring_parser>=0:textproc/py-docstring_pa
 		${PYTHON_PKGNAMEPREFIX}tqdm>=0:misc/py-tqdm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.7:devel/py-typing-extensions@${PY_FLAVOR}
 
-USES=		python
+USES=		cpe python
 USE_PYTHON=	autoplist concurrent pep517
 NO_ARCH=	yes
+
+CPE_VENDOR=	deepset
+CPE_PRODUCT=	haystack
 
 post-extract:
 	@${REINPLACE_CMD} -e 's/^license = "\([^"]*\)"/license = {text = "\1"}/' -e '/^license-files/d' ${WRKSRC}/pyproject.toml

@@ -13,9 +13,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	p5-perl-ldap>=0:net/p5-perl-ldap \
 		p5-Quota>=0:sysutils/p5-Quota
 
-USES=		perl5 php:web shebangfix tar:bzip2
+USES=		cpe perl5 php:web shebangfix tar:bzip2
 USE_PHP=	curl filter gd gettext gmp iconv ldap mbstring \
 		session simplexml xml xmlreader xmlwriter zip
+
+CPE_VENDOR=	${PORTNAME:tl}
+CPE_PRODUCT=	${PORTNAME:tl:S/-/_/g}
 
 SHEBANG_FILES=	lib/lamdaemon.pl
 

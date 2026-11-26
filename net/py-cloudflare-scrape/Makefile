@@ -13,8 +13,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}PyExecJS>=0:devel/py-PyExecJS@${PY_FLAVOR}
 
-USES=		python
+USES=		cpe python
 USE_PYTHON=	autoplist distutils
+
+CPE_VENDOR=	cloudflare-scrape_project
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Anorov

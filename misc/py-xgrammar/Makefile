@@ -29,8 +29,9 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cohere-melody>=0.13.0:misc/py-cohere-melody
 		${PYTHON_PKGNAMEPREFIX}sentencepiece>0:textproc/py-sentencepiece@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tiktoken>0:textproc/py-tiktoken@${PY_FLAVOR}
 
-USES=		cmake:indirect python
+USES=		cmake:indirect cpe python
 USE_PYTHON=	pep517 autoplist pytest
+CPE_VENDOR=	mlc-ai
 
 # hard-link the shared lib libxgrammar_bindings.so to the shared lib libtvm_ffi.so installed by misc/py-apache-tvm-ffi
 LDFLAGS+=	-Wl,-rpath,${PYTHON_SITELIBDIR}/tvm_ffi/lib

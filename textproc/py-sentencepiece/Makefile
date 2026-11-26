@@ -18,8 +18,9 @@ LIB_DEPENDS=	libsentencepiece.so:textproc/sentencepiece
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}protobuf>0:devel/py-protobuf@${PY_FLAVOR}
 
-USES=		compiler:c++17-lang pkgconfig python
+USES=		compiler:c++17-lang cpe pkgconfig python
 USE_PYTHON=	distutils autoplist pytest
+CPE_VENDOR=	google
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	google

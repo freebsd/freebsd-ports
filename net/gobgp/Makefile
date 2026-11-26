@@ -12,10 +12,12 @@ WWW=		https://github.com/osrg/gobgp
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		cpe go:modules
 USE_RC_SUBR=	gobgpd
 GO_MODULE=	github.com/osrg/gobgp/v3
 GO_TARGET=	./cmd/gobgp ./cmd/gobgpd:${PREFIX}/libexec/gobgpd
+
+CPE_VENDOR=	osrg
 
 SUB_FILES=	gobgpd
 PLIST_FILES=	bin/gobgp libexec/gobgpd

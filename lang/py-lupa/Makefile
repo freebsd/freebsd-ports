@@ -15,8 +15,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 
-USES=		lua pkgconfig python
+USES=		cpe lua pkgconfig python
 USE_PYTHON=	autoplist concurrent cython pep517 unittest
+
+CPE_VENDOR=	scoder
 
 MAKE_ARGS=	--no-bundle --with-cython --with-lua-checks
 TEST_ARGS=	lupa.tests.test

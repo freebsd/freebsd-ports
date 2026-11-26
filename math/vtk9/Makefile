@@ -21,7 +21,7 @@ LIB_DEPENDS=	\
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
-USES=		cmake compiler:c++11-lang gl jpeg localbase xorg
+USES=		cmake compiler:c++11-lang cpe gl jpeg localbase xorg
 USE_GL=		gl glu
 USE_LDCONFIG=	${PREFIX}/lib/vtk-${VTK_SHORT_VER}
 USE_XORG=	ice x11 xt xext sm xcursor xfixes xrender

@@ -13,10 +13,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libtiff.so:graphics/tiff
 
-USES=		autoreconf jpeg libtool pkgconfig localbase
+USES=		autoreconf cpe jpeg libtool pkgconfig localbase
 USE_GITHUB=	yes
 GH_ACCOUNT=	ruven
 USE_RC_SUBR=	${PORTNAME}
+
+CPE_VENDOR=	high_resolution_streaming_image_server_project
+CPE_PRODUCT=	high_resolution_streaming_image_server
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share

@@ -24,12 +24,14 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}grpcio>=1.16.0:devel/py-grpcio@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}zeroconf>=0.27.0:net/py-zeroconf@${PY_FLAVOR} \
 		xapp>=0:x11/xapp
 
-USES=		gettext gnome meson python shebangfix
+USES=		cpe gettext gnome meson python shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
 USE_GNOME=	glib20 gtk30 pygobject3
 USE_PYTHON=	cryptography
 GLIB_SCHEMAS=	org.x.Warpinator.gschema.xml
+
+CPE_VENDOR=	linuxmint
 
 SHEBANG_FILES=	bin/warpinator-send.in bin/warpinator.in data/warpinator-send-check \
 		generate-protobuf testing/testrun

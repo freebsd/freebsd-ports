@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libzstd.so:archivers/zstd
 
-USES=		cargo desktop-file-utils xorg
+USES=		cargo cpe desktop-file-utils xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	squidowl
 USE_XORG=	xcb

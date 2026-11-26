@@ -12,10 +12,12 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>1.16.0:devel/py-six@${PY_FLAVOR}
 
-USES=		python
+USES=		cpe python
 USE_GITHUB=	yes
 GH_ACCOUNT=	cocagne
 USE_PYTHON=	autoplist concurrent distutils
+
+CPE_VENDOR=	pysrp_project
 
 NO_ARCH=	yes
 

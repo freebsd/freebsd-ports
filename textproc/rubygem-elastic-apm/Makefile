@@ -14,7 +14,10 @@ RUN_DEPENDS=	rubygem-concurrent-ruby>=1.0<2:devel/rubygem-concurrent-ruby \
 		rubygem-http>=3.0<7.0:www/rubygem-http \
 		rubygem-ruby2_keywords>=0:devel/rubygem-ruby2_keywords
 
-USES=		gem shebangfix
+USES=		cpe gem shebangfix
+
+CPE_VENDOR=	elastic
+CPE_PRODUCT=	apm-agent-ruby
 
 NO_ARCH=	yes
 

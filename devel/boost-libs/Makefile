@@ -26,6 +26,10 @@ BUILD_DEPENDS+=	bjam:devel/boost-jam
 # -RELEASE built with WITH_LLVM_ASSERTIONS set, then he can't build
 # this port successfully on such system. So provide LLVM_FROM_PORTS
 # option as a last resort for him.
+USES+=		cpe
+
+CPE_PRODUCT=	boost
+
 OPTIONS_DEFINE=		COBALT DEBUG GIL_EXT LLVM_FROM_PORTS OPTIMIZED_CFLAGS ZSTD SBT
 OPTIONS_MULTI=		LOCALE
 OPTIONS_MULTI_LOCALE=	ICONV ICU

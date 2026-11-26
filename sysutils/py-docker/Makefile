@@ -24,8 +24,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docker-pycreds>=0.4.0:security/py-docker-pyc
 		${PYTHON_PKGNAMEPREFIX}urllib3>=1.26.0:net/py-urllib3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}websocket-client>=1.3.0:www/py-websocket-client@${PY_FLAVOR}
 
-USES=		python
+USES=		cpe python
 USE_PYTHON=	autoplist pep517
+
+CPE_VENDOR=	${PORTNAME:tl}
+CPE_PRODUCT=	docker-py
 
 NO_ARCH=	yes
 

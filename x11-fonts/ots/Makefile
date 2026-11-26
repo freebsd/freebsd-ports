@@ -21,7 +21,10 @@ LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
 		liblz4.so:archivers/liblz4 \
 		libwoff2dec.so:devel/woff2
 
-USES=		compiler:c++17-lang meson pkgconfig tar:xz
+USES=		compiler:c++17-lang cpe meson pkgconfig tar:xz
+
+CPE_VENDOR=	opentype_sanitiser_project
+CPE_PRODUCT=	opentype_sanitiser
 
 MESON_ARGS=	--default-library=both \
 		-Dcolr-cycle-check=true \

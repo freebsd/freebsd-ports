@@ -19,7 +19,7 @@ LIB_DEPENDS=	libfreeimage.so:graphics/freeimage \
 		libfreetype.so:print/freetype2 \
 		libzzip.so:devel/zziplib
 
-USES=		cmake compiler:c++11-lib gl pkgconfig sdl tar:bzip2 xorg
+USES=		cmake compiler:c++11-lib cpe gl pkgconfig sdl tar:bzip2 xorg
 USE_CXXSTD=	c++14
 USE_GITHUB=	yes
 GH_ACCOUNT=	OGRECave
@@ -28,6 +28,9 @@ USE_GL=		gl glu
 USE_LDCONFIG=	yes
 USE_SDL=	sdl
 USE_XORG=	ice sm x11 xaw xext xrandr xt
+
+CPE_VENDOR=	${PORTNAME:tl}
+CPE_PRODUCT=	ogre
 
 CONFLICTS=	ogre3d
 

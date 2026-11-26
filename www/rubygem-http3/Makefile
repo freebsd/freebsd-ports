@@ -17,7 +17,10 @@ RUN_DEPENDS=	rubygem-addressable>=2.3<3:www/rubygem-addressable \
 		rubygem-http-form_data2>=2.0<3:www/rubygem-http-form_data2 \
 		rubygem-http_parser.rb>=0.6.0<1:net/rubygem-http_parser.rb
 
-USES=		gem
+USES=		cpe gem
+
+CPE_VENDOR=	http.rb_project
+CPE_PRODUCT=	http.rb
 
 NO_ARCH=	yes
 

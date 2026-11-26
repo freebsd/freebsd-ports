@@ -10,8 +10,10 @@ WWW=		https://i2c.wiki.kernel.org/index.php/I2C_Tools
 LICENSE=	GPLv2
 
 NO_BUILD=	yes
-USES=		perl5 shebangfix tar:xz
+USES=		cpe perl5 shebangfix tar:xz
 USE_PERL5=	run
+
+CPE_VENDOR=	i2c-tools_project
 
 PLIST_FILES=	sbin/decode-dimms share/man/man1/decode-dimms.1.gz
 SHEBANG_FILES=	eeprom/decode-dimms

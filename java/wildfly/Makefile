@@ -10,9 +10,11 @@ WWW=		https://wildfly.org/
 
 LICENSE=	GPLv2
 
-USES=		java
+USES=		cpe java
 JAVA_VERSION=	21+
 USE_RC_SUBR=	wildfly
+
+CPE_VENDOR=	redhat
 
 NO_BUILD=	yes
 SUB_FILES=	pkg-message

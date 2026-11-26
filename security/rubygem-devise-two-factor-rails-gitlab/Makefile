@@ -16,7 +16,9 @@ RUN_DEPENDS=	rubygem-activesupport-gitlab>=7.2<8.2:devel/rubygem-activesupport-g
 		rubygem-railties-gitlab>=7.2<8.2:www/rubygem-railties-gitlab \
 		rubygem-rotp>=6.0<7:devel/rubygem-rotp
 
-USES=		gem
+USES=		cpe gem
+
+CPE_VENDOR=	tinfoilsecurity
 
 NO_ARCH=	yes
 

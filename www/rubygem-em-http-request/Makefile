@@ -15,7 +15,9 @@ RUN_DEPENDS=	rubygem-addressable>=2.3.4:www/rubygem-addressable \
 		rubygem-eventmachine>=1.0.3:devel/rubygem-eventmachine \
 		rubygem-http_parser.rb>=0.6.0:net/rubygem-http_parser.rb
 
-USES=		gem
+USES=		cpe gem
+
+CPE_VENDOR=	em-http-request_project
 
 NO_ARCH=	yes
 

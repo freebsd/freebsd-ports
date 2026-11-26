@@ -21,7 +21,9 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libvorbis.so:audio/libvorbis \
 		libsoxr.so:audio/libsoxr
 
-USES=		cmake compiler:c++17-lang pkgconfig python shebangfix
+USES=		cmake compiler:c++17-lang cpe pkgconfig python shebangfix
+
+CPE_VENDOR=	badaix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	badaix

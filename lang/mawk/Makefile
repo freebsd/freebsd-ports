@@ -11,7 +11,10 @@ LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
-USES=		tar:tgz
+USES=		cpe tar:tgz
+
+CPE_VENDOR=	invisible-island
+CPE_VERSION=	${DISTVERSION:S/-/_/}
 
 PLIST_FILES=	bin/mawk \
 		share/man/man1/mawk.1.gz \

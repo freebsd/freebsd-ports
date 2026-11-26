@@ -13,11 +13,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	rst2man:textproc/py-docutils@${PY_FLAVOR}
 LIB_DEPENDS=	libmhash.so:security/mhash
 
-USES=		autoreconf gmake libtool pkgconfig python:build varnish:7
+USES=		autoreconf cpe gmake libtool pkgconfig python:build varnish:7
 USE_GITHUB=	yes
 GH_ACCOUNT=	varnish
 GH_TAGNAME=	e745761
 USE_LDCONFIG=	${PREFIX}/lib/varnach/vmods
+
+CPE_VENDOR=	varnish-software
+CPE_PRODUCT=	vmod_digest
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share

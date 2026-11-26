@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-redis>=4<7:databases/rubygem-redis
 
-USES=		gem
+USES=		cpe gem
 
 NO_ARCH=	yes
 

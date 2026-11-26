@@ -15,7 +15,8 @@ BUILD_DEPENDS=	${MY_DEPENDS}
 LIB_DEPENDS=	libbotan-3.so:security/botan3
 RUN_DEPENDS=	${MY_DEPENDS}
 
-USES=		cabal pkgconfig
+USES=		cabal cpe pkgconfig
+CPE_VENDOR=	git-annex_project
 
 CABAL_FLAGS=	assistant production magicmime torrentparser \
 		-benchmark -debuglocks

@@ -15,7 +15,7 @@ WWW=		https://wp-cli.org/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		php:cli,flavors
+USES=		cpe php:cli,flavors
 USE_GITHUB=	yes
 USE_PHP=	filter mbstring mysqli phar simplexml tokenizer xml xmlreader \
 		xmlwriter zip zlib

@@ -16,7 +16,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 RUN_DEPENDS=	rubygem-faraday-gitlab>=1<3:www/rubygem-faraday-gitlab \
 		rubygem-sawyer-gitlab>=0.9<1:www/rubygem-sawyer-gitlab
 
-USES=		gem
+USES=		cpe gem
+
+CPE_VENDOR=	octokit_project
 
 NO_ARCH=	yes
 

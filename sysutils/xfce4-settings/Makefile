@@ -17,11 +17,13 @@ LIB_DEPENDS=	libcolord.so:graphics/colord \
 		libxklavier.so:x11/libxklavier
 RUN_DEPENDS=	hwdata>0:misc/hwdata
 
-USES=		compiler:c11 desktop-file-utils gettext-tools gmake gnome \
+USES=		compiler:c11 cpe desktop-file-utils gettext-tools gmake gnome \
 		libtool pkgconfig python shebangfix tar:bzip2 xfce xorg
 USE_GNOME=	cairo gdkpixbuf glib20 gtk30 libxml2:build
 USE_XFCE=	garcon libexo xfconf
 USE_XORG=	x11 xcursor xext xi xorgproto xrandr
+
+CPE_VENDOR=	xfce
 
 SHEBANG_FILES=	dialogs/mime-settings/helpers/xfce4-compose-mail
 GNU_CONFIGURE=	yes

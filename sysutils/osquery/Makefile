@@ -42,9 +42,11 @@ LIB_DEPENDS=	libaugeas.so:textproc/augeas \
 		libyara.so:security/yara \
 		libzstd.so:archivers/zstd
 
-USES=		cmake compiler:c++17-lang localbase:ldflags \
+USES=		cmake compiler:c++17-lang cpe localbase:ldflags \
 		pkgconfig python:build,3.7+ sqlite ssl
 USE_RC_SUBR=	osqueryd
+
+CPE_VENDOR=	linuxfoundation
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	osquery

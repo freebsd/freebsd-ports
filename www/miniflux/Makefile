@@ -10,7 +10,9 @@ WWW=		https://miniflux.app/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		cpe go:modules
+
+CPE_VENDOR=	miniflux_project
 
 USE_GITHUB=	yes
 GH_PROJECT=	v2

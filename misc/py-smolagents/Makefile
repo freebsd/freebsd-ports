@@ -24,8 +24,10 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipython>=8.31.0:devel/ipython@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.21.2:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pandas>=2.2.3:math/py-pandas@${PY_FLAVOR}
 
-USES=		python
+USES=		cpe python
 USE_PYTHON=	autoplist concurrent pep517 pytest
+
+CPE_VENDOR=	huggingface
 
 TEST_ENV=	PYTHONPATH=${WRKSRC}/src
 TEST_ARGS=	--deselect tests/test_local_python_executor.py::TestEvaluatePythonCode::test_can_import_scipy_if_explicitly_authorized \

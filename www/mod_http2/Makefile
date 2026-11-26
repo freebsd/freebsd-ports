@@ -17,8 +17,10 @@ EXPIRATION_DATE=2026-12-31
 
 LIB_DEPENDS=	libnghttp2.so:www/libnghttp2
 
-USES=		apache libtool ssl pkgconfig
+USES=		apache cpe libtool ssl pkgconfig
 GNU_CONFIGURE=	yes
+
+CPE_VENDOR=	icing
 
 CONFIGURE_ARGS=	--without-curl
 

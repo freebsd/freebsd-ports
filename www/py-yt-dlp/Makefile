@@ -23,8 +23,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}brotli>0:archivers/py-brotli@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}websockets>=13.0:devel/py-websockets@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yt-dlp-ejs>0:www/py-yt-dlp-ejs@${PY_FLAVOR}
 
-USES=		gmake python shebangfix
+USES=		cpe gmake python shebangfix
 USE_PYTHON=	concurrent flavors
+
+CPE_VENDOR=	yt-dlp_project
 
 SHEBANG_GLOB=	*.py
 

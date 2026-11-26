@@ -56,7 +56,8 @@ RUN_DEPENDS=	pybind11>=2.6.2:devel/pybind11 \
 		${PYTHON_PKGNAMEPREFIX}ml-dtypes>=0.3.1:math/py-ml-dtypes@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}opt-einsum>=3.3.0:math/py-opt-einsum@${PY_FLAVOR}
 
-USES=		java jpeg perl5 python shebangfix sqlite ssl
+USES=		cpe java jpeg perl5 python shebangfix sqlite ssl
+CPE_VENDOR=	google
 JAVA_VERSION=	21
 JAVA_VENDOR=	openjdk
 USE_CXXSTD=	c++17

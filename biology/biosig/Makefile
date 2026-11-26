@@ -18,9 +18,12 @@ LIB_DEPENDS=	libb64.so:converters/libb64 \
 		libiconv.so:converters/libiconv \
 		libtinyxml.so:textproc/tinyxml
 
-USES=		gmake gnome iconv localbase:ldflags tar:xz
+USES=		cpe gmake gnome iconv localbase:ldflags tar:xz
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	libbiosig_project
+CPE_PRODUCT=	libbiosig
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 

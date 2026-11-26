@@ -14,10 +14,12 @@ COMMENT=	Tool which enables SSH to be used with OpenID Connect
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		cpe go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	openpubkey
 GO_BUILDFLAGS=	-ldflags "-X main.Version=${DISTVERSIONPREFIX}${DISTVERSION}"
+
+CPE_VENDOR=	openpubkey
 
 SUB_FILES=	pkg-message
 SUB_LIST=	GROUP=${OPKSSH_GROUP} \

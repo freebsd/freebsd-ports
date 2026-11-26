@@ -15,10 +15,13 @@ LIB_DEPENDS=	libzzip.so:devel/zziplib \
 		libpugixml.so:textproc/pugixml
 #		libimgui.so:x11-toolkits/imgui
 
-USES=		cmake compiler:c++14-lang pkgconfig sdl xorg
+USES=		cmake compiler:c++14-lang cpe pkgconfig sdl xorg
 USE_LDCONFIG=	yes
 USE_SDL=	sdl2
 USE_XORG=	x11 xaw xext xrandr xt
+
+CPE_VENDOR=	${PORTNAME:tl}
+CPE_PRODUCT=	ogre
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	OGRECave

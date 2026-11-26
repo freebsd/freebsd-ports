@@ -17,8 +17,11 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}html5lib>0:www/py-html5lib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}beautifulsoup4>4:www/py-beautifulsoup4@${PY_FLAVOR}
 
-USES=		python
+USES=		cpe python
 USE_PYTHON=	autoplist concurrent pep517 pytest
+
+CPE_VENDOR=	facelessuser
+CPE_PRODUCT=	soup_sieve
 
 NO_ARCH=	yes
 

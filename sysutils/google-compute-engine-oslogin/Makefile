@@ -15,12 +15,15 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 RUN_DEPENDS=	gsed:textproc/gsed \
 		${LOCALBASE}/lib/pam_mkhomedir.so:security/pam_mkhomedir
 
-USES=		compiler:c++11-lang gmake localbase:ldflags
+USES=		compiler:c++11-lang cpe gmake localbase:ldflags
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	GoogleCloudPlatform
 GH_PROJECT=	guest-oslogin
 GH_TAGNAME=	5a710bb
+
+CPE_VENDOR=	google
+CPE_PRODUCT=	guest-oslogin
 
 PLIST_SUB+=	DISTVERSION=${DISTVERSION}
 

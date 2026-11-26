@@ -14,7 +14,9 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=	bash:shells/bash gsed:textproc/gsed
 
-USES=		gmake shebangfix
+USES=		cpe gmake shebangfix
+
+CPE_VENDOR=	toybox_project
 
 SHEBANG_FILES=	mkroot/record-commands scripts/probes/bloatcheck \
 		scripts/mcm-buildall.sh scripts/change.sh \

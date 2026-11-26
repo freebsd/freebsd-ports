@@ -18,7 +18,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aniso8601>=0.82:devel/py-aniso8601@${PY_FLAV
 		${PYTHON_PKGNAMEPREFIX}werkzeug>0:www/py-werkzeug@${PY_FLAVOR}
 
 NO_ARCH=	yes
-USES=		python
+USES=		cpe python
 USE_PYTHON=	autoplist distutils
+CPE_VENDOR=	flask-restx_project
 
 .include <bsd.port.mk>

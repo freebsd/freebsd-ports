@@ -98,7 +98,9 @@ LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 		libopenjp2.so:graphics/openjpeg \
 		libpng.so:graphics/png
 
-USES=		compiler:c++20-lang jpeg llvm:${CLANG_VER} pkgconfig python:build
+USES=		compiler:c++20-lang cpe jpeg llvm:${CLANG_VER} pkgconfig python:build
+
+CPE_VENDOR=	google
 
 CLANG_VER=	${LLVM_DEFAULT}
 

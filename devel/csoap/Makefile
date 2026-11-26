@@ -10,10 +10,13 @@ COMMENT=	Client/server SOAP library written in pure C
 WWW=		https://csoap.sourceforge.net/
 
 GNU_CONFIGURE=	yes
-USES=		gnome libtool pathfix
+USES=		cpe gnome libtool pathfix
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
+
+CPE_VENDOR=	libcsoap_project
+CPE_PRODUCT=	libcsoap
 
 WRKSRC=		${WRKDIR}/libsoap-${PORTVERSION}
 

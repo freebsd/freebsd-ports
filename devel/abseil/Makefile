@@ -16,10 +16,13 @@ WWW=		https://abseil.io/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake compiler:c++17-lang pathfix
+USES=		cmake compiler:c++17-lang cpe pathfix
 CMAKE_ARGS=	-DBUILD_SHARED_LIBS:BOOL=ON \
 		-DCMAKE_CXX_STANDARD=17 # force the same highest C++ standard because of ABI differences: see https://github.com/abseil/abseil-cpp/issues/819
 PATHFIX_CMAKELISTSTXT=	AbseilHelpers.cmake
+
+CPE_VENDOR=	${PORTNAME:tl}
+CPE_PRODUCT=	common_libraries
 
 _GET_SOVER=	${GREP} ABSL_SOVERSION ${WRKSRC}/CMakeLists.txt \
 		2>/dev/null | ${CUT} -d\" -f2

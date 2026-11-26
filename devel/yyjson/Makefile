@@ -9,7 +9,9 @@ WWW=		https://github.com/ibireme/yyjson
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:testing pathfix
+USES=		cmake:testing cpe pathfix
+
+CPE_VENDOR=	ibireme
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ibireme

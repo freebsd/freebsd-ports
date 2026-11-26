@@ -12,10 +12,13 @@ LICENSE=	APACHE20
 LIB_DEPENDS=	libyaml.so:textproc/libyaml \
 		libzstd.so:archivers/zstd
 
-USES=		bison cmake:noninja compiler:c11 gmake localbase:ldflags
+USES=		bison cmake:noninja compiler:c11 cpe gmake localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	fluent
 USE_RC_SUBR=	${PORTNAME}
+
+CPE_VENDOR=	treasuredata
+CPE_PRODUCT=	${PORTNAME:tl:S/-/_/g}
 
 CMAKE_ARGS=	-DFLB_DEBUG=Off \
 		-DFLB_TRACE=Off

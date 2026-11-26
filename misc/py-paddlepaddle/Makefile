@@ -43,7 +43,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}httpx>=0:www/py-httpx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR} \
 		gfortran${GCC_DEFAULT}:lang/gcc${GCC_DEFAULT}
 
-USES=		cmake llvm:21 python
+USES=		cmake cpe llvm:21 python
 USE_PYTHON=	autoplist
 
 USE_GITHUB=	yes

@@ -14,7 +14,9 @@ LIB_DEPENDS=	libtss2-esys.so:security/tpm2-tss \
 		libcurl.so:ftp/curl \
 		libuuid.so:misc/libuuid
 
-USES=		compiler:c11 gmake libtool pkgconfig ssl
+USES=		compiler:c11 cpe gmake libtool pkgconfig ssl
+
+CPE_VENDOR=	tpm2-tools_project
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share

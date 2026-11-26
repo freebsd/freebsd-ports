@@ -16,8 +16,10 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61.0.0:devel/py-setuptools@${P
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=3.3.4:devel/py-lxml@${PY_FLAVOR}
 
 # Python3 ready
-USES=		python
+USES=		cpe python
 USE_PYTHON=	autoplist pep517 pytest
 NO_ARCH=	yes
+
+CPE_VENDOR=	python-openxml_project
 
 .include <bsd.port.mk>

@@ -10,7 +10,9 @@ WWW=		https://github.com/NixOS/patchelf
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf compiler:c++11-lang gmake tar:bz2
+USES=		autoreconf compiler:c++11-lang cpe gmake tar:bz2
+
+CPE_VENDOR=	nixos
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share

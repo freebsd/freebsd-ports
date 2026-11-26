@@ -10,7 +10,10 @@ WWW=		https://hsqldb.org/
 
 LICENSE=	BSD3CLAUSE
 
-USES=		java:ant,run zip
+USES=		cpe java:ant,run zip
+
+CPE_VENDOR=	${PORTNAME:tl}
+CPE_PRODUCT=	hypersql_database
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME}
 BUILD_WRKSRC=	${WRKSRC}/build

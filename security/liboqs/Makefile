@@ -14,8 +14,10 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=0:devel/py-pyyaml@${PY_FLAVOR} \
 		bash:shells/bash
 
-USES=		cmake:testing python:test shebangfix ssl
+USES=		cmake:testing cpe python:test shebangfix ssl
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	openquantumsafe
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	open-quantum-safe

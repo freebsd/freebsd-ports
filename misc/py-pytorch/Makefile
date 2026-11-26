@@ -57,8 +57,10 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}expecttest>0:devel/py-expecttest@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}pytest-rerunfailures>0:devel/py-pytest-rerunfailures@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-xdist>0:devel/py-pytest-xdist@${PY_FLAVOR}
 
-USES=		compiler:c++17-lang localbase:ldflags mpi:openmpi python shebangfix
+USES=		compiler:c++17-lang cpe localbase:ldflags mpi:openmpi python shebangfix
 USE_PYTHON=	pep517 autoplist
+
+CPE_VENDOR=	linuxfoundation
 
 SHEBANG_FILES=	torch/utils/hipify/hipify_python.py # installed executable, unlike with the pre-2.14 setuptools build
 USE_LDCONFIG=	${PYTHON_SITELIBDIR}/torch/lib

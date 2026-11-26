@@ -16,10 +16,13 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libpng.so:graphics/png \
 		libxcb-util.so:x11/xcb-util
 
-USES=		desktop-file-utils gmake gnome localbase pathfix pkgconfig \
+USES=		cpe desktop-file-utils gmake gnome localbase pathfix pkgconfig \
 		tar:xz xorg
 USE_GNOME=	intltool
 USE_XORG=	x11 xcb xft xrandr xrender
+
+CPE_VENDOR=	x_file_explorer_project
+CPE_PRODUCT=	x_file_explorer
 
 GNU_CONFIGURE=	yes
 

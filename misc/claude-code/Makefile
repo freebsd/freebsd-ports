@@ -26,7 +26,9 @@ EXTRACT_DEPENDS=${LOCALBASE}/bin/unhare:archivers/unhare
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash \
 		${LOCALBASE}/bin/rg:textproc/ripgrep
 
-USES=		nodejs:run npm:npm,build
+USES=		cpe nodejs:run npm:npm,build
+CPE_VENDOR=	anthropic
+CPE_PRODUCT=	${PORTNAME:tl:S/-/_/g}
 
 # Since 2.1.271 the Ink renderer builds its cell grid through
 # Bun.ant.CellSegmenter, an Anthropic-private Bun API that exists only inside

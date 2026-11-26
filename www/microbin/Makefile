@@ -19,7 +19,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 LIB_DEPENDS=	libonig.so:devel/oniguruma \
 		libzstd.so:archivers/zstd
 
-USES=		cargo perl5
+USES=		cargo cpe perl5
 USE_PERL5=	build
 
 USE_GITHUB=	yes

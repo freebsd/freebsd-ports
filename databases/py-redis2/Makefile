@@ -18,8 +18,11 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLA
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${PY_FLAVOR} \
 		redis-server:databases/redis
 
-USES=		python
+USES=		cpe python
 USE_PYTHON=	autoplist concurrent pep517 pytest
+
+CPE_VENDOR=	${PORTNAME:tl}
+CPE_PRODUCT=	redis-py
 
 NO_ARCH=	yes
 

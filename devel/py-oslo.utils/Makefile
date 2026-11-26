@@ -25,8 +25,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601@${PY_FLAVOR
 		${PYTHON_PKGNAMEPREFIX}pyparsing>=3.0.0:devel/py-pyparsing@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=3.13:devel/py-pyyaml@${PY_FLAVOR}
 
-USES=		python:3.11+
+USES=		cpe python:3.11+
 USE_PYTHON=	autoplist concurrent pep517
+
+CPE_VENDOR=	openstack
 
 NO_ARCH=	yes
 

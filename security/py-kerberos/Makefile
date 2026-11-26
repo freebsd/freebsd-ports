@@ -11,8 +11,10 @@ WWW=		https://github.com/apple/ccs-pykerberos
 
 LICENSE=	APACHE20
 
-USES=		python ssl
+USES=		cpe python ssl
 USE_PYTHON=	autoplist distutils
+CPE_VENDOR=	apple
+CPE_PRODUCT=	pykerberos
 
 OPTIONS_DEFAULT=	GSSAPI_BASE
 OPTIONS_SINGLE=		GSSAPI

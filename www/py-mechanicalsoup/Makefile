@@ -27,8 +27,10 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-cov>=0:devel/py-pytest-cov@${PY_FLAV
 		${PYTHON_PKGNAMEPREFIX}requests-mock>=1.3.0:www/py-requests-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}werkzeug>=3.0.3:www/py-werkzeug@${PY_FLAVOR}
 
-USES=		python
+USES=		cpe python
 USE_PYTHON=	autoplist concurrent pep517 pytest
+
+CPE_VENDOR=	mechanicalsoup_project
 
 NO_ARCH=	yes
 

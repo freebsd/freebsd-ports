@@ -9,8 +9,11 @@ WWW=		https://www.gnu.org/software/osip/
 
 LICENSE=	LGPL21
 
-USES=		libtool pathfix pkgconfig
+USES=		cpe libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	gnu
+CPE_PRODUCT=	osip
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-trace

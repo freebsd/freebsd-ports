@@ -12,7 +12,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
-USES=		cargo
+USES=		cargo cpe
+
+CPE_VENDOR=	bytecodealliance
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	bytecodealliance

@@ -13,10 +13,13 @@ LICENSE_FILE=	${WRKSRC}/license/readme.txt
 LIB_DEPENDS=	libdispatch.so:devel/libdispatch
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		gmake compiler:c++11-lang localbase:ldflags shebangfix
+USES=		cpe gmake compiler:c++11-lang localbase:ldflags shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	bacnet-stack
 GH_TAGNAME=	c111154
+
+CPE_VENDOR=	bacnetstack
+CPE_PRODUCT=	${PORTNAME:tl:S/-/_/g}
 
 LDFLAGS=	-lm
 

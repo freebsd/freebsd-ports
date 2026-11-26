@@ -72,9 +72,11 @@ RUN_DEPENDS=	dotnet8>0:lang/dotnet8 \
 		pango>0:x11-toolkits/pango \
 		tiff>0:graphics/tiff
 
-USES=		compiler:c11 gmake iconv libarchive:run localbase:ldflags pkgconfig sqlite ssl:run
+USES=		compiler:c11 cpe gmake iconv libarchive:run localbase:ldflags pkgconfig sqlite ssl:run
 USE_GNOME=	cairo glib20 librsvg2
 USE_RC_SUBR=	${PORTNAME}
+
+CPE_PRODUCT=	emby
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--cc="${CC}" \

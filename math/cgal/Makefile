@@ -20,7 +20,10 @@ RUN_DEPENDS=	boost-libs>0:devel/boost-libs # needed because the installed includ
 
 #TODO math/mpfi, math/rs, graphics/qglviewer
 #Not yet in ports
-USES=		cmake eigen:3 shebangfix tar:xz
+USES=		cmake cpe eigen:3 shebangfix tar:xz
+
+CPE_VENDOR=	${PORTNAME:tl}
+CPE_PRODUCT=	computational_geometry_algorithms_library
 
 NO_ARCH=	yes
 

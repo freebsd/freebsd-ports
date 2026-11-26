@@ -11,7 +11,9 @@ WWW=		https://github.com/Icinga/icingaweb2-module-incubator
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		php:web,flavors
+USES=		cpe php:web,flavors
+
+CPE_VENDOR=	icinga
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	icinga

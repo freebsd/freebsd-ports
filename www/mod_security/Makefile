@@ -19,7 +19,7 @@ LIB_DEPENDS+=	libpcre2-8.so:devel/pcre2 \
 		libgdbm.so:databases/gdbm \
 		libexpat.so:textproc/expat2
 
-USES=		apache gnome perl5 pkgconfig shebangfix autoreconf libtool:build
+USES=		apache cpe gnome perl5 pkgconfig shebangfix autoreconf libtool:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	owasp-modsecurity
 GH_PROJECT=	ModSecurity
@@ -27,6 +27,10 @@ GH_TUPLE=	libinjection:libinjection:2117822:libinjection/apache2/others/libinjec
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
 SHEBANG_FILES=	tools/rules-updater.pl.in mlogc/mlogc-batch-load.pl.in
+
+CPE_VENDOR=	owasp
+CPE_PRODUCT=	${PORTNAME:tl:S/_//g}
+
 perl_OLD_CMD=	@PERL@
 
 AP_INC=		${LOCALBASE}/include/libxml2

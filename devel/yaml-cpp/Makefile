@@ -10,13 +10,15 @@ WWW=		https://github.com/jbeder/yaml-cpp
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake compiler:c++11-lang
+USES=		cmake compiler:c++11-lang cpe
 USE_GITHUB=	yes
 GH_ACCOUNT=	jbeder
 USE_LDCONFIG=	yes
 CMAKE_ARGS+=	-DYAML_BUILD_SHARED_LIBS:BOOL=ON \
 		-DYAML_CPP_BUILD_TESTS=OFF \
 		-DYAML_CPP_BUILD_TOOLS=OFF
+
+CPE_VENDOR=	yaml-cpp_project
 
 post-patch:
 	@${REINPLACE_CMD} "s|%%PREFIX%%|${PREFIX}|" \

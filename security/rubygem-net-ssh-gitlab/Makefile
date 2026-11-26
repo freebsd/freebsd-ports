@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-logger-gitlab>=0:devel/rubygem-logger-gitlab
 
-USES=		gem shebangfix
+USES=		cpe gem shebangfix
 
 NO_ARCH=	yes
 

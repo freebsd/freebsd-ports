@@ -27,8 +27,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django_compressor>=1.3:www/py-django_compres
 		${PYTHON_PKGNAMEPREFIX}python-dateutil>=2.0:devel/py-python-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}robot-detection>=0.3:www/py-robot-detection@${PY_FLAVOR}
 
-USES=		python shebangfix
+USES=		cpe python shebangfix
 USE_PYTHON=	autoplist concurrent pep517
+
+CPE_VENDOR=	hyperkitty_project
 
 SHEBANG_FILES=	hyperkitty/contrib/check_hk_import \
 		hyperkitty/contrib/cleanarch3

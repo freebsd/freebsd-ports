@@ -24,7 +24,10 @@ LICENSE=	APACHE20
 
 BUILD_DEPENDS=	sbt:devel/sbt
 
-USES=		cmake:indirect gmake java:build
+USES=		cmake:indirect cpe gmake java:build
+
+CPE_VENDOR=	xerial
+CPE_PRODUCT=	snappy-java
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	xerial

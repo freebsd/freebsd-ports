@@ -10,8 +10,11 @@ WWW=		https://github.com/hashicorp/consul-template
 
 LICENSE=	MPL20
 
-USES=		go:modules
+USES=		cpe go:modules
 USE_RC_SUBR=	consul-template
+
+CPE_VENDOR=	hashicorp
+CPE_PRODUCT=	${PORTNAME:tl:S/-/_/g}
 
 GO_MODULE=	github.com/hashicorp/consul-template
 GO_BUILDFLAGS=	-ldflags='\

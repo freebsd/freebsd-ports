@@ -15,8 +15,10 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytorch>0:misc/py-pytorch@${PY_FLAVOR}
 
-USES=		python
+USES=		cpe python
 USE_PYTHON=	pep517 autoplist noflavors
+
+CPE_VENDOR=	lutzroeder
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	lutzroeder

@@ -12,8 +12,11 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libxmp.so:audio/libxmp
 
-USES=		gmake localbase:ldflags pkgconfig
+USES=		cpe gmake localbase:ldflags pkgconfig
 GNU_CONFIGURE=	yes
+
+CPE_VENDOR=	extended_module_player_project
+CPE_PRODUCT=	extended_module_player
 
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc
 

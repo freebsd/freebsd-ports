@@ -16,7 +16,9 @@ RUN_DEPENDS=	bash:shells/bash \
 		gnupg>=2:security/gnupg \
 		tree>=1.7:sysutils/tree
 
-USES=		tar:xz
+USES=		cpe tar:xz
+
+CPE_VENDOR=	zx2c4
 
 NO_ARCH=	yes
 NO_BUILD=	yes

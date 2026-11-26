@@ -12,7 +12,9 @@ WWW=		https://nghttp2.org/ngtcp2/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		libtool pkgconfig tar:xz
+USES=		cpe libtool pkgconfig tar:xz
+
+CPE_VENDOR=	tatsuhiro-t
 
 CONFIGURE_ARGS=	--enable-lib-only \
 		--with-jemalloc \

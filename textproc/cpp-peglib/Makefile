@@ -12,7 +12,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	googletest>0:devel/googletest
 
-USES=		cmake:testing compiler:c++17-lang localbase:ldflags
+USES=		cmake:testing compiler:c++17-lang cpe localbase:ldflags
+
+CPE_VENDOR=	cpp-peglib_project
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yhirose

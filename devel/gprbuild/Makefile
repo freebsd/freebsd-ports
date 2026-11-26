@@ -17,8 +17,10 @@ IGNORE_i386=	It builds, but cannot be used to build other ports
 
 BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx@${PY_FLAVOR}
 
-USES=		ada:run python:build
+USES=		ada:run cpe python:build
 USE_BINUTILS=	yes
+CPE_VENDOR=	adacore
+CPE_PRODUCT=	gpr_build
 
 CONFLICTS_INSTALL=	grpc-1.*	# libgpr.so
 

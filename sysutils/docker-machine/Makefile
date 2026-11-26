@@ -15,7 +15,10 @@ PLIST_FILES=		bin/docker-machine
 
 USE_GITHUB=		yes
 
-USES=	go
+USES=	cpe go
+
+CPE_VENDOR=	docker
+CPE_PRODUCT=	machine
 
 GH_ACCOUNT=	docker
 GH_PROJECT=	machine

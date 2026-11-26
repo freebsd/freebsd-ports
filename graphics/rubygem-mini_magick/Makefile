@@ -13,7 +13,10 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-logger>=0:devel/rubygem-logger
 
-USES=		gem magick
+USES=		cpe gem magick
+
+CPE_VENDOR=	minimagick_project
+CPE_PRODUCT=	${PORTNAME:tl:S/_//g}
 
 NO_ARCH=	yes
 

@@ -13,11 +13,14 @@ LICENSE=	GPLv2+
 LIB_DEPENDS+=	libpng.so:graphics/png \
 		libunicode.so:devel/libunicode
 
-USES=		autoreconf gettext iconv libtool localbase pathfix
+USES=		autoreconf cpe gettext iconv libtool localbase pathfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-doxygen
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	zapping-vbi
+CPE_PRODUCT=	zvbi
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	zapping-vbi

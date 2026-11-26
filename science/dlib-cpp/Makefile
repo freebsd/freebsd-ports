@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/dlib/LICENSE.txt
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libgif.so:graphics/giflib
 
-USES=			cmake compiler:c++11-lang jpeg pkgconfig sqlite tar:bzip2
+USES=			cmake compiler:c++11-lang cpe jpeg pkgconfig sqlite tar:bzip2
 USE_LDCONFIG=		yes
 
 USE_GITHUB=		yes

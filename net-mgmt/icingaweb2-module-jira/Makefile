@@ -14,8 +14,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	icingaweb2${PHP_PKGNAMESUFFIX}>=2.11.4:net-mgmt/icingaweb2@${PHP_FLAVOR}
 
-USES=		php:web,flavors
+USES=		cpe php:web,flavors
 IGNORE_WITH_PHP=	86
+
+CPE_VENDOR=	icinga
+CPE_PRODUCT=	icinga_web_jira_integration
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	icinga

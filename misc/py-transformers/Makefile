@@ -52,8 +52,10 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}accelerate>=1.1.0:misc/py-accelerate@${PY_F
 		${PYTHON_PKGNAMEPREFIX}timm>=1.0.23:misc/py-timm@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}parameterized>0:devel/py-parameterized@${PY_FLAVOR}
 
-USES=		python
+USES=		cpe python
 USE_PYTHON=	pep517 autoplist pytest
+
+CPE_VENDOR=	huggingface
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_WRKSRC=	${WRKSRC}/tests

@@ -22,8 +22,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}annotated-types>=0.5.0:devel/py-annotated-ty
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.7.1:devel/py-typing-extensions@${PY_FLAVOR}
 
-USES=		python
+USES=		cpe python
 USE_PYTHON=	autoplist concurrent pep517
+
+CPE_VENDOR=	backblaze
+CPE_PRODUCT=	b2-sdk-python
 
 NO_ARCH=	yes
 

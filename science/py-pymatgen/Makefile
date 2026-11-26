@@ -30,8 +30,10 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}ase>=3.27.0:science/py-ase@${PY_FLAVOR} \
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pybtex>0:textproc/py-pybtex@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openbabel>0:science/py-openbabel@${PY_FLAVOR}
 
-USES=		compiler:c++11-lang python
+USES=		compiler:c++11-lang cpe python
 USE_PYTHON=	pep517 cython concurrent autoplist pytest
+
+CPE_VENDOR=	materialsvirtuallab
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	materialsproject

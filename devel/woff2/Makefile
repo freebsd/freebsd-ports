@@ -16,10 +16,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libbrotlidec.so:archivers/brotli
 
-USES=		cmake compiler:c++11-lib pathfix pkgconfig
+USES=		cmake compiler:c++11-lib cpe pathfix pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	google
 
 PLIST_SUB=	SHLIBVER=${DISTVERSION}
 

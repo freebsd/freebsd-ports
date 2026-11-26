@@ -22,7 +22,10 @@ RUN_DEPENDS=	rubygem-charlock_holmes>=0.7.5:textproc/rubygem-charlock_holmes \
 		rubygem-sinatra-contrib>=4.1.1:www/rubygem-sinatra-contrib \
 		rubygem-sinatra>=4.1.1:www/rubygem-sinatra
 
-USES=		gem
+USES=		cpe gem
+
+CPE_VENDOR=	oxidized_web_project
+CPE_PRODUCT=	${PORTNAME:tl:S/-/_/g}
 
 NO_ARCH=	yes
 

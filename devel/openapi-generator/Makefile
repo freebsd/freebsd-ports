@@ -12,7 +12,10 @@ WWW=		https://openapi-generator.tech/
 
 LICENSE=	APACHE20
 
-USES=		java:run
+USES=		cpe java:run
+
+CPE_VENDOR=	${PORTNAME:tl}
+CPE_PRODUCT=	${PORTNAME:tl:S/-/_/g}
 
 NO_ARCH=	yes
 NO_BUILD=	yes

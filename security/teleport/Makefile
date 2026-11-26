@@ -17,13 +17,15 @@ BUILD_DEPENDS=	zip:archivers/zip
 
 # If you need the auth service to work, you need to compile this port with
 # Go 1.17 or older. In case tsh is what you're after, Go 1.19 is fine.
-USES=		compiler gmake go
+USES=		compiler cpe gmake go
 USE_GITHUB=		yes
 GH_ACCOUNT=		gravitational
 GH_TUPLE=		gravitational:webassets:8ace0cf:webassets/webassets
 GH_COMMIT_SHORT=	f8ba4afd9
 GH_TAG_COMMIT=		${DISTVERSIONPREFIX}${DISTVERSION}-0-g${GH_COMMIT_SHORT}
 USE_RC_SUBR=	teleport
+
+CPE_VENDOR=	goteleport
 
 # Extra assets are stored in the binary and must not be inadvertently removed
 STRIP=

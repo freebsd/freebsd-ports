@@ -14,11 +14,14 @@ WWW=		https://lycheeorg.dev
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		php zip
+USES=		cpe php zip
 USE_PHP=	bcmath ctype dom exif fileinfo filter gd intl json mbstring mysqli \
 		opcache openssl pcre pdo pdo_mysql pdo_pgsql pdo_sqlite pgsql \
 		phar session simplexml sodium sqlite3 tokenizer xml xmlwriter \
 		zlib
+
+CPE_VENDOR=	${PORTNAME:tl}
+CPE_PRODUCT=	lychee
 
 NO_ARCH=	yes
 NO_BUILD=	yes

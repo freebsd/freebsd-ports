@@ -12,8 +12,11 @@ LICENSE=	APACHE20 GPLv2+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:testing python:build,test shebangfix tar:bz2
+USES=		cmake:testing cpe python:build,test shebangfix tar:bz2
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	trustedfirmware
+CPE_PRODUCT=	mbed_tls
 
 SHEBANG_FILES=	scripts/*.py tests/scripts/*.py
 

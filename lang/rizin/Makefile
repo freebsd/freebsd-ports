@@ -26,7 +26,7 @@ LIB_DEPENDS=	libcapstone.so:devel/capstone \
 		libzstd.so:archivers/zstd \
 		libZydis.so:devel/zydis
 
-USES=		cmake:indirect localbase meson pkgconfig python:build
+USES=		cmake:indirect cpe localbase meson pkgconfig python:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rizinorg

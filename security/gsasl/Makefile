@@ -12,7 +12,10 @@ LICENSE=	LGPL21
 
 LIB_DEPENDS=	libgsasl.so:security/libgsasl
 
-USES=		charsetfix libtool localbase pkgconfig readline
+USES=		charsetfix cpe libtool localbase pkgconfig readline
+
+CPE_VENDOR=	gnu
+CPE_PRODUCT=	gnu_sasl
 
 CONFIGURE_ARGS=	--disable-rpath \
 		--without-gssapi-impl

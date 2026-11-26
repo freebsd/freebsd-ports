@@ -12,9 +12,11 @@ WWW=		https://www.digdag.io/
 
 LICENSE=	APACHE20
 
-USES=		java
+USES=		cpe java
 JAVA_VENDOR=	openjdk
 USE_RC_SUBR=	${PORTNAME}
+
+CPE_VENDOR=	treasuredata
 
 NO_ARCH=	yes
 NO_BUILD=	yes

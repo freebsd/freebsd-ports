@@ -31,7 +31,7 @@ GH_TUPLE=	catchorg:Catch2:v2.13.10:catch2/test/catch2 \
 		mapnik:polylabel:1edc167:polylabel/deps/mapbox/polylabel \
 		mapnik:test-data:5716a27:test_data/test/data
 
-USES=		compiler:c++20-lang cmake:testing gnome pkgconfig ssl
+USES=		compiler:c++20-lang cmake:testing cpe gnome pkgconfig ssl
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 

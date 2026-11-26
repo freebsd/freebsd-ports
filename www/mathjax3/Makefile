@@ -13,6 +13,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	mathjax
 GH_PROJECT=	MathJax
 
+USES=		cpe
+
+CPE_PRODUCT=	mathjax
+
 NO_ARCH=	yes
 NO_BUILD=	yes
 

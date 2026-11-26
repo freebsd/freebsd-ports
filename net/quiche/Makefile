@@ -12,11 +12,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	git>0:devel/git
 
-USES=		cargo llvm:build,lib
+USES=		cargo cpe llvm:build,lib
 USE_GITHUB=	yes
 GH_ACCOUNT=	cloudflare
 GH_TUPLE=	google:boringssl:e1d6cd95a:boringssl/quiche/deps/boringssl
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	cloudflare
 
 CARGO_FEATURES=		ffi pkg-config-meta
 CARGO_BUILD=		yes

@@ -23,9 +23,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}brotli>=1.2.0:archivers/py-brotli@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}pyphen>=0.9.1:textproc/py-pyphen@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tinycss2>=1.5.1:textproc/py-tinycss2@${PY_FLAVOR}
 
-USES=		gnome python
+USES=		cpe gnome python
 USE_PYTHON=	autoplist pep517
 USE_GNOME=	gdkpixbuf pango
+
+CPE_VENDOR=	kozea
 
 NO_ARCH=	yes
 

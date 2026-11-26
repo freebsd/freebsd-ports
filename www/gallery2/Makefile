@@ -13,8 +13,11 @@ WWW=		https://gallery.sourceforge.net/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		php:web
+USES=		cpe php:web
 USE_PHP=	session
+
+CPE_VENDOR=	menalto
+CPE_PRODUCT=	gallery
 
 NO_ARCH=	yes
 NO_BUILD=	yes

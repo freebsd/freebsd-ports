@@ -11,11 +11,14 @@ WWW=		https://boinc.berkeley.edu/ \
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
-USES=		autoreconf compiler:c++11-lang gmake libtool localbase:ldflags pkgconfig ssl
+USES=		autoreconf compiler:c++11-lang cpe gmake libtool localbase:ldflags pkgconfig ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	BOINC
 GH_PROJECT=	boinc
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	universityofcalifornia
+CPE_PRODUCT=	${PORTNAME:tl:S/-/_/g}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-server

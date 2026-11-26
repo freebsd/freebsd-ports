@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libffi.so:devel/libffi
 
-USES=		gmake pkgconfig python:,build
+USES=		cpe gmake pkgconfig python:,build
 USE_GCC=	yes
 USE_GITHUB=	yes
 GH_TUPLE=	micropython:axtls:531cab9:axtls \

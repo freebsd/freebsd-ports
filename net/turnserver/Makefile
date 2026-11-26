@@ -13,11 +13,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libevent.so:devel/libevent
 
-USES=		perl5 pkgconfig shebangfix ssl
+USES=		cpe perl5 pkgconfig shebangfix ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	coturn
 GH_PROJECT=	coturn
 USE_RC_SUBR=	turnserver
+
+CPE_VENDOR=	coturn_project
+CPE_PRODUCT=	coturn
 
 SHEBANG_FILES=	examples/scripts/restapi/shared_secret_maintainer.pl
 

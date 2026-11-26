@@ -10,7 +10,9 @@ WWW=		https://github.com/neurobin/shc/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:tgz
+USES=		cpe tar:tgz
+
+CPE_VENDOR=	neurobin
 
 GNU_CONFIGURE=	yes
 

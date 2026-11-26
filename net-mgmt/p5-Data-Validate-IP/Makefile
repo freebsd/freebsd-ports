@@ -19,7 +19,10 @@ TEST_DEPENDS=	p5-Test-Requires>=0:devel/p5-Test-Requires \
 		p5-Test-Taint>=0:devel/p5-Test-Taint
 
 NO_ARCH=	yes
-USES=		perl5
+USES=		cpe perl5
 USE_PERL5=	configure
+
+CPE_VENDOR=	data::validate::ip_project
+CPE_PRODUCT=	data::validate::ip
 
 .include <bsd.port.mk>

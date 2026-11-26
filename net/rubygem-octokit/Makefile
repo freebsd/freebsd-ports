@@ -14,7 +14,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 RUN_DEPENDS=	rubygem-faraday>=1<3:www/rubygem-faraday \
 		rubygem-sawyer>=0.9<1:www/rubygem-sawyer
 
-USES=		gem
+USES=		cpe gem
+
+CPE_VENDOR=	octokit_project
 
 NO_ARCH=	yes
 

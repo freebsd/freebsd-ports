@@ -13,7 +13,10 @@ WWW=		https://xmlgraphics.apache.org/commons/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		java
+USES=		cpe java
+
+CPE_VENDOR=	apache
+CPE_PRODUCT=	${PORTNAME:tl:S/-/_/g}
 
 NO_ARCH=	yes
 NO_BUILD=	yes

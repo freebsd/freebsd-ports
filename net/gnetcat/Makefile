@@ -9,8 +9,11 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GPL'ed re-write of the well known networking tool netcat
 WWW=		https://netcat.sourceforge.net/
 
-USES=		gettext iconv tar:bzip2
+USES=		cpe gettext iconv tar:bzip2
 GNU_CONFIGURE=	yes
+
+CPE_VENDOR=	netcat_project
+CPE_PRODUCT=	netcat
 
 INFO=		gnetcat
 PLIST_FILES=	bin/gnetcat share/man/man1/gnetcat.1.gz

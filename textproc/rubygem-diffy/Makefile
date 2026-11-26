@@ -10,7 +10,9 @@ WWW=		https://github.com/samg/diffy
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gem
+USES=		cpe gem
+
+CPE_VENDOR=	diffy_project
 
 NO_ARCH=	yes
 

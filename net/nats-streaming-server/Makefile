@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 DEPRECATED=	Deprecated by upstream, use JetStream in net/nats-server instead
 EXPIRATION_DATE=2026-12-31
 
-USES=		go:modules
+USES=		cpe go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	nats-io
 GH_TUPLE=	armon:go-metrics:v0.4.1:armon_go_metrics/vendor/github.com/armon/go-metrics \
@@ -43,6 +43,9 @@ GH_TUPLE=	armon:go-metrics:v0.4.1:armon_go_metrics/vendor/github.com/armon/go-me
 		nats-io:nuid:v1.0.1:nats_io_nuid/vendor/github.com/nats-io/nuid \
 		nats-io:stan.go:v0.10.4:nats_io_stan_go/vendor/github.com/nats-io/stan.go \
 		prometheus:procfs:v0.11.0:prometheus_procfs/vendor/github.com/prometheus/procfs
+
+CPE_VENDOR=	nats
+CPE_PRODUCT=	${PORTNAME:tl:S/-/_/g}
 
 USE_RC_SUBR=	nats_streaming.sh
 GO_BUILDFLAGS=	-buildvcs=false

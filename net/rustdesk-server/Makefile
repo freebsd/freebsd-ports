@@ -12,13 +12,16 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
-USES=		cargo ssl
+USES=		cargo cpe ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	rustdesk
 GH_PROJECT=	hbb_common:common
 GH_SUBDIR=	libs/hbb_common:common
 GH_TAGNAME=	073403e:common
 USE_RC_SUBR=	rustdesk-hbbr rustdesk-hbbs
+
+CPE_VENDOR=	rustdesk
+CPE_PRODUCT=	${PORTNAME:tl:S/-/_/g}
 
 USERS=		rustdesk
 GROUPS=		rustdesk

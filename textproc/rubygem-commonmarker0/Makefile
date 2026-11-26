@@ -11,7 +11,9 @@ WWW=		https://github.com/gjtorikian/commonmarker
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		gem
+USES=		cpe gem
+
+CPE_VENDOR=	gjtorikian
 
 PLIST_FILES=	bin/commonmarker
 

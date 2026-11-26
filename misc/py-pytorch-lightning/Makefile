@@ -26,8 +26,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fsspec>=2022.5.0:filesystems/py-fsspec@${PY_
 		${PYTHON_PKGNAMEPREFIX}tqdm>=4.57.0:misc/py-tqdm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>4.5.0:devel/py-typing-extensions@${PY_FLAVOR}
 
-USES=		python
+USES=		cpe python
 USE_PYTHON=	pep517 autoplist pytest
+
+CPE_VENDOR=	lightningai
+CPE_PRODUCT=	${PORTNAME:tl:S/-/_/g}
 
 #USE_GITHUB=	yes
 #GH_ACCOUNT=	Lightning-AI

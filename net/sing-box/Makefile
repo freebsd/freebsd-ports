@@ -12,7 +12,9 @@ WWW=		https://sing-box.sagernet.org \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		cpe go:modules
+
+CPE_VENDOR=	sagernet
 
 GO_MODULE=	github.com/sagernet/sing-box
 GO_TARGET=	./cmd/sing-box

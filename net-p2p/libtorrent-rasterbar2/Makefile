@@ -19,9 +19,11 @@ LIB_DEPENDS=	libboost_chrono.so:devel/boost-libs \
 		libboost_random.so:devel/boost-libs \
 		libboost_thread.so:devel/boost-libs
 
-USES=		cmake:testing compiler:c++11-lib iconv:wchar_t \
+USES=		cmake:testing compiler:c++11-lib cpe iconv:wchar_t \
 		localbase:ldflags pathfix pkgconfig python:test shebangfix ssl
 USE_LDCONFIG=	yes
+
+CPE_PRODUCT=	libtorrent
 
 SHEBANG_GLOB=	*.py
 

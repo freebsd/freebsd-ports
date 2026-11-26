@@ -13,7 +13,9 @@ LICENSE_FILE=	${WRKSRC}/license.md
 
 RUN_DEPENDS=	rubygem-rack-gitlab>=2<3:www/rubygem-rack-gitlab
 
-USES=		gem
+USES=		cpe gem
+
+CPE_VENDOR=	rack
 
 NO_ARCH=	yes
 

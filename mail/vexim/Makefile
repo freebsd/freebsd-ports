@@ -15,8 +15,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 SUB_FILES=	pkg-message
 NO_ARCH=	yes
 NO_BUILD=	yes
-USES=		gettext php:flavors
+USES=		cpe gettext php:flavors
 USE_PHP=	gettext session posix
+
+CPE_VENDOR=	virtual_exim_project
+CPE_PRODUCT=	virtual_exim_2
 
 USE_GITHUB=	yes
 GH_PROJECT=	${PORTNAME}2

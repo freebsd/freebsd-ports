@@ -13,8 +13,10 @@ WWW=		https://duktape.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		gmake tar:xz
+USES=		cpe gmake tar:xz
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	duktape_project
 
 MAKEFILE=	Makefile.sharedlibrary
 MAKE_ARGS=	INSTALL_PREFIX=${PREFIX}

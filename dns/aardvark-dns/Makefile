@@ -11,7 +11,9 @@ WWW=		https://github.com/containers/aardvark-dns
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cargo
+USES=		cargo cpe
+
+CPE_VENDOR=	containers
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	containers

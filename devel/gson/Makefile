@@ -11,7 +11,9 @@ WWW=		https://github.com/google/gson
 
 LICENSE=	APACHE20
 
-USES=		java:run
+USES=		cpe java:run
+
+CPE_VENDOR=	google
 
 NO_BUILD=	yes
 NO_ARCH=	yes

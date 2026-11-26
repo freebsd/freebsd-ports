@@ -11,10 +11,12 @@ WWW=		https://github.com/chmln/sd
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cargo
+USES=		cargo cpe
 CARGO_INSTALL_PATH=	sd-cli
 USE_GITHUB=	yes
 GH_ACCOUNT=	chmln
+
+CPE_VENDOR=	chmln
 
 PLIST_FILES=	bin/sd \
 		etc/bash_completion.d/sd.bash \

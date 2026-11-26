@@ -10,7 +10,10 @@ WWW=		https://openocd.org
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf gmake libtool makeinfo pkgconfig
+USES=		autoreconf cpe gmake libtool makeinfo pkgconfig
+
+CPE_VENDOR=	${PORTNAME:tl}
+CPE_PRODUCT=	open_on-chip_debugger
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	openocd-org

@@ -13,7 +13,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libprotobuf.so:devel/protobuf
 
-USES=		cmake compiler:c++17-lang
+USES=		cmake compiler:c++17-lang cpe
+
+CPE_VENDOR=	valvesoftware
+CPE_PRODUCT=	game_networking_sockets
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ValveSoftware

@@ -12,7 +12,9 @@ WWW=		https://z3prover.github.io/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		cmake:testing compiler:c++20-lang localbase:ldflags
+USES=		cmake:testing compiler:c++20-lang cpe localbase:ldflags
+
+CPE_VENDOR=	microsoft
 
 CMAKE_ARGS=	-DCMAKE_INSTALL_PKGCONFIGDIR=${PREFIX}/libdata/pkgconfig
 CMAKE_OFF=	Z3_ENABLE_EXAMPLE_TARGETS

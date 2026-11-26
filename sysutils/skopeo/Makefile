@@ -17,9 +17,11 @@ BUILD_DEPENDS=	bash:shells/bash \
 LIB_DEPENDS=	libgpgme.so:security/gpgme
 RUN_DEPENDS=	${LOCALBASE}/etc/containers/containers.conf.sample:sysutils/containers-common
 
-USES=		gmake go:modules,no_targets pkgconfig
+USES=		cpe gmake go:modules,no_targets pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	podman-container-tools
+
+CPE_VENDOR=	skopeo_project
 
 do-install:
 	${SETENV} ${MAKE_ENV} ${GO_ENV} ${GMAKE} -C ${WRKSRC} \

@@ -21,7 +21,12 @@ BUILD_DEPENDS=	ginstall:sysutils/coreutils
 FLAVORS=	llvm # gcc
 FLAVOR?=	${FLAVORS:[1]}
 
-USES=		gmake shebangfix tar:tgz
+USES=		cpe gmake shebangfix tar:tgz
+
+CPE_VENDOR=	afl++_project
+CPE_PRODUCT=	afl++
+CPE_VERSION=	${DISTVERSION:tl}
+
 .if ${FLAVOR} == llvm
 USES+=		llvm:build,run
 .endif

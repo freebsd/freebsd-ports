@@ -16,7 +16,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libgcrypt.so:security/libgcrypt \
 		libgpg-error.so:security/libgpg-error
 
-USES=		compiler:c++11-lang dos2unix gmake gnome iconv libtool \
+USES=		compiler:c++11-lang cpe dos2unix gmake gnome iconv libtool \
 		pkgconfig
 USE_GNOME=	libxml2 libxslt
 GNU_CONFIGURE=	yes

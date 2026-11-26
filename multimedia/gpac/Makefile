@@ -9,7 +9,7 @@ WWW=			https://gpac.io/
 
 LICENSE=		LGPL21
 
-USES=			gmake pkgconfig ssl
+USES=			cpe gmake pkgconfig ssl
 
 USE_GITHUB=		yes
 GH_ACCOUNT=		gpac

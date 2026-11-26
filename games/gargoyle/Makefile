@@ -18,7 +18,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libpng.so:graphics/png
 RUN_DEPENDS=	libxkbcommon>=0.5.0:x11/libxkbcommon
 
-USES=		cmake desktop-file-utils gl jpeg pkgconfig qt:6 sdl \
+USES=		cmake cpe desktop-file-utils gl jpeg pkgconfig qt:6 sdl \
 		shared-mime-info
 USE_GITHUB=	yes
 GH_ACCOUNT=	garglk
@@ -26,6 +26,8 @@ GH_PROJECT=	${GH_ACCOUNT}
 USE_GL=		opengl
 USE_QT=		base
 USE_SDL=	mixer2
+
+CPE_VENDOR=	gargoyle_project
 
 CMAKE_ON=	WITH_QT6
 

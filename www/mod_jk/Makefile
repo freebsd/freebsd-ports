@@ -12,9 +12,11 @@ WWW=		https://tomcat.apache.org/connectors-doc/
 
 LICENSE=	APACHE20
 
-USES=		apache gmake
+USES=		apache cpe gmake
 APACHE_VER=	2.0
 GNU_CONFIGURE=	yes
+
+CPE_VENDOR=	apache
 
 CONFIGURE_ARGS+=	--with-apxs=${APXS}
 WRKSRC=		${WRKDIR}/tomcat-connectors-${PORTVERSION}-src/native

@@ -11,6 +11,8 @@ LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE_1_0.txt
 
 USE_GITHUB=	yes
+USES=		cpe
+
 NO_BUILD=	yes
 NO_ARCH=	yes
 

@@ -17,7 +17,9 @@ RUN_DEPENDS=	rubygem-base64>=0.1<1:converters/rubygem-base64 \
 		rubygem-resque>=2.7:devel/rubygem-resque \
 		rubygem-rufus-scheduler>=3.9<4:devel/rubygem-rufus-scheduler
 
-USES=		gem
+USES=		cpe gem
+
+CPE_VENDOR=	resque-scheduler_project
 
 NO_ARCH=	yes
 

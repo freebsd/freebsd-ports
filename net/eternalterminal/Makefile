@@ -15,10 +15,13 @@ LIB_DEPENDS=	libabsl_log_internal_check_op.so:devel/abseil \
 		libsodium.so:security/libsodium \
 		libunwind.so:devel/libunwind
 
-USES=		cmake:testing ssl
+USES=		cmake:testing cpe ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	MisterTea
 GH_PROJECT=	EternalTerminal
+
+CPE_VENDOR=	eternal_terminal_project
+CPE_PRODUCT=	eternal_terminal
 
 CMAKE_ON=	DISABLE_VCPKG
 CMAKE_OFF=	BUILD_TESTING

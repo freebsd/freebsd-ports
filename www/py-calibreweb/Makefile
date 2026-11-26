@@ -43,6 +43,9 @@ CPE_PRODUCT=	calibre-web
 USE_PYTHON=	autoplist cryptography pep517
 USE_RC_SUBR=	${PORTNAME}
 
+CPE_VENDOR=	janeczku
+CPE_PRODUCT=	calibre-web
+
 NO_ARCH=	yes
 
 SUB_FILES=	pkg-message

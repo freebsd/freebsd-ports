@@ -19,7 +19,9 @@ RUN_DEPENDS=	dotnet:lang/dotnet-host \
 		${LOCALBASE}/lib/powershell/libpsl-native.so:shells/libpowershell-native \
 		${LOCALBASE}/lib/libicuuc.so:devel/icu
 
-USES=		gssapi:mit ssl:run
+USES=		cpe gssapi:mit ssl:run
+
+CPE_VENDOR=	microsoft
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	PowerShell

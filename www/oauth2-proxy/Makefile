@@ -11,9 +11,12 @@ WWW=		https://github.com/oauth2-proxy/oauth2-proxy
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		cpe go:modules
 USE_GITHUB=	yes
 USE_RC_SUBR=	oauth2_proxy
+
+CPE_VENDOR=	oauth2_proxy_project
+CPE_PRODUCT=	${PORTNAME:tl:S/-/_/g}
 
 GO_MOD_DIST=	github
 GO_MODULE=	github.com/${PORTNAME}/${PORTNAME}

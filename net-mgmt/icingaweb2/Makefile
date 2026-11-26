@@ -16,12 +16,15 @@ RUN_DEPENDS=	icinga-php-library${PHP_PKGNAMESUFFIX}>=0.14.2:net-mgmt/icinga-php-
 		icingaweb2-module-incubator${PHP_PKGNAMESUFFIX}>=0.20.0:net-mgmt/icingaweb2-module-incubator@${PHP_FLAVOR} \
 		icingaweb2-module-monitoring${PHP_PKGNAMESUFFIX}>=2.12.6:net-mgmt/icingaweb2-module-monitoring@${PHP_FLAVOR}
 
-USES=		php:build,web,flavors shebangfix gettext
+USES=		cpe php:build,web,flavors shebangfix gettext
 USE_PHP=	bcmath bitset ctype curl dom fileinfo filter gd gettext iconv intl ldap \
 		mbstring mcrypt memcache memcached opcache pdo \
 		pdo_sqlite posix session simplexml soap sockets sqlite3 xml \
 		zlib
 IGNORE_WITH_PHP=	86
+
+CPE_VENDOR=	icinga
+CPE_PRODUCT=	icinga_web_2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	icinga

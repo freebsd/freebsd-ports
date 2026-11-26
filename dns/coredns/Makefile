@@ -12,7 +12,9 @@ WWW=		https://coredns.io \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		cpe go:modules
+
+CPE_VENDOR=	coredns.io
 
 GO_MODULE=	github.com/${PORTNAME}/${PORTNAME}
 

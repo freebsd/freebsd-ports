@@ -19,9 +19,11 @@ LIB_DEPENDS=	libavutil.so:multimedia/ffmpeg \
 		libsixel.so:graphics/libsixel \
 		libturbojpeg.so:graphics/libjpeg-turbo
 
-USES=		cmake compiler:c++17-lang pkgconfig
+USES=		cmake compiler:c++17-lang cpe pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	hzeller
+
+CPE_VENDOR=	hzeller
 
 # timg requires libavutil, contained in multimedia/ffmpeg
 # isn't splitted libavcodec, libavutil, etc.

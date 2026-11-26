@@ -28,7 +28,10 @@ ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le
 
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
-USES=		cargo ssl
+USES=		cargo cpe ssl
+
+CPE_VENDOR=	voidzero
+CPE_PRODUCT=	vite+
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	voidzero-dev

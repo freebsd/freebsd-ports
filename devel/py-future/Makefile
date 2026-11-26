@@ -11,8 +11,11 @@ WWW=		https://python-future.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		python:2.7+
+USES=		cpe python:2.7+
 USE_PYTHON=	autoplist concurrent distutils pytest
+
+CPE_VENDOR=	pythoncharmers
+CPE_PRODUCT=	python-future
 
 NO_ARCH=	yes
 

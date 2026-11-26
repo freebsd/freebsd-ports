@@ -11,7 +11,7 @@ WWW=		https://lexbor.com/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:testing
+USES=		cmake:testing cpe
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 

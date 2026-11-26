@@ -13,10 +13,13 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}protobuf>=5.29.4:devel/py-protobuf@${PY_FLAVOR}
 
-USES=		python
+USES=		cpe python
 USE_GITHUB=	yes
 GH_ACCOUNT=	mysql
 USE_PYTHON=	autoplist pep517
+
+CPE_VENDOR=	oracle
+CPE_PRODUCT=	mysql_connector/python
 
 NO_ARCH=	yes
 

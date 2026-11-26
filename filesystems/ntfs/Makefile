@@ -14,13 +14,16 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libuuid.so:misc/libuuid
 
-USES=		fuse pkgconfig iconv libtool localbase:ldflags tar:tgz
+USES=		cpe fuse pkgconfig iconv libtool localbase:ldflags tar:tgz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--exec-prefix=${PREFIX} --disable-mount-helper \
 		--disable-mtab --with-fuse=external --disable-ldconfig
 INSTALL_TARGET=	install-strip
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_ntfsprogs//}
+
+CPE_VENDOR=	tuxera
+CPE_PRODUCT=	ntfs-3g
 
 OPTIONS_DEFINE=	CRYPTO DOCS EXTRAS LOCK UBLIO
 OPTIONS_DEFAULT=EXTRAS LOCK UBLIO

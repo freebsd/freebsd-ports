@@ -10,7 +10,9 @@ WWW=		https://github.com/freeswitch/sofia-sip/
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf gmake gnome libtool pathfix pkgconfig ssl
+USES=		autoreconf cpe gmake gnome libtool pathfix pkgconfig ssl
+
+CPE_VENDOR=	signalwire
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	freeswitch

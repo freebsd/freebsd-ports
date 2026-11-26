@@ -38,13 +38,16 @@ LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 RUN_DEPENDS=	bash:shells/bash \
 		gmake:devel/gmake
 
-USES=		cmake compiler:c++14-lang iconv fortran gettext-runtime gl \
+USES=		cmake compiler:c++14-lang cpe iconv fortran gettext-runtime gl \
 		gnome blaslapack localbase:ldflags qt:6 readline pkgconfig \
 		python:build shebangfix java
 USE_QT=		5compat base declarative positioning webchannel webengine svg tools:build
 USE_GL=		gl opengl
 USE_GNOME=	libxml2
 USE_LDCONFIG=	${PREFIX}/lib/omc ${PREFIX}/lib/omc/OMSimulator ${PREFIX}/lib/omc/cpp ${PREFIX}/lib/omc/ffi # https://github.com/OpenModelica/OpenModelica/issues/9925
+
+CPE_VENDOR=	${PORTNAME:tl}
+CPE_PRODUCT=	omcompiler
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenModelica

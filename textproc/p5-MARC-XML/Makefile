@@ -17,7 +17,9 @@ RUN_DEPENDS=	p5-MARC-Record>=2:textproc/p5-MARC-Record \
 		p5-MARC-Charset>=0.98:textproc/p5-MARC-Charset \
 		p5-XML-SAX>=0.12:textproc/p5-XML-SAX
 
-USES=		perl5
+USES=		cpe perl5
 USE_PERL5=	configure
+
+CPE_VENDOR=	galen_charlton
 
 .include <bsd.port.mk>

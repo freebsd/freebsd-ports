@@ -9,7 +9,7 @@ WWW=		https://seaweedfs.com/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		cpe go:modules
 
 USE_RC_SUBR=	seaweedfs
 

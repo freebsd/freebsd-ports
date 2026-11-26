@@ -8,11 +8,14 @@ WWW=		https://www.chocolate-doom.org/
 
 LICENSE=	GPLv2
 
-USES=		autoreconf gmake pkgconfig python:build sdl
+USES=		autoreconf cpe gmake pkgconfig python:build sdl
 USE_GITHUB=	yes
 GH_TAGNAME=	${PORTNAME}-${DISTVERSION}
 USE_RC_SUBR=	chocolate-server
 USE_SDL=	mixer2 net2 sdl2
+
+CPE_VENDOR=	${PORTNAME:tl}
+CPE_PRODUCT=	${PORTNAME:tl:S/-/_/g}
 
 GNU_CONFIGURE=	yes
 

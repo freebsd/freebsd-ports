@@ -15,8 +15,11 @@ FLAVORS=	console sdl
 FLAVOR?=	${FLAVORS[1]}
 sdl_PKGNAMESUFFIX=	-sdl
 
-USES=		bison compiler:c++11-lib gmake lua:54 perl5 pkgconfig \
+USES=		bison compiler:c++11-lib cpe gmake lua:54 perl5 pkgconfig \
 		python:build shebangfix sqlite tar:xz
+
+CPE_VENDOR=	dungeon_crawl_stone_soup_project
+CPE_PRODUCT=	dungeon_crawl_stone_soup
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	crawl

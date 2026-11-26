@@ -13,7 +13,10 @@ LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate \
 		libpng.so:graphics/png \
 		libfluidsynth.so:audio/fluidsynth
 
-USES=		autoreconf desktop-file-utils pkgconfig python:build sdl shebangfix
+USES=		autoreconf cpe desktop-file-utils pkgconfig python:build sdl shebangfix
+
+CPE_VENDOR=	chocolate-doom
+CPE_PRODUCT=	${PORTNAME:tl:S/-/_/g}
 
 CONFLICTS_INSTALL=	chocolate-doom
 

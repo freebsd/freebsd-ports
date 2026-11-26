@@ -13,8 +13,9 @@ WWW=		https://redmine.lighttpd.net/projects/spawn-fcgi
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		meson
+USES=		cpe meson
 USE_RC_SUBR=	spawn-fcgi
+CPE_VENDOR=	lighttpd
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

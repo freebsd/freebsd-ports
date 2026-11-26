@@ -12,9 +12,12 @@ LICENSE=	MIT
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libpcre2-8.so:devel/pcre2
 
-USES=		desktop-file-utils lua:54 meson pkgconfig sdl
+USES=		cpe desktop-file-utils lua:54 meson pkgconfig sdl
 USE_SDL=	sdl2
 MESON_ARGS=	-Duse_system_lua=true
+
+CPE_VENDOR=	${PORTNAME:tl}
+CPE_PRODUCT=	${PORTNAME:tl:S/-/_/g}
 
 USE_GITHUB=	yes
 GH_PROJECT=	${PORTNAME}-colors:colors ${PORTNAME}-plugins:plugins

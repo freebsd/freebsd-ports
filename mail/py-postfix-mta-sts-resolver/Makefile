@@ -17,11 +17,13 @@ RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss \
 		${PYTHON_PKGNAMEPREFIX}aiohttp>=3.4.4:www/py-aiohttp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=3.12:devel/py-pyyaml@${PY_FLAVOR}
 
-USES=		python
+USES=		cpe python
 USE_GITHUB=	yes
 GH_ACCOUNT=	Snawoot
 USE_PYTHON=	autoplist pep517
 USE_RC_SUBR=	mta_sts
+
+CPE_VENDOR=	postfix-mta-sts-resolver_project
 
 NO_ARCH=	yes
 

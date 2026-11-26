@@ -22,7 +22,9 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libpng16.so:graphics/png \
 		libwebp.so:graphics/webp
 
-USES=		compiler:c++17-lang jpeg ninja python:build
+USES=		compiler:c++17-lang cpe jpeg ninja python:build
+
+CPE_VENDOR=	google
 
 USE_LDCONFIG=		yes
 USE_GITHUB=		yes

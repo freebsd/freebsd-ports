@@ -15,7 +15,7 @@ CONFLICTS_INSTALL=	anope
 FLAVORS=	default mysql
 FLAVOR?=	${FLAVORS:[1]}
 
-USES=		cmake localbase:ldflags
+USES=		cmake cpe localbase:ldflags
 USE_GITHUB=	yes
 USE_RC_SUBR=	anope
 

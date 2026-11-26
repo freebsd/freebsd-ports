@@ -66,8 +66,9 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiofile>0:devel/py-aiofile@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ruff>=0.12.8:devel/py-ruff@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ty>0:devel/py-ty@${PY_FLAVOR}
 
-USES=		python
+USES=		cpe python
 USE_PYTHON=	autoplist concurrent pep517 pytest
+CPE_VENDOR=	jlowin
 
 MAKE_ENV+=	UV_DYNAMIC_VERSIONING_BYPASS=${DISTVERSION}
 

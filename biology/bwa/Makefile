@@ -14,10 +14,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	simde>0:devel/simde
 
-USES=		gmake localbase perl5 shebangfix
+USES=		cpe gmake localbase perl5 shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	lh3
 USE_PERL5=	run
+
+CPE_VENDOR=	burrow-wheeler_aligner_project
+CPE_PRODUCT=	burrow-wheeler_aligner
 
 SHEBANG_FILES=	qualfa2fq.pl xa2multi.pl
 

@@ -13,7 +13,7 @@ WWW=		https://wazuh.com/
 
 LICENSE=	GPLv2
 
-USES=		dos2unix	
+USES=		cpe dos2unix
 NO_BUILD=	yes
 
 DOS2UNIX_FILES=	${WRKDIR}/wazuh-template.json

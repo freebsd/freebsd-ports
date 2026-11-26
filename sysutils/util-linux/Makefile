@@ -21,8 +21,10 @@ LIB_DEPENDS=	libblkid.so:filesystems/libblkid \
 		libuuid.so:misc/libuuid
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		autoreconf gettext-tools gmake libtool ncurses pkgconfig \
+USES=		autoreconf cpe gettext-tools gmake libtool ncurses pkgconfig \
 		shebangfix tar:xz
+
+CPE_VENDOR=	kernel
 
 USE_LDCONFIG=	yes
 

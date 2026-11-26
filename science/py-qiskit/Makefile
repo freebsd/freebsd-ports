@@ -23,8 +23,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dill>=0.3:devel/py-dill@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}stevedore>=0:devel/py-stevedore@${PY_FLAVOR}
 
-USES=		cargo python
+USES=		cargo cpe python
 USE_PYTHON=	autoplist pep517 pytest
+
+CPE_VENDOR=	ibm
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Qiskit

@@ -16,7 +16,7 @@ LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 LIB_DEPENDS=	libsodium.so:security/libsodium
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		cargo llvm:build pkgconfig shebangfix
+USES=		cargo cpe llvm:build pkgconfig shebangfix
 USE_GITHUB=	yes
 CARGO_INSTALL_PATH=	rosenpass
 

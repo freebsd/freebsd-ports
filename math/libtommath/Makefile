@@ -12,7 +12,9 @@ WWW=		https://libtom.net/
 LICENSE=	UNLICENSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:testing tar:xz
+USES=		cmake:testing cpe tar:xz
+
+CPE_VENDOR=	libtom
 
 OPTIONS_DEFINE=	OPTIMIZED_CFLAGS LTO
 OPTIONS_DEFAULT=OPTIMIZED_CFLAGS LTO

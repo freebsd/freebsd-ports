@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	git:devel/git
 
-USES=		go:modules
+USES=		cpe go:modules
 GO_MODULE=	github.com/charmbracelet/soft-serve
 GO_TARGET=	./cmd/soft
 USE_RC_SUBR=	soft-serve
@@ -35,6 +35,9 @@ USERS=		git
 GROUPS=		git
 PLIST_FILES=	${DOCSDIR_REL}/README.md \
 		bin/${PORTNAME}
+
+CPE_VENDOR=	charm
+CPE_PRODUCT=	${PORTNAME:tl:S/-/_/g}
 
 .include <bsd.port.options.mk>
 

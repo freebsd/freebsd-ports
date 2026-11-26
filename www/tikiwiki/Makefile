@@ -11,10 +11,12 @@ WWW=		https://tiki.org/
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-USES=		php:web
+USES=		cpe php:web
 USE_PHP=	calendar dom fileinfo gd gettext intl mbstring mcrypt \
 		posix session xml zip zlib
 IGNORE_WITH_PHP=	86
+
+CPE_PRODUCT=	tiki
 
 NO_BUILD=	yes
 NO_MTREE=	yes

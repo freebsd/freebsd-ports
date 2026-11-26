@@ -15,8 +15,10 @@ LIB_DEPENDS=	libabsl_strings.so:devel/abseil \
 		libprotobuf-lite.so:devel/protobuf
 TEST_DEPENDS=	googletest>0:devel/googletest
 
-USES=		cmake:testing compiler:c++17-lang
+USES=		cmake:testing compiler:c++17-lang cpe
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	google
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	google

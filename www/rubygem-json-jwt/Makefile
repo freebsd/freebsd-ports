@@ -17,7 +17,9 @@ RUN_DEPENDS=	rubygem-activesupport60>=4.2:devel/rubygem-activesupport60 \
 		rubygem-faraday>=2.0<3:www/rubygem-faraday \
 		rubygem-faraday-follow_redirects>=0:www/rubygem-faraday-follow_redirects
 
-USES=		gem
+USES=		cpe gem
+
+CPE_VENDOR=	json-jwt_project
 
 NO_ARCH=	yes
 

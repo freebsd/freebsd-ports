@@ -12,7 +12,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
-USES=		go
+USES=		cpe go
+
+CPE_VENDOR=	amazon
+CPE_PRODUCT=	${PORTNAME:tl:S/-/_/g}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	aws

@@ -10,6 +10,8 @@ WWW=		https://github.com/brianmario/yajl-ruby
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gem
+USES=		cpe gem
+
+CPE_VENDOR=	yajl-ruby_project
 
 .include <bsd.port.mk>

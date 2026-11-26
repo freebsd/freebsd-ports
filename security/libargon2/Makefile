@@ -10,8 +10,11 @@ WWW=		https://github.com/P-H-C/phc-winner-argon2
 LICENSE=	CC0-1.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake
+USES=		cpe gmake
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	argon2_project
+CPE_PRODUCT=	argon2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	P-H-C

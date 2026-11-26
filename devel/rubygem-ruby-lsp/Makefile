@@ -16,7 +16,10 @@ RUN_DEPENDS=	rubygem-language_server-protocol>=3.17.0<3.18:devel/rubygem-languag
 		rubygem-prism1>=1.2<2.0:textproc/rubygem-prism1 \
 		rubygem-rbs>=3<5:devel/rubygem-rbs
 
-USES=		gem
+USES=		cpe gem
+
+CPE_VENDOR=	shopify
+CPE_PRODUCT=	${PORTNAME:tl:S/-/_/g}
 
 NO_ARCH=	yes
 

@@ -12,8 +12,10 @@ LICENSE=	PostgreSQL
 
 NOT_FOR_ARCHS=		i386
 
-USES=		gmake pgsql
+USES=		cpe gmake pgsql
 WANT_PGSQL=	server
+
+CPE_VENDOR=	pgvector_project
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	pgvector

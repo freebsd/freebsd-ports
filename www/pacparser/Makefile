@@ -12,10 +12,12 @@ LICENSE_FILE=	${WRKSRC}/../COPYING
 
 BUILD_DEPENDS=	bash:shells/bash
 
-USES=		gmake
+USES=		cpe gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	manugarg
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	pacparser_project
 
 MAKE_ENV+=	NO_INTERNET=1
 MAKE_JOBS_UNSAFE=	yes

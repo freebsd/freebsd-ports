@@ -17,8 +17,10 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLA
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asgiref>=3.9.0<4:www/py-asgiref@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django60>=4.2:www/py-django60@${PY_FLAVOR}
 
-USES=		python:3.12+
+USES=		cpe python:3.12+
 USE_PYTHON=	autoplist concurrent pep517
+
+CPE_VENDOR=	djangoproject
 
 NO_ARCH=	yes
 

@@ -14,7 +14,9 @@ MY_DEPENDS=	bash:shells/bash
 BUILD_DEPENDS=	${MY_DEPENDS}
 RUN_DEPENDS=	${MY_DEPENDS}
 
-USES=		perl5 shebangfix
+USES=		cpe perl5 shebangfix
+
+CPE_VENDOR=	lesspipe_project
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	wofr06

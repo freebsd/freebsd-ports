@@ -27,8 +27,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bcrypt>=3.1.3:security/py-bcrypt@${PY_FLAVOR
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.11.0:devel/py-typing-extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}webob>=1.8.0:www/py-webob@${PY_FLAVOR}
 
-USES=		python:3.11+
+USES=		cpe python:3.11+
 USE_PYTHON=	autoplist concurrent pep517
+
+CPE_VENDOR=	openstack
 
 NO_ARCH=	yes
 

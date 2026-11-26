@@ -22,7 +22,9 @@ BUILD_DEPENDS=	${MY_DEPENDS} \
 RUN_DEPENDS=	${MY_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}pip>=22.2.2:devel/py-pip@${PY_FLAVOR}
 
-USES=		compiler:c++17-lang gmake nodejs python shebangfix
+USES=		compiler:c++17-lang cpe gmake nodejs python shebangfix
+
+CPE_VENDOR=	getgrist
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gristlabs

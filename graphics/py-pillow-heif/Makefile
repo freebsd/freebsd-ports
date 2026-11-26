@@ -19,8 +19,10 @@ BUILD_DEPENDS=	libheif>=1.23.6:graphics/libheif \
 LIB_DEPENDS=	libheif.so:graphics/libheif
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>=11.1.0:graphics/py-pillow@${PY_FLAVOR}
 
-USES=		localbase python
+USES=		cpe localbase python
 USE_PYTHON=	autoplist concurrent pep517
+
+CPE_VENDOR=	bigcat88
 
 LDFLAGS+=	-lheif
 

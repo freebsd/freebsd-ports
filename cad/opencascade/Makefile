@@ -25,7 +25,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig	\
 RUN_DEPENDS=	bash:shells/bash
 
 # Check ${WRKSRC}/dox/build/build_occt/building_occt.md
-USES=		cmake compiler:c++17-lang eigen:3 gettext-runtime	\
+USES=		cmake compiler:c++17-lang cpe eigen:3 gettext-runtime \
 		gl gnome localbase python qmake:no_configure,no_env qt:5\
 		shebangfix tk xorg
 USE_XORG=	ice sm x11 xau xcb xdmcp xext xft xi xmu xrender xscrnsaver xt
@@ -33,6 +33,9 @@ USE_GL=		egl gl glesv2 glu
 USE_GNOME=	libxml2
 USE_QT=		buildtools:build core declarative gui network quick3d	\
 		linguisttools widgets xml
+
+CPE_VENDOR=	${PORTNAME:tl}
+CPE_PRODUCT=	open_cascade_technology
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Open-Cascade-SAS

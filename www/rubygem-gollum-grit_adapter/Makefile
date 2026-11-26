@@ -11,7 +11,10 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-gitlab-grit>=2.7.1<3:textproc/rubygem-gitlab-grit
 
-USES=		gem
+USES=		cpe gem
+
+CPE_VENDOR=	gollum_project
+CPE_PRODUCT=	grit_adapter
 
 NO_ARCH=	yes
 

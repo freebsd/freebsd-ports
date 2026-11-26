@@ -11,11 +11,13 @@ LICENSE=	GPLv2 # only
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 #USES=		autoreconf gmake libtool
-USES=		autoreconf libtool
+USES=		autoreconf cpe libtool
 USE_GITHUB=	yes
 GH_ACCOUNT=	rpodgorny
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	${PORTNAME}
+
+CPE_VENDOR=	uptimed_project
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share

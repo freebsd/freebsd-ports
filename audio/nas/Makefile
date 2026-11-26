@@ -9,7 +9,7 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Network Audio System
 WWW=		https://radscan.com/nas.html
 
-USES=		imake perl5 shebangfix xorg
+USES=		cpe imake perl5 shebangfix xorg
 SHEBANG_FILES=	clients/audio/auscope/auscope
 USE_PERL5=	run
 USE_CSTD=	gnu89
@@ -17,6 +17,9 @@ USE_XORG=	x11 xext xt xau sm ice xpm xmu xaw
 USE_LDCONFIG=	yes
 MAKE_ENV+=	COMPRESS_CMD="${COMPRESS_CMD:S/c//}"
 MAKE_JOBS_UNSAFE=	yes
+
+CPE_VENDOR=	radscan
+CPE_PRODUCT=	network_audio_system
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 

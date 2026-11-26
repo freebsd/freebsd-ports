@@ -11,7 +11,9 @@ WWW=		https://github.com/ruby-ldap/ruby-net-ldap
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/License.rdoc
 
-USES=		gem
+USES=		cpe gem
+
+CPE_VENDOR=	net-ldap_project
 
 NO_ARCH=	yes
 

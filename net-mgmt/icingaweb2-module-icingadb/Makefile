@@ -18,7 +18,11 @@ RUN_DEPENDS=	icinga-php-library${PHP_PKGNAMESUFFIX}>=0.9:net-mgmt/icinga-php-lib
 		icingadb>0:net-mgmt/icingadb \
 		icingaweb2${PHP_PKGNAMESUFFIX}>=2.9:net-mgmt/icingaweb2@${PHP_FLAVOR}
 
-USES=		php:web,flavors shebangfix
+USES=		cpe php:web,flavors shebangfix
+
+CPE_VENDOR=	icinga
+CPE_PRODUCT=	icinga_db_web
+
 # php json extension is required but it's statically linked in default php
 USE_PHP=	curl dom xml
 IGNORE_WITH_PHP=	86

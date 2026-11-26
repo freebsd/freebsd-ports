@@ -14,7 +14,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	autoconf-archive>=0:devel/autoconf-archive \
 		txt2man:textproc/txt2man
 
-USES=		autoreconf gettext-tools gmake pkgconfig ssl
+USES=		autoreconf cpe gettext-tools gmake pkgconfig ssl
+
+CPE_VENDOR=	axel_project
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	axel-download-accelerator

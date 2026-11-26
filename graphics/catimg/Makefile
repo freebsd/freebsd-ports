@@ -10,9 +10,11 @@ WWW=		https://github.com/posva/catimg/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake
+USES=		cmake cpe
 USE_GITHUB=	yes
 GH_ACCOUNT=	posva
+
+CPE_VENDOR=	catimg_project
 
 PLIST_FILES=	bin/catimg \
 		share/man/man1/catimg.1.gz

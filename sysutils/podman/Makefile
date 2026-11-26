@@ -20,10 +20,12 @@ RUN_DEPENDS=	conmon:sysutils/conmon \
 		container-libs-common>=0:sysutils/containers-common \
 		ocijail:sysutils/ocijail
 
-USES=		gmake go:no_targets pkgconfig python:build shebangfix
+USES=		cpe gmake go:no_targets pkgconfig python:build shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	podman-container-tools
 USE_RC_SUBR=	podman podman_service
+
+CPE_VENDOR=	podman_project
 
 SHEBANG_FILES=	${WRKSRC}/hack/markdown-preprocess
 MAKE_ARGS=	SHELL=${LOCALBASE}/bin/bash

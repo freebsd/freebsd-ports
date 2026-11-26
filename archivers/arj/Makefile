@@ -23,7 +23,10 @@ IGNORE_PATCHES=	002_no_remove_static_const.patch  \
 		hurd_no_fcntl_getlk.patch \
 		reproducible_help_archive.patch
 
-USES=		autoreconf gmake
+USES=		autoreconf cpe gmake
+
+CPE_VENDOR=	arj_software
+CPE_PRODUCT=	arj_archiver
 
 EXTRA_PATCHES=	${WRKDIR}/debian/patches/*.patch
 PATCH_STRIP=	-p1

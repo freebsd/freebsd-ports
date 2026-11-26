@@ -13,7 +13,9 @@ LICENSE_FILE=	${WRKSRC}/license.md
 
 RUN_DEPENDS=	rubygem-rack22>=2,3<3,3:www/rubygem-rack22
 
-USES=		gem
+USES=		cpe gem
+
+CPE_VENDOR=	rack
 
 NO_ARCH=	yes
 PORTSCOUT=	limit:^1\.0\.

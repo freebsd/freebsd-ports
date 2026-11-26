@@ -14,7 +14,7 @@ WWW=		https://www.hdfgroup.org/ \
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake:testing compiler:c11 localbase perl5
+USES=		cmake:testing compiler:c11 cpe localbase perl5
 USE_PERL5=	build
 
 CFLAGS+=	-D__LONG_LONG_SUPPORTED

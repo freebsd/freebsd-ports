@@ -27,7 +27,7 @@ LIB_DEPENDS=	libargon2.so:security/libargon2 \
 		libqrencode.so:graphics/libqrencode \
 		libbotan-3.so:security/botan3
 
-USES=		cmake compiler:c++17-lang desktop-file-utils pkgconfig qt:5 \
+USES=		cmake compiler:c++17-lang cpe desktop-file-utils pkgconfig qt:5 \
 		readline shared-mime-info tar:xz xorg
 USE_QT=		concurrent core dbus gui network svg widgets buildtools:build \
 		linguisttools:build qmake:build testlib:build x11extras

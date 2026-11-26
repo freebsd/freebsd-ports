@@ -18,7 +18,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 EXTRACT_DEPENDS=	${UNZIP_CMD}:archivers/unzip
 
-USES=		java:ant,run
+USES=		cpe java:ant,run
+
+CPE_VENDOR=	apache
+CPE_PRODUCT=	formatting_objects_processor
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 PORTDOCS=	*

@@ -14,7 +14,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	help2man:misc/help2man
 LIB_DEPENDS=	libunistring.so:devel/libunistring
 
-USES=		charsetfix iconv libtool localbase makeinfo
+USES=		charsetfix cpe iconv libtool localbase makeinfo
+
+CPE_VENDOR=	gnu
 
 CONFIGURE_ARGS=	--disable-nls \
 		--enable-ld-version-script \

@@ -14,7 +14,10 @@ ONLY_FOR_ARCHS=	amd64
 BUILD_DEPENDS=	npm-node24>0:www/npm-node24
 RUN_DEPENDS=	${LOCALBASE}/sbin/gsad:security/gsad
 
-USES=		nodejs:24,build
+USES=		cpe nodejs:24,build
+
+CPE_VENDOR=	greenbone
+CPE_PRODUCT=	greenbone_security_assistant
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	greenbone

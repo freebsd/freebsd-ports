@@ -19,8 +19,11 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex \
 LIB_DEPENDS=	${LLVM_LIBLLVM}:devel/llvm${LLVM_VERSION} \
 		libtbb.so:devel/onetbb
 
-USES=		bison cmake compiler:c++17-lang llvm:lib,min=20,max=20 python:build,test shebangfix
+USES=		bison cmake compiler:c++17-lang cpe llvm:lib,min=20,max=20 python:build,test shebangfix
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	intel
+CPE_PRODUCT=	implicit_spmd_program_compiler
 
 USE_GITHUB=	yes
 GH_TUPLE=	google:googletest:6a7ed31:googletest/ispcrt/tests/vendor/google/googletest

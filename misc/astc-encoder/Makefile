@@ -11,7 +11,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BROKEN_riscv64=	ld: error: lto.tmp: cannot link object files with different floating-point ABI
 
-USES=		cmake:testing compiler:c++14-lang python:test
+USES=		cmake:testing compiler:c++14-lang cpe python:test
+
+CPE_VENDOR=	arm
+CPE_PRODUCT=	adaptive_scalable_texture_compression_encoder
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ARM-software

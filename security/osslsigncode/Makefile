@@ -9,9 +9,11 @@ WWW=		https://github.com/mtrojnar/osslsigncode
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-USES=		cmake pkgconfig python ssl
+USES=		cmake cpe pkgconfig python ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	mtrojnar
+
+CPE_VENDOR=	osslsigncode_project
 
 PLIST_FILES=	bin/osslsigncode \
 		share/bash-completion/completions/osslsigncode.bash

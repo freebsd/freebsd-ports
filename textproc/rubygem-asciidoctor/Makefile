@@ -12,7 +12,7 @@ WWW=		https://asciidoctor.org/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gem
+USES=		cpe gem
 
 NO_ARCH=	yes
 

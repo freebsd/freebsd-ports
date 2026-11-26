@@ -9,10 +9,13 @@ WWW=		https://www.gnu.org/software/gsl
 
 LICENSE=	GPLv3
 
-USES=		libtool pathfix
+USES=		cpe libtool pathfix
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
+
+CPE_VENDOR=	gnu
+CPE_PRODUCT=	gnu_scientific_library
 
 INFO=		gsl-ref
 

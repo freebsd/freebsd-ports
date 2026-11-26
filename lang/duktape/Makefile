@@ -11,7 +11,9 @@ WWW=		https://duktape.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		tar:xz
+USES=		cpe tar:xz
+
+CPE_VENDOR=	duktape_project
 
 MAKEFILE=	Makefile.cmdline
 ALL_TARGET=	duk

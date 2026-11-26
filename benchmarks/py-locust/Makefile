@@ -40,7 +40,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}retry2>=0:devel/py-retry2@${PY_FLAVOR}
 
-USES=		python
+USES=		cpe python
 USE_PYTHON=	cryptography_test pep517
 
 NO_ARCH=	yes

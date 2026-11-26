@@ -31,9 +31,13 @@ MAKE_ARGS=	-Dxmlbeans.url=file://${DISTDIR}/${DIST_SUBDIR}/xmlbeans-2.5.0.zip \
 OPTIONS_DEFAULT=	LINEDIT
 OPTIONS_DEFINE=	LINEDIT
 
-USES=		zip
+USES=		cpe zip
 USE_GITHUB=	yes
 GH_ACCOUNT=	mozilla
+
+CPE_VENDOR=	mozilla
+CPE_VERSION=	${DISTVERSION:C/R.*//:S/_/./g}
+CPE_UPDATE=	${DISTVERSION:C/^[^R]*//:tl}
 
 .include <bsd.port.options.mk>
 

@@ -20,7 +20,9 @@ RUN_DEPENDS=	containernetworking-plugins>=0:net/containernetworking-plugins \
 		container-libs-common>=0:sysutils/containers-common \
 		ocijail:sysutils/ocijail
 
-USES=		gmake go:no_targets pkgconfig
+USES=		cpe gmake go:no_targets pkgconfig
+
+CPE_VENDOR=	buildah_project
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	podman-container-tools

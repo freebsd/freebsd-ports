@@ -22,7 +22,7 @@ LIB_DEPENDS=	libargon2.so:security/libargon2 \
 		libbotan-3.so:security/botan3 \
 		libqrencode.so:graphics/libqrencode
 
-USES=		cmake compiler:c++17-lang desktop-file-utils minizip \
+USES=		cmake compiler:c++17-lang cpe desktop-file-utils minizip \
 		pkgconfig qt:5 readline shared-mime-info tar:xz xorg
 
 USE_QT=		concurrent core dbus gui network svg wayland widgets x11extras \

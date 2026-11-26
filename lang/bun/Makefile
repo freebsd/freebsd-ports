@@ -49,8 +49,9 @@ LICENSE_COMB=	multi
 ONLY_FOR_ARCHS=		aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	requires an upstream FreeBSD bootstrap binary (only aarch64/amd64 are published)
 
-USES=		shebangfix cargo
+USES=		cpe shebangfix cargo
 USE_GITHUB=	yes
+CPE_VENDOR=	anthropic
 GH_ACCOUNT=	oven-sh
 GH_TUPLE=	oven-sh:boringssl:41bf9b59c2ebf277a7aa427e1ecad5cc80dd4d4f:boringssl \
 		google:brotli:db24a98aed38a16de78cc05ca15cdd8dc2a0d92d:brotli \

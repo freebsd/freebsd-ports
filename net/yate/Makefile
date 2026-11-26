@@ -16,7 +16,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libgsm.so:audio/gsm \
 		libspeex.so:audio/speex
 
-USES=		autoreconf bison gmake shebangfix
+USES=		autoreconf bison cpe gmake shebangfix
 USE_CSTD=	gnu11
 USE_GITHUB=	yes
 GH_ACCOUNT=	yatevoip
@@ -24,6 +24,9 @@ GH_TAGNAME=	e0a20c4
 USE_GCC=	yes
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	yate
+
+CPE_VENDOR=	${PORTNAME:tl}
+CPE_PRODUCT=	yet_another_telephony_engine
 
 SHEBANG_FILES=	share/scripts/banbrutes.php \
 		share/scripts/leavemail.php \

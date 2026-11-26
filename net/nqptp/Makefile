@@ -9,9 +9,12 @@ WWW=		https://github.com/mikebrady/nqptp
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		autoreconf
+USES=		autoreconf cpe
 USE_GITHUB=	yes
 GH_ACCOUNT=	mikebrady
+
+CPE_VENDOR=	mikebrady
+CPE_PRODUCT=	not_quite_ptp
 
 GNU_CONFIGURE=	yes
 

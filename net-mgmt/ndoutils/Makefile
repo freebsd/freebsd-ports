@@ -11,8 +11,10 @@ WWW=		https://www.nagios.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		compiler:c11 mysql perl5 ssl
+USES=		compiler:c11 cpe mysql perl5 ssl
 USE_RC_SUBR=	ndo2db
+
+CPE_VENDOR=	nagios
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/ndoutils \

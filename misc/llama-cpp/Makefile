@@ -20,7 +20,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libggml-base.so:misc/ggml
 
-USES=		cmake:testing compiler:c++11-lang python:run shebangfix ssl
+USES=		cmake:testing compiler:c++11-lang cpe python:run shebangfix ssl
+
+CPE_VENDOR=	ggml
+CPE_PRODUCT=	llama.cpp
 
 BROKEN_armv7=	clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=278810
 BROKEN_i386=	compilation fails, see https://github.com/ggml-org/llama.cpp/issues/9545

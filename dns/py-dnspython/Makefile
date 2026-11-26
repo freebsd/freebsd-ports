@@ -13,7 +13,7 @@ LICENSE=	ISCL
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}uv-build>=0.9.21:devel/py-uv-build@${PY_FLAVOR}
 
-USES=		python
+USES=		cpe python
 USE_PYTHON=	autoplist concurrent pep517 pytest
 
 BINARY_ALIAS=	git=false

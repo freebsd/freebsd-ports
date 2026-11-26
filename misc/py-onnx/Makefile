@@ -34,8 +34,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ml-dtypes>=0.5.4:math/py-ml-dtypes@${PY_FLAV
 OPT_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>=12.2.0:graphics/py-pillow@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}parameterized>0:devel/py-parameterized@${PY_FLAVOR}
 
-USES=		compiler:c++17-lang python shebangfix
+USES=		compiler:c++17-lang cpe python shebangfix
 USE_PYTHON=	pep517 concurrent autoplist pytest
+
+CPE_VENDOR=	linuxfoundation
 
 CXXFLAGS+=	-Dstat64=stat
 MAKE_ENV+=	CMAKE_ARGS=-DProtobuf_PROTOC_EXECUTABLE=${LOCALBASE}/bin/protoc

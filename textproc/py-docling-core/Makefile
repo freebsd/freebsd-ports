@@ -56,8 +56,10 @@ RUN_DEPENDS+=	${DCLQ_DEPENDS} \
 		${CHUNKING_DEPENDS} \
 		${CHUNKING_OPENAI_DEPENDS}
 
-USES=		python
+USES=		cpe python
 USE_PYTHON=	autoplist concurrent pep517 pytest
+
+CPE_VENDOR=	docling
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	docling-project

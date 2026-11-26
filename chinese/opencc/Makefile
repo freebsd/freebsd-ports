@@ -15,11 +15,14 @@ BUILD_DEPENDS=	rapidjson>=0:devel/rapidjson \
 LIB_DEPENDS=	libmarisa.so:devel/marisa-trie
 TEST_DEPENDS=	googletest>=0:devel/googletest
 
-USES=		cmake:testing compiler:c++17-lang localbase:ldflags python:build
+USES=		cmake:testing compiler:c++17-lang cpe localbase:ldflags python:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	BYVoid
 GH_PROJECT=	OpenCC
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	byvoid
+CPE_PRODUCT=	open_chinese_convert
 
 CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_Git \
 		USE_SYSTEM_MARISA \

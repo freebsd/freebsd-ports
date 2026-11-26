@@ -12,7 +12,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	googletest>0:devel/googletest
 
-USES=		cmake:testing localbase:ldflags python ssl
+USES=		cmake:testing cpe localbase:ldflags python ssl
+
+CPE_VENDOR=	webassembly
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	WebAssembly

@@ -11,9 +11,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 TEST_DEPENDS=	dbus-daemon:devel/dbus
 
-USES=		gnome meson pkgconfig
+USES=		cpe gnome meson pkgconfig
 USE_GITHUB=	yes
 USE_GNOME=	glib20
+CPE_VENDOR=	flatpak
 GH_ACCOUNT=	flatpak
 PLIST_FILES=	bin/${PORTNAME}
 

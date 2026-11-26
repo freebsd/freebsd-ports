@@ -10,8 +10,10 @@ WWW=		https://github.com/mchehab/zbar/
 
 LICENSE=	LGPL21
 
-USES=		autoreconf gettext-tools gmake iconv libtool localbase:ldflags pathfix pkgconfig
+USES=		autoreconf cpe gettext-tools gmake iconv libtool localbase:ldflags pathfix pkgconfig
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	zbar_project
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share

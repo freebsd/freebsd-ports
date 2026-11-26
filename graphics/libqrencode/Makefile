@@ -12,11 +12,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		cmake iconv pathfix pkgconfig
+USES=		cmake cpe iconv pathfix pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	fukuchi
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+
+CPE_VENDOR=	qrencode_project
+CPE_PRODUCT=	qrencode
 
 CMAKE_ARGS=	-DBUILD_SHARED_LIBS=ON
 PLIST_FILES=	bin/qrencode \

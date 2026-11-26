@@ -11,7 +11,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libsass.so:textproc/libsass
 
-USES=		autoreconf compiler:c++11-lib gmake libtool localbase
+USES=		autoreconf compiler:c++11-lib cpe gmake libtool localbase
+
+CPE_VENDOR=	sass-lang
 
 GH_ACCOUNT=	sass
 GNU_CONFIGURE=	yes

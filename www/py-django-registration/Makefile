@@ -17,8 +17,10 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pdm-backend>0:devel/py-pdm-backend@${PY_FL
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}confusable-homoglyphs>=3.0:devel/py-confusable-homoglyphs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django52>=4.2:www/py-django52@${PY_FLAVOR}
 
-USES=		python
+USES=		cpe python
 USE_PYTHON=	autoplist pep517
+
+CPE_VENDOR=	django-registration_project
 
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}django-registration-redux
 

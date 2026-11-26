@@ -13,7 +13,10 @@ WWW=		https://commons.apache.org/proper/commons-collections/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		java:run
+USES=		cpe java:run
+
+CPE_VENDOR=	apache
+CPE_PRODUCT=	commons_collections
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 NO_BUILD=	yes

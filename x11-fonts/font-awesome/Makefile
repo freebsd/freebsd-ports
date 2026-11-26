@@ -13,7 +13,10 @@ WWW=		https://fontawesome.com/ \
 LICENSE=	OFL11
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		fonts zip
+USES=		cpe fonts zip
+
+CPE_VENDOR=	fontawesome
+CPE_PRODUCT=	${PORTNAME:tl:S/-/_/g}
 
 NO_ARCH=	yes
 NO_BUILD=	yes

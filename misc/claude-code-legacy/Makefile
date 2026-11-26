@@ -17,7 +17,10 @@ FETCH_DEPENDS=	cargo:lang/rust \
 EXTRACT_DEPENDS=	curl:ftp/curl
 RUN_DEPENDS=	rg:textproc/ripgrep
 
-USES=		nodejs:run
+USES=		cpe nodejs:run
+
+CPE_VENDOR=	anthropic
+CPE_PRODUCT=	${PORTNAME:tl:S/-/_/g}
 
 JS_ARCH=	${ARCH:S/amd64/x64/:S/aarch64/arm64/:S/i386/ia32/:S/powerpc64le/ppc64le/:S/powerpc64/ppc64/:C/armv[67]/arm/} # modeled after electron.mk
 PLIST_SUB=	JS_ARCH=${JS_ARCH}

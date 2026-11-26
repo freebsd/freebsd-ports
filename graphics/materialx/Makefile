@@ -20,7 +20,7 @@ LIB_DEPENDS=	libImath.so:math/Imath \
 		libOpenImageIO.so:graphics/openimageio \
 		libOpenImageIO_Util.so:graphics/openimageio
 
-USES=		cmake compiler:c++17-lang gl localbase python xorg
+USES=		cmake compiler:c++17-lang cpe gl localbase python xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	AcademySoftwareFoundation
 GH_PROJECT=	MaterialX
@@ -31,6 +31,8 @@ GH_TUPLE=	mitsuba-renderer:nanogui:6452dd6:nanogui/source/MaterialXView/NanoGUI 
 		wjakob:nanobind:e504eeb:nanobind/source/MaterialXView/NanoGUI/ext/nanobind \
 		wjakob:nanovg:bf2320d:nanovg/source/MaterialXView/NanoGUI/ext/nanovg \
 		wjakob:nanovg_metal:075b04f:nanovgmetal/source/MaterialXView/NanoGUI/ext/nanovg_metal
+
+CPE_VENDOR=	linuxfoundation
 
 USE_GL=		opengl
 USE_LDCONFIG=	yes

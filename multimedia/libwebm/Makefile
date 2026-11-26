@@ -11,7 +11,9 @@ WWW=		https://www.webmproject.org/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
-USES=		cmake:testing compiler:c++11-lang
+USES=		cmake:testing compiler:c++11-lang cpe
+
+CPE_VENDOR=	webmproject
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	webmproject

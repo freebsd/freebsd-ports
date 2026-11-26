@@ -46,8 +46,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bcrypt>=4.0.1:security/py-bcrypt@${PY_FLAVOR
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.5.0:devel/py-typing-extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}uvicorn>=0.18.3:www/py-uvicorn@${PY_FLAVOR}
 
-USES=		gmake python cargo ssl
+USES=		cpe gmake python cargo ssl
 USE_PYTHON=	autoplist concurrent pep517 pytest
+
+CPE_VENDOR=	trychroma
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		swagger-ui-5.17.14.zip:swagger

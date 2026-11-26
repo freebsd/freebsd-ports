@@ -13,7 +13,9 @@ WWW=		https://github.com/OpenVPN/easy-rsa
 
 LICENSE=	GPLv2
 
-USES=		tar:tgz
+USES=		cpe tar:tgz
+
+CPE_VENDOR=	openvpn
 
 PATCH_STRIP=	-p1
 

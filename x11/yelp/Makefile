@@ -23,7 +23,7 @@ LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libwebkit2gtk-4.1.so:www/webkit2-gtk@41
 RUN_DEPENDS=	yelp-xsl>=0:textproc/yelp-xsl
 
-USES=		compiler:c11 desktop-file-utils gettext gnome meson \
+USES=		compiler:c11 cpe desktop-file-utils gettext gnome meson \
 		pkgconfig shebangfix sqlite tar:xz xorg
 USE_GNOME=	cairo gdkpixbuf gtk30 libxml2 libxslt
 USE_XORG=	ice x11
@@ -31,6 +31,8 @@ SHEBANG_FILES=	data/domains/gen_yelp_xml.sh \
 		src/link-gnome-help.sh
 GLIB_SCHEMAS=	org.gnome.yelp.gschema.xml
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	gnome
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LIBEXECDIR%%|${PREFIX}/libexec|g' \

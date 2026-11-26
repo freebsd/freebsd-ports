@@ -15,8 +15,11 @@ WWW=		https://github.com/github/copilot-cli
 ONLY_FOR_ARCHS=		aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	is a Linux binary with a limited platform support
 
-USES=		linux:rl9
+USES=		cpe linux:rl9
 USE_LINUX=	base
+
+CPE_VENDOR=	github
+CPE_PRODUCT=	copilot-cli
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

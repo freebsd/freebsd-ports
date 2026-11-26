@@ -24,10 +24,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}configobj>0:devel/py-configobj@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=0:devel/py-pyyaml@${PY_FLAVOR}
 
-USES=		python shebangfix sudo
+USES=		cpe python shebangfix sudo
 USE_GITHUB=	yes
 GH_ACCOUNT=	canonical
 USE_PYTHON=	autoplist distutils
+
+CPE_VENDOR=	canonical
 
 SHEBANG_FILES=	tools/hook-hotplug tools/read-dependencies tools/read-version \
 		tools/validate-yaml.py

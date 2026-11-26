@@ -22,9 +22,11 @@ RUN_DEPENDS=	autoconf>=2.71:devel/autoconf \
 		wget>0:ftp/wget \
 		yarn>:www/yarn
 
-USES=		magick:7,run pgsql sudo
+USES=		cpe magick:7,run pgsql sudo
 USE_GITHUB=	yes
 USE_RC_SUBR=	mastodon_sidekiq mastodon_streaming mastodon_web
+
+CPE_VENDOR=	joinmastodon
 
 EXTRACT_AFTER_ARGS=	${.circleci .devcontainer .git* .dockerignore \
 			dist/*.service docker-compose.yml \

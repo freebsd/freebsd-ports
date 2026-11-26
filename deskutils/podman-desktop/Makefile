@@ -22,7 +22,10 @@ RUN_DEPENDS=	bash:shells/bash \
 		minikube:sysutils/minikube \
 		podman-compose:sysutils/podman-compose
 
-USES=		desktop-file-utils electronfix:42 shared-mime-info
+USES=		cpe desktop-file-utils electronfix:42 shared-mime-info
+
+CPE_VENDOR=	linuxfoundation
+CPE_PRODUCT=	${PORTNAME:tl:S/-/_/g}
 
 ELECTRONFIX_MAIN_EXECUTABLE=	podman-desktop
 SUB_FILES=	podman-desktop

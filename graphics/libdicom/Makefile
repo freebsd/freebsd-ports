@@ -13,8 +13,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${LOCALBASE}/include/utarray.h:devel/uthash
 TEST_DEPENDS=	check>0:devel/check
 
-USES=		localbase meson pkgconfig
+USES=		cpe localbase meson pkgconfig
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	nih
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ImagingDataCommons

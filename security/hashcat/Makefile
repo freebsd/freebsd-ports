@@ -19,7 +19,7 @@ BUILD_DEPENDS=	minizip:archivers/minizip \
 		rustc:lang/${RUST_DEFAULT}
 LIB_DEPENDS=	libiconv.so:converters/libiconv
 
-USES=		cargo compiler:c++11-lang gmake iconv localbase \
+USES=		cargo compiler:c++11-lang cpe gmake iconv localbase \
 		python:3.12+,build shebangfix
 
 USE_GITHUB=	yes

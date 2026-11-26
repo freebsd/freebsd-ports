@@ -23,8 +23,11 @@ FETCH_DEPENDS=	ca_root_nss>0:security/ca_root_nss \
 BUILD_DEPENDS=	ispc>=1.14.1:devel/ispc
 LIB_DEPENDS=	libtbb.so:devel/onetbb
 
-USES=		cmake:noninja compiler:c++14-lang python:build
+USES=		cmake:noninja compiler:c++14-lang cpe python:build
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	intel
+CPE_PRODUCT=	open_image_denoise
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	RenderKit

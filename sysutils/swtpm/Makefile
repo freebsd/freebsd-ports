@@ -22,7 +22,7 @@ LIB_DEPENDS=	libfuse.so:filesystems/fusefs-libs \
 		libtasn1.so:security/libtasn1 \
 		libtpms.so:sysutils/libtpms
 
-USES=		autoreconf gettext-runtime gmake gnome libtool pathfix \
+USES=		autoreconf cpe gettext-runtime gmake gnome libtool pathfix \
 		pkgconfig python:env,test shebangfix ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	stefanberger
@@ -30,6 +30,8 @@ USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	${PORTNAME}
 SHEBANG_FILES=	tests/_* tests/test_clientfds.py tests/test_setdatafd.py
+
+CPE_VENDOR=	swtpm_project
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--with-tss-group=${GROUPS} \

@@ -24,7 +24,7 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils
 TEST_DEPENDS=	cppunit-config:devel/cppunit
 TEST_TARGET=	check
 
-USES=		compiler:c++17-lang gmake gnome iconv:wchar_t libtool localbase \
+USES=		compiler:c++17-lang cpe gmake gnome iconv:wchar_t libtool localbase \
 		pkgconfig sqlite tar:xz
 USE_GNOME=	cairo gtk30 gdkpixbuf
 INSTALL_TARGET=	install-strip
@@ -32,6 +32,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-fast-install
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+CPE_VENDOR=	filezilla-project
+CPE_PRODUCT=	filezilla_client
 
 USE_WX=		3.2
 WX_CONF_ARGS=	relative

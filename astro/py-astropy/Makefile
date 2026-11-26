@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyerfa>=0:astro/py-pyerfa@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}astropy-iers-data>=0:astro/py-astropy-iers-data@${PY_FLAVOR}
 
-USES=		compiler:c11 python
+USES=		compiler:c11 cpe python
 USE_PYTHON=	autoplist cython distutils
 
 CONFLICTS_INSTALL=	p5-Data-ShowTable # bin/showtable

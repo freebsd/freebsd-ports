@@ -47,7 +47,7 @@ BUILD_DEPENDS=	crystal:lang/crystal \
 LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 		libpcre2-8.so:devel/pcre2
 
-USES=		pkgconfig ssl:build
+USES=		cpe pkgconfig ssl:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	cloudamqp
 GH_TUPLE=	84codes:lz4.cr:${_LZ4}:a/deps/lz4.cr \
@@ -55,6 +55,8 @@ GH_TUPLE=	84codes:lz4.cr:${_LZ4}:a/deps/lz4.cr \
 		cloudamqp:amq-protocol.cr:v${_AMQP_PROTO}:proto/deps/amq-protocol.cr \
 		cloudamqp:amqp-client.cr:v${_AMQP_CLIENT}:client/deps/amqp-client.cr \
 		84codes:mqtt-protocol.cr:v${_MQTT}:mqtt/deps/mqtt-protocol.cr
+
+CPE_VENDOR=	84codes
 
 USE_RC_SUBR=	lavinmq
 

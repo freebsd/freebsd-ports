@@ -15,7 +15,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	curl:ftp/curl \
 		gmake:devel/gmake
 
-USES=		gmake
+USES=		cpe gmake
+
+CPE_VENDOR=	ocaml
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-mccs --with-vendored-deps

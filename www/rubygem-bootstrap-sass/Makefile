@@ -13,7 +13,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-autoprefixer-rails>=5.2.1:textproc/rubygem-autoprefixer-rails \
 		rubygem-sassc>=2.0.0:textproc/rubygem-sassc
 
-USES=		gem shebangfix
+USES=		cpe gem shebangfix
+
+CPE_VENDOR=	getbootstrap
 
 NO_ARCH=	yes
 

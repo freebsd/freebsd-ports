@@ -13,7 +13,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libonig.so:devel/oniguruma
 
-USES=		cargo pkgconfig
+USES=		cargo cpe pkgconfig
+
+CPE_VENDOR=	comrak_project
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	kivikakk

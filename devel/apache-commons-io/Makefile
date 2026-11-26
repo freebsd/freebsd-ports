@@ -12,7 +12,10 @@ WWW=		https://commons.apache.org/proper/commons-io/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		java
+USES=		cpe java
+
+CPE_VENDOR=	apache
+CPE_PRODUCT=	${PORTNAME:tl:S/-/_/g}
 
 NO_ARCH=	yes
 NO_BUILD=	yes

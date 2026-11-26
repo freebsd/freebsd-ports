@@ -13,10 +13,12 @@ LICENSE=	MIT
 # yeslogic-fontconfig-sys needs this
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig
 
-USES=		cargo pkgconfig
+USES=		cargo cpe pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	ReFirmLabs
 PLIST_FILES=	bin/binwalk
+
+CPE_VENDOR=	microsoft
 
 CARGO_CRATES=	adler-1.0.2 \
 		adler2-2.0.0 \

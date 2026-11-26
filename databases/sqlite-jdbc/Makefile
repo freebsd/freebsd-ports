@@ -14,8 +14,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${JAVAJARDIR}/slf4j-api.jar:devel/slf4j
 
-USES=		gmake java:build sqlite
+USES=		cpe gmake java:build sqlite
 USE_GITHUB=	yes
+CPE_VENDOR=	sqlite_jdbc_project
+CPE_PRODUCT=	${PORTNAME:tl:S/-/_/g}
 GH_ACCOUNT=	xerial
 
 MAKE_ARGS+=	SQLITE_OBJ="${LOCALBASE}/lib/libsqlite3.so" \

@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${ALL_DEPENDS}
 RUN_DEPENDS=	${ALL_DEPENDS}
 
-USES=		python shebangfix
+USES=		cpe python shebangfix
 USE_GITHUB=	yes
 
 SHEBANG_FILES=	${WRKSRC}/manage.py

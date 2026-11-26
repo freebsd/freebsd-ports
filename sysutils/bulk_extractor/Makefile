@@ -19,10 +19,12 @@ LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libgpg-error.so:security/libgpg-error \
 		libre2.so:devel/re2
 
-USES=		autoreconf compiler:c++17-lang gnome iconv:wchar_t \
+USES=		autoreconf compiler:c++17-lang cpe gnome iconv:wchar_t \
 		libtool pkgconfig python:build sqlite ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	simsong
+
+CPE_VENDOR=	simsong
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share

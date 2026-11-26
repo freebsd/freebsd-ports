@@ -12,9 +12,12 @@ LICENSE=	APACHE20
 
 BUILD_DEPENDS=	gradle8:devel/gradle8
 
-USES=		gettext-runtime java
+USES=		cpe gettext-runtime java
 USE_GITHUB=	yes
 JAVA_VERSION=	17 21
+
+CPE_VENDOR=	owasp
+CPE_PRODUCT=	zed_attack_proxy
 
 NO_ARCH=	yes
 

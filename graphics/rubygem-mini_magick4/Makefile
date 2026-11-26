@@ -12,7 +12,10 @@ WWW=		https://github.com/minimagick/minimagick
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-USES=		gem magick
+USES=		cpe gem magick
+
+CPE_VENDOR=	minimagick_project
+CPE_PRODUCT=	${PORTNAME:tl:S/_//g}
 
 NO_ARCH=	yes
 

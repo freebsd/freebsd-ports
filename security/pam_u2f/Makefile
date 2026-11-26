@@ -13,13 +13,16 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	a2x:textproc/asciidoc
 LIB_DEPENDS=	libfido2.so:security/libfido2
 
-USES=		autoreconf libtool pkgconfig ssl
+USES=		autoreconf cpe libtool pkgconfig ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	Yubico
 GH_PROJECT=	pam-u2f
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-pam-dir=${PREFIX}/lib
+
+CPE_VENDOR=	yubico
+CPE_PRODUCT=	${PORTNAME:tl:S/_/-/g}
 
 PLIST_FILES=	bin/pamu2fcfg \
 		lib/pam_u2f.so \

@@ -17,7 +17,7 @@ LIB_DEPENDS=	libei.so:x11/libei \
 		libportal.so:deskutils/libportal \
 		libxkbcommon.so:x11/libxkbcommon
 
-USES=		cmake compiler:c++20-lang gl gnome pkgconfig qt:6 ssl xorg
+USES=		cmake compiler:c++20-lang cpe gl gnome pkgconfig qt:6 ssl xorg
 USE_GITHUB=	yes
 USE_GL=		opengl
 USE_GNOME=	glib20

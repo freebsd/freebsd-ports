@@ -12,7 +12,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libiceoryx_binding_c.so:comms/iceoryx
 
-USES=		bison cmake
+USES=		bison cmake cpe
+
+CPE_VENDOR=	eclipse
+CPE_PRODUCT=	cyclone_data_distribution_service
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	eclipse-cyclonedds

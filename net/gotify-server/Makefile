@@ -18,13 +18,16 @@ ONLY_FOR_ARCHS_REASON=	Npm cache only for amd64 generated
 
 BUILD_DEPENDS=	yarn${NODEJS_SUFFIX}>=1.10.0:www/yarn${NODEJS_SUFFIX} \
 
-USES=		go:modules nodejs:build
+USES=		cpe go:modules nodejs:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	gotify
 GH_PROJECT=	server
 USE_RC_SUBR=	gotify_server
 GO_MOD_DIST=	github
 GO_MODULE=	github.com/gotify/server/v2
+
+CPE_VENDOR=	gotify
+CPE_PRODUCT=	server
 
 _BUILD_DATE=	$$(date -u "+%Y-%m-%d-%H%M UTC")
 #GO_TARGET=     ./

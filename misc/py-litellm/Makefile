@@ -36,7 +36,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fastuuid>=0.14.0<1.0:devel/py-fastuuid@${PY_
 		${PYTHON_PKGNAMEPREFIX}certifi>=2026.10.19:security/py-certifi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.13.0<5.0:devel/py-typing-extensions@${PY_FLAVOR}
 
-USES=		cargo python
+USES=		cargo cpe python
 USE_PYTHON=	autoplist concurrent pep517 pytest
 
 CARGO_CARGOTOML=${WRKSRC}/litellm/rust/Cargo.toml

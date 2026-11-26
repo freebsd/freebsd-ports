@@ -52,8 +52,11 @@ TEST_DEPENDS=	p5-Import-Into>=0:devel/p5-Import-Into \
 		p5-Test-Pod>=0:devel/p5-Test-Pod \
 		p5-Test-Pod-Coverage>=0:devel/p5-Test-Pod-Coverage
 
-USES=		perl5
+USES=		cpe perl5
 USE_PERL5=	configure
+
+CPE_VENDOR=	timlegge
+CPE_PRODUCT=	net::saml2
 
 NO_ARCH=	yes
 

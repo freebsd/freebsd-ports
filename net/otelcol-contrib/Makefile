@@ -13,7 +13,10 @@ LICENSE=	APACHE20
 
 ONLY_FOR_ARCHS=	aarch64 amd64
 
-USES=		linux:rl9
+USES=		cpe linux:rl9
+
+CPE_VENDOR=	opentelemetry
+CPE_PRODUCT=	opentelemetry_collector_contrib
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

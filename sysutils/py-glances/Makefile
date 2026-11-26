@@ -19,10 +19,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}defusedxml>=0:devel/py-defusedxml@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}psutil>=5.6.7:sysutils/py-psutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}shtab>=0:devel/py-shtab@${PY_FLAVOR}
 
-USES=		python
+USES=		cpe python
 USE_GITHUB=	yes
 GH_ACCOUNT=	nicolargo
 USE_PYTHON=	autoplist concurrent pep517
+
+CPE_VENDOR=	nicolargo
 
 NO_ARCH=	yes
 

@@ -12,10 +12,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libpopt.so:devel/popt
 
-USES=		cmake localbase ssl
+USES=		cmake cpe localbase ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	alanxz
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	rabbitmq-c_project
 
 CMAKE_ON=	BUILD_TOOLS
 CMAKE_OFF=	BUILD_EXAMPLES

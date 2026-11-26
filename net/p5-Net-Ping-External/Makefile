@@ -11,8 +11,10 @@ WWW=		https://metacpan.org/release/Net-Ping-External
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-USES=		perl5
+USES=		cpe perl5
 USE_PERL5=	configure
 NO_ARCH=	yes
+
+CPE_VENDOR=	net-ping-external_project
 
 .include <bsd.port.mk>

@@ -16,7 +16,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LIB_DEPENDS=	libtspi.so:security/trousers \
 		libepoll-shim.so:devel/libepoll-shim
 
-USES=		autoreconf bison gmake ldap libtool localbase ssl tar:tgz
+USES=		autoreconf bison cpe gmake ldap libtool localbase ssl tar:tgz
 USE_LDCONFIG=	${PREFIX}/lib/opencryptoki
 USE_GITHUB=	yes
 GNU_CONFIGURE=	yes
@@ -44,6 +44,8 @@ SUB_LIST=	USERS="${USERS}" GROUPS="${GROUPS}"
 PLIST_SUB=	USERS="${USERS}" GROUPS="${GROUPS}"
 USERS=		_pkcs11
 GROUPS=		_pkcs11
+
+CPE_VENDOR=	opencryptoki_project
 
 .include <bsd.port.pre.mk>
 

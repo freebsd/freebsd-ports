@@ -18,9 +18,12 @@ BROKEN_i386=	mapping output file failed: cannot allocate memory
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.27+,modules
+USES=		cpe go:1.27+,modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	0xJacky
+
+CPE_VENDOR=	nginxui
+CPE_PRODUCT=	${PORTNAME:tl:S/-/_/g}
 
 USE_RC_SUBR=	${PORTNAME}
 

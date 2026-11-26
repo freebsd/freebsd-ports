@@ -13,7 +13,9 @@ LICENSE_FILE=	${WRKSRC}/License.rdoc
 RUN_DEPENDS=	rubygem-base64>=0:converters/rubygem-base64 \
 		rubygem-ostruct>=0:devel/rubygem-ostruct
 
-USES=		gem
+USES=		cpe gem
+
+CPE_VENDOR=	net-ldap_project
 
 NO_ARCH=	yes
 

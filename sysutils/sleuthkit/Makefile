@@ -23,10 +23,13 @@ CONFLICTS=	ja-ls icat
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-USES=		compiler:c++11-lang libtool perl5 sqlite
+USES=		compiler:c++11-lang cpe libtool perl5 sqlite
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 DATADIR=	${PREFIX}/share/tsk
+
+CPE_VENDOR=	${PORTNAME:tl}
+CPE_PRODUCT=	the_sleuth_kit
 
 PORTDOCS=	NEWS.txt README.md
 

@@ -12,7 +12,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-asciidoctor>=1.5.6<3.0.0:textproc/rubygem-asciidoctor
 
-USES=		gem
+USES=		cpe gem
+
+CPE_VENDOR=	asciidoctor-include-ext_project
 
 NO_ARCH=	yes
 

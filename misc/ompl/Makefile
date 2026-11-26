@@ -13,9 +13,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
-USES=		cmake:testing compiler:c++17-lang eigen:3 pkgconfig python:run shebangfix
+USES=		cmake:testing compiler:c++17-lang cpe eigen:3 pkgconfig python:run shebangfix
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	rice
+CPE_PRODUCT=	open_motion_planning_library
 
 SHEBANG_FILES=	scripts/ompl_benchmark_statistics.py
 

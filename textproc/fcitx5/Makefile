@@ -27,8 +27,11 @@ RUN_DEPENDS=	iso-codes>=0:misc/iso-codes \
 		xkeyboard-config>=0:x11/xkeyboard-config
 
 # gettext-tools for both build-time hard requirement and Fcitx5 helper shell scripts
-USES=		cmake compiler:c++20-lang gettext-runtime \
+USES=		cmake compiler:c++20-lang cpe gettext-runtime \
 		gettext-tools:build,run gnome kde pkgconfig tar:zst
+
+CPE_VENDOR=	fcitx_5_project
+CPE_PRODUCT=	fcitx_5
 
 CXXFLAGS+=	-fexperimental-library
 

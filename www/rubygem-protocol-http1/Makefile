@@ -13,7 +13,9 @@ LICENSE_FILE=	${WRKSRC}/license.md
 
 RUN_DEPENDS=	rubygem-protocol-http>=0.68<1:www/rubygem-protocol-http
 
-USES=		gem
+USES=		cpe gem
+
+CPE_VENDOR=	socketry
 
 NO_ARCH=	yes
 

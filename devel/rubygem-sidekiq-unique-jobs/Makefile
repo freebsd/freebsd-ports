@@ -14,7 +14,9 @@ RUN_DEPENDS=	rubygem-concurrent-ruby>=1.0.5<2:devel/rubygem-concurrent-ruby \
 		rubygem-sidekiq>=7.0.0<9.0.0:devel/rubygem-sidekiq \
 		rubygem-thor>=1.0<3.0:devel/rubygem-thor
 
-USES=		gem
+USES=		cpe gem
+
+CPE_VENDOR=	mhenrixon
 
 NO_ARCH=	yes
 

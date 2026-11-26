@@ -20,7 +20,10 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>=4.0.2:devel/py-mock@${PY_FLAVOR} \
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-USES=		python shebangfix sudo
+USES=		cpe python shebangfix sudo
+
+CPE_VENDOR=	microsoft
+CPE_PRODUCT=	walinuxagent
 
 SHEBANG_FILES=	bin/waagent bin/waagent2.0
 

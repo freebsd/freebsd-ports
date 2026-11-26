@@ -10,12 +10,15 @@ WWW=		https://hte.sourceforge.net/
 LICENSE=	GPL-2.0-only
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf compiler:c++14-lang makeinfo ncurses tar:bzip2
+USES=		autoreconf compiler:c++14-lang cpe makeinfo ncurses tar:bzip2
 USE_GITHUB=	yes
 GH_ACCOUNT=	sebastianbiallas
 GH_PROJECT=	ht
 GH_TAGNAME=	e9e63373148da5d7df397d8075740d8c096ecb1d
 GNU_CONFIGURE=	yes
+
+CPE_VENDOR=	ht_editor_project
+CPE_PRODUCT=	ht_editor
 
 PLIST_FILES=	bin/hte
 PORTDOCS=	README

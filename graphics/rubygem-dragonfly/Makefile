@@ -16,7 +16,9 @@ RUN_DEPENDS=	rubygem-addressable>=2.3<3:www/rubygem-addressable \
 		rubygem-ostruct>=0.6<1:devel/rubygem-ostruct \
 		rubygem-rack>=1.3,3:www/rubygem-rack
 
-USES=		gem shebangfix
+USES=		cpe gem shebangfix
+
+CPE_VENDOR=	dragonfly_project
 
 NO_ARCH=	yes
 

@@ -21,8 +21,11 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>0.8:devel/py-cffi@${PY_FLAVOR} \
 LIB_DEPENDS=	liblmdb0.so:databases/lmdb0
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
-USES=		localbase python
+USES=		cpe localbase python
 USE_PYTHON=	autoplist pep517
+
+CPE_VENDOR=	py-lmdb_project
+CPE_PRODUCT=	py-lmdb
 
 MAKE_ENV=	LMDB_FORCE_SYSTEM=1 \
 		LMDB_FORCE_CFFI=1 \

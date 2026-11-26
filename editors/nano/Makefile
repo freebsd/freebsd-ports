@@ -10,7 +10,7 @@ WWW=		https://www.nano-editor.org/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		charsetfix ncurses pkgconfig tar:xz
+USES=		charsetfix cpe ncurses pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--docdir=${DOCSDIR} --enable-utf8
@@ -21,6 +21,8 @@ OPTIONS_DEFINE=	DOCS EXAMPLES NLS
 OPTIONS_SUB=	yes
 NLS_USES=		gettext localbase
 NLS_CONFIGURE_ENABLE=	nls
+
+CPE_VENDOR=	gnu
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/^groff.*/false/' ${WRKSRC}/configure

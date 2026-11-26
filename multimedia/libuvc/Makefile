@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 TEST_DEPENDS=	googletest>0:devel/googletest
 
-USES=		cmake:testing jpeg pkgconfig
+USES=		cmake:testing cpe jpeg pkgconfig
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 

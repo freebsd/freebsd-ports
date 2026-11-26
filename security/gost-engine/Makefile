@@ -11,10 +11,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 FLAVORS=	base openssl30
 
-USES=		cmake ssl
+USES=		cmake cpe ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	gost-engine
 GH_PROJECT=	engine
+
+CPE_VENDOR=	gost-engine_project
 
 openssl30_PKGNAMESUFFIX=	-${FLAVOR}
 

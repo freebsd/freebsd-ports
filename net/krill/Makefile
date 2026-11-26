@@ -13,9 +13,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	ring crate not ported to other architectures
 
-USES=		cargo ssl
+USES=		cargo cpe ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	NLnetLabs
+
+CPE_VENDOR=	nlnetlabs
 
 USE_RC_SUBR=	${PORTNAME}
 

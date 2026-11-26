@@ -17,7 +17,9 @@ RUN_DEPENDS=	rubygem-activesupport5>=0<7.1:devel/rubygem-activesupport5 \
 		rubygem-railties5>=0<7.1:www/rubygem-railties5 \
 		rubygem-rotp>=6.0<7:devel/rubygem-rotp
 
-USES=		gem
+USES=		cpe gem
+
+CPE_VENDOR=	tinfoilsecurity
 
 NO_ARCH=	yes
 

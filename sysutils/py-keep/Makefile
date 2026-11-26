@@ -18,8 +18,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>0:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}terminaltables3>0:textproc/py-terminaltables3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}PyGithub>0:devel/py-PyGithub@${PY_FLAVOR}
 
-USES=	python
+USES=	cpe python
 USE_PYTHON=	autoplist pep517
+
+CPE_VENDOR=	keep_project
 
 SUB_FILES=	pkg-message
 

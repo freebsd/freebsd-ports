@@ -10,8 +10,10 @@ WWW=		https://www.it.uc3m.es/jaf/html2xhtml
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		iconv
+USES=		cpe iconv
 GNU_CONFIGURE=	yes
+
+CPE_VENDOR=	html2xhtml_project
 
 CONFLICTS_INSTALL=	p5-HTML-HTML5-Parser p5-XML-Driver-HTML # bin/html2xhtml
 

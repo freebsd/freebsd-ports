@@ -13,6 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 RUN_DEPENDS=	rubygem-base64>=0:converters/rubygem-base64 \
 		rubygem-websocket-extensions>=0.2.0:www/rubygem-websocket-extensions
 
-USES=		gem
+USES=		cpe gem
+
+CPE_VENDOR=	faye
 
 .include <bsd.port.mk>

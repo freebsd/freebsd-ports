@@ -11,7 +11,7 @@ WWW=		https://pocketbase.io/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=		go:1.27+,modules
+USES=		cpe go:1.27+,modules
 
 GO_MODULE=	github.com/pocketbase/pocketbase
 GO_TARGET=	./examples/base:${PORTNAME}

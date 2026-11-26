@@ -11,11 +11,13 @@ WWW=		https://github.com/pali/igmpproxy
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf
+USES=		autoreconf cpe
 USE_GITHUB=	yes
 GH_ACCOUNT=	pali
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	igmpproxy
+
+CPE_VENDOR=	pali
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/igmpproxy.conf \

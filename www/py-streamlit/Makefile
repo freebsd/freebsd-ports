@@ -41,8 +41,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}altair>0:graphics/py-altair@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}watchdog>0:devel/py-watchdog@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}websockets>=12.0.0:devel/py-websockets@${PY_FLAVOR}
 
-USES=		python shebangfix
+USES=		cpe python shebangfix
 USE_PYTHON=	autoplist concurrent pep517
+
+CPE_VENDOR=	snowflake
 
 NO_ARCH=	yes
 

@@ -29,8 +29,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asn1crypto>0.24.0<2.0.0:devel/py-asn1crypto@
 		${PYTHON_PKGNAMEPREFIX}platformdirs>=2.6.0<5.0.0:devel/py-platformdirs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tomlkit>0:textproc/py-tomlkit@${PY_FLAVOR}
 
-USES=		python
+USES=		cpe python
 USE_PYTHON=	autoplist concurrent cryptography cython pep517
+
+CPE_VENDOR=	snowflake
+CPE_PRODUCT=	snowflake_connector
 
 post-install:
 	${STRIP_CMD} \

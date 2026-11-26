@@ -11,7 +11,9 @@ WWW=		https://github.com/sipeed/picoclaw
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		cpe go:modules
+
+CPE_VENDOR=	sipeed
 
 BROKEN_i386=	vendored modernc.org/libc + modernc.org/sqlite broken on 386
 BROKEN_armv7=	vendored modernc.org/libc + modernc.org/sqlite broken on arm

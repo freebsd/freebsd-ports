@@ -14,7 +14,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 RUN_DEPENDS=	rubygem-omniauth1>=1.3.2:security/rubygem-omniauth1 \
 		rubygem-ruby-saml>=1.9<2:security/rubygem-ruby-saml
 
-USES=		gem
+USES=		cpe gem
+
+CPE_VENDOR=	omniauth
+CPE_PRODUCT=	${PORTNAME:tl:S/-/_/g}
 
 NO_ARCH=	yes
 

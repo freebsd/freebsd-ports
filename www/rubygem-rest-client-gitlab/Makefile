@@ -16,7 +16,9 @@ RUN_DEPENDS=	rubygem-http-accept>=1.7.0:www/rubygem-http-accept \
 		rubygem-mime-types-gitlab>=1.16<4.0:misc/rubygem-mime-types-gitlab \
 		rubygem-netrc>=0.8<1:net/rubygem-netrc
 
-USES=		gem
+USES=		cpe gem
+
+CPE_VENDOR=	rest-client_project
 
 NO_ARCH=	yes
 

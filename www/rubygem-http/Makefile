@@ -13,7 +13,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-http-cookie>=1.0<2:www/rubygem-http-cookie \
 		rubygem-llhttp>=0.6.1<0.7:www/rubygem-llhttp
 
-USES=		gem
+USES=		cpe gem
+
+CPE_VENDOR=	http.rb_project
+CPE_PRODUCT=	http.rb
 
 NO_ARCH=	yes
 

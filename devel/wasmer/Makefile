@@ -19,7 +19,7 @@ BUILD_DEPENDS=	bash>0:shells/bash \
 LIB_DEPENDS=	libffi.so:devel/libffi \
 		libzstd.so:archivers/zstd
 
-USES=		cargo gmake llvm:22 nodejs:build pkgconfig
+USES=		cargo cpe gmake llvm:22 nodejs:build pkgconfig
 
 CARGO_BUILD=	no
 CARGO_INSTALL=	no

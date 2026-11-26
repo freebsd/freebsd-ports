@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LIB_DEPENDS=	libglfw.so:graphics/glfw
 TEST_DEPENDS=	doctest>0:devel/doctest
 
-USES=		cmake:testing compiler:c++14-lang gl
+USES=		cmake:testing compiler:c++14-lang cpe gl
 USE_GL=		gl glut
 USE_LDCONFIG=	yes
 

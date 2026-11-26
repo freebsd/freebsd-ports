@@ -10,7 +10,9 @@ WWW=		https://github.com/erohtar/Dasherr/
 
 LICENSE=	GPLv3
 
-USES=		php zip
+USES=		cpe php zip
+
+CPE_VENDOR=	dasherr_project
 
 NO_ARCH=	yes
 NO_BUILD=	yes

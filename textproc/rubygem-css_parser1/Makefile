@@ -13,7 +13,9 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-addressable>=0:www/rubygem-addressable
 
-USES=		gem
+USES=		cpe gem
+
+CPE_VENDOR=	premailer
 
 NO_ARCH=	yes
 

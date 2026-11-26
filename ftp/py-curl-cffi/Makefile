@@ -34,9 +34,12 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}charset-normalizer>=3.3.2:textproc/py-chars
 		${PYTHON_PKGNAMEPREFIX}uvicorn>=0.29.0:www/py-uvicorn@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}websockets>=14.0:devel/py-websockets@${PY_FLAVOR}
 
-USES=		dos2unix python ssl
+USES=		cpe dos2unix python ssl
 DOS2UNIX_FILES=	tests/unittest/test_async_websockets.py
 USE_PYTHON=	pep517 autoplist pytest
+
+CPE_VENDOR=	lexiforest
+CPE_PRODUCT=	${PORTNAME:tl:S/-/_/g}
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} \
 		PATH=${STAGEDIR}${PREFIX}/bin:${PATH}

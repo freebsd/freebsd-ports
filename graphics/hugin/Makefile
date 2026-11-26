@@ -26,11 +26,13 @@ RUN_DEPENDS=	enblend>=4.1.4:graphics/enblend \
 		gmake:devel/gmake
 
 # compiler:c++17-lang
-USES=		cmake desktop-file-utils gettext gl gnome \
+USES=		cmake cpe desktop-file-utils gettext gl gnome \
 		pkgconfig shared-mime-info shebangfix sqlite tar:bzip2 xorg
 USE_GL=		gl glu glut
 USE_WX=		3.2+
 USE_XORG=	x11
+
+CPE_VENDOR=	hugin_project
 
 SHEBANG_FILES=	src/hugin_script_interface/hpi.py \
 		src/hugin_script_interface/plugins/*.py \

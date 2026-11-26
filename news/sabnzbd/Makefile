@@ -64,7 +64,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}black>=0:devel/py-black@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}werkzeug>=0:www/py-werkzeug@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xmltodict>=0:devel/py-xmltodict@${PY_FLAVOR}
 
-USES=		python shebangfix
+USES=		cpe python shebangfix
 USE_PYTHON=	pytest
 # 13345 passed, 41 skipped, 28 deselected, 2 xfailed, 1 xpassed, 8 warnings
 # Selenium has no FreeBSD driver, TestWiki needs network and extract_pot

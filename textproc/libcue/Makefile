@@ -16,8 +16,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	lipnitsk
 
 USE_LDCONFIG=	yes
-USES=		bison cmake pathfix
+USES=		bison cmake cpe pathfix
 CMAKE_ARGS+=	-DBUILD_SHARED_LIBS=1
 PLIST_SUB=	SOVERSION=${PORTVERSION}
+
+CPE_VENDOR=	lipnitsk
 
 .include <bsd.port.mk>

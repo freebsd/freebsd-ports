@@ -13,7 +13,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/go-md2man:textproc/go-md2man
 
-USES=		go:modules
+USES=		cpe go:modules
+
+CPE_VENDOR=	cloudflare
 
 GO_MODULE=	github.com/cloudflare/gokey
 GO_TARGET=	./cmd/gokey

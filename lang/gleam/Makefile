@@ -14,9 +14,11 @@ BROKEN_i386=	needs SSE or SSE2 type extensions to compile
 
 TEST_DEPENDS=	erlang:lang/erlang
 
-USES=		cargo
+USES=		cargo cpe
 USE_GITHUB=	yes
 GH_ACCOUNT=	gleam-lang
+
+CPE_VENDOR=	lpil
 
 CARGO_UPDATE_ARGS=	--offline
 RUSTFLAGS+=		--cap-lints=warn

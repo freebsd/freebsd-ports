@@ -27,7 +27,7 @@ LICENSE_NAME=	End User License Agreement
 LICENSE_TEXT=	See https://obsidian.md/terms
 LICENSE_PERMS=
 
-USES=		electronfix:43
+USES=		cpe electronfix:43
 
 ELECTRONFIX_MAIN_EXECUTABLE=	obsidian
 SUB_FILES=	obsidian

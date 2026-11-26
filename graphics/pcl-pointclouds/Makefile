@@ -27,9 +27,12 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		liblz4.so:archivers/liblz4 \
 		libpcap.so:net/libpcap
 
-USES=		cmake:testing compiler:c++14-lang eigen:3 localbase:ldflags python xorg
+USES=		cmake:testing compiler:c++14-lang cpe eigen:3 localbase:ldflags python xorg
 USE_XORG=	x11 xext xt ice sm
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	pointclouds
+CPE_PRODUCT=	point_cloud_library
 
 #USE_GITHUB=	nodefault
 USE_GITHUB=	yes

@@ -30,8 +30,12 @@ LIB_DEPENDS=	\
 		libunbound.so:dns/unbound \
 		libzmq.so:net/libzmq4
 
-USES=		cmake compiler:c++14-lang pkgconfig readline ssl
+USES=		cmake compiler:c++14-lang cpe pkgconfig readline ssl
 USE_GITHUB=	yes
+
+CPE_VENDOR=	getmonero
+CPE_PRODUCT=	monero
+
 .if defined(PKGNAMESUFFIX)
 GIT_COMMIT=	${PKGNAMESUFFIX:C/-git-//}
 .else

@@ -13,8 +13,11 @@ WWW=		https://commons.apache.org/proper/commons-collections/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		java:ant,run
+USES=		cpe java:ant,run
 JAVA_VERSION=	8 11 17 18 19 20
+
+CPE_VENDOR=	apache
+CPE_PRODUCT=	${PORTNAME:tl:S/-/_/g}
 
 ALL_TARGET=	jar
 NO_ARCH=	yes

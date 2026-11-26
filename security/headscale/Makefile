@@ -18,8 +18,10 @@ NOT_FOR_ARCHS_REASON=	version 0.27 removed i386 support
 
 RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss
 
-USES=		go:modules
+USES=		cpe go:modules
 USE_RC_SUBR=	${PORTNAME}
+
+CPE_VENDOR=	juanfont
 
 GO_MODULE=	github.com/juanfont/headscale
 

@@ -13,7 +13,9 @@ WWW=		https://github.com/irontec/sngrep
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake ncurses pkgconfig
+USES=		cmake cpe ncurses pkgconfig
+
+CPE_VENDOR=	irontec
 
 TEST_TARGET=	tests
 

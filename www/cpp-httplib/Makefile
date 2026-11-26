@@ -12,7 +12,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	gmake:devel/gmake
 
-USES=		cmake localbase:ldflags python:build,test # localbase only for tests, python:build only for BINARY_ALIAS
+USES=		cmake cpe localbase:ldflags python:build,test # localbase only for tests, python:build only for BINARY_ALIAS
+
+CPE_VENDOR=	yhirose
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yhirose
