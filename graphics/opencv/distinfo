@@ -7,3 +7,5 @@ SHA256 (opencv-opencv_3rdparty-7f55c0c26be418d494615afca15218566775c725_GH0.tar.
 SIZE (opencv-opencv_3rdparty-7f55c0c26be418d494615afca15218566775c725_GH0.tar.gz) = 102507737
 SHA256 (opencv-opencv_contrib-4.14.0_GH0.tar.gz) = 4f17abd1bc7f88e19c3380c8de7cbf2d863aced5b5ee8d8934cc7902b67d42c9
 SIZE (opencv-opencv_contrib-4.14.0_GH0.tar.gz) = 55515587
+SHA256 (f347805418235374f54064f36fc8c248bd599e86.patch) = 13bfd0f570e79d3dccd9652439a5413235cf0fffe74a87951f439ba45c039ad6
+SIZE (f347805418235374f54064f36fc8c248bd599e86.patch) = 10778
