@@ -1,5 +1,5 @@
 PORTNAME=	rustfs
-DISTVERSION=	1.0.6
+DISTVERSION=	1.0.7
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/rustfs/console/releases/download/v${CONSOLE_VERSION}/:console
 DISTFILES=	rustfs-console-v${CONSOLE_VERSION}.zip:console
@@ -21,7 +21,7 @@ USES=		cargo cmake:indirect
 USE_GITHUB=	yes
 USE_RC_SUBR=	${PORTNAME}
 
-CONSOLE_VERSION=	0.1.41
+CONSOLE_VERSION=	0.1.44
 
 # install the built binaries directly; cargo install would rebuild them
 CARGO_BUILD_ARGS=	--package rustfs
