@@ -1,6 +1,5 @@
 PORTNAME=	libtorrent
-DISTVERSION=	0.16.28
-PORTREVISION=	1
+DISTVERSION=	0.16.29
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/rakshasa/rtorrent/releases/download/v${DISTVERSION}/
 PKGNAMESUFFIX=	-devel
