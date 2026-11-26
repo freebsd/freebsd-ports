@@ -1,0 +1,11 @@
+--- src/shell.c.in.orig	2026-11-24 23:31:00 UTC
++++ src/shell.c.in
+@@ -154,7 +154,7 @@ typedef unsigned char u8;
+ /* If both HAVE_READLINE and HAVE_EDITLINE are true, assume that this
+ ** libedit installation does not have its own headers, instead using
+ ** those from libreadline. */
+-# include <editline/readline.h>
++# include <edit/readline/readline.h>
+ #endif
+ 
+ #if HAVE_EDITLINE || HAVE_READLINE

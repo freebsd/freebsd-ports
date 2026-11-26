@@ -1,7 +1,7 @@
 PORTNAME=	sqlcipher
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.20.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 
 MAINTAINER=	mce@FreeBSD.org
@@ -19,6 +19,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-readline \
 		--dll-basename=libsqlcipher \
+		--editline \
 		--enable-fts5 \
 		--includedir=${PREFIX}/include/sqlcipher \
 		--soname=legacy \
@@ -31,7 +32,7 @@ CFLAGS+=	-DOMIT_MEMLOCK \
 		-DSQLITE_EXTRA_SHUTDOWN=sqlcipher_extra_shutdown \
 		-DSQLITE_HAS_CODEC \
 		-I${OPENSSLINC}
-LDFLAGS+=	-L${OPENSSLLIB} -lcrypto
+LDFLAGS+=	-L${OPENSSLLIB} -lcrypto -ledit
 
 SOVERSION=	3.54.1
 PLIST_SUB=	SOVERSION=${SOVERSION}
