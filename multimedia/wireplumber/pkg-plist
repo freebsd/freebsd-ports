@@ -47,7 +47,7 @@ include/wireplumber-0.5/wp/wpversion.h
 %%DOXYGEN%%lib/girepository-1.0/Wp-0.5.typelib
 lib/libwireplumber-0.5.so
 lib/libwireplumber-0.5.so.0
-lib/libwireplumber-0.5.so.0.517.0
+lib/libwireplumber-0.5.so.0.519.0
 lib/wireplumber-0.5/libwireplumber-module-dbus-connection.so
 lib/wireplumber-0.5/libwireplumber-module-default-nodes-api.so
 lib/wireplumber-0.5/libwireplumber-module-file-monitor-api.so
@@ -100,6 +100,7 @@ share/bash-completion/completions/wpctl
 %%NLS%%share/locale/ml/LC_MESSAGES/wireplumber.mo
 %%NLS%%share/locale/mr/LC_MESSAGES/wireplumber.mo
 %%NLS%%share/locale/my/LC_MESSAGES/wireplumber.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/wireplumber.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/wireplumber.mo
 %%NLS%%share/locale/nn/LC_MESSAGES/wireplumber.mo
 %%NLS%%share/locale/oc/LC_MESSAGES/wireplumber.mo
@@ -156,6 +157,7 @@ share/pipewire/pipewire.conf.d/10-wireplumber.conf
 %%DATADIR%%/scripts/lib/linking-utils.lua
 %%DATADIR%%/scripts/lib/monitor-utils.lua
 %%DATADIR%%/scripts/lib/node-utils.lua
+%%DATADIR%%/scripts/lib/profile-utils.lua
 %%DATADIR%%/scripts/linking/find-audio-group-target.lua
 %%DATADIR%%/scripts/linking/find-best-target.lua
 %%DATADIR%%/scripts/linking/find-default-target.lua
