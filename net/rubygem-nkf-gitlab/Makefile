@@ -8,7 +8,7 @@ MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Ruby extension for Network Kanji Filter
 WWW=		https://github.com/ruby/nkf
 
-LICENSE=	BSD2CLAUSE RUBY
+LICENSE=	BSD-2-Clause RUBY
 LICENSE_COMB=	dual
 LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/LICENSE.txt
 
