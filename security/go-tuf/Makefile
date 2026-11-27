@@ -1,17 +1,16 @@
 PORTNAME=	go-tuf
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.2
-PORTREVISION=	9
+DISTVERSION=	2.5.0
 CATEGORIES=	security
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Framework for Securing Software
 WWW=		https://theupdateframework.io
 
-LICENSE=	APACHE20
+LICENSE=	Apache-2.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cpe go:modules
+USES=		cpe go:1.27+,modules
 CPE_VENDOR=	theupdateframework
 
 GO_TARGET=	./examples/cli/tuf-client
