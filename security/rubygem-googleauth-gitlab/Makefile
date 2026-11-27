@@ -9,7 +9,7 @@ MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Google Auth Library for Ruby
 WWW=		https://github.com/googleapis/google-auth-library-ruby
 
-LICENSE=	APACHE20
+LICENSE=	Apache-2.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-faraday-gitlab>=1.0<3.0:www/rubygem-faraday-gitlab \
