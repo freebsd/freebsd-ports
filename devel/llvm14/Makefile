@@ -161,7 +161,9 @@ CMAKE_BUILD_TYPE=	RelWithDebInfo
 STRIP=
 .endif
 
-PLIST_SUB+=	LLVM_RELEASE=${LLVM_RELEASE} \
+PLIST_SUB+=	\
+		CMAKE_BUILD_TYPE_CASE=${CMAKE_BUILD_TYPE} \
+		LLVM_RELEASE=${LLVM_RELEASE} \
 		LLVM_SUFFIX=${LLVM_SUFFIX} \
 		LLVM_MAJOR=${LLVM_MAJOR}
 
@@ -587,7 +589,8 @@ build-plist:
 	    ${GREP} -v man/man1 | ${SED} -e 's|${STAGEDIR}${PREFIX}/||' \
 	    -e 's|${PYTHON_SITELIBDIR:C|${PREFIX}/||}|%%PYTHON_SITELIBDIR%%|' \
 	    -e 's|${LLVM_RELEASE}|%%LLVM_RELEASE%%|' \
-	    -e 's|release.cmake|%%CMAKE_BUILD_TYPE%%.cmake|' \
+	    -e 's|${CMAKE_BUILD_TYPE:tl}.cmake|%%CMAKE_BUILD_TYPE%%.cmake|' \
+	    -e 's|-${CMAKE_BUILD_TYPE}/|-%%CMAKE_BUILD_TYPE_CASE%%/|' \
 	    -e 's|${LLVM_RELEASE:C/\./\\./g}|%%LLVM_RELEASE%%|' \
 	    -e 's|${LLVM_SUFFIX:C/\./\\./g}|%%LLVM_SUFFIX%%|' \
 	    -e 's|\([^0-9]\)${LLVM_MAJOR}$$|\1%%LLVM_MAJOR%%|' \

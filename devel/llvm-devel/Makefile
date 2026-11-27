@@ -172,7 +172,9 @@ STATIC_LIBS_DESC= Install static libraries (does not effect sanitizers)
 
 CONFLICTS_INSTALL=	${PORTNAME}${LLVM_SUFFIX} ${PORTNAME}${LLVM_SUFFIX}-lite
 
-PLIST_SUB+=	CONFIGURE_TARGET=${CONFIGURE_TARGET} \
+PLIST_SUB+=	\
+		CMAKE_BUILD_TYPE_CASE=${CMAKE_BUILD_TYPE} \
+		CONFIGURE_TARGET=${CONFIGURE_TARGET} \
 		LLVM_MAJOR_MINOR=${LLVM_MAJOR_MINOR} \
 		LLVM_MAJOR=${LLVM_MAJOR} \
 		LLVM_RELEASE=${LLVM_RELEASE}
@@ -512,7 +514,8 @@ build-plist:
 	    -e 's|${PYTHON_SITELIBDIR:C|${PREFIX}/||}|%%PYTHON_SITELIBDIR%%|' \
 	    -e 's|${PYTHON_TAG:C/\./\\./g}${PYTHON_ABIVER}|%%PYTHON_TAG%%%%PYTHON_ABIVER%%|' \
 	    -e 's|${PORTVERSION}|%%PORTVERSION%%|' \
-	    -e 's|release.cmake|%%CMAKE_BUILD_TYPE%%.cmake|' \
+	    -e 's|${CMAKE_BUILD_TYPE:tl}.cmake|%%CMAKE_BUILD_TYPE%%.cmake|' \
+	    -e 's|-${CMAKE_BUILD_TYPE}/|-%%CMAKE_BUILD_TYPE_CASE%%/|' \
 	    -e 's|${LLVM_RELEASE:C/\./\\./g}|%%LLVM_RELEASE%%|' \
 	    -e 's|${LLVM_MAJOR_MINOR:C/\./\\./}git|%%LLVM_MAJOR_MINOR%%git|' \
 	    -e 's|${LLVM_MAJOR}git|%%LLVM_MAJOR%%git|' \
