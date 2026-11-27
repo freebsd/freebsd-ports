@@ -1,0 +1,10 @@
+The nchan module turns nginx into a publish and subscribe server.  Clients
+subscribe over websocket, EventSource, long polling or plain HTTP, and
+messages published to a channel reach all of its subscribers.
+
+Messages can be kept in shared memory or in Redis, which lets several
+servers share the same channels.  Channel state and subscriber counts are
+available over an HTTP interface.
+
+This port only installs the module sources.  The module itself is built by
+the nginx ports when their HTTP_PUSH option is enabled.

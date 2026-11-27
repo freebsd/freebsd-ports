@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+This package contains the sources of the nchan module only.  It does not
+install a loadable module, and installing it alongside nginx does not add
+publish and subscribe support to a running server.
+
+The module itself is built by the nginx ports.  To use it, build
+www/nginx, www/nginx-devel or www/freenginx with the HTTP_PUSH option
+enabled.  Those ports pick the sources up from
+%%PREFIX%%/share/nginx/modules/nginx-module-nchan and produce
+ngx_nchan_module.so.
+EOM
+}
+]
