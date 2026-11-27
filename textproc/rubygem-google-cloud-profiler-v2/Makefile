@@ -8,7 +8,7 @@ MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Ruby Client to manage continous progiling information
 WWW=		https://github.com/googleapis/google-cloud-ruby/tree/main/google-cloud-profiler-v2
 
-LICENSE=	APACHE20
+LICENSE=	Apache-2.0
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	rubygem-gapic-common-gitlab>=0.21.1<2:devel/rubygem-gapic-common-gitlab \
