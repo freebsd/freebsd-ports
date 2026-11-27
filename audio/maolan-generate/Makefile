@@ -1,5 +1,5 @@
 PORTNAME=	maolan-generate
-DISTVERSION=	0.0.22
+DISTVERSION=	0.0.24
 CATEGORIES=	audio
 
 MAINTAINER=	meka@sys.it.com
@@ -8,6 +8,9 @@ WWW=		https://maolan.rs
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+NOT_FOR_ARCHS=	armv6 armv7 i386 powerpc powerpcspe
+NOT_FOR_ARCHS_REASON=	requires 64-bit architecture
 
 LIB_DEPENDS=	libonig.so:devel/oniguruma
 
