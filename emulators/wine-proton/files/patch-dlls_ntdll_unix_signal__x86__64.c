@@ -1,4 +1,4 @@
---- dlls/ntdll/unix/signal_x86_64.c.orig	2026-08-03 08:08:29 UTC
+--- dlls/ntdll/unix/signal_x86_64.c.orig	2026-11-19 14:08:52 UTC
 +++ dlls/ntdll/unix/signal_x86_64.c
 @@ -207,6 +207,7 @@ __ASM_GLOBAL_FUNC( modify_ldt,
  
@@ -17,7 +17,7 @@
                     "movw 0x338(%r13),%ax\n"    /* amd64_thread_data()->fs */
                     "testw %ax,%ax\n\t"
                     "jz 1f\n\t"
-@@ -3038,6 +3039,16 @@ void ldt_set_entry( WORD sel, LDT_ENTRY entry )
+@@ -3046,6 +3047,16 @@ void ldt_set_entry( WORD sel, LDT_ENTRY entry )
      if ((ret = modify_ldt( &ldt_info ))) ERR( "modify_ldt failed %d\n", ret );
  #elif defined(__APPLE__)
      if (i386_set_ldt(sel >> 3, (union ldt_entry *)&entry, 1) < 0) perror("i386_set_ldt");
@@ -34,7 +34,7 @@
  #else
      fprintf( stderr, "No LDT support on this platform\n" );
      exit(1);
-@@ -3159,6 +3170,8 @@ void signal_init_process(void)
+@@ -3167,6 +3178,8 @@ void signal_init_process(void)
          fs32_sel = alloc_fs_sel( -1, wow_teb );
  #elif defined(__APPLE__)
          cs32_sel = ldt_alloc_entry( ldt_make_cs32_entry() );
@@ -43,7 +43,7 @@
  #endif
      }
  
-@@ -3197,7 +3210,11 @@ void set_thread_teb( TEB *teb )
+@@ -3207,7 +3220,11 @@ void set_thread_teb( TEB *teb )
  
  void set_thread_teb( TEB *teb )
  {
@@ -55,7 +55,7 @@
  }
  
  /***********************************************************************
-@@ -3223,6 +3240,7 @@ void init_syscall_frame( LPTHREAD_START_ROUTINE entry,
+@@ -3233,6 +3250,7 @@ void init_syscall_frame( LPTHREAD_START_ROUTINE entry,
      }
  #elif defined (__FreeBSD__) || defined (__FreeBSD_kernel__)
      amd64_set_gsbase( teb );
@@ -63,7 +63,7 @@
  #elif defined(__NetBSD__)
      sysarch( X86_64_SET_GSBASE, &teb );
  #elif defined (__APPLE__)
-@@ -3448,6 +3466,28 @@ __ASM_GLOBAL_FUNC( __wine_syscall_dispatcher,
+@@ -3458,6 +3476,28 @@ __ASM_GLOBAL_FUNC( __wine_syscall_dispatcher,
                     "syscall\n\t"
                     "leaq -0x98(%rbp),%rcx\n"
                     "2:\n\t"
@@ -92,7 +92,7 @@
  #elif defined __APPLE__
                     "movq 0x320(%r13),%rdi\n\t"     /* amd64_thread_data()->pthread_teb */
                     "xorl %esi,%esi\n\t"
-@@ -3494,11 +3534,16 @@ __ASM_GLOBAL_FUNC( __wine_syscall_dispatcher,
+@@ -3504,11 +3544,16 @@ __ASM_GLOBAL_FUNC( __wine_syscall_dispatcher,
                     __ASM_CFI(".cfi_remember_state\n\t")
                     __ASM_CFI_CFA_IS_AT2(rcx, 0xa8, 0x01) /* frame->syscall_cfa */
                     "leaq 0x70(%rcx),%rsp\n\t"      /* %rsp > frame means no longer inside syscall */
@@ -110,7 +110,7 @@
                     "1:\n\t"
  #elif defined __APPLE__
                     "movq %rax,%r8\n\t"
-@@ -3736,6 +3781,27 @@ __ASM_GLOBAL_FUNC( __wine_unix_call_dispatcher,
+@@ -3746,6 +3791,27 @@ __ASM_GLOBAL_FUNC( __wine_unix_call_dispatcher,
                     "mov $158,%eax\n\t"             /* SYS_arch_prctl */
                     "syscall\n\t"
                     "2:\n\t"
@@ -138,7 +138,7 @@
  #elif defined __APPLE__
                     "movq 0x320(%r13),%rdi\n\t"     /* amd64_thread_data()->pthread_teb */
                     "xorl %esi,%esi\n\t"
-@@ -3762,11 +3828,16 @@ __ASM_GLOBAL_FUNC( __wine_unix_call_dispatcher,
+@@ -3772,11 +3838,16 @@ __ASM_GLOBAL_FUNC( __wine_unix_call_dispatcher,
                     /* switch to user stack */
                     "movq 0x88(%rcx),%rsp\n\t"
                     __ASM_CFI(".cfi_restore_state\n\t")

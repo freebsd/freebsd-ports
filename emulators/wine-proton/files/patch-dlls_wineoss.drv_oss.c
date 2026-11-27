@@ -1,4 +1,4 @@
---- dlls/wineoss.drv/oss.c.orig	2025-11-06 09:54:15 UTC
+--- dlls/wineoss.drv/oss.c.orig	2026-11-19 14:08:52 UTC
 +++ dlls/wineoss.drv/oss.c
 @@ -155,17 +155,6 @@ static NTSTATUS oss_test_connect(void *args)
  
@@ -45,14 +45,13 @@
 -        formats = ai.iformats;
 +        formats = ai.iformats | getfmts;
  
--    fmt->Format.wFormatTag = WAVE_FORMAT_EXTENSIBLE;
--    if(formats & AFMT_S16_LE){
--        fmt->Format.wBitsPerSample = 16;
--        fmt->SubFormat = KSDATAFORMAT_SUBTYPE_PCM;
 +    /* Windows always reports 32-bit float as the shared mode mix format, and
 +     * some applications (e.g. Wwise) write float samples whatever format
 +     * they initialized the stream with. */
-+    fmt->Format.wFormatTag = WAVE_FORMAT_EXTENSIBLE;
+     fmt->Format.wFormatTag = WAVE_FORMAT_EXTENSIBLE;
+-    if(formats & AFMT_S16_LE){
+-        fmt->Format.wBitsPerSample = 16;
+-        fmt->SubFormat = KSDATAFORMAT_SUBTYPE_PCM;
  #ifdef AFMT_FLOAT
 -    }else if(formats & AFMT_FLOAT){
 +    if(formats & AFMT_FLOAT){

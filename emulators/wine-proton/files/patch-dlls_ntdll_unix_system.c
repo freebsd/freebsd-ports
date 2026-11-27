@@ -1,6 +1,6 @@
---- dlls/ntdll/unix/system.c.orig	2026-08-03 08:08:29 UTC
+--- dlls/ntdll/unix/system.c.orig	2026-11-19 14:08:52 UTC
 +++ dlls/ntdll/unix/system.c
-@@ -765,6 +765,7 @@ void init_shared_data_cpuinfo( KUSER_SHARED_DATA *data
+@@ -840,6 +840,7 @@ void init_shared_data_cpuinfo( KUSER_SHARED_DATA *data
  
  #endif /* End architecture specific feature detection for CPUs */
  
@@ -8,7 +8,7 @@
  static void fill_performance_core_info(void);
  static BOOL sysfs_parse_bitmap(const char *filename, ULONG_PTR *mask);
  
-@@ -974,6 +975,12 @@ error:
+@@ -1049,6 +1050,12 @@ error:
      cpu_override.mapping.cpu_count = 0;
      ERR("Invalid WINE_CPU_TOPOLOGY string %s (%s).\n", debugstr_a(env_override), debugstr_a(s));
  }
@@ -21,7 +21,7 @@
  
  struct cpu_topology_override *get_cpu_topology_override(void)
  {
-@@ -1674,6 +1681,98 @@ static NTSTATUS create_logical_proc_info(void)
+@@ -1749,6 +1756,98 @@ static NTSTATUS create_logical_proc_info(void)
      }
  
      /* OSX doesn't support NUMA, so just make one NUMA node for all CPUs */
