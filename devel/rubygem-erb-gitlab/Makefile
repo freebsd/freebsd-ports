@@ -8,7 +8,7 @@ MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Easy to use but powerful templating system for Ruby
 WWW=		https://github.com/ruby/erb
 
-LICENSE=	BSD2CLAUSE RUBY
+LICENSE=	BSD-2-Clause RUBY
 LICENSE_COMB=	dual
 #LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/BSDL
 LICENSE_FILE_RUBY=	${WRKSRC}/LICENSE.txt
