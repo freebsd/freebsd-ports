@@ -1,6 +1,5 @@
 PORTNAME=	hwloc
-DISTVERSION=	2.12.1
-PORTREVISION=	2
+DISTVERSION=	2.16.0
 CATEGORIES=	devel
 MASTER_SITES=	https://download.open-mpi.org/release/hwloc/v${DISTVERSION:R}/
 PKGNAMESUFFIX=	2
@@ -22,8 +21,8 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-cuda \
 		--disable-gl \
-		--disable-opencl \
 		--disable-nvml \
+		--disable-opencl \
 		--enable-static
 
 INSTALL_TARGET=	install-strip
