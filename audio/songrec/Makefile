@@ -1,5 +1,5 @@
 PORTNAME=	songrec
-DISTVERSION=	0.8.2
+DISTVERSION=	0.8.3
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -35,14 +35,14 @@ CARGO_CRATES=	adler2-2.0.1 \
 		anstyle-query-1.1.5 \
 		anstyle-wincon-3.0.11 \
 		app_dirs-1.2.1 \
-		arc-swap-1.9.3 \
+		arc-swap-1.9.5 \
 		arrayvec-0.7.8 \
 		ashpd-0.13.13 \
 		async-broadcast-0.7.2 \
 		async-channel-2.5.0 \
-		async-executor-1.14.0 \
+		async-executor-1.14.1 \
 		async-io-2.6.0 \
-		async-lock-3.4.2 \
+		async-lock-3.5.0 \
 		async-process-2.5.0 \
 		async-recursion-1.2.0 \
 		async-signal-0.2.14 \
@@ -57,16 +57,16 @@ CARGO_CRATES=	adler2-2.0.1 \
 		block-0.1.6 \
 		block2-0.6.2 \
 		blocking-1.7.0 \
-		bumpalo-3.20.3 \
+		bumpalo-3.20.4 \
 		bytemuck-1.25.2 \
 		byteorder-1.5.0 \
 		byteorder-lite-0.1.0 \
 		bytes-1.12.1 \
 		cairo-rs-0.22.9 \
 		cairo-sys-rs-0.22.9 \
-		cc-1.10.0 \
+		cc-1.11.2 \
 		cexpr-0.6.0 \
-		cfg-expr-0.20.10 \
+		cfg-expr-0.20.11 \
 		cfg-if-1.0.5 \
 		chacha20-0.10.2 \
 		chrono-0.4.45 \
@@ -84,7 +84,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		coreaudio-rs-0.14.2 \
 		cpal-0.18.2 \
 		cpufeatures-0.3.1 \
-		crc32fast-1.5.3 \
+		crc32fast-1.5.5 \
 		crossbeam-queue-0.3.14 \
 		crossbeam-utils-0.8.23 \
 		csv-1.4.0 \
@@ -94,13 +94,13 @@ CARGO_CRATES=	adler2-2.0.1 \
 		dirs-sys-0.5.0 \
 		dispatch2-0.3.1 \
 		either-1.19.0 \
-		encoding_rs-0.8.42 \
+		encoding_rs-0.8.44 \
 		endi-1.1.1 \
 		enumflags2-0.7.12 \
 		enumflags2_derive-0.7.12 \
 		equivalent-1.0.3 \
 		erased-serde-0.4.11 \
-		errno-0.3.14 \
+		errno-0.3.15 \
 		event-listener-5.4.2 \
 		event-listener-strategy-0.5.4 \
 		extended-0.1.0 \
@@ -109,7 +109,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		fern-0.7.1 \
 		field-offset-0.3.6 \
 		find-msvc-tools-0.1.15 \
-		flate2-1.1.10 \
+		flate2-1.1.11 \
 		fs_extra-1.3.0 \
 		futures-channel-0.3.34 \
 		futures-core-0.3.34 \
@@ -157,13 +157,13 @@ CARGO_CRATES=	adler2-2.0.1 \
 		indexmap-2.14.2 \
 		is_terminal_polyfill-1.70.2 \
 		itertools-0.13.0 \
-		itoa-1.0.18 \
+		itoa-1.0.19 \
 		jni-0.22.4 \
 		jni-macros-0.22.4 \
 		jni-sys-0.3.1 \
 		jni-sys-0.4.1 \
 		jni-sys-macros-0.4.1 \
-		js-sys-0.3.106 \
+		js-sys-0.3.107 \
 		ksni-0.3.7 \
 		lazy_static-1.5.1 \
 		libadwaita-0.9.2 \
@@ -177,7 +177,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		libspa-sys-0.10.1 \
 		linux-raw-sys-0.12.1 \
 		locale_config-0.3.0 \
-		log-0.4.34 \
+		log-0.4.35 \
 		mach2-0.4.3 \
 		mach2-0.6.0 \
 		malloc_buf-0.0.6 \
@@ -188,7 +188,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		minimp3_fixed-0.5.4 \
 		miniz_oxide-0.8.9 \
 		miniz_oxide-0.9.1 \
-		mio-1.2.4 \
+		mio-1.2.5 \
 		moxcms-0.8.1 \
 		mpris-server-0.11.0 \
 		multiversion_no_op-1.0.0 \
@@ -242,7 +242,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		r-efi-6.0.0 \
 		rand-0.10.3 \
 		rand_core-0.10.1 \
-		realfft-3.5.0 \
+		realfft-3.5.1 \
 		redox_users-0.5.3 \
 		regex-1.13.1 \
 		regex-automata-0.4.18 \
@@ -252,7 +252,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rustc-hash-2.1.3 \
 		rustc_version-0.4.1 \
 		rustfft-6.4.1 \
-		rustix-1.1.5 \
+		rustix-1.1.6 \
 		rustversion-1.0.23 \
 		ryu-1.0.23 \
 		same-file-1.0.6 \
@@ -264,7 +264,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		serde_fmt-1.1.0 \
 		serde_json-1.0.154 \
 		serde_repr-0.1.21 \
-		serde_spanned-1.1.2 \
+		serde_spanned-1.1.3 \
 		shell32-sys-0.1.2 \
 		shlex-1.3.0 \
 		shlex-2.0.1 \
@@ -274,7 +274,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		simdutf8-0.1.5 \
 		slab-0.4.12 \
 		slice-ring-buffer-0.3.4 \
-		smallvec-1.16.4 \
+		smallvec-1.16.5 \
 		socket2-0.6.5 \
 		soup3-0.9.0 \
 		soup3-sys-0.9.0 \
@@ -300,7 +300,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		symphonia-metadata-0.5.5 \
 		symphonia-utils-xiph-0.5.5 \
 		syn-2.0.119 \
-		syn-3.0.9 \
+		syn-3.0.10 \
 		system-deps-7.0.8 \
 		system-deps-9.0.1 \
 		target-lexicon-0.13.5 \
@@ -312,11 +312,11 @@ CARGO_CRATES=	adler2-2.0.1 \
 		thiserror-impl-1.0.69 \
 		thiserror-impl-2.0.21 \
 		tokio-1.54.1 \
-		toml-1.1.8+spec-1.1.0 \
-		toml_datetime-1.1.2+spec-1.1.0 \
-		toml_edit-0.25.17+spec-1.1.0 \
+		toml-1.2.1+spec-1.1.0 \
+		toml_datetime-1.1.3+spec-1.1.0 \
+		toml_edit-0.25.19+spec-1.1.0 \
 		toml_parser-1.1.5+spec-1.1.0 \
-		toml_writer-1.1.3+spec-1.1.0 \
+		toml_writer-1.2.0+spec-1.1.0 \
 		tracing-0.1.44 \
 		tracing-attributes-0.1.31 \
 		tracing-core-0.1.36 \
@@ -325,20 +325,20 @@ CARGO_CRATES=	adler2-2.0.1 \
 		typeid-1.0.3 \
 		uds_windows-1.2.1 \
 		unicode-ident-1.0.27 \
-		unicode-width-0.2.2 \
+		unicode-width-0.2.3 \
 		utf8parse-0.2.2 \
-		uuid-1.29.0 \
+		uuid-1.29.2 \
 		value-bag-1.14.1 \
 		value-bag-serde1-1.14.1 \
 		value-bag-sval2-1.14.1 \
 		version-compare-0.2.1 \
 		walkdir-2.5.0 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.129 \
-		wasm-bindgen-macro-0.2.129 \
-		wasm-bindgen-macro-support-0.2.129 \
-		wasm-bindgen-shared-0.2.129 \
-		web-sys-0.3.106 \
+		wasm-bindgen-0.2.130 \
+		wasm-bindgen-macro-0.2.130 \
+		wasm-bindgen-macro-support-0.2.130 \
+		wasm-bindgen-shared-0.2.130 \
+		web-sys-0.3.107 \
 		winapi-0.2.8 \
 		winapi-0.3.9 \
 		winapi-build-0.1.1 \
@@ -357,21 +357,21 @@ CARGO_CRATES=	adler2-2.0.1 \
 		windows-strings-0.5.1 \
 		windows-sys-0.61.2 \
 		windows-threading-0.2.1 \
-		winnow-1.0.4 \
+		winnow-1.0.5 \
 		x11-dl-2.21.0 \
 		xdg-2.5.2 \
 		zbus-5.19.0 \
-		zbus-6.1.0 \
+		zbus-6.3.0 \
 		zbus_macros-5.19.0 \
-		zbus_macros-6.1.0 \
+		zbus_macros-6.3.0 \
 		zbus_names-4.3.5 \
-		zbus_utils-6.0.0 \
-		zcheapstr-1.1.0 \
+		zbus_utils-6.1.0 \
+		zcheapstr-1.2.0 \
 		zerocopy-0.8.63 \
 		zerocopy-derive-0.8.63 \
 		zlib-rs-0.6.8 \
 		zmij-1.0.23 \
-		zruntime-0.2.1 \
+		zruntime-0.2.3 \
 		zvariant-5.15.1 \
 		zvariant_derive-5.15.1 \
 		zvariant_utils-4.2.0
