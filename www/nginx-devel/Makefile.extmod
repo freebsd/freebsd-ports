@@ -96,9 +96,10 @@ HTTP_AUTH_DIGEST_BUILD_DEPENDS=	nginx-module-auth-digest>0:www/nginx-module-auth
 WRKSRC_auth_digest=		${WRKDIR}/nginx-module-auth-digest
 HTTP_AUTH_DIGEST_VARS=		DSO_EXTMODS+=auth_digest
 
-HTTP_AUTH_JWT_GH_TUPLE=		TeslaGov:ngx-http-auth-jwt-module:2.3.1:auth_jwt
-HTTP_AUTH_JWT_LIB_DEPENDS=	libjwt.so:www/libjwt
-HTTP_AUTH_JWT_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_auth_jwt_module.c
+HTTP_AUTH_JWT_LIB_DEPENDS=	libjansson.so:devel/jansson \
+				libjwt.so:www/libjwt
+HTTP_AUTH_JWT_BUILD_DEPENDS=	nginx-module-auth-jwt>0:www/nginx-module-auth-jwt
+WRKSRC_auth_jwt=		${WRKDIR}/ngx-http-auth-jwt-module
 HTTP_AUTH_JWT_VARS=		DSO_EXTMODS+=auth_jwt
 
 HTTP_AUTH_KRB5_BUILD_DEPENDS=	nginx-module-auth-krb5>0:www/nginx-module-auth-krb5
@@ -161,7 +162,8 @@ HTTP_NOTICE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_notice_module.c \
 				${PATCHDIR}/extra-patch-nginx-notice-config
 HTTP_NOTICE_VARS=		DSO_EXTMODS+=notice
 
-HTTP_PUSH_GH_TUPLE=		slact:nchan:v1.3.7:push
+HTTP_PUSH_BUILD_DEPENDS=	nginx-module-nchan>0:www/nginx-module-nchan
+WRKSRC_push=			${WRKDIR}/nchan
 HTTP_PUSH_VARS=			DSO_EXTMODS+=push
 
 HTTP_PUSH_STREAM_BUILD_DEPENDS=	nginx-module-push-stream>0:www/nginx-module-push-stream
@@ -268,12 +270,11 @@ NATS_GH_TUPLE=		nats-io:nginx-nats:6f7adf1:nats
 NATS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_nats.c
 NATS_VARS=		DSO_EXTMODS+=nats NATS_SUBDIR=/src
 
-NAXSI_NGINX_VER=	1.7
-NAXSI_GH_TUPLE=		wargio:naxsi:${NAXSI_NGINX_VER}:naxsi \
-			libinjection:libinjection:b9fcaaf:libinjection
+NAXSI_LIB_DEPENDS=	libinjection.so:devel/libinjection
+NAXSI_USES=		pkgconfig
+NAXSI_BUILD_DEPENDS=	nginx-module-naxsi>0:www/nginx-module-naxsi
+WRKSRC_naxsi=		${WRKDIR}/naxsi
 NAXSI_VARS=		DSO_EXTMODS+=naxsi NAXSI_SUBDIR=/naxsi_src
-NAXSI_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-naxsi-libinjection__sqli_c \
-			${PATCHDIR}/extra-patch-naxsi_config
 
 NJS_BUILD_DEPENDS=	nginx-module-njs>=1.0.1:www/nginx-module-njs
 WRKSRC_njs=		${WRKDIR}/njs

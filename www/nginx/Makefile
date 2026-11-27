@@ -1,6 +1,6 @@
 PORTNAME=	nginx
 PORTVERSION=	${NGINX_VERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 .include "version.mk"
 PORTEPOCH=	3
 CATEGORIES=	www
@@ -285,10 +285,6 @@ pre-everything::
 .endif
 	@${ECHO_MSG}
 
-post-extract-NAXSI-on:
-	@${RMDIR} ${WRKSRC_naxsi}/naxsi_src/libinjection
-	@${LN} -s ${WRKSRC_libinjection} ${WRKSRC_naxsi}/naxsi_src/libinjection
-
 post-patch:
 	@${REINPLACE_CMD} 's!%%HTTP_PORT%%!${HTTP_PORT}!; \
 		s!%%PREFIX%%!${PREFIX}!; \
@@ -464,6 +460,12 @@ pre-configure-HTTP_MOGILEFS-on:
 		${WRKSRC_mogilefs}
 	@${CHMOD} -R u+w ${WRKSRC_mogilefs}
 
+pre-configure-HTTP_PUSH-on:
+	@${RM} -rf ${WRKSRC_push}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-nchan \
+		${WRKSRC_push}
+	@${CHMOD} -R u+w ${WRKSRC_push}
+
 pre-configure-HTTP_PUSH_STREAM-on:
 	@${RM} -rf ${WRKSRC_pushstream}
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-push-stream \
@@ -589,6 +591,12 @@ pre-configure-SRCACHE-on:
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-srcache ${WRKSRC_srcache}
 	@${CHMOD} -R u+w ${WRKSRC_srcache}
 
+pre-configure-NAXSI-on:
+	@${RM} -rf ${WRKSRC_naxsi}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-naxsi \
+		${WRKSRC_naxsi}
+	@${CHMOD} -R u+w ${WRKSRC_naxsi}
+
 pre-configure-PASSENGER-on:
 	@${RM} -rf ${WRKSRC_passenger}
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-passenger \
@@ -675,7 +683,7 @@ do-install-LINK-on:
 
 do-install-NAXSI-on:
 	${INSTALL_DATA} \
-	${WRKDIR}/naxsi-${NAXSI_NGINX_VER}/naxsi_rules/naxsi_core.rules \
+	${WRKSRC_naxsi}/naxsi_rules/naxsi_core.rules \
 	${STAGEDIR}${ETCDIR}
 .endif
 

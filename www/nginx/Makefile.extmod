@@ -156,7 +156,8 @@ HTTP_NOTICE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_notice_module.c \
 				${PATCHDIR}/extra-patch-nginx-notice-config
 HTTP_NOTICE_VARS=		DSO_EXTMODS+=notice
 
-HTTP_PUSH_GH_TUPLE=		slact:nchan:v1.3.6:push
+HTTP_PUSH_BUILD_DEPENDS=	nginx-module-nchan>0:www/nginx-module-nchan
+WRKSRC_push=			${WRKDIR}/nchan
 HTTP_PUSH_VARS=			DSO_EXTMODS+=push
 
 HTTP_PUSH_STREAM_BUILD_DEPENDS=	nginx-module-push-stream>0:www/nginx-module-push-stream
@@ -260,12 +261,11 @@ MODSECURITY3_BUILD_DEPENDS=	nginx-module-modsecurity3>0:www/nginx-module-modsecu
 WRKSRC_modsecurity3=		${WRKDIR}/ModSecurity-nginx
 MODSECURITY3_VARS=		DSO_EXTMODS+=modsecurity3
 
-NAXSI_NGINX_VER=	1.6
-NAXSI_GH_TUPLE=		wargio:naxsi:${NAXSI_NGINX_VER}:naxsi \
-			libinjection:libinjection:4aa3894:libinjection
+NAXSI_LIB_DEPENDS=	libinjection.so:devel/libinjection
+NAXSI_USES=		pkgconfig
+NAXSI_BUILD_DEPENDS=	nginx-module-naxsi>0:www/nginx-module-naxsi
+WRKSRC_naxsi=		${WRKDIR}/naxsi
 NAXSI_VARS=		DSO_EXTMODS+=naxsi NAXSI_SUBDIR=/naxsi_src
-NAXSI_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-naxsi-libinjection__sqli_c \
-			${PATCHDIR}/extra-patch-naxsi_config
 
 NJS_BUILD_DEPENDS=	nginx-module-njs>=1.0.1:www/nginx-module-njs
 WRKSRC_njs=		${WRKDIR}/njs
