@@ -1,5 +1,5 @@
 PORTNAME=	postgresql
-DISTVERSION=	18_00_0006
+DISTVERSION=	18_00_0007
 DISTVERSIONPREFIX=REL-
 CATEGORIES=	databases
 PKGNAMESUFFIX=	-odbc
@@ -8,7 +8,7 @@ MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	PostgreSQL ODBC driver
 WWW=		https://github.com/postgresql-interfaces/psqlodbc/
 
-LICENSE=	LGPL20+
+LICENSE=	LGPL-2.0-or-later
 LICENSE_FILE=	${WRKSRC}/license.txt
 
 LIB_DEPENDS=	libodbc.so:databases/unixODBC
