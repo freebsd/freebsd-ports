@@ -24,4 +24,6 @@ USES=			perl5
 USE_PERL5=		modbuild
 PL_BUILD=		Build
 
+PORTSCOUT=		limit:^[0-9\.]*$$
+
 .include <bsd.port.mk>
