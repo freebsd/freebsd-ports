@@ -6,7 +6,7 @@ sbin/ngircd
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/Commands.txt
 %%PORTDOCS%%%%DOCSDIR%%/Container.md
-%%PORTDOCS%%%%DOCSDIR%%/Contributing.txt
+%%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTING.md
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.md
 %%PORTDOCS%%%%DOCSDIR%%/HowToRelease.txt
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.md
@@ -15,6 +15,7 @@ sbin/ngircd
 %%PORTDOCS%%%%DOCSDIR%%/PAM.txt
 %%PORTDOCS%%%%DOCSDIR%%/Platforms.txt
 %%PORTDOCS%%%%DOCSDIR%%/Protocol.txt
+%%PORTDOCS%%%%DOCSDIR%%/QuickStart.md
 %%PORTDOCS%%%%DOCSDIR%%/README-AUX.txt
 %%PORTDOCS%%%%DOCSDIR%%/README-BeOS.txt
 %%PORTDOCS%%%%DOCSDIR%%/README-Interix.txt

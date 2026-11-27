@@ -1,6 +1,5 @@
 PORTNAME=	ngircd
-DISTVERSION=	28
-PORTREVISION=	1
+DISTVERSION=	29
 PORTEPOCH=	1
 CATEGORIES=	irc
 MASTER_SITES=	https://ngircd.barton.de/pub/ngircd/ \
@@ -14,12 +13,16 @@ WWW=		https://ngircd.barton.de/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+TEST_DEPENDS=	expect:lang/expect
+
 USES=		cpe localbase:ldflags tar:xz
 CPE_VENDOR=	barton
 CPE_VERSION=	${DISTVERSION:C/^([0-9]+)$/\1.0/}
 USE_RC_SUBR=	${PORTNAME}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${ETCDIR}
+
+TEST_TARGET=	check
 
 USERS=		${PORTNAME}
 GROUPS=		${PORTNAME}
