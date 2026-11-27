@@ -10,7 +10,7 @@ WWW=		https://opentelemetry.io/ \
 		https://github.com/open-telemetry/opentelemetry-ruby-contrib/tree/main/helpers/sql \
 		https://github.com/open-telemetry/opentelemetry-ruby-contrib
 
-LICENSE=	APACHE20
+LICENSE=	Apache-2.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-opentelemetry-api-gitlab>=1.7<2:devel/rubygem-opentelemetry-api-gitlab
