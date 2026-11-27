@@ -1,6 +1,5 @@
 PORTNAME=	vscode
 DISTVERSION=	${VSCODE_VERSION}
-PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	https://github.com/tagattie/FreeBSD-VSCode/releases/download/${DISTVERSION}/:marketplace_exts \
 		https://registry.npmjs.org/@github/copilot-linux-${ELECTRON_ARCH}/-/:copilot_cli_${ELECTRON_ARCH}
@@ -62,9 +61,11 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		bash:shells/bash
 TEST_DEPENDS=	bash:shells/bash
 
-USES=		cargo cpe desktop-file-utils display:test electron:43,build,test \
-		gl gmake gnome gssapi:mit iconv:wchar_t jpeg localbase:ldflags \
-		nodejs:24,build npm:pnpm pkgconfig python:build shebangfix xorg
+USES=		cargo cpe desktop-file-utils display:test \
+		electron:43,build,test gl gmake gnome gssapi:mit iconv:wchar_t \
+		jpeg localbase:ldflags nodejs:24,build npm:pnpm pkgconfig \
+		python:build shebangfix xorg
+
 CPE_VENDOR=	microsoft
 CPE_PRODUCT=	visual_studio_code
 
@@ -246,14 +247,14 @@ do-build:
 	@${MV} ${WRKDIR}/builtInExtensions/* ${WRKDIR}/VSCode-linux-${ELECTRON_ARCH}/resources/app/extensions
 
 post-build:
-# @github/copilot-sdk-linux-<arch> -> @github/copilot-sdk-freebsd-<arch>
-	@${MKDIR} ${VSCODE_APP_OUT_DIR}/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-freebsd-${ELECTRON_ARCH}
-	${TAR} -cf - -C ${VSCODE_APP_OUT_DIR}/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-${ELECTRON_ARCH} . | \
-		${TAR} -xf - -C ${VSCODE_APP_OUT_DIR}/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-freebsd-${ELECTRON_ARCH}
-	@${MKDIR} ${VSCODE_APP_OUT_DIR}/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-freebsd-${ELECTRON_ARCH}/ripgrep/bin/freebsd-${ELECTRON_ARCH}
-	${CP} ${LOCALBASE}/bin/rg ${VSCODE_APP_OUT_DIR}/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-freebsd-${ELECTRON_ARCH}/ripgrep/bin/freebsd-${ELECTRON_ARCH}
-	@${MKDIR} ${VSCODE_APP_OUT_DIR}/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-freebsd-${ELECTRON_ARCH}/tgrep/bin/freebsd-${ELECTRON_ARCH}
-	${CP} ${LOCALBASE}/bin/tgrep ${VSCODE_APP_OUT_DIR}/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-freebsd-${ELECTRON_ARCH}/tgrep/bin/freebsd-${ELECTRON_ARCH}
+# @microsoft/copilot-sdk-linux-<arch> -> @microsoft/copilot-sdk-freebsd-<arch>
+	@${MKDIR} ${VSCODE_APP_OUT_DIR}/resources/app/node_modules.asar.unpacked/@microsoft/copilot-sdk-freebsd-${ELECTRON_ARCH}
+	${TAR} -cf - -C ${VSCODE_APP_OUT_DIR}/resources/app/node_modules.asar.unpacked/@microsoft/copilot-sdk-linux-${ELECTRON_ARCH} . | \
+		${TAR} -xf - -C ${VSCODE_APP_OUT_DIR}/resources/app/node_modules.asar.unpacked/@microsoft/copilot-sdk-freebsd-${ELECTRON_ARCH}
+	@${MKDIR} ${VSCODE_APP_OUT_DIR}/resources/app/node_modules.asar.unpacked/@microsoft/copilot-sdk-freebsd-${ELECTRON_ARCH}/ripgrep/bin/freebsd-${ELECTRON_ARCH}
+	${CP} ${LOCALBASE}/bin/rg ${VSCODE_APP_OUT_DIR}/resources/app/node_modules.asar.unpacked/@microsoft/copilot-sdk-freebsd-${ELECTRON_ARCH}/ripgrep/bin/freebsd-${ELECTRON_ARCH}
+	@${MKDIR} ${VSCODE_APP_OUT_DIR}/resources/app/node_modules.asar.unpacked/@microsoft/copilot-sdk-freebsd-${ELECTRON_ARCH}/tgrep/bin/freebsd-${ELECTRON_ARCH}
+	${CP} ${LOCALBASE}/bin/tgrep ${VSCODE_APP_OUT_DIR}/resources/app/node_modules.asar.unpacked/@microsoft/copilot-sdk-freebsd-${ELECTRON_ARCH}/tgrep/bin/freebsd-${ELECTRON_ARCH}
 # @vscode/os-proxy-resolver-freebsd-<arch>
 	${CARGO_CARGO_RUN} build \
 		--manifest-path ${CARGO_CARGOTOML} \
@@ -304,7 +305,7 @@ do-install:
 		-type d -name linux-${ELECTRON_ARCH} -exec ${RM} -r {} +
 	@${FIND} ${STAGEDIR}${DATADIR}/resources/app \
 		-type d -empty -delete
-	@${RM} -r ${STAGEDIR}${DATADIR}/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-${ELECTRON_ARCH}
+	@${RM} -r ${STAGEDIR}${DATADIR}/resources/app/node_modules.asar.unpacked/@microsoft/copilot-sdk-linux-${ELECTRON_ARCH}
 	@${RM} -r ${STAGEDIR}${DATADIR}/resources/app/node_modules.asar.unpacked/@vscode/os-proxy-resolver-linux-${ELECTRON_ARCH}-gnu
 	@${RM} -r ${STAGEDIR}${DATADIR}/resources/completions
 	${RLN} ${STAGEDIR}${DATADIR}/bin/code-oss ${STAGEDIR}${PREFIX}/bin

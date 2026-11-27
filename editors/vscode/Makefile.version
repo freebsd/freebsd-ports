@@ -1,5 +1,5 @@
-VSCODE_VERSION=		1.147.0
-SOURCE_COMMIT_HASH=	8a14f0cc1b08d531eb83255ea3764ae22aa932b5
+VSCODE_VERSION=		1.148.0
+SOURCE_COMMIT_HASH=	661626d0e72f97806550790a98fb87116c9db825
 # See ${WRKSRC}/node_modules/.pnpm/@github+copilot@<version>
 COPILOT_CLI_VERSION=	1.0.73
 # See ${WRKSRC}/node_modules/.pnpm/@vscode+os-proxy-resolver@<version>

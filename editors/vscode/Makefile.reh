@@ -152,14 +152,14 @@ do-build:
 	done
 
 post-build:
-# @github/copilot-sdk-linux-<arch> -> @github/copilot-sdk-freebsd-<arch>
-	@${MKDIR} ${VSCODE_REH_OUT_DIR}/node_modules/@github/copilot-sdk-freebsd-${NODEJS_ARCH}
-	${TAR} -cf - -C ${VSCODE_REH_OUT_DIR}/node_modules/@github/copilot-sdk-linux-${NODEJS_ARCH} . | \
-		${TAR} -xf - -C ${VSCODE_REH_OUT_DIR}/node_modules/@github/copilot-sdk-freebsd-${NODEJS_ARCH}
-	@${MKDIR} ${VSCODE_REH_OUT_DIR}/node_modules/@github/copilot-sdk-freebsd-${NODEJS_ARCH}/ripgrep/bin/freebsd-${NODEJS_ARCH}
-	${CP} ${LOCALBASE}/bin/rg ${VSCODE_REH_OUT_DIR}/node_modules/@github/copilot-sdk-freebsd-${NODEJS_ARCH}/ripgrep/bin/freebsd-${NODEJS_ARCH}
-	@${MKDIR} ${VSCODE_REH_OUT_DIR}/node_modules/@github/copilot-sdk-freebsd-${NODEJS_ARCH}/tgrep/bin/freebsd-${NODEJS_ARCH}
-	${CP} ${LOCALBASE}/bin/tgrep ${VSCODE_REH_OUT_DIR}/node_modules/@github/copilot-sdk-freebsd-${NODEJS_ARCH}/tgrep/bin/freebsd-${NODEJS_ARCH}
+# @microsoft/copilot-sdk-linux-<arch> -> @microsoft/copilot-sdk-freebsd-<arch>
+	@${MKDIR} ${VSCODE_REH_OUT_DIR}/node_modules/@microsoft/copilot-sdk-freebsd-${NODEJS_ARCH}
+	${TAR} -cf - -C ${VSCODE_REH_OUT_DIR}/node_modules/@microsoft/copilot-sdk-linux-${NODEJS_ARCH} . | \
+		${TAR} -xf - -C ${VSCODE_REH_OUT_DIR}/node_modules/@microsoft/copilot-sdk-freebsd-${NODEJS_ARCH}
+	@${MKDIR} ${VSCODE_REH_OUT_DIR}/node_modules/@microsoft/copilot-sdk-freebsd-${NODEJS_ARCH}/ripgrep/bin/freebsd-${NODEJS_ARCH}
+	${CP} ${LOCALBASE}/bin/rg ${VSCODE_REH_OUT_DIR}/node_modules/@microsoft/copilot-sdk-freebsd-${NODEJS_ARCH}/ripgrep/bin/freebsd-${NODEJS_ARCH}
+	@${MKDIR} ${VSCODE_REH_OUT_DIR}/node_modules/@microsoft/copilot-sdk-freebsd-${NODEJS_ARCH}/tgrep/bin/freebsd-${NODEJS_ARCH}
+	${CP} ${LOCALBASE}/bin/tgrep ${VSCODE_REH_OUT_DIR}/node_modules/@microsoft/copilot-sdk-freebsd-${NODEJS_ARCH}/tgrep/bin/freebsd-${NODEJS_ARCH}
 # @vscode/ripgrep-universal
 	@${MKDIR} ${VSCODE_REH_OUT_DIR}/node_modules/@vscode/ripgrep-universal/bin/freebsd-${NODEJS_ARCH}
 	${CP} ${LOCALBASE}/bin/rg ${VSCODE_REH_OUT_DIR}/node_modules/@vscode/ripgrep-universal/bin/freebsd-${NODEJS_ARCH}
@@ -175,7 +175,7 @@ post-build:
 		-type d \( -name linux-arm64 -o -name linux-x64 \) -exec ${RM} -r {} +
 	@${FIND} ${VSCODE_REH_OUT_DIR} \
 		-type d -empty -delete
-	@${RM} -r ${VSCODE_REH_OUT_DIR}/node_modules/@github/copilot-sdk-linux-${NODEJS_ARCH}
+	@${RM} -r ${VSCODE_REH_OUT_DIR}/node_modules/@microsoft/copilot-sdk-linux-${NODEJS_ARCH}
 # strip native node modules
 	@${FIND} ${WRKDIR}/vscode-reh-linux-${NODEJS_ARCH} -type f -exec ${FILE} {} + | \
 		${GREP} 'ELF.*FreeBSD' | ${AWK} -F ': ' '{print $$1}' | ${XARGS} ${STRIP_CMD}
