@@ -657,6 +657,7 @@
     SUBDIR += octave-forge-oct2mat
     SUBDIR += octave-forge-octave-pool
     SUBDIR += octave-forge-octave_boost
+    SUBDIR += octave-forge-octave_data_encryption_standard
     SUBDIR += octave-forge-octave_ffmpeg_free
     SUBDIR += octave-forge-octave_mermaid_js
     SUBDIR += octave-forge-octave_php_wrapper

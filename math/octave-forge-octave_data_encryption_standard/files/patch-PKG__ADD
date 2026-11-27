@@ -1,0 +1,9 @@
+--- ../PKG_ADD.orig	2026-11-26 19:14:22.002046000 -0600
++++ ../PKG_ADD	2026-11-26 19:14:43.428084000 -0600
+@@ -1,5 +1,5 @@
+ ## autoload the four functions implemented by the single oct-file
+-_here = fileparts (which ('des_init'));
++_here = fileparts (which ('des_core.oct'));
+ _core = fullfile (_here, 'des_core.oct');
+ if (exist (_core, 'file') != 0)
+   autoload ('des_blockcrypt_core', _core);
