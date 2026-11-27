@@ -1,6 +1,6 @@
 PORTNAME=	crush
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.102.0
+DISTVERSION=	0.103.0
 CATEGORIES=	misc devel
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -15,7 +15,7 @@ LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 USES=		go:modules
 
 GO_MODULE=	github.com/charmbracelet/crush
-GO_LDFLAGS=	-w -X github.com/charmbracelet/crush/internal/version.Version=${DISTVERSION}
+GO_LDFLAGS=	-w -X ${GO_MODULE}/internal/version.Version=${DISTVERSION}
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	README.md
@@ -23,7 +23,7 @@ PORTDOCS=	README.md
 OPTIONS_DEFINE=		COMPLETIONS DOCS MANPAGES
 OPTIONS_DEFAULT=	COMPLETIONS MANPAGES
 
-COMPLETIONS_DESC=		Build and/or install shell completions
+COMPLETIONS_DESC=	Build and/or install shell completions
 
 COMPLETIONS_PLIST_FILES=etc/bash_completion.d/${PORTNAME} \
 			share/fish/completions/${PORTNAME}.fish \
