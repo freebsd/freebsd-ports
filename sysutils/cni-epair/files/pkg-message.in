@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+CNI networks that use "host-local" address ranges also need
+net/containernetworking-plugins, which provides
+%%PREFIX%%/libexec/cni/host-local. Networks that use DHCP do not.
+EOM
+}
+]

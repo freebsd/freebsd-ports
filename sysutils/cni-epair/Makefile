@@ -1,6 +1,6 @@
 PORTNAME=	cni-epair
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.2
+DISTVERSION=	1.3.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	ahze@FreeBSD.org
@@ -10,14 +10,14 @@ WWW=		https://github.com/daemonless/cni-epair
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${LOCALBASE}/libexec/cni/host-local:net/containernetworking-plugins
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	daemonless
 
 # A POSIX shell script: nothing to compile, nothing architecture specific.
 NO_ARCH=	yes
 NO_BUILD=	yes
+
+SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 OPTIONS_DEFAULT=	DOCS EXAMPLES
