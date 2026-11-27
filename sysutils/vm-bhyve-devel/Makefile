@@ -1,9 +1,8 @@
 PORTNAME=	vm-bhyve
 # Generate with 'git describe --tags' and break them up
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.99-124
-DISTVERSIONSUFFIX= -gd7c9ebd
-PORTREVISION=	1
+DISTVERSION=	1.7.99-131
+DISTVERSIONSUFFIX= -g2210830
 CATEGORIES=		sysutils
 PKGNAMESUFFIX=		-devel
 

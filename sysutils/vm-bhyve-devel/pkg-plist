@@ -16,6 +16,7 @@ lib/vm-bhyve/vm-switch-manual
 lib/vm-bhyve/vm-switch-netgraph
 lib/vm-bhyve/vm-switch-standard
 lib/vm-bhyve/vm-switch-vale
+lib/vm-bhyve/vm-switch-vlanfilter
 lib/vm-bhyve/vm-switch-vxlan
 lib/vm-bhyve/vm-tags
 lib/vm-bhyve/vm-util
