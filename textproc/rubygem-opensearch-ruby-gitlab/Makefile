@@ -9,7 +9,7 @@ MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Ruby client for OpenSearch
 WWW=		https://github.com/opensearch-project/opensearch-ruby
 
-LICENSE=	APACHE20
+LICENSE=	Apache-2.0
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-faraday-gitlab>=1.0<3:www/rubygem-faraday-gitlab \
