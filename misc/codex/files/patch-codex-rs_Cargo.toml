@@ -1,9 +1,9 @@
---- codex-rs/Cargo.toml.orig	2026-11-19 23:07:36 UTC
+--- codex-rs/Cargo.toml.orig	2026-11-23 22:48:37 UTC
 +++ codex-rs/Cargo.toml
-@@ -441,7 +441,7 @@ mxc-sdk = { git = "https://github.com/microsoft/mxc", 
+@@ -440,7 +440,7 @@ mxc-sdk = { git = "https://github.com/microsoft/mxc", 
  mime_guess = "2.0.5"
  multimap = "0.10.0"
- mxc-sdk = { git = "https://github.com/microsoft/mxc", rev = "b21120168d70befe12356411423266bfef168446" }
+ mxc-sdk = { git = "https://github.com/microsoft/mxc", rev = "c66201839d63cae2239db5e92f1f1d6076cf5181" }
 -notify = "8.2.0"
 +notify = "9.0.0"
  nucleo = { git = "https://github.com/helix-editor/nucleo.git", rev = "4253de9faabb4e5c6d81d946a5e35a90f87347ee" }

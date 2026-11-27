@@ -1,6 +1,6 @@
 PORTNAME=	codex
 DISTVERSIONPREFIX=	rust-v
-DISTVERSION=	0.171.0
+DISTVERSION=	0.172.0
 CATEGORIES=	misc devel
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTFILE_DEFAULT} \
@@ -35,6 +35,7 @@ USE_GNOME=	glib20
 
 SHEBANG_FILES=	\
 		codex-rs/app-server-protocol/scripts/write_schema_fixtures.py \
+		codex-rs/scripts/run_locked_python_tool.py \
 		codex-rs/skills/src/assets/samples/create-statusline/assets/statusline.py \
 		codex-rs/skills/src/assets/samples/imagegen/scripts/image_gen.py \
 		codex-rs/skills/src/assets/samples/imagegen/scripts/remove_chroma_key.py \
@@ -232,6 +233,7 @@ post-patch:
 		${BUILD_WRKSRC}/memories/write/src/startup_tests.rs \
 		${BUILD_WRKSRC}/rmcp-client/tests/stdio_descriptor_boundary.rs \
 		${BUILD_WRKSRC}/rmcp-client/tests/stdio_stderr_cleanup.rs \
+		${BUILD_WRKSRC}/sandboxing/src/manager_tests.rs \
 		${BUILD_WRKSRC}/sandboxing/src/seatbelt_daemon_socket_tests.rs \
 		${BUILD_WRKSRC}/skills/src/invocation.rs \
 		${BUILD_WRKSRC}/skills/src/invocation_tests.rs \

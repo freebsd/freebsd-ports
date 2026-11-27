@@ -1,6 +1,6 @@
---- codex-rs/Cargo.lock.orig	2026-11-19 23:07:36 UTC
+--- codex-rs/Cargo.lock.orig	2026-11-23 22:48:37 UTC
 +++ codex-rs/Cargo.lock
-@@ -7877,15 +7877,6 @@ checksum = "42703706b716c37f96a77aea830392ad231f44c9e9
+@@ -7890,15 +7890,6 @@ checksum = "42703706b716c37f96a77aea830392ad231f44c9e9
  checksum = "42703706b716c37f96a77aea830392ad231f44c9e9a67872fa5548707e11b11c"
  
  [[package]]
@@ -16,7 +16,7 @@
  name = "fslock"
  version = "0.2.1"
  source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -9901,9 +9892,9 @@ name = "inotify"
+@@ -9914,9 +9905,9 @@ name = "inotify"
  
  [[package]]
  name = "inotify"
@@ -28,7 +28,7 @@
  dependencies = [
   "bitflags 2.13.1",
   "inotify-sys",
-@@ -9912,9 +9903,9 @@ name = "inotify-sys"
+@@ -9925,9 +9916,9 @@ name = "inotify-sys"
  
  [[package]]
  name = "inotify-sys"
@@ -40,7 +40,7 @@
  dependencies = [
   "libc",
  ]
-@@ -10292,9 +10283,9 @@ name = "kqueue"
+@@ -10305,9 +10296,9 @@ name = "kqueue"
  
  [[package]]
  name = "kqueue"
@@ -52,7 +52,7 @@
  dependencies = [
   "kqueue-sys",
   "libc",
-@@ -10302,11 +10293,11 @@ name = "kqueue-sys"
+@@ -10315,11 +10306,11 @@ name = "kqueue-sys"
  
  [[package]]
  name = "kqueue-sys"
@@ -67,7 +67,7 @@
   "libc",
  ]
  
-@@ -10991,27 +10982,29 @@ name = "notify"
+@@ -11006,27 +10997,29 @@ name = "notify"
  
  [[package]]
  name = "notify"
@@ -103,7 +103,7 @@
  dependencies = [
   "bitflags 2.13.1",
  ]
-@@ -11340,6 +11333,16 @@ dependencies = [
+@@ -11355,6 +11348,16 @@ dependencies = [
  ]
  
  [[package]]
@@ -120,7 +120,7 @@
  name = "objc2-core-text"
  version = "0.3.2"
  source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -12666,7 +12669,7 @@ dependencies = [
+@@ -12690,7 +12693,7 @@ dependencies = [
   "once_cell",
   "socket2 0.6.3",
   "tracing",
@@ -129,7 +129,7 @@
  ]
  
  [[package]]
-@@ -12679,7 +12682,7 @@ dependencies = [
+@@ -12703,7 +12706,7 @@ dependencies = [
   "libc",
   "log",
   "socket2 0.6.3",
@@ -138,7 +138,7 @@
  ]
  
  [[package]]
-@@ -18262,6 +18265,12 @@ checksum = "66fee0b777b0f5ac1c69bb06d361268faafa61cd46
+@@ -18321,6 +18324,12 @@ checksum = "66fee0b777b0f5ac1c69bb06d361268faafa61cd46
  version = "0.13.6"
  source = "registry+https://github.com/rust-lang/crates.io-index"
  checksum = "66fee0b777b0f5ac1c69bb06d361268faafa61cd4682ae064a171c16c433e9e4"
