@@ -8,7 +8,7 @@ MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Ruby client and CLI for GitLab API
 WWW=		https://github.com/NARKOZ/gitlab
 
-LICENSE=	BSD2CLAUSE
+LICENSE=	BSD-2-Clause
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-httparty-gitlab>=0.20<1:www/rubygem-httparty-gitlab \
