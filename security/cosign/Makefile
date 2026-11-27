@@ -1,14 +1,13 @@
 PORTNAME=	cosign
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.1.4
-PORTREVISION=	2
+DISTVERSION=	3.1.5
 CATEGORIES=	security
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Signing OCI containers and other artifacts using Sigstore
 WWW=		https://www.sigstore.dev/
 
-LICENSE=	APACHE20
+LICENSE=	Apache-2.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe go:modules
@@ -24,7 +23,7 @@ GO_BUILDFLAGS=	-ldflags="-buildid= \
 
 PLIST_FILES=	bin/${PORTNAME}
 
-GIT_HASH=	0e48502cf5ef34e2e60bbd3617aa19945712f705
+GIT_HASH=	e5a0818ca5729481095773409e9c1b60cc278e8d
 
 .include <bsd.port.pre.mk>
 
