@@ -1,6 +1,6 @@
 PORTNAME=	zed
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.29.3
+DISTVERSION=	1.30.2
 CATEGORIES=	editors
 PKGNAMESUFFIX=	-editor
 
@@ -29,8 +29,8 @@ RUN_DEPENDS=	vulkaninfo:graphics/vulkan-tools \
 		npm${NODEJS_SUFFIX}>0:www/npm${NODEJS_SUFFIX} \
 		xdg-desktop-portal-gtk>0:x11/xdg-desktop-portal-gtk
 
-USES=		cargo cmake:indirect cpe desktop-file-utils gettext-runtime:build \
-		llvm nodejs:lts,run ssl xorg
+USES=		cargo cmake:indirect cpe desktop-file-utils \
+		gettext-runtime:build llvm nodejs:lts,run ssl xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	zed-industries

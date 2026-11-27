@@ -1,23 +1,11 @@
---- crates/project/src/agent_registry_store.rs.orig	2026-09-30 14:36:45 UTC
+--- crates/project/src/agent_registry_store.rs.orig	2026-11-25 15:48:16 UTC
 +++ crates/project/src/agent_registry_store.rs
-@@ -591,6 +591,8 @@ fn current_platform_key() -> Option<&'static str> {
-         "linux"
-     } else if cfg!(target_os = "windows") {
-         "windows"
-+    } else if cfg!(target_os = "freebsd") {
-+        "freebsd"
-     } else {
-         return None;
-     };
-@@ -617,6 +619,11 @@ fn current_platform_key() -> Option<&'static str> {
-         "windows" => match arch {
-             "aarch64" => "windows-aarch64",
-             "x86_64" => "windows-x86_64",
-+            _ => return None,
-+        },
-+        "freebsd" => match arch {
-+            "aarch64" => "freebsd-aarch64",
-+            "x86_64" => "freebsd-x86_64",
-             _ => return None,
-         },
-         _ => return None,
+@@ -606,6 +606,8 @@ fn platform_keys(os: &str, arch: &str, prefers_musl: b
+         ("windows", "x86_64", _) => &["windows-x86_64"],
+         ("linux", "aarch64", false) => &["linux-aarch64"],
+         ("linux", "x86_64", false) => &["linux-x86_64"],
++        ("freebsd", "aarch64", _) => &["freebsd-aarch64"],
++        ("freebsd", "x86_64", _) => &["freebsd-x86_64"],
+         // Not every agent publishes a musl build, and the glibc one may still
+         // run through a compatibility layer, so keep it as a fallback.
+         ("linux", "aarch64", true) => &["linux-aarch64-musl", "linux-aarch64"],
