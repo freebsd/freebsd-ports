@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.0
 CATEGORIES=	mail
 
-MAINTAINER=	orville@anislet.dev
+MAINTAINER=	jsi@jules.de
 COMMENT=	Stalwart Mail Server
 WWW=		https://stalw.art/
 
