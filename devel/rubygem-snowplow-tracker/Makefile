@@ -7,7 +7,7 @@ MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Tracker to collect ruby data
 WWW=		https://github.com/snowplow/snowplow-ruby-tracker
 
-LICENSE=	APACHE20
+LICENSE=	Apache-2.0
 LICENSE_FILE=	${WRKSRC}/LICENSE-2.0.txt
 
 USES=		gem
