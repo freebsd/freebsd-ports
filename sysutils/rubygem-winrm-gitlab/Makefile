@@ -9,7 +9,7 @@ MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Ruby library for Windows Remote Management
 WWW=		https://github.com/WinRb/WinRM
 
-LICENSE=	APACHE20
+LICENSE=	Apache-2.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-builder>=2.1.2:devel/rubygem-builder \
