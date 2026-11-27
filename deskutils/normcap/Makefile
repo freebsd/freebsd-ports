@@ -1,7 +1,7 @@
 PORTNAME=	normcap
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://dynobo.github.io/normcap/ \
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=2.12.1:devel/py-babel@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}babel>=2.12.1:devel/py-babel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}retry2>=0.9.5:devel/py-retry2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rope>=1.7.0:devel/py-rope@${PY_FLAVOR} \
