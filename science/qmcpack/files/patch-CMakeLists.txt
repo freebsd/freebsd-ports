@@ -1,15 +1,21 @@
---- CMakeLists.txt.orig	2023-08-25 11:42:03 UTC
+-- Fix FreeBSD-specific build and packaging issues in QMCPACK CMakeLists.txt
+-- * Disable TestCxx17Library test that fails with clang from base on 13-STABLE.
+-- * Force exact Python3 version match to the port's PYTHON_VER.
+-- * Make Nexus install respect DESTDIR staging, install all Nexus bin scripts,
+--   and exclude tests/examples from the installed Nexus package.
+-- No upstream issue filed for these combined FreeBSD port fixes.
+--- CMakeLists.txt.orig	2026-08-31 14:17:39 UTC
 +++ CMakeLists.txt
-@@ -303,7 +303,7 @@ include(Testlibstdc++)
+@@ -57,7 +57,7 @@ include(Testlibstdc++)
+ # Check that a C++ compiler is compatible with the underlying libstdc++
  include(Testlibstdc++)
- 
  # Check that a C++ standard library is configured properly
 -include(TestCxx17Library)
 +#include(TestCxx17Library) # this test fails for clang-14 from base on 13-STABLE
- 
- #-----------------------------------------------------------------------
- # SETUP SANITIZERS FLAGS
-@@ -1063,7 +1063,7 @@ include(CTest)
+
+ #--------------------------------------------------------------------
+ # Programmind model related build options
+@@ -987,7 +987,7 @@ endif()
  #-------------------------------------------------------------------
  # Verify Python3 available
  #-------------------------------------------------------------------
@@ -18,3 +24,14 @@
  if(NOT Python3_FOUND)
    message(FATAL_ERROR "Could not find required python3")
  endif(NOT Python3_FOUND)
+@@ -1138,7 +1138,7 @@ endif()
+   if(QMC_INSTALL_NEXUS)
+     add_subdirectory(nexus/nexus/tests)
+-    install(DIRECTORY ${qmcpack_SOURCE_DIR}/nexus/nexus DESTINATION ${CMAKE_INSTALL_PREFIX}/lib USE_SOURCE_PERMISSIONS PATTERN "__pycache__" EXCLUDE)
++    install(DIRECTORY ${qmcpack_SOURCE_DIR}/nexus/nexus DESTINATION ${CMAKE_INSTALL_PREFIX}/lib USE_SOURCE_PERMISSIONS PATTERN "__pycache__" EXCLUDE PATTERN "tests" EXCLUDE PATTERN "examples" EXCLUDE)
+-    set(QMCPACK_NEXUS_SCRIPTS qmca qmc-fit qdens qdens-radial)
++    set(QMCPACK_NEXUS_SCRIPTS eshdf nxs-redo nxs-sim nxs-test qdens qdens-radial qmc-fit qmca)
+     foreach(NEXUS_SCRIPT IN LISTS QMCPACK_NEXUS_SCRIPTS)
+-      install(CODE "execute_process(COMMAND ${CMAKE_COMMAND} -E create_symlink ../lib/nexus/bin/${NEXUS_SCRIPT} ${CMAKE_INSTALL_PREFIX}/bin/${NEXUS_SCRIPT})")
++      install(CODE "execute_process(COMMAND ${CMAKE_COMMAND} -E create_symlink ../lib/nexus/bin/${NEXUS_SCRIPT} \$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/${NEXUS_SCRIPT})")
+     endforeach()

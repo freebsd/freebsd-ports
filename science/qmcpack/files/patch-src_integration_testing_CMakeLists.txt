@@ -1,0 +1,10 @@
+-- Add missing include directories for the mock_walker_elements target.
+-- The target includes headers from Particle/tests, QMCWaveFunctions/tests and
+-- QMCHamiltonians/tests, but their include paths were not propagated here.
+--- src/integration_testing/CMakeLists.txt.orig	2025-01-01 00:00:00 UTC
++++ src/integration_testing/CMakeLists.txt
+@@ -29,3 +29,3 @@ add_library(mock_walker_elements MockGoldWalkerElements.cpp)
+-target_include_directories(mock_walker_elements PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}")
++target_include_directories(mock_walker_elements PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}" "${qmcpack_SOURCE_DIR}/src/Particle/tests" "${qmcpack_SOURCE_DIR}/src/QMCWaveFunctions/tests" "${qmcpack_SOURCE_DIR}/src/QMCHamiltonians/tests")
+ target_link_libraries(mock_walker_elements PUBLIC qmcparticle qmcwfs qmcham minimal_test_pools message)
+ target_link_libraries(mock_walker_elements PRIVATE catch_main)

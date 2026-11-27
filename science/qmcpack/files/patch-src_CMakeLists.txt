@@ -1,0 +1,15 @@
+-- Make the integration_testing subdirectory conditional on a FreeBSD CMake flag.
+-- This allows the port to disable it for normal builds and enable it only when
+-- unit tests (which depend on its helper headers) are built.
+--- src/CMakeLists.txt.orig	2026-11-27 04:41:03 UTC
++++ src/CMakeLists.txt
+@@ -129,7 +129,9 @@ else() #{{{
+   add_subdirectory(QMCWaveFunctions)
+   add_subdirectory(QMCHamiltonians)
+ 
++  if (FREEBSD_USE_INTEGRATION_TESTING)
+   subdirs(integration_testing)
++  endif()
+ 
+   add_subdirectory(Estimators)
+   add_subdirectory(QMCDrivers)
