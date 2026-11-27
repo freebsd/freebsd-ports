@@ -1,17 +1,14 @@
 PORTNAME=	rekor
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.2
-PORTREVISION=	1
+DISTVERSION=	1.6.3
 CATEGORIES=	security
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Software Supply Chain Transparency Log ${${FLAVOR}_COMMENT}
 WWW=		https://www.sigstore.dev/
 
-LICENSE=	Apache-2.0 MIT
-LICENSE_COMB=	multi
-LICENSE_FILE_Apache-2.0=	${WRKSRC}/LICENSE
-LICENSE_FILE_MIT=		${WRKSRC}/vendor/github.com/go-openapi/runtime/middleware/denco/LICENSE
+LICENSE=	Apache-2.0
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 FLAVORS=	client server
 FLAVOR?=	${FLAVORS:[1]}
@@ -48,7 +45,7 @@ USERS=		${PORTNAME}
 GROUPS=		${PORTNAME}
 .endif
 
-GIT_HASH=	a33fe44769f404932434f452644096ccf70861fc
+GIT_HASH=	b8a16476cfba19a2838f237ab4f7be0637bb6175
 
 .include <bsd.port.pre.mk>
 
