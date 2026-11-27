@@ -8,7 +8,7 @@ MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Ruby interface to PostgreSQL library
 WWW=		https://github.com/ged/ruby-pg
 
-LICENSE=	BSD2CLAUSE RUBY
+LICENSE=	BSD-2-Clause RUBY
 LICENSE_COMB=	dual
 LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/BSDL
 LICENSE_FILE_RUBY=	${WRKSRC}/LICENSE
