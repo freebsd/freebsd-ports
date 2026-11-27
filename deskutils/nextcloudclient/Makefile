@@ -1,7 +1,7 @@
 PORTNAME=	nextcloudclient
 PORTVERSION=	35.0.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 
 MAINTAINER=	mr@FreeBSD.org
@@ -26,7 +26,7 @@ USE_CXXSTD=	c++20
 USE_GL=		opengl
 USE_KDE=	archive ecm:build
 USE_LDCONFIG=	yes
-USE_QT=		5compat base declarative positioning svg websockets
+USE_QT=		5compat base declarative positioning svg websockets tools:build
 CMAKE_ARGS=	-DBUILD_UPDATER:BOOL=OFF \
 		-DWITH_STACK_PROTECTOR:BOOL=OFF
 CXXFLAGS+=	-fPIC
