@@ -7,7 +7,7 @@ MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Fast profiler for Ruby
 WWW=		https://github.com/ruby-prof/ruby-prof
 
-LICENSE=	BSD2CLAUSE
+LICENSE=	BSD-2-Clause
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-base64>=0:converters/rubygem-base64
