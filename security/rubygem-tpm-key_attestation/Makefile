@@ -7,7 +7,7 @@ MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	TPM Key Attestation verifier
 WWW=		https://github.com/cedarcode/tpm-key_attestation
 
-LICENSE=	APACHE20
+LICENSE=	Apache-2.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-bindata-gitlab>=2.4<3:devel/rubygem-bindata-gitlab \
