@@ -5476,7 +5476,6 @@ graphics/gimp-jxl-plugin||2026-07-03|Integrated into graphics/gimp-app
 textproc/pecl-pspell|textproc/php-pspell|2026-07-05|Converted to standard extension from pecl extension
 print/qpdfview@qt5||2026-07-10|Unflavorize, remove Qt5 flavor
 print/qpdfview@qt6|print/qpdfview|2026-07-10|Unflavorize
-devel/pecl-raphf2|devel/php-raphf|2026-07-12|Converted to standard extension from pecl extension
 devel/pecl-grpc|devel/php-grpc|2026-07-12|Converted to standard extension from pecl extension
 devel/pecl-swoole|devel/php-swoole|2026-07-12|Converted to standard extension from pecl extension
 graphics/pecl-qrencode|graphics/php-qrencode|2026-07-12|Converted to standard extension from pecl extension
@@ -5823,3 +5822,4 @@ devel/ros-wstool||2026-11-23|Has expired: Upstream repo archived on June 25, 202
 devel/ros-vcstools||2026-11-23|Has expired: Upstream repo archived on June 26, 2020
 chinese/fandol||2026-11-23|Declared obsolete by upstream
 security/openssl36||2026-11-24|Has expired: Please use security/openssl (LTS)
+security/pecl-mcrypt|security/php-mcrypt|2026-11-27|Converted to standard extension from pecl extension

@@ -423,7 +423,9 @@ imap_DEPENDS=	mail/pecl-imap@${PHP_FLAVOR}
 intl_DEPENDS=	devel/php${PHP_VER}-intl
 ldap_DEPENDS=	net/php${PHP_VER}-ldap
 mbstring_DEPENDS=	converters/php${PHP_VER}-mbstring
-mcrypt_DEPENDS=	security/pecl-mcrypt@${PHP_FLAVOR}
+.    if ${PHP_VER} <= 85
+mcrypt_DEPENDS=	security/php-mcrypt@${PHP_FLAVOR}
+.    endif
 memcache_DEPENDS=	databases/pecl-memcache@${PHP_FLAVOR}
 memcached_DEPENDS=	databases/pecl-memcached@${PHP_FLAVOR}
 mysqli_DEPENDS=	databases/php${PHP_VER}-mysqli
