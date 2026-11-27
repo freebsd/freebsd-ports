@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20261127:
+  AFFECTS: users of mail/mutt
+  AUTHOR: dereks@lifeofadishwasher.com
+
+  mail/mutt now depends on databases/lmdb for header cache for the HCACHE_LMDB.
+  See 0cea189105efe0 or pkg info --pkg-message lmdb database migration
+  otherwise mutt will auto recrate the cache.
+
 20261124:
   AFFECTS: users of print/texlive-texmf
   AUTHOR: jrm@FreeBSD.org
