@@ -1,7 +1,6 @@
 PORTNAME=	vim-classic
-PORTVERSION=	8.3.0
+PORTVERSION=	8.3.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	https://git.sr.ht/~sircmpwn/vim-classic/archive/v${DISTVERSION}.tar.gz?dummy=/ \
 		https://mirror.sonologic.net/vim-classic/v${DISTVERSION}.tar.gz?dummy=/
