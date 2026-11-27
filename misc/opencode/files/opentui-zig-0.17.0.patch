@@ -1,7 +1,7 @@
 Build OpenTUI with the Zig release available in the ports tree.
 
-OpenTUI 0.9.4 requires exactly Zig 0.17.1, but ports ships Zig 0.17.0.  The
-0.17.1 tree only contains patch-level fixes; the 0.9.4 source builds unchanged
+OpenTUI 0.9.9 requires exactly Zig 0.17.1, but ports ships Zig 0.17.0.  The
+0.17.1 tree only contains patch-level fixes; the 0.9.9 source builds unchanged
 with 0.17.0.  Lower the minimum and the exact-version check so the native core
 can be built with the tree's Zig.
 
@@ -9,7 +9,7 @@ can be built with the tree's Zig.
 +++ packages/native/build.zig.zon
 @@ -2,7 +2,7 @@
      .name = .opentui,
-     .version = "0.9.4",
+     .version = "0.9.9",
      .fingerprint = 0x5445027d063f5083,
 -    .minimum_zig_version = "0.17.1",
 +    .minimum_zig_version = "0.17.0",
