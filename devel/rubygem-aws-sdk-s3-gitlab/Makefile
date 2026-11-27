@@ -8,7 +8,7 @@ MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Official AWS Ruby gem for Amazon Simple Storage Service (Amazon S3)
 WWW=		https://github.com/aws/aws-sdk-ruby/tree/version-3/gems/aws-sdk-s3
 
-LICENSE=	APACHE20
+LICENSE=	Apache-2.0
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-aws-sdk-core-gitlab>=3.254.0<4:devel/rubygem-aws-sdk-core-gitlab \
