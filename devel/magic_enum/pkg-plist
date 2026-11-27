@@ -1,5 +1,6 @@
 include/magic_enum/magic_enum.hpp
 include/magic_enum/magic_enum_all.hpp
+include/magic_enum/magic_enum_bitwise.hpp
 include/magic_enum/magic_enum_containers.hpp
 include/magic_enum/magic_enum_flags.hpp
 include/magic_enum/magic_enum_format.hpp
@@ -9,5 +10,7 @@ include/magic_enum/magic_enum_switch.hpp
 include/magic_enum/magic_enum_utility.hpp
 lib/cmake/magic_enum/magic_enumConfig.cmake
 lib/cmake/magic_enum/magic_enumConfigVersion.cmake
+lib/cmake/magic_enum/magic_enumTargets.cmake
 libdata/pkgconfig/magic_enum.pc
+%%DATADIR%%/LICENSE
 %%DATADIR%%/package.xml
