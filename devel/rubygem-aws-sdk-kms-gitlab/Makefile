@@ -8,7 +8,7 @@ MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Official AWS Ruby gem for AWS Key Management Service (KMS)
 WWW=		https://github.com/aws/aws-sdk-ruby/tree/version-3/gems/aws-sdk-kms
 
-LICENSE=	APACHE20
+LICENSE=	Apache-2.0
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-aws-sdk-core-gitlab>=3.225.0<4:devel/rubygem-aws-sdk-core-gitlab \
