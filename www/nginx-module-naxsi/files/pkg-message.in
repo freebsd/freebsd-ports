@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+This package contains the sources of the naxsi module only.  It does not
+install a loadable module, and installing it alongside nginx does not put
+a firewall in front of a running server.
+
+The module itself is built by the nginx ports.  To use it, build
+www/nginx, www/nginx-devel or www/freenginx with the NAXSI option
+enabled.  Those ports pick the sources up from
+%%PREFIX%%/share/nginx/modules/nginx-module-naxsi, link against
+devel/libinjection and produce ngx_http_naxsi_module.so.
+EOM
+}
+]

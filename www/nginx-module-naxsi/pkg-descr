@@ -1,0 +1,12 @@
+Naxsi is a web application firewall for nginx.  Instead of a signature
+list it works the other way round: requests are scored against a small
+set of rules that describe suspicious characters and patterns, and a
+request is refused once its score passes the configured limit.
+
+Whitelists cover the places where an application legitimately uses such
+characters, and a learning mode collects the candidates for them from
+real traffic.
+
+This port only installs the module sources and the upstream rule sets.
+The module itself is built by the nginx ports when their NAXSI option
+is enabled.

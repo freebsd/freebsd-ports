@@ -575,6 +575,7 @@
     SUBDIR += nginx-module-memc
     SUBDIR += nginx-module-modsecurity3
     SUBDIR += nginx-module-mogilefs
+    SUBDIR += nginx-module-naxsi
     SUBDIR += nginx-module-nchan
     SUBDIR += nginx-module-ndk
     SUBDIR += nginx-module-njs
