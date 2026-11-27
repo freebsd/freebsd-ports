@@ -9,7 +9,7 @@ COMMENT=	Simple REST client for Cloud Resource Manager API V1
 WWW=		https://github.com/googleapis/google-api-ruby-client/tree/main/generated/google-apis-cloudresourcemanager_v1 \
 		https://github.com/googleapis/google-api-ruby-client
 
-LICENSE=	APACHE20
+LICENSE=	Apache-2.0
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	rubygem-google-apis-core-gitlab>=0.15.0<2.0:devel/rubygem-google-apis-core-gitlab
