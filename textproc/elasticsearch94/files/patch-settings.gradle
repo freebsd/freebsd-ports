@@ -1,6 +1,6 @@
---- settings.gradle.orig	2026-10-28 20:24:18 UTC
+--- settings.gradle.orig	2026-11-19 15:09:54 UTC
 +++ settings.gradle
-@@ -67,6 +67,7 @@ List projects = [
+@@ -80,6 +80,7 @@ List projects = [
    'distribution:archives:darwin-aarch64-tar',
    'distribution:archives:linux-aarch64-tar',
    'distribution:archives:linux-tar',
