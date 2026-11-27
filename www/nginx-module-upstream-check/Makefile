@@ -1,6 +1,6 @@
 PORTNAME=	nginx-module-upstream-check
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.1
+DISTVERSION=	0.5.2
 CATEGORIES=	www
 
 MAINTAINER=	joneum@FreeBSD.org
