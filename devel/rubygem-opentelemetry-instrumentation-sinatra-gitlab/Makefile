@@ -10,7 +10,7 @@ WWW=		https://opentelemetry.io/ \
 		https://github.com/open-telemetry/opentelemetry-ruby-contrib/tree/main/instrumentation/sinatra \
 		https://github.com/open-telemetry/opentelemetry-ruby-contrib
 
-LICENSE=	APACHE20
+LICENSE=	Apache-2.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-opentelemetry-instrumentation-rack-gitlab>=0.29<1:devel/rubygem-opentelemetry-instrumentation-rack-gitlab
