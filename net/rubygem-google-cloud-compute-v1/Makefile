@@ -8,7 +8,7 @@ MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Ruby Client for the Google Cloud Compute V1 API
 WWW=		https://github.com/googleapis/google-cloud-ruby
 
-LICENSE=	APACHE20
+LICENSE=	Apache-2.0
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	rubygem-gapic-common-gitlab>=0.20.0<2.0:devel/rubygem-gapic-common-gitlab \
