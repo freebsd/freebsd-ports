@@ -8,7 +8,7 @@ MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Ruby integrations for Elasticsearch
 WWW=		https://github.com/elastic/elasticsearch-ruby
 
-LICENSE=	APACHE20
+LICENSE=	Apache-2.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-elasticsearch-api-gitlab>=${PORTVERSION}<${PORTVERSION}_99:textproc/rubygem-elasticsearch-api-gitlab \
