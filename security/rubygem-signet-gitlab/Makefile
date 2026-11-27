@@ -9,7 +9,7 @@ MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	OAuth 1.0 / OAuth 2.0 implementation
 WWW=		https://github.com/google/signet
 
-LICENSE=	APACHE20
+LICENSE=	Apache-2.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-addressable>=2.8<3:www/rubygem-addressable \
