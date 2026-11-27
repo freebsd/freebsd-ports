@@ -8,9 +8,7 @@ COMMENT=	All-in-one command line
 WWW=		https://landley.net/toybox/
 
 LICENSE=	0BSD
-LICENSE_NAME=	BSD Zero Clause License
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=	bash:shells/bash gsed:textproc/gsed
 
