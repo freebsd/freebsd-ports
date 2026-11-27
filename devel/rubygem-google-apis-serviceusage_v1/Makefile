@@ -8,7 +8,7 @@ MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Simple REST client for Service Usage API V1
 WWW=		https://github.com/googleapis/google-api-ruby-client/tree/main/generated/google-apis-serviceusage_v1
 
-LICENSE=	APACHE20
+LICENSE=	Apache-2.0
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	rubygem-google-apis-core-gitlab>=0.9.1<2.0:devel/rubygem-google-apis-core-gitlab
