@@ -1,7 +1,6 @@
 PORTNAME=	doctl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.147.0
-PORTREVISION=	14
+DISTVERSION=	2.11.0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/digitalocean/${PORTNAME}/releases/download/v${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-source
@@ -17,8 +16,15 @@ USES=		go:modules
 
 GO_TARGET=	./cmd/${PORTNAME}
 
+# tests expect CI
+GO_ENV+=	CI=true
+
 NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/doctl
+
+# tests expect .git/; empty directory is enough
+pre-test:
+	@${MKDIR} ${WRKSRC}/.git
 
 .include <bsd.port.mk>
