@@ -1,0 +1,10 @@
+--- pyproject.toml.orig	2026-11-28 01:39:57 UTC
++++ pyproject.toml
+@@ -72,6 +72,7 @@ where = ["."]
+ 
+ [tool.setuptools.packages.find]
+ where = ["."]
++include = ["biom*"]
+ 
+ [tool.setuptools.dynamic]
+ version = {attr = "biom.util.__version__"}
