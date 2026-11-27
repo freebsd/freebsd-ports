@@ -8,7 +8,7 @@ MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Abstruct interface for net-* client
 WWW=		https://github.com/ruby/net-protocol
 
-LICENSE=	BSD2CLAUSE RUBY
+LICENSE=	BSD-2-Clause RUBY
 LICENSE_COMB=	dual
 LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/LICENSE.txt
 
