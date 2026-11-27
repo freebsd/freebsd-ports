@@ -9,7 +9,7 @@ MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Ruby library to read and write binary file formats
 WWW=		https://github.com/dmendel/bindata
 
-LICENSE=	BSD2CLAUSE
+LICENSE=	BSD-2-Clause
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe gem
