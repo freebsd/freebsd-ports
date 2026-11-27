@@ -1,5 +1,5 @@
 PORTNAME=	pylibmc
-DISTVERSION=	1.7.1
+DISTVERSION=	1.8.0
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -8,7 +8,7 @@ MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Quick and small memcached client for Python
 WWW=		https://sendapatch.se/projects/pylibmc
 
-LICENSE=	BSD-3-Clause-Clear
+LICENSE=	BSD-3-Clause
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
