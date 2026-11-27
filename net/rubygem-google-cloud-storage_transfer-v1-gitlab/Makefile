@@ -11,7 +11,7 @@ WWW=		https://cloud.google.com/ruby/docs/reference/google-cloud-storage_transfer
 		https://github.com/googleapis/google-cloud-ruby/tree/main/google-cloud-storage_transfer-v1 \
 		https://github.com/googleapis/google-cloud-ruby
 
-LICENSE=	APACHE20
+LICENSE=	Apache-2.0
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	rubygem-gapic-common-gitlab>=0.21.1<2:devel/rubygem-gapic-common-gitlab \
