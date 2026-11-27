@@ -23,7 +23,7 @@ share/applications/kitty.desktop
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_actions_1745a1bd.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_binary_478594b0.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_build_e554a463.png
-%%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_changelog_ebdebeba.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_changelog_3a0c7623.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_clipboard_673291d1.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_color-stack_b2e66ffc.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_conf_6d817f14.png
@@ -620,6 +620,9 @@ share/icons/hicolor/scalable/apps/kitty.svg
 %%DATADIR%%/kitty/__pycache__/launch%%PYTHON_TAG%%.opt-1.pyc
 %%DATADIR%%/kitty/__pycache__/launch%%PYTHON_TAG%%.opt-2.pyc
 %%DATADIR%%/kitty/__pycache__/launch%%PYTHON_TAG%%.pyc
+%%DATADIR%%/kitty/__pycache__/launch_wrapper%%PYTHON_TAG%%.opt-1.pyc
+%%DATADIR%%/kitty/__pycache__/launch_wrapper%%PYTHON_TAG%%.opt-2.pyc
+%%DATADIR%%/kitty/__pycache__/launch_wrapper%%PYTHON_TAG%%.pyc
 %%DATADIR%%/kitty/__pycache__/logout_session%%PYTHON_TAG%%.opt-1.pyc
 %%DATADIR%%/kitty/__pycache__/logout_session%%PYTHON_TAG%%.opt-2.pyc
 %%DATADIR%%/kitty/__pycache__/logout_session%%PYTHON_TAG%%.pyc
@@ -778,6 +781,7 @@ share/icons/hicolor/scalable/apps/kitty.svg
 %%DATADIR%%/kitty/key_names.py
 %%DATADIR%%/kitty/keys.py
 %%DATADIR%%/kitty/launch.py
+%%DATADIR%%/kitty/launch_wrapper.py
 %%DATADIR%%/kitty/launcher/kitty
 %%DATADIR%%/kitty/layout/__init__.py
 %%DATADIR%%/kitty/layout/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
@@ -1078,6 +1082,9 @@ share/icons/hicolor/scalable/apps/kitty.svg
 %%DATADIR%%/kitty/shaders/custom/pond-ripple.pipeline
 %%DATADIR%%/kitty/shaders/custom/pond-ripple.slang
 %%DATADIR%%/kitty/shaders/custom/sample.slang
+%%DATADIR%%/kitty/shaders/custom/screen-shake-random.pipeline
+%%DATADIR%%/kitty/shaders/custom/screen-shake.pipeline
+%%DATADIR%%/kitty/shaders/custom/screen-shake.slang
 %%DATADIR%%/kitty/shaders/custom/spotlight.pipeline
 %%DATADIR%%/kitty/shaders/custom/spotlight.slang
 %%DATADIR%%/kitty/shaders/custom/tab-change.pipeline
