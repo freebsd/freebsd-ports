@@ -7,7 +7,7 @@ MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	ECDSA, RSA-PSS and RSA-PKCS for ruby
 WWW=		https://github.com/cedarcode/openssl-signature_algorithm
 
-LICENSE=	APACHE20
+LICENSE=	Apache-2.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-openssl>=2.2:security/rubygem-openssl
