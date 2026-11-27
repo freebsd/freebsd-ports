@@ -8,7 +8,7 @@ MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Provides information on Google Cloud Platform hosting environment
 WWW=		https://github.com/googleapis/ruby-cloud-env
 
-LICENSE=	APACHE20
+LICENSE=	Apache-2.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-base64>=0.2<1:converters/rubygem-base64 \
