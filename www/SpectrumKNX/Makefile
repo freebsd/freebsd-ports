@@ -9,7 +9,7 @@ MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	KNX bus and telegram monitor with storage
 WWW=		https://github.com/martinhoefling/SpectrumKNX
 
-LICENSE=	GPLv3
+LICENSE=	GPL-3.0-only
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64
