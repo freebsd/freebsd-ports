@@ -1,5 +1,5 @@
 PORTNAME=	berkeleydb
-DISTVERSION=	18.1.18
+DISTVERSION=	18.1.19
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -8,7 +8,7 @@ MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Python bindings for Oracle Berkeley DB
 WWW=		https://www.jcea.es/programacion/pybsddb.htm
 
-LICENSE=	BSD3CLAUSE
+LICENSE=	BSD-3-Clause
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
