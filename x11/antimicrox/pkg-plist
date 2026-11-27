@@ -3,6 +3,7 @@ bin/antimicrox
 %%DATADIR%%/LICENSE_SDL_GameControllerDB
 %%DATADIR%%/gamecontrollerdb.txt
 %%DATADIR%%/translations/antimicrox.qm
+%%DATADIR%%/translations/antimicrox_ar.qm
 %%DATADIR%%/translations/antimicrox_br.qm
 %%DATADIR%%/translations/antimicrox_ca.qm
 %%DATADIR%%/translations/antimicrox_cs.qm
@@ -13,7 +14,9 @@ bin/antimicrox
 %%DATADIR%%/translations/antimicrox_fa.qm
 %%DATADIR%%/translations/antimicrox_fi.qm
 %%DATADIR%%/translations/antimicrox_fr.qm
+%%DATADIR%%/translations/antimicrox_hak_Hant.qm
 %%DATADIR%%/translations/antimicrox_hr.qm
+%%DATADIR%%/translations/antimicrox_hu.qm
 %%DATADIR%%/translations/antimicrox_id.qm
 %%DATADIR%%/translations/antimicrox_it.qm
 %%DATADIR%%/translations/antimicrox_ja.qm
@@ -23,6 +26,7 @@ bin/antimicrox
 %%DATADIR%%/translations/antimicrox_pl.qm
 %%DATADIR%%/translations/antimicrox_pt.qm
 %%DATADIR%%/translations/antimicrox_pt_BR.qm
+%%DATADIR%%/translations/antimicrox_ro.qm
 %%DATADIR%%/translations/antimicrox_ru.qm
 %%DATADIR%%/translations/antimicrox_rue.qm
 %%DATADIR%%/translations/antimicrox_sk.qm
@@ -33,6 +37,7 @@ bin/antimicrox
 %%DATADIR%%/translations/antimicrox_uk.qm
 %%DATADIR%%/translations/antimicrox_vi.qm
 %%DATADIR%%/translations/antimicrox_zh_CN.qm
+%%DATADIR%%/translations/antimicrox_zh_Hant.qm
 share/applications/io.github.antimicrox.antimicrox.desktop
 share/icons/breeze/48x48/apps/io.github.antimicrox.antimicrox.trayicon.png
 share/icons/hicolor/128x128/apps/io.github.antimicrox.antimicrox.png
