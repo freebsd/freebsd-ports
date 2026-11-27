@@ -1,6 +1,5 @@
 PORTNAME=	gradle
-PORTVERSION=	9.8.0
-PORTREVISION=	1
+DISTVERSION=	9.9.3
 CATEGORIES=	devel java
 MASTER_SITES=	https://services.gradle.org/distributions/
 EXTRACT_SUFX=	-bin.zip
@@ -15,13 +14,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe java zip
 
-CONFLICTS_INSTALL=	gradle6 gradle8
+CONFLICTS_INSTALL=	gradle6
 
 NO_ARCH=	yes
 NO_BUILD=	yes
 SUB_FILES=	gradle
 SUB_LIST=	JAVA=${JAVA} \
-		PORTVERSION=${PORTVERSION}
+		PORTVERSION=${DISTVERSION}
 PLIST_FILES=	bin/gradle
 PORTDATA=	*
 
