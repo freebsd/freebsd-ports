@@ -97,7 +97,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-acme-client-gitlab>=2.0.34<3:security/rubygem-acme-client-gitlab \
 	rubygem-browser5>=5.3.1<5.4:www/rubygem-browser5 \
 	rubygem-ohai-gitlab>=19.1.40<19.2:sysutils/rubygem-ohai-gitlab \
-	rubygem-gpgme>=2.0.26<2.1.0:security/rubygem-gpgme \
+	rubygem-gpgme-gitlab>=2.0.27<2.1.0:security/rubygem-gpgme-gitlab \
 	rubygem-gitlab_omniauth-ldap-gitlab>=2.3.0<2.4.0:net/rubygem-gitlab_omniauth-ldap-gitlab \
 	rubygem-net-ldap-gitlab>=0.20.0<0.21:net/rubygem-net-ldap-gitlab \
 	rubygem-grape-gitlab>=3.2.1<4:devel/rubygem-grape-gitlab \
