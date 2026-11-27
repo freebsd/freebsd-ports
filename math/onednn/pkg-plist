@@ -49,4 +49,4 @@ lib/cmake/dnnl/dnnl-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/dnnl/dnnl-targets.cmake
 lib/libdnnl.so
 lib/libdnnl.so.3
-lib/libdnnl.so.3.13
+lib/libdnnl.so.3.14
