@@ -10,7 +10,7 @@ WWW=		https://opentelemetry.io/ \
 		https://github.com/open-telemetry/opentelemetry-ruby \
 		https://github.com/open-telemetry/opentelemetry-ruby/tree/main/exporter/otlp
 
-LICENSE=	APACHE20
+LICENSE=	Apache-2.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-googleapis-common-protos-types-gitlab>=1.3<2:devel/rubygem-googleapis-common-protos-types-gitlab \
