@@ -1,6 +1,5 @@
 PORTNAME=	tesseract
-PORTVERSION=	5.5.4
-PORTREVISION=	1
+PORTVERSION=	5.5.5
 CATEGORIES=	graphics
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -9,18 +8,11 @@ WWW=		https://github.com/tesseract-ocr/tesseract
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	asciidoctor:textproc/rubygem-asciidoctor \
-		xsltproc:textproc/libxslt \
-		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl
-LIB_DEPENDS=	liblept.so:graphics/leptonica \
-		libtiff.so:graphics/tiff \
-		libharfbuzz.so:print/harfbuzz \
-		libfreetype.so:print/freetype2 \
-		libcurl.so:ftp/curl
+LIB_DEPENDS=	liblept.so:graphics/leptonica
 RUN_DEPENDS=	tesseract-data>=0:graphics/tesseract-data
 
-USES=		autoreconf compiler:c++20-lang cpe gnome libarchive libtool \
-		localbase pathfix pkgconfig
+USES=		autoreconf compiler:c++20-lang cpe libtool localbase pathfix \
+		pkgconfig
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
@@ -36,21 +28,36 @@ PORTDATA=	*
 PORTDOCS=	AUTHORS ChangeLog README.md
 INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=	DOCS TOOLS
-OPTIONS_DEFAULT=	TOOLS
+OPTIONS_DEFINE=	CURL DOCS LIBARCHIVE MANPAGES TOOLS
+OPTIONS_DEFAULT=	CURL LIBARCHIVE MANPAGES TOOLS
 OPTIONS_SUB=	yes
 
-TOOLS_CONFIGURE_ENABLE=	training
-TOOLS_DESC=	Include training tools
-TOOLS_LIB_DEPENDS=libicui18n.so:devel/icu \
-		libfontconfig.so:x11-fonts/fontconfig
-TOOLS_USE=	GNOME=cairo,glib20,pango
-
 .if exists(/usr/include/omp.h)
-LDFLAGS+=	-lomp
+OPTIONS_DEFINE+=	OPENMP
+OPTIONS_DEFAULT+=	OPENMP
 .endif
 
-CONFIGURE_ARGS+=	--without-tensorflow
+CURL_DESC=	Read input images from URLs via cURL
+LIBARCHIVE_DESC=	Compressed traineddata support via libarchive
+TOOLS_DESC=	Include training tools
+
+CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
+CURL_CONFIGURE_WITH=	curl
+
+LIBARCHIVE_USES=	libarchive
+LIBARCHIVE_CONFIGURE_WITH=	archive
+
+MANPAGES_BUILD_DEPENDS=	asciidoctor:textproc/rubygem-asciidoctor
+MANPAGES_CONFIGURE_ENABLE=	doc
+
+OPENMP_CONFIGURE_ENABLE=	openmp
+OPENMP_LDFLAGS=	-lomp
+
+TOOLS_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+			libfreetype.so:print/freetype2 \
+			libicui18n.so:devel/icu
+TOOLS_USES=	gnome
+TOOLS_USE=	GNOME=cairo,glib20,pango
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
