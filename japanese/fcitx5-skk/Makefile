@@ -1,5 +1,5 @@
 PORTNAME=	fcitx5-skk
-DISTVERSION=	5.1.11
+DISTVERSION=	5.1.12
 CATEGORIES=	japanese textproc
 MASTER_SITES=	https://download.fcitx-im.org/fcitx5/fcitx5-skk/
 
@@ -14,8 +14,8 @@ LIB_DEPENDS=	libFcitx5Core.so:textproc/fcitx5 \
 		libskk.so:japanese/libskk
 RUN_DEPENDS=	${LOCALBASE}/share/skk/SKK-JISYO.L:japanese/skk-jisyo
 
-USES=		cmake compiler:c++17-lang gettext-tools gnome kde pkgconfig \
-		tar:zst
+USES=		cmake:testing compiler:c++17-lang gettext-tools gnome kde \
+		pkgconfig tar:zst
 USE_GNOME=	glib20
 USE_KDE=	ecm:build
 
