@@ -55,6 +55,7 @@ share/mime/packages/openscad.xml
 %%DATADIR%%/examples/Basics/linear_extrude.scad
 %%DATADIR%%/examples/Basics/logo.scad
 %%DATADIR%%/examples/Basics/logo_and_text.scad
+%%DATADIR%%/examples/Basics/minkowski.scad
 %%DATADIR%%/examples/Basics/projection.scad
 %%DATADIR%%/examples/Basics/projection.stl
 %%DATADIR%%/examples/Basics/roof.scad
@@ -122,6 +123,7 @@ share/mime/packages/openscad.xml
 %%DATADIR%%/fonts/Liberation-2.00.1/ttf/LiberationSerif-BoldItalic.ttf
 %%DATADIR%%/fonts/Liberation-2.00.1/ttf/LiberationSerif-Italic.ttf
 %%DATADIR%%/fonts/Liberation-2.00.1/ttf/LiberationSerif-Regular.ttf
+%%DATADIR%%/libraries/MCAD/.gitignore
 %%DATADIR%%/libraries/MCAD/2Dshapes.scad
 %%DATADIR%%/libraries/MCAD/3d_triangle.scad
 %%DATADIR%%/libraries/MCAD/README.markdown
