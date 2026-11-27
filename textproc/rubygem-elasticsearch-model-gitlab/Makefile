@@ -9,7 +9,7 @@ MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	ActiveModel/Record integrations for Elasticsearch
 WWW=		https://github.com/elastic/elasticsearch-rails/tree/master/elasticsearch-model
 
-LICENSE=	APACHE20
+LICENSE=	Apache-2.0
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-activesupport-gitlab>=3:devel/rubygem-activesupport-gitlab \
