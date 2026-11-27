@@ -1,5 +1,6 @@
 PORTNAME=	idris2
 DISTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	https://www.idris-lang.org/releases/
 
@@ -15,19 +16,23 @@ BUILD_DEPENDS=	chez-scheme:lang/chez-scheme
 LIB_DEPENDS=	libgmp.so:math/gmp
 RUN_DEPENDS=	chez-scheme:lang/chez-scheme
 
-USES=	gmake tar:tgz
+USES=		gmake tar:tgz
 
-WRKSRC=	${WRKDIR}/Idris2-${DISTVERSION}
+MAKE_ENV+=	HOMEBREW_PREFIX=${PREFIX} \
+		PREFIX=${PREFIX} \
+		SCHEME=chez-scheme
+ALL_TARGET=	bootstrap
 
-do-build:
-	@cd ${WRKSRC} && ${MAKE_CMD} bootstrap SCHEME=chez-scheme HOMEBREW_PREFIX=${PREFIX} PREFIX=${PREFIX}
+TEST_ENV+=	INTERACTIVE=''
+TEST_TARGET=	test
 
-post-build:
-	@cd ${WRKSRC} && ${SED} -i'' -e "s#(define IdrisPaths-yprefix \".*\")#(define IdrisPaths-yprefix \"${PREFIX}\")#" \
-		build/exec/idris2_app/idris2.ss
+WRKSRC=		${WRKDIR}/Idris2-${DISTVERSION}
+
+PLIST_SUB=	VERSION=${DISTVERSION}
 
 do-install:
-	@cd ${WRKSRC} && ${MAKE_CMD} install IDRIS2_PREFIX=${PREFIX} PREFIX=${PREFIX} DESTDIR=${STAGEDIR}
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} DESTDIR=${STAGEDIR} \
+		${MAKE_CMD} install
 
 post-install:
 	@${SED} -i '' -e '1s|^#!/usr/bin/chez|#!${LOCALBASE}/bin/chez-scheme|' \
@@ -36,8 +41,5 @@ post-install:
 	@${RM} -r ${STAGEDIR}${PREFIX}/idris2-${DISTVERSION}/test-${DISTVERSION}
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/idris2_app/libidris2_support.so
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/idris2-${DISTVERSION}/lib/libidris2_support.so
-
-do-test:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} test SCHEME=chez-scheme INTERACTIVE=''
 
 .include <bsd.port.mk>
