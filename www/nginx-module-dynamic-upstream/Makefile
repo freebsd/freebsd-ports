@@ -1,6 +1,6 @@
 PORTNAME=	nginx-module-dynamic-upstream
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.1
+DISTVERSION=	2.4.2
 CATEGORIES=	www
 
 MAINTAINER=	joneum@FreeBSD.org
