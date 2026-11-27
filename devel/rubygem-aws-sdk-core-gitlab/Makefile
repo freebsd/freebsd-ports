@@ -8,7 +8,7 @@ MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	AWS SDK for Ruby - Core
 WWW=		https://github.com/aws/aws-sdk-ruby/tree/version-3/gems/aws-sdk-core
 
-LICENSE=	APACHE20
+LICENSE=	Apache-2.0
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-aws-eventstream>=1.3.0<2:devel/rubygem-aws-eventstream \
