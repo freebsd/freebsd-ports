@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2026-10-26 23:59:05 UTC
+--- pyproject.toml.orig	2026-11-24 20:23:57 UTC
 +++ pyproject.toml
 @@ -1,6 +1,6 @@
  [build-system]
@@ -42,7 +42,7 @@
  [tool.rooster]
  changelog-contributors = false  # We exclude contributors from the CHANGELOG file
  major-labels = []  # We do not use the major version number yet
-@@ -138,27 +119,18 @@ dev = [
+@@ -145,27 +126,18 @@ dev = [
      "astral-dev-toolchain-cargo-xwin>=0.23.1",
  ]
  
@@ -56,7 +56,7 @@
  [tool.uv]
  no-build = true
  require-build-hashes = true
- preview-features = ["build-dependency-hashes", "missing-exclude-newer-package-lock"]
+ preview-features = ["build-dependency-hashes", "check-command", "missing-exclude-newer-package-lock"]
  build-constraint-dependencies = [
 -    { requirement = "maturin==1.15.0", hashes = [
 -        "sha256:0ebf9767892725083138e671c34482c660317a2f3d6a29fc0e0f34e9d8c99136",
