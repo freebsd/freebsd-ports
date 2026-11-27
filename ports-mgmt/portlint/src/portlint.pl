@@ -54,7 +54,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 27;
-my $micro = 1;
+my $micro = 2;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -3574,11 +3574,11 @@ NOT_FOR_ARCHS NOT_FOR_ARCHS_REASON(_\w+)? LEGAL_TEXT
 EXTRACT_DEPENDS LIB_DEPENDS PATCH_DEPENDS BUILD_DEPENDS RUN_DEPENDS
 TEST_DEPENDS FETCH_DEPENDS PKG_DEPENDS DEPENDS_TARGET
 	);
-	&checkorder('DEPENDS', $tmp, $file, qw(FETCH_DEPENDS EXTRACT_DEPENDS PATCH_DEPENDS
-BUILD_DEPENDS LIB_DEPENDS RUN_DEPENDS TEST_DEPENDS PKG_DEPENDS));
 
 	if ($tmp =~ /^([\w\d]+_)?(PATCH_|EXTRACT_|LIB_|BUILD_|RUN_|TEST_|FETCH_|PKG_)DEPENDS/m) {
 		&checkearlier($file, $tmp, @varnames);
+		&checkorder('DEPENDS', $tmp, $file, qw(FETCH_DEPENDS EXTRACT_DEPENDS PATCH_DEPENDS
+			BUILD_DEPENDS LIB_DEPENDS RUN_DEPENDS TEST_DEPENDS PKG_DEPENDS));
 
 		check_depends_syntax($tmp, $file);
 
