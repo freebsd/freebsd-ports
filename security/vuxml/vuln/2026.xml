@@ -1,3 +1,29 @@
+  <vuln vid="f031c396-ea45-11f1-b58b-8447094a420f">
+    <topic>WeeChat -- Multiple vulnerabilities</topic>
+    <affects>
+<package>
+<name>weechat</name>
+<range><lt>4.10.5</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The WeeChat project reports:</p>
+	<blockquote cite="https://github.com/weechat/weechat/releases/tag/v4.10.5">
+	  <p>core: fix decoding of incomplete WeeChat color codes in functions string_remove_color and string_color_code_size, which could remove the sender of an IRC message received with a crafted message tag</p>
+	  <p>xfer: open the socket of a passive file receive (reverse DCC) only when the transfer is accepted, to prevent a remote peer from exhausting file descriptors with many DCC offers</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/weechat/weechat/releases/tag/v4.10.5</url>
+    </references>
+    <dates>
+      <discovery>2026-11-26</discovery>
+      <entry>2026-11-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a22c60b3-e987-11f1-97dc-40b034429ecf">
     <topic>p5-CGI-PSGI -- multiple vulnerabilities</topic>
     <affects>
