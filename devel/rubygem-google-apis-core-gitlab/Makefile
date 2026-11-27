@@ -10,7 +10,7 @@ COMMENT=	Common utility and base classes for legacy Google REST clients
 WWW=		https://github.com/googleapis/google-api-ruby-client/tree/main/google-apis-core \
 		https://github.com/googleapis/google-api-ruby-client
 
-LICENSE=	APACHE20
+LICENSE=	Apache-2.0
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	rubygem-addressable>=2.5.1<3:www/rubygem-addressable \
