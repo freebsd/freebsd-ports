@@ -11,7 +11,7 @@ WWW=		https://cloud.google.com/ruby/docs/reference/google-cloud-core/latest/ \
 		https://github.com/googleapis/google-cloud-ruby/tree/main/google-cloud-core \
 		https://github.com/googleapis/google-cloud-ruby
 
-LICENSE=	APACHE20
+LICENSE=	Apache-2.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-google-cloud-env-gitlab>=1.0<3.0:net/rubygem-google-cloud-env-gitlab \
