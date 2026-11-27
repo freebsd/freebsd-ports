@@ -1,5 +1,5 @@
-TIMESTAMP = 1795153990
-SHA256 (go/www_gitlab-workhorse/gitlab-foss-v19.6.1/go.mod) = 7bbf6cd44b731f737d17a307f852dd977d49ac78e34dcee47331ede7854464f5
-SIZE (go/www_gitlab-workhorse/gitlab-foss-v19.6.1/go.mod) = 12431
-SHA256 (go/www_gitlab-workhorse/gitlab-foss-v19.6.1/gitlab-foss-v19.6.1.tar.bz2) = 74d1f0cebc2caaf8db53e572fa313564274089fe033f44140bac10d3e55d27ad
-SIZE (go/www_gitlab-workhorse/gitlab-foss-v19.6.1/gitlab-foss-v19.6.1.tar.bz2) = 152821889
+TIMESTAMP = 1795692824
+SHA256 (go/www_gitlab-workhorse/gitlab-foss-v19.6.2/go.mod) = 7bbf6cd44b731f737d17a307f852dd977d49ac78e34dcee47331ede7854464f5
+SIZE (go/www_gitlab-workhorse/gitlab-foss-v19.6.2/go.mod) = 12431
+SHA256 (go/www_gitlab-workhorse/gitlab-foss-v19.6.2/gitlab-foss-v19.6.2.tar.bz2) = 924f68dd66ad12a2cc8a9601ba659dfb19dad13a3a6065b574788680ab877342
+SIZE (go/www_gitlab-workhorse/gitlab-foss-v19.6.2/gitlab-foss-v19.6.2.tar.bz2) = 152832036
