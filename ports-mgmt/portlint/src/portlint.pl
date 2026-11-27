@@ -53,8 +53,8 @@ $portdir = '.';
 
 # version variables
 my $major = 2;
-my $minor = 26;
-my $micro = 0;
+my $minor = 27;
+my $micro = 1;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -536,8 +536,7 @@ sub checkdescr {
 		$tmp .= $_;
 		chomp || &perror("WARN", $file, -1, "lines should terminate with a ".
 			"newline (i.e. '\\n').");
-		if (/
-$/) {
+		if (/$/) {
 			&perror("WARN", $file, -1, "lines should not contain carriage ".
 				"returns.  Strip all carriage returns (e.g. run dos2unix) ".
 				"in $file.");
@@ -1103,8 +1102,7 @@ sub checkpatch {
 			"``java'' instead");
 	}
 
-	if ($whole =~ /
-/) {
+	if ($whole =~ //) {
 		my $lineno = &linenumber($`);
 		&perror("WARN", $file, $lineno, "patch contains ^M characters. ".
 			"Consider defining USES=dos2unix to remove DOS line endings ".
@@ -2304,8 +2302,7 @@ sub checkmakefile {
 	# whole file: DOS line endings
 	#
 	print "OK: checking for DOS line ending removal.\n" if ($verbose);
-	if ($whole =~ /
-/ || $whole =~ /:cntrl:/) {
+	if ($whole =~ // || $whole =~ /:cntrl:/) {
 		my $lineno = &linenumber($`);
 		&perror("WARN", $file, $lineno, "Possible manual removal of DOS ".
 			"line endings found.  Consider defining USES=dos2unix instead.");
