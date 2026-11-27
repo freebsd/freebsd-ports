@@ -1,6 +1,6 @@
 PORTNAME=	tauri-cli
 DISTVERSIONPREFIX=	tauri-v
-DISTVERSION=	2.12.5
+DISTVERSION=	2.12.6
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,7 +23,6 @@ GH_ACCOUNT=	tauri-apps
 GH_PROJECT=	tauri
 
 CARGO_CRATES=	Inflector-0.11.4 \
-		addr2line-0.24.2 \
 		adler2-2.0.0 \
 		aead-0.5.2 \
 		aes-0.8.4 \
@@ -41,10 +40,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		android_log-sys-0.3.2 \
 		android_logger-0.15.0 \
 		android_system_properties-0.1.5 \
-		anstream-0.6.18 \
 		anstream-1.0.0 \
 		anstyle-1.0.14 \
-		anstyle-parse-0.2.6 \
 		anstyle-parse-1.0.0 \
 		anstyle-query-1.1.2 \
 		anstyle-wincon-3.0.6 \
@@ -66,7 +63,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		avif-serialize-0.8.9 \
 		axum-0.8.9 \
 		axum-core-0.5.6 \
-		backtrace-0.3.74 \
 		base16ct-0.2.0 \
 		base64-0.13.1 \
 		base64-0.21.7 \
@@ -81,7 +77,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		bitfields-impl-1.0.3 \
 		bitflags-1.3.2 \
 		bitflags-2.13.0 \
-		bitness-0.4.0 \
 		bitstream-io-4.10.0 \
 		bitvec-1.1.1 \
 		blake2-0.10.6 \
@@ -127,11 +122,11 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		chacha20-0.10.2 \
 		chrono-0.4.41 \
 		cipher-0.4.4 \
-		clap-4.5.26 \
-		clap_builder-4.5.26 \
-		clap_complete-4.5.42 \
-		clap_derive-4.5.24 \
-		clap_lex-0.7.4 \
+		clap-4.6.7 \
+		clap_builder-4.6.7 \
+		clap_complete-4.6.11 \
+		clap_derive-4.6.7 \
+		clap_lex-1.1.1 \
 		cmac-0.7.2 \
 		color_quant-1.1.0 \
 		colorchoice-1.0.3 \
@@ -140,13 +135,12 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		combine-4.6.7 \
 		common-path-1.0.0 \
 		compact_str-0.9.1 \
-		console-0.15.10 \
 		console-0.16.4 \
 		console_error_panic_hook-0.1.7 \
 		const-oid-0.9.6 \
 		const-oid-0.10.2 \
 		convert_case-0.4.0 \
-		convert_case-0.11.0 \
+		convert_case-0.12.0 \
 		cookie-0.18.1 \
 		core-foundation-0.9.4 \
 		core-foundation-0.10.0 \
@@ -176,7 +170,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		ct-codecs-1.1.7 \
 		ctor-1.0.7 \
 		ctr-0.9.2 \
-		ctrlc-3.4.5 \
+		ctrlc-3.5.2 \
 		curve25519-dalek-4.1.3 \
 		curve25519-dalek-derive-0.1.1 \
 		cx448-0.1.1 \
@@ -272,7 +266,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		foreign-types-shared-0.1.1 \
 		foreign-types-shared-0.3.1 \
 		form_urlencoded-1.2.2 \
-		fraction-0.15.3 \
+		fraction-0.17.0 \
 		freedesktop_entry_parser-2.0.1 \
 		fsevent-sys-4.1.0 \
 		funty-2.0.0 \
@@ -285,7 +279,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		futures-macro-0.3.31 \
 		futures-sink-0.3.31 \
 		futures-task-0.3.31 \
-		futures-timer-3.0.3 \
+		futures-timer-3.0.4 \
 		futures-util-0.3.31 \
 		fxhash-0.2.1 \
 		gdk-0.18.2 \
@@ -303,7 +297,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		getset-0.1.7 \
 		ghash-0.5.1 \
 		gif-0.14.2 \
-		gimli-0.31.1 \
 		gio-0.18.4 \
 		gio-sys-0.18.1 \
 		glib-0.18.5 \
@@ -370,7 +363,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		inotify-0.11.0 \
 		inotify-sys-0.1.5 \
 		inout-0.1.3 \
-		insta-1.42.0 \
+		insta-1.49.0 \
 		interpolate_name-0.2.4 \
 		ipnet-2.10.1 \
 		iri-string-0.7.10 \
@@ -396,10 +389,9 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		jsonrpsee-core-0.26.1 \
 		jsonrpsee-server-0.26.1 \
 		jsonrpsee-types-0.26.1 \
-		jsonrpsee-ws-client-0.26.1 \
-		jsonschema-0.49.9 \
-		jsonschema-regex-0.49.9 \
-		jsonschema-value-0.49.9 \
+		jsonschema-0.60.1 \
+		jsonschema-regex-0.60.1 \
+		jsonschema-value-0.60.1 \
 		k256-0.13.4 \
 		keccak-0.1.6 \
 		kem-0.3.0-pre.0 \
@@ -426,7 +418,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		libxdo-0.6.0 \
 		libxdo-sys-0.11.0 \
 		libz-rs-sys-0.5.0 \
-		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.9.4 \
 		litemap-0.8.2 \
 		local-ip-address-0.6.13 \
@@ -450,18 +441,18 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		micromap-0.3.0 \
 		mime-0.3.17 \
 		minimal-lexical-0.2.1 \
-		minisign-0.9.1 \
+		minisign-0.10.0 \
 		miniz_oxide-0.8.8 \
-		mio-1.0.3 \
+		mio-1.2.4 \
 		ml-dsa-0.0.4 \
 		ml-kem-0.2.3 \
 		moxcms-0.8.1 \
 		muda-0.20.0 \
-		napi-3.12.2 \
-		napi-build-2.4.1 \
-		napi-derive-3.6.3 \
-		napi-derive-backend-6.1.2 \
-		napi-sys-3.3.0 \
+		napi-3.16.1 \
+		napi-build-2.6.0 \
+		napi-derive-3.7.0 \
+		napi-derive-backend-7.0.0 \
+		napi-sys-3.4.1 \
 		native-tls-0.2.12 \
 		ndk-0.9.0 \
 		ndk-context-0.1.1 \
@@ -469,7 +460,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		neli-0.7.4 \
 		neli-proc-macros-0.2.2 \
 		new_debug_unreachable-1.0.6 \
-		nix-0.29.0 \
 		nix-0.31.3 \
 		no_std_io2-0.9.4 \
 		nodrop-0.1.14 \
@@ -482,7 +472,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		notify-debouncer-full-0.7.0 \
 		notify-types-2.0.0 \
 		num-0.4.3 \
-		num-bigint-0.4.6 \
+		num-bigint-0.4.8 \
 		num-bigint-dig-0.8.6 \
 		num-cmp-0.1.0 \
 		num-complex-0.4.6 \
@@ -521,7 +511,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		objc2-ui-kit-0.3.2 \
 		objc2-user-notifications-0.3.2 \
 		objc2-web-kit-0.3.2 \
-		object-0.36.7 \
 		object-0.39.1 \
 		ocb3-0.1.0 \
 		once_cell-1.21.4 \
@@ -660,7 +649,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		redox_users-0.5.0 \
 		ref-cast-1.0.23 \
 		ref-cast-impl-1.0.23 \
-		referencing-0.49.9 \
+		referencing-0.60.1 \
 		regex-1.13.1 \
 		regex-automata-0.4.18 \
 		regex-syntax-0.8.11 \
@@ -679,7 +668,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		rpm-version-0.5.1 \
 		rsa-0.9.10 \
 		rtoolbox-0.0.2 \
-		rustc-demangle-0.1.24 \
 		rustc-hash-2.1.1 \
 		rustc_version-0.4.1 \
 		rustix-1.0.7 \
@@ -763,8 +751,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		smawk-0.3.2 \
 		snafu-0.9.2 \
 		snafu-derive-0.9.2 \
-		socket2-0.5.8 \
-		socket2-0.6.1 \
+		socket2-0.6.5 \
 		socks-0.3.4 \
 		softbuffer-0.4.6 \
 		soketto-0.8.1 \
@@ -806,7 +793,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		syn-3.0.9 \
 		sync_wrapper-1.0.2 \
 		synstructure-0.13.1 \
-		sysctl-0.4.6 \
 		system-deps-6.2.2 \
 		tao-0.37.0 \
 		tao-macros-0.1.4 \
@@ -835,8 +821,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		tinystr-0.8.2 \
 		tinyvec-1.8.1 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.45.1 \
-		tokio-macros-2.5.0 \
+		tokio-1.53.3 \
+		tokio-macros-2.7.2 \
 		tokio-native-tls-0.3.1 \
 		tokio-rustls-0.26.1 \
 		tokio-stream-0.1.17 \
@@ -864,11 +850,10 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		ttf-parser-0.25.1 \
 		tungstenite-0.29.0 \
 		twofish-0.7.1 \
-		typed-path-0.12.3 \
+		typed-path-0.13.0 \
 		typeid-1.0.2 \
 		typenum-1.20.0 \
 		ucd-trie-0.1.7 \
-		uname-0.1.1 \
 		unarray-0.1.4 \
 		unicode-bidi-0.3.18 \
 		unicode-bidi-mirroring-0.4.0 \
@@ -1030,13 +1015,13 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		zerotrie-0.2.3 \
 		zerovec-0.11.5 \
 		zerovec-derive-0.11.3 \
-		zip-9.0.5 \
+		zip-9.4.1 \
 		zlib-rs-0.5.0 \
 		zmij-1.0.23 \
 		zopfli-0.8.4 \
-		zstd-0.14.2 \
-		zstd-safe-8.1.0 \
-		zstd-sys-2.1.1+zstd.1.5.7 \
+		zstd-0.14.3 \
+		zstd-safe-8.2.0 \
+		zstd-sys-2.1.2+zstd.1.5.7 \
 		zune-core-0.5.1 \
 		zune-inflate-0.2.54 \
 		zune-jpeg-0.5.15 \
