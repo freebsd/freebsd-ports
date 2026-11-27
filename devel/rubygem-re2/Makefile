@@ -7,7 +7,7 @@ MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Ruby bindings to re2
 WWW=		https://github.com/mudge/re2
 
-LICENSE=	BSD3CLAUSE
+LICENSE=	BSD-3-Clause
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libgmp.so:math/gmp \
