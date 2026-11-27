@@ -1,6 +1,6 @@
---- x-pack/plugin/prometheus/build.gradle.orig	2026-10-28 21:58:41 UTC
+--- x-pack/plugin/prometheus/build.gradle.orig	2026-11-18 21:35:56 UTC
 +++ x-pack/plugin/prometheus/build.gradle
-@@ -54,7 +54,17 @@ protobuf {
+@@ -57,7 +57,17 @@ protobuf {
  
  protobuf {
    protoc {
