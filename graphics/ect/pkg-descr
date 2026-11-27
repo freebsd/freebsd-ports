@@ -1,0 +1,5 @@
+Efficient Compression Tool (ECT) is a file optimizer that losslessly
+reduces the size of PNG, JPEG, gzip and ZIP files.  It combines a
+modified zopfli deflate encoder, optipng-style PNG filter selection
+and mozjpeg-based JPEG optimization, and is considerably faster than
+comparable tools while achieving better compression.

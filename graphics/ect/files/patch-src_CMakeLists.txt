@@ -1,0 +1,28 @@
+--- src/CMakeLists.txt.orig	2026-11-25 10:05:27 UTC
++++ src/CMakeLists.txt
+@@ -94,11 +94,14 @@ endif()
+ 
+ #Enable vector extensions. May also add these for ARM if needed.
+ #32-bit x86 is no longer officially supported and might not work, but do enable the compile flags for it.
++option(ECT_X86_SIMD "Require SSSE3, SSE4.2 and PCLMUL on x86" ON)
+ if(CPU_TYPE STREQUAL "x86_64" OR CPU_TYPE STREQUAL "i386")
+-  add_definitions(-DADLER32_SIMD_SSSE3)
++  if(ECT_X86_SIMD)
++    add_definitions(-DADLER32_SIMD_SSSE3)
++    add_definitions(-DHAS_PCLMUL)
++  endif()
+   add_definitions(-DINFLATE_CHUNK_SIMD_SSE2)
+   add_definitions(-DINFLATE_CHUNK_READ_64LE)
+-  add_definitions(-DHAS_PCLMUL)
+ elseif(CPU_TYPE STREQUAL arm64)
+   add_definitions(-DADLER32_SIMD_NEON)
+   add_definitions(-DINFLATE_CHUNK_SIMD_NEON)
+@@ -109,7 +112,7 @@ if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU" OR CMAKE_CXX_
+ 
+ if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU" OR CMAKE_CXX_COMPILER_ID STREQUAL "Clang"
+     OR CMAKE_CXX_COMPILER_ID STREQUAL "AppleClang" OR CMAKE_CXX_COMPILER_ID STREQUAL "ARMClang")
+-  if(CPU_TYPE STREQUAL "x86_64" OR CPU_TYPE STREQUAL "i386")
++  if((CPU_TYPE STREQUAL "x86_64" OR CPU_TYPE STREQUAL "i386") AND ECT_X86_SIMD)
+     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mpclmul -msse4.2")
+     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -mpclmul -msse4.2")
+   elseif(CPU_TYPE STREQUAL arm64)

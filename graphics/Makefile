@@ -176,6 +176,7 @@
     SUBDIR += dust3d
     SUBDIR += dynamechs
     SUBDIR += ebsynth
+    SUBDIR += ect
     SUBDIR += edje_viewer
     SUBDIR += egl-wayland
     SUBDIR += egl-wayland2
