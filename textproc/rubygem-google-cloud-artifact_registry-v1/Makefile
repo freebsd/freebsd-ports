@@ -9,7 +9,7 @@ COMMENT=	Manages artifacts on Google infrastructure
 WWW=		https://googleapis.github.io/google-cloud-ruby/docs/ \
 		https://github.com/googleapis/google-cloud-ruby
 
-LICENSE=	APACHE20
+LICENSE=	Apache-2.0
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	rubygem-gapic-common-gitlab>=0.20.0<2:devel/rubygem-gapic-common-gitlab \
