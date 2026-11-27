@@ -1,0 +1,11 @@
+share/nginx/modules/nginx-module-auth-jwt/LICENSE
+share/nginx/modules/nginx-module-auth-jwt/config
+share/nginx/modules/nginx-module-auth-jwt/src/arrays.c
+share/nginx/modules/nginx-module-auth-jwt/src/arrays.h
+share/nginx/modules/nginx-module-auth-jwt/src/ngx_http_auth_jwt_binary_converters.c
+share/nginx/modules/nginx-module-auth-jwt/src/ngx_http_auth_jwt_binary_converters.h
+share/nginx/modules/nginx-module-auth-jwt/src/ngx_http_auth_jwt_header_processing.c
+share/nginx/modules/nginx-module-auth-jwt/src/ngx_http_auth_jwt_header_processing.h
+share/nginx/modules/nginx-module-auth-jwt/src/ngx_http_auth_jwt_module.c
+share/nginx/modules/nginx-module-auth-jwt/src/ngx_http_auth_jwt_string.c
+share/nginx/modules/nginx-module-auth-jwt/src/ngx_http_auth_jwt_string.h

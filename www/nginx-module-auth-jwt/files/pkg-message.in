@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+This package contains the sources of the auth_jwt module only.  It does
+not install a loadable module, and installing it alongside nginx does not
+add token validation to a running server.
+
+The module itself is built by the nginx ports.  To use it, build
+www/nginx-devel with the HTTP_AUTH_JWT option enabled.  That port picks
+the sources up from
+%%PREFIX%%/share/nginx/modules/nginx-module-auth-jwt and produces
+ngx_http_auth_jwt_module.so.
+EOM
+}
+]

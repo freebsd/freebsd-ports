@@ -1,0 +1,10 @@
+The auth_jwt module validates JSON Web Tokens before nginx serves a
+request.  The token is taken from the Authorization header or from a
+cookie, its signature is checked against a configured key, and claims
+such as the issuer or the expiry time are enforced.
+
+Validated claims can be handed on to the backend as request headers, and
+a failed check answers with an error or redirects to a login page.
+
+This port only installs the module sources.  The module itself is built
+by the nginx ports when their HTTP_AUTH_JWT option is enabled.
