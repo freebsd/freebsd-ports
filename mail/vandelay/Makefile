@@ -1,22 +1,26 @@
 PORTNAME=	vandelay
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.0
+DISTVERSION=	2.0.0
 CATEGORIES=	mail
 
 MAINTAINER=	jsi@jules.de
 COMMENT=	JMAP account migration and backup utility
 WWW=		https://github.com/stalwartlabs/vandelay
 
-LICENSE=		APACHE20 MIT
+LICENSE=		AGPLv3 SELv2
 LICENSE_COMB=		dual
-LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSES/Apache-2.0.txt
-LICENSE_FILE_MIT=	${WRKSRC}/LICENSES/MIT.txt
+LICENSE_NAME_SELv2=	Stalwart Enterprise License 2.0
+LICENSE_FILE_AGPLv3=	${WRKSRC}/LICENSES/AGPL-3.0-only.txt
+LICENSE_FILE_SELv2=	${WRKSRC}/LICENSES/LicenseRef-SEL.txt
+LICENSE_PERMS_SELv2=	none
 
 USES=		cargo pkgconfig sqlite
 USE_GITHUB=	yes
 GH_ACCOUNT=	stalwartlabs
 
-CARGO_FEATURES=	--no-default-features
+# files/patch-Cargo.toml turns off the bundled-sqlite default feature of
+# vandelay-engine, so that the system SQLite is used.
+CARGO_INSTALL_PATH=	crates/vandelay
 
 PLIST_FILES=	bin/vandelay
 PORTDOCS=	CHANGELOG.md README.md

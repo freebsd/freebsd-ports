@@ -1,0 +1,11 @@
+--- Cargo.toml.orig	2026-11-28 10:37:59 UTC
++++ Cargo.toml
+@@ -10,7 +10,7 @@
+ edition = "2024"
+ 
+ [workspace.dependencies]
+-vandelay-engine = { path = "crates/engine" }
++vandelay-engine = { path = "crates/engine", default-features = false }
+ vandelay-stalwart = { path = "crates/stalwart" }
+ vandelay-connect = { path = "crates/connect" }
+ vandelay-migrate = { path = "crates/migrate" }

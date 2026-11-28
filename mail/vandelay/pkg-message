@@ -1,0 +1,12 @@
+[
+{ type: upgrade
+  maximum_version: "2.0.0"
+  message: <<EOM
+Archives written by vandelay 1.x are not compatible with vandelay 2.0
+and are refused. Import the data into a new archive.
+
+vandelay 2.0 is now licensed under the AGPL-3.0-only or, alternatively,
+the Stalwart Enterprise License 2.0.
+EOM
+}
+]

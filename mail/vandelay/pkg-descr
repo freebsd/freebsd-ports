@@ -10,6 +10,13 @@ Online (Microsoft Graph). The archive is then exported into a target
 JMAP server. Both steps can be interrupted and re-run and pick up where
 they left off.
 
+Since version 2.0, Vandelay also migrates whole mail servers into
+Stalwart: discovery, pre-flight checks, provisioning, copy and delta
+passes, cutover, verification and a final report. Sources include IMAP
+servers, common mail server distributions, Zimbra, Exchange Server,
+Microsoft 365 and Google Workspace. Migrations can be run from the
+command line, a terminal interface or a web interface.
+
 Because one archive fully describes one account, Vandelay also serves
 as a per-account backup tool: periodic imports refresh the snapshot and
 an export restores it.
