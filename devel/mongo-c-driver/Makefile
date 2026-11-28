@@ -11,7 +11,7 @@ WWW=		https://github.com/mongodb/mongo-c-driver
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	libbson==${DISTVERSION}:devel/libbson
+BUILD_DEPENDS=	libbson>=${DISTVERSION}:devel/libbson
 LIB_DEPENDS=	libbson2.so:devel/libbson \
 		libutf8proc.so:textproc/utf8proc \
 		libzstd.so:archivers/zstd
