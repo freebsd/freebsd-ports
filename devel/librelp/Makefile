@@ -1,6 +1,5 @@
 PORTNAME=	librelp
-PORTVERSION=	1.13.0
-PORTREVISION=	1
+PORTVERSION=	1.14.0
 CATEGORIES=	devel
 MASTER_SITES=	http://download.rsyslog.com/librelp/
 
@@ -31,7 +30,7 @@ INSTALL_TARGET=	install-strip
 PLIST_FILES=	include/${PORTNAME}.h \
 		lib/${PORTNAME}.a \
 		lib/${PORTNAME}.so lib/${PORTNAME}.so.0 \
-		lib/${PORTNAME}.so.0.5.1 \
+		lib/${PORTNAME}.so.0.5.2 \
 		libdata/pkgconfig/relp.pc
 
 PORT_VERBS=	relp
