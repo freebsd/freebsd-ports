@@ -1,6 +1,6 @@
 PORTNAME=	clipcat
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.27.0
+DISTVERSION=	0.27.1
 CATEGORIES=	x11
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -221,8 +221,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		indexmap-1.9.3 \
 		indexmap-2.14.0 \
 		indoc-2.0.7 \
-		inotify-0.11.1 \
-		inotify-sys-0.1.5 \
+		inotify-0.11.5 \
+		inotify-sys-0.1.8 \
 		instability-0.3.12 \
 		interpolate_name-0.2.4 \
 		interprocess-2.4.2 \
@@ -231,15 +231,20 @@ CARGO_CRATES=	adler2-2.0.1 \
 		itertools-0.14.0 \
 		itoa-1.0.18 \
 		jiff-0.2.23 \
+		jiff-1.0.2 \
+		jiff-core-1.0.1 \
 		jiff-static-0.2.23 \
+		jiff-static-1.0.2 \
 		jiff-tzdb-0.1.6 \
+		jiff-tzdb-1.0.0 \
 		jiff-tzdb-platform-0.1.3 \
+		jiff-tzdb-platform-1.0.0 \
 		jobserver-0.1.34 \
 		js-sys-0.3.95 \
 		kanal-0.1.1 \
 		kasuari-0.4.12 \
-		kqueue-1.1.1 \
-		kqueue-sys-1.0.4 \
+		kqueue-1.2.1 \
+		kqueue-sys-1.1.2 \
 		lab-0.11.0 \
 		lazy_static-1.5.0 \
 		leb128fmt-0.1.0 \
@@ -260,7 +265,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		log-0.4.32 \
 		loop9-0.1.5 \
 		lru-0.18.5 \
-		lru-0.19.0 \
+		lru-0.19.2 \
 		mac-notification-sys-0.6.15 \
 		mac_address-1.1.8 \
 		matchit-0.8.4 \
@@ -284,9 +289,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		nom-7.1.3 \
 		nom-8.0.0 \
 		noop_proc_macro-0.3.0 \
-		notify-8.2.2 \
+		notify-9.0.0 \
 		notify-rust-4.19.0 \
-		notify-types-2.1.0 \
+		notify-types-2.3.1 \
 		nu-ansi-term-0.50.3 \
 		num-bigint-0.4.6 \
 		num-conv-0.2.2 \
@@ -397,9 +402,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		redox_users-0.5.2 \
 		ref-cast-1.0.25 \
 		ref-cast-impl-1.0.25 \
-		regex-1.13.1 \
-		regex-automata-0.4.16 \
-		regex-syntax-0.8.11 \
+		regex-1.13.2 \
+		regex-automata-0.4.19 \
+		regex-syntax-0.8.12 \
 		rgb-0.8.53 \
 		roff-1.1.1 \
 		ron-0.12.1 \
@@ -424,8 +429,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		serde_repr-0.1.20 \
 		serde_spanned-1.1.3 \
 		serde_urlencoded-0.7.1 \
-		serde_with-3.24.0 \
-		serde_with_macros-3.24.0 \
+		serde_with-3.25.0 \
+		serde_with_macros-3.25.0 \
 		serial2-0.2.36 \
 		sha2-0.10.9 \
 		sha2-0.11.1 \
@@ -484,9 +489,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		tokio-macros-2.7.0 \
 		tokio-stream-0.1.19 \
 		tokio-util-0.7.18 \
-		toml-1.2.1+spec-1.1.0 \
+		toml-1.2.2+spec-1.1.0 \
 		toml_datetime-1.1.3+spec-1.1.0 \
-		toml_parser-1.1.5+spec-1.1.0 \
+		toml_parser-1.1.6+spec-1.1.0 \
 		toml_writer-1.2.0+spec-1.1.0 \
 		tonic-0.14.9 \
 		tonic-build-0.14.9 \
@@ -598,11 +603,12 @@ CARGO_CRATES=	adler2-2.0.1 \
 		x11rb-0.14.0 \
 		x11rb-protocol-0.13.2 \
 		x11rb-protocol-0.14.0 \
+		xxhash-rust-0.8.21 \
 		y4m-0.8.0 \
-		zbus-6.3.0 \
-		zbus_macros-6.3.0 \
+		zbus-6.5.0 \
+		zbus_macros-6.5.0 \
 		zbus_utils-6.1.0 \
-		zcheapstr-1.1.0 \
+		zcheapstr-1.4.0 \
 		zerocopy-0.8.48 \
 		zerocopy-derive-0.8.48 \
 		zmij-1.0.21 \
