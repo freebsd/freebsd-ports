@@ -5,6 +5,7 @@
 %%MANPAGES%%share/man/man8/fence_apc.8.gz
 %%MANPAGES%%share/man/man8/fence_apc_snmp.8.gz
 %%MANPAGES%%share/man/man8/fence_aws.8.gz
+%%MANPAGES%%share/man/man8/fence_aws_vpc_net.8.gz
 %%MANPAGES%%share/man/man8/fence_azure_arm.8.gz
 %%MANPAGES%%share/man/man8/fence_bladecenter.8.gz
 %%MANPAGES%%share/man/man8/fence_brocade.8.gz
@@ -19,12 +20,15 @@
 %%MANPAGES%%share/man/man8/fence_drac5.8.gz
 %%MANPAGES%%share/man/man8/fence_dummy.8.gz
 %%MANPAGES%%share/man/man8/fence_eaton_snmp.8.gz
+%%MANPAGES%%share/man/man8/fence_eaton_ssh.8.gz
 %%MANPAGES%%share/man/man8/fence_ecloud.8.gz
 %%MANPAGES%%share/man/man8/fence_emerson.8.gz
 %%MANPAGES%%share/man/man8/fence_eps.8.gz
+%%MANPAGES%%share/man/man8/fence_epsr2.8.gz
 %%MANPAGES%%share/man/man8/fence_evacuate.8.gz
 %%MANPAGES%%share/man/man8/fence_gce.8.gz
 %%MANPAGES%%share/man/man8/fence_hds_cb.8.gz
+%%MANPAGES%%share/man/man8/fence_hetzner_cloud.8.gz
 %%MANPAGES%%share/man/man8/fence_heuristics_ping.8.gz
 %%MANPAGES%%share/man/man8/fence_hpblade.8.gz
 %%MANPAGES%%share/man/man8/fence_ibm_powervs.8.gz
@@ -56,7 +60,9 @@
 %%MANPAGES%%share/man/man8/fence_lpar.8.gz
 %%MANPAGES%%share/man/man8/fence_mpath.8.gz
 %%MANPAGES%%share/man/man8/fence_netio.8.gz
+%%MANPAGES%%share/man/man8/fence_nutanix_ahv.8.gz
 %%MANPAGES%%share/man/man8/fence_openstack.8.gz
+%%MANPAGES%%share/man/man8/fence_ovm.8.gz
 %%MANPAGES%%share/man/man8/fence_powerman.8.gz
 %%MANPAGES%%share/man/man8/fence_pve.8.gz
 %%MANPAGES%%share/man/man8/fence_raritan.8.gz
@@ -69,6 +75,7 @@
 %%MANPAGES%%share/man/man8/fence_sanbox2.8.gz
 %%MANPAGES%%share/man/man8/fence_sbd.8.gz
 %%MANPAGES%%share/man/man8/fence_scsi.8.gz
+%%MANPAGES%%share/man/man8/fence_shelly_gen2.8.gz
 %%MANPAGES%%share/man/man8/fence_skalar.8.gz
 %%MANPAGES%%share/man/man8/fence_tripplite_snmp.8.gz
 %%MANPAGES%%share/man/man8/fence_vbox.8.gz
@@ -86,6 +93,7 @@ sbin/fence_amt
 sbin/fence_apc
 sbin/fence_apc_snmp
 sbin/fence_aws
+sbin/fence_aws_vpc_net
 sbin/fence_azure_arm
 sbin/fence_bladecenter
 sbin/fence_brocade
@@ -100,12 +108,15 @@ sbin/fence_drac
 sbin/fence_drac5
 sbin/fence_dummy
 sbin/fence_eaton_snmp
+sbin/fence_eaton_ssh
 sbin/fence_ecloud
 sbin/fence_emerson
 sbin/fence_eps
+sbin/fence_epsr2
 sbin/fence_evacuate
 sbin/fence_gce
 sbin/fence_hds_cb
+sbin/fence_hetzner_cloud
 sbin/fence_heuristics_ping
 sbin/fence_hpblade
 sbin/fence_ibm_powervs
@@ -137,7 +148,9 @@ sbin/fence_lindypdu
 sbin/fence_lpar
 sbin/fence_mpath
 sbin/fence_netio
+sbin/fence_nutanix_ahv
 sbin/fence_openstack
+sbin/fence_ovm
 sbin/fence_powerman
 sbin/fence_pve
 sbin/fence_raritan
@@ -150,6 +163,7 @@ sbin/fence_rsb
 sbin/fence_sanbox2
 sbin/fence_sbd
 sbin/fence_scsi
+sbin/fence_shelly_gen2
 sbin/fence_skalar
 sbin/fence_tripplite_snmp
 sbin/fence_vbox
