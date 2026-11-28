@@ -1,5 +1,6 @@
 PORTNAME=	importlib-metadata
 DISTVERSION=	10.2.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,8 +26,14 @@ NO_ARCH=	yes
 
 TESTING_UNSAFE=	ModuleNotFoundError: No module named 'pyfakefs'
 
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} <= 31400
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}lazy-importer>=0.1:devel/py-lazy-importer@${PY_FLAVOR}
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} '/license-files/d; s|^license = "Apache-2.0"|license = { text = "Apache-2.0" }|; s|77|63|g' \
 		${WRKSRC}/pyproject.toml
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
