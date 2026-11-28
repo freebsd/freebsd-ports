@@ -1,6 +1,6 @@
 PORTNAME=	lean-ctx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.12.7
+DISTVERSION=	3.12.8
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -104,7 +104,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		const-oid-0.10.2 \
 		constant_time_eq-0.4.2 \
 		constant_time_eq-0.6.1 \
-		cookie-0.18.2 \
+		cookie-0.18.3 \
 		cookie_store-0.22.0 \
 		core-foundation-0.9.4 \
 		core-foundation-0.10.1 \
