@@ -294,6 +294,7 @@
     SUBDIR += tweak
     SUBDIR += uemacs
     SUBDIR += uhex
+    SUBDIR += undo-tree
     SUBDIR += uzap
     SUBDIR += ved
     SUBDIR += vertico.el

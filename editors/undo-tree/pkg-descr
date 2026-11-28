@@ -1,0 +1,8 @@
+undo-tree-mode replaces the standard Emacs undo system with one that
+treats undo history as what it is: a branching tree of changes.  It
+combines the intuitive behavior of a conventional undo/redo system with
+the ability to recover any past state of a buffer, without ever losing
+history.
+
+The undo tree can be visualized and navigated in a separate buffer,
+and history can optionally be saved to and restored from disk.
