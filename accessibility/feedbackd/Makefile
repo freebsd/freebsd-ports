@@ -5,7 +5,7 @@ CATEGORIES=	accessibility
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Haptic/visual/audio feedback for GNOME
-WWW=		https://source.puri.sm/Librem5/feedbackd
+WWW=		https://gitlab.freedesktop.org/feedbackd/feedbackd
 
 LICENSE=	GPLv3+ LGPL21+
 LICENSE_COMB=	multi
@@ -16,8 +16,7 @@ USES=		compiler:c11 gnome meson pkgconfig python:build shebangfix
 USE_GITLAB=	yes
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
-GL_SITE=	https://source.puri.sm
-GL_ACCOUNT=	Librem5
+GL_SITE=	https://gitlab.freedesktop.org
 GL_TUPLE=	https://gitlab.gnome.org:World/Phosh:gmobile:v0.1.0:gmobile/subprojects/gmobile
 SHEBANG_FILES=	build-aux/post_install.py
 MESON_FALSE=	tests
