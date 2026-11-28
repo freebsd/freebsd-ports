@@ -95,9 +95,9 @@ KDE_PLASMA_DEFAULT?=	6
 .  else
 KDE_PLASMA_DEFAULT?=	6lts
 .  endif
-# Possible values: 4.8, 4.99
+# Possible values: 4.8, 5.99
 .  if (defined(WANT_LAZARUS_DEVEL) && !empty(WANT_LAZARUS_DEVEL)) || ${ARCH:Maarch64} || ${ARCH:Mpowerpc*}
-LAZARUS_DEFAULT?=	4.99
+LAZARUS_DEFAULT?=	5.99
 .  else
 LAZARUS_DEFAULT?=	4.8
 .  endif
