@@ -1,6 +1,6 @@
 PORTNAME=	magit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.7.1
+DISTVERSION=	4.7.2
 CATEGORIES=	devel elisp
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -34,8 +34,6 @@ MAKE_ENV+=	docdir=${DOCSDIR} \
 		VERSION=${PORTVERSION}
 # Parallel build fails if Emacs is built with native compilation enabled
 MAKE_JOBS_UNSAFE=	yes
-#ALL_TARGET=	lisp info
-#INSTALL_TARGET=	install-lisp install-info
 
 CONFLICTS_INSTALL=	magit-emacs_*
 
