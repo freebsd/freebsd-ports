@@ -1,0 +1,5 @@
+queue provides a simple queue data structure for Emacs Lisp.  A queue
+can be used both as a first-in last-out (FILO) and as a first-in
+first-out (FIFO) stack: elements can be added to the front or back of
+the queue, and removed from the front.  This kind of data structure is
+sometimes called an output-restricted deque.

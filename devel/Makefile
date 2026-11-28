@@ -6742,6 +6742,7 @@
     SUBDIR += qtcreator
     SUBDIR += qtutilities
     SUBDIR += quantum
+    SUBDIR += queue
     SUBDIR += quickcheck++
     SUBDIR += quickcpplib
     SUBDIR += quill
