@@ -1,4 +1,5 @@
 %%BBDB_LISPDIR%%/bbdb-anniv.el
+%%BBDB_LISPDIR%%/bbdb-autoloads.el
 %%BBDB_LISPDIR%%/bbdb-com.el
 %%BBDB_LISPDIR%%/bbdb-gnus-aux.el
 %%BBDB_LISPDIR%%/bbdb-gnus.el
@@ -9,6 +10,7 @@
 %%BBDB_LISPDIR%%/bbdb-migrate.el
 %%BBDB_LISPDIR%%/bbdb-mu4e.el
 %%BBDB_LISPDIR%%/bbdb-mua.el
+%%BBDB_LISPDIR%%/bbdb-notmuch.el
 %%BBDB_LISPDIR%%/bbdb-pgp.el
 %%BBDB_LISPDIR%%/bbdb-pkg.el
 %%BBDB_LISPDIR%%/bbdb-rmail.el
