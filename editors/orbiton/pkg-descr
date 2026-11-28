@@ -1,14 +1,22 @@
-Small, fast and limited text editor
+Orbiton (invoked as o) is a small, self-contained, configuration-free
+VT100 terminal text editor and lightweight IDE designed for rapid
+edit-format-compile-run cycles without configuration files or plugins.
 
-Features and limitations:
-* Has syntax highlighting for Go code.
-* Never asks before saving or quitting. Be careful.
-* Home and End are not detected by the key handler.
-* Can format Go code using gofmt (press ctrl-f).
-* Expects utilities like gofmt to be in /usr/bin.
-* Will strip trailing whitespace whenever it can.
-* Must be given a filename at start.
-* Requires that /dev/tty is available.
-* Copy, cut and paste is only for one line at a time.
-* Some letters can not be typed in. Like the "ash" grapheme
-  formed from the letters a and e.
+Features and behavior:
+* Instant syntax highlighting across dozens of programming, markup, and
+  configuration languages, with rainbow parentheses and smart indentation.
+* Single-keystroke code formatting (ctrl-w) and building/running (ctrl-b)
+  for C, C++, Go, Rust, Zig, Python, Shell, Odin, Haskell, and more,
+  plus headless CLI modes (o --fmt and o --build).
+* Basic GDB, LLDB, and Delve debugger integration, simple LSP tab
+  completion, definition/include jumping, and macro recording.
+* Multi-line block and function copy-paste, cross-file "portals", simple
+  Markdown table editing, HTML/PDF export, and basic built-in
+  spellchecking.
+* Built-in man page viewer (MANPAGER=o), 16-color terminal image preview,
+  file browser, /etc/fstab formatter, and optional Pico/Nano mode (-a).
+* Saves and quits immediately without confirmation prompts.
+* Automatically strips trailing whitespace and converts CRLF line endings
+  to LF when possible.
+* Requires /dev/tty for interactive editing (not needed for headless modes
+  such as --fmt and --build).
