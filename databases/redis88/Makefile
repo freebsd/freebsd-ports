@@ -1,11 +1,11 @@
 PORTNAME=	redis
 DISTVERSION=	8.8.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	https://download.redis.io/releases/
 PKGNAMESUFFIX=	88
 
-MAINTAINER=	bofh@freebsd.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Persistent key-value database with built-in net interface(8.8.X)
 WWW=		https://redis.io/
 
@@ -16,6 +16,9 @@ LICENSE_NAME_SSPLv1=	Server Side Public License v1
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LICENSE_PERMS_RSALv2=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_SSPLv1=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
+DEPRECATED=    Upstream END of life reaches on 2027-01-29
+EXPIRATION_DATE=       2027-01-29
 
 USES=		compiler:c11 cpe gmake localbase:ldflags pkgconfig tcl:test
 CPE_VENDOR=	redis
