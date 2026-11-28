@@ -1,6 +1,6 @@
 PORTNAME=	stalwart
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.0
+DISTVERSION=	1.2.1
 CATEGORIES=	mail
 
 MAINTAINER=	jsi@jules.de
@@ -25,6 +25,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	stalwartlabs
 USE_RC_SUBR=	stalwart
 
+SUB_FILES=	pkg-message
 SUB_LIST=	USERS=${USERS} \
 		GROUPS=${GROUPS}
 
@@ -42,6 +43,7 @@ OPTIONS_EXCLUDE_powerpc=	ROCKSDB
 OPTIONS_EXCLUDE_armv6=	ROCKSDB
 OPTIONS_EXCLUDE_armv7=	ROCKSDB
 OPTIONS_EXCLUDE_i386=	ROCKSDB
+OPTIONS_SUB=		yes
 
 BACKENDS_DESC=		Database and storage backends
 AZURE_DESC=		Enable Azure storage backend

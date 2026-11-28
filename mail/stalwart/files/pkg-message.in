@@ -1,0 +1,75 @@
+[
+{ type: install
+  message: <<EOM
+Stalwart has been installed as %%PREFIX%%/bin/stalwart.
+
+1. Enable and start the service:
+
+     sysrc stalwart_enable=YES
+     service stalwart start
+
+2. Without %%ETCDIR%%/config.json, Stalwart starts in bootstrap
+   mode. It then only serves the setup WebUI at
+   http://<hostname>:8080/admin on all addresses, and prints a
+   temporary administrator password to /var/log/stalwart.log:
+
+     grep -A8 'bootstrap mode' /var/log/stalwart.log
+
+   To change this, add environment variables to stalwart_env before
+   the first start, e.g.:
+
+     sysrc stalwart_env+=STALWART_RECOVERY_ADMIN=admin:<password>
+     sysrc stalwart_env+=STALWART_RECOVERY_MODE_BIND=127.0.0.1
+     sysrc stalwart_env+=STALWART_RECOVERY_MODE_PORT=9090
+
+   The WebUI itself is downloaded from GitHub at runtime.
+
+3. Complete the setup in the WebUI. Stalwart writes its configuration
+   to %%ETCDIR%%/config.json and its data to /var/db/stalwart.
+   Then remove STALWART_RECOVERY_ADMIN from stalwart_env, if you set
+   it, and restart the service:
+
+     service stalwart restart
+
+   Stalwart starts as root, binds its listeners and then runs as the
+   user "%%USERS%%". Listeners on ports below 1024 that were added
+   in the WebUI are only bound after a restart.
+
+%%NO_ENTERPRISE%%This package was built without the ENTERPRISE option. Its data
+%%NO_ENTERPRISE%%store cannot be opened by a build with the Enterprise features,
+%%NO_ENTERPRISE%%such as upstream's binaries and container images, and vice versa.
+%%ENTERPRISE%%This package was built with the ENTERPRISE option. The Enterprise
+%%ENTERPRISE%%features are only enabled with a valid license key or API key,
+%%ENTERPRISE%%set in the Enterprise settings of the WebUI. Without one,
+%%ENTERPRISE%%Stalwart logs a warning for each affected setting and
+%%ENTERPRISE%%- uses only the primary store of a SQL read replica setup,
+%%ENTERPRISE%%- disables the metrics and tracing stores and LDAP failover,
+%%ENTERPRISE%%- uses the default directory for all domains.
+%%ENTERPRISE%%Sharded blob and in-memory stores stay in use.
+%%ENTERPRISE%%
+%%ENTERPRISE%%The data store cannot be opened by a build without the
+%%ENTERPRISE%%ENTERPRISE option, and vice versa.
+
+To migrate a Stalwart 0.16 installation (mail/stalwart016), use
+%%NO_ENTERPRISE%%mail/stalwart-migrate.
+%%ENTERPRISE%%mail/stalwart-migrate@enterprise.
+EOM
+}
+{ type: upgrade
+  maximum_version: "1.2.1"
+  message: <<EOM
+Stalwart 1.2.0 added new permissions that default roles created by an
+earlier version do not include (mail rules, junk e-mail lists,
+calendar settings and Exchange). If you upgraded from a version before
+1.2.0 and have not added them yet, restart Stalwart once with:
+
+  sysrc stalwart_env+=STALWART_UPDATE_ROLE_PERMISSIONS=true
+  service stalwart restart
+  sysrc stalwart_env-=STALWART_UPDATE_ROLE_PERMISSIONS=true
+
+Also update the WebUI to version 2.1.1 or later.
+
+See https://stalw.art/docs/auth/authorization/permissions#default-roles-on-upgraded-servers
+EOM
+}
+]
