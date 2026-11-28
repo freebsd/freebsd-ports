@@ -1,3 +1,45 @@
+  <vuln vid="495b04ca-e96e-11f1-9ff2-6ab7a97fec4b">
+    <topic>Stalwart -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>stalwart</name>
+	<range><lt>1.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Stalwart Labs reports:</p>
+	<blockquote cite="https://github.com/stalwartlabs/stalwart/blob/v1.2.1/CHANGELOG.md">
+	  <ul>
+	    <li>Mailbox names and other strings containing CR or LF
+	    are sent as literals, so a shared mailbox name can no
+	    longer inject response lines into another user's
+	    session.</li>
+	    <li><code>x:AppPassword/set</code> and
+	    <code>x:ApiKey/set</code> only update or delete
+	    credentials of their own type, so an app password or API
+	    key can no longer change the account password or remove
+	    its TOTP.</li>
+	    <li>S/MIME key harvesting limits the nesting of the signed
+	    content, so a crafted signed message can no longer crash
+	    the server with a stack overflow.</li>
+	    <li><code>Mailbox/set</code> requires the share right for
+	    pointer patches into <code>shareWith</code>, so a sharee
+	    without <code>mayShare</code> can no longer change a
+	    mailbox's permissions.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/stalwartlabs/stalwart/blob/v1.2.1/CHANGELOG.md</url>
+    </references>
+    <dates>
+      <discovery>2026-11-25</discovery>
+      <entry>2026-11-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f031c396-ea45-11f1-b58b-8447094a420f">
     <topic>WeeChat -- Multiple vulnerabilities</topic>
     <affects>
