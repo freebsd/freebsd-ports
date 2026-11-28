@@ -1,5 +1,5 @@
-TIMESTAMP = 1795707368
-SHA256 (paseo-0.17.5-node-modules-arm64.tar.gz) = 9ea683367c81de1e89699f63fc9bedae632e8e2a77772ecf47bd0d16d3ecccb3
-SIZE (paseo-0.17.5-node-modules-arm64.tar.gz) = 66372869
-SHA256 (paseo-0.17.5-node-modules-x64.tar.gz) = 8d3dab0c66d35daf0d12301ead3c7ffaf2527049d78a5feb56085b6c69a5987b
-SIZE (paseo-0.17.5-node-modules-x64.tar.gz) = 66759183
+TIMESTAMP = 1795814189
+SHA256 (paseo-0.18.1-node-modules-arm64.tar.gz) = 31f3b4e2a1817dcb21b749f4c6f98fd269329168ed33f1237806ebc9d4427c55
+SIZE (paseo-0.18.1-node-modules-arm64.tar.gz) = 66596905
+SHA256 (paseo-0.18.1-node-modules-x64.tar.gz) = 8278eafd5c4c2a149cd9d592941ce6865b55cb09c4f266acc44d6c39d6515256
+SIZE (paseo-0.18.1-node-modules-x64.tar.gz) = 66985156
