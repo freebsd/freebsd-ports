@@ -1,11 +1,8 @@
 PORTNAME=	fpc-devel
-PORTVERSION=	3.3.1.20260901
-PORTREVISION=	1
+PORTVERSION=	3.3.1.20261127
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-source
 DIST_SUBDIR=	freepascal
-PATCH_SITES=	https://gitlab.com/freepascal.org/fpc/source/-/commit/
-PATCHFILES=	f323f2f8ec6ec1a966072a8dcd2c0144cf95f87c.patch:-p1
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free Pascal compiler with Turbo and Delphi compatibility (source)
@@ -18,7 +15,7 @@ USE_GITLAB=	yes
 GL_SITE=	https://gitlab.com/freepascal.org
 GL_ACCOUNT=	fpc
 GL_PROJECT=	source
-GL_TAGNAME=	da47439dd51b003bc45f1ad41bd2ca24614d13f7
+GL_TAGNAME=	6b9f45334fc8dee59286ae778c693e36d7cb8271
 
 PLIST=		${WRKDIR}/pkg-plist
 PATCHDIR=	${PORTSDIR}/lang/fpc-devel/files
@@ -100,8 +97,7 @@ post-patch:
 	@${REINPLACE_CMD} -i "" -e 's|linux|freebsd,linux|g' \
 		${WRKSRC}/packages/openal/fpmake.pp
 	@${REINPLACE_CMD} -i "" -e 's|linux|freebsd,linux|g' \
-		-e 's|x86_64|x86_64,aarch64|g' \
-			${WRKSRC}/packages/opencl/fpmake.pp
+		${WRKSRC}/packages/opencl/fpmake.pp
 	@${REINPLACE_CMD} -i "" -e 's|linux|freebsd,linux|g' \
 		${WRKSRC}/packages/opengles/fpmake.pp
 	@${REINPLACE_CMD} -i "" -e 's|linux|freebsd,linux|g' \
