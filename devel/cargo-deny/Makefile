@@ -1,5 +1,5 @@
 PORTNAME=	cargo-deny
-DISTVERSION=	0.22.1
+DISTVERSION=	0.22.2
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -28,7 +28,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		anstyle-parse-1.0.0 \
 		anstyle-query-1.1.5 \
 		anstyle-wincon-3.0.11 \
-		anyhow-1.0.104 \
+		anyhow-1.0.105 \
 		base64-0.23.1 \
 		bitflags-2.13.2 \
 		bitvec-1.1.1 \
@@ -37,19 +37,19 @@ CARGO_CRATES=	adler2-2.0.1 \
 		bstr-1.14.0 \
 		bytes-1.12.2 \
 		camino-1.2.6 \
-		cc-1.11.2 \
+		cc-1.12.0 \
 		cfg-expr-0.20.11 \
 		cfg-if-1.0.5 \
 		cfg_aliases-0.2.2 \
-		clap-4.6.8 \
-		clap_builder-4.6.7 \
+		clap-4.6.10 \
+		clap_builder-4.6.10 \
 		clap_lex-1.1.2 \
 		codespan-0.13.1 \
 		codespan-reporting-0.13.1 \
 		colorchoice-1.0.5 \
 		console-0.16.6 \
 		cpufeatures-0.3.1 \
-		crc32fast-1.5.5 \
+		crc32fast-1.5.6 \
 		crossbeam-0.8.5 \
 		crossbeam-channel-0.5.17 \
 		crossbeam-deque-0.8.8 \
@@ -65,7 +65,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		errno-0.3.15 \
 		fastrand-2.5.0 \
 		fern-0.7.1 \
-		find-msvc-tools-0.1.15 \
+		find-msvc-tools-0.1.16 \
 		fixedbitset-0.5.9 \
 		flate2-1.1.11 \
 		foldhash-0.1.5 \
@@ -74,10 +74,10 @@ CARGO_CRATES=	adler2-2.0.1 \
 		funty-2.0.0 \
 		getrandom-0.2.17 \
 		getrandom-0.4.3 \
-		globset-0.4.21 \
+		globset-0.4.22 \
 		goblin-0.10.7 \
 		hashbrown-0.15.5 \
-		hashbrown-0.17.1 \
+		hashbrown-0.17.2 \
 		http-1.5.0 \
 		httparse-1.10.1 \
 		hybrid-array-0.4.15 \
@@ -94,11 +94,11 @@ CARGO_CRATES=	adler2-2.0.1 \
 		insta-1.49.0 \
 		is_terminal_polyfill-1.70.2 \
 		itoa-1.0.19 \
-		jiff-1.0.1 \
-		jiff-core-1.0.1 \
-		jiff-static-1.0.1 \
+		jiff-1.0.3 \
+		jiff-core-1.0.2 \
+		jiff-static-1.0.3 \
 		jobserver-0.1.35 \
-		krates-0.22.0 \
+		krates-0.22.1 \
 		libc-0.2.191 \
 		linux-raw-sys-0.12.1 \
 		litemap-0.8.3 \
@@ -144,19 +144,19 @@ CARGO_CRATES=	adler2-2.0.1 \
 		serde_core-1.0.229 \
 		serde_derive-1.0.229 \
 		serde_json-1.0.154 \
-		sha2-0.11.1 \
+		sha2-0.11.2 \
 		shlex-2.0.1 \
 		simd-adler32-0.3.10 \
 		similar-2.7.0 \
 		smallvec-1.16.6 \
 		smol_str-0.3.7 \
-		spdx-0.13.6 \
+		spdx-0.13.7 \
 		stable_deref_trait-1.2.1 \
 		strsim-0.11.1 \
 		subtle-2.6.1 \
 		syn-3.0.10 \
 		synstructure-0.14.0 \
-		tame-index-0.27.2 \
+		tame-index-0.28.0 \
 		tap-1.0.1 \
 		target-lexicon-0.13.5 \
 		tempfile-3.27.0 \
@@ -177,7 +177,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		utf8_iter-1.1.0 \
 		utf8parse-0.2.2 \
 		utf_types-1.0.0 \
-		walkdir-2.5.0 \
+		walkdir-2.5.1 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
 		webpki-roots-1.0.12 \
 		winapi-util-0.1.11 \
@@ -203,11 +203,11 @@ CARGO_CRATES=	adler2-2.0.1 \
 		zerotrie-0.2.5 \
 		zerovec-0.11.9 \
 		zerovec-derive-0.11.7 \
-		zlib-rs-0.6.8 \
+		zlib-rs-0.6.9 \
 		zmij-1.0.23 \
-		zstd-0.13.5 \
-		zstd-safe-7.4.1 \
-		zstd-sys-2.1.3+zstd.1.5.7
+		zstd-0.13.6 \
+		zstd-safe-7.4.2 \
+		zstd-sys-2.2.0+zstd.1.6.0
 
 PLIST_FILES=	bin/${PORTNAME}
 
