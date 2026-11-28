@@ -1,6 +1,6 @@
 PORTNAME=	Geo-Caching
-PORTVERSION=	0.11
-PORTREVISION=	2
+DISTVERSION=	0.11
+PORTREVISION=	3
 CATEGORIES=	www perl5 geography
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,6 +11,9 @@ WWW=		https://metacpan.org/release/Geo-Caching
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+
+DEPRECATED=	Scrapes a geocaching.com login form that no longer exists
+EXPIRATION_DATE=	2026-12-28
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Geo-Cache>=0:misc/p5-Geo-Cache \
