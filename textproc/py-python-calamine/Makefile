@@ -1,5 +1,5 @@
 PORTNAME=	python-calamine
-DISTVERSION=	0.9.1
+DISTVERSION=	0.10.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,6 +29,6 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_ARGS=	--disable-plugin-autoload \
 		--deselect tests/test_pandas.py::test_xlsb_pyxlsb_pandas # needs pyxlsb
 
-# tests as of 0.9.1: 54 passed, 1 deselected, 1 xfailed in 2.28s
+# tests as of 0.10.0: 68 passed, 1 deselected, 1 xfailed in 1.11s
 
 .include <bsd.port.mk>
