@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	net-im
 EXTRACT_ONLY=	${GH_ACCOUNT}-${PORTNAME}-v${PORTVERSION}_GH0.tar.gz
 
-MAINTAINER=	osa@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another yet Telegram client
 WWW=		https://github.com/d99kris/nchat
 
