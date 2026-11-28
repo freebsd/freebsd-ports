@@ -1,3 +1,67 @@
+  <vuln vid="638c03f4-eb52-11f1-aff8-901b0edee044">
+    <topic>py-svglib -- Multiple security issues</topic>
+    <affects>
+    <package>
+      <name>py311-svglib</name>
+      <name>py312-svglib</name>
+      <name>py313-svglib</name>
+      <name>py313t-svglib</name>
+      <name>py314-svglib</name>
+      <name>py314t-svglib</name>
+      <name>py315-svglib</name>
+    <range><lt>2.5.0</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Dinu Gherman reports:</p>
+	<blockquote cite="https://github.com/deeplook/svglib/releases/tag/v2.5.0">
+	<p>A long transform attribute could make "convertTransform()" take time
+	quadratic in its length: each pair of brackets rebuilt the whole string, and
+	the result was checked only afterwards, so 2 MB of brackets, which a 3 KB .svgz
+	file holds, kept svg2rlg() busy for minutes (CWE-407, GHSA-43qg-v5jj-vw5c). It
+	is read in one pass now, with the same result. Thanks to @lanjianchun for the
+	report.
+	</p>
+	</blockquote>
+	<blockquote cite="https://github.com/deeplook/svglib/releases/tag/v2.5.0">
+	<p>An &lt;image&gt; that refers to a fragment of the document, with
+	href="#id", was rendered again without the checks that &lt;use&gt; has had
+	since 2.3.1: a cycle, such as an &lt;svg&gt; that contains an &lt;image&gt;
+	that refers to it, ended in RecursionError, and a few &lt;image&gt; elements
+	that refer to each other, each level to the one before it twice, took time that
+	doubled with every level, so that 2 KB took hours (CWE-400, CWE-674,
+	GHSA-cmj4-5g24-pp37, reported again as GHSA-4fr5-v6hm-mwjg). A cycle is now
+	skipped and an error is logged, and all &lt;image&gt; targets count against the
+	same budgets as &lt;use&gt; (MAX_USE_EXPANSIONS, MAX_USE_CLONED_ELEMENTS). An
+	&lt;image&gt; that refers to an element that is not defined yet is skipped too,
+	and not an AttributeError. Thanks to @GeniusKangaroo and @john-lawniczak for
+	the reports.
+	</p>
+	</blockquote>
+	<blockquote cite="https://github.com/deeplook/svglib/releases/tag/v2.5.0">
+	<p>An image embedded as a data:image/png or data:image/jpeg URI was
+	opened by Pillow with the decoder chosen from its bytes, not from its label, so
+	a PostScript file made it run Ghostscript, where that is installed, when the
+	PDF was drawn (CWE-20, CWE-94, GHSA-h5r7-mh88-vjm4). Such an image is now
+	decoded as a PNG or a JPEG only (DATA_URI_IMAGE_FORMATS), and anything else is
+	refused with the UnidentifiedImageError that data that is not an image already
+	got. Thanks to @superbot-helper for the report.
+	</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/deeplook/svglib/security/advisories/GHSA-43qg-v5jj-vw5c</url>
+      <url>https://github.com/deeplook/svglib/security/advisories/GHSA-cmj4-5g24-pp37</url>
+      <url>https://github.com/deeplook/svglib/security/advisories/GHSA-h5r7-mh88-vjm4</url>
+    </references>
+    <dates>
+      <discovery>2026-11-27</discovery>
+      <entry>2026-11-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2591b0d4-e9f1-11f1-a071-a0369ff35ee6">
     <topic>PowerDNS Authoritative Server -- multiple vulnerabilities</topic>
     <affects>
