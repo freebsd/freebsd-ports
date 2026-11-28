@@ -1,5 +1,5 @@
---- mod_auth_mysql.c.orig	2005-06-22 16:17:45 UTC
-+++ mod_auth_mysql.c
+--- mod_auth_mysql.c.orig	2005-06-22 18:17:45.000000000 +0200
++++ mod_auth_mysql.c	2019-08-18 11:02:04.472782000 +0200
 @@ -98,6 +98,10 @@
      #define _PORT STRING(PORT)
    #endif
@@ -40,7 +40,7 @@
    #define POOL pool
    #include <stdlib.h>
    #include "ap_sha1.h"
-@@ -589,87 +597,87 @@ static void * create_mysql_auth_dir_conf
+@@ -589,87 +597,87 @@
  static
  command_rec mysql_auth_cmds[] = {
  	AP_INIT_TAKE1("AuthMySQLHost", ap_set_string_slot,
@@ -149,7 +149,17 @@
  	OR_AUTHCFG, "mysql character set to be used"),
  
    { NULL }
-@@ -905,7 +913,16 @@ static char * format_remote_host(request
+@@ -811,7 +819,8 @@
+     make_scrambled_password_323(encrypted_sent_pw, sent_pw);
+   else
+ #endif
+-    make_scrambled_password(encrypted_sent_pw, sent_pw);
++/* mariadb has a different call */
++    ma_make_scrambled_password(encrypted_sent_pw, sent_pw);
+   return strcmp(real_pw, encrypted_sent_pw) == 0;
+ }
+ 
+@@ -905,7 +914,16 @@
  }
  
  static char * format_remote_ip(request_rec * r, char ** parm) {
@@ -167,7 +177,7 @@
  }
  
  static char * format_filename(request_rec * r, char ** parm) {
-@@ -1270,7 +1287,7 @@ static int mysql_check_auth(request_rec 
+@@ -1270,7 +1288,7 @@
    int method = r->method_number;
  
  #ifdef APACHE2
