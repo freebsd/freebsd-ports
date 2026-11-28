@@ -34,6 +34,8 @@ OPTIONS_DEFAULT=	SHARED
 SHARED_DESC=		Build shared library (.so)
 STATIC_DESC=		Build static library (.a)
 
+OPTIONS_SUB=	yes
+
 STATIC_CMAKE_BOOL=	OPENNURBS_BUILD_STATIC
 
 .include <bsd.port.pre.mk>
@@ -52,6 +54,6 @@ post-install-SHARED-on:
 	${INSTALL_DATA} ${WRKSRC}/opennurbs_cpp_base.h ${STAGEDIR}${PREFIX}/include/OpenNURBS/
 	${MV} ${STAGEDIR}${PREFIX}/lib/libOpenNURBS.so ${STAGEDIR}${PREFIX}/lib/libOpenNURBS.so.0
 	${LN} -sf libOpenNURBS.so.0 ${STAGEDIR}${PREFIX}/lib/libOpenNURBS.so
-	${RM} ${STAGEDIR}${PREFIX}/lib/libzlib.a
+	${RM} ${STAGEDIR}${PREFIX}/lib/*.a
 
 .include <bsd.port.post.mk>

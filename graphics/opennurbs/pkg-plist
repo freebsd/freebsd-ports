@@ -25,7 +25,6 @@ include/OpenNURBS/opennurbs_compress.h
 include/OpenNURBS/opennurbs_compstat.h
 include/OpenNURBS/opennurbs_cone.h
 include/OpenNURBS/opennurbs_convex_poly.h
-include/OpenNURBS/opennurbs_cpp_base.h
 include/OpenNURBS/opennurbs_crc.h
 include/OpenNURBS/opennurbs_curve.h
 include/OpenNURBS/opennurbs_curveonsurface.h
@@ -172,11 +171,13 @@ include/OpenNURBS/opennurbs_workspace.h
 include/OpenNURBS/opennurbs_xform.h
 include/OpenNURBS/opennurbs_xml.h
 include/OpenNURBS/opennurbs_zlib.h
-lib/libOpenNURBS.so
-lib/libOpenNURBS.so.0
-lib/libandroid_uuid.a
-lib/libopennurbsStatic.a
-lib/libopennurbs_public_freetype.a
+%%SHARED%%include/OpenNURBS/opennurbs_cpp_base.h
+%%SHARED%%lib/libOpenNURBS.so
+%%SHARED%%lib/libOpenNURBS.so.0
+%%STATIC%%lib/libOpenNURBS.a
+%%STATIC%%lib/libandroid_uuid.a
+%%STATIC%%lib/libopennurbs_public_freetype.a
+%%STATIC%%lib/libzlib.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_brep/example_brep.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_convert/example_convert.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_gl/example_gl.cpp
