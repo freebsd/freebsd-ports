@@ -1,6 +1,6 @@
---- deps/thpool/thpool.c.orig	2026-07-29 11:45:36 UTC
+--- deps/thpool/thpool.c.orig	2025-04-21 14:51:40 UTC
 +++ deps/thpool/thpool.c
-@@ -413,6 +413,8 @@ static void* thread_do(struct thread* thread_p) {
+@@ -436,6 +436,8 @@ static void* thread_do(struct thread* thread_p) {
    prctl(PR_SET_NAME, thread_name);
  #elif defined(__APPLE__) && defined(__MACH__)
    pthread_setname_np(thread_name);

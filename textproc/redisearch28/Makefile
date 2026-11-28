@@ -1,6 +1,6 @@
 PORTNAME=	redisearch
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.8.25
+DISTVERSION=	2.8.26
 CATEGORIES=	textproc
 PKGNAMESUFFIX=	${DISTVERSION:R:S/.//}
 
@@ -27,7 +27,7 @@ USES=		cmake compiler localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	RediSearch
 GH_PROJECT=	RediSearch
-GH_TUPLE=	RedisAI:VectorSimilarity:8108a3d:vectorsimilarity/deps/VectorSimilarity \
+GH_TUPLE=	RedisAI:VectorSimilarity:2b1580f:vectorsimilarity/deps/VectorSimilarity \
 		RedisLabsModules:readies:c609278:readies/deps/readies \
 		RedisLabs:RedisModulesSDK:6a62be4:redismodulesdk/deps/RedisModulesSDK \
 		google:s2geometry:efb4eb8:s2geometry/deps/s2geometry
