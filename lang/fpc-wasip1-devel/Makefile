@@ -1,5 +1,5 @@
 PORTNAME=	fpc
-PORTVERSION=	3.3.1.20260901
+PORTVERSION=	3.3.1.20261127
 CATEGORIES=	lang
 PKGNAMESUFFIX?=	-wasip1-devel
 DIST_SUBDIR=	freepascal
@@ -22,7 +22,7 @@ USE_GITLAB=	yes
 GL_SITE=	https://gitlab.com/freepascal.org
 GL_ACCOUNT=	fpc
 GL_PROJECT=	source
-GL_TAGNAME=	da47439dd51b003bc45f1ad41bd2ca24614d13f7
+GL_TAGNAME=	6b9f45334fc8dee59286ae778c693e36d7cb8271
 
 FPCOSTARGET=	${PKGNAMESUFFIX:S/-devel//:S/-//}
 FPCSRCDIR=	source-${GL_TAGNAME}
@@ -103,8 +103,7 @@ post-patch:
 	@${REINPLACE_CMD} -i "" -e 's|linux|freebsd,linux|g' \
 		${WRKSRC}/packages/openal/fpmake.pp
 	@${REINPLACE_CMD} -i "" -e 's|linux|freebsd,linux|g' \
-		-e 's|x86_64|x86_64,aarch64|g' \
-			${WRKSRC}/packages/opencl/fpmake.pp
+		${WRKSRC}/packages/opencl/fpmake.pp
 	@${REINPLACE_CMD} -i "" -e 's|linux|freebsd,linux|g' \
 		${WRKSRC}/packages/opengles/fpmake.pp
 	@${REINPLACE_CMD} -i "" -e 's|linux|freebsd,linux|g' \
