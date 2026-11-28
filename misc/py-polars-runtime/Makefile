@@ -1,6 +1,6 @@
 PORTNAME=	polars-runtime
 DISTVERSIONPREFIX=	py-
-DISTVERSION=	2.1.0
+DISTVERSION=	2.2.0
 CATEGORIES=	misc
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -40,12 +40,16 @@ CARGO_CRATES=	adler2-2.0.1 \
 		adler32-1.2.0 \
 		ahash-0.8.12 \
 		aho-corasick-1.1.5 \
-		alloc-no-stdlib-2.0.4 \
-		alloc-stdlib-0.2.4 \
+		alloc-no-stdlib-3.0.0 \
+		alloc-stdlib-0.3.0 \
 		allocator-api2-0.2.21 \
 		android_system_properties-0.1.6 \
+		anstream-1.0.0 \
+		anstyle-1.0.14 \
+		anstyle-parse-1.0.0 \
+		anstyle-query-1.1.5 \
+		anstyle-wincon-3.0.11 \
 		anyhow-1.0.104 \
-		apache-avro-0.21.0 \
 		ar_archive_writer-0.5.3 \
 		arboard-3.6.1 \
 		arc-swap-1.9.2 \
@@ -73,21 +77,20 @@ CARGO_CRATES=	adler2-2.0.1 \
 		aws-sdk-ssooidc-1.108.0 \
 		aws-sdk-sts-1.111.0 \
 		aws-sigv4-1.5.1 \
-		aws-smithy-async-1.3.0 \
-		aws-smithy-checksums-0.64.8 \
+		aws-smithy-async-1.3.1 \
 		aws-smithy-checksums-0.65.0 \
-		aws-smithy-eventstream-0.61.2 \
-		aws-smithy-http-0.63.6 \
-		aws-smithy-http-0.64.0 \
-		aws-smithy-http-client-1.3.0 \
+		aws-smithy-eventstream-0.61.5 \
+		aws-smithy-http-0.64.2 \
+		aws-smithy-http-client-1.5.1 \
 		aws-smithy-json-0.63.0 \
 		aws-smithy-observability-0.3.0 \
 		aws-smithy-query-0.62.0 \
-		aws-smithy-runtime-1.13.1 \
-		aws-smithy-runtime-api-1.14.0 \
+		aws-smithy-runtime-1.16.1 \
+		aws-smithy-runtime-api-1.19.1 \
 		aws-smithy-runtime-api-macros-1.1.0 \
 		aws-smithy-schema-0.2.0 \
-		aws-smithy-types-1.6.2 \
+		aws-smithy-schema-1.0.0 \
+		aws-smithy-types-1.9.0 \
 		aws-smithy-xml-0.62.0 \
 		aws-types-1.5.0 \
 		base16ct-0.2.0 \
@@ -102,11 +105,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		blake3-1.8.6 \
 		block-buffer-0.10.4 \
 		block-buffer-0.12.1 \
-		bon-3.9.3 \
-		bon-macros-3.9.3 \
 		boxcar-0.2.14 \
-		brotli-8.0.4 \
-		brotli-decompressor-5.0.3 \
+		brotli-9.1.1 \
+		brotli-decompressor-6.2.0 \
 		btparse-0.2.0 \
 		bumpalo-3.20.3 \
 		bytemuck-1.25.2 \
@@ -121,9 +122,14 @@ CARGO_CRATES=	adler2-2.0.1 \
 		chacha20-0.10.2 \
 		chrono-0.4.45 \
 		chrono-tz-0.10.4 \
+		clap-4.6.7 \
+		clap_builder-4.6.7 \
+		clap_derive-4.6.7 \
+		clap_lex-1.1.1 \
 		clipboard-win-5.4.3 \
 		cmake-0.1.58 \
 		cmov-0.5.4 \
+		colorchoice-1.0.5 \
 		combine-4.6.7 \
 		comfy-table-7.2.2 \
 		compact_str-0.9.1 \
@@ -151,10 +157,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		crypto-bigint-0.5.5 \
 		crypto-common-0.1.7 \
 		crypto-common-0.2.2 \
-		ctutils-0.4.2 \
-		darling-0.23.0 \
-		darling_core-0.23.0 \
-		darling_macro-0.23.0 \
+		ctutils-0.4.5 \
 		debug_unsafe-0.1.4 \
 		der-0.7.10 \
 		deranged-0.5.8 \
@@ -187,7 +190,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		fnv-1.0.7 \
 		foldhash-0.1.5 \
 		foldhash-0.2.0 \
-		form_urlencoded-1.2.2 \
+		form_urlencoded-1.2.3 \
 		fs4-1.1.0 \
 		fs_extra-1.3.0 \
 		futures-0.3.34 \
@@ -236,12 +239,12 @@ CARGO_CRATES=	adler2-2.0.1 \
 		icu_properties-2.3.0 \
 		icu_properties_data-2.3.0 \
 		icu_provider-2.3.0 \
-		ident_case-1.0.1 \
 		idna-1.1.0 \
 		idna_adapter-1.2.2 \
 		indexmap-2.14.0 \
 		inventory-0.3.24 \
 		ipnet-2.12.1 \
+		is_terminal_polyfill-1.70.2 \
 		iter-read-1.1.0 \
 		itertools-0.10.5 \
 		itertools-0.15.0 \
@@ -291,7 +294,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		num-iter-0.1.46 \
 		num-rational-0.4.2 \
 		num-traits-0.2.19 \
-		numpy-0.29.0 \
+		numpy-0.30.0 \
 		objc2-0.6.4 \
 		objc2-app-kit-0.3.2 \
 		objc2-core-foundation-0.3.2 \
@@ -303,18 +306,19 @@ CARGO_CRATES=	adler2-2.0.1 \
 		object-0.39.1 \
 		object_store-0.14.2 \
 		once_cell-1.21.4 \
+		once_cell_polyfill-1.70.2 \
 		openssl-probe-0.2.1 \
 		outref-0.5.2 \
 		p256-0.13.2 \
 		parking-2.2.1 \
 		parking_lot-0.12.5 \
 		parking_lot_core-0.9.12 \
+		parquet-key-management-0.8.0 \
 		pem-rfc7468-0.7.0 \
 		percent-encoding-2.3.2 \
 		phf-0.12.1 \
 		phf_shared-0.12.1 \
 		pin-project-lite-0.2.17 \
-		pin-utils-0.1.0 \
 		pkcs8-0.10.2 \
 		pkg-config-0.3.34 \
 		planus-1.1.1 \
@@ -325,19 +329,17 @@ CARGO_CRATES=	adler2-2.0.1 \
 		potential_utf-0.1.6 \
 		powerfmt-0.2.0 \
 		ppv-lite86-0.2.21 \
-		prettyplease-0.2.37 \
 		primeorder-0.13.6 \
 		proc-macro2-1.0.107 \
 		proptest-1.11.0 \
 		prost-0.11.9 \
 		prost-derive-0.11.9 \
 		psm-0.1.32 \
-		pyo3-0.29.2 \
-		pyo3-build-config-0.29.2 \
-		pyo3-ffi-0.29.2 \
-		pyo3-macros-0.29.2 \
-		pyo3-macros-backend-0.29.2 \
-		quad-rand-0.2.3 \
+		pyo3-0.30.1 \
+		pyo3-build-config-0.30.1 \
+		pyo3-ffi-0.30.1 \
+		pyo3-macros-0.30.1 \
+		pyo3-macros-backend-0.30.1 \
 		quick-xml-0.41.0 \
 		quinn-0.11.11 \
 		quinn-proto-0.11.17 \
@@ -396,7 +398,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		semver-1.0.28 \
 		serde-1.0.229 \
 		serde-pickle-1.2.0 \
-		serde_bytes-0.11.19 \
 		serde_core-1.0.229 \
 		serde_derive-1.0.229 \
 		serde_derive_internals-0.30.0 \
@@ -426,8 +427,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		spin-0.10.1 \
 		spki-0.7.3 \
 		sponge-cursor-0.1.0 \
-		sqlparser-0.62.0 \
-		sqlparser_derive-0.5.0 \
+		sqlparser-0.63.0 \
+		sqlparser_derive-0.6.0 \
 		stable_deref_trait-1.2.1 \
 		stacker-0.1.25 \
 		static_assertions-1.1.0 \
@@ -435,9 +436,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		streaming-iterator-0.1.9 \
 		strength_reduce-0.2.4 \
 		strsim-0.11.1 \
-		strum-0.27.2 \
 		strum-0.28.0 \
-		strum_macros-0.27.2 \
 		strum_macros-0.28.0 \
 		subtle-2.6.1 \
 		syn-1.0.109 \
@@ -456,13 +455,14 @@ CARGO_CRATES=	adler2-2.0.1 \
 		thiserror-2.0.20 \
 		thiserror-impl-2.0.20 \
 		thread_local-1.1.10 \
+		tikv-jemallocator-0.7.0 \
 		time-0.3.55 \
 		time-core-0.1.9 \
 		time-macros-0.2.32 \
 		tinystr-0.8.4 \
 		tinyvec-1.12.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.53.1 \
+		tokio-1.54.1 \
 		tokio-macros-2.7.2 \
 		tokio-rustls-0.26.4 \
 		tokio-util-0.7.19 \
@@ -491,10 +491,11 @@ CARGO_CRATES=	adler2-2.0.1 \
 		unty-0.0.4 \
 		ureq-3.4.0 \
 		ureq-proto-0.6.1 \
-		url-2.5.8 \
+		url-2.5.9 \
 		urlencoding-2.1.3 \
 		utf8-zero-0.8.1 \
 		utf8_iter-1.0.4 \
+		utf8parse-0.2.2 \
 		uuid-1.24.1 \
 		value-trait-0.12.2 \
 		version_check-0.9.5 \
@@ -571,10 +572,11 @@ CARGO_CRATES=	adler2-2.0.1 \
 		zerovec-derive-0.11.5 \
 		zlib-rs-0.6.7 \
 		zmij-1.0.23 \
-		zstd-0.13.3 \
-		zstd-safe-7.2.4 \
-		zstd-sys-2.0.16+zstd.1.5.7 \
+		zstd-0.14.3 \
+		zstd-safe-8.2.0 \
+		zstd-sys-2.1.2+zstd.1.5.7 \
 		hashbrown@git+https://github.com/pola-rs/hashbrown?rev=d76a6f81abd8f388676aff15068236a8d21c7e1a\#d76a6f81abd8f388676aff15068236a8d21c7e1a \
+		tikv-jemalloc-sys@git+https://github.com/pola-rs/jemallocator?rev=e947a0d1a786e221ac1c14ba1566b55151e61ec9\#e947a0d1a786e221ac1c14ba1566b55151e61ec9 \
 		color-backtrace@git+https://github.com/orlp/color-backtrace?rev=20f5eea183563bb4cfac9a4d65901d4a1002cde2\#20f5eea183563bb4cfac9a4d65901d4a1002cde2
 CARGO_TARGET_DIR=	${WRKSRC}/target
 CARGO_BUILD=	no
