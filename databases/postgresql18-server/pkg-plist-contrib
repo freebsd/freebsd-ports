@@ -268,7 +268,6 @@ lib/postgresql/uuid-ossp.so
 %%DATADIR%%/extension/uuid-ossp--1.0--1.1.sql
 %%DATADIR%%/extension/uuid-ossp--1.1.sql
 %%DATADIR%%/extension/uuid-ossp.control
-%%DATADIR%%/extension/xml2--1.1--1.2.sql
 %%DATADIR%%/tsearch_data/unaccent.rules
 %%DATADIR%%/tsearch_data/xsyn_sample.rules
 %%OPENSSL%%%%DATADIR%%/extension/sslinfo--1.0--1.1.sql
@@ -276,5 +275,6 @@ lib/postgresql/uuid-ossp.so
 %%OPENSSL%%%%DATADIR%%/extension/sslinfo--1.2.sql
 %%OPENSSL%%%%DATADIR%%/extension/sslinfo.control
 %%XML%%%%DATADIR%%/extension/xml2--1.0--1.1.sql
+%%XML%%%%DATADIR%%/extension/xml2--1.1--1.2.sql
 %%XML%%%%DATADIR%%/extension/xml2--1.1.sql
 %%XML%%%%DATADIR%%/extension/xml2.control
