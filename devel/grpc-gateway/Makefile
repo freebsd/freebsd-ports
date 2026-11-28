@@ -1,14 +1,13 @@
 PORTNAME=	grpc-gateway
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.33.0
-PORTREVISION=	1
+DISTVERSION=	2.34.0
 CATEGORIES=	devel
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	gRPC to JSON proxy generator following the gRPC HTTP spec
 WWW=		https://github.com/grpc-ecosystem/grpc-gateway/
 
-LICENSE=	BSD3CLAUSE
+LICENSE=	BSD-3-Clause
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
