@@ -1,5 +1,5 @@
 PORTNAME=	zensical
-DISTVERSION=	0.1.3
+DISTVERSION=	0.1.4
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=8.1.8:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pymdown-extensions>=11.0:textproc/py-pymdown-extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=6.0.2:devel/py-pyyaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tomli>=2.4.0:textproc/py-tomli@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}zensical-ui>=0.0.43<0.0.44:textproc/py-zensical-ui@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}zensical-ui>=0.0.44<0.0.45:textproc/py-zensical-ui@${PY_FLAVOR}
 
 USES=		cargo python
 USE_PYTHON=	autoplist concurrent pep517
