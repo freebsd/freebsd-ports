@@ -1,5 +1,5 @@
 PORTNAME=	codemark
-DISTVERSION=	0.9.2
+DISTVERSION=	0.9.3
 CATEGORIES=	devel
 
 MAINTAINER=	olgeni@FreeBSD.org
