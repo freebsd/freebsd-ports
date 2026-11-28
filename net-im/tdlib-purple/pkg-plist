@@ -1,4 +1,6 @@
+bin/tdlib-purple-tg-link
 lib/purple-2/libtelegram-tdlib.so
+share/applications/tdlib-purple-tg-link.desktop
 share/pixmaps/pidgin/protocols/16/telegram.png
 share/pixmaps/pidgin/protocols/22/telegram.png
 share/pixmaps/pidgin/protocols/48/telegram.png

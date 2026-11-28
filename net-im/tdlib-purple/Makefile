@@ -1,5 +1,5 @@
 PORTNAME=	tdlib-purple
-DISTVERSION=	0.9.6
+DISTVERSION=	0.9.7
 CATEGORIES=	net-im devel
 MASTER_SITES=	https://github.com/UnitedMarsupials/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libfmt.so:devel/libfmt \
 RUN_DEPENDS=	${LOCALBASE}/lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-webp.so:graphics/webp-pixbuf-loader
 TEST_DEPENDS=	${LOCALBASE}/lib/libgtest.so:devel/googletest
 
-USES=		cmake gnome localbase pkgconfig tar:xz
+USES=		cmake desktop-file-utils gnome localbase pkgconfig tar:xz
 USE_GNOME=	glib20
 
 CMAKE_ON+=	NoVoip # tgvoip is yet to be ported
