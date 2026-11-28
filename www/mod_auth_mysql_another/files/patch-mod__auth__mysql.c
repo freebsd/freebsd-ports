@@ -1,5 +1,5 @@
---- mod_auth_mysql.c.orig	2005-06-22 18:17:45.000000000 +0200
-+++ mod_auth_mysql.c	2019-08-18 11:02:04.472782000 +0200
+--- mod_auth_mysql.c.orig	2005-06-22 16:17:45 UTC
++++ mod_auth_mysql.c
 @@ -98,6 +98,10 @@
      #define _PORT STRING(PORT)
    #endif
@@ -40,7 +40,7 @@
    #define POOL pool
    #include <stdlib.h>
    #include "ap_sha1.h"
-@@ -589,87 +597,87 @@
+@@ -589,87 +597,87 @@ command_rec mysql_auth_cmds[] = {
  static
  command_rec mysql_auth_cmds[] = {
  	AP_INIT_TAKE1("AuthMySQLHost", ap_set_string_slot,
@@ -149,17 +149,47 @@
  	OR_AUTHCFG, "mysql character set to be used"),
  
    { NULL }
-@@ -811,7 +819,8 @@
+@@ -803,15 +811,36 @@ static char hex2chr(char * in) {
+ }
+ 
+ 
+-/* Checks scrambled passwords */
++/* Checks scrambled passwords: '*' + upper-case hex of SHA1(SHA1(password)),
++ * the mysql_native_password format, computed with apr_sha1 instead of the
++ * client library. */
++static void scramble_sha1(char * out, const char * pw) {
++  static const char hex[] = "0123456789ABCDEF";
++  unsigned char d1[APR_SHA1_DIGESTSIZE], d2[APR_SHA1_DIGESTSIZE];
++  apr_sha1_ctx_t ctx;
++  int i;
++  apr_sha1_init(&ctx);
++  apr_sha1_update(&ctx, pw, strlen(pw));
++  apr_sha1_final(d1, &ctx);
++  apr_sha1_init(&ctx);
++  apr_sha1_update_binary(&ctx, d1, sizeof(d1));
++  apr_sha1_final(d2, &ctx);
++  out[0] = '*';
++  for (i = 0; i < APR_SHA1_DIGESTSIZE; i++) {
++    out[1 + 2 * i] = hex[d2[i] >> 4];
++    out[2 + 2 * i] = hex[d2[i] & 15];
++  }
++  out[1 + 2 * APR_SHA1_DIGESTSIZE] = '\0';
++}
++
+ static short pw_scrambled(POOL * pool, const char * real_pw, const char * sent_pw, const char * salt) {
+-  char * encrypted_sent_pw = PCALLOC(pool, SCRAMBLED_PASSWORD_CHAR_LENGTH+1);
++  char * encrypted_sent_pw = PCALLOC(pool, 2 * APR_SHA1_DIGESTSIZE + 2);
+ #ifdef SCRAMBLED_PASSWORD_CHAR_LENGTH_323   /* If we may need to use old password */
+   if (real_pw[0] != '*')
      make_scrambled_password_323(encrypted_sent_pw, sent_pw);
    else
  #endif
 -    make_scrambled_password(encrypted_sent_pw, sent_pw);
-+/* mariadb has a different call */
-+    ma_make_scrambled_password(encrypted_sent_pw, sent_pw);
++    scramble_sha1(encrypted_sent_pw, sent_pw);
    return strcmp(real_pw, encrypted_sent_pw) == 0;
  }
  
-@@ -905,7 +914,16 @@
+@@ -905,7 +934,16 @@ static char * format_remote_ip(request_rec * r, char *
  }
  
  static char * format_remote_ip(request_rec * r, char ** parm) {
@@ -177,7 +207,7 @@
  }
  
  static char * format_filename(request_rec * r, char ** parm) {
-@@ -1270,7 +1288,7 @@
+@@ -1270,7 +1308,7 @@ static int mysql_check_auth(request_rec *r)
    int method = r->method_number;
  
  #ifdef APACHE2
