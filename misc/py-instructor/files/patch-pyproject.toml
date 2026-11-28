@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2026-11-28 01:32:59 UTC
++++ pyproject.toml
+@@ -34,7 +34,7 @@ readme = "README.md"
+ readme = "README.md"
+ 
+ [build-system]
+-requires = ["hatchling==1.33.0"]
++requires = ["hatchling>=1.33.0"]
+ build-backend = "hatchling.build"
+ 
+ [tool.uv]
