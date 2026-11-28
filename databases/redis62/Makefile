@@ -1,16 +1,19 @@
 PORTNAME=	redis
 DISTVERSION=	6.2.24
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	https://download.redis.io/releases/
 PKGNAMESUFFIX=	62
 
-MAINTAINER=	bofh@freebsd.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Persistent key-value database with built-in net interface
 WWW=		https://redis.io/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	Upstream END of life reaches on 2027-04-01
+EXPIRATION_DATE=	2027-04-01
 
 USES+=		compiler:c11 cpe gmake tcl:test,86
 CPE_VENDOR=	redislabs
