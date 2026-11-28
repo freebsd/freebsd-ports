@@ -28,6 +28,7 @@
     SUBDIR += hpl
     SUBDIR += httperf
     SUBDIR += hyperfine
+    SUBDIR += imaptest
     SUBDIR += imb
     SUBDIR += inferno
     SUBDIR += interbench

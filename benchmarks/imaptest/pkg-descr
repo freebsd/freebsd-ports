@@ -1,0 +1,4 @@
+ImapTest is a generic IMAP server compliance tester that works with all
+IMAP servers. It supports stress testing with state tracking (random
+commands, verifying the server output), scripted tests with expected
+output, and benchmarking.
