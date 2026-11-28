@@ -1,0 +1,4 @@
+A backwards-compatibility shim allowing libraries to get lazy import
+semantics similar to PEP 810 automatically in Python 3.11+ without
+needing to set your minimum version to 3.15. In Python 3.15+, this falls
+back to the standard lazy imports mechanism.
