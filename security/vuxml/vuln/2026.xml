@@ -1,3 +1,43 @@
+  <vuln vid="2090e695-eb15-11f1-9e78-04421a04139e">
+    <topic>librelp -- GnuTLS "certvalid" authentication mode accepts any certificate</topic>
+      <affects>
+	<package>
+	  <name>librelp</name>
+	  <range><ge>1.2.18</ge><lt>1.14.0</lt></range>
+	</package>
+      </affects>
+      <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	  <p>The librelp project reports:</p>
+	  <blockquote cite="https://github.com/rsyslog/librelp/security/advisories/GHSA-28c2-q5pf-2qm3">
+	    <p>When librelp is built with GnuTLS and a RELP connection
+	    uses TLS with the authentication mode <code>certvalid</code>,
+	    the peer certificate is not validated at all.  Any
+	    certificate is accepted, including self-signed certificates
+	    and certificates from an unrelated CA.  On a RELP server
+	    (e.g. rsyslog <code>imrelp</code>) any host that can reach
+	    the listener can inject log messages that appear to come
+	    from a trusted sender.  On a RELP client (e.g. rsyslog
+	    <code>omrelp</code>) an attacker who can intercept the
+	    connection can pose as the log server and receive the
+	    forwarded logs.</p>
+	    <p>Configurations using the <code>fingerprint</code> or
+	    <code>name</code> authentication modes, no TLS, or the
+	    OpenSSL driver are not affected.</p>
+	  </blockquote>
+	</body>
+      </description>
+      <references>
+	<cvename>CVE-2026-132888</cvename>
+	<url>https://github.com/rsyslog/librelp/security/advisories/GHSA-28c2-q5pf-2qm3</url>
+	<url>https://github.com/rsyslog/librelp/releases/tag/v1.14.0</url>
+      </references>
+      <dates>
+	<discovery>2026-11-26</discovery>
+	<entry>2026-11-28</entry>
+      </dates>
+  </vuln>
+
   <vuln vid="495b04ca-e96e-11f1-9ff2-6ab7a97fec4b">
     <topic>Stalwart -- multiple vulnerabilities</topic>
     <affects>
